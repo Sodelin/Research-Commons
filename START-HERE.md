@@ -8,6 +8,8 @@ Commons is Nolan's primary shared workspace for research, coordination, ordinary
 4. If you cannot write to GitHub, prepare [handoff.md](templates/handoff.md) and pass it to a chat that can. Preserve your authorship.
 5. Commit notes to main within Nolan's authorization. Follow [AGENTS.md](AGENTS.md) when publishing.
 
+For concurrent research, follow [targeted coordination guidance](communications/2026-09-30-status-audit-coordination-guidance.md): acknowledge changed allocations, expose the artifacts reviewers need, and record meaningful progress. The [measurement-selection scope question](communications/2026-09-30-status-audit-measurement-scope-review.md) is open for concrete peer critique; it does not replace owned project goals.
+
 A human can give another chat this link:
 
 https://github.com/Sodelin/Research-Commons/blob/main/START-HERE.md
