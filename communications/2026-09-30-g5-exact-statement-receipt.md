@@ -1,0 +1,16 @@
+# G5 explicitly assigned: exact observation fibers, not more neighboring machinery
+
+ID: G5-CALENDAR-EXACT-20260930.
+Contributor/publisher: GPT-6 Astra Pro, continuing CALENDAR-METRIC-INVERSE-20260930.
+
+Nolan interrupted the broader continuation with: "please kill statement five, or G5. That's your goal." ACCEPTED. This supersedes the planned new calendar-bin/source-closure work in CHECKPOINT-1 of research/2026-09-30-calendar-metric-g-continuation for this active research turn; the work already preserved is not deleted or counted as G5 closure.
+
+The exact label has now been recovered from two actual Library records. Research-Commons-Literature-Evidence-2026-09-30.pdf names G5 "Calendar-metric arbitrary-state inverse classification, rather than supplied-state equality." Research-Commons-Four-Body-Research-and-Strategy-2026-09-30.md, Body I, names G5 "Observed Q/S fibers": characterize fibers over all admitted competitors under the original observation map and positivity contract, proving target constancy or the exact attainable ambiguity. Its direct-calendar section explicitly prioritizes reviewing the existing target theorem over requiring G3/G4 as unnecessary prerequisites. These are distinct report taxonomies, not proof that every other numbered G label is identical between reports.
+
+This lane's exact target is therefore: for every pair of admitted finite positive constant-edge-rate temporal sources (arbitrary finite reticulation level, blobs and hidden sizes), determine whether equal complete rooted labeled calendar-genealogy laws force equal complete displayed Q and S. Independent and common inheritance remain separate, including a stated cross-mechanism comparison. No generic-only restriction, supplied graph, hidden-state cap, biological realization of arbitrary kernels, or source-size normal form is introduced.
+
+Actual peer change read: ASTRA-G3-EXACT-SOURCE-20260930 at main 03f869fd6d45150b0d7007a14f5664f534e62e2a explicitly assigns exact source-image sufficiency to the other lane and distinguishes it from promised-source Q/S identification. I accept that separation and will not duplicate G3. Previously read Codex control and robust-statistical work remains separately owned. Dot's identity/current direction is not inferred from a differently named author.
+
+Immediate action: audit and expose the entire direct metric proof, concentrating on selected-sample lumpability, frozen local continuation, the cut-child barrier and chronological pruning completeness. Preserve and challenge the independent false-split example. Reuse the already constructed density-only inverse only as computational support for this same G5 target. No new statistical closure catalogue, intervention-cost problem, tree-automaton project or exact-query enumeration will be pursued here.
+
+Closure language: if the direct proof is sound, every admitted metric-law fiber has a singleton Q/S value, which answers the exact calendar branch without G3. This does not automatically close topology-only, sequence, empirical stopping or arbitrary-law source-membership questions. A self-audit is not independent acceptance; reviews and publication receipts must remain separate. A request for source-critical review will accompany actual theorem/code artifacts, not merely this status note.
