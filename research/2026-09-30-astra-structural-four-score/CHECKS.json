@@ -1,0 +1,93 @@
+{
+  "session": "ASTRA-STRUCTURAL-4S-20260930T1033Z",
+  "contributor_publisher": "GPT-6 Astra Pro Chat",
+  "date": "2026-09-30",
+  "status": "ALL_FOUR_EXECUTED_SUITES_AND_CLEAN_REPLAY_PASSED",
+  "inherited_source_commit": "e2502c82ab9a77c00543932f775a71e5374221f7",
+  "published_code_readback_commit": "0af0e4147b716bd22986771901a99f2e282c16b4",
+  "published_code_verification": "GitHub directory API blob SHA1 values matched the independently computed local Git blob SHA1 for all four programs.",
+  "exact_free_o": {
+    "direct_padded_graph_cases": 15,
+    "exact_coefficient_equalities": 750,
+    "all_order_parameter_witnesses": 9,
+    "orders_per_witness": 12
+  },
+  "endpoint_replay": {
+    "total_anchor_coefficients": 24667,
+    "distinct_nonzero_rows": 16,
+    "absent_split_anchor_endpoint_zero_checks": 6252,
+    "present_split_original_margin_checks": 576,
+    "weighted_pendant_checks": 13914
+  },
+  "global": {
+    "source_fixtures": 9,
+    "parameter_cases": 81,
+    "direct_lower_family_sizes": 7,
+    "direct_lower_family_pair_rows": 602,
+    "nontrivial_blob_levels_observed": [1, 2, 3, 4, 5],
+    "modified_nanuq_retained_contrasts": ["-8", "1", "-8"],
+    "fix_log": "An initial three-blob test failed binary-degree validation because repeated grafts reused node identifiers. Graft prefixes were changed to include the replaced taxon; the complete corrected suite then passed. No mathematical counterexample was suppressed."
+  },
+  "order_free": {
+    "source_fixture_score_cases": 16,
+    "source_split_indices_checked": 496,
+    "exhaustive_ternary_noise_cases": 1458,
+    "isolation_lipschitz_checks": 10206
+  },
+  "clean_replay": {
+    "status": "PASS_CLEAN_DIRECTORY_REPLAY",
+    "session": "ASTRA-STRUCTURAL-4S-20260930T1033Z",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "commands": [
+      {
+        "command": "python four_score_controls.py",
+        "exit_code": 0,
+        "receipt": "FREE-O-EVIDENCE.json",
+        "byte_identical_receipt_sha256": "605489492d3b93856a75202a1bb2e70989632f098bf9915d55b90e8544614a86"
+      },
+      {
+        "command": "python endpoint_support_controls.py",
+        "exit_code": 0,
+        "receipt": "ENDPOINT-EVIDENCE.json",
+        "byte_identical_receipt_sha256": "f044af45841568c5f3db434ffee7ec74228b6108eeff92dacec81636e01558f2"
+      },
+      {
+        "command": "python global_support_controls.py",
+        "exit_code": 0,
+        "receipt": "GLOBAL-EVIDENCE.json",
+        "byte_identical_receipt_sha256": "ba423759ec57cbdb725d44a30478bb56f1fac753336689538868ef58947487dc"
+      },
+      {
+        "command": "python order_free_recovery.py",
+        "exit_code": 0,
+        "receipt": "ORDER-FREE-EVIDENCE.json",
+        "byte_identical_receipt_sha256": "7aab69373b1bd906593f6231b83834e1b0215796dbc44a4d26fd838072d9ce8b"
+      }
+    ],
+    "meaning": "Same session clean-directory replay, not an independent reviewer. All four output JSON files were byte-identical to the earlier completed runs.",
+    "code_hashes": {
+      "four_score_controls.py": {
+        "sha256": "89660eebf83d8fabc56934c6e9f02fe9173803df6c9059996019585665f1f76d",
+        "git_blob_sha1": "84e43c17c9426adfe874df2e3a51d4eccdba143b"
+      },
+      "endpoint_support_controls.py": {
+        "sha256": "966053a7288a5a425ac09793e87184de00ebafaae5d0c0340fbacc59ebd1e198",
+        "git_blob_sha1": "120355d6edd8898dc98e251ff3988e214ebfcaeb"
+      },
+      "global_support_controls.py": {
+        "sha256": "f68e615af017897fc33bda182bca8253d254c7a67f900aa21e0fc65c64914128",
+        "git_blob_sha1": "3d7ae154fe03c31cab3b943058cbd56616451f2e"
+      },
+      "order_free_recovery.py": {
+        "sha256": "6d002f5ab15ca9934aed5b1521e5b1165105c1f19d4c59466a6cfc6aa512b587",
+        "git_blob_sha1": "11470739cafb5a432d2592da9928047943272393"
+      }
+    }
+  },
+  "limits": [
+    "These are exact finite controls plus a separately written all-size proof, not an inference from testing to all sizes.",
+    "The source representation, restriction reduction and baseline composition/support remain explicitly inherited.",
+    "Same-session clean replay is not independent peer review. No Lean or external audit of the new theorem is claimed.",
+    "No biological experiment, end-to-end observation identifiability, practical transfer or historical novelty follows from these checks."
+  ]
+}
