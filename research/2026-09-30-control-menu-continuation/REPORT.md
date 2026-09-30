@@ -219,7 +219,7 @@ Import bibliography.bib into Zotero; retain the primary array/poset papers as es
 
 ## 14. Appendix: execution and remaining obligations
 
-Run `python menu_checks.py` and `python partial_signature_search.py --max-rows 6 --output partial-signature-checks.json` from this directory. The saved receipts report actual finite execution. Search timings can differ; compare structural fields, coverage witnesses and capacities. The exact clique search uses all 3^m signatures, direct operational pair coverage and proper-color branch bounds, independently corroborating the analytic theorem for m=1,...,6.
+Run `python menu_checks.py` and `python partial_signature_search.py --max-rows 6 --output partial-signature-checks.json` from this directory. The saved receipts report actual finite execution. Search timings can differ; compare structural fields, coverage witnesses and capacities. The exact clique search uses all 3^m signatures, direct operational pair coverage and proper-color branch bounds, independently corroborating the analytic theorem for m=1,...,6. `integration_checks.py` additionally runs the full analytical provider against the ORIGINAL pinned sparse decoder; materialize that external file at the path stated in the script or pass `--provider`. Root's replay matched all fields of integration-checks.json across 420 graph/graft fixtures, including complete quartet and split-union truth. See [PIPELINE-THEOREM.md](PIPELINE-THEOREM.md) for the adaptive confidence composition and [REVIEW.md](REVIEW.md) for its correction/verification boundaries.
 
 | Obligation | Status | Evidence / precise remaining work |
 |---|---|---|
@@ -229,6 +229,7 @@ Run `python menu_checks.py` and `python partial_signature_search.py --max-rows 6
 | Deterministic fully fixed optimum | Prior extremal theorem + source transfer | Section 4.5; source-admitted lower bound supplied here |
 | No supplied-order common-inheritance recovery | Conditional theorem + analytical controls | Section 6; valid g,tau and ideal control/readout assumptions required |
 | Efficient combined decoder/provider | Open | Integrate with exact-query owner's constructive theorem; do not assert query optimality |
+| Original sparse-decoder analytical integration | Executed PASS | 420 fixtures; optimized order learning and IID sampling were not executed |
 | Every intermediate b optimum | Partial characterization | Exact finite criterion; no closed formula for all b claimed |
 | Target/control-preserving r quotient | Open, observation owner coordination | Prove known lift and law preservation before substituting normalized r |
 | Partial-control independent inheritance | Open | The common-switch mixture bridge does not apply |

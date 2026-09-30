@@ -24,7 +24,7 @@ The last receipt shows an actual accepted continuation, not proof of completion 
 
 ## 2. Controlled observation-to-answer theorem
 
-Assume the inherited source/two-switch theorems, correctly identified parent-control IDs, an ideal partial-control menu satisfying REPORT.md Section 4.1, unchanged remaining product inheritance, NMSCcom, IID gene-tree loci, and a valid lower bound tau>0 on every switched quartet's internal population length. Let g>0 be the parental floor, m the menu's number of environments, and Delta=g(1-exp(-tau)).
+Assume the inherited source/two-switch theorems, correctly identified parent-control IDs, an ideal partial-control menu satisfying REPORT.md Section 4.1, unchanged remaining product inheritance, NMSCcom, IID gene-tree loci, and a valid lower bound tau>0 on every switched quartet's internal population length. Let 0<g<=1/2 be a known valid parental floor, m>=1 the menu's number of environments, 0<delta<1 the requested error bound, and Delta=g(1-exp(-tau)). For the sampling statement use B>=1; an actual zero-query task requires no support sampling.
 
 In each environment, estimate each queried quartet's three gene-topology probabilities from N loci. Return the COMPLETE support mask whose topology coordinates satisfy
 
@@ -83,6 +83,16 @@ It improves the passive g^2 certificate's conservative g^-4 contrast-sampling fa
 
 Naively extracting all queried quartet frequencies from stored genes can still require mBN readout operations, in addition to gene-quartet extraction cost. Explicitly printing every taxon's membership in every split can be quadratic. The query count is not a proof of near-linear wall-clock decoding.
 
+### Precise connection to GENERAL-TRANSFER-01
+
+For fixed n,r,g,tau, let P_theta be the joint controlled observation experiment consisting of N gene loci from each of the m environments under an admitted biological state theta. Let a_A(theta) be A's deterministic TRUE-oracle output: the complete split union together with its selected compatible order. The executed/provider-composed procedure is a measurable estimator K on these finite gene-topology observations. The first-error theorem gives
+
+```math
+\sup_\theta\operatorname{TV}(K P_\theta,\delta_{a_A(\theta)})\le\delta.
+```
+
+Thus this is an actual conditional biological instance of the general-transfer owner's deterministic-target comparison, with an explicit kernel, separation promise and finite-resource bound. It is not merely the abstract statement that an answer must be constant on observation fibers. Choosing the deterministic A order avoids falsely treating a nonunique compatible order as a unique underlying network feature. The source model/control/separation assumptions, rather than the generic transfer machinery, carry the biological burden.
+
 ## 4. Exactly how normalization could help
 
 The direct normal-form continuation seeks preservation of all passive quartet CFs and displayed Q/S with <=3n-6 reticulations. That would attack the finite image/fiber and passive identifiability master. It does NOT yet justify replacing r by that count in this controlled theorem.
@@ -97,6 +107,14 @@ P^{L(c)}_{N,\theta}(q,t)=P^c_{N',\theta'}(q,t)
 and preserve the target, g/tau promises or valid replacement floors. If only a common observation kernel exists rather than equality, prove it preserves the provider's contrasts and risk guarantee. The map must be available from allowed side information; a hidden-network-dependent existential selector does not provide an executable experiment.
 
 Counterfactual hazard: the padded source graph has four taxa and arbitrarily many hybrid IDs. Passive normalization can erase neutral bigons, but an ID-oblivious policy still needs to know which original hybrids are influential. Natural CF/support equivalence alone cannot identify a control lift. This gives the normal-form researcher a mandatory adversarial test, not an assertion that its passive theorem is false.
+
+### A sharp boundary for passive-only control lifts
+
+There is no taxon-count-only finite environment bound for the universal >=g guarantee when original control IDs have no supplied structural correspondence. Already at n=4, r is unbounded in the padded admitted family and m_g(r) diverges. A proposed fixed m(4)-row original-ID menu would fail once r>(T_(m(4))+1)/2.
+
+This remains an obstruction to a lift selected solely from passive observations: set g=1/2 and all parent probabilities to 1/2, give every underlying population edge the same positive length log(2), and relabel the r hybrid IDs over the SAME underlying padded graph. The passive observation law, target and passive normalized image are unchanged across these relabelings. The two influential IDs can nevertheless be any signed pair. A deterministic passive-law-only lift therefore chooses the same menu for all these states and faces exactly the pair-coverage lower bound. It cannot obtain an r-independent environment count merely by reading a small passive normal form.
+
+This does not refute graph-informed lifts, additional parental-history observations, or adaptive identification of influential controls. It identifies which information a stronger controlled normalization must supply. The passive CF-only normal-form problem remains meaningful and separately owned.
 
 ## 5. Open obligations of the grand theorem
 

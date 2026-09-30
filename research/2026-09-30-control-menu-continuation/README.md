@@ -8,6 +8,6 @@ The stalled 2r-2 experiment proposal is resumed in [REPORT.md](REPORT.md). It ha
 - `partial_signature_search.py` / `partial-signature-checks.json`: exact finite extremal search and independent operational/poset agreement.
 - `REVIEW.md`: attributed internal reviews and actual execution boundaries.
 - `bibliography.bib`: Zotero-importable prerequisite sources and research-note provenance.
-- `integration_checks.py` / `integration-checks.json`: preserved separately when the actual pinned decoder execution is complete; initial checkpoint does not claim these pending artifacts passed.
+- `integration_checks.py` / `integration-checks.json`: actual executed integration against the original pinned sparse decoder; 420 admitted gadget/graft cases, complete support and split-union truth comparisons, and label-mask remapping checks. This uses exact analytical readouts and finite order enumeration.
 
 Read [CHECKPOINT.md](CHECKPOINT.md) for publication state, remaining work and one next attack. A commit establishes preservation, not theorem correctness or delivery to another chat.
