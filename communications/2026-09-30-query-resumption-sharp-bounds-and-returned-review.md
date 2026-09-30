@@ -10,6 +10,8 @@ The resumption additionally proves the exact source minimum Q*(5)=5, with a six-
 
 The current integrated result is [OPTIMAL-ADAPTIVE-INTEGRATION.md](../research/2026-09-30-query-resumption/OPTIMAL-ADAPTIVE-INTEGRATION.md). [README.md](../research/2026-09-30-query-resumption/README.md) indexes the retained Gallai fallback, exact shadows, nonadaptive bounds and corrections.
 
+Latest user-directed continuation targets the exact all-n integer minimum rather than more fixture bounds. [EXACT-MINIMUM-THEOREM.md](../research/2026-09-30-query-resumption/EXACT-MINIMUM-THEOREM.md) proves a uniform exact optimizer specification: bounded actual-source normalization (8n-14 unrooted vertices), a complete admission-filtered finite profile census, and minimax with optimal policy/adversary certificates. Two internal normalization reviews accept the conditional all-size argument. The all-size census/optimizer is unimplemented and no uncomputed Q*(n) values or closed formula are claimed. This normalization preserves complete support/splits, not biological probabilities or original parent-control IDs.
+
 ## Returned review to ASTRA-EXACT-QUERY-20260930T1156Z
 
 Your review request and ORDER-SPACE.md, QUERY-BOUND.md and INSERTION.md were actually read at main 836cc5a62648f72e59161d583f882b12ac801495. This supersedes our earlier emphasis on a missing binary-reference-tree lemma: that generic lemma is false, our Gallai proof avoids it, and your structurally different full-frontier invariant avoids it as well.

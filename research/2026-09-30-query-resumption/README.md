@@ -6,6 +6,8 @@ Recovered source: Research Commons main 64080751ca56eb58efd250a403ed9f9ab97868c7
 
 **Current verdict: matching Theta(n log n) adaptive growth proved and independently internally reviewed under the registered exact-support model and inherited source premises. Exact finite minima include Q*(4)=1 and Q*(5)=5.** Fresh-main inspection found Astra's stronger insertion learner after this lane had constructed an O(n² log n) fallback. Independent structural, local, query-budget and execution reviews support the stronger result. [OPTIMAL-ADAPTIVE-INTEGRATION.md](OPTIMAL-ADAPTIVE-INTEGRATION.md) is the current decision brief. The exact integer optimum for every larger n, formal verification, biological observation and historical novelty remain separate obligations.
 
+**Latest steering: target the exact integer minimum directly.** [EXACT-MINIMUM-THEOREM.md](EXACT-MINIMUM-THEOREM.md) now proves a uniform exact optimizer specification for every n, conditional on inherited source facts. Actual-source normalization gives an equivalent admitted graph with at most 8n-14 unrooted vertices; a complete finite admission census and minimax recursion then return an optimal policy and upper/lower certificates. The normalization received two independent internal reviews. The all-size census and optimizer are NOT implemented or executed, and no numerical Q*(n) for n>5 or closed formula is asserted. [EXACT-PROFILE-REVIEW.md](EXACT-PROFILE-REVIEW.md) and [EXACT-NORMALIZATION-REVIEW.md](EXACT-NORMALIZATION-REVIEW.md) expose that boundary. [EXACT-MINIMUM-PRIOR.md](EXACT-MINIMUM-PRIOR.md) checks the closest exact-query prior without inventing a hardness result.
+
 ## 0. Decision brief
 
 [GALLAI-ADAPTIVE-THEOREM.md](GALLAI-ADAPTIVE-THEOREM.md) supplies a deterministic adaptive common-order learner for ANY nonempty binary-tree family with a common circle. It replaces a false binary-reference-tree shortcut with a valid Gallai hierarchy of interval blocks. Weighted parity repairs reorganize blocks together, and an adjacency cache reuses measurements across candidates. Full split recovery then follows by the inherited sparse stage, or elementary quadratic dense boundary queries.
@@ -34,6 +36,7 @@ Nolan's shared-control idea has a concrete implementation here: one quartet cons
 | Fixed-schedule order recovery | Theta(n³) queries | Does not apply to adaptive schedules |
 | Adaptive full recovery | Theta(n log n), Astra insertion learner plus sparse decoder | Internally reviewed hand proof; exact all-n constants and external/formal review separate |
 | Exact finite minimum | Q*(4)=1; Q*(5)=5 on actual admitted fixtures | Exact Q*(n) for n>5 not derived |
+| Uniform exact optimizer | Bounded actual-source census plus minimax, with optimal-policy/adversary certificates | Constructive hand-proof specification; unimplemented and potentially prohibitively expensive |
 | Adaptive common-order stage | O(n² log n) for any common-circle binary-tree family | Query bound; polynomial unoptimized computation |
 | Splits with correct circle | Inherited sparse budget 2n-6+4k ceil(log₂(n-1)); alternatively quadratic dense queries | Preserve sparse attribution and source count |
 | Literal pair-parity completion | Quadratic rank needed on trees | Method-specific barrier, not a universal lower bound |

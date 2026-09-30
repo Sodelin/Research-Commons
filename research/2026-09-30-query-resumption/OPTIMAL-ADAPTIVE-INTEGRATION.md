@@ -73,6 +73,14 @@ For fixed n, finitely many complete support profiles are possible, and a full-ta
 
 The all-size Theta(n log n) theorem is sharp in growth rate. It is not equality between the exact finite minimum and ceil(log_3((2n-5)!!)). The five-taxon example illustrates this: the tree-count floor is three but the admitted-source optimum is five. No proof that determining sharper constants is impossible is asserted.
 
+### Latest exact-minimum continuation
+
+Nolan explicitly redirected work from further fixture bounds to the actual minimum for every n. [EXACT-MINIMUM-THEOREM.md](EXACT-MINIMUM-THEOREM.md) establishes a uniform computable exact minimax function, not just abstract attainment. Every actual admitted source can be shortened to an admitted representative with the same split union and complete support, at most 8n-14 unrooted vertices plus one root. Retain actual branching blobs and replace maximal two-port chains by bridges. Root/path, LSA, galledness and outer-face preservation are exposed, conditional on pinned structural facts.
+
+Enumerating bounded ACTUAL graphs and filtering the full admission contract gives exactly the finite admitted profile class. This avoids the unproved arbitrary-occurrence-code converse. Minimax over all candidate profiles and all quartet queries yields an optimal decision tree and recursively checkable lower certificate for every n. The forward-codec warning remains important: a small code alone would not certify that the profile catalogue is complete.
+
+The normalization core has independent conditional reviews in [EXACT-PROFILE-REVIEW.md](EXACT-PROFILE-REVIEW.md) and [EXACT-NORMALIZATION-REVIEW.md](EXACT-NORMALIZATION-REVIEW.md). The specification can be prohibitively exponential, and its all-size catalogue, optimizer and certificate checker have not been implemented or executed. It provides a constructive exact procedure, not computed values above five, a fast finite-constant optimizer or a closed formula in n. That is the remaining numerical exact-minimum obligation.
+
 ## 6. Representation, runtime and biological boundaries
 
 The complete support table has an exact Theta(n log n)-bit source representation, with a circle and O(n) supported gap pairs. This is proved separately in MINIMAL-PROJECTION.md. Query acquisition now matches that information scale in number of constant-size answers; writing explicit taxon sets for all splits can still cost quadratic time.

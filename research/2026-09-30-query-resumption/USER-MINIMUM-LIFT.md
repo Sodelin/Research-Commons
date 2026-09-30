@@ -12,6 +12,16 @@ that transfer must preserve the actual oracle, full split output, source
 admission, and worst-case decision-tree cost. A smaller exact stored
 representation by itself supplies none of those query guarantees.
 
+A direct continuation now supplies more than this limitation:
+[EXACT-MINIMUM-THEOREM.md](EXACT-MINIMUM-THEOREM.md) proves, conditional on
+the audited source structure, that every profile has an actual admitted
+representative with at most `8n-14` unrooted vertices. Exact finite graph
+enumeration plus the recurrence below therefore gives a uniform algorithm
+computing q(n) and an optimal policy for each n. It is an exponential
+specification, unimplemented beyond the small-case controls, rather than
+a closed formula or efficient optimizer. It uses actual source graphs
+and admission checks, not an assumed converse for arbitrary compact codes.
+
 ## 1. An all-size bound already excludes five queries for all sizes
 
 Let q(n) be the optimal deterministic adaptive worst-case number of
