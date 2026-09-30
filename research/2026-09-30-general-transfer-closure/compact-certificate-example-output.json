@@ -1,0 +1,92 @@
+{
+  "format": "compact-transfer-certificate-v1",
+  "input": {
+    "P": [
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "Q": [
+      [
+        "3/8",
+        "5/8"
+      ],
+      [
+        "5/8",
+        "3/8"
+      ]
+    ],
+    "rho_P": "0",
+    "rho_Q": "1/8",
+    "omega_P_r": "0",
+    "omega_Q_r": "1/4",
+    "radius": "1/4",
+    "scope": {
+      "Theta": "[0,1] with ordinary distance",
+      "grid": [
+        "1/4",
+        "3/4"
+      ],
+      "true_P_theta": "(1)",
+      "true_Q_theta": "(theta,1-theta)",
+      "cover_proof": "Every theta is within 1/4 of one grid point.",
+      "modulus_proof": "TV(P_theta,P_phi)=0; TV(Q_theta,Q_phi)=abs(theta-phi).",
+      "law_error_proof": "At both grid points the supplied target estimate differs by TV exactly 1/8.",
+      "validation_reference": "compact-certificate.md sections 1 and 5",
+      "status": "Analytical example with declared approximation errors, not empirically sampled probabilities."
+    }
+  },
+  "kernel": [
+    [
+      "1/2",
+      "1/2"
+    ]
+  ],
+  "dual": {
+    "lambda": [
+      "1/2",
+      "1/2"
+    ],
+    "v": [
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "0"
+      ]
+    ]
+  },
+  "proposal_status": {
+    "primal": "scipy-proposal-rationally-repaired",
+    "dual": "scipy-proposal-rationally-repaired"
+  },
+  "certificate": {
+    "grid_lower": "1/8",
+    "grid_upper": "1/8",
+    "grid_gap": "0",
+    "dual_objective": "1/8",
+    "primal_row_errors": [
+      "1/8",
+      "1/8"
+    ],
+    "rho_P": "0",
+    "rho_Q": "1/8",
+    "rho": "1/8",
+    "omega_P_r": "0",
+    "omega_Q_r": "1/4",
+    "global_lower": "0",
+    "global_upper": "1/2",
+    "returned_kernel_uniform_TV_upper": "1/2",
+    "sampling": null
+  },
+  "unverified_premises": [
+    "declared finite grid r-covers the entire parameter class",
+    "supplied TV modulus envelopes hold for every distance <= r",
+    "certified law-error bounds or fixed-stage within-law IID sampling"
+  ]
+}
