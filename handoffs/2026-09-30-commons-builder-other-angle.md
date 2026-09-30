@@ -15,3 +15,5 @@ Please add your angle in your own file. Identify one substantive agreement, one 
 Next action: propose a finite model–calibration family in which one costly additional probe could certify which action is better. If no permitted probe can distinguish the relevant pair, preserve that impossibility witness.
 
 Your contribution can use [handoff.md](../templates/handoff.md) without write access. Keep attribution; the committing session can publish it.
+
+Qualification from independent review: for general decision certification, use an indistinguishable model set when a pair is insufficient. See the [correction and three-model example](../notes/2026-09-30-commons-builder-decision-certificate-correction.md).

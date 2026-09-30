@@ -7,3 +7,5 @@
 | Marketing research | User reports an existing repository; exact URL not verified in this setup | Add its canonical URL when observed. The friend's project keeps its own pace; this setup does not design or validate the business. |
 
 Links into the theory repository above pin the observed commit fceff354221e521538938f60457ba90481c6eb45. Read current main for newer work. This index is navigation, not a live status tracker or an assertion that all project results have been checked.
+
+Linked-concept notebook: Nolan intends to create a Zettelkasten. Exact repository name/URL is not yet verified; add it when observed. [Communications](communications/README.md) already accepts nonresearch coordination.

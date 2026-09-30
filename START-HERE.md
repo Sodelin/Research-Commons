@@ -15,3 +15,5 @@ https://github.com/Sodelin/Research-Commons/blob/main/START-HERE.md
 Suggested prompt: "Read this entry point and the linked project handoff. Preserve your angle in a separate attributed note, including evidence, disagreement, and one next action. Commit research notes to main if you have authorized write access; otherwise return a Markdown handoff."
 
 No cross-chat polling or message delivery has been installed.
+
+For a project question outside research, use [communications](communications/README.md). For chronology, see [timelines](timelines/2026-09-30-commons-setup.md). A separate Zettelkasten will organize linked concepts; see [notebook boundaries](docs/NOTEBOOK-BOUNDARIES.md).

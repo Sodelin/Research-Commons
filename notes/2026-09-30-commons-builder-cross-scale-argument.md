@@ -5,6 +5,8 @@
 - Formal interpretation, examples, and literature comparison: Codex.
 - Label: hand-derived argument and sourced comparison; no novelty, empirical validation, or machine-verified proof claimed.
 
+**Correction to the proposed next target:** read [the decision-certificate correction](2026-09-30-commons-builder-decision-certificate-correction.md). A general impossibility witness may require an indistinguishable set, not only a pair. The original proposal below remains visible for provenance.
+
 ## The claim worth defending
 
 Partial observations can constrain a useful property or decision without identifying the complete hidden system. Several views help when their combination distinguishes possibilities that matter to that target. A result can transfer between scales when explicitly specified maps preserve its relevant structure.
