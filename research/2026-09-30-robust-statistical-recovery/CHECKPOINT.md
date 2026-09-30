@@ -1,0 +1,11 @@
+# Recovery checkpoint
+
+Session: ROBUST-STAT-20260930-1620Z. This is a dated state, not live presence or a promise of background execution.
+
+Nolan chose statistical recovery and requested the general problem. The general observed-class criterion, exact abstract contamination threshold, anytime rational support interface, and source-admitted passive four-taxon obstruction are in REPORT.md. Independent internal reviewers challenged the proof and code; corrections and executed checks accompany them. Actual joint-decoder replay is recorded in checks.json. The exact feasible-law provider supplements conservative contrast thresholding.
+
+Scientific premises remain explicit: common implementable environment labels, admitted observation law, target/support correspondence, certified gap/errors and unique IID/conditionally valid locus prefixes. Graph-informed control access, NMSCind partial controls and physical calibration are not established. A later fresh read found Astra's submitted source-membership/normalization proof at 567def4fe7f22fee00350c0e83bd285f66b75522, observed on main e6a308d34da104b362826885ae28da409e852a0a. The proof/global finite decision construction is submitted; independent source-critical acceptance and complete solver/catalogue execution remain outstanding. cf_confidence.py now supplies the robust anytime full-CF input box and safe output interpretation for that actual API.
+
+The final current-head read at 9ffb185e27dc2f057f4a9a2a32a927cecb6855f7 also found Astra's later certification submission at 20c7370176918b9a605e6cde9ef73cc4952f7d12. It adds labeled image closures, a guarded algebraic/global backend and a CF-only finite-certification boundary; these are conditional submitted results, not independently accepted here. Its backend is no longer described as missing. Our generic theorem and exact controlled-provider noise boundary remain complementary.
+
+Next action: independently review the returned normalization/passive certification/source-construction proofs and use their globally shared-parameter backend. Then instantiate certified parameter/noise regimes, or develop the stronger full-joint population interface separately. Controlled normalization additionally needs a known control lift and law/gap/error certificates. The published component does not close the omnibus master.
