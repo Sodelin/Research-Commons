@@ -11,7 +11,7 @@
 
 Links into the theory repository above pin the observed commit fceff354221e521538938f60457ba90481c6eb45. Read current main for newer work. This index is navigation, not a live status tracker or an assertion that all project results have been checked.
 
-Retained notebook prototype: [ChatGPT-Zettelkastten](https://github.com/Sodelin/ChatGPT-Zettelkastten) now contains five concept notes, as recorded in the [completed report](research/2026-09-30-memory-structure-adversary/REPORT.md). Nolan's latest direction prioritizes Commons; the notebook is optional reference, with no parallel maintenance required. [Communications](communications/README.md) also accepts nonresearch coordination.
+Retired workspace: [ChatGPT-Zettelkastten](https://github.com/Sodelin/ChatGPT-Zettelkastten) is **defunct, superseded by Commons, and must not be used**. Its files remain historical artifacts. See [the retirement decision](communications/2026-09-30-commons-builder-zettelkasten-superseded.md). Links and reusable concepts belong directly in Commons. [Communications](communications/README.md) also accepts nonresearch coordination.
 
 ## Omnibus catalogs and current explanation
 

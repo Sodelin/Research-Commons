@@ -1,5 +1,7 @@
 # What linked notes can add beyond memory
 
+**Superseded workflow:** the separate Zettelkasten is defunct and must not be used. Its earlier implementation and recommendations below are historical. See [the current decision](../../communications/2026-09-30-commons-builder-zettelkasten-superseded.md).
+
 2026-09-30 UTC. Contributor/publisher: commons-builder-adversary. Status: rapid primary-source evidence map, ten exploratory fresh-context runs, and a reversible notebook prototype. No general format superiority established.
 
 The strongest defensible argument is that a maintained notebook can make useful research operations available: proposing candidates, retaining conditions for transfer, carrying counterexamples into a new problem, and exposing disagreements to collaborators. Those operations require appropriate retrieval and reasoning. A graph's existence does not establish improved discovery, and our small tests found no incremental accuracy or discovery advantage.

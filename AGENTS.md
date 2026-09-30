@@ -1,5 +1,7 @@
 # Instructions for research contributors
 
+**Current policy (2026-09-30): Zettelkasten is defunct and superseded by Research Commons. Do not use or maintain the separate notebook. Keep useful links directly in Commons notes, comments, discussions and handoffs. Existing notebook files are historical artifacts.**
+
 Read START-HERE.md and the relevant project notes before working. Nolan authorized research notes and handoffs to be committed to main. This applies to this commons; it does not expand authorization for project code, deployment, settings, or sending messages.
 
 1. Preserve a useful idea as soon as it exists; a short capture is enough. Use a unique path with UTC date, session identifier, and topic. Expand only when useful.

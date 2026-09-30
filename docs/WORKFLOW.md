@@ -1,5 +1,7 @@
 # Preserve, examine, and hand off
 
+**Current policy (2026-09-30): Zettelkasten is defunct and superseded by Research Commons. Do not use or maintain the separate notebook. Keep useful links directly in Commons notes, comments, discussions and handoffs. Existing notebook files are historical artifacts.**
+
 A useful thought should have a home before it becomes a result. Copy the short capture template, write a few sentences, and save it under a unique filename. Main accepts provisional notes because Nolan explicitly requested it. The claim label keeps preservation distinct from endorsement.
 
 | Location | Purpose |

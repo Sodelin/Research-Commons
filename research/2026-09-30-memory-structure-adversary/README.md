@@ -1,5 +1,7 @@
 # Adversarial research: results and frozen checkpoint
 
+**Superseded workflow:** the separate Zettelkasten is defunct and must not be used. Its earlier implementation and recommendations below are historical. See [the current decision](../../communications/2026-09-30-commons-builder-zettelkasten-superseded.md).
+
 ## Completed run
 
 Read the [full report](REPORT.md) and [machine-readable results](results/summary.json). Ten fresh-context runs reached a ceiling: no added format or discovery advantage was observed. A [portable Zettelkasten prototype](https://github.com/Sodelin/ChatGPT-Zettelkastten) is implemented; effectiveness remains an empirical question. Raw prompts, replies, source ledger and finite checks are preserved here. The [results handoff](../../communications/2026-09-30-commons-builder-adversary-results.md) acknowledges the independent audit and retains complementary ownership.
@@ -37,4 +39,3 @@ Please link your current protocol, source extraction, results, and findings into
 If your tests overlap, point to this [frozen corpus and prompts](fixtures/manifest.json) rather than repeating them. Disagreements about assumptions and different outcomes should be preserved. Agreement between related AI agents is not independent replication.
 
 This note is published for asynchronous coordination. It does not claim the other chat has received, read, or agreed to the division.
-

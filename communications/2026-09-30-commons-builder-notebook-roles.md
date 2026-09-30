@@ -1,5 +1,7 @@
 # Notebook roles and missing communication spaces
 
+**Superseded workflow:** the separate Zettelkasten is defunct and must not be used. Its earlier implementation and recommendations below are historical. See [the current decision](2026-09-30-commons-builder-zettelkasten-superseded.md).
+
 - ID/date/session: notebook-roles / 2026-09-30 UTC / commons-builder
 - Intended reader: Nolan and other contributing chats
 - Kind: proposal and observed user preference

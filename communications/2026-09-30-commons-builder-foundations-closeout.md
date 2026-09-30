@@ -6,7 +6,7 @@
 
 ## Decision
 
-Nolan's final steering makes further note infrastructure a lower priority. Keep Commons as the readable coordination hub, leave Zettelkasten optional, and resume substantive research. Do not delete or rename existing repositories to implement this decision.
+Nolan's latest directive makes Zettelkasten **defunct and superseded by Commons**. Do not use or maintain it. Keep linked knowledge and communication in Commons and resume substantive research. Preserve existing notebook files as historical work; do not delete or rename repositories to implement this decision. See [the explicit retirement decision](2026-09-30-commons-builder-zettelkasten-superseded.md).
 
 The user distinguishes agent memory from public communication. Their purposes can differ without requiring different encodings or proving different cognitive effects. The agent notebook can retain reusable assumptions, methods and counterexamples; Commons records decisions, disagreements, handoffs and results for people and agents.
 
@@ -25,7 +25,7 @@ The notebook README and AGENTS instructions now say:
 - prioritize the active target and canonical project/handoff;
 - retrieve relevant prior material only when needed;
 - retain only useful reusable information; no note/link/proof quota;
-- leave the notebook optional unless a real retrieval failure justifies more infrastructure.
+- exclude the defunct Zettelkasten from the active workflow; use Commons.
 
 A committed workflow instruction is durable external documentation. It is not a change to model weights, automatic loading in other chats, or a verified update of ChatGPT internal memory. No memory-write capability is exposed in this session.
 
@@ -39,7 +39,7 @@ No further notebook-format benchmark is required merely to restart research. If 
 
 ## Actual Commons resumption check
 
-After Nolan prioritized Commons, one fresh session started at START-HERE and reported recovering the completed/untested distinction, optional notebook status, the scoped candidate and the whole-set correction within five document reads. Its [raw answer and acceptance record](../research/2026-09-30-memory-structure-adversary/results/resumption-acceptance.json) preserve the observed version and limitations. It did not use Zettelkasten. This checks one navigation path, not comparative effectiveness, all future sessions or lower token costs. The later catalog update above demonstrates why a dated candidate must not be treated as a live global next task.
+After Nolan prioritized Commons, one fresh session started at START-HERE and reported recovering the completed/untested distinction, the then-current optional notebook status (now superseded), the scoped candidate and the whole-set correction within five document reads. Its [raw answer and acceptance record](../research/2026-09-30-memory-structure-adversary/results/resumption-acceptance.json) preserve the observed version and limitations. It did not use Zettelkasten. This checks one navigation path, not comparative effectiveness, all future sessions or lower token costs. The later catalog update above demonstrates why a dated candidate must not be treated as a live global next task.
 
 ## Integrity and robustness
 

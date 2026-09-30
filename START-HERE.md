@@ -16,6 +16,6 @@ Suggested prompt: "Read this entry point and the linked project handoff. Preserv
 
 No cross-chat polling or message delivery has been installed.
 
-For a project question outside research, use [communications](communications/README.md). For chronology, see [timelines](timelines/2026-09-30-commons-setup.md). The [Zettelkasten](https://github.com/Sodelin/ChatGPT-Zettelkastten) is an optional agent notebook; consult it when relevant prior material helps the active task. Further note infrastructure is paused so substantive research can resume. See [the current decision and handoff](communications/2026-09-30-commons-builder-foundations-closeout.md) and [notebook boundaries](docs/NOTEBOOK-BOUNDARIES.md).
+For a project question outside research, use [communications](communications/README.md). For chronology, see [timelines](timelines/2026-09-30-commons-setup.md). Zettelkasten is **defunct and superseded by Commons; do not use it**. Keep links and reusable knowledge within Commons. See [the retirement decision](communications/2026-09-30-commons-builder-zettelkasten-superseded.md) and [workspace boundaries](docs/NOTEBOOK-BOUNDARIES.md).
 
-Skip Commons overhead for one-step tasks when it adds no relevant context. Search and follow useful links within Commons; maintaining a parallel notebook is not required.
+Skip Commons overhead for one-step tasks when it adds no relevant context. Search and follow useful links within Commons. The separate Zettelkasten is retired and excluded from the active workflow.
