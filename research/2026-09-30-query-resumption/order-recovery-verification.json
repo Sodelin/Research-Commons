@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-30T12:01:38.175531+00:00",
+  "small": [
+    {
+      "n": 4,
+      "tree_families": 7,
+      "accepted": 6,
+      "correctly_rejected": 1,
+      "additional_anchor_checks": 18
+    },
+    {
+      "n": 5,
+      "tree_families": 32767,
+      "accepted": 297,
+      "correctly_rejected": 32470,
+      "additional_anchor_checks": 188
+    }
+  ],
+  "source_fixtures": [
+    {
+      "name": "N1",
+      "source_admission_reused": true,
+      "nontrivial_splits": 4,
+      "anchors": 5,
+      "calls_at_anchor_zero": 9,
+      "recovered_sides_at_anchor_zero": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "name": "N2",
+      "source_admission_reused": true,
+      "nontrivial_splits": 5,
+      "anchors": 5,
+      "calls_at_anchor_zero": 9,
+      "recovered_sides_at_anchor_zero": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    }
+  ],
+  "stress": [
+    {
+      "n": 8,
+      "trees": 15,
+      "k": 20,
+      "anchor": 2,
+      "independent_orientations": 1,
+      "anchored_calls": 35,
+      "sparse_calls": 29,
+      "total_calls": 64,
+      "full_support_reprojection_checks": 70
+    },
+    {
+      "n": 16,
+      "trees": 12,
+      "k": 59,
+      "anchor": 4,
+      "independent_orientations": 1,
+      "anchored_calls": 455,
+      "sparse_calls": 135,
+      "total_calls": 590,
+      "full_support_reprojection_checks": 1820
+    },
+    {
+      "n": 32,
+      "trees": 5,
+      "k": 109,
+      "anchor": 13,
+      "independent_orientations": 1,
+      "anchored_calls": 4495,
+      "sparse_calls": 457,
+      "total_calls": 4952,
+      "full_support_reprojection_checks": 1000
+    },
+    {
+      "n": 64,
+      "trees": 2,
+      "k": 110,
+      "anchor": 30,
+      "independent_orientations": 13,
+      "anchored_calls": 39711,
+      "sparse_calls": 635,
+      "total_calls": 40346,
+      "full_support_reprojection_checks": 1000
+    }
+  ],
+  "invalid_controls": 6,
+  "sha256": {
+    "order_recovery.py": "5c4f8346add6af9c4b3c229dc7b4904f19127c54595bb5fbcf36730603a0bdcd",
+    "verify_order_recovery.py": "69df0cf8ee55e61681c92e45bf0295d8cdfd58b99c56365ac06efc65e0d368e2"
+  },
+  "limits": "Finite graph-cut checks; all-size conclusion relies on the attributed proof. Source certificates reused and labeled. Large stress families share an order but need not be one admitted network. No biological data or optimal adaptive closure."
+}
