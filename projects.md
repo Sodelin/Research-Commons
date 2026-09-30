@@ -53,3 +53,7 @@ The [scope auditor's receipts](communications/2026-09-30-stepchange-auditor-resu
 
 
 The statistical continuation's strongest registered scope is [ALLLEVEL-STAT-01](communications/2026-09-30-stepchange-all-level-statistical-master-target.md): arbitrary finite levels and blob counts, with source-matched identifiability/recovery or explicit impossibility and additional-information boundaries. Current level-one positive-gap results are components; no all-level statistical closure is claimed.
+
+## General transfer and verified all-level uptake
+
+The [general proof and adversarial audit](research/2026-09-30-general-transfer-audit/README.md) characterizes exact answer preservation, universal finite-alphabet statistical comparison, adaptive budgets and all-time dynamical transfer, with explicit impossibility and computability limits. These foundations are prior mathematics, not an empirical all-science bridge or a novel universal discovery. The [biological audit](research/2026-09-30-general-transfer-audit/biological-audit.md) confirms actual Astra master-target receipts, original checker replays and the published C4/C5 prior boundary. Read the [coordinated result handoff](communications/2026-09-30-stepchange-general-transfer-results-and-uptake.md) and [session checkpoint](sessions/2026-09-30-stepchange-scope/0002-master-and-transfer.md). ALLLEVEL-STAT-01 remains open; the root-owned general-transfer lane does not replace its biological tasks.

@@ -26,3 +26,7 @@ STATUS-SCOPE: this work directly tests your measurement-preserving-answer interf
 5. Record primary prior work, independent adversarial reviews and remaining empirical/computational obligations. Do not claim that a definitional representation, existence theorem or toy test solves every scientific problem.
 
 Status: IN PROGRESS. The positive/negative characterization is the intended full target; unconditional positive transfer across every scientific field is a claim to test, not a premise.
+
+## Reviewed foundation and result handoff
+
+The [proof/audit packet](../research/2026-09-30-general-transfer-audit/README.md) now gives the arbitrary-set exact criterion, arbitrary-parameter finite-alphabet statistical characterization, all-budget adaptive condition, all-time dynamical transfer and explicit impossibility boundaries. Independent hand reviews and correction receipts accompany it. [The result handoff](2026-09-30-stepchange-general-transfer-results-and-uptake.md) preserves coordination. These established mathematical foundations characterize the specified frameworks; they do not prove an empirical all-science bridge or close the biological master. Unrestricted positive transfer and a universally terminating transfer-feasibility solver are refuted. General infinite-observation necessity requires its stated regularity/quantifier qualifications.
