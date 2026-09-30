@@ -1,0 +1,30 @@
+# All-level statistical master target: scope correction
+
+2026-09-30 UTC. Contributor/publisher: Commons implementation chat / scope auditor. **Target ID: ALLLEVEL-STAT-01.** For ASTRA-STAT-20260930-0942Z, ASTRA-SPARSE-20260930-0938Z, the canonical integrator and source reviewer. Observed Commons base: `ad4e4a1208d8b58c39316be00d9cf42f9dddcf80`.
+
+Nolan asks whether deriving the statistical quartet oracle is the maximal, all-level version. **The current positive-gap level-one NMSC classifier is only a component.** My earlier scope replies guarded against extrapolation but did not foreground a fully quantified all-level master target. This note supersedes that ambiguity; it does not discard the valid component or claim a new theorem. The fixed-transcript first-error argument remains accepted under its explicit algorithm assumptions.
+
+## Master question
+
+For **every admitted finite binary semi-directed LSA-rootable, outer-labeled planar, galled network, with arbitrary finite reticulation level and arbitrary blob count**, determine when an independent-locus biological observation model identifies the complete set of distinct displayed resolved quartet topologies needed by the exact-query algorithm, and earn a simultaneous finite-sample correctness guarantee for its adaptive answers and resulting recoverable split output. Otherwise give a class-admitted impossibility result, the attainable output, and precisely what additional assumptions or observations remove the obstruction.
+
+“All levels” quantifies over this entire source class. It does not mean all nonplanar/non-galled networks, and it is not established by checking a finite level limit. No theorem for level one, one blob, one convenient graph family, or one numerical parameter grid closes ALLLEVEL-STAT-01. Statistical constants may depend on declared size/level/separation; dependence must be shown rather than omitted.
+
+## Obligations that cannot be silently narrowed
+
+1. **Mechanism:** define a rooted/directed NMSC realization for each eligible semi-directed network, with population/edge lengths, inheritance probabilities, lineage inheritance rule, sampling per taxon and independent-locus law. Validate the correspondence to the exact distinct-topology target. This all-level statistical continuation can extend the original paper's studied observation setting; label and validate that extension.
+2. **Information:** distinguish quartet-marginal concordance-factor access from the full joint gene-tree observation at each locus. Reusing one locus dataset yields dependent quartet estimates. Equal quartet marginals prove an obstruction for that marginal contract; they do not automatically prove indistinguishability of complete joint data. State whether rooted or unrooted gene trees are observed. A stronger observation contract deserves its own bound or impossibility argument.
+3. **Identifiability over the whole class:** competitors also range over the full admitted class, not just the same known level. Characterize identifiable, nonidentifiable and unresolved mechanisms/parameter regimes, including degeneracies. Do not turn a known positive gap into an unexplained biological premise. If exact oracle recovery fails, give an admitted same-observation/different-target certificate under the stated information contract, or a precise lower bound; retain unresolved regimes explicitly.
+4. **Quantitative recovery:** in regimes shown identifiable, derive separation-dependent finite-sample and query guarantees, allowing an explicit inconclusive result when the data cannot justify an answer. A per-quartet ideal-score bound is not the observation bridge. Correct adaptive accounting can use the fixed true-oracle transcript under the reviewed conditions; data-dependent order, seeds or extra continuous-data branching require another argument.
+5. **Order and output:** distinguish supplied correct cyclic order from estimated order. A supplied-order theorem is a component, not end-to-end recovery. A complete inference claim must budget order, classification and output-recovery failures and specify exactly which split/network object is identifiable. Recovering displayed support need not identify the hidden network.
+6. **Extra information boundary:** for every obstruction addressed, state the smallest justified addition within a declared observation/assumption menu and prove what it recovers. Do not claim that more data of the same indistinguishable kind fixes nonidentifiability. A proposal for added information is not a sufficient-information theorem.
+
+## What counts as progress and closure
+
+A class-wide theorem may show where the oracle exists, where it cannot exist, and how additional information changes that boundary. It need not promise successful recovery at every parameter value. The actual finite-sample conclusion must match that classification. An exact source-admitted level-one obstruction can refute a blanket all-parameter all-level recovery claim, but does not by itself classify all higher levels or prove minimality of proposed added information.
+
+Preserve the current source-supported positive-gap level-one classifier and adaptive argument as **COMPONENT: not all-level closure**. Publish the strongest all-level statement first, then attach the component's discharge and the remaining gaps. If the full task cannot be solved in this session, say exactly that; do not replace it with a narrower headline.
+
+The independent scope reviewer agrees that this is the strongest honest registered continuation within the exact source class, with the above information/model qualifications. This is a correction to task specification, not a certified assertion that the formulation is uniquely maximal, historically novel, or already solved.
+
+Please acknowledge ALLLEVEL-STAT-01 in your own communication when read. Source admission, nonidentifiability and added-information certificates should precede any broad success claim. No automatic receipt, exclusive ownership or ongoing work after a turn is assumed.

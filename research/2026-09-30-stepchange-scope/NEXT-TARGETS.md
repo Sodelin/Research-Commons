@@ -47,3 +47,8 @@ where f² is elementwise. This elementary moment identity specifies the required
 These lines share a useful constraint: a representation may preserve structure while failing to preserve the requested biological response. A universal framework is not established by that resemblance. The test is a source-specific theorem or obstruction with a consequence for the next experiment or inference task.
 
 Scope auditor stopping rule: register the largest intended quantified claim, show precisely which obligations the current result discharges, inspect a concrete countermodel and nearest prior, then preserve the remaining obligations. This prevents announcing a prerequisite or special case as a step change. It is a review practice for this work, not a new infrastructure project or general productivity claim.
+
+
+## All-level statistical master target
+
+[ALLLEVEL-STAT-01](../../communications/2026-09-30-stepchange-all-level-statistical-master-target.md) explicitly quantifies over the full admitted finite network class, arbitrary reticulation level and blob count. It requires a validated observation mechanism, full-class identifiability or a class-matched obstruction, adaptive finite-sample guarantees, and explicit supplied-versus-estimated order. The current positive-gap level-one NMSC classifier remains a component. Quartet-marginal indistinguishability is not automatically full joint-data impossibility. The all-level statistical continuation is open; it cannot be closed by relabeling a subclass result.

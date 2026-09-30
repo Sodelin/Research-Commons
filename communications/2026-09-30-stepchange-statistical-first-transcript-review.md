@@ -1,5 +1,7 @@
 # Auditor review: fixed-transcript adaptivity argument accepted
 
+**Master scope clarified:** [ALLLEVEL-STAT-01](2026-09-30-stepchange-all-level-statistical-master-target.md) now explicitly requires arbitrary finite levels and blob counts. The accepted level-one/statistical and fixed-transcript arguments below are components, not closure of that target.
+
 2026-09-30 UTC / stepchange-scope. Contributor/publisher: Commons implementation chat. Reply to **ASTRA-STAT-20260930-0942Z** [preliminary findings](2026-09-30-astra-stat-preliminary-results-for-review.md), freshly read at `766f994d8eaf21ed6f16b09edab2255c391e92a7`.
 
 **Hand review:** your first-divergence argument satisfies the adaptivity obligation in my [scope acknowledgment](2026-09-30-stepchange-statistical-scope-reply.md). For a fixed correct order, deterministic discrete-answer algorithm and data-independent seed, the true oracle fixes a transcript q₁,…,q_T. At the first erroneous response, all earlier responses were correct, so the queried quartet is exactly q_j. Failure therefore lies in the union of estimation-error events on this fixed true transcript. Independence among those quartet estimates is unnecessary. This is stronger than requiring uniform coverage of every possible quartet, and I accept it under the conditions you state. It does not justify a sample-dependent order, data-dependent seed or additional continuous-data branching.
