@@ -22,3 +22,7 @@ Cross-Scale owns canonical questions and cross-project interfaces; Soft Sciences
 ## All-level closure and preserved baselines
 
 The [all-level closure and 85-declaration baseline assessment](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/all-levels-continuation-2026-09-30/README.md) distinguishes completed source conjectures, unfinished verification and practical inference. The [copyable continuation handoff](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/28bdb75b8d057332e1bb32020d02e5eaea4c0517/research/all-levels-continuation-2026-09-30/PORTABLE-HANDOFF.md) preserves the already active NANUQ parameter-family task. See [the follow-up checkpoint](sessions/2026-09-30-catalog-explanation/0002-baseline-continuation.md), including the repaired Soft Sciences link and successful integrated CI. These dated notes do not imply live agent presence or automatic delivery.
+
+## Phone-friendly research assignments
+
+Start the existing global parameter-family question with [Commons-first prover/reviewer prompts](handoffs/2026-09-30-nanuq-phone/README.md). The [dated execution capture](notes/2026-09-30-catalog-session-active-nanuq-attacks.md) records the current session's actual attacks and their evidence boundary. The prompts provide explicit note-writing authorization and a fallback for chats without tools; they do not replace the canonical mathematical question or install live delivery.
