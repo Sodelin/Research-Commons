@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "contributor": "GPT-6 Astra Pro / ASTRA-SPARSE-20260930-0938Z",
+  "source_commit_base": "e2502c82ab9a77c00543932f775a71e5374221f7",
+  "claim_level": "Written all-size proof plus reproducible finite implementation checks. Not Lean-verified, not externally reviewed.",
+  "code_sha256": {
+    "sparse_quartet.py": "2dd411db0ceb248cb42549eca06c0f1e8510f7ba1837fe544e9ef83e7cefc1fa",
+    "verify_sparse_quartet.py": "fb8e9ee60501cc3c68d161beaeab9458952ea407b3092881495ccf9aa8af0b0a"
+  },
+  "runs": [
+    {
+      "phase": "abstract",
+      "created_utc": "2026-09-30T09:50:03.641056+00:00",
+      "elapsed_seconds": 2.930173092000018,
+      "status": "PASS"
+    },
+    {
+      "phase": "graphs",
+      "created_utc": "2026-09-30T09:50:06.990833+00:00",
+      "elapsed_seconds": 2.2233641970000235,
+      "status": "PASS"
+    },
+    {
+      "phase": "stress",
+      "created_utc": "2026-09-30T09:50:12.371045+00:00",
+      "elapsed_seconds": 4.359658895000052,
+      "status": "PASS"
+    }
+  ],
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+  },
+  "abstract": {
+    "rows": [
+      {"n": 4, "candidate_splits": 2, "support_families": 4, "max_unique_queries": 1, "max_rectangle_tests": 2},
+      {"n": 5, "candidate_splits": 5, "support_families": 32, "max_unique_queries": 5, "max_rectangle_tests": 6},
+      {"n": 6, "candidate_splits": 9, "support_families": 512, "max_unique_queries": 11, "max_rectangle_tests": 12},
+      {"n": 7, "candidate_splits": 14, "support_families": 16384, "max_unique_queries": 19, "max_rectangle_tests": 20}
+    ],
+    "total_support_families": 16932,
+    "partition_n_range": [4, 256],
+    "single_split_localization_cases": 4930,
+    "scope": "All circular split subsets through n=7, including families not realized by a binary tree union"
+  },
+  "graphs": {
+    "rows": [
+      {"n": 4, "ordered_tree_duplication_instances": 406, "globally_selected_trees": 3834, "distinct_quartet_systems": 3, "actual_reconstruction_queries": 406, "max_nontrivial_splits": 2},
+      {"n": 5, "ordered_tree_duplication_instances": 5390, "globally_selected_trees": 92465, "distinct_quartet_systems": 16, "actual_reconstruction_queries": 24930, "max_nontrivial_splits": 5}
+    ],
+    "total_instances": 5796,
+    "total_globally_selected_trees": 96299,
+    "scope": "Plane occurrence trees with each label once or twice contiguously; no independent raw source-network admission checker"
+  },
+  "stress": {
+    "seed": 202609300938,
+    "rows": [
+      {"n": 16, "kind": "random_n", "k": 16, "unique_quartet_queries": 93, "rectangle_tests": 94, "bound": 282, "all_quartets": 1820, "all_nontrivial_boundary_candidates": 104},
+      {"n": 16, "kind": "random_2n", "k": 32, "unique_quartet_queries": 139, "rectangle_tests": 140, "bound": 538, "all_quartets": 1820, "all_nontrivial_boundary_candidates": 104},
+      {"n": 16, "kind": "caterpillar_tree", "k": 13, "unique_quartet_queries": 61, "rectangle_tests": 62, "bound": 234, "all_quartets": 1820, "all_nontrivial_boundary_candidates": 104},
+      {"n": 16, "kind": "near_diagonal", "k": 15, "unique_quartet_queries": 65, "rectangle_tests": 66, "bound": 266, "all_quartets": 1820, "all_nontrivial_boundary_candidates": 104},
+      {"n": 16, "kind": "all_circular_splits", "k": 104, "unique_quartet_queries": 181, "rectangle_tests": 182, "bound": 1690, "all_quartets": 1820, "all_nontrivial_boundary_candidates": 104},
+      {"n": 32, "kind": "random_n", "k": 32, "unique_quartet_queries": 253, "rectangle_tests": 254, "bound": 698, "all_quartets": 35960, "all_nontrivial_boundary_candidates": 464},
+      {"n": 32, "kind": "random_2n", "k": 64, "unique_quartet_queries": 403, "rectangle_tests": 404, "bound": 1338, "all_quartets": 35960, "all_nontrivial_boundary_candidates": 464},
+      {"n": 32, "kind": "caterpillar_tree", "k": 29, "unique_quartet_queries": 151, "rectangle_tests": 152, "bound": 638, "all_quartets": 35960, "all_nontrivial_boundary_candidates": 464},
+      {"n": 32, "kind": "near_diagonal", "k": 31, "unique_quartet_queries": 163, "rectangle_tests": 164, "bound": 678, "all_quartets": 35960, "all_nontrivial_boundary_candidates": 464},
+      {"n": 32, "kind": "all_circular_splits", "k": 464, "unique_quartet_queries": 869, "rectangle_tests": 870, "bound": 9338, "all_quartets": 35960, "all_nontrivial_boundary_candidates": 464},
+      {"n": 64, "kind": "random_n", "k": 64, "unique_quartet_queries": 715, "rectangle_tests": 716, "bound": 1658, "all_quartets": 635376, "all_nontrivial_boundary_candidates": 1952},
+      {"n": 64, "kind": "random_2n", "k": 128, "unique_quartet_queries": 1101, "rectangle_tests": 1102, "bound": 3194, "all_quartets": 635376, "all_nontrivial_boundary_candidates": 1952},
+      {"n": 64, "kind": "caterpillar_tree", "k": 61, "unique_quartet_queries": 337, "rectangle_tests": 338, "bound": 1586, "all_quartets": 635376, "all_nontrivial_boundary_candidates": 1952},
+      {"n": 64, "kind": "near_diagonal", "k": 63, "unique_quartet_queries": 365, "rectangle_tests": 366, "bound": 1634, "all_quartets": 635376, "all_nontrivial_boundary_candidates": 1952},
+      {"n": 128, "kind": "random_n", "k": 128, "unique_quartet_queries": 1681, "rectangle_tests": 1682, "bound": 3834, "all_quartets": 10668000, "all_nontrivial_boundary_candidates": 8000},
+      {"n": 128, "kind": "random_2n", "k": 256, "unique_quartet_queries": 2693, "rectangle_tests": 2694, "bound": 7418, "all_quartets": 10668000, "all_nontrivial_boundary_candidates": 8000},
+      {"n": 128, "kind": "caterpillar_tree", "k": 125, "unique_quartet_queries": 715, "rectangle_tests": 716, "bound": 3750, "all_quartets": 10668000, "all_nontrivial_boundary_candidates": 8000},
+      {"n": 128, "kind": "near_diagonal", "k": 127, "unique_quartet_queries": 775, "rectangle_tests": 776, "bound": 3806, "all_quartets": 10668000, "all_nontrivial_boundary_candidates": 8000},
+      {"n": 256, "kind": "random_n", "k": 256, "unique_quartet_queries": 4041, "rectangle_tests": 4042, "bound": 8698, "all_quartets": 174792640, "all_nontrivial_boundary_candidates": 32384},
+      {"n": 256, "kind": "random_2n", "k": 512, "unique_quartet_queries": 6609, "rectangle_tests": 6610, "bound": 16890, "all_quartets": 174792640, "all_nontrivial_boundary_candidates": 32384},
+      {"n": 256, "kind": "caterpillar_tree", "k": 253, "unique_quartet_queries": 1477, "rectangle_tests": 1478, "bound": 8602, "all_quartets": 174792640, "all_nontrivial_boundary_candidates": 32384},
+      {"n": 256, "kind": "near_diagonal", "k": 255, "unique_quartet_queries": 1601, "rectangle_tests": 1602, "bound": 8666, "all_quartets": 174792640, "all_nontrivial_boundary_candidates": 32384}
+    ],
+    "invalid_input_controls_passed": 4,
+    "deliberately_wrong_valid_oracle_changes_output": true,
+    "scope": "Synthetic geometric support families; query counts are not biological speed benchmarks"
+  }
+}
