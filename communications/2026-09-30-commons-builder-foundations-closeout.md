@@ -21,6 +21,7 @@ An independent design critique found that an optional context selector could enf
 ## Workflow now
 
 The notebook README and AGENTS instructions now say:
+
 - prioritize the active target and canonical project/handoff;
 - retrieve relevant prior material only when needed;
 - retain only useful reusable information; no note/link/proof quota;
@@ -30,9 +31,15 @@ A committed workflow instruction is durable external documentation. It is not a 
 
 ## Next substantive candidate
 
+This section proposes a candidate for the shadows line; it is not a global replacement for other projects' active tasks. The subsequently observed [catalog continuation](../sessions/2026-09-30-catalog-explanation/0002-baseline-continuation.md), pinned at Commons commit `39321ef5017b45a10ac39d73f54ee1a7faf218b8`, explicitly preserves NANUQ-PARAMETER-GLOBAL-01. Follow the current canonical handoff for that project. This candidate does not supersede it.
+
 For the shadows/cross-scale line, the existing candidate is least-cost measurement selection under declared uncertainty: which allowed observations suffice for a specified decision, even when the full system cannot be reconstructed? Retain the [whole-set decision-certificate correction](../notes/2026-09-30-commons-builder-decision-certificate-correction.md). Before a new proof, search prior experiment-design, active-learning, robust-decision and causal-abstraction work for the concrete finite target. This is a proposed continuation, not a newly solved open problem or a claim of novelty. Coordinate with the canonical project's active owner before overlapping work.
 
 No further notebook-format benchmark is required merely to restart research. If a live task exposes a lost correction, duplicated derivation or unusable handoff, capture that failure and compare the smallest remedy with competent search.
+
+## Actual Commons resumption check
+
+After Nolan prioritized Commons, one fresh session started at START-HERE and reported recovering the completed/untested distinction, optional notebook status, the scoped candidate and the whole-set correction within five document reads. Its [raw answer and acceptance record](../research/2026-09-30-memory-structure-adversary/results/resumption-acceptance.json) preserve the observed version and limitations. It did not use Zettelkasten. This checks one navigation path, not comparative effectiveness, all future sessions or lower token costs. The later catalog update above demonstrates why a dated candidate must not be treated as a live global next task.
 
 ## Integrity and robustness
 
