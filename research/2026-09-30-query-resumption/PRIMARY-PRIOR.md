@@ -94,3 +94,27 @@ Primary full text refs: Keijsper university PDF `turn7view0` / detailed Section 
 ## 14. Handoff
 
 Parent has been sent the decisive prior, the all-family affine corollary, and the signed-pair algorithm. Next action: implement the parity graph alongside independent graph-derived quartet truth, then attack adaptive learning using a global extension invariant. Preserve the distinction between proving an order-representation theorem, implementing it, and closing the master query optimum.
+
+## 15. Containing-tree attack: new primary connection and executed controls
+
+The attempted faster adaptive route asks whether a partial support transcript whose parity assignments are all transitive can be placed inside the embedding-order space of one binary tree. The broad affine version is false: on five taxa the circles `(0,1,2,3,4)` and `(0,2,4,1,3)` share no adjacent taxon pair, hence no shared nontrivial split and no shared binary tree. The two circles and their reversals always form a two-dimensional affine space. This does not by itself refute the stronger premise of partial **complete masks from an actual source**.
+
+A precise older representation theory exposes the missing condition. Under a canonical common order, all measured pair equalities are even. Give each pair `xy` its parity-graph component color `c(x,y)`. Every independent component orientation is transitive iff for every `x<y<z`,
+
+`c(x,z) in {c(x,y),c(y,z)}`.
+
+This excludes rainbow triangles, but a binary tree containing all these orientations additionally requires a **symbolic ultrametric** representation of the pair colors. Böcker–Dress (1998), DOI `10.1006/aima.1998.1743`, originated this representation. The full primary preprint [Hellmuth–Wieseke, arXiv:1509.05069](https://arxiv.org/pdf/1509.05069), Theorems 1 and 2 (retrieval `turn29view0`), states equivalence to: no rainbow triangles and every monochromatic graph is a cograph, equivalently free of an induced `P4`. A symbolic representation supplies `c(x,y)=label(LCA(x,y))`. Refining multifurcations supplies a containing binary tree; flipping every vertex having one component label together gives the component's order reversal. The generic two-circle obstruction is exactly an induced monochromatic `P4`.
+
+Executed independent checks of the stronger partial-valid-family premise:
+
+| Check | Actual results | Limit |
+|---|---|---|
+| All binary-tree families admitting one canonical circle at `n=5`, all anchored query subsets | 5 compatible trees, 31 nonempty families, 15 distinct complete profiles; 225 partial profiles; 81 all-cyclic systems. Every all-cyclic system had a containing binary tree. | Finite exhaustive check only. |
+| Same at `n=6` | 14 compatible trees, 16,383 families, 110 distinct complete profiles; 112,530 partial profiles; 35,397 all-cyclic systems. Every all-cyclic system had a containing binary tree. | Finite exhaustive check only. |
+| Seeded random valid families and partial anchored transcripts at `n=7` | Seed 20260930, 100,000 trials from 42 canonical-compatible trees; 39,802 all-cyclic systems; no induced monochromatic `P4` found in this screen. | Random screen does not exclude a rare counterexample. |
+
+Controls and receipts: `partial-source-cyclic-controls.py/.json` and `partial-source-random-controls.py/.json`. The exhaustive small checks independently enumerate graph-derived tree quartets and all pair assignments; they do not import the production learner. The random check uses the exact triangle transitivity criterion and tests the symbolic-ultrametric `P4` obstruction. Neither supplies an actual galled network realization for an arbitrary tree family.
+
+**Consequential peer result, received during this audit:** the adaptive-construction agent found an `n=7` valid tree-family partial transcript with all-transitive assignments and an induced monochromatic `P4`, while enumerating the 1,128 complete union profiles obtainable from canonical-compatible tree families. Their exact family reconstruction/checkpoint was still being completed at receipt. This refutes the universal **tree-family** containing-tree premise once its witness is verified; it does not yet establish admission in the narrower actual adjacent-copy network source. The root and adaptive agents were informed immediately. The primary representation theorem therefore identifies the right remaining gate, but does not eliminate it.
+
+This update supersedes any inference that the small and random PASS receipts support an all-size containing-tree theorem. They remain actual finite receipts; the reported peer counterexample is clearly distinct from an independently replayed source-network certificate.

@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "tree_rank_controls": [
+    {
+      "n": 4,
+      "binary_trees": 3,
+      "pair_variables": 3,
+      "full_primitive_ranks": [
+        1
+      ],
+      "common_order_dimension": 2
+    },
+    {
+      "n": 5,
+      "binary_trees": 15,
+      "pair_variables": 6,
+      "full_primitive_ranks": [
+        3
+      ],
+      "common_order_dimension": 3
+    },
+    {
+      "n": 6,
+      "binary_trees": 105,
+      "pair_variables": 10,
+      "full_primitive_ranks": [
+        6
+      ],
+      "common_order_dimension": 4
+    },
+    {
+      "n": 7,
+      "binary_trees": 945,
+      "pair_variables": 15,
+      "full_primitive_ranks": [
+        10
+      ],
+      "common_order_dimension": 5
+    }
+  ],
+  "total_binary_tree_rank_controls": 1068,
+  "broader_family_exact_minimax": [
+    {
+      "n": 4,
+      "support_profiles": 6,
+      "optimal_worst_case_queries": 1,
+      "memoized_candidate_states": 7,
+      "scope": "All nonempty common-circle binary-tree families; not an admitted-network minimax result."
+    },
+    {
+      "n": 5,
+      "support_profiles": 117,
+      "optimal_worst_case_queries": 5,
+      "memoized_candidate_states": 488,
+      "scope": "All nonempty common-circle binary-tree families; not an admitted-network minimax result."
+    }
+  ],
+  "admitted_fixture_subset_exact_minimax": {
+    "n": 5,
+    "input_orbits": {
+      "singleton_trees": 15,
+      "N1_orbit_profiles": 60,
+      "N2_orbit_profiles": 12
+    },
+    "support_profiles": 87,
+    "optimal_worst_case_queries": 5,
+    "memoized_candidate_states": 458,
+    "explicit_five_query_adversary": {
+      "baseline": "N2",
+      "alternatives": [
+        {
+          "rotation": 0,
+          "only_different_quartet": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "missing_split_as_mask": 12
+        },
+        {
+          "rotation": 1,
+          "only_different_quartet": [
+            0,
+            2,
+            3,
+            4
+          ],
+          "missing_split_as_mask": 7
+        },
+        {
+          "rotation": 2,
+          "only_different_quartet": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "missing_split_as_mask": 14
+        },
+        {
+          "rotation": 3,
+          "only_different_quartet": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "missing_split_as_mask": 3
+        },
+        {
+          "rotation": 4,
+          "only_different_quartet": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "missing_split_as_mask": 6
+        }
+      ],
+      "distinct_profiles": 6
+    },
+    "scope": "Source-admitted subset: all labeled binary trees and all relabelings of actual graph-certified N1/N2. Its optimum lower-bounds the full admitted source optimum."
+  },
+  "source_extension_counterexample": {
+    "fixture": "N1",
+    "admission_receipt_reused": true,
+    "full_splits_as_masks": [
+      3,
+      6,
+      7,
+      14
+    ],
+    "deleted_taxon": 0,
+    "restricted_common_orders": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        4,
+        3
+      ]
+    ],
+    "full_common_orders": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "nonextendible_old_circle": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "tested_insertions": [
+      [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      [
+        0,
+        1,
+        3,
+        4,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        3,
+        1,
+        2,
+        4
+      ]
+    ],
+    "passing_insertions": []
+  },
+  "scope": "Finite Gaussian rank controls and an actual admitted source-order extension counterexample. No master adaptive lower bound."
+}

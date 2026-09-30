@@ -1,7 +1,7 @@
 # Independent review of the anchored signed-graph order learner
 
 Contributor: Codex algebra-audit subagent, ALGEBRA-AUDIT-20260930.
-Date: 2026-09-30 UTC. Status: hand-derived proof checked against governing primary prior; implementation review pending until the implementation is available. No Lean certificate and no claim of historical novelty.
+Date: 2026-09-30 UTC. Status: hand-derived proof checked against governing primary prior; implementation and recorded verification reviewed, additional exact controls executed. No Lean certificate and no claim of historical novelty.
 
 ## Review verdict and scope
 
@@ -89,16 +89,19 @@ A union-find parity implementation takes O((V+E) alpha(V)) in its standard worst
 
 The compact graph represents all assignments without enumerating 2^d circles. Enumerating all circles is exponential output work, and should remain an optional small-instance control. A claim that the representation recovers the full split union would be contradicted by the source-admitted anchor collision.
 
-## Actual checks and remaining review
+## Actual checks and implementation review
 
 - Read local AGENTS.md, START-HERE.md, the completion standard, the anchored common-order proof, and the source-admitted anchor collision.
 - Independently opened and inspected the primary paper, including Theorem 7, Lemma 8, Theorem 8 and signed graph construction in Section 4.6.
 - Checked the proof, signs, binary-root node count, arbitrary-family quantifiers, reversal multiplicity and incomplete-input limitation above by hand.
-- Implementation review and additional exact controls will be appended after the root's implementation is available. This file does not claim those checks already ran.
+- Reviewed `order_recovery.py`, SHA256 `5c4f8346add6af9c4b3c229dc7b4904f19127c54595bb5fbcf36730603a0bdcd`, including unordered-pair signs, arbitrary anchor placement, nonempty-mask validation, parity union logic, defensive transitivity extraction and actual taxon split relabeling for the attributed sparse second stage. No defect found.
+- Inspected `verify_order_recovery.py` and its PASS receipt. The receipt records all 32,774 nonempty four/five-taxon tree families, additional nonminimum-anchor checks, inherited admitted N1/N2 fixtures at every anchor, and larger common-circle tree families through 64 taxa. I did not rerun the source admission or claim those arbitrary larger tree families were one admitted network.
+- Independently executed `algebra_review_controls.py` without importing production. It exhausted all 2,408 arbitrary nonempty anchored support tables at n=4,5 and compared every algebraic assignment with direct circular split alternations in every directed circle. All passed. Of these, 741 tables admit circles and 1,667 are inconsistent. Counts and dimensions are preserved in `algebra-review-controls.json`.
+- Subsequent adaptive continuation and its stronger hierarchy proof are independently reviewed in [GALLAI-AUDIT.md](GALLAI-AUDIT.md). The dense learner remains a valid concrete baseline; the adaptive continuation improves its query upper bound.
 
 ## 11. Process-integrity assessment
 
-The governing prior is explicit, and the main higher-level step is proved through individual binary trees instead of misapplying a level-one theorem directly to a higher-level network. This is a mathematical proof review, not a systematic clinical review; AMSTAR-2 and RoB-2 scores would be inapplicable. Remaining reproducibility work is to pin the implementation and actual exact-control receipt.
+The governing prior is explicit, and the main higher-level step is proved through individual binary trees instead of misapplying a level-one theorem directly to a higher-level network. This is a mathematical proof review, not a systematic clinical review; AMSTAR-2 and RoB-2 scores would be inapplicable. The implementation hash and actual exact-control receipt are now pinned; historical novelty remains unestablished.
 
 ## 12. Inference-robustness assessment
 
