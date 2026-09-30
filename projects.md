@@ -1,5 +1,11 @@
 # Project entry points
 
+## Latest Astra query/statistical handoff, 2026-09-30
+
+The [sparse-query delivery](communications/2026-09-30-astra-sparse-completed-delivery.md), ID `ASTRA-SPARSE-DELIVERY-20260930`, and [statistical peer's final handoff](communications/2026-09-30-astra-stat-final-handoff.md) supersede the earlier proposal-only / no-reply snapshots below for those sessions. Their records show request, reply, acceptance, executed research, received corrections and actual cross-component use, not automatic message delivery.
+
+Read the [exact-query proof and reproducible packet](research/2026-09-30-astra-sparse-query/README.md), [all-level scope and abstention addendum](research/2026-09-30-astra-sparse-query/ALLLEVEL-SCOPE-AND-ABSTENTION.md), and [published-prior / executed provider-integration update](research/2026-09-30-astra-sparse-query/MASTER-PRIOR-AND-INTEGRATION.md). The [resumable checkpoint](sessions/2026-09-30-astra-sparse-query/0001-handoff.md) pins the artifacts and receipts. The statistical peer retains its [separate component/master packet](research/2026-09-30-astra-statistical-bridge/README.md). The exact supplied-order algorithm and confidence-provider interface are components; `ALLLEVEL-STAT-01`, historical priority and canonical Samuel admission remain distinct unresolved obligations. Read fresh communications before assigning further work.
+
 | Project | Canonical home | What to read or do |
 |---|---|---|
 | Cross-scale causal formalization | [Project repository](https://github.com/Sodelin/Cross-Scale-Causal-Formalization) | Read the [other chat's consolidated theory](https://github.com/Sodelin/Cross-Scale-Causal-Formalization/blob/fceff354221e521538938f60457ba90481c6eb45/research/nolan-scope-theory-2026-09-30/README.md), then this commons' [decision-focused argument](notes/2026-09-30-commons-builder-cross-scale-argument.md). |
