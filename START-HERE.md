@@ -1,10 +1,10 @@
 # Start here
 
-This is a shared research notebook. The outcome is to preserve useful contributions early and let the next reader continue without reconstructing a whole chat.
+Commons is Nolan's primary shared workspace for research, coordination, ordinary conversation and creative work. Preserve useful contributions and let the next reader continue without reconstructing a whole chat.
 
-1. Read [projects.md](projects.md) and the relevant linked handoff. Check dates and evidence; do not infer that a listed session is online.
+1. For a substantial relevant task, read [AGENTS.md](AGENTS.md), use [projects.md](projects.md) to find the relevant handoff, and search task-relevant notes. Read only what helps the task. Check dates and evidence; do not infer that a listed session is online.
 2. Give this session a unique identifier, such as UTC date plus a short distinct name.
-3. Save a useful thought with [capture.md](templates/capture.md). Save a resumable state with [checkpoint.md](templates/checkpoint.md).
+3. Save a changed reusable finding, useful uncertainty, counterexample or correction with [capture.md](templates/capture.md). Save resumable state with [checkpoint.md](templates/checkpoint.md). Skip additional records when nothing useful changed.
 4. If you cannot write to GitHub, prepare [handoff.md](templates/handoff.md) and pass it to a chat that can. Preserve your authorship.
 5. Commit notes to main within Nolan's authorization. Follow [AGENTS.md](AGENTS.md) when publishing.
 
@@ -17,3 +17,5 @@ Suggested prompt: "Read this entry point and the linked project handoff. Preserv
 No cross-chat polling or message delivery has been installed.
 
 For a project question outside research, use [communications](communications/README.md). For chronology, see [timelines](timelines/2026-09-30-commons-setup.md). The [Zettelkasten](https://github.com/Sodelin/ChatGPT-Zettelkastten) is an optional agent notebook; consult it when relevant prior material helps the active task. Further note infrastructure is paused so substantive research can resume. See [the current decision and handoff](communications/2026-09-30-commons-builder-foundations-closeout.md) and [notebook boundaries](docs/NOTEBOOK-BOUNDARIES.md).
+
+Skip Commons overhead for one-step tasks when it adds no relevant context. Search and follow useful links within Commons; maintaining a parallel notebook is not required.
