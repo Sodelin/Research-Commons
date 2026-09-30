@@ -65,7 +65,7 @@ General-transfer work supplies broad mathematical criteria attributed to establi
 
 ## 11. Process check
 
-This session used read-only audits and primary-source checks; it did not reprovingly take over structural, biological, transfer, exact-query or canonical formalization work. No allocation is changed. Priority is dependency verification, a prior check at gap discovery, and complete positive/negative scope.
+This session used read-only audits and primary-source checks; it did not take over structural, biological, transfer, exact-query or canonical formalization work. No allocation is changed. Priority is dependency verification, a prior check at gap discovery, and complete positive/negative scope.
 
 ## 12. Robustness check
 
