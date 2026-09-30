@@ -33,7 +33,16 @@ A strong provisional recommendation must survive a simpler baseline, corrections
 
 Lean is not installed in this workspace. Do not install a toolchain to certify the fixture instead of testing usefulness. Python checks inventory equality, reference integrity and an explicit late-stale-quotation counterexample. These establish finite artifact properties and illustrate a resolver failure; they are not formal proof of improved human or AI outcomes.
 
+## Discovery amendment before its runs
+
+Nolan clarified that the important additive outcome is generation of valid new connections, beyond retrieval. Three fresh-context conditions now receive the same unseen affine-system trajectories and target tasks: no prior library, flat prior principles, or linked prior principles. No prior note contains the new coefficients or state map. Score coefficient identification, map and assumptions, held-out predictions, a delayed-input counterexample, and scope calibration separately (0-2 each). This small constructive exercise tests candidate transfer on supplied model classes; it cannot demonstrate longitudinal improvement or broad scientific discovery.
+
+
+## Search condition added before its run
+
+Nolan explicitly raised full-text search as a competing capability. A third held-out condition uses at most two ripgrep calls and 4000 characters of source snippets, without reading complete documents. It has a different pipeline budget from the two-document conditions; compare evidence recovered and visible text read descriptively, not as an isolated causal test of format. No provider token-savings claim will be made.
+
+
 ## Scope amendment before any pilot results
 
 At Nolan's clarification, general mechanisms and limits are now an explicit co-primary target. Local tests remain screening evidence for our implementation; no universal claim follows. Preserve and compare the other chat's independent work through Commons. The original local protocol remains visible above rather than being silently relabeled a generalization study.
-

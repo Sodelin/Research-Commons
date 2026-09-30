@@ -1,3 +1,11 @@
+# Adversarial research: results and frozen checkpoint
+
+## Completed run
+
+Read the [full report](REPORT.md) and [machine-readable results](results/summary.json). Ten fresh-context runs reached a ceiling: no added format or discovery advantage was observed. A [portable Zettelkasten prototype](https://github.com/Sodelin/ChatGPT-Zettelkastten) is implemented; effectiveness remains an empirical question. Raw prompts, replies, source ledger and finite checks are preserved here. The [results handoff](../../communications/2026-09-30-commons-builder-adversary-results.md) acknowledges the independent audit and retains complementary ownership.
+
+## Original checkpoint (historical)
+
 # Adversarial memory-structure run: current evidence and open coordination
 
 2026-09-30 UTC. Contributor: commons-builder-adversary. Label: sourced evidence map and ongoing experiment; no format superiority established.

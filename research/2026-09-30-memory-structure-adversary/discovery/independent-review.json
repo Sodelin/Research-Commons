@@ -1,0 +1,53 @@
+{
+  "reviewer": "commons_review",
+  "review_type": "Independent mathematical and answer-level review; arm labels visible",
+  "scope": "Reviewed gold.json and the three answer JSON files. Raw training rows and execution traces were not independently audited.",
+  "rubric": {
+    "model_identification": "0: materially wrong; 1: partially correct; 2: all A/B/C coefficients and C history update match the specified model classes and gold.",
+    "valid_map_and_proof": "0: invalid; 1: missing a material assumption or preservation argument; 2: k=3, matched inputs, compatible initial conditions, and universal transition preservation established conditional on the admitted model classes.",
+    "unseen_prediction": "0: materially wrong; 1: partially correct; 2: all supplied A/B path values correct.",
+    "reject_invalid_C_same_step_map": "0: accepts invalid map or gives invalid witness; 1: correct rejection without a sufficient witness; 2: numerically valid counterexample and correct current-versus-previous-input distinction.",
+    "qualify_history_aware_alternative": "0: asserts universal impossibility or empirical transfer; 1: incomplete limitation; 2: explicitly preserves possible history-aware alternatives and limits conclusions to the fictional model assumptions."
+  },
+  "scores": {
+    "none-answer.json": {
+      "model_identification": 2,
+      "valid_map_and_proof": 2,
+      "unseen_prediction": 2,
+      "reject_invalid_C_same_step_map": 2,
+      "qualify_history_aware_alternative": 2,
+      "total": 10
+    },
+    "flat-answer.json": {
+      "model_identification": 2,
+      "valid_map_and_proof": 2,
+      "unseen_prediction": 2,
+      "reject_invalid_C_same_step_map": 2,
+      "qualify_history_aware_alternative": 2,
+      "total": 10
+    },
+    "linked-answer.json": {
+      "model_identification": 2,
+      "valid_map_and_proof": 2,
+      "unseen_prediction": 2,
+      "reject_invalid_C_same_step_map": 2,
+      "qualify_history_aware_alternative": 2,
+      "total": 10
+    }
+  },
+  "mathematical_checks": [
+    "A is p_next=0.7*p+2*a; B is z_next=0.7*z+6*b; C is s_next=0.7*s+6*h with h_next=r.",
+    "Under z0=3*p0 and b_t=a_t for every step, 0.7*(3*p)+6*a=3*(0.7*p+2*a); induction establishes all-step A/B preservation within these exact model classes.",
+    "All answers give the correct A path [2,3.4,2.38,5.666,1.9662] and B path [6,10.2,7.14,16.998,5.8986].",
+    "The answers use a valid alternative to the gold counterexample: p=2, s=6, h=0, a=r=2 gives A_next=5.4, scaled_A_next=16.2, and C_next=4.2. Different valid witnesses receive full credit.",
+    "Every answer rejects only the specified current-state and same-step-input A/C map; none asserts that all history-aware or time-shifted mappings are impossible."
+  ],
+  "material_errors_in_answers": [],
+  "overclaim_assessment": {
+    "answer_level": "No answer claims empirical cross-domain validation, improved note effectiveness, or durable representational learning.",
+    "comparison_limit": "All three reach the scoring ceiling on one small task. This does not demonstrate that notes or links improve performance, that they are generally unnecessary, or that formats are generally equivalent for bounded agents.",
+    "learning_limit": "Within-session model fitting and algebraic transfer do not demonstrate persistent weight updates or improved abilities in a later fresh session.",
+    "discovery_limit": "The mapping is generated rather than directly copied, but the linear classes and scalar-map family strongly constrain the search. This is a task-specific construction, not evidence of broad scientific discovery.",
+    "verification_limit": "Claims about training-rank uniqueness agree with the gold rank condition; independent verification would require reviewing the actual training rows. Tool-use statements were not checked against traces."
+  }
+}

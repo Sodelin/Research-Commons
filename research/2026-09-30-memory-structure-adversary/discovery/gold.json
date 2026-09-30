@@ -1,0 +1,75 @@
+{
+  "coefficients": {
+    "A": [
+      0.7,
+      2
+    ],
+    "B": [
+      0.7,
+      6
+    ],
+    "C": [
+      0.7,
+      0,
+      6
+    ]
+  },
+  "map": {
+    "k": 3,
+    "input": "b=a",
+    "initial": "z0=3*p0"
+  },
+  "counterexample": {
+    "p": 0,
+    "s": 0,
+    "current_input": 1,
+    "previous_input": 0,
+    "A_next": 2,
+    "C_next": 0,
+    "scaled_A_next": 6
+  },
+  "limits": "Exact affine model class specified; distinct training rows determine coefficients. Real-world empirical transfer untested; history-aware alternative not excluded.",
+  "scoring": {
+    "models": 2,
+    "valid_map_and_assumptions": 2,
+    "heldout_predictions": 2,
+    "delayed_counterexample": 2,
+    "calibrated_scope": 2
+  },
+  "withheld_inputs": [
+    1,
+    0,
+    2,
+    -1
+  ],
+  "symbolic_argument": "k*(alpha*p+beta*a)=alpha*(k*p)+(k*beta)*a",
+  "expected_A_path": [
+    2.0,
+    3.4,
+    2.38,
+    5.666,
+    1.9662
+  ],
+  "expected_B_path": [
+    6.0,
+    10.2,
+    7.14,
+    16.998,
+    5.8986
+  ],
+  "exact_A_path": [
+    "2",
+    "17/5",
+    "119/50",
+    "2833/500",
+    "9831/5000"
+  ],
+  "exact_B_path": [
+    "6",
+    "51/5",
+    "357/50",
+    "8499/500",
+    "29493/5000"
+  ],
+  "training_rank_condition": "A and B include independent state/input probes; C includes independent current/history/state probes."
+}

@@ -1,0 +1,60 @@
+{
+  "models": {
+    "A": {
+      "alpha": 0.7,
+      "beta": 2,
+      "transition": "p_next=0.7*p+2*a"
+    },
+    "B": {
+      "gamma": 0.7,
+      "delta": 6,
+      "transition": "z_next=0.7*z+6*b"
+    },
+    "C": {
+      "eta": 0.7,
+      "theta": 0,
+      "kappa": 6,
+      "transition": "s_next=0.7*s+6*h; h_next=r"
+    }
+  },
+  "map": {
+    "state": "z=3*p",
+    "input": "b=a",
+    "assumptions": "Initially z0=3*p0, and corresponding input sequences agree at every step.",
+    "algebra": "For z=k*p and b=a, B gives z_next=0.7*k*p+6*a. Scaling A gives k*p_next=0.7*k*p+2*k*a. Equality for every admitted state and input requires 6=2*k, hence k=3. This preserves transitions universally within the stipulated model classes."
+  },
+  "A_path": [
+    2,
+    3.4,
+    2.38,
+    5.666,
+    1.9662
+  ],
+  "B_path": [
+    6,
+    10.2,
+    7.14,
+    16.998,
+    5.8986
+  ],
+  "C_counterexample": {
+    "initial": {
+      "p": 2,
+      "s": 6,
+      "h": 0
+    },
+    "unseen_current_input": {
+      "a": 2,
+      "r": 2
+    },
+    "A_next": 5.4,
+    "scaled_A_next": 16.2,
+    "C_next": 4.2,
+    "result": "The current-state scaling s=3*p with same-step r=a fails. Scaled A requires s_next=0.7*s+6*r, whereas C uses 0.7*s+6*h. Agreement requires h=r for that transition; it is not universal."
+  },
+  "limits": {
+    "learned": "The supplied rows uniquely determine coefficients within the admitted model classes. The generated A/B map and its universal transition preservation follow algebraically from those classes, rather than from a prewritten mapping.",
+    "not_established": "The counterexample rejects this same-time A/C map, not every possible history-aware map. Fictional fixtures and conditional mathematical proofs establish no empirical bridge or general transfer principle for real cross-disciplinary science.",
+    "tool_use": "One exec_command call read the specified flat-task.txt file. No other files, outside lookup, arithmetic tools, writes, or agents were used."
+  }
+}

@@ -1,0 +1,39 @@
+PRIOR NOTE LIBRARY
+## K1
+To transfer a result, identify which assumptions and operations the original argument actually uses. Similar naming or visual shape is not sufficient.
+
+## K2
+A useful analogy becomes a testable candidate by specifying maps for states, inputs and outputs, then checking that corresponding operations agree.
+
+## K3
+A temporal dependency may require an additional state variable. A map that works for current observations alone need not preserve interventions.
+
+## K4
+Preserve failed candidate maps and their counterexamples. A failed same-time transfer does not exclude a different map with explicit history.
+
+## K5
+Validate predictions outside the examples used to select a map. A conditional mathematical result does not supply an empirical bridge to real domains.
+
+Typed connections:
+K1 motivates K2 (specify what must survive).
+K2 is limited-by K3 (time dependencies may change state).
+K3 motivates K4 (retain a qualified failure).
+K2 requires K5 (check outside map-selection examples).
+These links summarize relationships already stated in the record bodies; they do not supply any new-system coefficients or map.
+
+You are testing transfer discovery, not retrieving a prewritten mapping. All systems below are fictional mathematical fixtures. Use only the given data and admitted model class. You may use Python arithmetic if desired after reading this prompt, but no outside lookup, other files, writes, or agents. Return JSON under 500 words: {models:{A:...,B:...,C:...},map:...,A_path:[...],B_path:[...],C_counterexample:...,limits:...}. Include the initial state in each predicted path. Report any tool use.
+
+NEW DOMAINS
+A describes an abstract accumulator p and current input a. Assume p_next = alpha*p + beta*a.
+Training rows (p,a,p_next): (-2,0,-1.4); (0,1,2); (4,0,2.8); (4,1,4.8).
+B describes an abstract reservoir z and current input b. Assume z_next = gamma*z + delta*b.
+Training rows (z,b,z_next): (-6,0,-4.2); (0,1,6); (12,0,8.4); (12,1,14.4).
+C describes a monitor s, current input r, and previous input h. Assume s_next = eta*s + theta*r + kappa*h, and h_next=r.
+Training rows (s,r,h,s_next): (0,0,0,0); (0,1,0,0); (0,0,1,6); (12,0,0,8.4).
+
+TASKS
+1. Infer the coefficients within the stated model classes.
+2. Generate a nonzero scalar state map z=k*p and a same-step input map b=a that preserves A/B transitions for every admitted state and input, not only training rows. State initial-state and input assumptions and show the algebra.
+3. Predict A from p0=2 and B from z0=6 under inputs [1,0,2,-1], including initial and four subsequent states.
+4. Test whether the same current-state scaling and same-step inputs also transfer A to C. Give a numerical unseen-input counterexample if not. Do not infer that every possible history-aware map is impossible.
+5. Explain what is actually learned/proved under these model assumptions versus established about real cross-disciplinary science. No mapping for this new pair appears in a prior-note library.

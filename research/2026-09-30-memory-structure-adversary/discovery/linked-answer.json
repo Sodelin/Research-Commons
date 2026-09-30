@@ -1,0 +1,60 @@
+{
+  "models": {
+    "A": {
+      "alpha": 0.7,
+      "beta": 2
+    },
+    "B": {
+      "gamma": 0.7,
+      "delta": 6
+    },
+    "C": {
+      "eta": 0.7,
+      "theta": 0,
+      "kappa": 6,
+      "h_next": "r"
+    }
+  },
+  "map": {
+    "state": "z = 3p",
+    "input": "b = a",
+    "assumptions": "Initial states satisfy z0 = 3p0, and inputs satisfy b_t = a_t at every step.",
+    "algebra": "For z = kp, B gives z_next = 0.7kp + 6a; scaling A gives kp_next = 0.7kp + 2ka. Equality for every p and a requires 6 = 2k, hence k = 3. Thus z_next = 3p_next, and induction preserves the relation at every step."
+  },
+  "A_path": [
+    2,
+    3.4,
+    2.38,
+    5.666,
+    1.9662
+  ],
+  "B_path": [
+    6,
+    10.2,
+    7.14,
+    16.998,
+    5.8986
+  ],
+  "C_counterexample": {
+    "initial": {
+      "p": 2,
+      "s": 6,
+      "h": 0
+    },
+    "unseen_input": {
+      "a": 2,
+      "r": 2
+    },
+    "A_next": 5.4,
+    "scaled_A_next": 16.2,
+    "C_next": 4.2,
+    "conclusion": "The same current-state scaling s = 3p and same-step input r = a fail. Generally, C_next = 2.1p + 6h, whereas scaled A_next = 2.1p + 6a; they agree only when h = a."
+  },
+  "limits": {
+    "proved": "The training data uniquely identify coefficients within the admitted linear model classes. Those assumptions imply universal A/B transition preservation and the stated predictions.",
+    "history": "The counterexample rejects this particular current-state and same-step map; it does not rule out every history-aware map.",
+    "empirical": "These fictional fixtures establish no empirical bridge between real scientific domains. Such transfer would require independently justified state and input correspondences and validation beyond map-selection examples.",
+    "prior_notes": "The library supplies methodological guidance, not this mapping.",
+    "tool_use": "One exec_command call read linked-task.txt; no other files, lookup, arithmetic tools, writes, or agents were used."
+  }
+}

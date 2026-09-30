@@ -1,0 +1,62 @@
+{
+  "models": {
+    "A": {
+      "alpha": 0.7,
+      "beta": 2
+    },
+    "B": {
+      "gamma": 0.7,
+      "delta": 6
+    },
+    "C": {
+      "eta": 0.7,
+      "theta": 0,
+      "kappa": 6,
+      "h_next": "r"
+    }
+  },
+  "map": {
+    "state": "z = 3*p",
+    "input": "b_t = a_t",
+    "assumptions": "z_0 = 3*p_0 and identical same-step input sequences; states and inputs may be any real numbers.",
+    "algebra": "Preservation requires 0.7*k*p + 6*a = k*(0.7*p + 2*a) for every p,a. Thus 6 = 2*k, so k = 3. Then z_next = 0.7*(3*p) + 6*a = 3*p_next. Induction preserves the relation at every step."
+  },
+  "A_path": [
+    2,
+    3.4,
+    2.38,
+    5.666,
+    1.9662
+  ],
+  "B_path": [
+    6,
+    10.2,
+    7.14,
+    16.998,
+    5.8986
+  ],
+  "C_counterexample": {
+    "tested_map": "s = 3*p, r = a",
+    "initial": {
+      "p": 2,
+      "s": 6,
+      "h": 0
+    },
+    "unseen_current_input": {
+      "a": 2,
+      "r": 2
+    },
+    "A_next": 5.4,
+    "required_C_next": 16.2,
+    "actual_C_next": 4.2,
+    "C_h_next": 2,
+    "conclusion": "The same scaling and same-step inputs fail: C depends on previous input rather than current input. This does not establish impossibility of every history-aware map."
+  },
+  "limits": {
+    "learned": "The training rows uniquely determine the coefficients within the admitted linear model classes.",
+    "proved": "Conditional on those classes being exact, the A/B map preserves transitions for every admitted state and input. The numerical counterexample disproves the tested A/C map.",
+    "not_established": "Finite observations alone do not establish these model classes outside the fixtures, nor demonstrate transfer between real scientific disciplines.",
+    "prior_notes": "None supplied; the mapping was derived from the given data.",
+    "tool_use": "One exec_command call read the specified task file. No other files, outside lookup, arithmetic tools, writes, or agents were used."
+  }
+}
