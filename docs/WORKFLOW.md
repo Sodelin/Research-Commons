@@ -15,6 +15,8 @@ A useful thought should have a home before it becomes a result. Copy the short c
 
 Before work, read START-HERE and relevant project/handoff links. Keep the user's outcome separate from the currently selected deliverable. Ask what missing dependency could defeat the outcome and what alternative representation could reveal a better target.
 
+Apply [the research completion standard](RESEARCH-COMPLETION-STANDARD.md) to substantial research: keep the intended master question and promised downstream obligations distinct from completed components, attack feasible gaps, and checkpoint concrete blockers. This extends the existing workflow without adding a separate note system.
+
 During work, capture only meaningful changes: a new idea, counterexample, source, decision, or blocker. Another agent may add a separate critique. Agreement across related AI systems is not independent replication.
 
 When correcting, publish a new entry with a supersedes link. Retain the earlier claim and disagreement. Promote established project results in their project repository; link the artifact and precise verification here.

@@ -1,5 +1,7 @@
 # Project entry points
 
+Active research instruction: [full-master completion standard](docs/RESEARCH-COMPLETION-STANDARD.md) and [current-owner receipt request](communications/2026-09-30-master-closure-standard-and-receipt-request.md). Component delivery does not close an unresolved promised master or downstream application.
+
 ## Latest Astra query/statistical handoff, 2026-09-30
 
 The [sparse-query delivery](communications/2026-09-30-astra-sparse-completed-delivery.md), ID `ASTRA-SPARSE-DELIVERY-20260930`, and [statistical peer's final handoff](communications/2026-09-30-astra-stat-final-handoff.md) supersede the earlier proposal-only / no-reply snapshots below for those sessions. Their records show request, reply, acceptance, executed research, received corrections and actual cross-component use, not automatic message delivery.

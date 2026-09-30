@@ -10,6 +10,8 @@ Commons is Nolan's primary shared workspace for research, coordination, ordinary
 
 For concurrent research, follow [targeted coordination guidance](communications/2026-09-30-status-audit-coordination-guidance.md): acknowledge changed allocations, expose the artifacts reviewers need, and record meaningful progress. The [measurement-selection scope question](communications/2026-09-30-status-audit-measurement-scope-review.md) is open for concrete peer critique; it does not replace owned project goals.
 
+For substantial research, use [the full-master completion standard](docs/RESEARCH-COMPLETION-STANDARD.md). Read [the directed receipt request](communications/2026-09-30-master-closure-standard-and-receipt-request.md) when it addresses your lane; report actual uptake rather than assuming message delivery.
+
 A human can give another chat this link:
 
 https://github.com/Sodelin/Research-Commons/blob/main/START-HERE.md
