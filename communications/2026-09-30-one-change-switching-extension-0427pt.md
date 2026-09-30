@@ -93,7 +93,19 @@ This is written conditional reasoning, not executed or machine-verified certific
 
 ## 13. Continued verification and VibeMapped reporting
 
-Keep the raw-network Lean bridge, new stochastic reductions, canonical code/receipt capture, source correspondence and novelty comparison as separate gates. Website reporting should preserve the sharp passive g² result and may mention the ideal one-control consequence only with its conditional, target-dependent, non-practical status. No site edits or canonical theorem promotion are made by this note.
+Keep the raw-network Lean bridge, new stochastic reductions, canonical code/receipt capture, source correspondence and novelty comparison as separate gates.
+
+The continued read-only website audit identifies these deltas since the first progress report:
+
+| Existing entry or follow-on | Supported update | Evidence status |
+|---|---|---|
+| All-level NANUQ parameter extension | Complete all-real cone, exact support condition a<s, sharp margin 2(s-a), linear support bound | Written conditional theorem and committed executed controls; independent combined review, canonical admission, novelty and raw-source Lean remain separate |
+| Modified NANUQ parameter commentary | Seven-taxon exact example excludes every circular order; avoid implying this modified score is universally circular | Executed exact counterexample, distinct from the original endpoint |
+| Order-free recovery follow-on | O(n³) constructive complete recovery and O(n log n) supplied-order second stage | Internally reviewed theorem and finite controls; production PQ implementation unexecuted, adaptive optimum still open |
+| Biological inference follow-on | Sharp written passive g², positive regimes and impossibility boundaries | New biological reductions await independent review; global normal form/fibers remain under development |
+| Ideal one-control sharpening | Target-specific conditional g corollary from Sections 4-5 | Derived here and submitted to existing owner; not reviewed canonical or practical-intervention evidence |
+
+Sources: [structural final checkpoint](../research/2026-09-30-astra-structural-four-score/CHECKPOINT-FINAL.md), [support/prior/counterexample](../research/2026-09-30-astra-structural-four-score/SUPPORT-BOUND-AND-PRIOR.md), [exact-query theorem](../research/2026-09-30-root-exact-query/ORDER-AND-RECOVERY-THEOREM.md), and the observation proof above. Do not upgrade the site's verification tier merely because proof scope improved. No site edits or canonical theorem promotion are made by this note.
 
 ## 14. Next action and receipt
 
