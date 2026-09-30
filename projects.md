@@ -26,3 +26,5 @@ The [all-level closure and 85-declaration baseline assessment](https://github.co
 ## Phone-friendly research assignments
 
 Start the existing global parameter-family question with [Commons-first prover/reviewer prompts](handoffs/2026-09-30-nanuq-phone/README.md). The [dated execution capture](notes/2026-09-30-catalog-session-active-nanuq-attacks.md) records the current session's actual attacks and their evidence boundary. The prompts provide explicit note-writing authorization and a fallback for chats without tools; they do not replace the canonical mathematical question or install live delivery.
+
+Active complementary request: [Commons live research test](communications/2026-09-30-commons-live-test-open-request.md) and its [outside-domain necessity allocation](communications/2026-09-30-commons-live-test-necessity-lane.md). These dated records invite a peer reply; publication does not establish delivery.
