@@ -38,3 +38,9 @@ historical intervention or a minimal actuator count.
 
 Next action: exact rational recurrence checks, independent proof audit, and
 the statistical contract/resource accounting. No new enumeration has been started.
+
+Final continuation pointer, 2026-09-30 UTC: [REPORT.md](REPORT.md) supersedes this
+early research snapshot for current status. It includes the stronger equal-law
+controlled competitor, reviewed history criterion, one-coin support compiler,
+executed checks and explicit master-open register. The original snapshot remains
+preserved above.
