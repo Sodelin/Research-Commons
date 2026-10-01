@@ -21,6 +21,17 @@ Samuel source and Commons hand proofs retain their original attribution.
 - G7OriginalCensus: original degree rules and original edge identities imply
   `|V|+1=2n+2r` and `|E|+2=2n+3r`. No compressed-core actuator interpretation or
   supplied count identity is assumed
+- G1SharedRegisterStress: actual exponential pair holding-time laws at positive
+  rates, normalized/nonnegative register-forest kernel, and an exact exposed
+  shared-register countercontrol to independent marginal resampling
+- G2LiveLineageRouting: actual original hybrid/parent-edge IDs, surjective
+  original-copy membership in live ancestors, preservation of merged ancestors,
+  and an exact countercontrol to incorrectly re-coining each original copy
+- G5MinimalGraphInterface: bridge/descendant equality generalized to every
+  rooted acyclic edge-indexed graph without LSA, binarity, finiteV, galledness or
+  planarity
+- G5CutChildNecessity: explicit four-tip positive-calendar binary LSA source
+  demonstrates why child-cut cannot be dropped from the protective-route proof
 
 Each has an actual matching-compiler run, source SHA-256, and explicit axiom log.
 The successful logs show only standard Lean axioms, with no placeholders.
@@ -62,10 +73,11 @@ the original Git blobs and publication-manifest source hashes. The three
 explicit draft/probe exclusions remain excluded.
 
 Fresh rebuilding uses matching Lean 4.33.1 and mathlib commit
-0df444a360eaa60ab8c11dca51a86af692955474. Sixty of 114 included modules passed
-before the 300-second process limit on ThetaCertificate6; a bounded larger
-resume preserves those successful checks. The current receipt distinguishes
-completed source modules, timeout attempts, and still-unchecked modules.
+0df444a360eaa60ab8c11dca51a86af692955474. The terminal result is 96 of 114 included
+modules freshly passed, five finite certificates resource-blocked, and thirteen
+dependent modules unchecked. No certificate retry is running. Exact attempt
+history, memory_exception logs, successful source hashes and axiom logs are
+preserved. See BASELINE-TERMINAL-PARTIAL-RECEIPT.md.
 
 AnchorComposition and CircularComposition still contain explicit biological
 graph-composition/contiguous-port hypotheses. CanonicalTheta is a local canonical

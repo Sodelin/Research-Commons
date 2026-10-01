@@ -1,0 +1,43 @@
+GProgram.G1.pairSurvival_eq_exp {rate duration : ℝ} (hr : 0 < rate) (ht : 0 ≤ duration) :
+  GProgram.G1.pairSurvival rate duration = Real.exp (-(rate * duration))
+GProgram.G1.shared_register_exact_counterexample :
+  GProgram.G1.marginalForestKernel (1 / 2) (Real.log 2) (Real.log 4) true = 3 / 8 ∧
+    GProgram.G1.retainedRegisterJoint (1 / 2) (Real.log 2) (Real.log 4) false true = 1 / 4 ∧
+      GProgram.G1.freshMarginalJoint (1 / 2) (Real.log 2) (Real.log 4) false true = 3 / 16
+GProgram.G1.exposed_event_preserved_iff_equal_conditionals {p x0 x1 : ℝ} (hp : 0 < p) (hp1 : p < 1) :
+  p * x0 = p * (p * x0 + (1 - p) * x1) ↔ x0 = x1
+GProgram.G2.coalesced_copies_cannot_split.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  {Copy : Type u_4} {L : Type u_5} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]
+  {N : Nanuq.Source.RootedBinary V E X} (H : GProgram.G2.OriginalHybridParents N)
+  (state : GProgram.G2.LiveAncestry Copy L) (coin : L → Bool) {x y : Copy} (hxy : state.ancestor x = state.ancestor y) :
+  GProgram.G2.routedParent H state coin x = GProgram.G2.routedParent H state coin y
+GProgram.G2.routed_parent_eq_iff_live_coin_eq.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  {Copy : Type u_4} {L : Type u_5} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]
+  {N : Nanuq.Source.RootedBinary V E X} (H : GProgram.G2.OriginalHybridParents N)
+  (state : GProgram.G2.LiveAncestry Copy L) (coin : L → Bool) (x y : Copy) :
+  GProgram.G2.routedParent H state coin x = GProgram.G2.routedParent H state coin y ↔
+    coin (state.ancestor x) = coin (state.ancestor y)
+GProgram.G5.protective_population_block_eq.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2} {X : Type u_3} [Fintype V]
+  [Fintype E] [Fintype X] [DecidableEq V] (N : Nanuq.Source.RootedBinary V E X) (R : GProgram.G5.RouteFamily N)
+  (B : Finset X) (C : GProgram.G5.Calendar N.graph) {h : V} (hh : N.graph.IsHybrid h) {e : E}
+  (hs : N.graph.source e = h) (he : N.graph.IsBridge e) {t : ℝ} (ht : C.age (N.graph.target e) ≤ t ∧ t < C.age h) :
+  GProgram.G5.selectedPopulationBlock N R B C t e = GProgram.G5.selectedDescendants N B h
+GProgram.G5.Minimal.bridge_component_iff_descendant.{u_1, u_2} {V : Type u_1} {E : Type u_2}
+  (G : Nanuq.Source.EdgeGraph V E) (root : V) (ha : G.Acyclic) (hr : ∀ (v : V), G.DReach root v) {e : E}
+  (he : G.IsBridge e) (v : V) : G.ReachWithout e (G.target e) v ↔ G.DReach (G.target e) v
+GProgram.G5.CutChildTest.actual_protective_route_failure :
+  GProgram.G5.CutChildTest.graph.DReach 3 (GProgram.G5.CutChildTest.leaf 1) ∧
+    GProgram.G5.CutChildTest.calendar.age (GProgram.G5.CutChildTest.graph.target 6) ≤ 13 / 2 ∧
+      13 / 2 < GProgram.G5.CutChildTest.calendar.age 3 ∧
+        GProgram.G5.EdgePath GProgram.G5.CutChildTest.graph 0 (GProgram.G5.CutChildTest.leaf 1) [1, 5, 9] ∧
+          6 ∉ [1, 5, 9] ∧ GProgram.G5.CutChildTest.calendar.Active (13 / 2) 5
+GProgram.G7.original_census.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2} {X : Type u_3} [Fintype V] [Fintype E]
+  [Fintype X] [DecidableEq V] (N : Nanuq.Source.RootedBinary V E X) :
+  Fintype.card V + 1 = 2 * Fintype.card X + 2 * GProgram.G7.hybridCount N ∧
+    Fintype.card E + 2 = 2 * Fintype.card X + 3 * GProgram.G7.hybridCount N
+'GProgram.G1.shared_register_exact_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.coalesced_copies_cannot_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G5.protective_population_block_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G5.Minimal.bridge_component_iff_descendant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G5.CutChildTest.actual_protective_route_failure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.original_census' depends on axioms: [propext, Classical.choice, Quot.sound]
