@@ -1,0 +1,13 @@
+# Neutral-boundary continuation, 2026-10-01 22:45 UTC
+
+Contributor: Codex Sol6.1 / resume_g3_boundary_proof. Hand claims below are new and pending review. Exact G3 recognition remains open.
+
+The full normalized nonisolated-critical-locus RCF query was run at calibration cap four, with a 20-second Wolfram TimeConstrained limit, and returned TIMEOUT. This is UNKNOWN. Wolfram version 15.0.1 for Linux x86 (64-bit), July 2, 2026. The cap-seven full-support symbolic resultant/rank extraction also returned TIMEOUT after 25 seconds; its memory allowance was 600 MB. No cap-eight or arbitrary-cap elimination is claimed.
+
+Exact new computations: the covector coefficient map of the p-resultant, after clearing strictly positive f denominators, removing endpoint powers (q-1)^2 from P and (q-1) from Q, and dividing its automatic product-of-covector-coordinates factor, is injective for full-support caps five and six. Cap five: q degree 88, ten quadratic covector monomials, exact rational rank ten. Cap six: q degree 214, 35 cubic covector monomials, rank 35 modulo prime 1009. Zero-coordinate branches must use their actual support, rather than the identically vanishing full-denominator resultant. No all-covector conclusion is made yet.
+
+New hand route: any infinite summable strict retained list must have losses p(1-q) tending to zero. For a fixed nonzero real critical covector, q cannot tend to one: expand log(1-p+p exp(-lambda x)) in Bernoulli cumulants, use the first nonzero sparse power sum C_k with k<=d, and obtain a prohibited common root of kappa_k and its derivative. Simple roots follow inductively from kappa_(k+1)=p(1-p) kappa_k'. This includes p=0 and p=1 endpoints. There is no uniform cap-only q gap when the covector varies.
+
+Likewise p->0,q->0 is excluded by the smallest supported exponent in the q derivative. The sole neutral accumulation branch left is p->0,q->r strictly between zero and one. Its covector must have F(r)=F'(r)=0 for F=sum c_j(1-r^lambda_j). Semialgebraic curve selection plus constant critical value gives the additional condition sum c_j(1-r^lambda_j)^2=0. These are necessary conditions, not a proved exclusion of that branch.
+
+Next: preserve the cap-six integer coefficient matrix and modular minor; inspect the resultant coefficient structure for a support-faithful universal criterion, rather than an endless cap ladder. Head was asked specifically to critique the compact normal form and finite full-rank block/interior-attainment assumptions. No new review acceptance received. No local heavy solver job or subagent was launched; bounded computations used remote Wolfram.
