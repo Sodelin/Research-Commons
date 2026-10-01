@@ -5,7 +5,7 @@ This does not establish any theorem beyond the successfully compiled source
 statements, and never turns a conditional source bridge into a closure claim.
 """
 from pathlib import Path
-import hashlib, json, os, re, subprocess, time
+import hashlib, json, os, re, subprocess, time, sys, shutil
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / 'source/research/nanuq-all-level-2026-09-29/source-development/formal-full'
@@ -40,17 +40,34 @@ receipt = {'source_repository':'Sodelin/Work-on-Samuel-Alexander-Research-',
  'status':'IN_PROGRESS','expected_modules':len(order),'excluded':sorted(EXCLUDED),
  'order':order,'modules':[],'raw_final_source_theorem':'ABSENT_NOT_CLAIMED',
  'entire_G_program':'NOT_CLAIMED'}
+if '--resume' in sys.argv and RECEIPT.exists():
+    previous=json.loads(RECEIPT.read_text())
+    if previous['source_commit'] != receipt['source_commit'] or previous['mathlib_commit'] != receipt['mathlib_commit']:
+        raise RuntimeError('Refusing to resume a different pinned source/dependency set')
+    receipt['attempts']=previous.get('attempts',[])
+    receipt['modules']=[]
+    for row in previous['modules']:
+        m=row['module']
+        if row['source_sha256'] != hashlib.sha256(modules[m].read_bytes()).hexdigest():
+            raise RuntimeError('Refusing to reuse a changed source module: '+m)
+        if row['exit_code']==0 and not row['error_or_sorryAx'] and (OBJECTS/(m+'.olean')).exists():
+            receipt['modules'].append(row)
+        else:
+            receipt['attempts'].append(row)
+            old=LOGS/(m+'.log')
+            if old.exists(): shutil.copyfile(old, LOGS/(m+f'.attempt{len(receipt["attempts"])}.log'))
 def save():
     tmp = RECEIPT.with_suffix('.tmp')
     tmp.write_text(json.dumps(receipt,indent=2)+'\n'); tmp.replace(RECEIPT)
 save()
 started = time.monotonic()
 for m in order:
+    if any(row['module']==m for row in receipt['modules']): continue
     if time.monotonic()-started > 1800:
         receipt['status']='BOUNDED_WINDOW_ENDED';save();break
     p = modules[m]; log = LOGS/(m+'.log'); start = time.monotonic()
     print(f'BUILD {len(receipt["modules"])+1}/{len(order)} {m}',flush=True)
-    limit = 300 if 'Certificate' in m else 120
+    limit = 1200 if 'Certificate' in m else 120
     with log.open('w') as handle:
         try:
             cp=subprocess.run([str(LEAN),'-o',str(OBJECTS/(m+'.olean')),str(p)],
