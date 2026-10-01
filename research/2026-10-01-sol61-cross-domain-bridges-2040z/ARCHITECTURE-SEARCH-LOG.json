@@ -1,0 +1,680 @@
+{
+  "id": "SOL61-GENEALOGY-SORTER-ARCHITECTURE-20261001",
+  "date": "2026-10-01",
+  "mode": "rapid non-exhaustive evidence map",
+  "sources": "Primary original articles/preprints and official software docs used for claims; secondary candidates used only for discovery",
+  "native_queries": [
+    {
+      "query": "RevBayes[Title] OR \"BEAST 2.5\"[Title] OR \"LinguaPhylo\"[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 10,
+        "max_abstract_chars": 6000
+      },
+      "total_count": 6,
+      "returned_count": 6,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [
+        "\"BEAST 2.5\"[Title]"
+      ],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "ARGweaver[Title/Abstract] OR SINGER[Title/Abstract] OR \"ancestral recombination graphs\"[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 10,
+        "max_abstract_chars": 6000
+      },
+      "total_count": 2096,
+      "returned_count": 10,
+      "next_offset": 10,
+      "has_more": true,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "\"BEAST 2.5\"[Title/Abstract]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 12,
+        "max_abstract_chars": 4000
+      },
+      "total_count": 0,
+      "returned_count": 0,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [
+        "\"BEAST 2.5\"[Title/Abstract]",
+        "No items found."
+      ],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "(\"SINGER\"[Title/Abstract] AND (genealog*[Title/Abstract] OR recombination[Title/Abstract])) OR \"Genome-wide inference of ancestral recombination graphs\"[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 12,
+        "max_abstract_chars": 4000
+      },
+      "total_count": 9,
+      "returned_count": 9,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [
+        "\"Genome-wide inference of ancestral recombination graphs\"[Title]"
+      ],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "\"tskit\"[Title/Abstract] OR \"tsinfer\"[Title/Abstract] OR \"Relate\"[Title] OR \"tsdate\"[Title/Abstract]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 12,
+        "max_abstract_chars": 4000
+      },
+      "total_count": 3108,
+      "returned_count": 12,
+      "next_offset": 12,
+      "has_more": true,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "(\"automated\"[Title] OR \"automatic\"[Title]) AND (phylogen*[Title] OR Bayesian[Title])",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 12,
+        "max_abstract_chars": 4000
+      },
+      "total_count": 230,
+      "returned_count": 12,
+      "next_offset": 12,
+      "has_more": true,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "10.1371/journal.pcbi.1006650[AID]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 6,
+        "max_abstract_chars": 3000
+      },
+      "total_count": 1,
+      "returned_count": 1,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "PhyloNet[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 6,
+        "max_abstract_chars": 3000
+      },
+      "total_count": 2,
+      "returned_count": 2,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "MSCquartets[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 6,
+        "max_abstract_chars": 3000
+      },
+      "total_count": 1,
+      "returned_count": 1,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "ModelTeller[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 6,
+        "max_abstract_chars": 3000
+      },
+      "total_count": 1,
+      "returned_count": 1,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "PhyDesign[Title]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 6,
+        "max_abstract_chars": 3000
+      },
+      "total_count": 1,
+      "returned_count": 1,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    },
+    {
+      "query": "10.1093/sysbio/syx085[AID]",
+      "source": "PubMed connector",
+      "filters": {
+        "max_results": 3,
+        "max_abstract_chars": 4500
+      },
+      "total_count": 1,
+      "returned_count": 1,
+      "next_offset": null,
+      "has_more": false,
+      "warnings": [],
+      "pagination": "rapid top sample; broad name collisions were narrowed rather than claiming enumeration"
+    }
+  ],
+  "web_queries": [
+    {
+      "query": "RevBayes graphical models modular Bayesian phylogenetic inference posterior predictive model checking 2016",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "BEAST 2.7 advanced package management computational performance model testing Bayesian phylogenetic inference",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "ARGweaver posterior sampling ancestral recombination graphs query uncertainties 2014",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "genealogy inference framework automatic method selection robust model checking phylogenetics uncertainty",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "BEAST 2.5 advanced software platform Bayesian evolutionary analysis PLOS 2019",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "RevBayes P3 posterior prediction validation simulation based calibration documentation",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "SINGER Bayesian genome wide genealogies 2025 posterior query",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "tskit tree sequence inference tsinfer tsdate uncertainty posterior",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"simulation-based inference\" \"ALFFI\" confidence frequentist",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"sbi\" toolkit 2025 diagnostics calibration posterior predictive checks",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"pyABC\" adaptive approximate Bayesian computation software parallel model selection",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"BayesFlow\" amortized Bayesian workflows calibration model comparison experimental design",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"2018\" likelihood Bayesian software networks primary",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"LinguaPhylo\" \"validation\" simulation model modular",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"ELFI\" likelihood free inference graph software Bayesian optimization 2018",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"AutoStatistician\" \"phylogenetic\" method selection",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"auto\" \"phylogenetic\" \"algorithm selection\" portfolio",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Phylogenetic\" \"experimental design\" \"Bayesian\" sampling genes taxa information gain",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"LF2I\" likelihood free frequentist inference confidence diagnostics",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"automated\" \"partial identification\" \"AutoBounds\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"An Automated Approach to Causal Inference in Discrete Settings\" 2024 JASA autobounds",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyDesign\" \"2011\" phylogenetic informativeness",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"MSCquartets\" \"2021\" R package",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Certified Task-Conditioned Active Observability\" 2609.28520",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"sbi\" \"2025\" \"toolkit\" Deistler Boelts paper",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Certified Task-Conditioned Active Observability\" authors",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"BayesFlow\" \"design\" optimize design documentation",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"algorithm portfolio\" \"certified\" \"selection\" inference statistical",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Inference of Reticulate Evolutionary Histories by Maximum Likelihood using PhyloNet\" 2018",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"software\" \"2018\" \"Bayesian\" Wen",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"ModelTeller\" \"doi\" phylogenetic 2020 msaa154",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"An Automated Approach\" \"causal\" \"github\" \"bounds\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"SATzilla\" \"2008\" portfolio SAT solvers JAIR",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"certified\" \"algorithm selection\" \"statistical\" inference confidence",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Universal inference\" Wasserman Ramdas Balakrishnan 2020 PNAS confidence split likelihood",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"sequential Bayesian experimental design\" \"Pyro\" Foster 2019 2021 deep adaptive design",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Robust universal inference for misspecified models\" arxiv",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Goal-oriented optimal Bayesian experimental design\" 2018",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Deep Adaptive Design\" \"2021\" proceedings",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"sbi\" \"model misspecification\" \"diagnostic tools\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"common inheritance\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"independent inheritance\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Bayesian inference\" \"networks\" \"Wen\" \"Nakhleh\" \"2018\" sequence likelihood",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"MCMC_SEQ\" \"ultrametric\" \"mutation\" \"population\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"MCMC_SEQ\" \"gamma\" inheritance lineages",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"Coestimating Reticulate\" \"pdf\" Wen Nakhleh",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"parallel edges\"",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    },
+    {
+      "query": "\"PhyloNet\" \"independent\" \"lineages\" inheritance",
+      "source": "web search",
+      "filters": "no date or domain restriction; primary-only selection after retrieval",
+      "pagination": "ranked returned sample, not exhausted",
+      "yield_count": "not exported as an exhaustive count"
+    }
+  ],
+  "semantic_discovery": {
+    "source": "alphaXiv",
+    "difficulty": 7,
+    "keywords": [
+      "genealogy",
+      "simulation-based inference",
+      "partial identification",
+      "active experimental design",
+      "algorithm portfolios"
+    ],
+    "prioritize": "default",
+    "question": "Has an implemented framework already combined compatible genealogy laws, target queries, model checking, uncertainty calibration, adaptive method and measurement selection? Compare modular probabilistic phylogenetic platforms, ARG latent inference, robust or partial identification engines, and certified algorithm routing.",
+    "returned_candidates": 14,
+    "selection": "Mostly recent unrelated title/concept collisions. Active-observability candidate primary retrieved and explicitly preprint-only."
+  },
+  "full_text_retrievals": [
+    {
+      "id": "beast2019",
+      "url": "https://doi.org/10.1371/journal.pcbi.1006650",
+      "access": "publisher_full",
+      "locator": "What is BEAST?; Model selection and model adequacy; Validation, testing and quality management"
+    },
+    {
+      "id": "lphy2023",
+      "url": "https://doi.org/10.1371/journal.pcbi.1011226",
+      "access": "publisher_full",
+      "locator": "Abstract; implementation"
+    },
+    {
+      "id": "revbayes2016",
+      "url": "https://doi.org/10.1093/sysbio/syw021",
+      "access": "primary_abstract_plus_official_docs",
+      "locator": "Abstract; official validation documentation"
+    },
+    {
+      "id": "p32018",
+      "url": "https://doi.org/10.1093/molbev/msx286",
+      "access": "primary_abstract",
+      "locator": "Abstract; implementation claim only"
+    },
+    {
+      "id": "singer2025",
+      "url": "https://doi.org/10.1038/s41588-025-02317-9",
+      "access": "selected_original_pdf_pages",
+      "locator": "Results; Discussion; sampled original PDF pages"
+    },
+    {
+      "id": "phylonet2018",
+      "url": "https://doi.org/10.1093/sysbio/syy015",
+      "access": "publisher_full",
+      "locator": "Models and Main Inference Features"
+    },
+    {
+      "id": "mscquartets2021",
+      "url": "https://doi.org/10.1093/bioinformatics/btaa868",
+      "access": "publisher_full_plus_current_docs",
+      "locator": "Original abstract/article; CRAN3.3 package and manual"
+    },
+    {
+      "id": "sbi2025",
+      "url": "https://doi.org/10.21105/joss.07754",
+      "access": "original_software_paper",
+      "locator": "pp1-3; official diagnostic guide"
+    },
+    {
+      "id": "autobounds2024",
+      "url": "https://doi.org/10.1080/01621459.2023.2216909",
+      "access": "selected_original_preprint_pages",
+      "locator": "arXiv2109.13471v1 \u00a7\u00a73-8; Algorithms1-2"
+    },
+    {
+      "id": "lf2i2024",
+      "url": "https://arxiv.org/abs/2107.03920v10",
+      "access": "selected_original_preprint_pages",
+      "locator": "arXiv2107.03920v10 Fig1; \u00a7\u00a73-4/6; AppendixF"
+    },
+    {
+      "id": "bayesflow2026",
+      "url": "https://arxiv.org/html/2602.07098v2",
+      "access": "original_html_and_selected_pdf_pages",
+      "locator": "arXiv2602.07098v2 \u00a7\u00a72-5; actual static BED official example"
+    },
+    {
+      "id": "universal2020",
+      "url": "https://doi.org/10.1073/pnas.1922664117",
+      "access": "selected_expanded_original_preprint_pages",
+      "locator": "arXiv1912.11436v4 Theorem1 and sequential Theorem11; version distinguished"
+    },
+    {
+      "id": "robustuniversal2026",
+      "url": "https://doi.org/10.1093/biomet/asaf070",
+      "access": "selected_original_preprint_pages",
+      "locator": "arXiv2307.04034v4 Introduction; projected-distribution target"
+    },
+    {
+      "id": "dad2021",
+      "url": "https://proceedings.mlr.press/v139/foster21a",
+      "access": "selected_original_paper_pages",
+      "locator": "PMLR139 \u00a7\u00a72-3; author code exists"
+    },
+    {
+      "id": "modelteller2020",
+      "url": "https://doi.org/10.1093/molbev/msaa154",
+      "access": "publisher_full",
+      "locator": "Methods; Results"
+    },
+    {
+      "id": "phydesign2011",
+      "url": "https://doi.org/10.1186/1471-2148-11-152",
+      "access": "publisher_full",
+      "locator": "Input; Results; homoplasy warning"
+    },
+    {
+      "id": "pgs2025",
+      "url": "https://doi.org/10.1093/genetics/iyaf033",
+      "access": "full_native_pmc",
+      "locator": "PMC12005257; 54074 characters in two chunks; Methods/Results/Discussion"
+    },
+    {
+      "id": "satzilla2008",
+      "url": "https://doi.org/10.1613/jair.2490",
+      "access": "identity_and_abstract_only",
+      "locator": "Original PDF502; no load-bearing theorem audit"
+    },
+    {
+      "id": "elfi2018",
+      "url": "https://jmlr.org/papers/v19/17-374.html",
+      "access": "selected_original_paper_pages",
+      "locator": "JMLR19(2018)1-7 \u00a7\u00a72-3"
+    },
+    {
+      "id": "activeobs2026",
+      "url": "https://arxiv.org/abs/2609.28520",
+      "access": "selected_original_preprint_pages",
+      "locator": "arXiv2609.28520v1 \u00a7\u00a72-4; no independent proof/code replication"
+    },
+    {
+      "id": "phylonetsnp2018",
+      "url": "https://doi.org/10.1371/journal.pcbi.1005932",
+      "access": "publisher_full_and_selected_pdf",
+      "locator": "Methodspp3-7; Eq9 binomial independent lineage split; mutation/coalescent units"
+    },
+    {
+      "id": "phylonetseq2018",
+      "url": "https://doi.org/10.1093/sysbio/syx085",
+      "access": "identity_and_abstract_only",
+      "locator": "PMID29088409; wrong title resolver rejected; details from phylonet2018 instead"
+    }
+  ],
+  "failures_and_limits": [
+    "Quoted BEAST2.5 phrase returned zero and warning; DOI seed returned matching primary record",
+    "Broad Singer/Relate queries collided with unrelated subjects; narrowed results, not exhaustive scans",
+    "Title-only PhyloNet sequence-study resolver returned SNaQ arXiv1509.06075v3; rejected mismatch, retained actual PMID29088409 abstract",
+    "PGS original guessed publisher PDF path and alphaXiv PMC fetch failed; native rights-eligible PMC54074 characters recovered in two chunks",
+    "Native full fetch for PhyloNet/MSCquartets failed; publisher primary pages retrieved",
+    "RevBayes PMC browser challenge; no CAPTCHA bypass or protected-content retrieval",
+    "Some Rice wiki/RevBayes tutorial/Oxford redirects and SATzilla original PDF failed; identity/abstract limitations retained",
+    "No software installed/run, direct code audit of parallel-bigon support, cross-package benchmark, independent theorem proof or exhaustive field/absence check"
+  ]
+}
