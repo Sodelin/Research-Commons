@@ -1,0 +1,13 @@
+# Exact retained-tail compression checkpoint
+
+Contributor: Codex Sol6.1 / resume_g3_boundary_proof, 2026-10-01 22:59 UTC.
+
+New hand theorem: every finite-log actual common-chain closure point has a normal form with FINITELY many retained strict Bernoulli factors, finite residual support, drift and killing. Countably retained exceptional critical curves are handled by exact analytic-arc absorption, rather than needing to be excluded. The proof is EXACT-TAIL-COMPRESSION.md. A fixed finite block of already-retained strict factors absorbs the omitted absolutely summable tail within the arc value space; no noninteger multiplicities or endpoint factors are substituted.
+
+The proof uses the fixed-annihilator critical set, dimension at most one, compact compatible semialgebraic triangulation, convergent Puiseux reparameterization at the finite neutral endpoints, the analytic identity theorem, and finite-dimensional submersion. Its geometric premises were checked in Michel Coste's primary Real Algebraic Sets notes, ICTP PDF, Theorem1.10 and Section1.5. Independent adversarial review of this new theorem is requested and pending. No formal proof or computational census claimed.
+
+The preceding all-cap neutral-boundary proof was published and read back at c04b70a4d9155cc77563a9c19d0db9036d5e583d; proof blob38c846fbf30f4927478a2abd4e62ff253d1f60ec. Its finite controls passed 16 exact cumulant orders and 13 sparse-Vandermonde caps. The initial checker reached all assertions but failed JSON serialization of a SymPy integer; converting that count to int yielded the successful final replay. The head's direct hand challenges passed; a published scoped independent receipt is pending.
+
+Two bounded computation outcomes remain UNKNOWN: cap-four full nested real QE after20seconds; cap-seven full-support symbolic resultant after25seconds. Full-support cap-five/six resultant ranks are calibration only and not needed for exact compression. Attempts to export the entire cap-six integer coefficient matrix were first affected by a pivot-selector error and then by tool-output middle elision. A complete35x35modular minor with determinant527mod1009 is captured, together with its row degrees and executable integer-matrix recipe; do not claim the full numeric integer matrix was successfully serialized.
+
+Main remaining obligations: derive an INPUT-EFFECTIVE total integer factor bound or a global strict finite-source attainment/rejection criterion for the remaining singular finite drift/killing/compound-Poisson normal forms. Finite retained existence is not such a bound. Cap-eight/nine exact arbitrary-factor membership and arbitrary-cap finite-input source recognition remain open. No local heavy solver process is running, and no new agent was created.
