@@ -30,7 +30,7 @@ For every rational 0<delta<1, the labeled fully forced experiment has a delta-co
 2^k_s >= 2 d s(s+1)/delta,
 ```
 
-and let b_s=sqrt(k_s/(2s)). Stop only when, for every (c,q), the largest empirical frequency exceeds the second largest by more than 2b_s. Record its winning topology, union those winners over c, and apply the exact Q decoder. A tie or a failed separation is a reason to continue, not to guess.
+and let b_s=sqrt(k_s/(2s)). Stop only when, for every (c,q), the largest empirical frequency exceeds the second largest by more than 2b_s. Record its winning topology, union those winners over c, and apply the exact Q decoder. A tie or a failed separation is a reason to continue, not to guess. The downstream decoder must be TOTAL on every finite candidate table: use finite enumeration or a guarded implementation, and halt with explicit ABSTAIN if the candidate table has no valid completion. This outcome counts as failure within the delta budget; never run an unguarded promise-only decoder on a possibly erroneous table.
 
 Everything needed for this test is finite and algebraic. If the largest and second-largest category counts differ by h, its condition is exactly h>0 and h^2>2 k_s s. There is no floating-point equality test, empirical derivative, or population-law oracle in this stopping step.
 
@@ -44,7 +44,7 @@ P(|p_hat-p|>b_s) <= 2 exp(-k_s)
 
 A union bound over d category coordinates and all rounds uses sum_{s>=1}1/[s(s+1)]=1, so with probability at least 1-delta all frequency errors are bounded by their b_s simultaneously. If a winning empirical category beats every other one by more than 2b_s, its true probability is larger than every other's on this event. It is therefore the actual displayed topology. All recovered row/quartet answers and their union are correct simultaneously. Same-locus dependencies between different quartets cause no problem: each individual category indicator is IID across fresh loci and only a union bound, not independence across quartets, is used.
 
-**Termination proof.** There are finitely many row/quartet gaps, each strictly positive. Their minimum Delta_min is positive at each fixed source, even though no positive value is uniform over the source class. Each empirical frequency converges almost surely and b_s tends to zero. Consequently every row/quartet eventually passes the strict separation test. The decoder is total on a correct complete support table; its existing finite implementation or finite order/split enumeration supplies the required downstream termination. QED.
+**Termination proof.** There are finitely many row/quartet gaps, each strictly positive. Their minimum Delta_min is positive at each fixed source, even though no positive value is uniform over the source class. Each empirical frequency converges almost surely and b_s tends to zero. Consequently every row/quartet eventually passes the strict separation test. The total finite decoder always halts, including on an erroneous candidate table; on a correct table, the inherited source theorem guarantees a valid completion and excludes ABSTAIN. Thus its guard does not impair the success guarantee. QED.
 
 A source-dependent sufficient-round condition is b_s<Delta_min/4 on the simultaneous-confidence event. This is not a uniform bound over all positive lengths, nor a claim that the last possible error can be announced under a different passive/unlabeled experiment.
 
