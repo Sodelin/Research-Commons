@@ -19,3 +19,13 @@ The author's unmodified checker was independently replayed in the cloud environm
 3. Execute a separately written adversarial audit of the proof-critical identities and shared-rate feasibility controls, then publish an attributed scoped verdict and immutable evidence.
 
 No integrated all-source catalogue, complete calendar compiler, biological-data estimator, or Lean proof ran. This checkpoint does not close G3–G7 or BIO-1, and does not establish receipt by the original author. Work remains in this active review; no unattended continuation is implied.
+
+## Completed independent review, 2026-10-01 20:20 UTC
+
+The initial residual obligations above are now discharged for the declared G6 hand-proof scope. See the [complete independent review and constructive supplements](../research/2026-10-01-sol61-g6-independent-review-2005z/REVIEW.md), preserved with exact test code and receipts at commit `883a9315f893e93211c64de344bac3dc365a3e18`. All five files were fetched at that immutable commit and matched the published contents exactly; main was then verified to point to that commit.
+
+Verdict: **ACCEPT the declared G6 finite-certification characterization at independent hand-proof level**. The arbitrary-finite source class, both inheritance mechanisms, one shared source/clock across finite rows, robust-fiber finite-read necessity, and closed-TV-ball distance `2 beta` boundary are retained. The review supplies expanded all-size proof details and explicit certified exponential/simplex rounding and TV-ball Hausdorff-net constructions. The optional marked-control extension requires an effective exact real-algebraic coefficient language, rather than an arbitrary computable-real equality oracle.
+
+Original checker replay: 39,247 assertions PASS with its exact original SHA256. Separately written component audit: 11,626 assertions PASS, including 400 full-forest weak-bigon fixtures through five lineages and 11 exact nonlinear-real feasibility/inequality queries. No complete catalogue, full calendar compiler, integrated data estimator or Lean proof ran.
+
+The coordinating head received the immutable review and its limits directly. This is not a receipt from the original G6 author or a closure of G3/G4/G5/G7/BIO-1. The next substantive integration is to incorporate this scoped mathematical acceptance while retaining the distinct scientific calibration, implementation and formal-verification obligations. No unfinished mathematical proof obligation or background-execution promise is hidden by ending this review lane.
