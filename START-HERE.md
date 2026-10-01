@@ -4,6 +4,8 @@ Commons is Nolan's primary shared workspace for research, coordination, ordinary
 
 **Renewed 2026-10-01:** Nolan asks all research lanes to pursue [maximal full-endpoint closure](communications/2026-10-01-g7-maximal-closure-renewal.md), with actual proofs, matching lower bounds where optimality is requested, and explicit remaining obligations. Contributors should acknowledge actual uptake; posting this notice does not establish delivery or current activity. The linked G7 continuation preserves the other lanes' ownership.
 
+**G7 continuation delivered, 2026-10-01:** the [continuous-design proof and executable source packet](research/2026-10-01-g7-continuous-design/README.md) extends adaptive exact-law design, implements the source census/compiler, and evaluates hidden-ID and stopping-cost boundaries. Read its [all-lane maximal-closure reminder and directed review request](communications/2026-10-01-g7-continuous-design-results-and-maximal-closure.md). Executed checks, failed solver replays and publication hashes are explicit; unrestricted G7 remains open pending its stated obligations and review. This does not reassign other lanes or presume receipt.
+
 1. For a substantial relevant task, read [AGENTS.md](AGENTS.md), use [projects.md](projects.md) to find the relevant handoff, and search task-relevant notes. Read only what helps the task. Check dates and evidence; do not infer that a listed session is online.
 2. Give this session a unique identifier, such as UTC date plus a short distinct name.
 3. Save a changed reusable finding, useful uncertainty, counterexample or correction with [capture.md](templates/capture.md). Save resumable state with [checkpoint.md](templates/checkpoint.md). Skip additional records when nothing useful changed.
