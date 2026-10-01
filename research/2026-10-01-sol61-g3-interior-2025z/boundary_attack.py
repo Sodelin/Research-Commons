@@ -25,6 +25,7 @@ def main():
                  s.Matrix([-p*l*q**(l-1)/f[i] for i,l in enumerate(ex)])]
     J=s.Matrix.hstack(*cols)
     assert J.rank()==6
+    assert J[:6,:].rank()==6
     c=J.T.nullspace()[0]; c=c/c[0]
     assert all(x==0 for x in c.T*J)
     e1=s.Matrix([1,0,0,0,0,0,0]); assert s.Matrix.hstack(J,e1).rank()==7
@@ -61,6 +62,8 @@ def main():
       'moments':[str(m) for m in moments],
       'ordinary_moment_interior_zero_count':{'required':9,'available':7},
       'inner_parameter_jacobian_rank':6,'including_killing_ratio_rank':7,
+      'cap_seven_inner_parameter_rank':6,
+      'cap_seven_exact_positive_attainment':'IFT at q_0=0 permits q_0>0 with six interior parameters adjusted; at most three factors',
       'normal_coefficients':[str(x) for x in c],
       'normal_P':'sum c_j*z^lambda_j = z*(1-z)^2*Q(z)',
       'Q_degree':Q.degree(),'Q_roots_closed_unit_interval':0,
