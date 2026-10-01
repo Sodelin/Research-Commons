@@ -31,7 +31,7 @@ With constant coefficient zero, the polynomial has at most seven nonzero monomia
 
 This is not a nongeometric ordinary-boundary example relabeled as interior.
 
-## 3. Exact local obstruction at the natural three-factor limit
+## 3. Exact cap-seven attainment, then a cap-eight local obstruction
 
 Use negative log coordinates
 
@@ -45,6 +45,10 @@ At the declared q_0=0 point the six columns corresponding to t, p_0, p_1,q_1,p_2
     partial_q h_lambda=-p lambda q^(lambda-1)/(1-p+p q^lambda).
 
 The q_0 derivative is -e_1 at p_0=1/2: only lambda=1 contributes. Adding it gives rank SEVEN. These ranks are checked exactly by rational SymPy linear algebra in boundary_attack.py.
+
+At cap SEVEN there are only the first six sparse coordinates. The same six INNER parameter columns already have rank SIX; this is a separate exact checked minor. Holding a sufficiently small positive q_0 fixed, the implicit function theorem therefore adjusts the six inner parameters near their declared values so that all six moments remain EXACTLY equal to the endpoint-limit target. The baseline, both original ratios and every probability remain strictly interior by continuity, and q_0>0 is now strict too. Hence this cap-seven target has an ACTUAL strict positive realization with at most THREE factors. It is not merely a numerical or closure result. For its rational input, real-closed-field witness extraction yields algebraic parameters on that three-factor graph. A terminating construction can enumerate positive rational q_0 tending to zero and solve the fixed three-factor strict polynomial system; the IFT guarantees a feasible interval. No particular algebraic witness was extracted here.
+
+More generally, for any finite cap and any closed-cube finite-factor representation with designated endpoint coordinates, if the moment Jacobian with respect to a set of STRICT INTERIOR parameter coordinates has full row rank, the designated endpoints can be perturbed into the strict domain and those interior coordinates adjusted by the IFT. This proves exact positive realization without increasing the factor count, provided all non-designated parameters remain strict and the perturbed baseline satisfies 0<A<1. This is a source-preserving rank-sufficient branch, not a necessary criterion on all representations. A full-row-rank polynomial minor is an exact algebraic check.
 
 The square seven-parameter forward map is locally invertible at this boundary point. It can be extended smoothly across q_0=0 in a sufficiently small mathematical neighborhood because every denominator is positive there. Componentwise logarithm is invertible, so the ordinary polynomial moment map has the same rank. By the inverse function theorem, the supplied target has only its q_0=0 preimage in some neighborhood of this precise three-factor parameter tuple.
 
@@ -85,13 +89,13 @@ Thus conic/global-normal rejection is not a valid all-factor proof for this cand
 
 ## 6. Bounded exploratory computation and its limits
 
-A seeded SciPy least-squares screen used n=3,4,5 factors at caps seven, eight and nine, with at most 15 starts and 3,000 evaluations per start. At cap seven it found strict numerical fits. At caps eight and nine the best fits approached q approximately 10^(-9) or neutral ratios near one; no strict fit separated from those parameter boundaries was found in this finite screen. Residuals were around 10^(-13), which cannot certify exact attainment or rejection.
+A seeded SciPy least-squares screen used n=3,4,5 factors at caps seven, eight and nine, with at most 15 starts and 3,000 evaluations per start. At cap seven it found strict numerical fits; these are now supported by the general exact IFT argument above, not used as its proof. At caps eight and nine the best fits approached q approximately 10^(-9) or neutral ratios near one; no strict fit separated from those parameter boundaries was found in this finite screen. Residuals were around 10^(-13), which cannot certify exact attainment or rejection.
 
 This screen suggested the exact rank/tangent attack but is NOT evidence excluding all finite factors. No unbounded search was run. The endpoint, Poisson and repeated-factor screens also found that several lower-cap endpoint representations have numerical strict alternatives, so an endpoint in one proposed representation cannot itself be called nonattainment.
 
 ## 7. Precise remaining barrier and next attack
 
-The candidate is a finite rational ordinary-interior member of the actual chain closure. Its exact source membership remains UNKNOWN. The local proof does not establish that it lies on the global actual closure boundary.
+The SAME coherent closure-law restriction is now classified as actual YES through cap seven, UNKNOWN at caps eight and nine, and ordinary exposed-endpoint NO at cap ten. The cap-eight candidate is a finite rational ordinary-interior member of the actual chain closure. Its exact source membership remains UNKNOWN. The local proof does not establish that it lies on the global actual closure boundary.
 
 The unproved global step is a source-specific decomposition rigidity or finite-factor bound: does every source matching these sparse moments have to lie near the killing-plus-two-factor decomposition, after absorbing neutral/drift pieces? If so, the local one-sided normal could become a genuine nonattainment certificate. If a remote or longer exact positive factorization exists, the candidate is attained and that factorization must be exhibited instead.
 
@@ -101,6 +105,6 @@ An exact fixed-n UNSAT would not exclude larger n. A numerical near-endpoint fit
 
 ## 8. Verification and completion status
 
-Executed: rational source-limit atom/moment identities, rank6/rank7, exact normal coefficients, polynomial quotient, Sturm root count, endpoint signs, and rigorous log-sign enclosures. Generalized strict positive source admission and common-kernel semantics are inherited source-critical premises. No proof-assistant verification or full-source census was performed.
+Executed: rational source-limit atom/moment identities, cap-seven rank6 and cap-eight rank6/rank7, exact normal coefficients, polynomial quotient, Sturm root count, endpoint signs, and rigorous log-sign enclosures. The cap-seven exact positive existence and local obstruction are hand IFT arguments supported by exact rank checks, not algebraic witness extraction. Generalized strict positive source admission and common-kernel semantics are inherited source-critical premises. No proof-assistant verification or full-source census was performed.
 
 The earlier approximation/robust-NO result remains a usable component; full G3 finite-input source membership is still OPEN. Original G3 ownership is preserved, current activity unverified. Ending this checkpoint would not assert ongoing background research.
