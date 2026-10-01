@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact rational; combinatorial graph checks",
+  "python": "3.13.5",
+  "networkx": "3.6.1",
+  "check_counts": {
+    "cut_guard_mark_bound": 9648,
+    "cut_guard_run_bound": 9648,
+    "cut_guard_no_internal_cut": 9648,
+    "cut_guard_complete_partition": 9648,
+    "naive_cut_guard_counterexample": 1,
+    "independent_weak_bigon_bound": 81,
+    "independent_kernel_normalization": 81,
+    "common_kernel_normalization": 81,
+    "large_hazard_clipping_bound": 12,
+    "coarse_bin_law_equal": 3,
+    "refined_bin_law_unequal": 3,
+    "same_endpoint_positive_clock_embedding": 247,
+    "clock_endpoint_exact": 13,
+    "rare_switch_source_admission": 9,
+    "rare_switch_target_strictly_changes": 9,
+    "rare_switch_quartet_witness": 9,
+    "rare_switch_union_bound": 48,
+    "rational_hoeffding_radius": 20,
+    "anytime_error_spending_bound": 20,
+    "confidence_rounding_precision_increases": 9,
+    "hausdorff_error_not_ignored": 1,
+    "incomplete_catalogue_never_excludes": 1,
+    "proved_empty_catalogue_excludes": 1,
+    "limiting_target_label_retained": 1,
+    "same_source_joint_profile_enforced": 1,
+    "separated_target_eventually_excluded": 1,
+    "true_target_retained": 1,
+    "within_locus_dependence_counterexample": 1,
+    "closed_tv_noise_boundary_overlap": 1
+  },
+  "total_checks": 39247,
+  "details": {
+    "cut_guard": {
+      "fixtures": 9648,
+      "largest_marks_per_cut": "2",
+      "naive_counterexample_cut": "5/2"
+    },
+    "clock_bin_tv_cap_2": "1/4",
+    "clock_bin_tv_cap_3": "91/256",
+    "clock_bin_tv_cap_4": "33579/81920",
+    "weak_bound_largest_squared_relative_ratio": "5041/1440000",
+    "rare_switch": {
+      "n_checked": [4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "all_population_rates": "1",
+      "base_node_ages": {"R": "4", "V": "3", "U": "2", "W": "2", "H": "1", "a": "0", "b": "0", "c": "0", "d": "0"},
+      "four_taxon_split_union": ["ab|cd", "ac|bd"],
+      "unbounded_n_claim": "hand proof by positive pendant grafting; finite graph checks are not that proof"
+    },
+    "confidence": {
+      "separated_example_n": 1000000,
+      "rational_coordinate_radius": "650645/134217728",
+      "fixed_sample_bound": "k >= 32 Delta^(-2) log(2D/alpha), with net error <= Delta/8",
+      "full_catalogue_executed": false
+    }
+  },
+  "script_sha256": "76ceabd5c6f567baf6595fd68bf95cf73ae0a407f718b9e27dd65843818e9f98",
+  "not_executed": ["complete all-source graph catalogue", "complete calendar compiler", "general hazard-cell enumeration", "integrated empirical inference on biological data", "independent mathematical review", "proof-assistant verification"],
+  "separate_verification": "hazard_cells.wl was evaluated through Wolfram; see WOLFRAM-RECEIPT.md"
+}
