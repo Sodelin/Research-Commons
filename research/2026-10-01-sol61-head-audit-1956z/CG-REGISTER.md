@@ -43,7 +43,7 @@ Alias: SOL61-G7-FULL-FORCING-NUMERICAL-20261001.
 
 **Classical versus project-specific:** covering-array capacity/construction is prior Rényi/Katona/Kleitman–Spencer theory, checked through Choi–Kim–Oh2011. The graph gadget/two-switch lemma already existed. Project delta is its paired numerical-law collision and exact static programme-cap transfer. No new covering-array theory or historical originality claim.
 
-**Remaining:** partial/continuous adaptive menus, same-source losing transcripts, simultaneous-site restrictions, global library versus path costs, richer readouts, general executable policy extraction and unbounded expected constants. A stronger natural-plus-marker partial-menu candidate is under source-critical review; it is not promoted here.
+**Remaining:** partial/continuous adaptive menus, same-source losing transcripts, simultaneous-site restrictions, global library versus path costs, richer readouts, general executable policy extraction and unbounded expected constants. The relaxed natural-plus-labelled-marker branch is now independently accepted: [proof and exact controls](https://github.com/Sodelin/Research-Commons/blob/b74ff892402f5d842bb19178a3243f7ef0c0c481/research/2026-10-01-sol61-head-audit-1956z/NATURAL-MARKER-OPTIMUM.md), [actual parent review](https://github.com/Sodelin/Research-Commons/blob/b74ff892402f5d842bb19178a3243f7ef0c0c481/research/2026-10-01-sol61-head-audit-1956z/NATURAL-MARKER-REVIEW.md). For independent/unknown mode its unconstrained sharp union costs are r sites,2 configurations,1 labelled programme; a natural row plus one exact forced-tree marker resolves all natural-CF pattern strata. This does not alter the stricter FULL-forcing-only C(r) theorem, a finite-data optimum or the b<r/erased-label budget frontier.
 
 ## CG4 — Same-source global compatibility
 
@@ -66,3 +66,11 @@ G5/G6: independent declared hand contracts accepted; actual DNA/inference-engine
 G7: abstract F1/F2 and scoped static full-forcing numerical optimum accepted; unrestricted resource frontier open.
 BIO-1: reviewed exact-support algorithms exist; practical target-directed finite-data/DNA provider remains central.
 Lean: final raw-source theorem/fresh94-module rebuild receipt remain missing; token scan and Python CI are not compilation.
+
+## Later accepted connection: same-registry resource substitution
+
+The [matched positive neutral/effective one-hybrid source proof](https://github.com/Sodelin/Research-Commons/blob/5134894b8a2e6e3e67eb6b79cabe422944043f5a/research/2026-10-01-sol61-cross-g-copy-saturation-2031z/RESOURCE-SUBSTITUTION.md) gives a concrete CG2/CG3/CG4/CG1 connection with the SAME original actuator legal at both candidates: fixed-confidence passive all-copy fresh-locus costΘ(1/ε), informative forcing costΘ(1), plus a necessary exposure tradeoff. [Actual independent head and parent receipt](RESOURCE-SUBSTITUTION-REVIEW.md). This is an ideal known two-source/full-calendar experiment, not a DNA or universal G7 Pareto theorem.
+
+## Unified orientation, not a new gate or implementation request
+
+The shared goal is the strongest biological target conclusion supported by the actual observation experiment, with justified uncertainty/resource bounds and exact obstructions to stronger answers. The proposed maximal compatible-law library, target-specialized procedures and measurement/method selector is a candidate composition architecture: each specialist must retain its assumptions, target confidence/ambiguity/incompatibility output and same-source constraints; shared-data adaptive error and conflicting resource objectives require a proved composition rule/Pareto contract. No universal terminating yes/no system, new software implementation, manuscript or new G1–G7 obligation is implied. Provenance/reuse/exact theorem deltas remain distinct from historical originality or physical usefulness.
