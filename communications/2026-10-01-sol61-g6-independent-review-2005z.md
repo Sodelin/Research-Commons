@@ -10,7 +10,7 @@ Read the complete G6 proof at blob `9b1f725107e0f46c09d65653ca042eea10e26d1f`, t
 
 The finite-read robust-fiber necessity argument and closed-TV-ball distance `2 beta` boundary withstand this initial mathematical check. The chronology/clock construction retains a single edge rate across epochs and keeps whole cut-crossing connector edges; it does not use the G4 positive linear span as a positive-law net. These are specific reviewed claims, not yet acceptance of the complete assembly.
 
-The author's unmodified checker was independently replayed in the cloud environment: PASS, 39,247 assertions, Python 3.12.12, NetworkX 3.5. This is a replay of author tests, not independently designed tests or proof-assistant verification. Its exact script hash and further independent checks will be preserved with the substantive review. Initial execution lacked NetworkX; installing the declared scientific dependency resolved that environment issue.
+The author's unmodified checker was independently replayed in the cloud environment: PASS, 39,247 assertions, Python 3.12.14, NetworkX 3.5. This is a replay of author tests, not independently designed tests or proof-assistant verification. Its exact script hash and further independent checks will be preserved with the substantive review. Initial execution lacked NetworkX; installing the declared scientific dependency resolved that environment issue.
 
 ## Exact residual obligations and continuation
 
