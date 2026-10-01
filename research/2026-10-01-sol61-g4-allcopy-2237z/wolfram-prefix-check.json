@@ -1,0 +1,13 @@
+{
+  "code": "Clear[x,y,g];b[n_]:=Sum[Binomial[n,j] g^j (1-g)^(n-j) x^(j(j-1)/2)y^((n-j)(n-j-1)/2),{j,0,n}];eq=Expand[b[3]-b[2]^3]==0 && Expand[b[4]-b[2]^6]==0;{ $Version, TimeConstrained[Resolve[Exists[{x,y},0<x<1&&0<y<1&&(eq/.g->1/2)],Reals],15,\"TIMEOUT\"]}",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= {\"15.0.1 for Linux x86 (64-bit) (July 2, 2026)\", True}"
+      }
+    ],
+    "isError": false
+  },
+  "limits": "A bounded g=1/2 n<=4 existential check, not the universal n=5 proof."
+}

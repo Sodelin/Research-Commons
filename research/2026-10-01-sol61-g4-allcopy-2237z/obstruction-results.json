@@ -1,0 +1,200 @@
+{
+  "arithmetic": "fractions.Fraction",
+  "exact_legal_observation_checks": [
+    {
+      "kappa": "1",
+      "n": 1,
+      "q": "1/3",
+      "recovered_b_n": "1",
+      "response": "1"
+    },
+    {
+      "kappa": "1/9",
+      "n": 2,
+      "q": "1/3",
+      "recovered_b_n": "2/3",
+      "response": "2/729"
+    },
+    {
+      "kappa": "2/675",
+      "n": 3,
+      "q": "1/3",
+      "recovered_b_n": "7/27",
+      "response": "14/358722675"
+    },
+    {
+      "kappa": "1/33075",
+      "n": 4,
+      "q": "1/3",
+      "recovered_b_n": "44/729",
+      "response": "44/9341356919109075"
+    },
+    {
+      "kappa": "1",
+      "n": 1,
+      "q": "1/2",
+      "recovered_b_n": "1",
+      "response": "1"
+    },
+    {
+      "kappa": "1/9",
+      "n": 2,
+      "q": "1/2",
+      "recovered_b_n": "3/4",
+      "response": "1/96"
+    },
+    {
+      "kappa": "2/675",
+      "n": 3,
+      "q": "1/2",
+      "recovered_b_n": "13/32",
+      "response": "13/5529600"
+    },
+    {
+      "kappa": "1/33075",
+      "n": 4,
+      "q": "1/2",
+      "recovered_b_n": "81/512",
+      "response": "3/164416716800"
+    },
+    {
+      "kappa": "1",
+      "n": 1,
+      "q": "2/3",
+      "recovered_b_n": "1",
+      "response": "1"
+    },
+    {
+      "kappa": "1/9",
+      "n": 2,
+      "q": "2/3",
+      "recovered_b_n": "5/6",
+      "response": "20/729"
+    },
+    {
+      "kappa": "2/675",
+      "n": 3,
+      "q": "2/3",
+      "recovered_b_n": "31/54",
+      "response": "15872/358722675"
+    },
+    {
+      "kappa": "1/33075",
+      "n": 4,
+      "q": "2/3",
+      "recovered_b_n": "475/1458",
+      "response": "2490368/373654276764363"
+    }
+  ],
+  "limits": [
+    "64 values are implementation controls, not the non-holonomicity proof.",
+    "The dominance algorithm is implemented for rational bases and coefficients.",
+    "No complete source-generated mixed recurrence was derived.",
+    "No arbitrary-chain all-copy cutoff or zero-test is claimed."
+  ],
+  "lowest_coefficient_checks": 64,
+  "positive_tail_certificates": [
+    {
+      "N": 11,
+      "dominant_base": "1/2",
+      "dominant_degree": 1,
+      "dominant_lower_constant": "1/2",
+      "identically_zero": false,
+      "remainder_upper_ratio": "0",
+      "smaller_terms": []
+    },
+    {
+      "N": 15,
+      "dominant_base": "1/2",
+      "dominant_degree": 1,
+      "dominant_lower_constant": "1/2",
+      "identically_zero": false,
+      "remainder_upper_ratio": "655360/4782969",
+      "smaller_terms": [
+        {
+          "base_ratio": "2/3",
+          "coefficient_bound_ratio": "4",
+          "polynomial_power": 1
+        }
+      ]
+    },
+    {
+      "N": 11,
+      "dominant_base": "2/3",
+      "dominant_degree": 2,
+      "dominant_lower_constant": "1/2",
+      "identically_zero": false,
+      "remainder_upper_ratio": "177147/268435456",
+      "smaller_terms": [
+        {
+          "base_ratio": "3/8",
+          "coefficient_bound_ratio": "32",
+          "polynomial_power": 0
+        }
+      ]
+    },
+    {
+      "identically_zero": true
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "singular_prefix_countercontrol": {
+    "all_0_through_5": true,
+    "f_6": "1",
+    "recurrence": "(n-5)2^-n f_(n+1)=0"
+  },
+  "source_sha256": "d8e7ed52393160df9ce8657dab51bc2dca019c0dd49ee7ce03afd345b727d131",
+  "status": "PASS",
+  "valuation_first_ten": [
+    {
+      "coefficient": "1",
+      "lowest_q_exponent": 0,
+      "n": 1
+    },
+    {
+      "coefficient": "1/2",
+      "lowest_q_exponent": 0,
+      "n": 2
+    },
+    {
+      "coefficient": "3/4",
+      "lowest_q_exponent": 1,
+      "n": 3
+    },
+    {
+      "coefficient": "3/8",
+      "lowest_q_exponent": 2,
+      "n": 4
+    },
+    {
+      "coefficient": "5/8",
+      "lowest_q_exponent": 4,
+      "n": 5
+    },
+    {
+      "coefficient": "5/16",
+      "lowest_q_exponent": 6,
+      "n": 6
+    },
+    {
+      "coefficient": "35/64",
+      "lowest_q_exponent": 9,
+      "n": 7
+    },
+    {
+      "coefficient": "35/128",
+      "lowest_q_exponent": 12,
+      "n": 8
+    },
+    {
+      "coefficient": "63/128",
+      "lowest_q_exponent": 16,
+      "n": 9
+    },
+    {
+      "coefficient": "63/256",
+      "lowest_q_exponent": 20,
+      "n": 10
+    }
+  ]
+}
