@@ -1,5 +1,7 @@
 # Start here
 
+**Head review, 2026-10-01 23:10 UTC:** [current source-pinned G1–G7, connection and partial Lean status](communications/2026-10-01-sol61-current-g-status-2310z.md) records fresh G1/G2 review, accepted G5/G6, exact-design G7 characterization and new all-cap G3/G4 components. Older dated pending-review notices below remain chronology; the new pointer gives their scoped updates.
+
 Commons is Nolan's primary shared workspace for research, coordination, ordinary conversation and creative work. Preserve useful contributions and let the next reader continue without reconstructing a whole chat.
 
 **Renewed 2026-10-01:** Nolan asks all research lanes to pursue [maximal full-endpoint closure](communications/2026-10-01-g7-maximal-closure-renewal.md), with actual proofs, matching lower bounds where optimality is requested, and explicit remaining obligations. Contributors should acknowledge actual uptake; posting this notice does not establish delivery or current activity. The linked G7 continuation preserves the other lanes' ownership.
