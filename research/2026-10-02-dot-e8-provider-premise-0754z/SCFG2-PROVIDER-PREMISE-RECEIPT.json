@@ -1,0 +1,167 @@
+{
+  "status": "PASS_QUALIFIED_SOURCE_PREMISE_COUNTERCHECK",
+  "attribution": "dot",
+  "repository": "TakumiOtagaki/PKProbDesign",
+  "commit": "27afdd054272dbda8a74c8aad156970a44c23cd8",
+  "checked_source_files": [
+    {
+      "path": "submodules/CParty/src/scfg2/deductions/generate_exact_basic.hh",
+      "sha256": "97225454a2166b756eac44e7e49d2424d1788a5e1ad60319544ca64f1e952c93",
+      "git_blob_sha": "b138807cdd7bdc63f8cc75a9effb9e1f2bb482e6"
+    },
+    {
+      "path": "submodules/CParty/src/scfg2/deductions/expand_basic.hh",
+      "sha256": "9c35f0f7045c58fd025ba9c05378661d52957ade8ea80ee3ed89689c33d5b86e",
+      "git_blob_sha": "04810e94da8ca4e529ca437803e287bd23d485ba"
+    },
+    {
+      "path": "submodules/CParty/src/scfg2/deductions/wmb_geometry.hh",
+      "sha256": "1127fd52d433b9a027125ba06507fa2b368bd9a54891556d9ec7d7f9de5b171e",
+      "git_blob_sha": "1e1f3368bd1b1433508d395032f8d7853920f3d3"
+    },
+    {
+      "path": "submodules/CParty/src/scfg2/engine/basic_schedule.hh",
+      "sha256": "1e2bdf284a4157e0afe6aa9aaded6b709da6b8b2b07a5bca017f1a86c6226230",
+      "git_blob_sha": "9c96352c23bd59950dab791443bab0db2a2be4e2"
+    },
+    {
+      "path": "submodules/CParty/src/sparse_tree.cc",
+      "sha256": "b8457998ea1b69e148a7da57a3926dc564598b78ad8953844fbf0356ea62a01f",
+      "git_blob_sha": "b3c123b0d17bbd589739008c5db632c903838e33"
+    },
+    {
+      "path": "submodules/CParty/src/sparse_tree.hh",
+      "sha256": "30d8a9c747a0bf228806b5badf3ed6304a27b4a82ace520814776d2e440b972d",
+      "git_blob_sha": "fbe82483665bf5243b31fb30bb9c81ec73918484"
+    }
+  ],
+  "probe_sha256": "1eb96362000ff097fa52466e3c30dd4fa088ee1561d72dd854b3f7887b3bc0ab",
+  "binary_sha256": "42436cece9effee5358d0894ef4059b7512f74abd8edef651a6accb25dbfc027",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "qualification": "Unchanged generator/schedule/tree with canonical-pair context and a custom overflow-checked unit-weight natural reference interpreter. Not an unchanged physical API run. E independent physical-weight diagnostic is separate. No saved source/schedule modified; no full-model defect or root bias claimed.",
+  "final_probe": {
+    "scaffold": "(......(......)....).",
+    "parent_position": 3311,
+    "sequence": "GAAAAAGGAAACGACAAAACC",
+    "weight_model": "unit local factors, overflow-checked natural counts",
+    "final_cached_parent": "7",
+    "recomputed_from_final_chart": "9",
+    "baseline_future_edges": 72,
+    "baseline_unknown_children": 0,
+    "checked_dependency_edges": 17551,
+    "candidate_future_edges": 0,
+    "candidate_unknown_children": 0,
+    "candidate_parent_count": "9",
+    "baseline_root_count": "207",
+    "candidate_root_count": "207",
+    "root_raw_cone": {
+      "items": 884,
+      "edges": 3011,
+      "future": 0
+    },
+    "root_productive_unit_cone": {
+      "items": 171,
+      "edges": 189,
+      "future": 0
+    },
+    "requested_split": 13,
+    "border_values": [
+      -2,
+      8,
+      20,
+      15
+    ],
+    "deductions": [
+      {
+        "valid": true,
+        "rule": 44,
+        "children": [
+          {
+            "key": [
+              16,
+              1,
+              20,
+              8,
+              15
+            ],
+            "schedule_position": 3662,
+            "provider_count": 4,
+            "final_normalized_count": "2"
+          },
+          {
+            "key": [
+              14,
+              7,
+              12,
+              -1,
+              -1
+            ],
+            "schedule_position": 1654,
+            "provider_count": 1,
+            "final_normalized_count": "1"
+          },
+          {
+            "key": [
+              11,
+              13,
+              21,
+              -1,
+              -1
+            ],
+            "schedule_position": 2305,
+            "provider_count": 1,
+            "final_normalized_count": "1"
+          }
+        ],
+        "final_contribution": "2"
+      },
+      {
+        "valid": true,
+        "rule": 45,
+        "children": [
+          {
+            "key": [
+              16,
+              1,
+              20,
+              8,
+              15
+            ],
+            "schedule_position": 3662,
+            "provider_count": 4,
+            "final_normalized_count": "2"
+          },
+          {
+            "key": [
+              13,
+              7,
+              12,
+              -1,
+              -1
+            ],
+            "schedule_position": 1670,
+            "provider_count": 3,
+            "final_normalized_count": "0"
+          },
+          {
+            "key": [
+              11,
+              13,
+              21,
+              -1,
+              -1
+            ],
+            "schedule_position": 2305,
+            "provider_count": 1,
+            "final_normalized_count": "1"
+          }
+        ],
+        "final_contribution": "0"
+      }
+    ],
+    "found": 2,
+    "Cplusplus_execution": true,
+    "physical_weight_test": false
+  },
+  "saved_source_mutated": false
+}
