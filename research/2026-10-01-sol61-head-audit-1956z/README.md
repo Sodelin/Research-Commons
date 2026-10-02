@@ -1,6 +1,12 @@
 # Sol6.1 source-critical head review
 
-Coordinator: dot. This packet preserves attributed proofs, independent acceptance receipts and executable research controls. [Current G/CG/Lean status](../../communications/2026-10-02-sol61-current-g-status-0040z.md) gives the latest scope table; dated older receipts remain chronology.
+Coordinator: dot. This packet preserves attributed proofs, independent acceptance receipts and executable research controls. [Current G/CG/Lean status](../../communications/2026-10-02-sol61-current-g-status-0125z.md) gives the latest scope table; dated older receipts remain chronology.
+
+## Current finite-cutoff results
+
+- [All-size and finite-cutoff inventory](ALL-SIZE-AND-FINITE-CUTOFF-SCOPE.md): exact source/measurement ceilings and pairwise versus uniform versus effectively found caps
+- [Matched dyadic G3 review](G3-DYADIC-SHARP-CAPS-REVIEW.md): arbitrary-s hand theorem, four independently checked rational certificates, exact normal predicates and rational-input unbounded factor complexity at fixed cap
+- [Unknown-bare one-bigon G4 review](G4-UNKNOWN-BARE-ONE-BIGON-REVIEW.md): both pads and bare symmetry orbit, sharp6 trailing recovery and terminating whole-shape prefix finder
 
 ## Full target and hidden ambiguity
 
@@ -15,7 +21,7 @@ These are exact-law target-identification theorems under an admitted-source prom
 - [Fresh G1/G2 source review](G1-G2-FRESH-SOURCE-REVIEW.md): conditional rooted-unranked kernels, retained root/shared registers, all-n sharp core bounds, same-source selected-label projectivity and endpoint-response obstruction.
 - [G3 global normal forms](G3-GLOBAL-NORMAL-FORM-REVIEW.md), [exact retained-tail compression](G3-EXACT-TAIL-COMPRESSION-REVIEW.md), [supported residues](G3-ARC-RESIDUE-REVIEW.md).
 - [Cap<=6 Poisson interior](G3-CAP6-POISSON-INTERIOR-REVIEW.md) and [cap>=7 all-factor closure-boundary NO family](G3-SMALL-LOSS-NONATTAINMENT-REVIEW.md): exact algebraic b=1-2^(-175), finite signed-monomial certificate, independent rational verification. General G3 recognition stays open.
-- [G4 chain-count negative/stopping branches](G4-CHAIN-COUNT-REVIEW.md), [four-root quotient](G4-FOUR-ROOT-REVIEW.md), [known-box six-root sharpness](G4-KNOWN-PLACEMENT-CAP6-REVIEW.md), [uniform supplied-bigon two-pad recognition](G4-UNIFORM-PAD-RECOGNITION-REVIEW.md). Unknown bare/ordered multi-cell/unknown-size G4 stays open.
+- [G4 chain-count negative/stopping branches](G4-CHAIN-COUNT-REVIEW.md), [four-root quotient](G4-FOUR-ROOT-REVIEW.md), [known-box six-root sharpness](G4-KNOWN-PLACEMENT-CAP6-REVIEW.md), [uniform supplied-bigon two-pad recognition](G4-UNIFORM-PAD-RECOGNITION-REVIEW.md). Unknown-bare one-cell scope is extended in the new receipt; general ordered multicell/unknown-size G4 stays open.
 
 ## Design, connections and execution
 
