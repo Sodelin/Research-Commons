@@ -1,0 +1,53 @@
+{
+  "contributor": "dot / continue_lean_proofs_two",
+  "utc": "2026-10-02T09:20:00Z",
+  "role": "G/source primary proof integrator",
+  "scope": "Native deterministic routes, fixed-route exponential holding clocks, independent original-tip-owner latent seed mixture for two roots up to first merger",
+  "modules": [
+    {
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "source_sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "olean_sha256": "ac8f839ea9e54dfa0b67ff427f396126954bff5e0eff9b4d7634cdcc1695e263",
+      "selected_axiom_audits": 7,
+      "status": "PASS_LOCAL_COMPONENT",
+      "direct_import_olean_sha256": {
+        "G5OriginalRouteHazard": "89d0b3f0dc2eeea63c1c2a8b8dae72cc0bb8cab6a2b0eab010918f11989e296d",
+        "G4PathResolvedMeasurement": "091401408e8fff784a140cd7c43604ebc59ea52310223de173356d3a0e749789",
+        "Mathlib.MeasureTheory.Constructions.Pi": "a242e8e9517f9ea02fb346dedf73f6b690458a8791ea00c209196590f8ae3f86",
+        "Mathlib.Data.Finset.Card": "edd8cceabe354df48b891a4afb211a1201b9283ed9c274e226ac5b2855a4da0a"
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "source_sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "olean_sha256": "e582019b36bdceb43706e9612dc8f34d7954b98f5f4f3723bdf746038492707a",
+      "selected_axiom_audits": 8,
+      "status": "PASS_LOCAL_COMPONENT",
+      "direct_import_olean_sha256": {
+        "UnifiedLean.Source.NativeParentRouting": "ac8f839ea9e54dfa0b67ff427f396126954bff5e0eff9b4d7634cdcc1695e263",
+        "G4AllRootPairClocks": "71ae9cefae936f320185994f9912bf65d76fc133eea0028ea7725899850d940a",
+        "Mathlib.Data.ENNReal.BigOperators": "599f3f7ea7e50d4324146546ad9d8948696aa8788a4472568b7dc115b2823631"
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "source_sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "olean_sha256": "85a075591a18237d57ce4afeb495c26a0fa6706cac55fc7755f3a50122377391",
+      "selected_axiom_audits": 5,
+      "status": "PASS_LOCAL_COMPONENT",
+      "direct_import_olean_sha256": {
+        "UnifiedLean.Source.NativePairClockLaw": "e582019b36bdceb43706e9612dc8f34d7954b98f5f4f3723bdf746038492707a",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions": "af6173c966e135334fa1a042b12a1f224caa7c1da4acce528c7503c0dd843750",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Countable": "5c34c1ac950cebac6c2bb758f9103a684f4aa7205b74a2a511b7cbfce286c5cd"
+      }
+    }
+  ],
+  "selected_audits": 20,
+  "nonstandard_axioms": [],
+  "aggregate_inclusion": "Not included in frozen first aggregate; submitted for next accepted version",
+  "excluded": [
+    "preserved failed G5NativePairSource prototype",
+    "first failed NativeIndependentPairMixture attempt"
+  ],
+  "next_gate": "Actual native safe-past pair law to existing unknown-rate exponential germ coefficient theorem; subsequent full chronological initialization/deletion/source assembly remains pending"
+}
