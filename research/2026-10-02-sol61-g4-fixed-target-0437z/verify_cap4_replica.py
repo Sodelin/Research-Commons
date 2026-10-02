@@ -13,8 +13,9 @@ sys.set_int_max_str_digits(0)
 certificate=json.loads(Path(__file__).with_name('ordinary-cap4-certificate.json').read_text())
 cols=(2,4,6,8)
 names='x1 y1 g1 z1 x2 y2 g2 z2 x3 y3 g3 z3'.split()
-approx=[.36859070850617354,.7248930587056989,.45829976418003954,.7557721190367547,.31662066004399286,.43664884030679246,.2984033761522679,.8633112414175388,.6731725280520244,.9121098382163854,.7452491177891054,.44300266886138906]
-fixed={i:Q(round(approx[i]*10**8),10**8) for i in range(12) if i not in cols}
+fixed={names.index(name):Q(value) for name,value in certificate['fixed'].items()}
+assert set(fixed)==set(range(12))-set(cols)
+assert certificate['variables']==[names[i] for i in cols]
 
 def cell(x,y,g):
  h=1-g
@@ -119,7 +120,7 @@ for i in range(3):
  x,y,g,z=P[4*i:4*i+4];h=1-g
  b5*=z**10*sum(comb(5,j)*g**j*h**(5-j)*x**(j*(j-1)//2)*y**((5-j)*(5-j-1)//2) for j in range(6))
 fifth_box=(b5-kernel(P)[0]**10).v
-assert fifth_box.a>0 or fifth_box.b<0
+assert fifth_box.a>0
 rec={'status':'PASS','method':'exact rational factored-polynomial automatic differentiation and Brouwer/Krawczyk contraction','variables':[names[i] for i in cols],'fixed':{names[i]:str(t) for i,t in fixed.items()},'center':[str(a) for a in center],'radius':str(radius),'box':[x.obj() for x in box],'Krawczyk':[x.obj() for x in Kraw],'max_row_sum_bound':str(Q(-((-contraction.numerator*10**60)//contraction.denominator),10**60)),'q_box':qbox.obj(),'ordinary_target':'1/10','leading_pad':'(1/10)/q','fifth_unscaled_difference_box':fifth_box.obj(),'J0_determinant_nonzero':True,'J0_determinant_sha256':hashlib.sha256(str(J0.det()).encode()).hexdigest(),'source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'bare_C_source_polynomial_identity':'PASS','claims':['unique real-algebraic root in box of four original polynomial quotient equations','strict positive independent three-bigon source has every complete forest through four equal to E(1/10)','fifth no-merger response differs from E(1/10) after adding strict leading pad']}
 Path('ordinary-cap4-replay.json').write_text(json.dumps(rec,indent=2,sort_keys=True))
 print('PASS', 'q=',float(qbox.a),float(qbox.b),'fifth=',float(fifth_box.a),float(fifth_box.b),'contraction=',float(contraction),flush=True)
