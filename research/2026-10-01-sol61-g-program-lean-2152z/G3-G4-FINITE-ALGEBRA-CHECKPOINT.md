@@ -59,14 +59,15 @@ source obligations.
 
 [Aggregate exact signatures/axioms](receipts/VerifiedAlgebraComponents.log) and
 [aggregate receipt](receipts/VerifiedAlgebraComponents-receipt.json) link the
-three completed components. Each has its own source/hash/compiler receipt.
+four completed components. Each has its own source/hash/compiler receipt.
 Printed axioms are exactly propext, Classical.choice and Quot.sound. No custom
 unproved axiom or placeholder is used in the completed modules.
 
 The separate cap-six Poisson-interior 5x5 determinant source is pinned at
 [fc5a3f4, Section 3](https://github.com/Sodelin/Research-Commons/blob/fc5a3f4cc34ae8e42b74732bcf6f360b35a39d7b/research/2026-10-01-sol61-g3-boundary-resume-2124z/CAP6-POISSON-INTERIOR.md).
-Direct expansion exceeded the bounded 2 GiB Lean interpreter budget. A small
-L/U entry certificate is being checked under a focused import strategy. Until a
-successful full receipt is added, neither the entry certificate nor the determinant
-has machine-verified status. Analytic IFT and actual finite-source attainment are
-separate even after that finite certificate is verified.
+Direct expansion exceeded the bounded 2 GiB Lean interpreter budget. The
+smaller explicit L/U certificate now fully compiles, including every entry,
+determinant transport, positive factor and scaled nonsingularity. See the
+[exact cap-six Lean certificate and resource receipt](G3-CAP6-LEAN-CERTIFICATE.md).
+Analytic IFT, source-family Jacobian identification and actual finite-source
+attainment remain separate from this verified finite matrix result.

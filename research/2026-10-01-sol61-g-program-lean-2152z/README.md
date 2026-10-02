@@ -31,7 +31,7 @@ unchecked. No legacy heavy build is running. The original final raw-source
 NANUQ theorem was absent; conditional components and local canonical results
 must not be relabelled as full biological source closure.
 
-## Three additional completed finite-algebra components
+## Four additional completed finite-algebra components
 
 - [G3/G4 theorem signatures, insights and remaining source bridges](G3-G4-FINITE-ALGEBRA-CHECKPOINT.md)
 - [Exact additional theorem/axiom manifest](receipts/VerifiedAlgebraComponents.log)
@@ -39,10 +39,12 @@ must not be relabelled as full biological source closure.
 - [G4 fair balanced forest identity](program/G4BalancedForestIdentity.lean)
 - [G4 arbitrary-weight four-root positivity certificate](program/G4FourRootPositivity.lean)
 - [G3 finite double-sum, moment inequality and minimal scalar barrier](program/G3FiniteMomentBarrier.lean)
+- [G3 exact cap-six 5x5 determinant and strict-domain nonsingularity](G3-CAP6-LEAN-CERTIFICATE.md)
 
-The G3 cap-six determinant is an active finite certificate obligation; direct
-expansion hit the 2 GiB limit and a smaller L/U strategy is being checked. The
-analytic IFT and actual finite-source attainment remain separate hand obligations.
+The G3 cap-six finite determinant has now compiled via an explicit L/U
+certificate, in 60.66 seconds at 2.32 GiB peak under a bounded 3 GiB cap.
+The analytic IFT, actual Jacobian/source-family identification and finite-source
+attainment remain separate hand obligations.
 
 A separate hypothesis worker compiled the classical bounded-domain exact-block
 corollary; it is not duplicated here. The original-source route-cardinality

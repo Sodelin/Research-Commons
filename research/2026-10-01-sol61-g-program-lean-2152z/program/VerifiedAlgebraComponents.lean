@@ -1,8 +1,9 @@
 import G4BalancedForestIdentity
 import G4FourRootPositivity
 import G3FiniteMomentBarrier
+import G3CapSixDeterminant
 
-/-! Incremental finite algebra checkpoint. These three components do not assert
+/-! Incremental finite algebra checkpoint. These four components do not assert
 complete biological G3/G4 recognition or source-observation transfer. -/
 #check GProgram.G4.balanced_residual_identity
 #check GProgram.G4.balanced_coordinate_separates_cap4
@@ -17,3 +18,10 @@ complete biological G3/G4 recognition or source-observation transfer. -/
 #print axioms GProgram.G4.balanced_coordinate_separates_cap4
 #print axioms GProgram.G4.FourRoot.zero_delta_forces_negative_defect3
 #print axioms GProgram.G3.MomentBarrier.coupled_barrier_minimal
+
+#check GProgram.G3.CapSix.LU_eq_J0
+#check GProgram.G3.CapSix.exact_determinant
+#check GProgram.G3.CapSix.J0_nonsingular
+#check GProgram.G3.CapSix.scaled_determinant
+#check GProgram.G3.CapSix.scaled_J_nonsingular
+#print axioms GProgram.G3.CapSix.scaled_J_nonsingular

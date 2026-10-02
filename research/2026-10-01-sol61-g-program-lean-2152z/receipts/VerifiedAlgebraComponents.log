@@ -32,3 +32,13 @@ GProgram.G3.MomentBarrier.coupled_barrier {P Q T U d B0 B1 g K C : ℝ} (hP : 0 
 'GProgram.G4.balanced_coordinate_separates_cap4' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GProgram.G4.FourRoot.zero_delta_forces_negative_defect3' depends on axioms: [propext, Classical.choice, Quot.sound]
 'GProgram.G3.MomentBarrier.coupled_barrier_minimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+GProgram.G3.CapSix.LU_eq_J0 {r : ℝ} (hr : 0 < r) :
+  GProgram.G3.CapSix.L r * GProgram.G3.CapSix.U r = GProgram.G3.CapSix.J0 r
+GProgram.G3.CapSix.exact_determinant {r : ℝ} (hr : 0 < r) :
+  (GProgram.G3.CapSix.J0 r).det = GProgram.G3.CapSix.determinantFactor r
+GProgram.G3.CapSix.J0_nonsingular {r : ℝ} (hr : 0 < r) (hr1 : r < 1) : (GProgram.G3.CapSix.J0 r).det ≠ 0
+GProgram.G3.CapSix.scaled_determinant (r w : ℝ) (hr : 0 < r) :
+  (GProgram.G3.CapSix.J r w).det = w / 2 * GProgram.G3.CapSix.determinantFactor r
+GProgram.G3.CapSix.scaled_J_nonsingular {r w : ℝ} (hr : 0 < r) (hr1 : r < 1) (hw : 0 < w) :
+  (GProgram.G3.CapSix.J r w).det ≠ 0
+'GProgram.G3.CapSix.scaled_J_nonsingular' depends on axioms: [propext, Classical.choice, Quot.sound]
