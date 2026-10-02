@@ -1,0 +1,28 @@
+UnifiedLean/Source/SourceAncestralCompletion.lean:37:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceAncestralCompletion.ancestral_live_location`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/SourceAncestralCompletion.lean:73:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+UnifiedLean/Source/SourceAncestralCompletion.lean:138:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceAncestralCompletion.admitted_live_card_positive`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.SourceAncestralCompletion.ancestral_completion_terminal_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceAncestralCompletion.natural_completed_one_tree_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
