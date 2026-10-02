@@ -4,9 +4,9 @@ Dedicated Sol6.1 formalization lane. Original Samuel and Commons source
 attribution is preserved. This is an incremental source-faithful verification
 and hypothesis-audit packet; it is not a complete G1-G7/CG Lean theorem.
 
-## Fifteen compiled components: index and earlier source checks
+## Seventeen compiled components: index and earlier source checks
 
-- [Combined fifteen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
+- [Combined seventeen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
 - [Combined compiler/hash/resource receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
 
 ### Eight earlier source components
@@ -75,6 +75,17 @@ source-to-holding-model and full-forest/observable bridges remain explicit.
 
 These results quantify over every finite n. They compress the no-first-merger
 marginal, not complete labelled forests or an infinite initial population.
+
+## Actual clock moments and uniform finite-clock tail
+
+- [Classical Kingman clock contract and exact formal boundary](KINGMAN-FINITE-CLOCK-TAIL.md)
+- [Actual exponential density first moment and transform](program/ExponentialClockMoments.lean)
+- [Finite product-clock expectation and Markov bound](program/KingmanFiniteClockTail.lean)
+- [Exact clock/tail signatures and axiom manifest](receipts/VerifiedClockTailComponents.log)
+
+For every finite initial count M+q, M>0, the explicit holding-clock sum has
+expectation 2/M-2/(M+q) and tail at t>0 at most 2/(Mt). This does not construct
+an infinite labelled coalescent or supply a whole-network cutoff/minimum.
 
 ## Remaining whole-program obligations
 

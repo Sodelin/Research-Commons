@@ -54,7 +54,13 @@ Samuel source and Commons hand proofs retain their original attribution.
   routing sum groups into exactly n+1 count terms with binomial coefficients,
   including the exponential holding-model specialization at fixed original IDs
 
-[Combined fifteen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
+- ExponentialClockMoments/KingmanFiniteClockTail: actual exponential-density
+  mean/transform, finite independent holding-clock product, reciprocal-rate
+  telescope and uniform 2/(Mt) tail. Root-count path/full source interpretation
+  and infinite entrance construction are still separate; no Chernoff minimum
+  or full-network root/history compression is claimed
+
+[Combined seventeen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
 and [axiom audit](receipts/VerifiedFullComponentCheckpoint.log) link the completed
 source checks, finite algebra and primitive clock/routing model results.
 

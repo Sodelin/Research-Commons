@@ -2,8 +2,9 @@ import VerifiedComponents
 import VerifiedAlgebraComponents
 import VerifiedRoutingBridge
 import VerifiedAllRootComponents
+import VerifiedClockTailComponents
 
-/-! Fifteen completed new source-check/algebra/primitive-model components.
+/-! Seventeen completed new source-check/algebra/primitive-model components.
 This does not discharge the remaining G1-G7/CG biological and analytic frontier. -/
 #print axioms GProgram.G1.shared_register_exact_counterexample
 #print axioms GProgram.G2.coalesced_copies_cannot_split
@@ -18,3 +19,6 @@ This does not discharge the remaining G1-G7/CG biological and analytic frontier.
 
 #print axioms GProgram.G4.PairClocks.private_arms_no_first_merge
 #print axioms GProgram.G4.BinomialCompression.original_all_root_exponential_coefficients
+
+#print axioms GProgram.Kingman.ClockMoments.exponential_transform
+#print axioms GProgram.Kingman.FiniteClockTail.uniform_markov_tail

@@ -1,0 +1,17 @@
+GProgram.Kingman.ClockMoments.exponential_first_moment {r : ℝ} (hr : 0 < r) :
+  ∫⁻ (x : ℝ), ENNReal.ofReal x ∂ProbabilityTheory.expMeasure r = ENNReal.ofReal (1 / r)
+GProgram.Kingman.ClockMoments.exponential_transform {r θ : ℝ} (hr : 0 < r) (hθ : θ < r) :
+  ∫⁻ (x : ℝ), ENNReal.ofReal (Real.exp (θ * x)) ∂ProbabilityTheory.expMeasure r = ENNReal.ofReal (r / (r - θ))
+GProgram.Kingman.FiniteClockTail.holdingRate_positive {M q : ℕ} (hM : 0 < M) (i : Fin q) :
+  0 < GProgram.Kingman.FiniteClockTail.holdingRate M i
+GProgram.Kingman.FiniteClockTail.reciprocalSum_exact {M : ℕ} (hM : 0 < M) (q : ℕ) :
+  GProgram.Kingman.FiniteClockTail.reciprocalSum M q = 2 / ↑M - 2 / (↑M + ↑q)
+GProgram.Kingman.FiniteClockTail.finite_clock_mean {M : ℕ} (hM : 0 < M) (q : ℕ) :
+  ∫⁻ (ω : Fin q → ℝ), GProgram.Kingman.FiniteClockTail.hitClock q ω ∂GProgram.Kingman.FiniteClockTail.clocks M q =
+    ENNReal.ofReal (GProgram.Kingman.FiniteClockTail.reciprocalSum M q)
+GProgram.Kingman.FiniteClockTail.uniform_markov_tail {M : ℕ} (hM : 0 < M) (q : ℕ) {t : ℝ} (ht : 0 < t) :
+  ((GProgram.Kingman.FiniteClockTail.clocks M q)
+        {ω | ENNReal.ofReal t ≤ GProgram.Kingman.FiniteClockTail.hitClock q ω}).toReal ≤
+    2 / (↑M * t)
+'GProgram.Kingman.ClockMoments.exponential_transform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.Kingman.FiniteClockTail.uniform_markov_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
