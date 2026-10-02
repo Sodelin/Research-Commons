@@ -1,0 +1,113 @@
+{
+  "reviewer": "Codex / review_g3_all_residue_strengthening",
+  "source_commit": "b7c072d53e4cb68624935b0283c66f2bcd525956",
+  "status": "PASS independent exact reconstruction and full Sylvester coefficient replay",
+  "limits": {
+    "cpu_seconds": 120,
+    "address_space_mib": 1100
+  },
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "C_degrees": [
+    85,
+    85,
+    82,
+    78,
+    68,
+    56
+  ],
+  "B_degrees": [
+    49,
+    49,
+    46,
+    42,
+    32,
+    20
+  ],
+  "normal_and_exact_gcd_cofactor_identities": true,
+  "slices": [
+    {
+      "q": 3,
+      "degree": 385,
+      "all_coefficients_match": true,
+      "raw_content": "55807693282759604920456163314948956171858052874683726857453019390670027945845332242357675769351024689757770567868315601334713264688332800000",
+      "seconds": 6.496379747004539
+    },
+    {
+      "q": 5,
+      "degree": 385,
+      "all_coefficients_match": true,
+      "raw_content": "3251401171619960644863042600299690255015183606445707533484282402401539097697433030538156294560135850049153203125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "seconds": 15.506986480002524
+    }
+  ],
+  "gcd_degree": 238,
+  "positive_gcd_factors": [
+    {
+      "degree": 1,
+      "multiplicity": 22,
+      "positivity": "r positive"
+    },
+    {
+      "degree": 2,
+      "multiplicity": 3,
+      "positivity": "quadratic strictly positive"
+    },
+    {
+      "degree": 2,
+      "multiplicity": 6,
+      "positivity": "nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 4,
+      "multiplicity": 2,
+      "positivity": "nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 20,
+      "multiplicity": 1,
+      "positivity": "nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 30,
+      "multiplicity": 1,
+      "positivity": "nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 32,
+      "multiplicity": 1,
+      "positivity": "nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 34,
+      "multiplicity": 1,
+      "positivity": "(r^31+r)(r^2-r+1) plus nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 34,
+      "multiplicity": 1,
+      "positivity": "nonnegative coefficients, positive constant"
+    },
+    {
+      "degree": 40,
+      "multiplicity": 1,
+      "positivity": "nonnegative coefficients, positive constant"
+    }
+  ],
+  "independent_J_identity": "J=(r^31+r)(r^2-r+1)+K; K has nonnegative coefficients and K(0)=1",
+  "strict_P0_p5_identity": true,
+  "Q0_division_1_minus_p": true,
+  "q_degrees": [
+    56,
+    54
+  ],
+  "advertised_q_degree_bounds": [
+    56,
+    55
+  ],
+  "q_resultant_degree_bound": 499,
+  "distinct_pair_bound": 2495,
+  "source_manifest_all_hashes_match": true,
+  "seconds": 21.886178851003933,
+  "scope": "Exact finite algebra and polynomial identities; source transfer is a reviewed hand theorem, not a kernel proof. No root isolation, critical-point list or source witness enumeration executed."
+}
