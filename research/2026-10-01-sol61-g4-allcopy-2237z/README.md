@@ -13,11 +13,19 @@ The supplied-B component is independently accepted in the head's [uniform pad re
 
 ## New submitted unknown-source extension
 
-[UNKNOWN-BARE-ONE-BIGON-STOPPING.md](UNKNOWN-BARE-ONE-BIGON-STOPPING.md) supplies a source-specific complete equality relation for one UNKNOWN bare bigon with TWO UNKNOWN positive ordinary pads. New full-forest spectral identities recover the trailing pad through sharp cap six without supplied bare parameters. A finite-law split-atom versus continuous Beta-mixture argument identifies the leading pad all-copy; inherited bare injectivity then gives the exact arm-exchange orbit. Its explicit semialgebraic locus supplies a terminating fixed-shape QE prefix finder. A numerical universal cutoff for all five unknown parameters has not been executed. The head independently accepted the full hand theorem and replayed the exact endpoint script on 2026-10-02; its separate pinned receipt records the acceptance scope.
+[UNKNOWN-BARE-ONE-BIGON-STOPPING.md](UNKNOWN-BARE-ONE-BIGON-STOPPING.md) supplies a source-specific complete equality relation for one UNKNOWN bare bigon with TWO UNKNOWN positive ordinary pads. New full-forest spectral identities recover the trailing pad through sharp cap six without supplied bare parameters. A finite-law split-atom versus continuous Beta-mixture argument identifies the leading pad all-copy; inherited bare injectivity then gives the exact arm-exchange orbit. Its explicit semialgebraic locus supplies a terminating fixed-shape QE prefix finder. A numerical universal cutoff for all five unknown parameters has not been executed. The head independently accepted the full hand theorem and replayed the exact endpoint script on 2026-10-02; its [separate pinned receipt](../2026-10-01-sol61-head-audit-1956z/G4-UNKNOWN-BARE-ONE-BIGON-REVIEW.md), f43d0f2da6ad112fe62a98abc47deb74d9d59973, records the acceptance scope.
 
 [SYMMETRY-SUFFICIENT-INTERFACE.md](SYMMETRY-SUFFICIENT-INTERFACE.md) gives exact finite-cap entering-root compression by token-label exchangeability, selected-label projectivity and opaque subtree grafting: at six roots, 20 shape-orbit probabilities represent 2431 labelled forest coordinates and every lower row. This is sufficient, not a proved minimal physical tester budget or bounded all-copy representation.
 
 [FULLY-ACTUATED-SERIAL-CHAIN.md](FULLY-ACTUATED-SERIAL-CHAIN.md) records a conditional arbitrary-supplied-length extension when the declared original-ID menu actually isolates each natural cell by forcing all others. It is a separate stronger menu, with no unmarked unknown cell, and preserves the predecessor theorem's exact scope. No such deterministic rows are added to a passive or randomized-only menu.
+
+## Current direct passive arbitrary-chain attack
+
+[ARBITRARY-CHAIN-FIRST-COMB-INVARIANT.md](ARBITRARY-CHAIN-FIRST-COMB-INVARIANT.md) supplies new submitted ordered-prefix all-copy invariants for ANY finite positive private independent chain, irrespective of rival length: the leading ordinary survival, first inheritance weight and, on unequal weights, first minority-arm duration. A source-derived normalized comb coordinate has a log-square correction that survives every positive ordinary connector/tail up to constant factors. Exact symbolic comb-cut controls and two full replays pass; independent full review is requested. The majority-arm/tail factor and complete passive same-L/unknown-size stopping remain open.
+
+[KINGMAN-TAIL-AND-TRUNCATION.md](KINGMAN-TAIL-AND-TRUNCATION.md) gives classical uniform all-finite-n exponential tail/error-budget bounds, retaining genealogy history and joint registers. This is controlled forward-law approximation, not exact inverse closure.
+
+[POLYNOMIAL-AUTOMATON-PROJECTION-ROUTE.md](POLYNOMIAL-AUTOMATON-PROJECTION-ROUTE.md) records the finite hidden-color polynomial presentation and the exact observed SUM-projection/ideal-closure obligation. The general LICS theorem is seriously reused as a candidate certificate route, without upgrading its unobserved color language or a no-merger statistic to the full legal kernel.
 
 ## Other delivered components
 
@@ -42,7 +50,7 @@ The Sol head independently accepted the arbitrary-chain count/classified-stoppin
 | One/two independent versus unknown finite-common length | Full cap 4 hand proof and exact controls | No general many-independent-cell cap 4 claim |
 | Supplied bare bigon plus two unknown pads | Independently accepted sharp uniform6 | Full source/finite receipt linked above |
 | Unknown bare one-bigon parameters and pads | Independently accepted full five-parameter hand theorem | Whole-shape numerical cap not executed |
-| Supplied fully actuated serial chain | Hand consequence under an explicit stronger menu | Separate review pending; no missing rows/unmarked cells |
+| Supplied fully actuated serial chain | Head hand acceptance under an explicit stronger menu | No missing rows/unmarked cells; not passive master |
 | Arbitrary same-L passive ordered products/general admitted boxes | OPEN | Exhaustive source-specific normal form or closure certificate |
 | Unknown-size independent exact-response recognition | OPEN | Asymptotic identification is not a finite stopping rule |
 | Multiport/shared-register/weaker menu | Separate OPEN contracts | No transfer by analogy |
@@ -64,6 +72,7 @@ Run with assertions enabled:
     python uniform_placement_six_checks.py > uniform-placement-six-results.json
     python unknown_bare_trailing_six_checks.py > unknown-bare-trailing-six-results.json
     python symmetry_orbit_checks.py > symmetry-orbit-results.json
+    python comb_prefix_checks.py > comb-prefix-results.json
 
 Dependencies: Python 3, SymPy 1.14.0 for the symbolic files. Some exact symbolic stages take minutes; an incomplete file, timeout or intermediate plateau is not PASS. The new uniform certificate is a finite exhaustive proof computation, not an all-class source enumeration.
 
