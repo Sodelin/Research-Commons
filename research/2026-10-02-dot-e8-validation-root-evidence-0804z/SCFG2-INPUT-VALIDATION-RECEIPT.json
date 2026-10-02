@@ -1,0 +1,206 @@
+{
+  "author": "dot",
+  "source_pin": "27afdd054272dbda8a74c8aad156970a44c23cd8",
+  "binary_sha256": "2536e8cad1e7b66da67201b1d3f1c06178290d892bbe930f23fcc6238794f477",
+  "environment": "All CPARTY_* variables unset, built-in default parameters, isolated subprocess, core dumps disabled",
+  "tests": [
+    {
+      "case": "empty",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "",
+        ""
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 viterbi failed: sequence must not be empty\n",
+      "elapsed_s": 0.0039751529693603516
+    },
+    {
+      "case": "length_mismatch",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGC",
+        "."
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 viterbi failed: scaffold structure length differs from sequence length\n",
+      "elapsed_s": 0.0027382373809814453
+    },
+    {
+      "case": "valid_empty",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "........."
+      ],
+      "returncode": 0,
+      "stdout": "((....)).\t-0.10000000000000056\t((....)).\n",
+      "stderr": "",
+      "elapsed_s": 0.00904083251953125
+    },
+    {
+      "case": "extra_close_prefix",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        ")........"
+      ],
+      "returncode": 0,
+      "stdout": ")........\t-0\t.........\n",
+      "stderr": "",
+      "elapsed_s": 0.010587930679321289
+    },
+    {
+      "case": "extra_close_suffix",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "........)"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 viterbi failed: exact Viterbi returned a nonpositive or non-finite weight\n",
+      "elapsed_s": 0.011841058731079102
+    },
+    {
+      "case": "unclosed_open",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "(........"
+      ],
+      "returncode": 0,
+      "stdout": "(........\t-0\t.........\n",
+      "stderr": "",
+      "elapsed_s": 0.016289472579956055
+    },
+    {
+      "case": "reversed_brackets",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        ").......("
+      ],
+      "returncode": 0,
+      "stdout": ").......(\t-0\t.........\n",
+      "stderr": "",
+      "elapsed_s": 0.00930929183959961
+    },
+    {
+      "case": "square_scaffold",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "[.......]"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 viterbi failed: scaffold and generated structures reuse one endpoint\n",
+      "elapsed_s": 0.01097726821899414
+    },
+    {
+      "case": "unsupported_scaffold",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "?........"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 viterbi failed: scaffold and generated structures reuse one endpoint\n",
+      "elapsed_s": 0.009451866149902344
+    },
+    {
+      "case": "uppercase_X",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "X........"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 viterbi failed: scaffold and generated structures reuse one endpoint\n",
+      "elapsed_s": 0.008069992065429688
+    },
+    {
+      "case": "lowercase_x",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "GCAAAAGCC",
+        "x........"
+      ],
+      "returncode": 0,
+      "stdout": "x........\t-0\t.........\n",
+      "stderr": "",
+      "elapsed_s": 0.008101701736450195
+    },
+    {
+      "case": "unsupported_sequence",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "viterbi",
+        "QQQQQQQQQ",
+        "........."
+      ],
+      "returncode": 0,
+      "stdout": ".........\t-0\t.........\n",
+      "stderr": "",
+      "elapsed_s": 0.007921457290649414
+    },
+    {
+      "case": "invalid_target_close",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "energy",
+        "GCAAAAGCC",
+        ".........",
+        ")........"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 energy failed: unbalanced target dot-bracket structure\n",
+      "elapsed_s": 0.0024940967559814453
+    },
+    {
+      "case": "invalid_target_open",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "energy",
+        "GCAAAAGCC",
+        ".........",
+        "(........"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 energy failed: unbalanced target dot-bracket structure\n",
+      "elapsed_s": 0.002138376235961914
+    },
+    {
+      "case": "invalid_target_symbol",
+      "command": [
+        "/workspace/scratch/281dd7169401/recovered-e-research/scfg2-replay-build/scfg2_exact_adapter",
+        "energy",
+        "GCAAAAGCC",
+        ".........",
+        "?........"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "SCFG2 energy failed: unsupported target dot-bracket symbol\n",
+      "elapsed_s": 0.00197601318359375
+    }
+  ]
+}
