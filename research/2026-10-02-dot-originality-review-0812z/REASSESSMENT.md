@@ -27,3 +27,9 @@ The coherent route-resolved Lean proof remains valid within its stated model. Ho
 
 ## Resume criterion
 For each proposed next research result, record the closest existing theorem/system, precise difference in assumptions/conclusion, whether that difference is useful, what remains unproved, and source coverage limits. A no-hit search is never a novelty certificate. Engineering work may retain independent utility, but must not be presented as solving a new mathematical conjecture. Any changed source/observation scope remains a separate explicit decision.
+
+## Further inherited-result correction — 08:14 UTC
+
+Direct inspection of [ASTRA ALL-CAP.md, Theorem B](https://github.com/Sodelin/Research-Commons/blob/dc56814b1289ef6b83997df493f3d8b84d48a89b/research/2026-10-01-g4-admitted-testers-0819z/ALL-CAP.md) confirms the older packet ALREADY contains exact collisions at every finite cap for actual positive independent sources, complete capped forest equality, a later differing no-merger coordinate, and an effective algebraic witness construction. Therefore all-cap/unknown-size collision existence itself is inherited, not a new advance of the recent packet. The possible relative addition is that the SAME FIXED latent mark t(C4) differs at every chosen cap, with its specific marked-group witness/bound. External novelty of this narrower assertion is still unresolved. Preserve prior attribution and correct any broader significance language.
+
+E source audit additionally reports current public repository pins unchanged, no public issue match for the VPR right-padding diagnosis in the bounded pass, and other source concerns already documented. This is not proof of first discovery. The defensible current label remains reproducible source discrepancy/correction and integration evidence.
