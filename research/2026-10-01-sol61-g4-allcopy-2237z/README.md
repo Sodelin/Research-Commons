@@ -19,6 +19,10 @@ The supplied-B component is independently accepted in the head's [uniform pad re
 
 [FULLY-ACTUATED-SERIAL-CHAIN.md](FULLY-ACTUATED-SERIAL-CHAIN.md) records a conditional arbitrary-supplied-length extension when the declared original-ID menu actually isolates each natural cell by forcing all others. It is a separate stronger menu, with no unmarked unknown cell, and preserves the predecessor theorem's exact scope. No such deterministic rows are added to a passive or randomized-only menu.
 
+## New full passive supplied-chain theorem submission
+
+[PASSIVE-CHAIN-NORMAL-FORM.md](PASSIVE-CHAIN-NORMAL-FORM.md) is a NEW full hand-proof candidate for arbitrary SUPPLIED finite positive private independent chains. A law-level positive-clade cohort reconstruction exposes both first arm survivals, handles equal weights by a fair orientation and exact symmetric formulas, and recovers the entire tail by full forest operator cancellation. Ordered induction gives an explicit arm-exchange normal form and therefore effective fixed-pair all-copy equality/stopping. The complete source proof is under independent review; finite exact controls alone do not verify its infinite hierarchy step. This does not settle inverse stopping against unbounded UNKNOWN rival lengths or general shared/multiport boxes.
+
 ## Current direct passive arbitrary-chain attack
 
 [ARBITRARY-CHAIN-FIRST-COMB-INVARIANT.md](ARBITRARY-CHAIN-FIRST-COMB-INVARIANT.md) supplies new submitted ordered-prefix all-copy invariants for ANY finite positive private independent chain, irrespective of rival length: the leading ordinary survival, first inheritance weight and, on unequal weights, first minority-arm duration. A source-derived normalized comb coordinate has a log-square correction that survives every positive ordinary connector/tail up to constant factors. Exact symbolic comb-cut controls and two full replays pass; independent full review is requested. The majority-arm/tail factor and complete passive same-L/unknown-size stopping remain open.
@@ -51,7 +55,8 @@ The Sol head independently accepted the arbitrary-chain count/classified-stoppin
 | Supplied bare bigon plus two unknown pads | Independently accepted sharp uniform6 | Full source/finite receipt linked above |
 | Unknown bare one-bigon parameters and pads | Independently accepted full five-parameter hand theorem | Whole-shape numerical cap not executed |
 | Supplied fully actuated serial chain | Head hand acceptance under an explicit stronger menu | No missing rows/unmarked cells; not passive master |
-| Arbitrary same-L passive ordered products/general admitted boxes | OPEN | Exhaustive source-specific normal form or closure certificate |
+| Arbitrary supplied finite passive independent chains | Full ordered normal-form hand theorem submitted | Complete source review pending; no numerical universal cap executed |
+| General multiport/joint shared-register admitted boxes | OPEN separate contracts | Source-faithful all-copy equality mechanism |
 | Unknown-size independent exact-response recognition | OPEN | Asymptotic identification is not a finite stopping rule |
 | Multiport/shared-register/weaker menu | Separate OPEN contracts | No transfer by analogy |
 
@@ -73,6 +78,7 @@ Run with assertions enabled:
     python unknown_bare_trailing_six_checks.py > unknown-bare-trailing-six-results.json
     python symmetry_orbit_checks.py > symmetry-orbit-results.json
     python comb_prefix_checks.py > comb-prefix-results.json
+    python cohort_peeling_checks.py > cohort-peeling-results.json
 
 Dependencies: Python 3, SymPy 1.14.0 for the symbolic files. Some exact symbolic stages take minutes; an incomplete file, timeout or intermediate plateau is not PASS. The new uniform certificate is a finite exhaustive proof computation, not an all-class source enumeration.
 
