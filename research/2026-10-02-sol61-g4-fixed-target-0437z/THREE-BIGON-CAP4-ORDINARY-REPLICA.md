@@ -82,7 +82,7 @@ Sections 3-4 now give ALL complete labelled forest equality through four with E(
 
 ## 6. Why the interval computation proves exact existence
 
-The finite polynomial vector F is (1), with its stated positive scaling. Let x0 be the exact rational center, X=x0+[-epsilon,epsilon]^4, epsilon=10^(-25), and R=JF(x0)^(-1), computed exactly over Q. The derivative interval JF(X) is computed by rational interval automatic differentiation of the FACTORED source formulas. No floating operation occurs in verify_cap4_replica.py.
+The finite polynomial vector F is (1), with its stated positive scaling. Let x0 be the exact rational center, X=x0+[-epsilon,epsilon]^4, epsilon=10^(-25), and R=JF(x0)^(-1), computed exactly over Q. The derivative interval JF(X) is computed by rational interval automatic differentiation of the FACTORED source formulas. All polynomial, derivative, inclusion and sign checks use exact rational arithmetic; final float conversions are only orientation output.
 
 The checker proves the exact inclusion
 
@@ -108,7 +108,17 @@ A fully legal observed separator uses five A copies and five B copies, with one 
 
 This is a twelve-total-copy rooted-topology test with the unknown box appearing once. No A-only or B-only merger can contribute to that topology, and ordinary completion supplies the positive topology constant. All exterior parameters are fixed identically on the two sources.
 
-## 8. Replay and limits
+## 8. Stronger local consequence: full cap-four source interior
+
+The SAME fixed ordinary target law is an INTERIOR point of the complete five-dimensional cap-four independent-source image. No additional search is required for this corollary.
+
+In addition to the four isolating variables, vary z3. At the exact zero, every derivative in z3 of the four unscaled equations (1) vanishes: r-q^3 scales by z3^3, s-q^6 by z3^6, C=z3*Cprev with Cprev=0, and H=Hprev+(1-z3)Cprev with Hprev=Cprev=0. However, partial q/partial z3=q/z3>0. The Jacobian of (q,F1,F2,F3,F4) therefore has a nonsingular block-triangular five-by-five minor, using the already certified four-variable Jacobian. Changing from these coordinates to (q,r,s,C,H) is invertible.
+
+The leading E(a), held at its certified value while these five parameters vary, acts on the quotient by the positive invertible diagonal scaling (a,a^3,a^6,a^6,a^6). Every parameter is originally strict, so two-sided variation is legal. The ordinary inverse function theorem now places the ordinary target quotient in an OPEN neighborhood of actual three-bigon source quotients. The complete orbit reconstruction in Section 3 identifies this with source-positive cap-four law interior.
+
+Consequently a cap-four positivity/supporting-face or source-rank strategy cannot distinguish this ordinary target from independent sources: the ordinary target already has a regular strict independent realization. This is a scoped statement about complete cap-four observation space, not an obstruction to a higher-cap or nonlinear target-adaptive certificate.
+
+## 9. Replay and limits
 
 Run, with Python, SymPy and assertions enabled:
 
