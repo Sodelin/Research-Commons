@@ -1,0 +1,15 @@
+'GProgram.G5.NonbridgeRoutes.UpPath.append' does not depend on any axioms
+'GProgram.G5.NonbridgeRoutes.EdgePath.to_upPath_reverse' depends on axioms: [propext]
+G5ActualComponentSupport.lean:57:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.ComponentSupport.mem_activeComponentEdges_iff`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G5.ComponentSupport.finite_active_nonbridge_edges_card_le_indegree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.ComponentSupport.activeComponentEdges_card_le_indegree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

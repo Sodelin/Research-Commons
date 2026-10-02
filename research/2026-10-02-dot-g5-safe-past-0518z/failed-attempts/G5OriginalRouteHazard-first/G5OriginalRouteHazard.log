@@ -1,0 +1,275 @@
+G5OriginalRouteHazard.lean:89:2: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+C : Calendar N.graph
+rate : E → ℝ
+B : Finset X
+R : RouteFamily N
+t : ℝ
+hu : t < C.age N.root
+hsafe : SafeAt N C B t
+x y : X
+hx : x ∈ B
+hy : y ∈ B
+hne : x ≠ y
+hs : ¬CoOccupy N R C t x y
+e : E
+a✝ : e ∈ Finset.univ
+hm : e ∈ R.edges x ∧ e ∈ R.edges y
+ht : t ≤ C.age (N.graph.target e)
+he : exposure N.graph C t e = 0
+⊢ (if True ∧ True then 0 else 0) = 0
+G5OriginalRouteHazard.lean:97:18: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hm, he, mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:136:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (C.Active t e)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G5OriginalRouteHazard.lean:141:4: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+C : Calendar N.graph
+t ε u : ℝ
+hgap : EndpointGap N.graph C t ε
+hu : 0 ≤ u
+huε : u < ε
+e : E
+htu : t ≤ t + u
+hy : C.age (N.graph.target e) ≤ t
+hs : t < C.age (N.graph.source e)
+hst : t + u < C.age (N.graph.source e)
+⊢ t + u - C.age (N.graph.target e) = t - C.age (N.graph.target e) + sorry
+G5OriginalRouteHazard.lean:148:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+C : Calendar N.graph
+t ε u : ℝ
+hgap : EndpointGap N.graph C t ε
+hu : 0 ≤ u
+huε : u < ε
+e : E
+htu : t ≤ t + u
+hy : C.age (N.graph.target e) ≤ t
+hs : ¬t < C.age (N.graph.source e)
+hst : C.age (N.graph.source e) ≤ t
+ha : ¬C.Active t e
+⊢ max 0 (C.age (N.graph.source e) - C.age (N.graph.target e)) =
+    max 0 (C.age (N.graph.source e) - C.age (N.graph.target e)) + sorry
+G5OriginalRouteHazard.lean:151:2: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+C : Calendar N.graph
+t ε u : ℝ
+hgap : EndpointGap N.graph C t ε
+hu : 0 ≤ u
+huε : u < ε
+e : E
+htu : t ≤ t + u
+hy : ¬C.age (N.graph.target e) ≤ t
+hyt : t < C.age (N.graph.target e)
+hyu : t + u < C.age (N.graph.target e)
+ht0 : min t (C.age (N.graph.source e)) - C.age (N.graph.target e) ≤ 0
+htu0 : min (t + u) (C.age (N.graph.source e)) - C.age (N.graph.target e) ≤ 0
+ha : ¬C.Active t e
+⊢ 0 = 0 + sorry
+G5OriginalRouteHazard.lean:146:8: warning: This simp argument is unused:
+  Calendar.Active
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_left hs.le, min_eq_left hst.le, max_eq_right (sub_nonneg.mpr hy),
+    max_eq_right (sub_nonneg.mpr (hy.trans htu)), hy, hs, and_self, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:146:24: warning: This simp argument is unused:
+  hy
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_left hs.le, min_eq_left hst.le, max_eq_right (sub_nonneg.mpr hy),
+    max_eq_right (sub_nonneg.mpr (hy.trans htu)), Calendar.Active, hs, and_self, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:146:27: warning: This simp argument is unused:
+  hs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_left hs.le, min_eq_left hst.le, max_eq_right (sub_nonneg.mpr hy),
+    max_eq_right (sub_nonneg.mpr (hy.trans htu)), Calendar.Active, hy, and_self, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:146:30: warning: This simp argument is unused:
+  and_self
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_left hs.le, min_eq_left hst.le, max_eq_right (sub_nonneg.mpr hy),
+    max_eq_right (sub_nonneg.mpr (hy.trans htu)), Calendar.Active, hy, hs, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:146:39: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_left hs.le, min_eq_left hst.le, max_eq_right (sub_nonneg.mpr hy),
+    max_eq_right (sub_nonneg.mpr (hy.trans htu)), Calendar.Active, hy, hs, and_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:150:72: warning: This simp argument is unused:
+  ha
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_right hst, min_eq_right (hst.trans htu), if_false, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:150:75: warning: This simp argument is unused:
+  if_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_right hst, min_eq_right (hst.trans htu), ha, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:150:84: warning: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, min_eq_right hst, min_eq_right (hst.trans htu), ha, if_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:160:57: warning: This simp argument is unused:
+  ha
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, max_eq_left ht0, max_eq_left htu0, if_false, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:160:60: warning: This simp argument is unused:
+  if_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, max_eq_left ht0, max_eq_left htu0, ha, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G5OriginalRouteHazard.lean:160:69: warning: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exposure, max_eq_left ht0, max_eq_left htu0, ha, if_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G5OriginalRouteHazard.lean:167:46: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+C : Calendar N.graph
+rate : E → ℝ
+R : RouteFamily N
+x y : X
+t ε u : ℝ
+hgap : EndpointGap N.graph C t ε
+hu : 0 ≤ u
+huε : u < ε
+e : E
+a✝ : e ∈ Finset.univ
+hm : e ∈ R.edges x ∧ e ∈ R.edges y
+ha : C.Active t e
+⊢ rate e * exposure N.graph C t e + rate e * sorry () = rate e * exposure N.graph C t e + rate e * u
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+C : Calendar N.graph
+rate : E → ℝ
+R : RouteFamily N
+x y : X
+t ε u : ℝ
+hgap : EndpointGap N.graph C t ε
+hu : 0 ≤ u
+huε : u < ε
+e : E
+a✝ : e ∈ Finset.univ
+hm : e ∈ R.edges x ∧ e ∈ R.edges y
+ha : ¬C.Active t e
+⊢ sorry () = 0 ∨ rate e = 0
+'GProgram.G5.RouteHazard.currentPairRate_zero_iff_separated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G5.RouteHazard.separated_safe_accumulatedHazard_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.RouteHazard.separated_safe_routeSurvival_one' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.RouteHazard.positive_endpoint_gap_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G5.RouteHazard.exposure_add_on_endpoint_gap' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.RouteHazard.accumulatedHazard_add_on_endpoint_gap' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.RouteHazard.routeSurvival_add_on_endpoint_gap' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
