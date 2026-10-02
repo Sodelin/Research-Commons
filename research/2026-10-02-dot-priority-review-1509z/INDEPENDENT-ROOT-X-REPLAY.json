@@ -1,0 +1,58 @@
+{
+  "reviewer": "GPT-6.1 Sol / continue_g_research",
+  "date_utc": "2026-10-02T15:15Z",
+  "scope": "independent unchanged PUBLIC baseline probe root/target query; constrained MAX not class SUM; failed API status preserved",
+  "runtime_changed": false,
+  "source_sha256": "d185d79366ee467237f0f7d913cbec5d1a638c191965aadf52b1b77bf87ec119",
+  "binary_sha256": "81bcec4e54639f72635a6dfecba5726c25518856bbc15bd337aca7447bba5a39",
+  "resource_limit_mib": 512,
+  "cpu_seconds": 10,
+  "wall_seconds": 15,
+  "cases": [
+    {
+      "name": "public22_dot_control",
+      "sequence": "AAGAAGGCGGUCGAAUCCGCCG",
+      "scaffold": ".....(((((......))))).",
+      "target": "..[[......]]..........",
+      "exit_code": 0,
+      "stdout": "1\t16708291.93270167\t-10.250287007758667\t1\t1\t3765781.2113994271\t-1.4899497863165365\t-9.3320000000000007\n",
+      "stderr": "",
+      "seconds": 0.018628017001901753,
+      "exact_prior_stdout": true
+    },
+    {
+      "name": "public22_x_left",
+      "sequence": "AAGAAGGCGGUCGAAUCCGCCG",
+      "scaffold": "...x.(((((......))))).",
+      "target": "..[[......]]..........",
+      "exit_code": 1,
+      "stdout": "1\t16489646.634862538\t-10.24216857668649\t0\t0\t3765781.2113994271\t-inf\tnan\n",
+      "stderr": "",
+      "seconds": 0.01773757699993439,
+      "exact_prior_stdout": true
+    },
+    {
+      "name": "public22_x_right",
+      "sequence": "AAGAAGGCGGUCGAAUCCGCCG",
+      "scaffold": ".....(((((x.....))))).",
+      "target": "..[[......]]..........",
+      "exit_code": 1,
+      "stdout": "1\t16171958.431555994\t-10.230178717985318\t0\t0\t3765781.2113994271\t-inf\tnan\n",
+      "stderr": "",
+      "seconds": 0.02389791300811339,
+      "exact_prior_stdout": true
+    }
+  ],
+  "fresh_public_source_content_exact": {
+    "submodules/CParty/src/sparse_tree.cc": true,
+    "submodules/CParty/src/scfg2/deductions/generate_exact_basic.hh": true,
+    "submodules/CParty/src/scfg2/replay/w_final_exact_inside.hh": true,
+    "submodules/CParty/src/scfg2/api/exact.cc": true
+  },
+  "public_repository": "TakumiOtagaki/PKProbDesign",
+  "public_commit": "27afdd054272dbda8a74c8aad156970a44c23cd8",
+  "root_generated_target_equality_checked_in_source": true,
+  "api_rejects_invalid_output": true,
+  "class_SUM_or_unconditional_bad_mass_claim": false,
+  "root_support_scope_verdict": "CONFIRMED constrained MAX ROOT hard-x support blocker"
+}
