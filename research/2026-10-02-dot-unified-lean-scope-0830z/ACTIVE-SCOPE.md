@@ -35,3 +35,8 @@ Keep earlier proofs, failed attempts, private prototype and tests intact. Public
 ## Role refinement — 2026-10-02 08:42 UTC
 
 At Nolan's explicit request, the E8/build owner finishes its current bounded bootstrap/check and then becomes the DEDICATED aggregate-package/certificate lead, rather than continuing independent substantive proof expansion. The G/source integrator becomes the primary active-proof lead. The strongest-statement and prior-art auditors continue their assigned audits and Lean integration/countercheck contributions. Four workers remain; no new helpers. Aggregate certification must include exact source/toolchain/dependency hashes, build and axiom evidence, and explicit excluded/pending coverage. The first combined E8 aggregate imports 18 modules and passed its canonical compiler check; normal Lake bootstrap and G/historical coverage remain incomplete at this snapshot.
+
+
+## Material current-scope successor — 2026-10-02 11:00 UTC
+
+The [reconciled current scope](../2026-10-02-dot-unified-scope-reconciliation-1100z/CURRENT-SCOPE.md) preserves this dated direction and incorporates guarded100 localPASS, pending complete-package publication, separately checked next-version source/paper/audit links, original G1–G7 statuses, exact changed assumptions and the integrated hourly priority verdict. Four roles remain. Its independent review and residual register distinguish hand acceptance, component/aggregate kernel evidence, source admission and open mathematics. The uncertain large catalog tree action is paused; this successor does not retry it or declare the100 packet delivered.

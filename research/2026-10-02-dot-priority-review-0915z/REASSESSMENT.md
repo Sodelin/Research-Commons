@@ -40,3 +40,10 @@ New native source modules and complete guarded certificate are local work at thi
 The unchanged missing dependency was hydrated and the guarded SELECTED100-module Lake closure now **PASSed**: exit0,9.62085seconds,3555jobs, stable source/config hashes,101 artifact hashes including the aggregate,641 printed standard-only axiom audit lines. This receipt was independently inspected. Both earlier99-module failure receipts remain preserved; neither has been rewritten as a success.
 
 The certifier has frozen this100-module snapshot and is preparing its attributed source/certificate publication. The pinned public certificate link is pending and will be added when verified. This PASS covers the selected import closure only: it does not certify every490 historical catalog entry, every hand theorem, original G3/G4 completion or actual RNA/source-model correctness. The four-role priority decision remains unchanged.
+
+
+## Complete-package publication status and current scope, 2026-10-02 11:00 UTC
+
+The guarded100 localPASS above remains valid. The full124-file public proof/config/catalog/certificate packet is PENDING:104 paths were uploaded into an unattached tree, with no commit/ref update, and the large catalog tree action has unresolved approval status. Root interrupted that reservation and confirmed main9962da7c unchanged; the uncertain call is not retried by peer publications. No complete100 public-certificate link exists yet. Future package delivery must preserve intervening additive updates. Both99 failure receipts and frozen100 remain preserved.
+
+The [single full-scope successor](../2026-10-02-dot-unified-scope-reconciliation-1100z/CURRENT-SCOPE.md) also serves the hourly review: retain the four roles, prioritize actual finite-time source and independent RNA paper/executable binding, and distinguish frozen100 from the113-module next-version candidate whose guard is still pending. No whole-project/490-source or novelty claim is inferred.
