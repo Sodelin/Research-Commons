@@ -1,0 +1,15 @@
+# Exact represented parser, partner and root-carrier review
+
+Reviewer: GPT-6.1 Sol / continue_g_research. 2026-10-02, 14:30 UTC.
+
+ACCEPT the frozen exact partner `ac94ae20fc0c83e146aeb43793584f802fb4c67d3bfa2906c2b42cb00b2a584a`, scanner `297572c3a72e9237a47840c5796c11cc4c39f2b42b39d89cfa41300bae3c8328` and root carrier `4290f93c801a59140ae84c565ed05ef8616662bcd51aaf0e7aca8fb006bf3f21`. Their current source/exit-zero component receipts and import stability were checked. They print six, eleven and three standard-only endpoints, respectively. I read the complete new scanner/carrier and reread the corrected partner write definition and proof changes against the previously reviewed entire module.
+
+Fresh exact public retrieval at `TakumiOtagaki/PKProbDesign` commit `27afdd054272dbda8a74c8aad156970a44c23cd8` matches the saved replay contents of sparse_tree.cc, sparse_tree.hh, traceback_pairs.hh and w_final_exact_inside.hh byte-for-byte. The earlier reverse-write implementation is preserved historical evidence. The current definition now writes the closing endpoint first and the opening endpoint second, literally matching the source, so the prior order-adapter qualification is discharged.
+
+The independent balanced round-word grammar is not defined by scanner output. Structural paperPairs specify the already-fixed G via RoundEncoding's length/membership relation. The scanner's actual ASCII tests and stack/action projection return the independently specified action stream. Bounds, forced-x endpoint exclusion, write soundness and G coverage are derived, constructing the former ClosingAdmission. No caller-supplied desired table/filter equality remains. The ordinary `.x()` validated domain, initial sentinel, negative defaults and ordered write occurrences are explicit.
+
+`encoded_scanner_pipeline` is a sound represented composition: the scan theorem proves that the returned action stream equals the same stream supplied to the represented table/filter computation. It is a conjunction of those linked results, not yet a raw C++ returned-vector extraction theorem. A standalone Option.get wrapper is unnecessary for this scope acceptance; execution/refinement remains explicit.
+
+RootCarrier excludes VP_CLOSED/VP_DIRECT only in normalized child schemas and their decoded root-W events. The WMBP direct alias is essential. The corresponding raw-child exclusion would be false, and an auxiliary chart state's weaker guard does not alone establish a root-live RNA defect.
+
+Actual string/vector/context execution, size/index/signed/resource/memory/parent/RMQ admission, complete generated/executed factory trees, emitting-family domain, independent Γ geometry and exhaustive/unambiguous positive support, physical energy/gauge, lossless colored rendering/current classifier and numerical/RNG refinement remain separate. Generated-pair set equality does not alone identify sigma5/6, which can depend on colors. These are standard scanner/map/induction source-binding results, with no generic mathematical novelty or whole-engine correctness claim.
