@@ -31,3 +31,7 @@ Build a common pinned project with a reproducible aggregate build, theorem/depen
 
 ## Publication and work preservation
 Keep earlier proofs, failed attempts, private prototype and tests intact. Public research checkpoints may include attributed mathematical sources and verified receipts under existing permissions. Do not publish private product code. Only one worker owns build/aggregate files; others use agreed disjoint modules and submit integration changes through that owner.
+
+## Role refinement — 2026-10-02 08:42 UTC
+
+At Nolan's explicit request, the E8/build owner finishes its current bounded bootstrap/check and then becomes the DEDICATED aggregate-package/certificate lead, rather than continuing independent substantive proof expansion. The G/source integrator becomes the primary active-proof lead. The strongest-statement and prior-art auditors continue their assigned audits and Lean integration/countercheck contributions. Four workers remain; no new helpers. Aggregate certification must include exact source/toolchain/dependency hashes, build and axiom evidence, and explicit excluded/pending coverage. The first combined E8 aggregate imports 18 modules and passed its canonical compiler check; normal Lake bootstrap and G/historical coverage remain incomplete at this snapshot.
