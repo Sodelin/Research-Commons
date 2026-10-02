@@ -1,0 +1,11 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/workspace/scratch/281dd7169401/methods-tools-audit-0002z/CorruptCertificate.lean:7:51: error: unsolved goals
+x y : ℚ
+⊢ x * y ^ 2 * 3 + x ^ 2 * y * 3 + x ^ 3 + y ^ 3 = x * y ^ 2 * 3 + x ^ 2 * y * 4 + x ^ 3 + y ^ 3
+'SyntheticCertificate.expanded_cube' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'SyntheticCertificate.root_bracket' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,106 @@
+{
+  "schema": "g6-observation-pilot/v1",
+  "observation": "estimated unrooted quartet label per aligned locus",
+  "alphabet": [
+    "AB|CD",
+    "AC|BD",
+    "AD|BC",
+    "UNRESOLVED"
+  ],
+  "loci": [
+    {
+      "locus_id": "L0-0",
+      "input_sha256": "6c1ebcc9dfe2d3777b428746ad99ae04fcffb8e43470b09f9b6b9d876a675e5d",
+      "label": "AB|CD",
+      "bootstrap_support": 1.0,
+      "sites": 256,
+      "bootstrap_replicates": 100,
+      "warning": "Bootstrap support is not calibrated TV error beta"
+    },
+    {
+      "locus_id": "L0-1",
+      "input_sha256": "6c1ebcc9dfe2d3777b428746ad99ae04fcffb8e43470b09f9b6b9d876a675e5d",
+      "label": "AB|CD",
+      "bootstrap_support": 1.0,
+      "sites": 256,
+      "bootstrap_replicates": 100,
+      "warning": "Bootstrap support is not calibrated TV error beta"
+    },
+    {
+      "locus_id": "L1-0",
+      "input_sha256": "6775b5f3c463d3a8b8d2037a56183b0fe4079c7558e45ebce7bf5bbaf97022be",
+      "label": "AC|BD",
+      "bootstrap_support": 1.0,
+      "sites": 256,
+      "bootstrap_replicates": 100,
+      "warning": "Bootstrap support is not calibrated TV error beta"
+    },
+    {
+      "locus_id": "L1-1",
+      "input_sha256": "6775b5f3c463d3a8b8d2037a56183b0fe4079c7558e45ebce7bf5bbaf97022be",
+      "label": "AC|BD",
+      "bootstrap_support": 1.0,
+      "sites": 256,
+      "bootstrap_replicates": 100,
+      "warning": "Bootstrap support is not calibrated TV error beta"
+    },
+    {
+      "locus_id": "L2-0",
+      "input_sha256": "b9fa95c5357e99a24bff0ac785721677b0cc6d371338a84b2a5b3330c9d4c2ec",
+      "label": "AD|BC",
+      "bootstrap_support": 1.0,
+      "sites": 256,
+      "bootstrap_replicates": 100,
+      "warning": "Bootstrap support is not calibrated TV error beta"
+    },
+    {
+      "locus_id": "L2-1",
+      "input_sha256": "b9fa95c5357e99a24bff0ac785721677b0cc6d371338a84b2a5b3330c9d4c2ec",
+      "label": "AD|BC",
+      "bootstrap_support": 1.0,
+      "sites": 256,
+      "bootstrap_replicates": 100,
+      "warning": "Bootstrap support is not calibrated TV error beta"
+    },
+    {
+      "locus_id": "L-star",
+      "input_sha256": "9f949521525f6ae86cb2dec9ff7955c046a09d664106589be1b48d9bd276c830",
+      "label": "UNRESOLVED",
+      "bootstrap_support": 0.0,
+      "sites": 256
+    }
+  ],
+  "independent_observation_units": 7,
+  "identical_same_locus_duplicates_ignored": 1,
+  "estimated_label_counts": {
+    "AB|CD": 2,
+    "AC|BD": 2,
+    "AD|BC": 2,
+    "UNRESOLVED": 1
+  },
+  "estimated_label_tv_radius": 1.0,
+  "alpha": 0.05,
+  "confidence_scope": "One prespecified profile; conditional on iid loci. Does not cover true gene-tree distribution, adaptive profiles or calendar times.",
+  "known_sequence_to_topology_channel": false,
+  "calibrated_beta": null,
+  "calendar_time_bins": null,
+  "g6_target_certificate": "ABSTAIN: observation channel/calibration and source closure compiler absent",
+  "lean_kernel_checked": false,
+  "phylogenetic_method": "Biopython NJ with uncorrected identity distances; only synthetic smoke, no validated substitution model",
+  "biopython_version": "1.88",
+  "checks": {
+    "all_three_resolved_splits_recovered": true,
+    "star_abstains": true,
+    "duplicate_not_independent_locus": true,
+    "duplicate_taxon_rejected": true,
+    "ambiguous_base_rejected": true,
+    "missing_taxon_rejected": true,
+    "different_same_locus_joint_required": true,
+    "empty_input_rejected": true,
+    "no_false_g6_target_certificate": true
+  },
+  "all_checks_pass": true,
+  "elapsed_seconds": 0.6000130180000269,
+  "process_maxrss_kib": 32984,
+  "input_class": "synthetic designed FASTA, no external upload or personal genomic data"
+}
