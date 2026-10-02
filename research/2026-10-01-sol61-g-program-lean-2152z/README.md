@@ -4,7 +4,12 @@ Dedicated Sol6.1 formalization lane. Original Samuel and Commons source
 attribution is preserved. This is an incremental source-faithful verification
 and hypothesis-audit packet; it is not a complete G1-G7/CG Lean theorem.
 
-## Eight completed published source components
+## Thirteen compiled components: index and earlier source checks
+
+- [Combined thirteen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
+- [Combined compiler/hash/resource receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
+
+### Eight earlier source components
 
 - [Aggregate exact theorem signatures and axiom audit](receipts/VerifiedComponents.log)
 - [Hash/compiler/dependency manifest](receipts/VerifiedComponents-receipt.json)
@@ -49,6 +54,17 @@ attainment remain separate hand obligations.
 A separate hypothesis worker compiled the classical bounded-domain exact-block
 corollary; it is not duplicated here. The original-source route-cardinality
 bridge has a distinct verification frontier.
+
+## New original-hybrid live-routing bridge
+
+- [Explicit source interface, derived polynomials and remaining process bridge](G4-INDEPENDENT-LIVE-ROUTING-BRIDGE.md)
+- [Source-mode live-root routing and exponential holding-model Lean code](program/G4IndependentRoutingBridge.lean)
+- [Exact theorem signatures and axiom manifest](receipts/VerifiedRoutingBridge.log)
+- [Successful source/dependency/resource receipt](receipts/G4IndependentRoutingBridge-receipt.json)
+
+This thirteenth completed component derives the no-merger polynomials from
+explicit live-root assignments at fixed original parent IDs. The continuous-time
+source-to-holding-model and full-forest/observable bridges remain explicit.
 
 ## Remaining whole-program obligations
 

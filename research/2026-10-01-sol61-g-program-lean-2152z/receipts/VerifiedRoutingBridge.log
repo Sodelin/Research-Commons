@@ -1,0 +1,53 @@
+GProgram.G4.IndependentRouting.routingWeight_normalized (n : ℕ) (u : ℝ) :
+  ∑ coin, GProgram.G4.IndependentRouting.routingWeight u coin = 1
+GProgram.G4.IndependentRouting.routingWeight_nonnegative {n : ℕ} {u : ℝ} (hu : 0 ≤ u) (hu1 : u ≤ 1)
+  (coin : Fin n → Bool) : 0 ≤ GProgram.G4.IndependentRouting.routingWeight u coin
+GProgram.G4.IndependentRouting.count_partition {n : ℕ} (coin : Fin n → Bool) :
+  GProgram.G4.IndependentRouting.count0 coin + GProgram.G4.IndependentRouting.count1 coin = n
+GProgram.G4.IndependentRouting.actual_parent0_count.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E] {N : Nanuq.Source.RootedBinary V E X} {n : ℕ}
+  (H : GProgram.G2.OriginalHybridParents N) (coin : Fin n → Bool) :
+  {i | H.parent (coin i) = H.parent0}.card = GProgram.G4.IndependentRouting.count0 coin
+GProgram.G4.IndependentRouting.actual_parent1_count.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E] {N : Nanuq.Source.RootedBinary V E X} {n : ℕ}
+  (H : GProgram.G2.OriginalHybridParents N) (coin : Fin n → Bool) :
+  {i | H.parent (coin i) = H.parent1}.card = GProgram.G4.IndependentRouting.count1 coin
+GProgram.G4.IndependentRouting.generic_two (u : ℝ) (a b : ℕ → ℝ) :
+  GProgram.G4.IndependentRouting.privateNoMerger 2 u a b =
+    u ^ 2 * a 2 * b 0 + 2 * u * (1 - u) * a 1 * b 1 + (1 - u) ^ 2 * a 0 * b 2
+GProgram.G4.IndependentRouting.generic_three (u : ℝ) (a b : ℕ → ℝ) :
+  GProgram.G4.IndependentRouting.privateNoMerger 3 u a b =
+    u ^ 3 * a 3 * b 0 + 3 * u ^ 2 * (1 - u) * a 2 * b 1 + 3 * u * (1 - u) ^ 2 * a 1 * b 2 + (1 - u) ^ 3 * a 0 * b 3
+GProgram.G4.IndependentRouting.generic_four (u : ℝ) (a b : ℕ → ℝ) :
+  GProgram.G4.IndependentRouting.privateNoMerger 4 u a b =
+    u ^ 4 * a 4 * b 0 + 4 * u ^ 3 * (1 - u) * a 3 * b 1 + 6 * u ^ 2 * (1 - u) ^ 2 * a 2 * b 2 +
+        4 * u * (1 - u) ^ 3 * a 1 * b 3 +
+      (1 - u) ^ 4 * a 0 * b 4
+GProgram.G4.IndependentRouting.firstHoldingKernel_eq_power {duration : ℝ} (ht : 0 ≤ duration) (k : ℕ) :
+  GProgram.G4.IndependentRouting.firstHoldingKernel k duration = Real.exp (-duration) ^ k.choose 2
+GProgram.G4.IndependentRouting.exponential_four_root_arm_law {duration : ℝ} (ht : 0 ≤ duration) :
+  GProgram.G4.IndependentRouting.FourRootArmLaw (fun k => GProgram.G4.IndependentRouting.firstHoldingKernel k duration)
+    (Real.exp (-duration))
+GProgram.G4.IndependentRouting.original_source_coordinates.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2} {X : Type u_3}
+  [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E] {N : Nanuq.Source.RootedBinary V E X}
+  (H : GProgram.G2.OriginalHybridParents N) (u x y : ℝ) (a b : ℕ → ℝ)
+  (ha : GProgram.G4.IndependentRouting.FourRootArmLaw a x) (hb : GProgram.G4.IndependentRouting.FourRootArmLaw b y) :
+  GProgram.G4.IndependentRouting.actualPrivateNoMerger H 2 u a b = GProgram.G4.FourRoot.s2 u x y ∧
+    GProgram.G4.IndependentRouting.actualPrivateNoMerger H 3 u a b = GProgram.G4.FourRoot.s3 u x y ∧
+      GProgram.G4.IndependentRouting.actualPrivateNoMerger H 4 u a b = GProgram.G4.FourRoot.s4 u x y
+GProgram.G4.IndependentRouting.exponential_model_original_coordinates.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {X : Type u_3} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E]
+  {N : Nanuq.Source.RootedBinary V E X} (H : GProgram.G2.OriginalHybridParents N) (u t0 t1 : ℝ) (ht0 : 0 ≤ t0)
+  (ht1 : 0 ≤ t1) :
+  have a := fun k => GProgram.G4.IndependentRouting.firstHoldingKernel k t0;
+  have b := fun k => GProgram.G4.IndependentRouting.firstHoldingKernel k t1;
+  GProgram.G4.IndependentRouting.actualPrivateNoMerger H 2 u a b =
+      GProgram.G4.FourRoot.s2 u (Real.exp (-t0)) (Real.exp (-t1)) ∧
+    GProgram.G4.IndependentRouting.actualPrivateNoMerger H 3 u a b =
+        GProgram.G4.FourRoot.s3 u (Real.exp (-t0)) (Real.exp (-t1)) ∧
+      GProgram.G4.IndependentRouting.actualPrivateNoMerger H 4 u a b =
+        GProgram.G4.FourRoot.s4 u (Real.exp (-t0)) (Real.exp (-t1))
+'GProgram.G4.IndependentRouting.exponential_model_original_coordinates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G4.IndependentRouting.routingWeight_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]

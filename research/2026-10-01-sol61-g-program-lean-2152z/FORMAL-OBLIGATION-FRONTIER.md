@@ -1,6 +1,6 @@
 # G-program Lean source and assumption frontier
 
-Dedicated Sol6.1 lane, 2026-10-01. This is an incremental formalization and
+Dedicated Sol6.1 lane, updated 2026-10-02. This is an incremental formalization and
 assumption-audit record, not a claim that the entire G1-G7/CG programme has been
 machine verified. New contributions are attributed to this lane; original
 Samuel source and Commons hand proofs retain their original attribution.
@@ -33,6 +33,23 @@ Samuel source and Commons hand proofs retain their original attribution.
 - G5CutChildNecessity: explicit four-tip positive-calendar binary LSA source
   demonstrates why child-cut cannot be dropped from the protective-route proof
 
+- G4IndependentRoutingBridge: explicit independent live-root coin assignments,
+  normalized/nonnegative weights, actual original parent-edge root counts and
+  generic arm-kernel sums imply the s2/s3/s4 coordinates. The finite arm law is
+  explicit and proved for a Mathlib exponential first-holding model with
+  choose(k,2) rate; actual Kingman/full-source clock identification is separate
+- G4BalancedForestIdentity/G4FourRootPositivity: exact full-balanced-forest
+  residual and arbitrary-interior-weight defect factorization/positivity,
+  including the rational cap-three scalar witness
+- G3FiniteMomentBarrier: exact finite double sum, moment inequality and scalar
+  contradiction with weaker sign hypotheses than the source-facing wrapper
+- G3CapSixDeterminant: explicit 5x5 L/U entry certificate, determinant transport,
+  exact positive factor and strict-domain scaled nonsingularity
+
+[Combined thirteen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
+and [axiom audit](receipts/VerifiedFullComponentCheckpoint.log) link the completed
+source checks, finite algebra and primitive clock/routing model results.
+
 Each has an actual matching-compiler run, source SHA-256, and explicit axiom log.
 The successful logs show only standard Lean axioms, with no placeholders.
 
@@ -52,8 +69,15 @@ mathematical gap or a promotion of full G5 to machine-verified status.
 - G2: original-ID control primitive semantics, all joint rows with one original
   parameter assignment, shared/independent routing over live lineage forests,
   stochastic projection/coupling, and complete calendar response compiler
-- G3/G4: current mathematical source boundaries remain explicit; no complete
-  final source theorem is inserted as an axiom
+- G3: actual analytic Jacobian/source-family identification, IFT and finite-source
+  attainment, uniform logarithmic factor estimates and full boundary/closure
+  recognition remain separate formal source obligations
+- G4: actual Kingman/private-arm first-merge process identification with the
+  explicit exponential model, complete forest generators, private-context
+  composition, source-to-observable transfer/tomography and general recognition
+  remain separate formal source obligations. The no-merger polynomials now
+  follow from the specified independent live-root routing/arm model, while
+  whole-process biological identification is not inserted as an axiom
 - G5: a stochastic coalescent path-law construction must imply the actual route
   representation and positive feasible-route support; then observable frozen
   generators, germ uniqueness, chronological contraction and Q/S assembly must
