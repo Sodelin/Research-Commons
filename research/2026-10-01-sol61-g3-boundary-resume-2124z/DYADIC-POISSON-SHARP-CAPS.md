@@ -1,7 +1,7 @@
 # Matched copy thresholds for dyadic Poisson closure signatures
 
-Contributor: Codex Sol6.1 / resume_g3_boundary_proof, 2026-10-02 00:31 UTC.
-Status: the general all-flag HAND theorem passed the current head's independent challenge2026-10-02; immutable public review receipt and separate review of the four NEW finite certificate budgets are pending. The accepted s=1, positive-drift, zero-killing cap6/cap7 packet has a full rational certificate. No all-cap census, extracted factor witness or general-recognition closure claimed.
+Contributor: Codex Sol6.1 / resume_g3_boundary_proof, 2026-10-02 00:31 UTC; additive corollaries updated01:19 UTC.
+Status: the general all-flag HAND theorem and Sections7-9 passed the current head's independent challenge2026-10-02. Its independent four-case rational validation also passed, rederiving endpoint polynomials, quotient factors and all cutoff budgets; immutable public review receipt is being prepared. The accepted s=1, positive-drift, zero-killing cap6/cap7 packet has a full rational certificate. No all-cap census, extracted factor witness or general-recognition closure claimed.
 
 ## 1. Family and matched statement
 
@@ -142,6 +142,56 @@ For rational r choose b rational near1, let a=alpha*(-log b), kappa=beta*(-log b
 
 has positive algebraic coordinates and sufficiently small first loss. The same hierarchy is attained through cap2s+alpha+beta+3 and rejected beginning at cap2s+alpha+beta+4. Source positivity determines the flag-dependent threshold; these are matched upper/lower statements for the stated family only.
 
+## 7. Finite algebraic recognition branches from the same certificates
+
+Fix one parameter case for which the uniform bounds and rational cutoff C_* have been certified. Replace C_* by min(C_*,1) if necessary. Let e0,e1 be positive-denominator-cleared integer versions of its two covectors, padded by zeros when reading a larger cap. For any positive algebraic input with every coordinate strictly below1, impose
+
+    m2>1-C_*/2;
+    product_(e0,l>0) m_l^(e0,l)=product_(e0,l<0) m_l^(-e0,l);
+    product_(e1,l>0) m_l^(e1,l)=product_(e1,l<0) m_l^(-e1,l).
+
+These are finite algebraic predicates; they do not require a Poisson representation of the input. Positivity makes the monomial equations equivalent to c0.h=c1.h=0. The cutoff gives C=-log(m2)<C_* by -log(1-x)<2x for0<x<1/2. Thus the same all-factor inequalities apply to any hypothesized strict source.
+
+If alpha=1, the proof forces every Bernoulli factor to disappear. On this branch exact source membership is therefore equivalent to m_l=m2^lambda_l for EVERY supplied coordinate. That pure baseline has the strict positive source A=m2. If alpha=0, c1.lambda>0 makes the mandatory positive actual baseline contradict the second normal equation, so EVERY input on the branch is rejected. The flag alpha labels the selected certificate and covector; it does not permit an actual source with zero baseline.
+
+For a cap larger than the certificate cap, apply the two normals only to the certificate coordinates and, in the alpha=1 case, check the baseline equations at all higher coordinates too. There is no implication for inputs that fail the two normal equations or small-loss cutoff. The four new finite case records supply their exact integer rows and cutoffs; the already accepted positive-drift/zero-killing cap-seven case supplies the earlier branch in CONCRETE-ALGEBRAIC-CAP7-NO.md.
+
+## 8. Squared-node union corollary and why one chain matches
+
+The lower proof has a useful extension. Let Q be ANY finite set of s distinct nodes in(0,1), put T=Q union {q^2:q in Q}, and write t=|T|. Suppose q^3 is outside T for every q in Q. Then every sufficiently-small-loss normal form supported on Q, with the same active flags alpha,beta, is rejected beginning at
+
+    M_NO=2t+alpha+beta+2.
+
+Use the same F0, with double roots at1 and Q. Construct F1 with a root at1 of order1+alpha, double roots at all of T, and vanishing constant when beta=1; its coordinate count is now2t+alpha+beta+1. The same saturated Descartes argument gives positivity outside its specified roots. At every original node, F1 and its second p-series coefficient vanish doubly because q^2 is in T; its third coefficient is F1(q^3)>0 by the hypothesis. The finite set T minus Q replaces the single new-root interval V. Take the minimum positive F0 bound over these intervals and aggregate their p mass. Every endpoint and coupled-budget argument from Sections4-5 is unchanged. This is a hand corollary of the stated estimates, not a new executed certificate case.
+
+The directed relation q -> q^2 among members of Q has no cycles and has at most one predecessor and successor per vertex. It therefore splits Q into c disjoint finite chains. Each chain contributes exactly one new square to T, so t=s+c. The new lower threshold is2s+2c+alpha+beta+2, while the arbitrary-node upper guarantee is2s+alpha+beta+3. These two bounds meet at consecutive caps when c=1. A single chain is precisely Q={r,r^2,...,r^(2^(s-1))}, and its cubes automatically avoid T. Thus the dyadic matched result follows from the minimal possible squared-node union, rather than from a numerical cap ladder. For c>1 this corollary leaves an intermediate-cap gap and does not claim an optimal threshold there. If an original cube belongs to T, the required strictly positive third-order coefficient fails and this corollary makes no rejection claim.
+
+## 9. No cap-only uniform total-factor bound
+
+The small-loss rejection also excludes a finite chain with CLOSED parameters0<=A,p_i,q_i<=1 whenever its output coordinates are positive. This is a mathematical endpoint reduction, not an enlargement of the admitted strict source model. Positivity excludes A=0 and factors with p=1,q=0. Delete p=0 or q=1 neutral factors; fold p=1,q>0 into nonnegative drift; fold q=0,p<1 into nonnegative killing. What remains has the form
+
+    h=a' lambda+kappa' 1+sum_i H(p_i,q_i),
+    a',kappa'>=0, 0<p_i,q_i<1.
+
+All observed exponents are positive integers; the coordinate formula contains no zero-th power at a corner. Simultaneous p->1,q->0 makes the factor tend to zero at EVERY observed exponent and cannot occur in a positive output tuple. The folded quantities a' and kappa' are finite and each is at most h2, since all first-coordinate losses are nonnegative. Thus unbounded logarithmic parameters do not compromise the compact survival-coordinate argument.
+
+For either paired-normal construction, c0.lambda=0, c1.lambda>=0, and both sums of covector entries are1 when beta=0 and0 when beta=1. Since the target's two normal projections vanish, the factor sums satisfy
+
+    sum L0=-kappa' sum(c0)<=0;
+    sum L1=-a' c1.lambda-kappa' sum(c1)<=0.
+
+The first inequality still gives delta P_V<=B0 Q_U. The second and the same strict coupled budget force T_U=0. Every remaining strict factor outside U has strictly positive L0; hence the first inequality then removes all strict factors. The closed-parameter target would therefore have to be h=a' lambda+kappa'. This is impossible: each positive Poisson term R_lambda(q) has strictly negative second derivative in the real variable lambda, so the stated target is strictly concave in lambda and cannot agree with an affine function at the three or more distinct observed exponents. The argument also applies to the squared-node union corollary under its cube-separation premise.
+
+For a fixed cap and factor bound N, the closed-parameter observation map is polynomial and continuous on the compact cube[0,1]^(2N+1). Its image K_N is compact and includes every strict chain with at most N factors, padding shorter chains with neutral factors. The rejected positive tuple lies outside every K_N by the endpoint reduction. Thus each fixed N has an open neighborhood of the tuple that contains no actual chain of at most N factors.
+
+Actual closure supplies strict-source sequences converging to this tuple. Along ANY such sequence the minimum possible EXACT number of Bernoulli factors tends to infinity: for every fixed N, eventually the sequence is outside K_N. The rejected tuple is in ordinary-moment interior, which is open, so these actual approximants eventually belong to ordinary-moment interior too. Consequently there is no uniform total-factor bound depending only on the cap at these rejection caps, even after that restriction. This conclusion leaves an INPUT-DEPENDENT computable bound entirely open and gives no rate or bound for epsilon approximation. It does not say that an individual actual input requires infinitely many factors, or contradict finite retained-tail compression of closure normal forms.
+
+The unbounded exact counts already occur for RATIONAL observation inputs. For the accepted original cap-seven target set b=1-2^(-175), theta=-2 log b, and for integers N>=2 choose p_N=ceil(theta N)/N^2. Here0<theta<1 makes0<p_N<1, while N p_N->theta and N p_N^2->0. The strict N-factor signature
+
+    m_lambda^(N)=b^lambda*(1-p_N+p_N*2^(-lambda))^N
+
+is rational at every supplied integer exponent, uses the SAME fixed rational baseline A=b and factor ratio q=1/2, and converges to b^(lambda+2-2^(1-lambda)). Its globally minimum exact factor count tends to infinity by the compact-image argument, even when alternative realizations may choose arbitrary strict baselines, probabilities and ratios. At cap six use instead the certified zero-drift input b0=1-2^(-128), theta0=-2 log b0, A_N=1-1/N and p_N=ceil(theta0 N)/N^2. The rational strict signatures A_N^lambda*(1-p_N+p_N*2^(-lambda))^N converge to b0^(2-2^(1-lambda)), whose minimum exact counts diverge by the same theorem. Thus rational-input unboundedness holds at every fixed cap>=6; the cap-seven version additionally keeps the baseline fixed. These are theoretical rational sequences, not newly executed large-N computations. No numerical approximation rate or bit-complexity bound is asserted.
+
 ## Verification and remaining master scope
 
 General proof: hand analytic IFT, sparse Descartes systems, exact p-series, uniform endpoint division, finite Cauchy/budget argument and inherited actual-closure/source transfer. The published s=1,alpha=1,beta=0 packet at c6b9804e supplies the accepted executed subcase. Four NEW exact coefficient/corner/cutoff/exponent certificates were executed, with no floating fit or factor scan:
@@ -153,8 +203,8 @@ General proof: hand analytic IFT, sparse Descartes systems, exact p-series, unif
 
 The zero-drift/no-killing run completed in0.24seconds; the other three combined in6.43seconds under individual35second limits. The generic checker is dyadic_poisson_certificate.py. A symbolic expanded-vs-factored comparison in its beta1 corner assertion was fixed before those executions; no failed mathematical bound is concealed. These finite cases verify their exact premises rather than establish the general theorem by extrapolation. Compact JSON companions omit normalized coefficient arrays but preserve their counts/canonical hashes, original full-certificate hashes and exact regeneration recipe. General-case runtime/threshold extraction was not executed.
 
-The head's general hand challenge accepted the zero-drift full two-sided normal-form rank, mandatory positive actual-source baseline in the lower proof, the q->0 uniform corner, saturated root dimensions and dyadic cube separation. The four new finite budgets/exponent records are being reviewed separately. This distinction is intentional: general HAND acceptance is not an all-instance numerical census or a complete Lean source theorem.
+The head's general hand challenge accepted the zero-drift full two-sided normal-form rank, mandatory positive actual-source baseline in the lower proof, the q->0 uniform corner, saturated root dimensions and dyadic cube separation. Its independent rational checker separately rederived and passed all four finite budgets/exponent records, including the complete endpoint derivative polynomials and quotient/compact lower bounds. Independent checker SHA256: cf137900dc26be1d4f7e1d6ddc904297e464ca8017ce16ca7ef38d3150faea50. The finite normal predicate, squared-node union and compact K_N argument also passed direct hand challenge. General HAND acceptance is not an all-instance numerical census or a complete Lean source theorem.
 
-The finite Cauchy/scalar barrier is compiled and published by the existing Lean lane at2900ad0d0c114376dc0fd4761e4367d7563e0f3f, with source-specific transfer separate. The cap-six determinant also reported successful bounded compilation; immutable release is coordinated separately. See MATCHED-CAP-PRIOR-COMPARISON.md for the close full-law dyadic Poisson decomposition prior and why it does not decide this finite-observation endpoint. No historical novelty claim is made.
+The finite Cauchy/scalar barrier is compiled and published by the existing Lean lane at2900ad0d0c114376dc0fd4761e4367d7563e0f3f, with source-specific transfer separate. The cap-six determinant and strict-domain rank are published atdd8e5176e67e71526f282d5922e48c8697e2cc39, with analytic/source transfer separate. See MATCHED-CAP-PRIOR-COMPARISON.md for the close full-law dyadic Poisson decomposition prior and why it does not decide this finite-observation endpoint. No historical novelty claim is made.
 
 General finite algebraic-input source recognition, an input-effective factor bound and the separate cap-eight/nine killing-plus-two-factor candidate remain open. This family theorem does not decide them, establish priority or provide a finite-input undecidability reduction.

@@ -33,4 +33,6 @@ Consequently the exact rational coefficient/Lipschitz construction is not relyin
 
 ## Endpoint kept explicit
 
+The additive no-cap-only-factor-ceiling corollary uses standard compactness once a finite-observation endpoint is excluded from every closed fixed-N parameter image. That endpoint exclusion is the source-specific paired-normal step. Le Cam approximation supplies the contrasting source sequences, and rational rounding of their probabilities keeps the finite observation tuples rational. A bound depending on an approximation tolerance is a different question from a cap-only bound on the minimum factor count for EXACT attained tuples. The corollary leaves input-dependent computable bounds and quantitative approximation complexity open; no new general compactness principle is claimed.
+
 The submitted all-flag theorem classifies the COPY THRESHOLD of its sufficiently-small-loss dyadic Poisson family. The accepted single-node cap6/cap7 certificate and the additional parameter controls do not settle arbitrary common-chain recognition. An input-effective total factor bound, a complete criterion for all singular finite normal forms and the separate cap-eight/nine killing-plus-two-factor point remain open. The available prior results above help supply proof ingredients and clarify the gap; no claim is made that no other prior treatment exists.
