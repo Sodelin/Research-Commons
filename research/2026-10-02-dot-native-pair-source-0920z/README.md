@@ -34,3 +34,11 @@ The [complete-itinerary significance correction](https://github.com/Sodelin/Rese
 `MANIFEST.json` records source and object hashes, direct imported-object hashes and selected audits. Each `receipts/*.json` points to its immutable attempt, and `logs/*.log` is copied unchanged from that attempt. The successful three sources contain no sorry/admit/custom axiom. Only propext, Classical.choice and Quot.sound occur in the selected audits.
 
 Copy the three `UnifiedLean/Source/*.lean` files into the corresponding pinned unified package and invoke its canonical compiler for each module in routing→clock→mixture order. The receipts record the exact command and dependency object hashes. The preserved first failed mixture attempt and old failed native prototype remain excluded from verified evidence and imports; they are not counted as proofs.
+
+## Four-module successor: actual native safe-past right germ
+
+2026-10-02 09:28 UTC. `NativeSafePastGerm` now also passed the canonical compiler, with source213a36dcc1a3df29274b78ee85729dc484dce0b50ba88bd9290f4a4d4023172a and5 selected standard-axiom audits. The checkpoint now has **four modules /25 selected audits**, still outside the original first100 aggregate freeze until next-version acceptance. The first three immutable sources and historical receipts are unchanged.
+
+The actual independent native coin×clock pair probability has a finite right-germ expansion below the original root. Intrinsic Finsupp coefficients gather repeated unknown rates. An entire-safe-past geometric `SafeAt` premise, positive original rates and the already checked meeting-permanence theorem make its zero exponent coefficient the **unconditional current-route separation mass**. Equal exact probability germs identify the coefficient map via the existing unknown-rate theorem. Neither a calibrated rate list nor a desired source-law/coefficient identity is a structure field.
+
+This is a genuine source-law-to-germ integration link. It does not prove finite/noisy extraction of a germ, establish the chronological algorithm's stage initialization or deletion invariants, supply common-mode/current-live multi-copy projectivity, construct the full NMSC after mergers, or complete final Q/cluster assembly. Those are separate original source/formalization obligations. No richer C4 detection claim is reinstated.
