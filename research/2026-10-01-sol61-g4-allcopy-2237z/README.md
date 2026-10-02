@@ -9,7 +9,15 @@ Continued through 2026-10-02. G4 MASTER remains IN PROGRESS. This packet preserv
 
 [KNOWN-BOX-SHARP-SIX.md](KNOWN-BOX-SHARP-SIX.md) supplies a strictly positive algebraic bigon whose complete forest kernels are pad-placement-blind through five but separated at six, with a genuine rooted-topology event using nine total copies. All313 forest coordinates through 5 are covered by 22 exact orbit checks. Its spectral-centralizer proof handles repeated shape eigenvalue multiplicities and strengthens the existing rational known-B* sharp5 fixture.
 
-These are source-specific branch closures, not unknown-bare/multiple-cell/all-G4 completion.
+The supplied-B component is independently accepted in the head's [uniform pad review](../2026-10-01-sol61-head-audit-1956z/G4-UNIFORM-PAD-RECOGNITION-REVIEW.md), immutable receipt 2e418c421dc019a2733be144088ed53a54d3fdf2. These are source-specific branch closures; the master status remains above.
+
+## New submitted unknown-source extension
+
+[UNKNOWN-BARE-ONE-BIGON-STOPPING.md](UNKNOWN-BARE-ONE-BIGON-STOPPING.md) supplies a source-specific complete equality relation for one UNKNOWN bare bigon with TWO UNKNOWN positive ordinary pads. New full-forest spectral identities recover the trailing pad through sharp cap six without supplied bare parameters. A finite-law split-atom versus continuous Beta-mixture argument identifies the leading pad all-copy; inherited bare injectivity then gives the exact arm-exchange orbit. Its explicit semialgebraic locus supplies a terminating fixed-shape QE prefix finder. A numerical universal cutoff for all five unknown parameters has not been executed. The head independently accepted the full hand theorem and replayed the exact endpoint script on 2026-10-02; its separate pinned receipt records the acceptance scope.
+
+[SYMMETRY-SUFFICIENT-INTERFACE.md](SYMMETRY-SUFFICIENT-INTERFACE.md) gives exact finite-cap entering-root compression by token-label exchangeability, selected-label projectivity and opaque subtree grafting: at six roots, 20 shape-orbit probabilities represent 2431 labelled forest coordinates and every lower row. This is sufficient, not a proved minimal physical tester budget or bounded all-copy representation.
+
+[FULLY-ACTUATED-SERIAL-CHAIN.md](FULLY-ACTUATED-SERIAL-CHAIN.md) records a conditional arbitrary-supplied-length extension when the declared original-ID menu actually isolates each natural cell by forcing all others. It is a separate stronger menu, with no unmarked unknown cell, and preserves the predecessor theorem's exact scope. No such deterministic rows are added to a passive or randomized-only menu.
 
 ## Other delivered components
 
@@ -32,9 +40,10 @@ The Sol head independently accepted the arbitrary-chain count/classified-stoppin
 | Arbitrary independent-chain all-copyL invariant | Scoped head acceptance | Does not identify same-L ordered factors |
 | Different-L / fixed finite-common comparison stopping | Scoped head acceptance | Actual family-wide numerical CAD cap not computed |
 | One/two independent versus unknown finite-common length | Full cap 4 hand proof and exact controls | No general many-independent-cell cap 4 claim |
-| Supplied bare bigon plus two unknown pads | Sharp uniform6 component proved, exact certificates | Independent full receipt requested |
-| Unknown bare one-bigon parameters and pads | OPEN | Effective complete equality locus |
-| Arbitrary same-L ordered products/general admitted boxes | OPEN | Exhaustive source-specific normal form or closure certificate |
+| Supplied bare bigon plus two unknown pads | Independently accepted sharp uniform6 | Full source/finite receipt linked above |
+| Unknown bare one-bigon parameters and pads | Independently accepted full five-parameter hand theorem | Whole-shape numerical cap not executed |
+| Supplied fully actuated serial chain | Hand consequence under an explicit stronger menu | Separate review pending; no missing rows/unmarked cells |
+| Arbitrary same-L passive ordered products/general admitted boxes | OPEN | Exhaustive source-specific normal form or closure certificate |
 | Unknown-size independent exact-response recognition | OPEN | Asymptotic identification is not a finite stopping rule |
 | Multiport/shared-register/weaker menu | Separate OPEN contracts | No transfer by analogy |
 
@@ -53,6 +62,8 @@ Run with assertions enabled:
     python placement_checks.py > placement-results.json
     python known_placement_six_checks.py > known-placement-six-results.json
     python uniform_placement_six_checks.py > uniform-placement-six-results.json
+    python unknown_bare_trailing_six_checks.py > unknown-bare-trailing-six-results.json
+    python symmetry_orbit_checks.py > symmetry-orbit-results.json
 
 Dependencies: Python 3, SymPy 1.14.0 for the symbolic files. Some exact symbolic stages take minutes; an incomplete file, timeout or intermediate plateau is not PASS. The new uniform certificate is a finite exhaustive proof computation, not an all-class source enumeration.
 
