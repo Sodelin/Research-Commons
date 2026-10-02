@@ -1,0 +1,33 @@
+{
+  "module": "G4AllRootPairClocks",
+  "status": "PASS_LOCAL_COMPONENT",
+  "command": [
+    "timeout",
+    "120",
+    "lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "/workspace/shared/lean-formalization/build/objects/G4AllRootPairClocks.olean",
+    "G4AllRootPairClocks.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.309281985002599,
+  "child_max_rss_kib": 3136156,
+  "compiler": "Lean4.33.1 Linux commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "source_sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+  "log_sha256": "1bc003884192352264403f801c05ab3cd5e489a88b6457b3134c8b226d590aca",
+  "axiom_lines": [
+    "'GProgram.G4.PairClocks.private_arms_no_first_merge' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.PairClocks.livePair_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.PairClocks.all_root_no_first_merge' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.PairClocks.product_clock_eq_holding_model' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "olean_sha256": "4087f5cbb0b0ec277ee9f203d0ccc0793ecb1b6bc0a08b12478e3894ea71ff40",
+  "source_dependency_hashes": {
+    "G4IndependentRoutingBridge": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b"
+  },
+  "scope": "Every finite initial live-root count, same original IDs/u/fixed arm clock parameters. No-first-merger marginal only; no complete labelled forest count-only sufficiency or recognition cutoff.",
+  "remaining_source_bridge": "Full Kingman merger/reset dynamics, graph-to-whole-process interpretation, infinite entrance-law construction and finite observation/minimum claims"
+}
