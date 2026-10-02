@@ -1,0 +1,1130 @@
+{
+  "pin": "27afdd054272dbda8a74c8aad156970a44c23cd8",
+  "rules_in_enum": [
+    "V_HAIRPIN",
+    "V_INTERNAL",
+    "V_VM",
+    "WI_BASE_SINGLE",
+    "WI_SPLIT_V",
+    "WI_SPLIT_WMB",
+    "WI_EXTEND_UNPAIRED",
+    "W_EXTEND_UNPAIRED",
+    "W_SPLIT_V",
+    "W_SPLIT_WMB",
+    "W_ROOT_WMB_DECOMPOSITION",
+    "VM_SPLIT_WM_WMv",
+    "VM_SPLIT_WM_WMp",
+    "VM_SPLIT_WMp_BASE",
+    "VM_SCALE2",
+    "WMv_STEM_V",
+    "WMp_STEM_WMB",
+    "WMv_EXTEND_UNPAIRED",
+    "WMp_EXTEND_UNPAIRED",
+    "WM_START_V",
+    "WM_START_WMB",
+    "WM_SPLIT_V",
+    "WM_SPLIT_WMB",
+    "WM_EXTEND_UNPAIRED",
+    "WIP_BASE_V",
+    "WIP_BASE_WMB",
+    "WIP_SPLIT_V",
+    "WIP_SPLIT_WMB",
+    "WIP_BASEPAIR_V",
+    "WIP_BASEPAIR_WMB",
+    "WIP_EXTEND_UNPAIRED",
+    "VPL_SPLIT_VP",
+    "VPR_SPLIT_VP_WIP",
+    "VPR_SPLIT_VP_BASEPAIR",
+    "VP_WI_CASE1",
+    "VP_WI_CASE2",
+    "VP_WI_CASE3",
+    "VP_STACK",
+    "VP_INTERNAL_LOOP",
+    "VP_WIP_VP_LEFT",
+    "VP_VP_WIP_RIGHT",
+    "VP_WIP_VPR",
+    "VP_VPL_WIP",
+    "WMBW_SPLIT_WMBP_WI",
+    "WMBP_SPLIT_BE_WMBP_VP",
+    "WMBP_SPLIT_BE_WMBW_VP",
+    "WMBP_DIRECT_VP",
+    "WMBP_SPLIT_BE_WI_VP",
+    "WMB_SPLIT_BE_WMBP_WI",
+    "WMB_DIRECT_WMBP",
+    "WMB_EMPTY",
+    "BE_BASE_SAMEPAIR",
+    "BE_STACK",
+    "BE_INTERNAL_LOOP",
+    "BE_WIP_WIP",
+    "BE_WIP_BASEPAIR",
+    "BE_BASEPAIR_WIP"
+  ],
+  "enum_count": 57,
+  "dispatch_count": 57,
+  "missing_dispatch": [],
+  "extra_dispatch": [],
+  "families": [
+    {
+      "dispatcher": "transition_weight_be",
+      "rules": [
+        "BE_BASE_SAMEPAIR",
+        "BE_STACK",
+        "BE_INTERNAL_LOOP",
+        "BE_WIP_WIP",
+        "BE_WIP_BASEPAIR",
+        "BE_BASEPAIR_WIP"
+      ],
+      "file": "scfg2/weights/be_transition.hh",
+      "direct_context_callbacks": [
+        "be_base_samepair_weight",
+        "be_internal_loop_weight",
+        "be_split_basepair_wip_weight",
+        "be_split_wip_basepair_weight",
+        "be_split_wip_wip_weight",
+        "be_stack_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_v",
+      "rules": [
+        "V_HAIRPIN",
+        "V_INTERNAL",
+        "V_VM"
+      ],
+      "file": "scfg2/weights/v_transition.hh",
+      "direct_context_callbacks": [
+        "hairpin_weight",
+        "internal_weight",
+        "vm_closing_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_vm",
+      "rules": [
+        "VM_SPLIT_WM_WMv",
+        "VM_SPLIT_WM_WMp",
+        "VM_SPLIT_WMp_BASE",
+        "VM_SCALE2"
+      ],
+      "file": "scfg2/weights/vm_transition.hh",
+      "direct_context_callbacks": [
+        "scale2_weight",
+        "split_wm_wmp_weight",
+        "split_wm_wmv_weight",
+        "split_wmp_base_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_vp",
+      "rules": [
+        "VP_WI_CASE1",
+        "VP_WI_CASE2",
+        "VP_WI_CASE3",
+        "VP_STACK",
+        "VP_INTERNAL_LOOP",
+        "VP_WIP_VP_LEFT",
+        "VP_VP_WIP_RIGHT",
+        "VP_WIP_VPR",
+        "VP_VPL_WIP"
+      ],
+      "file": "scfg2/weights/vp_transition.hh",
+      "direct_context_callbacks": [
+        "vp_internal_loop_weight",
+        "vp_split_weight",
+        "vp_stack_weight",
+        "vp_wi_case_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_vpl",
+      "rules": [
+        "VPL_SPLIT_VP"
+      ],
+      "file": "scfg2/weights/vpl_transition.hh",
+      "direct_context_callbacks": [
+        "vpl_split_vp_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_vpr",
+      "rules": [
+        "VPR_SPLIT_VP_WIP",
+        "VPR_SPLIT_VP_BASEPAIR"
+      ],
+      "file": "scfg2/weights/vpr_transition.hh",
+      "direct_context_callbacks": [
+        "vpr_split_vp_basepair_weight",
+        "vpr_split_vp_wip_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_w",
+      "rules": [
+        "W_EXTEND_UNPAIRED",
+        "W_SPLIT_V",
+        "W_SPLIT_WMB",
+        "W_ROOT_WMB_DECOMPOSITION"
+      ],
+      "file": "scfg2/weights/w_transition.hh",
+      "direct_context_callbacks": [
+        "w_extend_unpaired_weight",
+        "w_root_wmb_decomposition_weight",
+        "w_split_v_weight",
+        "w_split_wmb_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wi",
+      "rules": [
+        "WI_BASE_SINGLE",
+        "WI_SPLIT_V",
+        "WI_SPLIT_WMB",
+        "WI_EXTEND_UNPAIRED"
+      ],
+      "file": "scfg2/weights/wi_transition.hh",
+      "direct_context_callbacks": [
+        "wi_base_single_weight",
+        "wi_extend_unpaired_weight",
+        "wi_split_v_weight",
+        "wi_split_wmb_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wip",
+      "rules": [
+        "WIP_BASE_V",
+        "WIP_BASE_WMB",
+        "WIP_SPLIT_V",
+        "WIP_SPLIT_WMB",
+        "WIP_BASEPAIR_V",
+        "WIP_BASEPAIR_WMB",
+        "WIP_EXTEND_UNPAIRED"
+      ],
+      "file": "scfg2/weights/wip_transition.hh",
+      "direct_context_callbacks": [
+        "wip_base_v_weight",
+        "wip_base_wmb_weight",
+        "wip_basepair_v_weight",
+        "wip_basepair_wmb_weight",
+        "wip_extend_unpaired_weight",
+        "wip_split_v_weight",
+        "wip_split_wmb_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wm",
+      "rules": [
+        "WM_START_V",
+        "WM_START_WMB",
+        "WM_SPLIT_V",
+        "WM_SPLIT_WMB",
+        "WM_EXTEND_UNPAIRED"
+      ],
+      "file": "scfg2/weights/wm_transition.hh",
+      "direct_context_callbacks": [
+        "extend_unpaired_weight",
+        "split_v_weight",
+        "split_wmb_weight",
+        "start_v_weight",
+        "start_wmb_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wmb",
+      "rules": [
+        "WMB_SPLIT_BE_WMBP_WI",
+        "WMB_DIRECT_WMBP",
+        "WMB_EMPTY"
+      ],
+      "file": "scfg2/weights/wmb_transition.hh",
+      "direct_context_callbacks": [
+        "wmb_direct_wmbp_weight",
+        "wmb_empty_weight",
+        "wmb_split_be_wmbp_wi_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wmbp",
+      "rules": [
+        "WMBP_SPLIT_BE_WMBP_VP",
+        "WMBP_SPLIT_BE_WMBW_VP",
+        "WMBP_DIRECT_VP",
+        "WMBP_SPLIT_BE_WI_VP"
+      ],
+      "file": "scfg2/weights/wmbp_transition.hh",
+      "direct_context_callbacks": [
+        "wmbp_direct_vp_weight",
+        "wmbp_split_be_wi_vp_weight",
+        "wmbp_split_be_wmbp_vp_weight",
+        "wmbp_split_be_wmbw_vp_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wmbw",
+      "rules": [
+        "WMBW_SPLIT_WMBP_WI"
+      ],
+      "file": "scfg2/weights/wmbw_transition.hh",
+      "direct_context_callbacks": [
+        "wmbw_split_wmbp_wi_weight"
+      ]
+    },
+    {
+      "dispatcher": "transition_weight_wmv_wmp",
+      "rules": [
+        "WMv_STEM_V",
+        "WMp_STEM_WMB",
+        "WMv_EXTEND_UNPAIRED",
+        "WMp_EXTEND_UNPAIRED"
+      ],
+      "file": "scfg2/weights/wmv_wmp_transition.hh",
+      "direct_context_callbacks": [
+        "wmp_extend_unpaired_weight",
+        "wmp_stem_weight",
+        "wmv_extend_unpaired_weight",
+        "wmv_stem_weight"
+      ]
+    }
+  ],
+  "callbacks": [
+    {
+      "name": "be_base_samepair_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "be_internal_loop_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "get_e_intP"
+      ],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "be_split_basepair_wip_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen",
+        "scale"
+      ],
+      "globals": [
+        "expap_penalty",
+        "expbp_penalty",
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "be_split_wip_basepair_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen",
+        "scale"
+      ],
+      "globals": [
+        "expap_penalty",
+        "expbp_penalty",
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "be_split_wip_wip_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [
+        "expap_penalty",
+        "expbp_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "be_stack_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "get_e_stP"
+      ],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "extend_unpaired_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expMLbase"
+      ],
+      "globals": [
+        "expMLbase"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "hairpin_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "HairpinE"
+      ],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "internal_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "get_internal_loop_factor"
+      ],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "scale2_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "split_v_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "exp_MLstem"
+      ],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "split_wm_wmp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "split_wm_wmv_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "exp_Mbloop",
+        "exp_params_"
+      ],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "split_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPSM_penalty",
+        "expb_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "split_wmp_base_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expMLbase"
+      ],
+      "globals": [
+        "expMLbase"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "start_v_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "exp_MLstem"
+      ],
+      "boundary_reads": [
+        "expMLbase"
+      ],
+      "globals": [
+        "expMLbase"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "start_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expMLbase"
+      ],
+      "globals": [
+        "expMLbase",
+        "expPSM_penalty",
+        "expb_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vm_closing_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vp_internal_loop_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "get_e_intP"
+      ],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vp_split_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [
+        "expap_penalty",
+        "expbp_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vp_stack_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "get_e_stP"
+      ],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vp_wi_case_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "scale"
+      ],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vpl_split_vp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen"
+      ],
+      "globals": [
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vpr_split_vp_basepair_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen"
+      ],
+      "globals": [
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "vpr_split_vp_wip_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "w_extend_unpaired_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "w_root_wmb_decomposition_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPS_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "w_split_v_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "w_split_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPS_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wi_base_single_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expPUP_pen"
+      ],
+      "globals": [
+        "expPUP_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wi_extend_unpaired_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expPUP_pen"
+      ],
+      "globals": [
+        "expPUP_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wi_split_v_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPPS_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wi_split_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPPS_penalty",
+        "expPSP_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_base_v_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expbp_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_base_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPSM_penalty",
+        "expbp_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_basepair_v_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen"
+      ],
+      "globals": [
+        "expbp_penalty",
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_basepair_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen"
+      ],
+      "globals": [
+        "expPSM_penalty",
+        "expbp_penalty",
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_extend_unpaired_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expcp_pen"
+      ],
+      "globals": [
+        "expcp_pen"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_split_v_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expbp_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wip_split_wmb_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPSM_penalty",
+        "expbp_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmb_direct_wmbp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmb_empty_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmb_split_be_wmbp_wi_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPB_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmbp_direct_vp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPB_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmbp_split_be_wi_vp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPB_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmbp_split_be_wmbp_vp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPB_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmbp_split_be_wmbw_vp_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPB_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmbw_split_wmbp_wi_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmp_extend_unpaired_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expMLbase"
+      ],
+      "globals": [
+        "expMLbase"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmp_stem_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [],
+      "globals": [
+        "expPSM_penalty",
+        "expb_penalty"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmv_extend_unpaired_weight",
+      "definition_found": true,
+      "owner_reads": [],
+      "boundary_reads": [
+        "expMLbase"
+      ],
+      "globals": [
+        "expMLbase"
+      ],
+      "semantic_chart_read_in_body": false
+    },
+    {
+      "name": "wmv_stem_weight",
+      "definition_found": true,
+      "owner_reads": [
+        "exp_MLstem"
+      ],
+      "boundary_reads": [],
+      "globals": [],
+      "semantic_chart_read_in_body": false
+    }
+  ],
+  "callback_count": 52,
+  "source_files": [
+    {
+      "path": "part_func.hh",
+      "sha256": "e13a58c3af04d9992acd7d59fb920043fb91c5bcc990e2c8524f901b635f8f84",
+      "git_blob_sha1": "4177e6cb7c122a51693c608deed24d99b7d65d10"
+    },
+    {
+      "path": "part_func_energy.cc",
+      "sha256": "f45b23333aef58794fefc861762d704ab969396e1c140a0ced2ff1952b95b414",
+      "git_blob_sha1": "6e1df7e31179cda09356ca7a72d0f225ce503a54"
+    },
+    {
+      "path": "rna_pair_table.cc",
+      "sha256": "22bf1f3dd6da77220e38fe130025f556b461c8c3c4295b81243fbea2dbe84b48",
+      "git_blob_sha1": "7570ff702701b0bd02b29df50f5ab2b74e493e2f"
+    },
+    {
+      "path": "scfg2/deductions/exact_context.hh",
+      "sha256": "3ef8d5c9196bfcc2e853b15e6906a363fb8afa11e9d4729ecb28c99efccfdc06",
+      "git_blob_sha1": "d3b06593fd5361dd06d4fd9c3653a806919bc578"
+    },
+    {
+      "path": "scfg2/deductions/generate_exact_basic.hh",
+      "sha256": "97225454a2166b756eac44e7e49d2424d1788a5e1ad60319544ca64f1e952c93",
+      "git_blob_sha1": "b138807cdd7bdc63f8cc75a9effb9e1f2bb482e6"
+    },
+    {
+      "path": "scfg2/engine/all_local_weight.hh",
+      "sha256": "bd89a802177845f4a72f3bb3a8f81293d1e2bf80847f79d7eeafdde5dc0136e4",
+      "git_blob_sha1": "0188af7cd266bdaf137dc9d07096c6995dc25daa"
+    },
+    {
+      "path": "scfg2/engine/traceback_pairs.hh",
+      "sha256": "c608504f53ea0c7b8d38889079d6d2c54eae6b1a0fda873300a60dc56bc6ed31",
+      "git_blob_sha1": "8b8da6fd4a7e5dde2ccda7bf8438f76780f7b686"
+    },
+    {
+      "path": "scfg2/grammar/rules.hh",
+      "sha256": "3b6564fa6cb57289d8b02178636c4e209a6ecc78e06f17a022a0c6d6fbf02112",
+      "git_blob_sha1": "6f5ad6ec43e60a6b1a60ec5bde5e25c2a65644b2"
+    },
+    {
+      "path": "scfg2/replay/w_final_exact_inside.hh",
+      "sha256": "32ba59bc5863013e524aa27a852717fb33becef06a0aeec92795d7944257c344",
+      "git_blob_sha1": "f4b6ab09e1d16f20f7d9851b6bb3c83fdaf9ec05"
+    },
+    {
+      "path": "scfg2/storage/exact_store.cc",
+      "sha256": "47c22344fbb339077e15c81fdee077f30ef344b379a4555d2d356f148cfaf55a",
+      "git_blob_sha1": "1011e7ba209ee801eae17a89c54f323a763da319"
+    },
+    {
+      "path": "scfg2/weights/be_transition.hh",
+      "sha256": "0c0e20654c1ffd3d2da7f1495f92b048b212fb5904fa6a7e7ec476f0b9eec714",
+      "git_blob_sha1": "6ee7b9c996d98ae9c23d341e176bc9186550bfee"
+    },
+    {
+      "path": "scfg2/weights/v_transition.hh",
+      "sha256": "ff3629415fa8011742dc4df41f90cdf4d6718843588dfe6680521267e34986f4",
+      "git_blob_sha1": "5a79401a74f2fd65d0efe26b0de84c4df333e918"
+    },
+    {
+      "path": "scfg2/weights/vm_transition.hh",
+      "sha256": "b64b837cbbf58f42b85e1e9d9f45e157ae523ca0da6a6668fb8405ad3f410532",
+      "git_blob_sha1": "53044d36c283e58a319d6e3ea042f57b96dba994"
+    },
+    {
+      "path": "scfg2/weights/vp_transition.hh",
+      "sha256": "4743021c32a8ccc201b1151b2c51b594efa92e006d3b6717f4d2bb08758ca42e",
+      "git_blob_sha1": "7ebba0f0a7522db922f712a8776bf2633df018ee"
+    },
+    {
+      "path": "scfg2/weights/vpl_transition.hh",
+      "sha256": "3ff65853ea10c3ccd6315e1ca47d2c5778de1bc7dd08ae2dba53a7c682c4c481",
+      "git_blob_sha1": "101bc2da320e1ef86240e091307d13a83bdeb40d"
+    },
+    {
+      "path": "scfg2/weights/vpr_transition.hh",
+      "sha256": "088e7eea50eac951ebb419f14ccf1f4a2920b987a81ee7ea67ae76fcf0615489",
+      "git_blob_sha1": "e16fa71ed03edda1bf2764eef3d668830e5b1451"
+    },
+    {
+      "path": "scfg2/weights/w_transition.hh",
+      "sha256": "7534e34c32862329040024c5156017a2ef714d69ec26f5b91045c326976438d7",
+      "git_blob_sha1": "36cb06409626be5a0984eb6eeb62a1260272080f"
+    },
+    {
+      "path": "scfg2/weights/wi_transition.hh",
+      "sha256": "e26f133bed4065d4d8d058747911ef84bc10f08667c253c3281b23271f35b957",
+      "git_blob_sha1": "693430808dc8e828a62731bc80354df9c601e5fa"
+    },
+    {
+      "path": "scfg2/weights/wip_transition.hh",
+      "sha256": "e132d18783023d8059c8cdd2137ff0a25eaee52b531dec506459e6048d21d865",
+      "git_blob_sha1": "4ce6caa55499785ec7aeb0ba5d57755bc88fa88c"
+    },
+    {
+      "path": "scfg2/weights/wm_transition.hh",
+      "sha256": "882db091922ddd6556bec0e614a0c077d8fe8881a4e96301bfbc304552a6d1a6",
+      "git_blob_sha1": "faf49224f695ba2143bb3b9a1b1b5a8535f23c1f"
+    },
+    {
+      "path": "scfg2/weights/wmb_transition.hh",
+      "sha256": "21f2acb4f612e5e15821f58fa4b7063e7b308440ede54db1ddba78d15002792a",
+      "git_blob_sha1": "c2f3a46d982e349c4aa98796f81d3c1f0e5a9b0d"
+    },
+    {
+      "path": "scfg2/weights/wmbp_transition.hh",
+      "sha256": "e1b4be9171e8b8f431bf0283a0f578f1887c3840110d022c09dec891fdf8a09e",
+      "git_blob_sha1": "b7ea0b81e2032beaf94f77da7aa7bd3477baf624"
+    },
+    {
+      "path": "scfg2/weights/wmbw_transition.hh",
+      "sha256": "8506cef7bbeea3c0e9544b48e13650938bd375eaab91cc0201354b40a1e11c5a",
+      "git_blob_sha1": "69011e1a13e556f8f04881d061fa040962a69500"
+    },
+    {
+      "path": "scfg2/weights/wmv_wmp_transition.hh",
+      "sha256": "882941eaf56962c62c13a59cb1f2ee2c05a739ab052997c16c832e8cd66cb8ff",
+      "git_blob_sha1": "1bdb61a2d3218fad82f47a6558b7346d8a18c7db"
+    },
+    {
+      "path": "sparse_tree.cc",
+      "sha256": "b8457998ea1b69e148a7da57a3926dc564598b78ad8953844fbf0356ea62a01f",
+      "git_blob_sha1": "b3c123b0d17bbd589739008c5db632c903838e33"
+    },
+    {
+      "path": "scfg2/engine/chart.hh",
+      "sha256": "6397a9b96782437a2842a3947bd8005b862f0c05330b9eefb8312c917c453cf3",
+      "git_blob_sha1": "f84b394cc36ad8a5dfe20e3a79e943d1bc1358c3"
+    },
+    {
+      "path": "scfg2/engine/choice_map.hh",
+      "sha256": "e697e69aca7d151fad348a1e9ae439dd8a4ea3dfcc174996b86a50c8d7c75874",
+      "git_blob_sha1": "4b138be9576e977d1fa598ed2eb58c9b51d01d7b"
+    },
+    {
+      "path": "scfg2/deductions/wmb_geometry.hh",
+      "sha256": "1127fd52d433b9a027125ba06507fa2b368bd9a54891556d9ec7d7f9de5b171e",
+      "git_blob_sha1": "1e1f3368bd1b1433508d395032f8d7853920f3d3"
+    },
+    {
+      "path": "part_func_init.cc",
+      "sha256": "eae9282b27a8f973e434b2cb10a771765fb8dca5fd236f2a32b7451a6cd5b27c",
+      "git_blob_sha1": "c7b7c4283c9b3a7a516c3f311d73383ee651b088"
+    },
+    {
+      "path": "rna_pair_table.hh",
+      "sha256": "1ec3c5309842948f60e7b3df416aca4e36e492299a0a4f5e6b87add9ba8aeca0",
+      "git_blob_sha1": "33dbc1cb6ad0d095e3753f6a08bc99993cc4a21c"
+    },
+    {
+      "path": "ViennaRNA/loops/hairpin.h",
+      "sha256": "e28e69579c49070f0f0d74bf4c32711fc9820e1fa5b8d5c83d663c6d5cbf8b02",
+      "git_blob_sha1": "5b75697ddb66a91e6d5e322cc18cba4f246f66dd"
+    },
+    {
+      "path": "ViennaRNA/loops/internal.h",
+      "sha256": "a7d3dc71e9f71c9fb18a0b3f1cb7e92876cbdac26d5ccac5e6c2e129a23fd522",
+      "git_blob_sha1": "957d821e26f5e2003a90b83303b48ffd416f540c"
+    },
+    {
+      "path": "ViennaRNA/loops/multibranch.h",
+      "sha256": "cfe7722080812336dfda633324c38db3fd654f6e2e4b3125d7e71edc396069de",
+      "git_blob_sha1": "4d797ba94aceac2aecf87ef5d06294c49f691e4f"
+    },
+    {
+      "path": "ViennaRNA/loops/external.h",
+      "sha256": "162b8f309ede9d1c22789115bfd82a414f456c1bee261421bc085354a5c3648f",
+      "git_blob_sha1": "4ede166c9c16ad336cf2a469d7b5f3e1f1135e2c"
+    },
+    {
+      "path": "ViennaRNA/pair_mat.h",
+      "sha256": "3920f563a773f130ca537572e5df7c06b02217abdb0d7f49291a8af7221d37a7",
+      "git_blob_sha1": "8569366b175e2d5241dd209b24dc23fea5882e1f"
+    },
+    {
+      "path": "ViennaRNA/loops/hairpin.c",
+      "sha256": "a11872ac03045570b9de56387aa0ad1a9febf6ea1d41a4a178755b9316221610",
+      "git_blob_sha1": "138ca161eca6ee39421bb30fbd2b40cd2bac45eb"
+    },
+    {
+      "path": "ViennaRNA/loops/multibranch.c",
+      "sha256": "50cd74c6835f3e29bb757ba4a751bed043da1585bc800591691f737e2e9363c5",
+      "git_blob_sha1": "bbefc4a1793479862d63a4f7b955fad5f6b456ed"
+    },
+    {
+      "path": "ViennaRNA/loops/external.c",
+      "sha256": "288c5a21da1cb7af2f671898dcb43a0d0789ccc23dc60afc651f5e493de5cb47",
+      "git_blob_sha1": "1167d3cdbef1851551d93090b95bb8af548f2e5f"
+    },
+    {
+      "path": "ViennaRNA/params/params.c",
+      "sha256": "373f261d7f192f02c7bd2151e1774cd7fd4fdb901883ca6b46626f92c7ffaae9",
+      "git_blob_sha1": "f3c74239e66e06913c8cc76ce8eab7085c638207"
+    },
+    {
+      "path": "scfg2/storage/exact_store.hh",
+      "sha256": "7e79816360f55ec1266cd0acdf40ee26868be0a4982d806697a0e0cc35a191a6",
+      "git_blob_sha1": "15f0f7bb074807f265a50915ce0adb5368685d33"
+    }
+  ],
+  "evidence_kind": "complete extracted call/read catalog; no C++ memory semantics proof",
+  "catalog_parser_note": "includes mixed-case WMv/WMp rules; earlier unreported uppercase-only draft was incomplete",
+  "leaf_read_fields": {
+    "energy": [
+      "owner.seq",
+      "owner.n",
+      "owner.S_",
+      "owner.S1_",
+      "owner.exp_params_ value tables/model options",
+      "owner.scale",
+      "e_stP_penalty",
+      "e_intP_penalty",
+      "cparty pair/rtype table"
+    ],
+    "constant_tables": [
+      "owner.expMLbase",
+      "owner.expcp_pen",
+      "owner.expPUP_pen"
+    ],
+    "global_penalties": [
+      "expPS_penalty",
+      "expPSM_penalty",
+      "expPSP_penalty",
+      "expPB_penalty",
+      "expPPS_penalty",
+      "expap_penalty",
+      "expbp_penalty",
+      "expb_penalty"
+    ],
+    "geometry": [
+      "ctx.tree_ pair/parent/children/Euler/LCA arrays",
+      "ctx.up_ snapshot",
+      "TURN",
+      "owner sequence encoding/length"
+    ],
+    "target": [
+      "immutable generated_target pair vector"
+    ]
+  },
+  "during_scan_observer_writes": [
+    "thread-local exact_store.total_by_item",
+    "thread-local exact_store.items_by_span",
+    "owned ChoiceMap.values_ for Viterbi/constrained runs"
+  ],
+  "after_scan_owner_writes": [
+    "public W/V/VM/WI/WMv/WMp/WM/WIP/VPL/VPR/VP/WMBW/WMBP/WMB/BE charts via materialize_w_final_exact_public_chart"
+  ],
+  "not_called_by_semantic_view": [
+    "transition_support_wmbp_split_be_wi_vp",
+    "VP/WMB observation/profile/read compatibility matrix methods",
+    "right-open support/audit methods"
+  ],
+  "source_frame_claim": "under serial defined execution with frozen input, parameters, environment/FP mode, callback writes are disjoint from the provider/admissibility/local-factor read footprint; no actual conflict found",
+  "remaining_trust_boundary": [
+    "C++ memory/compiler/library semantics",
+    "valid array/scaffold/parameter domains",
+    "thread/external signal/environment changes excluded",
+    "IEEE/transcendental numeric refinement",
+    "all-input source topological/RNA energy/support admission"
+  ],
+  "leaf_external_call_effects": [
+    "RNA pair/rtype lazy make_pair_matrix initialization; no observer call mutates it",
+    "debug trace allocation/free and parameter-ID counter; counter not read by semantic factor formulas",
+    "standard library exp/pow/log and FP exception flags; fixed FP mode and defined call domains required, numeric correctness separate"
+  ]
+}
