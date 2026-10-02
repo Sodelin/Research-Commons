@@ -1,0 +1,72 @@
+UnifiedLean/Source/SourceForestSilentPruning.lean:21:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceForestSilentPruning.genealogy_leaves_nonempty`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/SourceForestSilentPruning.lean:60:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceForestSilentPruning.selected_label_not_in_invisible_operand`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/SourceForestSilentPruning.lean:73:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceForestSilentPruning.invisible_operand_iff_pruned_none`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/SourceForestSilentPruning.lean:95:25: warning: This simp argument is unused:
+  if_neg hxb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [merge, hxa, if_true, Genealogy.prune]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnifiedLean/Source/SourceForestSilentPruning.lean:95:40: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [merge, if_neg hxb, hxa, Genealogy.prune]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnifiedLean/Source/SourceForestSilentPruning.lean:95:48: warning: This simp argument is unused:
+  Genealogy.prune
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [merge, if_neg hxb, hxa, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnifiedLean/Source/SourceForestSilentPruning.lean:103:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceForestSilentPruning.selectedLocation_merge_unchanged`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.SourceForestSilentPruning.prune_none_iff_no_selected_leaves' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestSilentPruning.selected_label_not_in_invisible_operand' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestSilentPruning.invisible_operand_iff_pruned_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestSilentPruning.selectedGenealogy_merge_silent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestSilentPruning.selectedLocation_merge_unchanged' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestSilentPruning.selectedView_merge_silent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestSilentPruning.silent_merger_readout_increment_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
