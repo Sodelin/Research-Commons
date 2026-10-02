@@ -46,7 +46,15 @@ Samuel source and Commons hand proofs retain their original attribution.
 - G3CapSixDeterminant: explicit 5x5 L/U entry certificate, determinant transport,
   exact positive factor and strict-domain scaled nonsingularity
 
-[Combined thirteen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
+- G4AllRootPairClocks: for every finite n, actual product measure of independent
+  unit-rate unordered-live-pair clocks has no-first-merger mass
+  exp(-t)^choose(n,2). An actual two-arm product measure gives the private product
+  law; no total-hazard/private-product conclusion is assumed inside this model
+- G4AllRootBinomialCompression: for every finite n, the original live-root
+  routing sum groups into exactly n+1 count terms with binomial coefficients,
+  including the exponential holding-model specialization at fixed original IDs
+
+[Combined fifteen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
 and [axiom audit](receipts/VerifiedFullComponentCheckpoint.log) link the completed
 source checks, finite algebra and primitive clock/routing model results.
 

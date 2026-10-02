@@ -1,0 +1,35 @@
+GProgram.G4.PairClocks.livePair_card (n : ℕ) : Fintype.card (GProgram.G4.PairClocks.LivePair n) = n.choose 2
+GProgram.G4.PairClocks.noFirstMergeEvent_iff {n : ℕ} {duration : ℝ} (clock : GProgram.G4.PairClocks.LivePair n → ℝ) :
+  clock ∈ GProgram.G4.PairClocks.noFirstMergeEvent n duration ↔
+    ∀ (pair : GProgram.G4.PairClocks.LivePair n), duration < clock pair
+GProgram.G4.PairClocks.all_root_no_first_merge {duration : ℝ} (n : ℕ) (ht : 0 ≤ duration) :
+  ((GProgram.G4.PairClocks.pairClockMeasure n) (GProgram.G4.PairClocks.noFirstMergeEvent n duration)).toReal =
+    Real.exp (-duration) ^ n.choose 2
+GProgram.G4.PairClocks.product_clock_eq_holding_model {duration : ℝ} (n : ℕ) (ht : 0 ≤ duration) :
+  ((GProgram.G4.PairClocks.pairClockMeasure n) (GProgram.G4.PairClocks.noFirstMergeEvent n duration)).toReal =
+    GProgram.G4.IndependentRouting.firstHoldingKernel n duration
+GProgram.G4.PairClocks.private_arms_no_first_merge {t0 t1 : ℝ} (k0 k1 : ℕ) (ht0 : 0 ≤ t0) (ht1 : 0 ≤ t1) :
+  (((GProgram.G4.PairClocks.pairClockMeasure k0).prod (GProgram.G4.PairClocks.pairClockMeasure k1))
+        (GProgram.G4.PairClocks.noFirstMergeEvent k0 t0 ×ˢ GProgram.G4.PairClocks.noFirstMergeEvent k1 t1)).toReal =
+    GProgram.G4.IndependentRouting.firstHoldingKernel k0 t0 * GProgram.G4.IndependentRouting.firstHoldingKernel k1 t1
+GProgram.G4.BinomialCompression.all_root_binomial_sum (n : ℕ) (u : ℝ) (a b : ℕ → ℝ) :
+  GProgram.G4.IndependentRouting.privateNoMerger n u a b =
+    ∑ k ∈ Finset.range (n + 1), ↑(n.choose k) * u ^ k * (1 - u) ^ (n - k) * a k * b (n - k)
+GProgram.G4.BinomialCompression.original_all_root_binomial_sum.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {X : Type u_3} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E]
+  {N : Nanuq.Source.RootedBinary V E X} (H : GProgram.G2.OriginalHybridParents N) (n : ℕ) (u : ℝ) (a b : ℕ → ℝ) :
+  GProgram.G4.IndependentRouting.actualPrivateNoMerger H n u a b =
+    ∑ k ∈ Finset.range (n + 1), ↑(n.choose k) * u ^ k * (1 - u) ^ (n - k) * a k * b (n - k)
+GProgram.G4.BinomialCompression.original_all_root_exponential_coefficients.{u_1, u_2, u_3} {V : Type u_1} {E : Type u_2}
+  {X : Type u_3} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E]
+  {N : Nanuq.Source.RootedBinary V E X} (H : GProgram.G2.OriginalHybridParents N) (n : ℕ) (u t0 t1 : ℝ) (ht0 : 0 ≤ t0)
+  (ht1 : 0 ≤ t1) :
+  (GProgram.G4.IndependentRouting.actualPrivateNoMerger H n u
+      (fun k => GProgram.G4.IndependentRouting.firstHoldingKernel k t0) fun k =>
+      GProgram.G4.IndependentRouting.firstHoldingKernel k t1) =
+    ∑ k ∈ Finset.range (n + 1),
+      ↑(n.choose k) * u ^ k * (1 - u) ^ (n - k) * Real.exp (-t0) ^ k.choose 2 * Real.exp (-t1) ^ (n - k).choose 2
+'GProgram.G4.PairClocks.private_arms_no_first_merge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G4.BinomialCompression.original_all_root_exponential_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

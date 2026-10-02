@@ -4,9 +4,9 @@ Dedicated Sol6.1 formalization lane. Original Samuel and Commons source
 attribution is preserved. This is an incremental source-faithful verification
 and hypothesis-audit packet; it is not a complete G1-G7/CG Lean theorem.
 
-## Thirteen compiled components: index and earlier source checks
+## Fifteen compiled components: index and earlier source checks
 
-- [Combined thirteen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
+- [Combined fifteen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
 - [Combined compiler/hash/resource receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
 
 ### Eight earlier source components
@@ -65,6 +65,16 @@ bridge has a distinct verification frontier.
 This thirteenth completed component derives the no-merger polynomials from
 explicit live-root assignments at fixed original parent IDs. The continuous-time
 source-to-holding-model and full-forest/observable bridges remain explicit.
+
+## Arbitrary finite root counts and exact marginal compression
+
+- [All-n pair-clock and binomial source-marginal contract](G4-ALL-ROOT-CLOCKS-AND-COMPRESSION.md)
+- [Pair-clock product-measure source](program/G4AllRootPairClocks.lean)
+- [Exact binomial n+1-count-class compression](program/G4AllRootBinomialCompression.lean)
+- [All-n exact theorem signatures and axiom manifest](receipts/VerifiedAllRootComponents.log)
+
+These results quantify over every finite n. They compress the no-first-merger
+marginal, not complete labelled forests or an infinite initial population.
 
 ## Remaining whole-program obligations
 
