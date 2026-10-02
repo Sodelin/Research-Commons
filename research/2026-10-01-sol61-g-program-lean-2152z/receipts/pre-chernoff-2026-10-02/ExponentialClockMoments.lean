@@ -71,44 +71,6 @@ theorem exponential_transform {r θ : ℝ} (hr : 0 < r) (hθ : θ < r) :
   rw [lintegral_const_mul _ (by unfold exponentialPDF; fun_prop),
     lintegral_exponentialPDF_eq_one (sub_pos.mpr hθ),mul_one]
 
-theorem exponential_transform_positivePart {r θ : ℝ} (hr : 0 < r) (hθ : θ < r) :
-    (∫⁻ x, ENNReal.ofReal (Real.exp (θ*(max 0 x))) ∂expMeasure r) =
-      ENNReal.ofReal (r/(r-θ)) := by
-  have hp (x : ℝ) : exponentialPDF r x * ENNReal.ofReal (Real.exp (θ*(max 0 x))) =
-      ENNReal.ofReal (r/(r-θ))*exponentialPDF (r-θ) x := by
-    by_cases hx : 0 ≤ x
-    · rw [max_eq_right hx]
-      exact exponential_tilt_pdf_factor hr hθ x
-    · rw [exponentialPDF_of_neg (lt_of_not_ge hx),exponentialPDF_of_neg (lt_of_not_ge hx)]
-      simp
-  change (∫⁻ x, ENNReal.ofReal (Real.exp (θ*(max 0 x)))
-    ∂volume.withDensity (exponentialPDF r)) = _
-  rw [lintegral_withDensity_eq_lintegral_mul volume
-    (by unfold exponentialPDF; fun_prop) (by fun_prop)]
-  simp_rw [Pi.mul_apply,hp]
-  rw [lintegral_const_mul _ (by unfold exponentialPDF; fun_prop),
-    lintegral_exponentialPDF_eq_one (sub_pos.mpr hθ),mul_one]
-
-theorem exponential_positivePart_integrable {r θ : ℝ} (hr : 0 < r) (hθ : θ < r) :
-    Integrable (fun x : ℝ => Real.exp (θ*(max 0 x))) (expMeasure r) := by
-  constructor
-  · fun_prop
-  · rw [hasFiniteIntegral_iff_norm]
-    have hn (x : ℝ) : ‖Real.exp (θ*(max 0 x))‖ = Real.exp (θ*(max 0 x)) :=
-      Real.norm_of_nonneg (Real.exp_pos _).le
-    simp_rw [hn]
-    rw [exponential_transform_positivePart hr hθ]
-    simp
-
-theorem exponential_positivePart_integral {r θ : ℝ} (hr : 0 < r) (hθ : θ < r) :
-    (∫ x, Real.exp (θ*(max 0 x)) ∂expMeasure r) = r/(r-θ) := by
-  rw [integral_eq_lintegral_of_nonneg_ae
-    (Filter.Eventually.of_forall (fun x => (Real.exp_pos (θ*(max 0 x))).le))
-    (exponential_positivePart_integrable hr hθ).aestronglyMeasurable,
-    exponential_transform_positivePart hr hθ,
-    ENNReal.toReal_ofReal (div_nonneg hr.le (sub_pos.mpr hθ).le)]
-
-#print axioms exponential_positivePart_integral
 #print axioms exponential_first_moment
 #print axioms exponential_transform
 

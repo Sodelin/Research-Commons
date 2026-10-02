@@ -1,0 +1,67 @@
+{
+  "status": "PASS_THREE_COMPONENT_RECHECK",
+  "verified_at_utc": "2026-10-02T02:46:56.557137+00:00",
+  "child_max_rss_kib": 3149400,
+  "compiler": "Lean4.33.1 Linux commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "scope": "Recompiled three source modules sequentially into isolated object directory; other imports use existing local builds. Not a full dependency or legacy rebuild.",
+  "results": [
+    {
+      "module": "ExponentialClockMoments",
+      "exit_code": 0,
+      "command": [
+        "timeout",
+        "120",
+        "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/tmp/chernoff-recovery/ExponentialClockMoments.olean",
+        "ExponentialClockMoments.lean"
+      ],
+      "elapsed_seconds": 2.8090677649997815,
+      "source_sha256": "330c33cd3aa123d2de64d5ed58e9194b446b37b360bad64157bd2239b5c5c915",
+      "log_sha256": "b3c6136c1453a90c6add2072ebe68fde8339e174038f4d2c60577ac6b0a754fb",
+      "olean_sha256": "efb73bf1d8e37a2a72e8d012a9493e30bab1b5778b108c6efb8547c8a6379d2e",
+      "matches_existing_object": true
+    },
+    {
+      "module": "KingmanFiniteClockTail",
+      "exit_code": 0,
+      "command": [
+        "timeout",
+        "120",
+        "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/tmp/chernoff-recovery/KingmanFiniteClockTail.olean",
+        "KingmanFiniteClockTail.lean"
+      ],
+      "elapsed_seconds": 2.828355614998145,
+      "source_sha256": "2d79e10d34786a8abbfc2e4ca80f3725a386429e6bbdcf10709838d58a4c40ca",
+      "log_sha256": "5dfb4bf95282a839b991c12e2710737170043af60559f33362ecc66f961b3a10",
+      "olean_sha256": "3a9d2fe35dc89dadb137aace22336fac75a084c44d7832b0574ebc06f6a83797",
+      "matches_existing_object": true
+    },
+    {
+      "module": "KingmanFiniteChernoff",
+      "exit_code": 0,
+      "command": [
+        "timeout",
+        "120",
+        "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/tmp/chernoff-recovery/KingmanFiniteChernoff.olean",
+        "KingmanFiniteChernoff.lean"
+      ],
+      "elapsed_seconds": 3.4580299379995267,
+      "source_sha256": "c22e10e26d8452362f41e0460d165109f35d604a73eef6f317cbf4938a18112d",
+      "log_sha256": "41f34a5fb91bf71cb5e9518287c03fed9cef8d48a8113ce4ab28f2a684bdf2d5",
+      "olean_sha256": "1c0910bad899750dcda0c6bf2786268c4a78d8ee870e95e9ad8d711a0e8aeebc",
+      "matches_existing_object": true
+    }
+  ]
+}

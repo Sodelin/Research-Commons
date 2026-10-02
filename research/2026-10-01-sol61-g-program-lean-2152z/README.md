@@ -110,3 +110,15 @@ The planarity-free biological G5 extension has a separately reviewed hand
 theorem. The compiled source lemmas support its assumptions; they are not its
 complete formal proof. Q-only/four-tip, whole-n-tip cluster/split, and any proposed
 four-tip full-split extension remain separate source/observation contracts.
+
+## 2026-10-02 Chernoff recovery supplement
+
+The [independently recompiled finite Chernoff component](KINGMAN-FINITE-CHERNOFF-RECOVERY.md)
+adds a nineteenth component: exact finite product MGF and the uniform bound
+P(T>=t)<=exp(M+1-t M(M+1)/4), for M>0 and every finite q. The extended clock-moment
+source and its positive-part lemmas are included, with the earlier source preserved.
+The preceding eighteen-component aggregate is a historical audit; the new
+[three-module replay](receipts/chernoff-recovery-2026-10-02/three-component-recheck.json)
+is a separate checked supplement. Source-process, full-forest/observable and
+infinite-entrance bridges remain unproved here; no G4 or whole-program closure
+is claimed.
