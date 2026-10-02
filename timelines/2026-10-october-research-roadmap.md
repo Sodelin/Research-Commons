@@ -1,7 +1,7 @@
 # October research roadmap and live status
 
 **Target: complete the agreed October research programme by 31 October 2026.**  
-**Last reconciled: 2 October 2026, 03:54 UTC.**  
+**Last reconciled: 2 October 2026, 04:29 UTC.**  
 Contributor and maintainer for this edition: **dot / october-research-timeline-20261002**.  
 Status: **published planning checkpoint; research remains open where marked below**.
 
@@ -9,13 +9,17 @@ This is the shared, updateable timeline Nolan requested. Dates are assistant res
 
 “Live” means this page is maintained when evidence or commitments change. It is not a live worker roster, automatic message delivery, a running job, or an installed scheduled service. Historical author labels establish attribution only. No contributor's present activity or acceptance of a new deadline is inferred.
 
-## Current priority: full-package Lean verification
+## Current priority: two proof lanes and two research lanes
 
-**User-directed change, 2 October 2026 at 03:45 UTC:** preserve current mathematical work and make the full claimed package's Lean verification the primary effort. Standalone open-problem expansion, new representation architecture and cross-domain demonstrations are paused. Strengthenings are pursued when they repair, generalize or clarify an actual formal proof obligation. A separate requested progress report does not displace the formal work.
+**User-directed standing structure, 2 October 2026 at 04:19 UTC:** two Lean proof leads, one combined G3/G4 forward-research lead, and one WABI forward-research lead. This supersedes the exclusive Lean-first pause of 03:45 and the brief external-only ranking of 04:16. G1–G7 closure remains a goal; it is not an automatic prerequisite for unrelated author-posed WABI problems.
 
-The package inventory must include original source definitions, observation maps, theorem statements, actual source-to-interface bridges and claimed algorithm guarantees. Keep compiled declarations, hand-reviewed claims, open conjectures, assumed dependencies, resource-blocked builds and tested-but-unformalized implementation separate. Neither counting modules nor assuming a missing bridge constitutes full-package verification. Mathematical-model verification does not establish empirical biological validity.
+**Selected WABI target: E8**, PRISM adaptive RNA structural-class probability certification and selected exact class masses under the actual restricted-ensemble/sampler contract. Source/version and nearest-prior checks precede a new claim. Generic confidence sequences and earlier pseudoknot-free exact shape-mass algorithms are prior work, not new discoveries. E1 and E3–E8 are the seven author-posed directions; E2 is a project-generated adaptation and is not included in that priority set.
 
-Four formal work areas are coordinated: package-wide/source integration, G3, G4 and G5. Current research notes and independent reviews are preserved, but no new external submission or researcher outreach is authorized by this checkpoint. Public attributed research preservation continues; private product code remains private. The prior October milestones remain visible historical targets and are now subject to this Lean-completion gate; none has been silently moved or guaranteed.
+**Combined G3/G4 research target:** target-adaptive G4 stopping without a supplied rival envelope, while preserving G3's general-recognition gaps and feeding concrete shared lemmas to the proofers. The accepted supplied-shape and quantitative-envelope results are reused, not relabeled as unrestricted closure.
+
+The proof leads verify source definitions, stochastic/observation bridges, final statements and declared algorithm guarantees. They receive precise lemmas from both research leads. Bounded helper delegation is used for independent proof, source and implementation checks. New leads are requested as GPT-6.1 with Ultra reasoning; current leads migrate only after exact checkpoint handoffs. No in-flight setting change or unlimited concurrency is implied.
+
+Keep compiled declarations, hand-reviewed claims, open conjectures, resource-blocked builds and tested-but-unformalized code separate. Public attributed research checkpoints continue, while private application code remains in its private project. No new VibeMathed submission, preprint submission or researcher outreach is authorized by this roadmap update. The October milestones remain targets, not guaranteed mathematical completion dates. A separate requested progress report has been delivered privately without displacing the proof lanes.
 
 ## Read this first
 
@@ -149,8 +153,10 @@ Public baseline inspected: **427a9fdd2c352e1cc74a4d6756277163af72331b**, supplem
 
 | 2026-10-02 03:54 | Lean-first verification gate replaces standalone expansion priority | User instruction; preserved earlier dates, accepted G3 all-residue review and G5 direct-terminal Q theorem; three new compiled source/germ components published |
 
-**Next action:** complete the claimed-package formal coverage manifest and discharge actual G3/G4/G5 source-proof obligations. Keep unproved endpoints and private product refinement gaps explicit. Preserve current hand-result packets without starting separate extensions.
+**Next action:** operate the two-proof/two-research structure: formal source/algorithm verification; unrestricted G3/G4 research; and E8 PRISM source/prior-art/contract work. Hand off exact new lemmas to the proofers and preserve all scope and privacy boundaries.
 
 ## New formal evidence, 03:49 preservation
 
 [Compiled G4 Hankel and G5 exponential-germ strengthenings](https://github.com/Sodelin/Research-Commons/blob/4e92c937eec0c717a8231ef08b0d8cf2de445886/research/2026-10-01-sol61-g-program-lean-2152z/HANKEL-GERM-STRENGTHENING-0343Z.md) add three scoped components to the earlier nineteen: shifted arbitrary-order Hankel nonsingularity/no eventual finite constant recurrence with a clock-law specialization; finite exponential right-germ coefficient uniqueness; and intrinsic unknown finite rate-support uniqueness. They have compiler/axiom receipts, not a new combined whole-program audit. The generic representation module remains a separate formal interface result, not verification of its Python codec. A source-derived nonbridge-route cardinality bound has also compiled in the active lane; its publication pin will be added when verified.
+
+| 2026-10-02 04:29 | Reconciled user's final four-lane structure and explicit E8 selection | Two Lean proofers plus combined G3/G4 and E8 forward research; supersedes exclusive Lean-first pause. No E8 theorem or implementation completion is claimed; new prior work and actual sampler semantics are being checked |
