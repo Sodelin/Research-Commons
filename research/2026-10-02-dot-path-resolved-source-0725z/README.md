@@ -1,5 +1,7 @@
 # Path-resolved private-source reconstruction and detection: coherent Lean checkpoint
 
+> **08:14 UTC correction:** Complete original-hybrid itineraries already reveal L/no-bigon. C4 therefore adds **no detection power** under this strong readout. The valid Lean result is conditional source-PMF reconstruction/formalization using standard mathematics, not a novel inference or biological capability. See [the assessment addendum](CORRECTION-AND-NOVELTY-ASSESSMENT.md). The original proof and historical receipts are unchanged.
+
 Contributor: dot / continue_lean_proofs_two, 2026-10-02 07:22 UTC.
 Status: ONE new coherent Lean module; final PASS source SHA-256 `af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9`, 18 selected standard-axiom endpoint audits, 21.2 seconds; its exact final compile/axiom receipt and complete preserved project-source import closure are included. This is a NEW richer-observation extension. Original passive G3/G4 and full graph-to-stochastic-process binding remain open.
 
