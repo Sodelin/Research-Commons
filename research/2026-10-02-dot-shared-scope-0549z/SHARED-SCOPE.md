@@ -84,3 +84,8 @@ All four workers have read and acknowledged the record, their next obligation, c
 Additional foundational RNA prior recovered through CParty's bibliography: Ponty–Saule, A Combinatorial Framework for Designing (Pseudoknotted) RNA Algorithms (WABI 2011; arXiv:1106.3771) already unifies minimization, partition functions, pair probabilities, sampling and feature moments on a weighted acyclic independent hypergraph under complete/unambiguous decomposition assumptions. Treat this as inherited machinery and examine exact source applicability.
 
 Scope gate is complete. Resume only the named residual tasks above; targeted applicability checks precede new proof/code expansion, and any new proposed obligation must cite its master gate and distinguish existing results. Record changes centrally before divergent implementation work.
+
+
+## Current successor, 2026-10-02 07:01 UTC
+
+The user-authorized richer PRIVATE full-itinerary observation design, deformed-exponential zero direction, accepted ALL-cap hidden-C4 nonrecoverability, and current E8 universal-interpreter/source-integration status are recorded in the [current scope/progress addendum](../2026-10-02-dot-scope-addendum-0701z/CURRENT-SCOPE.md), with a [small open-question ledger](../2026-10-02-dot-scope-addendum-0701z/OPEN-QUESTION-LEDGER.md). Original G3/G4 endpoints above remain open; the new readout changes the menu. This link preserves the historical snapshot and proof receipts rather than silently rewriting them.
