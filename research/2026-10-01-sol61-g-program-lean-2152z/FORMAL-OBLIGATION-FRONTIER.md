@@ -60,7 +60,13 @@ Samuel source and Commons hand proofs retain their original attribution.
   and infinite entrance construction are still separate; no Chernoff minimum
   or full-network root/history compression is claimed
 
-[Combined seventeen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
+- G6BridgeCannotEnterHybrid: in any rooted acyclic original-edge graph, bridge
+  targets have unique incoming edge occurrences and bridge target map is
+  injective. Binary-source hybrid parents are nonbridges, including parallel
+  arcs. No planar/binary/LSA/finite-V premise is needed by the generic result;
+  the complete nonplanar decorated-core/kernel bound is not formalized here
+
+[Combined eighteen-component compiler/axiom receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
 and [axiom audit](receipts/VerifiedFullComponentCheckpoint.log) link the completed
 source checks, finite algebra and primitive clock/routing model results.
 

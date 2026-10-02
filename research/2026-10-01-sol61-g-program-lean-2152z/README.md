@@ -4,9 +4,9 @@ Dedicated Sol6.1 formalization lane. Original Samuel and Commons source
 attribution is preserved. This is an incremental source-faithful verification
 and hypothesis-audit packet; it is not a complete G1-G7/CG Lean theorem.
 
-## Seventeen compiled components: index and earlier source checks
+## Eighteen compiled components: index and earlier source checks
 
-- [Combined seventeen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
+- [Combined eighteen-component axiom audit](receipts/VerifiedFullComponentCheckpoint.log)
 - [Combined compiler/hash/resource receipt](receipts/VerifiedFullComponentCheckpoint-receipt.json)
 
 ### Eight earlier source components
@@ -86,6 +86,17 @@ marginal, not complete labelled forests or an infinite initial population.
 For every finite initial count M+q, M>0, the explicit holding-clock sum has
 expectation 2/M-2/(M+q) and tail at t>0 at most 2/(Mt). This does not construct
 an infinite labelled coalescent or supply a whole-network cutoff/minimum.
+
+## Nonplanar original-bridge entry fact
+
+- [Exact graph/source contract and bridge-port consequence](G6-ORIGINAL-BRIDGE-ENTRY.md)
+- [Compiled graph theorem](program/G6BridgeCannotEnterHybrid.lean)
+- [Exact signatures and axiom audit](receipts/VerifiedBridgeEntry.log)
+
+In every rooted acyclic original-edge graph, a bridge target has one incoming
+edge occurrence and distinct bridge IDs have distinct downstream targets.
+Actual hybrid incoming edges are therefore nonbridges, including parallel arcs.
+This supports the separate nonplanar G6 source proof; it is not its full formalization.
 
 ## Remaining whole-program obligations
 
