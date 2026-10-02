@@ -1,0 +1,341 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G3SylvesterSliceThreeSource.lean:86:82: error: unsolved goals
+x : Fin 5 → ℝ
+p : ℝ
+⊢ x 0 * (10460353160 / 21) + x 0 * p * (150719755845189200 / 21) + x 0 * p ^ 2 * (8970395826433850912480 / 21) +
+                                                          x 0 * p ^ 3 * (6326337373067217933119680 / 21) +
+                                                        x 0 * p ^ 4 * (-99660936110756676504442880 / 21) +
+                                                      x 0 * p ^ 5 * (-958599085887796467208540160 / 3) +
+                                                    x 1 * (10460353020 / 7) +
+                                                  x 1 * p * (150718289378526168 / 7) +
+                                                x 1 * p ^ 2 * (8949294927567288717072 / 7) +
+                                              x 1 * p ^ 3 * (5070296178147498989706912 / 7) +
+                                            x 1 * p ^ 4 * (-996424243799855414081860608 / 7) -
+                                          x 1 * p ^ 5 * 287579725766338940162562048 +
+                                        x 2 * (20920701308 / 7) +
+                                      x 2 * p * (301387012187385176 / 7) +
+                                    x 2 * p ^ 2 * (17185416588892216476656 / 7) +
+                                  x 2 * p ^ 3 * (-31779575110091066982754784 / 7) +
+                                x 2 * p ^ 4 * (-902402089627263848871028352 / 7) -
+                              x 2 * p ^ 5 * 239649771471949116802135040 +
+                            x (Fin.succ 2) * (104602292012 / 21) +
+                          x (Fin.succ 2) * p * (1494213242502911288 / 21) +
+                        x (Fin.succ 2) * p ^ 2 * (-96361093906567860489808 / 21) +
+                      x (Fin.succ 2) * p ^ 3 * (-73672405942793792253193568 / 21) +
+                    x (Fin.succ 2) * p ^ 4 * (-1992262595890265246054249600 / 21) +
+                  x (Fin.succ 2) * p ^ 5 * (-527229497238288056964697088 / 3) +
+                x (Fin.succ 2).succ * (52201323668 / 7) +
+              x (Fin.succ 2).succ * p * (-297067401683952952 / 7) +
+            x (Fin.succ 2).succ * p ^ 2 * (-17950186536836529795664 / 7) +
+          x (Fin.succ 2).succ * p ^ 3 * (-13406606232573660190501664 / 7) +
+        x (Fin.succ 2).succ * p ^ 4 * (-362251094156268786477612032 / 7) -
+      x (Fin.succ 2).succ * p ^ 5 * 95859908588779646720854016 =
+    -((x 0 *
+                            ∏ x ∈ {1, 2, 3, 4, 5},
+                              (1 - p +
+                                p *
+                                  3 ^
+                                    match ↑x with
+                                    | 0 => 1
+                                    | 1 => 3
+                                    | 2 => 6
+                                    | 3 => 10
+                                    | 4 => 15
+                                    | x => 21)) *
+                          2) +
+                      (x 0 *
+                          ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                            (1 - p +
+                              p *
+                                3 ^
+                                  match ↑x with
+                                  | 0 => 1
+                                  | 1 => 3
+                                  | 2 => 6
+                                  | 3 => 10
+                                  | 4 => 15
+                                  | x => 21)) *
+                        (10460353202 / 21) -
+                    (x 1 *
+                        ∏ x ∈ {0, 2, 3, 4, 5},
+                          (1 - p +
+                            p *
+                              3 ^
+                                match ↑x with
+                                | 0 => 1
+                                | 1 => 3
+                                | 2 => 6
+                                | 3 => 10
+                                | 4 => 15
+                                | x => 21)) *
+                      26 +
+                  (x 1 *
+                      ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                        (1 - p +
+                          p *
+                            3 ^
+                              match ↑x with
+                              | 0 => 1
+                              | 1 => 3
+                              | 2 => 6
+                              | 3 => 10
+                              | 4 => 15
+                              | x => 21)) *
+                    (10460353202 / 7) -
+                (x 2 *
+                    ∏ x ∈ {0, 1, 3, 4, 5},
+                      (1 - p +
+                        p *
+                          3 ^
+                            match ↑x with
+                            | 0 => 1
+                            | 1 => 3
+                            | 2 => 6
+                            | 3 => 10
+                            | 4 => 15
+                            | x => 21)) *
+                  728 +
+              (x 2 *
+                  ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                    (1 - p +
+                      p *
+                        3 ^
+                          match ↑x with
+                          | 0 => 1
+                          | 1 => 3
+                          | 2 => 6
+                          | 3 => 10
+                          | 4 => 15
+                          | x => 21)) *
+                (20920706404 / 7) -
+            (x 3 *
+                ∏ x ∈ Finset.univ.erase (Fin.succ 2),
+                  (1 - p +
+                    p *
+                      3 ^
+                        match ↑x with
+                        | 0 => 1
+                        | 1 => 3
+                        | 2 => 6
+                        | 3 => 10
+                        | 4 => 15
+                        | x => 21)) *
+              59048 +
+          (x 3 *
+              ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                (1 - p +
+                  p *
+                    3 ^
+                      match ↑x with
+                      | 0 => 1
+                      | 1 => 3
+                      | 2 => 6
+                      | 3 => 10
+                      | 4 => 15
+                      | x => 21)) *
+            (104603532020 / 21) -
+        (x 4 *
+            ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ,
+              (1 - p +
+                p *
+                  3 ^
+                    match ↑x with
+                    | 0 => 1
+                    | 1 => 3
+                    | 2 => 6
+                    | 3 => 10
+                    | 4 => 15
+                    | x => 21)) *
+          14348906 +
+      (x 4 *
+          ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+            (1 - p +
+              p *
+                3 ^
+                  match ↑x with
+                  | 0 => 1
+                  | 1 => 3
+                  | 2 => 6
+                  | 3 => 10
+                  | 4 => 15
+                  | x => 21)) *
+        (52301766010 / 7)
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G3SylvesterSliceThreeSource.lean:98:87: error: unsolved goals
+x : Fin 5 → ℝ
+p : ℝ
+⊢ -(p * x 0 * 50240054791770800) - p * x 1 * 150719912981027208 - p * x 2 * 301425119397389988 -
+                                                          p * x (Fin.succ 2) * 500338916900605980 -
+                                                        p * x (Fin.succ 2).succ * 3123511974568440 -
+                                                      p ^ 2 * x 0 * 2992091315859702425600 -
+                                                    p ^ 2 * x 1 * 8972656649574697759680 -
+                                                  p ^ 2 * x 2 * 17733712042857383103960 -
+                                                p ^ 2 * x (Fin.succ 2) * 377736693024670237800 -
+                                              p ^ 2 * x (Fin.succ 2).succ * 2329507009627761600 -
+                                            p ^ 3 * x 0 * 2225472653580990400100800 -
+                                          p ^ 3 * x 1 * 6461081420389773576890400 -
+                                        p ^ 3 * x 2 * 478597720831555309086960 -
+                                      p ^ 3 * x (Fin.succ 2) * 9846152414549480250000 -
+                                    p ^ 3 * x (Fin.succ 2).succ * 60695570955322648800 -
+                                  p ^ 4 * x 0 * 53689815204293081482240000 -
+                                p ^ 4 * x 1 * 6434164204040499324862464 -
+                              p ^ 4 * x 2 * 425398091828350018970592 -
+                            p ^ 4 * x (Fin.succ 2) * 8715444029676428447520 -
+                          p ^ 4 * x (Fin.succ 2).succ * 53722666911781969920 +
+                        p ^ 5 * x 0 * 55918279999429989863321600 +
+                      p ^ 5 * x 1 * 12904218431799771040892928 +
+                    p ^ 5 * x 2 * 921729826127903029256448 +
+                  p ^ 5 * x (Fin.succ 2) * 18939833476202347188480 +
+                p ^ 5 * x (Fin.succ 2).succ * 116750868440936970240 -
+              x 0 * 3486784400 -
+            x 1 * 10460353176 -
+          x 2 * 20920704948 -
+        x (Fin.succ 2) * 34867647180 -
+      x (Fin.succ 2).succ * 52230021480 =
+    x 0 *
+                        ∏ x ∈ {1, 2, 3, 4, 5},
+                          (1 - p +
+                            p *
+                              3 ^
+                                match ↑x with
+                                | 0 => 1
+                                | 1 => 3
+                                | 2 => 6
+                                | 3 => 10
+                                | 4 => 15
+                                | x => 21) -
+                      (x 0 *
+                          ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                            (1 - p +
+                              p *
+                                3 ^
+                                  match ↑x with
+                                  | 0 => 1
+                                  | 1 => 3
+                                  | 2 => 6
+                                  | 3 => 10
+                                  | 4 => 15
+                                  | x => 21)) *
+                        3486784401 +
+                    (x 1 *
+                        ∏ x ∈ {0, 2, 3, 4, 5},
+                          (1 - p +
+                            p *
+                              3 ^
+                                match ↑x with
+                                | 0 => 1
+                                | 1 => 3
+                                | 2 => 6
+                                | 3 => 10
+                                | 4 => 15
+                                | x => 21)) *
+                      27 -
+                  (x 1 *
+                      ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                        (1 - p +
+                          p *
+                            3 ^
+                              match ↑x with
+                              | 0 => 1
+                              | 1 => 3
+                              | 2 => 6
+                              | 3 => 10
+                              | 4 => 15
+                              | x => 21)) *
+                    10460353203 +
+                (x 2 *
+                    ∏ x ∈ {0, 1, 3, 4, 5},
+                      (1 - p +
+                        p *
+                          3 ^
+                            match ↑x with
+                            | 0 => 1
+                            | 1 => 3
+                            | 2 => 6
+                            | 3 => 10
+                            | 4 => 15
+                            | x => 21)) *
+                  1458 -
+              (x 2 *
+                  ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                    (1 - p +
+                      p *
+                        3 ^
+                          match ↑x with
+                          | 0 => 1
+                          | 1 => 3
+                          | 2 => 6
+                          | 3 => 10
+                          | 4 => 15
+                          | x => 21)) *
+                20920706406 +
+            (x 3 *
+                ∏ x ∈ Finset.univ.erase (Fin.succ 2),
+                  (1 - p +
+                    p *
+                      3 ^
+                        match ↑x with
+                        | 0 => 1
+                        | 1 => 3
+                        | 2 => 6
+                        | 3 => 10
+                        | 4 => 15
+                        | x => 21)) *
+              196830 -
+          (x 3 *
+              ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+                (1 - p +
+                  p *
+                    3 ^
+                      match ↑x with
+                      | 0 => 1
+                      | 1 => 3
+                      | 2 => 6
+                      | 3 => 10
+                      | 4 => 15
+                      | x => 21)) *
+            34867844010 +
+        (x 4 *
+            ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ,
+              (1 - p +
+                p *
+                  3 ^
+                    match ↑x with
+                    | 0 => 1
+                    | 1 => 3
+                    | 2 => 6
+                    | 3 => 10
+                    | 4 => 15
+                    | x => 21)) *
+          71744535 -
+      (x 4 *
+          ∏ x ∈ Finset.univ.erase (Fin.succ 2).succ.succ,
+            (1 - p +
+              p *
+                3 ^
+                  match ↑x with
+                  | 0 => 1
+                  | 1 => 3
+                  | 2 => 6
+                  | 3 => 10
+                  | 4 => 15
+                  | x => 21)) *
+        52301766015
+'GProgram.G3.AllResidue.SliceThree.modelP_is_actual_source' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G3.AllResidue.SliceThree.modelQ_is_actual_source_quotient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

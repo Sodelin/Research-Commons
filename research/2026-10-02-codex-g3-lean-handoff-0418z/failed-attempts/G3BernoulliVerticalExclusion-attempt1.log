@@ -1,0 +1,60 @@
+G3BernoulliVerticalExclusion.lean:32:51: error: unsolved goals
+n : ℕ
+q : ℝ
+⊢ coeff 1 1 + ((C q ^ n).coeff 0 - 1) = q ^ n - 1
+G3BernoulliVerticalExclusion.lean:43:43: error: unsolved goals
+c : Fin 6 → ℝ
+exponent : Fin 6 → ℕ
+p q : ℝ
+⊢ eval p (∑ x, C (c x) * (1 - C q ^ exponent x) * ∏ j ∈ Finset.univ.erase x, probabilityPolynomial (exponent j) q) =
+    ∑ i, c i * (1 - q ^ exponent i) * ∏ j ∈ Finset.univ.erase i, bernoulliFactor (exponent j) p q
+G3BernoulliVerticalExclusion.lean:45:4: warning: This simp argument is unused:
+  Polynomial.eval_prod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [criticalProbabilityPolynomial, pCriticalNumerator, probability_polynomial_eval]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G3BernoulliVerticalExclusion.lean:45:26: warning: This simp argument is unused:
+  probability_polynomial_eval
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [criticalProbabilityPolynomial, pCriticalNumerator, Polynomial.eval_prod]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G3BernoulliVerticalExclusion.lean:75:30: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (∑ i ∈ ?s, ?f i) * ?a
+in the target expression
+  -∑ x, c x * ∏ j, (1 - q ^ exponent j) = (-∑ i, c i) * ∏ j, (1 - q ^ exponent j)
+
+c : Fin 6 → ℝ
+exponent : Fin 6 → ℕ
+q : ℝ
+hcard : ∀ (i : Fin 6), (Finset.univ.erase i).card = 5
+hprod :
+  ∀ (i : Fin 6),
+    (∏ j ∈ Finset.univ.erase i, probabilityPolynomial (exponent j) q).coeff 5 =
+      ∏ j ∈ Finset.univ.erase i, (q ^ exponent j - 1)
+hneg : ∀ (i : Fin 6), ∏ j ∈ Finset.univ.erase i, (q ^ exponent j - 1) = -∏ j ∈ Finset.univ.erase i, (1 - q ^ exponent j)
+hterm :
+  ∀ (i : Fin 6),
+    c i * (1 - q ^ exponent i) * -∏ j ∈ Finset.univ.erase i, (1 - q ^ exponent j) = -(c i * ∏ j, (1 - q ^ exponent j))
+⊢ -∑ x, c x * ∏ j, (1 - q ^ exponent j) = (-∑ i, c i) * ∏ j, (1 - q ^ exponent j)
+'GProgram.G3.AllResidue.critical_probability_eval' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GProgram.G3.AllResidue.critical_probability_coeff_five' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G3.AllResidue.normal_weight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G3.AllResidue.normal_probability_coeff_five_ne_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G3.AllResidue.normal_probability_polynomial_ne_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G3.AllResidue.no_strict_vertical_critical_line' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
