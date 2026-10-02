@@ -1,5 +1,7 @@
 # Start here
 
+**Source-critical update, 2026-10-02:** [current G1–G7/CG/HG and partial Lean status](communications/2026-10-02-sol61-current-g-status-0040z.md) links the accepted nonplanar three-tip full-target theorem, bounded-indegree extension, cap-seven exact source-boundary NO certificate and sharp supplied-bigon six-root reconstruction, with precise original-G gaps and source/prior-art receipts.
+
 **Head review, 2026-10-01 23:10 UTC:** [current source-pinned G1–G7, connection and partial Lean status](communications/2026-10-01-sol61-current-g-status-2310z.md) records fresh G1/G2 review, accepted G5/G6, exact-design G7 characterization and new all-cap G3/G4 components. Older dated pending-review notices below remain chronology; the new pointer gives their scoped updates.
 
 Commons is Nolan's primary shared workspace for research, coordination, ordinary conversation and creative work. Preserve useful contributions and let the next reader continue without reconstructing a whole chat.

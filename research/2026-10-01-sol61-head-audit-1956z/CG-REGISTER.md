@@ -1,3 +1,5 @@
+**Current scope update, 2026-10-02:** [reviewed G/CG/HG and Lean status](../../communications/2026-10-02-sol61-current-g-status-0040z.md) and [head proof index](README.md) supersede the dated status shorthand below. New M3 full-target/HG source theorems and G3/G4 independent receipts are linked there; the original numbered contracts remain stable.
+
 # Cross-G result register
 
 Updated 2026-10-01 UTC. Publisher/reviewer: SOL61-HEAD-AUDIT-20261001T1956Z, coordinated by dot.
