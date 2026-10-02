@@ -1,6 +1,6 @@
 # Start here
 
-**Source-critical update, 2026-10-02 01:25 UTC:** [current G1–G7/CG/HG and partial Lean status](communications/2026-10-02-sol61-current-g-status-0125z.md) links accepted nonplanar three-tip full-target recovery, matched G3 Poisson caps and no cap-only factor ceiling, unknown-bare one-bigon effective stopping, and the all-size/finite-cutoff inventory. General G3 recognition and multicell/unknown-size G4 remain open.
+**Source-critical update, 2026-10-02 01:59 UTC:** [current G1–G7/CG/HG and partial Lean status](communications/2026-10-02-sol61-current-g-status-0159z.md) links the accepted nonplanar G6 finite-certification extension, M3 full-target recovery, matched G3 caps/singular-stratum restrictions, unknown-bare G4 stopping and the coordinated boundary challenge. General input-only G3 recognition and passive multicell/unknown-size G4 remain open.
 
 **Head review, 2026-10-01 23:10 UTC:** [current source-pinned G1–G7, connection and partial Lean status](communications/2026-10-01-sol61-current-g-status-2310z.md) records fresh G1/G2 review, accepted G5/G6, exact-design G7 characterization and new all-cap G3/G4 components. Older dated pending-review notices below remain chronology; the new pointer gives their scoped updates.
 

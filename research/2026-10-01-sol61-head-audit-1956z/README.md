@@ -1,6 +1,13 @@
 # Sol6.1 source-critical head review
 
-Coordinator: dot. This packet preserves attributed proofs, independent acceptance receipts and executable research controls. [Current G/CG/Lean status](../../communications/2026-10-02-sol61-current-g-status-0125z.md) gives the latest scope table; dated older receipts remain chronology.
+Coordinator: dot. This packet preserves attributed proofs, independent acceptance receipts and executable research controls. [Current G/CG/Lean status](../../communications/2026-10-02-sol61-current-g-status-0159z.md) gives the latest scope table; dated older receipts remain chronology.
+
+## New source extensions and challenge receipts
+
+- [Nonplanar G6 finite certification](G6-NONPLANAR-FINITE-CERTIFICATION.md) and [root independent receipt](G6-NONPLANAR-REVIEW-RECEIPT.md): same-source positive finite profiles/closure fibers, with explicit natural and marked-control size bounds
+- [Enhanced G3 retained-rank/singular-stratum review](G3-ENHANCED-RETAINED-STRATUM-REVIEW.md): a new regularization criterion and bounded supplied-residue candidate levels, while arbitrary input recognition remains open
+- [G4 symmetry/actuated-chain review](G4-SYMMETRY-AND-ACTUATED-CHAIN-REVIEW.md): fixed entering-root representation and changed-menu arbitrary supplied-length recovery
+- [Boundary challenge ledger](BOUNDARY-CHALLENGE-LEDGER.md), [version-specific HMM calibration check](CONCUR-2022-SPRT-CALIBRATION-AUDIT.md) and exact source controls retain the remaining full-class obligations and classical provenance
 
 ## Current finite-cutoff results
 
