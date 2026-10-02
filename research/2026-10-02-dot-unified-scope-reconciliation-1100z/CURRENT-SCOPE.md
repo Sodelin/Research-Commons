@@ -94,3 +94,8 @@ The current operational blocker is unresolved approval status for the large froz
 After the11:01 candidate snapshot above, the dedicated owner's bounded actual Lake guard **PASS** is receipt `lake-build-1790938958597146765`: exit0,46.318s,3574jobs,113 selected modules excluding aggregate,117 stable source/config hashes,114 object hashes and707 printed/replayed standard-only axiom-audit lines. The707 lines are not claimed to be707 distinct new theorems. Log SHA256fb7b4ba88fbd53f86de9eb72404a52ed2427aecb4d3bcf6cc55a2b3c182365ee; no nonstandard axioms. A separate immutable113 snapshot is frozen;100 remains unchanged. This includes the twelve primary native/source modules plus the matrix adapter and updated audit21/E bridge11.
 
 This closes the selected next-version **aggregate compiler/import-closure check**, not the conditional source/paper/temporal admission gates above or all490 historical coverage. Complete public100 package transfer remains pending at its unresolved catalog action; the113 local guard does not resolve that separate publication approval/status. The dated scope and both99 failures are preserved. Four roles and the named end-to-end priorities remain unchanged.
+
+
+## Material scope successor — 2026-10-02, requested14:03 / priority14:09
+
+The current material successor is [the reconciled304 source/paper/goal scope](../2026-10-02-dot-unified-scope-refresh-1403z/CURRENT-SCOPE.md). It preserves this dated snapshot and updates discharged kernel/calendar/prior/unranked/race links, exact compiler coverage, represented RNA source bindings and remaining original gates. Earlier snapshots are not retroactively strengthened.
