@@ -89,3 +89,8 @@ Scope gate is complete. Resume only the named residual tasks above; targeted app
 ## Current successor, 2026-10-02 07:01 UTC
 
 The user-authorized richer PRIVATE full-itinerary observation design, deformed-exponential zero direction, accepted ALL-cap hidden-C4 nonrecoverability, and current E8 universal-interpreter/source-integration status are recorded in the [current scope/progress addendum](../2026-10-02-dot-scope-addendum-0701z/CURRENT-SCOPE.md), with a [small open-question ledger](../2026-10-02-dot-scope-addendum-0701z/OPEN-QUESTION-LEDGER.md). Original G3/G4 endpoints above remain open; the new readout changes the menu. This link preserves the historical snapshot and proof receipts rather than silently rewriting them.
+
+
+## Current Lean 336 preservation successor, 2026-10-02 23:03 UTC
+
+The dated 336 scope/certificate successor (evidence snapshot 22:13 UTC) and source-complete selected-closure package are preserved in the [336 package scope note](https://github.com/Sodelin/Research-Commons/blob/5a4d740ecb72b9483ecda571c7e6f37fdc12a7b2/research/2026-10-02-dot-unified-lean-336-2207z/package/SCOPE-SUCCESSOR.md) and its [certificate summary](https://github.com/Sodelin/Research-Commons/blob/5a4d740ecb72b9483ecda571c7e6f37fdc12a7b2/research/2026-10-02-dot-unified-lean-336-2207z/package/certificate/336-CERTIFICATE-SUMMARY.json). The package publication is [commit 5a4d740](https://github.com/Sodelin/Research-Commons/commit/5a4d740ecb72b9483ecda571c7e6f37fdc12a7b2). Historical-source coverage and the remaining mathematical scope stay as stated in that successor; this pointer adds navigation only.
