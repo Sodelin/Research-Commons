@@ -1,0 +1,146 @@
+{
+  "status": "PASS exact finite parameter certificate",
+  "s": 1,
+  "alpha": 0,
+  "beta": 0,
+  "r": "1/2",
+  "nodes": [
+    "1/2"
+  ],
+  "NO_cap": 6,
+  "attainment_through_cap": 5,
+  "normal_records": {
+    "F0": {
+      "exponents": [
+        1,
+        3,
+        6,
+        10
+      ],
+      "c": [
+        "15183/4724",
+        "-25713/4724",
+        "11323/2362",
+        "-1848/1181"
+      ],
+      "root_at_one_order": 2,
+      "lambda_projection": "0",
+      "positive_quotient_coefficients": [
+        "1848/1181",
+        "5544/1181",
+        "10626/1181",
+        "16632/1181",
+        "17554/1181",
+        "13161/1181",
+        "4"
+      ],
+      "quotient_at_zero": "4",
+      "near_one_derivative_order": 2,
+      "near_one_constant": "70089/2362",
+      "near_one_derivative_L1": "2818218843/2362",
+      "near_one_width": "23363/1878812562",
+      "coefficient_L1": "35467/2362",
+      "near_one_numerator_terms_count": 171,
+      "near_one_numerator_terms_canonical_sha256": "9bb4c8bd1bc4a14e335932164c5d22f1340dfb30b42d3c65c570511b7e6b33d6"
+    },
+    "F1": {
+      "exponents": [
+        1,
+        3,
+        6,
+        10,
+        15
+      ],
+      "c": [
+        "8580831/1333483",
+        "-4840760732/110679089",
+        "34590361472/110679089",
+        "-190137335808/110679089",
+        "159786205184/110679089"
+      ],
+      "root_at_one_order": 1,
+      "lambda_projection": "689151815289/110679089",
+      "positive_quotient_coefficients": [
+        "159786205184/110679089",
+        "399465512960/110679089",
+        "629158182912/110679089",
+        "808917663744/110679089",
+        "934374801408/110679089",
+        "825690980352/110679089",
+        "590847279104/110679089",
+        "347601803264/110679089",
+        "1821754368/1333483",
+        "560284672/1333483",
+        "64"
+      ],
+      "quotient_at_zero": "64",
+      "near_one_derivative_order": 1,
+      "near_one_constant": "689151815289/110679089",
+      "near_one_derivative_L1": "3327893375189514/110679089",
+      "near_one_width": "229717271763/2218595583459676",
+      "coefficient_L1": "390066872169/110679089",
+      "near_one_numerator_terms_count": 94,
+      "near_one_numerator_terms_canonical_sha256": "144fd067fbd9f681e8db37152a99d1be77a1e43e76c08ba45e2a1c90c701e47f"
+    }
+  },
+  "constants": {
+    "upper_width": "23363/1878812562",
+    "lower_corner_width": "0",
+    "eta0": "1/32",
+    "eta": "1804471340427/6320238700062048256",
+    "A": "735/512",
+    "D": "3688580948104/110679089",
+    "K": "16240242063843/116055436427264",
+    "MK": "54247043896254/110679089",
+    "B0": "35467/2362",
+    "B1": "390066872169/110679089",
+    "Vmin": "25921/262144",
+    "outside0": "197476165648502360669030740976889/3916799777508162043830032366545955998064274290816057344",
+    "outside1": "82567152874929478412556708747306938324354780281234161/15614071002889045375008426938525575217763301921378986261130750856508142336507641856",
+    "p0": "3046152420506975203315647561663421045706257864774053578386443/4060354558614407261322568491951754379869648152443926081415530565160365878988122211823990603776",
+    "delta": "25921/524288",
+    "gamma": "5413414021281/232110872854528",
+    "mass_K": "6320238700062048256/3160117545559683701",
+    "C_star": "23722419666768153891687824661047501963611767498238737917280822603/2542881716966237892252286138928117342279204957110579774120977855906084985986351953455379493114771144704"
+  },
+  "algebraic_input": {
+    "b": "1-2^(-128)",
+    "N": 128,
+    "exponents": [
+      1,
+      3,
+      6,
+      10,
+      15
+    ],
+    "signature_rational_exponents": [
+      "1",
+      "7/4",
+      "63/32",
+      "1023/512",
+      "32767/16384"
+    ],
+    "primitive_integer_normal_rows": [
+      [
+        15183,
+        -25713,
+        22646,
+        -7392,
+        0
+      ],
+      [
+        712208973,
+        -4840760732,
+        34590361472,
+        -190137335808,
+        159786205184
+      ]
+    ],
+    "strict_cutoff_verified": true
+  },
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "scope": "Finite exact polynomial/rational premises and algebraic exponent identities. Analytic/global all-N and ordinary-interior transfer are hand proofs; general recognition remains open.",
+  "original_full_certificate_sha256": "3bb92fb2343c6d0a1a7fcc9d4e34faa613be43c1f41ab24718ca24dd47427578",
+  "reproduction": "Run dyadic_poisson_certificate.py with the supplied s,alpha,beta,r; reconstruct exact normalized numerators from the source and compare canonical term hashes and all constants. Compact form omits coefficient arrays, not their evidence."
+}
