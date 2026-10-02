@@ -1,0 +1,34 @@
+GProgram.G4.balanced_residual_identity (x y : ℝ) :
+  640 * (x + y) * (GProgram.G4.bigonBalanced4 x y - GProgram.G4.ordinaryBalanced4 (GProgram.G4.bigonNoMerger2 x y)) +
+      (x + y - 2) ^ 4 =
+    256 / 3 * (x + y) * (GProgram.G4.bigonNoMerger4 x y - GProgram.G4.bigonNoMerger2 x y ^ 6) -
+      (832 / 3 * (x + y) + 128) * (GProgram.G4.bigonNoMerger3 x y - GProgram.G4.bigonNoMerger2 x y ^ 3)
+GProgram.G4.balanced_coordinate_separates_cap4 {x y : ℝ} (hx1 : x < 1) (hy1 : y < 1) :
+  ¬(GProgram.G4.bigonNoMerger3 x y = GProgram.G4.bigonNoMerger2 x y ^ 3 ∧
+      GProgram.G4.bigonNoMerger4 x y = GProgram.G4.bigonNoMerger2 x y ^ 6 ∧
+        GProgram.G4.bigonBalanced4 x y = GProgram.G4.ordinaryBalanced4 (GProgram.G4.bigonNoMerger2 x y))
+GProgram.G4.FourRoot.exact_defect_factorization (u x y : ℝ) :
+  GProgram.G4.FourRoot.defect3 u x y + 5 * GProgram.G4.FourRoot.delta u x y =
+    -u * (1 - u) * (GProgram.G4.FourRoot.A u x - GProgram.G4.FourRoot.B u y) ^ 2 *
+      ((1 + u) * GProgram.G4.FourRoot.A u x + (2 - u) * GProgram.G4.FourRoot.B u y)
+GProgram.G4.FourRoot.zero_delta_forces_negative_defect3 {u x y : ℝ} (hu : 0 < u) (hu1 : u < 1) (hx1 : x < 1)
+  (hy1 : y < 1) (hd : GProgram.G4.FourRoot.delta u x y = 0) : GProgram.G4.FourRoot.defect3 u x y < 0
+GProgram.G4.FourRoot.no_common_moment_signature {u x y : ℝ} (hu : 0 < u) (hu1 : u < 1) (hx1 : x < 1) (hy1 : y < 1) :
+  ¬(GProgram.G4.FourRoot.delta u x y = 0 ∧ 0 ≤ GProgram.G4.FourRoot.defect3 u x y)
+GProgram.G4.FourRoot.rational_cap3_scalar_witness :
+  GProgram.G4.FourRoot.s2 (1 / 2) (37 / 42) (5 / 6) = 13 / 14 ∧
+    GProgram.G4.FourRoot.s3 (1 / 2) (37 / 42) (5 / 6) = (13 / 14) ^ 3
+GProgram.G3.MomentBarrier.exact_double_sum {n : ℕ} (p : Fin n → ℝ) :
+  ∑ i, ∑ j, p i * p j * (p i - p j) ^ 2 = 2 * ((∑ i, p i) * ∑ i, p i ^ 3 - (∑ i, p i ^ 2) ^ 2)
+GProgram.G3.MomentBarrier.finite_moment_inequality {n : ℕ} (p : Fin n → ℝ) (hp : ∀ (i : Fin n), 0 ≤ p i) :
+  (∑ i, p i ^ 2) ^ 2 ≤ (∑ i, p i) * ∑ i, p i ^ 3
+GProgram.G3.MomentBarrier.coupled_barrier_minimal {P Q T U d B0 B1 g K C : ℝ} (hP : 0 ≤ P) (hT : 0 ≤ T) (hd : 0 < d)
+  (hB1 : 0 ≤ B1) (hPQ : d * P ≤ B0 * Q) (hTP : g * T ≤ B1 * P ^ 2) (hQT : Q ^ 2 ≤ U * T) (hUC : U ≤ K * C)
+  (hgap : B1 * B0 ^ 2 * K * C < d ^ 2 * g) : T = 0 ∧ P = 0
+GProgram.G3.MomentBarrier.coupled_barrier {P Q T U d B0 B1 g K C : ℝ} (hP : 0 ≤ P) (hQ : 0 ≤ Q) (hT : 0 ≤ T)
+  (hU : 0 ≤ U) (hd : 0 < d) (hB0 : 0 < B0) (hB1 : 0 < B1) (hg : 0 < g) (hK : 0 < K) (hC : 0 < C) (hPQ : d * P ≤ B0 * Q)
+  (hTP : g * T ≤ B1 * P ^ 2) (hQT : Q ^ 2 ≤ U * T) (hUC : U ≤ K * C) (hgap : B1 * B0 ^ 2 * K * C < d ^ 2 * g) :
+  T = 0 ∧ P = 0
+'GProgram.G4.balanced_coordinate_separates_cap4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G4.FourRoot.zero_delta_forces_negative_defect3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G3.MomentBarrier.coupled_barrier_minimal' depends on axioms: [propext, Classical.choice, Quot.sound]
