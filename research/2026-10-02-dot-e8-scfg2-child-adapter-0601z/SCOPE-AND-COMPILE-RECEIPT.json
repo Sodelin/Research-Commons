@@ -1,0 +1,47 @@
+{
+  "author": "dot (OpenAI), research assistance for Nolan",
+  "checkpoint_UTC": "2026-10-02T06:01:00Z",
+  "master_obligation": "E8 actual production/runtime child-carrier correspondence, gates3/4",
+  "scope": "Valid active-child key/lookup/order normalization for the selected SCFG2 factory/executor path",
+  "proof_modules": 1,
+  "selected_endpoint_axiom_audits": 8,
+  "all_other_E8_source_gates_open": true,
+  "compile_receipt": {
+    "module": "E8SCFG2RuntimeChildAdapter",
+    "status": "PASS_LOCAL_COMPONENT",
+    "command": [
+      "timeout",
+      "60",
+      "lean",
+      "-j1",
+      "-M3072",
+      "-o",
+      "/workspace/scratch/281dd7169401/recovered-proof-one/receipts/immutable/61151fc34a1ca4c9cc09711e59d3ca60b78690005e2f8687867ca4d5915648c3/attempt-1790920841739551398/E8SCFG2RuntimeChildAdapter.olean",
+      "E8SCFG2RuntimeChildAdapter.lean"
+    ],
+    "compile_cwd": "/workspace/scratch/281dd7169401/recovered-proof-one/receipts/immutable/61151fc34a1ca4c9cc09711e59d3ca60b78690005e2f8687867ca4d5915648c3/attempt-1790920841739551398",
+    "exit_code": 0,
+    "elapsed_seconds": 1.9450103950002813,
+    "child_max_rss_kib": 1661088,
+    "compiler": "Lean4.33.1 Linux commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "source_sha256": "61151fc34a1ca4c9cc09711e59d3ca60b78690005e2f8687867ca4d5915648c3",
+    "source_matches_current_working_copy": true,
+    "log_sha256": "6dae8ef7aff3e8e1ecd16ba79329546f383690faf08a70cdb5b6e1bac1409c0f",
+    "direct_project_import_olean_sha256": {},
+    "project_imports_stable_during_compile": true,
+    "axiom_lines": [
+      "'E8SCFG2RuntimeChildAdapter.valid_primary_secondary_defaults' does not depend on any axioms",
+      "'E8SCFG2RuntimeChildAdapter.valid_child_normalization_agrees' depends on axioms: [propext]",
+      "'E8SCFG2RuntimeChildAdapter.active_runtime_child_key_agrees' depends on axioms: [propext]",
+      "'E8SCFG2RuntimeChildAdapter.active_runtime_child_lookup_agrees' depends on axioms: [propext]",
+      "'E8SCFG2RuntimeChildAdapter.ordered_runtime_values_agree' depends on axioms: [propext, Quot.sound]",
+      "'E8SCFG2RuntimeChildAdapter.ordered_runtime_fold_agrees' depends on axioms: [propext, Quot.sound]",
+      "'E8SCFG2RuntimeChildAdapter.active_runtime_product_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'E8SCFG2RuntimeChildAdapter.runtime_metadata_preserved' does not depend on any axioms"
+    ],
+    "nonstandard_axioms": [],
+    "olean_sha256": "e1e45f44df2f8fe9d4a919ea53d3a6ec6e0f803af6a6cdb822cae867c2123e02",
+    "verified_snapshot": "receipts/immutable/61151fc34a1ca4c9cc09711e59d3ca60b78690005e2f8687867ca4d5915648c3/attempt-1790920841739551398"
+  }
+}
