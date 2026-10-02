@@ -1,0 +1,412 @@
+{
+  "status": "PASS",
+  "attribution": "dot, dedicated G5 panel-minimality lane",
+  "sources": {
+    "triangle": {
+      "vertices": 17,
+      "edges": 20,
+      "taxa": [
+        "a",
+        "b",
+        "c",
+        "f",
+        "z"
+      ],
+      "hybrids": 4,
+      "root_LSA": true,
+      "original_child_edges_bridges": true,
+      "strict_ages": true,
+      "all_population_pair_rates": 1,
+      "all_parent_weights": "1/2",
+      "ages": {
+        "O": 16,
+        "R": 14,
+        "D": 8,
+        "Ha": 2,
+        "Hb": 2,
+        "Hc": 2,
+        "Hf": 2,
+        "A": 4,
+        "B": 6,
+        "C": 6,
+        "BC": 5,
+        "CC": 5,
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "f": 0,
+        "z": 0
+      },
+      "original_edges": [
+        [
+          "O",
+          "R",
+          0
+        ],
+        [
+          "O",
+          "z",
+          1
+        ],
+        [
+          "R",
+          "A",
+          2
+        ],
+        [
+          "R",
+          "D",
+          3
+        ],
+        [
+          "A",
+          "Ha",
+          4
+        ],
+        [
+          "A",
+          "Hb",
+          5
+        ],
+        [
+          "D",
+          "B",
+          6
+        ],
+        [
+          "D",
+          "C",
+          7
+        ],
+        [
+          "Ha",
+          "a",
+          16
+        ],
+        [
+          "Hb",
+          "b",
+          17
+        ],
+        [
+          "B",
+          "Ha",
+          8
+        ],
+        [
+          "B",
+          "BC",
+          9
+        ],
+        [
+          "C",
+          "Hb",
+          10
+        ],
+        [
+          "C",
+          "CC",
+          11
+        ],
+        [
+          "BC",
+          "Hc",
+          12
+        ],
+        [
+          "BC",
+          "Hf",
+          13
+        ],
+        [
+          "CC",
+          "Hc",
+          14
+        ],
+        [
+          "CC",
+          "Hf",
+          15
+        ],
+        [
+          "Hc",
+          "c",
+          18
+        ],
+        [
+          "Hf",
+          "f",
+          19
+        ]
+      ]
+    },
+    "star": {
+      "vertices": 17,
+      "edges": 20,
+      "taxa": [
+        "a",
+        "b",
+        "c",
+        "f",
+        "z"
+      ],
+      "hybrids": 4,
+      "root_LSA": true,
+      "original_child_edges_bridges": true,
+      "strict_ages": true,
+      "all_population_pair_rates": 1,
+      "all_parent_weights": "1/2",
+      "ages": {
+        "O": 16,
+        "R": 14,
+        "D": 8,
+        "Ha": 2,
+        "Hb": 2,
+        "Hc": 2,
+        "Hf": 2,
+        "A": 8,
+        "S": 6,
+        "F": 4,
+        "DC": 5,
+        "SC": 5,
+        "a": 0,
+        "b": 0,
+        "c": 0,
+        "f": 0,
+        "z": 0
+      },
+      "original_edges": [
+        [
+          "O",
+          "R",
+          0
+        ],
+        [
+          "O",
+          "z",
+          1
+        ],
+        [
+          "R",
+          "A",
+          2
+        ],
+        [
+          "R",
+          "D",
+          3
+        ],
+        [
+          "A",
+          "Ha",
+          4
+        ],
+        [
+          "A",
+          "Hb",
+          5
+        ],
+        [
+          "D",
+          "S",
+          6
+        ],
+        [
+          "D",
+          "DC",
+          7
+        ],
+        [
+          "Ha",
+          "a",
+          16
+        ],
+        [
+          "Hb",
+          "b",
+          17
+        ],
+        [
+          "S",
+          "F",
+          8
+        ],
+        [
+          "S",
+          "SC",
+          9
+        ],
+        [
+          "DC",
+          "Hc",
+          12
+        ],
+        [
+          "DC",
+          "Hf",
+          13
+        ],
+        [
+          "F",
+          "Ha",
+          10
+        ],
+        [
+          "F",
+          "Hb",
+          11
+        ],
+        [
+          "SC",
+          "Hc",
+          14
+        ],
+        [
+          "SC",
+          "Hf",
+          15
+        ],
+        [
+          "Hc",
+          "c",
+          18
+        ],
+        [
+          "Hf",
+          "f",
+          19
+        ]
+      ]
+    }
+  },
+  "exact_pair_laws_equal": true,
+  "mechanisms": [
+    "common-site",
+    "independent-live-ancestor"
+  ],
+  "mechanism_justification": "Each hybrid has exactly one original descendant tip; every pair first meeting lies above every hybrid, and there are no older hybrid sites.",
+  "formula": "P(T_ab>t)=sum_m w_ab(m)*exp(-max(t-m,0)); all rates are exactly 1",
+  "pair_first_meeting_measures": {
+    "ab": {
+      "8": "1/4",
+      "14": "1/2",
+      "4": "1/4"
+    },
+    "ac": {
+      "14": "1/2",
+      "8": "1/4",
+      "6": "1/4"
+    },
+    "af": {
+      "14": "1/2",
+      "8": "1/4",
+      "6": "1/4"
+    },
+    "az": {
+      "16": "1"
+    },
+    "bc": {
+      "14": "1/2",
+      "8": "1/4",
+      "6": "1/4"
+    },
+    "bf": {
+      "14": "1/2",
+      "8": "1/4",
+      "6": "1/4"
+    },
+    "bz": {
+      "16": "1"
+    },
+    "cf": {
+      "5": "1/2",
+      "8": "1/2"
+    },
+    "cz": {
+      "16": "1"
+    },
+    "fz": {
+      "16": "1"
+    }
+  },
+  "exact_route_pair_checks": 320,
+  "rooted_clusters": {
+    "triangle": [
+      "a",
+      "ab",
+      "abcf",
+      "abcfz",
+      "ac",
+      "acf",
+      "af",
+      "b",
+      "bc",
+      "bcf",
+      "bf",
+      "c",
+      "cf",
+      "f",
+      "z"
+    ],
+    "star": [
+      "a",
+      "ab",
+      "abc",
+      "abcf",
+      "abcfz",
+      "abf",
+      "ac",
+      "acf",
+      "af",
+      "b",
+      "bc",
+      "bcf",
+      "bf",
+      "c",
+      "cf",
+      "f",
+      "z"
+    ]
+  },
+  "splits": {
+    "triangle": [
+      "abz|cf",
+      "ab|cfz",
+      "acf|bz",
+      "acz|bf",
+      "ac|bfz",
+      "afz|bc",
+      "af|bcz",
+      "az|bcf"
+    ],
+    "star": [
+      "abc|fz",
+      "abf|cz",
+      "abz|cf",
+      "ab|cfz",
+      "acf|bz",
+      "acz|bf",
+      "ac|bfz",
+      "afz|bc",
+      "af|bcz",
+      "az|bcf"
+    ]
+  },
+  "star_only_rooted_clusters": [
+    "abc",
+    "abf"
+  ],
+  "triangle_only_rooted_clusters": [],
+  "star_only_splits": [
+    "abc|fz",
+    "abf|cz"
+  ],
+  "triangle_only_splits": [],
+  "quartet_unions_equal": true,
+  "versions": {
+    "python": "3.12.14",
+    "networkx": "3.5"
+  },
+  "checker_sha256": "61014ea67e0ce587f74adc49f1bb4e9e6407e93862203de7c7bd0aa3bee428b4",
+  "scope": "Exact finite source/routing controls and analytic complete pair-law equality; not an all-k obstruction, Q lower bound, numerical fit, or full Lean proof."
+}
