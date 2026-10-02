@@ -56,3 +56,8 @@ The active E8 scope remains the first two PRISM§5 directions: adaptive confiden
 - Coordinator: preserve common scope, independent evidence levels, prior-first selection and user updates. Four existing workers remain; no helper expansion.
 
 This is a current direction/progress addendum. Every new acceptance still requires its own exact hypotheses and receipt. The original published shared scope is retained and linked forward to this successor.
+
+
+## Active-direction successor — 2026-10-02 08:30 UTC
+
+Nolan has redirected ALL FOUR workers to a unified Lean package, with two integrators and two contributing auditors. New exploratory research and runtime feature expansion pause. Read the [active unified-Lean scope](../2026-10-02-dot-unified-lean-scope-0830z/ACTIVE-SCOPE.md) and [originality/significance corrections](../2026-10-02-dot-originality-review-0812z/REASSESSMENT.md). This preserves the historical statements above; the successor governs current assignments and evidence classifications.
