@@ -19,11 +19,13 @@ The supplied-B component is independently accepted in the head's [uniform pad re
 
 [FULLY-ACTUATED-SERIAL-CHAIN.md](FULLY-ACTUATED-SERIAL-CHAIN.md) records a conditional arbitrary-supplied-length extension when the declared original-ID menu actually isolates each natural cell by forcing all others. It is a separate stronger menu, with no unmarked unknown cell, and preserves the predecessor theorem's exact scope. No such deterministic rows are added to a passive or randomized-only menu.
 
-## New full passive supplied-chain theorem submission
+## Independently accepted passive supplied-chain normal form
 
-[PASSIVE-CHAIN-NORMAL-FORM.md](PASSIVE-CHAIN-NORMAL-FORM.md) is a NEW full hand-proof candidate for arbitrary SUPPLIED finite positive private independent chains. A law-level positive-clade cohort reconstruction exposes both first arm survivals, handles equal weights by a fair orientation and exact symmetric formulas, and recovers the entire tail by full forest operator cancellation. Ordered induction gives an explicit arm-exchange normal form and therefore effective fixed-pair all-copy equality/stopping. The complete source proof is under independent review; finite exact controls alone do not verify its infinite hierarchy step. This does not settle inverse stopping against unbounded UNKNOWN rival lengths or general shared/multiport boxes.
+[PASSIVE-CHAIN-NORMAL-FORM.md](PASSIVE-CHAIN-NORMAL-FORM.md) is the full hand theorem for arbitrary SUPPLIED finite positive private independent chains, independently accepted in [ROOT-PASSIVE-CHAIN-REVIEW.md](ROOT-PASSIVE-CHAIN-REVIEW.md). Immutable reviewed proof/checks pin: fc41ab3beb75b09bbcfbd30ebb46e1f56c6cbfbb. A law-level positive-clade cohort reconstruction exposes both first arm survivals, handles equal weights by a fair orientation and exact symmetric formulas, and recovers the entire tail by full forest operator cancellation. Ordered induction gives an explicit arm-exchange normal form and therefore effective fixed-pair all-copy equality/stopping. The reviewer independently read the complete source argument and replayed the final exact controls; hand review, finite verification and absent full formalization remain distinct. This does not settle inverse stopping against unbounded UNKNOWN rival lengths or general shared/multiport boxes.
 
-## Current direct passive arbitrary-chain attack
+[UNKNOWN-SIZE-STOPPING-BOUNDARY.md](UNKNOWN-SIZE-STOPPING-BOUNDARY.md) states the remaining exact input contract. A supplied finite upper length bound already yields a finite complete tester by a finite union of pair-shape finders, even when the actual length and parameters are unknown. Observation-only inverse certification against ALL unbounded unknown rivals remains OPEN; fixed global tester families are already ruled out by the original ALL-CAP theorem. Identification in the limit is a weaker route, not the requested halting certificate.
+
+## Earlier direct passive arbitrary-chain invariants
 
 [ARBITRARY-CHAIN-FIRST-COMB-INVARIANT.md](ARBITRARY-CHAIN-FIRST-COMB-INVARIANT.md) supplies new submitted ordered-prefix all-copy invariants for ANY finite positive private independent chain, irrespective of rival length: the leading ordinary survival, first inheritance weight and, on unequal weights, first minority-arm duration. A source-derived normalized comb coordinate has a log-square correction that survives every positive ordinary connector/tail up to constant factors. Exact symbolic comb-cut controls and two full replays pass; independent full review is requested. The majority-arm/tail factor and complete passive same-L/unknown-size stopping remain open.
 
@@ -55,7 +57,7 @@ The Sol head independently accepted the arbitrary-chain count/classified-stoppin
 | Supplied bare bigon plus two unknown pads | Independently accepted sharp uniform6 | Full source/finite receipt linked above |
 | Unknown bare one-bigon parameters and pads | Independently accepted full five-parameter hand theorem | Whole-shape numerical cap not executed |
 | Supplied fully actuated serial chain | Head hand acceptance under an explicit stronger menu | No missing rows/unmarked cells; not passive master |
-| Arbitrary supplied finite passive independent chains | Full ordered normal-form hand theorem submitted | Complete source review pending; no numerical universal cap executed |
+| Arbitrary supplied finite passive independent chains | Independently accepted ordered normal form and effective equality/stopping | No numerical universal cap executed |
 | General multiport/joint shared-register admitted boxes | OPEN separate contracts | Source-faithful all-copy equality mechanism |
 | Unknown-size independent exact-response recognition | OPEN | Asymptotic identification is not a finite stopping rule |
 | Multiport/shared-register/weaker menu | Separate OPEN contracts | No transfer by analogy |
