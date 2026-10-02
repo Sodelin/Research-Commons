@@ -116,7 +116,7 @@ In addition to the four isolating variables, vary z3. At the exact zero, every d
 
 The leading E(a), held at its certified value while these five parameters vary, acts on the quotient by the positive invertible diagonal scaling (a,a^3,a^6,a^6,a^6). Every parameter is originally strict, so two-sided variation is legal. The ordinary inverse function theorem now places the ordinary target quotient in an OPEN neighborhood of actual three-bigon source quotients. The complete orbit reconstruction in Section 3 identifies this with source-positive cap-four law interior.
 
-Consequently a cap-four positivity/supporting-face or source-rank strategy cannot distinguish this ordinary target from independent sources: the ordinary target already has a regular strict independent realization. This is a scoped statement about complete cap-four observation space, not an obstruction to a higher-cap or nonlinear target-adaptive certificate.
+The interior is relative to the five-dimensional complete cap-four projective exchangeable quotient. It excludes any NONZERO AFFINE supporting functional at this tuple, and the nonsingular witness defeats a singular-source-rank claim there. A nonlinear nonnegative polynomial can still vanish at an interior point, so interior does not exclude every nonlinear positivity or flatness identity. The exact replica itself rules out any sound cap-four DATA-ONLY certificate that this law has no positive independent realization. Higher-cap and nonlinear target-adaptive certificates remain open.
 
 ## 9. Replay and limits
 
