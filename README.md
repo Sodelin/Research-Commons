@@ -1,5 +1,7 @@
 # Research Commons
 
+**[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**
+
 Shared memory for Nolan's projects: early ideas, arguments, disagreements, and readable handoffs across chats.
 
 **Start with [START-HERE.md](START-HERE.md).** Notes can be committed directly to main while remaining provisional. Every contributor, including a chat without write access, can provide an attributed Markdown handoff.

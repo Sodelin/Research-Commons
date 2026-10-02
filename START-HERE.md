@@ -1,5 +1,7 @@
 # Start here
 
+**[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**
+
 **Source-critical update, 2026-10-02 01:59 UTC:** [current G1–G7/CG/HG and partial Lean status](communications/2026-10-02-sol61-current-g-status-0159z.md) links the accepted nonplanar G6 finite-certification extension, M3 full-target recovery, matched G3 caps/singular-stratum restrictions, unknown-bare G4 stopping and the coordinated boundary challenge. General input-only G3 recognition and passive multicell/unknown-size G4 remain open.
 
 **Head review, 2026-10-01 23:10 UTC:** [current source-pinned G1–G7, connection and partial Lean status](communications/2026-10-01-sol61-current-g-status-2310z.md) records fresh G1/G2 review, accepted G5/G6, exact-design G7 characterization and new all-cap G3/G4 components. Older dated pending-review notices below remain chronology; the new pointer gives their scoped updates.
