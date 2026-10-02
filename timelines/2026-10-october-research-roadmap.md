@@ -1,7 +1,7 @@
 # October research roadmap and live status
 
 **Target: complete the agreed October research programme by 31 October 2026.**  
-**Last reconciled: 2 October 2026, 02:53 UTC.**  
+**Last reconciled: 2 October 2026, 03:31 UTC.**  
 Contributor and maintainer for this edition: **dot / october-research-timeline-20261002**.  
 Status: **published planning checkpoint; research remains open where marked below**.
 
@@ -11,7 +11,9 @@ This is the shared, updateable timeline Nolan requested. Dates are assistant res
 
 ## Read this first
 
-- **Main mathematical risks:** G3 general exact finite-input recognition; G4 finite certification against unbounded unknown rival chain lengths; exact G5 panel minimality beyond currently reviewed sufficiency; the biological finite-data/sequence bridge.
+- **Original published-question result:** the internally audited computer-assisted [all-level NANUQ Theorem A](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/ALL-LEVEL-PROOF.md) answers the two explicit circularity/exact-support extension questions in [Holtgrefe et al. section 6](https://arxiv.org/html/2507.17308v2#S6), under the original binary, LSA, outer-labeled-planar galled assumptions, at every finite level and multiple blobs. This is separate from the later G1–G7 programme. The parameter-family Theorem B remains a scoped sufficient region. Neither external peer review, exhaustive priority certification nor complete Lean source-level verification is asserted.
+
+- **Main mathematical risks:** G3 general exact finite-input recognition; G4 finite certification against unbounded unknown rival chain lengths; G5 quartet-only and higher-indegree panel sharpness; the biological finite-data/sequence bridge.
 - **Important new G4 result:** supplied finite-chain equality/identifiability and pair-dependent effective stopping are accepted. The older 01:59 broad “ordered multicell open” label must be read with this newer qualification.
 - **Important new G5 result:** independent review accepts an exact two-tip-law collision with different rooted clusters and S. Together with accepted M3 sufficiency, maximum one-copy taxon-panel size **3 is sharp for those two binary targets**. Its Q unions are equal; Q minimality and all higher-indegree sharp thresholds remain open.
 - **Formalization:** 18 historically audited components plus a nineteenth finite-clock Chernoff component with an independent three-module replay, not a combined 19-component audit or whole-program machine verification. The separate original NANUQ rebuild remains 96/114 included modules passed, five resource-blocked certificates and 13 unchecked dependents.
@@ -94,9 +96,21 @@ The weekly dates are planned review points. They do not assert an automation or 
 
 The new G3 single-residue rationality and fixed r=1/sqrt(2) critical-locus/interior results now have independent public acceptance below. They are promised-normal-form branch results, not extraction of unknown residues or general all-input recognition. Earlier critical-stratum and curvature submissions retain their own individual review status.
 
-A G4 stopping route under a supplied uniform rival-contraction promise is a follow-on input awaiting a durable reviewed source link in this register. A supplied contraction promise does not close unrestricted unknown-length stopping. Completed finite searches finding no G5 Q obstruction do not establish an M2-to-Q theorem.
+The [G4 rival-wide contraction stopping theorem and independent review](https://github.com/Sodelin/Research-Commons/blob/67214201d5c4e9a269763b096eabbfa335ceb2b6/research/2026-10-02-sol61-g4-finite-stopping-0321z/CONTRACTION-REVIEW.md) are now published. A supplied contraction promise derives a data-dependent finite rival-length bound; it does not close unrestricted unknown-length stopping. Completed finite searches finding no G5 Q obstruction do not establish an M2-to-Q theorem.
 
-The user also proposed progressive measurement/fingerprinting (identity-code/hash distinctions and adaptive stopping) for assessment under G4/G6. Treat that as a proposed investigation of information loss, precision, error and stopping conditions; hashing an observation does not by itself add distinguishing information or prove finite certification. No new standalone implementation or solved gap is implied.
+The user also proposed progressive measurement/fingerprinting (identity-code/hash distinctions and adaptive stopping) for assessment under G4/G6. Treat that as a proposed investigation of information loss, precision, error and stopping conditions; hashing an observation does not by itself add distinguishing information or prove finite certification. This proposal has now produced the bounded representation pilot below; it has not solved the unrestricted recognition/stopping gaps.
+
+
+### 2 October, 03:31 UTC: bottleneck-first integration and proof priorities
+
+- [G5/CG1 representation pilot](../research/2026-10-02-dot-g5-cg1-representation-0309z/REPORT.md): exact joint-support codecs, source-fixture checks, a compiled abstract Lean preservation module and independent source/query/compiler review. The accepted two-tip collision survives deterministic recoding. A simple support bitmap is useful for repeated already-extracted small-panel queries; one-shot setup can lose, Haar expands the tested payload, and there is no general or end-to-end speed/optimality claim. Later batch timings are contributor measurements with their review boundary preserved.
+- [Primary-source representation comparison](../research/2026-10-02-dot-representation-comparison-0314z/REPORT.md): use the simplest source-faithful representation for the actual operation. Preserve the original-ID/calendar/exact-law layers. The existing candidate-cluster loop can enumerate up to 2^n candidates; a fast codec does not remove that bottleneck. The accompanying observation-derived CNF is a proposal, not an independently reviewed or implemented improvement. Symbolic compilation may have exponential size.
+- **Current authorised research focus:** finish current G3/G4/G5 arguments, then challenge their assumptions and seek maximal justified strengthenings with Lean. Dedicated formal work must address actual source/probability/observation bridges, not inflate the count with assumed conclusions. The new generic representation proof is separate from the previously published 19 biological/formal components and does not formalize the Python compiler or full G5 theorem.
+- **G3 submitted strengthening in preparation:** a two-resultant argument is being prepared to remove the exceptional residue set in the supplied cap-seven positive-drift/zero-killing single-residue branch. This is not yet independently accepted in this register and does not decide arbitrary input recognition.
+- **G5 new attack in preparation:** exact pair-to-quartet recovery in the equiprobable terminal-hybrid subfamily is under source-transfer review. Neither this subfamily nor a finite kernel census settles unrestricted Q panel sharpness. Weighted and nonterminal sources remain separate.
+- **G4:** unrestricted target-specific finite stopping remains the active proof target, with no imported finite-rank or unknown-law equivalence oracle. The accepted contraction theorem is a distinct stronger-premise branch.
+
+No October milestone has been silently moved. Representation work must preserve required answers, reduce demonstrated cost, or discharge a named mathematical obligation; it is not a new open-ended architecture programme.
 
 ## Evidence index for this baseline
 
@@ -123,4 +137,6 @@ Public baseline inspected: **427a9fdd2c352e1cc74a4d6756277163af72331b**, supplem
 
 | 2026-10-02 02:53 | Reconciled newly published G3 branch acceptance | Single-residue rationality and supplied cap7 quadratic-residue interior accepted; general input-only recognition remains open. Preserved initial targets and all prior evidence |
 
-**Next action:** obtain and record actual lane uptake against the 8 October gate, integrate the independent G5 lower-bound acceptance, and keep the G3/G4 unknown-input/unknown-size obligations as the highest-risk mathematical endpoints.
+| 2026-10-02 03:31 | Published representation pilot/comparison; restored original NANUQ completion prominence; reconciled G4 conditional acceptance and current proof priorities | Own source-linked research updates, preserved prior targets and private-product boundary. New G3/G5 strengthenings remain pending review; full G3/G4 endpoints stay open |
+
+**Next action:** independently review the new G3/G5 strengthening packets, continue the unrestricted G3/G4 proof targets, and use the dedicated Lean lane to test source-level assumptions. Keep representation work bounded to demonstrated bottlenecks.

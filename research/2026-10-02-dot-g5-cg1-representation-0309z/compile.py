@@ -1,0 +1,7 @@
+from pathlib import Path
+import os,subprocess,time,resource,json,hashlib
+r=Path(__file__).resolve().parent;b=Path('/workspace/shared/lean-formalization');src=r/'RepresentationTransport.lean';log=r/'lean.log';obj=r/'RepresentationTransport.olean';env=os.environ.copy();env['LEAN_PATH']=':'.join(map(str,[b/'build/mathlib/.lake/build/lib/lean']+list((b/'build/mathlib/.lake/packages').glob('*/.lake/build/lib/lean'))));lean=b/'tooling/lean-4.33.1-linux/bin/lean';cmd=[str(lean),'-j1','-M3072','-o',str(obj),str(src)];t=time.perf_counter()
+with log.open('w') as f:p=subprocess.run(cmd,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=120)
+result={'status':'PASS_SCOPED_LEAN_COMPONENT' if p.returncode==0 else 'FAILED_ATTEMPT','exit_code':p.returncode,'elapsed_seconds':time.perf_counter()-t,'maximum_child_RSS_KiB':resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss,'command':cmd,'compiler':subprocess.check_output([str(lean),'--version'],text=True).strip(),'mathlib_commit':'0df444a360eaa60ab8c11dca51a86af692955474','source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'log_sha256':hashlib.sha256(log.read_bytes()).hexdigest(),'axiom_lines':[x for x in log.read_text().splitlines() if 'axiom' in x],'scope':'Generic observation-fiber transport, incidence encoding and rational Haar pair. Not G5 full biological theorem.'}
+if p.returncode==0:result['object_sha256']=hashlib.sha256(obj.read_bytes()).hexdigest()
+(r/'lean-receipt.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2));print(log.read_text())

@@ -1,0 +1,335 @@
+{
+  "status": "PASS_SCOPED_REPRESENTATION_PILOT",
+  "attribution": "dot, representation integration lane, 2026-10-02",
+  "baseline": {
+    "accepted_pair_collision_replayed": true,
+    "sources": {
+      "triangle": {
+        "vertices": 17,
+        "edges": 20,
+        "taxa": [
+          "a",
+          "b",
+          "c",
+          "f",
+          "z"
+        ],
+        "hybrids": 4,
+        "root_LSA": true,
+        "original_child_edges_bridges": true,
+        "strict_ages": true,
+        "all_population_pair_rates": 1,
+        "all_parent_weights": "1/2"
+      },
+      "star": {
+        "vertices": 17,
+        "edges": 20,
+        "taxa": [
+          "a",
+          "b",
+          "c",
+          "f",
+          "z"
+        ],
+        "hybrids": 4,
+        "root_LSA": true,
+        "original_child_edges_bridges": true,
+        "strict_ages": true,
+        "all_population_pair_rates": 1,
+        "all_parent_weights": "1/2"
+      }
+    },
+    "pair_panels": 10,
+    "source_switchings": 16,
+    "pair_cases": 320
+  },
+  "new_tested_delta": {
+    "exact_support_query_roundtrips": 3150,
+    "support_bitmap_roundtrips": 750,
+    "exhaustive_nonempty_triple_bitmap_block_queries": 217,
+    "original_ID_group_merges_preserved": 160,
+    "joint_original_ID_bitmask_encoding_preserves_support": true,
+    "rational_full_Haar_roundtrips": true,
+    "pair_law_symbolic_identity_fingerprint_and_Haar_still_collide": true,
+    "at_time_7_abc_joint_support_separates": true,
+    "pair_erasure_of_abc_support_collides": true,
+    "cluster_difference": [
+      "abc",
+      "abf"
+    ],
+    "split_difference": [
+      "abc|fz",
+      "abf|cz"
+    ]
+  },
+  "triple_support": {
+    "triangle": [
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "star": [
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        7
+      ]
+    ]
+  },
+  "triple_partition_catalogue": [
+    [
+      1,
+      2,
+      4
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      7
+    ]
+  ],
+  "triple_support_bitmaps": {
+    "triangle": 15,
+    "star": 31
+  },
+  "original_ID_roster": [
+    "a",
+    "b",
+    "c",
+    "f",
+    "z"
+  ],
+  "triple_support_vectors": {
+    "triangle": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "star": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "triple_Haar_coefficients": {
+    "triangle": [
+      "1/2",
+      "1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "star": [
+      "5/8",
+      "3/8",
+      "0",
+      "1/4",
+      "0",
+      "0",
+      "1/2",
+      "0"
+    ]
+  },
+  "lossy_detail_counterexample": {
+    "inputs": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "retained_average": "1/2",
+    "different_first_support_coordinate": true
+  },
+  "bytes": {
+    "raw_explicit_label_support_JSON": 105,
+    "bitmask_joint_support_JSON": 40,
+    "support_bitmap_JSON": 2,
+    "shared_partition_catalogue_JSON": 40,
+    "panel_ID_roster_JSON": 15,
+    "time_JSON": 3,
+    "schema_metadata_required": "Finite-roster/order, panel, time/change-point, partition enumeration and support-only schema are required; payload lengths are not standalone files",
+    "roster_JSON": 25,
+    "full_8_rational_Haar_JSON": 48,
+    "full_8_support_indicator_JSON": 40
+  },
+  "benchmark": {
+    "seven_possible_and_sure_block_queries": {
+      "raw": {
+        "median_seconds": 5.988987002638169e-06,
+        "minimum_seconds": 5.5104940038290805e-06,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      },
+      "bitmask_preconverted": {
+        "median_seconds": 5.3667780011892315e-06,
+        "minimum_seconds": 5.109420002554543e-06,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      },
+      "bitmask_including_conversion": {
+        "median_seconds": 1.1517347003973554e-05,
+        "minimum_seconds": 1.0965734996716492e-05,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      },
+      "bitmask_support_conversion_cached_queries": {
+        "median_seconds": 9.531661002256442e-06,
+        "minimum_seconds": 9.150037003564648e-06,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      },
+      "support_bitmap_preconverted": {
+        "median_seconds": 6.887700001243501e-07,
+        "minimum_seconds": 6.816890017944389e-07,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      },
+      "support_bitmap_support_conversion_cached_queries": {
+        "median_seconds": 5.019133001042064e-06,
+        "minimum_seconds": 5.001817000447772e-06,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      },
+      "support_bitmap_one_shot_all_setup_and_conversion": {
+        "median_seconds": 1.762213899928611e-05,
+        "minimum_seconds": 1.714169499609852e-05,
+        "repeats": 7,
+        "operations_per_repeat": 1000
+      }
+    },
+    "full_bitmap_catalogue_lookup_querymask_eventmask_setup": {
+      "median_seconds": 1.1840876002679578e-05,
+      "minimum_seconds": 1.1462175003543962e-05,
+      "repeats": 7,
+      "operations_per_repeat": 1000
+    },
+    "Haar_encoding_8_coordinates": {
+      "median_seconds": 2.751691799494438e-05,
+      "minimum_seconds": 2.675770300265867e-05,
+      "repeats": 7,
+      "operations_per_repeat": 1000
+    },
+    "Haar_decoding_8_coordinates": {
+      "median_seconds": 1.532556299935095e-05,
+      "minimum_seconds": 1.4830166997853666e-05,
+      "repeats": 7,
+      "operations_per_repeat": 1000
+    },
+    "all_source_support_batch": {
+      "source_support_rows": 750,
+      "distinct_panel_catalogues": 25,
+      "block_queries_per_round": 3150,
+      "full_setup_and_conversion_in_every_trial": true,
+      "rounds": {
+        "1": {
+          "raw": {
+            "median_seconds": 0.00226213299902156,
+            "minimum_seconds": 0.002205197000876069,
+            "repeats": 7
+          },
+          "bitmap": {
+            "median_seconds": 0.0020462280008359812,
+            "minimum_seconds": 0.0019427709994488396,
+            "repeats": 7
+          }
+        },
+        "5": {
+          "raw": {
+            "median_seconds": 0.011832714000775013,
+            "minimum_seconds": 0.011542025000380818,
+            "repeats": 7
+          },
+          "bitmap": {
+            "median_seconds": 0.004445637001481373,
+            "minimum_seconds": 0.004153977999521885,
+            "repeats": 7
+          }
+        },
+        "20": {
+          "raw": {
+            "median_seconds": 0.04800151699600974,
+            "minimum_seconds": 0.047548734000883996,
+            "repeats": 7
+          },
+          "bitmap": {
+            "median_seconds": 0.012516976996266749,
+            "minimum_seconds": 0.011981096999079455,
+            "repeats": 7
+          }
+        }
+      },
+      "scope": "750 fixture supports, 3150 possible/sure query pairs per round. Inputs are already extracted supports; source construction and law parsing are not measured."
+    },
+    "scientific_scope": "Microbenchmark on one 3-label support only. Preconverted methods cache queries. Matched support-conversion methods cache both query mask sets. One-shot includes all dictionary/query setup. No end-to-end or asymptotic speed claim"
+  },
+  "limits": [
+    "H_U support supplied from exact source fixtures, not arbitrary observed-law analytic parser",
+    "No biological wavelet measurement, mutation calibration, new target or empirical quality metric",
+    "No source-marginal weights replaced by product weights or hidden-source IDs",
+    "Support bitmap preserves H_U partition support, not full probabilities or calendar law",
+    "Current lineage-group bitmap alone loses rooted merger history; keep full tree and time metadata when required",
+    "No improvement to sharp three-panel boundary, G3/G4 recognition, full Lean closure, or finite-DNA estimation"
+  ],
+  "classical_vs_new": "Haar, injective recoding and data processing are classical; new project work is source-faithful adapter and these controls",
+  "python": "3.12.14",
+  "networkx": "3.5",
+  "source_sha256": "61014ea67e0ce587f74adc49f1bb4e9e6407e93862203de7c7bd0aa3bee428b4",
+  "pilot_sha256": "47d6636f45255306f2587fc90a9a8a01ff2e20e98f23c3b6194f7f20ca50de85",
+  "elapsed_seconds": 2.6296505229984177
+}
