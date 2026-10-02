@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-10-02",
+  "repository": "TheCOBRALab/PRISM",
+  "commit": "87a88715282d279fc361eb56de27153a321359be",
+  "files": [
+    {
+      "path": "src/part_func.cc",
+      "blob": "94721d37ef94ec5fa049d7d998f611081bc59ff0",
+      "inside_function": "W_final_pf::compute_VPR",
+      "inside_lines": [
+        451,
+        459
+      ],
+      "inside_padding_index": "k-i",
+      "traceback_function": "W_final_pf::Sample_VPR",
+      "traceback_start_line": 1561,
+      "traceback_padding_index": "k-i",
+      "inside_term_line": 457,
+      "traceback_term_line": 1581,
+      "exact_padding_excerpt": "expcp_pen[k - i]"
+    },
+    {
+      "path": "src/pseudo_loop.cc",
+      "blob": "dbfec62e95bf5ce163194b96ec4ab5afc2847d63",
+      "function": "pseudo_loop::compute_VPR",
+      "lines": [
+        319,
+        331
+      ],
+      "mfe_padding_energy": "(j-k)*cp_penalty",
+      "mfe_term_line": 329,
+      "exact_padding_excerpt": "static_cast<energy_t>((j - k) * cp_penalty)"
+    }
+  ],
+  "source_theory": {
+    "paper_doi": "10.1093/bioinformatics/btae748",
+    "supplement_page": 5,
+    "equation": "(vi)",
+    "right_padding_length": "j-r"
+  },
+  "evidence_kind": "direct public pinned-source inspection, no private-fork publication"
+}
