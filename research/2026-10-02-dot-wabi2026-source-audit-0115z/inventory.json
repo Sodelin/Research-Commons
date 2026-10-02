@@ -1,0 +1,433 @@
+[
+  {
+    "article": 1,
+    "title": "Is Level-1 Blob Reconstruction Under the Network Multispecies Coalescent Easy?",
+    "abstract": "Hybridization is an important evolutionary process, commonly modeled by the network multispecies coalescent. Reconstructing evolutionary histories under this model is notoriously costly, even for level-1 networks where hybridization events are isolated from each other. The widely used methods that combine speed with statistical guarantees rely on quartet concordance factors computed for all subsets of four species, resulting in an O(n⁴k) bottleneck that severely limits scalability to large numbers of species (n) and genes (k). Among quartet-based methods, NANUQ+ is notable because it decomposes the problem into two steps: first reconstructing a tree of blobs, which compresses each non-treelike part of the network, called a blob, into a single vertex, and second reconstructing the internal structure of each level-1 blob, specifically its circular order and hybrid vertex. Here, we investigate whether level-1 blob reconstruction is difficult once the tree of blobs is known. We present a fast and statistically consistent algorithm, called NetCS, based on two simple primitives: majority voting and merge sort, circumventing the bottleneck of computing all quartet concordance factors. In simulations, NetCS achieved comparable accuracy to NANUQ+ and was dramatically faster, enabling analyses of 200 taxa and 1000 genes in only a few minutes. Both methods attained near-perfect accuracy when given the true tree of blobs; however, their performance degraded in end-to-end pipelines due to errors in tree of blobs reconstruction. Strikingly, even methods that reconstruct level-1 networks directly struggled to accurately predict hybrid ancestry. Our results suggest that reconstructing level-1 blobs is unexpectedly easy once the tree of blobs is known, and that a major challenge for phylogenetic network inference lies in accurate tree of blobs reconstruction.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.1",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.1/LIPIcs.WABI.2026.1.pdf",
+    "authors": [
+      "Dai, Junyan",
+      "Molloy, Erin K."
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "078a58bb4748eee09cd96956c314f455b401206f9a556c6404ebb36645185736"
+  },
+  {
+    "article": 2,
+    "title": "Improved Approximation Algorithms and Hardness Results for Shortest Common Superstring with Reverse Complements",
+    "abstract": "The Shortest Common Superstring (SCS) problem is a fundamental task in sequence analysis. In genome assembly, however, the double-stranded nature of DNA implies that each fragment may occur either in its original orientation or as its reverse complement. This motivates the Shortest Common Superstring with Reverse Complements (SCS-RC) problem, which asks for a shortest string that contains, for each input string, either the string itself or its reverse complement as a substring. The previously best-known approximation ratio for SCS-RC was 23/8. In this paper, we present a new approximation algorithm achieving an improved ratio of 8/3. Our approach computes an optimal constrained cycle cover by reducing the problem, via a novel gadget construction, to a maximum-weight perfect matching in a general graph. We also investigate the computational hardness of SCS-RC. While the decision version is known to be NP-complete, no explicit inapproximability results were previously established. We show that the hardness of SCS carries over to SCS-RC through a polynomial-time reduction, implying that it is NP-hard to approximate SCS-RC within a factor better than 333/332. Notably, this hardness result holds even for the DNA alphabet.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.2",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.2/LIPIcs.WABI.2026.2.pdf",
+    "authors": [
+      "Yamano, Ryosuke",
+      "Shibuya, Tetsuo"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "757b3e8115e41ce3aea826bddae0993d21d4254d9cc8b91987e5aa5e63c6ee37"
+  },
+  {
+    "article": 3,
+    "title": "GSI: A New Approach to the Protein Inference Problem",
+    "abstract": "The protein inference problem, i.e., determining which proteins are present in a biological sample, is key to understanding the roles of proteins and, more broadly, many biological processes. Protein identification is typically achieved by first cleaving proteins into smaller sequences called peptides. Peptides are then identified using tandem mass spectrometry, a process that produces mass spectra, and in which peptide identification consists of associating, via dedicated tools, a mass spectrum to a peptide sequence. Protein inference consists of identifying, from a list of identified peptides, the proteins that most likely produced them, and were therefore present in the original sample.\r\nUsually, peptide identification and protein inference are two separate steps, which are sequentially achieved. However, by proceeding in such a way, a significant amount of potentially useful information contained in the spectra may be discarded in the second step. Moreover, AI-based tools can now predict the likelihood of a peptide’s identification when its parent protein is present in the sample.\r\nIn this paper, we present the Global Spectrum Interpretation (GSI) model, a protein inference model that integrates all this information to produce more accurate protein identifications. We show that GSI is NP-hard and provide a Mixed Integer Linear Program (MILP) formulation for it. This MILP is then benchmarked against state-of-the-art protein inference models on several datasets. Our results show that GSI’s promising and original approach achieves performance comparable to current models and outperforms other widely used ones, while being more explainable.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.3",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.3/LIPIcs.WABI.2026.3.pdf",
+    "authors": [
+      "Berthier, Aurélien",
+      "Benoist, Émile",
+      "Fertin, Guillaume",
+      "Jean, Géraldine"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "ff9d8160503dfef07a8ddf5888bf0f01ca563a91fbd9933e77c9b54930256646"
+  },
+  {
+    "article": 4,
+    "title": "Contig Model for Variable-Order de Bruijn Graphs",
+    "abstract": "Choosing an order for constructing a de Bruijn graph (DBG) is a crucial step in de novo assembly, as no single value allows complete genome reconstruction. The variable-order de Bruijn graph (voDBG) addresses this limitation by combining DBGs of multiple orders in a single structure connected by contextual relationships. This representation enables new connections to be identified or ambiguities to be resolved during assembly. However, voDBGs currently lack a formal definition of contigs.\r\nIn this paper, we give the first formal definition of contigs for voDBGs. We show that, for a frequency range [𝓁,h] with 𝓁 > h/2, nodes whose labels occur with frequency f ∈ [𝓁, h] in the reads spell sequences of the genome with high probability under uniform sampling assumptions. We call these sequences (𝓁,h)-tigs. We also present an efficient algorithm to enumerate (𝓁,h)-tigs from a voDBG that accounts for homopolymer errors. Experiments on PacBio HiFi data show that our method significantly improves contiguity compared to unitigs in fixed-order DBGs while remaining considerably lighter than full genome assemblers.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.4",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.4/LIPIcs.WABI.2026.4.pdf",
+    "authors": [
+      "Díaz-Domínguez, Diego",
+      "Martinello, Pierfrancesco",
+      "Onodera, Taku",
+      "Puglisi, Simon J.",
+      "Salmela, Leena"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "037f3837913b6c3818c747b3be4964f7791dcae475d08f8d47cd33eaa6878750"
+  },
+  {
+    "article": 5,
+    "title": "10-Minimizers: A Promising Class of Constant-Space Minimizers",
+    "abstract": "Minimizers are sampling schemes ubiquitous in high-throughput sequencing analysis. Given an alphabet of size σ, a minimizer is defined by two positive integers k and w, and a linear order ρ on k-mers. A sequence is processed by a sliding window algorithm that chooses, in each window of length w+k-1, its minimal k-mer with respect to ρ. A key characteristic of a minimizer is its density, defined as the expected frequency of chosen k-mers among all k-mers in a random infinite σ-ary sequence. Minimizers of lower density are preferred as they produce smaller samples, which lead to reduced runtime and memory usage in downstream applications. Recently developed methods generate minimizers with optimal and near-optimal densities, but these methods require explicit storage of k-mer ranks in Ω(2^k) space. Methods generating constant-space minimizers with low densities also exist, and some are asymptotically optimal as k → ∞. However, in the non-asymptotic regime, no known class of minimizers had been proven to guarantee, on expectation, a lower density compared to a random minimizer.\r\nIn this paper, we introduce a class of 10-minimizers, which has promising properties. First, we prove that for every k > 1 and every w ≥ k-2, a random 10-minimizer has, on expectation, lower density than a random minimizer, under essentially the same simplifying assumption. This is the first provable guarantee for a class of minimizers in the non-asymptotic regime. Second, we present spacers, which are particular 10-minimizers combining three desirable properties: constant space usage, low density, and short k-mer key-retrieval time. In terms of density, spacers are competitive to the best known constant-space minimizers; in certain (k,w) regimes they achieve the lowest density among all known minimizers. Notably, we are the first to benchmark minimizers by the time spent for k-mer key retrieval, which is the most fundamental operation in many minimizers-based methods. We propose this benchmark as a standard objective for evaluating new minimizer schemes. Our empirical results show that spacers retrieve k-mer keys in competitive time - a few seconds per genome-size sequence - for all practical values of k and w. We expect 10-minimizers to improve minimizers-based methods, especially those using large window sizes.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.5",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.5/LIPIcs.WABI.2026.5.pdf",
+    "authors": [
+      "Shur, Arseny",
+      "Tziony, Ido",
+      "Orenstein, Yaron"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "b3f93fbe2f2b689e3f17d626b7f7ff8070a7d5b7cc1c0a66ede26975387545d5"
+  },
+  {
+    "article": 6,
+    "title": "Construction of Distinct k-mer Color Sets via Set Fingerprinting",
+    "abstract": "The colored de Bruijn graph model is the currently dominant paradigm for indexing large microbial reference genome datasets. In this model, each reference genome is assigned a unique color, typically an integer id, and each k-mer is associated with a color set, which is the set of colors of the reference genomes that contain that k-mer. This data structure supports a variety of pseudoalignment algorithms, which aim to determine the set of genomes most compatible with a query sequence. \r\nIn most applications, many distinct k-mers are associated with the same color set. In current indexing algorithms, color sets are typically deduplicated and compressed only at the end of index construction. As a result, the peak memory usage can greatly exceed the size of the final data structure, thereby requiring the use of slower external-memory construction algorithms that require vast amounts of disk space.\r\nIn this work, we present a Monte Carlo algorithm that constructs the set of distinct color sets for the k-mers directly in any individually compressed form. The method performs on-the-fly deduplication via incremental fingerprinting. We provide a strong bound on the error probability of the algorithm, even if the input is chosen adversarially, assuming that a source of random bits is available at run time. We show that given an SBWT index of 65,536 S. enterica genomes, we can enumerate and compress the distinct color sets of the genomes to 40 GiB on disk in 7 hours and 17 minutes using 32 threads, requiring only 14 GiB of RAM and no temporary disk space, with an error probability of at most 2^{-82}.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.6",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.6/LIPIcs.WABI.2026.6.pdf",
+    "authors": [
+      "Alanko, Jarno N.",
+      "Puglisi, Simon J."
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "25d347de93449635d7e016813d184e50a17bff27f1b3c85c7db1c13f5627c567"
+  },
+  {
+    "article": 7,
+    "title": "Theoretically and Practically Faster Algorithms for Protein Structure Alignment",
+    "abstract": "Identifying shared substructures in 3D protein models is essential for structural bioinformatics. This task can be modeled as a sequential Largest Common Point-set (LCP) problem under the bottleneck distance. We propose a new O(n^13 log n)-time exact algorithm for this problem, which improves upon the previous best-known complexity of O(n^14), where n is the maximum size of the two input structures. Since these theoretical bounds are practically too large, an O(n⁷ log n)-time approximation algorithm with solution-size guarantees has been proposed; however, it remains too time-consuming for practical applications. Thus, we also propose a new filtering technique to enhance the approximation algorithm without increasing the theoretical time complexity or losing the solution-size guarantees. Experiments with PDB data show that our technique achieves over a 24-fold speedup at n = 130. While the previous algorithm required 3.80 hours on average for n = 130 in our experiments, making it difficult to test larger structures, our algorithm can process n = 200 in only 2.33 hours on average.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.7",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.7/LIPIcs.WABI.2026.7.pdf",
+    "authors": [
+      "Tsukahara, Masahito",
+      "Shibuya, Tetsuo"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "5aa51784a33ffc7b2a8c4135d8e086ed0f6a23f2edb551e029b67b7804ba68bd"
+  },
+  {
+    "article": 8,
+    "title": "Efficient Algorithms for Pangenome Personalization",
+    "abstract": "A pangenome graph is a representation of the genomes of multiple individuals of the same species. Using a pangenome graph reference instead of a single linear reference genome can increase accuracy of read mapping and downstream tasks, e.g., variant calling, but can also lead to increasing computational demands and false positives. In 2024, Sirén et al. proposed to select only parts of the pangenome mostly likely to match a studied individual, introducing the so-called personalized pangenome reference. Their algorithm is based on greedily selecting sections of paths representing individual haplotypes comprising the pangenome. In this article, we formulate the problem of pangenome personalization purely in terms of pangenome vertices and edges, as finding two paths using vertices supported by sequencing data. We provide several algorithms for solving the problem, ranging from a simple linear-time greedy algorithm with approximation ratio analysis, through dynamic programming and application of minimum-cost flow. Our implementation misses only a small percentage of vertices belonging to the studied individual and improves the sensitivity of read mapping compared to the linear reference.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.8",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.8/LIPIcs.WABI.2026.8.pdf",
+    "authors": [
+      "Andrukhovskyi, Denys",
+      "Madzin, Martin",
+      "Denti, Luca",
+      "Vinař, Tomáš",
+      "Brejová, Broňa"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "d4f2131c5e003a84bd3cb2cc05720636025f7e61bdc1479620292c9a3803ec47"
+  },
+  {
+    "article": 9,
+    "title": "Quantum Closest-Pair Search for Biological Sequences via k-Mer Distribution Statistics",
+    "abstract": "Finding highly similar pairs of biological sequences is a fundamental task in bioinformatics. For alignment-free k-mer distributional similarities, the induced feature space is high-dimensional and lacks the low-dimensional geometric structure used by classical exact closest-pair algorithms. Thus, for a collection of N sequences in the pairwise-score setting, exhaustive evaluation over the binom(N,2) candidate pairs is the natural classical baseline.\r\nWe present the first quantum framework targeting alignment-free closest-pair search in biological sequence collections using distributional k-mer statistics. The central technical contribution is the construction of a coherent pairwise-score estimation circuit for this similarity measure. It encodes empirical k-mer distributions as square-root amplitude states and provides a sparse prefix-tree construction for preparing these states, under which the state overlap is exactly the Bhattacharyya coefficient. Standard SWAP-test and quantum-amplitude-estimation subroutines provide a coherent bounded-precision estimator for the squared Bhattacharyya overlap. \r\nWe analyze maximum finding under an explicit assumption that a fixed ε-resolved total order over all legal pairs admits an efficient clean coherent implementation. Under this assumption, the procedure returns, with probability at least 2/3, a pair whose squared Bhattacharyya score is within ε of the optimal score, using O(N) expected comparison-oracle calls. If the optimal score is separated from every strictly suboptimal score by more than ε, the returned pair is exactly optimal.\r\nCombining this comparison-order assumption with an idealized qRAM-style data-access model gives the conditional sequential gate complexity Õ(NL/ε), whereas explicit multiplexed indexed loading gives Õ(N²L/ε). We also provide a proof-of-concept Q#implementation that integrates coherent indexed loading, SWAP-test-based score estimation, finite-precision marking, and Grover-style search, providing circuit-level validation of the main computational components.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.9",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.9/LIPIcs.WABI.2026.9.pdf",
+    "authors": [
+      "Song, Zhezheng Xander",
+      "Kingsford, Carl"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "3ddeab13873cecf1364fd01b648aab43f10e1bfa2762fb5eb4ef0f4e034bf0c1"
+  },
+  {
+    "article": 10,
+    "title": "Exact and Efficient Inference of Tumor Phylogenies via Novel Pruning Techniques",
+    "abstract": "Reconstructing the evolutionary history of tumors using single-cell sequencing (SCS) data presents significant computational challenges. Existing approaches are either computationally intractable for emerging large-scale datasets or rely on heuristics that lack optimality guarantees. In this work, we propose a novel, time-efficient algorithm that constructs the phylogenetic tree of tumor evolution with a provable guarantee of optimality.\r\nOur main result is a branch-and-bound algorithm that reconstructs the most likely tumor evolutionary history up to two orders of magnitude faster than the previous best algorithm. To achieve this, we use efficient and well-known 2-approximation algorithms for the Vertex Cover problem to prune the branch-and-bound tree effectively. Unlike previous works' polynomial-time branch-and-bound bounding strategies, our bounding algorithm provides strong worst-case theoretical guarantees, leading to faster reconstruction of the tumor evolution.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.10",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.10/LIPIcs.WABI.2026.10.pdf",
+    "authors": [
+      "Luque, Juan",
+      "Gilbert, Jacob",
+      "Subramanian, Arjun",
+      "Srinivasan, Aravind",
+      "Malikic, Salem",
+      "Sahinalp, S. Cenk"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "3ccd9d639f9df1cb9ec3f82cd04ba94a3aeed3255f20623e9f1e06e2cc8e9fdc"
+  },
+  {
+    "article": 11,
+    "title": "FPT Learning of Sparse, Robust and Interpretable Generative Models of RNA Evolution",
+    "abstract": "RNA structure modeling greatly benefits from the availability of structural homologs, associated with the presence of coevolving positions in multiple alignments. Direct Coupling Analysis (DCA) is a statistical framework for inferring significant covariations as Potts models, in a way that corrects for the transitive nature of mutual information. Various instances of DCA have been proposed over time with demonstrated ability to infer molecular contacts, yet were shown to be associated with inference algorithms that are invariably data hungry, prone to overfitting, and hindered by numerical instability. Recently, edge-activated DCA (eaDCA) has emerged as an alternative which iteratively infers couplings in a greedy manner and explicitly targets sparsity. \r\nIn this work, we revisit the inference of eaDCA models in a rigorous algorithmic setting. We circumvent the #P-hardness of computing the most promising addition/update of coupling and provide exact fixed-parameter tractable algorithms for the treewidth parameter of the coupling-induced graph. We empirically show that eaDCA models are typically associated with moderate treewidth values, and validate the practical feasibility of the method by producing, in a matter of minutes, the models associated with 41 RFAM families associated with structured non-coding families. Our results reveal good recovery rates for couplings associated with conserved base pairs from the family consensus, and enable a more systematic and robust assessment of the potential of eaDCA.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.11",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.11/LIPIcs.WABI.2026.11.pdf",
+    "authors": [
+      "Gardelle, Samuel",
+      "Bulteau, Laurent",
+      "Ponty, Yann"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "3a2ae2e41793ba5db690af7da831cc24f1a0944f9e5e155de08af95ae6135263"
+  },
+  {
+    "article": 12,
+    "title": "RNA Inverse Folding Under Stacked Base Pair Maximization",
+    "abstract": "Inverse folding is a classic problem in RNA bioinformatics, crucial for designing functional synthetic RNAs, which consists in finding a sequence that uniquely folds into a target secondary structure with respect to energy minimization. In a simple base pair maximization (maxBPs) model, Bonnet et al. showed that a mildly constrained version of inverse folding is NP-hard. By contrast, a linear-time exact algorithm was proposed for maxBPs inverse folding, when restricted to input structures where each helix, i.e. each set of consecutive base pairs, has size at least 3. However, the maxBPs model artificially induces drastic limitations on the set of designable structures, forbidding the design of many well-known RNA families.\r\nIn this work, we adopt a more realistic energy model based on stacked base pairs and study the inverse folding under a stack maximization (maxStacks) energy model, motivated by the major contribution of stacks to RNA stability. We propose an exact 𝒪(n)-time algorithm for maxStacks inverse folding, restricted to structures having minimum helix length ⌈log_{3.56}(Δ) + 6.2⌉ base pairs, where Δ is the largest degree of a loop in the target structure. Our approach hinges on the introduction of the locked property, a sufficient condition for a sequence to be a maxStacks design. Our algorithm enables the design of loops with arbitrary degree Δ in the maxStacks model, contrasting with the maxBPs model where inverse folding is unsolvable beyond Δ = 4.\r\nInterestingly, the locked property can also be utilized to partially solve maxStacks inverse folding when crossing base pairs, aka general pseudoknots, are allowed in the target structure and possible competitors. In this setting, we obtain an exact 𝒪(n)-time algorithm for maxStacks inverse folding restricted to (pseudoknotted) targets having minimum helix length ⌈log_{3.56}(m)+6.2⌉, m now being the number of helices. This result is surprising since checking the validity of a candidate sequence requires solving RNA folding with general pseudoknots, a problem known to be NP-hard in the maxStacks model.\r\nWe empirically evaluate the potential of maxStacks solutions by designing candidate sequences for synthetic structures, uniformly generated at random to be non-pseudoknotted for diverse minimal helix lengths. We consider a natural generalization of our exact algorithm, heuristically addressing cases where the minimum helix length condition fails, and compare it to a baseline assignment of random compatible nucleotides. Our results show that satisfying the maxStacks criterion discriminates sequences that are likely to represent solutions to the expressive Turner energy model. Moreover, sequences produced by our (generalized) algorithm are more distant, energy-wise, to their competitors than uniform compatible sequences, suggesting the potential of maxStacks designs towards complex use cases.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.12",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.12/LIPIcs.WABI.2026.12.pdf",
+    "authors": [
+      "Boury, Théo",
+      "Bulteau, Laurent",
+      "Ponty, Yann"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "54a35a5bd2047adb109e722db9bb99eac66a2c91434213d170e5ab3e1d898ca1"
+  },
+  {
+    "article": 13,
+    "title": "Revisiting O(n log log n) Chaining for Anchored Edit Distance",
+    "abstract": "Colinear chaining is a classical heuristic for sequence alignment: it enables scalable genome comparison and is a main component of many state-of-the-art read mappers based on seed-chain-extend. The earliest O(n log log n) and O(n log n) time algorithms by Eppstein et al. (J. ACM, 1992) chained n fragments between two sequences T and Q while minimizing a gap cost based on the diagonal distance Δ_diag between consecutive fragments. They also forbid fragment overlaps, which are essential in current chaining formulations: in long-read mapping, overlaps improve sensitivity and avoid restrictions on the fragment class considered. Jain, Gibney, and Thankachan (J. Comput. Biol. 2022) recently combined a Δ_diag = |Δ_T-Δ_Q| overlap cost with the classic L_∞ = max(Δ_T, Δ_Q) gap cost that takes the maximum between the horizontal and vertical gap between the fragments and they proved that chaining under this cost model is equivalent to the anchored edit distance.\r\nWe improve the existing O(n log³ n)-time algorithm for anchored edit distance to O(n log log n) time in O(n) space, by combining the gap-cost computation of Chao and Miller (Algorithmica, 1995) with the overlap-cost computation of Baker and Giancarlo (ESA, 1998). By developing llchain, a simpler O(n log n)-time implementation of our method, we show how chaining algorithms that might have been recently overlooked by the bioinformatics community scale competitively to millions of fragments and large genomes. On average, llchain is 10× faster than other methods on instances with 3 000 000 anchors, and over 2.3× faster on MEMs between HiFi reads and a reference human genome.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.13",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.13/LIPIcs.WABI.2026.13.pdf",
+    "authors": [
+      "Rizzo, Nicola",
+      "Groot Koerkamp, Ragnar"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "f312b7674bd9f65ba2fc01e3b49479d38c0dc82058561527694279c43ed54720"
+  },
+  {
+    "article": 14,
+    "title": "Quik 2.0: Efficient Large-Scale DNA Barcode Calling",
+    "abstract": "DNA barcodes are used as unique identifiers in high-throughput sequencing technologies with applications in areas such as single cell analysis, spatial transcriptomics and DNA data storage. Given a set of barcodes and a set of reads, each containing a barcode, the task of barcode calling is to assign each read to its respective barcode. This is challenging in applications involving large barcode sets and high rates of base insertion, deletion and substitution errors. Naive solutions require the calculation of pairwise distances between each barcode and read. As this is infeasible for modern applications with millions of barcodes and billions of reads, much work has been done during the previous years in accelerating this task. In 2026, Uphoff et al. introduced the barcode calling tool Quik based on k-mer filtering and pseudo-distances. They demonstrated that it is faster than state-of-the-art tools by several orders of magnitude. Here, we present Quik 2.0, which is faster than the original release by a factor of up to 56 and scales well to multiple GPUs. We discuss several algorithmic design choices that led to this speedup. In large-scale experiments with 10⁶ barcodes, we can now process approximately 300 million reads per hour on a GPU server equipped with four GPUs. In addition, we show that unfiltered barcode calling approaches can only slightly improve the accuracy at the cost of a vastly increased running time. Finally, we introduce more fine-grained assignment rejection criteria to achieve a better trade-off between precision and acceptance rate. To help users select suitable rejection parameters for real-world experiments, we propose an automatic calibration procedure that optimizes parameters for specific barcode and read sets.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.14",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.14/LIPIcs.WABI.2026.14.pdf",
+    "authors": [
+      "Schüler, Steffen",
+      "Schmidt, Antonia",
+      "Müller-Hannemann, Matthias"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "453f6b1e0da62c59f251c7bb5abddd40879a2503c772587d268d574689c0e89a"
+  },
+  {
+    "article": 15,
+    "title": "Towards a Unified Exact Solution of Rearrangement Small Parsimony for Natural Genomes",
+    "abstract": "Phylogenetic reconstruction is a fundamental problem in comparative genomics. As a theoretical problem in rearrangement studies, this has been modelled as the Small Parsimony Problem (SPP), in which ancestral genome structures have to be determined minimizing the number of rearrangement events occurring throughout the phylogeny. This problem is of significant interest in microbial and cancer genomics, due to the prevalence and clinical importance of rearrangement events.\r\nGenome structures in this problem are expressed as sequences of markers, which are themselves oriented sequence features (such as genes) that abstract from non-structural variations. Recent research has focused on the problem under the natural genomes model, in which arbitrary variations in copy number of markers are allowed. Natural genomes are often studied under the DCJ-indel model, a model which has already been successfully applied to plasmid data. There also exist ILP solutions to a variant of the Small Parsimony Problem under the DCJ-indel model. However, these solutions are limited in their applicability, as they make some critical simplifications for tractability purposes: ancestral marker frequencies and precomputed putative ancestral adjancencies, with their predicted likelihoods, are assumed as input.\r\nThis creates multiple problems from both a theoretical and practical perspective. Firstly, this simplification means that not the full state space is searched for a solution, but rather only the subset of genomes with the precomputed putative adjacencies, meaning an optimal solution to the exact SPP is not guaranteed. Secondly, marker frequencies are given externally, without any theoretical guarantees. Thirdly, the method used to precompute adjacencies relies on gene trees, which requires the use of genes as markers, when gene annotation is often unreliable, especially in regions with a lot of rearrangement. Additionally, this restricts the applicability of the approach to sets of genomes that are both divergent and large enough to be able to produce informative gene trees. This is, for example, rarely the case for plasmids, where nucleotide mutations are rarer than rearrangements and genomes are small. \r\nHence, we revisit the problem to solve the exact SPP by introducing a cost to indel operations, which allows us to compute ranges of marker frequencies and derive theoretical results, that allow us to reduce the solution space that the ILP searches without sacrificing optimality. We show that this makes the problem tractable for the case of small and recently related genomes, first on simulated genomes, and then on a set of pathogenic plasmids which represent a realistic use case for the method.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.15",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.15/LIPIcs.WABI.2026.15.pdf",
+    "authors": [
+      "Bohnenkämper, Leonard",
+      "Frolova, Daria"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "1e79a5e4fec834743472520cf327cb094f7012746a9ca1937d2bca061da659af"
+  },
+  {
+    "article": 16,
+    "title": "DivQuant: Estimation of Species Richness and Entropy from Small Samples",
+    "abstract": "Estimating diversity properties of discrete distributions from a small observed sample is a fundamental problem in algorithmic statistics that has applications in many fields, in particular bioinformatics, but also in ecology or linguistics. The two most common diversity measures are the number of distinct elements in a multiset, also referred to as \"species richness\" in ecology or \"alpha diversity\" in microbial analysis, and the Shannon entropy, also referred to as \"evenness\". Estimating these properties from a small sample is particularly challenging for distributions with many rare elements. Thus, many estimators have been proposed in the past that, in practice, work well for different types of distributions.\r\nWe present DivQuant, an optimization-based, extrapolating richness and entropy estimator with three contributions. First, we formulate the upsampling problem as a convex quadratic program with a Neyman χ² objective. Unlike the linear program of its predecessor RichnEst, DivQuant admits confidence intervals via χ² test inversion that are empirically well-calibrated. Second, we replace RichnEst’s fixed-threshold fingerprint truncation with the rare/abundant fingerprint split of Valiant and Valiant, which strongly reduces problem size and preserves enough degrees of freedom for the confidence-interval program to remain valid and feasible. Third, we plug the optimal population fingerprint returned by the program into Shannon’s entropy formula to obtain an entropy estimate.\r\nDivQuant attains close-to-nominal 95% confidence intervals in essentially all tested regimes, including six simulated distribution families, Tara Oceans microbiome data, and 10X Genomics scRNA-seq data, while competing state-of-the-art methods (RichnEst, iNext, PreSeq) miss the true richness in up to 80% of instances, well above the nominal 5%. In addition, DivQuant outperforms classical asymptotic entropy estimators (Miller-Madow, CAE) and the extrapolating iNext estimator. Running times remain competitive, with DivQuant typically completing in seconds.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.16",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.16/LIPIcs.WABI.2026.16.pdf",
+    "authors": [
+      "Schmitz, Johanna Elena",
+      "Rahmann, Sven"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "1c352551f7f8710f11aff1cc0e9b4f52a4e8dc855f91e9ccc4f21a948eb680d8"
+  },
+  {
+    "article": 17,
+    "title": "Discriminative Learning of Substitution Matrices and Gap Penalties for Pairwise Alignment of Biological Sequences",
+    "abstract": "Pairwise alignment scores are used to classify pairs of sequences in many areas of bioinformatics, including homology search, predicting interactions, or read mapping. The relative scores of different pairs strongly depend on the choice of a substitution matrix and gap penalties. However, current approaches for the estimation of these parameters typically describe patterns observed in a collection of ground-truth alignments instead of optimizing specifically for the task of classification. In this work, we present DiscrimAlign, a statistical model for discriminative learning of substitution matrices and gap penalties from a dataset of positive and negative pairs of unaligned DNA or amino acid sequences. The model links the alignment score of a sequence pair with the associated binary label through a logistic function and learns the parameters by likelihood maximization. We analyze theoretical properties of the model, derive and implement a learning procedure, study its performance in simulated experiments, and apply it to predict microRNA-target interactions. We show that sequence alignment with discriminative substitution matrices and gap penalties predicts the interactions comparably to black-box neural network classifiers while being more interpretable. An implementation of the model and reproducibility workflows are available at https://github.com/BioGeMT/DiscrimAlign.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.17",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.17/LIPIcs.WABI.2026.17.pdf",
+    "authors": [
+      "Ciach, Michał Aleksander",
+      "Zacharopoulou, Elissavet",
+      "Startek, Michał Piotr",
+      "Miasojedow, Błażej",
+      "Alexiou, Panagiotis"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "9cd20f11acebf3315fe8bea737394d8ffdf121b895248acc48f01f4e5b65ed6a"
+  },
+  {
+    "article": 18,
+    "title": "Fast Set Operations for Compact k-mer Sets",
+    "abstract": "The k-mer spectrum of a set of sequences is the set of k-length substrings the sequences contain. This lossy representation of sequence content pervades modern genomics. Recently, the spectral Burrows-Wheeler transform (SBWT) has emerged as a space-efficient representation of k-spectra that also supports efficient k-mer lookup queries and, more generally, easy navigation of the de Bruijn graph of the k-spectrum. In this paper, we examine primitive set operations, such as intersection, union, and set difference, on SBWT-encoded k-spectra and show that these operations can be supported efficiently. Moreover, efficient merging leads directly to a new memory-efficient algorithm for SBWT construction, which was able to build the SBWT for the 661K bacterial dataset containing 88 billion distinct k-mers in 50 hours using 186 GiB of RAM and 112 GiB of disk space. Given the pervasiveness of k-mer sets in genomics and the continued rapid growth of genomic databases, our work opens the door to a wide array of future applications that manipulate and reason about genomic data by dealing directly with simultaneously compact and searchable k-mer set representations offered by the SBWT.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.18",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.18/LIPIcs.WABI.2026.18.pdf",
+    "authors": [
+      "Alanko, Jarno N.",
+      "Depuydt, Lore",
+      "Marchet, Camille",
+      "Puglisi, Simon J."
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "23dd939f61753790f9afb6058fcf8097bc5a451777ea7cdd49c24c7f145c0895"
+  },
+  {
+    "article": 19,
+    "title": "On the Complexity of the (𝓁, k)-Median Problems",
+    "abstract": "The genome median problem is a central computational problem in comparative genomics, as it models the reconstruction of an ancestral genome from a set of related genomes. Given 𝓁 genomes and a distance measure, the problem asks for a genome that minimizes the sum of the distances to the input genomes. Two classical distances are the breakpoint distance and the double-cut-and-join (DCJ) distance. For multichromosomal circular genomes, the median problem is polynomial-time solvable under the breakpoint distance, whereas it is NP-hard under the DCJ distance.\r\nFor even integer k ≥ 2, the σ_k distance interpolates between these two extremes: σ₂ corresponds to the breakpoint distance, while σ_∞ corresponds to the DCJ distance. A central open problem in this setting is the (3,4)-Median problem, which asks for a median of three genomes under the σ₄ distance, the first intermediate distance after the breakpoint distance.\r\nMotivated by this question, we study the more general (𝓁,k)-Median problem, in which 𝓁 is the number of input genomes and k determines the σ_k distance. We prove that (𝓁,6)-Median for every 𝓁 ≥ 4 and (3,12)-Median are NP-complete. We then extend the hardness of (𝓁,6)-Median to (𝓁,k)-Median for all even k ≥ 6, and the hardness of (3,12)-Median to (3,k)-Median for all even k ≥ 12. These results identify broad hardness regions in the (𝓁,k) parameter space and delimit the remaining open cases around the fundamental (3,4)-Median problem.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.19",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.19/LIPIcs.WABI.2026.19.pdf",
+    "authors": [
+      "Cunha, Luís",
+      "Nascimento, Thiago",
+      "Braga, Marilia D. V.",
+      "Stoye, Jens"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "a19b5bffff8e0ecab0ca19621c3bf32fe29b6cb4f54b6c0bc5e60939d43d3387"
+  },
+  {
+    "article": 20,
+    "title": "Turnpike with Uncertain Measurements: Triangle-Equality Integer Programming with a Deterministic Recovery Guarantee",
+    "abstract": "We study the Turnpike problem with uncertain measurements: reconstructing a one-dimensional point set from an unlabeled multiset of pairwise distances under bounded noise and rounding. We give a combinatorial characterization of realizability via a multi-matching that labels interval indices by distinct distance values while satisfying all triangle equalities. This yields an integer linear program (ILP) based on the triangle equality whose constraint structure depends only on the two-partition set P_y = {(r,s,t): y_r + y_s = y_t, (r ≠ s or μ_r ≥ 2)} and a natural linear-programming (LP) relaxation with {0,1}-coefficient constraints. Integral solutions certify realizability and output an explicit assignment matrix, enabling a modular assignment-first, regression-second pipeline for downstream coordinate estimation. Under bounded noise followed by rounding, we prove deterministic separation conditions under which distinct rounded values do not collide and P_y is recovered exactly, so the ILP/LP receives the same combinatorial input as in the noiseless case. Experiments illustrate integrality behavior and degradation outside the provable regime.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.20",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.20/LIPIcs.WABI.2026.20.pdf",
+    "authors": [
+      "Elder, C. S.",
+      "Marçais, Guillaume",
+      "Kingsford, Carl"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "5fcaaa658e85a3f55448a17a5688963cce9bde4d47ce6fac5443fe4faf47afbb"
+  },
+  {
+    "article": 21,
+    "title": "Designing Exact Spaced Seed Filters Based on Combined Hit and Coverage Information",
+    "abstract": "We revisit the classical problem of designing exact gapped k-mer based filtration methods to find all occurrences of a given query sequence (e.g., DNA read) in a text (genome) with at most a given number of substitutions. Whereas many existing filtration methods use small k and initiate a computationally expensive further investigation on a single k-mer hit to guarantee no false negatives, we derive stricter filtration criteria based on both the number of k-mer hits and hit-covered positions. Notably, our criteria go beyond a simple logical AND of hit-based and coverage-based criteria.\r\nWe provide methods based on both integer linear programs and dynamic programming to define optimal exact filter thresholds and compare the behavior of running times of both approaches. We then investigate to what degree a filter based on specific combinations of hits and coverage has better filtration efficiency than filters based on a single criterion (hits or coverage), or on a simple logical AND of both. We define two new quantities to characterize the filtration efficiency curve of a spaced seed for a specific sequence length and a desired tolerated number of changes. In a case study, we compare all symmetric masks with 25 significant positions in a window of 35 positions across four filtration criteria. Code is available at https://gitlab.com/rahmannlab/seed-optimization.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.21",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.21/LIPIcs.WABI.2026.21.pdf",
+    "authors": [
+      "Karami, Moein",
+      "Zentgraf, Jens",
+      "Rahmann, Sven"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "03ac32c0e9571897c92e3657c88025b4618e9972863402fbafdc6641ccb9eb2d"
+  },
+  {
+    "article": 22,
+    "title": "The Anti-Lexicographic SUS-Anchor: An Empirically Optimal Selection Scheme",
+    "abstract": "- Motivation. Selection schemes provide a way to select a subset of positions in a text in such a way that no two consecutive selected positions are more than w apart. These selected positions can be used as \"anchor\" points for text indices such that every sufficiently long pattern corresponds to at least one anchor [Ayad et al., 2025]. Closely related are sampling schemes, that sample a k-mer from each window of w consecutive k-mers in a text, and the more restricted minimizer schemes, that achieve this by taking the smallest k-mer according to some order. In recent years, there has been a renewed interest in the search for low density schemes that select/sample only a small fraction of positions/k-mers.\r\nThe mod-minimizer [Groot Koerkamp and Pibiri, 2024] provides a near-optimal density of 1/w as k / w → ∞, while schemes such as the greedy minimizer work well for explicit small parameters roughly in the regime k ≤ 2w, for k and w up to 15 or so.\r\nWhen k < log_σ w is small, minimizer schemes cannot do well [Marçais et al., 2018]. As a first step towards low density sampling schemes in this regime, we fix k = 1 and search for a near-optimal selection scheme to improve the existing bidirectional string anchors (bd-anchors) [Loukides et al., 2023; Ayad et al., 2025].\r\n- Methods. Inspired by bd-anchors, we introduce the smallest unique substring or SUS-anchor: given a window, this considers all suffixes that do not occur as a substring elsewhere in the window. It then samples the start position of the smallest suffix according to the new anti-lexicographic order that minimizes the first character and maximizes the remaining characters. We give a linear-time and O(w) space streaming algorithm to compute all SUS-anchors of a string.\r\n- Results. For alphabet size σ = 4 and k = 1, the parameter-free anti-lexicographic SUS-anchor empirically has density < 1% away from the density lower bound and is at least 4× closer to the lower bound than all other tested schemes. For alphabet size σ = 2, the density is at most 10% above the lower bound, which still improves 2× to 3× the overhead of the random minimizer and is consistently better than the greedy minimizer. Likewise, the anti-lexicographic minimizer performs better than all other schemes apart from the greedy minimizer.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.22",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.22/LIPIcs.WABI.2026.22.pdf",
+    "authors": [
+      "Groot Koerkamp, Ragnar"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "3970357c40ec4cd77f1cdaafa93230c23ed6d14ae6cf6c90911081d0687532d0"
+  },
+  {
+    "article": 23,
+    "title": "Statistical Inconsistency of Error-Correction Objectives for Perfect Phylogenies",
+    "abstract": "The binary perfect phylogeny, in which each mutation arises exactly once on an evolutionary tree and is never lost, is a well-studied idealized phylogenetic model. When observed data has errors, a common approach to phylogeny inference is to seek a tree that minimizes the number of error corrections (\"flips\") needed to fit a perfect phylogeny. These objectives draw on an intuitive justification: minimizing implied errors should prefer the true tree in expectation. \r\nWe test this assumption using a generative model with independent errors and prove that error-correction objectives are statistically inconsistent for all positive error rates: in expectation, the minimum-cost tree need not be the true tree. Our proof is constructive and yields counterexamples involving any tree topology and any positive error rates, demonstrating the ubiquity of the phenomenon. The core problem is that tree topologies can explain observed mutation patterns with fewer errors than actually occurred, and differ in their ability to do so, introducing systematic bias. This mechanism is distinct from previously identified sources of inconsistency such as homoplasy or incomplete lineage sorting, since the error-free setting is trivially consistent for perfect phylogenies. \r\nWe investigate how often this failure may occur in practice. Simulations calibrated to error rates from single-cell sequencing data show that an incorrect tree is preferred over the true tree in a substantial fraction of cases (over 50% in some settings) with rates increasing with tree size. Moreover, winning trees are not random but share specific topological features. Notably, at error rates typical of single-cell sequencing data, trees with deeper, more imbalanced topologies are consistently favored over more balanced ones. These results demonstrate that inconsistency is not a theoretical edge case, and that understanding when and how it arises is important when interpreting results in practice.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.23",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.23/LIPIcs.WABI.2026.23.pdf",
+    "authors": [
+      "Satas, Gryte",
+      "Myers, Matthew A.",
+      "Shah, Sohrab P."
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "e70e540f01d8f3e1699559655472e06db5c7246c212c0f5fdc8693a8d1111522"
+  },
+  {
+    "article": 24,
+    "title": "CoSTAR: Coarse Stem-Topology Alignment of Pseudoknotted RNA Structures by Relation-Constrained Search",
+    "abstract": "RNA structural alignment is a central task in comparative RNA analysis, but many efficient methods achieve tractability by restricting the class of admissible structures, often excluding pseudoknots. This exclusion is limiting for viral and regulatory RNAs, where conserved structure can remain informative even when sequence conservation is weak. We introduce a coarse RNA structural alignment algorithm that aligns secondary structures by searching over partial maps between stems rather than nucleotides. Each input structure is decomposed into stems, annotated with nucleotide-level features, and encoded by pairwise topological relations among stems. Alignment is formulated as a cost-minimizing partial stem map with skip operations, and the search tree is pruned by RNA-specific directionality and topological constraints derived from already aligned stems. For the stated cost function and over the class of injective, direction-preserving, topologically consistent stem maps, the search is exact. This shifts the dominant computational dependence from sequence length to the number and arrangement of stems. We evaluated the method on 2100 pairwise alignments sampled from seven Rfam families spanning 40-224 nucleotides and 2-15 stems. Across these benchmarks, the algorithm returned terminal coarse alignments in which every stem was either matched or skipped. We measured running time and search-tree width to characterize performance on diverse family-to-family comparisons. The experiments also show that ordering the input structures affects efficiency: using the structure with more stems as the search-driving structure reduces tree width. The resulting partial stem map is directly interpretable for RNA annotation and can be projected to nucleotide resolution for downstream sequence-structure analysis. The source code for CoSTAR is available at: https://github.com/TheCOBRALab/CoSTAR",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.24",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.24/LIPIcs.WABI.2026.24.pdf",
+    "authors": [
+      "Archinuk, Finn",
+      "Jabbari, Hosna"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "2df73fe17c0c91850cf9fe4945c9c4411faa65b4771b43268e84b6b7d606e8da"
+  },
+  {
+    "article": 25,
+    "title": "Constructing Incompatibility Graphs of Pairs of Trees in Optimal Output-Sensitive Time",
+    "abstract": "We present an output-sensitive algorithm for constructing incompatibility graphs between pairs of rooted or unrooted phylogenetic trees, in which edges represent incompatible clusters or splits. Incompatibility graphs capture conflicting evolutionary signals and play an important role in applications such as phylogenetic network reconstruction, supertree inference, and BHV distance computation. Existing approaches typically require O(n³/w) time using bitset operations, where n is the number of taxa and w is the machine word size. We introduce a new algorithm based on lowest common ancestor mappings that constructs the incompatibility graph of two rooted trees in optimal O(n+d) time, where d is the number of incompatibility edges. The method is extended to unrooted trees and trees with different leaf sets while preserving the same complexity, while also being relatively simple to implement. Experimental results on random and simulated phylogenetic trees show substantial practical speedups over existing implementations, particularly on sparse incompatibility graphs, which commonly arise in large datasets.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.25",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.25/LIPIcs.WABI.2026.25.pdf",
+    "authors": [
+      "Lafond, Manuel"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "368bb95b9ec5123e8ea2aa98ac1688e8b990a015e998f480be65b8ece718b065"
+  },
+  {
+    "article": 26,
+    "title": "FBApro: A Fast, Simple Linear Transformation for Diverse Metabolic Modeling Tasks",
+    "abstract": "Constraint-based metabolic modeling is the predominant framework for simulating cellular metabolism. The central assumption of these models is that metabolism operates at a steady state, meaning that the production and consumption rates of each metabolite are balanced. This assumption imposes linear constraints on the fluxes of biochemical reactions. Flux Balance Analysis (FBA), a fundamental method in the field, is formulated as an optimization problem maximizing a cellular objective (e.g., growth) over the resulting linear subspace of steady state fluxes. Many other methods in the field are expressed either as a modification to FBA, or use FBA as a black box within an algorithm. Here, we propose a general alternative to optimization called FBApro. For any given vector of reference fluxes, FBApro finds the closest flux vector within the steady-state subspace, and accounts for both partially given reference fluxes and exact constraints on reactions. While FBApro is the solution to a quadratic program, we show that it can be implemented as a single linear operation using orthogonal projections to corresponding affine spaces and sets of linear equations. The overall approach is computationally efficient, does not require a cellular objective, and is easy to implement. We formally derive the closed-form expressions for FBApro and simpler variants, and validate it on both synthetic and real cancer cell line data.\r\nCode availability. The code implementing FBApro is available at https://github.com/Singh-Lab/FBApro. All code required to reproduce the figures in the paper is available, although the data used must be sourced separately. The repository also contains toy models and examples.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.26",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.26/LIPIcs.WABI.2026.26.pdf",
+    "authors": [
+      "Bruner, Ariel",
+      "Singh, Mona"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "85f3f8d6cdaeded61bc37f286607a36deb5fb32f5b77238922a63b42cad2cd6b"
+  },
+  {
+    "article": 27,
+    "title": "Finimap: Fast and Accurate Single-Species Bacterial Pseudoalignment with Finimizers",
+    "abstract": "In recent years, pseudoalignment as a means for mapping reads to databases of reference genomes has become a widely-used method in studies of bacterial pathogenesis. A popular pseudoalignment criterion is thresholded union, in which a read is said to pseudoalign to a reference if the reference contains more than a percentage t of the read’s k-mers. Several pseudoalignment indexing tools that implement this and other pseudoalignment criteria are now available, including Bifrost, Themisto, and Fulgor. In this paper, we describe a scheme for single-species bacterial pseudoalignment that, instead of k-mers, uses shortest unique finimizers (Alanko et al., IEEE/ACM TCBB, 2025) as features for determining pseudoalignment. We show that this scheme, which we call Finimap, leads to a significantly lower false-positive rate than other recent \"approximate pseudoalignment\" methods Kaminari and Raptor, and is also faster.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.27",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.27/LIPIcs.WABI.2026.27.pdf",
+    "authors": [
+      "Alanko, Jarno N.",
+      "Biagi, Elena",
+      "Puglisi, Simon J."
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "e477d9f71773247c05e96742d22ef8eae7010ef37670878897274c6186d255ac"
+  },
+  {
+    "article": 28,
+    "title": "Selecting Chromosomes for Polygenic Traits: Algorithms and Complexity",
+    "abstract": "We define and study the problem of genomic block selection for multiple complex traits. In this problem, one constructs a genome by selecting different genomic parts (e.g. chromosomes) from different source genomes. The constructed genome is associated with a vector of polygenic scores, obtained by summing the polygenic scores of the different genomic parts, and the goal is to minimize a given loss function of this vector. The problem is motivated by several emerging technologies: chromosome substitution lines in crop breeding, where chromosomal segments from wild relatives are combined to improve polygenic traits such as yield and stress tolerance; chromosome transfer between yeast strains for optimizing complex industrial phenotypes; and chromosomal transplantation technologies in mammalian cells. We suggest and study several natural loss functions relevant for both quantitative and threshold traits, and show that the problem is NP-complete even for a single trait and two copies, yet only weakly so, being pseudo-polynomially solvable for any fixed number of traits. We propose three algorithms with complementary roles: a Branch-and-Bound algorithm that returns the certified global optimum for any monotone loss, a fast Block-Coordinate-Descent (BCD) heuristic with random restarts that applies to any loss, and a semidefinite-programming (SDP) relaxation that provides a certified lower bound on the optimal loss for quadratic losses, and hence an optimality-gap bound when paired with the BCD solution - empirically tight in our experiments. Using the infinitesimal model for genetic architecture, we further derive, for linear losses, a closed-form approximation for the expected gain of block selection relative to random selection across multiple traits. On yeast-scale simulations BCD matches the certified Branch-and-Bound optimum on 100% of threshold-loss instances at 466× the speed, attains a certified optimality gap of at most ≈10% of the SDP lower bound for stabilizing-loss instances, and the realized gain roughly matches the analytic prediction.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.28",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.28/LIPIcs.WABI.2026.28.pdf",
+    "authors": [
+      "Zuk, Or"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "103198bcb0465cd76f798eccfa330ea9b211ecd8cda9ad4b76ab7df45173401f"
+  },
+  {
+    "article": 29,
+    "title": "Reconciling and Comparing Variation Graphs Using Homology Relations",
+    "abstract": "In variation graphs genomic sequences are represented as paths sharing their nodes in homologous regions. Shared nodes must represent identical sequence fragments, but the definition does not impose strict criteria on when the paths should be merged and when not. Consequently, most variation graph building tools heuristically infer the graph structure from pairwise genome alignments or the results of seeding procedures of alignment algorithms.\r\nIn the current paper we introduce the concept of homology relation induced by a variation graph on the nucleotides of represented genomic sequences. This notion can be used to specify in a mathematically rigorous way the criteria the structure of a variation graph should meet. We investigate the relationships between the structures of variation graphs and their homology relations, as well as between operations on relations and on graphs. In particular, we show how to use the result of combining relations induced by different graphs to combine these graphs. Then, we propose homology-based methods of reconciling and comparing variation graphs representing the same genome collection. Moreover, we provide an implementation of homology-based tools for variation graph analysis.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.29",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.29/LIPIcs.WABI.2026.29.pdf",
+    "authors": [
+      "Lisiecka, Anna",
+      "Cicherski, Adam",
+      "Dojer, Norbert"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "c32e452be4d832ff09933be7bbc3b677878b57a9c5e9bc385726ee2cfd315f0c"
+  },
+  {
+    "article": 30,
+    "title": "PRISM: Partition-Function Decomposition into Structural Classes for Hierarchically Constrained RNA Pseudoknot Ensembles",
+    "abstract": "While structure ensemble analysis became a valuable routinely applied tool for pseudoknot-free RNA, the extension to pseudoknots remains challenging due to the computational hardness of the general problem. The existing efficient algorithms for the computation of partition function with pseudoknots were still computationally expensive and were restricted to simple pseudoknots. This changed only with CParty, which computes pseudoknotted partition functions with the efficiency of pseudoknot-free folding. At its core, CParty follows the hierarchical folding hypothesis, such that ensemble structures can form pseudoknots only with a given input constraint structure. For an RNA sequence S and pseudoknot-free structure G, CParty limits the ensemble to \"density-2\" structures G∪ G' for a second, disjoint pseudoknot-free structure G'.\r\nWe present PRISM that extends CParty from pure partition function calculation to full-fledged posterior probability analysis. By stochastic traceback through CParty’s dynamic programming matrices, it samples structures from the conditional Boltzmann ensemble. From estimated base pair probabilities, it generates ensemble representations, predicts centroid and maximum expected accuracy structures and calculates properties. In addition to position-specific summaries, PRISM maps sampled structures to RNA shapes, producing a posterior distribution over topological abstractions. This shape-level summary captures ensemble diversity even when a conserved pseudoknotted motif appears with shifted base-pair positions across samples.\r\nWe validate PRISM in the pseudoknot-free limit, where it reproduces RNAFold quantities for minimum free energy, ensemble free energy, centroid expected distance, and maximum expected accuracy. We further show that stochastic traceback recovers Boltzmann structure probabilities and that sampling error decreases at the expected Monte Carlo rate while runtime grows linearly with the number of samples. Our case study demonstrate that RNA-shape summaries can reveal dominant pseudoknotted topologies that centroid decoding may miss. PRISM thus converts the CParty partition function into a practical framework for posterior decoding and topology-aware analysis of hierarchically constrained pseudoknotted RNA ensembles.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.30",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.30/LIPIcs.WABI.2026.30.pdf",
+    "authors": [
+      "Gray, Mateo",
+      "Will, Sebastian",
+      "Jabbari, Hosna"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "fb8f1284cf21871bc0de14e00432c9347497a50f78e528cc2415e9b863cf7a65"
+  },
+  {
+    "article": 31,
+    "title": "Minimum Flow Decomposition Guided by Saturating Subflows (Extended Abstract)",
+    "abstract": "- Introduction. The minimum flow decomposition (MFD) problem asks to decompose a directed acyclic flow network (G,f) with a unique source s and a unique sink t into the fewest weighted s-t paths whose combined contributions exactly reproduce f. MFD underlies a broad class of multi-assembly tasks in bioinformatics: reference-based RNA assembly from splice graphs [Trapnell et al., 2010; Guttman et al., 2010; Tomescu et al., 2013; Song et al., 2016; Liu et al., 2016; Pertea et al., 2015; Kovaka et al., 2019; Shao and Kingsford, 2017; Zhang et al., 2022; Tung et al., 2019], metagenomic assembly [Shaw et al., 2024], and viral quasi-species inference [Baaijens et al., 2020].\r\nMFD is strongly NP-hard [Vatinlen et al., 2008] and hard to approximate within some fixed constant factor [Hartman et al., 2012]. Exact solvers include an FPT algorithm whose runtime grows exponentially in the solution size [Kloster et al., 2018] and a family of integer linear programming (ILP) formulations [Dias et al., 2022; Grigorjew et al., 2024] capable of handling extensions such as inexact flows [Williams et al., 2019; Dias and Tomescu, 2024], safety and subpath constraints [Williams et al., 2022; Gibney et al., 2022; Khan et al., 2022; Dias et al., 2023], and graphs with cycles [Dias et al., 2025]. However, ILP remains unscalable on large practical instances.\r\nThe widely used greedy-width heuristic [Vatinlen et al., 2008] is very efficient but can be exponentially worse than optimal in the worst case [Cáceres et al., 2024]. The state-of-the-art heuristic, catfish [Shao and Kingsford, 2017], substantially improves this efficiency-performance tradeoff by identifying linear equations among edge flow values - structural constraints implied by any optimal decomposition - and resolving them via safe graph transformations. On simpler instances catfish is highly effective, but three interrelated limitations degrade its performance on complex graphs: (1) it cannot distinguish good equations (arising from a true optimal decomposition) from superficial ones that distort the graph when resolved; (2) many good equations cannot be fully resolved due to the absence of suitable closed subgraphs, so catfish discards their information entirely; and (3) when no equation is resolvable catfish falls back to greedy-width, which performs poorly on entangled graphs.\r\n- Method. We introduce catfish-LP, which augments catfish with a lightweight linear programming (LP) formulation based on saturating subflows. For each edge e ∈ E we define continuous variables {x_e(a) : a ∈ E} modeling a valid s-t subflow that saturates e; intuitively, x_e(a) represents the amount of flow on e that must passes through edge a. Five base constraints enforce saturation, symmetry, flow validity, and flow conservation. Two additional equation constraints require that the aggregate subflow through the left-hand-side edges of an equation equals that through the right-hand-side edges. The full LP is polynomial-time solvable, adding only modest overhead over catfish.\r\nThe LP plays three complementary roles within a single unified framework: (1) equation filtering: if adding a candidate equation renders the LP infeasible, that equation cannot arise from any minimum decomposition and is discarded, preventing structurally invalid graph transformations; (2) safe edge merging: a feasible LP solution reveals pairs of edges that must carry identical subflow and can therefore be safely contracted; (3) informed greedy extraction: when no further simplification is possible, rather than invoking greedy-width blindly, catfish-LP extracts from the LP solution the heaviest simple path consistent with all surviving equations, deferring the error-prone greedy step as long as possible.\r\n- Experimental Results. We compare catfish-LP against greedy-width, catfish, and the optimized ILP solver [Grigorjew et al., 2024] on two benchmarks, using Gurobi [{Gurobi Optimization, 2024] as the underlying LP/ILP engine. Table 1 reports decomposition quality on four datasets of biologically derived splice graphs, with abundances estimated by Salmon [Patro et al., 2017] or simulated with the Flux-Simulator [Griebel et al., 2012]. Catfish-LP achieves the smallest excess among heuristics on the Salmon dataset and negative excess on the remaining three, matching ILP quality while being orders of magnitude faster. Figure 1 summarizes results on 1,440 simulated graphs spanning 72 complexity configurations. Catfish-LP consistently produces the smallest decompositions and recovers the most ground-truth paths among all heuristics, achieving near-ILP quality in a fraction of its runtime - including a threefold improvement over catfish on the hardest 498 instances where ILP times out on every instance.\r\n- Conclusion. Catfish-LP demonstrates that incorporating a polynomial-time LP oracle into a combinatorial heuristic yields substantial gains in decomposition quality with negligible scalability cost, addressing each of catfish’s core limitations in a unified manner. Future directions include strengthened LP formulations, domain-specific constraints for transcriptome assembly, and probabilistic interpretations of LP-guided decompositions.",
+    "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.WABI.2026.31",
+    "pdf": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol390-wabi2026/LIPIcs.WABI.2026.31/LIPIcs.WABI.2026.31.pdf",
+    "authors": [
+      "Chen, Ke",
+      "Talesara, Abhishek",
+      "Thakkar, Sanchal",
+      "Shao, Mingfu"
+    ],
+    "checked_utc": "2026-10-02T01:02:00Z",
+    "pdf_sha256": "4185cbdd85f45b7f705de666606e531fe9df743d7ede2246695781a5a17ce95a"
+  }
+]

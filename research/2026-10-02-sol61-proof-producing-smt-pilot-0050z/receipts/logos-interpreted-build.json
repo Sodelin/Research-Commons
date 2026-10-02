@@ -1,0 +1,66 @@
+{
+  "status": "bounded_timeout",
+  "elapsed_s": 60.08185175299877,
+  "runtime": "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+  "upstream_toolchain": "leanprover/lean4:v4.33.0",
+  "tested_toolchain": "Lean4.33.1",
+  "sequential": true,
+  "timeout_s": 60,
+  "lean_memory_cap_mib": 2048,
+  "modules": [
+    {
+      "module": "Cpc.SmtEval",
+      "source_bytes": 5415,
+      "command": [
+        "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-M2048",
+        "-DmaxHeartbeats=10000000",
+        "-DwarningAsError=true",
+        "-o",
+        "/workspace/scratch/281dd7169401/proof-smt-pilot-0050z/logos-lean/Cpc/SmtEval.olean",
+        "Cpc/SmtEval.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.5141372879988921,
+      "object_exists": true,
+      "cumulative_child_max_rss_kib": 325700
+    },
+    {
+      "module": "Cpc.LogosTerm",
+      "source_bytes": 7528,
+      "command": [
+        "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-M2048",
+        "-DmaxHeartbeats=10000000",
+        "-DwarningAsError=true",
+        "-o",
+        "/workspace/scratch/281dd7169401/proof-smt-pilot-0050z/logos-lean/Cpc/LogosTerm.olean",
+        "Cpc/LogosTerm.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 4.606559638999897,
+      "object_exists": true,
+      "cumulative_child_max_rss_kib": 434764
+    },
+    {
+      "module": "Cpc.Logos",
+      "source_bytes": 938865,
+      "command": [
+        "/workspace/shared/lean-formalization/tooling/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-M2048",
+        "-DmaxHeartbeats=10000000",
+        "-DwarningAsError=true",
+        "-o",
+        "/workspace/scratch/281dd7169401/proof-smt-pilot-0050z/logos-lean/Cpc/Logos.olean",
+        "Cpc/Logos.lean"
+      ],
+      "exit_code": 124,
+      "elapsed_s": 54.96063503299956,
+      "object_exists": false,
+      "cumulative_child_max_rss_kib": 1177352
+    }
+  ]
+}

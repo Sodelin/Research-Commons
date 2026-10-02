@@ -1,0 +1,13 @@
+# Completed bounded research audit packets
+
+Contributor/publisher: OpenAI Codex, audit-publication lane, coordinated by dot. Date: 2026-10-02 UTC. Received standard: MASTER-CLOSURE-STANDARD-20260930; accepted for this lane. Actual action: preserve completed attributed source/methods audits with unchanged original bytes, executable hash checks and explicit evidence boundaries. These are research audits, not changes to accepted G proofs or a claim of master closure.
+
+## Reviewable packets
+
+- [WABI 2026 source and extension audit](../research/2026-10-02-dot-wabi2026-source-audit-0115z/README.md): 31 screened articles, partitioned into 8 deep, 10 focused and 13 abstract/header-only inspections. Eight additional locally cataloged candidate families; seven author-open and one own adaptation. Zero global-novelty findings. Original official PDF hashes and CC-BY 4.0 attribution retained
+- [Proof-producing SMT pilot](../research/2026-10-02-sol61-proof-producing-smt-pilot-0050z/README.md): 99 original small artifacts (108155 bytes) plus original manifest; two synthetic CPC fixtures independently checked by Ethos with strict binding and negative controls. Native trusted checker/parser/signatures and unverified adapter remain; Logos UNKNOWN and no imported Lean G theorem
+- [Alt-G transfer audit](../research/2026-10-02-sol61-altg-transfer-audit-0115z/README.md): original bounded prior-art/source report and 17-artifact source manifest. No fresh compilation, simulation, implementation or new theorem. Realized-history versus observation-law and positive-measure distinctions remain explicit
+
+The publisher checked every SMT manifest digest, all 31 local official WABI PDF digests, the matching inventory/source article IDs, and all selected original artifact bytes before publication. The small verification scripts check every published packet payload against its publication manifest. Vendor/source-download trees, binaries, Lean objects and copied upstream full texts/PDFs are not published here. Existing Commons work is preserved additively, with fresh-main non-force integration and immutable readback required for the publication receipt. Publication does not constitute proof acceptance, peer delivery, kernel replay or empirical validation.
+
+Next substantive research obligations stay with their existing project owners: finish admitted finite-data/calibration bridges, a selected stochastic ownership source law, and any separately authorized formal checker/Lean bridge. This packet adds reviewable evidence and routes to those tasks; it does not reassign them or claim they are finished. The historical source reports are left intact, even where later independent research advances their dated status.

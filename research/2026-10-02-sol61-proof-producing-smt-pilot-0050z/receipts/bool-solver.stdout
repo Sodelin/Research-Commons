@@ -1,0 +1,12 @@
+unsat
+(
+(declare-const a Bool)
+(declare-const b Bool)
+(define @t1 () (or a b))
+(assume @p1 @t1)
+(assume @p2 (not a))
+(assume @p3 (not b))
+(step @p4 :rule cnf_or_pos :args (@t1))
+(step @p5 :rule chain_resolution :premises (@p4 @p2 @p3) :args ((@list true true) (@list a b)))
+(step @p6 false :rule contra :premises (@p1 @p5))
+)
