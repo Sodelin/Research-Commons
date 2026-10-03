@@ -1,0 +1,2379 @@
+{
+  "schema": "source-complete-historical85-plus-distinct-repair-v1",
+  "compiler_version": "4.33.1",
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "baseline_repository": "Sodelin/Research-Commons",
+  "baseline_commit": "cbb0c6452909bf61c1fec6d1ff74053354907433",
+  "baseline_package_path": "research/2026-10-02-dot-unified-lean-336-2207z/package",
+  "profile_pass_counts": {
+    "main": 75,
+    "pure-induction-v2": 10
+  },
+  "one_failed_exact_original_preserved": true,
+  "distinct_repair_version_present": true,
+  "historical_component_replay_seconds": 236.54356873799406,
+  "historical_profile_audits": [
+    {
+      "profile": "main",
+      "status": "PASS_ALL_PROFILE_DECLARATION_AXIOMS",
+      "declaration_count": 3696,
+      "theorem_declaration_count": 2360,
+      "report_sha256": "5281fe7b8decb214896767afaec035396b16a62729b3cc859ddb79013df3ae82"
+    },
+    {
+      "profile": "pure-induction-v2",
+      "status": "PASS_ALL_PROFILE_DECLARATION_AXIOMS",
+      "declaration_count": 439,
+      "theorem_declaration_count": 330,
+      "report_sha256": "256f9443499c8483732db6d0eb63ad75f978ba994eca69e87beb91eb3c832bf6"
+    }
+  ],
+  "rows": [
+    {
+      "profile": "main",
+      "module": "DirectedIAP",
+      "source_sha256": "0b6b7e7178e9682ef9417b5a17ddef0bfe6f2241f9bbf1a14290dda1a78784f0",
+      "git_blob_sha": "e86e0ce8264f5ddcb4774c7193598eb41ac0e483",
+      "representative_original_path": "real/DirectedIAP.lean",
+      "all_original_records": [
+        "real/DirectedIAP.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/DirectedIAP.lean",
+      "bytes": 8354,
+      "imports": [
+        "FounderWindow",
+        "SamuelAlexanderResearch.ProductiveCore"
+      ],
+      "pending_dependency_source_sha256": [
+        "75ef5ebd9b1feb0751b047f5fe30cb2532da30be96dcf4dee3941408ae4d4ae3"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5749523249978665,
+      "object_sha256": "d05f50561467ee4b77a662927254b1d0e438e0e247c781b94d5acc50c8e86bee",
+      "source_path": "profiles/main/sources/DirectedIAP.lean",
+      "receipt_path": "profiles/main/receipts/DirectedIAP.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FiniteGenomeIdentifiability",
+      "source_sha256": "369699a545f1b0f535de2ca1fc1f1e45591cc91eaca4b33c1f23316cfcf431c5",
+      "git_blob_sha": "d645f4d4e24b7672c6b593976fc1df8fbc5c8ab9",
+      "representative_original_path": "real/FiniteGenomeIdentifiability.lean",
+      "all_original_records": [
+        "real/FiniteGenomeIdentifiability.lean",
+        "research/open-questions/genomic-identifiability/FiniteGenomeIdentifiability.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/FiniteGenomeIdentifiability.lean",
+      "bytes": 3016,
+      "imports": [
+        "WongAlexander"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.748218059001374,
+      "object_sha256": "5045ae56e80c59e6d81d5981623ee40fb6e0297628b4d9613827c456a39b2c4e",
+      "source_path": "profiles/main/sources/FiniteGenomeIdentifiability.lean",
+      "receipt_path": "profiles/main/receipts/FiniteGenomeIdentifiability.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FounderMaximal",
+      "source_sha256": "61bf7e78cdef3abe2361d19c24e3ffca8d2336a3f73a7707be47a18071ec90b4",
+      "git_blob_sha": "b3849db1371f7ec88b2928da2b709213e2672aa9",
+      "representative_original_path": "real/FounderMaximal.lean",
+      "all_original_records": [
+        "real/FounderMaximal.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/FounderMaximal.lean",
+      "bytes": 5383,
+      "imports": [
+        "Mathlib.Order.Zorn",
+        "DirectedIAP",
+        "RealFounderWindow"
+      ],
+      "pending_dependency_source_sha256": [
+        "0b6b7e7178e9682ef9417b5a17ddef0bfe6f2241f9bbf1a14290dda1a78784f0",
+        "0887f04d62e5b2bb0f20e6608831c949ebb0394a24a7df9c1d7771c1b5cbbec9"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.445235289997072,
+      "object_sha256": "5d650abbce91219ed0c8fe982593dfe3ca3de165b5cc00904d7d483d5d7e5c69",
+      "source_path": "profiles/main/sources/FounderMaximal.lean",
+      "receipt_path": "profiles/main/receipts/FounderMaximal.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FounderWindow",
+      "source_sha256": "75ef5ebd9b1feb0751b047f5fe30cb2532da30be96dcf4dee3941408ae4d4ae3",
+      "git_blob_sha": "ea2806660a1fcd0eaf4ea445d30d4bee37f29ca2",
+      "representative_original_path": "real/FounderWindow.lean",
+      "all_original_records": [
+        "real/FounderWindow.lean",
+        "research/open-questions/species/FounderWindow.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/FounderWindow.lean",
+      "bytes": 5042,
+      "imports": [
+        "SamuelAlexanderResearch.SpeciesBridge"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.9655529979936546,
+      "object_sha256": "ad70d2a43279eddc115722f73f1d4a9011cb3165e5b6cfd2bc99765642ce5e14",
+      "source_path": "profiles/main/sources/FounderWindow.lean",
+      "receipt_path": "profiles/main/receipts/FounderWindow.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "PortEncoding",
+      "source_sha256": "66d01c74951475d8fb5d960fb5c21244545c7984d9fae8022f8a9f7bd131b2f4",
+      "git_blob_sha": "a4039f296e870adebc174c1174b016df38ce2d86",
+      "representative_original_path": "real/PortEncoding.lean",
+      "all_original_records": [
+        "real/PortEncoding.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/PortEncoding.lean",
+      "bytes": 21666,
+      "imports": [
+        "SamuelAlexanderResearch.PortDynamics",
+        "SamuelAlexanderResearch.InfiniteConservation",
+        "Mathlib.Data.Fintype.EquivFin",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Algebra.BigOperators.Fin"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.7166562830097973,
+      "object_sha256": "3f0a81e3143ce78d0da6af782d66b17a2c5b92b859d50a862dd5d78ad4e7496d",
+      "source_path": "profiles/main/sources/PortEncoding.lean",
+      "receipt_path": "profiles/main/receipts/PortEncoding.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "RealFounderWindow",
+      "source_sha256": "0887f04d62e5b2bb0f20e6608831c949ebb0394a24a7df9c1d7771c1b5cbbec9",
+      "git_blob_sha": "8a357c8b76528fe59f57c974de1f451303cc0c7a",
+      "representative_original_path": "real/RealFounderWindow.lean",
+      "all_original_records": [
+        "real/RealFounderWindow.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/RealFounderWindow.lean",
+      "bytes": 7285,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "SamuelAlexanderResearch.BirthOrder",
+        "FounderWindow"
+      ],
+      "pending_dependency_source_sha256": [
+        "75ef5ebd9b1feb0751b047f5fe30cb2532da30be96dcf4dee3941408ae4d4ae3"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6007358280039625,
+      "object_sha256": "16112a83068abb6c77762b7cc49bab552b1f8516e6f7069d17a3f8268a06e439",
+      "source_path": "profiles/main/sources/RealFounderWindow.lean",
+      "receipt_path": "profiles/main/receipts/RealFounderWindow.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "RealSpeciesTheorem",
+      "source_sha256": "59f2e2d45f11350f4979e31a42ed73d009a62d65e71c73c6b50f64c20a62d540",
+      "git_blob_sha": "3913aafcc43ce53af9609447839da423c428fab3",
+      "representative_original_path": "real/RealSpeciesTheorem.lean",
+      "all_original_records": [
+        "real/RealSpeciesTheorem.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/RealSpeciesTheorem.lean",
+      "bytes": 4622,
+      "imports": [
+        "FounderMaximal",
+        "SpeciesReindex",
+        "SpeciesSeed"
+      ],
+      "pending_dependency_source_sha256": [
+        "61bf7e78cdef3abe2361d19c24e3ffca8d2336a3f73a7707be47a18071ec90b4",
+        "96ebb6ffde0db94fd371b2a05a63fdb8a74b6294980f2ef7761b0ef538a4f1fd",
+        "774dbfe530762a9e252a6f27f8a5bb8ea9e18f61e14715fe3e0e646f8d6202cb"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.4977339950128226,
+      "object_sha256": "def54bdcd8231a3437358ee2f884e1948c66995d7feec1d6a171574aaaf8243d",
+      "source_path": "profiles/main/sources/RealSpeciesTheorem.lean",
+      "receipt_path": "profiles/main/receipts/RealSpeciesTheorem.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "SeedIntersections",
+      "source_sha256": "2179d8e41bb8e10946b04632e5468ec2cfaf78fd4f4cca233fda3a093fb4048e",
+      "git_blob_sha": "946c6bee3897d9304bf0a1c9370c716da999a0df",
+      "representative_original_path": "real/SeedIntersections.lean",
+      "all_original_records": [
+        "real/SeedIntersections.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/SeedIntersections.lean",
+      "bytes": 5413,
+      "imports": [
+        "SamuelAlexanderResearch.ProductiveCore"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5724836219887948,
+      "object_sha256": "fa52ae2b95cd24b0b846f3185e780b07af719183ff358ed457a7451369a74df5",
+      "source_path": "profiles/main/sources/SeedIntersections.lean",
+      "receipt_path": "profiles/main/receipts/SeedIntersections.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "SpeciesReindex",
+      "source_sha256": "96ebb6ffde0db94fd371b2a05a63fdb8a74b6294980f2ef7761b0ef538a4f1fd",
+      "git_blob_sha": "e06147fe922119b53a74f10af123c473c2e20a1c",
+      "representative_original_path": "real/SpeciesReindex.lean",
+      "all_original_records": [
+        "real/SpeciesReindex.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/SpeciesReindex.lean",
+      "bytes": 13036,
+      "imports": [
+        "RealFounderWindow"
+      ],
+      "pending_dependency_source_sha256": [
+        "0887f04d62e5b2bb0f20e6608831c949ebb0394a24a7df9c1d7771c1b5cbbec9"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.7246676409995416,
+      "object_sha256": "ae4911f182560efa76fe2f734e2fb1312ae915c4064bd1b31b52b30684d12d25",
+      "source_path": "profiles/main/sources/SpeciesReindex.lean",
+      "receipt_path": "profiles/main/receipts/SpeciesReindex.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "SpeciesSeed",
+      "source_sha256": "774dbfe530762a9e252a6f27f8a5bb8ea9e18f61e14715fe3e0e646f8d6202cb",
+      "git_blob_sha": "0c35d35a4444db3ca2c11b80720bce2eaa680735",
+      "representative_original_path": "real/SpeciesSeed.lean",
+      "all_original_records": [
+        "real/SpeciesSeed.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/SpeciesSeed.lean",
+      "bytes": 8893,
+      "imports": [
+        "Mathlib.Order.Zorn",
+        "SeedIntersections",
+        "DirectedIAP"
+      ],
+      "pending_dependency_source_sha256": [
+        "2179d8e41bb8e10946b04632e5468ec2cfaf78fd4f4cca233fda3a093fb4048e",
+        "0b6b7e7178e9682ef9417b5a17ddef0bfe6f2241f9bbf1a14290dda1a78784f0"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.2454050119995372,
+      "object_sha256": "cd364ea851a507ed87e0ca3fd65a9db110ee47f7d570d28861a7802254d7a59e",
+      "source_path": "profiles/main/sources/SpeciesSeed.lean",
+      "receipt_path": "profiles/main/receipts/SpeciesSeed.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "StatefulCAReal",
+      "source_sha256": "1b3c8a9ff3434266358ffc2bfc1029963f5ffa4301ea87a35bde9652696ea5f7",
+      "git_blob_sha": "8c326e40443a269b6b41b25ad4fc94d3bc889486",
+      "representative_original_path": "real/StatefulCAReal.lean",
+      "all_original_records": [
+        "real/StatefulCAReal.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/StatefulCAReal.lean",
+      "bytes": 4099,
+      "imports": [
+        "Mathlib.Analysis.Convex.Hull",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "SamuelAlexanderResearch.StatefulCA"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.9580667900008848,
+      "object_sha256": "deaebc3c2ebed5c6e285b91da2d8342a8397b884c86a99b0cfb77e76c9301806",
+      "source_path": "profiles/main/sources/StatefulCAReal.lean",
+      "receipt_path": "profiles/main/receipts/StatefulCAReal.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongAdaptiveSelection",
+      "source_sha256": "ac8ec96239575413b57d731742d126047d7d69725aa180b27a875d161fbb0163",
+      "git_blob_sha": "4cabcb09abbaf40bf6069668f2e912bf3bdd159d",
+      "representative_original_path": "real/WongAdaptiveSelection.lean",
+      "all_original_records": [
+        "real/WongAdaptiveSelection.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongAdaptiveSelection.lean",
+      "bytes": 15187,
+      "imports": [
+        "WongMarkedLaw",
+        "WongMarkedMeasurable",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Basic"
+      ],
+      "pending_dependency_source_sha256": [
+        "42e61509f5ce72ed978999af1207afab8fb87488aa4729be111b95fddfe6dca1",
+        "830f39d52700f44f21b7464c5262a2d36cf93155cb9832bec42209a1be33a582"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.166655238994281,
+      "object_sha256": "56a9bbca17f1afa387b1e488195e4bc0fb8670a99bf8c5ce328e1001c01b63ea",
+      "source_path": "profiles/main/sources/WongAdaptiveSelection.lean",
+      "receipt_path": "profiles/main/receipts/WongAdaptiveSelection.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongBigARGAbsorption",
+      "source_sha256": "50b18cf23019c05c477c35ca38025d2516b662788d65e7c4cb6f98fecb3ff518",
+      "git_blob_sha": "f4f246500b651fccd94f513c718da79c41287f61",
+      "representative_original_path": "real/WongBigARGAbsorption.lean",
+      "all_original_records": [
+        "real/WongBigARGAbsorption.lean",
+        "research/wong/completion/probability/inputs/WongBigARGAbsorption.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongBigARGAbsorption.lean",
+      "bytes": 6090,
+      "imports": [
+        "WongCountChain",
+        "WongBigARGDrift"
+      ],
+      "pending_dependency_source_sha256": [
+        "5f7629af4619220f77dd0c6344df4d3d096e3ca089e9f439c9cbf8808d6c59ae",
+        "167d448eb3e0c016e24a0590b2263f7685b244f21999b2b6303d105e09dfcb43"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.7669923360081157,
+      "object_sha256": "af372c8419277c1d5b5761ef88e2baaf32426481dedf9b0dcb6683cdb5533743",
+      "source_path": "profiles/main/sources/WongBigARGAbsorption.lean",
+      "receipt_path": "profiles/main/receipts/WongBigARGAbsorption.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongBigARGDrift",
+      "source_sha256": "167d448eb3e0c016e24a0590b2263f7685b244f21999b2b6303d105e09dfcb43",
+      "git_blob_sha": "7d517e3ca7c63120e8fea644a1e5cfdd2b4829e9",
+      "representative_original_path": "real/WongBigARGDrift.lean",
+      "all_original_records": [
+        "real/WongBigARGDrift.lean",
+        "research/wong/completion/probability/inputs/WongBigARGDrift.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongBigARGDrift.lean",
+      "bytes": 4767,
+      "imports": [
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.9394723900040844,
+      "object_sha256": "f197746b5c691a3ea907fdcbcb8f99e0f18a6bf364de79a0f0020209e9646ec6",
+      "source_path": "profiles/main/sources/WongBigARGDrift.lean",
+      "receipt_path": "profiles/main/receipts/WongBigARGDrift.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongBreakpointCells",
+      "source_sha256": "e706db5593d49fcb5e51815be130c70e69071dd5f7dc9f495805c40a23afba1d",
+      "git_blob_sha": "ec700ce879c1f15468e93ef34e73fef641bd642d",
+      "representative_original_path": "real/WongBreakpointCells.lean",
+      "all_original_records": [
+        "real/WongBreakpointCells.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongBreakpointCells.lean",
+      "bytes": 4447,
+      "imports": [
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Finset.Prod",
+        "WongGARG"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5277228220074903,
+      "object_sha256": "1b4a4345ecca05c3b90a935a4d0d9b84b4fa7cec016e1ce5fdaca1c3ef5ca707",
+      "source_path": "profiles/main/sources/WongBreakpointCells.lean",
+      "receipt_path": "profiles/main/receipts/WongBreakpointCells.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongCountChain",
+      "source_sha256": "5f7629af4619220f77dd0c6344df4d3d096e3ca089e9f439c9cbf8808d6c59ae",
+      "git_blob_sha": "ebf4d7b91dbeea8d9f8124d4d53db32b98d70baf",
+      "representative_original_path": "real/WongCountChain.lean",
+      "all_original_records": [
+        "real/WongCountChain.lean",
+        "research/wong/completion/probability/inputs/WongCountChain.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongCountChain.lean",
+      "bytes": 12247,
+      "imports": [
+        "Mathlib.Probability.Kernel.IonescuTulcea.Traj",
+        "Mathlib.MeasureTheory.OuterMeasure.BorelCantelli",
+        "Mathlib.Topology.Algebra.InfiniteSum.ENNReal",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 5.868739366997033,
+      "object_sha256": "f4fd38f6c10671a221c70c7be7f8b6de3486b507d9776600d49568bb2ff80b75",
+      "source_path": "profiles/main/sources/WongCountChain.lean",
+      "receipt_path": "profiles/main/receipts/WongCountChain.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongDatedSupport",
+      "source_sha256": "162ffdb8b0b3409a9f65ff7b9403a85135be54a2995a7647a3f211c61b8cb993",
+      "git_blob_sha": "3f001b672010d9510ffeacdd550fbe3b4dc01a8d",
+      "representative_original_path": "real/WongDatedSupport.lean",
+      "all_original_records": [
+        "real/WongDatedSupport.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongDatedSupport.lean",
+      "bytes": 7410,
+      "imports": [
+        "WongMarkedSupport",
+        "WongMarkedDated"
+      ],
+      "pending_dependency_source_sha256": [
+        "57d485a53aa9ba32aa98f75c8812b55f1976c142f74fe7624ce819131669a5de",
+        "0d89ff9656e5def0b6583b2ddffb71c73206ccb1b56e7b74b133d3219e509974"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.7949414670001715,
+      "object_sha256": "3f86e805797b043c447788f11995e73189e1d158b06f36bd4ac4964c28c637f4",
+      "source_path": "profiles/main/sources/WongDatedSupport.lean",
+      "receipt_path": "profiles/main/receipts/WongDatedSupport.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongDiamond",
+      "source_sha256": "0d86b05e7ac7ceb947026a9caea55285f9fdc88aab01ecc7acaf27ee1a8e17fd",
+      "git_blob_sha": "7b87c26198561ce8d8869ca48fc13bd7f4fe1e17",
+      "representative_original_path": "real/WongDiamond.lean",
+      "all_original_records": [
+        "real/WongDiamond.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongDiamond.lean",
+      "bytes": 15405,
+      "imports": [
+        "WongEventEncoding",
+        "SamuelAlexanderResearch.AncestryContraction"
+      ],
+      "pending_dependency_source_sha256": [
+        "6fdde306bbdab6f5e349127d634251988cd81e977b0eca63f114f187ce7ecb87"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.1018274539965205,
+      "object_sha256": "b94fb7e68b7f4424b8b1ef88e3f232874f82cac2ec5c58d55cd55d3493b9ef5d",
+      "source_path": "profiles/main/sources/WongDiamond.lean",
+      "receipt_path": "profiles/main/receipts/WongDiamond.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongEventDecoding",
+      "source_sha256": "19a3aa27c6a74f7249272b3ab85a436cd60375cef1c830a2caf787e787315c86",
+      "git_blob_sha": "2fe75f4d5ea0f76675d4b2f3694a0d483ac45697",
+      "representative_original_path": "real/WongEventDecoding.lean",
+      "all_original_records": [
+        "real/WongEventDecoding.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongEventDecoding.lean",
+      "bytes": 13464,
+      "imports": [
+        "WongEventEncoding"
+      ],
+      "pending_dependency_source_sha256": [
+        "6fdde306bbdab6f5e349127d634251988cd81e977b0eca63f114f187ce7ecb87"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.8160686990013346,
+      "object_sha256": "69d770a9cbf9d909ee19ba45fa38e3e0cb24a1507706fea39fd9324a2865a879",
+      "source_path": "profiles/main/sources/WongEventDecoding.lean",
+      "receipt_path": "profiles/main/receipts/WongEventDecoding.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongEventEncoding",
+      "source_sha256": "6fdde306bbdab6f5e349127d634251988cd81e977b0eca63f114f187ce7ecb87",
+      "git_blob_sha": "4ad28be7e779b8fd30d26a9693bfb2ac40be7ac7",
+      "representative_original_path": "real/WongEventEncoding.lean",
+      "all_original_records": [
+        "real/WongEventEncoding.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongEventEncoding.lean",
+      "bytes": 14371,
+      "imports": [
+        "WongGARG"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.5019499589980114,
+      "object_sha256": "6fd4a5f6b1edadc96688689b3ac40caaaf96b442b3efe9b2e974d968ea528f2a",
+      "source_path": "profiles/main/sources/WongEventEncoding.lean",
+      "receipt_path": "profiles/main/receipts/WongEventEncoding.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongExamples",
+      "source_sha256": "c0ba71964c11125aecc5e8425d2c1188a6d09086afd1e941c07a538fd78b7d59",
+      "git_blob_sha": "96a58d7210468fc1eda5b64999b78d61f6402023",
+      "representative_original_path": "real/WongExamples.lean",
+      "all_original_records": [
+        "real/WongExamples.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongExamples.lean",
+      "bytes": 10658,
+      "imports": [
+        "WongGARG"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.7153218320017913,
+      "object_sha256": "ae65e666ca8d8c0ac9221aa904f7bddfe6a9e6762b4ead8223152cf740e51163",
+      "source_path": "profiles/main/sources/WongExamples.lean",
+      "receipt_path": "profiles/main/receipts/WongExamples.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongIntervalCanonicalization",
+      "source_sha256": "25f60d54b9c70e2029364b54807aeaddc514a3bcda8b7e01edb8b21462031411",
+      "git_blob_sha": "a933b3c8e3a0ca58acfceb9e2d1a35cbe2ca0dca",
+      "representative_original_path": "real/WongIntervalCanonicalization.lean",
+      "all_original_records": [
+        "real/WongIntervalCanonicalization.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongIntervalCanonicalization.lean",
+      "bytes": 29572,
+      "imports": [
+        "WongSimplification",
+        "Mathlib.Data.List.Sort"
+      ],
+      "pending_dependency_source_sha256": [
+        "2a2fa47dd84cd3206717eae87be5a5c3c8bb89d72b2691ffb424c84ef96398ab"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.133234260007157,
+      "object_sha256": "072510a364cb6c9187af47bc47e519470fe13ea7b768778f42d827deb9cfc3e2",
+      "source_path": "profiles/main/sources/WongIntervalCanonicalization.lean",
+      "receipt_path": "profiles/main/receipts/WongIntervalCanonicalization.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongIntervalNormalization",
+      "source_sha256": "c0a354f7a8f999d820c300a490279a7e6fb8499bb1f116eb5f3d3983da728a8f",
+      "git_blob_sha": "08769a5b605eb142c29bb069e022c8095e77c606",
+      "representative_original_path": "real/WongIntervalNormalization.lean",
+      "all_original_records": [
+        "real/WongIntervalNormalization.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongIntervalNormalization.lean",
+      "bytes": 13441,
+      "imports": [
+        "WongAlexander",
+        "Mathlib.Data.Fintype.Prod"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.1201379770063795,
+      "object_sha256": "59ce59aca3d26495e26751488605e5900fab45b6a77c645eca3734fa17d9758a",
+      "source_path": "profiles/main/sources/WongIntervalNormalization.lean",
+      "receipt_path": "profiles/main/receipts/WongIntervalNormalization.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongLocalArity",
+      "source_sha256": "035762a33d5b5c352293b3741393b37c627fdeaa765a8535954caa5105252b55",
+      "git_blob_sha": "e765c19e3d9bdd7bbfe45fcaafd9410db379986c",
+      "representative_original_path": "real/WongLocalArity.lean",
+      "all_original_records": [
+        "real/WongLocalArity.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongLocalArity.lean",
+      "bytes": 4158,
+      "imports": [
+        "WongGARG"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.4256223020056495,
+      "object_sha256": "109e303445f43ac0946c7991e9588b262c9acababf4d997318884179993067e2",
+      "source_path": "profiles/main/sources/WongLocalArity.lean",
+      "receipt_path": "profiles/main/receipts/WongLocalArity.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongLocalSimplification",
+      "source_sha256": "cfcb2a222c81df13566b81da72e673afa7fedef583b3d2e1955b6aae53ee55ff",
+      "git_blob_sha": "1cb68ad950282a222691b2287a3ad6c8b39bf39c",
+      "representative_original_path": "real/WongLocalSimplification.lean",
+      "all_original_records": [
+        "real/WongLocalSimplification.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongLocalSimplification.lean",
+      "bytes": 9058,
+      "imports": [
+        "WongSimplification"
+      ],
+      "pending_dependency_source_sha256": [
+        "2a2fa47dd84cd3206717eae87be5a5c3c8bb89d72b2691ffb424c84ef96398ab"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.7927512829919579,
+      "object_sha256": "682313607526de61e9c16297c29bb178cee36130eb9681347c5566a7d4deb290",
+      "source_path": "profiles/main/sources/WongLocalSimplification.lean",
+      "receipt_path": "profiles/main/receipts/WongLocalSimplification.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMRCATruncation",
+      "source_sha256": "b4c756e0b6a10f0b2466a4e57047a0048ec1d501f4c433683dc49875001798ac",
+      "git_blob_sha": "e0926bcb183c5b9c1a81e78033538d91ec7018fa",
+      "representative_original_path": "real/WongMRCATruncation.lean",
+      "all_original_records": [
+        "real/WongMRCATruncation.lean",
+        "research/wong/completion/verification/deterministic65/isolated/mrca-truncation/WongMRCATruncation.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMRCATruncation.lean",
+      "bytes": 18014,
+      "imports": [
+        "WongSimplification"
+      ],
+      "pending_dependency_source_sha256": [
+        "2a2fa47dd84cd3206717eae87be5a5c3c8bb89d72b2691ffb424c84ef96398ab"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.171745074010687,
+      "object_sha256": "918170797c8e7f9f6e1046f3d45404770caece6d2842fe67ef06ffa094f8c725",
+      "source_path": "profiles/main/sources/WongMRCATruncation.lean",
+      "receipt_path": "profiles/main/receipts/WongMRCATruncation.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMarkedDated",
+      "source_sha256": "0d89ff9656e5def0b6583b2ddffb71c73206ccb1b56e7b74b133d3219e509974",
+      "git_blob_sha": "817e6a270858cff2408c4f0201eb9cc0c1358eb5",
+      "representative_original_path": "real/WongMarkedDated.lean",
+      "all_original_records": [
+        "real/WongMarkedDated.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedDated.lean",
+      "bytes": 9303,
+      "imports": [
+        "WongMarkedMeasurable"
+      ],
+      "pending_dependency_source_sha256": [
+        "830f39d52700f44f21b7464c5262a2d36cf93155cb9832bec42209a1be33a582"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.8100404889992205,
+      "object_sha256": "b94dadf87a1193c25ea2a9f59f7c3b3db81a787ed3b76ea9e353e4ee4534af13",
+      "source_path": "profiles/main/sources/WongMarkedDated.lean",
+      "receipt_path": "profiles/main/receipts/WongMarkedDated.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMarkedLaw",
+      "source_sha256": "42e61509f5ce72ed978999af1207afab8fb87488aa4729be111b95fddfe6dca1",
+      "git_blob_sha": "50129c06075194b4d8b18b9b532062097aabdc72",
+      "representative_original_path": "real/WongMarkedLaw.lean",
+      "all_original_records": [
+        "real/WongMarkedLaw.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedLaw.lean",
+      "bytes": 12049,
+      "imports": [
+        "WongWaitingTimes",
+        "Mathlib.Probability.Distributions.Uniform",
+        "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+        "Mathlib.Data.Finset.Powerset"
+      ],
+      "pending_dependency_source_sha256": [
+        "10fc0a43ccdee74c55dc73d8e43bd2818837ea1034080ea2f4a9a9628bb996f0"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.2587480020010844,
+      "object_sha256": "1ec7997bd6a08cf7f7543aa11980cf60d9c8da6816b2a1aa4183e8889ec29ef4",
+      "source_path": "profiles/main/sources/WongMarkedLaw.lean",
+      "receipt_path": "profiles/main/receipts/WongMarkedLaw.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMarkedMeasurable",
+      "source_sha256": "830f39d52700f44f21b7464c5262a2d36cf93155cb9832bec42209a1be33a582",
+      "git_blob_sha": "8f5652197ebd92a1269419ca5e47100ffdd973ac",
+      "representative_original_path": "real/WongMarkedMeasurable.lean",
+      "all_original_records": [
+        "real/WongMarkedMeasurable.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedMeasurable.lean",
+      "bytes": 20660,
+      "imports": [
+        "WongMarkedProcess"
+      ],
+      "pending_dependency_source_sha256": [
+        "6033dea1876cbe75dff6c0f29b528092cbdf23d58382cd288f48b2fced554555"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.9078025599883404,
+      "object_sha256": "75eb9a871cf78954f9421d57003e7b1b4ad2fade59e971fe9e51620928930b18",
+      "source_path": "profiles/main/sources/WongMarkedMeasurable.lean",
+      "receipt_path": "profiles/main/receipts/WongMarkedMeasurable.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMarkedProcess",
+      "source_sha256": "6033dea1876cbe75dff6c0f29b528092cbdf23d58382cd288f48b2fced554555",
+      "git_blob_sha": "dfe552a00a1be48c0cf97f17589808480fac929c",
+      "representative_original_path": "real/WongMarkedProcess.lean",
+      "all_original_records": [
+        "real/WongMarkedProcess.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedProcess.lean",
+      "bytes": 13516,
+      "imports": [
+        "WongMarkedLaw",
+        "WongMarkedRecorder"
+      ],
+      "pending_dependency_source_sha256": [
+        "42e61509f5ce72ed978999af1207afab8fb87488aa4729be111b95fddfe6dca1",
+        "1dcec9e5522f03adf21a308bd31a64a5f10a445b567bc72701916009972bdfea"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.4252745560079347,
+      "object_sha256": "bde3d05acf5cad951f86a0b611d36d9730e492152492b11b7bcc6000ec5c6fe4",
+      "source_path": "profiles/main/sources/WongMarkedProcess.lean",
+      "receipt_path": "profiles/main/receipts/WongMarkedProcess.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMarkedRecorder",
+      "source_sha256": "1dcec9e5522f03adf21a308bd31a64a5f10a445b567bc72701916009972bdfea",
+      "git_blob_sha": "818ddbcc68ba8609c27055f40441d9d5e98b7bbf",
+      "representative_original_path": "real/WongMarkedRecorder.lean",
+      "all_original_records": [
+        "real/WongMarkedRecorder.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedRecorder.lean",
+      "bytes": 41362,
+      "imports": [
+        "WongEventDecoding",
+        "Mathlib.Order.Interval.Finset.Nat"
+      ],
+      "pending_dependency_source_sha256": [
+        "19a3aa27c6a74f7249272b3ab85a436cd60375cef1c830a2caf787e787315c86"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 4.768723888992099,
+      "object_sha256": "c8d60512b60727d2b087a15caa91f1a761ad4c483d20f1fc4631e9ec40a8eff4",
+      "source_path": "profiles/main/sources/WongMarkedRecorder.lean",
+      "receipt_path": "profiles/main/receipts/WongMarkedRecorder.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMarkedSupport",
+      "source_sha256": "57d485a53aa9ba32aa98f75c8812b55f1976c142f74fe7624ce819131669a5de",
+      "git_blob_sha": "f845c3f1e33b7677a1b55e119ee38784a869f00a",
+      "representative_original_path": "real/WongMarkedSupport.lean",
+      "all_original_records": [
+        "real/WongMarkedSupport.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMarkedSupport.lean",
+      "bytes": 9014,
+      "imports": [
+        "WongMarkedMeasurable"
+      ],
+      "pending_dependency_source_sha256": [
+        "830f39d52700f44f21b7464c5262a2d36cf93155cb9832bec42209a1be33a582"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.8442697769933147,
+      "object_sha256": "dea04b8f949732d104d9600088efbf935b00e46edde6f45dcfa36bab61e8627b",
+      "source_path": "profiles/main/sources/WongMarkedSupport.lean",
+      "receipt_path": "profiles/main/receipts/WongMarkedSupport.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongMemoizedTracing",
+      "source_sha256": "cd8e682800b48219f434930a98c2a1f6d6b47f8145364e8b981708b6e1379dfb",
+      "git_blob_sha": "ea5771ea7422002c9dc44b22d94793bf87c9c268",
+      "representative_original_path": "real/WongMemoizedTracing.lean",
+      "all_original_records": [
+        "real/WongMemoizedTracing.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongMemoizedTracing.lean",
+      "bytes": 22000,
+      "imports": [
+        "WongRecordTracing",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Filter"
+      ],
+      "pending_dependency_source_sha256": [
+        "1c461e31d17b7fbea796ec711378d7dc93f4312b3438d535e1c9ab05822390e8"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.127750230996753,
+      "object_sha256": "0812f3dab138e7f3d993feab4496aa08e27ec086d21fb2bf8f27de02d818e678",
+      "source_path": "profiles/main/sources/WongMemoizedTracing.lean",
+      "receipt_path": "profiles/main/receipts/WongMemoizedTracing.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongPedigreeBridge",
+      "source_sha256": "a50265e3c458bac5577116ee8fc30bea5f7b881ebd4216040543ce4adb5f921b",
+      "git_blob_sha": "30d9d26177f9d820b38bdce552aaf520d283b512",
+      "representative_original_path": "real/WongPedigreeBridge.lean",
+      "all_original_records": [
+        "real/WongPedigreeBridge.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeBridge.lean",
+      "bytes": 23042,
+      "imports": [
+        "FiniteGenomeIdentifiability",
+        "SamuelAlexanderResearch.ObservationPrediction",
+        "SamuelAlexanderResearch.ProductiveCore"
+      ],
+      "pending_dependency_source_sha256": [
+        "369699a545f1b0f535de2ca1fc1f1e45591cc91eaca4b33c1f23316cfcf431c5"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.9620194459857885,
+      "object_sha256": "cdd72bd85f9d742d1d7e881dee55a5547a113931dfda01cc88e3ed3083e74ccb",
+      "source_path": "profiles/main/sources/WongPedigreeBridge.lean",
+      "receipt_path": "profiles/main/receipts/WongPedigreeBridge.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongPedigreeRobust",
+      "source_sha256": "a2ed87e4162f3e6f0c127805bfe9619e9ba8b3649aaeade3cc8b8ef554b16c30",
+      "git_blob_sha": "607d5aecb011d02ee6817a7936690348ebdbbfe8",
+      "representative_original_path": "real/WongPedigreeRobust.lean",
+      "all_original_records": [
+        "real/WongPedigreeRobust.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongPedigreeRobust.lean",
+      "bytes": 3266,
+      "imports": [
+        "WongPedigreeBridge"
+      ],
+      "pending_dependency_source_sha256": [
+        "a50265e3c458bac5577116ee8fc30bea5f7b881ebd4216040543ce4adb5f921b"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5660002529912163,
+      "object_sha256": "d7496228bf39c3d97b1eb69df8a48d1ffb8128cc8f3ac4ace62d2fec3ef6b10d",
+      "source_path": "profiles/main/sources/WongPedigreeRobust.lean",
+      "receipt_path": "profiles/main/receipts/WongPedigreeRobust.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongRecordTracing",
+      "source_sha256": "1c461e31d17b7fbea796ec711378d7dc93f4312b3438d535e1c9ab05822390e8",
+      "git_blob_sha": "f25a9aab7e139793f7ecc1fd5c0057f079268880",
+      "representative_original_path": "real/WongRecordTracing.lean",
+      "all_original_records": [
+        "real/WongRecordTracing.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongRecordTracing.lean",
+      "bytes": 5377,
+      "imports": [
+        "WongSampleTracing"
+      ],
+      "pending_dependency_source_sha256": [
+        "bb5c869a30fbe1db22560bf983c60c1aff410041ed53a63131294ca2c002532e"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.489744446997065,
+      "object_sha256": "1d36ea35416a431ce07a3e6007d474ba1a6d35755c5b39e34067a033a90984d2",
+      "source_path": "profiles/main/sources/WongRecordTracing.lean",
+      "receipt_path": "profiles/main/receipts/WongRecordTracing.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongSampleTracing",
+      "source_sha256": "bb5c869a30fbe1db22560bf983c60c1aff410041ed53a63131294ca2c002532e",
+      "git_blob_sha": "90a21b00fa12ee67dfa4e74b2bae4f5084c9922e",
+      "representative_original_path": "real/WongSampleTracing.lean",
+      "all_original_records": [
+        "real/WongSampleTracing.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSampleTracing.lean",
+      "bytes": 8257,
+      "imports": [
+        "WongGARG"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5384442229988053,
+      "object_sha256": "588154b02f64572695b4f75beb7a5e10dfa4a705ebe9db48ee6d79ffe6401898",
+      "source_path": "profiles/main/sources/WongSampleTracing.lean",
+      "receipt_path": "profiles/main/receipts/WongSampleTracing.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongSimplification",
+      "source_sha256": "2a2fa47dd84cd3206717eae87be5a5c3c8bb89d72b2691ffb424c84ef96398ab",
+      "git_blob_sha": "4bfea130a4b207eb4620bc2af62c005417e1d70d",
+      "representative_original_path": "real/WongSimplification.lean",
+      "all_original_records": [
+        "real/WongSimplification.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSimplification.lean",
+      "bytes": 7343,
+      "imports": [
+        "WongBreakpointCells",
+        "WongIntervalNormalization"
+      ],
+      "pending_dependency_source_sha256": [
+        "e706db5593d49fcb5e51815be130c70e69071dd5f7dc9f495805c40a23afba1d",
+        "c0a354f7a8f999d820c300a490279a7e6fb8499bb1f116eb5f3d3983da728a8f"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.656745045009302,
+      "object_sha256": "e000fd74215a24174bc6ce2f6bee8e6c2ff7d7a5ff53472b9f79f375e500712c",
+      "source_path": "profiles/main/sources/WongSimplification.lean",
+      "receipt_path": "profiles/main/receipts/WongSimplification.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongSimplificationNormalForm",
+      "source_sha256": "73a779860fdf9f726ec617cfb3346d5109aca2753ad71e19c603a6c0c91c09ed",
+      "git_blob_sha": "1153e234e7d5fda5e8dacbed6435cd0df831775b",
+      "representative_original_path": "real/WongSimplificationNormalForm.lean",
+      "all_original_records": [
+        "real/WongSimplificationNormalForm.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongSimplificationNormalForm.lean",
+      "bytes": 14101,
+      "imports": [
+        "WongMRCATruncation",
+        "WongLocalSimplification",
+        "WongIntervalCanonicalization"
+      ],
+      "pending_dependency_source_sha256": [
+        "b4c756e0b6a10f0b2466a4e57047a0048ec1d501f4c433683dc49875001798ac",
+        "cfcb2a222c81df13566b81da72e673afa7fedef583b3d2e1955b6aae53ee55ff",
+        "25f60d54b9c70e2029364b54807aeaddc514a3bcda8b7e01edb8b21462031411"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.0001105819974327,
+      "object_sha256": "9e4a61f4ed54ff0d9b468f3b14503859345f37c2b8b6ebbe99356d57757dc559",
+      "source_path": "profiles/main/sources/WongSimplificationNormalForm.lean",
+      "receipt_path": "profiles/main/receipts/WongSimplificationNormalForm.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongTimedHistory",
+      "source_sha256": "2974b948f8d9c784868186b645073184020720784b166a34f8b1d46ac001d399",
+      "git_blob_sha": "9e6fde2735d5ea41f5ef3d322164246b2eaee87d",
+      "representative_original_path": "real/WongTimedHistory.lean",
+      "all_original_records": [
+        "real/WongTimedHistory.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongTimedHistory.lean",
+      "bytes": 10851,
+      "imports": [
+        "WongEventEncoding",
+        "SamuelAlexanderResearch.AncestryContraction",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Data.Fintype.Prod"
+      ],
+      "pending_dependency_source_sha256": [
+        "6fdde306bbdab6f5e349127d634251988cd81e977b0eca63f114f187ce7ecb87"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 4.680897928992636,
+      "object_sha256": "a1a0321ee9ffd229e941ce66002bd5cf07afad939653fe89d4798cffb0cf3bb1",
+      "source_path": "profiles/main/sources/WongTimedHistory.lean",
+      "receipt_path": "profiles/main/receipts/WongTimedHistory.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongWaitingTimes",
+      "source_sha256": "10fc0a43ccdee74c55dc73d8e43bd2818837ea1034080ea2f4a9a9628bb996f0",
+      "git_blob_sha": "c7e3ec8346701e3834534f44f073791c1d88f639",
+      "representative_original_path": "real/WongWaitingTimes.lean",
+      "all_original_records": [
+        "real/WongWaitingTimes.lean",
+        "research/wong/completion/probability/holding-times/worker/WongWaitingTimes.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/real/WongWaitingTimes.lean",
+      "bytes": 25547,
+      "imports": [
+        "WongBigARGAbsorption",
+        "Mathlib.Probability.Distributions.Exponential",
+        "Mathlib.Probability.ProductMeasure",
+        "Mathlib.Probability.Independence.InfinitePi",
+        "Mathlib.Probability.Independence.Basic",
+        "Mathlib.Probability.CDF",
+        "Mathlib.Data.Nat.Find",
+        "Mathlib.MeasureTheory.MeasurableSpace.Constructions",
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "pending_dependency_source_sha256": [
+        "50b18cf23019c05c477c35ca38025d2516b662788d65e7c4cb6f98fecb3ff518"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 4.574212334002368,
+      "object_sha256": "c9ab12a87ccfdf5f58ac56ba1c39ff9024420659d43b6545a4c6c5fd2124945e",
+      "source_path": "profiles/main/sources/WongWaitingTimes.lean",
+      "receipt_path": "profiles/main/receipts/WongWaitingTimes.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "DeterministicEpigenetic",
+      "source_sha256": "ece655b0af42fbd580ca86b3f8176a8b4323fe3fd716da9429f13f6366f3117f",
+      "git_blob_sha": "3f2c65f2c76b34aaf7f1ae247287801eed06cae4",
+      "representative_original_path": "research/feedback-speciation/finite-epigenetic/DeterministicEpigenetic.lean",
+      "all_original_records": [
+        "research/feedback-speciation/finite-epigenetic/DeterministicEpigenetic.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/DeterministicEpigenetic.lean",
+      "bytes": 10445,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 5.157223558999249,
+      "object_sha256": "3a1eb90cf6d8b9366a8ad30b8e8e1f62b22f671586ec60a20f54dd7029bef9dc",
+      "source_path": "profiles/main/sources/DeterministicEpigenetic.lean",
+      "receipt_path": "profiles/main/receipts/DeterministicEpigenetic.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FiniteEpigenetic",
+      "source_sha256": "1a79a7a8ee8eca0950bbf97d17ae3e495a2c0268267041ee26b5be4b0031d822",
+      "git_blob_sha": "8dd2f331b2e13c54f7ad6cca6c297ab968c05577",
+      "representative_original_path": "research/feedback-speciation/finite-epigenetic/FiniteEpigenetic.lean",
+      "all_original_records": [
+        "research/feedback-speciation/finite-epigenetic/FiniteEpigenetic.lean",
+        "research/feedback-speciation/pure-induction-ancestry-v2/FiniteEpigenetic.lean",
+        "research/feedback-speciation/pure-induction-finite/FiniteEpigenetic.lean"
+      ],
+      "extra_duplicate_records": 2,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/FiniteEpigenetic.lean",
+      "bytes": 12917,
+      "imports": [
+        "FiniteFixation",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring"
+      ],
+      "pending_dependency_source_sha256": [
+        "bcc30acb045721d4832c4a0da51ced7e825bc2ec0c7050e1d2a81327fb3676f9"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 20.809971038994263,
+      "object_sha256": "834f55255f5cd430f3f7660c2d20cd3c7430e37ac78d49fa42ad1a7dac212c2b",
+      "source_path": "profiles/main/sources/FiniteEpigenetic.lean",
+      "receipt_path": "profiles/main/receipts/FiniteEpigenetic.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FiniteFixation",
+      "source_sha256": "bcc30acb045721d4832c4a0da51ced7e825bc2ec0c7050e1d2a81327fb3676f9",
+      "git_blob_sha": "3dae7090bd56e042898549ff91438def69635434",
+      "representative_original_path": "research/feedback-speciation/finite-epigenetic/FiniteFixation.lean",
+      "all_original_records": [
+        "research/feedback-speciation/finite-epigenetic/FiniteFixation.lean",
+        "research/feedback-speciation/pure-induction-ancestry-v2/FiniteFixation.lean",
+        "research/feedback-speciation/pure-induction-finite/FiniteFixation.lean"
+      ],
+      "extra_duplicate_records": 2,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/FiniteFixation.lean",
+      "bytes": 15133,
+      "imports": [
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.4081736619991716,
+      "object_sha256": "40f0afa96eae40abd56e3efc44dc9b5519ce1370155b41330ad69809588dacf1",
+      "source_path": "profiles/main/sources/FiniteFixation.lean",
+      "receipt_path": "profiles/main/receipts/FiniteFixation.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "RankingReversal",
+      "source_sha256": "a1dcf86c7214e92ee8f319a46ea955c97c4d70aa83822a888573b41ad60a3894",
+      "git_blob_sha": "16394c30c1bc2c245f99ba708fa5149201a487dd",
+      "representative_original_path": "research/feedback-speciation/finite-epigenetic/RankingReversal.lean",
+      "all_original_records": [
+        "research/feedback-speciation/finite-epigenetic/RankingReversal.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/finite-epigenetic/RankingReversal.lean",
+      "bytes": 1705,
+      "imports": [
+        "FiniteEpigenetic",
+        "DeterministicEpigenetic"
+      ],
+      "pending_dependency_source_sha256": [
+        "1a79a7a8ee8eca0950bbf97d17ae3e495a2c0268267041ee26b5be4b0031d822",
+        "ece655b0af42fbd580ca86b3f8176a8b4323fe3fd716da9429f13f6366f3117f"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.8052049139951123,
+      "object_sha256": "626ac698fff1f748c34ebfc6a24e628129b0da857486870f14a6589d889333d0",
+      "source_path": "profiles/main/sources/RankingReversal.lean",
+      "receipt_path": "profiles/main/receipts/RankingReversal.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "AncestryExamples",
+      "source_sha256": "c9b916933b3a94db4c0493e095ae01fc986a8d3393b0a7f29ed9befd02d300f7",
+      "git_blob_sha": "46cf930c1acb67e7aa9951887c74a62f96fedf06",
+      "representative_original_path": "research/feedback-speciation/package/AncestryExamples.lean",
+      "all_original_records": [
+        "research/feedback-speciation/package/AncestryExamples.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/AncestryExamples.lean",
+      "bytes": 5384,
+      "imports": [
+        "AncestryMixing"
+      ],
+      "pending_dependency_source_sha256": [
+        "6a08f7b06840f7bd5ee2cfcc1e13f179698e1eaba4adfb631cc88e628d59957d"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6197181699972134,
+      "object_sha256": "3c83a3ece1cb6cecdd499b464ccb1cc8b4fc5e19824e6f28d8ec235ada6945e8",
+      "source_path": "profiles/main/sources/AncestryExamples.lean",
+      "receipt_path": "profiles/main/receipts/AncestryExamples.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "AncestryMixing",
+      "source_sha256": "6a08f7b06840f7bd5ee2cfcc1e13f179698e1eaba4adfb631cc88e628d59957d",
+      "git_blob_sha": "1b80ab679d11991e3752c7f9d206f71e1ee5370b",
+      "representative_original_path": "research/feedback-speciation/package/AncestryMixing.lean",
+      "all_original_records": [
+        "research/feedback-speciation/package/AncestryMixing.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/AncestryMixing.lean",
+      "bytes": 19573,
+      "imports": [
+        "SamuelAlexanderResearch.SpeciesGlobalIAP",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.Finset.Max"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.3265187890065135,
+      "object_sha256": "3f309a6fbaadac16a1eba9064cfc4ea9faf5e5d491a826e864ac92e68b6cf70e",
+      "source_path": "profiles/main/sources/AncestryMixing.lean",
+      "receipt_path": "profiles/main/receipts/AncestryMixing.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FeedbackDynamics",
+      "source_sha256": "dd14dcaf5da5e89ff4aa9a2afb0693bb95a40642c6030287860a14f982f2d570",
+      "git_blob_sha": "13b6a930281f6f33178017c02aa7ed043f3fdd4a",
+      "representative_original_path": "research/feedback-speciation/package/FeedbackDynamics.lean",
+      "all_original_records": [
+        "research/feedback-speciation/package/FeedbackDynamics.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FeedbackDynamics.lean",
+      "bytes": 20385,
+      "imports": [
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 7.29327191800985,
+      "object_sha256": "991614f07ccc0b133310cf2ba42dd82361f23c9adc8adfb87f557e3026f352e8",
+      "source_path": "profiles/main/sources/FeedbackDynamics.lean",
+      "receipt_path": "profiles/main/receipts/FeedbackDynamics.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FogartyAffinity",
+      "source_sha256": "1ac434b5b0814a7eaba1f34df224bbf320dbe044eb6ba88dddf9b3d57b8d7f91",
+      "git_blob_sha": "5fe59d98626aad9403eaff773df61e99822920c4",
+      "representative_original_path": "research/feedback-speciation/package/FogartyAffinity.lean",
+      "all_original_records": [
+        "research/feedback-speciation/package/FogartyAffinity.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FogartyAffinity.lean",
+      "bytes": 11992,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 6.880341558004147,
+      "object_sha256": "61d8ccd304c318129ea27283d594a3d34dc46fc1593e8ec62da733e5a07df5e3",
+      "source_path": "profiles/main/sources/FogartyAffinity.lean",
+      "receipt_path": "profiles/main/receipts/FogartyAffinity.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "FogartyAffinityFixation",
+      "source_sha256": "1e39b773dea9fd0b902327ec8918d63b147dddbd1ce5458fe85a18ea3e0883a4",
+      "git_blob_sha": "6853621d54efeb20167d7ebb1b631bbec901d012",
+      "representative_original_path": "research/feedback-speciation/package/FogartyAffinityFixation.lean",
+      "all_original_records": [
+        "research/feedback-speciation/package/FogartyAffinityFixation.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/package/FogartyAffinityFixation.lean",
+      "bytes": 10984,
+      "imports": [
+        "FogartyAffinity",
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic"
+      ],
+      "pending_dependency_source_sha256": [
+        "1ac434b5b0814a7eaba1f34df224bbf320dbe044eb6ba88dddf9b3d57b8d7f91"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 3.810265028005233,
+      "object_sha256": "b79d604c90ba23e263ccbb3dddbc71ca3714498d824b5be811d9a5facfd0dbf9",
+      "source_path": "profiles/main/sources/FogartyAffinityFixation.lean",
+      "receipt_path": "profiles/main/receipts/FogartyAffinityFixation.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "ExtinctionPedigree",
+      "source_sha256": "ddb618e00f758546176eaedfbfc86d7457767133bc784b2990972c07a8fe63fb",
+      "git_blob_sha": "6914eb3f44f2dc81ab0cd0da1cea71b5abbf25ed",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/ExtinctionPedigree.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/ExtinctionPedigree.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/ExtinctionPedigree.lean",
+      "bytes": 9861,
+      "imports": [
+        "SamuelAlexanderResearch.SpeciesBridge"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.076116277006804,
+      "object_sha256": "8376846499e3bd9abb9267e5bb87528fa96ff8e47b5bcf8e79b5c254a4c8f14a",
+      "source_path": "profiles/pure-induction-v2/sources/ExtinctionPedigree.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/ExtinctionPedigree.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "FeedbackDynamics",
+      "source_sha256": "0e8ac4ce157b5c3d8a66eb5d9ebe6ced7c1adbccf10359f1894fe4e72fc0a15a",
+      "git_blob_sha": "f271970a1a21b73fc6d9d6c86ed0fd1a3e75db16",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/FeedbackDynamics.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/FeedbackDynamics.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/FeedbackDynamics.lean",
+      "bytes": 20392,
+      "imports": [
+        "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 7.665786131998175,
+      "object_sha256": "991614f07ccc0b133310cf2ba42dd82361f23c9adc8adfb87f557e3026f352e8",
+      "source_path": "profiles/pure-induction-v2/sources/FeedbackDynamics.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/FeedbackDynamics.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "ParentSchedules",
+      "source_sha256": "a35bc0c6e774cba93c2eebabe0f29530cceb12079d115e4ae28f2a6540aafdc7",
+      "git_blob_sha": "8cfd089e571d0e463958b73d5908a8a8ce3b905b",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/ParentSchedules.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/ParentSchedules.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/ParentSchedules.lean",
+      "bytes": 3061,
+      "imports": [
+        "ExtinctionPedigree"
+      ],
+      "pending_dependency_source_sha256": [
+        "ddb618e00f758546176eaedfbfc86d7457767133bc784b2990972c07a8fe63fb"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6350096890091663,
+      "object_sha256": "a93344b7f4be95c525e668127c603fe7024e55064f8a95b19ca8c2232f326965",
+      "source_path": "profiles/pure-induction-v2/sources/ParentSchedules.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/ParentSchedules.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "PureInductionAncestry",
+      "source_sha256": "cc58fed43614564e0bdfaa6fb2527b035cf789c45b3096d15ddb8693a64c855d",
+      "git_blob_sha": "97a27c99419d5717f9597a423cf9df756f3407df",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionAncestry.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionAncestry.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionAncestry.lean",
+      "bytes": 6384,
+      "imports": [
+        "PureInductionPaths"
+      ],
+      "pending_dependency_source_sha256": [
+        "f30a50c742c6348973711fbd73c2139a33efe9185e2218a74874d42a1aaeb4d3"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.732117942010518,
+      "object_sha256": "1a43551b9b1a2fd0c1cf9ea4b7ed991a65cb562404ef04e6ae8e241270482c59",
+      "source_path": "profiles/pure-induction-v2/sources/PureInductionAncestry.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/PureInductionAncestry.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "PureInductionJoint",
+      "source_sha256": "eaace6cf46a5e827c08fb7241d663e6c8e3290c5cabf58763cda7d1cbe99fd8a",
+      "git_blob_sha": "3d108251fffdec779c821b4bd14f340089257bef",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionJoint.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionJoint.lean",
+        "research/feedback-speciation/pure-induction-finite/PureInductionJoint.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionJoint.lean",
+      "bytes": 6224,
+      "imports": [
+        "FiniteEpigenetic",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "pending_dependency_source_sha256": [
+        "1a79a7a8ee8eca0950bbf97d17ae3e495a2c0268267041ee26b5be4b0031d822"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.1009382889897097,
+      "object_sha256": "5e7d06c4cd56e3dd728db123aa70a9ae6232dc4b37f29b9b4ac3364ef410ba98",
+      "source_path": "profiles/pure-induction-v2/sources/PureInductionJoint.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/PureInductionJoint.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "PureInductionNoise",
+      "source_sha256": "53e77f062c0dfd23b274e9ddc801f8b8136f7783786600a407f6b657584018a0",
+      "git_blob_sha": "dd7481f952f26c6d11bea38af6494c9384cc7cc7",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionNoise.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionNoise.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionNoise.lean",
+      "bytes": 6978,
+      "imports": [
+        "PureInductionJoint",
+        "UniformParentProcess",
+        "Mathlib.Probability.Independence.InfinitePi"
+      ],
+      "pending_dependency_source_sha256": [
+        "eaace6cf46a5e827c08fb7241d663e6c8e3290c5cabf58763cda7d1cbe99fd8a",
+        "1cce9f8d1738255cd59e2553ea75dbe3b2078ed4b50d261c28e6b833c8a55325"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.644369909990928,
+      "object_sha256": "5930f1c3c49be632c90e0c923f32e2eb2fd942f1dabf008d0c1a42695a97f1ac",
+      "source_path": "profiles/pure-induction-v2/sources/PureInductionNoise.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/PureInductionNoise.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "PureInductionPaths",
+      "source_sha256": "f30a50c742c6348973711fbd73c2139a33efe9185e2218a74874d42a1aaeb4d3",
+      "git_blob_sha": "2809de06f04532577c98c5e3f9d5ee4663ff421c",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionPaths.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionPaths.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionPaths.lean",
+      "bytes": 7129,
+      "imports": [
+        "PureInductionR1R2",
+        "PureInductionNoise"
+      ],
+      "pending_dependency_source_sha256": [
+        "633afd20f24da1c9cb86c5db7dda2bc1596b09cd634fe93ad0a70de0c5a8b85d",
+        "53e77f062c0dfd23b274e9ddc801f8b8136f7783786600a407f6b657584018a0"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 13.576657840996631,
+      "object_sha256": "eefc8c8e56ad20150d50f820460d13bba36c40b681c4dd36c0529fb7053c4112",
+      "source_path": "profiles/pure-induction-v2/sources/PureInductionPaths.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/PureInductionPaths.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "PureInductionR1R2",
+      "source_sha256": "633afd20f24da1c9cb86c5db7dda2bc1596b09cd634fe93ad0a70de0c5a8b85d",
+      "git_blob_sha": "1312e06347452910dd72b1a3cf6b3ee0d38be849",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionR1R2.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/PureInductionR1R2.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/PureInductionR1R2.lean",
+      "bytes": 13687,
+      "imports": [
+        "PureInductionJoint",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic"
+      ],
+      "pending_dependency_source_sha256": [
+        "eaace6cf46a5e827c08fb7241d663e6c8e3290c5cabf58763cda7d1cbe99fd8a"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 9.8710721690004,
+      "object_sha256": "a02ed15d57bcd2abb364a49163e732e2e01c7fc05b59f44c02d0da53c2cdb21f",
+      "source_path": "profiles/pure-induction-v2/sources/PureInductionR1R2.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/PureInductionR1R2.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "UniformParentCounting",
+      "source_sha256": "3fbb09bbdfa0ffb78cf9e88488bceb3e831fd4f014dfdf3db6fe70370d75bea2",
+      "git_blob_sha": "d851f98dd5e284558cf4888a8c310303b851fdcc",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/UniformParentCounting.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/UniformParentCounting.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/UniformParentCounting.lean",
+      "bytes": 6589,
+      "imports": [
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6875623030064162,
+      "object_sha256": "c85f5510bd9d3ca8437b4958c36045bf6400f7c0756addcfec2a375cacf829a4",
+      "source_path": "profiles/pure-induction-v2/sources/UniformParentCounting.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/UniformParentCounting.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "pure-induction-v2",
+      "module": "UniformParentProcess",
+      "source_sha256": "1cce9f8d1738255cd59e2553ea75dbe3b2078ed4b50d261c28e6b833c8a55325",
+      "git_blob_sha": "27231bf043485399db9b1d9a217bac0f3c445bc7",
+      "representative_original_path": "research/feedback-speciation/pure-induction-ancestry-v2/UniformParentProcess.lean",
+      "all_original_records": [
+        "research/feedback-speciation/pure-induction-ancestry-v2/UniformParentProcess.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/feedback-speciation/pure-induction-ancestry-v2/UniformParentProcess.lean",
+      "bytes": 7320,
+      "imports": [
+        "ParentSchedules",
+        "UniformParentCounting",
+        "FeedbackDynamics",
+        "Mathlib.Probability.ProductMeasure",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "pending_dependency_source_sha256": [
+        "a35bc0c6e774cba93c2eebabe0f29530cceb12079d115e4ae28f2a6540aafdc7",
+        "3fbb09bbdfa0ffb78cf9e88488bceb3e831fd4f014dfdf3db6fe70370d75bea2",
+        "0e8ac4ce157b5c3d8a66eb5d9ebe6ced7c1adbccf10359f1894fe4e72fc0a15a"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 5.103280604002066,
+      "object_sha256": "2986f89879d2b2d87e0206f51fd6e058a8211e13c08bbfcd75d5486da9b8711f",
+      "source_path": "profiles/pure-induction-v2/sources/UniformParentProcess.lean",
+      "receipt_path": "profiles/pure-induction-v2/receipts/UniformParentProcess.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "NanuqPositiveCombination",
+      "source_sha256": "8c794d19f35a49db481d0361b6cce6958da25fea21d8da10ec53a548bbe6c813",
+      "git_blob_sha": "bfd129b18d8a02535961b746124e289f775a3325",
+      "representative_original_path": "research/nanuq-all-level-2026-09-29/source-development/formal/NanuqPositiveCombination.lean",
+      "all_original_records": [
+        "research/nanuq-all-level-2026-09-29/source-development/formal/NanuqPositiveCombination.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/source-development/formal/NanuqPositiveCombination.lean",
+      "bytes": 2834,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.ByContra"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3367862239974784,
+      "object_sha256": "e385f283d4d69f47564e924338b9c201f35aff8ef83e1d6d4e06285cf4a3b533",
+      "source_path": "profiles/main/sources/NanuqPositiveCombination.lean",
+      "receipt_path": "profiles/main/receipts/NanuqPositiveCombination.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "GraphQuartetPortCounts",
+      "source_sha256": "56eb26a6abf08a69eb0e41187b02a8131096459f6707ab83898b1d7800a68fe0",
+      "git_blob_sha": "81af4c8d8cbf0b723fe2353b6ddd411d7b3eeb9e",
+      "representative_original_path": "research/nanuq-all-level-2026-09-29/source-development/formal-full/GraphQuartetPortCounts.lean",
+      "all_original_records": [
+        "research/nanuq-all-level-2026-09-29/source-development/formal-full/GraphQuartetPortCounts.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/nanuq-all-level-2026-09-29/source-development/formal-full/GraphQuartetPortCounts.lean",
+      "bytes": 2325,
+      "imports": [
+        "GraphMedianUnique",
+        "AnchorPortCounts"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "FAIL_COMPILER",
+      "exit_code": 1,
+      "elapsed_seconds": 13.610661449012696,
+      "source_path": "excluded-originals/main/GraphQuartetPortCounts/source.lean",
+      "receipt_path": "excluded-originals/main/GraphQuartetPortCounts/receipt.json",
+      "admitted_to_selected_profile": false
+    },
+    {
+      "profile": "main",
+      "module": "ExactAbstraction",
+      "source_sha256": "a5c8c5113532bfabb84e5259be91c551ab4210ce4301afc7a6fc233cab40c42e",
+      "git_blob_sha": "404649cc76596aaf0a049191df681680b7628197",
+      "representative_original_path": "research/open-problems/time-self-reference/controlled-abstraction-bridge/source-snapshots/ExactAbstraction.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/controlled-abstraction-bridge/source-snapshots/ExactAbstraction.lean",
+        "research/open-problems/time-self-reference/exact-abstraction/ExactAbstraction.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/controlled-abstraction-bridge/source-snapshots/ExactAbstraction.lean",
+      "bytes": 6308,
+      "imports": [
+        "Mathlib.Logic.Function.Basic"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.7954594609909691,
+      "object_sha256": "84b1b3254f7084c251ee0d3aea7389ce2e83db66b593c8dd557d8911643bf40c",
+      "source_path": "profiles/main/sources/ExactAbstraction.lean",
+      "receipt_path": "profiles/main/receipts/ExactAbstraction.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "MergeHistoryProjection",
+      "source_sha256": "c040d1e74335ad2c86b050503df81b16eecce429ab8a063b6ea2f42af2971554",
+      "git_blob_sha": "9779943de839ec1832288cd8bf1cc5ba22354de9",
+      "representative_original_path": "research/open-problems/time-self-reference/controlled-abstraction-bridge/source-snapshots/MergeHistoryProjection.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/controlled-abstraction-bridge/source-snapshots/MergeHistoryProjection.lean",
+        "research/open-problems/time-self-reference/exact-abstraction/MergeHistoryProjection.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/controlled-abstraction-bridge/source-snapshots/MergeHistoryProjection.lean",
+      "bytes": 6644,
+      "imports": [
+        "ExactAbstraction",
+        "Mathlib.Data.Finset.Basic",
+        "Mathlib.Data.Fintype.Fin"
+      ],
+      "pending_dependency_source_sha256": [
+        "a5c8c5113532bfabb84e5259be91c551ab4210ce4301afc7a6fc233cab40c42e"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6777348070027074,
+      "object_sha256": "f60475dc50ee274307c79a912f256849cc88d1dfeedde2dd9b6bc676fb58e923",
+      "source_path": "profiles/main/sources/MergeHistoryProjection.lean",
+      "receipt_path": "profiles/main/receipts/MergeHistoryProjection.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "AncestryObservation",
+      "source_sha256": "9790ddc196ce3ff30b6abd03a940f7cb0f1543dfb86f954f85ffe9fc87890f50",
+      "git_blob_sha": "0308c30d6d65b824191f6cdc2786bbb105ba0a5d",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/AncestryObservation.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/AncestryObservation.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/AncestryObservation.lean",
+      "bytes": 3546,
+      "imports": [
+        "PredictiveState",
+        "SamuelAlexanderResearch.AncestralRestriction"
+      ],
+      "pending_dependency_source_sha256": [
+        "4738c91ecdac1be616ab0716c09b80aa6c40e691bcac0ef2e4298410656f6f94"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.2485323809960391,
+      "object_sha256": "451339a430a6c6a223a1fd5de0dd4a809074fddf08b126da0a51493f8f6a1ee3",
+      "source_path": "profiles/main/sources/AncestryObservation.lean",
+      "receipt_path": "profiles/main/receipts/AncestryObservation.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "ControlledMemory",
+      "source_sha256": "5d4ffca3a645e350ca42540f2b77181a3a8625b2177442ed28d501cd241b02e1",
+      "git_blob_sha": "c8b1a849058fa694869eac6d9284897e5ac97aca",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/ControlledMemory.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/ControlledMemory.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/ControlledMemory.lean",
+      "bytes": 8227,
+      "imports": [
+        "PredictiveState",
+        "Mathlib.Data.Fintype.Prod"
+      ],
+      "pending_dependency_source_sha256": [
+        "4738c91ecdac1be616ab0716c09b80aa6c40e691bcac0ef2e4298410656f6f94"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.6600172460020985,
+      "object_sha256": "dce1608f0286914079b2c5d80a0f1d6298ef4163a9b91b9c0b2e5458cce0d8c9",
+      "source_path": "profiles/main/sources/ControlledMemory.lean",
+      "receipt_path": "profiles/main/receipts/ControlledMemory.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "HistoryObservation",
+      "source_sha256": "2a4e6f6bc7c8fc008cff1c4563747842d8d2882d83e692637dd6657b3e777d89",
+      "git_blob_sha": "af585b59d5e06957710dc680c000564ce71aef59",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/HistoryObservation.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/HistoryObservation.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/HistoryObservation.lean",
+      "bytes": 3404,
+      "imports": [
+        "PredictiveState",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "pending_dependency_source_sha256": [
+        "4738c91ecdac1be616ab0716c09b80aa6c40e691bcac0ef2e4298410656f6f94"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3091592709970428,
+      "object_sha256": "05dda0e149e2eab6e3064ee2031d62815b02971b589857644f79f80f9391bee7",
+      "source_path": "profiles/main/sources/HistoryObservation.lean",
+      "receipt_path": "profiles/main/receipts/HistoryObservation.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "PredictiveState",
+      "source_sha256": "4738c91ecdac1be616ab0716c09b80aa6c40e691bcac0ef2e4298410656f6f94",
+      "git_blob_sha": "e70d19a4996a39a9067e29f8b038ea0bc7469241",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/PredictiveState.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/PredictiveState.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/PredictiveState.lean",
+      "bytes": 9505,
+      "imports": [
+        "ExactAbstraction",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Quot"
+      ],
+      "pending_dependency_source_sha256": [
+        "a5c8c5113532bfabb84e5259be91c551ab4210ce4301afc7a6fc233cab40c42e"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3150308689946542,
+      "object_sha256": "63650d0c8fc6b25cc3977e959b7db38c7661f780a529039d3180f6b52c08e72a",
+      "source_path": "profiles/main/sources/PredictiveState.lean",
+      "receipt_path": "profiles/main/receipts/PredictiveState.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "StochasticAbstraction",
+      "source_sha256": "943a395e85d3df0fbd8e4570fa205f3a2748cfdaa744ce1add9380b8d41453ce",
+      "git_blob_sha": "1250b1ce86939b9e9851e03667d1c078451a0d08",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/StochasticAbstraction.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/StochasticAbstraction.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/StochasticAbstraction.lean",
+      "bytes": 10726,
+      "imports": [
+        "PredictiveState",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions"
+      ],
+      "pending_dependency_source_sha256": [
+        "4738c91ecdac1be616ab0716c09b80aa6c40e691bcac0ef2e4298410656f6f94"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.513646494000568,
+      "object_sha256": "a4225f1d5126765924e79628d72060815e5dceaaae25c9cf8c7e337aa7e5fc6a",
+      "source_path": "profiles/main/sources/StochasticAbstraction.lean",
+      "receipt_path": "profiles/main/receipts/StochasticAbstraction.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "StochasticExamples",
+      "source_sha256": "78c2f7ea2a59e2d3f3446b22df575353e527d067117863c9a0b3568f38ac1f2c",
+      "git_blob_sha": "6d0f9453b6b26a6aa8721818640d4aaf4f780219",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/StochasticExamples.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/StochasticExamples.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/StochasticExamples.lean",
+      "bytes": 6230,
+      "imports": [
+        "StochasticAbstraction",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "pending_dependency_source_sha256": [
+        "943a395e85d3df0fbd8e4570fa205f3a2748cfdaa744ce1add9380b8d41453ce"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.593445584003348,
+      "object_sha256": "6b48a335cb06894fe39261e72c964d89a3460a85f10bdf38c75ae872a9b115ad",
+      "source_path": "profiles/main/sources/StochasticExamples.lean",
+      "receipt_path": "profiles/main/receipts/StochasticExamples.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "WongPredictiveBridge",
+      "source_sha256": "636070e36c8a874613d652ddcd59f352874030e9e66b1a32a2edced10d96943a",
+      "git_blob_sha": "173f1841a1f54efdf1428a2de88a2777b3cf404c",
+      "representative_original_path": "research/open-problems/time-self-reference/predictive-memory/WongPredictiveBridge.lean",
+      "all_original_records": [
+        "research/open-problems/time-self-reference/predictive-memory/WongPredictiveBridge.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-problems/time-self-reference/predictive-memory/WongPredictiveBridge.lean",
+      "bytes": 3147,
+      "imports": [
+        "AncestryObservation",
+        "WongAlexander"
+      ],
+      "pending_dependency_source_sha256": [
+        "9790ddc196ce3ff30b6abd03a940f7cb0f1543dfb86f954f85ffe9fc87890f50"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5639661290042568,
+      "object_sha256": "ab15ae509536b1f490c3d4b8c289b8596d068c0b4b9fbbbc16e85e5323794e14",
+      "source_path": "profiles/main/sources/WongPredictiveBridge.lean",
+      "receipt_path": "profiles/main/receipts/WongPredictiveBridge.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "GenericUniversalAvoiders",
+      "source_sha256": "7c96183bd1cea8a694b59a12def6ebedb2b6f238044a6c6fb24610e49a37eac4",
+      "git_blob_sha": "64bc8ef2a28c7621a67327bc33cb5d5d58443340",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/embedding/GenericUniversalAvoiders.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/embedding/GenericUniversalAvoiders.lean",
+        "research/open-questions/embedding/GenericUniversalAvoiders.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/embedding/GenericUniversalAvoiders.lean",
+      "bytes": 21037,
+      "imports": [
+        "RealBridges",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Logic.Encodable.Basic"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.5724602679983946,
+      "object_sha256": "eca85b799adf73e753453145d0c9dffc50660f4df643132b039c9fae78f0a476",
+      "source_path": "profiles/main/sources/GenericUniversalAvoiders.lean",
+      "receipt_path": "profiles/main/receipts/GenericUniversalAvoiders.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "TerminalCloneAvoiders",
+      "source_sha256": "f074f86ed6a678ba011175eb2d17be3a2d95d7ee69c2de2a7e5ddc7d8947a783",
+      "git_blob_sha": "b65abec876f0e863a2a001ee1cdceaa5d274c331",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/embedding/TerminalCloneAvoiders.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/embedding/TerminalCloneAvoiders.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/embedding/TerminalCloneAvoiders.lean",
+      "bytes": 17057,
+      "imports": [
+        "GenericUniversalAvoiders"
+      ],
+      "pending_dependency_source_sha256": [
+        "7c96183bd1cea8a694b59a12def6ebedb2b6f238044a6c6fb24610e49a37eac4"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.16009458899498,
+      "object_sha256": "4fd57b64e9055eda697b3857ffa6759f726302492a8d242581caac738284815d",
+      "source_path": "profiles/main/sources/TerminalCloneAvoiders.lean",
+      "receipt_path": "profiles/main/receipts/TerminalCloneAvoiders.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "GenericCertificate",
+      "source_sha256": "f3b1fbfb72d2e7e08b94ff88279432b809747321e0003ee687c04f6307ed5581",
+      "git_blob_sha": "ae6837b8addc241fa3f47adab21ffc8a602c61a5",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/formal/GenericCertificate.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/formal/GenericCertificate.lean",
+        "research/open-questions/ordinal/GenericCertificate.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericCertificate.lean",
+      "bytes": 10316,
+      "imports": [
+        "Mathlib.Order.WellFounded",
+        "Mathlib.Data.Finset.Lattice.Fold",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.7771423849917483,
+      "object_sha256": "4af987c687a4c14b5ba1200d1726a4e2e74969e815d8d72f32cf26c9c3173386",
+      "source_path": "profiles/main/sources/GenericCertificate.lean",
+      "receipt_path": "profiles/main/receipts/GenericCertificate.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "GenericMortalRank",
+      "source_sha256": "227b2cfcd452a5f75674ff0f835f9814818f70f3401dd440fa220a3f0c822f9b",
+      "git_blob_sha": "56ed711ec999b7eb8c96e49f0fc0193698644f32",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/formal/GenericMortalRank.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/formal/GenericMortalRank.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericMortalRank.lean",
+      "bytes": 4748,
+      "imports": [
+        "GenericPruning"
+      ],
+      "pending_dependency_source_sha256": [
+        "46425ee10a089dd24529631c531b04f36ad1cdc7b72e4c8380c0afa62fe6fee4"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.286493295992841,
+      "object_sha256": "20dbabc76aee8c60389c408384594d2720d84e24b4902bb0faef84ee126025b3",
+      "source_path": "profiles/main/sources/GenericMortalRank.lean",
+      "receipt_path": "profiles/main/receipts/GenericMortalRank.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "GenericOrdinalCertificate",
+      "source_sha256": "17c0fbbdd5f904aafd85bca42ec0e8836d03a38ebc5389bb6207abd9a8079510",
+      "git_blob_sha": "8c7a4d2c4e18f5f757c6ab1cd0b0ac665e62661e",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/formal/GenericOrdinalCertificate.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/formal/GenericOrdinalCertificate.lean",
+        "research/open-questions/ordinal/GenericOrdinalCertificate.lean"
+      ],
+      "extra_duplicate_records": 1,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericOrdinalCertificate.lean",
+      "bytes": 2358,
+      "imports": [
+        "GenericCertificate",
+        "Mathlib.SetTheory.Ordinal.Rank"
+      ],
+      "pending_dependency_source_sha256": [
+        "f3b1fbfb72d2e7e08b94ff88279432b809747321e0003ee687c04f6307ed5581"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.284455369997886,
+      "object_sha256": "9c441cf23ad851e1a7d53c66367c6069db032bd73030017906f3fabca7cee8b9",
+      "source_path": "profiles/main/sources/GenericOrdinalCertificate.lean",
+      "receipt_path": "profiles/main/receipts/GenericOrdinalCertificate.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "GenericPruning",
+      "source_sha256": "46425ee10a089dd24529631c531b04f36ad1cdc7b72e4c8380c0afa62fe6fee4",
+      "git_blob_sha": "fe61c3b4ff4b5922758348bb75de8bf3a72ced9f",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/formal/GenericPruning.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/formal/GenericPruning.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/formal/GenericPruning.lean",
+      "bytes": 8501,
+      "imports": [
+        "GenericCertificate"
+      ],
+      "pending_dependency_source_sha256": [
+        "f3b1fbfb72d2e7e08b94ff88279432b809747321e0003ee687c04f6307ed5581"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5402873970015207,
+      "object_sha256": "7553a86de37469bbd99f32b988aab4ae488b2be1d0d790f074ad601f5ac529f4",
+      "source_path": "profiles/main/sources/GenericPruning.lean",
+      "receipt_path": "profiles/main/receipts/GenericPruning.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "BlowUpRankInvariance",
+      "source_sha256": "82324d012e1572abb33255e8b30616faeae1b2033fe3da47173ada6f58024171",
+      "git_blob_sha": "fd1304ccc37c7199ac5dcafe81e124056103efee",
+      "representative_original_path": "research/open-questions/continuation-2026-09-29/ordinal-audit/BlowUpRankInvariance.lean",
+      "all_original_records": [
+        "research/open-questions/continuation-2026-09-29/ordinal-audit/BlowUpRankInvariance.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/continuation-2026-09-29/ordinal-audit/BlowUpRankInvariance.lean",
+      "bytes": 8870,
+      "imports": [
+        "GenericCertificate",
+        "GenericUniversalAvoiders"
+      ],
+      "pending_dependency_source_sha256": [
+        "f3b1fbfb72d2e7e08b94ff88279432b809747321e0003ee687c04f6307ed5581",
+        "7c96183bd1cea8a694b59a12def6ebedb2b6f238044a6c6fb24610e49a37eac4"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.8939433870109497,
+      "object_sha256": "dfbaf9061369bdd5e96e7ab252f406ab1f29fd6aedf61e06fc301ab67609359d",
+      "source_path": "profiles/main/sources/BlowUpRankInvariance.lean",
+      "receipt_path": "profiles/main/receipts/BlowUpRankInvariance.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "ThreeTaxonFiniteEvidence",
+      "source_sha256": "01f53ac6176f612beda29475805d5c27293db7a35d10907a2db3ad8a96ae18f5",
+      "git_blob_sha": "9fb24e16997b0bedcd6682f2728d42ca2b742b08",
+      "representative_original_path": "research/open-questions/genomic-identifiability/next/ThreeTaxonFiniteEvidence.lean",
+      "all_original_records": [
+        "research/open-questions/genomic-identifiability/next/ThreeTaxonFiniteEvidence.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/next/ThreeTaxonFiniteEvidence.lean",
+      "bytes": 6812,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 2.5529344219976338,
+      "object_sha256": "e738e6fa8da914695e4d1adf8c600a0bcead79c6df7e94e40f6769a1fee326ae",
+      "source_path": "profiles/main/sources/ThreeTaxonFiniteEvidence.lean",
+      "receipt_path": "profiles/main/receipts/ThreeTaxonFiniteEvidence.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "ThreeTaxonIdentifiability",
+      "source_sha256": "97eddf62044c37e6973873f987c49ea69e0f9f2081ccd955fd05dc27099c2cf6",
+      "git_blob_sha": "988841aab782b04ec435d59e3b5df9fb494913da",
+      "representative_original_path": "research/open-questions/genomic-identifiability/positive/ThreeTaxonIdentifiability.lean",
+      "all_original_records": [
+        "research/open-questions/genomic-identifiability/positive/ThreeTaxonIdentifiability.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/genomic-identifiability/positive/ThreeTaxonIdentifiability.lean",
+      "bytes": 4996,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.9019364580017282,
+      "object_sha256": "5f3aa093fc71767db420ab9fadb75b98b0d69c66d917fd8030f3d21cd665adda",
+      "source_path": "profiles/main/sources/ThreeTaxonIdentifiability.lean",
+      "receipt_path": "profiles/main/receipts/ThreeTaxonIdentifiability.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "HistoryConverse",
+      "source_sha256": "da301f530d3f41b7ce7a1d1dc9917011be7c508b747d252b32c4f62836b09d62",
+      "git_blob_sha": "2416baca006c479ecf172af89c0d93106b28155f",
+      "representative_original_path": "research/open-questions/ordinal/HistoryConverse.lean",
+      "all_original_records": [
+        "research/open-questions/ordinal/HistoryConverse.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/ordinal/HistoryConverse.lean",
+      "bytes": 1590,
+      "imports": [
+        "HistoryWellFounded"
+      ],
+      "pending_dependency_source_sha256": [
+        "e3efce200eac78dd6ec306b3087f5cd0ec87cf8e3f0db939284c62553133ce96"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5424438710033428,
+      "object_sha256": "c7b9881fa5df01d01e2263adbbf16e8cd75585a32059f1eb268f0b90a2424a80",
+      "source_path": "profiles/main/sources/HistoryConverse.lean",
+      "receipt_path": "profiles/main/receipts/HistoryConverse.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "HistoryPruning",
+      "source_sha256": "7441b97fd379513dcc4ef852bf3ee8eae2a2a297ebed2110fe850e2f339e4a3b",
+      "git_blob_sha": "ce4e931254a98f5f3a1142de29fa259bb5cd43f9",
+      "representative_original_path": "research/open-questions/ordinal/HistoryPruning.lean",
+      "all_original_records": [
+        "research/open-questions/ordinal/HistoryPruning.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/ordinal/HistoryPruning.lean",
+      "bytes": 3452,
+      "imports": [
+        "HistoryWellFounded"
+      ],
+      "pending_dependency_source_sha256": [
+        "e3efce200eac78dd6ec306b3087f5cd0ec87cf8e3f0db939284c62553133ce96"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5929615420027403,
+      "object_sha256": "ca8d4f4b5856fb1fc4e8a9a1307218728432089ac163ff13753dedef55052161",
+      "source_path": "profiles/main/sources/HistoryPruning.lean",
+      "receipt_path": "profiles/main/receipts/HistoryPruning.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "HistoryWellFounded",
+      "source_sha256": "e3efce200eac78dd6ec306b3087f5cd0ec87cf8e3f0db939284c62553133ce96",
+      "git_blob_sha": "63bbda1488aeb6c80aa474b68f7a7a469860d3d9",
+      "representative_original_path": "research/open-questions/ordinal/HistoryWellFounded.lean",
+      "all_original_records": [
+        "research/open-questions/ordinal/HistoryWellFounded.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/ordinal/HistoryWellFounded.lean",
+      "bytes": 5682,
+      "imports": [
+        "ReachableRankNecessity"
+      ],
+      "pending_dependency_source_sha256": [
+        "da2be4d009966196e4b160789e968677b913385e2f7d4f037ed50281fed7fa50"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.7347877719876124,
+      "object_sha256": "b4c30c3b2bb8a26ae99aedaf51f1e5ec00456b5efb39cbe34a5a5d0a52b01b4f",
+      "source_path": "profiles/main/sources/HistoryWellFounded.lean",
+      "receipt_path": "profiles/main/receipts/HistoryWellFounded.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "OrdinalCertificates",
+      "source_sha256": "712cc36d5e75c18f6060439591c392a97af80f9b3a23a92c70198c4deac4d2af",
+      "git_blob_sha": "867dc062efaedcdf95fa241452265c3ccf8120cc",
+      "representative_original_path": "research/open-questions/ordinal/OrdinalCertificates.lean",
+      "all_original_records": [
+        "research/open-questions/ordinal/OrdinalCertificates.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/ordinal/OrdinalCertificates.lean",
+      "bytes": 3676,
+      "imports": [
+        "Std"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6986934760061558,
+      "object_sha256": "baf89b70c6141ed2091bfa7a4c070e54ed5a021b985c594f9e4dc9ce0d89fe73",
+      "source_path": "profiles/main/sources/OrdinalCertificates.lean",
+      "receipt_path": "profiles/main/receipts/OrdinalCertificates.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "OrdinalHistoryRank",
+      "source_sha256": "67b018434e820175aff7af2d9fa615d7cd4a42844600380b81259f4925198d74",
+      "git_blob_sha": "aad33da361604debef401b6a2ddf3efd45e41740",
+      "representative_original_path": "research/open-questions/ordinal/OrdinalHistoryRank.lean",
+      "all_original_records": [
+        "research/open-questions/ordinal/OrdinalHistoryRank.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/ordinal/OrdinalHistoryRank.lean",
+      "bytes": 5155,
+      "imports": [
+        "HistoryWellFounded",
+        "Mathlib.SetTheory.Ordinal.Rank"
+      ],
+      "pending_dependency_source_sha256": [
+        "e3efce200eac78dd6ec306b3087f5cd0ec87cf8e3f0db939284c62553133ce96"
+      ],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5934525560005568,
+      "object_sha256": "77d1350dd3057ba3edb56b908e6499a4d52ce8a3b87edeb2b7554d0c6cf0b868",
+      "source_path": "profiles/main/sources/OrdinalHistoryRank.lean",
+      "receipt_path": "profiles/main/receipts/OrdinalHistoryRank.json",
+      "admitted_to_selected_profile": true
+    },
+    {
+      "profile": "main",
+      "module": "ReachableRankNecessity",
+      "source_sha256": "da2be4d009966196e4b160789e968677b913385e2f7d4f037ed50281fed7fa50",
+      "git_blob_sha": "ca2452f7e94c0946d939c69684682680ae59f509",
+      "representative_original_path": "research/open-questions/ordinal/ReachableRankNecessity.lean",
+      "all_original_records": [
+        "research/open-questions/ordinal/ReachableRankNecessity.lean"
+      ],
+      "extra_duplicate_records": 0,
+      "public_source_url": "https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-/blob/e2502c82ab9a77c00543932f775a71e5374221f7/research/open-questions/ordinal/ReachableRankNecessity.lean",
+      "bytes": 8099,
+      "imports": [
+        "SamuelAlexanderResearch.LayeredUnavoidability"
+      ],
+      "pending_dependency_source_sha256": [],
+      "bounded_replay_status": "PASS_EXACT_SOURCE_COMPONENT",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6904296230059117,
+      "object_sha256": "251ae339a15faa57a4f6678fcb04e6c2278f8d2783fef3613118fc93600b4796",
+      "source_path": "profiles/main/sources/ReachableRankNecessity.lean",
+      "receipt_path": "profiles/main/receipts/ReachableRankNecessity.json",
+      "admitted_to_selected_profile": true
+    }
+  ],
+  "source_scope_or_combined_Lake_admission_inferred": false,
+  "historical_replay_manifest_sha256": "ada9856616adc1cdfd514f0840088b372bb66b1ae5c56bb8605812372d205782",
+  "historical_replay_freeze_sha256": "ac73f115fb79afe5e9fe584df7855524d67e4282333ad69245fb896aa33a8185"
+}
