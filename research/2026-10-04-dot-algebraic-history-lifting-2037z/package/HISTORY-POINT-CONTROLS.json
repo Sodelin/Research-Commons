@@ -1,0 +1,441 @@
+{
+  "status": "PASS_EXACT_ALGEBRAIC_HISTORY_POINT_CONTROLS",
+  "positive_cases": [
+    {
+      "name": "quadratic_rational",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "-1/2",
+          "0",
+          "1"
+        ],
+        "lower": "0",
+        "upper": "1"
+      },
+      "known": {},
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!0 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!0))\n(assert\n (> 1.0 isolatedObservedPoint!0))\n(assert\n (let ((?x22 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!0 1.0)))))\n(let ((?x25 (+ ?x22 (* 1.0 (^ isolatedObservedPoint!0 2.0)))))\n(= ?x25 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!0 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!0))\n(assert\n (> 1.0 isolatedObservedPoint!0))\n(assert\n (let ((?x22 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!0 1.0)))))\n (let ((?x25 (+ ?x22 (* 1.0 (^ isolatedObservedPoint!0 2.0)))))\n (= ?x25 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) isolatedObservedPoint!0) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    },
+    {
+      "name": "genuine_algebraic_coefficient",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "-h0_0",
+          "0",
+          "1"
+        ],
+        "lower": "0",
+        "upper": "1"
+      },
+      "known": {
+        "h0_0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!2 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!2))\n(assert\n (> 1.0 isolatedObservedPoint!2))\n(assert\n (let ((?x23 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ isolatedObservedPoint!2 1.0)))))\n(let ((?x28 (+ ?x23 (* 1.0 (^ isolatedObservedPoint!2 2.0)))))\n(= ?x28 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!2 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!2))\n(assert\n (> 1.0 isolatedObservedPoint!2))\n(assert\n (let ((?x23 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ isolatedObservedPoint!2 1.0)))))\n (let ((?x28 (+ ?x23 (* 1.0 (^ isolatedObservedPoint!2 2.0)))))\n (= ?x28 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 2) isolatedObservedPoint!2) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    },
+    {
+      "name": "chained_own_root_coefficients",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "-action_root_old",
+          "0",
+          "1"
+        ],
+        "lower": "0",
+        "upper": "1"
+      },
+      "known": {
+        "action_root_old": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!6 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!6))\n(assert\n (> 1.0 isolatedObservedPoint!6))\n(assert\n (let ((?x24 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 4)) (- 1)) 1) 1.0)) (* 0.0 (^ isolatedObservedPoint!6 1.0)))))\n(let ((?x26 (+ ?x24 (* 1.0 (^ isolatedObservedPoint!6 2.0)))))\n(= ?x26 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!6 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!6))\n(assert\n (> 1.0 isolatedObservedPoint!6))\n(assert\n (let ((?x24 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 4)) (- 1)) 1) 1.0)) (* 0.0 (^ isolatedObservedPoint!6 1.0)))))\n (let ((?x26 (+ ?x24 (* 1.0 (^ isolatedObservedPoint!6 2.0)))))\n (= ?x26 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 8)) (- 1)) 2) isolatedObservedPoint!6) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    },
+    {
+      "name": "algebraic_bounds_and_division",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "-h0_0/2",
+          "1"
+        ],
+        "lower": "h0_0/3",
+        "upper": "h0_0"
+      },
+      "known": {
+        "h0_0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "8"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!10 () Real)\n(assert\n (let ((?x28 (/ (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) 3.0)))\n (< ?x28 isolatedObservedPoint!10)))\n(assert\n (> (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) isolatedObservedPoint!10))\n(assert\n (let ((?x73 (+ (+ 0.0 (* (root-obj (+ (* 8 (^ x 2)) (- 1)) 1) 1.0)) (* 1.0 (^ isolatedObservedPoint!10 1.0)))))\n(= ?x73 0.0)))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!10 () Real)\n(assert\n (let ((?x28 (/ (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) 3.0)))\n (< ?x28 isolatedObservedPoint!10)))\n(assert\n (> (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) isolatedObservedPoint!10))\n(assert\n (let ((?x73 (+ (+ 0.0 (* (root-obj (+ (* 8 (^ x 2)) (- 1)) 1) 1.0)) (* 1.0 (^ isolatedObservedPoint!10 1.0)))))\n (= ?x73 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 8 (^ x 2)) (- 1)) 2) isolatedObservedPoint!10) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    },
+    {
+      "name": "quintic_symbolic_CAD_shape",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "-h0_0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "lower": "0",
+        "upper": "1"
+      },
+      "known": {
+        "h0_0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!18 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!18))\n(assert\n (> 1.0 isolatedObservedPoint!18))\n(assert\n (let ((?x73 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ isolatedObservedPoint!18 1.0)))))\n(let ((?x120 (+ (+ ?x73 (* 0.0 (^ isolatedObservedPoint!18 2.0))) (* 0.0 (^ isolatedObservedPoint!18 3.0)))))\n(let ((?x74 (+ (+ ?x120 (* 0.0 (^ isolatedObservedPoint!18 4.0))) (* 1.0 (^ isolatedObservedPoint!18 5.0)))))\n(= ?x74 0.0)))))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!18 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!18))\n(assert\n (> 1.0 isolatedObservedPoint!18))\n(assert\n (let ((?x73 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ isolatedObservedPoint!18 1.0)))))\n (let ((?x120 (+ (+ ?x73 (* 0.0 (^ isolatedObservedPoint!18 2.0))) (* 0.0 (^ isolatedObservedPoint!18 3.0)))))\n (let ((?x74 (+ (+ ?x120 (* 0.0 (^ isolatedObservedPoint!18 4.0))) (* 1.0 (^ isolatedObservedPoint!18 5.0)))))\n (= ?x74 0.0)))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 10)) (- 1)) 2) isolatedObservedPoint!18) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    },
+    {
+      "name": "repeated_root_still_one_distinct_value",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "h0_0*h0_0",
+          "-2*h0_0",
+          "1"
+        ],
+        "lower": "0",
+        "upper": "1"
+      },
+      "known": {
+        "h0_0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!22 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!22))\n(assert\n (> 1.0 isolatedObservedPoint!22))\n(assert\n (let ((?x98 (+ (+ 0.0 (* (/ 1.0 2.0) 1.0)) (* (root-obj (+ (^ x 2) (- 2)) 1) (^ isolatedObservedPoint!22 1.0)))))\n(let ((?x116 (+ ?x98 (* 1.0 (^ isolatedObservedPoint!22 2.0)))))\n(= ?x116 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!22 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!22))\n(assert\n (> 1.0 isolatedObservedPoint!22))\n(assert\n (let ((?x98 (+ (+ 0.0 (* (/ 1.0 2.0) 1.0)) (* (root-obj (+ (^ x 2) (- 2)) 1) (^ isolatedObservedPoint!22 1.0)))))\n (let ((?x116 (+ ?x98 (* 1.0 (^ isolatedObservedPoint!22 2.0)))))\n (= ?x116 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) isolatedObservedPoint!22) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    },
+    {
+      "name": "coefficient_rank_drop_at_point",
+      "section": {
+        "name": "action_root_point",
+        "coefficients": [
+          "-1/3",
+          "1",
+          "h0_0-h0_0"
+        ],
+        "lower": "0",
+        "upper": "1"
+      },
+      "known": {
+        "h0_0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "1/3"
+        },
+        "receipts": [
+          {
+            "kind": "point_exists",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!30 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!30))\n(assert\n (> 1.0 isolatedObservedPoint!30))\n(assert\n (let ((?x38 (+ (+ 0.0 (* (- (/ 1.0 3.0)) 1.0)) (* 1.0 (^ isolatedObservedPoint!30 1.0)))))\n(let ((?x47 (+ ?x38 (* 0.0 (^ isolatedObservedPoint!30 2.0)))))\n(= ?x47 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "point_unique",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!30 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!30))\n(assert\n (> 1.0 isolatedObservedPoint!30))\n(assert\n (let ((?x38 (+ (+ 0.0 (* (- (/ 1.0 3.0)) 1.0)) (* 1.0 (^ isolatedObservedPoint!30 1.0)))))\n (let ((?x47 (+ ?x38 (* 0.0 (^ isolatedObservedPoint!30 2.0)))))\n (= ?x47 0.0))))\n(assert\n (and (distinct (/ 1.0 3.0) isolatedObservedPoint!30) true))\n(check-sat)\n"
+          }
+        ],
+        "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+      }
+    }
+  ],
+  "negative_cases": [
+    {
+      "name": "syntax_error",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "'(' was never closed (<unknown>, line 1)"
+    },
+    {
+      "name": "hidden_parameter",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "An action/guard can read only earlier observed response coordinates."
+    },
+    {
+      "name": "future_response",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "An action/guard can read only earlier observed response coordinates."
+    },
+    {
+      "name": "undefined_written_denominator",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "A coefficient or bound has an undefined written domain."
+    },
+    {
+      "name": "zero_power_keeps_written_domain",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "A coefficient or bound has an undefined written domain."
+    },
+    {
+      "name": "all_zero_polynomial",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "The supplied interval has multiple distinct section roots."
+    },
+    {
+      "name": "two_interval_roots",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "The supplied interval has multiple distinct section roots."
+    },
+    {
+      "name": "no_real_root",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "No section root lies in the supplied open interval."
+    },
+    {
+      "name": "endpoint_only",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "No section root lies in the supplied open interval."
+    },
+    {
+      "name": "root_name_collision",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "Section names must be fresh in the observed scope."
+    },
+    {
+      "name": "nonclosed_observation",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "Expected a closed exact real algebraic value."
+    },
+    {
+      "name": "float_observation",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "Observed values must have exact real encodings."
+    },
+    {
+      "name": "bad_polynomial_leading_zero_codec",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "The defining polynomial has zero leading coefficient."
+    },
+    {
+      "name": "invalid_root_index",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "Invalid real-root index."
+    },
+    {
+      "name": "zero_denominator_rational_codec",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "Fraction(1, 0)"
+    },
+    {
+      "name": "forged_hidden_scope_name",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "The point scope contains a non-observation/non-section name."
+    },
+    {
+      "name": "invalid_resource",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+      "reason": "Invalid point resource ceiling."
+    }
+  ],
+  "trust": "fresh exact Z3 point/codec checks; no generic CAD or policy synthesis claim"
+}

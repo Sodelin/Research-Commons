@@ -1,0 +1,12 @@
+{
+  "code": "Module[{h,a,rel,cd,section,coef,coverage,unique,raw},\nrel=0<h<1 && 0<a<1 && a^5==h;\ncd=TimeConstrained[CylindricalDecomposition[rel,{h,a}],8,$Aborted];\nIf[cd===$Aborted || !FreeQ[cd,_CylindricalDecomposition],Return[<|\"Status\"->\"UNKNOWN_CAD_RESOURCE_OR_INCOMPLETE\"|>]];\nsection=Cases[cd,Equal[a,r_Root]:>r,Infinity];\nIf[Length[section]!=1,Return[<|\"Status\"->\"UNKNOWN_ROOT_EXPORT_SHAPE\",\"Raw\"->ToString[cd,InputForm]|>]];\ncoef=CoefficientList[section[[1,1]][a],a];\ncoverage=TimeConstrained[Resolve[ForAll[h,Implies[0<h<1,Exists[a,0<a<1 && a^5==h]]],Reals],8,$Aborted];\nunique=TimeConstrained[Resolve[ForAll[{h,a},Implies[0<h<1 && 0<a<1 && a^5==h,a==section[[1]]]],Reals],8,$Aborted];\n<|\"Version\"->$Version,\"Status\"->If[coverage===True && unique===True,\"PARAMETERIZED_ROOT_CELL_CONTROL_CERTIFIED_SAME_BACKEND\",\"UNKNOWN_OR_UNCERTIFIED\"],\n\"RawCAD\"->ToString[cd,InputForm],\"CoefficientStrings\"->(ToString[#,InputForm]& /@ (coef/.h->historyCoordinate)),\n\"RootIndex\"->section[[1,2]],\"Coverage\"->coverage,\"RootIdentity\"->unique,\n\"Scope\"->\"One structured quintic CAD cell control; no generic G7 selector compilation claim\"|>]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= <|\"Version\" -> \"15.0.1 for Linux x86 (64-bit) (July 2, 2026)\", \"Status\" -> \"PARAMETERIZED_ROOT_CELL_CONTROL_CERTIFIED_SAME_BACKEND\", \"RawCAD\" -> \"Inequality[0, Less, h$83744, Less, 1] && a$83744 == Root[-h$83744 + #1^5 & , 1]\", \"CoefficientStrings\" -> {\"-historyCoordinate\", \"0\", \"0\", \"0\", \"0\", \"1\"}, \"RootIndex\" -> 1, \"Coverage\" -> True, \"RootIdentity\" -> True, \"Scope\" -> \"One structured quintic CAD cell control; no generic G7 selector compilation claim\"|>"
+      }
+    ],
+    "isError": false
+  }
+}

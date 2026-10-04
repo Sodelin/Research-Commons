@@ -1,0 +1,1377 @@
+{
+  "schema": "source-admitted-last-call-33-pair-all-interior-experiment-v1",
+  "status": "PASS_INDEPENDENT_POSITIVE_IDENTITIES_AND_LOCAL_QE",
+  "source_provider_manifest_sha256": "3c11ea185f573e6bf47d62a2dde96bd6215aa8eac4073b361f3571557793cbf1",
+  "source_image_certificate_sha256": "2332f4a6e242c8a29cf9ce1e39486e4d6ce8a739b4b02d5ce87d85ce69dabcb8",
+  "software": {
+    "sympy": "1.14.0",
+    "z3": "4.15.3"
+  },
+  "domain": {
+    "source_parameters": "0<sourceA0,sourceA1,sourceB0,sourceB1<1",
+    "programme_weights": "programmeWeight0>0,programmeWeight1>0,sum=1"
+  },
+  "formulation": "For each different-target competitor pair, exclude existence of two jointly history-consistent source assignments with equal proposed responses. The final response vector is eliminated logically before source-parameter QE.",
+  "history_in_this_experiment": [],
+  "exact_positive_identity_certificates": [
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        0,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        1,
+        2
+      ],
+      "orientation": -1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        0,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        2,
+        1
+      ],
+      "orientation": -1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        1,
+        0
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        1,
+        2
+      ],
+      "orientation": -1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        1,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        1,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        2,
+        0
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        2,
+        1
+      ],
+      "orientation": -1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        2,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        0
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        1
+      ],
+      "source_imageB": [
+        0,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        1,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        1
+      ],
+      "source_imageB": [
+        1,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        1
+      ],
+      "source_imageB": [
+        1,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        1
+      ],
+      "source_imageB": [
+        2,
+        0
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        1,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        1
+      ],
+      "source_imageB": [
+        2,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        1
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        2
+      ],
+      "source_imageB": [
+        1,
+        0
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1"
+      ],
+      "coordinate_indices": [
+        2,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        2
+      ],
+      "source_imageB": [
+        1,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        2
+      ],
+      "source_imageB": [
+        1,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        2
+      ],
+      "source_imageB": [
+        2,
+        1
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        0,
+        2
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        0
+      ],
+      "source_imageB": [
+        1,
+        1
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        0
+      ],
+      "source_imageB": [
+        1,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        0
+      ],
+      "source_imageB": [
+        2,
+        0
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        1,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        0
+      ],
+      "source_imageB": [
+        2,
+        1
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        0
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        1
+      ],
+      "source_imageB": [
+        1,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        2,
+        0
+      ],
+      "orientation": -1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        1
+      ],
+      "source_imageB": [
+        2,
+        0
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        1,
+        0
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        1
+      ],
+      "source_imageB": [
+        2,
+        1
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        2,
+        0
+      ],
+      "orientation": -1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        1
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        1,
+        2
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight0",
+          "1 - sourceB0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        2
+      ],
+      "source_imageB": [
+        2,
+        0
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1"
+      ],
+      "coordinate_indices": [
+        1,
+        0
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        1,
+        2
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "-2*programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight0 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 - programmeWeight0 - 2*programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        1,
+        0
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight0",
+          "1 - sourceA0"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        2,
+        0
+      ],
+      "source_imageB": [
+        2,
+        1
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ],
+        [
+          "programmeWeight1",
+          "1 - sourceB1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        2,
+        0
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        0,
+        1
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    },
+    {
+      "source_imageA": [
+        2,
+        1
+      ],
+      "source_imageB": [
+        2,
+        2
+      ],
+      "equations": [
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3",
+        "programmeWeight0*sourceA0/3 - programmeWeight0*sourceB0/3 - 2*programmeWeight1*sourceA1/3 - programmeWeight1*sourceB1/3 + programmeWeight1",
+        "-2*programmeWeight0*sourceA0/3 + 2*programmeWeight0*sourceB0/3 + programmeWeight1*sourceA1/3 + 2*programmeWeight1*sourceB1/3 - programmeWeight1"
+      ],
+      "coordinate_indices": [
+        1,
+        0
+      ],
+      "orientation": 1,
+      "positive_products": [
+        [
+          "programmeWeight1",
+          "1 - sourceA1"
+        ]
+      ],
+      "exact_identity_check": "PASS",
+      "strict_order_contradiction": "a nonempty sum of products of strictly positive factors cannot equal zero"
+    }
+  ],
+  "quantifier_free_relation": "And(Not(programmeWeight0 <= 0),\n    Not(programmeWeight1 <= 0),\n    programmeWeight0 + programmeWeight1 == 1)",
+  "local_QE_pair_receipts": [
+    {
+      "source_pair": [
+        0,
+        1
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0027580939931795
+    },
+    {
+      "source_pair": [
+        0,
+        2
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001253256996278651
+    },
+    {
+      "source_pair": [
+        0,
+        3
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001943976996699348
+    },
+    {
+      "source_pair": [
+        0,
+        4
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0014807999978074804
+    },
+    {
+      "source_pair": [
+        0,
+        5
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0014604089956264943
+    },
+    {
+      "source_pair": [
+        0,
+        6
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0015602600033162162
+    },
+    {
+      "source_pair": [
+        0,
+        7
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0031330240017268807
+    },
+    {
+      "source_pair": [
+        0,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0017450180021114647
+    },
+    {
+      "source_pair": [
+        1,
+        2
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0021866229944862425
+    },
+    {
+      "source_pair": [
+        1,
+        4
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001378637010930106
+    },
+    {
+      "source_pair": [
+        1,
+        5
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001648613004363142
+    },
+    {
+      "source_pair": [
+        1,
+        6
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0016430940013378859
+    },
+    {
+      "source_pair": [
+        1,
+        7
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0011858549987664446
+    },
+    {
+      "source_pair": [
+        1,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0014285509969340637
+    },
+    {
+      "source_pair": [
+        2,
+        3
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0015544210036750883
+    },
+    {
+      "source_pair": [
+        2,
+        4
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.002430529988487251
+    },
+    {
+      "source_pair": [
+        2,
+        5
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001784706997568719
+    },
+    {
+      "source_pair": [
+        2,
+        7
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0017335010052192956
+    },
+    {
+      "source_pair": [
+        2,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0016309859929606318
+    },
+    {
+      "source_pair": [
+        3,
+        4
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0015018010017229244
+    },
+    {
+      "source_pair": [
+        3,
+        5
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001941934009664692
+    },
+    {
+      "source_pair": [
+        3,
+        6
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0016323589952662587
+    },
+    {
+      "source_pair": [
+        3,
+        7
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0023937250080052763
+    },
+    {
+      "source_pair": [
+        3,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0018610520055517554
+    },
+    {
+      "source_pair": [
+        4,
+        5
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.001200037993839942
+    },
+    {
+      "source_pair": [
+        4,
+        6
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0017732499982230365
+    },
+    {
+      "source_pair": [
+        4,
+        7
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0012658369960263371
+    },
+    {
+      "source_pair": [
+        4,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0016142709937412292
+    },
+    {
+      "source_pair": [
+        5,
+        6
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0016829649975989014
+    },
+    {
+      "source_pair": [
+        5,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0012338579981587827
+    },
+    {
+      "source_pair": [
+        6,
+        7
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.002392352995229885
+    },
+    {
+      "source_pair": [
+        6,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0013678599934792146
+    },
+    {
+      "source_pair": [
+        7,
+        8
+      ],
+      "different_target": true,
+      "eliminated_relation": "False",
+      "elapsed_seconds": 0.0010781229939311743
+    }
+  ],
+  "elapsed_seconds": 0.16280763800023124,
+  "trust": "The all-interior conclusion has an independent rational-polynomial/strict-order certificate; local QE is a separately replayed computational check.",
+  "scope": "Accepted exact nine source images of all546 original n4/r1 full-forcing sources. No generic multi-call CAD, Lean, empirical or unknown-size claim."
+}
