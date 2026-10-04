@@ -1,0 +1,64 @@
+{
+  "status": "PASS_POLYNOMIAL_ZERO_EXPONENT_IDENTITY",
+  "policy": {
+    "kind": "call",
+    "support": [
+      0
+    ],
+    "weights": [
+      "0**0"
+    ],
+    "next": {
+      "kind": "leaf",
+      "target": "A"
+    }
+  },
+  "result": {
+    "status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND",
+    "receipts": [
+      {
+        "kind": "initial_joint_history_admission",
+        "source_model": 0,
+        "policy_path": [],
+        "status": "sat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!2 () Real)\n(assert\n (let (($x15 (and (> oneOriginalSourceParameter!2 0.0) (< oneOriginalSourceParameter!2 1.0))))\n(and $x15)))\n(check-sat)\n",
+        "counterexample_model": "[oneOriginalSourceParameter!2 = 1/2]"
+      },
+      {
+        "kind": "source_reachable_real_action_legality",
+        "source_model": 0,
+        "policy_path": [],
+        "status": "unsat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!2 () Real)\n(assert\n (let (($x17 (and true true)))\n(let (($x36 (and $x17 (= (+ 0.0 1.0) 1.0) (> 1.0 0.0))))\n(let (($x15 (and (> oneOriginalSourceParameter!2 0.0) (< oneOriginalSourceParameter!2 1.0))))\n(let (($x16 (and $x15)))\n(and $x16 (not $x36)))))))\n(check-sat)\n"
+      },
+      {
+        "kind": "PATH_union_resource_budget",
+        "source_model": 0,
+        "policy_path": [],
+        "status": "unsat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!2 () Real)\n(assert\n (let (($x15 (and (> oneOriginalSourceParameter!2 0.0) (< oneOriginalSourceParameter!2 1.0))))\n(let (($x16 (and $x15)))\n(and $x16 (not true)))))\n(check-sat)\n"
+      },
+      {
+        "kind": "actual_target_leaf",
+        "source_model": 0,
+        "policy_path": [
+          "call"
+        ],
+        "status": "unsat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!2 () Real)\n(assert\n (let (($x15 (and (> oneOriginalSourceParameter!2 0.0) (< oneOriginalSourceParameter!2 1.0))))\n(let (($x16 (and $x15)))\n(and $x16 (not true)))))\n(check-sat)\n"
+      }
+    ],
+    "source_models": 1,
+    "policy_nodes_checked": 2,
+    "path_budget": [
+      1,
+      1,
+      0
+    ],
+    "source_assignment_shared_through_complete_history": true,
+    "coverage": "all source-generated reachable response histories, with deterministic first-eligible guards",
+    "trust": "completed exact Z3 QF_NRA counterexample checks; no independent generic proof replay",
+    "source_admission": "separate complete original-source provider required",
+    "generic_adaptive_policy_synthesis_claimed": false
+  }
+}

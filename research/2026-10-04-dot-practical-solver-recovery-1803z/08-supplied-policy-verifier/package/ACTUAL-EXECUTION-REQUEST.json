@@ -1,0 +1,167 @@
+{
+  "schema": "execute-actual-source-finite-adaptive-policy-v1",
+  "design_request": {
+    "n": 4,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "common"
+    ],
+    "readout": "unrooted_splits",
+    "target_kind": "nontrivial_displayed_split_union",
+    "deterministic_rows": [
+      {}
+    ],
+    "supports": [
+      [
+        1
+      ]
+    ],
+    "budgets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "resource_contract": "reset_deletion_closed_path",
+    "limits": {
+      "seconds": 30,
+      "max_sources": 20
+    }
+  },
+  "history": [],
+  "budget": [
+    1,
+    1,
+    0
+  ],
+  "policy": {
+    "kind": "call",
+    "support": [
+      0
+    ],
+    "weights": [
+      "1"
+    ],
+    "next": {
+      "kind": "decision",
+      "branches": [
+        {
+          "guard": {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "h0_0",
+                "right": "h0_1"
+              },
+              {
+                "op": "gt",
+                "left": "h0_0",
+                "right": "h0_2"
+              }
+            ]
+          },
+          "next": {
+            "kind": "leaf",
+            "target": [
+              [
+                [
+                  "L0",
+                  "L1"
+                ],
+                [
+                  "L2",
+                  "L3"
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "guard": {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "h0_1",
+                "right": "h0_0"
+              },
+              {
+                "op": "gt",
+                "left": "h0_1",
+                "right": "h0_2"
+              }
+            ]
+          },
+          "next": {
+            "kind": "leaf",
+            "target": [
+              [
+                [
+                  "L0",
+                  "L2"
+                ],
+                [
+                  "L1",
+                  "L3"
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "guard": {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "h0_2",
+                "right": "h0_0"
+              },
+              {
+                "op": "gt",
+                "left": "h0_2",
+                "right": "h0_1"
+              }
+            ]
+          },
+          "next": {
+            "kind": "leaf",
+            "target": [
+              [
+                [
+                  "L0",
+                  "L3"
+                ],
+                [
+                  "L1",
+                  "L2"
+                ]
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "backend_limits": {
+    "per_query_ms": 3000,
+    "max_nodes": 10000
+  },
+  "observed_responses": [
+    [
+      "2/3",
+      "1/6",
+      "1/6"
+    ]
+  ]
+}

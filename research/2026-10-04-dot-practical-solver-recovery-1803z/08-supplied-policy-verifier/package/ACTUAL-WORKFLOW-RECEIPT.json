@@ -1,0 +1,500 @@
+{
+  "status": "PASS_ACTUAL_EXPORT_POLICY_VERIFICATION_AND_EXECUTION",
+  "actual_source_count": 15,
+  "verification_status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND",
+  "unchanged_actual_model_hash": "78da02b2099204557d1414aec1d10c1dd2063b22e012c72834b00dafe985c402",
+  "paths": [
+    {
+      "label": "root",
+      "result": {
+        "status": "NEXT_VERIFIED_SOURCE_ADMITTED_ACTION",
+        "action": {
+          "original_row_weights": [
+            "1"
+          ],
+          "support_zero_based": [
+            0
+          ]
+        },
+        "executed_actions": [],
+        "admissions": [
+          {
+            "history_length": 0,
+            "status": "JOINT_ACTUAL_HISTORY_ADMITTED_SAME_BACKEND",
+            "receipts": [
+              {
+                "source_model": 0,
+                "status": "sat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!720 () Real)\n(declare-fun oneOriginalHistoryParameter!721 () Real)\n(declare-fun oneOriginalHistoryParameter!722 () Real)\n(declare-fun oneOriginalHistoryParameter!723 () Real)\n(declare-fun oneOriginalHistoryParameter!724 () Real)\n(declare-fun oneOriginalHistoryParameter!725 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!720 0.0) (< oneOriginalHistoryParameter!720 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!721 0.0) (< oneOriginalHistoryParameter!721 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!722 0.0) (< oneOriginalHistoryParameter!722 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!723 0.0) (< oneOriginalHistoryParameter!723 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!724 0.0) (< oneOriginalHistoryParameter!724 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!725 0.0) (< oneOriginalHistoryParameter!725 1.0)))\n(check-sat)\n",
+                "original_source": {
+                  "edges": [
+                    [
+                      "R",
+                      "T0"
+                    ],
+                    [
+                      "R",
+                      "T1"
+                    ],
+                    [
+                      "T0",
+                      "L0"
+                    ],
+                    [
+                      "T0",
+                      "L1"
+                    ],
+                    [
+                      "T1",
+                      "L2"
+                    ],
+                    [
+                      "T1",
+                      "L3"
+                    ]
+                  ],
+                  "root": "R",
+                  "leaves": [
+                    "L0",
+                    "L1",
+                    "L2",
+                    "L3"
+                  ]
+                },
+                "mechanism": "common",
+                "actual_target": [
+                  [
+                    [
+                      "L0",
+                      "L1"
+                    ],
+                    [
+                      "L2",
+                      "L3"
+                    ]
+                  ]
+                ],
+                "original_parameter_assignment": {
+                  "x0": "1/2",
+                  "x1": "1/2",
+                  "x2": "1/2",
+                  "x3": "1/2",
+                  "x4": "1/2",
+                  "x5": "1/2"
+                }
+              }
+            ]
+          }
+        ],
+        "verification_status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND",
+        "actual_source_models_sha256": "78da02b2099204557d1414aec1d10c1dd2063b22e012c72834b00dafe985c402",
+        "empirical_admission_claimed": false,
+        "generic_adaptive_synthesis_claimed": false
+      }
+    },
+    {
+      "label": "leaf",
+      "result": {
+        "status": "IDENTIFIED_ACTUAL_TARGET_BY_VERIFIED_ADAPTIVE_POLICY_SAME_BACKEND",
+        "actual_target": [
+          [
+            [
+              "L0",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3"
+            ]
+          ]
+        ],
+        "executed_actions": [
+          {
+            "original_row_weights": [
+              "1"
+            ],
+            "support_zero_based": [
+              0
+            ]
+          }
+        ],
+        "admissions": [
+          {
+            "history_length": 0,
+            "status": "JOINT_ACTUAL_HISTORY_ADMITTED_SAME_BACKEND",
+            "receipts": [
+              {
+                "source_model": 0,
+                "status": "sat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1086 () Real)\n(declare-fun oneOriginalHistoryParameter!1087 () Real)\n(declare-fun oneOriginalHistoryParameter!1088 () Real)\n(declare-fun oneOriginalHistoryParameter!1089 () Real)\n(declare-fun oneOriginalHistoryParameter!1090 () Real)\n(declare-fun oneOriginalHistoryParameter!1091 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1086 0.0) (< oneOriginalHistoryParameter!1086 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1087 0.0) (< oneOriginalHistoryParameter!1087 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1088 0.0) (< oneOriginalHistoryParameter!1088 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1089 0.0) (< oneOriginalHistoryParameter!1089 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1090 0.0) (< oneOriginalHistoryParameter!1090 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1091 0.0) (< oneOriginalHistoryParameter!1091 1.0)))\n(check-sat)\n",
+                "original_source": {
+                  "edges": [
+                    [
+                      "R",
+                      "T0"
+                    ],
+                    [
+                      "R",
+                      "T1"
+                    ],
+                    [
+                      "T0",
+                      "L0"
+                    ],
+                    [
+                      "T0",
+                      "L1"
+                    ],
+                    [
+                      "T1",
+                      "L2"
+                    ],
+                    [
+                      "T1",
+                      "L3"
+                    ]
+                  ],
+                  "root": "R",
+                  "leaves": [
+                    "L0",
+                    "L1",
+                    "L2",
+                    "L3"
+                  ]
+                },
+                "mechanism": "common",
+                "actual_target": [
+                  [
+                    [
+                      "L0",
+                      "L1"
+                    ],
+                    [
+                      "L2",
+                      "L3"
+                    ]
+                  ]
+                ],
+                "original_parameter_assignment": {
+                  "x0": "1/2",
+                  "x1": "1/2",
+                  "x2": "1/2",
+                  "x3": "1/2",
+                  "x4": "1/2",
+                  "x5": "1/2"
+                }
+              }
+            ]
+          },
+          {
+            "history_length": 1,
+            "status": "JOINT_ACTUAL_HISTORY_ADMITTED_SAME_BACKEND",
+            "receipts": [
+              {
+                "source_model": 0,
+                "status": "sat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1092 () Real)\n(declare-fun oneOriginalHistoryParameter!1093 () Real)\n(declare-fun oneOriginalHistoryParameter!1094 () Real)\n(declare-fun oneOriginalHistoryParameter!1095 () Real)\n(declare-fun oneOriginalHistoryParameter!1096 () Real)\n(declare-fun oneOriginalHistoryParameter!1097 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1092 0.0) (< oneOriginalHistoryParameter!1092 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1093 0.0) (< oneOriginalHistoryParameter!1093 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1094 0.0) (< oneOriginalHistoryParameter!1094 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1095 0.0) (< oneOriginalHistoryParameter!1095 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1096 0.0) (< oneOriginalHistoryParameter!1096 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1097 0.0) (< oneOriginalHistoryParameter!1097 1.0)))\n(assert\n (let ((?x146 (* (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1092) oneOriginalHistoryParameter!1093)))\n (let ((?x19 (+ 0.0 1.0)))\n (let ((?x132 (+ ?x19 ?x146)))\n (= (/ 2.0 3.0) (+ 0.0 (* 1.0 ?x132)))))))\n(assert\n (let ((?x35 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1092) oneOriginalHistoryParameter!1093)))\n (= (/ 1.0 6.0) (+ 0.0 (* 1.0 ?x35)))))\n(assert\n (let ((?x35 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1092) oneOriginalHistoryParameter!1093)))\n(= (/ 1.0 6.0) (+ 0.0 (* 1.0 ?x35)))))\n(check-sat)\n",
+                "original_source": {
+                  "edges": [
+                    [
+                      "R",
+                      "T0"
+                    ],
+                    [
+                      "R",
+                      "T1"
+                    ],
+                    [
+                      "T0",
+                      "L0"
+                    ],
+                    [
+                      "T0",
+                      "L1"
+                    ],
+                    [
+                      "T1",
+                      "L2"
+                    ],
+                    [
+                      "T1",
+                      "L3"
+                    ]
+                  ],
+                  "root": "R",
+                  "leaves": [
+                    "L0",
+                    "L1",
+                    "L2",
+                    "L3"
+                  ]
+                },
+                "mechanism": "common",
+                "actual_target": [
+                  [
+                    [
+                      "L0",
+                      "L1"
+                    ],
+                    [
+                      "L2",
+                      "L3"
+                    ]
+                  ]
+                ],
+                "original_parameter_assignment": {
+                  "x0": "2/3",
+                  "x1": "3/4",
+                  "x2": "1/2",
+                  "x3": "1/2",
+                  "x4": "1/2",
+                  "x5": "1/2"
+                }
+              }
+            ]
+          }
+        ],
+        "verification_status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND",
+        "actual_source_models_sha256": "78da02b2099204557d1414aec1d10c1dd2063b22e012c72834b00dafe985c402",
+        "empirical_admission_claimed": false,
+        "generic_adaptive_synthesis_claimed": false,
+        "runtime_response_codec": "exact rational; unsupported codecs remain UNKNOWN"
+      }
+    },
+    {
+      "label": "impossible",
+      "result": {
+        "status": "UNKNOWN_OR_IMPOSSIBLE_ACTUAL_HISTORY",
+        "admissions": [
+          {
+            "history_length": 0,
+            "status": "JOINT_ACTUAL_HISTORY_ADMITTED_SAME_BACKEND",
+            "receipts": [
+              {
+                "source_model": 0,
+                "status": "sat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1460 () Real)\n(declare-fun oneOriginalHistoryParameter!1461 () Real)\n(declare-fun oneOriginalHistoryParameter!1462 () Real)\n(declare-fun oneOriginalHistoryParameter!1463 () Real)\n(declare-fun oneOriginalHistoryParameter!1464 () Real)\n(declare-fun oneOriginalHistoryParameter!1465 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1460 0.0) (< oneOriginalHistoryParameter!1460 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1461 0.0) (< oneOriginalHistoryParameter!1461 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1462 0.0) (< oneOriginalHistoryParameter!1462 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1463 0.0) (< oneOriginalHistoryParameter!1463 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1464 0.0) (< oneOriginalHistoryParameter!1464 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1465 0.0) (< oneOriginalHistoryParameter!1465 1.0)))\n(check-sat)\n",
+                "original_source": {
+                  "edges": [
+                    [
+                      "R",
+                      "T0"
+                    ],
+                    [
+                      "R",
+                      "T1"
+                    ],
+                    [
+                      "T0",
+                      "L0"
+                    ],
+                    [
+                      "T0",
+                      "L1"
+                    ],
+                    [
+                      "T1",
+                      "L2"
+                    ],
+                    [
+                      "T1",
+                      "L3"
+                    ]
+                  ],
+                  "root": "R",
+                  "leaves": [
+                    "L0",
+                    "L1",
+                    "L2",
+                    "L3"
+                  ]
+                },
+                "mechanism": "common",
+                "actual_target": [
+                  [
+                    [
+                      "L0",
+                      "L1"
+                    ],
+                    [
+                      "L2",
+                      "L3"
+                    ]
+                  ]
+                ],
+                "original_parameter_assignment": {
+                  "x0": "1/2",
+                  "x1": "1/2",
+                  "x2": "1/2",
+                  "x3": "1/2",
+                  "x4": "1/2",
+                  "x5": "1/2"
+                }
+              }
+            ]
+          },
+          {
+            "history_length": 1,
+            "status": "NO_ADMITTED_SOURCE_FOR_COMPLETE_HISTORY_SAME_BACKEND",
+            "receipts": [
+              {
+                "source_model": 0,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1466 () Real)\n(declare-fun oneOriginalHistoryParameter!1467 () Real)\n(declare-fun oneOriginalHistoryParameter!1468 () Real)\n(declare-fun oneOriginalHistoryParameter!1469 () Real)\n(declare-fun oneOriginalHistoryParameter!1470 () Real)\n(declare-fun oneOriginalHistoryParameter!1471 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1466 0.0) (< oneOriginalHistoryParameter!1466 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1467 0.0) (< oneOriginalHistoryParameter!1467 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1468 0.0) (< oneOriginalHistoryParameter!1468 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1469 0.0) (< oneOriginalHistoryParameter!1469 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1470 0.0) (< oneOriginalHistoryParameter!1470 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1471 0.0) (< oneOriginalHistoryParameter!1471 1.0)))\n(assert\n (let ((?x96 (* (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1466) oneOriginalHistoryParameter!1467)))\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x53 (+ ?x136 ?x96)))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x53)))))))\n(assert\n (let ((?x108 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1466) oneOriginalHistoryParameter!1467)))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x108)))))\n(assert\n (let ((?x108 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1466) oneOriginalHistoryParameter!1467)))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x108)))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 1,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1474 () Real)\n(declare-fun oneOriginalHistoryParameter!1475 () Real)\n(declare-fun oneOriginalHistoryParameter!1476 () Real)\n(declare-fun oneOriginalHistoryParameter!1477 () Real)\n(declare-fun oneOriginalHistoryParameter!1478 () Real)\n(declare-fun oneOriginalHistoryParameter!1479 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1474 0.0) (< oneOriginalHistoryParameter!1474 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1475 0.0) (< oneOriginalHistoryParameter!1475 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1476 0.0) (< oneOriginalHistoryParameter!1476 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1477 0.0) (< oneOriginalHistoryParameter!1477 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1478 0.0) (< oneOriginalHistoryParameter!1478 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1479 0.0) (< oneOriginalHistoryParameter!1479 1.0)))\n(assert\n (let ((?x68 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1474) oneOriginalHistoryParameter!1475)))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x68)))))\n(assert\n (let ((?x21 (* (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1474) oneOriginalHistoryParameter!1475)))\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x143 (+ ?x136 ?x21)))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x143)))))))\n(assert\n (let ((?x68 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1474) oneOriginalHistoryParameter!1475)))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x68)))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 2,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1482 () Real)\n(declare-fun oneOriginalHistoryParameter!1483 () Real)\n(declare-fun oneOriginalHistoryParameter!1484 () Real)\n(declare-fun oneOriginalHistoryParameter!1485 () Real)\n(declare-fun oneOriginalHistoryParameter!1486 () Real)\n(declare-fun oneOriginalHistoryParameter!1487 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1482 0.0) (< oneOriginalHistoryParameter!1482 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1483 0.0) (< oneOriginalHistoryParameter!1483 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1484 0.0) (< oneOriginalHistoryParameter!1484 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1485 0.0) (< oneOriginalHistoryParameter!1485 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1486 0.0) (< oneOriginalHistoryParameter!1486 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1487 0.0) (< oneOriginalHistoryParameter!1487 1.0)))\n(assert\n (let ((?x114 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1482) oneOriginalHistoryParameter!1483)))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x114)))))\n(assert\n (let ((?x114 (* (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1482) oneOriginalHistoryParameter!1483)))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x114)))))\n(assert\n (let ((?x104 (* (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1482) oneOriginalHistoryParameter!1483)))\n(let ((?x136 (+ 0.0 1.0)))\n(let ((?x151 (+ ?x136 ?x104)))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x151)))))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 3,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1490 () Real)\n(declare-fun oneOriginalHistoryParameter!1491 () Real)\n(declare-fun oneOriginalHistoryParameter!1492 () Real)\n(declare-fun oneOriginalHistoryParameter!1493 () Real)\n(declare-fun oneOriginalHistoryParameter!1494 () Real)\n(declare-fun oneOriginalHistoryParameter!1495 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1490 0.0) (< oneOriginalHistoryParameter!1490 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1491 0.0) (< oneOriginalHistoryParameter!1491 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1492 0.0) (< oneOriginalHistoryParameter!1492 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1493 0.0) (< oneOriginalHistoryParameter!1493 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1494 0.0) (< oneOriginalHistoryParameter!1494 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1495 0.0) (< oneOriginalHistoryParameter!1495 1.0)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x154 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1491))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x154))))))\n(assert\n (let ((?x138 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1491)))))\n (= (/ 1.0 3.0) ?x138)))\n(assert\n (let ((?x138 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1491)))))\n(= (/ 1.0 3.0) ?x138)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 4,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1496 () Real)\n(declare-fun oneOriginalHistoryParameter!1497 () Real)\n(declare-fun oneOriginalHistoryParameter!1498 () Real)\n(declare-fun oneOriginalHistoryParameter!1499 () Real)\n(declare-fun oneOriginalHistoryParameter!1500 () Real)\n(declare-fun oneOriginalHistoryParameter!1501 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1496 0.0) (< oneOriginalHistoryParameter!1496 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1497 0.0) (< oneOriginalHistoryParameter!1497 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1498 0.0) (< oneOriginalHistoryParameter!1498 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1499 0.0) (< oneOriginalHistoryParameter!1499 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1500 0.0) (< oneOriginalHistoryParameter!1500 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1501 0.0) (< oneOriginalHistoryParameter!1501 1.0)))\n(assert\n (let ((?x69 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1497)))))\n (= (/ 1.0 3.0) ?x69)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x42 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1497))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x42))))))\n(assert\n (let ((?x69 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1497)))))\n(= (/ 1.0 3.0) ?x69)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 5,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1502 () Real)\n(declare-fun oneOriginalHistoryParameter!1503 () Real)\n(declare-fun oneOriginalHistoryParameter!1504 () Real)\n(declare-fun oneOriginalHistoryParameter!1505 () Real)\n(declare-fun oneOriginalHistoryParameter!1506 () Real)\n(declare-fun oneOriginalHistoryParameter!1507 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1502 0.0) (< oneOriginalHistoryParameter!1502 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1503 0.0) (< oneOriginalHistoryParameter!1503 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1504 0.0) (< oneOriginalHistoryParameter!1504 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1505 0.0) (< oneOriginalHistoryParameter!1505 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1506 0.0) (< oneOriginalHistoryParameter!1506 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1507 0.0) (< oneOriginalHistoryParameter!1507 1.0)))\n(assert\n (let ((?x5 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1503)))))\n (= (/ 1.0 3.0) ?x5)))\n(assert\n (let ((?x5 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1503)))))\n (= (/ 1.0 3.0) ?x5)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n(let ((?x134 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1503))))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x134))))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 6,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1508 () Real)\n(declare-fun oneOriginalHistoryParameter!1509 () Real)\n(declare-fun oneOriginalHistoryParameter!1510 () Real)\n(declare-fun oneOriginalHistoryParameter!1511 () Real)\n(declare-fun oneOriginalHistoryParameter!1512 () Real)\n(declare-fun oneOriginalHistoryParameter!1513 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1508 0.0) (< oneOriginalHistoryParameter!1508 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1509 0.0) (< oneOriginalHistoryParameter!1509 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1510 0.0) (< oneOriginalHistoryParameter!1510 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1511 0.0) (< oneOriginalHistoryParameter!1511 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1512 0.0) (< oneOriginalHistoryParameter!1512 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1513 0.0) (< oneOriginalHistoryParameter!1513 1.0)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x152 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1509))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x152))))))\n(assert\n (let ((?x138 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1509)))))\n (= (/ 1.0 3.0) ?x138)))\n(assert\n (let ((?x138 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1509)))))\n(= (/ 1.0 3.0) ?x138)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 7,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1514 () Real)\n(declare-fun oneOriginalHistoryParameter!1515 () Real)\n(declare-fun oneOriginalHistoryParameter!1516 () Real)\n(declare-fun oneOriginalHistoryParameter!1517 () Real)\n(declare-fun oneOriginalHistoryParameter!1518 () Real)\n(declare-fun oneOriginalHistoryParameter!1519 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1514 0.0) (< oneOriginalHistoryParameter!1514 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1515 0.0) (< oneOriginalHistoryParameter!1515 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1516 0.0) (< oneOriginalHistoryParameter!1516 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1517 0.0) (< oneOriginalHistoryParameter!1517 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1518 0.0) (< oneOriginalHistoryParameter!1518 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1519 0.0) (< oneOriginalHistoryParameter!1519 1.0)))\n(assert\n (let ((?x42 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1515)))))\n (= (/ 1.0 3.0) ?x42)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x157 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1515))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x157))))))\n(assert\n (let ((?x42 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1515)))))\n(= (/ 1.0 3.0) ?x42)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 8,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1520 () Real)\n(declare-fun oneOriginalHistoryParameter!1521 () Real)\n(declare-fun oneOriginalHistoryParameter!1522 () Real)\n(declare-fun oneOriginalHistoryParameter!1523 () Real)\n(declare-fun oneOriginalHistoryParameter!1524 () Real)\n(declare-fun oneOriginalHistoryParameter!1525 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1520 0.0) (< oneOriginalHistoryParameter!1520 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1521 0.0) (< oneOriginalHistoryParameter!1521 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1522 0.0) (< oneOriginalHistoryParameter!1522 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1523 0.0) (< oneOriginalHistoryParameter!1523 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1524 0.0) (< oneOriginalHistoryParameter!1524 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1525 0.0) (< oneOriginalHistoryParameter!1525 1.0)))\n(assert\n (let ((?x13 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1521)))))\n (= (/ 1.0 3.0) ?x13)))\n(assert\n (let ((?x13 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1521)))))\n (= (/ 1.0 3.0) ?x13)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n(let ((?x140 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1521))))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x140))))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 9,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1526 () Real)\n(declare-fun oneOriginalHistoryParameter!1527 () Real)\n(declare-fun oneOriginalHistoryParameter!1528 () Real)\n(declare-fun oneOriginalHistoryParameter!1529 () Real)\n(declare-fun oneOriginalHistoryParameter!1530 () Real)\n(declare-fun oneOriginalHistoryParameter!1531 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1526 0.0) (< oneOriginalHistoryParameter!1526 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1527 0.0) (< oneOriginalHistoryParameter!1527 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1528 0.0) (< oneOriginalHistoryParameter!1528 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1529 0.0) (< oneOriginalHistoryParameter!1529 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1530 0.0) (< oneOriginalHistoryParameter!1530 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1531 0.0) (< oneOriginalHistoryParameter!1531 1.0)))\n(assert\n (let ((?x152 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1527)))))\n (= (/ 1.0 3.0) ?x152)))\n(assert\n (let ((?x152 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1527)))))\n (= (/ 1.0 3.0) ?x152)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n(let ((?x118 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1527))))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x118))))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 10,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1532 () Real)\n(declare-fun oneOriginalHistoryParameter!1533 () Real)\n(declare-fun oneOriginalHistoryParameter!1534 () Real)\n(declare-fun oneOriginalHistoryParameter!1535 () Real)\n(declare-fun oneOriginalHistoryParameter!1536 () Real)\n(declare-fun oneOriginalHistoryParameter!1537 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1532 0.0) (< oneOriginalHistoryParameter!1532 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1533 0.0) (< oneOriginalHistoryParameter!1533 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1534 0.0) (< oneOriginalHistoryParameter!1534 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1535 0.0) (< oneOriginalHistoryParameter!1535 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1536 0.0) (< oneOriginalHistoryParameter!1536 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1537 0.0) (< oneOriginalHistoryParameter!1537 1.0)))\n(assert\n (let ((?x157 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1533)))))\n (= (/ 1.0 3.0) ?x157)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x78 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1533))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x78))))))\n(assert\n (let ((?x157 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1533)))))\n(= (/ 1.0 3.0) ?x157)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 11,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1538 () Real)\n(declare-fun oneOriginalHistoryParameter!1539 () Real)\n(declare-fun oneOriginalHistoryParameter!1540 () Real)\n(declare-fun oneOriginalHistoryParameter!1541 () Real)\n(declare-fun oneOriginalHistoryParameter!1542 () Real)\n(declare-fun oneOriginalHistoryParameter!1543 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1538 0.0) (< oneOriginalHistoryParameter!1538 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1539 0.0) (< oneOriginalHistoryParameter!1539 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1540 0.0) (< oneOriginalHistoryParameter!1540 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1541 0.0) (< oneOriginalHistoryParameter!1541 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1542 0.0) (< oneOriginalHistoryParameter!1542 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1543 0.0) (< oneOriginalHistoryParameter!1543 1.0)))\n(assert\n (let ((?x67 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1539)))))\n (= (/ 1.0 3.0) ?x67)))\n(assert\n (let ((?x67 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1539)))))\n (= (/ 1.0 3.0) ?x67)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n(let ((?x81 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1539))))\n(= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x81))))))\n(check-sat)\n"
+              },
+              {
+                "source_model": 12,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1544 () Real)\n(declare-fun oneOriginalHistoryParameter!1545 () Real)\n(declare-fun oneOriginalHistoryParameter!1546 () Real)\n(declare-fun oneOriginalHistoryParameter!1547 () Real)\n(declare-fun oneOriginalHistoryParameter!1548 () Real)\n(declare-fun oneOriginalHistoryParameter!1549 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1544 0.0) (< oneOriginalHistoryParameter!1544 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1545 0.0) (< oneOriginalHistoryParameter!1545 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1546 0.0) (< oneOriginalHistoryParameter!1546 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1547 0.0) (< oneOriginalHistoryParameter!1547 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1548 0.0) (< oneOriginalHistoryParameter!1548 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1549 0.0) (< oneOriginalHistoryParameter!1549 1.0)))\n(assert\n (let ((?x8 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1545)))))\n (= (/ 1.0 3.0) ?x8)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x165 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1545))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x165))))))\n(assert\n (let ((?x8 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1545)))))\n(= (/ 1.0 3.0) ?x8)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 13,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1550 () Real)\n(declare-fun oneOriginalHistoryParameter!1551 () Real)\n(declare-fun oneOriginalHistoryParameter!1552 () Real)\n(declare-fun oneOriginalHistoryParameter!1553 () Real)\n(declare-fun oneOriginalHistoryParameter!1554 () Real)\n(declare-fun oneOriginalHistoryParameter!1555 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1550 0.0) (< oneOriginalHistoryParameter!1550 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1551 0.0) (< oneOriginalHistoryParameter!1551 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1552 0.0) (< oneOriginalHistoryParameter!1552 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1553 0.0) (< oneOriginalHistoryParameter!1553 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1554 0.0) (< oneOriginalHistoryParameter!1554 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1555 0.0) (< oneOriginalHistoryParameter!1555 1.0)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x32 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1551))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x32))))))\n(assert\n (let ((?x157 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1551)))))\n (= (/ 1.0 3.0) ?x157)))\n(assert\n (let ((?x157 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1551)))))\n(= (/ 1.0 3.0) ?x157)))\n(check-sat)\n"
+              },
+              {
+                "source_model": 14,
+                "status": "unsat",
+                "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalHistoryParameter!1556 () Real)\n(declare-fun oneOriginalHistoryParameter!1557 () Real)\n(declare-fun oneOriginalHistoryParameter!1558 () Real)\n(declare-fun oneOriginalHistoryParameter!1559 () Real)\n(declare-fun oneOriginalHistoryParameter!1560 () Real)\n(declare-fun oneOriginalHistoryParameter!1561 () Real)\n(assert\n (and (> oneOriginalHistoryParameter!1556 0.0) (< oneOriginalHistoryParameter!1556 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1557 0.0) (< oneOriginalHistoryParameter!1557 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1558 0.0) (< oneOriginalHistoryParameter!1558 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1559 0.0) (< oneOriginalHistoryParameter!1559 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1560 0.0) (< oneOriginalHistoryParameter!1560 1.0)))\n(assert\n (and (> oneOriginalHistoryParameter!1561 0.0) (< oneOriginalHistoryParameter!1561 1.0)))\n(assert\n (let ((?x136 (+ 0.0 1.0)))\n (let ((?x34 (+ ?x136 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalHistoryParameter!1557))))\n (= (/ 1.0 3.0) (+ 0.0 (* 1.0 ?x34))))))\n(assert\n (let ((?x151 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1557)))))\n (= (/ 1.0 3.0) ?x151)))\n(assert\n (let ((?x151 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalHistoryParameter!1557)))))\n(= (/ 1.0 3.0) ?x151)))\n(check-sat)\n"
+              }
+            ]
+          }
+        ],
+        "executed_actions": [
+          {
+            "original_row_weights": [
+              "1"
+            ],
+            "support_zero_based": [
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "kind": "incomplete_catalogue",
+      "result": {
+        "status": "UNKNOWN_INCOMPLETE_ACTUAL_SOURCE_EXPORT",
+        "export": {
+          "status": "UNKNOWN_INCOMPLETE_ACTUAL_SOURCE_EXPORT",
+          "request": {
+            "n": 4,
+            "registry": {
+              "complete": true,
+              "hybrid_ids": []
+            },
+            "mechanisms": [
+              "common"
+            ],
+            "readout": "unrooted_splits",
+            "target_kind": "nontrivial_displayed_split_union",
+            "deterministic_rows": [
+              {}
+            ],
+            "supports": [
+              [
+                1
+              ]
+            ],
+            "budgets": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ],
+            "resource_contract": "reset_deletion_closed_path",
+            "limits": {
+              "seconds": 30,
+              "max_sources": 1
+            }
+          },
+          "source_count_examined": 1,
+          "catalogue_exhausted": false,
+          "source_policy_or_budget_verdict_claimed": false
+        },
+        "policy_verified": false
+      }
+    },
+    {
+      "kind": "unsupported_empirical_metadata",
+      "reason": "Unsupported design constraints need their actual semialgebraic encoder; they cannot be ignored."
+    },
+    {
+      "kind": "unsupported_empirical_metadata",
+      "reason": "Unsupported design constraints need their actual semialgebraic encoder; they cannot be ignored."
+    },
+    {
+      "kind": "unsupported_empirical_metadata",
+      "reason": "Unsupported design constraints need their actual semialgebraic encoder; they cannot be ignored."
+    },
+    {
+      "kind": "floating_frequencies",
+      "reason": "Probability values must use exact integer or rational strings, never floating estimates."
+    }
+  ],
+  "generic_synthesis_claimed": false
+}

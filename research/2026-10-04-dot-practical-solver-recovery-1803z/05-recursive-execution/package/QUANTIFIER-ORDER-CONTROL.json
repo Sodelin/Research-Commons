@@ -1,0 +1,20 @@
+{
+  "schema": "recursive-G7-quantifier-order-implementation-control-v1",
+  "scope": "Abstract probability-model implementation control; not a biological source-admission theorem",
+  "correct_for_all_response": {
+    "input_formula_smt2": "(let ((a!1 (exists ((originalSourceA!4 Real) (originalSourceB!5 Real))\n             (and (and (> originalSourceA!4 0.0) (< originalSourceA!4 1.0))\n                  (and (> originalSourceB!5 0.0) (< originalSourceB!5 1.0)))))\n      (a!2 (exists ((originalSourceA!6 Real) (originalSourceB!7 Real))\n             (let ((a!1 (+ 0.0\n                           (* 1.0\n                              (+ (+ 0.0 1.0) (* 1.0 (- 1.0) originalSourceA!6)))))\n                   (a!2 (+ 0.0\n                           (* 1.0\n                              (+ (+ 0.0 1.0)\n                                 (* 1.0 (- (/ 1.0 2.0)) originalSourceB!7))))))\n               (and (and (> originalSourceA!6 0.0) (< originalSourceA!6 1.0))\n                    (and (> originalSourceB!7 0.0) (< originalSourceB!7 1.0))\n                    (= (+ 0.0 (* 1.0 originalSourceA!6))\n                       (+ 0.0 (* 1.0 1.0 (/ 1.0 2.0) originalSourceB!7)))\n                    (= a!1 a!2))))))\n  (or (and (not a!1)) (and true (not a!2))))",
+    "reduced_formula_smt2": "false",
+    "elapsed_seconds": 0.0034335020027356222,
+    "z3": "4.15.3",
+    "trust": "completed exact Z3 symbolic QE, not an independently proof-checked certificate",
+    "status": "CLOSED_RECURSIVE_BUDGET_FALSE_SAME_BACKEND"
+  },
+  "wrong_exists_reachable_response": {
+    "input_formula_smt2": "(exists ((observed!18 Real) (observed!19 Real))\n  (let ((a!1 (exists ((actualParameter!20 Real))\n               (let ((a!1 (* 1.0\n                             (+ (+ 0.0 1.0)\n                                (* (* 1.0 (- 1.0)) actualParameter!20)))))\n                 (and (and (> actualParameter!20 0.0)\n                           (< actualParameter!20 1.0))\n                      (= (+ 0.0 (* 1.0 actualParameter!20)) observed!18)\n                      (= (+ 0.0 a!1) observed!19)))))\n        (a!2 (exists ((actualParameter!21 Real))\n               (let ((a!1 (+ 0.0\n                             (* 1.0\n                                (+ (+ 0.0 1.0)\n                                   (* 1.0 (- (/ 1.0 2.0)) actualParameter!21))))))\n                 (and (and (> actualParameter!21 0.0)\n                           (< actualParameter!21 1.0))\n                      (= (+ 0.0 (* 1.0 1.0 (/ 1.0 2.0) actualParameter!21))\n                         observed!18)\n                      (= a!1 observed!19)))))\n        (a!3 (exists ((originalSourceA!22 Real) (originalSourceB!23 Real))\n               (let ((a!1 (* 1.0\n                             (+ (+ 0.0 1.0)\n                                (* (* 1.0 (- 1.0)) originalSourceA!22))))\n                     (a!2 (+ 0.0\n                             (* 1.0\n                                (+ (+ 0.0 1.0)\n                                   (* 1.0 (- (/ 1.0 2.0)) originalSourceB!23))))))\n                 (and (> originalSourceA!22 0.0)\n                      (< originalSourceA!22 1.0)\n                      (= (+ 0.0 (* 1.0 originalSourceA!22)) observed!18)\n                      (= (+ 0.0 a!1) observed!19)\n                      (and (> originalSourceB!23 0.0)\n                           (< originalSourceB!23 1.0))\n                      (= (+ 0.0 (* 1.0 1.0 (/ 1.0 2.0) originalSourceB!23))\n                         observed!18)\n                      (= a!2 observed!19))))))\n    (and (or a!1 a!2) (not a!3))))",
+    "reduced_formula_smt2": "true",
+    "elapsed_seconds": 0.003497079000226222,
+    "z3": "4.15.3",
+    "trust": "completed exact Z3 symbolic QE, not an independently proof-checked certificate",
+    "status": "CLOSED_RECURSIVE_BUDGET_TRUE_SAME_BACKEND"
+  }
+}

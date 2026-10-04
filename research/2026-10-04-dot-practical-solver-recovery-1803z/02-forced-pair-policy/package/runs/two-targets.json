@@ -1,0 +1,313 @@
+{
+  "status": "IDENTIFIED_ACTUAL_Q_BY_TWO_CONFIGURATION_ONE_CALL_POLICY",
+  "request_sha256": "6ede0c041b004df9505082e77703fc91948d4db18ffa63052b576ee889bcff39",
+  "inheritance_mechanism": "independent",
+  "engine_taxon_mapping": {
+    "L0": "L0",
+    "L1": "L1",
+    "L2": "L2",
+    "L3": "L3"
+  },
+  "original_hybrid_mapping": {
+    "H0": "original_site_alpha"
+  },
+  "strict_positive_programme_weights": [
+    "1/2",
+    "1/2"
+  ],
+  "identified_engine_split_union": [
+    [
+      [
+        "L0",
+        "L1"
+      ],
+      [
+        "L2",
+        "L3"
+      ]
+    ],
+    [
+      [
+        "L0",
+        "L2"
+      ],
+      [
+        "L1",
+        "L3"
+      ]
+    ]
+  ],
+  "identified_original_taxon_split_union": [
+    [
+      [
+        "L0",
+        "L1"
+      ],
+      [
+        "L2",
+        "L3"
+      ]
+    ],
+    [
+      [
+        "L0",
+        "L2"
+      ],
+      [
+        "L1",
+        "L3"
+      ]
+    ]
+  ],
+  "actual_source": {
+    "edges": [
+      [
+        "R",
+        "T0"
+      ],
+      [
+        "R",
+        "T1"
+      ],
+      [
+        "T0",
+        "T2"
+      ],
+      [
+        "T1",
+        "H0"
+      ],
+      [
+        "T2",
+        "H0"
+      ],
+      [
+        "H0",
+        "L0"
+      ],
+      [
+        "T1",
+        "L1"
+      ],
+      [
+        "T2",
+        "L2"
+      ],
+      [
+        "T0",
+        "L3"
+      ]
+    ],
+    "root": "R",
+    "leaves": [
+      "L0",
+      "L1",
+      "L2",
+      "L3"
+    ]
+  },
+  "source_values": {
+    "x0": {
+      "kind": "algebraic",
+      "polynomial_ascending": [
+        "-1/2",
+        "0",
+        "1"
+      ],
+      "real_root_index": 2
+    },
+    "x1": {
+      "kind": "algebraic",
+      "polynomial_ascending": [
+        "-1/2",
+        "0",
+        "1"
+      ],
+      "real_root_index": 2
+    },
+    "x2": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "x3": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "x4": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "x5": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "x6": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "x7": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "x8": {
+      "kind": "rational",
+      "value": "1/2"
+    },
+    "g_H0": {
+      "kind": "rational",
+      "value": "1/2"
+    }
+  },
+  "physical_realization": {
+    "original_vertex_ages": {
+      "H0": 1,
+      "L0": 0,
+      "L1": 0,
+      "L2": 0,
+      "L3": 0,
+      "R": 4,
+      "T0": 3,
+      "T1": 2,
+      "T2": 2
+    },
+    "contemporaneous_tip_age": 0,
+    "original_edges": [
+      {
+        "original_edge_id": 0,
+        "parent": "R",
+        "child": "T0",
+        "duration": 1,
+        "survival_parameter": "x0",
+        "survival_value": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1/2",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 1,
+        "parent": "R",
+        "child": "T1",
+        "duration": 2,
+        "survival_parameter": "x1",
+        "survival_value": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1/2",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 2,
+        "parent": "T0",
+        "child": "T2",
+        "duration": 1,
+        "survival_parameter": "x2",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 3,
+        "parent": "T1",
+        "child": "H0",
+        "duration": 1,
+        "survival_parameter": "x3",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 4,
+        "parent": "T2",
+        "child": "H0",
+        "duration": 1,
+        "survival_parameter": "x4",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 5,
+        "parent": "H0",
+        "child": "L0",
+        "duration": 1,
+        "survival_parameter": "x5",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 6,
+        "parent": "T1",
+        "child": "L1",
+        "duration": 2,
+        "survival_parameter": "x6",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 7,
+        "parent": "T2",
+        "child": "L2",
+        "duration": 2,
+        "survival_parameter": "x7",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      },
+      {
+        "original_edge_id": 8,
+        "parent": "T0",
+        "child": "L3",
+        "duration": 3,
+        "survival_parameter": "x8",
+        "survival_value": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "positive_rate_definition": "-log(survival_value)/duration"
+      }
+    ],
+    "ancestral_root_rate": "1",
+    "natural_inheritance_values": {
+      "g_H0": {
+        "kind": "rational",
+        "value": "1/2"
+      }
+    },
+    "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+  },
+  "verification": "ACTUAL_SHARED_SOURCE_WITNESS_RECOMPILED_AND_COMPLETE546_SOURCE_IMAGE_POLICY_CERTIFICATE",
+  "trajectory_cost": {
+    "exact_calls": 1,
+    "configurations": 2,
+    "original_controlled_sites": 1
+  },
+  "scope": "The complete n4/r1 source class, one-copy unlabelled pooled unrooted law, free positive edge clocks, menu ONLY original forcing0/1.",
+  "empirical_admission_or_unknown_size_termination_claimed": false,
+  "generic_CAD_policy_extraction_claimed": false,
+  "Lean_verification_claimed": false
+}

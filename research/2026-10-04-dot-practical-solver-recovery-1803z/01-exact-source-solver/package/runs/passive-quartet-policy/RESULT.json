@@ -1,0 +1,1937 @@
+{
+  "schema": "actual-finite-original-registry-coupled-source-solver-v1",
+  "request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 4,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": []
+    },
+    "task": "identify_target",
+    "mechanisms": [
+      "common"
+    ],
+    "limits": {
+      "seconds": 45,
+      "max_sources": 30
+    },
+    "rows": [
+      {
+        "samples": {
+          "L0": [
+            "L0"
+          ],
+          "L1": [
+            "L1"
+          ],
+          "L2": [
+            "L2"
+          ],
+          "L3": [
+            "L3"
+          ]
+        },
+        "readout": "unrooted_splits",
+        "law": [
+          {
+            "outcome": [
+              [
+                [
+                  "L0",
+                  "L1"
+                ],
+                [
+                  "L2",
+                  "L3"
+                ]
+              ]
+            ],
+            "p": "5/6"
+          },
+          {
+            "outcome": [
+              [
+                [
+                  "L0",
+                  "L2"
+                ],
+                [
+                  "L1",
+                  "L3"
+                ]
+              ]
+            ],
+            "p": "1/12"
+          },
+          {
+            "outcome": [
+              [
+                [
+                  "L0",
+                  "L3"
+                ],
+                [
+                  "L1",
+                  "L2"
+                ]
+              ]
+            ],
+            "p": "1/12"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "2f5479f89ba6bb8e2c9615ccae1c15fa5632bef1ea5e834c110bcc4ebf1a9e46",
+  "upstream": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+    "files": [
+      {
+        "path": "upstream/source_census.py",
+        "bytes": 6474,
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+      },
+      {
+        "path": "upstream/law_compiler.py",
+        "bytes": 9360,
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+      },
+      {
+        "path": "upstream/continuous_optimizer.wl",
+        "bytes": 2401,
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+      },
+      {
+        "path": "upstream/README.md",
+        "bytes": 7949,
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+      }
+    ]
+  },
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "z3": "4.15.3"
+  },
+  "unknown_size_termination_or_global_NO_claimed": false,
+  "Lean_verification_claimed": false,
+  "empirical_admission_claimed": false,
+  "status": "IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY",
+  "verification": "EXACT_WITNESSES_AND_BACKEND_PROOF_REPLAY_REQUIRED",
+  "target_kind": "nontrivial_displayed_split_union",
+  "identified_target": [
+    [
+      [
+        "L0",
+        "L1"
+      ],
+      [
+        "L2",
+        "L3"
+      ]
+    ]
+  ],
+  "witness_entry": 0,
+  "source_count_examined": 15,
+  "catalogue_exhausted": true,
+  "entries": [
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "-2*x0*x1/3 + 1/6",
+        "x0*x1/3 - 1/12",
+        "x0*x1/3 - 1/12"
+      ],
+      "equation_sha256": "1e4273f197f68fa67bc6027ec4a0e3363174d2fb7ccb58473553799a5c16a865",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-0.smt2",
+      "query_sha256": "7f2aa5f97fb413c4d21a7b582fe112a277c05f48bfc52aa3cbc25acb1b14b78f",
+      "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+      "values": {
+        "x0": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x1": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 2,
+          "T0": 1,
+          "T1": 1
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 1,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T0",
+            "child": "L1",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T1",
+            "child": "L2",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "T1",
+            "child": "L3",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {},
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x0*x1/3 - 5/6",
+        "-2*x0*x1/3 + 11/12",
+        "x0*x1/3 - 1/12"
+      ],
+      "equation_sha256": "d4747bc9399e694bf7c6f2717127fbf46d94b631b9ceb98cfe7a6ff250920c3b",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L2"
+            ],
+            [
+              "L1",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-1.smt2",
+      "query_sha256": "6982d1a62f8996912ca502b3a4f1624d5538525aa0ee6596d633aee4e9a28982",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-1.z3-proof",
+      "proof_sha256": "bdf5834a10b0d91a2a5135fc206dce5436bd8b2290c55fcdaa3be7fe0529c4a8"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x0*x1/3 - 5/6",
+        "x0*x1/3 - 1/12",
+        "-2*x0*x1/3 + 11/12"
+      ],
+      "equation_sha256": "749f82e48121c7267a2d06bcb766a868dabc203d34349bafde4f9da91158c2a8",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-2.smt2",
+      "query_sha256": "58e41244082657944b15cbb68b93ab9ed0265e5b87354f5c00d67d3504810ec8",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-2.z3-proof",
+      "proof_sha256": "99662eedd403e2751f7548d8d32625da078eac943620ed2bfeaaa5cd23c8cfa1"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "1/6 - 2*x1/3",
+        "x1/3 - 1/12",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "1064960b195cf8bde3692d94b170b864c3d17d2e20a339ffdc2244ab2fc9dc65",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-3.smt2",
+      "query_sha256": "7b39372d4817c0741f3f25bc8b77f96190221edaebc5cdb5459303690d1e5474",
+      "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+      "values": {
+        "x0": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x1": {
+          "kind": "rational",
+          "value": "1/4"
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 3,
+          "T0": 2,
+          "T1": 1
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "T0",
+            "child": "T1",
+            "duration": 1,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/4"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "R",
+            "child": "L0",
+            "duration": 3,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T0",
+            "child": "L1",
+            "duration": 2,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T1",
+            "child": "L2",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "T1",
+            "child": "L3",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {},
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "11/12 - 2*x1/3",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "4277c3d2f1ee2f70ff26bd6ad9f0e826ab6c4aafdaed854121b7e8d82e10564a",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L2"
+            ],
+            [
+              "L1",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "x1/3 - 1/12",
+        "11/12 - 2*x1/3"
+      ],
+      "equation_sha256": "58ead39eff5c9b14202af2de56444b14a3269b24851c391f4645d363dc9ceaf4",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "1/6 - 2*x1/3",
+        "x1/3 - 1/12",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "1064960b195cf8bde3692d94b170b864c3d17d2e20a339ffdc2244ab2fc9dc65",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-6.smt2",
+      "query_sha256": "7b39372d4817c0741f3f25bc8b77f96190221edaebc5cdb5459303690d1e5474",
+      "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+      "values": {
+        "x0": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x1": {
+          "kind": "rational",
+          "value": "1/4"
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 3,
+          "T0": 2,
+          "T1": 1
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "T0",
+            "child": "T1",
+            "duration": 1,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/4"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "L0",
+            "duration": 2,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "R",
+            "child": "L1",
+            "duration": 3,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T1",
+            "child": "L2",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "T1",
+            "child": "L3",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {},
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "11/12 - 2*x1/3",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "4277c3d2f1ee2f70ff26bd6ad9f0e826ab6c4aafdaed854121b7e8d82e10564a",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L2"
+            ],
+            [
+              "L1",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "R",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "x1/3 - 1/12",
+        "11/12 - 2*x1/3"
+      ],
+      "equation_sha256": "58ead39eff5c9b14202af2de56444b14a3269b24851c391f4645d363dc9ceaf4",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "x1/3 - 1/12",
+        "11/12 - 2*x1/3"
+      ],
+      "equation_sha256": "58ead39eff5c9b14202af2de56444b14a3269b24851c391f4645d363dc9ceaf4",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "11/12 - 2*x1/3",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "4277c3d2f1ee2f70ff26bd6ad9f0e826ab6c4aafdaed854121b7e8d82e10564a",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L2"
+            ],
+            [
+              "L1",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "x1/3 - 1/12",
+        "11/12 - 2*x1/3"
+      ],
+      "equation_sha256": "58ead39eff5c9b14202af2de56444b14a3269b24851c391f4645d363dc9ceaf4",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L3"
+            ],
+            [
+              "L1",
+              "L2"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "R",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x1/3 - 5/6",
+        "11/12 - 2*x1/3",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "4277c3d2f1ee2f70ff26bd6ad9f0e826ab6c4aafdaed854121b7e8d82e10564a",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L2"
+            ],
+            [
+              "L1",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x1",
+        "coefficient": "1",
+        "constant": "-5/2",
+        "forced_value": "5/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "1/6 - 2*x1/3",
+        "x1/3 - 1/12",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "1064960b195cf8bde3692d94b170b864c3d17d2e20a339ffdc2244ab2fc9dc65",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-13.smt2",
+      "query_sha256": "7b39372d4817c0741f3f25bc8b77f96190221edaebc5cdb5459303690d1e5474",
+      "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+      "values": {
+        "x0": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x1": {
+          "kind": "rational",
+          "value": "1/4"
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 3,
+          "T0": 2,
+          "T1": 1
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "T0",
+            "child": "T1",
+            "duration": 1,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/4"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T1",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "L1",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "R",
+            "child": "L2",
+            "duration": 3,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "T0",
+            "child": "L3",
+            "duration": 2,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {},
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "R",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "1/6 - 2*x1/3",
+        "x1/3 - 1/12",
+        "x1/3 - 1/12"
+      ],
+      "equation_sha256": "1064960b195cf8bde3692d94b170b864c3d17d2e20a339ffdc2244ab2fc9dc65",
+      "target": {
+        "nontrivial_displayed_split_union": [
+          [
+            [
+              "L0",
+              "L1"
+            ],
+            [
+              "L2",
+              "L3"
+            ]
+          ]
+        ],
+        "whole_switching_split_systems": [
+          [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ]
+        ]
+      },
+      "query": "query-14.smt2",
+      "query_sha256": "7b39372d4817c0741f3f25bc8b77f96190221edaebc5cdb5459303690d1e5474",
+      "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+      "values": {
+        "x0": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x1": {
+          "kind": "rational",
+          "value": "1/4"
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 3,
+          "T0": 2,
+          "T1": 1
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "T0",
+            "child": "T1",
+            "duration": 1,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/4"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T1",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "L1",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T0",
+            "child": "L2",
+            "duration": 2,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "R",
+            "child": "L3",
+            "duration": 3,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {},
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      }
+    }
+  ],
+  "elapsed_seconds": 0.12781961899599992
+}

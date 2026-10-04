@@ -1,0 +1,365 @@
+{
+  "status": "PASS_COMPLETE_PRACTICAL_SOLVER_CHECKPOINT",
+  "entrypoint": [
+    "python",
+    "tests.py"
+  ],
+  "terminal_exit": 0,
+  "code_sha256_before_after": {
+    "bounded_search.py": "7906ad84dc31ae2add6349a8166c4626826b4e09eaf8dad1e86426710076f7e7",
+    "export_design.py": "572e1ae5153e54d1461bae80c07e690a8a2ec54651560343ed4d077e84acd964",
+    "passive_quartet_policy.py": "c087b98da42c23b34b58b70d4bd9f8e9391c13864206d9b33a2596dffbec583e",
+    "solver.py": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+    "tests.py": "daab6f5be1ed88d8cfd012569ba1769c5ccc2f09037089343bddde1fc3a70829",
+    "tree_design_reduction.py": "28032a9fb7d9216f308910a7dd3dd751ba76aced4136406feb7fde6d66f651ac",
+    "verify_certificate.py": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840",
+    "verify_search.py": "0698a99f0eef559e582b6e0b36d2c9bfb0c2c8ad94856c9ef62d58f631a3bf51",
+    "continuous_optimizer_normalized.wl": "5327a8577e2e998ba96247ec0681b8db3560cf72be573c07ab797cafa336d208"
+  },
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "networkx": "3.5",
+    "z3": "4.15.3"
+  },
+  "upstream_checks": [
+    {
+      "script": "verify.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"supplied-source compiler and exact finite controls; not a complete source census or independent review\",\n  \"edge_kernel_lineage_counts\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6\n  ],\n  \"path_initial_value_and_ODE_cases\": 21,\n  \"independent_triangle_diamond_collision\": [\n    \"59/200\",\n    \"141/400\",\n    \"141/400\"\n  ],\n  \"triangle_formula_compared_symbolically\": true,\n  \"partial_row_cases_both_mechanisms\": 15,\n  \"shared_bit_mixture_comparisons\": 15,\n  \"symbolic_pendant_bigon_invariance_cases\": 6,\n  \"five_copy_tree_rooted_outcomes\": 105,\n  \"five_copy_tree_unrooted_outcomes\": 15\n}\n"
+    },
+    {
+      "script": "verify_census.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"census_counts\": {\n    \"n3_r0\": 3,\n    \"n4_r0\": 15,\n    \"n5_r0\": 105,\n    \"n3_r1\": 54,\n    \"n4_r1\": 546\n  },\n  \"symbolic_all_source_tree_laws\": 15,\n  \"exact_rational_law_compilations\": 3336,\n  \"full_forcing_target_and_mechanism_comparisons\": 1107,\n  \"natural_common_mixture_and_target_comparisons\": 561,\n  \"core_admitted_fixture_graphs\": 3,\n  \"cofacial_positive_negative_controls\": 2,\n  \"versions\": {\n    \"sympy\": \"1.14.0\",\n    \"networkx\": \"3.5\"\n  },\n  \"seconds\": 2.4871282919921214,\n  \"limits\": \"Complete listed finite censuses; rational controls are not all-parameter certificates. General source-law and census correctness have hand proofs, not formal verification.\"\n}\n"
+    }
+  ],
+  "cases": [
+    {
+      "name": "triplet-sat",
+      "status": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 1,
+        "independent_exact_entries": 1,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"SAT_ONE_COHERENT_ADMITTED_SOURCE\",\n  \"verification\": \"INDEPENDENT_EXACT_SYMPY_WITNESS_AND_SOURCE_ADMISSION_CHECK\",\n  \"source_count_examined\": 1,\n  \"catalogue_exhausted\": false,\n  \"elapsed_seconds\": 0.03739305600174703\n}\n",
+      "result_sha256": "bf74d1376dba02755b17c00d3b39b96b8adbbf7bcaa39fd52dbaf7c297de09f8"
+    },
+    {
+      "name": "triplet-positive-boundary-unsat",
+      "status": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 6,
+        "independent_exact_entries": 6,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"UNSAT_COMPLETE_KNOWN_REGISTRY\",\n  \"verification\": \"INDEPENDENT_EXACT_LINEAR_CERTIFICATES\",\n  \"source_count_examined\": 3,\n  \"catalogue_exhausted\": true,\n  \"elapsed_seconds\": 0.029782865996821783\n}\n",
+      "result_sha256": "df5f6523d62dcc7619a09357af92783dc1a15284ac51611b3b057a49a2456720"
+    },
+    {
+      "name": "same-source-contradiction-unsat",
+      "status": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 6,
+        "independent_exact_entries": 6,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"UNSAT_COMPLETE_KNOWN_REGISTRY\",\n  \"verification\": \"INDEPENDENT_EXACT_LINEAR_CERTIFICATES\",\n  \"source_count_examined\": 3,\n  \"catalogue_exhausted\": true,\n  \"elapsed_seconds\": 0.03674178499204572\n}\n",
+      "result_sha256": "34e04f4046371b9a81dd0e8cad8a587d70ee90da39e1c7a641643f439994fe01"
+    },
+    {
+      "name": "unknown-registry-rejected",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "verification": {
+        "status": "PASS_HONEST_ADMISSION_REJECTION",
+        "source_feasibility_or_empirical_NO_inferred": false
+      },
+      "exit_code": 2,
+      "stdout": "{\n  \"status\": \"UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT\",\n  \"reason\": \"UNKNOWN_UNBOUNDED_SOURCE_CLASS: a complete finite original hybrid registry is required for catalogue-NO.\"\n}\n",
+      "result_sha256": "7a6a08340e7802ba71698e36b04691a26ab4229c4c826abdb924575e1a81292c"
+    },
+    {
+      "name": "estimated-frequency-rejected",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "verification": {
+        "status": "PASS_HONEST_ADMISSION_REJECTION",
+        "source_feasibility_or_empirical_NO_inferred": false
+      },
+      "exit_code": 2,
+      "stdout": "{\n  \"status\": \"UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT\",\n  \"reason\": \"This engine requires declared exact unranked law inputs, not finite frequencies, sequences, calendar values or latent-route oracles.\"\n}\n",
+      "result_sha256": "69193dfc3275077984a96494026357fb570eafc75126856fe304b3b4906e5874"
+    },
+    {
+      "name": "negative-empirical-admission",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "verification": {
+        "status": "PASS_HONEST_ADMISSION_REJECTION",
+        "source_feasibility_or_empirical_NO_inferred": false
+      },
+      "exit_code": 2,
+      "stdout": "{\n  \"status\": \"UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT\",\n  \"reason\": \"Empirical adapter explicitly NOT_ADMITTED; exact-law feasibility cannot reinterpret alignment counts or missing partitions as laws.\"\n}\n",
+      "result_sha256": "1d40ad96090a2a90b7fa1bbe8ebdf3354a5e283d9dee82f7833e99e16ee01583"
+    },
+    {
+      "name": "hybrid-common-sat",
+      "status": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 1,
+        "independent_exact_entries": 1,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"SAT_ONE_COHERENT_ADMITTED_SOURCE\",\n  \"verification\": \"INDEPENDENT_EXACT_SYMPY_WITNESS_AND_SOURCE_ADMISSION_CHECK\",\n  \"source_count_examined\": 1,\n  \"catalogue_exhausted\": false,\n  \"elapsed_seconds\": 0.06604772400169168\n}\n",
+      "result_sha256": "0a34500daa05e241b1a37bd729bde40d6c01bd248ad27ce2a82950618d2ac0e4"
+    },
+    {
+      "name": "hybrid-independent-sat",
+      "status": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 1,
+        "independent_exact_entries": 1,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"SAT_ONE_COHERENT_ADMITTED_SOURCE\",\n  \"verification\": \"INDEPENDENT_EXACT_SYMPY_WITNESS_AND_SOURCE_ADMISSION_CHECK\",\n  \"source_count_examined\": 1,\n  \"catalogue_exhausted\": false,\n  \"elapsed_seconds\": 0.07709461799822748\n}\n",
+      "result_sha256": "3e76f7ff26d8dcbf2db951cfe0498859c7cf147e3f03970186a3d44de98ed2ee"
+    },
+    {
+      "name": "joint-quartet-identification",
+      "status": "IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 15,
+        "independent_exact_entries": 13,
+        "same_backend_unsat_replays": 2,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY\",\n  \"verification\": \"EXACT_WITNESSES_AND_BACKEND_PROOF_REPLAY_REQUIRED\",\n  \"source_count_examined\": 15,\n  \"catalogue_exhausted\": true,\n  \"elapsed_seconds\": 0.12663000798784196\n}\n",
+      "result_sha256": "eebdb0034fd4b6da3573058fd165ab45e5c18bc449d10ba72995dc6a04d4cf6c"
+    },
+    {
+      "name": "target-ambiguity",
+      "status": "AMBIGUOUS_TARGET_TWO_ADMITTED_SOURCE_WITNESSES",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 2,
+        "independent_exact_entries": 2,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"AMBIGUOUS_TARGET_TWO_ADMITTED_SOURCE_WITNESSES\",\n  \"verification\": \"INDEPENDENT_EXACT_SYMPY_WITNESSES_AND_SOURCE_ADMISSION_CHECK\",\n  \"source_count_examined\": 2,\n  \"catalogue_exhausted\": false,\n  \"elapsed_seconds\": 0.01995917400927283\n}\n",
+      "result_sha256": "04c06b9010e072fd186bd16185870b24ee48836c84b74fcd03a9fbaf8f4a3bde"
+    },
+    {
+      "name": "resource-incomplete",
+      "status": "UNKNOWN_RESOURCE_LIMIT",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 2,
+        "independent_exact_entries": 2,
+        "same_backend_unsat_replays": 0,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 2,
+      "stdout": "{\n  \"status\": \"UNKNOWN_RESOURCE_LIMIT\",\n  \"source_count_examined\": 1,\n  \"catalogue_exhausted\": false,\n  \"elapsed_seconds\": 0.022253249000641517\n}\n",
+      "result_sha256": "9cb271ab2abf298b3178ca19fc073cd05ac8e0481838f45c3fc735582c6bf326"
+    },
+    {
+      "name": "nonlinear-shared-row-unsat",
+      "status": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 6,
+        "independent_exact_entries": 1,
+        "same_backend_unsat_replays": 5,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"UNSAT_COMPLETE_KNOWN_REGISTRY\",\n  \"verification\": \"EXACT_BACKEND_PROOF_AND_REPLAY_REQUIRED\",\n  \"source_count_examined\": 6,\n  \"catalogue_exhausted\": true,\n  \"elapsed_seconds\": 0.216978021999239\n}\n",
+      "result_sha256": "dde12b01a40c9ca79d78655d7468b1759515883252f8aa9934676867835ea432"
+    },
+    {
+      "name": "passive-quartet-policy",
+      "status": "IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY",
+      "verification": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 15,
+        "independent_exact_entries": 13,
+        "same_backend_unsat_replays": 2,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY\",\n  \"verification\": \"EXACT_WITNESSES_AND_BACKEND_PROOF_REPLAY_REQUIRED\",\n  \"source_count_examined\": 15,\n  \"catalogue_exhausted\": true,\n  \"elapsed_seconds\": 0.12781961899599992\n}\n",
+      "result_sha256": "47ad5e163c508e94a48d3d05bb165d90a4bf8dae9c22892a128667402ba32522"
+    }
+  ],
+  "bounded_searches": [
+    {
+      "name": "unknown-size-positive",
+      "status": "SAT_ADMITTED_SOURCE_UNKNOWN_SIZE_SEARCH",
+      "verification": {
+        "status": "PASS_BOUNDED_SEARCH_AND_MEMBER_CERTIFICATES",
+        "registries_checked": 1,
+        "global_unknown_size_NO_inferred": false
+      }
+    },
+    {
+      "name": "unknown-size-bounded-no",
+      "status": "UNKNOWN_BOUNDED_SEARCH_EXHAUSTED",
+      "verification": {
+        "status": "PASS_BOUNDED_SEARCH_AND_MEMBER_CERTIFICATES",
+        "registries_checked": 1,
+        "global_unknown_size_NO_inferred": false
+      }
+    }
+  ],
+  "same_genealogy_joint_dependence": "PASS",
+  "policy_result_status": "IDENTIFIED_ACTUAL_TREE_SPLIT_ONE_PASSIVE_EXACT_CALL",
+  "actual_G7_model_export": {
+    "schema": "complete-actual-original-source-G7-design-export-v1",
+    "status": "COMPLETE_ACTUAL_SOURCE_MODELS_EXPORTED_BACKEND_PENDING",
+    "request_sha256": "5b6e108d4f275839c19bbb148e954ff8b26a8730fda90466dd294f0bd6ed10af",
+    "source_count_examined": 15,
+    "source_mode_model_count": 15,
+    "catalogue_exhausted": true,
+    "policy_extracted": false,
+    "budget_decided": false,
+    "wolfram_code_sha256": "1fa25c5f1e4eeebbc36d876a59d6bbadbb32d609b7691d200945a5810c06c207",
+    "constructor_sha256": "5327a8577e2e998ba96247ec0681b8db3560cf72be573c07ab797cafa336d208",
+    "source_models_sha256": "78da02b2099204557d1414aec1d10c1dd2063b22e012c72834b00dafe985c402",
+    "elapsed_seconds": 0.051900268997997046
+  },
+  "actual_tree_source_image_reduction": {
+    "status": "EXACT_SOURCE_IMAGE_REDUCTION_EXPORTED_BACKEND_PENDING",
+    "source_count": 15,
+    "source_image_count": 3,
+    "reduction_receipt_sha256": "3e58f50f19572e516c5a7eb0d5328ce86241f84c5f16bdf04ca9873468a54a30",
+    "wolfram_code_sha256": "36cfabdda06eb46039cf59508b195b74d0742f71b45348f160d76b55e9054e86",
+    "generic_policy_extraction_completed": false
+  },
+  "tamper_checks": [
+    {
+      "name": "strict-boundary-witness",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": false,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Witness positivity cannot be independently established exactly: x0\"}\n"
+    },
+    {
+      "name": "wrong-law-witness",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": true,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Witness fails a shared-source row.\"}\n"
+    },
+    {
+      "name": "forged-compiler-equations",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": false,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Delivered equations differ from the actual joint source compiler.\"}\n"
+    },
+    {
+      "name": "false-lean-promotion",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": true,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Unsupported scope claim: Lean_verification_claimed\"}\n"
+    },
+    {
+      "name": "omitted-catalogue-entry",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": false,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Incomplete supplied finite source catalogue.\"}\n"
+    },
+    {
+      "name": "forged-linear-certificate",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": true,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Invalid exact rational contradiction certificate.\"}\n"
+    },
+    {
+      "name": "forged-unsat-query",
+      "status": "REJECTED_AS_REQUIRED",
+      "exit_code": 1,
+      "python_optimized": true,
+      "stdout": "{\"status\": \"FAIL_CERTIFICATE\", \"reason\": \"Recomputed actual source problem is not certified UNSAT.\"}\n"
+    }
+  ],
+  "algebraic_roundtrip": {
+    "kind": "algebraic",
+    "polynomial_ascending": [
+      "-1",
+      "0",
+      "2"
+    ],
+    "real_root_index": 2
+  },
+  "invalid_admission_checks": [
+    {
+      "name": "floating-probabilities",
+      "status": "INVALID_INPUT",
+      "reason": "Probability values must use exact integer or rational strings, never floating estimates."
+    },
+    {
+      "name": "invalid-limits",
+      "status": "INVALID_INPUT",
+      "reason": "max_sources must be a positive integer."
+    },
+    {
+      "name": "unencoded-parameter-ties",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "reason": "Unsupported request fields must receive an actual encoder: parameter_constraints"
+    },
+    {
+      "name": "unchecked-positive-empirical-metadata",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "reason": "No general empirical-admission validator is implemented. Nonempty empirical metadata cannot authorize a measured-data source fit."
+    },
+    {
+      "name": "tied-clocks",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "reason": "Shared clock/rate ties need their actual joint source encoding; independent survival variables cannot substitute for them."
+    },
+    {
+      "name": "unregistered-control",
+      "status": "INVALID_INPUT",
+      "reason": "Forcing addresses only an original named hybrid and its declared incoming0/1bit."
+    },
+    {
+      "name": "missing-mass",
+      "status": "INVALID_INPUT",
+      "reason": "Each exact probability law must sum to1."
+    }
+  ],
+  "elapsed_seconds": 20.54543435999949,
+  "scope": "Reproducible software/source-instance controls; no universal proof by testing, independent external review or Lean verification inferred."
+}

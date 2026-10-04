@@ -1,0 +1,1040 @@
+{
+  "schema": "actual-four-taxon-tree-source-image-reduction-v1",
+  "upstream": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+    "files": [
+      {
+        "path": "upstream/source_census.py",
+        "bytes": 6474,
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+      },
+      {
+        "path": "upstream/law_compiler.py",
+        "bytes": 9360,
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+      },
+      {
+        "path": "upstream/continuous_optimizer.wl",
+        "bytes": 2401,
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+      },
+      {
+        "path": "upstream/README.md",
+        "bytes": 7949,
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+      }
+    ]
+  },
+  "source_count": 15,
+  "coordinate_order": [
+    [
+      [
+        [
+          "L0",
+          "L1"
+        ],
+        [
+          "L2",
+          "L3"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "L0",
+          "L2"
+        ],
+        [
+          "L1",
+          "L3"
+        ]
+      ]
+    ],
+    [
+      [
+        [
+          "L0",
+          "L3"
+        ],
+        [
+          "L1",
+          "L2"
+        ]
+      ]
+    ]
+  ],
+  "receipts": [
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x0*x1",
+      "used_original_edge_variables": [
+        "x0",
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "sqrt(survival)",
+        "x1": "sqrt(survival)",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x0*x1",
+      "used_original_edge_variables": [
+        "x0",
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "sqrt(survival)",
+        "x1": "sqrt(survival)",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "survival_monomial": "x0*x1",
+      "used_original_edge_variables": [
+        "x0",
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "sqrt(survival)",
+        "x1": "sqrt(survival)",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "R",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "R",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "T1"
+          ],
+          [
+            "T1",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "R",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ]
+      ],
+      "survival_monomial": "x1",
+      "used_original_edge_variables": [
+        "x1"
+      ],
+      "reconstruction": {
+        "x0": "1/2",
+        "x1": "survival",
+        "x2": "1/2",
+        "x3": "1/2",
+        "x4": "1/2",
+        "x5": "1/2"
+      },
+      "compiled_identity": "PASS_EXACT_SYMPY_POLYNOMIAL_IDENTITY",
+      "image_domain": "0<survival<1",
+      "surjectivity": "Set each participating original x to the positive kth root of survival; every unused x is1/2."
+    }
+  ],
+  "proof_scope": "Exact symbolic identity for all15 actual trees plus elementary positive-monomial image equivalence. Original free edge-specific rates are essential.",
+  "general_source_or_policy_closure_claimed": false,
+  "Lean_verification_claimed": false
+}

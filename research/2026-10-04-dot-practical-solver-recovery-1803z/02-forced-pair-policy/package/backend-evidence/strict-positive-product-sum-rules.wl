@@ -1,0 +1,1 @@
+<|"StrictPositiveProductRule"->Resolve[ForAll[{u,v},u>0 && v>0,u*v>0],Reals], "StrictPositiveSumRule"->Resolve[ForAll[{u,v},u>0 && v>0,u+v>0],Reals], "ExactInteriorMixture"->{1/2,1/2}|>

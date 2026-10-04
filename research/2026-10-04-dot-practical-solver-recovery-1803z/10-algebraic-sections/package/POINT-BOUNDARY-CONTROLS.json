@@ -1,0 +1,45 @@
+{
+  "status": "PASS_POINT_BOUNDARY_UNKNOWN",
+  "cases": [
+    {
+      "case": "syntax",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+        "reason": "'(' was never closed (<unknown>, line 1)"
+      }
+    },
+    {
+      "case": "depth",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+        "reason": "Expression nesting exceeds the 64-level evaluation resource ceiling."
+      }
+    },
+    {
+      "case": "hidden_symbol",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+        "reason": "An action/guard can read only earlier observed response coordinates."
+      }
+    },
+    {
+      "case": "undefined_division",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT",
+        "reason": "This point codec needs defined rational polynomial coefficients/bounds."
+      }
+    }
+  ],
+  "valid_point": {
+    "status": "EXACT_ISOLATED_SECTION_POINT",
+    "encoding": {
+      "kind": "algebraic",
+      "polynomial_ascending": [
+        "-2/3",
+        "0",
+        "1"
+      ],
+      "real_root_index": 2
+    }
+  }
+}

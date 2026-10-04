@@ -1,0 +1,478 @@
+{
+  "schema": "actual-finite-original-registry-coupled-source-solver-v1",
+  "request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 2,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": [
+        "site_alpha"
+      ]
+    },
+    "mechanisms": [
+      "independent"
+    ],
+    "limits": {
+      "seconds": 30,
+      "max_sources": 100
+    },
+    "rows": [
+      {
+        "samples": {
+          "L0": [
+            "a",
+            "b"
+          ],
+          "L1": [
+            "c"
+          ]
+        },
+        "readout": "rooted",
+        "law": [
+          {
+            "outcome": [
+              "a",
+              [
+                "b",
+                "c"
+              ]
+            ],
+            "p": "247/1215"
+          },
+          {
+            "outcome": [
+              "b",
+              [
+                "a",
+                "c"
+              ]
+            ],
+            "p": "247/1215"
+          },
+          {
+            "outcome": [
+              "c",
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "p": "721/1215"
+          }
+        ]
+      },
+      {
+        "samples": {
+          "L0": [
+            "a",
+            "b"
+          ],
+          "L1": [
+            "c"
+          ]
+        },
+        "readout": "rooted",
+        "law": [
+          {
+            "outcome": [
+              "a",
+              [
+                "b",
+                "c"
+              ]
+            ],
+            "p": "1/3"
+          },
+          {
+            "outcome": [
+              "b",
+              [
+                "a",
+                "c"
+              ]
+            ],
+            "p": "1/3"
+          },
+          {
+            "outcome": [
+              "c",
+              [
+                "a",
+                "b"
+              ]
+            ],
+            "p": "1/3"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "4157a07b57a6658b3b6c7a272f2f441d6d23ded9e51a926b6f8c1843bcc0cc03",
+  "upstream": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+    "files": [
+      {
+        "path": "upstream/source_census.py",
+        "bytes": 6474,
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+      },
+      {
+        "path": "upstream/law_compiler.py",
+        "bytes": 9360,
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+      },
+      {
+        "path": "upstream/continuous_optimizer.wl",
+        "bytes": 2401,
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+      },
+      {
+        "path": "upstream/README.md",
+        "bytes": 7949,
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+      }
+    ]
+  },
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "z3": "4.15.3"
+  },
+  "unknown_size_termination_or_global_NO_claimed": false,
+  "Lean_verification_claimed": false,
+  "empirical_admission_claimed": false,
+  "status": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+  "verification": "EXACT_BACKEND_PROOF_AND_REPLAY_REQUIRED",
+  "scope": "complete supplied n/original-ID registry ONLY; not unknown-size global NO",
+  "source_count_examined": 6,
+  "catalogue_exhausted": true,
+  "entries": [
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "H0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 247/1215",
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 247/1215",
+        "-2*g_H0**2*x0*x3/3 - 2*g_H0**2*x1*x3/3 - 2*g_H0**2*x2*x3/3 + 2*g_H0**2*x3 + 2*g_H0*x0*x3/3 + 4*g_H0*x2*x3/3 - 2*g_H0*x3 - 2*x2*x3/3 + 494/1215",
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 1/3",
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 1/3",
+        "-2*g_H0**2*x0*x3/3 - 2*g_H0**2*x1*x3/3 - 2*g_H0**2*x2*x3/3 + 2*g_H0**2*x3 + 2*g_H0*x0*x3/3 + 4*g_H0*x2*x3/3 - 2*g_H0*x3 - 2*x2*x3/3 + 2/3"
+      ],
+      "equation_sha256": "0522640aaaacf39c8b9886655cf51917508e56c921ba7eef788e7bca06401401",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "query": "query-0.smt2",
+      "query_sha256": "b32122decd6fa6ed54552027879241b599bc8a1b26ce7b7dcb1f50914b49d95e",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-0.z3-proof",
+      "proof_sha256": "c1bf7457c46f6e08a15817d2960469b94c3d7f9ef24c5fdf77e3c255ab20e61b"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "H0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "H0",
+            "L1"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "g_H0*x0*x3/3 - g_H0*x3/3 + x3/3 - 247/1215",
+        "g_H0*x0*x3/3 - g_H0*x3/3 + x3/3 - 247/1215",
+        "-2*g_H0*x0*x3/3 + 2*g_H0*x3/3 - 2*x3/3 + 494/1215",
+        "g_H0*x0*x3/3 - g_H0*x3/3 + x3/3 - 1/3",
+        "g_H0*x0*x3/3 - g_H0*x3/3 + x3/3 - 1/3",
+        "-2*g_H0*x0*x3/3 + 2*g_H0*x3/3 - 2*x3/3 + 2/3"
+      ],
+      "equation_sha256": "33ad5d156f57de1df11d483180ac76f9bf9279251c17e50944bb65e7b3a018f6",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "query": "query-1.smt2",
+      "query_sha256": "9b5c2f32cd4a139842fa8f5fae5d79d009918e2914be5f7eadc1a3ff9990f6cd",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-1.z3-proof",
+      "proof_sha256": "f3bae876460969a09bc4bc224b053bb67df056370b5a5443de823a479d894010"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "R",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 247/1215",
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 247/1215",
+        "-2*g_H0**2*x0*x3/3 - 2*g_H0**2*x1*x3/3 - 2*g_H0**2*x2*x3/3 + 2*g_H0**2*x3 + 2*g_H0*x0*x3/3 + 4*g_H0*x2*x3/3 - 2*g_H0*x3 - 2*x2*x3/3 + 494/1215",
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 1/3",
+        "g_H0**2*x0*x3/3 + g_H0**2*x1*x3/3 + g_H0**2*x2*x3/3 - g_H0**2*x3 - g_H0*x0*x3/3 - 2*g_H0*x2*x3/3 + g_H0*x3 + x2*x3/3 - 1/3",
+        "-2*g_H0**2*x0*x3/3 - 2*g_H0**2*x1*x3/3 - 2*g_H0**2*x2*x3/3 + 2*g_H0**2*x3 + 2*g_H0*x0*x3/3 + 4*g_H0*x2*x3/3 - 2*g_H0*x3 - 2*x2*x3/3 + 2/3"
+      ],
+      "equation_sha256": "0522640aaaacf39c8b9886655cf51917508e56c921ba7eef788e7bca06401401",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "query": "query-2.smt2",
+      "query_sha256": "73f293301931ecc3573779d9bedc455eecfd6111dff3882bad37ff3cb6aecd99",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-2.z3-proof",
+      "proof_sha256": "86d1b9c9be9b3beeab983c190bb0706cbe76f1f8341ad4fdd8d08af52a051a92"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "R",
+            "H0"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "H0",
+            "L1"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "-g_H0*x0*x3/3 + g_H0*x3/3 + x0*x3/3 - 247/1215",
+        "-g_H0*x0*x3/3 + g_H0*x3/3 + x0*x3/3 - 247/1215",
+        "2*g_H0*x0*x3/3 - 2*g_H0*x3/3 - 2*x0*x3/3 + 494/1215",
+        "-g_H0*x0*x3/3 + g_H0*x3/3 + x0*x3/3 - 1/3",
+        "-g_H0*x0*x3/3 + g_H0*x3/3 + x0*x3/3 - 1/3",
+        "2*g_H0*x0*x3/3 - 2*g_H0*x3/3 - 2*x0*x3/3 + 2/3"
+      ],
+      "equation_sha256": "6e194152a0328995f72466b9011eaf8b75f65bf3bfdadccd889ca99e148bb4e9",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "query": "query-3.smt2",
+      "query_sha256": "01344e458c4c1a86c8e51f702b14835f0211d76ed29c5ec2d0b998e405ec88f7",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-3.z3-proof",
+      "proof_sha256": "c9792ede8fb2f67e8d8590067dbc2d2e1e2d4b8cc5345256aeb316a673b6d6f9"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "g_H0**2*x0*x1*x3/3 + g_H0**2*x0*x2*x3/3 - 2*g_H0**2*x0*x3/3 - 2*g_H0*x0*x2*x3/3 + 2*g_H0*x0*x3/3 + x0*x2*x3/3 - 247/1215",
+        "g_H0**2*x0*x1*x3/3 + g_H0**2*x0*x2*x3/3 - 2*g_H0**2*x0*x3/3 - 2*g_H0*x0*x2*x3/3 + 2*g_H0*x0*x3/3 + x0*x2*x3/3 - 247/1215",
+        "-2*g_H0**2*x0*x1*x3/3 - 2*g_H0**2*x0*x2*x3/3 + 4*g_H0**2*x0*x3/3 + 4*g_H0*x0*x2*x3/3 - 4*g_H0*x0*x3/3 - 2*x0*x2*x3/3 + 494/1215",
+        "g_H0**2*x0*x1*x3/3 + g_H0**2*x0*x2*x3/3 - 2*g_H0**2*x0*x3/3 - 2*g_H0*x0*x2*x3/3 + 2*g_H0*x0*x3/3 + x0*x2*x3/3 - 1/3",
+        "g_H0**2*x0*x1*x3/3 + g_H0**2*x0*x2*x3/3 - 2*g_H0**2*x0*x3/3 - 2*g_H0*x0*x2*x3/3 + 2*g_H0*x0*x3/3 + x0*x2*x3/3 - 1/3",
+        "-2*g_H0**2*x0*x1*x3/3 - 2*g_H0**2*x0*x2*x3/3 + 4*g_H0**2*x0*x3/3 + 4*g_H0*x0*x2*x3/3 - 4*g_H0*x0*x3/3 - 2*x0*x2*x3/3 + 2/3"
+      ],
+      "equation_sha256": "9391647bae68ea57a293e2196781be9fadac70ba4a12bb30ebba4968c134a106",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "query": "query-4.smt2",
+      "query_sha256": "95b69f2e87e696aa4550f29e196d60269ae2519a52e400eca7420e79517cd184",
+      "status": "UNSAT_EXACT_BACKEND_PROOF_NOT_INDEPENDENTLY_CHECKED",
+      "proof": "query-4.z3-proof",
+      "proof_sha256": "2906a280617509d9709d17ee01344159c54b68cc0b96c88435cc60c02b7678ef"
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "T0",
+            "H0"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "H0",
+            "L1"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "x3/3 - 247/1215",
+        "x3/3 - 247/1215",
+        "494/1215 - 2*x3/3",
+        "x3/3 - 1/3",
+        "x3/3 - 1/3",
+        "2/3 - 2*x3/3"
+      ],
+      "equation_sha256": "88af83e1b440bb9400a11af55ce363c69c3d09ceb72615d9a3e9b793a241ddbb",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "reason": "nonzero_constant",
+        "constant": "-158/1215"
+      }
+    }
+  ],
+  "elapsed_seconds": 0.216978021999239
+}

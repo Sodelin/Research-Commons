@@ -1,0 +1,56 @@
+[
+  {
+    "case": "1100_nested_policy_nodes",
+    "result": {
+      "status": "UNKNOWN_POLICY_VERIFICATION_RESOURCE_LIMIT",
+      "reason": "Policy nesting exceeds the 128-level execution resource ceiling.",
+      "receipts": [],
+      "policy_verified": false
+    }
+  },
+  {
+    "case": "1100_nested_guards",
+    "result": {
+      "status": "UNKNOWN_POLICY_VERIFICATION_RESOURCE_LIMIT",
+      "reason": "Guard nesting exceeds the 64-level evaluation resource ceiling.",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!4 () Real)\n(assert\n (let (($x15 (and (> oneOriginalSourceParameter!4 0.0) (< oneOriginalSourceParameter!4 1.0))))\n(and $x15)))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!4 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "case": "1100_term_expression_depth",
+    "result": {
+      "status": "UNKNOWN_POLICY_VERIFICATION_RESOURCE_LIMIT",
+      "reason": "Expression nesting exceeds the 64-level evaluation resource ceiling.",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!7 () Real)\n(assert\n (let (($x34 (and (> oneOriginalSourceParameter!7 0.0) (< oneOriginalSourceParameter!7 1.0))))\n(and $x34)))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!7 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "case": "cyclic_direct_API_policy",
+    "result": {
+      "status": "UNKNOWN_POLICY_VERIFICATION_RESOURCE_LIMIT",
+      "reason": "Policy nesting exceeds the 128-level execution resource ceiling.",
+      "receipts": [],
+      "policy_verified": false
+    }
+  }
+]

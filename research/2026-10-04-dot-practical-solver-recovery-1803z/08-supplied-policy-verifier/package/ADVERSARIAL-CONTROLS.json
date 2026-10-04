@@ -1,0 +1,1428 @@
+[
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "An action/guard can read only earlier observed response coordinates.",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!289 () Real)\n(declare-fun oneOriginalSourceParameter!288 () Real)\n(assert\n (let (($x48 (and (> oneOriginalSourceParameter!289 0.0) (< oneOriginalSourceParameter!289 1.0))))\n(let (($x83 (and (> oneOriginalSourceParameter!288 0.0) (< oneOriginalSourceParameter!288 1.0))))\n(and $x83 $x48))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!288 = 1/2,\n oneOriginalSourceParameter!289 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!289 () Real)\n(declare-fun oneOriginalSourceParameter!288 () Real)\n(assert\n (let (($x66 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x48 (and (> oneOriginalSourceParameter!289 0.0) (< oneOriginalSourceParameter!289 1.0))))\n(let (($x83 (and (> oneOriginalSourceParameter!288 0.0) (< oneOriginalSourceParameter!288 1.0))))\n(let (($x22 (and $x83 $x48)))\n(and $x22 (not $x66)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!289 () Real)\n(declare-fun oneOriginalSourceParameter!288 () Real)\n(assert\n (let (($x48 (and (> oneOriginalSourceParameter!289 0.0) (< oneOriginalSourceParameter!289 1.0))))\n(let (($x83 (and (> oneOriginalSourceParameter!288 0.0) (< oneOriginalSourceParameter!288 1.0))))\n(let (($x22 (and $x83 $x48)))\n(and $x22 (not true))))))\n(check-sat)\n"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "An action/guard can read only earlier observed response coordinates.",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!399 () Real)\n(declare-fun oneOriginalSourceParameter!398 () Real)\n(assert\n (let (($x163 (and (> oneOriginalSourceParameter!399 0.0) (< oneOriginalSourceParameter!399 1.0))))\n(let (($x229 (and (> oneOriginalSourceParameter!398 0.0) (< oneOriginalSourceParameter!398 1.0))))\n(and $x229 $x163))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!398 = 1/2,\n oneOriginalSourceParameter!399 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!399 () Real)\n(declare-fun oneOriginalSourceParameter!398 () Real)\n(assert\n (let (($x35 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x163 (and (> oneOriginalSourceParameter!399 0.0) (< oneOriginalSourceParameter!399 1.0))))\n(let (($x229 (and (> oneOriginalSourceParameter!398 0.0) (< oneOriginalSourceParameter!398 1.0))))\n(let (($x260 (and $x229 $x163)))\n(and $x260 (not $x35)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!399 () Real)\n(declare-fun oneOriginalSourceParameter!398 () Real)\n(assert\n (let (($x163 (and (> oneOriginalSourceParameter!399 0.0) (< oneOriginalSourceParameter!399 1.0))))\n(let (($x229 (and (> oneOriginalSourceParameter!398 0.0) (< oneOriginalSourceParameter!398 1.0))))\n(let (($x260 (and $x229 $x163)))\n(and $x260 (not true))))))\n(check-sat)\n"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: source_reachable_real_action_legality",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!509 () Real)\n(declare-fun oneOriginalSourceParameter!508 () Real)\n(assert\n (let (($x59 (and (> oneOriginalSourceParameter!509 0.0) (< oneOriginalSourceParameter!509 1.0))))\n(let (($x238 (and (> oneOriginalSourceParameter!508 0.0) (< oneOriginalSourceParameter!508 1.0))))\n(and $x238 $x59))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!508 = 1/2,\n oneOriginalSourceParameter!509 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!509 () Real)\n(declare-fun oneOriginalSourceParameter!508 () Real)\n(assert\n (let (($x40 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x59 (and (> oneOriginalSourceParameter!509 0.0) (< oneOriginalSourceParameter!509 1.0))))\n(let (($x238 (and (> oneOriginalSourceParameter!508 0.0) (< oneOriginalSourceParameter!508 1.0))))\n(let (($x58 (and $x238 $x59)))\n(and $x58 (not $x40)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!509 () Real)\n(declare-fun oneOriginalSourceParameter!508 () Real)\n(assert\n (let (($x59 (and (> oneOriginalSourceParameter!509 0.0) (< oneOriginalSourceParameter!509 1.0))))\n(let (($x238 (and (> oneOriginalSourceParameter!508 0.0) (< oneOriginalSourceParameter!508 1.0))))\n(let (($x58 (and $x238 $x59)))\n(and $x58 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!508 () Real)\n(declare-fun oneOriginalSourceParameter!509 () Real)\n(assert\n (let ((?x139 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!508)))\n(let ((?x47 (+ 1.0 ?x139)))\n(let ((?x98 (- ?x47 ?x47)))\n(let ((?x99 (/ 1.0 ?x98)))\n(let (($x32 (and (and true (and true true)) (and (distinct ?x98 0.0) true))))\n(let (($x163 (and $x32 true (= (+ (+ 0.0 ?x99) 0.0) 1.0) (> ?x99 0.0) (> 0.0 0.0))))\n(let (($x59 (and (> oneOriginalSourceParameter!509 0.0) (< oneOriginalSourceParameter!509 1.0))))\n(let (($x238 (and (> oneOriginalSourceParameter!508 0.0) (< oneOriginalSourceParameter!508 1.0))))\n(let (($x58 (and $x238 $x59)))\n(and $x58 (not $x163))))))))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!508 = 1/2,\n oneOriginalSourceParameter!509 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: source_reachable_real_action_legality",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!619 () Real)\n(declare-fun oneOriginalSourceParameter!618 () Real)\n(assert\n (let (($x246 (and (> oneOriginalSourceParameter!619 0.0) (< oneOriginalSourceParameter!619 1.0))))\n(let (($x41 (and (> oneOriginalSourceParameter!618 0.0) (< oneOriginalSourceParameter!618 1.0))))\n(and $x41 $x246))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!618 = 1/2,\n oneOriginalSourceParameter!619 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!619 () Real)\n(declare-fun oneOriginalSourceParameter!618 () Real)\n(assert\n (let (($x107 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x246 (and (> oneOriginalSourceParameter!619 0.0) (< oneOriginalSourceParameter!619 1.0))))\n(let (($x41 (and (> oneOriginalSourceParameter!618 0.0) (< oneOriginalSourceParameter!618 1.0))))\n(let (($x348 (and $x41 $x246)))\n(and $x348 (not $x107)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!619 () Real)\n(declare-fun oneOriginalSourceParameter!618 () Real)\n(assert\n (let (($x246 (and (> oneOriginalSourceParameter!619 0.0) (< oneOriginalSourceParameter!619 1.0))))\n(let (($x41 (and (> oneOriginalSourceParameter!618 0.0) (< oneOriginalSourceParameter!618 1.0))))\n(let (($x348 (and $x41 $x246)))\n(and $x348 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!618 () Real)\n(declare-fun oneOriginalSourceParameter!619 () Real)\n(assert\n (let ((?x73 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!618))))\n(let (($x216 (> ?x73 0.0)))\n(let (($x47 (and true true (= (+ (+ 0.0 ?x73) ?x73) 1.0) $x216 $x216)))\n(let (($x246 (and (> oneOriginalSourceParameter!619 0.0) (< oneOriginalSourceParameter!619 1.0))))\n(let (($x41 (and (> oneOriginalSourceParameter!618 0.0) (< oneOriginalSourceParameter!618 1.0))))\n(let (($x348 (and $x41 $x246)))\n(and $x348 (not $x47)))))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!618 = 7/8,\n oneOriginalSourceParameter!619 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: complete_reachable_response_coverage",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(and $x247 $x35))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!728 = 1/2,\n oneOriginalSourceParameter!729 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let (($x244 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(and $x298 (not $x244)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(and $x298 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(assert\n (let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x98 (- 1.0 ?x59)))\n(let (($x184 (and true true)))\n(let (($x308 (and true $x184 (= (+ (+ 0.0 ?x59) ?x98) 1.0) (> ?x59 0.0) (> ?x98 0.0))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(and $x298 (not $x308)))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(and $x298 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(and $x298 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let (($x117 (and (> ?x95 ?x236) (= ?x236 ?x236))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x80 (and $x298 $x117)))\n(and $x80 (not true)))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let (($x117 (and (> ?x95 ?x236) (= ?x236 ?x236))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x46 (and $x298 (not $x117))))\n(and $x46 (not (and (and true true) (and true true)))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let (($x121 (and (> ?x236 ?x95) (= ?x236 ?x95))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x46 (and $x298 (not (and (> ?x95 ?x236) (= ?x236 ?x236))))))\n(let (($x85 (and $x46 $x121)))\n(and $x85 (not false))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let (($x243 (= ?x236 ?x95)))\n(let (($x118 (> ?x236 ?x95)))\n(let (($x121 (and $x118 $x243)))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x46 (and $x298 (not (and (> ?x95 ?x236) (= ?x236 ?x236))))))\n(let (($x129 (and $x46 (not $x121))))\n(and $x129 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let (($x118 (> ?x236 ?x95)))\n(let (($x243 (= ?x236 ?x95)))\n(let (($x114 (and $x243 $x118)))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x129 (and (and $x298 (not (and (> ?x95 ?x236) (= ?x236 ?x236)))) (not (and $x118 $x243)))))\n(let (($x80 (and $x129 $x114)))\n(and $x80 (not false))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let (($x118 (> ?x236 ?x95)))\n(let (($x243 (= ?x236 ?x95)))\n(let (($x114 (and $x243 $x118)))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x129 (and (and $x298 (not (and (> ?x95 ?x236) (= ?x236 ?x236)))) (not (and $x118 $x243)))))\n(let (($x63 (and $x129 (not $x114))))\n(and $x63 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let (($x25 (> ?x95 ?x236)))\n(let (($x269 (and $x25 (> ?x236 ?x236))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x129 (and (and $x298 (not (and $x25 (= ?x236 ?x236)))) (not (and (> ?x236 ?x95) (= ?x236 ?x95))))))\n(let (($x63 (and $x129 (not (and (= ?x236 ?x95) (> ?x236 ?x95))))))\n(let (($x85 (and $x63 $x269)))\n(and $x85 (not false))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let (($x25 (> ?x95 ?x236)))\n(let (($x269 (and $x25 (> ?x236 ?x236))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x129 (and (and $x298 (not (and $x25 (= ?x236 ?x236)))) (not (and (> ?x236 ?x95) (= ?x236 ?x95))))))\n(let (($x63 (and $x129 (not (and (= ?x236 ?x95) (> ?x236 ?x95))))))\n(let (($x260 (and $x63 (not $x269))))\n(and $x260 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let (($x25 (> ?x95 ?x236)))\n(let (($x269 (and $x25 (> ?x236 ?x236))))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(let (($x129 (and (and $x298 (not (and $x25 (= ?x236 ?x236)))) (not (and (> ?x236 ?x95) (= ?x236 ?x95))))))\n(let (($x260 (and (and $x129 (not (and (= ?x236 ?x95) (> ?x236 ?x95)))) (not $x269))))\n(let (($x80 (and $x260 $x269)))\n(and $x80 (not false))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "complete_reachable_response_coverage",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!729 () Real)\n(declare-fun oneOriginalSourceParameter!728 () Real)\n(assert\n (let ((?x38 (* oneOriginalSourceParameter!728 oneOriginalSourceParameter!729)))\n(let ((?x261 (* (/ 2.0 9.0) ?x38)))\n(let ((?x238 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!728)))\n(let ((?x59 (+ 1.0 ?x238)))\n(let ((?x236 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!728 ?x59)) ?x261)))\n(let ((?x58 (* oneOriginalSourceParameter!728 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!729)))))\n(let ((?x95 (+ (* ?x59 ?x59) (* (/ 2.0 3.0) ?x58))))\n(let (($x25 (> ?x95 ?x236)))\n(let (($x269 (and $x25 (> ?x236 ?x236))))\n(let (($x118 (> ?x236 ?x95)))\n(let (($x243 (= ?x236 ?x95)))\n(let (($x114 (and $x243 $x118)))\n(let (($x121 (and $x118 $x243)))\n(let (($x117 (and $x25 (= ?x236 ?x236))))\n(let (($x45 (or $x117 $x121 $x114 $x269 $x269)))\n(let (($x35 (and (> oneOriginalSourceParameter!729 0.0) (< oneOriginalSourceParameter!729 1.0))))\n(let (($x247 (and (> oneOriginalSourceParameter!728 0.0) (< oneOriginalSourceParameter!728 1.0))))\n(let (($x298 (and $x247 $x35)))\n(and $x298 (not $x45)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 1,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(and $x347 $x55))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!730 = 1/2,\n oneOriginalSourceParameter!731 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 1,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let (($x129 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(and $x138 (not $x129)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 1,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(and $x138 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 1,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(assert\n (let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x292 (- 1.0 ?x131)))\n(let (($x48 (and true true)))\n(let (($x118 (and true $x48 (= (+ (+ 0.0 ?x131) ?x292) 1.0) (> ?x131 0.0) (> ?x292 0.0))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(and $x138 (not $x118)))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 1,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(and $x138 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(and $x138 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x49 (* (/ 2.0 3.0) ?x251)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x270 (+ ?x321 ?x49)))\n(let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x84 (+ ?x321 ?x105)))\n(let (($x137 (and (> (+ (* ?x131 ?x131) ?x105) ?x270) (= ?x84 ?x270))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x36 (and $x138 $x137)))\n(and $x36 (not false)))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x270 (+ ?x321 (* (/ 2.0 3.0) ?x251))))\n(let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x84 (+ ?x321 ?x105)))\n(let (($x137 (and (> (+ (* ?x131 ?x131) ?x105) ?x270) (= ?x84 ?x270))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x305 (and $x138 (not $x137))))\n(and $x305 (not (and (and true true) (and true true))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x12 (* ?x131 ?x131)))\n(let ((?x119 (+ ?x12 ?x105)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x49 (* (/ 2.0 3.0) ?x251)))\n(let ((?x270 (+ ?x321 ?x49)))\n(let (($x75 (and (> ?x270 ?x119) (= ?x84 ?x119))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x305 (and $x138 (not (and (> ?x119 ?x270) (= ?x84 ?x270))))))\n(let (($x198 (and $x305 $x75)))\n(and $x198 (not false))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x119 (+ (* ?x131 ?x131) ?x105)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x270 (+ ?x321 (* (/ 2.0 3.0) ?x251))))\n(let (($x75 (and (> ?x270 ?x119) (= ?x84 ?x119))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x305 (and $x138 (not (and (> ?x119 ?x270) (= ?x84 ?x270))))))\n(let (($x223 (and $x305 (not $x75))))\n(and $x223 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x12 (* ?x131 ?x131)))\n(let ((?x119 (+ ?x12 ?x105)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x49 (* (/ 2.0 3.0) ?x251)))\n(let ((?x270 (+ ?x321 ?x49)))\n(let (($x60 (and (= ?x270 ?x119) (> ?x84 ?x119))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x223 (and (and $x138 (not (and (> ?x119 ?x270) (= ?x84 ?x270)))) (not (and (> ?x270 ?x119) (= ?x84 ?x119))))))\n(let (($x36 (and $x223 $x60)))\n(and $x36 (not false))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x119 (+ (* ?x131 ?x131) ?x105)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x270 (+ ?x321 (* (/ 2.0 3.0) ?x251))))\n(let (($x60 (and (= ?x270 ?x119) (> ?x84 ?x119))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x223 (and (and $x138 (not (and (> ?x119 ?x270) (= ?x84 ?x270)))) (not (and (> ?x270 ?x119) (= ?x84 ?x119))))))\n(let (($x294 (and $x223 (not $x60))))\n(and $x294 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x270 (+ ?x321 (* (/ 2.0 3.0) ?x251))))\n(let (($x70 (and (> (+ (* ?x131 ?x131) ?x105) ?x84) (> ?x270 ?x84))))\n(let (($x60 (and (= ?x270 (+ (* ?x131 ?x131) ?x105)) (> ?x84 (+ (* ?x131 ?x131) ?x105)))))\n(let (($x75 (and (> ?x270 (+ (* ?x131 ?x131) ?x105)) (= ?x84 (+ (* ?x131 ?x131) ?x105)))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x305 (and $x138 (not (and (> (+ (* ?x131 ?x131) ?x105) ?x270) (= ?x84 ?x270))))))\n(let (($x294 (and (and $x305 (not $x75)) (not $x60))))\n(let (($x198 (and $x294 $x70)))\n(and $x198 (not true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x270 (+ ?x321 (* (/ 2.0 3.0) ?x251))))\n(let (($x70 (and (> (+ (* ?x131 ?x131) ?x105) ?x84) (> ?x270 ?x84))))\n(let (($x60 (and (= ?x270 (+ (* ?x131 ?x131) ?x105)) (> ?x84 (+ (* ?x131 ?x131) ?x105)))))\n(let (($x75 (and (> ?x270 (+ (* ?x131 ?x131) ?x105)) (= ?x84 (+ (* ?x131 ?x131) ?x105)))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x305 (and $x138 (not (and (> (+ (* ?x131 ?x131) ?x105) ?x270) (= ?x84 ?x270))))))\n(let (($x294 (and (and $x305 (not $x75)) (not $x60))))\n(let (($x13 (and $x294 (not $x70))))\n(and $x13 (not (and (and true true) (and true true))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x49 (* (/ 2.0 3.0) ?x251)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x270 (+ ?x321 ?x49)))\n(let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x12 (* ?x131 ?x131)))\n(let ((?x119 (+ ?x12 ?x105)))\n(let (($x136 (> ?x119 ?x270)))\n(let (($x360 (and $x136 (> ?x84 ?x270))))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(let (($x223 (and (and $x138 (not (and $x136 (= ?x84 ?x270)))) (not (and (> ?x270 ?x119) (= ?x84 ?x119))))))\n(let (($x13 (and (and $x223 (not (and (= ?x270 ?x119) (> ?x84 ?x119)))) (not (and (> ?x119 ?x84) (> ?x270 ?x84))))))\n(let (($x36 (and $x13 $x360)))\n(and $x36 (not false))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "complete_reachable_response_coverage",
+          "source_model": 1,
+          "policy_path": [
+            "call",
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!731 () Real)\n(declare-fun oneOriginalSourceParameter!730 () Real)\n(assert\n (let ((?x251 (* oneOriginalSourceParameter!730 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!731)))))\n(let ((?x49 (* (/ 2.0 3.0) ?x251)))\n(let ((?x25 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!730)))\n(let ((?x131 (+ 1.0 ?x25)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!730 ?x131))))\n(let ((?x270 (+ ?x321 ?x49)))\n(let ((?x157 (* oneOriginalSourceParameter!730 oneOriginalSourceParameter!731)))\n(let ((?x105 (* (/ 2.0 9.0) ?x157)))\n(let ((?x84 (+ ?x321 ?x105)))\n(let ((?x12 (* ?x131 ?x131)))\n(let ((?x119 (+ ?x12 ?x105)))\n(let (($x136 (> ?x119 ?x270)))\n(let (($x360 (and $x136 (> ?x84 ?x270))))\n(let (($x70 (and (> ?x119 ?x84) (> ?x270 ?x84))))\n(let (($x60 (and (= ?x270 ?x119) (> ?x84 ?x119))))\n(let (($x75 (and (> ?x270 ?x119) (= ?x84 ?x119))))\n(let (($x137 (and $x136 (= ?x84 ?x270))))\n(let (($x90 (or $x137 $x75 $x60 $x70 $x360)))\n(let (($x55 (and (> oneOriginalSourceParameter!731 0.0) (< oneOriginalSourceParameter!731 1.0))))\n(let (($x347 (and (> oneOriginalSourceParameter!730 0.0) (< oneOriginalSourceParameter!730 1.0))))\n(let (($x138 (and $x347 $x55)))\n(and $x138 (not $x90))))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 2,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(and $x244 $x310))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!737 = 1/2,\n oneOriginalSourceParameter!738 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 2,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let (($x118 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(and $x214 (not $x118)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 2,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(and $x214 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 2,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(assert\n (let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x232 (- 1.0 ?x21)))\n(let (($x243 (and true true)))\n(let (($x75 (and true $x243 (= (+ (+ 0.0 ?x21) ?x232) 1.0) (> ?x21 0.0) (> ?x232 0.0))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(and $x214 (not $x75)))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 2,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(and $x214 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(and $x214 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x45 (+ ?x88 ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x317 (+ ?x88 (* (/ 2.0 3.0) ?x332))))\n(let (($x39 (and (> (+ (* ?x21 ?x21) ?x199) ?x45) (= ?x317 ?x45))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x339 (and $x214 $x39)))\n(and $x339 (not false))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x45 (+ ?x88 ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x317 (+ ?x88 (* (/ 2.0 3.0) ?x332))))\n(let (($x39 (and (> (+ (* ?x21 ?x21) ?x199) ?x45) (= ?x317 ?x45))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not $x39))))\n(and $x177 (not (and (and true true) (and true true))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x91 (* ?x21 ?x21)))\n(let ((?x53 (+ ?x91 ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x151 (* (/ 2.0 3.0) ?x332)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x317 (+ ?x88 ?x151)))\n(let (($x176 (and (> (+ ?x88 ?x199) ?x53) (= ?x317 ?x53))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not (and (> ?x53 (+ ?x88 ?x199)) (= ?x317 (+ ?x88 ?x199)))))))\n(let (($x167 (and $x177 $x176)))\n(and $x167 (not false)))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x53 (+ (* ?x21 ?x21) ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x317 (+ ?x88 (* (/ 2.0 3.0) ?x332))))\n(let (($x176 (and (> (+ ?x88 ?x199) ?x53) (= ?x317 ?x53))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not (and (> ?x53 (+ ?x88 ?x199)) (= ?x317 (+ ?x88 ?x199)))))))\n(let (($x198 (and $x177 (not $x176))))\n(and $x198 (not (and (and true true) (and true true)))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x91 (* ?x21 ?x21)))\n(let ((?x53 (+ ?x91 ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x151 (* (/ 2.0 3.0) ?x332)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x317 (+ ?x88 ?x151)))\n(let (($x341 (and (= (+ ?x88 ?x199) ?x53) (> ?x317 ?x53))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not (and (> ?x53 (+ ?x88 ?x199)) (= ?x317 (+ ?x88 ?x199)))))))\n(let (($x198 (and $x177 (not (and (> (+ ?x88 ?x199) ?x53) (= ?x317 ?x53))))))\n(let (($x339 (and $x198 $x341)))\n(and $x339 (not false))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x53 (+ (* ?x21 ?x21) ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x317 (+ ?x88 (* (/ 2.0 3.0) ?x332))))\n(let (($x341 (and (= (+ ?x88 ?x199) ?x53) (> ?x317 ?x53))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not (and (> ?x53 (+ ?x88 ?x199)) (= ?x317 (+ ?x88 ?x199)))))))\n(let (($x198 (and $x177 (not (and (> (+ ?x88 ?x199) ?x53) (= ?x317 ?x53))))))\n(let (($x64 (and $x198 (not $x341))))\n(and $x64 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x151 (* (/ 2.0 3.0) ?x332)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x317 (+ ?x88 ?x151)))\n(let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x45 (+ ?x88 ?x199)))\n(let (($x334 (and (> (+ (* ?x21 ?x21) ?x199) ?x317) (> ?x45 ?x317))))\n(let (($x341 (and (= ?x45 (+ (* ?x21 ?x21) ?x199)) (> ?x317 (+ (* ?x21 ?x21) ?x199)))))\n(let (($x176 (and (> ?x45 (+ (* ?x21 ?x21) ?x199)) (= ?x317 (+ (* ?x21 ?x21) ?x199)))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not (and (> (+ (* ?x21 ?x21) ?x199) ?x45) (= ?x317 ?x45))))))\n(let (($x64 (and (and $x177 (not $x176)) (not $x341))))\n(let (($x167 (and $x64 $x334)))\n(and $x167 (not false)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x317 (+ ?x88 (* (/ 2.0 3.0) ?x332))))\n(let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x45 (+ ?x88 ?x199)))\n(let (($x334 (and (> (+ (* ?x21 ?x21) ?x199) ?x317) (> ?x45 ?x317))))\n(let (($x341 (and (= ?x45 (+ (* ?x21 ?x21) ?x199)) (> ?x317 (+ (* ?x21 ?x21) ?x199)))))\n(let (($x176 (and (> ?x45 (+ (* ?x21 ?x21) ?x199)) (= ?x317 (+ (* ?x21 ?x21) ?x199)))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x177 (and $x214 (not (and (> (+ (* ?x21 ?x21) ?x199) ?x45) (= ?x317 ?x45))))))\n(let (($x64 (and (and $x177 (not $x176)) (not $x341))))\n(let (($x302 (and $x64 (not $x334))))\n(and $x302 (not (and (and true true) (and true true))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x45 (+ ?x88 ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x317 (+ ?x88 (* (/ 2.0 3.0) ?x332))))\n(let ((?x53 (+ (* ?x21 ?x21) ?x199)))\n(let (($x128 (> ?x53 ?x45)))\n(let (($x266 (and $x128 (> ?x317 ?x45))))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(let (($x198 (and (and $x214 (not (and $x128 (= ?x317 ?x45)))) (not (and (> ?x45 ?x53) (= ?x317 ?x53))))))\n(let (($x302 (and (and $x198 (not (and (= ?x45 ?x53) (> ?x317 ?x53)))) (not (and (> ?x53 ?x317) (> ?x45 ?x317))))))\n(let (($x339 (and $x302 $x266)))\n(and $x339 (not true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "complete_reachable_response_coverage",
+          "source_model": 2,
+          "policy_path": [
+            "call",
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!738 () Real)\n(declare-fun oneOriginalSourceParameter!737 () Real)\n(assert\n (let ((?x347 (* oneOriginalSourceParameter!737 oneOriginalSourceParameter!738)))\n(let ((?x199 (* (/ 2.0 9.0) ?x347)))\n(let ((?x360 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!737)))\n(let ((?x21 (+ 1.0 ?x360)))\n(let ((?x88 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!737 ?x21))))\n(let ((?x45 (+ ?x88 ?x199)))\n(let ((?x332 (* oneOriginalSourceParameter!737 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!738)))))\n(let ((?x151 (* (/ 2.0 3.0) ?x332)))\n(let ((?x317 (+ ?x88 ?x151)))\n(let ((?x91 (* ?x21 ?x21)))\n(let ((?x53 (+ ?x91 ?x199)))\n(let (($x128 (> ?x53 ?x45)))\n(let (($x266 (and $x128 (> ?x317 ?x45))))\n(let (($x334 (and (> ?x53 ?x317) (> ?x45 ?x317))))\n(let (($x341 (and (= ?x45 ?x53) (> ?x317 ?x53))))\n(let (($x176 (and (> ?x45 ?x53) (= ?x317 ?x53))))\n(let (($x39 (and $x128 (= ?x317 ?x45))))\n(let (($x289 (or $x39 $x176 $x341 $x334 $x266)))\n(let (($x310 (and (> oneOriginalSourceParameter!738 0.0) (< oneOriginalSourceParameter!738 1.0))))\n(let (($x244 (and (> oneOriginalSourceParameter!737 0.0) (< oneOriginalSourceParameter!737 1.0))))\n(let (($x214 (and $x244 $x310)))\n(and $x214 (not $x289))))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 3,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(assert\n (let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(and $x129 $x46))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!745 = 1/2,\n oneOriginalSourceParameter!744 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 3,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(assert\n (let (($x266 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(and $x90 (not $x266)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 3,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(assert\n (let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(and $x90 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 3,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x106 (* (/ 1.0 3.0) oneOriginalSourceParameter!744)))\n(let ((?x111 (- 1.0 ?x106)))\n(let (($x102 (and true true)))\n(let (($x47 (and true $x102 (= (+ (+ 0.0 ?x106) ?x111) 1.0) (> ?x106 0.0) (> ?x111 0.0))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(and $x90 (not $x47))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 3,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(assert\n (let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(and $x90 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(assert\n (let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(and $x90 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x246 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189))))\n(let ((?x122 (+ ?x246 ?x83)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x115 (+ ?x283 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177))))\n(let (($x194 (and (> ?x115 ?x122) (= ?x70 ?x122))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x239 (and $x90 $x194)))\n(and $x239 (not false)))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x122 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189)) ?x83)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x115 (+ ?x283 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177))))\n(let (($x194 (and (> ?x115 ?x122) (= ?x70 ?x122))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x275 (and $x90 (not $x194))))\n(and $x275 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x146 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x115 (+ ?x283 ?x146)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x246 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189))))\n(let ((?x122 (+ ?x246 ?x83)))\n(let (($x229 (and (> ?x122 ?x115) (= ?x70 ?x115))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x275 (and $x90 (not (and (> ?x115 ?x122) (= ?x70 ?x122))))))\n(let (($x302 (and $x275 $x229)))\n(and $x302 (not false)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x115 (+ ?x283 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177))))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x122 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189)) ?x83)))\n(let (($x229 (and (> ?x122 ?x115) (= ?x70 ?x115))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x275 (and $x90 (not (and (> ?x115 ?x122) (= ?x70 ?x122))))))\n(let (($x216 (and $x275 (not $x229))))\n(and $x216 (not (and (and true true) (and true true)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x146 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x115 (+ ?x283 ?x146)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x246 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189))))\n(let ((?x122 (+ ?x246 ?x83)))\n(let (($x128 (and (= ?x122 ?x115) (> ?x70 ?x115))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x216 (and (and $x90 (not (and (> ?x115 ?x122) (= ?x70 ?x122)))) (not (and (> ?x122 ?x115) (= ?x70 ?x115))))))\n(let (($x239 (and $x216 $x128)))\n(and $x239 (not false)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x115 (+ ?x283 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177))))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x122 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189)) ?x83)))\n(let (($x128 (and (= ?x122 ?x115) (> ?x70 ?x115))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x216 (and (and $x90 (not (and (> ?x115 ?x122) (= ?x70 ?x122)))) (not (and (> ?x122 ?x115) (= ?x70 ?x115))))))\n(let (($x155 (and $x216 (not $x128))))\n(and $x155 (not (and (and true true) (and true true)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x122 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189)) ?x83)))\n(let ((?x115 (+ ?x283 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177))))\n(let (($x144 (and (> ?x115 ?x70) (> ?x122 ?x70))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x216 (and (and $x90 (not (and (> ?x115 ?x122) (= ?x70 ?x122)))) (not (and (> ?x122 ?x115) (= ?x70 ?x115))))))\n(let (($x155 (and $x216 (not (and (= ?x122 ?x115) (> ?x70 ?x115))))))\n(let (($x302 (and $x155 $x144)))\n(and $x302 (not true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x122 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189)) ?x83)))\n(let ((?x115 (+ ?x283 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177))))\n(let (($x144 (and (> ?x115 ?x70) (> ?x122 ?x70))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x216 (and (and $x90 (not (and (> ?x115 ?x122) (= ?x70 ?x122)))) (not (and (> ?x122 ?x115) (= ?x70 ?x115))))))\n(let (($x155 (and $x216 (not (and (= ?x122 ?x115) (> ?x70 ?x115))))))\n(let (($x211 (and $x155 (not $x144))))\n(and $x211 (not (and (and true true) (and true true))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x246 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189))))\n(let ((?x122 (+ ?x246 ?x83)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x146 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177)))\n(let ((?x115 (+ ?x283 ?x146)))\n(let (($x172 (> ?x115 ?x122)))\n(let (($x221 (and $x172 (> ?x70 ?x122))))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(let (($x216 (and (and $x90 (not (and $x172 (= ?x70 ?x122)))) (not (and (> ?x122 ?x115) (= ?x70 ?x115))))))\n(let (($x211 (and (and $x216 (not (and (= ?x122 ?x115) (> ?x70 ?x115)))) (not (and (> ?x115 ?x70) (> ?x122 ?x70))))))\n(let (($x239 (and $x211 $x221)))\n(and $x239 (not false)))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "complete_reachable_response_coverage",
+          "source_model": 3,
+          "policy_path": [
+            "call",
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!744 () Real)\n(declare-fun oneOriginalSourceParameter!745 () Real)\n(assert\n (let ((?x17 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x177 (+ 1.0 ?x17)))\n(let ((?x83 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!745 ?x177))))\n(let ((?x39 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!744)))\n(let ((?x189 (+ 1.0 ?x39)))\n(let ((?x246 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!744 ?x189))))\n(let ((?x122 (+ ?x246 ?x83)))\n(let ((?x173 (* oneOriginalSourceParameter!744 oneOriginalSourceParameter!744)))\n(let ((?x283 (* (/ 1.0 9.0) ?x173)))\n(let ((?x70 (+ ?x283 ?x83)))\n(let ((?x146 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!745)) ?x177)))\n(let ((?x115 (+ ?x283 ?x146)))\n(let (($x172 (> ?x115 ?x122)))\n(let (($x221 (and $x172 (> ?x70 ?x122))))\n(let (($x144 (and (> ?x115 ?x70) (> ?x122 ?x70))))\n(let (($x128 (and (= ?x122 ?x115) (> ?x70 ?x115))))\n(let (($x229 (and (> ?x122 ?x115) (= ?x70 ?x115))))\n(let (($x194 (and $x172 (= ?x70 ?x122))))\n(let (($x96 (or $x194 $x229 $x128 $x144 $x221)))\n(let (($x46 (and (> oneOriginalSourceParameter!745 0.0) (< oneOriginalSourceParameter!745 1.0))))\n(let (($x129 (and (> oneOriginalSourceParameter!744 0.0) (< oneOriginalSourceParameter!744 1.0))))\n(let (($x90 (and $x129 $x46)))\n(and $x90 (not $x96)))))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 4,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(assert\n (let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(and $x118 $x60))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!752 = 1/2,\n oneOriginalSourceParameter!753 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 4,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(assert\n (let (($x221 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(and $x18 (not $x221)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 4,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(assert\n (let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(and $x18 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 4,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x94 (* (/ 1.0 3.0) oneOriginalSourceParameter!752)))\n(let ((?x328 (- 1.0 ?x94)))\n(let (($x80 (and true true)))\n(let (($x75 (and true $x80 (= (+ (+ 0.0 ?x94) ?x328) 1.0) (> ?x94 0.0) (> ?x328 0.0))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(and $x18 (not $x75))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 4,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(assert\n (let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(and $x18 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(assert\n (let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(and $x18 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let (($x173 (and (> ?x190 ?x260) (= ?x190 ?x260))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x282 (and $x18 $x173)))\n(and $x282 (not false))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let (($x173 (and (> ?x190 ?x260) (= ?x190 ?x260))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x53 (and $x18 (not $x173))))\n(and $x53 (not (and (and true true) (and true true))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let (($x236 (and (> ?x260 ?x190) (= ?x190 ?x190))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x53 (and $x18 (not (and (> ?x190 ?x260) (= ?x190 ?x260))))))\n(let (($x115 (and $x53 $x236)))\n(and $x115 (not true)))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let (($x236 (and (> ?x260 ?x190) (= ?x190 ?x190))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x53 (and $x18 (not (and (> ?x190 ?x260) (= ?x190 ?x260))))))\n(let (($x84 (and $x53 (not $x236))))\n(and $x84 (not (and (and true true) (and true true)))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let (($x215 (and (= ?x260 ?x190) (> ?x190 ?x190))))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x84 (and (and $x18 (not (and (> ?x190 ?x260) (= ?x190 ?x260)))) (not (and (> ?x260 ?x190) (= ?x190 ?x190))))))\n(let (($x282 (and $x84 $x215)))\n(and $x282 (not false)))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let (($x88 (> ?x190 ?x190)))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let (($x215 (and (= ?x260 ?x190) $x88)))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x84 (and (and $x18 (not (and (> ?x190 ?x260) (= ?x190 ?x260)))) (not (and (> ?x260 ?x190) (= ?x190 ?x190))))))\n(let (($x162 (and $x84 (not $x215))))\n(and $x162 (not (and (and true true) (and true true))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let (($x199 (> ?x260 ?x190)))\n(let (($x88 (> ?x190 ?x190)))\n(let (($x170 (and $x88 $x199)))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x84 (and (and $x18 (not (and (> ?x190 ?x260) (= ?x190 ?x260)))) (not (and $x199 (= ?x190 ?x190))))))\n(let (($x162 (and $x84 (not (and (= ?x260 ?x190) $x88)))))\n(let (($x115 (and $x162 $x170)))\n(and $x115 (not false))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let (($x199 (> ?x260 ?x190)))\n(let (($x88 (> ?x190 ?x190)))\n(let (($x170 (and $x88 $x199)))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x84 (and (and $x18 (not (and (> ?x190 ?x260) (= ?x190 ?x260)))) (not (and $x199 (= ?x190 ?x190))))))\n(let (($x162 (and $x84 (not (and (= ?x260 ?x190) $x88)))))\n(let (($x44 (and $x162 (not $x170))))\n(and $x44 (not (and (and true true) (and true true))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let (($x314 (> ?x190 ?x260)))\n(let (($x165 (and $x314 $x314)))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(let (($x84 (and (and $x18 (not (and $x314 (= ?x190 ?x260)))) (not (and (> ?x260 ?x190) (= ?x190 ?x190))))))\n(let (($x44 (and (and $x84 (not (and (= ?x260 ?x190) (> ?x190 ?x190)))) (not (and (> ?x190 ?x190) (> ?x260 ?x190))))))\n(let (($x282 (and $x44 $x165)))\n(and $x282 (not false)))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "complete_reachable_response_coverage",
+          "source_model": 4,
+          "policy_path": [
+            "call",
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!752 () Real)\n(declare-fun oneOriginalSourceParameter!753 () Real)\n(assert\n (let ((?x155 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x355 (+ 1.0 ?x155)))\n(let ((?x194 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!752)))\n(let ((?x78 (+ 1.0 ?x194)))\n(let ((?x260 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!752 ?x78)) (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!753)) ?x355))))\n(let ((?x116 (* oneOriginalSourceParameter!752 oneOriginalSourceParameter!752)))\n(let ((?x36 (* (/ 1.0 9.0) ?x116)))\n(let ((?x190 (+ ?x36 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!753 ?x355)))))\n(let (($x314 (> ?x190 ?x260)))\n(let (($x165 (and $x314 $x314)))\n(let (($x199 (> ?x260 ?x190)))\n(let (($x88 (> ?x190 ?x190)))\n(let (($x170 (and $x88 $x199)))\n(let (($x215 (and (= ?x260 ?x190) $x88)))\n(let (($x236 (and $x199 (= ?x190 ?x190))))\n(let (($x173 (and $x314 (= ?x190 ?x260))))\n(let (($x131 (or $x173 $x236 $x215 $x170 $x165)))\n(let (($x60 (and (> oneOriginalSourceParameter!753 0.0) (< oneOriginalSourceParameter!753 1.0))))\n(let (($x118 (and (> oneOriginalSourceParameter!752 0.0) (< oneOriginalSourceParameter!752 1.0))))\n(let (($x18 (and $x118 $x60)))\n(and $x18 (not $x131)))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 5,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(assert\n (let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(and $x266 $x176))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!755 = 1/2,\n oneOriginalSourceParameter!754 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 5,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(assert\n (let (($x286 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(and $x30 (not $x286)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 5,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(assert\n (let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(and $x30 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 5,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x38 (* (/ 1.0 3.0) oneOriginalSourceParameter!754)))\n(let ((?x88 (- 1.0 ?x38)))\n(let (($x128 (and true true)))\n(let (($x53 (and true $x128 (= (+ (+ 0.0 ?x38) ?x88) 1.0) (> ?x38 0.0) (> ?x88 0.0))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(and $x30 (not $x53))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 5,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(assert\n (let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(and $x30 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(assert\n (let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(and $x30 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x158 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199))))\n(let ((?x83 (+ ?x158 ?x321)))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x84 (+ ?x238 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277))))\n(let (($x106 (and (> (+ ?x238 ?x321) ?x83) (= ?x84 ?x83))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x317 (and $x30 $x106)))\n(and $x317 (not false))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x83 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199)) ?x321)))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x84 (+ ?x238 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277))))\n(let (($x106 (and (> (+ ?x238 ?x321) ?x83) (= ?x84 ?x83))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x275 (and $x30 (not $x106))))\n(and $x275 (not (and (and true true) (and true true)))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            1
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x177 (+ ?x238 ?x321)))\n(let ((?x243 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277)))\n(let ((?x84 (+ ?x238 ?x243)))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x158 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199))))\n(let ((?x83 (+ ?x158 ?x321)))\n(let (($x192 (and (> ?x83 ?x177) (= ?x84 ?x177))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x275 (and $x30 (not (and (> ?x177 ?x83) (= ?x84 ?x83))))))\n(let (($x41 (and $x275 $x192)))\n(and $x41 (not false)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x177 (+ ?x238 ?x321)))\n(let ((?x84 (+ ?x238 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x83 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199)) ?x321)))\n(let (($x192 (and (> ?x83 ?x177) (= ?x84 ?x177))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x275 (and $x30 (not (and (> ?x177 ?x83) (= ?x84 ?x83))))))\n(let (($x60 (and $x275 (not $x192))))\n(and $x60 (not (and (and true true) (and true true)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            2
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x177 (+ ?x238 ?x321)))\n(let ((?x243 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277)))\n(let ((?x84 (+ ?x238 ?x243)))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x158 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199))))\n(let ((?x83 (+ ?x158 ?x321)))\n(let (($x341 (and (= ?x83 ?x177) (> ?x84 ?x177))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x60 (and (and $x30 (not (and (> ?x177 ?x83) (= ?x84 ?x83)))) (not (and (> ?x83 ?x177) (= ?x84 ?x177))))))\n(let (($x317 (and $x60 $x341)))\n(and $x317 (not false)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x177 (+ ?x238 ?x321)))\n(let ((?x84 (+ ?x238 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x83 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199)) ?x321)))\n(let (($x341 (and (= ?x83 ?x177) (> ?x84 ?x177))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x60 (and (and $x30 (not (and (> ?x177 ?x83) (= ?x84 ?x83)))) (not (and (> ?x83 ?x177) (= ?x84 ?x177))))))\n(let (($x178 (and $x60 (not $x341))))\n(and $x178 (not (and (and true true) (and true true)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            3
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x243 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277)))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x84 (+ ?x238 ?x243)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x158 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199))))\n(let ((?x83 (+ ?x158 ?x321)))\n(let (($x120 (and (> (+ ?x238 ?x321) ?x84) (> ?x83 ?x84))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x60 (and (and $x30 (not (and (> (+ ?x238 ?x321) ?x83) (= ?x84 ?x83)))) (not (and (> ?x83 (+ ?x238 ?x321)) (= ?x84 (+ ?x238 ?x321)))))))\n(let (($x178 (and $x60 (not (and (= ?x83 (+ ?x238 ?x321)) (> ?x84 (+ ?x238 ?x321)))))))\n(let (($x41 (and $x178 $x120)))\n(and $x41 (not false)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x84 (+ ?x238 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277))))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x83 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199)) ?x321)))\n(let (($x120 (and (> (+ ?x238 ?x321) ?x84) (> ?x83 ?x84))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x60 (and (and $x30 (not (and (> (+ ?x238 ?x321) ?x83) (= ?x84 ?x83)))) (not (and (> ?x83 (+ ?x238 ?x321)) (= ?x84 (+ ?x238 ?x321)))))))\n(let (($x178 (and $x60 (not (and (= ?x83 (+ ?x238 ?x321)) (> ?x84 (+ ?x238 ?x321)))))))\n(let (($x26 (and $x178 (not $x120))))\n(and $x26 (not (and (and true true) (and true true)))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call",
+            4
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x158 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199))))\n(let ((?x83 (+ ?x158 ?x321)))\n(let ((?x243 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277)))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x84 (+ ?x238 ?x243)))\n(let ((?x177 (+ ?x238 ?x321)))\n(let (($x305 (> ?x177 ?x83)))\n(let (($x92 (and $x305 (> ?x84 ?x83))))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(let (($x60 (and (and $x30 (not (and $x305 (= ?x84 ?x83)))) (not (and (> ?x83 ?x177) (= ?x84 ?x177))))))\n(let (($x26 (and (and $x60 (not (and (= ?x83 ?x177) (> ?x84 ?x177)))) (not (and (> ?x177 ?x84) (> ?x83 ?x84))))))\n(let (($x317 (and $x26 $x92)))\n(and $x317 (not false)))))))))))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "complete_reachable_response_coverage",
+          "source_model": 5,
+          "policy_path": [
+            "call",
+            "call"
+          ],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!754 () Real)\n(declare-fun oneOriginalSourceParameter!755 () Real)\n(assert\n (let ((?x282 (* (- (/ 1.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x277 (+ 1.0 ?x282)))\n(let ((?x321 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!755 ?x277))))\n(let ((?x173 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!754)))\n(let ((?x199 (+ 1.0 ?x173)))\n(let ((?x158 (* (/ 1.0 3.0) (* oneOriginalSourceParameter!754 ?x199))))\n(let ((?x83 (+ ?x158 ?x321)))\n(let ((?x243 (* (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!755)) ?x277)))\n(let ((?x151 (* oneOriginalSourceParameter!754 oneOriginalSourceParameter!754)))\n(let ((?x238 (* (/ 1.0 9.0) ?x151)))\n(let ((?x84 (+ ?x238 ?x243)))\n(let ((?x177 (+ ?x238 ?x321)))\n(let (($x305 (> ?x177 ?x83)))\n(let (($x92 (and $x305 (> ?x84 ?x83))))\n(let (($x120 (and (> ?x177 ?x84) (> ?x83 ?x84))))\n(let (($x341 (and (= ?x83 ?x177) (> ?x84 ?x177))))\n(let (($x192 (and (> ?x83 ?x177) (= ?x84 ?x177))))\n(let (($x106 (and $x305 (= ?x84 ?x83))))\n(let (($x334 (or $x106 $x192 $x341 $x120 $x92)))\n(let (($x176 (and (> oneOriginalSourceParameter!755 0.0) (< oneOriginalSourceParameter!755 1.0))))\n(let (($x266 (and (> oneOriginalSourceParameter!754 0.0) (< oneOriginalSourceParameter!754 1.0))))\n(let (($x30 (and $x266 $x176)))\n(and $x30 (not $x334)))))))))))))))))))))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!755 = 1/2,\n oneOriginalSourceParameter!754 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: actual_target_leaf",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(assert\n (let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(and $x234 $x128))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!874 = 1/2,\n oneOriginalSourceParameter!875 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(assert\n (let (($x178 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(let (($x236 (and $x234 $x128)))\n(and $x236 (not $x178)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(assert\n (let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(let (($x236 (and $x234 $x128)))\n(and $x236 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(assert\n (let ((?x28 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!874)))\n(let ((?x192 (+ 1.0 ?x28)))\n(let ((?x103 (- 1.0 ?x192)))\n(let (($x261 (and true true)))\n(let (($x160 (and true $x261 (= (+ (+ 0.0 ?x192) ?x103) 1.0) (> ?x192 0.0) (> ?x103 0.0))))\n(let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(let (($x236 (and $x234 $x128)))\n(and $x236 (not $x160)))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(assert\n (let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(let (($x236 (and $x234 $x128)))\n(and $x236 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "guard_defined_on_reachable_history",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(assert\n (let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(let (($x236 (and $x234 $x128)))\n(and $x236 (not (and (and true true) (and true true))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "actual_target_leaf",
+          "source_model": 0,
+          "policy_path": [
+            "call",
+            "call",
+            0
+          ],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!875 () Real)\n(declare-fun oneOriginalSourceParameter!874 () Real)\n(assert\n (let ((?x126 (* oneOriginalSourceParameter!874 oneOriginalSourceParameter!875)))\n(let ((?x149 (* (/ 2.0 9.0) ?x126)))\n(let ((?x28 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!874)))\n(let ((?x192 (+ 1.0 ?x28)))\n(let ((?x18 (+ (* (/ 1.0 3.0) (* oneOriginalSourceParameter!874 ?x192)) ?x149)))\n(let ((?x351 (* oneOriginalSourceParameter!874 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!875)))))\n(let ((?x303 (+ (* ?x192 ?x192) (* (/ 2.0 3.0) ?x351))))\n(let (($x48 (and (> ?x303 ?x18) (= ?x18 ?x18))))\n(let (($x128 (and (> oneOriginalSourceParameter!875 0.0) (< oneOriginalSourceParameter!875 1.0))))\n(let (($x234 (and (> oneOriginalSourceParameter!874 0.0) (< oneOriginalSourceParameter!874 1.0))))\n(let (($x236 (and $x234 $x128)))\n(let (($x316 (and $x236 $x48)))\n(and $x316 (not false)))))))))))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!874 = 1/2,\n oneOriginalSourceParameter!875 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "Policy action cannot truncate the original row carrier.",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!985 () Real)\n(declare-fun oneOriginalSourceParameter!984 () Real)\n(assert\n (let (($x261 (and (> oneOriginalSourceParameter!985 0.0) (< oneOriginalSourceParameter!985 1.0))))\n(let (($x46 (and (> oneOriginalSourceParameter!984 0.0) (< oneOriginalSourceParameter!984 1.0))))\n(and $x46 $x261))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!985 = 1/2,\n oneOriginalSourceParameter!984 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: PATH_union_resource_budget",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1095 () Real)\n(declare-fun oneOriginalSourceParameter!1094 () Real)\n(assert\n (let (($x139 (and (> oneOriginalSourceParameter!1095 0.0) (< oneOriginalSourceParameter!1095 1.0))))\n(let (($x302 (and (> oneOriginalSourceParameter!1094 0.0) (< oneOriginalSourceParameter!1094 1.0))))\n(and $x302 $x139))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!1095 = 1/2,\n oneOriginalSourceParameter!1094 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1095 () Real)\n(declare-fun oneOriginalSourceParameter!1094 () Real)\n(assert\n (let (($x67 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x139 (and (> oneOriginalSourceParameter!1095 0.0) (< oneOriginalSourceParameter!1095 1.0))))\n(let (($x302 (and (> oneOriginalSourceParameter!1094 0.0) (< oneOriginalSourceParameter!1094 1.0))))\n(let (($x13 (and $x302 $x139)))\n(and $x13 (not $x67)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1095 () Real)\n(declare-fun oneOriginalSourceParameter!1094 () Real)\n(assert\n (let (($x139 (and (> oneOriginalSourceParameter!1095 0.0) (< oneOriginalSourceParameter!1095 1.0))))\n(let (($x302 (and (> oneOriginalSourceParameter!1094 0.0) (< oneOriginalSourceParameter!1094 1.0))))\n(let (($x13 (and $x302 $x139)))\n(and $x13 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1094 () Real)\n(declare-fun oneOriginalSourceParameter!1095 () Real)\n(assert\n (let ((?x77 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!1094)))\n(let ((?x99 (+ 1.0 ?x77)))\n(let ((?x92 (- 1.0 ?x99)))\n(let (($x107 (and true true)))\n(let (($x146 (and true $x107 (= (+ (+ 0.0 ?x99) ?x92) 1.0) (> ?x99 0.0) (> ?x92 0.0))))\n(let (($x139 (and (> oneOriginalSourceParameter!1095 0.0) (< oneOriginalSourceParameter!1095 1.0))))\n(let (($x302 (and (> oneOriginalSourceParameter!1094 0.0) (< oneOriginalSourceParameter!1094 1.0))))\n(let (($x13 (and $x302 $x139)))\n(and $x13 (not $x146)))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1095 () Real)\n(declare-fun oneOriginalSourceParameter!1094 () Real)\n(assert\n (let (($x139 (and (> oneOriginalSourceParameter!1095 0.0) (< oneOriginalSourceParameter!1095 1.0))))\n(let (($x302 (and (> oneOriginalSourceParameter!1094 0.0) (< oneOriginalSourceParameter!1094 1.0))))\n(let (($x13 (and $x302 $x139)))\n(and $x13 (not false))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!1095 = 1/2,\n oneOriginalSourceParameter!1094 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: PATH_union_resource_budget",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1205 () Real)\n(declare-fun oneOriginalSourceParameter!1204 () Real)\n(assert\n (let (($x194 (and (> oneOriginalSourceParameter!1205 0.0) (< oneOriginalSourceParameter!1205 1.0))))\n(let (($x85 (and (> oneOriginalSourceParameter!1204 0.0) (< oneOriginalSourceParameter!1204 1.0))))\n(and $x85 $x194))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!1205 = 1/2,\n oneOriginalSourceParameter!1204 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1205 () Real)\n(declare-fun oneOriginalSourceParameter!1204 () Real)\n(assert\n (let (($x178 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x194 (and (> oneOriginalSourceParameter!1205 0.0) (< oneOriginalSourceParameter!1205 1.0))))\n(let (($x85 (and (> oneOriginalSourceParameter!1204 0.0) (< oneOriginalSourceParameter!1204 1.0))))\n(let (($x78 (and $x85 $x194)))\n(and $x78 (not $x178)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1205 () Real)\n(declare-fun oneOriginalSourceParameter!1204 () Real)\n(assert\n (let (($x194 (and (> oneOriginalSourceParameter!1205 0.0) (< oneOriginalSourceParameter!1205 1.0))))\n(let (($x85 (and (> oneOriginalSourceParameter!1204 0.0) (< oneOriginalSourceParameter!1204 1.0))))\n(let (($x78 (and $x85 $x194)))\n(and $x78 (not true))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1204 () Real)\n(declare-fun oneOriginalSourceParameter!1205 () Real)\n(assert\n (let ((?x77 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!1204)))\n(let ((?x261 (+ 1.0 ?x77)))\n(let ((?x59 (- 1.0 ?x261)))\n(let (($x201 (and true true)))\n(let (($x47 (and true $x201 (= (+ (+ 0.0 ?x261) ?x59) 1.0) (> ?x261 0.0) (> ?x59 0.0))))\n(let (($x194 (and (> oneOriginalSourceParameter!1205 0.0) (< oneOriginalSourceParameter!1205 1.0))))\n(let (($x85 (and (> oneOriginalSourceParameter!1204 0.0) (< oneOriginalSourceParameter!1204 1.0))))\n(let (($x78 (and $x85 $x194)))\n(and $x78 (not $x47)))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [
+            "call"
+          ],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1205 () Real)\n(declare-fun oneOriginalSourceParameter!1204 () Real)\n(assert\n (let (($x194 (and (> oneOriginalSourceParameter!1205 0.0) (< oneOriginalSourceParameter!1205 1.0))))\n(let (($x85 (and (> oneOriginalSourceParameter!1204 0.0) (< oneOriginalSourceParameter!1204 1.0))))\n(let (($x78 (and $x85 $x194)))\n(and $x78 (not false))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!1205 = 1/2,\n oneOriginalSourceParameter!1204 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "INVALID_OR_REFUTED_POLICY",
+    "result": {
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: PATH_union_resource_budget",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1315 () Real)\n(declare-fun oneOriginalSourceParameter!1314 () Real)\n(assert\n (let (($x201 (and (> oneOriginalSourceParameter!1315 0.0) (< oneOriginalSourceParameter!1315 1.0))))\n(let (($x46 (and (> oneOriginalSourceParameter!1314 0.0) (< oneOriginalSourceParameter!1314 1.0))))\n(and $x46 $x201))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!1315 = 1/2,\n oneOriginalSourceParameter!1314 = 1/2]"
+        },
+        {
+          "kind": "source_reachable_real_action_legality",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1315 () Real)\n(declare-fun oneOriginalSourceParameter!1314 () Real)\n(assert\n (let (($x277 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x201 (and (> oneOriginalSourceParameter!1315 0.0) (< oneOriginalSourceParameter!1315 1.0))))\n(let (($x46 (and (> oneOriginalSourceParameter!1314 0.0) (< oneOriginalSourceParameter!1314 1.0))))\n(let (($x275 (and $x46 $x201)))\n(and $x275 (not $x277)))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "PATH_union_resource_budget",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "sat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1315 () Real)\n(declare-fun oneOriginalSourceParameter!1314 () Real)\n(assert\n (let (($x201 (and (> oneOriginalSourceParameter!1315 0.0) (< oneOriginalSourceParameter!1315 1.0))))\n(let (($x46 (and (> oneOriginalSourceParameter!1314 0.0) (< oneOriginalSourceParameter!1314 1.0))))\n(let (($x275 (and $x46 $x201)))\n(and $x275 (not false))))))\n(check-sat)\n",
+          "counterexample_model": "[oneOriginalSourceParameter!1315 = 1/2,\n oneOriginalSourceParameter!1314 = 1/2]"
+        }
+      ],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "UNKNOWN_POLICY_VERIFICATION_RESOURCE_LIMIT",
+    "result": {
+      "status": "UNKNOWN_POLICY_VERIFICATION_RESOURCE_LIMIT",
+      "reason": "Finite policy preflight exceeds max_nodes.",
+      "receipts": [],
+      "policy_verified": false
+    }
+  },
+  {
+    "expected": "NO_ADMITTED_SOURCE_FOR_INITIAL_HISTORY_SAME_BACKEND",
+    "result": {
+      "status": "NO_ADMITTED_SOURCE_FOR_INITIAL_HISTORY_SAME_BACKEND",
+      "receipts": [
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 0,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1533 () Real)\n(declare-fun oneOriginalSourceParameter!1532 () Real)\n(assert\n (let ((?x200 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1532)))))\n(let ((?x158 (+ ?x200 (* 0.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1533)))))\n(let (($x115 (= (/ 1.0 3.0) ?x158)))\n(let ((?x9 (+ 0.0 1.0)))\n(let ((?x275 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1533))))\n(let ((?x178 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1532))))\n(let (($x89 (and (> oneOriginalSourceParameter!1533 0.0) (< oneOriginalSourceParameter!1533 1.0))))\n(let (($x199 (and (> oneOriginalSourceParameter!1532 0.0) (< oneOriginalSourceParameter!1532 1.0))))\n(and (and $x199 $x89) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x178)) (* 0.0 ?x275))) $x115 $x115))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 1,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1535 () Real)\n(declare-fun oneOriginalSourceParameter!1534 () Real)\n(assert\n (let ((?x15 (* 1.0 (/ 1.0 3.0))))\n(let ((?x18 (* ?x15 oneOriginalSourceParameter!1535)))\n(let ((?x33 (* 0.0 ?x18)))\n(let ((?x173 (+ 0.0 (* 1.0 (* ?x15 oneOriginalSourceParameter!1534)))))\n(let ((?x9 (+ 0.0 1.0)))\n(let ((?x108 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1535))))\n(let ((?x216 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1534))))\n(let (($x133 (and (> oneOriginalSourceParameter!1535 0.0) (< oneOriginalSourceParameter!1535 1.0))))\n(let (($x16 (and (> oneOriginalSourceParameter!1534 0.0) (< oneOriginalSourceParameter!1534 1.0))))\n(and (and $x16 $x133) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x216)) ?x33)) (= (/ 1.0 3.0) (+ ?x173 (* 0.0 ?x108))) (= (/ 1.0 3.0) (+ ?x173 ?x33)))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 2,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1537 () Real)\n(declare-fun oneOriginalSourceParameter!1536 () Real)\n(assert\n (let ((?x9 (+ 0.0 1.0)))\n(let ((?x51 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1537))))\n(let ((?x89 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1536)))))\n(let ((?x15 (* 1.0 (/ 1.0 3.0))))\n(let ((?x59 (* ?x15 oneOriginalSourceParameter!1537)))\n(let ((?x106 (* 0.0 ?x59)))\n(let ((?x238 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1536))))\n(let (($x28 (and (> oneOriginalSourceParameter!1537 0.0) (< oneOriginalSourceParameter!1537 1.0))))\n(let (($x102 (and (> oneOriginalSourceParameter!1536 0.0) (< oneOriginalSourceParameter!1536 1.0))))\n(and (and $x102 $x28) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x238)) ?x106)) (= (/ 1.0 3.0) (+ ?x89 ?x106)) (= (/ 1.0 3.0) (+ ?x89 (* 0.0 ?x51))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 3,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1539 () Real)\n(declare-fun oneOriginalSourceParameter!1538 () Real)\n(assert\n (let ((?x15 (* 1.0 (/ 1.0 3.0))))\n(let ((?x351 (* ?x15 oneOriginalSourceParameter!1539)))\n(let ((?x149 (* 0.0 ?x351)))\n(let ((?x173 (+ 0.0 (* 1.0 (* ?x15 oneOriginalSourceParameter!1538)))))\n(let ((?x9 (+ 0.0 1.0)))\n(let ((?x178 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1538))))\n(let ((?x234 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1539))))\n(let (($x111 (and (> oneOriginalSourceParameter!1539 0.0) (< oneOriginalSourceParameter!1539 1.0))))\n(let (($x286 (and (> oneOriginalSourceParameter!1538 0.0) (< oneOriginalSourceParameter!1538 1.0))))\n(and (and $x286 $x111) (= (/ 1.0 3.0) (+ ?x173 (* 0.0 ?x234))) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x178)) ?x149)) (= (/ 1.0 3.0) (+ ?x173 ?x149)))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 4,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1541 () Real)\n(declare-fun oneOriginalSourceParameter!1540 () Real)\n(assert\n (let ((?x192 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1540)))))\n(let ((?x321 (+ ?x192 (* 0.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1541)))))\n(let (($x16 (= (/ 1.0 3.0) ?x321)))\n(let ((?x9 (+ 0.0 1.0)))\n(let ((?x289 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1541))))\n(let ((?x99 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1540))))\n(let (($x247 (and (> oneOriginalSourceParameter!1541 0.0) (< oneOriginalSourceParameter!1541 1.0))))\n(let (($x275 (and (> oneOriginalSourceParameter!1540 0.0) (< oneOriginalSourceParameter!1540 1.0))))\n(and (and $x275 $x247) $x16 (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x99)) (* 0.0 ?x289))) $x16))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 5,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1543 () Real)\n(declare-fun oneOriginalSourceParameter!1542 () Real)\n(assert\n (let ((?x9 (+ 0.0 1.0)))\n(let ((?x176 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1543))))\n(let ((?x200 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1542)))))\n(let ((?x15 (* 1.0 (/ 1.0 3.0))))\n(let ((?x277 (* ?x15 oneOriginalSourceParameter!1543)))\n(let ((?x158 (* 0.0 ?x277)))\n(let ((?x133 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1542))))\n(let (($x33 (and (> oneOriginalSourceParameter!1543 0.0) (< oneOriginalSourceParameter!1543 1.0))))\n(let (($x128 (and (> oneOriginalSourceParameter!1542 0.0) (< oneOriginalSourceParameter!1542 1.0))))\n(and (and $x128 $x33) (= (/ 1.0 3.0) (+ ?x200 ?x158)) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x133)) ?x158)) (= (/ 1.0 3.0) (+ ?x200 (* 0.0 ?x176))))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 6,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1545 () Real)\n(declare-fun oneOriginalSourceParameter!1544 () Real)\n(assert\n (let ((?x15 (* 1.0 (/ 1.0 3.0))))\n(let ((?x38 (* ?x15 oneOriginalSourceParameter!1545)))\n(let ((?x51 (* 0.0 ?x38)))\n(let ((?x9 (+ 0.0 1.0)))\n(let ((?x173 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1544))))\n(let ((?x192 (+ 0.0 (* 1.0 (* ?x15 oneOriginalSourceParameter!1544)))))\n(let ((?x167 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1545))))\n(let (($x321 (and (> oneOriginalSourceParameter!1545 0.0) (< oneOriginalSourceParameter!1545 1.0))))\n(let (($x286 (and (> oneOriginalSourceParameter!1544 0.0) (< oneOriginalSourceParameter!1544 1.0))))\n(and (and $x286 $x321) (= (/ 1.0 3.0) (+ ?x192 (* 0.0 ?x167))) (= (/ 1.0 3.0) (+ ?x192 ?x51)) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x173)) ?x51)))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 7,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1547 () Real)\n(declare-fun oneOriginalSourceParameter!1546 () Real)\n(assert\n (let ((?x15 (* 1.0 (/ 1.0 3.0))))\n(let ((?x60 (* ?x15 oneOriginalSourceParameter!1547)))\n(let ((?x178 (* 0.0 ?x60)))\n(let ((?x9 (+ 0.0 1.0)))\n(let ((?x131 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1546))))\n(let ((?x176 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1547))))\n(let ((?x201 (+ 0.0 (* 1.0 (* ?x15 oneOriginalSourceParameter!1546)))))\n(let (($x260 (and (> oneOriginalSourceParameter!1547 0.0) (< oneOriginalSourceParameter!1547 1.0))))\n(let (($x199 (and (> oneOriginalSourceParameter!1546 0.0) (< oneOriginalSourceParameter!1546 1.0))))\n(and (and $x199 $x260) (= (/ 1.0 3.0) (+ ?x201 ?x178)) (= (/ 1.0 3.0) (+ ?x201 (* 0.0 ?x176))) (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x131)) ?x178)))))))))))))\n(check-sat)\n"
+        },
+        {
+          "kind": "initial_joint_history_admission",
+          "source_model": 8,
+          "policy_path": [],
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!1549 () Real)\n(declare-fun oneOriginalSourceParameter!1548 () Real)\n(assert\n (let ((?x9 (+ 0.0 1.0)))\n(let ((?x18 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1549))))\n(let ((?x28 (+ ?x9 (* (* 1.0 (- (/ 2.0 3.0))) oneOriginalSourceParameter!1548))))\n(let ((?x106 (+ 0.0 (* 1.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1548)))))\n(let ((?x125 (+ ?x106 (* 0.0 (* (* 1.0 (/ 1.0 3.0)) oneOriginalSourceParameter!1549)))))\n(let (($x282 (= (/ 1.0 3.0) ?x125)))\n(let (($x98 (and (> oneOriginalSourceParameter!1549 0.0) (< oneOriginalSourceParameter!1549 1.0))))\n(let (($x149 (and (> oneOriginalSourceParameter!1548 0.0) (< oneOriginalSourceParameter!1548 1.0))))\n(and (and $x149 $x98) $x282 $x282 (= (/ 1.0 3.0) (+ (+ 0.0 (* 1.0 ?x28)) (* 0.0 ?x18)))))))))))))\n(check-sat)\n"
+        }
+      ],
+      "policy_verified": false
+    }
+  }
+]

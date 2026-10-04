@@ -1,0 +1,1389 @@
+[
+  {
+    "label": "insufficient_history",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "No one source-complete affine pivot; piecewise-rank/general QE adapter required.",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  },
+  {
+    "label": "same_row_repeated",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "No one source-complete affine pivot; piecewise-rank/general QE adapter required.",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  },
+  {
+    "label": "future_observation",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "Action reads an unencoded or nonhistorical expression.",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  },
+  {
+    "label": "illegal_normalization",
+    "result": {
+      "status": "UNKNOWN_OR_REFUTED_COMPILED_CANDIDATE",
+      "rank_receipts": [
+        {
+          "source_model": 0,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "4*_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!796 () Real)\n(declare-fun sameOriginalSourceForRank!795 () Real)\n(assert\n (let (($x768 (and (> sameOriginalSourceForRank!796 0.0) (< sameOriginalSourceForRank!796 1.0))))\n (let (($x362 (and (> sameOriginalSourceForRank!795 0.0) (< sameOriginalSourceForRank!795 1.0))))\n (and $x362 $x768))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let ((?x409 (+ (+ 0.0 (/ 4.0 9.0)) (* (* 1.0 (- (/ 8.0 27.0))) sameOriginalSourceForRank!795))))\n(let (($x157 (and (and (and (distinct ?x409 0.0) true) $x23) $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x157))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 1,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "-2*_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!798 () Real)\n(declare-fun sameOriginalSourceForRank!797 () Real)\n(assert\n (let (($x184 (and (> sameOriginalSourceForRank!798 0.0) (< sameOriginalSourceForRank!798 1.0))))\n (let (($x162 (and (> sameOriginalSourceForRank!797 0.0) (< sameOriginalSourceForRank!797 1.0))))\n (and $x162 $x184))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let ((?x106 (+ (+ 0.0 (- (/ 2.0 9.0))) (* (* 1.0 (/ 4.0 27.0)) sameOriginalSourceForRank!797))))\n(let (($x390 (and (and (and (distinct ?x106 0.0) true) $x23) $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x390))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 2,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "-2*_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!800 () Real)\n(declare-fun sameOriginalSourceForRank!799 () Real)\n(assert\n (let (($x586 (and (> sameOriginalSourceForRank!800 0.0) (< sameOriginalSourceForRank!800 1.0))))\n (let (($x384 (and (> sameOriginalSourceForRank!799 0.0) (< sameOriginalSourceForRank!799 1.0))))\n (and $x384 $x586))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let ((?x726 (+ (+ 0.0 (- (/ 2.0 9.0))) (* (* 1.0 (/ 4.0 27.0)) sameOriginalSourceForRank!799))))\n(let (($x407 (and (and (and (distinct ?x726 0.0) true) $x23) $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x407))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 3,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "-2*_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!802 () Real)\n(declare-fun sameOriginalSourceForRank!801 () Real)\n(assert\n (let (($x68 (and (> sameOriginalSourceForRank!802 0.0) (< sameOriginalSourceForRank!802 1.0))))\n (let (($x39 (and (> sameOriginalSourceForRank!801 0.0) (< sameOriginalSourceForRank!801 1.0))))\n (and $x39 $x68))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let (($x760 (and (and (distinct (* (* 1.0 (- 2.0)) sameOriginalSourceForRank!801) 0.0) true) (and (distinct 27.0 0.0) true))))\n(let (($x782 (and $x760 $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x782))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 4,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!804 () Real)\n(declare-fun sameOriginalSourceForRank!803 () Real)\n(assert\n (let (($x106 (and (> sameOriginalSourceForRank!804 0.0) (< sameOriginalSourceForRank!804 1.0))))\n (let (($x801 (and (> sameOriginalSourceForRank!803 0.0) (< sameOriginalSourceForRank!803 1.0))))\n (and $x801 $x106))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let (($x822 (and (and (distinct sameOriginalSourceForRank!803 0.0) true) (and (distinct 27.0 0.0) true))))\n(let (($x184 (and $x822 $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x184))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 5,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!806 () Real)\n(declare-fun sameOriginalSourceForRank!805 () Real)\n(assert\n (let (($x709 (and (> sameOriginalSourceForRank!806 0.0) (< sameOriginalSourceForRank!806 1.0))))\n (let (($x586 (and (> sameOriginalSourceForRank!805 0.0) (< sameOriginalSourceForRank!805 1.0))))\n (and $x586 $x709))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let (($x436 (and (and (distinct sameOriginalSourceForRank!805 0.0) true) (and (distinct 27.0 0.0) true))))\n(let (($x778 (and $x436 $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x778))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 6,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "-2*_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!808 () Real)\n(declare-fun sameOriginalSourceForRank!807 () Real)\n(assert\n (let (($x563 (and (> sameOriginalSourceForRank!808 0.0) (< sameOriginalSourceForRank!808 1.0))))\n (let (($x362 (and (> sameOriginalSourceForRank!807 0.0) (< sameOriginalSourceForRank!807 1.0))))\n (and $x362 $x563))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let (($x263 (and (and (distinct (* (* 1.0 (- 2.0)) sameOriginalSourceForRank!807) 0.0) true) (and (distinct 27.0 0.0) true))))\n(let (($x726 (and $x263 $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x726))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 7,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!810 () Real)\n(declare-fun sameOriginalSourceForRank!809 () Real)\n(assert\n (let (($x431 (and (> sameOriginalSourceForRank!810 0.0) (< sameOriginalSourceForRank!810 1.0))))\n (let (($x801 (and (> sameOriginalSourceForRank!809 0.0) (< sameOriginalSourceForRank!809 1.0))))\n (and $x801 $x431))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let (($x216 (and (and (distinct sameOriginalSourceForRank!809 0.0) true) (and (distinct 27.0 0.0) true))))\n(let (($x405 (and $x216 $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x405))))))\n(check-sat)\n"
+        },
+        {
+          "source_model": 8,
+          "minor_rows": [
+            0,
+            3
+          ],
+          "determinant": "_g7History_step0_coordinate0/9",
+          "status": "unsat",
+          "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun sameOriginalSourceForRank!812 () Real)\n(declare-fun sameOriginalSourceForRank!811 () Real)\n(assert\n (let (($x853 (and (> sameOriginalSourceForRank!812 0.0) (< sameOriginalSourceForRank!812 1.0))))\n (let (($x535 (and (> sameOriginalSourceForRank!811 0.0) (< sameOriginalSourceForRank!811 1.0))))\n (and $x535 $x853))))\n(assert\n (let (($x23 (and (distinct 1.0 0.0) true)))\n(let (($x779 (and $x23 $x23)))\n(let (($x439 (and (and (distinct sameOriginalSourceForRank!811 0.0) true) (and (distinct 27.0 0.0) true))))\n(let (($x709 (and $x439 $x779 $x779 $x779 $x779 $x779 $x779)))\n(not $x709))))))\n(check-sat)\n"
+        }
+      ],
+      "verification": {
+        "status": "INVALID_OR_REFUTED_POLICY",
+        "reason": "A reachable policy obligation failed: source_reachable_real_action_legality",
+        "receipts": [
+          {
+            "kind": "initial_joint_history_admission",
+            "source_model": 0,
+            "policy_path": [],
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!922 () Real)\n(declare-fun oneOriginalSourceParameter!921 () Real)\n(assert\n (let (($x586 (and (> oneOriginalSourceParameter!922 0.0) (< oneOriginalSourceParameter!922 1.0))))\n(let (($x407 (and (> oneOriginalSourceParameter!921 0.0) (< oneOriginalSourceParameter!921 1.0))))\n(and $x407 $x586))))\n(check-sat)\n",
+            "counterexample_model": "[oneOriginalSourceParameter!922 = 1/2,\n oneOriginalSourceParameter!921 = 1/2]"
+          },
+          {
+            "kind": "source_reachable_real_action_legality",
+            "source_model": 0,
+            "policy_path": [],
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!922 () Real)\n(declare-fun oneOriginalSourceParameter!921 () Real)\n(assert\n (let (($x778 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x586 (and (> oneOriginalSourceParameter!922 0.0) (< oneOriginalSourceParameter!922 1.0))))\n(let (($x407 (and (> oneOriginalSourceParameter!921 0.0) (< oneOriginalSourceParameter!921 1.0))))\n(let (($x524 (and $x407 $x586)))\n(and $x524 (not $x778)))))))\n(check-sat)\n"
+          },
+          {
+            "kind": "PATH_union_resource_budget",
+            "source_model": 0,
+            "policy_path": [],
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!922 () Real)\n(declare-fun oneOriginalSourceParameter!921 () Real)\n(assert\n (let (($x586 (and (> oneOriginalSourceParameter!922 0.0) (< oneOriginalSourceParameter!922 1.0))))\n(let (($x407 (and (> oneOriginalSourceParameter!921 0.0) (< oneOriginalSourceParameter!921 1.0))))\n(let (($x524 (and $x407 $x586)))\n(and $x524 (not true))))))\n(check-sat)\n"
+          },
+          {
+            "kind": "source_reachable_real_action_legality",
+            "source_model": 0,
+            "policy_path": [
+              "call"
+            ],
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!921 () Real)\n(declare-fun oneOriginalSourceParameter!922 () Real)\n(assert\n (let ((?x240 (+ 1.0 (* (- (/ 2.0 3.0)) oneOriginalSourceParameter!921))))\n(let (($x815 (> ?x240 0.0)))\n(let (($x442 (and true true (= (+ (+ 0.0 ?x240) ?x240) 1.0) $x815 $x815)))\n(let (($x586 (and (> oneOriginalSourceParameter!922 0.0) (< oneOriginalSourceParameter!922 1.0))))\n(let (($x407 (and (> oneOriginalSourceParameter!921 0.0) (< oneOriginalSourceParameter!921 1.0))))\n(let (($x524 (and $x407 $x586)))\n(and $x524 (not $x442)))))))))\n(check-sat)\n",
+            "counterexample_model": "[oneOriginalSourceParameter!922 = 1/2,\n oneOriginalSourceParameter!921 = 7/8]"
+          }
+        ],
+        "policy_verified": false
+      },
+      "policy": {
+        "kind": "call",
+        "support": [
+          0
+        ],
+        "weights": [
+          "1",
+          "0"
+        ],
+        "next": {
+          "kind": "call",
+          "support": [
+            0,
+            1
+          ],
+          "weights": [
+            "h0_0",
+            "h0_0"
+          ],
+          "next": {
+            "kind": "decision",
+            "branches": [
+              {
+                "guard": {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "-2*h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3/2 - 3*h0_0/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3/2 - 3*h0_0/2",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-h0_0/2 - h0_1 + 1/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-h0_0/2 - h0_2 + 1/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "3*h0_0**2/2 + 3*h0_0/2 - 2*h1_0 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-3*h0_0**2/2 + h0_0/2 + h1_0 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "-2*h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3*h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(3*h0_0**2 + 3*h0_0 - 3*h1_0)/(2*h0_0)",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(3*h0_0**2 + 3*h0_0 - 3*h1_0)/(2*h0_0)",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-2*h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h0_2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-3*h0_0**2/2 + 3*h0_0/2 - h1_0/2 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "3*h0_0**2/2 + h0_0/2 - h1_0/2 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "next": {
+                  "kind": "leaf",
+                  "target": [
+                    0,
+                    1
+                  ]
+                }
+              },
+              {
+                "guard": {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "-2*h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3/2 - 3*h0_0/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3/2 - 3*h0_0/2",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-h0_0/2 - h0_1 + 1/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-h0_0/2 - h0_2 + 1/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-3*h0_0**2/2 + h0_0/2 + h1_0 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "3*h0_0**2/2 + 3*h0_0/2 - 2*h1_0 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "-2*h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3*h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(3*h0_0**2 + 3*h0_0 - 3*h1_0)/(2*h0_0)",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(3*h0_0**2 + 3*h0_0 - 3*h1_0)/(2*h0_0)",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h0_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-2*h0_0 - h0_2 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "3*h0_0**2/2 + h0_0/2 - h1_0/2 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-3*h0_0**2/2 + 3*h0_0/2 - h1_0/2 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "next": {
+                  "kind": "leaf",
+                  "target": [
+                    0,
+                    2
+                  ]
+                }
+              },
+              {
+                "guard": {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "4*h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3/2 - 3*h0_0/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3/2 - 3*h0_0/2",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(3*h0_0**2 + 3*h0_0 - 3*h1_0)/(2*h0_0)",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(3*h0_0**2 + 3*h0_0 - 3*h1_0)/(2*h0_0)",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-h0_0/2 - h0_1 + 1/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-h0_0/2 - h0_2 + 1/2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h1_0/2 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h1_0/2 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "next": {
+                  "kind": "leaf",
+                  "target": [
+                    0
+                  ]
+                }
+              },
+              {
+                "guard": {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3*h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-2*h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h0_2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-3*h0_0**2 + h0_0 + h1_0 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "3*h0_0**2 + h0_0 - 2*h1_0 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3*h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h0_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-2*h0_0 - h0_2 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "3*h0_0**2 + h0_0 - 2*h1_0 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-3*h0_0**2 + h0_0 + h1_0 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "next": {
+                  "kind": "leaf",
+                  "target": [
+                    1,
+                    2
+                  ]
+                }
+              },
+              {
+                "guard": {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3*h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-2*h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h0_2",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "2*h0_0 - 2*h1_0 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h1_0 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "next": {
+                  "kind": "leaf",
+                  "target": [
+                    1
+                  ]
+                }
+              },
+              {
+                "guard": {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "left": "h0_0/9",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "3*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "3*h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "lt",
+                          "left": "(-3*h0_0**2 + 3*h1_0)/h0_0",
+                          "right": "1"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h0_0 - h0_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "-2*h0_0 - h0_2 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "h1_0 - h1_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ne",
+                          "left": "1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "eq",
+                          "left": "2*h0_0 - 2*h1_0 - h1_2",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "next": {
+                  "kind": "leaf",
+                  "target": [
+                    2
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "label": "nonlinear_abstract_not_a_biological_source",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "nonlinear term: _g7Source_model0_parameter0**2",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  },
+  {
+    "label": "malformed_action_syntax",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "'(' was never closed (<unknown>, line 1)",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  },
+  {
+    "label": "expression_nesting_resource",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "Action-expression nesting resource ceiling64 exceeded; projection UNKNOWN.",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  },
+  {
+    "label": "word_length_resource",
+    "result": {
+      "status": "UNKNOWN_UNSUPPORTED_OR_INCOMPLETE_LEAF_COMPILATION",
+      "reason": "Finite action-word resource ceiling128 exceeded; projection UNKNOWN.",
+      "rank_receipts": [],
+      "budget_NO_claimed": false
+    }
+  }
+]

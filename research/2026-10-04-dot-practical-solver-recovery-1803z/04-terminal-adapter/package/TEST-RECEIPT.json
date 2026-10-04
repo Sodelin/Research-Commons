@@ -1,0 +1,72 @@
+{
+  "schema": "actual-source-terminal-integration-test-v1",
+  "status": "PASS",
+  "actual_source_workflow_cases": [
+    {
+      "case": "actual-source-terminal",
+      "status": "TERMINAL_ACTION_RECOMPUTED_SAME_BACKEND",
+      "result_sha256": "90fdcc95e2c895f91a416a99d24492edb3f4bc00f456ebb04be518b3d915c1ea",
+      "fresh_actual_source_recheck": {
+        "status": "PASS_FRESH_ACTUAL_SOURCE_TERMINAL_ACTION_REPLAY",
+        "source_count": 15,
+        "different_target_pairs": 75,
+        "exact_weight_kinds": [
+          "rational"
+        ],
+        "supplied_SMT_or_QE_output_trusted": false,
+        "trust": "fresh exact same-backend NRA from recompiled source rows"
+      }
+    },
+    {
+      "case": "zero-call-budget",
+      "status": "NO_TERMINAL_EXTENSION_WITHIN_PATH_BUDGET_SAME_BACKEND",
+      "result_sha256": "77688814bab0515578c8830453d150ccba1c454bf6549facd08109b2a3883061",
+      "fresh_actual_source_recheck": {
+        "status": "PASS_ACTUAL_SOURCE_BOUNDED_TERMINAL_NO_REPLAY",
+        "trust": "fresh same-backend QE/NRA",
+        "global_unknown_size_NO_claimed": false
+      }
+    },
+    {
+      "case": "existing-target-history",
+      "status": "NO_ADDITIONAL_CALL_NEEDED_SAME_BACKEND",
+      "result_sha256": "df61cee2a0f5193de38177bdd9a5ff4f92d27b45beae6b8afe051eaaf68c45ba",
+      "fresh_actual_source_recheck": {
+        "status": "PASS_ACTUAL_SOURCE_HISTORY_HOMOGENEITY_REPLAY",
+        "trust": "fresh same-backend NRA"
+      }
+    },
+    {
+      "case": "impossible-history",
+      "status": "NO_ADMITTED_SOURCE_FOR_HISTORY_SAME_BACKEND",
+      "result_sha256": "c242bfb311fcf4dc87ae999aaea1765192afbf1bc26a3f8849a3577877d2b9cb",
+      "fresh_actual_source_recheck": {
+        "status": "PASS_ACTUAL_SOURCE_IMPOSSIBLE_HISTORY_REPLAY",
+        "trust": "fresh same-backend NRA"
+      }
+    },
+    {
+      "case": "pair-limit",
+      "status": "UNKNOWN_SOURCE_PAIR_RESOURCE_LIMIT",
+      "result_sha256": "1c9f9302c09b343a8f5102f4fc6947915f58a160f7e0050cdcada9785f45ae64",
+      "fresh_actual_source_recheck": null
+    }
+  ],
+  "shared_parameter_history_control": "PASS_ABSTRACT_IMPLEMENTATION_CONTROL",
+  "unsupported_contract_rejections": [
+    "empirical-payload",
+    "floating-history",
+    "unencoded-constraint",
+    "missing-response-coordinate"
+  ],
+  "exact_algebraic_weight_reconstruction": "PASS",
+  "supplied_formula_not_trusted": "PASS",
+  "finite_integer_power_and_algebraic_degree_encoding": "PASS_WITHOUT_ARTIFICIAL_DEGREE_CAPS",
+  "tampered_action_rejected": "PASS",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "z3": "4.15.3",
+  "elapsed_seconds": 2.469423185000778,
+  "trust": "Actual sources are freshly compiled; generic mathematical decisions use completed same-backend Z3 checks, not independent/Lean proof certificates",
+  "full_recursive_G7_claimed": false
+}

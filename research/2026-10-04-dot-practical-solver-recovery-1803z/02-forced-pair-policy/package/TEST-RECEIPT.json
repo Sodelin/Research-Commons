@@ -1,0 +1,47 @@
+{
+  "status": "PASS_ISOLATED_SOURCE_COMPLETE_FORCED_PAIR_WORKFLOW",
+  "terminal_exit": 0,
+  "source_classes": 546,
+  "symbolic_forced_laws": 1092,
+  "source_image_classes": 9,
+  "lower_witnesses": 4,
+  "commands": [
+    {
+      "script": "forced_pair_source_images.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS_EXACT_COMPLETE_ACTUAL_FORCE_PAIR_IMAGES\",\n  \"source_count\": 546,\n  \"image_models\": 9,\n  \"certificate_sha256\": \"305133165b3f879467295a775156f4095985aed5ea79f33a0c18530ed8393cc6\",\n  \"elapsed_seconds\": 1.8074274160026107\n}\n"
+    },
+    {
+      "script": "check_forced_pair_policy.py",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS_ACTUAL_SOURCE_POLICY_IDENTITIES_AND_LOWER_WITNESSES\",\n  \"source_images\": 9,\n  \"single_configuration_lower_cases\": 2,\n  \"policy_certificate_sha256\": \"58ac95901fdfc4a77de1758bf3cf98e69242bb51c83ad98e023425ef563634dc\"\n}\n"
+    },
+    {
+      "example": "two-targets",
+      "exit_code": 0,
+      "status": "IDENTIFIED_ACTUAL_Q_BY_TWO_CONFIGURATION_ONE_CALL_POLICY",
+      "stdout": "{\n  \"status\": \"IDENTIFIED_ACTUAL_Q_BY_TWO_CONFIGURATION_ONE_CALL_POLICY\",\n  \"trajectory_cost\": {\n    \"exact_calls\": 1,\n    \"configurations\": 2,\n    \"original_controlled_sites\": 1\n  }\n}\n"
+    },
+    {
+      "example": "single-target",
+      "exit_code": 0,
+      "status": "IDENTIFIED_ACTUAL_Q_BY_TWO_CONFIGURATION_ONE_CALL_POLICY",
+      "stdout": "{\n  \"status\": \"IDENTIFIED_ACTUAL_Q_BY_TWO_CONFIGURATION_ONE_CALL_POLICY\",\n  \"trajectory_cost\": {\n    \"exact_calls\": 1,\n    \"configurations\": 2,\n    \"original_controlled_sites\": 1\n  }\n}\n"
+    },
+    {
+      "example": "positive-boundary-no",
+      "exit_code": 0,
+      "status": "NO_SOURCE_FOR_FIXED_MENU_BY_COMPLETE_IMAGE_CERTIFICATE",
+      "stdout": "{\n  \"status\": \"NO_SOURCE_FOR_FIXED_MENU_BY_COMPLETE_IMAGE_CERTIFICATE\",\n  \"reason\": \"Strict positive source images have a positive baseline and one or two coordinates strictly above it.\"\n}\n"
+    }
+  ],
+  "production_script_sha256": {
+    "requirements.txt": "05851fd3a70a531a52520f17346fcefe447028337446393daf5e0e7a956d2071",
+    "forced_pair_source_images.py": "869e1a4781888b24e960bca1254c21adbcabea20eba64f73085290a7e5777c5b",
+    "check_forced_pair_policy.py": "0577a95e7c0ece1eaa39c55beeb3effa724616cc1b5e47d2dfa162319cd521bf",
+    "execute_forced_pair_policy.py": "18738c0b3ebdb768e66dcf930114f0163d794368d9c0f4fea70c7791a4475ee3"
+  },
+  "frozen_source_image_certificate_sha256": "2332f4a6e242c8a29cf9ce1e39486e4d6ce8a739b4b02d5ce87d85ce69dabcb8",
+  "frozen_policy_certificate_sha256": "030f736fa4d247e7f38e53ca47919461f3fa3184c16e60af24f0a64681ca10a6",
+  "scope": "Source-complete software execution and exact symbolic/source witness controls; no generic CAD, Lean or empirical validation inferred."
+}

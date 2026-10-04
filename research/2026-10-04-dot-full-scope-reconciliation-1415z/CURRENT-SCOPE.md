@@ -105,3 +105,9 @@ Retain one Lean/source-certification role, one Raubeson/independent-review role,
 4. Keep solver action/leaf synthesis separate from supplied-policy verification, and keep real biological data outside the solver until its observation contract is admitted. Reuse accepted source-pair and algebraic-section results without turning bounded success into generic completion.
 
 Read-only audit: the original shared scope and successor chain, residual register, later dated checkpoints and seven commits since the preceding full-scope period were inspected. Current repository issue and pull-review comment queries returned no updates since 10:05 UTC; all seven inspected commits had no comments. This is a bounded API audit, not an exhaustive discussion or worldwide literature census. Repository publication remains serialized, additive/non-force and preservation-first.
+
+
+## Full-scope successor — 4 October 2026, 18:10 UTC
+
+The [current full-scope reconciliation](../2026-10-04-dot-full-scope-reconciliation-1810z/CURRENT-SCOPE.md) records the complete public G1 source/build release, the new recovery delivery and its explicit unavailable-byte/new-revision distinctions, bounded G3/solver progress and the freshly reviewed biological observation bridge. It preserves all older accepted results and original classes, leaves G3/G4 and generic synthesis open, and retains the four graph-first roles. Earlier proof and scope bytes remain historical records; this append-only pointer changes no mathematical contract.
+

@@ -1,0 +1,29 @@
+{
+  "schema": "one-remaining-call-experiment-terminal-test-v1",
+  "created_utc": "2026-10-04T08:21:25.536078+00:00",
+  "status": "PASS",
+  "python_version": "3.12.14",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "check_all_interior_weights.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS_INDEPENDENT_POSITIVE_IDENTITIES_AND_LOCAL_QE\",\n  \"independent_pair_certificates\": 33,\n  \"z3\": \"4.15.3\",\n  \"elapsed_seconds\": 0.16280763800023124\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "verify_all_interior_receipt.py",
+        "--tamper-controls"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS_EXACT_RATIONAL_IDENTITIES\",\n  \"covered_different_target_pairs\": 33,\n  \"claim\": \"Under the declared open source cube and positive action weights, no different-target pair has equal responses\",\n  \"backend_trusted\": false,\n  \"source_coverage\": \"separately pinned accepted joint source-image provider\",\n  \"tamper_rejections\": 4\n}\n",
+      "stderr": ""
+    }
+  ],
+  "source_provider_replay": "Not repeated; prior independently accepted provider is SHA-pinned",
+  "backend_trust": "The separately stored rational-polynomial certificates independently establish the all-interior conclusion; QE is a cross-check"
+}
