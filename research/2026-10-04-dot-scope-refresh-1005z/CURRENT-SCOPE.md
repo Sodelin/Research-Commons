@@ -44,3 +44,7 @@ Keep the four agreed roles: one Lean source-assembly/certification role; one Lin
 Recommendation: retain this allocation and publish this **incremental checkpoint**, with a forward pointer from the original shared scope. Do not rewrite historical snapshots, reopen accepted hand masters, or bypass the held package publication. All repository updates remain serialized and additive.
 
 Audit coverage: read-only checks on 4 October at 10:03–10:05 UTC found no repository issues, no issue/review comments updated since the earlier 09:14 audit, and no comments on either inspected head commit. This is a bounded API audit, not an exhaustive discussion census.
+
+## Full-scope successor — 4 October 2026, 14:15 UTC
+
+The [full research-scope reconciliation](../2026-10-04-dot-full-scope-reconciliation-1415z/CURRENT-SCOPE.md) records independent acceptance of the full original G1 formal master and all-n sharpness, preserves the distinction between reduced decorated-core bounds and G3's unbounded source-word realization problem, and reconciles retained G2/G5, original NANUQ application gaps, open G3/G4, G6/G7 formal/solver debts, reviewed boundary/policy work, biological measurement assumptions and publication/prior-work status. It supersedes only the dated pending/status statements that it explicitly resolves. Earlier proof bytes and this historical scope remain preserved; the held combined publication is not released by this pointer.
