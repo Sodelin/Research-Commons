@@ -1,0 +1,2 @@
+import G1FullOriginalClassMasterAndSharpness
+#print axioms G1FullOriginalClassMasterAndSharpness.actual_G1_original_class_master_with_all_n_sharpness
