@@ -1,0 +1,1032 @@
+{
+  "status": "PASS",
+  "global_equivalence_checks": [
+    {
+      "name": "separate_rival_assignments_and_strict_pivot_bounds",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun a0_0 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x56 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)))))\n(let (($x62 (and $x56 (and (> a0_0 0.0) (< a0_0 1.0)) (<= (/ 1.0 2.0) h0_0))))\n(let (($x27 (<= 0.0 (- (+ h0_0 h0_1) 1.0))))\n(let (($x23 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0))))\n(let ((?x15 (- 1.0 h0_0)))\n(let (($x17 (< 0.0 ?x15)))\n(let (($x35 (< 0.0 (- 1.0 (* 2.0 h0_0)))))\n(let (($x45 (< 0.0 (- 1.0 a0_0))))\n(let (($x14 (< 0.0 h0_0)))\n(let (($x43 (< 0.0 a0_0)))\n(let (($x51 (and (or (or (and $x14 $x17 $x23 $x27)) (or (and $x14 $x35 $x23 $x27))) (and $x43 $x45) (not (or (or (and $x43 $x14 $x45 $x35 $x17 $x23 $x27)))))))\n(let (($x16 (and true true)))\n(let (($x19 (and $x16 true)))\n(let (($x24 (and $x19 true)))\n(let (($x37 (and (and true $x16) true)))\n(let (($x38 (and (and (and $x16 $x19 $x24 $x24)) (and (and $x16 $x37 $x24 $x24)))))\n(let (($x52 (and $x38 (and $x16 $x19) (and (and (and $x16 $x16 $x19 $x37 $x19 $x24 $x24))))))\n(or (not $x52) (xor $x51 $x62))))))))))))))))))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - 2*h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - 2*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 + h0_1 - 1",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "variable_rank_zero_and_open_source_endpoints",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x100 (and (<= (/ 1.0 5.0) a0_0) (>= (/ 4.0 5.0) a0_0))))\n(let (($x45 (< 0.0 (- 1.0 a0_0))))\n(let (($x43 (< 0.0 a0_0)))\n(let (($x119 (and (< 0.0 (- (* 2.0 a0_0) 1.0)) $x43 $x45 (< 0.0 (- (* 5.0 a0_0) 4.0)) (< 0.0 (- (* 5.0 a0_0) 1.0)))))\n(let (($x126 (and (= 0.0 (- (* 2.0 a0_0) 1.0)) $x43 $x45 (<= 0.0 (- 4.0 (* 5.0 a0_0))) (<= 0.0 (- (* 5.0 a0_0) 4.0)))))\n(let (($x122 (and (> 0.0 (- (* 2.0 a0_0) 1.0)) $x43 (< 0.0 (- 1.0 (* 5.0 a0_0))) $x45 (< 0.0 (- 4.0 (* 5.0 a0_0))))))\n(let (($x97 (and (or (or and) (or and)) (and $x43 $x45) (not (or (or $x122 $x126 $x119))))))\n(let (($x16 (and true true)))\n(let (($x19 (and $x16 true)))\n(let (($x24 (and $x19 true)))\n(let (($x37 (and (and true $x16) true)))\n(let (($x123 (and (and $x24 $x16 $x37 $x19 $x37) (and $x24 $x16 $x19 $x37 $x24) (and $x24 $x16 $x19 $x24 $x24))))\n(let (($x94 (and (and (and and) (and and)) (and $x16 $x19) (and $x123))))\n(or (not $x94) (xor $x97 $x100))))))))))))))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "lt",
+                          "left": "2*a0_0 - 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - 5*a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "4 - 5*a0_0",
+                          "right": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "eq",
+                          "left": "2*a0_0 - 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "4 - 5*a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "5*a0_0 - 4",
+                          "right": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "gt",
+                          "left": "2*a0_0 - 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "5*a0_0 - 4",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "5*a0_0 - 1",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "joint_history_and_cancelled_domain",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_1 () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h0_0 () Real)\n(declare-fun h1_0 () Real)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x23 (= h1_1 h0_1)))\n(let (($x38 (= h1_0 h0_0)))\n(let (($x67 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)))))\n(let (($x8 (and $x67 (and (> a0_0 0.0) (< a0_0 1.0)) (< (/ 1.0 2.0) h0_0) $x38 $x23)))\n(let (($x55 (<= 0.0 (- (+ h0_0 h1_1) 1.0))))\n(let (($x68 (<= 0.0 (- (+ h0_0 h0_1) 1.0))))\n(let (($x53 (< 0.0 (+ (- (* 4.0 (^ h0_0 2.0)) (* 4.0 h0_0)) 1.0))))\n(let (($x74 (<= 0.0 (+ (- (- h0_0) h1_1) 1.0))))\n(let (($x20 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0))))\n(let (($x59 (<= 0.0 (- h0_0 h1_0))))\n(let (($x57 (<= 0.0 (+ (- h0_0) h1_0))))\n(let ((?x12 (- 1.0 h0_0)))\n(let (($x30 (< 0.0 ?x12)))\n(let (($x146 (< 0.0 (- 1.0 (* 2.0 h0_0)))))\n(let (($x45 (< 0.0 (- 1.0 a0_0))))\n(let (($x26 (< 0.0 h0_0)))\n(let (($x43 (< 0.0 a0_0)))\n(let (($x75 (or (and $x43 $x26 $x45 $x146 $x30 $x57 $x59 $x20 $x74 $x53 $x68 $x55))))\n(let (($x65 (or (or (and $x26 $x30 $x57 $x59 $x20 $x74 $x53 $x68 $x55)) (or (and $x26 $x146 $x57 $x59 $x20 $x74 $x53 $x68 $x55)))))\n(let (($x28 (and $x65 (and $x43 $x45) (not (or $x75)))))\n(let (($x16 (and true true)))\n(let (($x19 (and $x16 true)))\n(let (($x24 (and $x19 true)))\n(let (($x81 (and (and (and (and true $x16) $x16) true) true)))\n(let (($x29 (and true $x16)))\n(let (($x37 (and $x29 true)))\n(let (($x124 (and (and $x16 $x16 $x19 $x37 $x19 $x19 $x19 $x24 $x24 $x81 $x24 $x24))))\n(let (($x40 (and (and (and $x16 $x19 $x19 $x19 $x24 $x24 $x81 $x24 $x24)) (and (and $x16 $x37 $x19 $x19 $x24 $x24 $x81 $x24 $x24)))))\n(let (($x35 (and $x40 (and $x16 $x19) (and $x124))))\n(or (not $x35) (xor $x28 $x8))))))))))))))))))))))))))))))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 + h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 - h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h1_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "4*h0_0**2 - 4*h0_0 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h1_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - 2*h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 + h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 - h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h1_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "4*h0_0**2 - 4*h0_0 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h1_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - 2*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 + h1_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 - h1_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 - h1_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "4*h0_0**2 - 4*h0_0 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 + h0_1 - 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 + h1_1 - 1",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "constant_pivot_open_bounds_and_constant_model",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun h0_1 () Real)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x157 (and (and (> a0_0 0.0) (< a0_0 1.0)) (= h0_1 (- 1.0 h0_0)) (or (and (> h0_0 0.0) (> (/ 1.0 2.0) h0_0)) (= (/ 3.0 4.0) h0_0)))))\n(let (($x68 (<= 0.0 (- (+ h0_0 h0_1) 1.0))))\n(let (($x20 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0))))\n(let (($x171 (<= 0.0 (- (* 4.0 h0_1) 1.0))))\n(let (($x178 (<= 0.0 (- (* 4.0 h0_0) 3.0))))\n(let (($x181 (<= 0.0 (- 3.0 (* 4.0 h0_0)))))\n(let (($x183 (<= 0.0 (- 1.0 (* 4.0 h0_1)))))\n(let (($x146 (< 0.0 (- 1.0 (* 2.0 h0_0)))))\n(let (($x45 (< 0.0 (- 1.0 a0_0))))\n(let (($x26 (< 0.0 h0_0)))\n(let (($x43 (< 0.0 a0_0)))\n(let (($x122 (not (or (or (and $x43 $x26 $x45 $x146 $x183 $x181 $x178 $x171 $x20 $x68))))))\n(let (($x143 (and (or (or (and $x26 $x146 $x20 $x68)) (or (and $x183 $x181 $x178 $x171))) (and $x43 $x45) $x122)))\n(let (($x16 (and true true)))\n(let (($x19 (and $x16 true)))\n(let (($x24 (and $x19 true)))\n(let (($x37 (and (and true $x16) true)))\n(let (($x175 (and (and (and $x16 $x37 $x24 $x24)) (and (and $x37 $x37 $x24 $x24)))))\n(let (($x99 (and $x175 (and $x16 $x19) (and (and (and $x16 $x16 $x19 $x37 $x37 $x37 $x24 $x24 $x24 $x24))))))\n(or (not $x99) (xor $x143 $x157))))))))))))))))))))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - 2*h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "ge",
+                        "left": "1 - 4*h0_1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "3 - 4*h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "4*h0_0 - 3",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "4*h0_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - 2*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "1 - 4*h0_1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "3 - 4*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "4*h0_0 - 3",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "4*h0_1 - 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 + h0_1 - 1",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "negative_historical_weight",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x117 (and (or or or) (and (< 0.0 a0_0) (< 0.0 (- 1.0 a0_0))) (not (or or)))))\n(let (($x153 (and (and and and) (and (and true true) (and (and true true) true)) (and and))))\n(or (not $x153) (xor $x117 false)))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": []
+              },
+              {
+                "op": "or",
+                "args": []
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": []
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "nonzero_off_support_weight",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x117 (and (or or or) (and (< 0.0 a0_0) (< 0.0 (- 1.0 a0_0))) (not (or or)))))\n(let (($x153 (and (and and and) (and (and true true) (and (and true true) true)) (and and))))\n(or (not $x153) (xor $x117 false)))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": []
+              },
+              {
+                "op": "or",
+                "args": []
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": []
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "unnormalized_historical_action",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x117 (and (or or or) (and (< 0.0 a0_0) (< 0.0 (- 1.0 a0_0))) (not (or or)))))\n(let (($x153 (and (and and and) (and (and true true) (and (and true true) true)) (and and))))\n(or (not $x153) (xor $x117 false)))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": []
+              },
+              {
+                "op": "or",
+                "args": []
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": []
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "persistent_source_across_repeated_rows",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_1 () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h0_0 () Real)\n(declare-fun h1_0 () Real)\n(declare-fun a0_0 () Real)\n(assert\n (let (($x10 (= h1_1 h0_1)))\n(let (($x142 (= h1_0 h0_0)))\n(let (($x173 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)))))\n(let (($x132 (and $x173 (and (> a0_0 0.0) (< a0_0 1.0)) (<= (/ 1.0 2.0) h0_0) $x142 $x10)))\n(let (($x197 (<= 0.0 (- (+ h0_0 h1_1) 1.0))))\n(let (($x96 (<= 0.0 (- (+ h0_0 h0_1) 1.0))))\n(let (($x26 (<= 0.0 (+ (- (- h0_0) h1_1) 1.0))))\n(let (($x146 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0))))\n(let (($x58 (<= 0.0 (- h0_0 h1_0))))\n(let (($x114 (<= 0.0 (+ (- h0_0) h1_0))))\n(let ((?x83 (- 1.0 h0_0)))\n(let (($x21 (< 0.0 ?x83)))\n(let (($x95 (< 0.0 (- 1.0 (* 2.0 h0_0)))))\n(let (($x45 (< 0.0 (- 1.0 a0_0))))\n(let (($x32 (< 0.0 h0_0)))\n(let (($x43 (< 0.0 a0_0)))\n(let (($x138 (or (or (and $x43 $x32 $x45 $x95 $x21 $x114 $x58 $x146 $x26 $x96 $x197)))))\n(let (($x181 (or (or (and $x32 $x21 $x114 $x58 $x146 $x26 $x96 $x197)) (or (and $x32 $x95 $x114 $x58 $x146 $x26 $x96 $x197)))))\n(let (($x82 (and $x181 (and $x43 $x45) (not $x138))))\n(let (($x16 (and true true)))\n(let (($x19 (and $x16 true)))\n(let (($x201 (and $x19 true)))\n(let (($x168 (and (and true $x16) true)))\n(let (($x15 (and (and (and $x16 $x16 $x19 $x168 $x19 $x19 $x19 $x201 $x201 $x201 $x201)))))\n(let (($x52 (and (and (and $x16 $x19 $x19 $x19 $x201 $x201 $x201 $x201)) (and (and $x16 $x168 $x19 $x19 $x201 $x201 $x201 $x201)))))\n(let (($x79 (and $x52 (and $x16 $x19) $x15)))\n(or (not $x79) (xor $x82 $x132)))))))))))))))))))))))))))))\n(check-sat)\n",
+      "projected_relation": {
+        "op": "and",
+        "args": [
+          {
+            "op": "or",
+            "args": [
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 + h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 - h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h1_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h1_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "or",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "gt",
+                        "left": "h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "gt",
+                        "left": "1 - 2*h0_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 + h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 - h1_0",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h0_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "-h0_0 - h1_1 + 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h0_1 - 1",
+                        "right": "0"
+                      },
+                      {
+                        "op": "ge",
+                        "left": "h0_0 + h1_1 - 1",
+                        "right": "0"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "and",
+            "args": [
+              {
+                "op": "gt",
+                "left": "a0_0",
+                "right": "0"
+              },
+              {
+                "op": "gt",
+                "left": "1 - a0_0",
+                "right": "0"
+              }
+            ]
+          },
+          {
+            "op": "not",
+            "arg": {
+              "op": "or",
+              "args": [
+                {
+                  "op": "or",
+                  "args": [
+                    {
+                      "op": "and",
+                      "args": [
+                        {
+                          "op": "gt",
+                          "left": "a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - a0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - 2*h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "gt",
+                          "left": "1 - h0_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 + h1_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 - h1_0",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 - h0_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "-h0_0 - h1_1 + 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 + h0_1 - 1",
+                          "right": "0"
+                        },
+                        {
+                          "op": "ge",
+                          "left": "h0_0 + h1_1 - 1",
+                          "right": "0"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "checker_sha256": "417b3da0bf02e6e58aa781fe73e514c2d2b73f105bfda22a55e85c8f1dc57032",
+  "source_sha256": "cda172d08dfa67bab4b5f77b14de66db4b0fd785c1b92a8669685cf1dbe50cff",
+  "trust": "global exact QF_NRA comparisons with hand-derived predicates; SAME_BACKEND",
+  "scope": "eight abstract complete relation controls, not a new source census or generic recursive policy"
+}

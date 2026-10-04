@@ -1,0 +1,288 @@
+{
+  "code": "(* Exact AST export at the CAD-to-runtime boundary. No supplied text is parsed.\n   The mapping is constructed by the caller from declared history coordinates\n   and earlier own actions. A source/unknown symbol cannot be exported. *)\nClearAll[G7ExactCellValueAST];\nG7ExactCellValueAST[expression_,mapping_List] := Module[\n {known,go,z=Unique[\"rootPolynomialVariable\"],polynomial,coefficients},\n If[!And@@(MatchQ[#,Rule[_Symbol,_String]]& /@ mapping),\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\"|>]];\n If[!DuplicateFreeQ[First/@mapping] || !DuplicateFreeQ[Last/@mapping] ||\n    !And@@(StringQ[#] && StringMatchQ[#,RegularExpression[\"h[0-9]+_[0-9]+|action_root_[A-Za-z0-9_]+\"]]& /@ (Last/@mapping)),\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\"|>]];\n known=Association[mapping];\n go[e_] := Which[\n   IntegerQ[e],<|\"kind\"->\"rational\",\"value\"->ToString[e,InputForm]|>,\n   Head[e]===Rational,<|\"kind\"->\"rational\",\"value\"->ToString[Numerator[e],InputForm]<>\"/\"<>ToString[Denominator[e],InputForm]|>,\n   Head[e]===Symbol && KeyExistsQ[known,e],<|\"kind\"->\"observation\",\"name\"->known[e]|>,\n   Head[e]===Plus,<|\"kind\"->\"add\",\"args\"->(go/@(List@@e))|>,\n   Head[e]===Times,<|\"kind\"->\"multiply\",\"args\"->(go/@(List@@e))|>,\n   Head[e]===Power && IntegerQ[e[[2]]],<|\"kind\"->\"power\",\"base\"->go[e[[1]]],\"exponent\"->e[[2]]|>,\n   Head[e]===Power && Head[e[[2]]]===Rational,\n     <|\"kind\"->\"principal_power\",\"base\"->go[e[[1]]],\"numerator\"->Numerator[e[[2]]],\"denominator\"->Denominator[e[[2]]]|>,\n   MemberQ[{Min,Max},Head[e]],<|\"kind\"->If[Head[e]===Min,\"minimum\",\"maximum\"],\"args\"->(go/@(List@@e))|>,\n   Head[e]===Root && (Length[e]===2 || (Length[e]===3 && MemberQ[{0,1},e[[3]]])) &&\n     Head[e[[1]]]===Function && IntegerQ[e[[2]]] && e[[2]]>0,\n     polynomial=e[[1]][z];\n     If[!PolynomialQ[polynomial,z],Throw[\"UNKNOWN_NONPOLYNOMIAL_ROOT\",\"cellAST\"]];\n     coefficients=CoefficientList[polynomial,z];\n     If[Length[coefficients]<2,Throw[\"UNKNOWN_CONSTANT_ROOT_POLYNOMIAL\",\"cellAST\"]];\n     <|\"kind\"->\"root\",\"coefficients\"->(go/@coefficients),\"real_root_index\"->e[[2]]|>,\n   True,Throw[\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\",\"cellAST\"]\n ];\n Catch[<|\"Status\"->\"STRUCTURED_CAD_VALUE_EXPORTED\",\"AST\"->go[expression],\n         \"DeclaredCoordinates\"->(<|\"namespace\"->If[StringStartsQ[#,\"h\"],\"recorded_history\",\"earlier_own_action\"],\"name\"->#|>& /@ (Last/@mapping)),\n         \"RootIndexSemantics\"->\"Wolfram real roots increasingly ordered with input polynomial multiplicity\", \n         \"Scope\"->\"Value export only; source-winning relation, cell coverage and policy verification are separate\"|>,\n       \"cellAST\",(<|\"Status\"->#1|>&)]\n];\n\nModule[{h,a,cd,root,examples,negative,f,bad,flag},\ncd=CylindricalDecomposition[0<h<1 && 0<a<1 && a^5==h,{h,a}];\nroot=First[Cases[cd,Equal[a,r_Root]:>r,Infinity]];\nf=Function[x,x^5-h];bad=Quiet[Root[f,1,0,7]];flag=Quiet[Root[f,1,7]];\nexamples=<|\"quintic\"->G7ExactCellValueAST[root,{h->\"h0_0\"}],\n\"square_root\"->G7ExactCellValueAST[Sqrt[h],{h->\"h0_0\"}],\n\"midpoint\"->G7ExactCellValueAST[(root+1)/2,{h->\"h0_0\"}],\n\"rational_division\"->G7ExactCellValueAST[1/(1+h),{h->\"h0_0\"}],\n\"minimum\"->G7ExactCellValueAST[Min[h,1/2],{h->\"h0_0\"}]|>;\nnegative=<|\"undeclared\"->G7ExactCellValueAST[root,{}],\n\"approximate\"->G7ExactCellValueAST[0.5,{}],\n\"transcendental\"->G7ExactCellValueAST[Sin[h],{h->\"h0_0\"}],\n\"bad_namespace\"->G7ExactCellValueAST[h,{h->\"source_gamma\"}],\n\"malformed_map\"->G7ExactCellValueAST[h,{5}],\n\"duplicate_identity\"->G7ExactCellValueAST[h,{h->\"h0_0\",h->\"h0_1\"}],\n\"duplicate_name\"->G7ExactCellValueAST[h,{h->\"h0_0\",a->\"h0_0\"}],\n\"extra_root_argument\"->G7ExactCellValueAST[bad,{h->\"h0_0\"}],\n\"unrecognized_root_flag\"->G7ExactCellValueAST[flag,{h->\"h0_0\"}]|>;\nExportString[<|\"Status\"->\"EXACT_STRUCTURED_ROOT_EXPORT_CONTROLS\",\"Version\"->$Version,\"Examples\"->examples,\"Negative\"->negative,\"RejectedRaw\"-><|\"ExtraRootArgument\"->ToString[bad,InputForm],\"UnrecognizedRootFlag\"->ToString[flag,InputForm]|>|>,\"RawJSON\"]]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Symbol::undefined2: Warning: Global symbols \"G7ExactCellValueAST, G7ExactCellValueAST, G7Exa ... eAST, G7ExactCellValueAST, G7ExactCellValueAST\" are undefined.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= \"{\\n\\t\\\"Status\\\":\\\"EXACT_STRUCTURED_ROOT_EXPORT_CONTROLS\\\",\\n\\t\\\"Version\\\":\\\"15.0.1 for Linux x86 (64-bit) (July 2, 2026)\\\",\\n\\t\\\"Examples\\\":{\\n\\t\\t\\\"quintic\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"STRUCTURED_CAD_VALUE_EXPORTED\\\",\\n\\t\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\t\\\"kind\\\":\\\"root\\\",\\n\\t\\t\\t\\t\\\"coefficients\\\":[\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"multiply\\\",\\n\\t\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"-1\\\"\\n\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t],\\n\\t\\t\\t\\t\\\"real_root_index\\\":1\\n\\t\\t\\t},\\n\\t\\t\\t\\\"DeclaredCoordinates\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"namespace\\\":\\\"recorded_history\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t],\\n\\t\\t\\t\\\"RootIndexSemantics\\\":\\\"Wolfram real roots increasingly ordered with input polynomial multiplicity\\\",\\n\\t\\t\\t\\\"Scope\\\":\\\"Value export only; source-winning relation, cell coverage and policy verification are separate\\\"\\n\\t\\t},\\n\\t\\t\\\"square_root\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"STRUCTURED_CAD_VALUE_EXPORTED\\\",\\n\\t\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\t\\\"kind\\\":\\\"principal_power\\\",\\n\\t\\t\\t\\t\\\"base\\\":{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\\"numerator\\\":1,\\n\\t\\t\\t\\t\\\"denominator\\\":2\\n\\t\\t\\t},\\n\\t\\t\\t\\\"DeclaredCoordinates\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"namespace\\\":\\\"recorded_history\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t],\\n\\t\\t\\t\\\"RootIndexSemantics\\\":\\\"Wolfram real roots increasingly ordered with input polynomial multiplicity\\\",\\n\\t\\t\\t\\\"Scope\\\":\\\"Value export only; source-winning relation, cell coverage and policy verification are separate\\\"\\n\\t\\t},\\n\\t\\t\\\"midpoint\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"STRUCTURED_CAD_VALUE_EXPORTED\\\",\\n\\t\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\t\\\"kind\\\":\\\"multiply\\\",\\n\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\\/2\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"add\\\",\\n\\t\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\"\\n\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"root\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"coefficients\\\":[\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"multiply\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"-1\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t],\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"real_root_index\\\":1\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t]\\n\\t\\t\\t},\\n\\t\\t\\t\\\"DeclaredCoordinates\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"namespace\\\":\\\"recorded_history\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t],\\n\\t\\t\\t\\\"RootIndexSemantics\\\":\\\"Wolfram real roots increasingly ordered with input polynomial multiplicity\\\",\\n\\t\\t\\t\\\"Scope\\\":\\\"Value export only; source-winning relation, cell coverage and policy verification are separate\\\"\\n\\t\\t},\\n\\t\\t\\\"rational_division\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"STRUCTURED_CAD_VALUE_EXPORTED\\\",\\n\\t\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\t\\\"kind\\\":\\\"power\\\",\\n\\t\\t\\t\\t\\\"base\\\":{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"add\\\",\\n\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\"\\n\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\\"exponent\\\":-1\\n\\t\\t\\t},\\n\\t\\t\\t\\\"DeclaredCoordinates\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"namespace\\\":\\\"recorded_history\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t],\\n\\t\\t\\t\\\"RootIndexSemantics\\\":\\\"Wolfram real roots increasingly ordered with input polynomial multiplicity\\\",\\n\\t\\t\\t\\\"Scope\\\":\\\"Value export only; source-winning relation, cell coverage and policy verification are separate\\\"\\n\\t\\t},\\n\\t\\t\\\"minimum\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"STRUCTURED_CAD_VALUE_EXPORTED\\\",\\n\\t\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\t\\\"kind\\\":\\\"minimum\\\",\\n\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\\/2\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t]\\n\\t\\t\\t},\\n\\t\\t\\t\\\"DeclaredCoordinates\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"namespace\\\":\\\"recorded_history\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t],\\n\\t\\t\\t\\\"RootIndexSemantics\\\":\\\"Wolfram real roots increasingly ordered with input polynomial multiplicity\\\",\\n\\t\\t\\t\\\"Scope\\\":\\\"Value export only; source-winning relation, cell coverage and policy verification are separate\\\"\\n\\t\\t}\\n\\t},\\n\\t\\\"Negative\\\":{\\n\\t\\t\\\"undeclared\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\\\"\\n\\t\\t},\\n\\t\\t\\\"approximate\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\\\"\\n\\t\\t},\\n\\t\\t\\\"transcendental\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\\\"\\n\\t\\t},\\n\\t\\t\\\"bad_namespace\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\\\"\\n\\t\\t},\\n\\t\\t\\\"malformed_map\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\\\"\\n\\t\\t},\\n\\t\\t\\\"duplicate_identity\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\\\"\\n\\t\\t},\\n\\t\\t\\\"duplicate_name\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\\\"\\n\\t\\t},\\n\\t\\t\\\"extra_root_argument\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\\\"\\n\\t\\t},\\n\\t\\t\\\"unrecognized_root_flag\\\":{\\n\\t\\t\\t\\\"Status\\\":\\\"STRUCTURED_CAD_VALUE_EXPORTED\\\",\\n\\t\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\t\\\"kind\\\":\\\"root\\\",\\n\\t\\t\\t\\t\\\"coefficients\\\":[\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"multiply\\\",\\n\\t\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"-1\\\"\\n\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"rational\\\",\\n\\t\\t\\t\\t\\t\\t\\\"value\\\":\\\"1\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t],\\n\\t\\t\\t\\t\\\"real_root_index\\\":1\\n\\t\\t\\t},\\n\\t\\t\\t\\\"DeclaredCoordinates\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"namespace\\\":\\\"recorded_history\\\",\\n\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t}\\n\\t\\t\\t],\\n\\t\\t\\t\\\"RootIndexSemantics\\\":\\\"Wolfram real roots increasingly ordered with input polynomial multiplicity\\\",\\n\\t\\t\\t\\\"Scope\\\":\\\"Value export only; source-winning relation, cell coverage and policy verification are separate\\\"\\n\\t\\t}\\n\\t},\\n\\t\\\"RejectedRaw\\\":{\\n\\t\\t\\\"ExtraRootArgument\\\":\\\"Root[Function[x$, x$^5 - h$83782], 1, 0, 7]\\\",\\n\\t\\t\\\"UnrecognizedRootFlag\\\":\\\"Root[-h$83782 + #1^5 & , 1]\\\"\\n\\t}\\n}\""
+      }
+    ],
+    "isError": false
+  },
+  "parsed": {
+    "Status": "EXACT_STRUCTURED_ROOT_EXPORT_CONTROLS",
+    "Version": "15.0.1 for Linux x86 (64-bit) (July 2, 2026)",
+    "Examples": {
+      "quintic": {
+        "Status": "STRUCTURED_CAD_VALUE_EXPORTED",
+        "AST": {
+          "kind": "root",
+          "coefficients": [
+            {
+              "kind": "multiply",
+              "args": [
+                {
+                  "kind": "rational",
+                  "value": "-1"
+                },
+                {
+                  "kind": "observation",
+                  "name": "h0_0"
+                }
+              ]
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "1"
+            }
+          ],
+          "real_root_index": 1
+        },
+        "DeclaredCoordinates": [
+          {
+            "namespace": "recorded_history",
+            "name": "h0_0"
+          }
+        ],
+        "RootIndexSemantics": "Wolfram real roots increasingly ordered with input polynomial multiplicity",
+        "Scope": "Value export only; source-winning relation, cell coverage and policy verification are separate"
+      },
+      "square_root": {
+        "Status": "STRUCTURED_CAD_VALUE_EXPORTED",
+        "AST": {
+          "kind": "principal_power",
+          "base": {
+            "kind": "observation",
+            "name": "h0_0"
+          },
+          "numerator": 1,
+          "denominator": 2
+        },
+        "DeclaredCoordinates": [
+          {
+            "namespace": "recorded_history",
+            "name": "h0_0"
+          }
+        ],
+        "RootIndexSemantics": "Wolfram real roots increasingly ordered with input polynomial multiplicity",
+        "Scope": "Value export only; source-winning relation, cell coverage and policy verification are separate"
+      },
+      "midpoint": {
+        "Status": "STRUCTURED_CAD_VALUE_EXPORTED",
+        "AST": {
+          "kind": "multiply",
+          "args": [
+            {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            {
+              "kind": "add",
+              "args": [
+                {
+                  "kind": "rational",
+                  "value": "1"
+                },
+                {
+                  "kind": "root",
+                  "coefficients": [
+                    {
+                      "kind": "multiply",
+                      "args": [
+                        {
+                          "kind": "rational",
+                          "value": "-1"
+                        },
+                        {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "rational",
+                      "value": "0"
+                    },
+                    {
+                      "kind": "rational",
+                      "value": "0"
+                    },
+                    {
+                      "kind": "rational",
+                      "value": "0"
+                    },
+                    {
+                      "kind": "rational",
+                      "value": "0"
+                    },
+                    {
+                      "kind": "rational",
+                      "value": "1"
+                    }
+                  ],
+                  "real_root_index": 1
+                }
+              ]
+            }
+          ]
+        },
+        "DeclaredCoordinates": [
+          {
+            "namespace": "recorded_history",
+            "name": "h0_0"
+          }
+        ],
+        "RootIndexSemantics": "Wolfram real roots increasingly ordered with input polynomial multiplicity",
+        "Scope": "Value export only; source-winning relation, cell coverage and policy verification are separate"
+      },
+      "rational_division": {
+        "Status": "STRUCTURED_CAD_VALUE_EXPORTED",
+        "AST": {
+          "kind": "power",
+          "base": {
+            "kind": "add",
+            "args": [
+              {
+                "kind": "rational",
+                "value": "1"
+              },
+              {
+                "kind": "observation",
+                "name": "h0_0"
+              }
+            ]
+          },
+          "exponent": -1
+        },
+        "DeclaredCoordinates": [
+          {
+            "namespace": "recorded_history",
+            "name": "h0_0"
+          }
+        ],
+        "RootIndexSemantics": "Wolfram real roots increasingly ordered with input polynomial multiplicity",
+        "Scope": "Value export only; source-winning relation, cell coverage and policy verification are separate"
+      },
+      "minimum": {
+        "Status": "STRUCTURED_CAD_VALUE_EXPORTED",
+        "AST": {
+          "kind": "minimum",
+          "args": [
+            {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            {
+              "kind": "observation",
+              "name": "h0_0"
+            }
+          ]
+        },
+        "DeclaredCoordinates": [
+          {
+            "namespace": "recorded_history",
+            "name": "h0_0"
+          }
+        ],
+        "RootIndexSemantics": "Wolfram real roots increasingly ordered with input polynomial multiplicity",
+        "Scope": "Value export only; source-winning relation, cell coverage and policy verification are separate"
+      }
+    },
+    "Negative": {
+      "undeclared": {
+        "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+      },
+      "approximate": {
+        "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+      },
+      "transcendental": {
+        "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+      },
+      "bad_namespace": {
+        "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+      },
+      "malformed_map": {
+        "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+      },
+      "duplicate_identity": {
+        "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+      },
+      "duplicate_name": {
+        "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+      },
+      "extra_root_argument": {
+        "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+      },
+      "unrecognized_root_flag": {
+        "Status": "STRUCTURED_CAD_VALUE_EXPORTED",
+        "AST": {
+          "kind": "root",
+          "coefficients": [
+            {
+              "kind": "multiply",
+              "args": [
+                {
+                  "kind": "rational",
+                  "value": "-1"
+                },
+                {
+                  "kind": "observation",
+                  "name": "h0_0"
+                }
+              ]
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            },
+            {
+              "kind": "rational",
+              "value": "1"
+            }
+          ],
+          "real_root_index": 1
+        },
+        "DeclaredCoordinates": [
+          {
+            "namespace": "recorded_history",
+            "name": "h0_0"
+          }
+        ],
+        "RootIndexSemantics": "Wolfram real roots increasingly ordered with input polynomial multiplicity",
+        "Scope": "Value export only; source-winning relation, cell coverage and policy verification are separate"
+      }
+    },
+    "RejectedRaw": {
+      "ExtraRootArgument": "Root[Function[x$, x$^5 - h$83782], 1, 0, 7]",
+      "UnrecognizedRootFlag": "Root[-h$83782 + #1^5 & , 1]"
+    }
+  }
+}

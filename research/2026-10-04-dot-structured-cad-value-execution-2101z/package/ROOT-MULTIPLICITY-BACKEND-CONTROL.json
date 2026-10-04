@@ -1,0 +1,12 @@
+{
+  "code": "Module[{x,roots},roots=Table[Quiet[Root[(#-1)^2 (#-2)&,i]],{i,1,3}];<|\"Status\"->\"ROOT_MULTIPLICITY_ORDER_CONTROL\",\"Roots\"->(ToString[#,InputForm]&/@roots),\"Simple\"->(ToString[#,InputForm]&/@Table[Root[#^3-#&,i],{i,1,3}]),\"Version\"->$Version|>]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Out[1]= <|\"Status\" -> \"ROOT_MULTIPLICITY_ORDER_CONTROL\", \"Roots\" -> {\"1\", \"1\", \"2\"}, \"Simple\" -> {\"-1\", \"0\", \"1\"}, \"Version\" -> \"15.0.1 for Linux x86 (64-bit) (July 2, 2026)\"|>"
+      }
+    ],
+    "isError": false
+  }
+}

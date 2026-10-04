@@ -1,0 +1,202 @@
+{
+  "kind": "call",
+  "support": [
+    0
+  ],
+  "weights": [
+    "1",
+    "0"
+  ],
+  "next": {
+    "kind": "call",
+    "support": [
+      0,
+      1
+    ],
+    "weights": [
+      "action_root_weight",
+      "1-action_root_weight"
+    ],
+    "next": {
+      "kind": "call",
+      "support": [
+        0,
+        1
+      ],
+      "sections": [
+        {
+          "name": "action_root_lifted",
+          "coefficients": [
+            "-h1_0",
+            "0",
+            "1"
+          ],
+          "lower": "0",
+          "upper": "1"
+        }
+      ],
+      "weights": [
+        "action_root_lifted",
+        "1-action_root_lifted"
+      ],
+      "next": {
+        "kind": "decision",
+        "branches": [
+          {
+            "guard": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "gt",
+                  "left": "h2_0",
+                  "right": "h2_1"
+                },
+                {
+                  "op": "eq",
+                  "left": "h2_2",
+                  "right": "h2_1"
+                }
+              ]
+            },
+            "next": {
+              "kind": "leaf",
+              "target": [
+                0
+              ]
+            }
+          },
+          {
+            "guard": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "gt",
+                  "left": "h2_1",
+                  "right": "h2_0"
+                },
+                {
+                  "op": "eq",
+                  "left": "h2_2",
+                  "right": "h2_0"
+                }
+              ]
+            },
+            "next": {
+              "kind": "leaf",
+              "target": [
+                1
+              ]
+            }
+          },
+          {
+            "guard": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "eq",
+                  "left": "h2_1",
+                  "right": "h2_0"
+                },
+                {
+                  "op": "gt",
+                  "left": "h2_2",
+                  "right": "h2_0"
+                }
+              ]
+            },
+            "next": {
+              "kind": "leaf",
+              "target": [
+                2
+              ]
+            }
+          },
+          {
+            "guard": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "gt",
+                  "left": "h2_0",
+                  "right": "h2_2"
+                },
+                {
+                  "op": "gt",
+                  "left": "h2_1",
+                  "right": "h2_2"
+                }
+              ]
+            },
+            "next": {
+              "kind": "leaf",
+              "target": [
+                0,
+                1
+              ]
+            }
+          },
+          {
+            "guard": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "gt",
+                  "left": "h2_0",
+                  "right": "h2_1"
+                },
+                {
+                  "op": "gt",
+                  "left": "h2_2",
+                  "right": "h2_1"
+                }
+              ]
+            },
+            "next": {
+              "kind": "leaf",
+              "target": [
+                0,
+                2
+              ]
+            }
+          },
+          {
+            "guard": {
+              "op": "and",
+              "args": [
+                {
+                  "op": "gt",
+                  "left": "h2_1",
+                  "right": "h2_0"
+                },
+                {
+                  "op": "gt",
+                  "left": "h2_2",
+                  "right": "h2_0"
+                }
+              ]
+            },
+            "next": {
+              "kind": "leaf",
+              "target": [
+                1,
+                2
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "sections": [
+      {
+        "name": "action_root_weight",
+        "coefficients": [
+          "-h0_0",
+          "0",
+          "1"
+        ],
+        "lower": "0",
+        "upper": "1"
+      }
+    ]
+  }
+}

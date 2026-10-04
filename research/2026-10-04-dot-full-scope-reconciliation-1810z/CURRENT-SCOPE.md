@@ -108,3 +108,7 @@ Retain the four graph-first roles. The current evidence does not justify reassig
 4. **Biological applicability and independent review:** maintain the actual data/model/target boundary, primary-source comparisons, exact scope reviews and public reproducibility distinctions. No empirical fit without admission.
 
 Publication is serialized, additive and non-force. The new inventories record what is actually delivered. The prior intended 579-file batch remains incomplete under its old identity; no new subset or replacement claims to be that exact old batch. This dated reconciliation supersedes only the status statements it expressly updates, preserving the entire earlier scope chain.
+
+## Full-scope successor — 4 October 2026, 22:03 UTC
+
+The [current full-scope reconciliation](../2026-10-04-dot-full-scope-reconciliation-2203z/CURRENT-SCOPE.md), with final source-review cutoff 22:13 UTC, records the independently read-back recovery/new-proof/cap-four releases, the accepted actual-source NANUQ four-port component, fixed-target diagonal diagnostic and affine-identity advances, and bounded solver selector/execution progress. It preserves the original full G3/G4 obligations, all earlier accepted work and the four graph-first roles, and distinguishes published packages from newer reviewed local components. This dated forward pointer changes no earlier mathematical contract or proof byte.
