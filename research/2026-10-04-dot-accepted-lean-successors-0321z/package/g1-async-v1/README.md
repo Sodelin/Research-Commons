@@ -1,0 +1,5 @@
+# Actual source crossing fusion and finite pending-actor scheduling
+
+Twelve checked modules derive exact unique original population ownership by constructed core edge recipes, disjoint original bridge node/location regions, actual concurrent source window/tensor rows, nested labelled projection, pure source union reconstruction and actual original crossing-window pending fusion. The generic finite actor/interface algebra then promotes any full private word to a pending-output kernel across other actors' opens/closes, preserving the full exterior carrier (which may include all history).
+
+Remaining: compile EVERY canonical original operation/calendar into the actor schedule, derive its source validity and reveal/input binding, compress each full private actor row to its true current-root UNRANKED K interface, and assemble the all-bridge completed law. Actual crossing fusion has physical reachable-state separators/purity premises; generic actor algebra is separately labelled. No full G1 completion claim.

@@ -1,0 +1,51 @@
+{
+  "status": "PASS_FRESH_GUARDED_COMPONENT",
+  "module": "G1ConvexOriginalEdgeDrawing",
+  "source_sha256": "27b8d8aa0f6b42666839cb80b25ed21945e9725267a9f96cf6d1c1f8dc86e04a",
+  "object_sha256": "5ecddabf3ca2aa18d7d5f888fec014ab84b73013fb1d1a0291967a4e7c90f7cf",
+  "source_and_direct_imports_stable": true,
+  "direct_import_artifacts_before": {
+    "G1SharpCoreCombDefinition": {
+      "path": "research-workspace/g1-alln-sharpness-20261003/objects/G1SharpCoreCombDefinition.olean",
+      "sha256": "a852a32fbfaf9420b1446a0e490dab4f06c885e48dcbbe3603dc3d7838e00d06"
+    },
+    "Mathlib.Analysis.Convex.Segment": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/Segment.olean",
+      "sha256": "12a5cfe9e116db862d1cbdf8f90e8a7ba45266e3df347a3129b58c7d8cc669cc"
+    }
+  },
+  "direct_import_artifacts_after": {
+    "G1SharpCoreCombDefinition": {
+      "path": "research-workspace/g1-alln-sharpness-20261003/objects/G1SharpCoreCombDefinition.olean",
+      "sha256": "a852a32fbfaf9420b1446a0e490dab4f06c885e48dcbbe3603dc3d7838e00d06"
+    },
+    "Mathlib.Analysis.Convex.Segment": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Analysis/Convex/Segment.olean",
+      "sha256": "12a5cfe9e116db862d1cbdf8f90e8a7ba45266e3df347a3129b58c7d8cc669cc"
+    }
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0,
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-DmaxHeartbeats=1600000",
+    "-DmaxRecDepth=3000",
+    "-o",
+    "research-workspace/g1-alln-sharpness-20261003/certified-components/G1ConvexOriginalEdgeDrawing/G1ConvexOriginalEdgeDrawing.olean",
+    "G1ConvexOriginalEdgeDrawing.lean"
+  ],
+  "elapsed_seconds": 4.053676297997299,
+  "created_utc": "2026-10-03T22:48:15.383584+00:00",
+  "log_sha256": "ebd35fc3c59d61293e6998e0c319de57de536af975f8a3bab51ee5365a7220a2",
+  "_public_projection": {
+    "raw_sha256": "795544612cfbb6ba77cd7973079a4ee3a2cb7ee71999cc0a4b148102b0806386",
+    "normalization": "build/dependency roots replaced by declared neutral roots; private delivery/orchestration administration omitted; mathematical source/object/compiler/report hashes retained",
+    "omitted_administration_fields": []
+  }
+}

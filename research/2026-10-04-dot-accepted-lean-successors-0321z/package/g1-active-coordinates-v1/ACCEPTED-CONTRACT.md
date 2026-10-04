@@ -1,0 +1,5 @@
+# Actual finite original active-coordinate contract
+
+The accepted full G1 observer retains the COMPLETE original labelled rooted UNRANKED forest/population/SAME-register causal view, including arbitrary old opaque descendant-labelled input subtrees and the original base/root-blob state. This stage derives a source quotient row from a finite family of ORIGINAL descendant-cohort views plus the actual original base complement.
+
+Canonical original lifecycle/calendar/finite physical separator/purity admission belongs to the separate graph/calendar lane. Here physical conditions stay explicit: actual original source-program support, finite panel separation, full original-copy cover and actual final pure fibres. The finite source tensor must be inherited actual finite-panel source law, not assumed desired independence. No raw SelectedIndex/oriented-child or hidden-owner-ID equality is required at the final interface. Within-epoch clock/calendar-time readers remain excluded. No G3 witness bound or master/novelty claim.

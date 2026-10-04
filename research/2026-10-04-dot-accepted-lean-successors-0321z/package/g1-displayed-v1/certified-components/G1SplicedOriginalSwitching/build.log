@@ -1,0 +1,22 @@
+G1SplicedOriginalSwitching.lean:20:56: warning: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'G1SplicedOriginalSwitching.restrictSwitching' depends on axioms: [propext, Classical.choice, Quot.sound]
+'G1SplicedOriginalSwitching.liftSwitching' depends on axioms: [propext, Classical.choice, Quot.sound]
+G1SplicedOriginalSwitching.lean:127:0: warning: automatically included section variable(s) unused in theorem `G1SplicedOriginalSwitching.switching_ext`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G1SplicedOriginalSwitching.lean:151:45: warning: This simp argument is unused:
+  true_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [restrictSwitching, splicedKeep, hk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'G1SplicedOriginalSwitching.actual_restrict_lift_switching' depends on axioms: [propext, Classical.choice, Quot.sound]

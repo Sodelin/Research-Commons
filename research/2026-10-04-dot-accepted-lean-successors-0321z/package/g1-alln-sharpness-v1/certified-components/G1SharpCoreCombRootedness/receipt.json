@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FRESH_GUARDED_COMPONENT",
+  "module": "G1SharpCoreCombRootedness",
+  "source_sha256": "49fa53968d0721eec1b09de2b64841efa487a6c9ecb89b43fa930979cd942744",
+  "object_sha256": "8f8e61c465dcbb541d0185db98102136a3a82fbd3480b295f0bfd36e89c057a3",
+  "source_and_direct_imports_stable": true,
+  "direct_import_artifacts_before": {
+    "G1SharpCoreCombDegrees": {
+      "path": "research-workspace/g1-alln-sharpness-20261003/objects/G1SharpCoreCombDegrees.olean",
+      "sha256": "98d71d8c4a3e1ec36a5ef1fef3db10300a8f3b9374d1e64cd858790102dd58b1"
+    }
+  },
+  "direct_import_artifacts_after": {
+    "G1SharpCoreCombDegrees": {
+      "path": "research-workspace/g1-alln-sharpness-20261003/objects/G1SharpCoreCombDegrees.olean",
+      "sha256": "98d71d8c4a3e1ec36a5ef1fef3db10300a8f3b9374d1e64cd858790102dd58b1"
+    }
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0,
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-DmaxHeartbeats=1600000",
+    "-DmaxRecDepth=3000",
+    "-o",
+    "research-workspace/g1-alln-sharpness-20261003/certified-components/G1SharpCoreCombRootedness/G1SharpCoreCombRootedness.olean",
+    "G1SharpCoreCombRootedness.lean"
+  ],
+  "elapsed_seconds": 2.6526604359969497,
+  "created_utc": "2026-10-03T22:47:37.802887+00:00",
+  "log_sha256": "de88c85d9aeed32b45c82f597392b4a3dc06c0528891f118a0ac3f697c3e3f22",
+  "_public_projection": {
+    "raw_sha256": "9b485cda283df38a766dea13a8241d6c884ac47e930d1d16dbbb32351e8033f3",
+    "normalization": "build/dependency roots replaced by declared neutral roots; private delivery/orchestration administration omitted; mathematical source/object/compiler/report hashes retained",
+    "omitted_administration_fields": []
+  }
+}

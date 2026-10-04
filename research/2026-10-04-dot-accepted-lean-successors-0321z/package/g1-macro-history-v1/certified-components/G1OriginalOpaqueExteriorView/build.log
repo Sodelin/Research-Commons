@@ -1,0 +1,51 @@
+G1OriginalOpaqueExteriorView.lean:20:0: warning: automatically included section variable(s) unused in theorem `G1OriginalOpaqueExteriorView.graftInput_leaf_membership`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G1OriginalOpaqueExteriorView.lean:36:0: warning: automatically included section variable(s) unused in theorem `G1OriginalOpaqueExteriorView.actual_reconstruction_cohort`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G1OriginalOpaqueExteriorView.lean:110:36: warning: This simp argument is unused:
+  if_pos hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [opaqueExteriorView, unrankedView, selectedView, selectedGenealogy, if_pos hx, if_pos hxo, howner,
+    htout, optionUnranked, Option.map_some, graftUnranked_toUnranked, hg, hfull]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G1OriginalOpaqueExteriorView.lean:111:36: warning: This simp argument is unused:
+  htout
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [opaqueExteriorView, if_pos hx, unrankedView, selectedView, selectedGenealogy, if_pos hx,
+    if_pos hxo, howner, optionUnranked, Option.map_some, graftUnranked_toUnranked, hg, hfull]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G1OriginalOpaqueExteriorView.lean:111:73: warning: This simp argument is unused:
+  graftUnranked_toUnranked
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [opaqueExteriorView, if_pos hx, unrankedView, selectedView, selectedGenealogy, if_pos hx,
+    if_pos hxo, howner, htout, optionUnranked, Option.map_some, hg, hfull]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G1OriginalOpaqueExteriorView.lean:111:98: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [opaqueExteriorView, if_pos hx, unrankedView, selectedView, selectedGenealogy, if_pos hx,
+    if_pos hxo, howner, htout, optionUnranked, Option.map_some, graftUnranked_toUnranked, hfull]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'G1OriginalOpaqueExteriorView.actual_reconstruction_cohort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'G1OriginalOpaqueExteriorView.actual_opaque_original_exterior_view' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

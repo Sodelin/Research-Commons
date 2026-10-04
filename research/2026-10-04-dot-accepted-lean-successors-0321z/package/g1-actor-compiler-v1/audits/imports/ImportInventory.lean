@@ -1,0 +1,20 @@
+import G1ActorInterfaceUniqueness
+import G1ActualActorBoundaryFrames
+import G1CanonicalActorLifecycleCompiler
+import G1CanonicalBatchOpeningCalendar
+import G1CanonicalFiniteActiveEpochAdmission
+import G1CanonicalWholeOriginalActiveEpoch
+import G1NaturalActiveActorFrontier
+import G1OriginalActorLifecycleOrder
+import G1OriginalActorOperationOwnership
+import G1OriginalActorTemporalFootprint
+import G1OriginalEventSiteUniqueness
+import G1PrivateActorLifetimeAdmission
+import G1RetainedActorBoundarySites
+import G1RootBlobRetainedBaseOwnership
+import G1TaggedOriginalCalendar
+import Lean.Elab.Command
+open Lean Elab Command
+run_cmd do
+  let env ← getEnv
+  liftIO <| IO.FS.writeFile "modules.json" (toJson (env.header.moduleNames.map Name.toString)).pretty

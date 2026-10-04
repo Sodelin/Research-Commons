@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FRESH_GUARDED_COMPONENT",
+  "module": "G1CanonicalKActorCompletedHistory",
+  "source_sha256": "7ef5018e3bd1bdb229c0ebfccbd6a6d8d4addfb9ab9a02259d5b36330e74aaa7",
+  "object_sha256": "a29cedde6d9f5c3d65e94d1d6355bedb19c853c46ab1831da2ceac42a89d7fb0",
+  "source_and_direct_imports_stable": true,
+  "direct_import_artifacts_before": {
+    "G1KOnlyActorSameCompletedFuture": {
+      "path": "research-workspace/g1-k-only-actor-interface-20261003/objects/G1KOnlyActorSameCompletedFuture.olean",
+      "sha256": "440a5e9deeafb1e188110bd043ee3dabce66a950f53891f8c6b722831a2cb862"
+    }
+  },
+  "direct_import_artifacts_after": {
+    "G1KOnlyActorSameCompletedFuture": {
+      "path": "research-workspace/g1-k-only-actor-interface-20261003/objects/G1KOnlyActorSameCompletedFuture.olean",
+      "sha256": "440a5e9deeafb1e188110bd043ee3dabce66a950f53891f8c6b722831a2cb862"
+    }
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0,
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-DmaxHeartbeats=1600000",
+    "-DmaxRecDepth=3000",
+    "-o",
+    "research-workspace/g1-k-only-actor-interface-20261003/certified-components/G1CanonicalKActorCompletedHistory/G1CanonicalKActorCompletedHistory.olean",
+    "G1CanonicalKActorCompletedHistory.lean"
+  ],
+  "elapsed_seconds": 3.0568168879981386,
+  "created_utc": "2026-10-04T00:17:39.056992+00:00",
+  "log_sha256": "9d23c1c776202999b08df1f8ab3d55a91eed8402b8c5d912d87324ab78fc4c12",
+  "_public_projection": {
+    "raw_sha256": "3c315a042d1c7c894b84ef94585de1cca7819a344620710fe88fcf3df93d8edb",
+    "normalization": "build/dependency roots replaced by declared neutral roots; private delivery/orchestration administration omitted; mathematical source/object/compiler/report hashes retained",
+    "omitted_administration_fields": []
+  }
+}

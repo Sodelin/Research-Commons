@@ -1,0 +1,9 @@
+# Finite complete original active coordinates
+
+This checkpoint reconstructs the WHOLE original causal view from recursive complete original unranked actor/cohort views and the original base complement. Every original descendant label, subtree/clade, population and SAME register survives the interface. Actual pure panel fibres and full original-copy cover justify reconstruction; the base complement is explicitly constructed and its coverage is derived.
+
+The actual finite source tensor descends to these quotient coordinates for ANY finite family. Each product factor is the TRUE original unrankedProgram row, and the whole actual original source-program row equals the quotient product followed by the proved join. No desired independence/output identity, hidden-owner identifier or ordered-tree equality is supplied. Representation invariance is proved from only equal complete original unranked input panel views.
+
+Canonical natural calendar/lifecycle/physical separation and every-checkpoint pure admission remain in the separate source compiler lane. These source algebra endpoints retain those physical hypotheses explicitly, so they are not full all-bridge/master acceptance. The original input state/register/history can be arbitrarily correlated; equality is pointwise and uses the SAME entering register. Individual within-epoch clock/calendar-time readers remain excluded. No original descendant-copy cap or G3 witness bound is introduced.
+
+Recheck with the pinned shared environment and python3 certify.py. It fresh-compiles only the two new sources with direct imports hashed before/after, then audits every owned/provider declaration and actual import artifact; frozen providers are hash-matched and not recompiled. Last combined runnable Lake PASS remains825. Public publication held.

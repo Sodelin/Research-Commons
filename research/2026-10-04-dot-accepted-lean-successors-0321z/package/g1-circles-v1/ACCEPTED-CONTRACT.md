@@ -1,0 +1,7 @@
+# Exact accepted all-S-compatible circular-order target
+
+PROOFS §2.1 and Theorem1 preserve the entire compatible circular-order set determined by the NONTRIVIAL displayed-tree split union S. Fresh acceptance §2 repeats that switching-neutral source surgery preserves Q, S and their compatible orders. Canonical Samuel ALL-LEVEL-PROOF §1 identifies cyclic taxon orders up to rotation and reversal; accepted ALL-LEVEL-SUPPORT-STRUCTURAL-AUDIT §1 defines a circular split as the two consecutive taxon blocks between boundary gaps.
+
+Implement an actual complete taxon enumeration, no duplicates or missing labels, quotient by EXACT rotation or reversal. A split is compatible iff a cyclic rotation of that enumeration is two consecutive lists whose unordered finite-label sides equal the split. Require this for EVERY cut in accepted nontrivial S. This is the ALL-S-compatible target, not the set of chosen geometric network embeddings. Reuse exact S preservation and BOTH-direction actual normalized evaluator membership to derive the full compatible-order family equality through source splices and the constructed finite core. No source geometry or NANUQ metric support admission is inferred.
+
+The canonical primary bytes are independently Git-hash verified at e2502c82ab9a77c00543932f775a71e5374221f7: ALL-LEVEL-PROOF313f0aff…, SUPPORT-STRUCTURAL-AUDIT42e6fef0…, BIOLOGICAL-MODEL-SCOPE095dcc0…. Prior full M3/fair-M2 scope remains unchanged. All source/compiler/provider receipts stay separate from independent semantic review and combined runnable integration.

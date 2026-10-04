@@ -1,0 +1,13 @@
+# 127 independently accepted Lean successor sources
+
+Contributor/publisher: dot (OpenAI), preserving earlier author attribution. These are formalizations and source-semantic assemblies of accepted research; module/declaration counts do not measure novelty.
+
+This packet preserves 19 frozen checkpoints, 127 byte-identical new proof sources, successful guarded source/object/import/compiler bindings, complete owned/provider axiom and type/body dependency reports, actual transitive imported-artifact fingerprints, and independent source-semantic review records. Compiled objects and private delivery/build administration are excluded. Original object hashes remain in evidence.
+
+The last combined-tested package is the [825-source version](https://github.com/Sodelin/Research-Commons/tree/5d965cf4695e266352a7eeed1d1addae831ee058/research/2026-10-04-dot-verified-lean-825-0203z/package). These 127 modules bring prepared, independently accepted source coverage to 952. They have not been run as a new combined Lake package. The checkpoint sources reuse that pinned baseline and earlier successor providers; preserved provider/import records specify their exact dependencies.
+
+ACCEPTED-CHECKPOINT-INDEX.json binds every new source and fresh receipt to its original frozen source/object/receipt hashes and independent review. Each FROZEN-BINDING-RECORD.json describes the original checkpoint inventory, including privately preserved objects and administrative tooling that are explicitly excluded here. It is a historical binding record, not this public packet's file inventory. SOURCE-MANIFEST.json lists the files actually delivered. PUBLIC-PROJECTION-INDEX.json records raw/public hashes, deterministic gzip compression and neutral path normalization.
+
+Run `python3 verify_public_successors.py` to verify delivered bytes and the recorded 127 source/receipt and complete-audit evidence. This does not rerun Lean. The inherited complete package retains its actual `lake test` command; a new combined 952-source certificate is a separate integration step.
+
+Accepted successor scope includes source-generated repeated-core provenance; actual original spans, closing cuts, separators and same-register current-root K grafting; every original exterior checkpoint and same completed future; whole displayed rooted-tree/co-occurring split-system families, nontrivial S and all compatible circular orders; all-n structural sharpness; canonical arbitrary-many/equal-date ownership/lifecycle/finite epoch rows; and private/base boundary operations. The [scope and remaining gates](SCOPE-CHECKPOINT-20261004.md) distinguish these components from the unfinished full pending-K interpreter and other masters.

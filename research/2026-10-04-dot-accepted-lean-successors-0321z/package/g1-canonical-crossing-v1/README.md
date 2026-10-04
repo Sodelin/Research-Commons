@@ -1,0 +1,5 @@
+# Canonical strictly crossing bridge source/history admission
+
+Nine modules derive the actual OriginalCopy cohort partition from current bridge routes and active calendars, exact one-pass P/Q/R original calendar windows and frontiers, SAME original future root admission, and both true CURRENT-root OriginalSpan K equalities. An additional actual finite-panel tensor primitive supplies arbitrary-family source products under physical separation. Every original descendant-copy separator, pure-fibre reconstruction/full cover and completion premise is discharged from real initialized source support. The final theorem is the full source/history/SAME-completion row for any two strictly crossing Originated bridges.
+
+This closes canonical strict two-actor crossing admission. Arbitrary many actors, coincident-date opens/closes and a complete core actor/calendar compiler remain open. The current crossing interpreter still carries full selected private states; K-only quotient/graft binding is a separate owned lane. No original-descendant leaf cap or desired law premise appears.

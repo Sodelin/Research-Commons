@@ -1,0 +1,15 @@
+# Exact accepted all-n physical-core sharpness
+
+This is the Lean port of the previously accepted 2026-10-01 fresh source review §3, not a new sharpness claim. For every n≥4 the original five-vertex E/U/V/HL/HR module replaces each of n−1 branching vertices of a binary taxon comb. Every original vertex and edge ID is retained.
+
+The actual raw binary rooted network is constructed. Binary degrees, root reachability, acyclicity, root LSA, contemporaneous original tips, strict positive original edge durations, hybrid-child bridges and absence of nonroot two-port blobs are derived. Exact counts are h=2n−2, V=6n−5, E=8n−8. Positive original edge/ancestral rates1 and interior original inheritance1/2 are explicitly constructed. These are symbolic all-n theorems, not n=4..10 tests.
+
+The outer-labelled planar admission is a real geometric witness. The original vertices receive distinct coordinates (t,t²) in ℝ×ℝ under an explicit nested outer order. Every original edge is the ordinary real straight segment between its actual endpoints. The proof derives laminar endpoint intervals, intersection only at shared original endpoints, and absence of nonincident original vertices on any edge. Every original vertex, including all module ports and taxa, has a free downward ray to the SAME unbounded horizontal corridor y=−1. This witnesses access to the unbounded outer face. No planarity or desired embedding conclusion is an input premise. This certificate does not implement a semidirected graph renderer or a dart/rotation-system API.
+
+Endpoint: G1AllNActualOuterSourceSharpness.every_n_has_actual_saturating_outer_source. Its hypotheses are only n and 4≤n; its existential supplies the actual admitted reduced source, geometric outer witness, positive parameters, all exact counts and contemporaneous sampling. The three no_strictly_smaller_* corollaries give physical graph-bound sharpness.
+
+Certification borrows only hash-matched immutable 825-source providers and the shared Lean4.33.1/mathlib pins. New guarded compilations recheck source and direct imports before/after; complete declaration axioms, declaration type/body dependencies, combined provider closure and actual transitive artifacts are independently recorded. No inherited source is replayed. The stage is independent of all frozen 825 or reviewed successor bytes.
+
+Whole G1 still requires the lawful asynchronous/interleaved repeated decorated interpreter, because incomparable original bridge intervals can overlap. No total ordinary source-fiber recognition, ordinary witness bound, G3/G4 closure, timing-controller equivalence or new mathematical novelty is claimed. Public publication remains held; this checkpoint is local pending independent review and combined runnable successor admission.
+
+Fresh guards for all11 new modules and all5 complete audits have terminal exit0. Own/combined declaration counts and exact imported artifact inventory are pinned in the frozen manifest; independent source-semantic review remains pending until its separate hash-bound ACK.

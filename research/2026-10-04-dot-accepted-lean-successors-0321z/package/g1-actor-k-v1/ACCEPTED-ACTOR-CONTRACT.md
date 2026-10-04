@@ -1,0 +1,7 @@
+# Exact source-derived K-only original actor interface
+
+At a REAL original frontier before the embedded descendant node of an Originated core bridge e, use the fixed original descendant copy cohort: originalInside = univ minus originalOutsideCopies. The private actual row is selectedProgram on that whole original cohort through closingSpanAgenda, ending after the literal closing original cut. Current inputs are enteringRoots at that original node; the initialized-frontier/cohort theorems derive that relation.
+
+Derive the ORIGINAL descendant-labelled UNRANKED genealogy/population/SAME-register output as TRUE actualCurrentRootK on spanProgram of the exact original bridge word, grafted into every saved opaque initial subtree at the derived single original exit. The cap is only enteringRoots.card≤m; original descendant labels and exterior roots have no added cap. No raw ordered SelectedIndex equality or supplied desired K/output equality occurs.
+
+Pair that output with the exact ENTIRE original outside checkpoint history, using accepted history6/separator11 and SAME original future/completion invariance. Parent/graph lane owns chronological P/Q/R splits, canonical all-bridge physical/purity/root admission and lawful global scheduling. Crossing12/history4 carry stronger raw intermediate rows but final actor close uses the original unranked quotient. This source gate does not replace the separate ALL displayed-tree-family preservation obligation by union S.
