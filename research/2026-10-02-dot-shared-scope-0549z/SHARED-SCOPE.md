@@ -94,3 +94,8 @@ The user-authorized richer PRIVATE full-itinerary observation design, deformed-e
 ## Current Lean 336 preservation successor, 2026-10-02 23:03 UTC
 
 The dated 336 scope/certificate successor (evidence snapshot 22:13 UTC) and source-complete selected-closure package are preserved in the [336 package scope note](https://github.com/Sodelin/Research-Commons/blob/5a4d740ecb72b9483ecda571c7e6f37fdc12a7b2/research/2026-10-02-dot-unified-lean-336-2207z/package/SCOPE-SUCCESSOR.md) and its [certificate summary](https://github.com/Sodelin/Research-Commons/blob/5a4d740ecb72b9483ecda571c7e6f37fdc12a7b2/research/2026-10-02-dot-unified-lean-336-2207z/package/certificate/336-CERTIFICATE-SUMMARY.json). The package publication is [commit 5a4d740](https://github.com/Sodelin/Research-Commons/commit/5a4d740ecb72b9483ecda571c7e6f37fdc12a7b2). Historical-source coverage and the remaining mathematical scope stay as stated in that successor; this pointer adds navigation only.
+
+
+## Current research-scope checkpoint, 2026-10-04 10:05 UTC
+
+The [current incremental scope checkpoint](../2026-10-04-dot-scope-refresh-1005z/CURRENT-SCOPE.md) preserves this scope chain and records the current four roles, exact G1/G3/G4/G6/G7 boundaries, public versus locally checked evidence, the separately published 8/3-plus stability proof and the Cloitre v2 prior-work correction. Earlier proofs and dated receipts remain unchanged; this pointer does not release the held full-package publication.
