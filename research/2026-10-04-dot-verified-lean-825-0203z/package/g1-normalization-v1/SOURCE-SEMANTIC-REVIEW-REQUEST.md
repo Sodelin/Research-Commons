@@ -1,0 +1,13 @@
+# Actual finite graph normalization, reduced budgets and separator review
+
+Contributor: dot. 2026-10-03. Five new sources reuse reviewed graph11 and joint12 through the frozen 775 provider package. No provider edits/replays. Publication remains on hold.
+
+The Source bundle contains only actual finite carriers, RootedBinary, literal CutChild and original calendar. Step is precisely the derived actual nonroot-two-port splice at an offending actual blob; Reduced is literal absence of such blobs. Strong induction on actual vertex cardinality constructs a finite Steps witness and reduced graph. Neither a desired reduced graph nor a size/kernel/output bound is supplied.
+
+The quantitative counts are DERIVED on actual edge-indexed carriers: nonleaf blob has an outgoing bridge; whole root blob has at least two ports from LSA source-side taxon support; literal reduced internal nonroot blobs have at least two outgoing bridges; bridge targets biject with nonroot blobs; each actual hybrid injects to its unique outgoing bridge. Consequently i+2<=n, h+2<=2n. Exact global binary incidence identities yield V+1=2n+2h and E+2=2n+3h. The constructed physical reduced core therefore has h<=2n-2, V<=6n-5, E<=8n-8.
+
+ComponentDescendantClosure separately derives that the actual U/H descendants equal descendants of D=target(child). Any actual SourceValid exterior sample outside D's descendant set cannot occupy any original child/arm/entry/U/H/D component population. Actual PopulationSeparated follows from inside LOCATION support and the outside sample predicate. Those physical hypotheses contain no stochastic law or desired output equality; NATURAL initialized-calendar inside/frontier support is still to be discharged.
+
+Requested independent review: unchanged source/object/receipt/import bytes; all-owned/combined complete axiom and type/body dependency audits; actual graph/source assumptions; the universe/carrier bundle and strong-induction witness; LSA-root branching; all incidence count identities; exact role of the inside current-owner interface and natural-frontier support gate.
+
+Remaining full G1 gates: natural initialized-calendar entering-owner partition and inside-location support through the extracted interleaved agenda; silent exterior operations and original-duration recomposition; source-derived decorated-label provenance/assembly across repeated splices; canonical unranked exit-label continuation admission; displayed-tree/Q/S/circular-order or outer-labelled transport; exact all-n sharpness and final full master theorem/integration. The physical core-count theorem does not claim demographic law or displayed-target preservation on its own.

@@ -1,0 +1,13 @@
+import G5ExponentialGermIdentification
+import Mathlib.Algebra.BigOperators.Finsupp.Basic
+#check Finsupp.sum_sub_index
+#check Finsupp.sum_of_support_subset
+#check Finsupp.sum
+#check Finset.sum_attach
+#check Fintype.sum_equiv
+#check Fintype.equivFin
+#check Finsupp.sum_zero_index
+#check Finsupp.sum_add_index
+#check Finsupp.not_mem_support_iff
+#check Equiv.injective
+#check Subtype.val_injective

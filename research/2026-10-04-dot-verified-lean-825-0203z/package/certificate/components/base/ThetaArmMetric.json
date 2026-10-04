@@ -1,0 +1,62 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaArmMetric",
+  "source": "sources/ThetaArmMetric.lean",
+  "source_sha256": "7c9ef862f95dc589d5b5a417c45f48c3d92a92dbbbf7ed7c8f0179906021a108",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaArmMetric-1791008033917026492/ThetaArmMetric.olean",
+    "ThetaArmMetric.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 79.98251648000041,
+  "direct_import_artifacts": {
+    "ThetaFiniteSoundness": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaFiniteSoundness.olean",
+      "sha256": "85b127f99b15779285ae1d0e186428865035ca40d94f6b75392a051b61d56fa0"
+    },
+    "Mathlib.Tactic.FinCases": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/FinCases.olean",
+      "sha256": "8f3dfc361bde73e4dfcb36faeb341849e935e7b4fd479776cdd79384bfaab469"
+    },
+    "Mathlib.Data.Fintype.Fin": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Data/Fintype/Fin.olean",
+      "sha256": "d71958266a47a5ef416200c46786abcf31affc299c7ec6e55103da5bd60c810b"
+    },
+    "Mathlib.Tactic.NormNum": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/NormNum.olean",
+      "sha256": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 3510412,
+  "axiom_lines": [
+    "'Nanuq.Theta.hDistance_pair_cut' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "255b781b0b93c111b3477f6481ee49196d3775e45ef814bbe091353a7ebfd5da",
+  "created_utc": "2026-10-03T06:15:13.930060+00:00",
+  "object_sha256": "831c2acb0cad5fd3be4c5c95d3cc3e1e5f397225145d3ea67dd1ad3a49178ee0",
+  "profile": "base",
+  "direct_import_sha256": {
+    "ThetaFiniteSoundness": "85b127f99b15779285ae1d0e186428865035ca40d94f6b75392a051b61d56fa0",
+    "Mathlib.Tactic.FinCases": "8f3dfc361bde73e4dfcb36faeb341849e935e7b4fd479776cdd79384bfaab469",
+    "Mathlib.Data.Fintype.Fin": "d71958266a47a5ef416200c46786abcf31affc299c7ec6e55103da5bd60c810b",
+    "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843"
+  },
+  "borrowed_original_receipt_sha256": "4378f98060eb00a91700dfdc415c971acce21ba6902cb29e5e83b11a8d0c40cb",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "c1d7acb8937a60c97a7318d5c82799a0f5883019251e801c95793d5880f5ab6e",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

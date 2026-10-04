@@ -1,0 +1,53 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "CircularBoundary",
+  "source": "sources/CircularBoundary.lean",
+  "source_sha256": "b44dc680bce0b3c45685147bbcdc7ce30a0b69765b1f93387678de579ca03fde",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/CircularBoundary-1791008253754908503/CircularBoundary.olean",
+    "CircularBoundary.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.1304254289998426,
+  "direct_import_artifacts": {
+    "CircularBasis": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/CircularBasis.olean",
+      "sha256": "eeabc5a1b9ff1688d8ba0f9df1a0aaaf07a21a3e440eb792fa65bee8ef8ff433"
+    },
+    "Mathlib.Tactic.Linarith": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/Linarith.olean",
+      "sha256": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1833652,
+  "axiom_lines": [
+    "'Nanuq.Reconstruction.crossed_gap_is_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.gapSplit_identified_by_boundaries' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "d11c08d70642c8b95e344a0d5e05377726f4b7bdbfd087cc672fe921358876f1",
+  "created_utc": "2026-10-03T06:17:34.915291+00:00",
+  "object_sha256": "718e54fead89cdb7eacdd731b76a26cc2200b226d1977d9a330ecc124114ba47",
+  "profile": "base",
+  "direct_import_sha256": {
+    "CircularBasis": "eeabc5a1b9ff1688d8ba0f9df1a0aaaf07a21a3e440eb792fa65bee8ef8ff433",
+    "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+  },
+  "borrowed_original_receipt_sha256": "aac924b5a4b8b64ae6e3a305b8a91e78fbc01697cb1d019ee24143e961376caf",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "0118df7dc6f4d2ba1f2396396c5ae3a0ae2fee2b0c54c7b79595cc32c731ad67",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

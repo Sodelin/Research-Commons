@@ -1,0 +1,23 @@
+import G5AllAgeSafeQuartetTransfer
+import G5AncestralObservedPairGerm
+import G5ArbitraryCoupledGroupCountTransfer
+import G5AttainedOriginalTipChronology
+import G5ChronologicalQuartetWitnessTransfer
+import G5CommonSwitchingPersistence
+import G5CommonSwitchingQuartetWitness
+import G5FairRawDisplayedQuartetIdentification
+import G5FairRawQuartetIdentificationFiniteLabels
+import G5FiniteAttainedDeletionTrace
+import G5NativeOriginalRouteCoverage
+import G5ObservableSafePairSupport
+import G5OriginalGroupPathChronology
+import G5OriginalTipRepresentativeDeletion
+import G5SafeCommonGroupQuartetTransfer
+import G5SafeCommonGroupSelector
+import G5SharedObservableDeletionTrace
+import G5SynchronizedObservableChronology
+import Lean.Elab.Command
+open Lean Elab Command
+run_cmd do
+  let env ← getEnv
+  liftIO <| IO.FS.writeFile "modules.json" (toJson (env.header.moduleNames.map Name.toString)).pretty

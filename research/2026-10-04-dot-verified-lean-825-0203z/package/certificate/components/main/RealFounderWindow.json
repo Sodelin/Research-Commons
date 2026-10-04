@@ -1,0 +1,51 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "RealFounderWindow",
+  "source_sha256": "0887f04d62e5b2bb0f20e6608831c949ebb0394a24a7df9c1d7771c1b5cbbec9",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/RealFounderWindow-1791010417138058334/RealFounderWindow.olean",
+    "RealFounderWindow.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.3363920540004983,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "Mathlib.Data.Real.Basic": "559efb0e853f55be8ae0de97c10d22f58e7ed4b71a5e2e4c92bdfe764636b724",
+    "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+    "SamuelAlexanderResearch.BirthOrder": "7fea65c7830f1f159113f7262b8ddb520424c70d34205db36220ddf96ece40fd",
+    "FounderWindow": "ad70d2a43279eddc115722f73f1d4a9011cb3165e5b6cfd2bc99765642ce5e14"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'RealFounderWindow.nonempty_has_earliest' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.earliest_is_founder' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.founder_covers' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.window_finite_founders' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.commonAncestor_window' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.window_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.window_directed_union' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'RealFounderWindow.directed_union_finite_founders' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "7d4d112178a041dcecaf11b3a02b8c2edacc73e811e60a60561740f5c28d336a",
+  "created_utc": "2026-10-03T06:53:38.475754+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "16112a83068abb6c77762b7cc49bab552b1f8516e6f7069d17a3f8268a06e439",
+  "receipt_path": ".build/receipts/main/RealFounderWindow-1791010417138058334/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "a3707716cbb2a3e0b19494e07c883ce8938e5ce0cf8cbc3c784647ab73b1ed99",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

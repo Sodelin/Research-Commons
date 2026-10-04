@@ -1,0 +1,60 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "PairingObservationAudit",
+  "source_sha256": "40c802b67d1161886029fb64ee8622c3049f5ac0e1b3211f4b94211e03edc582",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/PairingObservationAudit-1791010221955426691/PairingObservationAudit.olean",
+    "PairingObservationAudit.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.36866676099998585,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "PairingObservation": "1e4ef680041dc2695b12477a6499814556ac4a1281eed3da757bb69d5790fe03"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'PairingObservation.query_coownership' depends on axioms: [propext, Quot.sound]",
+    "'PairingObservation.local_query' depends on axioms: [propext]",
+    "'PairingObservation.query_formula' depends on axioms: [propext, Quot.sound]",
+    "'PairingObservation.query_mixing' depends on axioms: [propext, Quot.sound]",
+    "'PairingObservation.query_splitting' depends on axioms: [propext, Quot.sound]",
+    "'PairingObservation.observe_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.split_observation_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.identifies_iap_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.no_bounded_sampling_decoder' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.observed_positive_not_iap' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.even_owner_agreement' depends on axioms: [propext]",
+    "'PairingObservation.even_owners_equal' depends on axioms: [propext, Quot.sound]",
+    "'PairingObservation.no_even_ownership_decoder' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.bounded_identifies_iap_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingObservation.bounded_iap_iff_one_query' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingCore.constrained_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingCore.mixing_iap' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingCore.splitting_not_iap' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PairingCore.edge_exact_image' depends on axioms: [propext, Quot.sound]",
+    "'PairingCore.owner_exactly_two' depends on axioms: [propext, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "68372baad7d8ebe7d42720d8bd6a4103cd23dbcfe0cae13e9558430dcd5ee813",
+  "created_utc": "2026-10-03T06:50:22.324573+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "bc69b2e53b256b33fc119141621103cd39a16779f52b38d6013c04716fbfd0f9",
+  "receipt_path": ".build/receipts/base/PairingObservationAudit-1791010221955426691/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "a5d4aab6da7042e1bc8b2d78bd51b57ed2ef92f19a1741f552703cd2392d04cb",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

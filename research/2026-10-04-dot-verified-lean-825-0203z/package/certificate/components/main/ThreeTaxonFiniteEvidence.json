@@ -1,0 +1,51 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "ThreeTaxonFiniteEvidence",
+  "source_sha256": "01f53ac6176f612beda29475805d5c27293db7a35d10907a2db3ad8a96ae18f5",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/ThreeTaxonFiniteEvidence-1791010566392773269/ThreeTaxonFiniteEvidence.olean",
+    "ThreeTaxonFiniteEvidence.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.026608142000441,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "Mathlib.Data.Real.Basic": "559efb0e853f55be8ae0de97c10d22f58e7ed4b71a5e2e4c92bdfe764636b724",
+    "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+    "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+    "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'ThreeTaxonFiniteEvidence.sampleMass_positive' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.sampleMass_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.finite_sample_support_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.no_uniform_certain_decoder' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.quantitative_error_witness' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.robust_strict_mode' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.robust_maximizer_recovers' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ThreeTaxonFiniteEvidence.half_gap_tie' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "1b543b4c4aa361ce22da4d035ca15aee156e84604da5b6580eb1c5169804afdc",
+  "created_utc": "2026-10-03T06:56:08.420325+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "e738e6fa8da914695e4d1adf8c600a0bcead79c6df7e94e40f6769a1fee326ae",
+  "receipt_path": ".build/receipts/main/ThreeTaxonFiniteEvidence-1791010566392773269/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "e748dabb66d229457e58b799ea330627ffc51a2ac3c0eaa70f56ab1dffc58115",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

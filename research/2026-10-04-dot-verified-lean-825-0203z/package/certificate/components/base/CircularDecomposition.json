@@ -1,0 +1,54 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "CircularDecomposition",
+  "source": "sources/CircularDecomposition.lean",
+  "source_sha256": "d2c8754b0dcec746ee5b22c0aee4f5ee841d193fd13a137e671a16a6d0d00e6c",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/CircularDecomposition-1791008235367854648/CircularDecomposition.olean",
+    "CircularDecomposition.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.3225226350000412,
+  "direct_import_artifacts": {
+    "SplitReconstruction": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/SplitReconstruction.olean",
+      "sha256": "d6a1690808a849708d237319b9abf4eefe3a8720443f4c4ddb8a45c6c2e99dda"
+    },
+    "WeightedOrderedPairs": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/WeightedOrderedPairs.olean",
+      "sha256": "a79cd9cd37e9b60c09d465e3ff2760d5c853293966f02e29db8861ac75af8afc"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1809144,
+  "axiom_lines": [
+    "'Nanuq.Reconstruction.circular_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.circular_decomposable_of_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.pseudometric_of_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "f54e11a13f4c918f4436535cef062fa4cbfda2fbd9cfa1af02502125989faddf",
+  "created_utc": "2026-10-03T06:17:16.722731+00:00",
+  "object_sha256": "f4653c21bfead7fdd2001bd6978e24d70dec812e5b4dc4d9be965ad9e1156f7d",
+  "profile": "base",
+  "direct_import_sha256": {
+    "SplitReconstruction": "d6a1690808a849708d237319b9abf4eefe3a8720443f4c4ddb8a45c6c2e99dda",
+    "WeightedOrderedPairs": "a79cd9cd37e9b60c09d465e3ff2760d5c853293966f02e29db8861ac75af8afc"
+  },
+  "borrowed_original_receipt_sha256": "01bf5fd77ffa674b361f9fcd8ba1af50dfd4e422fb1832bb29e1d517552a7215",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "79bd21b17f762ecb76d249bac7baeeb98c6f2c5569b0aff8824ca90e06ec110e",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

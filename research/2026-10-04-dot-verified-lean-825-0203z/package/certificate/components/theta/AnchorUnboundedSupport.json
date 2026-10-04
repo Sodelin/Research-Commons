@@ -1,0 +1,59 @@
+{
+  "status": "PASS_BORROWED_FRESH_THETA_LANE",
+  "module": "AnchorUnboundedSupport",
+  "source": "sources/AnchorUnboundedSupport.lean",
+  "source_sha256": "6f7558f3629bc3bfa880f4800fbf1f094cea3242324f4da030138c9744466fb2",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/AnchorUnboundedSupport-1791009438358059204/AnchorUnboundedSupport.olean",
+    "AnchorUnboundedSupport.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.9010419979999824,
+  "direct_import_artifacts": {
+    "AnchorUnboundedTheorem": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorUnboundedTheorem.olean",
+      "sha256": "421865d7237615249ebfa7f1cd6ea0bbb29948aa4ce02fb0f26ec82be1c6c8be"
+    },
+    "CircularSupportCompression": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/CircularSupportCompression.olean",
+      "sha256": "99a2d14694c933cd6d21d5527f7e3ac577f814db337d81be1f3eb84c39f9cecd"
+    },
+    "ThetaCompressedSurjective": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaCompressedSurjective.olean",
+      "sha256": "49ff0ce74f3ee97397cf9e52d176cd88333252dcb2d6af849b21ac304e772f5c"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1948656,
+  "axiom_lines": [
+    "'Nanuq.Theta.unbounded_support_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.unbounded_weighted_exact_support' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.unbounded_source_full_theorem' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "e898a7ef38d74213818648dd4f7b4821d1ad582ff1888f6cc921ea4e689434ad",
+  "created_utc": "2026-10-03T06:37:20.292690+00:00",
+  "object_sha256": "109e5d8e61f7e1ae5513c6f8f69b03e58382e0ebf17ab5f2bd43bbc618fff11b",
+  "profile": "theta",
+  "direct_import_sha256": {
+    "AnchorUnboundedTheorem": "421865d7237615249ebfa7f1cd6ea0bbb29948aa4ce02fb0f26ec82be1c6c8be",
+    "CircularSupportCompression": "99a2d14694c933cd6d21d5527f7e3ac577f814db337d81be1f3eb84c39f9cecd",
+    "ThetaCompressedSurjective": "49ff0ce74f3ee97397cf9e52d176cd88333252dcb2d6af849b21ac304e772f5c"
+  },
+  "borrowed_original_receipt_sha256": "57d665fde4301d595339ce99f70e70b076bd1ea398ff48fbddb7794a55b177fe",
+  "borrowed_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "1b97042b2264a1615887cbfe8c126008f66f1e31cdfcb97ec993c1a872f50819",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

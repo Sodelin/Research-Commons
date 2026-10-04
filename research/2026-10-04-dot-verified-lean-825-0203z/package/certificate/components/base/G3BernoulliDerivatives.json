@@ -1,0 +1,50 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "G3BernoulliDerivatives",
+  "source_sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/G3BernoulliDerivatives-1791009597722738468/G3BernoulliDerivatives.olean",
+    "G3BernoulliDerivatives.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.9508403310001086,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "Mathlib.Analysis.SpecialFunctions.Log.Deriv": "ffb13dcfe9b5ccbe18a49ee4096bee5d8ebf4f830ee4c7959be2c7c1eb4414c1",
+    "Mathlib.Analysis.Calculus.Deriv.Pow": "444bf5335090f1b9711726211ecf70dca0c40cec55793beea874f3f2a4ae7339",
+    "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+    "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+    "Mathlib.Tactic.Positivity": "11440b335f1cd98c125aeae637daaf01c5c90386929d40a15db7bfeea47ace8a"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.G3.AllResidue.bernoulli_factor_pos' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.AllResidue.bernoulli_factor_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.AllResidue.hasDerivAt_bernoulliFactor_p' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.AllResidue.hasDerivAt_bernoulliFactor_q' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.AllResidue.hasDerivAt_bernoulliLog_p' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.AllResidue.hasDerivAt_bernoulliLog_q' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "0a0ba60815ac074f23fdb8251b81d909bea0913616ace8bc09aebfb84f401363",
+  "created_utc": "2026-10-03T06:39:59.674500+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "35cb856cdb8e1c49985f5c396c15046fd551b934a97d8f17e57e1859a17a983a",
+  "receipt_path": ".build/receipts/base/G3BernoulliDerivatives-1791009597722738468/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "1b35483bc14d114990bda1d1aa74d6b7478e9161499ee1b30f2bd93cbf8fe8e3",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

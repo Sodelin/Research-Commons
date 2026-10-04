@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "HistoryWellFounded",
+  "source_sha256": "e3efce200eac78dd6ec306b3087f5cd0ec87cf8e3f0db939284c62553133ce96",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/HistoryWellFounded-1791010570558804246/HistoryWellFounded.olean",
+    "HistoryWellFounded.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.5916379020000022,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "ReachableRankNecessity": "251ae339a15faa57a4f6678fcb04e6c2278f8d2783fef3613118fc93600b4796"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'HistoryWellFounded.below_wellFounded' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'HistoryWellFounded.finite_word_occurs' depends on axioms: [propext, Quot.sound]",
+    "'HistoryWellFounded.population_heights_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "091dfe7b5a3543cf0e9d27a4e1ebee74f0cf9e7c74cd01e2c9328d86104f8103",
+  "created_utc": "2026-10-03T06:56:11.150855+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "b4c30c3b2bb8a26ae99aedaf51f1e5ec00456b5efb39cbe34a5a5d0a52b01b4f",
+  "receipt_path": ".build/receipts/main/HistoryWellFounded-1791010570558804246/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "e97c87b79283ea6328eed0417e555ba56df02024770f7e690bcd318eee29a7af",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

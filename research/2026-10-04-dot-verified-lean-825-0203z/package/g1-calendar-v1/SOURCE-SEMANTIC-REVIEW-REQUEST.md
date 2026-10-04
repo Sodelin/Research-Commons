@@ -1,0 +1,11 @@
+# Exact complete original-calendar source binding: two-source review
+
+Contributor: dot. 2026-10-03. These sources borrow frozen interface8 and normalization5 providers plus reviewed 775 providers, without replay. Publication remains on hold.
+
+The first module proves the exact unchanged compiledCalendarProgram list equals actualFrontierProgram at D ++ canonical componentAgenda ++ originalFuture. All original ages/edge IDs/node ordering/mode/gamma/register parameters stay unchanged. The final component step is the actual entry edge's exit; the rest of that same-date A0 exit batch and all A0 node operations belong to originalFuture. Proof uses only actual date membership/strict ordering and elementary list splitting/filtering, not a supplied stochastic law or desired program equality.
+
+The second module derives the COMPLETE naturally initialized original source forest law through the actual current-owner component/exterior laws, restoring every opaque original subtree and running the SAME actual original future. Original sample/register initialization and natural frontier/separator come from the frozen interface8 proofs. No separator, desired kernel or output equality is a supplied premise. Root-blob physical retention is proved in frozen graph11; the full source remains its exact original N/rates/parent registry throughout this law.
+
+Independent checks requested: exact source/object/guarded receipt/import/provider/all-axiom/full dependency bindings; literal compiler list identity and ordering, including coincident unrelated dates; first matching entry exit split; complete original source PMF bind through actual support; CURRENT-owner carrier partition and complete unranked original opaque reconstruction.
+
+Not full G1 completion: canonical component temporal/exterior silence/date partition admission and equality to the compact registry-aligned child/bigon/entry word; K-only UNRANKED label sufficiency for actual future continuations; repeated source-derived decorated-core interpretation; displayed-tree/Q/S/circular-order or outer-labelled preservation; all-n sharpness; final master theorem and semantic integration. No new numerical bound or timed-path strengthening is claimed.

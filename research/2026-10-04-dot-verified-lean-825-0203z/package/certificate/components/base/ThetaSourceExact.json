@@ -1,0 +1,58 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaSourceExact",
+  "source": "sources/ThetaSourceExact.lean",
+  "source_sha256": "098352bf2e44220881e40e80dff4024cb1b31e738d88bd890f72fa2118610b1a",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaSourceExact-1791008221574941248/ThetaSourceExact.olean",
+    "ThetaSourceExact.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.018738525000117,
+  "direct_import_artifacts": {
+    "ThetaQuartetValidity": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaQuartetValidity.olean",
+      "sha256": "0cffad5ac2013de208c6a3cc9289dec1eb8704fc6fa9565aaaa6cd296252678a"
+    },
+    "ThetaSemanticsBridge": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaSemanticsBridge.olean",
+      "sha256": "02ffeb006dca155f54e8b800d7a046e6e8a863a907ad5a4c3fff27736623a07e"
+    },
+    "Mathlib.Tactic.Ring": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/Ring.olean",
+      "sha256": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1803520,
+  "axiom_lines": [
+    "'Nanuq.Theta.rho2_source_of_checked' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.rhoFin_source_of_checked' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "86928e8714b43181b58df4c92978ce8fc1976bc25f8a754a6edc34a80ab14d0a",
+  "created_utc": "2026-10-03T06:17:02.625000+00:00",
+  "object_sha256": "f1de51494d3db594d818afb32debca3cfe0d2397b27ac95b8ea142fc6794de6b",
+  "profile": "base",
+  "direct_import_sha256": {
+    "ThetaQuartetValidity": "0cffad5ac2013de208c6a3cc9289dec1eb8704fc6fa9565aaaa6cd296252678a",
+    "ThetaSemanticsBridge": "02ffeb006dca155f54e8b800d7a046e6e8a863a907ad5a4c3fff27736623a07e",
+    "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+  },
+  "borrowed_original_receipt_sha256": "ec7d9d2c332c88878c85ac0ccc984aa123e427476086e66390d75979fed8d7c2",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "0d460346b848d1cbf12c4ccbe68eb26a70e362311b4f62dc5c8e4415953aea13",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

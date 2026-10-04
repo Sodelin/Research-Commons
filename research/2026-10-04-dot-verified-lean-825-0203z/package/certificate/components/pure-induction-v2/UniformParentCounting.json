@@ -1,0 +1,51 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "pure-induction-v2",
+  "module": "UniformParentCounting",
+  "source_sha256": "3fbb09bbdfa0ffb78cf9e88488bceb3e831fd4f014dfdf3db6fe70370d75bea2",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/pure-induction-v2/UniformParentCounting-1791011360875438378/UniformParentCounting.olean",
+    "UniformParentCounting.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.457659564000096,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "Mathlib.Data.Fintype.BigOperators": "b8e090b03ee21561d4a6b8467c161afac29ad8383d90926af40af15a95aa6105",
+    "Mathlib.Data.Fintype.Card": "486710e337f319d22837c09f3e565f22b5574a8d410251560c275c89bd8c5b40",
+    "Mathlib.Data.Real.Basic": "559efb0e853f55be8ae0de97c10d22f58e7ed4b71a5e2e4c92bdfe764636b724",
+    "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'UniformParentCounting.designated_parents_distinct' depends on axioms: [propext, Quot.sound]",
+    "'UniformParentCounting.isDesignated_iff' depends on axioms: [propext, Quot.sound]",
+    "'UniformParentCounting.card_parent_tables' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentCounting.card_designated' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentCounting.card_avoiding_sequences' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentCounting.avoidance_probability_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentCounting.success_probability_zpow' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentCounting.success_probability_positive' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "263926433540ffb5e18d27b52baba624459f422c818c970a67d48729ef2b582f",
+  "created_utc": "2026-10-03T07:09:22.334176+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "c85f5510bd9d3ca8437b4958c36045bf6400f7c0756addcfec2a375cacf829a4",
+  "receipt_path": ".build/receipts/pure-induction-v2/UniformParentCounting-1791011360875438378/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "99ed1a5fc74453d56d418fe7241c8c6dd05d8d719e25b4c1e0864c702390dc0f",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

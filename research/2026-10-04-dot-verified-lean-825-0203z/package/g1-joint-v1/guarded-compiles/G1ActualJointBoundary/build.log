@@ -1,0 +1,15 @@
+G1ActualJointBoundary.lean:51:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G1ActualJointBoundary.lean:44:0: warning: automatically included section variable(s) unused in theorem `G1ActualJointBoundary.separated_panels_not_at_same_node`:
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'G1ActualJointBoundary.actual_separated_joint_boundary_law' depends on axioms: [propext, Classical.choice, Quot.sound]

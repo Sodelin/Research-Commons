@@ -1,0 +1,50 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "WongEventEncoding",
+  "source_sha256": "6fdde306bbdab6f5e349127d634251988cd81e977b0eca63f114f187ce7ecb87",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/WongEventEncoding-1791010444070514019/WongEventEncoding.olean",
+    "WongEventEncoding.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.9502879619994928,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "WongGARG": "279113272707e94a727fc1c0dd54a390a976c6347651ae9401366ef396125127"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'WongEventEncoding.ParentSpec.parent_iff_exists_at' depends on axioms: [propext]",
+    "'WongEventEncoding.EventGraph.encoded_topology' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.encoded_atLocus' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.encoded_nonempty_annotations' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.encoded_unique_parent' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.encoded_route' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.encoded_path_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.erased_encoded_topology' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.EventGraph.encoded_parent_pointer' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongEventEncoding.ParentSpec.crossover_cut_identified' depends on axioms: [propext]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "8df4fbd734b1220b944aa6f8b8b98778f25d599aaeef34b2e27fa6a8764d31f8",
+  "created_utc": "2026-10-03T06:54:06.021495+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "6fd4a5f6b1edadc96688689b3ac40caaaf96b442b3efe9b2e974d968ea528f2a",
+  "receipt_path": ".build/receipts/main/WongEventEncoding-1791010444070514019/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "c131607cab92dd190860a9f3c608d3e594beca244b22588c257e27c2deee80fa",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

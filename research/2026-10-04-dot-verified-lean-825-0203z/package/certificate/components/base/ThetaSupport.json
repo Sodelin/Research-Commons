@@ -1,0 +1,47 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaSupport",
+  "source": "sources/ThetaSupport.lean",
+  "source_sha256": "f4f3bc90940b3cce3dd14e28e8cccd9ac070f29ee5144e08c45995ffb7f57a0a",
+  "command": [
+    "timeout",
+    "90",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M2048",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaSupport-1791007837226709976/ThetaSupport.olean",
+    "ThetaSupport.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.26487545100008,
+  "direct_import_artifacts": {
+    "ThetaFiniteSoundness": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaFiniteSoundness.olean",
+      "sha256": "85b127f99b15779285ae1d0e186428865035ca40d94f6b75392a051b61d56fa0"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1602540,
+  "axiom_lines": [
+    "'Nanuq.Theta.support_iff_of_check' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "2836cca271e4f1dedb47a46a2c32b708b3d1699b5cdc29b90785b2147395b211",
+  "created_utc": "2026-10-03T06:10:38.521253+00:00",
+  "object_sha256": "2eb9b5911ea2bce880501170b999c0f7ba3104c7e29c245a2d632df069100120",
+  "profile": "base",
+  "direct_import_sha256": {
+    "ThetaFiniteSoundness": "85b127f99b15779285ae1d0e186428865035ca40d94f6b75392a051b61d56fa0"
+  },
+  "borrowed_original_receipt_sha256": "dbfb43b54c6737d864a917bdbca6400493506374fa4db015d2dae4c465908336",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "b302063c9a14bcc2aeeb83a61f579389962793e339bddddace35099f7a296f10",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

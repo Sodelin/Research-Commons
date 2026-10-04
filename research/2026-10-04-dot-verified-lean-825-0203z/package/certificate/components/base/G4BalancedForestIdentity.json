@@ -1,0 +1,45 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "G4BalancedForestIdentity",
+  "source_sha256": "91547006e832cfe11bae08e2a3dec01058f198a1cf0a3a6526d4d59500b61b99",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/G4BalancedForestIdentity-1791009681674622244/G4BalancedForestIdentity.olean",
+    "G4BalancedForestIdentity.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.9420871459997215,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "Mathlib.Data.Real.Basic": "559efb0e853f55be8ae0de97c10d22f58e7ed4b71a5e2e4c92bdfe764636b724",
+    "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+    "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.G4.balanced_residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.balanced_coordinate_separates_cap4' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.ordinary_balanced_positive' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "ce110ac20ea8c09071f0629fe69c01ec5646d336271e606b8dcae8e60ba3d367",
+  "created_utc": "2026-10-03T06:41:23.617460+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "f0d0f2b57cf196306e209124a5381d9a3109e07faa35a241a3b2d7f4c8d180e5",
+  "receipt_path": ".build/receipts/base/G4BalancedForestIdentity-1791009681674622244/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "47c657d651cb243a0ab266551e25fde03e7d3f452a27c7a11e24aae41c291abc",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

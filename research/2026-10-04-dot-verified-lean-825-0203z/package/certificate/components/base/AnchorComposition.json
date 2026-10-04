@@ -1,0 +1,50 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "AnchorComposition",
+  "source": "sources/AnchorComposition.lean",
+  "source_sha256": "a591462b5d3dc6353d66d9e904bd94a56ce7eb8e6475808001fcdc2692a08434",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/AnchorComposition-1791008275148328558/AnchorComposition.olean",
+    "AnchorComposition.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.4387615850000657,
+  "direct_import_artifacts": {
+    "SourceCompositionBridge": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/SourceCompositionBridge.olean",
+      "sha256": "ca3fe60d8a6394233d54b90556a4f3b8cc3c9d34b4a9e15fc2e4b45cae1c14e0"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1829732,
+  "axiom_lines": [
+    "'Nanuq.Composition.weightedNanuq_eq_ordered_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Composition.sum_weighted_pairs_by_ports' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Composition.weighted_composition_of_anchor_identity' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Composition.source_composition_of_anchor_identity' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "ebf0fd70a493dee948b4bb1f15b23a3953c1d8610c62442eed0c911c8604b45e",
+  "created_utc": "2026-10-03T06:17:56.616782+00:00",
+  "object_sha256": "24d1b4e38366a68cd7cb7b2f98da0776b998226a4d2bd0c7d84450065e6f8639",
+  "profile": "base",
+  "direct_import_sha256": {
+    "SourceCompositionBridge": "ca3fe60d8a6394233d54b90556a4f3b8cc3c9d34b4a9e15fc2e4b45cae1c14e0"
+  },
+  "borrowed_original_receipt_sha256": "bbee9370512b35a90b7c80e1d029e5d81e926e57ce066e8ef943d76b2c8d18dd",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "dae6a63eb2b87392e2cd38f09110f7f2424cddf832d644b5f01e26c7a8d4494f",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

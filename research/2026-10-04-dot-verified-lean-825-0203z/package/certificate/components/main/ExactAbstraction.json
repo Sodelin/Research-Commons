@@ -1,0 +1,48 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "ExactAbstraction",
+  "source_sha256": "a5c8c5113532bfabb84e5259be91c551ab4210ce4301afc7a6fc233cab40c42e",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/ExactAbstraction-1791010542858584283/ExactAbstraction.olean",
+    "ExactAbstraction.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.759858751000138,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "Mathlib.Logic.Function.Basic": "6c1123df309faa83a09f692349f6a6ea6028350d66097261c096a49f773e99c0"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'ExactAbstraction.exact_factor_iff' depends on axioms: [Classical.choice]",
+    "'ExactAbstraction.exact_factor_unique' depends on axioms: [Quot.sound]",
+    "'ExactAbstraction.trajectory_preservation' depends on axioms: [propext]",
+    "'ExactAbstraction.compatible_gives_trajectories' depends on axioms: [propext, Classical.choice]",
+    "'ExactAbstraction.TwoBit.projection_collision' does not depend on any axioms",
+    "'ExactAbstraction.TwoBit.no_state_only_update' depends on axioms: [Classical.choice]",
+    "'ExactAbstraction.TwoBit.period_two_after_first' does not depend on any axioms",
+    "'ExactAbstraction.TwoBit.exact_period_two_after_first' does not depend on any axioms"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "559d60266add2d3d618fa92c54625cfe943668f36d4dc772e8ff68b148bbac82",
+  "created_utc": "2026-10-03T06:55:43.619062+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "84b1b3254f7084c251ee0d3aea7389ce2e83db66b593c8dd557d8911643bf40c",
+  "receipt_path": ".build/receipts/main/ExactAbstraction-1791010542858584283/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "a6a5c1b23454999ee6c10256c0d8937d16e46571388d29346a4a8515fa78fe50",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

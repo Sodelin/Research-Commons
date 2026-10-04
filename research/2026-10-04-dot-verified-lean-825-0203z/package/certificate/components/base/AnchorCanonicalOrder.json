@@ -1,0 +1,55 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "AnchorCanonicalOrder",
+  "source": "sources/AnchorCanonicalOrder.lean",
+  "source_sha256": "8236c2ec26bc533562a4396ae822c661a413610d85cfc996752033c4adfdd47d",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/AnchorCanonicalOrder-1791008144685321991/AnchorCanonicalOrder.olean",
+    "AnchorCanonicalOrder.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.2594600289999107,
+  "direct_import_artifacts": {
+    "AnchorCompressionOrder": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorCompressionOrder.olean",
+      "sha256": "a132cefa9131be3bb8e15677c9a2948503a7f0dfbb173e0e7c2179b93902e158"
+    },
+    "Mathlib.Data.List.Sort": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Data/List/Sort.olean",
+      "sha256": "1e51610099de8546f979f91a8b07f085c498cc638f704301eb8e585cb9644cec"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1836984,
+  "axiom_lines": [
+    "'Nanuq.Theta.armRanks_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.selectedArm_rank_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.compressed_circular_eq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.compressed_retained_circular_eq' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "2ef14f56c538b9daa6749cf2d9f8b597834523ca4529a42042e4278b68d012a3",
+  "created_utc": "2026-10-03T06:15:45.974162+00:00",
+  "object_sha256": "754c4dbc2f8d45abfe23c2cdb8b3c2b206f1e434ab8a89c72cbf0b6b98832e6c",
+  "profile": "base",
+  "direct_import_sha256": {
+    "AnchorCompressionOrder": "a132cefa9131be3bb8e15677c9a2948503a7f0dfbb173e0e7c2179b93902e158",
+    "Mathlib.Data.List.Sort": "1e51610099de8546f979f91a8b07f085c498cc638f704301eb8e585cb9644cec"
+  },
+  "borrowed_original_receipt_sha256": "01a18f2ec153aab2fd764579d95d51db8cf7edd7a68e833bdb3a43e49371bb6d",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "dc41edd111ed03a97cd453936abed30851094a104ab37201e95277d394f93cce",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

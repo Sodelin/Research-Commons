@@ -1,0 +1,44 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "E8MidpointGridTV",
+  "source_sha256": "3c07f12778bdfa3242888512e75ab507bb9a00984ae20a3516b764839a9246b0",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/E8MidpointGridTV-1791009544839890957/E8MidpointGridTV.olean",
+    "E8MidpointGridTV.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.4338769209998645,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "E8MidpointGridLaw": "3cfac4064091d1ffb86b170223462e6559765f5d070970926d97bf3bbc6cff5d",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise": "11fc4ab7dc006ee0468127e552d050272fe81f85eb024939cea94ad8a1d7f1aa"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'E8MidpointGridTV.adjacent_variation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8MidpointGridTV.grid_cdf_error' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8MidpointGridTV.grid_branch_TV_bound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "bbb2bf9e2dddff68add08742705bc98df05351459987afb11dece0c54e7dd4f6",
+  "created_utc": "2026-10-03T06:39:07.274601+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "add24323d2e9facf93f7d2c8d7aac65b606e91e8261452c701cc365345280e44",
+  "receipt_path": ".build/receipts/base/E8MidpointGridTV-1791009544839890957/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "587a12636328c5b9d64d57696718b2734bd185e80a2a10654fd314ccbe5b6bf0",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

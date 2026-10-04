@@ -1,0 +1,53 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaCompressedSurjective",
+  "source": "sources/ThetaCompressedSurjective.lean",
+  "source_sha256": "56b7fdc499a0fb4abd6e9072e13b6763bbc77b2e430a2390895782005903972f",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaCompressedSurjective-1791008266026583501/ThetaCompressedSurjective.olean",
+    "ThetaCompressedSurjective.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.041817784000159,
+  "direct_import_artifacts": {
+    "AnchorIndexTransport": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorIndexTransport.olean",
+      "sha256": "7b7c9b47eada2eacd7c163c4e67836410e997ce52a6031b1a89f0576b5ae4bbb"
+    },
+    "AnchorLeafPosition": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorLeafPosition.olean",
+      "sha256": "8d75a434a1f0fd7fb480180d3bb094ff94dea7c19d2969fa3658ba494cdb49e6"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1830252,
+  "axiom_lines": [
+    "'Nanuq.Theta.compressedIndex_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.compressedIndex_lt_iff' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "dd39b7adecfc9403ada5bb02c0fafca41304b2b3ccc91a669f3d54ff42c3eb0c",
+  "created_utc": "2026-10-03T06:17:47.102874+00:00",
+  "object_sha256": "49ff0ce74f3ee97397cf9e52d176cd88333252dcb2d6af849b21ac304e772f5c",
+  "profile": "base",
+  "direct_import_sha256": {
+    "AnchorIndexTransport": "7b7c9b47eada2eacd7c163c4e67836410e997ce52a6031b1a89f0576b5ae4bbb",
+    "AnchorLeafPosition": "8d75a434a1f0fd7fb480180d3bb094ff94dea7c19d2969fa3658ba494cdb49e6"
+  },
+  "borrowed_original_receipt_sha256": "58a6fb22e34f3bd204e13b23ba2f6b8bfe40cc4584c799676965fe6b97cb019b",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "4b757b596066f67ab84930dd559813be808e4124097ac6447b0154677cdc7433",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

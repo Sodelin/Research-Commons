@@ -1,0 +1,53 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "CircularRestriction",
+  "source": "sources/CircularRestriction.lean",
+  "source_sha256": "9e6aab99cb17bfc5760d8153ebd25b10e5311c38f6eb613d4f9a395055e9fc64",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/CircularRestriction-1791008278962661021/CircularRestriction.olean",
+    "CircularRestriction.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.3239363349998712,
+  "direct_import_artifacts": {
+    "CircularDecomposition": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/CircularDecomposition.olean",
+      "sha256": "f4653c21bfead7fdd2001bd6978e24d70dec812e5b4dc4d9be965ad9e1156f7d"
+    },
+    "Lean.Elab.Tactic.Omega": {
+      "path": "lean-toolchain/lib/lean/Lean/Elab/Tactic/Omega.olean",
+      "sha256": "280aa742e537120eb8e2f436fdc8417e2482b173262df6f88bddfbaea87c770c"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1810428,
+  "axiom_lines": [
+    "'Nanuq.Reconstruction.gapSplit_cyclic_four_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.circular_decomposable_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "d02a9c98dc7f0e45008cba96220b84503a364f75c46ae0f3e37fd30949fa3fd8",
+  "created_utc": "2026-10-03T06:18:00.315898+00:00",
+  "object_sha256": "aa8173bc4fd4b9e5a1ed3b820dee8a3b2c1c36af5a8fe88d1fc102d869e81806",
+  "profile": "base",
+  "direct_import_sha256": {
+    "CircularDecomposition": "f4653c21bfead7fdd2001bd6978e24d70dec812e5b4dc4d9be965ad9e1156f7d",
+    "Lean.Elab.Tactic.Omega": "280aa742e537120eb8e2f436fdc8417e2482b173262df6f88bddfbaea87c770c"
+  },
+  "borrowed_original_receipt_sha256": "718112f3ea752ccab62d6495d838c493f55f322afd90ccc1597400e982218b87",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "5d90c603ecaaad272f13d44b8768eab0f5f23020b1923722141d965af2b64bb8",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaSemanticsBridge",
+  "source": "sources/ThetaSemanticsBridge.lean",
+  "source_sha256": "66586550c7eb036fcfa4a3acd5bedb77f932a742a7efdc0686c2997300d827d7",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaSemanticsBridge-1791008219936179572/ThetaSemanticsBridge.olean",
+    "ThetaSemanticsBridge.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.573957550999694,
+  "direct_import_artifacts": {
+    "ThetaFiniteSoundness": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaFiniteSoundness.olean",
+      "sha256": "85b127f99b15779285ae1d0e186428865035ca40d94f6b75392a051b61d56fa0"
+    },
+    "QuartetSemantics": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/QuartetSemantics.olean",
+      "sha256": "eded4915b9e19577d3df82a182132287ca4bf940b5300bbad7f62970b767b869"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1803588,
+  "axiom_lines": [
+    "'Nanuq.Theta.four_resolution_average' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.rho2_eq_sourceMean_of_resolves' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "c4d96002b992472f06c0fe7b60af78ecaf297fd3244083e20c370be842466a05",
+  "created_utc": "2026-10-03T06:17:01.540561+00:00",
+  "object_sha256": "02ffeb006dca155f54e8b800d7a046e6e8a863a907ad5a4c3fff27736623a07e",
+  "profile": "base",
+  "direct_import_sha256": {
+    "ThetaFiniteSoundness": "85b127f99b15779285ae1d0e186428865035ca40d94f6b75392a051b61d56fa0",
+    "QuartetSemantics": "eded4915b9e19577d3df82a182132287ca4bf940b5300bbad7f62970b767b869"
+  },
+  "borrowed_original_receipt_sha256": "5f676e11cf504531130db7d6f932f905d07abccf3b5cc317b321f1df3dea1959",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "a4c62983bb0fc46646a2853d5310b1ffb3c100e6972fa96f8940ae193353c53e",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

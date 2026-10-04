@@ -1,0 +1,46 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "PedigreeBlockRecovery",
+  "source_sha256": "a1736c0d033ed87e385d9d2a23a4f8362d2ebc41999f2e7c73a7c35d2d57230b",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/PedigreeBlockRecovery-1791010227778308930/PedigreeBlockRecovery.olean",
+    "PedigreeBlockRecovery.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.822086211000169,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "PedigreeBlockGraph": "91a9acc17bf22d1710ed9b5905e050b9c394f5bb2c417d5ce96a0624969da0c9",
+    "PedigreeBlockProbability": "8dea998b2baa9cbb2b46148e014f1894433aed9d752818fd26f91ccb9ec7150c",
+    "PedigreeBlockObservation": "680404dd8795a6a1829ecd0b3fa959e9c2cbad53d38876aafb2c5613c5af1b5e"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'PedigreeBlock.connected_probability' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PedigreeBlock.recovered_probability' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PedigreeBlock.observationLaw_probability' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PedigreeBlock.output_recovery_probability' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "ca7083b9c40cbe61125d1ec076b495ee5d579ed1ac854b01595634b6eb9979e3",
+  "created_utc": "2026-10-03T06:50:29.601078+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "1af047cf70e95a7e888628ffe903f13d39c9edfb218ce268ee5b1553b7b318ad",
+  "receipt_path": ".build/receipts/base/PedigreeBlockRecovery-1791010227778308930/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "1a3031cfa601841d2c84ecc240b78416dac37f4af1d0cdfb792101ae34db3ab7",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

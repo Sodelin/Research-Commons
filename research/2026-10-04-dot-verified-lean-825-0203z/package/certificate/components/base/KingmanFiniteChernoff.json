@@ -1,0 +1,45 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "KingmanFiniteChernoff",
+  "source_sha256": "c22e10e26d8452362f41e0460d165109f35d604a73eef6f317cbf4938a18112d",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/KingmanFiniteChernoff-1791009852663071050/KingmanFiniteChernoff.olean",
+    "KingmanFiniteChernoff.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.0535316900004545,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "KingmanFiniteClockTail": "3a9d2fe35dc89dadb137aace22336fac75a084c44d7832b0574ebc06f6a83797",
+    "Mathlib.MeasureTheory.Integral.Pi": "88fb07b426809c3086950312fc89414a7a59dee9e4e7262415bb4862938f566f",
+    "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset": "a9b0c1dd9a4544bb6e65fd83f2740e2a165726ce1ca2209de900225421453738"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.Kingman.FiniteChernoff.finite_mgf_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.Kingman.FiniteChernoff.product_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.Kingman.FiniteChernoff.uniform_chernoff_tail' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "41f34a5fb91bf71cb5e9518287c03fed9cef8d48a8113ce4ab28f2a684bdf2d5",
+  "created_utc": "2026-10-03T06:44:15.717652+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "1c0910bad899750dcda0c6bf2786268c4a78d8ee870e95e9ad8d711a0e8aeebc",
+  "receipt_path": ".build/receipts/base/KingmanFiniteChernoff-1791009852663071050/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "39cc0bd119dd9f66c935e06650029e6082a7d0b738244cd49ca13611146b0d5b",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

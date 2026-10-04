@@ -1,0 +1,49 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "G5CalendarRoutes",
+  "source_sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/G5CalendarRoutes-1791009713865450461/G5CalendarRoutes.olean",
+    "G5CalendarRoutes.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.3327787000007447,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "G5BridgeBarrier": "8f45e753481ec724dfdeb53c07ef94692b282ca39ea202759513e7b6355df159",
+    "Mathlib.Data.Real.Basic": "559efb0e853f55be8ae0de97c10d22f58e7ed4b71a5e2e4c92bdfe764636b724",
+    "Mathlib.Tactic.Linarith": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.G5.bridge_mem_every_descendant_route' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G5.original_tip_route_exists' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G5.EdgePath.active_unique' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G5.protective_edge_active_on_every_route' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G5.protective_edge_absent_on_outside_route' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G5.protective_interval_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G5.younger_side_open_interval_has_no_first' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "deece5914567adae242b3d6d4f09f986b4b048e1fa3ca93a3b2762a5b13d79d9",
+  "created_utc": "2026-10-03T06:41:55.198985+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "1e9d5ff7367926c2d7309e8f433676203a9c1b7217e6ba86a06b12c10ae3285f",
+  "receipt_path": ".build/receipts/base/G5CalendarRoutes-1791009713865450461/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "10c96078febd80cb0859a37696c18e18c721696cd13e29fb813b1a03df80d772",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

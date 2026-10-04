@@ -1,0 +1,47 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "KingmanFiniteClockTail",
+  "source_sha256": "2d79e10d34786a8abbfc2e4ca80f3725a386429e6bbdcf10709838d58a4c40ca",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/KingmanFiniteClockTail-1791009850382603181/KingmanFiniteClockTail.olean",
+    "KingmanFiniteClockTail.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.278732417000356,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "ExponentialClockMoments": "efb73bf1d8e37a2a72e8d012a9493e30bab1b5778b108c6efb8547c8a6379d2e",
+    "G4AllRootPairClocks": "4087f5cbb0b0ec277ee9f203d0ccc0793ecb1b6bc0a08b12478e3894ea71ff40",
+    "Mathlib.Data.Nat.Choose.Cast": "08ec08f02f475b98a8915389d4c789f2ed854ce9be6f59f48ea3079f34bbefcf",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Markov": "3bce1089228dcc12c900ecfecf846cc1e516f812dab742b5c4cf910c2c128740",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Map": "eb8ee9a3e4f24f939274e654acb8127cc982b16d6266da0c1084c774c95d028c"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.Kingman.FiniteClockTail.uniform_markov_tail' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.Kingman.FiniteClockTail.reciprocalSum_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.Kingman.FiniteClockTail.finite_clock_mean' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "5dfb4bf95282a839b991c12e2710737170043af60559f33362ecc66f961b3a10",
+  "created_utc": "2026-10-03T06:44:12.662140+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "3a9d2fe35dc89dadb137aace22336fac75a084c44d7832b0574ebc06f6a83797",
+  "receipt_path": ".build/receipts/base/KingmanFiniteClockTail-1791009850382603181/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "0b143d93bb0547dc0599f706fae1256984b0f85f210b07e18735ff415af14002",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

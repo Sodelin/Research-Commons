@@ -1,0 +1,49 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "GenericMortalRank",
+  "source_sha256": "227b2cfcd452a5f75674ff0f835f9814818f70f3401dd440fa220a3f0c822f9b",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/GenericMortalRank-1791010562609171620/GenericMortalRank.olean",
+    "GenericMortalRank.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.050926421999975,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "GenericPruning": "7553a86de37469bbd99f32b988aab4ae488b2be1d0d790f074ad601f5ac529f4"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GenericMortalRank.mortal_forward_closed' does not depend on any axioms",
+    "'GenericMortalRank.mortal_wellFounded' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GenericMortalRank.chainLength_iff_survives' does not depend on any axioms",
+    "'GenericMortalRank.height_decreases' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GenericMortalRank.height_attained_and_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GenericMortalRank.height_least' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GenericMortalRank.survives_iff_le_height' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GenericMortalRank.live_or_finite_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GenericMortalRank.matching_state_dichotomy' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "8649cd425f654bb5e7afbeab9fdd8050224f237cd76adca0b67d0092e5e11ac2",
+  "created_utc": "2026-10-03T06:56:03.660736+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "20dbabc76aee8c60389c408384594d2720d84e24b4902bb0faef84ee126025b3",
+  "receipt_path": ".build/receipts/main/GenericMortalRank-1791010562609171620/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "db4b7f0703f33f1a04b6286d0474178c93a9408025c13144dba027f0180e7242",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "pure-induction-v2",
+  "module": "UniformParentProcess",
+  "source_sha256": "1cce9f8d1738255cd59e2553ea75dbe3b2078ed4b50d261c28e6b833c8a55325",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/pure-induction-v2/UniformParentProcess-1791011362335055102/UniformParentProcess.olean",
+    "UniformParentProcess.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.8070358309996664,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "ParentSchedules": "a93344b7f4be95c525e668127c603fe7024e55064f8a95b19ca8c2232f326965",
+    "UniformParentCounting": "c85f5510bd9d3ca8437b4958c36045bf6400f7c0756addcfec2a375cacf829a4",
+    "FeedbackDynamics": "991614f07ccc0b133310cf2ba42dd82361f23c9adc8adfb87f557e3026f352e8",
+    "Mathlib.Probability.ProductMeasure": "98211028ac77208f949a7630a007a52f9bdc946d1b70073ab013bfb8802a7941",
+    "Mathlib.Probability.Distributions.Uniform": "4aaf626e4e87326041b3c837179ed642ef893ba0a522a59bc5ff69d966481bf1"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'UniformParentProcess.oneStep_singleton' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.avoidance_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.measure_zero_of_geometric_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.forever_avoid_null' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.ae_recurrent' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.uniform_parenthood_ae_iap' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.unresolved_probability_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'UniformParentProcess.missRate_parent_tables' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "fc303ef873ae73e3c096b41c498a48c2c6172e5202e068584e37b8f4a04cb8ac",
+  "created_utc": "2026-10-03T07:09:25.144220+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "2986f89879d2b2d87e0206f51fd6e058a8211e13c08bbfcd75d5486da9b8711f",
+  "receipt_path": ".build/receipts/pure-induction-v2/UniformParentProcess-1791011362335055102/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "6919702adc1da13829f9dea27ab8a374b79dc2026c30c799d69078acf77938fe",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

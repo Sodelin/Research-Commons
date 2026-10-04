@@ -1,0 +1,49 @@
+{
+  "status": "PASS_BORROWED_FRESH_THETA_LANE",
+  "module": "ThetaDeletedHybrid",
+  "source": "sources/ThetaDeletedHybrid.lean",
+  "source_sha256": "0fa4129a59965af3f40bfa84ef5e5db485c75e9b28d09787256e9e71fea7936c",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaDeletedHybrid-1791009023955077719/ThetaDeletedHybrid.olean",
+    "ThetaDeletedHybrid.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.1466946820000885,
+  "direct_import_artifacts": {
+    "ThetaSourceUnbounded": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaSourceUnbounded.olean",
+      "sha256": "a1ab7441d4c8f527e6b656d208df2c3084f85386da115cdebe2eeb32988d17b5"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1907188,
+  "axiom_lines": [
+    "'Nanuq.Theta.quartet_second_independent' depends on axioms: [propext]",
+    "'Nanuq.Theta.rhoFin_two_switchings' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.delete_c2_circular' depends on axioms: [propext, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "8d42c2f2b7304e671f1abc837e945e9ef07881640333c536ae6872770c10095c",
+  "created_utc": "2026-10-03T06:30:25.135497+00:00",
+  "object_sha256": "20c6059657c0a165b9cdd358d2c6aef26e3f3f0175e94edfcd5b32ccb764ff34",
+  "profile": "theta",
+  "direct_import_sha256": {
+    "ThetaSourceUnbounded": "a1ab7441d4c8f527e6b656d208df2c3084f85386da115cdebe2eeb32988d17b5"
+  },
+  "borrowed_original_receipt_sha256": "c8a04639273d5fb22e0a6bd63d9fb9bf9d38148f18ae1785dbc5d2cd764f2bb6",
+  "borrowed_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "814c10c0c1f7e6664e0b5dc57dc74744e0ff7b1fd07d6c4488cc232e078d9c5b",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

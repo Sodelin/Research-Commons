@@ -1,0 +1,48 @@
+{
+  "status": "PASS_BORROWED_FRESH_THETA_LANE",
+  "module": "ZeroTheta",
+  "source": "sources/ZeroTheta.lean",
+  "source_sha256": "56ce587ddd5a2ab6db4d1005df9b3ffe0d52ad766989a65a7fe5ec825dfb6aff",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ZeroTheta-1791009019935152020/ZeroTheta.olean",
+    "ZeroTheta.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 0.9779810800000632,
+  "direct_import_artifacts": {
+    "ThetaCertificate": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaCertificate.olean",
+      "sha256": "4fe7f551cabfff73efccadf6bea5744b8bc0b4746650c83f49c4dde27d53d1ad"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1651484,
+  "axiom_lines": [
+    "'Nanuq.Theta.check_zero_template' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.anchor_nonnegative_upto_six' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "aec79645c27c5b50b685c1c752408183f223517aa55fdee04d1c9d15a7409bea",
+  "created_utc": "2026-10-03T06:30:20.944173+00:00",
+  "object_sha256": "4554814005c0b7df1901b9093e53a42445f7e634829268034d85bf1c827cf15e",
+  "profile": "theta",
+  "direct_import_sha256": {
+    "ThetaCertificate": "4fe7f551cabfff73efccadf6bea5744b8bc0b4746650c83f49c4dde27d53d1ad"
+  },
+  "borrowed_original_receipt_sha256": "2e8bef34cbb7862638ae27e343da47855d3e0c5632e4f7bdaa926e4a648b17cc",
+  "borrowed_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "d6309a6b3e2da9223a443c4fec235645470729d38fb2a991437368c471d4136a",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

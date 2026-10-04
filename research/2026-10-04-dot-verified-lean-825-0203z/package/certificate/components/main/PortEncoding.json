@@ -1,0 +1,48 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "PortEncoding",
+  "source_sha256": "66d01c74951475d8fb5d960fb5c21244545c7984d9fae8022f8a9f7bd131b2f4",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/PortEncoding-1791010419764340023/PortEncoding.olean",
+    "PortEncoding.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.523087399999895,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "SamuelAlexanderResearch.PortDynamics": "4f7a02f743ebf5a5b89ef5d9b5a2d4c0fdff34da22ca477ad99ccacdcd3f12d8",
+    "SamuelAlexanderResearch.InfiniteConservation": "b4f80285886b517ff9f4d788ed05ff980f3541d421c23a89c6199b806e7eb3d7",
+    "Mathlib.Data.Fintype.EquivFin": "0ee87166db1662cd2d24ff99d57bccdf109c20fd0f0e38c35320d71f772a7391",
+    "Mathlib.Data.Fintype.Prod": "bef38af97e89d7c55fed96860a30bbb07abb2f3e998a627a98a47b1b7f766096",
+    "Mathlib.Algebra.BigOperators.Fin": "b154c4875df6ff8d8c146e4424195b2c80b4c065ba31bc2ce28122ad039aecaa"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'PortEncoding.eventual_encoding' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PortEncoding.encoding_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PortEncoding.encoding_fair' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PortEncoding.encoded_periodic_realizes' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "f2e7c40a89ad48ccb81431ef75fea863419c87746d518a518fb485b287bbc492",
+  "created_utc": "2026-10-03T06:53:42.290216+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "3f0a81e3143ce78d0da6af782d66b17a2c5b92b859d50a862dd5d78ad4e7496d",
+  "receipt_path": ".build/receipts/main/PortEncoding-1791010419764340023/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "1583ec2630144df8da1acea70a7c093bcb28dd7b861431687164128afe8a3459",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

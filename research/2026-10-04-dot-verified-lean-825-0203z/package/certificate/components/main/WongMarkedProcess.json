@@ -1,0 +1,50 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "WongMarkedProcess",
+  "source_sha256": "6033dea1876cbe75dff6c0f29b528092cbdf23d58382cd288f48b2fced554555",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/WongMarkedProcess-1791010452083677231/WongMarkedProcess.olean",
+    "WongMarkedProcess.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.91017840800032,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "WongMarkedLaw": "1ec7997bd6a08cf7f7543aa11980cf60d9c8da6816b2a1aa4183e8889ec29ef4",
+    "WongMarkedRecorder": "c8d60512b60727d2b087a15caa91f1a761ad4c483d20f1fc4631e9ec40a8eff4"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'WongMarkedProcess.step_valid_count' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.recordPrefix_causal' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.prefix_valid_count' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.stoppedRecord_spec' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.law_ae_good' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.law_ae_stoppedRecord' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.law_ae_finite_physical_graph' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.recorded_count_time_projection' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'WongMarkedProcess.recordObservation_aemeasurable' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "d2db1bcb847b6e9bec109bea66dec5b4fef4295b6ca889c117a3eef2002d41e1",
+  "created_utc": "2026-10-03T06:54:14.995700+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "bde3d05acf5cad951f86a0b611d36d9730e492152492b11b7bcc6000ec5c6fe4",
+  "receipt_path": ".build/receipts/main/WongMarkedProcess-1791010452083677231/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "34e67b5779c48af229511c1cf3ce9e10cd04dba132eea3522a7f9b49754fdf16",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

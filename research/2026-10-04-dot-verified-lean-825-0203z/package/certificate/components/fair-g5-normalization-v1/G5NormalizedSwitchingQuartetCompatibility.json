@@ -1,0 +1,60 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_NORMALIZATION",
+  "module": "G5NormalizedSwitchingQuartetCompatibility",
+  "source_sha256": "11830f30edf2ad2d9337de3a6074b0d67816fd31a1ee1443cb48f7296bcf89b0",
+  "object_sha256": "22afb5d4898c346cb0097fb6e770121462e7ad5dbdb1e70ec44594eec0fa3567",
+  "prior_matching_object_sha256": "22afb5d4898c346cb0097fb6e770121462e7ad5dbdb1e70ec44594eec0fa3567",
+  "deterministic_object_unchanged": true,
+  "direct_import_artifacts_before": {
+    "G5OriginalPruningClusterPreservation": {
+      "path": "research-workspace/fair-g5-normalization-20261003/objects/G5OriginalPruningClusterPreservation.olean",
+      "sha256": "3edceaea667a954d6fd608af12c5d15b01ef3379bdde4d73579e0d29569766d6"
+    },
+    "G5ComponentCalendarCoverage": {
+      "path": "research-workspace/lean-integration-20261003/package/.build/objects/base/G5ComponentCalendarCoverage.olean",
+      "sha256": "ae92a483b3b13a6a3e2ef9278add0198f9ddc0c42480367ad95498e329b328e6"
+    }
+  },
+  "direct_import_artifacts_after": {
+    "G5OriginalPruningClusterPreservation": {
+      "path": "research-workspace/fair-g5-normalization-20261003/objects/G5OriginalPruningClusterPreservation.olean",
+      "sha256": "3edceaea667a954d6fd608af12c5d15b01ef3379bdde4d73579e0d29569766d6"
+    },
+    "G5ComponentCalendarCoverage": {
+      "path": "research-workspace/lean-integration-20261003/package/.build/objects/base/G5ComponentCalendarCoverage.olean",
+      "sha256": "ae92a483b3b13a6a3e2ef9278add0198f9ddc0c42480367ad95498e329b328e6"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/fair-g5-normalization-20261003/certified-components/G5NormalizedSwitchingQuartetCompatibility/G5NormalizedSwitchingQuartetCompatibility.olean",
+    "G5NormalizedSwitchingQuartetCompatibility.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 2.475973131000501,
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "log_sha256": "b41681cb963f35d5235163929c67ef092b6805450c36adc268aae6e124249b7f",
+  "created_utc": "2026-10-03T11:04:01.717467+00:00",
+  "full_normalized_Q_completion_inferred": false,
+  "profile": "fair-g5-normalization-v1",
+  "direct_import_sha256": {
+    "G5OriginalPruningClusterPreservation": "3edceaea667a954d6fd608af12c5d15b01ef3379bdde4d73579e0d29569766d6",
+    "G5ComponentCalendarCoverage": "ae92a483b3b13a6a3e2ef9278add0198f9ddc0c42480367ad95498e329b328e6"
+  },
+  "borrowed_guarded_receipt_sha256": "77415a33ed98ac7116c8e47ac94eeb713d4d9d11ac873b95bf3aa138724a50d7",
+  "borrowed_final_handoff_sha256": "3d0eb6b33cd557eda7f95eb497e861d56cb46238853c8351b27bbbe4a20dfdd3",
+  "receipt_path": ".build/borrowed-normalization5/G5NormalizedSwitchingQuartetCompatibility/original-guarded-receipt.json",
+  "_public_projection": {
+    "raw_sha256": "7b6b9672da72b64b9e80ec7c25ff14e0014c07d1aa1f7afc73ac379ac0d13a38",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

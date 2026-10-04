@@ -1,0 +1,46 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "SourceForestKingmanProjection",
+  "source_sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/SourceForestKingmanProjection-1791009857938125298/SourceForestKingmanProjection.olean",
+    "SourceForestKingmanProjection.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.2106048089999604,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "SourceLabelledForest": "3af4072d92cb5a79a92a3307f3d3aa3e139f086a4472cc562bf7b74a8d9704fa",
+    "Mathlib.Data.Real.Basic": "559efb0e853f55be8ae0de97c10d22f58e7ed4b71a5e2e4c92bdfe764636b724",
+    "Mathlib.Data.Finset.Prod": "5bf757030e3ca63a10eac3b6b9e2ef2e0235ee75692eedcbf4ef5d9581aeac0c",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Basic": "5b6daf8fb8a469491a156cf9cee931c7f13411a4b9193bf4dc2d40d23d79f615",
+    "Mathlib.Tactic.NormNum": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.SourceForestKingmanProjection.source_visible_pair_unique_preimage' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.SourceForestKingmanProjection.actual_source_visible_generator_identity' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "f8c9435474f2585e824dbeb7fa369d6b86707dde0d3bad905cb5da814f2d0957",
+  "created_utc": "2026-10-03T06:44:19.151827+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "63a7cc7e4f4ef636ad06a694cb289b44c89abb06fb0505a6dc18ab458471534f",
+  "receipt_path": ".build/receipts/base/SourceForestKingmanProjection-1791009857938125298/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "4c547a8deec12c5600b646496571acde3111e468aab8c482b5b22847f34d405d",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

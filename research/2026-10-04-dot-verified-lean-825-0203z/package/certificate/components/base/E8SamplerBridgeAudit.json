@@ -1,0 +1,49 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "E8SamplerBridgeAudit",
+  "source_sha256": "f9765dfe8391ca573632f7574c8412018d13eb14ead9edd1c3033c90c61030ab",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/E8SamplerBridgeAudit-1791009561063963168/E8SamplerBridgeAudit.olean",
+    "E8SamplerBridgeAudit.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.7123798769998757,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "E8GridTracebackBridge": "feaf92eab6f0c891f16428f4506513ea6163e598cee6b69e627e7a8d783717a4"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'E8StrictPrefixSelector.selection_iff_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8UniformPrefixLaw.branch_probability' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8ObservablePrefixLaw.observable_class_mass' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8MidpointGridLaw.branch_grid_count' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8MidpointGridTV.grid_branch_TV_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8FiniteTracebackLaw.unambiguous_observable_probability' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8TracebackErrorComposition.observable_trace_error' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8MidpointProductionKernel.production_continuous_branch' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'E8GridTracebackBridge.unambiguous_grid_class_error' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "c66476bd01a6cbb649a0562476ff271035206fba2b220d77fa71d089211bdc97",
+  "created_utc": "2026-10-03T06:39:22.776838+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "7b4c19ca34d79dfae520cb4557783057ae8825838802eb60e6d913320367e73d",
+  "receipt_path": ".build/receipts/base/E8SamplerBridgeAudit-1791009561063963168/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "8722b33f745dfdb9b2ded6f589fd386b2581eb807df084c037366f2a14a136d5",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

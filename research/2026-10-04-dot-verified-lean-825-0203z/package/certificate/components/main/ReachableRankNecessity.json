@@ -1,0 +1,46 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "ReachableRankNecessity",
+  "source_sha256": "da2be4d009966196e4b160789e968677b913385e2f7d4f037ed50281fed7fa50",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/ReachableRankNecessity-1791010570027811529/ReachableRankNecessity.olean",
+    "ReachableRankNecessity.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.5296924880003644,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "SamuelAlexanderResearch.LayeredUnavoidability": "9f77a041c4ac075a81d43e67b51aeab6412e6b54b991d8bbeb740fd3788fc6a9"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'ReachableRankNecessity.reachable_endpoints_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ReachableRankNecessity.reachable_maximum_exists' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ReachableRankNecessity.rank_isCertificate' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ReachableRankNecessity.rank_is_least' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ReachableRankNecessity.avoids_iff_has_natural_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ReachableRankNecessity.aperiodic_Ps_has_natural_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "7ba83d658f243c59742ff5a05203e0e3b5ae9efe7d8e62cceec65009ec0c0d03",
+  "created_utc": "2026-10-03T06:56:10.557946+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "251ae339a15faa57a4f6678fcb04e6c2278f8d2783fef3613118fc93600b4796",
+  "receipt_path": ".build/receipts/main/ReachableRankNecessity-1791010570027811529/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "0e7939a6b3fc7cb178d8a3e67db8539c25e71ce7ba4c2dfd237d804472db4a0f",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

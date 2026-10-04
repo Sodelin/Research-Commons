@@ -1,0 +1,47 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "VerifiedAlgebraComponents",
+  "source_sha256": "a11e48a4558103e42873c6e4b0fd42e0b652465564efd82b2954cc0a48579315",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/VerifiedAlgebraComponents-1791009860342083213/VerifiedAlgebraComponents.olean",
+    "VerifiedAlgebraComponents.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.2098755030001485,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "G4BalancedForestIdentity": "f0d0f2b57cf196306e209124a5381d9a3109e07faa35a241a3b2d7f4c8d180e5",
+    "G4FourRootPositivity": "18753586e88359c7aab1ae2afa008f077c5b9472fb6eabb2668e6d49a97d34f5",
+    "G3FiniteMomentBarrier": "0d572d8f635299acbc1e17d162fe0c0e9a49da3a536a855490ba4efaf5ecd210",
+    "G3CapSixDeterminant": "adf9883b66d3a60b957db64c93190b4c3567d464bf68a00ad25d828be6a9d61b"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.G4.balanced_coordinate_separates_cap4' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.FourRoot.zero_delta_forces_negative_defect3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.MomentBarrier.coupled_barrier_minimal' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G3.CapSix.scaled_J_nonsingular' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "cda134d4e9cf23f3916cc3bd27dce2f9897c984772cb2fbeaa638474c5956187",
+  "created_utc": "2026-10-03T06:44:21.566315+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "bc64e947328a99166edd673f8f8bc3cc290ae2c594fd94cdd1862b2abf662af1",
+  "receipt_path": ".build/receipts/base/VerifiedAlgebraComponents-1791009860342083213/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "c86b8643b52a67de05958ad7903ef33a885aff277a84c8270dd730fcdc95af33",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

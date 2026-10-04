@@ -1,0 +1,42 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "VerifiedRoutingBridge",
+  "source_sha256": "cfac21043c8fc9fcd759552ab65dd54c73c817bcdfbf7ec8a548a4f0dd274339",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/VerifiedRoutingBridge-1791009867666669140/VerifiedRoutingBridge.olean",
+    "VerifiedRoutingBridge.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.736980737000522,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "G4IndependentRoutingBridge": "ea5fbb96491d873c24dc88cdac2344f3e2724e712d13cd27fac8fc3ed7337705"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'GProgram.G4.IndependentRouting.exponential_model_original_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'GProgram.G4.IndependentRouting.routingWeight_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "fa9f1d6257b95e54a6d61ee360a79aed2d74b3be450ccfd0e87567ef63110512",
+  "created_utc": "2026-10-03T06:44:29.404772+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "7f0c03ea14ff8946dd7de927a17c93e78c9cb5376894bf0cf0d3a0cb6aa87745",
+  "receipt_path": ".build/receipts/base/VerifiedRoutingBridge-1791009867666669140/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "3021fae7dabb35c79427ce1b6ed007b9699867b604ebf128f0eb959a5a467f6f",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

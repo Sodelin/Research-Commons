@@ -1,0 +1,54 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "QuartetComposition",
+  "source": "sources/QuartetComposition.lean",
+  "source_sha256": "def8ed02bb839da2ea1badfc29f28da239a7d9b9cb82262d0f87676b6e470657",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/QuartetComposition-1791008269055261722/QuartetComposition.olean",
+    "QuartetComposition.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.4502403139999842,
+  "direct_import_artifacts": {
+    "QuartetSemantics": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/QuartetSemantics.olean",
+      "sha256": "eded4915b9e19577d3df82a182132287ca4bf940b5300bbad7f62970b767b869"
+    },
+    "Mathlib.Tactic.Ring": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/Ring.olean",
+      "sha256": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1811596,
+  "axiom_lines": [
+    "'Nanuq.Composition.sum_pairs_by_ports' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Composition.portMass_pos_of_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Composition.source_composition_of_switching_and_localization' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "8e4be5fd6cdbda32f0dcbe41041ed7cf75051c48b7aea4ef4e5d9f3d1f25a2ba",
+  "created_utc": "2026-10-03T06:17:50.535061+00:00",
+  "object_sha256": "4a6294413a9903f61e621e954a8d8f0e5a3ad511e6a22c98cf2cfd55f4e53fd1",
+  "profile": "base",
+  "direct_import_sha256": {
+    "QuartetSemantics": "eded4915b9e19577d3df82a182132287ca4bf940b5300bbad7f62970b767b869",
+    "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+  },
+  "borrowed_original_receipt_sha256": "1e4122b223cb20ae7e5329f72a7fdc193ae3bcf54b0ae5b1e1b585d54e07b0c8",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "e234b28dc6df07e4608e2ce8187786a87e8990049a2259d60d625adf770399c2",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

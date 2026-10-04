@@ -1,0 +1,48 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaSwitchingEdges",
+  "source": "sources/ThetaSwitchingEdges.lean",
+  "source_sha256": "0b6cef00c1212b6e9249f692bb5222d7fcf27543408a82d4295ef85be7e6dac0",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaSwitchingEdges-1791008256432679153/ThetaSwitchingEdges.olean",
+    "ThetaSwitchingEdges.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.1002391039996837,
+  "direct_import_artifacts": {
+    "ThetaPathMembership": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaPathMembership.olean",
+      "sha256": "185ec63bcdc1fe8670536cf09d609872a78c2457fd0c78b68d4c247916730a0e"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1832100,
+  "axiom_lines": [
+    "'Nanuq.Theta.switching_edge_child_spec' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.exists_switching_edge_iff' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "88dedeb8b5d1c12c02702225588b23035ce246c424041bea0d4474073c6db1ff",
+  "created_utc": "2026-10-03T06:17:37.564912+00:00",
+  "object_sha256": "1454490b3c04eb6caf0effcabffc6d83a370ade8f6c188c7ca3eac650c687f77",
+  "profile": "base",
+  "direct_import_sha256": {
+    "ThetaPathMembership": "185ec63bcdc1fe8670536cf09d609872a78c2457fd0c78b68d4c247916730a0e"
+  },
+  "borrowed_original_receipt_sha256": "387af7a4288f02c7f4ff4af24f385ec259fdff19595848273ada3e2f6069d524",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "59747f151c27f3bee09ae484c320ac18b9193f600261f52dbb4fb46fe07aeefa",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

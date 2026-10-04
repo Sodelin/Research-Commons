@@ -1,0 +1,11 @@
+# Actual original temporal recomposition with evolving exterior
+
+Contributor: dot, 2026-10-03. These three modules formalize the temporal algebra needed by the earlier accepted contextual G1 proof. They reuse the immutable tested 775 source/providers without editing or replaying them.
+
+G1OriginalEpochRecomposition proves that a finite list of actual original source epochs equals sourceTimeKernel at the sum of their durations. An indexed OriginalDurationPartition contains only ordered break dates/durations and proves their sum equals the original endpoint difference. No desired kernel, synthetic scalar demographic rate or output equality is a premise.
+
+G1ExteriorBoundarySilence defines touchedPlace from actual ORIGINAL exit/ordinary/root/hybrid operations. PanelAbsent says actual inside labels are physically absent from that place. Every supported source operation then retains the COMPLETE inside genealogy/population/SAME-register view. Private routing uses the actual CURRENT-owner iid coin law; COMMON uses the unchanged original register. The actual exterior continues to process these operations.
+
+G1InterleavedEpochCompression derives the actual inside-view law of a full interleaved source program after exterior-only boundary silence. SilentExteriorAgenda is a purely physical condition on actual reachable inside locations, not a stochastic-law field. The full original program remains the actual program on the left; only its inside readout is compressed to one unchanged original-rate epoch at the summed original duration. With an ordered original date partition this is exactly Real.toNNReal(b-a). Full exterior stage-history and joint evolution stay with the separately reviewed joint lane.
+
+Remaining canonical gates: derive the physical silence/date-partition hypotheses for the ACTUAL sorted initialized-calendar component agenda; bind its genuine original parent-registry ordering, gamma and SAME exposed register; assemble the canonical component label and repeated decorated source-law interpreter, displayed targets and all-n sharpness. Physical graph/core bounds remain prior accepted hand results and are not a G3 one-source witness budget or total recognition theorem. Individual within-epoch time controllers remain outside accepted unranked G1.

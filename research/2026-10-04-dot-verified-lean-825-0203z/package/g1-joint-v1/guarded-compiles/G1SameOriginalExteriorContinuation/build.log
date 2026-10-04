@@ -1,0 +1,29 @@
+G1SameOriginalExteriorContinuation.lean:35:0: warning: automatically included section variable(s) unused in theorem `G1SameOriginalExteriorContinuation.actual_joined_panel_view`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G1SameOriginalExteriorContinuation.lean:49:64: warning: This simp argument is unused:
+  if_pos hi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [selectedView, selectedGenealogy, joinedPanelView, Finset.mem_union, hi, true_or, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G1SameOriginalExteriorContinuation.lean:60:66: warning: This simp argument is unused:
+  if_neg hi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [selectedView, selectedGenealogy, joinedPanelView, Finset.mem_union, hi, ho, false_or, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'G1SameOriginalExteriorContinuation.actual_same_original_exterior_continuation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'G1SameOriginalExteriorContinuation.actual_same_original_full_forest_continuation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

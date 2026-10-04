@@ -1,0 +1,65 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "AnchorCompression",
+  "source": "sources/AnchorCompression.lean",
+  "source_sha256": "d7fd721f78e747ed83a8c94eddd45247b8f749f1ca8e958b920f3e670dfd612a",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/AnchorCompression-1791008132107879652/AnchorCompression.olean",
+    "AnchorCompression.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.3696575630001462,
+  "direct_import_artifacts": {
+    "AnchorThetaBridge": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorThetaBridge.olean",
+      "sha256": "20e575da5191f0365ff060b2f1764b8dc7a25b42df6f160ef0464b3b3fef984b"
+    },
+    "Mathlib.Algebra.BigOperators.Fin": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Fin.olean",
+      "sha256": "b154c4875df6ff8d8c146e4424195b2c80b4c065ba31bc2ce28122ad039aecaa"
+    },
+    "Mathlib.Data.Finset.Card": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Data/Finset/Card.olean",
+      "sha256": "edd8cceabe354df48b891a4afb211a1201b9283ed9c274e226ac5b2855a4da0a"
+    },
+    "Mathlib.Tactic.FinCases": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/FinCases.olean",
+      "sha256": "8f3dfc361bde73e4dfcb36faeb341849e935e7b4fd479776cdd79384bfaab469"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1847732,
+  "axiom_lines": [
+    "'Nanuq.Theta.armRank_lt_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.armRank_lt_count' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.compressed_sixWitnesses_total_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.CyclicAdjacent.filter' depends on axioms: [propext]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "0fbf6f27e4db3b771b00cffc845621d9da194f978c4e843bd9246bb14d62eba4",
+  "created_utc": "2026-10-03T06:15:33.507866+00:00",
+  "object_sha256": "9c4977fa25923b996e2e33608c94f92863daaf22b6fe3df971f1e52abaa7a9ac",
+  "profile": "base",
+  "direct_import_sha256": {
+    "AnchorThetaBridge": "20e575da5191f0365ff060b2f1764b8dc7a25b42df6f160ef0464b3b3fef984b",
+    "Mathlib.Algebra.BigOperators.Fin": "b154c4875df6ff8d8c146e4424195b2c80b4c065ba31bc2ce28122ad039aecaa",
+    "Mathlib.Data.Finset.Card": "edd8cceabe354df48b891a4afb211a1201b9283ed9c274e226ac5b2855a4da0a",
+    "Mathlib.Tactic.FinCases": "8f3dfc361bde73e4dfcb36faeb341849e935e7b4fd479776cdd79384bfaab469"
+  },
+  "borrowed_original_receipt_sha256": "930b714510ece693a5fdc70b72021ac3a9fc92155460c0aa435110e078e65407",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "4bc4d989c23c2f0c24474e7b8665c95ae30e613a0a71186792414c53c7e45fc6",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "SourceCompositionBridge",
+  "source": "sources/SourceCompositionBridge.lean",
+  "source_sha256": "ebdd0ba9061ce820e2506a346e2e8e59b03e9b24c1b38620a60bc4b1c2af57a7",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/SourceCompositionBridge-1791008273833071029/SourceCompositionBridge.olean",
+    "SourceCompositionBridge.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.253077415000007,
+  "direct_import_artifacts": {
+    "QuartetCompositionDependent": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/QuartetCompositionDependent.olean",
+      "sha256": "900a6b1d657d5524c4cd01f2f7431b2f38b1eb011be2dae05cf0e76be3be9f8f"
+    },
+    "WeightedOrderedPairs": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/WeightedOrderedPairs.olean",
+      "sha256": "a79cd9cd37e9b60c09d465e3ff2760d5c853293966f02e29db8861ac75af8afc"
+    },
+    "WeightedSource": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/WeightedSource.olean",
+      "sha256": "7c330929e92c366b58754f358ef1ad0e3206004c0b28565c72906ed83daddc08"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1824556,
+  "axiom_lines": [
+    "'Nanuq.Composition.sourceDistance_eq_sourceNanuq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Composition.localWeighted_eq_weightedNanuq' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "6e4d2a997eb22ec20c76ce8feea5fcac0b81ff513c35bca166ce0e9d279778a5",
+  "created_utc": "2026-10-03T06:17:55.116623+00:00",
+  "object_sha256": "ca3fe60d8a6394233d54b90556a4f3b8cc3c9d34b4a9e15fc2e4b45cae1c14e0",
+  "profile": "base",
+  "direct_import_sha256": {
+    "QuartetCompositionDependent": "900a6b1d657d5524c4cd01f2f7431b2f38b1eb011be2dae05cf0e76be3be9f8f",
+    "WeightedOrderedPairs": "a79cd9cd37e9b60c09d465e3ff2760d5c853293966f02e29db8861ac75af8afc",
+    "WeightedSource": "7c330929e92c366b58754f358ef1ad0e3206004c0b28565c72906ed83daddc08"
+  },
+  "borrowed_original_receipt_sha256": "96913fd6ac5f084a5889994dadbb22673f6ba49be6267c58f30f181afab9e867",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "07d1a49a5e876a1c58c61c49c4e46d1ce1158756e07b08b247c3ed47df889e6a",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

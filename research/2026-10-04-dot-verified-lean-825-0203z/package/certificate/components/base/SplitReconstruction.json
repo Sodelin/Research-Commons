@@ -1,0 +1,58 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "SplitReconstruction",
+  "source": "sources/SplitReconstruction.lean",
+  "source_sha256": "b6bf038c3d49c5a56a1ada6c8f737e30b77a0593cd15505b12282da561d8ea0c",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/SplitReconstruction-1791008231995228585/SplitReconstruction.olean",
+    "SplitReconstruction.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 2.0862729899999977,
+  "direct_import_artifacts": {
+    "WeightedCoefficients": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/WeightedCoefficients.olean",
+      "sha256": "c4995b3f488bb68d9346def100847f1baadf95c829023f018f6229a8f01e961c"
+    },
+    "Mathlib.Tactic.Ring": {
+      "path": "mathlib/.lake/build/lib/lean/Mathlib/Tactic/Ring.olean",
+      "sha256": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061"
+    },
+    "Lean.Elab.Tactic.Omega": {
+      "path": "lean-toolchain/lib/lean/Lean/Elab/Tactic/Omega.olean",
+      "sha256": "280aa742e537120eb8e2f436fdc8417e2482b173262df6f88bddfbaea87c770c"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1825372,
+  "axiom_lines": [
+    "'Nanuq.Reconstruction.gapSplit_eq_separation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.circular_reconstruction_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "e7b5de3a2a6a8dfa29a36d18ba940c13c0c75b540461c332a359c84d82a6237e",
+  "created_utc": "2026-10-03T06:17:14.112568+00:00",
+  "object_sha256": "d6a1690808a849708d237319b9abf4eefe3a8720443f4c4ddb8a45c6c2e99dda",
+  "profile": "base",
+  "direct_import_sha256": {
+    "WeightedCoefficients": "c4995b3f488bb68d9346def100847f1baadf95c829023f018f6229a8f01e961c",
+    "Mathlib.Tactic.Ring": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+    "Lean.Elab.Tactic.Omega": "280aa742e537120eb8e2f436fdc8417e2482b173262df6f88bddfbaea87c770c"
+  },
+  "borrowed_original_receipt_sha256": "67d096517ec87a267d800e7cbb929bae16d42124bbb2b2e41805c2c3ab629784",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "5f31b58642d2426a9306ca530ae341a706e6a01528853bc3ca44309f6b702c8a",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

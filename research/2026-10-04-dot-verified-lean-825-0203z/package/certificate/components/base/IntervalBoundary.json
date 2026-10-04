@@ -1,0 +1,54 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "IntervalBoundary",
+  "source": "sources/IntervalBoundary.lean",
+  "source_sha256": "fafb096133ada19c0c28a8807a42b41c27e8e87124b39d618f28b39b753daa24",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/IntervalBoundary-1791008254947250942/IntervalBoundary.olean",
+    "IntervalBoundary.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.4183205080003063,
+  "direct_import_artifacts": {
+    "CircularBoundary": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/CircularBoundary.olean",
+      "sha256": "718e54fead89cdb7eacdd731b76a26cc2200b226d1977d9a330ecc124114ba47"
+    },
+    "Lean.Elab.Tactic.Omega": {
+      "path": "lean-toolchain/lib/lean/Lean/Elab/Tactic/Omega.olean",
+      "sha256": "280aa742e537120eb8e2f436fdc8417e2482b173262df6f88bddfbaea87c770c"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1838544,
+  "axiom_lines": [
+    "'Nanuq.Reconstruction.halfOpen_two_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.interval_predicate_two_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Reconstruction.interval_separation_identified' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "ac72a957ef35244ad3441afddec0e2d6462ba1a2ba9b4757602a7767b5d765b3",
+  "created_utc": "2026-10-03T06:17:36.395825+00:00",
+  "object_sha256": "72a3bcea44638914931af63ed786a3af8fcfeedd1aeda2711f9399e7bcc46d11",
+  "profile": "base",
+  "direct_import_sha256": {
+    "CircularBoundary": "718e54fead89cdb7eacdd731b76a26cc2200b226d1977d9a330ecc124114ba47",
+    "Lean.Elab.Tactic.Omega": "280aa742e537120eb8e2f436fdc8417e2482b173262df6f88bddfbaea87c770c"
+  },
+  "borrowed_original_receipt_sha256": "bfc9b3f69752b1fb136365b0630b27b50cef7cb97c8dd39b962f21b92057709b",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "b5b26770f0c87f59395f55f48e931b69f3300bfc7e7d63cf16eddd62a4012aec",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

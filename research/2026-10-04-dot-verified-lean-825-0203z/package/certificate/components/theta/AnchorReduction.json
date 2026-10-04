@@ -1,0 +1,53 @@
+{
+  "status": "PASS_BORROWED_FRESH_THETA_LANE",
+  "module": "AnchorReduction",
+  "source": "sources/AnchorReduction.lean",
+  "source_sha256": "bde6ac2a62f7dfbc23d92a1c05779152437b7e368ca17e619f4dae6f7bdf7604",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/AnchorReduction-1791009020974077254/AnchorReduction.olean",
+    "AnchorReduction.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.5108384500003922,
+  "direct_import_artifacts": {
+    "AnchorIndexTransport": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorIndexTransport.olean",
+      "sha256": "7b7c9b47eada2eacd7c163c4e67836410e997ce52a6031b1a89f0576b5ae4bbb"
+    },
+    "ZeroTheta": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ZeroTheta.olean",
+      "sha256": "4554814005c0b7df1901b9093e53a42445f7e634829268034d85bf1c827cf15e"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1887852,
+  "axiom_lines": [
+    "'Nanuq.Theta.alpha_nonnegative_of_anchor_compression' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.weighted_anchor_nonnegative_of_compression' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "d68c3b591303047465e25a8d1f0a59cac722f851d152fe1527c6c86c48987dbc",
+  "created_utc": "2026-10-03T06:30:22.514645+00:00",
+  "object_sha256": "40f7df545a7f6fd8ba6ef28b6f3e167a05bfab90197bca4c7107df0d73c2d353",
+  "profile": "theta",
+  "direct_import_sha256": {
+    "AnchorIndexTransport": "7b7c9b47eada2eacd7c163c4e67836410e997ce52a6031b1a89f0576b5ae4bbb",
+    "ZeroTheta": "4554814005c0b7df1901b9093e53a42445f7e634829268034d85bf1c827cf15e"
+  },
+  "borrowed_original_receipt_sha256": "eaeb35d4e302438235940f1eeed4c9c869c032d28ee0c88f4ca3e0ae184177ca",
+  "borrowed_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "d59f6aada86f6fc96259005aa939ec47d8ffe86b66134e8f5b5a3b3678234946",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

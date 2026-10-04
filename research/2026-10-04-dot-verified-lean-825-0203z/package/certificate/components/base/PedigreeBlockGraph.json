@@ -1,0 +1,44 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "PedigreeBlockGraph",
+  "source_sha256": "7bb5462c855e74d9b38dfd76c31b504ed7414dc4630671f222a097b21771cc84",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/PedigreeBlockGraph-1791010223241494571/PedigreeBlockGraph.olean",
+    "PedigreeBlockGraph.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.025710541999615,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "PedigreeBlockModel": "09430caa28b5c391f3e41e5c2b44af27f645a37a77ebcf201959fecb10911091"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'PedigreeBlock.not_share_iff_complement' depends on axioms: [propext, Quot.sound]",
+    "'PedigreeBlock.not_connected_iff_bad' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PedigreeBlock.reachable_of_restrict' does not depend on any axioms",
+    "'PedigreeBlock.connected_of_restrict' does not depend on any axioms"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "2a5d10d5163778bb017e17bc4d54554066279fb6bf32344c98919cdb6e1529cc",
+  "created_utc": "2026-10-03T06:50:24.267534+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "91a9acc17bf22d1710ed9b5905e050b9c394f5bb2c417d5ce96a0624969da0c9",
+  "receipt_path": ".build/receipts/base/PedigreeBlockGraph-1791010223241494571/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "1dc71d3736f361761974f9fc91d767d0d7e66c3a52fb5228e422907880907d3d",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "MergeHistoryProjection",
+  "source_sha256": "c040d1e74335ad2c86b050503df81b16eecce429ab8a063b6ea2f42af2971554",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/MergeHistoryProjection-1791010543619979500/MergeHistoryProjection.olean",
+    "MergeHistoryProjection.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.4649723860002268,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "ExactAbstraction": "84b1b3254f7084c251ee0d3aea7389ce2e83db66b593c8dd557d8911643bf40c",
+    "Mathlib.Data.Finset.Basic": "535a2d269159f1fed5f18a9fff73e5677d32c3328e36e8a8d964cc7fbb2d8a95",
+    "Mathlib.Data.Fintype.Fin": "d71958266a47a5ef416200c46786abcf31affc299c7ec6e55103da5bd60c810b"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'MergeHistoryProjection.split_preserves_legal' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'MergeHistoryProjection.adjacent_merge_histories' depends on axioms: [propext]",
+    "'MergeHistoryProjection.legal_histories' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'MergeHistoryProjection.admissible_splits_with_spectator' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'MergeHistoryProjection.same_current_partition' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'MergeHistoryProjection.distinct_restored_partitions' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'MergeHistoryProjection.no_exact_partition_model' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'MergeHistoryProjection.no_partition_only_admissible_split' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "c764b47ea4627bbd2d07132d258e07c8c211e867a29188fa33c4e6d0ae1511bf",
+  "created_utc": "2026-10-03T06:55:45.085730+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "f60475dc50ee274307c79a912f256849cc88d1dfeedde2dd9b6bc676fb58e923",
+  "receipt_path": ".build/receipts/main/MergeHistoryProjection-1791010543619979500/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "e4777940a05093960dee6f656aea414aee108a74ff2188407cd4f5de3cbe1aa5",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

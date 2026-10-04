@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "main",
+  "module": "HistoryPruning",
+  "source_sha256": "7441b97fd379513dcc4ef852bf3ee8eae2a2a297ebed2110fe850e2f339e4a3b",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/main/HistoryPruning-1791010571572199953/HistoryPruning.olean",
+    "HistoryPruning.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.4595982949995232,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "HistoryWellFounded": "b4c30c3b2bb8a26ae99aedaf51f1e5ec00456b5efb39cbe34a5a5d0a52b01b4f"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'HistoryPruning.root_survives_every_finite_stage' depends on axioms: [propext, Quot.sound]",
+    "'HistoryPruning.omega_stage_iff_root' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'HistoryPruning.omega_succ_stage_empty' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "52d3cd3f44ec0a12eaf60e72947f0c3562b22054a793a7775facff54e6229f04",
+  "created_utc": "2026-10-03T06:56:12.032308+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "ca8d4f4b5856fb1fc4e8a9a1307218728432089ac163ff13753dedef55052161",
+  "receipt_path": ".build/receipts/main/HistoryPruning-1791010571572199953/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "f59ebcc7ec3c1c85417e0930f8d8101aac685d2eaaa92c2dbdca021cedcbcc53",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

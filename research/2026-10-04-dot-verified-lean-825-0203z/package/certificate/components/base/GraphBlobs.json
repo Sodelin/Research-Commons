@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FRESH_COMPONENT",
+  "profile": "base",
+  "module": "GraphBlobs",
+  "source_sha256": "aba6c7b87e9e4a0cd46c3637efc19cab4f2e564e7acd4c3eac265989239d4acb",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/lean-integration-20261003/package/.build/receipts/base/GraphBlobs-1791009848153037286/GraphBlobs.olean",
+    "GraphBlobs.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.0378818190001766,
+  "source_and_direct_imports_stable": true,
+  "direct_import_sha256": {
+    "GraphCuts": "8c70b5566b0d9bdc4a0fb67b16250948ff4f373dff9f70aa12a9fc19f01c17d9"
+  },
+  "compiler_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_MiB": 4096,
+  "timeout_seconds": 180,
+  "selected_axiom_lines": [
+    "'Nanuq.Source.EdgeGraph.quotient_reach_lifts_without' depends on axioms: [propext]",
+    "'Nanuq.Source.EdgeGraph.quotient_edge_is_bridge' depends on axioms: [propext]",
+    "'Nanuq.Source.RootedBinary.blob_quotient_is_tree' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "log_sha256": "f875d995d73956a5507c27222275cfdd9a0c0f485ff4f609787a3d331877e9e5",
+  "created_utc": "2026-10-03T06:44:09.191432+00:00",
+  "full_master_or_scientific_applicability_inferred": false,
+  "object_sha256": "dc970e648100edc9d78bfe56c73840d44493b6ada33cc74f8a144e14d5b2c085",
+  "receipt_path": ".build/receipts/base/GraphBlobs-1791009848153037286/receipt.json",
+  "_public_projection": {
+    "raw_sha256": "4d79bb776d73d2ce933c269ed6d4411cf0f6c070b3e917a2d40cb5e5272980c3",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}

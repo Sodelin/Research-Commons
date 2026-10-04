@@ -1,0 +1,54 @@
+{
+  "status": "PASS_BORROWED_FRESH_VERIFIED_PROVIDER",
+  "module": "ThetaCompression",
+  "source": "sources/ThetaCompression.lean",
+  "source_sha256": "71d55cdd4069f6c13ba4b490860f13b02231d70cf96fe5c5d2ebb6e4b13032b8",
+  "command": [
+    "timeout",
+    "180",
+    "lean-toolchain/bin/lean",
+    "-j1",
+    "-M4096",
+    "-o",
+    "research-workspace/theta-recovery-20261003/reconstructed-candidate/receipts/ThetaCompression-1791008143470773951/ThetaCompression.olean",
+    "ThetaCompression.lean"
+  ],
+  "compiler": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "compiler_binary_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "exit_code": 0,
+  "elapsed_seconds": 1.1514570880003703,
+  "direct_import_artifacts": {
+    "ThetaQuartetOrder": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/ThetaQuartetOrder.olean",
+      "sha256": "dd40c8ebcdbcb86ab1c1edd8cf0c9d74debf8b35c8a21b126e0bc76bfc094b4d"
+    },
+    "AnchorMetricOrder": {
+      "path": "research-workspace/theta-recovery-20261003/reconstructed-candidate/objects/AnchorMetricOrder.olean",
+      "sha256": "3fe2b4186c084d59372dd1ea2bcba600af225c5b8824897b43e6de13c0c5cf88"
+    }
+  },
+  "source_and_direct_imports_stable": true,
+  "max_rss_kib": 1832940,
+  "axiom_lines": [
+    "'Nanuq.Theta.quartet_compression' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.rho2_compression' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'Nanuq.Theta.anchor_compression' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "nonstandard_selected_axioms": [],
+  "full_owned_declaration_audit_pending": true,
+  "log_sha256": "8657c9403856b617f732ac1c3e2a940daf81a763aef2b815c5f7d5831763f10b",
+  "created_utc": "2026-10-03T06:15:44.653849+00:00",
+  "object_sha256": "83fa72c867ea1577bcec13ae83e21fd121971d32e69776c2d9060826fddb988f",
+  "profile": "base",
+  "direct_import_sha256": {
+    "ThetaQuartetOrder": "dd40c8ebcdbcb86ab1c1edd8cf0c9d74debf8b35c8a21b126e0bc76bfc094b4d",
+    "AnchorMetricOrder": "3fe2b4186c084d59372dd1ea2bcba600af225c5b8824897b43e6de13c0c5cf88"
+  },
+  "borrowed_original_receipt_sha256": "85d205a1721e1e1a23f36da717f36ef7c8dfaa49b9a1cc09b6a2c6a4c2be50ba",
+  "borrowed_provider_source_object_hash_verified": true,
+  "_public_projection": {
+    "raw_sha256": "334c74cdedacd639594a710c38c7ac959dc83bffdf967d2ecc23c7342e225cba",
+    "normalization": "absolute build/dependency roots replaced by declared neutral roots; private delivery administration omitted when present; every mathematical source/object/compiler/report hash retained",
+    "omitted_administration_fields": []
+  }
+}
