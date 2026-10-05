@@ -1,0 +1,41 @@
+{
+  "aggregate_byte_limit": 16777216,
+  "cap_overshoot_observed_bytes": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-c",
+    "from pathlib import Path\nimport run_simulation as r, admit_generated as a, compile_control as d\nbase=Path.cwd();r.authenticate(base/'SOURCE-PINS.json','fd98c4481f05d9d3d6ce225d6321becad1ed98ef39b804768154d08dab6f8e75')\ndata,receipt=a.admit(base/'simulation-attempt1','80395cf08d73b6aaaca0252c105bdc2162001f058b3087a538879eaa89381ec8',base/'compiled','51d049beed8e19cdd744c2c6606e2b5720480712dc6a8389747ffbdddb506ce9')\nwith (base/'admission-attempt1/DATASET.json').open('xb') as f:f.write(data)\nwith (base/'admission-attempt1/RUNTIME-ADMISSION.json').open('xb') as f:f.write(d.canonical(receipt))\nr.authenticate(base/'SOURCE-PINS.json','fd98c4481f05d9d3d6ce225d6321becad1ed98ef39b804768154d08dab6f8e75')\nprint(receipt['classification'],receipt['loci'],receipt['dataset_sha256'])\n"
+  ],
+  "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+  "direct_child_reaped": true,
+  "exit_code": 0,
+  "hard_filesystem_quota_claimed": false,
+  "inventory": {
+    "DATASET.json": {
+      "bytes": 110649,
+      "sha256": "4ae2d541515bf87d1709d3708e74af9f2c2ac2ae35ed60d38456050b3ef60e03"
+    },
+    "RUNTIME-ADMISSION.json": {
+      "bytes": 2760,
+      "sha256": "8fef52b62006a8a3d8f97391c01bee738785e413bdf5496fa3110d9e0017ad68"
+    },
+    "stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.log": {
+      "bytes": 92,
+      "sha256": "72bdd8b3aed71eea639308d64a36b6917e31b37349cbc3fcdbad668d2fe26cb2"
+    }
+  },
+  "monitor_seconds": 0.2016083820053609,
+  "peak_observed_bytes_before_final_receipt": 113501,
+  "poll_seconds": 0.05,
+  "process_group_cleanup_performed": true,
+  "receipt_reserve_bytes": 1048576,
+  "source_manifest_sha256": "fd98c4481f05d9d3d6ce225d6321becad1ed98ef39b804768154d08dab6f8e75",
+  "source_pins_stable": true,
+  "status": "EXECUTION_EXIT_ZERO",
+  "stop_threshold_bytes": 15728640,
+  "threshold_overshoot_observed_bytes": 0
+}

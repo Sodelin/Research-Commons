@@ -1,0 +1,15 @@
+# One model-semantic generator invocation and read-only admission gate
+
+Accepted for exactly Stage A and Stage B of the frozen plan. No inverse, confidence adapter, true-mean evaluation or second generation is included.
+
+Source manifest fd98c4481f05d9d3d6ce225d6321becad1ed98ef39b804768154d08dab6f8e75; stage plan d374197b7b371d89a4a6ee6d39e814b842fae40450033f0fd1c1350b24086eb3; compiled control 7f5d4df135213f3ac6c391a361c24d97ce16e657e85e5dd5eae3113e3db40918; compilation receipt 51d049beed8e19cdd744c2c6606e2b5720480712dc6a8389747ffbdddb506ce9.
+
+I independently read compiler, runner and admission sources, authenticated all source/vendor/manual/binary/watchdog/parser/control pins without invoking the executable, reproduced the static control mapping, and reran all ten tiny preparation tests successfully. The exact graph gives backward B-to-C probability 1/4, retained B continuation probability 3/4, the intended seven positive-duration populations and repeated B/C theta values. Dyadic ages/thetas map to the accepted truth and pair rates. Phase zero, counts2/2/2, JC/global/unit-rate settings and fixed two-site length match the intended ideal observation channel.
+
+Only the pinned official existing BPP binary may run once with seed202610051, exactly1024 loci and six haploid copies per locus, in a fresh immutable attempt directory. Limits remain60 seconds,512 MiB and16 MiB recursive polling output with1 MiB receipt reserve. The accepted watchdog handles owned-process-group cleanup and records any overshoot; the threshold is not a hard quota. Failure, changed pins, unexpected/truncated output or cleanup failure stops this design without regeneration.
+
+Stage B may perform bounded read-only admission at512 MiB/30 seconds against the exact actual terminal/compilation identities. It must check complete1024 six-by-two panels, fixed emitted labels/map, all1024 binary genealogy leaf sets, and the complete eight-node network plus indexed numeric population table. The two H roles are resolved by node identity; network tau is an htau flag, while the separate population table supplies actual tau/theta. The dynamic checks are genuine runtime evidence, still conditional on the audited executable/source correspondence.
+
+Only after every check passes may a canonical full dataset and synthetic_model_check receipt be saved. Latent trees and known truth remain evaluation/admission diagnostics, never inverse data. No filtering, alternate aliases chosen after results, seed retries or smaller domain is permitted. A format mismatch requires a preserved failure and separately reviewed read-only correction; it does not authorize another engine invocation.
+
+Finite LCG/floating simulation is not certified as an exact iid continuous-law sampler. This gate admits one model-semantic observation test, not biological data or empirical coverage. Independent actual-output admission and a separately frozen synthetic-class adapter/inverse/forward-truth gate remain required before later stages.

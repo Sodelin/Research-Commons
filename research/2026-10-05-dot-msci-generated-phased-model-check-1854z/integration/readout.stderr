@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "RESEARCH_WORKSPACE/msci-model-check-integration-20261005-1821z/summarize_model_check.py", line 61, in <module>
+    if __name__=='__main__':print(json.dumps(summarize(),sort_keys=True,indent=2))
+                                             ^^^^^^^^^^^
+  File "RESEARCH_WORKSPACE/msci-model-check-integration-20261005-1821z/summarize_model_check.py", line 47, in summarize
+    if tt['source_manifest_sha256']!=t['source_manifest_sha256'] or tt['error'] or not tt['pins_stable'] or tt['stage']['status']!='EXECUTION_EXIT_ZERO':raise ValueError('truth terminal')
+                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: truth terminal

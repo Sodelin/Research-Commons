@@ -1,0 +1,9 @@
+# Preserved truth-report serialization failure and bounded correction
+
+Stage C completed with a normal, fully numerically validated synthetic-model UNKNOWN cover. Its immutable source manifest is `f13128d7c6e523c0346220611983c670d11bfc8f270451ebaecea0b87e440a54`; all original source bytes, manifest, plan and test log are preserved under `initial-source`. The actual composition and all its receipts remain unchanged.
+
+Stage D attempt 1 computed the internal forward return but failed serialization because `evaluate()` returns Fraction parameters and interval objects. The documented `report()` API returns the JSON schema the readout expects. Its exit 1, empty TRUTH.json, stdout/stderr and terminal remain in truth-attempt1. The readout consequently rejected that failed terminal; its empty result, stderr and exit file remain unchanged.
+
+The sole numerical correction is calling `forward.report(parameters,128)` instead of `forward.evaluate(parameters,128)`. Both invoke the same pinned arithmetic. The new mocked regression checks invocation and exact serialized report fields. All 36 unit/mock tests pass. No generated dataset, confidence box, inverse source, domain, target or numerical budget changes.
+
+After independent approval, run only the corrected run_truth.py with the new manifest in fresh truth-attempt2, at the same 512 MiB/30-second/256 MiB polling bounds. No generation or composition rerun. The corrected readout explicitly authenticates the original composition manifest and archived sources separately from the current truth manifest. Output goes to MODEL-CHECK-RESULTS-corrected.json, readout-corrected.stderr and readout-corrected.exit, with the same read-only bounds. If the arithmetic attempt fails, preserve and stop. This is a reporting-API repair, not a statistical retry or a new realization.

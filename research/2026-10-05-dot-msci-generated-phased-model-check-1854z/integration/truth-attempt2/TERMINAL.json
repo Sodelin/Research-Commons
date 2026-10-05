@@ -1,0 +1,59 @@
+{
+  "error": null,
+  "inventory": {
+    "BEFORE.json": {
+      "bytes": 1101,
+      "sha256": "f8589d52703ebb77d901a15e8b8bb1a08911a335fa385fcc14bbc447dc939938"
+    },
+    "TRUTH.json": {
+      "bytes": 178343,
+      "sha256": "7739ce0643ae153285c156e498f56e43987a95e14bac7cd4349dfa716e27ea8b"
+    },
+    "truth-TERMINAL.json": {
+      "bytes": 1167,
+      "sha256": "bb798e2a5acb69e0b72777697a0c9fdb61103b2bb21489d8a2123c1832b3d298"
+    },
+    "truth.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "truth.stdout": {
+      "bytes": 65,
+      "sha256": "32fc51259a39351f5470661529e6094715ea4ba970c9a7dd08d16fc0d9eefbe9"
+    }
+  },
+  "pins_stable": true,
+  "public_projection": {
+    "original_sha256": "2357fb694143538be5a46c7b2db31e85ede9a56b241ed76e2304073c56166d73",
+    "transformation": "workspace prefix replaced by RESEARCH_WORKSPACE; original receipt is preserved locally"
+  },
+  "schema": "one-truth-arithmetic-terminal-v1",
+  "source_manifest_sha256": "2cb9e5bbbea22a053ff060bdeb33326b08ac27819612006a83e8a594b1489741",
+  "stage": {
+    "aggregate_byte_limit": 268435456,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "RESEARCH_WORKSPACE/msci-model-check-integration-20261005-1821z/evaluate_truth.py",
+      "--output",
+      "RESEARCH_WORKSPACE/msci-model-check-integration-20261005-1821z/truth-attempt2/TRUTH.json"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T18:52:50.863835+00:00",
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.4029943609930342,
+    "outer_wall_seconds": 30,
+    "peak_observed_bytes_before_final_receipt": 179509,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 4194304,
+    "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+    "started_utc": "2026-10-05T18:52:50.459306+00:00",
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 264241152,
+    "threshold_overshoot_observed_bytes": 0
+  }
+}
