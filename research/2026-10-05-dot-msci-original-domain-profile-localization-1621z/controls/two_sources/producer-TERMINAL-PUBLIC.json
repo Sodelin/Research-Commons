@@ -1,0 +1,35 @@
+{
+  "aggregate_byte_limit": 268435456,
+  "cap_overshoot_observed_bytes": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/global_engine.py",
+    "--request",
+    "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/two_sources/REQUEST.json",
+    "--request-sha256",
+    "8cd369c0bd5af54350b4672e852494d6d191141bc009d9274b1e0a0103d1aec5",
+    "--checkpoints",
+    "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/two_sources/journal"
+  ],
+  "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+  "direct_child_reaped": true,
+  "exit_code": 0,
+  "finished_utc": "2026-10-05T16:18:33.507958+00:00",
+  "hard_filesystem_quota_claimed": false,
+  "memory_limit_bytes": 536870912,
+  "monitor_seconds": 8.355826151993824,
+  "outer_wall_seconds": 150,
+  "peak_observed_bytes_before_final_receipt": 3778014,
+  "poll_seconds": 0.05,
+  "process_group_cleanup_performed": true,
+  "public_projection": {
+    "normalization": "absolute workspace prefix replaced by WORKSPACE; all other original fields retained",
+    "original_sha256": "88af111dbd599b527ff158042495a69d31dbe7266c9136445e9485689a44f869"
+  },
+  "receipt_reserve_bytes": 4194304,
+  "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+  "started_utc": "2026-10-05T16:18:25.150541+00:00",
+  "status": "EXECUTION_EXIT_ZERO",
+  "stop_threshold_bytes": 264241152,
+  "threshold_overshoot_observed_bytes": 0
+}

@@ -1,0 +1,124 @@
+{
+  "bytes_before_terminal": 15317,
+  "certificate_status": "VALIDATION_OUTPUT_AVAILABLE",
+  "checker": {
+    "aggregate_byte_limit": 268435456,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/global_check.py",
+      "--request",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/uninformative/REQUEST.json",
+      "--request-sha256",
+      "a9fa0cf575718b5d563abf33b8aac95cb172b4faba5d1975739fc80cc61ada96",
+      "--checkpoints",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/uninformative/journal",
+      "--source-pins",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/uninformative/CHECKER-PINS.json",
+      "--source-pins-sha256",
+      "b2eeb211ad58f45aabded39952e7b8e27025b614428cc086f30dc54c57de77ca",
+      "--normal"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T16:18:42.785627+00:00",
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.20191374199930578,
+    "outer_wall_seconds": 150,
+    "peak_observed_bytes_before_final_receipt": 13640,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 4194304,
+    "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+    "started_utc": "2026-10-05T16:18:42.582335+00:00",
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 264241152,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "checker_output_available": true,
+  "failure": null,
+  "inventory": {
+    "BEFORE.json": {
+      "bytes": 1685,
+      "sha256": "047e1f46f301027b06e6f04f1d00ab8ebe8692de86c84c76f37f6f1ceb435ca4"
+    },
+    "CHECKER-PINS.json": {
+      "bytes": 641,
+      "sha256": "b2eeb211ad58f45aabded39952e7b8e27025b614428cc086f30dc54c57de77ca"
+    },
+    "REQUEST.json": {
+      "bytes": 1256,
+      "sha256": "a9fa0cf575718b5d563abf33b8aac95cb172b4faba5d1975739fc80cc61ada96"
+    },
+    "checker-TERMINAL.json": {
+      "bytes": 1677,
+      "sha256": "a0dc4f134f38c4b0c2300ffa11f426fd75e6d9974fa7d1511c440770dfe1a51a"
+    },
+    "checker.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "checker.stdout": {
+      "bytes": 4991,
+      "sha256": "30bcf494bf1a0420e7fc2f6c47f76ee2ed7803e737d3deb397d2f1e7a64adc30"
+    },
+    "journal/state-000000-b6e60136a4dd2305cd22431245d0ad31d7aa2d890deab50ce5e6391bafdb05ee.json": {
+      "bytes": 1724,
+      "sha256": "b6e60136a4dd2305cd22431245d0ad31d7aa2d890deab50ce5e6391bafdb05ee"
+    },
+    "producer-TERMINAL.json": {
+      "bytes": 1414,
+      "sha256": "c38da02afbbaf14b3b6520aaf99052763ea1d9e2889208d7423b2bdfb9606ab3"
+    },
+    "producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "producer.stdout": {
+      "bytes": 1929,
+      "sha256": "935361331c51393d765c28752ad315ae6661072928ad493aeeced4bdd199ed24"
+    }
+  },
+  "inventory_failure": null,
+  "producer": {
+    "aggregate_byte_limit": 268435456,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/global_engine.py",
+      "--request",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/uninformative/REQUEST.json",
+      "--request-sha256",
+      "a9fa0cf575718b5d563abf33b8aac95cb172b4faba5d1975739fc80cc61ada96",
+      "--checkpoints",
+      "WORKSPACE/msci-ab-profile-implementation-20261005-1612z/controls/uninformative/journal"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T16:18:42.581657+00:00",
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.20179118600208312,
+    "outer_wall_seconds": 150,
+    "peak_observed_bytes_before_final_receipt": 7235,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 4194304,
+    "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+    "started_utc": "2026-10-05T16:18:42.377490+00:00",
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 264241152,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "public_projection": {
+    "normalization": "absolute workspace prefix replaced by WORKSPACE; all other original fields retained",
+    "original_sha256": "b3604dbefbb30e75533be488c6800492a56ff905939030cd21a09bb2bf2d99ca"
+  },
+  "request_sha256": "a9fa0cf575718b5d563abf33b8aac95cb172b4faba5d1975739fc80cc61ada96",
+  "schema": "bounded-global-triangular-attempt-v1",
+  "source_and_input_pins_stable": true,
+  "source_manifest_sha256": "f156c3f82fee8a85bafe6671adb4ed00e6661695018db1e295b28ffeeae87e4e"
+}
