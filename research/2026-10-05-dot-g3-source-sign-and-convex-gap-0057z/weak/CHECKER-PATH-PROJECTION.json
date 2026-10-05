@@ -1,0 +1,6 @@
+{
+  "original_sha256": "c7612120b5debed4abd4737f3c993ca2aee006638a9f8428678190774fb8a2f9",
+  "public_sha256": "7d984c9e5540f5497c7522aa5ad4e4b5a383660ce56fa49e8acc77a78e92b762",
+  "change": "Only the provider path is made package-relative. The exact pinned provider bytes and mathematical algorithm are unchanged.",
+  "diff": "--- original\n+++ public\n@@ -6,7 +6,7 @@\n from math import comb\n import hashlib,sys,json\n import sympy as S\n-provider=Path(__file__).resolve().parents[1]/'graph-g3-three-cell-return-public-20261004-1959z/reproducible-controls'\n+provider=Path(__file__).resolve().parent/'source'\n assert hashlib.sha256((provider/'forest_algebra_pinned.py').read_bytes()).hexdigest()=='850589b346a6cc000e102c594a1ebc6342e9e1ba4604edace20fe5ecdc385884'\n sys.path.insert(0,str(provider));import forest_algebra_pinned as F\n def pair(j):return F.forest([F.tree(0,1)]+list(range(2,j)))\n"
+}

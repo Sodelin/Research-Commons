@@ -1,0 +1,114 @@
+{
+  "status": "PASS_ISOLATED_ROOT_PROJECTION_AND_PRINCIPAL_CAD_ACTION_BINDING",
+  "controls": [
+    {
+      "name": "ordinary",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun action_root_test () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h1_0 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x79 (= h1_0 h0_0)))\n(let (($x85 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)) $x79 (= h1_1 (- 1.0 h0_0)) (> action_root_test 0.0) (< action_root_test 1.0) (= (* action_root_test action_root_test) h0_0) true)))\n(let (($x75 (and (< 0.0 action_root_test) (< 0.0 h0_0) (< 0.0 h0_1) (< 0.0 h1_0) (< 0.0 h1_1) (< 0.0 (- 1.0 action_root_test)) (< 0.0 (- 1.0 h0_0)) (< 0.0 (- 1.0 h0_1)) (< 0.0 (- 1.0 h1_0)) (< 0.0 (- 1.0 h1_1)) (<= 0.0 (+ (- (^ action_root_test 2.0)) h0_0)) (<= 0.0 (- (^ action_root_test 2.0) h0_0)) (<= 0.0 (+ (- h0_0) h1_0)) (<= 0.0 (+ (- h0_1) h1_1)) (<= 0.0 (- h0_0 h1_0)) (<= 0.0 (- h0_1 h1_1)) (<= 0.0 (+ (- (- h0_0) h0_1) 1.0)) (<= 0.0 (+ (- (- h0_0) h1_1) 1.0)) (<= 0.0 (+ (- (- h0_1) h1_0) 1.0)) (<= 0.0 (+ (- (- h1_0) h1_1) 1.0)) (<= 0.0 (- (+ h0_0 h0_1) 1.0)) (<= 0.0 (- (+ h0_0 h1_1) 1.0)) (<= 0.0 (- (+ h0_1 h1_0) 1.0)) (<= 0.0 (- (+ h1_0 h1_1) 1.0)))))\n(let (($x61 (or $x75)))\n(let (($x18 (and true true)))\n(let (($x25 (and $x18 true)))\n(let (($x39 (and $x25 true)))\n(let (($x74 (and $x18 $x18 $x18 $x18 $x18 $x25 $x25 $x25 $x25 $x25 $x39 $x39 $x25 $x25 $x25 $x25 $x39 $x39 $x39 $x39 $x39 $x39 $x39 $x39)))\n(let (($x34 (and $x74)))\n(xor (and $x34 $x61) $x85)))))))))))\n(check-sat)\n",
+      "one_source_shared_across_both_rows": true
+    },
+    {
+      "name": "cancelled_written_domain",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun action_root_test () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h1_0 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x79 (= h1_0 h0_0)))\n(let (($x213 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)) $x79 (= h1_1 (- 1.0 h0_0)) (> action_root_test 0.0) (< action_root_test 1.0) (= (* action_root_test action_root_test) h0_0) (and (distinct (/ 1.0 2.0) h0_0) true))))\n(let (($x206 (< 0.0 (+ (- (* 4.0 (^ h0_0 2.0)) (* 4.0 h0_0)) 1.0))))\n(let (($x223 (and (< 0.0 action_root_test) (< 0.0 h0_0) (< 0.0 h0_1) (< 0.0 h1_0) (< 0.0 h1_1) (< 0.0 (- 1.0 action_root_test)) (< 0.0 (- 1.0 h0_0)) (< 0.0 (- 1.0 h0_1)) (< 0.0 (- 1.0 h1_0)) (< 0.0 (- 1.0 h1_1)) (<= 0.0 (+ (- (^ action_root_test 2.0)) h0_0)) (<= 0.0 (- (^ action_root_test 2.0) h0_0)) (<= 0.0 (+ (- h0_0) h1_0)) (<= 0.0 (+ (- h0_1) h1_1)) (<= 0.0 (- h0_0 h1_0)) (<= 0.0 (- h0_1 h1_1)) (<= 0.0 (+ (- (- h0_0) h0_1) 1.0)) (<= 0.0 (+ (- (- h0_0) h1_1) 1.0)) $x206 (<= 0.0 (+ (- (- h0_1) h1_0) 1.0)) (<= 0.0 (+ (- (- h1_0) h1_1) 1.0)) (<= 0.0 (- (+ h0_0 h0_1) 1.0)) (<= 0.0 (- (+ h0_0 h1_1) 1.0)) (<= 0.0 (- (+ h0_1 h1_0) 1.0)) (<= 0.0 (- (+ h1_0 h1_1) 1.0)))))\n(let (($x222 (or $x223)))\n(let (($x18 (and true true)))\n(let (($x25 (and $x18 true)))\n(let (($x39 (and $x25 true)))\n(let (($x205 (and $x18 $x18 $x18 $x18 $x18 $x25 $x25 $x25 $x25 $x25 $x39 $x39 $x25 $x25 $x25 $x25 $x39 $x39 (and (and (and (and true $x18) $x18) true) true) $x39 $x39 $x39 $x39 $x39 $x39)))\n(let (($x208 (and $x205)))\n(xor (and $x208 $x222) $x213))))))))))))\n(check-sat)\n",
+      "one_source_shared_across_both_rows": true
+    },
+    {
+      "name": "endpoint_root",
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "projection_never_a_policy_certificate": true
+    },
+    {
+      "name": "multiple_roots",
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "projection_never_a_policy_certificate": true
+    },
+    {
+      "name": "hidden_parameter",
+      "status": "UNKNOWN_UNSUPPORTED_OR_RESOURCE_LIMIT",
+      "projection_never_a_policy_certificate": true
+    },
+    {
+      "name": "future_response",
+      "status": "UNKNOWN_UNSUPPORTED_OR_RESOURCE_LIMIT",
+      "projection_never_a_policy_certificate": true
+    },
+    {
+      "name": "duplicate_section_name",
+      "status": "UNKNOWN_UNSUPPORTED_OR_RESOURCE_LIMIT",
+      "projection_never_a_policy_certificate": true
+    },
+    {
+      "name": "principal_positive_root_degree_2",
+      "status": "EXACT_AST_SECTION_VALUE_MATCH",
+      "encoding": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-1",
+          "0",
+          "2"
+        ],
+        "real_root_index": 2
+      }
+    },
+    {
+      "name": "principal_positive_root_degree_3",
+      "status": "EXACT_AST_SECTION_VALUE_MATCH",
+      "encoding": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-1",
+          "0",
+          "0",
+          "2"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "principal_positive_root_degree_5",
+      "status": "EXACT_AST_SECTION_VALUE_MATCH",
+      "encoding": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "2"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "unsupported_AST_0",
+      "status": "UNKNOWN_BOUNDARY_REJECTED",
+      "reason": "Unsupported general indexed Root/min/max CAD action shape."
+    },
+    {
+      "name": "unsupported_AST_1",
+      "status": "UNKNOWN_BOUNDARY_REJECTED",
+      "reason": "Unsupported principal-root exponent/resource carrier."
+    },
+    {
+      "name": "unsupported_AST_2",
+      "status": "UNKNOWN_BOUNDARY_REJECTED",
+      "reason": "CAD action may read only typed recorded observations."
+    },
+    {
+      "name": "unsupported_AST_3",
+      "status": "UNKNOWN_BOUNDARY_REJECTED",
+      "reason": "CAD action may read only typed recorded observations."
+    },
+    {
+      "name": "unsupported_AST_4",
+      "status": "UNKNOWN_BOUNDARY_REJECTED",
+      "reason": "Unsupported principal-root exponent/resource carrier."
+    }
+  ],
+  "one_source_shared_parameters": true,
+  "pure_projection_determinism_claimed": false,
+  "complete_policy_IVT_uniqueness_gate_mandatory": true,
+  "trust": "SAME_BACKEND; two independent hand-transcribed global formulas"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "UNKNOWN_CAD_WHOLE_POLICY_ASSEMBLY",
+  "reason": "Final entire source-policy gate failed or remained UNKNOWN.",
+  "global_budget_NO_claimed": false,
+  "whole_policy_attempt": {
+    "status": "INVALID_OR_REFUTED_POLICY",
+    "reason": "An action/guard can read only earlier observed response coordinates.",
+    "receipts": [
+      {
+        "kind": "initial_joint_history_admission",
+        "source_model": 0,
+        "policy_path": [],
+        "status": "sat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!217 () Real)\n(declare-fun oneOriginalSourceParameter!216 () Real)\n(assert\n (let (($x31 (and (> oneOriginalSourceParameter!217 0.0) (< oneOriginalSourceParameter!217 1.0))))\n(let (($x28 (and (> oneOriginalSourceParameter!216 0.0) (< oneOriginalSourceParameter!216 1.0))))\n(and $x28 $x31))))\n(check-sat)\n",
+        "counterexample_model": "[oneOriginalSourceParameter!217 = 1/2,\n oneOriginalSourceParameter!216 = 1/2]"
+      },
+      {
+        "kind": "source_reachable_real_action_legality",
+        "source_model": 0,
+        "policy_path": [],
+        "status": "unsat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!217 () Real)\n(declare-fun oneOriginalSourceParameter!216 () Real)\n(assert\n (let (($x59 (and true true (= (+ (+ 0.0 1.0) 0.0) 1.0) (> 1.0 0.0) (= 0.0 0.0))))\n(let (($x31 (and (> oneOriginalSourceParameter!217 0.0) (< oneOriginalSourceParameter!217 1.0))))\n(let (($x28 (and (> oneOriginalSourceParameter!216 0.0) (< oneOriginalSourceParameter!216 1.0))))\n(let (($x32 (and $x28 $x31)))\n(and $x32 (not $x59)))))))\n(check-sat)\n"
+      },
+      {
+        "kind": "PATH_union_resource_budget",
+        "source_model": 0,
+        "policy_path": [],
+        "status": "unsat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!217 () Real)\n(declare-fun oneOriginalSourceParameter!216 () Real)\n(assert\n (let (($x31 (and (> oneOriginalSourceParameter!217 0.0) (< oneOriginalSourceParameter!217 1.0))))\n(let (($x28 (and (> oneOriginalSourceParameter!216 0.0) (< oneOriginalSourceParameter!216 1.0))))\n(let (($x32 (and $x28 $x31)))\n(and $x32 (not true))))))\n(check-sat)\n"
+      },
+      {
+        "kind": "guard_defined_on_reachable_history",
+        "source_model": 0,
+        "policy_path": [
+          "call",
+          0
+        ],
+        "status": "unsat",
+        "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun oneOriginalSourceParameter!217 () Real)\n(declare-fun oneOriginalSourceParameter!216 () Real)\n(assert\n (let (($x50 (and true true)))\n(let (($x35 (and $x50)))\n(let (($x45 (and (and (and (and $x50 true) true)) $x35 $x35 (and (and $x50 true)))))\n(let (($x31 (and (> oneOriginalSourceParameter!217 0.0) (< oneOriginalSourceParameter!217 1.0))))\n(let (($x28 (and (> oneOriginalSourceParameter!216 0.0) (< oneOriginalSourceParameter!216 1.0))))\n(let (($x32 (and $x28 $x31)))\n(and $x32 (not $x45)))))))))\n(check-sat)\n"
+      }
+    ],
+    "policy_verified": false
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "status": "PASS_INDEPENDENT_ROOT_SEMANTIC_CONTROLS",
+  "controls": [
+    {
+      "name": "free_original_parameter_image_plain",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun action_root_r () Real)\n(declare-fun h0_0 () Real)\n(declare-fun h1_0 () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x122 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)) (> action_root_r 0.0) (< action_root_r 1.0) (= (* action_root_r action_root_r) h0_0) (= h1_1 (- 1.0 h1_0)) (< (* action_root_r h0_0) h1_0) (< h1_0 (- (+ (* action_root_r h0_0) 1.0) action_root_r)) true)))\n(let (($x79 (and (and (and (and true true) (and true true)) true) true)))\n(let (($x104 (and (and (and $x79 true) true) true)))\n(let (($x11 (and true true)))\n(let (($x21 (and $x11 true)))\n(let (($x39 (and $x21 true)))\n(let (($x67 (and $x39 true)))\n(let (($x89 (and $x67 true)))\n(let (($x108 (and $x11 $x21 $x11 $x11 $x11 $x11 $x21 $x21 $x21 $x21 $x39 $x39 $x39 $x39 (and (and (and $x11 $x11) $x11) true) $x39 $x39 $x67 $x67 $x67 $x67 (and (and (and (and $x11 $x11) $x11) $x11) true) $x89 $x89 $x104 $x104)))\n(let (($x106 (and $x108)))\n(let ((?x101 (- (+ (* action_root_r h1_0) (* action_root_r h1_1)) action_root_r)))\n(let ((?x80 (+ (- (* (- action_root_r) h1_0) (* action_root_r h1_1)) action_root_r)))\n(let (($x91 (< 0.0 (+ (- (- (* action_root_r h0_1) action_root_r) h1_1) 1.0))))\n(let (($x87 (< 0.0 (+ (- (- (* action_root_r h0_0) action_root_r) h1_0) 1.0))))\n(let ((?x75 (* 2.0 action_root_r)))\n(let ((?x36 (* action_root_r h1_1)))\n(let ((?x51 (+ (- (- (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36) ?x75)))\n(let (($x54 (< 0.0 (+ (+ (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36))))\n(let (($x109 (and (< 0.0 action_root_r) (> 0.0 (- action_root_r 1.0)) (< 0.0 h0_0) (< 0.0 h0_1) (< 0.0 h1_0) (< 0.0 h1_1) (< 0.0 (- 1.0 h0_0)) (< 0.0 (- 1.0 h0_1)) (< 0.0 (- 1.0 h1_0)) (< 0.0 (- 1.0 h1_1)) (<= 0.0 (+ (- (^ action_root_r 2.0)) h0_0)) (<= 0.0 (- (^ action_root_r 2.0) h0_0)) (< 0.0 (+ (* (- action_root_r) h0_0) h1_0)) (< 0.0 (+ (* (- action_root_r) h0_1) h1_1)) $x54 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0)) (<= 0.0 (- (+ h0_0 h0_1) 1.0)) (< 0.0 (+ (- (* (- action_root_r) h0_0) h1_1) 1.0)) (< 0.0 (+ (- (* action_root_r h0_0) action_root_r) h1_1)) (< 0.0 (+ (- (* (- action_root_r) h0_1) h1_0) 1.0)) (< 0.0 (+ (- (* action_root_r h0_1) action_root_r) h1_0)) (< 0.0 ?x51) $x87 $x91 (<= 0.0 (- (+ (+ ?x80 h1_0) h1_1) 1.0)) (<= 0.0 (+ (- (- ?x101 h1_0) h1_1) 1.0)))))\n(let (($x107 (or $x109)))\n(xor (and $x107 $x106) $x122))))))))))))))))))))))\n(check-sat)\n"
+    },
+    {
+      "name": "full_universal_toy_policy",
+      "status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND",
+      "obligations": 10
+    },
+    {
+      "name": "free_original_parameter_image_coefficient_cancel",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun action_root_r () Real)\n(declare-fun h1_0 () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x109 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)) (> action_root_r 0.0) (< action_root_r 1.0) (= (* action_root_r action_root_r) h0_0) (= h1_1 (- 1.0 h1_0)) (< (* action_root_r h0_0) h1_0) (< h1_0 (- (+ (* action_root_r h0_0) 1.0) action_root_r)) (and (distinct (/ 1.0 2.0) h0_0) true))))\n(let (($x79 (and (and (and (and true true) (and true true)) true) true)))\n(let (($x104 (and (and (and $x79 true) true) true)))\n(let (($x11 (and true true)))\n(let (($x21 (and $x11 true)))\n(let (($x39 (and $x21 true)))\n(let (($x67 (and $x39 true)))\n(let (($x89 (and $x67 true)))\n(let (($x207 (and $x11 $x21 $x11 $x11 $x11 $x11 $x21 $x21 $x21 $x21 $x39 $x39 $x39 $x39 (and (and (and $x11 $x11) $x11) true) $x39 (and (and (and (and true $x11) $x11) true) true) $x39 $x67 $x67 $x67 $x67 (and (and (and (and $x11 $x11) $x11) $x11) true) $x89 $x89 $x104 $x104)))\n(let (($x262 (and $x207)))\n(let ((?x101 (- (+ (* action_root_r h1_0) (* action_root_r h1_1)) action_root_r)))\n(let ((?x80 (+ (- (* (- action_root_r) h1_0) (* action_root_r h1_1)) action_root_r)))\n(let (($x91 (< 0.0 (+ (- (- (* action_root_r h0_1) action_root_r) h1_1) 1.0))))\n(let (($x87 (< 0.0 (+ (- (- (* action_root_r h0_0) action_root_r) h1_0) 1.0))))\n(let ((?x75 (* 2.0 action_root_r)))\n(let ((?x36 (* action_root_r h1_1)))\n(let ((?x51 (+ (- (- (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36) ?x75)))\n(let (($x148 (< 0.0 (+ (- (* 4.0 (^ h0_0 2.0)) (* 4.0 h0_0)) 1.0))))\n(let (($x54 (< 0.0 (+ (+ (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36))))\n(let (($x149 (and (< 0.0 action_root_r) (> 0.0 (- action_root_r 1.0)) (< 0.0 h0_0) (< 0.0 h0_1) (< 0.0 h1_0) (< 0.0 h1_1) (< 0.0 (- 1.0 h0_0)) (< 0.0 (- 1.0 h0_1)) (< 0.0 (- 1.0 h1_0)) (< 0.0 (- 1.0 h1_1)) (<= 0.0 (+ (- (^ action_root_r 2.0)) h0_0)) (<= 0.0 (- (^ action_root_r 2.0) h0_0)) (< 0.0 (+ (* (- action_root_r) h0_0) h1_0)) (< 0.0 (+ (* (- action_root_r) h0_1) h1_1)) $x54 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0)) $x148 (<= 0.0 (- (+ h0_0 h0_1) 1.0)) (< 0.0 (+ (- (* (- action_root_r) h0_0) h1_1) 1.0)) (< 0.0 (+ (- (* action_root_r h0_0) action_root_r) h1_1)) (< 0.0 (+ (- (* (- action_root_r) h0_1) h1_0) 1.0)) (< 0.0 (+ (- (* action_root_r h0_1) action_root_r) h1_0)) (< 0.0 ?x51) $x87 $x91 (<= 0.0 (- (+ (+ ?x80 h1_0) h1_1) 1.0)) (<= 0.0 (+ (- (- ?x101 h1_0) h1_1) 1.0)))))\n(let (($x221 (or $x149)))\n(xor (and $x221 $x262) $x109)))))))))))))))))))))))\n(check-sat)\n"
+    },
+    {
+      "name": "domain_hole_refuted_coefficient_cancel",
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: isolated_algebraic_section_IVT_availability"
+    },
+    {
+      "name": "free_original_parameter_image_bound_cancel",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun action_root_r () Real)\n(declare-fun h1_0 () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x109 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)) (> action_root_r 0.0) (< action_root_r 1.0) (= (* action_root_r action_root_r) h0_0) (= h1_1 (- 1.0 h1_0)) (< (* action_root_r h0_0) h1_0) (< h1_0 (- (+ (* action_root_r h0_0) 1.0) action_root_r)) (and (distinct (/ 1.0 2.0) h0_0) true))))\n(let (($x79 (and (and (and (and true true) (and true true)) true) true)))\n(let (($x104 (and (and (and $x79 true) true) true)))\n(let (($x11 (and true true)))\n(let (($x21 (and $x11 true)))\n(let (($x39 (and $x21 true)))\n(let (($x67 (and $x39 true)))\n(let (($x89 (and $x67 true)))\n(let (($x207 (and $x11 $x21 $x11 $x11 $x11 $x11 $x21 $x21 $x21 $x21 $x39 $x39 $x39 $x39 (and (and (and $x11 $x11) $x11) true) $x39 (and (and (and (and true $x11) $x11) true) true) $x39 $x67 $x67 $x67 $x67 (and (and (and (and $x11 $x11) $x11) $x11) true) $x89 $x89 $x104 $x104)))\n(let (($x262 (and $x207)))\n(let ((?x101 (- (+ (* action_root_r h1_0) (* action_root_r h1_1)) action_root_r)))\n(let ((?x80 (+ (- (* (- action_root_r) h1_0) (* action_root_r h1_1)) action_root_r)))\n(let (($x91 (< 0.0 (+ (- (- (* action_root_r h0_1) action_root_r) h1_1) 1.0))))\n(let (($x87 (< 0.0 (+ (- (- (* action_root_r h0_0) action_root_r) h1_0) 1.0))))\n(let ((?x75 (* 2.0 action_root_r)))\n(let ((?x36 (* action_root_r h1_1)))\n(let ((?x51 (+ (- (- (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36) ?x75)))\n(let (($x148 (< 0.0 (+ (- (* 4.0 (^ h0_0 2.0)) (* 4.0 h0_0)) 1.0))))\n(let (($x54 (< 0.0 (+ (+ (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36))))\n(let (($x149 (and (< 0.0 action_root_r) (> 0.0 (- action_root_r 1.0)) (< 0.0 h0_0) (< 0.0 h0_1) (< 0.0 h1_0) (< 0.0 h1_1) (< 0.0 (- 1.0 h0_0)) (< 0.0 (- 1.0 h0_1)) (< 0.0 (- 1.0 h1_0)) (< 0.0 (- 1.0 h1_1)) (<= 0.0 (+ (- (^ action_root_r 2.0)) h0_0)) (<= 0.0 (- (^ action_root_r 2.0) h0_0)) (< 0.0 (+ (* (- action_root_r) h0_0) h1_0)) (< 0.0 (+ (* (- action_root_r) h0_1) h1_1)) $x54 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0)) $x148 (<= 0.0 (- (+ h0_0 h0_1) 1.0)) (< 0.0 (+ (- (* (- action_root_r) h0_0) h1_1) 1.0)) (< 0.0 (+ (- (* action_root_r h0_0) action_root_r) h1_1)) (< 0.0 (+ (- (* (- action_root_r) h0_1) h1_0) 1.0)) (< 0.0 (+ (- (* action_root_r h0_1) action_root_r) h1_0)) (< 0.0 ?x51) $x87 $x91 (<= 0.0 (- (+ (+ ?x80 h1_0) h1_1) 1.0)) (<= 0.0 (+ (- (- ?x101 h1_0) h1_1) 1.0)))))\n(let (($x221 (or $x149)))\n(xor (and $x221 $x262) $x109)))))))))))))))))))))))\n(check-sat)\n"
+    },
+    {
+      "name": "domain_hole_refuted_bound_cancel",
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: isolated_algebraic_section_IVT_availability"
+    },
+    {
+      "name": "free_original_parameter_image_weight_cancel",
+      "status": "unsat",
+      "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun h0_0 () Real)\n(declare-fun action_root_r () Real)\n(declare-fun h1_0 () Real)\n(declare-fun h1_1 () Real)\n(declare-fun h0_1 () Real)\n(assert\n (let (($x109 (and (> h0_0 0.0) (< h0_0 1.0) (= h0_1 (- 1.0 h0_0)) (> action_root_r 0.0) (< action_root_r 1.0) (= (* action_root_r action_root_r) h0_0) (= h1_1 (- 1.0 h1_0)) (< (* action_root_r h0_0) h1_0) (< h1_0 (- (+ (* action_root_r h0_0) 1.0) action_root_r)) (and (distinct (/ 1.0 2.0) h0_0) true))))\n(let (($x79 (and (and (and (and true true) (and true true)) true) true)))\n(let (($x104 (and (and (and $x79 true) true) true)))\n(let (($x11 (and true true)))\n(let (($x21 (and $x11 true)))\n(let (($x39 (and $x21 true)))\n(let (($x67 (and $x39 true)))\n(let (($x89 (and $x67 true)))\n(let (($x207 (and $x11 $x21 $x11 $x11 $x11 $x11 $x21 $x21 $x21 $x21 $x39 $x39 $x39 $x39 (and (and (and $x11 $x11) $x11) true) $x39 (and (and (and (and true $x11) $x11) true) true) $x39 $x67 $x67 $x67 $x67 (and (and (and (and $x11 $x11) $x11) $x11) true) $x89 $x89 $x104 $x104)))\n(let (($x262 (and $x207)))\n(let ((?x101 (- (+ (* action_root_r h1_0) (* action_root_r h1_1)) action_root_r)))\n(let ((?x80 (+ (- (* (- action_root_r) h1_0) (* action_root_r h1_1)) action_root_r)))\n(let (($x91 (< 0.0 (+ (- (- (* action_root_r h0_1) action_root_r) h1_1) 1.0))))\n(let (($x87 (< 0.0 (+ (- (- (* action_root_r h0_0) action_root_r) h1_0) 1.0))))\n(let ((?x75 (* 2.0 action_root_r)))\n(let ((?x36 (* action_root_r h1_1)))\n(let ((?x51 (+ (- (- (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36) ?x75)))\n(let (($x148 (< 0.0 (+ (- (* 4.0 (^ h0_0 2.0)) (* 4.0 h0_0)) 1.0))))\n(let (($x54 (< 0.0 (+ (+ (- (^ action_root_r 2.0)) (* action_root_r h1_0)) ?x36))))\n(let (($x149 (and (< 0.0 action_root_r) (> 0.0 (- action_root_r 1.0)) (< 0.0 h0_0) (< 0.0 h0_1) (< 0.0 h1_0) (< 0.0 h1_1) (< 0.0 (- 1.0 h0_0)) (< 0.0 (- 1.0 h0_1)) (< 0.0 (- 1.0 h1_0)) (< 0.0 (- 1.0 h1_1)) (<= 0.0 (+ (- (^ action_root_r 2.0)) h0_0)) (<= 0.0 (- (^ action_root_r 2.0) h0_0)) (< 0.0 (+ (* (- action_root_r) h0_0) h1_0)) (< 0.0 (+ (* (- action_root_r) h0_1) h1_1)) $x54 (<= 0.0 (+ (- (- h0_0) h0_1) 1.0)) $x148 (<= 0.0 (- (+ h0_0 h0_1) 1.0)) (< 0.0 (+ (- (* (- action_root_r) h0_0) h1_1) 1.0)) (< 0.0 (+ (- (* action_root_r h0_0) action_root_r) h1_1)) (< 0.0 (+ (- (* (- action_root_r) h0_1) h1_0) 1.0)) (< 0.0 (+ (- (* action_root_r h0_1) action_root_r) h1_0)) (< 0.0 ?x51) $x87 $x91 (<= 0.0 (- (+ (+ ?x80 h1_0) h1_1) 1.0)) (<= 0.0 (+ (- (- ?x101 h1_0) h1_1) 1.0)))))\n(let (($x221 (or $x149)))\n(xor (and $x221 $x262) $x109)))))))))))))))))))))))\n(check-sat)\n"
+    },
+    {
+      "name": "domain_hole_refuted_weight_cancel",
+      "status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: source_reachable_real_action_legality"
+    },
+    {
+      "name": "unique_repeated_point_vs_symbolic_IVT",
+      "point_status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+      "policy_status": "INVALID_OR_REFUTED_POLICY",
+      "reason": "A reachable policy obligation failed: isolated_algebraic_section_IVT_availability"
+    },
+    {
+      "name": "principal_q2_p-2",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "rational",
+        "value": "3/2"
+      }
+    },
+    {
+      "name": "principal_q2_p0",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "rational",
+        "value": "1"
+      }
+    },
+    {
+      "name": "principal_q2_p1",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-2",
+          "0",
+          "3"
+        ],
+        "real_root_index": 2
+      }
+    },
+    {
+      "name": "principal_q2_p3",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-8",
+          "0",
+          "27"
+        ],
+        "real_root_index": 2
+      }
+    },
+    {
+      "name": "principal_q3_p-2",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-9",
+          "0",
+          "0",
+          "4"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "principal_q3_p0",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "rational",
+        "value": "1"
+      }
+    },
+    {
+      "name": "principal_q3_p1",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-2",
+          "0",
+          "0",
+          "3"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "principal_q3_p3",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "rational",
+        "value": "2/3"
+      }
+    },
+    {
+      "name": "principal_q5_p-2",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-9",
+          "0",
+          "0",
+          "0",
+          "0",
+          "4"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "principal_q5_p0",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "rational",
+        "value": "1"
+      }
+    },
+    {
+      "name": "principal_q5_p1",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-2",
+          "0",
+          "0",
+          "0",
+          "0",
+          "3"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "principal_q5_p3",
+      "status": "EXACT_MATCH",
+      "value": {
+        "kind": "algebraic",
+        "polynomial_ascending": [
+          "-8",
+          "0",
+          "0",
+          "0",
+          "0",
+          "27"
+        ],
+        "real_root_index": 1
+      }
+    },
+    {
+      "name": "zero_power_undefined_written_base",
+      "status": "UNKNOWN_UNSUPPORTED_SECTION_POINT"
+    }
+  ]
+}

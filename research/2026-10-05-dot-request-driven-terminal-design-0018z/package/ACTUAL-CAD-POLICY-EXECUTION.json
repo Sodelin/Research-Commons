@@ -1,0 +1,2312 @@
+{
+  "status": "PASS_ACTUAL_SOURCE_CAD_POLICY_EXECUTION",
+  "cases": [
+    {
+      "source": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "T2"
+          ],
+          [
+            "T1",
+            "H0"
+          ],
+          [
+            "T2",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T2",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "same_preselected_original_values": {
+        "x0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1/2",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x1": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1/2",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x6": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x7": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x8": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "g_H0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "H0": 1,
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 4,
+          "T0": 3,
+          "T1": 2,
+          "T2": 2
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-1/2",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-1/2",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "T2",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T2",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "H0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 6,
+            "parent": "T1",
+            "child": "L1",
+            "duration": 2,
+            "survival_parameter": "x6",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 7,
+            "parent": "T2",
+            "child": "L2",
+            "duration": 2,
+            "survival_parameter": "x7",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 8,
+            "parent": "T0",
+            "child": "L3",
+            "duration": 3,
+            "survival_parameter": "x8",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {
+          "g_H0": {
+            "kind": "rational",
+            "value": "1/2"
+          }
+        },
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      },
+      "mode": "common",
+      "source_pair": [
+        0,
+        1
+      ],
+      "history": [
+        {
+          "weights": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            {
+              "kind": "rational",
+              "value": "1/6"
+            },
+            {
+              "kind": "rational",
+              "value": "1/6"
+            }
+          ],
+          "section_receipts": []
+        },
+        {
+          "weights": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-13",
+                "0",
+                "22"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "9",
+                "-44",
+                "22"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "response": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-20",
+                "-132",
+                "297"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "521",
+                "-2640",
+                "2376"
+              ],
+              "real_root_index": 1
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "113",
+                "-1056",
+                "2376"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "section_receipts": [
+            {
+              "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+              "encoding": {
+                "kind": "algebraic",
+                "polynomial_ascending": [
+                  "-13",
+                  "0",
+                  "22"
+                ],
+                "real_root_index": 2
+              },
+              "receipts": [
+                {
+                  "kind": "point_exists",
+                  "status": "sat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!0 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!0))\n(assert\n (> 1.0 isolatedObservedPoint!0))\n(assert\n (let ((?x36 (+ (+ 0.0 (* (- (/ 13.0 22.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!0 1.0)))))\n(let ((?x57 (+ ?x36 (* 1.0 (^ isolatedObservedPoint!0 2.0)))))\n(= ?x57 0.0))))\n(check-sat)\n"
+                },
+                {
+                  "kind": "point_unique",
+                  "status": "unsat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!0 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!0))\n(assert\n (> 1.0 isolatedObservedPoint!0))\n(assert\n (let ((?x36 (+ (+ 0.0 (* (- (/ 13.0 22.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!0 1.0)))))\n (let ((?x57 (+ ?x36 (* 1.0 (^ isolatedObservedPoint!0 2.0)))))\n (= ?x57 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 22 (^ x 2)) (- 13)) 2) isolatedObservedPoint!0) true))\n(check-sat)\n"
+                }
+              ],
+              "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+            }
+          ]
+        }
+      ],
+      "first_eligible_branch_path": [
+        2,
+        0
+      ],
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ],
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "path_cost": [
+        2,
+        2,
+        1
+      ],
+      "both_calls_recompiled_under_one_original_assignment": true
+    },
+    {
+      "source": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "T2"
+          ],
+          [
+            "T1",
+            "H0"
+          ],
+          [
+            "T2",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T1",
+            "L1"
+          ],
+          [
+            "T2",
+            "L2"
+          ],
+          [
+            "T0",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "same_preselected_original_values": {
+        "x0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1/2",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x1": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1/2",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x6": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x7": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x8": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "g_H0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "H0": 1,
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 4,
+          "T0": 3,
+          "T1": 2,
+          "T2": 2
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-1/2",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-1/2",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "T2",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T2",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "H0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 6,
+            "parent": "T1",
+            "child": "L1",
+            "duration": 2,
+            "survival_parameter": "x6",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 7,
+            "parent": "T2",
+            "child": "L2",
+            "duration": 2,
+            "survival_parameter": "x7",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 8,
+            "parent": "T0",
+            "child": "L3",
+            "duration": 3,
+            "survival_parameter": "x8",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {
+          "g_H0": {
+            "kind": "rational",
+            "value": "1/2"
+          }
+        },
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      },
+      "mode": "independent",
+      "source_pair": [
+        0,
+        1
+      ],
+      "history": [
+        {
+          "weights": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            {
+              "kind": "rational",
+              "value": "1/6"
+            },
+            {
+              "kind": "rational",
+              "value": "1/6"
+            }
+          ],
+          "section_receipts": []
+        },
+        {
+          "weights": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-13",
+                "0",
+                "22"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "9",
+                "-44",
+                "22"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "response": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-20",
+                "-132",
+                "297"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "521",
+                "-2640",
+                "2376"
+              ],
+              "real_root_index": 1
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "113",
+                "-1056",
+                "2376"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "section_receipts": [
+            {
+              "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+              "encoding": {
+                "kind": "algebraic",
+                "polynomial_ascending": [
+                  "-13",
+                  "0",
+                  "22"
+                ],
+                "real_root_index": 2
+              },
+              "receipts": [
+                {
+                  "kind": "point_exists",
+                  "status": "sat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!10 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!10))\n(assert\n (> 1.0 isolatedObservedPoint!10))\n(assert\n (let ((?x71 (+ (+ 0.0 (* (- (/ 13.0 22.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!10 1.0)))))\n(let ((?x196 (+ ?x71 (* 1.0 (^ isolatedObservedPoint!10 2.0)))))\n(= ?x196 0.0))))\n(check-sat)\n"
+                },
+                {
+                  "kind": "point_unique",
+                  "status": "unsat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!10 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!10))\n(assert\n (> 1.0 isolatedObservedPoint!10))\n(assert\n (let ((?x71 (+ (+ 0.0 (* (- (/ 13.0 22.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!10 1.0)))))\n (let ((?x196 (+ ?x71 (* 1.0 (^ isolatedObservedPoint!10 2.0)))))\n (= ?x196 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 22 (^ x 2)) (- 13)) 2) isolatedObservedPoint!10) true))\n(check-sat)\n"
+                }
+              ],
+              "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+            }
+          ]
+        }
+      ],
+      "first_eligible_branch_path": [
+        2,
+        0
+      ],
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ],
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "path_cost": [
+        2,
+        2,
+        1
+      ],
+      "both_calls_recompiled_under_one_original_assignment": true
+    },
+    {
+      "source": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "T2"
+          ],
+          [
+            "T1",
+            "H0"
+          ],
+          [
+            "T2",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T2",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "same_preselected_original_values": {
+        "x0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x1": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x6": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x7": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x8": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "g_H0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "H0": 1,
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 4,
+          "T0": 3,
+          "T1": 2,
+          "T2": 2
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "T2",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T2",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "H0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 6,
+            "parent": "T0",
+            "child": "L1",
+            "duration": 3,
+            "survival_parameter": "x6",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 7,
+            "parent": "T1",
+            "child": "L2",
+            "duration": 2,
+            "survival_parameter": "x7",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 8,
+            "parent": "T2",
+            "child": "L3",
+            "duration": 2,
+            "survival_parameter": "x8",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {
+          "g_H0": {
+            "kind": "rational",
+            "value": "1/2"
+          }
+        },
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      },
+      "mode": "common",
+      "source_pair": [
+        1,
+        2
+      ],
+      "history": [
+        {
+          "weights": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "rational",
+              "value": "5/9"
+            },
+            {
+              "kind": "rational",
+              "value": "2/9"
+            }
+          ],
+          "section_receipts": []
+        },
+        {
+          "weights": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-85",
+                "0",
+                "166"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "81",
+                "-332",
+                "166"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-101",
+                "-5976",
+                "13446"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "3385",
+                "-14940",
+                "13446"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "section_receipts": [
+            {
+              "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+              "encoding": {
+                "kind": "algebraic",
+                "polynomial_ascending": [
+                  "-85",
+                  "0",
+                  "166"
+                ],
+                "real_root_index": 2
+              },
+              "receipts": [
+                {
+                  "kind": "point_exists",
+                  "status": "sat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!20 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!20))\n(assert\n (> 1.0 isolatedObservedPoint!20))\n(assert\n (let ((?x551 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!20 1.0)))))\n(let ((?x603 (+ ?x551 (* 1.0 (^ isolatedObservedPoint!20 2.0)))))\n(= ?x603 0.0))))\n(check-sat)\n"
+                },
+                {
+                  "kind": "point_unique",
+                  "status": "unsat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!20 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!20))\n(assert\n (> 1.0 isolatedObservedPoint!20))\n(assert\n (let ((?x551 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!20 1.0)))))\n (let ((?x603 (+ ?x551 (* 1.0 (^ isolatedObservedPoint!20 2.0)))))\n (= ?x603 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 166 (^ x 2)) (- 85)) 2) isolatedObservedPoint!20) true))\n(check-sat)\n"
+                }
+              ],
+              "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+            }
+          ]
+        }
+      ],
+      "first_eligible_branch_path": [
+        1,
+        3
+      ],
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ],
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "path_cost": [
+        2,
+        2,
+        1
+      ],
+      "both_calls_recompiled_under_one_original_assignment": true
+    },
+    {
+      "source": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "T2"
+          ],
+          [
+            "T1",
+            "H0"
+          ],
+          [
+            "T2",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T1",
+            "L2"
+          ],
+          [
+            "T2",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "same_preselected_original_values": {
+        "x0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x1": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x6": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x7": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x8": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "g_H0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "H0": 1,
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 4,
+          "T0": 3,
+          "T1": 2,
+          "T2": 2
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "T2",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T2",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "H0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 6,
+            "parent": "T0",
+            "child": "L1",
+            "duration": 3,
+            "survival_parameter": "x6",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 7,
+            "parent": "T1",
+            "child": "L2",
+            "duration": 2,
+            "survival_parameter": "x7",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 8,
+            "parent": "T2",
+            "child": "L3",
+            "duration": 2,
+            "survival_parameter": "x8",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {
+          "g_H0": {
+            "kind": "rational",
+            "value": "1/2"
+          }
+        },
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      },
+      "mode": "independent",
+      "source_pair": [
+        1,
+        2
+      ],
+      "history": [
+        {
+          "weights": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "rational",
+              "value": "5/9"
+            },
+            {
+              "kind": "rational",
+              "value": "2/9"
+            }
+          ],
+          "section_receipts": []
+        },
+        {
+          "weights": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-85",
+                "0",
+                "166"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "81",
+                "-332",
+                "166"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-101",
+                "-5976",
+                "13446"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "3385",
+                "-14940",
+                "13446"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "section_receipts": [
+            {
+              "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+              "encoding": {
+                "kind": "algebraic",
+                "polynomial_ascending": [
+                  "-85",
+                  "0",
+                  "166"
+                ],
+                "real_root_index": 2
+              },
+              "receipts": [
+                {
+                  "kind": "point_exists",
+                  "status": "sat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!30 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!30))\n(assert\n (> 1.0 isolatedObservedPoint!30))\n(assert\n (let ((?x468 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!30 1.0)))))\n(let ((?x439 (+ ?x468 (* 1.0 (^ isolatedObservedPoint!30 2.0)))))\n(= ?x439 0.0))))\n(check-sat)\n"
+                },
+                {
+                  "kind": "point_unique",
+                  "status": "unsat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!30 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!30))\n(assert\n (> 1.0 isolatedObservedPoint!30))\n(assert\n (let ((?x468 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!30 1.0)))))\n (let ((?x439 (+ ?x468 (* 1.0 (^ isolatedObservedPoint!30 2.0)))))\n (= ?x439 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 166 (^ x 2)) (- 85)) 2) isolatedObservedPoint!30) true))\n(check-sat)\n"
+                }
+              ],
+              "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+            }
+          ]
+        }
+      ],
+      "first_eligible_branch_path": [
+        1,
+        3
+      ],
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ],
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "path_cost": [
+        2,
+        2,
+        1
+      ],
+      "both_calls_recompiled_under_one_original_assignment": true
+    },
+    {
+      "source": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "T2"
+          ],
+          [
+            "T1",
+            "H0"
+          ],
+          [
+            "T2",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T2",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "same_preselected_original_values": {
+        "x0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x1": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x6": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x7": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x8": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "g_H0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "H0": 1,
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 4,
+          "T0": 3,
+          "T1": 2,
+          "T2": 2
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "T2",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T2",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "H0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 6,
+            "parent": "T2",
+            "child": "L1",
+            "duration": 2,
+            "survival_parameter": "x6",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 7,
+            "parent": "T0",
+            "child": "L2",
+            "duration": 3,
+            "survival_parameter": "x7",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 8,
+            "parent": "T1",
+            "child": "L3",
+            "duration": 2,
+            "survival_parameter": "x8",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {
+          "g_H0": {
+            "kind": "rational",
+            "value": "1/2"
+          }
+        },
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      },
+      "mode": "common",
+      "source_pair": [
+        2,
+        0
+      ],
+      "history": [
+        {
+          "weights": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "rational",
+              "value": "5/9"
+            }
+          ],
+          "section_receipts": []
+        },
+        {
+          "weights": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-85",
+                "0",
+                "166"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "81",
+                "-332",
+                "166"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "response": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "3385",
+                "-14940",
+                "13446"
+              ],
+              "real_root_index": 1
+            },
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-101",
+                "-5976",
+                "13446"
+              ],
+              "real_root_index": 2
+            }
+          ],
+          "section_receipts": [
+            {
+              "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+              "encoding": {
+                "kind": "algebraic",
+                "polynomial_ascending": [
+                  "-85",
+                  "0",
+                  "166"
+                ],
+                "real_root_index": 2
+              },
+              "receipts": [
+                {
+                  "kind": "point_exists",
+                  "status": "sat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!40 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!40))\n(assert\n (> 1.0 isolatedObservedPoint!40))\n(assert\n (let ((?x38 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!40 1.0)))))\n(let ((?x220 (+ ?x38 (* 1.0 (^ isolatedObservedPoint!40 2.0)))))\n(= ?x220 0.0))))\n(check-sat)\n"
+                },
+                {
+                  "kind": "point_unique",
+                  "status": "unsat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!40 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!40))\n(assert\n (> 1.0 isolatedObservedPoint!40))\n(assert\n (let ((?x38 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!40 1.0)))))\n (let ((?x220 (+ ?x38 (* 1.0 (^ isolatedObservedPoint!40 2.0)))))\n (= ?x220 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 166 (^ x 2)) (- 85)) 2) isolatedObservedPoint!40) true))\n(check-sat)\n"
+                }
+              ],
+              "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+            }
+          ]
+        }
+      ],
+      "first_eligible_branch_path": [
+        0,
+        1
+      ],
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ],
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "path_cost": [
+        2,
+        2,
+        1
+      ],
+      "both_calls_recompiled_under_one_original_assignment": true
+    },
+    {
+      "source": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "T1"
+          ],
+          [
+            "T0",
+            "T2"
+          ],
+          [
+            "T1",
+            "H0"
+          ],
+          [
+            "T2",
+            "H0"
+          ],
+          [
+            "H0",
+            "L0"
+          ],
+          [
+            "T2",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ],
+          [
+            "T1",
+            "L3"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2",
+          "L3"
+        ]
+      },
+      "same_preselected_original_values": {
+        "x0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x1": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-2/3",
+            "0",
+            "1"
+          ],
+          "real_root_index": 2
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x4": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x5": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x6": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x7": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x8": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "g_H0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "H0": 1,
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "L3": 0,
+          "R": 4,
+          "T0": 3,
+          "T1": 2,
+          "T2": 2
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "T1",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-2/3",
+                "0",
+                "1"
+              ],
+              "real_root_index": 2
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "T2",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "2/3"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T1",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 4,
+            "parent": "T2",
+            "child": "H0",
+            "duration": 1,
+            "survival_parameter": "x4",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 5,
+            "parent": "H0",
+            "child": "L0",
+            "duration": 1,
+            "survival_parameter": "x5",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 6,
+            "parent": "T2",
+            "child": "L1",
+            "duration": 2,
+            "survival_parameter": "x6",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 7,
+            "parent": "T0",
+            "child": "L2",
+            "duration": 3,
+            "survival_parameter": "x7",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 8,
+            "parent": "T1",
+            "child": "L3",
+            "duration": 2,
+            "survival_parameter": "x8",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {
+          "g_H0": {
+            "kind": "rational",
+            "value": "1/2"
+          }
+        },
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      },
+      "mode": "independent",
+      "source_pair": [
+        2,
+        0
+      ],
+      "history": [
+        {
+          "weights": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "rational",
+              "value": "0"
+            }
+          ],
+          "response": [
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "rational",
+              "value": "5/9"
+            }
+          ],
+          "section_receipts": []
+        },
+        {
+          "weights": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-85",
+                "0",
+                "166"
+              ],
+              "real_root_index": 2
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "81",
+                "-332",
+                "166"
+              ],
+              "real_root_index": 1
+            }
+          ],
+          "response": [
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "3385",
+                "-14940",
+                "13446"
+              ],
+              "real_root_index": 1
+            },
+            {
+              "kind": "rational",
+              "value": "2/9"
+            },
+            {
+              "kind": "algebraic",
+              "polynomial_ascending": [
+                "-101",
+                "-5976",
+                "13446"
+              ],
+              "real_root_index": 2
+            }
+          ],
+          "section_receipts": [
+            {
+              "status": "EXACT_ALGEBRAIC_HISTORY_SECTION_POINT_SAME_BACKEND",
+              "encoding": {
+                "kind": "algebraic",
+                "polynomial_ascending": [
+                  "-85",
+                  "0",
+                  "166"
+                ],
+                "real_root_index": 2
+              },
+              "receipts": [
+                {
+                  "kind": "point_exists",
+                  "status": "sat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!50 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!50))\n(assert\n (> 1.0 isolatedObservedPoint!50))\n(assert\n (let ((?x474 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!50 1.0)))))\n(let ((?x1620 (+ ?x474 (* 1.0 (^ isolatedObservedPoint!50 2.0)))))\n(= ?x1620 0.0))))\n(check-sat)\n"
+                },
+                {
+                  "kind": "point_unique",
+                  "status": "unsat",
+                  "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun isolatedObservedPoint!50 () Real)\n(assert\n (< 0.0 isolatedObservedPoint!50))\n(assert\n (> 1.0 isolatedObservedPoint!50))\n(assert\n (let ((?x474 (+ (+ 0.0 (* (- (/ 85.0 166.0)) 1.0)) (* 0.0 (^ isolatedObservedPoint!50 1.0)))))\n (let ((?x1620 (+ ?x474 (* 1.0 (^ isolatedObservedPoint!50 2.0)))))\n (= ?x1620 0.0))))\n(assert\n (and (distinct (root-obj (+ (* 166 (^ x 2)) (- 85)) 2) isolatedObservedPoint!50) true))\n(check-sat)\n"
+                }
+              ],
+              "trust": "exact closed algebraic arithmetic and Z3 QF_NRA; symbolic all-history verification is separate"
+            }
+          ]
+        }
+      ],
+      "first_eligible_branch_path": [
+        0,
+        1
+      ],
+      "actual_target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ],
+        [
+          [
+            "L0",
+            "L3"
+          ],
+          [
+            "L1",
+            "L2"
+          ]
+        ]
+      ],
+      "path_cost": [
+        2,
+        2,
+        1
+      ],
+      "both_calls_recompiled_under_one_original_assignment": true
+    }
+  ],
+  "covers_every_emitted_terminal_CAD_cell": true,
+  "provider_sha256": "2332f4a6e242c8a29cf9ce1e39486e4d6ce8a739b4b02d5ce87d85ce69dabcb8",
+  "full_generic_recursive_synthesis_claimed": false,
+  "empirical_admission_claimed": false,
+  "Lean_claimed": false
+}

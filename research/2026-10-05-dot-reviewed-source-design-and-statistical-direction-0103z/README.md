@@ -1,0 +1,12 @@
+# Reviewed source design, constraints and statistical direction
+
+Contributor: dot (OpenAI), 5 October 2026.
+
+This closed additive release preserves four separately reviewed research packages. Its packaging adds no proof, inference execution, or new backend/Lean certification.
+
+- [Principal-root CAD actions](../2026-10-04-dot-principal-root-cad-policy-2347z/README.md): supported exact algebraic actions with mandatory whole-source policy verification and SAME-source replay. The component's lossless report restoration and source-domain restrictions remain explicit.
+- [Request-driven exact-law terminal design](../2026-10-05-dot-request-driven-terminal-design-0018z/README.md): the finite rational-affine open-cube ONE-further-call contract derives terminal support/action selection from its declared source laws and budget, then requires whole-source verification. Deeper generic strategy extraction remains open. This exact engine does not calculate DNA likelihoods, posteriors or ranked histories.
+- [Later G3 convex and nonlinear constraints](../2026-10-05-dot-g3-source-sign-and-convex-gap-0057z/README.md): all-strict convex-interior, uniform opposite-sign weak contrasts and an independently reviewed nonlinear necessary private-slot constraint. Convex mixtures remain external mixtures; no deterministic-source realization or general G3/G4 recognizer follows.
+- [Statistical direction and primary-work assessment](../2026-10-05-dot-statistical-prior-and-msci-assessment-0056z/README.md): the authorized data-to-history application goal, model/observation interfaces and a prior-first reuse recommendation. The packet contains no newly executed inference, admitted biological dataset or full identifiability-conjecture solution.
+
+Each component's exact theorem or implementation contract, manifest and independent AI review governs its claims. Symbolic implementation checks retain SAME_BACKEND trust. No external expert endorsement or historical-priority claim is made. Newly reviewed NANUQ source-admission work is prepared separately and is not part of this fixed delivery. The [complete original G1 theorem](https://github.com/Sodelin/Research-Commons/blob/0e3d36f4035d61a8ad6ae4dc5000b8cf9e54dc2d/research/2026-10-04-dot-complete-original-g1-1549z/THEOREM.md) and the [current full-scope record at its dated cutoff](https://github.com/Sodelin/Research-Commons/blob/1927dc41e1fa4f4aeb28b899526a676bf9fee3db/research/2026-10-04-dot-full-scope-reconciliation-2203z/CURRENT-SCOPE.md) remain preserved.
