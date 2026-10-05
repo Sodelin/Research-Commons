@@ -1,0 +1,101 @@
+{
+  "schema": "bounded-matched-synthetic-attempt-v1",
+  "status": "EXECUTION_EXIT_ZERO",
+  "settings": {
+    "seed": 21001,
+    "loci": 5,
+    "full_sites_per_locus": 489,
+    "full_diploid_individuals": 32,
+    "full_gene_copies": 64,
+    "scientific_role": "known-truth auxiliary generation"
+  },
+  "command": [
+    "bpp",
+    "--simulate",
+    "control.ctl"
+  ],
+  "wall_limit_seconds": 60,
+  "address_space_limit_bytes": 2147483648,
+  "aggregate_attempt_limit_bytes": 268435456,
+  "threads": 1,
+  "conditional_topology": "(((H,L),C),K);",
+  "host_clock_start_utc": "2026-10-05T07:02:28.897878+00:00",
+  "empirical_admission_claimed": false,
+  "posterior_convergence_claimed": false,
+  "simulation_calibration_claimed": false,
+  "input_hashes_before": {
+    "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+    "watchdog": "c89201b45fe65915e3130659fd4dc3522bedfcbab6970735c5b06793a2ec1d8e",
+    "runner": "092cf9496be71005936e445a769893c3edfb1f25afb5a528817475b3c5f237d9",
+    "projector": "2aa59713f21b7e018b23b372984cd5e42afa86cd91ec0b1145f2f78713251cb1",
+    "admission": "3cc842ad5ab6276d991d39eed5a6dd82fb71d8c28780ddbb69544744e4909768",
+    "control": "dad49392999ddf8a908286d588406fd119e77aac98b48d69b0ffc07665d4e5b8"
+  },
+  "exit_code": 0,
+  "watchdog_result": {
+    "status": "EXECUTION_EXIT_ZERO",
+    "exit_code": 0,
+    "monitor_seconds": 0.050932760001160204,
+    "aggregate_byte_limit": 268435456,
+    "receipt_reserve_bytes": 1048576,
+    "stop_threshold_bytes": 267386880,
+    "peak_observed_bytes_before_final_receipt": 454250,
+    "threshold_overshoot_observed_bytes": 0,
+    "cap_overshoot_observed_bytes": 0,
+    "poll_seconds": 0.05,
+    "hard_filesystem_quota_claimed": false,
+    "process_group_cleanup_performed": true,
+    "direct_child_reaped": true,
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden"
+  },
+  "input_hashes_after": {
+    "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+    "watchdog": "c89201b45fe65915e3130659fd4dc3522bedfcbab6970735c5b06793a2ec1d8e",
+    "runner": "092cf9496be71005936e445a769893c3edfb1f25afb5a528817475b3c5f237d9",
+    "projector": "2aa59713f21b7e018b23b372984cd5e42afa86cd91ec0b1145f2f78713251cb1",
+    "admission": "3cc842ad5ab6276d991d39eed5a6dd82fb71d8c28780ddbb69544744e4909768",
+    "control": "dad49392999ddf8a908286d588406fd119e77aac98b48d69b0ffc07665d4e5b8"
+  },
+  "inputs_stable": true,
+  "elapsed_seconds": 0.06581765999726485,
+  "host_clock_end_utc": "2026-10-05T07:02:28.963693+00:00",
+  "output_inventory": [
+    {
+      "path": "control.ctl",
+      "bytes": 319,
+      "sha256": "dad49392999ddf8a908286d588406fd119e77aac98b48d69b0ffc07665d4e5b8"
+    },
+    {
+      "path": "full-synthetic.Imap.txt",
+      "bytes": 166,
+      "sha256": "1fb55a31c9e3fa34cb48cbb823c1e4c56422ced7f1ef659636920034ead1188e"
+    },
+    {
+      "path": "full-synthetic.txt",
+      "bytes": 88065,
+      "sha256": "6cc973ed6bc972f6d6c098da439009739479a2ab8147cbda2be0294ec5165453"
+    },
+    {
+      "path": "full-synthetic.txt.full",
+      "bytes": 176065,
+      "sha256": "17939a6b57ccbfcf1f689b180e242456b88bde3569ae7ec09f9e984ba27fda3a"
+    },
+    {
+      "path": "full-synthetic.txt.rand",
+      "bytes": 176065,
+      "sha256": "51295937b8fb0271b9a80c73a56c77250c3932123c2d1506e73d2a86e962de6c"
+    },
+    {
+      "path": "full-truth-gene-trees.txt",
+      "bytes": 11005,
+      "sha256": "c3c3c04ed4d6d904cde8241be094153d0ef6a878f5cda6a0126e5b08aa4a5ae7"
+    },
+    {
+      "path": "stdout.log",
+      "bytes": 1299,
+      "sha256": "2f57b5ff61d07243641ca86128bfc6886fc8b287ebb7b91ca45b982d6102b7e4"
+    }
+  ],
+  "aggregate_final_bytes": 458016,
+  "cap_overshoot_final_bytes": 0
+}
