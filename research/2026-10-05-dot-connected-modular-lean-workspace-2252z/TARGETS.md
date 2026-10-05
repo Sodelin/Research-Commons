@@ -1,0 +1,48 @@
+# Checked target inventory
+
+Each target has a separate context and complete audit. Counts below are declaration counts, including generated declarations.
+
+- `825/base`: PASS; 337 roots, 337 closure modules; 12052 declarations / 8775 theorem declarations.
+- `825/main`: PASS; 75 roots, 111 closure modules; 3696 declarations / 2360 theorem declarations.
+- `825/pure-induction-v2`: PASS; 10 roots, 13 closure modules; 439 declarations / 330 theorem declarations.
+- `825/graph-repair`: PASS; 1 roots, 29 closure modules; 5 declarations / 4 theorem declarations.
+- `825/theta`: PASS; 297 roots, 352 closure modules; 70826 declarations / 70824 theorem declarations.
+- `825/fair-g5-v1`: PASS; 18 roots, 112 closure modules; 264 declarations / 222 theorem declarations.
+- `825/fair-g5-normalization-v1`: PASS; 5 roots, 117 closure modules; 99 declarations / 65 theorem declarations.
+- `825/fair-g5-sharpness-v1`: PASS; 4 roots, 143 closure modules; 141 declarations / 72 theorem declarations.
+- `825/g1-contextual-v1`: PASS; 5 roots, 100 closure modules; 323 declarations / 182 theorem declarations.
+- `825/g1-graph-v1`: PASS; 11 roots, 122 closure modules; 272 declarations / 215 theorem declarations.
+- `825/g1-joint-v1`: PASS; 12 roots, 111 closure modules; 129 declarations / 100 theorem declarations.
+- `825/g1-normalization-v1`: PASS; 5 roots, 129 closure modules; 106 declarations / 68 theorem declarations.
+- `825/g1-temporal-v1`: PASS; 3 roots, 114 closure modules; 42 declarations / 19 theorem declarations.
+- `825/g1-interface-v1`: PASS; 8 roots, 137 closure modules; 83 declarations / 59 theorem declarations.
+- `825/g1-calendar-v1`: PASS; 2 roots, 139 closure modules; 11 declarations / 9 theorem declarations.
+- `825/g1-unranked-k-v1`: PASS; 11 roots, 122 closure modules; 144 declarations / 89 theorem declarations.
+- `825/g1-completion-v1`: PASS; 7 roots, 157 closure modules; 21 declarations / 19 theorem declarations.
+- `825/g1-compact-v1`: PASS; 14 roots, 174 closure modules; 127 declarations / 110 theorem declarations.
+- `127/g1-active-coordinates-v1`: PASS; 2 roots, 250 closure modules; 69 declarations / 40 theorem declarations.
+- `127/g1-actor-boundaries-v1`: PASS; 9 roots, 282 closure modules; 55 declarations / 45 theorem declarations.
+- `127/g1-actor-compiler-v1`: PASS; 15 roots, 265 closure modules; 305 declarations / 195 theorem declarations.
+- `127/g1-actor-k-v1`: PASS; 8 roots, 230 closure modules; 43 declarations / 34 theorem declarations.
+- `127/g1-alln-sharpness-v1`: PASS; 11 roots, 138 closure modules; 444 declarations / 381 theorem declarations.
+- `127/g1-async-history-v1`: PASS; 4 roots, 239 closure modules; 29 declarations / 16 theorem declarations.
+- `127/g1-async-v1`: PASS; 12 roots, 235 closure modules; 203 declarations / 114 theorem declarations.
+- `127/g1-canonical-crossing-v1`: PASS; 9 roots, 248 closure modules; 110 declarations / 70 theorem declarations.
+- `127/g1-circles-v1`: PASS; 3 roots, 243 closure modules; 33 declarations / 23 theorem declarations.
+- `127/g1-closing-v1`: PASS; 7 roots, 201 closure modules; 68 declarations / 44 theorem declarations.
+- `127/g1-decorated-v1`: PASS; 6 roots, 189 closure modules; 189 declarations / 100 theorem declarations.
+- `127/g1-displayed-v1`: PASS; 6 roots, 239 closure modules; 62 declarations / 53 theorem declarations.
+- `127/g1-macro-history-v1`: PASS; 6 roots, 137 closure modules; 124 declarations / 63 theorem declarations.
+- `127/g1-macro-v1`: PASS; 5 roots, 129 closure modules; 123 declarations / 65 theorem declarations.
+- `127/g1-multispan-v1`: PASS; 5 roots, 194 closure modules; 68 declarations / 57 theorem declarations.
+- `127/g1-nontrivial-S-v1`: PASS; 1 roots, 240 closure modules; 12 declarations / 9 theorem declarations.
+- `127/g1-root-observer-v1`: PASS; 3 roots, 267 closure modules; 23 declarations / 14 theorem declarations.
+- `127/g1-span-separator-v1`: PASS; 11 roots, 223 closure modules; 86 declarations / 67 theorem declarations.
+- `127/g1-whole-tree-family-v1`: PASS; 4 roots, 243 closure modules; 36 declarations / 30 theorem declarations.
+- `G1-467/G1-complete`: PASS; 467 roots, 467 closure modules; 8016 declarations / 5397 theorem declarations.
+- `NANUQ53/NANUQ53`: PASS; 53 roots, 94 closure modules; 833 declarations / 603 theorem declarations.
+- `G2-criterion/G2-criterion`: PASS; 2 roots, 95 closure modules; 43 declarations / 29 theorem declarations.
+- `ThueMorse7/ThueMorse`: PASS; 7 roots, 7 closure modules; 323 declarations / 312 theorem declarations.
+- `integration/curve-adapter`: PASS; 3 roots, 492 closure modules; 14 declarations / 11 theorem declarations.
+- `connected/compatible`: PASS; 1124 roots, 1124 closure modules; 93129 declarations / 86621 theorem declarations.
+- `connected/feedback-legacy`: PASS; 1 roots, 1 closure modules; 46 declarations / 37 theorem declarations.
