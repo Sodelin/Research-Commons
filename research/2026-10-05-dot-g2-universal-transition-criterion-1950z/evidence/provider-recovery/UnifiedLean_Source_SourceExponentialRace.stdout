@@ -1,0 +1,35 @@
+UnifiedLean/Source/SourceExponentialRace.lean:47:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceExponentialRace.splitClock_preimage_pi`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/SourceExponentialRace.lean:72:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+UnifiedLean/Source/SourceExponentialRace.lean:89:61: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+UnifiedLean/Source/SourceExponentialRace.lean:86:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceExponentialRace.winnerBefore_preimage`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/SourceExponentialRace.lean:103:32: warning: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+UnifiedLean/Source/SourceExponentialRace.lean:103:46: warning: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+UnifiedLean/Source/SourceExponentialRace.lean:97:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceExponentialRace.measurable_split_winner`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.SourceExponentialRace.splitClock_measurePreserving' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceExponentialRace.actual_race_measure_reduction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

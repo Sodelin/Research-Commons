@@ -1,0 +1,29 @@
+UnifiedLean/Source/FiniteGenealogyEncoding.lean:38:4: warning: Variable name `n` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _n
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+UnifiedLean/Source/FiniteGenealogyEncoding.lean:49:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.FiniteGenealogyEncoding.decode_encode`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+UnifiedLean/Source/FiniteGenealogyEncoding.lean:76:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.FiniteGenealogyEncoding.wellLabelled_height_lt_leaves`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.FiniteGenealogyEncoding.decode_encode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.Source.FiniteGenealogyEncoding.wellLabelled_height_lt_leaves' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.FiniteGenealogyEncoding.wellLabelled_height_below_copy_cap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.FiniteGenealogyEncoding.liveGenealogyCode_decodes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

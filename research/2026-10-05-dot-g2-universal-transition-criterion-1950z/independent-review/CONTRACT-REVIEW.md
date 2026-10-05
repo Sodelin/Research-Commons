@@ -1,0 +1,11 @@
+# G2 universal operator criterion: formalization contract review
+
+Accepted proposed endpoint at CONTRACT.md SHA256 1a504f4e9f250a0b4e95fda93eb061a1eeb485374fecfe62ade61bbeb538e0b8. This is a contract gate, not acceptance of a Lean proof or a new theorem of historical novelty.
+
+The original G1/G2 fresh-source hand review Section 4 explicitly proves local generator and routing identities necessary and sufficient for universal initial-state/delay/transition testing. The proposed finite-carrier rectangular-matrix iff matches that obligation. Sufficiency follows from the existing exponential intertwining provider and chronological product induction; necessity uses single-pulse tests and right differentiation at zero of the nonnegative-time semigroup identity. No negative-time physical intervention is needed. Equality on every initial point mass and every output-state indicator is precisely matrix entry equality.
+
+The contract correctly distinguishes universal algebraic operator-test lists from a fixed source's physically admitted chronological program. Arbitrary repeated/reordered pulse words are not silently declared legal biological experiments. Source corollaries must instantiate the derived actual epoch/boundary identities along the admitted chronology, retaining original source/registry/parameter semantics. A single terminal-law equality is insufficient for necessity, and this endpoint does not prove a full continuous path measure or all broader original G2 statements.
+
+Independent local source search found the accepted sufficiency and actual-source projectivity/program providers, with no matching iff/necessity endpoint in the inspected preserved sources. This is a bounded duplicate check, not a theorem of absence across uninspected files. Reuse those exact providers; report only the rebuilt dependency subset and fresh certificate actually obtained. Do not claim an 825-module rebuild or programme-wide G2 closure.
+
+Proceed with the exact formal endpoint and source-instance connection, then freeze source hashes, guards, dependency/axiom audits and the recorded build result for independent proof review. The first derivative sanity draft is not accepted evidence until that review.
