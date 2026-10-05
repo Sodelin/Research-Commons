@@ -1,0 +1,134 @@
+{
+  "bytes_before_terminal": 14300,
+  "certificate_status": "VALIDATION_OUTPUT_AVAILABLE",
+  "checker": {
+    "aggregate_byte_limit": 67108864,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/seq_check.py",
+      "--request",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/incompatible/REQUEST.json",
+      "--request-sha256",
+      "101d0d1c39d4ee6074fd4c796d07daf34c51a13437e05e5cb3ae729a19a3e156",
+      "--checkpoints",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/incompatible/checkpoints",
+      "--source-pins",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/incompatible/CHECKER-PINS.json",
+      "--source-pins-sha256",
+      "9392ebd11dad950fbea444df960a7546f271e5db34520545c2c8f7b2b997527f",
+      "--normal"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.10127212699444499,
+    "outer_wall_seconds": 40,
+    "peak_observed_bytes_before_final_receipt": 12781,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 1048576,
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 66060288,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "checker_output_available": true,
+  "failure": null,
+  "inventory": {
+    "BEFORE.json": {
+      "bytes": 1125,
+      "sha256": "939b69263382ddbdc2e5970aef7e8f931f4aee495106a705dac90edf7ab3d6ce"
+    },
+    "CHECKER-PINS.json": {
+      "bytes": 354,
+      "sha256": "9392ebd11dad950fbea444df960a7546f271e5db34520545c2c8f7b2b997527f"
+    },
+    "REQUEST.json": {
+      "bytes": 1042,
+      "sha256": "101d0d1c39d4ee6074fd4c796d07daf34c51a13437e05e5cb3ae729a19a3e156"
+    },
+    "checker-TERMINAL.json": {
+      "bytes": 1519,
+      "sha256": "d7c2b3cc1615bfb2cbae7b1efddd33b952dac19f281e235be7d74c1255554c3f"
+    },
+    "checker.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "checker.stdout": {
+      "bytes": 838,
+      "sha256": "8f36db39e562f83fc2eddfffe7fdacd009dbc89a54d25688adc0c35e89b19363"
+    },
+    "checkpoints/state-00000-2edaeb0379fc7468741931159be4bd2c072ec80fc2c4b3a6703c480534955d8d.json": {
+      "bytes": 1131,
+      "sha256": "2edaeb0379fc7468741931159be4bd2c072ec80fc2c4b3a6703c480534955d8d"
+    },
+    "checkpoints/state-00001-fc8b7e333d8affe80412d09c6f23f6fea92cb2151967297695dabe707dad30d2.json": {
+      "bytes": 1267,
+      "sha256": "fc8b7e333d8affe80412d09c6f23f6fea92cb2151967297695dabe707dad30d2"
+    },
+    "checkpoints/state-00002-d919426819a531046204a5b0c9e938455ba47270950fdeb64408b55a6b4bf3ad.json": {
+      "bytes": 1832,
+      "sha256": "d919426819a531046204a5b0c9e938455ba47270950fdeb64408b55a6b4bf3ad"
+    },
+    "checkpoints/state-00003-684a932642cf0869f76d7e564b0de3b4274c2afde0a1b80b9a0fc603e2552e7d.json": {
+      "bytes": 1970,
+      "sha256": "684a932642cf0869f76d7e564b0de3b4274c2afde0a1b80b9a0fc603e2552e7d"
+    },
+    "checkpoints/state-00004-dd22349b6c722ece862d96d82872f8e642f7e3fe4e4ed262878999b6159fe0b6.json": {
+      "bytes": 1713,
+      "sha256": "dd22349b6c722ece862d96d82872f8e642f7e3fe4e4ed262878999b6159fe0b6"
+    },
+    "producer-TERMINAL.json": {
+      "bytes": 1250,
+      "sha256": "31fe07d3e45261d7b4d2d4f29b16db603740ff6c54aa1024121651dbbcb76aae"
+    },
+    "producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "producer.stdout": {
+      "bytes": 259,
+      "sha256": "0d9041e6975e5c223eeec50c8800568915a2dc1114ea70215c9f3b810619f7f9"
+    }
+  },
+  "inventory_failure": null,
+  "producer": {
+    "aggregate_byte_limit": 67108864,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/seq_engine.py",
+      "--request",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/incompatible/REQUEST.json",
+      "--request-sha256",
+      "101d0d1c39d4ee6074fd4c796d07daf34c51a13437e05e5cb3ae729a19a3e156",
+      "--checkpoints",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/incompatible/checkpoints"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.10122747799323406,
+    "outer_wall_seconds": 40,
+    "peak_observed_bytes_before_final_receipt": 10693,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 1048576,
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 66060288,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "public_projection": {
+    "normalization": "Absolute workspace prefix in command arguments replaced by WORKSPACE. Original terminal bytes independently authenticated; this is a derived projection.",
+    "original_terminal_sha256": "9b6bca0f8da3c7353d32d1b25382f6366d130a17c365d7d347b9775adbfb6e64"
+  },
+  "request_sha256": "101d0d1c39d4ee6074fd4c796d07daf34c51a13437e05e5cb3ae729a19a3e156",
+  "schema": "bounded-sequential-attempt-v1",
+  "source_and_input_pins_stable": true,
+  "source_manifest_sha256": "dd5c7fc927f1915cf24296a89243b239d69b8e99f4edfded97e5841fa6d4f310"
+}

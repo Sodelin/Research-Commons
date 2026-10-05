@@ -1,0 +1,100 @@
+{
+  "schema": "sequential-arithmetic-control-spec-v1",
+  "physical_domain": {
+    "h": [
+      "1/32",
+      "1/8"
+    ],
+    "u": [
+      "1/32",
+      "1/8"
+    ],
+    "v": [
+      "1/32",
+      "1/8"
+    ],
+    "rA": [
+      "1/2",
+      "6"
+    ],
+    "rB": [
+      "1/2",
+      "6"
+    ],
+    "rC": [
+      "1/2",
+      "6"
+    ],
+    "rAB": [
+      "1/2",
+      "6"
+    ],
+    "rR": [
+      "1/2",
+      "6"
+    ],
+    "g": [
+      "1/6",
+      "2/3"
+    ]
+  },
+  "new_arithmetic_source": {
+    "h": "5/64",
+    "u": "5/64",
+    "v": "5/64",
+    "rA": "3/2",
+    "rB": "5/2",
+    "rC": "7/2",
+    "rAB": "9/2",
+    "rR": "11/2",
+    "g": "2/5"
+  },
+  "new_forward_output_bits": 64,
+  "controls": [
+    {
+      "name": "distinct",
+      "observations": "published_distinct",
+      "max_operations": 48,
+      "sweeps_per_cell": 4,
+      "max_splits": 0
+    },
+    {
+      "name": "equal",
+      "observations": "published_equal",
+      "max_operations": 48,
+      "sweeps_per_cell": 4,
+      "max_splits": 0
+    },
+    {
+      "name": "two_sources",
+      "observations": "hull_distinct_and_new",
+      "max_operations": 64,
+      "sweeps_per_cell": 2,
+      "max_splits": 1
+    },
+    {
+      "name": "uninformative",
+      "observations": "unit_box",
+      "max_operations": 24,
+      "sweeps_per_cell": 1,
+      "max_splits": 1
+    },
+    {
+      "name": "zero_budget",
+      "observations": "hull_distinct_and_new",
+      "max_operations": 0,
+      "sweeps_per_cell": 1,
+      "max_splits": 0
+    },
+    {
+      "name": "incompatible",
+      "observations": "AC1_9over10_AC2_3over5_rest_unit",
+      "max_operations": 12,
+      "sweeps_per_cell": 1,
+      "max_splits": 0
+    }
+  ],
+  "statistical_coverage_claimed": false,
+  "new_biological_data_or_simulation": false,
+  "truth_verification_output_bits": 128
+}

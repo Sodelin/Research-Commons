@@ -1,0 +1,1 @@
+These exact old preparation-source/manifest/plan bytes were reconstructed from the final delta and matched against their originally recorded SHA256 identities. The old Stage A gate was superseded before any execution by the 128-bit truth-verification addendum. No run used these old identities. They are provenance history, not current instructions.

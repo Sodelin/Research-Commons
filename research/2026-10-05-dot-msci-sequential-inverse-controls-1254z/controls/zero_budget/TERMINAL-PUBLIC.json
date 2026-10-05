@@ -1,0 +1,118 @@
+{
+  "bytes_before_terminal": 11835,
+  "certificate_status": "VALIDATION_OUTPUT_AVAILABLE",
+  "checker": {
+    "aggregate_byte_limit": 67108864,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/seq_check.py",
+      "--request",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/zero_budget/REQUEST.json",
+      "--request-sha256",
+      "b688caf59e8dc468b13297ad1f5eebc9d1d06e338822db74c2bf77ac61a50063",
+      "--checkpoints",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/zero_budget/checkpoints",
+      "--source-pins",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/zero_budget/CHECKER-PINS.json",
+      "--source-pins-sha256",
+      "9392ebd11dad950fbea444df960a7546f271e5db34520545c2c8f7b2b997527f",
+      "--normal"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.05072558000392746,
+    "outer_wall_seconds": 40,
+    "peak_observed_bytes_before_final_receipt": 10319,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 1048576,
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 66060288,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "checker_output_available": true,
+  "failure": null,
+  "inventory": {
+    "BEFORE.json": {
+      "bytes": 1125,
+      "sha256": "088035e1d934ca387713f58174e21f574edafdeec0ec9bdd2fcf06e9f0dbd3e3"
+    },
+    "CHECKER-PINS.json": {
+      "bytes": 354,
+      "sha256": "9392ebd11dad950fbea444df960a7546f271e5db34520545c2c8f7b2b997527f"
+    },
+    "REQUEST.json": {
+      "bytes": 1780,
+      "sha256": "b688caf59e8dc468b13297ad1f5eebc9d1d06e338822db74c2bf77ac61a50063"
+    },
+    "checker-TERMINAL.json": {
+      "bytes": 1516,
+      "sha256": "5f021a284322ceeb4bd3086cc18179818b80c90e5d39e8884d457db8f3d2b9f3"
+    },
+    "checker.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "checker.stdout": {
+      "bytes": 3722,
+      "sha256": "9032a8fc4f1b4ccfb393ef32972c88fde8dafe96bfb400b957791017dc1467cd"
+    },
+    "checkpoints/state-00000-aee09d5adb130c70c741aef5efac77321f66874a90c7b41c1731069b668a659d.json": {
+      "bytes": 1838,
+      "sha256": "aee09d5adb130c70c741aef5efac77321f66874a90c7b41c1731069b668a659d"
+    },
+    "producer-TERMINAL.json": {
+      "bytes": 1247,
+      "sha256": "2dea47667a1768a6f4be20a250790eb29b81791c822f209cb617ee16e98d57f6"
+    },
+    "producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "producer.stdout": {
+      "bytes": 253,
+      "sha256": "81159238ac2ec312002551a97104f4d6782c95402ddce24037b8cb1b7992aa1c"
+    }
+  },
+  "inventory_failure": null,
+  "producer": {
+    "aggregate_byte_limit": 67108864,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/seq_engine.py",
+      "--request",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/zero_budget/REQUEST.json",
+      "--request-sha256",
+      "b688caf59e8dc468b13297ad1f5eebc9d1d06e338822db74c2bf77ac61a50063",
+      "--checkpoints",
+      "WORKSPACE/msci-sequential-inverse-implementation-20261005-1225z/controls/zero_budget/checkpoints"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.10130979098903481,
+    "outer_wall_seconds": 40,
+    "peak_observed_bytes_before_final_receipt": 5350,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 1048576,
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 66060288,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "public_projection": {
+    "normalization": "Absolute workspace prefix in command arguments replaced by WORKSPACE. Original terminal bytes independently authenticated; this is a derived projection.",
+    "original_terminal_sha256": "ae56c0483424830004186ec2edbbce733caef7e5e8f328e85bfd77483f105cdc"
+  },
+  "request_sha256": "b688caf59e8dc468b13297ad1f5eebc9d1d06e338822db74c2bf77ac61a50063",
+  "schema": "bounded-sequential-attempt-v1",
+  "source_and_input_pins_stable": true,
+  "source_manifest_sha256": "dd5c7fc927f1915cf24296a89243b239d69b8e99f4edfded97e5841fa6d4f310"
+}
