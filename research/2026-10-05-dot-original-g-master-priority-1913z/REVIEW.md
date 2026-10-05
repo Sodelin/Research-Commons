@@ -1,0 +1,15 @@
+# Independent original-master priority and dependency review
+
+This checkpoint is accepted as a source/statement/dependency reconciliation, not a new proof or experiment.
+
+The original G3 exact criterion, original G4 admitted tester Section 1, original 0549 scope and explicit unknown-size boundary were retrieved from immutable published references and read directly. G3 finite exact-input recognition is separated from the all-cap nonescape quantifier characterization. G4 fixes the target before every finite-prefix quantifier and retains the original legal topology/completion/ID/register menu; finite determination and effective stopping are distinguished. No free equivalence oracle, hidden readout or supplied complexity bound is added.
+
+The G3 owner read the original criterion and complete initial master/alias drafts and returned ACK. The G4 owner confirmed the fixed-target/full-menu statement and the later explicit observation-input/effectivity clarification. The Lean/delivery owner reviewed the final master and formal-coverage additions, providing the exact source-linked endpoint ledger. The parent reviewed README/master/alias content and approved scope. Later changes only integrate those separately reviewed input and formal-coverage precisions.
+
+The alias dictionary was retrieved directly: CG1–CG4/MG1–MG3 are defined in the original combination map, HG in the bounded-indegree review, and hidden-C4/itinerary boundaries in 0701 scope. Final cross-G and resource-substitution acceptance receipts supersede stale pending-review headers. Existing component results and classical views are not counted as new masters. No claim is made that this bounded lookup discovered every unrelated historical label anywhere.
+
+The exact Lean ledger is copied unchanged at SHA256 8eea966b2efe033f35cfc417a13eb5edb198d7b2d242ac168c53c2784a34670b. This reviewer independently inspected the controlled complete unranked all-panel theorem (including empty-panel branch) and the normalized fair-M2 identification statement at their stated source hashes. Broader whole-contract rows remain under audit. Recorded 825 object reuse, 127 separate successors and prepared 968 collection are not conflated with a fresh combined rebuild. No compiler was run by this reconciliation.
+
+All completed biological/statistical theory and execution records remain preserved. The latest two-source summary witness is public at 2836ff8d1256ac29950e861db4bef53fd3c7ee53. Solver development is temporarily deprioritized and available, not cancelled. The new allocation uses the same four existing lanes and selects further work by actual dependency, existing proof coverage and matching prior results. No public biological data, vendor code or private operational record is copied into this packet.
+
+Original G3/G4 direct proofs and original formalization obligations are the current priority. No finite-cap ladder, renamed auxiliary problem or narrower menu is allowed to substitute for those statements. Publication of this checkpoint does not itself mark any master closed.
