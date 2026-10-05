@@ -156,3 +156,8 @@ The former intended 579-file batch remains incomplete under its old identity. Th
 
 Publication stays serialized, additive and non-force, preserving all existing proof and scope files. The dated forward pointer is append-only. This record is prepared for the next natural accepted batch; immutable readback and its exact manifest, rather than a queued status, establish final delivery. No private operational or dataset material is included.
 
+
+
+## Current full-scope successor — 5 October 2026, 06:18 UTC
+
+The [5 October full-scope reconciliation](../2026-10-05-dot-full-scope-reconciliation-0618z/CURRENT-SCOPE.md) preserves this dated record and the complete earlier scope chain. It records the preservation readback, public fixed-family finite-locus/55-site results, actual-source NANUQ progress, exact-law and statistical-solver boundaries, four current ownership lanes, and the user-authorized bounded multipulse direction. Its explicitly dated post-cutoff delivery note distinguishes later publication from mathematical acceptance. Original G3/G4, geometric/full NANUQ formalization, general G7 synthesis and empirical admission retain their stated open obligations. This forward link adds navigation only; the historical text above is unchanged.
