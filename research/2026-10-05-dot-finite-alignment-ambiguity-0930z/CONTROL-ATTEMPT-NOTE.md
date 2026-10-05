@@ -1,0 +1,5 @@
+# Finite control correction
+
+5 October2026,09:18UTC. The first control run reached the two-atom feature reconstruction and failed at a Python set comparison between SymPy Rational keys and fractions.Fraction values. The recovered roots were exactly291/400 and347/400, equal elementwise to the expected values, but the libraries use incompatible hash values for those equal numeric objects. The test was corrected by converting expected values to SymPy Rational before forming the set. The first script is retained as check_finite_alignment.first_attempt.py. This correction changes the assertion's representation normalization, not the mathematical calculation or claimed theorem.
+
+Independent mathematical review also requested a wording precision in the theorem: the n=N bridge gives finite-alignment inclusion from the selected N-leaf marginals; exact equality with the entire dN-leaf timed-law fibre requires the n=dN bridge. The final proof explicitly makes this distinction, as well as retaining the separate all-copy caveat.
