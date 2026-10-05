@@ -1,0 +1,43 @@
+{
+  "aggregate_byte_limit": 268435456,
+  "cap_overshoot_observed_bytes": 0,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/prepare_input.py",
+    "--request",
+    "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/incompatible_sixtyfour/ANALYSIS-REQUEST.json",
+    "--request-sha256",
+    "279e3140eb04950d2f308f391d8e8a8e281b6f1b25163a450f9a75e3067b47b9",
+    "--dataset",
+    "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/incompatible_sixtyfour/DATASET.json",
+    "--admission",
+    "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/incompatible_sixtyfour/ADMISSION.json",
+    "--registry",
+    "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/ADMISSION-REGISTRY.json",
+    "--registry-sha256",
+    "bb75317a350a2d8d24d629154da48cc6d04796dc7e2a8c787fc71a39cf1de860",
+    "--output",
+    "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/incompatible_sixtyfour/prepared"
+  ],
+  "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+  "direct_child_reaped": true,
+  "exit_code": 0,
+  "finished_utc": "2026-10-05T17:04:52.785232+00:00",
+  "hard_filesystem_quota_claimed": false,
+  "memory_limit_bytes": 536870912,
+  "monitor_seconds": 0.2019344349973835,
+  "outer_wall_seconds": 30,
+  "peak_observed_bytes_before_final_receipt": 19606,
+  "poll_seconds": 0.05,
+  "process_group_cleanup_performed": true,
+  "public_projection": {
+    "normalization": "absolute workspace prefix replaced by WORKSPACE; all other original fields retained",
+    "original_sha256": "5f051c32ccb3291cc65f71679d9a16410684bd6330048123db07cfb353639cc5"
+  },
+  "receipt_reserve_bytes": 4194304,
+  "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+  "started_utc": "2026-10-05T17:04:52.581583+00:00",
+  "status": "EXECUTION_EXIT_ZERO",
+  "stop_threshold_bytes": 264241152,
+  "threshold_overshoot_observed_bytes": 0
+}

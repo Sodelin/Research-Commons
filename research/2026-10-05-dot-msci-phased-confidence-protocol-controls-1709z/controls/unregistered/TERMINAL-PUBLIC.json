@@ -1,0 +1,94 @@
+{
+  "bytes_before_terminal": 6185,
+  "composed_output_sha256": "5855501487e7f648fb44797185d05a60cc5440d1d538b96b236876194813b275",
+  "data_confidence_certificate_issued": false,
+  "error": null,
+  "fresh_inverse_executed": false,
+  "fresh_inverse_verified": false,
+  "inventory": {
+    "ADMISSION.json": {
+      "bytes": 774,
+      "sha256": "9a244e8e9dce8730c77e5495cb1caeb8880fa1df04e2a74bbc801fb3c0e3f76b"
+    },
+    "ANALYSIS-REQUEST.json": {
+      "bytes": 935,
+      "sha256": "3b98b0c73f9a0b023423510aaa2fe211c36ac84c26d2ee5cc85eb110265f22d6"
+    },
+    "BEFORE.json": {
+      "bytes": 978,
+      "sha256": "68ef4975743426065c9cf29a376a340944cc9656c589e92339e6087a8e21b27e"
+    },
+    "COMPOSED-RESULT.json": {
+      "bytes": 345,
+      "sha256": "5855501487e7f648fb44797185d05a60cc5440d1d538b96b236876194813b275"
+    },
+    "DATASET.json": {
+      "bytes": 261,
+      "sha256": "3109d57b20b95de7125f477891ba64122a55c0a14d1c2b65f04d05ee2652ec98"
+    },
+    "prepare-TERMINAL.json": {
+      "bytes": 1959,
+      "sha256": "2c3fa369fa49b006004a189cc56199baea76d970574cded4a4bf082a4d5b4c46"
+    },
+    "prepare.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "prepare.stdout": {
+      "bytes": 491,
+      "sha256": "ae76d798e896c2df4db9458cc1d35737954fa6e241a2eb70b8fc8c303ca33d40"
+    },
+    "prepared/PREPARATION.json": {
+      "bytes": 442,
+      "sha256": "aa420c89a7b42f32910e274a9bfb27e493231c9e5df9b73e147d981ccf27cfd1"
+    }
+  },
+  "inventory_failure": null,
+  "output_failure": null,
+  "preparation_stage": {
+    "aggregate_byte_limit": 268435456,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/prepare_input.py",
+      "--request",
+      "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/unregistered/ANALYSIS-REQUEST.json",
+      "--request-sha256",
+      "3b98b0c73f9a0b023423510aaa2fe211c36ac84c26d2ee5cc85eb110265f22d6",
+      "--dataset",
+      "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/unregistered/DATASET.json",
+      "--admission",
+      "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/unregistered/ADMISSION.json",
+      "--registry",
+      "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/ADMISSION-REGISTRY.json",
+      "--registry-sha256",
+      "bb75317a350a2d8d24d629154da48cc6d04796dc7e2a8c787fc71a39cf1de860",
+      "--output",
+      "WORKSPACE/msci-phased-confidence-implementation-20261005-1634z/controls/unregistered/prepared"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T17:04:54.427018+00:00",
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.1515920709935017,
+    "outer_wall_seconds": 30,
+    "peak_observed_bytes_before_final_receipt": 3881,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 4194304,
+    "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+    "started_utc": "2026-10-05T17:04:54.273611+00:00",
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 264241152,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "public_projection": {
+    "normalization": "absolute workspace prefix replaced by WORKSPACE; all other original fields retained",
+    "original_sha256": "82b1fc4d139dc8cec5b8695cc6634147d5bad522d783f3116df3e3f601b4d3d2"
+  },
+  "request_sha256": "3b98b0c73f9a0b023423510aaa2fe211c36ac84c26d2ee5cc85eb110265f22d6",
+  "schema": "fresh-phased-confidence-attempt-v1",
+  "source_manifest_sha256": "af80b3c5f2457eb5db4afcb3aba25d53832edd0b52381cd2c7074755ee3f6167"
+}
