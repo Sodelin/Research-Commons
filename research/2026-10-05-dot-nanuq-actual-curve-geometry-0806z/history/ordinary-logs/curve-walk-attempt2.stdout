@@ -1,0 +1,245 @@
+src/NanuqActualCurveWalk.lean:41:11: error: Type mismatch
+  mem_singleton ?m.31
+has type
+  ?m.31 ∈ {?m.31}
+but is expected to have type
+  a ∈ (nil a).vertices
+src/NanuqActualCurveWalk.lean:42:24: error: Type mismatch
+  mem_insert_of_mem ?m.38 ih
+has type
+  a ∈ insert ?m.38 w.vertices
+but is expected to have type
+  a ∈ (w.forward e h).vertices
+src/NanuqActualCurveWalk.lean:43:25: error: Type mismatch
+  mem_insert_of_mem ?m.45 ih
+has type
+  a ∈ insert ?m.45 w.vertices
+but is expected to have type
+  a ∈ (w.backward e h).vertices
+src/NanuqActualCurveWalk.lean:47:4: error: Type mismatch
+  mem_singleton ?m.103
+has type
+  ?m.103 ∈ {?m.103}
+but is expected to have type
+  a ∈ (nil a).vertices
+src/NanuqActualCurveWalk.lean:48:4: error: Type mismatch
+  mem_insert ?m.105 ?m.106
+has type
+  ?m.105 ∈ insert ?m.105 ?m.106
+but is expected to have type
+  G.target e✝ ∈ (w✝.forward e✝ h✝).vertices
+src/NanuqActualCurveWalk.lean:49:4: error: Type mismatch
+  mem_insert ?m.108 ?m.109
+has type
+  ?m.108 ∈ insert ?m.108 ?m.109
+but is expected to have type
+  G.source e✝ ∈ (w✝.backward e✝ h✝).vertices
+src/NanuqActualCurveWalk.lean:54:28: error: Application type mismatch: The argument
+  he
+has type
+  e ∈ (nil a).edges
+but is expected to have type
+  False
+in the application
+  False.elim he
+src/NanuqActualCurveWalk.lean:56:19: error: Tactic `rcases` failed: `he : (w.forward f hf).edges e` is not an inductive datatype
+src/NanuqActualCurveWalk.lean:60:19: error: Tactic `rcases` failed: `he : (w.backward f hf).edges e` is not an inductive datatype
+src/NanuqActualCurveWalk.lean:67:37: error: Application type mismatch: The argument
+  D
+has type
+  G.CurveDrawing
+of sort `Type (max (max u_1 u_2) u_3)` but is expected to have type
+  ↑unitInterval
+of sort `Type` in the application
+  (curve w) D
+src/NanuqActualCurveWalk.lean:68:38: error: Application type mismatch: The argument
+  D
+has type
+  G.CurveDrawing
+of sort `Type (max (max u_1 u_2) u_3)` but is expected to have type
+  ↑unitInterval
+of sort `Type` in the application
+  (curve w) D
+src/NanuqActualCurveWalk.lean:77:4: warning: aesop: failed to prove the goal after exhaustive search.
+src/NanuqActualCurveWalk.lean:74:21: error: unsolved goals
+case mp
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.source e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+w_1 : ℝ
+left : 0 ≤ w_1
+right : w_1 ≤ 1
+⊢ (sorry ()) ⟨w_1, ⋯⟩ = D.point a ∨
+    (∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (D.arc e) ⟨a_1, ⋯⟩ = (sorry ()) ⟨w_1, ⋯⟩) ∨
+      ∃ a_1 ∈ w.edges, ∃ a_2, ∃ (h : 0 ≤ a_2 ∧ a_2 ≤ 1), (D.arc a_1) ⟨a_2, ⋯⟩ = (sorry ()) ⟨w_1, ⋯⟩
+
+case mpr.inl
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.source e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+⊢ ∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (sorry ()) ⟨a_1, ⋯⟩ = D.point a
+
+case mpr.inr.inl
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.source e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+w_1 : ℝ
+left : 0 ≤ w_1
+right : w_1 ≤ 1
+⊢ ∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (sorry ()) ⟨a_1, ⋯⟩ = (D.arc e) ⟨w_1, ⋯⟩
+
+case mpr.inr.inr
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.source e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+w_1 : E
+left : w_1 ∈ w.edges
+w_2 : ℝ
+left_1 : 0 ≤ w_2
+right : w_2 ≤ 1
+⊢ ∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (sorry ()) ⟨a_1, ⋯⟩ = (D.arc w_1) ⟨w_2, ⋯⟩
+src/NanuqActualCurveWalk.lean:81:4: warning: aesop: failed to prove the goal after exhaustive search.
+src/NanuqActualCurveWalk.lean:78:22: error: unsolved goals
+case mp
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.target e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+w_1 : ℝ
+left : 0 ≤ w_1
+right : w_1 ≤ 1
+⊢ (sorry ()) ⟨w_1, ⋯⟩ = D.point a ∨
+    (∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (D.arc e) ⟨a_1, ⋯⟩ = (sorry ()) ⟨w_1, ⋯⟩) ∨
+      ∃ a_1 ∈ w.edges, ∃ a_2, ∃ (h : 0 ≤ a_2 ∧ a_2 ≤ 1), (D.arc a_1) ⟨a_2, ⋯⟩ = (sorry ()) ⟨w_1, ⋯⟩
+
+case mpr.inl
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.target e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+⊢ ∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (sorry ()) ⟨a_1, ⋯⟩ = D.point a
+
+case mpr.inr.inl
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.target e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+w_1 : ℝ
+left : 0 ≤ w_1
+right : w_1 ≤ 1
+⊢ ∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (sorry ()) ⟨a_1, ⋯⟩ = (D.arc e) ⟨w_1, ⋯⟩
+
+case mpr.inr.inr
+V : Type u_1
+E : Type u_2
+P : Type u_3
+inst : TopologicalSpace P
+G : EdgeGraph V E
+D : G.CurveDrawing
+a b : V
+e : E
+w : G.OccurrenceWalk a (G.target e)
+ih : range ⇑(curve D w) = insert (D.point a) (⋃ e_1 ∈ w.edges, range ⇑(D.arc e_1))
+w_1 : E
+left : w_1 ∈ w.edges
+w_2 : ℝ
+left_1 : 0 ≤ w_2
+right : w_2 ≤ 1
+⊢ ∃ a_1, ∃ (h : 0 ≤ a_1 ∧ a_1 ≤ 1), (sorry ()) ⟨a_1, ⋯⟩ = (D.arc w_1) ⟨w_2, ⋯⟩
+src/NanuqActualCurveWalk.lean:73:17: warning: declaration uses `sorry`
+src/NanuqActualCurveWalk.lean:73:17: warning: declaration uses `sorry`
+src/NanuqActualCurveWalk.lean:75:21: warning: This simp argument is unused:
+  Path.trans_range
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.cast_coe, ih, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualCurveWalk.lean:75:38: warning: This simp argument is unused:
+  Path.cast_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.trans_range, ih, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualCurveWalk.lean:75:52: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.trans_range, Path.cast_coe, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualCurveWalk.lean:79:21: warning: This simp argument is unused:
+  Path.trans_range
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.cast_coe, Path.symm_range, ih, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualCurveWalk.lean:79:38: warning: This simp argument is unused:
+  Path.cast_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.trans_range, Path.symm_range, ih, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualCurveWalk.lean:79:52: warning: This simp argument is unused:
+  Path.symm_range
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.trans_range, Path.cast_coe, ih, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualCurveWalk.lean:79:68: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [curve, Path.trans_range, Path.cast_coe, Path.symm_range, edges]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

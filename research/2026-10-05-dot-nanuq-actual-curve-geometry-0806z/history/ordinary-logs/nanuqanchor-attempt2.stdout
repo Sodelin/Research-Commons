@@ -1,0 +1,73 @@
+src/NanuqActualNanuqAnchorBridge.lean:23:26: error: Tactic `rfl` failed: The left-hand side
+  0
+is not definitionally equal to the right-hand side
+  if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+  else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+
+case pos
+V : Type u_1
+E : Type u_2
+n : ℕ
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : DecidableEq V
+N : RootedBinary V E (Fin n)
+p q x y : Fin n
+hxy : ¬x = y
+hpq : ¬p = q
+h✝ : (x = p ∨ x = q) ∧ (y = p ∨ y = q)
+⊢ 0 =
+    if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+    else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+src/NanuqActualNanuqAnchorBridge.lean:23:26: error: Tactic `rfl` failed: The left-hand side
+  1
+is not definitionally equal to the right-hand side
+  if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+  else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+
+case pos
+V : Type u_1
+E : Type u_2
+n : ℕ
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : DecidableEq V
+N : RootedBinary V E (Fin n)
+p q x y : Fin n
+hxy : ¬x = y
+hpq : ¬p = q
+h✝¹ : ¬((x = p ∨ x = q) ∧ (y = p ∨ y = q))
+h✝ : (x = p ∨ x = q) ∨ y = p ∨ y = q
+⊢ 1 =
+    if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+    else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+src/NanuqActualNanuqAnchorBridge.lean:23:26: error: Tactic `rfl` failed: The left-hand side
+  2 * N.actualTupleMean ![x, y, p, q]
+is not definitionally equal to the right-hand side
+  if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+  else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+
+case neg
+V : Type u_1
+E : Type u_2
+n : ℕ
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : DecidableEq V
+N : RootedBinary V E (Fin n)
+p q x y : Fin n
+hxy : ¬x = y
+hpq : ¬p = q
+h✝¹ : ¬((x = p ∨ x = q) ∧ (y = p ∨ y = q))
+h✝ : ¬((x = p ∨ x = q) ∨ y = p ∨ y = q)
+⊢ 2 * N.actualTupleMean ![x, y, p, q] =
+    if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+    else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+'Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

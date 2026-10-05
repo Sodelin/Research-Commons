@@ -1,0 +1,52 @@
+src/NanuqActualOpenedCutProjection.lean:23:72: error: Application type mismatch: The argument
+  he
+has type
+  S.retainedSkeletonEdge e = S.retainedSkeletonEdge cut
+but is expected to have type
+  e = cut
+in the application
+  congrArg Subtype.val he
+src/NanuqActualOpenedCutProjection.lean:47:6: error: Type mismatch: After simplification, term
+  hpath
+ has type
+  Relation.ReflTransGen (S.graph.UStep fun f => f ≠ S.retainedSkeletonEdge cut) (N.graph.source ↑e)
+    (N.leaf (N.hybridChildTaxon hleaf h))
+but is expected to have type
+  S.graph.ReachWithout (S.retainedSkeletonEdge cut) (N.graph.source ↑e)
+    (N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩))
+src/NanuqActualOpenedCutProjection.lean:76:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.left
+ has type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut)
+    (openedSelectionCollapse hleaf S ((N.openedHybridGraph hleaf).source (Sum.inl cut))) (N.leaf a)
+but is expected to have type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut) (S.graph.source (S.retainedSkeletonEdge cut))
+    (N.leaf a)
+src/NanuqActualOpenedCutProjection.lean:77:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.right.left
+ has type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut)
+    (openedSelectionCollapse hleaf S ((N.openedHybridGraph hleaf).source (Sum.inl cut))) (N.leaf c)
+but is expected to have type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut) (S.graph.source (S.retainedSkeletonEdge cut))
+    (N.leaf c)
+src/NanuqActualOpenedCutProjection.lean:78:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.right.right.left
+ has type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut)
+    (openedSelectionCollapse hleaf S ((N.openedHybridGraph hleaf).target (Sum.inl cut))) (N.leaf d)
+but is expected to have type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut) (S.graph.target (S.retainedSkeletonEdge cut))
+    (N.leaf d)
+src/NanuqActualOpenedCutProjection.lean:79:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.right.right.right
+ has type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut)
+    (openedSelectionCollapse hleaf S ((N.openedHybridGraph hleaf).target (Sum.inl cut))) (N.leaf e)
+but is expected to have type
+  @EdgeGraph.ReachWithout V S.Edge S.graph (S.retainedSkeletonEdge cut) (S.graph.target (S.retainedSkeletonEdge cut))
+    (N.leaf e)
+'Nanuq.Source.RootedBinary.Switching.opened_skeleton_oriented_selected' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
