@@ -1,0 +1,127 @@
+{
+  "code": "(* Exact AST export at the CAD-to-runtime boundary. No supplied text is parsed.\n   The mapping is constructed by the caller from declared history coordinates\n   and earlier own actions. A source/unknown symbol cannot be exported. *)\nClearAll[G7ExactCellValueAST];\nG7ExactCellValueAST[expression_,mapping_List] := Module[\n {known,go,z=Unique[\"rootPolynomialVariable\"],polynomial,coefficients},\n If[!And@@(MatchQ[#,Rule[_Symbol,_String]]& /@ mapping),\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\"|>]];\n If[!DuplicateFreeQ[First/@mapping] || !DuplicateFreeQ[Last/@mapping] ||\n    !And@@(StringQ[#] && StringMatchQ[#,RegularExpression[\"h[0-9]+_[0-9]+|action_root_[A-Za-z0-9_]+\"]]& /@ (Last/@mapping)),\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\"|>]];\n known=Association[mapping];\n go[e_] := Which[\n   IntegerQ[e],<|\"kind\"->\"rational\",\"value\"->ToString[e,InputForm]|>,\n   Head[e]===Rational,<|\"kind\"->\"rational\",\"value\"->ToString[Numerator[e],InputForm]<>\"/\"<>ToString[Denominator[e],InputForm]|>,\n   Head[e]===Symbol && KeyExistsQ[known,e],<|\"kind\"->\"observation\",\"name\"->known[e]|>,\n   Head[e]===Plus,<|\"kind\"->\"add\",\"args\"->(go/@(List@@e))|>,\n   Head[e]===Times,<|\"kind\"->\"multiply\",\"args\"->(go/@(List@@e))|>,\n   Head[e]===Power && IntegerQ[e[[2]]],<|\"kind\"->\"power\",\"base\"->go[e[[1]]],\"exponent\"->e[[2]]|>,\n   Head[e]===Power && Head[e[[2]]]===Rational,\n     <|\"kind\"->\"principal_power\",\"base\"->go[e[[1]]],\"numerator\"->Numerator[e[[2]]],\"denominator\"->Denominator[e[[2]]]|>,\n   MemberQ[{Min,Max},Head[e]],<|\"kind\"->If[Head[e]===Min,\"minimum\",\"maximum\"],\"args\"->(go/@(List@@e))|>,\n   Head[e]===Root && (Length[e]===2 || (Length[e]===3 && MemberQ[{0,1},e[[3]]])) &&\n     Head[e[[1]]]===Function && IntegerQ[e[[2]]] && e[[2]]>0,\n     polynomial=e[[1]][z];\n     If[!PolynomialQ[polynomial,z],Throw[\"UNKNOWN_NONPOLYNOMIAL_ROOT\",\"cellAST\"]];\n     coefficients=CoefficientList[polynomial,z];\n     If[Length[coefficients]<2,Throw[\"UNKNOWN_CONSTANT_ROOT_POLYNOMIAL\",\"cellAST\"]];\n     <|\"kind\"->\"root\",\"coefficients\"->(go/@coefficients),\"real_root_index\"->e[[2]]|>,\n   True,Throw[\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\",\"cellAST\"]\n ];\n Catch[<|\"Status\"->\"STRUCTURED_CAD_VALUE_EXPORTED\",\"AST\"->go[expression],\n         \"DeclaredCoordinates\"->(<|\"namespace\"->If[StringStartsQ[#,\"h\"],\"recorded_history\",\"earlier_own_action\"],\"name\"->#|>& /@ (Last/@mapping)),\n         \"RootIndexSemantics\"->\"Wolfram real roots increasingly ordered with input polynomial multiplicity\", \n         \"Scope\"->\"Value export only; source-winning relation, cell coverage and policy verification are separate\"|>,\n       \"cellAST\",(<|\"Status\"->#1|>&)]\n];\n(* Convert a COMPLETE already certified history-first selector to typed data.\n   The source winning-relation/registry binding remains a separate producer. *)\nClearAll[G7ExactGuardAST,G7ExportCertifiedSelector];\nG7ExactGuardAST[guard_,mapping_List] := Module[{go,value,op},\n value[e_] := Module[{v=G7ExactCellValueAST[e,mapping]},\n   If[v[\"Status\"]=!=\"STRUCTURED_CAD_VALUE_EXPORTED\",Throw[v[\"Status\"],\"guardAST\"]];v[\"AST\"]];\n go[e_] := Which[\n   e===True || e===False,<|\"kind\"->\"boolean\",\"value\"->e|>,\n   Head[e]===And || Head[e]===Or,<|\"kind\"->If[Head[e]===And,\"and\",\"or\"],\"args\"->(go/@(List@@e))|>,\n   Head[e]===Not && Length[e]===1,<|\"kind\"->\"not\",\"arg\"->go[e[[1]]]|>,\n   Head[e]===Inequality,\n      <|\"kind\"->\"and\",\"args\"->Table[go[e[[2i]][e[[2i-1]],e[[2i+1]]]],{i,(Length[e]-1)/2}]|>,\n   Head[e]===Unequal && Length[e]>=2,\n      <|\"kind\"->\"and\",\"args\"->(<|\"kind\"->\"comparison\",\"op\"->\"ne\",\"left\"->value[#[[1]]],\"right\"->value[#[[2]]]|>& /@ Subsets[List@@e,{2}])|>,\n   MemberQ[{Less,LessEqual,Greater,GreaterEqual,Equal},Head[e]] && Length[e]>=2,\n      op=Switch[Head[e],Less,\"lt\",LessEqual,\"le\",Greater,\"gt\",GreaterEqual,\"ge\",Equal,\"eq\",Unequal,\"ne\"];\n      <|\"kind\"->\"and\",\"args\"->Table[<|\"kind\"->\"comparison\",\"op\"->op,\"left\"->value[e[[i]]],\"right\"->value[e[[i+1]]]|>,{i,Length[e]-1}]|>,\n   True,Throw[\"UNKNOWN_UNSUPPORTED_GUARD_HEAD\",\"guardAST\"]];\n Catch[<|\"Status\"->\"STRUCTURED_EXACT_GUARD_EXPORTED\",\"AST\"->go[guard]|>,\"guardAST\",(<|\"Status\"->#1|>&)]\n];\nG7ExportCertifiedSelector[selector_Association,mapping_List,weightTemplates_List] := Module[\n {cells={},g,weights,entry},\n If[selector[\"Status\"]=!=\"SEMIALGEBRAIC_FIBRE_SELECTOR_CERTIFIED_SAME_BACKEND\" ||\n    selector[\"Coverage\"]=!=True || !And@@(#===True& /@ selector[\"Soundness\"]),\n   Return[<|\"Status\"->\"UNKNOWN_OR_UNCERTIFIED_INPUT_SELECTOR\"|>]];\n Do[\n   g=G7ExactGuardAST[cell[\"Guard\"],mapping];\n   weights=G7ExactCellValueAST[#,mapping]& /@ (weightTemplates/.cell[\"Rules\"]);\n   If[g[\"Status\"]=!=\"STRUCTURED_EXACT_GUARD_EXPORTED\" ||\n      !And@@(#[\"Status\"]===\"STRUCTURED_CAD_VALUE_EXPORTED\"& /@ weights),\n     Return[<|\"Status\"->\"UNKNOWN_SELECTOR_AST_EXPORT\"|>]];\n   AppendTo[cells,<|\"guard\"->g[\"AST\"],\"weights\"->(#[\"AST\"]& /@ weights)|>],\n   {cell,selector[\"OrderedCells\"]}];\n <|\"Status\"->\"CERTIFIED_HISTORY_FIRST_SELECTOR_AST_EXPORTED_SAME_BACKEND\",\n   \"cells\"->cells,\"coverage\"->selector[\"Coverage\"],\"soundness\"->selector[\"Soundness\"],\n   \"Scope\"->\"One complete supplied winning-action relation; full source/recursive policy binding remains separate\"|>\n];\n\nModule[{map={xx->\"h0_0\",yy->\"h0_1\",zz->\"h0_2\"},bad,good},bad=Unevaluated[Inequality[xx,Less,yy,Less]];good=G7ExactGuardAST[Unequal[xx,yy,zz],map];ExportString[<|\"MalformedInput\"->ToString[bad,InputForm],\"MalformedGuardExport\"->G7ExactGuardAST[bad,map],\"AllPairsUnequal\"->good,\"Mixed\"->G7ExactGuardAST[Inequality[xx,Less,yy,LessEqual,zz],map]|>,\"RawJSON\"]]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Symbol::undefined2: Warning: Global symbols \"G7ExactCellValueAST, G7ExactCellValueAST, G7Exa ... xactGuardAST, G7ExactGuardAST, G7ExactGuardAST\" are undefined.\nInequality::ineq: Inequality called with 4 arguments; the number of arguments is expected to be an odd number >= 3.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= \"{\\n\\t\\\"MalformedInput\\\":\\\"Inequality[xx, Less, yy, Less]\\\",\\n\\t\\\"MalformedGuardExport\\\":{\\n\\t\\t\\\"Status\\\":\\\"STRUCTURED_EXACT_GUARD_EXPORTED\\\",\\n\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\\"kind\\\":\\\"and\\\",\\n\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"and\\\",\\n\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"comparison\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"op\\\":\\\"lt\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"left\\\":{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\\"right\\\":{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_1\\\"\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t}\\n\\t},\\n\\t\\\"AllPairsUnequal\\\":{\\n\\t\\t\\\"Status\\\":\\\"STRUCTURED_EXACT_GUARD_EXPORTED\\\",\\n\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\\"kind\\\":\\\"and\\\",\\n\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"comparison\\\",\\n\\t\\t\\t\\t\\t\\\"op\\\":\\\"ne\\\",\\n\\t\\t\\t\\t\\t\\\"left\\\":{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"right\\\":{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_1\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"comparison\\\",\\n\\t\\t\\t\\t\\t\\\"op\\\":\\\"ne\\\",\\n\\t\\t\\t\\t\\t\\\"left\\\":{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"right\\\":{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_2\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"comparison\\\",\\n\\t\\t\\t\\t\\t\\\"op\\\":\\\"ne\\\",\\n\\t\\t\\t\\t\\t\\\"left\\\":{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_1\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"right\\\":{\\n\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_2\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t}\\n\\t},\\n\\t\\\"Mixed\\\":{\\n\\t\\t\\\"Status\\\":\\\"STRUCTURED_EXACT_GUARD_EXPORTED\\\",\\n\\t\\t\\\"AST\\\":{\\n\\t\\t\\t\\\"kind\\\":\\\"and\\\",\\n\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"and\\\",\\n\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"comparison\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"op\\\":\\\"lt\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"left\\\":{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_0\\\"\\n\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\\"right\\\":{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_1\\\"\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t},\\n\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\\"kind\\\":\\\"and\\\",\\n\\t\\t\\t\\t\\t\\\"args\\\":[\\n\\t\\t\\t\\t\\t\\t{\\n\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"comparison\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"op\\\":\\\"le\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"left\\\":{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_1\\\"\\n\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\\"right\\\":{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"kind\\\":\\\"observation\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"name\\\":\\\"h0_2\\\"\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t}\\n\\t\\t\\t]\\n\\t\\t}\\n\\t}\\n}\""
+      }
+    ],
+    "isError": false
+  },
+  "parsed": {
+    "MalformedInput": "Inequality[xx, Less, yy, Less]",
+    "MalformedGuardExport": {
+      "Status": "STRUCTURED_EXACT_GUARD_EXPORTED",
+      "AST": {
+        "kind": "and",
+        "args": [
+          {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "comparison",
+                "op": "lt",
+                "left": {
+                  "kind": "observation",
+                  "name": "h0_0"
+                },
+                "right": {
+                  "kind": "observation",
+                  "name": "h0_1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "AllPairsUnequal": {
+      "Status": "STRUCTURED_EXACT_GUARD_EXPORTED",
+      "AST": {
+        "kind": "and",
+        "args": [
+          {
+            "kind": "comparison",
+            "op": "ne",
+            "left": {
+              "kind": "observation",
+              "name": "h0_0"
+            },
+            "right": {
+              "kind": "observation",
+              "name": "h0_1"
+            }
+          },
+          {
+            "kind": "comparison",
+            "op": "ne",
+            "left": {
+              "kind": "observation",
+              "name": "h0_0"
+            },
+            "right": {
+              "kind": "observation",
+              "name": "h0_2"
+            }
+          },
+          {
+            "kind": "comparison",
+            "op": "ne",
+            "left": {
+              "kind": "observation",
+              "name": "h0_1"
+            },
+            "right": {
+              "kind": "observation",
+              "name": "h0_2"
+            }
+          }
+        ]
+      }
+    },
+    "Mixed": {
+      "Status": "STRUCTURED_EXACT_GUARD_EXPORTED",
+      "AST": {
+        "kind": "and",
+        "args": [
+          {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "comparison",
+                "op": "lt",
+                "left": {
+                  "kind": "observation",
+                  "name": "h0_0"
+                },
+                "right": {
+                  "kind": "observation",
+                  "name": "h0_1"
+                }
+              }
+            ]
+          },
+          {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "comparison",
+                "op": "le",
+                "left": {
+                  "kind": "observation",
+                  "name": "h0_1"
+                },
+                "right": {
+                  "kind": "observation",
+                  "name": "h0_2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+

@@ -1,0 +1,654 @@
+{
+  "code": "(* G7 semialgebraic fibre selector, derived from the accepted master algorithm.\n   History variables precede action variables in every complete CAD.\n   Unsupported cylinder shapes/timeouts return UNKNOWN, never a policy. *)\nClearAll[G7AtomPairs,G7CellList,G7PreferredCellPoint,G7PreferredCADSelector];\nG7CellList[e_] := Module[{f=LogicalExpand[e]},\n  Which[f===False,{},Head[f]===Or,List@@f,True,{f}]];\nG7AtomPairs[e_] := Module[{h=Head[e],a=List@@e},\n  Which[e===True,{},e===False,{False},\n    h===And,Flatten[G7AtomPairs /@ a,1],\n    h===Inequality,Table[a[[2i]][a[[2i-1]],a[[2i+1]]],{i,(Length[a]-1)/2}],\n    MemberQ[{Less,LessEqual,Greater,GreaterEqual,Equal},h],\n      Table[h[a[[i]],a[[i+1]]],{i,Length[a]-1}],\n    True,{e}]];\nG7PreferredCellPoint[cell_,history_List,actions_List] := Module[\n  {relations=G7AtomPairs[cell],rules={},x,own,lower,upper,sections,\n   present,primary,lhs,rhs,head,point,guard,bad=False},\n  Do[\n    x=actions[[i]]; lower={};upper={};sections={};\n    Do[\n      present=Select[actions,!FreeQ[atom,#]&];\n      If[present=!={},\n        primary=Last[present];\n        If[primary===x,\n          own=atom/.rules;head=Head[own];\n          If[!MemberQ[{Less,LessEqual,Greater,GreaterEqual,Equal},head] || Length[own]!=2,\n             bad=True;Break[]];\n          lhs=own[[1]];rhs=own[[2]];\n          If[lhs===x && FreeQ[rhs,Alternatives@@Drop[actions,i-1]],\n            Which[head===Equal,AppendTo[sections,rhs],\n              MemberQ[{Less,LessEqual},head],AppendTo[upper,rhs],\n              MemberQ[{Greater,GreaterEqual},head],AppendTo[lower,rhs]],\n            If[rhs===x && FreeQ[lhs,Alternatives@@Drop[actions,i-1]],\n              Which[head===Equal,AppendTo[sections,lhs],\n                MemberQ[{Less,LessEqual},head],AppendTo[lower,lhs],\n                MemberQ[{Greater,GreaterEqual},head],AppendTo[upper,lhs]],\n              bad=True;Break[]]]]],\n      {atom,relations}];\n    If[bad,Break[]];\n    point=Which[sections=!={},First[sections],\n      lower=!={} && upper=!={},(Max@@lower)+((Min@@upper)-(Max@@lower))*If[history==={},1/2,((First[history]^2+1)/(First[history]^2+2))],\n      lower=!={},(Max@@lower)+1,upper=!={},(Min@@upper)-1,True,0];\n    AppendTo[rules,x->point],\n    {i,Length[actions]}];\n  If[bad,Return[<|\"Status\"->\"UNKNOWN_UNSUPPORTED_CYLINDER_SHAPE\"|>]];\n  guard=FullSimplify[cell/.rules,Element[history,Reals]];\n  If[!FreeQ[guard,Alternatives@@actions],\n    Return[<|\"Status\"->\"UNKNOWN_RESIDUAL_ACTION_IN_CELL_GUARD\"|>]];\n  <|\"Status\"->\"CELL_POINT_CONSTRUCTED\",\"Guard\"->guard,\"Rules\"->rules,\"Cell\"->cell|>\n];\nG7PreferredCADSelector[relation_,history_List,actions_List,seconds_:20] := Module[\n {cad,cells,points,good,coverage,soundness,domain,prior=False,ordered={},g,check},\n If[actions==={} || !DuplicateFreeQ[Join[history,actions]],\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_SELECTOR_CARRIER\"|>]];\n cad=TimeConstrained[CylindricalDecomposition[relation,Join[history,actions]],seconds,$Aborted];\n If[cad===$Aborted || !FreeQ[cad,_CylindricalDecomposition],\n   Return[<|\"Status\"->\"UNKNOWN_CAD_RESOURCE_OR_INCOMPLETE\",\"Raw\"->cad|>]];\n cells=G7CellList[cad];points=G7PreferredCellPoint[#,history,actions]& /@ cells;\n If[!(And@@(#[\"Status\"]===\"CELL_POINT_CONSTRUCTED\"& /@ points)),\n   Return[<|\"Status\"->\"UNKNOWN_CELL_SELECTOR_EXTRACTION\",\"Cells\"->points|>]];\n good=Select[points,#[\"Guard\"]=!=False&];\n domain=With[{aa=actions,rr=relation},Exists[aa,rr]];\n coverage=TimeConstrained[Resolve[With[{hh=history,ff=Implies[domain,Or@@(#[\"Guard\"]& /@ good)]},\n                       If[hh==={},ff,ForAll[hh,ff]]],Reals],seconds,$Aborted];\n soundness=Table[\n   check=Implies[p[\"Guard\"],relation/.p[\"Rules\"]];\n   TimeConstrained[Resolve[With[{hh=history,ff=check},If[hh==={},ff,ForAll[hh,ff]]],Reals],seconds,$Aborted],\n   {p,good}];\n If[coverage=!=True || !And@@(#===True& /@ soundness),\n   Return[<|\"Status\"->\"UNKNOWN_OR_FAILED_SELECTOR_CERTIFICATION\",\"Coverage\"->coverage,\n           \"Soundness\"->soundness,\"RawCAD\"->cad,\"Cells\"->good|>]];\n Do[g=FullSimplify[p[\"Guard\"] && !prior,Element[history,Reals]];\n    AppendTo[ordered,<|\"Guard\"->g,\"Rules\"->p[\"Rules\"]|>];prior=prior||p[\"Guard\"],{p,good}];\n <|\"Status\"->\"SEMIALGEBRAIC_FIBRE_SELECTOR_CERTIFIED_SAME_BACKEND\",\n   \"HistoryVariables\"->history,\"ActionVariables\"->actions,\"OrderedCells\"->ordered,\n   \"Coverage\"->coverage,\"Soundness\"->soundness,\"RawCAD\"->cad,\n   \"Trust\"->\"Complete Wolfram CAD and exact Resolve checks; not an independent Lean proof\"|>\n];\n\n(* Exact AST export at the CAD-to-runtime boundary. No supplied text is parsed.\n   The mapping is constructed by the caller from declared history coordinates\n   and earlier own actions. A source/unknown symbol cannot be exported. *)\nClearAll[G7ExactCellValueAST];\nG7ExactCellValueAST[expression_,mapping_List] := Module[\n {known,go,z=Unique[\"rootPolynomialVariable\"],polynomial,coefficients},\n If[!And@@(MatchQ[#,Rule[_Symbol,_String]]& /@ mapping),\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\"|>]];\n If[!DuplicateFreeQ[First/@mapping] || !DuplicateFreeQ[Last/@mapping] ||\n    !And@@(StringQ[#] && StringMatchQ[#,RegularExpression[\"h[0-9]+_[0-9]+|action_root_[A-Za-z0-9_]+\"]]& /@ (Last/@mapping)),\n   Return[<|\"Status\"->\"UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING\"|>]];\n known=Association[mapping];\n go[e_] := Which[\n   IntegerQ[e],<|\"kind\"->\"rational\",\"value\"->ToString[e,InputForm]|>,\n   Head[e]===Rational,<|\"kind\"->\"rational\",\"value\"->ToString[Numerator[e],InputForm]<>\"/\"<>ToString[Denominator[e],InputForm]|>,\n   Head[e]===Symbol && KeyExistsQ[known,e],<|\"kind\"->\"observation\",\"name\"->known[e]|>,\n   Head[e]===Plus,<|\"kind\"->\"add\",\"args\"->(go/@(List@@e))|>,\n   Head[e]===Times,<|\"kind\"->\"multiply\",\"args\"->(go/@(List@@e))|>,\n   Head[e]===Power && IntegerQ[e[[2]]],<|\"kind\"->\"power\",\"base\"->go[e[[1]]],\"exponent\"->e[[2]]|>,\n   Head[e]===Power && Head[e[[2]]]===Rational,\n     <|\"kind\"->\"principal_power\",\"base\"->go[e[[1]]],\"numerator\"->Numerator[e[[2]]],\"denominator\"->Denominator[e[[2]]]|>,\n   MemberQ[{Min,Max},Head[e]],<|\"kind\"->If[Head[e]===Min,\"minimum\",\"maximum\"],\"args\"->(go/@(List@@e))|>,\n   Head[e]===Root && (Length[e]===2 || (Length[e]===3 && MemberQ[{0,1},e[[3]]])) &&\n     Head[e[[1]]]===Function && IntegerQ[e[[2]]] && e[[2]]>0,\n     polynomial=e[[1]][z];\n     If[!PolynomialQ[polynomial,z],Throw[\"UNKNOWN_NONPOLYNOMIAL_ROOT\",\"cellAST\"]];\n     coefficients=CoefficientList[polynomial,z];\n     If[Length[coefficients]<2,Throw[\"UNKNOWN_CONSTANT_ROOT_POLYNOMIAL\",\"cellAST\"]];\n     <|\"kind\"->\"root\",\"coefficients\"->(go/@coefficients),\"real_root_index\"->e[[2]]|>,\n   True,Throw[\"UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE\",\"cellAST\"]\n ];\n Catch[<|\"Status\"->\"STRUCTURED_CAD_VALUE_EXPORTED\",\"AST\"->go[expression],\n         \"DeclaredCoordinates\"->(<|\"namespace\"->If[StringStartsQ[#,\"h\"],\"recorded_history\",\"earlier_own_action\"],\"name\"->#|>& /@ (Last/@mapping)),\n         \"RootIndexSemantics\"->\"Wolfram real roots increasingly ordered with input polynomial multiplicity\", \n         \"Scope\"->\"Value export only; source-winning relation, cell coverage and policy verification are separate\"|>,\n       \"cellAST\",(<|\"Status\"->#1|>&)]\n];\n\n(* Convert a COMPLETE already certified history-first selector to typed data.\n   The source winning-relation/registry binding remains a separate producer. *)\nClearAll[G7ExactGuardAST,G7ExportCertifiedSelector];\nG7ExactGuardAST[guard_,mapping_List] := Module[{go,value,op},\n value[e_] := Module[{v=G7ExactCellValueAST[e,mapping]},\n   If[v[\"Status\"]=!=\"STRUCTURED_CAD_VALUE_EXPORTED\",Throw[v[\"Status\"],\"guardAST\"]];v[\"AST\"]];\n go[e_] := Which[\n   e===True || e===False,<|\"kind\"->\"boolean\",\"value\"->e|>,\n   Head[e]===And || Head[e]===Or,<|\"kind\"->If[Head[e]===And,\"and\",\"or\"],\"args\"->(go/@(List@@e))|>,\n   Head[e]===Not && Length[e]===1,<|\"kind\"->\"not\",\"arg\"->go[e[[1]]]|>,\n   Head[e]===Inequality,\n      If[Length[e]<3 || !OddQ[Length[e]] ||\n         !And@@(MemberQ[{Less,LessEqual,Greater,GreaterEqual,Equal,Unequal},e[[#]]]& /@ Range[2,Length[e]-1,2]),\n        Throw[\"UNKNOWN_MALFORMED_INEQUALITY_CHAIN\",\"guardAST\"]];\n      <|\"kind\"->\"and\",\"args\"->Table[go[e[[2i]][e[[2i-1]],e[[2i+1]]]],{i,(Length[e]-1)/2}]|>,\n   Head[e]===Unequal && Length[e]>=2,\n      <|\"kind\"->\"and\",\"args\"->(<|\"kind\"->\"comparison\",\"op\"->\"ne\",\"left\"->value[#[[1]]],\"right\"->value[#[[2]]]|>& /@ Subsets[List@@e,{2}])|>,\n   MemberQ[{Less,LessEqual,Greater,GreaterEqual,Equal},Head[e]] && Length[e]>=2,\n      op=Switch[Head[e],Less,\"lt\",LessEqual,\"le\",Greater,\"gt\",GreaterEqual,\"ge\",Equal,\"eq\",Unequal,\"ne\"];\n      <|\"kind\"->\"and\",\"args\"->Table[<|\"kind\"->\"comparison\",\"op\"->op,\"left\"->value[e[[i]]],\"right\"->value[e[[i+1]]]|>,{i,Length[e]-1}]|>,\n   True,Throw[\"UNKNOWN_UNSUPPORTED_GUARD_HEAD\",\"guardAST\"]];\n Catch[<|\"Status\"->\"STRUCTURED_EXACT_GUARD_EXPORTED\",\"AST\"->go[guard]|>,\"guardAST\",(<|\"Status\"->#1|>&)]\n];\nG7ExportCertifiedSelector[selector_Association,mapping_List,weightTemplates_List] := Module[\n {cells={},g,weights,entry},\n If[selector[\"Status\"]=!=\"SEMIALGEBRAIC_FIBRE_SELECTOR_CERTIFIED_SAME_BACKEND\" ||\n    selector[\"Coverage\"]=!=True || !And@@(#===True& /@ selector[\"Soundness\"]),\n   Return[<|\"Status\"->\"UNKNOWN_OR_UNCERTIFIED_INPUT_SELECTOR\"|>]];\n Do[\n   g=G7ExactGuardAST[cell[\"Guard\"],mapping];\n   weights=G7ExactCellValueAST[#,mapping]& /@ (weightTemplates/.cell[\"Rules\"]);\n   If[g[\"Status\"]=!=\"STRUCTURED_EXACT_GUARD_EXPORTED\" ||\n      !And@@(#[\"Status\"]===\"STRUCTURED_CAD_VALUE_EXPORTED\"& /@ weights),\n     Return[<|\"Status\"->\"UNKNOWN_SELECTOR_AST_EXPORT\"|>]];\n   AppendTo[cells,<|\"guard\"->g[\"AST\"],\"weights\"->(#[\"AST\"]& /@ weights)|>],\n   {cell,selector[\"OrderedCells\"]}];\n <|\"Status\"->\"CERTIFIED_HISTORY_FIRST_SELECTOR_AST_EXPORTED_SAME_BACKEND\",\n   \"cells\"->cells,\"coverage\"->selector[\"Coverage\"],\"soundness\"->selector[\"Soundness\"],\n   \"Scope\"->\"One complete supplied winning-action relation; full source/recursive policy binding remains separate\"|>\n];\n\nModule[{relation,result,export},relation=And[Or[Or[And[Greater[1 - g7HistoryCoordinate0,0],Greater[3*g7HistoryCoordinate0 - 1,0],GreaterEqual[-g7HistoryCoordinate0 - 2*g7HistoryCoordinate1 + 1,0],GreaterEqual[-g7HistoryCoordinate0 - 2*g7HistoryCoordinate2 + 1,0],GreaterEqual[g7HistoryCoordinate0 + 2*g7HistoryCoordinate1 - 1,0],GreaterEqual[g7HistoryCoordinate0 + 2*g7HistoryCoordinate2 - 1,0]]],Or[And[Greater[1 - g7HistoryCoordinate0,0],Greater[3*g7HistoryCoordinate0 - 1,0],GreaterEqual[-g7HistoryCoordinate0 - 2*g7HistoryCoordinate1 + 1,0],GreaterEqual[-g7HistoryCoordinate0 - 2*g7HistoryCoordinate2 + 1,0],GreaterEqual[g7HistoryCoordinate0 + 2*g7HistoryCoordinate1 - 1,0],GreaterEqual[g7HistoryCoordinate0 + 2*g7HistoryCoordinate2 - 1,0]]],Or[And[Greater[1 - g7HistoryCoordinate0,0],Greater[3*g7HistoryCoordinate0 - 1,0],GreaterEqual[-g7HistoryCoordinate0 - 2*g7HistoryCoordinate1 + 1,0],GreaterEqual[-g7HistoryCoordinate0 - 2*g7HistoryCoordinate2 + 1,0],GreaterEqual[g7HistoryCoordinate0 + 2*g7HistoryCoordinate1 - 1,0],GreaterEqual[g7HistoryCoordinate0 + 2*g7HistoryCoordinate2 - 1,0]]],Or[And[Greater[g7HistoryCoordinate0,0],Greater[1 - 3*g7HistoryCoordinate0,0],GreaterEqual[-g7HistoryCoordinate0 + g7HistoryCoordinate2,0],GreaterEqual[g7HistoryCoordinate0 - g7HistoryCoordinate2,0],GreaterEqual[-2*g7HistoryCoordinate0 - g7HistoryCoordinate1 + 1,0],GreaterEqual[2*g7HistoryCoordinate0 + g7HistoryCoordinate1 - 1,0]]],Or[And[Greater[g7HistoryCoordinate0,0],Greater[1 - 3*g7HistoryCoordinate0,0],GreaterEqual[-g7HistoryCoordinate0 + g7HistoryCoordinate2,0],GreaterEqual[g7HistoryCoordinate0 - g7HistoryCoordinate2,0],GreaterEqual[-2*g7HistoryCoordinate0 - g7HistoryCoordinate1 + 1,0],GreaterEqual[2*g7HistoryCoordinate0 + g7HistoryCoordinate1 - 1,0]]],Or[And[Greater[g7HistoryCoordinate0,0],Greater[1 - 3*g7HistoryCoordinate0,0],GreaterEqual[-g7HistoryCoordinate0 + g7HistoryCoordinate2,0],GreaterEqual[g7HistoryCoordinate0 - g7HistoryCoordinate2,0],GreaterEqual[-2*g7HistoryCoordinate0 - g7HistoryCoordinate1 + 1,0],GreaterEqual[2*g7HistoryCoordinate0 + g7HistoryCoordinate1 - 1,0]]],Or[And[Greater[g7HistoryCoordinate0,0],Greater[1 - 3*g7HistoryCoordinate0,0],GreaterEqual[-g7HistoryCoordinate0 + g7HistoryCoordinate1,0],GreaterEqual[g7HistoryCoordinate0 - g7HistoryCoordinate1,0],GreaterEqual[-2*g7HistoryCoordinate0 - g7HistoryCoordinate2 + 1,0],GreaterEqual[2*g7HistoryCoordinate0 + g7HistoryCoordinate2 - 1,0]]],Or[And[Greater[g7HistoryCoordinate0,0],Greater[1 - 3*g7HistoryCoordinate0,0],GreaterEqual[-g7HistoryCoordinate0 + g7HistoryCoordinate1,0],GreaterEqual[g7HistoryCoordinate0 - g7HistoryCoordinate1,0],GreaterEqual[-2*g7HistoryCoordinate0 - g7HistoryCoordinate2 + 1,0],GreaterEqual[2*g7HistoryCoordinate0 + g7HistoryCoordinate2 - 1,0]]],Or[And[Greater[g7HistoryCoordinate0,0],Greater[1 - 3*g7HistoryCoordinate0,0],GreaterEqual[-g7HistoryCoordinate0 + g7HistoryCoordinate1,0],GreaterEqual[g7HistoryCoordinate0 - g7HistoryCoordinate1,0],GreaterEqual[-2*g7HistoryCoordinate0 - g7HistoryCoordinate2 + 1,0],GreaterEqual[2*g7HistoryCoordinate0 + g7HistoryCoordinate2 - 1,0]]]],g7ActionCoordinate0>0,g7ActionCoordinate0<1];result=G7PreferredCADSelector[relation,{g7HistoryCoordinate0,g7HistoryCoordinate1,g7HistoryCoordinate2},{g7ActionCoordinate0},8];export=If[result[\"Status\"]===\"SEMIALGEBRAIC_FIBRE_SELECTOR_CERTIFIED_SAME_BACKEND\",G7ExportCertifiedSelector[result,{g7HistoryCoordinate0->\"h0_0\",g7HistoryCoordinate1->\"h0_1\",g7HistoryCoordinate2->\"h0_2\"},{g7ActionCoordinate0,1-g7ActionCoordinate0}],<|\"Status\"->\"UNKNOWN_CAD_ACTION_EXTRACTION\"|>];StringReplace[ExportString[<|\"Version\"->$Version,\"SelectorStatus\"->result[\"Status\"],\"Export\"->export,\"RawCAD\"->ToString[Lookup[result,\"RawCAD\",Lookup[result,\"Raw\",Missing[\"Unavailable\"]]],InputForm],\"Coverage\"->Lookup[result,\"Coverage\",False],\"Soundness\"->Lookup[result,\"Soundness\",{}]|>,\"RawJSON\"],{\"\\n\"->\"\",\"\\t\"->\"\"}]]",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Symbol::undefined2: Warning: Global symbols \"G7AtomPairs, G7CellList, G7PreferredCellPoint,  ... referredCADSelector, G7ExportCertifiedSelector\" are undefined.\nGeneral::messages: Messages were generated which may indicate errors.\n\nOut[1]= \"{\\\"Version\\\":\\\"15.0.1 for Linux x86 (64-bit) (July 2, 2026)\\\",\\\"SelectorStatus\\\":\\\"SEMIALGEBRAIC_FIBRE_SELECTOR_CERTIFIED_SAME_BACKEND\\\",\\\"Export\\\":{\\\"Status\\\":\\\"CERTIFIED_HISTORY_FIRST_SELECTOR_AST_EXPORTED_SAME_BACKEND\\\",\\\"cells\\\":[{\\\"guard\\\":{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"eq\\\",\\\"left\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"}]},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_1\\\"}]},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"eq\\\",\\\"left\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"right\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_2\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"gt\\\",\\\"left\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"0\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"lt\\\",\\\"left\\\":{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"3\\\"},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"}]},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"}}]}]},\\\"weights\\\":[{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},\\\"exponent\\\":-1}]},{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"-1\\\"},{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},\\\"exponent\\\":-1}]}]}]},{\\\"guard\\\":{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"eq\\\",\\\"left\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_1\\\"}]}]},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"eq\\\",\\\"left\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_2\\\"}]}]},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"lt\\\",\\\"left\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\\/3\\\"},\\\"right\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"lt\\\",\\\"left\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"}}]}]}]},\\\"weights\\\":[{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},\\\"exponent\\\":-1}]},{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"-1\\\"},{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},\\\"exponent\\\":-1}]}]}]},{\\\"guard\\\":{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"eq\\\",\\\"left\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"right\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_1\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"eq\\\",\\\"left\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"}]},{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_2\\\"}]},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"lt\\\",\\\"left\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"0\\\"},\\\"right\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"}}]},{\\\"kind\\\":\\\"and\\\",\\\"args\\\":[{\\\"kind\\\":\\\"comparison\\\",\\\"op\\\":\\\"lt\\\",\\\"left\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"right\\\":{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\\/3\\\"}}]}]}]},\\\"weights\\\":[{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},\\\"exponent\\\":-1}]},{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"multiply\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"-1\\\"},{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"1\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"add\\\",\\\"args\\\":[{\\\"kind\\\":\\\"rational\\\",\\\"value\\\":\\\"2\\\"},{\\\"kind\\\":\\\"power\\\",\\\"base\\\":{\\\"kind\\\":\\\"observation\\\",\\\"name\\\":\\\"h0_0\\\"},\\\"exponent\\\":2}]},\\\"exponent\\\":-1}]}]}]}],\\\"coverage\\\":true,\\\"soundness\\\":[true,true,true],\\\"Scope\\\":\\\"One complete supplied winning-action relation; full source\\\\/recursive policy binding remains separate\\\"},\\\"RawCAD\\\":\\\"(Inequality[0, Less, g7HistoryCoordinate0, Less, 1\\\\/3] && ((g7HistoryCoordinate1 == g7HistoryCoordinate0 && g7HistoryCoordinate2 == 1 - 2*g7HistoryCoordinate0 && Inequality[0, Less, g7ActionCoordinate0, Less, 1]) || (g7HistoryCoordinate1 == 1 - 2*g7HistoryCoordinate0 && g7HistoryCoordinate2 == g7HistoryCoordinate0 && Inequality[0, Less, g7ActionCoordinate0, Less, 1]))) || (Inequality[1\\\\/3, Less, g7HistoryCoordinate0, Less, 1] && g7HistoryCoordinate1 == (1 - g7HistoryCoordinate0)\\\\/2 && g7HistoryCoordinate2 == (1 - g7HistoryCoordinate0)\\\\/2 && Inequality[0, Less, g7ActionCoordinate0, Less, 1])\\\",\\\"Coverage\\\":true,\\\"Soundness\\\":[true,true,true]}\""
+      }
+    ],
+    "isError": false
+  },
+  "parsed": {
+    "Version": "15.0.1 for Linux x86 (64-bit) (July 2, 2026)",
+    "SelectorStatus": "SEMIALGEBRAIC_FIBRE_SELECTOR_CERTIFIED_SAME_BACKEND",
+    "Export": {
+      "Status": "CERTIFIED_HISTORY_FIRST_SELECTOR_AST_EXPORTED_SAME_BACKEND",
+      "cells": [
+        {
+          "guard": {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "eq",
+                    "left": {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "multiply",
+                          "args": [
+                            {
+                              "kind": "rational",
+                              "value": "2"
+                            },
+                            {
+                              "kind": "observation",
+                              "name": "h0_0"
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "observation",
+                          "name": "h0_1"
+                        }
+                      ]
+                    },
+                    "right": {
+                      "kind": "rational",
+                      "value": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "eq",
+                    "left": {
+                      "kind": "observation",
+                      "name": "h0_0"
+                    },
+                    "right": {
+                      "kind": "observation",
+                      "name": "h0_2"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "gt",
+                    "left": {
+                      "kind": "observation",
+                      "name": "h0_0"
+                    },
+                    "right": {
+                      "kind": "rational",
+                      "value": "0"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "lt",
+                    "left": {
+                      "kind": "multiply",
+                      "args": [
+                        {
+                          "kind": "rational",
+                          "value": "3"
+                        },
+                        {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        }
+                      ]
+                    },
+                    "right": {
+                      "kind": "rational",
+                      "value": "1"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "weights": [
+            {
+              "kind": "multiply",
+              "args": [
+                {
+                  "kind": "add",
+                  "args": [
+                    {
+                      "kind": "rational",
+                      "value": "1"
+                    },
+                    {
+                      "kind": "power",
+                      "base": {
+                        "kind": "observation",
+                        "name": "h0_0"
+                      },
+                      "exponent": 2
+                    }
+                  ]
+                },
+                {
+                  "kind": "power",
+                  "base": {
+                    "kind": "add",
+                    "args": [
+                      {
+                        "kind": "rational",
+                        "value": "2"
+                      },
+                      {
+                        "kind": "power",
+                        "base": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        "exponent": 2
+                      }
+                    ]
+                  },
+                  "exponent": -1
+                }
+              ]
+            },
+            {
+              "kind": "add",
+              "args": [
+                {
+                  "kind": "rational",
+                  "value": "1"
+                },
+                {
+                  "kind": "multiply",
+                  "args": [
+                    {
+                      "kind": "rational",
+                      "value": "-1"
+                    },
+                    {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "rational",
+                          "value": "1"
+                        },
+                        {
+                          "kind": "power",
+                          "base": {
+                            "kind": "observation",
+                            "name": "h0_0"
+                          },
+                          "exponent": 2
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "power",
+                      "base": {
+                        "kind": "add",
+                        "args": [
+                          {
+                            "kind": "rational",
+                            "value": "2"
+                          },
+                          {
+                            "kind": "power",
+                            "base": {
+                              "kind": "observation",
+                              "name": "h0_0"
+                            },
+                            "exponent": 2
+                          }
+                        ]
+                      },
+                      "exponent": -1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "guard": {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "eq",
+                    "left": {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        {
+                          "kind": "multiply",
+                          "args": [
+                            {
+                              "kind": "rational",
+                              "value": "2"
+                            },
+                            {
+                              "kind": "observation",
+                              "name": "h0_1"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "right": {
+                      "kind": "rational",
+                      "value": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "eq",
+                    "left": {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        {
+                          "kind": "multiply",
+                          "args": [
+                            {
+                              "kind": "rational",
+                              "value": "2"
+                            },
+                            {
+                              "kind": "observation",
+                              "name": "h0_2"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "right": {
+                      "kind": "rational",
+                      "value": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "and",
+                    "args": [
+                      {
+                        "kind": "comparison",
+                        "op": "lt",
+                        "left": {
+                          "kind": "rational",
+                          "value": "1/3"
+                        },
+                        "right": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "and",
+                    "args": [
+                      {
+                        "kind": "comparison",
+                        "op": "lt",
+                        "left": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        "right": {
+                          "kind": "rational",
+                          "value": "1"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "weights": [
+            {
+              "kind": "multiply",
+              "args": [
+                {
+                  "kind": "add",
+                  "args": [
+                    {
+                      "kind": "rational",
+                      "value": "1"
+                    },
+                    {
+                      "kind": "power",
+                      "base": {
+                        "kind": "observation",
+                        "name": "h0_0"
+                      },
+                      "exponent": 2
+                    }
+                  ]
+                },
+                {
+                  "kind": "power",
+                  "base": {
+                    "kind": "add",
+                    "args": [
+                      {
+                        "kind": "rational",
+                        "value": "2"
+                      },
+                      {
+                        "kind": "power",
+                        "base": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        "exponent": 2
+                      }
+                    ]
+                  },
+                  "exponent": -1
+                }
+              ]
+            },
+            {
+              "kind": "add",
+              "args": [
+                {
+                  "kind": "rational",
+                  "value": "1"
+                },
+                {
+                  "kind": "multiply",
+                  "args": [
+                    {
+                      "kind": "rational",
+                      "value": "-1"
+                    },
+                    {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "rational",
+                          "value": "1"
+                        },
+                        {
+                          "kind": "power",
+                          "base": {
+                            "kind": "observation",
+                            "name": "h0_0"
+                          },
+                          "exponent": 2
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "power",
+                      "base": {
+                        "kind": "add",
+                        "args": [
+                          {
+                            "kind": "rational",
+                            "value": "2"
+                          },
+                          {
+                            "kind": "power",
+                            "base": {
+                              "kind": "observation",
+                              "name": "h0_0"
+                            },
+                            "exponent": 2
+                          }
+                        ]
+                      },
+                      "exponent": -1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "guard": {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "eq",
+                    "left": {
+                      "kind": "observation",
+                      "name": "h0_0"
+                    },
+                    "right": {
+                      "kind": "observation",
+                      "name": "h0_1"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "comparison",
+                    "op": "eq",
+                    "left": {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "multiply",
+                          "args": [
+                            {
+                              "kind": "rational",
+                              "value": "2"
+                            },
+                            {
+                              "kind": "observation",
+                              "name": "h0_0"
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "observation",
+                          "name": "h0_2"
+                        }
+                      ]
+                    },
+                    "right": {
+                      "kind": "rational",
+                      "value": "1"
+                    }
+                  }
+                ]
+              },
+              {
+                "kind": "and",
+                "args": [
+                  {
+                    "kind": "and",
+                    "args": [
+                      {
+                        "kind": "comparison",
+                        "op": "lt",
+                        "left": {
+                          "kind": "rational",
+                          "value": "0"
+                        },
+                        "right": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "and",
+                    "args": [
+                      {
+                        "kind": "comparison",
+                        "op": "lt",
+                        "left": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        "right": {
+                          "kind": "rational",
+                          "value": "1/3"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "weights": [
+            {
+              "kind": "multiply",
+              "args": [
+                {
+                  "kind": "add",
+                  "args": [
+                    {
+                      "kind": "rational",
+                      "value": "1"
+                    },
+                    {
+                      "kind": "power",
+                      "base": {
+                        "kind": "observation",
+                        "name": "h0_0"
+                      },
+                      "exponent": 2
+                    }
+                  ]
+                },
+                {
+                  "kind": "power",
+                  "base": {
+                    "kind": "add",
+                    "args": [
+                      {
+                        "kind": "rational",
+                        "value": "2"
+                      },
+                      {
+                        "kind": "power",
+                        "base": {
+                          "kind": "observation",
+                          "name": "h0_0"
+                        },
+                        "exponent": 2
+                      }
+                    ]
+                  },
+                  "exponent": -1
+                }
+              ]
+            },
+            {
+              "kind": "add",
+              "args": [
+                {
+                  "kind": "rational",
+                  "value": "1"
+                },
+                {
+                  "kind": "multiply",
+                  "args": [
+                    {
+                      "kind": "rational",
+                      "value": "-1"
+                    },
+                    {
+                      "kind": "add",
+                      "args": [
+                        {
+                          "kind": "rational",
+                          "value": "1"
+                        },
+                        {
+                          "kind": "power",
+                          "base": {
+                            "kind": "observation",
+                            "name": "h0_0"
+                          },
+                          "exponent": 2
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "power",
+                      "base": {
+                        "kind": "add",
+                        "args": [
+                          {
+                            "kind": "rational",
+                            "value": "2"
+                          },
+                          {
+                            "kind": "power",
+                            "base": {
+                              "kind": "observation",
+                              "name": "h0_0"
+                            },
+                            "exponent": 2
+                          }
+                        ]
+                      },
+                      "exponent": -1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "coverage": true,
+      "soundness": [
+        true,
+        true,
+        true
+      ],
+      "Scope": "One complete supplied winning-action relation; full source/recursive policy binding remains separate"
+    },
+    "RawCAD": "(Inequality[0, Less, g7HistoryCoordinate0, Less, 1/3] && ((g7HistoryCoordinate1 == g7HistoryCoordinate0 && g7HistoryCoordinate2 == 1 - 2*g7HistoryCoordinate0 && Inequality[0, Less, g7ActionCoordinate0, Less, 1]) || (g7HistoryCoordinate1 == 1 - 2*g7HistoryCoordinate0 && g7HistoryCoordinate2 == g7HistoryCoordinate0 && Inequality[0, Less, g7ActionCoordinate0, Less, 1]))) || (Inequality[1/3, Less, g7HistoryCoordinate0, Less, 1] && g7HistoryCoordinate1 == (1 - g7HistoryCoordinate0)/2 && g7HistoryCoordinate2 == (1 - g7HistoryCoordinate0)/2 && Inequality[0, Less, g7ActionCoordinate0, Less, 1])",
+    "Coverage": true,
+    "Soundness": [
+      true,
+      true,
+      true
+    ]
+  }
+}
