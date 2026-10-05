@@ -1,0 +1,29 @@
+src/NanuqActualRootedCapReadout.lean:173:18: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun S => S.restrictOriginalBlobSwitching b) S
+in the target expression
+  (fun S => (S.restrictOriginalBlobSwitching b).toActualRootedCapSwitching hb) S = T
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+T : (N.actualEveryNonleafRootedCapSource b hb).Switching
+S : N.Switching
+hS : (fun S => S.restrictOriginalBlobSwitching b) S = T.fromActualRootedCapSwitching
+⊢ (fun S => (S.restrictOriginalBlobSwitching b).toActualRootedCapSwitching hb) S = T
+'Nanuq.Source.RootedBinary.OriginalBlobSwitching.local_cap_oriented_quartet_lifts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.Switching.actual_rooted_cap_resolve_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_four_port_rooted_cap_distinct_set_and_mean' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

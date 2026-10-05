@@ -1,0 +1,62 @@
+src/NanuqActualRootedCapSwitching.lean:79:77: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (N.actualEveryNonleafRootedCapSource b hb).graph.target f
+in the target expression
+  (N.actualRootedCapGraph b).IsHybrid ((N.actualRootedCapGraph b).target f)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+L : N.OriginalBlobSwitching b
+hb : N.NonleafBlob b
+a : N.OriginalBlobVertex b
+ha : N.graph.IsHybrid ↑a
+hv : (N.actualEveryNonleafRootedCapSource b hb).graph.IsHybrid (Sum.inl a)
+e : N.OriginalBlobArc b
+he : N.graph.target ↑e = ↑a
+hk : L.keep e
+hu : ∀ (f : N.OriginalBlobArc b), N.graph.target ↑f = ↑a → L.keep f → f = e
+f : N.RootedCapArc b
+hf : (N.actualEveryNonleafRootedCapSource b hb).graph.target f = Sum.inl a
+hkf : Sum.elim L.keep (fun x => True) f
+⊢ (N.actualRootedCapGraph b).IsHybrid ((N.actualRootedCapGraph b).target f)
+src/NanuqActualRootedCapSwitching.lean:96:77: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (N.actualEveryNonleafRootedCapSource b hb).graph.target f
+in the target expression
+  (N.actualRootedCapGraph b).IsHybrid ((N.actualRootedCapGraph b).target f)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+S : (N.actualEveryNonleafRootedCapSource b hb).Switching
+a : N.OriginalBlobVertex b
+ha : N.graph.IsHybrid ↑a
+hh : (N.actualRootedCapGraph b).IsHybrid (Sum.inl a)
+f : N.RootedCapArc b
+hf : (N.actualEveryNonleafRootedCapSource b hb).graph.target f = Sum.inl a
+hk : S.keep f
+hu :
+  ∀ (f_1 : N.RootedCapArc b),
+    (N.actualEveryNonleafRootedCapSource b hb).graph.target f_1 = Sum.inl a → S.keep f_1 → f_1 = f
+⊢ (N.actualRootedCapGraph b).IsHybrid ((N.actualRootedCapGraph b).target f)
+'Nanuq.Source.RootedBinary.actual_rooted_cap_hybrid_mark_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.Source.RootedBinary.OriginalBlobSwitching.toActualRootedCapSwitching' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.Switching.fromActualRootedCapSwitching' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
