@@ -1,0 +1,944 @@
+{
+  "status": "PASS_STRUCTURED_CAD_VALUE_CONTROLS",
+  "positive": [
+    {
+      "name": "fresh_Wolfram_quintic_export",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "multiply",
+            "args": [
+              {
+                "kind": "rational",
+                "value": "-1"
+              },
+              {
+                "kind": "observation",
+                "name": "h0_0"
+              }
+            ]
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 1
+      },
+      "observed": {
+        "h0_0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 1
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!0 () Real)\n(assert\n (let ((?x14 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!0 1.0)))))\n(let ((?x22 (+ (+ ?x14 (* 0.0 (^ indexedCADRoot!0 2.0))) (* 0.0 (^ indexedCADRoot!0 3.0)))))\n(let ((?x30 (+ (+ ?x22 (* 0.0 (^ indexedCADRoot!0 4.0))) (* 1.0 (^ indexedCADRoot!0 5.0)))))\n(= ?x30 0.0)))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!0 () Real)\n(assert\n (let ((?x14 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!0 1.0)))))\n (let ((?x22 (+ (+ ?x14 (* 0.0 (^ indexedCADRoot!0 2.0))) (* 0.0 (^ indexedCADRoot!0 3.0)))))\n (let ((?x30 (+ (+ ?x22 (* 0.0 (^ indexedCADRoot!0 4.0))) (* 1.0 (^ indexedCADRoot!0 5.0)))))\n (= ?x30 0.0)))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 5)) (- 1)) 1) indexedCADRoot!0) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "fresh_Wolfram_square_root_export",
+      "ast": {
+        "kind": "principal_power",
+        "base": {
+          "kind": "observation",
+          "name": "h0_0"
+        },
+        "numerator": 1,
+        "denominator": 2
+      },
+      "observed": {
+        "h0_0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!2 () Real)\n(assert\n (let ((?x13 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!2 1.0)))))\n(= (+ ?x13 (* 1.0 (^ indexedCADRoot!2 2.0))) 0.0)))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!2 () Real)\n(assert\n (let ((?x13 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!2 1.0)))))\n (= (+ ?x13 (* 1.0 (^ indexedCADRoot!2 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) indexedCADRoot!2) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!2 () Real)\n(assert\n (let ((?x13 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!2 1.0)))))\n (= (+ ?x13 (* 1.0 (^ indexedCADRoot!2 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) indexedCADRoot!2) true))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 2)) (- 1)) 2) indexedCADRoot!2) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "fresh_Wolfram_midpoint_export",
+      "ast": {
+        "kind": "multiply",
+        "args": [
+          {
+            "kind": "rational",
+            "value": "1/2"
+          },
+          {
+            "kind": "add",
+            "args": [
+              {
+                "kind": "rational",
+                "value": "1"
+              },
+              {
+                "kind": "root",
+                "coefficients": [
+                  {
+                    "kind": "multiply",
+                    "args": [
+                      {
+                        "kind": "rational",
+                        "value": "-1"
+                      },
+                      {
+                        "kind": "observation",
+                        "name": "h0_0"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "rational",
+                    "value": "0"
+                  },
+                  {
+                    "kind": "rational",
+                    "value": "0"
+                  },
+                  {
+                    "kind": "rational",
+                    "value": "0"
+                  },
+                  {
+                    "kind": "rational",
+                    "value": "0"
+                  },
+                  {
+                    "kind": "rational",
+                    "value": "1"
+                  }
+                ],
+                "real_root_index": 1
+              }
+            ]
+          }
+        ]
+      },
+      "observed": {
+        "h0_0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-3",
+            "20",
+            "-80",
+            "160",
+            "-160",
+            "64"
+          ],
+          "real_root_index": 1
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!6 () Real)\n(assert\n (let ((?x57 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!6 1.0)))))\n(let ((?x17 (+ (+ ?x57 (* 0.0 (^ indexedCADRoot!6 2.0))) (* 0.0 (^ indexedCADRoot!6 3.0)))))\n(let ((?x62 (+ (+ ?x17 (* 0.0 (^ indexedCADRoot!6 4.0))) (* 1.0 (^ indexedCADRoot!6 5.0)))))\n(= ?x62 0.0)))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!6 () Real)\n(assert\n (let ((?x57 (+ (+ 0.0 (* (- (/ 1.0 2.0)) 1.0)) (* 0.0 (^ indexedCADRoot!6 1.0)))))\n (let ((?x17 (+ (+ ?x57 (* 0.0 (^ indexedCADRoot!6 2.0))) (* 0.0 (^ indexedCADRoot!6 3.0)))))\n (let ((?x62 (+ (+ ?x17 (* 0.0 (^ indexedCADRoot!6 4.0))) (* 1.0 (^ indexedCADRoot!6 5.0)))))\n (= ?x62 0.0)))))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 5)) (- 1)) 1) indexedCADRoot!6) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "fresh_Wolfram_rational_division_export",
+      "ast": {
+        "kind": "power",
+        "base": {
+          "kind": "add",
+          "args": [
+            {
+              "kind": "rational",
+              "value": "1"
+            },
+            {
+              "kind": "observation",
+              "name": "h0_0"
+            }
+          ]
+        },
+        "exponent": -1
+      },
+      "observed": {
+        "h0_0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "2/3"
+        },
+        "receipts": [],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "fresh_Wolfram_minimum_export",
+      "ast": {
+        "kind": "minimum",
+        "args": [
+          {
+            "kind": "rational",
+            "value": "1/2"
+          },
+          {
+            "kind": "observation",
+            "name": "h0_0"
+          }
+        ]
+      },
+      "observed": {
+        "h0_0": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "receipts": [],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "multiplicity_index_1",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "rational",
+            "value": "-2"
+          },
+          {
+            "kind": "rational",
+            "value": "5"
+          },
+          {
+            "kind": "rational",
+            "value": "-4"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 1
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "1"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!8 () Real)\n(assert\n (let ((?x57 (* (- 4.0) (^ indexedCADRoot!8 2.0))))\n(let ((?x13 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!8 1.0)))))\n(= (+ (+ ?x13 ?x57) (* 1.0 (^ indexedCADRoot!8 3.0))) 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!8 () Real)\n(assert\n (let ((?x47 (^ indexedCADRoot!8 2.0)))\n (let ((?x57 (* (- 4.0) ?x47)))\n (let ((?x13 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!8 1.0)))))\n (= (+ (+ ?x13 ?x57) (* 1.0 (^ indexedCADRoot!8 3.0))) 0.0)))))\n(assert\n (and (distinct 1.0 indexedCADRoot!8) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!8 () Real)\n(assert\n (let ((?x47 (^ indexedCADRoot!8 2.0)))\n (let ((?x57 (* (- 4.0) ?x47)))\n (let ((?x13 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!8 1.0)))))\n (= (+ (+ ?x13 ?x57) (* 1.0 (^ indexedCADRoot!8 3.0))) 0.0)))))\n(assert\n (and (distinct 1.0 indexedCADRoot!8) true))\n(assert\n (and (distinct 2.0 indexedCADRoot!8) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "multiplicity_index_2",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "rational",
+            "value": "-2"
+          },
+          {
+            "kind": "rational",
+            "value": "5"
+          },
+          {
+            "kind": "rational",
+            "value": "-4"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 2
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "1"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!9 () Real)\n(assert\n (let ((?x11 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!9 1.0)))))\n(let ((?x10 (+ (+ ?x11 (* (- 4.0) (^ indexedCADRoot!9 2.0))) (* 1.0 (^ indexedCADRoot!9 3.0)))))\n(= ?x10 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!9 () Real)\n(assert\n (let ((?x11 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!9 1.0)))))\n (let ((?x10 (+ (+ ?x11 (* (- 4.0) (^ indexedCADRoot!9 2.0))) (* 1.0 (^ indexedCADRoot!9 3.0)))))\n (= ?x10 0.0))))\n(assert\n (and (distinct 2.0 indexedCADRoot!9) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!9 () Real)\n(assert\n (let ((?x11 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!9 1.0)))))\n (let ((?x10 (+ (+ ?x11 (* (- 4.0) (^ indexedCADRoot!9 2.0))) (* 1.0 (^ indexedCADRoot!9 3.0)))))\n (= ?x10 0.0))))\n(assert\n (and (distinct 2.0 indexedCADRoot!9) true))\n(assert\n (and (distinct 1.0 indexedCADRoot!9) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "multiplicity_index_3",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "rational",
+            "value": "-2"
+          },
+          {
+            "kind": "rational",
+            "value": "5"
+          },
+          {
+            "kind": "rational",
+            "value": "-4"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 3
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "2"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!10 () Real)\n(assert\n (let ((?x67 (* (- 4.0) (^ indexedCADRoot!10 2.0))))\n(let ((?x49 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!10 1.0)))))\n(= (+ (+ ?x49 ?x67) (* 1.0 (^ indexedCADRoot!10 3.0))) 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!10 () Real)\n(assert\n (let ((?x60 (^ indexedCADRoot!10 2.0)))\n (let ((?x67 (* (- 4.0) ?x60)))\n (let ((?x49 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!10 1.0)))))\n (= (+ (+ ?x49 ?x67) (* 1.0 (^ indexedCADRoot!10 3.0))) 0.0)))))\n(assert\n (and (distinct 1.0 indexedCADRoot!10) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!10 () Real)\n(assert\n (let ((?x60 (^ indexedCADRoot!10 2.0)))\n (let ((?x67 (* (- 4.0) ?x60)))\n (let ((?x49 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 5.0 (^ indexedCADRoot!10 1.0)))))\n (= (+ (+ ?x49 ?x67) (* 1.0 (^ indexedCADRoot!10 3.0))) 0.0)))))\n(assert\n (and (distinct 1.0 indexedCADRoot!10) true))\n(assert\n (and (distinct 2.0 indexedCADRoot!10) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "simple_index_1",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "-1"
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 1
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "-1"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!11 () Real)\n(assert\n (let ((?x76 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!11 1.0)))))\n(let ((?x60 (+ (+ ?x76 (* 0.0 (^ indexedCADRoot!11 2.0))) (* 1.0 (^ indexedCADRoot!11 3.0)))))\n(= ?x60 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!11 () Real)\n(assert\n (let ((?x76 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!11 1.0)))))\n (let ((?x60 (+ (+ ?x76 (* 0.0 (^ indexedCADRoot!11 2.0))) (* 1.0 (^ indexedCADRoot!11 3.0)))))\n (= ?x60 0.0))))\n(assert\n (and (distinct 1.0 indexedCADRoot!11) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!11 () Real)\n(assert\n (let ((?x76 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!11 1.0)))))\n (let ((?x60 (+ (+ ?x76 (* 0.0 (^ indexedCADRoot!11 2.0))) (* 1.0 (^ indexedCADRoot!11 3.0)))))\n (= ?x60 0.0))))\n(assert\n (and (distinct 1.0 indexedCADRoot!11) true))\n(assert\n (and (distinct 0.0 indexedCADRoot!11) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!11 () Real)\n(assert\n (let ((?x76 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!11 1.0)))))\n (let ((?x60 (+ (+ ?x76 (* 0.0 (^ indexedCADRoot!11 2.0))) (* 1.0 (^ indexedCADRoot!11 3.0)))))\n (= ?x60 0.0))))\n(assert\n (and (distinct 1.0 indexedCADRoot!11) true))\n(assert\n (and (distinct 0.0 indexedCADRoot!11) true))\n(assert\n (and (distinct (- 1.0) indexedCADRoot!11) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "simple_index_2",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "-1"
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 2
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "0"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!12 () Real)\n(assert\n (let ((?x90 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!12 1.0)))))\n(let ((?x26 (+ (+ ?x90 (* 0.0 (^ indexedCADRoot!12 2.0))) (* 1.0 (^ indexedCADRoot!12 3.0)))))\n(= ?x26 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!12 () Real)\n(assert\n (let ((?x90 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!12 1.0)))))\n (let ((?x26 (+ (+ ?x90 (* 0.0 (^ indexedCADRoot!12 2.0))) (* 1.0 (^ indexedCADRoot!12 3.0)))))\n (= ?x26 0.0))))\n(assert\n (and (distinct 1.0 indexedCADRoot!12) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!12 () Real)\n(assert\n (let ((?x90 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!12 1.0)))))\n (let ((?x26 (+ (+ ?x90 (* 0.0 (^ indexedCADRoot!12 2.0))) (* 1.0 (^ indexedCADRoot!12 3.0)))))\n (= ?x26 0.0))))\n(assert\n (and (distinct 1.0 indexedCADRoot!12) true))\n(assert\n (and (distinct 0.0 indexedCADRoot!12) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!12 () Real)\n(assert\n (let ((?x90 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!12 1.0)))))\n (let ((?x26 (+ (+ ?x90 (* 0.0 (^ indexedCADRoot!12 2.0))) (* 1.0 (^ indexedCADRoot!12 3.0)))))\n (= ?x26 0.0))))\n(assert\n (and (distinct 1.0 indexedCADRoot!12) true))\n(assert\n (and (distinct 0.0 indexedCADRoot!12) true))\n(assert\n (and (distinct (- 1.0) indexedCADRoot!12) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "simple_index_3",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "-1"
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 3
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "1"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!13 () Real)\n(assert\n (let ((?x59 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!13 1.0)))))\n(let ((?x30 (+ (+ ?x59 (* 0.0 (^ indexedCADRoot!13 2.0))) (* 1.0 (^ indexedCADRoot!13 3.0)))))\n(= ?x30 0.0))))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!13 () Real)\n(assert\n (let ((?x59 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!13 1.0)))))\n (let ((?x30 (+ (+ ?x59 (* 0.0 (^ indexedCADRoot!13 2.0))) (* 1.0 (^ indexedCADRoot!13 3.0)))))\n (= ?x30 0.0))))\n(assert\n (and (distinct 0.0 indexedCADRoot!13) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!13 () Real)\n(assert\n (let ((?x59 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!13 1.0)))))\n (let ((?x30 (+ (+ ?x59 (* 0.0 (^ indexedCADRoot!13 2.0))) (* 1.0 (^ indexedCADRoot!13 3.0)))))\n (= ?x30 0.0))))\n(assert\n (and (distinct 0.0 indexedCADRoot!13) true))\n(assert\n (and (distinct (- 1.0) indexedCADRoot!13) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!13 () Real)\n(assert\n (let ((?x59 (+ (+ 0.0 (* 0.0 1.0)) (* (- 1.0) (^ indexedCADRoot!13 1.0)))))\n (let ((?x30 (+ (+ ?x59 (* 0.0 (^ indexedCADRoot!13 2.0))) (* 1.0 (^ indexedCADRoot!13 3.0)))))\n (= ?x30 0.0))))\n(assert\n (and (distinct 0.0 indexedCADRoot!13) true))\n(assert\n (and (distinct (- 1.0) indexedCADRoot!13) true))\n(assert\n (and (distinct 1.0 indexedCADRoot!13) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "algebraic_observation_export",
+      "ast": {
+        "kind": "principal_power",
+        "base": {
+          "kind": "observation",
+          "name": "h0_0"
+        },
+        "numerator": 1,
+        "denominator": 2
+      },
+      "observed": {
+        "h0_0": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!14 () Real)\n(assert\n (let ((?x47 (+ (+ 0.0 (* (- (root-obj (+ (* 2 (^ x 2)) (- 1)) 2)) 1.0)) (* 0.0 (^ indexedCADRoot!14 1.0)))))\n(= (+ ?x47 (* 1.0 (^ indexedCADRoot!14 2.0))) 0.0)))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!14 () Real)\n(assert\n (let ((?x47 (+ (+ 0.0 (* (- (root-obj (+ (* 2 (^ x 2)) (- 1)) 2)) 1.0)) (* 0.0 (^ indexedCADRoot!14 1.0)))))\n (= (+ ?x47 (* 1.0 (^ indexedCADRoot!14 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 1) indexedCADRoot!14) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!14 () Real)\n(assert\n (let ((?x47 (+ (+ 0.0 (* (- (root-obj (+ (* 2 (^ x 2)) (- 1)) 2)) 1.0)) (* 0.0 (^ indexedCADRoot!14 1.0)))))\n (= (+ ?x47 (* 1.0 (^ indexedCADRoot!14 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 1) indexedCADRoot!14) true))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 2) indexedCADRoot!14) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "earlier_own_root_coefficient",
+      "ast": {
+        "kind": "root",
+        "coefficients": [
+          {
+            "kind": "multiply",
+            "args": [
+              {
+                "kind": "rational",
+                "value": "-1"
+              },
+              {
+                "kind": "observation",
+                "name": "action_root_prior"
+              }
+            ]
+          },
+          {
+            "kind": "rational",
+            "value": "0"
+          },
+          {
+            "kind": "rational",
+            "value": "1"
+          }
+        ],
+        "real_root_index": 2
+      },
+      "observed": {
+        "action_root_prior": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        }
+      },
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "algebraic",
+          "polynomial_ascending": [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          "real_root_index": 2
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!21 () Real)\n(assert\n (let ((?x44 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ indexedCADRoot!21 1.0)))))\n(= (+ ?x44 (* 1.0 (^ indexedCADRoot!21 2.0))) 0.0)))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!21 () Real)\n(assert\n (let ((?x44 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ indexedCADRoot!21 1.0)))))\n (= (+ ?x44 (* 1.0 (^ indexedCADRoot!21 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 1) indexedCADRoot!21) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!21 () Real)\n(assert\n (let ((?x44 (+ (+ 0.0 (* (root-obj (+ (* 2 (^ x 2)) (- 1)) 1) 1.0)) (* 0.0 (^ indexedCADRoot!21 1.0)))))\n (= (+ ?x44 (* 1.0 (^ indexedCADRoot!21 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 1) indexedCADRoot!21) true))\n(assert\n (and (distinct (root-obj (+ (* 2 (^ x 4)) (- 1)) 2) indexedCADRoot!21) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "zero_principal_root_multiplicity",
+      "ast": {
+        "kind": "principal_power",
+        "base": {
+          "kind": "rational",
+          "value": "0"
+        },
+        "numerator": 1,
+        "denominator": 2
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "0"
+        },
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!28 () Real)\n(assert\n (let ((?x65 (+ (+ 0.0 (* (- 0.0) 1.0)) (* 0.0 (^ indexedCADRoot!28 1.0)))))\n(= (+ ?x65 (* 1.0 (^ indexedCADRoot!28 2.0))) 0.0)))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!28 () Real)\n(assert\n (let ((?x65 (+ (+ 0.0 (* (- 0.0) 1.0)) (* 0.0 (^ indexedCADRoot!28 1.0)))))\n (= (+ ?x65 (* 1.0 (^ indexedCADRoot!28 2.0))) 0.0)))\n(assert\n (and (distinct 0.0 indexedCADRoot!28) true))\n(check-sat)\n"
+          }
+        ],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    },
+    {
+      "name": "negative_integer_power_domain",
+      "ast": {
+        "kind": "power",
+        "base": {
+          "kind": "rational",
+          "value": "2"
+        },
+        "exponent": -2
+      },
+      "observed": {},
+      "result": {
+        "status": "EXACT_STRUCTURED_CAD_VALUE_SAME_BACKEND",
+        "encoding": {
+          "kind": "rational",
+          "value": "1/4"
+        },
+        "receipts": [],
+        "root_index_semantics": "real roots ordered increasingly with input-polynomial multiplicity; output codec index is for its own defining polynomial"
+      }
+    }
+  ],
+  "negative": [
+    {
+      "name": "nonreal_index",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Requested Root is not a real root at this history point.",
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!29 () Real)\n(assert\n (let ((?x66 (+ (+ 0.0 (* 1.0 1.0)) (* 0.0 (^ indexedCADRoot!29 1.0)))))\n(= (+ ?x66 (* 1.0 (^ indexedCADRoot!29 2.0))) 0.0)))\n(check-sat)\n"
+          }
+        ]
+      }
+    },
+    {
+      "name": "index_beyond_roots",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Requested Root is not a real root at this history point.",
+        "receipts": [
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!30 () Real)\n(assert\n (let ((?x10 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 0.0 (^ indexedCADRoot!30 1.0)))))\n(= (+ ?x10 (* 1.0 (^ indexedCADRoot!30 2.0))) 0.0)))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "sat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!30 () Real)\n(assert\n (let ((?x10 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 0.0 (^ indexedCADRoot!30 1.0)))))\n (= (+ ?x10 (* 1.0 (^ indexedCADRoot!30 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (^ x 2) (- 2)) 1) indexedCADRoot!30) true))\n(check-sat)\n"
+          },
+          {
+            "kind": "enumerate_distinct_real_roots",
+            "status": "unsat",
+            "query_smt2": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun indexedCADRoot!30 () Real)\n(assert\n (let ((?x10 (+ (+ 0.0 (* (- 2.0) 1.0)) (* 0.0 (^ indexedCADRoot!30 1.0)))))\n (= (+ ?x10 (* 1.0 (^ indexedCADRoot!30 2.0))) 0.0)))\n(assert\n (and (distinct (root-obj (+ (^ x 2) (- 2)) 1) indexedCADRoot!30) true))\n(assert\n (and (distinct (root-obj (+ (^ x 2) (- 2)) 2) indexedCADRoot!30) true))\n(check-sat)\n"
+          }
+        ]
+      }
+    },
+    {
+      "name": "zero_leading_stratum",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Leading-coefficient zero stratum needs its own exported polynomial cell.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "undeclared_source",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Unknown/hidden/future cell coordinate.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "future_not_recorded",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Unknown/hidden/future cell coordinate.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "invalid_principal_negative_base",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Negative-base principal rational powers are outside this real cell codec.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "zero_negative_power",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Undefined written negative power.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "written_zero_power_keeps_domain",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Undefined written cell denominator.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "unexpected_AST_field",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Malformed exact rational AST.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "float",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "Rational values require exact string coefficients.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "complex_observation",
+      "result": {
+        "status": "UNKNOWN_UNSUPPORTED_CAD_VALUE",
+        "reason": "b'(error \"line 1 column 106: invalid root object, polynomial does have sufficient roots\")\\n'",
+        "receipts": []
+      }
+    },
+    {
+      "name": "degree_resource_ceiling",
+      "result": {
+        "status": "UNKNOWN_CAD_VALUE_RESOURCE_LIMIT",
+        "reason": "Root degree exceeds this execution resource ceiling.",
+        "receipts": []
+      }
+    },
+    {
+      "name": "depth_resource_ceiling",
+      "result": {
+        "status": "UNKNOWN_CAD_VALUE_RESOURCE_LIMIT",
+        "reason": "Cell AST exceeds its node/depth resource ceiling.",
+        "receipts": []
+      }
+    }
+  ],
+  "export_negative_controls": {
+    "undeclared": {
+      "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+    },
+    "approximate": {
+      "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+    },
+    "transcendental": {
+      "Status": "UNKNOWN_UNSUPPORTED_OR_UNDECLARED_CELL_VALUE"
+    },
+    "bad_namespace": {
+      "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+    },
+    "malformed_map": {
+      "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+    },
+    "duplicate_identity": {
+      "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+    },
+    "duplicate_name": {
+      "Status": "UNKNOWN_INVALID_TYPED_OBSERVATION_MAPPING"
+    }
+  },
+  "trust": "SAME_BACKEND value/codec controls; no whole generic selector claim"
+}

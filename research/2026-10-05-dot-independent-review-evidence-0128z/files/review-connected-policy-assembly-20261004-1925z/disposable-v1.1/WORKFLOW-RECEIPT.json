@@ -1,0 +1,63 @@
+{
+  "status": "PASS_CONNECTED_AUTOMATIC_ADAPTIVE_POLICY_SYNTHESIS_SOURCE_COVERAGE_AND_EXECUTION",
+  "attempts": [
+    {
+      "script": "synthesize_policy.py",
+      "exit_code": 0,
+      "seconds": 9.024983117000374,
+      "stdout": "SYNTHESIS.stdout",
+      "stdout_sha256": "fa9a5ea111d1abc22c2a12a6fbaa3ebad9abc13ceba07ee8607fa5054b66e741"
+    },
+    {
+      "script": "execute_generated_policy.py",
+      "exit_code": 0,
+      "seconds": 0.943542871000318,
+      "stdout": "ACTUAL-EXECUTION.stdout",
+      "stdout_sha256": "e55c790ad95c430137921c15db65386ce3976444ef1c630ecc369b05e901b5b6"
+    },
+    {
+      "script": "test_policy_synthesis.py",
+      "exit_code": 0,
+      "seconds": 5.879215413000566,
+      "stdout": "CONTROLS.stdout",
+      "stdout_sha256": "13ecad14e6d715537cab1062f6443bb84dfe0f713af18b846801a46ee7725f90"
+    },
+    {
+      "script": "test_endpoint_branch.py",
+      "exit_code": 0,
+      "seconds": 1.780997951000245,
+      "stdout": "ENDPOINT-BRANCH.stdout",
+      "stdout_sha256": "0fa2c76be8f80e6a72ed3f0b98f484427b4063657282a2a73f2ba3b5863b8a4a"
+    }
+  ],
+  "source_bindings_before_after": {
+    "actual-source/check_forced_pair_policy.py": "0577a95e7c0ece1eaa39c55beeb3effa724616cc1b5e47d2dfa162319cd521bf",
+    "actual-source/sourcekit/solver.py": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+    "actual-source/sourcekit/upstream/law_compiler.py": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+    "actual-source/sourcekit/upstream/source_census.py": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+    "actual-source/sourcekit/verify_certificate.py": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840",
+    "execute_generated_policy.py": "dfec5a586e5b8d53bdeba4eb453594e5eaaf447c57604d9fa051a422707dbead",
+    "projection/compile_projected_word.py": "438cb18d29d280381e3eecb9ea5ddbc5841399a9a72337cf2eb748879b6f28db",
+    "projection/fourier_motzkin.py": "84899fd6c3316c8cca4e3bfe36eba0c16ed771a1083396b2e32721d66d34777d",
+    "projection/providers/compile_leaves.py": "4be07c4c36ce46c4c3d9fd0e096636eef8fbbd62d96e8002f771c75a6b0f9f1c",
+    "projection/providers/terminal_engine.py": "ef3092ca79197e2db0a86401b4112c8e0a8ee2b4d3b6f446129c67355685b18e",
+    "projection/providers/test_policy_verification.py": "d90dc57f101191632187c31019a689aec692a43f4ad73ae2fafb254fc48e00f0",
+    "projection/providers/verify_policy.py": "dbedd87fe4b23a087a55645d749390628057d3d07c4c8b925bff1b2bfe6d84f4",
+    "run_workflow.py": "d8a65ef6200ef12e72e889c6d37c4200bd1b7eddc90139ac5c56718be54186b9",
+    "synthesize_policy.py": "4ff0f6b08dfcd7aec196a9ce505946b64a5b9773750307e006c79844766692cd",
+    "terminal-certificate/verify_all_interior_receipt.py": "d65c62cb0f6555b5fc803fc66808e50da5b6d1cc9e2d310ad14db0de56540590",
+    "test_endpoint_branch.py": "79869c46d8b8ddea298f8984eda9ba8e612011a185ca2c79f5b175447af88ca5",
+    "test_policy_synthesis.py": "b49f6ce1e77aa89d0fba659e10e48303e46bd232dce4941dc819435243d62de1"
+  },
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "z3": "4.15.3"
+  },
+  "independent_review_status": "PENDING",
+  "supported_provider": "Previously accepted complete n4/r1 two-original-forcing image",
+  "word_supplied_by_caller": false,
+  "finite_section_constructor_general_G7_complete": false,
+  "earlier_one_call_optimum_preserved": true,
+  "new_source_census_Lean_G3_G4_empirical_claimed": false
+}

@@ -1,0 +1,22 @@
+[31mcontrol.ctl:32:[0m Error when processing option 'finetune'.
+
+The syntax for the 'finetune' tag has changed since BPP v4.8.1, adopting a
+dictionary-like key:val format where the key specifies the step length and
+val the corresponding starting value.
+
+Examples:
+
+             +-> step lenghts are fixed to the specified values and are not auto adjusted during burnin
+             |
+  finetune = 0 Gage:5 Gspr:0.001 mix:0.3
+  finetune = 1 Gage:5 Gspr:0.001 mix:0.3
+             |
+             +-> step lengths are set to the specified initial values and are adjusted during burnin
+
+  finetune = 0    # (no fine tuning, use default values, *NOT RECOMMENDED*)
+  finetune = 1    # (fine tuning, use default inital values, default setting)
+
+
+bpp v4.8.7_linux_x86_64, 10GB RAM, 9 cores
+https://github.com/bpp/bpp
+

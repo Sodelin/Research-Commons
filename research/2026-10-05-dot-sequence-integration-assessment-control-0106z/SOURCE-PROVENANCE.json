@@ -1,0 +1,59 @@
+{
+  "schema": "official-software-public-provenance-v1",
+  "date": "2026-10-05",
+  "bpp": {
+    "repository": "https://github.com/bpp/bpp",
+    "release_url": "https://github.com/bpp/bpp/releases/tag/v4.8.7",
+    "source_commit": "da8caf3aa00cf275cc9a044e0d806e9bbb0e1460",
+    "source_license": "AGPL-3.0",
+    "license_url": "https://github.com/bpp/bpp/blob/da8caf3aa00cf275cc9a044e0d806e9bbb0e1460/LICENSE",
+    "vendor_asset": {
+      "name": "bpp-4.8.7-linux-x86_64.tar.gz",
+      "size": 3447450,
+      "digest": "sha256:577306b8dafa80114d09e61f460633dd567eff9c67d5f878bbc7ae9d74cf69f2",
+      "browser_download_url": "https://github.com/bpp/bpp/releases/download/v4.8.7/bpp-4.8.7-linux-x86_64.tar.gz"
+    },
+    "vendor_binary_sha256": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+    "vendor_embedded_pver_sha1": "a84db12a15c6d7350cc3f9510a6d790972400af1",
+    "reproducible_source_build_claimed": false
+  },
+  "phylonet": {
+    "repository": "https://github.com/NakhlehLab/PhyloNet",
+    "default_branch_read_only": true,
+    "files": [
+      {
+        "path": "src/edu/rice/cs/bioinfo/programs/phylonet/algos/MCMCseq/core/State.java",
+        "git_blob_sha1": "960ddb053cbf44a599a2dd09686e836685492409",
+        "read_lines": [
+          [
+            1,
+            160
+          ],
+          [
+            180,
+            380
+          ]
+        ]
+      },
+      {
+        "path": "src/edu/rice/cs/bioinfo/programs/phylonet/algos/MCMCseq/structs/UltrametricTree.java",
+        "git_blob_sha1": "2c344aba8dea19f3166fa419efbca3891ea05ee7",
+        "complete_file_read": true
+      },
+      {
+        "path": "src/edu/rice/cs/bioinfo/programs/phylonet/algos/MCMCseq/structs/UltrametricNetwork.java",
+        "git_blob_sha1": "07abf6b690ea48855378848adc6dda392dd50eb1",
+        "complete_file_read": true
+      }
+    ],
+    "full_distribution_pin_before_run_required": true,
+    "execution_claimed": false
+  },
+  "public_exclusions": [
+    "raw third-party source and alignment/map data",
+    "vendor binary/archive",
+    "full alignment-containing or private-path engine logs",
+    "raw tool-source excerpts",
+    "private operational environment metadata"
+  ]
+}

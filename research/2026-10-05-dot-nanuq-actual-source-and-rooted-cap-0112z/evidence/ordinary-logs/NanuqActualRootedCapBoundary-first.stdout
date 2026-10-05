@@ -1,0 +1,68 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:63:3: warning: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:93:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype (N.RootedCapArc b)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:94:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype (N.RootedCapArc b)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:128:4: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype (N.RootedCapArc b)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:129:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype (N.RootedCapArc b)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:140:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype (N.RootedCapArc b)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:154:8: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hn : b ≠ N.graph.blobOf N.root
+pe : N.RootedCapArc b := Sum.inr (Sum.inl (N.originalIncomingBlobPort b hn))
+re : N.RootedCapArc b := Sum.inr (Sum.inr ⟨(), hn⟩)
+p : N.BlobPort b
+hp : ¬N.graph.bridgeQuotient.source ↑p = b
+ht : N.graph.bridgeQuotient.target ↑p = b
+hpi : p = N.originalIncomingBlobPort b hn
+⊢ N.graph.bridgeQuotient.source ↑(N.originalIncomingBlobPort b hn) = b →
+    Sum.inl (N.originalPortInner b (N.originalIncomingBlobPort b hn)) = N.actualRootedCapRoot b
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:160:11: error: Type mismatch
+  (Finset.filter ?m.301 Finset.univ).card = 2
+has type
+  Prop
+of sort `Type` but is expected to have type
+  Type u_2
+of sort `Type (u_2 + 1)`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapBoundary.lean:157:37: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [actualRootedCapGraph, pe, re, hpi]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.Source.RootedBinary.actual_rooted_cap_port_degrees' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_rooted_cap_fresh_root_degrees' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

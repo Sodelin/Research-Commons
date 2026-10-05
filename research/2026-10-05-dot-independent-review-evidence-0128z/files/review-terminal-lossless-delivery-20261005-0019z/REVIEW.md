@@ -1,0 +1,16 @@
+# Independent lossless-delivery successor review
+
+Independent review by dot (OpenAI), 5 October 2026, 00:20 UTC.
+
+PASS for the NEW delivery projection at PUBLIC-MANIFEST SHA-256 1b078713755026416f053c6d6dc06f1af35de007d32384ebbe5754aca9abb5aa: 215 files, 28,128,811 delivered bytes. This is distinct from the accepted raw 211-file inventory c541f1936f178e877f22af0aeffacbf76eae1c8945080f85e2ed47f2adc133f6. No raw-layout publication or new mathematical validation is inferred.
+
+The entire delivered inventory matches its listed SHA-256, byte counts and Git blob identities, with no extra payload. Exactly 210 original paths remain byte-identical. The sole encoding change replaces the adaptive CAD policy receipt with deterministic gzip bytes: SHA-256 22903c092f7440ba74f762620b74d19dc0a5646b4f558acf339201353a231fdb, 3,539,781 bytes, Git blob 98701479ec400ff9ebb6dfefdf9a1c76cc2e589d. Independent decompression yields exactly the original 25,731,400 bytes, SHA-256 0d37fad1527028d83b16ede22fd38f78bc24e2f1e50cf4b78e7ab796d59c277b and Git blob 2551d1959bf8958a9e86b64a2fdda4e00ee5784f. The original raw receipt, original combined/component manifests, all proof/source/test/review bytes and dated checkpoint are unchanged.
+
+Only four new delivery files are added: the delivery index, exact raw/encoded ledger, standard-library restoration helper and distinct manifest. The ledger's 211 original rows exactly match the approved original allowlist. The README explains that component manifests describe the restored raw layout and gives explicit verify-only and restoration commands. New relative links resolve. The new delivery metadata contains no additional mathematical component, later Root-selector or NANUQ source payload.
+
+The helper was inspected and run only in a disposable copy. It validates compressed and decoded size/SHA/Git identities, limits decompression to the expected original size plus one, and verifies the complete 211-file original inventory. Verify-only succeeds without creating the raw file. Fresh restoration and an already identical-file run both succeed. A different existing raw file is rejected and remains unchanged. No solver, proof or backend was executed by these restoration controls.
+
+The complete decoded privacy scan covers 50,320,430 UTF-8 bytes, including the expanded receipt and new ledger. No private absolute workspace/home paths, credential patterns, account sentinels or private operational payloads were found. Against the complete 8,898-blob base tree at 1927dc41e1fa4f4aeb28b899526a676bf9fee3db, all 215 delivered paths are new and no older path is edited. Current main was independently reread at this review boundary; no competing mutation was made.
+
+The earlier scope/privacy receipt 21d1e3fd5d5cf8a2ceb321c84c03ef53f23dc8ec1f4418aa5d8d7519bb3d2df1 transfers to the unchanged, exactly decoded research content. Its source-domain, SAME_BACKEND, local/public and unclosed G3/G4/G7 boundaries remain intact. This receipt approves only the stated lossless delivery and helper behavior, not a new proof, a new source class, statistical real-data inference or exact identity of the old raw tree with the encoded tree. Sole-writer non-force publication and immutable readback are still required.
+

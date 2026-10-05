@@ -1,0 +1,38 @@
+{
+  "status": "PASS_NEW_LOSSLESS_DELIVERY_PROJECTION",
+  "manifest_sha256": "1b078713755026416f053c6d6dc06f1af35de007d32384ebbe5754aca9abb5aa",
+  "delivered_files": 215,
+  "delivered_bytes": 28128811,
+  "decoded_scan_bytes": 50320430,
+  "unchanged_original_paths": 210,
+  "exact_decoded_originals": 211,
+  "new_delivery_metadata_files": 4,
+  "old_paths_colliding": [],
+  "privacy_hits": [],
+  "restore_controls": [
+    {
+      "args": [
+        "--verify-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"original_raw_files\": 211, \"mode\": \"decode-only\"}\n"
+    },
+    {
+      "args": [],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"original_raw_files\": 211, \"mode\": \"restore-and-verify\"}\n"
+    },
+    {
+      "args": [],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"PASS\", \"original_raw_files\": 211, \"mode\": \"restore-and-verify\"}\n"
+    },
+    {
+      "args": [],
+      "scenario": "conflicting existing file",
+      "exit_code": 1,
+      "preserved": true
+    }
+  ],
+  "original_raw_manifest": "c541f1936f178e877f22af0aeffacbf76eae1c8945080f85e2ed47f2adc133f6"
+}

@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "expression": "(h0_0-1/2)/(h0_0-1/2)",
+      "expected_complete_verified_policy": false,
+      "status": "UNKNOWN_OR_REFUTED_PROJECTED_CANDIDATE",
+      "verification_status": "INVALID_OR_REFUTED_POLICY"
+    },
+    {
+      "expression": "(1/(h0_0-1/2))**0",
+      "expected_complete_verified_policy": false,
+      "status": "UNKNOWN_OR_REFUTED_PROJECTED_CANDIDATE",
+      "verification_status": "INVALID_OR_REFUTED_POLICY"
+    },
+    {
+      "expression": "0*(1/(h0_0-1/2))+1",
+      "expected_complete_verified_policy": false,
+      "status": "UNKNOWN_OR_REFUTED_PROJECTED_CANDIDATE",
+      "verification_status": "INVALID_OR_REFUTED_POLICY"
+    },
+    {
+      "expression": "1/((h0_0-1/2)/(h0_0-1/2))",
+      "expected_complete_verified_policy": false,
+      "status": "UNKNOWN_OR_REFUTED_PROJECTED_CANDIDATE",
+      "verification_status": "INVALID_OR_REFUTED_POLICY"
+    },
+    {
+      "expression": "h0_0/h0_0",
+      "expected_complete_verified_policy": true,
+      "status": "WHOLE_ACTION_WORD_PROJECTED_AND_VERIFIED_SAME_BACKEND",
+      "verification_status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND"
+    },
+    {
+      "expression": "(1/h0_0)**0",
+      "expected_complete_verified_policy": true,
+      "status": "WHOLE_ACTION_WORD_PROJECTED_AND_VERIFIED_SAME_BACKEND",
+      "verification_status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND"
+    },
+    {
+      "expression": "0*(1/h0_0)+1",
+      "expected_complete_verified_policy": true,
+      "status": "WHOLE_ACTION_WORD_PROJECTED_AND_VERIFIED_SAME_BACKEND",
+      "verification_status": "FIXED_ADAPTIVE_POLICY_VERIFIED_SAME_BACKEND"
+    }
+  ],
+  "scope": "Fresh independent written-domain controls; the original source parameter deliberately has the same spelling as a history observation. Reachable undefined midpoint must prevent universal policy verification. Backend checks remain SAME_BACKEND."
+}

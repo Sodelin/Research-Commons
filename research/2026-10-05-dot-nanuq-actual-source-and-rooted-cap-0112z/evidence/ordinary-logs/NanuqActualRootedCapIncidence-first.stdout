@@ -1,0 +1,196 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:64:4: error: Tactic `apply` failed: could not unify the conclusion of `congrArg Sum.inl`
+  Sum.inl ?m.85 = Sum.inl ?m.86
+with the goal
+  Sum.elim
+      (fun p =>
+        if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b)
+      (fun x => N.actualRootedCapRoot b) (Sum.inl ⟨⟨e, ⋯⟩, ⋯⟩) =
+    Sum.inl ⟨N.graph.source e, hs⟩
+
+Note: The full type of `congrArg Sum.inl` is
+  ?m.85 = ?m.86 → Sum.inl ?m.85 = Sum.inl ?m.86
+
+case isFalse
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+e : E
+hs : N.graph.blobOf (N.graph.source e) = b
+h✝ : ¬N.graph.blobOf (N.graph.target e) = b
+⊢ Sum.elim
+      (fun p =>
+        if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b)
+      (fun x => N.actualRootedCapRoot b) (Sum.inl ⟨⟨e, ⋯⟩, ⋯⟩) =
+    Sum.inl ⟨N.graph.source e, hs⟩
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:63:49: warning: This simp argument is unused:
+  Sum.elim_inl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapGraph, Sum.elim_inr, hs, if_pos]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:63:62: warning: This simp argument is unused:
+  hs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapGraph, Sum.elim_inr, Sum.elim_inl, if_pos]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:63:65: warning: This simp argument is unused:
+  if_pos
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapGraph, Sum.elim_inr, Sum.elim_inl, hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:79:72: error: Tactic `assumption` failed
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+e : E
+ht : N.graph.blobOf (N.graph.target e) = b
+h✝ : ¬N.graph.blobOf (N.graph.source e) = b
+⊢ b ≠ N.graph.blobOf N.root
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:75:2: error: unsolved goals
+case isFalse
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+e : E
+ht : N.graph.blobOf (N.graph.target e) = b
+h✝ : ¬N.graph.blobOf (N.graph.source e) = b
+⊢ b ≠ N.graph.blobOf N.root
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:116:12: error: Type mismatch: After simplification, term
+  hs
+ has type
+  @Eq (N.RootedCapVertex b) (if False then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b) (Sum.inl v)
+but is expected to have type
+  @Eq (N.RootedCapVertex b) (N.actualRootedCapRoot b) (Sum.inl v)
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:138:2: error: unsolved goals
+case inl
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+v : N.OriginalBlobVertex b
+e : N.OriginalBlobArc b
+hs : (N.actualRootedCapGraph b).source (Sum.inl e) = Sum.inl v
+⊢ (if ht : N.graph.blobOf (N.graph.target ↑e) = b then Sum.inl ⟨↑e, ⋯⟩ else Sum.inr (Sum.inl ⟨⟨↑e, ⋯⟩, ⋯⟩)) = Sum.inl e
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:140:4: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+v : N.OriginalBlobVertex b
+p : N.BlobPort b
+hs : (N.actualRootedCapGraph b).source (Sum.inr (Sum.inl p)) = Sum.inl v
+hp : N.graph.bridgeQuotient.source ↑p = b
+hnot : N.graph.blobOf (N.graph.target ↑↑p) ≠ b
+⊢ (if ht : N.graph.blobOf (N.graph.target ↑↑p) = b then Sum.inl ⟨↑↑p, ⋯⟩ else Sum.inr (Sum.inl ⟨⟨↑↑p, ⋯⟩, ⋯⟩)) =
+    Sum.inr (Sum.inl p)
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:147:14: error: Type mismatch: After simplification, term
+  hs
+ has type
+  @Eq (N.RootedCapVertex b) (if False then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b) (Sum.inl v)
+but is expected to have type
+  @Eq (N.RootedCapVertex b) (N.actualRootedCapRoot b) (Sum.inl v)
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:138:77: warning: This simp argument is unused:
+  dif_pos e.property.2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapOriginalArc, Sum.elim_inl, actualRootedCapOutArc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:144:92: warning: This simp argument is unused:
+  dif_neg hnot
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapOriginalArc, Sum.elim_inr, Sum.elim_inl, actualRootedCapOutArc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:156:2: error: unsolved goals
+case inl
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+v : N.OriginalBlobVertex b
+e : N.OriginalBlobArc b
+ht : (N.actualRootedCapGraph b).target (Sum.inl e) = Sum.inl v
+⊢ (if hs : N.graph.blobOf (N.graph.source ↑e) = b then Sum.inl ⟨↑e, ⋯⟩ else Sum.inr (Sum.inr ⟨(), ⋯⟩)) = Sum.inl e
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:158:2: error: unsolved goals
+case inr.inr
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+v : N.OriginalBlobVertex b
+t : N.RootedCapRootTag b
+ht : (N.actualRootedCapGraph b).target (Sum.inr (Sum.inr t)) = Sum.inl v
+hnot : N.graph.bridgeQuotient.source ↑(N.originalIncomingBlobPort b ⋯) ≠ b
+⊢ (if hs : N.graph.blobOf (N.graph.source ↑↑(N.originalIncomingBlobPort b ⋯)) = b then
+      Sum.inl ⟨↑↑(N.originalIncomingBlobPort b ⋯), ⋯⟩
+    else Sum.inr (Sum.inr ⟨(), ⋯⟩)) =
+    Sum.inr (Sum.inr t)
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:156:76: warning: This simp argument is unused:
+  dif_pos e.property.1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapOriginalArc, Sum.elim_inl, actualRootedCapInArc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:159:76: warning: This simp argument is unused:
+  dif_neg hnot
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actualRootedCapOriginalArc, Sum.elim_inr, actualRootedCapInArc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.Source.RootedBinary.actualRootedCapOutArc_roundtrip' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actualRootedCapInArc_roundtrip' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

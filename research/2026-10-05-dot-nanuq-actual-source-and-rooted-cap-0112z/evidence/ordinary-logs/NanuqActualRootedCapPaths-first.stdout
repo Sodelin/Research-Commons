@@ -1,0 +1,35 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapPaths.lean:36:4: error: Type mismatch
+  heq
+has type
+  c = a
+but is expected to have type
+  a = c
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapPaths.lean:67:59: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (N.actualRootedCapGraph b).source (Sum.inr (Sum.inr t))
+in the target expression
+  Relation.ReflTransGen (N.actualRootedCapGraph b).DStep (Sum.inl a) u
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+a : N.OriginalBlobVertex b
+z u w : N.RootedCapVertex b
+hp : Relation.ReflTransGen (N.actualRootedCapGraph b).DStep (Sum.inl a) u
+ih : ∀ (c : N.OriginalBlobVertex b), u = Sum.inl c → N.graph.DReach ↑a ↑c
+c : N.OriginalBlobVertex b
+hc : w = Sum.inl c
+t : N.RootedCapRootTag b
+hfu : (N.actualRootedCapGraph b).source (Sum.inr (Sum.inr t)) = u
+hfw : (N.actualRootedCapGraph b).target (Sum.inr (Sum.inr t)) = w
+⊢ (N.actualRootedCapGraph b).DReach (Sum.inl a) (N.actualRootedCapRoot b)
+'Nanuq.Source.RootedBinary.actual_rooted_cap_acyclic' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_rooted_cap_rooted' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,38 @@
+⚠ [917/958] Replayed WeightedAnchor
+warning: providers/WeightedAnchor.lean:48:5: Variable name `hxy` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hxy
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: providers/WeightedAnchor.lean:98:15: This simp argument is unused:
+  if_neg hpq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hpq, false_and]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: providers/WeightedAnchor.lean:105:16: This simp argument is unused:
+  anchorMatrix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [outside]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: providers/WeightedAnchor.lean:105:30: This simp argument is unused:
+  outside
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchorMatrix]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: providers/WeightedAnchor.lean:97:48: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: providers/WeightedAnchor.lean:131:0: 'Nanuq.Weighted.weightedNanuq_eq_anchor_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [958/958] Built WeightedCoefficients (1.5s)
+info: providers/WeightedCoefficients.lean:119:0: 'Nanuq.Weighted.circularAlpha_weightedNanuq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedCoefficients.lean:120:0: 'Nanuq.Weighted.circularAlpha_weightedNanuq_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedCoefficients.lean:121:0: 'Nanuq.Weighted.positive_masses_preserve_circular_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedCoefficients.lean:122:0: 'Nanuq.Weighted.positive_masses_preserve_circular_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (958 jobs).

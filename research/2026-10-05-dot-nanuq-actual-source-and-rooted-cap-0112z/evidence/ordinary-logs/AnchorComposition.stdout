@@ -1,0 +1,93 @@
+ℹ [942/987] Replayed QuartetSemantics
+info: providers/QuartetSemantics.lean:129:0: 'Nanuq.Quartet.displayed_comp_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/QuartetSemantics.lean:130:0: 'Nanuq.Quartet.discrepancy_prod_fst' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/QuartetSemantics.lean:131:0: 'Nanuq.Quartet.distinct_average_differs_from_switching_average' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [951/987] Replayed QuartetComposition
+warning: providers/QuartetComposition.lean:23:0: automatically included section variable(s) unused in theorem `Nanuq.Composition.sum_by_ports`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: providers/QuartetComposition.lean:34:0: automatically included section variable(s) unused in theorem `Nanuq.Composition.portMass_pos_of_surjective`:
+  [Fintype P]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype P] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: providers/QuartetComposition.lean:131:0: 'Nanuq.Composition.sum_pairs_by_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/QuartetComposition.lean:132:0: 'Nanuq.Composition.portMass_pos_of_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/QuartetComposition.lean:133:0: 'Nanuq.Composition.source_composition_of_switching_and_localization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [952/987] Replayed QuartetCompositionDependent
+info: providers/QuartetCompositionDependent.lean:60:0: 'Nanuq.Composition.error_localization_dependent_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/QuartetCompositionDependent.lean:61:0: 'Nanuq.Composition.source_composition_dependent_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [967/987] Replayed WeightedAnchor
+warning: providers/WeightedAnchor.lean:48:5: Variable name `hxy` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hxy
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: providers/WeightedAnchor.lean:98:15: This simp argument is unused:
+  if_neg hpq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hpq, false_and]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: providers/WeightedAnchor.lean:105:16: This simp argument is unused:
+  anchorMatrix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [outside]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: providers/WeightedAnchor.lean:105:30: This simp argument is unused:
+  outside
+
+Hint: Omit it from the simp argument list.
+  [apply] simp_all [anchorMatrix]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: providers/WeightedAnchor.lean:97:48: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: providers/WeightedAnchor.lean:131:0: 'Nanuq.Weighted.weightedNanuq_eq_anchor_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [983/987] Replayed WeightedCoefficients
+info: providers/WeightedCoefficients.lean:119:0: 'Nanuq.Weighted.circularAlpha_weightedNanuq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedCoefficients.lean:120:0: 'Nanuq.Weighted.circularAlpha_weightedNanuq_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedCoefficients.lean:121:0: 'Nanuq.Weighted.positive_masses_preserve_circular_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedCoefficients.lean:122:0: 'Nanuq.Weighted.positive_masses_preserve_circular_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [984/987] Replayed WeightedOrderedPairs
+info: providers/WeightedOrderedPairs.lean:52:0: 'Nanuq.Weighted.ordered_pair_sum_eq_twice_upperSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [985/987] Replayed WeightedSource
+info: providers/WeightedSource.lean:65:0: 'Nanuq.Weighted.weightedNanuq_unit_eq_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedSource.lean:66:0: 'Nanuq.Weighted.positive_masses_source_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/WeightedSource.lean:67:0: 'Nanuq.Weighted.positive_masses_source_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [986/987] Replayed SourceCompositionBridge
+info: providers/SourceCompositionBridge.lean:94:0: 'Nanuq.Composition.sourceDistance_eq_sourceNanuq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/SourceCompositionBridge.lean:95:0: 'Nanuq.Composition.localWeighted_eq_weightedNanuq' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [987/987] Built AnchorComposition (1.5s)
+warning: providers/AnchorComposition.lean:59:0: automatically included section variable(s) unused in theorem `Nanuq.Composition.weightedPortMass_unit`:
+  [DecidableEq X]
+  [Fintype P]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] [Fintype P] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: providers/AnchorComposition.lean:64:0: automatically included section variable(s) unused in theorem `Nanuq.Composition.sum_weighted_by_ports`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: providers/AnchorComposition.lean:118:0: 'Nanuq.Composition.weightedNanuq_eq_ordered_anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/AnchorComposition.lean:119:0: 'Nanuq.Composition.sum_weighted_pairs_by_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/AnchorComposition.lean:120:0: 'Nanuq.Composition.weighted_composition_of_anchor_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: providers/AnchorComposition.lean:121:0: 'Nanuq.Composition.source_composition_of_anchor_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (987 jobs).

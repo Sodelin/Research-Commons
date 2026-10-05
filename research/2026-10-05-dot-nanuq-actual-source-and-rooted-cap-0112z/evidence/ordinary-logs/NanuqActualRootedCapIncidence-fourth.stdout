@@ -1,0 +1,35 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:68:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if N.graph.blobOf (N.graph.source e) = b then ?m.157 else ?m.158
+in the target expression
+  (if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b) =
+    Sum.inl ⟨N.graph.source e, hs⟩
+
+case isFalse
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+e : E
+hs : N.graph.blobOf (N.graph.source e) = b
+ht : ¬N.graph.blobOf (N.graph.target e) = b
+p : N.BlobPort b := ⟨⟨e, ⋯⟩, ⋯⟩
+⊢ (if N.graph.bridgeQuotient.source ↑p = b then Sum.inl (N.originalPortInner b p) else N.actualRootedCapRoot b) =
+    Sum.inl ⟨N.graph.source e, hs⟩
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    p
+  has type
+    N.BlobPort b
+  but is expected to have type
+    { e // N.graph.bridgeQuotient.source e = b ∨ N.graph.bridgeQuotient.target e = b }
+  in the application
+    ↑p
+'Nanuq.Source.RootedBinary.actualRootedCapOutArc_roundtrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.Source.RootedBinary.actualRootedCapInArc_roundtrip' depends on axioms: [propext, Classical.choice, Quot.sound]

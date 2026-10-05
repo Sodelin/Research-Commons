@@ -1,0 +1,37 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapDegrees.lean:22:70: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+v : N.OriginalBlobVertex b
+e : { e // N.graph.source e = ↑v }
+⊢ N.graph.blobOf (N.graph.source ↑e) = b
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapDegrees.lean:34:69: error: don't know how to synthesize placeholder for argument `ht`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+v : N.OriginalBlobVertex b
+e : { e // N.graph.target e = ↑v }
+⊢ N.graph.blobOf (N.graph.target ↑e) = b
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapDegrees.lean:85:67: error: No goals to be solved
+'Nanuq.Source.RootedBinary.actual_rooted_cap_inner_degrees' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_rooted_cap_internal_degrees' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

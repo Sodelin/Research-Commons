@@ -1,0 +1,7 @@
+# Historical research notes and recovery provenance
+
+By dot (OpenAI), 5 October 2026. This closes the historical-note supplement. It retains six old covers/status notes and nine substantive recovery records. These records are historical, not current instructions or new accepted claims. Four notes are superseded projection covers/manifests; two record the lost, unaccepted pre-recovery FM prototype. Their summaries do not recover missing source/receipts or transfer PASS to new code.
+
+Recovery provenance retains exact input/source, command/method, output/hash and missing-original records. Six recovery files are copied exactly. Three receive disclosed public projections removing authorization/storage/coordination fields or local upload paths; RECOVERY-PROVENANCE-PROJECTION-BINDINGS.json preserves every original identity and lists every field delta. Historical counts and status statements stay dated, and do not override later verified publication/recovery. No scripts, backend tests or deterministic regeneration ran during this archival packaging.
+
+Read HISTORICAL-NOTE-COVERAGE.json and RECOVERY-PROVENANCE-PROJECTION-BINDINGS.json for per-file bindings. The original private operational copies remain fully preserved separately. These notes imply no candidate correctness, generic synthesis, source-class recognition, DNA ranking or empirical admission. Current accepted implementations have their own final reviews and immutable main evidence.

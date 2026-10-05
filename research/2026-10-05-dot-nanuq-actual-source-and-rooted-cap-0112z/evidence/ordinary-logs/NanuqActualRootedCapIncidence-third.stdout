@@ -1,0 +1,38 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:63:2: error: unsolved goals
+case isFalse
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+e : E
+hs : N.graph.blobOf (N.graph.source e) = b
+h✝ : ¬N.graph.blobOf (N.graph.target e) = b
+⊢ Sum.elim (fun e => Sum.inl ⟨N.graph.source ↑e, ⋯⟩)
+      (Sum.elim
+        (fun p =>
+          if N.graph.blobOf (N.graph.source ↑↑p) = b then
+            Sum.inl
+              (if hs : N.graph.blobOf (N.graph.source ↑↑p) = b then ⟨N.graph.source ↑↑p, hs⟩
+              else ⟨N.graph.target ↑↑p, ⋯⟩)
+          else N.actualRootedCapRoot b)
+        fun x => N.actualRootedCapRoot b)
+      (Sum.inr (Sum.inl ⟨⟨e, ⋯⟩, ⋯⟩)) =
+    Sum.inl ⟨N.graph.source e, hs⟩
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:63:65: warning: This simp argument is unused:
+  hs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [actualRootedCapGraph, BlobPort, EdgeGraph.bridgeQuotient, originalPortInner]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapIncidence.lean:162:4: error: No goals to be solved
+'Nanuq.Source.RootedBinary.actualRootedCapOutArc_roundtrip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.Source.RootedBinary.actualRootedCapInArc_roundtrip' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

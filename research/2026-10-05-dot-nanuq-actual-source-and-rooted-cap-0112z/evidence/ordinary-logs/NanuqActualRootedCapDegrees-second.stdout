@@ -1,0 +1,30 @@
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapDegrees.lean:76:16: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+a : N.OriginalBlobVertex b
+hr : Sum.inl a ≠ N.actualRootedCapRoot b
+hl : ∀ (p : N.BlobPort b), (N.actualRootedCapLeaf b) p ≠ Sum.inl a
+h : ↑a = N.root
+hbr : b = N.graph.blobOf N.root
+⊢ a = ⟨N.root, ⋯⟩
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapDegrees.lean:85:67: error: No goals to be solved
+contextual-nanuq-source-anchor-20261004/src/NanuqActualRootedCapDegrees.lean:76:49: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [actualRootedCapRoot, hbr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.Source.RootedBinary.actual_rooted_cap_inner_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Nanuq.Source.RootedBinary.actual_rooted_cap_internal_degrees' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
