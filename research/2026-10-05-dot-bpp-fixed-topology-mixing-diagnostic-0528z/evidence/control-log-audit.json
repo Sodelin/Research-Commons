@@ -1,0 +1,114 @@
+{
+  "schema": "matched-fixed-tree-control-audit-v1",
+  "controls_identical_except_seed": true,
+  "binary_alignment_map_identical": true,
+  "records": [
+    {
+      "run": "A00-fixed-leading-seed9101",
+      "control_sha256": "61e3d69e310513643e1556a99deaca8af8236f97d5d7c3047d2aa69d5fd5cf7e",
+      "stdout_sha256": "93808a8c2a330ff87891c76df87c98b0fee2af93b83d0037619f24349a8cbd9f",
+      "binary_alignment_map_hashes": {
+        "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+        "alignment": "0e7bd09b44b83e6cafb1ecc444535b91e1b96b19c2d10f57012d51da2b8af92b",
+        "map": "eb7cb7cb39586ab395089b5e42cd982a9d59ca5628a9e75a9c1d643165431f31"
+      },
+      "effective_control_target": {
+        "thetaprior": "gamma 2 2000",
+        "tauprior": "gamma 2 1000",
+        "phase": "1 1 1 1",
+        "usedata": "1",
+        "cleandata": "0",
+        "speciestree": "0",
+        "speciesdelimitation": "0",
+        "finetune": "1",
+        "burnin": "20000",
+        "nsample": "50000",
+        "sampfreq": "2"
+      },
+      "engine_conditional_theta_K_mean": 0.003619,
+      "theta_K_header": "theta:1:K",
+      "theta_K_node_summary_verified": true,
+      "fixed_topology": "(((H,L),C),K);",
+      "retained_generation_first": 2,
+      "retained_generation_last": 100000,
+      "retained_rows": 50000,
+      "configured_burnin": 20000,
+      "autotune_rounds": 4,
+      "final_tuning_acceptance": {
+        "Gage": 0.64234,
+        "Gspr": 0.25086,
+        "th1": 0.29417,
+        "th2": 0.28528,
+        "tau": 0.30833,
+        "mix": 0.3302
+      },
+      "final_tuning_step": {
+        "Gage": 99.0,
+        "Gspr": 0.00014,
+        "th1": 0.00164,
+        "th2": 0.0013,
+        "tau": 0.00024,
+        "mix": 0.18846
+      },
+      "runtime_substitution_models": [
+        "JC69"
+      ],
+      "warning_error_lines": []
+    },
+    {
+      "run": "A00-fixed-leading-seed9202",
+      "control_sha256": "1705466240757595ec46bc82a86bbf4ccdb2809528b20ac6e5aaf406431e0fd8",
+      "stdout_sha256": "d1fe3be96ea4953bf4deb95d7a4acab7b9c82285afcfa3decf50d4d0748cca92",
+      "binary_alignment_map_hashes": {
+        "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+        "alignment": "0e7bd09b44b83e6cafb1ecc444535b91e1b96b19c2d10f57012d51da2b8af92b",
+        "map": "eb7cb7cb39586ab395089b5e42cd982a9d59ca5628a9e75a9c1d643165431f31"
+      },
+      "effective_control_target": {
+        "thetaprior": "gamma 2 2000",
+        "tauprior": "gamma 2 1000",
+        "phase": "1 1 1 1",
+        "usedata": "1",
+        "cleandata": "0",
+        "speciestree": "0",
+        "speciesdelimitation": "0",
+        "finetune": "1",
+        "burnin": "20000",
+        "nsample": "50000",
+        "sampfreq": "2"
+      },
+      "engine_conditional_theta_K_mean": 0.003966,
+      "theta_K_header": "theta:1:K",
+      "theta_K_node_summary_verified": true,
+      "fixed_topology": "(((H,L),C),K);",
+      "retained_generation_first": 2,
+      "retained_generation_last": 100000,
+      "retained_rows": 50000,
+      "configured_burnin": 20000,
+      "autotune_rounds": 4,
+      "final_tuning_acceptance": {
+        "Gage": 0.64369,
+        "Gspr": 0.24782,
+        "th1": 0.27383,
+        "th2": 0.29454,
+        "tau": 0.2396,
+        "mix": 0.2994
+      },
+      "final_tuning_step": {
+        "Gage": 99.0,
+        "Gspr": 0.00013,
+        "th1": 0.00158,
+        "th2": 0.00123,
+        "tau": 0.00018,
+        "mix": 0.18185
+      },
+      "runtime_substitution_models": [
+        "JC69"
+      ],
+      "warning_error_lines": []
+    }
+  ],
+  "no_label_switching_claim": "Extant K is fixed by population label/header/runtime node summary; this is not a claim about hidden genealogy exploration.",
+  "postburnin_source_rule": "Pinned method.c records samples only when i>=0 and (i+1)%sampfreq==0; configured burnin precedes those generation labels.",
+  "interpretation": "Autotuning and moderate acceptance do not certify mixing or stationarity."
+}

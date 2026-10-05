@@ -1,0 +1,24 @@
+src/NanuqActualNanuqAnchorBridge.lean:20:82: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+n : ℕ
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : DecidableEq V
+N : RootedBinary V E (Fin n)
+p q x y : Fin n
+hxy : ¬x = y
+hpq : ¬p = q
+⊢ (if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+    else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]) =
+    if (x = p ∨ x = q) ∧ (y = p ∨ y = q) then 0
+    else if (x = p ∨ x = q) ∨ y = p ∨ y = q then 1 else 2 * N.actualTupleMean ![x, y, p, q]
+'Nanuq.Source.RootedBinary.actual_sourceNanuq_blob_composition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_weightedNanuq_blob_composition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
