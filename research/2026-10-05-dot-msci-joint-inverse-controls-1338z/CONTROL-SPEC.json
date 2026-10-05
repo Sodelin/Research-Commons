@@ -1,0 +1,19 @@
+{
+  "schema": "joint-interval-target-control-spec-v1",
+  "source_fixture_manifest_sha256": "9a5c172900d6eaa96114b25da6c809ab659fe59a0e42bdda8d8cb1fb6c521c42",
+  "source_truth_sha256": "c0da835116a929a985a7270036b07a2ed5535d39827a9136bd0b4c2b81ca8315",
+  "local_half_width_all_nine_coordinates": "1/16777216",
+  "controls": [
+    {"name":"broad_distinct","source_request":"distinct","domain":"original_broad","max_operations":2,"sweeps_per_cell":2,"max_splits":0,"preconditioner":"auto"},
+    {"name":"broad_equal","source_request":"equal","domain":"original_broad","max_operations":2,"sweeps_per_cell":2,"max_splits":0,"preconditioner":"auto"},
+    {"name":"broad_two_sources","source_request":"two_sources","domain":"original_broad","max_operations":3,"sweeps_per_cell":1,"max_splits":1,"preconditioner":"auto"},
+    {"name":"local_distinct","source_request":"distinct","domain":"predetermined_local_distinct","max_operations":1,"sweeps_per_cell":1,"max_splits":0,"preconditioner":"auto"},
+    {"name":"local_equal","source_request":"equal","domain":"predetermined_local_equal","max_operations":1,"sweeps_per_cell":1,"max_splits":0,"preconditioner":"auto"},
+    {"name":"uninformative","source_request":"uninformative","domain":"original_broad","max_operations":1,"sweeps_per_cell":1,"max_splits":0,"preconditioner":"auto"},
+    {"name":"zero_preconditioner","source_request":"distinct","domain":"original_broad","max_operations":1,"sweeps_per_cell":1,"max_splits":0,"preconditioner":"zero"},
+    {"name":"zero_budget","source_request":"two_sources","domain":"original_broad","max_operations":0,"sweeps_per_cell":1,"max_splits":0,"preconditioner":"auto"}
+  ],
+  "new_parameter_vectors": false,
+  "new_biological_data_or_simulation": false,
+  "statistical_coverage_claimed": false
+}

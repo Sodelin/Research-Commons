@@ -1,0 +1,9 @@
+# Exact physical-coordinate graph correction
+
+The initial interval-AD source 08bac527 evaluated the original provider literally after substituting interval time sums. Because ordinary interval arithmetic forgets cancellation, the intermediate t1-h could have a negative lower endpoint even when the physical u interval is strictly positive. The positive-argument exponential correctly refuses that artifact. No actual joint control ran with the initial graph, and its exact source is preserved in superseded-unexecuted/interval_ad-provider-graph.py.
+
+The revised graph uses h,u,v directly and sets A=h+u, T=A+v and L=u+v. All six smooth H/S/R formulas are otherwise unchanged. There is no clipped differentiation, new negative-argument exponential or auxiliary restriction. The physical function and every physical partial derivative are exactly the same as those of the pinned source after symbolic substitution.
+
+check_graph_equivalence.py used the already installed SymPy 1.14.0 under a 20-second outer limit to verify 12 exact value identities and 108 exact derivative identities at the two required Laplace arguments 8/3 and 16/3, with symbolic physical coordinates. GRAPH-EQUIVALENCE.json binds the rewritten graph source and unchanged provider source. This is an algebraic identity check, not a new source-point, biological or contractor experiment. Unit mocks also expose the original negative-interval artifact and verify that the rewritten graph's exponential arguments stay nonnegative on the declared broad box.
+
+This is a representation correction within the accepted coherent operator. The source model, observed target, physical Jacobian domain, preconditioner semantics, global cover and recovery contract do not change. The final implementation gate must bind the revised source, identity check and this addendum before any joint numerical controls.
