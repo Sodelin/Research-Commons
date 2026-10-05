@@ -1,0 +1,16 @@
+src/NanuqActualOpenedIncidence.lean:58:60: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+v : N.SkeletonVertex
+e : { e // N.graph.source e = ↑v }
+⊢ N.SkeletonVertexPredicate (N.graph.source ↑e)
+'Nanuq.Source.RootedBinary.opened_inner_outdegree' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Nanuq.Source.RootedBinary.opened_new_tip_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]

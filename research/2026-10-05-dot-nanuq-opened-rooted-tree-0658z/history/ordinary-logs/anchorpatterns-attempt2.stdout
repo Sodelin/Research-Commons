@@ -1,0 +1,64 @@
+src/NanuqActualAnchorPatterns.lean:49:83: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+rho : ℚ
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+r01 : ¬f 2 = f 1 → ¬f 3 = f 1 → N.rawQuartetMean q = 0
+h01 : f 0 = f 1
+h12 : ¬f 1 = f 2
+h13 : ¬f 1 = f 3
+h23 : ¬f 2 = f 3
+⊢ 0 = N.rawQuartetMean q
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+rho : ℚ
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+r02 : ¬f 3 = f 2 → N.rawQuartetMean q = 1
+h01 : ¬f 2 = f 1
+h02 : f 0 = f 2
+h12 : ¬f 1 = f 2
+h13 : ¬f 1 = f 3
+h23 : ¬f 2 = f 3
+⊢ 1 = N.rawQuartetMean q
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+rho : ℚ
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+r12 : ¬f 3 = f 2 → N.rawQuartetMean q = 1
+h02 : ¬f 0 = f 2
+h03 : ¬f 0 = f 3
+h12 : f 1 = f 2
+h23 : ¬f 2 = f 3
+⊢ 1 = N.rawQuartetMean q

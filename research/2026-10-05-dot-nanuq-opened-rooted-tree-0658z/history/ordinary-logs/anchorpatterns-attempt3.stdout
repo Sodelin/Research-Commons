@@ -1,0 +1,66 @@
+src/NanuqActualAnchorPatterns.lean:70:12: warning: aesop: failed to prove the goal after exhaustive search.
+src/NanuqActualAnchorPatterns.lean:70:12: warning: aesop: failed to prove the goal after exhaustive search.
+src/NanuqActualAnchorPatterns.lean:70:12: warning: aesop: failed to prove the goal after exhaustive search.
+src/NanuqActualAnchorPatterns.lean:49:83: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst : Fintype V
+inst_1 : Fintype E
+inst_2 : Fintype X
+inst_3 : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+rho : ℚ
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+r01 :
+  ¬N.blobProjection b hb (q 2) = N.blobProjection b hb (q 1) →
+    ¬N.blobProjection b hb (q 3) = N.blobProjection b hb (q 1) → N.rawQuartetMean q = 0
+h01 : N.blobProjection b hb (q 0) = N.blobProjection b hb (q 1)
+h12 : ¬N.blobProjection b hb (q 1) = N.blobProjection b hb (q 2)
+h13 : ¬N.blobProjection b hb (q 1) = N.blobProjection b hb (q 3)
+h23 : ¬N.blobProjection b hb (q 2) = N.blobProjection b hb (q 3)
+⊢ 0 = N.rawQuartetMean q
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst : Fintype V
+inst_1 : Fintype E
+inst_2 : Fintype X
+inst_3 : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+rho : ℚ
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+r02 : ¬N.blobProjection b hb (q 3) = N.blobProjection b hb (q 2) → N.rawQuartetMean q = 1
+h01 : ¬N.blobProjection b hb (q 2) = N.blobProjection b hb (q 1)
+h02 : N.blobProjection b hb (q 0) = N.blobProjection b hb (q 2)
+h12 : ¬N.blobProjection b hb (q 1) = N.blobProjection b hb (q 2)
+h13 : ¬N.blobProjection b hb (q 1) = N.blobProjection b hb (q 3)
+h23 : ¬N.blobProjection b hb (q 2) = N.blobProjection b hb (q 3)
+⊢ 1 = N.rawQuartetMean q
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst : Fintype V
+inst_1 : Fintype E
+inst_2 : Fintype X
+inst_3 : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+rho : ℚ
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+r12 : ¬N.blobProjection b hb (q 3) = N.blobProjection b hb (q 2) → N.rawQuartetMean q = 1
+h02 : ¬N.blobProjection b hb (q 0) = N.blobProjection b hb (q 2)
+h03 : ¬N.blobProjection b hb (q 0) = N.blobProjection b hb (q 3)
+h12 : N.blobProjection b hb (q 1) = N.blobProjection b hb (q 2)
+h23 : ¬N.blobProjection b hb (q 2) = N.blobProjection b hb (q 3)
+⊢ 1 = N.rawQuartetMean q

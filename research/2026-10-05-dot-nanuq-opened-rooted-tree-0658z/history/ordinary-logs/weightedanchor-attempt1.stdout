@@ -1,0 +1,39 @@
+src/NanuqActualWeightedAnchorComposition.lean:27:89: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+m : X → ℚ
+x y : X
+b : { b // N.NonleafBlob b }
+a✝ : b ∈ Finset.univ
+hvec :
+  ∀ (p q : X),
+    (fun i => N.blobProjection ↑b ⋯ (![x, y, p, q] i)) =
+      ![N.blobProjection ↑b ⋯ x, N.blobProjection ↑b ⋯ y, N.blobProjection ↑b ⋯ p, N.blobProjection ↑b ⋯ q]
+⊢ (∑ p,
+        ∑ q,
+          Composition.weightedPortMass (N.blobProjection ↑b ⋯) m p *
+              Composition.weightedPortMass (N.blobProjection ↑b ⋯) m q *
+            (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualTupleAnchor
+              ![N.blobProjection ↑b ⋯ x, N.blobProjection ↑b ⋯ y, p, q]) *
+      2⁻¹ =
+    (∑ p,
+        ∑ q,
+          Composition.weightedPortMass (N.blobProjection ↑b ⋯) m p *
+              Composition.weightedPortMass (N.blobProjection ↑b ⋯) m q *
+            (N.actualEveryNonleafRootedCapSource ↑b ⋯).actualTupleAnchor
+              ![N.blobProjection ↑b ⋯ x, N.blobProjection ↑b ⋯ y, p, q]) /
+      2
+'Nanuq.Source.RootedBinary.actual_weighted_anchor_composition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_unit_anchor_composition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
