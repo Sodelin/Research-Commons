@@ -1,0 +1,76 @@
+{
+  "schema": "bounded-bpp-chain-attempt-v2",
+  "task_date": "2026-10-05",
+  "host_clock_start_utc": "2026-10-05T04:56:01.211625+00:00",
+  "analysis": "A01",
+  "settings": {
+    "seed": 2202,
+    "jobname": "result",
+    "burnin": 8000,
+    "nsample": 20000,
+    "sampfreq": 2,
+    "usedata": 1,
+    "finetune": 1
+  },
+  "wall_limit_seconds": 900,
+  "threads": 1,
+  "address_space_limit_bytes": 2147483648,
+  "status": "EXECUTION_EXIT_ZERO",
+  "input_hashes_before": {
+    "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+    "control": "04f59fe903caaafe544e365b5e4236e2a173a32d79f26e0af1ab8b200e01e26d",
+    "alignment": "0e7bd09b44b83e6cafb1ecc444535b91e1b96b19c2d10f57012d51da2b8af92b",
+    "map": "eb7cb7cb39586ab395089b5e42cd982a9d59ca5628a9e75a9c1d643165431f31",
+    "runner": "26f536890383030de933e59e77ca4f90b5462dbba7b6fa505defcb15825269dc"
+  },
+  "command": [
+    "bpp",
+    "--cfile",
+    "control.ctl"
+  ],
+  "posterior_convergence_claimed": false,
+  "biological_admission_claimed": false,
+  "source_control_sha256": "e5624fbcb7764535ef09783bfb5c6619a4be6cfbe592cfaf3b226beeaa93b2d2",
+  "upstream_commit": "da8caf3aa00cf275cc9a044e0d806e9bbb0e1460",
+  "calendar_calibration": null,
+  "raw_alignment_redistribution": false,
+  "compatibility_conversion": "finetune=1 replaces rejected pre-v4.8.1 positional syntax with documented auto-tuned defaults",
+  "exit_code": 0,
+  "elapsed_seconds": 115.34314442100003,
+  "host_clock_end_utc": "2026-10-05T04:57:56.554962+00:00",
+  "input_hashes_after": {
+    "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+    "control": "04f59fe903caaafe544e365b5e4236e2a173a32d79f26e0af1ab8b200e01e26d",
+    "alignment": "0e7bd09b44b83e6cafb1ecc444535b91e1b96b19c2d10f57012d51da2b8af92b",
+    "map": "eb7cb7cb39586ab395089b5e42cd982a9d59ca5628a9e75a9c1d643165431f31",
+    "runner": "26f536890383030de933e59e77ca4f90b5462dbba7b6fa505defcb15825269dc"
+  },
+  "output_inventory": [
+    {
+      "path": "control.ctl",
+      "bytes": 1179,
+      "sha256": "04f59fe903caaafe544e365b5e4236e2a173a32d79f26e0af1ab8b200e01e26d"
+    },
+    {
+      "path": "result.compressed-aln.phy",
+      "bytes": 5301,
+      "sha256": "e6ad423d9b0491715c3d648468fc2354e17b7afbaba5335743771ee196c09db7"
+    },
+    {
+      "path": "result.mcmc.txt",
+      "bytes": 2960148,
+      "sha256": "db7555d01af0a02e1cfc914b05a9b27d47ed48ad4a046fac4027070b547fd8b0"
+    },
+    {
+      "path": "result.txt",
+      "bytes": 28185,
+      "sha256": "70387a6faf0b7b99c92aa2ff85fb86bb4d82042cd76ee7f5ef0c7e7708936d6e"
+    },
+    {
+      "path": "stdout.log",
+      "bytes": 33414,
+      "sha256": "301d4e782eb59edcf32e4904ced035d7bb0b91aed6980aba8daf0d07180fe5a4"
+    }
+  ],
+  "inputs_stable": true
+}
