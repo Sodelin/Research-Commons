@@ -1,0 +1,45 @@
+{
+  "schema": "bpp-observation-channel-source-audit-v1",
+  "source_commit": "da8caf3aa00cf275cc9a044e0d806e9bbb0e1460",
+  "binary_version_context": "BPP4.8.7, existing vendor-verified local source; no executable run in this audit",
+  "files": {
+    "README.md": "b93bde38f0ee23285552520cfe3b2552527e7427d22cc61b5b43360c4f31bf7f",
+    "src/bpp.c": "3c56d8ffd3b9de4d608656e7e2936b05595ec31ea93a202085f84398a2eb6ce5",
+    "src/bpp.h": "4ff9d98b5aeaff0b9f536cb6274e13f28a6b859229fce9ab6fb3250d1972c1c8",
+    "src/cfile.c": "27aa00937fdbe471cfeba42f554eccaf5b26f056842a7bd92214c845176363c8",
+    "src/diploid.c": "61ab2f4677f9aea67ea5d0adf90f6b34f5ba636c3b22dcea70f2db9b45e3d535",
+    "src/locus.c": "9f74aa98d53d0071208b716d154a389df1df31daf865ea50194814dbb08752a6",
+    "src/method.c": "83e21d201415b6d3c5b2e52b60e221640faa0772512dc2c2c10c4a66459ee012",
+    "src/gtree.c": "66a27a16c33d3a3da3fdfb108d6eddafddb9a3162aede916333162b7a9550ae4"
+  },
+  "line_evidence": {
+    "src/bpp.c:445-447,465,510": "one rate category/global clock/constant locus-rate defaults",
+    "src/bpp.h:406-408": "constant,estimated,fixed-from-file locus-rate enum",
+    "src/cfile.c:951-1070": "locus-rate profile/prior parsing",
+    "src/diploid.c:385-476": "heterozygote bookkeeping and fixed orientation at selected multiplicity-one patterns",
+    "src/diploid.c:480-615": "remaining resolution counts, two copies/diploid, .1/.2 labels and enumeration",
+    "src/locus.c:899-916": "JC uniform frequencies",
+    "src/locus.c:1194-1210,1811-1880": "global clock elapsed-time times locus multiplier; exp(-4b/3) JC kernel",
+    "src/locus.c:2570-2620": "site resolution averaging and weighted locus log likelihood",
+    "src/method.c:3965-4012": "variable-rate initialization and fixed input-rate normalization",
+    "src/gtree.c:3641,3938": "coalescent rate factors2/(heredity*theta)"
+  },
+  "primary_urls": [
+    "https://academic.oup.com/mbe/article/37/4/1211/5673394",
+    "https://academic.oup.com/mbe/article/39/5/msac083/6568285",
+    "https://bpp.github.io/bpp-manual/bpp-4-manual/",
+    "https://www.nature.com/articles/ng.937",
+    "https://arxiv.org/abs/0709.0531",
+    "https://arxiv.org/abs/1406.4811"
+  ],
+  "accepted_bridge": {
+    "proof_sha256": "3430171e587360460219ab78549538dcce7ef395a6a6502795842893de1f33fa",
+    "contract_sha256": "3fcc38bfcfb1b3b891270a2959d109fdaab247b5e4234d24633b428673827cbc",
+    "review_sha256": "31fec0f7c60958677eb6a5ed3408b87c9bb82be0c9fb705c74f5b809a7cc3c88"
+  },
+  "read_only": true,
+  "engine_runs": 0,
+  "new_observation_extension_claimed": false,
+  "known_positive_rate_rescaling_submitted_for_review": true,
+  "unphased_or_unknown_rate_injectivity_claimed": false
+}
