@@ -1,0 +1,149 @@
+src/NanuqActualDistinctAnchor.lean:40:13: error(lean.unknownIdentifier): Unknown constant `OfNat.ofNat_ne_ofNat`
+src/NanuqActualDistinctAnchor.lean:31:2: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+h4 : portCount f = 4
+hi : Function.Injective f
+h3 : portCount f ≠ 3
+hm : N.actualBlobTupleMean b hb ⇑q = N.rawQuartetMean q
+⊢ 2 * N.rawQuartetMean q = 2 * N.rawQuartetMean q + (if 4 = 3 then 1 else 0) * N.rawQuartetMean q
+src/NanuqActualDistinctAnchor.lean:42:4: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+h4 : ¬portCount f = 4
+h3 : portCount f = 3
+ha : tupleAnchor (fun i => N.blobProjection b hb (q i)) (N.actualBlobTupleMean b hb ⇑q) = N.rawQuartetMean q
+⊢ N.rawQuartetMean q = (if 3 = 4 then 2 else 0) * N.rawQuartetMean q + N.rawQuartetMean q
+src/NanuqActualDistinctAnchor.lean:48:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+q : Fin 4 ↪ X
+b : N.graph.Blob
+hb : N.NonleafBlob b
+f : Fin 4 → N.BlobPort b := fun i => N.blobProjection b hb (q i)
+h4 : ¬portCount f = 4
+h3 : ¬portCount f = 3
+hc : portCount f ≤ 2
+⊢ 0 = (if False then 2 else 0) * N.rawQuartetMean q + (if False then 1 else 0) * N.rawQuartetMean q
+src/NanuqActualDistinctAnchor.lean:40:34: warning: This simp argument is unused:
+  if_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) = 4 from h4, if_pos, OfNat.ofNat_ne_ofNat,
+    zero_mul, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:40:43: warning: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) = 4 from h4, if_pos, OfNat.ofNat_ne_ofNat,
+    if_false, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:40:52: warning: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) = 4 from h4, if_pos, OfNat.ofNat_ne_ofNat,
+    if_false, zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:45:17: warning: This simp argument is unused:
+  show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) = 3 from h3, if_pos, if_neg, one_mul,
+    zero_mul, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:47:15: warning: This simp argument is unused:
+  if_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4,
+    show portCount (fun i => N.blobProjection b hb (q i)) = 3 from h3, if_pos, one_mul, zero_mul, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:47:30: warning: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4,
+    show portCount (fun i => N.blobProjection b hb (q i)) = 3 from h3, if_pos, if_neg, one_mul, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:47:39: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4,
+    show portCount (fun i => N.blobProjection b hb (q i)) = 3 from h3, if_pos, if_neg, one_mul, zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:53:8: warning: This simp argument is unused:
+  if_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4,
+    show portCount (fun i => N.blobProjection b hb (q i)) ≠ 3 from h3, zero_mul, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:53:15: warning: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4,
+    show portCount (fun i => N.blobProjection b hb (q i)) ≠ 3 from h3, if_neg, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:53:24: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [show portCount (fun i => N.blobProjection b hb (q i)) ≠ 4 from h4,
+    show portCount (fun i => N.blobProjection b hb (q i)) ≠ 3 from h3, if_neg, zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualDistinctAnchor.lean:69:10: warning: This simp argument is unused:
+  ← Finset.sum_filter
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.Source.RootedBinary.actual_distinct_anchor_identity' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

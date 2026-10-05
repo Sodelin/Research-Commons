@@ -1,0 +1,56 @@
+src/NanuqActualOpenedCutProjection.lean:47:6: error: Type mismatch: After simplification, term
+  hpath
+ has type
+  Relation.ReflTransGen (S.graph.UStep fun f => f ≠ S.retainedSkeletonEdge cut) (N.graph.source ↑e)
+    (N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩))
+but is expected to have type
+  S.graph.ReachWithout (S.retainedSkeletonEdge cut) (N.graph.source ↑e)
+    (N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩))
+src/NanuqActualOpenedCutProjection.lean:76:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.left
+ has type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.source ↑cut)
+    (Sum.elim Subtype.val
+      (fun e => if S.keep ↑e then N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩) else N.graph.source ↑e)
+      (N.openedTipVertex (selectedOpenedTip hleaf S a)))
+but is expected to have type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.source ↑cut) (N.leaf a)
+src/NanuqActualOpenedCutProjection.lean:78:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.right.left
+ has type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.source ↑cut)
+    (Sum.elim Subtype.val
+      (fun e => if S.keep ↑e then N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩) else N.graph.source ↑e)
+      (N.openedTipVertex (selectedOpenedTip hleaf S c)))
+but is expected to have type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.source ↑cut) (N.leaf c)
+src/NanuqActualOpenedCutProjection.lean:80:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.right.right.left
+ has type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.target ↑cut)
+    (Sum.elim Subtype.val
+      (fun e => if S.keep ↑e then N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩) else N.graph.source ↑e)
+      (N.openedTipVertex (selectedOpenedTip hleaf S d)))
+but is expected to have type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.target ↑cut) (N.leaf d)
+src/NanuqActualOpenedCutProjection.lean:82:4: error: Type mismatch: After simplification, term
+  opened_cut_walk_selection S hleaf cut h.right.right.right
+ has type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.target ↑cut)
+    (Sum.elim Subtype.val
+      (fun e => if S.keep ↑e then N.leaf (N.hybridChildTaxon hleaf ⟨N.graph.target ↑e, ⋯⟩) else N.graph.source ↑e)
+      (N.openedTipVertex (selectedOpenedTip hleaf S e)))
+but is expected to have type
+  { source := fun e => N.graph.source ↑e, target := fun e => N.graph.target ↑e }.ReachWithout ⟨↑cut, ⋯⟩
+    (N.graph.target ↑cut) (N.leaf e)
+'Nanuq.Source.RootedBinary.Switching.opened_skeleton_oriented_selected' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,33 @@
+src/NanuqActualOpenedChoiceFamily.lean:20:54: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : Fintype X
+inst✝ : DecidableEq V
+N : RootedBinary V E X
+hleaf : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → ∃ x, N.graph.target e = N.leaf x
+C : N.HybridParentChoice
+x : N.OrdinaryTaxon
+⊢ { toFun := Switching.selectedOpenedTip hleaf C.toSwitching, inj' := ⋯ } ↑x = Sum.inl x
+src/NanuqActualOpenedChoiceFamily.lean:21:66: warning: This simp argument is unused:
+  Switching.selectedOpenedTip
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [selectedTipEmbedding, Switching.selectedOpenedTipEmbedding, x.property]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+src/NanuqActualOpenedChoiceFamily.lean:21:94: warning: This simp argument is unused:
+  x.property
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [selectedTipEmbedding, Switching.selectedOpenedTipEmbedding, Switching.selectedOpenedTip]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'Nanuq.Source.RootedBinary.actual_opened_choice_distinct_family_and_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Nanuq.Source.RootedBinary.actual_galled_cap_opened_family_and_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
