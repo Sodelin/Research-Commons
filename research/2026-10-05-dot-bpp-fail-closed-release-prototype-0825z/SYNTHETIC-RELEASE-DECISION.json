@@ -1,0 +1,60 @@
+{
+  "schema": "fail-closed-frozen-inference-release-v1",
+  "profile": "matched-synthetic-a00",
+  "artifact_kind": "release decision over frozen reviewed evidence",
+  "ranking_released": false,
+  "ranked_histories": null,
+  "recommended_history": null,
+  "fit_or_execution_performed": false,
+  "new_dataset_admitted": false,
+  "convergence_certified": false,
+  "calibration_certified": false,
+  "status": "WITHHELD_NUMERICAL_RELIABILITY",
+  "message": "inference not yet numerically reliable",
+  "evidence_sha256": {
+    "frog_admission": "ede7bd9435389e97f10b6ec71d391d6a56143ad9b81a0397b22e80ff5920a0ed",
+    "frog_diagnostics": "60be6e7e715c7d005ad6acb43be02c5a409fc5b28b1ce0306810098c44acfa90",
+    "matched_admission": "2c8c0685ac8c30b832cf8c23211c36c3c73a48256c1acdd1098e17da9e71d3ca",
+    "matched_pair": "e523b6fba0e66adf9ca21cbaeb1e6b1b994856485d89bc8c28c77746f152fe3a",
+    "matched_review": "90c9beb1f1a3d227dcf2e5bbdebfbadec6b95afe53ef333fe9d90e2f487a1ef9",
+    "frog_model": "8974a5a509edc558cff2867d3bda66bb72e536bac26e78d9831d33044f4362db"
+  },
+  "gates": {
+    "provenance": "AUTHENTICATED_FROZEN_REPORTS",
+    "dataset_and_model": "LIMITED_RESEARCH_FIXTURE_ONLY",
+    "numerical_reliability": "UNRESOLVED",
+    "repeated_simulation_calibration": "NOT_ESTABLISHED",
+    "empirical_model_adequacy": "NOT_ESTABLISHED",
+    "rank_release": "NOT_APPLICABLE_TO_FIXED_TOPOLOGY; WITHHELD"
+  },
+  "target_assumptions": [
+    "Independent loci; one shared nonrecombining genealogy per locus.",
+    "Four assigned populations under the MSC, JC69, strict clock and declared gamma priors.",
+    "Unphased diploid observations use the reviewed BPP phase handling.",
+    "Time/population parameters are mutation-scaled, not calendar dates."
+  ],
+  "target": "A00 conditional posterior at a supplied fixed true topology, on one synthetic realization",
+  "diagnostics": {
+    "log_likelihood_means": [
+      -4114.1464112,
+      -4121.6918909999995
+    ],
+    "log_likelihood_mean_gap": 7.545479799999157,
+    "gap_over_combined_within_chain_heuristic_mcse": 7.674532052064471,
+    "heuristic_ratio_is_not_a_calibrated_test": true,
+    "reason": "Persistent between-seed log-likelihood discrepancy and first-chain block shift despite close selected population means.",
+    "completed_independent_seeds": 2,
+    "same_seed_timeout_recovery_is_not_a_third_chain": true
+  },
+  "candidate_evidence": {
+    "preserved": true,
+    "topology_ranking_performed": false,
+    "release_as_recommendation": false
+  },
+  "next_required_evidence": [
+    "Resolve numerical exploration with a reviewed targeted tactic and independent diagnostics before releasing a ranking.",
+    "Implement the predeclared multi-chain/rank-normalized diagnostics and probability-specific Monte Carlo precision checks; thresholds are screens, not proofs.",
+    "Use repeated known-truth controls with an explicit calibration design and perform empirical adequacy/sensitivity checks.",
+    "Admit each new dataset and exact requested target separately; do not substitute an easier model or fixture."
+  ]
+}
