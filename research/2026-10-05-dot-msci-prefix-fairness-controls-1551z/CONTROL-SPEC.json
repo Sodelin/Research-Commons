@@ -1,0 +1,19 @@
+{
+  "schema": "original-domain-global-triangular-control-spec-v1",
+  "source_fixture_manifest_sha256": "9a5c172900d6eaa96114b25da6c809ab659fe59a0e42bdda8d8cb1fb6c521c42",
+  "source_truth_sha256": "c0da835116a929a985a7270036b07a2ed5535d39827a9136bd0b4c2b81ca8315",
+  "normalized_width_targets": {"h":"1/20","u":"1/20","v":"1/20","rA":"1/20","rB":"1/20","rC":"1/20","rAB":"1/20","rR":"1/20","g":"1/20"},
+  "controls": [
+    {"name":"distinct","source_request":"distinct","scalar_steps":32,"max_stages":1024,"max_splits":63,"max_states":64,"max_depth":16},
+    {"name":"equal","source_request":"equal","scalar_steps":32,"max_stages":1024,"max_splits":63,"max_states":64,"max_depth":16},
+    {"name":"two_sources","source_request":"two_sources","scalar_steps":32,"max_stages":128,"max_splits":7,"max_states":8,"max_depth":8},
+    {"name":"uninformative","source_request":"uninformative","scalar_steps":32,"max_stages":128,"max_splits":7,"max_states":8,"max_depth":8},
+    {"name":"zero_budget","source_request":"two_sources","scalar_steps":32,"max_stages":0,"max_splits":0,"max_states":1,"max_depth":0}
+  ],
+  "wall_ms": 120000,
+  "recovery_wall_ms": 120000,
+  "new_parameter_vectors": false,
+  "smaller_supplied_domains": false,
+  "statistical_coverage_claimed": false,
+  "new_biological_data_or_simulation": false
+}

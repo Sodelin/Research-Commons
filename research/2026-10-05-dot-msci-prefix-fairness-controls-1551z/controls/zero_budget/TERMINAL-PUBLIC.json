@@ -1,0 +1,124 @@
+{
+  "bytes_before_terminal": 17322,
+  "certificate_status": "VALIDATION_OUTPUT_AVAILABLE",
+  "checker": {
+    "aggregate_byte_limit": 268435456,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/global_check.py",
+      "--request",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/controls/zero_budget/REQUEST.json",
+      "--request-sha256",
+      "fb529bf5ca9aaa08ab1362bad92de95524cae8b659ff0477352199d4c5851197",
+      "--checkpoints",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/controls/zero_budget/journal",
+      "--source-pins",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/controls/zero_budget/CHECKER-PINS.json",
+      "--source-pins-sha256",
+      "7a14ac3f091bb12c7e3c842ef549545f1f18e5948378b40ad34aa8436b9c8f7a",
+      "--normal"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T15:48:51.457178+00:00",
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.20226371999888215,
+    "outer_wall_seconds": 150,
+    "peak_observed_bytes_before_final_receipt": 15631,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 4194304,
+    "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+    "started_utc": "2026-10-05T15:48:51.253564+00:00",
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 264241152,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "checker_output_available": true,
+  "failure": null,
+  "inventory": {
+    "BEFORE.json": {
+      "bytes": 1599,
+      "sha256": "b39147d80bb963777fcb8a04df4b8f7be98770f0bdac373562c98da2e9f46966"
+    },
+    "CHECKER-PINS.json": {
+      "bytes": 641,
+      "sha256": "7a14ac3f091bb12c7e3c842ef549545f1f18e5948378b40ad34aa8436b9c8f7a"
+    },
+    "REQUEST.json": {
+      "bytes": 1985,
+      "sha256": "fb529bf5ca9aaa08ab1362bad92de95524cae8b659ff0477352199d4c5851197"
+    },
+    "checker-TERMINAL.json": {
+      "bytes": 1691,
+      "sha256": "676308a2458a8f4fd2b1c552a5e3618fc475f55df2aefb39428fd81aa7f3fa40"
+    },
+    "checker.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "checker.stdout": {
+      "bytes": 5706,
+      "sha256": "6c0cfc795d74c11a48479e9447f80566bfd7ed9d002088cd0380fe3d894a7ec7"
+    },
+    "journal/state-000000-d377a39b6ececc45e3309395be69b71d15f9abe4b912a12a67b388c74a09b43d.json": {
+      "bytes": 2359,
+      "sha256": "d377a39b6ececc45e3309395be69b71d15f9abe4b912a12a67b388c74a09b43d"
+    },
+    "producer-TERMINAL.json": {
+      "bytes": 1425,
+      "sha256": "cd9f8f8b552d691b99c0cfd27d615200fc52ec02366ccaccc373f0f613663c86"
+    },
+    "producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "producer.stdout": {
+      "bytes": 1916,
+      "sha256": "b565de239c92078fbcf9a2ca6f53434100dcffba72772773466485a1774a9aa1"
+    }
+  },
+  "inventory_failure": null,
+  "producer": {
+    "aggregate_byte_limit": 268435456,
+    "cap_overshoot_observed_bytes": 0,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/global_engine.py",
+      "--request",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/controls/zero_budget/REQUEST.json",
+      "--request-sha256",
+      "fb529bf5ca9aaa08ab1362bad92de95524cae8b659ff0477352199d4c5851197",
+      "--checkpoints",
+      "WORKSPACE/msci-prefix-fairness-implementation-20261005-1531z/controls/zero_budget/journal"
+    ],
+    "counting_rule": "logical regular-file bytes, recursively including inputs/logs/receipts; symlinks forbidden",
+    "direct_child_reaped": true,
+    "exit_code": 0,
+    "finished_utc": "2026-10-05T15:48:51.252940+00:00",
+    "hard_filesystem_quota_claimed": false,
+    "memory_limit_bytes": 536870912,
+    "monitor_seconds": 0.20180140099546406,
+    "outer_wall_seconds": 150,
+    "peak_observed_bytes_before_final_receipt": 8500,
+    "poll_seconds": 0.05,
+    "process_group_cleanup_performed": true,
+    "receipt_reserve_bytes": 4194304,
+    "source_import_policy": "fresh cache prefix with bytecode writes disabled",
+    "started_utc": "2026-10-05T15:48:51.049661+00:00",
+    "status": "EXECUTION_EXIT_ZERO",
+    "stop_threshold_bytes": 264241152,
+    "threshold_overshoot_observed_bytes": 0
+  },
+  "public_projection": {
+    "normalization": "absolute workspace prefix replaced by WORKSPACE; all other original fields retained",
+    "original_sha256": "7f1884e82f5b93b4580a44145978d2bc3e754b1c1a4558a47503f75d9f22173c"
+  },
+  "request_sha256": "fb529bf5ca9aaa08ab1362bad92de95524cae8b659ff0477352199d4c5851197",
+  "schema": "bounded-global-triangular-attempt-v1",
+  "source_and_input_pins_stable": true,
+  "source_manifest_sha256": "78692f4f63246619e4e21ce809501e2f4dab7e79ca5ca353779d506e6715b48a"
+}
