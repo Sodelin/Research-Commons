@@ -1,0 +1,52 @@
+{
+  "schema": "bounded-bpp-instrumented-fixed-attempt-v1",
+  "task_date": "2026-10-05",
+  "host_clock_start_utc": "2026-10-05T05:46:44.684882+00:00",
+  "analysis": "A00",
+  "conditional_topology": "(((H,L),C),K);",
+  "source_control": "official A01",
+  "settings": {
+    "seed": 10101,
+    "jobname": "result",
+    "burnin": 20000,
+    "nsample": 5000,
+    "sampfreq": 20,
+    "usedata": 1,
+    "finetune": 1,
+    "speciestree": 0,
+    "print": "1 0 0 1"
+  },
+  "wall_limit_seconds": 600,
+  "threads": 1,
+  "address_space_limit_bytes": 2147483648,
+  "status": "RUNNING",
+  "input_hashes_before": {
+    "binary": "6c8828704e1037788e02d6943cc6cbb61d05d6aadbdd976095b71fc965e8e90e",
+    "control": "77696e9c88a73149594786d95cb21ee041f7b82401cbc53496fa5b98efd5e781",
+    "alignment": "0e7bd09b44b83e6cafb1ecc444535b91e1b96b19c2d10f57012d51da2b8af92b",
+    "map": "eb7cb7cb39586ab395089b5e42cd982a9d59ca5628a9e75a9c1d643165431f31",
+    "runner": "c4a6eeebafc0827a751840853a01c26bf4d5421d5214ff5093d98a769895b79d",
+    "watchdog": "c89201b45fe65915e3130659fd4dc3522bedfcbab6970735c5b06793a2ec1d8e"
+  },
+  "command": [
+    "bpp",
+    "--cfile",
+    "control.ctl",
+    "--theta_mode",
+    "3",
+    "--theta-showeps"
+  ],
+  "theta_proposal_family": "mg_invg (unchanged)",
+  "theta_mode": 3,
+  "theta_showeps": true,
+  "gene_tree_logging": true,
+  "aggregate_attempt_limit_bytes": 268435456,
+  "limit_semantics": "polling stop at cap minus 1MiB receipt reserve; any observed overshoot recorded",
+  "posterior_convergence_claimed": false,
+  "biological_admission_claimed": false,
+  "source_control_sha256": "e5624fbcb7764535ef09783bfb5c6619a4be6cfbe592cfaf3b226beeaa93b2d2",
+  "upstream_commit": "da8caf3aa00cf275cc9a044e0d806e9bbb0e1460",
+  "calendar_calibration": null,
+  "raw_alignment_redistribution": false,
+  "compatibility_conversion": "finetune=1 replaces rejected pre-v4.8.1 positional syntax with documented auto-tuned defaults"
+}
