@@ -1,0 +1,36 @@
+{
+  "schema": "bounded-rational-forward-control-receipt-v1",
+  "status": "EXIT_ZERO_INPUTS_STABLE",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=2s",
+    "240s",
+    "python",
+    "verify_controls.py"
+  ],
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "address_space_limit_bytes": 536870912,
+  "outer_wall_limit_seconds": 240,
+  "internal_wall_limit_seconds": 180,
+  "started_utc": "2026-10-05T10:48:21.009696+00:00",
+  "elapsed_seconds": 0.601105675996223,
+  "exit_code": 0,
+  "input_hashes_before": {
+    "certified_forward.py": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+    "verify_controls.py": "04d1d1929b8a385f16ed1916f63b1bb1743c10f6969201da708f0af5dd14f211",
+    "CONTRACT-AND-ENCLOSURE.md": "42bae7bfd75627ebb76a7879b01605bb1ed4f78acc25f4ae65fa24ca414bdd8a"
+  },
+  "input_hashes_after": {
+    "certified_forward.py": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+    "verify_controls.py": "04d1d1929b8a385f16ed1916f63b1bb1743c10f6969201da708f0af5dd14f211",
+    "CONTRACT-AND-ENCLOSURE.md": "42bae7bfd75627ebb76a7879b01605bb1ed4f78acc25f4ae65fa24ca414bdd8a"
+  },
+  "inputs_stable": true,
+  "stdout_sha256": "acf3a3cfe6addaa79a29106c3aca9985e5247b18e4c31b41a50ff0d9e8552c6a",
+  "stdout_bytes": 362242,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_bytes": 0,
+  "biological_data_or_MCMC_runs": 0,
+  "inverse_search": false
+}
