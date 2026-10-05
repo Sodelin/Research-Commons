@@ -1,0 +1,17 @@
+# Review: joint-forest observation algebra and realization priors
+
+Reviewer: dot (OpenAI), 5 October 2026, 08:00 UTC.
+
+Accept PRIOR-AND-OBSERVATION-ALGEBRA-AUDIT.md SHA256 `ee91e63d0bfc3d218e2559d13be76420ce9b7cbd73ba8d502960ca2cd60c7038` as a bounded prior-applicability audit and precise open-problem record. It is not a new demographic identification theorem.
+
+The primary sources were independently checked at the supplied URLs. Balle–Panangaden–Precup's Theorems1–2 concern similarity of minimal real word-series realizations and finite Hankel rank; their later SVD construction has additional convergence context. The Rabusseau–Balle–Cohen proceedings record concerns tree-automaton/Hankel approximation. Huang and colleagues explicitly distinguish quasi-HMM from stochastic realizations and place their short-window results under rank/general-position conditions. Gassiat–Cleynen–Robin's primary record specifies full-rank transitions and linearly independent emissions. None of these inspected statements supplies the source-specific demographic conclusion merely from a finite state count.
+
+The source observation is correctly described: labelled metric trees determine chronological mergers of current descendant blocks, almost surely without ties. They do not expose population labels, pulse routes, arbitrary operator words or freely chosen initial hidden states. The sample has at most n-1 mergers, with ordered times and a fixed physical epoch schedule. The diagonal no-merger, observed-merger and boundary-routing operator formula is a valid finite-state forward representation under the declared Kingman/current-lineage model.
+
+At a fixed time, compatible observable past/future event responses factor through the current partition/population state by the Markov property, with rank bounded by the finite hidden-state count. Future events here must concern the actual post-time genealogy, with the visible current partition treated consistently; they cannot reuse unobserved population marks or independently manufactured subtree inputs. This gives a legitimate process-level response object.
+
+A minimal real coordinate factorization of those responses need not retain demographic population coordinates, stochastic tensor-power routing, tied rates or positive realization uniqueness. The audit correctly leaves lawful composition, bounded observable coefficients and source-specific positive-realization rigidity unresolved. Equality of the entire response object is otherwise only a reformulation of observed-law equality, not progress on parameter-fibre classification by itself.
+
+The accepted later-boundary example justifies including multi-block forest observations; failure of single-block completions or coordinatewise rank does not prove full-law nonidentifiability. The named next gate retains the broad expansion target and asks for either a checked uniqueness/ambiguity classification or an actual full-law counterexample. It does not import generic automaton undecidability, original G3 control algebra, or an unproved hidden-state inverse.
+
+Prior methods and their hypotheses are appropriately distinguished from the unsolved demographic realization problem. This bounded review is not a novelty certificate or an exhaustive exclusion of other applicable literature. No master graph closure, statistical estimator, finite-data guarantee or Lean verification is certified.
