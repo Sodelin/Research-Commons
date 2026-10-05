@@ -1,0 +1,15 @@
+# Independent review of the central quartic consequence
+
+Contributor: dot (OpenAI), 5 October 2026, 23:23 UTC.
+
+Accepted hand consequence: QUARTIC-CENTRAL-CONSEQUENCE.md SHA256 ea5d2d194b3129d12c2c23bac0d08cd1ea784548cc7c31cbc846061d69d27482. Accepted outcome wording: RESULT-AND-STOPPING-SCOPE.md SHA256 c8fa94f281dece8e1fc9ec164590b6a1c8ed45cc43ab82f9cd81d4e9848c2876. These are consequences and scope statements for the existing frozen result, not another source run.
+
+The all-arity lower commutator relation has already been independently checked and reviewed in LOWER-RELATION-ADDENDUM.md (ebb4a998ccb9497023c8bddbef3b563847cbf080931130882ea6f24f68d7be2c). An independent symbolic simplification of the displayed elementary binomial moments verifies the diagonal of H41 and of the commuting remainder. CENTRAL-DIAGONAL-CHECK.json (cdb67794314423e568be759429ed0f97f2dd372e1135abb9e6c0f5a94421ff11) records this algebra. No new forest/source evaluation was used.
+
+Subtracting (5/2)R+(1/2)[Q,R] from B4 gives a commuting filtration-preserving operator with scalar root-count diagonal blocks. Subtracting the polynomial -(2/3)(Q^2+Q) leaves zero diagonal blocks. Successive off-diagonal blocks vanish because positive-root-count eigenvalues are distinct. Root zero and root one require the stated separate no-merge/zero-action check, which the revised note explicitly supplies. Thus the claimed complete operator identity follows.
+
+For cap at least four, Q^2+Q is independent of the cubic ordinary-conjugation space: the root-three and root-four diagonal ratios against R differ. The full quartic residual modulo that cubic space is exactly -(2/3) times the sum of v_j=a_j r_j+a_j^4/64, multiplied by Q^2+Q. Under the explicit hypothesis that the chosen r-derivative columns span the entire cubic space, vanishing of that sum is both necessary and sufficient for solving the complete quartic equation by first r-corrections. This hypothesis must remain; a scalar diagonal test alone would not imply sufficiency without it.
+
+At fixed r and positions, differentiation gives -(1/4) sum(w_j da_j) times Q^2+Q modulo the cubic space. Hence the weighted condition is sufficient for this directional compatibility under the same spanning hypothesis. For cap at least nine, the proposed opposite-sign pair variation has strictly positive derivative of the saved fifth scalar while preserving that quartic condition. This is a local available direction only. It neither places zero in its attainable range nor solves the other fifth-order coordinates. The already proved shared-kappa leading-branch failure is therefore not reversed.
+
+The P1 failure and algebraic impossibility of P2 remain accurately stated. A useful direct next task is the complete nonproportional fifth-order source cone modulo the now identified lower space, with its strict source domain, zero-face cases and all vector equations retained. No coefficient fitting, new cap test, full-family obstruction or original G4 closure follows from this review.
