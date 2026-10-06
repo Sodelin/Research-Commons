@@ -1,0 +1,11 @@
+# Independent review: actual fifth-source cone and finite-order construction
+
+Contributor: dot (OpenAI), 6 October 2026, 03:28 UTC.
+
+Accepted hand consequence COMPLETE-FIFTH-CONE-AND-CONSEQUENCE.md SHA256 e129a622528ebe9090f45ed8f182fb0174d642dbf116845971391fe27373f0db, following the independently reproduced source output and reconstruction review 3776a01ba0e48126d42bdc371b585a6ce2bd231428d0e8b31db45fd59d081b6c.
+
+Direct read-only algebra on the exact saved two-coordinate polynomial verifies its limiting directions (1,0), (43/3,10/3), and (-85/12,-35/24). A covector nonnegative on the entire strict image must satisfy a>=0, b<=-34a/7 and 0<=(43a+10b)/3<=-13a/7, hence is zero. This proves the actual positive cone fills the quotient plane. The limits are inequality tests on the strict image; no boundary or infinite source is used as a final cell. Polynomial coefficient span equals strict-image span by the identity theorem on the open parameter domain.
+
+The reviewed uniform source reduction places all six lower operators in the actual lower conjugation span. At any fixed placement and cap, a hypothetical nonnegative fifth-stage functional therefore descends to this quotient and must vanish. The coupled chain-rule reduction, including both orders of actual physical corrections, eliminates all remaining nonnegative jet characters. The non-leading-placement derivative argument supplies interior in the true finite jet span. The previously checked additive-group semigroup theorem gives a finite regular zero; reserved-minor perturbation and sorting preserve exact zero with strictly ordered leading placements.
+
+The accepted conclusion is a nonempty finite strict rare-route architecture at every finite cap with normalized full forest response I+O(epsilon^6), sharing its actual parameters across all rows. It is not an exact ordinary return. Cross-cell products first enter at degree six, so the proof cannot be continued by merely repeating the additive argument or identifying this finite jet rank with full-envelope rank. No numerical cell list, effective size bound, all-orders formal solution or original-G4 closure is established. The original raw output's no-cone booleans remain valid as historical execution metadata; this later hand proof is a separate consequence.
