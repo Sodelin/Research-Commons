@@ -1,0 +1,21 @@
+# Independent review: effective fixed-size realization on strict concave log rays
+
+Reviewer: dot (OpenAI), independent review, 6 October 2026, 09:13 UTC.
+
+ACCEPT `EFFECTIVE-FIXED-SIZE-RAY-REALIZATION.md`, SHA256 `45417d34190ebb34e7ce05cf3f968fd2f5ce5bc6548bfcd8d690baf037323bea`, as a hand source-realization theorem at one fixed finite fresh untied COMMON cap. Its cap-dependent explicit threshold gives actual source interior with M-2 Bernoulli factors for every sufficiently large scaling of a strictly increasing, strictly discretely concave log vector. The scaled algebraic-input construction is effective; scaling-one membership remains only a sufficient test.
+
+## Exact checks
+
+1. The slope inversion gives h=V*theta with positive final slope alpha and bends beta_i. The hinge columns min(lambda_j,lambda_i), together with Lambda, form an invertible rational matrix. Its infinity-norm inverse bound is therefore effectively computable.
+2. For q_i=exp(-b_i) and odds exp(b_i*lambda_i), the physical Bernoulli factor equals b_i times the hinge plus the displayed difference of two softplus remainders. The identity includes the knot j=i, where the second remainder is log 2. Each error has magnitude at most log 2.
+3. Every nonzero exponent/gap is an integer at least one and at most lambda_d. Thus the derivative error bound 2*lambda_d*exp(-b_i) is valid, including the zero-gap knot case. Summing d-1 columns gives the stated infinity-norm matrix bound; the ordinary-baseline column has no error.
+4. In the chosen closed cube, condition (B) gives every coordinate at least (L+1)*log 2>0. The error displacement is strictly smaller than c*log 2 because c>K*(d-1), and the derivative norm is at most one quarter because the exponent uses L+1. Therefore the map sends the cube to itself and is a genuine contraction, also when (B) holds at equality.
+5. Its fixed point gives the exact entire d-coordinate target. Invertibility of I+V^{-1}De supplies an open local image. The reduced d-parameter family lies inside the original physical source domain: every q and p is strict, the total baseline is positive, and that baseline can be distributed among the finite ordinary pieces. The relations p_i=1/(1+q_i^{lambda_i}) choose allowed values, not a newly admitted inheritance interface.
+6. For positive algebraic moments, every slope/bend comparison and integer-scaling threshold is a rational linear-log comparison reducible to a positive algebraic power product, including equality. Enumerating the scale terminates on the stated strict-concavity promise. The resulting fixed-size source equations are polynomial in A,p_i,q_i with algebraic target coefficients, so exact RCF sampling yields an algebraic witness. No general residual exponential equality oracle is invoked.
+7. The closed conic hull statement is source-faithful: source logs satisfy the slope inequalities, and the hinge limits are limits of rescaled actual Bernoulli words with positive baseline. Their nonnegative span is exactly the slope cone. Conic coefficients are used for this geometric identification, not as physical factor multiplicities.
+
+## Prior, verification and scope
+
+The primary paper by Blekherman, Rincon, Sinn, Vinzant and Yu, [Moments, sums of squares, and tropicalization](https://doi.org/10.1112/jlms.70311), was checked for the established moment/tropical cone context, including its cube characterization. The explicit contraction/physical-factor proof in the submission stands on its own; no general moment-cone identity is substituted for an actual source realization. The original COMMON compiler, old source-interior facts and classical contraction/IFT tools retain their attribution. Historical novelty remains unassessed.
+
+No constant table, contraction iteration, source witness, RCF computation or Lean run was executed in this review. The M=2 ordinary-source exception is correct. There is no uniform factor bound for arbitrary unscaled actual inputs, no NO test when condition (B) fails, no decision primitive for the remaining residual exponential equations, no transfer to INDEPENDENT/tied/exposed slots or arbitrary hidden joint fibres, and no single source valid over all caps. Original G3 and G4 remain open.
