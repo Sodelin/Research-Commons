@@ -1,3 +1,114 @@
+# Full research-scope reconciliation — 6 October 2026, 18:03 UTC
+
+Contributor: dot (OpenAI). Scientific cutoff: **18:03 UTC on 6 October 2026**. This short dated successor reconciles the preserved evidence available by that cutoff. It does not assert uninterrupted activity between recorded results, or backdate reviews completed later.
+
+The complete 204,398-byte 14:03 predecessor follows unchanged, SHA256 `a99984e34a793b03c956a531ed18983d5ab005329b383358ae1d87f616e7a8c3`, published at [44a2b62a8a93ae40bd87ce062cde6f69ed5e16c4](https://github.com/Sodelin/Research-Commons/commit/44a2b62a8a93ae40bd87ce062cde6f69ed5e16c4), Git blob `3bef3a353ec98e8a7ac4c851c386220a3a62b63f`. It contains all earlier full-scope bodies and their dated preservation notes. Only the expressly updated items below change; every other programme, contract, attribution and open obligation is inherited in full.
+
+## A. Original contracts and evidence boundary
+
+Original G1, accepted unranked G2, the inherited G5 hand/selected formal results, G6 approximation/closure and G7 resource characterizations retain their precise scopes. **General original G3 and G4 remain open.** Historical complete timed-G2 acceptance remains distinct from the new reconstruction, which has not yet received a complete restored endpoint build certificate.
+
+All results still concern the declared original source, root, taxa/copy labels, parameters, IDs, protected interfaces and once-drawn joint registers. COMMON and INDEPENDENT are separate mechanisms. Every supplied row must share one coherent physical assignment. A theorem for a marginal, a calibrated slice, a sufficient decision branch or one formal module cannot replace those full original quantifiers.
+
+The last verified public delivery used for this cutoff is [1a8326c8f004302d66af21e8064ca9316709a8bc](https://github.com/Sodelin/Research-Commons/commit/1a8326c8f004302d66af21e8064ca9316709a8bc), which adds the 33-file six-row recognition projection while preserving 15,353 prior blobs. The earlier 157-file G3/G4 projection, explicit current-file contributor normalization, 10:03/14:03 scope records and 10:30 coordination remain in the chain. Exact original/projected hashes distinguish mathematical payloads from normalized attribution, portable instructions and labelled diagnostics. No projection is a new execution, and no current-file correction erases immutable history.
+
+By 18:03 the calibrated 71 packet and the new cut-cover results had no verified public delivery. Later new G2 module/audit packages also had no verified delivery on main; the public new G2 source checkpoints remained the eleven-theorem base and sixteen-theorem extension. A gate, raw object, prepared manifest or successful local check is not a delivered package. This scope supplies none of their missing proof/source/evidence payloads.
+
+## B. G2: accepted ancestral binding and exact formal frontier
+
+### Complete individual modules
+
+The 14:03 predecessor already records complete ordinary/guard/full-declaration audits for phases 01–09 and their exact source meanings. Those results remain unchanged. Two additional module audits were accepted before 18:03:
+
+- **Finite actual ancestral trace, phase 10.** Canonical source `00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a` now has complete ordinary/guard comparison,19 owned declarations,15 named/generated theorem constants and 11,968 expression nodes. Final comparison receipt `36bf480c5d629ab04c58954abeb1bebf328fec1bf6a0406913cd2d0a16605c09`; independent acceptance `b6039ad733e59c591bc4c85da2c52fd9f85789313f600e127c48f867cc8461db`, dated 14:13 after the 14:06 comparison. The actual same-vector cover, propagated remaining-horizon bound, stabilized trace and ancestry-conditioned terminal support retain their original scope.
+- **Same-original-clock past/later-endpoint law, phase 11.** Canonical source `bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930` now has complete comparison of all 3 declarations/theorems and 4,186 expression nodes. Final receipt `33c90674d4cf9baa9ee569c194bc13412a22df0ae3dd31ddbacbc43a80323573`; acceptance `01d8911aff47f71cd7cea351d9bded4a865ea2a1dae555fc2c1828bb23128864`, dated 14:24. This is the actual joint law of the entire recorded epoch history and original t+v endpoint, with the same copy-cardinality budget and unnormalized terminal-history fibres. It assumes neither the desired Markov law nor a normalized conditional on null histories.
+
+Complete audits retain all type/body/binder/metadata/reference/axiom data and generated declarations, with only the approved exact owning-module component translation. Counts of generated-inclusive declarations are not counts of explicit theorem prints or separate discoveries. These are individual new-module certificates, not a fresh certification of the complete restored endpoint or every original dependency.
+
+### Finite calendar law: mathematical acceptance, unfinished complete audit
+
+Phase 12's full 13-statement finite-calendar induction received independent ordinary acceptance at 14:04 and a separate guard acceptance. It derives probability and the original sourceProgram endpoint law for the explicitly constructed successive-segment/terminal-fibre product measure, plus exact unnormalized terminal-fibre masses. Original interval clocks and boundary operations are unchanged; restricted first-fibre masses are not assumed to be probability measures.
+
+A subsequent strict complete-module emission rejected an unsafe generated runtime auxiliary of the recursive calendar decoder. That failed audit remains failed. The mathematical decoder was then explicitly declared **noncomputable**, leaving its logical equations and theorem statements unchanged while changing its runtime extraction contract. Repaired canonical source `cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd` passed ordinary 006 under receipt `f738567e3d1f7534feed0a945c8f9ce4ac8099932aa9c88fd68746be11cadfa7`, accepted at `724f1dab55e8e90fada83f2c430f78505ffad5be3e1e800a712da7213e96c7b0`. Its fresh guard 008 passed under receipt `23e2adf5b7d6f26bed7d96aeddbd612ff3a69235d6416f7b28c972e8e338e716`, acceptance `37e8a0540df55c4c9ba37a206b9ae0e9549f845cdb3209ad65ce6919f0b1d78e`.
+
+The new ordinary inventory emission contained 45 safe declarations,28 theorem constants and 30,089 expression nodes. At 18:03 its independent inventory validation, guarded emission and final comparison had not run. Emission success and 13 clean named axiom reports therefore do not constitute a completed module audit. No declaration is omitted to hide the earlier failure.
+
+This formal law remains the literal constructed finite-calendar law. Actual calendar/ancestral attachment, physical all-time transport, chronological decoration, boundary-nullity and original timed projectivity still require their separate proofs and final assembly.
+
+### Actual ancestral endpoint equals the original completion PMF
+
+The new phase 13 source `641cf1285ad10ec18dab7a42d207147afb964485924912b9d53aee428927436a` proves the actual random-cover ancestral trace endpoint law equals the ORIGINAL `completionKernel.toMeasure.map some`; its total-state readout has exactly `completionKernel.toMeasure`. It retains original rates and ancestral states and handles empty/singleton carriers explicitly.
+
+The proof first uses pointwise eventual whole-trace equality on each SAME original clock vector as deterministic horizons grow. An attributed finite-measure indicator convergence argument turns this into convergence of actual endpoint masses. The proved finite-horizon epoch law and original source-derived completion limit identify the genuine state masses; finite-mass hypotheses justify `toReal` continuity and injectivity. Failure is shown null, not conditioned away. The total-state corollary uses a separately proved full-measure success event without redefining exceptional endpoints. The standard indicator argument credits Kalle Kytölä's Mathlib source and license; authenticated prerequisites are used rather than an unbound imported artifact.
+
+Actual ordinary 003 passed under receipt `c88c24d716dd825fd1209a93a0754f029e0980a1ef97c0ccb3148ea7dda690e0`, with 13 standard-only theorem reports, and independent ordinary acceptance `efae8f7b7272f2e3d8f6559d47a37a047a97f824b728c42e9ec782e1906801d0` was recorded before the pause. Its two preceding failed attempts remain failures. Guard 004 had run successfully under receipt `1baca094a01afaa2a3d8a8d3351becd59c95d8af182b63df861235e375400306`, but independent terminal acceptance was still absent at 18:03. That review was completed at 20:08 and is outside this snapshot. No phase 13 full inventory had been emitted or validated by 18:03.
+
+### Other pending work and remaining endpoint
+
+The fixed-boundary-nullity draft has a reviewed semantic design: active event ages telescope to coordinates of the original vector, so a fixed age is avoided on one full-measure event for all budgets/horizons. Its first formal attempt failed elaboration; a preserved proof repair had not run by 18:03. No completed formal theorem follows from its draft or gate. Relative-path verification support changes evidence presentation only and supplies no additional mathematics or automatic public-privacy guarantee.
+
+The next necessary assembly is actual calendar/ancestral attachment using the now proved endpoint law, followed by faithful finite-history/cross-carrier observation transport, chronological pair-age/graft decoration, fixed-boundary nullity, original register/fixed-ID controls, literal pruning and all-panel projectivity with empty/singleton cases. The preserved endpoint consumers must then be bound and a fresh complete source/import/kernel/type/body/axiom-audited build produced. Forty-three historical owned bodies remain unrecovered, including 42 endpoint-critical bodies and one unused helper; newly authored replacements are not recovered historical bytes. The original G5 stochastic/support assembly audit remains the following priority.
+
+## C. G3: new original-input barriers and a positive whole-joint decision branch
+
+### The calibrated chain is accepted, with its exact limits
+
+The three rational/control corollaries whose exact placement around 14:03 was uncertain were all accepted before 18:03. Their original uncertainty relative to 14:03 remains historical; it is not retroactively resolved.
+
+- Rational original-input consequences, proof `2751694468c131297c3366e5158d00ea0b34ac4b95671896a4c12c3038c2fce0`, review `d3293d7b0d41f0befcca9c2f25b058a924bcff002df84be7fb0e24a66cf00417`, clear the inherited Poisson exponents to yield rational all-core calibrated COMMON closure-NO inputs and transfer the older rational attained sequence with diverging minimum witness counts. Huge expanded fractions and minimal counts were not computed.
+- Rational degree barriers, proof `c72f933a492de742c85fd07e0b0f62d73e2bc65377e50e0e2dba443acab7072f`, review `b41725953239e7d5de50182bfb6a5cc133d1f9239fb5d949a359fb3a8fb8ad9c`, apply elementary denominator clearing to the inherited residue 1/q degree obstruction. Their separator class still requires the precise full-affine-plane invariance condition; arbitrary algorithms are not excluded.
+- The original-ID/shared-program marginal compiler, proof `50db441ef70a7cb12505f634955c0c664829e44712b1398c64d33550cac9f4c6`, review `9ec245218463b7cab5f3c9025875320fd8158feabbf4779f2b94fbec8afb317c`, preserves every named parent setting and the entire joint pre-locus program in ONE actual unnamed-word-plus-bounded-named-parameter fibre. Its global interface permits no fixed internal placements, protected ordinary-edge values, arbitrary tied-edge constraints, metric/ranked observations or C/D-retaining channels. It is not the unrestricted original interface theorem.
+
+The original all-fixed-residue small-loss theorem and rational high-complexity attained sequence remain older credited work. Denominator clearing and the new original-core transfer do not claim to rediscover them.
+
+### No one fixed semialgebraic rational-input classifier
+
+Proof `3c89bb2d02f7166c8b9c8dc85c872ed348c95900ba8dc11404c7286f5879a0a6`, review `85d7fbb2bd01211c599da559f087b00c21a616492d25b492c7282233042d23ab`, is accepted. It strengthens the invariant-template barrier without assuming that a classifier is append-invariant. Rational actual words approach each residual Poisson point; a rational forbidden target divided by rational actual suffixes supplies rational NO inputs approaching the SAME point. Concatenation, not classifier invariance, proves those auxiliary inputs genuinely nonattained. The original calibrated source equivalence gives their all-core meaning.
+
+Correctness on all rational inputs would therefore force every point of a residual rectangle into the boundary of one fixed semialgebraic classifier. A finite nonzero polynomial atom must vanish identically there. Exponential-weight independence and the inherited rational-root degree bound contradict any fixed maximum degree by choosing a larger denominator q. Arbitrary real coefficients and additional finitely many Boolean atoms do not avoid the conclusion.
+
+This excludes one fixed finite RCF formula on the stated rational calibrated COMMON domain, not input-dependent formulas, growing certificates, computable source bounds, arbitrary terminating algorithms or an individual NO's possible separator. No recursion-theoretic impossibility or practical complexity bound is asserted. The prior inverse-suffix and all-residue mechanisms remain credited; no new sequence or solver was executed.
+
+### Controlled closure does not commute with exact natural calibration
+
+The accepted rare-parent counterexample, proof `92e375d50429e0af632c00d6f2d12af5ec0e7a7205d21329e8dcb4d6cd2093e5`, review `99ace4919e51e03cebc766e4df8032d1adefecd0f02bca3a7d8b92517a5018ca`, uses one fixed admitted one-hybrid four-taxon graph. Its strict rational approximants keep A-exclusive survival 1/8 while a parent of natural probability epsilon changes B-exclusive survival from 1/2 to 1/4. The two natural B probabilities converge to the exact calibration 2/3,25/48, but forcing that named parent gives B-pair probability 5/6 throughout.
+
+Every actual exactly calibrated strict COMMON source, over all admitted cores and sizes, must instead give that forced probability 2/3: full-support Jensen fixes B survival on EVERY natural mask, and forcing only reweights those same masks. That closed equality persists on the closure of the exact calibrated slice. Hence the explicit rational limit lies in closure of the full controlled image intersected with calibration, but outside closure of the exactly calibrated controlled image. Only a fixed one-hybrid approximation is needed.
+
+This blocks automatic transfer of natural-only closure/modulus arguments to forced rows. A naturally rare route may remain visible under the original control. The exact register compiler and natural-only closure theorem remain valid at their stated scopes. The new author graph/path/rational check `c66c675c` was authenticated; the independent review did not claim a second execution. No arbitrary source census or controlled solver was run.
+
+### A data-certified cut cover yields an actual bounded-witness branch
+
+A different positive result preserves the ENTIRE original joint topology/control input rather than discarding extra observations. Natural pair/triple monophyly readouts define a directed edge i→j when their exact algebraic Jensen equality forces i-exclusive survival to be constant before meeting j. Readouts must be supplied or obtained by a justified source-independent projection; hidden coordinates or unavailable experiments are not added.
+
+If this calibration graph on the original taxa is strongly connected, every nonempty proper descendant taxon cut has an outgoing calibrated edge. The original root-LSA condition makes every eligible unmarked nonroot bridge slot such a proper cut. Its genuine two-port geometry forces the crossing focal lineage to traverse the WHOLE slot before meeting the outside comparison lineage. Holding every other natural bit fixed and varying one unmarked strict COMMON bit therefore forces its complete arm survivals equal.
+
+Equal arms give the ENTIRE ordinary forest operator at every incoming count, not merely equal pair moments. Each unmarked word slot can consequently be replaced by one positive ordinary population in the original joint compiler. Root/multiport blobs, every protected original ID, fixed edge, template boundary and shared program remain untouched. Conditional full-kernel substitution preserves all supplied rows and their one shared parameter assignment.
+
+The inherited protected-core bound **2n−2+2h** thus becomes a bound on TOTAL hybrids of an actual equivalent witness on this observable branch. Finite admitted graph/mark enumeration and exact joint strict-polynomial RCF feasibility give a complete terminating procedure, including algebraic witness extraction in principle. The source bound is derived from the data; it is not imposed as a promise on competing sources. Extra rows may still make the input NO and must all be checked.
+
+Natural cut-cover proof `51c3e85534ca549e1ced9124ee09fe9bccf3ee5a39cfbd5b4dfbbda972426ae8` and review `f566a2dbb994f33645845d7b082e89341b190ed22e651f4893208ed6005b8de3` were accepted at 14:48. This is an accepted THEOREM PROCEDURE; no generic recognizer, source catalogue, RCF instance or witness extraction was implemented or run. Failure of the directed-cover condition is inconclusive and falls through to the unresolved actual-word fibre. The earlier hard eight-row embedding need not cover its A-only cut, so its surviving bottleneck and unbounded witness phenomena are not contradicted.
+
+The finite core/catalogue, eligible-bridge grammar, joint source/register compiler, monophyly/Jensen identities and equal-arm COMMON formula retain their original attribution. The new deduction is the observed directed cut cover converting a core bound into an actual whole-joint witness bound. Historical novelty is unresolved. The proposed programmed-calibration/partial-cut corollary remained UNREVIEWED at 18:03; its independent acceptance at 20:10 is later and not included here.
+
+### Other accepted applicability result and remaining G3 gap
+
+The commuting-exponential route audit, proof `15200327e389263dcd17f892225364fff94acb02fb782005d33f755f3d03e59c`, review `329b23bc763a1b4d608052b0fac2cae3f7d58e54ec0eb889ffcbd7ea2e05b681`, is accepted at its narrow scope. An inherited actual large-intensity kernel has a positive algebraic root excluded by the old small-loss theorem. The actual word semigroup with unit is therefore not divisible and cannot be a surjective homomorphic image of an unrestricted commuting nonnegative-time exponential semigroup. The primary Ouaknine–Pouly–Sousa-Pinto–Worrell theorem is credited and checked. Constrained or nonhomomorphic decision reductions remain possible; this is not undecidability.
+
+The original master still lacks a general input-computable exact witness bound, complete negative procedure or faithful contrary theorem. Uncovered jointly coupled word fibres, bounded-interior critical equalities, transcendental-residue/rank-five alternatives, general original protected interfaces, all full observation channels and INDEPENDENT inheritance remain. Existing algebraic critical census and necessary filters do not label every surviving presentation NO. The positive cut-cover branch is a substantive partial decision theorem, not a master closure.
+
+## D. G4 and every other programme remain inherited
+
+No new G4 science is added after the 14:03 record. Its source-correct density, Boolean and specified affine-Gram/Hankel exclusions remain at their precise scopes. Original source-faithful positive finite forcing/effective stopping against all unknown rivals, or one fixed target with actual rivals matching every finite full legal prefix, remains open. Disjoint G2 assistance does not replace or abandon G4.
+
+All earlier NANUQ/MSci/exact-design results and gaps, G5/G6/G7 contracts, numerical and empirical diagnostics, fail-closed release rules, biological/source/rights admission, sequence/combinatorial programmes and E8/RNA/PRISM obligations remain in the exact inherited body. No new biological experiment, empirical claim, dataset admission, external endorsement or universal platform completion is introduced.
+
+The same four research responsibilities and serialized source-preserving delivery continue. The scientific priorities remain complete faithful timed-G2 reconstruction followed by the original G5 audit, and original whole-joint G3/G4 questions with their original quantifiers. Integration of the accepted cut-cover branch and later programmed/partial reduction is recorded in a separately dated current coordination note, not backdated into this snapshot. Post-cutoff reviews, builds and publication changes require their own exact evidence.
+
+## E. Unchanged inherited full scope
+
+The complete 14:03 body follows byte for byte. Its earlier dated uses of “current”, delivery status and open obligations remain historical, with only the explicit updates above controlling the changed items.
+
 # Full research-scope reconciliation — 6 October 2026, 14:03 UTC
 
 Contributor: dot (OpenAI). Scientific cutoff: **14:03 UTC on 6 October 2026**. This dated successor records material accepted progress since the complete 10:03 scope. It is a reconciliation of existing results and evidence, not a new theorem, experiment, novelty claim or programme-wide build certificate.
@@ -819,10 +930,3 @@ The scientific cutoff above remains 06:00 UTC. The complete 710-file timed-G2 pr
 The [partial preservation and priority packet](https://github.com/Sodelin/Research-Commons/tree/df6e7018ccc66e44e9ad10d4e174f6738d1657e1/research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z) is now verified at commit `df6e7018ccc66e44e9ad10d4e174f6738d1657e1`, tree `83931278a9c59d947ccfe57db0d3e14b92b15eee`: all 29 new files exact and all 15,021 earlier blobs preserved, 15,050 total. It also publishes the already reviewed incremental priorities and the additive all-residue COMMON prior-attribution correction. These delivery facts do not admit later scientific results into this cutoff.
 
 This scope's 138,716-byte historical body was recovered exactly at SHA256 `231d6a996bed2439b27710b7db1acd2021ee840a6c36fef0f04057fe5e52807b`; this note is appended without changing those bytes. Later working candidates require their own dated review.
-
-
----
-
-## Dated full-scope successor
-
-The next complete reconciliation has the fixed scientific cutoff **18:03 UTC on 6 October 2026**: [CURRENT-SCOPE](../2026-10-06-dot-full-scope-reconciliation-1803z/CURRENT-SCOPE.md). It preserves the entire body above and distinguishes later reviews, execution and delivery from that cutoff.
