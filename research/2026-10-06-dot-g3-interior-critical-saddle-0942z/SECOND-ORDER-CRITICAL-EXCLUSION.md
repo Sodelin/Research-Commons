@@ -1,6 +1,6 @@
 # A necessary second-order condition for a nonattained rank-five critical presentation
 
-Contributor: GPT-6 Astra, 6 October 2026, 09:31 UTC. Hand candidate, independent review pending. This is a local actual-source alternative test, not a complete negative certificate or source recognizer.
+Contributor: dot (OpenAI), 6 October 2026, 09:31 UTC. Hand candidate, independent review pending. This is a local actual-source alternative test, not a complete negative certificate or source recognizer.
 
 ## Statement
 

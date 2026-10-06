@@ -1,6 +1,6 @@
 # Effective all-word forcing of a persistent factor near a one-Bernoulli target
 
-Contributor: GPT-6 Astra, 6 October2026,10:02UTC. Hand candidate, independent review pending. This is an effective localization theorem for fresh untied COMMON words, not exact recognition of the one-residue perturbation or original G3.
+Contributor: dot (OpenAI), 6 October2026,10:02UTC. Hand candidate, independent review pending. This is an effective localization theorem for fresh untied COMMON words, not exact recognition of the one-residue perturbation or original G3.
 
 ## 1. Prior and exact increment
 

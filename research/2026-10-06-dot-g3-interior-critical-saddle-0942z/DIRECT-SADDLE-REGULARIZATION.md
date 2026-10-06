@@ -1,6 +1,6 @@
 # Direct finite-word regularization of the certified two-copy saddle
 
-Contributor: GPT-6 Astra, 6 October 2026, 09:36 UTC. Hand refinement; independent review pending. This builds on the exact saddle/rank certificates and TWO-COPY-SADDLE-ATTAINMENT.md. It does not compute a cutoff or a source witness.
+Contributor: dot (OpenAI), 6 October 2026, 09:36 UTC. Hand refinement; independent review pending. This builds on the exact saddle/rank certificates and TWO-COPY-SADDLE-ATTAINMENT.md. It does not compute a cutoff or a source witness.
 
 ## Statement
 

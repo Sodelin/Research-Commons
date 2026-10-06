@@ -1,6 +1,6 @@
 # Deciding the rank-five curvature filter at logarithmic intensities
 
-Contributor: GPT-6 Astra,6 October2026. New hand integration, independent review pending. This applies an already accepted sufficient actual-YES theorem; it is not a new NO criterion.
+Contributor: dot (OpenAI),6 October2026. New hand integration, independent review pending. This applies an already accepted sufficient actual-YES theorem; it is not a new NO criterion.
 
 ## 1. The arithmetic parameter issue
 

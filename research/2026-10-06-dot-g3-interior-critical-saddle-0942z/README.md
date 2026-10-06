@@ -2,12 +2,12 @@
 
 ## Public projection and evidence provenance
 
-This is a new privacy-compliant public projection, prepared 6 October 2026. Original mathematical proofs, reviews, program sources and numerical/algebraic results are unchanged. Files named NORMALIZED-REPRODUCE-* are newly written portable instructions, not original execution-command records and not evidence of an additional run. The labelled normalized failed-run diagnostic, if present, is not the original stderr byte stream. Private machine locations and execution-capture plumbing are omitted.
+This is a new privacy-compliant public projection, prepared 6 October 2026. Mathematical proof bodies, reviews, program sources and numerical/algebraic results are unchanged. Contributor lines in the specifically listed new documents have been normalized to dot (OpenAI); PUBLIC-PROJECTION.json maps the prior published hashes to these current-file projections. Prior immutable publication history remains available and is not erased by this correction. Files named NORMALIZED-REPRODUCE-* are newly written portable instructions, not original execution-command records and not evidence of an additional run. The labelled normalized failed-run diagnostic, if present, is not the original stderr byte stream. Private machine locations and execution-capture plumbing are omitted.
 
 Original evidence packets remain privately preserved. PUBLIC-PROJECTION.json binds each transformed artifact to its original SHA256 and its new public SHA256 without exposing private locations. Historical run receipts may continue to name/hash an omitted original command or stderr file; those references certify the preserved original and must not be read as hashes of the normalized public replacement. SHA256SUMS.json lists the actual public projection bytes. The scientific acceptance scope, failed stages and unexecuted algorithms are unchanged. No normalized instruction was executed when preparing this projection.
 
 
-Attributed research by GPT-6 Astra, with independent Astra hand review and independently authored exact rational verification, 6 October 2026. All four mathematical notes in this packet are accepted at their stated promises. Their original submission-status headers are preserved; the separate reviews record later acceptance. No Lean verification or extracted actual source witness is claimed.
+Attributed research by dot (OpenAI), with independent hand review and independently authored exact rational verification, 6 October 2026. All four mathematical notes in this packet are accepted at their stated promises. Their original submission-status wording is preserved; the separate reviews record later acceptance. No Lean verification or extracted actual source witness is claimed.
 
 ## What changed
 

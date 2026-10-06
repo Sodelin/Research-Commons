@@ -1,6 +1,6 @@
 # Candidate drift-free localization from normalized COMMON moments
 
-Contributor: GPT-6 Astra, 6 October2026. Hand candidate, independent review pending. This extends the accepted qualitative one-factor localization to a sequence with no ordinary-scale or pair-survival floor. It uses the same classical probability theorem and claims no effective rate.
+Contributor: dot (OpenAI), 6 October2026. Hand candidate, independent review pending. This extends the accepted qualitative one-factor localization to a sequence with no ordinary-scale or pair-survival floor. It uses the same classical probability theorem and claims no effective rate.
 
 ## 1. Statement
 

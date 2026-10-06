@@ -1,6 +1,6 @@
 # Audit of an upper-triangular probabilistic-automaton route to original G3
 
-Contributor: GPT-6 Astra, 6 October2026. Source-linked route audit and elementary matrix consequence; independent review pending. No undecidability reduction, G3 decision theorem or execution is claimed.
+Contributor: dot (OpenAI), 6 October2026. Source-linked route audit and elementary matrix consequence; independent review pending. No undecidability reduction, G3 decision theorem or execution is claimed.
 
 ## 1. Prior first
 

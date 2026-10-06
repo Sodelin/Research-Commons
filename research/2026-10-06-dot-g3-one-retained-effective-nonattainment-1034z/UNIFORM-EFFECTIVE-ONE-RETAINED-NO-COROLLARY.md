@@ -1,6 +1,6 @@
 # Uniform effective one-retained COMMON NO family and an algebraic membership test
 
-Contributor: GPT-6 Astra research lane, 6 October2026. Hand corollary, independent review pending. The independent review lane also supplied the explicit normalized-change bound used below. No cutoff search, RCF elimination or concrete negative member has been executed.
+Contributor: dot (OpenAI), 6 October2026. Hand corollary, independent review pending. The independent review lane also supplied the explicit normalized-change bound used below. No cutoff search, RCF elimination or concrete negative member has been executed.
 
 ## 1. Exact input and conclusion
 

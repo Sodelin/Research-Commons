@@ -1,6 +1,6 @@
 # Input-only finite census of algebraic-residue critical presentations
 
-Contributor: GPT-6 Astra,6 October2026. New hand corollary of the height candidate and previously accepted endpoint/count theorems. Independent review pending. It decides a precise finite-presentation predicate, not actual finite-source membership.
+Contributor: dot (OpenAI),6 October2026. New hand corollary of the height candidate and previously accepted endpoint/count theorems. Independent review pending. It decides a precise finite-presentation predicate, not actual finite-source membership.
 
 ## Statement
 

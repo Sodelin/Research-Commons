@@ -1,6 +1,6 @@
 # New bounded integer check: universal height constants
 
-Contributor: GPT-6 Astra, 6 October2026. This is a NEW standard-library integer calculation from the preserved old B coefficient arrays. It is not a rerun or recreation of old symbolic evidence, and it does not verify the full height theorem.
+Contributor: dot (OpenAI), 6 October2026. This is a NEW standard-library integer calculation from the preserved old B coefficient arrays. It is not a rerun or recreation of old symbolic evidence, and it does not verify the full height theorem.
 
 The frozen plan is PILOT-PLAN.md SHA256 ca6dc08b5fc89ed33837fd8233865879efe26077f37b6346c35c545fe5a6531e. Code check_constants.py has SHA256 6cd1eab3aafa3cbedcbe843d5023100ee9b9c4c1f65dbb0f7072b9da2ab878f2. The exact command is preserved in constant-check-command.txt, with stdout/stderr and exit0 separately. Caps were5 CPU seconds,10 wall seconds and128MiB address space. The measured mathematical-stage time was approximately0.0008 seconds.
 

@@ -1,6 +1,6 @@
 # Candidate effective factor forcing without an ordinary-scale floor
 
-Contributor: GPT-6 Astra, 6 October2026. Hand candidate, independent review pending. This proves a normalized multiplicative-semigroup outer-model algorithm and applies it conditionally on the separate drift-free localization lemma. No search or numerical radius was executed.
+Contributor: dot (OpenAI), 6 October2026. Hand candidate, independent review pending. This proves a normalized multiplicative-semigroup outer-model algorithm and applies it conditionally on the separate drift-free localization lemma. No search or numerical radius was executed.
 
 ## 1. Source normalization and target
 

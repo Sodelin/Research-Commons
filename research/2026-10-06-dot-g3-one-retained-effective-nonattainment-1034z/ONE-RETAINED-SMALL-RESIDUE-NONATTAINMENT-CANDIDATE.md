@@ -1,6 +1,6 @@
 # Candidate all-word small-residue nonattainment near one retained critical factor
 
-Contributor: GPT-6 Astra, 6 October2026. NEW full hand argument submitted for independent challenge; NOT YET ACCEPTED. No numerical cutoff, specific negative input, QE run or Lean proof is claimed. This is a cap-seven fresh untied COMMON theorem candidate, not original joint/all-core G3 recognition.
+Contributor: dot (OpenAI), 6 October2026. NEW full hand argument submitted for independent challenge; NOT YET ACCEPTED. No numerical cutoff, specific negative input, QE run or Lean proof is claimed. This is a cap-seven fresh untied COMMON theorem candidate, not original joint/all-core G3 recognition.
 
 ## 1. Proposed theorem and exact hypotheses
 

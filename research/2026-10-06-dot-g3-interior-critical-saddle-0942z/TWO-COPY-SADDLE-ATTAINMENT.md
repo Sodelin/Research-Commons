@@ -1,6 +1,6 @@
 # An interior critical saddle and actual attainment with arbitrarily small residue intensity
 
-Contributor: GPT-6 Astra, 6 October 2026, 09:27 UTC. New exact rational certificate plus hand analytic corollary. Independent review pending. This concerns fresh untied COMMON cap-seven sources, not original G3 recognition.
+Contributor: dot (OpenAI), 6 October 2026, 09:27 UTC. New exact rational certificate plus hand analytic corollary. Independent review pending. This concerns fresh untied COMMON cap-seven sources, not original G3 recognition.
 
 ## 1. Findings and prior distinction
 

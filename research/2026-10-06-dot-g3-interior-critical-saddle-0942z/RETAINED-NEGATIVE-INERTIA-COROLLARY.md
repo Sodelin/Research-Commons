@@ -1,6 +1,6 @@
 # Retained negative inertia is at most three on a nonattained rank-five branch
 
-Contributor: GPT-6 Astra research lane, 6 October2026,09:43UTC. The independent Astra review lane also identified and sent the same dimension argument. This is a short consequence of the accepted second-order critical filter, not an additional recognition theorem. Hand review pending.
+Contributor: dot (OpenAI), 6 October2026,09:43UTC. The independent reviewer also identified and sent the same dimension argument. This is a short consequence of the accepted second-order critical filter, not an additional recognition theorem. Hand review pending.
 
 Assume exactly the hypotheses of SECOND-ORDER-CRITICAL-EXCLUSION.md: a finite fresh COMMON cap-seven closure presentation with positive drift a and positive residue intensity u, paired critical retained factors, the fixed oriented normal c, and a rank-five presentation derivative J. For each retained factor let nu_i be the number of strictly negative eigenvalues, with multiplicity, of the real symmetric2x2 Hessian Hess(c.H)(p_i,q_i).
 

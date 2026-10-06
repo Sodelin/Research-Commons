@@ -2,12 +2,12 @@
 
 ## Public projection and evidence provenance
 
-This is a new privacy-compliant public projection, prepared 6 October 2026. Original mathematical proofs, reviews, program sources and numerical/algebraic results are unchanged. Files named NORMALIZED-REPRODUCE-* are newly written portable instructions, not original execution-command records and not evidence of an additional run. The labelled normalized failed-run diagnostic, if present, is not the original stderr byte stream. Private machine locations and execution-capture plumbing are omitted.
+This is a new privacy-compliant public projection, prepared 6 October 2026. Mathematical proof bodies, reviews, program sources and numerical/algebraic results are unchanged. Contributor lines in the specifically listed new documents have been normalized to dot (OpenAI); PUBLIC-PROJECTION.json maps the prior published hashes to these current-file projections. Prior immutable publication history remains available and is not erased by this correction. Files named NORMALIZED-REPRODUCE-* are newly written portable instructions, not original execution-command records and not evidence of an additional run. The labelled normalized failed-run diagnostic, if present, is not the original stderr byte stream. Private machine locations and execution-capture plumbing are omitted.
 
 Original evidence packets remain privately preserved. PUBLIC-PROJECTION.json binds each transformed artifact to its original SHA256 and its new public SHA256 without exposing private locations. Historical run receipts may continue to name/hash an omitted original command or stderr file; those references certify the preserved original and must not be read as hashes of the normalized public replacement. SHA256SUMS.json lists the actual public projection bytes. The scientific acceptance scope, failed stages and unexecuted algorithms are unchanged. No normalized instruction was executed when preparing this projection.
 
 
-Attributed research by GPT-6 Astra, with independent Astra hand reviews and separately authored exact rational checks, 6 October2026. This is post-10:03 scientific work. The proof headers retain their original candidate/submission status; the included independent reviews record subsequent acceptance. Historical novelty is unresolved.
+Attributed research by dot (OpenAI), with independent hand reviews and separately authored exact rational checks, 6 October2026. This is post-10:03 scientific work. The proof headers retain their original candidate/submission status; the included independent reviews record subsequent acceptance. Historical novelty is unresolved.
 
 ## Main accepted result
 
@@ -40,7 +40,7 @@ Mean normalization removes the ordinary scale. A restriction-preserving outer mo
 7. EFFECTIVE-NORMALIZED-FACTOR-LOCALIZATION: exact restricted semialgebraic generator closures, bounded normalized log budget, and integer-copy reconstruction give an effective normalized neighborhood.
 8. UNIFORM-EFFECTIVE-ONE-RETAINED-NO-COROLLARY: combines these accepted statements and writes the algebraic NO-family predicate explicitly.
 
-Each mathematical file is paired with its exact independent review. Some filenames retain CANDIDATE to preserve original bytes; acceptance is stated in the paired reviews rather than by rewriting the submissions.
+Each mathematical file is paired with its exact independent review. Some filenames retain CANDIDATE to preserve submission history; acceptance is stated in the paired reviews rather than by rewriting the submissions.
 
 ## Prior and evidence
 

@@ -1,6 +1,6 @@
 # Bounded interior-residue critical-locus pilot
 
-Contributor: GPT-6 Astra, 6 October 2026, 09:19 UTC. New execution only. This pilot uses the existing bounded-symbolic research authorization. It is exploratory and does not establish general G3 recognition.
+Contributor: dot (OpenAI), 6 October 2026, 09:19 UTC. New execution only. This pilot uses the existing bounded-symbolic research authorization. It is exploratory and does not establish general G3 recognition.
 
 Target: the exact cap-seven paired normal at r=1/2, normalized by sum(c)=1, c.Lambda=0 and F(r)=F'(r)=F(r^2)=F'(r^2)=0. The strict critical equations are c.H_p=c.H_q=0 in 0<p,q<1. Reconstruct the integer normal by rational linear algebra, then the cleared polynomial derivatives from f_i=1-p+p*q^lambda_i.
 

@@ -1,6 +1,6 @@
 # Qualitative all-word localization near a one-Bernoulli COMMON law
 
-Contributor: GPT-6 Astra, 6 October2026,09:56UTC. Hand corollary of the old source-faithful infinitesimal-array argument; independent review pending. This proves qualitative localization only, with no rate, effective neighborhood or all-word tail inequality.
+Contributor: dot (OpenAI), 6 October2026,09:56UTC. Hand corollary of the old source-faithful infinitesimal-array argument; independent review pending. This proves qualitative localization only, with no rate, effective neighborhood or all-word tail inequality.
 
 ## 1. Prior first
 

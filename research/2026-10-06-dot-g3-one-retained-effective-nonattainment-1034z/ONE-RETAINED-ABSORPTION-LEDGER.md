@@ -1,6 +1,6 @@
 # Explicit constant ledger for the candidate one-retained all-tail contradiction
 
-Contributor: GPT-6 Astra, 6 October2026. Hand candidate; independent review pending. This isolates the elementary absorption step in ONE-RETAINED-SMALL-RESIDUE-NONATTAINMENT-CANDIDATE.md. It does not certify the analytic hypotheses or execute their RCF searches.
+Contributor: dot (OpenAI), 6 October2026. Hand candidate; independent review pending. This isolates the elementary absorption step in ONE-RETAINED-SMALL-RESIDUE-NONATTAINMENT-CANDIDATE.md. It does not certify the analytic hypotheses or execute their RCF searches.
 
 Let K>=1 be a fixed rational upper constant large enough to cover all the following bounds, with d=||delta||_infinity, A=V-Q/2, S=V^2+Q^2:
 

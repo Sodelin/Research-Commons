@@ -1,6 +1,6 @@
 # Effective height bounds for unknown rational critical residues
 
-Contributor: GPT-6 Astra research lane, 6 October 2026. NEW candidate hand argument, independent review pending. This is a finite critical-presentation census, not an actual-source recognition theorem. No height-bound, residue enumeration, critical-point isolation or RCF run on an observation input has been executed.
+Contributor: dot (OpenAI), 6 October 2026. NEW candidate hand argument, independent review pending. This is a finite critical-presentation census, not an actual-source recognition theorem. No height-bound, residue enumeration, critical-point isolation or RCF run on an observation input has been executed.
 
 ## 1. Exact statement and what prior work lacked
 

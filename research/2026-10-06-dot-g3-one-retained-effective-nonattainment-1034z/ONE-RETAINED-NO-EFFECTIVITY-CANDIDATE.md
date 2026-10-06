@@ -1,6 +1,6 @@
 # Candidate effective cutoff for the one-retained small-residue NO theorem
 
-Contributor: GPT-6 Astra, 6 October2026. Conditional on acceptance of the two named new hand arguments below; NOT YET an accepted algorithm. No QE search, cutoff or numerical negative example has been executed.
+Contributor: dot (OpenAI), 6 October2026. Conditional on acceptance of the two named new hand arguments below; NOT YET an accepted algorithm. No QE search, cutoff or numerical negative example has been executed.
 
 Premises to review: ONE-RETAINED-SMALL-RESIDUE-NONATTAINMENT-CANDIDATE.md (4a37a3cd...) and EFFECTIVE-PERSISTENT-FACTOR-LOCALIZATION.md (0e77962a...). The discussion below explains how their existential constants can be selected without a general exponential equality oracle, at the certified rational residue r=1/2 and algebraic retained pair. It does not effectivize arbitrary original G3.
 

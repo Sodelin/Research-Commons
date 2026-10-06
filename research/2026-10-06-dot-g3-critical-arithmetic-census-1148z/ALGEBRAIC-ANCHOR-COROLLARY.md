@@ -1,6 +1,6 @@
 # One algebraic retained factor forces a rational residue
 
-Contributor: GPT-6 Astra,6 October2026. New scoped hand corollary, independent review pending. The independent review lane pointed out the essential projective normalization at the killing endpoint.
+Contributor: dot (OpenAI),6 October2026. New scoped hand corollary, independent review pending. The independent review lane pointed out the essential projective normalization at the killing endpoint.
 
 Consider a paired-critical cap-seven COMMON presentation of a positive algebraic tuple,
 
