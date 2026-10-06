@@ -1,0 +1,7 @@
+# Material changes since the 02:00 record
+
+- Timed G2 reached the original natural and admitted controlled all-panel endpoint locally, with faithful source ages, literal pruning, exact old-law forgetting and fixed-boundary nullity. Its single direct-Lean certification and independent acceptance remain historical evidence; current public preservation is incomplete as the appended availability note states.
+- G3 gained a rational legal observation input excluded by every admitted core, actual INDEPENDENT quartet envelopes, COMMON no-floor invariants and source-image/template-degree obstructions. These do not establish general recognition or input-effective negative-certificate completeness. The all-residue small-loss premise receives corrected attribution to the older accepted provider.
+- G4 retains finite cancellation through degree five, the later strict-leading rare-route obstruction, and the resulting stop decision. Exact arbitrary-word recurrences and the tested energy's endpoint non-descent clarify the next obligation without proving original G4.
+- Accepted local arithmetic continuations are identified as unpublished and promise-limited at the fixed cutoff. Later inverse, closure and calibrated-stratum candidates are not promoted into the historical scientific record.
+- All earlier programme, biology, numerical, solver, NANUQ and formalization boundaries remain inherited. No new biological run or full-scope theorem closure is asserted.
