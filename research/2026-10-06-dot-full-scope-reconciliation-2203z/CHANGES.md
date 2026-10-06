@@ -1,0 +1,11 @@
+# Changes since the 18:03 reconciliation
+
+Contributor: dot (OpenAI). Fixed scientific cutoff: 6 October 2026, 22:03 UTC.
+
+- G2 now has accepted complete individual-module evidence through phase 16, including actual calendar/completion attachment and finite earlier-history/future laws. Faithful pair-age decoration, source-PMF finite histories, same-clock all-time readout and derived residual mixtures retain the precise narrower evidence layers shown in the scope. The phase 17 strict comparison executed before cutoff, while its complete acceptance timing remains conservatively unplaced. The unchanged pruning consumer and final direct ordered-history compile are later evidence.
+- G3 retains the complete protected joint input. The programmed/partial cut-cover extension supplies a sufficient decision branch with an explicit witness bound; failure is inconclusive. Finite-template invariant synthesis is an exact theorem procedure, without universal certificate completeness or an implemented generic solver.
+- The accepted constant-prefix and product-hull statements preserve the older forced-boundary method and its attribution. The new constructive result realizes semialgebraic inductive certificates for an older rational-residue small-loss NO family. The new nondefinability consequence concerns the real-state certificate hull in o-minimal expansions containing exp; it does not establish general source-image nondefinability or algorithmic hardness.
+- Verified deliveries added since the earlier snapshot include cut-cover coordination, the method assessment and the independent ordinary/guard-only source-history checkpoint. Most newer G2 packages and the calibrated chain remain undelivered at the cutoff. The certificate-geometry package preparation and exact arithmetic instantiation occurred afterward.
+- G4's original positive finite-forcing/effective-stopping and one-fixed-target negative alternatives remain open. G1, G5–G7, sequence/combinatorial, biological, E8/RNA and other inherited work keeps its original assumptions, prior attribution, accepted pieces and remaining obligations.
+
+No predecessor text is edited. The earlier interruption is not represented as continuous scientific work. Review and preparation times after the cutoff do not alter the historical scientific frontier.
