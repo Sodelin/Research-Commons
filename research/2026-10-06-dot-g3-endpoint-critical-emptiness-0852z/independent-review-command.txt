@@ -1,0 +1,2 @@
+# Working directory: the directory containing independent_review.py
+set +e; timeout 75s python independent_review.py > independent-review.stdout 2> independent-review.stderr; code=$?; printf '%s\n' "$code" > independent-review.exit; printf 'exit=%s\n' "$code"; cat independent-review.stdout; cat independent-review.stderr

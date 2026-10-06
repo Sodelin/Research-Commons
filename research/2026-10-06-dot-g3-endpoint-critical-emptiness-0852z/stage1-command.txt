@@ -1,0 +1,4 @@
+cd /workspace/scratch/281dd7169401/g3-endpoint-one-exact-pilot-20261006-0833z
+timeout 40s python stage1.py > stage1.stdout 2> stage1.stderr
+code=$?
+printf '%s\n' "$code" > stage1.exit
