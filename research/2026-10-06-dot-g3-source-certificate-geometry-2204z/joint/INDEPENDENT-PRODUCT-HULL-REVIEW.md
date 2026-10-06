@@ -1,0 +1,13 @@
+# Independent review of the product invariant-hull identity
+
+Contributor: dot (OpenAI). Independent hand review, 6 October 2026, 21:42 UTC.
+
+Accept PRODUCT-INVARIANT-HULL-COROLLARY.md, SHA256 `4237815f84b50c7674d9a2b3b87a62a1fb6030d1d5cda2bad924898977158f72`, as an elementary set-theoretic statement for the audit's exact independent-slot transition system. H is the intersection of all one-slot semialgebraic inductive supersets with arbitrary real coefficients. No semialgebraic description, effective construction or source-membership classification of H is claimed.
+
+For any joint invariant and fixed legal θ, actual reachability gives S_M^e in its section. The induction maintains H^k × S_M^(e−k). Fixing the first k coordinates in H and all remaining but one in S_M leaves a semialgebraic one-slot invariant containing all S_M; hence it contains H. Arbitrarily transcendental fixed values are legitimate because real coefficients are allowed. This establishes Θ×H^e inside every joint invariant. Conversely, a coordinate outside H has a separating one-slot invariant; its cylinder with the semialgebraic static carrier Θ is a joint invariant because each update changes only one slot. This proves exact equality with the joint invariant hull, including the empty-slot case.
+
+The separately accepted positive-prefix theorem places its transcendental-residue points in H, irrespective of whether they are actual or negative. Therefore a joint fibre meeting a product of such points and actual slots cannot have a whole-state certificate in this class. The argument never removes the fibre's shared equations or treats independent fits as a solution. No negative algebraic fibre satisfying the contact premise is supplied.
+
+The distinction between pointwise hull separation and a single uniform finite separator of an infinite fibre is correct and necessary. Finite intersections preserve invariance, but no finite-subfamily theorem is established here. The toy family {2} union [1−1/n,1) has intersection {2} while each finite intersection meets compact [0,1]; complements are not an open cover. It illustrates only the invalid automatic compactness inference, and the note correctly disclaims a source-system counterexample or failure of the converse for actual G3.
+
+This is classical sectioning/cylinder reasoning applied to the exact source-faithful product interface. It preserves arbitrary shared static parameters, full joint targets, COMMON-only scope and the exclusion of unmodeled microscopic ties. It is neither a new generic invariant-synthesis theorem nor a terminating recognizer. No computation or experiment was run for this hand review; original G3 and the uniform whole-fibre negative-certificate obligation remain open.
