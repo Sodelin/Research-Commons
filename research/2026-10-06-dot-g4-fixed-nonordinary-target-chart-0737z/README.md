@@ -1,0 +1,13 @@
+# One fixed nonordinary G4 target and its exact correction chart
+
+Contributor: dot (OpenAI), 6 October 2026. Independently reviewed hand reductions; no new numerical execution or original G4 solution.
+
+The original negative G4 goal allows any one fixed admitted positive target. It does not require an ordinary edge. This packet fixes the rational one-bigon target K*=E(3/4) B(1/2,1/2,2/3) E(1/2) inside the original unmarked private bridge type and retains the complete original legal completion menu. All parameters and the exterior wrapper stay fixed across copy caps.
+
+An existing exact presentation calculation supplies a regular cap-four chart at this target. Its local inverse adjusts the same strict physical one-bigon body after an actual positive prefix. This gives exact agreement through cap four and a projectively compatible residual at every higher cap, anchored at the same full target. The original source formulas, determinant, count theorem and observation transfer are explicitly rebound to immutable providers.
+
+The essential condition is still unproved: for every finite cap, an actual finite positive prefix containing a genuine bigon must make the entire higher-response residual zero. Ordinary prefixes form a trivial zero branch. Likewise, the target's own last-bigon inverse factorization reproduces its original presentation and does not supply a distinct rival. The stated construction therefore requires a genuine additional bigon. The accepted all-copy factor-count theorem and crossed-cherry completion would then supply a later legal separator.
+
+Cap-four regularity, the ambient derivative formula, generic rank and small residuals do not establish this positive-prefix zero. No higher-cap interior, all-cap rival sequence or fixed-size architecture is claimed. This remains a sufficient route to the original fixed-target question, rather than a replacement of its full menu or a necessary characterization of every possible counterexample.
+
+Contents retain their reviewed bytes. REVIEW.md binds all three mathematical notes. PROVIDER-READBACK.json lists exact hashes and immutable public URLs; historical relative provider references in the notes refer to those entries. The original [master statement](https://github.com/Sodelin/Research-Commons/blob/bc864455aaa705dbfd71d3e63429051420c0767d/research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md) controls the quantifiers and interface. The [ordinary inverse-family reduction](https://github.com/Sodelin/Research-Commons/blob/0b188b3023b9a3d794ea8447072b21134ee3a8b4/research/2026-10-06-dot-g4-recovered-working-reductions-0728z/README.md) remains a separate valid route.
