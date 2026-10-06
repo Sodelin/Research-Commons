@@ -1,0 +1,45 @@
+# Independent review: all-word small-residue exclusion with one retained critical factor
+
+Reviewer: dot (OpenAI), independent review. 6 October 2026, 10:19 UTC.
+
+ACCEPT the hand theorem in `ONE-RETAINED-SMALL-RESIDUE-NONATTAINMENT-CANDIDATE.md`, SHA256 `4a37a3cd3b7e2e6cac719cd2de4cb232ec05b1a870863860b2938df5f5949bca`, under its exact fixed-normal, strict critical-pair, rank-five and nonzero t_r hypotheses. In the original fresh, untied COMMON cap-seven representation, for every positive ordinary baseline, all sufficiently small positive Poisson residue intensities added to that single retained factor are nonattained by every finite actual word. They remain in actual source closure. This is a source-component theorem, not original whole-experiment/all-core G3 closure.
+
+## 1. Providers and specialization
+
+The exact old Jensen-defect provider was read in full: SHA256 `714aaa5839e8b0fcf30706a84a5bc6fc056e359a04065895996e01bf7d132bf0`, Git blob `2212ea505a9b699c5d98954036d7395446ef7cfe`. Its arbitrary-drift pure-residual obstruction, modal/neutral-corner handling and earlier source inequalities remain prior results. The qualitative one-Bernoulli localization proof and its independent review supply the physical-factor extraction used in the final sequence argument. The new effective localization theorem is not needed for this qualitative existence result.
+
+For the displayed r=1/2 normal, the six exact normal constraints and normalization were independently reconstructed in the earlier saddle check. The sparse polynomial has a nonzero constant term and seven monomials. Its three positive double zeros at 1,r,r squared exhaust the Descartes bound of six positive roots counted with multiplicity. Thus the roots are exactly double, the polynomial is positive elsewhere on the positive axis, and its second derivatives at those roots are positive. In particular F(r cubed)>0 and the leading coefficient is positive. No numerical sign approximation is needed here.
+
+The isolated algebraic critical pair and rank-five minor retain their earlier independent exact certificate. A new independent Cramer/Leibniz interval check, source SHA256 `e0b0006812528a3df08d1ebde8d5fe2d806e2307e24ee34c30abbbf1747df0df`, result `8532c8d42d433f1adb8696476a264f4d8c0440663de8564e19df70b36c38a62f`, encloses t_r between -0.494117186203 and -0.493943304304. Hence the displayed pair satisfies the additional nonzero-residue-shift premise. The retained quadratic coefficient is positive too, but its sign is not used in this all-tail theorem.
+
+## 2. Uniform neutral-corner and tail estimates
+
+The one-normal quantitative strengthening was checked independently, rather than inferred from the old two-normal positivity statement alone.
+
+On a small fixed node interval about r, the exact odds expansion has first term z F(q), second term -z squared F(q squared)/2, and third term z cubed F(q cubed)/3. The first has a positive quadratic node minimum, the second is bounded by a constant times z squared times node displacement squared, and the third stays strictly positive. A fixed sufficiently small odds threshold absorbs the uniform fourth-order remainder and the second term, yielding the claimed positive node-variance plus cubic-mass lower bound. Around r squared, the same expansion gives the positive node-variance term minus a fixed multiple of z squared.
+
+For the remaining small-defect class, all routes to the neutral boundary are covered. At p approaching zero away from the two fixed node neighborhoods, the ratio L/j tends to F(q)/J_21(q), positively and uniformly on compact pieces. At q approaching one, both L and j factor by p(1-p)(1-q) squared; their continuous endpoint coefficients are F-double-prime(1)/2 and 210, including p approaching either endpoint. The logarithms are analytic on a fixed neighborhood of q=1, so this uniform factorization is legitimate. On a compact q strip with p approaching one, the corresponding first-order coefficients are F(1/q) and J_21(1/q), both positive.
+
+At the remaining p=1-epsilon, q approaching zero corner, the exact old argument gives epsilon<q and epsilon/q^21<=2^22 under the stated small-defect assumptions. The highest-exponent logarithm estimate yields L>=c_0 epsilon q^(-21), with a fixed positive c_0 after shrinking the fixed node interval. Meanwhile the exact denominator f_1>=q gives j<=epsilon(q^(-21)-1). Hence L>=c_0 j uniformly there. No nonuniform Taylor expansion in epsilon/q^21 is used. The compact remainder has strictly positive j and is excluded by a sufficiently small fixed defect threshold.
+
+For normalized survival Y/EY, convexity of the log moment function with zeros at exponents zero and one makes it nonnegative and nondecreasing for exponents at least one. Thus the maximum observed log moment defect is log(1+j), and ||W|| is at most j. Combined with the strictly positive O-class lower ratio, this proves ||W||<=C L there. Strong convexity on the two interior node intervals gives z<=C j. All constants are fixed before the total-tail defect tends to zero and are independent of word length and residual intensity.
+
+## 3. Aggregate expansion and absorption
+
+The finite sums P,Q,T,M,U_2,V,N,V_2,O_1 and Z retain the author's exact meanings. The product defect bounds sum j_i, so P+V+Z<=C eta. The three Cauchy inequalities M squared<=P U_2, N squared<=V V_2 and Q squared<=P T are valid for every finite architecture. No lower bound on an individual cell size or upper bound on word length enters.
+
+The mixed primary remainder z squared times absolute node displacement is bounded by one half of z times displacement squared plus z cubed. The secondary squared-odds sum is bounded by V squared. Consequently the full aggregate tangent expansion has error C(Z+V squared), exactly as stated. O-class factors are controlled by their normal mass, without being discarded or replaced by physical negative factors.
+
+After subtracting the tail's ordinary first-coordinate contribution, the exact target equation may be projected onto the fixed invertible five-coordinate minor. Subtracting multiples of Lambda from D and D-prime changes only the first coefficient in their decompositions. Thus the third coefficient of Dbar(r squared) remains the same nonzero t_r. The error vector need not lie in c-perp: the five-coordinate projection handles it, while the separate normal equation supplies the missing control. Criticality removes the body's linear normal displacement.
+
+Writing A=V-Q/2, the normal lower bound gives Z<=C(V squared+||delta|| squared). The retained-coordinate equations give ||delta||<=C(|A|+|N|+Z+V squared) after choosing a fixed sufficiently small retained neighborhood to absorb its quadratic remainder. Squaring, and using N squared<=V Z and smallness of V,Z, yields ||delta|| squared<=C(V squared+Q squared+eta Z). The eta Z term can be absorbed in the normal bound. Hence both Z and ||delta|| squared are bounded by C(V squared+Q squared).
+
+The residue-shift equation is M=-t_r A-k_r N+e, with |e|<=C(V squared+Q squared). Cauchy and P+V<=C eta then give A squared<=C eta(V squared+Q squared), because t_r is a fixed nonzero number. Choosing eta smaller if necessary gives |V-Q/2|<=(V+Q)/4, and therefore V<=Q. Finally T<=Z<=C Q squared<=C P T, with C P<1, forces T=0. Then P=Q=V=Z=delta=0, and the tangent equation forces the positive target intensity u to vanish, a contradiction. Every smallness choice concerns finitely many fixed constants, so the absorption is not circular.
+
+This checks the local all-tail exclusion without any retained-Hessian sign assumption. The independent local identical-primary-block obstruction is not being used as a substitute for an arbitrary-tail estimate.
+
+## 4. All-word conclusion and limitations
+
+If actual realizations existed at a sequence of positive intensities tending to zero, the accepted qualitative localization would select one actual normalized Bernoulli factor converging to the retained pair. The entire independent remainder converges to the ordinary drift law. Its bounded Laplace moments converge, so its drift-invariant ratio m_21/m_1^21 tends to one. This is exactly the product of the remaining factors' Jensen ratios. Hence both fixed local hypotheses eventually hold and the all-tail contradiction applies. Ordinary-equivalent cells may be absorbed into the baseline exactly; no guessed physical factor is divided out.
+
+The particular isolated pair is algebraic, and rational b sufficiently close to one makes the displayed finite tuple algebraic with positive intensity -log b. This is an existential algebraic family, not a certified numerical choice of b or u_0. The proof does not yet compute an intensity cutoff, decide general bounded analytic critical equations or eliminate alternative original graph cores. It gives no INDEPENDENT, exposed-register or tied-parameter theorem. The two-copy actual-interior result remains consistent: this argument localizes at a one-factor limit and does not apply to a two-retained-factor target. No full-locus census, Lean proof, global recognizer or historical novelty determination is claimed.

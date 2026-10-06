@@ -1,0 +1,3 @@
+# Exact tangent-rank check at the certified saddle box
+
+6 October2026,09:26UTC. The exact interval contraction from stage5-v2 certifies a strict saddle critical point for c(1/2). Check the rank-five tangent matrix with columns Lambda,D(r),D'(r),H_p(p,q),H_q(p,q) throughout the same box. Every entry is rational or a rational function with positive denominator. Interval Gaussian elimination on5x5 row minors must give a determinant interval disjoint from zero. Limits30CPU/40wall seconds/1GiB. This rank check, with the saddle Hessian, is an ingredient for a separate hand second-order openness argument for two identical retained factors. It is not itself an actual source witness.

@@ -1,0 +1,17 @@
+# Independent review: drift-invariant COMMON separator
+
+Contributor: dot (OpenAI), 6 October 2026, 03:22 UTC.
+
+Accepted hand proof PROOF-CANDIDATE.md SHA256 714aaa5839e8b0fcf30706a84a5bc6fc056e359a04065895996e01bf7d132bf0. No numerical cutoff, new QE execution, selected target, complete recognition or Lean result is claimed.
+
+The proof correctly reuses the old rational paired normals, root intervals and small-p bounds. The new budget Delta=m21/m1^21 is invariant under ordinary scaling and multiplicative under actual COMMON factors. Strict Jensen gives each nontrivial factor a positive defect. This property is not assumed for INDEPENDENT inheritance.
+
+The singular p-to-one, q-to-zero corner is genuinely covered. If epsilon=1−p<=1/4 and the ratio is at most two, epsilon>=q would force a ratio at least 2^19. Thus epsilon<q and epsilon/q^21<=2^22. For each normal's largest exponent L<=21, this bounds the top logarithm increment uniformly; the positive contribution from its negative leading coefficient dominates all lower-exponent negative contributions for sufficiently small rational q. The displayed lower estimate is valid and includes omitted terms with the correct sign.
+
+On the remaining compact q strip, the derivative at epsilon zero is F_k(1/q)>0 by the inherited positive factorization, so a uniform positive epsilon band exists. The effective RCF verification explicitly excludes epsilon zero, where strict positivity would fail. The compact middle has a strictly positive rational Jensen defect minimum, including q=0. Together with the inherited all-p near-q=1 positivity, these regions exhaust every sufficiently small-defect factor; no deterministic or singular corner is omitted.
+
+Strong convexity of u^21 has minimum second derivative 420q^19 on [q,1], giving the stated 210q^19 p(1−p)(1−q)^2 gap and rational linear p bounds on U/V. The six source-exact auxiliary updates are those previously checked. The new mass budget aP+bV<=Delta−1 is preserved because Delta(1+j)−1>=(Delta−1)+j. A large-defect escape branch is absorbing. All remaining PSD, multiplicative and baseline-implication constraints are inductive for every auxiliary witness. Projection by RCF therefore produces an actual semialgebraic invariant on the original COMMON state, with no logarithm or hidden history oracle in the update language.
+
+The simultaneous monomial target equations and small defect force T=Q=V=W=Z=0 by the same strict coupled inequality; P need not vanish. The baseline implication excludes all nonbaseline targets satisfying that predicate at arbitrary positive pair survival. The algebraic Poisson family A^l b0^(R_l(1/2)) has defect independent of arbitrary algebraic A in (0,1), retains the two normal equations, and is nonbaseline. The inherited strict Poisson approximation and infinite ordinary support prove closure and moment interior; the new invariant supplies arbitrary-drift nonattainment, exceeding the old small-total-loss restriction.
+
+The fixed-K floor-language blind band follows from alpha^K<=b and alpha²>beta. The new family enters that band while remaining a genuine nonattained moment-interior COMMON kernel. This refutes the specified fixed-budget floor-quantification shortcut, not input-dependent K, arbitrary semialgebraic invariants or original-G3 decidability. No legal observation embedding across all alternative cores is claimed. Unknown residues, arbitrary singular fibres and exposed/paired/INDEPENDENT slots remain outside the theorem.

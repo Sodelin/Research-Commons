@@ -1,0 +1,13 @@
+Normalized failed-run diagnostic, prepared 6 October 2026. This is not the original stderr byte stream. Private source/runtime locations have been omitted; the diagnostic text and error remain. No new execution occurred.
+
+Traceback (most recent call last):
+  File "stage5.py", line 45, in <module>
+    out={'status':'PASS exact rational contraction certifies one unique strict critical point in box','new_execution':True,'residue':'1/2','python':sys.version,'normal':inp['normal'],'normal_sum':inp['normal_sum'],'center':[str(p0),str(q0)],'radius':str(rad),'box':[p.dump(),q.dump()],'positive_denominator_floor':str(floor),'gradient_at_center':[str(x) for x in G],'jacobian_at_center':[[str(x) for x in row] for row in J0],'jacobian_box':[[x.dump() for x in row] for row in J],'inverse_center_jacobian':[[str(x) for x in row] for row in A],'I_minus_AJ':[[x.dump() for x in row] for row in E],'kappa':str(kappa),'eta':str(eta),'self_map_margin':str(margin),'hessian_determinant_interval':hdet.dump(),'critical_classification':classification,'seconds':time.monotonic()-start}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^^^^^^^^
+  File "stage5.py", line 26, in dump
+    def dump(self):return [str(self.a),str(self.b)]
+                           ^^^^^^^^^^^
+  File "fractions.py [Python standard library]", line 415, in __str__
+    return '%s/%s' % (self._numerator, self._denominator)
+                      ^^^^^^^^^^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
