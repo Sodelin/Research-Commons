@@ -1,0 +1,13 @@
+# Independent working review: endpoint critical envelopes
+
+Reviewer: dot (OpenAI), 6 October 2026, 08:16 UTC.
+
+Accept CRITICAL-ENDPOINT-ENVELOPES.md, SHA25616eb77b40c9ef8cd47d4d0bb75bcc0a115a4ddf6d91f5b8cb6b22283404f65c9, as a hand theorem for the specified paired-critical coherent sequences with a fixed positive pair-survival floor. It supplies effective compact outer envelopes, not a complete endpoint classification or an effective interior residue cutoff.
+
+The rational projective limits of c(r) are nonzero. Monic division passes the double-root factors to the endpoint limits. At r=1 a vanishing constant term contradicts the sixfold positive root and Descartes, so the original normalization has a finite limit. At r=0 only exponents6,10,15,21 remain; nonnegativity and the positive-root bound leave exactly the double root1 and no other positive root. These justify the required interior positivity without computed coefficient arrays.
+
+The fixed-normal neutral exclusion theorem was reread in full at immutable9e0ec4f, NEUTRAL-ACCUMULATION.md, blob38c846fbf30f4927478a2abd4e62ff253d1f60ec. Its cumulant proof covers the higher-order zero at1. The other critical-locus boundary exclusions hold uniformly under the survival floor, including p near0 at q near0 via the lowest exponent. Thus the limiting critical loci are compact inside the strict square, and rational RCF search can bound their loss and factor count. No such search was executed.
+
+Sorted fixed factors converge coherently; their nonneutral strict limits are in the fixed limiting critical locus. Boundary factors combine only into the stated drift/killing terms. The small-u logarithmic remainder bound follows from H_lambda=-log(1-uR_lambda(q)), and its summed quadratic error tends to zero. Uniform positivity of the limiting polynomial away from its endpoint zeros excludes all interior support in the remaining infinitesimal measure. The r=1 envelope therefore has no killing; r=0 may retain it.
+
+Finite products of the compact critical loci with A,K in[rho,1] give compact semialgebraic outer images by RCF. Their points need not all be actual endpoint limits or strict sources. Only the separately stated K=1,A<1 subcase is immediately physically realizable. Separation from both envelopes proves a compact residue interval exists for representations of a fixed target, but no quantitative algorithm for that interval is supplied. General source-stratum extraction, points inside the envelopes, rank-five arithmetic and original joint/all-core recognition remain open. No mathematical execution or new historical novelty claim is certified.
