@@ -1,0 +1,12 @@
+NEW PORTABLE REPRODUCTION INSTRUCTIONS, 6 October 2026.
+These instructions were authored for publication. They are not the historical executed command. No rerun is claimed here. The original author command is withheld; its hash is recorded in PUBLIC-PROJECTION-PROVENANCE.json. The original code, result, stdout, stderr and exit receipt are unchanged.
+
+Author checker:
+Create a fresh empty working directory outside this preserved packet. Copy check.py there, then run from that fresh directory:
+
+(ulimit -t 5; ulimit -v 131072; timeout 10s python3 check.py > check.stdout 2> check.stderr); status=$?; printf '%s\n' "$status" > check.exit; cat check.stdout; cat check.stderr; exit "$status"
+
+The author script writes result.json in its current directory. Its elapsed time and Python-version fields vary on rerun. Do not overwrite the hash-pinned historical result in this packet, and do not use the newly generated result as the original input expected by the independent script.
+
+Independent checker layout:
+In a DIFFERENT fresh empty directory, create the relative child directory g3-two-hybrid-marginal-obstruction-20261006-1202z. Into that child copy the unchanged independent_check.py, the ORIGINAL hash-pinned result.json, and the providers subdirectory. Do not copy independent-result.json, because the checker requires its output to be absent. From the fresh parent directory, the unchanged relative command in independent-command.txt can be run. The script enforces its own 5 CPU-second and 128 MiB limits; the command enforces 10 wall seconds. All outputs are new rerun evidence and are distinct from the preserved historical outputs.
