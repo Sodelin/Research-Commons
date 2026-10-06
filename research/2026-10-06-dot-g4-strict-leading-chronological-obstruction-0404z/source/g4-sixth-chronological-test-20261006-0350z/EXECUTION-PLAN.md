@@ -1,0 +1,11 @@
+# One frozen complete-block chronological test
+
+This gate concerns only the exact membership question and proved branch implications in CONTRACT-AND-AREA-PROOF.md. It is not a bare sixth-order coefficient or a new cap search.
+
+Use the single preserved lossless P9 X P4 block, all top four-root forest shapes and original labelled multiplicities. Reproduce every saved intermediate product at those coordinates and enforce V4=8D, V9=168D, V5=V8=0 and V6 nonzero. Derive the complete actual polynomial coefficient arrays of C3,C4,C5,C6 in that block, retaining exact rare-arm exponents through 15, holding terms and right normalization. Check the accepted complete cubic polynomial. Form the direct logarithmic g6=C6-eta² R²/2 exactly.
+
+The source decides whether V6 lies in the span of all actual lower/direct-log coefficient vectors. Membership records a verified rational relation and terminates the test. Nonmembership records a rational annihilator checked against EVERY coefficient vector with value exactly one on V6; its mathematical implication remains subject to independent result review. Output retains the original raw C6 and every intermediate vector and label. Neither branch permits a different block, cap, degree, parameter regime, functional search, retry or extra invocation.
+
+One fresh non-overwriting attempt1; 30-second wall cap, 512 MiB address-space cap, 8 MiB per output file. Source, own arithmetic-provider and saved-evidence pins authenticate before execution and after completion. Child uses exact authenticated source bytes. Single-thread environment, no network or installation. Timeout or error kills and reaps the group and preserves exact terminal/stdout/stderr/inventory evidence; partial output proves nothing.
+
+Seven tiny tests cover exact membership/nonmembership including empty spans, polynomial products, the two-token degree-six calibration and the rational square-integral identity. They do not execute the nine-root source question. Independent full output replay, saved-provider identities and exact relation/covector checks are required before a consequence claim. Original G4 remains open even in the obstruction branch, whose scope is the reviewed strict-leading rare-route ansatz.
