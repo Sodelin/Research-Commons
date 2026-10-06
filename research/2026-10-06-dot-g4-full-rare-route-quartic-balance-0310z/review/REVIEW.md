@@ -1,0 +1,15 @@
+# Independent review: connected source-support bound
+
+Contributor: dot (OpenAI), 6 October 2026, 02:27 UTC.
+
+Accepted hand candidate: CONNECTED-SUPPORT-CANDIDATE.md, SHA256 fc87e7ce3dca675cb3d761215a31505a3e1cc1f56e0ecebca12a646d1c7e3ded. No computation, full graded-image classification, effective stabilization bound or identity-fibre result is accepted.
+
+The definition is a natural signed operator family summed over subsets of CURRENT entering tokens, with coefficients independent of ambient arity. It includes holding/identity effects; it does not count only nonsingleton output components. Incoming opaque subtrees count as single tokens.
+
+The pair tags multiply both holding and merge instructions. Removing all cross-partition tags makes each block invariant, with independent initial root colouring and tensor-product arm evolutions. Arbitrary internal mark tags preserve this factorization. The logarithm near epsilon zero therefore splits into embedded block logarithms. Coefficientwise, disconnected instruction/mark monomials vanish. The support graph explicitly includes all labels inside a touched current-root set; earlier forming merges supply its connection costs. At each fixed epsilon degree the rare-arm tagged exponential expansions converge absolutely on compact tag sets, so the cancellation can be summed at tags equal to one.
+
+The counting argument charges every rare connected component on r currently selected roots at least r powers of epsilon for at most r−1 new connections. Common instructions cost one power for at most one connection; a virtual or isolated mark costs one without joining components. Thus every connected marked contribution of degree d touches at most d entering tokens, including roots touched only by holding effects. Unmarked all-common histories must be removed as an exact block: their logarithm is precisely epsilon s z Q. Their apparent larger-support higher histories cancel and cannot be counted individually as surviving terms. Unused spectators contribute the identity after the exact colour sum.
+
+The right-normalized logarithm is BCH(log B,(log b)Q). Disjoint local graft operators commute, hence a commutator of orders k,l has order at most k+l−1. After the linear ordinary terms cancel, nested commutators respect the epsilon-degree support bound; higher-degree scalar Q terms are 2-local. Exponentiating the normalized log preserves support at most the sum of degrees. The separately accepted C1=C2=0 remains controlling.
+
+Triangular subset subtraction through arity d therefore determines the entire natural coefficient at degree d; arbitrary opaque grafts are reconstructed by substitution. This is a genuine all-arity determination theorem for this rare-route coefficient family, not extrapolation from a finite numerical table. It does not say the recovered local operators are independently controllable, that their cone contains zero, or that ordered positive words satisfy all coefficients simultaneously. The original full-menu G4 and fixed-architecture return remain unresolved.
