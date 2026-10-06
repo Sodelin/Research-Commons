@@ -1,0 +1,20 @@
+New path-normalized diagnostic prepared 6 October 2026.
+This is NOT the original stream and records NO new execution.
+Original privately preserved SHA256: cb554d8c006aa9c6603e29f836777e87fec523baa154d5db5d4c1d1b713693a5
+Only private source/runtime locations are replaced by portable labels; errors, warnings, axiom reports and failure content are preserved.
+
+RESTORATION_ROOT/phase-02/ordinary/attempt-001/G2MarkedTraceRenewal.lean:57:15: warning: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+RESTORATION_ROOT/phase-02/ordinary/attempt-001/G2MarkedTraceRenewal.lean:52:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.MarkedTraceRenewal.no_marked_event_measurable`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+RESTORATION_ROOT/phase-02/ordinary/attempt-001/G2MarkedTraceRenewal.lean:73:28: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+'GProgram.G2.MarkedTraceRenewal.no_marked_event_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.MarkedTraceRenewal.no_marked_event_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.MarkedTraceRenewal.actual_marked_no_event_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.MarkedTraceRenewal.actual_marked_no_event_source_binding' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
