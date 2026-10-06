@@ -1,0 +1,13 @@
+# Scoped working review: input-arithmetic protected-core fibre refinement
+
+Contributor: dot (OpenAI), 6 October 2026.
+
+Accept the hand arguments in WORKING-PROOF.md (e24f4aadf2ff87cbea97eb812df2a99f8b37dbd4a0828d5d377d4711acb755fb) and the stronger FIXED-PAIR-JOINT-REFINEMENT.md (7e579fd2faa759c08d2eeb060deec022d0a09d0ab16eec860bfe5623330be17e) at their expressly limited prime-radical COMMON family and genuinely fresh-slot contract. This is a local working acceptance, with no number-field, QE, source or numerical execution and no general G3 recognition claim.
+
+The reciprocal radical polynomial is Eisenstein at ell. For prime q exceeding the coefficient-field degree, coprime tower degrees preserve its full q^20 degree over that field. Higher-moment monomial exponents are distinct modulo q^20 when total degree is below q: the largest differing lambda supplies a unique lowest q-adic power with coefficient nonzero modulo q. Reduction in the radical basis therefore yields exactly the stated coefficient specialization criterion. The earlier finite-exception/root-isolation bound is sound.
+
+The stronger actual word E(u_n)[B(u_n,u_n r,1-p_n)E(u_n)]^n contains exactly 2n+1 ordinary scale factors, whose product is b. Its normalized pair factor product is also exactly b. It is strict for sufficiently large n, has pair moment b² exactly, and converges coherently to the same full Poisson kernel. Hence the whole target predicate is locally constant on a physically approximable fixed-pair slice, eliminating the earlier exception set.
+
+For finitely many genuinely fresh slots with distinct primes, successive radical degrees remain coprime to the accumulated field degree. The product power basis proves the joint polynomial criterion. The single coupled target formula is locally constant on the product fixed-pair slice, so simultaneous actual approximants satisfy it. Shared occurrences of one kernel remain one variable. Static parameters are eliminated jointly and recovered as one compatible tuple through RCF; no independently fitted row or source-level tie relaxation is used.
+
+The constructive enumeration is terminating only in this demonstrated branch: enumerate calibrated actual words and decide the complete static feasibility sentence. This proves a positive alternative source, not attainment of the original nonphysical closure kernels. Prime bounds do not cover every residue/retained-factor form, repeated-prime joint explanation, genuinely source-tied unbounded slots or paired COMMON/INDEPENDENT tuples. Input-dependent general separator completeness and the original whole-fibre G3 master remain open. The old proof bytes stay preserved; the fixed-pair note is a separately bound strengthening.
