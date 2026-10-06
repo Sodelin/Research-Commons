@@ -1,0 +1,11 @@
+# Frozen single fixed-functional source check
+
+This plan requests one invocation only, after independent source/resource acceptance. It implements the hand-reviewed necessary-condition proposal, not an inference or a source simulation.
+
+Source family, ordinary target, fixed functional and selected blocks are exactly those of NECESSARY-CONDITION-DRAFT.md. Stage 4 computes the three complete per-labelled source coefficients through epsilon degree four. If their weighted sum is nonzero at degree four, the invocation records DEGREE4_PREMISE_FALSE_STOP and does not run stage 5. Known combined coefficients through degree three must vanish or the invocation fails closed. Only if stage 4 vanishes does stage 5 calculate the degree-five polynomial for mathematical sign review. No sign or master conclusion is emitted by this checker.
+
+Exactly two source quotients: (entering arity, retained minimum root count)=(9,4),(10,6). Coordinates and multiplicities are frozen in COORDS. Every quotient uses inherited ceilings of 2,000 unlabelled full-forest states and 4,096 coloured states, original holding rates, and complete top shapes. This is neither a cap scan nor a search for another functional. No higher degree, altered parameter regime, retry, additional case or rerun is authorized by this plan.
+
+Resources: one fresh non-overwriting attempt1; 30-second wall limit, 512 MiB address-space limit, 8 MiB per stdout/stderr file. Source and provider pins authenticated before the child executes and after it stops. The child loads exact authenticated source bytes, not cached bytecode. Single-thread BLAS/OpenMP; no network, installations or external source execution. Process group is killed/reaped on timeout; preserve stdout, stderr, BEFORE and TERMINAL inventories for every observed outcome. Failed or partial output establishes no mathematical result.
+
+Tiny unit preparation is limited to arity two, rational polynomial identities and mocked control flow; eight tests pass. It does not evaluate the frozen cap-nine/cap-ten source question. Final acceptance requires independent exact replay, checking the selected original coordinates and source arithmetic. Any sign analysis of the saved polynomial must be exact and separately reviewed. The historical balanced-family data and latest rare-route/PSD-cocycle publications remain unchanged.
