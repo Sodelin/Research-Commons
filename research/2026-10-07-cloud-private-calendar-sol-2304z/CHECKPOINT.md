@@ -22,5 +22,14 @@ providers, workflows, current build-tree edits or child tasks. This packet is
 outside the frozen 165-module input, including its later terminal failure;
 no proof here is promoted by that job.
 
-Next action: non-force publication and byte readback, then root assigns exact
-source review and owns compiler routing plus actual upper-phase support.
+Publication receipt: non-force main at
+`f498f82522f70c8ee53c34918b7ed4eb919d68f6`; fresh remote fetch/readback
+verified all five packet files and the candidate plus all 11 source hashes.
+Draft SHA-256:
+`83c8248df3b495fd78e19dee0ffc15a81b9fc59ad53884fbc2263f7afb2141d9`.
+Manifest SHA-256:
+`34ace533165d530633c307433706cd5b09fc909882b78a8bc66169458c725e7f`.
+Publication and hashes are preservation evidence, not proof acceptance.
+
+Next action: root assigns exact source review and owns compiler routing plus
+actual upper-phase support.
