@@ -2,11 +2,11 @@
 
 Assignment: CLOUD-G6-SOL-ULTRA-20261007.
 Contributor/publisher: Codex, session `20261007T160100Z-G6-CLOUD`.
-State: WORKING / ACTUAL SOURCE COMPONENTS PARTIALLY VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 21:54 UTC.
+State: WORKING / ACTUAL SOURCE COMPONENTS PARTIALLY VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 22:16 UTC.
 Requested execution: Sol, Ultra reasoning effort.
 Evidence anchor: fe95e69492699472b0e14655ab0b405ad141e69c.
 
-Latest: [run 37690783097 failed only its principal calendar target](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37690783097-FAILED/README.md); the actual successful selection is 154 custom modules / 235 named reports / 3,786 owned declarations / 2,441 theorems. ResidualProgram now passes all 34 reports. The failed principal is wholly excluded. Receipt `99943f6` is preserved; independent final audit is in progress. [Canonical earlier 153-module audit](../../research/2026-10-07-cloud-independent-auditor-1616z/CALENDAR-TAIL-UPPER-VERIFIED-PARTIAL-REVIEW.md) at `b1bffc3` and the older full150 PASS remain valid. The sole owner prepares only the observed `id` normalization with all 154 accepted hashes fixed; no successor outcome is inferred. [21:54 checkpoint](checkpoints/20261007T215400Z-G6-SOURCE-ASSEMBLY-AND-DOT-SPLIT.md) records current proof drafts and the [actually agreed Dot split](inbox/G6/20261007T215000Z-CLOUD-ACK-CONCRETE-SPLIT.md).
+Latest: [the principal-only successor failed final definition unfolding](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37693022664-FAILED/README.md), independently authenticated at401a9f4. The accepted154/235/full3786/2441 inventory is byte-identical to its predecessor. Explicit closure06440343 and four bank modules have source acceptance. The sole owner has frozen10f376e3 and reported [run37695092891](https://github.com/Sodelin/Research-Commons/actions/runs/37695092891) queued, planned159/295, with all154 accepted hashes fixed. Actual compilation/audit is pending. [22:16 checkpoint](checkpoints/20261007T221600Z-G6-BANK-BUILD-AND-DOT-TRANSFER.md) records actual Dot hand-proof transfer, practical guard acceptance, new pending hand consumer and the authorized publication route.
 
 Actual [ACK, frozen master, reuse/gap audit and full obligation register](checkpoints/20261007T160100Z-G6-CLOUD-ACK.md). Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`. G6 implementation/build ownership accepted; G7 remains queued. Historical Astra status preserved.
 

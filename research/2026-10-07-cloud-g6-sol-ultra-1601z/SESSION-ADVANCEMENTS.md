@@ -183,3 +183,12 @@ New source hand/draft work preserves exact cut equalities in rational-source app
 The practical signed receiver now executes conditional supplied-band geometry beyond the coarse uniform threshold while preserving UNKNOWN on the known separated source pair. This still supplies no observed confidence or useful sample cost; two concrete robustness guards are being fixed. Prior binary G5 cluster/S minimality was found and correctly linked, improving the reader's understanding of what earlier research established rather than claiming a new theorem.
 
 [Actually agreed collaboration](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T215000Z-CLOUD-ACK-CONCRETE-SPLIT.md) now directs Dot's Astra team to complementary source mathematics and this team's source/Lean/practical/publication work, with consolidated user updates through Dot. The session remains a substantial integration and research-connection advance; it is not yet an original G5/G6 endpoint completion comparable to G1 closure or the timed G2 endpoint.
+
+
+### 22:16 coordinated source assembly
+
+The principal-only build's final definition unfolding failed; its previous identity rewrite passed, and all154 successful source hashes and3786 owned rows stayed fixed. A source-reviewed explicit closure and four bank modules now enter one pending159/295 build, rather than treating planned additions as results.
+
+Dot supplied two accepted hand connections beyond the local Cloud row: the measured selected-prefix posterior and the actual stopped original-source selected-view projection. Its explicit positive surgery adapter has separate Sol transfer acceptance, with private-register causal projection and joint-history source consumption still owed. These make the formal gaps more concrete without closing the original masters.
+
+The new [cell-witness/backend consumer](CELL-WITNESS-TO-RATIONAL-CLOUD-BRIDGE.md), with primary and calendar Sol hand acceptance, connects feasible algebraic witnesses to the actual rational residual backend without an invalid uniform clock bound across unbounded cells. The practical guard repair has focused execution and independent acceptance with identical saved geometry outputs. These are source integration and durability advances, with no new observed data or usable sampling endpoint.
