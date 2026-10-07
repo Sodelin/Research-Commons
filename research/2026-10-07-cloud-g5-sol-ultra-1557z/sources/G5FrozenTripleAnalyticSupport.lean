@@ -7,6 +7,8 @@ import G5UnknownRateSupport
 Contributor: CLOUD-G5-20261007T155725Z, Codex, 2026-10-07.
 Reuses Astra's polynomial kernel as corrected by Codex and dot's intrinsic
 finite-exponential germ theorem. Compiler evidence is external to this source.
+Internal Lean takeover derivative, 2026-10-07: repairs the actually recovered
+Fin numeral and pinned Finsupp API elaboration errors; statements unchanged.
 
 This module derives exponential substitution, positive-rate finite-mixture
 limits and germ uniqueness between different finite hidden representations.
@@ -15,6 +17,7 @@ actual conditional genealogy law is NOT a hypothesis hidden in a source type.
 This is a frozen analytic bridge, not full original-network observability.
 -/
 namespace GProgram.G5.FrozenTripleAnalyticSupport
+set_option backward.isDefEq.respectTransparency false
 open Filter GProgram.G5.FrozenTriplePolynomialKernel GProgram.G5.ExponentialGerm
 open scoped BigOperators Topology
 
@@ -45,7 +48,8 @@ lemma row_polynomial (q : ℝ) (occupancy gene : Fin 5) :
     row q occupancy gene = row 0 occupancy gene +
       linearCoefficient occupancy gene * q + cubicCoefficient occupancy gene * q ^ 3 := by
   fin_cases occupancy <;> fin_cases gene <;>
-    norm_num [row, linearCoefficient, cubicCoefficient, discrete3, pair3, together3] <;> ring
+    norm_num [row, linearCoefficient, cubicCoefficient, discrete3, pair3, together3,
+      Fin.ext_iff] <;> ring
 
 /-- A real exponent map gathers repeated rates and repeated cross-seed
 exponents intrinsically. No injective hidden-rate presentation is required. -/
@@ -63,8 +67,10 @@ lemma row_coefficients_evaluation (rate u : ℝ) (occupancy gene : Fin 5) :
     ring
   rw [row_polynomial]
   unfold rowCoefficients finiteExpSum expParameter
-  simp only [Finsupp.sum_add_index (fun _ => zero_mul _)
-      (fun _ _ _ => add_mul _ _ _), Finsupp.sum_single_index (zero_mul _),
+  simp only [Finsupp.sum_add_index' (h := fun (exponent coeff : ℝ) => coeff * Real.exp (exponent * u))
+      (fun _ => zero_mul _) (fun _ _ _ => add_mul _ _ _),
+    Finsupp.sum_single_index (h := fun (exponent coeff : ℝ) => coeff * Real.exp (exponent * u))
+      (zero_mul _),
     zero_mul, Real.exp_zero, mul_one, hc]
 
 section FiniteMixture

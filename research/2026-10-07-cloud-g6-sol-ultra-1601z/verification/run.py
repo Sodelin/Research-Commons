@@ -82,6 +82,7 @@ def run(argv, label):
     return output.decode(errors='replace')
 
 run(['lake', 'exe', 'cache', 'get', *sorted(external)], 'mathlib-cache')
+passed_modules, failed_modules = set(), []
 for index, module in enumerate(order):
     record = modules[module]
     path = root / record['path']
@@ -89,21 +90,33 @@ for index, module in enumerate(order):
         raise RuntimeError('Frozen source mutated: ' + module)
     output = root / '.lake/build/lib/lean' / (module.replace('.', '/') + '.olean')
     output.parent.mkdir(parents=True, exist_ok=True)
-    run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', '-o', str(output), str(path)], f'{index:03d}-{module}')
+    try:
+        run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', '-o', str(output), str(path)], f'{index:03d}-{module}')
+    except SystemExit as exc:
+        failed_modules.append({'module': module, 'result': str(exc.code)})
+        break
+    passed_modules.add(module)
+
+audited_targets = [target for target in targets if target in passed_modules]
+(evidence / 'selected-results.json').write_text(json.dumps({
+    'requested_targets': targets, 'passed_modules': sorted(passed_modules),
+    'failed_modules': failed_modules, 'audited_targets': audited_targets,
+}, indent=2) + '\n')
 
 # Audit every declaration in each selected G6 source. Each #print axioms report
 # includes the complete transitive proof dependency set, including providers.
-declarations = []
-for module in targets:
+declarations, declarations_by_module = [], {}
+for module in audited_targets:
     source = (root / modules[module]['path']).read_text()
     namespace = re.search(r'^namespace\s+(\S+)\s*$', source, re.MULTILINE)
     if namespace is None:
         raise RuntimeError('Selected source has no explicit namespace: ' + module)
-    declarations.extend(namespace[1] + '.' + name for name in re.findall(
+    declarations_by_module[module] = [namespace[1] + '.' + name for name in re.findall(
         r'^(?:noncomputable\s+)?(?:def|theorem|lemma)\s+([A-Za-z0-9_\']+)',
-        source, re.MULTILINE))
+        source, re.MULTILINE)]
+    declarations.extend(declarations_by_module[module])
 audit = evidence / 'DeclarationAudit.lean'
-audit.write_text('\n'.join('import ' + module for module in targets) + '\n\n' +
+audit.write_text('\n'.join('import ' + module for module in audited_targets) + '\n\n' +
                  '\n'.join('#print axioms ' + name for name in declarations) + '\n')
 audit_output = run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', str(audit)], 'declaration-audit')
 reports = {name: [axiom.strip() for axiom in axioms.split(',') if axiom.strip()]
@@ -117,10 +130,19 @@ unexpected = {name: sorted(set(axioms) - {'propext', 'Classical.choice', 'Quot.s
               if set(axioms) - {'propext', 'Classical.choice', 'Quot.sound'}}
 (evidence / 'axiom-audit.json').write_text(json.dumps({
     'declarations': declarations, 'transitive_axioms': reports,
+    'declarations_by_module': declarations_by_module,
     'missing_reports': missing, 'unexpected_axioms': unexpected,
     'audit_source_sha256': hashlib.sha256(audit.read_bytes()).hexdigest(),
 }, indent=2) + '\n')
 if missing or unexpected:
     raise SystemExit('Incomplete or unexpected declaration axiom audit')
-print('G6_AXIOM_AUDIT_PASSED declarations=' + str(len(declarations)), flush=True)
-print('G6_SELECTED_COMPONENTS_PASSED commit=' + commit, flush=True)
+counts = {module: len(names) for module, names in declarations_by_module.items()}
+print('CLOUD_SELECTED_AXIOM_AUDIT_PASSED ' + json.dumps(counts), flush=True)
+g6_targets = [target for target in targets if target.startswith('UnifiedLean.G6.')]
+if g6_targets and all(target in audited_targets for target in g6_targets):
+    print('G6_AXIOM_AUDIT_PASSED declarations=' + str(sum(counts[target] for target in g6_targets)), flush=True)
+    print('G6_SELECTED_COMPONENTS_PASSED commit=' + commit, flush=True)
+for target in audited_targets:
+    print('CLOUD_TARGET_PASSED ' + target + ' commit=' + commit, flush=True)
+if failed_modules:
+    raise SystemExit('Selected source failure: ' + json.dumps(failed_modules))

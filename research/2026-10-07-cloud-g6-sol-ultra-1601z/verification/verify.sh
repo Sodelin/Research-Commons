@@ -9,9 +9,14 @@ mkdir -p "$g6_build"
 cp -a "$g6_repo/research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/." "$g6_build/"
 cp -a "$g6_packet/sources/." "$g6_build/"
 cp "$g6_repo/research/2026-10-07-cloud-g3-1619z/G3ApproximateMomentBarrier.lean" "$g6_build/G3ApproximateMomentBarrier.lean"
+cp "$g6_repo/research/2026-10-07-codex-g5-lean/sources/G5FrozenTriplePolynomialKernel.lean" "$g6_build/G5FrozenTriplePolynomialKernel.lean"
+cp "$g6_repo/research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/G5FrozenTripleAnalyticSupport.lean" "$g6_build/G5FrozenTripleAnalyticSupport.lean"
 mkdir -p "$g6_build/deps"
-timeout 180 git clone --quiet https://github.com/leanprover-community/mathlib4.git "$g6_build/deps/mathlib"
-git -C "$g6_build/deps/mathlib" checkout --quiet 0df444a360eaa60ab8c11dca51a86af692955474
+git init --quiet "$g6_build/deps/mathlib"
+git -C "$g6_build/deps/mathlib" remote add origin https://github.com/leanprover-community/mathlib4.git
+timeout 180 git -C "$g6_build/deps/mathlib" fetch --quiet --no-tags --depth=1 origin 0df444a360eaa60ab8c11dca51a86af692955474
+git -C "$g6_build/deps/mathlib" checkout --quiet --detach FETCH_HEAD
+test "$(git -C "$g6_build/deps/mathlib" rev-parse HEAD)" = '0df444a360eaa60ab8c11dca51a86af692955474'
 test "$(cat "$g6_build/deps/mathlib/lean-toolchain")" = 'leanprover/lean4:v4.33.1'
 cd "$g6_build"
 MATHLIB_NO_CACHE_ON_UPDATE=1 timeout 180 lake update

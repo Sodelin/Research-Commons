@@ -25,9 +25,11 @@ lemma taylorTerm_succ (a : ℝ) (k : ℕ) :
   have hk : (k : ℝ) + 1 ≠ 0 := by positivity
   field_simp [hf, hk] <;> ring
 
+set_option backward.isDefEq.respectTransparency false in
 lemma taylor_hasSum (a : ℝ) : HasSum (taylorTerm a) (Real.exp a) := by
-  simpa only [taylorTerm, Real.exp_eq_exp_ℝ] using
-    (NormedSpace.expSeries_div_hasSum_exp a)
+  change HasSum (fun k : ℕ => a ^ k / (k.factorial : ℝ)) (Real.exp a)
+  rw [Real.exp_eq_exp_ℝ]
+  exact NormedSpace.expSeries_div_hasSum_exp a
 
 lemma taylor_tail_geometric {a : ℝ} (ha : 0 ≤ a) (K : ℕ)
     (hK : 2 * a ≤ (K : ℝ) + 2) (j : ℕ) :
