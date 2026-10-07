@@ -25,3 +25,6 @@ The preceding five-body renewal and sixteen-body context sources now have canoni
 
 
 All sixteen newest finite-cut/Gamma/history adapter bodies now have [canonical independent source-semantic acceptance](REVIEW-RECEIPT.md), including the source connection from the original unrefined calendar to one refined endpoint-history reader. All six cut-adapter implementations remain compiler UNCHECKED. The refined-history TV budget, finite-bin/`href`/`hword` premises, hand-only sorted-cut constructor and physical/numerical/menu gates are retained. Frozen original source bytes are unchanged.
+
+
+[Separate API derivatives](api-derivative-2227z/README.md) now preserve all six original-author repair copies, exact diffs, statement-contract/hash ledgers and inspected pinned interfaces. Four copies have bounded proof-engineering changes and two wrappers remain byte-identical. The repaired candidates are exact-review pending and compiler UNCHECKED; every original source and current159 frozen input stays unchanged. The165/358 successor count is conditional arithmetic only.

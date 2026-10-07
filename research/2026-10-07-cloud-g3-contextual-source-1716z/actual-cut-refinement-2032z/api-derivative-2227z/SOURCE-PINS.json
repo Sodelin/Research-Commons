@@ -1,0 +1,564 @@
+{
+  "status": "Separate original-author API derivatives; no compiler/provider/workflow/currenttarget edits; originals unchanged",
+  "source_namespace_contract": "Identical top-level declaration contracts, imports, variables, namespaces, universe/settings directives; one existing derived local clock-probability instance reactivated",
+  "sources": [
+    {
+      "module": "ActualCutTagRefinement",
+      "original": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCutTagRefinement.lean",
+        "commit": "718a4d80d0f7ba27975bd257d4e3f42f1903ba47",
+        "sha256": "d2f118e20df87b861c6d58db42b99b3b282c167916e35fe8327af90d725bf6af",
+        "bytes": 10736
+      },
+      "candidate": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCutTagRefinement.lean",
+        "sha256": "c39df8d6fc98edfa1acd9dd1042bedb4bacde08c85e26b69acf019b451b9dea8",
+        "bytes": 10767,
+        "byte_identical_to_original": false
+      },
+      "imports": [
+        "UnifiedLean.G6.BinFold",
+        "G2SameClockContinuation",
+        "G2FiniteAncestralTrace"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "foldTagRecords",
+          "contract_sha256": "1037cc017265f80ff11104f2a719757196e5c9c4a76b2c26dedd2b995ea1074f"
+        },
+        {
+          "kind": "theorem",
+          "name": "fold_tags_eq_active_records",
+          "contract_sha256": "bf624e3e8a110f5a782571a36923d235033e81c0e581f39e3b6c2c0fb648ff74"
+        },
+        {
+          "kind": "theorem",
+          "name": "fold_tag_records_append",
+          "contract_sha256": "a914f10e73d784e5b32087a8749c73f0ea32213492a0e340bc442c12dae8a8d8"
+        },
+        {
+          "kind": "theorem",
+          "name": "fold_tag_records_shift",
+          "contract_sha256": "afce09b00e1b5dae62eb013572c27bd29cb082e123612526b56d78af810df782"
+        },
+        {
+          "kind": "theorem",
+          "name": "retained_cut_prefix_record_endpoint",
+          "contract_sha256": "d36e255a5c571021c27de0a15560430aa38c238f8f420f131e6c7e370ac2f7b2"
+        },
+        {
+          "kind": "theorem",
+          "name": "same_clock_tag_cut_refinement",
+          "contract_sha256": "1bee678bd0b5b61eb9477533969c0d07cca5c4a9ae7ae55b735cbd857a61ed52"
+        },
+        {
+          "kind": "theorem",
+          "name": "same_clock_complete_active_cut_refinement",
+          "contract_sha256": "27b76956aafc7b09b1da31b0c317197344174b00fb222c483bf19110a5cca376"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_raw_endpoint_eq_records",
+          "contract_sha256": "fadcaf112e2334c83340396297cf91f513473ba1a269cca1ba75ef5d57c79253"
+        },
+        {
+          "kind": "theorem",
+          "name": "same_clock_complete_endpoint_cut_refinement",
+          "contract_sha256": "8b5edd39d3750c470eb23b840108c8baf2385c50828158b8e6cfe050240eb7c7"
+        },
+        {
+          "kind": "theorem",
+          "name": "same_clock_complete_joint_readout_cut_refinement",
+          "contract_sha256": "8ae0bc6b244c60d56fa23a24e5c0f89a6d3a34a71bd643928db52ee2af0d5572"
+        }
+      ],
+      "named_declarations": [
+        "foldTagRecords",
+        "fold_tags_eq_active_records",
+        "fold_tag_records_append",
+        "fold_tag_records_shift",
+        "retained_cut_prefix_record_endpoint",
+        "same_clock_tag_cut_refinement",
+        "same_clock_complete_active_cut_refinement",
+        "complete_raw_endpoint_eq_records",
+        "same_clock_complete_endpoint_cut_refinement",
+        "same_clock_complete_joint_readout_cut_refinement"
+      ],
+      "status": "Exact derivative API review pending; compiler UNCHECKED/outside current159",
+      "changes": "Bounded proof-engineering hunks only in unified.diff"
+    },
+    {
+      "module": "ActualCutJointLaw",
+      "original": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCutJointLaw.lean",
+        "commit": "718a4d80d0f7ba27975bd257d4e3f42f1903ba47",
+        "sha256": "cecd5bf2f987a7075134031aab34a5346a7d3b5088d2865dc8373bbf232ee02b",
+        "bytes": 9175
+      },
+      "candidate": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCutJointLaw.lean",
+        "sha256": "e8d5e316cdd84147574c5f12d4a61d50c323a94a4bb70509b954cbba4a339f18",
+        "bytes": 9699,
+        "byte_identical_to_original": false
+      },
+      "imports": [
+        "ActualCutTagRefinement",
+        "ActualTailBinRow",
+        "G2SameClockPastFutureLaw"
+      ],
+      "declarations": [
+        {
+          "kind": "abbrev",
+          "name": "TaggedEndpoint",
+          "contract_sha256": "934f0ccca4e88872f50d2f9c057844fbaa3c0ebb4612b2706fb8ee56d8a3c310"
+        },
+        {
+          "kind": "def",
+          "name": "tailTraceReadout",
+          "contract_sha256": "9b39daf0254f5b10ddd35f87b9f848fcb2bccd3b99cb37457dfab5b035cef3b4"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_trace_readout_measurable",
+          "contract_sha256": "72505b9e4460b0a726a48727c12f6af94037b1ee8032533eeab3039c19999c7e"
+        },
+        {
+          "kind": "def",
+          "name": "cutCompleteReadout",
+          "contract_sha256": "03818aab8c208b1fa6e8226701a88118f1c35c88407c9c23f4b2bcd43e051abb"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_complete_readout_measurable",
+          "contract_sha256": "c88aa09fd1db6af2846a7e778edd1b5a570c1210cef603f5f4ecf6fdf133d12b"
+        },
+        {
+          "kind": "def",
+          "name": "prefixTailReadout",
+          "contract_sha256": "e49d9c2a1a47b9c2b103d84f05ff95a5c5731a9eed2b850dc65cfba463b5aabe"
+        },
+        {
+          "kind": "theorem",
+          "name": "prefix_tail_readout_measurable",
+          "contract_sha256": "1f1a68f33c4c322e59b60d7c9d982588eea3d8398d8c2245ca62c1a2687a0b4b"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_cut_fibre_joint_source_law",
+          "contract_sha256": "c29089180774b681d24adba82ccc65dd739623d9ec0edfd1d1de37811fa9efec"
+        },
+        {
+          "kind": "theorem",
+          "name": "decoded_raw_endpoint_restrict",
+          "contract_sha256": "a332cb20df4e0e760a0559a86598f59abd52ca8449d2e348688efceef8d27bbf"
+        }
+      ],
+      "named_declarations": [
+        "tailTraceReadout",
+        "tail_trace_readout_measurable",
+        "cutCompleteReadout",
+        "cut_complete_readout_measurable",
+        "prefixTailReadout",
+        "prefix_tail_readout_measurable",
+        "complete_cut_fibre_joint_source_law",
+        "decoded_raw_endpoint_restrict"
+      ],
+      "status": "Exact derivative API review pending; compiler UNCHECKED/outside current159",
+      "changes": "Bounded proof-engineering hunks only in unified.diff"
+    },
+    {
+      "module": "ActualCalendarCutContext",
+      "original": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCalendarCutContext.lean",
+        "commit": "718a4d80d0f7ba27975bd257d4e3f42f1903ba47",
+        "sha256": "11b3f61ba984ed67301d4a05c80e84ce83d552d1d5216412f2578467a7511dd1",
+        "bytes": 24268
+      },
+      "candidate": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCalendarCutContext.lean",
+        "sha256": "9af74be4362938df964da969df95beb23c058ef3131d0e29200a9afca2c0d3b2",
+        "bytes": 24939,
+        "byte_identical_to_original": false
+      },
+      "imports": [
+        "ActualCutJointLaw",
+        "CompleteCalendarJointLaw"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "segmentReadout",
+          "contract_sha256": "acebc148eff17f9f06e8828ab3b58a8998b7415c69db1b65a1ae3e8871206300"
+        },
+        {
+          "kind": "def",
+          "name": "calendarReadout",
+          "contract_sha256": "c9a2dc4e4a4c158056e9bac7ec73b673cfacd404cda99c510053f180e086e9aa"
+        },
+        {
+          "kind": "def",
+          "name": "completeReadout",
+          "contract_sha256": "337e923512c9e98e768dc4b14e03aab20f6276aff61ed17500944fd50449d6fa"
+        },
+        {
+          "kind": "theorem",
+          "name": "segment_readout_measurable",
+          "contract_sha256": "d41ac03e253450c590fd6e31c74d9df59c658f51476d471826ab8f49d9fa7dc2"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_readout_measurable",
+          "contract_sha256": "a43da5f5ba7a639471e1a3c2e8e9ebc393775e5bddc474ab379ecf0badcbb406"
+        },
+        {
+          "kind": "theorem",
+          "name": "complete_readout_measurable",
+          "contract_sha256": "a43e69b367a4cc7814e6422e5c1803c908852b7c2b8096d6d268f3008f3a6849"
+        },
+        {
+          "kind": "def",
+          "name": "segmentJoint",
+          "contract_sha256": "367ecd111b26aea7906d750dd91c31060cc00276698dc978c00bd897438d249b"
+        },
+        {
+          "kind": "def",
+          "name": "calendarJoint",
+          "contract_sha256": "d54baafd1f06676541e5d012471e9c5d1ca746217d90926a70d8d66178f15deb"
+        },
+        {
+          "kind": "def",
+          "name": "completedJoint",
+          "contract_sha256": "b3f483d96e9ec66d26fa646afe4184798e0b8cf3b0239bd451e5dc485d716fe6"
+        },
+        {
+          "kind": "def",
+          "name": "tailJoint",
+          "contract_sha256": "4d62789bb51d1620272a4d7a1d8c3479b3a68219db8684a37671acc98d8df7eb"
+        },
+        {
+          "kind": "theorem",
+          "name": "segment_joint_toMeasure",
+          "contract_sha256": "e69248150224ffb22c16ab4268057d681aeb037894ed81302ef8b3119f69dd7f"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_toMeasure",
+          "contract_sha256": "d054da9820a125996d0d7e37cf47ca5b44f83aa957c149428f08e4535d82808d"
+        },
+        {
+          "kind": "theorem",
+          "name": "completed_joint_toMeasure",
+          "contract_sha256": "6d9c15db69974e95768742659465fb66041fd2b7bcdf64549f4fefb85db66681"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_joint_toMeasure",
+          "contract_sha256": "af45bcbc868306be579597626cf38d090f246c8d588e8dc024a321a434860be2"
+        },
+        {
+          "kind": "theorem",
+          "name": "finite_observed_fibre_kernel",
+          "contract_sha256": "0cb6b02208ae2273ac126b851874e3922278ffcb3a3af86ca54abd06a9b06cbd"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_cons",
+          "contract_sha256": "a4897c47c524edaf8c6c132b0e949e03c3465557ab977651c90ec51c73495ba1"
+        },
+        {
+          "kind": "theorem",
+          "name": "completed_joint_bind_calendar",
+          "contract_sha256": "504078e52393126ce09a3e1c8732857cd2123b45dee8fb34d2013a2209dddaf0"
+        },
+        {
+          "kind": "theorem",
+          "name": "tail_joint_cut_bind",
+          "contract_sha256": "0774f7497721469a22ff38881afc42d343124668ebecdcb56626ecb2dc60e369"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_nil",
+          "contract_sha256": "43ac54390d7f300c5ef80c2fc501b1aed7b68ae909c30c27875177d78f942034"
+        },
+        {
+          "kind": "theorem",
+          "name": "program_duration_append",
+          "contract_sha256": "6c6a908bc86818c0b9b11268257908e64f91e145113bb230047222e77947dcfe"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_append",
+          "contract_sha256": "c1aef44b1c709e47412225ae135a8afc4af54476fd5e312cfe3bf9be048f28ab"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_single",
+          "contract_sha256": "52429d67a2ca897a5974d3302c3b4b8369698527aed2ad8ff23c6b2040e00c10"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_complete_calendar_cut_refinement",
+          "contract_sha256": "06b62dc591806fa2841fa426c865216f4ac9de9e5ff87ff8586e13c36810a79b"
+        }
+      ],
+      "named_declarations": [
+        "segmentReadout",
+        "calendarReadout",
+        "completeReadout",
+        "segment_readout_measurable",
+        "calendar_readout_measurable",
+        "complete_readout_measurable",
+        "segmentJoint",
+        "calendarJoint",
+        "completedJoint",
+        "tailJoint",
+        "segment_joint_toMeasure",
+        "calendar_joint_toMeasure",
+        "completed_joint_toMeasure",
+        "tail_joint_toMeasure",
+        "finite_observed_fibre_kernel",
+        "calendar_joint_cons",
+        "completed_joint_bind_calendar",
+        "tail_joint_cut_bind",
+        "calendar_joint_nil",
+        "program_duration_append",
+        "calendar_joint_append",
+        "calendar_joint_single",
+        "actual_complete_calendar_cut_refinement"
+      ],
+      "status": "Exact derivative API review pending; compiler UNCHECKED/outside current159",
+      "changes": "Bounded proof-engineering hunks only in unified.diff"
+    },
+    {
+      "module": "ActualFiniteCutJointLaw",
+      "original": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualFiniteCutJointLaw.lean",
+        "commit": "718a4d80d0f7ba27975bd257d4e3f42f1903ba47",
+        "sha256": "0bba28f01ca3f9336f776523518aa86587645b5df1a539a41487483020c610cf",
+        "bytes": 12504
+      },
+      "candidate": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualFiniteCutJointLaw.lean",
+        "sha256": "6ff13aac1e2209078661664f7567a18453c54a0a27d48ef1cd95d44e3cd518fe",
+        "bytes": 12809,
+        "byte_identical_to_original": false
+      },
+      "imports": [
+        "ActualCutJointLaw",
+        "ActualCalendarCutContext"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "cutIntervalReadout",
+          "contract_sha256": "c6a6140cd1a596ac026e3b1dfff56599bfd3b74fa2ee92bf13ee95ae5ed40b37"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_interval_readout_measurable",
+          "contract_sha256": "288c932591d5c8ce9e8529edc2674291cb3dda3476a5e4f6f6b0a56af4ed5e3b"
+        },
+        {
+          "kind": "theorem",
+          "name": "same_clock_finite_joint_cut_refinement",
+          "contract_sha256": "f3c827ac044f90b968bd40489e55a4dee79f7c4be3cf0c3fbcbb2d0262e06d66"
+        },
+        {
+          "kind": "theorem",
+          "name": "interval_cut_fibre_joint_source_law",
+          "contract_sha256": "092406517207e9efa9c897de2773dd45fdb643e474e6af35dc130de04a888abb"
+        },
+        {
+          "kind": "theorem",
+          "name": "interval_segment_joint_toMeasure",
+          "contract_sha256": "abcfb9e4c2b4b44408781e69efa808d591712b316f3c00d27c1b91879e073298"
+        },
+        {
+          "kind": "theorem",
+          "name": "interval_joint_cut_bind",
+          "contract_sha256": "b352d9d922b4a5f7fdd36ab3f145023adaef2dd705dec9905ea448475c3f4317"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_interval_refinement",
+          "contract_sha256": "2353a91197ef4b9865adb0d9fbeafc1f617ac52f88458e36f08719f8a388bc6a"
+        },
+        {
+          "kind": "theorem",
+          "name": "calendar_joint_refinement_in_context",
+          "contract_sha256": "0b66dbb5d7a1e66d45f999166d8c725b32c145893ac32022bae86320006f29e9"
+        }
+      ],
+      "named_declarations": [
+        "cutIntervalReadout",
+        "cut_interval_readout_measurable",
+        "same_clock_finite_joint_cut_refinement",
+        "interval_cut_fibre_joint_source_law",
+        "interval_segment_joint_toMeasure",
+        "interval_joint_cut_bind",
+        "calendar_joint_interval_refinement",
+        "calendar_joint_refinement_in_context"
+      ],
+      "status": "Exact derivative API review pending; compiler UNCHECKED/outside current159",
+      "changes": "Bounded proof-engineering hunks only in unified.diff"
+    },
+    {
+      "module": "ActualCalendarEndpointHistory",
+      "original": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCalendarEndpointHistory.lean",
+        "commit": "718a4d80d0f7ba27975bd257d4e3f42f1903ba47",
+        "sha256": "3128992426a7ac45c735e3fc806f24263131f7da73cedf56359eddd4ceee030d",
+        "bytes": 12347
+      },
+      "candidate": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCalendarEndpointHistory.lean",
+        "sha256": "3128992426a7ac45c735e3fc806f24263131f7da73cedf56359eddd4ceee030d",
+        "bytes": 12347,
+        "byte_identical_to_original": true
+      },
+      "imports": [
+        "ActualFiniteCutJointLaw",
+        "UnifiedLean.G6.HistoryPrefix"
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "physicalOps",
+          "contract_sha256": "c90f05b97c81b320e25806ed7c8bc122973333de90733b5168464f38e82f46d7"
+        },
+        {
+          "kind": "def",
+          "name": "endpointStepTags",
+          "contract_sha256": "d56568503115e59ae4354016fb3fa9b84809de9f638e4ea53e6cb127628e2d6e"
+        },
+        {
+          "kind": "def",
+          "name": "stepBinContract",
+          "contract_sha256": "80c5cad5fdf9d985a0e6c25f872fad55b497e51e442c0c490479550de1a3e9c4"
+        },
+        {
+          "kind": "def",
+          "name": "wordBinContract",
+          "contract_sha256": "c8ecfbd971c2153f9af4c09f2525898d8184801e5ab1d1ce698c96d156f0edd6"
+        },
+        {
+          "kind": "def",
+          "name": "endpointHistoryReadout",
+          "contract_sha256": "33c17c6a03ab0a5c06528e9efb31a7a8bee4e57473db7702f32ce1c6115f27ad"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_interval_joint_source_row",
+          "contract_sha256": "21612ccf664d2f298c3307484a0c3cbbbc942defb3481648791b6e3d120ed802"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_segment_endpoint_tag_row",
+          "contract_sha256": "73b77aaed57abe993e40f2a6fe4f5029ee5fffd95500959ee57e103bf90ea423"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_calendar_joint_endpoint_history",
+          "contract_sha256": "16e98c9475f14296020a42d6e70379c41fe0736d980129dc0722471ba4633c2c"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_calendar_joint_history_prefix_tv",
+          "contract_sha256": "e651d6c341a75c65a4657014cbccc0b422ea171e82c8ecd166084bd6f7aa0d09"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_original_gamma_endpoint_history",
+          "contract_sha256": "f9fc368f6cf133a608329b4d4f51117b4d8d7a230c6953395549993ee18977e4"
+        },
+        {
+          "kind": "theorem",
+          "name": "actual_original_gamma_history_prefix_tv",
+          "contract_sha256": "afc18f51928b531525814a5a86177c80170c5592a0f16988adc003ddcfec5d98"
+        }
+      ],
+      "named_declarations": [
+        "physicalOps",
+        "endpointStepTags",
+        "stepBinContract",
+        "wordBinContract",
+        "endpointHistoryReadout",
+        "actual_interval_joint_source_row",
+        "actual_segment_endpoint_tag_row",
+        "actual_calendar_joint_endpoint_history",
+        "actual_calendar_joint_history_prefix_tv",
+        "actual_original_gamma_endpoint_history",
+        "actual_original_gamma_history_prefix_tv"
+      ],
+      "status": "Exact derivative API review pending; compiler UNCHECKED/outside current159",
+      "changes": "None: wrapper copied byte-for-byte"
+    },
+    {
+      "module": "ActualObservationCutRefinement",
+      "original": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualObservationCutRefinement.lean",
+        "commit": "718a4d80d0f7ba27975bd257d4e3f42f1903ba47",
+        "sha256": "aa0086b7b65eb3788fe0038a0a7708fec9e17fe64c8582a4b5243b2771a44195",
+        "bytes": 5405
+      },
+      "candidate": {
+        "path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualObservationCutRefinement.lean",
+        "sha256": "aa0086b7b65eb3788fe0038a0a7708fec9e17fe64c8582a4b5243b2771a44195",
+        "bytes": 5405,
+        "byte_identical_to_original": true
+      },
+      "imports": [
+        "ActualCalendarEndpointHistory"
+      ],
+      "declarations": [
+        {
+          "kind": "inductive",
+          "name": "CutRefines",
+          "contract_sha256": "1f3add87250e15df907dfd5113c45af0b3d50920ada36ccffff45c60952c3782"
+        },
+        {
+          "kind": "theorem",
+          "name": "cut_refines_actual_calendar_joint",
+          "contract_sha256": "abf823469e49cc67cd014a63c4116a2cc930ea6718a068da78f8e8e42ca67a4b"
+        },
+        {
+          "kind": "theorem",
+          "name": "original_gamma_refined_endpoint_history",
+          "contract_sha256": "bc3060ebe99965dd206307dc0f37a4f3c3dcac982f08c461727f707c2dd90560"
+        },
+        {
+          "kind": "theorem",
+          "name": "original_gamma_refined_history_prefix_tv",
+          "contract_sha256": "8d7d39b8635b13cdfb7ef88cb5541b97807b63243f7b912ed00fb9d1657e6e6e"
+        }
+      ],
+      "named_declarations": [
+        "cut_refines_actual_calendar_joint",
+        "original_gamma_refined_endpoint_history",
+        "original_gamma_refined_history_prefix_tv"
+      ],
+      "status": "Exact derivative API review pending; compiler UNCHECKED/outside current159",
+      "changes": "None: wrapper copied byte-for-byte"
+    }
+  ],
+  "static_counts": {
+    "theorems": 46,
+    "definitions": 17,
+    "inductives": 1,
+    "abbreviations": 1
+  },
+  "selected_named_total": 63,
+  "source_status": "All six candidates compiler UNCHECKED; no run outcome",
+  "conditional_future_counts": {
+    "custom": 165,
+    "named": 358,
+    "status": "159+6 and295+63 only; not a freeze/budget/dispatch"
+  },
+  "unchanged_current_context": {
+    "input": "10f376e3f58f2e3ea28bd24de75b10a2bbb09ba5",
+    "reported_run": 37695092891,
+    "status": "Task-provided current159/295 freeze reference; no job query/mutation"
+  },
+  "root_source_scope": "Finite Tag, actual record renewal, supplied oldCode/matrix, legal subdivisions/wordBinContract; refined-history TV budget; no desiredlaw/probability premise"
+}
