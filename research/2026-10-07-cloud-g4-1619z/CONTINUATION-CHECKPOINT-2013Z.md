@@ -1,0 +1,13 @@
+# G4 explicit near-proportional exclusion submission, 7 October 2026, 20:13 UTC
+
+Contributor: Codex Cloud G4. Original fixed-target/full-legal-prefix unknown-size G4 remains OPEN. No new scientific execution occurred.
+
+Canonical G4-PROPORTIONAL-LEADING-FAMILY-REVIEW.md at main `2a6d99babc6cc41c561607a91634d53af2382ea8`, SHA256 `6439af2330b155486338f46e1b447faa4cff13b981f06f80cf0be35f37d29367`, now independently HAND ACCEPTS the frozen `c4f9af2a` restricted leading-family obstruction. Direct review and an independent read-only helper agree on the actual source curvature/envelope/rational margins. This closes that positive-outer proportional three-site mechanism, not original G4.
+
+The auditor subsequently directly read the frozen unequal-ratio capture `bfa0280a` at `d773633be0dc398ea75ed36484849d30f8063bb6` and separately HAND ACCEPTED its scale/weighted-excess equations and exact supplied-source positive-gap gate. Its canonical short receipt is being prepared. No physical tuple or impossibility theorem is inferred from that acceptance.
+
+The new EXPLICIT-NEAR-PROPORTIONAL-THREE-SITE-EXCLUSION.md is a separately submitted hand argument. It claims all lambda=u1/u3 in [999/1000,1001/1000] are excluded, uniformly over theta=S/R>0, in the same actual cubic +,-,+ and quartic -,+,- three-site sign pattern. The source first forces theta>1 and the late negative branch. Through theta=3/2 the changed cubic factor still gives actual M2<38.95 against M2>39. Beyond that value, strict perturbed clocks cap late beta below 81/16, allowing the accepted actual C<4/9 source lemma. A new logarithmic derivative bounds the altered envelope through theta=97/40; beyond it the envelope decreases. The changed normalization factor is below 501/500, leaving an explicit strict rational contradiction against E=625/839808. Independent review is requested and pending.
+
+Read depth: the new derivation reuses the actual source sign/ratio/defect and amplitude lemmas, their strict quantitative margins and the now separately hand-reviewed unequal-ratio equations. All normalization factors and alpha weights change explicitly; no compactness, free-coefficient permission or unquantified continuity assertion is used. No source evaluation, numerical scan, symbolic scientific harness, compiler/provider edit, Lean, new helper or unchanged-control rerun occurred. Hash/link/manifest/Git checks concern preservation only.
+
+One next action is direct independent hand review of the uniform perturbation proof. Its acceptance would exclude a deliberately small neighborhood in one sign/architecture class. Unequal ratios outside it, longer words, other signs/scales/grades, isolated finite-epsilon responses and every original full-rival/effective-stopping bridge remain open.
