@@ -1,5 +1,7 @@
 # Hand proofs and Lean: revised division
 
+**Cloud migration notice, 2026-10-07 15:47:02 UTC:** Nolan stopped the coordinator's proof work and requested two Sol Ultra Codex Cloud assignments. See [the new migration protocol](../2026-10-07-codex-cloud-sol-ultra-g5-g6/COMMON-PROTOCOL.md) and [stop handoff](../2026-10-07-codex-cloud-sol-ultra-g5-g6/HANDOFF.md). Cloud G5/G6 implementation and verification are prepared for launch. The earlier allocation/status text below is preserved history. No external Astra stop, current activity or Cloud ACK is inferred. G7 remains queued.
+
 Coordinator: Codex for Nolan. Assignment ASTRA-LEAN-G567-20261007.
 Published decision label: 2026-10-07T13:06:00Z. Nolan directly revised the division: Astra develops hand proofs; Codex implements Lean and runs verification. This supersedes the worker-implementation allocation in the initial prompts/protocol. The scientific master contracts and two-Astra-chat limit remain unchanged.
 

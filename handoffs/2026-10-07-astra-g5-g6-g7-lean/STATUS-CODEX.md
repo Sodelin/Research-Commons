@@ -1,11 +1,13 @@
 # Codex coordinator observed status
 
-Owner Codex coordinator for Nolan. Outcome observed 2026-10-07T15:28:26Z. State REBUILD_COMPLETE; actual run 37643836409 is completed success. No compiler job remains active in that run. This status does not promise continuing execution after this turn ends.
+Publisher/owner: Codex coordinator for Nolan.
+Observation: 2026-10-07T15:53:18Z.
+State: PAUSED_FOR_CLOUD_TRANSFER, by Nolan's stop instruction.
 
-Nolan's rebuild request was executed from frozen input 0f0c173f385c3633595b3068cf3d7bae0bd9fcf0. Saved G5 finite polynomial/mixture component freshly compiled successfully, with all 18 component declaration axiom reports containing only propext/Classical.choice/Quot.sound. Exact source blob c9e470498aa30bb1f712006484726bfb1193cf4f unchanged. Lean 4.33.1/Mathlib pins retained; official library caches reused, not a complete dependency rebuild.
+The latest verified scientific save remains fe95e69492699472b0e14655ab0b405ad141e69c: G5 finite polynomial/mixture source compiled in run 37643836409, all 18 axiom reports standard; G6's new exact-source reference runs passed 1,143 and 770 controls. All 19 saved rebuild files were read back byte-for-byte. The full masters remain open and the missing historical 770 output remains unrecovered.
 
-G6 reference source faithfully reconstructed from baseline 2aeb123fb53b61594a1cf5b0542daf953cf90ab3. New serial bounded runs passed 1143 source/count controls and 770 forest controls on Python 3.12.14. Full new JSON/stdout/stderr, source identities, wrapper and root hash checks preserved in [rebuild packet](checkpoints/20261007T152454Z-CODEX-REBUILD/README.md). These fresh receipts do not recover the missing historical 770-run output.
+During the interrupted continuation, existing source providers and G6 handoffs were inspected and a finite common-subprobability proof direction was reviewed. No new Lean source was written and no new build was launched. Proof workers stopped and were used only to prepare the transfer prompts. Uncompiled reasoning is preserved in the [Cloud handoff](../2026-10-07-codex-cloud-sol-ultra-g5-g6/HANDOFF.md).
 
-G5/G6 external chats have acknowledged the hand-proof division. Their dated status notes do not establish current live activity. G6 count/source and forest hand packets are already saved and are next formalization inputs; no new G6 Lean theorem or full G5/G6 master closure is claimed. G7 remains queued; no allocation/slot changes were made.
+[Separate Sol Ultra Cloud assignments](../2026-10-07-codex-cloud-sol-ultra-g5-g6/README.md) transfer G5/G6 proof, Lean integration and verification when Nolan launches them. Both are PREPARED, not acknowledged or running. The new protocol controls their ownership and shared-provider coordination. Historical Astra contributions/statuses are preserved; no external runtime state is inferred. G7 remains queued.
 
-Next action: translate the exact G6 scaled finite-subprobability/count-source handoff against the existing source interfaces, with unresolved source/calendar/master gates explicit. Original forest receipt may still be preserved separately if its author can recover it.
+Next action belongs to the launched Cloud task: refresh main, read its complete assignment/protocol, publish an actual ACK and implement its first genuine source-to-master bridge. This coordinator promises no continuing proof work after this turn.

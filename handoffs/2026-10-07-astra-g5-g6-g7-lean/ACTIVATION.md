@@ -1,5 +1,7 @@
 # Activation and two-chat roster
 
+**Cloud migration notice, 2026-10-07 15:47:02 UTC:** Nolan stopped the coordinator's proof work and requested two Sol Ultra Codex Cloud assignments. See [the new migration protocol](../2026-10-07-codex-cloud-sol-ultra-g5-g6/COMMON-PROTOCOL.md) and [stop handoff](../2026-10-07-codex-cloud-sol-ultra-g5-g6/HANDOFF.md). Cloud G5/G6 implementation and verification are prepared for launch. The earlier allocation/status text below is preserved history. No external Astra stop, current activity or Cloud ACK is inferred. G7 remains queued.
+
 Coordinator-owned file. Assignment: ASTRA-LEAN-G567-20261007.
 
 Current division: Astra G5/G6 hand proofs; Codex Lean implementation and builds. See [ROLE-SPLIT.md](ROLE-SPLIT.md).
