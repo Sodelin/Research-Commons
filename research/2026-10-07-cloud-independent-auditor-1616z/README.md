@@ -1,12 +1,14 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 22:57 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 23:02 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [actual completed calendar law](PRINCIPAL-CALENDAR-VERIFIED-BANK-PARTIAL-REVIEW.md) now passes at exact hash06440343: seven named declarations and nine complete owned rows. Independent terminal/source/inventory authentication accepts **155 custom modules,242 named reports and3,795 owned declarations /2,448 theorems** from the failed overall run37695092891. The three failed banks and blocked upper-rate module are wholly excluded. All preceding3,786 owned rows remain exact.
 
 The [three bank elaboration repairs](THREE-BANK-ELABORATION-SOURCE-REVIEW.md) and [six G3 cut/history API candidates](G3-CUT-HISTORY-API-DERIVATIVE-SOURCE-REVIEW.md) clear exact source review and remain compiler UNCHECKED. Sole next run37699267727 is queued at frozen01e367686a9d2e9d0b67611ab762a8f39cd0f49c, requesting165 custom/358 named reports; no outcome is inferred. The [preceding principal-only failure](PRINCIPAL-IDENTITY-FAILED-ALIAS-CLOSURE-REVIEW.md) and [earlier scalar-bank derivatives](SCALAR-BANK-API-DERIVATIVES-SOURCE-REVIEW.md) retain their dated evidence and failed attempted hashes.
 
 The [feasible-cell witness consumer](CELL-WITNESS-RATIONAL-CLOUD-HAND-REVIEW.md) clears primary and independent hand review under the inherited n≥4 natural finite-bin/nonplanar contract. Each jointly feasible cell supplies one algebraic witness and a local rational backend, with both Hausdorff directions preserved. No executed catalogue/backend or new full formal endpoint is certified.
+
+The [whole-bank finite-word draft](WHOLE-BANK-PROGRAM-DRAFT-SOURCE-REVIEW.md) now clears independent primary source review of all35 declarations, preserving one scalar comparison bank, actual current-root routing and the once-drawn register jointly with the full endpoint vector. The [causal private-register hand consumer](CAUSAL-PRIVATE-REGISTER-HAND-REVIEW.md) is accepted only on the projected decorated unranked/bin carrier; exact stochastic owner/orientation transfer remains separate. The [same-graph constructor/source-step draft](PRIVATE-REGISTER-CONSTRUCTOR-STEP-SOURCE-REVIEW.md) clears primary and bounded independent source review. These new bodies remain compiler UNCHECKED and outside the sole165/358 run.
 
 The [signed receiver guard derivative](SIGNED-RECEIVER-GUARD-REPAIR-REVIEW.md) now clears source/code review and inspected author controls: the verified byte buffer executes directly, and bounded n/d parsing precedes Fraction allocation. The same three geometry results remain exact; observed confidence and a useful complete cover remain open.
 
@@ -30,6 +32,9 @@ The subsequent [expanded-run audit](EXPANDED-RUN-AND-G5-DIAGNOSTIC.md) records r
 
 | Review | Current scoped result | Evidence type |
 |---|---|---|
+| [Whole-bank finite program](WHOLE-BANK-PROGRAM-DRAFT-SOURCE-REVIEW.md) | Both whole laws share actual-prefix/true-initial reference and mass; one bank, current-root INDEP and once-only COMMON register | All35 bodies/direct14input identities reviewed; compiler UNCHECKED, physical calendar/backend separate |
+| [Causal private-register hand transfer](CAUSAL-PRIVATE-REGISTER-HAND-REVIEW.md) | Natural causal factorization and one-run projected decorated unranked/bin TV accepted | Exact24identities, primary/independent review; all six typed consumers and exact-owner lift separate |
+| [Same-graph erasure/source step](PRIVATE-REGISTER-CONSTRUCTOR-STEP-SOURCE-REVIEW.md) | Admitted erasure preserves actual choice/holding/merger maps and one sourceStep pushforward | Primary plus bounded independent six-proof review; both root/sourceStep UNCHECKED |
 | [Verified completed calendar /failed banks](PRINCIPAL-CALENDAR-VERIFIED-BANK-PARTIAL-REVIEW.md) | Actual correlated Γ/completion/tag joint law passes at06440343; three failed banks and blocked upper-rate target excluded | Independent actual155custom/242names/full3795owned2448thm authentication; prior3786rows exact |
 | [Three bank proof repairs](THREE-BANK-ELABORATION-SOURCE-REVIEW.md) | Exact proof-only candidates8d772b5f/c61cc8b9/ded7cf8d accepted source semantics | Direct diagnostic/diff/hash/signature review; compiler UNCHECKED |
 | [Six G3 API candidates](G3-CUT-HISTORY-API-DERIVATIVE-SOURCE-REVIEW.md) | Four proof-only measure/induction changes and two unchanged wrappers retain actual Γ/refined-history contracts | Six exact hashes/signatures and pinned measure API reviewed; compiler UNCHECKED |
