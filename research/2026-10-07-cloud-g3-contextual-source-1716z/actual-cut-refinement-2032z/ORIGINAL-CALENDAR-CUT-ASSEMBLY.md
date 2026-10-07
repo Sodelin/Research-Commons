@@ -1,0 +1,23 @@
+# From the original calendar to its fixed-cut endpoint history
+
+Contributor: Codex, delegated G3/source bridge, 7 October 2026. **Hand-derived construction and separate concrete Lean draft; review pending, compiler UNCHECKED.** This extends the [Gamma/history bridge](GAMMA-HISTORY-BRIDGE.md) without changing its published sources or the running formal freeze. It is a G6 adapter for coordinated source assembly.
+
+The prior draft's history theorem directly names a word whose interval interiors already have constant bins. The original physical calendar may contain an interval crossing several observation cuts. The following construction connects that original calendar to the word through legal interval subdivisions, rather than assuming equality of their output laws.
+
+Fix a finite increasing observation-cut list and its measurable finite bin map, constant on each open component of the complement of the cuts. Traverse the original calendar in order, retaining its original current absolute offset. For an interval of duration h starting at a, collect exactly the cuts strictly inside (a,a+h). Sort these finitely many cuts and place a and a+h at the ends. Replace the interval by the consecutive nonnegative differences. Keep every original boundary in its original position. A zero-duration interval remains a zero-duration interval; its open-age constant-bin contract is vacuous.
+
+Each positive subinterval has no observation cut in its open absolute interior, so give it the bin of an interior point. Each boundary gets an unused auxiliary label, obtainable from bin(0). The resulting finite word satisfies `wordBinContract`. No bin value at an observation cut is inferred from an open interval; the actual fixed-horizon BinClock event excludes active merger ages at those endpoints. Initial matrix entries, including physical diagonal dates, retain their own exact bin values. Repeated cuts can first be deduplicated; coincident cuts at original endpoints require no subdivision.
+
+Each replacement is a finite sequence of nonnegative splits h=t+v inside an unchanged original prefix/suffix. The total duration is unchanged by telescoping the consecutive differences. At most one new interval per distinct interior cut is introduced. This is a finite mathematical construction for the fixed supplied calendar/cuts. It is not a computability oracle for arbitrary hidden physical parameters.
+
+[ActualObservationCutRefinement.lean](ActualObservationCutRefinement.lean) records such finite derivations as `CutRefines`. Its only generators are reflexivity, one nonnegative interval split inside a literal calendar context, and transitivity. The relation contains no output-law equality as a premise. Three proposed theorem bodies consume the previously derived actual full-joint interval renewal:
+
+1. `cut_refines_actual_calendar_joint` proves actual Gamma transport for every finite derivation and every carried entering tag matrix.
+2. `original_gamma_refined_endpoint_history` identifies **the original unrefined canonical `calendarJointPMF`** with the original `sourceHistoryLaw` of the refined operations mapped through the deterministic endpoint/tag reader.
+3. `original_gamma_refined_history_prefix_tv` transports the verified one-history finite-prefix bound to that original actual calendar.
+
+The implementation accepts the finite subdivision derivation and its fixed-bin word contract. The elementary sorted-cut construction above supplies them at hand level; a Lean sorted-list constructor is not supplied. The law transport itself is a concrete source proof draft, not a structure assuming the desired Gamma equality. Its exact inventory and input hashes are in [ASSEMBLY-SOURCE-INPUTS.json](ASSEMBLY-SOURCE-INPUTS.json).
+
+All original boundary kernels, endpoint genealogy Codes, one entering real matrix and the same physical rate bank remain in the law. Analytical subdivisions introduce neither biological vertices nor boundary/common-register draws. Full-copy endpoint-law attachment remains unconditional; null endpoint fibres are never normalized. Original old-tree decoration and observed-pair absence conventions still govern physical interpretation.
+
+This completes the proposed finite-calendar source connection at the stated finite-bin contract, pending source review and actual compiler evidence. The earlier complete ancestral tail still uses its separately proved extension/root-support gates. Numerical certified rate/count weights, executable correspondence, control/menu/pruning consumers, physical reconstruction and the final full G6 theorem remain open. Unrestricted G3 source recognition and terminal NO are unaffected.
