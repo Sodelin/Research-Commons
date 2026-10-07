@@ -1,0 +1,66 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RateBankCommon.lean:34:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.RateBankCommon.copyBound_positive`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RateBankCommon.lean:54:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.RateBankCommon.totalRate_population_sum`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RateBankCommon.lean:95:2: error: No goals to be solved
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RateBankCommon.lean:108:2: error: Type mismatch: After simplification, term
+  mul_le_mul_of_nonneg_right hadd (LT.lt.le copyBound_positive)
+ has type
+  @LE.le ℝ Real.instPreorder.toLE (ell * ((1 + ∑ i, pairRate r i) * copyBound)) ((1 + ∑ i, pairRate rhat i) * copyBound)
+but is expected to have type
+  @LE.le ℝ Real.instLE (ell * ((1 + ∑ i, pairRate r i) * (1 + ↑(Fintype.card Copy) ^ 2)))
+    ((1 + ∑ i, pairRate rhat i) * (1 + ↑(Fintype.card Copy) ^ 2))
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RateBankCommon.lean:121:2: error: Type mismatch: After simplification, term
+  mul_le_mul_of_nonneg_right hadd (LT.lt.le copyBound_positive)
+ has type
+  @LE.le ℝ Real.instPreorder.toLE ((1 + ∑ i, pairRate rhat i) * copyBound) (u * ((1 + ∑ i, pairRate r i) * copyBound))
+but is expected to have type
+  @LE.le ℝ Real.instLE ((1 + ∑ i, pairRate rhat i) * (1 + ↑(Fintype.card Copy) ^ 2))
+    (u * ((1 + ∑ i, pairRate r i) * (1 + ↑(Fintype.card Copy) ^ 2)))
+'UnifiedLean.G6.RateBankCommon.copyBound_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.populationPairCount_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.holding_coefficient_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.totalRate_population_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.holdingNumerator_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.holdingNumerator_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.holding_choice_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.globalRateBound_bank_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.globalRateBound_bank_upper' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.holdingNumerator_bank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.ratio_bank_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RateBankCommon.actual_choice_mass_bank_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.actual_choice_pmf_bank_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.actual_source_step_bank_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.actual_source_iteration_bank_lower' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RateBankCommon.actual_source_iteration_bank_lower_real' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

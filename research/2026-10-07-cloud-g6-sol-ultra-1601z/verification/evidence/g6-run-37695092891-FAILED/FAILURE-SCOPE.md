@@ -1,0 +1,15 @@
+# Actual calendar PASS and three bank elaboration failures
+
+Run 37695092891, frozen `10f376e3f58f2e3ea28bd24de75b10a2bbb09ba5`, is **FAILURE** overall. Of 161 actual command receipts, 158 exited zero. The successful custom closure contains 155 modules and 242 named reports (173 G6, 54 G3, 15 G5); every accepted report has only standard foundational axioms. The complete inventory contains 3,795 owned declarations and 2,448 theorems. All prior 3,786 rows remain exactly unchanged; the nine new rows belong only to the actual complete-calendar principal (seven theorems, including generated proof declarations, and two definitions).
+
+**CompleteCalendarJointLaw PASS:** exact source `06440343d946783c9662945fa33f1dbc24c827deb6d382440c37ed2ad8c7b60f`, seven named declarations and nine complete owned rows. The explicit alias closure is accepted. The SAME actual correlated Gamma PMF and original completion tail now derive the joint complete-record endpoint/tag source law under the original measurable-bin, ancestral-root support and tail-cut premises. Physical old-decoration/source initialization, finite numerical approximation of Gamma, observational/menu/pruning and full G6 assembly remain separate consumers.
+
+Three actually attempted bank sources failed elaboration; each WHOLE module and its recovery axiom output are excluded:
+
+- `AncestralRateFree.lean`, source `8c524953...`, stdout SHA256 `105459b87c141568fb0b9ba7d973f3486dc04c8cf11e646c2d33a51b83f88640`: line 32 dependent rewrite has already reduced its goal to `none = none`; line 61 broad card simplification expands the finite choice carrier; line 66 leaves positive root-rate cancellation; line 85 leaves rational/real conditional coercions.
+- `RateBankCommon.lean`, source `0dfa158e...`, stdout SHA256 `0a8edd3f04cb190a5b5c235f13c3c3fba0f623f507b1af7122106af925cd1952`: line 95 has an extra tactic after the preceding field simplification closed the goal; lines 108 and 121 leave `copyBound` folded while the source global bound is expanded.
+- `InheritanceBankCommon.lean`, source `8ad8fde0...`, stdout SHA256 `84e78c304f370566685baec1715d8ef5144a3058f4ce8853bd15f22b8e75bc47`: line 28 leaves equal NNReal constructor coercions; line 49 unfolding the measure invalidates the implicit-transparency type of its local toPMF probability witness.
+
+`UpperRateSourceCommon.lean`, source `69503a60...`, was blocked by the failed RateBank dependency. Its source was not compiled and it has no compiler or axiom-audit acceptance. This is a blocked target, not an actual upper-rate source error.
+
+The complete raw inventory is 5,608,760 bytes, SHA256 `44c82cb6b4fd0415d991ebde07ef7af2fe8b1d88b758585d35e5d884acf47a0b`, and reconstructed audit source SHA256 `ef2d6f7388e1b554a5870cc16c7afbe53632c1e65cad57c5c5d86da39bfb3b82`. All 159 requested frozen source hashes and 160 custom/two-audit stdout hashes match; the authenticated artifact independently matches every stdout, input manifest, both audit sources and raw inventory. Prior failures, original drafts and unchanged providers remain preserved. No successor or extra target is inferred from this receipt.
