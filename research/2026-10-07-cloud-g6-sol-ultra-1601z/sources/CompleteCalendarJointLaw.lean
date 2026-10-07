@@ -238,6 +238,7 @@ theorem actual_complete_joint_source_law (N : RootedBinary V E X)
     (actualCalendarTraceLaw N r ops s) (calendarEnd N ops s) obs id Prod.fst
     (calendar_end_measurable N ops s) hobs measurable_fst (fun _ => rfl)
     (fun d => (completionKernel N r d).toMeasure) Γ.toMeasure hΓ g hg
+  simp only [id_eq] at hr
   rw [hr]
   have hk := finite_joint_kernel_measure Γ Prod.fst (completionKernel N r) g
   simpa only [Γ, g, jointTailKernel, id_eq] using hk
