@@ -1,0 +1,295 @@
+﻿2026-10-07T13:14:52.7664027Z Current runner version: '2.337.0'
+2026-10-07T13:14:52.7698253Z ##[group]Runner Image Provisioner
+2026-10-07T13:14:52.7699906Z Hosted Compute Agent
+2026-10-07T13:14:52.7700840Z Version: 20260901.588
+2026-10-07T13:14:52.7702021Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-07T13:14:52.7703253Z Build Date: 2026-09-01T19:56:44Z
+2026-10-07T13:14:52.7704415Z Worker ID: {d4be1bb0-7661-47ab-96a0-d8f051e60b1f}
+2026-10-07T13:14:52.7705724Z Azure Region: eastus
+2026-10-07T13:14:52.7706694Z ##[endgroup]
+2026-10-07T13:14:52.7710153Z ##[group]Operating System
+2026-10-07T13:14:52.7711177Z Ubuntu
+2026-10-07T13:14:52.7712159Z 24.04.5
+2026-10-07T13:14:52.7713077Z LTS
+2026-10-07T13:14:52.7713908Z ##[endgroup]
+2026-10-07T13:14:52.7714881Z ##[group]Runner Image
+2026-10-07T13:14:52.7715835Z Image: ubuntu-24.04
+2026-10-07T13:14:52.7716874Z Version: 20260927.320.1
+2026-10-07T13:14:52.7718981Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-07T13:14:52.7722002Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-07T13:14:52.7723713Z ##[endgroup]
+2026-10-07T13:14:52.7725634Z ##[group]GITHUB_TOKEN Permissions
+2026-10-07T13:14:52.7728890Z Contents: read
+2026-10-07T13:14:52.7730203Z Metadata: read
+2026-10-07T13:14:52.7731136Z ##[endgroup]
+2026-10-07T13:14:52.7733997Z Secret source: Actions
+2026-10-07T13:14:52.7735480Z Cache mode: write
+2026-10-07T13:14:52.7737269Z Prepare workflow directory
+2026-10-07T13:14:52.8200666Z Prepare all required actions
+2026-10-07T13:14:52.8358250Z Complete job name: runtime
+2026-10-07T13:14:52.9257461Z ##[group]Run set -euo pipefail
+2026-10-07T13:14:52.9258916Z [36;1mset -euo pipefail[0m
+2026-10-07T13:14:52.9260563Z [36;1mgit init --quiet "$RUNNER_TEMP/research-commons"[0m
+2026-10-07T13:14:52.9262582Z [36;1mgit -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"[0m
+2026-10-07T13:14:52.9265377Z [36;1mgit -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"[0m
+2026-10-07T13:14:52.9267616Z [36;1mgit -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD[0m
+2026-10-07T13:14:52.9270001Z [36;1mtest "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"[0m
+2026-10-07T13:14:53.1261690Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:14:53.1263056Z ##[endgroup]
+2026-10-07T13:14:57.9618864Z From https://github.com/Sodelin/Research-Commons
+2026-10-07T13:14:57.9620698Z  * branch            b95aaa0e0083f025766703e45d795382016a9d75 -> FETCH_HEAD
+2026-10-07T13:14:59.3258285Z HEAD is now at b95aaa0 Compile Astra G5 frozen component through pinned Mathlib execution route
+2026-10-07T13:14:59.3445572Z ##[group]Run bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+2026-10-07T13:14:59.3446553Z [36;1mbash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"[0m
+2026-10-07T13:14:59.3512551Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:14:59.3512981Z ##[endgroup]
+2026-10-07T13:14:59.3920140Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-10-07T13:14:59.3921089Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-10-07T13:14:59.3921607Z 
+2026-10-07T13:14:59.4743319Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-07T13:14:59.4744232Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-07T13:15:00.1059426Z 
+2026-10-07T13:15:01.0317543Z  41  543M   41  224M    0     0   313M      0  0:00:01 --:--:--  0:00:01  313M
+2026-10-07T13:15:01.0318928Z 100  543M  100  543M    0     0   331M      0  0:00:01  0:00:01 --:--:--  345M
+2026-10-07T13:15:01.4523007Z lean.tar.zst: OK
+2026-10-07T13:15:06.8951521Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:15:06.8997107Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:15:06.9009885Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:15:06.9025679Z e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  /home/runner/work/_temp/g567-lean-4.33.1/lean-4.33.1-linux/bin/lean
+2026-10-07T13:15:06.9040374Z 5114a5b2e77fa40336ddd9491ebc5f04e767a5c299b7ebdd637104b1f96d2758  /home/runner/work/_temp/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/RuntimeSmoke.lean
+2026-10-07T13:15:07.1093891Z 'ResearchCommonsRuntime.runtimeSmoke' does not depend on any axioms
+2026-10-07T13:15:07.1285508Z RUNTIME_SMOKE_PASSED source_commit=b95aaa0e0083f025766703e45d795382016a9d75
+2026-10-07T13:15:07.1938811Z ##[group]Run bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-g5-first.sh"
+2026-10-07T13:15:07.1940912Z [36;1mbash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-g5-first.sh"[0m
+2026-10-07T13:15:07.2029316Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:15:07.2030120Z ##[endgroup]
+2026-10-07T13:15:12.4711649Z From https://github.com/Sodelin/Research-Commons
+2026-10-07T13:15:12.4712964Z  * branch              2c08a6b72316c3699e4e2d354bdab1befd739d0c -> FETCH_HEAD
+2026-10-07T13:15:12.4790932Z cca82db4762ba06fe34a16d0659d91db1d9285676366a1d73c9a28851e968c47  /home/runner/work/_temp/g5-first-verification/G5FrozenTriplePolynomialKernel.lean
+2026-10-07T13:15:12.5300557Z info: g5FirstVerification: no previous manifest, creating one from scratch
+2026-10-07T13:15:12.5310372Z info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+2026-10-07T13:15:42.9130776Z info: mathlib: checking out revision '0df444a360eaa60ab8c11dca51a86af692955474'
+2026-10-07T13:15:44.2410458Z info: toolchain not updated; already up-to-date
+2026-10-07T13:15:45.2245962Z info: plausible: cloning https://github.com/leanprover-community/plausible
+2026-10-07T13:15:45.3986952Z info: plausible: checking out revision 'b7eb3304aeae834b12dda98993a37f6a41f6f0bb'
+2026-10-07T13:15:45.4110482Z info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+2026-10-07T13:15:45.5881680Z info: LeanSearchClient: checking out revision '5f4d51b81cbd3f6b32b156bfad9056621a040404'
+2026-10-07T13:15:45.6014142Z info: importGraph: cloning https://github.com/leanprover-community/import-graph
+2026-10-07T13:15:46.3098488Z info: importGraph: checking out revision '16f02aa7642864af59f1ff0e384a015994db9118'
+2026-10-07T13:15:46.3293610Z info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+2026-10-07T13:15:46.6542981Z info: proofwidgets: checking out revision '4be2e3d5087eeb272cf5a8853b8f9dd025ef5957'
+2026-10-07T13:15:47.3132650Z info: aesop: cloning https://github.com/leanprover-community/aesop
+2026-10-07T13:15:47.7922101Z info: aesop: checking out revision '3448c0bcc5ce01b2d1546e483ec3620e32df3d0e'
+2026-10-07T13:15:47.8114093Z info: Qq: cloning https://github.com/leanprover-community/quote4
+2026-10-07T13:15:48.0319425Z info: Qq: checking out revision '92c15be17b7caf78c2ad767ec40f89052d908d81'
+2026-10-07T13:15:48.0456707Z info: batteries: cloning https://github.com/leanprover-community/batteries
+2026-10-07T13:15:50.1987471Z info: batteries: checking out revision '4488d40d070b9700d4d5a6aa342f0d40c31b2a2d'
+2026-10-07T13:15:50.2365447Z info: Cli: cloning https://github.com/leanprover/lean4-cli
+2026-10-07T13:15:50.4200872Z info: Cli: checking out revision '6130a47896ce867c6a4a55373441e59e565bad0f'
+2026-10-07T13:15:50.4342392Z info: mathlib: running post-update hooks
+2026-10-07T13:15:50.4935706Z {"version": "1.2.0",
+2026-10-07T13:15:50.4936382Z  "packagesDir": ".lake/packages",
+2026-10-07T13:15:50.4936970Z  "packages":
+2026-10-07T13:15:50.4937573Z  [{"url": "https://github.com/leanprover-community/mathlib4.git",
+2026-10-07T13:15:50.4938266Z    "type": "git",
+2026-10-07T13:15:50.4939071Z    "subDir": null,
+2026-10-07T13:15:50.4939348Z    "scope": "",
+2026-10-07T13:15:50.4939990Z    "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+2026-10-07T13:15:50.4940894Z    "name": "mathlib",
+2026-10-07T13:15:50.4941379Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4942038Z    "inputRev": "0df444a360eaa60ab8c11dca51a86af692955474",
+2026-10-07T13:15:50.4942715Z    "inherited": false,
+2026-10-07T13:15:50.4943175Z    "configFile": "lakefile.lean"},
+2026-10-07T13:15:50.4943863Z   {"url": "https://github.com/leanprover-community/plausible",
+2026-10-07T13:15:50.4944526Z    "type": "git",
+2026-10-07T13:15:50.4944796Z    "subDir": null,
+2026-10-07T13:15:50.4945080Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4945474Z    "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+2026-10-07T13:15:50.4946159Z    "name": "plausible",
+2026-10-07T13:15:50.4946479Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4946829Z    "inputRev": "main",
+2026-10-07T13:15:50.4947114Z    "inherited": true,
+2026-10-07T13:15:50.4947406Z    "configFile": "lakefile.toml"},
+2026-10-07T13:15:50.4947863Z   {"url": "https://github.com/leanprover-community/LeanSearchClient",
+2026-10-07T13:15:50.4948322Z    "type": "git",
+2026-10-07T13:15:50.4948574Z    "subDir": null,
+2026-10-07T13:15:50.4948855Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4949233Z    "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+2026-10-07T13:15:50.4950024Z    "name": "LeanSearchClient",
+2026-10-07T13:15:50.4950375Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4950726Z    "inputRev": "main",
+2026-10-07T13:15:50.4951005Z    "inherited": true,
+2026-10-07T13:15:50.4951291Z    "configFile": "lakefile.toml"},
+2026-10-07T13:15:50.4951739Z   {"url": "https://github.com/leanprover-community/import-graph",
+2026-10-07T13:15:50.4952284Z    "type": "git",
+2026-10-07T13:15:50.4952547Z    "subDir": null,
+2026-10-07T13:15:50.4952798Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4953111Z    "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+2026-10-07T13:15:50.4953440Z    "name": "importGraph",
+2026-10-07T13:15:50.4953708Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4953992Z    "inputRev": "main",
+2026-10-07T13:15:50.4954214Z    "inherited": true,
+2026-10-07T13:15:50.4954445Z    "configFile": "lakefile.toml"},
+2026-10-07T13:15:50.4954811Z   {"url": "https://github.com/leanprover-community/ProofWidgets4",
+2026-10-07T13:15:50.4955184Z    "type": "git",
+2026-10-07T13:15:50.4955392Z    "subDir": null,
+2026-10-07T13:15:50.4955624Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4955926Z    "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+2026-10-07T13:15:50.4956235Z    "name": "proofwidgets",
+2026-10-07T13:15:50.4956493Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4956779Z    "inputRev": "main",
+2026-10-07T13:15:50.4957001Z    "inherited": true,
+2026-10-07T13:15:50.4957234Z    "configFile": "lakefile.lean"},
+2026-10-07T13:15:50.4957554Z   {"url": "https://github.com/leanprover-community/aesop",
+2026-10-07T13:15:50.4957905Z    "type": "git",
+2026-10-07T13:15:50.4958114Z    "subDir": null,
+2026-10-07T13:15:50.4958340Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4958640Z    "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+2026-10-07T13:15:50.4958932Z    "name": "aesop",
+2026-10-07T13:15:50.4959166Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4959812Z    "inputRev": "master",
+2026-10-07T13:15:50.4960212Z    "inherited": true,
+2026-10-07T13:15:50.4960782Z    "configFile": "lakefile.toml"},
+2026-10-07T13:15:50.4961371Z   {"url": "https://github.com/leanprover-community/quote4",
+2026-10-07T13:15:50.4962005Z    "type": "git",
+2026-10-07T13:15:50.4962471Z    "subDir": null,
+2026-10-07T13:15:50.4962847Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4963366Z    "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+2026-10-07T13:15:50.4963880Z    "name": "Qq",
+2026-10-07T13:15:50.4964286Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4965034Z    "inputRev": "master",
+2026-10-07T13:15:50.4965291Z    "inherited": true,
+2026-10-07T13:15:50.4965539Z    "configFile": "lakefile.toml"},
+2026-10-07T13:15:50.4965885Z   {"url": "https://github.com/leanprover-community/batteries",
+2026-10-07T13:15:50.4966226Z    "type": "git",
+2026-10-07T13:15:50.4966468Z    "subDir": null,
+2026-10-07T13:15:50.4966692Z    "scope": "leanprover-community",
+2026-10-07T13:15:50.4967009Z    "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+2026-10-07T13:15:50.4967488Z    "name": "batteries",
+2026-10-07T13:15:50.4967734Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4968012Z    "inputRev": "main",
+2026-10-07T13:15:50.4968232Z    "inherited": true,
+2026-10-07T13:15:50.4968454Z    "configFile": "lakefile.toml"},
+2026-10-07T13:15:50.4968923Z   {"url": "https://github.com/leanprover/lean4-cli",
+2026-10-07T13:15:50.4969269Z    "type": "git",
+2026-10-07T13:15:50.4969739Z    "subDir": null,
+2026-10-07T13:15:50.4969996Z    "scope": "leanprover",
+2026-10-07T13:15:50.4970267Z    "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+2026-10-07T13:15:50.4970549Z    "name": "Cli",
+2026-10-07T13:15:50.4970777Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:15:50.4971061Z    "inputRev": "v4.33.0",
+2026-10-07T13:15:50.4971288Z    "inherited": true,
+2026-10-07T13:15:50.4971519Z    "configFile": "lakefile.toml"}],
+2026-10-07T13:15:50.4971786Z  "name": "g5FirstVerification",
+2026-10-07T13:15:50.4972049Z  "lakeDir": ".lake",
+2026-10-07T13:15:50.4972272Z  "fixedToolchain": false}
+2026-10-07T13:15:51.6286500Z ✔ [4/26] Built Cache.Cli (452ms)
+2026-10-07T13:15:51.6287254Z ✔ [5/26] Built Cache.Lean (482ms)
+2026-10-07T13:15:51.8100462Z ✔ [6/26] Built Cache.Cli:c.o (244ms)
+2026-10-07T13:15:51.9091416Z ✔ [7/26] Built Cache.Lean:c.o (261ms)
+2026-10-07T13:15:52.0082943Z ✔ [8/26] Built Cache.Infra (582ms)
+2026-10-07T13:15:52.2086173Z ✔ [9/26] Built Cache.Infra:c.o (262ms)
+2026-10-07T13:15:52.5091689Z ✔ [10/26] Built Batteries.Tactic.OpenPrivate (1.1s)
+2026-10-07T13:15:53.9100242Z ✔ [11/26] Built Batteries.Tactic.OpenPrivate:c.o (1.4s)
+2026-10-07T13:15:54.0121182Z ✔ [12/26] Built Cache.IO (1.5s)
+2026-10-07T13:15:54.8150671Z ✔ [13/26] Built Cache.Hashing (804ms)
+2026-10-07T13:15:55.4129238Z ✔ [14/26] Built Cache.Hashing:c.o (647ms)
+2026-10-07T13:15:55.7125210Z ✔ [15/26] Built Cache.IO:c.o (1.7s)
+2026-10-07T13:15:56.9145892Z ✔ [16/26] Built Cache.Requests (2.2s)
+2026-10-07T13:15:57.5191028Z ✔ [17/26] Built Cache.Marker (588ms)
+2026-10-07T13:15:57.7175553Z ✔ [18/26] Built Cache.Marker:c.o (189ms)
+2026-10-07T13:15:58.3230209Z ✔ [19/26] Built Cache.Query (791ms)
+2026-10-07T13:15:58.8207950Z ✔ [20/26] Built Cache.Query:c.o (478ms)
+2026-10-07T13:15:59.2220992Z ✔ [21/26] Built Cache.Warning (873ms)
+2026-10-07T13:15:59.6224047Z ✔ [22/26] Built Cache.Warning:c.o (425ms)
+2026-10-07T13:16:00.0227972Z ✔ [23/26] Built Cache.Requests:c.o (3.1s)
+2026-10-07T13:16:00.5233437Z ✔ [24/26] Built Cache.Main (1.3s)
+2026-10-07T13:16:01.5246183Z ✔ [25/26] Built Cache.Main:c.o (979ms)
+2026-10-07T13:16:02.2254287Z ✔ [26/26] Built cache:exe (726ms)
+2026-10-07T13:16:05.0620574Z Current branch: HEAD
+2026-10-07T13:16:05.0621590Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-10-07T13:16:05.0623825Z Attempting to download 1920 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+2026-10-07T13:16:06.2671203Z 
+2026-10-07T13:16:06.3675675Z Downloaded: 1 file(s) [attempted 1/1920 = 0%, 24 KB/s], Decompressed: 0
+2026-10-07T13:16:06.4691321Z Downloaded: 90 file(s) [attempted 90/1920 = 4%, 93 KB/s], Decompressed: 16
+2026-10-07T13:16:06.5703101Z Downloaded: 194 file(s) [attempted 194/1920 = 10%, 451 KB/s], Decompressed: 49
+2026-10-07T13:16:06.6693040Z Downloaded: 320 file(s) [attempted 320/1920 = 16%, 1141 KB/s], Decompressed: 49
+2026-10-07T13:16:06.7705871Z Downloaded: 430 file(s) [attempted 430/1920 = 22%, 1332 KB/s], Decompressed: 49
+2026-10-07T13:16:06.8794603Z Downloaded: 551 file(s) [attempted 551/1920 = 28%, 2173 KB/s], Decompressed: 49
+2026-10-07T13:16:06.9807983Z Downloaded: 668 file(s) [attempted 668/1920 = 34%, 1580 KB/s], Decompressed: 49
+2026-10-07T13:16:07.0822603Z Downloaded: 782 file(s) [attempted 782/1920 = 40%, 320 KB/s], Decompressed: 176
+2026-10-07T13:16:07.1819714Z Downloaded: 920 file(s) [attempted 920/1920 = 47%, 1025 KB/s], Decompressed: 176
+2026-10-07T13:16:07.2822623Z Downloaded: 1055 file(s) [attempted 1055/1920 = 54%, 96 KB/s], Decompressed: 176
+2026-10-07T13:16:07.3855403Z Downloaded: 1132 file(s) [attempted 1132/1920 = 58%, 1097 KB/s], Decompressed: 176
+2026-10-07T13:16:07.4846645Z Downloaded: 1232 file(s) [attempted 1232/1920 = 64%, 4093 KB/s], Decompressed: 176
+2026-10-07T13:16:07.5846407Z Downloaded: 1367 file(s) [attempted 1367/1920 = 71%, 409 KB/s], Decompressed: 176
+2026-10-07T13:16:07.6883937Z Downloaded: 1503 file(s) [attempted 1503/1920 = 78%, 1303 KB/s], Decompressed: 176
+2026-10-07T13:16:07.7908891Z Downloaded: 1630 file(s) [attempted 1630/1920 = 84%, 1557 KB/s], Decompressed: 176
+2026-10-07T13:16:07.8901004Z Downloaded: 1763 file(s) [attempted 1763/1920 = 91%, 374 KB/s], Decompressed: 176
+2026-10-07T13:16:08.0308255Z Downloaded: 1898 file(s) [attempted 1898/1920 = 98%, 4916 KB/s], Decompressed: 176
+2026-10-07T13:16:08.0351705Z Downloaded: 1919 file(s) [attempted 1919/1920 = 99%, 3736 KB/s], Decompressed: 176
+2026-10-07T13:16:08.0390196Z Downloaded: 1920 file(s) [attempted 1920/1920 = 100%, 3736 KB/s], Decompressed: 176
+2026-10-07T13:16:12.6697319Z Decompressed 1920 file(s)
+2026-10-07T13:16:12.6697667Z Already decompressed 1920 file(s)
+2026-10-07T13:16:17.5661433Z G5FrozenTriplePolynomialKernel.lean:70:4: warning: this tactic is never executed
+2026-10-07T13:16:17.5670359Z 
+2026-10-07T13:16:17.5670935Z Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+2026-10-07T13:16:17.5672264Z G5FrozenTriplePolynomialKernel.lean:70:4: warning: Unused tactic linter: `exact sub_nonneg.mpr hq1` does nothing
+2026-10-07T13:16:17.5673135Z 
+2026-10-07T13:16:17.5673468Z Note: This linter can be disabled with `set_option linter.unusedTactic false`
+2026-10-07T13:16:17.5676525Z G5FrozenTriplePolynomialKernel.lean:75:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+2026-10-07T13:16:17.5677264Z 
+2026-10-07T13:16:17.5677647Z Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+2026-10-07T13:16:17.5678565Z G5FrozenTriplePolynomialKernel.lean:83:64: error: unsolved goals
+2026-10-07T13:16:17.5679839Z case «1».«2»
+2026-10-07T13:16:17.5680358Z ⊢ 1 = 4 → ¬⟨2, ⋯⟩ = 4
+2026-10-07T13:16:17.5680624Z 
+2026-10-07T13:16:17.5680816Z case «1».«3»
+2026-10-07T13:16:17.5681237Z ⊢ 1 = 4 → ¬⟨3, ⋯⟩ = 4
+2026-10-07T13:16:17.5681527Z 
+2026-10-07T13:16:17.5681749Z case «1».«4»
+2026-10-07T13:16:17.5682211Z ⊢ 1 = 4 → ¬⟨4, ⋯⟩ = 4
+2026-10-07T13:16:17.5682478Z 
+2026-10-07T13:16:17.5682713Z case «2».«1»
+2026-10-07T13:16:17.5683222Z ⊢ ⟨2, ⋯⟩ = 4 → ¬1 = 4
+2026-10-07T13:16:17.5683429Z 
+2026-10-07T13:16:17.5683594Z case «2».«3»
+2026-10-07T13:16:17.5683960Z ⊢ ⟨2, ⋯⟩ = 4 → ¬⟨3, ⋯⟩ = 4
+2026-10-07T13:16:17.5684210Z 
+2026-10-07T13:16:17.5684380Z case «2».«4»
+2026-10-07T13:16:17.5684735Z ⊢ ⟨2, ⋯⟩ = 4 → ¬⟨4, ⋯⟩ = 4
+2026-10-07T13:16:17.5684962Z 
+2026-10-07T13:16:17.5685119Z case «3».«1»
+2026-10-07T13:16:17.5685471Z ⊢ ⟨3, ⋯⟩ = 4 → ¬1 = 4
+2026-10-07T13:16:17.5685685Z 
+2026-10-07T13:16:17.5685851Z case «3».«2»
+2026-10-07T13:16:17.5686218Z ⊢ ⟨3, ⋯⟩ = 4 → ¬⟨2, ⋯⟩ = 4
+2026-10-07T13:16:17.5686456Z 
+2026-10-07T13:16:17.5686621Z case «3».«4»
+2026-10-07T13:16:17.5686972Z ⊢ ⟨3, ⋯⟩ = 4 → ¬⟨4, ⋯⟩ = 4
+2026-10-07T13:16:17.5687194Z 
+2026-10-07T13:16:17.5687360Z case «4».«1»
+2026-10-07T13:16:17.5687717Z ⊢ ⟨4, ⋯⟩ = 4 → ¬1 = 4
+2026-10-07T13:16:17.5687916Z 
+2026-10-07T13:16:17.5688076Z case «4».«2»
+2026-10-07T13:16:17.5688427Z ⊢ ⟨4, ⋯⟩ = 4 → ¬⟨2, ⋯⟩ = 4
+2026-10-07T13:16:17.5688647Z 
+2026-10-07T13:16:17.5688804Z case «4».«3»
+2026-10-07T13:16:17.5689182Z ⊢ ⟨4, ⋯⟩ = 4 → ¬⟨3, ⋯⟩ = 4
+2026-10-07T13:16:17.5690177Z 'GProgram.G5.FrozenTriplePolynomialKernel.three_lineage_masses_nonnegative' depends on axioms: [propext,
+2026-10-07T13:16:17.5691413Z  Classical.choice,
+2026-10-07T13:16:17.5691741Z  Quot.sound]
+2026-10-07T13:16:17.5692522Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:16:17.5693772Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_tendsto_endpoint' depends on axioms: [propext,
+2026-10-07T13:16:17.5694569Z  sorryAx,
+2026-10-07T13:16:17.5694865Z  Classical.choice,
+2026-10-07T13:16:17.5695183Z  Quot.sound]
+2026-10-07T13:16:17.5695852Z 'GProgram.G5.FrozenTriplePolynomialKernel.mixture_at_endpoint' depends on axioms: [propext,
+2026-10-07T13:16:17.5696632Z  sorryAx,
+2026-10-07T13:16:17.5696928Z  Classical.choice,
+2026-10-07T13:16:17.5697245Z  Quot.sound]
+2026-10-07T13:16:17.5698158Z 'GProgram.G5.FrozenTriplePolynomialKernel.occupancy_mass_positive_iff' depends on axioms: [propext,
+2026-10-07T13:16:17.5699094Z  Classical.choice,
+2026-10-07T13:16:17.5699437Z  Quot.sound]
+2026-10-07T13:16:17.6727710Z ##[error]Process completed with exit code 1.
+2026-10-07T13:16:17.6826062Z Cleaning up orphan processes

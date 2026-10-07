@@ -1,10 +1,11 @@
 # Codex coordinator observed status
 
-Owner: Codex coordinator for Nolan. Update label 2026-10-07T13:13:00Z.
-State: PREPARING_BUILD; no second job yet observed at this file's preparation.
+Owner: Codex coordinator for Nolan. Latest outcome observed 2026-10-07T13:17:38Z. State PREPARING_RETRY; first G5 job completed failure, no continuing job inferred.
 
-Nolan's revised division is preserved in ROLE-SPLIT.md: existing Astra G5/G6 hand proofs, Codex Lean implementation/verification, G7 queued. Revised-division worker ACK not yet observed. The verified runtime smoke completed success in run 37626100435; full receipt and log are in checkpoints/2026-10-07T130906Z-CODEX-RUNTIME-RECEIPT.md.
+Revised division on main: Astra G5/G6 hand proofs, Codex Lean and builds, G7 queued. G6 explicitly acknowledged all three coordinator messages and adopted the hand-proof division; own status blob 979fd3b2c3f7c64e57e94507f83ee9ac8a249120 actually read. G5 revised-division ACK not yet observed.
 
-Astra G5's first uncompiled polynomial/finite-mixture source has now been received, read and frozen at commit 2c08a6b72316c3699e4e2d354bdab1befd739d0c, blob 2140fea9686852657dff17f17c979cd1e752eaba. Codex prepared a pinned Mathlib selected-import build in the verified GitHub execution route. See checkpoints/2026-10-07T131300Z-CODEX-G5-BUILD-INPUT.md. No scientific compilation success is claimed yet.
+Pinned Lean runtime verified in run 37626100435. First selected Mathlib G5 run 37626987514 reached actual Lean compilation but failed on residual finite equality goals in row_endpoint; two downstream axiom reports then contained sorryAx. Preserve the original as failed/unchecked, not proved. Full log and repair rationale: checkpoints/2026-10-07T131800Z-CODEX-G5-FIRST-FAILURE.md.
 
-G6's exact count/source interface request remains in checkpoints/2026-10-07T130906Z-CODEX-G6-FIRST-INTERFACE.md. Next action: inspect actual G5 compiler job/outcome, preserve logs and errors, repair any elaboration defects without silently changing the theorem, and post concrete proof questions. Pending full G5/G6 master bridges remain explicit. No background coordinator execution is implied after this turn ends.
+Codex derivative preserves all mathematical statements and closes the finite goals with decide; all 18 declaration axiom reports are requested, with forbidden-axiom rejection in runner. Derivative blob c9e470498aa30bb1f712006484726bfb1193cf4f. Awaiting actual rerun outcome; no successful component or full master claim. Mathlib pin/setup worked using official selected precompiled caches, not a fresh dependency rebuild.
+
+G6 hand-proof packet remains underway, including effective count-law/source-mixture/joint-observation transfer. Remaining original source-semantic/master obligations stay explicit. Next action: observe repair build, save complete output and send theorem/interface feedback. This record does not promise unattended coordinator execution after the turn ends.
