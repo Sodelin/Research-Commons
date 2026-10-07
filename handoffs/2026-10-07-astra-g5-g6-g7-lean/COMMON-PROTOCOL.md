@@ -1,5 +1,7 @@
 # Astra G5/G6/G7 coordination and verification protocol
 
+**Current division override (Nolan's direct instruction):** Astra develops hand proofs; Codex implements Lean and owns builds. See [ROLE-SPLIT.md](ROLE-SPLIT.md). Initial worker Lean/build directions below apply only if explicitly reassigned.
+
 Assignment ID: ASTRA-LEAN-G567-20261007.
 Prepared by Codex for Nolan. Baseline inspected: `5c5b679ec451a57db7b0212fb41a3cd2413de9c5`. This is a launch handoff, not evidence that any external chat has started.
 

@@ -1,6 +1,8 @@
 # Activation and two-chat roster
 
 Coordinator-owned file. Assignment: ASTRA-LEAN-G567-20261007.
+
+Current division: Astra G5/G6 hand proofs; Codex Lean implementation and builds. See [ROLE-SPLIT.md](ROLE-SPLIT.md).
 Initial launch packet preserved in commit f436b4f82b05bf2c99a55cbeeeb5dfb80265eca3.
 Coordinator check requested by Nolan at 2026-10-07T12:51:46Z (05:51:46 Pacific).
 
