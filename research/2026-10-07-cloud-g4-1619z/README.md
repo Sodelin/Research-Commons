@@ -12,6 +12,8 @@ No numerical source search, high-arity symbolic source expansion, Lean/Lake proc
 
 The [all-arity extension](GENERAL-TOP-BAND-CANCELLATION.md) applies the same exact source mechanism at every `n>=4` and additionally derives both positive and negative normalized top-band prefix excursions for any nonzero ordinary return. Its exact bytes also have actual independent hand acceptance; it remains a necessary-condition theorem.
 
-Two separately submitted [three-cell upper-band](ACTUAL-THREE-CELL-UPPER-CANCELLATION.md) and [four-cell upper-plus-bilinear](ACTUAL-UPPER-AND-BILINEAR-CANCELLATION.md) existence candidates construct source-admitted cancellation of selected equations, without full ordinary diagonal/lower/kernel equality. They remain UNREVIEWED and are not covered by the earlier hand acceptances.
+Two separately submitted [three-cell upper-band](ACTUAL-THREE-CELL-UPPER-CANCELLATION.md) and [four-cell upper-plus-bilinear](ACTUAL-UPPER-AND-BILINEAR-CANCELLATION.md) existence candidates construct source-admitted cancellation of selected equations, without full ordinary diagonal/lower/kernel equality. Their exact bytes now have separate independent hand acceptance linked in REVIEW-RECEIPT.md. Neither acceptance asserts a full target return.
 
 The next mathematical task remains the actual source-coupled lower/diagonal and 9-to-4 equality case for arbitrary word lengths. The necessary condition is a constraint on that task, not an effective stopping certificate.
+
+The renewed [full-target continuation](FULL-TARGET-EXTENSION-OBSTRUCTION.md) finds an exact obstruction to bootstrapping these diagnostics by padding/repetition: their local positive-branch fibre has `T=d6<0`, and both-branch exact individual-f-zero base arcs have a negative normalized diagonal guard. It is a new hand submission, not a global G4 impossibility result. [Read depth and arithmetic controls](FULL-TARGET-READ-DEPTH.md) are explicit.

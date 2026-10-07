@@ -33,3 +33,7 @@ The present proof concerns natural private INDEPENDENT bridge words only. It sup
 Do not repeat the completed supplied-length equality route, one/two-bigon cap-four separation, cap-dependent collision ladder, the positive-clock energy non-descent proof, or closed response/count-flag separation. The rare-route fixed-architecture fifth/sixth-order exclusions remain valid for their declared ansatz. None establishes arbitrary positive-word rigidity. The opposite-sign strict `d6/e` cells prohibit the proposed universal same-sign substitution but do not settle the coupled sum.
 
 Monotone two-moment cancellation is classical finite signed-measure/variation reasoning. Here the contribution is its exact translation to genuine original transports and coupled bare-cell `d9` coordinates, with unknown word length retained. Historical novelty is unresolved.
+
+## Renewed full-target implication check
+
+The two actual source cancellation candidates have separate canonical hand acceptance, linked in REVIEW-RECEIPT.md. The new FULL-TARGET-EXTENSION-OBSTRUCTION.md is independently submitted: exact negative-T blocks the local positive-branch diagnostic fibre, and negative-J blocks fixed finite individually-f-zero base arcs on either branch. Neither excludes arbitrary mixed-source full target fibres. Original master status and both alternatives above remain OPEN.

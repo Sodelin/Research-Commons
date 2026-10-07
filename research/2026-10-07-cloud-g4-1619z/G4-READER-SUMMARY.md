@@ -19,4 +19,6 @@ Actual evidence is mixed and labelled. Historical finite tester/forest controls 
 
 The current lane adds the [exact chronological cancellation necessary condition](CHRONOLOGICAL-CANCELLATION.md), and its all-arity extension, with actual independent hand acceptance. It narrows the all-word proof attack while preserving the open endpoint.
 
-Two further source-admitted existence candidates show exact cancellation of selected upper bands, and of those bands plus the 9-to-4 scalar. They are unreviewed and do not satisfy the full ordinary target constraints. They are recorded separately from accepted results in [the packet index](README.md).
+Two further source-admitted existence candidates show exact cancellation of selected upper bands, and of those bands plus the 9-to-4 scalar. Their exact bytes now have separate independent hand acceptance, and they do not satisfy the full ordinary target constraints. They are recorded separately from accepted results in [the packet index](README.md).
+
+The current full-target continuation identifies why those diagnostics cannot simply be repeated or padded into a rival: an exact lower band remains strictly negative on their local positive-branch fibre, and a diagonal guard remains negative on the exact f-zero base arcs even when both rare-route branches are mixed. This scoped hand submission is [preserved separately](FULL-TARGET-EXTENSION-OBSTRUCTION.md); it leaves arbitrary mixed-source full-prefix closure open.
