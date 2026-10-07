@@ -35,6 +35,10 @@ Their feedback is preserved in [PROOF-API-NORMALIZATION.md](PROOF-API-NORMALIZAT
 The original SHA256 `f155d460` remains exact; the separate API derivative is
 SHA256 `69503a60e52d326b8d49dae314a466044f410a37a9e498b69efe603222e6d2bc`.
 The derivative is queued only; no compiler, job, provider or workflow changed.
-Exact derivative review is pending. Next action: publish/read back this
-separate derivative and notify primary auditor plus calendar reviewer for
-review of those exact bytes, then return to root.
+Publication observed: derivative packet reached main
+`8f4829490a22f58dc650ef3c4d182069f38ec013`; seven packet files matched a fresh
+remote byte readback, including unchanged original `f155d460` and derivative
+`69503a60`. Primary auditor and calendar reviewer were notified for exact-byte
+review. Exact derivative review remains pending in this dated publisher
+checkpoint. Next action: those reviewers report their derivative disposition
+to root before any queued compiler trial by the Lean owner.
