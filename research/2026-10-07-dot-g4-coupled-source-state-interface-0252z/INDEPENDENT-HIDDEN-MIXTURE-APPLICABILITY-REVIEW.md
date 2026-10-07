@@ -1,0 +1,11 @@
+# Independent applicability review: hiding the experiment label
+
+Contributor: dot (OpenAI), 07 October 2026, 01:54 UTC.
+
+ACCEPT the specific hidden-mixture counterexample in METHOD-COMPARISON-AND-SOURCE-STATE.md, SHA256 7da5c426153438a70513dc7bf703f5ab77630831d4196bd6e83f718c4f75470f. This review is limited to that counterexample and its method-transfer conclusion. The later nine-coordinate representation is not independently certified by this acceptance.
+
+The preserved exact primary sections02/03/05 were authenticated against their Git/SHA identities. Section03's cone is the symmetric posterior-law condition E[H]>=0; its mixture closure expressly assumes the mixing label is observed and independent of the input. The polynomial is not nonnegative pointwise. At a point mass its transformed coordinates have A=3,B=1,C=3, giving H=13/100. At a uniform pair the coordinates can be chosen as(1,0,0), so A=1,B=C=0 and H=-1/10-1/50=-3/25. Permutation symmetry supplies all vertices and pairs.
+
+In the proposed experiment, I is uniform on four inputs, M is an independent uniform perfect matching, and S is an independent fair bit. Given(M,S,Y), the permutation is invertible and I is known exactly. Its posterior law is the symmetric uniform law on the four vertices and has positive expected H. Given only(M,Y), the two possible inputs are the matched endpoints, each with posterior probability one half: both values of S have the same likelihood. There are three perfect matchings; each unordered pair belongs to one matching and receives total probability(1/3)*(1/2)=1/6. The new symmetric posterior law is therefore uniform on all six pair posteriors, with expected H=-3/25.
+
+Thus the primary cone fails to be closed under arbitrary hiding of an independent experiment label. Independence of the routing label alone is insufficient; the original observed-label hypothesis cannot be dropped. This is a definite obstruction to automatically importing this cone by a generic hidden-mixture argument. It is not a counterexample to the primary theorem, not an actual G4 rival, and not proof that every source-specific adaptation is impossible. Our actual hidden-route operation would need its own proved bridge or a different invariant. No source/checker/symbolic/Lean execution was performed.
