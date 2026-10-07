@@ -126,3 +126,19 @@ It derives the original residual rule from the SAME source iterations and
 common subprobability, while keeping normalized conditioning separate.
 Independent review and actual compiler execution remain pending. The [restart pointer](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md)
 records actual resumed ownership and preservation steps.
+
+## Continuation at19:48 UTC
+
+[Session advances](SESSION-ADVANCEMENTS.md) gives the plain-language comparison
+with earlier development and the exact evidence boundaries. Both original
+and first-repaired literal-prefix inputs failed; the [second failure receipt](verification/evidence/g6-run-37673216721-FAILED/README.md)
+is preserved with [independent authentication](../2026-10-07-cloud-independent-auditor-1616z/LITERAL-PREFIX-SECOND-FAILURE-REVIEW.md).
+The next frozen repair plus residual adapter, `cd2383f2`/run37675879295,
+requests149 modules/160 reports and is pending at this observation.
+The [mean-enclosure hand argument](MEAN-ENCLOSURE-SOURCE.md) is accepted by
+[its independent review](../2026-10-07-cloud-independent-auditor-1616z/MEAN-ENCLOSURE-SOURCE-HAND-REVIEW.md);
+its [separate ten-statement draft](proof-drafts/MeanEnclosure.lean) is saved
+at `5ab9f6f`, unchecked and excluded from that running input. The new
+[actual calendar/readout candidate](../2026-10-07-cloud-g3-contextual-source-1716z/complete-calendar-readout-1922z/)
+is preserved at `ac74f73`, pending review/compilation. No full-master status
+changes follow from these drafts.

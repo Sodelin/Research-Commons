@@ -26,9 +26,11 @@ input `ab849a9`, published `5a99dfc`: all 147 custom modules and 139 named
 reports passed; complete selected inventory 3,609 declarations/2,298 theorems.
 Next source target: [actual whole-prefix same-bin collapse](../../research/2026-10-07-cloud-g3-contextual-source-1716z/literal-same-bin-trace-1828z/README.md),
 hand accepted; its original implementation failed in [run37671381506](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37671381506-FAILED/README.md).
-The two-branch derivative at `3abf160` is under sole run37673216721;
-no terminal result was available at this 19:26 UTC observation. Check the
-Lean lane's newer receipt before dispatching it again.
+The two-branch derivative at `3abf160` also [failed](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37673216721-FAILED/README.md).
+The successor normalizes the shifted flag before unfolding; it adds the
+separately hand-accepted residual-source adapter. Sole run37675879295,
+frozen `cd2383f2`, requests149 modules/160 named reports, pending at19:48 UTC.
+Check the Lean lane's newer receipt before dispatching it again.
 
 The [19:26 continuation checkpoint](checkpoints/20261007T192600Z-G6-SOURCE-CONTINUATION.md)
 adds the accepted tail-bin argument, restricted G4 progress and a separately
@@ -37,3 +39,7 @@ preserved residual-lumped source draft. Original failures remain readable.
 Full G5/G6 assembly, general G3/G4 and whole-domain practical accuracy remain
 open. This restart pointer enables continuation; it does not promise
 perpetual background operation or token-free computation.
+
+[Session advances and comparison with earlier milestones](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/SESSION-ADVANCEMENTS.md)
+records the19:45 workspace restart, actual resumed ownership and newest
+source drafts. Completed work was reused; the hosted build was not restarted.
