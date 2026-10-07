@@ -1,0 +1,275 @@
+﻿2026-10-07T13:20:06.9268049Z Current runner version: '2.337.0'
+2026-10-07T13:20:06.9284222Z ##[group]Runner Image Provisioner
+2026-10-07T13:20:06.9284773Z Hosted Compute Agent
+2026-10-07T13:20:06.9285202Z Version: 20261002.596
+2026-10-07T13:20:06.9285611Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-07T13:20:06.9286152Z Build Date: 2026-10-02T22:28:27Z
+2026-10-07T13:20:06.9286563Z Worker ID: {588e4ba1-0997-4efa-9abb-7484e95dad05}
+2026-10-07T13:20:06.9287029Z Region: westus2
+2026-10-07T13:20:06.9287338Z Cloud: Azure
+2026-10-07T13:20:06.9287695Z ##[endgroup]
+2026-10-07T13:20:06.9288472Z ##[group]Operating System
+2026-10-07T13:20:06.9288850Z Ubuntu
+2026-10-07T13:20:06.9289203Z 24.04.5
+2026-10-07T13:20:06.9289496Z LTS
+2026-10-07T13:20:06.9289824Z ##[endgroup]
+2026-10-07T13:20:06.9290139Z ##[group]Runner Image
+2026-10-07T13:20:06.9290534Z Image: ubuntu-24.04
+2026-10-07T13:20:06.9290900Z Version: 20261004.327.1
+2026-10-07T13:20:06.9291626Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-07T13:20:06.9292455Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-07T13:20:06.9293038Z ##[endgroup]
+2026-10-07T13:20:06.9293793Z ##[group]GITHUB_TOKEN Permissions
+2026-10-07T13:20:06.9295134Z Contents: read
+2026-10-07T13:20:06.9295481Z Metadata: read
+2026-10-07T13:20:06.9295799Z ##[endgroup]
+2026-10-07T13:20:06.9297073Z Secret source: Actions
+2026-10-07T13:20:06.9297593Z Cache mode: write
+2026-10-07T13:20:06.9298243Z Prepare workflow directory
+2026-10-07T13:20:06.9484221Z Prepare all required actions
+2026-10-07T13:20:06.9545334Z Complete job name: runtime
+2026-10-07T13:20:07.0011046Z ##[group]Run set -euo pipefail
+2026-10-07T13:20:07.0011655Z [36;1mset -euo pipefail[0m
+2026-10-07T13:20:07.0012123Z [36;1mgit init --quiet "$RUNNER_TEMP/research-commons"[0m
+2026-10-07T13:20:07.0012936Z [36;1mgit -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"[0m
+2026-10-07T13:20:07.0013902Z [36;1mgit -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"[0m
+2026-10-07T13:20:07.0014584Z [36;1mgit -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD[0m
+2026-10-07T13:20:07.0015266Z [36;1mtest "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"[0m
+2026-10-07T13:20:07.0742186Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:20:07.0743230Z ##[endgroup]
+2026-10-07T13:20:13.2308669Z From https://github.com/Sodelin/Research-Commons
+2026-10-07T13:20:13.2309328Z  * branch            1db1ccc3b5dba454b285a08143cf28e8c67cb5ff -> FETCH_HEAD
+2026-10-07T13:20:14.1656082Z HEAD is now at 1db1ccc Repair G5 finite endpoint proof and audit all component declarations
+2026-10-07T13:20:14.1815440Z ##[group]Run bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+2026-10-07T13:20:14.1815939Z [36;1mbash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"[0m
+2026-10-07T13:20:14.1866765Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:20:14.1866980Z ##[endgroup]
+2026-10-07T13:20:14.2313973Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-10-07T13:20:14.2314430Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-10-07T13:20:14.2314643Z 
+2026-10-07T13:20:14.4191649Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-07T13:20:14.4192285Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-07T13:20:15.1686119Z 
+2026-10-07T13:20:15.6941037Z  47  543M   47  259M    0     0   277M      0  0:00:01 --:--:--  0:00:01  277M
+2026-10-07T13:20:15.6941518Z 100  543M  100  543M    0     0   371M      0  0:00:01  0:00:01 --:--:--  540M
+2026-10-07T13:20:15.9910691Z lean.tar.zst: OK
+2026-10-07T13:20:25.7173569Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:20:25.7209694Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:20:25.7218446Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:20:25.7228965Z e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  /home/runner/work/_temp/g567-lean-4.33.1/lean-4.33.1-linux/bin/lean
+2026-10-07T13:20:25.7238750Z 5114a5b2e77fa40336ddd9491ebc5f04e767a5c299b7ebdd637104b1f96d2758  /home/runner/work/_temp/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/RuntimeSmoke.lean
+2026-10-07T13:20:25.8611373Z 'ResearchCommonsRuntime.runtimeSmoke' does not depend on any axioms
+2026-10-07T13:20:25.8782197Z RUNTIME_SMOKE_PASSED source_commit=1db1ccc3b5dba454b285a08143cf28e8c67cb5ff
+2026-10-07T13:20:25.8918438Z ##[group]Run bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-g5-first.sh"
+2026-10-07T13:20:25.8918922Z [36;1mbash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-g5-first.sh"[0m
+2026-10-07T13:20:25.8970553Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:20:25.8970737Z ##[endgroup]
+2026-10-07T13:20:35.1632263Z From https://github.com/Sodelin/Research-Commons
+2026-10-07T13:20:35.1632799Z  * branch              2c08a6b72316c3699e4e2d354bdab1befd739d0c -> FETCH_HEAD
+2026-10-07T13:20:35.1715231Z ba0c611a563318de5d2310b6620cae0899c77b9ead6cf690efd82af926c746a4  /home/runner/work/_temp/g5-first-verification/G5FrozenTriplePolynomialKernel.lean
+2026-10-07T13:20:35.2011255Z info: g5FirstVerification: no previous manifest, creating one from scratch
+2026-10-07T13:20:35.2012270Z info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+2026-10-07T13:20:58.7590082Z info: mathlib: checking out revision '0df444a360eaa60ab8c11dca51a86af692955474'
+2026-10-07T13:20:59.6543741Z info: toolchain not updated; already up-to-date
+2026-10-07T13:21:00.2473828Z info: plausible: cloning https://github.com/leanprover-community/plausible
+2026-10-07T13:21:00.6144417Z info: plausible: checking out revision 'b7eb3304aeae834b12dda98993a37f6a41f6f0bb'
+2026-10-07T13:21:00.6241313Z info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+2026-10-07T13:21:00.9516652Z info: LeanSearchClient: checking out revision '5f4d51b81cbd3f6b32b156bfad9056621a040404'
+2026-10-07T13:21:00.9612057Z info: importGraph: cloning https://github.com/leanprover-community/import-graph
+2026-10-07T13:21:01.4388703Z info: importGraph: checking out revision '16f02aa7642864af59f1ff0e384a015994db9118'
+2026-10-07T13:21:01.4524735Z info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+2026-10-07T13:21:02.1534861Z info: proofwidgets: checking out revision '4be2e3d5087eeb272cf5a8853b8f9dd025ef5957'
+2026-10-07T13:21:02.4946858Z info: aesop: cloning https://github.com/leanprover-community/aesop
+2026-10-07T13:21:03.1464363Z info: aesop: checking out revision '3448c0bcc5ce01b2d1546e483ec3620e32df3d0e'
+2026-10-07T13:21:03.1604671Z info: Qq: cloning https://github.com/leanprover-community/quote4
+2026-10-07T13:21:03.6755407Z info: Qq: checking out revision '92c15be17b7caf78c2ad767ec40f89052d908d81'
+2026-10-07T13:21:03.6848950Z info: batteries: cloning https://github.com/leanprover-community/batteries
+2026-10-07T13:21:05.7470071Z info: batteries: checking out revision '4488d40d070b9700d4d5a6aa342f0d40c31b2a2d'
+2026-10-07T13:21:05.7726184Z info: Cli: cloning https://github.com/leanprover/lean4-cli
+2026-10-07T13:21:06.1001565Z info: Cli: checking out revision '6130a47896ce867c6a4a55373441e59e565bad0f'
+2026-10-07T13:21:06.1095749Z info: mathlib: running post-update hooks
+2026-10-07T13:21:06.1574982Z {"version": "1.2.0",
+2026-10-07T13:21:06.1575338Z  "packagesDir": ".lake/packages",
+2026-10-07T13:21:06.1575570Z  "packages":
+2026-10-07T13:21:06.1575944Z  [{"url": "https://github.com/leanprover-community/mathlib4.git",
+2026-10-07T13:21:06.1576578Z    "type": "git",
+2026-10-07T13:21:06.1576757Z    "subDir": null,
+2026-10-07T13:21:06.1576930Z    "scope": "",
+2026-10-07T13:21:06.1577379Z    "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+2026-10-07T13:21:06.1577667Z    "name": "mathlib",
+2026-10-07T13:21:06.1577882Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1578379Z    "inputRev": "0df444a360eaa60ab8c11dca51a86af692955474",
+2026-10-07T13:21:06.1578742Z    "inherited": false,
+2026-10-07T13:21:06.1578929Z    "configFile": "lakefile.lean"},
+2026-10-07T13:21:06.1579217Z   {"url": "https://github.com/leanprover-community/plausible",
+2026-10-07T13:21:06.1579484Z    "type": "git",
+2026-10-07T13:21:06.1579643Z    "subDir": null,
+2026-10-07T13:21:06.1579825Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1580066Z    "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+2026-10-07T13:21:06.1580554Z    "name": "plausible",
+2026-10-07T13:21:06.1580749Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1580966Z    "inputRev": "main",
+2026-10-07T13:21:06.1581145Z    "inherited": true,
+2026-10-07T13:21:06.1581332Z    "configFile": "lakefile.toml"},
+2026-10-07T13:21:06.1581632Z   {"url": "https://github.com/leanprover-community/LeanSearchClient",
+2026-10-07T13:21:06.1581948Z    "type": "git",
+2026-10-07T13:21:06.1582121Z    "subDir": null,
+2026-10-07T13:21:06.1582307Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1582566Z    "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+2026-10-07T13:21:06.1582820Z    "name": "LeanSearchClient",
+2026-10-07T13:21:06.1583030Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1583245Z    "inputRev": "main",
+2026-10-07T13:21:06.1583548Z    "inherited": true,
+2026-10-07T13:21:06.1583730Z    "configFile": "lakefile.toml"},
+2026-10-07T13:21:06.1584000Z   {"url": "https://github.com/leanprover-community/import-graph",
+2026-10-07T13:21:06.1584302Z    "type": "git",
+2026-10-07T13:21:06.1584464Z    "subDir": null,
+2026-10-07T13:21:06.1584640Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1584879Z    "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+2026-10-07T13:21:06.1585119Z    "name": "importGraph",
+2026-10-07T13:21:06.1585318Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1585534Z    "inputRev": "main",
+2026-10-07T13:21:06.1585708Z    "inherited": true,
+2026-10-07T13:21:06.1585891Z    "configFile": "lakefile.toml"},
+2026-10-07T13:21:06.1586159Z   {"url": "https://github.com/leanprover-community/ProofWidgets4",
+2026-10-07T13:21:06.1586433Z    "type": "git",
+2026-10-07T13:21:06.1586593Z    "subDir": null,
+2026-10-07T13:21:06.1586777Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1587017Z    "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+2026-10-07T13:21:06.1587258Z    "name": "proofwidgets",
+2026-10-07T13:21:06.1587457Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1587679Z    "inputRev": "main",
+2026-10-07T13:21:06.1587859Z    "inherited": true,
+2026-10-07T13:21:06.1588050Z    "configFile": "lakefile.lean"},
+2026-10-07T13:21:06.1588317Z   {"url": "https://github.com/leanprover-community/aesop",
+2026-10-07T13:21:06.1588581Z    "type": "git",
+2026-10-07T13:21:06.1588781Z    "subDir": null,
+2026-10-07T13:21:06.1588964Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1589205Z    "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+2026-10-07T13:21:06.1589442Z    "name": "aesop",
+2026-10-07T13:21:06.1589624Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1589850Z    "inputRev": "master",
+2026-10-07T13:21:06.1590030Z    "inherited": true,
+2026-10-07T13:21:06.1590214Z    "configFile": "lakefile.toml"},
+2026-10-07T13:21:06.1590480Z   {"url": "https://github.com/leanprover-community/quote4",
+2026-10-07T13:21:06.1590787Z    "type": "git",
+2026-10-07T13:21:06.1590950Z    "subDir": null,
+2026-10-07T13:21:06.1591131Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1591374Z    "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+2026-10-07T13:21:06.1591608Z    "name": "Qq",
+2026-10-07T13:21:06.1591790Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1592120Z    "inputRev": "master",
+2026-10-07T13:21:06.1592307Z    "inherited": true,
+2026-10-07T13:21:06.1592492Z    "configFile": "lakefile.toml"},
+2026-10-07T13:21:06.1592782Z   {"url": "https://github.com/leanprover-community/batteries",
+2026-10-07T13:21:06.1593046Z    "type": "git",
+2026-10-07T13:21:06.1593207Z    "subDir": null,
+2026-10-07T13:21:06.1593497Z    "scope": "leanprover-community",
+2026-10-07T13:21:06.1593736Z    "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+2026-10-07T13:21:06.1593981Z    "name": "batteries",
+2026-10-07T13:21:06.1594177Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1594393Z    "inputRev": "main",
+2026-10-07T13:21:06.1594570Z    "inherited": true,
+2026-10-07T13:21:06.1594744Z    "configFile": "lakefile.toml"},
+2026-10-07T13:21:06.1595113Z   {"url": "https://github.com/leanprover/lean4-cli",
+2026-10-07T13:21:06.1595353Z    "type": "git",
+2026-10-07T13:21:06.1595533Z    "subDir": null,
+2026-10-07T13:21:06.1595723Z    "scope": "leanprover",
+2026-10-07T13:21:06.1595923Z    "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+2026-10-07T13:21:06.1596145Z    "name": "Cli",
+2026-10-07T13:21:06.1596315Z    "manifestFile": "lake-manifest.json",
+2026-10-07T13:21:06.1596521Z    "inputRev": "v4.33.0",
+2026-10-07T13:21:06.1596699Z    "inherited": true,
+2026-10-07T13:21:06.1596877Z    "configFile": "lakefile.toml"}],
+2026-10-07T13:21:06.1597090Z  "name": "g5FirstVerification",
+2026-10-07T13:21:06.1597281Z  "lakeDir": ".lake",
+2026-10-07T13:21:06.1597455Z  "fixedToolchain": false}
+2026-10-07T13:21:07.0412792Z ✔ [1/5] Built Cache.Cli (232ms)
+2026-10-07T13:21:07.0413041Z ✔ [2/5] Built Cache.Lean (282ms)
+2026-10-07T13:21:07.4378062Z ✔ [6/26] Built Cache.Cli:c.o (105ms)
+2026-10-07T13:21:07.5379870Z ✔ [7/26] Built Cache.Lean:c.o (146ms)
+2026-10-07T13:21:07.6380985Z ✔ [8/26] Built Cache.Infra (276ms)
+2026-10-07T13:21:07.7382030Z ✔ [9/26] Built Cache.Infra:c.o (136ms)
+2026-10-07T13:21:07.9384851Z ✔ [10/26] Built Batteries.Tactic.OpenPrivate (596ms)
+2026-10-07T13:21:08.6391337Z ✔ [11/26] Built Batteries.Tactic.OpenPrivate:c.o (724ms)
+2026-10-07T13:21:08.8393910Z ✔ [12/26] Built Cache.IO (861ms)
+2026-10-07T13:21:09.3424892Z ✔ [13/26] Built Cache.Hashing (523ms)
+2026-10-07T13:21:09.7414947Z ✔ [14/26] Built Cache.Hashing:c.o (372ms)
+2026-10-07T13:21:09.8412011Z ✔ [15/26] Built Cache.IO:c.o (1.0s)
+2026-10-07T13:21:10.5418699Z ✔ [16/26] Built Cache.Requests (1.2s)
+2026-10-07T13:21:10.9422247Z ✔ [17/26] Built Cache.Marker (407ms)
+2026-10-07T13:21:10.9422629Z ✔ [18/26] Built Cache.Marker:c.o (76ms)
+2026-10-07T13:21:11.4427767Z ✔ [19/26] Built Cache.Query (495ms)
+2026-10-07T13:21:11.6430212Z ✔ [20/26] Built Cache.Query:c.o (225ms)
+2026-10-07T13:21:11.9433815Z ✔ [21/26] Built Cache.Warning (523ms)
+2026-10-07T13:21:12.1435734Z ✔ [22/26] Built Cache.Requests:c.o (1.7s)
+2026-10-07T13:21:12.1436156Z ✔ [23/26] Built Cache.Warning:c.o (201ms)
+2026-10-07T13:21:12.6439246Z ✔ [24/26] Built Cache.Main (745ms)
+2026-10-07T13:21:13.1444244Z ✔ [25/26] Built Cache.Main:c.o (499ms)
+2026-10-07T13:21:13.7450035Z ✔ [26/26] Built cache:exe (540ms)
+2026-10-07T13:21:15.6402548Z Current branch: HEAD
+2026-10-07T13:21:15.6402837Z Using cache from origin: (some leanprover-community/mathlib4)
+2026-10-07T13:21:15.6403443Z Attempting to download 1920 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+2026-10-07T13:21:16.4488633Z 
+2026-10-07T13:21:16.5489754Z Downloaded: 1 file(s) [attempted 1/1920 = 0%, 37 KB/s], Decompressed: 0
+2026-10-07T13:21:16.6518543Z Downloaded: 60 file(s) [attempted 60/1920 = 3%, 111 KB/s], Decompressed: 39
+2026-10-07T13:21:16.7505354Z Downloaded: 149 file(s) [attempted 149/1920 = 7%, 290 KB/s], Decompressed: 59
+2026-10-07T13:21:16.8511570Z Downloaded: 236 file(s) [attempted 236/1920 = 12%, 449 KB/s], Decompressed: 91
+2026-10-07T13:21:16.9517426Z Downloaded: 330 file(s) [attempted 330/1920 = 17%, 1533 KB/s], Decompressed: 156
+2026-10-07T13:21:17.0542711Z Downloaded: 428 file(s) [attempted 428/1920 = 22%, 328 KB/s], Decompressed: 156
+2026-10-07T13:21:17.1554889Z Downloaded: 532 file(s) [attempted 532/1920 = 27%, 1680 KB/s], Decompressed: 278
+2026-10-07T13:21:17.2550298Z Downloaded: 651 file(s) [attempted 651/1920 = 33%, 1123 KB/s], Decompressed: 278
+2026-10-07T13:21:17.3574488Z Downloaded: 761 file(s) [attempted 761/1920 = 39%, 164 KB/s], Decompressed: 278
+2026-10-07T13:21:17.4587425Z Downloaded: 873 file(s) [attempted 873/1920 = 45%, 115 KB/s], Decompressed: 278
+2026-10-07T13:21:17.5584660Z Downloaded: 989 file(s) [attempted 989/1920 = 51%, 1371 KB/s], Decompressed: 278
+2026-10-07T13:21:17.6594388Z Downloaded: 1096 file(s) [attempted 1096/1920 = 57%, 1595 KB/s], Decompressed: 278
+2026-10-07T13:21:17.7594958Z Downloaded: 1220 file(s) [attempted 1220/1920 = 63%, 201 KB/s], Decompressed: 528
+2026-10-07T13:21:17.8580407Z Downloaded: 1336 file(s) [attempted 1336/1920 = 69%, 4957 KB/s], Decompressed: 528
+2026-10-07T13:21:17.9599566Z Downloaded: 1446 file(s) [attempted 1446/1920 = 75%, 846 KB/s], Decompressed: 528
+2026-10-07T13:21:18.0635047Z Downloaded: 1564 file(s) [attempted 1564/1920 = 81%, 2344 KB/s], Decompressed: 528
+2026-10-07T13:21:18.1620737Z Downloaded: 1683 file(s) [attempted 1683/1920 = 87%, 1116 KB/s], Decompressed: 528
+2026-10-07T13:21:18.2638693Z Downloaded: 1797 file(s) [attempted 1797/1920 = 93%, 1139 KB/s], Decompressed: 528
+2026-10-07T13:21:18.3748759Z Downloaded: 1911 file(s) [attempted 1911/1920 = 99%, 145 KB/s], Decompressed: 528
+2026-10-07T13:21:18.3802123Z Downloaded: 1920 file(s) [attempted 1920/1920 = 100%, 4364 KB/s], Decompressed: 528
+2026-10-07T13:21:18.3803496Z Downloaded: 1920 file(s) [attempted 1920/1920 = 100%, 4364 KB/s], Decompressed: 528
+2026-10-07T13:21:20.5384877Z Decompressed 1920 file(s)
+2026-10-07T13:21:20.5385092Z Already decompressed 1920 file(s)
+2026-10-07T13:21:23.5626010Z G5FrozenTriplePolynomialKernel.lean:73:4: warning: this tactic is never executed
+2026-10-07T13:21:23.5626343Z 
+2026-10-07T13:21:23.5626526Z Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+2026-10-07T13:21:23.5627062Z G5FrozenTriplePolynomialKernel.lean:73:4: warning: Unused tactic linter: `exact sub_nonneg.mpr hq1` does nothing
+2026-10-07T13:21:23.5627401Z 
+2026-10-07T13:21:23.5627560Z Note: This linter can be disabled with `set_option linter.unusedTactic false`
+2026-10-07T13:21:23.5628054Z G5FrozenTriplePolynomialKernel.lean:78:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+2026-10-07T13:21:23.5628372Z 
+2026-10-07T13:21:23.5628552Z Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+2026-10-07T13:21:23.5629097Z 'GProgram.G5.FrozenTriplePolynomialKernel.discrete3' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5629721Z 'GProgram.G5.FrozenTriplePolynomialKernel.pair3' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5630349Z 'GProgram.G5.FrozenTriplePolynomialKernel.together3' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5630996Z 'GProgram.G5.FrozenTriplePolynomialKernel.pair3_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5631656Z 'GProgram.G5.FrozenTriplePolynomialKernel.together3_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5632268Z 'GProgram.G5.FrozenTriplePolynomialKernel.three_lineage_masses_sum' depends on axioms: [propext,
+2026-10-07T13:21:23.5632654Z  Classical.choice,
+2026-10-07T13:21:23.5632814Z  Quot.sound]
+2026-10-07T13:21:23.5633166Z 'GProgram.G5.FrozenTriplePolynomialKernel.three_lineage_masses_nonnegative' depends on axioms: [propext,
+2026-10-07T13:21:23.5633724Z  Classical.choice,
+2026-10-07T13:21:23.5633879Z  Quot.sound]
+2026-10-07T13:21:23.5634226Z 'GProgram.G5.FrozenTriplePolynomialKernel.row' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5634853Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5635492Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5636396Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5637033Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5637678Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5638262Z 'GProgram.G5.FrozenTriplePolynomialKernel.row_tendsto_endpoint' depends on axioms: [propext,
+2026-10-07T13:21:23.5638631Z  Classical.choice,
+2026-10-07T13:21:23.5638787Z  Quot.sound]
+2026-10-07T13:21:23.5639282Z 'GProgram.G5.FrozenTriplePolynomialKernel.mixture' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5639929Z 'GProgram.G5.FrozenTriplePolynomialKernel.occupancyMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+2026-10-07T13:21:23.5640529Z 'GProgram.G5.FrozenTriplePolynomialKernel.mixture_at_endpoint' depends on axioms: [propext,
+2026-10-07T13:21:23.5640897Z  Classical.choice,
+2026-10-07T13:21:23.5641053Z  Quot.sound]
+2026-10-07T13:21:23.5641386Z 'GProgram.G5.FrozenTriplePolynomialKernel.occupancy_mass_positive_iff' depends on axioms: [propext,
+2026-10-07T13:21:23.5641817Z  Classical.choice,
+2026-10-07T13:21:23.5641974Z  Quot.sound]
+2026-10-07T13:21:23.6650107Z G5_COMPONENT_COMPILED checked_commit=1db1ccc3b5dba454b285a08143cf28e8c67cb5ff checked_blob=c9e470498aa30bb1f712006484726bfb1193cf4f original_commit=2c08a6b72316c3699e4e2d354bdab1befd739d0c original_blob=2140fea9686852657dff17f17c979cd1e752eaba
+2026-10-07T13:21:23.6716899Z Cleaning up orphan processes

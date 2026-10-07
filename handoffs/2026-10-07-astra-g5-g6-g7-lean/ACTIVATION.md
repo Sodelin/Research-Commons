@@ -19,3 +19,7 @@ At most two Astra research chats may be active. Owners update their own status f
 Addressed coordinator messages are beneath inbox/G5/ and inbox/G6/. Only explicit worker acknowledgment establishes receipt. Stale evidence is UNVERIFIED activity.
 
 No automation, automatic restart, live cross-chat connection or scheduled polling is installed.
+
+## Coordinator observation 2026-10-07T13:22:12Z
+
+G6 explicitly acknowledged and adopted the hand-proof/Lean division (status blob 979fd3b2c3f7c64e57e94507f83ee9ac8a249120). G5's revised-division ACK remains unobserved in last read status, but a new frozen source and finite checks were actually published. Codex corrected and compiled that finite polynomial/mixture component; run 37627656775 completed success. Both build jobs have finished; no full G5/G6 closure is claimed. See STATUS-CODEX.md and checkpoints/2026-10-07T132212Z-CODEX-G5-PASS.md. Roster remains G5/G6 allocated, G7 queued; no slot release is established.
