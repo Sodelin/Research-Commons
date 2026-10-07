@@ -1,0 +1,140 @@
+/home/runner/work/_temp/g6-cloud-build/LiteralSameBinTrace.lean:27:0: warning: automatically included section variable(s) unused in theorem `CloudG3.LiteralSameBinTrace.relation_monotone_refl`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/LiteralSameBinTrace.lean:32:0: warning: automatically included section variable(s) unused in theorem `CloudG3.LiteralSameBinTrace.relation_monotone_trans`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/LiteralSameBinTrace.lean:77:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if (z 0).1 = true then ?m.93 else ?m.94
+in the target expression
+  (if (z 0).1 = true then
+      foldTags N (fun x => tag) n (z 0).2.2 offset (tagUpdate N s (z 0).2.2 tag M) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else foldTags N (fun x => tag) n s offset M fun i => ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    foldTags N (fun x => tag) n (z 0).2.2 offset (tagUpdate N s (z 0).2.2 tag M) fun i => z i.succ
+
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Tag : Type u_5
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+tag : Tag
+offset age : ℝ
+n : ℕ
+ih :
+  ∀ (s : Code N sample) (M : Copy → Copy → Tag) (z : ClockTrace N sample n),
+    foldTags N (fun x => tag) n s offset M (shiftTraceAges N age z) = foldTags N (fun x => tag) n s offset M z
+s : Code N sample
+M : Copy → Copy → Tag
+z : ClockTrace N sample (n + 1)
+h : (z 0).1 = true
+⊢ (if (z 0).1 = true then
+      foldTags N (fun x => tag) n (z 0).2.2 offset (tagUpdate N s (z 0).2.2 tag M) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else foldTags N (fun x => tag) n s offset M fun i => ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    foldTags N (fun x => tag) n (z 0).2.2 offset (tagUpdate N s (z 0).2.2 tag M) fun i => z i.succ
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    instDecidableEqBool (shiftTraceAges N age z 0).1 true
+  has type
+    Decidable ((shiftTraceAges N age z 0).1 = true)
+  but is expected to have type
+    Decidable ((z 0).1 = true)
+  in the application
+    @ite (Copy → Copy → Tag) ((z 0).1 = true) (instDecidableEqBool (shiftTraceAges N age z 0).1 true)
+/home/runner/work/_temp/g6-cloud-build/LiteralSameBinTrace.lean:85:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if (z 0).1 = true then ?m.99 else ?m.100
+in the target expression
+  (if (z 0).1 = true then
+      foldTags N (fun x => tag) n (z 0).2.2 offset (tagUpdate N s (z 0).2.2 tag M) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else foldTags N (fun x => tag) n s offset M fun i => ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    foldTags N (fun x => tag) n s offset M fun i => z i.succ
+
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Tag : Type u_5
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+tag : Tag
+offset age : ℝ
+n : ℕ
+ih :
+  ∀ (s : Code N sample) (M : Copy → Copy → Tag) (z : ClockTrace N sample n),
+    foldTags N (fun x => tag) n s offset M (shiftTraceAges N age z) = foldTags N (fun x => tag) n s offset M z
+s : Code N sample
+M : Copy → Copy → Tag
+z : ClockTrace N sample (n + 1)
+h : ¬(z 0).1 = true
+⊢ (if (z 0).1 = true then
+      foldTags N (fun x => tag) n (z 0).2.2 offset (tagUpdate N s (z 0).2.2 tag M) fun i =>
+        ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)
+    else foldTags N (fun x => tag) n s offset M fun i => ((z i.succ).1, age + (z i.succ).2.1, (z i.succ).2.2)) =
+    foldTags N (fun x => tag) n s offset M fun i => z i.succ
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    instDecidableEqBool (shiftTraceAges N age z 0).1 true
+  has type
+    Decidable ((shiftTraceAges N age z 0).1 = true)
+  but is expected to have type
+    Decidable ((z 0).1 = true)
+  in the application
+    @ite (Copy → Copy → Tag) ((z 0).1 = true) (instDecidableEqBool (shiftTraceAges N age z 0).1 true)
+/home/runner/work/_temp/g6-cloud-build/LiteralSameBinTrace.lean:91:0: warning: automatically included section variable(s) unused in theorem `CloudG3.LiteralSameBinTrace.foldTags_const_empty`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'CloudG3.LiteralSameBinTrace.relation_monotone_refl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.LiteralSameBinTrace.relation_monotone_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.LiteralSameBinTrace.literal_trace_endpoint_relation_monotone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.LiteralSameBinTrace.foldTags_const_shift_ages' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.LiteralSameBinTrace.foldTags_const_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.LiteralSameBinTrace.foldTags_const_prepend' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'CloudG3.LiteralSameBinTrace.literal_same_bin_endpoint_fold' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.LiteralSameBinTrace.actual_same_bin_endpoint_fold' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
