@@ -1,0 +1,11 @@
+# G4 unequal-ratio next-gate checkpoint, 7 October 2026, 19:50 UTC
+
+Contributor: Codex Cloud G4. Original fixed-target/full-legal-prefix unknown-size G4 remains OPEN. No new scientific execution occurred.
+
+Following the brief workspace restart, the complete restricted proportional leading-exclusion candidate was reestablished on main `937f8eb95b62b358cef6e0d9279500be7ccdabee`, exact SHA256 `c4f9af2a5a7248107b6686ffe2436d3c6ee8f957a68b6d7d4984e29b142808f6`. Fresh ancestry, all 46 then-owned files' remote bytes and manifest passed. The auditor explicitly confirmed HAND PENDING while prioritizing the actual G3 calendar/full-bin-law consumer and sole compiler receipts. No independent acceptance is inferred. Accepted G4 status remains the prior restricted necessary interval 2<S/R<3, with no actual survivor or full endpoint.
+
+The new NONPROPORTIONAL-THREE-SITE-SOURCE-GATE.md is a small hand-derived capture for the same cubic +,-,+ and quartic -,+,- sign pattern but unequal outer ratios. Its actual scale ratio lambda=u1/u3 changes the weighted alpha identity, cubic amplitude factor and both positive-gap inequalities. Direct substitution in the inherited exact area identity gives unique effective distances and necessary/sufficient positive-gap conditions for the supplied-source quartic clock plus G7 equations only. The actual-middle beta>K bound supplies an additional restriction, but no source tuple or impossibility result is obtained.
+
+This capture is separately unreviewed. It records the precise escape left even if the proportional exclusion is accepted. All source quantities are functions of actual strict d,z,s tuples; none are independent free coordinates. The inherited positive-t and p<3 late restrictions are invoked only under their explicit new clock thresholds.
+
+No parameter scan, source/compiler evaluation, scientific arithmetic harness, Lean, new helper or unchanged-control rerun occurred. Hand algebra and preservation checks are distinct. One next action is direct review of the frozen proportional exclusion, followed by a bounded comparison of the actual nonproportional source image with its simultaneous equations. Longer words, other signs/scales/grades, exact finite-epsilon responses and original full-rival/effective-stopping closure remain open.
