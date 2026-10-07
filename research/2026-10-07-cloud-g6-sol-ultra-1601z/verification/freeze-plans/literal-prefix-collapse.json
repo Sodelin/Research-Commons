@@ -1436,7 +1436,7 @@
     },
     "LiteralSameBinTrace": {
       "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/LiteralSameBinTrace.lean",
-      "sha256": "e7d839b1d7f8931962ae614be0d38e01c940e6365ba7240f509c0f4f25eac55c",
+      "sha256": "20657515287459ce379c9f1a7a028f90e9489c080cf1b27f198df1aa3b7fcfb1",
       "imports": [
         "UnifiedLean.G6.BinClock"
       ]
@@ -1469,5 +1469,7 @@
     "sha256": "e7d839b1d7f8931962ae614be0d38e01c940e6365ba7240f509c0f4f25eac55c",
     "independent_hand_review_commit": "df68bfc29de59f17610acd50f1b7eb4416cd8892"
   },
-  "ownership": "Lean verification worker owns routine elaboration fixes of separate G6 derivative; G3 original unchanged; substantive changes require independent source review"
+  "repair_of_failed_input": "ff5dff50f284f6d2920903777bf4c46b46bc032c",
+  "routine_repair": "Explicitly rewrite the already-proved top if_pos/if_neg branch after shift-fold unfolding, before change; no semantic/premise/provider change",
+  "ownership": "Lean worker routine derivative-fix ownership granted by G3; original bytes unchanged"
 }

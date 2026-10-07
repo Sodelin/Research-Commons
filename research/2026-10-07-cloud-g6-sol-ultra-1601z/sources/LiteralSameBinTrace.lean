@@ -74,6 +74,7 @@ theorem foldTags_const_shift_ages (N : RootedBinary V E X) {sample : Copy → X}
   | succ n ih =>
       by_cases h : (z 0).1 = true
       · simp only [foldTags,shiftTraceAges,if_pos h]
+        rw [if_pos h]
         change foldTags N (fun _ => tag) n (z 0).2.2 offset
             (tagUpdate N s (z 0).2.2 tag M)
             (shiftTraceAges N age (fun i => z i.succ)) =
@@ -81,6 +82,7 @@ theorem foldTags_const_shift_ages (N : RootedBinary V E X) {sample : Copy → X}
             (tagUpdate N s (z 0).2.2 tag M) (fun i => z i.succ)
         exact ih (z 0).2.2 _ (fun i => z i.succ)
       · simp only [foldTags,shiftTraceAges,if_neg h]
+        rw [if_neg h]
         change foldTags N (fun _ => tag) n s offset M
             (shiftTraceAges N age (fun i => z i.succ)) =
           foldTags N (fun _ => tag) n s offset M (fun i => z i.succ)
