@@ -1,0 +1,78 @@
+--- original71ed3b6/signed_receiver.py
++++ guard-derivative/signed_receiver.py
+@@ -2,8 +2,9 @@
+ from fractions import Fraction as F
+ from pathlib import Path
+ import hashlib
+-import importlib.util
++import re
+ import sys
++from types import ModuleType
+ 
+ FEATURES = ('AC1','AC2','CC1','BC1','BC2','AB1','AB2','AA1','BB1')
+ PHYSICAL = ('h','u','v','rA','rB','rC','rAB','rR','g')
+@@ -11,6 +12,8 @@
+           ('1/6','2/3') if k=='g' else ('1/2','6') for k in PHYSICAL}
+ PROVIDER = 'research/2026-10-05-dot-msci-330-feature-forward-interface-1039z/evaluator/certified_forward.py'
+ PROVIDER_SHA = 'c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace'
++RAW_TEXT_LIMIT = 158
++RAW_RATIONAL = re.compile(r'-?[0-9]{1,78}(?:/[0-9]{1,78})?')
+ 
+ 
+ class Refusal(Exception):
+@@ -28,15 +31,22 @@
+         self.precision,self.max_bits,self.max_exp_calls=precision,max_bits,max_exp_calls
+         self.exp_calls=0
+         self.path=Path(root)/PROVIDER
++        if self.path.is_symlink():raise Refusal('SOURCE_IDENTITY')
++        self._provider_bytes=self.path.read_bytes()
++        self.provider_bytes_sha256=hashlib.sha256(self._provider_bytes).hexdigest()
+         self.authenticate()
+-        spec=importlib.util.spec_from_file_location('_signed_receiver_exp',self.path)
+-        module=importlib.util.module_from_spec(spec)
+-        sys.modules[spec.name]=module
+-        spec.loader.exec_module(module)
++        module=ModuleType('_signed_receiver_verified_exp_'+str(id(self)))
++        module.__file__=str(self.path)
++        # The frozen provider uses dataclasses, whose module lookup needs this
++        # fresh object registered. No import loader or cached bytecode is used.
++        sys.modules[module.__name__]=module
++        code=compile(self._provider_bytes,str(self.path),'exec',dont_inherit=True)
++        exec(code,module.__dict__)
++        self._provider_module=module
+         self.scalar_exp=module.exp_neg
+ 
+     def authenticate(self):
+-        if self.path.is_symlink() or hashlib.sha256(self.path.read_bytes()).hexdigest()!=PROVIDER_SHA:
++        if hashlib.sha256(self._provider_bytes).hexdigest()!=PROVIDER_SHA:
+             raise Refusal('SOURCE_IDENTITY')
+ 
+     def check(self,q):
+@@ -97,10 +107,14 @@
+ 
+ def rational(x):
+     if not isinstance(x,str):raise Refusal('RATIONAL_INPUT')
+-    q=F(x)
+-    if max(q.numerator.bit_length(),q.denominator.bit_length())>256:
++    if len(x)>RAW_TEXT_LIMIT:raise Refusal('RAW_TEXT_LIMIT')
++    if RAW_RATIONAL.fullmatch(x) is None:raise Refusal('RAW_GRAMMAR')
++    parts=x.split('/')
++    numerator=int(parts[0]);denominator=int(parts[1]) if len(parts)==2 else 1
++    if denominator<=0:raise Refusal('ZERO_DENOMINATOR')
++    if max(abs(numerator).bit_length(),denominator.bit_length())>256:
+         raise Refusal('INPUT_BITS')
+-    return q
++    return F(numerator,denominator)
+ 
+ 
+ def box(math,record,keys,domain):
+@@ -199,5 +213,8 @@
+         result['refusal']=str(error)
+     finally:
+         result.update(precision_fractional_bits=precision,arithmetic_max_bits=max_bits,
+-                      scalar_exp_calls=math.exp_calls if math else 0)
++                      scalar_exp_calls=math.exp_calls if math else 0,
++                      provider_execution='compile_exec_verified_single_read_bytes',
++                      verified_provider_bytes_sha256=math.provider_bytes_sha256 if math else None,
++                      rational_input_grammar='bounded_ascii_integer_or_n_over_d')
+     return result
