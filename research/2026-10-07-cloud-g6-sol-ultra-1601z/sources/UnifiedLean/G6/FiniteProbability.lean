@@ -66,7 +66,8 @@ theorem scaled_domination_tv {A : Type*} [Fintype A]
 
 lemma pmf_sum_real {A : Type*} [Fintype A] (p : PMF A) :
     (∑ a, (p a).toReal) = 1 := by
-  rw [← ENNReal.toReal_sum (fun a _ => p.apply_ne_top a), ← tsum_fintype, p.tsum_coe]
+  rw [← ENNReal.toReal_sum (fun a _ => p.apply_ne_top a),
+    ← tsum_fintype (L := SummationFilter.unconditional A), p.tsum_coe]
   simp
 
 noncomputable def pmfTV {A : Type*} [Fintype A] (p q : PMF A) : ℝ :=
