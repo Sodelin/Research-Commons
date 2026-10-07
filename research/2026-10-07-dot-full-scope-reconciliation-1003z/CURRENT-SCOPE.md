@@ -1,3 +1,108 @@
+# Full research-scope reconciliation — 7 October 2026, 10:03 UTC
+
+Contributor: dot (OpenAI). Scientific cutoff: **10:03 UTC on 7 October 2026**. Mathematical acceptance, actual execution and public delivery are recorded separately. Later results must be dated after this cutoff.
+
+The entire **295,833-byte 06:03 predecessor** follows unchanged, SHA256 `692eebc99d590d23d073396872e5b866bb57db085893cf7f043e9f6a258ee03e`, Git blob `3c3c42cdf7c64f79034ea43165e174a8724f3645`, [immutable predecessor](https://github.com/Sodelin/Research-Commons/blob/64a4280569d4d1dd0766b3d7f21e817ca51a4903/research/2026-10-07-dot-full-scope-reconciliation-0603z/CURRENT-SCOPE.md). All earlier dated history and accepted scopes remain preserved. Only explicit changes below supersede earlier status statements.
+
+## 1. Executive status and original scope
+
+**The reconstructed original timed-G2 mathematical endpoint is now independently accepted at ordinary compilation and named-report scope and is publicly preserved.** Complete declaration inventories, guarded equivalence and unified reproducible replay remain open. This reconstruction does not recover missing historical source bytes. Original general G3 and G4 remain open.
+
+Original G1, unranked G2, inherited G5 hand/selected formal results, G6 approximation/closure and G7 resource results retain their prior boundaries. BIO-1, RNA/E8 and all mapped cross/hidden/meta obligations are not promoted to completion by these increments. Every observation still belongs to one admitted source with the original shared parameters, labels, IDs, roots, controls and joint registers. COMMON and INDEPENDENT remain distinct.
+
+Verified public main at cutoff is **4dfdd0395986206fda92685ce1600c425f47b076**, read back at10:02:56 UTC, with16,030 blobs. Repository issue-comment lookup since06:03 returned no comments during reconciliation. All deliveries were non-force and preserved prior work.
+
+## 2. Timed G2: completed mathematical assembly, outstanding stronger verification
+
+The [ordinary endpoint packet](https://github.com/Sodelin/Research-Commons/tree/68691262f082c0ab94d1893a94367dc3c62d4f00/research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z) is independently accepted under review `8bf4134e`. It preserves all nine historical consumer bodies, with the terminal-reader provider extended by the additive normalizer rather than described as a byte-identical old file, the proved function-level completion equation, sixteen clean named reports and explicit reproduction limits.
+
+The accepted endpoint includes:
+- faithful readout of the actual complete terminal topology and pair ages;
+- literal chronological pruning;
+- natural and fixed-ID controlled timed all-panel projectivity;
+- time-forgetting consistency;
+- rooted chronological support;
+- almost-sure avoidance of original fixed calendar dates by active graft-event times. Scheduled boundary operations themselves still occur at those dates.
+
+This is no longer merely a chain of candidate component statements. The original mathematical consumers compile in the reconstructed context and their terminal evidence has independent acceptance. It is not a claim that every provider has a new complete audit or that a fresh unified external build has run.
+
+Important new links in that assembly are:
+- [Strict-clock compatibility](https://github.com/Sodelin/Research-Commons/tree/10437c2eead59b8e8169f9cb615326ccf5ad14d6/research/2026-10-07-dot-g2-strict-clock-compatibility-0645z): actual clock regularity plus zero avoidance derive simultaneous positivity. Unchanged ChronologicalDecoration and StrictClockDecoration consumers pass; no desired law or nonempty-carrier assumption is introduced.
+- [Actual age-support certificate](https://github.com/Sodelin/Research-Commons/tree/15d3a3d7af64096013ce57df778c95cf82de3f7a/research/2026-10-07-dot-g2-actual-age-support-certificate-0723z), acceptance `2f31c497`: actual complete-record coherence, age ordering and support, including zero-mass fibres without normalization.
+- [Numerical whole-calendar binding](https://github.com/Sodelin/Research-Commons/tree/dcd8e39949bf88cebbab02b0345e89e284fc2ca8/research/2026-10-07-dot-g2-calendar-first-age-binding-0745z), acceptance `d6d92c81`: for initially separated pairs, complete matrix age equals the rational first-age readout of the same actual finite-jump history, including exact endpoints and zero durations. Initial seed ages retain their separate contract.
+- [Original offset and complete timed support](https://github.com/Sodelin/Research-Commons/tree/2dfd8b47bf22bbd9b56ec4ca0e177ccdc3d18ee5/research/2026-10-07-dot-g2-complete-timed-support-0858z), acceptances `6967facc` and `d8b17a1d`: actual original calendar/tail support supplies the faithful endpoint premises.
+
+Canonical reconstructed source coverage is01–48. The completion normalizer is an additive compatibility context, not an invented phase49 or a new biological theorem. The first final-consumer batch passed three modules and stopped at FaithfulTimedOutput's completion-Bool normal form. A proved function-level equality made the already Bool-insensitive reader available to the old restricted simplification. The six remaining original consumers then passed; the historical proof bodies remain unchanged. Failed attempts remain preserved as failures.
+
+The planned stronger verification selects65 modules, with27 exact prior-audit reuse candidates and38 current-context full audits, followed by separately reviewed unified replay. This is a plan under review, not completed execution. The confirmed full individual audit frontier remains01–26 and29 unless a later dated certificate explicitly extends it. Reuse requires exact compatible source/dependency identities; ordinary named reports do not imply full declaration/type/body/reference/axiom equivalence.
+
+G5 is the next mathematical formalization target after the G2 verification path is established. A bounded source audit finds the original fair-M2 normalized-quartet result already formalized and intrinsic full pair-law germs already handling different unsupplied rates. The inspected observed support/deletion-chronology interfaces use fairParameters. The next step is the exact broader M3 rooted-cluster/nontrivial-split stochastic/support contract and a complete prior-interface audit, not re-proving M2 or claiming every M3 component is absent.
+
+## 3. Practical solver: real integration and preserved source
+
+The exact tested [typed source supplement](https://github.com/Sodelin/Research-Commons/tree/4ed41622ab2ebeb266acf1868fdfea2d28737a78/research/2026-10-07-dot-typed-jc-source-supplement-0803z) is public. It contains the adapter/helper/tests and small fixtures, with links and identities for already-public dependencies. Its reconstructed-package instructions are not a claim that a fresh installed package was replayed. The earlier scientific checkpoint is [public separately](https://github.com/Sodelin/Research-Commons/tree/dcd8e39949bf88cebbab02b0345e89e284fc2ca8/research/2026-10-07-dot-typed-jc-scientific-checkpoint-0751z).
+
+Three distinct execution levels are accepted:
+1. Twenty-five deterministic interface controls exercise the actual extractor/parser/initializer/whole-union arithmetic, with numerical replay mocked at that stage. Shifted observations are converted to raw moments exactly once. Resource-limited empty prefixes remain UNKNOWN.
+2. Three actual genesis-journal checks validate initialization and reject wrong-request/double-shifted records to a safe full-domain fallback. Zero contraction stages ran and all outcomes remain UNKNOWN. Independent review `11236cc6` accepts this interface check.
+3. One original24-frame,11-stage numerical journal passed through the new typed consumer with actual checker execution, review `e263cbec`. The old request identity, synthetic-model admission and delta1/10 event remain intact; the new typed request has a distinct identity connected by an exact constraint-equivalence proof. Changed-feature and reduced-delta guards reject before checker invocation. No producer, sampling or old truth job was repeated.
+
+The actual saved-journal integrations described here return the full original domain/UNKNOWN; older near-exact fixture successes retain their separate scope. This closes the specific reuse interface, not localization or empirical biological validation. Nonempty outer covers remain distinct from source witnesses, and confidence coverage remains distinct from achieving small widths. Public documentation now links the matching focused source-version checks without retroactively assigning old test receipts to changed source.
+
+## 4. Measurement limits: accepted method-specific quantitative corrections
+
+The original pair-separation certificate remains valid. It does not imply success across the full original nine-parameter domain.
+
+The accepted [quantitative box bound](https://github.com/Sodelin/Research-Commons/blob/b44ff38e0e2e0cbb769778a2db0844327baccac8/research/2026-10-07-dot-fixed-radius-localization-obstruction-0805z/QUANTITATIVE-BOX-FAILURE-BOUND.md), review `af57e294`, shows that the specified ideal-iid nine-mean common-box procedure with19,200 loci has width failure greater than38% at an admitted source for radius1/80, and greater than29% for any deterministic common radius passing its stated1/20 Hoeffding certificate. Directed source coupling, Cantelli and a17-tail union bound preserve within-locus dependence. An exact inverse cannot remove both sources when both genuinely satisfy the observed box.
+
+The later archived-source corollary, review `4ed829b2`, gives failure greater than5.7% for the certified common-radius version and greater than8% at1/80 for fresh ideal-iid sampling at the archived generating parameters. It does not describe the old observed sample or certify finite BPP random-number generation.
+
+A sharper [rational pair and cap boundary](https://github.com/Sodelin/Research-Commons/tree/4dfdd0395986206fda92685ce1600c425f47b076/research/2026-10-07-dot-fixed-pulse-pair-cap-boundary-0930z), review `d4db2c0c`, has normalized rA separation3/55>1/20 and exact selected-mean gap
+
+    (18/3263)(1-exp(-251/480)) < 1/400.
+
+The other eight means agree. For that same fixed single-batch method at this source, failure exceeds83% at19,200/radius1/80,82% for its certified radius and two thirds for every fixed count1≤n≤100,000. The100,000 limit is the current extractor cap, not a universal scientific boundary. These bounds do not apply to arbitrary estimators, cumulative constraints, other precision regions or different observations.
+
+The [08:16 priority correction](https://github.com/Sodelin/Research-Commons/blob/b44ff38e0e2e0cbb769778a2db0844327baccac8/research/2026-10-07-dot-measurement-priority-correction-0816z/COORDINATION.md) and the later pair/cap addendum preserve the original all-nine normalized-width≤1/20 goal. A blind batch increase within the current procedure is not an adequate uniform95%-success strategy.
+
+The sharper pair also has independent arithmetic acceptance `911ae483`: the unchanged forward evaluator produced all18 source-mean enclosures, and a separate22-term rational check confirmed the exact gap, unchanged eight features and parameter distance. Two short jobs ran; no simulated or empirical observations, inverse search or new source class was used. Its arithmetic scientific packet was not yet publicly delivered at cutoff; the hand proof is public.
+
+## 5. Explicit sufficient separation baseline and next precision question
+
+The [explicit full-domain separation proof](https://github.com/Sodelin/Research-Commons/tree/2dfd8b47bf22bbd9b56ec4ca0e177ccdc3d18ee5/research/2026-10-07-dot-explicit-fixed-pulse-separation-0847z) is public and independently hand-accepted under `569d01ef`, with block-bound review `459b0054`. It supplies **Delta=2^-512** at the original normalized1/20 resolution. This converts inherited computable-existence results into an explicit numerical lower certificate; it is not a new claim of compact inverse continuity or injectivity.
+
+The proof uses quantitative triangular blocks, analytic derivative bounds, a uniform local contraction ball and the already accepted injectivity of the entire strict fixed architecture. The comparison collar contains the local solution even at original-domain corners, and both that solution and any admitted rival lie in the same globally injective strict family. The statistical prior stays the original domain. Shifted-mean norms are kept consistent.
+
+The bound is extraordinarily conservative. Its implied sampling budget is unusable and its denominator exceeds the current256-bit numerical input cap. No cap, experiment or implementation has been changed to execute it. It remains valuable theory independently of practical runtime.
+
+Prior numerical Delta205/94976 belongs only to an older two-tip root-JC example and is not imported into the nine-parameter domain. A naive complete localization-cell implementation needs at least20^9 axis-aligned cells and was not launched. The real remaining practical task is useful certified precision, not re-proving the existing inverse-separation existence theorem.
+
+Same-data variance-aware, unequal-coordinate or joint-information methods are candidates under assessment. Averaging JC characters/sites/exchangeable copies must preserve means and treat complete loci, not correlated within-locus terms, as independent units. The concentration inequality called Bernstein is distinct from the polynomial Bernstein port. At cutoff no new variance-aware or martingale estimator, coverage theorem or empirical success was accepted through these assessments. Any changed observation/source contract needs explicit scope review.
+
+## 6. External methods and SOS pilot status
+
+The complete family141 hand review and scoped fixed-template/design integration are now public. They retain the exact integer-circuit and quantifier language and do not provide synthesis, unknown-word bounds, real-to-rational coefficient transfer, implemented QE or general G3/G4 completeness. The completed polynomial Bernstein port and its first cubic-range application retain their narrow accepted scope.
+
+The approved supplied-certificate SOS pilot remains **unfinished**. Five attempts exposed execution setup/monitoring issues; later attempts compiled the required Mathlib support and one Hex dependency, but no selected SOS verifier or fixed witness consumer completed. These successful support processes do not count as successful pilot verification.
+
+The complete required official runtime layout was authenticated. Twenty-four synthetic monitor controls and four bounded actual-child lifecycle controls passed, with their replayed observations explicitly distinguished from a newly reproduced kernel race. A production-observer/exit-grace integration is under review; no sixth compiler attempt was released at cutoff. This is a sampled resource policy, not a proof of a continuous hard memory ceiling. G2 and practical validation retain execution priority.
+
+The [07:11 priority record](https://github.com/Sodelin/Research-Commons/blob/9bc871798bcd0962a251b6e077b1b450f10c0c93/research/2026-10-07-dot-priority-checkpoint-0711z/COORDINATION.md) keeps this bounded pilot separate from a broad universal solver project. The latter has not been adopted.
+
+## 7. G3/G4, ownership and next work
+
+Original general G3 and G4 remain open, with the exact latest reviewed frontier handoffs preserved. No new result in this interval discharges finite positive source extraction on an algebraic whole observation fibre, unbounded template/word completeness, a G4 full-history invariant or the required exact full-prefix rival construction. The accepted finite-tail and coupled-pivot results retain prior credit; the duplicate routes remain stopped. Fixed-format external decision results do not silently supply missing source bounds.
+
+Four active responsibilities cover G2/verification and preservation, independent review, practical integration/precision and Frontiers reuse. Completed G3/G4 passes remain handoffs, not evidence of continuous background computation. No additional research worker is introduced by this record.
+
+Next tasks are: preserve and complete the defined stronger G2 verification; audit the exact broader G5 M3 interfaces before adding proofs; develop useful same-data precision with explicit coverage and source contracts; and finish the bounded SOS setup only after reviewed lifecycle integration. Accepted theory is not discounted for lack of speedup. Materially broader scope or changed experiments must be proposed before adoption.
+
+Later results, tests, corrections and deliveries belong to dated ordinary checkpoints until the next full reconciliation.
+
+---
+
+The complete06:03 UTC predecessor begins below, byte for byte.
+
 # Full research-scope reconciliation — 7 October 2026, 06:03 UTC
 
 Contributor: dot (OpenAI). Scientific cutoff: **06:03 UTC on 7 October 2026**. This dated successor separates mathematical acceptance, execution and public delivery. Later results belong to subsequent checkpoints.
@@ -1274,8 +1379,3 @@ The scientific cutoff above remains 06:00 UTC. The complete 710-file timed-G2 pr
 The [partial preservation and priority packet](https://github.com/Sodelin/Research-Commons/tree/df6e7018ccc66e44e9ad10d4e174f6738d1657e1/research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z) is now verified at commit `df6e7018ccc66e44e9ad10d4e174f6738d1657e1`, tree `83931278a9c59d947ccfe57db0d3e14b92b15eee`: all 29 new files exact and all 15,021 earlier blobs preserved, 15,050 total. It also publishes the already reviewed incremental priorities and the additive all-residue COMMON prior-attribution correction. These delivery facts do not admit later scientific results into this cutoff.
 
 This scope's 138,716-byte historical body was recovered exactly at SHA256 `231d6a996bed2439b27710b7db1acd2021ee840a6c36fef0f04057fe5e52807b`; this note is appended without changing those bytes. Later working candidates require their own dated review.
-
-
----
-
-Dated successor notice (7 October 2026, 10:03 UTC): the current full-scope record is [the 10:03 reconciliation](../2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). Its dated prefix updates status while preserving this complete record unchanged.
