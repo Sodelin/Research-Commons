@@ -1,0 +1,41 @@
+name: G5 timed consumer takeover complete inventory
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: g567-pinned-lean
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Fetch frozen public input
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init --quiet "$RUNNER_TEMP/research-commons"
+          git -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          git -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"
+          git -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Authenticate existing pinned runtime
+        shell: bash
+        run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+      - name: Verify timed G5 G2 and G6 selected closure serially
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$RUNNER_TEMP/g567-lean-4.33.1/lean-4.33.1-linux/bin:$PATH"
+          export LEAN_NUM_THREADS=1
+          python "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g5-sol-ultra-1557z/verification/verify_takeover.py" \
+            "$RUNNER_TEMP/research-commons" "$RUNNER_TEMP/g5-takeover-build" "$RUNNER_TEMP/g5-takeover-evidence"
+      - name: Preserve actual success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: g5-takeover-evidence-${{ github.run_id }}
+          path: ${{ runner.temp }}/g5-takeover-evidence
+          if-no-files-found: warn
+          retention-days: 30

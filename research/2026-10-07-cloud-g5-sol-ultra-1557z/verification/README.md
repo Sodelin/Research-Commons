@@ -1,0 +1,13 @@
+# Root takeover timed-consumer verification
+
+Owner: internal Lean lane under CLOUD-G6-SOL-ULTRA-20261007. Nolan stopped the original external G5 task and authorized root's continued internal research. The old full G5 recipe is retained under its manual-only workflow. This additive successor uses the same published source-selection script and preserves all historical providers.
+
+The frozen selected closure has 164 timed G5/G2 modules plus five unchanged successful G6 modules and one G3 scalar source, 170 custom modules in total. All 59 custom dependencies shared with the preceding successful narrow G6 route have identical source hashes. The exact 09:41 G2 timed provider and its terminal-reader context are retained. Repaired G5 frozen analytic support has its own earlier genuine receipt; the stopped original G5 run remains CANCELLED.
+
+The manual-only `.github/workflows/g5-takeover-lean.yml` shares `g567-pinned-lean` concurrency. It authenticates exact Lean 4.33.1, shallow-fetches the exact Mathlib pin, retains baseline Lake registrations with additive consumer libraries, reuses official Mathlib cache objects, and elaborates custom sources serially with `--trust=0 -j1 -M4096`. All commands have at most 180 seconds; the job cap is 15 minutes. Exhausted source budget yields explicit NOT_RUN results, never PASS.
+
+After ordinary compilation, the attributed dot environment auditor enumerates every declaration owned by every successfully compiled selected custom module, including generated declarations, type references, body references and transitive axiom sets. Missing modules, owned axioms or nonstandard transitive axioms reject the audit. Successful independent components may have scoped receipts after another component fails; full selected-closure PASS additionally requires all requested sources. This inventory is broader than the earlier named 80-declaration report and still does not constitute a complete corpus rebuild.
+
+Actual commands/stdout/receipts are printed into workflow logs. Exact source context, module results, complete audit and build receipt are losslessly emitted as deterministic gzip/base64 payloads with raw byte counts and SHA256 hashes, allowing authenticated recovery despite this workspace's signed artifact URL HTTP 403. Raw artifacts are also uploaded on success or failure.
+
+Prepared route status: UNRUN until an actual exact-input receipt is linked here. The target is hidden-register timed all-panel projectivity and full selected-environment verification, not frozen-germ identification from the actual observed genealogy law or G5/G6 master closure.
