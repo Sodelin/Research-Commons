@@ -4,6 +4,8 @@ Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 
 
 The current G6 four-module source/program component **passed** actual ordinary compilation and the 51-declaration axiom audit. This auditor independently retrieved and parsed the terminal log, checked source/runtime identities and accepted the current unranked genealogy/population/register semantics. Full G6 remains open: omitted prior event/bin history prevents the arbitrary snapshot readout from supplying the protected timed-bin observation interface.
 
+The [successful expanded second attempt](G6-TAYLOR-G3-G5-VERIFIED-REVIEW.md) subsequently compiled seven selected targets and audited 80 declarations: 64 G6, one G3 scalar and 15 G5 frozen analytic. All current-stage reports use only standard axioms. This adds actual Taylor/source certificate and narrow G3/G5 component evidence, retaining the original history, formal termination and actual genealogy-law gaps.
+
 The subsequent [expanded-run audit](EXPANDED-RUN-AND-G5-DIAGNOSTIC.md) records real PASS evidence for three additive program-budget lemmas, a failed Taylor translation with rejected consumers, and byte-exact recovery of the stopped G5 analytic failure. The earlier four-module PASS remains controlling for its frozen sources; a failed expanded job does not erase those achievements or certify its failed additions.
 
 | Review | Current scoped result | Evidence type |
