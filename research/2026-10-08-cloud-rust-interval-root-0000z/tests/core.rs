@@ -34,7 +34,11 @@ fn f(n:i64,d:i64)->Rational {fraction(n,d)}
 }
 #[test] fn budget_checked_before_rounding_not_after(){
     let c=ReceiverContext::new(128,256,0).unwrap();
-    let v=Rational::new((BigInt::one()<<256)-1,BigInt::from(3));
+    // 2^255/3 is reduced and non-dyadic, with a 256-bit input numerator.
+    // Unlike the original (2^256-1)/3 integer, it exercises rounding growth.
+    let v=Rational::new(BigInt::one()<<255,BigInt::from(3));
+    assert_eq!(bit_size(&v),256);
+    assert_eq!(v.denom(),&BigInt::from(3));
     let a=c.point(v).unwrap();
     assert!(bit_size(a.lo())>256); // post-rounding growth is intentionally allowed
     assert_eq!(a.neg().unwrap_err().0,"ARITHMETIC_BITS");
