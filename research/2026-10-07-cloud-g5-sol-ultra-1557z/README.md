@@ -2,8 +2,13 @@
 
 Assignment CLOUD-G5-SOL-ULTRA-20261007, session CLOUD-G5-20261007T155725Z.
 Contributor/publisher: directly assigned Work Cloud Codex session.
-Master IN PROGRESS. New analytical source initially UNCHECKED; evidence will
-be recorded by exact input commit and logs, not inferred from source text.
+Master IN PROGRESS; this lane STOPPED at Nolan's direct instruction.
+Run 37650073193 completed CANCELLED; the new analytical source returned exit 1
+on input a5a80af1dedc53ff060f8d521b50596851261cd4. No full verification PASS.
+See the [stop receipt](evidence/interrupted-run-37650073193/STOP-RECEIPT.json)
+and [takeover checkpoint](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/checkpoints/20261007T161629Z-G5-NOLAN-STOP/README.md).
+The later [epoch draft](interrupted-drafts/G5ActualNoEventEpoch.lean) is
+UNCOMPILED and was not a run input. No further work or monitor is running here.
 
 The startup ACK and [full obligation register](OBLIGATIONS.md) retain the
 complete arbitrary-weight M3 rooted-cluster/split and separate HG endpoints.
@@ -53,5 +58,6 @@ inventory derived from dot's historical AuditTemplate. Imported official
 cache artifacts are reuse, not a fresh complete Mathlib build. This is not
 independent semantic review or guarded source/context equivalence.
 
-A finite verification job can run after this chat stops. This packet installs
-no perpetual monitor, automatic task wake-up or unseen research continuation.
+The finite verification job was canceled on Nolan's stop. Its full GitHub
+job log and command receipts are saved; uploaded artifact 11496078569 exists,
+but local artifact download failed HTTP403. No unseen continuation is running.

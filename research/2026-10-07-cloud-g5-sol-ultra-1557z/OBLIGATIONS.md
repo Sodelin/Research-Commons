@@ -2,7 +2,10 @@
 
 Assignment CLOUD-G5-SOL-ULTRA-20261007; session CLOUD-G5-20261007T155725Z.
 Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`.
-Status: MASTER IN PROGRESS. Original Astra register IDs retained.
+Status: MASTER IN PROGRESS; lane STOPPED at Nolan's instruction, takeover
+receipt pending. Original Astra register IDs retained. Run 37650073193 was
+canceled; the analytic component returned exit 1 and the actual consumer/full
+audit did not complete. [Stop evidence](evidence/interrupted-run-37650073193/STOP-RECEIPT.json).
 
 | ID | Evidence/status | Missing implication and next action |
 |---|---|---|
