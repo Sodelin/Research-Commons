@@ -1,0 +1,65 @@
+﻿2026-10-07T13:07:54.7423659Z Current runner version: '2.337.0'
+2026-10-07T13:07:54.7448204Z ##[group]Runner Image Provisioner
+2026-10-07T13:07:54.7449106Z Hosted Compute Agent
+2026-10-07T13:07:54.7449759Z Version: 20261002.596
+2026-10-07T13:07:54.7450408Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-07T13:07:54.7451166Z Build Date: 2026-10-02T22:28:27Z
+2026-10-07T13:07:54.7452214Z Worker ID: {32525ae3-1ab7-4603-bbc4-ff3a55df3cac}
+2026-10-07T13:07:54.7452940Z Region: westus
+2026-10-07T13:07:54.7453528Z Cloud: Azure
+2026-10-07T13:07:54.7454077Z ##[endgroup]
+2026-10-07T13:07:54.7455770Z ##[group]Operating System
+2026-10-07T13:07:54.7456492Z Ubuntu
+2026-10-07T13:07:54.7457022Z 24.04.5
+2026-10-07T13:07:54.7457510Z LTS
+2026-10-07T13:07:54.7458076Z ##[endgroup]
+2026-10-07T13:07:54.7458651Z ##[group]Runner Image
+2026-10-07T13:07:54.7459322Z Image: ubuntu-24.04
+2026-10-07T13:07:54.7459889Z Version: 20261004.327.1
+2026-10-07T13:07:54.7461174Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-07T13:07:54.7463260Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-07T13:07:54.7464301Z ##[endgroup]
+2026-10-07T13:07:54.7465369Z ##[group]GITHUB_TOKEN Permissions
+2026-10-07T13:07:54.7467542Z Contents: read
+2026-10-07T13:07:54.7468191Z Metadata: read
+2026-10-07T13:07:54.7468746Z ##[endgroup]
+2026-10-07T13:07:54.7470804Z Secret source: Actions
+2026-10-07T13:07:54.7471986Z Cache mode: write
+2026-10-07T13:07:54.7472807Z Prepare workflow directory
+2026-10-07T13:07:54.7801165Z Prepare all required actions
+2026-10-07T13:07:54.7915909Z Complete job name: runtime
+2026-10-07T13:07:54.8684892Z ##[group]Run set -euo pipefail
+2026-10-07T13:07:54.8686215Z [36;1mset -euo pipefail[0m
+2026-10-07T13:07:54.8687671Z [36;1mgit init --quiet "$RUNNER_TEMP/research-commons"[0m
+2026-10-07T13:07:54.8689870Z [36;1mgit -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"[0m
+2026-10-07T13:07:54.8692611Z [36;1mgit -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"[0m
+2026-10-07T13:07:54.8694762Z [36;1mgit -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD[0m
+2026-10-07T13:07:54.8696836Z [36;1mtest "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"[0m
+2026-10-07T13:07:54.9617465Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:07:54.9618746Z ##[endgroup]
+2026-10-07T13:08:00.8286515Z From https://github.com/Sodelin/Research-Commons
+2026-10-07T13:08:00.8287803Z  * branch            5a94f375c9e5538da65b3d3ed05d4d6aa40177f6 -> FETCH_HEAD
+2026-10-07T13:08:02.1803141Z HEAD is now at 5a94f37 Assign Astra hand proofs and Codex Lean verification; add pinned runtime smoke
+2026-10-07T13:08:02.1994342Z ##[group]Run bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+2026-10-07T13:08:02.1995298Z [36;1mbash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"[0m
+2026-10-07T13:08:02.2060629Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-07T13:08:02.2061055Z ##[endgroup]
+2026-10-07T13:08:02.2891755Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-10-07T13:08:02.2892742Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-10-07T13:08:02.2893230Z 
+2026-10-07T13:08:02.4902813Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-07T13:08:02.4903669Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-07T13:08:02.6366377Z 
+2026-10-07T13:08:03.6387471Z   5  543M    5 30.0M    0     0  86.3M      0  0:00:06 --:--:--  0:00:06 86.3M
+2026-10-07T13:08:04.6533100Z  51  543M   51  280M    0     0   207M      0  0:00:02  0:00:01  0:00:01  249M
+2026-10-07T13:08:04.6665963Z  99  543M   99  539M    0     0   228M      0  0:00:02  0:00:02 --:--:--  252M
+2026-10-07T13:08:04.6666983Z 100  543M  100  543M    0     0   228M      0  0:00:02  0:00:02 --:--:--  253M
+2026-10-07T13:08:05.0919819Z lean.tar.zst: OK
+2026-10-07T13:08:10.3754833Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:08:10.3797332Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:08:10.3810091Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+2026-10-07T13:08:10.3825430Z e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  /home/runner/work/_temp/g567-lean-4.33.1/lean-4.33.1-linux/bin/lean
+2026-10-07T13:08:10.3840074Z 5114a5b2e77fa40336ddd9491ebc5f04e767a5c299b7ebdd637104b1f96d2758  /home/runner/work/_temp/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/RuntimeSmoke.lean
+2026-10-07T13:08:10.5747097Z 'ResearchCommonsRuntime.runtimeSmoke' does not depend on any axioms
+2026-10-07T13:08:10.5935617Z RUNTIME_SMOKE_PASSED source_commit=5a94f375c9e5538da65b3d3ed05d4d6aa40177f6
+2026-10-07T13:08:10.6600640Z Cleaning up orphan processes
