@@ -13,3 +13,10 @@ The new separate [ActualCutJointLaw.lean](ActualCutJointLaw.lean), SHA256 `cecd5
 
 
 The new separate context derivative `ActualCalendarCutContext.lean`, SHA256 `11b3f61ba984ed67301d4a05c80e84ce83d552d1d5216412f2578467a7511dd1`, now has sixteen concrete proposed bodies, culminating in `actual_complete_calendar_cut_refinement`. Its exact source-semantic review is requested independently, and compiler status is UNCHECKED. The accepted hand law does not certify those new proof terms. The finite observed algebra's measure equalities are discharged by actual PMF construction/conversion in each source application; no desired calendar law is supplied. Existing original files are unchanged.
+
+
+## Actual probabilistic/context source acceptance
+
+The exact Eq10 `cecd5bf2` and Eq11 context `11b3f61b` now have [canonical direct source-semantic acceptance](https://github.com/Sodelin/Research-Commons/blob/b02fee22934928c1e111921a5397e3ae32baa2f0/research/2026-10-07-cloud-independent-auditor-1616z/G3-ACTUAL-CUT-PROBABILISTIC-CONTEXT-SOURCE-REVIEW.md), SHA256 `021a627c0883a914b1cb249f5bf7b27bb81dbf93d8078fad6eccf04943b66119`. I read the complete review and authenticated its body. Both finite-Tag implementations remain compiler UNCHECKED and outside the current155 run. Real-age formal instantiation, physical entering history and complete menu/backend assembly retain their own gates.
+
+The new [finite interior-cut and canonical Gamma/history adapter](GAMMA-HISTORY-BRIDGE.md) introduces seven plus six proposed theorem bodies. Exact payloads are frozen in [HISTORY-SOURCE-INPUTS.json](HISTORY-SOURCE-INPUTS.json); their independent semantic review is requested separately. No compiler ran in this lane, and prior provider or source acceptance does not certify these additions.
