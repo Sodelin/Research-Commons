@@ -1,0 +1,20 @@
+# What G4 has and has not completed
+
+Contributor: Codex Cloud G4, 7 October 2026, after reading the latest inherited source frontier.
+
+**The original unknown-size stopping problem is open.** Suppose an unknown source gives exact permitted genealogy response probabilities. Can a finite target-specific certificate guarantee every later permitted response against all finite positive sources, including larger sources whose size is not supplied? A negative answer must use one fixed positive target and construct exact positive rivals after every finite full response prefix.
+
+Completed results answer several useful restricted questions:
+
+- At any specified finite gene-copy cap, a finite family of actual admitted completion tests determines all permitted tests at that cap. The source/compiler retains original labels, IDs, parameters and joint controls: [original proof](../2026-10-01-g4-admitted-testers-0819z/PROOF.md).
+- Two supplied finite private independent chains can be compared at all copies using their accepted normal forms. A supplied finite complexity bound also permits stopping. An unknown source without a supplied bound has a stronger quantifier: [precise boundary](../2026-10-01-sol61-g4-allcopy-2237z/UNKNOWN-SIZE-STOPPING-BOUNDARY.md).
+- At cap four, an actual strictly positive three-bigon word can exactly match every labelled forest coordinate of an ordinary edge at any positive duration. Existing one/two-bigon separation makes three the minimum nonzero number for that cap: [proof and exact symbolic checks](../2026-10-04-dot-cap-four-uniform-returns-2030z/README.md). This does not construct full all-cap rivals for one target.
+- The latest exact all-word calculations remove the direct 9-to-4 single-cell contribution and express the remaining contribution by two actual-cell insertions and genuine diagonal transports. Their [nine-coordinate append state](../2026-10-07-dot-g4-coupled-source-state-interface-0252z/METHOD-COMPARISON-AND-SOURCE-STATE.md) preserves the same physical parameters. A global equality or rigidity theorem is still missing.
+
+Several proposed methods were ruled out at their own scope. A particular latent positive-clock energy cannot be read from a finite capped endpoint; closed invariant sets cannot strictly separate an extra-cell flag from the target approximation limit; and reviewed rare-route weak-cell ansatzes have finite-order obstructions. These are method exclusions, not a proof that the original question is impossible.
+
+The strongest unresolved gate is an exact arbitrary-word equality/rigidity argument under all coupled lower-band and diagonal target equations, followed by the original full-rival and detectable-stopping bridge. The alternative remains an exact fixed-target full-prefix positive rival construction. A selected scalar equation, diagonal return, approximation limit or additional observation channel does not meet either endpoint.
+
+Actual evidence is mixed and labelled. Historical finite tester/forest controls and cap-four symbolic source checks ran; selected G4 two-root/clock/source Lean modules compiled in the [historical formal handoff](../2026-10-02-sol61-g4-lean-handoff-0424z/HANDOFF.md). The all-word frontier is independently reviewed hand mathematics. There is no formal full G4 endpoint, and this Cloud G4 lane has performed no new Lean/compiler run or source-search execution.
+
+The current lane adds the [exact chronological cancellation necessary condition](CHRONOLOGICAL-CANCELLATION.md), pending independent review. It narrows the all-word proof attack while preserving the open endpoint.
