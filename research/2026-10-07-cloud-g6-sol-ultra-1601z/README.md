@@ -6,7 +6,7 @@ The question is whether finite noisy observations yield effective, honest source
 
 ## What the new source chain establishes
 
-| Source | Meaning | Actual execution as of 7 October 2026, 20:03 UTC |
+| Source | Meaning | Actual execution as of 7 October 2026, 20:34 UTC |
 |---|---|---|
 | [FiniteProbability](sources/UnifiedLean/G6/FiniteProbability.lean) | Finite common-subprobability and scaled-domination total-variation/event bounds, retaining zero/full-mass cases | PASS at `89dffaa` in run 37651501035 |
 | [Conditioning](sources/UnifiedLean/G6/Conditioning.lean) | Mass of an actual retained PMF event, normalized filter, same-kernel bind domination and joint finite readout contraction | PASS in that run |
@@ -20,6 +20,7 @@ The question is whether finite noisy observations yield effective, honest source
 | [BinClock](sources/UnifiedLean/G6/BinClock.lean) | Actual original-clock support inside a fixed bin, simultaneously for all finite budgets; retains the carried old tags | Three named/three owned declarations PASS at `ab849a9`, run37668810494 |
 | [FiniteTagDecoder](sources/FiniteTagDecoder.lean) | Actual pair-age decoding commutes with binning on the supplied well-labelled tree; preserves repeated-tag topology and compatible child swaps | 19 named/89 complete owned rows PASS at `ab849a9` |
 | [ResidualPrefix](sources/UnifiedLean/G6/ResidualPrefix.lean) | Distinct residual-lumped real probability vector, actual-source and same joint-readout error bounds | 13 named/24 owned rows PASS at `cd2383f2` in partial run37675879295; literal-prefix target failed |
+| [MeanEnclosure](sources/UnifiedLean/G6/MeanEnclosure.lean) | Numerical mean perturbation through the SAME source bank/iterations, with normalized and residual readout bounds | 11 named/13 owned rows PASS at `19fafe5c` in partial run37678877661; literal parser failure excluded |
 
 The later [successful four-module receipt](verification/evidence/g6-run-37652484086-PASS/README.md) confirms all 61 custom dependency targets and the complete 51-declaration audit passed, using only propext, Classical.choice and Quot.sound. Pinned Mathlib cache was reused. [Independent terminal/source review](../2026-10-07-cloud-independent-auditor-1616z/G6-VERIFIED-PROGRAM-REVIEW.md) accepts this precise unranked component scope. Earlier failed attempts and raw logs remain in the evidence paths. Follow [current status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md) for later results.
 
@@ -160,3 +161,13 @@ terminal result is inferred; the residual source remains unchanged.
 [Actual complete-calendar hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/G3-COMPLETE-CALENDAR-HAND-REVIEW.md)
 is canonical at `254c7109`; the principal joint-law implementation remains
 open, as do cut refinement and the original full-master register.
+
+[Current continuation](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/checkpoints/20261007T201800Z-G6-NUMERICAL-SOURCE-CHECKPOINT.md) reconciles the earlier partial failures with
+[successful run 37680262815](verification/evidence/g6-run-37680262815-PASS/README.md)
+and [independent complete-inventory acceptance](../2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md).
+All 150 selected modules passed: 171 named reports, 3,657 owned declarations
+and 2,340 theorems. The repaired literal-prefix module contributes eight
+named reports / 11 owned rows. No compiler is active at 20:34 UTC.
+[Residual program/common-history composition](RESIDUAL-PROGRAM-COMMON-LAW.md)
+has [canonical hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/RESIDUAL-PROGRAM-COMMON-HAND-REVIEW.md);
+its new Lean consumer and the actual calendar principal-law draft remain unverified.

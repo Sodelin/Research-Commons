@@ -4,6 +4,8 @@ Assignment CLOUD-G6-SOL-ULTRA-20261007 continues. Nolan renewed continuation
 on 7 October after an accidental interface interruption. The six internal
 lanes were actually resumed; the separate original G5 worker remains stopped.
 
+**Latest continuation, reconciled 20:34 UTC:** [numerical-source checkpoint](checkpoints/20261007T201800Z-G6-NUMERICAL-SOURCE-CHECKPOINT.md). [Run 37680262815 passed](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37680262815-PASS/README.md) all 150 selected modules, 171 named reports and the complete 3,657-declaration / 2,340-theorem inventory. [Independent review](../../research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md) is canonical at `395b56e`. No compiler job is active at this observation; next are the actual calendar joint-law and residual-program consumers.
+
 Read the [18:56 restart checkpoint](checkpoints/20261007T185600Z-G6-SIX-LANE-RESTART.md)
 for exact saved state, ownership, current verification and one next action.
 Then use [G6's full register](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/README.md)
@@ -21,7 +23,7 @@ preserve useful drafts before testing. Publish non-force on fresh main,
 then verify remote bytes. Do not rerun a passed build merely because a chat
 was interrupted, and do not launch another job for an already running input.
 
-Latest fully successful compiler receipt: [37668810494 PASS](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37668810494-PASS/README.md),
+Historical 18:56–19:48 compiler observation (superseded above): [37668810494 PASS](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37668810494-PASS/README.md),
 input `ab849a9`, published `5a99dfc`: all 147 custom modules and 139 named
 reports passed; complete selected inventory 3,609 declarations/2,298 theorems.
 Next source target: [actual whole-prefix same-bin collapse](../../research/2026-10-07-cloud-g3-contextual-source-1716z/literal-same-bin-trace-1828z/README.md),

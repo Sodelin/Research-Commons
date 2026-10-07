@@ -2,11 +2,11 @@
 
 Assignment: CLOUD-G6-SOL-ULTRA-20261007.
 Contributor/publisher: Codex, session `20261007T160100Z-G6-CLOUD`.
-State: WORKING / ELEVEN G6 COMPONENTS AND FINITE-TAG DECODER VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 20:03 UTC.
+State: WORKING / TWELVE G6 COMPONENTS AND FINITE-TAG DECODER VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 20:34 UTC.
 Requested execution: Sol, Ultra reasoning effort.
 Evidence anchor: fe95e69492699472b0e14655ab0b405ad141e69c.
 
-Latest: [partial run37675879295](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37675879295-FAILED/README.md) failed only the new literal-prefix target. ResidualPrefix passed13 named/24 owned rows; the complete successful selection contains148 modules,152 named reports,3,633 declarations and2,318 theorems with standard axioms only. The failed module and all recovery outputs are excluded. Independent terminal authentication is pending. [Actual complete-calendar hand acceptance](../../research/2026-10-07-cloud-independent-auditor-1616z/G3-COMPLETE-CALENDAR-HAND-REVIEW.md) is canonical; its principal law remains unimplemented. The sole Lean owner has frozen the locally scoped literal repair plus reviewed mean-enclosure draft at `19fafe5c`, under run37678877661 requesting150 modules/171 reports; no new outcome inferred. [Continue here](CONTINUE-HERE.md).
+Latest: [run 37680262815 passed](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37680262815-PASS/README.md) at `36691a00`: all 150 custom modules and 153 commands passed; 171 named reports and the complete 3,657-declaration / 2,340-theorem inventory use standard axioms only. [Independent source and full-inventory acceptance](../../research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md) is canonical at `395b56e`. The repaired literal-prefix module is now accepted alongside residual and mean-enclosure adapters. No compiler is active at 20:34 UTC. [Current continuation](checkpoints/20261007T201800Z-G6-NUMERICAL-SOURCE-CHECKPOINT.md) names the next concrete calendar-law and residual-program consumers, which remain unverified.
 
 Actual [ACK, frozen master, reuse/gap audit and full obligation register](checkpoints/20261007T160100Z-G6-CLOUD-ACK.md). Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`. G6 implementation/build ownership accepted; G7 remains queued. Historical Astra status preserved.
 

@@ -122,3 +122,21 @@ no successor outcome is claimed.
 is now independently accepted and canonical at `254c7109`. The principal
 equality still needs Lean implementation. These strengthen the session
 assessment above without closing the full G6 endpoint.
+
+## Reconciliation at 20:34 UTC
+
+The subsequent [coordinated build](verification/evidence/g6-run-37680262815-PASS/README.md)
+and [independent full review](../2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md)
+now accept all 150 selected modules / 171 named reports, including the
+literal-prefix repair, residual source rule and mean-enclosure translation.
+The complete inventory is 3,657 owned declarations / 2,340 theorems; most
+are inherited providers. Earlier failures remain preserved.
+
+The [whole restricted proportional G4 exclusion](../2026-10-07-cloud-independent-auditor-1616z/G4-PROPORTIONAL-LEADING-FAMILY-REVIEW.md)
+and [near-proportional interval](../2026-10-07-cloud-independent-auditor-1616z/G4-NEAR-PROPORTIONAL-SOURCE-REVIEW.md)
+are now independently hand accepted, as are the practical
+[inheritance/C-rate bounds](../2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-G-AND-CC1-PROPAGATION-HAND-REVIEW.md)
+and [root-block bound](../2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-ROOT-PROPAGATION-HAND-REVIEW.md).
+These strengthen the original assessment of a substantial integration day.
+They do not replace an endpoint proof or establish general G3/G4,
+full G5/G6 assembly, or practical whole-domain accuracy.
