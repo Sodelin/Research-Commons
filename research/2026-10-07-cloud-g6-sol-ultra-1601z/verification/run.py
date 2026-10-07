@@ -14,6 +14,31 @@ commit = sys.argv[3]
 roots = [root, *(root / p for p in ['Imported', 'HistoricalCore', 'HistoricalNanuq', 'HistoricalBiological'])]
 modules, external, order = {}, set(), []
 
+def lean_imports(source):
+    # Derivative of the hash-pinned G5 source selector. Lean block comments
+    # nest; a prose line beginning with 'import' is not a dependency.
+    clean, depth, index = [], 0, 0
+    while index < len(source):
+        if source[index:index + 2] == '/-':
+            depth += 1
+            index += 2
+        elif depth and source[index:index + 2] == '-/':
+            depth -= 1
+            index += 2
+        elif depth:
+            if source[index] == '\n':
+                clean.append('\n')
+            index += 1
+        else:
+            clean.append(source[index])
+            index += 1
+    dependencies = []
+    for line in ''.join(clean).splitlines():
+        match = re.match(r'\s*(?:public\s+)?import\s+(.+)', line)
+        if match:
+            dependencies.extend(match[1].split('--')[0].split())
+    return dependencies
+
 def visit(name):
     if name.startswith('Mathlib.'):
         external.add(name)
@@ -25,11 +50,7 @@ def visit(name):
     if path is None:
         raise RuntimeError('Missing custom source: ' + name)
     data = path.read_bytes()
-    imports = []
-    for line in data.decode().splitlines():
-        match = re.match(r'\s*(?:public\s+)?import\s+(.+)', line)
-        if match:
-            imports.extend(match[1].split('--')[0].split())
+    imports = lean_imports(data.decode())
     modules[name] = {'path': str(path.relative_to(root)), 'sha256': hashlib.sha256(data).hexdigest(), 'imports': imports}
     for dependency in imports:
         visit(dependency)
