@@ -14,7 +14,7 @@ Root checked the controlling G5 M3, RAW NONPLANAR chronology and HG papers in fu
 
 ## New actual proof receipts
 
-[Run 37655542723 attempt 2](../../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt 2-PASS/README.md), source `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5`, completed SUCCESS17:10:28UTC. All 67 commands exited zero: cache retrieval, 65 fresh custom elaborations, final selected audit; 46 external Mathlib roots. All 80 selected declarations used only subsets of propext,Classical.choice,Quot.sound:
+[Run 37655542723 attempt 2](../../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt2-PASS/README.md), source `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5`, completed SUCCESS17:10:28UTC. All 67 commands exited zero: cache retrieval, 65 fresh custom elaborations, final selected audit; 46 external Mathlib roots. All 80 selected declarations used only subsets of propext,Classical.choice,Quot.sound:
 
 - G6: 64 declarations across five modules, including actual count/source conditioning, same-register program composition and sum-of-deficits budgets, Taylor tail/enclosure and actual-source joint-TV certificate.
 - G3:one scalar perturbation inequality; actual source contrast/Hölder/physical realization is separate.

@@ -17,7 +17,7 @@ assigned takeover to CLOUD-G6-SOL-ULTRA-20261007; [actual acknowledgment](../../
 and [current G5 status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G5.md)
 govern the successor. The exact original failed analytic diagnostic was
 recovered and independently hash-matched before repair. The repaired
-G5FrozenTripleAnalyticSupport passed [run 37655542723 attempt 2](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt 2-PASS/README.md)
+G5FrozenTripleAnalyticSupport passed [run 37655542723 attempt 2](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt2-PASS/README.md)
 at input `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5`, with 15 selected
 standard-only declarations. Actual conditional genealogy-law binding remains
 open. The original timed-consumer/full-inventory build was not part of that

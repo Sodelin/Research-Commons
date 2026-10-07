@@ -11,7 +11,7 @@ audit did not complete. [Stop evidence](evidence/interrupted-run-37650073193/STO
 
 Successor observation,7 October 17:18 UTC: the original diagnostic was recovered
 and hash-matched; the repaired analytic module passed [the expanded narrow
-run](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt 2-PASS/README.md)
+run](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt2-PASS/README.md)
 at `1eb4b9a7`,15 selected standard-only declarations. This updates the
 G5-C1 analytic component only; actual conditional source-law binding and the
 original timed-consumer/full inventory remain open. Register IDs unchanged.
