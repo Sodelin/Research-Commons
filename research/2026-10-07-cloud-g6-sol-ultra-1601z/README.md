@@ -109,7 +109,20 @@ its exact full-copy budget and the same-tree completeMatrix decoration
 attachment. Literal merger budgets and Poisson uniformization counts are
 different. The [full-prefix same-bin collapse](../2026-10-07-cloud-g3-contextual-source-1716z/literal-same-bin-trace-1828z/README.md)
 has [independent hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/G3-LITERAL-SAME-BIN-HAND-REVIEW.md).
-Its separate implementation is now in run37671381506 at `ff5dff5`, requesting
-148 custom modules/147 named reports and the full audit. No result is
-inferred. The [restart pointer](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md)
+Its original implementation failed in [run37671381506](verification/evidence/g6-run-37671381506-FAILED/README.md)
+at `ff5dff5`; [independent terminal review](../2026-10-07-cloud-independent-auditor-1616z/LITERAL-PREFIX-FAILED-IMPLEMENTATION-REVIEW.md)
+rejects all recovery reports and preserves the unchanged earlier147-module
+inventory. The separate two-branch repair at `3abf160` is under sole
+run37673216721, with148 modules/147 reports requested; no result inferred
+at19:26 UTC. The [tail-bin hand corollary](../2026-10-07-cloud-g3-contextual-source-1716z/literal-same-bin-trace-1828z/TAIL-BIN-COROLLARY.md)
+and its [independent acceptance](../2026-10-07-cloud-independent-auditor-1616z/G3-TAIL-BIN-HAND-REVIEW.md)
+use one actual positive-clock event for all budgets/horizons, including
+the original random clockCover. Actual correlated calendar attachment
+remains the next source bridge.
+
+[The distinct residual-lumped source adapter](RESIDUAL-SOURCE-PREFIX.md)
+is now preserved at `2e33daa`, with an unchecked nine-report Lean draft.
+It derives the original residual rule from the SAME source iterations and
+common subprobability, while keeping normalized conditioning separate.
+Independent review and actual compiler execution remain pending. The [restart pointer](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md)
 records actual resumed ownership and preservation steps.
