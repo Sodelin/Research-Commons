@@ -140,3 +140,28 @@ and [root-block bound](../2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-R
 These strengthen the original assessment of a substantial integration day.
 They do not replace an endpoint proof or establish general G3/G4,
 full G5/G6 assembly, or practical whole-domain accuracy.
+
+## Source-level advances through 21:13 UTC
+
+[Independent backend hand review](../2026-10-07-cloud-independent-auditor-1616z/RATIONAL-BANKS-AND-ANCESTRAL-COMPLETION-HAND-REVIEW.md)
+now connects rational approximation to the actual physical rates, holding
+probabilities, once-drawn COMMON registers and current-owner INDEPENDENT
+pulses. It also verifies the rational ancestral endpoint formula while
+leaving real waiting ages rate-dependent. These are concrete advances toward
+an implementable source calculation; new Lean/executable correspondence is
+still owed. The [actual cut-refinement hand proof](../2026-10-07-cloud-independent-auditor-1616z/G3-ACTUAL-CUT-REFINEMENT-HAND-SOURCE-REVIEW.md)
+addresses the chronological last-cut extension using the same actual clocks.
+
+G4 moved beyond exclusions to a [reviewed actual unequal-ratio source-family construction](../2026-10-07-cloud-independent-auditor-1616z/G4-ACTUAL-UNEQUAL-LEADING-FAMILY-HAND-REVIEW.md)
+for its stated leading equations and positive gaps. Higher-order/full-target
+conditions still prevent calling original G4 solved. Practical
+[finite A](../2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-FINITE-A-COMPARISON-HAND-REVIEW.md)
+and [tied-B](../2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-TIED-B-PROPAGATION-HAND-REVIEW.md)
+comparisons are accepted; the separate all-nine quantitative assembly awaits
+review and does not yet offer a useful sampling guarantee.
+
+This strengthens the assessment of substantial source assembly and research
+progress in this session. It still differs from completing G1 or the timed
+G2 endpoint: the general G5/G6 Lean endpoint and original open G3/G4 questions
+remain unfinished. The new 155-module run is pending, not another verified
+milestone yet.

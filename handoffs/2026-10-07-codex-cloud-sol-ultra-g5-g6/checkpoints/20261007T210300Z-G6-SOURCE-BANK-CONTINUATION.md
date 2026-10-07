@@ -108,3 +108,42 @@ continue the independent calendar, solver and source-specific hand reviews.
 The full G6 Lean endpoint, full G5 assembly, general G3/G4 and useful
 whole-domain practical precision remain open. No saved checkpoint proves
 ongoing execution after an active task ends.
+
+## Reconciliation at 21:13 UTC
+
+The sole actual successor is now
+[run 37686869938](https://github.com/Sodelin/Research-Commons/actions/runs/37686869938),
+frozen `4326757c25feb53cf1e48b245294d5fd7eabd930`, created 21:05:17 UTC.
+The [actual dispatch/readback receipt](../../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/dispatches/g6-run-37686869938.json)
+is published at `133fb40`. Runtime and source-stage execution began; no
+terminal result is claimed. Requested counts remain 155 modules / 242
+named reports. [ResidualProgram source review](../../../research/2026-10-07-cloud-independent-auditor-1616z/RESIDUAL-PROGRAM-DRAFT-SOURCE-REVIEW.md)
+is canonical at `2588ddc`; its acceptance preceded the frozen dispatch.
+
+The [actual cut-refinement review](../../../research/2026-10-07-cloud-independent-auditor-1616z/G3-ACTUAL-CUT-REFINEMENT-HAND-SOURCE-REVIEW.md)
+is now canonical at `9a5e24b`. G3 subsequently saved new uncompiled renewal
+and calendar-context bodies, outside the current frozen build.
+The [three numerical-backend hand reviews](../../../research/2026-10-07-cloud-independent-auditor-1616z/RATIONAL-BANKS-AND-ANCESTRAL-COMPLETION-HAND-REVIEW.md)
+are canonical at `2588ddc`: actual holding/rate comparison, correct
+COMMON/INDEPENDENT inheritance comparison and the rate-free ancestral
+endpoint formula. A [separate nine-body ancestral Lean draft](../../../research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/AncestralRateFree.lean)
+is saved `c80c346`, SHA `8c524953e0870bb681c5ac37b6c811a786e920a5eac722c73ae42116a697b30d`,
+review pending and uncompiled. None is silently added to the current job.
+
+G4's [actual unequal-ratio leading-family existence](../../../research/2026-10-07-cloud-independent-auditor-1616z/G4-ACTUAL-UNEQUAL-LEADING-FAMILY-HAND-REVIEW.md)
+now has canonical hand acceptance at `2588ddc`; higher-order/full-target
+conditions remain open. The [finite A comparison](../../../research/2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-FINITE-A-COMPARISON-HAND-REVIEW.md)
+and [tied-B bound](../../../research/2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-TIED-B-PROPAGATION-HAND-REVIEW.md)
+are also canonically hand accepted. The practical lane's separate
+[all-nine assembly](../../../research/2026-10-07-cloud-practical-nine-error-certificate-2109z/NINE-ERROR-CERTIFICATE.md)
+at `a5456ed` is pending review: its proposed sufficient mean distance
+2^−80 improves the old 2^−512 theoretical bound, but its sampling guarantee
+is still unusable and no actual useful widths or data admission follow.
+
+The [physical-rate provider lookup](../../../research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/PHYSICAL-RATE-BANK-LOOKUP.md)
+is published at `507b925`. Its alternative direct exponential-clock
+coupling is explicitly a proposal, not a newly inherited or compiled
+whole-history perturbation theorem. Root's source-bank work and all lane
+artifacts remain preserved on main. Next: authenticate the actual terminal,
+repair any failed translations, and continue Γ-to-finite-history/backend
+assembly while keeping the complete endpoint register open.

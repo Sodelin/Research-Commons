@@ -72,7 +72,7 @@ This is the current successor of the historical startup register; the [startup A
 | Exact source/observation/target contract | Frozen original contract and accepted nonplanar hand review | Maintain arbitrary real hidden parameters, one shared source bank and separate mechanisms |
 | Finite common-subprobability/scaled domination | FiniteProbability PASS and full selected 51-declaration audit | Reuse in connected downstream master |
 | Actual conditioned count/source proxy and joint readout | Conditioning + SourcePrefix + same-register ProgramPrefix, including sum-of-deficits state/joint-TV budgets, PASS | Connect to the full master; retain normalized/residual distinction |
-| Positive Taylor tail, rational certificate/effective termination | Taylor/source bounds PASS; RationalCertificate 17 named reports now prove least-cutoff termination and coefficient correspondence at supplied rational means; Python controls and hand/code review preserved | MeanEnclosure now passes; [upper-mean common-history composition](UPPER-MEAN-COMMON-HISTORY.md) has [hand/source review](../2026-10-07-cloud-independent-auditor-1616z/UPPER-MEAN-COMMON-HISTORY-HAND-SOURCE-REVIEW.md), with its draft still uncompiled. [Physical-rate-bank comparison](RATIONAL-RATE-BANK-COMMON-LAW.md) is a new hand candidate. Effective input admission, executable correspondence and outer all-source tables remain open |
+| Positive Taylor tail, rational certificate/effective termination | Taylor/source bounds PASS; RationalCertificate 17 named reports now prove least-cutoff termination and coefficient correspondence at supplied rational means; Python controls and hand/code review preserved | MeanEnclosure now passes; [upper-mean common-history composition](UPPER-MEAN-COMMON-HISTORY.md) has [hand/source review](../2026-10-07-cloud-independent-auditor-1616z/UPPER-MEAN-COMMON-HISTORY-HAND-SOURCE-REVIEW.md), with its draft still uncompiled. [Physical-rate/inheritance-bank and ancestral endpoint formulas](../2026-10-07-cloud-independent-auditor-1616z/RATIONAL-BANKS-AND-ANCESTRAL-COMPLETION-HAND-REVIEW.md) now have source-specific hand acceptance. Effective input admission, executable correspondence and outer all-source tables remain open |
 | Contextual genuine positive-chain approximation/reconstruction | Accepted G6 Appendix A plus reviewed [COMMON contextual/effective constructor](../2026-10-07-cloud-g3-contextual-source-1716z/README.md); Lean open | Formal COMMON/INDEPENDENT, all entering forests/all finite caps, source-faithful physical chains |
 | Cut guards, fixed endpoints and actual timed-bin lift | BinHistory, HistoryPrefix, BinFold, actual BinClock and finite-tag actual-tree decoder PASS with complete owned inventory; inherited timed source context passed | Literal-prefix collapse now passes with eight named reports in run37680262815. Compile the source-reviewed actual correlated calendar/tail principal-law derivatives; complete timed cut-refinement and joint observation assembly |
 | RAW NONPLANAR admission, core and target preservation | Accepted all-size hand extension | Connected source/bridge/component/switching proofs |
@@ -190,3 +190,15 @@ result is claimed. The [rational physical-rate-bank candidate](RATIONAL-RATE-BAN
 adds a separate comparison of the actual holding and merger probabilities;
 it is awaiting review. Initial-register/routing approximation, executable
 tables and full G6 assembly are still separate.
+
+At 21:13 UTC the single reviewed successor [37686869938](https://github.com/Sodelin/Research-Commons/actions/runs/37686869938)
+is running at frozen `4326757`, requesting 155 custom modules / 242 named
+reports. The [dispatch receipt](verification/dispatches/g6-run-37686869938.json)
+is durable; no terminal outcome is inferred. The [canonical backend hand review](../2026-10-07-cloud-independent-auditor-1616z/RATIONAL-BANKS-AND-ANCESTRAL-COMPLETION-HAND-REVIEW.md)
+accepts the separate [rate](RATIONAL-RATE-BANK-COMMON-LAW.md),
+[inheritance](RATIONAL-INHERITANCE-COMMON-LAW.md) and
+[ancestral endpoint](RATE-FREE-ANCESTRAL-COMPLETION.md) source formulas.
+Their implementation/executable and timed-readout obligations remain separate;
+the new [ancestral proof draft](proof-drafts/AncestralRateFree.lean) is outside
+this frozen build. [Current restart checkpoint](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/checkpoints/20261007T210300Z-G6-SOURCE-BANK-CONTINUATION.md)
+links the exact reviewed scope and subsequent source drafts.
