@@ -11,4 +11,8 @@ The [canonical independent review](https://github.com/Sodelin/Research-Commons/b
 
 No contextual source simulation, finite-bank replay, graph catalogue, numerical evaluation or new formal proof was performed for this review. The scalar G3 declaration's genuine earlier Lean PASS is a separate receipt. Current timed-bin graph/observation correspondence and connected global effective/statistical consumers remain formal debts. Original general G3 remains open.
 
-Any later effective numeric constructor is a separate continuation: this verdict does not pre-accept its algorithm, computability hypotheses or numerical source witness.
+## Subsequent independent effective-constructor review
+
+The independent auditor separately read [EFFECTIVE-ONE-BANK-CONSTRUCTOR.md](EFFECTIVE-ONE-BANK-CONSTRUCTOR.md), SHA256 `28f7fc83c4a21153740ffff253c8a87f9f9aec1f3b44bcd38d955491d8477c45`, and returned **HAND ACCEPT**. The finite positive integer tuple pool contains a strict solution, so fair strict-gap dovetailing terminates without real equality/ceiling calls. The same COMMON-bit/extra ordinary-hazard coupling gives the full-forest parameter bound. Rational approximation once per bank and exact additive baseline allocation preserve the one positive physical source, endpoint ages and displayed target with error η+τ.
+
+This separate acceptance requires supplied computable strict coefficient presentations; algebraic physical-rate output specifically requires supplied algebraic baseline HAZARD and endpoint ages. It does not restrict original arbitrary hidden source reals, extract coefficients from observations, produce a numeric witness or pre-accept the later algebraic-input boundary consequence. The canonical independent addendum is being preserved separately; this records the actual received verdict while retaining the exact reviewed payload.
