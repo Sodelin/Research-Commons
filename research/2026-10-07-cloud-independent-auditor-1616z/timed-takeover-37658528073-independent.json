@@ -1,0 +1,2279 @@
+{
+  "schema": "independent-timed-takeover-authentication-v1",
+  "run": {
+    "conclusion": "success",
+    "createdAt": "2026-10-07T17:22:15Z",
+    "databaseId": 37658528073,
+    "headSha": "849757a968ea29e215c569b16bf3ca6d15af6abc",
+    "jobs": [
+      {
+        "completedAt": "2026-10-07T17:34:09Z",
+        "conclusion": "success",
+        "databaseId": 112919781827,
+        "name": "verify",
+        "startedAt": "2026-10-07T17:22:19Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Fetch frozen public input",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Authenticate existing pinned runtime",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify timed G5 G2 and G6 selected closure serially",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve actual success and failure evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 6,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37658528073/job/112919781827"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-10-07T17:34:09Z",
+    "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37658528073"
+  },
+  "log_sha256": "62c33652dba51d45f2f9b1f9fbf7d33543a44ac7460545b0278c74606f67c292",
+  "payloads": {
+    "G5_TAKEOVER_INPUTS": {
+      "file": "SOURCE-CONTEXT.json",
+      "bytes": 97468,
+      "sha256": "e165eab8a20daddbd1f59160b9edc0de93181d85c2a55b485803f586f04a209e",
+      "encoding": "gzip+base64",
+      "independent_log_recovery": true,
+      "author_bytes_equal": true
+    },
+    "G5_TAKEOVER_MODULE_RESULTS": {
+      "file": "module-results.json",
+      "bytes": 44158,
+      "sha256": "c37e4fa5a4b80d4287c805118944ac2b71bd3d83b6f46ea0e89c72dd97410369",
+      "encoding": "gzip+base64",
+      "independent_log_recovery": true,
+      "author_bytes_equal": true
+    },
+    "G5_TAKEOVER_COMPLETE_AUDIT": {
+      "file": "AUDIT-OWNED.json",
+      "bytes": 5871075,
+      "sha256": "bde5e55bd8323c38a3400ceef4ae49b7510ef4357a5f699395b3245e5b22f420",
+      "encoding": "gzip+base64",
+      "independent_log_recovery": true,
+      "author_bytes_equal": true
+    },
+    "G5_TAKEOVER_BUILD_RECEIPT": {
+      "file": "BUILD-RECEIPT.json",
+      "bytes": 47065,
+      "sha256": "cf97fc2f6579bf5f42a8c489ba9ade751a2ea2802a195739842f26d98597a431",
+      "encoding": "gzip+base64",
+      "independent_log_recovery": true,
+      "author_bytes_equal": true
+    }
+  },
+  "command_count": 178,
+  "zero_exit_commands": 178,
+  "selected_source_count": 170,
+  "selected_source_checks": [
+    {
+      "module": "SourceNetwork",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceNetwork.lean",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7"
+    },
+    {
+      "module": "G2LiveLineageRouting",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G2LiveLineageRouting.lean",
+      "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af"
+    },
+    {
+      "module": "SourceLabelledForest",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceLabelledForest.lean",
+      "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d"
+    },
+    {
+      "module": "SourceForestKingmanProjection",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceForestKingmanProjection.lean",
+      "sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0"
+    },
+    {
+      "module": "SourceForestKingmanPopulationProjection",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceForestKingmanPopulationProjection.lean",
+      "sha256": "e8733ab8e66c60f98cfcfcd56e703b55a5ad8674dc5361f4ac6cb0c35f80f6e4"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestSilentPruning",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestSilentPruning.lean",
+      "sha256": "86f61cc8ce06af574ee98b37db0ecd7c8cbc2df99e495ce1b9a66605ea8fb5c2"
+    },
+    {
+      "module": "G2FaithfulPairAgeDecoration",
+      "source": "research/2026-10-06-dot-g2-faithful-pair-age-foundation-2315z/source/G2FaithfulPairAgeDecoration.lean",
+      "sha256": "c82708abcdae2e3e174f245dccca811881b5149f1acb69b12700850b307b5735"
+    },
+    {
+      "module": "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteGenealogyEncoding.lean",
+      "sha256": "3d862f8d9f9a43aed6324954ebea749001fd2b221dd90dd7d58cf4e4419fbcac"
+    },
+    {
+      "module": "UnifiedLean.Source.FiniteSourceSnapshot",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteSourceSnapshot.lean",
+      "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744"
+    },
+    {
+      "module": "GraphLeaves",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphLeaves.lean",
+      "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b"
+    },
+    {
+      "module": "GraphCuts",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphCuts.lean",
+      "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5"
+    },
+    {
+      "module": "G5BridgeBarrier",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeBarrier.lean",
+      "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77"
+    },
+    {
+      "module": "G5CalendarRoutes",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CalendarRoutes.lean",
+      "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd"
+    },
+    {
+      "module": "G5ProtectiveBlock",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ProtectiveBlock.lean",
+      "sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9"
+    },
+    {
+      "module": "G5MinimalGraphInterface",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5MinimalGraphInterface.lean",
+      "sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281"
+    },
+    {
+      "module": "G6BridgeCannotEnterHybrid",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G6BridgeCannotEnterHybrid.lean",
+      "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e"
+    },
+    {
+      "module": "G5BridgeComponentEntries",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeComponentEntries.lean",
+      "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6"
+    },
+    {
+      "module": "G5NonbridgeRouteBound",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5NonbridgeRouteBound.lean",
+      "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525"
+    },
+    {
+      "module": "G5ComponentCalendarCoverage",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ComponentCalendarCoverage.lean",
+      "sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10"
+    },
+    {
+      "module": "G5ActualComponentSupport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ActualComponentSupport.lean",
+      "sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7"
+    },
+    {
+      "module": "G5RootRouteCurrentSupport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5RootRouteCurrentSupport.lean",
+      "sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554"
+    },
+    {
+      "module": "G5CurrentPortTwoPositions",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CurrentPortTwoPositions.lean",
+      "sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9"
+    },
+    {
+      "module": "G5OriginalTipCurrentSupport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalTipCurrentSupport.lean",
+      "sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2"
+    },
+    {
+      "module": "G5ParentChoiceCalendar",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentChoiceCalendar.lean",
+      "sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9"
+    },
+    {
+      "module": "G5CoupledQuartetKernel",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CoupledQuartetKernel.lean",
+      "sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1"
+    },
+    {
+      "module": "G5FairSelectorMoments",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairSelectorMoments.lean",
+      "sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f"
+    },
+    {
+      "module": "G5FairOriginalCoinLaw",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairOriginalCoinLaw.lean",
+      "sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e"
+    },
+    {
+      "module": "G5OriginalCoinPMF",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalCoinPMF.lean",
+      "sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1"
+    },
+    {
+      "module": "G5ParentPositionPushforward",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentPositionPushforward.lean",
+      "sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db"
+    },
+    {
+      "module": "G5SafePastHybridDisjointness",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastHybridDisjointness.lean",
+      "sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97"
+    },
+    {
+      "module": "G5PairOnlySureBlockChronology",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5PairOnlySureBlockChronology.lean",
+      "sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b"
+    },
+    {
+      "module": "G5SafePastMeetingPermanence",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastMeetingPermanence.lean",
+      "sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e"
+    },
+    {
+      "module": "G5ExponentialGermIdentification",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ExponentialGermIdentification.lean",
+      "sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0"
+    },
+    {
+      "module": "G5UnknownRateSupport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5UnknownRateSupport.lean",
+      "sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93"
+    },
+    {
+      "module": "G5OriginalRouteHazard",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalRouteHazard.lean",
+      "sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a"
+    },
+    {
+      "module": "G4TwoRootSourceStopping",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4TwoRootSourceStopping.lean",
+      "sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d"
+    },
+    {
+      "module": "G1SharedRegisterStress",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G1SharedRegisterStress.lean",
+      "sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db"
+    },
+    {
+      "module": "G4FourRootPositivity",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4FourRootPositivity.lean",
+      "sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa"
+    },
+    {
+      "module": "G4IndependentRoutingBridge",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4IndependentRoutingBridge.lean",
+      "sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b"
+    },
+    {
+      "module": "G4AllRootPairClocks",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4AllRootPairClocks.lean",
+      "sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744"
+    },
+    {
+      "module": "G4PathResolvedMeasurement",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4PathResolvedMeasurement.lean",
+      "sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9"
+    },
+    {
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeParentRouting.lean",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6"
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativePairClockLaw.lean",
+      "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae"
+    },
+    {
+      "module": "UnifiedLean.Source.UniformizedSourceStep",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/UniformizedSourceStep.lean",
+      "sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c"
+    },
+    {
+      "module": "G2SourceGraftDecoration",
+      "source": "research/2026-10-06-dot-g2-source-graft-source-preservation-2357z/G2SourceGraftDecoration.lean",
+      "sha256": "c8da578dde3fdf049e4075a39292979bbb5936bd9c754d743072420a91c07ddd"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestGeneratorIntertwining.lean",
+      "sha256": "b186f0d381b0e62078d887f90ce46ecbe91def99ec66ec51c98053b9d60c0f28"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestIntrinsicGenerator.lean",
+      "sha256": "b282351bf116ae756c7e9c6ee1e3cbace41a8d753b47cac7e53c4a918c82d16f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceStepGeneratorBinding.lean",
+      "sha256": "8021b8bddcc5cd070185843ca5454dfb289572a2592854efbbdd9e41d48396d0"
+    },
+    {
+      "module": "UnifiedLean.Source.MatrixProjectionExponential",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/MatrixProjectionExponential.lean",
+      "sha256": "870438089e6cf05dd93761172ea1bf6b2aa96654708e97b9d348e0dfcb44dfa2"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFiniteProjection",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFiniteProjection.lean",
+      "sha256": "09398c920468ba6ead16b523cecd9f86e7648e7063602256ee4634385df1cab3"
+    },
+    {
+      "module": "UnifiedLean.Source.SourcePoissonKernel",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourcePoissonKernel.lean",
+      "sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceGeneratorExponential",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceGeneratorExponential.lean",
+      "sha256": "f761ddf2f5efb9906ec8f841567d02fae946cce763260f238834a147090e461d"
+    },
+    {
+      "module": "UnifiedLean.Source.SourcePoissonExponential",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourcePoissonExponential.lean",
+      "sha256": "463eb0e4a9cd9307898eface172100183b8ac9d412c1389a2c5b9ad4981c2d9a"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochSemigroup",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochSemigroup.lean",
+      "sha256": "845739bc6b110eadd611e0133906ec3f9b036d66f17902f46885c660213b179f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompatibility",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompatibility.lean",
+      "sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestPulseTransport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseTransport.lean",
+      "sha256": "8e1a3d62afab25247dd3a281d30f7dc20db1949ea1b589c2d77980b3b48874f1"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestPulseMeasure",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseMeasure.lean",
+      "sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestCommonPulse",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestCommonPulse.lean",
+      "sha256": "cac1082f66a84b943dbc8ba9f2e8082ce12bbb42a4b1503e31722597b0faa138"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryKernels",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryKernels.lean",
+      "sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryProjection",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryProjection.lean",
+      "sha256": "f1cb1e557b5f08cba2d37465bc4386bc6adc2f19fd12a132f7d6f835b1e24f0f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceProgramTransport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceProgramTransport.lean",
+      "sha256": "d009fdfc510bfcaffaeea3bc241401eaf2996178ff4b82376eb22f1e49387831"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompiler",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompiler.lean",
+      "sha256": "9974446d99fa344593d294e315e349ab71fdbe7574e932bb8b1a16ee1b2369fd"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryLocations",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryLocations.lean",
+      "sha256": "f7c050056e121c7e0e12eb071383cb1369e8fe9de887d7ad875a76904d48de5b"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarTiming",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarTiming.lean",
+      "sha256": "5e534089f17dc7d9ab40338cb0ca75789e0951bb6b5893ba24d514b8cd07d4f8"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarPhysicalSupport.lean",
+      "sha256": "e725dd61c850d3f5f92925c0de08122dd25f9d1660d9264d1ac47eb4d2bc88bf"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceInitializedCalendar",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceInitializedCalendar.lean",
+      "sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceActualHoldingClocks",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceActualHoldingClocks.lean",
+      "sha256": "498417275660b696c24f4c8cd83d84532a96f14b82f35bc3e49217c154e8c677"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFirstMergerMark",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFirstMergerMark.lean",
+      "sha256": "2bc08f45d7ea76476f6fe485cdce68293a3d44cbc3b2aa108b6b45ce5d1182d1"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFirstMarkDistribution",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFirstMarkDistribution.lean",
+      "sha256": "abd6230f1155ab6cf73bf3d4b55bbe04df408ca73caee81a8807b15b17e9ad29"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialRace",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialRace.lean",
+      "sha256": "d979f1bf3bbbac3eb3c396991a513a3624f310bf03273890e13c6d5029931afe"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialRaceDensity",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialRaceDensity.lean",
+      "sha256": "3fa36827b3553923fa1c1d48db4b2823c7b53e589696c3a1476f9aac8f760c29"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialResiduals",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialResiduals.lean",
+      "sha256": "8861858b9309fd43e22424382c1f1513111514ef792354c7cf4b48a0ae4b19e7"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceWinningClockReset",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceWinningClockReset.lean",
+      "sha256": "7a831640fec35d92f99e65e6f98e2874602fb5b040ff6b112c16b77a271f2038"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceMergerClockCatalogue",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceMergerClockCatalogue.lean",
+      "sha256": "147da19d2d89135e00c140b3a7a88cd3d53271954e5752a23e5e0ff30376a147"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceDestinationClockReset",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceDestinationClockReset.lean",
+      "sha256": "ec910abde269d665081f7c064b6567f45fca58ba26e183ab29e21037fb84344a"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochRenewal",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochRenewal.lean",
+      "sha256": "5035fb830ed695b7aac5525c28f24d528be3c1b9a2c2c6f831f23b3cc6692bef"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFiniteJumpExpansion",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFiniteJumpExpansion.lean",
+      "sha256": "6a14b2de7bcdf28ae3293a23adde3234da7adb5dd503cfd007b711f1a52d786b"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceRaceWinnerSelection",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceRaceWinnerSelection.lean",
+      "sha256": "ad882b44f7fd97f5ac7e5b7e125cce7e7f6640c065ff616f08c85b26dd9d4caf"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceLiteralClockEndpoint",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceLiteralClockEndpoint.lean",
+      "sha256": "2f2f39f1ea044932788b412d32e3454bf8ff1ff1d65f48431e975352fbc9e7ba"
+    },
+    {
+      "module": "G2LiteralMarkedClockTrace",
+      "source": "research/2026-10-06-dot-g2-marked-clock-extension-0903z/G2LiteralMarkedClockTrace.lean",
+      "sha256": "c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a"
+    },
+    {
+      "module": "G2ActualDecorationFold",
+      "source": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ActualDecorationFold.lean",
+      "sha256": "8ca5f51130da2c7b513e70cd0b0d93a22fe9c4e706a63b590cab5407258f55be"
+    },
+    {
+      "module": "G2DecorationMeasurability",
+      "source": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2DecorationMeasurability.lean",
+      "sha256": "a016097f843583052f5c2b8a4c19899cb97d78052779c4771e22aa9603104338"
+    },
+    {
+      "module": "G2MarkedTraceRenewal",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceRenewal.lean",
+      "sha256": "edbabf47f1429b8747c5d49a7d00d2762ad47ece635dfe00f1c59280a0b29603"
+    },
+    {
+      "module": "G2LiteralEpochLaw",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2LiteralEpochLaw.lean",
+      "sha256": "9020ef5baaf8955097e69efac86b552cf80540211125d8f215bf1ca0bcecba7a"
+    },
+    {
+      "module": "G2ActualCalendarTrace",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualCalendarTrace.lean",
+      "sha256": "cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEmbeddedJumpLaw.lean",
+      "sha256": "560f2174634b137eca95c83616b2b50a4e7671f51cfd62c275a7f7c206890d37"
+    },
+    {
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeIndependentPairMixture.lean",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceNaturalInitialization",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalInitialization.lean",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralCompletion",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralCompletion.lean",
+      "sha256": "da44afa6b8039afb1f90128af2f1b62234f3dfd0197ef9399c52873bf865caa5"
+    },
+    {
+      "module": "G2FiniteAncestralTrace",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteAncestralTrace.lean",
+      "sha256": "00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a"
+    },
+    {
+      "module": "UnifiedLean.Source.UnrankedGenealogyObservation",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/UnrankedGenealogyObservation.lean",
+      "sha256": "1ee536501f1fc77c70eb9098af054ecf2a2c8cbdd9aef4375bd5cdda10ca73c8"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCompletedUnrankedTree",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletedUnrankedTree.lean",
+      "sha256": "a3f28f51080370eeb6d625685f89927ca983c00ab6ac6739533c20754e60f06b"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralDrift",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralDrift.lean",
+      "sha256": "258fa001910c1e483b782be4d7a01d239ebc5f53dda8f00348239643fdb88725"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralAbsorption",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralAbsorption.lean",
+      "sha256": "07b0d22fe372b38a1dd0e1256e0f328901ff74feb9a172a6748a19b903e06061"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCompletionHarmonic",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletionHarmonic.lean",
+      "sha256": "5a15f085181e1f6f514d629db289db4a11d6b91032267ecf73a795b0a4f1bfd0"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEventualCompletionLimit",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEventualCompletionLimit.lean",
+      "sha256": "0c886c979caa8725b7babd734c3bfabd5842c4aa065bd8886ce4a8abc24a33cd"
+    },
+    {
+      "module": "G2AncestralTraceSourceLaw",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2AncestralTraceSourceLaw.lean",
+      "sha256": "641cf1285ad10ec18dab7a42d207147afb964485924912b9d53aee428927436a"
+    },
+    {
+      "module": "G2CompleteCalendarAttachment",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CompleteCalendarAttachment.lean",
+      "sha256": "aa34dd0dfc6f4d5b33b764f801eade71b3380e024f5bbfcf8549b508e0d5d40f"
+    },
+    {
+      "module": "G2LiteralCutResidual",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2LiteralCutResidual.lean",
+      "sha256": "e09e93c3ef68ea8b25ff72008a37306bfb8d0c2a8ef2b7082eb5c841fb8f1011"
+    },
+    {
+      "module": "G2MarkedTraceCuts",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceCuts.lean",
+      "sha256": "aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699"
+    },
+    {
+      "module": "G2MarkedTraceBudgetStability",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceBudgetStability.lean",
+      "sha256": "6c8f1abb65ac251e0e5ad610d63a51d39b238c9d0ae7b33d5d709e3e8a2c4fea"
+    },
+    {
+      "module": "G2SameClockContinuation",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockContinuation.lean",
+      "sha256": "9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6"
+    },
+    {
+      "module": "G2HistoryResidualAttachment",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2HistoryResidualAttachment.lean",
+      "sha256": "3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298"
+    },
+    {
+      "module": "G2CutFutureSourceBinding",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutFutureSourceBinding.lean",
+      "sha256": "b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190"
+    },
+    {
+      "module": "G2SameClockPastFutureLaw",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockPastFutureLaw.lean",
+      "sha256": "bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930"
+    },
+    {
+      "module": "G2EpochHistoryReadout",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochHistoryReadout.lean",
+      "sha256": "f3d6598cff77c87219efb74e9a361b3ac7c92c35862d2d259932e6f4f5b904d7"
+    },
+    {
+      "module": "G2CompleteAncestralPath",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CompleteAncestralPath.lean",
+      "sha256": "42ef05e829cb750a88c4ae5abe57db6c927fb5b7467921998ba1e02c2dc013f0"
+    },
+    {
+      "module": "G2ChronologicalPathReadout",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ChronologicalPathReadout.lean",
+      "sha256": "99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473"
+    },
+    {
+      "module": "G2CalendarDecoration",
+      "source": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2CalendarDecoration.lean",
+      "sha256": "9b2458b78813186151e5d5eb2cf7bd9a3a134e39e0de8de6e59cac6d2a6936b6"
+    },
+    {
+      "module": "G2CompleteDecoration",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2CompleteDecoration.lean",
+      "sha256": "ffc80b41844871b945b78a4d7b5887121ca2b3691ad985d6b8ff29c14d8fe963"
+    },
+    {
+      "module": "G2PairBirthFold",
+      "source": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2PairBirthFold.lean",
+      "sha256": "cb0697ca4832343c933b31593553c658e839648968441900a01cc556635512f3"
+    },
+    {
+      "module": "G2ClockBoundaryNull",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ClockBoundaryNull.lean",
+      "sha256": "f0ed787fd7f9135024b4f5300120699b358cbea0b6adb9b6124a386448ee1982"
+    },
+    {
+      "module": "G2WholeMatrixAges",
+      "source": "research/2026-10-07-dot-g2-strict-clock-compatibility-0645z/G2WholeMatrixAges.lean",
+      "sha256": "2c4a38c22a4fb6efa569796749eec7b00c3affd8ee1a57e33144a1bc893026b8"
+    },
+    {
+      "module": "G2ChronologicalDecoration",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2ChronologicalDecoration.lean",
+      "sha256": "5fca3f67c6f7021084b20214c032afb90777fe61134df0105a2a0600c89ae113"
+    },
+    {
+      "module": "G2StrictClockDecoration",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2StrictClockDecoration.lean",
+      "sha256": "cac04040f92e143008996ee4761a7e51e1dc0b27b1735f0768eeef97200f2fa8"
+    },
+    {
+      "module": "G2OriginalProgramSafety",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2OriginalProgramSafety.lean",
+      "sha256": "90299b14c00de553311c139ea68e8154b127fbf75f91e4728efad131b1f8d471"
+    },
+    {
+      "module": "G2TimedBoundMeasurability",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2TimedBoundMeasurability.lean",
+      "sha256": "b269de25ed1af29edec928382d0452e62d2cd84c5f70c36cde808ea61ec8543f"
+    },
+    {
+      "module": "G2CutResidualSourceMixture",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutResidualSourceMixture.lean",
+      "sha256": "6b13e51479edf4409fa09167f1c83065ed7a4952650c28da5d78192105b6cc0a"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceNaturalCompletedLimit",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalCompletedLimit.lean",
+      "sha256": "182b8694bea7594102468caa1009046668198f67fe67f8d67bf89bf1ce4604e5"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCopyCarrierTransport",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCopyCarrierTransport.lean",
+      "sha256": "09d3d2dcb27d49cb1f85a8e78a5dfc385778a0c885b5a9e42f445246cc3bf966"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceSmallCarrierGenerator",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceSmallCarrierGenerator.lean",
+      "sha256": "b85c1308c6206d377aca54b2073088e39250b57abac7df8c628f100189546106"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierEpoch",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierEpoch.lean",
+      "sha256": "d62727cc73f62775f43c83cb882602fcb55e2757123b0ba126d6feffe497d725"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceSmallCarrierPulse",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceSmallCarrierPulse.lean",
+      "sha256": "e33e4751b9b8d665aaf18074f4d3430f0f13d7b5e67a90ec96ec229a14fb7f20"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierBoundary",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierBoundary.lean",
+      "sha256": "c3d453eb58dcf0a21f06acc4513428cb9d6ff31093a73e9a284b992531514308"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierProgram",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierProgram.lean",
+      "sha256": "bc26f80643ff737bd3a4dcda630631584b0166b2905b3cb48fd876c08fe5489a"
+    },
+    {
+      "module": "G2SourceFiniteHistory",
+      "source": "research/2026-10-06-dot-g2-source-finite-history-checkpoint-2141z/G2SourceFiniteHistory.lean",
+      "sha256": "1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5"
+    },
+    {
+      "module": "G2ActualEpochHistoryLaw",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualEpochHistoryLaw.lean",
+      "sha256": "e106b912721336831c3392d3cf5414cf20b43765b73c5c6cc31b83dec7d69be2"
+    },
+    {
+      "module": "G2EpochPathProjection",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochPathProjection.lean",
+      "sha256": "04abbc6e6efdde07f651a706092014b14c542b7386037d3715cecbf61b1d21e8"
+    },
+    {
+      "module": "G2ActualSegmentPathLaw",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualSegmentPathLaw.lean",
+      "sha256": "9581cf8c75982bbfd3a47f300a97a865c1fe140efd946ffce464fe25344e60ca"
+    },
+    {
+      "module": "G2FiniteFibreTransport",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteFibreTransport.lean",
+      "sha256": "fc8b772af83a6140bff8dbc6253b50820e5c6bbf7ce0262d2211919f039b16ea"
+    },
+    {
+      "module": "G2CalendarHistoryBinding",
+      "source": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CalendarHistoryBinding.lean",
+      "sha256": "8827842d77dc5749d6db4114ef24d34cf85779a545628879a6ba6eaf3681b796"
+    },
+    {
+      "module": "G2CalendarPathProjection",
+      "source": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2CalendarPathProjection.lean",
+      "sha256": "af8a56136b53dafdb99b77de1f3e5ecdd5a5a6e7a70b39657650f9a364bd52c6"
+    },
+    {
+      "module": "G2CompletedCalendarPathLaw",
+      "source": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2CompletedCalendarPathLaw.lean",
+      "sha256": "684487a6e3816a13a3b03b40550873fbfa7e3c920b1854e41f9951b17aba2a30"
+    },
+    {
+      "module": "G2ChronologicalGluing",
+      "source": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ChronologicalGluing.lean",
+      "sha256": "ca1b9f05a5f87556eb9a9dca93d160409a735d934d17d7c04e3ad0324520bfff"
+    },
+    {
+      "module": "G2ActualChronologicalPathLaw",
+      "source": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2ActualChronologicalPathLaw.lean",
+      "sha256": "a4a018b7eb33f2cb0bd12e70b0c16d0664c8de26a4d87c0eab046d2bf47d6a18"
+    },
+    {
+      "module": "G2EventualPathReadout",
+      "source": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2EventualPathReadout.lean",
+      "sha256": "14e0ef3bb6ff1c45875092e6a474063178fe78977f24c0dfdb055887693690eb"
+    },
+    {
+      "module": "G2ActualPairCoalescence",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2ActualPairCoalescence.lean",
+      "sha256": "991ce81e7de2a9012bdb9aa311cb3fbc8cfcbda39843af725c0fdd09617d261d"
+    },
+    {
+      "module": "G2CalendarPairSupport",
+      "source": "research/2026-10-07-dot-g2-actual-calendar-pair-support-0456z/G2CalendarPairSupport.lean",
+      "sha256": "2cc04aae4479af39fa315e50d959963db84959ae11b21f40cf7608dcfd516b1c"
+    },
+    {
+      "module": "G2RationalAgeReadout",
+      "source": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2RationalAgeReadout.lean",
+      "sha256": "64c47ce766266fabb405fa51a223f16ed45b80d13c2f6dd31604fd8387a5e274"
+    },
+    {
+      "module": "G2PairBirthThreshold",
+      "source": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2PairBirthThreshold.lean",
+      "sha256": "303f43bb7b14c324d27c9cff82c7173cf08b9e97d98517d58e4dab2713bc7ca0"
+    },
+    {
+      "module": "G2AncestralPairSupport",
+      "source": "research/2026-10-07-dot-g2-matrix-and-ancestral-support-0418z/sources/G2AncestralPairSupport.lean",
+      "sha256": "964b830ccc15e18b02cc3c3d7c5e4d1f98d9c4d532cd59fb2a486289dabd0ef8"
+    },
+    {
+      "module": "G2AncestralAgeCertificate",
+      "source": "research/2026-10-07-dot-g2-actual-age-support-certificate-0723z/G2AncestralAgeCertificate.lean",
+      "sha256": "af6fcaa8a27194d676b676a4c1fc4135dd783353d8aa8e9dc42f3d2a545ecade"
+    },
+    {
+      "module": "G2ChronologicalTraceCompatibility",
+      "source": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2ChronologicalTraceCompatibility.lean",
+      "sha256": "47ac354705e6df0bbbb081852abcd48e584514a473a91a129fa6d8a9dcd3a93b"
+    },
+    {
+      "module": "G2CalendarFirstAge",
+      "source": "research/2026-10-07-dot-g2-calendar-first-age-binding-0745z/G2CalendarFirstAge.lean",
+      "sha256": "8d81c7505e95e60d10663da000754a4757b57f2eba6fde23df94c05bd4b06e6f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierNatural",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierNatural.lean",
+      "sha256": "1d4c912aade4355a65b017b7fc02cee977cf0567728cd488c97c9a6de76c439c"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceUnrankedCopyProjectivity.lean",
+      "sha256": "ef2c49cbbbd519616e29f5e213e4e0e267626423b6c951d794647d2095eab55d"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceUnrankedAllPanels",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceUnrankedAllPanels.lean",
+      "sha256": "4936fb211505d9c5961256ba4f1a4c63db0065c7c94ccadf3fcd67a320f270c3"
+    },
+    {
+      "module": "UnifiedLean.Source.OriginalFixedIDControls",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/OriginalFixedIDControls.lean",
+      "sha256": "5b32ee2edff84d6ef7c75549b55e7368380fcff9dbb3b0cd4397584746bb224d"
+    },
+    {
+      "module": "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+      "source": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/ControlledUnrankedSourceProjectivity.lean",
+      "sha256": "6ba2f40bd84c286a6281335b26e9e96efd20e10e6ab6cca5919ddbb7b8f2a5e5"
+    },
+    {
+      "module": "G2ControlledTraceAssembly",
+      "source": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2ControlledTraceAssembly.lean",
+      "sha256": "f02391f465c303efda7b11c035ed43a3f0724e8ad48a76d027cdfbe19a57519d"
+    },
+    {
+      "module": "G2RegisteredPathProjection",
+      "source": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2RegisteredPathProjection.lean",
+      "sha256": "5ea9209452a8f97971e27c431e9dba9a1edfc68f0b517909c67b0b7609add092"
+    },
+    {
+      "module": "G2OriginalAbsoluteAges",
+      "source": "research/2026-10-07-dot-g2-complete-timed-support-0858z/G2OriginalAbsoluteAges.lean",
+      "sha256": "59576fad762d0b49d55d476fedf48d4d900a6de69d6ef5bf4d009d00b936eb35"
+    },
+    {
+      "module": "G2JointTimedObservation",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2JointTimedObservation.lean",
+      "sha256": "c79e7949d340af9c5a5878ba6420f163133dd7f399a2f75cbdb698e13878ca04"
+    },
+    {
+      "module": "G2CompleteTimedSupport",
+      "source": "research/2026-10-07-dot-g2-complete-timed-support-0858z/G2CompleteTimedSupport.lean",
+      "sha256": "169d7ce5aca559aec2016f8fe50a26629b2a24d94b135885d148f78e4cecb808"
+    },
+    {
+      "module": "G2TimedDecorationPruning",
+      "source": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2TimedDecorationPruning.lean",
+      "sha256": "1cdef90418524400b3fed31ff6426afca569e1677331553972c8a8e66401e56d"
+    },
+    {
+      "module": "G2ChronologicalPruning",
+      "source": "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2ChronologicalPruning.lean",
+      "sha256": "7fb5a717568ac5c709663585ea55e994a8b98ac6e424848356024a68149c98d8"
+    },
+    {
+      "module": "G2SourcePairMatrixReadout",
+      "source": "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2SourcePairMatrixReadout.lean",
+      "sha256": "d2323c4797ac682927ab2e4008b803d701fc5ce8963a4ae0a89f9649fa7cddce"
+    },
+    {
+      "module": "G2CompleteTerminalReadout",
+      "source": "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2CompleteTerminalReadout.lean",
+      "sha256": "f7235d98732b30f3041e15d076ceb07771bd5c33879b8755550e724e0f0dfab8"
+    },
+    {
+      "module": "G2FaithfulTimedOutput",
+      "source": "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2FaithfulTimedOutput.lean",
+      "sha256": "476e2ef1e3bc0d3d14871fdde32852a310f27a4b9b36673f3e864b5d87f282ac"
+    },
+    {
+      "module": "G2LiteralTimedObservationPruning",
+      "source": "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2LiteralTimedObservationPruning.lean",
+      "sha256": "223224ab6002d510076d99da42a11f8ca1724d8266b0fc7a5cdd2d25628c31b7"
+    },
+    {
+      "module": "G2ActualTimedAllPanelLaw",
+      "source": "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2ActualTimedAllPanelLaw.lean",
+      "sha256": "05ca8311eb01110a0d01d1f12ef6fe744fef51b21f1c3592e90bad3b08f6c376"
+    },
+    {
+      "module": "G5HiddenRegisterTimedProjectivity",
+      "source": "research/2026-10-07-astra-g5-m3-7e3b/sources/G5HiddenRegisterTimedProjectivity.lean",
+      "sha256": "a7e8ae569fc51d2d0365394e4776ab83c254a488ea507d2b582367f625c4acc2"
+    },
+    {
+      "module": "G5FrozenTriplePolynomialKernel",
+      "source": "research/2026-10-07-codex-g5-lean/sources/G5FrozenTriplePolynomialKernel.lean",
+      "sha256": "ba0c611a563318de5d2310b6620cae0899c77b9ead6cf690efd82af926c746a4"
+    },
+    {
+      "module": "G5FrozenTripleAnalyticSupport",
+      "source": "research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/G5FrozenTripleAnalyticSupport.lean",
+      "sha256": "8735accdbce894200eba6bcc64f3a61c8870f3c7a24416114e6279debbb64ed5"
+    },
+    {
+      "module": "G3ApproximateMomentBarrier",
+      "source": "research/2026-10-07-cloud-g3-1619z/G3ApproximateMomentBarrier.lean",
+      "sha256": "2f354386c7e8acb103c1665400f654a683aed6603175ddaf9f3451cf638a66b0"
+    },
+    {
+      "module": "UnifiedLean.G6.FiniteProbability",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteProbability.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3"
+    },
+    {
+      "module": "UnifiedLean.G6.Conditioning",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/Conditioning.lean",
+      "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91"
+    },
+    {
+      "module": "UnifiedLean.G6.SourcePrefix",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/SourcePrefix.lean",
+      "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314"
+    },
+    {
+      "module": "UnifiedLean.G6.ProgramPrefix",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ProgramPrefix.lean",
+      "sha256": "a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb"
+    },
+    {
+      "module": "UnifiedLean.G6.TaylorCertificate",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/TaylorCertificate.lean",
+      "sha256": "eac88ebb03ec5443cd12e95d9a95510eec2a1ca94396ddc8b3409882e1e9049b"
+    }
+  ],
+  "custom_modules": 170,
+  "declarations": 3856,
+  "theorems": 2522,
+  "declaration_kinds": {
+    "theorem": 2522,
+    "definition": 1209,
+    "constructor": 61,
+    "recursor": 32,
+    "inductive": 32
+  },
+  "module_rows": {
+    "G1SharedRegisterStress": 26,
+    "G2ActualCalendarTrace": 45,
+    "G2ActualChronologicalPathLaw": 5,
+    "G2ActualDecorationFold": 20,
+    "G2ActualEpochHistoryLaw": 18,
+    "G2ActualPairCoalescence": 11,
+    "G2ActualSegmentPathLaw": 32,
+    "G2ActualTimedAllPanelLaw": 49,
+    "G2AncestralAgeCertificate": 22,
+    "G2AncestralPairSupport": 6,
+    "G2AncestralTraceSourceLaw": 17,
+    "G2CalendarDecoration": 19,
+    "G2CalendarFirstAge": 31,
+    "G2CalendarHistoryBinding": 11,
+    "G2CalendarPairSupport": 13,
+    "G2CalendarPathProjection": 44,
+    "G2ChronologicalDecoration": 19,
+    "G2ChronologicalGluing": 13,
+    "G2ChronologicalPathReadout": 59,
+    "G2ChronologicalPruning": 2,
+    "G2ChronologicalTraceCompatibility": 5,
+    "G2ClockBoundaryNull": 3,
+    "G2CompleteAncestralPath": 6,
+    "G2CompleteCalendarAttachment": 10,
+    "G2CompleteDecoration": 8,
+    "G2CompleteTerminalReadout": 3,
+    "G2CompleteTimedSupport": 18,
+    "G2CompletedCalendarPathLaw": 14,
+    "G2ControlledTraceAssembly": 16,
+    "G2CutFutureSourceBinding": 5,
+    "G2CutResidualSourceMixture": 3,
+    "G2DecorationMeasurability": 6,
+    "G2EpochHistoryReadout": 18,
+    "G2EpochPathProjection": 29,
+    "G2EventualPathReadout": 26,
+    "G2FaithfulPairAgeDecoration": 49,
+    "G2FaithfulTimedOutput": 5,
+    "G2FiniteAncestralTrace": 19,
+    "G2FiniteFibreTransport": 6,
+    "G2HistoryResidualAttachment": 32,
+    "G2JointTimedObservation": 10,
+    "G2LiteralCutResidual": 37,
+    "G2LiteralEpochLaw": 25,
+    "G2LiteralMarkedClockTrace": 61,
+    "G2LiteralTimedObservationPruning": 17,
+    "G2LiveLineageRouting": 59,
+    "G2MarkedTraceBudgetStability": 5,
+    "G2MarkedTraceCuts": 23,
+    "G2MarkedTraceRenewal": 37,
+    "G2OriginalAbsoluteAges": 1,
+    "G2OriginalProgramSafety": 19,
+    "G2PairBirthFold": 38,
+    "G2PairBirthThreshold": 21,
+    "G2RationalAgeReadout": 6,
+    "G2RegisteredPathProjection": 7,
+    "G2SameClockContinuation": 34,
+    "G2SameClockPastFutureLaw": 3,
+    "G2SourceFiniteHistory": 24,
+    "G2SourceGraftDecoration": 13,
+    "G2SourcePairMatrixReadout": 6,
+    "G2StrictClockDecoration": 6,
+    "G2TimedBoundMeasurability": 16,
+    "G2TimedDecorationPruning": 28,
+    "G2WholeMatrixAges": 50,
+    "G3ApproximateMomentBarrier": 1,
+    "G4AllRootPairClocks": 13,
+    "G4FourRootPositivity": 22,
+    "G4IndependentRoutingBridge": 38,
+    "G4PathResolvedMeasurement": 89,
+    "G4TwoRootSourceStopping": 125,
+    "G5ActualComponentSupport": 9,
+    "G5BridgeBarrier": 6,
+    "G5BridgeComponentEntries": 6,
+    "G5CalendarRoutes": 45,
+    "G5ComponentCalendarCoverage": 6,
+    "G5CoupledQuartetKernel": 26,
+    "G5CurrentPortTwoPositions": 8,
+    "G5ExponentialGermIdentification": 6,
+    "G5FairOriginalCoinLaw": 11,
+    "G5FairSelectorMoments": 10,
+    "G5FrozenTripleAnalyticSupport": 25,
+    "G5FrozenTriplePolynomialKernel": 25,
+    "G5HiddenRegisterTimedProjectivity": 8,
+    "G5MinimalGraphInterface": 2,
+    "G5NonbridgeRouteBound": 28,
+    "G5OriginalCoinPMF": 8,
+    "G5OriginalRouteHazard": 18,
+    "G5OriginalTipCurrentSupport": 4,
+    "G5PairOnlySureBlockChronology": 7,
+    "G5ParentChoiceCalendar": 17,
+    "G5ParentPositionPushforward": 7,
+    "G5ProtectiveBlock": 22,
+    "G5RootRouteCurrentSupport": 10,
+    "G5SafePastHybridDisjointness": 15,
+    "G5SafePastMeetingPermanence": 5,
+    "G5UnknownRateSupport": 5,
+    "G6BridgeCannotEnterHybrid": 8,
+    "GraphCuts": 10,
+    "GraphLeaves": 6,
+    "SourceForestKingmanPopulationProjection": 8,
+    "SourceForestKingmanProjection": 14,
+    "SourceLabelledForest": 346,
+    "SourceNetwork": 88,
+    "UnifiedLean.G6.Conditioning": 13,
+    "UnifiedLean.G6.FiniteProbability": 10,
+    "UnifiedLean.G6.ProgramPrefix": 48,
+    "UnifiedLean.G6.SourcePrefix": 20,
+    "UnifiedLean.G6.TaylorCertificate": 21,
+    "UnifiedLean.Source.ControlledUnrankedSourceProjectivity": 19,
+    "UnifiedLean.Source.FiniteGenealogyEncoding": 70,
+    "UnifiedLean.Source.FiniteSourceSnapshot": 54,
+    "UnifiedLean.Source.MatrixProjectionExponential": 8,
+    "UnifiedLean.Source.NativeIndependentPairMixture": 40,
+    "UnifiedLean.Source.NativePairClockLaw": 44,
+    "UnifiedLean.Source.NativeParentRouting": 60,
+    "UnifiedLean.Source.OriginalFixedIDControls": 20,
+    "UnifiedLean.Source.SourceActualHoldingClocks": 26,
+    "UnifiedLean.Source.SourceAncestralAbsorption": 20,
+    "UnifiedLean.Source.SourceAncestralCompletion": 27,
+    "UnifiedLean.Source.SourceAncestralDrift": 7,
+    "UnifiedLean.Source.SourceBoundaryKernels": 79,
+    "UnifiedLean.Source.SourceBoundaryLocations": 8,
+    "UnifiedLean.Source.SourceBoundaryProjection": 8,
+    "UnifiedLean.Source.SourceCalendarCompatibility": 17,
+    "UnifiedLean.Source.SourceCalendarCompiler": 18,
+    "UnifiedLean.Source.SourceCalendarPhysicalSupport": 24,
+    "UnifiedLean.Source.SourceCalendarTiming": 5,
+    "UnifiedLean.Source.SourceCompletedUnrankedTree": 6,
+    "UnifiedLean.Source.SourceCompletionHarmonic": 12,
+    "UnifiedLean.Source.SourceCopyCarrierTransport": 27,
+    "UnifiedLean.Source.SourceCrossCarrierBoundary": 6,
+    "UnifiedLean.Source.SourceCrossCarrierEpoch": 40,
+    "UnifiedLean.Source.SourceCrossCarrierNatural": 6,
+    "UnifiedLean.Source.SourceCrossCarrierProgram": 43,
+    "UnifiedLean.Source.SourceDestinationClockReset": 4,
+    "UnifiedLean.Source.SourceEmbeddedJumpLaw": 17,
+    "UnifiedLean.Source.SourceEpochRenewal": 11,
+    "UnifiedLean.Source.SourceEpochSemigroup": 5,
+    "UnifiedLean.Source.SourceEventualCompletionLimit": 3,
+    "UnifiedLean.Source.SourceExponentialRace": 22,
+    "UnifiedLean.Source.SourceExponentialRaceDensity": 13,
+    "UnifiedLean.Source.SourceExponentialResiduals": 10,
+    "UnifiedLean.Source.SourceFiniteJumpExpansion": 17,
+    "UnifiedLean.Source.SourceFiniteProjection": 25,
+    "UnifiedLean.Source.SourceFirstMarkDistribution": 28,
+    "UnifiedLean.Source.SourceFirstMergerMark": 43,
+    "UnifiedLean.Source.SourceForestCommonPulse": 2,
+    "UnifiedLean.Source.SourceForestGeneratorIntertwining": 15,
+    "UnifiedLean.Source.SourceForestIntrinsicGenerator": 11,
+    "UnifiedLean.Source.SourceForestPulseMeasure": 11,
+    "UnifiedLean.Source.SourceForestPulseTransport": 15,
+    "UnifiedLean.Source.SourceForestSilentPruning": 35,
+    "UnifiedLean.Source.SourceGeneratorExponential": 4,
+    "UnifiedLean.Source.SourceInitializedCalendar": 20,
+    "UnifiedLean.Source.SourceLiteralClockEndpoint": 11,
+    "UnifiedLean.Source.SourceMergerClockCatalogue": 13,
+    "UnifiedLean.Source.SourceNaturalCompletedLimit": 6,
+    "UnifiedLean.Source.SourceNaturalInitialization": 15,
+    "UnifiedLean.Source.SourcePoissonExponential": 10,
+    "UnifiedLean.Source.SourcePoissonKernel": 30,
+    "UnifiedLean.Source.SourceProgramTransport": 49,
+    "UnifiedLean.Source.SourceRaceWinnerSelection": 13,
+    "UnifiedLean.Source.SourceSmallCarrierGenerator": 13,
+    "UnifiedLean.Source.SourceSmallCarrierPulse": 15,
+    "UnifiedLean.Source.SourceStepGeneratorBinding": 19,
+    "UnifiedLean.Source.SourceUnrankedAllPanels": 8,
+    "UnifiedLean.Source.SourceUnrankedCopyProjectivity": 9,
+    "UnifiedLean.Source.SourceWinningClockReset": 27,
+    "UnifiedLean.Source.UniformizedSourceStep": 29,
+    "UnifiedLean.Source.UnrankedGenealogyObservation": 76
+  },
+  "owned_axioms": [],
+  "nonstandard_axiom_rows": [],
+  "missing_modules": [],
+  "all_selected_modules_have_rows": true,
+  "all_rows_have_type_and_body_reference_fields": true,
+  "external_roots": [
+    "Lean.Elab.Tactic.Omega",
+    "Mathlib.Algebra.BigOperators.Field",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+    "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Analysis.Normed.Algebra.MatrixExponential",
+    "Mathlib.Analysis.Normed.Module.FiniteDimension",
+    "Mathlib.Analysis.SpecialFunctions.Exp",
+    "Mathlib.Analysis.SpecialFunctions.Exponential",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Analysis.SpecificLimits.Basic",
+    "Mathlib.Analysis.SpecificLimits.Normed",
+    "Mathlib.Data.ENNReal.BigOperators",
+    "Mathlib.Data.Fin.Tuple.Basic",
+    "Mathlib.Data.Finset.Card",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Data.Finset.Prod",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Data.Finset.Union",
+    "Mathlib.Data.Fintype.Basic",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Data.Fintype.Card",
+    "Mathlib.Data.Fintype.EquivFin",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.Data.Fintype.Sum",
+    "Mathlib.Data.List.OfFn",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.Rat.BigOperators",
+    "Mathlib.Data.Rat.Lemmas",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.Logic.Relation",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Metrizable",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.MeasureTheory.Constructions.Projective",
+    "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Countable",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.DominatedConvergence",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Map",
+    "Mathlib.MeasureTheory.Integral.Prod",
+    "Mathlib.MeasureTheory.MeasurableSpace.Pi",
+    "Mathlib.MeasureTheory.Measure.Prod",
+    "Mathlib.MeasureTheory.Measure.Restrict",
+    "Mathlib.Probability.Distributions.Bernoulli",
+    "Mathlib.Probability.Distributions.Exponential",
+    "Mathlib.Probability.Distributions.Poisson.Basic",
+    "Mathlib.Probability.Distributions.Uniform",
+    "Mathlib.Probability.Independence.Basic",
+    "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+    "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+    "Mathlib.Tactic",
+    "Mathlib.Tactic.FinCases",
+    "Mathlib.Tactic.FunProp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring"
+  ],
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audit_source_sha256": "43be48599fb9f124d3e46b3d3ee3cb18a8ba94d303c4d8809378a596ee624b1e",
+  "reconstructed_command_stdout_checks": [
+    {
+      "label": "reconstruct",
+      "matches": true,
+      "reconstructed_sha256": "997f2ef8089082318531878bad7e8af68fe7ea36db052322a00d44346aaa4018",
+      "receipt_sha256": "997f2ef8089082318531878bad7e8af68fe7ea36db052322a00d44346aaa4018"
+    },
+    {
+      "label": "mathlib-init",
+      "matches": true,
+      "reconstructed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "mathlib-remote",
+      "matches": true,
+      "reconstructed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "mathlib-shallow-fetch",
+      "matches": true,
+      "reconstructed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "mathlib-checkout",
+      "matches": true,
+      "reconstructed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "lake-update",
+      "matches": true,
+      "reconstructed_sha256": "f5bdefad2748043075fce230b762fe920861654f68499c600d17a43e5b5cbb47",
+      "receipt_sha256": "f5bdefad2748043075fce230b762fe920861654f68499c600d17a43e5b5cbb47"
+    },
+    {
+      "label": "mathlib-cache",
+      "matches": false,
+      "reconstructed_sha256": "d7f1667d0fcc402c0c19b3b7804c2ab5f097bf4e21fdd485afb392e3709e2935",
+      "receipt_sha256": "d0d84a9fc27cc9d69cc54608367ae6357c7fb6bbce1df9c2734e5c4625dff453"
+    },
+    {
+      "label": "G5FrozenTriplePolynomialKernel",
+      "matches": true,
+      "reconstructed_sha256": "b462a4ee738624bea94c249705b0f68d5e1dfe687a6b1fd2d116cabf099694aa",
+      "receipt_sha256": "b462a4ee738624bea94c249705b0f68d5e1dfe687a6b1fd2d116cabf099694aa"
+    },
+    {
+      "label": "G5ExponentialGermIdentification",
+      "matches": true,
+      "reconstructed_sha256": "43b8db7dd2022f81be166db6224a360defaf0709d2d333320680b065d5e0e567",
+      "receipt_sha256": "43b8db7dd2022f81be166db6224a360defaf0709d2d333320680b065d5e0e567"
+    },
+    {
+      "label": "G5UnknownRateSupport",
+      "matches": true,
+      "reconstructed_sha256": "36b339cbb814f07566d18ce6dd3e52801f2bffd23f1262b079fa7bef2cc6169f",
+      "receipt_sha256": "36b339cbb814f07566d18ce6dd3e52801f2bffd23f1262b079fa7bef2cc6169f"
+    },
+    {
+      "label": "G5FrozenTripleAnalyticSupport",
+      "matches": true,
+      "reconstructed_sha256": "47ca1a45a3440088ae38fa601816c8b6050a0f464bd69c436f3c0ef970edb26d",
+      "receipt_sha256": "47ca1a45a3440088ae38fa601816c8b6050a0f464bd69c436f3c0ef970edb26d"
+    },
+    {
+      "label": "SourceNetwork",
+      "matches": true,
+      "reconstructed_sha256": "5465ecf96db0b49e53a81535e70658b235bd5d9816b211e5a2dd735b687cc24f",
+      "receipt_sha256": "5465ecf96db0b49e53a81535e70658b235bd5d9816b211e5a2dd735b687cc24f"
+    },
+    {
+      "label": "G2LiveLineageRouting",
+      "matches": true,
+      "reconstructed_sha256": "a80577f1d7135c5660613a0e39dcabd2f3198a9c7399d7632b4ef613e6fc9ebd",
+      "receipt_sha256": "a80577f1d7135c5660613a0e39dcabd2f3198a9c7399d7632b4ef613e6fc9ebd"
+    },
+    {
+      "label": "SourceLabelledForest",
+      "matches": true,
+      "reconstructed_sha256": "56c10f3d554035347e763ae6fad4115c68a53afc1caa2ded9ab9981a21b98a20",
+      "receipt_sha256": "56c10f3d554035347e763ae6fad4115c68a53afc1caa2ded9ab9981a21b98a20"
+    },
+    {
+      "label": "SourceForestKingmanProjection",
+      "matches": true,
+      "reconstructed_sha256": "e2413bfae1a64bbb6a5f54cca85de6f27f5c843303fb097b0e4bb3d052b8028f",
+      "receipt_sha256": "e2413bfae1a64bbb6a5f54cca85de6f27f5c843303fb097b0e4bb3d052b8028f"
+    },
+    {
+      "label": "SourceForestKingmanPopulationProjection",
+      "matches": true,
+      "reconstructed_sha256": "2350c862ef011909820bbae5c794e3c87baad43e7d4c84afb019dc22d61bf0d5",
+      "receipt_sha256": "2350c862ef011909820bbae5c794e3c87baad43e7d4c84afb019dc22d61bf0d5"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceForestSilentPruning",
+      "matches": true,
+      "reconstructed_sha256": "bb06823f50fb173e0d247439e3f0bd571e3933bd36563d5bd10c760d8b3a5254",
+      "receipt_sha256": "bb06823f50fb173e0d247439e3f0bd571e3933bd36563d5bd10c760d8b3a5254"
+    },
+    {
+      "label": "G2FaithfulPairAgeDecoration",
+      "matches": true,
+      "reconstructed_sha256": "744a5005e8739af28d31aaa73b3f78b288d23e31f4adedb9fea55ab6eedb9b89",
+      "receipt_sha256": "744a5005e8739af28d31aaa73b3f78b288d23e31f4adedb9fea55ab6eedb9b89"
+    },
+    {
+      "label": "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "matches": true,
+      "reconstructed_sha256": "a89c4f02aaf1f7897f4b5f0f7b29b3adb028bd3594d767d1af150c1bd4a34d69",
+      "receipt_sha256": "a89c4f02aaf1f7897f4b5f0f7b29b3adb028bd3594d767d1af150c1bd4a34d69"
+    },
+    {
+      "label": "UnifiedLean.Source.FiniteSourceSnapshot",
+      "matches": true,
+      "reconstructed_sha256": "bee0b184e9f42e830f9b644738525638fa72b779c2fcdfee718429342aa36c45",
+      "receipt_sha256": "bee0b184e9f42e830f9b644738525638fa72b779c2fcdfee718429342aa36c45"
+    },
+    {
+      "label": "GraphLeaves",
+      "matches": true,
+      "reconstructed_sha256": "aa08aa9f925308a84a8dc5f9965379e6fb3751ec24398e38aafaac45b756354d",
+      "receipt_sha256": "aa08aa9f925308a84a8dc5f9965379e6fb3751ec24398e38aafaac45b756354d"
+    },
+    {
+      "label": "GraphCuts",
+      "matches": true,
+      "reconstructed_sha256": "8308918b1d25a64ccaaa7ba648f875a6542b15a64c4c3240c366708243424b3c",
+      "receipt_sha256": "8308918b1d25a64ccaaa7ba648f875a6542b15a64c4c3240c366708243424b3c"
+    },
+    {
+      "label": "G5BridgeBarrier",
+      "matches": true,
+      "reconstructed_sha256": "b671ebf40ba6db3a1f68e8fef3ae7a928e9285f8917b828b081fca2110d6a00e",
+      "receipt_sha256": "b671ebf40ba6db3a1f68e8fef3ae7a928e9285f8917b828b081fca2110d6a00e"
+    },
+    {
+      "label": "G5CalendarRoutes",
+      "matches": true,
+      "reconstructed_sha256": "deece5914567adae242b3d6d4f09f986b4b048e1fa3ca93a3b2762a5b13d79d9",
+      "receipt_sha256": "deece5914567adae242b3d6d4f09f986b4b048e1fa3ca93a3b2762a5b13d79d9"
+    },
+    {
+      "label": "G5ProtectiveBlock",
+      "matches": true,
+      "reconstructed_sha256": "1f89009dfa989b98d34ca85cff94dcefdf01ce9f9621688bb55e0c5ff508c4ed",
+      "receipt_sha256": "1f89009dfa989b98d34ca85cff94dcefdf01ce9f9621688bb55e0c5ff508c4ed"
+    },
+    {
+      "label": "G5MinimalGraphInterface",
+      "matches": true,
+      "reconstructed_sha256": "02b60e6ba4f33864b0915dc0f64099f4cd3f4ae63ed5e96ed6fa107ae92aa2fa",
+      "receipt_sha256": "02b60e6ba4f33864b0915dc0f64099f4cd3f4ae63ed5e96ed6fa107ae92aa2fa"
+    },
+    {
+      "label": "G6BridgeCannotEnterHybrid",
+      "matches": true,
+      "reconstructed_sha256": "5ca22a54c496ca1b5b5b5d32dc422fe524e5a9f32a6a15512e8bf0d96bdcd054",
+      "receipt_sha256": "5ca22a54c496ca1b5b5b5d32dc422fe524e5a9f32a6a15512e8bf0d96bdcd054"
+    },
+    {
+      "label": "G5BridgeComponentEntries",
+      "matches": true,
+      "reconstructed_sha256": "6d923e42c6ddfa40997788a894f162bea001ccaa7af7033d8d1c1edfd6cef2b0",
+      "receipt_sha256": "6d923e42c6ddfa40997788a894f162bea001ccaa7af7033d8d1c1edfd6cef2b0"
+    },
+    {
+      "label": "G5NonbridgeRouteBound",
+      "matches": true,
+      "reconstructed_sha256": "8e3c42ef93082abdd73408f9a985f34e0e80ce7c27b744e3f86f0914fad9a124",
+      "receipt_sha256": "8e3c42ef93082abdd73408f9a985f34e0e80ce7c27b744e3f86f0914fad9a124"
+    },
+    {
+      "label": "G5ComponentCalendarCoverage",
+      "matches": true,
+      "reconstructed_sha256": "714308a14bb6b87b48aeb0d21ce60a61e7c97b2d635874091f3d69038ab6c94e",
+      "receipt_sha256": "714308a14bb6b87b48aeb0d21ce60a61e7c97b2d635874091f3d69038ab6c94e"
+    },
+    {
+      "label": "G5ActualComponentSupport",
+      "matches": true,
+      "reconstructed_sha256": "9cb242054884dde298d6406d832adc2748f92d4cca3f4106ef1092fef43fa533",
+      "receipt_sha256": "9cb242054884dde298d6406d832adc2748f92d4cca3f4106ef1092fef43fa533"
+    },
+    {
+      "label": "G5RootRouteCurrentSupport",
+      "matches": true,
+      "reconstructed_sha256": "122d63695585e43ac169602572c3e1e704f8879f0c98738670c656df0289a75e",
+      "receipt_sha256": "122d63695585e43ac169602572c3e1e704f8879f0c98738670c656df0289a75e"
+    },
+    {
+      "label": "G5CurrentPortTwoPositions",
+      "matches": true,
+      "reconstructed_sha256": "92a225f805943c35b10f34e345329759f40db5919b01f962d13c1c02fc0c2c61",
+      "receipt_sha256": "92a225f805943c35b10f34e345329759f40db5919b01f962d13c1c02fc0c2c61"
+    },
+    {
+      "label": "G5OriginalTipCurrentSupport",
+      "matches": true,
+      "reconstructed_sha256": "bf016b1de34fa1fcd3a79f6c846f1ce7a8c17ce7099b04edfb94b96b563c7d5f",
+      "receipt_sha256": "bf016b1de34fa1fcd3a79f6c846f1ce7a8c17ce7099b04edfb94b96b563c7d5f"
+    },
+    {
+      "label": "G5ParentChoiceCalendar",
+      "matches": true,
+      "reconstructed_sha256": "8eb07c527af1306f84578a8a51aa5ba933b16ab465a187c3619b880a145cce8d",
+      "receipt_sha256": "8eb07c527af1306f84578a8a51aa5ba933b16ab465a187c3619b880a145cce8d"
+    },
+    {
+      "label": "G5CoupledQuartetKernel",
+      "matches": true,
+      "reconstructed_sha256": "b608696ee3ec6363d1d6d1ee39c2aaf6024b4c516a09e5e680cb749c23da2440",
+      "receipt_sha256": "b608696ee3ec6363d1d6d1ee39c2aaf6024b4c516a09e5e680cb749c23da2440"
+    },
+    {
+      "label": "G5FairSelectorMoments",
+      "matches": true,
+      "reconstructed_sha256": "c5d36016bc89bb883f01c4f4f152e4f9a4105dd7af316f5e2aea6ba848149852",
+      "receipt_sha256": "c5d36016bc89bb883f01c4f4f152e4f9a4105dd7af316f5e2aea6ba848149852"
+    },
+    {
+      "label": "G5FairOriginalCoinLaw",
+      "matches": true,
+      "reconstructed_sha256": "2b12d8e1a5beda04e5b132e95029297e324afe21593624a82ac246d92473eefb",
+      "receipt_sha256": "2b12d8e1a5beda04e5b132e95029297e324afe21593624a82ac246d92473eefb"
+    },
+    {
+      "label": "G5OriginalCoinPMF",
+      "matches": true,
+      "reconstructed_sha256": "815fa7f33aeab1cdc05d2ef98b8c07ae7b5e2e8a5015f013c229a27d958ffc9d",
+      "receipt_sha256": "815fa7f33aeab1cdc05d2ef98b8c07ae7b5e2e8a5015f013c229a27d958ffc9d"
+    },
+    {
+      "label": "G5ParentPositionPushforward",
+      "matches": true,
+      "reconstructed_sha256": "c25d2bfc50a186cf975261063bc3f1c6879aff24f6f395fe6f4b21dac9ec7781",
+      "receipt_sha256": "c25d2bfc50a186cf975261063bc3f1c6879aff24f6f395fe6f4b21dac9ec7781"
+    },
+    {
+      "label": "G5SafePastHybridDisjointness",
+      "matches": true,
+      "reconstructed_sha256": "1b55696ce5f79f4a70231a956c9198816cc54c6db37f05018c5adb520831a54f",
+      "receipt_sha256": "1b55696ce5f79f4a70231a956c9198816cc54c6db37f05018c5adb520831a54f"
+    },
+    {
+      "label": "G5PairOnlySureBlockChronology",
+      "matches": true,
+      "reconstructed_sha256": "2102cb58c4b7a1a01d1b6cb27a2ff7b9ddfc470a9ec0faae7c75174677969e1b",
+      "receipt_sha256": "2102cb58c4b7a1a01d1b6cb27a2ff7b9ddfc470a9ec0faae7c75174677969e1b"
+    },
+    {
+      "label": "G5SafePastMeetingPermanence",
+      "matches": true,
+      "reconstructed_sha256": "c868ca1184d8588ef18b1478e00dc3285c7cc006207d1cdcf5d6a8a0a2d4b198",
+      "receipt_sha256": "c868ca1184d8588ef18b1478e00dc3285c7cc006207d1cdcf5d6a8a0a2d4b198"
+    },
+    {
+      "label": "G5OriginalRouteHazard",
+      "matches": true,
+      "reconstructed_sha256": "eb37146b111ae41dd3596de171ae679c6293068749da115e1f2594c910b72e14",
+      "receipt_sha256": "eb37146b111ae41dd3596de171ae679c6293068749da115e1f2594c910b72e14"
+    },
+    {
+      "label": "G4TwoRootSourceStopping",
+      "matches": true,
+      "reconstructed_sha256": "59eed698334bb0c6d95852f8310a22c8c608f5e3878541be2252f33202b5be31",
+      "receipt_sha256": "59eed698334bb0c6d95852f8310a22c8c608f5e3878541be2252f33202b5be31"
+    },
+    {
+      "label": "G1SharedRegisterStress",
+      "matches": true,
+      "reconstructed_sha256": "84a9c4ce9c952b0e458f2a61369c7b18a8e5a6298321cc94e9a865f61d98037b",
+      "receipt_sha256": "84a9c4ce9c952b0e458f2a61369c7b18a8e5a6298321cc94e9a865f61d98037b"
+    },
+    {
+      "label": "G4FourRootPositivity",
+      "matches": true,
+      "reconstructed_sha256": "f5e1ecf7db1d697e09d60633e18d6b70c7cc7aa6ac9af0dc3eee533d76e5c582",
+      "receipt_sha256": "f5e1ecf7db1d697e09d60633e18d6b70c7cc7aa6ac9af0dc3eee533d76e5c582"
+    },
+    {
+      "label": "G4IndependentRoutingBridge",
+      "matches": true,
+      "reconstructed_sha256": "5b4579b8aea560fb76cda5d6bc6befcd8e253cb2817b0cf22c77f8972bc8cebe",
+      "receipt_sha256": "5b4579b8aea560fb76cda5d6bc6befcd8e253cb2817b0cf22c77f8972bc8cebe"
+    },
+    {
+      "label": "G4AllRootPairClocks",
+      "matches": true,
+      "reconstructed_sha256": "b9a3b0865784e875a0e3ccd7f0d3e06f11f1364f5ee4b018c508af6730bf99d9",
+      "receipt_sha256": "b9a3b0865784e875a0e3ccd7f0d3e06f11f1364f5ee4b018c508af6730bf99d9"
+    },
+    {
+      "label": "G4PathResolvedMeasurement",
+      "matches": true,
+      "reconstructed_sha256": "1da285795570636d267ed7f7fee0486e3ee7f5e8d8df50f581a05d1853efb41f",
+      "receipt_sha256": "1da285795570636d267ed7f7fee0486e3ee7f5e8d8df50f581a05d1853efb41f"
+    },
+    {
+      "label": "UnifiedLean.Source.NativeParentRouting",
+      "matches": true,
+      "reconstructed_sha256": "3a0e99b6724907d5b70cd0f25a44fed4519b5ac11eb1eea494d962c93bc4bd74",
+      "receipt_sha256": "3a0e99b6724907d5b70cd0f25a44fed4519b5ac11eb1eea494d962c93bc4bd74"
+    },
+    {
+      "label": "UnifiedLean.Source.NativePairClockLaw",
+      "matches": true,
+      "reconstructed_sha256": "9684eb16fec743d4b7e0917e35e9c3d52cbfbf04014805af67693b8fda198ad8",
+      "receipt_sha256": "9684eb16fec743d4b7e0917e35e9c3d52cbfbf04014805af67693b8fda198ad8"
+    },
+    {
+      "label": "UnifiedLean.Source.UniformizedSourceStep",
+      "matches": true,
+      "reconstructed_sha256": "1b54a996a021253fc39f81f304d51fea3b6f3762aa414dd5c9759f0302f0976d",
+      "receipt_sha256": "1b54a996a021253fc39f81f304d51fea3b6f3762aa414dd5c9759f0302f0976d"
+    },
+    {
+      "label": "G2SourceGraftDecoration",
+      "matches": true,
+      "reconstructed_sha256": "423132f68d28c3bdfc76df065fd71aba592da219ccc2b8105359603e70a4469d",
+      "receipt_sha256": "423132f68d28c3bdfc76df065fd71aba592da219ccc2b8105359603e70a4469d"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "matches": true,
+      "reconstructed_sha256": "56f87a5a7e0bdb4f992304fd4415b837f741a1cb05f82ac9f68fbdc4d7ceca6b",
+      "receipt_sha256": "56f87a5a7e0bdb4f992304fd4415b837f741a1cb05f82ac9f68fbdc4d7ceca6b"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "matches": true,
+      "reconstructed_sha256": "462011aae00fa8fda2ad589093b795a6c235c81cad1a53fa69931a7284fd91df",
+      "receipt_sha256": "462011aae00fa8fda2ad589093b795a6c235c81cad1a53fa69931a7284fd91df"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "matches": true,
+      "reconstructed_sha256": "639930aaac97f91ae5d88fc12a5034a0d45dafc36a7a797bacb1039d2e34fdc5",
+      "receipt_sha256": "639930aaac97f91ae5d88fc12a5034a0d45dafc36a7a797bacb1039d2e34fdc5"
+    },
+    {
+      "label": "UnifiedLean.Source.MatrixProjectionExponential",
+      "matches": true,
+      "reconstructed_sha256": "47deb8e9780af82ab7be6bebe5133a149bdb1e0b7ec006c299cb898952db9b85",
+      "receipt_sha256": "47deb8e9780af82ab7be6bebe5133a149bdb1e0b7ec006c299cb898952db9b85"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceFiniteProjection",
+      "matches": true,
+      "reconstructed_sha256": "eefed0a16568d52b23a5a18a6481920a78fcc7e282d537a87e72f01799463a98",
+      "receipt_sha256": "eefed0a16568d52b23a5a18a6481920a78fcc7e282d537a87e72f01799463a98"
+    },
+    {
+      "label": "UnifiedLean.Source.SourcePoissonKernel",
+      "matches": true,
+      "reconstructed_sha256": "4ab2374dc12a6ec9dcb552f393f68c1a5e973ddffc308fa48d08a6979ca01515",
+      "receipt_sha256": "4ab2374dc12a6ec9dcb552f393f68c1a5e973ddffc308fa48d08a6979ca01515"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceGeneratorExponential",
+      "matches": true,
+      "reconstructed_sha256": "9f7be220015bcaa23cac6e4dab4b6545500cd24429b9a0b0e111027bbf31af74",
+      "receipt_sha256": "9f7be220015bcaa23cac6e4dab4b6545500cd24429b9a0b0e111027bbf31af74"
+    },
+    {
+      "label": "UnifiedLean.Source.SourcePoissonExponential",
+      "matches": true,
+      "reconstructed_sha256": "f5e21e3dff34b6ad5c40fb34ae33e8c75f0c223f9bd577d273c8eb53d4322e1f",
+      "receipt_sha256": "f5e21e3dff34b6ad5c40fb34ae33e8c75f0c223f9bd577d273c8eb53d4322e1f"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceEpochSemigroup",
+      "matches": true,
+      "reconstructed_sha256": "4a95d1361a2aed25fbf707daf634dd249b3ec14849d79cc5e3ebb8b2b3041eb8",
+      "receipt_sha256": "4a95d1361a2aed25fbf707daf634dd249b3ec14849d79cc5e3ebb8b2b3041eb8"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCalendarCompatibility",
+      "matches": true,
+      "reconstructed_sha256": "664551a6841fae8ef2e78f6fda7b13a9501d78048df0a4a1cd642322167730f9",
+      "receipt_sha256": "664551a6841fae8ef2e78f6fda7b13a9501d78048df0a4a1cd642322167730f9"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceForestPulseTransport",
+      "matches": true,
+      "reconstructed_sha256": "7386ea2172fe6af1a1b6dfa7d99dd94033f177758ffa1684bd222117f3c4b115",
+      "receipt_sha256": "7386ea2172fe6af1a1b6dfa7d99dd94033f177758ffa1684bd222117f3c4b115"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceForestPulseMeasure",
+      "matches": true,
+      "reconstructed_sha256": "94ae0c226c45a80056a0617962818bef7aa074ef4ebfe19078b50c0034306ae8",
+      "receipt_sha256": "94ae0c226c45a80056a0617962818bef7aa074ef4ebfe19078b50c0034306ae8"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceForestCommonPulse",
+      "matches": true,
+      "reconstructed_sha256": "7b8aded7c2331926fabd2760aea65c0dbd892d86a3d86ec5f32ba30c700543ed",
+      "receipt_sha256": "7b8aded7c2331926fabd2760aea65c0dbd892d86a3d86ec5f32ba30c700543ed"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceBoundaryKernels",
+      "matches": true,
+      "reconstructed_sha256": "7443538a24485661e6338815669d41946f2d033bea09332d2ff696ee81a0e5a3",
+      "receipt_sha256": "7443538a24485661e6338815669d41946f2d033bea09332d2ff696ee81a0e5a3"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceBoundaryProjection",
+      "matches": true,
+      "reconstructed_sha256": "efe59f762bbcaea90fe3877fcf31476c8b5cc52fc3734484bc3baf1ffc7ef455",
+      "receipt_sha256": "efe59f762bbcaea90fe3877fcf31476c8b5cc52fc3734484bc3baf1ffc7ef455"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceProgramTransport",
+      "matches": true,
+      "reconstructed_sha256": "03536d167bf27989e2507161f3d4a5c62e95f53a2b2a26bdafc3b2acc9103af7",
+      "receipt_sha256": "03536d167bf27989e2507161f3d4a5c62e95f53a2b2a26bdafc3b2acc9103af7"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCalendarCompiler",
+      "matches": true,
+      "reconstructed_sha256": "266472426ac7f640adc92a45f4c17db3246a4783b41c92fcaac410cbb66bbe6f",
+      "receipt_sha256": "266472426ac7f640adc92a45f4c17db3246a4783b41c92fcaac410cbb66bbe6f"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceBoundaryLocations",
+      "matches": true,
+      "reconstructed_sha256": "213803aab26a654285e4c457342bdcee7fd75177a47fd1863602158d0903e7a4",
+      "receipt_sha256": "213803aab26a654285e4c457342bdcee7fd75177a47fd1863602158d0903e7a4"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCalendarTiming",
+      "matches": true,
+      "reconstructed_sha256": "f10b8f53cf0f7edbcdc28494c15d9bceee8b3ced3fd263eea01298de4ac60a81",
+      "receipt_sha256": "f10b8f53cf0f7edbcdc28494c15d9bceee8b3ced3fd263eea01298de4ac60a81"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+      "matches": true,
+      "reconstructed_sha256": "224dc108583c730d8ecbd9687b0d67b43a38730f0f792f394773b47f3956bf0c",
+      "receipt_sha256": "224dc108583c730d8ecbd9687b0d67b43a38730f0f792f394773b47f3956bf0c"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceInitializedCalendar",
+      "matches": true,
+      "reconstructed_sha256": "34fcffe43cedbc1ddc9643968ff6ec3c553d831a0fb772bb8aa24439bae5b36f",
+      "receipt_sha256": "34fcffe43cedbc1ddc9643968ff6ec3c553d831a0fb772bb8aa24439bae5b36f"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceActualHoldingClocks",
+      "matches": true,
+      "reconstructed_sha256": "95a5381d5be536cb501d80e0e487f70d1cea3499c6b529160fe7f49455866573",
+      "receipt_sha256": "95a5381d5be536cb501d80e0e487f70d1cea3499c6b529160fe7f49455866573"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceFirstMergerMark",
+      "matches": true,
+      "reconstructed_sha256": "e8cd222b59cdb5ac63c535b667507077914271ec0f843fa388837c9a478e3982",
+      "receipt_sha256": "e8cd222b59cdb5ac63c535b667507077914271ec0f843fa388837c9a478e3982"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceFirstMarkDistribution",
+      "matches": true,
+      "reconstructed_sha256": "9e74b730e66622e9266f867342fde0088440685fe173947eeb5bc7d30a3de45a",
+      "receipt_sha256": "9e74b730e66622e9266f867342fde0088440685fe173947eeb5bc7d30a3de45a"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceExponentialRace",
+      "matches": true,
+      "reconstructed_sha256": "c5e5edc3e5e8badef0c8b1702b784a65f1537f54286052793560cf016dec7692",
+      "receipt_sha256": "c5e5edc3e5e8badef0c8b1702b784a65f1537f54286052793560cf016dec7692"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceExponentialRaceDensity",
+      "matches": true,
+      "reconstructed_sha256": "24847cf73955918f62a77f3acc53eadb1607a2b3db11f4727c85d88016d7d996",
+      "receipt_sha256": "24847cf73955918f62a77f3acc53eadb1607a2b3db11f4727c85d88016d7d996"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceExponentialResiduals",
+      "matches": true,
+      "reconstructed_sha256": "c67299ef105bfddfe673f88fbf7351c2c89d6f95f541c81cb2c0b95e9e19c571",
+      "receipt_sha256": "c67299ef105bfddfe673f88fbf7351c2c89d6f95f541c81cb2c0b95e9e19c571"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceWinningClockReset",
+      "matches": true,
+      "reconstructed_sha256": "bde69d4f6f05a7dd1f5b8909c7a1fdb071caab4334d1642c18fd159d91beaf91",
+      "receipt_sha256": "bde69d4f6f05a7dd1f5b8909c7a1fdb071caab4334d1642c18fd159d91beaf91"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceMergerClockCatalogue",
+      "matches": true,
+      "reconstructed_sha256": "f80f6e9270d6ed6bc945d1fa1f2f41908573919cdc79a5b666f839592b02c82b",
+      "receipt_sha256": "f80f6e9270d6ed6bc945d1fa1f2f41908573919cdc79a5b666f839592b02c82b"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceDestinationClockReset",
+      "matches": true,
+      "reconstructed_sha256": "aa82c0229baee37a132804e91cffa90d808afb44f94506fe8a26a2d9d52e46f2",
+      "receipt_sha256": "aa82c0229baee37a132804e91cffa90d808afb44f94506fe8a26a2d9d52e46f2"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceEpochRenewal",
+      "matches": true,
+      "reconstructed_sha256": "785b63fb0e18b084b71765b90d56ae48122e7c832695749edb29027728c288f2",
+      "receipt_sha256": "785b63fb0e18b084b71765b90d56ae48122e7c832695749edb29027728c288f2"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceFiniteJumpExpansion",
+      "matches": true,
+      "reconstructed_sha256": "6590cabba4741af3e20f9a19604f6b37ff41ee1ddbaaaa0c3d062a7bf60fc574",
+      "receipt_sha256": "6590cabba4741af3e20f9a19604f6b37ff41ee1ddbaaaa0c3d062a7bf60fc574"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceRaceWinnerSelection",
+      "matches": true,
+      "reconstructed_sha256": "87bfdf660e351277463fb182528bc21876a28dfa83e1825864b044ba1656e0d7",
+      "receipt_sha256": "87bfdf660e351277463fb182528bc21876a28dfa83e1825864b044ba1656e0d7"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceLiteralClockEndpoint",
+      "matches": true,
+      "reconstructed_sha256": "de5f8ca13ca3e5e6e9d0a76a1fbd858f87d711676b1ac46d453fe7a6ae70ab27",
+      "receipt_sha256": "de5f8ca13ca3e5e6e9d0a76a1fbd858f87d711676b1ac46d453fe7a6ae70ab27"
+    },
+    {
+      "label": "G2LiteralMarkedClockTrace",
+      "matches": true,
+      "reconstructed_sha256": "7324c95ec9458f2112f88891853d0151841796f2c43b2b844291c309e63a54d6",
+      "receipt_sha256": "7324c95ec9458f2112f88891853d0151841796f2c43b2b844291c309e63a54d6"
+    },
+    {
+      "label": "G2ActualDecorationFold",
+      "matches": true,
+      "reconstructed_sha256": "be0643e2b5b73319817c60a3426f188a6189d1376b2f925ea500976b06b34fd2",
+      "receipt_sha256": "be0643e2b5b73319817c60a3426f188a6189d1376b2f925ea500976b06b34fd2"
+    },
+    {
+      "label": "G2DecorationMeasurability",
+      "matches": true,
+      "reconstructed_sha256": "67d68cdefd6578a54c0652b10cf2152ef175dc7ce9dbd2305216e0edf3d47b70",
+      "receipt_sha256": "67d68cdefd6578a54c0652b10cf2152ef175dc7ce9dbd2305216e0edf3d47b70"
+    },
+    {
+      "label": "G2MarkedTraceRenewal",
+      "matches": true,
+      "reconstructed_sha256": "d79761e662a2953d34ea7e4a961b1d2e9936d343ecf08ed313b51379b54ed734",
+      "receipt_sha256": "d79761e662a2953d34ea7e4a961b1d2e9936d343ecf08ed313b51379b54ed734"
+    },
+    {
+      "label": "G2LiteralEpochLaw",
+      "matches": true,
+      "reconstructed_sha256": "b21a1ecf4ca3d764bbef71b848fb0edbb7fc39b193e0a6df45b9668f7d857367",
+      "receipt_sha256": "b21a1ecf4ca3d764bbef71b848fb0edbb7fc39b193e0a6df45b9668f7d857367"
+    },
+    {
+      "label": "G2ActualCalendarTrace",
+      "matches": true,
+      "reconstructed_sha256": "2d45c9030ee805bb185845a54c9317dc6cd30e0409c6d25ea86a61e88af19ab4",
+      "receipt_sha256": "2d45c9030ee805bb185845a54c9317dc6cd30e0409c6d25ea86a61e88af19ab4"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+      "matches": true,
+      "reconstructed_sha256": "a8ccf7c0a318d097cf1dac3339386947d22d711f20e119b06c623946f3a7569b",
+      "receipt_sha256": "a8ccf7c0a318d097cf1dac3339386947d22d711f20e119b06c623946f3a7569b"
+    },
+    {
+      "label": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "matches": true,
+      "reconstructed_sha256": "97614f05b13dccd340acd5f400edd07e198dc1a36040327921101dafe149deb7",
+      "receipt_sha256": "97614f05b13dccd340acd5f400edd07e198dc1a36040327921101dafe149deb7"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceNaturalInitialization",
+      "matches": true,
+      "reconstructed_sha256": "58d78dce2af6e04bd3ce7293acbf49e0072cfc825f4c641f8cc7eeeed0e76af7",
+      "receipt_sha256": "58d78dce2af6e04bd3ce7293acbf49e0072cfc825f4c641f8cc7eeeed0e76af7"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceAncestralCompletion",
+      "matches": true,
+      "reconstructed_sha256": "522b77851f8a9a026d8417df89b5325edb49bef67b00eb90df5f6b467bbacb5a",
+      "receipt_sha256": "522b77851f8a9a026d8417df89b5325edb49bef67b00eb90df5f6b467bbacb5a"
+    },
+    {
+      "label": "G2FiniteAncestralTrace",
+      "matches": true,
+      "reconstructed_sha256": "efdb04cd7ceb18d85c9259370aba3d9f1b38826841868a91ba3153a2aeba18d6",
+      "receipt_sha256": "efdb04cd7ceb18d85c9259370aba3d9f1b38826841868a91ba3153a2aeba18d6"
+    },
+    {
+      "label": "UnifiedLean.Source.UnrankedGenealogyObservation",
+      "matches": true,
+      "reconstructed_sha256": "a8463f1ee063d5f46fbc67ca62ca72f7c98ddf15c1ce277e806fa8e32d87eef0",
+      "receipt_sha256": "a8463f1ee063d5f46fbc67ca62ca72f7c98ddf15c1ce277e806fa8e32d87eef0"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCompletedUnrankedTree",
+      "matches": true,
+      "reconstructed_sha256": "ed0d1126492f71dde2e32e9087f18260acd42bd16c68f0a763523e66c79451de",
+      "receipt_sha256": "ed0d1126492f71dde2e32e9087f18260acd42bd16c68f0a763523e66c79451de"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceAncestralDrift",
+      "matches": true,
+      "reconstructed_sha256": "c09358ccd32bf0e691202f2895df33f3cae188f7766ebcd2dc763b9214e03122",
+      "receipt_sha256": "c09358ccd32bf0e691202f2895df33f3cae188f7766ebcd2dc763b9214e03122"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceAncestralAbsorption",
+      "matches": true,
+      "reconstructed_sha256": "a6caaa1235ffedc1ca24956be76b574f3fae95b677e179d36282de91e133b53e",
+      "receipt_sha256": "a6caaa1235ffedc1ca24956be76b574f3fae95b677e179d36282de91e133b53e"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCompletionHarmonic",
+      "matches": true,
+      "reconstructed_sha256": "bd439878e4923398a967f320187d9c446548ae67d8091fe547839c650c81c138",
+      "receipt_sha256": "bd439878e4923398a967f320187d9c446548ae67d8091fe547839c650c81c138"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceEventualCompletionLimit",
+      "matches": true,
+      "reconstructed_sha256": "1a734a8c4847c3128ec0f878c50f5467ab6e2ba174a9f24900073ba8afc13d40",
+      "receipt_sha256": "1a734a8c4847c3128ec0f878c50f5467ab6e2ba174a9f24900073ba8afc13d40"
+    },
+    {
+      "label": "G2AncestralTraceSourceLaw",
+      "matches": true,
+      "reconstructed_sha256": "d36958f5b671e7919f9ddf726ead0704a0a8276e58ae5514d40561a4254d03b5",
+      "receipt_sha256": "d36958f5b671e7919f9ddf726ead0704a0a8276e58ae5514d40561a4254d03b5"
+    },
+    {
+      "label": "G2CompleteCalendarAttachment",
+      "matches": true,
+      "reconstructed_sha256": "5fddf507e114c52995992da4ae6c0e8b2425ad08f745bf1bf144d2c19ee141bf",
+      "receipt_sha256": "5fddf507e114c52995992da4ae6c0e8b2425ad08f745bf1bf144d2c19ee141bf"
+    },
+    {
+      "label": "G2LiteralCutResidual",
+      "matches": true,
+      "reconstructed_sha256": "8ac58fd1321df1874dc0fb13ad293d87ea4ce340fb355e3db8fa274df544f894",
+      "receipt_sha256": "8ac58fd1321df1874dc0fb13ad293d87ea4ce340fb355e3db8fa274df544f894"
+    },
+    {
+      "label": "G2MarkedTraceCuts",
+      "matches": true,
+      "reconstructed_sha256": "17b2c62465efff53ff6ab24c944dc6eef802880907ea0f8943e1211897a4808f",
+      "receipt_sha256": "17b2c62465efff53ff6ab24c944dc6eef802880907ea0f8943e1211897a4808f"
+    },
+    {
+      "label": "G2MarkedTraceBudgetStability",
+      "matches": true,
+      "reconstructed_sha256": "127946f892dddd09966a1e616df3802e010535c36ca2241850a8d4a917e08dd5",
+      "receipt_sha256": "127946f892dddd09966a1e616df3802e010535c36ca2241850a8d4a917e08dd5"
+    },
+    {
+      "label": "G2SameClockContinuation",
+      "matches": true,
+      "reconstructed_sha256": "697809145e0f8bb3c629f02f77ba4069253f1afa0b5318d07cdf8fe2e9655869",
+      "receipt_sha256": "697809145e0f8bb3c629f02f77ba4069253f1afa0b5318d07cdf8fe2e9655869"
+    },
+    {
+      "label": "G2HistoryResidualAttachment",
+      "matches": true,
+      "reconstructed_sha256": "0b3f5c77b9a472b4b6b1f75b777d25966c16c9229be693a41fd97b675423e581",
+      "receipt_sha256": "0b3f5c77b9a472b4b6b1f75b777d25966c16c9229be693a41fd97b675423e581"
+    },
+    {
+      "label": "G2CutFutureSourceBinding",
+      "matches": true,
+      "reconstructed_sha256": "2495a8912b5348eb303e6904bb38696ff25e97816a3096c47c502a524df7fb7b",
+      "receipt_sha256": "2495a8912b5348eb303e6904bb38696ff25e97816a3096c47c502a524df7fb7b"
+    },
+    {
+      "label": "G2SameClockPastFutureLaw",
+      "matches": true,
+      "reconstructed_sha256": "92f6cc65aa6cdd2780fa3d135b50dd757f1c363d392eeaeb9c916b2a17c40af3",
+      "receipt_sha256": "92f6cc65aa6cdd2780fa3d135b50dd757f1c363d392eeaeb9c916b2a17c40af3"
+    },
+    {
+      "label": "G2EpochHistoryReadout",
+      "matches": true,
+      "reconstructed_sha256": "9e4440fa2eaa97718e6122e4004032449d7a7dc9afd88ba3b83c2c5044754f10",
+      "receipt_sha256": "9e4440fa2eaa97718e6122e4004032449d7a7dc9afd88ba3b83c2c5044754f10"
+    },
+    {
+      "label": "G2CompleteAncestralPath",
+      "matches": true,
+      "reconstructed_sha256": "8c5b6fbcc9f90f5c8fb50ded357715b42377047de709135b2ce339a39c10a852",
+      "receipt_sha256": "8c5b6fbcc9f90f5c8fb50ded357715b42377047de709135b2ce339a39c10a852"
+    },
+    {
+      "label": "G2ChronologicalPathReadout",
+      "matches": true,
+      "reconstructed_sha256": "11f314525518c9717f5f6042a8efbe2dbf5a4cafbbdf3178cd18e496be56beed",
+      "receipt_sha256": "11f314525518c9717f5f6042a8efbe2dbf5a4cafbbdf3178cd18e496be56beed"
+    },
+    {
+      "label": "G2CalendarDecoration",
+      "matches": true,
+      "reconstructed_sha256": "51a10fdd0c502b1fe038d6a17a31b3f0a567b94b4a5a4e8c05dbf1aad9647171",
+      "receipt_sha256": "51a10fdd0c502b1fe038d6a17a31b3f0a567b94b4a5a4e8c05dbf1aad9647171"
+    },
+    {
+      "label": "G2CompleteDecoration",
+      "matches": true,
+      "reconstructed_sha256": "83ceaa0130b4df13ccb61358545b7398b9f69ed719ae4f40ba29e8933662531d",
+      "receipt_sha256": "83ceaa0130b4df13ccb61358545b7398b9f69ed719ae4f40ba29e8933662531d"
+    },
+    {
+      "label": "G2PairBirthFold",
+      "matches": true,
+      "reconstructed_sha256": "cb7a4573bf0b655bfd92e109abb3c4026a379ec76b6859b05ca00fa9491db42e",
+      "receipt_sha256": "cb7a4573bf0b655bfd92e109abb3c4026a379ec76b6859b05ca00fa9491db42e"
+    },
+    {
+      "label": "G2ClockBoundaryNull",
+      "matches": true,
+      "reconstructed_sha256": "d8ade7692a0990ec8d3684d3f65f6b8dfb8c488dbc1df0a7bb54ed2691f2486f",
+      "receipt_sha256": "d8ade7692a0990ec8d3684d3f65f6b8dfb8c488dbc1df0a7bb54ed2691f2486f"
+    },
+    {
+      "label": "G2WholeMatrixAges",
+      "matches": true,
+      "reconstructed_sha256": "446b09494a6e74752ed31ad706d5d49e9ed89dadbdc56723f2e6757ba10250e6",
+      "receipt_sha256": "446b09494a6e74752ed31ad706d5d49e9ed89dadbdc56723f2e6757ba10250e6"
+    },
+    {
+      "label": "G2ChronologicalDecoration",
+      "matches": true,
+      "reconstructed_sha256": "eb73bd63744d0812ba3702d6f663d2cb6a1f89c7ab182377949f8e2809a5bcd9",
+      "receipt_sha256": "eb73bd63744d0812ba3702d6f663d2cb6a1f89c7ab182377949f8e2809a5bcd9"
+    },
+    {
+      "label": "G2StrictClockDecoration",
+      "matches": true,
+      "reconstructed_sha256": "34b897916580334c8b3c4ed39b7b7d4d271e8ef54129c88d905266ffee015a4e",
+      "receipt_sha256": "34b897916580334c8b3c4ed39b7b7d4d271e8ef54129c88d905266ffee015a4e"
+    },
+    {
+      "label": "G2OriginalProgramSafety",
+      "matches": true,
+      "reconstructed_sha256": "0758a7b6e50fa4aca46fe46dc7e90b72076fdbcd604d023b21f8e1d1e6cbae27",
+      "receipt_sha256": "0758a7b6e50fa4aca46fe46dc7e90b72076fdbcd604d023b21f8e1d1e6cbae27"
+    },
+    {
+      "label": "G2TimedBoundMeasurability",
+      "matches": true,
+      "reconstructed_sha256": "18bb90a31505acc4dbf37d6cf33aff1b69634b5c2b418ab7f0fbf41d635319d3",
+      "receipt_sha256": "18bb90a31505acc4dbf37d6cf33aff1b69634b5c2b418ab7f0fbf41d635319d3"
+    },
+    {
+      "label": "G2CutResidualSourceMixture",
+      "matches": true,
+      "reconstructed_sha256": "227a0a5afa6d3303cfff7114d0c0fbadbd0948d013c8d952193e6e71f1124b67",
+      "receipt_sha256": "227a0a5afa6d3303cfff7114d0c0fbadbd0948d013c8d952193e6e71f1124b67"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceNaturalCompletedLimit",
+      "matches": true,
+      "reconstructed_sha256": "af8ae1693891a769165e81fe509863dde34ed1c23183320530d40a9ba12bc838",
+      "receipt_sha256": "af8ae1693891a769165e81fe509863dde34ed1c23183320530d40a9ba12bc838"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCopyCarrierTransport",
+      "matches": true,
+      "reconstructed_sha256": "daea48522a8c70d8b58313f50a58c2f59976b0548d84b6c9e055356445ef3943",
+      "receipt_sha256": "daea48522a8c70d8b58313f50a58c2f59976b0548d84b6c9e055356445ef3943"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceSmallCarrierGenerator",
+      "matches": true,
+      "reconstructed_sha256": "16120f07878e352efb091a0c90c94c10d56eb03d2c37f34aab6db61b656facc5",
+      "receipt_sha256": "16120f07878e352efb091a0c90c94c10d56eb03d2c37f34aab6db61b656facc5"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCrossCarrierEpoch",
+      "matches": true,
+      "reconstructed_sha256": "b8afa4551db44d441402739cec2a760fae84a3c932742c6cc87155e822ceb228",
+      "receipt_sha256": "b8afa4551db44d441402739cec2a760fae84a3c932742c6cc87155e822ceb228"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceSmallCarrierPulse",
+      "matches": true,
+      "reconstructed_sha256": "a4cf464c1aa4c6535585480280e39f60582ae5906b74051bdc46d498f4f5182b",
+      "receipt_sha256": "a4cf464c1aa4c6535585480280e39f60582ae5906b74051bdc46d498f4f5182b"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCrossCarrierBoundary",
+      "matches": true,
+      "reconstructed_sha256": "46e18cd614b5fb32b0131669a37358d95442554f27372199468793cb18c4cf73",
+      "receipt_sha256": "46e18cd614b5fb32b0131669a37358d95442554f27372199468793cb18c4cf73"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCrossCarrierProgram",
+      "matches": true,
+      "reconstructed_sha256": "9959076e9aebe97632a06cfca7cd555b211ed8b510f84d61f39de7000e9565ce",
+      "receipt_sha256": "9959076e9aebe97632a06cfca7cd555b211ed8b510f84d61f39de7000e9565ce"
+    },
+    {
+      "label": "G2SourceFiniteHistory",
+      "matches": true,
+      "reconstructed_sha256": "ff32d655d18f543c407fe6f8b4ee1f1ef57cda81e891d5c3c3ee5bd925bf493a",
+      "receipt_sha256": "ff32d655d18f543c407fe6f8b4ee1f1ef57cda81e891d5c3c3ee5bd925bf493a"
+    },
+    {
+      "label": "G2ActualEpochHistoryLaw",
+      "matches": true,
+      "reconstructed_sha256": "e0957d4c18c3ec62d4d4f07a4caece8a34d102e6240b81f42859509e05451d42",
+      "receipt_sha256": "e0957d4c18c3ec62d4d4f07a4caece8a34d102e6240b81f42859509e05451d42"
+    },
+    {
+      "label": "G2EpochPathProjection",
+      "matches": true,
+      "reconstructed_sha256": "6f2c2772daf1e0b0c46edf16e624ade87d77245d3cce7a6780aac0a48ac1654a",
+      "receipt_sha256": "6f2c2772daf1e0b0c46edf16e624ade87d77245d3cce7a6780aac0a48ac1654a"
+    },
+    {
+      "label": "G2ActualSegmentPathLaw",
+      "matches": true,
+      "reconstructed_sha256": "54135d28c1d1d01d4a7195e99979018085fda684298f41e80c2f412c6aef541c",
+      "receipt_sha256": "54135d28c1d1d01d4a7195e99979018085fda684298f41e80c2f412c6aef541c"
+    },
+    {
+      "label": "G2FiniteFibreTransport",
+      "matches": true,
+      "reconstructed_sha256": "34191858e233348b2048ee6b244cd92f0cac9c9d87b0292ba579b0c2ca94c046",
+      "receipt_sha256": "34191858e233348b2048ee6b244cd92f0cac9c9d87b0292ba579b0c2ca94c046"
+    },
+    {
+      "label": "G2CalendarHistoryBinding",
+      "matches": true,
+      "reconstructed_sha256": "28745f156d391e24f1a0b45b5a5ead25d30aaa61fe3cad57beaffcc63a9f8fc4",
+      "receipt_sha256": "28745f156d391e24f1a0b45b5a5ead25d30aaa61fe3cad57beaffcc63a9f8fc4"
+    },
+    {
+      "label": "G2CalendarPathProjection",
+      "matches": true,
+      "reconstructed_sha256": "31c9330fe1d8f1f4bf74283d39593e28b4d92847c6d01b9e3edbd2ac8de5970c",
+      "receipt_sha256": "31c9330fe1d8f1f4bf74283d39593e28b4d92847c6d01b9e3edbd2ac8de5970c"
+    },
+    {
+      "label": "G2CompletedCalendarPathLaw",
+      "matches": true,
+      "reconstructed_sha256": "dcb8adda822177f88485cbf4e510f7d3192e7abef99d701c5348d6663ad40b50",
+      "receipt_sha256": "dcb8adda822177f88485cbf4e510f7d3192e7abef99d701c5348d6663ad40b50"
+    },
+    {
+      "label": "G2ChronologicalGluing",
+      "matches": true,
+      "reconstructed_sha256": "c5820b2cd46c4f9f9439043ca180220177c21f072bda96f3c848c38e076a795d",
+      "receipt_sha256": "c5820b2cd46c4f9f9439043ca180220177c21f072bda96f3c848c38e076a795d"
+    },
+    {
+      "label": "G2ActualChronologicalPathLaw",
+      "matches": true,
+      "reconstructed_sha256": "eecb1490848fd37b298f6bdfb01a4a93cb5be8c9a744e0914335753e4a54312b",
+      "receipt_sha256": "eecb1490848fd37b298f6bdfb01a4a93cb5be8c9a744e0914335753e4a54312b"
+    },
+    {
+      "label": "G2EventualPathReadout",
+      "matches": true,
+      "reconstructed_sha256": "98eb7cbbe806068b1585f430d23d7c6e4c1998098eef8514abaea0775c33a8e8",
+      "receipt_sha256": "98eb7cbbe806068b1585f430d23d7c6e4c1998098eef8514abaea0775c33a8e8"
+    },
+    {
+      "label": "G2ActualPairCoalescence",
+      "matches": true,
+      "reconstructed_sha256": "84f4ac62db73f6665041c90de1f51e796f575630e0307436d29173533087ac0e",
+      "receipt_sha256": "84f4ac62db73f6665041c90de1f51e796f575630e0307436d29173533087ac0e"
+    },
+    {
+      "label": "G2CalendarPairSupport",
+      "matches": true,
+      "reconstructed_sha256": "65955cca9b324e326d35365fbd9b7a34eef4261da6621c0fba42b0b41e0159f4",
+      "receipt_sha256": "65955cca9b324e326d35365fbd9b7a34eef4261da6621c0fba42b0b41e0159f4"
+    },
+    {
+      "label": "G2RationalAgeReadout",
+      "matches": true,
+      "reconstructed_sha256": "6420e115b74a352a5eea94dade22a66d731b8e6827b67c8be473275ff3b9678d",
+      "receipt_sha256": "6420e115b74a352a5eea94dade22a66d731b8e6827b67c8be473275ff3b9678d"
+    },
+    {
+      "label": "G2PairBirthThreshold",
+      "matches": true,
+      "reconstructed_sha256": "00f9f273aca521ab1b9c5a82bc00b8e66bb7bfcff223d4b66829d2747d873e78",
+      "receipt_sha256": "00f9f273aca521ab1b9c5a82bc00b8e66bb7bfcff223d4b66829d2747d873e78"
+    },
+    {
+      "label": "G2AncestralPairSupport",
+      "matches": true,
+      "reconstructed_sha256": "3f7ae40793a63c3a9aa8366762d90ab8b43a997175a6b1a9e310d576e6a889d2",
+      "receipt_sha256": "3f7ae40793a63c3a9aa8366762d90ab8b43a997175a6b1a9e310d576e6a889d2"
+    },
+    {
+      "label": "G2AncestralAgeCertificate",
+      "matches": true,
+      "reconstructed_sha256": "f00d0917bbb63619b2d91a50b6834c7cb062284b5927220ca802f5997a694a96",
+      "receipt_sha256": "f00d0917bbb63619b2d91a50b6834c7cb062284b5927220ca802f5997a694a96"
+    },
+    {
+      "label": "G2ChronologicalTraceCompatibility",
+      "matches": true,
+      "reconstructed_sha256": "ab3f40fff71f5878cb860856794fbeb5ce7b02e8e1d42ac19ac177f208a6a84f",
+      "receipt_sha256": "ab3f40fff71f5878cb860856794fbeb5ce7b02e8e1d42ac19ac177f208a6a84f"
+    },
+    {
+      "label": "G2CalendarFirstAge",
+      "matches": true,
+      "reconstructed_sha256": "9d1a8ae1b3a03072ff35effc4301e3259e6175d64d6c6202a75622d5be934b7a",
+      "receipt_sha256": "9d1a8ae1b3a03072ff35effc4301e3259e6175d64d6c6202a75622d5be934b7a"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceCrossCarrierNatural",
+      "matches": true,
+      "reconstructed_sha256": "c890aeef4e22771d8ef0d8573db7bb87e6c30e5dad3091571306684ef8efd81a",
+      "receipt_sha256": "c890aeef4e22771d8ef0d8573db7bb87e6c30e5dad3091571306684ef8efd81a"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+      "matches": true,
+      "reconstructed_sha256": "a5166814270df4931d21107a30265e1378cc08d47c059c1e9499a3fdcbe0c576",
+      "receipt_sha256": "a5166814270df4931d21107a30265e1378cc08d47c059c1e9499a3fdcbe0c576"
+    },
+    {
+      "label": "UnifiedLean.Source.SourceUnrankedAllPanels",
+      "matches": true,
+      "reconstructed_sha256": "2c4adb73f671d92d7932105a82ba4a6244f9f4340f93c9cbcc00f00109c795d4",
+      "receipt_sha256": "2c4adb73f671d92d7932105a82ba4a6244f9f4340f93c9cbcc00f00109c795d4"
+    },
+    {
+      "label": "UnifiedLean.Source.OriginalFixedIDControls",
+      "matches": true,
+      "reconstructed_sha256": "29dcc6051e830d7016698f78b9d7e2d05615b83642805e96fac25b423c870009",
+      "receipt_sha256": "29dcc6051e830d7016698f78b9d7e2d05615b83642805e96fac25b423c870009"
+    },
+    {
+      "label": "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+      "matches": true,
+      "reconstructed_sha256": "7d3ab3a1ed782e0de7b717ef4742def4febe659c998a5d0160f21116b2212f2c",
+      "receipt_sha256": "7d3ab3a1ed782e0de7b717ef4742def4febe659c998a5d0160f21116b2212f2c"
+    },
+    {
+      "label": "G2ControlledTraceAssembly",
+      "matches": true,
+      "reconstructed_sha256": "44f52014b83b59c5ecdf4d1842cf12c12689aad394de2f3260e2ac620931f86d",
+      "receipt_sha256": "44f52014b83b59c5ecdf4d1842cf12c12689aad394de2f3260e2ac620931f86d"
+    },
+    {
+      "label": "G2RegisteredPathProjection",
+      "matches": true,
+      "reconstructed_sha256": "565c36e4208790c46c0a9752b2b9a439433b782abc18c82e9d2c1e2efef07664",
+      "receipt_sha256": "565c36e4208790c46c0a9752b2b9a439433b782abc18c82e9d2c1e2efef07664"
+    },
+    {
+      "label": "G2OriginalAbsoluteAges",
+      "matches": true,
+      "reconstructed_sha256": "c65203c82f768a2eb4881b86963cd9c31a3b7809499dcbcc5c0b0f0e1c58eed8",
+      "receipt_sha256": "c65203c82f768a2eb4881b86963cd9c31a3b7809499dcbcc5c0b0f0e1c58eed8"
+    },
+    {
+      "label": "G2JointTimedObservation",
+      "matches": true,
+      "reconstructed_sha256": "d8c1912f4ffd9870f42f9a5fb051c4396839234cac5900e97168502cdd1e9919",
+      "receipt_sha256": "d8c1912f4ffd9870f42f9a5fb051c4396839234cac5900e97168502cdd1e9919"
+    },
+    {
+      "label": "G2CompleteTimedSupport",
+      "matches": true,
+      "reconstructed_sha256": "bfaa5d9f53aaae5152b800822942e543d0935ce133c00e47f1b05d55d433f5c2",
+      "receipt_sha256": "bfaa5d9f53aaae5152b800822942e543d0935ce133c00e47f1b05d55d433f5c2"
+    },
+    {
+      "label": "G2TimedDecorationPruning",
+      "matches": true,
+      "reconstructed_sha256": "e19a4f749e3c7d9b48d41ffa89b7a0f1f9b292f73f37c2241bbb142c0f4cb643",
+      "receipt_sha256": "e19a4f749e3c7d9b48d41ffa89b7a0f1f9b292f73f37c2241bbb142c0f4cb643"
+    },
+    {
+      "label": "G2ChronologicalPruning",
+      "matches": true,
+      "reconstructed_sha256": "9a0a9a787a3bc96ef8c0dd09447e111881ce17d43a6e608e75c5a2c9573f18e0",
+      "receipt_sha256": "9a0a9a787a3bc96ef8c0dd09447e111881ce17d43a6e608e75c5a2c9573f18e0"
+    },
+    {
+      "label": "G2SourcePairMatrixReadout",
+      "matches": true,
+      "reconstructed_sha256": "3e2619cb81f4294c872fe439ed4ef7b8d94fd3c5350b1e82bab75baa04dcd40d",
+      "receipt_sha256": "3e2619cb81f4294c872fe439ed4ef7b8d94fd3c5350b1e82bab75baa04dcd40d"
+    },
+    {
+      "label": "G2CompleteTerminalReadout",
+      "matches": true,
+      "reconstructed_sha256": "29ccbe0911f269082902a7800bb047b7c4db56d53cba7f4f27ca28ce28a4c358",
+      "receipt_sha256": "29ccbe0911f269082902a7800bb047b7c4db56d53cba7f4f27ca28ce28a4c358"
+    },
+    {
+      "label": "G2FaithfulTimedOutput",
+      "matches": true,
+      "reconstructed_sha256": "89b4586eed5c4154e3bcfd1d1885bdc0653576579a079d70b8be4c5ac4d76bc5",
+      "receipt_sha256": "89b4586eed5c4154e3bcfd1d1885bdc0653576579a079d70b8be4c5ac4d76bc5"
+    },
+    {
+      "label": "G2LiteralTimedObservationPruning",
+      "matches": true,
+      "reconstructed_sha256": "2b1805cd22a98e460a9369425106457ff7c3d0124b5e55430e6629d4da52fe6d",
+      "receipt_sha256": "2b1805cd22a98e460a9369425106457ff7c3d0124b5e55430e6629d4da52fe6d"
+    },
+    {
+      "label": "G2ActualTimedAllPanelLaw",
+      "matches": true,
+      "reconstructed_sha256": "b96247fee7151898fc3a10c2c19c2772ad4c6bf1637e4eef6a44fb208c176a7a",
+      "receipt_sha256": "b96247fee7151898fc3a10c2c19c2772ad4c6bf1637e4eef6a44fb208c176a7a"
+    },
+    {
+      "label": "G5HiddenRegisterTimedProjectivity",
+      "matches": true,
+      "reconstructed_sha256": "11cc58b52aaf97758c40064305e5a7927755e409da294a05f25c814f1de7ceb7",
+      "receipt_sha256": "11cc58b52aaf97758c40064305e5a7927755e409da294a05f25c814f1de7ceb7"
+    },
+    {
+      "label": "G3ApproximateMomentBarrier",
+      "matches": true,
+      "reconstructed_sha256": "71fc27cb8111feebfb0c83c52f1424c6a487ea912cd898f35a69e296bb72dcf6",
+      "receipt_sha256": "71fc27cb8111feebfb0c83c52f1424c6a487ea912cd898f35a69e296bb72dcf6"
+    },
+    {
+      "label": "UnifiedLean.G6.FiniteProbability",
+      "matches": true,
+      "reconstructed_sha256": "121829d5f08dd7850a1835d141f8b9579078cd51ab4c3eb8744bb101e3c1d87d",
+      "receipt_sha256": "121829d5f08dd7850a1835d141f8b9579078cd51ab4c3eb8744bb101e3c1d87d"
+    },
+    {
+      "label": "UnifiedLean.G6.Conditioning",
+      "matches": true,
+      "reconstructed_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480",
+      "receipt_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480"
+    },
+    {
+      "label": "UnifiedLean.G6.SourcePrefix",
+      "matches": true,
+      "reconstructed_sha256": "74e089eae61883da5c4cfedea59111c40cd6a770f2cabc2e2562e8d192b5c062",
+      "receipt_sha256": "74e089eae61883da5c4cfedea59111c40cd6a770f2cabc2e2562e8d192b5c062"
+    },
+    {
+      "label": "UnifiedLean.G6.ProgramPrefix",
+      "matches": true,
+      "reconstructed_sha256": "50f32b8f7e283dbd21e5e7d50cd059858b4dddb1a05a1eb7c0db1d671684d30d",
+      "receipt_sha256": "50f32b8f7e283dbd21e5e7d50cd059858b4dddb1a05a1eb7c0db1d671684d30d"
+    },
+    {
+      "label": "UnifiedLean.G6.TaylorCertificate",
+      "matches": true,
+      "reconstructed_sha256": "92226fe17e21b6a846772e539c2331a598710d4937be3716cf62928b2375d4b7",
+      "receipt_sha256": "92226fe17e21b6a846772e539c2331a598710d4937be3716cf62928b2375d4b7"
+    },
+    {
+      "label": "complete-custom-environment-audit",
+      "matches": true,
+      "reconstructed_sha256": "bd5293a3479e596d2a2199dbf942d1939e73d80c6cd697e06fcb7e555f9cc9dd",
+      "receipt_sha256": "bd5293a3479e596d2a2199dbf942d1939e73d80c6cd697e06fcb7e555f9cc9dd"
+    }
+  ],
+  "fresh_compiler_launched_by_auditor": false
+}
