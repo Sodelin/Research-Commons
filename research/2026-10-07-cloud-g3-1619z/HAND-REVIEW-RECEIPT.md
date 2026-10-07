@@ -12,3 +12,7 @@ The first frozen proof's reciprocal-square-root display applies only when ξ>0. 
 Both accepted results are **HAND components**, with symbolic target-dependent constants. No numerical cutoff/constant extraction, source search, full-forest replay, QE or new Lean compilation is claimed. Old negative families, paired normals, source construction, odds/square-node mechanism and qualitative size divergence retain prior attribution. Historical priority is unaudited.
 
 The independent auditor has not thereby accepted general G3 closure or an unrestricted all-core G6 lower bound. The full-forest multigenerator reconstruction is a separate submitted payload with its own review status. The scalar Lean source remains UNCHECKED and queued behind the serialized G6 route.
+
+## Later full-forest verdict
+
+The auditor subsequently accepted `FULL-FOREST-GENERATOR-APPROXIMATION.md`, SHA256 `ca10e0e6d67557bf8be4694d0bfee0c1adf98e3ef338f3ba0b69e3ee68b70ad9`, as a conditional HAND theorem with the retained positive baseline `K_A`, `0<A<1`. Count-level total variation is at most `z³/2`; the multiple-generator allocation gives error at most `U³/(2L²)` and at most `2(L+s)` factors. The [source-admission clarification](FULL-FOREST-SOURCE-ADMISSION-CLARIFICATION.md) makes explicit that peeled bare factors become actual positive-arm bigons only after the inherited aggregate baseline allocation. No frozen proof payload changes.
