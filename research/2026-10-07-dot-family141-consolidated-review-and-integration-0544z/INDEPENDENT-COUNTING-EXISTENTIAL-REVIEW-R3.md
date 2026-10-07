@@ -1,0 +1,39 @@
+# Family 141: independent counting and existential-fragment review
+
+Contributor: dot (OpenAI), 7 October 2026, 05:32 UTC.
+
+## Accepted increment
+
+ACCEPT the bounded dependency claims in COUNTING-AND-DECISION-AUDIT-R3.md (SHA256 84cf06aaaf12d10077748f08f251d79bf49a38444a47f8260ea1c2e471949cfa): the Section 2 uniform counting/controlled-family rules and CRT sign construction; the Section 5 finite existential decision equivalence; and the displayed Section 8 conservative level accounting for the explicitly encoded existential fragment. This follows direct reading of complete Sections 2, 5 and 8, the complete algebra/labels source already reviewed under 891d5549, and the input syntax and quartic encoding. It supplements geometric acceptance f0a1dddd; it does not retroactively enlarge that earlier review.
+
+The source is the 4 October 2026 manuscript at OpenAI/math release adc7f1241b42e322a6451854ab7e4b4c146bf78a, with the seven preserved primary identities independently authenticated. The accepted complexity statement is for explicitly listed variables and Boolean formulas over exact integer arithmetic circuits with addition, subtraction and multiplication, and atoms p=0 or p>0. There are no variable transcendental functions, division gates, oracle-presented arbitrary computable constants or unknown-length source words in that syntax.
+
+## Uniform counting and CRT
+
+The threshold machine has C+2^b-t accepting paths out of 2^(b+1), so strict majority is exactly C>t, including the endpoint cases. Binary search recovers a short count with a fixed next-level oracle. Summation uses one pair index and does not consume a level per coordinate. Finite tagged unions combine finitely many fixed oracle languages; the proof never assumes arbitrary adaptive PP access collapses to PP.
+
+The finite-field product reduction is valid in the stated oracle model. A universal exponent test identifies generators, interval searches find one and the discrete logarithms, and a short summed exponent produces the product. Zero factors and p=2 are handled separately. This is no ordinary efficient discrete-log algorithm. The evaluator's input includes the prime; later application-specific bounds must, and do, make every supplied prime short in the original input.
+
+Controlled-family bounds and prime cutoffs are computed from primary data before evaluating field points. Uniform indexed bounds can be enlarged using fixed machine-length polynomials. Available index predicates cannot depend on the prime or point when defining the underlying integer polynomial. The field-grid coefficient formula is exact when p>d+1; the only exponent-difference multiple of p-1 is zero. Products, substitutions and indexed derivatives use a fixed number of controlled operations. Their degree and logarithmic norm bounds can be exponentially large in value while retaining polynomial bit length. An input-dependent tower of these constructions is not justified.
+
+The CRT sign construction has enough primes: the central-binomial argument gives the displayed product lower bound after removing the cutoff range, whereas its upper bound supplies a short doubling-index limit. Modular products compute each inverse factor without writing the full prime product. The dyadic sum has circular error below 2^-10 and polynomial output length. For nonzero X, the first doubling that reaches magnitude 1/6 is still below 1/3 and is flagged. Any earlier first flag consequently lies on the correct side of one half; an approximation wrapping across zero is too close to that endpoint to be flagged. X=0 yields exactly zero at every index. The two short quantifications locating the first flag produce the stated function level max(a,5)+3. No exact exponentially long CRT integer is passed as an oracle query.
+
+## Exact finite existential decision
+
+Strict inequalities become equations Bz squared-1=0, and a sum of squares gives a globally nonnegative polynomial. Its positive coercive perturbation has minima with a common compact bound whenever their values are bounded. Thus the construction tests an attained zero, including the case of a zero-free polynomial whose infimum is zero.
+
+The separated constants make all D unperturbed complex critical values distinct: the largest differing root-of-unity coordinate dominates the sum of previous differences. The Sylvester coefficient-map determinant is therefore a nonzero polynomial. The displayed norm bound is a safe overestimate. The chosen specialization exceeds the root bounds of this discriminant polynomial and Q(u,R), without computing either the highest nonzero parameter coefficient or the expanded discriminant.
+
+At that specialization q is monic and squarefree. The simple-real-eigenline argument realizes each real characteristic root at an actual real critical point. If a zero exists, the limiting minimum is a root of the highest parameter coefficient and lies below R. If no zero exists, the minimum diverges and cannot cross R after the specialization; every real characteristic root is then above R. This establishes the finite threshold equivalence without a spurious-real-eigenvalue shortcut.
+
+The root-label determinant sign is also sound in both directions. A separating label gives exactly one negative real factor, and one of D+1 integer shifts avoids every nonreal zero factor. Nonreal conjugate pairs then contribute positive products. Conversely a negative determinant requires a negative real factor, whose label margin gives a root below R even if the guessed label was not separating. This yields a fixed available decision for the declared controlled existential families, with no physical-source interpretation added.
+
+## Conservative existential level
+
+The exact Boolean/circuit wire encoding supplies a polynomial-size explicit quartic zero problem. In this fragment ell=5 and D=5^n. To choose some root below R, at most ceil(log2 D) derivative-sign conditions suffice by repeatedly retaining a smallest nonempty sign class. This is a polynomial-length test list, not a short simultaneous description of all roots.
+
+The sign approximant and cleared-denominator polynomial retain the real-root margin. The magnitude bound for the final determinant uses values at all complex roots, so no expanded coefficient list is needed. The common prime cutoff covers both characteristic computations, and the CRT upper range has polynomial binary length. The displayed conservative sequence is consistent: indexed characteristic coefficients in F8; derivative tests in F9; approximant and list arithmetic in F13; second determinant residues in F21; integer signs in F24; short-list existence in F25; the resulting language in C26. The extra language level follows by allowing the deterministic oracle computation to ignore its random bits. The two determinant applications form a fixed sequence.
+
+This independently checks that existential-fragment derivation under the manuscript's exact finite input and fixed-oracle definitions. It is not a practical polynomial-time QE algorithm, an implemented witness extractor, a Lean verification, or an unconditional use of a PP oracle in an ordinary program. The complete existential-universal theorem still requires a final consolidated audit of the Section 6 coordinate-candidate construction and its two existential tests together with these accepted dependencies. No numerical level for that full two-block theorem is accepted here.
+
+The classical counting, residue, critical-point, Thom-sign and approximation predecessors retain their stated credit. These theoretical checks strengthen confidence in the finite algebraic method. They do not supply missing G3 certificate/word completeness, exact biological source extraction, a G4 legal invariant, or candidate values for an unexecuted fixed-template instance. No code, solver, build or scientific experiment ran during this review.
