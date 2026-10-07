@@ -1,0 +1,4626 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-07T23:48:03.181924+00:00",
+  "reference_sha256": "4708f1cf0fbafc704209dd110e919666c73125b78aaa292d3b6fb3a70d9ad3e4",
+  "source_sha256": {
+    "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/src/count_gmp.c": "4c15198ae726b8afb9aefab32bd46f2ee5d20833ccc2ede7375028cc289a0933",
+    "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/src/count_cli.cpp": "6e48875c712f1ebdb73e68c5e68f67d3ca6755a523d764183d0c8779580809dd",
+    "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/include/rc_count.h": "77910eaf3978bf2da5925a1a01c66fcb95c998cd4ce315210073104c85cff6e8",
+    "/workspace/g6-work/research/2026-10-07-cloud-practical-build-root-2345z/rust_count_cli.rs": "7c9db7202fb7462b1a5a4f46f2f29375b9229aa0cc208a1c719a4cc21dad01e0"
+  },
+  "versions": {
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "g++": "g++ (Debian 14.2.0-19) 14.2.0",
+    "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)\nbinary: rustc\ncommit-hash: 1159e78c4747b02ef996e55082b704c09b970588\ncommit-date: 2025-09-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.90.0\nLLVM version: 20.1.8\n"
+  },
+  "build_and_version_commands": [
+    {
+      "argv": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O2",
+        "-fPIC",
+        "-I",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/include",
+        "-c",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/src/count_gmp.c",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_gmp.o"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.13367298400044092,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "ar",
+        "rcs",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/librc_count.a",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_gmp.o"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.005938890000834363,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gcc",
+        "-shared",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_gmp.o",
+        "-lgmp",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/librc_count.so"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.02113569299763185,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O2",
+        "-I",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/include",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/src/count_cli.cpp",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/librc_count.a",
+        "-lgmp",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.13405576199875213,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--edition=2021",
+        "-D",
+        "warnings",
+        "-C",
+        "opt-level=3",
+        "-C",
+        "overflow-checks=on",
+        "/workspace/g6-work/research/2026-10-07-cloud-practical-build-root-2345z/rust_count_cli.rs",
+        "-L",
+        "native=/workspace/cloud-practical-runtime/root-ffi-attempt1",
+        "-l",
+        "static=rc_count",
+        "-l",
+        "gmp",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6216807479977433,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0017938059972948395,
+      "stdout_sha256": "4dc9a4e32fd9e06d42fb307688c59d6d889f0ff90ce034cbefed21b0d451fd81",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.002179684001021087,
+      "stdout_sha256": "5f6798e87440f1e8b88bf6822c33bebe434f83374640a7f8ba967902ee1ea098",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.01178942199840094,
+      "stdout_sha256": "938db28b83089ab88301ca425f99fa1d8b61ee66e0371babe1db6373ae9810a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "valid_full_output_cases": 80,
+  "interfaces": [
+    "C ABI",
+    "C++ CLI",
+    "Rust CLI"
+  ],
+  "invalid_cli_cases": 21,
+  "valid_cases": [
+    {
+      "argv": [
+        "0",
+        "1/2",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "0",
+        "epsilon": "1/2",
+        "K": 0,
+        "S": "1",
+        "T": "0",
+        "U": "1",
+        "delta": "0",
+        "inspected": 1,
+        "weights": [
+          "1"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "-0",
+        "1/3",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "0",
+        "epsilon": "1/3",
+        "K": 0,
+        "S": "1",
+        "T": "0",
+        "U": "1",
+        "delta": "0",
+        "inspected": 1,
+        "weights": [
+          "1"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "1",
+        "1/10",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "1",
+        "epsilon": "1/10",
+        "K": 3,
+        "S": "8/3",
+        "T": "1/24",
+        "U": "11/4",
+        "delta": "1/33",
+        "inspected": 4,
+        "weights": [
+          "3/8",
+          "3/8",
+          "3/16",
+          "1/16"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "2/3",
+        "2/7"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "2/3",
+        "epsilon": "2/7",
+        "K": 1,
+        "S": "5/3",
+        "T": "2/9",
+        "U": "19/9",
+        "delta": "4/19",
+        "inspected": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "1",
+        "1/100",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "1",
+        "epsilon": "1/100",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "1",
+        "1/100",
+        "--max-steps",
+        "1"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "1",
+        "epsilon": "1/100",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "12/18",
+        "02/003",
+        "--max-steps",
+        "20",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "2/3",
+        "epsilon": "2/3",
+        "K": 0,
+        "S": "1",
+        "T": "2/3",
+        "U": "7/3",
+        "delta": "4/7",
+        "inspected": 1,
+        "weights": [
+          "1"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "10",
+        "1/1000",
+        "--max-steps",
+        "64",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "10",
+        "epsilon": "1/1000",
+        "K": 21,
+        "S": "6863803323019051/311834363841",
+        "T": "30517578125000/3430178002251",
+        "U": "3598231986164741/163341809631",
+        "delta": "61035156250000/75562871709459561",
+        "inspected": 22,
+        "weights": [
+          "311834363841/6863803323019051",
+          "3118343638410/6863803323019051",
+          "15591718192050/6863803323019051",
+          "51972393973500/6863803323019051",
+          "129930984933750/6863803323019051",
+          "259861969867500/6863803323019051",
+          "433103283112500/6863803323019051",
+          "618718975875000/6863803323019051",
+          "773398719843750/6863803323019051",
+          "859331910937500/6863803323019051",
+          "859331910937500/6863803323019051",
+          "781210828125000/6863803323019051",
+          "651009023437500/6863803323019051",
+          "500776171875000/6863803323019051",
+          "357697265625000/6863803323019051",
+          "238464843750000/6863803323019051",
+          "149040527343750/6863803323019051",
+          "87670898437500/6863803323019051",
+          "48706054687500/6863803323019051",
+          "25634765625000/6863803323019051",
+          "12817382812500/6863803323019051",
+          "6103515625000/6863803323019051"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "1329227995784915872903807060280344576",
+        "1/8",
+        "--max-steps",
+        "3"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "1329227995784915872903807060280344576",
+        "epsilon": "1/8",
+        "inspected": 3,
+        "next_K": 3
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "1/1000",
+        "1/1461501637330902918203684832716283019655932542976",
+        "--max-steps",
+        "64",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "1/1000",
+        "epsilon": "1/1461501637330902918203684832716283019655932542976",
+        "K": 12,
+        "S": "43589167380059414762940488641080120012001091/43545600000000000000000000000000000000000000",
+        "T": "1/6227020800000000000000000000000000000000000000000",
+        "U": "148410736555916578835725949420820408612289428881/148262400000000000000000000000000000000000000000",
+        "delta": "1/3116625467674248155550244937837228580858078006501",
+        "inspected": 13,
+        "weights": [
+          "43545600000000000000000000000000000000000000/43589167380059414762940488641080120012001091",
+          "43545600000000000000000000000000000000000/43589167380059414762940488641080120012001091",
+          "21772800000000000000000000000000000000/43589167380059414762940488641080120012001091",
+          "7257600000000000000000000000000000/43589167380059414762940488641080120012001091",
+          "1814400000000000000000000000000/43589167380059414762940488641080120012001091",
+          "362880000000000000000000000/43589167380059414762940488641080120012001091",
+          "60480000000000000000000/43589167380059414762940488641080120012001091",
+          "8640000000000000000/43589167380059414762940488641080120012001091",
+          "1080000000000000/43589167380059414762940488641080120012001091",
+          "120000000000/43589167380059414762940488641080120012001091",
+          "12000000/43589167380059414762940488641080120012001091",
+          "12000/479480841180653562392345375051881320132012001",
+          "1/479480841180653562392345375051881320132012001"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "14/12",
+        "2/47",
+        "--max-steps",
+        "32"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "7/6",
+        "epsilon": "2/47",
+        "K": 4,
+        "S": "99193/31104",
+        "T": "16807/933120",
+        "U": "752351/233280",
+        "delta": "16807/1504702",
+        "inspected": 5
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "17/5",
+        "2/23",
+        "--max-steps",
+        "8"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "17/5",
+        "epsilon": "2/23",
+        "K": 6,
+        "S": "317594029/11250000",
+        "T": "410338673/393750000",
+        "U": "3978822787/131250000",
+        "delta": "820677346/11936468361",
+        "inspected": 7
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "40/7",
+        "2/79",
+        "--max-steps",
+        "1"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "40/7",
+        "epsilon": "2/79",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "7/11",
+        "4/56",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "7/11",
+        "epsilon": "1/14",
+        "K": 2,
+        "S": "445/242",
+        "T": "343/7986",
+        "U": "15371/7986",
+        "delta": "686/15371",
+        "inspected": 3,
+        "weights": [
+          "242/445",
+          "154/445",
+          "49/445"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "57/8",
+        "1/53",
+        "--max-steps",
+        "2"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "57/8",
+        "epsilon": "1/53",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "13/18",
+        "1/16",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "13/18",
+        "epsilon": "1/16",
+        "K": 2,
+        "S": "1285/648",
+        "T": "2197/34992",
+        "U": "9223/4374",
+        "delta": "2197/36892",
+        "inspected": 3
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "2/1",
+        "1/75",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "2",
+        "epsilon": "1/75",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "7/10",
+        "1/51",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "7/10",
+        "epsilon": "1/51",
+        "K": 3,
+        "S": "12013/6000",
+        "T": "2401/240000",
+        "U": "80887/40000",
+        "delta": "2401/242661",
+        "inspected": 4
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "3/15",
+        "4/74",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "1/5",
+        "epsilon": "2/37",
+        "K": 1,
+        "S": "6/5",
+        "T": "1/50",
+        "U": "31/25",
+        "delta": "1/31",
+        "inspected": 2,
+        "weights": [
+          "5/6",
+          "1/6"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "8/8",
+        "7/27",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "1",
+        "epsilon": "7/27",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "2/15",
+        "5/54",
+        "--max-steps",
+        "8"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "2/15",
+        "epsilon": "5/54",
+        "K": 1,
+        "S": "17/15",
+        "T": "2/225",
+        "U": "259/225",
+        "delta": "4/259",
+        "inspected": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "50/14",
+        "6/54",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "25/7",
+        "epsilon": "1/9",
+        "K": 6,
+        "S": "559819781/16941456",
+        "T": "1220703125/830131344",
+        "U": "9957525173/276710448",
+        "delta": "2441406250/29872575519",
+        "inspected": 7
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "29/16",
+        "4/47",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "29/16",
+        "epsilon": "4/47",
+        "K": 4,
+        "S": "3091803/524288",
+        "T": "20511149/125829120",
+        "U": "391527509/62914560",
+        "delta": "20511149/391527509",
+        "inspected": 5,
+        "weights": [
+          "524288/3091803",
+          "950272/3091803",
+          "861184/3091803",
+          "1560896/9275409",
+          "707281/9275409"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "4/18",
+        "7/16",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "2/9",
+        "epsilon": "7/16",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "21/18",
+        "2/72",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "7/6",
+        "epsilon": "1/36",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "12/9",
+        "6/10",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "4/3",
+        "epsilon": "3/5",
+        "K": 1,
+        "S": "7/3",
+        "T": "8/9",
+        "U": "37/9",
+        "delta": "16/37",
+        "inspected": 2,
+        "weights": [
+          "3/7",
+          "4/7"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "18/2",
+        "3/25",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "9",
+        "epsilon": "3/25",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "49/6",
+        "6/63",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "49/6",
+        "epsilon": "2/21",
+        "inspected": 8,
+        "next_K": 8
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "33/17",
+        "1/47",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "33/17",
+        "epsilon": "1/47",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "38/1",
+        "1/31",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "38",
+        "epsilon": "1/31",
+        "inspected": 32,
+        "next_K": 32
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "15/3",
+        "2/60",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "5",
+        "epsilon": "1/30",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "56/15",
+        "7/32",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "56/15",
+        "epsilon": "7/32",
+        "K": 6,
+        "S": "19617938581/512578125",
+        "T": "15420489728/7688671875",
+        "U": "325110058171/7688671875",
+        "delta": "30840979456/325110058171",
+        "inspected": 7
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "39/2",
+        "1/55",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "39/2",
+        "epsilon": "1/55",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "37/13",
+        "8/32",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "37/13",
+        "epsilon": "1/4",
+        "K": 4,
+        "S": "9920849/685464",
+        "T": "69343957/44555160",
+        "U": "261181033/14851720",
+        "delta": "138687914/783543099",
+        "inspected": 5
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "43/10",
+        "7/40",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "43/10",
+        "epsilon": "7/40",
+        "K": 7,
+        "S": "3450624495137/50400000000",
+        "T": "11688200277601/4032000000000",
+        "U": "16634797787009/224000000000",
+        "delta": "11688200277601/149713180083081",
+        "inspected": 8,
+        "weights": [
+          "50400000000/3450624495137",
+          "216720000000/3450624495137",
+          "465948000000/3450624495137",
+          "667858800000/3450624495137",
+          "717948210000/3450624495137",
+          "617435460600/3450624495137",
+          "442495413430/3450624495137",
+          "271818611107/3450624495137"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "2/15",
+        "2/11",
+        "--max-steps",
+        "1"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "2/15",
+        "epsilon": "2/11",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "44/9",
+        "7/64",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "44/9",
+        "epsilon": "7/64",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "42/16",
+        "7/56",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "21/8",
+        "epsilon": "1/8",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "36/17",
+        "8/18",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "36/17",
+        "epsilon": "4/9",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "42/7",
+        "3/79",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "6",
+        "epsilon": "3/79",
+        "K": 11,
+        "S": "760997/1925",
+        "T": "8748/1925",
+        "U": "778493/1925",
+        "delta": "17496/778493",
+        "inspected": 12,
+        "weights": [
+          "1925/760997",
+          "11550/760997",
+          "34650/760997",
+          "69300/760997",
+          "103950/760997",
+          "124740/760997",
+          "124740/760997",
+          "106920/760997",
+          "80190/760997",
+          "53460/760997",
+          "32076/760997",
+          "17496/760997"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "3/16",
+        "2/26",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "3/16",
+        "epsilon": "1/13",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "56/10",
+        "5/32",
+        "--max-steps",
+        "32"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "28/5",
+        "epsilon": "5/32",
+        "K": 10,
+        "S": "1732287232199/6591796875",
+        "T": "4628074479616/1087646484375",
+        "U": "295083542272067/1087646484375",
+        "delta": "9256148959232/295083542272067",
+        "inspected": 11
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "30/6",
+        "1/47",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "5",
+        "epsilon": "1/47",
+        "K": 10,
+        "S": "7082479/48384",
+        "T": "1953125/1596672",
+        "U": "237628057/1596672",
+        "delta": "3906250/237628057",
+        "inspected": 11
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "43/10",
+        "4/12",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "43/10",
+        "epsilon": "1/3",
+        "K": 7,
+        "S": "3450624495137/50400000000",
+        "T": "11688200277601/4032000000000",
+        "U": "16634797787009/224000000000",
+        "delta": "11688200277601/149713180083081",
+        "inspected": 8,
+        "weights": [
+          "50400000000/3450624495137",
+          "216720000000/3450624495137",
+          "465948000000/3450624495137",
+          "667858800000/3450624495137",
+          "717948210000/3450624495137",
+          "617435460600/3450624495137",
+          "442495413430/3450624495137",
+          "271818611107/3450624495137"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "48/7",
+        "6/30",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "48/7",
+        "epsilon": "1/5",
+        "K": 12,
+        "S": "2248742996667583/2422225260175",
+        "T": "28855583159353344/2424647485435175",
+        "U": "2308702905982957271/2424647485435175",
+        "delta": "57711166318706688/2308702905982957271",
+        "inspected": 13,
+        "weights": [
+          "2422225260175/2248742996667583",
+          "16609544641200/2248742996667583",
+          "56947010198400/2248742996667583",
+          "130164594739200/2248742996667583",
+          "223139305267200/2248742996667583",
+          "306019618652160/2248742996667583",
+          "349736707031040/2248742996667583",
+          "342599223214080/2248742996667583",
+          "293656477040640/2248742996667583",
+          "223738268221440/2248742996667583",
+          "153420526780416/2248742996667583",
+          "1052026469351424/24736172963343413",
+          "601157982486528/24736172963343413"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "27/10",
+        "8/36",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "27/10",
+        "epsilon": "2/9",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "3/8",
+        "8/33",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "3/8",
+        "epsilon": "8/33",
+        "K": 1,
+        "S": "11/8",
+        "T": "9/128",
+        "U": "97/64",
+        "delta": "9/97",
+        "inspected": 2,
+        "weights": [
+          "8/11",
+          "3/11"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "41/18",
+        "4/48",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "41/18",
+        "epsilon": "1/12",
+        "K": 5,
+        "S": "2148228371/226748160",
+        "T": "4750104241/24488801280",
+        "U": "24150887255/2448880128",
+        "delta": "4750104241/120754436275",
+        "inspected": 6
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "6/7",
+        "5/60",
+        "--max-steps",
+        "2"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "6/7",
+        "epsilon": "1/12",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "52/1",
+        "8/62",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "52",
+        "epsilon": "4/31",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "58/1",
+        "2/17",
+        "--max-steps",
+        "8"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "58",
+        "epsilon": "2/17",
+        "inspected": 8,
+        "next_K": 8
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "16/2",
+        "5/65",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "8",
+        "epsilon": "1/13",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "31/6",
+        "7/19",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "31/6",
+        "epsilon": "7/19",
+        "K": 9,
+        "S": "123326516157617/731398864896",
+        "T": "819628286980801/219419659468800",
+        "U": "19318605710623351/109709829734400",
+        "delta": "819628286980801/19318605710623351",
+        "inspected": 10,
+        "weights": [
+          "731398864896/123326516157617",
+          "3778894135296/123326516157617",
+          "9762143182848/123326516157617",
+          "16812579926016/123326516157617",
+          "21716249071104/123326516157617",
+          "112200620200704/616632580788085",
+          "96617200728384/616632580788085",
+          "71312695775712/616632580788085",
+          "46056116021814/616632580788085",
+          "26439622160671/616632580788085"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "34/16",
+        "7/37",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "17/8",
+        "epsilon": "7/37",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "32/15",
+        "3/70",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "32/15",
+        "epsilon": "3/70",
+        "K": 5,
+        "S": "94067329/11390625",
+        "T": "67108864/512578125",
+        "U": "4367247533/512578125",
+        "delta": "134217728/4367247533",
+        "inspected": 6,
+        "weights": [
+          "11390625/94067329",
+          "24300000/94067329",
+          "25920000/94067329",
+          "18432000/94067329",
+          "9830400/94067329",
+          "4194304/94067329"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "44/19",
+        "8/71",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "44/19",
+        "epsilon": "8/71",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "32/8",
+        "1/29",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "4",
+        "epsilon": "1/29",
+        "inspected": 8,
+        "next_K": 8
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "43/18",
+        "7/28",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "43/18",
+        "epsilon": "1/4",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "26/10",
+        "7/18",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "13/5",
+        "epsilon": "7/18",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "45/6",
+        "5/38",
+        "--max-steps",
+        "32"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "15/2",
+        "epsilon": "5/38",
+        "K": 13,
+        "S": "14854728771643/8396996608",
+        "T": "4805419921875/235115905024",
+        "U": "212771622724877/117557952512",
+        "delta": "4805419921875/212771622724877",
+        "inspected": 14
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "38/17",
+        "5/18",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "38/17",
+        "epsilon": "5/18",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "25/10",
+        "1/70",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "5/2",
+        "epsilon": "1/70",
+        "K": 7,
+        "S": "1565159/129024",
+        "T": "78125/2064384",
+        "U": "1399933/114688",
+        "delta": "78125/12599397",
+        "inspected": 8
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "53/17",
+        "3/61",
+        "--max-steps",
+        "8"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "53/17",
+        "epsilon": "3/61",
+        "K": 7,
+        "S": "2877529977037/129256681995",
+        "T": "62259690411361/281262540021120",
+        "U": "354779145047513/15625696667840",
+        "delta": "62259690411361/3193012305427617",
+        "inspected": 8
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "25/4",
+        "7/62",
+        "--max-steps",
+        "1"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "25/4",
+        "epsilon": "7/62",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "23/4",
+        "5/49",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "23/4",
+        "epsilon": "5/49",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "20/2",
+        "7/10",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "10",
+        "epsilon": "7/10",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "40/12",
+        "2/18",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "10/3",
+        "epsilon": "1/9",
+        "inspected": 1,
+        "next_K": 1
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "24/7",
+        "6/32",
+        "--max-steps",
+        "32"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "24/7",
+        "epsilon": "3/16",
+        "K": 5,
+        "S": "2246171/84035",
+        "T": "1327104/588245",
+        "U": "3675481/117649",
+        "delta": "2654208/18377405",
+        "inspected": 6
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "37/1",
+        "8/11",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "37",
+        "epsilon": "8/11",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "17/6",
+        "7/13",
+        "--max-steps",
+        "8"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "17/6",
+        "epsilon": "7/13",
+        "K": 4,
+        "S": "445513/31104",
+        "T": "1419857/933120",
+        "U": "1012819/58320",
+        "delta": "1419857/8102552",
+        "inspected": 5
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "0/13",
+        "1/75",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "0",
+        "epsilon": "1/75",
+        "K": 0,
+        "S": "1",
+        "T": "0",
+        "U": "1",
+        "delta": "0",
+        "inspected": 1,
+        "weights": [
+          "1"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "25/6",
+        "2/55",
+        "--max-steps",
+        "8"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "25/6",
+        "epsilon": "2/55",
+        "inspected": 8,
+        "next_K": 8
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "19/19",
+        "2/12",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "1",
+        "epsilon": "1/6",
+        "K": 2,
+        "S": "5/2",
+        "T": "1/6",
+        "U": "17/6",
+        "delta": "2/17",
+        "inspected": 3,
+        "weights": [
+          "2/5",
+          "2/5",
+          "1/5"
+        ]
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "52/13",
+        "1/78",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "4",
+        "epsilon": "1/78",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "1/13",
+        "7/67",
+        "--max-steps",
+        "2"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "1/13",
+        "epsilon": "7/67",
+        "K": 1,
+        "S": "14/13",
+        "T": "1/338",
+        "U": "183/169",
+        "delta": "1/183",
+        "inspected": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "25/6",
+        "3/61",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "25/6",
+        "epsilon": "3/61",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "17/5",
+        "2/40",
+        "--max-steps",
+        "2"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "17/5",
+        "epsilon": "1/20",
+        "inspected": 2,
+        "next_K": 2
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "22/16",
+        "4/36",
+        "--max-steps",
+        "0"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "11/8",
+        "epsilon": "1/9",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "27/19",
+        "8/55",
+        "--max-steps",
+        "96"
+      ],
+      "expected": {
+        "status": "CERTIFIED",
+        "law": "normalized_prefix",
+        "a": "27/19",
+        "epsilon": "8/55",
+        "K": 3,
+        "S": "26812/6859",
+        "T": "177147/1042568",
+        "U": "2214859/521284",
+        "delta": "177147/2214859",
+        "inspected": 4
+      },
+      "all_three_equal": true
+    },
+    {
+      "argv": [
+        "6/7",
+        "5/10",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "expected": {
+        "status": "RESOURCE_LIMIT",
+        "law": "normalized_prefix",
+        "a": "6/7",
+        "epsilon": "1/2",
+        "inspected": 0,
+        "next_K": 0
+      },
+      "all_three_equal": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "argv": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O2",
+        "-fPIC",
+        "-I",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/include",
+        "-c",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/src/count_gmp.c",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_gmp.o"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.13367298400044092,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "ar",
+        "rcs",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/librc_count.a",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_gmp.o"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.005938890000834363,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gcc",
+        "-shared",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_gmp.o",
+        "-lgmp",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/librc_count.so"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.02113569299763185,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O2",
+        "-I",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/include",
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/src/count_cli.cpp",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/librc_count.a",
+        "-lgmp",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.13405576199875213,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--edition=2021",
+        "-D",
+        "warnings",
+        "-C",
+        "opt-level=3",
+        "-C",
+        "overflow-checks=on",
+        "/workspace/g6-work/research/2026-10-07-cloud-practical-build-root-2345z/rust_count_cli.rs",
+        "-L",
+        "native=/workspace/cloud-practical-runtime/root-ffi-attempt1",
+        "-l",
+        "static=rc_count",
+        "-l",
+        "gmp",
+        "-o",
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6216807479977433,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0017938059972948395,
+      "stdout_sha256": "4dc9a4e32fd9e06d42fb307688c59d6d889f0ff90ce034cbefed21b0d451fd81",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.002179684001021087,
+      "stdout_sha256": "5f6798e87440f1e8b88bf6822c33bebe434f83374640a7f8ba967902ee1ea098",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.01178942199840094,
+      "stdout_sha256": "938db28b83089ab88301ca425f99fa1d8b61ee66e0371babe1db6373ae9810a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "0",
+        "1/2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014454209995165002,
+      "stdout_sha256": "14095f5d31e0178392c824787f46579f0e58eca10b187c2cbd1a5f3170e27bb8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "0",
+        "1/2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0020205090004310478,
+      "stdout_sha256": "14095f5d31e0178392c824787f46579f0e58eca10b187c2cbd1a5f3170e27bb8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "-0",
+        "1/3",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0015476750013476703,
+      "stdout_sha256": "95e24d2066ac81f9cbcab485e033dceb4d6999daa1f7ba16da10a5fb9dacaf5a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "-0",
+        "1/3",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012629559969354887,
+      "stdout_sha256": "95e24d2066ac81f9cbcab485e033dceb4d6999daa1f7ba16da10a5fb9dacaf5a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/10",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009766839975782204,
+      "stdout_sha256": "91b5d389baefea1e84b5261baf61d4aeec634157525a1194a8fad25af435a8df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/10",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014424969995161518,
+      "stdout_sha256": "91b5d389baefea1e84b5261baf61d4aeec634157525a1194a8fad25af435a8df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "2/3",
+        "2/7"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013751240003330167,
+      "stdout_sha256": "3e7b03217ea43d59fb44e12bbe7875f731125f5fa059b38ba5720ac9771a7027",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "2/3",
+        "2/7"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0018540470009611454,
+      "stdout_sha256": "3e7b03217ea43d59fb44e12bbe7875f731125f5fa059b38ba5720ac9771a7027",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/100",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012171359994681552,
+      "stdout_sha256": "4afbf5fb0c76ede536a277b81316fe964530e16fc72128c5f2124817cc8870dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/100",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001256305997230811,
+      "stdout_sha256": "4afbf5fb0c76ede536a277b81316fe964530e16fc72128c5f2124817cc8870dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/100",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011222030007047579,
+      "stdout_sha256": "e013a8dd26ba05cd3efc80560e413dc25215b49a392e4e13e2d182c2e28dda22",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/100",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001415375001670327,
+      "stdout_sha256": "e013a8dd26ba05cd3efc80560e413dc25215b49a392e4e13e2d182c2e28dda22",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "12/18",
+        "02/003",
+        "--max-steps",
+        "20",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011995000022579916,
+      "stdout_sha256": "6823a043e2dd0356dd24f266dc888bf91ec12c7d3634b7a4cdb8505de562b0a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "12/18",
+        "02/003",
+        "--max-steps",
+        "20",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0016329239988408517,
+      "stdout_sha256": "6823a043e2dd0356dd24f266dc888bf91ec12c7d3634b7a4cdb8505de562b0a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "10",
+        "1/1000",
+        "--max-steps",
+        "64",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009661479998612776,
+      "stdout_sha256": "f2c76a2c42a7733f1524b2f4781efee78df1b0ac25315bc5bf76a1e92ca19401",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "10",
+        "1/1000",
+        "--max-steps",
+        "64",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0017110510016209446,
+      "stdout_sha256": "f2c76a2c42a7733f1524b2f4781efee78df1b0ac25315bc5bf76a1e92ca19401",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1329227995784915872903807060280344576",
+        "1/8",
+        "--max-steps",
+        "3"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009653859997342806,
+      "stdout_sha256": "7c414944103b0c5735948d451afa4258241b1dfcbb0896966f8d2b81a361ad98",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1329227995784915872903807060280344576",
+        "1/8",
+        "--max-steps",
+        "3"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001221794002049137,
+      "stdout_sha256": "7c414944103b0c5735948d451afa4258241b1dfcbb0896966f8d2b81a361ad98",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1/1000",
+        "1/1461501637330902918203684832716283019655932542976",
+        "--max-steps",
+        "64",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012597610002558213,
+      "stdout_sha256": "40e7fdbcad9198d9bda452ad06fd2fb50f998533bb0a9ba6064282b9b1c47299",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1/1000",
+        "1/1461501637330902918203684832716283019655932542976",
+        "--max-steps",
+        "64",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001469327002268983,
+      "stdout_sha256": "40e7fdbcad9198d9bda452ad06fd2fb50f998533bb0a9ba6064282b9b1c47299",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "14/12",
+        "2/47",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009182150024571456,
+      "stdout_sha256": "62baa5017e96ecb23f9bb8008bbfd078b067bf7e3cbd3824365c575ffaa35ea1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "14/12",
+        "2/47",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011799400017480366,
+      "stdout_sha256": "62baa5017e96ecb23f9bb8008bbfd078b067bf7e3cbd3824365c575ffaa35ea1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "17/5",
+        "2/23",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.000975330996880075,
+      "stdout_sha256": "afc978098f506262e04f1d50628a987fe22ecbc8fa288a4efc41bbf258d69d25",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "17/5",
+        "2/23",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011500360014906619,
+      "stdout_sha256": "afc978098f506262e04f1d50628a987fe22ecbc8fa288a4efc41bbf258d69d25",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "40/7",
+        "2/79",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001001862001430709,
+      "stdout_sha256": "a79bebfaec7e655ab83e39f5d9865a0638d099ab70cfae3af8b8005710ae4c37",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "40/7",
+        "2/79",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011800700012827292,
+      "stdout_sha256": "a79bebfaec7e655ab83e39f5d9865a0638d099ab70cfae3af8b8005710ae4c37",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "7/11",
+        "4/56",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009627219988033175,
+      "stdout_sha256": "3fffae283db0d8925bbc2c45420ce66fb833e8a57f97c8ffdf65d0873798aa52",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "7/11",
+        "4/56",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001181611998617882,
+      "stdout_sha256": "3fffae283db0d8925bbc2c45420ce66fb833e8a57f97c8ffdf65d0873798aa52",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "57/8",
+        "1/53",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011386179976398125,
+      "stdout_sha256": "5a876ad20f056f64955bc89766bb526af723121635103ac8716147415f427991",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "57/8",
+        "1/53",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013076530012767762,
+      "stdout_sha256": "5a876ad20f056f64955bc89766bb526af723121635103ac8716147415f427991",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "13/18",
+        "1/16",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0023702060025243554,
+      "stdout_sha256": "b8acaba8593c1869fcbf29cd5a5f8b8b23eb01f8c55064dfe04ba610196c7af6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "13/18",
+        "1/16",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011662489996524528,
+      "stdout_sha256": "b8acaba8593c1869fcbf29cd5a5f8b8b23eb01f8c55064dfe04ba610196c7af6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "2/1",
+        "1/75",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011227039976802189,
+      "stdout_sha256": "93f7f6c4fc5c0a1a7d15acf5d615cba110d716ade9ad6ab213070914a0b1e1ea",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "2/1",
+        "1/75",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011676620015350636,
+      "stdout_sha256": "93f7f6c4fc5c0a1a7d15acf5d615cba110d716ade9ad6ab213070914a0b1e1ea",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "7/10",
+        "1/51",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008967619978648145,
+      "stdout_sha256": "3030560748e08cbe5da367c08139d928ead3299746535989550cc87d9f8ebea5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "7/10",
+        "1/51",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012786289989890065,
+      "stdout_sha256": "3030560748e08cbe5da367c08139d928ead3299746535989550cc87d9f8ebea5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "3/15",
+        "4/74",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012092750002921093,
+      "stdout_sha256": "646eb999a0b88769bef5097ba91d3905693f5e7f14a8d457d8263993db752046",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "3/15",
+        "4/74",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011481820001790766,
+      "stdout_sha256": "646eb999a0b88769bef5097ba91d3905693f5e7f14a8d457d8263993db752046",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "8/8",
+        "7/27",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008860460002324544,
+      "stdout_sha256": "ef4b313d599b1e9d2a5fc6e3a59615d5465c8cdc0359c931a5cde185395b82b5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "8/8",
+        "7/27",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012206809988128953,
+      "stdout_sha256": "ef4b313d599b1e9d2a5fc6e3a59615d5465c8cdc0359c931a5cde185395b82b5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "2/15",
+        "5/54",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0020618909984477796,
+      "stdout_sha256": "31770d31d9db4de1f68df00713505f7e6968818728f667a9c9b136b4a576a0df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "2/15",
+        "5/54",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011330800007272046,
+      "stdout_sha256": "31770d31d9db4de1f68df00713505f7e6968818728f667a9c9b136b4a576a0df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "50/14",
+        "6/54",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010348610012442805,
+      "stdout_sha256": "43822ac9d9bf1e600c5e6cfbbe6980cf3a95cc8933bdcfd558d488c9a580455f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "50/14",
+        "6/54",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010956330006592907,
+      "stdout_sha256": "43822ac9d9bf1e600c5e6cfbbe6980cf3a95cc8933bdcfd558d488c9a580455f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "29/16",
+        "4/47",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010432839990244247,
+      "stdout_sha256": "ae48957b782f11e2b06cd73991af5eae6701d9d7c13b8cedf45cf01294463a4d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "29/16",
+        "4/47",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014359470005729236,
+      "stdout_sha256": "ae48957b782f11e2b06cd73991af5eae6701d9d7c13b8cedf45cf01294463a4d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "4/18",
+        "7/16",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009244239990948699,
+      "stdout_sha256": "c5b27a5685b77e7c7b6efce169a64aa21c815bf5dbc35e1eda5a7b1f4120f27e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "4/18",
+        "7/16",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010646169976098463,
+      "stdout_sha256": "c5b27a5685b77e7c7b6efce169a64aa21c815bf5dbc35e1eda5a7b1f4120f27e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "21/18",
+        "2/72",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010282510011165868,
+      "stdout_sha256": "fab81d52b75ab5b5f1738e7d805d87726e455a055da41828d785f44d749ee9f2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "21/18",
+        "2/72",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014945549992262386,
+      "stdout_sha256": "fab81d52b75ab5b5f1738e7d805d87726e455a055da41828d785f44d749ee9f2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "12/9",
+        "6/10",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001137375998951029,
+      "stdout_sha256": "b106cda31a45eb02ac8a9839256282c38215a1a6ea5fd4d0bc012b7565d57455",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "12/9",
+        "6/10",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013040970006841235,
+      "stdout_sha256": "b106cda31a45eb02ac8a9839256282c38215a1a6ea5fd4d0bc012b7565d57455",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "18/2",
+        "3/25",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011559640006453265,
+      "stdout_sha256": "68221523c067dc03561e06f7be2e43cbe1f3029416b7a4d07b52a2aa0aa59bdd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "18/2",
+        "3/25",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0016115210019052029,
+      "stdout_sha256": "68221523c067dc03561e06f7be2e43cbe1f3029416b7a4d07b52a2aa0aa59bdd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "49/6",
+        "6/63",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008549800004402641,
+      "stdout_sha256": "153a090ce5c61ec0bdfd2b6b089f99d31dd0fa76a62f532302cd25a3caf660d3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "49/6",
+        "6/63",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014710989999002777,
+      "stdout_sha256": "153a090ce5c61ec0bdfd2b6b089f99d31dd0fa76a62f532302cd25a3caf660d3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "33/17",
+        "1/47",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011032639995391946,
+      "stdout_sha256": "f58bbca941cffa53c2b842af33495825961a4c0b3ced11b0a7f30359997a34dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "33/17",
+        "1/47",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013168279983801767,
+      "stdout_sha256": "f58bbca941cffa53c2b842af33495825961a4c0b3ced11b0a7f30359997a34dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "38/1",
+        "1/31",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0015414549998240545,
+      "stdout_sha256": "2c3f7ebf4ac01276af27bdc270fe61df9a85b2a16b69e9ce0276a555eccc4436",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "38/1",
+        "1/31",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012295250016904902,
+      "stdout_sha256": "2c3f7ebf4ac01276af27bdc270fe61df9a85b2a16b69e9ce0276a555eccc4436",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "15/3",
+        "2/60",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010441250014991965,
+      "stdout_sha256": "f45eb156505737f5199fa754496099eb871f840f2bf9d3974b5269a07c59fc42",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "15/3",
+        "2/60",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014355960011016577,
+      "stdout_sha256": "f45eb156505737f5199fa754496099eb871f840f2bf9d3974b5269a07c59fc42",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "56/15",
+        "7/32",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013973579989396967,
+      "stdout_sha256": "cbfd048260afea213a08bfcabf5b3009c860fecd2f0e43529a8129160b21cf39",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "56/15",
+        "7/32",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013097859991830774,
+      "stdout_sha256": "cbfd048260afea213a08bfcabf5b3009c860fecd2f0e43529a8129160b21cf39",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "39/2",
+        "1/55",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010805499987327494,
+      "stdout_sha256": "3d3c998a2b73ff1f8bfee5903ad87fb75f6e9e1af75d2278bf50d12b93cc5942",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "39/2",
+        "1/55",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001178628001071047,
+      "stdout_sha256": "3d3c998a2b73ff1f8bfee5903ad87fb75f6e9e1af75d2278bf50d12b93cc5942",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "37/13",
+        "8/32",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010496230024727993,
+      "stdout_sha256": "2292499d4d0b09ae3e06e4557292097332940f4d3e512f918258581c7d9df901",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "37/13",
+        "8/32",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013549049981520511,
+      "stdout_sha256": "2292499d4d0b09ae3e06e4557292097332940f4d3e512f918258581c7d9df901",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "43/10",
+        "7/40",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008818209971650504,
+      "stdout_sha256": "ea8eae80d011530f498086eab60dd2db0bcdbd9ef9709f2c995af2a7e2eef3ed",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "43/10",
+        "7/40",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0018748179973044898,
+      "stdout_sha256": "ea8eae80d011530f498086eab60dd2db0bcdbd9ef9709f2c995af2a7e2eef3ed",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "2/15",
+        "2/11",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012356840015854686,
+      "stdout_sha256": "229607dbaac2ea6545b37ae2b623b18b39cb0bc235ffc66e1ff66c3c6b818d1a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "2/15",
+        "2/11",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012955439997313078,
+      "stdout_sha256": "229607dbaac2ea6545b37ae2b623b18b39cb0bc235ffc66e1ff66c3c6b818d1a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "44/9",
+        "7/64",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011197800013178494,
+      "stdout_sha256": "7cee6ac3ff9aa60da363a033e749c0cf3a4ee942f7e9472b19f06cbb7b3b536d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "44/9",
+        "7/64",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011182570015080273,
+      "stdout_sha256": "7cee6ac3ff9aa60da363a033e749c0cf3a4ee942f7e9472b19f06cbb7b3b536d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "42/16",
+        "7/56",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.000994730999082094,
+      "stdout_sha256": "53bc0d66368a7067c93dc16ba2e45a3ca4cc7c85f9234deada63b18d58b4e2d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "42/16",
+        "7/56",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011707710000337102,
+      "stdout_sha256": "53bc0d66368a7067c93dc16ba2e45a3ca4cc7c85f9234deada63b18d58b4e2d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "36/17",
+        "8/18",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011958340001001488,
+      "stdout_sha256": "997edb3209f3dcafb34e469fd0677ae73c4ab4b9bb7bbe0e378aef1c10af1f81",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "36/17",
+        "8/18",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011235150013817474,
+      "stdout_sha256": "997edb3209f3dcafb34e469fd0677ae73c4ab4b9bb7bbe0e378aef1c10af1f81",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "42/7",
+        "3/79",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0028375709989632014,
+      "stdout_sha256": "2fb6853590156eef7ea3398c683dc93ac67a2e8a5d65d8818b215e0e853c53db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "42/7",
+        "3/79",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001159493996965466,
+      "stdout_sha256": "2fb6853590156eef7ea3398c683dc93ac67a2e8a5d65d8818b215e0e853c53db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "3/16",
+        "2/26",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008671390023664571,
+      "stdout_sha256": "f28208b17e10c15248974e252342a4abae366e9665369cccd95af957f205dc84",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "3/16",
+        "2/26",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013913639995735139,
+      "stdout_sha256": "f28208b17e10c15248974e252342a4abae366e9665369cccd95af957f205dc84",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "56/10",
+        "5/32",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009219099993060809,
+      "stdout_sha256": "0d345e4af6003f476ba26ebbfa4b419be38f92770088a2f267f6dee1d52b7250",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "56/10",
+        "5/32",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013321639999048784,
+      "stdout_sha256": "0d345e4af6003f476ba26ebbfa4b419be38f92770088a2f267f6dee1d52b7250",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "30/6",
+        "1/47",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009467790005146526,
+      "stdout_sha256": "379932e2ec466906ca7ae722ab0170ec35901aa7982dcc139c6d6dc93e45b18e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "30/6",
+        "1/47",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011685629979183432,
+      "stdout_sha256": "379932e2ec466906ca7ae722ab0170ec35901aa7982dcc139c6d6dc93e45b18e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "43/10",
+        "4/12",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008949510011007078,
+      "stdout_sha256": "ae5929c3d011fc65cf595e28716035dba62de8ed2468708457a779662d4b33cd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "43/10",
+        "4/12",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001283446999877924,
+      "stdout_sha256": "ae5929c3d011fc65cf595e28716035dba62de8ed2468708457a779662d4b33cd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "48/7",
+        "6/30",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009388709986524191,
+      "stdout_sha256": "bb6350e615c653fda981396979b6b158189fc9a246d5dff8e3f301865ef639de",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "48/7",
+        "6/30",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013807329996780027,
+      "stdout_sha256": "bb6350e615c653fda981396979b6b158189fc9a246d5dff8e3f301865ef639de",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "27/10",
+        "8/36",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008784899982856587,
+      "stdout_sha256": "776f4e38db47b7f9293580d0289cfeaa8183ceed3a2b167a5bee7ac0089b2aeb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "27/10",
+        "8/36",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013996119996591005,
+      "stdout_sha256": "776f4e38db47b7f9293580d0289cfeaa8183ceed3a2b167a5bee7ac0089b2aeb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "3/8",
+        "8/33",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010083510023832787,
+      "stdout_sha256": "68154fba1a928ad6f9c23261a4d904e22fc39efb183e10505029e2d5cc48f915",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "3/8",
+        "8/33",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013753550010733306,
+      "stdout_sha256": "68154fba1a928ad6f9c23261a4d904e22fc39efb183e10505029e2d5cc48f915",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "41/18",
+        "4/48",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009239139981218614,
+      "stdout_sha256": "e4c41dd06493a89b3d0a7bbeb97c3352a2b93849cdff64fed4ebd0250063b7c1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "41/18",
+        "4/48",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0019508530021994375,
+      "stdout_sha256": "e4c41dd06493a89b3d0a7bbeb97c3352a2b93849cdff64fed4ebd0250063b7c1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "6/7",
+        "5/60",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014124709996394813,
+      "stdout_sha256": "5eede2aa24c708b2c0f92aea8a156388fade5dadd6b761a67dff749f53d64594",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "6/7",
+        "5/60",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001185347999125952,
+      "stdout_sha256": "5eede2aa24c708b2c0f92aea8a156388fade5dadd6b761a67dff749f53d64594",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "52/1",
+        "8/62",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010381959982623812,
+      "stdout_sha256": "b6c1414560a2cf2b0b0b377a0d20d9cb708faa31602ba6d2e8014903c2dbf433",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "52/1",
+        "8/62",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012077619976480491,
+      "stdout_sha256": "b6c1414560a2cf2b0b0b377a0d20d9cb708faa31602ba6d2e8014903c2dbf433",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "58/1",
+        "2/17",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008790960018814076,
+      "stdout_sha256": "e3f1b7fa180e19911838672bbeab88669fa6bbcd307fa7ccd186e0c7b96c8087",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "58/1",
+        "2/17",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012064500006090384,
+      "stdout_sha256": "e3f1b7fa180e19911838672bbeab88669fa6bbcd307fa7ccd186e0c7b96c8087",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "16/2",
+        "5/65",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011873710027430207,
+      "stdout_sha256": "259d2bd8b2d49f235b8ecb27a4b726d7a3eb0f20ff7ae749185533b8d76dacb1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "16/2",
+        "5/65",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010862989984161686,
+      "stdout_sha256": "259d2bd8b2d49f235b8ecb27a4b726d7a3eb0f20ff7ae749185533b8d76dacb1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "31/6",
+        "7/19",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001280051001231186,
+      "stdout_sha256": "7f9d1bafb4d18dd3ba0d7e427028f18e579633683ef7e16f472dd9802ae95760",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "31/6",
+        "7/19",
+        "--max-steps",
+        "32",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011809419993369374,
+      "stdout_sha256": "7f9d1bafb4d18dd3ba0d7e427028f18e579633683ef7e16f472dd9802ae95760",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "34/16",
+        "7/37",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013889799993194174,
+      "stdout_sha256": "3a132d7a85c66b228e4e3047b8cfabb94af12d8b109fc10ec031ea656d8b5b54",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "34/16",
+        "7/37",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011893490009242669,
+      "stdout_sha256": "3a132d7a85c66b228e4e3047b8cfabb94af12d8b109fc10ec031ea656d8b5b54",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "32/15",
+        "3/70",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011274709977442399,
+      "stdout_sha256": "82d1ddd22d273d4cda2f9cf219cc83b379f3ad4c21e744efe102837ca22336d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "32/15",
+        "3/70",
+        "--max-steps",
+        "96",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014073340025788639,
+      "stdout_sha256": "82d1ddd22d273d4cda2f9cf219cc83b379f3ad4c21e744efe102837ca22336d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "44/19",
+        "8/71",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012048879980284255,
+      "stdout_sha256": "4668f6e09a0f3840c348d38abbaf20ef67c55a4b22f31a1cd4ed514e11bec092",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "44/19",
+        "8/71",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012041659974784125,
+      "stdout_sha256": "4668f6e09a0f3840c348d38abbaf20ef67c55a4b22f31a1cd4ed514e11bec092",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "32/8",
+        "1/29",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012953340010426473,
+      "stdout_sha256": "1d10452fbcc5d19b7141a6ecc5d03414f497834ba9b4d0904a276a9a181c701e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "32/8",
+        "1/29",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001346410997939529,
+      "stdout_sha256": "1d10452fbcc5d19b7141a6ecc5d03414f497834ba9b4d0904a276a9a181c701e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "43/18",
+        "7/28",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014789310007472523,
+      "stdout_sha256": "e105557727577716982ec54e8ab371d8b5050ede18bbdd0da53f5fadd6f84b71",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "43/18",
+        "7/28",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0023291739998967387,
+      "stdout_sha256": "e105557727577716982ec54e8ab371d8b5050ede18bbdd0da53f5fadd6f84b71",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "26/10",
+        "7/18",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001166235000710003,
+      "stdout_sha256": "d6bc432d4648e7c1c19cdfa3afa00b47988c9fbd38647e15092b250d75bc1f06",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "26/10",
+        "7/18",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001245740000740625,
+      "stdout_sha256": "d6bc432d4648e7c1c19cdfa3afa00b47988c9fbd38647e15092b250d75bc1f06",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "45/6",
+        "5/38",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.000982722998742247,
+      "stdout_sha256": "4dbc82e3c412c14c3777e131eadd24a6e06ec0807e5379562ae47d16c2ecc829",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "45/6",
+        "5/38",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0023820589995011687,
+      "stdout_sha256": "4dbc82e3c412c14c3777e131eadd24a6e06ec0807e5379562ae47d16c2ecc829",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "38/17",
+        "5/18",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008513690008840058,
+      "stdout_sha256": "dae5dfa979ba8eec1e1839621136b16648a3a83f8300104ceeacd4166e249a2d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "38/17",
+        "5/18",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011439509980846196,
+      "stdout_sha256": "dae5dfa979ba8eec1e1839621136b16648a3a83f8300104ceeacd4166e249a2d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "25/10",
+        "1/70",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.00089437899805489,
+      "stdout_sha256": "1278296a78c3fbc75d133e9d471b4ec95a5e641ed7e9a185ede02660c8d2c607",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "25/10",
+        "1/70",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012907580021419562,
+      "stdout_sha256": "1278296a78c3fbc75d133e9d471b4ec95a5e641ed7e9a185ede02660c8d2c607",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "53/17",
+        "3/61",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0010390070019639097,
+      "stdout_sha256": "46f4acebd77363291d1c717cc3dc735242aa9ae66b069e6e53d7892d74adfb66",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "53/17",
+        "3/61",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012309279991313815,
+      "stdout_sha256": "46f4acebd77363291d1c717cc3dc735242aa9ae66b069e6e53d7892d74adfb66",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "25/4",
+        "7/62",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.00125611499970546,
+      "stdout_sha256": "a297daf99663cfe34d0b114aefba439f03ee117dcf4e1aa9b650bc262750dda9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "25/4",
+        "7/62",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012517879986262415,
+      "stdout_sha256": "a297daf99663cfe34d0b114aefba439f03ee117dcf4e1aa9b650bc262750dda9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "23/4",
+        "5/49",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001420792999851983,
+      "stdout_sha256": "0aa3f15e3cfb8a2d5f2fcf68031067539b3cb66e6d1730cfcb90b1f2924e2d78",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "23/4",
+        "5/49",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013505069982784335,
+      "stdout_sha256": "0aa3f15e3cfb8a2d5f2fcf68031067539b3cb66e6d1730cfcb90b1f2924e2d78",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "20/2",
+        "7/10",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.000911264000023948,
+      "stdout_sha256": "32a142867c29cef4f306d254eebdc9af9ceb83fef860a641c3927785d427ccb4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "20/2",
+        "7/10",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014064020033401903,
+      "stdout_sha256": "32a142867c29cef4f306d254eebdc9af9ceb83fef860a641c3927785d427ccb4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "40/12",
+        "2/18",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008855560008669272,
+      "stdout_sha256": "077238d53e62494c1296c7c5b5ff46d04f2c00f1325264b7c3f6cb9a657a2605",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "40/12",
+        "2/18",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011586780019570142,
+      "stdout_sha256": "077238d53e62494c1296c7c5b5ff46d04f2c00f1325264b7c3f6cb9a657a2605",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "24/7",
+        "6/32",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012209919987071771,
+      "stdout_sha256": "1d1445bb2542d62beaae435543fe41a28a0b84c45a1d0179a80a1ade7a94ceec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "24/7",
+        "6/32",
+        "--max-steps",
+        "32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0015969800006132573,
+      "stdout_sha256": "1d1445bb2542d62beaae435543fe41a28a0b84c45a1d0179a80a1ade7a94ceec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "37/1",
+        "8/11",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012046869996993337,
+      "stdout_sha256": "b752d1862cbb65f59a708af7c9ae187515d7b866b52d2925b3736338dc4846b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "37/1",
+        "8/11",
+        "--max-steps",
+        "2",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0015237890002026688,
+      "stdout_sha256": "b752d1862cbb65f59a708af7c9ae187515d7b866b52d2925b3736338dc4846b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "17/6",
+        "7/13",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0017071360016416293,
+      "stdout_sha256": "a739ada9b28c4011e16ffc01494761c9260151da529537abb57fb322c7a536c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "17/6",
+        "7/13",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012284539989195764,
+      "stdout_sha256": "a739ada9b28c4011e16ffc01494761c9260151da529537abb57fb322c7a536c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "0/13",
+        "1/75",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009945810015778989,
+      "stdout_sha256": "b4730f8784e7ad2c999ca316427ceaca3445f466db484ea3617bac0a7af38fb6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "0/13",
+        "1/75",
+        "--max-steps",
+        "1",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012284479998925235,
+      "stdout_sha256": "b4730f8784e7ad2c999ca316427ceaca3445f466db484ea3617bac0a7af38fb6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "25/6",
+        "2/55",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001096423999115359,
+      "stdout_sha256": "e9e69a0b891d32efb613bfbdbdae6b298e1e3ac2be6c9986d6ef78ea950fab6b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "25/6",
+        "2/55",
+        "--max-steps",
+        "8"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.003139686999929836,
+      "stdout_sha256": "e9e69a0b891d32efb613bfbdbdae6b298e1e3ac2be6c9986d6ef78ea950fab6b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "19/19",
+        "2/12",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008837539971864317,
+      "stdout_sha256": "8cbb009d95b3c04313a4e2d11209e924e9a754805b86dbf6e11f628ddd2c46db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "19/19",
+        "2/12",
+        "--max-steps",
+        "8",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012538270020741038,
+      "stdout_sha256": "8cbb009d95b3c04313a4e2d11209e924e9a754805b86dbf6e11f628ddd2c46db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "52/13",
+        "1/78",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009056160015461501,
+      "stdout_sha256": "9812cf41ac2687295b37df6618d67de411ee593a4e651a6dba697c77a5de77dd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "52/13",
+        "1/78",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0014477449985861313,
+      "stdout_sha256": "9812cf41ac2687295b37df6618d67de411ee593a4e651a6dba697c77a5de77dd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1/13",
+        "7/67",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011061689983762335,
+      "stdout_sha256": "df648a5a656ef8b6ccdef7c25ac02d488c2a20e335c4cbb8eef45555f238297d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1/13",
+        "7/67",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012227750012243632,
+      "stdout_sha256": "df648a5a656ef8b6ccdef7c25ac02d488c2a20e335c4cbb8eef45555f238297d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "25/6",
+        "3/61",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012334099992585834,
+      "stdout_sha256": "aff8f8de06434da3c542d21d20a226ad35527f17f5f3094498ecab46c85fcc80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "25/6",
+        "3/61",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0012654599995585158,
+      "stdout_sha256": "aff8f8de06434da3c542d21d20a226ad35527f17f5f3094498ecab46c85fcc80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "17/5",
+        "2/40",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0016283570002997294,
+      "stdout_sha256": "d18c41fff928dde8a3207449d089f814feb3ce3edbaf420b2df562c2701e8fe2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "17/5",
+        "2/40",
+        "--max-steps",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0011817740014521405,
+      "stdout_sha256": "d18c41fff928dde8a3207449d089f814feb3ce3edbaf420b2df562c2701e8fe2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "22/16",
+        "4/36",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0008824120013741776,
+      "stdout_sha256": "8402cb19663b97c92556d375ea5a233caebfbc4557fc18d6e4ed86c41f1ea49f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "22/16",
+        "4/36",
+        "--max-steps",
+        "0"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0013709079976251815,
+      "stdout_sha256": "8402cb19663b97c92556d375ea5a233caebfbc4557fc18d6e4ed86c41f1ea49f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "27/19",
+        "8/55",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0017392740010109264,
+      "stdout_sha256": "163f9395a36b03f67e573bb99642860db3e8f76c166cd6f1cbda8c3674f788db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "27/19",
+        "8/55",
+        "--max-steps",
+        "96"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.001134742000431288,
+      "stdout_sha256": "163f9395a36b03f67e573bb99642860db3e8f76c166cd6f1cbda8c3674f788db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "6/7",
+        "5/10",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0009703440009616315,
+      "stdout_sha256": "4aea7741f3e64567fbcc34569804ec187f95abc34c636875c2d12ba6fed018db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "6/7",
+        "5/10",
+        "--max-steps",
+        "0",
+        "--weights"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0016361679990950506,
+      "stdout_sha256": "4aea7741f3e64567fbcc34569804ec187f95abc34c636875c2d12ba6fed018db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010213710011157673,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001350296999589773,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010613209997245576,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0017198749992530793,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2",
+        "--weights",
+        "--weights"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0009739690030983184,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2",
+        "--weights",
+        "--weights"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0014008439975441433,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2",
+        "--max-steps",
+        "0",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010019620021921583,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2",
+        "--max-steps",
+        "0",
+        "--max-steps",
+        "1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0014704989989695605,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2",
+        "--max-steps"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0008053050005401019,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2",
+        "--max-steps"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0013438370006042533,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2",
+        "--max-steps",
+        "-1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0009098529990296811,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2",
+        "--max-steps",
+        "-1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010850870021386072,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2",
+        "--max-steps",
+        "18446744073709551616"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0008539579976059031,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2",
+        "--max-steps",
+        "18446744073709551616"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010666189991752617,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2",
+        "--unknown"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010902249996433966,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2",
+        "--unknown"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001316515998041723,
+      "stdout_sha256": "2e1ff9695f0226988dc0420bb20f7248000e714bea4913e56f3b33aad21c2a15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "-1",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0012852090003434569,
+      "stdout_sha256": "03560cd4b81719581ba2a35734a74eefc9e8f8620e84b94b818daa42d723bb36",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "-1",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0014807139996264596,
+      "stdout_sha256": "03560cd4b81719581ba2a35734a74eefc9e8f8620e84b94b818daa42d723bb36",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "0"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001063514999259496,
+      "stdout_sha256": "03560cd4b81719581ba2a35734a74eefc9e8f8620e84b94b818daa42d723bb36",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "0"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010964149987557903,
+      "stdout_sha256": "03560cd4b81719581ba2a35734a74eefc9e8f8620e84b94b818daa42d723bb36",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0008587459997215774,
+      "stdout_sha256": "03560cd4b81719581ba2a35734a74eefc9e8f8620e84b94b818daa42d723bb36",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001032598000165308,
+      "stdout_sha256": "03560cd4b81719581ba2a35734a74eefc9e8f8620e84b94b818daa42d723bb36",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1/0",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001212639999721432,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1/0",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0014173480012686923,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1/-2",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010040640008810442,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1/-2",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001274301997909788,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1e-3",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0009101529976760503,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1e-3",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001883726999949431,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        " 1",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0012595199987117667,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        " 1",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010281009999744128,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "\uff11",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0008540080016246065,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "\uff11",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.001154682002379559,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "1/2/3"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0012450690010155085,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "1/2/3"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0015248810013872571,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0008325859998876695,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0014876640016154852,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010853579988179263,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "1/2"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0011918429991055746,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp",
+        "1",
+        "NaN"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0010144200023205485,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust",
+        "1",
+        "NaN"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0013656000010087155,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "b'/workspace/cloud-practical-runtime/root-ffi-attempt1/count_cpp'",
+        "b'\\xff'",
+        "b'1/2'"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0009150600017164834,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "b'/workspace/cloud-practical-runtime/root-ffi-attempt1/count_rust'",
+        "b'\\xff'",
+        "b'1/2'"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.0011540969971974846,
+      "stdout_sha256": "63ff411ed3b1edca71938ee04217d63ba809b2221ddc4b49e08ec2a3562eb525",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "elapsed_seconds": 1.2032971100015857,
+  "limits": "Each build has30s and each CLI test3s wall timeout; valid searches are small or bounded.",
+  "scope": "Shared scalar normalized Poisson-prefix component; same C/GMP arithmetic, not independent Rust arithmetic.",
+  "excluded": "Full JC inverse solver, certified interval integration, performance/speedup, Lean executable correspondence."
+}
