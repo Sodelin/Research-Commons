@@ -1,0 +1,21 @@
+# Exact candidate-factor enclosure: same process, stronger numerical evidence
+
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 practical solver lane, 7 October 2026. Continued original practical research after documentation publication. Hand argument; new numerical evidence and independent review pending.
+
+The original exact receiver, authenticated physical source-box wrapper and downward-capital successor are now independently accepted at their declared conditional scope in [the immutable auditor report](https://github.com/Sodelin/Research-Commons/blob/7455ee4e7376440d345cfbb9b65c7e58559ba6da/research/2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-REVIEW.md), SHA2564ba16a4481a816b8f32565cd1d125918d0cc55ec66c2e8d1c758ebee1f56cb41. That acceptance does not provide useful full-domain precision or a width certificate.
+
+This new component attacks an avoidable loss in the numerical factor enclosure, keeping the statistical process, source domain, observations, selected nine means and physical target exactly unchanged. The previous enclosure treated a candidate-dependent stake and its candidate residual as independent interval quantities. Both depend on the same scalar p=d dot mu; losing that relation can make lower capital unnecessarily weak.
+
+At a noninitial prefix let a be the previous projected empirical mean, q be previous projected empirical variance plus1/16, z be the current projected locus value and p range over its candidate mean interval[l,r]. The exact SAME factor is
+
+    f(p)=1+clip((a-p)/q,[-1/2,1/2])*(z-p), q>0.
+
+For p<=a-q/2 the stake is1/2 and f is affine. For a-q/2<=p<=a+q/2, f=1+(a-p)(z-p)/q is a convex quadratic. For p>=a+q/2 the stake is-1/2 and f is affine again. The function is continuous at the clipping breaks. On each affine piece its extrema occur at endpoints; on the quadratic piece the maximum is at an endpoint and the only possible interior minimum is p=(a+z)/2.
+
+Therefore its exact extrema on[l,r] are attained among: l,r; the two clipping breaks when they lie in the interval; and the quadratic vertex when it lies in both the interval and unclipped piece. `tight_factor.py` evaluates this finite rational list. No root search, floating point, source approximation or new statistical assumption is needed. All actual candidate increments retain the original absolute bound1, so the result lies in[1/2,3/2].
+
+This exact factor range is contained in the old natural interval enclosure. In particular its lower endpoint is at least the old lower endpoint. With the SAME fixed dyadic precision and plan, nonnegative multiplication and monotone downward flooring imply by induction that the new lower capitals are at least the old lower capitals, while still bounded above by the original true capitals for every candidate in the box. Thus it can make more exclusions without changing the underlying Ville confidence event. It cannot turn an insufficient statistic into a full-width result by assertion.
+
+The proposed practical receiver uses the previously preserved actual1024-locus synthetic-model panels, not a new simulation or sample. A canonical plan has the nine coordinate directions and eight consecutive coordinate contrasts in the original fixed feature order, equal weights1/17. This plan is frozen for this new receiver before execution. Its predeclaration before the historical data collection is NOT established; finite-RNG, original admission and calibration limits remain explicit. Saved-data outputs are conditional research replay evidence, not newly issued biological/statistical data-confidence certificates or retrospective coverage claims.
+
+The named next check targets a positive-volume original-D box: each h,u,v in[1/32,3/64], rR in[5,6], other rates in[1/2,6], and g in[1/6,2/3]. All source ties and observations remain shared. It is a genuine subbox of the original D, not a changed prior domain or a point catalogue. The SAME original forward provider will enclose all nine means. Full original D remains the master source set; excluded branches do not establish that the remaining set meets all widths. The known archived source and full-D receiver are retained as scientific-boundary checks if the bounded execution budget permits. UNKNOWN is required when evidence or resources are insufficient.
