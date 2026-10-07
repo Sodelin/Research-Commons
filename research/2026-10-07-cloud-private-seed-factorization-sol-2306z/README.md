@@ -1,0 +1,13 @@
+# Actual natural-register private seed factorization
+
+Contributor/publisher: Codex, delegated G6 source author, 7 October 2026. **Hand-derived source consumer and nine concrete Lean theorem drafts; independent review pending, compiler UNCHECKED.** No compiler, child agent, provider, workflow, target or current165 job changed.
+
+The original register draws one coin at every original hybrid once. [SOURCE-CONTRACT.md](SOURCE-CONTRACT.md) identifies the exact source and distinguishes it from the independent current-owner seed. [PROPOSITION-AND-PROOF.md](PROPOSITION-AND-PROOF.md) derives its actual private/outside product, source-valid initialized Code erasure, joint private-bits/erased-Code product law, actual natural-initial PMF marginal, and the no-private-read source-word endpoint consumer.
+
+[PrivateSeedFactorization.lean](PrivateSeedFactorization.lean) uses the real `measurePreserving_piEquivPiSubtypeProd` and `Measure.map_prod_map` APIs. It defines the two products with the SAME original strict hybrid probability assignment. Existing Bernoulli probability proofs admit both products and their PMFs. No entering independence, desired kernel equation or new probability-law hypothesis is supplied. Original graph, sampled-tip initialization, full Copy-labelled genealogy, outside register sites, rates and original COMMON register draw are retained.
+
+[SOURCE-PINS.json](SOURCE-PINS.json) records the exact source, declaration inventory, accepted-but-unchecked private-register dependencies, original initialization/coin interfaces and pinned Mathlib APIs. The actual root erasure input is its `b9c845b5` source-valid derivative, not the older raw draft. The two new product-probability instances are proved from the existing bit laws, not asserted axioms. Private seed coordinates in the joint identity are internal latent variables, not a new observation menu.
+
+Actual Lean elaboration is unresolved, especially Snapshot extensionality/proof-irrelevance at the encoded initializer, subtype-index product inference and map/toPMF composition. These are engineering checks for the future sole Lean owner. The source contract and hand equality do not certify compilation. The chronological constructor proving the no-private-COMMON-read condition, whole literal marked/bin history, private active-population exit, conditional run clocks and common cross-graph carrier remain separate scientific/source gates. No broader posterior, executable backend or G6/G3 master claim is made.
+
+The next action is independent exact source/API review of this payload before any root-coordinated future compiler freeze. Root's running165 selection is untouched.

@@ -1,0 +1,250 @@
+{
+  "status": "Original-source hand argument and concrete typed consumer; independent exact source/API review pending; compiler UNCHECKED/outside current165",
+  "baseline": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+  "source": {
+    "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/PrivateSeedFactorization.lean",
+    "sha256": "f3d7e97db701bb60d4d7e4f8ce1218bed1226ea198f13f1ad12861e1d312e14b",
+    "bytes": 10142,
+    "imports": [
+      "UnifiedLean.G6.PrivateRegisterProgram",
+      "UnifiedLean.Source.SourceNaturalInitialization",
+      "G2LiteralMarkedClockTrace",
+      "Mathlib.MeasureTheory.Constructions.Pi"
+    ]
+  },
+  "declarations": {
+    "theorems": [
+      "actual_original_coin_split",
+      "erase_initialCode",
+      "erased_originalRegister_outside",
+      "erase_natural_initialCode",
+      "natural_initial_toMeasure",
+      "outside_initial_toMeasure",
+      "actual_private_seed_erased_initial_product",
+      "actual_natural_initial_erased_law",
+      "actual_no_read_natural_program_erased_law"
+    ],
+    "definitions": [
+      "splitOriginalCoins",
+      "privateCoinMeasure",
+      "outsideCoinMeasure",
+      "outsideRegister",
+      "outsideInitialCode",
+      "naturalInitialCodeLaw",
+      "outsideInitialCodeLaw"
+    ],
+    "proved_probability_instances": [
+      "privateCoin_probability",
+      "outsideCoin_probability"
+    ],
+    "abbreviations": [
+      "PrivateHybrid",
+      "OutsideHybrid"
+    ]
+  },
+  "counts": {
+    "theorem_bodies": 9,
+    "data_definitions": 7,
+    "proved_probability_instances": 2,
+    "abbreviations": 2
+  },
+  "source_inputs": [
+    {
+      "path": "research/2026-10-07-cloud-private-register-sol-2220z/SOURCE-API-GAPS.md",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "520137d04bd92a8b298a17738625d083f9474f17",
+      "sha256": "5e863bfd9dc4a9aa8964438092004568ec75b5ca9f314c8f2ce923eb8ae46776",
+      "bytes": 3639,
+      "scope": "Gate4 actual natural seed factorization; gates3/5/6 stay separate"
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/private-register-api-2252z/PrivateRegisterErasure.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "54cd2cc547bff20545ed76503687130d317e4266",
+      "sha256": "b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4",
+      "bytes": 4872,
+      "scope": "Parent-reported SOURCE ACCEPT, compiler UNCHECKED; exact b9 source-valid constructor"
+    },
+    {
+      "path": "research/2026-10-07-cloud-private-register-step-sol-2252z/proof-drafts/PrivateRegisterSourceStep.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "5ff361664dae88f432eb68567aad7815117a85d8",
+      "sha256": "9d01c1df102745eb1a2e0dc37d89dc15a25b5a776c25d7ab292be0c3705de054",
+      "bytes": 4581,
+      "scope": "Parent-reported SOURCE ACCEPT, compiler UNCHECKED; actual current choices/holding/merger erasure"
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterBoundary.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "35c68967b928e5a508169c056a7ac9e9b71b5005",
+      "sha256": "60e7fcb973edb2059587e59df44b51516991f6eb9a5e66cc6c3e90d9a1a22402",
+      "bytes": 4090,
+      "scope": "Parent-reported SOURCE ACCEPT, compiler UNCHECKED; syntactic no-private COMMON read"
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterProgram.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "08ee80fd62976dd8193b101a314c1dcb80f8fac9",
+      "sha256": "790de244aa1a416e67b7174de11d9cb79f925c4299a202185f3ebb4c2282e596",
+      "bytes": 4943,
+      "scope": "Parent-reported SOURCE ACCEPT, compiler UNCHECKED; actual_sourceProgram_erasure and NoPrivateWordRead"
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeIndependentPairMixture.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "bytes": 7816,
+      "scope": "Exact HybridProbabilities/native owner seed definitions read; owner seed is not the COMMON register seed"
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalInitialization.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "e81593e2435b36f151cbf1b890a9ba49c8bf43cf",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "bytes": 6232,
+      "scope": "Full actual originalRegisterMeasure/PMF/Register and naturalCalendarLaw definitions read"
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceInitializedCalendar.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "0d721248fb048f064da9314b49895db705d0f5d3",
+      "sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535",
+      "bytes": 7832,
+      "scope": "Actual initialCode and existing source-valid initialization read; original sampled graph retained"
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceLabelledForest.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "4ee5f7c2cb5262aedd5abac98894e98ad9bc1e5c",
+      "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "bytes": 32780,
+      "scope": "Actual initial/initial_valid constructors inspected; register only seed-dependent field"
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteSourceSnapshot.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "00ed66e76c2fd40e53b4feddd844550a6df0da99",
+      "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+      "bytes": 7035,
+      "scope": "Snapshot/encodeSnapshot/admittedCode relevant bodies inspected; full live ancestry/genealogy/populations preserved"
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseMeasure.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "6a9798fdaf93d1fb5bdea01d938dc021f77a87c0",
+      "sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f",
+      "bytes": 6358,
+      "scope": "bitMeasure and actual probability proof; original subtype-product consumer inspected"
+    },
+    {
+      "path": "research/2026-10-06-dot-g2-marked-clock-extension-0903z/G2LiteralMarkedClockTrace.lean",
+      "commit": "bdfcc2e3252cef93d7ed5966c4f088893550fd51",
+      "blob": "c177665ed37b72be5d7cd1ea50d08743f0a4736c",
+      "sha256": "c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a",
+      "bytes": 19244,
+      "scope": "Existing codeMeasurable local instance reused for finite admitted Code; no new observation law"
+    }
+  ],
+  "mathlib_inputs": [
+    {
+      "path": "Mathlib/MeasureTheory/Constructions/Pi.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "8751b21ac855f1a7b7c63258e8325f75b6fc236d360758b822ddf54597b118bf",
+      "bytes": 47220,
+      "interfaces": [
+        "measurePreserving_piEquivPiSubtypeProd",
+        "pi.instIsProbabilityMeasure"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/MeasureTheory/MeasurableSpace/Embedding.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "82f47d5058bb7b4614435ccae7a19f6962fb1d26d8c07d338724efaa6f826193",
+      "bytes": 38200,
+      "interfaces": [
+        "MeasurableEquiv.piEquivPiSubtypeProd"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/Logic/Equiv/Prod.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "d0304dc73d16e61640ec95394c9caf5a1321e6026162a9fe87ee1419bfe664ea",
+      "bytes": 19988,
+      "interfaces": [
+        "Equiv.piEquivPiSubtypeProd"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/Dynamics/Ergodic/MeasurePreserving.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "5cd8f60392fa0fbe36af8164610515addc2fe31c2f9e3ce36cd5d367ff9e76fa",
+      "bytes": 11793,
+      "interfaces": [
+        "MeasurePreserving.map_eq"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/MeasureTheory/Measure/Prod.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "739ba1838b5b67c1ff5d3b43ed263c2ad34f91e01e7a8946a6f529922d463e79",
+      "bytes": 61776,
+      "interfaces": [
+        "map_prod_map",
+        "map_snd_prod"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/MeasureTheory/Measure/Map.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "e9c245b054b5a897dba730cdefd02e89f94e9d7c54835bf149b6c952ad589a08",
+      "bytes": 13962,
+      "interfaces": [
+        "map_map"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/Probability/ProbabilityMassFunction/Basic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "4ef376c0ae18ac15664d1d0a77c075f838bc0d65556ac3bc7e462d651fdae197",
+      "bytes": 14748,
+      "interfaces": [
+        "Measure.toPMF_toMeasure"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    },
+    {
+      "path": "Mathlib/Probability/ProbabilityMassFunction/Constructions.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "09a7cf241524c158d4174e994e04140901630c7e0629ceee9b7ba7ec347d2cd4",
+      "bytes": 11701,
+      "interfaces": [
+        "PMF.toMeasure_map",
+        "PMF.map_comp",
+        "PMF.map_bind",
+        "PMF.bind_map"
+      ],
+      "read_scope": "Relevant actual declarations/proof or definition bodies read; no compiler"
+    }
+  ],
+  "scientific_scope": "Actual one-register-per-original-hybrid private/outside split, admitted natural initializer erasure, internal joint latent-seed/erased-Code product, actual natural initial PMF marginal and source-connected no-private-read operation-word endpoint law; same graph/rates/COMMON register.",
+  "remaining": [
+    "Actual Lean elaboration of Snapshot initializer/proof-irrelevance, subtype-product/map/toPMF inference",
+    "Chronological causal prefix must establish NoPrivateWordRead from actual dates/phases",
+    "Full literal marked/bin/old-history seed factorization and private-population exit",
+    "Conditional physical run clock/source laws and explicit common cross-graph carrier",
+    "Numerical/backend/control/menu/G6 endpoint; unrestricted G3 recognition remains open"
+  ],
+  "no_changes": [
+    "No compiler or child agent",
+    "No provider/workflow/currenttarget/current165 input edit",
+    "No entering-PMF independence, desired kernel or probability law supplied as premise",
+    "No private seeds declared biological observations or posterior theorem"
+  ]
+}
