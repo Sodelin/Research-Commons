@@ -1,6 +1,6 @@
 # Actual ancestral cut refinement and carried tags
 
-Contributor: Codex, delegated G3/source bridge, 7 October 2026. **New HAND CANDIDATE; deterministic source UNCHECKED.** No compiler or provider edit ran in this lane.
+Contributor: Codex, delegated G3/source bridge, 7 October 2026. **Independently HAND / SOURCE-SEMANTIC ACCEPTED; new sources compiler UNCHECKED.** No compiler or provider edit ran in this lane.
 
 [PROPOSITION-AND-PROOF.md](PROPOSITION-AND-PROOF.md) derives active-list/padded fold agreement, exact list concatenation and age-shift transport. The original actual retained-clock continuation gives finite-interval endpoint/tag splitting; the same original and residual random covers give the complete joint endpoint/tag splitting. The old whole-past terminal-fibre factorization then yields its actual correlated probability law.
 
@@ -8,4 +8,6 @@ The hand calendar induction inserts a fixed analytical interval into the existin
 
 [ActualCutTagRefinement.lean](ActualCutTagRefinement.lean) has one definition and nine concrete deterministic theorem bodies. It imports the verified arbitrary-tag BinFold and unchanged original same-clock continuation and finite completion sources. The probabilistic residual pushforward and whole-calendar induction are hand-only. Exact inspected provider hashes/read depths are in [SOURCE-INPUTS.json](SOURCE-INPUTS.json). The principal calendar derivative at [the preceding subpacket](../complete-calendar-readout-1922z/README.md) is unchanged.
 
-Physical interpretation retains the original old real ForestDecorates invariant, actual binary genealogy, same-tree decoder, absent cross-tree pairs and physical diagonal sampling dates. Finite matrix tags alone do not replace Code. No finite backend or executable table, arbitrary-real oracle, menu/control/pruning completion or original G3/G6 master closure is supplied. Independent review is pending.
+Physical interpretation retains the original old real ForestDecorates invariant, actual binary genealogy, same-tree decoder, absent cross-tree pairs and physical diagonal sampling dates. Finite matrix tags alone do not replace Code. No finite backend or executable table, arbitrary-real oracle, menu/control/pruning completion or original G3/G6 master closure is supplied. The [review receipt](REVIEW-RECEIPT.md) links canonical acceptance and exact hashes, separately from implementation evidence.
+
+The new separate [ActualCutJointLaw.lean](ActualCutJointLaw.lean) now implements the actual unnormalized renewal pushforward (10) in five concrete theorem bodies. It proves its total residual-completion reader measurable, uses the same original clock event and proved residual success, maps actual full-past terminal fibres, and derives Option/raw restrictions from actual AE success. This new implementation remains UNCHECKED and awaits its own source-semantic review. The original nine deterministic bodies and hand proposition remain byte-identical; literal calendar context proof terms are next.
