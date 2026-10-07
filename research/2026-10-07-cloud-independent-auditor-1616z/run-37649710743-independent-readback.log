@@ -1,0 +1,268 @@
+verify	Set up job	﻿2026-10-07T16:08:36.6224551Z Current runner version: '2.337.0'
+verify	Set up job	2026-10-07T16:08:36.6261712Z ##[group]Runner Image Provisioner
+verify	Set up job	2026-10-07T16:08:36.6263125Z Hosted Compute Agent
+verify	Set up job	2026-10-07T16:08:36.6264215Z Version: 20261002.596
+verify	Set up job	2026-10-07T16:08:36.6265213Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+verify	Set up job	2026-10-07T16:08:36.6266577Z Build Date: 2026-10-02T22:28:27Z
+verify	Set up job	2026-10-07T16:08:36.6267716Z Worker ID: {0631fda3-4d49-409c-bc85-d9c85fa3ba69}
+verify	Set up job	2026-10-07T16:08:36.6269010Z Region: eastus
+verify	Set up job	2026-10-07T16:08:36.6269965Z Cloud: Azure
+verify	Set up job	2026-10-07T16:08:36.6270816Z ##[endgroup]
+verify	Set up job	2026-10-07T16:08:36.6273913Z ##[group]Operating System
+verify	Set up job	2026-10-07T16:08:36.6274917Z Ubuntu
+verify	Set up job	2026-10-07T16:08:36.6275781Z 24.04.5
+verify	Set up job	2026-10-07T16:08:36.6276773Z LTS
+verify	Set up job	2026-10-07T16:08:36.6277607Z ##[endgroup]
+verify	Set up job	2026-10-07T16:08:36.6278586Z ##[group]Runner Image
+verify	Set up job	2026-10-07T16:08:36.6279626Z Image: ubuntu-24.04
+verify	Set up job	2026-10-07T16:08:36.6280601Z Version: 20261004.327.1
+verify	Set up job	2026-10-07T16:08:36.6282753Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+verify	Set up job	2026-10-07T16:08:36.6285795Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+verify	Set up job	2026-10-07T16:08:36.6287509Z ##[endgroup]
+verify	Set up job	2026-10-07T16:08:36.6289298Z ##[group]GITHUB_TOKEN Permissions
+verify	Set up job	2026-10-07T16:08:36.6292335Z Contents: read
+verify	Set up job	2026-10-07T16:08:36.6293413Z Metadata: read
+verify	Set up job	2026-10-07T16:08:36.6294306Z ##[endgroup]
+verify	Set up job	2026-10-07T16:08:36.6297710Z Secret source: Actions
+verify	Set up job	2026-10-07T16:08:36.6299340Z Cache mode: write
+verify	Set up job	2026-10-07T16:08:36.6300984Z Prepare workflow directory
+verify	Set up job	2026-10-07T16:08:36.6772504Z Prepare all required actions
+verify	Set up job	2026-10-07T16:08:36.6933894Z Complete job name: verify
+verify	Fetch frozen public input	﻿2026-10-07T16:08:36.8247762Z ##[group]Run set -euo pipefail
+verify	Fetch frozen public input	2026-10-07T16:08:36.8249301Z [36;1mset -euo pipefail[0m
+verify	Fetch frozen public input	2026-10-07T16:08:36.8250704Z [36;1mgit init --quiet "$RUNNER_TEMP/research-commons"[0m
+verify	Fetch frozen public input	2026-10-07T16:08:36.8253466Z [36;1mgit -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"[0m
+verify	Fetch frozen public input	2026-10-07T16:08:36.8256059Z [36;1mgit -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"[0m
+verify	Fetch frozen public input	2026-10-07T16:08:36.8258143Z [36;1mgit -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD[0m
+verify	Fetch frozen public input	2026-10-07T16:08:36.8260316Z [36;1mtest "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"[0m
+verify	Fetch frozen public input	2026-10-07T16:08:36.9184115Z shell: /usr/bin/bash -e {0}
+verify	Fetch frozen public input	2026-10-07T16:08:36.9185286Z ##[endgroup]
+verify	Fetch frozen public input	2026-10-07T16:08:39.9734065Z From https://github.com/Sodelin/Research-Commons
+verify	Fetch frozen public input	2026-10-07T16:08:39.9736554Z  * branch            967919f7499743f7ccc19b0aa633bb77698ffa9e -> FETCH_HEAD
+verify	Fetch frozen public input	2026-10-07T16:08:41.3361442Z HEAD is now at 967919f G6: submit finite probability bounds to isolated pinned serial Lean verification
+verify	Verify existing pinned runtime	﻿2026-10-07T16:08:41.3548198Z ##[group]Run bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.3549227Z [36;1mbash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"[0m
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.3613865Z shell: /usr/bin/bash -e {0}
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.3614206Z ##[endgroup]
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.3814738Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.3816014Z                                  Dload  Upload   Total   Spent    Left  Speed
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.3816688Z 
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.4152043Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.4152962Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+verify	Verify existing pinned runtime	2026-10-07T16:08:41.5477373Z 
+verify	Verify existing pinned runtime	2026-10-07T16:08:42.5480361Z   2  543M    2 14.9M    0     0  89.9M      0  0:00:06 --:--:--  0:00:06 89.9M
+verify	Verify existing pinned runtime	2026-10-07T16:08:43.5552190Z  36  543M   36  196M    0     0   168M      0  0:00:03  0:00:01  0:00:02  181M
+verify	Verify existing pinned runtime	2026-10-07T16:08:44.5477707Z  68  543M   68  370M    0     0   170M      0  0:00:03  0:00:02  0:00:01  176M
+verify	Verify existing pinned runtime	2026-10-07T16:08:44.6413481Z  96  543M   96  524M    0     0   165M      0  0:00:03  0:00:03 --:--:--  169M
+verify	Verify existing pinned runtime	2026-10-07T16:08:44.6414967Z 100  543M  100  543M    0     0   166M      0  0:00:03  0:00:03 --:--:--  171M
+verify	Verify existing pinned runtime	2026-10-07T16:08:45.0549781Z lean.tar.zst: OK
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.3944394Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.3986924Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.4000586Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.4016530Z e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550  /home/runner/work/_temp/g567-lean-4.33.1/lean-4.33.1-linux/bin/lean
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.4031854Z 5114a5b2e77fa40336ddd9491ebc5f04e767a5c299b7ebdd637104b1f96d2758  /home/runner/work/_temp/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/RuntimeSmoke.lean
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.6084845Z 'ResearchCommonsRuntime.runtimeSmoke' does not depend on any axioms
+verify	Verify existing pinned runtime	2026-10-07T16:08:50.6304532Z RUNTIME_SMOKE_PASSED source_commit=967919f7499743f7ccc19b0aa633bb77698ffa9e
+verify	Verify G6 frozen sources serially	﻿2026-10-07T16:08:50.6605100Z ##[group]Run bash "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh"
+verify	Verify G6 frozen sources serially	2026-10-07T16:08:50.6606654Z [36;1mbash "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh"[0m
+verify	Verify G6 frozen sources serially	2026-10-07T16:08:50.6675748Z shell: /usr/bin/bash -e {0}
+verify	Verify G6 frozen sources serially	2026-10-07T16:08:50.6676065Z ##[endgroup]
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:24.0696430Z info: toolchain not updated; already up-to-date
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:24.7721600Z info: plausible: cloning https://github.com/leanprover-community/plausible
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:25.1278836Z info: plausible: checking out revision 'b7eb3304aeae834b12dda98993a37f6a41f6f0bb'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:25.1422665Z info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:25.4892284Z info: LeanSearchClient: checking out revision '5f4d51b81cbd3f6b32b156bfad9056621a040404'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:25.5009684Z info: importGraph: cloning https://github.com/leanprover-community/import-graph
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:26.2548921Z info: importGraph: checking out revision '16f02aa7642864af59f1ff0e384a015994db9118'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:26.2722271Z info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:29.3356872Z info: proofwidgets: checking out revision '4be2e3d5087eeb272cf5a8853b8f9dd025ef5957'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:30.0134486Z info: aesop: cloning https://github.com/leanprover-community/aesop
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:30.8820862Z info: aesop: checking out revision '3448c0bcc5ce01b2d1546e483ec3620e32df3d0e'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:30.9009697Z info: Qq: cloning https://github.com/leanprover-community/quote4
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:31.1327138Z info: Qq: checking out revision '92c15be17b7caf78c2ad767ec40f89052d908d81'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:31.1456053Z info: batteries: cloning https://github.com/leanprover-community/batteries
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.2813626Z info: batteries: checking out revision '4488d40d070b9700d4d5a6aa342f0d40c31b2a2d'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.3171838Z info: Cli: cloning https://github.com/leanprover/lean4-cli
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.5529651Z info: Cli: checking out revision '6130a47896ce867c6a4a55373441e59e565bad0f'
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.5659585Z info: mathlib: running post-update hooks
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6265095Z {"version": "1.2.0",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6265625Z  "packagesDir": ".lake/packages",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6266079Z  "packages":
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6266431Z  [{"type": "path",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6266768Z    "scope": "",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6267130Z    "name": "mathlib",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6267568Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6267914Z    "inherited": false,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6268277Z    "dir": "deps/mathlib",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6268717Z    "configFile": "lakefile.lean"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6269394Z   {"url": "https://github.com/leanprover-community/plausible",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6270067Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6270880Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6271525Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6272113Z    "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6272662Z    "name": "plausible",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6273084Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6273433Z    "inputRev": "main",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6273651Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6273881Z    "configFile": "lakefile.toml"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6274246Z   {"url": "https://github.com/leanprover-community/LeanSearchClient",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6274669Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6275049Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6275271Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6275569Z    "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6275873Z    "name": "LeanSearchClient",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6276130Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6276399Z    "inputRev": "main",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6276615Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6276844Z    "configFile": "lakefile.toml"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6277179Z   {"url": "https://github.com/leanprover-community/import-graph",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6277763Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6277961Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6278178Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6278469Z    "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6278761Z    "name": "importGraph",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6279008Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6279276Z    "inputRev": "main",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6279487Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6279767Z    "configFile": "lakefile.toml"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6280119Z   {"url": "https://github.com/leanprover-community/ProofWidgets4",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6280496Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6280696Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6280912Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6281566Z    "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6282097Z    "name": "proofwidgets",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6282454Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6282735Z    "inputRev": "main",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6282949Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6283169Z    "configFile": "lakefile.lean"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6283484Z   {"url": "https://github.com/leanprover-community/aesop",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6283804Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6283996Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6284212Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6284503Z    "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6284789Z    "name": "aesop",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6285009Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6285278Z    "inputRev": "master",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6285499Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6285716Z    "configFile": "lakefile.toml"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6286029Z   {"url": "https://github.com/leanprover-community/quote4",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6286354Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6286560Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6286802Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6287141Z    "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6287428Z    "name": "Qq",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6287682Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6287948Z    "inputRev": "master",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6288169Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6288388Z    "configFile": "lakefile.toml"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6288712Z   {"url": "https://github.com/leanprover-community/batteries",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6289040Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6289233Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6289446Z    "scope": "leanprover-community",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6289727Z    "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6290013Z    "name": "batteries",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6290245Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6290510Z    "inputRev": "main",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6290881Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6309930Z    "configFile": "lakefile.toml"},
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6310296Z   {"url": "https://github.com/leanprover/lean4-cli",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6310620Z    "type": "git",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6310826Z    "subDir": null,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6311234Z    "scope": "leanprover",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6311519Z    "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6311816Z    "name": "Cli",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6312045Z    "manifestFile": "lake-manifest.json",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6312330Z    "inputRev": "v4.33.0",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6312558Z    "inherited": true,
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6312790Z    "configFile": "lakefile.toml"}],
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6313050Z  "name": "unifiedLean",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6313265Z  "lakeDir": ".lake",
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6313481Z  "fixedToolchain": false}
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6580276Z G6_INPUTS {"source_commit": "967919f7499743f7ccc19b0aa633bb77698ffa9e", "targets": ["UnifiedLean.G6.FiniteProbability"], "modules": {"UnifiedLean.G6.FiniteProbability": {"path": "UnifiedLean/G6/FiniteProbability.lean", "sha256": "6aa4fb486c3fb5ccd4196dfc09b6fcc3d7a5414d52aea9103b0d6bacfc1cc569", "imports": ["Mathlib.Probability.ProbabilityMassFunction.Constructions", "Mathlib.Tactic.Linarith", "Mathlib.Tactic.Ring"]}}, "topological_order": ["UnifiedLean.G6.FiniteProbability"], "mathlib_roots": ["Mathlib.Probability.ProbabilityMassFunction.Constructions", "Mathlib.Tactic.Linarith", "Mathlib.Tactic.Ring"]}
+verify	Verify G6 frozen sources serially	2026-10-07T16:09:33.6585727Z G6_COMMAND {"argv": ["lake", "exe", "cache", "get", "Mathlib.Probability.ProbabilityMassFunction.Constructions", "Mathlib.Tactic.Linarith", "Mathlib.Tactic.Ring"], "cwd": "/home/runner/work/_temp/g6-cloud-build", "start": "2026-10-07T16:09:33.657329+00:00"}
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2822566Z ✔ [1/5] Built Cache.Cli (291ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2823383Z ✔ [3/10] Built Cache.Lean (337ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2826633Z ✔ [5/11] Built Batteries.Tactic.OpenPrivate (814ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2827359Z ✔ [6/11] Built Cache.Infra (341ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2827903Z ✔ [7/12] Built Cache.IO (1.3s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2828391Z ✔ [9/26] Built Cache.Hashing (739ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2828977Z ✔ [10/26] Built Cache.Requests (1.8s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2829528Z ✔ [11/26] Built Cache.Cli:c.o (135ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2830088Z ✔ [12/26] Built Cache.Lean:c.o (152ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2830747Z ✔ [13/26] Built Batteries.Tactic.OpenPrivate:c.o (1.2s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2831784Z ✔ [14/26] Built Cache.IO:c.o (1.6s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2832341Z ✔ [15/26] Built Cache.Hashing:c.o (443ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2832908Z ✔ [16/26] Built Cache.Infra:c.o (216ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2833481Z ✔ [17/26] Built Cache.Requests:c.o (2.8s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2834042Z ✔ [18/26] Built Cache.Marker (530ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2834582Z ✔ [19/26] Built Cache.Marker:c.o (123ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2835116Z ✔ [20/26] Built Cache.Query (653ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2835634Z ✔ [21/26] Built Cache.Query:c.o (309ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2836176Z ✔ [22/26] Built Cache.Warning (622ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2836782Z ✔ [23/26] Built Cache.Warning:c.o (268ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2837335Z ✔ [24/26] Built Cache.Main (1.1s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2838088Z ✔ [25/26] Built Cache.Main:c.o (994ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2838638Z ✔ [26/26] Built cache:exe (724ms)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2839075Z Current branch: HEAD
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2839587Z Using cache from origin: (some leanprover-community/mathlib4)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2840868Z Attempting to download 2479 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2842076Z 
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2842370Z Downloaded: 1 file(s) [attempted 1/2479 = 0%, 22 KB/s], Decompressed: 0
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2843116Z Downloaded: 80 file(s) [attempted 80/2479 = 3%, 576 KB/s], Decompressed: 8
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2843971Z Downloaded: 191 file(s) [attempted 191/2479 = 7%, 1568 KB/s], Decompressed: 35
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2844847Z Downloaded: 311 file(s) [attempted 311/2479 = 12%, 3277 KB/s], Decompressed: 35
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2846185Z Downloaded: 393 file(s) [attempted 393/2479 = 15%, 650 KB/s], Decompressed: 35
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2847077Z Downloaded: 500 file(s) [attempted 500/2479 = 20%, 501 KB/s], Decompressed: 35
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2847953Z Downloaded: 612 file(s) [attempted 612/2479 = 24%, 2223 KB/s], Decompressed: 35
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2848951Z Downloaded: 733 file(s) [attempted 733/2479 = 29%, 153 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2849848Z Downloaded: 835 file(s) [attempted 835/2479 = 33%, 1894 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2850755Z Downloaded: 947 file(s) [attempted 947/2479 = 38%, 1327 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2852115Z Downloaded: 1082 file(s) [attempted 1082/2479 = 43%, 1761 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2853039Z Downloaded: 1208 file(s) [attempted 1208/2479 = 48%, 1017 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2853950Z Downloaded: 1318 file(s) [attempted 1318/2479 = 53%, 219 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2854882Z Downloaded: 1401 file(s) [attempted 1401/2479 = 56%, 3401 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2855788Z Downloaded: 1515 file(s) [attempted 1515/2479 = 61%, 6264 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2856936Z Downloaded: 1636 file(s) [attempted 1636/2479 = 65%, 827 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2857832Z Downloaded: 1741 file(s) [attempted 1741/2479 = 70%, 1254 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2858738Z Downloaded: 1848 file(s) [attempted 1848/2479 = 74%, 4013 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2859625Z Downloaded: 1974 file(s) [attempted 1974/2479 = 79%, 528 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2860523Z Downloaded: 2098 file(s) [attempted 2098/2479 = 84%, 2336 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2861648Z Downloaded: 2194 file(s) [attempted 2194/2479 = 88%, 411 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2862541Z Downloaded: 2321 file(s) [attempted 2321/2479 = 93%, 2986 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2863452Z Downloaded: 2452 file(s) [attempted 2452/2479 = 98%, 215 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2864346Z Downloaded: 2477 file(s) [attempted 2477/2479 = 99%, 3390 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2865251Z Downloaded: 2479 file(s) [attempted 2479/2479 = 100%, 3390 KB/s], Decompressed: 143
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2865964Z Decompressed 2479 file(s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2866376Z Already decompressed 2479 file(s)
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2868638Z G6_RECEIPT {"argv": ["lake", "exe", "cache", "get", "Mathlib.Probability.ProbabilityMassFunction.Constructions", "Mathlib.Tactic.Linarith", "Mathlib.Tactic.Ring"], "start": "2026-10-07T16:09:33.657329+00:00", "end": "2026-10-07T16:10:05.268856+00:00", "exit": 0, "output_sha256": "436901d5002ffa4d2c12d9c8cfad92d493fc8d7a7b4966db177493c1ef5614b3"}
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:05.2873024Z G6_COMMAND {"argv": ["lake", "env", "lean", "--trust=0", "-j1", "-M4096", "-o", "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/FiniteProbability.olean", "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteProbability.lean"], "cwd": "/home/runner/work/_temp/g6-cloud-build", "start": "2026-10-07T16:10:05.269772+00:00"}
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3447849Z /home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteProbability.lean:69:60: error: typeclass instance problem is stuck
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3449060Z   SummationFilter.LeAtTop ?m.23
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3449367Z 
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3450903Z Note: Lean will not try to resolve this typeclass instance problem because the second type argument to `SummationFilter.LeAtTop` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3452714Z 
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3454612Z Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3457742Z /home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteProbability.lean:79:9: warning: Variable name `a` is not explicitly referenced.
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3458748Z 
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3459494Z Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3460541Z   [apply] _a
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3460734Z 
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3461393Z Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3462636Z 'UnifiedLean.G6.FiniteProbability.common_subprobability_tv' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3464186Z 'UnifiedLean.G6.FiniteProbability.common_subprobability_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3465570Z 'UnifiedLean.G6.FiniteProbability.common_subprobability_event' depends on axioms: [propext,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3466422Z  Classical.choice,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3466763Z  Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3467591Z 'UnifiedLean.G6.FiniteProbability.scaled_domination_tv' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3469238Z 'UnifiedLean.G6.FiniteProbability.pmf_sum_real' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3470515Z 'UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv' depends on axioms: [propext,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3471480Z  sorryAx,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3471790Z  Classical.choice,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3472130Z  Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3472802Z 'UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event' depends on axioms: [propext,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3473611Z  sorryAx,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3473917Z  Classical.choice,
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3474248Z  Quot.sound]
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3477164Z G6_RECEIPT {"argv": ["lake", "env", "lean", "--trust=0", "-j1", "-M4096", "-o", "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/FiniteProbability.olean", "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteProbability.lean"], "start": "2026-10-07T16:10:05.269772+00:00", "end": "2026-10-07T16:10:08.344615+00:00", "exit": 1, "output_sha256": "6bc5900bdc731e8a7944041f96894b4f2bf5a37873f032b09afa89ac9831349e"}
+verify	Verify G6 frozen sources serially	2026-10-07T16:10:08.3531759Z ##[error]Process completed with exit code 1.
+verify	Complete job	﻿2026-10-07T16:10:08.3636323Z Cleaning up orphan processes
