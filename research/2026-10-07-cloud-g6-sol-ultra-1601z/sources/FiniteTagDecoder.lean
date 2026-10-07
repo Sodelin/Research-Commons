@@ -11,16 +11,18 @@ No Inhabited/Nonempty Copy, chronology sorting or source-law premise is added.
 
 namespace CloudG3.FiniteTagDecoder
 
+universe u v
+
 open GProgram.SourceForest
 open GProgram.G2.FaithfulPairAgeDecoration
 open UnifiedLean.Source.UnrankedGenealogyObservation
 open scoped Classical
 
-variable {Copy : Type*} [Fintype Copy] [DecidableEq Copy]
-variable {Tag : Type*}
+variable {Copy : Type u} [Fintype Copy] [DecidableEq Copy]
+variable {Tag : Type v}
 
 /-- A tag at every internal graft of the SUPPLIED actual binary genealogy. -/
-noncomputable def TagDecoration (Tag : Type*) : Genealogy Copy → Type _
+noncomputable def TagDecoration (Tag : Type v) : Genealogy Copy → Type v
   | .leaf _ => PUnit
   | .graft a b => Tag × TagDecoration Tag a × TagDecoration Tag b
 
@@ -105,7 +107,7 @@ def mapTags {Other : Type*} (f : Tag → Other) : TaggedTree Copy Tag → Tagged
 
 theorem underlying_toTaggedTree (t : Genealogy Copy) (d : TagDecoration Tag t) :
     underlying (toTaggedTree t d) = t := by
-  induction t generalizing d with
+  induction t with
   | leaf z => rfl
   | graft a b ha hb =>
       change Genealogy.graft (underlying (toTaggedTree a d.2.1))
@@ -124,7 +126,7 @@ theorem underlying_mapTags {Other : Type*} (f : Tag → Other) (t : TaggedTree C
 theorem toTaggedTree_mapBinDecoration (bin : ℝ → Tag) (t : Genealogy Copy)
     (d : Decoration t) :
     toTaggedTree t (mapBinDecoration bin t d) = mapTags bin (toAgeTree t d) := by
-  induction t generalizing d with
+  induction t with
   | leaf x => rfl
   | graft a b ha hb =>
       change TaggedTree.graft (bin d.1)

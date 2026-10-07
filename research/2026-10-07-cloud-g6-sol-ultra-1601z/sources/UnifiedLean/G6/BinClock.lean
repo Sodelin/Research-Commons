@@ -10,6 +10,7 @@ It does not supply refined-calendar composition or the whole observation law.
 namespace UnifiedLean.G6.BinClock
 open MeasureTheory ProbabilityTheory Nanuq.Source
 open UnifiedLean.Source.UniformizedSourceStep
+open UnifiedLean.Source.NativePairClockLaw
 open UnifiedLean.Source.SourceActualHoldingClocks
 open UnifiedLean.Source.SourceMergerClockCatalogue
 open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.MarkedTraceCuts
