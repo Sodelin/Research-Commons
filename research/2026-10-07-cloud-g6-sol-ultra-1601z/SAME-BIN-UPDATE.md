@@ -84,3 +84,22 @@ that decoder must handle all old subtrees, empty/singleton panels, diagonal
 leaf dates and unordered operands. A freely assigned matrix, final marginal
 Code, or a generic finite tag carrier is not the original G6 timed-bin law.
 The connected feasible-cell/net/confidence/full-master gates remain separate.
+
+## Whole-record coarsening draft
+
+A later [BinFold.lean](proof-drafts/BinFold.lean) draft, initial SHA256
+`cc220e3db672f63f05dd4516f19322c758634b396a861ec04aa2e2e2347ea3fd`,
+extends the pointwise update identity through the inherited `foldMatrix`
+recursion. Applying β to the full real-age matrix equals folding finite
+tags through precisely the same active records, offsets and destinations.
+Inactive padding writes nothing. If every active record has bin b, the
+tag fold equals its constant-b version. These are **UNCHECKED** deterministic
+draft statements, absent from the current three-module helper freeze.
+
+The source map now identifies the actual interval gate: `activeTrace_mem_gt`
+with the original strictly positive clocks and `activeTrace_mem_bounds`
+give offset < active age ≤ offset+horizon. `actual_active_times_avoid_fixed`
+removes equality at a declared fixed cut. This is inherited original-clock
+evidence; new code must still convert coordinate flags to active-list
+membership and compose the chosen refined calendar. For a random ancestral
+cover, avoid the fixed observation cut, not the random cover itself.

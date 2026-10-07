@@ -32,6 +32,9 @@ bound hold on (H,new endpoint vector). This construction is exact for its
 declared kernel PMF. Binding a particular physical prior history to that
 conditional-future interface requires the actual same-clock past/future
 source theorem; arbitrary correlations alone do not establish that binding.
+The preserved old label here is PMF-distributed and therefore has countable
+support. Finite bin labels fit this interface; it does not replace the
+non-atomic measure of a full continuous timed past.
 
 ## Proof and provenance
 
