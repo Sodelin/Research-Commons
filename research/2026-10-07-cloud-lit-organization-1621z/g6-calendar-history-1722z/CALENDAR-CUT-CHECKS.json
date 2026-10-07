@@ -1,0 +1,478 @@
+{
+  "contributor": "Codex delegated literature/organization lane",
+  "checked_at_utc": "2026-10-07T19:57:49.370605+00:00",
+  "frozen_observed_main": "eb507991888a4303e4b6e5fee6d38ad677ba2fb6",
+  "resumed_prior_checkpoint": "af40432323f337f374486065605fbed11fe93f3e",
+  "scope": "Narrow read-cut source lookup, exact source/import pins and reader links; no compiler, provider edits, full corpus/inventory replay or new proof acceptance.",
+  "selected170_manifest": {
+    "path": "research/2026-10-07-cloud-g5-sol-ultra-1557z/verification/evidence/g5-takeover-run-37658528073-PASS/SOURCE-CONTEXT.json",
+    "sha256": "e165eab8a20daddbd1f59160b9edc0de93181d85c2a55b485803f586f04a209e",
+    "input_commit": "849757a968ea29e215c569b16bf3ca6d15af6abc",
+    "selected_modules": 170,
+    "narrow_source_matches": 13,
+    "import_comparison": "Actual leading Lean import declarations; block-comment prose excluded."
+  },
+  "source_checks": [
+    {
+      "module": "G2SameClockContinuation",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockContinuation.lean",
+      "bytes": 14957,
+      "sha256": "9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6",
+      "imports": [
+        "G2LiteralCutResidual",
+        "G2MarkedTraceBudgetStability"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted1–75,140–229,270–301; full active-concatenation proof read, omitted helper ranges not freshly reviewed."
+    },
+    {
+      "module": "G2HistoryResidualAttachment",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2HistoryResidualAttachment.lean",
+      "bytes": 18550,
+      "sha256": "3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298",
+      "imports": [
+        "G2LiteralCutResidual"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted209–351 factorization/fibre proof; initial definitions searched and previous context reused."
+    },
+    {
+      "module": "G2MarkedTraceCuts",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceCuts.lean",
+      "bytes": 12799,
+      "sha256": "aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699",
+      "imports": [
+        "G2LiteralMarkedClockTrace"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted230–276 horizon restriction; other declarations searched, prior bounds context reused."
+    },
+    {
+      "module": "G2EpochHistoryReadout",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochHistoryReadout.lean",
+      "bytes": 8047,
+      "sha256": "f3d6598cff77c87219efb74e9a361b3ac7c92c35862d2d259932e6f4f5b904d7",
+      "imports": [
+        "G2SameClockContinuation",
+        "G2SameClockPastFutureLaw"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted58–82 same-clock cut/readout; previous context reused."
+    },
+    {
+      "module": "G2ActualEpochHistoryLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualEpochHistoryLaw.lean",
+      "bytes": 8340,
+      "sha256": "e106b912721336831c3392d3cf5414cf20b43765b73c5c6cc31b83dec7d69be2",
+      "imports": [
+        "G2CutResidualSourceMixture",
+        "G2CompleteAncestralPath",
+        "G2SourceFiniteHistory"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Complete source read for retained continuation, finite renewal and endpoint-vector PMF law."
+    },
+    {
+      "module": "G2SameClockPastFutureLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockPastFutureLaw.lean",
+      "bytes": 4573,
+      "sha256": "bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930",
+      "imports": [
+        "G2CutFutureSourceBinding",
+        "G2SameClockContinuation"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Complete source read for later endpoint/full-past law and budget."
+    },
+    {
+      "module": "G2CutFutureSourceBinding",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutFutureSourceBinding.lean",
+      "bytes": 5639,
+      "sha256": "b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190",
+      "imports": [
+        "G2HistoryResidualAttachment"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Complete source read for retained endpoint pushforward, not a full-future record law."
+    },
+    {
+      "module": "G2FiniteAncestralTrace",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteAncestralTrace.lean",
+      "bytes": 10607,
+      "sha256": "00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a",
+      "imports": [
+        "G2LiteralMarkedClockTrace",
+        "UnifiedLean.Source.SourceAncestralCompletion"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted140–197 complete trace, probability, measurability, terminal support and stability; earlier cover construction reused."
+    },
+    {
+      "module": "G2FiniteFibreTransport",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteFibreTransport.lean",
+      "bytes": 6747,
+      "sha256": "fc8b772af83a6140bff8dbc6253b50820e5c6bbf7ce0262d2211919f039b16ea",
+      "imports": [
+        "Mathlib.MeasureTheory.Measure.Prod",
+        "Mathlib.MeasureTheory.Measure.Restrict"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted120–170 regroup/map helper and explicit observed equality/compatibility premises."
+    },
+    {
+      "module": "G2ActualDecorationFold",
+      "path": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ActualDecorationFold.lean",
+      "bytes": 5810,
+      "sha256": "8ca5f51130da2c7b513e70cd0b0d93a22fe9c4e706a63b590cab5407258f55be",
+      "imports": [
+        "G2SourceGraftDecoration",
+        "G2LiteralMarkedClockTrace"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted46–89 shift/empty/prepend, declaration search; prior attachment proof reused."
+    },
+    {
+      "module": "G2ChronologicalPathReadout",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ChronologicalPathReadout.lean",
+      "bytes": 11706,
+      "sha256": "99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473",
+      "imports": [
+        "G2CompleteCalendarAttachment",
+        "G2CompleteAncestralPath"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted25–211 path definitions/measurability/chronological identity; no fresh full reproof."
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochSemigroup",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochSemigroup.lean",
+      "bytes": 4067,
+      "sha256": "845739bc6b110eadd611e0133906ec3f9b036d66f17902f46885c660213b179f",
+      "imports": [
+        "UnifiedLean.Source.SourcePoissonExponential"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Complete source read; actual_source_time_add endpoint scope retained."
+    },
+    {
+      "module": "G2CalendarHistoryBinding",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CalendarHistoryBinding.lean",
+      "bytes": 9309,
+      "sha256": "8827842d77dc5749d6db4114ef24d34cf85779a545628879a6ba6eaf3681b796",
+      "imports": [
+        "G2ActualCalendarTrace",
+        "G2SourceFiniteHistory"
+      ],
+      "exact_selected170_match": true,
+      "actual_read_depth": "Targeted84–114 branch/history premises; prior context reused."
+    }
+  ],
+  "declaration_search_scope": [
+    "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources",
+    "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources",
+    "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources",
+    "research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z"
+  ],
+  "findings": {
+    "available": "Entire active-record split on retained clocks; actual full-past/residual-clock factorization; same-clock cut restriction; finite endpoint-history PMF; complete same-clock trace stability; measurable path/fibre infrastructure.",
+    "not_located_within_bounded_search": "Named direct whole age/bin/tree complete-calendar law equality under arbitrary artificial interval/read-cut insertion. Not a corpus-wide absence claim.",
+    "proposed_consumer_only": "Measurable future full-trace map of actual residual factorization; active-list/fold concatenation; original boundary/register/rate composition; completed-tail reduction via enlarged same-clock horizon. These are derivations/obligations, not newly compiled statements.",
+    "completion_reduction_prerequisites": [
+      "Nonnegative fixed cut",
+      "ClockRegular original vector",
+      "Sufficient budget",
+      "Exact successful actual residual",
+      "Full-record stability above SAME covers",
+      "Ancestral support when asserting terminal completion"
+    ]
+  },
+  "received_task_boundary": {
+    "sole_Lean_run": "37675879295",
+    "requested_scope": "149 custom modules /160 named reports, reported by parent",
+    "status": "Actual owner receipt awaited in assignment; no terminal status checked/promoted here.",
+    "new_complete_calendar_candidate": "ac74f73 reported under independent audit; not reviewed/accepted by this lookup."
+  },
+  "limits": "Prioraf404 source checks/inventories preserved. No current jobs polled or implementation edited. Endpoint equality not promoted to decorated-law refinement. Proposed completed-tail argument remains a consumer derivation.",
+  "reader_checks": [
+    {
+      "path": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "sha256": "38058e90dd5ed7bc1c5fd2a211605f7f52b6ec903d296348fdcc21512a0aa309",
+      "bytes": 8675,
+      "relative_links": 14
+    },
+    {
+      "path": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "sha256": "47bcdde4b4ef229dd1bd137e314e22f20f31a5a353db115ddf005a03c6ce1557",
+      "bytes": 19889,
+      "relative_links": 39
+    }
+  ],
+  "relative_links_checked": 53,
+  "relative_link_results": [
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "CALENDAR-CUT-CHECKS.json",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockContinuation.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2HistoryResidualAttachment.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceCuts.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochHistoryReadout.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualEpochHistoryLaw.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockPastFutureLaw.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutFutureSourceBinding.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochSemigroup.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "LITERAL-ENDPOINT-AND-OLD-DECORATION.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ActualDecorationFold.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ChronologicalPathReadout.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteFibreTransport.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "target": "../../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteAncestralTrace.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-01-g6-effective-certification/PROOF.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/G6-SOL-ULTRA-PROMPT.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "SOURCE-READS.json",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-g2-marked-clock-extension-0903z/G2LiteralMarkedClockTrace.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/PUBLIC-SOURCE-CONTEXT.json",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/README.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/SCIENTIFIC-ACCEPTANCE.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteSourceSnapshot.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceActualHoldingClocks.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativePairClockLaw.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-g2-marked-clock-extension-0903z/G2LiteralMarkedClockTrace.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualEpochHistoryLaw.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochHistoryReadout.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualCalendarTrace.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CalendarHistoryBinding.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-g2-source-finite-history-checkpoint-2141z/G2SourceFiniteHistory.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-g2-source-graft-source-preservation-2357z/G2SourceGraftDecoration.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ActualDecorationFold.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2CalendarDecoration.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2CompleteDecoration.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CompleteCalendarAttachment.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ChronologicalPathReadout.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2RationalAgeReadout.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2JointTimedObservation.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2FaithfulTimedOutput.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2ActualTimedAllPanelLaw.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-07-dot-g2-timed-endpoint-ordinary-integration-0941z/G2AssembledBoundaryNull.lean",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-01-g6-effective-certification/PROOF.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "../../../research/2026-10-01-g4-admitted-testers-0819z/CLOCK.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "TIMED-SOURCE-EXPLANATION.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "FINITE-TAG-DECODER-PLAN.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "CURRENT-RESULT-POINTERS.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "LITERAL-ENDPOINT-AND-OLD-DECORATION.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "CURRENT-RESULT-POINTERS.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "RESTART-POINTER-CHECKS.json",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "CALENDAR-CUT-REFINEMENT-LOOKUP.md",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "CALENDAR-CUT-CHECKS.json",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "SOURCE-READS.json",
+      "exists": true
+    },
+    {
+      "reader": "research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md",
+      "target": "CHECKS.json",
+      "exists": true
+    }
+  ]
+}
