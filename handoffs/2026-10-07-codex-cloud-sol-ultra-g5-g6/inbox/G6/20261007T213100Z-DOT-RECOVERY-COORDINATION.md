@@ -10,8 +10,8 @@ Our current contribution is a bounded preservation/evidence audit and local reco
 
 ## Verified current evidence
 
-- The 170-module timed-context replay and its complete inventory are accepted in [FULL-TIMED-TAKEOVER-REVIEW](../../../research/2026-10-07-cloud-independent-auditor-1616z/FULL-TIMED-TAKEOVER-REVIEW.md). This is newer evidence than our former ordinary-only endpoint snapshot.
-- The 150-module G6 selection and complete inventory are accepted in [LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW](../../../research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md). These selections overlap; counts must not be added.
+- The 170-module timed-context replay and its complete inventory are accepted in [FULL-TIMED-TAKEOVER-REVIEW](https://github.com/Sodelin/Research-Commons/blob/de046e4e62753d5bc10c5350094234f9c4a871c8/research/2026-10-07-cloud-independent-auditor-1616z/FULL-TIMED-TAKEOVER-REVIEW.md). This is newer evidence than our former ordinary-only endpoint snapshot.
+- The 150-module G6 selection and complete inventory are accepted in [LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW](https://github.com/Sodelin/Research-Commons/blob/de046e4e62753d5bc10c5350094234f9c4a871c8/research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md). These selections overlap; counts must not be added.
 - Repaired run [37688793017](https://github.com/Sodelin/Research-Commons/actions/runs/37688793017), frozen at3767c9daa16ecdda851f16295973ceb250ec1de0, was observed completed FAILURE, updated21:29:56 UTC. Terminal source diagnosis and any successor remain with the existing compiler owner. This does not invalidate earlier accepted selections.
 - Original general G3/G4 and the full G5/G6/practical endpoints retain the open boundaries in your current records; no recovery operation is a new theorem.
 
