@@ -1,0 +1,651 @@
+{
+  "declarations_by_module": {
+    "G3ApproximateMomentBarrier": [
+      "CloudG3.ApproximateMomentBarrier.approximate_coupled_barrier"
+    ],
+    "UnifiedLean.G6.FiniteProbability": [
+      "UnifiedLean.G6.FiniteProbability.tv",
+      "UnifiedLean.G6.FiniteProbability.common_subprobability_tv",
+      "UnifiedLean.G6.FiniteProbability.common_subprobability_mass",
+      "UnifiedLean.G6.FiniteProbability.common_subprobability_event",
+      "UnifiedLean.G6.FiniteProbability.scaled_domination_tv",
+      "UnifiedLean.G6.FiniteProbability.pmf_sum_real",
+      "UnifiedLean.G6.FiniteProbability.pmfTV",
+      "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv",
+      "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event"
+    ],
+    "UnifiedLean.G6.Conditioning": [
+      "UnifiedLean.G6.Conditioning.retainedMass",
+      "UnifiedLean.G6.Conditioning.retainedMass_ne_zero",
+      "UnifiedLean.G6.Conditioning.retainedMass_ne_top",
+      "UnifiedLean.G6.Conditioning.retainedMass_le_one",
+      "UnifiedLean.G6.Conditioning.filter_scaled",
+      "UnifiedLean.G6.Conditioning.filtered_bind_domination",
+      "UnifiedLean.G6.Conditioning.filtered_bind_domination_real",
+      "UnifiedLean.G6.Conditioning.retainedMass_real_bounds",
+      "UnifiedLean.G6.Conditioning.retainedMass_finset",
+      "UnifiedLean.G6.Conditioning.conditioned_mixture_tv",
+      "UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv",
+      "UnifiedLean.G6.Conditioning.conditioned_joint_observation_event"
+    ],
+    "UnifiedLean.G6.SourcePrefix": [
+      "UnifiedLean.G6.SourcePrefix.taylorTerm",
+      "UnifiedLean.G6.SourcePrefix.taylorPrefix",
+      "UnifiedLean.G6.SourcePrefix.count_zero_ne_zero",
+      "UnifiedLean.G6.SourcePrefix.prefix_has_support",
+      "UnifiedLean.G6.SourcePrefix.prefixCount",
+      "UnifiedLean.G6.SourcePrefix.prefixMass",
+      "UnifiedLean.G6.SourcePrefix.prefixCount_support",
+      "UnifiedLean.G6.SourcePrefix.prefixMass_bounds",
+      "UnifiedLean.G6.SourcePrefix.prefixMass_taylor",
+      "UnifiedLean.G6.SourcePrefix.taylorPrefix_pos",
+      "UnifiedLean.G6.SourcePrefix.prefixCount_real",
+      "UnifiedLean.G6.SourcePrefix.finiteSourcePrefix",
+      "UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination",
+      "UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv",
+      "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv",
+      "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event"
+    ],
+    "UnifiedLean.G6.ProgramPrefix": [
+      "UnifiedLean.G6.ProgramPrefix.bind_scaled_domination",
+      "UnifiedLean.G6.ProgramPrefix.map_scaled_domination",
+      "UnifiedLean.G6.ProgramPrefix.stepMass",
+      "UnifiedLean.G6.ProgramPrefix.programMass",
+      "UnifiedLean.G6.ProgramPrefix.finiteProgramStep",
+      "UnifiedLean.G6.ProgramPrefix.finiteProgram",
+      "UnifiedLean.G6.ProgramPrefix.stepMass_le_one",
+      "UnifiedLean.G6.ProgramPrefix.programMass_le_one",
+      "UnifiedLean.G6.ProgramPrefix.program_deficit_le_sum",
+      "UnifiedLean.G6.ProgramPrefix.actual_step_domination",
+      "UnifiedLean.G6.ProgramPrefix.actual_program_domination",
+      "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination",
+      "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv",
+      "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv",
+      "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event",
+      "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv_budget",
+      "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv_budget"
+    ],
+    "UnifiedLean.G6.TaylorCertificate": [
+      "UnifiedLean.G6.TaylorCertificate.taylorTerm_nonneg",
+      "UnifiedLean.G6.TaylorCertificate.taylorTerm_succ",
+      "UnifiedLean.G6.TaylorCertificate.taylor_hasSum",
+      "UnifiedLean.G6.TaylorCertificate.taylor_tail_geometric",
+      "UnifiedLean.G6.TaylorCertificate.taylor_tail_bound",
+      "UnifiedLean.G6.TaylorCertificate.exp_le_taylor_enclosure",
+      "UnifiedLean.G6.TaylorCertificate.errorBound",
+      "UnifiedLean.G6.TaylorCertificate.prefix_deficit_le_certificate",
+      "UnifiedLean.G6.TaylorCertificate.actual_source_prefix_tv_certificate",
+      "UnifiedLean.G6.TaylorCertificate.actual_source_joint_readout_tv_certificate"
+    ],
+    "UnifiedLean.G6.RationalCertificate": [
+      "UnifiedLean.G6.RationalCertificate.rationalTerm",
+      "UnifiedLean.G6.RationalCertificate.rationalPrefix",
+      "UnifiedLean.G6.RationalCertificate.rationalError",
+      "UnifiedLean.G6.RationalCertificate.rationalCount",
+      "UnifiedLean.G6.RationalCertificate.rationalTerm_real",
+      "UnifiedLean.G6.RationalCertificate.rationalPrefix_real",
+      "UnifiedLean.G6.RationalCertificate.rationalError_real",
+      "UnifiedLean.G6.RationalCertificate.rationalTerm_nonneg",
+      "UnifiedLean.G6.RationalCertificate.rationalPrefix_one_le",
+      "UnifiedLean.G6.RationalCertificate.rationalCount_actual",
+      "UnifiedLean.G6.RationalCertificate.certificate_le_twice_term",
+      "UnifiedLean.G6.RationalCertificate.accepts",
+      "UnifiedLean.G6.RationalCertificate.certificate_exists",
+      "UnifiedLean.G6.RationalCertificate.cutoff",
+      "UnifiedLean.G6.RationalCertificate.cutoff_accepts",
+      "UnifiedLean.G6.RationalCertificate.cutoff_minimal",
+      "UnifiedLean.G6.RationalCertificate.cutoff_prefix_deficit"
+    ],
+    "UnifiedLean.G6.BinHistory": [
+      "UnifiedLean.G6.BinHistory.tagUpdate",
+      "UnifiedLean.G6.BinHistory.map_coded_age_update",
+      "UnifiedLean.G6.BinHistory.RelationMonotone",
+      "UnifiedLean.G6.BinHistory.same_bin_update_comp",
+      "UnifiedLean.G6.BinHistory.tag_update_self",
+      "UnifiedLean.G6.BinHistory.actual_destination_relation_monotone",
+      "UnifiedLean.G6.BinHistory.two_actual_mergers_same_bin"
+    ],
+    "G5FrozenTripleAnalyticSupport": [
+      "GProgram.G5.FrozenTripleAnalyticSupport.expParameter",
+      "GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_bounds",
+      "GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_decay",
+      "GProgram.G5.FrozenTripleAnalyticSupport.linearCoefficient",
+      "GProgram.G5.FrozenTripleAnalyticSupport.cubicCoefficient",
+      "GProgram.G5.FrozenTripleAnalyticSupport.row_polynomial",
+      "GProgram.G5.FrozenTripleAnalyticSupport.rowCoefficients",
+      "GProgram.G5.FrozenTripleAnalyticSupport.row_coefficients_evaluation",
+      "GProgram.G5.FrozenTripleAnalyticSupport.frozenMixture",
+      "GProgram.G5.FrozenTripleAnalyticSupport.frozenCoefficients",
+      "GProgram.G5.FrozenTripleAnalyticSupport.frozen_coefficients_evaluation",
+      "GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixture_limit",
+      "GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixtures_eq_of_right_germ",
+      "GProgram.G5.FrozenTripleAnalyticSupport.occupancy_masses_eq_of_right_germ",
+      "GProgram.G5.FrozenTripleAnalyticSupport.occupancy_support_eq_of_right_germ"
+    ]
+  },
+  "transitive_axioms": {
+    "CloudG3.ApproximateMomentBarrier.approximate_coupled_barrier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.common_subprobability_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.common_subprobability_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.common_subprobability_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.scaled_domination_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.pmf_sum_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.pmfTV": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.retainedMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.retainedMass_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.retainedMass_ne_top": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.retainedMass_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.filter_scaled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.filtered_bind_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.filtered_bind_domination_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.retainedMass_real_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.retainedMass_finset": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.conditioned_mixture_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.Conditioning.conditioned_joint_observation_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.taylorTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.taylorPrefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.count_zero_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefix_has_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefixCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefixMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefixCount_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefixMass_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefixMass_taylor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.taylorPrefix_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.prefixCount_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.finiteSourcePrefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.bind_scaled_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.map_scaled_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.stepMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.programMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.finiteProgramStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.finiteProgram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.stepMass_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.programMass_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.program_deficit_le_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.actual_step_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.actual_program_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.taylorTerm_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.taylorTerm_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.taylor_hasSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.taylor_tail_geometric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.taylor_tail_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.exp_le_taylor_enclosure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.errorBound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.prefix_deficit_le_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.actual_source_prefix_tv_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.TaylorCertificate.actual_source_joint_readout_tv_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalPrefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalError": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalCount": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalTerm_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalPrefix_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalError_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalTerm_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalPrefix_one_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.rationalCount_actual": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.certificate_le_twice_term": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.accepts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.certificate_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.cutoff_accepts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.cutoff_minimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.RationalCertificate.cutoff_prefix_deficit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.tagUpdate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.map_coded_age_update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.RelationMonotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.same_bin_update_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.tag_update_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.actual_destination_relation_monotone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.BinHistory.two_actual_mergers_same_bin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.expParameter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_decay": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.linearCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.cubicCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.row_polynomial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.rowCoefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.row_coefficients_evaluation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.frozenMixture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.frozenCoefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.frozen_coefficients_evaluation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixture_limit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixtures_eq_of_right_germ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.occupancy_masses_eq_of_right_germ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GProgram.G5.FrozenTripleAnalyticSupport.occupancy_support_eq_of_right_germ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "missing_reports": [],
+  "unexpected_axioms": {},
+  "recovered_audit_stdout_sha256": "14495d898dc1fb5ed6fe303872b339bc00c0a7553ce2990adf1682eac8f2dc32"
+}

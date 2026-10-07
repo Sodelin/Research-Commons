@@ -1,0 +1,68 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/HistoryPrefix.lean:35:8: error: unsolved goals
+case nil
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+K : ℕ
+s : Code N sample
+h : Fin [].length → Code N sample
+⊢ (historyLaw (finiteProgramStep N r K) [] s) h ≤ (historyLaw (sourceProgramStep N r) [] s) h
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/HistoryPrefix.lean:44:47: error: Application type mismatch: The argument
+  Fin.cons ?m.234
+has type
+  ((i : Fin ?m.232) → ?m.233 i.succ) → (i : Fin (?m.232 + 1)) → ?m.233 i
+but is expected to have type
+  (Fin ops.length → Code N sample) → Fin (ops.length + 1) → Code N sample
+in the application
+  map_scaled_domination (sourceHistoryLaw N r ops d) (finiteHistoryLaw N r K ops d) (programMass N r K ops) (ih d)
+    (Fin.cons ?m.234)
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/HistoryPrefix.lean:35:80: warning: This simp argument is unused:
+  le_refl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [programMass, one_mul, finiteHistoryLaw, sourceHistoryLaw]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'UnifiedLean.G6.HistoryPrefix.actual_history_domination' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.same_initial_history_domination' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.same_initial_history_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.same_initial_history_tv_budget' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.same_initial_joint_history_readout_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.retained_past_history_domination' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.retained_past_joint_history_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.HistoryPrefix.retained_past_joint_history_tv_budget' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

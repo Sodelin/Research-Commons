@@ -32,7 +32,7 @@ theorem actual_history_domination (N : RootedBinary V E X) {sample : Copy → X}
     programMass (Copy := Copy) N r K ops * finiteHistoryLaw N r K ops s h ≤
       sourceHistoryLaw N r ops s h := by
   induction ops generalizing s with
-  | nil => simp only [programMass, one_mul, finiteHistoryLaw, sourceHistoryLaw, le_refl]
+  | nil => simp only [programMass, one_mul, finiteHistoryLaw, sourceHistoryLaw, historyLaw, le_refl]
   | cons op ops ih =>
       change (stepMass (Copy := Copy) N r K op * programMass (Copy := Copy) N r K ops) *
           ((finiteProgramStep N r K op s).bind (fun d =>
@@ -41,7 +41,9 @@ theorem actual_history_domination (N : RootedBinary V E X) {sample : Copy → X}
           (sourceHistoryLaw N r ops d).map (Fin.cons d))) h
       apply bind_scaled_domination _ _ _ _ _ _ (actual_step_domination N r K op s)
       intro d z
-      exact map_scaled_domination _ _ _ (ih d) (Fin.cons d) z
+      exact map_scaled_domination _ _ _ (ih d)
+        (fun tail : Fin ops.length → Code N sample =>
+          (Fin.cons d tail : Fin (ops.length + 1) → Code N sample)) z
 
 theorem same_initial_history_domination (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (K : ℕ) (ops : List (ProgramStep N))
