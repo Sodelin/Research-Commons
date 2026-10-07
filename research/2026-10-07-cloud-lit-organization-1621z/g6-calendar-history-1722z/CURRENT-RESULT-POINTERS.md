@@ -55,6 +55,14 @@ The [author review receipt](../../2026-10-07-cloud-g4-1619z/REVIEW-RECEIPT.md) a
 
 ## Frozen metadata boundaries
 
+### Dated successor: canonical history/fold and clock/decoder reviews at `34fe63f`
+
+The [117-report canonical history/fold review](../../2026-10-07-cloud-independent-auditor-1616z/HISTORY-FOLD-VERIFIED-REVIEW.md), main **`34fe63fa844b4c57787062b8c8e58d1e871767f1`**, now accepts actual successful run `37663829244`, frozen input `4fed3030da86d94c85fbb7ecd7ea33b250e06772`. All 144 receipts exit zero, including 142 custom modules. Its **117 selected standard-axiom reports** comprise 101 G6, one G3 scalar and 15 G5 analytic reports. Repaired `HistoryPrefix` has ten selected reports and `BinFold` three. This genuine successor supersedes the earlier history failure at its new bytes; the failed recovery remains rejected. The four new helpers' complete generated-declaration ownership inventory is not supplied by this named audit.
+
+The joint endpoint vector and correlated PMF past label remain narrower than an actual continuous-age history. The same-record bin fold retains the supplied old matrix and requires all active records to have the one bin. [Canonical actual-bin-clock hand review](../../2026-10-07-cloud-independent-auditor-1616z/ACTUAL-BIN-CLOCK-HAND-REVIEW.md) and [canonical actual-tree decoder hand review](../../2026-10-07-cloud-independent-auditor-1616z/G3-FINITE-TAG-DECODER-HAND-REVIEW.md), both at `34fe63f`, supply the later scoped **HAND ACCEPT** statements. They do not compile the new clock/decoder derivatives or establish a complete bin-calendar/source law. Later serial freezes and their actual receipts must be identified separately.
+
+The [endpoint/old-decoration source lookup](LITERAL-ENDPOINT-AND-OLD-DECORATION.md) identifies the existing original-source attachment theorems and their explicit old `ForestDecorates` premise. It does not assume that every matrix/past PMF has that actual source meaning. [ENDPOINT-ATTACHMENT-CHECKS.json](ENDPOINT-ATTACHMENT-CHECKS.json) records this targeted observation against main `031482a` and the accepted 170-module manifest; no build or inventory replay was run by organization.
+
 Original `a6` corpus inventories, the successor snapshot at `9500cc7`, the earlier 24-source timed-context comparison, and prior source/link checks remain byte-preserved dated observations. They do not automatically include later files or compiler runs. [DECODER-CHECKS.json](DECODER-CHECKS.json) authenticates this targeted successor against `9fc64f`; it does not regenerate the full corpus inventory or independently replay any mathematical algorithm. Root navigation and scientific provider files remain owned by their existing lanes.
 
 [RESULT-POINTER-UPDATE-CHECKS.json](RESULT-POINTER-UPDATE-CHECKS.json) records the later targeted receipt/payload identities and reader-link checks. It supplements the frozen decoder metadata without rewriting those earlier observations.
