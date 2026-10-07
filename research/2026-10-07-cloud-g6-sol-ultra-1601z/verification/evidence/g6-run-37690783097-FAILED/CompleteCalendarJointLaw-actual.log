@@ -1,0 +1,130 @@
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:53:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:103:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:148:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:149:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:205:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:206:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:241:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ s_1,
+    Measure.map g
+      ((Measure.map obs ((actualCalendarTraceLaw N r ops s).restrict {x | calendarEnd N ops s x = s_1})).prod
+        (completionKernel N r (id s_1)).toMeasure)
+in the target expression
+  ∑ d,
+      Measure.map g
+        ((Measure.map obs ((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d})).prod
+          (completionKernel N r d).toMeasure) =
+    ((calendarJointPMF N r bin hbin ops s offset M).bind (jointTailKernel N r tag)).toMeasure
+
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+s : Code N sample
+hroot : ∀ d ∈ (sourceProgram N r ops s).support, AncestralRoot N d
+offset cut : ℝ
+tag : Tag
+hoff : cut ≤ offset + ↑(programDuration N ops)
+htail : ∀ (a : ℝ), cut < a → bin a = tag
+M : Copy → Copy → ℝ
+this✝ : IsProbabilityMeasure (actualCalendarTraceLaw N r ops s) := actual_calendar_trace_probability N r ops s
+this : ∀ (d : Code N sample), SFinite (completionKernel N r d).toMeasure := fun x => inferInstance
+obs : (Fin ops.length → SegmentRecord N sample) → Code N sample × (Copy → Copy → Tag) :=
+  fun past => (calendarEnd N ops s past, calendarTags N bin ops s offset (fun a b => bin (M a b)) past)
+g : (Code N sample × (Copy → Copy → Tag)) × Code N sample → Code N sample × (Copy → Copy → Tag) :=
+  fun z => (z.2, tagUpdate N z.1.1 z.2 tag z.1.2)
+Γ : PMF (Code N sample × (Copy → Copy → Tag)) := calendarJointPMF N r bin hbin ops s offset M
+hobs : Measurable obs
+hg : Measurable g
+hΓ : Measure.map obs (actualCalendarTraceLaw N r ops s) = Γ.toMeasure
+hactual :
+  Measure.map (fun z => (completeEnd N ops z, completeTags N bin ops s offset (fun a b => bin (M a b)) z))
+      (completeCalendarTraceLaw N r ops s) =
+    ∑ d,
+      Measure.map g
+        ((Measure.map obs ((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d})).prod
+          (completionKernel N r d).toMeasure)
+hr :
+  ∑ s_1,
+      Measure.map g
+        ((Measure.map obs ((actualCalendarTraceLaw N r ops s).restrict {x | calendarEnd N ops s x = s_1})).prod
+          (completionKernel N r (id s_1)).toMeasure) =
+    ∑ q, Measure.map g ((Γ.toMeasure.restrict {z | z.1 = q}).prod (completionKernel N r q).toMeasure)
+⊢ ∑ d,
+      Measure.map g
+        ((Measure.map obs ((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d})).prod
+          (completionKernel N r d).toMeasure) =
+    ((calendarJointPMF N r bin hbin ops s offset M).bind (jointTailKernel N r tag)).toMeasure
+'CloudG3.CompleteCalendarJointLaw.calendar_joint_pmf_toMeasure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.pmf_singleton_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.finite_joint_kernel_measure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.complete_branch_joint_source_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.actual_complete_joint_source_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
