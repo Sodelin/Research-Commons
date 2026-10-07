@@ -41,3 +41,11 @@ Alternatively, an input-computable witness-size bound or another sound complete 
 No generic source enumeration, graph catalogue, invariant synthesis, logarithm oracle, exponential solver, biological fit or heavy build was executed here. Ending this lane does not imply background progress. Next action: review the quantitative component, then return to the singular whole-fibre extraction/certificate gap.
 
 The staged [approximate scalar Lean candidate](G3ApproximateMomentBarrier.lean) is **UNCHECKED**. It contains one finite scalar declaration and no `sorry`/source axioms. Its compilation is queued behind the sole G6 verification route; source estimates and the observation bridge remain separate even if that declaration passes.
+
+## Dated continuation after the first main checkpoint
+
+The first five-file checkpoint was preserved and remote-read back at main `660c42cd304ae037070200e4a5a275f149e7ece4`. The original quantitative proof and acknowledgment remain unchanged.
+
+The independent auditor has now accepted the quantitative lower component and its [matching positive construction](POSITIVE-SECOND-ORDER-APPROXIMATION.md), at their exact fixed-family COMMON word scope. The [dated receipt](HAND-REVIEW-RECEIPT.md) records the exact hashes and the zero-error clarification. Together they establish a hand-proved reciprocal-square-root approximation count order for that inherited negative family. Constants remain symbolic, and this does not change general G3's OPEN status.
+
+A further [full-forest compressed-generator reconstruction](FULL-FOREST-GENERATOR-APPROXIMATION.md) uses a count-level Poisson coupling to remove the spectral norm overhead and extend the positive upper construction to finitely many COMMON generators. It is separately submitted for hand review. It would replace one G6 reconstruction substep, leaving the global source approximation and endpoint verification obligations intact.
