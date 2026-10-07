@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-07T13:09:55.005267+00:00",
+  "claim_category": "exact symbolic finite frozen-three-label kernel and rational controls only",
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "checker_sha256": "60c0241e96951bc784c0d85a52556feb0ed92ea94c44c93048bf57691adf4d76",
+  "counts": {
+    "generator_row_sum": 25,
+    "forward_ode_coordinates": 25,
+    "initial_coordinates": 25,
+    "infinite_time_coordinates": 25,
+    "probability_row_normalizations": 5,
+    "polynomial_factors": 2,
+    "rational_posterior_families": 45,
+    "rational_endpoint_support_tests": 225
+  },
+  "negative_controls": {
+    "wrong_original_copy_rate_rejected": true,
+    "nonzero_ode_residuals": [
+      "rate*(exp(2*age*rate) - 1)*exp(-3*age*rate)/2",
+      "rate*(exp(2*age*rate) - 1)*exp(-3*age*rate)/2",
+      "rate*(exp(2*age*rate) - 1)*exp(-3*age*rate)/2",
+      "3*rate*(1 - exp(2*age*rate))*exp(-3*age*rate)/2"
+    ],
+    "zero_rate_absorption_rejected": true,
+    "zero_rate_endpoint": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "zero_weight_occupancy_loss": {
+      "hidden_occupancies": [
+        0,
+        4
+      ],
+      "weights": [
+        1,
+        0
+      ],
+      "limiting_support": [
+        0
+      ]
+    }
+  },
+  "not_proved": [
+    "Lean elaboration or kernel acceptance",
+    "actual original-network conditional event-free source/kernel identity",
+    "observable germ analytic continuation in Lean",
+    "complete M3 full-cluster/split endpoint",
+    "any minimum M3 threshold"
+  ]
+}
