@@ -61,3 +61,9 @@ The separately owned formal derivative adds that namespace at `ab849a9`
 and is under run37668810494; its result is pending. The earlier nine G6
 modules have a complete successful ownership inventory; this target is
 excluded until its own successful receipt.
+
+The repaired derivative subsequently [passed run37668810494](verification/evidence/g6-run-37668810494-PASS/README.md)
+at `ab849a9`, source SHA256
+`3f5fb33173aea6047c82acb562653284d9cfab21e18a61aab4a71f26f0bfbacf`.
+All three named declarations and all three owned rows passed. The old-past,
+calendar and full observation-law obligations stated above remain separate.

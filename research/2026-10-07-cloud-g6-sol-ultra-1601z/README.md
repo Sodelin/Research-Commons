@@ -6,7 +6,7 @@ The question is whether finite noisy observations yield effective, honest source
 
 ## What the new source chain establishes
 
-| Source | Meaning | Actual execution as of 7 October 2026, 18:44 UTC |
+| Source | Meaning | Actual execution as of 7 October 2026, 19:05 UTC |
 |---|---|---|
 | [FiniteProbability](sources/UnifiedLean/G6/FiniteProbability.lean) | Finite common-subprobability and scaled-domination total-variation/event bounds, retaining zero/full-mass cases | PASS at `89dffaa` in run 37651501035 |
 | [Conditioning](sources/UnifiedLean/G6/Conditioning.lean) | Mass of an actual retained PMF event, normalized filter, same-kernel bind domination and joint finite readout contraction | PASS in that run |
@@ -17,6 +17,8 @@ The question is whether finite noisy observations yield effective, honest source
 | [BinHistory](sources/UnifiedLean/G6/BinHistory.lean) | Coarsen actual graft ages; persistent pair relations and two genuine same-bin mergers | Seven selected reports PASS in that partial run |
 | [HistoryPrefix](sources/UnifiedLean/G6/HistoryPrefix.lean) | Joint actual endpoint-vector domination and a retained correlated PMF past label | Failed at `042da4c`; repaired derivative at `4fed303` PASS, ten named reports in run37663829244 |
 | [BinFold](sources/UnifiedLean/G6/BinFold.lean) | Coarsening through the actual record fold; constant-bin fold conditional on every active tag | PASS at `4fed303`, three named reports in that successful run |
+| [BinClock](sources/UnifiedLean/G6/BinClock.lean) | Actual original-clock support inside a fixed bin, simultaneously for all finite budgets; retains the carried old tags | Three named/three owned declarations PASS at `ab849a9`, run37668810494 |
+| [FiniteTagDecoder](sources/FiniteTagDecoder.lean) | Actual pair-age decoding commutes with binning on the supplied well-labelled tree; preserves repeated-tag topology and compatible child swaps | 19 named/89 complete owned rows PASS at `ab849a9` |
 
 The later [successful four-module receipt](verification/evidence/g6-run-37652484086-PASS/README.md) confirms all 61 custom dependency targets and the complete 51-declaration audit passed, using only propext, Classical.choice and Quot.sound. Pinned Mathlib cache was reused. [Independent terminal/source review](../2026-10-07-cloud-independent-auditor-1616z/G6-VERIFIED-PROGRAM-REVIEW.md) accepts this precise unranked component scope. Earlier failed attempts and raw logs remain in the evidence paths. Follow [current status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md) for later results.
 
@@ -49,9 +51,14 @@ from the earlier170-module environment and these counts must not be added.
 The subsequent bounded build attempted [actual clock-to-bin support](ACTUAL-BIN-CLOCK.md),
 the [finite-tag decoder](../2026-10-07-cloud-g3-contextual-source-1716z/finite-tag-decoder-1806z/README.md),
 and the required complete expanded ownership inventory; those targets
-failed elaboration at `09015d8`. Repaired derivatives are in run37668810494
-at `ab849a9`; no successful result is inferred at this snapshot. Their
-original hand statements remain accepted and original draft bytes preserved.
+failed elaboration at `09015d8`. Their repaired derivatives now have
+[actual successful run37668810494](verification/evidence/g6-run-37668810494-PASS/README.md)
+at `ab849a9`:147 modules,139 named reports and a complete3,609-declaration/
+2,298-theorem inventory, with no owned/nonstandard axioms or missing modules.
+The ten G6 modules have173 owned declarations/134 theorems; the decoder has
+89 owned rows. [Independent complete acceptance](../2026-10-07-cloud-independent-auditor-1616z/CLOCK-DECODER-VERIFIED-COMPLETE-INVENTORY-REVIEW.md)
+authenticates the exact sources and all compiler/audit evidence. Original
+draft bytes and failed receipts remain preserved.
 
 ## Current full-master register
 
@@ -64,7 +71,7 @@ This is the current successor of the historical startup register; the [startup A
 | Actual conditioned count/source proxy and joint readout | Conditioning + SourcePrefix + same-register ProgramPrefix, including sum-of-deficits state/joint-TV budgets, PASS | Connect to the full master; retain normalized/residual distinction |
 | Positive Taylor tail, rational certificate/effective termination | Taylor/source bounds PASS; RationalCertificate 17 named reports now prove least-cutoff termination and coefficient correspondence at supplied rational means; Python controls and hand/code review preserved | Executable correspondence, arbitrary-real certified enclosure integration and outer all-source law approximation |
 | Contextual genuine positive-chain approximation/reconstruction | Accepted G6 Appendix A plus reviewed [COMMON contextual/effective constructor](../2026-10-07-cloud-g3-contextual-source-1716z/README.md); Lean open | Formal COMMON/INDEPENDENT, all entering forests/all finite caps, source-faithful physical chains |
-| Cut guards, fixed endpoints and actual timed-bin lift | BinHistory seven actual-source reports PASS; HistoryPrefix joint-vector/PMF-past and BinFold same-record quotient now PASS; inherited 170-module actual timed environment passed | Active-age/bin support, refined calendar composition, retained old tags and unordered internal-node decoder; full law binding |
+| Cut guards, fixed endpoints and actual timed-bin lift | BinHistory, HistoryPrefix, BinFold, actual BinClock and finite-tag actual-tree decoder PASS with complete owned inventory; inherited timed source context passed | Compile the hand-accepted literal-prefix collapse; bind original calendar, actual old-past tags, complete ancestral tail and joint observation law |
 | RAW NONPLANAR admission, core and target preservation | Accepted all-size hand extension | Connected source/bridge/component/switching proofs |
 | Joint feasible cells and rational law extraction | Accepted hand characterization | Effective exact feasibility, genuine witnesses and one shared parameter bank |
 | Both target-image Hausdorff directions/distance enclosures | Accepted hand characterization | Connected effective source/compiler/closure construction |
@@ -100,5 +107,9 @@ The [endpoint/old-decoration lookup](../2026-10-07-cloud-lit-organization-1621z/
 identifies the actual marked-trace endpoint pushforward to sourceTimeKernel,
 its exact full-copy budget and the same-tree completeMatrix decoration
 attachment. Literal merger budgets and Poisson uniformization counts are
-different. The next deterministic full-prefix same-bin collapse is under
-separate hand development; it is absent from the current repair freeze.
+different. The [full-prefix same-bin collapse](../2026-10-07-cloud-g3-contextual-source-1716z/literal-same-bin-trace-1828z/README.md)
+has [independent hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/G3-LITERAL-SAME-BIN-HAND-REVIEW.md).
+Its separate implementation is now in run37671381506 at `ff5dff5`, requesting
+148 custom modules/147 named reports and the full audit. No result is
+inferred. The [restart pointer](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md)
+records actual resumed ownership and preservation steps.

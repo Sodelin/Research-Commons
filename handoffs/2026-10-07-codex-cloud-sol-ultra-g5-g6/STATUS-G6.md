@@ -2,9 +2,11 @@
 
 Assignment: CLOUD-G6-SOL-ULTRA-20261007.
 Contributor/publisher: Codex, session `20261007T160100Z-G6-CLOUD`.
-State: WORKING / NINE SOURCE-NUMERICAL/HISTORY/BIN COMPONENTS VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 18:44 UTC.
+State: WORKING / TEN G6 COMPONENTS AND FINITE-TAG DECODER VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 19:05 UTC.
 Requested execution: Sol, Ultra reasoning effort.
 Evidence anchor: fe95e69492699472b0e14655ab0b405ad141e69c.
+
+Latest: [run37668810494 PASS](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37668810494-PASS/README.md), input `ab849a9`, all147 custom modules/139 named reports, complete3,609 declarations/2,298 theorems with standard axioms only. This now includes the actual clock support and finite-tag tree decoder. Ten G6 modules have173 owned declarations/134 theorems. The prior failed inputs below remain historical. [Actual six-lane restart](CONTINUE-HERE.md) preserves resumed ownership. New literal-prefix source at `ff5dff5` is under sole run37671381506; no result inferred. Full calendar/old-past/joint-menu and full-master connections remain open.
 
 Actual [ACK, frozen master, reuse/gap audit and full obligation register](checkpoints/20261007T160100Z-G6-CLOUD-ACK.md). Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`. G6 implementation/build ownership accepted; G7 remains queued. Historical Astra status preserved.
 

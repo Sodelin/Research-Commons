@@ -4,6 +4,8 @@
 
 **[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**
 
+**Cloud restart, 2026-10-07 18:56 UTC:** [Continue from the saved six-lane checkpoint](handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md). It records the successful 147-module build, current ownership and one next proof step. Resume saved work and check actual job state before starting another build.
+
 **Cloud coordination, 2026-10-07:** both original assignments acknowledged the [protocol](handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/COMMON-PROTOCOL.md). Nolan subsequently stopped the separate G5 worker and asked G6 to cover the research and documentation with six internal lanes. Root has read the stop handoff and assumes the remaining G5 coordination/obligations. Follow [G5 status](handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G5.md), [G6 status](handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md), and their checkpoints/build receipts. Both full Lean masters remain in progress; G7 is queued. These dated records do not imply continuous background execution.
 
 **Source-critical update, 2026-10-02 01:59 UTC:** [current G1–G7/CG/HG and partial Lean status](communications/2026-10-02-sol61-current-g-status-0159z.md) links the accepted nonplanar G6 finite-certification extension, M3 full-target recovery, matched G3 caps/singular-stratum restrictions, unknown-bare G4 stopping and the coordinated boundary challenge. General input-only G3 recognition and passive multicell/unknown-size G4 remain open.
