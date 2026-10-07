@@ -25,3 +25,15 @@ The later [source-insufficiency review at main 7692f19e](https://github.com/Sode
 This later dated receipt supersedes their earlier unreviewed status. The review independently checked projection, analytic families, the same f-zero lower h residual, actual three-column determinant and physical IFT ranks. It accepts selected-coordinate insufficiency only, with no concrete numerical parameter execution, full ordinary-kernel return or original G4 rival.
 
 FULL-TARGET-EXTENSION-OBSTRUCTION.md is a separately dated new submission. It is not covered automatically by the earlier acceptances.
+
+## Subsequent full-target obstruction acceptance
+
+The auditor subsequently published [G4-FULL-TARGET-OBSTRUCTION-REVIEW.md at main 06ed8557](https://github.com/Sodelin/Research-Commons/blob/06ed8557384f08dc5524ecc03c679e8f42da0313/research/2026-10-07-cloud-independent-auditor-1616z/G4-FULL-TARGET-OBSTRUCTION-REVIEW.md), SHA256 `83badb5cb97595920c9b6131352b4dd2e3e933db18342eba82a3b40dbe97cc0d`. This later receipt ACCEPTS FULL-TARGET-EXTENSION-OBSTRUCTION.md, exact SHA256 `70df9c400a95505a0096b1c5fb05132c38e660f22fa099da83d8d991d394e339`, at hand-proof level. The auditor's separate read-only helper authenticated the same source bytes, followed by the auditor's full inspection. Both contributors are credited in the canonical review.
+
+Acceptance covers the restricted negative-h cone with arbitrary finite concatenation and positive padding, its nine-copy full private-topology separator, and the fixed-architecture small-epsilon diagonal barrier on both individual-f-zero branches with its seven-copy separator. It does not exclude all mixed positive cells or close original G4.
+
+## Received mixed-source degree-seven hand acceptance
+
+On 7 October 2026 the independently assigned auditor read the complete new COLLAPSED-LEADING-MIXED-SOURCE-CONSTRAINT.md and its general-quartic/exact-bilinear providers, then explicitly accepted its exact SHA256 `4448dcb3c1054aead110be02449281d7294bafe52bedc83b456437557115c447` at scoped hand-proof level. The auditor checked the physical source identity, actual conjugation positions and positive clock gaps, four minority routing cases, exact G7 coefficient and partial-sum form. This is an actual received review, not inferred from submission.
+
+The accepted scope is simultaneous necessary conditions for fixed finite formal/analytic ordinary-return families through caps four and nine. An isolated finite-epsilon equality need not satisfy separate Taylor constraints. The coupled quartic area remains unresolved, and there is no full-prefix rival, full G4 endpoint or Lean verification. The auditor plans a separately published canonical review linked to the immutable source commit; that publication is pending at this checkpoint.
