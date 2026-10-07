@@ -63,3 +63,14 @@ reviewed bodies/original/derivative/JSON/diff remain unchanged.
 Next action: publish/read back the separate prefix draft and pins, then obtain
 exact-source review; root owns compiler and physical initialization/history
 support separately. No compiler, children or provider/frozen-input changes.
+
+Prefix publication receipt: non-force main
+`2fc2ee6f7231fe5e6887533b06475b05c12e4e5b`; all 12 owned packet files and
+the prefix candidate plus all 14 input hashes passed fresh remote readback.
+Prefix SHA-256:
+`9f50ff8c811aa93c6215ea41a8fd52a16aea57798e1930ef831f993f6f4727c7`.
+Prefix JSON SHA-256:
+`65e8acbe154b8de23497fb0e215f11dae8d10bd8870fbe477ca7d77ecbbe069e`.
+Root and the primary auditor received the exact separate new-body identities;
+new prefix review remains pending. Next action: exact independent source review
+of the eight new bodies, then owner's compiler/physical-support routing.
