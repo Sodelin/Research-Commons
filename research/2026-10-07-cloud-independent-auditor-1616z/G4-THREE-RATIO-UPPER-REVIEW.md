@@ -1,0 +1,13 @@
+# Actual late-clock bound isolates the restricted ratio to (2,3)
+
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor, 7 October 2026. Direct hand polynomial/AMGM/monotonic-envelope review and exact immutable hash authentication; no source scan/evaluation, controls, compiler or Lean execution.
+
+**HAND ACCEPT** [THREE-RATIO-UPPER-OBSTRUCTION.md](https://github.com/Sodelin/Research-Commons/blob/323b06485dfa50469fb09998352e12047ad31f42/research/2026-10-07-cloud-g4-1619z/THREE-RATIO-UPPER-OBSTRUCTION.md), SHA256 `edc9da0c30ec78f6c1d9e3ca078843f78fbee4cd617b87f5c97866577054b7e2`, matching Git bytes at `323b06485dfa50469fb09998352e12047ad31f42`. Combined with the [reviewed lower-ratio exclusion](G4-TWO-RATIO-SOURCE-REVIEW.md), the SAME proportional positive-outer three-site leading class can survive only if **2<S/R<3**. The proof constructs no survivor.
+
+For θ>2, the actual late clock satisfies β<B(θ)<21/4. Its exact p=d/z,N,T rescaling gives β=3N/(-T). For p≥14/5, L=4N+7T decreases in d on the entire physical interval: L_d increases to its negative value at d=1. The displayed endpoint cubic has positive value293/375 and positive increasing derivative at14/5. Thus L>0, giving β>21/4 and a contradiction. Hence actual p<14/5.
+
+The exact amplitude coefficient C=(-δ)/z⁴ has the stated two positive costs. Since d<1, AMGM gives the strict upper envelope Φ(p). With x=sqrt(1-1/p), its derivative has sign Q. The displayed completed-square expression makes Q strictly decreasing, while the endpoint Q remains positive by `41²·42-261²=2481`. Thus Φ increases to its endpoint at14/5. The exact square comparison `6·8232²-7·7607²=1529801>0` proves that endpoint below1/2. Consequently **M₃<(1/2)β₃⁴** for the actual late cell.
+
+The SAME actual weighted excess and middle reachable bound imply `M₂>E(54+8wβ₃)³`, E=625/839808, while cubic balance gives M₂=M₃/w. A survivor therefore needs E<W(w,β₃). W increases in positive β and decreases in positive w. For θ≥3, w≥3/4 and β₃<B(θ)≤39/8, so W is below `377/83³<1/1500<E`. Each strict rational comparison checks, including θ=3. This rules out the stated upper-ratio range without treating amplitudes, clocks or excesses as independent controls.
+
+The exact coupled physical feasibility problem inside(2,3) remains unresolved. Higher grades/forest coordinates, isolated finite-ε equality, complete capped response, longer/nonproportional/negative-outer words, other scalings and original all-full-prefix rival/effective-stopping G4 remain open. These necessary constraints apply to the specified fixed finite analytic/formal leading class; they do not certify an all-word sign theorem or full G4 endpoint.
