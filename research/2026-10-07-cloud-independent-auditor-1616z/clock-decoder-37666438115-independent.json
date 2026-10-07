@@ -1,0 +1,2843 @@
+{
+  "schema": "independent-clock-decoder-complete-inventory-v1",
+  "run": {
+    "conclusion": "failure",
+    "createdAt": "2026-10-07T18:23:21Z",
+    "databaseId": 37666438115,
+    "headSha": "09015d8a33f8fd2f0509c4761d85a544ae008723",
+    "jobs": [
+      {
+        "completedAt": "2026-10-07T18:34:21Z",
+        "conclusion": "failure",
+        "databaseId": 112946776953,
+        "name": "verify",
+        "startedAt": "2026-10-07T18:23:29Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Fetch frozen public input",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify existing pinned runtime",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Recover stopped G5 original compiler diagnostics",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "failure",
+            "name": "Verify G6 frozen sources serially",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve actual success and failure evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 7,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37666438115/job/112946776953"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-10-07T18:34:22Z",
+    "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37666438115"
+  },
+  "log_sha256": "a400f0619833fc7b08288a30ed764c6ae5c77e1fdb679f2645183f53531af044",
+  "command_receipts": 150,
+  "zero_exit_commands": 148,
+  "custom_modules": 147,
+  "successful_custom_modules": 145,
+  "failed_custom_modules": [
+    "FiniteTagDecoder",
+    "UnifiedLean.G6.BinClock"
+  ],
+  "source_checks": [
+    {
+      "module": "G3ApproximateMomentBarrier",
+      "sha256": "2f354386c7e8acb103c1665400f654a683aed6603175ddaf9f3451cf638a66b0",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.FiniteProbability",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.Conditioning",
+      "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.SourcePrefix",
+      "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourcePoissonExponential",
+      "sha256": "463eb0e4a9cd9307898eface172100183b8ac9d412c1389a2c5b9ad4981c2d9a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourcePoissonKernel",
+      "sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFiniteProjection",
+      "sha256": "09398c920468ba6ead16b523cecd9f86e7648e7063602256ee4634385df1cab3",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "sha256": "8021b8bddcc5cd070185843ca5454dfb289572a2592854efbbdd9e41d48396d0",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.UniformizedSourceStep",
+      "sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.FiniteSourceSnapshot",
+      "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "sha256": "3d862f8d9f9a43aed6324954ebea749001fd2b221dd90dd7d58cf4e4419fbcac",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestSilentPruning",
+      "sha256": "86f61cc8ce06af574ee98b37db0ecd7c8cbc2df99e495ce1b9a66605ea8fb5c2",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "SourceForestKingmanPopulationProjection",
+      "sha256": "e8733ab8e66c60f98cfcfcd56e703b55a5ad8674dc5361f4ac6cb0c35f80f6e4",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "SourceForestKingmanProjection",
+      "sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "SourceLabelledForest",
+      "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2LiveLineageRouting",
+      "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "SourceNetwork",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5OriginalRouteHazard",
+      "sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5SafePastMeetingPermanence",
+      "sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5PairOnlySureBlockChronology",
+      "sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5SafePastHybridDisjointness",
+      "sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5ProtectiveBlock",
+      "sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5CalendarRoutes",
+      "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5BridgeBarrier",
+      "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "GraphCuts",
+      "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "GraphLeaves",
+      "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5ParentPositionPushforward",
+      "sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5ParentChoiceCalendar",
+      "sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5OriginalTipCurrentSupport",
+      "sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5CurrentPortTwoPositions",
+      "sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5RootRouteCurrentSupport",
+      "sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5ActualComponentSupport",
+      "sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5ComponentCalendarCoverage",
+      "sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5BridgeComponentEntries",
+      "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G6BridgeCannotEnterHybrid",
+      "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5MinimalGraphInterface",
+      "sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5NonbridgeRouteBound",
+      "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5OriginalCoinPMF",
+      "sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5FairOriginalCoinLaw",
+      "sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5FairSelectorMoments",
+      "sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5CoupledQuartetKernel",
+      "sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5UnknownRateSupport",
+      "sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5ExponentialGermIdentification",
+      "sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G4PathResolvedMeasurement",
+      "sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G4TwoRootSourceStopping",
+      "sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G4AllRootPairClocks",
+      "sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G4IndependentRoutingBridge",
+      "sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G1SharedRegisterStress",
+      "sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G4FourRootPositivity",
+      "sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "sha256": "b282351bf116ae756c7e9c6ee1e3cbace41a8d753b47cac7e53c4a918c82d16f",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "sha256": "b186f0d381b0e62078d887f90ce46ecbe91def99ec66ec51c98053b9d60c0f28",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.MatrixProjectionExponential",
+      "sha256": "870438089e6cf05dd93761172ea1bf6b2aa96654708e97b9d348e0dfcb44dfa2",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceGeneratorExponential",
+      "sha256": "f761ddf2f5efb9906ec8f841567d02fae946cce763260f238834a147090e461d",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.ProgramPrefix",
+      "sha256": "a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceProgramTransport",
+      "sha256": "d009fdfc510bfcaffaeea3bc241401eaf2996178ff4b82376eb22f1e49387831",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryProjection",
+      "sha256": "f1cb1e557b5f08cba2d37465bc4386bc6adc2f19fd12a132f7d6f835b1e24f0f",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryKernels",
+      "sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestPulseMeasure",
+      "sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestPulseTransport",
+      "sha256": "8e1a3d62afab25247dd3a281d30f7dc20db1949ea1b589c2d77980b3b48874f1",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestCommonPulse",
+      "sha256": "cac1082f66a84b943dbc8ba9f2e8082ce12bbb42a4b1503e31722597b0faa138",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.TaylorCertificate",
+      "sha256": "eac88ebb03ec5443cd12e95d9a95510eec2a1ca94396ddc8b3409882e1e9049b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.HistoryPrefix",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/HistoryPrefix.lean",
+      "sha256": "e8fdd3d4973b79730ef5931734f007e1bfc73d04fdcbd656e30342638a2930d7",
+      "matched_frozen_git_source": true
+    },
+    {
+      "module": "G2SourceFiniteHistory",
+      "sha256": "1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierProgram",
+      "sha256": "bc26f80643ff737bd3a4dcda630631584b0166b2905b3cb48fd876c08fe5489a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierBoundary",
+      "sha256": "c3d453eb58dcf0a21f06acc4513428cb9d6ff31093a73e9a284b992531514308",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceSmallCarrierPulse",
+      "sha256": "e33e4751b9b8d665aaf18074f4d3430f0f13d7b5e67a90ec96ec229a14fb7f20",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierEpoch",
+      "sha256": "d62727cc73f62775f43c83cb882602fcb55e2757123b0ba126d6feffe497d725",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceSmallCarrierGenerator",
+      "sha256": "b85c1308c6206d377aca54b2073088e39250b57abac7df8c628f100189546106",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCopyCarrierTransport",
+      "sha256": "09d3d2dcb27d49cb1f85a8e78a5dfc385778a0c885b5a9e42f445246cc3bf966",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceNaturalCompletedLimit",
+      "sha256": "182b8694bea7594102468caa1009046668198f67fe67f8d67bf89bf1ce4604e5",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEventualCompletionLimit",
+      "sha256": "0c886c979caa8725b7babd734c3bfabd5842c4aa065bd8886ce4a8abc24a33cd",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCompletionHarmonic",
+      "sha256": "5a15f085181e1f6f514d629db289db4a11d6b91032267ecf73a795b0a4f1bfd0",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralAbsorption",
+      "sha256": "07b0d22fe372b38a1dd0e1256e0f328901ff74feb9a172a6748a19b903e06061",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralDrift",
+      "sha256": "258fa001910c1e483b782be4d7a01d239ebc5f53dda8f00348239643fdb88725",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCompletedUnrankedTree",
+      "sha256": "a3f28f51080370eeb6d625685f89927ca983c00ab6ac6739533c20754e60f06b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralCompletion",
+      "sha256": "da44afa6b8039afb1f90128af2f1b62234f3dfd0197ef9399c52873bf865caa5",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+      "sha256": "560f2174634b137eca95c83616b2b50a4e7671f51cfd62c275a7f7c206890d37",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceRaceWinnerSelection",
+      "sha256": "ad882b44f7fd97f5ac7e5b7e125cce7e7f6640c065ff616f08c85b26dd9d4caf",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFiniteJumpExpansion",
+      "sha256": "6a14b2de7bcdf28ae3293a23adde3234da7adb5dd503cfd007b711f1a52d786b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochRenewal",
+      "sha256": "5035fb830ed695b7aac5525c28f24d528be3c1b9a2c2c6f831f23b3cc6692bef",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceDestinationClockReset",
+      "sha256": "ec910abde269d665081f7c064b6567f45fca58ba26e183ab29e21037fb84344a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceMergerClockCatalogue",
+      "sha256": "147da19d2d89135e00c140b3a7a88cd3d53271954e5752a23e5e0ff30376a147",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceWinningClockReset",
+      "sha256": "7a831640fec35d92f99e65e6f98e2874602fb5b040ff6b112c16b77a271f2038",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialResiduals",
+      "sha256": "8861858b9309fd43e22424382c1f1513111514ef792354c7cf4b48a0ae4b19e7",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialRaceDensity",
+      "sha256": "3fa36827b3553923fa1c1d48db4b2823c7b53e589696c3a1476f9aac8f760c29",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialRace",
+      "sha256": "d979f1bf3bbbac3eb3c396991a513a3624f310bf03273890e13c6d5029931afe",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFirstMarkDistribution",
+      "sha256": "abd6230f1155ab6cf73bf3d4b55bbe04df408ca73caee81a8807b15b17e9ad29",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFirstMergerMark",
+      "sha256": "2bc08f45d7ea76476f6fe485cdce68293a3d44cbc3b2aa108b6b45ce5d1182d1",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceActualHoldingClocks",
+      "sha256": "498417275660b696c24f4c8cd83d84532a96f14b82f35bc3e49217c154e8c677",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochSemigroup",
+      "sha256": "845739bc6b110eadd611e0133906ec3f9b036d66f17902f46885c660213b179f",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceInitializedCalendar",
+      "sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+      "sha256": "e725dd61c850d3f5f92925c0de08122dd25f9d1660d9264d1ac47eb4d2bc88bf",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryLocations",
+      "sha256": "f7c050056e121c7e0e12eb071383cb1369e8fe9de887d7ad875a76904d48de5b",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompiler",
+      "sha256": "9974446d99fa344593d294e315e349ab71fdbe7574e932bb8b1a16ee1b2369fd",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompatibility",
+      "sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarTiming",
+      "sha256": "5e534089f17dc7d9ab40338cb0ca75789e0951bb6b5893ba24d514b8cd07d4f8",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceNaturalInitialization",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.UnrankedGenealogyObservation",
+      "sha256": "1ee536501f1fc77c70eb9098af054ecf2a2c8cbdd9aef4375bd5cdda10ca73c8",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.RationalCertificate",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RationalCertificate.lean",
+      "sha256": "56b277949bcb9d862214d2831e4d641a513150f962b83b9303a52a457743e5e0",
+      "matched_frozen_git_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.BinHistory",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinHistory.lean",
+      "sha256": "25d91367dee9b408e70fd2be9c847cb4b663d0bfed6d49981d48ddfd2da2c4e8",
+      "matched_frozen_git_source": true
+    },
+    {
+      "module": "G2SourceGraftDecoration",
+      "sha256": "c8da578dde3fdf049e4075a39292979bbb5936bd9c754d743072420a91c07ddd",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2FaithfulPairAgeDecoration",
+      "sha256": "c82708abcdae2e3e174f245dccca811881b5149f1acb69b12700850b307b5735",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ActualPairCoalescence",
+      "sha256": "991ce81e7de2a9012bdb9aa311cb3fbc8cfcbda39843af725c0fdd09617d261d",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2EventualPathReadout",
+      "sha256": "14e0ef3bb6ff1c45875092e6a474063178fe78977f24c0dfdb055887693690eb",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CompleteDecoration",
+      "sha256": "ffc80b41844871b945b78a4d7b5887121ca2b3691ad985d6b8ff29c14d8fe963",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CalendarDecoration",
+      "sha256": "9b2458b78813186151e5d5eb2cf7bd9a3a134e39e0de8de6e59cac6d2a6936b6",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2DecorationMeasurability",
+      "sha256": "a016097f843583052f5c2b8a4c19899cb97d78052779c4771e22aa9603104338",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ActualDecorationFold",
+      "sha256": "8ca5f51130da2c7b513e70cd0b0d93a22fe9c4e706a63b590cab5407258f55be",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2LiteralMarkedClockTrace",
+      "sha256": "c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.Source.SourceLiteralClockEndpoint",
+      "sha256": "2f2f39f1ea044932788b412d32e3454bf8ff1ff1d65f48431e975352fbc9e7ba",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ChronologicalPathReadout",
+      "sha256": "99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CompleteCalendarAttachment",
+      "sha256": "aa34dd0dfc6f4d5b33b764f801eade71b3380e024f5bbfcf8549b508e0d5d40f",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ActualCalendarTrace",
+      "sha256": "cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2LiteralEpochLaw",
+      "sha256": "9020ef5baaf8955097e69efac86b552cf80540211125d8f215bf1ca0bcecba7a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2MarkedTraceRenewal",
+      "sha256": "edbabf47f1429b8747c5d49a7d00d2762ad47ece635dfe00f1c59280a0b29603",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2AncestralTraceSourceLaw",
+      "sha256": "641cf1285ad10ec18dab7a42d207147afb964485924912b9d53aee428927436a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2FiniteAncestralTrace",
+      "sha256": "00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CompleteAncestralPath",
+      "sha256": "42ef05e829cb750a88c4ae5abe57db6c927fb5b7467921998ba1e02c2dc013f0",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2EpochHistoryReadout",
+      "sha256": "f3d6598cff77c87219efb74e9a361b3ac7c92c35862d2d259932e6f4f5b904d7",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2SameClockContinuation",
+      "sha256": "9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2LiteralCutResidual",
+      "sha256": "e09e93c3ef68ea8b25ff72008a37306bfb8d0c2a8ef2b7082eb5c841fb8f1011",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2MarkedTraceBudgetStability",
+      "sha256": "6c8f1abb65ac251e0e5ad610d63a51d39b238c9d0ae7b33d5d709e3e8a2c4fea",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2MarkedTraceCuts",
+      "sha256": "aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2SameClockPastFutureLaw",
+      "sha256": "bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CutFutureSourceBinding",
+      "sha256": "b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2HistoryResidualAttachment",
+      "sha256": "3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ActualChronologicalPathLaw",
+      "sha256": "a4a018b7eb33f2cb0bd12e70b0c16d0664c8de26a4d87c0eab046d2bf47d6a18",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CompletedCalendarPathLaw",
+      "sha256": "684487a6e3816a13a3b03b40550873fbfa7e3c920b1854e41f9951b17aba2a30",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CalendarPathProjection",
+      "sha256": "af8a56136b53dafdb99b77de1f3e5ecdd5a5a6e7a70b39657650f9a364bd52c6",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ActualSegmentPathLaw",
+      "sha256": "9581cf8c75982bbfd3a47f300a97a865c1fe140efd946ffce464fe25344e60ca",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2EpochPathProjection",
+      "sha256": "04abbc6e6efdde07f651a706092014b14c542b7386037d3715cecbf61b1d21e8",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ActualEpochHistoryLaw",
+      "sha256": "e106b912721336831c3392d3cf5414cf20b43765b73c5c6cc31b83dec7d69be2",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CutResidualSourceMixture",
+      "sha256": "6b13e51479edf4409fa09167f1c83065ed7a4952650c28da5d78192105b6cc0a",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2FiniteFibreTransport",
+      "sha256": "fc8b772af83a6140bff8dbc6253b50820e5c6bbf7ce0262d2211919f039b16ea",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2CalendarHistoryBinding",
+      "sha256": "8827842d77dc5749d6db4114ef24d34cf85779a545628879a6ba6eaf3681b796",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ChronologicalGluing",
+      "sha256": "ca1b9f05a5f87556eb9a9dca93d160409a735d934d17d7c04e3ad0324520bfff",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.BinFold",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinFold.lean",
+      "sha256": "cc220e3db672f63f05dd4516f19322c758634b396a861ec04aa2e2e2347ea3fd",
+      "matched_frozen_git_source": true
+    },
+    {
+      "module": "G5FrozenTripleAnalyticSupport",
+      "sha256": "8735accdbce894200eba6bcc64f3a61c8870f3c7a24416114e6279debbb64ed5",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G5FrozenTriplePolynomialKernel",
+      "sha256": "ba0c611a563318de5d2310b6620cae0899c77b9ead6cf690efd82af926c746a4",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "FiniteTagDecoder",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/FiniteTagDecoder.lean",
+      "sha256": "5a3a2cf75b8fcc12f29631451ad1e540553e9cdb45d33d164302a55f7370a6f4",
+      "matched_frozen_git_source": true
+    },
+    {
+      "module": "UnifiedLean.G6.BinClock",
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinClock.lean",
+      "sha256": "7a5c824f6077cf7b111102b9ba74054b140ed8acac91937f2fd737eafa5d1c4d",
+      "matched_frozen_git_source": true
+    },
+    {
+      "module": "G2WholeMatrixAges",
+      "sha256": "2c4a38c22a4fb6efa569796749eec7b00c3affd8ee1a57e33144a1bc893026b8",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2PairBirthFold",
+      "sha256": "cb0697ca4832343c933b31593553c658e839648968441900a01cc556635512f3",
+      "matched_previous_complete_170_source": true
+    },
+    {
+      "module": "G2ClockBoundaryNull",
+      "sha256": "f0ed787fd7f9135024b4f5300120699b358cbea0b6adb9b6124a386448ee1982",
+      "matched_previous_complete_170_source": true
+    }
+  ],
+  "command_stdout_checks": [
+    {
+      "label": "cache",
+      "stdout_sha256": "2aef4ab470bc5358e196f18e9576bcd7d6196a89d48e614ed2190d1421718563",
+      "matches_receipt": false,
+      "exit": 0
+    },
+    {
+      "label": "G3ApproximateMomentBarrier",
+      "stdout_sha256": "71fc27cb8111feebfb0c83c52f1424c6a487ea912cd898f35a69e296bb72dcf6",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "FiniteProbability",
+      "stdout_sha256": "757498f226536e63546c9f57cb4e4328a4f178c0827c63b62563b24ae94b4f17",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "Conditioning",
+      "stdout_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceNetwork",
+      "stdout_sha256": "5465ecf96db0b49e53a81535e70658b235bd5d9816b211e5a2dd735b687cc24f",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2LiveLineageRouting",
+      "stdout_sha256": "a80577f1d7135c5660613a0e39dcabd2f3198a9c7399d7632b4ef613e6fc9ebd",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceLabelledForest",
+      "stdout_sha256": "79ac7b957f8500fff5f2e97d6b4f5c421747bab05c34771d0de9451c972e26df",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestKingmanProjection",
+      "stdout_sha256": "855843569cbe38777bb54221148423275400b580a00dfd6ed32803a8c1d11904",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestKingmanPopulationProjection",
+      "stdout_sha256": "6a4ccf778e6523c1961b260dba053422caa41e2889a0a3f7fcb7c8dea5ab0805",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestSilentPruning",
+      "stdout_sha256": "adfc8b82f9b633ac6e3a452cc1a196be3b5851497f2bb3303b17c4772cb602ba",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "FiniteGenealogyEncoding",
+      "stdout_sha256": "7381e57ae68117499d0e8f1416d2cdcc4df8bf51d261f2c1b5c8c57745663af4",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "FiniteSourceSnapshot",
+      "stdout_sha256": "7c69d6cb19a196df8084b1f9d00754f60ea82a9e10e00ddfd147f36fd9732095",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "GraphLeaves",
+      "stdout_sha256": "5adc7ce31ed7f42e8e6c4f26cfd28d0d1f17ad137dc910ceb4bda2f50012c986",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "GraphCuts",
+      "stdout_sha256": "8308918b1d25a64ccaaa7ba648f875a6542b15a64c4c3240c366708243424b3c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5BridgeBarrier",
+      "stdout_sha256": "b671ebf40ba6db3a1f68e8fef3ae7a928e9285f8917b828b081fca2110d6a00e",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5CalendarRoutes",
+      "stdout_sha256": "deece5914567adae242b3d6d4f09f986b4b048e1fa3ca93a3b2762a5b13d79d9",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5ProtectiveBlock",
+      "stdout_sha256": "1f89009dfa989b98d34ca85cff94dcefdf01ce9f9621688bb55e0c5ff508c4ed",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5MinimalGraphInterface",
+      "stdout_sha256": "02b60e6ba4f33864b0915dc0f64099f4cd3f4ae63ed5e96ed6fa107ae92aa2fa",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G6BridgeCannotEnterHybrid",
+      "stdout_sha256": "5ca22a54c496ca1b5b5b5d32dc422fe524e5a9f32a6a15512e8bf0d96bdcd054",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5BridgeComponentEntries",
+      "stdout_sha256": "6d923e42c6ddfa40997788a894f162bea001ccaa7af7033d8d1c1edfd6cef2b0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5NonbridgeRouteBound",
+      "stdout_sha256": "8e3c42ef93082abdd73408f9a985f34e0e80ce7c27b744e3f86f0914fad9a124",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5ComponentCalendarCoverage",
+      "stdout_sha256": "714308a14bb6b87b48aeb0d21ce60a61e7c97b2d635874091f3d69038ab6c94e",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5ActualComponentSupport",
+      "stdout_sha256": "efb330a0d75437ca65577489d3f70ce0a047d2046c91d312f71b536339b082d5",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5RootRouteCurrentSupport",
+      "stdout_sha256": "88507ababbf0ff2fbb8cf10b16ad8c6a7f6dcc879fe1f5bc434e297a0f5a95e5",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5CurrentPortTwoPositions",
+      "stdout_sha256": "92a225f805943c35b10f34e345329759f40db5919b01f962d13c1c02fc0c2c61",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5OriginalTipCurrentSupport",
+      "stdout_sha256": "bf016b1de34fa1fcd3a79f6c846f1ce7a8c17ce7099b04edfb94b96b563c7d5f",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5ParentChoiceCalendar",
+      "stdout_sha256": "8eb07c527af1306f84578a8a51aa5ba933b16ab465a187c3619b880a145cce8d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5CoupledQuartetKernel",
+      "stdout_sha256": "345f1f363c83e2a84fdf11b5431ffa001012a8f8e49dc4e8197ecd89a725a5b0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5FairSelectorMoments",
+      "stdout_sha256": "c5d36016bc89bb883f01c4f4f152e4f9a4105dd7af316f5e2aea6ba848149852",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5FairOriginalCoinLaw",
+      "stdout_sha256": "271cf1f090f72b0841bc9aaffd0b76290a2b93492127891f04d2e5fdc4777e63",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5OriginalCoinPMF",
+      "stdout_sha256": "5ac4293a4581c7494a371e851faa0feb458d3dc5d65d9533ca23c25fa0b60934",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5ParentPositionPushforward",
+      "stdout_sha256": "7a6173506e0448fa249a1b93a0bf727995ab29b5a43b369adf4169fe6a4879a4",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5SafePastHybridDisjointness",
+      "stdout_sha256": "a1982d3aabed4c8a8098f185576b6089f298d3317834d44717e020dd16f46ee4",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5PairOnlySureBlockChronology",
+      "stdout_sha256": "2102cb58c4b7a1a01d1b6cb27a2ff7b9ddfc470a9ec0faae7c75174677969e1b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5SafePastMeetingPermanence",
+      "stdout_sha256": "c868ca1184d8588ef18b1478e00dc3285c7cc006207d1cdcf5d6a8a0a2d4b198",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5ExponentialGermIdentification",
+      "stdout_sha256": "43b8db7dd2022f81be166db6224a360defaf0709d2d333320680b065d5e0e567",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5UnknownRateSupport",
+      "stdout_sha256": "36b339cbb814f07566d18ce6dd3e52801f2bffd23f1262b079fa7bef2cc6169f",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5OriginalRouteHazard",
+      "stdout_sha256": "2e311bf90e01fad29579f832d25a1f11f5dad8b2c178253a86823dc2f7e59d1c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G4TwoRootSourceStopping",
+      "stdout_sha256": "dd78f608c3203ed2845672960fd4a8f009670f190c0de67b07c9c200b2a61910",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G1SharedRegisterStress",
+      "stdout_sha256": "84a9c4ce9c952b0e458f2a61369c7b18a8e5a6298321cc94e9a865f61d98037b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G4FourRootPositivity",
+      "stdout_sha256": "f5e1ecf7db1d697e09d60633e18d6b70c7cc7aa6ac9af0dc3eee533d76e5c582",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G4IndependentRoutingBridge",
+      "stdout_sha256": "cbd76f1aff4dbea1797be18fb43b4ceb4bf5b1ba93f7c123d3b8173c15c87318",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G4AllRootPairClocks",
+      "stdout_sha256": "7ab290630c57eec022c564a4e035d33e5101c865684b517a03dc71d5dcb0767d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G4PathResolvedMeasurement",
+      "stdout_sha256": "2ac48a7c4227c18065f922d1ca6d474e8bb595fba3ff63240a53f8d7e568407d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "NativeParentRouting",
+      "stdout_sha256": "a5049abb6c9d63bac6c059a4061d30c30a1bd669d4061436004ea708a344374b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "NativePairClockLaw",
+      "stdout_sha256": "25def2788a1b75618f86cfa04e06b2140ecdadfcfe737a8ce3748f9a4be1906b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "UniformizedSourceStep",
+      "stdout_sha256": "346f88f652e74ad882b359cf0a08f314efd22f89897313d6c88335edf2b1f59a",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestGeneratorIntertwining",
+      "stdout_sha256": "26dd8be7168fb90f4335deb631222563633f66bcf1422d8f52c022253752102c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestIntrinsicGenerator",
+      "stdout_sha256": "59059ab1195b7248ad6a584a11e8cc5a5340406aa1a81ab080157d89facb1ab6",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceStepGeneratorBinding",
+      "stdout_sha256": "639930aaac97f91ae5d88fc12a5034a0d45dafc36a7a797bacb1039d2e34fdc5",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "MatrixProjectionExponential",
+      "stdout_sha256": "47deb8e9780af82ab7be6bebe5133a149bdb1e0b7ec006c299cb898952db9b85",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceFiniteProjection",
+      "stdout_sha256": "56bca2e016343d2c9128a1d170043753354e5b1efa49f41c8fb83c0eaa8555c8",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourcePoissonKernel",
+      "stdout_sha256": "4ab2374dc12a6ec9dcb552f393f68c1a5e973ddffc308fa48d08a6979ca01515",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceGeneratorExponential",
+      "stdout_sha256": "9f7be220015bcaa23cac6e4dab4b6545500cd24429b9a0b0e111027bbf31af74",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourcePoissonExponential",
+      "stdout_sha256": "f5e21e3dff34b6ad5c40fb34ae33e8c75f0c223f9bd577d273c8eb53d4322e1f",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourcePrefix",
+      "stdout_sha256": "74e089eae61883da5c4cfedea59111c40cd6a770f2cabc2e2562e8d192b5c062",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestPulseTransport",
+      "stdout_sha256": "5756fff62d9d0534bf5edebc428a2bf91c35a2536bdc40ad105cc9e11786fb19",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestPulseMeasure",
+      "stdout_sha256": "94ae0c226c45a80056a0617962818bef7aa074ef4ebfe19078b50c0034306ae8",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceForestCommonPulse",
+      "stdout_sha256": "7b8aded7c2331926fabd2760aea65c0dbd892d86a3d86ec5f32ba30c700543ed",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceBoundaryKernels",
+      "stdout_sha256": "7d6746994e806c9db5bbfa850f0896ff99c6b42af50febc1ad77579216913539",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceBoundaryProjection",
+      "stdout_sha256": "efe59f762bbcaea90fe3877fcf31476c8b5cc52fc3734484bc3baf1ffc7ef455",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceProgramTransport",
+      "stdout_sha256": "03536d167bf27989e2507161f3d4a5c62e95f53a2b2a26bdafc3b2acc9103af7",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "ProgramPrefix",
+      "stdout_sha256": "50f32b8f7e283dbd21e5e7d50cd059858b4dddb1a05a1eb7c0db1d671684d30d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "TaylorCertificate",
+      "stdout_sha256": "f870964915e8f3d8efac4d3a1f5786e5f65b8e3869dae07200d626aa02487a62",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceEpochSemigroup",
+      "stdout_sha256": "4a95d1361a2aed25fbf707daf634dd249b3ec14849d79cc5e3ebb8b2b3041eb8",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCalendarCompatibility",
+      "stdout_sha256": "75691bad64e4fb81044ad216936434888431ef977dbd603d87a61f7ad67a130b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCalendarCompiler",
+      "stdout_sha256": "3de59f5693d5c616821beb2fe2851425340006fea3c19af4beb8d8063ff71c36",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceBoundaryLocations",
+      "stdout_sha256": "213803aab26a654285e4c457342bdcee7fd75177a47fd1863602158d0903e7a4",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCalendarTiming",
+      "stdout_sha256": "fa541a4174ba94e602928e6d6a019a663fe5bd23358c6e65ca7d6f90b919f79a",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCalendarPhysicalSupport",
+      "stdout_sha256": "224dc108583c730d8ecbd9687b0d67b43a38730f0f792f394773b47f3956bf0c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceInitializedCalendar",
+      "stdout_sha256": "0c4e93856c07cdeeeee91457ba3f01d8053de2ba91495fb765b7d47aeb25a453",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceActualHoldingClocks",
+      "stdout_sha256": "05e420a2dd16086aa8feeee1ec149ea04011441f6cc93c7f130137e42ca041d0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceFirstMergerMark",
+      "stdout_sha256": "e8cd222b59cdb5ac63c535b667507077914271ec0f843fa388837c9a478e3982",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceFirstMarkDistribution",
+      "stdout_sha256": "a01697dbd0bc57dca59929d79fca333c3b36d0684d54867fd571fee587873dc0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceExponentialRace",
+      "stdout_sha256": "8e3412ce42bba011f02847ebdf0456d34798724671099c80d4e779c53deeffc2",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceExponentialRaceDensity",
+      "stdout_sha256": "ab5c89108a7553787cef03d5b22364c982c53b3458c895a57774e3413be5b1f7",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceExponentialResiduals",
+      "stdout_sha256": "bc829d56d4c181a024cb44017337db8a253071c4242b95555e7317b46bda29f3",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceWinningClockReset",
+      "stdout_sha256": "5f3cf2163835a08965cb3f02db744e99d25005eacabe18d5c9af23689f923bb8",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceMergerClockCatalogue",
+      "stdout_sha256": "f80f6e9270d6ed6bc945d1fa1f2f41908573919cdc79a5b666f839592b02c82b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceDestinationClockReset",
+      "stdout_sha256": "5be37fb133890df66abe00ba972923d9e40e7523d6f33d773db7779cce7bdbab",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceEpochRenewal",
+      "stdout_sha256": "785b63fb0e18b084b71765b90d56ae48122e7c832695749edb29027728c288f2",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceFiniteJumpExpansion",
+      "stdout_sha256": "7418394d389ca8a0e24fb6b2a264c07b1600358932f32bd1d4b8146df2eee3dd",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceRaceWinnerSelection",
+      "stdout_sha256": "d40c94767927377e25801d4bb3a9ec3065f3e5483f5a9845f3922699976b0651",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceEmbeddedJumpLaw",
+      "stdout_sha256": "4b485a4f5fea33afb21257efbb53908ede85ba41932db55f903917961ad11bb2",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "NativeIndependentPairMixture",
+      "stdout_sha256": "28629a25cd9ca7c1b8b39c20c9e6c00b8c922a5f3f93c78cc2c1d74f6d1c2261",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceNaturalInitialization",
+      "stdout_sha256": "58d78dce2af6e04bd3ce7293acbf49e0072cfc825f4c641f8cc7eeeed0e76af7",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceAncestralCompletion",
+      "stdout_sha256": "f835686e5917ca4131c7704b1d41e7444791f5a11c0d6465affc405fd4424f7d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "UnrankedGenealogyObservation",
+      "stdout_sha256": "473bf53bcb45368bbf2dbd8225c3d940b24a90368d3fb5849c9cd9f78209479c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCompletedUnrankedTree",
+      "stdout_sha256": "cd1b0d95a142c31bf0b4e8ab864f85b571c51881b98dbdb14416591ab74a8101",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceAncestralDrift",
+      "stdout_sha256": "c09358ccd32bf0e691202f2895df33f3cae188f7766ebcd2dc763b9214e03122",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceAncestralAbsorption",
+      "stdout_sha256": "a6caaa1235ffedc1ca24956be76b574f3fae95b677e179d36282de91e133b53e",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCompletionHarmonic",
+      "stdout_sha256": "be213e050694beb45f6276ec4c0c9c2e2f540145af09331a488c3ff7660de9b0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceEventualCompletionLimit",
+      "stdout_sha256": "1a734a8c4847c3128ec0f878c50f5467ab6e2ba174a9f24900073ba8afc13d40",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceNaturalCompletedLimit",
+      "stdout_sha256": "af8ae1693891a769165e81fe509863dde34ed1c23183320530d40a9ba12bc838",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCopyCarrierTransport",
+      "stdout_sha256": "f47e67e4c24cc54b8c589bd11639d2b9e3dcb8e4068eb79b224d9debb7d64210",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceSmallCarrierGenerator",
+      "stdout_sha256": "b9b95e44ebc886826d10461bfa3408741a6f22a33a9960f24d41c6e4510135f7",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCrossCarrierEpoch",
+      "stdout_sha256": "7eafe2ad7525690393c701c3934099c4c04efc3e574ae50a0b52a177de82f36a",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceSmallCarrierPulse",
+      "stdout_sha256": "0c81f64f359c2b0c874a659ce251f62fa462c6ba6d07b636c675c820baa743f5",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCrossCarrierBoundary",
+      "stdout_sha256": "0c659d43ee903abc08cf2cf1df1f0110c14134d6744f1696d102021b356c3d3d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceCrossCarrierProgram",
+      "stdout_sha256": "9959076e9aebe97632a06cfca7cd555b211ed8b510f84d61f39de7000e9565ce",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2SourceFiniteHistory",
+      "stdout_sha256": "ff32d655d18f543c407fe6f8b4ee1f1ef57cda81e891d5c3c3ee5bd925bf493a",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "HistoryPrefix",
+      "stdout_sha256": "3b008f7adab3471ab4ef0a55e3b8af04fa3470b5099157f27db67a6463af62e7",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "RationalCertificate",
+      "stdout_sha256": "d6079ac219292fbbd73a6e50cc6d3b23e11ff8abd51e3020fef69d5b4c951072",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2FaithfulPairAgeDecoration",
+      "stdout_sha256": "5cc6395cf68fb64fc6858439da0c76430a52d306b871b836ade404581b0b7c99",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2SourceGraftDecoration",
+      "stdout_sha256": "16e3243c0a66a7d115c874bc75051f87a3e0cdd4f563424ef8e672b87e74367f",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "SourceLiteralClockEndpoint",
+      "stdout_sha256": "7981550ed1f689366e5faa3d9c53d8bbd99d4901233b94388e490dfc3f0009df",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2LiteralMarkedClockTrace",
+      "stdout_sha256": "21ac07b6bc726520542d8f0b3c179d2c3700dddf97b2802cc0ac65b2ea7824dd",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ActualDecorationFold",
+      "stdout_sha256": "e250c76154d80c7a01515c18073a20cdbe2a640c6e6307858e6059ce9cb5703e",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2DecorationMeasurability",
+      "stdout_sha256": "35c1dd6bd34053ffaf7f124483c4878ca791469356656b1b868ff0b6ac9f1318",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2MarkedTraceRenewal",
+      "stdout_sha256": "88adfddf41821a8a917115d94b9e55365b957e8e890dcd83f065b0a8aadf4810",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2LiteralEpochLaw",
+      "stdout_sha256": "ecefc46152f1ee6912abc68ff97b76bd25b74c40e620168e53c3ea6da9c8f02c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ActualCalendarTrace",
+      "stdout_sha256": "c30976ba2645ffa12d58de55b647756a738e182231a7db15d238fbbe36eff625",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2FiniteAncestralTrace",
+      "stdout_sha256": "adf64200a1216b5c9e9703d987bea966889984d5b1297f75e09f714e7ff46466",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2AncestralTraceSourceLaw",
+      "stdout_sha256": "f7d0b41ed57acf5d8ed9595087ae00cc9a57f71d76398a051dcad55abf0fd267",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CompleteCalendarAttachment",
+      "stdout_sha256": "40a062026ec8c817081b5d33a48fddb39262385a867219911dfaa5d11ff8ce6b",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2LiteralCutResidual",
+      "stdout_sha256": "2f0a8a6405af2071c101949e93444b29e1bdcc3e853366d5b1ffe0e8d1bd249f",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2MarkedTraceCuts",
+      "stdout_sha256": "bbdabca7551a606afd00c24a7647e20c1b9e684c7ca01830ee70f11adc159ed6",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2MarkedTraceBudgetStability",
+      "stdout_sha256": "a010b067f69437e7b39d3551d813ef04b3addeb078a88dfe677f0018b26b6716",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2SameClockContinuation",
+      "stdout_sha256": "fb4fc9d547c9094db8bd4dfae67f9d8fc579d3e1fc7e7a854a53b4d0061ef4ae",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2HistoryResidualAttachment",
+      "stdout_sha256": "82289bf32d6748c8d103e8fe37afab1fab7f1b5456f65b65f24c29e97697b8a4",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CutFutureSourceBinding",
+      "stdout_sha256": "ca36849831ed05f73972293dae53a0d7f4fea15da4693f0fb3d98df32ac7bc88",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2SameClockPastFutureLaw",
+      "stdout_sha256": "92f6cc65aa6cdd2780fa3d135b50dd757f1c363d392eeaeb9c916b2a17c40af3",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2EpochHistoryReadout",
+      "stdout_sha256": "8f505aa116ae646b7b38d18baaeb4be3d898dff602d78e2b1485b14ad0ed8298",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CompleteAncestralPath",
+      "stdout_sha256": "8c5b6fbcc9f90f5c8fb50ded357715b42377047de709135b2ce339a39c10a852",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ChronologicalPathReadout",
+      "stdout_sha256": "8207831d51090e8cce471f2b85d1d88d1c28160ef6dc91653f21a51d65e69aa0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CalendarDecoration",
+      "stdout_sha256": "7fc7bc72478b8e7d9fc3ebf658e649e83b12a603a64ff8c4fd0264ddb0f990b0",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CompleteDecoration",
+      "stdout_sha256": "045307cda66085e16f8a699e6b3cb673499f8f85fca9b788469820231c511784",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CutResidualSourceMixture",
+      "stdout_sha256": "20de7d74f9b82f114d28246494ab49f49e7a1f29c40e0236beded2cf1a715c59",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ActualEpochHistoryLaw",
+      "stdout_sha256": "c91dc942cd50ed445ace438c9acf857df73c0da35ce41c7b6bb6b191d1624ac7",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2EpochPathProjection",
+      "stdout_sha256": "684529f5fbeae88add4b9c9501b2215ed6587bc12c72b6e2d89288edda2e14d2",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ActualSegmentPathLaw",
+      "stdout_sha256": "d4351fd662566adace4341184fc7a581d4c5bf39f68588ccfb02b752be93f3d2",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2FiniteFibreTransport",
+      "stdout_sha256": "b3853f5fca67bda19527ae771dfde66a2eef8ab1908513c88c4075160b85f168",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CalendarHistoryBinding",
+      "stdout_sha256": "c796c750fd1d8cca06f7080caa10133236b62d8b6b85a43367fe2ac28090b13e",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CalendarPathProjection",
+      "stdout_sha256": "f2618bf351b6928007c4e5343651603933e2dd4fc53f8aa47389b3a5dc243988",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2CompletedCalendarPathLaw",
+      "stdout_sha256": "82dcb429aa8b75d2cbe4baecc872cf251576024400683385d39b2ac6f29704c3",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ChronologicalGluing",
+      "stdout_sha256": "b6413f643595c22bfff7bce0484889065af698a9eec40595c9638dc38716857d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ActualChronologicalPathLaw",
+      "stdout_sha256": "911fac10a4ea46f6793feda577cdd326186f338ca9ae004bb1d839767d0df7cb",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2EventualPathReadout",
+      "stdout_sha256": "2114073b5bebeec4aa4926dc958de8d9bc70b4d3024c9795a09454cffc3f5461",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ActualPairCoalescence",
+      "stdout_sha256": "ce30045bcf8d4339c78aa665f430cfb3f80dec881931f3dfbf725be5586c1fae",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "BinHistory",
+      "stdout_sha256": "d28bc19ad6e05cd05f711a9f08758ed4e7a3193188a270b63f94abd13fdb8e1c",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "BinFold",
+      "stdout_sha256": "0c1c48abe5564e639919d114f91491e958811214ffc35283d855ba5cbbbf5e0e",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5FrozenTriplePolynomialKernel",
+      "stdout_sha256": "3034ea337ddb405eb1f495e0f5a79a7a5eb603f4738be22a8ba1126e4a751d98",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G5FrozenTripleAnalyticSupport",
+      "stdout_sha256": "47ca1a45a3440088ae38fa601816c8b6050a0f464bd69c436f3c0ef970edb26d",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "FiniteTagDecoder",
+      "stdout_sha256": "806c90485b35ef7da8ed1e697c78fecca97354c6a3537e6089c69ebe14e45e51",
+      "matches_receipt": true,
+      "exit": 1
+    },
+    {
+      "label": "G2PairBirthFold",
+      "stdout_sha256": "a3a7fc1c68b4cb7e754f35e41af866d7703e6182bf4662965e970a48808dcad4",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2ClockBoundaryNull",
+      "stdout_sha256": "c6a9bd448f60659721790dc2b1c953b700d08ac4103b83f9e4196064a70e445a",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "G2WholeMatrixAges",
+      "stdout_sha256": "9fea632d584f9c8c5e53adec28051c0b6791f0777af37d84e7a8925a2bf16f61",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "BinClock",
+      "stdout_sha256": "bc76e0c48c004d2cb655ac3a85c98b69a4f2644272f7ea8ccd1a100c470861ba",
+      "matches_receipt": true,
+      "exit": 1
+    },
+    {
+      "label": "DeclarationAudit",
+      "stdout_sha256": "b1fd3d04c62acde99758dae849b1df9e547cb635c31a116f7a35d56ecbbff496",
+      "matches_receipt": true,
+      "exit": 0
+    },
+    {
+      "label": "CompleteEnvironmentAudit",
+      "stdout_sha256": "1db689a942bb2a1b1e2678317f82efa0b14f7dea4a3564ccd57acd5854c17414",
+      "matches_receipt": true,
+      "exit": 0
+    }
+  ],
+  "selected_reports": [
+    {
+      "name": "CloudG3.ApproximateMomentBarrier.approximate_coupled_barrier",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.scaled_domination_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_sum_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmfTV",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_ne_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filter_scaled",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_real_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_finset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_mixture_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.taylorTerm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.taylorPrefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.count_zero_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefix_has_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass_taylor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.taylorPrefix_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.finiteSourcePrefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.bind_scaled_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.map_scaled_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.stepMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.programMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.finiteProgramStep",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.finiteProgram",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.stepMass_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.programMass_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.program_deficit_le_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_step_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_program_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.taylorTerm_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.taylorTerm_succ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.taylor_hasSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.taylor_tail_geometric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.taylor_tail_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.exp_le_taylor_enclosure",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.errorBound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.prefix_deficit_le_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.actual_source_prefix_tv_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.TaylorCertificate.actual_source_joint_readout_tv_certificate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.finiteHistoryLaw",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.actual_history_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.same_initial_history_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.same_initial_history_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.same_initial_history_tv_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.same_initial_joint_history_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.retainPast",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.retained_past_history_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.retained_past_joint_history_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.HistoryPrefix.retained_past_joint_history_tv_budget",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalTerm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalPrefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalError",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalTerm_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalPrefix_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalError_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalTerm_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalPrefix_one_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.rationalCount_actual",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.certificate_le_twice_term",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.accepts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.certificate_exists",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.cutoff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.cutoff_accepts",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.cutoff_minimal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.RationalCertificate.cutoff_prefix_deficit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.tagUpdate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.map_coded_age_update",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.RelationMonotone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.same_bin_update_comp",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.tag_update_self",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.actual_destination_relation_monotone",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinHistory.two_actual_mergers_same_bin",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinFold.foldTags",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinFold.map_actual_age_fold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.BinFold.bin_constant_active_fold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.expParameter",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_decay",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.linearCoefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.cubicCoefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.row_polynomial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.rowCoefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.row_coefficients_evaluation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.frozenMixture",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.frozenCoefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.frozen_coefficients_evaluation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixture_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixtures_eq_of_right_germ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.occupancy_masses_eq_of_right_germ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GProgram.G5.FrozenTripleAnalyticSupport.occupancy_support_eq_of_right_germ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "selected_report_count": 117,
+  "selected_report_counts": {
+    "G6": 101,
+    "G3": 1,
+    "G5": 15
+  },
+  "final_audit_sha256": "b1fd3d04c62acde99758dae849b1df9e547cb635c31a116f7a35d56ecbbff496",
+  "complete_inventory_receipt": {
+    "bytes": 5200332,
+    "sha256": "c4e869579ffe47baa6fd3687ca1ed38519e2281276af0ea8cd7ac6e755764302",
+    "encoding": "gzip+base64",
+    "selected_custom_modules": 145,
+    "declaration_count": 3517,
+    "theorem_declaration_count": 2274,
+    "audit_source_sha256": "4d2bfc82c67b9eb3e9f9907207d1f38cc053b8b5d0b85641cf149d28b4f279c3"
+  },
+  "complete_inventory_kind_counts": {
+    "theorem": 2274,
+    "definition": 1118,
+    "constructor": 61,
+    "recursor": 32,
+    "inductive": 32
+  },
+  "complete_inventory_module_counts": {
+    "G4TwoRootSourceStopping": 125,
+    "SourceLabelledForest": 346,
+    "G5FrozenTripleAnalyticSupport": 25,
+    "G4IndependentRoutingBridge": 38,
+    "UnifiedLean.Source.FiniteSourceSnapshot": 54,
+    "G5PairOnlySureBlockChronology": 7,
+    "UnifiedLean.Source.SourceCalendarPhysicalSupport": 24,
+    "G2LiteralCutResidual": 37,
+    "UnifiedLean.Source.SourceStepGeneratorBinding": 19,
+    "G2ActualEpochHistoryLaw": 18,
+    "G2CalendarDecoration": 19,
+    "UnifiedLean.Source.SourceBoundaryKernels": 79,
+    "G4PathResolvedMeasurement": 89,
+    "UnifiedLean.Source.SourceCrossCarrierEpoch": 40,
+    "G2LiveLineageRouting": 59,
+    "G2FaithfulPairAgeDecoration": 49,
+    "G2LiteralMarkedClockTrace": 61,
+    "G5CalendarRoutes": 45,
+    "SourceNetwork": 88,
+    "UnifiedLean.Source.SourceCalendarCompatibility": 17,
+    "UnifiedLean.Source.SourceBoundaryLocations": 8,
+    "G5ActualComponentSupport": 9,
+    "UnifiedLean.Source.NativeIndependentPairMixture": 40,
+    "G5SafePastHybridDisjointness": 15,
+    "G2ChronologicalPathReadout": 59,
+    "UnifiedLean.Source.SourceEmbeddedJumpLaw": 17,
+    "UnifiedLean.Source.SourceForestSilentPruning": 35,
+    "UnifiedLean.Source.SourceCalendarCompiler": 18,
+    "UnifiedLean.Source.SourceCalendarTiming": 5,
+    "UnifiedLean.Source.NativeParentRouting": 60,
+    "G2FiniteAncestralTrace": 19,
+    "GraphCuts": 10,
+    "G2LiteralEpochLaw": 24,
+    "UnifiedLean.G6.ProgramPrefix": 48,
+    "UnifiedLean.Source.UniformizedSourceStep": 29,
+    "G2ActualCalendarTrace": 45,
+    "UnifiedLean.Source.SourceProgramTransport": 49,
+    "UnifiedLean.G6.RationalCertificate": 24,
+    "G2ActualDecorationFold": 20,
+    "UnifiedLean.Source.SourceFirstMergerMark": 43,
+    "G2FiniteFibreTransport": 6,
+    "G2ActualSegmentPathLaw": 32,
+    "UnifiedLean.Source.SourceExponentialResiduals": 10,
+    "G4AllRootPairClocks": 13,
+    "UnifiedLean.Source.SourceAncestralDrift": 7,
+    "UnifiedLean.Source.SourceCrossCarrierProgram": 43,
+    "G1SharedRegisterStress": 26,
+    "UnifiedLean.Source.FiniteGenealogyEncoding": 70,
+    "UnifiedLean.Source.SourceForestCommonPulse": 2,
+    "UnifiedLean.Source.SourceForestGeneratorIntertwining": 15,
+    "G2SameClockContinuation": 34,
+    "UnifiedLean.Source.SourceAncestralCompletion": 27,
+    "UnifiedLean.Source.SourceExponentialRace": 22,
+    "G5OriginalRouteHazard": 18,
+    "UnifiedLean.Source.SourceWinningClockReset": 27,
+    "G2MarkedTraceRenewal": 37,
+    "G2MarkedTraceCuts": 23,
+    "G2SourceGraftDecoration": 13,
+    "UnifiedLean.Source.SourceFirstMarkDistribution": 28,
+    "G2SourceFiniteHistory": 24,
+    "G4FourRootPositivity": 22,
+    "UnifiedLean.Source.SourceSmallCarrierGenerator": 13,
+    "UnifiedLean.Source.SourcePoissonKernel": 30,
+    "UnifiedLean.Source.UnrankedGenealogyObservation": 76,
+    "UnifiedLean.Source.SourceBoundaryProjection": 8,
+    "UnifiedLean.Source.SourceEpochRenewal": 11,
+    "UnifiedLean.Source.NativePairClockLaw": 44,
+    "UnifiedLean.G6.FiniteProbability": 10,
+    "G2HistoryResidualAttachment": 32,
+    "G2PairBirthFold": 38,
+    "G5FairSelectorMoments": 10,
+    "G5NonbridgeRouteBound": 28,
+    "G5FrozenTriplePolynomialKernel": 25,
+    "UnifiedLean.Source.MatrixProjectionExponential": 8,
+    "UnifiedLean.Source.SourceCopyCarrierTransport": 27,
+    "UnifiedLean.Source.SourceExponentialRaceDensity": 13,
+    "UnifiedLean.Source.SourceFiniteProjection": 25,
+    "SourceForestKingmanProjection": 14,
+    "UnifiedLean.Source.SourceRaceWinnerSelection": 13,
+    "UnifiedLean.Source.SourceMergerClockCatalogue": 13,
+    "G2CutFutureSourceBinding": 5,
+    "G5MinimalGraphInterface": 2,
+    "G2CalendarPathProjection": 44,
+    "G2AncestralTraceSourceLaw": 17,
+    "UnifiedLean.Source.SourceCompletedUnrankedTree": 6,
+    "UnifiedLean.Source.SourceForestIntrinsicGenerator": 11,
+    "UnifiedLean.G6.SourcePrefix": 20,
+    "G5ProtectiveBlock": 22,
+    "G5CoupledQuartetKernel": 26,
+    "UnifiedLean.Source.SourceSmallCarrierPulse": 15,
+    "G2EventualPathReadout": 26,
+    "UnifiedLean.Source.SourceEventualCompletionLimit": 3,
+    "G2ActualChronologicalPathLaw": 5,
+    "UnifiedLean.Source.SourceFiniteJumpExpansion": 17,
+    "G2CompletedCalendarPathLaw": 14,
+    "G2SameClockPastFutureLaw": 3,
+    "G2WholeMatrixAges": 50,
+    "G5ParentChoiceCalendar": 17,
+    "G6BridgeCannotEnterHybrid": 8,
+    "UnifiedLean.G6.TaylorCertificate": 21,
+    "UnifiedLean.Source.SourceLiteralClockEndpoint": 11,
+    "G2CalendarHistoryBinding": 10,
+    "G2DecorationMeasurability": 6,
+    "G2ActualPairCoalescence": 11,
+    "G5UnknownRateSupport": 5,
+    "UnifiedLean.Source.SourceActualHoldingClocks": 26,
+    "G5ParentPositionPushforward": 7,
+    "UnifiedLean.Source.SourceInitializedCalendar": 20,
+    "UnifiedLean.Source.SourceNaturalInitialization": 15,
+    "G2EpochPathProjection": 29,
+    "G5BridgeComponentEntries": 6,
+    "G5SafePastMeetingPermanence": 5,
+    "G5FairOriginalCoinLaw": 11,
+    "G2MarkedTraceBudgetStability": 5,
+    "G5RootRouteCurrentSupport": 10,
+    "G5OriginalTipCurrentSupport": 4,
+    "G2ChronologicalGluing": 13,
+    "UnifiedLean.G6.HistoryPrefix": 13,
+    "G5CurrentPortTwoPositions": 8,
+    "G2CompleteCalendarAttachment": 10,
+    "UnifiedLean.Source.SourceAncestralAbsorption": 21,
+    "G5ExponentialGermIdentification": 6,
+    "UnifiedLean.Source.SourceForestPulseTransport": 15,
+    "UnifiedLean.Source.SourcePoissonExponential": 10,
+    "G2EpochHistoryReadout": 18,
+    "G5OriginalCoinPMF": 8,
+    "G2CompleteAncestralPath": 6,
+    "SourceForestKingmanPopulationProjection": 8,
+    "UnifiedLean.G6.BinHistory": 8,
+    "UnifiedLean.G6.Conditioning": 13,
+    "UnifiedLean.Source.SourceEpochSemigroup": 5,
+    "UnifiedLean.Source.SourceCrossCarrierBoundary": 6,
+    "G5BridgeBarrier": 6,
+    "G2ClockBoundaryNull": 3,
+    "UnifiedLean.Source.SourceForestPulseMeasure": 11,
+    "UnifiedLean.G6.BinFold": 13,
+    "UnifiedLean.Source.SourceCompletionHarmonic": 12,
+    "UnifiedLean.Source.SourceGeneratorExponential": 4,
+    "G2CompleteDecoration": 8,
+    "G5ComponentCalendarCoverage": 6,
+    "UnifiedLean.Source.SourceDestinationClockReset": 4,
+    "GraphLeaves": 6,
+    "G2CutResidualSourceMixture": 3,
+    "G3ApproximateMomentBarrier": 1,
+    "UnifiedLean.Source.SourceNaturalCompletedLimit": 6
+  },
+  "complete_inventory_each_module_owned_rows": true,
+  "failed_modules_excluded_from_named_and_complete_audits": true,
+  "complete_inventory_helper_sha256": "296a28f59363027abf31be110f4aecfa6479e73cd6e9a13bd571d28df58dd144",
+  "complete_inventory_reconstructed_source_sha256": "4d2bfc82c67b9eb3e9f9907207d1f38cc053b8b5d0b85641cf149d28b4f279c3",
+  "non_payload_interleaved_stderr": [
+    "Selected source failure: [{\"module\": \"FiniteTagDecoder\", \"result\": \"1\"}, {\"module\": \"UnifiedLean.G6.BinClock\", \"result\": \"1\"}]"
+  ],
+  "compiler_launched_by_auditor": false,
+  "matched_author_publication_commit": "405d0218457c4424ee9846e983327616c893ea37",
+  "matched_author_payload_and_audit_files": {
+    "complete-environment-inventory.json": "c4e869579ffe47baa6fd3687ca1ed38519e2281276af0ea8cd7ac6e755764302",
+    "CompleteEnvironmentAudit-reconstructed.lean": "4d2bfc82c67b9eb3e9f9907207d1f38cc053b8b5d0b85641cf149d28b4f279c3",
+    "DeclarationAudit-actual.log": "b1fd3d04c62acde99758dae849b1df9e547cb635c31a116f7a35d56ecbbff496"
+  }
+}
