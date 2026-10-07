@@ -1,0 +1,4 @@
+mkdir -p /workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/build
+gcc -Iinclude -std=c11 -O2 -Wall -Wextra -Wpedantic -Werror -c src/count_gmp.c -o /workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/build/count_gmp.o
+g++ -Iinclude -std=c++17 -O2 -Wall -Wextra -Wpedantic -Werror src/count_cli.cpp /workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/build/count_gmp.o -lgmp -o /workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/build/count_cpp
+gcc -Iinclude -std=c11 -O2 -Wall -Wextra -Wpedantic -Werror check_c_abi.c /workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/build/count_gmp.o -Wl,--wrap=realloc -lgmp -o /workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/build/check_c_abi

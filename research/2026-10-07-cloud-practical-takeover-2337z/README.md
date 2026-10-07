@@ -10,8 +10,10 @@ C++ CLI**, with the C ABI available to Cloud's separate Rust FFI adapter.
 This scalar numerical component supplies an explicit Poisson-prefix tail
 certificate. It does not implement the nine-parameter JC inverse, admit
 biological observations, construct a complete inverse cover or close G6.
-Actual build/test receipts will be linked here after execution; source-only
-preservation is not a build claim.
+The [actual first build/test receipt](RESULT.md) records warning-clean build,
+39 complete-output differentials,22 invalid inputs, direct ABI/allocation
+controls and focused ASan/UBSan PASS. Independent new-code review remains
+pending until its attributed receipt.
 
 Read [the inventory and assembly boundaries](ARCHITECTURE.md),
 [the exact language-neutral/ABI contract](CONTRACT.md), and
@@ -22,7 +24,6 @@ reports its separate pilot launched, with no verified Rust build at that
 observation; the Commons tree inspected at `98340fe2` contains no Rust/Cargo
 source. That observation does not establish its unpublished source state.
 
-Next action: warning-clean C/C++ build, bounded complete-output differentials
-against the immutable reference, focused allocator/ABI controls and sanitizer
-checks; then independent source review and root's Rust adapter integration.
+Next action: independent source review and root's Rust adapter integration
+against the frozen C ABI.
 The historical baseline controls are read and linked, not replayed here.

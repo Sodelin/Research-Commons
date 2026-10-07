@@ -1,0 +1,85 @@
+{
+  "records": [
+    {
+      "address_space_bytes_limit": 268435456,
+      "command": [
+        "make",
+        "OUT=/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/sanitizer/build",
+        "CFLAGS=-std=c11 -O1 -g -Wall -Wextra -Wpedantic -Werror -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -no-pie",
+        "CXXFLAGS=-std=c++17 -O1 -g -Wall -Wextra -Wpedantic -Werror -fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer -no-pie"
+      ],
+      "cpu_seconds_limit": 10,
+      "exit": 0,
+      "name": "build",
+      "wall_seconds": 0.5696693089994369,
+      "wall_seconds_limit": 20
+    },
+    {
+      "address_space_limit": null,
+      "command": [
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/sanitizer/build/check_c_abi"
+      ],
+      "cpu_seconds_limit": 10,
+      "exit": 0,
+      "expected_exit": 0,
+      "guard": null,
+      "maximum_sampled_rss_bytes": 90112,
+      "name": "abi",
+      "sampled_rss_guard_bytes": 268435456,
+      "status": "PASS",
+      "stderr_empty": true,
+      "wall_seconds": 0.022383251001883764,
+      "wall_seconds_limit": 20,
+      "why_no_AS_limit": "ASan reserves a large virtual shadow; RSS monitored every10ms"
+    },
+    {
+      "address_space_limit": null,
+      "command": [
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/sanitizer/build/count_cpp",
+        "17/5",
+        "1/1024",
+        "--max-steps",
+        "128",
+        "--weights"
+      ],
+      "complete_output_matches_normal": true,
+      "cpu_seconds_limit": 10,
+      "exit": 0,
+      "expected_exit": 0,
+      "guard": null,
+      "maximum_sampled_rss_bytes": 86016,
+      "name": "weights",
+      "output_status": "CERTIFIED",
+      "sampled_rss_guard_bytes": 268435456,
+      "status": "PASS",
+      "stderr_empty": true,
+      "wall_seconds": 0.012500895998527994,
+      "wall_seconds_limit": 20,
+      "why_no_AS_limit": "ASan reserves a large virtual shadow; RSS monitored every10ms"
+    },
+    {
+      "address_space_limit": null,
+      "command": [
+        "/workspace/cloud-practical/research/2026-10-07-cloud-practical-takeover-2337z/attempt1/sanitizer/build/count_cpp",
+        "1e-1000000000",
+        "1/2",
+        "--max-steps",
+        "1"
+      ],
+      "cpu_seconds_limit": 10,
+      "exit": 2,
+      "expected_exit": 2,
+      "guard": null,
+      "maximum_sampled_rss_bytes": 90112,
+      "name": "exponent_refusal",
+      "output_status": "INVALID_INPUT",
+      "sampled_rss_guard_bytes": 268435456,
+      "status": "PASS",
+      "stderr_empty": true,
+      "wall_seconds": 0.02232275899950764,
+      "wall_seconds_limit": 20,
+      "why_no_AS_limit": "ASan reserves a large virtual shadow; RSS monitored every10ms"
+    }
+  ],
+  "scope": "focused ASan/UBSan caller/kernel controls; system GMP library not rebuilt with sanitizers"
+}

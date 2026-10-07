@@ -66,7 +66,7 @@ calendar/program endpoints remain separate proof and source obligations.
 
 | Intended endpoint obligation | Current status | Concrete next implication |
 |---|---|---|
-| Executable common exact arithmetic | New C/C++ sources; build pending | Complete bounded differential/ABI/sanitizer receipt, then Rust FFI integration and audit. |
+| Executable common exact arithmetic | [C/C++ build, differential/ABI/sanitizer PASS](RESULT.md); new review pending | Rust FFI integration and independent exact source review. |
 | Clean executable original-D baseline | Historical runs accepted; new staging unexecuted | Authenticate PUBLIC-DEPENDENCIES, assemble unchanged runtime and independently check a declared bounded new run. |
 | Valid original observational confidence | Open | Admit a future complete-locus source and exact joint feature/confidence contract with useful precision. |
 | Complete all-nine useful retained cover | Open | Independent full-frontier checker + actual useful input + export-width certificate. Pair-error bounds alone supply no cover. |
