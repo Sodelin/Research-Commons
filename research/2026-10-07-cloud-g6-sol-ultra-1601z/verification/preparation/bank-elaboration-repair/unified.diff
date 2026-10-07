@@ -1,0 +1,103 @@
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/AncestralRateFree.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/AncestralRateFree.lean
+index 7d56cfe..03bb041 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/AncestralRateFree.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/AncestralRateFree.lean
+@@ -29,7 +29,7 @@ lemma ancestral_choice_population (N : RootedBinary V E X) {sample : Copy → X}
+   have hloc : Location.rootPopulation N.root = originalPlace N p.1 :=
+     (ancestral_live_location N s hs hm.1).symm.trans hm.2
+   cases hi : p.1 with
+-  | none => exact hi
++  | none => rfl
+   | some e =>
+     have hbad : Location.rootPopulation N.root = Location.edge e := by
+       simpa only [hi, originalPlace] using hloc
+@@ -57,10 +57,11 @@ noncomputable def ancestralChoiceMass (N : RootedBinary V E X) {sample : Copy 
+ lemma ancestral_jump_mass (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (s : Code N sample) (hs : AncestralRoot N s)
+     (q : Option (Choice N s)) : jumpMass N r s q = ancestralChoiceMass N s q := by
++  have hroot : pairRate r none ≠ 0 := ne_of_gt (pairRate_pos r none)
+   have hr : pairRate r none / 2 ≠ 0 := ne_of_gt (div_pos (pairRate_pos r none) (by norm_num))
+   have hz : totalRate N r s = 0 ↔ Fintype.card (Choice N s) = 0 := by
+     rw [ancestral_total_rate N r s hs, mul_eq_zero]
+-    simp [hr]
++    simp only [hr, or_false, Nat.cast_eq_zero]
+   cases q with
+   | none => simp only [jumpMass, hz, ancestralChoiceMass]
+   | some p =>
+@@ -69,7 +70,7 @@ lemma ancestral_jump_mass (N : RootedBinary V E X) {sample : Copy → X}
+       exact_mod_cast (Fintype.card_ne_zero : Fintype.card (Choice N s) ≠ 0)
+     rw [jumpMass, ancestral_choice_rate N r s hs p, ancestral_total_rate N r s hs]
+     dsimp only [ancestralChoiceMass]
+-    field_simp [hc, hr]
++    field_simp [hc, hr, hroot]
+ 
+ noncomputable def rationalAncestralChoiceMass (N : RootedBinary V E X)
+     {sample : Copy → X} (s : Code N sample) : Option (Choice N s) → ℚ
+@@ -83,8 +84,9 @@ lemma rational_ancestral_choice_mass_actual (N : RootedBinary V E X)
+   rw [ancestral_jump_mass N r s hs q]
+   cases q with
+   | none =>
+-    by_cases hc : Fintype.card (Choice N s) = 0 <;>
+-      simp [rationalAncestralChoiceMass, ancestralChoiceMass, hc]
++    by_cases hc : Fintype.card (Choice N s) = 0
++    · simp only [rationalAncestralChoiceMass, ancestralChoiceMass, if_pos hc, Rat.cast_one]
++    · simp only [rationalAncestralChoiceMass, ancestralChoiceMass, if_neg hc, Rat.cast_zero]
+   | some p => simp [rationalAncestralChoiceMass, ancestralChoiceMass]
+ 
+ lemma ancestral_jump_choice_rate_invariant (N : RootedBinary V E X)
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/InheritanceBankCommon.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/InheritanceBankCommon.lean
+index adf5982..2bb5c97 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/InheritanceBankCommon.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/InheritanceBankCommon.lean
+@@ -29,7 +29,7 @@ lemma actual_bit_singleton (gamma : unitInterval) (b : Bool) :
+   unfold bitMeasure
+   rw [bernoulliMeasure_apply gamma (measurableSet_singleton b)]
+   cases b <;> simp [ENNReal.ofReal_eq_coe_nnreal, unitInterval.toNNReal,
+-    unitInterval.coe_symm_eq, gamma.property.1, sub_nonneg.mpr gamma.property.2]
++    unitInterval.coe_symm_eq, gamma.property.1, sub_nonneg.mpr gamma.property.2] <;> rfl
+ 
+ lemma actual_bit_bank_lower (gamma gammahat : unitInterval) (beta : ℝ)
+     (hbeta : 0 ≤ beta) (htrue : beta * (gamma : ℝ) ≤ (gammahat : ℝ))
+@@ -45,8 +45,10 @@ lemma actual_bit_bank_lower (gamma gammahat : unitInterval) (beta : ℝ)
+ lemma actual_current_coin_product (Site : Type*) [Fintype Site]
+     (gamma : unitInterval) (coin : Site → Bool) :
+     currentCoinPMF Site gamma coin = ∏ i : Site, bitMeasure gamma {coin i} := by
+-  unfold currentCoinPMF independentCoinMeasure
+-  rw [Measure.toPMF_apply, Measure.pi_singleton]
++  unfold currentCoinPMF
++  rw [Measure.toPMF_apply]
++  unfold independentCoinMeasure
++  rw [Measure.pi_singleton]
+ 
+ /-- Pointwise product on the actual Site carrier, including the empty carrier. -/
+ theorem actual_current_coin_bank_lower (Site : Type*) [Fintype Site]
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RateBankCommon.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RateBankCommon.lean
+index f0c209a..83f40ad 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RateBankCommon.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RateBankCommon.lean
+@@ -92,7 +92,6 @@ lemma holding_choice_formula (N : RootedBinary V E X)
+   rw [holdingNumerator_eq]
+   unfold choiceMass
+   field_simp [ne_of_gt (globalRateBound_positive (Copy := Copy) r)]
+-  ring
+ 
+ lemma globalRateBound_bank_lower (r rhat : PositivePairRates E)
+     (ell : ℝ) (hell1 : ell ≤ 1)
+@@ -105,7 +104,7 @@ lemma globalRateBound_bank_lower (r rhat : PositivePairRates E)
+   have hadd : ell * (1 + ∑ i : Option E, pairRate r i) ≤
+       1 + ∑ i : Option E, pairRate rhat i := by nlinarith
+   unfold globalRateBound
+-  simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
++  simpa only [copyBound, mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
+ 
+ lemma globalRateBound_bank_upper (r rhat : PositivePairRates E)
+     (u : ℝ) (hu1 : 1 ≤ u)
+@@ -118,7 +117,7 @@ lemma globalRateBound_bank_upper (r rhat : PositivePairRates E)
+   have hadd : (1 + ∑ i : Option E, pairRate rhat i) ≤
+       u * (1 + ∑ i : Option E, pairRate r i) := by nlinarith
+   unfold globalRateBound
+-  simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
++  simpa only [copyBound, mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
+ 
+ lemma holdingNumerator_bank_lower (N : RootedBinary V E X)
+     {sample : Copy → X} (r rhat : PositivePairRates E) (s : Code N sample)
