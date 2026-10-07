@@ -10,4 +10,6 @@ After ordinary compilation, the attributed dot environment auditor enumerates ev
 
 Actual commands/stdout/receipts are printed into workflow logs. Exact source context, module results, complete audit and build receipt are losslessly emitted as deterministic gzip/base64 payloads with raw byte counts and SHA256 hashes, allowing authenticated recovery despite this workspace's signed artifact URL HTTP 403. Raw artifacts are also uploaded on success or failure.
 
-Prepared route status: UNRUN until an actual exact-input receipt is linked here. The target is hidden-register timed all-panel projectivity and full selected-environment verification, not frozen-germ identification from the actual observed genealogy law or G5/G6 master closure.
+Actual route status: [run 37658528073 PASS](evidence/g5-takeover-run-37658528073-PASS/README.md), frozen input `849757a968ea29e215c569b16bf3ca6d15af6abc`, job 112919781827, 2026-10-07 17:22:19–17:34:09 UTC. All 170 custom modules and 178 commands passed. The complete inventory has 3,856 declarations and 2,522 theorem declarations, with no owned axioms, nonstandard transitive axioms or missing modules. The exact raw audit SHA256 is `bde5e55bd8323c38a3400ceef4ae49b7510ef4357a5f699395b3245e5b22f420`.
+
+The accepted compiler scope is hidden-register timed all-panel projectivity and full selected-environment verification, not frozen-germ identification from the actual observed genealogy law or G5/G6 master closure. Newly prepared G6 HistoryPrefix, RationalCertificate and BinHistory sources require a later exact-input receipt.
