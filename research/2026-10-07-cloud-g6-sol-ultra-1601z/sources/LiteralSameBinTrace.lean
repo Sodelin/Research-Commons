@@ -62,9 +62,9 @@ theorem literal_trace_endpoint_relation_monotone (N : RootedBinary V E X)
             · simpa only [if_neg hp,empty_trace_endpoint] using
                 relation_monotone_refl N s
 
+set_option backward.isDefEq.respectTransparency false in
 /-- The inherited age shift changes no flag or destination. Constant-bin tags
 ignore those shifted ages even on inactive padding. -/
-set_option backward.isDefEq.respectTransparency false in
 theorem foldTags_const_shift_ages (N : RootedBinary V E X) {sample : Copy → X}
     (tag : Tag) (n : ℕ) (s : Code N sample) (offset : ℝ)
     (M : Copy → Copy → Tag) (age : ℝ) (z : ClockTrace N sample n) :
