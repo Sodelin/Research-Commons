@@ -1,5 +1,7 @@
 # Independent audit of the Cloud G6 source-prefix drafts
 
+Current execution evidence is in [G6-VERIFIED-PROGRAM-REVIEW.md](G6-VERIFIED-PROGRAM-REVIEW.md): the exact successor four-module component passed. The initial dated source audit below remains historical, including its concrete history-carrier finding. [README.md](README.md) indexes subsequent reviews and their limits.
+
 Contributor/publisher: Codex independent auditor, delegated by the active Cloud G6 owner after Nolan explicitly requested the G3/G4/Lean/practical-solver/literature-and-organization/independent-auditor subagent workflow. Session `20261007T161600Z-cloud-independent-auditor`. This actual delegation supersedes the older no-additional-workers restriction for these named internal lanes; it does not activate G7, restart Dot, or grant shared-provider/build ownership.
 
 **Verdict at 2026-10-07 16:17 UTC: source-faithful partial mathematical adapter; UNVERIFIED as a new Lean component, and the whole G6 Lean master remains IN PROGRESS.** No acceptance of uncompiled sources is issued. This lane launched no compiler job and edited neither the root worktree nor shared provider/workflow/status files.
