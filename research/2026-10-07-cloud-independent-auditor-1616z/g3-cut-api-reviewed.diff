@@ -1,0 +1,71 @@
+--- research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCalendarCutContext.lean
++++ research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCalendarCutContext.lean
+@@ -139,0 +140,3 @@
++  letI := actual_segment_probability N r op s
++  letI := Measure.isProbabilityMeasure_map
++    (segment_readout_measurable N bin hbin op s offset B).aemeasurable
+@@ -147,0 +151,3 @@
++  letI := actual_calendar_trace_probability N r ops s
++  letI := Measure.isProbabilityMeasure_map
++    (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
+@@ -155,0 +162,3 @@
++  letI := complete_calendar_trace_probability N r ops s
++  letI := Measure.isProbabilityMeasure_map
++    (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
+@@ -163,0 +173,3 @@
++  letI := complete_ancestral_trace_probability N r s
++  letI := Measure.isProbabilityMeasure_map
++    (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
+@@ -235 +247 @@
+-      ((((actualSegmentLaw N r op s).restrict {z | z.2 = d}).prod
++      (((((actualSegmentLaw N r op s).restrict {z | z.2 = d}).prod
+@@ -237 +249 @@
+-          (calendarReadout N bin (op :: ops) s offset B)) =
++          (calendarReadout N bin (op :: ops) s offset B))) =
+--- research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCutJointLaw.lean
++++ research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCutJointLaw.lean
+@@ -34,0 +35 @@
++  GProgram.G2.HistoryResidualAttachment.current_clock_probability
+@@ -87 +88,5 @@
+-  have hB := (fold_tags_joint_measurable N bin hbin (Fintype.card Copy) offset).comp
++  have hB : Measurable (fun z :
++      (Bool × ClockTrace N sample (Fintype.card Copy)) ×
++        (Bool × ClockTrace N sample (Fintype.card Copy)) =>
++      foldTags N bin (Fintype.card Copy) s offset B z.1.2) :=
++    (fold_tags_joint_measurable N bin hbin (Fintype.card Copy) offset).comp
+@@ -141,4 +146,9 @@
+-      rw [Measure.map_map hF he, completeAncestralTraceLaw,
+-        ← Measure.map_prod_map P (currentPairClockMeasure N r d) measurable_id
+-          (complete_ancestral_trace_measurable N d),
+-        Measure.map_id, Measure.map_map hg
++      have hprod : P.prod ((currentPairClockMeasure N r d).map
++          (completeAncestralTrace N d)) =
++          (P.prod (currentPairClockMeasure N r d)).map
++            (Prod.map id (completeAncestralTrace N d)) := by
++        simpa only [Measure.map_id] using
++          Measure.map_prod_map P (currentPairClockMeasure N r d) measurable_id
++            (complete_ancestral_trace_measurable N d)
++      rw [Measure.map_map hF he, completeAncestralTraceLaw, hprod,
++        Measure.map_map hg
+--- research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCutTagRefinement.lean
++++ research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualCutTagRefinement.lean
+@@ -87 +87,2 @@
+-      exact ih r.2.2 (tagUpdate N s r.2.2 (bin ((offset + age) + r.2.1)) B)
++      simpa only [add_assoc] using
++        ih r.2.2 (tagUpdate N s r.2.2 (bin ((offset + age) + r.2.1)) B)
+--- research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualFiniteCutJointLaw.lean
++++ research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/api-derivative-2227z/sources/ActualFiniteCutJointLaw.lean
+@@ -136,4 +136,9 @@
+-      rw [Measure.map_map hF he, actualMarkedTraceLaw,
+-        ← Measure.map_prod_map P (currentPairClockMeasure N r d) measurable_id
+-          (marked_trace_measurable N (Fintype.card Copy) d (v : ℝ)),
+-        Measure.map_id, Measure.map_map hg
++      have hprod : P.prod ((currentPairClockMeasure N r d).map
++          (literalMarkedTrace N (Fintype.card Copy) (v : ℝ) d)) =
++          (P.prod (currentPairClockMeasure N r d)).map
++            (Prod.map id (literalMarkedTrace N (Fintype.card Copy) (v : ℝ) d)) := by
++        simpa only [Measure.map_id] using
++          Measure.map_prod_map P (currentPairClockMeasure N r d) measurable_id
++            (marked_trace_measurable N (Fintype.card Copy) d (v : ℝ))
++      rw [Measure.map_map hF he, actualMarkedTraceLaw, hprod,
++        Measure.map_map hg

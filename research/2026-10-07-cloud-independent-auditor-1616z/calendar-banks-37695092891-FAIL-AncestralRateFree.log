@@ -1,0 +1,161 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/AncestralRateFree.lean:32:12: error: Type mismatch
+  hi
+has type
+  p.fst = none
+but is expected to have type
+  none = none
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/AncestralRateFree.lean:61:67: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+hs : AncestralRoot N s
+q : Option (Choice N s)
+hr : pairRate r none / 2 ≠ 0
+⊢ ↑(Fintype.card
+            { p //
+              p.1 ∈ populationRoots (state s) (originalPlace N none) ∧
+                p.2 ∈ populationRoots (state s) (originalPlace N none) ∧ ¬p.1 = p.2 }) +
+        ∑ x,
+          ↑(Fintype.card
+              { p //
+                p.1 ∈ populationRoots (state s) (originalPlace N (some x)) ∧
+                  p.2 ∈ populationRoots (state s) (originalPlace N (some x)) ∧ ¬p.1 = p.2 }) =
+      0 ↔
+    Fintype.card
+          { p //
+            p.1 ∈ populationRoots (state s) (originalPlace N none) ∧
+              p.2 ∈ populationRoots (state s) (originalPlace N none) ∧ ¬p.1 = p.2 } =
+        0 ∧
+      ∀ (i : E),
+        Fintype.card
+            { p //
+              p.1 ∈ populationRoots (state s) (originalPlace N (some i)) ∧
+                p.2 ∈ populationRoots (state s) (originalPlace N (some i)) ∧ ¬p.1 = p.2 } =
+          0
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/AncestralRateFree.lean:67:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/AncestralRateFree.lean:66:11: error: unsolved goals
+case some
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+hs : AncestralRoot N s
+hr : pairRate r none / 2 ≠ 0
+hz : totalRate N r s = 0 ↔ Fintype.card (Choice N s) = 0
+p : Choice N s
+this : Nonempty (Choice N s) := Nonempty.intro p
+hc : ↑(Fintype.card (Choice N s)) ≠ 0
+⊢ pairRate r none / pairRate r none = 1
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/AncestralRateFree.lean:85:9: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+hs : AncestralRoot N s
+hc : ¬Fintype.card (Choice N s) = 0
+⊢ ↑(if
+          Fintype.card
+                { p //
+                  p.1 ∈ populationRoots (state s) (originalPlace N none) ∧
+                    p.2 ∈ populationRoots (state s) (originalPlace N none) ∧ ¬p.1 = p.2 } =
+              0 ∧
+            ∀ (i : E),
+              Fintype.card
+                  { p //
+                    p.1 ∈ populationRoots (state s) (originalPlace N (some i)) ∧
+                      p.2 ∈ populationRoots (state s) (originalPlace N (some i)) ∧ ¬p.1 = p.2 } =
+                0 then
+        1
+      else 0) =
+    if
+        Fintype.card
+              { p //
+                p.1 ∈ populationRoots (state s) (originalPlace N none) ∧
+                  p.2 ∈ populationRoots (state s) (originalPlace N none) ∧ ¬p.1 = p.2 } =
+            0 ∧
+          ∀ (i : E),
+            Fintype.card
+                { p //
+                  p.1 ∈ populationRoots (state s) (originalPlace N (some i)) ∧
+                    p.2 ∈ populationRoots (state s) (originalPlace N (some i)) ∧ ¬p.1 = p.2 } =
+              0 then
+      1
+    else 0
+'UnifiedLean.G6.AncestralRateFree.ancestral_choice_population' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.ancestral_choice_rate' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.ancestral_total_rate' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.ancestral_jump_mass' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.rational_ancestral_choice_mass_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.ancestral_jump_choice_rate_invariant' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.ancestral_jump_step_rate_invariant' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.ancestral_completion_rate_invariant' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AncestralRateFree.completion_kernel_rate_invariant' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
