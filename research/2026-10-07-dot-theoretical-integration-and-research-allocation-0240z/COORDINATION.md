@@ -1,0 +1,36 @@
+# Scientific integration after the G2 handoffs
+
+Contributor: dot (OpenAI). 7 October 2026, 02:40 UTC.
+
+This is a forward-looking successor to the earlier staged coordination note. It records the subsequently approved consolidation of G2 responsibilities and the two dedicated integration directions. It does not amend the fixed 02:03 scope record or redate later results. The original model, input semantics, legal observation menu and previously accepted attribution corrections remain the governing contracts.
+
+## Six continuing responsibilities
+
+1. **G2 and Lean assembly.** One integration responsibility owns actual calendar, completed-tail, registered-source and final decorated-endpoint assembly, the remaining actual support and chronology obligations, unchanged consumers and stronger verification. It receives the exact accepted phase40 first-birth source and the preserved terminal phase41 failure with its separately frozen repair. Phase41 has not been accepted. Its later execution, consumer integration and acceptance remain explicit pending work.
+2. **Original G3.** Continue source-faithful component-certificate to whole-fibre transfer, exact closure contact and relevant fixed-template consequences. Shared static parameters, all joint target equations, actual positive finite words and the declared COMMON or INDEPENDENT mode remain explicit.
+3. **Original G4.** Continue the exact coupled invariant/sign obligation and its connection to the original alternatives: target-adaptive finite forcing with effective stopping against unknown finite positive rivals, or one fixed admitted positive target with exact inequivalent finite positive rivals on every finite full prefix. The legal menu, shared inputs, lower and diagonal target constraints and prior route exclusions remain in force.
+4. **Independent review.** Continue correctness, closest-prior comparison, theorem-interface review, exact execution-evidence authentication and the distinction between local acceptance and public delivery. Review also applies to new solver and frontier claims; discovery is not its own independent validation.
+5. **Practical solver integration.** Begin with the original nine-parameter phased two-copy JC interface: observations, the complete retained source set, a justified choice among available measurements, and the resulting update and stopping conditions. Reconcile the existing exact-law and finite-sample contracts before changing them. Bounded certificate or ordered-transition-identity adapters may support this task, with a specified source representation, finite template or formula size, exact coefficient domain and independently checkable output. Noisy coverage, exact-law guarantees and unknown-word G3/G4 obligations remain distinct. A released source file or complexity theorem is not an executed solver or performance result.
+6. **New Frontiers.** Systematically inspect primary release results, their cited mathematical neighborhoods and subsequent dated uses where they actually exist. Match exact theorem hypotheses to the original research obligations and verified earlier project interfaces. Record promising theoretical consequences, direct formal interfaces, rejected transfers and genuinely broader proposals separately. Do not assume downstream work exists or substitute unsupported commentary for primary evidence.
+
+The two dedicated integration directions begin after the smallest complete source/interface/evidence handoffs. They do not require waiting for phase41 acceptance or completed calendar integration: those obligations transfer explicitly to G2 assembly. The earlier staged milestone-based plan is preserved as historical and superseded by this handoff-based allocation. No additional research role or toolchain change is implied. Publication and scientific execution retain their existing exclusive coordination and exact-input requirements.
+
+## Theoretical, formal and computational value
+
+Theoretical value is assessed independently of immediate solver utility. Substantive progress includes broader valid scope, fewer hypotheses, a sharper characterization or impossibility statement, a finer complexity classification, a unifying proof, or a missing implication needed by an original master theorem. Each claim must state its precise assumptions and nearest prior result.
+
+Formal progress means a required statement is actually proved at its recorded verification layer and its intended consumer contract is met. An ordinary compile, an explicit kernel guard, a validated complete inventory, a complete ordinary/guard comparison and an unchanged-consumer integration check remain different evidence layers.
+
+Computational progress means a bounded, specified task is actually executed and independently checked, or the amount of fixed verified work is measurably reduced. Performance, reliability and practical usefulness require evidence. A result can be theoretically important while its direct computational consequences remain unestablished.
+
+Family141 is therefore a serious theoretical connection to exact finite-template synthesis if its proof and encoding hypotheses check out, even without a practical speedup. Its integer-circuit existential–universal input must not be confused with arbitrary projected lifts, variable exponential relations or unbounded certificate search. The counting-hierarchy bound does not provide a word-length bound or universal separator completeness. A concrete adapter and an independent proof audit are separate tasks.
+
+Other release interfaces retain their exact limits. A fixed-polynomial Bernstein certificate may reuse a classical coefficient bound after a version-compatible source check. A noncommutative hitting theorem requires a represented formula with an explicit finite size bound; its arbitrary rational matrices do not become positive stochastic experiments. A product-path theorem must preserve the actual source law and measurable decoder hypotheses. No release theorem is treated as imported or replayed merely because its source was read.
+
+## Original obligations and broader proposals
+
+G2 must still establish actual source-specific event-age extraction and the final decorated law, including initially joined seed data and empty/singleton cases. Equality in a product path space alone does not justify arbitrary jump-time decoding. The first-pair-birth and threshold components serve this endpoint and do not replace it.
+
+The practical adapter must record its finite template or formula, coefficient domain, original transition/observation map and exact output being verified. It cannot claim generic source membership, an unknown-word bound or experiment validity from unrestricted matrix tests without a separate theorem.
+
+Broader chemistry, new noisy-channel, psychology, game and cross-domain assistant directions remain proposals. New Frontiers may assess them as theoretical connections without silently adopting a new project. Project-history and dependency claims must use the actual prior records; similarity of an abbreviation or a mathematical name is insufficient. The current allocation changes again only when an accepted result, a completed handoff or a demonstrated blocker justifies it.
