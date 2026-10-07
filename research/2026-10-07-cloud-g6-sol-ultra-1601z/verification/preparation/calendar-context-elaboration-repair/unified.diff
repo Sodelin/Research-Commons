@@ -1,0 +1,237 @@
+--- actual-failed-bafa/ActualCalendarCutContext.lean
++++ same-law-derived-fibre/ActualCalendarCutContext.lean
+@@ -68,7 +68,9 @@
+     (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+     Measurable (calendarReadout N bin ops s offset B) := by
+   induction ops generalizing s offset B with
+-  | nil => exact measurable_const
++  | nil =>
++      change Measurable (fun _ : Fin 0 → SegmentRecord N sample => (s, B))
++      exact measurable_const
+   | cons op ops ih =>
+       have hw : Measurable (fun z : TaggedEndpoint (Tag := Tag) N sample ×
+           (Fin ops.length → SegmentRecord N sample) =>
+@@ -101,8 +103,9 @@
+     (op : ProgramStep N) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+     PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := actual_segment_probability N r op s
+-  letI := Measure.isProbabilityMeasure_map
+-    (segment_readout_measurable N bin hbin op s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((actualSegmentLaw N r op s).map (segmentReadout N bin op s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := actualSegmentLaw N r op s)
++      (segment_readout_measurable N bin hbin op s offset B).aemeasurable
+   exact ((actualSegmentLaw N r op s).map (segmentReadout N bin op s offset B)).toPMF
+ 
+ noncomputable def calendarJoint (N : RootedBinary V E X) {sample : Copy → X}
+@@ -110,8 +113,9 @@
+     (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+     PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := actual_calendar_trace_probability N r ops s
+-  letI := Measure.isProbabilityMeasure_map
+-    (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((actualCalendarTraceLaw N r ops s).map (calendarReadout N bin ops s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := actualCalendarTraceLaw N r ops s)
++      (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
+   exact ((actualCalendarTraceLaw N r ops s).map (calendarReadout N bin ops s offset B)).toPMF
+ 
+ noncomputable def completedJoint (N : RootedBinary V E X) {sample : Copy → X}
+@@ -119,8 +123,9 @@
+     (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+     PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := complete_calendar_trace_probability N r ops s
+-  letI := Measure.isProbabilityMeasure_map
+-    (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((completeCalendarTraceLaw N r ops s).map (completeReadout N bin ops s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := completeCalendarTraceLaw N r ops s)
++      (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
+   exact ((completeCalendarTraceLaw N r ops s).map (completeReadout N bin ops s offset B)).toPMF
+ 
+ noncomputable def tailJoint (N : RootedBinary V E X) {sample : Copy → X}
+@@ -128,8 +133,9 @@
+     (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+     PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := complete_ancestral_trace_probability N r s
+-  letI := Measure.isProbabilityMeasure_map
+-    (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((completeAncestralTraceLaw N r s).map (tailTraceReadout N bin s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := completeAncestralTraceLaw N r s)
++      (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
+   exact ((completeAncestralTraceLaw N r s).map (tailTraceReadout N bin s offset B)).toPMF
+ 
+ theorem segment_joint_toMeasure (N : RootedBinary V E X) {sample : Copy → X}
+@@ -138,8 +144,9 @@
+     (segmentJoint N r bin hbin op s offset B).toMeasure =
+       (actualSegmentLaw N r op s).map (segmentReadout N bin op s offset B) := by
+   letI := actual_segment_probability N r op s
+-  letI := Measure.isProbabilityMeasure_map
+-    (segment_readout_measurable N bin hbin op s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((actualSegmentLaw N r op s).map (segmentReadout N bin op s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := actualSegmentLaw N r op s)
++      (segment_readout_measurable N bin hbin op s offset B).aemeasurable
+   unfold segmentJoint
+   exact Measure.toPMF_toMeasure _
+ 
+@@ -149,8 +156,9 @@
+     (calendarJoint N r bin hbin ops s offset B).toMeasure =
+       (actualCalendarTraceLaw N r ops s).map (calendarReadout N bin ops s offset B) := by
+   letI := actual_calendar_trace_probability N r ops s
+-  letI := Measure.isProbabilityMeasure_map
+-    (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((actualCalendarTraceLaw N r ops s).map (calendarReadout N bin ops s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := actualCalendarTraceLaw N r ops s)
++      (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
+   unfold calendarJoint
+   exact Measure.toPMF_toMeasure _
+ 
+@@ -160,8 +168,9 @@
+     (completedJoint N r bin hbin ops s offset B).toMeasure =
+       (completeCalendarTraceLaw N r ops s).map (completeReadout N bin ops s offset B) := by
+   letI := complete_calendar_trace_probability N r ops s
+-  letI := Measure.isProbabilityMeasure_map
+-    (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((completeCalendarTraceLaw N r ops s).map (completeReadout N bin ops s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := completeCalendarTraceLaw N r ops s)
++      (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
+   unfold completedJoint
+   exact Measure.toPMF_toMeasure _
+ 
+@@ -171,8 +180,9 @@
+     (tailJoint N r bin hbin s offset B).toMeasure =
+       (completeAncestralTraceLaw N r s).map (tailTraceReadout N bin s offset B) := by
+   letI := complete_ancestral_trace_probability N r s
+-  letI := Measure.isProbabilityMeasure_map
+-    (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
++  letI : IsProbabilityMeasure ((completeAncestralTraceLaw N r s).map (tailTraceReadout N bin s offset B)) :=
++    Measure.isProbabilityMeasure_map (μ := completeAncestralTraceLaw N r s)
++      (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
+   unfold tailJoint
+   exact Measure.toPMF_toMeasure _
+ 
+@@ -198,8 +208,9 @@
+       ∑ s : S, (((μ.restrict {a | e a = s}).map obs).prod (ν s)).map g := by
+     apply Finset.sum_congr rfl
+     intro s _
+-    rw [← Measure.map_prod_map (μ.restrict {a | e a = s}) (ν s) ho measurable_id,
+-      Measure.map_id, Measure.map_map hg (ho.prodMap measurable_id)]
++    have hprod := Measure.map_prod_map (μ.restrict {a | e a = s}) (ν s) ho measurable_id
++    rw [Measure.map_id] at hprod
++    rw [hprod, Measure.map_map hg (ho.prodMap measurable_id)]
+     rfl
+   have hcoarse := finite_endpoint_fibre_product_regroup_map μ e obs id k
+     he ho hk hcompat ν Gamma.toMeasure hGamma g hg
+@@ -210,7 +221,9 @@
+         Gamma q • (row q).toMeasure := by
+     rw [CloudG3.CompleteCalendarJointLaw.pmf_singleton_restrict,
+       Measure.prod_smul_left, Measure.map_smul, Measure.dirac_prod,
+-      Measure.map_map hg measurable_prodMk_left, ← hrow q]
++      Measure.map_map hg measurable_prodMk_left]
++    change Gamma q • (ν (k q)).map (fun z => g (q, z)) = Gamma q • (row q).toMeasure
++    rw [← hrow q]
+   calc
+     _ = ∑ s : S, (((μ.restrict {a | e a = s}).map obs).prod (ν s)).map g := hfirst
+     _ = ∑ s : S, ((Gamma.toMeasure.restrict {q | k q = s}).prod (ν s)).map g :=
+@@ -307,8 +320,11 @@
+     filter_upwards [ae_restrict_mem (measurableSet_eq_fun
+       (calendar_end_measurable N ops s) measurable_const)] with past hp
+     exact Filter.Eventually.of_forall (fun z => by
+-      dsimp only [g, Function.comp_def, completeReadout, completeTags, completeEnd,
+-        calendarReadout, tailTraceReadout]
++      change tailTraceReadout N bin d (offset + (programDuration N ops : ℝ))
++          (calendarTags N bin ops s offset B past) z =
++        tailTraceReadout N bin (calendarEnd N ops s past)
++          (offset + (programDuration N ops : ℝ))
++          (calendarTags N bin ops s offset B past) z
+       rw [hp])
+   rw [hleft]
+   exact finite_observed_fibre_kernel (actualCalendarTraceLaw N r ops s)
+@@ -345,14 +361,38 @@
+   apply PMF.toMeasure_injective
+   rw [tail_joint_toMeasure, complete_cut_fibre_joint_source_law N r s bin hbin offset t B]
+   simp_rw [decoded_raw_endpoint_restrict]
+-  exact finite_observed_fibre_kernel (actualMarkedTraceLaw N r (Fintype.card Copy) s (t : ℝ))
++  refine Eq.trans ?_ (finite_observed_fibre_kernel
++    (actualMarkedTraceLaw N r (Fintype.card Copy) s (t : ℝ))
+     (fun h => traceEndpoint N (Fintype.card Copy) s h.2)
+     (tailTraceReadout N bin s offset B) Prod.fst
+     (raw_tail_endpoint_measurable N s) (tail_trace_readout_measurable N bin hbin s offset B)
+     measurable_fst (fun _ => rfl) (fun d => completeAncestralTraceLaw N r d)
+     (segmentJoint N r bin hbin (.interval t) s offset B) hGamma g hg
+     (fun q => tailJoint N r bin hbin q.1 (offset + (t : ℝ)) q.2)
+-    (fun q => tail_joint_toMeasure N r bin hbin q.1 (offset + (t : ℝ)) q.2)
++    (fun q => tail_joint_toMeasure N r bin hbin q.1 (offset + (t : ℝ)) q.2))
++  apply Finset.sum_congr rfl
++  intro d _
++  have hl := prefix_tail_readout_measurable N bin hbin s d offset (t : ℝ) B
++  have hr : Measurable (fun z :
++      (Bool × ClockTrace N sample (Fintype.card Copy)) ×
++        (Bool × ClockTrace N sample (Fintype.card Copy)) =>
++      g (tailTraceReadout N bin s offset B z.1, z.2)) :=
++    hg.comp ((tail_trace_readout_measurable N bin hbin s offset B).prodMap measurable_id)
++  have hD : MeasurableSet
++      {h : Bool × ClockTrace N sample (Fintype.card Copy) |
++        traceEndpoint N (Fintype.card Copy) s h.2 = d} :=
++    measurableSet_eq_fun (raw_tail_endpoint_measurable N s) measurable_const
++  apply Measure.map_congr
++  apply (Measure.ae_prod_iff_ae_ae (measurableSet_eq_fun hl hr)).mpr
++  filter_upwards [ae_restrict_mem hD] with past hp
++  change traceEndpoint N (Fintype.card Copy) s past.2 = d at hp
++  exact Filter.Eventually.of_forall (fun z => by
++    change tailTraceReadout N bin d (offset + (t : ℝ))
++        (foldTags N bin (Fintype.card Copy) s offset B past.2) z =
++      tailTraceReadout N bin (traceEndpoint N (Fintype.card Copy) s past.2)
++        (offset + (t : ℝ))
++        (foldTags N bin (Fintype.card Copy) s offset B past.2) z
++    rw [hp])
+ 
+ theorem calendar_joint_nil (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
+@@ -360,7 +400,7 @@
+     calendarJoint N r bin hbin [] s offset B = PMF.pure (s, B) := by
+   apply PMF.toMeasure_injective
+   rw [calendar_joint_toMeasure]
+-  simp [actualCalendarTraceLaw, calendarReadout, calendarEnd, calendarTags]
++  simp [actualCalendarTraceLaw, calendarReadout, calendarEnd, calendarTags, PMF.toMeasure_pure]
+ 
+ theorem program_duration_append (N : RootedBinary V E X)
+     (ops more : List (ProgramStep N)) :
+@@ -380,9 +420,12 @@
+   induction ops generalizing s offset B with
+   | nil => simp [calendar_joint_nil, programDuration]
+   | cons op ops ih =>
+-      rw [List.cons_append, calendar_joint_cons, ih, calendar_joint_cons, PMF.bind_bind]
++      rw [List.cons_append,
++        calendar_joint_cons N r bin hbin op (ops ++ more) s offset B,
++        calendar_joint_cons N r bin hbin op ops s offset B, PMF.bind_bind]
+       apply congrArg (PMF.bind (segmentJoint N r bin hbin op s offset B))
+       funext q
++      rw [ih q.1 (segmentOffset N op offset) q.2]
+       cases op <;> simp only [segmentOffset, programDuration, NNReal.coe_add, add_assoc]
+ 
+ theorem calendar_joint_single (N : RootedBinary V E X) {sample : Copy → X}
+@@ -403,17 +446,20 @@
+     (completeCalendarTraceLaw N r ops s).map (completeReadout N bin ops s offset B) =
+       (completeCalendarTraceLaw N r (ops ++ [.interval t]) s).map
+         (completeReadout N bin (ops ++ [.interval t]) s offset B) := by
+-  rw [← completed_joint_toMeasure, ← completed_joint_toMeasure]
++  rw [← completed_joint_toMeasure N r bin hbin ops s offset B,
++    ← completed_joint_toMeasure N r bin hbin (ops ++ [.interval t]) s offset B]
+   apply congrArg PMF.toMeasure
+-  rw [completed_joint_bind_calendar, completed_joint_bind_calendar,
+-    calendar_joint_append, PMF.bind_bind]
++  rw [completed_joint_bind_calendar N r bin hbin ops s offset B,
++    completed_joint_bind_calendar N r bin hbin (ops ++ [.interval t]) s offset B,
++    calendar_joint_append N r bin hbin ops [.interval t] s offset B, PMF.bind_bind]
+   apply congrArg (PMF.bind (calendarJoint N r bin hbin ops s offset B))
+   funext q
+-  rw [calendar_joint_single]
++  rw [calendar_joint_single N r bin hbin (.interval t) q.1
++    (offset + (programDuration N ops : ℝ)) q.2]
+   rw [tail_joint_cut_bind N r bin hbin q.1 (offset + (programDuration N ops : ℝ)) t q.2]
+-  congr 1
++  apply congrArg (PMF.bind (segmentJoint N r bin hbin (.interval t) q.1
++    (offset + (programDuration N ops : ℝ)) q.2))
+   funext e
+-  congr 1
+   simp only [program_duration_append, programDuration, add_zero, NNReal.coe_add, add_assoc]
+ 
+ #print axioms segment_readout_measurable

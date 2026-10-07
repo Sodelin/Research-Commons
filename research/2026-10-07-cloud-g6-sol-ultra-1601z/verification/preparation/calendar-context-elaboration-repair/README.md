@@ -1,0 +1,9 @@
+# Actual calendar-context repair — UNCHECKED
+
+The actual failed run377014 and all161 successful scopes are preserved first at `98340fe2`. This separate formal derivative preserves every original author/API source and all161 actual accepted hashes. Its declared names, hypotheses, readout definitions, source measures, PMF values, imports and target selection stay fixed.
+
+The fixes expose the empty-calendar constant function, supply the same actual measure and readout explicitly to eight derived probability-map instances, use the proved product-map theorem in its correct direction, beta-reduce the same singleton callback, and present the existing completed-calendar terminal-fibre equality to the elaborator. The nil measure proof uses the proved pure-toMeasure lemma. Append and refinement proofs enter their bind callbacks explicitly and instantiate the already supplied bin-measurability proof.
+
+The complete-tail cut bind proof includes a necessary support argument. Its prefix callback uses the raw prefix endpoint, whereas its per-fibre callback uses the fixed d. The already verified decoded/raw endpoint restriction identity replaces the actual full-budget prefix restriction by the raw endpoint fibre. On that exact unnormalized restriction, ae_restrict_mem gives raw_endpoint=d; map_congr and ae_prod_iff_ae_ae then derive the equality for every actual suffix clock record. This is not a global identity on arbitrary failed traces, an assumed output law, or a new physical premise. Every old tag and the original state/rate bank remain the same.
+
+No compiler ran for this candidate. Exact root and primary source-semantic review precede one SAME165/358 freeze. Three downstream wrappers remain pending their first compilation; future erasure, seed, whole-bank and Rust targets remain outside this selection.
