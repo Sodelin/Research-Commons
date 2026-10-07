@@ -1,0 +1,7 @@
+# Actual Context closing-rewrite failure
+
+Run37703936206 reads frozen004dbec501d32b2d3f42ba869ce0bb4716c634b7. The serial check reports165 command receipts,164 zero exits,161 accepted custom modules and313 accepted named reports. The full3912-owned/2547-theorem inventory is byte-identical to prior run37701425874 (5,846,372 bytes, SHA115a81dd93d9aa3ceeef7da3d77f6ae804b8f3be2411729a300b80ffeb4b62a1). All prior3912 owned rows remain exact.
+
+ONLY ActualCalendarCutContext e33f995db91fdcf6f5ecb4c5ff230b5f5a3778f8710732b9be99509d4cd7e908 failed, at450:4 in actual_complete_calendar_cut_refinement: the second reverse completed_joint_toMeasure rewrite does not match the displayed RHS ops++[.interval t] map. All prior sixteen diagnostic sites are gone, but the closing theorem recovery depends on sorryAx. The entire failed module is excluded, including standard-only recovery prints from other declarations. ActualFiniteCutJointLaw, ActualCalendarEndpointHistory and ActualObservationCutRefinement remain dependency-blocked and were not compiled. No new source acceptance is inferred.
+
+The actual stdout SHA620aadad10caff757aad49417ef0696ff341499bac25157199af6c37bd23b74e is preserved. Artifact11519770173 metadata is retained; archive bytes were not downloaded or compared. The official authenticated decoded full job log, exact input and receipt payloads, custom/audit stdout and complete inventory were recovered instead.
