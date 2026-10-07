@@ -10,6 +10,7 @@ The research has several completed scoped results and several different unfinish
 - [Actual source reads, canonical-home correction and limits](SOURCE-AUDIT.md).
 - [Governing literature and exact transfer boundaries](LITERATURE.md).
 - [Internal lane receipts and continuation](LANE-RECEIPTS.md).
+- [Independent source-critical G7 correction and later lane receipts](CORRECTIONS.md).
 - [Reproducible inventory generator](build_inventory.py) and [executed documentation checks](VERIFICATION.json).
 
 Root owns `README.md`, `START-HERE.md`, `projects.md` and the new canonical current status. This packet supplies evidence for those pages without making competing navigation edits. The preceding [Dot all-programme map](../2026-10-07-dot-frontier-source-index-and-obligation-map-0309z/ALL-PROGRAMME-COVERAGE.md) and [latest scope](../2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) retain authorship and dated history.
