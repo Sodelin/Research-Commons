@@ -1,0 +1,9 @@
+# Calendar, bank repair and cut/history bundle — STATIC / UNCHECKED
+
+The proposed next single input contains **165 custom sources and 358 named declarations**: 226 G6, 117 G3, 15 G5. All 155 currently successful source hashes, including the actual complete-calendar principal, remain fixed. Pending inputs are the three proof-only bank repairs preserved at `1085507`, unchanged blocked UpperRateSourceCommon, and six byte-identical formal copies of original-author cut/history API derivatives published at `02a40d4`.
+
+The six cut/history modules contribute 46 proof statements and 17 definitions. Their CutRefines inductive, TaggedEndpoint abbreviation and all generated declarations belong to the full complete-environment ownership audit. Original author drafts and derivative bytes remain unchanged. Their exact primary source review is a separate gate before this proposed source freeze; this static packet neither starts a job nor claims compilation.
+
+The same 65 Mathlib root names and one Lean root retain the identical transitive Mathlib source context. No new baseline, custom provider, runtime pin, Lake registration or workflow change is required. WholeBank4725, Private08ac, later Dot/root research packets, executable numerical tables and full physical/menu/master claims remain outside this input.
+
+The latest actual159 command total was 609.21 seconds. Planning reserves160 seconds for the six new modules, first unblocked upper-rate target and larger audits, plus60 seconds for runtime/cache/artifact overhead, giving829.21 seconds against the enforced900 second cap. This is a planning estimate, not a future timing or compiler receipt. Every command retains180 seconds, trustzero, one worker and4096MiB. Actual success/failure scopes and the entire successful generated/type/body/axiom inventory must be recovered and preserved; failed or blocked modules are excluded before any successor.
