@@ -1,0 +1,24 @@
+[package]
+name = "exact-interval-pilot"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Separate exact forward and signed-receiver interval compatibility kernels"
+publish = false
+
+[lib]
+name = "exact_interval_pilot"
+path = "src/lib.rs"
+
+[[bin]]
+name = "interval-probe"
+path = "src/main.rs"
+
+[dependencies]
+num-bigint = "=0.4.6"
+num-rational = "=0.4.2"
+num-traits = "=0.2.19"
+num-integer = "=0.1.47"
+
+[profile.release]
+overflow-checks = true
