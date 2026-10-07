@@ -22,5 +22,13 @@ Executed work: bounded source/API reads, source hashes, own-file scope and
 `git diff --check`. No compiler, simulation, job, shared provider, workflow or
 current build-tree changes. All source pins and authored-note hashes are in
 [inputs.json](inputs.json). This packet is outside the immutable current
-159-module job. Next action: non-force publication with byte readback, then
-root independently reviews the exact main proof/hash.
+159-module job.
+
+Publication receipt: non-force main publication at
+`64fd75dc88a151b53404f8ba9b05c68d7dd950f9`; fresh remote fetch verified all
+five packet files byte-for-byte. Main proof SHA-256:
+`0ecfd2ec6a786a7c253d9f5e0e1b34ce818bcd9c87e73a1aac143278d057a521`.
+Source/API gaps SHA-256:
+`5e863bfd9dc4a9aa8964438092004568ec75b5ca9f314c8f2ce923eb8ae46776`.
+Next action: root independently reviews that exact main proof/hash. This
+receipt records publication, not source-semantic acceptance or Lean checking.
