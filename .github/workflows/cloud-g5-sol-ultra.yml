@@ -1,0 +1,50 @@
+name: Cloud G5 Sol Ultra frozen verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/cloud-g5-sol-ultra.yml
+      - research/2026-10-07-cloud-g5-sol-ultra-1557z/scripts/**
+      - research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: g567-pinned-lean
+  cancel-in-progress: false
+
+jobs:
+  g5:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Fetch frozen public commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init --quiet "$RUNNER_TEMP/research-commons"
+          git -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          git -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"
+          git -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Authenticate pinned runtime
+        shell: bash
+        run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+      - name: Verify frozen G5 analytic branch and actual G2 consumer
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$RUNNER_TEMP/g567-lean-4.33.1/lean-4.33.1-linux/bin:$PATH"
+          python "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g5-sol-ultra-1557z/scripts/verify_cloud_g5.py" \
+            "$RUNNER_TEMP/research-commons" "$RUNNER_TEMP/cloud-g5-build" "$RUNNER_TEMP/cloud-g5-evidence"
+      - name: Preserve actual success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cloud-g5-${{ github.run_id }}
+          path: ${{ runner.temp }}/cloud-g5-evidence
+          if-no-files-found: warn
+          retention-days: 7
