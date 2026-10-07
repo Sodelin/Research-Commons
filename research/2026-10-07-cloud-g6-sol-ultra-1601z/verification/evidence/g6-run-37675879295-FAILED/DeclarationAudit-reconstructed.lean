@@ -1,0 +1,167 @@
+import G3ApproximateMomentBarrier
+import UnifiedLean.G6.FiniteProbability
+import UnifiedLean.G6.Conditioning
+import UnifiedLean.G6.SourcePrefix
+import UnifiedLean.G6.ProgramPrefix
+import UnifiedLean.G6.TaylorCertificate
+import UnifiedLean.G6.HistoryPrefix
+import UnifiedLean.G6.RationalCertificate
+import UnifiedLean.G6.BinHistory
+import UnifiedLean.G6.BinFold
+import G5FrozenTripleAnalyticSupport
+import FiniteTagDecoder
+import UnifiedLean.G6.BinClock
+import UnifiedLean.G6.ResidualPrefix
+
+#print axioms CloudG3.ApproximateMomentBarrier.approximate_coupled_barrier
+#print axioms UnifiedLean.G6.FiniteProbability.tv
+#print axioms UnifiedLean.G6.FiniteProbability.common_subprobability_tv
+#print axioms UnifiedLean.G6.FiniteProbability.common_subprobability_mass
+#print axioms UnifiedLean.G6.FiniteProbability.common_subprobability_event
+#print axioms UnifiedLean.G6.FiniteProbability.scaled_domination_tv
+#print axioms UnifiedLean.G6.FiniteProbability.pmf_sum_real
+#print axioms UnifiedLean.G6.FiniteProbability.pmfTV
+#print axioms UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv
+#print axioms UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event
+#print axioms UnifiedLean.G6.Conditioning.retainedMass
+#print axioms UnifiedLean.G6.Conditioning.retainedMass_ne_zero
+#print axioms UnifiedLean.G6.Conditioning.retainedMass_ne_top
+#print axioms UnifiedLean.G6.Conditioning.retainedMass_le_one
+#print axioms UnifiedLean.G6.Conditioning.filter_scaled
+#print axioms UnifiedLean.G6.Conditioning.filtered_bind_domination
+#print axioms UnifiedLean.G6.Conditioning.filtered_bind_domination_real
+#print axioms UnifiedLean.G6.Conditioning.retainedMass_real_bounds
+#print axioms UnifiedLean.G6.Conditioning.retainedMass_finset
+#print axioms UnifiedLean.G6.Conditioning.conditioned_mixture_tv
+#print axioms UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv
+#print axioms UnifiedLean.G6.Conditioning.conditioned_joint_observation_event
+#print axioms UnifiedLean.G6.SourcePrefix.taylorTerm
+#print axioms UnifiedLean.G6.SourcePrefix.taylorPrefix
+#print axioms UnifiedLean.G6.SourcePrefix.count_zero_ne_zero
+#print axioms UnifiedLean.G6.SourcePrefix.prefix_has_support
+#print axioms UnifiedLean.G6.SourcePrefix.prefixCount
+#print axioms UnifiedLean.G6.SourcePrefix.prefixMass
+#print axioms UnifiedLean.G6.SourcePrefix.prefixCount_support
+#print axioms UnifiedLean.G6.SourcePrefix.prefixMass_bounds
+#print axioms UnifiedLean.G6.SourcePrefix.prefixMass_taylor
+#print axioms UnifiedLean.G6.SourcePrefix.taylorPrefix_pos
+#print axioms UnifiedLean.G6.SourcePrefix.prefixCount_real
+#print axioms UnifiedLean.G6.SourcePrefix.finiteSourcePrefix
+#print axioms UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination
+#print axioms UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv
+#print axioms UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv
+#print axioms UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event
+#print axioms UnifiedLean.G6.ProgramPrefix.bind_scaled_domination
+#print axioms UnifiedLean.G6.ProgramPrefix.map_scaled_domination
+#print axioms UnifiedLean.G6.ProgramPrefix.stepMass
+#print axioms UnifiedLean.G6.ProgramPrefix.programMass
+#print axioms UnifiedLean.G6.ProgramPrefix.finiteProgramStep
+#print axioms UnifiedLean.G6.ProgramPrefix.finiteProgram
+#print axioms UnifiedLean.G6.ProgramPrefix.stepMass_le_one
+#print axioms UnifiedLean.G6.ProgramPrefix.programMass_le_one
+#print axioms UnifiedLean.G6.ProgramPrefix.program_deficit_le_sum
+#print axioms UnifiedLean.G6.ProgramPrefix.actual_step_domination
+#print axioms UnifiedLean.G6.ProgramPrefix.actual_program_domination
+#print axioms UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination
+#print axioms UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv
+#print axioms UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv
+#print axioms UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event
+#print axioms UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv_budget
+#print axioms UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv_budget
+#print axioms UnifiedLean.G6.TaylorCertificate.taylorTerm_nonneg
+#print axioms UnifiedLean.G6.TaylorCertificate.taylorTerm_succ
+#print axioms UnifiedLean.G6.TaylorCertificate.taylor_hasSum
+#print axioms UnifiedLean.G6.TaylorCertificate.taylor_tail_geometric
+#print axioms UnifiedLean.G6.TaylorCertificate.taylor_tail_bound
+#print axioms UnifiedLean.G6.TaylorCertificate.exp_le_taylor_enclosure
+#print axioms UnifiedLean.G6.TaylorCertificate.errorBound
+#print axioms UnifiedLean.G6.TaylorCertificate.prefix_deficit_le_certificate
+#print axioms UnifiedLean.G6.TaylorCertificate.actual_source_prefix_tv_certificate
+#print axioms UnifiedLean.G6.TaylorCertificate.actual_source_joint_readout_tv_certificate
+#print axioms UnifiedLean.G6.HistoryPrefix.finiteHistoryLaw
+#print axioms UnifiedLean.G6.HistoryPrefix.actual_history_domination
+#print axioms UnifiedLean.G6.HistoryPrefix.same_initial_history_domination
+#print axioms UnifiedLean.G6.HistoryPrefix.same_initial_history_tv
+#print axioms UnifiedLean.G6.HistoryPrefix.same_initial_history_tv_budget
+#print axioms UnifiedLean.G6.HistoryPrefix.same_initial_joint_history_readout_tv
+#print axioms UnifiedLean.G6.HistoryPrefix.retainPast
+#print axioms UnifiedLean.G6.HistoryPrefix.retained_past_history_domination
+#print axioms UnifiedLean.G6.HistoryPrefix.retained_past_joint_history_tv
+#print axioms UnifiedLean.G6.HistoryPrefix.retained_past_joint_history_tv_budget
+#print axioms UnifiedLean.G6.RationalCertificate.rationalTerm
+#print axioms UnifiedLean.G6.RationalCertificate.rationalPrefix
+#print axioms UnifiedLean.G6.RationalCertificate.rationalError
+#print axioms UnifiedLean.G6.RationalCertificate.rationalCount
+#print axioms UnifiedLean.G6.RationalCertificate.rationalTerm_real
+#print axioms UnifiedLean.G6.RationalCertificate.rationalPrefix_real
+#print axioms UnifiedLean.G6.RationalCertificate.rationalError_real
+#print axioms UnifiedLean.G6.RationalCertificate.rationalTerm_nonneg
+#print axioms UnifiedLean.G6.RationalCertificate.rationalPrefix_one_le
+#print axioms UnifiedLean.G6.RationalCertificate.rationalCount_actual
+#print axioms UnifiedLean.G6.RationalCertificate.certificate_le_twice_term
+#print axioms UnifiedLean.G6.RationalCertificate.accepts
+#print axioms UnifiedLean.G6.RationalCertificate.certificate_exists
+#print axioms UnifiedLean.G6.RationalCertificate.cutoff
+#print axioms UnifiedLean.G6.RationalCertificate.cutoff_accepts
+#print axioms UnifiedLean.G6.RationalCertificate.cutoff_minimal
+#print axioms UnifiedLean.G6.RationalCertificate.cutoff_prefix_deficit
+#print axioms UnifiedLean.G6.BinHistory.tagUpdate
+#print axioms UnifiedLean.G6.BinHistory.map_coded_age_update
+#print axioms UnifiedLean.G6.BinHistory.RelationMonotone
+#print axioms UnifiedLean.G6.BinHistory.same_bin_update_comp
+#print axioms UnifiedLean.G6.BinHistory.tag_update_self
+#print axioms UnifiedLean.G6.BinHistory.actual_destination_relation_monotone
+#print axioms UnifiedLean.G6.BinHistory.two_actual_mergers_same_bin
+#print axioms UnifiedLean.G6.BinFold.foldTags
+#print axioms UnifiedLean.G6.BinFold.map_actual_age_fold
+#print axioms UnifiedLean.G6.BinFold.bin_constant_active_fold
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.expParameter
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_bounds
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.exp_parameter_decay
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.linearCoefficient
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.cubicCoefficient
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.row_polynomial
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.rowCoefficients
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.row_coefficients_evaluation
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.frozenMixture
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.frozenCoefficients
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.frozen_coefficients_evaluation
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixture_limit
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.frozen_mixtures_eq_of_right_germ
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.occupancy_masses_eq_of_right_germ
+#print axioms GProgram.G5.FrozenTripleAnalyticSupport.occupancy_support_eq_of_right_germ
+#print axioms CloudG3.FiniteTagDecoder.TagDecoration
+#print axioms CloudG3.FiniteTagDecoder.mapBinDecoration
+#print axioms CloudG3.FiniteTagDecoder.decodeTags
+#print axioms CloudG3.FiniteTagDecoder.decodeTags_map_decode
+#print axioms CloudG3.FiniteTagDecoder.decodeTags_bin_pairAge
+#print axioms CloudG3.FiniteTagDecoder.decodeTags_bin_of_pair_agreement
+#print axioms CloudG3.FiniteTagDecoder.underlying
+#print axioms CloudG3.FiniteTagDecoder.toTaggedTree
+#print axioms CloudG3.FiniteTagDecoder.toAgeTree
+#print axioms CloudG3.FiniteTagDecoder.mapTags
+#print axioms CloudG3.FiniteTagDecoder.underlying_toTaggedTree
+#print axioms CloudG3.FiniteTagDecoder.underlying_mapTags
+#print axioms CloudG3.FiniteTagDecoder.toTaggedTree_mapBinDecoration
+#print axioms CloudG3.FiniteTagDecoder.taggedEquiv_underlying
+#print axioms CloudG3.FiniteTagDecoder.mapTags_respects
+#print axioms CloudG3.FiniteTagDecoder.decodedTaggedTree
+#print axioms CloudG3.FiniteTagDecoder.decodedTaggedTree_graft_swap
+#print axioms CloudG3.FiniteTagDecoder.decodedTaggedTree_actual
+#print axioms CloudG3.FiniteTagDecoder.actual_decoder_unordered
+#print axioms UnifiedLean.G6.BinClock.active_coordinate_mem
+#print axioms UnifiedLean.G6.BinClock.actual_active_coordinate_bounds
+#print axioms UnifiedLean.G6.BinClock.actual_bin_constant_fold
+#print axioms UnifiedLean.G6.ResidualPrefix.residualMass
+#print axioms UnifiedLean.G6.ResidualPrefix.residualMass_bounds
+#print axioms UnifiedLean.G6.ResidualPrefix.residualMass_deficit
+#print axioms UnifiedLean.G6.ResidualPrefix.residualMass_le_prefixMass
+#print axioms UnifiedLean.G6.ResidualPrefix.residualVector
+#print axioms UnifiedLean.G6.ResidualPrefix.residualVector_nonneg
+#print axioms UnifiedLean.G6.ResidualPrefix.residualVector_sum
+#print axioms UnifiedLean.G6.ResidualPrefix.residualVector_tv
+#print axioms UnifiedLean.G6.ResidualPrefix.residualCountReal
+#print axioms UnifiedLean.G6.ResidualPrefix.residualCountReal_coefficients
+#print axioms UnifiedLean.G6.ResidualPrefix.residualSourceVector
+#print axioms UnifiedLean.G6.ResidualPrefix.actual_source_residual_tv
+#print axioms UnifiedLean.G6.ResidualPrefix.actual_source_joint_residual_tv
