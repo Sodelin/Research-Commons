@@ -19,5 +19,12 @@ No shared provider, workflow or other contribution was modified.
 Root/primary and independent review of these new bodies are pending.
 Executable tables, physical timed readout, calendar/program and inheritance
 composition, and full G6 closure remain open in the existing master register.
-Next action: publish this separate packet without force, read back main, and
-return its immutable source/hash to root for primary review.
+Publication observed: the separate packet was pushed without force to main
+at `ac1da5b7450e8a7e34bb4ec9a172288677066e34`, after rebasing on concurrent
+main `3702e3c`. A fresh fetch read back all four packet files byte-for-byte,
+including source SHA256 `f155d460`. This is a dated publication observation,
+not compiler acceptance or live presence.
+
+Next action: root/primary reviewer examines the exact published source/hash
+and routes any later compiler trial through the Lean owner. The publisher's
+own textual checks are not independent review of the new bodies.
