@@ -4,6 +4,7 @@ import hashlib
 import json
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 
@@ -37,9 +38,25 @@ def visit(name):
 for target in targets:
     visit(target)
 evidence = root / 'g6-evidence'
-evidence.mkdir()
+evidence.mkdir(exist_ok=True)
+lean_executable = pathlib.Path(shutil.which('lean')).resolve()
+dependencies = {
+    'lean_version': subprocess.check_output(['lean', '--version'], text=True).strip(),
+    'lean_executable_sha256': hashlib.sha256(lean_executable.read_bytes()).hexdigest(),
+    'mathlib_commit': subprocess.check_output(
+        ['git', '-C', str(root / 'deps/mathlib'), 'rev-parse', 'HEAD'], text=True).strip(),
+    'lake_manifest_sha256': hashlib.sha256((root / 'lake-manifest.json').read_bytes()).hexdigest(),
+    'lake_registration_sha256': hashlib.sha256((root / 'lakefile.lean').read_bytes()).hexdigest(),
+    'verification_script_sha256': hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),
+}
+if dependencies['mathlib_commit'] != '0df444a360eaa60ab8c11dca51a86af692955474':
+    raise RuntimeError('Unexpected Mathlib commit')
+if dependencies['lean_executable_sha256'] != 'e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550':
+    raise RuntimeError('Unexpected Lean executable')
+(evidence / 'lake-manifest.json').write_bytes((root / 'lake-manifest.json').read_bytes())
 manifest = {'source_commit': commit, 'targets': targets, 'modules': modules,
-            'topological_order': order, 'mathlib_roots': sorted(external)}
+            'topological_order': order, 'mathlib_roots': sorted(external),
+            'dependencies': dependencies}
 (evidence / 'inputs.json').write_text(json.dumps(manifest, indent=2) + '\n')
 print('G6_INPUTS ' + json.dumps(manifest), flush=True)
 
@@ -62,6 +79,7 @@ def run(argv, label):
         raise SystemExit(code)
     if re.search(rb'sorryAx|Lean\.ofReduceBool|Lean\.trustCompiler', output):
         raise SystemExit('Forbidden proof axiom in report')
+    return output.decode(errors='replace')
 
 run(['lake', 'exe', 'cache', 'get', *sorted(external)], 'mathlib-cache')
 for index, module in enumerate(order):
@@ -72,4 +90,37 @@ for index, module in enumerate(order):
     output = root / '.lake/build/lib/lean' / (module.replace('.', '/') + '.olean')
     output.parent.mkdir(parents=True, exist_ok=True)
     run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', '-o', str(output), str(path)], f'{index:03d}-{module}')
+
+# Audit every declaration in each selected G6 source. Each #print axioms report
+# includes the complete transitive proof dependency set, including providers.
+declarations = []
+for module in targets:
+    source = (root / modules[module]['path']).read_text()
+    namespace = re.search(r'^namespace\s+(\S+)\s*$', source, re.MULTILINE)
+    if namespace is None:
+        raise RuntimeError('Selected source has no explicit namespace: ' + module)
+    declarations.extend(namespace[1] + '.' + name for name in re.findall(
+        r'^(?:noncomputable\s+)?(?:def|theorem|lemma)\s+([A-Za-z0-9_\']+)',
+        source, re.MULTILINE))
+audit = evidence / 'DeclarationAudit.lean'
+audit.write_text('\n'.join('import ' + module for module in targets) + '\n\n' +
+                 '\n'.join('#print axioms ' + name for name in declarations) + '\n')
+audit_output = run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', str(audit)], 'declaration-audit')
+reports = {name: [axiom.strip() for axiom in axioms.split(',') if axiom.strip()]
+           for name, axioms in re.findall(
+               r"'([^']+)' depends on axioms:\s*\[([^\]]*)\]", audit_output, re.DOTALL)}
+reports.update({name: [] for name in re.findall(
+    r"'([^']+)' does not depend on any axioms", audit_output)})
+missing = sorted(set(declarations) - reports.keys())
+unexpected = {name: sorted(set(axioms) - {'propext', 'Classical.choice', 'Quot.sound'})
+              for name, axioms in reports.items()
+              if set(axioms) - {'propext', 'Classical.choice', 'Quot.sound'}}
+(evidence / 'axiom-audit.json').write_text(json.dumps({
+    'declarations': declarations, 'transitive_axioms': reports,
+    'missing_reports': missing, 'unexpected_axioms': unexpected,
+    'audit_source_sha256': hashlib.sha256(audit.read_bytes()).hexdigest(),
+}, indent=2) + '\n')
+if missing or unexpected:
+    raise SystemExit('Incomplete or unexpected declaration axiom audit')
+print('G6_AXIOM_AUDIT_PASSED declarations=' + str(len(declarations)), flush=True)
 print('G6_SELECTED_COMPONENTS_PASSED commit=' + commit, flush=True)

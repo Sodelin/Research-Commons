@@ -5,7 +5,9 @@ on:
     paths:
       - .github/workflows/g6-cloud-lean.yml
       - research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/**
-      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/**
+      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/run.py
+      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh
+      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/targets.txt
 permissions:
   contents: read
 concurrency:
@@ -28,3 +30,14 @@ jobs:
         run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
       - name: Verify G6 frozen sources serially
         run: bash "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh"
+      - name: Preserve actual success and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: g6-cloud-evidence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/g6-cloud-build/g6-evidence/
+            ${{ runner.temp }}/g567-lean-4.33.1/lean-version.txt
+            ${{ runner.temp }}/g567-lean-4.33.1/runtime-smoke.log
+          if-no-files-found: warn
+          retention-days: 30

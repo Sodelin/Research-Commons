@@ -7,7 +7,7 @@ is a field of a source model. Classical conditioning alone is not an effective
 rational coefficient algorithm.
 -/
 namespace UnifiedLean.G6.Conditioning
-open scoped BigOperators
+open scoped BigOperators ENNReal
 open UnifiedLean.G6.FiniteProbability
 
 noncomputable def retainedMass {A : Type*} (p : PMF A) (s : Set A) : ℝ≥0∞ :=
@@ -50,7 +50,7 @@ theorem filtered_bind_domination {A B : Type*} (p : PMF A) (s : Set A)
     _ ≤ ∑' a, p a * f a b := by
       apply ENNReal.tsum_le_tsum
       intro a
-      exact mul_le_mul_right' (Set.indicator_apply_le (fun _ => le_rfl)) (f a b)
+      exact mul_le_mul' (Set.indicator_apply_le (fun _ => le_rfl)) le_rfl
     _ = _ := (PMF.bind_apply p f b).symm
 
 theorem filtered_bind_domination_real {A B : Type*} (p : PMF A) (s : Set A)

@@ -78,9 +78,12 @@ lemma prefixCount_real (a : ℝ≥0) (K k : ℕ) :
     rw [Set.indicator_of_mem hmem, countPMF_real, prefixMass_taylor] at hr
     rw [if_pos hk]
     apply (eq_div_iff (ne_of_gt (taylorPrefix_pos a K))).mpr
-    have he := Real.exp_pos (-(a : ℝ))
-    unfold taylorTerm
-    nlinarith [hr]
+    have hcancel : Real.exp (-(a : ℝ)) *
+        (taylorPrefix (a : ℝ) K * (prefixCount a K k).toReal) =
+        Real.exp (-(a : ℝ)) * taylorTerm (a : ℝ) k := by
+      simpa only [mul_assoc, taylorTerm, mul_div_assoc] using hr
+    have hproduct := mul_left_cancel₀ (ne_of_gt (Real.exp_pos (-(a : ℝ)))) hcancel
+    simpa only [mul_comm] using hproduct
   · have hmem : k ∉ (Finset.range (K + 1) : Set ℕ) := by
       simpa only [Finset.mem_coe, Finset.mem_range, Nat.lt_succ_iff] using hk
     rw [if_neg hk]
