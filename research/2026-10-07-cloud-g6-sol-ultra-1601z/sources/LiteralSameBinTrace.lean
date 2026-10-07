@@ -64,6 +64,7 @@ theorem literal_trace_endpoint_relation_monotone (N : RootedBinary V E X)
 
 /-- The inherited age shift changes no flag or destination. Constant-bin tags
 ignore those shifted ages even on inactive padding. -/
+set_option backward.isDefEq.respectTransparency false in
 theorem foldTags_const_shift_ages (N : RootedBinary V E X) {sample : Copy → X}
     (tag : Tag) (n : ℕ) (s : Code N sample) (offset : ℝ)
     (M : Copy → Copy → Tag) (age : ℝ) (z : ClockTrace N sample n) :
@@ -72,16 +73,15 @@ theorem foldTags_const_shift_ages (N : RootedBinary V E X) {sample : Copy → X}
   induction n generalizing s M with
   | zero => rfl
   | succ n ih =>
-      dsimp only [shiftTraceAges]
       by_cases h : (z 0).1 = true
-      · simp only [foldTags,if_pos h]
+      · simp only [foldTags,shiftTraceAges,if_pos h]
         change foldTags N (fun _ => tag) n (z 0).2.2 offset
             (tagUpdate N s (z 0).2.2 tag M)
             (shiftTraceAges N age (fun i => z i.succ)) =
           foldTags N (fun _ => tag) n (z 0).2.2 offset
             (tagUpdate N s (z 0).2.2 tag M) (fun i => z i.succ)
         exact ih (z 0).2.2 _ (fun i => z i.succ)
-      · simp only [foldTags,if_neg h]
+      · simp only [foldTags,shiftTraceAges,if_neg h]
         change foldTags N (fun _ => tag) n s offset M
             (shiftTraceAges N age (fun i => z i.succ)) =
           foldTags N (fun _ => tag) n s offset M (fun i => z i.succ)
