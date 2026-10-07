@@ -1,0 +1,2 @@
+# Executed in the directory containing check_triangle.py.
+(ulimit -t 5; ulimit -v 131072; timeout 10s python3 check_triangle.py > triangle.stdout 2> triangle.stderr); status=$?; printf '%s\n' "$status" > triangle.exit; cat triangle.stdout; cat triangle.stderr; exit "$status"

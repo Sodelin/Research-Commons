@@ -1,0 +1,2 @@
+# Executed from the directory containing check_rational_arithmetic.py.
+(ulimit -t 5; ulimit -v 131072; timeout 10s python3 check_rational_arithmetic.py > rational-arithmetic.stdout 2> rational-arithmetic.stderr); status=$?; printf '%s\n' "$status" > rational-arithmetic.exit; cat rational-arithmetic.stdout; cat rational-arithmetic.stderr; exit "$status"

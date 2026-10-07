@@ -1,0 +1,10 @@
+NEW PORTABLE SKELETON-CHECK REPRODUCTION INSTRUCTIONS, 6 October 2026.
+These are newly authored instructions, not the historical executed command. The original command is withheld because it contains a private absolute execution path; its original SHA256 is recorded in PUBLIC-PROJECTION-PROVENANCE.json. Code and historical result/output/exit files are unchanged.
+
+Create a fresh empty directory and copy check_skeletons.py into it. From that new directory run:
+
+(ulimit -t 5; ulimit -v 131072; timeout 10s python3 check_skeletons.py > skeleton.stdout 2> skeleton.stderr); status=$?; printf '%s\n' "$status" > skeleton.exit; cat skeleton.stdout; cat skeleton.stderr; exit "$status"
+
+The script writes skeleton-result.json into the current directory. Do not rerun in the preserved packet or overwrite historical evidence. Rerun timing/version fields may differ. This projection does not claim a new execution.
+
+The other two author checks have unchanged actual relative command records: rational-arithmetic-command.txt and controlled-closure/triangle-command.txt. For each rerun, create its own fresh empty directory and copy its checker there; both require their result filename to be absent. Their code uses only Python's standard library. Preserve the new outputs separately.

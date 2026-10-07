@@ -1,0 +1,263 @@
+{
+  "status": "PASS_NEW_FIXED_TRIANGLE_RATIONAL_CHECK",
+  "code_sha256": "9ab0e27dd108cb38e2d38b966ea8a5e00f83f7697c638afb55354a0269d53ca9",
+  "vertices": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "R",
+    "h",
+    "sA",
+    "sB",
+    "u"
+  ],
+  "edges": [
+    [
+      "R",
+      "u"
+    ],
+    [
+      "R",
+      "h"
+    ],
+    [
+      "u",
+      "h"
+    ],
+    [
+      "u",
+      "sB"
+    ],
+    [
+      "h",
+      "sA"
+    ],
+    [
+      "sA",
+      "A"
+    ],
+    [
+      "sA",
+      "C"
+    ],
+    [
+      "sB",
+      "B"
+    ],
+    [
+      "sB",
+      "D"
+    ]
+  ],
+  "all_root_leaf_paths": [
+    [
+      "R",
+      "u",
+      "h",
+      "sA",
+      "A"
+    ],
+    [
+      "R",
+      "u",
+      "h",
+      "sA",
+      "C"
+    ],
+    [
+      "R",
+      "u",
+      "sB",
+      "B"
+    ],
+    [
+      "R",
+      "u",
+      "sB",
+      "D"
+    ],
+    [
+      "R",
+      "h",
+      "sA",
+      "A"
+    ],
+    [
+      "R",
+      "h",
+      "sA",
+      "C"
+    ]
+  ],
+  "common_dominators": [
+    "R"
+  ],
+  "rotation_faces": [
+    [
+      "A",
+      "sA",
+      "h",
+      "R",
+      "u",
+      "sB",
+      "D",
+      "sB",
+      "B",
+      "sB",
+      "u",
+      "h",
+      "sA",
+      "C",
+      "sA"
+    ],
+    [
+      "R",
+      "h",
+      "u"
+    ]
+  ],
+  "hybrid_child_cut_component": [
+    "sA",
+    "A",
+    "C"
+  ],
+  "edge_survivals": [
+    {
+      "edge": [
+        "R",
+        "u"
+      ],
+      "survival": "1/2"
+    },
+    {
+      "edge": [
+        "R",
+        "h"
+      ],
+      "survival": "1/2"
+    },
+    {
+      "edge": [
+        "u",
+        "h"
+      ],
+      "survival": "1/2"
+    },
+    {
+      "edge": [
+        "u",
+        "sB"
+      ],
+      "survival": "3/4"
+    },
+    {
+      "edge": [
+        "h",
+        "sA"
+      ],
+      "survival": "1/2"
+    },
+    {
+      "edge": [
+        "sA",
+        "A"
+      ],
+      "survival": "1/2"
+    },
+    {
+      "edge": [
+        "sA",
+        "C"
+      ],
+      "survival": "1/2"
+    },
+    {
+      "edge": [
+        "sB",
+        "B"
+      ],
+      "survival": "2/3"
+    },
+    {
+      "edge": [
+        "sB",
+        "D"
+      ],
+      "survival": "1/2"
+    }
+  ],
+  "parent_path_records": [
+    {
+      "parent_label": 0,
+      "A_ancestry": [
+        "A",
+        "sA",
+        "h",
+        "u",
+        "R"
+      ],
+      "B_ancestry": [
+        "B",
+        "sB",
+        "u",
+        "R"
+      ],
+      "meeting": "u",
+      "XA": "1/8",
+      "XB": "1/2"
+    },
+    {
+      "parent_label": 1,
+      "A_ancestry": [
+        "A",
+        "sA",
+        "h",
+        "R"
+      ],
+      "B_ancestry": [
+        "B",
+        "sB",
+        "u",
+        "R"
+      ],
+      "meeting": "R",
+      "XA": "1/8",
+      "XB": "1/4"
+    }
+  ],
+  "natural_B_pair_affine": [
+    "2/3",
+    "1/6"
+  ],
+  "natural_B_triple_affine": [
+    "25/48",
+    "89/384"
+  ],
+  "jensen_defect_coefficients": [
+    "0",
+    "5/64",
+    "-3/32",
+    "1/64"
+  ],
+  "limit_profile": [
+    "11/12",
+    "2689/3072",
+    "6689791/7864320",
+    "53746989349/64424509440",
+    "18233670616137727/22166154415964160",
+    "104039992118672301490181/127835936430807192698880",
+    "2/3",
+    "25/48",
+    "5/6"
+  ],
+  "forced_gap": "1/6",
+  "not_checked": [
+    "all-core nonattainment by execution",
+    "general controlled compiler",
+    "QE",
+    "Lean"
+  ],
+  "seconds": 0.0006533060004585423,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+}
