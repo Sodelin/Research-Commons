@@ -4,4 +4,6 @@ Owner: CLOUD-G6-SOL-ULTRA-20261007 practical solver lane. Original conditional m
 
 Owned derivative replaces SourceFileLoader with one-read verified-buffer compile/exec and bounds raw rational grammar/length/integer bits before Fraction allocation. Original mathematical body and all original packet hashes stay unchanged. [Contract](CONTRACT-REPAIR.md) states the exact correction and supported input subset.
 
-Next action: one CPU10/wall20/256MiB changed-guard job, including scratch cached-bytecode/read-race and preallocation exponent tests, plus exact comparison of the three controlling geometry fixtures to the immutable original receipt. Publish actual outcomes and request final independent guard review. No data rows, provider forward evaluator or Lean job; useful observed confidence and numerical outer-cover widths remain open.
+Actual changed-guard job completed exit0 under CPU10/wall20/256MiB. [Receipt](RESULT.md): cache ignored, provider read once,7badtext controls refused before any Fraction allocation, and3geometry fixtures exactly equal the original decisions/intervals/residuals. Original10files+manifest and frozen derivative source bytes are unchanged. Primary static guard review reports the correction sound; canonical actual-execution guard receipt remains pending.
+
+Next action: submit immutable derivative/receipt pins for final independent guard acceptance. No data rows, provider forward evaluator or Lean job; useful observed confidence and numerical outer-cover widths remain open.
