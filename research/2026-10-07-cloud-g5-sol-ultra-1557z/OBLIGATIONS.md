@@ -1,0 +1,19 @@
+# G5 full-master obligation register
+
+Assignment CLOUD-G5-SOL-ULTRA-20261007; session CLOUD-G5-20261007T155725Z.
+Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`.
+Status: MASTER IN PROGRESS. Original Astra register IDs retained.
+
+| ID | Evidence/status | Missing implication and next action |
+|---|---|---|
+| G5-A | Full canonical M3/nonplanar/HG statements read and frozen in startup ACK. | Formal original M3 family and complete cluster/split decoder binding. |
+| G5-B | Selected G2 actual timed provider, original arbitrary positive weights/rates. Inherited register-erasure consumer not yet compiled here. | Reconstruct exact import closure and compile consumer; actual conditional triple identity, survival positivity and feasible-route posterior support. |
+| G5-C1 | Corrected polynomial component has exact historical compiler evidence; no full source law follows. | Authenticate receipt; exp substitution/decay, finite-mixture limits and repeated-rate analytic germ uniqueness, then observable support binding. |
+| G5-C2 | Historical safe-past, meeting permanence and pair-only sure-block chronology providers. | Bind deterministic predicates to actual observed laws. |
+| G5-D | Historical representative deletion/persistence providers retain their scoped evidence. | Full original-X initialization, attained times, recomputed ordinary marginals, all-switching persistence, both support directions and termination. |
+| G5-E | Fair-Q normalization preserved as scoped provider. | Every/no-false full rooted clusters, positive-edge interval witnesses and binary-root unordered split assembly. |
+| G5-F | Existing fair-M2 normalized Q and genuine empty/singleton obstruction; no new threshold proof needed. | Retain accepted scope. No arbitrary-weight M2/M3 or HG optimality inference. |
+| HG | Accepted categorical hand theorem; existing bounded exact-block combinatorics. | Actual categorical compiler/positive weights, original bridge-component position bound k and full M_(k+1) assembly; smaller-X convention. |
+| G5-V | Historical exact receipts preserved; initial environment inventoried. | Actual relevant Lean builds, full dependency/axiom audits, source-semantic challenge, reproducible frozen publication/readback. |
+
+Supporting components do not close original-contract gates. G3/G4, biological feasibility and statistical/DNA calibration remain outside this assignment. Shared G2 providers stay read-only.
