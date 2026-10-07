@@ -202,3 +202,9 @@ Their implementation/executable and timed-readout obligations remain separate;
 the new [ancestral proof draft](proof-drafts/AncestralRateFree.lean) is outside
 this frozen build. [Current restart checkpoint](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/checkpoints/20261007T210300Z-G6-SOURCE-BANK-CONTINUATION.md)
 links the exact reviewed scope and subsequent source drafts.
+
+## Source assembly at 21:54 UTC
+
+[Latest actual partial run](verification/evidence/g6-run-37690783097-FAILED/README.md) passed 154 modules / 235 named reports and full 3,786 owned declarations / 2,441 theorems. ResidualProgram now passes; the sole principal calendar law is excluded pending identity normalization. Earlier dated running observations are superseded by this receipt. [Current continuation checkpoint](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/checkpoints/20261007T215400Z-G6-SOURCE-ASSEMBLY-AND-DOT-SPLIT.md) records exact ownership, original Gamma/history candidates, local rational-source density with actual ancestral support, rate/inheritance draft derivatives and remaining gates. None of those unchecked drafts is a full master.
+
+The [actual accepted Dot split](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T215000Z-CLOUD-ACK-CONCRETE-SPLIT.md) keeps this team's formal/numerical source integration and sole compiler, with Dot's complementary conditional-history/reconstruction/G4 proof packets and independent challenge. Dot centralizes user updates; this team handles authorized Commons publication when needed.
