@@ -14,8 +14,14 @@ The proof reuses the accepted G6 positive-baseline and same-endpoint retiming ar
 
 The candidate also gives a concrete obstruction to a materially stronger requirement: if every new physical edge is forced to one fixed rate, a same-endpoint COMMON serial chain has deterministic coalescent duration and cannot realize a nontrivial compound-Poisson signature already at cap three. Original G6 permits freely variable positive finite constant edge rates, so that obstruction does not reject its endpoint.
 
-Status at initial writing: **HAND CANDIDATE, independent review pending.** No contextual source, finite-bank replay or new Lean source theorem has been executed. The existing snapshot `Code` history loss remains a separate formal timed-bin implementation debt. This hand bridge does not repair it by assertion.
+Status at initial writing: **HAND CANDIDATE, independent review pending.** No contextual source, finite-bank replay or new Lean source theorem has been executed. The `Code` history loss in the inspected resume snapshot was a separate formal timed-bin implementation debt. This hand bridge does not repair it by assertion; the parent owns subsequent actual history work.
 
 The earlier scalar G3 module has now actually passed the serialized Lean run: unchanged SHA256 `2f354386c7e8acb103c1665400f654a683aed6603175ddaf9f3451cf638a66b0`, run `37655542723` attempt 2, frozen input `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5`. Its sole declaration appears in the successful 80-declaration audit. See the [actual receipt](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt2-PASS/README.md). This is the finite scalar inequality, not the contextual source theorem, Hölder/source estimates or general G3 closure.
 
 General G3 remains open. G6's accepted hand endpoint and unfinished connected formal assembly retain their exact scopes. Next action: independently review this exact source bridge, then the parent can integrate its assumptions and explicit bound into the frozen actual timed-bin/source route.
+
+## Dated review and next effectivity step
+
+The independent auditor subsequently HAND ACCEPTED the exact contextual bridge and bound substitution with the orientation clarification. The [review receipt](REVIEW-RECEIPT.md) records the exact hashes and immutable canonical audit; the requested [spectral-index clarification](SPECTRAL-NOTATION-CLARIFICATION.md) distinguishes two-/three-root no-merger probabilities from arity indices. Original payloads remain unchanged, and formal timed-bin/source correspondence is still a separate debt.
+
+[EFFECTIVE-ONE-BANK-CONSTRUCTOR.md](EFFECTIVE-ONE-BANK-CONSTRUCTOR.md) advances the next concrete step: a certified finite count-allocation search avoids unimplemented exact ceilings of arbitrary computable reals, then quantizes one actual shared chain's parameters with an explicit full-forest error bound and exact retained baseline. Its effective supplied-input and algebraic-rate conditions are separate from arbitrary hidden-real existence. This continuation is a new hand candidate pending independent review; no new execution is claimed.
