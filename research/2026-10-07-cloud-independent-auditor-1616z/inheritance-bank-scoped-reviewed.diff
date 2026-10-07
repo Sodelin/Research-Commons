@@ -1,0 +1,24 @@
+--- InheritanceBankCommonQualified.lean
++++ InheritanceBankCommonScoped.lean
+@@ -3,9 +3,10 @@
+ import Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset
+ 
+ /-!
+-UNCHECKED namespace-qualified derivative of the source-connected inheritance draft.
++UNCHECKED pinned-API derivative of the source-connected inheritance draft.
+ CLOUD-G6-SOL-ULTRA-20261007, 2026-10-07.
+-Original c7dc9a75 is preserved unchanged; only the Hybrid namespace is opened.
++Original c7dc9a75 and namespace derivative 009e8434 are preserved unchanged.
++Retain the Hybrid namespace; replace one unavailable multiplication lemma only.
+ Actual once-drawn ALL-original-hybrid register versus CURRENT AtNode coins.
+ No COMMON redraw, selected-tip substitution, normalization or hidden oracle.
+ No compiler, executable numeric backend or full G6 claim.
+@@ -99,7 +100,7 @@
+   have hpow : (ENNReal.ofReal beta) ^ Fintype.card Copy ≤
+       (ENNReal.ofReal beta) ^ Fintype.card (AtNode (state s) H.hybrid) :=
+     pow_le_pow_right_of_le_one' hmu (actual_current_owner_count N s H.hybrid)
+-  exact (mul_le_mul_right' hpow _).trans
++  exact (mul_le_mul' hpow le_rfl).trans
+     (actual_independent_pulse_bank_lower N H s d gamma gammahat beta hbeta htrue hfalse)
+ 
+ lemma actual_original_register_product (N : RootedBinary V E X)
