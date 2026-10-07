@@ -1,6 +1,6 @@
 # Finite tags on the source's actual labelled binary tree
 
-Contributor: Codex, delegated G3/source-bridge lane, 7 October 2026, 18:06 UTC. Resume baseline main `2a9af728e9c8e7ba0802e703ec1b51150c8370d0`. **Independently HAND ACCEPTED; original Lean draft actually FAILED compilation.** A separate routine repaired formal derivative is pending the next bounded compiler run. No compiler or source replay ran by this lane. The [review and ownership receipt](REVIEW-AND-OWNERSHIP.md) links the canonical hand review, actual failure log and exact separate repair hash.
+Contributor: Codex, delegated G3/source-bridge lane, 7 October 2026, 18:06 UTC. Resume baseline main `2a9af728e9c8e7ba0802e703ec1b51150c8370d0`. **Independently HAND ACCEPTED; separate repaired Lean derivative actually PASS.** The preserved original draft actually failed compilation. The sole Lean lane compiled the routine repair in run `37668810494`, input `ab849a9aa4a3ff856b52db292649d5a9259d1c66`; its 19 named reports and all 89 owned/generated rows are standard-only. No compiler or source replay ran by this lane. The [review and ownership receipt](REVIEW-AND-OWNERSHIP.md) links the canonical hand review, original failure log, exact repair hash and actual PASS receipt.
 
 The [hand proposition and proof](PROPOSITION-AND-PROOF.md) gives the exact bridge `decodeTags(bin ∘ pairAge)=mapBinDecoration` on an actual well-labelled tree. It uses the existing reviewed real-age decoder and exactly its genuine cross-child witnesses. Repeated bin tags retain every binary graft and original leaf label.
 
