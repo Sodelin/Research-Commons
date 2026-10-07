@@ -6,7 +6,7 @@ The question is whether finite noisy observations yield effective, honest source
 
 ## What the new source chain establishes
 
-| Source | Meaning | Actual execution as of 7 October 2026, 19:05 UTC |
+| Source | Meaning | Actual execution as of 7 October 2026, 20:03 UTC |
 |---|---|---|
 | [FiniteProbability](sources/UnifiedLean/G6/FiniteProbability.lean) | Finite common-subprobability and scaled-domination total-variation/event bounds, retaining zero/full-mass cases | PASS at `89dffaa` in run 37651501035 |
 | [Conditioning](sources/UnifiedLean/G6/Conditioning.lean) | Mass of an actual retained PMF event, normalized filter, same-kernel bind domination and joint finite readout contraction | PASS in that run |
@@ -19,6 +19,7 @@ The question is whether finite noisy observations yield effective, honest source
 | [BinFold](sources/UnifiedLean/G6/BinFold.lean) | Coarsening through the actual record fold; constant-bin fold conditional on every active tag | PASS at `4fed303`, three named reports in that successful run |
 | [BinClock](sources/UnifiedLean/G6/BinClock.lean) | Actual original-clock support inside a fixed bin, simultaneously for all finite budgets; retains the carried old tags | Three named/three owned declarations PASS at `ab849a9`, run37668810494 |
 | [FiniteTagDecoder](sources/FiniteTagDecoder.lean) | Actual pair-age decoding commutes with binning on the supplied well-labelled tree; preserves repeated-tag topology and compatible child swaps | 19 named/89 complete owned rows PASS at `ab849a9` |
+| [ResidualPrefix](sources/UnifiedLean/G6/ResidualPrefix.lean) | Distinct residual-lumped real probability vector, actual-source and same joint-readout error bounds | 13 named/24 owned rows PASS at `cd2383f2` in partial run37675879295; literal-prefix target failed |
 
 The later [successful four-module receipt](verification/evidence/g6-run-37652484086-PASS/README.md) confirms all 61 custom dependency targets and the complete 51-declaration audit passed, using only propext, Classical.choice and Quot.sound. Pinned Mathlib cache was reused. [Independent terminal/source review](../2026-10-07-cloud-independent-auditor-1616z/G6-VERIFIED-PROGRAM-REVIEW.md) accepts this precise unranked component scope. Earlier failed attempts and raw logs remain in the evidence paths. Follow [current status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md) for later results.
 
@@ -142,3 +143,20 @@ at `5ab9f6f`, unchecked and excluded from that running input. The new
 [actual calendar/readout candidate](../2026-10-07-cloud-g3-contextual-source-1716z/complete-calendar-readout-1922z/)
 is preserved at `ac74f73`, pending review/compilation. No full-master status
 changes follow from these drafts.
+
+## Actual residual result at20:03 UTC
+
+[Run37675879295](verification/evidence/g6-run-37675879295-FAILED/README.md)
+failed overall; only the literal-prefix target failed. The residual
+adapter passed13 named reports and24 complete owned rows (including generated
+declarations). The full successful selection is148 modules/152 named reports,
+3,633 owned declarations/2,318 theorems, with no owned/nonstandard axioms
+or missing selected modules. Independent terminal review is pending.
+The literal original and both failed derivatives remain preserved.
+The successor uses a theorem-local inherited transparency setting and the
+reviewed mean-enclosure translation. Frozen `19fafe5c` is under sole
+run37678877661, requesting150 custom modules/171 named reports. No
+terminal result is inferred; the residual source remains unchanged.
+[Actual complete-calendar hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/G3-COMPLETE-CALENDAR-HAND-REVIEW.md)
+is canonical at `254c7109`; the principal joint-law implementation remains
+open, as do cut refinement and the original full-master register.

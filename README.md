@@ -2,7 +2,7 @@
 
 **[What research has actually been done?](RESEARCH-STATUS.md)** — current results across the corpus, the proofs and checks supporting them, and the exact questions still open. Evidence snapshot: 7 October 2026.
 
-Latest verified progress: [all 147 selected modules passed with 139 named reports and a complete 3,609-declaration inventory](research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37668810494-PASS/README.md), including actual clock-to-bin support and the finite-tag tree decoder. [Resume the six-lane workflow](handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md). Browse [all 372 research packets in the frozen corpus index](research/2026-10-07-cloud-lit-organization-1621z/snapshots/20261007T165453Z/PACKET-INDEX.md). Full endpoints and remaining proof connections are explicit in the overview.
+Latest progress: [the distinct residual-source approximation passed Lean in a partial build](research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37675879295-FAILED/README.md); the new literal-prefix helper still failed and is being repaired. [Read what advanced in this session](research/2026-10-07-cloud-g6-sol-ultra-1601z/SESSION-ADVANCEMENTS.md), [resume the six-lane workflow](handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md), or browse [the frozen 372-packet corpus index](research/2026-10-07-cloud-lit-organization-1621z/snapshots/20261007T165453Z/PACKET-INDEX.md). Full endpoints and remaining proof connections are explicit in the overview.
 
 **[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**
 

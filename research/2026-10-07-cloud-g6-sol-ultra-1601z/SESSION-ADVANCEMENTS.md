@@ -106,3 +106,19 @@ clean and resumed the six existing lanes using their durable commits and
 pending obligations. The hosted job was not redispatched. Useful new
 drafts had already been posted; no loss of saved work was observed.
 
+
+## Execution update,20:03 UTC
+
+[The pending job above](verification/evidence/g6-run-37675879295-FAILED/README.md)
+finished FAILED overall. ResidualPrefix genuinely passed13 named statements/
+definitions and24 complete owned rows; only the literal-prefix helper failed.
+The accepted full selection now contains148 modules,152 named reports,
+3,633 declarations and2,318 theorems. The job is preserved at `eb507991`,
+with independent terminal review pending. New literal/mean input `19fafe5c`
+is under sole run37678877661, requesting150 modules/171 named reports;
+no successor outcome is claimed.
+
+[The actual correlated calendar-law hand argument](../2026-10-07-cloud-independent-auditor-1616z/G3-COMPLETE-CALENDAR-HAND-REVIEW.md)
+is now independently accepted and canonical at `254c7109`. The principal
+equality still needs Lean implementation. These strengthen the session
+assessment above without closing the full G6 endpoint.

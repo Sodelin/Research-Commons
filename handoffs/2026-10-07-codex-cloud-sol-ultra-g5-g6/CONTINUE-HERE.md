@@ -36,6 +36,14 @@ The [19:26 continuation checkpoint](checkpoints/20261007T192600Z-G6-SOURCE-CONTI
 adds the accepted tail-bin argument, restricted G4 progress and a separately
 preserved residual-lumped source draft. Original failures remain readable.
 
+**20:03 UTC successor:** [run37675879295 failed overall](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37675879295-FAILED/README.md),
+with the residual-source adapter accepted and only the literal-prefix
+module excluded. The full successful selection is148 modules/152 named
+reports,3,633 owned declarations/2,318 theorems. The successor literal repair plus reviewed mean-enclosure translation is
+frozen `19fafe5c` under sole run37678877661, requesting150 modules/171 reports.
+Inspect its actual newer receipt before any dispatch. [The actual calendar joint law](../../research/2026-10-07-cloud-independent-auditor-1616z/G3-COMPLETE-CALENDAR-HAND-REVIEW.md)
+now has scoped hand acceptance; its principal Lean equality remains open.
+
 Full G5/G6 assembly, general G3/G4 and whole-domain practical accuracy remain
 open. This restart pointer enables continuation; it does not promise
 perpetual background operation or token-free computation.
