@@ -1,0 +1,102 @@
+{
+  "status": "READ-ONLY preflight only, outside current159 frozeninput",
+  "original_six_sources": {
+    "ActualCutTagRefinement": {
+      "named": 10,
+      "theorem_bodies": 9,
+      "definitions": 1,
+      "inductives": 0,
+      "imports": [
+        "UnifiedLean.G6.BinFold",
+        "G2SameClockContinuation",
+        "G2FiniteAncestralTrace"
+      ],
+      "repository_path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCutTagRefinement.lean",
+      "sha256": "d2f118e20df87b861c6d58db42b99b3b282c167916e35fe8327af90d725bf6af",
+      "bytes": 10736
+    },
+    "ActualCutJointLaw": {
+      "named": 8,
+      "theorem_bodies": 5,
+      "definitions": 3,
+      "inductives": 0,
+      "imports": [
+        "ActualCutTagRefinement",
+        "ActualTailBinRow",
+        "G2SameClockPastFutureLaw"
+      ],
+      "repository_path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCutJointLaw.lean",
+      "sha256": "cecd5bf2f987a7075134031aab34a5346a7d3b5088d2865dc8373bbf232ee02b",
+      "bytes": 9175
+    },
+    "ActualCalendarCutContext": {
+      "named": 23,
+      "theorem_bodies": 16,
+      "definitions": 7,
+      "inductives": 0,
+      "imports": [
+        "ActualCutJointLaw",
+        "CompleteCalendarJointLaw"
+      ],
+      "repository_path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCalendarCutContext.lean",
+      "sha256": "11b3f61ba984ed67301d4a05c80e84ce83d552d1d5216412f2578467a7511dd1",
+      "bytes": 24268
+    },
+    "ActualFiniteCutJointLaw": {
+      "named": 8,
+      "theorem_bodies": 7,
+      "definitions": 1,
+      "inductives": 0,
+      "imports": [
+        "ActualCutJointLaw",
+        "ActualCalendarCutContext"
+      ],
+      "repository_path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualFiniteCutJointLaw.lean",
+      "sha256": "0bba28f01ca3f9336f776523518aa86587645b5df1a539a41487483020c610cf",
+      "bytes": 12504
+    },
+    "ActualCalendarEndpointHistory": {
+      "named": 11,
+      "theorem_bodies": 6,
+      "definitions": 5,
+      "inductives": 0,
+      "imports": [
+        "ActualFiniteCutJointLaw",
+        "UnifiedLean.G6.HistoryPrefix"
+      ],
+      "repository_path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualCalendarEndpointHistory.lean",
+      "sha256": "3128992426a7ac45c735e3fc806f24263131f7da73cedf56359eddd4ceee030d",
+      "bytes": 12347
+    },
+    "ActualObservationCutRefinement": {
+      "named": 3,
+      "theorem_bodies": 3,
+      "definitions": 0,
+      "inductives": 1,
+      "imports": [
+        "ActualCalendarEndpointHistory"
+      ],
+      "repository_path": "research/2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/ActualObservationCutRefinement.lean",
+      "sha256": "aa0086b7b65eb3788fe0038a0a7708fec9e17fe64c8582a4b5243b2771a44195",
+      "bytes": 5405
+    }
+  },
+  "new_named_total": 63,
+  "new_proof_bodies": 46,
+  "new_definitions": 17,
+  "new_inductives": 1,
+  "unexpected_custom_imports": [],
+  "current_frozen_input": "10f376e3f58f2e3ea28bd24de75b10a2bbb09ba5",
+  "current_run": 37695092891,
+  "compiler_status": "No compiler ran for these six originals; all remain UNCHECKED and outside current159.",
+  "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "current_input_unchanged": true,
+  "conditional_future_selection_count": {
+    "custom": 165,
+    "named": 358,
+    "G6": 226,
+    "G3": 117,
+    "G5": 15,
+    "status": "If all six were appended to current selected159; not a freeze or next-run request."
+  }
+}
