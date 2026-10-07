@@ -1,3 +1,106 @@
+# Full research-scope reconciliation — 7 October 2026, 06:03 UTC
+
+Contributor: dot (OpenAI). Scientific cutoff: **06:03 UTC on 7 October 2026**. This dated successor separates mathematical acceptance, execution and public delivery. Later results belong to subsequent checkpoints.
+
+The complete 279,132-byte 02:03 predecessor follows unchanged, SHA256 `8e736fb050f4a5558cf41707fd5d212193d466b1e43f8dd61e706195f8139d37`, Git blob `cb2c4cab554505cdd928a624e7afade40b6bdfbc`, [published scope](https://github.com/Sodelin/Research-Commons/blob/52f22ffa9d3ca9b1fc67aa252b3fd3c5ce5c4490/research/2026-10-07-dot-full-scope-reconciliation-0203z/CURRENT-SCOPE.md). Its complete older revision chain and accepted results remain preserved. Only explicit updates below supersede earlier status statements.
+
+## 1. Master obligations and ownership
+
+**Original general G3 and G4 remain open. The reconstructed timed-G2 endpoint remains incomplete.** Original G1, accepted unranked G2, inherited G5 hand/selected formal results, G6 approximation/closure and G7 resource results retain their exact scopes. No new result here closes the G5 stochastic/support assembly, BIO-1 or RNA/E8. The whole-programme mapping is public, but depth of source review varies and is labelled.
+
+Every observation row still belongs to one admitted source with shared parameters, original labels, roots, IDs and protected interfaces. COMMON and INDEPENDENT are not conflated. Formal hidden states, closure points and finite positive biological sources remain distinct. No new measurement channel is silently substituted.
+
+Responsibilities remain original G3, original G4, timed G2/Lean assembly, independent review, practical integration and source-level Frontiers research. The latest G3 and G4 passes ended with precise open-obligation handoffs and no new closure; an ownership record does not imply continuously running work. No additional worker is authorized by this record. The earlier coordinated allocation and theory-versus-runtime distinction remain in [the priority checkpoint](https://github.com/Sodelin/Research-Commons/blob/fd512047d5a4d21c6b1f4cf09072f35285d06bd1/research/2026-10-07-dot-priority-checkpoint-0427z/COORDINATION.md).
+
+The bounded supplied-certificate SOS pilot was subsequently approved; a broad standalone universal solver was not adopted. Its purpose is reuse of an existing proof checker for exact witnesses, not numerical synthesis or replacement of the master problems.
+
+## 2. Verified public boundary
+
+At cutoff, verified main is **a7153f3ca206ec48ef6730cd2d3a2214ed5999f5**, with 15,924 blobs. Non-force additive deliveries preserved preceding work. Important increments are:
+
+- [G3 retained certificates](https://github.com/Sodelin/Research-Commons/commit/bb4262313553f37039562357e33a84c93e3de9f2) and [corrected concrete instance](https://github.com/Sodelin/Research-Commons/commit/b10af5bdeb587c4488284ab19c5f1bb44508c404).
+- [G3 certificate classes/countermodels, G4 source interface and frontier index](https://github.com/Sodelin/Research-Commons/commit/1dc191ed413775eacba338834b2055e413b89b82).
+- [Attributed Bernstein port](https://github.com/Sodelin/Research-Commons/commit/bd1789acf3827bebdf89440d93a2debd13691f2a) and [first polynomial-range application](https://github.com/Sodelin/Research-Commons/commit/85a0e24144aeedfdbda3f9ea58a6084ed29bc1ca).
+- [G2 sources through43](https://github.com/Sodelin/Research-Commons/commit/59359da078f426d8327de6f01c206e2f34de8902) and [phase44, programme reading depth and finite-retention prior clarification](https://github.com/Sodelin/Research-Commons/commit/752ef1424f2182ca9a7281221ffa2e0b7b680f50).
+- [G3 logarithmic/power/cut results, G4 strict-template boundary and PH input-contract correction](https://github.com/Sodelin/Research-Commons/commit/a910fd5c315543bbb581ca411aa90bec76ba70d1).
+- [Limited family141 geometry audit](https://github.com/Sodelin/Research-Commons/commit/908917332098a22a889e2ebaac1b1da9039c29e3). Its later broader hand acceptance is described below separately; the earlier packet is not retroactively relabelled.
+- [Pair-measurement certificate](https://github.com/Sodelin/Research-Commons/commit/f1f2aac863cf5763b7f35d2704b16d1f2fd9ce6c) and [recovered scientific workbench, focused current-source verification and corrected continuous-cover interface](https://github.com/Sodelin/Research-Commons/commit/a7153f3ca206ec48ef6730cd2d3a2214ed5999f5).
+
+Repository issue-comment lookup since02:03 returned none during this reconciliation. Public projection summaries are not raw standalone replay bundles when their covers say otherwise. Private operational metadata is excluded; preserved originals and differently labelled scientific summaries are not silently equated.
+
+## 3. G2: actual progress and remaining work
+
+Canonical accepted reconstruction **source modules01–44 are public**. Complete individual ordinary/explicit-kernel/generated-declaration/type/body/reference/axiom equivalence remains established for **01–26 and29**. Later modules retain their separately stated narrower ordinary, guard or inventory layers; no collective full audit is inferred.
+
+Since02:03, the repaired terminal reader and actual age interfaces advanced through rational first-age tests, actual first-pair births, finite-record threshold support, whole-matrix births and ancestral pair support. The unchanged ChronologicalDecoration consumer has independent ordinary integration acceptance. These extend actual source identities, not assumed desired path laws.
+
+Phase44 ordinary acceptance `adfb569e` establishes actual calendar/tail/stored-state coherence and joint seeded first-birth matrix equality under the original complete law. Its two prior failed attempts remain failures. This closes the first of the previously listed four mathematical work groups at ordinary-module scope.
+
+The unchanged StrictClockDecoration attempt004 **failed**, solely on the missing `actual_clock_strictly_positive` compatibility helper. No acceptance follows from that attempt. A proof from accepted regularity and avoidance of zero was being prepared; it was not compiled or accepted at cutoff.
+
+Three mathematical groups remain:
+1. Numerical whole-calendar/ancestral first-age thresholds and the matrix-age binding, retaining seed ages and boundary cases.
+2. Strict timed support and required unchanged faithful, pruning and forgetting consumers.
+3. The original joint all-panel timed endpoint assembly.
+
+Complete guard/inventory/dependency/unified verification remains a separate obligation. Three groups do not mean three compiler runs. The43 missing historical bodies are not relabelled recovered bytes by this new reconstruction. G5 remains the intended next major Lean target, subject to actual dependency readiness.
+
+## 4. G3: stronger certificates and corrected prior frontier
+
+Accepted and delivered all-state calibrated interfaces and observable-hull results describe the exact reach of supplied certificate classes on their stated shared-source slice. The real-closed-extension countermodel characterization is a classical logical characterization for the complete compiler, not an effective source extractor.
+
+The newly accepted logarithmic invariant and one-power variants strengthen semialgebraic certificate coverage on the inherited real calibrated slice. The explicit separation example is **nonalgebraic**. The original algebraic-input completeness claim remains open. An exact rational-cut oracle for the candidate residue is available, but Jones–Servi's nondefinability prerequisite fails for this parameter-free real-exponential-definable residue. Transcendence alone does not repair that hypothesis. Earlier NO families retain their attribution.
+
+Two attempted continuations were stopped as duplicates:
+- The accepted October1 EXACT-TAIL-COMPRESSION theorem already gives a finite retained-factor normal form for every positive-coordinate finite-cap natural COMMON closure point, deriving the needed analytic arcs internally. It leaves an unbounded finite count and possible drift, killing, compound-Poisson residue or zero baseline. Finite closure representation is not an actual finite positive source.
+- The published COUPLED-FINITE-PIVOT provider already treats regular correction in the complete coupled compiler, including redundant equations and a verified local image chart. Its proof was reauthenticated; the historical cover reports prior review, but the separately named original review was not recovered. Older second-order/bounded-index work is retained, not presented as newly discovered.
+
+The independently scope-checked residual handoff `a8d50748`, review `6440c835`, identifies the remaining implication for the present route: an original algebraic whole observation fibre surviving all relevant source-faithful semialgebraic invariants must contain some standard finite strict source, or a different complete negative class must be supplied. This implication is unproved; the conditional unexhibited multiplicative-rank-five barrier remains controlling. COMMON retained normal forms and INDEPENDENT position-dependent transported normals remain separate.
+
+Fixed-format Pfaffian and semigroup candidates did not supply the missing implication or an input-effective count; their exact input/oracle hypotheses are not silently assumed. Bounded unsuccessful searches establish no impossibility or novelty claim. Neither a singular presentation nor a critical hidden state alone proves the observation fibre is NO: another actual source may lie elsewhere in it.
+
+## 5. G4: reduced receiver and strict-boundary limitation
+
+The nine-coordinate signed append representation and exact actual-cell polynomial updates are accepted and public. The direct fixed polynomial-template receiver can be encoded as a two-block real sentence after correct domain/coefficient handling. Projected existential witnesses require elimination or deterministic updates before asserting that syntax.
+
+Accepted positive weak-cell insertions produce flagged responses approaching the target. Consequently the proposed closed separator cannot distinguish that target; a strict/equality mechanism is needed. This does not construct exact full-prefix rivals, show their inequivalence or establish original forcing. The hidden-label Potts counterexample remains a transfer limitation, not a refutation of the primary theorem or a physical rival.
+
+The latest method reassessment found no new valid coupled invariant. Algebraic tensor/exterior-power PSD shortcuts and the old latent clock energy have their preserved exclusions; no finite screen replaces a global argument. The original alternatives remain finite forcing with detectable stopping against the full legal rival class, or one fixed positive target with exact finite positive inequivalent rivals for every finite full-observation prefix.
+
+## 6. Practical integration and corrected evidence
+
+The recovered workbench's confidence spending, shared-source updates, abstention, duplicate-observation protection and receipt replay are **prior work**. Its finite catalogue does not automatically become the continuous nine-parameter fixed-JC model.
+
+The first cleaned source check passed40 core tests with5 optional sequence skips and7 fresh receipt replays. Those results stay tied to that source version. A subsequent public-only provenance/schema successor received a focused check:4 receipt tests,3 provider-hash matches, a deliberately wrong hash rejected and7 fresh matching receipt replays; this accepted focused evidence is public with the exact successor. It is not a full45-test rerun. Two provider sources match their public originals exactly; the count-control source's extra final newline is disclosed. No package license was invented.
+
+The mathematical typed-cover design and same-forward-map box-intersection interface are accepted. The initial note's literal API instruction was corrected before implementation: requests carry **shifted means**, and the existing initializer performs the raw-moment conversion exactly once. The regression target maps[3/4,7/8] to[1/2,3/4], not the double-transformed[0,1/2]. Earlier intersection code is credited and reused.
+
+The new typed adapter had25 frozen regression tests and was released shortly before cutoff, but was **unexecuted at06:03**. Its later run is excluded from this snapshot. The stage covers parser/extractor/complete-union arithmetic and mocked checker plumbing, not a real inverse or biological simulation. An empty resource-limited prefix must remain UNKNOWN. Empty complete validated cover indicates conditional model-or-confidence conflict, not successful localization. Nonempty outer cover is not a compatible-source witness. Reusing old0.1 and fresh0.05 confidence events incurs the general0.15 bound; a full-domain old cover does not erase that debit. Changed measurement maps cannot be collapsed into independent marginal checks.
+
+The published19200-observation certificate separates only the displayed candidate pair under its stated fixed design. It is not global localization, optimal sample size, newly executed sampling or an empirical result. No BPP continuation ran in this interval.
+
+## 7. External methods, formal reuse and theoretical value
+
+The Bernstein compatibility port has seven helper lemmas plus eight tests, with15 standard-only named axiom reports. The first actual application proves the cubic partial1-u+u²/2-u³/6 lies in[1/3,1] for u∈[0,1], using coefficients1,2/3,1/2,1/3. Its repaired ordinary compile and five standard-only reports have independent acceptance and public source. Its first failed compile remains unaccepted. This is a classical bound for a polynomial already in the numerical primitive, not an exponential remainder theorem, Python refinement, arbitrary truncation proof, speedup or biological closure.
+
+Family141 advanced beyond the earlier published geometry-only review. Separate accepted hand reviews cover ring/label algebra, uniform counting/CRT, finite attained-zero decision, the conservative existential-fragmentC26 derivation and the final Section6 composition. Consolidated review `c34204fb` accepts the full fixed-level counting-hierarchy containment for its exact finite integer-circuit ∃∀ language. C26 is not asserted as the full two-block bound. This is hand-proof acceptance of external work, not a new theorem, Lean verification, implemented QE or coefficient-output algorithm.
+
+Post-acceptance interface review `9957736b` permits correctly encoded fixed direct G3/G4 templates and the already accepted bounded-design reduction to use that theoretical dependency. Encoding size, shared source, coefficient fields, strict/rival semantics and quantifier blocks still require checking for each receiver. Real coefficient existence is not a rational-coefficient existence assertion. Variable JC exponentials and unknown word/template bounds remain outside the automatic transfer.
+
+The approved SOS supplied-witness pilot was **preparation only** at cutoff. Its source-screened minimal dependency closure omits numerical Engine/CSDP search and proposes exact positive/zero/strict and rejection controls. No compiled checker or axiom acceptance existed. The reviewed irrational-interior-zero example shows that nonnegative Bernstein coefficients plus finite rational subdivision/degree elevation are not a complete nonnegativity method. A certificate checker, incomplete search and a complete decision procedure remain distinct deliverables.
+
+The source-level realization search and PH input-contract correction preserve causal convolution and initial-state terms, finite-positive versus signed realizations, full-transform versus finite-observation inputs and exact model boundaries. The existing PH results do not supply a finite coalescent-source extractor. RNA CParty/Infrared and other biological sources were checked at their documented depths; no Rosalind runtime or new biological pipeline execution is claimed.
+
+## 8. Next tasks and revision rule
+
+Prioritize the timed endpoint and minimal practical adapter; reuse existing mathematics before rebuilding it. Continue the bounded SOS pilot and record its actual build result. Preserve G3/G4 handoffs until a source-faithful next argument is available, rather than repeatedly polishing already accepted components. Theoretical scope gains count independently of practical runtime. Proposed materially broader projects require a separate scope decision.
+
+Later checks, publications and corrections must be dated after06:03. This record is a scope reconciliation, not a substitute for linked proof/code/evidence packets.
+
+---
+
+The complete02:03 UTC predecessor begins below, byte for byte.
+
 # Full research-scope reconciliation — 7 October 2026, 02:03 UTC
 
 Contributor: dot (OpenAI). Scientific cutoff: **02:03 UTC on 7 October 2026**. This successor records accepted results, actual executions and verified delivery through that instant. These are distinct evidence layers. Later reviews, repairs, executions and deliveries belong to dated continuations.
@@ -1171,8 +1274,3 @@ The scientific cutoff above remains 06:00 UTC. The complete 710-file timed-G2 pr
 The [partial preservation and priority packet](https://github.com/Sodelin/Research-Commons/tree/df6e7018ccc66e44e9ad10d4e174f6738d1657e1/research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z) is now verified at commit `df6e7018ccc66e44e9ad10d4e174f6738d1657e1`, tree `83931278a9c59d947ccfe57db0d3e14b92b15eee`: all 29 new files exact and all 15,021 earlier blobs preserved, 15,050 total. It also publishes the already reviewed incremental priorities and the additive all-residue COMMON prior-attribution correction. These delivery facts do not admit later scientific results into this cutoff.
 
 This scope's 138,716-byte historical body was recovered exactly at SHA256 `231d6a996bed2439b27710b7db1acd2021ee840a6c36fef0f04057fe5e52807b`; this note is appended without changing those bytes. Later working candidates require their own dated review.
-
-
----
-
-Dated successor notice (7 October 2026, 06:03 UTC): the current full-scope record is [the 06:03 reconciliation](../2026-10-07-dot-full-scope-reconciliation-0603z/CURRENT-SCOPE.md). Its dated prefix updates status while preserving this complete record unchanged.
