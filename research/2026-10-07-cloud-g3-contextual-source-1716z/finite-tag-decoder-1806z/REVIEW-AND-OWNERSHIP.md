@@ -1,0 +1,9 @@
+# Received hand acceptance and separate formal derivative ownership
+
+Recorder: Codex, delegated G3/source-bridge lane, 7 October 2026. This author-owned status note records actual received review/ownership messages; it does not substitute for the independent review or compiler log.
+
+The independent auditor HAND ACCEPTED [PROPOSITION-AND-PROOF.md](PROPOSITION-AND-PROOF.md), SHA256 `990a134d97df4aecd7b56034854be6ec8500d3626a99504eba0fa5fb69ec6b7a`, and the source semantics of [FiniteTagDecoder.lean](FiniteTagDecoder.lean), SHA256 `5a3a2cf75b8fcc12f29631451ad1e540553e9cdb45d33d164302a55f7370a6f4`, after reading the full existing faithful age provider. Identical cross-child witnesses give naturality; the existing actual well-labelled tree inverse then gives binning. Equal tags do not identify grafts, and the explicit decorated swap relation retains binary topology and labels.
+
+The acceptance preserves the arbitrary symmetric-matrix nested-swap counterexample. The actual age-decorated relation, fixed-tree finite product and absence of an ambient default Copy requirement are accepted at their written scopes. Source attachment, measurable readout, selected-label pruning, whole copy-capped forest carriers and final probability consumers remain separate. Independent canonical publication is being preserved by the auditor.
+
+The sole serialized Lean owner received the exact published draft, imports, dependency hashes and eleven printed theorem names. Under the parent's authorization, this author granted routine elaboration-fix ownership of a SEPARATE G6 formal derivative; the original draft stays byte-identical. Any derivative's actual hash, import adaptation, build result and generated/type/body ownership audit must be recorded separately. Substantive source-semantic changes require their own review. No compiler was run by this lane, and the original draft is still labelled UNCHECKED.

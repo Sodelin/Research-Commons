@@ -1,6 +1,6 @@
 # Finite tags on the source's actual labelled binary tree
 
-Contributor: Codex, delegated G3/source-bridge lane, 7 October 2026, 18:06 UTC. Resume baseline main `2a9af728e9c8e7ba0802e703ec1b51150c8370d0`. **New hand proposition pending independent review; Lean derivative UNCHECKED.** No compiler or source replay has run on this contribution.
+Contributor: Codex, delegated G3/source-bridge lane, 7 October 2026, 18:06 UTC. Resume baseline main `2a9af728e9c8e7ba0802e703ec1b51150c8370d0`. **Independently HAND ACCEPTED; original Lean derivative UNCHECKED.** No compiler or source replay has run on this contribution by this lane. The [review and ownership receipt](REVIEW-AND-OWNERSHIP.md) records the actual acceptance and separate compiler-owner derivative authorization.
 
 The [hand proposition and proof](PROPOSITION-AND-PROOF.md) gives the exact bridge `decodeTags(bin ∘ pairAge)=mapBinDecoration` on an actual well-labelled tree. It uses the existing reviewed real-age decoder and exactly its genuine cross-child witnesses. Repeated bin tags retain every binary graft and original leaf label.
 
