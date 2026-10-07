@@ -241,7 +241,9 @@ theorem actual_complete_joint_source_law (N : RootedBinary V E X)
   simp only [id_eq] at hr
   rw [hr]
   have hk := finite_joint_kernel_measure Γ Prod.fst (completionKernel N r) g
-  simpa only [Γ, g, jointTailKernel, id_eq] using hk
+  change _ = (Γ.bind (fun a =>
+    (completionKernel N r a.1).map (fun b => g (a, b)))).toMeasure
+  exact hk
 
 #print axioms calendar_joint_pmf_toMeasure
 #print axioms pmf_singleton_restrict
