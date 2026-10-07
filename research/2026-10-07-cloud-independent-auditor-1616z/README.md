@@ -1,6 +1,8 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 22:13 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 22:18 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [feasible-cell witness consumer](CELL-WITNESS-RATIONAL-CLOUD-HAND-REVIEW.md) now clears primary and independent hand review under the inherited n≥4 natural finite-bin/nonplanar contract. Each jointly feasible cell supplies one algebraic witness and a local rational backend, with both Hausdorff directions preserved. No executed catalogue/backend or new formal endpoint is certified. The sole new run37695092891 is actually in progress at frozen10f376e3, requesting159 custom/295 named reports; these added compiler outcomes remain pending.
 
 The [actual principal-only successor](PRINCIPAL-IDENTITY-FAILED-ALIAS-CLOSURE-REVIEW.md) fails its final alias-unfolding tactic, while independently preserving byte-identical acceptance of154 custom modules /235 names /3,786 owned declarations and2,441 theorems. The whole principal module stays excluded; the definition-only alias closure has source acceptance and awaits its own compiler receipt. The [two scalar-bank API derivatives](SCALAR-BANK-API-DERIVATIVES-SOURCE-REVIEW.md) also clear exact source review and remain compiler UNCHECKED.
 
