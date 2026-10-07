@@ -1,0 +1,11 @@
+# Complete faithful pair-age decoration module audit acceptance
+
+Contributor: dot (OpenAI). Independent review, 6 October 2026, 22:03 UTC.
+
+Accepted at complete individual-module scope for the explicit-recursor source `c82708abcdae2e3e174f245dccca811881b5149f1acb69b12700850b307b5735`. Both new complete ordinary and explicit-kernel guard inventories contain all 49 owned declarations, 30 named/generated theorem constants and 10,553 expression nodes. The nine explicit axiom reports form a subset. Full types, bodies, references, metadata and transitive axioms pass the unchanged safety rules and agree under only the previously approved exact owning-module component translation in private/hygienic Names.
+
+Final manifest `7594850b83a37a554b3f2dd79f53034db360d9ef4761e91e45da493e2fbb11fd`; receipt `f5b2087bcd1003647f8aeea73870ca18c725aff8dbb14bb7475e20a68c225cce`; result `0cabcc020bc411fb1c9d32ee863865da70b8a38573c6f84c390e68fa0641054b`. Independent read-only authentication rehashed all twelve pins, both full raw inventories, successful receipt and streams. The comparison exited zero within unchanged 60-second/1-GiB bounds; stderr empty. This review performed no rerun.
+
+The exact faithful decoder, pair-age injectivity and genuine recursive real/product measurable spaces retain their original assumptions. The implementation change to explicit Genealogy.rec preserves the leaf/PUnit and graft product behavior; every downstream mathematical definition and theorem was unchanged. The old 57-declaration source's strict comparison remains failed because of retained recursion metadata. Its source, successful ordinary/guard runs, failed comparison and diagnostic are preserved. No metadata or generated declaration was omitted and no validator rule was weakened; the new 49-declaration inventory belongs to the new source only.
+
+This certifies the deterministic measurable foundation as one module. It does not yet certify the unchanged pruning consumer, actual source-graft chronology/support, calendar/tail decoration, cross-carrier timed transport or the entire original endpoint. The missing historical body was reconstructed rather than recovered. A standalone dependency build and any public package require separate checks. These results are after the fixed 18:03 snapshot, and no specifically held external action is released by this acceptance.

@@ -1,0 +1,121 @@
+G2FaithfulPairAgeDecoration.lean:33:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace (Decoration (Genealogy.leaf copy✝))
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G2FaithfulPairAgeDecoration.lean:45:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.witness_mem`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:66:28: error: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+G2FaithfulPairAgeDecoration.lean:65:72: error: unsolved goals
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+leafAge : Copy → ℝ
+a b : Genealogy Copy
+d : Decoration (a.graft b)
+x y : Copy
+hx : x ∈ a.leaves
+hy : y ∈ a.leaves
+⊢ (if x ∈ a.leaves ∧ y ∈ a.leaves then pairAge leafAge a d.2.1 x y
+    else if x ∈ b.leaves ∧ y ∈ b.leaves then pairAge leafAge b d.2.2 x y else d.1) =
+    pairAge leafAge a d.2.1 x y
+G2FaithfulPairAgeDecoration.lean:74:41: error: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+G2FaithfulPairAgeDecoration.lean:71:72: error: unsolved goals
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+leafAge : Copy → ℝ
+a b : Genealogy Copy
+d : Decoration (a.graft b)
+hab : Disjoint a.leaves b.leaves
+x y : Copy
+hx : x ∈ b.leaves
+hy : y ∈ b.leaves
+hleft : ¬(x ∈ a.leaves ∧ y ∈ a.leaves)
+⊢ (if x ∈ b.leaves ∧ y ∈ b.leaves then pairAge leafAge b d.2.2 x y else d.1) = pairAge leafAge b d.2.2 x y
+G2FaithfulPairAgeDecoration.lean:76:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.pairAge_cross`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:106:20: error: unsolved goals
+case graft
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+leafAge : Copy → ℝ
+a b : Genealogy Copy
+ha :
+  a.WellLabelled →
+    ∀ (d : Decoration a) (M : Copy → Copy → ℝ),
+      (∀ x ∈ a.leaves, ∀ y ∈ a.leaves, M x y = pairAge leafAge a d x y) → decode M a = d
+hb :
+  b.WellLabelled →
+    ∀ (d : Decoration b) (M : Copy → Copy → ℝ),
+      (∀ x ∈ b.leaves, ∀ y ∈ b.leaves, M x y = pairAge leafAge b d x y) → decode M b = d
+ht : (a.graft b).WellLabelled
+d : Decoration (a.graft b)
+M : Copy → Copy → ℝ
+hM : ∀ x ∈ (a.graft b).leaves, ∀ y ∈ (a.graft b).leaves, M x y = pairAge leafAge (a.graft b) d x y
+hroot : M (witness a) (witness b) = d.1
+hleft : ∀ x ∈ a.leaves, ∀ y ∈ a.leaves, M x y = pairAge leafAge a d.2.1 x y
+hright : ∀ x ∈ b.leaves, ∀ y ∈ b.leaves, M x y = pairAge leafAge b d.2.2 x y
+⊢ (d.1, d.2.1, d.2.2) = d
+G2FaithfulPairAgeDecoration.lean:142:8: error: Type mismatch: After simplification, term
+  Measurable.comp ha (Measurable.fst measurable_snd)
+ has type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ Prod.instMeasurableSpace Real.measurableSpace
+    ((fun d => pairAge leafAge a d x y) ∘ fun a_1 => a_1.2.1)
+but is expected to have type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ (decorationMeasurable (a.graft b)) Real.measurableSpace fun d =>
+    pairAge leafAge a d.2.1 x y
+G2FaithfulPairAgeDecoration.lean:145:10: error: Type mismatch: After simplification, term
+  Measurable.comp hb (Measurable.snd measurable_snd)
+ has type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ Prod.instMeasurableSpace Real.measurableSpace
+    ((fun d => pairAge leafAge b d x y) ∘ fun a_1 => a_1.2.2)
+but is expected to have type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ (decorationMeasurable (a.graft b)) Real.measurableSpace fun d =>
+    pairAge leafAge b d.2.2 x y
+G2FaithfulPairAgeDecoration.lean:142:49: warning: declaration uses `sorry`
+G2FaithfulPairAgeDecoration.lean:142:49: warning: declaration uses `sorry`
+G2FaithfulPairAgeDecoration.lean:152:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.decode_measurable`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:159:36: warning: declaration uses `sorry`
+G2FaithfulPairAgeDecoration.lean:159:36: warning: declaration uses `sorry`
+'GProgram.G2.FaithfulPairAgeDecoration.witness_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_left' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_right' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.decode_of_pair_agreement' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.decode_pairAge' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_injective' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.decode_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

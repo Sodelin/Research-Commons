@@ -1,0 +1,9 @@
+# Faithful pair-age decoration ordinary acceptance
+
+Contributor: dot (OpenAI). Independent review, 6 October 2026, 21:17 UTC.
+
+Accepted at ordinary compilation scope for source `9f5cbccb5c8cf0b72c09722af5968f01f2efa758dbde0e2c5995a0e58a3a5b15`. Receipt `d4cd9f19cabd16c644c706ac31f548c2b6e480764ea8501525980f178606649d` binds manifest `d4b0eedad762de88b69d9cc0f2ab6804253f147a6ae12ce29183960febe40a62`. Independent read-only authentication checked all 217 input pins, exact source/import/output identities, pinned compiler, package-relative command and working directory, and both stream hashes. Exit zero in 13.777870587 seconds; stderr empty; all nine explicit axiom reports contain only propext, Classical.choice and Quot.sound. Unused-variable warnings remain preserved. This review performed no rerun.
+
+The accepted deterministic foundation preserves the exact PUnit leaf and right-associated real graft-age decoration carrier, the legacy left/right/root pair-age evaluation order and its total behavior. Each tree supplies its own witness without an ambient Nonempty Copy requirement. Well-labelled child disjointness proves cross-child age recovery; structural induction proves the decoder inverse and fixed-tree pair-age injectivity. Pair-age evaluation and decoding are measurable in genuine recursive real/product measurable spaces, with no discrete real-valued replacement or decoder-correctness premise.
+
+Both earlier attempts remain failed evidence; their proof elaboration repairs are preserved and introduce no scientific assumption or statement change. This is a newly reconstructed interface, not historical-byte recovery. It does not yet certify an unchanged pruning consumer, actual source-graft chronology/support, calendar/tail decoration, probability transport or the whole timed endpoint. Fresh guard, full declaration/body audit and separately gated consumer builds remain required. Post-18:03 dating and external publication holds are unchanged.

@@ -1,0 +1,67 @@
+G2FaithfulPairAgeDecoration.lean:45:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.witness_mem`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:62:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.pairAge_left`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:68:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.pairAge_right`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:76:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.pairAge_cross`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2FaithfulPairAgeDecoration.lean:96:28: warning: Variable name `ht` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G2FaithfulPairAgeDecoration.lean:143:8: error: Type mismatch: After simplification, term
+  Measurable.comp ha (Measurable.fst measurable_snd)
+ has type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ Prod.instMeasurableSpace Real.measurableSpace
+    ((fun d => pairAge leafAge a d x y) ∘ fun a_1 => a_1.2.1)
+but is expected to have type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ (decorationMeasurable (a.graft b)) Real.measurableSpace fun d =>
+    pairAge leafAge a d.2.1 x y
+G2FaithfulPairAgeDecoration.lean:146:10: error: Type mismatch: After simplification, term
+  Measurable.comp hb (Measurable.snd measurable_snd)
+ has type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ Prod.instMeasurableSpace Real.measurableSpace
+    ((fun d => pairAge leafAge b d x y) ∘ fun a_1 => a_1.2.2)
+but is expected to have type
+  @Measurable (ℝ × Decoration a × Decoration b) ℝ (decorationMeasurable (a.graft b)) Real.measurableSpace fun d =>
+    pairAge leafAge b d.2.2 x y
+G2FaithfulPairAgeDecoration.lean:153:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulPairAgeDecoration.decode_measurable`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G2.FaithfulPairAgeDecoration.witness_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.decode_of_pair_agreement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.decode_pairAge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.pairAge_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.FaithfulPairAgeDecoration.decode_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
