@@ -1,6 +1,8 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 22:04 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 22:08 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [signed receiver guard derivative](SIGNED-RECEIVER-GUARD-REPAIR-REVIEW.md) now clears source/code review and inspected author controls: the verified byte buffer executes directly, and bounded n/d parsing precedes Fraction allocation. The same three geometry results remain exact; observed confidence and a useful complete cover remain open.
 
 The [principal identity repair](PRINCIPAL-IDENTITY-REPAIR-SOURCE-REVIEW.md) has exact one-line source-semantic acceptance, with actual successor37693022664 still pending at the dated review. The [new upper-rate interval adapter](UPPER-RATE-INTERVAL-DRAFT-SOURCE-REVIEW.md) has accepted intended source semantics and three identified static API corrections; all eleven new declarations remain compiler UNCHECKED and outside that successor.
 
