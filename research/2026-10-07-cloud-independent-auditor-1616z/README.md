@@ -1,8 +1,10 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 16:47 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 16:57 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The current G6 four-module source/program component **passed** actual ordinary compilation and the 51-declaration axiom audit. This auditor independently retrieved and parsed the terminal log, checked source/runtime identities and accepted the current unranked genealogy/population/register semantics. Full G6 remains open: omitted prior event/bin history prevents the arbitrary snapshot readout from supplying the protected timed-bin observation interface.
+
+The subsequent [expanded-run audit](EXPANDED-RUN-AND-G5-DIAGNOSTIC.md) records real PASS evidence for three additive program-budget lemmas, a failed Taylor translation with rejected consumers, and byte-exact recovery of the stopped G5 analytic failure. The earlier four-module PASS remains controlling for its frozen sources; a failed expanded job does not erase those achievements or certify its failed additions.
 
 | Review | Current scoped result | Evidence type |
 |---|---|---|
