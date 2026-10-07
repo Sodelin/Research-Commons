@@ -1,0 +1,31 @@
+test_authentic_old_literal_fixture (test_joint_betting.JointBettingControls.test_authentic_old_literal_fixture) ... FAIL
+test_complete_rows_not_pseudoreplicated (test_joint_betting.JointBettingControls.test_complete_rows_not_pseudoreplicated) ... ok
+test_direction_weight_and_budget_guards (test_joint_betting.JointBettingControls.test_direction_weight_and_budget_guards) ... ok
+test_exact_martingale_on_perfectly_dependent_joint_law (test_joint_betting.JointBettingControls.test_exact_martingale_on_perfectly_dependent_joint_law) ... ok
+test_first_locus_uses_no_current_outcome (test_joint_betting.JointBettingControls.test_first_locus_uses_no_current_outcome) ... ok
+test_fixture_identity_rejected (test_joint_betting.JointBettingControls.test_fixture_identity_rejected) ... ok
+test_full_domain_mean_box_stays_unknown (test_joint_betting.JointBettingControls.test_full_domain_mean_box_stays_unknown) ... ok
+test_interval_factor_contains_every_sampled_candidate_grid_point (test_joint_betting.JointBettingControls.test_interval_factor_contains_every_sampled_candidate_grid_point) ... ok
+test_joint_direction_can_exclude_without_marginal_tail_union (test_joint_betting.JointBettingControls.test_joint_direction_can_exclude_without_marginal_tail_union) ... ok
+test_plan_hash_binds_direction_change (test_joint_betting.JointBettingControls.test_plan_hash_binds_direction_change) ... ok
+test_resource_stop_is_unknown (test_joint_betting.JointBettingControls.test_resource_stop_is_unknown) ... ok
+
+======================================================================
+FAIL: test_authentic_old_literal_fixture (test_joint_betting.JointBettingControls.test_authentic_old_literal_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/cloud-practical/research/2026-10-07-cloud-practical-1619z/test_joint_betting.py", line 30, in test_authentic_old_literal_fixture
+    self.assertEqual(rows, ((1,) * 9, (1, 0, 0, 0, 0, 0, 1, 1, 0)))
+AssertionError: Tuples differ: ((1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 0, 0, 1, 0, 1, 1, 1)) != ((1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 0, 0, 0, 0, 0, 1, 1, 0))
+
+First differing element 1:
+(1, 1, 0, 0, 1, 0, 1, 1, 1)
+(1, 0, 0, 0, 0, 0, 1, 1, 0)
+
+- ((1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 0, 0, 1, 0, 1, 1, 1))
++ ((1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 0, 0, 0, 0, 0, 1, 1, 0))
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.026s
+
+FAILED (failures=1)
