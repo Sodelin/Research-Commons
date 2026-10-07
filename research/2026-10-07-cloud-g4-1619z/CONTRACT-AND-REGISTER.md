@@ -23,10 +23,10 @@ The present proof concerns natural private INDEPENDENT bridge words only. It sup
 | Supplied finite private-chain equality | [unknown-size boundary and normal-form pointers](../2026-10-01-sol61-g4-allcopy-2237z/UNKNOWN-SIZE-STOPPING-BOUNDARY.md) | Established inherited component | A supplied description/length bound is stronger input |
 | Exact positive ordinary returns | [uniform cap-four returns](../2026-10-04-dot-cap-four-uniform-returns-2030z/README.md) | Established at cap four | All-cap full kernels remain unproved |
 | Source-specific all-word state | [all-cell annihilation](../2026-10-07-dot-g4-exact-all-cell-annihilator-0002z/README.md), [bilinear reduction](../2026-10-07-dot-g4-exact-bilinear-source-reduction-0023z/README.md), [append interface](../2026-10-07-dot-g4-coupled-source-state-interface-0252z/README.md) | Independently accepted hand components | Coupled equality/sign case remains OPEN |
-| New chronological cancellation | [hand proof](CHRONOLOGICAL-CANCELLATION.md) | Submitted for review | Challenge strict diagonal monotonicity and same-source weights |
+| New chronological cancellation | [hand proof](CHRONOLOGICAL-CANCELLATION.md) | Independently hand accepted at exact bytes | Preserve original full-target limitation |
 | Original observation-to-stopping/rival bridge | Current 10:03 full-scope reconciliation | OPEN | Prove all-rival transfer/effectivity, or exact full-prefix construction |
 | Lean endpoint | [selected historical G4 formalization](../2026-10-02-sol61-g4-lean-handoff-0424z/HANDOFF.md) | Partial component coverage | No current full G4 theorem/build; no new run here |
-| Publication and review | Isolated branch based on fresh main; this packet | Local submitted proof until readback | Obtain independent review, non-force publication/readback |
+| Publication and review | Isolated branch based on fresh main; this packet | Initial packet on main 3fa9e12; two hand acceptances received | Preserve candidate statuses and updated non-force readback |
 
 ## Reuse boundaries
 

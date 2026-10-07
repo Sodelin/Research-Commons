@@ -17,4 +17,6 @@ The strongest unresolved gate is an exact arbitrary-word equality/rigidity argum
 
 Actual evidence is mixed and labelled. Historical finite tester/forest controls and cap-four symbolic source checks ran; selected G4 two-root/clock/source Lean modules compiled in the [historical formal handoff](../2026-10-02-sol61-g4-lean-handoff-0424z/HANDOFF.md). The all-word frontier is independently reviewed hand mathematics. There is no formal full G4 endpoint, and this Cloud G4 lane has performed no new Lean/compiler run or source-search execution.
 
-The current lane adds the [exact chronological cancellation necessary condition](CHRONOLOGICAL-CANCELLATION.md), pending independent review. It narrows the all-word proof attack while preserving the open endpoint.
+The current lane adds the [exact chronological cancellation necessary condition](CHRONOLOGICAL-CANCELLATION.md), and its all-arity extension, with actual independent hand acceptance. It narrows the all-word proof attack while preserving the open endpoint.
+
+Two further source-admitted existence candidates show exact cancellation of selected upper bands, and of those bands plus the 9-to-4 scalar. They are unreviewed and do not satisfy the full ordinary target constraints. They are recorded separately from accepted results in [the packet index](README.md).
