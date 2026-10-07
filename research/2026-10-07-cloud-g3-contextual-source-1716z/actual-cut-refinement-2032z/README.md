@@ -19,3 +19,6 @@ The preceding five-body renewal and sixteen-body context sources now have canoni
 
 
 [Original-calendar cut assembly](ORIGINAL-CALENDAR-CUT-ASSEMBLY.md) now connects the original unrefined Gamma to that refined history reader through finite legal interval subdivisions. [ActualObservationCutRefinement.lean](ActualObservationCutRefinement.lean) has one inductive derivation and three concrete proposed theorem bodies; no Gamma equality is a derivation premise. The sorted finite-cut constructor is hand-derived, not implemented in Lean. Exact pins are in [ASSEMBLY-SOURCE-INPUTS.json](ASSEMBLY-SOURCE-INPUTS.json); review pending, compiler UNCHECKED, current155 inputs unchanged.
+
+
+[G6-ADAPTER-HANDOFF.md](G6-ADAPTER-HANDOFF.md) freezes the six-source dependency order, exact original hashes, review/implementation distinction and next serial verification action. It records the 46 cut/renewal/context/history proof bodies separately from their currently unchecked implementations, generated subdivision declarations and remaining physical/numerical consumers.
