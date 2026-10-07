@@ -104,3 +104,26 @@ feasible-route support remain separate debts. No source floor, rational
 hidden-parameter restriction, per-row bank or exact-real equality oracle is
 introduced. Original general G3/G4 and whole-domain practical accuracy remain
 open; new G7 work stays queued under the current master allocation.
+
+## Later execution and research observation, 18:44 UTC
+
+The intended139-report freeze ended FAILURE: both new targets had
+elaboration errors. [The actual receipt](../../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37666438115-FAILED/README.md)
+and [independent complete review](../../../research/2026-10-07-cloud-independent-auditor-1616z/CLOCK-DECODER-FAILED-COMPLETE-INVENTORY-REVIEW.md)
+accept the prior117 named reports and all owned declarations in145
+successful modules:3,517 declarations/2,274 theorems. This includes170
+owned declarations/131 theorems in the nine G6 modules, clearing their
+generated/type/body-reference audit. The two failed targets are excluded.
+Original drafts remain unchanged; routine decoder universe/tactic repairs
+and the missing clock namespace are separately frozen at `ab849a9` under
+sole repair run37668810494. No success is inferred.
+
+The practical [fresh two-point budget](../../../research/2026-10-07-cloud-practical-1619z/TWO-POINT-PROSPECTIVE-BUDGET.md)
+now has [independent hand/arithmetic acceptance](../../../research/2026-10-07-cloud-independent-auditor-1616z/PRACTICAL-TWO-POINT-BUDGET-REVIEW.md):
+69,134 admitted future iid loci suffice for its fixed-AA1 test at worst-source
+risk below1/20. It is not a necessary sample bound or whole-D guarantee.
+G4 has separately reviewed [finite quartic feasibility/gap criterion](../../../research/2026-10-07-cloud-independent-auditor-1616z/G4-FINITE-QUARTIC-AND-GAP-GATE-REVIEW.md)
+and [three-site source obstruction](../../../research/2026-10-07-cloud-independent-auditor-1616z/G4-THREE-SITE-SOURCE-OBSTRUCTION-REVIEW.md);
+its full fixed-target gate remains open. The [endpoint/old-decoration lookup](../../../research/2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/LITERAL-ENDPOINT-AND-OLD-DECORATION.md)
+locates actual source-kernel and same-tree attachment for the next bin-law
+bridge, without conflating merger-budget and Poisson-count indices.

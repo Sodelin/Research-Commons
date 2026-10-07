@@ -49,3 +49,15 @@ locates the existing real-age decoder and the separate unordered transport
 obligation. A fixed cut is eligible for the nullity theorem; a random
 ancestral completion horizon itself is not a fixed cut. Above the last fixed
 cut, the actual completed genealogy still needs its original tail-bin adapter.
+
+## Execution update, 18:44 UTC
+
+The initial draft remains preserved unchanged. Its hand/source scope has
+[independent acceptance](../2026-10-07-cloud-independent-auditor-1616z/ACTUAL-BIN-CLOCK-HAND-REVIEW.md).
+[Run37666438115](verification/evidence/g6-run-37666438115-FAILED/README.md)
+failed its elaboration because the NativePairClockLaw namespace defining
+PositivePairRates was not opened. No recovery output is compiler acceptance.
+The separately owned formal derivative adds that namespace at `ab849a9`
+and is under run37668810494; its result is pending. The earlier nine G6
+modules have a complete successful ownership inventory; this target is
+excluded until its own successful receipt.

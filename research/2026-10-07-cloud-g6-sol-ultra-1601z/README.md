@@ -6,7 +6,7 @@ The question is whether finite noisy observations yield effective, honest source
 
 ## What the new source chain establishes
 
-| Source | Meaning | Actual execution as of 7 October 2026, 18:21 UTC |
+| Source | Meaning | Actual execution as of 7 October 2026, 18:44 UTC |
 |---|---|---|
 | [FiniteProbability](sources/UnifiedLean/G6/FiniteProbability.lean) | Finite common-subprobability and scaled-domination total-variation/event bounds, retaining zero/full-mass cases | PASS at `89dffaa` in run 37651501035 |
 | [Conditioning](sources/UnifiedLean/G6/Conditioning.lean) | Mass of an actual retained PMF event, normalized filter, same-kernel bind domination and joint finite readout contraction | PASS in that run |
@@ -40,11 +40,18 @@ overlap those components. The latter includes 142 custom modules and nine
 G6 modules/101 named reports, with HistoryPrefix and BinFold now passing.
 [Independent117-report review](../2026-10-07-cloud-independent-auditor-1616z/HISTORY-FOLD-VERIFIED-REVIEW.md)
 authenticates exact sources and every compiler/final-audit stdout. These named
-audits are not an updated generated/type/body-reference inventory.
-The next bounded build adds [actual clock-to-bin support](ACTUAL-BIN-CLOCK.md),
+audits are distinct from the [later complete ownership inventory](verification/evidence/g6-run-37666438115-FAILED/README.md),
+now passed for145 successful custom modules/3,517 owned declarations.
+[Independent complete review](../2026-10-07-cloud-independent-auditor-1616z/CLOCK-DECODER-FAILED-COMPLETE-INVENTORY-REVIEW.md)
+authenticates170 owned declarations/131 theorems across the nine G6 modules.
+The two new failed modules are excluded; the145-module selection differs
+from the earlier170-module environment and these counts must not be added.
+The subsequent bounded build attempted [actual clock-to-bin support](ACTUAL-BIN-CLOCK.md),
 the [finite-tag decoder](../2026-10-07-cloud-g3-contextual-source-1716z/finite-tag-decoder-1806z/README.md),
 and the required complete expanded ownership inventory; those targets
-remain unchecked at this snapshot.
+failed elaboration at `09015d8`. Repaired derivatives are in run37668810494
+at `ab849a9`; no successful result is inferred at this snapshot. Their
+original hand statements remain accepted and original draft bytes preserved.
 
 ## Current full-master register
 
@@ -88,3 +95,10 @@ from breakthrough or empirical-impact forecasts.
 [Timed source explained](TIMED-SOURCE-EXPLAINED.md) gives a plain-language
 account of how G2's clocks, old subtree ages, joint histories and projective
 readout feed the G5/G6 consumers, with the actual 170-module build boundary.
+
+The [endpoint/old-decoration lookup](../2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/LITERAL-ENDPOINT-AND-OLD-DECORATION.md)
+identifies the actual marked-trace endpoint pushforward to sourceTimeKernel,
+its exact full-copy budget and the same-tree completeMatrix decoration
+attachment. Literal merger budgets and Poisson uniformization counts are
+different. The next deterministic full-prefix same-bin collapse is under
+separate hand development; it is absent from the current repair freeze.
