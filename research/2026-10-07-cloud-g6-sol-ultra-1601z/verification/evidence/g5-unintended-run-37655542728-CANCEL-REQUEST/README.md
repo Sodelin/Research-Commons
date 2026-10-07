@@ -7,3 +7,5 @@ Publishing analytic repairs at input `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5` 
 Two normal cancellation calls returned HTTP 500; a force-cancel call returned HTTP 409, `Cannot cancel a workflow run that has not been queued yet`. Readback still labelled 37655542728 QUEUED with no jobs; cancellation was not confirmed. The intended combined run also had no jobs at that observation. No simultaneous compiler execution occurred. `cancellation-request.json` preserves the actual command, result and readback.
 
 Next action: once GitHub constructs the newly unintended job, cancel that run and preserve the actual terminal receipt; let the intended narrow combined check proceed. No cancelled state, new kernel PASS or background continuation is inferred from a request or elapsed time.
+
+Successor observation, 17:03 UTC: this newly unintended run concluded `startup_failure` with no jobs. It was not successfully cancelled and was not rerun. No compiler execution occurred; the intended G6 run alone receives one explicitly authorized same-input retry.
