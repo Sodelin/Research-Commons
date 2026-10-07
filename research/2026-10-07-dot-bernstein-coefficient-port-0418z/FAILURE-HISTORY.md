@@ -1,0 +1,1 @@
+Attempt001: a pre-compiler dependency-authentication failure for the broad Mathlib aggregate. No Lean invocation or output object occurred. The source was repaired only by selecting authenticated imports. Attempt002: ordinary port compile passed. Separate test attempt001: ordinary compile and all15named axiom reports passed. No failed evidence has been rewritten as successful.
