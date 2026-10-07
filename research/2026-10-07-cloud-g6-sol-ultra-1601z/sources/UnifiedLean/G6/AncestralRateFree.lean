@@ -29,7 +29,7 @@ lemma ancestral_choice_population (N : RootedBinary V E X) {sample : Copy → X}
   have hloc : Location.rootPopulation N.root = originalPlace N p.1 :=
     (ancestral_live_location N s hs hm.1).symm.trans hm.2
   cases hi : p.1 with
-  | none => exact hi
+  | none => rfl
   | some e =>
     have hbad : Location.rootPopulation N.root = Location.edge e := by
       simpa only [hi, originalPlace] using hloc
@@ -57,10 +57,11 @@ noncomputable def ancestralChoiceMass (N : RootedBinary V E X) {sample : Copy �
 lemma ancestral_jump_mass (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (s : Code N sample) (hs : AncestralRoot N s)
     (q : Option (Choice N s)) : jumpMass N r s q = ancestralChoiceMass N s q := by
+  have hroot : pairRate r none ≠ 0 := ne_of_gt (pairRate_pos r none)
   have hr : pairRate r none / 2 ≠ 0 := ne_of_gt (div_pos (pairRate_pos r none) (by norm_num))
   have hz : totalRate N r s = 0 ↔ Fintype.card (Choice N s) = 0 := by
     rw [ancestral_total_rate N r s hs, mul_eq_zero]
-    simp [hr]
+    simp only [hr, or_false, Nat.cast_eq_zero]
   cases q with
   | none => simp only [jumpMass, hz, ancestralChoiceMass]
   | some p =>
@@ -69,7 +70,7 @@ lemma ancestral_jump_mass (N : RootedBinary V E X) {sample : Copy → X}
       exact_mod_cast (Fintype.card_ne_zero : Fintype.card (Choice N s) ≠ 0)
     rw [jumpMass, ancestral_choice_rate N r s hs p, ancestral_total_rate N r s hs]
     dsimp only [ancestralChoiceMass]
-    field_simp [hc, hr]
+    field_simp [hc, hr, hroot]
 
 noncomputable def rationalAncestralChoiceMass (N : RootedBinary V E X)
     {sample : Copy → X} (s : Code N sample) : Option (Choice N s) → ℚ
@@ -83,8 +84,9 @@ lemma rational_ancestral_choice_mass_actual (N : RootedBinary V E X)
   rw [ancestral_jump_mass N r s hs q]
   cases q with
   | none =>
-    by_cases hc : Fintype.card (Choice N s) = 0 <;>
-      simp [rationalAncestralChoiceMass, ancestralChoiceMass, hc]
+    by_cases hc : Fintype.card (Choice N s) = 0
+    · simp only [rationalAncestralChoiceMass, ancestralChoiceMass, if_pos hc, Rat.cast_one]
+    · simp only [rationalAncestralChoiceMass, ancestralChoiceMass, if_neg hc, Rat.cast_zero]
   | some p => simp [rationalAncestralChoiceMass, ancestralChoiceMass]
 
 lemma ancestral_jump_choice_rate_invariant (N : RootedBinary V E X)

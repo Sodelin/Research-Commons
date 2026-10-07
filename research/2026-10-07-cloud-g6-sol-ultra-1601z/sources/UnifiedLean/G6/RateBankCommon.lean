@@ -92,7 +92,6 @@ lemma holding_choice_formula (N : RootedBinary V E X)
   rw [holdingNumerator_eq]
   unfold choiceMass
   field_simp [ne_of_gt (globalRateBound_positive (Copy := Copy) r)]
-  ring
 
 lemma globalRateBound_bank_lower (r rhat : PositivePairRates E)
     (ell : ℝ) (hell1 : ell ≤ 1)
@@ -105,7 +104,7 @@ lemma globalRateBound_bank_lower (r rhat : PositivePairRates E)
   have hadd : ell * (1 + ∑ i : Option E, pairRate r i) ≤
       1 + ∑ i : Option E, pairRate rhat i := by nlinarith
   unfold globalRateBound
-  simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
+  simpa only [copyBound, mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
 
 lemma globalRateBound_bank_upper (r rhat : PositivePairRates E)
     (u : ℝ) (hu1 : 1 ≤ u)
@@ -118,7 +117,7 @@ lemma globalRateBound_bank_upper (r rhat : PositivePairRates E)
   have hadd : (1 + ∑ i : Option E, pairRate rhat i) ≤
       u * (1 + ∑ i : Option E, pairRate r i) := by nlinarith
   unfold globalRateBound
-  simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
+  simpa only [copyBound, mul_assoc] using mul_le_mul_of_nonneg_right hadd (copyBound_positive (Copy := Copy)).le
 
 lemma holdingNumerator_bank_lower (N : RootedBinary V E X)
     {sample : Copy → X} (r rhat : PositivePairRates E) (s : Code N sample)

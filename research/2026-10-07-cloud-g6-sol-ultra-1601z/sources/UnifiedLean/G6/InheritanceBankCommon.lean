@@ -29,7 +29,7 @@ lemma actual_bit_singleton (gamma : unitInterval) (b : Bool) :
   unfold bitMeasure
   rw [bernoulliMeasure_apply gamma (measurableSet_singleton b)]
   cases b <;> simp [ENNReal.ofReal_eq_coe_nnreal, unitInterval.toNNReal,
-    unitInterval.coe_symm_eq, gamma.property.1, sub_nonneg.mpr gamma.property.2]
+    unitInterval.coe_symm_eq, gamma.property.1, sub_nonneg.mpr gamma.property.2] <;> rfl
 
 lemma actual_bit_bank_lower (gamma gammahat : unitInterval) (beta : ℝ)
     (hbeta : 0 ≤ beta) (htrue : beta * (gamma : ℝ) ≤ (gammahat : ℝ))
@@ -45,8 +45,10 @@ lemma actual_bit_bank_lower (gamma gammahat : unitInterval) (beta : ℝ)
 lemma actual_current_coin_product (Site : Type*) [Fintype Site]
     (gamma : unitInterval) (coin : Site → Bool) :
     currentCoinPMF Site gamma coin = ∏ i : Site, bitMeasure gamma {coin i} := by
-  unfold currentCoinPMF independentCoinMeasure
-  rw [Measure.toPMF_apply, Measure.pi_singleton]
+  unfold currentCoinPMF
+  rw [Measure.toPMF_apply]
+  unfold independentCoinMeasure
+  rw [Measure.pi_singleton]
 
 /-- Pointwise product on the actual Site carrier, including the empty carrier. -/
 theorem actual_current_coin_bank_lower (Site : Type*) [Fintype Site]
