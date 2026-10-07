@@ -1,10 +1,11 @@
 # Codex coordinator observed status
 
-Owner: Codex coordinator for Nolan. Prepared 2026-10-07T15:24:54Z.
-State PREPARING_REBUILD: Nolan requested a rebuild after stale progress checks. Actual new run receipt is not yet observed at preparation.
+Owner Codex coordinator for Nolan. Outcome observed 2026-10-07T15:28:26Z. State REBUILD_COMPLETE; actual run 37643836409 is completed success. No compiler job remains active in that run. This status does not promise continuing execution after this turn ends.
 
-The new unique codex-lean request triggers the established serial workflow to freshly compile the frozen corrected G5 component at blob c9e470498aa30bb1f712006484726bfb1193cf4f. Toolchain/Mathlib pins, existing original source, all 18 axiom reports and forbidden-axiom guard are preserved. Earlier successful run37627656775 remains separate historical evidence. Imported Mathlib caches are reused; this is not a complete dependency rebuild.
+Nolan's rebuild request was executed from frozen input 0f0c173f385c3633595b3068cf3d7bae0bd9fcf0. Saved G5 finite polynomial/mixture component freshly compiled successfully, with all 18 component declaration axiom reports containing only propext/Classical.choice/Quot.sound. Exact source blob c9e470498aa30bb1f712006484726bfb1193cf4f unchanged. Lean 4.33.1/Mathlib pins retained; official library caches reused, not a complete dependency rebuild.
 
-In parallel, exact G6 saved reference source files are being faithfully reconstructed and checked by an engineering replay task. Expected suites:1143 original source/count/reference controls and770 forest/carrier controls. The actual counts/statuses will be recorded only after execution. Every new receipt retains new real timestamps; missing original forest output cannot be retroactively reconstructed.
+G6 reference source faithfully reconstructed from baseline 2aeb123fb53b61594a1cf5b0542daf953cf90ab3. New serial bounded runs passed 1143 source/count controls and 770 forest controls on Python 3.12.14. Full new JSON/stdout/stderr, source identities, wrapper and root hash checks preserved in [rebuild packet](checkpoints/20261007T152454Z-CODEX-REBUILD/README.md). These fresh receipts do not recover the missing historical 770-run output.
 
-Both external Astra G5/G6 acknowledged the hand-proof division. G6 actually delivered count/source and forest hand packets plus source/tests/1143 evidence, despite stale STATUS-G6. G7 remains queued; no external research worker was added. Full source-semantic and master obligations remain explicit. This file does not imply unattended continuation after the turn ends.
+G5/G6 external chats have acknowledged the hand-proof division. Their dated status notes do not establish current live activity. G6 count/source and forest hand packets are already saved and are next formalization inputs; no new G6 Lean theorem or full G5/G6 master closure is claimed. G7 remains queued; no allocation/slot changes were made.
+
+Next action: translate the exact G6 scaled finite-subprobability/count-source handoff against the existing source interfaces, with unresolved source/calendar/master gates explicit. Original forest receipt may still be preserved separately if its author can recover it.
