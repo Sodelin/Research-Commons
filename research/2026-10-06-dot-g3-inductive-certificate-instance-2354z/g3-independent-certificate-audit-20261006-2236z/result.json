@@ -1,0 +1,62 @@
+{
+  "status": "PASS independent standard-library exact audit",
+  "python": "3.12.14",
+  "elapsed_seconds": 0.16807510999933584,
+  "script_sha256": "935ee5220e660f730f0ab3ce763f3915c1a99accfa3874861d67f22fa0a6952e",
+  "input_sha256": {
+    "WORKING-PROOF.md": "67e62d59c9cecbaf7235ce8bcf2ab807369f0a6235196aa8dbc321c50fb5b9ec",
+    "providers/paired-normal-certificate.json": "2a9a8ab705c7fb689b0cbbf3d15e6972ecd71fe837c8926344bb950aa4c5a118",
+    "providers/paired-normal-algebra.json": "6f47205ebfe446ab08e7a63996b59f41c3be152498a8a7d25a35bc8d17bb5317",
+    "instantiation/result.json": "a2d2c5b98cb9e8841dc954695811edc9cb998a9ecb54eebed028508394199b86"
+  },
+  "method": "Sparse exact Fraction ring; common-denominator first-log-derivative differentiation; no author scripts or SymPy imported.",
+  "endpoint_numerators": {
+    "F0": {
+      "term_count": 171,
+      "width": "23363/1878812562",
+      "at_one": "140178",
+      "derivative_l1": "5636437686"
+    },
+    "F1": {
+      "term_count": 815,
+      "width": "44825280467247/1195412975417738377606",
+      "at_one": "65893162286853090",
+      "derivative_l1": "878628536932037707540410"
+    }
+  },
+  "historical_constants_reconstructed": 17,
+  "new_constants_reconstructed": {
+    "alpha": "67002295698018015597672853/134004628964377592632180736",
+    "beta": "100503452939112413755718037/134004628964377592632180736",
+    "B0": "70934",
+    "B1": "6029037905088414",
+    "delta": "30612701/131072",
+    "gamma": "13017430351037863337895/549755813888",
+    "epsilon": "950089017700084829192617930230737050695877592803473666575349592793201810228006865931837107443481028048259931678743201389694221875/17297362400797286689197028972862871490643082965069577833955153806711978702258862845364285624077683868811013743443002757349508163843438849542025103976199162029394191152575722503012352",
+    "pair_floor_b": "17297362400797286689197028972862871490643082965069577833955153806711978702258862845364285624077683868811013743443002757349508163843438849542025103976199162029394191152575722503012352/17297362400797286689197028972862871490643082965069578784044171506796807894876793076101336319955276672284680318792595550551318391850304781379132547457227210289325869895777112197234227"
+  },
+  "eight_margin_identities": [
+    "pair_budget",
+    "first_U",
+    "first_V",
+    "second_U",
+    "second_V",
+    "cauchy_squares",
+    "cauchy_update",
+    "V_square"
+  ],
+  "target": {
+    "N": 175,
+    "same_old_target": true,
+    "t_squared_ge_floor": true,
+    "N174_fails_this_floor": true,
+    "both_normal_exponent_sums_zero": true,
+    "lambda3_exponent": "19/4",
+    "ordinary_exponent": "6"
+  },
+  "limits": [
+    "No RCF/QE solver, global log inequality solver, Lean or source compiler was run.",
+    "Analytic integration/remainder reasoning, induction and source-fibre soundness are hand-audited separately.",
+    "No new NO family or universal certificate-completeness claim."
+  ]
+}
