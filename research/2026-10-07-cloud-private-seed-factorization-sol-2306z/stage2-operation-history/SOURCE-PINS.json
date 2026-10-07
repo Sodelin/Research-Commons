@@ -1,0 +1,225 @@
+{
+  "status": "New bounded actual natural-seed endpoint-history consumer, source/API review pending; compiler UNCHECKED, outside current165",
+  "source": {
+    "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/stage2-operation-history/PrivateSeedHistoryFactorization.lean",
+    "sha256": "8bba9735a9514154492be2d8f6a3a8cad8781963559a5da6568011b14bc8e80a",
+    "bytes": 10667,
+    "imports": [
+      "PrivateSeedFactorization",
+      "UnifiedLean.G6.PrivateRegisterHistory",
+      "Mathlib.MeasureTheory.Measure.Dirac"
+    ]
+  },
+  "baseline": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+  "counts": {
+    "theorem_bodies": 10,
+    "data_definitions": 4
+  },
+  "declarations": {
+    "theorems": [
+      "independentPMF_apply",
+      "independentPMF_toMeasure",
+      "natural_joint_toMeasure",
+      "actual_natural_joint_initial_product",
+      "initialized_history_independent",
+      "actual_private_seed_erased_history_product",
+      "actual_private_seed_erased_history_measure",
+      "initializedEndpointLaw_nil",
+      "actual_private_seed_erased_history_nil",
+      "actual_private_seed_erased_history_readout"
+    ],
+    "definitions": [
+      "independentPMF",
+      "privateSeedPMF",
+      "naturalInitialJoint",
+      "initializedEndpointLaw"
+    ]
+  },
+  "source_inputs": [
+    {
+      "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/PrivateSeedFactorization.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "69f6efa906b846f84740b8dbfddebff9e7f5d1c0",
+      "sha256": "f3d7e97db701bb60d4d7e4f8ce1218bed1226ea198f13f1ad12861e1d312e14b",
+      "bytes": 10142
+    },
+    {
+      "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/SOURCE-PINS.json",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "0297874e59af49a67196aab7e2a0d0ab1ba388b2",
+      "sha256": "b63f4dc856874cc145ef2e6355b12467265ef8656078da8f148f440744ef92a5",
+      "bytes": 11682
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterHistory.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "2681b7074ce3ba4854788396403d94927e380aba",
+      "sha256": "b122672904d07b1cc0567fab832994f7d3dcba18490f55b0b7c79485b7702202",
+      "bytes": 5804
+    },
+    {
+      "path": "research/2026-10-06-dot-g2-source-finite-history-checkpoint-2141z/G2SourceFiniteHistory.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "3628acc34196a6c4e6d5ae8087be66bc071c3c89",
+      "sha256": "1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5",
+      "bytes": 6419
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterProgram.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "08ee80fd62976dd8193b101a314c1dcb80f8fac9",
+      "sha256": "790de244aa1a416e67b7174de11d9cb79f925c4299a202185f3ebb4c2282e596",
+      "bytes": 4943
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/private-register-api-2252z/PrivateRegisterErasure.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "54cd2cc547bff20545ed76503687130d317e4266",
+      "sha256": "b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4",
+      "bytes": 4872
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalInitialization.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "e81593e2435b36f151cbf1b890a9ba49c8bf43cf",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "bytes": 6232
+    },
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceInitializedCalendar.lean",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "0d721248fb048f064da9314b49895db705d0f5d3",
+      "sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535",
+      "bytes": 7832
+    },
+    {
+      "path": "research/2026-10-07-cloud-private-register-sol-2220z/SOURCE-API-GAPS.md",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "520137d04bd92a8b298a17738625d083f9474f17",
+      "sha256": "5e863bfd9dc4a9aa8964438092004568ec75b5ca9f314c8f2ce923eb8ae46776",
+      "bytes": 3639
+    },
+    {
+      "path": "research/2026-10-07-cloud-independent-auditor-1616z/PRIVATE-REGISTER-HISTORY-SOURCE-REVIEW.md",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "de6e0ce977400edc6f84f7a327dcfb937f6eca6d",
+      "sha256": "060b8cb85cf982844cd86c78451e09ee1d5448419ad26571d12f811a1fc8028a",
+      "bytes": 2369
+    },
+    {
+      "path": "research/2026-10-07-cloud-independent-auditor-1616z/PRIVATE-SEED-NATURAL-FACTORIZATION-SOURCE-REVIEW.md",
+      "commit": "3e26eb964ff486632f3b47920ed9f753c21af6ef",
+      "blob": "73ac522ae3667d7b411c3ffb3d68132eaf1c2078",
+      "sha256": "140f6c134852159752c7accc450d3391daccf9062530c4019cf9e8228bb3f209",
+      "bytes": 4485
+    }
+  ],
+  "mathlib_interfaces": [
+    {
+      "path": "Mathlib/Probability/ProbabilityMassFunction/Monad.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "75f5e5ef6a35767335ca730c1c5bc8b8e9a04e2a",
+      "sha256": "94937919a3ff69070aae22a8c2741e1369e105a197c4c7bc0972ad32cd5523e6",
+      "bytes": 11907,
+      "read_interfaces": [
+        "PMF.bind_apply",
+        "PMF.bind_bind"
+      ]
+    },
+    {
+      "path": "Mathlib/Probability/ProbabilityMassFunction/Constructions.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "f84582dd28948439cbd15acc38dc07c1878cf3a9",
+      "sha256": "09a7cf241524c158d4174e994e04140901630c7e0629ceee9b7ba7ec347d2cd4",
+      "bytes": 11701,
+      "read_interfaces": [
+        "PMF.map_apply",
+        "PMF.map_comp",
+        "PMF.bind_map",
+        "PMF.map_bind",
+        "PMF.toMeasure_map"
+      ]
+    },
+    {
+      "path": "Mathlib/Probability/ProbabilityMassFunction/Basic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "dabd43d78b8d44551004fc65e5cf40fa1baf05ca",
+      "sha256": "4ef376c0ae18ac15664d1d0a77c075f838bc0d65556ac3bc7e462d651fdae197",
+      "bytes": 14748,
+      "read_interfaces": [
+        "PMF.toMeasure_apply_singleton",
+        "PMF.toMeasure_injective",
+        "Measure.toPMF_toMeasure",
+        "PMF.toMeasure.isProbabilityMeasure"
+      ]
+    },
+    {
+      "path": "Mathlib/MeasureTheory/Measure/Dirac.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "a773c3402a4c982aad7161722194a6d2b3218205",
+      "sha256": "78ee8a55ab32781982d715e37af863dd1b64f6891db8fe6153df1414470a216d",
+      "bytes": 17491,
+      "read_interfaces": [
+        "Measure.ext_of_singleton"
+      ]
+    },
+    {
+      "path": "Mathlib/MeasureTheory/Measure/Prod.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "25c0a0fb7a00de99b17f38d2dc45810e40745f06",
+      "sha256": "739ba1838b5b67c1ff5d3b43ed263c2ad34f91e01e7a8946a6f529922d463e79",
+      "bytes": 61776,
+      "read_interfaces": [
+        "Measure.prod_prod"
+      ]
+    },
+    {
+      "path": "Mathlib/MeasureTheory/Measure/Map.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "8c9c5d861fa242751240e5462b7c6716db4a0b90",
+      "sha256": "e9c245b054b5a897dba730cdefd02e89f94e9d7c54835bf149b6c952ad589a08",
+      "bytes": 13962,
+      "read_interfaces": [
+        "Measure.map_map"
+      ]
+    },
+    {
+      "path": "Mathlib/Topology/Algebra/InfiniteSum/Basic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "blob": "2480307ec0476c3b269497f70302a7998f5e79aa",
+      "sha256": "5a98237ab97275683e0c0f2489fbc7b3597879ab983883eb1e49a5fb272b0631",
+      "bytes": 36424,
+      "read_interfaces": [
+        "tsum_ite_eq",
+        "tsum_ite_eq' (generated by to_additive from tprod_ite_eq and tprod_ite_eq')"
+      ]
+    }
+  ],
+  "preserved_original": {
+    "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/PrivateSeedFactorization.lean",
+    "sha256": "f3d7e97db701bb60d4d7e4f8ce1218bed1226ea198f13f1ad12861e1d312e14b",
+    "byte_identical": true
+  },
+  "scientific_premises": [
+    "Same original N, original strict p, sample, rate bank r, P and operation word",
+    "Explicit syntactic NoPrivateWordRead; no entering product or desired source law premise"
+  ],
+  "scope": "Actual PRIVATE latent seed joint with erased initial Code and every finite operation endpoint; actual PMF and product measure; empty word keeps initial Code",
+  "deferred": [
+    "Chronological physical no-read constructor",
+    "Literal marked merger, ages, pulse and inactive-padding records",
+    "Natural clock/bin/old-observation correlation",
+    "Private active-population upper-state support",
+    "Cross-graph named-run carrier",
+    "Posterior/menu/backend/master closure"
+  ],
+  "engineering_watch": [
+    "Singleton-map tsum simp is UNCHECKED",
+    "Dependent no-read history/map normal forms are UNCHECKED",
+    "Measurable finite Code/function product inference is UNCHECKED",
+    "Empty-vector normalization and proposed module overlay are UNCHECKED"
+  ],
+  "prohibited_operations_performed": false,
+  "compiler_run": false,
+  "children_spawned": false
+}
