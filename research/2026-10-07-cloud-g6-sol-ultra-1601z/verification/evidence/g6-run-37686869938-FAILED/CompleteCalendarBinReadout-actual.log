@@ -1,0 +1,132 @@
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarBinReadout.lean:57:52: error(lean.unknownIdentifier): Unknown identifier `programDuration`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarBinReadout.lean:89:68: error: unsolved goals
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+bin : ℝ → Tag
+ops : List (ProgramStep N)
+s : Code N sample
+offset : ℝ
+M : Copy → Copy → ℝ
+z : CompleteCalendarRecord N sample ops
+⊢ foldTags N bin (Fintype.card Copy) z.1 (offset + ↑(GProgram.G2.ChronologicalPathReadout.programDuration N ops))
+      (calendarTags N bin ops s offset (fun a b => bin (M a b)) z.2.1) z.2.2.2 =
+    foldTags N bin (Fintype.card Copy) z.1 (offset + sorry)
+      (calendarTags N bin ops s offset (fun a b => bin (M a b)) z.2.1) z.2.2.2
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarBinReadout.lean:121:0: warning: automatically included section variable(s) unused in theorem `CloudG3.CompleteCalendarBinReadout.complete_tag_decode_underlying`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarBinReadout.lean:159:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun past => calendarTags N bin ops s offset (fun a b => bin (M a b)) past
+in the target expression
+  Measurable fun past => (calendarEnd N ops s past, calendarTags N bin ops s offset (fun a b => bin (M a b)) past)
+
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : MeasurableSpace Tag
+N : RootedBinary V E X
+sample : Copy → X
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+s : Code N sample
+offset : ℝ
+M : Copy → Copy → ℝ
+he :
+  (fun past => calendarTags N bin ops s offset (fun a b => bin (M a b)) past) = fun past a b =>
+    bin (calendarMatrix N ops s offset M past a b)
+⊢ Measurable fun past => (calendarEnd N ops s past, calendarTags N bin ops s offset (fun a b => bin (M a b)) past)
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarBinReadout.lean:179:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarBinReadout.lean:210:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun z => completeTags N bin ops s offset (fun a b => bin (M a b)) z
+in the target expression
+  Measurable fun z => (completeEnd N ops z, completeTags N bin ops s offset (fun a b => bin (M a b)) z)
+
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : MeasurableSpace Tag
+N : RootedBinary V E X
+sample : Copy → X
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+s : Code N sample
+offset : ℝ
+M : Copy → Copy → ℝ
+he :
+  (fun z => completeTags N bin ops s offset (fun a b => bin (M a b)) z) = fun z a b =>
+    bin (completeMatrix N ops s offset M z a b)
+⊢ Measurable fun z => (completeEnd N ops z, completeTags N bin ops s offset (fun a b => bin (M a b)) z)
+'CloudG3.CompleteCalendarBinReadout.map_segment_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.map_calendar_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.map_complete_matrix' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.actual_complete_tag_decoder' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.complete_tag_decode_underlying' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.calendar_binned_matrix_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.calendar_joint_bin_readout_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.calendar_joint_probability' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.complete_binned_matrix_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarBinReadout.complete_joint_bin_readout_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
