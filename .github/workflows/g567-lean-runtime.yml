@@ -17,7 +17,7 @@ concurrency:
 jobs:
   runtime:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Fetch exact public source commit
         shell: bash
@@ -31,3 +31,6 @@ jobs:
       - name: Verify archive and run pinned Lean smoke
         shell: bash
         run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+      - name: Compile frozen G5 component with pinned Mathlib
+        shell: bash
+        run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-g5-first.sh"

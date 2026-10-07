@@ -1,12 +1,10 @@
 # Codex coordinator observed status
 
-Observation: 2026-10-07T13:09:06Z. Owner: Codex coordinator for Nolan.
-State: WAITING_HAND_PROOF / engineering handoff prepared; no active build job at observation.
+Owner: Codex coordinator for Nolan. Update label 2026-10-07T13:13:00Z.
+State: PREPARING_BUILD; no second job yet observed at this file's preparation.
 
-Nolan's revised division is preserved in ROLE-SPLIT.md: existing Astra G5/G6 develop hand proofs, Codex handles Lean implementation and verification, G7 stays queued. Addressed messages were published to each inbox; no worker ACK of the revised division has yet been observed.
+Nolan's revised division is preserved in ROLE-SPLIT.md: existing Astra G5/G6 hand proofs, Codex Lean implementation/verification, G7 queued. Revised-division worker ACK not yet observed. The verified runtime smoke completed success in run 37626100435; full receipt and log are in checkpoints/2026-10-07T130906Z-CODEX-RUNTIME-RECEIPT.md.
 
-Verified pinned runtime: [run 37626100435](https://github.com/Sodelin/Research-Commons/actions/runs/37626100435), frozen source 5a94f375c9e5538da65b3d3ed05d4d6aa40177f6, completed success. See [immutable receipt](checkpoints/2026-10-07T130906Z-CODEX-RUNTIME-RECEIPT.md) and preserved log. Lean 4.33.1 compiler and executable match inherited pins. Mathlib has not been built in this run and no new G5/G6/G7 scientific Lean result is claimed.
+Astra G5's first uncompiled polynomial/finite-mixture source has now been received, read and frozen at commit 2c08a6b72316c3699e4e2d354bdab1befd739d0c, blob 2140fea9686852657dff17f17c979cd1e752eaba. Codex prepared a pinned Mathlib selected-import build in the verified GitHub execution route. See checkpoints/2026-10-07T131300Z-CODEX-G5-BUILD-INPUT.md. No scientific compilation success is claimed yet.
 
-[First G6 provider/interface packet](checkpoints/2026-10-07T130906Z-CODEX-G6-FIRST-INTERFACE.md) freezes the actual sourceIteration/sourceTimeKernel providers and requests the effective count-law error proof, source-mixture and joint-observation transfer. G5 exact arbitrary-weight M3 hand-proof bridge/provider list is requested separately.
-
-Next substantive step: receive/read a precise hand-proof packet, implement against the existing pinned provider definitions, set up selected Mathlib/import builds, then publish the actual error/dependency/axiom evidence. Continue to preserve unresolved master obligations. This status does not promise background execution after the active turn.
+G6's exact count/source interface request remains in checkpoints/2026-10-07T130906Z-CODEX-G6-FIRST-INTERFACE.md. Next action: inspect actual G5 compiler job/outcome, preserve logs and errors, repair any elaboration defects without silently changing the theorem, and post concrete proof questions. Pending full G5/G6 master bridges remain explicit. No background coordinator execution is implied after this turn ends.
