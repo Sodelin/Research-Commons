@@ -39,7 +39,8 @@ abbrev TaggedEndpoint (N : RootedBinary V E X) (sample : Copy → X) :=
 
 noncomputable def tailTraceReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag)
-    (z : Bool × ClockTrace N sample (Fintype.card Copy)) : TaggedEndpoint N sample :=
+    (z : Bool × ClockTrace N sample (Fintype.card Copy)) :
+    TaggedEndpoint (Tag := Tag) N sample :=
   (traceEndpoint N (Fintype.card Copy) s z.2,
     foldTags N bin (Fintype.card Copy) s offset B z.2)
 
@@ -52,7 +53,7 @@ theorem tail_trace_readout_measurable (N : RootedBinary V E X) {sample : Copy �
 
 noncomputable def cutCompleteReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (s : Code N sample) (offset : ℝ) :
-    (Copy → Copy → Tag) × CutResidual N sample → TaggedEndpoint N sample :=
+    (Copy → Copy → Tag) × CutResidual N sample → TaggedEndpoint (Tag := Tag) N sample :=
   fun z => match z.2 with
     | .inl _ => (s, z.1)
     | .inr q => tailTraceReadout N bin q.1 offset z.1 (completeAncestralTrace N q.1 q.2)
@@ -72,12 +73,16 @@ theorem cut_complete_readout_measurable (N : RootedBinary V E X)
     intro d
     exact ((tail_trace_readout_measurable N bin hbin d offset B).comp
       (complete_ancestral_trace_measurable N d)) hA
+  change Measurable (Sum.elim (fun _ : Unit => (s, B))
+    (fun q : (Σ d : Code N sample, Choice N d → ℝ) =>
+      tailTraceReadout N bin q.1 offset B (completeAncestralTrace N q.1 q.2)))
   exact measurable_const.sumElim hm
 
 noncomputable def prefixTailReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (s d : Code N sample) (offset t : ℝ) (B : Copy → Copy → Tag)
     (z : (Bool × ClockTrace N sample (Fintype.card Copy)) ×
-      (Bool × ClockTrace N sample (Fintype.card Copy))) : TaggedEndpoint N sample :=
+      (Bool × ClockTrace N sample (Fintype.card Copy))) :
+    TaggedEndpoint (Tag := Tag) N sample :=
   tailTraceReadout N bin d (offset + t)
     (foldTags N bin (Fintype.card Copy) s offset B z.1.2) z.2
 
@@ -109,7 +114,8 @@ theorem complete_cut_fibre_joint_source_law (N : RootedBinary V E X)
           (completeAncestralTraceLaw N r d)).map
             (prefixTailReadout N bin s d offset (t : ℝ) B)) := by
   let F : (Bool × ClockTrace N sample (Fintype.card Copy)) × CutResidual N sample →
-      TaggedEndpoint N sample := fun z => cutCompleteReadout N bin s (offset + (t : ℝ))
+      TaggedEndpoint (Tag := Tag) N sample := fun z =>
+        cutCompleteReadout N bin s (offset + (t : ℝ))
         (foldTags N bin (Fintype.card Copy) s offset B z.1.2, z.2)
   have hF : Measurable F := (cut_complete_readout_measurable N bin hbin s _).comp
     (((fold_tags_joint_measurable N bin hbin (Fintype.card Copy) offset).comp
@@ -166,7 +172,10 @@ theorem decoded_raw_endpoint_restrict (N : RootedBinary V E X)
   apply Measure.restrict_congr_set
   filter_upwards [actual_marked_trace_success_ae N r (Fintype.card Copy) s t
     (Finset.card_le_univ s.val.live)] with h hh
-  simp only [Set.mem_setOf_eq, decodedEndpoint, hh, if_true, Option.some.injEq]
+  change (decodedEndpoint N (Fintype.card Copy) s h = some d) =
+    (traceEndpoint N (Fintype.card Copy) s h.2 = d)
+  apply propext
+  simp only [decodedEndpoint, if_pos hh, Option.some.injEq]
 
 #print axioms tail_trace_readout_measurable
 #print axioms cut_complete_readout_measurable

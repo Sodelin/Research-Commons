@@ -38,19 +38,19 @@ attribute [local instance] GProgram.G2.LiteralMarkedClockTrace.codeMeasurable
 
 noncomputable def segmentReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (op : ProgramStep N) (s : Code N sample) (offset : ℝ)
-    (B : Copy → Copy → Tag) (z : SegmentRecord N sample) : TaggedEndpoint N sample :=
+    (B : Copy → Copy → Tag) (z : SegmentRecord N sample) : TaggedEndpoint (Tag := Tag) N sample :=
   (z.2, segmentTags N bin op s offset B z)
 
 noncomputable def calendarReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ)
     (B : Copy → Copy → Tag) (z : Fin ops.length → SegmentRecord N sample) :
-    TaggedEndpoint N sample :=
+    TaggedEndpoint (Tag := Tag) N sample :=
   (calendarEnd N ops s z, calendarTags N bin ops s offset B z)
 
 noncomputable def completeReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ)
     (B : Copy → Copy → Tag) (z : CompleteCalendarRecord N sample ops) :
-    TaggedEndpoint N sample := (completeEnd N ops z, completeTags N bin ops s offset B z)
+    TaggedEndpoint (Tag := Tag) N sample := (completeEnd N ops z, completeTags N bin ops s offset B z)
 
 theorem segment_readout_measurable (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (hbin : Measurable bin) (op : ProgramStep N)
@@ -70,7 +70,7 @@ theorem calendar_readout_measurable (N : RootedBinary V E X) {sample : Copy → 
   induction ops generalizing s offset B with
   | nil => exact measurable_const
   | cons op ops ih =>
-      have hw : Measurable (fun z : TaggedEndpoint N sample ×
+      have hw : Measurable (fun z : TaggedEndpoint (Tag := Tag) N sample ×
           (Fin ops.length → SegmentRecord N sample) =>
           calendarReadout N bin ops z.1.1 (segmentOffset N op offset) z.1.2 z.2) :=
         measurable_from_prod_countable_right (fun q =>
@@ -87,7 +87,7 @@ theorem complete_readout_measurable (N : RootedBinary V E X) {sample : Copy → 
     (bin : ℝ → Tag) (hbin : Measurable bin) (ops : List (ProgramStep N))
     (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
     Measurable (completeReadout N bin ops s offset B) := by
-  have hw : Measurable (fun z : TaggedEndpoint N sample ×
+  have hw : Measurable (fun z : TaggedEndpoint (Tag := Tag) N sample ×
       (Bool × ClockTrace N sample (Fintype.card Copy)) =>
       tailTraceReadout N bin z.1.1 (offset + (programDuration N ops : ℝ)) z.1.2 z.2) :=
     measurable_from_prod_countable_right (fun q => tail_trace_readout_measurable N bin hbin
@@ -99,7 +99,7 @@ theorem complete_readout_measurable (N : RootedBinary V E X) {sample : Copy → 
 noncomputable def segmentJoint (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
     (op : ProgramStep N) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
-    PMF (TaggedEndpoint N sample) := by
+    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
   letI := actual_segment_probability N r op s
   letI := Measure.isProbabilityMeasure_map
     (segment_readout_measurable N bin hbin op s offset B).aemeasurable
@@ -108,7 +108,7 @@ noncomputable def segmentJoint (N : RootedBinary V E X) {sample : Copy → X}
 noncomputable def calendarJoint (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
     (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
-    PMF (TaggedEndpoint N sample) := by
+    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
   letI := actual_calendar_trace_probability N r ops s
   letI := Measure.isProbabilityMeasure_map
     (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
@@ -117,7 +117,7 @@ noncomputable def calendarJoint (N : RootedBinary V E X) {sample : Copy → X}
 noncomputable def completedJoint (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
     (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
-    PMF (TaggedEndpoint N sample) := by
+    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
   letI := complete_calendar_trace_probability N r ops s
   letI := Measure.isProbabilityMeasure_map
     (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
@@ -126,7 +126,7 @@ noncomputable def completedJoint (N : RootedBinary V E X) {sample : Copy → X}
 noncomputable def tailJoint (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
     (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
-    PMF (TaggedEndpoint N sample) := by
+    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
   letI := complete_ancestral_trace_probability N r s
   letI := Measure.isProbabilityMeasure_map
     (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
@@ -235,8 +235,8 @@ theorem calendar_joint_cons (N : RootedBinary V E X) {sample : Copy → X}
   letI := actual_segment_probability N r op s
   letI : ∀ d : Code N sample, IsProbabilityMeasure (actualCalendarTraceLaw N r ops d) :=
     fun d => actual_calendar_trace_probability N r ops d
-  let g : TaggedEndpoint N sample × (Fin ops.length → SegmentRecord N sample) →
-      TaggedEndpoint N sample := fun z => calendarReadout N bin ops z.1.1
+  let g : TaggedEndpoint (Tag := Tag) N sample × (Fin ops.length → SegmentRecord N sample) →
+      TaggedEndpoint (Tag := Tag) N sample := fun z => calendarReadout N bin ops z.1.1
         (segmentOffset N op offset) z.1.2 z.2
   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
     calendar_readout_measurable N bin hbin ops q.1 (segmentOffset N op offset) q.2)
@@ -278,8 +278,8 @@ theorem completed_joint_bind_calendar (N : RootedBinary V E X) {sample : Copy �
   letI := actual_calendar_trace_probability N r ops s
   letI : ∀ d : Code N sample, IsProbabilityMeasure (completeAncestralTraceLaw N r d) :=
     fun d => complete_ancestral_trace_probability N r d
-  let g : TaggedEndpoint N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
-      TaggedEndpoint N sample := fun z => tailTraceReadout N bin z.1.1
+  let g : TaggedEndpoint (Tag := Tag) N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
+      TaggedEndpoint (Tag := Tag) N sample := fun z => tailTraceReadout N bin z.1.1
         (offset + (programDuration N ops : ℝ)) z.1.2 z.2
   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
     tail_trace_readout_measurable N bin hbin q.1 (offset + (programDuration N ops : ℝ)) q.2)
@@ -330,8 +330,8 @@ theorem tail_joint_cut_bind (N : RootedBinary V E X) {sample : Copy → X}
   letI := actual_marked_trace_probability N r (Fintype.card Copy) s t
   letI : ∀ d : Code N sample, IsProbabilityMeasure (completeAncestralTraceLaw N r d) :=
     fun d => complete_ancestral_trace_probability N r d
-  let g : TaggedEndpoint N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
-      TaggedEndpoint N sample := fun z => tailTraceReadout N bin z.1.1
+  let g : TaggedEndpoint (Tag := Tag) N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
+      TaggedEndpoint (Tag := Tag) N sample := fun z => tailTraceReadout N bin z.1.1
         (offset + (t : ℝ)) z.1.2 z.2
   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
     tail_trace_readout_measurable N bin hbin q.1 (offset + (t : ℝ)) q.2)

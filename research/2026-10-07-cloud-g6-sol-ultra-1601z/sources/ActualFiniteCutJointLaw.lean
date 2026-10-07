@@ -37,7 +37,7 @@ attribute [local instance] GProgram.G2.LiteralMarkedClockTrace.codeMeasurable
 
 noncomputable def cutIntervalReadout (N : RootedBinary V E X) {sample : Copy → X}
     (bin : ℝ → Tag) (s : Code N sample) (offset v : ℝ) :
-    (Copy → Copy → Tag) × CutResidual N sample → TaggedEndpoint N sample :=
+    (Copy → Copy → Tag) × CutResidual N sample → TaggedEndpoint (Tag := Tag) N sample :=
   fun z => match z.2 with
     | .inl _ => (s, z.1)
     | .inr q => tailTraceReadout N bin q.1 offset z.1
@@ -99,7 +99,7 @@ theorem interval_cut_fibre_joint_source_law (N : RootedBinary V E X)
           (actualMarkedTraceLaw N r (Fintype.card Copy) d (v : ℝ))).map
             (prefixTailReadout N bin s d offset (t : ℝ) B)) := by
   let F : (Bool × ClockTrace N sample (Fintype.card Copy)) × CutResidual N sample →
-      TaggedEndpoint N sample := fun z => cutIntervalReadout N bin s
+      TaggedEndpoint (Tag := Tag) N sample := fun z => cutIntervalReadout N bin s
         (offset + (t : ℝ)) (v : ℝ)
         (foldTags N bin (Fintype.card Copy) s offset B z.1.2, z.2)
   have hF : Measurable F := (cut_interval_readout_measurable N bin hbin s _ _).comp
@@ -166,8 +166,8 @@ theorem interval_joint_cut_bind (N : RootedBinary V E X) {sample : Copy → X}
   letI : ∀ d : Code N sample,
       IsProbabilityMeasure (actualMarkedTraceLaw N r (Fintype.card Copy) d (v : ℝ)) :=
     fun d => actual_marked_trace_probability N r (Fintype.card Copy) d v
-  let g : TaggedEndpoint N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
-      TaggedEndpoint N sample := fun z => tailTraceReadout N bin z.1.1
+  let g : TaggedEndpoint (Tag := Tag) N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
+      TaggedEndpoint (Tag := Tag) N sample := fun z => tailTraceReadout N bin z.1.1
         (offset + (t : ℝ)) z.1.2 z.2
   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
     tail_trace_readout_measurable N bin hbin q.1 (offset + (t : ℝ)) q.2)

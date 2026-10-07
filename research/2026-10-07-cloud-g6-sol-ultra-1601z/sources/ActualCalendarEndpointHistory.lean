@@ -58,7 +58,7 @@ noncomputable def wordBinContract (N : RootedBinary V E X) (bin : ℝ → Tag) :
 is read once; every original endpoint genealogy is retained in the history. -/
 noncomputable def endpointHistoryReadout (N : RootedBinary V E X) {sample : Copy → X} :
     (word : List (ProgramStep N × Tag)) → Code N sample → (Copy → Copy → Tag) →
-      (Fin (physicalOps N word).length → Code N sample) → TaggedEndpoint N sample
+      (Fin (physicalOps N word).length → Code N sample) → TaggedEndpoint (Tag := Tag) N sample
   | [], s, B, _ => (s, B)
   | q :: word, s, B, h => endpointHistoryReadout N word (h 0)
       (endpointStepTags N q.1 q.2 s (h 0) B) (Fin.tail h)
@@ -73,7 +73,7 @@ theorem actual_interval_joint_source_row (N : RootedBinary V E X)
     (actualMarkedTraceLaw N r (Fintype.card Copy) s (h : ℝ)).map
         (tailTraceReadout N bin s offset B) =
       ((sourceTimeKernel N r h s).map (fun d => (d, tagUpdate N s d tag B))).toMeasure := by
-  let u : Code N sample → TaggedEndpoint N sample := fun d => (d, tagUpdate N s d tag B)
+  let u : Code N sample → TaggedEndpoint (Tag := Tag) N sample := fun d => (d, tagUpdate N s d tag B)
   have hu : Measurable u := measurable_of_countable _
   have hm := marked_trace_measurable N (Fintype.card Copy) s (h : ℝ)
   calc
