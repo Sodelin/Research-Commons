@@ -1,0 +1,9 @@
+# Sole calendar-context repair — DISPATCH ONLY
+
+Automatic push-triggered run [37703936206](https://github.com/Sodelin/Research-Commons/actions/runs/37703936206) reads exact source input `004dbec501d32b2d3f42ba869ce0bb4716c634b7`. Requested selection remains **165 custom modules /358 named declarations:226 G6,117 G3,15 G5**. Only Context changed to the reviewed derivative `e33f995db91fdcf6f5ecb4c5ff230b5f5a3778f8710732b9be99509d4cd7e908`; all161 previously accepted source hashes and the other164 frozen input hashes are fixed.
+
+The preparation is immutable at `1cc59c3ca6c94700aa02a13bb4418554a6a78b66`, diff SHA `5eaba07caac7baae07e9b2daec5c31e5be46b5895778db40eb34e002bac0e954`, static plan SHA `aaf91a83ff2e26cc3b668045cfa3f94e7a0d7bcf196d56253ce4c9fbf5ec676d`. Exact root source acceptance and primary canonical source review `b7d0f2eadaddcda83dea31c14f7797789c51c9d5` preceded this source freeze. All165 source bytes, identical targets/topology/65 Mathlib roots plus1 Lean root/same3302 transitive context were checked; no active, queued or waiting job was present before the source push. The same829.21-second estimate remains an estimate within the900-second job cap and180-second per-command cap.
+
+The repair exposes the same derived probability measures to Lean, proves callback equality on the actual raw-endpoint restriction, and reduces the unchanged map/bind/offset expressions. It adds no statement, hypothesis, source law, readout, target or runtime dependency. The actual161/313/full3912/2547 partial acceptance and failed Context/three uncompiled blocked wrappers remain preserved at `98340fe2`; independent correspondence is canonical at `be7108b9`. Future erasure, WholeBank, seed, private-register and Rust sources remain outside this selection.
+
+This records dispatch only. Actual terminal command exits and named/complete ownership audits determine any new accepted scope.
