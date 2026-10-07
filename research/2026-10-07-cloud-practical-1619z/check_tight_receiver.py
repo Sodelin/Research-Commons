@@ -65,7 +65,11 @@ try:
         outputs[name] = result
     baseline = old.replay(rows, mean_boxes['candidate_nontrivial_box'], request['plan'],
                           request['delta'], request['precision_bits'])
-    assert Q(outputs['candidate_nontrivial_box']['best_prefix_mixture_lower']) >= Q(baseline['best_prefix_mixture_lower'])
+    improved = outputs['candidate_nontrivial_box']
+    if baseline['exclusion_prefix']:
+        assert improved['exclusion_prefix'] and improved['exclusion_prefix'] <= baseline['exclusion_prefix']
+    elif not improved['exclusion_prefix']:
+        assert Q(improved['best_prefix_mixture_lower']) >= Q(baseline['best_prefix_mixture_lower'])
     bridge.close()
     volume_ratio = Q(1)
     for key, pair in request['candidate_nontrivial_box'].items():
