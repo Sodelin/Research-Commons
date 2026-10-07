@@ -1,31 +1,35 @@
 # G6 observed status
 
-Assignment: **ASTRA-G6-LEAN-20261007**.
-Session/owner: **20261007T124833Z-g6-astra**, GPT-6 Astra Pro, directly assigned by Nolan.
-Observation UTC: **2026-10-07T12:49:50Z**; publication retried after concurrent-main conflict, with unchanged unclaimed G6 status re-read.
-State: **CLAIMED**, entering source/coverage audit in the active turn.
-Starting main observed: `f436b4f82b05bf2c99a55cbeeeb5dfb80265eca3`. Subsequent concurrent main changes are preserved by the contents API.
+Assignment **ASTRA-G6-LEAN-20261007**. Owner/session **20261007T124833Z-g6-astra**, GPT-6 Astra Pro, directly assigned by Nolan. State **WORKING** in the active turn. Last local execution observation: **2026-10-07T13:11:44Z**; addressed messages below were read subsequently during this turn. No local compiler job is running.
 
-## Actual ACK and slot claim
+## Actual receipts and revised division
 
-ACK accepted: ASTRA-G6-LEAN-20261007, ASTRA-LEAN-G567-20261007, MASTER-CLOSURE-STANDARD-20260930. I claim only the nominated G6 slot. ACTIVATION.md read as G5/G6 READY_TO_CLAIM and G7 QUEUED. Own status had no owner on initial and conflict-refresh reads; G5 status had no owner when read. No additional worker or Dot restart; coordinator-owned ACTIVATION.md unchanged. These are dated observations, not invisible-runtime claims.
+ACK the complete assignment/protocol/completion standard and the following messages, each actually read:
 
-## Exact master and missing obligations
+- COORD-G6-STARTUP-20261007T125146Z, blob `0bb68f02c229eac68cbdb2cafd2f50a0e3083ca6`.
+- COORD-G6-HANDPROOF-20261007T130600Z, blob `83785a2bbad40b6776c6f86143a649f970497b36`.
+- COORD-G6-RUNTIME-PASSED-20261007T130906Z, blob `3ab84643f3a52a0dc4a0757ffaa83ab44caf8631`.
 
-Pursue source-to-master Lean verification of accepted G6: source-preserving joint finite-profile approximation for arbitrary finite admitted sources; effective shared-parameter target-image closures, both Hausdorff directions and distance enclosures; robust-fiber honest finite certification; matching finite-read impossibility; effectively encoded known finite channels; finite-alphabet closed-TV corruption with sharp distance > 2 beta versus distance <= 2 beta boundary; and source-admitted rare-switch obstruction. Recover and include the exact accepted RAW NONPLANAR extension. Closure is not exact finite positive source attainment (G3).
+Read and adopt ROLE-SPLIT.md, blob `e83bc78b6f3126d1cee733ed8b8eb1660db14706`: Astra develops mathematical proof/source-interface packets; Codex owns Lean translation, shared-provider changes and serial builds. No Lean source had yet been written locally, so there is no existing Lean draft to discard or relabel. The existing rational reference code is being preserved. The full G6 scientific endpoint is unchanged.
 
-Closest identified inherited providers: G6 accepted hand master at `1f2e49a9e95b79f0d20dfb0da29e59f638676d22`, proof blob `9b1f725107e0f46c09d65653ca042eea10e26d1f`; joint-law/positive-chain/calendar supplements; actual G2 unranked source projectivity; compiled G6BridgeCannotEnterHybrid. The 10:03 scope reports reconstructed timed G2 ordinary endpoint acceptance, separately from stronger audit/replay debts. Actual provider bodies/dependencies are next to audit, not claimed rebuilt.
+I also read Codex's G6-FIRST-INTERFACE at blob `b5e93c14e2c2d977b0cd693d6d98c9cf4565b536`. The reported successful Lean runtime smoke is acknowledged as a COORDINATOR receipt, not a new G6 theorem or a fresh Mathlib/provider build. I will not duplicate compiler installation/build work under the revised division.
 
-Formal debts: contextual positive-chain source construction for both modes; guarded calendar embedding; feasible shared-rate cells and effective probability compiler; rational nets and closure/distance assembly; statistical and negative characterization; complete dependency/axiom audits; successful pinned Lean execution; independent source-semantic review. This ACK proves none of these.
+Initial main `f436b4f82b05bf2c99a55cbeeeb5dfb80265eca3`; successful ownership ACK read back at `b2614da3b718d4b7dbcbc47ea6f417641d327c22`. Immutable source-audit/ACK checkpoint published at `8fd6b054787bcc6cebc6b82d67c59385dd1cc55d`, path `checkpoints/20261007T130000Z-G6-20261007T124833Z-g6-astra-ACK.md`. Latest activation was read: G5/G6 claimed, G7 queued. No roster edit or extra worker.
 
-## Read record / next action
+## First substantive bridge
 
-Read complete assignment, COMMON-PROTOCOL.md, ACTIVATION.md, own/G5 status, AGENTS.md, START-HERE.md, RESEARCH-COMPLETION-STANDARD.md and 5 October LEAN-ENDPOINT-LEDGER.md. Read the current 10:03 scope update, not its entire embedded chronology, and returned G6 review through source/calendar/compiler discussion. Finish the exact review/source/supplement audit, recover current providers/runtime controls, freeze the full obligation register, then implement a genuinely missing bridge without duplicating existing structural proofs.
+Recovering and proving a finite normalized Poisson-count approximation and its transfer through the ACTUAL sourceIteration/sourceTimeKernel, using the source-derived global rate bound, same original parameters, whole labelled forests and deterministic JOINT observations. A rational Taylor prefix gives S=sum_{k=0}^m a^k/k! and U=S+2 a^(m+1)/(m+1)! when m+2>=2a. Both the normalized prefix T_k/S and the lower-prefix-plus-zero-residual law have an explicit rational error certificate <=1-S/U. The exact proof, termination, zero-rate case, computable-real mean extension, source instantiation and dependency order are being written for Codex. No desired whole-source approximation is an input field.
 
-Inbox parent listing contained only README.md; G6 subdirectory not yet present. No addressed message in that listing; no unseen receipt claimed. Latest direct instruction actually received: Nolan's G6 assignment in this chat.
+Existing providers actually read, all under `research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/`: UniformizedSourceStep (`db19b3ea...`), SourcePoissonKernel (`a0039a3...`), SourcePoissonExponential (`3d6756f...`), SourceProgramTransport (`1dcf63e...`) and ControlledUnrankedSourceProjectivity (`17dda00...`). Shared providers remain read-only.
 
-## Actual execution / preservation
+Local reference evaluator and exact rational tests now exist. Initial executed run: **1,143 checks passed**, Python **3.13.5**, 0.123094 seconds. Checks include a positive four-taxon binary cut-child graph fixture, normalized count certificates, entire forest laws, original labels/registers, existing subtree/bin preservation, independent CURRENT-root routing, COMMON register reuse, rejection of silent tail loss and false same-locus product laws, and shared-rate epoch controls. These are finite reference controls, NOT Lean execution or an all-source proof. Full code/log hashes will accompany the immutable handoff; source interface equivalence to the exact Lean Code carrier is not claimed from Python tests.
 
-No compiler/build job running. Local probe: no lean/lake on PATH or Lean runtime in searched locations; direct container GitHub DNS failed, while connected GitHub works. Other available execution routes will be checked before declaring a build blocker. No new theorem/build success or full G6 closure claimed.
+## Full master register and remaining gates
 
-No unpublished scientific source yet. Immutable ACK and substantive packet links will follow successful publication/readback. Only unique lane contributions and this status are owned; no shared G2/G5 files are being edited. No execution continues merely because this dated status exists.
+Retain arbitrary finite original sources, separate inheritance mechanisms, actual positive-chain contextual compression, physical constant-rate calendar guards, both Hausdorff directions for shared-source target-image closures, computable distances, robust-fiber honest finite certification, matching finite-read impossibility, known finite channels, closed-TV strict distance > 2 beta versus <= 2 beta, rare-switch obstruction, and RAW NONPLANAR extension. No original-size/floor restrictions, closure-as-exact-attainment, independent row fitting or DNA calibration.
+
+The entire accepted G6 independent review has been read; the original proof/source compiler and RAW NONPLANAR mathematical extension have been inspected. First handoff discharges only a source probability-evaluation bridge at its stated scope, not positive-chain realization, cut-bin source assembly, unbounded closure, statistical master or full Lean verification. Next publish the full mathematical packet, original source interfaces, reference code/tests and the master obligation register, then continue the contextual forest-error/source-compression bridge while Codex owns verification.
+
+## Runtime and turn boundary
+
+Local Lean/Lake absent; direct container GitHub DNS and official release download attempts failed. Those local diagnostics remain historical facts even though Codex subsequently reported a successful remote smoke. No local build job, background worker, automatic poll or unattended continuation is claimed. This is an active-turn WORKING observation, not a perpetual activity guarantee. The end-of-turn status will explicitly state the slot/job condition.
