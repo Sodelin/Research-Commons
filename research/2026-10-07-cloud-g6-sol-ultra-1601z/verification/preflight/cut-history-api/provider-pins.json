@@ -1,0 +1,86 @@
+{
+  "status": "READ-ONLY actual prior successful provider identities, no fresh compiler",
+  "frozen_context": "10f376e3f58f2e3ea28bd24de75b10a2bbb09ba5",
+  "eight_independently_inspected_G2_modules": [
+    "G2LiteralMarkedClockTrace",
+    "G2LiteralCutResidual",
+    "G2MarkedTraceCuts",
+    "G2SameClockContinuation",
+    "G2FiniteAncestralTrace",
+    "G2HistoryResidualAttachment",
+    "G2CutFutureSourceBinding",
+    "G2SameClockPastFutureLaw"
+  ],
+  "additional_context_provider": "G2ActualCalendarTrace",
+  "providers": {
+    "G2LiteralMarkedClockTrace": {
+      "repository_path": "research/2026-10-06-dot-g2-marked-clock-extension-0903z/G2LiteralMarkedClockTrace.lean",
+      "sha256": "c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a",
+      "imports": [
+        "UnifiedLean.Source.SourceLiteralClockEndpoint"
+      ]
+    },
+    "G2LiteralCutResidual": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2LiteralCutResidual.lean",
+      "sha256": "e09e93c3ef68ea8b25ff72008a37306bfb8d0c2a8ef2b7082eb5c841fb8f1011",
+      "imports": [
+        "G2LiteralEpochLaw"
+      ]
+    },
+    "G2MarkedTraceCuts": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceCuts.lean",
+      "sha256": "aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699",
+      "imports": [
+        "G2LiteralMarkedClockTrace"
+      ]
+    },
+    "G2SameClockContinuation": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockContinuation.lean",
+      "sha256": "9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6",
+      "imports": [
+        "G2LiteralCutResidual",
+        "G2MarkedTraceBudgetStability"
+      ]
+    },
+    "G2FiniteAncestralTrace": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteAncestralTrace.lean",
+      "sha256": "00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a",
+      "imports": [
+        "G2LiteralMarkedClockTrace",
+        "UnifiedLean.Source.SourceAncestralCompletion"
+      ]
+    },
+    "G2HistoryResidualAttachment": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2HistoryResidualAttachment.lean",
+      "sha256": "3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298",
+      "imports": [
+        "G2LiteralCutResidual"
+      ]
+    },
+    "G2CutFutureSourceBinding": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutFutureSourceBinding.lean",
+      "sha256": "b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190",
+      "imports": [
+        "G2HistoryResidualAttachment"
+      ]
+    },
+    "G2SameClockPastFutureLaw": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockPastFutureLaw.lean",
+      "sha256": "bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930",
+      "imports": [
+        "G2CutFutureSourceBinding",
+        "G2SameClockContinuation"
+      ]
+    },
+    "G2ActualCalendarTrace": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualCalendarTrace.lean",
+      "sha256": "cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd",
+      "imports": [
+        "G2LiteralEpochLaw",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ]
+    }
+  },
+  "mathlib_source_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "static_reader_attribution": "Lean owner context/history wrapper API reads, with internal cut_api_static delegated upstream-three-source read; neither ran a compiler or edited originals."
+}
