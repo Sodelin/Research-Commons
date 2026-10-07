@@ -20,6 +20,7 @@ The question is whether finite noisy observations yield effective, honest source
 | [BinClock](sources/UnifiedLean/G6/BinClock.lean) | Actual original-clock support inside a fixed bin, simultaneously for all finite budgets; retains the carried old tags | Three named/three owned declarations PASS at `ab849a9`, run37668810494 |
 | [FiniteTagDecoder](sources/FiniteTagDecoder.lean) | Actual pair-age decoding commutes with binning on the supplied well-labelled tree; preserves repeated-tag topology and compatible child swaps | 19 named/89 complete owned rows PASS at `ab849a9` |
 | [ResidualPrefix](sources/UnifiedLean/G6/ResidualPrefix.lean) | Distinct residual-lumped real probability vector, actual-source and same joint-readout error bounds | 13 named/24 owned rows PASS at `cd2383f2` in partial run37675879295; literal-prefix target failed |
+| [LiteralSameBinTrace](sources/LiteralSameBinTrace.lean) | Entire actual literal trace collapses to the same source bin update, including old tags and terminal endpoints | Eight named/11 owned rows PASS at `36691a00`, run37680262815 |
 | [MeanEnclosure](sources/UnifiedLean/G6/MeanEnclosure.lean) | Numerical mean perturbation through the SAME source bank/iterations, with normalized and residual readout bounds | 11 named/13 owned rows PASS at `19fafe5c` in partial run37678877661; literal parser failure excluded |
 
 The later [successful four-module receipt](verification/evidence/g6-run-37652484086-PASS/README.md) confirms all 61 custom dependency targets and the complete 51-declaration audit passed, using only propext, Classical.choice and Quot.sound. Pinned Mathlib cache was reused. [Independent terminal/source review](../2026-10-07-cloud-independent-auditor-1616z/G6-VERIFIED-PROGRAM-REVIEW.md) accepts this precise unranked component scope. Earlier failed attempts and raw logs remain in the evidence paths. Follow [current status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md) for later results.
@@ -71,9 +72,9 @@ This is the current successor of the historical startup register; the [startup A
 | Exact source/observation/target contract | Frozen original contract and accepted nonplanar hand review | Maintain arbitrary real hidden parameters, one shared source bank and separate mechanisms |
 | Finite common-subprobability/scaled domination | FiniteProbability PASS and full selected 51-declaration audit | Reuse in connected downstream master |
 | Actual conditioned count/source proxy and joint readout | Conditioning + SourcePrefix + same-register ProgramPrefix, including sum-of-deficits state/joint-TV budgets, PASS | Connect to the full master; retain normalized/residual distinction |
-| Positive Taylor tail, rational certificate/effective termination | Taylor/source bounds PASS; RationalCertificate 17 named reports now prove least-cutoff termination and coefficient correspondence at supplied rational means; Python controls and hand/code review preserved | Executable correspondence, arbitrary-real certified enclosure integration and outer all-source law approximation |
+| Positive Taylor tail, rational certificate/effective termination | Taylor/source bounds PASS; RationalCertificate 17 named reports now prove least-cutoff termination and coefficient correspondence at supplied rational means; Python controls and hand/code review preserved | MeanEnclosure now passes; [upper-mean common-history composition](UPPER-MEAN-COMMON-HISTORY.md) has [hand/source review](../2026-10-07-cloud-independent-auditor-1616z/UPPER-MEAN-COMMON-HISTORY-HAND-SOURCE-REVIEW.md), with its draft still uncompiled. [Physical-rate-bank comparison](RATIONAL-RATE-BANK-COMMON-LAW.md) is a new hand candidate. Effective input admission, executable correspondence and outer all-source tables remain open |
 | Contextual genuine positive-chain approximation/reconstruction | Accepted G6 Appendix A plus reviewed [COMMON contextual/effective constructor](../2026-10-07-cloud-g3-contextual-source-1716z/README.md); Lean open | Formal COMMON/INDEPENDENT, all entering forests/all finite caps, source-faithful physical chains |
-| Cut guards, fixed endpoints and actual timed-bin lift | BinHistory, HistoryPrefix, BinFold, actual BinClock and finite-tag actual-tree decoder PASS with complete owned inventory; inherited timed source context passed | Compile the hand-accepted literal-prefix collapse; bind original calendar, actual old-past tags, complete ancestral tail and joint observation law |
+| Cut guards, fixed endpoints and actual timed-bin lift | BinHistory, HistoryPrefix, BinFold, actual BinClock and finite-tag actual-tree decoder PASS with complete owned inventory; inherited timed source context passed | Literal-prefix collapse now passes with eight named reports in run37680262815. Compile the source-reviewed actual correlated calendar/tail principal-law derivatives; complete timed cut-refinement and joint observation assembly |
 | RAW NONPLANAR admission, core and target preservation | Accepted all-size hand extension | Connected source/bridge/component/switching proofs |
 | Joint feasible cells and rational law extraction | Accepted hand characterization | Effective exact feasibility, genuine witnesses and one shared parameter bank |
 | Both target-image Hausdorff directions/distance enclosures | Accepted hand characterization | Connected effective source/compiler/closure construction |
@@ -171,3 +172,21 @@ named reports / 11 owned rows. No compiler is active at 20:34 UTC.
 [Residual program/common-history composition](RESIDUAL-PROGRAM-COMMON-LAW.md)
 has [canonical hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/RESIDUAL-PROGRAM-COMMON-HAND-REVIEW.md);
 its new Lean consumer and the actual calendar principal-law draft remain unverified.
+
+## Source connections continued after the 150-module build
+
+The [actual calendar principal-law derivative](../2026-10-07-cloud-g3-contextual-source-1716z/complete-calendar-readout-1922z/FORMAL-DERIVATIVE-STATUS.md)
+is preserved at `b79a843`, with [source-semantic hand acceptance](../2026-10-07-cloud-independent-auditor-1616z/G3-ACTUAL-CALENDAR-DERIVATIVE-SOURCE-REVIEW.md)
+at `bc5cf77`; its new source bodies remain uncompiled. The subsequent
+[actual cut-refinement candidate](../2026-10-07-cloud-g3-contextual-source-1716z/actual-cut-refinement-2032z/)
+is separately preserved at `20da7fe`, review pending at this observation.
+
+The [upper-mean common-history proof](UPPER-MEAN-COMMON-HISTORY.md) and
+[additive draft](proof-drafts/UpperMeanCommon.lean) have
+[scoped independent hand/source acceptance](../2026-10-07-cloud-independent-auditor-1616z/UPPER-MEAN-COMMON-HISTORY-HAND-SOURCE-REVIEW.md)
+at `2796164`. They keep the actual-mean reference law while deriving an
+upper-mean numerical error bound for the same joint history. No new Lean
+result is claimed. The [rational physical-rate-bank candidate](RATIONAL-RATE-BANK-COMMON-LAW.md)
+adds a separate comparison of the actual holding and merger probabilities;
+it is awaiting review. Initial-register/routing approximation, executable
+tables and full G6 assembly are still separate.
