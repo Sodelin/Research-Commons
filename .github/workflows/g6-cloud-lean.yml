@@ -1,0 +1,30 @@
+name: G6 Cloud pinned Lean
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/g6-cloud-lean.yml
+      - research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/**
+      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/**
+permissions:
+  contents: read
+concurrency:
+  group: g567-pinned-lean
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Fetch frozen public input
+        run: |
+          set -euo pipefail
+          git init --quiet "$RUNNER_TEMP/research-commons"
+          git -C "$RUNNER_TEMP/research-commons" remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          git -C "$RUNNER_TEMP/research-commons" fetch --no-tags --depth=1 origin "$GITHUB_SHA"
+          git -C "$RUNNER_TEMP/research-commons" checkout --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Verify existing pinned runtime
+        run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+      - name: Verify G6 frozen sources serially
+        run: bash "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh"
