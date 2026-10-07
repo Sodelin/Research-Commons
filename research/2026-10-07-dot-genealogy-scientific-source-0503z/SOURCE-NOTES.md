@@ -21,3 +21,9 @@ No standalone package license or explicit package license field was present in t
 ## Verification level
 
 Creating this source selection involved no build, installation, product test, sampler or numerical inverse. A separately reviewed fresh focused provenance and receipt check is proposed. Only its actual completed results may establish current-source verification. It will not by itself rerun the full mathematical-law suite, validate optional sequence estimation, establish biological accuracy, implement the continuous JC inverse or supply whole-program Lean certification.
+
+## Dated verification update — 7 October 2026, 06:08 UTC
+
+The earlier untested/proposed wording above records this package's05:03 preparation state. The later [focused current-source verification](https://github.com/Sodelin/Research-Commons/tree/a7153f3ca206ec48ef6730cd2d3a2214ed5999f5/research/2026-10-07-dot-genealogy-focused-verification-0513z) is completed, independently accepted and publicly delivered: **four receipt tests passed, all three provider hashes matched, a deliberately wrong provider hash was rejected, and seven fresh matching-source receipts replayed.**
+
+This is the focused check of the exact public scientific engine and registry. It is not a rerun of the full45-test suite, optional sequence tests or a wheel/install build. No BPP, continuous JC inverse or biological experiment ran. The [original documentation/source snapshot](https://github.com/Sodelin/Research-Commons/tree/a7153f3ca206ec48ef6730cd2d3a2214ed5999f5/research/2026-10-07-dot-genealogy-scientific-source-0503z) remains available unchanged at that commit. This dated append and the corresponding selected-file manifest update change documentation only; every engine/registry file and its matching receipt binding remains unchanged. No scientific rerun was performed for this status update.
