@@ -45,3 +45,19 @@ This is the current successor of the historical startup register; the [startup A
 | Publication/semantic challenge/build/full axiom audit | Immutable failed and component-pass receipts preserved | Successful connected endpoint, reproducible pins, complete audits and independent full-source review |
 
 No positive source floor, rationality restriction on hidden parameters, per-row fitted witness or exact-real equality oracle is introduced. G3 exact attainment, G4 stopping and practical DNA precision remain separate. The single internal Lean owner controls serial frozen builds; see [the verification instructions](verification/verify.sh) and [runner](verification/run.py). New G7 work remains queued.
+
+## Continued source work after the documentation checkpoint
+
+[Joint actual-source history approximation](JOINT-HISTORY-PREFIX.md) extends
+the product error budget to the inherited entire endpoint-vector law and a
+retained correlated old-past label. [Same-bin actual graft update](SAME-BIN-UPDATE.md)
+coarsens the inherited age update and identifies a source-legal endpoint
+collapse within one bin. Their preserved Lean drafts are **UNCHECKED**;
+the sole Lean owner is preparing their formal derivatives alongside rational
+certificate/termination work. The [targeted source map](../2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md)
+locates the actual G2 history/decoration providers and remaining quotient gates.
+
+[Programme development and expected usefulness](PROGRAMME-DEVELOPMENT-AND-IMPACT.md)
+answers Nolan's questions about modular Lean, goal changes, the OpenAI
+mathematics release and impact timing. It distinguishes delivery targets
+from breakthrough or empirical-impact forecasts.
