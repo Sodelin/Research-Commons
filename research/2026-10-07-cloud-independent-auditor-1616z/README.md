@@ -1,6 +1,6 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 20:52 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 21:12 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [latest complete successful review](LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md) independently authenticates **all 150 custom modules, 171 named reports and their full 3,657-row inventory**, including 2,340 theorems and generated/type/body reference rows. The actual literal-prefix fold now passes at its corrected hash: eight named / eleven owned rows. Twelve G6 modules have 210 owned rows / 166 theorems. Numerical mean enclosure and the distinct real residual source vector retain their verified hashes. The [preceding partial review](MEAN-VERIFIED-LITERAL-PARSER-FAILURE-REVIEW.md) preserves the parser failure and its rejected recovery. The correlated actual calendar/tree/tag law and residual-program common-law consumer are hand accepted but their new implementations are absent from this successful freeze. Full connected G6 remains open.
 
@@ -16,6 +16,11 @@ The subsequent [expanded-run audit](EXPANDED-RUN-AND-G5-DIAGNOSTIC.md) records r
 
 | Review | Current scoped result | Evidence type |
 |---|---|---|
+| [Residual program source](RESIDUAL-PROGRAM-DRAFT-SOURCE-REVIEW.md) | Actual-mean real-vector PMF and common retained-program/history consumer accepted source semantics | Originalfac163e7 UNCHECKED; sole155/242 run37686869938 pending, no outcome inferred |
+| [Rational banks and ancestral row](RATIONAL-BANKS-AND-ANCESTRAL-COMPLETION-HAND-REVIEW.md) | Source-faithful holds/mergers, once-drawn COMMON/current-owner INDEPENDENT and ancestral rate-free endpoint row accepted | Direct hand original-provider review; executable/wholeG6 correspondence and new Lean translations separate |
+| [Practical finite A comparison](PRACTICAL-FINITE-A-COMPARISON-HAND-REVIEW.md) | Explicit wider auxiliary range and bounded profile give finite original endpoint onset/rAB error comparison | Hand source/calculus review; coarse constants, useful admitted all-nine precision/cover separate |
+| [Practical tied-B component](PRACTICAL-TIED-B-PROPAGATION-HAND-REVIEW.md) | Original tied routing and shared residual give finite inverse factor240 | Hand original-source review; frozen-mean nuisance comparison scoped algebraically, no contraction/admission |
+| [G4 actual unequal leading family](G4-ACTUAL-UNEQUAL-LEADING-FAMILY-HAND-REVIEW.md) | Actual analytic positive-source family satisfies the stated leading balances and positive clock/G7 gaps outside excluded bands | Direct/delegated hand IFT/source review; higher grades/fullresponse/fullG4 separate |
 | [G3 actual cut refinement](G3-ACTUAL-CUT-REFINEMENT-HAND-SOURCE-REVIEW.md) | Same full-past retained-clock law preserves completed age/tag/Code under an ancestral read cut and supplies last-cut extension | Hand/source review,13exact compiled providers; nine deterministic bodies UNCHECKED, probabilistic/calendar implementations hand-only |
 | [Upper-mean common history](UPPER-MEAN-COMMON-HISTORY-HAND-SOURCE-REVIEW.md) | Actual-mean common reference dominates original and upper-mean residual histories with summed numerical deficits | Hand/source review; elementary draft and full consumer compiler UNCHECKED; same-history joint readout scope |
 | [Practical A/rAB conditioning](PRACTICAL-A-CONDITIONING-HAND-REVIEW.md) | Finite physical-cell cofactor certificate accepted; exact witnesses reject its whole-D componentwise gap | Hand source review; no executed cell/cover or inverse-failure inference |
