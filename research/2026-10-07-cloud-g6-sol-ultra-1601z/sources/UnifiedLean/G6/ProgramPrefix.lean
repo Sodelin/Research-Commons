@@ -75,6 +75,25 @@ lemma programMass_le_one (N : RootedBinary V E X) (r : PositivePairRates E)
       change stepMass (Copy := Copy) N r K op * programMass (Copy := Copy) N r K ops ≤ 1
       exact (mul_le_mul' (stepMass_le_one (Copy := Copy) N r K op) ih).trans (by simp)
 
+/-- Each occurrence has its own deficit allocation, including repeated operations. -/
+theorem program_deficit_le_sum (N : RootedBinary V E X) (r : PositivePairRates E)
+    (K : ℕ) (ops : List (ProgramStep N)) :
+    1 - (programMass (Copy := Copy) N r K ops).toReal ≤
+      (ops.map (fun op => 1 - (stepMass (Copy := Copy) N r K op).toReal)).sum := by
+  induction ops with
+  | nil => simp only [programMass, ENNReal.toReal_one, sub_self, List.map_nil,
+      List.sum_nil, le_refl]
+  | cons op ops ih =>
+      have hstep : (stepMass (Copy := Copy) N r K op).toReal ≤ 1 := by
+        simpa using ENNReal.toReal_mono ENNReal.one_ne_top
+          (stepMass_le_one (Copy := Copy) N r K op)
+      have hrest : (programMass (Copy := Copy) N r K ops).toReal ≤ 1 := by
+        simpa using ENNReal.toReal_mono ENNReal.one_ne_top
+          (programMass_le_one (Copy := Copy) N r K ops)
+      have hproduct := mul_nonneg (sub_nonneg.mpr hstep) (sub_nonneg.mpr hrest)
+      rw [programMass, ENNReal.toReal_mul, List.map_cons, List.sum_cons]
+      nlinarith only [hproduct, ih]
+
 lemma actual_step_domination (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (K : ℕ) (op : ProgramStep N) (s d : Code N sample) :
     stepMass (Copy := Copy) N r K op * finiteProgramStep N r K op s d ≤
@@ -149,6 +168,24 @@ theorem same_initial_joint_readout_event {O : Type*} [Fintype O]
       (map_scaled_domination _ _ _
         (same_initial_distribution_domination N r K ops initial) readout o)
 
+theorem same_initial_distribution_tv_budget (N : RootedBinary V E X) {sample : Copy → X}
+    (r : PositivePairRates E) (K : ℕ) (ops : List (ProgramStep N))
+    (initial : PMF (Code N sample)) :
+    pmfTV (initial.bind (sourceProgram N r ops)) (initial.bind (finiteProgram N r K ops)) ≤
+      (ops.map (fun op => 1 - (stepMass (Copy := Copy) N r K op).toReal)).sum :=
+  (same_initial_distribution_tv N r K ops initial).trans
+    (program_deficit_le_sum (Copy := Copy) N r K ops)
+
+theorem same_initial_joint_readout_tv_budget {O : Type*} [Fintype O]
+    (N : RootedBinary V E X) {sample : Copy → X}
+    (r : PositivePairRates E) (K : ℕ) (ops : List (ProgramStep N))
+    (initial : PMF (Code N sample)) (readout : Code N sample → O) :
+    pmfTV ((initial.bind (sourceProgram N r ops)).map readout)
+      ((initial.bind (finiteProgram N r K ops)).map readout) ≤
+      (ops.map (fun op => 1 - (stepMass (Copy := Copy) N r K op).toReal)).sum :=
+  (same_initial_joint_readout_tv N r K ops initial readout).trans
+    (program_deficit_le_sum (Copy := Copy) N r K ops)
+
 #print axioms bind_scaled_domination
 #print axioms map_scaled_domination
 #print axioms actual_step_domination
@@ -157,4 +194,7 @@ theorem same_initial_joint_readout_event {O : Type*} [Fintype O]
 #print axioms same_initial_distribution_tv
 #print axioms same_initial_joint_readout_tv
 #print axioms same_initial_joint_readout_event
+#print axioms program_deficit_le_sum
+#print axioms same_initial_distribution_tv_budget
+#print axioms same_initial_joint_readout_tv_budget
 end UnifiedLean.G6.ProgramPrefix

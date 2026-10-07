@@ -7,6 +7,7 @@ No cancellation was issued by this worker.
 - Run [37650073193](https://github.com/Sodelin/Research-Commons/actions/runs/37650073193), job 112890786101.
 - Frozen source: `a5a80af1dedc53ff060f8d521b50596851261cd4`.
 - Run conclusion: CANCELLED; completed 2026-10-07 16:17:56 UTC according to API metadata.
+- There are 94 completed command receipts recovered from workflow stdout. One records actual `G5FrozenTripleAnalyticSupport` compiler exit 1, output SHA256 `34de6290607f742b7e7e67716ddf0a40bace5fcd605fcedac473905952442717`. Its detailed stdout was in the inaccessible artifact; no speculative correction is accepted without diagnostic replay.
 - Pinned runtime smoke passed. The selected G5 analytic branch and actual G2 consumer verification step was cancelled. No new selected-component PASS or full-master PASS follows.
 - Workflow stdout and metadata were actually downloaded and retained as `actions.log` and `run.json`.
 - Upload of artifact `cloud-g5-37650073193` succeeded: ID 11496078569; 100 files; archive 89,377 bytes; reported SHA256 `439aac618c7896cd34a9b5365e8a9553a5389e451e527368c24e341ac7d20f12`.

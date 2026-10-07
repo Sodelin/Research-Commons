@@ -10,6 +10,7 @@ on:
       - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/targets.txt
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: g567-pinned-lean
   cancel-in-progress: false
@@ -28,6 +29,10 @@ jobs:
           test "$(git -C "$RUNNER_TEMP/research-commons" rev-parse HEAD)" = "$GITHUB_SHA"
       - name: Verify existing pinned runtime
         run: bash "$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh"
+      - name: Recover stopped G5 original compiler diagnostics
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/recover_stopped_g5.py" "$RUNNER_TEMP/g6-cloud-build/g6-evidence/stopped-g5-original"
       - name: Verify G6 frozen sources serially
         run: bash "$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh"
       - name: Preserve actual success and failure evidence

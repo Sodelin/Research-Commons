@@ -1,0 +1,11 @@
+# Actual G6 selected-source/program kernel PASS
+
+Run [37652484086](https://github.com/Sodelin/Research-Commons/actions/runs/37652484086), job 112899121278; frozen source `3a45c8287a0b8e2b78281dd172861cfcc2cec532`. Started 2026-10-07 16:29:51 UTC; completed 16:39:47 UTC; conclusion SUCCESS. Full terminal workflow log and API metadata were actually fetched.
+
+All 63 recorded commands exited zero: Mathlib cache retrieval, 61 custom-source elaborations, and the complete selected G6 declaration audit. The frozen graph has 42 external Mathlib roots. All 51 selected G6 definitions/lemmas/theorems were audited; every transitive axiom set is a subset of `propext`, `Classical.choice`, and `Quot.sound`. The actual `G6_AXIOM_AUDIT_PASSED declarations=51` and `G6_SELECTED_COMPONENTS_PASSED` markers appear at 16:39:41 UTC.
+
+This checks finite common-subprobability/scaled-domination algebra, PMF conditioning, actual count/source prefix coefficients and domination/TV bounds, and same-initial-distribution finite-program product domination and joint endpoint readout transfer. COMMON uses the retained source register; boundaries and shared rates are unchanged. All custom dependencies in this selected graph were freshly elaborated. Mathlib imported-object cache was reused and not fully rebuilt. The exact pins are recorded in `inputs-recovered.json`.
+
+Scope: actual unranked endpoint genealogy/population/register carrier and deterministic joint endpoint readouts. Prior event/bin histories, physical calendar/menu binding, effective rational search/termination, positive biological source reconstruction, RAW NONPLANAR admission, and other G6 master obligations are not closed by these components. New later error-budget/Taylor/G3 additions require their own exact-source receipt.
+
+`actions.log` preserves actual full stdout/stderr, compiler commands, timestamps, identities and source hashes. `run.json` preserves API metadata. Parsed receipts and all 51 audit reports are independently recoverable from the log and retained alongside it. Original failed runs remain preserved. Independent auditor actually read this terminal log and confirmed all 63 zero exits and 51 standard-only reports; its attributed successor packet records the separate semantic review.
