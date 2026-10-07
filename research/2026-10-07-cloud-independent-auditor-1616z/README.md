@@ -1,10 +1,12 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 23:29 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 23:33 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [actual probabilistic cut-joint partial](CUT-JOINT-VERIFIED-CALENDAR-CONTEXT-PARTIAL-REVIEW.md) independently verifies **161 custom modules /313 named reports /3,912 owned declarations and 2,547 theorems**. The SAME-clock unnormalized cut-fibre joint source law now passes at exact3b0ccda0. Calendar context bafa fails; three downstream consumers are blocked and wholly excluded. All preceding3,902 rows remain exact. Actual run37701425874 completed FAILURE; no358-report or full cut/history acceptance is inferred.
 
 The [actual scalar-bank/deterministic-cut partial](BANKS-VERIFIED-CUT-JOINT-PARTIAL-REVIEW.md) independently verifies **160 custom modules,305 named reports and3,902 owned declarations /2,542 theorems**. Four actual bank/completion adapters and same-clock deterministic cut refinement now pass. The probabilistic cut-joint module fails; its four dependent modules are wholly blocked/excluded. All preceding3,795 rows remain exact. Actual run37699267727 completed FAILURE; no compiler is active from this lane.
 
-The [exact four-source cut-joint repair](CUT-JOINT-ELABORATION-SOURCE-REVIEW.md) clears source-semantic review of the failed joint module's type/measurability/AE-predicate proof repairs and twenty-one explicit existing Tag anchors in three blocked consumers. All 160 accepted source hashes are retained; the SAME 165/358 successor remains compiler UNCHECKED until its own receipt.
+The [exact four-source cut-joint repair](CUT-JOINT-ELABORATION-SOURCE-REVIEW.md) clears source-semantic review of the failed joint module's type/measurability/AE-predicate proof repairs and twenty-one explicit existing Tag anchors in three blocked consumers. All 160 accepted source hashes are retained; the subsequent SAME 165/358 run accepts the repaired joint module while calendar context fails, as recorded above.
 
 The [actual completed calendar law](PRINCIPAL-CALENDAR-VERIFIED-BANK-PARTIAL-REVIEW.md) now passes at exact hash06440343: seven named declarations and nine complete owned rows. Independent terminal/source/inventory authentication accepts **155 custom modules,242 named reports and3,795 owned declarations /2,448 theorems** from the failed overall run37695092891. The three failed banks and blocked upper-rate module are wholly excluded. All preceding3,786 owned rows remain exact.
 
