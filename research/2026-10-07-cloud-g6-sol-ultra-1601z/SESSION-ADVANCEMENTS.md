@@ -165,3 +165,11 @@ progress in this session. It still differs from completing G1 or the timed
 G2 endpoint: the general G5/G6 Lean endpoint and original open G3/G4 questions
 remain unfinished. The new 155-module run is pending, not another verified
 milestone yet.
+
+## Repair and team coordination at 21:29 UTC
+
+The first 155-module attempt failed its five new targets; the old 150-module inventory remains unchanged. [Exact failure evidence](verification/evidence/g6-run-37686869938-FAILED/README.md) is preserved, and the one reviewed same-scope repair run is pending. No new compiler milestone is claimed.
+
+The practical all-nine hand assembly now has delivered independent acceptance: sufficient mean diameter `2^-80` yields normalized distance at most `1/22`, improving the earlier `2^-512` scale. The sampling factor `32*2^160` still prevents a useful guarantee. G4 has preserved a fifth-grade obstruction for its accepted unequal-family construction, awaiting independent audit; it is a restricted-family result.
+
+Nolan directs collaboration with the resumed Dot team. [The published allocation proposal](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T212900Z-DOT-CODEX-COORDINATION-PROPOSAL.md) retains this team's G6 formal integration/serial compiler/practical/docs/audit and proposes broader G3/G4/G5 searches for Dot. Actual Dot receipt and ownership agreement remain pending. Saved sources and bounded tasks continue across the interface/model interruption.

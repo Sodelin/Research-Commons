@@ -4,7 +4,7 @@ Assignment CLOUD-G6-SOL-ULTRA-20261007 continues. Nolan renewed continuation
 on 7 October after an accidental interface interruption. The six internal
 lanes were actually resumed; the separate original G5 worker remains stopped.
 
-**Latest continuation:** [21:03 source-bank checkpoint](checkpoints/20261007T210300Z-G6-SOURCE-BANK-CONTINUATION.md) now includes a 21:13 reconciliation: the single 155-module successor is running at frozen `4326757`, and numerical-bank/cut/G4/practical hand reviews are published. Its terminal result remains pending.
+**Latest continuation:** [21:29 repair and Dot-coordination checkpoint](checkpoints/20261007T212900Z-G6-REPAIR-AND-DOT-COORDINATION.md). The first 155-module attempt failed only new targets; the verified 150-module inventory is unchanged. Sole repair run `37688793017` at `3767c9d` is pending. Nolan directs collaboration with resumed Dot; [the proposed split](inbox/G6/20261007T212900Z-DOT-CODEX-COORDINATION-PROPOSAL.md) awaits Dot acknowledgment. Six internal lanes retain their bounded work.
 
 **Earlier continuation, reconciled 20:34 UTC:** [numerical-source checkpoint](checkpoints/20261007T201800Z-G6-NUMERICAL-SOURCE-CHECKPOINT.md). [Run 37680262815 passed](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37680262815-PASS/README.md) all 150 selected modules, 171 named reports and the complete 3,657-declaration / 2,340-theorem inventory. [Independent review](../../research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md) is canonical at `395b56e`. No compiler job is active at this observation; next are the actual calendar joint-law and residual-program consumers.
 

@@ -2,11 +2,11 @@
 
 Assignment: CLOUD-G6-SOL-ULTRA-20261007.
 Contributor/publisher: Codex, session `20261007T160100Z-G6-CLOUD`.
-State: WORKING / TWELVE G6 COMPONENTS AND FINITE-TAG DECODER VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 21:13 UTC.
+State: WORKING / TWELVE G6 COMPONENTS AND FINITE-TAG DECODER VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-07 21:29 UTC.
 Requested execution: Sol, Ultra reasoning effort.
 Evidence anchor: fe95e69492699472b0e14655ab0b405ad141e69c.
 
-Latest: [run 37680262815 passed](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37680262815-PASS/README.md) at `36691a00`: all 150 custom modules and 153 commands passed; 171 named reports and the complete 3,657-declaration / 2,340-theorem inventory use standard axioms only. [Independent source and full-inventory acceptance](../../research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md) is canonical at `395b56e`. The repaired literal-prefix module is now accepted alongside residual and mean-enclosure adapters. The sole successor [37686869938](https://github.com/Sodelin/Research-Commons/actions/runs/37686869938) is running at frozen `4326757`, requesting 155 modules / 242 named reports; no terminal result is inferred. [Current continuation](checkpoints/20261007T210300Z-G6-SOURCE-BANK-CONTINUATION.md) links exact dispatch and reviewed calendar, residual-program and numerical-bank work.
+Latest: [the first 155-module input failed](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37686869938-FAILED/README.md) at `4326757`; all five new targets are excluded. All 150 earlier modules passed with their unchanged 171 named reports / 3,657 owned declarations / 2,340 theorems. Their controlling [full PASS and independent review](../../research/2026-10-07-cloud-independent-auditor-1616z/LITERAL-MEAN-RESIDUAL-VERIFIED-COMPLETE-REVIEW.md) remain valid. Sole reviewed repair run [37688793017](https://github.com/Sodelin/Research-Commons/actions/runs/37688793017), frozen `3767c9d`, requests the same 155/242 and is pending. [21:29 checkpoint](checkpoints/20261007T212900Z-G6-REPAIR-AND-DOT-COORDINATION.md) records exact dispatch, actual six-lane resumption and Nolan's new Dot collaboration direction. [Proposed ownership](inbox/G6/20261007T212900Z-DOT-CODEX-COORDINATION-PROPOSAL.md) awaits actual Dot acknowledgment; no transfer or terminal result is assumed.
 
 Actual [ACK, frozen master, reuse/gap audit and full obligation register](checkpoints/20261007T160100Z-G6-CLOUD-ACK.md). Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`. G6 implementation/build ownership accepted; G7 remains queued. Historical Astra status preserved.
 
