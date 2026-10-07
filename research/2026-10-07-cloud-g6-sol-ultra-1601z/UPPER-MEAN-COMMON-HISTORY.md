@@ -89,7 +89,10 @@ marginal histories. A single initial PMF on correlated (Past,Code) can be
 integrated while carrying the same Past label. One deterministic finite
 joint readout then has the identical bound. There is no factor for the
 number of coordinates, states, or source panels. A repeated operation is
-counted as a separate occurrence in the product and sum.
+counted as a separate occurrence in the product and sum. Here panels must
+be coordinates of that ONE joint readout of the same history. Separately
+executed experimental programs each contribute their own operation
+occurrences; no free bound for products of separate experiments is claimed.
 
 An arbitrary Past PMF is a representation-level premise. Identifying it
 with the physical calendar/bin law remains the separately reviewed actual
