@@ -1,0 +1,17 @@
+# Fixed-interval actual clock support: scoped hand acceptance
+
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor, 7 October 2026. Read-only hand/source review; no compiler launched. **HAND ACCEPT** the [clock-support note](../2026-10-07-cloud-g6-sol-ultra-1601z/ACTUAL-BIN-CLOCK.md), SHA256 `68492116303304bdfeea761a9b5b9c89daab97b41e08f5a941647b6ac3a5a03b`, and mathematical argument in [BinClock draft](../2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/BinClock.lean), SHA256 `7a5c824f6077cf7b111102b9ba74054b140ed8acac91937f2fd737eafa5d1c4d`, published at `d0e6405dc367ae5a18822c52a17c922263b1ef24`. These new implementation bytes are **UNCHECKED** pending a distinct actual receipt.
+
+I read the exact original statements and proof bodies supplying the argument:
+
+| Provider | Reviewed source SHA256 | Actual premise supplied |
+|---|---|---|
+| [ClockBoundaryNull](../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ClockBoundaryNull.lean) | `f0ed787fd7f9135024b4f5300120699b358cbea0b6adb9b6124a386448ee1982` | Active relative age equals an unchanged original clock coordinate; simultaneous avoidance of one fixed age |
+| [MarkedTraceCuts](../2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceCuts.lean) | `aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699` | Active record list and horizon bound, including exhausted/failed prefixes |
+| [WholeMatrixAges strict-clock compatibility](../2026-10-07-dot-g2-strict-clock-compatibility-0645z/G2WholeMatrixAges.lean) | `2c4a38c22a4fb6efa569796749eec7b00c3affd8ee1a57e33144a1bc893026b8` | Strict positivity of every original clock coordinate on one full-measure event |
+
+An active coordinate belongs to `List.ofFn` of the same literal trace, and survives exactly its active-flag filter. The inherited horizon theorem gives its relative age at most H. The coordinate telescope identifies that same age with an original pair-clock coordinate, so strict positivity applies. Simultaneous avoidance of the **fixed** age H removes equality at the horizon. Intersecting those two full-measure events works for all finite budgets and all their active coordinates without a success-flag assumption or an uncountable family of boundary events.
+
+Adding the fixed absolute offset A gives `A < event age < A + H`. H=0 therefore has no active records on this event. A bin map constant on that open interval assigns the same tag to every active record. The [now verified BinFold helper](HISTORY-FOLD-VERIFIED-REVIEW.md) then identifies the unchanged actual tag fold with its constant-tag version for every carried old tag matrix. Inactive padding writes no age/tag, and the old matrix is not reset to the new interval's tag.
+
+This result uses the original current pair-clock measure, positive pair-rate bank, literal trace and entering Code. No generic requested support field is added. It does not identify an arbitrary old tag matrix with the actual old source decoration; that history-to-age attachment remains a separate source obligation. A random ancestral completion horizon is not a fixed boundary H for this argument. Fixed calendar cuts, refined original-rate-preserving record composition, marked read-cuts, terminal tail-bin treatment, complete tree/bin observation and retained-bank law binding must still be connected. The result is one concrete source support gate, not the full G6 law or master endpoint.
