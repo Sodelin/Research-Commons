@@ -1,0 +1,13 @@
+# Actual original-register seed split
+
+Contributor/publisher: Codex, delegated G6 source author, 7 October 2026. **Source finding and proposed typed consumer; no compiler or scientific evaluation.** This packet is outside the current165-source job and does not modify any provider, workflow, target or original graph.
+
+The actual natural COMMON register is drawn once from `originalRegisterMeasure N p = Measure.pi (fun h : Hybrid N => bitMeasure (originalGamma p h))`. Its finite PMF maps that coin function through `originalRegister`; nonhybrid vertex registers are inert false. This seed is distinct from `NativeCoinSeed = (X × Hybrid N) → Bool`, which represents native independent current-owner coins. The unchanged original probability assignment supplies each hybrid's factor in both source definitions. No posterior replacement or redraw is introduced here.
+
+For a fixed set P of original vertices, let private hybrids be `{h : Hybrid N // h.val ∈ P}` and outside hybrids be `{h : Hybrid N // h.val ∉ P}`. The concrete measurable equivalence `MeasurableEquiv.piEquivPiSubtypeProd (fun _ => Bool) (fun h => h.val ∈ P)` splits the actual original coin function. The pinned theorem `measurePreserving_piEquivPiSubtypeProd` yields its exact product law, including empty private/outside sets, from the existing Bernoulli factors.
+
+Define the outside register to retain the outside hybrid bits and set all other vertices to false. The original `initial` has live set all copies, identity ancestor, leaf genealogies, original sampled-tip locations and empty history. Its register is its only seed-dependent field. Encoding into the admitted `initialCode` therefore commutes with the root's source-valid `erasePrivateCode`: erasing a naturally initialized full register gives the same original initial Code built from its outside register.
+
+The concrete joint target is the actual all-original coin law mapped to **(private coin restriction, erased natural initial Code)**. It must equal the private hybrid product measure times the outside product pushed through that same admitted outside initial Code. This is derived from source definitions and the actual pi split; independence is not an entering-PMF premise. Marginalization then supplies the erased natural-initial PMF law. Any later causal prefix additionally needs the root's source-derived syntactic no-private-COMMON-read contract; actual chronology construction remains a separate gate.
+
+The task supplies the erasure/program inputs as source-semantic accepted, compiler UNCHECKED. This consumer preserves their status. No actual timed/bin-prefix, graph substitution, private-population support, arbitrary correlated past, broader posterior theorem or full G6/G3 endpoint is claimed.
