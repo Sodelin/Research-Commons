@@ -50,6 +50,7 @@ theorem calendar_joint_pmf_toMeasure (N : RootedBinary V E X) {sample : Copy →
     (M : Copy → Copy → ℝ) :
     (calendarJointPMF N r bin hbin ops s offset M).toMeasure =
       calendarJointLaw N r bin ops s offset M := by
+  letI := calendar_joint_probability N r bin hbin ops s offset M
   unfold calendarJointPMF
   exact Measure.toPMF_toMeasure _
 
@@ -179,7 +180,11 @@ theorem complete_branch_joint_source_law (N : RootedBinary V E X)
     dsimp only [Function.comp_def, Prod.map, obs, g, ep, completeEnd, completeTags]
     rw [hp]
     exact Prod.ext rfl (hz _)
-  rw [Measure.map_map hout hi, Measure.map_congr hae,
+  rw [Measure.map_map hout hi]
+  change (C.prod ν).map (fun z => (completeEnd N ops (d, z),
+      completeTags N bin ops s offset (fun a b => bin (M a b)) (d, z))) =
+    ((C.map obs).prod (completionKernel N r d).toMeasure).map g
+  rw [Measure.map_congr hae,
     ← Measure.map_map hg (hobs.prodMap hep), ← Measure.map_prod_map C ν hobs hep]
   rw [complete_ancestral_state_source_law N r d hd]
 
@@ -198,7 +203,8 @@ theorem actual_complete_joint_source_law (N : RootedBinary V E X)
       ((calendarJointPMF N r bin hbin ops s offset M).bind
         (jointTailKernel N r tag)).toMeasure := by
   letI := actual_calendar_trace_probability N r ops s
-  letI : ∀ d, SFinite (completionKernel N r d).toMeasure := fun _ => inferInstance
+  letI : ∀ d : Code N sample, SFinite (completionKernel N r d).toMeasure :=
+    fun _ => inferInstance
   let obs := fun past : Fin ops.length → SegmentRecord N sample =>
     (calendarEnd N ops s past,
       calendarTags N bin ops s offset (fun a b => bin (M a b)) past)

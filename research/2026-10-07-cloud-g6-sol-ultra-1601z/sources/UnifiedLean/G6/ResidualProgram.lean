@@ -180,8 +180,11 @@ lemma residual_step_common_domination (N : RootedBinary V E X) {sample : Copy �
     residualStepMass (Copy := Copy) N r K op * finiteProgramStep N r K op s d ≤
       residualProgramStep N r K op s d := by
   cases op with
-  | interval t => exact residualPMF_domination _ _ _
-      (residualMass_bounds _ K).1 (residualMass_bounds _ K).2 d
+  | interval t =>
+      exact residualPMF_domination (finiteSourcePrefix N r t K s)
+        (sourceIteration N r 0 s)
+        (residualMass ((globalClockRate (Copy := Copy) r * t : ℝ≥0) : ℝ) K)
+        (residualMass_bounds _ K).1 (residualMass_bounds _ K).2 d
   | boundary b => simp only [residualStepMass, finiteProgramStep,
       residualProgramStep, one_mul, le_refl]
 
