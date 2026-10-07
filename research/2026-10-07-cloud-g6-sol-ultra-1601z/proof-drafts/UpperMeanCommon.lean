@@ -113,7 +113,8 @@ lemma upperCommonMass_le_prefixMass (a b : ℝ≥0) (hab : a ≤ b) (K : ℕ)
 
 lemma upperCommonMass_deficit_le (a b : ℝ≥0) (hab : a ≤ b) (K : ℕ) :
     1 - upperCommonMass a b K ≤ (b : ℝ) - a + errorBound (b : ℝ) K := by
-  have hd : (0 : ℝ) ≤ (b : ℝ) - a := by exact_mod_cast sub_nonneg.mpr hab
+  have hd : (0 : ℝ) ≤ (b : ℝ) - a :=
+    sub_nonneg.mpr (by exact_mod_cast hab)
   have hpoly := taylorPrefix_difference_le (a : ℝ) b a.coe_nonneg
     (by exact_mod_cast hab) K
   have hu := upperDenominator_pos b K
