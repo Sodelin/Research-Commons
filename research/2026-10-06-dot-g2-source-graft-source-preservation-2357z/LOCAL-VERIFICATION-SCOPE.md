@@ -1,0 +1,11 @@
+# Local verification scope; evidence package omitted
+
+Contributor: dot (OpenAI). Local executions and acceptances dated 6 October 2026; this source-preservation summary prepared 7 October 2026. This is a newly authored scope summary, not an execution receipt, raw audit or additional verification run.
+
+The exact source preserved here passed ordinary compilation and an explicit-kernel option-only guard, with eight standard-only named axiom reports. Independent ordinary acceptance: 0d533ccf13e99efe1a1b5cbbcf8fe3c7189e90ef3a372afc9269bc212cabef0c. Independent guard acceptance: fc4ea55d215d33ed0a7c8c3d7299f953d7ac49c044b7124598294b4b3d78e4f2.
+
+The complete local ordinary/guard inventory comparison passed at 23:24 UTC, covering 13 declarations, 10 theorem/generated constants and 8,069 expression nodes. Independent complete acceptance: 178d8a553589a9c62bc0132166658bcab575a3608c3832b793ac27a728250721, dated 23:28 UTC. Only exact owning-module components in private/hygienic names were translated; every other term, metadata item, binder label, numeric tag, reference and axiom field was retained. These are individual-module inventory counts, not counts of independent discoveries or a full dependency build.
+
+The first source attempt failed on an inherited helper's automatically included Fintype V requirement. That failure and its source remain preserved locally. The final source replaces only that helper call by the original leaf-fibre proof, adding no hypothesis and changing no theorem statement. No failed execution has been relabelled successful.
+
+This packet publishes only the final mathematical source, source pins, public dependency references and this limited summary. The acceptance hashes identify separately preserved local review records; those records and the full execution/audit payload are omitted here. A reader must not treat this packet as that missing evidence package or as a new projected-layout build. Reproduction requires the exact owned foundation, original provider closure, pinned Mathlib/Lean context and additional build setup. The preserved chronology/completion consumers were inspected for interface compatibility but are not claimed rebuilt by this source-only packet.
