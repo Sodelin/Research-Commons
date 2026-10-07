@@ -1,0 +1,90 @@
+{
+  "schema": "independent-helper-bootstrap-failure-v1",
+  "run": {
+    "conclusion": "failure",
+    "createdAt": "2026-10-07T17:44:56Z",
+    "databaseId": 37661460465,
+    "headSha": "8e4be1647e4ab6f2670e2f46c597009726dbdd80",
+    "jobs": [
+      {
+        "completedAt": "2026-10-07T17:45:42Z",
+        "conclusion": "failure",
+        "databaseId": 112929766977,
+        "name": "verify",
+        "startedAt": "2026-10-07T17:45:00Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Fetch frozen public input",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify existing pinned runtime",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Recover stopped G5 original compiler diagnostics",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "failure",
+            "name": "Verify G6 frozen sources serially",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve actual success and failure evidence",
+            "number": 6,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 7,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37661460465/job/112929766977"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-10-07T17:45:42Z",
+    "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37661460465"
+  },
+  "actual_current_stage_selected_commands": 0,
+  "custom_module_compilation_began": false,
+  "actual_diagnostic": "RuntimeError: Missing custom source: is",
+  "failure_stage": "verification/run.py import-dependency traversal before command loop",
+  "log_sha256": "7732db3c6c04d3386a3e34c56a1a5516511d8bbd77651a0cef09a50bcf4fd033",
+  "reviewed_helpers": {
+    "HistoryPrefix": {
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/HistoryPrefix.lean",
+      "sha256": "6a58d8a5a7116abb72ea663c0042efd78aff8e96b6a1f2050919b67f5dba0b72",
+      "bytes": 7944
+    },
+    "BinHistory": {
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinHistory.lean",
+      "sha256": "25d91367dee9b408e70fd2be9c847cb4b663d0bfed6d49981d48ddfd2da2c4e8",
+      "bytes": 4670
+    },
+    "RationalCertificate": {
+      "source": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RationalCertificate.lean",
+      "sha256": "56b277949bcb9d862214d2831e4d641a513150f962b83b9303a52a457743e5e0",
+      "bytes": 6119
+    }
+  },
+  "hand_review_separate_from_compiler_result": true
+}
