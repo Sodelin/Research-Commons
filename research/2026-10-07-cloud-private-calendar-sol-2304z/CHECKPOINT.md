@@ -33,3 +33,15 @@ Publication and hashes are preservation evidence, not proof acceptance.
 
 Next action: root assigns exact source review and owns compiler routing plus
 actual upper-phase support.
+
+Later API checkpoint: canonical primary/helper review at main `920af8fd`,
+SHA `da3121cc`, accepts all 12 original intended bodies and authenticates the
+11 source pins. Its sole static API hold is missing `open GProgram.G5`.
+The separate namespace-only derivative, exact diff and input JSON are linked
+from [CALENDAR-API-NORMALIZATION.md](CALENDAR-API-NORMALIZATION.md).
+Original `83c8248d` remains unchanged; no statements or source premises changed.
+Derivative authentication and all compiler checks remain pending. No physical
+support or stronger source-law claim is inferred.
+
+Next action for the derivative: non-force publication/readback and exact
+independent byte authentication. Root owns compiler routing separately.

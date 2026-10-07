@@ -1,7 +1,15 @@
 # Actual calendar no-private-read suffix
 
 Contributor/publisher: CLOUD-PRIVATE-CALENDAR-SOL-2304Z, 7 October 2026.
-Status: NEW TYPED DRAFT, COMPILER UNCHECKED; INDEPENDENT SOURCE REVIEW PENDING.
+Status: ORIGINAL SOURCE SEMANTICS INDEPENDENTLY ACCEPTED; NAMESPACE-ONLY
+DERIVATIVE PENDING AUTHENTICATION; ALL NEW BODIES COMPILER UNCHECKED.
+
+The [canonical original-source review](../2026-10-07-cloud-independent-auditor-1616z/PRIVATE-REGISTER-CALENDAR-SOURCE-REVIEW.md),
+main `920af8fd`, SHA `da3121cc`, accepts the 12 intended original bodies and
+all 11 pins, with a sole static API hold for the missing `GProgram.G5` open.
+[CALENDAR-API-NORMALIZATION.md](CALENDAR-API-NORMALIZATION.md) preserves the
+original and a separate one-line namespace derivative, diff and JSON. Neither
+source acceptance nor this repair is a compiler receipt.
 
 This bounded packet derives the private-register no-read predicate for
 the actual `originalNodeOperation`, `boundaryOperations` and `calendarTail`
