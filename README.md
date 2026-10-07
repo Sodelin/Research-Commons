@@ -2,6 +2,8 @@
 
 **[What research has actually been done?](RESEARCH-STATUS.md)** — current results across the corpus, the proofs and checks supporting them, and the exact questions still open. Evidence snapshot: 7 October 2026.
 
+Latest verified progress: [80 selected G3/G5/G6 statements passed the pinned Lean audit](research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt2-PASS/README.md). Browse [all 372 research packets in the frozen corpus index](research/2026-10-07-cloud-lit-organization-1621z/snapshots/20261007T165453Z/PACKET-INDEX.md). The overview distinguishes accepted hand proofs, compiled components, executed controls and open endpoints.
+
 **[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**
 
 Shared memory for Nolan's projects: early ideas, arguments, disagreements, and readable handoffs across chats.

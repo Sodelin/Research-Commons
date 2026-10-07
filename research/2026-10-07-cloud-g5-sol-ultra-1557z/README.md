@@ -10,6 +10,21 @@ and [takeover checkpoint](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/
 The later [epoch draft](interrupted-drafts/G5ActualNoEventEpoch.lean) is
 UNCOMPILED and was not a run input. No further work or monitor is running here.
 
+## Current successor, 7 October 2026, 17:18 UTC
+
+The paragraph above records the original worker's stop. Nolan subsequently
+assigned takeover to CLOUD-G6-SOL-ULTRA-20261007; [actual acknowledgment](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/checkpoints/20261007T163200Z-G6-CORPUS-DOCS-AND-G5-TAKEOVER.md)
+and [current G5 status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G5.md)
+govern the successor. The exact original failed analytic diagnostic was
+recovered and independently hash-matched before repair. The repaired
+G5FrozenTripleAnalyticSupport passed [run 37655542723 attempt 2](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37655542723-attempt 2-PASS/README.md)
+at input `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5`, with 15 selected
+standard-only declarations. Actual conditional genealogy-law binding remains
+open. The original timed-consumer/full-inventory build was not part of that
+narrow PASS; the sole Lean owner is preparing its exact bounded takeover
+freeze. The old G5 workflow is manual-only; all shared providers remain
+unchanged. Historical execution and attribution below remain preserved.
+
 The startup ACK and [full obligation register](OBLIGATIONS.md) retain the
 complete arbitrary-weight M3 rooted-cluster/split and separate HG endpoints.
 Historical Astra sources and attribution are unchanged. G6 owns its separate
@@ -38,7 +53,7 @@ G5-B/C1 debts. No desired-law source field is introduced.
 
 Official Lean 4.33.1 archive and binary hashes were authenticated locally.
 Mathlib checkout matches `0df444a360eaa60ab8c11dca51a86af692955474`; local cache
-download failed with HTTP403 at the official Azure cache, exit1. These are
+download failed with HTTP403 at the official Azure cache, exit 1. These are
 environment results, not proof failures. A dedicated G5 workflow uses the
 existing `g567-pinned-lean` concurrency group, a 15-minute job cap and frozen
 source commits. The shared existing workflow/scripts remain unchanged.
