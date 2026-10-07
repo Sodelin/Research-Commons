@@ -82,9 +82,13 @@ def run(argv, label):
     return output.decode(errors='replace')
 
 run(['lake', 'exe', 'cache', 'get', *sorted(external)], 'mathlib-cache')
-passed_modules, failed_modules = set(), []
+passed_modules, failed_modules, blocked_modules = set(), [], []
 for index, module in enumerate(order):
     record = modules[module]
+    custom_dependencies = [dependency for dependency in record['imports'] if dependency in modules]
+    if any(dependency not in passed_modules for dependency in custom_dependencies):
+        blocked_modules.append({'module': module, 'dependencies': custom_dependencies})
+        continue
     path = root / record['path']
     if hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
         raise RuntimeError('Frozen source mutated: ' + module)
@@ -94,13 +98,14 @@ for index, module in enumerate(order):
         run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', '-o', str(output), str(path)], f'{index:03d}-{module}')
     except SystemExit as exc:
         failed_modules.append({'module': module, 'result': str(exc.code)})
-        break
+        continue
     passed_modules.add(module)
 
 audited_targets = [target for target in targets if target in passed_modules]
 (evidence / 'selected-results.json').write_text(json.dumps({
     'requested_targets': targets, 'passed_modules': sorted(passed_modules),
-    'failed_modules': failed_modules, 'audited_targets': audited_targets,
+    'failed_modules': failed_modules, 'blocked_modules': blocked_modules,
+    'audited_targets': audited_targets,
 }, indent=2) + '\n')
 
 # Audit every declaration in each selected G6 source. Each #print axioms report

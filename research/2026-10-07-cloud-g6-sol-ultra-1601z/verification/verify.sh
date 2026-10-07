@@ -11,6 +11,7 @@ cp -a "$g6_packet/sources/." "$g6_build/"
 cp "$g6_repo/research/2026-10-07-cloud-g3-1619z/G3ApproximateMomentBarrier.lean" "$g6_build/G3ApproximateMomentBarrier.lean"
 cp "$g6_repo/research/2026-10-07-codex-g5-lean/sources/G5FrozenTriplePolynomialKernel.lean" "$g6_build/G5FrozenTriplePolynomialKernel.lean"
 cp "$g6_repo/research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/G5FrozenTripleAnalyticSupport.lean" "$g6_build/G5FrozenTripleAnalyticSupport.lean"
+python "$g6_packet/verification/install_timed_g2.py" "$g6_repo" "$g6_build"
 mkdir -p "$g6_build/deps"
 git init --quiet "$g6_build/deps/mathlib"
 git -C "$g6_build/deps/mathlib" remote add origin https://github.com/leanprover-community/mathlib4.git
