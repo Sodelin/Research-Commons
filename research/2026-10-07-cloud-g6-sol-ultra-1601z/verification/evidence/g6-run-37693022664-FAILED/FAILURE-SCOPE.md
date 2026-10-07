@@ -1,0 +1,7 @@
+# Actual principal final simplification failure
+
+Run 37693022664, frozen `0c065713902a35148d4ac513937e638fb7052f88`, completed with **FAILURE** at 22:08:47 UTC. Of 158 command receipts, 157 exited zero; 154 custom modules passed, with 235 named standard-only reports (173 G6, 47 G3, 15 G5). The complete successful-module inventory remains exactly byte-identical to the preceding result: 3,786 owned declarations, 2,441 theorems, all 3,786 prior rows unchanged, zero owned or nonstandard axioms and no missing successful modules.
+
+The identity normalization was accepted by the compiler and the previous `rw [hr]` succeeded. The sole current error is at `CompleteCalendarJointLaw.lean:244:2`: its final `simpa only [Γ, g, jointTailKernel, id_eq] using hk` leaves the goal's partial application `jointTailKernel N r tag` folded, while `hk` contains the explicitly expanded map kernel. This is an observed definitional/elaboration mismatch, not a new mathematical premise. The entire failed module, including its recovery axiom output, remains excluded from both acceptance audits. The exact compiler stdout SHA256 is `3e51b5872cc8f80540db5a3a22219157a01acac5ec98bdb5d49e0e3b08781b3b`.
+
+No scientific conclusion beyond the 154-module successful scope is promoted. Original author bytes and all earlier failed runs remain preserved. Any successor must retain those accepted source hashes, disclose its exact proof-engineering diff and obtain actual compiler/audit acceptance.

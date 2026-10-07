@@ -1,0 +1,79 @@
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:53:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:103:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:148:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:149:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:205:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:206:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:244:2: error: Type mismatch: After simplification, term
+  hk
+ has type
+  @Eq (Measure (Code N sample × (Copy → Copy → Tag)))
+    (∑ x,
+      Measure.map (fun z => (z.2, tagUpdate N z.1.1 z.2 tag z.1.2))
+        (((calendarJointPMF N r bin hbin ops s offset M).toMeasure.restrict {a | a.1 = x}).prod
+          (completionKernel N r x).toMeasure))
+    ((calendarJointPMF N r bin hbin ops s offset M).bind fun a =>
+        PMF.map (fun b => (b, tagUpdate N a.1 b tag a.2)) (completionKernel N r a.1)).toMeasure
+but is expected to have type
+  @Eq (Measure (Code N sample × (Copy → Copy → Tag)))
+    (∑ x,
+      Measure.map (fun z => (z.2, tagUpdate N z.1.1 z.2 tag z.1.2))
+        (((calendarJointPMF N r bin hbin ops s offset M).toMeasure.restrict {z | z.1 = x}).prod
+          (completionKernel N r x).toMeasure))
+    ((calendarJointPMF N r bin hbin ops s offset M).bind (jointTailKernel N r tag)).toMeasure
+'CloudG3.CompleteCalendarJointLaw.calendar_joint_pmf_toMeasure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.pmf_singleton_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.finite_joint_kernel_measure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.complete_branch_joint_source_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.actual_complete_joint_source_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
