@@ -45,3 +45,21 @@ support or stronger source-law claim is inferred.
 
 Next action for the derivative: non-force publication/readback and exact
 independent byte authentication. Root owns compiler routing separately.
+
+Later derivative receipt: main `1881005f672c64be3db088e0967c32ac7b1c6de2`,
+source `a639cd69`, JSON `f20c7713`, diff `fadf7052`. All nine packet files and
+pins were read back; the one-line addition exactly recovers unchanged original
+`83c8248d` on deletion. Canonical independent acceptance is main `68b2d0e2`,
+SHA `13b068dc`; root independently agrees. Compiler still unchecked.
+
+The separate [lower-prefix draft](proof-drafts/PrivateRegisterCalendarPrefix.lean)
+and [scope note](LOWER-PREFIX-SCOPE.md) add eight new proof bodies (six public,
+two list helpers), zero definitions. They derive the actual initial agenda
+prefix through a retained guard from strict later private ages, then connect
+that word literally to `compiledCalendarProgram`. All ties/edge exits and
+global modes remain. New-body independent review is pending. The prior 12
+reviewed bodies/original/derivative/JSON/diff remain unchanged.
+
+Next action: publish/read back the separate prefix draft and pins, then obtain
+exact-source review; root owns compiler and physical initialization/history
+support separately. No compiler, children or provider/frozen-input changes.

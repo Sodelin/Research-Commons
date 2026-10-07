@@ -1,15 +1,25 @@
 # Actual calendar no-private-read suffix
 
 Contributor/publisher: CLOUD-PRIVATE-CALENDAR-SOL-2304Z, 7 October 2026.
-Status: ORIGINAL SOURCE SEMANTICS INDEPENDENTLY ACCEPTED; NAMESPACE-ONLY
-DERIVATIVE PENDING AUTHENTICATION; ALL NEW BODIES COMPILER UNCHECKED.
+Status: ORIGINAL AND NAMESPACE-ONLY DERIVATIVE SOURCE SEMANTICS INDEPENDENTLY
+ACCEPTED; SEPARATE LOWER-PREFIX DRAFT PENDING REVIEW; ALL NEW BODIES
+COMPILER UNCHECKED.
 
 The [canonical original-source review](../2026-10-07-cloud-independent-auditor-1616z/PRIVATE-REGISTER-CALENDAR-SOURCE-REVIEW.md),
 main `920af8fd`, SHA `da3121cc`, accepts the 12 intended original bodies and
 all 11 pins, with a sole static API hold for the missing `GProgram.G5` open.
 [CALENDAR-API-NORMALIZATION.md](CALENDAR-API-NORMALIZATION.md) preserves the
-original and a separate one-line namespace derivative, diff and JSON. Neither
-source acceptance nor this repair is a compiler receipt.
+original and a separate one-line namespace derivative, diff and JSON. The
+exact [derivative source verdict](../2026-10-07-cloud-independent-auditor-1616z/PRIVATE-CALENDAR-NAMESPACE-DERIVATIVE-SOURCE-REVIEW.md)
+is main `68b2d0e2`, SHA `13b068dc`. Neither source acceptance nor this repair is
+a compiler receipt.
+
+[LOWER-PREFIX-SCOPE.md](LOWER-PREFIX-SCOPE.md) records a separate new draft with
+six public proofs and two private list helpers, zero definitions. It directly
+reuses actual date-exclusion/no-read and native suffix splitting to derive the
+initial calendar prefix through a retained lower guard when private ages are
+strictly later. All guard ties remain. New prefix-body independent review is
+pending; the accepted 12 suffix bodies and their originals are unchanged.
 
 This bounded packet derives the private-register no-read predicate for
 the actual `originalNodeOperation`, `boundaryOperations` and `calendarTail`

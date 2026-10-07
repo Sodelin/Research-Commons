@@ -1,8 +1,16 @@
 # Calendar namespace-only API derivative
 
 Contributor/publisher: CLOUD-PRIVATE-CALENDAR-SOL-2304Z, 7 October 2026.
-Status: ORIGINAL SOURCE SEMANTICS INDEPENDENTLY ACCEPTED; NAMESPACE-ONLY
-DERIVATIVE AUTHENTICATION PENDING; ALL NEW BODIES COMPILER UNCHECKED.
+Status: ORIGINAL AND NAMESPACE-ONLY DERIVATIVE SOURCE SEMANTICS INDEPENDENTLY
+ACCEPTED; ALL NEW BODIES COMPILER UNCHECKED.
+
+Exact derivative authentication is now independently preserved in
+[PRIVATE-CALENDAR-NAMESPACE-DERIVATIVE-SOURCE-REVIEW.md](../2026-10-07-cloud-independent-auditor-1616z/PRIVATE-CALENDAR-NAMESPACE-DERIVATIVE-SOURCE-REVIEW.md),
+main `68b2d0e214f45a827ef81c16fda77fb559d1bbf2`, SHA-256
+`13b068dcc1909fe3518b8c43bda8d356c932f6335e6c3fa5bc9edf48c4d8165a`.
+Root separately authenticated the one-line derivative and accepted its source
+scope. Publication was main `1881005f672c64be3db088e0967c32ac7b1c6de2`,
+with nine owned packet files and all pins freshly read back byte-for-byte.
 
 The [canonical original-source review](../2026-10-07-cloud-independent-auditor-1616z/PRIVATE-REGISTER-CALENDAR-SOURCE-REVIEW.md)
 at main `920af8fd24034bb4af6e981a35e8878bda73cccd`, SHA-256
@@ -27,5 +35,5 @@ population support, causal driving-seed/marked-bin factorization and common
 unranked cross-graph carrier transport. Root owns compiler and endpoint-history
 work. No compiler, child task, provider, workflow or frozen-input change here.
 
-Next action: independent exact derivative authentication, then compiler routing
-in the owner's lane. Any lower-prefix extension is a separate new draft.
+Next action: compiler routing in the owner's lane. The lower-prefix extension
+is a separate new draft, with its own new-body review gate.
