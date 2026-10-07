@@ -61,3 +61,7 @@ locates the actual G2 history/decoration providers and remaining quotient gates.
 answers Nolan's questions about modular Lean, goal changes, the OpenAI
 mathematics release and impact timing. It distinguishes delivery targets
 from breakthrough or empirical-impact forecasts.
+
+[Timed source explained](TIMED-SOURCE-EXPLAINED.md) gives a plain-language
+account of how G2's clocks, old subtree ages, joint histories and projective
+readout feed the G5/G6 consumers, with the actual170-module build boundary.

@@ -1,6 +1,6 @@
 # Modular verification, original goals and expected usefulness
 
-Contributor:CLOUD-G6-SOL-ULTRA-20261007. Observation7 October2026,17:27UTC.
+Contributor: CLOUD-G6-SOL-ULTRA-20261007. Observation 7 October 2026,17:27UTC.
 This answers Nolan's development/impact question using actual receipts. It is
 an assessment, not an external endorsement or forecast of a mathematical
 breakthrough. [Current outcomes](../../RESEARCH-STATUS.md) contain the full
@@ -14,8 +14,8 @@ readouts, then finite numerical certificates. The final inference consumers
 still need their source/observation interfaces.
 
 The [complete original G1 release](../2026-10-04-dot-complete-original-g1-1549z/README.md)
-contains467 source modules. Its fresh build and complete owned/dependency
-inventory recorded8,016 declarations and5,397 theorems, with no owned axioms
+contains 467 source modules. Its fresh build and complete owned/dependency
+inventory recorded 8,016 declarations and 5,397 theorems, with no owned axioms
 or nonstandard axiom rows. These counts describe one dependency closure;
 they are not counts of separately solved research problems.
 
@@ -23,13 +23,15 @@ Timed G2 has newer actual clock/history/calendar source proofs and an accepted
 ordinary-integration endpoint. Its sixteen named reports differ from a full
 environment inventory. New G6 modules reuse the original source kernels
 rather than postulate their output law. [Today's selected build](verification/evidence/g6-run-37655542723-attempt2-PASS/README.md)
-passed65 custom elaborations and80 selected standard-only declarations:
-64G6,one G3 scalar,15G5 analytic. Its [independent review](../2026-10-07-cloud-independent-auditor-1616z/G6-TAYLOR-G3-G5-VERIFIED-REVIEW.md)
+passed 65 custom elaborations and 80 selected standard-only declarations:
+64 G6, one G3 scalar,15 G5 analytic. Its [independent review](../2026-10-07-cloud-independent-auditor-1616z/G6-TAYLOR-G3-G5-VERIFIED-REVIEW.md)
 authenticated exact inputs and byte-matched audit output.
 
-A new170-module selected timed-source takeover run is in progress at this
-observation, with a complete generated-declaration/type/body/dependency-axiom
-inventory planned. It is not yet a result or a whole-corpus rebuild. We keep
+A later [170-module selected timed-source takeover](../2026-10-07-cloud-g5-sol-ultra-1557z/verification/evidence/g5-takeover-run-37658528073-PASS/README.md)
+actually passed at 17:34:09, including the inherited actual G5 timed consumer
+and complete selected inventory: 3,856 declarations, 2,522 theorems and zero
+owned/nonstandard axioms or missing modules. This updates the earlier
+in-progress observation above; it is not a whole-corpus rebuild. We keep
 one serial compiler owner, explicit runtime/dependency pins, preserved failed
 commands and nonforce source/receipt publications.
 
@@ -68,9 +70,9 @@ does not permit narrowing that promise without naming the changed scope.
 ## What the OpenAI mathematics release contributed
 
 The [preserved release screen](../2026-10-07-dot-frontier-source-index-and-obligation-map-0309z/README.md)
-indexed722 manuscript records across372 families, with selected primary-source
+indexed 722 manuscript records across 372 families, with selected primary-source
 reading. Those external-family counts are unrelated to Commons' coincidentally
-372 research packet directories. This was not722 complete proof audits.
+372 research packet directories. This was not 722 complete proof audits.
 
 The [theorem-to-obligation map](../2026-10-07-dot-frontier-source-index-and-obligation-map-0309z/THEOREM-OBLIGATION-MAP.md)
 identifies conditional bounded real-algebraic decision/design complexity,
@@ -106,7 +108,7 @@ admitted datasets/model adequacy, numerical/sample cost and useful parameter
 accuracy. Generic mathematical closure alone supplies none of those.
 
 The [October roadmap](../../timelines/2026-10-october-research-roadmap.md) targets
-31October deliverables; its dates are planning targets, not breakthrough
+31 October deliverables; its dates are planning targets, not breakthrough
 guarantees, and its older status counts are superseded by current receipts.
 Scoped methods/documentation can be useful before every original master
 closes. There is no evidence-based date for full G3/G4 closure, independent
