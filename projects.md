@@ -1,5 +1,7 @@
 # Project entry points
 
+**For results, read [the current research overview](RESEARCH-STATUS.md).** It separates accepted proofs, actual Lean/test evidence, implemented components and exact remaining obligations. This page identifies canonical homes and preserves older navigation history.
+
 Active research instruction: [full-master completion standard](docs/RESEARCH-COMPLETION-STANDARD.md) and [current-owner receipt request](communications/2026-09-30-master-closure-standard-and-receipt-request.md). Component delivery does not close an unresolved promised master or downstream application.
 
 ## Latest Astra query/statistical handoff, 2026-09-30
@@ -15,7 +17,7 @@ Read the [exact-query proof and reproducible packet](research/2026-09-30-astra-s
 | Psychology checkpoint | [Mathematics of Psychology](https://github.com/Sodelin/Mathematics-of-Psychology-Formalized) | Historical solidarity checkpoint; its 16 declarations are included in Soft Sciences, not an additional corpus. |
 | Biological implementations | [Samuel Alexander research](https://github.com/Sodelin/Work-on-Samuel-Alexander-Research-) | Existing evolutionary-network, inheritance and pedigree projects. Cellular candidates have no selected implementation home yet. |
 | Shared research workflow | This repository | Start with the [current decision and handoff](communications/2026-09-30-commons-builder-foundations-closeout.md). For evidence, read the [completed memory-structure screens](research/2026-09-30-memory-structure-adversary/REPORT.md) and [verification](docs/VERIFICATION.md); the [broader audit](notes/2026-09-30-omnibus-audit-workspace-design.md) preserves the design history. |
-| Marketing research | User reports an existing repository; exact URL not verified in this setup | Add its canonical URL when observed. The friend's project keeps its own pace; this setup does not design or validate the business. |
+| Marketing research | [Project repository](https://github.com/Sodelin/Marketing-Research) | Canonical repository observed during the 7 October inventory. Its scientific/business content has not been source-reviewed in this pass; the friend's project keeps its own pace. |
 
 Links into the theory repository above pin the observed commit fceff354221e521538938f60457ba90481c6eb45. Read current main for newer work. This index is navigation, not a live status tracker or an assertion that all project results have been checked.
 

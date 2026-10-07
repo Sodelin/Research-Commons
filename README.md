@@ -1,5 +1,7 @@
 # Research Commons
 
+**[What research has actually been done?](RESEARCH-STATUS.md)** — current results across the corpus, the proofs and checks supporting them, and the exact questions still open. Evidence snapshot: 7 October 2026.
+
 **[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**
 
 Shared memory for Nolan's projects: early ideas, arguments, disagreements, and readable handoffs across chats.
