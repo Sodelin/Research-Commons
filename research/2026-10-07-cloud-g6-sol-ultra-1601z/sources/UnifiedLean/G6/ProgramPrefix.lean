@@ -20,7 +20,7 @@ theorem bind_scaled_domination {A B : Type*}
     (p q : PMF A) (f g : A → PMF B) (mu nu : ℝ≥0∞)
     (hp : ∀ a, mu * q a ≤ p a) (hf : ∀ a b, nu * g a b ≤ f a b) (b : B) :
     (mu * nu) * (q.bind g) b ≤ (p.bind f) b := by
-  rw [PMF.bind_apply, PMF.bind_apply, ENNReal.tsum_mul_left]
+  rw [PMF.bind_apply, PMF.bind_apply, ← ENNReal.tsum_mul_left]
   apply ENNReal.tsum_le_tsum
   intro a
   calc
@@ -44,7 +44,8 @@ noncomputable def stepMass (N : RootedBinary V E X) (r : PositivePairRates E)
       (Finset.range (K + 1) : Set ℕ)
   | .boundary _ => 1
 
-noncomputable def programMass (N : RootedBinary V E X) (r : PositivePairRates E)
+noncomputable def programMass {Copy : Type*} [DecidableEq Copy] [Fintype Copy]
+    (N : RootedBinary V E X) (r : PositivePairRates E)
     (K : ℕ) : List (ProgramStep N) → ℝ≥0∞
   | [] => 1
   | op :: ops => stepMass (Copy := Copy) N r K op * programMass (Copy := Copy) N r K ops
@@ -79,8 +80,9 @@ lemma actual_step_domination (N : RootedBinary V E X) {sample : Copy → X}
     stepMass (Copy := Copy) N r K op * finiteProgramStep N r K op s d ≤
       sourceProgramStep N r op s d := by
   cases op with
-  | interval t => exact filtered_bind_domination _ _ (prefix_has_support _ K)
-      (fun k => sourceIteration N r k s) d
+  | interval t =>
+      exact filtered_bind_domination _ _ (prefix_has_support _ K)
+        (fun k => sourceIteration N r k s) d
   | boundary b => simp only [stepMass, finiteProgramStep, one_mul, le_refl]
 
 theorem actual_program_domination (N : RootedBinary V E X) {sample : Copy → X}
