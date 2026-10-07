@@ -1,6 +1,8 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 21:54 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 22:04 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [principal identity repair](PRINCIPAL-IDENTITY-REPAIR-SOURCE-REVIEW.md) has exact one-line source-semantic acceptance, with actual successor37693022664 still pending at the dated review. The [new upper-rate interval adapter](UPPER-RATE-INTERVAL-DRAFT-SOURCE-REVIEW.md) has accepted intended source semantics and three identified static API corrections; all eleven new declarations remain compiler UNCHECKED and outside that successor.
 
 The [latest actual partial acceptance](RESIDUAL-PROGRAM-VERIFIED-PRINCIPAL-FAILED-REVIEW.md) independently verifies **154 custom modules,235 named reports and3,786 owned declarations /2,441 theorems**, adding the actual-mean residual PMF/program/history consumer under its occurrence-wise certified-cutoff premises. Its exact hash76301709 has34named/75complete owned rows. The principal completed calendar law alone remains failed and wholly excluded; a routine identity-reduction successor is separate. Prior owned rows and accepted source hashes are preserved.
 

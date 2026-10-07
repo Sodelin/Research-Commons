@@ -1,0 +1,89 @@
+{
+  "review_kind": "primary full eleven-body source-semantic review and read-only Mathlib API preflight",
+  "commit": "fe41e77bfb456e66f6b725a71ce1c91ab096386a",
+  "path": "research/2026-10-07-cloud-source-backend-sol-2152z/proof-drafts/UpperRateSourceCommon.lean",
+  "sha256": "f155d4600a30ccc5078df01727ce5ccf45eef06544bca2f3806eb42e045560a3",
+  "inputs": [
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/RateBankCommonExplicitCopy.lean",
+      "sha256": "0dfa158e84acd89f11177ef960c876a3ffb3bf118732be157b1293670cddb1e0",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperMeanCommon.lean",
+      "sha256": "03bfc2b570e094b59825e920b4955fa3e9fb07afc7be934154f715d5fc5b3172",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualProgram.lean",
+      "sha256": "7630170941d74aafdc9f29ee7d010f42447f7a067823890c8ac024cf56aa9bd1",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/SourcePrefix.lean",
+      "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualPrefix.lean",
+      "sha256": "569ef4c988206854cd317bd0f8556177dab6dcd38571f4f8206c454e662d630f",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ProgramPrefix.lean",
+      "sha256": "a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteProbability.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/Conditioning.lean",
+      "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/TaylorCertificate.lean",
+      "sha256": "eac88ebb03ec5443cd12e95d9a95510eec2a1ca94396ddc8b3409882e1e9049b",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/MeanEnclosure.lean",
+      "sha256": "ff34fe3198c2c541819c1b7ab19784bfdbd476ca44f70b4f9ba0a402d88b7717",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-02-dot-source-epoch-kernel-1220z/UnifiedLean/Source/UniformizedSourceStep.lean",
+      "sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c",
+      "matched_immutable_git_bytes": true
+    },
+    {
+      "path": "research/2026-10-02-dot-source-epoch-kernel-1220z/UnifiedLean/Source/SourcePoissonKernel.lean",
+      "sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c",
+      "matched_immutable_git_bytes": true
+    }
+  ],
+  "intended_source_semantics": "ACCEPT",
+  "ordinary_compiler_invoked": false,
+  "new_declarations_compiler_status": "UNCHECKED",
+  "preflight_api_defects": [
+    {
+      "name": "mul_le_mul_right'",
+      "use_count": 2,
+      "pinned_mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "finding": "No declaration of this name in read-only pinned Mathlib tree; inverse le_of_mul_le_mul_right exists",
+      "statement_preserving_candidate": "mul_le_mul' hpow le_rfl",
+      "actual_compiler_failure_claimed": false
+    },
+    {
+      "name": "pow_le_one_of_le",
+      "use_count": 1,
+      "finding": "Declaration is namespaced Left.pow_le_one_of_le; global exported alias pow_le_one'",
+      "statement_preserving_candidate": "Left.pow_le_one_of_le",
+      "review_attribution": "independent calendar_review_sol API preflight, confirmed by primary source inspection",
+      "actual_compiler_failure_claimed": false
+    }
+  ]
+}
