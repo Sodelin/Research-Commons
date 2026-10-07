@@ -1,8 +1,10 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 23:33 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 7 October 2026, 23:36 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [actual probabilistic cut-joint partial](CUT-JOINT-VERIFIED-CALENDAR-CONTEXT-PARTIAL-REVIEW.md) independently verifies **161 custom modules /313 named reports /3,912 owned declarations and 2,547 theorems**. The SAME-clock unnormalized cut-fibre joint source law now passes at exact3b0ccda0. Calendar context bafa fails; three downstream consumers are blocked and wholly excluded. All preceding3,902 rows remain exact. Actual run37701425874 completed FAILURE; no358-report or full cut/history acceptance is inferred.
+
+The [immutable author correspondence](CUT-JOINT-PARTIAL-AUTHOR-CORRESPONDENCE.md) additionally matches the latest official-terminal evidence to author commit98340fe2: input, all command receipts,164 non-cache stdout blocks and full audit payload. No archive comparison is claimed.
 
 The [actual scalar-bank/deterministic-cut partial](BANKS-VERIFIED-CUT-JOINT-PARTIAL-REVIEW.md) independently verifies **160 custom modules,305 named reports and3,902 owned declarations /2,542 theorems**. Four actual bank/completion adapters and same-clock deterministic cut refinement now pass. The probabilistic cut-joint module fails; its four dependent modules are wholly blocked/excluded. All preceding3,795 rows remain exact. Actual run37699267727 completed FAILURE; no compiler is active from this lane.
 
@@ -21,6 +23,8 @@ The [original-calendar suffix draft](PRIVATE-REGISTER-CALENDAR-SOURCE-REVIEW.md)
 The [new actual lower-prefix draft](PRIVATE-CALENDAR-LOWER-PREFIX-SOURCE-REVIEW.md) separately clears eight-body source review. Strict private ages above the guard and the actual sorted agenda derive no-read through the entire original initial prefix, retaining the complete tied guard boundary and literal compiler split. It remains compiler UNCHECKED and does not supply physical population or marked-history admission.
 
 The [natural private-seed consumer](PRIVATE-SEED-NATURAL-FACTORIZATION-SOURCE-REVIEW.md) clears primary and bounded independent source review of nine bodies deriving the actual original-hybrid product split, private-seed/erased-initial-Code product and no-read endpoint marginal. No arbitrary entering independence is assumed. All new implementations remain compiler UNCHECKED; whole marked/history and cross-graph assembly stay separate.
+
+The [new private-seed endpoint-history draft](PRIVATE-SEED-ENDPOINT-HISTORY-SOURCE-REVIEW.md) clears ten-body source review. The actual natural product and derived no-read history transport retain private seed, initialized Code and every endpoint, including empty words. It remains compiler UNCHECKED; literal clock/mark/bin history and arbitrary entering/posterior independence are outside its conclusion.
 
 The [signed receiver guard derivative](SIGNED-RECEIVER-GUARD-REPAIR-REVIEW.md) now clears source/code review and inspected author controls: the verified byte buffer executes directly, and bounded n/d parsing precedes Fraction allocation. The same three geometry results remain exact; observed confidence and a useful complete cover remain open.
 
