@@ -1,0 +1,41 @@
+{
+  "bytecode_present": false,
+  "classification": "source-read import topology; actual CLI imports succeeded but no instrumentation trace",
+  "new_operational_wrapper": "execute_smoke.py applies limits directly; archived watchdog not invoked",
+  "runtime_root": "/workspace/cloud-practical-runtime/jc-original",
+  "shared_provider_or_historical_source_edits": false,
+  "static_edges": {
+    "base_contractors.py": [
+      "interval_math.py"
+    ],
+    "filter_core.py": [
+      "../msci-330-feature-public-20261005-1039z/evaluator/certified_forward.py (loader defined; loaded only when called)"
+    ],
+    "global_check.py": [
+      "global_engine.py",
+      "global_contractors.py",
+      "interval_math.py"
+    ],
+    "global_contractors.py": [
+      "interval_math.py",
+      "base_contractors.py",
+      "joint_contractor.py"
+    ],
+    "global_engine.py": [
+      "global_contractors.py",
+      "interval_math.py",
+      "../msci-bounded-inverse-filter-20261005-1102z/filter_core.py"
+    ],
+    "interval_ad.py": [
+      "interval_math.py"
+    ],
+    "interval_math.py": [
+      "../msci-330-feature-public-20261005-1039z/evaluator/certified_forward.py"
+    ],
+    "joint_contractor.py": [
+      "interval_math.py",
+      "interval_ad.py",
+      "base_contractors.py"
+    ]
+  }
+}

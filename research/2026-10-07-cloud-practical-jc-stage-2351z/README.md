@@ -1,7 +1,8 @@
 # Clean unchanged original-D JC runtime assembly
 
 Contributor: Cloud practical lane, 7 October2026, 23:51 UTC.
-Status: declared bounded assembly/control; execution pending at initial freeze.
+Status: [actual assembly PASS and scientific UNKNOWN](RESULT.md); the
+single declared root-stage control and complete separate checker executed.
 This advances the actual original JC pipeline after the
 [shared count port](../2026-10-07-cloud-practical-takeover-2337z/README.md).
 It does not substitute the scalar count kernel for inverse/statistical work.
@@ -49,7 +50,8 @@ new journal and source pre/post identities will be preserved. UNKNOWN and
 all resource/failure results remain explicit; no width/confidence success is
 predetermined. Reproduction is an unchanged staging plus one declared run.
 
-Next action: freeze this script/control, stage the actual runtime, execute
-one producer and one separate complete-chain checker, then publish their
-actual receipt and exact import/source identity record. Full practical
-confidence/useful all-nine exported widths remain open.
+The checker recomputed the entire3-frame journal: rR normalized width1/256,
+other8 widths1, UNKNOWN_OUTER_COVER and no verified statistical coverage.
+Next action: review the exact assembly source/receipt and implement the
+faithful C++ interval/scalar-exp primitive before changing any backend.
+Full practical confidence/useful all-nine exported widths remain open.
