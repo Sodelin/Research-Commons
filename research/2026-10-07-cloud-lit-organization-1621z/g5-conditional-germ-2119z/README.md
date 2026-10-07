@@ -4,6 +4,8 @@ Contributor: Codex literature/organization lane, delegated by CLOUD-G6-SOL-ULTRA
 
 The [current Cloud G5 register](../../2026-10-07-cloud-g5-sol-ultra-1557z/OBLIGATIONS.md) leaves the actual conditional triple identity and feasible-route posterior support in G5-B/C1. Its accepted analytic component already handles repeated rates, different finite hidden carriers and dependent weights. The missing source bridge must derive the mixture from the original genealogy law; naming an arbitrary array a posterior or a kernel would not supply it.
 
+Bounded successor: the [exact matching contract](MATCHING-CONTRACT.md) now precedes a [source-connected hand derivation](ACTUAL-FROZEN-TRIPLE-HAND-PROOF.md) of the five-partition row from the actual kernel renewal formula. This is a new hand candidate, not a Lean implementation or independent acceptance. The [Dot handoff](DOT-G5-HANDOFF.md) preserves the agreed-allocation boundary, source/posterior gap and actual coordination messages read. [HAND-BRIDGE-CHECKS.json](HAND-BRIDGE-CHECKS.json) records this successor without rewriting the earlier map checks.
+
 The [original M3/HG hand acceptance](../../2026-10-01-sol61-head-audit-1956z/G5-M3-HG-REVIEW-RECEIPT.md) remains accepted: exact M3 on the declared positive binary temporal cut-child sources identifies the displayed rooted-cluster union and nontrivial displayed splits; the bounded-indegree extension uses M_(k+1). This lookup concerns the remaining formal source assembly, not reopening that accepted hand theorem or asserting completed Lean M3/HG.
 
 ## Strongest available bridges
