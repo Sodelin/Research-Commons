@@ -1,0 +1,136 @@
+{
+  "schema": "rust-interval-public-transfer-v1",
+  "prepared_utc": "2026-10-07T23:49:00Z",
+  "publisher": "OpenAI dot",
+  "status": "UNFINISHED_NOT_ACCEPTED_9_PASS_1_FAIL",
+  "repository": "Sodelin/Research-Commons",
+  "prefix": "research/2026-10-07-rust-interval-handoff",
+  "original_zip_sha256": "07b074bf471a9d8b077fe30bd68e45be9e8743d6fe43c29bbf48b4db285ea023",
+  "original_manifest_sha256": "c8b43a83aac626a4d609091675356b9744b8ca68322692697eabd8a87c06eb23",
+  "new_executions_during_transfer": false,
+  "derived_files": [
+    {
+      "path": "reports/rust-build.log",
+      "change": "Replaced one absolute package directory with <package>; all diagnostic text and test/build outcomes preserved.",
+      "original_bytes": 309,
+      "original_sha256": "69668df976cc85a365c023c4f895a80ce738cb42b37d8c446426621ba1425332",
+      "derived_bytes": 272,
+      "derived_sha256": "4816b5bab1616a7120d35845266398377a8bc88aa73ccb7ea5783b22e472622a"
+    },
+    {
+      "path": "reports/rust-tests.log",
+      "change": "Replaced one absolute package directory with <package>; all diagnostic text and test/build outcomes preserved.",
+      "original_bytes": 1711,
+      "original_sha256": "76d400ec34f43f546f9fac36843cec420f0c93fb58f9f1b96c03ddd313bda221",
+      "derived_bytes": 1674,
+      "derived_sha256": "0a5012b690901e1608b0aa4b4030b38a2e730045914fe8a84358638f68d2f2e1"
+    },
+    {
+      "path": "scripts/env.sh",
+      "change": "Removed the absolute executor-local default. The derived setup helper requires explicit TOOLCHAIN_BASE for an approved existing cache. This portability edit was not executed; arithmetic and test sources are unchanged.",
+      "original_bytes": 338,
+      "original_sha256": "19d94396ad47d975c07a5be720ffa908cd3ea4786ec896d11ecb19a91f374e1c",
+      "derived_bytes": 340,
+      "derived_sha256": "65e24b154f38eef60bd50174cb9513f66713b1e867d2f8d87f982068c94f81d8"
+    }
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 39,
+      "sha256": "1f4423232fcf3f2a5aa0e35b64caaff8ad3a0e40813e7dfb4fc6f1f721877854",
+      "git_blob_sha": "747b7dbec105aadb0728761d29b3c2c5e96991df"
+    },
+    {
+      "path": "Cargo.lock",
+      "bytes": 1398,
+      "sha256": "551be9605ca2258dd60dbbc49e10aa8d95759866523e754b10feb4b51a7510ca",
+      "git_blob_sha": "bf1a605904a5f8348469735093c4ac5cd4c59081"
+    },
+    {
+      "path": "Cargo.toml",
+      "bytes": 465,
+      "sha256": "ad120771a9f79c7880ceb5e66eca4814c819773ea0b7330263ca04cef5ba93c2",
+      "git_blob_sha": "c3a1f17fcf6fe477a2b3f17c08efbbb833f135f1"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 8964,
+      "sha256": "95abf25a37415b6050b0d38aba952468db64225f5f5408cc595cf0bcb83d76b2",
+      "git_blob_sha": "ca176fc81adcf8bb836cfee9264b13986198e5df"
+    },
+    {
+      "path": "reference/certified_forward.py",
+      "bytes": 6604,
+      "sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+      "git_blob_sha": "f982f671c80f50a8995cee56b61ac3655730cf7b"
+    },
+    {
+      "path": "reference/signed_receiver.py",
+      "bytes": 10433,
+      "sha256": "61db9997db84b925c6eff405744726e01dcec14d0090192e834f33a75aeafc1f",
+      "git_blob_sha": "d3c8680a7f06f53d38de46ad28d0d8f9cc1f7790"
+    },
+    {
+      "path": "reports/dependency-lock.log",
+      "bytes": 54,
+      "sha256": "bd222f5efe019abbbf77f77852b05da0131f57d4cff108cc5854a6978a00489c",
+      "git_blob_sha": "3d0cb0930e5790d49e803cfd30a8640a050bd78b"
+    },
+    {
+      "path": "reports/rust-build.log",
+      "bytes": 272,
+      "sha256": "4816b5bab1616a7120d35845266398377a8bc88aa73ccb7ea5783b22e472622a",
+      "git_blob_sha": "bb9b583dc6ed8bf5966dcd1b84d572f0eadeef02"
+    },
+    {
+      "path": "reports/rust-tests.log",
+      "bytes": 1674,
+      "sha256": "0a5012b690901e1608b0aa4b4030b38a2e730045914fe8a84358638f68d2f2e1",
+      "git_blob_sha": "74bd3bf8726994c903e4a9c35009b1e44e44006e"
+    },
+    {
+      "path": "scripts/env.sh",
+      "bytes": 340,
+      "sha256": "65e24b154f38eef60bd50174cb9513f66713b1e867d2f8d87f982068c94f81d8",
+      "git_blob_sha": "a5624c7d602ae41dbb67885900a42886b35ff9a2"
+    },
+    {
+      "path": "src/lib.rs",
+      "bytes": 9836,
+      "sha256": "bfe48152cd63b8abd6bb7257e986b50dec741ec351770c58b19272543b46c1d1",
+      "git_blob_sha": "bb12b1070aa2cab7b6c564a667eba7e7754b915b"
+    },
+    {
+      "path": "src/main.rs",
+      "bytes": 3775,
+      "sha256": "7ae7cc17ed3fc79a2be9c75fb3f54e6e663a7365bcb1ef31866bade4e79dad70",
+      "git_blob_sha": "19d24f652f179cd092b8bb1c3a5e8f6e43008a1b"
+    },
+    {
+      "path": "src/parse.rs",
+      "bytes": 3163,
+      "sha256": "471dca6bd05291811aa07d6440e3c5d3a6aec58a742a37d08a2008de5b1cad4e",
+      "git_blob_sha": "30ccf643120f2f071ff6b0eef5ab412e9e57f349"
+    },
+    {
+      "path": "tests/core.rs",
+      "bytes": 4140,
+      "sha256": "b1935394bafe6a5299555fb7ecb7e76f8e56750074727e1a4697805e13a7bb00",
+      "git_blob_sha": "d4279349f42c964aab2a30cc864e6b247dbcfe4e"
+    },
+    {
+      "path": "HANDOFF-MANIFEST.json",
+      "bytes": 2470,
+      "sha256": "c8b43a83aac626a4d609091675356b9744b8ca68322692697eabd8a87c06eb23",
+      "git_blob_sha": "6ff16e120d5578ae911bb308938d654e214acea6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3050,
+      "sha256": "d54da40acbdb400678b4fc865a755220be3497a67313b07032536081d484bb1a",
+      "git_blob_sha": "ce09d7b51abbfbf0e9406ad66fca27efbde5df54"
+    }
+  ],
+  "manifest_self_hash": "Reported separately; not self-referential."
+}
