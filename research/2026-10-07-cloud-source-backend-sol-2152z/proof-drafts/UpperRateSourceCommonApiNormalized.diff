@@ -1,0 +1,29 @@
+--- UpperRateSourceCommon.lean
++++ UpperRateSourceCommonApiNormalized.lean
+@@ -101,7 +101,7 @@
+       pow_le_pow_right_of_le_one' (rateRatioENN_le_one ell u hell1 hu1) hk
+     have hiter : (ENNReal.ofReal (ell / u)) ^ K * sourceIteration N r k s d ≤
+         sourceIteration N rhat k s d :=
+-      (mul_le_mul_right' hpow _).trans
++      (mul_le_mul' hpow le_rfl).trans
+         (actual_source_iteration_bank_lower N r rhat k s d ell u
+           hell hell1 hu1 hlo hup)
+     calc
+@@ -154,7 +154,7 @@
+     exact (mul_le_mul_of_nonneg_right hcount ENNReal.toReal_nonneg).trans
+       (actual_source_prefix_domination N r t K s z)
+   have hpow : (ENNReal.ofReal (ell / u)) ^ K ≤ 1 :=
+-    pow_le_one_of_le (rateRatioENN_le_one ell u hell1 hu1) K
++    Left.pow_le_one_of_le (rateRatioENN_le_one ell u hell1 hu1) K
+   calc
+     (ENNReal.ofReal (upperCommonMass (globalClockRate (Copy := Copy) r * t) b K) *
+         (ENNReal.ofReal (ell / u)) ^ K) * finiteSourcePrefix N r t K s d =
+@@ -163,7 +163,7 @@
+             finiteSourcePrefix N r t K s d) := by ac_rfl
+     _ ≤ 1 * (ENNReal.ofReal
+         (upperCommonMass (globalClockRate (Copy := Copy) r * t) b K) *
+-        finiteSourcePrefix N r t K s d) := mul_le_mul_right' hpow _
++        finiteSourcePrefix N r t K s d) := mul_le_mul' hpow le_rfl
+     _ = ENNReal.ofReal (upperCommonMass (globalClockRate (Copy := Copy) r * t) b K) *
+         finiteSourcePrefix N r t K s d := one_mul _
+     _ ≤ sourceTimeKernel N r t s d := hactual

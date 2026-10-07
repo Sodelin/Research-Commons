@@ -28,3 +28,13 @@ not compiler acceptance or live presence.
 Next action: root/primary reviewer examines the exact published source/hash
 and routes any later compiler trial through the Lean owner. The publisher's
 own textual checks are not independent review of the new bodies.
+
+22:08 UTC update: canonical auditor `a887a0c` and the calendar reviewer accepted
+the intended source semantics and identified three static API replacements.
+Their feedback is preserved in [PROOF-API-NORMALIZATION.md](PROOF-API-NORMALIZATION.md).
+The original SHA256 `f155d460` remains exact; the separate API derivative is
+SHA256 `69503a60e52d326b8d49dae314a466044f410a37a9e498b69efe603222e6d2bc`.
+The derivative is queued only; no compiler, job, provider or workflow changed.
+Exact derivative review is pending. Next action: publish/read back this
+separate derivative and notify primary auditor plus calendar reviewer for
+review of those exact bytes, then return to root.

@@ -1,0 +1,40 @@
+{
+  "contributor": "CLOUD-SOURCE-BACKEND-SOL-2152Z",
+  "publisher": "CLOUD-SOURCE-BACKEND-SOL-2152Z",
+  "created_utc": "2026-10-07T22:08:19Z",
+  "base_main": "1eac9988fff7182afb26c1fac1f070ad414f6df7",
+  "original_path": "research/2026-10-07-cloud-source-backend-sol-2152z/proof-drafts/UpperRateSourceCommon.lean",
+  "original_sha256": "f155d4600a30ccc5078df01727ce5ccf45eef06544bca2f3806eb42e045560a3",
+  "derivative_path": "research/2026-10-07-cloud-source-backend-sol-2152z/proof-drafts/UpperRateSourceCommonApiNormalized.lean",
+  "derivative_sha256": "69503a60e52d326b8d49dae314a466044f410a37a9e498b69efe603222e6d2bc",
+  "diff_path": "research/2026-10-07-cloud-source-backend-sol-2152z/proof-drafts/UpperRateSourceCommonApiNormalized.diff",
+  "diff_sha256": "b150306a414110bb64b359b8cd604f279af982d55e1a2a56ceef11e1ca84b9f6",
+  "changes": [
+    {
+      "original_line": 104,
+      "before": "mul_le_mul_right' hpow _",
+      "after": "mul_le_mul' hpow le_rfl"
+    },
+    {
+      "original_line": 157,
+      "before": "pow_le_one_of_le (rateRatioENN_le_one",
+      "after": "Left.pow_le_one_of_le (rateRatioENN_le_one"
+    },
+    {
+      "original_line": 166,
+      "before": "mul_le_mul_right' hpow _",
+      "after": "mul_le_mul' hpow le_rfl"
+    }
+  ],
+  "same_named_declarations": 11,
+  "statements_and_definitions_unchanged": true,
+  "review_basis": "Canonical auditor a887a0c and calendar reviewer supplied the source/API corrections; no compiler failure asserted",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "mathlib_api_references": [
+    "Mathlib/Algebra/Order/Monoid/Unbundled/Basic.lean:203",
+    "Mathlib/Algebra/Order/Monoid/Unbundled/Pow.lean:43"
+  ],
+  "status": "ALL NEW BODIES UNCHECKED; proof-only API normalization; exact derivative independent review pending",
+  "execution": "No compiler, provider, job or workflow changes; queued only outside sole 155-module job 376930 frozen fb62f2e",
+  "next_action": "Primary auditor and calendar reviewer examine this exact derivative source/hash"
+}

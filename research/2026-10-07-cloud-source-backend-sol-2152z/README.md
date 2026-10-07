@@ -85,3 +85,17 @@ the interval adapter discharges a named implementation step while full
 observation-to-answer and promised downstream conclusions remain open.
 Next action: root reviews this exact source/hash and routes any compiler trial
 through the existing Lean owner after the frozen running job.
+
+Correction pointer, 22:08 UTC: canonical auditor `a887a0c` and the calendar
+reviewer identified three proof API normalizations. The original `f155d460`
+source is preserved unchanged. The separate
+[UpperRateSourceCommonApiNormalized.lean](proof-drafts/UpperRateSourceCommonApiNormalized.lean)
+has SHA256 `69503a60e52d326b8d49dae314a466044f410a37a9e498b69efe603222e6d2bc`.
+Its [diff](proof-drafts/UpperRateSourceCommonApiNormalized.diff) changes only
+two unavailable right-multiplication lemma calls and one power-lemma namespace.
+The [normalization note](PROOF-API-NORMALIZATION.md) and
+[derivative manifest](proof-drafts/UpperRateSourceCommonApiNormalized.json)
+retain the original review scope. All 11 statements/definitions and intended
+semantics are unchanged; all bodies remain UNCHECKED. Exact derivative review
+is pending with the primary auditor and calendar reviewer; it is queued only
+outside the sole 155-module job `376930`, frozen at `fb62f2e`.
