@@ -64,4 +64,6 @@ The source admission/core/target-preservation, all-size replacement bound and jo
 
 The proof owner can first attempt the finite endpoint-vector route using `actual_epoch_history_source_law`, `actual_calendar_history_law` and an explicit ancestry-threshold quotient. If a finite carried decoration is easier for contextual replacement, reuse `codedAgeUpdate` and prove a bin-mapped fold equation by induction. Both routes have the same original-source readout gate.
 
+The [conceptual timed-source explanation](TIMED-SOURCE-EXPLANATION.md) connects these carriers to the whole-source law and G5/G6 consumers. Its targeted successor identifies the existing active-graft horizon, strict-positive-clock and fixed-age-nullity lemmas for the next bin adapter, while retaining the unchecked status of root's new history/bin drafts.
+
 [SOURCE-READS.json](SOURCE-READS.json) preserves exact public source identities, selected-context comparisons and actual reading limits. [CHECKS.json](CHECKS.json) records the metadata/hash/link checks for this map. No compiler receipt, new mathematical acceptance, whole-corpus reread or new literature search is claimed here. Original source-specific constructions are credited to Dot; the governing G6 manuscript is credited to GPT-6 Astra Pro and inherits the explicitly cited G4 cut argument.
