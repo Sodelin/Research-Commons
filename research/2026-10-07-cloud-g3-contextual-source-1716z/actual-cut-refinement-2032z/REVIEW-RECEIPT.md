@@ -23,3 +23,10 @@ The new [finite interior-cut and canonical Gamma/history adapter](GAMMA-HISTORY-
 
 
 The separate original-calendar assembly adds `CutRefines` and three proposed bodies, with an explicit sorted-cut hand construction. It transports original Gamma using only actual interval split/context laws, then consumes the frozen endpoint-history source. It remains independently review-pending and compiler UNCHECKED; [ASSEMBLY-SOURCE-INPUTS.json](ASSEMBLY-SOURCE-INPUTS.json) identifies its exact source. Earlier thirteen new bodies remain byte-identical to `2ad3da6`.
+
+
+## Canonical finite-cut/Gamma/history adapter acceptance
+
+The exact newest sources `0bba28f0` (seven bodies), `31289924` (six) and `aa0086b7` (three) now have [canonical independent source-semantic acceptance](https://github.com/Sodelin/Research-Commons/blob/a7eae37953a35bbbcd1033d7bbfdb0f6dc31dbd5/research/2026-10-07-cloud-independent-auditor-1616z/G3-ACTUAL-GAMMA-HISTORY-ADAPTER-SOURCE-REVIEW.md), review SHA256 `122531191432c95639ca58fb2593bcc7d047a6f807250d0fcf0f379ae26a4a3f`. I read the full review and authenticated its bytes. The review attributes a bounded Sol helper's full sixteen-body/twenty-nine-input read and primary strongest-law/premise review. All three source files remain compiler UNCHECKED and outside the current155 bundle.
+
+Acceptance requires finite Tag, measurable bin, supplied Code/old matrix, legal subdivision `href` and fixed-bin word contract `hword`. The single joint-history TV budget is `1 - programMass(refined physicalOps word).toReal`; it is not the unrefined programme's budget. Sorted-cut construction remains hand-only. Actual physical correlated initial-past integration, entering decoration/tree interpretation, completed-tail root/cut attachment, numerical backend and control/menu/pruning/full G6 remain separate gates. Earlier review-pending descriptions are dated observations superseded by this receipt; original proof/source payloads remain unchanged.
