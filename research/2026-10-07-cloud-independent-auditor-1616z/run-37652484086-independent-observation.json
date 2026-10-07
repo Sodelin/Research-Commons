@@ -1,0 +1,1448 @@
+{
+  "schema": "independent-gh-compiler-readback-v1",
+  "observed_utc": "2026-10-07T16:42:38.345420+00:00",
+  "metadata": {
+    "conclusion": "success",
+    "headSha": "3a45c8287a0b8e2b78281dd172861cfcc2cec532",
+    "jobs": [
+      {
+        "completedAt": "2026-10-07T16:39:47Z",
+        "conclusion": "success",
+        "databaseId": 112899121278,
+        "name": "verify",
+        "startedAt": "2026-10-07T16:29:51Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Fetch frozen public input",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify existing pinned runtime",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify G6 frozen sources serially",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve actual success and failure evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 6,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37652484086/job/112899121278"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-10-07T16:39:48Z"
+  },
+  "raw_cli_log_sha256": "e956da3a44a5a545cdfd33933da5c3e83be707f0464b19b28e5a5b28b43ccb30",
+  "receipt_count": 63,
+  "all_receipts_exit_zero": true,
+  "selected_G6_receipts": [
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/FiniteProbability.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteProbability.lean"
+      ],
+      "start": "2026-10-07T16:36:34.001440+00:00",
+      "end": "2026-10-07T16:36:36.957540+00:00",
+      "exit": 0,
+      "output_sha256": "757498f226536e63546c9f57cb4e4328a4f178c0827c63b62563b24ae94b4f17"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/Conditioning.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/Conditioning.lean"
+      ],
+      "start": "2026-10-07T16:36:36.957925+00:00",
+      "end": "2026-10-07T16:36:39.692493+00:00",
+      "exit": 0,
+      "output_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/SourcePrefix.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/SourcePrefix.lean"
+      ],
+      "start": "2026-10-07T16:39:15.304971+00:00",
+      "end": "2026-10-07T16:39:18.527140+00:00",
+      "exit": 0,
+      "output_sha256": "74e089eae61883da5c4cfedea59111c40cd6a770f2cabc2e2562e8d192b5c062"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/ProgramPrefix.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/ProgramPrefix.lean"
+      ],
+      "start": "2026-10-07T16:39:34.883691+00:00",
+      "end": "2026-10-07T16:39:38.491009+00:00",
+      "exit": 0,
+      "output_sha256": "4e91cdfe662b16b4b6e2e380225ca3c11ef71df1cbc21caeae165979cfca4c1c"
+    }
+  ],
+  "audit_success_markers": [
+    "verify\tVerify G6 frozen sources serially\t2026-10-07T16:39:41.3060992Z G6_AXIOM_AUDIT_PASSED declarations=51"
+  ],
+  "G6_report_count_including_duplicate_module_prints": 80,
+  "unique_G6_declaration_reports": 51,
+  "reports_all_standard_three_or_less": true,
+  "printed_reports": [
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.scaled_domination_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_sum_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filter_scaled",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_mixture_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass_taylor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.bind_scaled_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.map_scaled_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_step_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_program_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_mass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.scaled_domination_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_sum_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmfTV",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_ne_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filter_scaled",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_real_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.retainedMass_finset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_mixture_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.taylorTerm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.taylorPrefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.count_zero_ne_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefix_has_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_support",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass_taylor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.taylorPrefix_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_real",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.finiteSourcePrefix",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.bind_scaled_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.map_scaled_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.stepMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.programMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.finiteProgramStep",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.finiteProgram",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.stepMass_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.programMass_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_step_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_program_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "reviewed_source_inputs": [
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteProbability.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+      "git_blob": "bba1e21e9cf282ed88852a8a0c294eb9bb554852"
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/Conditioning.lean",
+      "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91",
+      "git_blob": "b7a6c11a3719bd52b42c57e8622155735f189169"
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/SourcePrefix.lean",
+      "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314",
+      "git_blob": "f5598d508d9495eac5130b15663a3f027142e0a7"
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ProgramPrefix.lean",
+      "sha256": "67f3ae5579a6744dc19a70bba8e599b2b4d6b44c3e20c9d0845c51b35f372ddb",
+      "git_blob": "49c6ec077e7aa803f31c4b89b6718aa02e9aecec"
+    }
+  ],
+  "master_endpoint_completion_claimed": false,
+  "logged_source_runtime_manifest": {
+    "source_commit": "3a45c8287a0b8e2b78281dd172861cfcc2cec532",
+    "targets": [
+      "UnifiedLean.G6.FiniteProbability",
+      "UnifiedLean.G6.Conditioning",
+      "UnifiedLean.G6.SourcePrefix",
+      "UnifiedLean.G6.ProgramPrefix"
+    ],
+    "modules": {
+      "UnifiedLean.G6.FiniteProbability": {
+        "path": "UnifiedLean/G6/FiniteProbability.lean",
+        "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+        "imports": [
+          "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Ring"
+        ]
+      },
+      "UnifiedLean.G6.Conditioning": {
+        "path": "UnifiedLean/G6/Conditioning.lean",
+        "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91",
+        "imports": [
+          "UnifiedLean.G6.FiniteProbability"
+        ]
+      },
+      "UnifiedLean.G6.SourcePrefix": {
+        "path": "UnifiedLean/G6/SourcePrefix.lean",
+        "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314",
+        "imports": [
+          "UnifiedLean.G6.Conditioning",
+          "UnifiedLean.Source.SourcePoissonExponential"
+        ]
+      },
+      "UnifiedLean.Source.SourcePoissonExponential": {
+        "path": "UnifiedLean/Source/SourcePoissonExponential.lean",
+        "sha256": "463eb0e4a9cd9307898eface172100183b8ac9d412c1389a2c5b9ad4981c2d9a",
+        "imports": [
+          "UnifiedLean.Source.SourcePoissonKernel",
+          "UnifiedLean.Source.SourceGeneratorExponential"
+        ]
+      },
+      "UnifiedLean.Source.SourcePoissonKernel": {
+        "path": "UnifiedLean/Source/SourcePoissonKernel.lean",
+        "sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteProjection",
+          "Mathlib.Probability.Distributions.Poisson.Basic"
+        ]
+      },
+      "UnifiedLean.Source.SourceFiniteProjection": {
+        "path": "UnifiedLean/Source/SourceFiniteProjection.lean",
+        "sha256": "09398c920468ba6ead16b523cecd9f86e7648e7063602256ee4634385df1cab3",
+        "imports": [
+          "UnifiedLean.Source.SourceStepGeneratorBinding",
+          "UnifiedLean.Source.MatrixProjectionExponential",
+          "Mathlib.Data.ENNReal.BigOperators"
+        ]
+      },
+      "UnifiedLean.Source.SourceStepGeneratorBinding": {
+        "path": "UnifiedLean/Source/SourceStepGeneratorBinding.lean",
+        "sha256": "8021b8bddcc5cd070185843ca5454dfb289572a2592854efbbdd9e41d48396d0",
+        "imports": [
+          "UnifiedLean.Source.UniformizedSourceStep",
+          "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+          "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+          "Mathlib.MeasureTheory.Integral.Bochner.Basic"
+        ]
+      },
+      "UnifiedLean.Source.UniformizedSourceStep": {
+        "path": "UnifiedLean/Source/UniformizedSourceStep.lean",
+        "sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c",
+        "imports": [
+          "UnifiedLean.Source.FiniteSourceSnapshot",
+          "UnifiedLean.Source.NativePairClockLaw",
+          "SourceForestKingmanPopulationProjection",
+          "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+          "Mathlib.Algebra.BigOperators.Field"
+        ]
+      },
+      "UnifiedLean.Source.FiniteSourceSnapshot": {
+        "path": "UnifiedLean/Source/FiniteSourceSnapshot.lean",
+        "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+        "imports": [
+          "UnifiedLean.Source.FiniteGenealogyEncoding",
+          "UnifiedLean.Source.SourceForestSilentPruning"
+        ]
+      },
+      "UnifiedLean.Source.FiniteGenealogyEncoding": {
+        "path": "UnifiedLean/Source/FiniteGenealogyEncoding.lean",
+        "sha256": "3d862f8d9f9a43aed6324954ebea749001fd2b221dd90dd7d58cf4e4419fbcac",
+        "imports": [
+          "UnifiedLean.Source.SourceForestSilentPruning",
+          "Mathlib.Data.Fintype.Sum"
+        ]
+      },
+      "UnifiedLean.Source.SourceForestSilentPruning": {
+        "path": "UnifiedLean/Source/SourceForestSilentPruning.lean",
+        "sha256": "86f61cc8ce06af574ee98b37db0ecd7c8cbc2df99e495ce1b9a66605ea8fb5c2",
+        "imports": [
+          "SourceForestKingmanPopulationProjection"
+        ]
+      },
+      "SourceForestKingmanPopulationProjection": {
+        "path": "Imported/SourceForestKingmanPopulationProjection.lean",
+        "sha256": "e8733ab8e66c60f98cfcfcd56e703b55a5ad8674dc5361f4ac6cb0c35f80f6e4",
+        "imports": [
+          "SourceForestKingmanProjection"
+        ]
+      },
+      "SourceForestKingmanProjection": {
+        "path": "Imported/SourceForestKingmanProjection.lean",
+        "sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0",
+        "imports": [
+          "SourceLabelledForest",
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Data.Finset.Prod",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Tactic.NormNum"
+        ]
+      },
+      "SourceLabelledForest": {
+        "path": "Imported/SourceLabelledForest.lean",
+        "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+        "imports": [
+          "G2LiveLineageRouting",
+          "Mathlib.Data.Finset.Card",
+          "Mathlib.Data.Fintype.BigOperators",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+          "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+          "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+          "Lean.Elab.Tactic.Omega"
+        ]
+      },
+      "G2LiveLineageRouting": {
+        "path": "Imported/G2LiveLineageRouting.lean",
+        "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Data.Rat.Lemmas",
+          "Mathlib.Tactic.Ring"
+        ]
+      },
+      "SourceNetwork": {
+        "path": "Imported/SourceNetwork.lean",
+        "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+        "imports": [
+          "Mathlib.Data.Fintype.Card",
+          "Mathlib.Logic.Relation"
+        ]
+      },
+      "UnifiedLean.Source.NativePairClockLaw": {
+        "path": "UnifiedLean/Source/NativePairClockLaw.lean",
+        "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+        "imports": [
+          "UnifiedLean.Source.NativeParentRouting",
+          "G4AllRootPairClocks",
+          "Mathlib.Data.ENNReal.BigOperators"
+        ]
+      },
+      "UnifiedLean.Source.NativeParentRouting": {
+        "path": "UnifiedLean/Source/NativeParentRouting.lean",
+        "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+        "imports": [
+          "G5OriginalRouteHazard",
+          "G4PathResolvedMeasurement",
+          "Mathlib.MeasureTheory.Constructions.Pi",
+          "Mathlib.Data.Finset.Card"
+        ]
+      },
+      "G5OriginalRouteHazard": {
+        "path": "Imported/G5OriginalRouteHazard.lean",
+        "sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+        "imports": [
+          "G5SafePastMeetingPermanence",
+          "G5UnknownRateSupport",
+          "Mathlib.Data.Finset.Max"
+        ]
+      },
+      "G5SafePastMeetingPermanence": {
+        "path": "Imported/G5SafePastMeetingPermanence.lean",
+        "sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+        "imports": [
+          "G5PairOnlySureBlockChronology"
+        ]
+      },
+      "G5PairOnlySureBlockChronology": {
+        "path": "Imported/G5PairOnlySureBlockChronology.lean",
+        "sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+        "imports": [
+          "G5SafePastHybridDisjointness"
+        ]
+      },
+      "G5SafePastHybridDisjointness": {
+        "path": "Imported/G5SafePastHybridDisjointness.lean",
+        "sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+        "imports": [
+          "G5ProtectiveBlock",
+          "G5ParentPositionPushforward"
+        ]
+      },
+      "G5ProtectiveBlock": {
+        "path": "Imported/G5ProtectiveBlock.lean",
+        "sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+        "imports": [
+          "G5CalendarRoutes"
+        ]
+      },
+      "G5CalendarRoutes": {
+        "path": "Imported/G5CalendarRoutes.lean",
+        "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+        "imports": [
+          "G5BridgeBarrier",
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Linarith"
+        ]
+      },
+      "G5BridgeBarrier": {
+        "path": "Imported/G5BridgeBarrier.lean",
+        "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+        "imports": [
+          "GraphCuts"
+        ]
+      },
+      "GraphCuts": {
+        "path": "Imported/GraphCuts.lean",
+        "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+        "imports": [
+          "GraphLeaves"
+        ]
+      },
+      "GraphLeaves": {
+        "path": "Imported/GraphLeaves.lean",
+        "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Data.Fintype.EquivFin"
+        ]
+      },
+      "G5ParentPositionPushforward": {
+        "path": "Imported/G5ParentPositionPushforward.lean",
+        "sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+        "imports": [
+          "G5ParentChoiceCalendar",
+          "G5OriginalCoinPMF"
+        ]
+      },
+      "G5ParentChoiceCalendar": {
+        "path": "Imported/G5ParentChoiceCalendar.lean",
+        "sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+        "imports": [
+          "G5OriginalTipCurrentSupport"
+        ]
+      },
+      "G5OriginalTipCurrentSupport": {
+        "path": "Imported/G5OriginalTipCurrentSupport.lean",
+        "sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+        "imports": [
+          "G5CurrentPortTwoPositions"
+        ]
+      },
+      "G5CurrentPortTwoPositions": {
+        "path": "Imported/G5CurrentPortTwoPositions.lean",
+        "sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+        "imports": [
+          "G5RootRouteCurrentSupport"
+        ]
+      },
+      "G5RootRouteCurrentSupport": {
+        "path": "Imported/G5RootRouteCurrentSupport.lean",
+        "sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+        "imports": [
+          "G5ActualComponentSupport"
+        ]
+      },
+      "G5ActualComponentSupport": {
+        "path": "Imported/G5ActualComponentSupport.lean",
+        "sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+        "imports": [
+          "G5ComponentCalendarCoverage"
+        ]
+      },
+      "G5ComponentCalendarCoverage": {
+        "path": "Imported/G5ComponentCalendarCoverage.lean",
+        "sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+        "imports": [
+          "G5BridgeComponentEntries",
+          "G5NonbridgeRouteBound",
+          "Mathlib.Tactic"
+        ]
+      },
+      "G5BridgeComponentEntries": {
+        "path": "Imported/G5BridgeComponentEntries.lean",
+        "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+        "imports": [
+          "G6BridgeCannotEnterHybrid",
+          "G5CalendarRoutes"
+        ]
+      },
+      "G6BridgeCannotEnterHybrid": {
+        "path": "Imported/G6BridgeCannotEnterHybrid.lean",
+        "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+        "imports": [
+          "G5MinimalGraphInterface",
+          "G2LiveLineageRouting"
+        ]
+      },
+      "G5MinimalGraphInterface": {
+        "path": "Imported/G5MinimalGraphInterface.lean",
+        "sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+        "imports": [
+          "GraphCuts"
+        ]
+      },
+      "G5NonbridgeRouteBound": {
+        "path": "Imported/G5NonbridgeRouteBound.lean",
+        "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+        "imports": [
+          "G5CalendarRoutes",
+          "Mathlib.Data.Fintype.Card"
+        ]
+      },
+      "G5OriginalCoinPMF": {
+        "path": "Imported/G5OriginalCoinPMF.lean",
+        "sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+        "imports": [
+          "G5FairOriginalCoinLaw"
+        ]
+      },
+      "G5FairOriginalCoinLaw": {
+        "path": "Imported/G5FairOriginalCoinLaw.lean",
+        "sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+        "imports": [
+          "SourceLabelledForest",
+          "G5FairSelectorMoments",
+          "Mathlib.Data.Rat.BigOperators",
+          "Mathlib.Data.ENNReal.BigOperators",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Sigma"
+        ]
+      },
+      "G5FairSelectorMoments": {
+        "path": "Imported/G5FairSelectorMoments.lean",
+        "sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+        "imports": [
+          "G5CoupledQuartetKernel",
+          "Mathlib.Probability.Distributions.Uniform"
+        ]
+      },
+      "G5CoupledQuartetKernel": {
+        "path": "Imported/G5CoupledQuartetKernel.lean",
+        "sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+        "imports": [
+          "Mathlib.Tactic"
+        ]
+      },
+      "G5UnknownRateSupport": {
+        "path": "Imported/G5UnknownRateSupport.lean",
+        "sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+        "imports": [
+          "G5ExponentialGermIdentification",
+          "Mathlib.Algebra.BigOperators.Finsupp.Basic"
+        ]
+      },
+      "G5ExponentialGermIdentification": {
+        "path": "Imported/G5ExponentialGermIdentification.lean",
+        "sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+        "imports": [
+          "Mathlib.LinearAlgebra.Vandermonde",
+          "Mathlib.Analysis.SpecialFunctions.Exp",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Ring"
+        ]
+      },
+      "G4PathResolvedMeasurement": {
+        "path": "Imported/G4PathResolvedMeasurement.lean",
+        "sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+        "imports": [
+          "G4TwoRootSourceStopping",
+          "G4AllRootPairClocks",
+          "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+        ]
+      },
+      "G4TwoRootSourceStopping": {
+        "path": "Imported/G4TwoRootSourceStopping.lean",
+        "sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Data.Fintype.Basic",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "G4AllRootPairClocks": {
+        "path": "Imported/G4AllRootPairClocks.lean",
+        "sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+        "imports": [
+          "G4IndependentRoutingBridge",
+          "Mathlib.MeasureTheory.Constructions.Pi",
+          "Mathlib.Data.Fintype.Powerset",
+          "Mathlib.Data.ENNReal.BigOperators"
+        ]
+      },
+      "G4IndependentRoutingBridge": {
+        "path": "Imported/G4IndependentRoutingBridge.lean",
+        "sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+        "imports": [
+          "G2LiveLineageRouting",
+          "G1SharedRegisterStress",
+          "Mathlib.Data.Nat.Choose.Basic",
+          "Lean.Elab.Tactic.Omega",
+          "G4FourRootPositivity",
+          "Mathlib.Data.Fin.Tuple.Basic",
+          "Mathlib.Data.Fintype.BigOperators",
+          "Mathlib.Algebra.BigOperators.Fin",
+          "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Tactic.NormNum"
+        ]
+      },
+      "G1SharedRegisterStress": {
+        "path": "Imported/G1SharedRegisterStress.lean",
+        "sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+        "imports": [
+          "Mathlib.Probability.Distributions.Exponential",
+          "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.NormNum"
+        ]
+      },
+      "G4FourRootPositivity": {
+        "path": "Imported/G4FourRootPositivity.lean",
+        "sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "UnifiedLean.Source.SourceForestIntrinsicGenerator": {
+        "path": "UnifiedLean/Source/SourceForestIntrinsicGenerator.lean",
+        "sha256": "b282351bf116ae756c7e9c6ee1e3cbace41a8d753b47cac7e53c4a918c82d16f",
+        "imports": [
+          "UnifiedLean.Source.SourceForestGeneratorIntertwining"
+        ]
+      },
+      "UnifiedLean.Source.SourceForestGeneratorIntertwining": {
+        "path": "UnifiedLean/Source/SourceForestGeneratorIntertwining.lean",
+        "sha256": "b186f0d381b0e62078d887f90ce46ecbe91def99ec66ec51c98053b9d60c0f28",
+        "imports": [
+          "UnifiedLean.Source.SourceForestSilentPruning",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic"
+        ]
+      },
+      "UnifiedLean.Source.MatrixProjectionExponential": {
+        "path": "UnifiedLean/Source/MatrixProjectionExponential.lean",
+        "sha256": "870438089e6cf05dd93761172ea1bf6b2aa96654708e97b9d348e0dfcb44dfa2",
+        "imports": [
+          "Mathlib.Analysis.Normed.Algebra.MatrixExponential"
+        ]
+      },
+      "UnifiedLean.Source.SourceGeneratorExponential": {
+        "path": "UnifiedLean/Source/SourceGeneratorExponential.lean",
+        "sha256": "f761ddf2f5efb9906ec8f841567d02fae946cce763260f238834a147090e461d",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteProjection"
+        ]
+      },
+      "UnifiedLean.G6.ProgramPrefix": {
+        "path": "UnifiedLean/G6/ProgramPrefix.lean",
+        "sha256": "67f3ae5579a6744dc19a70bba8e599b2b4d6b44c3e20c9d0845c51b35f372ddb",
+        "imports": [
+          "UnifiedLean.G6.SourcePrefix",
+          "UnifiedLean.Source.SourceProgramTransport"
+        ]
+      },
+      "UnifiedLean.Source.SourceProgramTransport": {
+        "path": "UnifiedLean/Source/SourceProgramTransport.lean",
+        "sha256": "d009fdfc510bfcaffaeea3bc241401eaf2996178ff4b82376eb22f1e49387831",
+        "imports": [
+          "UnifiedLean.Source.SourceBoundaryProjection",
+          "UnifiedLean.Source.SourcePoissonKernel"
+        ]
+      },
+      "UnifiedLean.Source.SourceBoundaryProjection": {
+        "path": "UnifiedLean/Source/SourceBoundaryProjection.lean",
+        "sha256": "f1cb1e557b5f08cba2d37465bc4386bc6adc2f19fd12a132f7d6f835b1e24f0f",
+        "imports": [
+          "UnifiedLean.Source.SourceBoundaryKernels"
+        ]
+      },
+      "UnifiedLean.Source.SourceBoundaryKernels": {
+        "path": "UnifiedLean/Source/SourceBoundaryKernels.lean",
+        "sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteProjection",
+          "UnifiedLean.Source.SourceForestPulseMeasure",
+          "UnifiedLean.Source.SourceForestCommonPulse"
+        ]
+      },
+      "UnifiedLean.Source.SourceForestPulseMeasure": {
+        "path": "UnifiedLean/Source/SourceForestPulseMeasure.lean",
+        "sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f",
+        "imports": [
+          "UnifiedLean.Source.SourceForestPulseTransport",
+          "Mathlib.Probability.Distributions.Bernoulli",
+          "Mathlib.MeasureTheory.Constructions.Pi"
+        ]
+      },
+      "UnifiedLean.Source.SourceForestPulseTransport": {
+        "path": "UnifiedLean/Source/SourceForestPulseTransport.lean",
+        "sha256": "8e1a3d62afab25247dd3a281d30f7dc20db1949ea1b589c2d77980b3b48874f1",
+        "imports": [
+          "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+          "G2LiveLineageRouting"
+        ]
+      },
+      "UnifiedLean.Source.SourceForestCommonPulse": {
+        "path": "UnifiedLean/Source/SourceForestCommonPulse.lean",
+        "sha256": "cac1082f66a84b943dbc8ba9f2e8082ce12bbb42a4b1503e31722597b0faa138",
+        "imports": [
+          "UnifiedLean.Source.SourceForestPulseTransport"
+        ]
+      }
+    },
+    "topological_order": [
+      "UnifiedLean.G6.FiniteProbability",
+      "UnifiedLean.G6.Conditioning",
+      "SourceNetwork",
+      "G2LiveLineageRouting",
+      "SourceLabelledForest",
+      "SourceForestKingmanProjection",
+      "SourceForestKingmanPopulationProjection",
+      "UnifiedLean.Source.SourceForestSilentPruning",
+      "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "UnifiedLean.Source.FiniteSourceSnapshot",
+      "GraphLeaves",
+      "GraphCuts",
+      "G5BridgeBarrier",
+      "G5CalendarRoutes",
+      "G5ProtectiveBlock",
+      "G5MinimalGraphInterface",
+      "G6BridgeCannotEnterHybrid",
+      "G5BridgeComponentEntries",
+      "G5NonbridgeRouteBound",
+      "G5ComponentCalendarCoverage",
+      "G5ActualComponentSupport",
+      "G5RootRouteCurrentSupport",
+      "G5CurrentPortTwoPositions",
+      "G5OriginalTipCurrentSupport",
+      "G5ParentChoiceCalendar",
+      "G5CoupledQuartetKernel",
+      "G5FairSelectorMoments",
+      "G5FairOriginalCoinLaw",
+      "G5OriginalCoinPMF",
+      "G5ParentPositionPushforward",
+      "G5SafePastHybridDisjointness",
+      "G5PairOnlySureBlockChronology",
+      "G5SafePastMeetingPermanence",
+      "G5ExponentialGermIdentification",
+      "G5UnknownRateSupport",
+      "G5OriginalRouteHazard",
+      "G4TwoRootSourceStopping",
+      "G1SharedRegisterStress",
+      "G4FourRootPositivity",
+      "G4IndependentRoutingBridge",
+      "G4AllRootPairClocks",
+      "G4PathResolvedMeasurement",
+      "UnifiedLean.Source.NativeParentRouting",
+      "UnifiedLean.Source.NativePairClockLaw",
+      "UnifiedLean.Source.UniformizedSourceStep",
+      "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "UnifiedLean.Source.MatrixProjectionExponential",
+      "UnifiedLean.Source.SourceFiniteProjection",
+      "UnifiedLean.Source.SourcePoissonKernel",
+      "UnifiedLean.Source.SourceGeneratorExponential",
+      "UnifiedLean.Source.SourcePoissonExponential",
+      "UnifiedLean.G6.SourcePrefix",
+      "UnifiedLean.Source.SourceForestPulseTransport",
+      "UnifiedLean.Source.SourceForestPulseMeasure",
+      "UnifiedLean.Source.SourceForestCommonPulse",
+      "UnifiedLean.Source.SourceBoundaryKernels",
+      "UnifiedLean.Source.SourceBoundaryProjection",
+      "UnifiedLean.Source.SourceProgramTransport",
+      "UnifiedLean.G6.ProgramPrefix"
+    ],
+    "mathlib_roots": [
+      "Mathlib.Algebra.BigOperators.Field",
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+      "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Analysis.Normed.Algebra.MatrixExponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Data.ENNReal.BigOperators",
+      "Mathlib.Data.Fin.Tuple.Basic",
+      "Mathlib.Data.Finset.Card",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Finset.Prod",
+      "Mathlib.Data.Fintype.Basic",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Fintype.Card",
+      "Mathlib.Data.Fintype.EquivFin",
+      "Mathlib.Data.Fintype.Powerset",
+      "Mathlib.Data.Fintype.Sum",
+      "Mathlib.Data.Nat.Choose.Basic",
+      "Mathlib.Data.Rat.BigOperators",
+      "Mathlib.Data.Rat.Lemmas",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.LinearAlgebra.Vandermonde",
+      "Mathlib.Logic.Relation",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.Probability.Distributions.Bernoulli",
+      "Mathlib.Probability.Distributions.Exponential",
+      "Mathlib.Probability.Distributions.Poisson.Basic",
+      "Mathlib.Probability.Distributions.Uniform",
+      "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+      "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+      "Mathlib.Tactic",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.Ring"
+    ],
+    "dependencies": {
+      "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+      "lean_executable_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+      "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "lake_manifest_sha256": "3e6db0717fa282f57960b18408add3f7d7997226dd1889d362c66c16cb0f54f2",
+      "lake_registration_sha256": "da34bf3320beb9482cdb7148daaf54e5a098ccef8dfeab40b764e97f11fd4a0c",
+      "verification_script_sha256": "de3d56ec1e5121c9253c3f14226c426dfe169b3da50d82cfdf8993ebf77f21ea"
+    }
+  }
+}
