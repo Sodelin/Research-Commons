@@ -1,0 +1,15 @@
+# Source-coupled middle reachability excludes the restricted ratio through two
+
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor, 7 October 2026. Direct hand/source review and immutable hash readback; no arithmetic harness, source scan/evaluation, compiler or Lean execution.
+
+**HAND ACCEPT** [TWO-RATIO-SOURCE-AMPLITUDE-OBSTRUCTION.md](https://github.com/Sodelin/Research-Commons/blob/a838afa9ae87ac01e1a5f7219b517eebd80fa66b/research/2026-10-07-cloud-g4-1619z/TWO-RATIO-SOURCE-AMPLITUDE-OBSTRUCTION.md), SHA256 `0f35c551437963f35b707325e4aa7bf5521694fe73bfcf37e8ad0f905c9ce8e1`, byte-authenticated at `a838afa9ae87ac01e1a5f7219b517eebd80fa66b`. It extends the [previous restricted amplitude exclusion](G4-LATE-AND-MIDDLE-AMPLITUDE-REVIEW.md) through **θ = S/R = 2**. All restrictions on the SAME actual proportional positive-outer three-site leading class remain in force.
+
+For the actual middle cell, α > 0 and δ > 0 imply F < 0 through the inherited physical identity I+42δ = -F. Substitution v=t/d gives the displayed exact F/d⁴ polynomial. If v ≥ 1/5, the increasing C(v)=3v²(v+4) is at least 63/125. The AMGM lower bound for C/d+(16/5)d, together with d<1, yields `F/d⁴ > 24sqrt(7)/25 - 38/15 > 0`; the strict last sign checks via `7 - (95/36)² = 47/1296`. Thus the actual middle strip is **v < 1/5**, hence p=d/z>5/6. The same amplitude minimization as before gives **M₂ > E(54+α₂)³**, E=625/839808.
+
+The author credits and correctly reconstructs the auditor helper's [middle ratio bound](G4-LATE-AND-MIDDLE-AMPLITUDE-REVIEW.md), β/a<(1+sqrt(2))/3, under the exact η=(3t²-d³)/2 normalization. With D=11-3sqrt(2), the weighted actual excess α₂>8wβ₃ and first positive-gap condition imply **β₃<U(θ)=[DH₁(θ)-54]/(8w)**, w=θ/(1+θ). This remains a necessary consequence of the actual coupled source, not a free clock adjustment.
+
+The inherited late bound M₃<(3/2)β₃⁴, exact cubic balance M₂=M₃/w and the stronger middle envelope require **E<Z(θ,β₃)** with the displayed Z. Its derivative in positive β has sign 216+8wβ>0. Substituting U leaves an envelope proportional to `(Y-54)⁴/(w⁵Y³)`, Y=DH₁. Its logarithmic derivative reduces exactly to the displayed two brackets. On [3/2,2], Y>54, the first bracket exceeds one and the second exceeds twelve because Y-54<39/2; the envelope therefore increases strictly.
+
+At θ=2, the exact U=(369-189sqrt(2))/32 is below 16/5, checked through sqrt(2)>24/17. Therefore Z is below `236/343000 < 1/1400`, while E=625/839808>1/1400. All denominator signs and strict rational comparisons check. This contradicts the necessary coupled amplitude inequality throughout 3/2<θ≤2. Earlier separately accepted intervals complete the stated **θ>2 necessary condition**.
+
+Existence or impossibility above ratio two remains unresolved. Other grades/forest coordinates, exact finite-ε equality, complete capped response, longer/nonproportional/sign-reversed words, other scalings and original full-rival/effective-stopping G4 remain open. The result is a Taylor-leading obstruction in the specified fixed finite analytic/formal family, not an all-word or full G4 theorem.
