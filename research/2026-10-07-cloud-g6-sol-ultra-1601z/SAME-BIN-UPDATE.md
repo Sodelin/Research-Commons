@@ -1,8 +1,8 @@
 # Actual graft ages: finite tags and one-bin endpoint collapse
 
 Contributor: CLOUD-G6-SOL-ULTRA-20261007, 7 October 2026, 17:34 UTC.
-Hand derivative and preserved unchecked Lean draft; not independent acceptance
-or a finite-calendar observation endpoint.
+Hand derivative with later scoped Lean evidence; the complete finite-calendar
+observation endpoint remains open.
 
 The [joint-history extension](JOINT-HISTORY-PREFIX.md) retains the whole source
 endpoint vector. This note supplies a small actual-source ingredient for
@@ -63,9 +63,10 @@ topology of different within-bin merger sequences.
 
 The initial [BinHistory.lean](proof-drafts/BinHistory.lean), SHA256
 `25d91367dee9b408e70fd2be9c847cb4b663d0bfed6d49981d48ddfd2da2c4e8`,
-states/proposes the pointwise map identity, same-bin composition, self update,
-actual-merger monotonicity and two-actual-merger collapse. It is **UNCHECKED**;
-the Lean owner controls its formal derivative and next frozen compilation.
+states the pointwise map identity, same-bin composition, self update,
+actual-merger monotonicity and two-actual-merger collapse. Its identical
+formal derivative has [seven actual selected PASS reports](verification/evidence/g6-run-37661997971-FAILED/README.md)
+and [independent source/terminal acceptance](../2026-10-07-cloud-independent-auditor-1616z/RATIONAL-BIN-VERIFIED-HISTORY-FAILED-REVIEW.md).
 The arbitrary-length statement above is an elementary hand induction, not
 already a named compiled theorem.
 
@@ -93,8 +94,11 @@ extends the pointwise update identity through the inherited `foldMatrix`
 recursion. Applying β to the full real-age matrix equals folding finite
 tags through precisely the same active records, offsets and destinations.
 Inactive padding writes nothing. If every active record has bin b, the
-tag fold equals its constant-b version. These are **UNCHECKED** deterministic
-draft statements, absent from the current three-module helper freeze.
+tag fold equals its constant-b version. These were absent from the earlier
+three-module helper freeze. Their byte-identical formal derivative now has
+three selected reports in [successful run37663829244](verification/evidence/g6-run-37663829244-PASS/README.md)
+at `4fed303`. These are deterministic same-record fold statements; actual
+clock support and whole-calendar/bin observation attachment remain separate.
 
 The source map now identifies the actual interval gate: `activeTrace_mem_gt`
 with the original strictly positive clocks and `activeTrace_mem_bounds`
@@ -103,3 +107,8 @@ removes equality at a declared fixed cut. This is inherited original-clock
 evidence; new code must still convert coordinate flags to active-list
 membership and compose the chosen refined calendar. For a random ancestral
 cover, avoid the fixed observation cut, not the random cover itself.
+
+The new [actual clock-support derivative](ACTUAL-BIN-CLOCK.md) directly
+addresses coordinate-to-list membership and the fixed-bin premise using
+the original clock law. Its implementation remains unchecked until the
+next exact-input compiler receipt.

@@ -114,3 +114,15 @@ Scoped methods/documentation can be useful before every original master
 closes. There is no evidence-based date for full G3/G4 closure, independent
 uptake or empirical impact. Prioritize connected proofs and usable certificates
 because those determine which established mathematics can support real use.
+
+## Later formal progress, 18:26 UTC
+
+[The repaired117-report build](verification/evidence/g6-run-37663829244-PASS/README.md)
+now verifies rational least-cutoff termination, joint source endpoint
+histories, a retained correlated PMF past label and bin-update/record-fold
+components. The completed170-module inventory predates these helpers; a new
+complete generated-declaration inventory is a separate next gate. This
+narrows the implementation gap but supplies no percentage-to-completion or
+forecast for general G3/G4, full G5/G6, or useful biological sample precision.
+Current accepted research and practical limitations are linked from
+[the maintained overview](../../RESEARCH-STATUS.md).

@@ -156,3 +156,17 @@ and actual-law G5 conclusions still deserve their explicit open labels.
 
 For exact symbol/source locations see the [timed-history dependency map](../2026-10-07-cloud-lit-organization-1621z/g6-calendar-history-1722z/README.md),
 [joint-history draft](JOINT-HISTORY-PREFIX.md) and [bin-update draft](SAME-BIN-UPDATE.md).
+
+## Later source-component verification, 18:26 UTC
+
+The170-module observation above is unchanged. The later
+[successful117-report job](verification/evidence/g6-run-37663829244-PASS/README.md)
+now formally checks rational cutoff termination, joint endpoint-vector
+conditioning with a retained PMF past label, actual merger-bin updates and
+the same-record finite-tag fold. It does not invent an event history inside
+Code or reconstruct continuous past from a final snapshot. The next
+[actual clock-support draft](ACTUAL-BIN-CLOCK.md) and
+[finite-tag tree decoder](../2026-10-07-cloud-g3-contextual-source-1716z/finite-tag-decoder-1806z/README.md)
+address precise remaining bin-calendar interfaces. They and the complete
+expanded ownership inventory require their own later receipt. The original
+calendar refinement, source attachment and full G6 consumers remain open.

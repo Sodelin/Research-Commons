@@ -21,8 +21,13 @@ G5FrozenTripleAnalyticSupport passed [run 37655542723 attempt 2](../2026-10-07-c
 at input `1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5`, with 15 selected
 standard-only declarations. Actual conditional genealogy-law binding remains
 open. The original timed-consumer/full-inventory build was not part of that
-narrow PASS; the sole Lean owner is preparing its exact bounded takeover
-freeze. The old G5 workflow is manual-only; all shared providers remain
+narrow PASS. The later [actual takeover run](verification/evidence/g5-takeover-run-37658528073-PASS/README.md)
+at `849757a` succeeded with 170 custom modules, including the unchanged
+hidden-register timed projectivity consumer. Its complete selected-environment
+inventory has3,856 owned declarations/2,522 theorems, only standard axioms.
+[Independent inventory review](../2026-10-07-cloud-independent-auditor-1616z/FULL-TIMED-TAKEOVER-REVIEW.md)
+accepts the exact frozen result; it does not close actual conditional
+triple-law/route-support or full M3/HG recovery. The old G5 workflow is manual-only; all shared providers remain
 unchanged. Historical execution and attribution below remain preserved.
 
 The startup ACK and [full obligation register](OBLIGATIONS.md) retain the
@@ -34,8 +39,10 @@ CLOUD-G5-G6-COORD-20261007T1605Z; posting alone does not establish receipt.
 
 ## Exact current proof attack
 
-Reconstruct the selected G2 dependency context and compile the inherited
-`G5HiddenRegisterTimedProjectivity.lean` unchanged. Retain the 09:41 terminal
+The selected G2 context and inherited
+`G5HiddenRegisterTimedProjectivity.lean` have now compiled unchanged. Continue
+with the actual conditional triple-law and feasible-route support bridge.
+Retain the 09:41 terminal
 completion normalizer and 06:45 strict-clock compatibility version. The
 reconstruction script hash-checks explicitly pinned sources, records historical
 version selection and freezes custom import order without editing providers.

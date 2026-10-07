@@ -78,8 +78,9 @@ not recreated as new interface assumptions.
 The initial random register must be mixed only once in both histories. A
 declared original compiled calendar and read-cut refinement must be
 instantiated explicitly before calling this a law for that biological menu.
-The current bounded170-module takeover replay is checking the selected timed
-provider context; its result is separate from this draft.
+The [170-module takeover replay](../2026-10-07-cloud-g5-sol-ultra-1557z/verification/evidence/g5-takeover-run-37658528073-PASS/README.md)
+passed the selected timed provider context and complete attributed inventory.
+It predates this draft and does not compile it.
 
 ## The finite-bin gate remains exact and separate
 
@@ -117,3 +118,20 @@ It is **UNCHECKED** until a frozen pinned compiler receipt says otherwise.
 Root preserves this initial draft; the Lean lane owns the formal derivative
 and routine elaboration fixes. No second compiler, provider edit, biological
 dataset, complete source reconstruction or full-master claim is introduced.
+
+## Later execution checkpoint, 18:16 UTC
+
+The original draft bytes remain preserved. [Run 37661997971](verification/evidence/g6-run-37661997971-FAILED/README.md)
+actually failed the nil-recursion unfolding and dependent Fin.cons inference.
+[Independent review](../2026-10-07-cloud-independent-auditor-1616z/RATIONAL-BIN-VERIFIED-HISTORY-FAILED-REVIEW.md)
+rejects every History recovery report containing sorryAx; it accepts the
+separate successful rational/bin targets. The formal derivative at
+`4fed3030da86d94c85fbb7ecd7ea33b250e06772` fixes only those two elaboration
+points and is under frozen run37663829244. No successful result is inferred.
+
+The later [successful run37663829244](verification/evidence/g6-run-37663829244-PASS/README.md)
+at that repaired input now supplies ten genuine selected HistoryPrefix
+reports with standard-only transitive axioms. It compiles the joint-vector
+product domination, TV/additive budgets and retained correlated PMF past
+label. The initial failed source remains preserved unchanged. Continuous
+timed-past and the actual finite-calendar/bin-menu binding remain separate.
