@@ -6,14 +6,17 @@ The question is whether finite noisy observations yield effective, honest source
 
 ## What the new source chain establishes
 
-| Source | Meaning | Actual execution as of 7 October 2026, 16:32 UTC |
+| Source | Meaning | Actual execution as of 7 October 2026, 16:46 UTC |
 |---|---|---|
 | [FiniteProbability](sources/UnifiedLean/G6/FiniteProbability.lean) | Finite common-subprobability and scaled-domination total-variation/event bounds, retaining zero/full-mass cases | PASS at `89dffaa` in run 37651501035 |
 | [Conditioning](sources/UnifiedLean/G6/Conditioning.lean) | Mass of an actual retained PMF event, normalized filter, same-kernel bind domination and joint finite readout contraction | PASS in that run |
 | [SourcePrefix](sources/UnifiedLean/G6/SourcePrefix.lean) | Condition the actual Poisson count and bind the same actual sourceIteration; derive retained mass, source domination and factor-free joint readout bounds | PASS in that run |
-| [ProgramPrefix](sources/UnifiedLean/G6/ProgramPrefix.lean) | Compose stage conditioning from the same initial snapshot law, retaining exact boundary/register operations | FAILED in that run; repair input `3a45c828`, run 37652484086 active |
+| [ProgramPrefix](sources/UnifiedLean/G6/ProgramPrefix.lean) | Compose stage conditioning from the same initial snapshot law, retaining exact boundary/register operations | PASS at `3a45c828`, run 37652484086; later sum-of-deficits addition pending |
+| [TaylorCertificate](sources/UnifiedLean/G6/TaylorCertificate.lean) | Positive geometric Taylor tail and computable retained-mass error bound, connected to actual source/joint-readout inequalities | Pending run 37654465801 at `eac8195` |
 
-The successful three-module run printed 21 transitive reports using only propext, Classical.choice and Quot.sound. Its final program module failed, so it did not reach the full 51-declaration audit. Earlier failed attempts and raw logs remain in the evidence paths. Follow [current status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md) and the verification directory for later actual receipts.
+The later [successful four-module receipt](verification/evidence/g6-run-37652484086-PASS/README.md) confirms all 61 custom dependency targets and the complete 51-declaration audit passed, using only propext, Classical.choice and Quot.sound. Pinned Mathlib cache was reused. [Independent terminal/source review](../2026-10-07-cloud-independent-auditor-1616z/G6-VERIFIED-PROGRAM-REVIEW.md) accepts this precise unranked component scope. Earlier failed attempts and raw logs remain in the evidence paths. Follow [current status](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md) for later results.
+
+[Exact rational count certificate](TAYLOR-CERTIFICATE.md), [executable](count_certificate.py) and [actual 24-case receipt](count-certificate-controls.json) supply the inner numerical search/validator. [Independent hand/code review](../2026-10-07-cloud-independent-auditor-1616z/COUNT-CERTIFICATE-REVIEW.md) accepts recurrence, ratio tail, rational termination and explicit resource-limit semantics. This is distinct from the pending Lean Taylor/termination consumers. New run 37654465801 combines Taylor/error-budget additions with the staged G3 scalar and read-only stopped-G5 diagnostic recovery; its final audit is pending.
 
 These new bounds concern the actual unranked snapshot/endpoint readout. The current `Code` keeps live genealogy, populations and registers but decodes prior event history as empty. Arbitrary endpoint readout contraction does not establish the required finite-calendar lift with old subtrees/bin histories. The normalized conditional proxy also differs from the old reference residual-lumped backend.
 
@@ -24,9 +27,9 @@ This is the current successor of the historical startup register; the [startup A
 | Obligation | Strongest actual evidence | Exact remaining action |
 |---|---|---|
 | Exact source/observation/target contract | Frozen original contract and accepted nonplanar hand review | Maintain arbitrary real hidden parameters, one shared source bank and separate mechanisms |
-| Finite common-subprobability/scaled domination | FiniteProbability PASS | Complete connected declaration/dependency audit |
-| Actual conditioned count/source proxy and joint readout | Conditioning + SourcePrefix PASS | Final same-register program composition/audit; retain normalized/residual distinction |
-| Positive Taylor tail, rational certificate/effective termination | Accepted hand count route; Lean open | Ratio-controlled tail, rational error certificate and terminating count selection |
+| Finite common-subprobability/scaled domination | FiniteProbability PASS and full selected 51-declaration audit | Reuse in connected downstream master |
+| Actual conditioned count/source proxy and joint readout | Conditioning + SourcePrefix + same-register ProgramPrefix PASS with selected full audit | Later explicit sum-of-deficits budget pending; retain normalized/residual distinction |
+| Positive Taylor tail, rational certificate/effective termination | Inherited hand proof, exact Python 24-case controls and independent hand/code review; Lean Taylor pending | Compile ratio tail/source certificate; formal terminating count selection and effective table correspondence |
 | Contextual genuine positive-chain approximation/reconstruction | Accepted G6 Appendix A; Lean open | Separate COMMON/INDEPENDENT, all entering forests/all finite caps, source-faithful physical chains |
 | Cut guards, fixed endpoints and actual timed-bin lift | Accepted hand contract; current snapshot history gap | Preserve crossing physical edges and complete old subtrees/bin histories |
 | RAW NONPLANAR admission, core and target preservation | Accepted all-size hand extension | Connected source/bridge/component/switching proofs |
