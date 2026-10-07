@@ -7,6 +7,7 @@ import re
 import shutil
 import subprocess
 import sys
+import complete_environment
 
 root = pathlib.Path(sys.argv[1]).resolve()
 targets = pathlib.Path(sys.argv[2]).read_text().split()
@@ -69,6 +70,12 @@ dependencies = {
     'lake_manifest_sha256': hashlib.sha256((root / 'lake-manifest.json').read_bytes()).hexdigest(),
     'lake_registration_sha256': hashlib.sha256((root / 'lakefile.lean').read_bytes()).hexdigest(),
     'verification_script_sha256': hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),
+    'complete_inventory_helper_sha256': hashlib.sha256(
+        pathlib.Path(complete_environment.__file__).read_bytes()).hexdigest(),
+    'complete_inventory_template_sha256': hashlib.sha256((
+        pathlib.Path(__file__).resolve().parents[3] /
+        'research/2026-10-05-dot-connected-modular-lean-workspace-2252z/'
+        'package/scripts/AuditTemplate.lean').read_bytes()).hexdigest(),
 }
 if dependencies['mathlib_commit'] != '0df444a360eaa60ab8c11dca51a86af692955474':
     raise RuntimeError('Unexpected Mathlib commit')
@@ -162,6 +169,15 @@ unexpected = {name: sorted(set(axioms) - {'propext', 'Classical.choice', 'Quot.s
 }, indent=2) + '\n')
 if missing or unexpected:
     raise SystemExit('Incomplete or unexpected declaration axiom audit')
+# Required full ownership/type/body/reference inventory, distinct from the
+# named selected-source reports above. Only actual successful custom modules
+# enter it, including generated declarations and inherited custom providers.
+owned_modules = [module for module in order if module in passed_modules]
+complete_audit = complete_environment.prepare(root, evidence,
+    pathlib.Path(__file__).resolve().parents[3], owned_modules)
+run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', str(complete_audit)],
+    'complete-custom-environment-audit')
+complete_environment.recover(root, evidence, owned_modules)
 counts = {module: len(names) for module, names in declarations_by_module.items()}
 print('CLOUD_SELECTED_AXIOM_AUDIT_PASSED ' + json.dumps(counts), flush=True)
 g6_targets = [target for target in targets if target.startswith('UnifiedLean.G6.')]
