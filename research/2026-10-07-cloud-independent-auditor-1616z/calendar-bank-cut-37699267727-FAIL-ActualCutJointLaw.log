@@ -1,0 +1,161 @@
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:42:59: error: don't know how to synthesize implicit argument `Tag`
+  @TaggedEndpoint V E Copy X (?m.35 N bin s offset B z) inst✝⁹ inst✝⁷ inst✝⁶ inst✝⁵ inst✝⁴ N sample
+context:
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+bin : ℝ → Tag
+s : Code N sample
+offset : ℝ
+B : Copy → Copy → Tag
+z : Bool × ClockTrace N sample (Fintype.card Copy)
+⊢ Type ?u.56
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:55:49: error: don't know how to synthesize implicit argument `Tag`
+  @TaggedEndpoint V E Copy X (?m.35 N bin s offset) inst✝⁹ inst✝⁷ inst✝⁶ inst✝⁵ inst✝⁴ N sample
+context:
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+bin : ℝ → Tag
+s : Code N sample
+offset : ℝ
+⊢ Type ?u.55
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:75:2: error: Type mismatch
+  Measurable.sumElim measurable_const hm
+has type
+  Measurable
+    (Sum.elim (fun x => ?m.165) fun q => tailTraceReadout N bin q.fst offset B (completeAncestralTrace N q.fst q.snd))
+but is expected to have type
+  Measurable fun y => cutCompleteReadout N bin s offset (B, y)
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:80:58: error: don't know how to synthesize implicit argument `Tag`
+  @TaggedEndpoint V E Copy X (?m.54 N bin s d offset t B z) inst✝⁹ inst✝⁷ inst✝⁶ inst✝⁵ inst✝⁴ N sample
+context:
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+bin : ℝ → Tag
+s d : Code N sample
+offset t : ℝ
+B : Copy → Copy → Tag
+z : (Bool × ClockTrace N sample (Fintype.card Copy)) × Bool × ClockTrace N sample (Fintype.card Copy)
+⊢ Type ?u.71
+
+Note: Because this declaration's type has been explicitly provided, all parameter types and holes (e.g., `_`) in its header are resolved before its body is processed; information from the declaration body cannot be used to infer what these values should be
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:141:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:169:13: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:165:63: error: unsolved goals
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s d : Code N sample
+t : ℝ≥0
+h : Bool × ClockTrace N sample (Fintype.card Copy)
+hh : h.1 = true
+⊢ {h | (if h.1 = true then some (traceEndpoint N (Fintype.card Copy) s h.2) else none) = some d} h =
+    {h | traceEndpoint N (Fintype.card Copy) s h.2 = d} h
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:169:13: warning: This simp argument is unused:
+  Set.mem_setOf_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [decodedEndpoint, hh, if_true, Option.some.injEq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:169:48: warning: This simp argument is unused:
+  hh
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_setOf_eq, decodedEndpoint, if_true, Option.some.injEq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:169:52: warning: This simp argument is unused:
+  if_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_setOf_eq, decodedEndpoint, hh, Option.some.injEq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/runner/work/_temp/g6-cloud-build/ActualCutJointLaw.lean:169:61: warning: This simp argument is unused:
+  Option.some.injEq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_setOf_eq, decodedEndpoint, hh, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CloudG3.ActualCutJointLaw.tail_trace_readout_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.ActualCutJointLaw.cut_complete_readout_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCutJointLaw.prefix_tail_readout_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.ActualCutJointLaw.complete_cut_fibre_joint_source_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCutJointLaw.decoded_raw_endpoint_restrict' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

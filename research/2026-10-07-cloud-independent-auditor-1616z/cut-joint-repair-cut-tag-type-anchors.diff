@@ -1,0 +1,163 @@
+--- unchanged-author-api/ActualCalendarCutContext.lean
++++ explicit-existing-Tag/ActualCalendarCutContext.lean
+@@ -38,19 +38,19 @@
+ 
+ noncomputable def segmentReadout (N : RootedBinary V E X) {sample : Copy → X}
+     (bin : ℝ → Tag) (op : ProgramStep N) (s : Code N sample) (offset : ℝ)
+-    (B : Copy → Copy → Tag) (z : SegmentRecord N sample) : TaggedEndpoint N sample :=
++    (B : Copy → Copy → Tag) (z : SegmentRecord N sample) : TaggedEndpoint (Tag := Tag) N sample :=
+   (z.2, segmentTags N bin op s offset B z)
+ 
+ noncomputable def calendarReadout (N : RootedBinary V E X) {sample : Copy → X}
+     (bin : ℝ → Tag) (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ)
+     (B : Copy → Copy → Tag) (z : Fin ops.length → SegmentRecord N sample) :
+-    TaggedEndpoint N sample :=
++    TaggedEndpoint (Tag := Tag) N sample :=
+   (calendarEnd N ops s z, calendarTags N bin ops s offset B z)
+ 
+ noncomputable def completeReadout (N : RootedBinary V E X) {sample : Copy → X}
+     (bin : ℝ → Tag) (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ)
+     (B : Copy → Copy → Tag) (z : CompleteCalendarRecord N sample ops) :
+-    TaggedEndpoint N sample := (completeEnd N ops z, completeTags N bin ops s offset B z)
++    TaggedEndpoint (Tag := Tag) N sample := (completeEnd N ops z, completeTags N bin ops s offset B z)
+ 
+ theorem segment_readout_measurable (N : RootedBinary V E X) {sample : Copy → X}
+     (bin : ℝ → Tag) (hbin : Measurable bin) (op : ProgramStep N)
+@@ -70,7 +70,7 @@
+   induction ops generalizing s offset B with
+   | nil => exact measurable_const
+   | cons op ops ih =>
+-      have hw : Measurable (fun z : TaggedEndpoint N sample ×
++      have hw : Measurable (fun z : TaggedEndpoint (Tag := Tag) N sample ×
+           (Fin ops.length → SegmentRecord N sample) =>
+           calendarReadout N bin ops z.1.1 (segmentOffset N op offset) z.1.2 z.2) :=
+         measurable_from_prod_countable_right (fun q =>
+@@ -87,7 +87,7 @@
+     (bin : ℝ → Tag) (hbin : Measurable bin) (ops : List (ProgramStep N))
+     (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+     Measurable (completeReadout N bin ops s offset B) := by
+-  have hw : Measurable (fun z : TaggedEndpoint N sample ×
++  have hw : Measurable (fun z : TaggedEndpoint (Tag := Tag) N sample ×
+       (Bool × ClockTrace N sample (Fintype.card Copy)) =>
+       tailTraceReadout N bin z.1.1 (offset + (programDuration N ops : ℝ)) z.1.2 z.2) :=
+     measurable_from_prod_countable_right (fun q => tail_trace_readout_measurable N bin hbin
+@@ -99,7 +99,7 @@
+ noncomputable def segmentJoint (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
+     (op : ProgramStep N) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+-    PMF (TaggedEndpoint N sample) := by
++    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := actual_segment_probability N r op s
+   letI := Measure.isProbabilityMeasure_map
+     (segment_readout_measurable N bin hbin op s offset B).aemeasurable
+@@ -108,7 +108,7 @@
+ noncomputable def calendarJoint (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
+     (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+-    PMF (TaggedEndpoint N sample) := by
++    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := actual_calendar_trace_probability N r ops s
+   letI := Measure.isProbabilityMeasure_map
+     (calendar_readout_measurable N bin hbin ops s offset B).aemeasurable
+@@ -117,7 +117,7 @@
+ noncomputable def completedJoint (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
+     (ops : List (ProgramStep N)) (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+-    PMF (TaggedEndpoint N sample) := by
++    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := complete_calendar_trace_probability N r ops s
+   letI := Measure.isProbabilityMeasure_map
+     (complete_readout_measurable N bin hbin ops s offset B).aemeasurable
+@@ -126,7 +126,7 @@
+ noncomputable def tailJoint (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
+     (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag) :
+-    PMF (TaggedEndpoint N sample) := by
++    PMF (TaggedEndpoint (Tag := Tag) N sample) := by
+   letI := complete_ancestral_trace_probability N r s
+   letI := Measure.isProbabilityMeasure_map
+     (tail_trace_readout_measurable N bin hbin s offset B).aemeasurable
+@@ -235,8 +235,8 @@
+   letI := actual_segment_probability N r op s
+   letI : ∀ d : Code N sample, IsProbabilityMeasure (actualCalendarTraceLaw N r ops d) :=
+     fun d => actual_calendar_trace_probability N r ops d
+-  let g : TaggedEndpoint N sample × (Fin ops.length → SegmentRecord N sample) →
+-      TaggedEndpoint N sample := fun z => calendarReadout N bin ops z.1.1
++  let g : TaggedEndpoint (Tag := Tag) N sample × (Fin ops.length → SegmentRecord N sample) →
++      TaggedEndpoint (Tag := Tag) N sample := fun z => calendarReadout N bin ops z.1.1
+         (segmentOffset N op offset) z.1.2 z.2
+   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
+     calendar_readout_measurable N bin hbin ops q.1 (segmentOffset N op offset) q.2)
+@@ -278,8 +278,8 @@
+   letI := actual_calendar_trace_probability N r ops s
+   letI : ∀ d : Code N sample, IsProbabilityMeasure (completeAncestralTraceLaw N r d) :=
+     fun d => complete_ancestral_trace_probability N r d
+-  let g : TaggedEndpoint N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
+-      TaggedEndpoint N sample := fun z => tailTraceReadout N bin z.1.1
++  let g : TaggedEndpoint (Tag := Tag) N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
++      TaggedEndpoint (Tag := Tag) N sample := fun z => tailTraceReadout N bin z.1.1
+         (offset + (programDuration N ops : ℝ)) z.1.2 z.2
+   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
+     tail_trace_readout_measurable N bin hbin q.1 (offset + (programDuration N ops : ℝ)) q.2)
+@@ -330,8 +330,8 @@
+   letI := actual_marked_trace_probability N r (Fintype.card Copy) s t
+   letI : ∀ d : Code N sample, IsProbabilityMeasure (completeAncestralTraceLaw N r d) :=
+     fun d => complete_ancestral_trace_probability N r d
+-  let g : TaggedEndpoint N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
+-      TaggedEndpoint N sample := fun z => tailTraceReadout N bin z.1.1
++  let g : TaggedEndpoint (Tag := Tag) N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
++      TaggedEndpoint (Tag := Tag) N sample := fun z => tailTraceReadout N bin z.1.1
+         (offset + (t : ℝ)) z.1.2 z.2
+   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
+     tail_trace_readout_measurable N bin hbin q.1 (offset + (t : ℝ)) q.2)
+--- unchanged-author-api/ActualFiniteCutJointLaw.lean
++++ explicit-existing-Tag/ActualFiniteCutJointLaw.lean
+@@ -37,7 +37,7 @@
+ 
+ noncomputable def cutIntervalReadout (N : RootedBinary V E X) {sample : Copy → X}
+     (bin : ℝ → Tag) (s : Code N sample) (offset v : ℝ) :
+-    (Copy → Copy → Tag) × CutResidual N sample → TaggedEndpoint N sample :=
++    (Copy → Copy → Tag) × CutResidual N sample → TaggedEndpoint (Tag := Tag) N sample :=
+   fun z => match z.2 with
+     | .inl _ => (s, z.1)
+     | .inr q => tailTraceReadout N bin q.1 offset z.1
+@@ -99,7 +99,7 @@
+           (actualMarkedTraceLaw N r (Fintype.card Copy) d (v : ℝ))).map
+             (prefixTailReadout N bin s d offset (t : ℝ) B)) := by
+   let F : (Bool × ClockTrace N sample (Fintype.card Copy)) × CutResidual N sample →
+-      TaggedEndpoint N sample := fun z => cutIntervalReadout N bin s
++      TaggedEndpoint (Tag := Tag) N sample := fun z => cutIntervalReadout N bin s
+         (offset + (t : ℝ)) (v : ℝ)
+         (foldTags N bin (Fintype.card Copy) s offset B z.1.2, z.2)
+   have hF : Measurable F := (cut_interval_readout_measurable N bin hbin s _ _).comp
+@@ -166,8 +166,8 @@
+   letI : ∀ d : Code N sample,
+       IsProbabilityMeasure (actualMarkedTraceLaw N r (Fintype.card Copy) d (v : ℝ)) :=
+     fun d => actual_marked_trace_probability N r (Fintype.card Copy) d v
+-  let g : TaggedEndpoint N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
+-      TaggedEndpoint N sample := fun z => tailTraceReadout N bin z.1.1
++  let g : TaggedEndpoint (Tag := Tag) N sample × (Bool × ClockTrace N sample (Fintype.card Copy)) →
++      TaggedEndpoint (Tag := Tag) N sample := fun z => tailTraceReadout N bin z.1.1
+         (offset + (t : ℝ)) z.1.2 z.2
+   have hg : Measurable g := measurable_from_prod_countable_right (fun q =>
+     tail_trace_readout_measurable N bin hbin q.1 (offset + (t : ℝ)) q.2)
+--- unchanged-author-api/ActualCalendarEndpointHistory.lean
++++ explicit-existing-Tag/ActualCalendarEndpointHistory.lean
+@@ -58,7 +58,7 @@
+ is read once; every original endpoint genealogy is retained in the history. -/
+ noncomputable def endpointHistoryReadout (N : RootedBinary V E X) {sample : Copy → X} :
+     (word : List (ProgramStep N × Tag)) → Code N sample → (Copy → Copy → Tag) →
+-      (Fin (physicalOps N word).length → Code N sample) → TaggedEndpoint N sample
++      (Fin (physicalOps N word).length → Code N sample) → TaggedEndpoint (Tag := Tag) N sample
+   | [], s, B, _ => (s, B)
+   | q :: word, s, B, h => endpointHistoryReadout N word (h 0)
+       (endpointStepTags N q.1 q.2 s (h 0) B) (Fin.tail h)
+@@ -73,7 +73,7 @@
+     (actualMarkedTraceLaw N r (Fintype.card Copy) s (h : ℝ)).map
+         (tailTraceReadout N bin s offset B) =
+       ((sourceTimeKernel N r h s).map (fun d => (d, tagUpdate N s d tag B))).toMeasure := by
+-  let u : Code N sample → TaggedEndpoint N sample := fun d => (d, tagUpdate N s d tag B)
++  let u : Code N sample → TaggedEndpoint (Tag := Tag) N sample := fun d => (d, tagUpdate N s d tag B)
+   have hu : Measurable u := measurable_of_countable _
+   have hm := marked_trace_measurable N (Fintype.card Copy) s (h : ℝ)
+   calc
