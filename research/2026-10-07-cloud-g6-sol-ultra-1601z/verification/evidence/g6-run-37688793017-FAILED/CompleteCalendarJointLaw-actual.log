@@ -1,0 +1,129 @@
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:54:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  IsProbabilityMeasure (calendarJointLaw N r bin ops s offset M)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:102:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:147:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:148:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:182:31: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Measure.map (fun z => (completeEnd N ops (d, z), completeTags N bin ops s offset (fun a b => bin (M a b)) (d, z)))
+    (C.prod ν)
+in the target expression
+  Measure.map
+      ((fun z => (completeEnd N ops z, completeTags N bin ops s offset (fun a b => bin (M a b)) z)) ∘ fun z => (d, z))
+      (((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d}).prod
+        (completeAncestralTraceLaw N r d)) =
+    Measure.map (fun z => (z.2, tagUpdate N z.1.1 z.2 tag z.1.2))
+      ((Measure.map
+            (fun past => (calendarEnd N ops s past, calendarTags N bin ops s offset (fun a b => bin (M a b)) past))
+            ((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d})).prod
+        (completionKernel N r d).toMeasure)
+
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+s d : Code N sample
+hd : AncestralRoot N d
+offset cut : ℝ
+tag : Tag
+hoff : cut ≤ offset + ↑(programDuration N ops)
+htail : ∀ (a : ℝ), cut < a → bin a = tag
+M : Copy → Copy → ℝ
+this✝ : IsProbabilityMeasure (actualCalendarTraceLaw N r ops s) := actual_calendar_trace_probability N r ops s
+this : IsProbabilityMeasure (completeAncestralTraceLaw N r d) := complete_ancestral_trace_probability N r d
+C : Measure (Fin ops.length → SegmentRecord N sample) :=
+  (actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d}
+ν : Measure (Bool × ClockTrace N sample (Fintype.card Copy)) := completeAncestralTraceLaw N r d
+obs : (Fin ops.length → SegmentRecord N sample) → Code N sample × (Copy → Copy → Tag) :=
+  fun past => (calendarEnd N ops s past, calendarTags N bin ops s offset (fun a b => bin (M a b)) past)
+g : (Code N sample × (Copy → Copy → Tag)) × Code N sample → Code N sample × (Copy → Copy → Tag) :=
+  fun z => (z.2, tagUpdate N z.1.1 z.2 tag z.1.2)
+ep : Bool × ClockTrace N sample (Fintype.card Copy) → Code N sample :=
+  fun z => traceEndpoint N (Fintype.card Copy) d z.2
+hobs : Measurable obs
+hg : Measurable g
+hep : Measurable ep
+hi : Measurable fun z => (d, z)
+hout : Measurable fun z => (completeEnd N ops z, completeTags N bin ops s offset (fun a b => bin (M a b)) z)
+hm :
+  MeasurableSet
+    {z |
+      (completeEnd N ops (d, z), completeTags N bin ops s offset (fun a b => bin (M a b)) (d, z)) =
+        g (Prod.map obs ep z)}
+hae :
+  (fun z => (completeEnd N ops (d, z), completeTags N bin ops s offset (fun a b => bin (M a b)) (d, z))) =ᵐ[C.prod ν]
+    g ∘ Prod.map obs ep
+⊢ Measure.map
+      ((fun z => (completeEnd N ops z, completeTags N bin ops s offset (fun a b => bin (M a b)) z)) ∘ fun z => (d, z))
+      (((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d}).prod
+        (completeAncestralTraceLaw N r d)) =
+    Measure.map (fun z => (z.2, tagUpdate N z.1.1 z.2 tag z.1.2))
+      ((Measure.map
+            (fun past => (calendarEnd N ops s past, calendarTags N bin ops s offset (fun a b => bin (M a b)) past))
+            ((actualCalendarTraceLaw N r ops s).restrict {past | calendarEnd N ops s past = d})).prod
+        (completionKernel N r d).toMeasure)
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:200:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/CompleteCalendarJointLaw.lean:201:69: error: typeclass instance problem is stuck, it is often due to metavariables
+  SFinite (completionKernel N r x✝).toMeasure
+'CloudG3.CompleteCalendarJointLaw.calendar_joint_pmf_toMeasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.pmf_singleton_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.finite_joint_kernel_measure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.complete_branch_joint_source_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.CompleteCalendarJointLaw.actual_complete_joint_source_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
