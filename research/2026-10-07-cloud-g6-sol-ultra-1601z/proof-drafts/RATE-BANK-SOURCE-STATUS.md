@@ -1,0 +1,7 @@
+# Actual rate-bank source draft and explicit-Copy derivative
+
+Root's original [RateBankCommon.lean](RateBankCommon.lean), SHA `cb793c6fc723330207acbded6fe14d6cdc38f03141162c7b2f8d44cec5411610` at `c496f2f`, remains unchanged. Independent primary and bounded Sol source/API reviews accepted its mathematical semantics: the original off-diagonal ordered-pair count, rho/2 event rate, positive holding numerator, physical population bank ratios, same destination map and actual sourceIteration comparison.
+
+The Sol preflight identified a possible elaboration issue in implicit Copy inference inside three `simpa using` applications. [RateBankCommonExplicitCopy.lean](RateBankCommonExplicitCopy.lean) supplies explicit `(Copy := Copy)` in those three applications and the corresponding nonnegative holding proof, with no mathematical statement or premise change. [Exact diff](RateBankCommonExplicitCopy.diff) and [pins](RateBankCommonExplicitCopy.json) preserve attribution and scope. Canonical review publication is pending at this observation; no compiler result is inferred.
+
+Both drafts are UNCHECKED and outside the running same155/242 freeze `fb62f2e`. The sole Lean owner may later copy the reviewed derivative into a separately pinned formal module. Physical calendar/bin interpretation, initial inheritance and complete rational numerical/history/backend consumers remain separate. The [source hand argument](../RATIONAL-RATE-BANK-COMMON-LAW.md) is already independently accepted. Full G6 is open.
