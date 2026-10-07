@@ -1,0 +1,21 @@
+# Fixed-precision conservative joint evidence — arithmetic successor
+
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 practical solver lane, 7 October 2026. Hand argument and bounded deterministic controls; independent review pending. This is an additive arithmetic receiver for the EXACT process in PROOF.md, not a new experiment or a statistical power claim. The earlier source files remain byte-identical.
+
+The initial receiver propagates exact capital interval products. Their rational denominators can grow with the number of loci, causing an avoidable arithmetic stop even when no useful evidence was found. This successor retains only a dyadic lower bound for each capital, because only a rigorous lower bound is needed to reject a candidate mean/source box.
+
+For fixed fractional precision B, define floor_B(q)=floor(2^B q)/2^B. If f^-_{a,i} is the same previously proved nonnegative lower enclosure of the original factor over a supplied mean box, set
+
+    L_{a,0}=1,
+    L_{a,i}=floor_B(L_{a,i-1} f^-_{a,i}),
+    M^-_i=sum_a w_a L_{a,i}.
+
+Induction gives 0<=L_{a,i}<=K_{a,i}(m) for every m in that box: it holds initially; multiplication preserves the inequality because both factors are nonnegative; flooring only decreases the result. Thus M^-_i<=E_i(m) for every m in the box. Any crossing M^-_i>=1/delta safely excludes the entire box under the SAME original all-prefix confidence event. This lower process need not itself be a martingale. Coverage follows from its domination by the original process. Downward rounding can lose power or drive a capital to zero, but cannot fabricate evidence. All statistical/source/admission conditions of the original proof remain essential.
+
+Stored capital denominators divide 2^B. Before the first crossing, positivity of the fixed mixture weights gives L_{a,i}<1/(delta*w_a) for every strategy. A next factor is at most 3/2, so the transient stored update has numerator bit length bounded in terms of B, delta and that fixed weight; it does not grow exponentially in the number of loci. The weighted mixture denominator divides 2^B times the least common multiple of the fixed weight denominators. This addresses CAPITAL denominator growth. Exact direction projections, predictable past sums/variances and factor enclosures still require rational computation and explicit guards; no universal runtime bound or 100,000-locus performance claim follows.
+
+`rounded_betting.py` authenticates the unchanged original joint_betting.py SHA256 2552515f21e9ef6c963897fb3022cd75aa5043f2e58c8daa1b3929c60f0995ea. It reuses the same factor, plan and shifted-mean semantics, accepts B from 16 through 256 and preserves safe UNKNOWN upon a guarded arithmetic stop. Every supplied literal row is validated before any evidence is accepted. For physical parameter-box use, the authenticated unchanged source_bridge.enclose supplies the SAME original nine-mean enclosure; no numerical backend or inverse journal is changed.
+
+Actual controls and integration are reported in rounded-attempt1/RESULT.json and rounded-attempt2/RESULT.json. Both six-control executions passed. The second strengthens the closed-form check to require strictly positive rounding loss at B=16, bounded by a relative 4*2^-16; the initial B=64 case was exactly representable. Production rounding code was unchanged. The earlier test's exact bytes are preserved in history/ and match its executed source hash. A 5000-row purely algebraic stable-capital control processes the full prefix with stored capital1 and one numerator/denominator bit, remaining UNKNOWN. This checks bounded capital representation, not performance on an actual source sample.
+
+Each command was externally limited to ten wall seconds and internally to five CPU seconds and256MiB. Each returned exit code zero. Pure algebraic row vectors are test inputs, not generated original-source loci or empirical sampling. The unchanged historical two-locus fixture with the full original physical domain again remains UNKNOWN. The complete original all-normalized-width target remains open. This arithmetic component reduces one representation obstacle; it does not prove that the joint information is sufficient at a useful budget.
