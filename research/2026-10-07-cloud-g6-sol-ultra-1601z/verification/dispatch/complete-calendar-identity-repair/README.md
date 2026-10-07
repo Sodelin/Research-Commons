@@ -1,0 +1,5 @@
+# Sole calendar identity repair run — IN PROGRESS
+
+The automatic push-triggered run [37693022664](https://github.com/Sodelin/Research-Commons/actions/runs/37693022664) reads exact frozen input `0c065713902a35148d4ac513937e638fb7052f88`. All 154 previously successful custom source hashes stay fixed; the only source edit adds `simp only [id_eq] at hr` to the calendar law consumer, candidate SHA256 `bc7bae35763f93e4229c1f88524caa39f8b752e3b71ad06651c1b71f63692a9a`. Root, original author and independent auditor accepted the derivative source semantics.
+
+The same 155 custom modules, 242 selected names (173 G6, 54 G3, 15 G5), and 63 Mathlib plus one Lean cache root remain selected. Shared serialization, 15 minute job cap, 180 second command bounds, `--trust=0 -j1 -M4096` and both named/complete ownership audits are unchanged. This is dispatch evidence only; compiler acceptance requires the actual terminal receipts and full successful-module audit. No manual redispatch or second compiler started.
