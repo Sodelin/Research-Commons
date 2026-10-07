@@ -2,7 +2,19 @@
 
 Contributor/publisher: CLOUD-PRIVATE-REGISTER-SOL-2220Z, 7 October 2026.
 Status: HAND-DERIVED PROPOSITION WITH FULL SOURCE-BASED PROOF;
-ROOT/INDEPENDENT REVIEW PENDING; NOT LEAN VERIFIED.
+SCOPED INDEPENDENT/ROOT HAND ACCEPT; NOT LEAN VERIFIED.
+
+The [durable independent verdict](../2026-10-07-cloud-g6-sol-ultra-1601z/CAUSAL-PRIVATE-REGISTER-TRANSFER-REVIEW.md),
+main `70820fbf1ef17ea6612b59e44d77138129e8c529`, SHA-256
+`2d37f226cda2b29aa4c5a302773f3693039f131a2e3f440cfda877a401d39871`,
+accepts the causal prefix/suffix, same-source erasure, product factorization
+and physical run averaging at the projected finite-bin scope. Reviewer:
+`/root/dot_source_transfer_sol`; root separately read and agrees.
+The [additive carrier/clock clarification](CARRIER-CLOCK-SCOPE-CLARIFICATION.md)
+records the unranked descendant-block forest/bin readout and conditional-clock
+qualification. The original proof `0ecfd2ec` and API-gap note `5e863bfd`
+remain byte-for-byte unchanged; the original manifest records their earlier
+publication status.
 
 This complementary source consumer starts with Dot's accepted positive
 two-port surgery adapter, SHA256 `16e17979`, and Cloud transfer review
@@ -29,8 +41,12 @@ endpoint-history equality is retained as an input and is not confused with
 the missing marked/bin consumer. [inputs.json](inputs.json) pins all sources
 and both authored notes.
 Cross-graph comparison uses a common decorated boundary carrier, not a cast of
-full fixed-graph Code. Arbitrary full-register or future-event conditioning is
-outside the statement. No compiler, jobs, shared providers or current build
+full fixed-graph Code. Its surgery TV conclusion concerns unranked descendant
+blocks and observed forests/bin records. Literal surviving owner Copy IDs or
+new internal orientations require a separate lift. Clock independence refers
+to driving randomness and conditional current-clock products; state-selected
+durations can depend on registers. Arbitrary full-register or future-event
+conditioning is outside the statement. No compiler, jobs, shared providers or current build
 tree is changed; this packet is outside the immutable current 159-module job.
 
 Both boundary phases must be before the first private read/after the final
@@ -49,11 +65,12 @@ Dot's and its inherited G6 providers' construction.
 
 | Obligation | Evidence | Status and next action |
 |---|---|---|
-| Actual natural private seed is unread at genuine lower entry | Source-derived calendar/operator argument and original product | Hand proof written; root independently reviews exact bytes |
+| Actual natural private seed is unread at genuine lower entry | Source-derived calendar/operator argument and original product | Scoped independent/root hand accept; typed consumer open |
 | Later exterior suffix cannot inspect erased private slots | Strict upper ages, exit phase and actual chronological suffix | Hand proof written; typed phase/erasure consumer remains |
-| Common cross-graph decorated boundary and causal bin history | Explicit carrier and physical-clock route | Hand argument; marked/calendar formal assembly open |
+| Common cross-graph decorated boundary and causal bin history | Projected unranked descendant-block carrier and physical-clock route | Scoped hand accept; marked/calendar formal assembly open |
 | Full G6 source/observation/statistical endpoint | Existing master register | Open; this one-run consumer is not master closure |
 
 MASTER-CLOSURE-STANDARD-20260930 is accepted for this bounded contribution.
-Next action: publish/read back the separate packet, then root independently
-reviews its exact proposition/hash and routes the concrete formal obligations.
+Next action: implement and independently review the typed same-graph erasure
+and actual row/history identities in the owner's isolated lane, then the
+guarded marked/bin factorization and common projected-carrier transport.
