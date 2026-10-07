@@ -112,8 +112,12 @@ theorem actual_complete_tail_bin_fold (N : RootedBinary V E X)
           tagUpdate N s (traceEndpoint N (Fintype.card Copy) s z.2) tag B) := by
     apply Measurable.forall
     intro B
+    have hprep : Measurable
+        (fun z : Bool × ClockTrace N sample (Fintype.card Copy) =>
+          (s, (B, z.2))) :=
+      measurable_const.prodMk (measurable_const.prodMk measurable_snd)
     have hf := (fold_tags_joint_measurable N bin hbin (Fintype.card Copy) offset).comp
-      (measurable_const.prodMk (measurable_const.prodMk measurable_snd))
+      hprep
     have hu : Measurable (fun e : Code N sample => tagUpdate N s e tag B) :=
       measurable_of_countable _
     exact (measurableSet_eq_fun hf (hu.comp (raw_tail_endpoint_measurable N s))).mem

@@ -22,6 +22,7 @@ open UnifiedLean.Source.SourceProgramTransport
 open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.ActualCalendarTrace
 open GProgram.G2.ActualDecorationFold GProgram.G2.CalendarDecoration
 open GProgram.G2.CompleteCalendarAttachment GProgram.G2.CompleteDecoration
+open GProgram.G2.ChronologicalPathReadout
 open GProgram.G2.SourceGraftDecoration GProgram.G2.FaithfulPairAgeDecoration
 open UnifiedLean.G6.BinFold CloudG3.FiniteTagDecoder
 open scoped Classical NNReal
@@ -156,9 +157,12 @@ theorem calendar_joint_bin_readout_measurable (N : RootedBinary V E X)
       (fun past => fun a b => bin (calendarMatrix N ops s offset M past a b)) := by
     funext past
     exact (map_calendar_matrix N bin ops s offset M past).symm
-  rw [he]
+  have ht : Measurable (fun past : Fin ops.length → SegmentRecord N sample =>
+      calendarTags N bin ops s offset (fun a b => bin (M a b)) past) := by
+    rw [he]
+    exact calendar_binned_matrix_measurable N bin hbin ops s offset M
   exact (calendar_end_measurable N ops s).prodMk
-    (calendar_binned_matrix_measurable N bin hbin ops s offset M)
+    ht
 
 /-- Actual source pushforward. This is explicitly a Measure, before finite
 singleton normalization is used to construct a PMF in the hand theorem. -/
@@ -207,9 +211,12 @@ theorem complete_joint_bin_readout_measurable (N : RootedBinary V E X)
       (fun z => fun a b => bin (completeMatrix N ops s offset M z a b)) := by
     funext z
     exact (map_complete_matrix N bin ops s offset M z).symm
-  rw [he]
+  have ht : Measurable (fun z : CompleteCalendarRecord N sample ops =>
+      completeTags N bin ops s offset (fun a b => bin (M a b)) z) := by
+    rw [he]
+    exact complete_binned_matrix_measurable N bin hbin ops s offset M
   exact (complete_end_measurable N ops).prodMk
-    (complete_binned_matrix_measurable N bin hbin ops s offset M)
+    ht
 
 #print axioms map_segment_matrix
 #print axioms map_calendar_matrix

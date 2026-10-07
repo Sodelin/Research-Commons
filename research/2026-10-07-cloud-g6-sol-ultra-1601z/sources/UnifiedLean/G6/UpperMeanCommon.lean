@@ -118,11 +118,13 @@ lemma upperCommonMass_deficit_le (a b : ℝ≥0) (hab : a ≤ b) (K : ℕ) :
   have hpoly := taylorPrefix_difference_le (a : ℝ) b a.coe_nonneg
     (by exact_mod_cast hab) K
   have hu := upperDenominator_pos b K
+  have hU : taylorPrefix (b : ℝ) K + 2 * taylorTerm (b : ℝ) (K + 1) ≠ 0 :=
+    ne_of_gt hu
   have hdiff : 1 - upperCommonMass a b K =
       (taylorPrefix (b : ℝ) K - taylorPrefix (a : ℝ) K) / upperDenominator b K +
         errorBound (b : ℝ) K := by
     unfold upperCommonMass upperDenominator errorBound
-    field_simp [ne_of_gt hu]
+    field_simp [hU]
     <;> ring
   have hquot := div_le_div_of_nonneg_right hpoly hu.le
   have hratio : ((b : ℝ) - a) * taylorPrefix (b : ℝ) K / upperDenominator b K ≤
@@ -130,7 +132,7 @@ lemma upperCommonMass_deficit_le (a b : ℝ≥0) (hab : a ≤ b) (K : ℕ) :
     have h := mul_le_mul_of_nonneg_left (residualMass_bounds b K).2 hd
     simpa only [residualMass, upperDenominator, mul_div_assoc, mul_one] using h
   rw [hdiff]
-  exact add_le_add_right (hquot.trans hratio) _
+  linarith only [hquot, hratio]
 
 /-- The common normalized count law uses actual a, never upper b. -/
 lemma upperCommonMass_count_domination (a b : ℝ≥0) (hab : a ≤ b) (K k : ℕ) :

@@ -23,6 +23,7 @@ open UnifiedLean.Source.SourceAncestralCompletion
 open UnifiedLean.Source.SourceCompletionHarmonic
 open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.ActualCalendarTrace
 open GProgram.G2.CompleteCalendarAttachment GProgram.G2.CompleteDecoration
+open GProgram.G2.ChronologicalPathReadout
 open GProgram.G2.FiniteAncestralTrace GProgram.G2.AncestralTraceSourceLaw
 open GProgram.G2.FiniteFibreTransport
 open UnifiedLean.G6.BinHistory
