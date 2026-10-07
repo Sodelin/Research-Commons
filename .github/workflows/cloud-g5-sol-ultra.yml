@@ -1,12 +1,8 @@
 name: Cloud G5 Sol Ultra frozen verification
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/cloud-g5-sol-ultra.yml
-      - research/2026-10-07-cloud-g5-sol-ultra-1557z/scripts/**
-      - research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/**
+  # Root/Lean takeover: deliberate full-context runs only. Narrow G5 analytic
+  # repairs are checked in the owned combined serial route.
   workflow_dispatch:
 
 permissions:

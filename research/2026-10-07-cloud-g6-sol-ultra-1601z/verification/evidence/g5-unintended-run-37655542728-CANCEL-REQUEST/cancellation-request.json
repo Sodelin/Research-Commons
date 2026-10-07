@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-07T17:01:01.241739+00:00",
+  "reason": "New unintended full G5 trigger after root-authorized narrow analytic repair; cancel ONLY this run. Historical stopped run37650073193 unchanged.",
+  "normal_cancel_attempts": [
+    "HTTP500 at16:59UTC",
+    "HTTP500 at16:59UTC"
+  ],
+  "latest_force_cancel_command": [
+    "gh",
+    "api",
+    "--include",
+    "--method",
+    "POST",
+    "repos/Sodelin/Research-Commons/actions/runs/37655542728/force-cancel"
+  ],
+  "latest_force_cancel_exit": 1,
+  "http_status_lines": [
+    "HTTP/2.0 409 Conflict"
+  ],
+  "diagnostic": "gh: Cannot cancel a workflow run that has not been queued yet. (HTTP 409)",
+  "readback": {
+    "conclusion": "",
+    "headSha": "1eb4b9a7f39f50aa6bc59f2791e82d380764fdf5",
+    "jobs": [],
+    "status": "queued",
+    "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37655542728"
+  }
+}
