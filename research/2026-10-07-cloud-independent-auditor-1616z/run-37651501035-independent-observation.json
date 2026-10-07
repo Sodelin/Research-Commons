@@ -1,0 +1,252 @@
+{
+  "schema": "independent-gh-compiler-readback-v1",
+  "observed_utc": "2026-10-07T16:37:31.002831+00:00",
+  "metadata": {
+    "conclusion": "failure",
+    "headSha": "89dffaa83c107c21922305474f272b4469d828c7",
+    "jobs": [
+      {
+        "completedAt": "2026-10-07T16:28:01Z",
+        "conclusion": "failure",
+        "databaseId": 112895707659,
+        "name": "verify",
+        "startedAt": "2026-10-07T16:23:05Z",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Fetch frozen public input",
+            "number": 2,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify existing pinned runtime",
+            "number": 3,
+            "status": "completed"
+          },
+          {
+            "conclusion": "failure",
+            "name": "Verify G6 frozen sources serially",
+            "number": 4,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Preserve actual success and failure evidence",
+            "number": 5,
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 6,
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Sodelin/Research-Commons/actions/runs/37651501035/job/112895707659"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-10-07T16:28:02Z"
+  },
+  "raw_cli_log_sha256": "9b45a960cbed8bfb7635b1723c780dc8c60db77f1e1ceb133feeeec67e82451b",
+  "receipt_count": 62,
+  "custom_lean_module_receipts": 61,
+  "selected_G6_receipts": [
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/FiniteProbability.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteProbability.lean"
+      ],
+      "start": "2026-10-07T16:24:42.561527+00:00",
+      "end": "2026-10-07T16:24:45.748255+00:00",
+      "exit": 0,
+      "output_sha256": "757498f226536e63546c9f57cb4e4328a4f178c0827c63b62563b24ae94b4f17"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/Conditioning.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/Conditioning.lean"
+      ],
+      "start": "2026-10-07T16:24:45.748636+00:00",
+      "end": "2026-10-07T16:24:48.670504+00:00",
+      "exit": 0,
+      "output_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/SourcePrefix.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/SourcePrefix.lean"
+      ],
+      "start": "2026-10-07T16:27:30.919330+00:00",
+      "end": "2026-10-07T16:27:34.252580+00:00",
+      "exit": 0,
+      "output_sha256": "74e089eae61883da5c4cfedea59111c40cd6a770f2cabc2e2562e8d192b5c062"
+    },
+    {
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-o",
+        "/home/runner/work/_temp/g6-cloud-build/.lake/build/lib/lean/UnifiedLean/G6/ProgramPrefix.olean",
+        "/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/ProgramPrefix.lean"
+      ],
+      "start": "2026-10-07T16:27:51.093625+00:00",
+      "end": "2026-10-07T16:27:54.433660+00:00",
+      "exit": 1,
+      "output_sha256": "66c1228ccd0e7bf49ed8f7900ed92d7e825edaadb281c01d6e452913025087fe"
+    }
+  ],
+  "printed_G6_reports": [
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_tv",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_mass",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.common_subprobability_event",
+      "axioms_text": "[propext,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.scaled_domination_tv",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_sum_real",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_tv",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.FiniteProbability.pmf_scaled_domination_event",
+      "axioms_text": "[propext,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filter_scaled",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.filtered_bind_domination_real",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_mixture_tv",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_tv",
+      "axioms_text": "[propext,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.Conditioning.conditioned_joint_observation_event",
+      "axioms_text": "[propext,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_support",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixMass_taylor",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.prefixCount_real",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_domination",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_prefix_tv",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_tv",
+      "axioms_text": "[propext, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.SourcePrefix.actual_source_joint_readout_event",
+      "axioms_text": "[propext,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.bind_scaled_domination",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.map_scaled_domination",
+      "axioms_text": "[propext, sorryAx, Classical.choice, Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_step_domination",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.actual_program_domination",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_domination",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_distribution_tv",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_tv",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    },
+    {
+      "name": "UnifiedLean.G6.ProgramPrefix.same_initial_joint_readout_event",
+      "axioms_text": "[propext,  sorryAx,  Classical.choice,  Quot.sound]"
+    }
+  ],
+  "successful_selected_report_count": 21,
+  "ProgramPrefix_failed_recovery_reports_not_proofs": true
+}
