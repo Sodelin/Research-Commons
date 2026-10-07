@@ -1,0 +1,124 @@
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualTailBinRow.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualTailBinRow.lean
+index b2eed1b..da62438 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualTailBinRow.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualTailBinRow.lean
+@@ -112,8 +112,12 @@ theorem actual_complete_tail_bin_fold (N : RootedBinary V E X)
+           tagUpdate N s (traceEndpoint N (Fintype.card Copy) s z.2) tag B) := by
+     apply Measurable.forall
+     intro B
++    have hprep : Measurable
++        (fun z : Bool × ClockTrace N sample (Fintype.card Copy) =>
++          (s, (B, z.2))) :=
++      measurable_const.prodMk (measurable_const.prodMk measurable_snd)
+     have hf := (fold_tags_joint_measurable N bin hbin (Fintype.card Copy) offset).comp
+-      (measurable_const.prodMk (measurable_const.prodMk measurable_snd))
++      hprep
+     have hu : Measurable (fun e : Code N sample => tagUpdate N s e tag B) :=
+       measurable_of_countable _
+     exact (measurableSet_eq_fun hf (hu.comp (raw_tail_endpoint_measurable N s))).mem
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarBinReadout.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarBinReadout.lean
+index f560b67..4cc8c16 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarBinReadout.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarBinReadout.lean
+@@ -22,6 +22,7 @@ open UnifiedLean.Source.SourceProgramTransport
+ open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.ActualCalendarTrace
+ open GProgram.G2.ActualDecorationFold GProgram.G2.CalendarDecoration
+ open GProgram.G2.CompleteCalendarAttachment GProgram.G2.CompleteDecoration
++open GProgram.G2.ChronologicalPathReadout
+ open GProgram.G2.SourceGraftDecoration GProgram.G2.FaithfulPairAgeDecoration
+ open UnifiedLean.G6.BinFold CloudG3.FiniteTagDecoder
+ open scoped Classical NNReal
+@@ -156,9 +157,12 @@ theorem calendar_joint_bin_readout_measurable (N : RootedBinary V E X)
+       (fun past => fun a b => bin (calendarMatrix N ops s offset M past a b)) := by
+     funext past
+     exact (map_calendar_matrix N bin ops s offset M past).symm
+-  rw [he]
++  have ht : Measurable (fun past : Fin ops.length → SegmentRecord N sample =>
++      calendarTags N bin ops s offset (fun a b => bin (M a b)) past) := by
++    rw [he]
++    exact calendar_binned_matrix_measurable N bin hbin ops s offset M
+   exact (calendar_end_measurable N ops s).prodMk
+-    (calendar_binned_matrix_measurable N bin hbin ops s offset M)
++    ht
+ 
+ /-- Actual source pushforward. This is explicitly a Measure, before finite
+ singleton normalization is used to construct a PMF in the hand theorem. -/
+@@ -207,9 +211,12 @@ theorem complete_joint_bin_readout_measurable (N : RootedBinary V E X)
+       (fun z => fun a b => bin (completeMatrix N ops s offset M z a b)) := by
+     funext z
+     exact (map_complete_matrix N bin ops s offset M z).symm
+-  rw [he]
++  have ht : Measurable (fun z : CompleteCalendarRecord N sample ops =>
++      completeTags N bin ops s offset (fun a b => bin (M a b)) z) := by
++    rw [he]
++    exact complete_binned_matrix_measurable N bin hbin ops s offset M
+   exact (complete_end_measurable N ops).prodMk
+-    (complete_binned_matrix_measurable N bin hbin ops s offset M)
++    ht
+ 
+ #print axioms map_segment_matrix
+ #print axioms map_calendar_matrix
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarJointLaw.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarJointLaw.lean
+index 12996b8..2889d3e 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarJointLaw.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarJointLaw.lean
+@@ -23,6 +23,7 @@ open UnifiedLean.Source.SourceAncestralCompletion
+ open UnifiedLean.Source.SourceCompletionHarmonic
+ open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.ActualCalendarTrace
+ open GProgram.G2.CompleteCalendarAttachment GProgram.G2.CompleteDecoration
++open GProgram.G2.ChronologicalPathReadout
+ open GProgram.G2.FiniteAncestralTrace GProgram.G2.AncestralTraceSourceLaw
+ open GProgram.G2.FiniteFibreTransport
+ open UnifiedLean.G6.BinHistory
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualProgram.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualProgram.lean
+index 5709faf..2e9796f 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualProgram.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualProgram.lean
+@@ -180,7 +180,8 @@ lemma residual_step_common_domination (N : RootedBinary V E X) {sample : Copy 
+     residualStepMass (Copy := Copy) N r K op * finiteProgramStep N r K op s d ≤
+       residualProgramStep N r K op s d := by
+   cases op with
+-  | interval t => exact residualPMF_domination _ _ _ _ _ d
++  | interval t => exact residualPMF_domination _ _ _
++      (residualMass_bounds _ K).1 (residualMass_bounds _ K).2 d
+   | boundary b => simp only [residualStepMass, finiteProgramStep,
+       residualProgramStep, one_mul, le_refl]
+ 
+@@ -251,7 +252,8 @@ lemma residual_interval_real (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (K : ℕ) (t : ℝ≥0) (s d : Code N sample) :
+     (residualProgramStep N r K (.interval t) s d).toReal =
+       residualSourceVector N r t K s d :=
+-  residualPMF_real _ _ _ _ _ d
++  residualPMF_real _ _ _
++    (residualMass_bounds _ K).1 (residualMass_bounds _ K).2 d
+ 
+ lemma same_initial_common_domination {A B : Type*}
+     (initial : PMF A) (p q : A → PMF B) (mu : ℝ≥0∞)
+diff --git a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperMeanCommon.lean b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperMeanCommon.lean
+index 6e6f24c..70487a6 100644
+--- a/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperMeanCommon.lean
++++ b/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperMeanCommon.lean
+@@ -118,11 +118,13 @@ lemma upperCommonMass_deficit_le (a b : ℝ≥0) (hab : a ≤ b) (K : ℕ) :
+   have hpoly := taylorPrefix_difference_le (a : ℝ) b a.coe_nonneg
+     (by exact_mod_cast hab) K
+   have hu := upperDenominator_pos b K
++  have hU : taylorPrefix (b : ℝ) K + 2 * taylorTerm (b : ℝ) (K + 1) ≠ 0 :=
++    ne_of_gt hu
+   have hdiff : 1 - upperCommonMass a b K =
+       (taylorPrefix (b : ℝ) K - taylorPrefix (a : ℝ) K) / upperDenominator b K +
+         errorBound (b : ℝ) K := by
+     unfold upperCommonMass upperDenominator errorBound
+-    field_simp [ne_of_gt hu]
++    field_simp [hU]
+     <;> ring
+   have hquot := div_le_div_of_nonneg_right hpoly hu.le
+   have hratio : ((b : ℝ) - a) * taylorPrefix (b : ℝ) K / upperDenominator b K ≤
+@@ -130,7 +132,7 @@ lemma upperCommonMass_deficit_le (a b : ℝ≥0) (hab : a ≤ b) (K : ℕ) :
+     have h := mul_le_mul_of_nonneg_left (residualMass_bounds b K).2 hd
+     simpa only [residualMass, upperDenominator, mul_div_assoc, mul_one] using h
+   rw [hdiff]
+-  exact add_le_add_right (hquot.trans hratio) _
++  linarith only [hquot, hratio]
+ 
+ /-- The common normalized count law uses actual a, never upper b. -/
+ lemma upperCommonMass_count_domination (a b : ℝ≥0) (hab : a ≤ b) (K k : ℕ) :
