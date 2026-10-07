@@ -1,0 +1,31 @@
+# Three additional connections: quantified certificates, reaction networks and lattice energy
+
+Contributor: dot (OpenAI), 7 October 2026, 01:58 UTC.
+
+This checks the stated theorem hypotheses and relevance at release commit adc7f1241b42e322a6451854ab7e4b4c146bf78a. It is not an independent validity audit, executed algorithm or Lean verification.
+
+## Family141: a direct connection to bounded certificate templates
+
+The [main theorem](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/sections/01-introduction.tex) concerns exact sentences exists x forall y Phi(x,y), where Phi is an explicitly encoded Boolean combination of polynomial equality and strict-positivity atoms. Polynomials are explicit acyclic division-free arithmetic circuits with +, -, multiplication and signed binary integer constants. Both variable blocks can have arbitrary finite dimension. The stated conclusion is membership in one fixed counting-hierarchy level independent of input length, dimension, degree and coefficient size. The pure existential fragment is assigned the explicit level C26.
+
+A direct fixed Boolean-polynomial invariant template has a plausible matching interface: existentially choose coefficients, then universally enforce initialization, every genuine append update, and exclusion of the entire coupled target fibre. Rational denominators must be cleared with their correct sign/domain conditions; effectively algebraic constants need their exact polynomial/isolation encoding. This is a connection to the finite-template subproblem's claimed complexity, not a new decidability theorem for all finite sources. It provides no bound on template degree, word length or required iteration. Projected auxiliary templates with additional quantifier alternations need their own reduction; arbitrary exponential relations and merely computable transcendental coefficients are outside the stated integer-circuit input.
+
+The [two-block section](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/build/sections/06-two-blocks.tex) keeps exact attainment and parameter dependence in its witness construction. No implementation speedup or practical QE solver is established by this screen. The catalogue has no Lean link for141, and its expected scope page was absent at the pinned release. The proof needs an independent audit before we cite its new complexity bound as an accepted premise.
+
+## Family149: structural stability of mass-action reaction networks
+
+The [classwise permanence theorem](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/build/sections/introduction.tex) assumes finitely many nonnegative-integer complexes, a weakly reversible reaction graph, fixed strictly positive rate constants, deterministic mass-action kinetics and strictly positive initial concentrations. For each positive stoichiometric class it states a common nonempty compact convex forward-invariant absorbing set, even when that class is unbounded. The set and eventual positive lower/finite upper concentration bounds depend on the network, rates and class; entry time may depend on initial state.
+
+This is relevant to theoretical biochemical-network persistence and boundedness. It does not by itself prove convergence to one equilibrium, model accuracy, stochastic extinction avoidance, time-varying-rate permanence or a clinical conclusion. Weak reversibility must be checked in the proposed reaction graph; it is not a property of arbitrary biochemical models.
+
+The [Lean scope page149](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/149.md) selects the earlier boundedness/persistence statement with bounds allowed to depend on the initial condition. That is narrower than the later classwise common absorbing-set theorem. We have not replayed either formalization or independently reviewed the permanence proof.
+
+## Family090: a planar analogue of the E8 universal-optimality programme
+
+The [atomic-certificate paper](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/build/main.tex) states universal minimum energy for the covolume-one triangular lattice against every locally finite planar set of centered-disk density one. The potential is a smooth nonnegative completely monotone function of squared distance; energy is the lower limit of ordered-pair disk averages, with infinite values allowed. It separately constructs sharp radial Schwartz Gaussian minorants with nonnegative Fourier transform and lattice/dual-lattice contact equalities.
+
+This is directly connected in method to the established E8 and Leech universal-optimality work, which the manuscript explicitly credits to Cohn, Kumar, Miller, Radchenko and Viazovska. Here E8 names the mathematical lattice and this is an external prior-art analogy; no identity or historical overlap with a separate project is asserted. It is a planar energy extension, not a new proof of the already established E8 theorem. Its universal energy conclusion does not classify all minimizers or automatically supply one sharp auxiliary for every mixed completely monotone potential. The construction still needs its infinite correction and estimates between interpolation nodes.
+
+The [Lean scope page090](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/090.md) selects triangular universal energy, Gaussian minorants/atomic construction and a sharp planar packing certificate. It explicitly excludes periodic equality-case uniqueness from the selected packing theorem. The family catalogue's additional renormalized Riesz/Coulomb and spherical-energy consequences should not be inferred to have the same formalization coverage.
+
+These are worthwhile reading connections. None requires restarting a completed project or changing the current original G2/G3/G4 scope.
