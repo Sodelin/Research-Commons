@@ -1,0 +1,155 @@
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:60:2: error: Type mismatch
+  Measurable.sumElim measurable_const hm
+has type
+  Measurable
+    (Sum.elim (fun x => ?m.167) fun q =>
+      tailTraceReadout N bin q.fst offset B (literalMarkedTrace N (Fintype.card Copy) v q.fst q.snd))
+but is expected to have type
+  Measurable fun y => cutIntervalReadout N bin s offset v (B, y)
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:62:0: warning: automatically included section variable(s) unused in theorem `CloudG3.ActualFiniteCutJointLaw.same_clock_finite_joint_cut_refinement`:
+  [Fintype Tag]
+  [MeasurableSpace Tag]
+  [MeasurableSingletonClass Tag]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Tag] [MeasurableSpace Tag] [MeasurableSingletonClass Tag] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:131:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:143:55: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  P.prod (Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑v) d) (currentPairClockMeasure N r d))
+in the target expression
+  Measure.map (F ∘ fun z => (z.1, encodeResidual N d z.2))
+      (((Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑t) s) (currentPairClockMeasure N r s)).restrict
+            {h | decodedEndpoint N (Fintype.card Copy) s h = some d}).prod
+        (currentPairClockMeasure N r d)) =
+    Measure.map (prefixTailReadout N bin s d offset (↑t) B)
+      (((Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑t) s) (currentPairClockMeasure N r s)).restrict
+            {h | decodedEndpoint N (Fintype.card Copy) s h = some d}).prod
+        (actualMarkedTraceLaw N r (Fintype.card Copy) d ↑v))
+
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+bin : ℝ → Tag
+hbin : Measurable bin
+offset : ℝ
+t v : ℝ≥0
+B : Copy → Copy → Tag
+F : (Bool × ClockTrace N sample (Fintype.card Copy)) × CutResidual N sample → TaggedEndpoint N sample :=
+  fun z => cutIntervalReadout N bin s (offset + ↑t) ↑v (foldTags N bin (Fintype.card Copy) s offset B z.1.2, z.2)
+hF : Measurable F
+hJ :
+  Measurable fun a =>
+    (literalMarkedTrace N (Fintype.card Copy) (↑t) s a, literalCutResidual N (Fintype.card Copy) (↑t) s a)
+d : Code N sample
+a✝ : d ∈ Finset.univ
+P : Measure (Bool × ClockTrace N sample (Fintype.card Copy)) :=
+  (actualMarkedTraceLaw N r (Fintype.card Copy) s ↑t).restrict {h | decodedEndpoint N (Fintype.card Copy) s h = some d}
+this : IsProbabilityMeasure (actualMarkedTraceLaw N r (Fintype.card Copy) s ↑t) :=
+  actual_marked_trace_probability N r (Fintype.card Copy) s ↑t
+he : Measurable fun z => (z.1, encodeResidual N d z.2)
+hg : Measurable (prefixTailReadout N bin s d offset (↑t) B)
+hprod :
+  P.prod (Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑v) d) (currentPairClockMeasure N r d)) =
+    Measure.map (Prod.map id (literalMarkedTrace N (Fintype.card Copy) (↑v) d)) (P.prod (currentPairClockMeasure N r d))
+⊢ Measure.map (F ∘ fun z => (z.1, encodeResidual N d z.2))
+      (((Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑t) s) (currentPairClockMeasure N r s)).restrict
+            {h | decodedEndpoint N (Fintype.card Copy) s h = some d}).prod
+        (currentPairClockMeasure N r d)) =
+    Measure.map (prefixTailReadout N bin s d offset (↑t) B)
+      (((Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑t) s) (currentPairClockMeasure N r s)).restrict
+            {h | decodedEndpoint N (Fintype.card Copy) s h = some d}).prod
+        (actualMarkedTraceLaw N r (Fintype.card Copy) d ↑v))
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:165:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:166:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:178:2: error: Type mismatch
+  finite_observed_fibre_kernel (actualMarkedTraceLaw N r (Fintype.card Copy) s ↑t)
+    (fun h => traceEndpoint N (Fintype.card Copy) s h.2) (tailTraceReadout N bin s offset B) Prod.fst
+    (raw_tail_endpoint_measurable N s) (tail_trace_readout_measurable N bin hbin s offset B) measurable_fst
+    (fun x => rfl) (fun d => actualMarkedTraceLaw N r (Fintype.card Copy) d ↑v)
+    (segmentJoint N r bin hbin (ProgramStep.interval t) s offset B)
+    (Eq.symm (interval_segment_joint_toMeasure N r bin hbin s offset t B)) g hg
+    (fun q => segmentJoint N r bin hbin (ProgramStep.interval v) q.1 (offset + ↑t) q.2) fun q =>
+    interval_segment_joint_toMeasure N r bin hbin q.1 (offset + ↑t) v q.2
+has type
+  ∑ s_1,
+      Measure.map (fun z => g (tailTraceReadout N bin s offset B z.1, z.2))
+        (((actualMarkedTraceLaw N r (Fintype.card Copy) s ↑t).restrict
+              {a | traceEndpoint N (Fintype.card Copy) s a.2 = s_1}).prod
+          (actualMarkedTraceLaw N r (Fintype.card Copy) s_1 ↑v)) =
+    ((segmentJoint N r bin hbin (ProgramStep.interval t) s offset B).bind fun q =>
+        segmentJoint N r bin hbin (ProgramStep.interval v) q.1 (offset + ↑t) q.2).toMeasure
+but is expected to have type
+  ∑ x,
+      Measure.map (prefixTailReadout N bin s x offset (↑t) B)
+        (((actualMarkedTraceLaw N r (Fintype.card Copy) s ↑t).restrict
+              {h | traceEndpoint N (Fintype.card Copy) s h.2 = x}).prod
+          (actualMarkedTraceLaw N r (Fintype.card Copy) x ↑v)) =
+    ((segmentJoint N r bin hbin (ProgramStep.interval t) s offset B).bind fun q =>
+        segmentJoint N r bin hbin (ProgramStep.interval v) q.1 (offset + ↑t) q.2).toMeasure
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:209:29: error: unexpected token 'prefix'; expected '_' or identifier
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:209:35: error: unexpected identifier; expected ':'
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:211:38: error: unexpected token '++'; expected ':'
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:212:40: error: unexpected token '++'; expected ':'
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:214:61: error: unexpected identifier; expected ':'
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:217:41: error: unexpected token 'ℝ'; expected prec
+'CloudG3.ActualFiniteCutJointLaw.cut_interval_readout_measurable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualFiniteCutJointLaw.same_clock_finite_joint_cut_refinement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualFiniteCutJointLaw.interval_cut_fibre_joint_source_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualFiniteCutJointLaw.interval_segment_joint_toMeasure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualFiniteCutJointLaw.interval_joint_cut_bind' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualFiniteCutJointLaw.calendar_joint_interval_refinement' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+/home/runner/work/_temp/g6-cloud-build/ActualFiniteCutJointLaw.lean:225:14: error(lean.unknownIdentifier): Unknown constant `calendar_joint_refinement_in_context`

@@ -1,6 +1,10 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:47 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:20 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [new actual calendar-context acceptance](CALENDAR-CONTEXT-VERIFIED-FINITE-CUT-PARTIAL-REVIEW.md) independently authenticates **162 custom modules, 336 named reports, and 3,956 owned declarations including 2,582 theorems**. Context now passes at exact3694d292; its actual completed-calendar cut law retains the same bank, supplied old matrix and unnormalized fibres. The finite-cut module fails and both downstream wrappers remain blocked and wholly excluded. All preceding3,912 rows remain exact; this is no full358-report or G6 endpoint acceptance.
+
+The [two exact finite-cut repair candidates](FINITE-CUT-ACTUAL-REPAIR-SOURCE-REVIEW.md) clear source review at d9d412d4 and7815bf4e. The original fibre/readout premises are unchanged; the Observation change only quotes the same reserved Lean identifier. Compilation has its own later receipt, and these source gates do not certify the preceding failed or blocked modules.
 
 The [latest actual appended-interval bind closure failure](CALENDAR-BIND-CLOSURE-FAILED-REVIEW.md) independently authenticates **161 custom modules /313 named reports /3,912 owned declarations and2,547 theorems**. Actualrun37705599767 retains the whole preceding inventory exactly. Context advances past the initial measure conversions but fails its next bind rewrite; the whole module and three blocked dependents remain excluded. There is no358-report or full cut/history acceptance. The [preceding closure failure](CALENDAR-CONTEXT-CLOSURE-FAILED-REVIEW.md) preserves its dated actual evidence.
 
