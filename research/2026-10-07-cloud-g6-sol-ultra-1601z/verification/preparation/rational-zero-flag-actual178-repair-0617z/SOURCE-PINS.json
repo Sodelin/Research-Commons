@@ -1,0 +1,45 @@
+{
+  "status": "Additive exact one-token proof repair, compiler UNCHECKED; no integration or launch",
+  "actual_source_commit": "00863f04f69c8c97857d97c5ca63f1511019e366",
+  "actual_receipt_commit": "6529c3b8346c7ecfd48c4b9e2a9dfd17002d87d3",
+  "module": "UnifiedLean.G6.RationalResidualCertificate",
+  "formal_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RationalResidualCertificate.lean",
+  "old_sha256": "35e3b2ef67a82c6c637b0d814fa2b217302765bb3904db3b1cca8fdb0bceb820",
+  "candidate_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/rational-zero-flag-actual178-repair-0617z/sources/UnifiedLean/G6/RationalResidualCertificate.lean",
+  "candidate_sha256": "d9f49ca8cacdb40ec20a185db60db17e768d38d2c8632fcf2842ae682e995d3a",
+  "candidate_bytes": 7170,
+  "diff_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/rational-zero-flag-actual178-repair-0617z/RationalResidualCertificate.diff",
+  "diff_sha256": "357ebd8552c12eb7f9b75ed1ad4b972e82cb288d634f185f5f050fcfc3183a41",
+  "exact_change": "ONLY add Nat.zero_le to the existing cast theorem simp-only list",
+  "all_other_source_bytes_fixed": true,
+  "all_declaration_headers_fixed": true,
+  "sum_and_trailing_rfl_fixed": true,
+  "pinned_api": {
+    "name": "Nat.zero_le",
+    "local_runtime_source": "/workspace/g6-runtime/lean-4.33.1-linux/src/lean/Init/Prelude.lean",
+    "source_sha256": "56de5780adc4358372fa9cfac270a70f2d03fd4f213a373aea4365483b31a544",
+    "source_lines_start": 1932,
+    "declaration": "theorem Nat.zero_le : (n : Nat) \u2192 LE.le 0 n\n  | zero   => Nat.le.refl\n  | succ n => Nat.le.step (zero_le n)",
+    "lean_version": "4.33.1",
+    "lean_executable_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
+  },
+  "actual_diagnostic": {
+    "line": 115,
+    "column": 67,
+    "two_displayed_goals_contain": "if0\u2264K then rationalTerm q0/denominator else0 versus SAMErealcast terms",
+    "reason": "hz rewrites k to0 before the old hk can simplify k\u2264K; Nat.zero_le derives0\u2264K from existing Nat typing"
+  },
+  "compiler_invocations": 0,
+  "mathematical_statement_or_premise_change": false,
+  "future_corruption_enrollment": false,
+  "static_plan_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/rational-zero-flag-actual178-repair-static.json",
+  "static_plan_sha256": "5de11dd729ef2f6190daf8c5153b8fb9b741a691d706e4525377958dfce83521",
+  "all178_successful_hashes_fixed": true,
+  "other178_requested_hashes_fixed": true,
+  "canonical_actual178": {
+    "commit": "6f54d891a88d3410bf0b93796f7ce76fcc77a9e6",
+    "path": "research/2026-10-07-cloud-independent-auditor-1616z/THREE-FOLLOWON-178-COMPLETE-VERIFIED-PARTIAL-REVIEW.md",
+    "sha256": "f93215c74ecac8f2d80c5713d18616717e6460b33c1cbf807b71c30ba187e8fb",
+    "status": "Actual178 accepted with exact author6529 correspondence; not a future launch gate"
+  }
+}

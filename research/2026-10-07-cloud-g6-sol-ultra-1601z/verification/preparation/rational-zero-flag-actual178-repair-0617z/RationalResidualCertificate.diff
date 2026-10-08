@@ -1,0 +1,11 @@
+--- research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RationalResidualCertificate.lean@00863f04
++++ research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/rational-zero-flag-actual178-repair-0617z/sources/UnifiedLean/G6/RationalResidualCertificate.lean
+@@ -115,7 +115,7 @@
+     (rationalResidualCount q K k : ℝ) = residualCountReal a K k := by
+   rw [residualCountReal_coefficients]
+   by_cases hk : k ≤ K <;> by_cases hz : k = 0 <;>
+-    simp only [rationalResidualCount, hk, hz, if_true, if_false,
++    simp only [rationalResidualCount, hk, hz, if_true, if_false, Nat.zero_le,
+       Rat.cast_add, Rat.cast_div, Rat.cast_zero, rationalTerm_real,
+       rationalDenominator_real, rationalError_real, ha]
+ 
