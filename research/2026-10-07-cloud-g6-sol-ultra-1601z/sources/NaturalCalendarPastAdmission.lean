@@ -23,6 +23,7 @@ open UnifiedLean.Source.FiniteSourceSnapshot UnifiedLean.Source.UniformizedSourc
 open UnifiedLean.Source.SourceProgramTransport UnifiedLean.Source.SourceCalendarCompiler
 open UnifiedLean.Source.SourceCalendarTiming UnifiedLean.Source.SourceInitializedCalendar
 open UnifiedLean.Source.SourceNaturalInitialization
+open UnifiedLean.Source.SourceCalendarCompatibility
 open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.ActualCalendarTrace
 open GProgram.G2.CalendarDecoration GProgram.G2.SourceGraftDecoration
 open GProgram.G2.ChronologicalPathReadout GProgram.G2.SourceFiniteHistory
@@ -32,6 +33,7 @@ open UnifiedLean.G6.PrivateRegisterHistory UnifiedLean.G6.PrivateRegisterCalenda
 open CloudG3.CompleteCalendarBinReadout CloudG3.CompleteCalendarJointLaw
 open CloudG3.ActualCalendarCutContext CloudG3.ActualCalendarEndpointHistory
 open CloudG3.ActualObservationCutRefinement
+open CloudG3.ActualCutJointLaw
 open CloudG6.PrivateSeedFactorization CloudG6.PrivateSeedHistoryFactorization
 open scoped Classical NNReal ENNReal BigOperators
 
@@ -234,6 +236,7 @@ theorem endpointHistoryReadout_erasure (N : RootedBinary V E X) {sample : Copy â
   induction word generalizing s B with
   | nil => rfl
   | cons q word ih =>
+      change Fin ((physicalOps N word).length + 1) â†’ Code N sample at h
       change endpointHistoryReadout N word (erasePrivateCode N P (h 0))
         (endpointStepTags N q.1 q.2 (erasePrivateCode N P s)
           (erasePrivateCode N P (h 0)) B)
@@ -276,7 +279,7 @@ theorem actual_private_seed_old_bin_product (N : RootedBinary V E X)
         (naturalInitialJoint N P sample p)).map (fun a => (a.1, read a.2)) := by
     unfold naturalSeedPastJoint initializedSourceHistory
     rw [PMF.map_bind]
-    simpa only [hgamma, PMF.map_comp, Function.comp_def]
+    simpa only [hgamma, PMF.map_comp, Function.comp_def, read]
   have hout : (initializedEndpointLaw N r (physicalOps N word)
         (outsideInitialCodeLaw N P sample p)).map read =
       (outsideInitialCodeLaw N P sample p).bind (fun s =>
@@ -284,7 +287,7 @@ theorem actual_private_seed_old_bin_product (N : RootedBinary V E X)
           (leafAgeMatrix N C sample)) := by
     unfold initializedEndpointLaw
     rw [PMF.map_bind]
-    simpa only [hgamma, PMF.map_comp, Function.comp_def]
+    simpa only [hgamma, PMF.map_comp, Function.comp_def, read]
   calc
     _ = (initializedSourceHistory N r (physicalOps N word)
         (naturalInitialJoint N P sample p)).map
