@@ -1,0 +1,11 @@
+# Conditional three-module follow-on selection
+
+This static preparation copies three already source-reviewed originals byte-for-byte: HybridSizeCore (17 named), NaturalPastCompleteObservation (7) and RationalResidualCertificate (14). No declaration, proof, import or mathematical premise changes. All176 current requested source hashes and all171 actual accepted hashes remain fixed. Exact imports add no custom provider. The conditional total is179 custom and501 named:352 G6,134 G3,15 G5. Complete generated/type/body/axiom ownership inventory remains mandatory for the actual successful closure.
+
+Current176 run37722519417 remains the sole compiler. This preparation performs no Lean command and changes no frozen input, formal source, target list or workflow. All176 providers must first gain actual success and canonical independent acceptance; exact next root and primary selection/source/budget gates remain required. Failure in any current provider must be handled before this proposed enlargement.
+
+The only added direct Mathlib root is Group.Finset.Piecewise, already in the prior transitive context. The correct leading-source-header scan handles public/meta/import-all and excludes widget-string imports. It has3320 Mathlib source modules and3584 total non-core package source modules on BOTH sides, with ZERO newly introduced source modules. Lake.Util.Casing is an existing pinned-runtime source, not a new unresolved import. These broader static meta/source counts are distinct from the actual prior cache receipt3302; they do not claim a new cache or compiler run. Full hash-pinned context metadata is retained.
+
+The initial877-second estimate is752 observed prior job+25 reserved current pending modules+30 new-module reserve+10 audit+60 variation. It is conditional and must be revised after the current176 terminal. The900-second job,180-second command and trust0/-j1/-M4096 controls remain fixed. No automatic retry or weakened cap is authorized.
+
+The new graph scalar does not prove graph/source admission. The natural-past completion keeps physical chronology/cuts/support/bin premises. The rational certificate does not prove Python/Rust program semantics, arbitrary-real access or executable state-table correspondence. Graph structural closure and all other later prototypes remain excluded. G6 master closure is not claimed.
