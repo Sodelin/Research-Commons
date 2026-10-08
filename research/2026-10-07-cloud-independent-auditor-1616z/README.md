@@ -218,3 +218,7 @@ The [returned residual contract](RETURNED-RESIDUAL-CONTRACT-HAND-SOURCE-REVIEW.m
 ## Two actual G4 factors and explicit paired-target namespace repair
 
 The [two-factor source review](G4-TWO-ACTUAL-FACTOR-CAP4-HAND-REVIEW.md) and [complete five-forest residual basis](G4-CAP5-FULL-FOREST-RESIDUAL-REDUCTION-HAND-REVIEW.md) receive separate scoped HAND acceptances; the actual five-root residual equations and GIVEN conjugator binding remain open. The [paired-target namespace derivative](G6-PAIRED-TARGET-NAMESPACE-DERIVATIVE-SOURCE-REVIEW.md) receives exact source/interface acceptance against actual29d bytes; compiler/closure outside current176 remain pending.
+
+## Complete G4 five-root source-jet review
+
+The [full-five source review](G4-FULL-FIVE-SOURCE-JETS-HAND-REVIEW.md) accepts actual full rooted-forest primitive and transported third coefficients and the sign separator excluding strict distinct-placement/comparable-scale two-block cap-five return. Collapsing placements, unequal scales, other architectures and GIVEN conjugator binding remain separate. No scientific execution or compiler acceptance is implied.
