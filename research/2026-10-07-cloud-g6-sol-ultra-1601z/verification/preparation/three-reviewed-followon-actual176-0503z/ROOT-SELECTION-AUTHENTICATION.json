@@ -1,0 +1,1180 @@
+{
+  "status": "ROOT STATIC AUTHENTICATION PASS; no compiler invoked",
+  "actual_input": "9331aa9c029672005b4261d9c027de878f1d31f1",
+  "author": "f8fedafff2db688efd0c92d96ff6ebca0fb45bb9",
+  "current_source_head": "0657f06aadc93f546b7282731f36301c15d0c131",
+  "prep": "8cd0359fe0cc87cdaa942d9635f90ab0148abc18",
+  "plan_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/three-reviewed-followon-actual176-static.json",
+  "plan_sha256": "d6b0baeaa3f8bf3dd9e77a237c5601bedb75009aa7afea0a4e41b2d76435f9af",
+  "plan_blob": "7dab1a33d8dacf7f9a89e6e580bac51a09a3711b",
+  "all176_source_imports_and_current_bytes_exact": [
+    {
+      "module": "G3ApproximateMomentBarrier",
+      "path": "research/2026-10-07-cloud-g3-1619z/G3ApproximateMomentBarrier.lean",
+      "sha256": "2f354386c7e8acb103c1665400f654a683aed6603175ddaf9f3451cf638a66b0",
+      "blob": "0fe65ad7f878ced6206020d98be7b87408849e20"
+    },
+    {
+      "module": "UnifiedLean.G6.FiniteProbability",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteProbability.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+      "blob": "bba1e21e9cf282ed88852a8a0c294eb9bb554852"
+    },
+    {
+      "module": "UnifiedLean.G6.Conditioning",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/Conditioning.lean",
+      "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91",
+      "blob": "b7a6c11a3719bd52b42c57e8622155735f189169"
+    },
+    {
+      "module": "UnifiedLean.G6.SourcePrefix",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/SourcePrefix.lean",
+      "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314",
+      "blob": "f5598d508d9495eac5130b15663a3f027142e0a7"
+    },
+    {
+      "module": "UnifiedLean.Source.SourcePoissonExponential",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourcePoissonExponential.lean",
+      "sha256": "463eb0e4a9cd9307898eface172100183b8ac9d412c1389a2c5b9ad4981c2d9a",
+      "blob": "3d6756f3f6f672bf9c221f5996b9c4937c5f6fe2"
+    },
+    {
+      "module": "UnifiedLean.Source.SourcePoissonKernel",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourcePoissonKernel.lean",
+      "sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c",
+      "blob": "a0039a3a8b99897151971a843714ada7812aa581"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFiniteProjection",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFiniteProjection.lean",
+      "sha256": "09398c920468ba6ead16b523cecd9f86e7648e7063602256ee4634385df1cab3",
+      "blob": "48095d3634a6376a4eb7f2ff80a4f8108784d37d"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceStepGeneratorBinding.lean",
+      "sha256": "8021b8bddcc5cd070185843ca5454dfb289572a2592854efbbdd9e41d48396d0",
+      "blob": "8c9bc4eded414830518d5084a7ee9f7947b713e1"
+    },
+    {
+      "module": "UnifiedLean.Source.UniformizedSourceStep",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/UniformizedSourceStep.lean",
+      "sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c",
+      "blob": "db19b3ea720bd26b0ccad5deffadf7ca9f3c7fdb"
+    },
+    {
+      "module": "UnifiedLean.Source.FiniteSourceSnapshot",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteSourceSnapshot.lean",
+      "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+      "blob": "00ed66e76c2fd40e53b4feddd844550a6df0da99"
+    },
+    {
+      "module": "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteGenealogyEncoding.lean",
+      "sha256": "3d862f8d9f9a43aed6324954ebea749001fd2b221dd90dd7d58cf4e4419fbcac",
+      "blob": "da95c188b8727a1f653e838dc4a40f267a2cf6dc"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestSilentPruning",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestSilentPruning.lean",
+      "sha256": "86f61cc8ce06af574ee98b37db0ecd7c8cbc2df99e495ce1b9a66605ea8fb5c2",
+      "blob": "1fa8c28f27dce3fc23c87ad63ac991b8977e92e6"
+    },
+    {
+      "module": "SourceForestKingmanPopulationProjection",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceForestKingmanPopulationProjection.lean",
+      "sha256": "e8733ab8e66c60f98cfcfcd56e703b55a5ad8674dc5361f4ac6cb0c35f80f6e4",
+      "blob": "1bbe5056b1673e81bd5afa68b14ea3d26bf4fcb5"
+    },
+    {
+      "module": "SourceForestKingmanProjection",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceForestKingmanProjection.lean",
+      "sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0",
+      "blob": "504b6d28d74ebcf3c48d9da6af25ae26d05d2918"
+    },
+    {
+      "module": "SourceLabelledForest",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceLabelledForest.lean",
+      "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "blob": "4ee5f7c2cb5262aedd5abac98894e98ad9bc1e5c"
+    },
+    {
+      "module": "G2LiveLineageRouting",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G2LiveLineageRouting.lean",
+      "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "blob": "621fd02868303e88b1316c8282b549cbbe7a45bd"
+    },
+    {
+      "module": "SourceNetwork",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceNetwork.lean",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "blob": "abb91b7ed9ad2ad960cb1ab6f8fbbdfc212f9cc0"
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativePairClockLaw.lean",
+      "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "blob": "62c8d7d924080346cfb10e5d68c808f8446126d1"
+    },
+    {
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeParentRouting.lean",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "blob": "36628bd74bfb60f1b81ee02897f7c809075cc0c7"
+    },
+    {
+      "module": "G5OriginalRouteHazard",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalRouteHazard.lean",
+      "sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "blob": "45089c34f26a60d848366a544b1caac04fbaeebb"
+    },
+    {
+      "module": "G5SafePastMeetingPermanence",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastMeetingPermanence.lean",
+      "sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "blob": "c2a10e273fcb3ed304a226b3c82c3197aefb6e7e"
+    },
+    {
+      "module": "G5PairOnlySureBlockChronology",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5PairOnlySureBlockChronology.lean",
+      "sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "blob": "56755dc0b32a6051e310d5a6414f96fe68b2d19e"
+    },
+    {
+      "module": "G5SafePastHybridDisjointness",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastHybridDisjointness.lean",
+      "sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "blob": "95eca4cff4d3a1365ae24bc024f0658b04b3388d"
+    },
+    {
+      "module": "G5ProtectiveBlock",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ProtectiveBlock.lean",
+      "sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "blob": "8a905f225f70be79b6021070f4e9e8270c032a2a"
+    },
+    {
+      "module": "G5CalendarRoutes",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CalendarRoutes.lean",
+      "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "blob": "4bf1686baff454f7de05f9465537af3998167100"
+    },
+    {
+      "module": "G5BridgeBarrier",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeBarrier.lean",
+      "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "blob": "fb8df7f8bc49e1cbe7af66fffc295a8ff70d5913"
+    },
+    {
+      "module": "GraphCuts",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphCuts.lean",
+      "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "blob": "3f8f89c220c72a4966ca2caf22f20ba623458626"
+    },
+    {
+      "module": "GraphLeaves",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphLeaves.lean",
+      "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "blob": "8c0727f1b798b6fb17d09399da40ccddc508def9"
+    },
+    {
+      "module": "G5ParentPositionPushforward",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentPositionPushforward.lean",
+      "sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "blob": "478fd2963ca35f47efa9d03e677478e75956310b"
+    },
+    {
+      "module": "G5ParentChoiceCalendar",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentChoiceCalendar.lean",
+      "sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "blob": "442b9b6a0ccdf71adb4fb47d7b3a2e219adca3d3"
+    },
+    {
+      "module": "G5OriginalTipCurrentSupport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalTipCurrentSupport.lean",
+      "sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "blob": "1eb251b6fbfa2273035a5122077542c9ba599388"
+    },
+    {
+      "module": "G5CurrentPortTwoPositions",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CurrentPortTwoPositions.lean",
+      "sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "blob": "34130a475141726dabb958d4ac0cc43532f373b9"
+    },
+    {
+      "module": "G5RootRouteCurrentSupport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5RootRouteCurrentSupport.lean",
+      "sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "blob": "fab00b0a407232191edcc6a7e7ece09c240d7e2d"
+    },
+    {
+      "module": "G5ActualComponentSupport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ActualComponentSupport.lean",
+      "sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "blob": "b16d94e1b44ab296f2ac9748f3eaca8e70a83a3e"
+    },
+    {
+      "module": "G5ComponentCalendarCoverage",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ComponentCalendarCoverage.lean",
+      "sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "blob": "5f0486e2abfab8c67567d03fc2cd50343f379f18"
+    },
+    {
+      "module": "G5BridgeComponentEntries",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeComponentEntries.lean",
+      "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "blob": "99ae674d8cdf97410cb871029ed12462ae8f6b96"
+    },
+    {
+      "module": "G6BridgeCannotEnterHybrid",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G6BridgeCannotEnterHybrid.lean",
+      "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "blob": "821cb3e467e11a570f4e922e979d60c0719ec2a5"
+    },
+    {
+      "module": "G5MinimalGraphInterface",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5MinimalGraphInterface.lean",
+      "sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "blob": "99092d54246f61248da43faf1a46817a2672fbaf"
+    },
+    {
+      "module": "G5NonbridgeRouteBound",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5NonbridgeRouteBound.lean",
+      "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "blob": "7b8ce4556ea77aaecb62db4718f1e736780504a6"
+    },
+    {
+      "module": "G5OriginalCoinPMF",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalCoinPMF.lean",
+      "sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "blob": "e5acde0c7b636ddf2083a2ec1a4fdb154e71c680"
+    },
+    {
+      "module": "G5FairOriginalCoinLaw",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairOriginalCoinLaw.lean",
+      "sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "blob": "2cd56973799f26c6dc89d42a41be7e033f45f87f"
+    },
+    {
+      "module": "G5FairSelectorMoments",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairSelectorMoments.lean",
+      "sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+      "blob": "4ddb62073b50f9a365e05d50aab8062246ed1bca"
+    },
+    {
+      "module": "G5CoupledQuartetKernel",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CoupledQuartetKernel.lean",
+      "sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "blob": "61921c3f42c2355f5add3d064d8982315d76a562"
+    },
+    {
+      "module": "G5UnknownRateSupport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5UnknownRateSupport.lean",
+      "sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "blob": "c0e7cf99ebfd93788ae78ae7429783bdc72f8374"
+    },
+    {
+      "module": "G5ExponentialGermIdentification",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ExponentialGermIdentification.lean",
+      "sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "blob": "8301ff37ca6828e8d7fdbe7c2186b11829f77578"
+    },
+    {
+      "module": "G4PathResolvedMeasurement",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4PathResolvedMeasurement.lean",
+      "sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+      "blob": "f610059d2ea61b92bb213ea2c8544155299b48ca"
+    },
+    {
+      "module": "G4TwoRootSourceStopping",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4TwoRootSourceStopping.lean",
+      "sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "blob": "ba93ac77583eb24a87723e20f95d7a00cb9e3773"
+    },
+    {
+      "module": "G4AllRootPairClocks",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4AllRootPairClocks.lean",
+      "sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "blob": "1dfd74f9c027b190d7bf6c46cb9ba0e9365b0a33"
+    },
+    {
+      "module": "G4IndependentRoutingBridge",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4IndependentRoutingBridge.lean",
+      "sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "blob": "664d6a5946ddb82fd0e9f9e6017f9ac0ca925255"
+    },
+    {
+      "module": "G1SharedRegisterStress",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G1SharedRegisterStress.lean",
+      "sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "blob": "b6191ac25d3111a3dceb8f145f44979a73b97b0d"
+    },
+    {
+      "module": "G4FourRootPositivity",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4FourRootPositivity.lean",
+      "sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "blob": "5e8c8029e4004ca5961bc3df60fdca884b09de78"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestIntrinsicGenerator.lean",
+      "sha256": "b282351bf116ae756c7e9c6ee1e3cbace41a8d753b47cac7e53c4a918c82d16f",
+      "blob": "54fd067e0b75ece815da6c83848304e9ae814983"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestGeneratorIntertwining.lean",
+      "sha256": "b186f0d381b0e62078d887f90ce46ecbe91def99ec66ec51c98053b9d60c0f28",
+      "blob": "c2a2e9f45c05d2123607584225b8be72d2cfc7a6"
+    },
+    {
+      "module": "UnifiedLean.Source.MatrixProjectionExponential",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/MatrixProjectionExponential.lean",
+      "sha256": "870438089e6cf05dd93761172ea1bf6b2aa96654708e97b9d348e0dfcb44dfa2",
+      "blob": "06a2025f973ad50bd697490175a8e33812d19256"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceGeneratorExponential",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceGeneratorExponential.lean",
+      "sha256": "f761ddf2f5efb9906ec8f841567d02fae946cce763260f238834a147090e461d",
+      "blob": "213af6acd5380e88ae35b2fc37a28e4021da1991"
+    },
+    {
+      "module": "UnifiedLean.G6.ProgramPrefix",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ProgramPrefix.lean",
+      "sha256": "a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb",
+      "blob": "4d5f5de4e255b0295f76ccfa481d14ceaaf8fe3f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceProgramTransport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceProgramTransport.lean",
+      "sha256": "d009fdfc510bfcaffaeea3bc241401eaf2996178ff4b82376eb22f1e49387831",
+      "blob": "1dcf63e697aa449eaa90d9a739e1b8ebf6173b79"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryProjection",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryProjection.lean",
+      "sha256": "f1cb1e557b5f08cba2d37465bc4386bc6adc2f19fd12a132f7d6f835b1e24f0f",
+      "blob": "ca74d31d9734695493eae4081cf0f622d603fa13"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryKernels",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryKernels.lean",
+      "sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d",
+      "blob": "56939350b5edd64d58b67f6a057679bfc94aa34f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestPulseMeasure",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseMeasure.lean",
+      "sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f",
+      "blob": "6a9798fdaf93d1fb5bdea01d938dc021f77a87c0"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestPulseTransport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseTransport.lean",
+      "sha256": "8e1a3d62afab25247dd3a281d30f7dc20db1949ea1b589c2d77980b3b48874f1",
+      "blob": "2d633b6468ccc7ab18010e43fb75e46afdc4f006"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceForestCommonPulse",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestCommonPulse.lean",
+      "sha256": "cac1082f66a84b943dbc8ba9f2e8082ce12bbb42a4b1503e31722597b0faa138",
+      "blob": "1037647edec6b04e9eb893e4e5b4ad42cd978a1b"
+    },
+    {
+      "module": "UnifiedLean.G6.TaylorCertificate",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/TaylorCertificate.lean",
+      "sha256": "eac88ebb03ec5443cd12e95d9a95510eec2a1ca94396ddc8b3409882e1e9049b",
+      "blob": "8d3e7492521d6d0f1266a68bca2ed498ac97fe96"
+    },
+    {
+      "module": "UnifiedLean.G6.HistoryPrefix",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/HistoryPrefix.lean",
+      "sha256": "e8fdd3d4973b79730ef5931734f007e1bfc73d04fdcbd656e30342638a2930d7",
+      "blob": "c22db27e8dd9c4d15d5fd7d225c2d252a7f775e8"
+    },
+    {
+      "module": "G2SourceFiniteHistory",
+      "path": "research/2026-10-06-dot-g2-source-finite-history-checkpoint-2141z/G2SourceFiniteHistory.lean",
+      "sha256": "1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5",
+      "blob": "3628acc34196a6c4e6d5ae8087be66bc071c3c89"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierProgram",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierProgram.lean",
+      "sha256": "bc26f80643ff737bd3a4dcda630631584b0166b2905b3cb48fd876c08fe5489a",
+      "blob": "0643603672f0bf124ce8804a111e6755855c8887"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierBoundary",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierBoundary.lean",
+      "sha256": "c3d453eb58dcf0a21f06acc4513428cb9d6ff31093a73e9a284b992531514308",
+      "blob": "23d64333af5428f1039579781715acac72a6352d"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceSmallCarrierPulse",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceSmallCarrierPulse.lean",
+      "sha256": "e33e4751b9b8d665aaf18074f4d3430f0f13d7b5e67a90ec96ec229a14fb7f20",
+      "blob": "325e2d4c2bc605a2efa098eacc08eb3adf3c2166"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCrossCarrierEpoch",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierEpoch.lean",
+      "sha256": "d62727cc73f62775f43c83cb882602fcb55e2757123b0ba126d6feffe497d725",
+      "blob": "1a1c6e1195e6cfff978a19ddb2163620e791a31e"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceSmallCarrierGenerator",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceSmallCarrierGenerator.lean",
+      "sha256": "b85c1308c6206d377aca54b2073088e39250b57abac7df8c628f100189546106",
+      "blob": "d5e00a7ecd80e4aa884a6c45f66c94c12495c2dd"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCopyCarrierTransport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCopyCarrierTransport.lean",
+      "sha256": "09d3d2dcb27d49cb1f85a8e78a5dfc385778a0c885b5a9e42f445246cc3bf966",
+      "blob": "8d7736f3113c9d3eaf6c56508c2cf9a21f6eb776"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceNaturalCompletedLimit",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalCompletedLimit.lean",
+      "sha256": "182b8694bea7594102468caa1009046668198f67fe67f8d67bf89bf1ce4604e5",
+      "blob": "b4ca4ef240e317028ac6c7ca95485e571dcaef75"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEventualCompletionLimit",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEventualCompletionLimit.lean",
+      "sha256": "0c886c979caa8725b7babd734c3bfabd5842c4aa065bd8886ce4a8abc24a33cd",
+      "blob": "453cd898f85a262990cf1ff1e3cd46e78d1809a6"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCompletionHarmonic",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletionHarmonic.lean",
+      "sha256": "5a15f085181e1f6f514d629db289db4a11d6b91032267ecf73a795b0a4f1bfd0",
+      "blob": "5ff7a0049ef99a7e4ecebaa708eecb913734ca6b"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralAbsorption",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralAbsorption.lean",
+      "sha256": "07b0d22fe372b38a1dd0e1256e0f328901ff74feb9a172a6748a19b903e06061",
+      "blob": "812da71fac016d384ec67e35f935327295419994"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralDrift",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralDrift.lean",
+      "sha256": "258fa001910c1e483b782be4d7a01d239ebc5f53dda8f00348239643fdb88725",
+      "blob": "138f28de83ecf566fa465622ee773efb65703fc6"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCompletedUnrankedTree",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletedUnrankedTree.lean",
+      "sha256": "a3f28f51080370eeb6d625685f89927ca983c00ab6ac6739533c20754e60f06b",
+      "blob": "89b3ed161db37efda76cf10724aaddf7ae6b07fb"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceAncestralCompletion",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralCompletion.lean",
+      "sha256": "da44afa6b8039afb1f90128af2f1b62234f3dfd0197ef9399c52873bf865caa5",
+      "blob": "df7ad89a17c1afcef4f4b9ac0aa6c6e084793bad"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEmbeddedJumpLaw.lean",
+      "sha256": "560f2174634b137eca95c83616b2b50a4e7671f51cfd62c275a7f7c206890d37",
+      "blob": "69c40a5b36e843b8c52c1e10d2728025da51c7b3"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceRaceWinnerSelection",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceRaceWinnerSelection.lean",
+      "sha256": "ad882b44f7fd97f5ac7e5b7e125cce7e7f6640c065ff616f08c85b26dd9d4caf",
+      "blob": "04dd20eaa2eaa126105eb5755bb45a34d69c58f3"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFiniteJumpExpansion",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFiniteJumpExpansion.lean",
+      "sha256": "6a14b2de7bcdf28ae3293a23adde3234da7adb5dd503cfd007b711f1a52d786b",
+      "blob": "5742a2c874524f7844d6214b737f818b333ac86d"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochRenewal",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochRenewal.lean",
+      "sha256": "5035fb830ed695b7aac5525c28f24d528be3c1b9a2c2c6f831f23b3cc6692bef",
+      "blob": "758713537d4b33b6feeedfed00fba5b4f506257f"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceDestinationClockReset",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceDestinationClockReset.lean",
+      "sha256": "ec910abde269d665081f7c064b6567f45fca58ba26e183ab29e21037fb84344a",
+      "blob": "a8c757fe69372077641097376de0fb9276656853"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceMergerClockCatalogue",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceMergerClockCatalogue.lean",
+      "sha256": "147da19d2d89135e00c140b3a7a88cd3d53271954e5752a23e5e0ff30376a147",
+      "blob": "003938d0e24a889b9200fd8a92bb16a27a69c768"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceWinningClockReset",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceWinningClockReset.lean",
+      "sha256": "7a831640fec35d92f99e65e6f98e2874602fb5b040ff6b112c16b77a271f2038",
+      "blob": "c1a7d92ec817e6b8fd4dea8be848002160d7bbe9"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialResiduals",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialResiduals.lean",
+      "sha256": "8861858b9309fd43e22424382c1f1513111514ef792354c7cf4b48a0ae4b19e7",
+      "blob": "bb02e6dff8ed5ae393afb4fdfbca31d8fde5678a"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialRaceDensity",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialRaceDensity.lean",
+      "sha256": "3fa36827b3553923fa1c1d48db4b2823c7b53e589696c3a1476f9aac8f760c29",
+      "blob": "1798ead4afe758ac60b040f0c790548793914594"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceExponentialRace",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialRace.lean",
+      "sha256": "d979f1bf3bbbac3eb3c396991a513a3624f310bf03273890e13c6d5029931afe",
+      "blob": "5c50e04d9e3923281ae5b02d62a149e584d872a0"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFirstMarkDistribution",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFirstMarkDistribution.lean",
+      "sha256": "abd6230f1155ab6cf73bf3d4b55bbe04df408ca73caee81a8807b15b17e9ad29",
+      "blob": "ad97dbfa1973be2a17700a02cd76037b2f44f567"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceFirstMergerMark",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFirstMergerMark.lean",
+      "sha256": "2bc08f45d7ea76476f6fe485cdce68293a3d44cbc3b2aa108b6b45ce5d1182d1",
+      "blob": "f507789302b69dc3ff2457809688997ad615ca96"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceActualHoldingClocks",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceActualHoldingClocks.lean",
+      "sha256": "498417275660b696c24f4c8cd83d84532a96f14b82f35bc3e49217c154e8c677",
+      "blob": "e6b33d08364936920b3ae2656611ab5bcb1267c7"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceEpochSemigroup",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochSemigroup.lean",
+      "sha256": "845739bc6b110eadd611e0133906ec3f9b036d66f17902f46885c660213b179f",
+      "blob": "70ebe73144eb8e107436b36132adfc8c97264465"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceInitializedCalendar",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceInitializedCalendar.lean",
+      "sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535",
+      "blob": "0d721248fb048f064da9314b49895db705d0f5d3"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarPhysicalSupport.lean",
+      "sha256": "e725dd61c850d3f5f92925c0de08122dd25f9d1660d9264d1ac47eb4d2bc88bf",
+      "blob": "7d73af67394b7c6e7f3d0ac332bda9e1e86661e0"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceBoundaryLocations",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryLocations.lean",
+      "sha256": "f7c050056e121c7e0e12eb071383cb1369e8fe9de887d7ad875a76904d48de5b",
+      "blob": "6cd0c5a5a966b501d3492211514b985c9d4b1f95"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompiler",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompiler.lean",
+      "sha256": "9974446d99fa344593d294e315e349ab71fdbe7574e932bb8b1a16ee1b2369fd",
+      "blob": "d6de979669c976fee9836f22b5478aab2f29caa6"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompatibility",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompatibility.lean",
+      "sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc",
+      "blob": "4aa45e6031c2a6b85f54a2eb47037a247b34450b"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarTiming",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarTiming.lean",
+      "sha256": "5e534089f17dc7d9ab40338cb0ca75789e0951bb6b5893ba24d514b8cd07d4f8",
+      "blob": "bf9a43b6f713b02330b7dce863a2df6e8681b210"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceNaturalInitialization",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalInitialization.lean",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "blob": "e81593e2435b36f151cbf1b890a9ba49c8bf43cf"
+    },
+    {
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeIndependentPairMixture.lean",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8"
+    },
+    {
+      "module": "UnifiedLean.Source.UnrankedGenealogyObservation",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/UnrankedGenealogyObservation.lean",
+      "sha256": "1ee536501f1fc77c70eb9098af054ecf2a2c8cbdd9aef4375bd5cdda10ca73c8",
+      "blob": "362c65c867c9cba3da681d6599a94dcbfcdd67d8"
+    },
+    {
+      "module": "UnifiedLean.G6.RationalCertificate",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RationalCertificate.lean",
+      "sha256": "56b277949bcb9d862214d2831e4d641a513150f962b83b9303a52a457743e5e0",
+      "blob": "9709f3e83b2a4c1e18cbd2a9f1ad6f9d4bbd65c9"
+    },
+    {
+      "module": "UnifiedLean.G6.BinHistory",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinHistory.lean",
+      "sha256": "25d91367dee9b408e70fd2be9c847cb4b663d0bfed6d49981d48ddfd2da2c4e8",
+      "blob": "d3b26b5ffaea211c6962e764eb659ee5ccb5a6cf"
+    },
+    {
+      "module": "G2SourceGraftDecoration",
+      "path": "research/2026-10-06-dot-g2-source-graft-source-preservation-2357z/G2SourceGraftDecoration.lean",
+      "sha256": "c8da578dde3fdf049e4075a39292979bbb5936bd9c754d743072420a91c07ddd",
+      "blob": "4891fc7fed05791f81a017555f1016385eea1e56"
+    },
+    {
+      "module": "G2FaithfulPairAgeDecoration",
+      "path": "research/2026-10-06-dot-g2-faithful-pair-age-foundation-2315z/source/G2FaithfulPairAgeDecoration.lean",
+      "sha256": "c82708abcdae2e3e174f245dccca811881b5149f1acb69b12700850b307b5735",
+      "blob": "48d21a980cdb11bcacf7735ada19108118d76375"
+    },
+    {
+      "module": "G2ActualPairCoalescence",
+      "path": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2ActualPairCoalescence.lean",
+      "sha256": "991ce81e7de2a9012bdb9aa311cb3fbc8cfcbda39843af725c0fdd09617d261d",
+      "blob": "0a9b2dd3b573fd25ce355c7fc009bbe7526a3c3d"
+    },
+    {
+      "module": "G2EventualPathReadout",
+      "path": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2EventualPathReadout.lean",
+      "sha256": "14e0ef3bb6ff1c45875092e6a474063178fe78977f24c0dfdb055887693690eb",
+      "blob": "150fc4a2ab731c47a3eaab75fa9970a558dd3ff8"
+    },
+    {
+      "module": "G2CompleteDecoration",
+      "path": "research/2026-10-06-dot-timed-g2-partial-preservation-and-priority-0714z/sources/G2CompleteDecoration.lean",
+      "sha256": "ffc80b41844871b945b78a4d7b5887121ca2b3691ad985d6b8ff29c14d8fe963",
+      "blob": "9c57026211ad620cc51b2a049f44340b5c8fdccc"
+    },
+    {
+      "module": "G2CalendarDecoration",
+      "path": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2CalendarDecoration.lean",
+      "sha256": "9b2458b78813186151e5d5eb2cf7bd9a3a134e39e0de8de6e59cac6d2a6936b6",
+      "blob": "9381fb353b0945572f2d8b8086ca1b964d66d54c"
+    },
+    {
+      "module": "G2DecorationMeasurability",
+      "path": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2DecorationMeasurability.lean",
+      "sha256": "a016097f843583052f5c2b8a4c19899cb97d78052779c4771e22aa9603104338",
+      "blob": "1c42921eb6fce35229d84477a1050168064a22a7"
+    },
+    {
+      "module": "G2ActualDecorationFold",
+      "path": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ActualDecorationFold.lean",
+      "sha256": "8ca5f51130da2c7b513e70cd0b0d93a22fe9c4e706a63b590cab5407258f55be",
+      "blob": "7e6150ddf1fb0a95b4b914341f9093829fb25051"
+    },
+    {
+      "module": "G2LiteralMarkedClockTrace",
+      "path": "research/2026-10-06-dot-g2-marked-clock-extension-0903z/G2LiteralMarkedClockTrace.lean",
+      "sha256": "c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a",
+      "blob": "c177665ed37b72be5d7cd1ea50d08743f0a4736c"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceLiteralClockEndpoint",
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceLiteralClockEndpoint.lean",
+      "sha256": "2f2f39f1ea044932788b412d32e3454bf8ff1ff1d65f48431e975352fbc9e7ba",
+      "blob": "a6c16d8f72f5b066aebf261a4f045af185ce59cb"
+    },
+    {
+      "module": "G2ChronologicalPathReadout",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ChronologicalPathReadout.lean",
+      "sha256": "99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473",
+      "blob": "16c436451ebead09c3c097ca7025b8005229d097"
+    },
+    {
+      "module": "G2CompleteCalendarAttachment",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CompleteCalendarAttachment.lean",
+      "sha256": "aa34dd0dfc6f4d5b33b764f801eade71b3380e024f5bbfcf8549b508e0d5d40f",
+      "blob": "ad24d011ebc399b5be2a02cb76222bcdc183dec2"
+    },
+    {
+      "module": "G2ActualCalendarTrace",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualCalendarTrace.lean",
+      "sha256": "cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd",
+      "blob": "08b232032c0d6a932ad7e9dead0be97925d0e01d"
+    },
+    {
+      "module": "G2LiteralEpochLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2LiteralEpochLaw.lean",
+      "sha256": "9020ef5baaf8955097e69efac86b552cf80540211125d8f215bf1ca0bcecba7a",
+      "blob": "00983a997b613d4226d4e557120aaa7113bda4bf"
+    },
+    {
+      "module": "G2MarkedTraceRenewal",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceRenewal.lean",
+      "sha256": "edbabf47f1429b8747c5d49a7d00d2762ad47ece635dfe00f1c59280a0b29603",
+      "blob": "01236b6c4fdae20dd2e3c0239eed27846de84d31"
+    },
+    {
+      "module": "G2AncestralTraceSourceLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2AncestralTraceSourceLaw.lean",
+      "sha256": "641cf1285ad10ec18dab7a42d207147afb964485924912b9d53aee428927436a",
+      "blob": "f98f1b079d9a02e93645b8cf7fd1b56c2c7ccae8"
+    },
+    {
+      "module": "G2FiniteAncestralTrace",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteAncestralTrace.lean",
+      "sha256": "00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a",
+      "blob": "fb7153e65fa7d79b515ae22e971c54f81348a8db"
+    },
+    {
+      "module": "G2CompleteAncestralPath",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CompleteAncestralPath.lean",
+      "sha256": "42ef05e829cb750a88c4ae5abe57db6c927fb5b7467921998ba1e02c2dc013f0",
+      "blob": "b566343e65dce3734fa188513edce69c3e387e73"
+    },
+    {
+      "module": "G2EpochHistoryReadout",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochHistoryReadout.lean",
+      "sha256": "f3d6598cff77c87219efb74e9a361b3ac7c92c35862d2d259932e6f4f5b904d7",
+      "blob": "9c5847ba419b665c72aa2a0fa34ebbd8093d4700"
+    },
+    {
+      "module": "G2SameClockContinuation",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockContinuation.lean",
+      "sha256": "9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6",
+      "blob": "38fb435475641a182c956d33b627be02fda2c123"
+    },
+    {
+      "module": "G2LiteralCutResidual",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2LiteralCutResidual.lean",
+      "sha256": "e09e93c3ef68ea8b25ff72008a37306bfb8d0c2a8ef2b7082eb5c841fb8f1011",
+      "blob": "efa0feb8b19f76ee5365f4440026d9cebb508151"
+    },
+    {
+      "module": "G2MarkedTraceBudgetStability",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceBudgetStability.lean",
+      "sha256": "6c8f1abb65ac251e0e5ad610d63a51d39b238c9d0ae7b33d5d709e3e8a2c4fea",
+      "blob": "5a676afd98121b5c6f36eba6f6d060acaddcfbd4"
+    },
+    {
+      "module": "G2MarkedTraceCuts",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2MarkedTraceCuts.lean",
+      "sha256": "aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699",
+      "blob": "395437d1dfe8e44f2fe1c6087454b4c1e0dd76da"
+    },
+    {
+      "module": "G2SameClockPastFutureLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2SameClockPastFutureLaw.lean",
+      "sha256": "bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930",
+      "blob": "a50741f10e29814032b6f21047dd598f3469302b"
+    },
+    {
+      "module": "G2CutFutureSourceBinding",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutFutureSourceBinding.lean",
+      "sha256": "b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190",
+      "blob": "1cab3f50f82563f42c122125b5853dbe57c313ff"
+    },
+    {
+      "module": "G2HistoryResidualAttachment",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2HistoryResidualAttachment.lean",
+      "sha256": "3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298",
+      "blob": "448d7473ffc7ecd10bcbcb0692fe771f04785280"
+    },
+    {
+      "module": "G2ActualChronologicalPathLaw",
+      "path": "research/2026-10-07-dot-g2-chronological-decoration-integration-0139z/sources/G2ActualChronologicalPathLaw.lean",
+      "sha256": "a4a018b7eb33f2cb0bd12e70b0c16d0664c8de26a4d87c0eab046d2bf47d6a18",
+      "blob": "f6307e708aba56fcfcd11c6dae79338d3415b6c2"
+    },
+    {
+      "module": "G2CompletedCalendarPathLaw",
+      "path": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2CompletedCalendarPathLaw.lean",
+      "sha256": "684487a6e3816a13a3b03b40550873fbfa7e3c920b1854e41f9951b17aba2a30",
+      "blob": "b97e10c892baeea5eeded2dda636570b850ad7af"
+    },
+    {
+      "module": "G2CalendarPathProjection",
+      "path": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2CalendarPathProjection.lean",
+      "sha256": "af8a56136b53dafdb99b77de1f3e5ecdd5a5a6e7a70b39657650f9a364bd52c6",
+      "blob": "4922535bd792a00539dfd629a3b6fd125fba43fb"
+    },
+    {
+      "module": "G2ActualSegmentPathLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualSegmentPathLaw.lean",
+      "sha256": "9581cf8c75982bbfd3a47f300a97a865c1fe140efd946ffce464fe25344e60ca",
+      "blob": "38b44233dd906a2497453ecc41222b5b99b23bf0"
+    },
+    {
+      "module": "G2EpochPathProjection",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2EpochPathProjection.lean",
+      "sha256": "04abbc6e6efdde07f651a706092014b14c542b7386037d3715cecbf61b1d21e8",
+      "blob": "229f31c87d9cb9eaa16528e4bee4ecccead72e4d"
+    },
+    {
+      "module": "G2ActualEpochHistoryLaw",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ActualEpochHistoryLaw.lean",
+      "sha256": "e106b912721336831c3392d3cf5414cf20b43765b73c5c6cc31b83dec7d69be2",
+      "blob": "38bcd19d06ddee0c999de95df20ce2f5a0bd5be0"
+    },
+    {
+      "module": "G2CutResidualSourceMixture",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CutResidualSourceMixture.lean",
+      "sha256": "6b13e51479edf4409fa09167f1c83065ed7a4952650c28da5d78192105b6cc0a",
+      "blob": "309f154e3e2c7e19200f4f77b4f7f936506ded8e"
+    },
+    {
+      "module": "G2FiniteFibreTransport",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2FiniteFibreTransport.lean",
+      "sha256": "fc8b772af83a6140bff8dbc6253b50820e5c6bbf7ce0262d2211919f039b16ea",
+      "blob": "c8638ace86ffac2eb2f2f830edad4bf88eeac773"
+    },
+    {
+      "module": "G2CalendarHistoryBinding",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2CalendarHistoryBinding.lean",
+      "sha256": "8827842d77dc5749d6db4114ef24d34cf85779a545628879a6ba6eaf3681b796",
+      "blob": "6b9168adde95fd9ce4eb388ec2ef38fc333ea98b"
+    },
+    {
+      "module": "G2ChronologicalGluing",
+      "path": "research/2026-10-07-dot-g2-calendar-tail-source-successor-0058z/sources/G2ChronologicalGluing.lean",
+      "sha256": "ca1b9f05a5f87556eb9a9dca93d160409a735d934d17d7c04e3ad0324520bfff",
+      "blob": "806179704efd1670e97b474caf1ec08200ae8965"
+    },
+    {
+      "module": "UnifiedLean.G6.BinFold",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinFold.lean",
+      "sha256": "cc220e3db672f63f05dd4516f19322c758634b396a861ec04aa2e2e2347ea3fd",
+      "blob": "7ab550f081be7b7f225f176b33fd9fcc1c2b1748"
+    },
+    {
+      "module": "G5FrozenTripleAnalyticSupport",
+      "path": "research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/G5FrozenTripleAnalyticSupport.lean",
+      "sha256": "8735accdbce894200eba6bcc64f3a61c8870f3c7a24416114e6279debbb64ed5",
+      "blob": "cfb553f76f1993187b42c828e324250c2e2d768d"
+    },
+    {
+      "module": "G5FrozenTriplePolynomialKernel",
+      "path": "research/2026-10-07-codex-g5-lean/sources/G5FrozenTriplePolynomialKernel.lean",
+      "sha256": "ba0c611a563318de5d2310b6620cae0899c77b9ead6cf690efd82af926c746a4",
+      "blob": "c9e470498aa30bb1f712006484726bfb1193cf4f"
+    },
+    {
+      "module": "FiniteTagDecoder",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/FiniteTagDecoder.lean",
+      "sha256": "721c2f669b8f7d174639584ccdd696852ebd5a5cbec24859d5f690603b70f0a5",
+      "blob": "745ed922b480e62812d9f1ef582f6f61c18bbc98"
+    },
+    {
+      "module": "UnifiedLean.G6.BinClock",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/BinClock.lean",
+      "sha256": "3f5fb33173aea6047c82acb562653284d9cfab21e18a61aab4a71f26f0bfbacf",
+      "blob": "06851ccbd05a7ff66a6250afb418a85489f6eabe"
+    },
+    {
+      "module": "G2WholeMatrixAges",
+      "path": "research/2026-10-07-dot-g2-strict-clock-compatibility-0645z/G2WholeMatrixAges.lean",
+      "sha256": "2c4a38c22a4fb6efa569796749eec7b00c3affd8ee1a57e33144a1bc893026b8",
+      "blob": "5719c0444c3ff59f2ba2533ce2f11d5497d7274a"
+    },
+    {
+      "module": "G2PairBirthFold",
+      "path": "research/2026-10-07-dot-g2-age-reader-source-preservation-0253z/sources/G2PairBirthFold.lean",
+      "sha256": "cb0697ca4832343c933b31593553c658e839648968441900a01cc556635512f3",
+      "blob": "72dff97869b9bbb3d61b2c50a11e1fa523caef4e"
+    },
+    {
+      "module": "G2ClockBoundaryNull",
+      "path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ClockBoundaryNull.lean",
+      "sha256": "f0ed787fd7f9135024b4f5300120699b358cbea0b6adb9b6124a386448ee1982",
+      "blob": "109a0713b07b0cf131f96a655ff4d9515c122ff1"
+    },
+    {
+      "module": "LiteralSameBinTrace",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/LiteralSameBinTrace.lean",
+      "sha256": "dcb7872668910a8ec3fff930c6ae2034863352fa38a2f24a0f41201b1994db9b",
+      "blob": "23a2b9de2b68344a84e65a6c550325957e0cc0b9"
+    },
+    {
+      "module": "UnifiedLean.G6.ResidualPrefix",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualPrefix.lean",
+      "sha256": "569ef4c988206854cd317bd0f8556177dab6dcd38571f4f8206c454e662d630f",
+      "blob": "0409cc91b73f45a33925e5dc1366c1682749068c"
+    },
+    {
+      "module": "UnifiedLean.G6.MeanEnclosure",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/MeanEnclosure.lean",
+      "sha256": "ff34fe3198c2c541819c1b7ab19784bfdbd476ca44f70b4f9ba0a402d88b7717",
+      "blob": "987b0aa9576fcbe4c56b98f6faca315908ab3125"
+    },
+    {
+      "module": "UnifiedLean.G6.ResidualProgram",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ResidualProgram.lean",
+      "sha256": "7630170941d74aafdc9f29ee7d010f42447f7a067823890c8ac024cf56aa9bd1",
+      "blob": "93432f6bd2371b8d212e459691c1dc127943347b"
+    },
+    {
+      "module": "CompleteCalendarBinReadout",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarBinReadout.lean",
+      "sha256": "329abd02a660a5be7beee4d44892548de31e075501f898c42f9de6df0aaaf45a",
+      "blob": "4cc8c16a7c71d092675cb3ae66d17bf62abca222"
+    },
+    {
+      "module": "ActualTailBinRow",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualTailBinRow.lean",
+      "sha256": "790d22843c9906023b115690e3bf6818dc45cac8dcd270b788b9f1cf54be8fd0",
+      "blob": "da62438ecc5507fd8373adeb3972243e25ea2c88"
+    },
+    {
+      "module": "CompleteCalendarJointLaw",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarJointLaw.lean",
+      "sha256": "06440343d946783c9662945fa33f1dbc24c827deb6d382440c37ed2ad8c7b60f",
+      "blob": "d81bed98a6ff1550891faf44e262b64a76589421"
+    },
+    {
+      "module": "UnifiedLean.G6.UpperMeanCommon",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperMeanCommon.lean",
+      "sha256": "03bfc2b570e094b59825e920b4955fa3e9fb07afc7be934154f715d5fc5b3172",
+      "blob": "70487a66b3c6a82f56491cbd97318eda9bcc5cac"
+    },
+    {
+      "module": "UnifiedLean.G6.AncestralRateFree",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/AncestralRateFree.lean",
+      "sha256": "8d772b5fa71e3fef61d073b72bb4c56e89d5179468a774ed511a4c0aec5d3291",
+      "blob": "03bb0417cbb04d5f196273b7e2c72f1ae66ff5dd"
+    },
+    {
+      "module": "UnifiedLean.G6.RateBankCommon",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RateBankCommon.lean",
+      "sha256": "c61cc8b9dc4e87b3346ac03f6acf81132bb72803be86a49c3d75928232114c3e",
+      "blob": "83f40ad8f50e49c59cc5a5ffa9f844220e5f7baa"
+    },
+    {
+      "module": "UnifiedLean.G6.InheritanceBankCommon",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/InheritanceBankCommon.lean",
+      "sha256": "ded7cf8d347b2fe966e0ae52a4421b1118b12d259096b63c883a51797042493a",
+      "blob": "2bb5c977835982d74e3db0ebac8014a782072cc4"
+    },
+    {
+      "module": "UnifiedLean.G6.UpperRateSourceCommon",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/UpperRateSourceCommon.lean",
+      "sha256": "69503a60e52d326b8d49dae314a466044f410a37a9e498b69efe603222e6d2bc",
+      "blob": "5d24cdcd61702cd14064119b0eb4c15604609786"
+    },
+    {
+      "module": "ActualCutTagRefinement",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCutTagRefinement.lean",
+      "sha256": "c39df8d6fc98edfa1acd9dd1042bedb4bacde08c85e26b69acf019b451b9dea8",
+      "blob": "868630c9ebc8240e0c7e6c16d8173d6e73f4bce2"
+    },
+    {
+      "module": "ActualCutJointLaw",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCutJointLaw.lean",
+      "sha256": "3b0ccda0c4b96fe9e077817d4971fa38a1c7e3be1e3472fa037a88bfbecda93e",
+      "blob": "1519b7b7b289e102ae196a69e7a13b986c8d7177"
+    },
+    {
+      "module": "ActualCalendarCutContext",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCalendarCutContext.lean",
+      "sha256": "3694d292bc754e48c07a8dc32a62783eb2534b9bc80016c71b427bf835d742d7",
+      "blob": "c8cd6841eccfe614395ede530ffaa71d2e59597d"
+    },
+    {
+      "module": "ActualFiniteCutJointLaw",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualFiniteCutJointLaw.lean",
+      "sha256": "d9d412d48be07ab34672d2bee996aa5120c1544ff67b876b21b7bdfe0435e604",
+      "blob": "a9826cf7ca917e46ea9047b281a69d0e227b4ae8"
+    },
+    {
+      "module": "ActualCalendarEndpointHistory",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCalendarEndpointHistory.lean",
+      "sha256": "e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a",
+      "blob": "4e4c12c009e790bdd0e176b87eb815f8e1e34e39"
+    },
+    {
+      "module": "ActualObservationCutRefinement",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualObservationCutRefinement.lean",
+      "sha256": "7815bf4e807553cd103bf7a3f0df558f461ab30e2a9f7e20de088580d1680bb6",
+      "blob": "2b918b76fc38ed0887373c13447a36b7f843b95d"
+    },
+    {
+      "module": "UnifiedLean.G6.CompleteObservationPrefix",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/CompleteObservationPrefix.lean",
+      "sha256": "c8f632b7886f63d79514b010389534fa61e9c6b63b70fdca9d94b839cec40c79",
+      "blob": "88900388d9d2145bbc787a4337c791f4e6e6f40e"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterErasure",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterErasure.lean",
+      "sha256": "b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4",
+      "blob": "54cd2cc547bff20545ed76503687130d317e4266"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterSourceStep",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterSourceStep.lean",
+      "sha256": "9dcd5b7e4629ca52045f8ca78342a1357b35392306f7bd3d6708924bf46e0b9f",
+      "blob": "2f0e2d6c54ea30c7584655f94b793e24009e47d7"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterBoundary",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterBoundary.lean",
+      "sha256": "174e1dd766b450d680d93b5255528192367266617cbb2f7abdf0d9f73c96aef3",
+      "blob": "a8ab570ce363b4ed1c03b6977fd40e040bdce713"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterProgram",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterProgram.lean",
+      "sha256": "790de244aa1a416e67b7174de11d9cb79f925c4299a202185f3ebb4c2282e596",
+      "blob": "08ee80fd62976dd8193b101a314c1dcb80f8fac9"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterHistory",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterHistory.lean",
+      "sha256": "b122672904d07b1cc0567fab832994f7d3dcba18490f55b0b7c79485b7702202",
+      "blob": "2681b7074ce3ba4854788396403d94927e380aba"
+    },
+    {
+      "module": "PrivateSeedFactorization",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/PrivateSeedFactorization.lean",
+      "sha256": "f97b65ffcb4820bdbe9173e75085ab2ee28fec2ecf816fa1dc83ce0f275c7f33",
+      "blob": "59924bbcc86f05d1df197bfb3f6fa8b7763d13fc"
+    },
+    {
+      "module": "PrivateSeedHistoryFactorization",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/PrivateSeedHistoryFactorization.lean",
+      "sha256": "8bba9735a9514154492be2d8f6a3a8cad8781963559a5da6568011b14bc8e80a",
+      "blob": "36e3c11da4fd020e4424afe697ca02c8bbbc2dca"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterCalendar",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterCalendar.lean",
+      "sha256": "abd013f3acab1e313957c28703c727ef4b5679bf753ea86adc95d95e22b27cc3",
+      "blob": "08890dfaa2d4d215050b78b1db4a0a54412be1e4"
+    },
+    {
+      "module": "UnifiedLean.G6.PrivateRegisterCalendarPrefix",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterCalendarPrefix.lean",
+      "sha256": "9f50ff8c811aa93c6215ea41a8fd52a16aea57798e1930ef831f993f6f4727c7",
+      "blob": "77010eb63c01237546dfe16bece101705aae275c"
+    },
+    {
+      "module": "NaturalCalendarPastAdmission",
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/NaturalCalendarPastAdmission.lean",
+      "sha256": "c2066c3e9ce58fccd4f78e2db982dcb92d5a905c34c8d6c01c6b6802755b66b1",
+      "blob": "e56984e38482ed0777f7fc7ad405d61f88a8c67a"
+    }
+  ],
+  "old_targets_topological_prefix_exact": true,
+  "old_selected463_audit_count": 463,
+  "three_exact_sources_and_raw_selected_names": [
+    {
+      "module": "HybridSizeCore",
+      "source_ref": "b80516b20654968bcbb5e657df6be1e4fba46b3f",
+      "source_path": "research/2026-10-08-cloud-g3-hybrid-scalar-lean-0234z/HybridSizeCore.lean",
+      "staged_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/three-reviewed-followon-actual176-0503z/sources/HybridSizeCore.lean",
+      "sha256": "879306ccff19ee9eae137679d4c404fd914db5a3f1df30eb012b5123dd4a41c3",
+      "blob": "885eab0b212cfd31978ea06407b23fafa3a9fe2b",
+      "bytes": 6337,
+      "names": [
+        "cellT",
+        "drop_v_identity",
+        "push_u_identity",
+        "quartic_gap_identity",
+        "cubic_product_le",
+        "drop_v_le",
+        "push_u_le",
+        "cell_swap",
+        "boundary_identity",
+        "complete_cube_cell_lower",
+        "corner_contrast",
+        "constant_residual_budget",
+        "pow_unit_interval",
+        "discounted_step",
+        "ordinary_step",
+        "discountGap",
+        "finite_discounted_lower"
+      ]
+    },
+    {
+      "module": "NaturalPastCompleteObservation",
+      "source_ref": "8c1bea164a9a38dfa4e2242d3928cdfdc0fae1cd",
+      "source_path": "research/2026-10-08-cloud-natural-completion-interface-repair-0414z/proof-drafts/NaturalPastCompleteObservation.lean",
+      "staged_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/three-reviewed-followon-actual176-0503z/sources/NaturalPastCompleteObservation.lean",
+      "sha256": "a614f56eaa5910f31f97eb2aa91653ce0c5a257f6e70a4c29c2e0cc42520f582",
+      "blob": "50be584cf890f4138af84c0d32638af62451ef7e",
+      "bytes": 13240,
+      "names": [
+        "naturalCompletedJoint",
+        "finiteNaturalPastComplete",
+        "actual_natural_completed_eq_past_suffix",
+        "actual_suffix_tail_domination",
+        "actual_natural_complete_readout_prefix_tv",
+        "actual_natural_complete_readout_prefix_tv_budget",
+        "actual_natural_complete_observation_toMeasure"
+      ]
+    },
+    {
+      "module": "UnifiedLean.G6.RationalResidualCertificate",
+      "source_ref": "0ace76f0d81cc61f379852399bec39f163b0d354",
+      "source_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/rational-residual-certificate-0245z/RationalResidualCertificate.lean",
+      "staged_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/three-reviewed-followon-actual176-0503z/sources/UnifiedLean/G6/RationalResidualCertificate.lean",
+      "sha256": "49eba2288f7e32b415b8409c2ddeb8a39f192374d31cad40132a5ae6771a7386",
+      "blob": "56d5163f006929884707544c15cb979d9cc0a9f8",
+      "bytes": 6989,
+      "names": [
+        "rationalDenominator",
+        "rationalRetained",
+        "rationalResidualCount",
+        "rationalDenominator_pos",
+        "rationalRetained_bounds",
+        "rationalRetained_deficit",
+        "rationalResidualCount_nonneg",
+        "rationalResidualCount_support",
+        "rationalResidualCount_sum",
+        "rationalDenominator_real",
+        "rationalRetained_real",
+        "rationalResidualCount_actual",
+        "cutoff_residual_deficit",
+        "actual_source_residual_tv_cutoff"
+      ]
+    }
+  ],
+  "requested_custom": 179,
+  "requested_named": 501,
+  "namespace_counts": {
+    "G6": 352,
+    "G3": 134,
+    "G5": 15
+  },
+  "budget": {
+    "actual176_job_seconds": 740,
+    "actual176_serial_seconds": 710,
+    "three_new_modules_reserve_seconds": 40,
+    "larger_audit_reserve_seconds": 10,
+    "runtime_cache_variation_margin_seconds": 100,
+    "planning_total_seconds": 890,
+    "job_cap_seconds": 900,
+    "per_command_cap_seconds": 180,
+    "flags": [
+      "--trust=0",
+      "-j1",
+      "-M4096"
+    ],
+    "status": "Estimate only with10seconds remaining to hard900 cap; exact same transitive source context. Root must accept this explicit budget or choose a smaller source-connected selection before any dispatch."
+  },
+  "controls_unchanged": [
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh",
+      "sha256": "a7223afdda243533689fb3188cb7478f9f3f7047644a215665f961ddd517b03a",
+      "blob": "90e778fd3dc7a571865de5c4a9884709aa2ebc08"
+    },
+    {
+      "path": ".github/workflows/g6-cloud-lean.yml",
+      "sha256": "70f0557f17a01f92deac080053096c75f29660ed86b93842df88f3319901eb16",
+      "blob": "7ccce639b3ded9d0ca84502537f4c2ae4162e9a4"
+    }
+  ],
+  "primary_selection_sha256": "4f23e93dc359a9c3653e33254298cf668ab2cd670f4266e043b26f837fd123d9",
+  "compiler_invoked": false
+}
