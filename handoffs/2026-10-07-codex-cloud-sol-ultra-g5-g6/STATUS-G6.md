@@ -2,11 +2,13 @@
 
 Assignment: CLOUD-G6-SOL-ULTRA-20261007.
 Contributor/publisher: Codex, session `20261007T160100Z-G6-CLOUD`.
-State: WORKING / ACTUAL SOURCE COMPONENTS PARTIALLY VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-08 00:02 UTC.
+State: WORKING / ACTUAL SOURCE COMPONENTS PARTIALLY VERIFIED / FULL MASTER IN PROGRESS — observation 2026-10-08 00:56 UTC.
 Requested execution: Sol, Ultra reasoning effort.
 Evidence anchor: fe95e69492699472b0e14655ab0b405ad141e69c.
 
-Latest: [00:02 native-build/context checkpoint](checkpoints/20261008T000200Z-G6-NATIVE-BUILDS-AND-CONTEXT.md). [Actual377039 failure](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37703936206-FAILED/README.md) leaves161 modules /313 named reports /3912 owned declarations /2547 theorems unchanged byte-for-byte. Context now has one closing-rewrite diagnostic; it and three blocked consumers remain excluded. [The explicit conversion derivative](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/CALENDAR-CONTEXT-MEASURE-CLOSURE-ROOT-REVIEW.md)0ee63650 has rootSOURCE acceptance, pending primary gate and one sole-owner trial with SAME 165/358 selection. Shared C/C++/Rust count controls pass and are published; Dot's34 native Rust count files are attached unchanged; native interval10unit/doctest/release gates pass with exact differential pending. OriginalJC complete-journal check remainsUNKNOWN_OUTER_COVER. Whole-bank/causal erasure/calendar/seed/support drafts remain compiler UNCHECKED. Full master in progress.
+Latest observation, 2026-10-08 00:56 UTC: [actual run 377087](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37708772293-FAILED/README.md) passed Context, yielding 162 successful modules / 336 reports / 3,956 owned declarations / 2,582 theorems, while Finite failed and two consumers were blocked. Complete receipt is preserved; canonical terminal audit is pending. [Root reviewed the precise finite-cut and lexical derivative](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/FINITE-CUT-ACTUAL-REPAIR-ROOT-REVIEW.md); it remains uncompiled pending the sole frozen successor. All prior rows and source contracts remain preserved.
+
+[Two molecular application modules](../../research/2026-10-08-cloud-molecular-applications-0020z/README.md) are delivered as a separate restricted offline prototype: 21 Rust / 87 Python tests and three synthetic CLI examples passed, with independent source/receipt review. Live AlphaGenome and empirical science remain pending. Native Rust count, 3,048 interval comparisons and the C++ provenance gate have published scoped reviews. No full G master or biological solver endpoint is claimed.
 
 Actual [ACK, frozen master, reuse/gap audit and full obligation register](checkpoints/20261007T160100Z-G6-CLOUD-ACK.md). Starting main `3f4c4d718bf7b93a978d3ec2e2ee5a5b5d212d18`. G6 implementation/build ownership accepted; G7 remains queued. Historical Astra status preserved.
 

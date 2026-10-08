@@ -1,6 +1,6 @@
 # Molecular application modules — coordinated implementation
 
-Contributor and publisher: Cloud root for Nolan. Observation: 8 October 2026, 00:28 UTC. Status: implementation in progress; no live AlphaGenome inference or scientific validation has run.
+Contributor and publisher: Cloud root for Nolan. Observation: 8 October 2026, 00:56 UTC. Status: experimental offline implementation delivered; no live AlphaGenome inference or scientific validation has run.
 
 Nolan assigned Cloud ownership of two separately testable applications alongside the existing practical solver: combined-variant haplotype analysis and RNA-processing analysis. Existing solver behavior, accepted work and the original G1–G7 scope remain preserved. These are application modules, not G8 or a closure of G3/G4, RNA/E8, G6 or G7.
 
@@ -24,8 +24,20 @@ Cloud root owns shared contract, CLI, official SDK adapter, publication and inte
 
 ## Initial public question and access boundary
 
-The first intended reference exercise asks how two promoter substitutions affect predicted TERT RNA coverage in a specified tissue, using the official haplotype notebook example as a reproduction starting point. Phase is hypothetical unless independent cis evidence is supplied. Reference sequence, annotation and coordinates must be checked before it becomes a ready-to-run public case. It is neither a diploid phenotype model nor a reconstruction of actual ancestral history.
+The first intended reference exercise asks how two promoter substitutions affect predicted TERT RNA coverage in a specified tissue, using the official haplotype notebook example as a reproduction starting point. Phase is hypothetical unless independent cis evidence is supplied. The small UCSC hg38 reference window, both G alleles, and Ensembl release 116 TERT transcript/exons on the minus strand were checked. Its runnable demonstrations use synthetic-v1 and remain software exercises. It is neither a diploid phenotype model nor a reconstruction of actual ancestral history.
 
 Sources: [official haplotype workaround](https://www.alphagenomedocs.com/colabs/v1/haplotype_workaround.html), [variant-scoring definitions](https://www.alphagenomedocs.com/variant_scoring.html), [FAQ](https://www.alphagenomedocs.com/faqs.html). Only small public reference examples are in scope; no personal genomes or full Atlas download. Terms are artifact-specific; analysis permission does not imply redistribution or training permission.
 
-Next decisive step: complete the shared contract and execute the two offline modules against deterministic synthetic predictions. Live-model and held-out scientific results remain pending.
+## Delivered and actually run
+
+Two independently testable modules, a shared typed input/output contract, a std-only Rust validation core, one CLI and a thin official Python SDK adapter are preserved on restricted main alongside the existing platform. Source and tests are experimental; existing production files remain unchanged. Full restricted publication passed exact readback for all 83 files. No private product source or data is uploaded here.
+
+- [Shared interface and CLI examples](SHARED-CONTRACT.md)
+- [Actual 21 Rust / 87 Python test and three synthetic CLI receipts](TEST-RECEIPTS.md)
+- [Scientific-validation plan and measured candidate register](../2026-10-08-cloud-alphagenome-source-review-sol-0010z/README.md)
+- [Source–observation–target–action applicability to G1–G7](G-APPLICABILITY.md)
+- [Concise continuation checkpoint](CONTINUATION.md)
+
+Independent source and saved-receipt review accepts the experimental offline scope after three input-boundary fixes. The live smoke test is pending: official SDK absent, access/terms unconfirmed, API key absent, and bounded live execution/quota behavior still to be established. Junction/PSI adapters are unavailable; PAS is an annotated coverage-ratio proxy. No dataset or independent benchmark is admitted, and no empirical gain is claimed.
+
+Next decisive step: prepare a bounded authorized live request on the checked public reference with exact track selection, then execute and preserve one real-model smoke test. Separately audit a measured artifact, rights and model exposure, and freeze matched held-out records before prediction.
