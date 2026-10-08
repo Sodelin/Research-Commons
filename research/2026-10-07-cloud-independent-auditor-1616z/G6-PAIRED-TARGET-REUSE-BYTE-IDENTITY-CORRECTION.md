@@ -1,0 +1,7 @@
+# Additive correction: actual paired-target source identity
+
+8 October 2026 UTC. The original [paired-target review](G6-PAIRED-TARGET-REUSE-SOURCE-REVIEW.md) and author packet are preserved unchanged.
+
+The exact Git source at `e39fd7d0cdac5d933b7518a85df5d282fbe74907` is **5,248 bytes, SHA256 `29d02f46053cc7addfd855b9522dd6d30ec4c35d12446c804f06616e1a30c79f`, blob `5093f7cb36c618b253c7c2c0d212463d70840764`**. This supersedes the review's prose attribution of 5,249 bytes/SHA `e07be565`. That latter hash is the actual Git source plus one extra final newline and was copied from the author's inaccurate source metadata. No scientific body differs.
+
+My original [authentication record](g6-paired-target-reuse-source-authentication.json) independently recorded the actual Git identity in its candidate-packet row, but I repeated the inconsistent manifest identity in prose without flagging the discrepancy. This was an avoidable attribution error. The [exhaustive correction record](g6-paired-target-reuse-byte-identity-correction.json) retains both identities and verifies that exactly one final newline separates them. Source semantic acceptance applies to the actual `29d02f46` body read from Git; the missing `GProgram.G5` Calendar namespace remains an explicit static API hold. Any additive namespace derivative must be pinned against these actual bytes. No compiler acceptance or selected-input modification follows.

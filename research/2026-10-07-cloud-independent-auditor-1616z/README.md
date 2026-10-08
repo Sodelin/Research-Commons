@@ -210,3 +210,7 @@ Actual [private-register kernel/history partial build](NATURAL-FAMILY-KERNEL-HIS
 ## Paired structural targets and completion namespace derivative, 8 October
 
 The [paired target source review](G6-PAIRED-TARGET-REUSE-SOURCE-REVIEW.md) accepts the intended actual same-network Q/S splice and generic original-provenance bounded-core consequences. The original candidate has a static missing Calendar namespace import; compiler acceptance remains pending. The [natural completion namespace review](NATURAL-COMPLETION-INTERFACE-REPAIR-SOURCE-REVIEW.md) accepts the exact one-open derivative at separate a614 bytes, outside the same-176 selection. Failed or unchecked autoImplicit bindings are not asserted unchanged.
+
+## Literal backend field and primitive source reviews, 8 October
+
+The [returned residual contract](RETURNED-RESIDUAL-CONTRACT-HAND-SOURCE-REVIEW.md) and [one-step unordered decorated merger](UNRANKED-ONE-STEP-BRIDGE-HAND-SOURCE-REVIEW.md) receive scoped HAND/SOURCE acceptance, with original wire/runtime/phase/calendar obligations retained. The [Boolean orientation review](BACKEND-BOOLEAN-ORIENTATION-SOURCE-REVIEW.md) requires complementing the Python inheritance parameter for SAME native parent IDs and stored Bool before any whole-calendar transfer. The [paired-target byte correction](G6-PAIRED-TARGET-REUSE-BYTE-IDENTITY-CORRECTION.md) supersedes inaccurate prose SHA attribution with the exact immutable29d source; original author and review records remain unchanged.

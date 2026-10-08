@@ -1,0 +1,11 @@
+# Literal native/Python Boolean inheritance orientation
+
+8 October 2026 UTC. Independent primary source challenge, read-only.
+
+**CONFIRMED encoding gap for unchanged gamma under the SAME Bool and fixed original parent IDs.** Exact source identities are retained in the [record](backend-boolean-orientation-authentication.json). Native SourceForestPulseMeasure defines `bitMeasure gamma = bernoulliMeasure true false gamma`; the pinned Mathlib definition assigns gamma to true and 1-gamma to false. Native SourceNaturalInitialization uses the same original p.gamma at every original hybrid and draws its COMMON register once. Actual OriginalHybridParents.parent routes true to parent1 and false to parent0.
+
+The unchanged reference finite_source_prefix.hybrid_boundary routes true to its parent1 and false to its parent0, but weights each current-root assignment by `gamma_py ** count(False) * (1-gamma_py) ** count(True)`. Thus a single root reaches parent1 with native probability gamma_native and reference probability 1-gamma_py. With matching original parent IDs and unchanged stored Bool, equality requires **gamma_py=1-gamma_native**. The failure is already visible for one root whenever gamma_native differs from one half; no numerical run is needed.
+
+The same parameter translation must be used in the once-drawn Python COMMON initialization to match the native retained register law. Reusing a fixed bit at a COMMON boundary is compatible, but does not establish that the initial bit was drawn from the correct law. A consistent alternative swapping parent/bit conventions is possible only through an explicit derived encoding that also translates stored registers and every subsequent parent use. Silent parent or gamma changes are not accepted.
+
+This challenge does not change the accepted rational count/residual facts or the [register-preserving merger quotient](UNRANKED-ONE-STEP-BRIDGE-HAND-SOURCE-REVIEW.md), neither of which invokes hybrid_boundary. Whole calendar/backend correspondence remains open until the boundary and natural initialization encoding are derived with actual current-root coupling, full original register retention, graph IDs and chronological/bin gates. No runtime/source mutation, data, compiler, control or API execution occurred.
