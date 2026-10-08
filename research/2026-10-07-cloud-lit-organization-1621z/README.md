@@ -17,6 +17,7 @@ The [successor inventory at main `9500cc7`](snapshots/20261007T165453Z/README.md
 - [Additive successor generator](build_successor_inventory.py) and [successor checks](snapshots/20261007T165453Z/VERIFICATION.json).
 - [Targeted G6 finite-calendar/history source map](g6-calendar-history-1722z/README.md), with exact input identities, existing bridges and proposed finite-bin obligations.
 - [Targeted G5 actual conditional-genealogy/frozen-germ bridge](g5-conditional-germ-2119z/README.md), separating checked ordinary timed marginals and analytic support from the remaining source-connected triple row and posterior derivation.
+- [Next G6 nonplanar representative/shared-cell gate](g6-nonplanar-cloud-20261008-0158z/README.md), with actual graph declarations, supplied admission premises, hand Hausdorff consumers and the first missing formal port-count/source-witness bridges.
 
 Root owns `README.md`, `START-HERE.md`, `projects.md` and the new canonical current status. This packet supplies evidence for those pages without making competing navigation edits. The preceding [Dot all-programme map](../2026-10-07-dot-frontier-source-index-and-obligation-map-0309z/ALL-PROGRAMME-COVERAGE.md) and [latest scope](../2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) retain authorship and dated history.
 
