@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "root_scheduler": true,
+  "source": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/exact_fixed_body_pad_column.py",
+    "sha256": "bc5828c4ad19b1775cc955c2f287e36337fa6e41bd4f53d620133ab6b546dbd5",
+    "bytes": 14853
+  },
+  "independent_preexecution_review": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g3-impossibility/fixed-body-gate-review/PREEXECUTION-SOURCE-REVIEW.md",
+    "sha256": "f4500a75adf3ba87a656047e7274179ac849a64cb8f25df45d8a418114a02798",
+    "bytes": 6555
+  },
+  "wrapper": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/ROOT-GATE-EXECUTION-WRAPPER.py",
+    "sha256": "7d439b626bc58c90da8fea6f80c116a8d223a04b40321d8814700736c5ef44ee",
+    "bytes": 3392
+  },
+  "command_argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import hashlib, pathlib, sys; p=pathlib.Path(sys.argv[1]); expected=sys.argv[2]; raw=p.read_bytes(); assert hashlib.sha256(raw).hexdigest()==expected; sys.argv=[str(p),'--output',sys.argv[3]]; exec(compile(raw,str(p),'exec'),{'__name__':'__main__','__file__':str(p)})",
+    "/workspace/Research-Commons/research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/exact_fixed_body_pad_column.py",
+    "bc5828c4ad19b1775cc955c2f287e36337fa6e41bd4f53d620133ab6b546dbd5",
+    "/workspace/Research-Commons/research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/root-run-20261008T161300Z/RESULT.json"
+  ],
+  "wall_limit_seconds": 60,
+  "cpu_limit_seconds": 55,
+  "address_space_limit_bytes": 536870912,
+  "new_output_path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/root-run-20261008T161300Z/RESULT.json",
+  "exit_code": 0,
+  "wall_timeout": false,
+  "wall_seconds": 0.7664639850008825,
+  "source_after": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/exact_fixed_body_pad_column.py",
+    "sha256": "bc5828c4ad19b1775cc955c2f287e36337fa6e41bd4f53d620133ab6b546dbd5",
+    "bytes": 14853
+  },
+  "stdout": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/root-run-20261008T161300Z/stdout.txt",
+    "sha256": "926bfe62099cf4ce908076b3065407c68ab3ca8f617750069014b6c89df3eee3",
+    "bytes": 339
+  },
+  "stderr": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/root-run-20261008T161300Z/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "result": {
+    "path": "research/2026-10-08-codex-g3-g4-full-shot-1253z/g4-fixed-target/attempt-7/fixed-body-gate/root-run-20261008T161300Z/RESULT.json",
+    "sha256": "b93051985090991ab4cae467a42ef7feb3116649bcb2a3b4c2891d26f478225d",
+    "bytes": 62551
+  },
+  "automatic_retry": false,
+  "original_G4_closed": false
+}

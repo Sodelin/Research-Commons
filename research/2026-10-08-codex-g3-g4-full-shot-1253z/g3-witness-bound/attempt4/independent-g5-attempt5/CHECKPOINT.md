@@ -1,0 +1,11 @@
+# Independent review checkpoint, 8 October 2026
+
+Codex correspondence reviewed G5's FROZEN weak-cell and coupled-normal proofs after root's freeze announcement. The five mathematical/context bodies, including both mandatory clarifications, pass the independent hand/source challenge. INDEPENDENT-REVIEW.md records the scoped verdict. All 32 supplied provider hash/byte pins match; 14 directly selected/read related objects are separately bound in STATIC-AUTHENTICATION.json. Hash authentication is not a mathematical source run or a fresh proof review of every transitive provider.
+
+The scope challenge produced MANDATORY-JOINT-INSERTION-CLARIFICATION.md on G5's side: multiple selected directions must coexist in ONE legal inserted source, rather than assuming separate one-cell admission composes under arbitrary global constraints. Its exact frozen hash is part of the review.
+
+The accompanying SHORTEST-WITNESS-BRIDGE-AUDIT.md is this reviewer's OWN candidate contribution, awaiting root's separate independent review. It does not approve itself. It records why the private rare first derivative adds no INDEPENDENT direction and why a one-atom COMMON exposure gives a valid algebraic separator blind to equal-arm hidden chronology. Root separately accepted G5's attributed first-derivative clarification; the audit's second-order source expansion and explicit blind-normal argument are new hand evidence requiring independent challenge.
+
+No mathematical/source execution, QE, native run, compiler, nested worker, inherited source mutation, commit or publication occurred. Older frozen attempt4 author objects remain unchanged; these review files are additive. The combination does not give an input-computable ONE-witness bound, global support normal or terminal NO. The original G3 master stays OPEN.
+
+Next full-master gate: extract from the input a source-consistent informative normal or higher-order actual physical pruning mechanism for shortest BOTH-mode words. Its chronology and shared COMMON clock must coexist in one original bank; the separate facts of algebraic normal existence, bounded clock or arbitrary long presentations do not provide that theorem. Root owns review/publication.
