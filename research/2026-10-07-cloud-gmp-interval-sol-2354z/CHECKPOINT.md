@@ -19,3 +19,14 @@ inverse and observed confidence remain outside this primitive task.
 
 Next action: non-force main publication/exact remote readback, then independent
 exact implementation review and root's practical solver integration routing.
+
+Publication receipt: non-force main
+`d90bca775931e3db6f65193b54a4be603427d2a4`; all 16 owned packet files,
+10 artifact hashes and the unchanged authoritative reference passed fresh
+remote byte/hash readback. Core implementation SHA-256:
+`e13585e3c09cc39c20fcf282fa04ab4481ce8b23d017cb88fa842779d7594dc1`.
+Manifest SHA-256:
+`472cdd1274660c6cff95ce22718400083cc0d44ef41d4b4eeac452ff4a85f9cb`.
+Root and the primary auditor received exact API/source/build/result identities.
+Independent implementation acceptance remains pending. Next action: exact
+independent review, then root's practical solver integration decision.
