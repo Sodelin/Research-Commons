@@ -1,0 +1,14 @@
+# Actual full joint coordinate and fixed-bin-cut bridge
+
+Cloud Sol `/root/source_backend_review_sol`, 8 October 2026, 05:46 UTC. EXPERIMENTAL SOURCE/HAND, independent review PENDING. All thirteen new theorem bodies are compiler UNCHECKED and outside frozen179. No reference/Python solver evaluation, compiler, Actions, native experiment, SDK or API was run.
+
+The two exact drafts are:
+
+- [FullJointCoordinateEncoding.lean](proof-drafts/FullJointCoordinateEncoding.lean), SHA256 `8ad7eac334f2254a6552ed88556b7825153a9605882da75e1e7f5373c8d14bc1`, 4515 bytes, six theorem bodies: primitive leaf/tag coordinate maps preserve recursive child swaps; inverses derive quotient injection; all-population/full-register coordinate encoding is injective and copies each Bool literally.
+- [NaturalFixedCutFullJoint.lean](proof-drafts/NaturalFixedCutFullJoint.lean), SHA256 `a4afc4058c653644d9252a52397244990e1ef417d411210b2b1a702945f19be5`, 11069 bytes, seven theorem bodies: actual natural fixed-cut refinement/endpoint history, SAME joint source/count rows, retained-clock two-bin bind and encoded full forest law at the actual physical guard.
+
+[The hand/source argument](HAND-RETURNED-JOINT-MAP.md) identifies the controlling literal endpoint/joint dictionaries and the absence of any wire JSON serializer. It records canonical typed tree encoding, outside-node payload, residual versus normalized counts, one lossy joint panel reader, exact eta = 1-gamma_native routing gate, inherited review limits and the remaining obligations. [SOURCE-PINS.json](SOURCE-PINS.json) authenticates 49 repository sources/context artifacts and seven Mathlib APIs; no guessed or desired law is a contract field.
+
+The actual full coordinate law reuses [the f768 physical guard attachment](../2026-10-08-cloud-guard-one-bin-sol-0521z/README.md) and source-defined actual natural initialization. Its entering Code, old bins and once-drawn COMMON register stay correlated. It retains every original Location, immutable Copy leaf, binary graft and old tag. Primitive code bijections are onto their finite encoded images. The observation `joint_readout` intentionally drops population/register information and is not claimed injective.
+
+[The independently scoped one-step review](../2026-10-07-cloud-independent-auditor-1616z/UNRANKED-ONE-STEP-BRIDGE-HAND-SOURCE-REVIEW.md) and [returned-count review](../2026-10-07-cloud-independent-auditor-1616z/RETURNED-RESIDUAL-CONTRACT-HAND-SOURCE-REVIEW.md) remain distinct from [the pending iteration draft](../2026-10-08-cloud-tagged-iteration-sol-0423z/README.md). This packet does not complete the typed Python quotient/table decoder, numerical entering-law approximation, full boundary/calendar program, ancestral completion, complete observed-bin menu, cross-graph substitution or full G6. [CHECKPOINT.md](CHECKPOINT.md) gives the next review step.

@@ -1,0 +1,15 @@
+# Checkpoint — 8 October 2026, 05:57 UTC
+
+Contributor/publisher: Cloud Sol `/root/source_backend_review_sol`. Root requested the actual returned finite joint endpoint/bin map to full coordinate encoding and fixed-cut chronology, from source-pinned physical guard packet9b0e210. User continues to defer practical/API work. Root confirmed the unchanged f54e reference literal returned dictionaries are controlling; no separate wire serializer is to be invented.
+
+Useful sources/hand proof were captured locally at `8be05588a007f8582a2582ce4779c64ebfc4cda9` before final attribution/status and metadata pass. The two unchanged Lean source hashes are `8ad7eac334f2254a6552ed88556b7825153a9605882da75e1e7f5373c8d14bc1` and `a4afc4058c653644d9252a52397244990e1ef417d411210b2b1a702945f19be5`, six/seven bodies respectively. Only own unique packet files were edited.
+
+Actual work: bounded source reads of controlling Python return/representation/projection code, actual natural/refinement/retained-clock joint APIs, tree quotient and exact Mathlib quotient/image/PMF/cast directions. Metadata authentication matches all49 repository identities to frozen Git bytes and all seven Mathlib files to pinned0df444a. No Python source import, probability/Fraction arithmetic, numerical harness, native program, compiler, Actions, SDK/API or private code activity occurred.
+
+Root reports179 failed only Hybrid/Rational, Natural passed, with owner preparing the same179 repair. This packet does not poll that job or promote whole-candidate/primary acceptance. Earlier Naturalc206 source and current prototype imports retain their own statuses; all thirteen new bodies remain compiler UNCHECKED and excluded from that input.
+
+Independent review next: recursive quotient inverse/injection and Finset image direction; actual natural refinement/correlated register mixture; full fixed-cut retained-clock row, exact nonnegative real slice durations and final mapped/bound PMF law; the explicit HAND-only conditional returned-residual/table/TV implications. Every primitive input is a coordinate bijection onto its image or deterministic date/bin/domain condition, not a desired law equality. The mathematical full coordinate code retains all Locations and literal register Bools; Python merger SourceState uses physical populations with outside node payload separately.
+
+Wire JSON is absent from the controlling source. Typed canonical term extraction/iteration, numerical entering table certification, actual complete boundary routing, ancestral completion, full observed tag-bin menu, cross-graph and full master remain open under MASTER-CLOSURE-STANDARD-20260930. Preserve the actual eta complement and parameter bank/cap gates. A completed local encoding/refinement component is not master closure.
+
+Publish fresh-main nonforce and authenticate immutable/main byte readback; then send root and primary the actual identity. Readback is metadata preservation only. Root/principal owns independent acceptance and any later authorized compiler/runtime selection.
