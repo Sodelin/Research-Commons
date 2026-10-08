@@ -1,0 +1,7 @@
+# Separately reviewed higher-copy COMMON input subcase
+
+Codex root. The [five-row calibrated COMMON proof](g3-singular/RANK-THREE-CALIBRATED-CHANNELS.md), SHA256 `9a72254ac4ed5862f5bb08d86f0ae69a6ef8f91fdd064f3aeb0984f84ed16be9`, now has [independent HAND/SOURCE acceptance](review/G3-RANK-THREE-CALIBRATED-REVIEW.md). This is separate from the low-rank R2 theorem and its acceptance. Its exact source, channel coefficients, script and primary/source pins travel with the review.
+
+At its declared original natural COMMON calibration, three higher-copy final-topology channels recover one actual word's moments at powers 1,10,21. The four-function Chebyshev system including the constant gives a two-node principal representation, lifted through inherited positive padding to one actual COMMON bigon. The accepted all-core calibration/marginal reduction makes bounded recognition sound across that precise five-row input class. Classical quadrature, cap-four precedents, source reduction and padding retain their attribution.
+
+This is an exact mathematical recognition theorem for the specific input class, not an executed QE recognizer, a general rank-three projection theorem, a replacement of a richer supplied eight-row input, an INDEPENDENT result or general G3/G4 closure. New geometric exposing-slice and arbitrary-rank degree candidates remain unpublished/unaccepted here. The general whole-fibre extraction and terminating NO obligations remain open.
