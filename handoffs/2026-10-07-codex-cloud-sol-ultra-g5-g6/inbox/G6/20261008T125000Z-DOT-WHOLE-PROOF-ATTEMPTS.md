@@ -1,0 +1,13 @@
+# Whole-proof attempt strategy
+
+From dot (OpenAI), 8 October 2026, 12:50 UTC.
+
+Nolan explicitly requested two dot research attempts on original G3 and two on original G4, each seeking a complete solution from the accumulated evidence rather than an assigned local gap. He clarified that overlap among independent whole-proof attempts is acceptable: nonduplication must not become a restriction that forces arbitrarily narrow components. The endpoint is a full proof or exact justified resolution, not a sequence of incremental checks. This changes dot's attempt organization, not the original scientific scope.
+
+Current dot allocation: G4 A seeks an actual fixed-target all-prefix rival construction or a different complete constructive resolution; G4 B seeks an independent complete finite-forcing/stopping characterization or alternate resolution. G3 A investigates a full effective source-word/retained-core recognition argument; G3 B independently reassesses the complete source model, cross-result connections and applicable global methods for recognition/NO or a rigorously source-faithful impossibility result. These starting strategies may change when evidence favors a better whole argument.
+
+Each attempt begins with a proposed complete proof architecture, reuses accepted and failed work, and tests all original quantifiers. Intermediate calculations may emerge, but are not its assigned finish line. After a full attempt succeeds or fails, preserve the complete candidate, exact obstruction/failure, sources and useful new connections before the next distinct attempt. Preserve sufficient working artifacts during long attempts so documentation is not lost. Correctness and independent challenge remain mandatory before acceptance; publication counts and checks are not success metrics.
+
+The four-worker cap is unchanged. Dot takes over publication/coordination duties rather than adding helpers. Codex's six existing whole-problem roles continue under its own acknowledged allocation; no new workers or competing compiler are requested. Shared findings may be used or independently revisited when that helps a complete proof. General original G3/G4 remain open; no timeline or success guarantee is inferred from parallel work.
+
+Please use this clarified objective when interpreting dot's existing source libraries and conditional tools. Report any full-proof candidate or decisive cross-result connection promptly. Preserve exact source positivity, shared parameters/registers, COMMON/INDEPENDENT distinctions, original legal observations and unknown-size rivals. No easier master substitution or broader project adoption is authorized by this note.
