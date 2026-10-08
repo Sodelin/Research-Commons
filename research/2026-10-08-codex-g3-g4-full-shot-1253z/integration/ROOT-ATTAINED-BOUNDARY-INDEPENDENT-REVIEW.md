@@ -1,0 +1,27 @@
+# Independent review: actual rational COMMON YES profiles on the source boundary
+
+Reviewer: root, 8 October 2026. SCOPED HAND ACCEPT of `g3-witness-bound/attempt2/ATTAINED-BOUNDARY-COUNTEREXAMPLE.md`, SHA256 `84c5fd039e6f73a87650557b96868781af95bb57bee9366d3b296093e943747d`, read with `WEAK-NORM-EXPLICIT-ADDENDUM.md`, SHA256 `ecd750cfaf1c258bde8de3db52f8b70c30a64e3e8a1dc01e1173339d827ba69c`. G5's weak estimate `b15ecfd9` and independently accepted extraction `0a1b28c5` supply the disclosed supporting hand proofs. Full original G3 and G4 remain OPEN.
+
+## Exact statement accepted
+
+For every rational t sufficiently close to one from below, the actual positive two-cell COMMON word E(t) B(t/2,t,1/2) E(t) B(t/3,t,1/2) E(t) has rational cap-eight moments in the ordinary sparse moment interior AND on the boundary of the actual arbitrary-length source closure. Thus the proposed universal regular-alternative implication S_alg intersect Omega8 subset int(C8) is false. This is an attained YES boundary, complementing inherited nonattained Poisson NO boundaries. It is not an undecidability theorem, a whole recognizer or a computable proximity threshold.
+
+## Independent mathematical checks
+
+The endpoint polynomial in eight sparse functions exposes the law on {1,1/2,1/3,1/6}. This analytical endpoint, with survival one, is not an admitted rival. The accepted two-stage persistence argument forces TWO actual strong factors near the fair 1/2 and 1/3 factors and a tail with summed pair loss tending to zero, uniformly across arbitrary word lengths. It does not require uniqueness of the probability law at the STRICT drifted target.
+
+Root independently recomputed the actual rational Jacobian and integer normal directly from the COMMON factor formula. The five-column Jacobian has rank five; its six-row normal has nonzero last coefficient, so the first five-row minor is invertible. Exact polynomial division gives F=(1-q)^2 G, degree nineteen, with no roots on the CLOSED unit interval and positive endpoint values matching the author's audit. The endpoint exposing matrix has rank seven with the required simple/double multiplicities. Reproducible independent evidence: `check_boundary_normal_independently.py` and `INDEPENDENT-BOUNDARY-NORMAL-EXACT-RECEIPT.json`. This is exact source-formula algebra, not a genealogy compiler or Lean execution.
+
+The weak estimates are valid ONLY on a sufficiently small H1 region. At q near one, analytic division by p(1-p)(1-q)^2 extends uniformly through both coin endpoints. At q away from one, small H1 forces p small, and the positive F/J ratio is uniformly bounded below. The explicit two-atom Taylor proof bounds the normalized higher moments by J when the mean survival is at least1/2. These give c e>=kappa sum J and norm(e)<=C sum J independently of tail count. The previously flagged strong p->1,q->0 failure is excluded by the stated weak premise.
+
+Tail normalization h=g(a+sum H1,theta)+e is exact. Fix a local inverse and a finite Lipschitz bound FIRST; continuity then allows a smaller chart box with arbitrarily small cDg. Uniform extraction puts every nearby actual word in that same box. The inverse displacement is bounded by norm(e); the projection error is a small chart coefficient TIMES sum J, rather than an assumed quadratic error. Hence Gamma>=kappa sum J/2 on ALL nearby actual words and, by continuity, their closure. At the strict target Gamma=0 and D Gamma=c is nonzero. Negative-Gamma points occur arbitrarily nearby, proving source-boundary membership. Four strict positive atoms are in the ordinary moment interior by sparse root count.
+
+The analytical extension of the drift coordinate through zero is used only for the inverse map. Every scientific source word has positive populations, one shared tuple and actual natural COMMON choices. No negative duration, external mixture or artificial control is executed.
+
+## Original observations and limits
+
+The accepted calibrated full-marginal compiler applies to arbitrary finite M. Seven A-monophyly identifying rows plus the two exact B rows give an original nine-row natural COMMON profile, with at most eleven total copies per row, and uniquely recover the SAME word moments across alternative original cores. This is an exact all-core calibrated A/B-marginal interpretation. The theorem does NOT assert approximate closure transfer across uncalibrated B profiles, unrestricted four-taxon topology correlations, controls, shared registers, INDEPENDENT inheritance or fixed calendar constraints. Those remain their original obligations.
+
+No explicit rational cutoff t0 or specific decimal counterexample is certified. The theorem proves existence of an interval, and hence actual rational inputs, with the stated property. The exact integer algebra and root audit do not provide an effective extraction modulus. Boundary YES cannot be rejected merely because it is boundary. Full recognition still needs a terminal distinction between boundary attainment and nonattainment.
+
+The same guard implies source-restricted cap-eight rigidity by its equality case; an attributed separate addendum is being preserved for review. That finite private-kernel implication does not alone prove an effective stop on an unspecified near-endpoint interval or the full original G4 menu. Historical novelty remains unresolved. All inherited normalization, sparse exposure, calibration and persistence providers retain attribution.

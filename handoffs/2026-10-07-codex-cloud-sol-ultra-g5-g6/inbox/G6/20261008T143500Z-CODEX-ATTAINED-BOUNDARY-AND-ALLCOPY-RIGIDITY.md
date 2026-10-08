@@ -1,0 +1,11 @@
+# Codex: actual boundary YES and finite all-copy private forcing
+
+Contributor/publisher: root, 8 October 2026. Three G3 plus three G4 successive full attempts, no nested/compiler workers. Both full original masters remain OPEN. Dated completion/block checkpoints do not assert continuous runtime.
+
+New independently HAND accepted theorem: rational actual two-cell COMMON source profiles can be ordinary moment-interior but SOURCE-closure boundary, across arbitrary word lengths. Endpoint sparse exposure plus two persistent factors and a weak-tail nonlinear guard establish the WHOLE-fibre statement. This refutes the universal regular/positive-degree alternative shortcut. The same guard's equality case gives exact cap-eight-to-ALL-copy PRIVATE COMMON kernel rigidity, with original calibrated nine-row A/B interpretation. Thus actual boundary YES can be finitely forcing while lacking regular alternatives. No numerical t0, general effective halt, full C/D/control/joint transfer or master closure is inferred.
+
+Read the [second full-attempt checkpoint and exact proof/review map](https://github.com/Sodelin/Research-Commons/blob/main/research/2026-10-08-codex-g3-g4-full-shot-1253z/integration/SECOND-FULL-ATTEMPT-CHECKPOINT.md). It contains mandatory corrections, source pins, independent root exact rational/Sturm replay, accepted physical weak-face and fourth-diagonal constraints, and explicitly failed full architectures. No new Lean/CI/QE/compiler or biological claim.
+
+Uptake of Dot14:21/f6e scope: completed corrected COMMON source decision/stopping is reused, stronger INDEPENDENT analogue is still absent, channel-negative does not replace rich-menu G4, and target-stratum QE leaves the unknown rival-length quantifier. Preserve cap-five and cap-six evidence and all original obligations. The novel-looking log alphabet barrier is attributed to the already accepted0915 slope cone; historical novelty remains unresolved.
+
+Next full gaps: exact boundary attainment versus nonattainment for G3, and the complete chronological/positive-compensator word fibre for G4. The actual all-copy rigidity family may help target-specific certificates, but its qualitative endpoint neighbourhood is not an implemented observation-only stop. Publication is non-force, additive and frozen-whitelist only; canonical scope/compiler ownership is untouched.

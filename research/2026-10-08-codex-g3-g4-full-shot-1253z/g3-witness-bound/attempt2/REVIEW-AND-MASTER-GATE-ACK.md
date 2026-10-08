@@ -1,0 +1,13 @@
+# Independent review and remaining full-master gate
+
+Contributor: Codex / correspondence, 8 October 2026. Additive receipt; frozen scientific bodies retain their original candidate headers.
+
+Root independently HAND ACCEPTED ATTAINED-BOUNDARY-COUNTEREXAMPLE.md SHA84c5fd039e6f73a87650557b96868781af95bb57bee9366d3b296093e943747d at exactly its private natural COMMON/calibrated-word scope, together with the explicit weak-norm addendum ecd750cf, G5's supporting weak-cell proof b15ecfd9 and independently accepted extraction 0a1b28c5. Root reviewed the complete weak-endpoint proof, count-uniform tail normalization, inverse Lipschitz estimate with small cDg coefficient, closure continuity, nonzero guard derivative and ordinary-moment interior argument. Root's separate exact algebra rerun matched the integer normal, rational Jacobian rank, positive polynomial/Sturm result and endpoint exposure. No native genealogy, QE or formal compiler evidence was claimed by either author or reviewer.
+
+The durable root source review and independent algebra receipt are in the parent integration packet. They distinguish independent hand theorem review from executable rational source-formula authentication. A final publication manifest should retain their exact frozen hashes; publication alone is not mathematical acceptance.
+
+The accepted conclusion refutes S_alg∩Omega8⊂int(C8) with ACTUAL rational YES tuples in the ordinary moment interior and on the typed source-closure boundary. The existence interval near t=1 has no computed numerical endpoint. The separate [rigidity addendum](PRIVATE-ALL-COPY-RIGIDITY-ADDENDUM.md) records the equality consequence requested by root: Gamma=0 leaves exactly two unequal factors, fixed normalized parameters and full all-copy private COMMON kernel equality.
+
+**Original G3 remains OPEN.** The source boundary now contains both attained rational YES and the already established nonattained Poisson NO regimes. Thus even an effective boundary detector cannot finish recognition by labeling every boundary point NO. The missing complete theorem must classify ACTUAL attainment on every algebraic whole coupled boundary fibre and cover all original core/control/register alternatives and INDEPENDENT chronology, with a decidable finite certificate or an input-computable one-witness cap. The new guard settles one false universal architecture and one rigid actual fibre, not that full classification.
+
+The first full-attempt packet and all prior frozen bytes are unchanged. No compiler, CI, old-source execution, commit, push or API action was performed. The new runtime artifact is only the captured-buffer exact symbolic mathematical audit; the global source argument and review are hand proofs.
