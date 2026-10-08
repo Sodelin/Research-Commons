@@ -1,0 +1,46 @@
+{
+  "author": "Codex integration coordinator",
+  "source_sha256": "86adcf3969fb85a2707fc1e40b393977a358e4989aaf090441e894f7549efbee",
+  "change": "Visible report execution status, after independently tested 7d41762c functional source; failing replay cannot hide behind saved baseline table",
+  "checks_pass": true,
+  "rows": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "applications/scientific-integration/run.py",
+        "cwu",
+        "--output",
+        "/workspace/scratch/integration-root-report-status/saved-cwu"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.041041091000352026,
+      "report_status_visible": true,
+      "status": "INSPECTABLE_COMPARISON_EMPIRICAL_ADMISSION_OPEN",
+      "result_sha256": "b605657256d1a69fdaf8119c75c3b06e35d70cc394632918579f5f969347771e",
+      "stdout_sha256": "349bd00c64715b210af27e6058e4f6610e6dabc7a81825bf1e18285bd238c220",
+      "stderr_bytes": 0
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "applications/scientific-integration/run.py",
+        "workbench",
+        "--python",
+        "/nonexistent/research-runtime",
+        "--output",
+        "/workspace/scratch/integration-root-report-status/missing-runtime"
+      ],
+      "exit_code": 3,
+      "wall_seconds": 0.040867335999791976,
+      "report_status_visible": true,
+      "status": "EXECUTION_FAILURE",
+      "result_sha256": "4372d334532fd4c33d026193dda74d459a4225e7c045caaa92238430ca2c383b",
+      "stdout_sha256": "b017a257dd6c9873285fb19104ebdb31f91e676420514533182d1b6006314c63",
+      "stderr_bytes": 0
+    }
+  ],
+  "live_calls": 0,
+  "biological_conclusion_established": false
+}

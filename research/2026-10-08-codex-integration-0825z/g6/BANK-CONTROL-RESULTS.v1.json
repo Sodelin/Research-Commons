@@ -1,0 +1,88 @@
+{
+  "status": "executed exact Fraction controls",
+  "cases": [
+    {
+      "case": "positive_original_fixture_shared_fine_coarse",
+      "result": {
+        "status": "FIXED_CHART_BANK_FEASIBLE",
+        "bank": {
+          "rates": {
+            "r_u": "1",
+            "r_v": "1",
+            "u_c": "1",
+            "v_d": "1",
+            "u_h": "1",
+            "v_h": "1",
+            "h_w": "1/2",
+            "w_a": "1",
+            "w_b": "1",
+            "ANCESTRAL": "1"
+          },
+          "gamma_native": {
+            "h": "2/5"
+          }
+        },
+        "source_admission_established": false,
+        "law_evaluated": false,
+        "target_exclusion_authorized": false
+      }
+    },
+    {
+      "case": "prior_shared_equal_epochs_conflict_source_embedded",
+      "result": {
+        "status": "INFEASIBLE_FIXED_CHART",
+        "conflicts": [
+          "rate:u_c"
+        ],
+        "target_exclusion_authorized": false
+      }
+    },
+    {
+      "case": "prior_shared_gamma_conflict_source_embedded",
+      "result": {
+        "status": "INFEASIBLE_FIXED_CHART",
+        "conflicts": [
+          "gamma:h"
+        ],
+        "target_exclusion_authorized": false
+      }
+    },
+    {
+      "case": "saturated_crossing_same_edge",
+      "status": "FIXED_CHART_BANK_FEASIBLE",
+      "rate": "11"
+    },
+    {
+      "case": "float_date",
+      "status": "REFUSED",
+      "reason": "expected exact rational string/integer, no float or Bool"
+    },
+    {
+      "case": "missing_epoch",
+      "status": "REFUSED",
+      "reason": "cells must cover EXACTLY every active original finite epoch"
+    },
+    {
+      "case": "tampered_constant_edge_witness",
+      "status": "REFUSED",
+      "reason": "shared source rate violates hazard cell"
+    },
+    {
+      "case": "boundary_gamma_zero",
+      "result": {
+        "status": "INFEASIBLE_FIXED_CHART",
+        "conflicts": [
+          "gamma:h"
+        ],
+        "target_exclusion_authorized": false
+      }
+    },
+    {
+      "case": "tied_original_unrelated_nodes",
+      "epochs": 42,
+      "zero_exposure_count": 0
+    }
+  ],
+  "lean_builds": 0,
+  "empirical_claim": false
+}

@@ -1,0 +1,611 @@
+{
+  "schema": "g5-public-wrapper-offline-validation-v1",
+  "contributor": "Codex integration G5 independent application validator",
+  "prepared_utc": "2026-10-08T09:22:41.535606+00:00",
+  "claim_tier": "TESTED_RESULT: pinned offline command/report validation; no complete application proof or empirical source admission",
+  "status": "PASS_SCOPED_OFFLINE_VALIDATION",
+  "command_template_note": "Templates preserve actual argument order but substitute local paths. They are not the verbatim execution record; exact local records are authenticated below.",
+  "initial_batch": {
+    "wrapper_sha256": "34dceb602930262172aa731e9e322e0aed7d95e78efb031f861db9f2c81a3d80",
+    "native_binary_sha256": "e4024df7e801c2fb81bef4740d664a9edc4b56743052adbd4b994e974d0fd2ed",
+    "wrapper_executions": 7,
+    "direct_application_refusals": 2,
+    "cases": [
+      {
+        "case": "duplicate-locus-refusal",
+        "exit_code": 2,
+        "wall_seconds": 0.07447706200036919,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "f9df591f9a7beec0f22b89e3b49ac7f09d0a5b2b3115237592db1c390c15a656",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "-m",
+          "genealogy_workbench",
+          "sort-loci",
+          "${VALIDATION_OUTPUT}/invalid-duplicate-locus.json"
+        ],
+        "cwd_template": "${COMMONS}/applications/genealogy-compatibility-workbench",
+        "observed_refusal": {
+          "status": "INVALID_INPUT_OR_BLOCKED",
+          "reason": "contradictory records for the same locus; actual joint compiler required"
+        }
+      },
+      {
+        "case": "existing-output-refusal",
+        "exit_code": 2,
+        "wall_seconds": 0.03272036199996364,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "5fc9f18ea54d91f563ea915b66b807d45f9073a219e7567e4e5366748533aec7",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "workbench",
+          "--output",
+          "${VALIDATION_OUTPUT}/workbench",
+          "--python",
+          "${PYTHON}"
+        ],
+        "cwd_template": "${COMMONS}",
+        "report_observation": "original workbench report retained unchanged; no new output/report"
+      },
+      {
+        "case": "missing-runtime",
+        "exit_code": 2,
+        "wall_seconds": 0.032784391999939544,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "5fc9f18ea54d91f563ea915b66b807d45f9073a219e7567e4e5366748533aec7",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "workbench",
+          "--output",
+          "${VALIDATION_OUTPUT}/missing-runtime",
+          "--python",
+          "${VALIDATION_OUTPUT}/absent-python"
+        ],
+        "cwd_template": "${COMMONS}",
+        "report_observation": "output directory created, no RESULT.json or REPORT.html; fixed in later derivatives"
+      },
+      {
+        "case": "missing-sequence-arguments",
+        "exit_code": 2,
+        "wall_seconds": 0.03075865499977226,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "000ce1dee5f6951b2ca80f3e37861dd64715e4e18cb50446e065f29401abf1e2",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "sequence-pair",
+          "--output",
+          "${VALIDATION_OUTPUT}/missing-sequence-arguments"
+        ],
+        "cwd_template": "${COMMONS}",
+        "report_observation": "argument refusal before output creation"
+      },
+      {
+        "case": "molecular-missing-native",
+        "exit_code": 3,
+        "wall_seconds": 0.5078083959997457,
+        "stdout_sha256": "90b39f6c3e2e9d947eb24a6d2f3c251ce2015d82ddd08a98ab8392aacece609b",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "molecular",
+          "--output",
+          "${VALIDATION_OUTPUT}/molecular-missing-native",
+          "--python",
+          "${PYTHON}",
+          "--core-binary",
+          "${VALIDATION_OUTPUT}/absent-native"
+        ],
+        "cwd_template": "${COMMONS}",
+        "top_status": "EXECUTION_FAILURE",
+        "report_sha256": "e72423c92c0435504fb22c16c7dfdbb9c79210f703b5d03afcb3f9e13c99e8ae",
+        "html_sha256": "bbec314e22570c2daf4cbaa14e7790ddba1f135ff92d6e6454c727db40093ca0",
+        "nested_receipts": [
+          {
+            "name": "tert-rna",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          },
+          {
+            "name": "synthetic-rna-pas",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          },
+          {
+            "name": "tert-haplotype",
+            "exit_code": 4,
+            "result_status": "UNSUPPORTED"
+          }
+        ]
+      },
+      {
+        "case": "molecular-native",
+        "exit_code": 0,
+        "wall_seconds": 1.1893533219999881,
+        "stdout_sha256": "4cf9fa5e3f314f4a3d7eb2b165e7b76e3ebce311c7a519b983e45b8280da2def",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "molecular",
+          "--output",
+          "${VALIDATION_OUTPUT}/molecular-native",
+          "--python",
+          "${PYTHON}",
+          "--core-binary",
+          "${CORE_BINARY}"
+        ],
+        "cwd_template": "${COMMONS}",
+        "top_status": "MOCK_SYNTHETIC",
+        "report_sha256": "73de47e4ef1b87d8a2239e0f301e830fe0a73cfa739a53b798c540374268ea0b",
+        "html_sha256": "8ee8ef00da543cb430285bcb0be043bf06d6dc6268f1bce6ffb52262a84b426f",
+        "nested_receipts": [
+          {
+            "name": "tert-rna",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          },
+          {
+            "name": "synthetic-rna-pas",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          },
+          {
+            "name": "tert-haplotype",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          }
+        ]
+      },
+      {
+        "case": "molecular-no-native",
+        "exit_code": 0,
+        "wall_seconds": 0.35582349200012686,
+        "stdout_sha256": "0ff289101492efdf690f8b3c31a65622e13e09b3608edb79259a28a42fa01529",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "molecular",
+          "--output",
+          "${VALIDATION_OUTPUT}/molecular-no-native",
+          "--python",
+          "${PYTHON}"
+        ],
+        "cwd_template": "${COMMONS}",
+        "top_status": "MOCK_SYNTHETIC",
+        "report_sha256": "c63c2a1c3f518cb9475f5211d030d595d2e21645bb4c2bbf0f324ff5642d26b3",
+        "html_sha256": "e9113f06a8d422e5e7eaec4e7a14ca6ca9112ee2fa2470699675f6dadab5f52e",
+        "haplotype_availability": "UNAVAILABLE: provide the verified native core binary",
+        "nested_receipts": [
+          {
+            "name": "tert-rna",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          },
+          {
+            "name": "synthetic-rna-pas",
+            "exit_code": 0,
+            "result_status": "SUCCESS"
+          }
+        ]
+      },
+      {
+        "case": "rna-reference-refusal",
+        "exit_code": 2,
+        "wall_seconds": 0.06836157399993681,
+        "stdout_sha256": "89f1e4d9187606f5b06d949ddf40534e44d5429ca10233657143081f73281999",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "-m",
+          "molecular_apps",
+          "rna",
+          "${VALIDATION_OUTPUT}/invalid-rna-reference.json",
+          "--provider",
+          "mock"
+        ],
+        "cwd_template": "${COMMONS}/applications/molecular-analysis",
+        "observed_refusal": {
+          "status": "INVALID_INPUT",
+          "code": "REFERENCE_MISMATCH",
+          "successful_computation": false
+        }
+      },
+      {
+        "case": "workbench",
+        "exit_code": 0,
+        "wall_seconds": 0.2660977420000563,
+        "stdout_sha256": "19d7fdcfeacf332e080879449ca3dbab7cb03d3097f1ba78ef3b03d34f80fc20",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "workbench",
+          "--output",
+          "${VALIDATION_OUTPUT}/workbench",
+          "--python",
+          "${PYTHON}"
+        ],
+        "cwd_template": "${COMMONS}",
+        "top_status": "RECOVERED_APPLICATION_DEMO",
+        "report_sha256": "ee4b07916b98cc8c08a6493d675181390a7cef4dca44072ad39fd7fce4a071aa",
+        "html_sha256": "b66133ba9b44ccb9784877c29aaf154c55c98644ed50515025cf4f904b70497e",
+        "nested_receipts": [
+          {
+            "name": "workbench-demo",
+            "exit_code": 0,
+            "result_status": "PASS"
+          }
+        ]
+      }
+    ],
+    "semantic_assertions_passed": 61,
+    "semantic_assertions_total": 61,
+    "semantic_assertions": {
+      "all_public_python_source_bytes_unchanged": true,
+      "workbench_html_report_exists": true,
+      "workbench_report_biology_not_established": true,
+      "workbench_report_no_live_model_calls": true,
+      "workbench_report_no_whole_application_lean_promotion": true,
+      "workbench_human_report_contains_same_status": true,
+      "workbench_human_report_links_full_json": true,
+      "molecular-native_html_report_exists": true,
+      "molecular-native_report_biology_not_established": true,
+      "molecular-native_report_no_live_model_calls": true,
+      "molecular-native_report_no_whole_application_lean_promotion": true,
+      "molecular-native_human_report_contains_same_status": true,
+      "molecular-native_human_report_links_full_json": true,
+      "molecular-no-native_html_report_exists": true,
+      "molecular-no-native_report_biology_not_established": true,
+      "molecular-no-native_report_no_live_model_calls": true,
+      "molecular-no-native_report_no_whole_application_lean_promotion": true,
+      "molecular-no-native_human_report_contains_same_status": true,
+      "molecular-no-native_human_report_links_full_json": true,
+      "molecular-missing-native_html_report_exists": true,
+      "molecular-missing-native_report_biology_not_established": true,
+      "molecular-missing-native_report_no_live_model_calls": true,
+      "molecular-missing-native_report_no_whole_application_lean_promotion": true,
+      "molecular-missing-native_human_report_contains_same_status": true,
+      "molecular-missing-native_human_report_links_full_json": true,
+      "workbench_demo_actual_status_PASS": true,
+      "workbench_demo_all_seven_checks": true,
+      "workbench_demo_synthetic_only": true,
+      "cap4-ambiguous_actual_receipt_status": true,
+      "cap5-refined_actual_receipt_status": true,
+      "original-arm-abstention_actual_receipt_status": true,
+      "fresh-loci-conditional_actual_receipt_status": true,
+      "fresh_locus_count_256_not_257": true,
+      "fresh_locus_scientific_assumptions_not_machine_asserted": true,
+      "molecular_three_jobs_success": true,
+      "molecular_all_mock_synthetic": true,
+      "molecular_all_biology_false": true,
+      "native_binary_identity_observed": true,
+      "four_scenario_names": true,
+      "four_distinct_scenario_digests": true,
+      "all_native_sequences_length_131072": true,
+      "hypothetical_AB_counterfactual": true,
+      "no_guessed_diploid_aggregation": true,
+      "A_coordinate_map_tiles_length": true,
+      "AB_coordinate_map_tiles_length": true,
+      "B_coordinate_map_tiles_length": true,
+      "REF_coordinate_map_tiles_length": true,
+      "tert-exon-mean-log_four_values_and_declared_interaction": true,
+      "tert-splice-site-maximum_four_values_and_declared_interaction": true,
+      "tert-splice-usage-mean_four_values_and_declared_interaction": true,
+      "TERT_fixture_observed_interactions_all_zero": true,
+      "PAS_is_derived_annotated_proxy": true,
+      "PAS_log_ratios_match_declared_means": true,
+      "without_native_partial_output_explicit": true,
+      "missing_native_wrapped_failure_without_promotion": true,
+      "missing_native_nested_refusal_preserved": true,
+      "missing_runtime_refuses_exit2": true,
+      "existing_output_refuses_exit2": true,
+      "missing_sequence_arguments_refuse_before_output": true,
+      "RNA_reference_mismatch_structured_refusal": true,
+      "contradictory_duplicate_locus_refused": true
+    },
+    "source_bytes_unchanged_during_batch": true,
+    "reporting_gap_at_this_hash": "Missing Python executable returns exit2/generic error after creating output directory, but no RESULT.json/REPORT.html is written. Existing-output refusal intentionally preserves prior files; missing required arguments refuse before any output."
+  },
+  "supplemental_saved_report_inspection": {
+    "checks": {
+      "A_positive_contiguous_sequence_spans": true,
+      "AB_positive_contiguous_sequence_spans": true,
+      "B_positive_contiguous_sequence_spans": true,
+      "REF_positive_contiguous_sequence_spans": true,
+      "original_workbench_report_preserved_after_existing_output_refusal": true
+    },
+    "checks_passed": 5,
+    "checks_total": 5,
+    "status": "PASS",
+    "new_application_executions": 0
+  },
+  "intermediate_runtime_derivative": {
+    "started_utc": "2026-10-08T09:18:08.477672+00:00",
+    "wrapper_sha256": "bc45cdd8f9293e96f4e9677dc00012fffcb997d85cd30c5dc625d87f104a220d",
+    "exit_code": 3,
+    "wall_seconds": 0.04569037999999637,
+    "result_sha256": "38fc4cefbdfd7e87e3fc8c041589688dac5d5026d137a0e8b4ca8ba7b333f2b9",
+    "html_sha256": "3ce2319eb022104684b7d0a4ddd151640530e5d5c5a9a069490a3428d0139258",
+    "status": "PASS",
+    "checks_passed": 11,
+    "checks_total": 11,
+    "command_template": [
+      "${PYTHON}",
+      "-B",
+      "${COMMONS}/applications/scientific-integration/run.py",
+      "workbench",
+      "--output",
+      "${VALIDATION_OUTPUT}/missing-runtime-retest",
+      "--python",
+      "${VALIDATION_OUTPUT}/absent-python"
+    ],
+    "note": "Separate derivative execution preserved; final hash receives its own rerun below."
+  },
+  "final_frozen_wrapper": {
+    "wrapper_sha256": "7d41762c3594e39ea37658e063cb69ae8b318e1cd1652e34a2da5ee65ce90230",
+    "started_utc": "2026-10-08T09:20:32.654795+00:00",
+    "ended_utc": "2026-10-08T09:20:34.670554+00:00",
+    "executions": [
+      {
+        "case": "final-missing-runtime",
+        "exit_code": 3,
+        "wall_seconds": 0.038284633999865036,
+        "result_sha256": "1ce270e219f28c6c7ba3fa1ad8bd89cd6b62d91ed5aeb573488cc40eb044b43c",
+        "html_sha256": "676c5b438d671843ed5213aaa543ca9ec2150973982788484cab4927ccc1d4b4",
+        "stdout_sha256": "bdeb4594add25e54ada9d87d865fcd3fbb01252df4086c0a2d7633ee18eaef65",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "top_status": "EXECUTION_FAILURE",
+        "report_exists": true,
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "workbench",
+          "--output",
+          "${VALIDATION_OUTPUT}/final-missing-runtime",
+          "--python",
+          "${VALIDATION_OUTPUT}/absent-python"
+        ]
+      },
+      {
+        "case": "final-cwu-saved",
+        "exit_code": 0,
+        "wall_seconds": 0.037797165000029054,
+        "result_sha256": "b605657256d1a69fdaf8119c75c3b06e35d70cc394632918579f5f969347771e",
+        "html_sha256": "402a64bfdc8ed5196e551b2d02d8e40fc9a9469127f7c48a2f90283fcaa074b0",
+        "stdout_sha256": "ef40324578e554110e7f9cc1909cd4219186fe1731c53ba2d4df4d4a55d697ba",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "top_status": "INSPECTABLE_COMPARISON_EMPIRICAL_ADMISSION_OPEN",
+        "report_exists": true,
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "cwu",
+          "--output",
+          "${VALIDATION_OUTPUT}/final-cwu-saved"
+        ]
+      },
+      {
+        "case": "final-cwu-replayed",
+        "exit_code": 0,
+        "wall_seconds": 2.005934548999903,
+        "result_sha256": "1e5c9ca36d3d68010871d3303736907735557f27ebbfb2d913c07b90222abe4f",
+        "html_sha256": "a364863adaddf276bf5cffa61e6758533f1ff54bf4859614da89f563e9fbf5ca",
+        "stdout_sha256": "c4c1814046a57a2b06363d3beee5cf7e5a3c404587657fccb49ce37681602bd5",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "top_status": "INSPECTABLE_COMPARISON_EMPIRICAL_ADMISSION_OPEN",
+        "report_exists": true,
+        "command_template": [
+          "${PYTHON}",
+          "-B",
+          "${COMMONS}/applications/scientific-integration/run.py",
+          "cwu",
+          "--output",
+          "${VALIDATION_OUTPUT}/final-cwu-replayed",
+          "--python",
+          "${PYTHON}",
+          "--replay-sequences"
+        ]
+      }
+    ],
+    "semantic_assertions_passed": 63,
+    "semantic_assertions_total": 63,
+    "semantic_assertions": {
+      "frozen_source_exact_before_and_after": true,
+      "all_source_and_inherited_public_inputs_unchanged": true,
+      "final-missing-runtime_html_report_links_json": true,
+      "final-missing-runtime_top_status_visible": true,
+      "final-missing-runtime_biology_not_established": true,
+      "final-missing-runtime_live_calls_zero": true,
+      "final-missing-runtime_lean_whole_app_false": true,
+      "final-missing-runtime_professor_endorsement_false": true,
+      "final-cwu-saved_html_report_links_json": true,
+      "final-cwu-saved_top_status_visible": true,
+      "final-cwu-saved_biology_not_established": true,
+      "final-cwu-saved_live_calls_zero": true,
+      "final-cwu-saved_lean_whole_app_false": true,
+      "final-cwu-saved_professor_endorsement_false": true,
+      "final-cwu-replayed_html_report_links_json": true,
+      "final-cwu-replayed_top_status_visible": true,
+      "final-cwu-replayed_biology_not_established": true,
+      "final-cwu-replayed_live_calls_zero": true,
+      "final-cwu-replayed_lean_whole_app_false": true,
+      "final-cwu-replayed_professor_endorsement_false": true,
+      "runtime_refusal_report_exit3": true,
+      "runtime_refusal_nested_unavailable": true,
+      "final-cwu-saved_exit0": true,
+      "final-cwu-saved_top_admission_open": true,
+      "final-cwu-saved_source_controls_saved": true,
+      "final-cwu-saved_real_execution_correct": true,
+      "final-cwu-saved_actual_public_data": true,
+      "final-cwu-saved_two_markers_exact_rows": true,
+      "final-cwu-saved_original_taxon_map_preserved": true,
+      "final-cwu-saved_capture_unknown": true,
+      "final-cwu-saved_empirical_not_admitted": true,
+      "final-cwu-saved_no_calibrated_law": true,
+      "final-cwu-saved_not_full_original_alignments": true,
+      "final-cwu-saved_biological_target_abstains": true,
+      "final-cwu-saved_descriptive_bootstrap_note_visible": true,
+      "final-cwu-saved_inferred_region_note_visible": true,
+      "final-cwu-saved_human_table_exact_original_id_rows": true,
+      "final-cwu-saved_marker_difference_retained": true,
+      "final-cwu-replayed_exit0": true,
+      "final-cwu-replayed_top_admission_open": true,
+      "final-cwu-replayed_source_controls_saved": true,
+      "final-cwu-replayed_real_execution_correct": true,
+      "final-cwu-replayed_actual_public_data": true,
+      "final-cwu-replayed_two_markers_exact_rows": true,
+      "final-cwu-replayed_original_taxon_map_preserved": true,
+      "final-cwu-replayed_capture_unknown": true,
+      "final-cwu-replayed_empirical_not_admitted": true,
+      "final-cwu-replayed_no_calibrated_law": true,
+      "final-cwu-replayed_not_full_original_alignments": true,
+      "final-cwu-replayed_biological_target_abstains": true,
+      "final-cwu-replayed_descriptive_bootstrap_note_visible": true,
+      "final-cwu-replayed_inferred_region_note_visible": true,
+      "final-cwu-replayed_human_table_exact_original_id_rows": true,
+      "final-cwu-replayed_marker_difference_retained": true,
+      "fresh_baseline_raw_bytes_exact": true,
+      "fresh_baseline_independence_not_promoted": true,
+      "fresh_baseline_phase_orthology_compartment_not_promoted": true,
+      "nuclear-4CL1_actual_producer_and_replay_exit0": true,
+      "nuclear-4CL1_fresh_output_source_identity": true,
+      "nuclear-4CL1_source_geometry_matches_saved_recipe": true,
+      "plastid-rbcL_actual_producer_and_replay_exit0": true,
+      "plastid-rbcL_fresh_output_source_identity": true,
+      "plastid-rbcL_source_geometry_matches_saved_recipe": true
+    },
+    "source_and_inherited_public_input_bytes_unchanged_during_batch": true,
+    "same_inherited_python_sources_as_initial_batch": 31,
+    "all_initial_cases_repeated": false,
+    "targeted_changes": "Unavailable child executable reporting; saved and fresh public marker baseline; readable two-marker table"
+  },
+  "software_observations": {
+    "workbench_demo_status": "PASS",
+    "workbench_demo_checks": {
+      "arm_swap_theorem_relation": true,
+      "cap4_retains_different_pads": true,
+      "cap5_refines_to_passive_orbit": true,
+      "duplicate_locus_not_counted_twice": true,
+      "four_root_trailing_survival_recovered": true,
+      "fresh_loci_conditional_target": true,
+      "original_arm_assignment_abstains": true
+    },
+    "workbench_synthetic_only": true,
+    "native_four_scenario_sha256": {
+      "A": "ba22137260d6efe27bc23d1044f545906334158050e51a9eb18c0f3782706ef9",
+      "AB": "a66592173fb1210e1f46c603f2d3ffaad463239e36d128f60ed80500ddf79e99",
+      "B": "2e6dfacbdf3a4d0f7eb511fd33123b1e47c7c3116e01d996287aff3befa60558",
+      "REF": "5ca2d7b42a4c21c66fd326cebded4f0432fa31554885e3f6c398be4a8ac4f4b0"
+    },
+    "native_sequence_lengths": {
+      "A": 131072,
+      "AB": 131072,
+      "B": 131072,
+      "REF": 131072
+    },
+    "native_interaction_values": {
+      "tert-exon-mean-log": 0.0,
+      "tert-splice-site-maximum": 0.0,
+      "tert-splice-usage-mean": 0.0
+    },
+    "native_phase_kind": "hypothetical",
+    "native_AB_counterfactual": true,
+    "diploid_aggregation": null,
+    "RNA_PAS_semantics": "two_annotated_window_coverage_ratio_v1 derived proxy; declared log ratios independently recomputed"
+  },
+  "limits": [
+    "The three TERT mock interaction values are zero despite distinct scenario sequence hashes; this validates assembly and endpoint plumbing, not demonstrated nonadditivity or biology.",
+    "The finite catalogue workbench certificate and conditional fresh-locus confidence retain externally supplied source/independence/eta premises.",
+    "The public GenBank pilot is exploratory nuclear4CL1/plastidrbcL analysis of four published-specimen joins, not complete Dryad/paper replication or original specimen authentication.",
+    "Descriptive column bootstraps are not capture probabilities or calibrated history confidence regions; source admission remains NOT_ADMITTED and biological targets ABSTAIN.",
+    "Final bytes have targeted reruns only; the initial full smoke batch is explicitly pinned to its earlier wrapper hash.",
+    "No Lean compiler was run. Existing formal G5 drafts remain compiler UNCHECKED."
+  ],
+  "activity": {
+    "actual_application_commands": 13,
+    "initial_wrapper_commands": 7,
+    "initial_direct_refusals": 2,
+    "intermediate_wrapper_commands": 1,
+    "final_wrapper_commands": 3,
+    "additional_saved_report_inspections": 5,
+    "assertions_by_phase": {
+      "initial": 61,
+      "saved_report_supplement": 5,
+      "intermediate_derivative": 11,
+      "final_frozen": 63
+    },
+    "compiler_invocations": 0,
+    "api_calls_requested": 0,
+    "live_model_calls": 0,
+    "source_edits_by_validator": 0,
+    "new_empirical_source_admission": false,
+    "whole_application_lean_verified": false
+  },
+  "final_public_source_and_input_pins": {
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/__init__.py": "cf3a6758d2c9554b49e7af79491bf0ddec1acf54f35e4c1fdf232f3bb0a6ec1e",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/__main__.py": "f35124e530c67e144b61bdfca212301084982fc1408a2315f382617faa6e920f",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/benchmark.py": "c50990f1b830f6e13134310490136dc9b4789161c826a12dbe01d361ebd8868b",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/cli.py": "7142b437cc77b7c67f7748f81df8778dbf8841e88db11e7c202e1b1d9014c714",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/core.py": "71e5719aa568778ed90e68789db78bf573c996eff5e63459c39771127dd36737",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/demo.py": "58c505c52e62c9f92c50de12866048a9146ad06c2e7846ac8d5fbdcf83f42858",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/inference.py": "2df314b73acb848fc99645bb47b2d6a2f070e3e4e1b70936951e0aa338c038b0",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/provenance.py": "49b8d4b21d1d6e1e70630b1bd4d9fa8f5b572d75ec1c5e8831b65b444b5ea07d",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/sequence.py": "b52123c35bdaaef8f475836f3252cc377ab2e8e945b3e518f61733c98eea41ae",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/statistics.py": "50d7b7a98c8d18b84b02f640e675a3bdf49131a2a698877c63ec14fb444958c1",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/vendor/count_controls.py": "a83c2e745e1d969996744a4030f5d8cd78faa5a512ee6848a3ab0fb2da6adf1c",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/vendor/forest_algebra.py": "c78fac68f81712d266ff71230081cdd73cfad59b7c448acadc2035196ebee48b",
+    "applications/genealogy-compatibility-workbench/genealogy_workbench/vendor/sequence_adapter.py": "d1078d8e776474a12dc60f174f262cd51a2c2b01c8ce3ab9e7cd99afe29488a0",
+    "applications/genealogy-compatibility-workbench/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "applications/genealogy-compatibility-workbench/tests/independent_forest_oracle.py": "c50f879c6fa0fbad0271e19cce627645f199b87eed02cdeb841a613bde6977ef",
+    "applications/genealogy-compatibility-workbench/tests/test_workbench.py": "627b522892b77854f220d631640ae9b3b0fb0e7e4a6140b3d2dca03f42ec71e7",
+    "applications/molecular-analysis/molecular_apps/__init__.py": "6ae150753184c2b8046c4394110ee07d9e98b5634f207344cc6cebf5a2c2ab67",
+    "applications/molecular-analysis/molecular_apps/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "applications/molecular-analysis/molecular_apps/cli.py": "cddeec13db9194f5d3f59842e8e2531de3bd7fa6d295fad356d63199138f3449",
+    "applications/molecular-analysis/molecular_apps/contracts.py": "32d6b69ce48412de21e5160aac287415500c79a95aa306b29a6ea90ce3d71e67",
+    "applications/molecular-analysis/molecular_apps/haplotype.py": "a65f3d4cec728c9931763378218e242c6192980e7c58455fe624fe07edce9a70",
+    "applications/molecular-analysis/molecular_apps/live_smoke.py": "bc0b946c34687e79a5037724fbd1232337533e8d182a1dd6709dd6346ea1a28d",
+    "applications/molecular-analysis/molecular_apps/providers.py": "a1494dd5de42dd77afed22396c6b45f41c8ebf1eaab596a819f95f7ad4befe01",
+    "applications/molecular-analysis/molecular_apps/rna_processing.py": "f0f46b37cefca4d232eb01f37be1c3aa0d5cec84da635e3b603c238711c2d68a",
+    "applications/molecular-analysis/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "applications/molecular-analysis/tests/test_contracts_and_cli.py": "b142751d88479af41074b2d6c520fa5191910d2b09a23cbf49254bd832045aec",
+    "applications/molecular-analysis/tests/test_haplotype.py": "48e9c415a1a53efd397f957cbb7810ed47cf0003381f8aa871b2919c16055b02",
+    "applications/molecular-analysis/tests/test_live_smoke.py": "b55b370b3447dd014a8a54278efad618d8c50d82058d63a6df48ce3ed6d39930",
+    "applications/molecular-analysis/tests/test_rna_processing.py": "69631d94db6aff9bdfe0da991216473c456114b122caec8cf596df9405cd5324",
+    "applications/molecular-analysis/tests/test_sdk_adapter_offline.py": "443913149d36534080f51d3f41d4e441235747d4de803f615288860eb0d1ed29",
+    "applications/scientific-integration/run.py": "7d41762c3594e39ea37658e063cb69ae8b318e1cd1652e34a2da5ee65ce90230",
+    "research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE/COMPARISON.json": "d829835c2a91c4257040e965384f976d1ee3b0c2c71d8d174576986a2d314902",
+    "research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE/GENBANK-RAW-15.gb": "7a021f7abf24beb5a8c692b4e53ce6bd888ad1f6694380b75205a601110384dc",
+    "research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE/MANIFEST.json": "912f7b1288849fede766f90539d287fdd51ad33a931d57b1141de438fab385e6",
+    "research/2026-10-08-codex-integration-0825z/g6/prepare_real_baseline.py": "25c2ab6916b6ae9376b96b1c66a729e1f527a4ecfa53a004ef1cea143e393340"
+  },
+  "local_evidence_sha256": {
+    "EXECUTION-INPUTS.json": "e305f357c53e3cd1cfed69a10db9d550ea2ba47a6c53083398c46ec020bbdd66",
+    "EXECUTIONS.json": "3f4b77bbdb0fab96582e43941cb2cd2d3ee3a50fb2b44acd8dd16c67baca4b0f",
+    "ASSESSMENT.json": "97844bb2b35c34c308f850ddb0e4d6b2edc283eb0bea496882b819af101ce331",
+    "SOURCE-BEFORE.json": "44d209583906ad390e663ea6f254553519fe19fabcdab2ee9947e9f6f8898d90",
+    "SOURCE-AFTER.json": "44d209583906ad390e663ea6f254553519fe19fabcdab2ee9947e9f6f8898d90",
+    "SUPPLEMENTAL-REPORT-INSPECTION.json": "c706571cd839e3d40d0aae056a12c5443b20555081464b4db79e92dc5c6978e2",
+    "MISSING-RUNTIME-RETEST.json": "b14172f376512243d4b0035f1484a3752bf8416f3c568a68473e34df3f04d4d6",
+    "FINAL-VALIDATION.json": "b6497bc9d292fae4cd14351900715203b6aed408a8c767002fbcb49724e8057f",
+    "validate.py": "add2eac2d2a9903e19842b9cf24f191705da340db741a5923c6e53ba905ba4c2",
+    "assess.py": "d528201f71f0152270dadd09c8d62a5bbdbcf3c3f92c9b36284b43f8fb8cc0ae",
+    "validate_final.py": "f94a159c7384357bbb96cd94d542b5f8c39195ee46d95f6aff58683004db82fd"
+  }
+}

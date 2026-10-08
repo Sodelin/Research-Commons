@@ -1,0 +1,85 @@
+{
+  "context": {
+    "window": {
+      "assembly": "hg38",
+      "chromosome": "chr1",
+      "start0": 100,
+      "sequence": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+      "guard_sequence": "ACGTACGT",
+      "source": "synthetic software fixture, not genomic evidence",
+      "sha256": "e6e7085c62baaea7009a786db048a97ec7383f9a8540d7d897d1e8fe3dd43cc1"
+    },
+    "transcript": {
+      "gene_id": "SYNTHETIC_GENE",
+      "transcript_id": "SYNTHETIC_TX",
+      "start0": 104,
+      "end0": 160,
+      "strand": "+",
+      "source": "synthetic annotation",
+      "version": "fixture-v1",
+      "exons": [
+        [
+          104,
+          120
+        ],
+        [
+          140,
+          160
+        ]
+      ]
+    },
+    "tissue": "UBERON:0002107",
+    "model_version": "synthetic-v1",
+    "output_types": [
+      "RNA_SEQ",
+      "SPLICE_SITES",
+      "SPLICE_SITE_USAGE"
+    ],
+    "preprocessing": "forward_reference_fixed_left_v1"
+  },
+  "endpoints": [
+    {
+      "id": "expr",
+      "family": "expression",
+      "output_type": "RNA_SEQ",
+      "aggregation": "mean",
+      "scale": "log",
+      "start0": 104,
+      "end0": 160
+    },
+    {
+      "id": "splice",
+      "family": "splice_usage",
+      "output_type": "SPLICE_SITE_USAGE",
+      "aggregation": "mean",
+      "scale": "linear",
+      "start0": 104,
+      "end0": 160
+    },
+    {
+      "id": "pas-proxy",
+      "family": "polyadenylation",
+      "output_type": "RNA_SEQ",
+      "aggregation": "site_ratio",
+      "scale": "log",
+      "start0": 104,
+      "end0": 160,
+      "site_windows": [
+        [
+          108,
+          112
+        ],
+        [
+          152,
+          156
+        ]
+      ],
+      "site_annotation_source": "synthetic site annotation for software testing only",
+      "site_annotation_version": "fixture-v1"
+    }
+  ],
+  "sequence_scenarios": {
+    "REF": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+    "ALT": "ACGTACGTGCGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT"
+  }
+}

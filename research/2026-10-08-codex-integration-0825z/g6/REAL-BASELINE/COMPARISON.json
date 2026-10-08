@@ -1,0 +1,94 @@
+{
+  "schema": "raubeson-tsuga-genbank-exploratory-v1",
+  "input_evidence": "REAL_PUBLIC_PUBLISHED_ACCESSION_SEQUENCES",
+  "question": "Tiny matched-published-specimen nuclear4CL1/plastidrbcL exploratory comparison; does not replicate complete paper alignments.",
+  "original_taxon_map": {
+    "Tsuga_chinensis": {
+      "organism": "Tsuga chinensis",
+      "paper_voucher": "Holman10-02 AA233-2003",
+      "plastid": "KX256181.1",
+      "nuclear": "KX354408.1"
+    },
+    "Tsuga_caroliniana": {
+      "organism": "Tsuga caroliniana",
+      "paper_voucher": "Holman08-03",
+      "plastid": "KX256180.1",
+      "nuclear": "KX354414.1"
+    },
+    "Tsuga_sieboldii_Japan": {
+      "organism": "Tsuga sieboldii",
+      "paper_voucher": "Holman09-09 AA1007-80A",
+      "plastid": "KX256184.1",
+      "nuclear": "KX354398.1"
+    },
+    "Tsuga_diversifolia": {
+      "organism": "Tsuga diversifolia",
+      "paper_voucher": "Holman09-71 AA1146-86",
+      "plastid": "KX256182.1",
+      "nuclear": "KX354404.1"
+    }
+  },
+  "rows": [
+    {
+      "marker": "nuclear-4CL1",
+      "original_taxon_ids": [
+        "Tsuga_chinensis",
+        "Tsuga_caroliniana",
+        "Tsuga_sieboldii_Japan",
+        "Tsuga_diversifolia"
+      ],
+      "sites": 1048,
+      "estimated_split": [
+        [
+          "Tsuga_caroliniana",
+          "Tsuga_chinensis"
+        ],
+        [
+          "Tsuga_diversifolia",
+          "Tsuga_sieboldii_Japan"
+        ]
+      ],
+      "bootstrap_support": 1.0,
+      "bootstrap_replicates": 100,
+      "evidence_tier": "exploratory_sequence_estimate",
+      "biological_target": "ABSTAIN: no calibrated sequence-to-interface-law channel or applicable full source-image compiler",
+      "receipt": "nuclear-4CL1.receipt.json",
+      "verify_reexecution": "PASS"
+    },
+    {
+      "marker": "plastid-rbcL",
+      "original_taxon_ids": [
+        "Tsuga_chinensis",
+        "Tsuga_caroliniana",
+        "Tsuga_sieboldii_Japan",
+        "Tsuga_diversifolia"
+      ],
+      "sites": 1428,
+      "estimated_split": [
+        [
+          "Tsuga_caroliniana",
+          "Tsuga_diversifolia"
+        ],
+        [
+          "Tsuga_chinensis",
+          "Tsuga_sieboldii_Japan"
+        ]
+      ],
+      "bootstrap_support": 0.93,
+      "bootstrap_replicates": 100,
+      "evidence_tier": "exploratory_sequence_estimate",
+      "biological_target": "ABSTAIN: no calibrated sequence-to-interface-law channel or applicable full source-image compiler",
+      "receipt": "plastid-rbcL.receipt.json",
+      "verify_reexecution": "PASS"
+    }
+  ],
+  "observed_marker_summary_agreement": false,
+  "chloroplast_capture_conclusion": "UNKNOWN",
+  "genealogy_law_or_calibrated_confidence_region": null,
+  "uncertainty_note": "Column bootstrap is descriptive marker resampling, not calibrated species-history/capture probability or independent locus replication.",
+  "empirical_solver_admission": "NOT_ADMITTED_TO_EMPIRICAL_SOLVER",
+  "inferred_region_note": "T.chinensis rbcL candidate is unannotated in deposit;33unique exact40nt anchors to annotatedT.caroliniana span determine the inferred1428nt region, with coding-boundary and global alignment checks recorded.",
+  "source_manifest": "MANIFEST.json",
+  "repeat_command": "From repository root with Biopython1.88: python research/2026-10-08-codex-integration-0825z/g6/prepare_real_baseline.py --output /absolute/fresh-output-directory",
+  "full_original_Dryad_alignments_retrieved": false
+}

@@ -1,0 +1,9 @@
+# Recovered molecular applications
+
+Existing haplotype/RNA contracts, Python modules, Rust core, tests and public-reference fixtures are preserved at the [migration source pin](../MIGRATION-PROVENANCE.json). Owned application code uses the parent Apache 2.0 license; reference data and external dependencies retain their terms. Historical private-location instructions are superseded for this named public migration.
+
+Run `python3 applications/scientific-integration/run.py molecular` for RNA mock reports, adding the built native core as documented in [common setup](../README.md) for haplotype assembly. Rust validates/builds the matched REF/A/B/AB sequences; Python computes declared endpoints from the selected provider. The common entry point forces the synthetic provider.
+
+Expression, splicing/site usage/junctions and PAS proxies are distinct quantities. Missing modalities remain unavailable. Hypothetical phase is not observed phase; predicted nonadditivity requires four matched sequence predictions on the same declared scale. The TERT mock assembly example has zero endpoint interactions; it tests plumbing, not demonstrated biological nonadditivity. A separate policy fixture illustrates synthetic interaction arithmetic.
+
+The official AlphaGenome 0.9.0 SDK is now [offline-installation checked](../../research/2026-10-08-codex-integration-0825z/lean-release/SDK-OFFLINE-RECOVERY.json). No credentials or live client were activated. The inherited live provider/launcher is recovered draft code; it is not certified to satisfy the newer bounded-access policy. [Access design](../../research/2026-10-08-codex-integration-0825z/ACCESS-PLAN.md) controls future activation. Human/mouse prediction contracts do not establish plant-hemlock applicability, measured RNA or calibrated biological confidence.

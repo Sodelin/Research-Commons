@@ -1,0 +1,17 @@
+# Continuation checkpoint — 2026-10-08 00:50 UTC
+
+Implemented privately alongside existing workbench: shared molecular-apps-v1 contracts, bounded std-only Rust edit assembler, matched four-condition haplotype module, RNA transcript-exon/splice/PAS proxy service, official v1 SDK adapter, deterministic synthetic provider and one CLI. All changes are confined to this new project; original production code and G1–G7 remain unchanged.
+
+Actual verification: final native18 library+3 CLI tests PASS; own haplotype20 and RNA23 test receipts preserved; complete product87 Python tests PASS with all21 input hashes and native executable unchanged before/after. Earlier80 and84 PASS gates remain at their own exact inputs. Initial rustdoc-path failure and the first RNA failing test run remain saved, with corrections distinguished. SDK-interface doubles are synthetic and load no actual SDK. Full logs and source hashes are in core/reports and reports/whole-product-attempt3.
+
+Three CLI invocations ran with MOCK_SYNTHETIC: public-reference TERT haplotype, public-reference RNA, and small synthetic RNA/PAS. The first executions remain saved at their historical source inputs. All three demonstrations then ran again on final frozen source after the review corrections, with every input/source hash and native binary unchanged before/after; see reports/cli-smoke-final. The final whole-product suite also exercises the CLI. The read-only access check returned UNSUPPORTED: official SDK absent, access/terms unconfirmed, API key absent. No AlphaGenome model inference ran.
+
+Live adapter source signatures are checked against official SDK Git commit038d253a5ca2fec46f4874f592d9ec67984cb497. Model enum and SDK version are recorded, but immutable server weights are not exposed. Connection readiness timeout is not an RPC deadline. A bounded authorized live execution/quota protocol is a remaining technical gate. No SDK/account/credentials/service terms were installed or accepted.
+
+Current limitations: initial positional scorer requires per-base tracks; no typed junction adapter or derived PSI; complex delins rejected; PAS is an annotated two-window coverage-ratio proxy rather than direct PAS usage or the official multisplit scorer. No personal genomes, diploid aggregation, disease inference, historical reconstruction, clinical conclusion or trained model built from service outputs.
+
+Scientific protocol and candidate admission register are public: research/2026-10-08-cloud-alphagenome-source-review-sol-0010z. Siraj paired regulatory MPRA, Vex-seq and APARENT are candidates; experimental artifact content, usable counts, exact context matching, permissions and training/calibration exposure remain pending. No benchmark is admitted or run. Public-reference TERT hypothetical cis and DNM1 are reproduction cases.
+
+Next decisive step: resolve authorized official SDK/access/terms and a bounded live request, select exact RNA/splice track metadata, then execute one explicitly recorded real-model smoke test on the checked public reference. In parallel, audit one candidate experimental artifact and freeze eligible matched records/splits before prediction. Additional endpoint adapters are separate work; never substitute an unavailable target.
+
+Publication: implementation/failures/evidence stay private. Public Commons receives only intentionally shareable interface, plans, scope and sanitized receipt summary. Source–observation–target–action applicability is in G-APPLICABILITY.md. Formal Lean continuation has its own sole owner and frozen inputs.

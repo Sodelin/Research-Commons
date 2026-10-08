@@ -1,0 +1,551 @@
+{
+  "status": "STATIC DAG only; author freeze, source/API/selection review and fresh root gate pending; no compiler authorization",
+  "target": "G6FixedCalendarSharedBank",
+  "draft_path": "research/2026-10-08-codex-integration-0825z/g6/G6FixedCalendarSharedBank.lean",
+  "draft_sha256": "31d37a165d70a0851db0030f474ba7d3097d96d67dd12cadeb51ce20bb74e55e",
+  "provider_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+  "accepted_run": 37749239915,
+  "accepted_custom": 181,
+  "smallest_independent_stage_custom": 38,
+  "stage_mathlib_roots": [
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+    "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.Order.Field.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Exp",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Data.ENNReal.BigOperators",
+    "Mathlib.Data.Fin.Tuple.Basic",
+    "Mathlib.Data.Finset.Card",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Data.Fintype.Basic",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Data.Fintype.Card",
+    "Mathlib.Data.Fintype.EquivFin",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.Rat.BigOperators",
+    "Mathlib.Data.Rat.Lemmas",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.Logic.Relation",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.Probability.Distributions.Exponential",
+    "Mathlib.Probability.Distributions.Uniform",
+    "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+    "Mathlib.Tactic",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring"
+  ],
+  "stage_lean_std_init_roots": [
+    "Lean.Elab.Tactic.Omega"
+  ],
+  "accepted181_provider_intersection": 37,
+  "incremental_custom_modules_vs181": [
+    "G6FixedCalendarSharedBank"
+  ],
+  "incremental_custom_count": 1,
+  "additional_mathlib_roots_vs181": [
+    "Mathlib.Algebra.Order.Field.Basic"
+  ],
+  "modules": {
+    "SourceNetwork": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceNetwork.lean",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "bytes": 8458,
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "GraphLeaves": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphLeaves.lean",
+      "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "bytes": 3088,
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "GraphCuts": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphCuts.lean",
+      "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "bytes": 4515,
+      "imports": [
+        "GraphLeaves"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5BridgeBarrier": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeBarrier.lean",
+      "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "bytes": 3984,
+      "imports": [
+        "GraphCuts"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5CalendarRoutes": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CalendarRoutes.lean",
+      "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "bytes": 8679,
+      "imports": [
+        "G5BridgeBarrier",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5ProtectiveBlock": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ProtectiveBlock.lean",
+      "sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "bytes": 2587,
+      "imports": [
+        "G5CalendarRoutes"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5MinimalGraphInterface": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5MinimalGraphInterface.lean",
+      "sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "bytes": 1896,
+      "imports": [
+        "GraphCuts"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G2LiveLineageRouting": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G2LiveLineageRouting.lean",
+      "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "bytes": 5339,
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Rat.Lemmas",
+        "Mathlib.Tactic.Ring"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G6BridgeCannotEnterHybrid": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G6BridgeCannotEnterHybrid.lean",
+      "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "bytes": 3752,
+      "imports": [
+        "G5MinimalGraphInterface",
+        "G2LiveLineageRouting"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5BridgeComponentEntries": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeComponentEntries.lean",
+      "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "bytes": 4488,
+      "imports": [
+        "G6BridgeCannotEnterHybrid",
+        "G5CalendarRoutes"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5NonbridgeRouteBound": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5NonbridgeRouteBound.lean",
+      "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "bytes": 8540,
+      "imports": [
+        "G5CalendarRoutes",
+        "Mathlib.Data.Fintype.Card"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5ComponentCalendarCoverage": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ComponentCalendarCoverage.lean",
+      "sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "bytes": 4589,
+      "imports": [
+        "G5BridgeComponentEntries",
+        "G5NonbridgeRouteBound",
+        "Mathlib.Tactic"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5ActualComponentSupport": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ActualComponentSupport.lean",
+      "sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "bytes": 5163,
+      "imports": [
+        "G5ComponentCalendarCoverage"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5RootRouteCurrentSupport": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5RootRouteCurrentSupport.lean",
+      "sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "bytes": 6503,
+      "imports": [
+        "G5ActualComponentSupport"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5CurrentPortTwoPositions": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CurrentPortTwoPositions.lean",
+      "sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "bytes": 4876,
+      "imports": [
+        "G5RootRouteCurrentSupport"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5OriginalTipCurrentSupport": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalTipCurrentSupport.lean",
+      "sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "bytes": 5035,
+      "imports": [
+        "G5CurrentPortTwoPositions"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5ParentChoiceCalendar": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentChoiceCalendar.lean",
+      "sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "bytes": 8077,
+      "imports": [
+        "G5OriginalTipCurrentSupport"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "SourceLabelledForest": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceLabelledForest.lean",
+      "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "bytes": 32780,
+      "imports": [
+        "G2LiveLineageRouting",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5CoupledQuartetKernel": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CoupledQuartetKernel.lean",
+      "sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "bytes": 4175,
+      "imports": [
+        "Mathlib.Tactic"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5FairSelectorMoments": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairSelectorMoments.lean",
+      "sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+      "bytes": 1726,
+      "imports": [
+        "G5CoupledQuartetKernel",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5FairOriginalCoinLaw": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairOriginalCoinLaw.lean",
+      "sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "bytes": 4437,
+      "imports": [
+        "SourceLabelledForest",
+        "G5FairSelectorMoments",
+        "Mathlib.Data.Rat.BigOperators",
+        "Mathlib.Data.ENNReal.BigOperators",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5OriginalCoinPMF": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalCoinPMF.lean",
+      "sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "bytes": 3960,
+      "imports": [
+        "G5FairOriginalCoinLaw"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5ParentPositionPushforward": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentPositionPushforward.lean",
+      "sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "bytes": 6372,
+      "imports": [
+        "G5ParentChoiceCalendar",
+        "G5OriginalCoinPMF"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5SafePastHybridDisjointness": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastHybridDisjointness.lean",
+      "sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "bytes": 6676,
+      "imports": [
+        "G5ProtectiveBlock",
+        "G5ParentPositionPushforward"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5PairOnlySureBlockChronology": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5PairOnlySureBlockChronology.lean",
+      "sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "bytes": 5576,
+      "imports": [
+        "G5SafePastHybridDisjointness"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5SafePastMeetingPermanence": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastMeetingPermanence.lean",
+      "sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "bytes": 6798,
+      "imports": [
+        "G5PairOnlySureBlockChronology"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5ExponentialGermIdentification": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ExponentialGermIdentification.lean",
+      "sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "bytes": 4073,
+      "imports": [
+        "Mathlib.LinearAlgebra.Vandermonde",
+        "Mathlib.Analysis.SpecialFunctions.Exp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5UnknownRateSupport": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5UnknownRateSupport.lean",
+      "sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "bytes": 2752,
+      "imports": [
+        "G5ExponentialGermIdentification",
+        "Mathlib.Algebra.BigOperators.Finsupp.Basic"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G5OriginalRouteHazard": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalRouteHazard.lean",
+      "sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "bytes": 9219,
+      "imports": [
+        "G5SafePastMeetingPermanence",
+        "G5UnknownRateSupport",
+        "Mathlib.Data.Finset.Max"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G4TwoRootSourceStopping": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4TwoRootSourceStopping.lean",
+      "sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "bytes": 11260,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G1SharedRegisterStress": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G1SharedRegisterStress.lean",
+      "sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "bytes": 7319,
+      "imports": [
+        "Mathlib.Probability.Distributions.Exponential",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G4FourRootPositivity": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4FourRootPositivity.lean",
+      "sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "bytes": 3644,
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G4IndependentRoutingBridge": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4IndependentRoutingBridge.lean",
+      "sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "bytes": 10707,
+      "imports": [
+        "G2LiveLineageRouting",
+        "G1SharedRegisterStress",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Lean.Elab.Tactic.Omega",
+        "G4FourRootPositivity",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G4AllRootPairClocks": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4AllRootPairClocks.lean",
+      "sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "bytes": 3781,
+      "imports": [
+        "G4IndependentRoutingBridge",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G4PathResolvedMeasurement": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4PathResolvedMeasurement.lean",
+      "sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+      "bytes": 26027,
+      "imports": [
+        "G4TwoRootSourceStopping",
+        "G4AllRootPairClocks",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "UnifiedLean.Source.NativeParentRouting": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeParentRouting.lean",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "bytes": 8794,
+      "imports": [
+        "G5OriginalRouteHazard",
+        "G4PathResolvedMeasurement",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Finset.Card"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "UnifiedLean.Source.NativePairClockLaw": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativePairClockLaw.lean",
+      "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "bytes": 7243,
+      "imports": [
+        "UnifiedLean.Source.NativeParentRouting",
+        "G4AllRootPairClocks",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "source_version": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+      "in_accepted181": true
+    },
+    "G6FixedCalendarSharedBank": {
+      "repository_path": "research/2026-10-08-codex-integration-0825z/g6/G6FixedCalendarSharedBank.lean",
+      "sha256": "31d37a165d70a0851db0030f474ba7d3097d96d67dd12cadeb51ce20bb74e55e",
+      "bytes": 3512,
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "Mathlib.Algebra.Order.Field.Basic"
+      ],
+      "source_version": "owned local draft, compiler UNCHECKED",
+      "in_accepted181": false
+    }
+  },
+  "topological_order": [
+    "SourceNetwork",
+    "GraphLeaves",
+    "GraphCuts",
+    "G5BridgeBarrier",
+    "G5CalendarRoutes",
+    "G5ProtectiveBlock",
+    "G5MinimalGraphInterface",
+    "G2LiveLineageRouting",
+    "G6BridgeCannotEnterHybrid",
+    "G5BridgeComponentEntries",
+    "G5NonbridgeRouteBound",
+    "G5ComponentCalendarCoverage",
+    "G5ActualComponentSupport",
+    "G5RootRouteCurrentSupport",
+    "G5CurrentPortTwoPositions",
+    "G5OriginalTipCurrentSupport",
+    "G5ParentChoiceCalendar",
+    "SourceLabelledForest",
+    "G5CoupledQuartetKernel",
+    "G5FairSelectorMoments",
+    "G5FairOriginalCoinLaw",
+    "G5OriginalCoinPMF",
+    "G5ParentPositionPushforward",
+    "G5SafePastHybridDisjointness",
+    "G5PairOnlySureBlockChronology",
+    "G5SafePastMeetingPermanence",
+    "G5ExponentialGermIdentification",
+    "G5UnknownRateSupport",
+    "G5OriginalRouteHazard",
+    "G4TwoRootSourceStopping",
+    "G1SharedRegisterStress",
+    "G4FourRootPositivity",
+    "G4IndependentRoutingBridge",
+    "G4AllRootPairClocks",
+    "G4PathResolvedMeasurement",
+    "UnifiedLean.Source.NativeParentRouting",
+    "UnifiedLean.Source.NativePairClockLaw",
+    "G6FixedCalendarSharedBank"
+  ],
+  "runtime_budget": "Unestimated: new-provider actual timings and scoped owner proposal required; existing181 times are observations, not upper bounds",
+  "axiom_audit_requirement": "All successful modules, including generated/type/body/transitive-axiom rows; compare inherited rows and expose generated additions",
+  "controls": "No controls, workflows, formal sources or target lists edited",
+  "compiler_invoked": false,
+  "actions_dispatched": false,
+  "scope": "This dependency selection records source identities and import closure; it proves no new theorem or source/application bridge"
+}

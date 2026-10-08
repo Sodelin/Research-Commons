@@ -1,0 +1,89 @@
+{
+  "observation_kind": "exact_unranked_law",
+  "n": 4,
+  "registry": {
+    "complete": true,
+    "hybrid_ids": []
+  },
+  "task": "identify_target",
+  "mechanisms": [
+    "common"
+  ],
+  "limits": {
+    "seconds": 20,
+    "max_sources": 30,
+    "smt_milliseconds": 5000
+  },
+  "rows": [
+    {
+      "samples": {
+        "Tsuga_chinensis": [
+          "L0"
+        ],
+        "Tsuga_caroliniana": [
+          "L1"
+        ],
+        "Tsuga_sieboldii_Japan": [
+          "L2"
+        ],
+        "Tsuga_diversifolia": [
+          "L3"
+        ]
+      },
+      "readout": "unrooted_splits",
+      "law": [
+        {
+          "outcome": [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ],
+          "p": "4/5"
+        },
+        {
+          "outcome": [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ],
+          "p": "1/10"
+        },
+        {
+          "outcome": [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ],
+          "p": "1/10"
+        }
+      ]
+    }
+  ],
+  "taxa": [
+    "Tsuga_chinensis",
+    "Tsuga_caroliniana",
+    "Tsuga_sieboldii_Japan",
+    "Tsuga_diversifolia"
+  ]
+}

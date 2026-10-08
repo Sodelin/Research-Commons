@@ -1,0 +1,41 @@
+{
+  "commands": [
+    {
+      "stage": "producer",
+      "command": [
+        "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+        "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+        "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_nuclear_like/REQUEST.json",
+        "--output",
+        "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_nuclear_like"
+      ],
+      "started_utc": "2026-10-08T08:45:30.729615+00:00",
+      "ended_utc": "2026-10-08T08:45:31.232896+00:00",
+      "elapsed_seconds": 0.5032830529999046,
+      "exit_code": 0,
+      "stdout_sha256": "36900ed2b895da5fdeaebdd1f7ab0d74c36d471808e2ec1a482aa6f09efe4ab4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "checker",
+      "command": [
+        "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+        "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+        "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_nuclear_like/RESULT.json",
+        "--replay-backend"
+      ],
+      "started_utc": "2026-10-08T08:45:31.232954+00:00",
+      "ended_utc": "2026-10-08T08:45:31.700031+00:00",
+      "elapsed_seconds": 0.4670887479999237,
+      "exit_code": 0,
+      "stdout_sha256": "3f24c99c9ce70e9119d300d3071dedc294a44b33e3493de1eadb1865129a3c4e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "status": "IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY",
+  "input_sha256": "df5604e61a26e38b11affce83dfd05b1443c3c16d4afc3c3c97de4d9f4c525e9",
+  "result_sha256": "0b1a7f819641bd873d0a8785d5a90ade70f51e0b12fb6d87999bed01bc5a8cc8",
+  "python": "3.12.14",
+  "producer_sha256": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+  "checker_sha256": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840"
+}

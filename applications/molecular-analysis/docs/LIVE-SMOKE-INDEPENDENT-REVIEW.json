@@ -1,0 +1,52 @@
+{
+  "reviewer": "/root/source_backend_review_sol",
+  "status": "INCOMPLETE/PENDING \u2014 review stopped by Nolan through root on 2026-10-08",
+  "source_acceptance_issued": false,
+  "saved_receipt_independently_authenticated": false,
+  "inspected_inputs": [
+    {
+      "path": "molecular_apps/live_smoke.py",
+      "sha256": "bc0b946c34687e79a5037724fbd1232337533e8d182a1dd6709dd6346ea1a28d",
+      "bytes": 20997,
+      "inspection": "Entire 400-line launcher source read; digest matched author first freeze"
+    },
+    {
+      "path": "tests/test_live_smoke.py",
+      "sha256": "b55b370b3447dd014a8a54278efad618d8c50d82058d63a6df48ce3ed6d39930",
+      "bytes": 21230,
+      "inspection": "Entire 415-line deterministic mock test source read; digest matched author first freeze"
+    },
+    {
+      "path": "docs/LIVE-SMOKE-DRAFT.md",
+      "sha256": "3f3d3edee8045e1328ba47e2b2faeef18b82114ce124b5343b4cb5eb141b5b83",
+      "bytes": 14094,
+      "inspection": "Draft scope, historical first freeze and embedded author 25-test receipt read; digest matched author finished freeze. Later author deferral-note edits are outside this incomplete snapshot"
+    }
+  ],
+  "additional_context": "AGENTS.md read; narrow rg call-site search only in existing providers.py, cli.py and haplotype.py. No SDK/dependency inspection in this interrupted task.",
+  "findings": "No definite blocking implementation defect established before interruption. This is not a source acceptance, completeness conclusion or live-integration verdict.",
+  "observations": [
+    "Launcher uses a single Popen path, nonblocking stdin and pipe streams, fixed read caps, child wall deadline, best-effort process-group SIGKILL and at most one second child wait.",
+    "Fixed receipt summary excludes raw stdout/stderr and exception messages. Stderr is counted without retained contents.",
+    "Declared complete-child adapter method count is four predict_sequence plus four output_metadata invocations, not one RPC.",
+    "Authorization/public-input assertions, request/track/source/core/Python hashes, identity/status checks and final snapshots are present in inspected source.",
+    "Draft explicitly leaves SDK internal retries, RPC/quota count, server cancellation, installed SDK/weights authentication and actual OS scheduling/live inference unverified."
+  ],
+  "remaining_review": [
+    "Complete process-control/error-path assessment and necessary existing caller/API comparison",
+    "Authenticate actual saved mock receipt/output bytes and source-before/after pins",
+    "Independently determine scoped source acceptance; actual live SDK integration remains separate"
+  ],
+  "activities": {
+    "compiler": false,
+    "test_replay": false,
+    "project_import": false,
+    "native_or_live_child": false,
+    "sdk_or_prediction_call": false,
+    "credential_read": false,
+    "network": false,
+    "git_mutation_or_publication": false,
+    "children": false
+  },
+  "privacy": "Private project review notes only; no product source or private findings published publicly."
+}

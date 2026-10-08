@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/prepare_real_baseline.py", line 97, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/prepare_real_baseline.py", line 44, in main
+    out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE'

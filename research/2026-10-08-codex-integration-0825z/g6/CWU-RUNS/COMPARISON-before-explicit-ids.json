@@ -1,0 +1,200 @@
+{
+  "schema": "raubeson-tsuga-paper-summary-control-v1",
+  "question": "What does reported nuclear/chloroplast topology disagreement establish, and what needs empirical solver admission?",
+  "source": {
+    "doi": "10.1600/036364417X696474",
+    "dataset_doi": "doi:10.5061/dryad.2r12j",
+    "metadata_sha256": "5ccb79b579716cb8f3f8b0a9341ed4fa84dfb0e573ff5180ea1a017742260f1e",
+    "license": "https://spdx.org/licenses/CC0-1.0.html"
+  },
+  "baseline": {
+    "input_kind": "abstract reported sister clades, hand-transcribed",
+    "nuclear_sister_clade": [
+      "Tsuga_caroliniana",
+      "Tsuga_chinensis"
+    ],
+    "chloroplast_sister_clade": [
+      "Tsuga_chinensis",
+      "Tsuga_sieboldii_Japan"
+    ],
+    "same_rooted_tree_clades_compatible": false,
+    "proof": "Rooted-tree descendant clades are nested or disjoint; these intersect only at T.chinensis and neither contains the other."
+  },
+  "biological_conclusion": "UNKNOWN: incompatible reported trees do not choose chloroplast capture versus other explanations.",
+  "empirical_admission": "NOT_ADMITTED_TO_EMPIRICAL_SOLVER",
+  "no_confidence_interval": "No gene-tree count/sample design/calibrated law was admitted; strong/moderate paper support is not a numerical probability here.",
+  "original_solver_controls": [
+    {
+      "name": "synthetic_nuclear_like",
+      "evidence_class": "SYNTHETIC_EXACT_LAW",
+      "status": "IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY",
+      "checker": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 15,
+        "independent_exact_entries": 13,
+        "same_backend_unsat_replays": 2,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "target": [
+        [
+          [
+            "L0",
+            "L1"
+          ],
+          [
+            "L2",
+            "L3"
+          ]
+        ]
+      ],
+      "source_count_examined": 15,
+      "no_unknown_registry_or_compartment_model_claim": true,
+      "commands": [
+        {
+          "stage": "producer",
+          "command": [
+            "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+            "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_nuclear_like/REQUEST.json",
+            "--output",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_nuclear_like"
+          ],
+          "started_utc": "2026-10-08T08:45:30.729615+00:00",
+          "ended_utc": "2026-10-08T08:45:31.232896+00:00",
+          "elapsed_seconds": 0.5032830529999046,
+          "exit_code": 0,
+          "stdout_sha256": "36900ed2b895da5fdeaebdd1f7ab0d74c36d471808e2ec1a482aa6f09efe4ab4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "stage": "checker",
+          "command": [
+            "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+            "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_nuclear_like/RESULT.json",
+            "--replay-backend"
+          ],
+          "started_utc": "2026-10-08T08:45:31.232954+00:00",
+          "ended_utc": "2026-10-08T08:45:31.700031+00:00",
+          "elapsed_seconds": 0.4670887479999237,
+          "exit_code": 0,
+          "stdout_sha256": "3f24c99c9ce70e9119d300d3071dedc294a44b33e3493de1eadb1865129a3c4e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "synthetic_plastid_like",
+      "evidence_class": "SYNTHETIC_EXACT_LAW",
+      "status": "IDENTIFIED_TARGET_COMPLETE_KNOWN_REGISTRY",
+      "checker": {
+        "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+        "entries": 15,
+        "independent_exact_entries": 13,
+        "same_backend_unsat_replays": 2,
+        "global_unknown_size_NO_inferred": false,
+        "Lean_verification_inferred": false
+      },
+      "target": [
+        [
+          [
+            "L0",
+            "L2"
+          ],
+          [
+            "L1",
+            "L3"
+          ]
+        ]
+      ],
+      "source_count_examined": 15,
+      "no_unknown_registry_or_compartment_model_claim": true,
+      "commands": [
+        {
+          "stage": "producer",
+          "command": [
+            "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+            "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_plastid_like/REQUEST.json",
+            "--output",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_plastid_like"
+          ],
+          "started_utc": "2026-10-08T08:45:31.701319+00:00",
+          "ended_utc": "2026-10-08T08:45:32.242326+00:00",
+          "elapsed_seconds": 0.5410604829999102,
+          "exit_code": 0,
+          "stdout_sha256": "b3f0a603457e63ea5601718600e80effbd8a27b0860955b68f7eb680c6689806",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "stage": "checker",
+          "command": [
+            "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+            "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/synthetic_plastid_like/RESULT.json",
+            "--replay-backend"
+          ],
+          "started_utc": "2026-10-08T08:45:32.242438+00:00",
+          "ended_utc": "2026-10-08T08:45:32.695044+00:00",
+          "elapsed_seconds": 0.4526173149999977,
+          "exit_code": 0,
+          "stdout_sha256": "3f24c99c9ce70e9119d300d3071dedc294a44b33e3493de1eadb1865129a3c4e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "empirical_tsuga_refusal",
+      "evidence_class": "EMPIRICAL_ADMISSION_REFUSAL",
+      "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+      "checker": {
+        "status": "PASS_HONEST_ADMISSION_REJECTION",
+        "source_feasibility_or_empirical_NO_inferred": false
+      },
+      "target": null,
+      "source_count_examined": null,
+      "no_unknown_registry_or_compartment_model_claim": true,
+      "commands": [
+        {
+          "stage": "producer",
+          "command": [
+            "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+            "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/empirical_tsuga_refusal/REQUEST.json",
+            "--output",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/empirical_tsuga_refusal"
+          ],
+          "started_utc": "2026-10-08T08:45:32.695808+00:00",
+          "ended_utc": "2026-10-08T08:45:33.062454+00:00",
+          "elapsed_seconds": 0.366654803000074,
+          "exit_code": 2,
+          "stdout_sha256": "a27d6b0407799493dbf91d551cea9d1ff2e989db852dd50bfb1394f95d329379",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "stage": "checker",
+          "command": [
+            "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+            "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+            "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/empirical_tsuga_refusal/RESULT.json",
+            "--replay-backend"
+          ],
+          "started_utc": "2026-10-08T08:45:33.062509+00:00",
+          "ended_utc": "2026-10-08T08:45:33.405183+00:00",
+          "elapsed_seconds": 0.34268715999996857,
+          "exit_code": 0,
+          "stdout_sha256": "7fb1c07338a6279e4e408a30a34dac0cde73cd69895282e53b0e77856c1507ec",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "plant_alphagenome_use": false,
+  "professor_contact_or_endorsement": false,
+  "comparison": {
+    "synthetic_tree_targets_differ": true,
+    "empirical_capture_identified": false,
+    "possible_under_real_input_uncertainty": "unknown; no numeric region admitted"
+  }
+}

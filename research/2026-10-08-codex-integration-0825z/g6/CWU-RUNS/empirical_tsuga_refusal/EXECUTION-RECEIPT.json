@@ -1,0 +1,41 @@
+{
+  "commands": [
+    {
+      "stage": "producer",
+      "command": [
+        "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+        "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+        "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/empirical_tsuga_refusal/REQUEST.json",
+        "--output",
+        "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/empirical_tsuga_refusal"
+      ],
+      "started_utc": "2026-10-08T08:45:32.695808+00:00",
+      "ended_utc": "2026-10-08T08:45:33.062454+00:00",
+      "elapsed_seconds": 0.366654803000074,
+      "exit_code": 2,
+      "stdout_sha256": "a27d6b0407799493dbf91d551cea9d1ff2e989db852dd50bfb1394f95d329379",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "checker",
+      "command": [
+        "/workspace/Research-Commons/scratch/integration-g6/solver-venv/bin/python",
+        "/workspace/Research-Commons/research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+        "/workspace/Research-Commons/research/2026-10-08-codex-integration-0825z/g6/CWU-RUNS/empirical_tsuga_refusal/RESULT.json",
+        "--replay-backend"
+      ],
+      "started_utc": "2026-10-08T08:45:33.062509+00:00",
+      "ended_utc": "2026-10-08T08:45:33.405183+00:00",
+      "elapsed_seconds": 0.34268715999996857,
+      "exit_code": 0,
+      "stdout_sha256": "7fb1c07338a6279e4e408a30a34dac0cde73cd69895282e53b0e77856c1507ec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "status": "UNKNOWN_UNSUPPORTED_OR_UNADMITTED_CONTRACT",
+  "input_sha256": "2a36158f9ce3e163f61ae682460e4ec1a230d7272edaef4bb733d3e27104f13d",
+  "result_sha256": "350f3410bb6d0c73886d6b113548b3cc8b9e2cab1ca8c37e7600350b0c8ce3ef",
+  "python": "3.12.14",
+  "producer_sha256": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+  "checker_sha256": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840"
+}

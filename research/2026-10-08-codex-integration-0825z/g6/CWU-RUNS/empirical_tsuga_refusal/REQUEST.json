@@ -1,0 +1,96 @@
+{
+  "observation_kind": "exact_unranked_law",
+  "n": 4,
+  "registry": {
+    "complete": true,
+    "hybrid_ids": []
+  },
+  "task": "identify_target",
+  "mechanisms": [
+    "common"
+  ],
+  "limits": {
+    "seconds": 20,
+    "max_sources": 30,
+    "smt_milliseconds": 5000
+  },
+  "rows": [
+    {
+      "samples": {
+        "Tsuga_chinensis": [
+          "L0"
+        ],
+        "Tsuga_caroliniana": [
+          "L1"
+        ],
+        "Tsuga_sieboldii_Japan": [
+          "L2"
+        ],
+        "Tsuga_diversifolia": [
+          "L3"
+        ]
+      },
+      "readout": "unrooted_splits",
+      "law": [
+        {
+          "outcome": [
+            [
+              [
+                "L0",
+                "L1"
+              ],
+              [
+                "L2",
+                "L3"
+              ]
+            ]
+          ],
+          "p": "4/5"
+        },
+        {
+          "outcome": [
+            [
+              [
+                "L0",
+                "L2"
+              ],
+              [
+                "L1",
+                "L3"
+              ]
+            ]
+          ],
+          "p": "1/10"
+        },
+        {
+          "outcome": [
+            [
+              [
+                "L0",
+                "L3"
+              ],
+              [
+                "L1",
+                "L2"
+              ]
+            ]
+          ],
+          "p": "1/10"
+        }
+      ]
+    }
+  ],
+  "taxa": [
+    "Tsuga_chinensis",
+    "Tsuga_caroliniana",
+    "Tsuga_sieboldii_Japan",
+    "Tsuga_diversifolia"
+  ],
+  "empirical_admission": {
+    "status": "NOT_ADMITTED_TO_EMPIRICAL_SOLVER",
+    "certificate_sha256": "6fc8d0850973ec9a65be678773330154b99b11f3f90ac316ca438e35fac76314",
+    "source_file_bytes_verified": false,
+    "metadata_inventory_count": 4,
+    "law_inputs_derived_from_data": false
+  }
+}
