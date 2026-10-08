@@ -1,8 +1,10 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:36 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:37 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [latest actual appended-interval bind closure failure](CALENDAR-BIND-CLOSURE-FAILED-REVIEW.md) independently authenticates **161 custom modules /313 named reports /3,912 owned declarations and2,547 theorems**. Actualrun37705599767 retains the whole preceding inventory exactly. Context advances past the initial measure conversions but fails its next bind rewrite; the whole module and three blocked dependents remain excluded. There is no358-report or full cut/history acceptance. The [preceding closure failure](CALENDAR-CONTEXT-CLOSURE-FAILED-REVIEW.md) preserves its dated actual evidence.
+
+The [exact completed-PMF bind closure](CALENDAR-CONTEXT-PMF-CLOSURE-SOURCE-REVIEW.md) clears source review at3694d292: the same existing bind equalities are used by explicit old-forward/new-backward transitivity and the same interval constructors are typed. All statements/source premises stay fixed. It remains compiler UNCHECKED; no finite-preflight or molecular implementation is added to the authorized165/358 selection.
 
 The [exact completed-measure transitivity repair](CALENDAR-CONTEXT-MEASURE-CLOSURE-SOURCE-REVIEW.md) clears source review at0ee63650: both measure conversions are explicit uses of the already proved actual completed_joint_toMeasure equality. All remaining source bytes and161 accepted source hashes are fixed. Its subsequent actual failure is recorded above; the failed module and three blocked consumers are wholly excluded. The [earlier Context proof repair](CALENDAR-CONTEXT-ELABORATION-SOURCE-REVIEW.md) retains its dated source-only gate; its subsequent actual failure is preserved above.
 
