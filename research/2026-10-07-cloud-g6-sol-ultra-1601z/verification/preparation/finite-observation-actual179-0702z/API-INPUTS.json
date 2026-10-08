@@ -1,0 +1,121 @@
+{
+  "status": "Read-only complete source and pinned interface checks; no compiler invocation",
+  "mathlib": [
+    {
+      "path": "Mathlib/Probability/ProbabilityMassFunction/Constructions.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "09a7cf241524c158d4174e994e04140901630c7e0629ceee9b7ba7ec347d2cd4",
+      "bytes": 11701,
+      "git_blob_sha": "f84582dd28948439cbd15acc38dc07c1878cf3a9",
+      "interface": [
+        "PMF.ofFintype requires exact finite ENNReal mass one"
+      ]
+    },
+    {
+      "path": "Mathlib/Data/ENNReal/BigOperators.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "385840659c6255cbbe1e68107e0c62c2180fe6d49b745bda9ceefb0013540d32",
+      "bytes": 7976,
+      "git_blob_sha": "f1043d0e20b6886f0af3f45ac6593713ebeb7387",
+      "interface": [
+        "ofReal_sum_of_nonneg requires every finite real summand nonnegative"
+      ]
+    },
+    {
+      "path": "Mathlib/Data/ENNReal/Basic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "1c25fed6fb4b1c7e819b206e6e74fcd3e886facca6ff3480871fb7ac33dcbc4a",
+      "bytes": 31194,
+      "git_blob_sha": "1a0a1261a3c53c90472e08b08d601adaf265ee5b",
+      "interface": [
+        "toReal_ofReal requires a nonnegative real coordinate"
+      ]
+    }
+  ],
+  "provider_pins": [
+    {
+      "module": "NaturalPastCompleteObservation",
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/NaturalPastCompleteObservation.lean",
+      "sha256": "a614f56eaa5910f31f97eb2aa91653ce0c5a257f6e70a4c29c2e0cc42520f582",
+      "imports": [
+        "NaturalCalendarPastAdmission",
+        "UnifiedLean.G6.CompleteObservationPrefix"
+      ],
+      "bytes": 13240,
+      "git_blob_sha": "50be584cf890f4138af84c0d32638af62451ef7e",
+      "compiler_status": "Actual179 PASS"
+    },
+    {
+      "module": "UnifiedLean.G6.FiniteProbability",
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteProbability.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+      "imports": [
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ],
+      "bytes": 4517,
+      "git_blob_sha": "bba1e21e9cf282ed88852a8a0c294eb9bb554852",
+      "compiler_status": "Actual179 PASS"
+    },
+    {
+      "module": "UnifiedLean.G6.MeanEnclosure",
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/MeanEnclosure.lean",
+      "sha256": "ff34fe3198c2c541819c1b7ab19784bfdbd476ca44f70b4f9ba0a402d88b7717",
+      "imports": [
+        "UnifiedLean.G6.ProgramPrefix",
+        "UnifiedLean.G6.ResidualPrefix"
+      ],
+      "bytes": 9476,
+      "git_blob_sha": "987b0aa9576fcbe4c56b98f6faca315908ab3125",
+      "compiler_status": "Actual179 PASS"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompiler",
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompiler.lean",
+      "sha256": "9974446d99fa344593d294e315e349ab71fdbe7574e932bb8b1a16ee1b2369fd",
+      "imports": [
+        "UnifiedLean.Source.SourceCalendarCompatibility",
+        "UnifiedLean.Source.SourceProgramTransport",
+        "UnifiedLean.Source.NativeParentRouting",
+        "Mathlib.Data.Finset.Sort"
+      ],
+      "bytes": 7020,
+      "git_blob_sha": "d6de979669c976fee9836f22b5478aab2f29caa6",
+      "compiler_status": "Actual179 PASS"
+    },
+    {
+      "module": "UnifiedLean.Source.SourceCalendarCompatibility",
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompatibility.lean",
+      "sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc",
+      "imports": [
+        "UnifiedLean.Source.SourcePoissonKernel",
+        "G5CalendarRoutes"
+      ],
+      "bytes": 7931,
+      "git_blob_sha": "4aa45e6031c2a6b85f54a2eb47037a247b34450b",
+      "compiler_status": "Actual179 PASS"
+    },
+    {
+      "module": "ActualCutJointLaw",
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCutJointLaw.lean",
+      "sha256": "3b0ccda0c4b96fe9e077817d4971fa38a1c7e3be1e3472fa037a88bfbecda93e",
+      "imports": [
+        "ActualCutTagRefinement",
+        "ActualTailBinRow",
+        "G2SameClockPastFutureLaw"
+      ],
+      "bytes": 10072,
+      "git_blob_sha": "1519b7b7b289e102ae196a69e7a13b986c8d7177",
+      "compiler_status": "Actual179 PASS"
+    }
+  ],
+  "checks": [
+    "PMF midpoint normalization is actual finite mass-one and nonnegative real coefficients.",
+    "TV symmetry, triangle, exact half-distance and strict validated margin use compiled unchanged providers.",
+    "Actual observation uses original once-drawn register and actual completed compiledCalendarProgram; no desired observation law premise.",
+    "ActualCutJointLaw namespace resolves TaggedEndpoint; no absent date alias in this new body.",
+    "All import names belong to actual181 DAG; all179 prior source hashes/imports/order are unchanged.",
+    "Actual runner selects12new names despite only10literal print directives; full generated ownership separately required."
+  ]
+}

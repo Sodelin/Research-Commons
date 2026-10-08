@@ -1,0 +1,104 @@
+{
+  "actual179_timing": {
+    "job_started_at": "2026-10-08T06:36:13Z",
+    "job_completed_at": "2026-10-08T06:49:01Z",
+    "job_elapsed_seconds": 768.0,
+    "serial_step_started_at": "2026-10-08T06:36:39Z",
+    "serial_step_completed_at": "2026-10-08T06:48:55Z",
+    "serial_step_elapsed_seconds": 736.0,
+    "custom_command_seconds": 674.215329,
+    "cache_command_seconds": 35.593832,
+    "audit_command_seconds": 9.085657000000001,
+    "timestamp_source": "Public REST job metadata, and actual per-command receipts; no estimated times."
+  },
+  "candidate181_budget": {
+    "actual179_job_seconds": 768,
+    "actual179_serial_seconds": 736,
+    "new_source_reserve_seconds_each": 10,
+    "new_source_reserve_seconds_total": 20,
+    "audit_growth_reserve_seconds": 10,
+    "runtime_cache_variation_margin_seconds": 100,
+    "planning_total_seconds": 898,
+    "job_cap_seconds": 900,
+    "per_command_cap_seconds": 180,
+    "flags": [
+      "--trust=0",
+      "-j1",
+      "-M4096"
+    ],
+    "justification": "Two 4689B/2855B sources, using only already accepted imports and identical external roots. Comparable actual finite-PMF/TV provider commands take 2.99\u20134.10s. Reserve 10s per new source plus separate audit10/variation100. Estimate only, with enforced caps unchanged; no guarantee or retry.",
+    "comparable_actual_receipts": [
+      {
+        "source": "FiniteProbability.lean",
+        "start": "2026-10-08T06:37:33.960562+00:00",
+        "end": "2026-10-08T06:37:37.291068+00:00",
+        "elapsed_seconds": 3.330506,
+        "exit": 0,
+        "stdout_sha256": "757498f226536e63546c9f57cb4e4328a4f178c0827c63b62563b24ae94b4f17"
+      },
+      {
+        "source": "Conditioning.lean",
+        "start": "2026-10-08T06:37:37.291420+00:00",
+        "end": "2026-10-08T06:37:40.276837+00:00",
+        "elapsed_seconds": 2.985417,
+        "exit": 0,
+        "stdout_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480"
+      },
+      {
+        "source": "ProgramPrefix.lean",
+        "start": "2026-10-08T06:40:46.546615+00:00",
+        "end": "2026-10-08T06:40:50.644417+00:00",
+        "elapsed_seconds": 4.097802,
+        "exit": 0,
+        "stdout_sha256": "50f32b8f7e283dbd21e5e7d50cd059858b4dddb1a05a1eb7c0db1d671684d30d"
+      },
+      {
+        "source": "RationalCertificate.lean",
+        "start": "2026-10-08T06:43:21.863460+00:00",
+        "end": "2026-10-08T06:43:25.530806+00:00",
+        "elapsed_seconds": 3.667346,
+        "exit": 0,
+        "stdout_sha256": "d6079ac219292fbbd73a6e50cc6d3b23e11ff8abd51e3020fef69d5b4c951072"
+      },
+      {
+        "source": "ResidualPrefix.lean",
+        "start": "2026-10-08T06:46:44.020171+00:00",
+        "end": "2026-10-08T06:46:47.558586+00:00",
+        "elapsed_seconds": 3.538415,
+        "exit": 0,
+        "stdout_sha256": "15ed2cb7bc9c01b3c45a027ee69176b9fd2cfd5bdf2e8ad5e34a33a249c0ae74"
+      },
+      {
+        "source": "MeanEnclosure.lean",
+        "start": "2026-10-08T06:46:47.558965+00:00",
+        "end": "2026-10-08T06:46:51.228849+00:00",
+        "elapsed_seconds": 3.669884,
+        "exit": 0,
+        "stdout_sha256": "afd42517b2e205decf8c7aeaf6678830f5076daf5d901d235eb9b1d14a451328"
+      }
+    ]
+  },
+  "alternatives": [
+    {
+      "custom": 180,
+      "named": 511,
+      "new_targets": [
+        "UnifiedLean.G6.FiniteCorruptionBoundary"
+      ],
+      "planning_seconds": 888,
+      "scope": "Finite PMF geometry only; new actual-source observation consumer remains unverified"
+    },
+    {
+      "custom": 185,
+      "named": 556,
+      "planning_seconds": 918,
+      "budget_basis": "768+40(new generic sources)+10audit+100variation",
+      "status": "Does not fit900cap; preparation only; native-source consumers still excluded"
+    },
+    {
+      "custom": 338,
+      "status": "Separate genuine native G1/G5/source consumer DAG; not enrolled or bounded by181",
+      "extra_custom_vs179": 159
+    }
+  ]
+}
