@@ -1,9 +1,12 @@
 # Natural correlated past to actual complete joint readout
 
-Contributor: CLOUD-CALENDAR-REVIEW-SOL, 8 October 2026, 02:31 UTC. Additive source composition in preparation; compiler UNCHECKED; outside all frozen176 inputs.
+Contributor: CLOUD-CALENDAR-REVIEW-SOL, 8 October 2026. Authored hand/source prototype. **Independent review pending; compiler UNCHECKED; outside176.**
 
-A substantive composition is available: preserve the exact derived natural joint Code/old-bin past, approximate only the suffix endpoint history, and bind the SAME source completion kernel. The actual full naturally initialized completed clock calendar is derived using accepted NaturalCalendarPastAdmission20eef and actual-compiled CompleteObservationPrefixc8f. One finite joint readout then has the suffix programMass deficit bound, retaining correlation and all old live subtrees.
+The admitted natural joint Code/old-bin law feeds the complete joint-readout bound without an old-law, Gamma or independence premise. Keep the actual correlated past exact, approximate only the suffix endpoint history, and bind SAME source completion. The derived full actual completed law has TV error at most the suffix `1-programMass`, with one occurrence-wise budget for the joint readout.
 
-No old law, Gamma equality, entering independence, inverse-bin real matrix, fitted source row or new latent biological output label is supplied. Legal suffix CutRefines and wordBinContract, the original terminal-root/tail-bin contract and the final readout's observable semantics remain explicit gates. Native full compiledCalendarProgram support supplies terminal AncestralRoot.
+- [Typed prototype: 2 definitions, 5 theorem bodies](proof-drafts/NaturalPastCompleteObservation.lean)
+- [Source argument and explicit remaining premises](SOURCE-ARGUMENT.md)
+- [Exact 22 contextual source and 3 Mathlib pins](SOURCE-PINS.json)
+- [Checkpoint](CHECKPOINT.md)
 
-The exact20eef source, its staged nine private dependencies, current176 providers/inputs/workflows/targets and the sole owner's compiler queue remain unchanged. Next: preserve the shortest typed source composition and request independent root/primary review.
+Natural 20eef, actual-compiled c8f and all 176 inputs/providers remain unchanged. No latent biological output label or inverse-bin age matrix is added. Sorted suffix cut construction, observable pruning/menu, numerical-bank execution, physical support, cross-graph transport and full G6 remain open. No Lean invocation or Actions dispatch occurred.
