@@ -2,6 +2,8 @@
 
 Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:26 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
+The [new complete-observation prefix consumer](COMPLETE-OBSERVATION-PREFIX-SOURCE-REVIEW.md) clears independent one-definition/six-theorem hand/source review. Actual Gamma/refined-history attachment followed by the identical original completion kernel gives one joint complete-readout domination, TV/event and occurrence budget. Explicit cut, fixed-bin and ancestral-tail support contracts remain; physical supplied-past/menu/backend attachment remains open. This draft is compiler UNCHECKED and outside the current165 selection.
+
 The [exact endpoint-history repair](ENDPOINT-HISTORY-ACTUAL-REPAIR-SOURCE-REVIEW.md) separately clears source review at d6a2be33. It retains the original fixed-bin row, same full endpoint vector and actual Gamma identification; the reader exposes only its definitionally equal successor Fin type. The source gate is compiler UNCHECKED until its own actual successor receipt.
 
 The [latest actual finite-cut joint acceptance](FINITE-CUT-VERIFIED-ENDPOINT-HISTORY-PARTIAL-REVIEW.md) independently authenticates **163 custom modules, 344 named reports, and 3,965 owned declarations including 2,589 theorems**. The finite-cut law now passes at exact d9d412d4 and preserves the original whole-past/residual-clock joint readout under legal interval subdivision. The endpoint-history module alone fails and is wholly excluded; the observation wrapper remains blocked. All preceding3,956 rows remain exact. Full G6 and the requested358-report selection remain open.
