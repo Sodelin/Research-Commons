@@ -1,0 +1,5 @@
+# Typed general-seed public correspondence
+
+The exact local body accepted in [GENERAL-SEED-TYPED-STOPPING-SOURCE-REVIEW.md](GENERAL-SEED-TYPED-STOPPING-SOURCE-REVIEW.md) at `cc8555e4bc95dc1d2e0440c19b88c61aa2649007` is byte-identical to the public [GeneralSeedStoppingBridge.lean](../2026-10-08-cloud-general-seed-typed-stopping-0822z/GeneralSeedStoppingBridge.lean) at `d22d0f963044c2a6f2d4809e6db02d64f9998849`: SHA256 `30558242593b52c5829f8e979dcc883945d5528fb6a599f274e49d442834c901`, 8,694 bytes, Git blob `128915fcb1dd719bcf96e0cdd47c5522db42d060`.
+
+All three author packet files, including its exact source/API manifest and README, match the local reviewed inputs. Their immutable identities are in the [correspondence record](general-seed-typed-public-correspondence.json). This additive receipt leaves the dated local review unchanged. It adds publication authentication, no compiler acceptance, biological iid applicability or full G6 claim. No compiler, source execution or Actions polling occurred.
