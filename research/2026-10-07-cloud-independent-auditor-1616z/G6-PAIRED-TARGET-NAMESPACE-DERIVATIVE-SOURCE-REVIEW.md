@@ -1,0 +1,9 @@
+# Exact paired-target Calendar namespace derivative
+
+8 October 2026 UTC. **SOURCE/INTERFACE ACCEPT; compiler UNCHECKED.** At author `525ae7abb1e29d42630c20d1d9035958745aa26d`, [G6PairedTargetReuse.lean](../2026-10-08-cloud-paired-target-interface-repair-0429z/G6PairedTargetReuse.lean) is 5,265 bytes, SHA256 `8c3d2e5cf636ec4efcb2846f75430cac1466a48c3d37f638ab36d1e3a32ace7b`. Four exact packet identities, the original published source and the actual Calendar provider authenticate in the [record](g6-paired-target-namespace-derivative-authentication.json).
+
+Removing only `open GProgram.G5` reproduces the ACTUAL immutable original29d/5,248-byte source. The [previous byte correction](G6-PAIRED-TARGET-REUSE-BYTE-IDENTITY-CORRECTION.md) supersedes the original inaccurate e07 manifest attribution. The derivative retains all imports, written declaration headers, scientific premises, one definition and four theorem bodies. Its open resolves Calendar to GProgram.G5.Calendar, the actual original age/strict-edge-order object. It repairs the explicit API hold from the [complete intended source review](G6-PAIRED-TARGET-REUSE-SOURCE-REVIEW.md), without asserting equality to erroneous unchecked autoImplicit elaborations.
+
+One actual bigon witness determines the same constructed source preserving raw Q and full-X nontrivial S; the generic original-provenance core census remains a raw structural witness. No desired target, planar embedding, stochastic/calendar law or physical source-replacement equality is added. Source closure/elaboration and complete axiom ownership await actual compilation. This candidate is outside current176 and proposed179; no selection or launch is accepted by this source-only review.
+
+No compiler, control, source evaluation, Actions, API, private product or shared provider edit occurred. Original published source, inaccurate manifest and original review remain preserved.

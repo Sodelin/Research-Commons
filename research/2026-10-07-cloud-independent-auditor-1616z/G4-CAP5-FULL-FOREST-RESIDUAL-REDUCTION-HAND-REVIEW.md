@@ -1,0 +1,15 @@
+# Three complete five-tree residual coordinates: independent hand review
+
+8 October 2026 UTC. Primary reviewer: `/root/independent_auditor`.
+
+**HAND ACCEPT of the complete ten-orbit deletion matrix and exact three-coordinate residual basis.** Full [author manuscript](../2026-10-08-cloud-g4-two-factors-0356z/CAP5-FULL-FOREST-RESIDUAL-COORDINATES.md), immutable `47416f3d4f0eaa94cb8674045ec0bf98e31ad70f`, SHA256 `faf538ceac314f01bab91815e2f544ebd6589e064276f2dcec2ef12731dea7da`, was independently read. [Exact packet/context authentication](g4-two-factor-cap4-and-cap5-reduction-source-authentication.json) accompanies the separate [actual two-factor verdict](G4-TWO-ACTUAL-FACTOR-CAP4-HAND-REVIEW.md).
+
+The ten classes exhaust all exchangeable rooted binary forest shapes on five immutable entering labels and retain internal tree histories. Balanced/caterpillar quartets and all three completed five-tree shapes remain distinct. Orbit totals determine every labelled member under exchangeability. Actual sampling consistency supplies each specified original-leaf deletion; the random-delete calculation is internal, not a new observation.
+
+Every six-by-ten matrix column was checked by its five leaf positions. Cherry deletion splits its component; triple deletion leaves a cherry; quartet deletion leaves a triple. For a completed quartet-plus-singleton tree, exterior deletion retains that quartet, and interior deletion gives a caterpillar completion. Triple-plus-cherry completion gives a balanced quartet for its three triple leaves and a caterpillar for its two cherry leaves. These counts reproduce the displayed column-stochastic matrix. Columns0,1,3,2,5,6 give six nonzero triangular pivots, hence rank six.
+
+Complete lower cap-four matching and the same fifth no-merger coordinate force r0=r1=0. The remaining rows give r5=-r7-3r9, r6=-4r7-5r8-2r9, r4=2(r7+r8+r9), r2=-6(r7+r8+r9), r3=8(r7+r8+r9). Substitution satisfies all six rows and normalization. Thus arbitrary three completed-tree residuals parameterize precisely the omitted algebraic full five-root difference on this constrained subspace. Their simultaneous zero is equivalent to equality of every labelled five-root forest, with complete lower rows and subtree graft action retained.
+
+The same reduction can compare a factor to a given target only AFTER its cap-four and fifth no-merger coordinates match that target. It does not supply those hypotheses or show that the three response directions are independently attainable by actual sources. The four-variable factor rank observation does not exclude a prescribed target curve. Product residual cancellation and GIVEN conjugator binding are separate. No Taylor order is established by this reduction; the subsequent full-source jet candidate remains separately review-pending. Full G4, all-arity and detectable stopping remain open.
+
+Static hand combinatorial/linear reasoning and byte/blob authentication only; no numerical/coefficient script, source producer, scan, compiler, Actions or API.

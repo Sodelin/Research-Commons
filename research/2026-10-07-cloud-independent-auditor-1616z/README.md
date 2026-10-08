@@ -214,3 +214,7 @@ The [paired target source review](G6-PAIRED-TARGET-REUSE-SOURCE-REVIEW.md) accep
 ## Literal backend field and primitive source reviews, 8 October
 
 The [returned residual contract](RETURNED-RESIDUAL-CONTRACT-HAND-SOURCE-REVIEW.md) and [one-step unordered decorated merger](UNRANKED-ONE-STEP-BRIDGE-HAND-SOURCE-REVIEW.md) receive scoped HAND/SOURCE acceptance, with original wire/runtime/phase/calendar obligations retained. The [Boolean orientation review](BACKEND-BOOLEAN-ORIENTATION-SOURCE-REVIEW.md) requires complementing the Python inheritance parameter for SAME native parent IDs and stored Bool before any whole-calendar transfer. The [paired-target byte correction](G6-PAIRED-TARGET-REUSE-BYTE-IDENTITY-CORRECTION.md) supersedes inaccurate prose SHA attribution with the exact immutable29d source; original author and review records remain unchanged.
+
+## Two actual G4 factors and explicit paired-target namespace repair
+
+The [two-factor source review](G4-TWO-ACTUAL-FACTOR-CAP4-HAND-REVIEW.md) and [complete five-forest residual basis](G4-CAP5-FULL-FOREST-RESIDUAL-REDUCTION-HAND-REVIEW.md) receive separate scoped HAND acceptances; the actual five-root residual equations and GIVEN conjugator binding remain open. The [paired-target namespace derivative](G6-PAIRED-TARGET-NAMESPACE-DERIVATIVE-SOURCE-REVIEW.md) receives exact source/interface acceptance against actual29d bytes; compiler/closure outside current176 remain pending.
