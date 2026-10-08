@@ -1,0 +1,9 @@
+# Finite-cut law verified; endpoint-history wrapper failed
+
+Actual run37710655968 at frozen9e493d0531525a1748da2cd7dcda383916506e30 is overall FAILURE. The167 command receipts include166 zero exits,163 passing custom modules and344 selected standard-only reports:226G6,103G3,15G5. ActualFiniteCutJointLaw d9d412d48be07ab34672d2bee996aa5120c1544ff67b876b21b7bdfe0435e604 now passes8 named declarations and9 owned rows (7theorems,2definitions). Its same-clock finite interval cut, endpoint and carried-tag law is accepted under the stated duration/bin contracts.
+
+Complete ownership is3965 declarations/2589theorems across163 passing modules. All3956 prior rows are unchanged; the9 new rows belong only to Finite. Raw inventory5962385 bytes SHA57c0911a5a317f183e15539be8c0753c7b391bc3b335ad98195214aab249402e; reconstructed audit source1a26264431113c7793157b92f9bdafeb15f7a4905df9e2e017af849f31408545.
+
+Only ActualCalendarEndpointHistory b3919753f792bb08844ab39846c4021a845883b8f15991909c0ae1be0835ada0 failed:63/64 dependent mapped-word Fin-zero elaboration;86 unknown raw_tail_endpoint_measurable;93 reversed PMF-to-measure map conversion;127 nil history/map normalization;139 dependent Fin.cons readout equality. Actual failed stdout25a3bb06873ff3f36f8583d3b8c9ef08d344b10dfa04db38525c990eb9d3dfe7 is preserved. The WHOLE module, including all six sorryAx-dependent recovery reports, is excluded. ActualObservationCutRefinement7815bf4e was dependency-blocked and uncompiled.
+
+This receipt accepts only actual successfully compiled modules. Requested165/358 remains a plan count. No whole-job, observation, final initialized physical/menu/backend or master closure is established. No future/private molecular module enters this input. Artifact metadata only is saved; archive comparison is not claimed. Exact failed sources and original attributed drafts remain preserved.
