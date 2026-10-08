@@ -1,0 +1,39 @@
+# General proofs and Lean: continuation checkpoint
+
+CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, **02:35 UTC**. This is a dated observation. Nolan's latest instruction defers AlphaGenome/API and refocuses the team on the original general mathematical problems and Lean proofs. Accepted practical/molecular work remains preserved; no API inference, installation or new practical execution is part of this continuation.
+
+## What actually passed
+
+[Run 37716267154](https://github.com/Sodelin/Research-Commons/actions/runs/37716267154), frozen `4456ed1e340872b8a5de31b14974f4c45163cb6f`, completed SUCCESS at 02:16:53 UTC. The [51-file author receipt](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37716267154-PASS/README.md), publication `dda80f8b58c03ef1c804d2f7a37749416a7e2562`, and [canonical independent actual acceptance](../2026-10-07-cloud-independent-auditor-1616z/COMPLETE-OBSERVATION-PREFIX-VERIFIED-REVIEW.md), publication `99efcfc7594574576f9fa95b340706528e0e7397`, establish:
+
+- 169 actual command receipts, all zero; 166 custom source modules compiled.
+- 365 selected reports: 233 G6, 117 G3 and 15 G5, standard axioms only.
+- Complete selected environment: 4,008 owned declarations / 2,606 theorems, including generated constants and all type/body/axiom references. No owned axioms, missing modules or nonstandard axiom rows.
+- All previous 4,001 rows byte-identical. CompleteObservationPrefix adds one definition and six theorems.
+- Raw full inventory: 6,039,730 bytes; SHA256 `3c101262b24405de155de5a246e65551c446f5375b6d58d65813a9678a1404ab`.
+
+The [acceptance scope](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37716267154-PASS/ACCEPTANCE-SCOPE.md) identifies the actual Gamma from the legal source-history/bin-reader derivation and uses the SAME exact completion/tag-update kernel on actual and normalized-prefix laws. One finite joint readout inherits retained-mass TV/event bounds and the occurrence-wise error sum without a coordinate-count multiplier. Actual natural initialization, final physical support/menu attachment and the executable residual backend are separate. This is an exact selected closure, not the full 825-source rebuild, the older 170-module environment or a master completion percentage.
+
+## Next sole Lean selection
+
+The [static 176-module plan](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/natural-family-static.json) is pinned at `545b4e430ec69e6f377585732dcc99c0e3ab4851`, SHA256 `3c7d95465e490e776134f753fb5488030de66b871240be6a01d697c219e543bc`. The [primary exact selection review](../2026-10-07-cloud-independent-auditor-1616z/NATURAL-FAMILY-STATIC-SELECTION-SOURCE-REVIEW.md) and [root source/scope/budget gate](../2026-10-07-cloud-g6-sol-ultra-1601z/NATURAL-PAST-176-ROOT-GATE.md), root publication `b55f48a737a4464876289c07105294239342f4c3`, are preserved.
+
+All 166 actual providers, imports, order and existing selected names stay fixed. Ten unchanged originals add 98 requested names, yielding 463 planned reports: 331 G6, 117 G3 and 15 G5. They connect original private-register erasure through actual physical source history, natural seed product, sorted calendar prefix and [natural joint old-past admission](../2026-10-08-cloud-natural-past-source-sol-0155z/README.md). [Primary](../2026-10-07-cloud-independent-auditor-1616z/NATURAL-CALENDAR-PAST-SOURCE-REVIEW.md) and [separate full-body review](../2026-10-08-cloud-natural-past-review-sol-0211z/SOURCE-REVIEW.md) accept the new admission at source level.
+
+Root authenticated 20 original/staged SHA256s and ten byte-identical pairs. The 860-second estimate uses the actual 600-second predecessor plus 150/10/100-second reserves. Two new direct Mathlib roots already belong to the preceding 3,302-module transitive context. Limits remain 900 seconds/job, 180 seconds/command, `--trust=0 -j1 -M4096`.
+
+At this observation the root has authorized the sole Lean owner to check the fresh queue, freeze those exact inputs and dispatch once. **No new run result is claimed here.** All ten additions remain compiler UNCHECKED until actual receipts and independent audit. Consult the owner's newer dispatch/terminal record before restarting. Every failure must be preserved; changing limits or retrying the identical input automatically is not authorized.
+
+## New scoped mathematical progress
+
+[G3's whole-source passive quartet recognition](../2026-10-07-cloud-independent-auditor-1616z/G3-PASSIVE-QUARTET-WHOLE-FIBRE-HAND-REVIEW.md) and [corrected hybrid-size frontier](../2026-10-07-cloud-independent-auditor-1616z/G3-HYBRID-SIZE-FRONTIER-HAND-REVIEW.md) have independent hand acceptance for the stated INDEPENDENT source/coarsening. Required hybrid count grows logarithmically as the scalar law approaches its boundary. This defeats a panel-only size cap; it does not refute an input-dependent recognition algorithm or solve general G3. The original false factorization remains preserved and excluded; only the corrected derivative is accepted. No QE or compiler execution is implied.
+
+[G4's padding-budget reduction](../2026-10-07-cloud-independent-auditor-1616z/G4-PADDED-CONJUGATOR-BUDGET-HAND-REVIEW.md) keeps actual positive-word membership of BOTH factors open. [The new fixed-positive cap-four lift obstruction at cap five](../2026-10-07-cloud-independent-auditor-1616z/G4-FIXED-CAP-FOUR-LIFT-FIFTH-HAND-REVIEW.md) closes that particular local construction route: its actual three-bigon branch has a nonzero fifth-moment defect. Moving-base limits, other architectures and the original fixed-target stopping quantifier remain open.
+
+[Original hybrid-child and incident-port bounds](../2026-10-07-cloud-independent-auditor-1616z/NONPLANAR-ORIGINAL-PORTS-SOURCE-REVIEW.md) are independently source-reviewed, compiler UNCHECKED. The [two-port classification prototype](../2026-10-08-cloud-nonplanar-two-port-0217z/README.md), immutable `dd1493c06cb9613a8cb752ed8f1278c24e3c58af`, source SHA256 `72c013ecda026796a6687aada3c8aab3d78b2848f0e73ada55469bb60a4bc123`, derives one ordinary vertex, one hybrid and two distinct original parallel arm IDs under explicit original child-cut. Root read all 18 bodies; [canonical primary hand/source acceptance](../2026-10-07-cloud-independent-auditor-1616z/NONROOT-TWO-PORT-BIGON-SOURCE-REVIEW.md), commit `02e747995e18a7cd7222cbd2a789b0ebc18c6917`, review SHA256 `d3d76423ae113da4fdc553b11fcdc01ffa45ada65501488133d20ba7043fb685`, authenticates all author and provider pins. These sources are outside the 176 selection. Q/S suppression/preservation and a bounded target-preserving representative are separate.
+
+## Actual lane allocation and resume
+
+The Lean-verification lane owns the one compiler job and receipt recovery. The independent auditor owns source and terminal gates. G3 is formalizing the corrected reusable algebra/discount recurrence without claiming source/general closure. G4 is investigating the moving-base scaling route. The calendar lane is composing natural old-past admission with the existing complete-observation suffix bound; its new work stays outside176. The structural/literature lane has preserved the actual two-port classification and identified switching/Q/S preservation as the next obligation. No duplicate compiler, broad empirical scan or API work is assigned.
+
+Refresh main and inspect the sole owner's latest dispatch/terminal and the [master register](../2026-10-07-cloud-g6-sol-ultra-1601z/README.md). First decisive action: recover and independently audit the exact 176 run once it terminates; if it fails, preserve partial success and make only the evidenced source/API repair with a new gate. Full G3/G4, G5 formal assembly and G6 remain open. Successful publication preserves work; it does not prove the research claim.
