@@ -446,8 +446,10 @@ theorem actual_complete_calendar_cut_refinement (N : RootedBinary V E X)
     (completeCalendarTraceLaw N r ops s).map (completeReadout N bin ops s offset B) =
       (completeCalendarTraceLaw N r (ops ++ [.interval t]) s).map
         (completeReadout N bin (ops ++ [.interval t]) s offset B) := by
-  rw [← completed_joint_toMeasure N r bin hbin ops s offset B,
-    ← completed_joint_toMeasure N r bin hbin (ops ++ [.interval t]) s offset B]
+  refine (completed_joint_toMeasure N r bin hbin ops s offset B).symm.trans ?_
+  refine Eq.trans ?_
+    (completed_joint_toMeasure N r bin hbin
+      (ops ++ [(.interval t : ProgramStep N)]) s offset B)
   apply congrArg PMF.toMeasure
   rw [completed_joint_bind_calendar N r bin hbin ops s offset B,
     completed_joint_bind_calendar N r bin hbin (ops ++ [.interval t]) s offset B,
