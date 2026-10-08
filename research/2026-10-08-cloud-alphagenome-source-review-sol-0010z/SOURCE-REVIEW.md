@@ -1,0 +1,27 @@
+# Atlas findings from primary sources
+
+Status: SOURCE REVIEW, partial paper reading; no inference or scientific validation. Read on 2026-10-08. The [official blog](https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/) is dated 2026-09-08. The [linked paper](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/alphagenome-atlas.pdf) was read selectively: Results construction/AVI, protein-association application, Discussion, Data/Code Availability. Its exact PDF SHA256 is `07011853872613cb7bd3ce8ca62cd2621ad50b0a16e6f5dec3e480b3d190af2c`; [the ledger](SOURCE-INPUTS.json) records extracted-text hashes and actual sections.
+
+The paper reports predictions for about **9 billion hg38 SNVs** and internal scoring of **more than 100 million observed indels**. Data Availability currently limits public Atlas datasets to valid hg38 SNVs; an indel expansion is prospective. These statements do not establish a public indel Atlas release. Each variant has an average of about **27,000 assay-specific scalar predictions**, including absolute activity scores; this count is not the number of independent biological outcomes.
+
+**AVI is a ranking score.** Its 18 inputs include AlphaGenome modalities, AlphaMissense, VEP termination features, conservation and indel indicators. Its training labels use allele frequency as a proxy for neutral versus impactful variation. PHRED 20 means the top 1% of predictions; it is not a 99% probability of disease. The 18 SHAP contributions sum to the raw AVI score, before PHRED conversion. Neither raw AVI nor its tissue maximum identifies a patient's causal mechanism.
+
+The reported **22% increase** concerns discovery of conditionally independent rare noncoding variant aggregates associated with circulating protein levels: 2,028 proteins and 54,189 UK Biobank participants. It compares feature-filtered aggregates with the stated unfiltered analysis, adjusts for common pQTLs and protein-coding variants, and uses stepwise conditional selection. The paper explicitly says this analysis used older Atlas releases. This is not a general 22% accuracy improvement or a benchmark result for our modules.
+
+Discussion identifies missing cell types, uneven assay coverage, non-polyadenylated RNA omissions, limited trait coverage and poor ultra-rare replication. AlphaGenome models cis-regulatory sequence relationships, not trans mechanisms such as changed transcription-factor expression. Predicted molecular effects and motif maps require experimental assessment; they are not causal guarantees.
+
+## Available artifacts and version boundaries
+
+Data Availability distinguishes permissively licensed static AVI downloads from noncommercial AVI API, splicing data, feature attributions and raw Atlas features. Raw Atlas features are API-only in the stated table. Bulk motif downloads and AVI code/weights are prospective in this paper. We inspected these statements; we did not download Atlas artifacts or authenticate their current delivery endpoints.
+
+The [official FAQ](https://www.alphagenomedocs.com/faqs.html) further states that covered outputs must not train other machine-learning models. Permission for the SDK, an experimental dataset, and an AlphaGenome output artifact must therefore be recorded separately before reuse. The present plan is for evaluation; any fitted model using these outputs needs its own applicable permission.
+
+The inspected SDK commit is [`038d253a5ca2fec46f4874f592d9ec67984cb497`](https://github.com/google-deepmind/alphagenome/tree/038d253a5ca2fec46f4874f592d9ec67984cb497). Its `ModelVersion` offers `FOLD_0`–`FOLD_3` and default `ALL_FOLDS`; the client sends no explicit version when initialized with `None`. The SDK commit does not identify server weights or prove that an evaluation locus or assay was excluded from training, distillation, calibration or model selection. Those checks remain pending for each chosen version.
+
+## Proposed connection to Research Commons
+
+Atlas can support molecular hypothesis generation and the proposed DNA-to-RNA applications. [BIO-4/BIO-5 status](../../RESEARCH-STATUS.md) still requires mechanism, intervention, observation and causal-transport admission. A sequence prediction alone supplies none of those implications.
+
+The [programme source-obligation map](../2026-10-07-dot-frontier-source-index-and-obligation-map-0309z/ALL-PROGRAMME-COVERAGE.md) separately requires orthology, linkage/recombination, sample/ploidy, missingness, substitution/clock and data rights. Predicted variant effects or AVI ranks are not the empirical marked genealogies, finite observation laws, ancestral histories or admitted physical sources used by G6. Using Atlas to propose markers would require an explicit selection protocol and all applicable biological/observation checks. This packet establishes no Atlas-to-G6 theorem and does not close G3, G6, BIO-4 or BIO-5.
+
+The official TERT haplotype example and the paper's DNM1 experiment are useful reproductions. They are not independent held-out validation of our two modules. The [haplotype notebook](https://www.alphagenomedocs.com/colabs/v1/haplotype_workaround.html) illustrates a hypothetical same-sequence combination; it does not establish patient phase or measured joint TERT effects. It also overwrites supplied reference alleles in its helper, so an application must verify the actual reference independently.
