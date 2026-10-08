@@ -1,0 +1,130 @@
+{
+  "protocol_id": "research-commons-molecular-v1-20261008",
+  "version": 1,
+  "status": "DESIGN_ONLY_NOT_EXECUTED",
+  "actual_split_manifest": null,
+  "usable_dataset_counts": null,
+  "modules": [
+    "combined_variant_molecular_effects",
+    "rna_processing_information"
+  ],
+  "source_sdk_commit": "038d253a5ca2fec46f4874f592d9ec67984cb497",
+  "server_weights_or_version": "UNFROZEN",
+  "model_versions_considered": [
+    "ALL_FOLDS",
+    "FOLD_0",
+    "FOLD_1",
+    "FOLD_2",
+    "FOLD_3"
+  ],
+  "dataset_candidates": [
+    "Siraj_2024_preprint_2026_Nature_Zenodo15297965",
+    "Vexseq_GSE113163",
+    "APARENT_GSE113849"
+  ],
+  "all_candidate_exposure_status": "UNKNOWN_NOT_ADMITTED",
+  "required_admission": [
+    "artifact-specific rights and output-use terms",
+    "exact experimental file/member hashes and paper/version correspondence",
+    "matched labels, same physical construct/biosample/replicates and target units",
+    "reference, coordinate, strand, phase and indel verification",
+    "frozen input windows and endpoint annotation/readout profiles",
+    "exact served model/weight identity and genomic/assay/evaluation/calibration exposure audit"
+  ],
+  "split": {
+    "salt": "research-commons-molecular-v1-20261008",
+    "unit": "connected component of same gene/locus, overlapping genomic model windows, matched alleles/pair windows/replicates; synthetic parent-construct family",
+    "canonical_key": "compact JSON array of sorted unique component member identifiers; stable accession/build/chromosome/half-open-window/parent-construct/assay identities; no labels or predicted scores",
+    "hash": "SHA256(UTF8(salt + newline + canonical_key)); unsigned big-endian digest modulo 20",
+    "development_residues": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "validation_residues": [
+      14,
+      15,
+      16
+    ],
+    "test_residues": [
+      17,
+      18,
+      19
+    ],
+    "actual_membership_status": "NOT_CREATED; freeze member hashes and counts before fitting or test predictions",
+    "low_component_count_policy": "stop and preregister a revised protocol before evaluation; no test-informed relaxation"
+  },
+  "module1": {
+    "paired_conditions": [
+      "REF",
+      "A",
+      "B",
+      "A+B"
+    ],
+    "combination": "f(A+B)-f(REF)",
+    "additive": "(f(A)-f(REF))+(f(B)-f(REF))",
+    "interaction": "f(A+B)-f(A)-f(B)+f(REF)",
+    "prohibited_addition": [
+      "AVI_PHRED",
+      "quantile",
+      "unsigned_maximum",
+      "unrelated_tracks"
+    ],
+    "primary_reporter_transport_metric": "paired difference in Spearman correlation of combined effects: combination vs additive",
+    "secondary_metrics": [
+      "interaction sign agreement on experimentally resolved effects",
+      "interaction Spearman correlation",
+      "combined direction agreement"
+    ],
+    "matched_endpoint_only_metric": "signed combined-effect MAE after fixed physical unit conversion",
+    "constant_correlation": "UNDEFINED"
+  },
+  "module2": {
+    "expression_only_baseline": "scale REF total abundance by predicted expression change; keep REF relative isoform/junction usage",
+    "expanded_readout": "predeclared normalized splice/junction information or positional RNA coverage; no learned weighting",
+    "primary_splicing_metric": "MAE of delta PSI on [0,1], only after exact target correspondence",
+    "primary_apa_metric": "MAE of delta proximal usage, only after exact target correspondence",
+    "secondary_metrics": [
+      "effect direction",
+      "Spearman",
+      "cleavage-distribution distance only on matched normalized support"
+    ],
+    "PAS": "derived RNA-seq coverage; not independent direct track",
+    "PSI": "derived; not direct output",
+    "missing_target": "UNAVAILABLE_NOT_ZERO"
+  },
+  "uncertainty": {
+    "resamples": 2000,
+    "resampling_unit": "locus/component including all matched records and replicates",
+    "seed": "research-commons-molecular-v1-20261008/bootstrap-v1",
+    "interval": "95 percent percentile bootstrap on paired metric difference",
+    "experimental_uncertainty": "replicate-aware assay estimates",
+    "model_confidence": "NOT_CALIBRATED_NOT_PROVIDED"
+  },
+  "fitting": {
+    "current_plan": "NONE; unfitted predeclared comparison only subject to applicable permitted analysis terms",
+    "training_on_service_outputs": "PENDING_ARTIFACT_SPECIFIC_PERMISSION_AND_AUTHORIZATION",
+    "stacking_regression_learned_calibration": "NOT_AUTHORIZED_BY_THIS_PROTOCOL"
+  },
+  "reproductions_excluded_from_test": [
+    "official hypothetical cis TERT chr5:1295113G>A + chr5:1295135G>A liver UBERON:0002107",
+    "Atlas DNM1 experiment"
+  ],
+  "scope_limits": [
+    "reporter transport is not calibrated endogenous tissue expression",
+    "constructed cis is not observed personal phase",
+    "no clinical, causal-intervention, ancestry or G6 claim",
+    "no actual experimental file download, inference, fitting or benchmark executed"
+  ]
+}
