@@ -1,0 +1,53 @@
+# Independent review of the actual central source jets and moving-tail obstruction
+
+Primary reviewer: Codex Cloud independent auditor, 8 October 2026. **HAND/SOURCE ACCEPT for the precise two-block architecture below. Compiler UNCHECKED; outside the current 179-module input.** No blocking mathematical gap was found by full source and proof inspection. This verdict does not close original G4.
+
+The exact author is [the moving-tail packet](../2026-10-08-cloud-g4-moving-tail-0623z/CENTRAL-SOURCE-JETS-AND-MOVING-TAIL-OBSTRUCTION.md) at immutable `caf64026b5f8fdfccc7da9c09d6749dfd420b5ee`. Its proof is 19,336 bytes, SHA256 `8e8de02d29bb20f8cd95970b114e3ee545aadba996b6873f511b66000ba94e01`, Git blob `e83bccb259f3644e06e94ea941934621e25d7b86`. All seven frozen packet files, six manifest entries and 22 source SHA256/length/blob pins match at the declared read head and the publication. [Exact authentication](g4-moving-tail-central-source-authentication.json) preserves the records. Historical author status labels and prior accepted proof bytes remain unchanged.
+
+## Exact conclusion and source scope
+
+Fix actual pair survivals `a,b∈(0,1)`. Each factor is an admitted positive ordinary/private-INDEPENDENT word with three half-coin cells whose mean-loss ratios are exactly `1:6:10`, one positive scale per factor, and the same source-derived analytic `w(t)` solving all three ordinary diagonal differences through five. The two factors may use any chronological permutations, any admitted positive internal connectors and exterior pads, and arbitrarily different shrinking scales. For sufficiently small positive scales their product cannot be the ordinary `E(ab)` on the complete rooted forest through five.
+
+The threshold is uniform over those admitted placements and the finite permutations at the fixed `a,b` and this fixed family. Every finite realizing word is strictly positive; boundary placements occur only in the contradiction's compact subsequence. The statement retains the full three completed five-root shapes, original token labels and grafted old subtrees. It therefore gives an obstruction to both prescribed padded factors being realized within this architecture, since their realization would imply the ordinary product return. It supplies no all-word membership decision for a given conjugator, no general rival-size threshold and no detectable stopping rule.
+
+The [restricted fifth-source verdict](G4-ACTUAL-FIFTH-SOURCE-CONFLUENT-OBSTRUCTION-HAND-REVIEW.md) and [uniform fixed-tail verdict](G4-UNIFORM-FIXED-TAIL-UNEQUAL-SCALE-HAND-REVIEW.md) are authenticated prerequisites. They did not themselves accept moving exterior pads. The central single-cell identities and the final moving-boundary mass argument are independently reviewed here.
+
+## Single-cell fourth and fifth operators
+
+The actual ordinary generator has fresh diagonal `−λ_n`. Thus `S=(Q²+Q)/6` has diagonals `1,5,15` at three, four and five roots, while `Z=−(Q³+4Q²+3Q)/90` has diagonals `0,1,7`. Both vanish on the two-root stratum; their linear cap-four coordinates `C,D` vanish because they are ordinary-generator polynomials. Their fresh five-root completions vanish because they perform at most two and three mergers respectively. These statements do not assert that all other pair-containing rows are zero.
+
+For the exact normalized actual cell `J_A=E(1/q_A)B_A`, the third operator is `γ_A R`. The source Newton differences give the fourth diagonal vector `(u₄,4u₄+d_A,10u₄+5d_A)`, with `u₄=−3η_A/2+d_A`. This agrees with `η_A R+d_A S`, including the actual `C=D=η_A`. Its fresh fifth completion is zero: the bare fourth completed-five difference is zero and normalization of the third layer cannot make four mergers. The inherited full delete-one rank-six identity, lower-root data and token grafting determine all remaining coordinates. Consequently the fourth operator equality is derived on the full source carrier, rather than obtained by omitting an uncomputed row.
+
+At fifth order write the actual log-difference coefficients as `e₃,e₄,e₅`. The displayed values `β=e₅/2`, `α=e₄−e₅/2` and `ρ=2(α−e₃)/3` make `ρR+αS+βZ` have exactly the normalized actual diagonal vector `(e₃,4e₃+e₄,10e₃+5e₄+e₅)`. The additional `μT` has zero diagonals and supplies `C=D=ζ` through `μ=ζ−ρ`. The source identity for `ξ=C(B)/q⁶` yields `μ=−e₅/6−A⁵/8`; using the actual fifth diagonal coefficient gives `μ=−A⁵/16−5A²w₀/8`. All three actual `μ` values are strictly negative, with sum `m₀=−107777/8`.
+
+The actual normalized fifth completed vector is zero. I checked the attachment to the prior full source calculation: the bare three-merger fourth layer is `(Aγ/2)QR`, its fifth complete vector is `−(45/8)A²γ(1/6,1/3,1/2)`, and the normalization term contributes `γ(−A²/8)(Q²R)completed`. The actual `Q²R` completed vector is `−45(1/6,1/3,1/2)`, so the intrinsic terms cancel in all three shapes. This is not a supplied residual equality. Full deletion/graft uniqueness then identifies `ρR+αS+βZ+μT` with the actual fifth operator. Older trees remain opaque current-root operands throughout.
+
+The exact whole-block log-diagonal balances force the sums of `d`, `e₃`, `e₄`, `e₅`, hence of `α`, `β`, `ρ`, to vanish. The central `S,Z` terms therefore cancel without a placement Taylor approximation. These scalar sums introduce no additional source freedom after the actual diagonal family has been solved.
+
+## Uniform remainder and exact moment attachment
+
+The exact downstream normalization transports each actual `J_i` by its own ordinary factors. Calibration at the fixed pair survival bounds all effective positions and conjugation norms in a compact positive interval, including limits of moving exterior pads. Every `J_i−I` is uniformly `O(t³)`. Cross insertions start at sixth order, so substituting the full single-cell fifth identity gives
+
+`N_body−I=Σω_i R_Xi+t⁵Σμ_i(T_Xi−R_Xi)+O(t⁶)`.
+
+The cap-four correction from `ξ` to the exact `ω` changes this expression only at sixth order. Central commuting cancellation leaves the entire transported `R,T` functions, not a truncation in a possibly large or very small connector hazard. Hence the bound holds for nonlinear, nonanalytic or nonconvergent admitted placement choices. The analytic assertion concerns the finite half-coin source law, which is even in arm contrast; it does not require each individual `t^(3/2)` arm to be analytic in `t`.
+
+For the actual two-factor multiplication the remainder is bounded by `C(tP⁶+tR⁶+tP³tR³)≤C T(tP⁵+tR⁵)`, `T=max(tP,tR)`. No comparable-scale assumption is used. Each pair/fourth normalized diagonal is exactly one, so the actual cap-four coordinate laws give the exact lower moments `M₅=M₆=0` whenever a full return is proposed. The established source sum is `M₀=m₀(tP⁵+tR⁵)+O(T(tP⁵+tR⁵))`.
+
+The functional with weights `ω+(2/5)t⁵μ` is signed bookkeeping, not a realizing law. The accepted full `T_X` completed functions are `(7/5)f_j+h_j`; their explicit constant/fifth/sixth powers cancel using these lower moments and the actual source mass. The three remaining completed constraints use the same invertible full-forest matrix with determinant `375/448`, so a full cap-five return forces `N₇,N₉,N₁₀=O(T(tP⁵+tR⁵))`. A no-merger diagonal or merger-count quotient would not justify this step.
+
+## Active-scale collapse and a sign that survives coincident anchors
+
+On a hypothetical return sequence, normalize by `T³` and pass to compact positions and relative third-scale weights. The leading signed measure has all six moments at powers `0,5,6,7,9,10` equal to zero. It has at most six distinct positive support points. The corresponding generalized Vandermonde matrices are nonsingular: a nonzero polynomial in the first `k` of these monomials has at most `k−1` positive roots by Descartes' rule. Thus the leading signed measure is zero, including cases of fewer distinct points.
+
+Actual left-block positions lie above `χ=1/b` and right-block positions below it; their limits can meet only at `χ`. Each active block has one positive leading coefficient equal to the sum of its two strictly negative magnitudes, and no proper nonempty subset of those three coefficients sums to zero. Zero total measure off `χ` and zero total mass within each block therefore force all three positions of every active block to coincide. This does not discard an inactive block's third-order response; only its fifth-scale contribution is negligible when `td/T→0`.
+
+The final polynomial is `F=x⁵(x−u)²(x−v)²(x+c)` at the two actual positive-cell anchors, with the stated positive `c` cancelling the eighth-power term. It is nonnegative and exactly zero at both positive cells even when their gap tends to zero. The remaining corrected atomic coefficients are strictly negative for small scales. Therefore the exact functional satisfies `ν(F)≤0`; this uses its full atomic representation rather than a limiting variance estimate.
+
+Its low coefficients obey `p₀>0`, `p₁<0`, `p₀/(−p₁)<min(u,v)`. The negativity of `p₀+p₁` times either anchor remains uniform on the compact anchor ranges even when they coincide: at `u=v`, it is `−7u⁵/2`. The linked completed constraints give the other expression `ν(F)=(2/5)Σtd⁵ μ_i Xi⁵(p₀+p₁Xi)+O(T(tP⁵+tR⁵))`. Within an active block the positions collapse to its anchor, and its actual negative mass sum is `m₀`; its contribution is therefore uniformly positive at fifth scale. Inactive blocks contribute `o(tP⁵+tR⁵)`, and at least one active block is dominant. This contradicts the exact nonpositive sign without requiring any positive limiting cross-anchor gap.
+
+## Verification and remaining limits
+
+This review performed full paper reasoning on the frozen proof and relevant actual source, rooted-route, deletion and transport prerequisites, plus byte/hash/blob/manifest checks. No coefficient program, mathematical calculation script, source/numerical execution, QE, scan, compiler, Actions watch, practical solver or API inference ran. No complementary new-source helper verdict is claimed. The original G4 source/observation/private topology contracts are inherited; no new observable hidden forest or clock record is introduced.
+
+The accepted result is restricted to the two specified fixed three-cell families at fixed `a,b` and sufficiently small scales. It does not accept the separately authored arbitrary finite-cell extension, zero leading coefficients, several positive cells per block, other coin/mean ratios, more blocks, non-small sources, arbitrary prescribed-factor membership, original unknown-count G4 or an effective stopping certificate. No current Lean input or accepted compiler inventory changes by this HAND verdict.
