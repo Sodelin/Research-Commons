@@ -29,7 +29,7 @@ noncomputable def midpointPMF {A : Type*} [Fintype A] (p q : PMF A) : PMF A :=
     have hsum : ENNReal.ofReal (∑ a, ((p a).toReal + (q a).toReal) / 2) =
         ∑ a, ENNReal.ofReal (((p a).toReal + (q a).toReal) / 2) :=
       ENNReal.ofReal_sum_of_nonneg (fun a _ => h0 a)
-    rw [← hsum, Finset.sum_div, Finset.sum_add_distrib, pmf_sum_real, pmf_sum_real]
+    rw [← hsum, ← Finset.sum_div, Finset.sum_add_distrib, pmf_sum_real, pmf_sum_real]
     norm_num)
 
 theorem midpointPMF_real {A : Type*} [Fintype A] (p q : PMF A) (a : A) :
@@ -57,7 +57,7 @@ theorem midpointPMF_left_distance {A : Type*} [Fintype A] (p q : PMF A) :
     rw [he, abs_div]
     norm_num
   simp_rw [hpoint]
-  rw [Finset.sum_div]
+  rw [← Finset.sum_div]
 
 theorem midpointPMF_right_distance {A : Type*} [Fintype A] (p q : PMF A) :
     pmfTV q (midpointPMF p q) = pmfTV p q / 2 := by
