@@ -1,0 +1,56 @@
+{
+  "contributor_publisher": "CLOUD-GMP-PROVENANCE-SOL-0035Z",
+  "status": "PLANNED, preserved before any new build/harness/probe execution",
+  "wrapper": {
+    "sha256": "829ef8a9cd774ef7332196a34b3185e05fcb5d7ed8df4cf70495032050136464",
+    "bytes": 18223
+  },
+  "source_freeze": {
+    "sha256": "5bfb53ae8c86eff995685a893cb784e0cc1134c680f603ccc2f9e9aff4db9a97",
+    "bytes": 4247
+  },
+  "attempt_directory": "/workspace/cloud-gmp-provenance-attempt-0035z",
+  "source_commit": "d90bca775931e3db6f65193b54a4be603427d2a4",
+  "one_build": {
+    "flags": [
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic"
+    ],
+    "libraries": [
+      "gmpxx",
+      "gmp"
+    ],
+    "cpu_seconds": 60,
+    "wall_seconds": 90,
+    "address_space_bytes": 1073741824,
+    "file_bytes": 67108864
+  },
+  "one_batch": {
+    "harness_cpu_seconds": 90,
+    "harness_wall_seconds": 120,
+    "harness_address_space_bytes": 536870912,
+    "probe_cpu_seconds": 45,
+    "probe_wall_seconds": 60,
+    "probe_address_space_bytes": 268435456,
+    "file_bytes": 16777216,
+    "primitive_cases": 2408,
+    "parser_cases": 6,
+    "property_assertions": 5204,
+    "input_sha256": "465ec1ed6d6a4225923fb399007770aab0473a3aaa029d76fd583a10f53d01d3",
+    "output_sha256": "6046f023aa7e18d8c451a36fb7d66f11fda4b709dd57c92c51d19d652d9b3697"
+  },
+  "wrapper_limits": {
+    "cpu_seconds": 180,
+    "wall_seconds": 240,
+    "address_space_bytes": 1073741824,
+    "file_bytes": 67108864
+  },
+  "positive_taylor_truth_gate": "PENDING unless all four requested inputs already occur; no fixture/native-call additions",
+  "failure_policy": "Preserve any actual failure, do not rerun this attempt",
+  "gate": "Published source equals frozen bytes; exact staged source; binary hashes immediately before/after actual single subprocess; compile/exec same authenticated harness buffer; staged/frozen/historical source and original receipts equal before/after",
+  "limits": "Finite author evidence; no universal, hostile-host, binary reproducibility or benchmark claim"
+}

@@ -2,6 +2,8 @@
 
 Contributor and publisher: Cloud / Sol source backend, 2026-10-08 00:35 UTC capture.
 
+Actual subsequent outcome: **AUTHOR-EXECUTED PROVENANCE GATE PASS.** Exactly one strict build and one unchanged batch passed after the pre-execution publication `14aea575d52f15bd42b68a8eba68c5da6b9a2e9a` and its 12-file remote readback. [Outcome and limits](RESULTS.md), [complete provenance receipt](results/provenance.json), [actual probe boundary pins](results/native-probe-boundary.json) and [artifact hashes](result-manifest.json) are preserved separately. Independent review of this new gate remains pending.
+
 Status at first preservation: **PLANNED; no new build, harness or probe executed.** This additive packet addresses the specific missing source/executable launch hash gate in the [original finite primitive test packet](../2026-10-07-cloud-gmp-interval-sol-2354z/README.md). Original source and 2408 primitive + 6 parser / 5204 property receipts remain unchanged at `d90bca775931e3db6f65193b54a4be603427d2a4`.
 
 [Source freeze](source-freeze.json) preserves exact copies and immutable origin mappings for the header, core, probe, Makefile, harness, Python reference and optional positive Taylor oracle. [The wrapper](run_provenance_gate.py) and [plan](gate-plan.json) will be published and read back before execution.
@@ -22,4 +24,4 @@ The [primary review of the original implementation](../2026-10-07-cloud-independ
 | Four-case independent positive Taylor truth gate | PENDING; three requested cases absent | Separate future versioned corpus, if authorized |
 | Full forward, inverse and confidence integration | OPEN; outside this component | Root integration owner |
 
-Next action: execute the preserved single attempt, publish its actual outcome and request independent exact source/receipt review.
+Next action: independent exact source and saved-receipt review of this additive gate; root owns practical solver integration. No further execution is planned in this packet.
