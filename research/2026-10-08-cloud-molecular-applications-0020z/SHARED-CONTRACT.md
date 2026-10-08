@@ -46,3 +46,5 @@ python3 -m molecular_apps access-check
 ```
 
 These examples do not imply execution. Exact receipts will state what actually ran. The public reference exercise uses chr5:1,295,113 and 1,295,135 G>A, hypothetical cis phase, liver UBERON:0002107, hg38 and versioned TERT transcript annotation. No personal genome is used.
+
+The [small public-reference parameter manifest](PUBLIC-EXAMPLE.json) records the molecular question, exact window/guard, public sequence URL/hash, verified alleles, versioned transcript/exons, tissue and predeclared endpoint scale. It contains no personal genome or private implementation. Only a small reference window is needed; no full Atlas download.

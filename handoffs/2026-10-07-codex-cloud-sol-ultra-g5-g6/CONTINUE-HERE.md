@@ -1,3 +1,5 @@
+> [01:00 molecular delivery and sole finite-cut continuation](checkpoints/20261008T010000Z-MOLECULAR-DELIVERY-AND-CUT-CONTINUATION.md): offline applications delivered; source-reviewed sole run37710655968 active, result pending.
+
 > Latest continuation, 2026-10-08 00:56 UTC: [molecular applications delivered offline](../../research/2026-10-08-cloud-molecular-applications-0020z/CONTINUATION.md), with private source and public sanitized evidence. [Actual calendar Context now passes](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37708772293-FAILED/README.md); the finite-cut repair remains uncompiled. Follow the sole owner's exact dispatch/terminal records rather than restarting a competing build. Older checkpoint statements below remain dated history.
 
 # Continue the Cloud G6 research
