@@ -115,7 +115,7 @@ theorem rationalResidualCount_actual (q : ℚ) (a : ℝ≥0)
     (rationalResidualCount q K k : ℝ) = residualCountReal a K k := by
   rw [residualCountReal_coefficients]
   by_cases hk : k ≤ K <;> by_cases hz : k = 0 <;>
-    simp only [rationalResidualCount, hk, hz, if_true, if_false,
+    simp only [rationalResidualCount, hk, hz, if_true, if_false, Nat.zero_le,
       Rat.cast_add, Rat.cast_div, Rat.cast_zero, rationalTerm_real,
       rationalDenominator_real, rationalError_real, ha]
 
