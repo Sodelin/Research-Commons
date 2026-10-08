@@ -1,0 +1,64 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:54:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:115:67: error: unsolved goals
+case pos
+q : ℚ
+a : ℝ≥0
+ha : ↑a = ↑q
+K k : ℕ
+hk : k ≤ K
+hz : k = 0
+⊢ ↑(if 0 ≤ K then rationalTerm q 0 / rationalDenominator q K else 0) + errorBound (↑q) K =
+    (if 0 ≤ K then taylorTerm (↑q) 0 / (taylorPrefix (↑q) K + 2 * taylorTerm (↑q) (K + 1)) else 0) + errorBound (↑q) K
+
+case pos
+q : ℚ
+a : ℝ≥0
+ha : ↑a = ↑q
+K k : ℕ
+hk : ¬k ≤ K
+hz : k = 0
+⊢ ↑(if 0 ≤ K then rationalTerm q 0 / rationalDenominator q K else 0) + errorBound (↑q) K =
+    (if 0 ≤ K then taylorTerm (↑q) 0 / (taylorPrefix (↑q) K + 2 * taylorTerm (↑q) (K + 1)) else 0) + errorBound (↑q) K
+'UnifiedLean.G6.RationalResidualCertificate.rationalDenominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalDenominator_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalDenominator_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.cutoff_residual_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.actual_source_residual_tv_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
