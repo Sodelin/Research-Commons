@@ -1,0 +1,159 @@
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:63:59: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin (physicalOps N (q :: word)).length) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Fin (physicalOps N (q :: word)).length
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:64:39: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin (physicalOps N (q :: word)).length) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Fin (physicalOps N (q :: word)).length
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:93:13: error: Type mismatch
+  Eq.symm (PMF.toMeasure_map u ?m.281 hu)
+has type
+  (PMF.map u ?m.281).toMeasure = Measure.map u (PMF.toMeasure ?m.281)
+but is expected to have type
+  Measure.map u (sourceTimeKernel N r h s).toMeasure = ?m.274
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:86:49: error(lean.unknownIdentifier): Unknown identifier `raw_tail_endpoint_measurable`
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:85:71: error: unsolved goals
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+s : Code N sample
+offset : ℝ
+h : ℝ≥0
+tag : Tag
+B : Copy → Copy → Tag
+hconst : ∀ (a : ℝ), offset < a → a < offset + ↑h → bin a = tag
+u : Code N sample → TaggedEndpoint N sample := fun d => (d, tagUpdate N s d tag B)
+hu : Measurable u
+hm : Measurable (literalMarkedTrace N (Fintype.card Copy) (↑h) s)
+⊢ Measure.map (tailTraceReadout N bin s offset B ∘ literalMarkedTrace N (Fintype.card Copy) (↑h) s)
+      (currentPairClockMeasure N r s) =
+    Measure.map u
+      (Measure.map (fun z => traceEndpoint N (Fintype.card Copy) s z.2)
+        (Measure.map (literalMarkedTrace N (Fintype.card Copy) (↑h) s) (currentPairClockMeasure N r s)))
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:127:8: error: unsolved goals
+case nil
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+s : Code N sample
+offset : ℝ
+B : Copy → Copy → Tag
+hword : wordBinContract N bin [] offset
+⊢ PMF.pure (s, B) = PMF.map (fun x => (s, B)) (historyLaw (sourceProgramStep N r) (List.map Prod.fst []) s)
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:139:8: error: Tactic `rfl` failed: The left-hand side
+  (endpointHistoryReadout N (q :: word) s B ∘ Fin.cons d) z
+is not definitionally equal to the right-hand side
+  endpointHistoryReadout N word d (endpointStepTags N q.1 q.2 s d B) z
+
+case e_f
+V : Type u
+E : Type v
+Copy : Type w
+X : Type x
+Tag : Type y
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+q : ProgramStep N × Tag
+word : List (ProgramStep N × Tag)
+ih :
+  ∀ (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag),
+    wordBinContract N bin word offset →
+      calendarJoint N r bin hbin (physicalOps N word) s offset B =
+        PMF.map (endpointHistoryReadout N word s B) (sourceHistoryLaw N r (physicalOps N word) s)
+s : Code N sample
+offset : ℝ
+B : Copy → Copy → Tag
+hword : wordBinContract N bin (q :: word) offset
+hh : stepBinContract N bin offset q.1 q.2
+ht : wordBinContract N bin word (segmentOffset N q.1 offset)
+d : Code N sample
+z : Fin (List.map Prod.fst word).length → Code N sample
+⊢ (endpointHistoryReadout N (q :: word) s B ∘ Fin.cons d) z =
+    endpointHistoryReadout N word d (endpointStepTags N q.1 q.2 s d B) z
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:127:80: warning: declaration uses `sorry`
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:127:80: warning: declaration uses `sorry`
+/home/runner/work/_temp/g6-cloud-build/ActualCalendarEndpointHistory.lean:127:68: warning: This simp argument is unused:
+  historyLaw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [physicalOps, calendar_joint_nil, sourceHistoryLaw, endpointHistoryReadout]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CloudG3.ActualCalendarEndpointHistory.actual_interval_joint_source_row' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCalendarEndpointHistory.actual_segment_endpoint_tag_row' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCalendarEndpointHistory.actual_calendar_joint_endpoint_history' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCalendarEndpointHistory.actual_calendar_joint_history_prefix_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCalendarEndpointHistory.actual_original_gamma_endpoint_history' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG3.ActualCalendarEndpointHistory.actual_original_gamma_history_prefix_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

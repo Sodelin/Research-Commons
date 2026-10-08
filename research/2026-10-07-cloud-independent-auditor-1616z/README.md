@@ -1,6 +1,8 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:20 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:23 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [latest actual finite-cut joint acceptance](FINITE-CUT-VERIFIED-ENDPOINT-HISTORY-PARTIAL-REVIEW.md) independently authenticates **163 custom modules, 344 named reports, and 3,965 owned declarations including 2,589 theorems**. The finite-cut law now passes at exact d9d412d4 and preserves the original whole-past/residual-clock joint readout under legal interval subdivision. The endpoint-history module alone fails and is wholly excluded; the observation wrapper remains blocked. All preceding3,956 rows remain exact. Full G6 and the requested358-report selection remain open.
 
 The [new actual calendar-context acceptance](CALENDAR-CONTEXT-VERIFIED-FINITE-CUT-PARTIAL-REVIEW.md) independently authenticates **162 custom modules, 336 named reports, and 3,956 owned declarations including 2,582 theorems**. Context now passes at exact3694d292; its actual completed-calendar cut law retains the same bank, supplied old matrix and unnormalized fibres. The finite-cut module fails and both downstream wrappers remain blocked and wholly excluded. All preceding3,912 rows remain exact; this is no full358-report or G6 endpoint acceptance.
 
