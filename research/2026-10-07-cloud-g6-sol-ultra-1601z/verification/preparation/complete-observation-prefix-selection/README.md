@@ -1,0 +1,9 @@
+# Reviewed complete observation addition: static selection
+
+The proposed166-custom/365-named selection adds only the unchanged c8f632b7 complete-observation consumer (one definition and six theorem bodies) to actual verified165 input410c21f. All165 provider hashes are fixed. External roots stay65 Mathlib plus one Lean; the existing3302 transitive Mathlib context, toolchain, runner and complete ownership/axiom gates remain unchanged. This static preparation does not run a compiler or mutate a running input.
+
+Original source bytes remain at immutable4fe48269. Its earlier SOURCE-PINS is a historical preparation: exactly one provider now supersedes the unaccepted d6a2 History source with actual PASS e420 from run377145. The two redundant tactic lines were deleted under root/primary review; all other nine named provider hashes and consumer bytes remain exact. The current provider pins and literal supersession are recorded alongside this note.
+
+The consumer derives actual Gamma by legal cut and endpoint-history transport, appends the same exact ancestral completion/tag-update kernel, then proves TV/event and occurrence-sum bounds for one finite joint readout of the actual complete-calendar record. Supplied entering state/old matrix, actual ancestral support, legal cuts, fixed-bin and last-tail contracts remain explicit. Physical initialization/source admission, effective cut construction, executable/residual/perturbed-bank correspondence and menu/master closure remain separate.
+
+The last actual165 job elapsed678.00s. A140s planning reserve for this consumer, enlarged audits and runtime/cache variability gives818.00s within the unchanged900s cap; this is an estimate, not a compiler receipt. Each command remains bounded180s, trust0,-j1,-M4096. Primary actual165 and exact root/primary166 selection gates precede any one serialized source freeze.

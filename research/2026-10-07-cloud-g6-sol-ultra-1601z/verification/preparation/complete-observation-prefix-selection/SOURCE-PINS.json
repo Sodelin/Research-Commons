@@ -1,0 +1,108 @@
+{
+  "status": "Reviewed source; compiler UNCHECKED; no dispatch",
+  "original_preparation_commit": "4fe48269cdf044330a0a8651d70fa5d2bc32ed93",
+  "consumer_sha256": "c8f632b7886f63d79514b010389534fa61e9c6b63b70fdca9d94b839cec40c79",
+  "consumer_named_declarations": [
+    "finiteCompleteJoint",
+    "actual_gamma_tail_domination",
+    "actual_completed_joint_eq_gamma_tail",
+    "actual_complete_joint_readout_prefix_tv",
+    "actual_complete_joint_readout_prefix_tv_budget",
+    "actual_complete_joint_readout_prefix_event",
+    "actual_complete_observation_toMeasure"
+  ],
+  "verified_provider_input": "410c21faae9e3e16c100f22daeaa384ea8ae3702",
+  "provider_pins": {
+    "ActualObservationCutRefinement": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualObservationCutRefinement.lean",
+      "sha256": "7815bf4e807553cd103bf7a3f0df558f461ab30e2a9f7e20de088580d1680bb6",
+      "imports": [
+        "ActualCalendarEndpointHistory"
+      ]
+    },
+    "ActualCalendarEndpointHistory": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCalendarEndpointHistory.lean",
+      "sha256": "e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a",
+      "imports": [
+        "ActualFiniteCutJointLaw",
+        "UnifiedLean.G6.HistoryPrefix"
+      ]
+    },
+    "CompleteCalendarJointLaw": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/CompleteCalendarJointLaw.lean",
+      "sha256": "06440343d946783c9662945fa33f1dbc24c827deb6d382440c37ed2ad8c7b60f",
+      "imports": [
+        "CompleteCalendarBinReadout",
+        "ActualTailBinRow",
+        "G2FiniteFibreTransport"
+      ]
+    },
+    "ActualCalendarCutContext": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCalendarCutContext.lean",
+      "sha256": "3694d292bc754e48c07a8dc32a62783eb2534b9bc80016c71b427bf835d742d7",
+      "imports": [
+        "ActualCutJointLaw",
+        "CompleteCalendarJointLaw"
+      ]
+    },
+    "UnifiedLean.G6.HistoryPrefix": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/HistoryPrefix.lean",
+      "sha256": "e8fdd3d4973b79730ef5931734f007e1bfc73d04fdcbd656e30342638a2930d7",
+      "imports": [
+        "UnifiedLean.G6.ProgramPrefix",
+        "G2SourceFiniteHistory"
+      ]
+    },
+    "UnifiedLean.G6.ProgramPrefix": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/ProgramPrefix.lean",
+      "sha256": "a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb",
+      "imports": [
+        "UnifiedLean.G6.SourcePrefix",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ]
+    },
+    "UnifiedLean.G6.FiniteProbability": {
+      "repository_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteProbability.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3",
+      "imports": [
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "UnifiedLean.Source.SourceCompletionHarmonic": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletionHarmonic.lean",
+      "sha256": "5a15f085181e1f6f514d629db289db4a11d6b91032267ecf73a795b0a4f1bfd0",
+      "imports": [
+        "UnifiedLean.Source.SourceAncestralAbsorption"
+      ]
+    },
+    "UnifiedLean.Source.SourceAncestralCompletion": {
+      "repository_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralCompletion.lean",
+      "sha256": "da44afa6b8039afb1f90128af2f1b62234f3dfd0197ef9399c52873bf865caa5",
+      "imports": [
+        "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ]
+    },
+    "G2ChronologicalPathReadout": {
+      "repository_path": "research/2026-10-07-dot-g2-accepted-source-preservation-0006z/sources/G2ChronologicalPathReadout.lean",
+      "sha256": "99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473",
+      "imports": [
+        "G2CompleteCalendarAttachment",
+        "G2CompleteAncestralPath"
+      ]
+    }
+  },
+  "provider_supersession": [
+    {
+      "module": "ActualCalendarEndpointHistory",
+      "original_preparation_sha256": "d6a2be33078a71362f0b86bf052185d84d66f2da17bc008a852a28dfd17ed257",
+      "current_actual_verified_sha256": "e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a",
+      "reason": "Delete only the two redundant tactics after the preceding congr closed the goal; original reviewed consumer bytes unchanged.",
+      "actual_receipt_commit": "6dbcf5dae2c38dc7b5da162d271ce3faca082ad2"
+    }
+  ],
+  "selection_sha256": "86a6712ed4a6638081debb3b0cfa5f723ca2e3c77edbc8c78c721d3a4590d988",
+  "preserved_accepted_provider_count": 165
+}
