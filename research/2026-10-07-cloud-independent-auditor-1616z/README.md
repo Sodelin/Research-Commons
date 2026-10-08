@@ -1,10 +1,12 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:54 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:57 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [latest actual endpoint-history repair failure](ENDPOINT-HISTORY-REDUNDANT-TACTIC-FAILED-REVIEW.md) independently preserves the unchanged **163 custom modules /344 named reports /3,965 owned declarations /2,589 theorems**. The full inventory and every preceding row remain exact. EndpointHistory d6a2 alone fails on a redundant tactic after its goal has already closed; the whole module and blocked Observation wrapper remain excluded. The [deletion-only source gate](ENDPOINT-HISTORY-REDUNDANT-TACTIC-SOURCE-REVIEW.md) accepts exact e420a827 without changing any remaining source byte; its compiler gate remains separate.
 
 The [new G4 padding-budget and weak-source review](G4-PADDED-CONJUGATOR-BUDGET-HAND-REVIEW.md) independently hand-accepts the exact complete-forest norm allocation gate and the separate actual weak-middle/source-image limitation. For fixed q/r the capped algebraic padded factors can pass the strict budget and positivity conditions; actual positive-word membership of both factors remains unproved. This gives no full G4 rival, uniform exclusion or stopping theorem, and no compiler result.
+
+The [new original passive quartet fibre review](G3-PASSIVE-QUARTET-WHOLE-FIBRE-HAND-REVIEW.md) hand-accepts exact whole-source recognition and finite positive extraction for the single declared four-A-copy rooted restriction. Its open contrast interval has an effective algebraic lower endpoint and exact upper endpoint 1/12. Rational strict-word density plus a positive algebraic leading passage gives each interior law; no QE/search or compiler was run. Richer coupled menus and general G3 remain open.
 
 The [new complete-observation prefix consumer](COMPLETE-OBSERVATION-PREFIX-SOURCE-REVIEW.md) clears independent one-definition/six-theorem hand/source review. Actual Gamma/refined-history attachment followed by the identical original completion kernel gives one joint complete-readout domination, TV/event and occurrence budget. Explicit cut, fixed-bin and ancestral-tail support contracts remain; physical supplied-past/menu/backend attachment remains open. This draft is compiler UNCHECKED and outside the current165 selection.
 
