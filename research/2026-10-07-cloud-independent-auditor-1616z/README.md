@@ -200,3 +200,5 @@ Actual [private-register kernel/history partial build](NATURAL-FAMILY-KERNEL-HIS
 [General-ratio diagonal feasibility and ordered response failure](G4-GENERAL-RATIO-DIAGONAL-AND-RESPONSE-HAND-REVIEW.md) are HAND accepted at exact source scope: actual positive 1:6:10 three-cell diagonals through five, separate strict ordered C=0 implies H<0, and no complete ordinary return or original G4 closure.
 
 [Original-X nontrivial split filter](G6-NONTRIVIAL-SPLIT-FILTER-SOURCE-REVIEW.md) is source/API accepted: both-side cardinality at least two, exact normalized original switching evaluator iff and same-X inherited structural splice equality. New compilation and biological law/master consumers remain separate.
+
+[Actual focal ancestry/count law adapter](G3-ACTUAL-ANCESTRY-COUNT-HAND-SOURCE-REVIEW.md) is HAND/source accepted in the passive natural INDEPENDENT quartet scope. It relates deterministic contributing hybrids to true total H and the law recurrence; the graph draft proves only set/count facts, and graph-to-word formalization/general G3 remain open.
