@@ -1,0 +1,5 @@
+# Endpoint-history two-line deletion, uncompiled
+
+Actual run377130 failed only because the corrected dependent reader let rw[PMF.map_comp];congr1 already close its callback goal. The next funext produced the actual143:8 No goals to be solved diagnostic. This derivative deletes ONLY that funext and its following simp; every other byte of the failed d6a2 source is retained. Statements, old matrix, source kernels, derived law, physical bank and premises are unchanged. The whole prior failed module remains excluded despite two standard-only recovery reports.
+
+Original author b391 and repaired d6a2 bytes/failures remain preserved. Actual controlling scope is163custom/344names/full3965owned2589theorems. All163 accepted hashes and other164 requested source bytes remain fixed. Observation7815 remains uncompiled. Root and primary exact source review precede one necessary same165/358 serial successor; no compiler or new target is launched by this preparation. The separately reviewed complete-observation consumer remains outside that selection.
