@@ -10,7 +10,7 @@ minimum m, finite-source extraction and general G3 recognition are separate.
 
 namespace CloudG3.HybridSizeCore
 
-def cellT (p q u v : ℝ) : ℝ :=
+noncomputable def cellT (p q u v : ℝ) : ℝ :=
   (2 / 3 : ℝ) * (q * u ^ 3 + p * v ^ 3 - 3 * p * q * (u - v) ^ 2)
 
 theorem drop_v_identity (p q u v : ℝ) :

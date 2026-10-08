@@ -60,10 +60,15 @@ lemma rationalResidualCount_nonneg (q : ℚ) (hq : 0 ≤ q) (K k : ℕ) :
   have hnext := rationalTerm_nonneg hq (K + 1)
   have herror : 0 ≤ rationalError q K := by
     change 0 ≤ 2 * rationalTerm q (K + 1) / rationalDenominator q K
-    exact div_nonneg (by positivity) hU
+    exact div_nonneg (mul_nonneg (by norm_num) hnext) hU
   unfold rationalResidualCount
-  by_cases hk : k ≤ K <;> by_cases hz : k = 0 <;>
-    simp only [hk, hz, if_true, if_false] <;> positivity
+  apply add_nonneg
+  · split_ifs
+    · exact div_nonneg hT hU
+    · exact le_rfl
+  · split_ifs
+    · exact herror
+    · exact le_rfl
 
 lemma rationalResidualCount_support (q : ℚ) (K k : ℕ) (hk : K < k) :
     rationalResidualCount q K k = 0 := by
@@ -109,8 +114,10 @@ theorem rationalResidualCount_actual (q : ℚ) (a : ℝ≥0)
     (ha : (a : ℝ) = (q : ℝ)) (K k : ℕ) :
     (rationalResidualCount q K k : ℝ) = residualCountReal a K k := by
   rw [residualCountReal_coefficients]
-  simp [rationalResidualCount, rationalDenominator, rationalTerm_real,
-    rationalPrefix_real, rationalError_real, ha]
+  by_cases hk : k ≤ K <;> by_cases hz : k = 0 <;>
+    simp only [rationalResidualCount, hk, hz, if_true, if_false,
+      Rat.cast_add, Rat.cast_div, Rat.cast_zero, rationalTerm_real,
+      rationalDenominator_real, rationalError_real, ha]
 
 theorem cutoff_residual_deficit (q ε : ℚ) (hq : 0 ≤ q) (hε : 0 < ε) :
     1 - rationalRetained q (cutoff q ε hq hε) ≤ ε := by
