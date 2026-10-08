@@ -1,0 +1,9 @@
+# Future corruption DAG and bounded dependency split
+
+STATIC PREPARATION ONLY against actual179 PASS. Eight source-accepted target originals plus the attributed paired-target dependency copy are preserved unchanged. Real import traversal retains the actual paired/split/splice/normalization/displayed target providers and all original G1/G5 graph dependencies; no native-source consumer is represented by generic helpers alone.
+
+All179 actual source hashes/imports remain fixed. Full generic six-target closure is185custom/556selected and adds three Mathlib roots;768+40new+10audit+100variation=918s does not fit900. Full native eight-target closure is338custom/564selected (159new custom dependencies), including original G1 normalization and both target providers. No justified900s bound is supplied for that large DAG. It is not enrolled or verified. Imported cache context for new roots must be derived rather than inferred from a broader header catalogue.
+
+The concrete bounded first dependency split is the separately prepared181custom/513selected finite-corruption + actual-original-observation closure, with no new external roots and an898s estimate. All native wrong-target-image/class/closest-law consumers remain UNCHECKED. Generic classes and compact/coordinate/radial stages can be planned at their true dependency boundaries using actual later timings; none is authorized here.
+
+The eight literal originals contain53print directives. The unchanged runner selects63def/lemma/theorem names; complete generated/type/body/axiom ownership is a third distinct inventory. The nine preserved source bytes, full hash/import/path DAGs and original-provider identities are mathematical preparation, not machine acceptance, scientific source-law admission or G6 master completion. No compiler, Actions or source/workflow mutation was invoked.
