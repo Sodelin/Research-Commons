@@ -1,0 +1,23 @@
+# Original-X nontrivial displayed split filter
+
+**Independent SOURCE/API ACCEPT; compiler UNCHECKED.** The complete ten theorem bodies and three definitions of [G6NontrivialSplitFilter.lean](https://github.com/Sodelin/Research-Commons/blob/fe95ec783a072b0c082cc5c972e0bfee0a715972/research/2026-10-08-cloud-g6-nontrivial-split-filter-0319z/G6NontrivialSplitFilter.lean) were reviewed at immutable `fe95ec783a072b0c082cc5c972e0bfee0a715972`, SHA256 `7d0faf7be18dacad7a606f91f895d06e0e5103dcde995321acba61e44dd4baf8`, 8,304 bytes. No blocking semantic or definite static API defect was found. This draft is outside the sole current 176-source build; printed axiom commands are not execution receipts.
+
+[Independent byte authentication](g6-nontrivial-split-filter-source-authentication.json) matches all five files in the new packet, six direct provider sources and their exact selected historical registry/recorded-zero-exit rows, the earlier 25-context map, four exact original/current-model pairs, source/target contracts and two narrow Mathlib APIs. The preceding [original G1 constructor reuse review](ORIGINAL-G1-SPLICE-REUSE-SOURCE-REVIEW.md) is retained, rather than repeated. The historical complete467 status is metadata: no whole467 body, log or object authentication and no fresh historical build is claimed.
+
+## Exact target and membership
+
+The original provider constructs `actualDisplayedSplits` from actual displayed clusters by subset/nonempty-side filtering and the unordered pair `{D,panel \ D}`. This encoding removes full/empty cuts and identifies complementary binary-root child cuts, but retains pendant cuts. The new `BothSidesNontrivial` predicate asks that every member side have cardinality at least two. On a generated pair it is exactly the conjunction of the two cardinality bounds; insertion/singleton membership proves both directions even if the pair representation deduplicates. The predicate is used with actual split membership and does not independently validate arbitrary cut families.
+
+`mem_nontrivialDisplayedSplits_iff_cluster` correctly unwraps the actual image/filter in the forward direction and converts cardinality at least two to nonempty sides in the reverse direction. Thus both implications preserve the displayed-cluster witness and original complement. The normalized evaluator iff attaches the SAME predicate to the inherited actual switching/pruning iff; it supplies original `N.Switching`, `PrunedAt` and `rootSuppressedCuts` witnesses without assuming any desired target equality. Its explicit Calendar premise is the original existence/evaluation premise.
+
+`originalG6S` specializes the panel to `Finset.univ` of the original label type `X`. Both sides of each cut, their cardinalities and duplicate removal therefore refer to the full original species universe. A smaller panel helper does not replace this target. The candidate neither observes S nor derives an estimator from it: S remains the network target, separate from the joint genealogy-law observation.
+
+## Existing source splice, same filter
+
+The splice theorem applies the identical original-label predicate to the already source-proved equal unfiltered cut unions. Its inherited equality was derived by actual switching restriction/lifting and selected descendant-cluster transport, not supplied as a target field. The wrapper obtains the genuine original bigon from the explicit hybrid-child bridge contract and actual nonroot incident-two-port premise, then calls the unchanged constructed G1 splice. There is no planar or galled hypothesis added and no newly rebuilt suppression construction.
+
+The reduced vertex carrier preserves the original type `X`; its leaf value at each `x` is definitionally `N.leaf x`, and its root value is `N.root`. This makes the full-X filtered target equality well typed on both sides. Calendar is needed for the separate normalized evaluator interpretation, not for rewriting the already proved structural split unions.
+
+## Remaining boundary
+
+This is a structural, same-original-X target consumer. New compilation and standard-axiom validation remain pending. The decorated spine is not yet identified here with an admitted positive biological word carrying the original rates, cuts and old joint histories. Full Q transport, cross-network Q/S normalization, whole biological observation-law preservation, menu admission, effective joint cell/cloud/Hausdorff construction and complete original G6 certification remain separate. No compiler, Actions poll, source evaluation, numerical harness, pruning execution or private product/API work was performed by this reviewer.

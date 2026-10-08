@@ -198,3 +198,5 @@ Actual natural-family attempt [37718922897](NATURAL-FAMILY-PARTIAL-VERIFIED-REVI
 Actual [private-register kernel/history partial build](NATURAL-FAMILY-KERNEL-HISTORY-PARTIAL-VERIFIED-REVIEW.md) verifies171 custom modules,403 names and complete4,055 declarations/2,643 theorems, retaining all4,027 prior rows. Step,Boundary,Program and History pass; Seed and Calendar fail and three natural dependents are blocked. The [two-local-proof repair](PRIVATE-SEED-CALENDAR-REPAIR-SOURCE-REVIEW.md) is source/selection accepted and uncompiled.
 
 [General-ratio diagonal feasibility and ordered response failure](G4-GENERAL-RATIO-DIAGONAL-AND-RESPONSE-HAND-REVIEW.md) are HAND accepted at exact source scope: actual positive 1:6:10 three-cell diagonals through five, separate strict ordered C=0 implies H<0, and no complete ordinary return or original G4 closure.
+
+[Original-X nontrivial split filter](G6-NONTRIVIAL-SPLIT-FILTER-SOURCE-REVIEW.md) is source/API accepted: both-side cardinality at least two, exact normalized original switching evaluator iff and same-X inherited structural splice equality. New compilation and biological law/master consumers remain separate.
