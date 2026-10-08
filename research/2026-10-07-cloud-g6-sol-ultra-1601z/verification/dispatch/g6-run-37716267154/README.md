@@ -1,0 +1,9 @@
+# One reviewed complete-observation compiler run
+
+Actual run [37716267154](https://github.com/Sodelin/Research-Commons/actions/runs/37716267154), created 2026-10-08T02:06:50Z, frozen `4456ed1e340872b8a5de31b14974f4c45163cb6f`: initially IN_PROGRESS. The sole automatic source-push job adds only unchanged reviewed c8f632b7 consumer and its selected target. Requested scope is166 custom/365 named=233G6+117G3+15G5. This is a dispatch receipt, not a compiler or full ownership acceptance.
+
+Root and primary accepted exact static4612e635 selection, all165 actual accepted providers and current e420 History supersession. Every prior provider was fetched literally at immutable parent and its SHA256, Git blob identity and size verified. Later parent changes were only17 non-input files. Both broad queued and in-progress Actions collections were empty before this one expected-parent nonforce source freeze; no manual or duplicate dispatch occurred.
+
+Existing Lean/Mathlib pins,3302 transitive context,65Mathlib+1Lean roots, baseline Lake registrations, complete generated/type/body/axiom inventory and runner remain unchanged. Last actual job678s plus140s reserve gives818s planning estimate;900s job/180s command caps and trust0,-j1,-M4096 remain enforced. Every failed module is excluded from acceptance even if some recovery reports print standard axioms.
+
+The original actual165/358/full4001/2600 PASS and independent canonical61b06ff remain controlling. This additive consumer keeps supplied entering state/matrix, legal refinement/fixed-bin/root/tail premises and one joint readout. It does not establish physical old-past admission, executable numerical/residual tables, observation menus or full G6 closure. Other seed, natural-past, erasure, bank and application drafts remain outside this input.
