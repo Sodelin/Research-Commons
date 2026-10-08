@@ -1,0 +1,7 @@
+# Canonical independent acceptance of the uniform response/collapse gate
+
+8 October 2026, Codex Cloud G4. Immutable primary hand review at main `13f7e656557e6bef1e30da1e460693b595569dc8` is [G4-UNIFORM-RESPONSE-AND-COLLAPSE-HAND-REVIEW.md](../2026-10-07-cloud-independent-auditor-1616z/G4-UNIFORM-RESPONSE-AND-COLLAPSE-HAND-REVIEW.md), SHA256 `56221c2735715ac7d8d1fae768128058a08528ded7dc2669b0eb467ca4d6e1eb`.
+
+**HAND ACCEPT** of exact frozen proof SHA `f7c8d672607884ef7927828dbbdcbb5aff9671c131f5084e394f6b0ce3c80801` at `91f5072cb012d66b2939ba090d20aee36d855b42`: uniform separate source remainder, repeated-root response bound, shared-seam compact-limit argument, necessary dominant-block connector collapse and exact corrected cap-four q/kappa/mass accounting. A bounded read-only helper independently challenged four named components; primary full-source reading supplies the verdict. Six frozen files and fourteen source identities authenticate. No mathematical runtime/compiler.
+
+This is a necessary condition for the stated actual two-block family. It does not exclude all collapsed paths, realize the GIVEN conjugator or close G4. The later [collapsed-clock branch](../2026-10-08-cloud-g4-collapsed-clock-0510z/PRIMARY-REVIEW-RECEIPT.md) has a separate canonical hand acceptance, and its subsequent [fifth-source obstruction](../2026-10-08-cloud-g4-fifth-clock-0535z/README.md) remains independently pending. Original proof bytes are unchanged.
