@@ -1,0 +1,172 @@
+{
+  "status": "READ-ONLY FUTURE CLOSURE PREFLIGHT; no compiler or selection authorization",
+  "baseline_frozen": "4456ed1e340872b8a5de31b14974f4c45163cb6f",
+  "baseline_requested_custom": 166,
+  "future_new_custom": 10,
+  "future_custom_if_all_selected": 176,
+  "future_new_named": 98,
+  "future_named_if_all_selected": 463,
+  "modules": {
+    "PrivateSeedFactorization": {
+      "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/PrivateSeedFactorization.lean",
+      "sha256": "f3d7e97db701bb60d4d7e4f8ce1218bed1226ea198f13f1ad12861e1d312e14b",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterProgram",
+        "UnifiedLean.Source.SourceNaturalInitialization",
+        "G2LiteralMarkedClockTrace",
+        "Mathlib.MeasureTheory.Constructions.Pi"
+      ],
+      "named_count": 16
+    },
+    "PrivateSeedHistoryFactorization": {
+      "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/stage2-operation-history/PrivateSeedHistoryFactorization.lean",
+      "sha256": "8bba9735a9514154492be2d8f6a3a8cad8781963559a5da6568011b14bc8e80a",
+      "imports": [
+        "PrivateSeedFactorization",
+        "UnifiedLean.G6.PrivateRegisterHistory",
+        "Mathlib.MeasureTheory.Measure.Dirac"
+      ],
+      "named_count": 14
+    },
+    "UnifiedLean.G6.PrivateRegisterErasure": {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/private-register-api-2252z/PrivateRegisterErasure.lean",
+      "sha256": "b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4",
+      "imports": [
+        "UnifiedLean.Source.UniformizedSourceStep"
+      ],
+      "named_count": 14
+    },
+    "UnifiedLean.G6.PrivateRegisterSourceStep": {
+      "path": "research/2026-10-07-cloud-private-register-step-sol-2252z/proof-drafts/PrivateRegisterSourceStep.lean",
+      "sha256": "9d01c1df102745eb1a2e0dc37d89dc15a25b5a776c25d7ab292be0c3705de054",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterErasure"
+      ],
+      "named_count": 6
+    },
+    "UnifiedLean.G6.PrivateRegisterBoundary": {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterBoundary.lean",
+      "sha256": "60e7fcb973edb2059587e59df44b51516991f6eb9a5e66cc6c3e90d9a1a22402",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterErasure",
+        "UnifiedLean.Source.SourceBoundaryKernels"
+      ],
+      "named_count": 7
+    },
+    "UnifiedLean.G6.PrivateRegisterProgram": {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterProgram.lean",
+      "sha256": "790de244aa1a416e67b7174de11d9cb79f925c4299a202185f3ebb4c2282e596",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterSourceStep",
+        "UnifiedLean.G6.PrivateRegisterBoundary",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ],
+      "named_count": 7
+    },
+    "UnifiedLean.G6.PrivateRegisterHistory": {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterHistory.lean",
+      "sha256": "b122672904d07b1cc0567fab832994f7d3dcba18490f55b0b7c79485b7702202",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterProgram",
+        "G2SourceFiniteHistory"
+      ],
+      "named_count": 4
+    },
+    "UnifiedLean.G6.PrivateRegisterCalendarPrefix": {
+      "path": "research/2026-10-07-cloud-private-calendar-sol-2304z/proof-drafts/PrivateRegisterCalendarPrefix.lean",
+      "sha256": "9f50ff8c811aa93c6215ea41a8fd52a16aea57798e1930ef831f993f6f4727c7",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterCalendar"
+      ],
+      "named_count": 6
+    },
+    "UnifiedLean.G6.PrivateRegisterCalendar": {
+      "path": "research/2026-10-07-cloud-private-calendar-sol-2304z/proof-drafts/private-calendar-api-2322z/PrivateRegisterCalendar.lean",
+      "sha256": "a639cd69881e89e0e330ba20b944eb0a489941991a7af553cbb27036ad230ffa",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterProgram",
+        "UnifiedLean.Source.SourceCalendarCompiler",
+        "Mathlib.Data.List.Nodup"
+      ],
+      "named_count": 10
+    },
+    "NaturalCalendarPastAdmission": {
+      "path": "research/2026-10-08-cloud-natural-past-source-sol-0155z/proof-drafts/NaturalCalendarPastAdmission.lean",
+      "sha256": "20eefb59d591608cacaa9592092527ed315f6aaf7b5f14159cba138e802c256a",
+      "imports": [
+        "ActualObservationCutRefinement",
+        "PrivateSeedHistoryFactorization",
+        "UnifiedLean.G6.PrivateRegisterCalendarPrefix"
+      ],
+      "named_count": 14
+    }
+  },
+  "unknown_custom_dependencies": [],
+  "new_external_root_names": [
+    "Mathlib.Data.List.Nodup",
+    "Mathlib.MeasureTheory.Measure.Dirac"
+  ],
+  "old_transitive_mathlib": 3302,
+  "new_transitive_mathlib": 0,
+  "new_transitive_modules": [],
+  "actual_compile_status": "All ten future sources are UNCHECKED, Natural source gate pending; original bytes fixed.",
+  "future_dependency_stages": [
+    {
+      "label": "Actual private register erasure and source/history kernels",
+      "modules": [
+        "UnifiedLean.G6.PrivateRegisterErasure",
+        "UnifiedLean.G6.PrivateRegisterSourceStep",
+        "UnifiedLean.G6.PrivateRegisterBoundary",
+        "UnifiedLean.G6.PrivateRegisterProgram",
+        "UnifiedLean.G6.PrivateRegisterHistory"
+      ],
+      "new_custom": 5,
+      "new_named": 38,
+      "conditional_total_custom": 171,
+      "conditional_total_named": 403
+    },
+    {
+      "label": "Actual once-drawn seed initial and entire endpoint history product",
+      "modules": [
+        "PrivateSeedFactorization",
+        "PrivateSeedHistoryFactorization"
+      ],
+      "new_custom": 2,
+      "new_named": 30,
+      "conditional_total_custom": 173,
+      "conditional_total_named": 433
+    },
+    {
+      "label": "Actual original-calendar guarded operation no-read",
+      "modules": [
+        "UnifiedLean.G6.PrivateRegisterCalendar",
+        "UnifiedLean.G6.PrivateRegisterCalendarPrefix"
+      ],
+      "new_custom": 2,
+      "new_named": 16,
+      "conditional_total_custom": 175,
+      "conditional_total_named": 449
+    },
+    {
+      "label": "Natural original leaf/register/clock entering-past admission",
+      "modules": [
+        "NaturalCalendarPastAdmission"
+      ],
+      "new_custom": 1,
+      "new_named": 14,
+      "conditional_total_custom": 176,
+      "conditional_total_named": 463
+    }
+  ],
+  "planning_budget_watch": {
+    "prior_actual165_job_seconds": 678,
+    "current166_consumer_planning_reserve_seconds": 30,
+    "future_uncompiled_module_planning_reserve_each_seconds": 15,
+    "larger_audits_reserve_seconds": 10,
+    "runtime_variation_margin_seconds": 100,
+    "first_five_conditional_estimate_seconds": 893,
+    "all_ten_conditional_estimate_seconds": 968,
+    "cap_seconds": 900,
+    "status": "Neither is a dispatch budget approval. Await actual166 timings and exact future source gates. All-ten conservative estimate exceeds cap, so prefer source-connected stages if this remains true."
+  }
+}
