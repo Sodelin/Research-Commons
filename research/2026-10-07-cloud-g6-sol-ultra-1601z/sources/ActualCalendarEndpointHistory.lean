@@ -22,7 +22,7 @@ open GProgram.G2.LiteralMarkedClockTrace GProgram.G2.ActualCalendarTrace
 open GProgram.G2.SourceFiniteHistory GProgram.G2.CalendarDecoration
 open UnifiedLean.G6.BinHistory UnifiedLean.G6.BinFold
 open UnifiedLean.G6.ProgramPrefix UnifiedLean.G6.FiniteProbability UnifiedLean.G6.HistoryPrefix
-open CloudG3.LiteralSameBinTrace CloudG3.ActualCutJointLaw
+open CloudG3.LiteralSameBinTrace CloudG3.ActualCutJointLaw CloudG3.ActualTailBinRow
 open CloudG3.ActualCalendarCutContext CloudG3.ActualFiniteCutJointLaw
 open scoped Classical NNReal
 
@@ -60,8 +60,10 @@ noncomputable def endpointHistoryReadout (N : RootedBinary V E X) {sample : Copy
     (word : List (ProgramStep N × Tag)) → Code N sample → (Copy → Copy → Tag) →
       (Fin (physicalOps N word).length → Code N sample) → TaggedEndpoint (Tag := Tag) N sample
   | [], s, B, _ => (s, B)
-  | q :: word, s, B, h => endpointHistoryReadout N word (h 0)
-      (endpointStepTags N q.1 q.2 s (h 0) B) (Fin.tail h)
+  | q :: word, s, B, h => by
+      change (Fin ((physicalOps N word).length + 1) → Code N sample) at h
+      exact endpointHistoryReadout N word (h 0)
+        (endpointStepTags N q.1 q.2 s (h 0) B) (Fin.tail h)
 
 /-- Actual fixed-bin interval row at full Copy cap, derived from the verified
 SAME-clock fold and the original unconditional raw endpoint source law. -/
@@ -90,7 +92,7 @@ theorem actual_interval_joint_source_row (N : RootedBinary V E X)
       exact Prod.ext rfl (hc (Fintype.card Copy) B)
     _ = ((sourceTimeKernel N r h s).toMeasure).map u := by
       rw [actual_trace_endpoint_source_law N r s h]
-    _ = _ := (PMF.toMeasure_map _ _ hu).symm
+    _ = _ := PMF.toMeasure_map u (sourceTimeKernel N r h s) hu
 
 /-- Every observed row comes from the original actual segment: boundaries
 retain old tags, and intervals use their original physical bank. -/
@@ -124,7 +126,10 @@ theorem actual_calendar_joint_endpoint_history (N : RootedBinary V E X)
     calendarJoint N r bin hbin (physicalOps N word) s offset B =
       (sourceHistoryLaw N r (physicalOps N word) s).map (endpointHistoryReadout N word s B) := by
   induction word generalizing s offset B with
-  | nil => simp [physicalOps, calendar_joint_nil, sourceHistoryLaw, historyLaw, endpointHistoryReadout]
+  | nil =>
+      change calendarJoint N r bin hbin [] s offset B =
+        (historyLaw (sourceProgramStep N r) [] s).map (fun _ => (s, B))
+      rw [calendar_joint_nil, historyLaw, PMF.pure_map]
   | cons q word ih =>
       have hh : stepBinContract N bin offset q.1 q.2 := hword.1
       have ht : wordBinContract N bin word (segmentOffset N q.1 offset) := hword.2
@@ -136,7 +141,7 @@ theorem actual_calendar_joint_endpoint_history (N : RootedBinary V E X)
         rw [PMF.map_comp]
         congr 1
         funext z
-        rfl
+        simp only [Function.comp_def, endpointHistoryReadout, Fin.cons_zero, Fin.tail_cons]
       calc
         _ = (sourceProgramStep N r q.1 s).bind (fun d =>
             calendarJoint N r bin hbin (physicalOps N word) d (segmentOffset N q.1 offset)
