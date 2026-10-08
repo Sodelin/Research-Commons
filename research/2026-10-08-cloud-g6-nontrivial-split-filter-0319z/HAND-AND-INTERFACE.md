@@ -1,0 +1,38 @@
+# The exact original split filter and source/observation/target interfaces
+
+Contributor: Cloud literature/organization structural lane. Date: 2026-10-08, 03:19 UTC. Status: **HAND-derived argument and uncompiled source prototype**, using Dot's existing source proofs. No historical novelty claim. This is one structural consumer for the original G6 master, which remains in progress.
+
+The [original G6 contract, §2.1–2.2](../2026-10-01-g6-effective-certification/PROOF.md) fixes one original species label set X, displays distinct quartet support Q and the union S of nontrivial displayed-tree splits, and observes joint genealogy records rather than network targets. Its originally planar source scope is extended by the [accepted nonplanar finite-certification argument](../2026-10-01-sol61-head-audit-1956z/G6-NONPLANAR-FINITE-CERTIFICATION.md). The [full-target calendar theorem](../2026-10-01-sol61-head-audit-1956z/G5-TRIPLE-CALENDAR-FULL-TARGET.md), opening contract and §5, makes “nontrivial” explicit: both sides have at least two labels. Rooted clusters retain singleton/full clusters by convention; S does not.
+
+| Interface | Actual input or output | Evidence and boundary |
+|---|---|---|
+| Source graph | `N : RootedBinary V E X`, finite original vertex/edge occurrences; explicit hybrid-child bridge contract; an actual nonroot component with two incident original bridge IDs | [Original port adapter](../2026-10-08-cloud-g6-original-g1-splice-reuse-0304z/G6OriginalSpliceAdapter.lean) derives an original genuine bigon and calls the existing constructed `splicedNetwork`. No decomposition, embedding or target equality is supplied. |
+| Displayed target | Union over actual `N.Switching` of normalized tree cuts, filtered on both original-label side cardinalities | [Original displayed cluster/split source](../2026-10-04-dot-complete-original-g1-1549z/src/G1ActualDisplayedClusterSplitTransport.lean), followed by the filter in this packet. Distinct cuts, not multiplicities. |
+| Normalized tree witness | `PrunedAt N S panel N.root (some T)`; original pruning removes empty twigs/unary repetitions; `T.leaves = panel` is inherited and derived | Calendar is needed by the original existence/evaluator theorem. `rootSuppressedCuts T` supplies the original unordered cut encoding, including binary-root complementary-cut identification. |
+| G6 observation | A declared joint finite unranked genealogy profile, optionally with every internal merger bin; one source/parameter assignment across all requested law rows | The target theorem supplies no observation of S, no estimator, no calibration and no equality of these biological laws. Those consumers remain separate. |
+
+## The filter and both directions
+
+For a finite original-label panel A, the original G1 source defines
+
+`actualDisplayedSplits N A = { {D, A \ D} : D in actualDisplayedClusters N A, D ⊆ A, D and A \ D nonempty }`.
+
+The unordered pair representation identifies complementary root-child cuts and removes full/empty cuts. It still includes pendant splits. Define `BothSidesNontrivial cut` to mean every member side has cardinality at least two, and filter the actual displayed split union by it. Applied to an actual cut `{D, A \ D}`, this predicate is exactly `|D| >= 2` and `|A \ D| >= 2`, independently of which side names the pair. The predicate alone is not a validity test for arbitrary cut families; its use is always conjoined with actual split membership.
+
+In the forward direction, original split membership provides an actual displayed cluster D, its subset/proper-side conditions and the unordered cut equation. Membership in the new filter supplies both cardinality bounds. In the reverse direction, an actual displayed cluster D satisfying the subset condition and both bounds has two nonempty sides. It therefore belongs to the original split union, and its unordered pair passes the filter. `mem_nontrivialDisplayedSplits_iff_cluster` proves precisely these two implications.
+
+The original theorem `actual_displayed_splits_iff_normalized_evaluator` supplies actual switching/pruning witnesses in both directions. Adding the same cut predicate yields `mem_nontrivialDisplayedSplits_iff_normalized_evaluator`. Thus the filtered target is exactly the nontrivial cuts of actual normalized displayed trees, rather than an arbitrary finite set assigned to N. For the original G6 target, set A to `Finset.univ : Finset X`; the complement and both cardinalities are taken in the full original species set. A smaller experimental panel is a helper, not a replacement for the original-X target.
+
+## Why suppression preserves the fixed-X target
+
+The constructed reduced vertex carrier excludes the two internal bigon vertices; retained graph edges carry their original IDs, with one new decorated spine. Its leaf embedding is `retainedTaxa N b A`, whose underlying vertex at label x is literally `N.leaf x`. The root is likewise the original root. Consequently the original label type X, each leaf label and the complements `X \ D` are identical on both sides. No taxon is removed, contracted with another label or renamed.
+
+Dot's existing `actual_displayed_clusters_splice` is derived by restricting every actual original switching and lifting every actual reduced switching. Original `actual_selected_clusters_splice` preserves the selected sampled-descendant sets; the removed internal upper/hybrid clusters already occur at the retained interface. Both existential directions are therefore proved by source switchings, not by an asserted target field. The consequent `actual_displayed_splits_splice` proves equality of the unfiltered actual cut unions on every panel A.
+
+Filtering two equal cut unions by the same original-label predicate preserves equality. `nontrivialDisplayedSplits_splice` is that direct rewrite. The G6 wrapper first derives the original bigon from the actual incident-two-port premise, then applies this unchanged transport. `suppressed_originalG6S` proves equality of the full-X nontrivial split unions. This structural equality needs no extra calendar premise; the calendar appears only in the separate interpretation through actual normalized evaluator outputs. Original `splicedCalendar` can retain the original ages if that interpretation is needed for the constructed graph, but no timed law is inferred here.
+
+## Evidence and next implication
+
+The relevant original G1 sources have exact records in the old successful 467-source serial receipt. The preceding [reuse manifest](../2026-10-08-cloud-g6-original-g1-splice-reuse-0304z/SOURCE-PINS.json) pins seventeen selected sources/zero-exit rows and four byte-identical current model providers. This packet rechecks those identities and records the additional exact cut/pruning definitions. It does not rerun the original build, inspect all 467 sources or authenticate every historical object/log. New source bodies and their axioms are compiler UNCHECKED, outside current176; an independent source/API review is a separate gate.
+
+The graph-level target implication is now a concrete thin consumer. Full Q transport remains the separate actual quartet consumer. To enter original G6 source normalization, the decorated spine must next be realized by its actual physical word with the original positive parameters and calendar cuts, carrying the same entering old histories, and its whole joint observation law must be connected to the source-preserving approximation. That binding, source menu admission, effective joint cell/cloud/Hausdorff construction and the complete master Lean endpoint remain open here. A structural target equality cannot substitute for them.
