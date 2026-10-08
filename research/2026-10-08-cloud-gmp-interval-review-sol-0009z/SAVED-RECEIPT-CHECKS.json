@@ -1,0 +1,71 @@
+{
+  "method": "Git bytes, SHA256/length/blob-content hashing and saved JSON/line bookkeeping only; no oracle execution or numerical recomputation",
+  "manifest_sha256": "472cdd1274660c6cff95ce22718400083cc0d44ef41d4b4eeac452ff4a85f9cb",
+  "manifest_bytes": 4548,
+  "manifest_artifacts": [
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/include/certified_forward_gmp.hpp",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/src/certified_forward_gmp.cpp",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/src/interval_probe.cpp",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/Makefile",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/tests/differential.py",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/reference/certified_forward.py",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/build.json",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/differential.json",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/differential-inputs.txt",
+      "sha256_and_bytes_match": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/probe-output.jsonl",
+      "sha256_and_bytes_match": true
+    }
+  ],
+  "input_lines": 2414,
+  "output_records": 2414,
+  "saved_status_counts": {
+    "ok": 2307,
+    "ValueError": 48,
+    "ZeroDivisionError": 5,
+    "DomainError": 51,
+    "ResourceBound": 3
+  },
+  "saved_phase_counts": {
+    "success": 2307,
+    "primitive": 101,
+    "parser": 6
+  },
+  "saved_input_output_hashes_match": true,
+  "saved_count_and_status_fields_match": true,
+  "saved_report_summary_matches_manifest": true,
+  "saved_build_summary_matches_manifest": true,
+  "saved_author_primitive_comparisons": 2408,
+  "saved_author_separate_parser_cases": 6,
+  "saved_author_property_assertions": 5204,
+  "saved_author_failures": 0,
+  "source_and_binary_at_launch_attestation": "Not independently established by this review: harness authenticates Python buffer but does not hash --probe binary/C++ source at launch; build receipt separately records binary SHA",
+  "review_verdict": "SOURCE-SEMANTIC ACCEPT within declared primitive profile; SAVED-RECEIPT CORROBORATED, not independent replay or universal equivalence"
+}
