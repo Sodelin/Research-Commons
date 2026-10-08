@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "scope": "Actual private four-taxon COMMON source; diagonal covariance identity, finite-grid cross interpolation, sparse marginal certificates and joint atom weights",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "script_sha256": "8296b04cc43fc0dbdfb225cf3e36158047d6b5c697ceed4cae2eddc54a217650",
+  "actual_source": {
+    "tree": "((A,B),(C,D))",
+    "eligible_ab_bridge": "E(2/3) B_common(1/2,3/4,1/3) E(3/4)",
+    "cd_bridge": "E(1/2)",
+    "pendant_survivals": [
+      "2/3",
+      "3/4",
+      "4/5",
+      "5/6"
+    ],
+    "all_physical_parameters_strict": true
+  },
+  "source_covariance_product_identities": 81,
+  "grid_interpolation": [
+    {
+      "cross_power": 12,
+      "matrix_rank": 4,
+      "conditional_moments_recovered_exactly": 4,
+      "zero_mass_grid_pairs": 2
+    },
+    {
+      "cross_power": 24,
+      "matrix_rank": 4,
+      "conditional_moments_recovered_exactly": 4,
+      "zero_mass_grid_pairs": 2
+    },
+    {
+      "cross_power": 36,
+      "matrix_rank": 4,
+      "conditional_moments_recovered_exactly": 4,
+      "zero_mass_grid_pairs": 2
+    }
+  ],
+  "sparse_marginal_exposers": [
+    {
+      "polynomial": "x**10 - 548395*x**6/36640512 + 5925275*x**3/15828701184 - 22925*x/1110786048 + 31831/15828701184",
+      "support": [
+        "1/6",
+        "1/4"
+      ],
+      "positive_roots_counting_multiplicity": 4,
+      "coefficient_sign_changes": 4,
+      "nonnegative_on_positive_axis_by_double_roots_and_descartes": true
+    },
+    {
+      "polynomial": "x**10 - 14806665*x**6/617611264 + 4319525475*x**3/5059471474688 - 4061094975*x/68169720922112 + 16916298471/2590449395040256",
+      "support": [
+        "3/16",
+        "9/32"
+      ],
+      "positive_roots_counting_multiplicity": 4,
+      "coefficient_sign_changes": 4,
+      "nonnegative_on_positive_axis_by_double_roots_and_descartes": true
+    }
+  ],
+  "joint_atom_weights_recovered": [
+    "1/3",
+    "2/3"
+  ],
+  "new_general_determinant_asymptotics": "Hand argument only; finite fixtures do not certify the universal lemma",
+  "root_extension_public_type_admission": "Unresolved original-contract gate; not tested or assumed by this arithmetic",
+  "lean_ci_qe_source_catalogue_or_parameter_search_executed": false
+}

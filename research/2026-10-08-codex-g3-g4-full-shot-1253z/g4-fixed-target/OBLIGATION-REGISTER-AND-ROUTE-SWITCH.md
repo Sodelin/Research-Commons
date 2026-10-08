@@ -1,0 +1,28 @@
+# G4 fixed-target full-shot obligation register
+
+Contributor: Codex practical / G4 attempt 1, 8 October 2026.
+Completion standard: MASTER-CLOSURE-STANDARD-20260930. All earlier packets are preserved. This is a checkpoint of actual work, not a claim that any task runs in the background.
+
+| Obligation | Evidence / immutable artifact | Status | Remaining premise and next action |
+|---|---|---|---|
+| Original fixed finite target / every finite full legal prefix / later source-admitted separator | MASTER-STATEMENTS.md and original PROOF.md, authenticated in SOURCE-PINS-PHASE1.json | Checked; original master OPEN | No menu narrowing, cap-dependent target, approximate equality or limiting rival can substitute |
+| Declared terminal-A channel: all actual exterior contexts see c(e,k)b_k | SEALED-PENDANT-CHANNEL-COUNTEREXAMPLE.md, frozen PHASE1 | Hand complete candidate; root handles independent review | One-output leaf-inclusive component, unmarked private chain, no extra input/port/register/actuator; this is the permitted channel branch, not full topology |
+| One fixed q, strict all-prefix channel rivals and later difference | Accepted uniform-time and fixed-coin diagonal providers; PHASE1 exact transfer | Hand complete candidate at that channel contract | Actual all-copy count invariant and one legal c>0 separator retained; randomized exact-oracle proof uses count-bounded halt events |
+| Full-topology erasure bridge | FULL-TOPOLOGY-BRIDGE-FAILURE.md | Failed, with source-specific obstruction | B-spine tomography is triangular/invertible for the sealed source; fixed-fair compact 1040 replicas fail full forest by nine A roots when epsilon is below the accepted 1220 threshold |
+| Fixed nonordinary target, exact higher-response correction | Dot's fixed T=E(3/4)B(1/2,1/2,2/3)E(1/2) and correction-chart providers; SOURCE-PINS-PHASE2.json | Inherited cap-four regular chart; all-cap zero fibre OPEN | Actual U_m K(theta(U_4))=T_m must be proved on every complete row, with a genuine positive added prefix and one tuple across all rows |
+| Fixed-tail pumping inside a nonordinary target | NONORDINARY-PUMPING-AND-STRONG-SKELETON-ATTEMPT.md §2 | Excluded by exact all-cap algebraic cancellation | Retuning only an ordinary connector cannot absorb the slot defect; a viable route must retune bare body parameters or find another actual realization mechanism |
+| Bounded pair-budget strong skeleton | Same note §§3–4; source-authenticated NONORDINARY-BUDGET-EXACT-RECEIPT.json | Hand reduction plus exact cap-three control PASS | Forces one genuine cell loss >25/195689447424, and bounds the count above each threshold; weak cells remain unbounded and replacement is only pair-exact |
+| Compression / compactness / normal-form peeling implies exact forcing | EXACT-SKELETON-COMPACTNESS-COUNTERCONTROL.md and Fraction-only receipt | Failed proof step with explicit source family | W_N has exact target pair response and exact target strong skeleton at every arity, but differs at cap three while converging at every fixed cap; exact fibre equations are essential |
+| Complete negative original G4 resolution | No actual all-cap full-prefix rival family established | OPEN / blocked at actual common-zero | Build genuine retuned positive prefix zeros at the same fixed target for every cap; ambient rank, signed-time, convexity and limits do not supply them |
+| Complete positive original G4 resolution | No whole-target-fibre finite forcing / effective halting theorem established | OPEN / blocked at exact weak-remainder equality case | Prove a source-faithful finite equality case covering arbitrary positive words and retained cores/menus, then supply detectable response-only stopping |
+| Actual execution and evidence | Two own short Python controls; phase2 source read from captured hashed bytes, phase3 Fraction-only provider authentication | PASS at stated finite arithmetic scope | No higher-cap inversion/search, no random sources, no biological run, no Lean/compiler/CI, no new long-running job |
+| Preservation / publication | PUBLIC-FILES-PHASE1/2/3.json | Own candidates frozen; parent publishes/reviews | Root owns integration and independent review; hashes establish identity, not master closure |
+
+## Explicit route switches
+
+1. Tested the strongest available all-cap diagonal family against a genuine terminal-A declared topology channel. This produces a complete channel-specific negative candidate at one fixed target, preserving every legal exterior. The original full topology master was not relabelled.
+2. Applied original full-forest tomography and the accepted fixed-fair hazard theorem. The same source family cannot erase its forest defect; the attempt switches away from channel erasure rather than repeating a diagonal ladder.
+3. Reused the fixed nonordinary target and lower correction chart. A fixed nonordinary tail does not erase an ordinary-slot error, so fixed-body pumping fails arity-uniformly.
+4. Tested source-faithful bounded-hazard compression as an alternate whole proof. Its strong-factor requirement is real, but its weak remainder is only approximated. An explicit all-N finite family has an exact target skeleton and still differs at cap three. The attempted compactness-to-forcing inference is therefore invalid.
+
+The decisive next mathematical attack is the retuned nonordinary **exact whole-fibre** zero/equality-case problem. Dot's independent full-shot A1/A2 route is attributed and may overlap with authorization; no inherited source is edited or duplicate computation presented as a new result. At this checkpoint no complete full-menu zero construction or forcing proof has been found. Additional approximate skeletons or nearby cap examples would not address that remaining obligation.
