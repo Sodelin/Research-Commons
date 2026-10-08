@@ -1,0 +1,23 @@
+[package]
+name = "exact-count-certificate"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Bounded exact normalized Poisson-prefix certificate pilot"
+publish = false
+
+[lib]
+name = "exact_count_certificate"
+path = "src/lib.rs"
+
+[[bin]]
+name = "count-certificate"
+path = "src/main.rs"
+
+[dependencies]
+num-bigint = "=0.4.6"
+num-rational = "=0.4.2"
+num-traits = "=0.2.19"
+
+[profile.release]
+overflow-checks = true

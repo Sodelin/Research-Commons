@@ -1,0 +1,70 @@
+{
+  "binary": {
+    "bytes": 636256,
+    "name": "count-certificate",
+    "published": false,
+    "sha256": "5f8afd1557623ebf889b2d2e6fdbcf84a8c5a75e55993e32600fb54ecad700d1"
+  },
+  "cargo_lock_sha256": "6b82f1a74bedde4d31df8cc90c2dbd50b132feae8779df6c20ce898e77b46c25",
+  "claim_scope": "Count-only executed build/test record, not formal verification or full solver verification.",
+  "commands": [
+    "cargo generate-lockfile",
+    "cargo fetch --locked",
+    "cargo test --offline --locked --all-targets",
+    "cargo build --offline --locked --release",
+    "python3 scripts/check.py --build",
+    "python3 scripts/benchmark.py"
+  ],
+  "created_utc": "2026-10-07T23:25:24.874855+00:00",
+  "dependency_versions": {
+    "autocfg": "1.5.1",
+    "num-bigint": "0.4.6",
+    "num-integer": "0.1.47",
+    "num-rational": "0.4.2",
+    "num-traits": "0.2.19"
+  },
+  "limitations": [
+    "Executed only on Linux x86_64; minimum declared rust-version 1.74 was not tested.",
+    "Finite corpus agreement is not universal equivalence.",
+    "Full CLI benchmark includes startup; no exact-kernel speedup claim.",
+    "No cross-machine bit-reproducibility or package licensing audit is claimed."
+  ],
+  "manifest_sha256": "f087eb5a12476782f6eab568fc973a7fbc72e4810e70e6f99a91ac24953f8d5b",
+  "release_overflow_checks": true,
+  "results": {
+    "benchmark": "MEASURED_FULL_CLI_ONLY",
+    "differential_cases_passed": 1693,
+    "lean": "NOT_CLAIMED",
+    "release_build": "PASS",
+    "rust_tests": "PASS"
+  },
+  "rustflags": "",
+  "rustup_installer": {
+    "checksum_url": "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init.sha256",
+    "download": "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init",
+    "install_scope": "Project-local CARGO_HOME/RUSTUP_HOME; no global PATH change; no administrator action.",
+    "official_checksum_match": true,
+    "sha256": "dda7234360b7f578ca8b0ddcb80145646fa61a67c1720a5abc7051b35c9fcb71"
+  },
+  "schema": "rust-count-pilot-build-provenance-v1",
+  "source_reference": {
+    "bytes": 3101,
+    "commit": "c9a6934ecb09ea22dc0204def2ad6398dfb43fa2",
+    "git_blob_sha1": "85935eb2c7b07c111b5a5bb54004e7f101b4dc1a",
+    "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/count_certificate.py",
+    "repository": "Sodelin/Research-Commons",
+    "sha256": "4708f1cf0fbafc704209dd110e919666c73125b78aaa292d3b6fb3a70d9ad3e4"
+  },
+  "source_sha256": {
+    "src/lib.rs": "6f9ee623a64b356b7c28a09a91de3eff50425c67d3555ff43752023355e18ce0",
+    "src/main.rs": "f0be18f30dbbcf665ab61f079def331530f19a2c5a68b05d329078dbfd91c313",
+    "src/parse.rs": "e7e19824f70eff90ba638241bd0a3369fda755c40753ee6f856c88a40e293cf8"
+  },
+  "toolchain": {
+    "cargo": "cargo 1.90.0 (840b83a10 2025-07-30)",
+    "host": "x86_64-unknown-linux-gnu",
+    "profile": "minimal",
+    "requested": "1.90.0",
+    "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)\nbinary: rustc\ncommit-hash: 1159e78c4747b02ef996e55082b704c09b970588\ncommit-date: 2025-09-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.90.0\nLLVM version: 20.1.8"
+  }
+}
