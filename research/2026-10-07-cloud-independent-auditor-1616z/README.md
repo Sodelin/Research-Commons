@@ -190,3 +190,5 @@ Original G3 and G4, practical useful whole-domain localization, and full connect
 Actual natural-family attempt [37718922897](NATURAL-FAMILY-PARTIAL-VERIFIED-REVIEW.md) failed overall: 167 successful custom modules, 379 named reports, and complete 4,027 declarations / 2,622 theorems. Erasure alone adds 19 owned rows; all 4,008 earlier rows are unchanged. Two failed modules and seven blocked dependents are excluded. The separate [exact two-module proof repair](PRIVATE-REGISTER-KERNEL-REPAIR-SOURCE-REVIEW.md) is source-accepted and compiler-unchecked.
 
 [Actual parallel-arm switching](PARALLEL-ARM-SWITCHING-SOURCE-REVIEW.md) is source/API accepted after a full independent 24-body review and complementary check. It derives original selected-edge occurrence transport and both fixed endpoints; compilation, suppression/replacement and cross-network Q/S remain separate.
+
+[Rational residual count coefficients](RATIONAL-RESIDUAL-CERTIFICATE-SOURCE-REVIEW.md) are source/API accepted: three rational definitions, eleven bodies and the exact-mean inherited cutoff/source TV consumer. Compilation, executable semantics and source table enumeration remain separate.
