@@ -1,6 +1,6 @@
 # G4 general cell ratios: actual diagonal cancellation, with a forest-response gap
 
-Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:18 UTC. **SOURCE-ONLY HAND ANALYTIC CANDIDATE; UNCOMPILED; independent review pending.** No symbolic exploration, source producers, parameter scans, numerical jobs, APIs or compiler ran. Preservation hashes and links are metadata checks.
+Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:18 UTC. **SOURCE-ONLY HAND ANALYTIC RESULT; UNCOMPILED; primary independently HAND ACCEPTED at its exact scope.** The [canonical receipt](PRIMARY-REVIEW-RECEIPT.md) binds the unchanged frozen proof; its creation-time pending label preserves chronology. No symbolic exploration, source producers, parameter scans, numerical jobs, APIs or compiler ran. Preservation hashes and links are metadata checks.
 
 Original G4 remains OPEN: ONE fixed finite positive target, original full legal menu, unknown finite positive rival size, and exact full-prefix rivals or effective detectable stopping. The actual-word membership of BOTH padded conjugator factors under the SAME q,r budget is still unproved. Matrix positivity or matching a selected diagnostic cannot supply it.
 
@@ -14,3 +14,5 @@ The [accepted moving-base obstruction](../2026-10-08-cloud-g4-moving-base-0242z/
 This decides that the fifth diagonal alone does not force an architecture change. It supplies no full ordinary return, no prescribed P/R source realization, no arbitrary-cap extension and no full-G4 conclusion. A precise next bounded test is a different chronological placement of the same actual cells, with joint C/H equations and strict connector constraints retained.
 
 [Declaration and source scope](DECLARATION-HANDOFF.md), [review request](REVIEW-REQUEST.md), and [source identities](SOURCE-IDENTITIES.json) make the result resumable. Classical convex hulls, Vandermonde determinants and analytic IFT are used; original routing and quotient providers retain attribution.
+
+A later separate [all-six-order candidate](../2026-10-08-cloud-g4-six-orders-0330z/README.md) analyzes every permutation of this actual family under joint C/H equations. It has its own source-derived fifth-order gap calculation and pending independent review; this acceptance does not establish it.

@@ -1,0 +1,11 @@
+# G4: all six orders of the 1:6:10 diagonal family fail the full response
+
+Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:30 UTC. **SOURCE-ONLY HAND CANDIDATE; UNCOMPILED; primary independent review pending.** No scientific controls, deterministic symbolic exploration, parameter scans, APIs or compiler jobs ran. Hashes, links and remote readback check preservation only.
+
+The [accepted general-ratio construction](../2026-10-08-cloud-g4-general-ratios-0318z/PRIMARY-REVIEW-RECEIPT.md) gives actual positive half-coin three-cell words whose ordinary no-merger diagonals match through five roots at ONE fixed pair survival. It does not give a complete ordinary kernel; the displayed order fails its four-root C/H coordinates.
+
+The new [all-six-order source proof](ALL-SIX-ORDER-FULL-RESPONSE-OBSTRUCTION.md) decides the remaining permutations of that architecture. Four orders fail the exact one-sign-change separator. The two interleaved orders reduce to a monotone rational equation. A source-derived fifth-order identity forces its two scaled connector gaps; one is below 2, while original positive admission requires it to be at least 3 or 5. Thus all six orders fail complete ordinary four-root response for sufficiently small positive t, even though the diagonals through five are attainable. Positive connectors and exterior pads are arbitrary; their near-identity scaling is derived, not assumed.
+
+This blocks a full ordinary return in this PARTICULAR near-identity 1:6:10 three-half-coin family. Other mean ratios, more cells, other coins or original architectures remain open. The prescribed padded factors P/R usually have nonzero C/H, and their concatenation has six cells; this theorem does not prove their nonmembership. Original G4 still requires full-prefix exact rivals of one fixed target or full-rival detectable finite stopping under its original legal menu and unknown size.
+
+[Source declaration and next gap](DECLARATION-HANDOFF.md), [review request](REVIEW-REQUEST.md), and [pinned source identities](SOURCE-IDENTITIES.json) make the exact scope reproducible. The frozen source manuscript uses hand algebra only; it has no mathematical execution receipts because no mathematical jobs ran.
