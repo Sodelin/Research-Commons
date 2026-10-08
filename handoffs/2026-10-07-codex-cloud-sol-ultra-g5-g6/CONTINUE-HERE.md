@@ -1,3 +1,5 @@
+> Latest observation, 2026-10-08 02:10 UTC: [actual 165-module timed-source PASS and next proof gates](../../research/2026-10-08-cloud-proof-frontier-0210z/README.md). Run 377145 has canonical 165 / 358 / full 4,001 / 2,600 acceptance; History and Observation now pass. Sole reviewed successor 37716267154 at 4456ed1 requests 166 / 365, result pending. API work remains deferred. Older entries below are dated history.
+
 > Latest observation, 2026-10-08 01:30 UTC: [general proofs resumed; API deferred](../../research/2026-10-08-cloud-general-proof-resume-0130z/README.md). Actual 377106 has canonical163 / 344 / full 3965 / 2589 acceptance; Finite passed, History failed, Observation blocked. Sole reviewed successor37713030087is in progress, result pending. Older entries below remain dated history.
 
 > [01:00 molecular delivery and sole finite-cut continuation](checkpoints/20261008T010000Z-MOLECULAR-DELIVERY-AND-CUT-CONTINUATION.md): offline applications delivered; source-reviewed sole run 37710655968 active, result pending.
