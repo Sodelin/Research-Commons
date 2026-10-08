@@ -1,0 +1,7 @@
+# Authenticated connector terminal recovery
+
+Approved GitHub connector GET reads supplied official terminal metadata and the decoded job113113311071 log. The original log (1993415 bytes; SHA256 `4fac9bc250847d3a5b9ddb6c569cd2dd3f96f269cae545ef8f45181b38c3ec11`) is preserved losslessly. `actions.log` adds only an outer connector-stage prefix. All169 command receipts and168 non-cache stdout hashes authenticate. Cache progress rendering is excluded from stdout reconstruction.
+
+All166 exact frozen input SHA256 match runtime manifest and approved166 static plan. The165 prior providers had literal immutable-parent readback with SHA256, Git blob identity and size verified; later parent changes were non-input files. Only the reviewed c8f source and target were added through an expected-parent nonforce freeze, and both had exact frozen literal readback. The preserved snapshot records that provenance; recovery helpers merely read these exact pinned files instead of unavailable local API-created Git objects. No compiler, provider or workflow source changed during recovery.
+
+The actual complete raw inventory is6,039,730 bytes, SHA256 `3c101262b24405de155de5a246e65551c446f5375b6d58d65813a9678a1404ab`. All4001 prior owned rows are byte-identical; the sole new module adds six theorems and one definition. Official job elapsed600.00s; total recorded commands551.819332s. Artifact11524341993 metadata is preserved without ZIP download/archive comparison or signed URL.
