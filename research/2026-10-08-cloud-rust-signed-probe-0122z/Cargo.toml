@@ -1,0 +1,12 @@
+[package]
+name = "signed-nine-probe"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+publish = false
+
+[dependencies]
+signed-nine-pair-receiver = { path = "../2026-10-08-cloud-rust-signed-nine-0008z" }
+
+[profile.release]
+overflow-checks = true
