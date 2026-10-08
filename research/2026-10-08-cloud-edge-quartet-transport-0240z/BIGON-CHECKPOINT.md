@@ -1,0 +1,13 @@
+# Original two-port arm choice and actual raw quartet resolution
+
+Contributor: CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 02:49 UTC. **Hand/source prototype; independent review pending; compiler UNCHECKED; outside176.**
+
+[BigonQuartetChoice.lean](BigonQuartetChoice.lean), SHA256 `4c3d84c72c3c77e75995948a2dafe089dec9a185b8c07ad88b1d375ad608e6ac`, 2,605 bytes: one defined occurrence equivalence and three theorem bodies. [Exact direct input pins](BIGON-SOURCE-PINS.json) authenticate the unchanged actual switching flip, the graph edge-cut consumer and the original SourceResolve body.
+
+The [actual two-port classification](../2026-10-07-cloud-independent-auditor-1616z/NONROOT-TWO-PORT-BIGON-SOURCE-REVIEW.md) derives the narrow arm witness. The [actual Switching construction](../2026-10-08-cloud-nonplanar-parallel-switching-0237z/README.md) flips the keep predicate using those original parallel occurrence IDs and derives a selected-edge bijection preserving every vertex and both endpoint maps. Its independent source review is pending at this observation.
+
+The [edge-occurrence consumer](EdgeOccurrenceQuartetTransport.lean) has [independent full-body source/API acceptance](../2026-10-08-cloud-edge-quartet-review-sol-0244z/SOURCE-REVIEW.md), canonical `e14387d7bfbd31370d5381605c5aa4eed5b70251`; it transports the original single-edge deletion/bridge/quartet semantics. Putting the actual selected-edge bijection into that primitive graph record therefore identifies HasQuartet in the two real switchings. Transport the existing resolution-specification theorem and apply the original uniqueness theorem to identify their actual raw quartet resolutions. Finally obtain the arm witness from the original child-cut/nonroot incident-two premises, retaining one witness for all quartet panels.
+
+No displayed-target equality, path equality, supplied bigon decomposition or source-size bound is an input field. These bodies prove neutrality of the chosen genuine parallel arms within the SAME original source. They do not construct the source with the bigon suppressed, compare the full displayed unions of two different networks, admit full S/cluster semantics, or transport stochastic probabilities, branch parameters and timed laws. Those remain separate Q/S, physical and full-G6 obligations.
+
+No compiler, numerical test, workflow dispatch or successful-run claim accompanies this prototype. The failed176 input and evidence are separate; these three bodies do not repair it or enter its selection. Next: independent source/API review and a later sole gated compiler selection, followed by a genuinely constructed suppression/replacement-source correspondence.
