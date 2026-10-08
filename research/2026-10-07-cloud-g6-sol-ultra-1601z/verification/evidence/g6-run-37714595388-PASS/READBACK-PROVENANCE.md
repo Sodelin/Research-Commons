@@ -1,0 +1,7 @@
+# Authenticated connector terminal recovery
+
+Approved GitHub connector GET reads supplied the official terminal run/jobs/artifacts JSON and complete decoded job113108077509 log. The original decoded log (1983896 bytes; SHA256 `45b96cfc8b804c4ba915585d7ed826850b55b203636c4eea474d6aabd5f4b716`) is preserved losslessly. `actions.log` adds only an outer connector-stage prefix for recovery. Source/stdout/receipt/payload contents are unchanged; cache progress rendering is excluded from stdout reconstruction.
+
+CLI authentication was unavailable. Exact immutable frozen410c input files were read through the approved connector, and every source SHA256 was checked against the approved selection and the actual runtime manifest. `frozen-source-connector-readback.json` records all165 sources, selection plan and attributed template. Recovery helper adaptations only replace unavailable local Git-object reads with these exact hash-validated immutable source files; no compiler, provider or workflow source changed during recovery.
+
+All165 source pins and167 custom/final-audit stdout hashes authenticate. All168 actual command exits are zero. The actual raw complete inventory is6,016,231 bytes, SHA256 `963a5745868faf3a47c8add5806ce4a232d7f5994844cc568696039b62e01cb4`; all3965 prior owned rows are byte-identical. Artifact metadata11522264953 is preserved without a ZIP download or archive comparison. No signed URL is retained.

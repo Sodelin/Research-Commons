@@ -1,0 +1,7 @@
+# Exact actual source acceptance
+
+Run37714595388, frozen410c21faae9e3e16c100f22daeaa384ea8ae3702, succeeded at2026-10-08T01:57:55Z. The actual command gate is168zero exits; all165 custom modules compiled. Selected axiom reports are358=226G6+117G3+15G5, standard-only. Complete ownership is4001 declarations/2600theorems with no owned axioms, nonstandard rows or missing modules. This is the exact selected closure, distinct from a full corpus rebuild and the older170-module timed closure.
+
+ActualCalendarEndpointHistory e420a827 now has11 selected reports and19 complete owned rows. ActualObservationCutRefinement7815bf4e now has3 selected reports and17 complete owned rows, including its finite-cut inductive/generated declarations. They retain the same source clock/readout, original register/boundaries, old matrix, legal nonnegative subdivisions, word-bin contracts and endpoint-history reader. Prior3965 owned declaration rows remain exactly equal, including types, opaque body references and axioms.
+
+The supplied entering state/matrix and explicit cut/bin assumptions remain premises. Physical natural initial joint past/old-decoration attachment, effective legal-cut and rational table correspondence, original observation/menu/pruning admission, whole mixed numerical program/history and full G5/G6 master closure remain open. The separate c8f632b7 complete-observation TV consumer is uncompiled and outside this input. Prior failed and stopped receipts remain unchanged.
