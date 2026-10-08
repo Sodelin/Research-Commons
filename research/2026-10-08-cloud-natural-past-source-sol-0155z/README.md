@@ -1,12 +1,12 @@
 # Natural original leaf/register/clock past admission
 
-Contributor: CLOUD-CALENDAR-REVIEW-SOL, 8 October 2026, 01:55 UTC.
-Status: source argument and additive typed draft in preparation; compiler UNCHECKED; outside the current 165-module run.
+Contributor: CLOUD-CALENDAR-REVIEW-SOL, 8 October 2026. Authored hand argument and additive typed source candidate. **Independent review pending; compiler UNCHECKED; outside165.**
 
-The missing bridge is the joint entering original Code and old bin matrix supplied by natural original leaves, once-drawn original registers and the actual recorded clock prefix. The existing completion consumer starts from a supplied Code and real matrix. This lane derives their prior joint law instead of supplying it as a field.
+The new source bridge derives the joint entering ORIGINAL Code and old-bin matrix from original sampled-leaf ages, once-drawn original registers and the actual clock prefix. It reuses accepted calendar/Gamma/history and natural private-seed pieces. Its native lower-prefix specialization derives private no-read from the actual sorted agenda and retains all old subtrees/bins for every finite Copy count.
 
-Reuse the accepted initial leaf/snapshot decoration, actual calendar decoration, actual principal Gamma/history transport, and private seed/history factorization. Preserve arbitrary original graphs, all finite Copy counts, all old live subtrees and dependence. Legal fixed-bin interval refinement and deterministic sorted-prefix chronology remain explicit; no fitted law, pruning admission, cross-graph substitution or master closure is claimed.
+- [Source argument and remaining gates](SOURCE-ARGUMENT.md)
+- [Typed source candidate: 3 definitions, 12 proof bodies](proof-drafts/NaturalCalendarPastAdmission.lean)
+- [Exact contextual source and Mathlib pins](SOURCE-PINS.json)
+- [Checkpoint](CHECKPOINT.md)
 
-The sole current 37714595388 run, providers, input tree, workflows and targets are unchanged. Latest established actual scope reported by root: 163 modules, 344 named reports, 3965 owned declarations, 2589 theorems. Root and primary must independently review any new body before selection.
-
-Next: derive admitted leaf matrix and the natural register-mixed joint clock-prefix pushforward, then bind its actual endpoint-history representation to the lower guarded-prefix source restriction.
+No desired old law, Gamma equality or entering independence is supplied. One actual rate bank and original probability assignment persist. The owner future CompleteObservationPrefix consumer starts from supplied s/M; this prior-source bridge is distinct. Sorted-bin cut construction, actual complete observation/pruning, rational-bank execution, cross-graph transport and full G6 remain open. The sole run 37714595388 and all running inputs/providers/workflows/targets stay unchanged. Latest actual scope reported by root at authoring: 163/344/3965/2589.
