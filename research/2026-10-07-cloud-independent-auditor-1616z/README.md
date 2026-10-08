@@ -202,3 +202,5 @@ Actual [private-register kernel/history partial build](NATURAL-FAMILY-KERNEL-HIS
 [Original-X nontrivial split filter](G6-NONTRIVIAL-SPLIT-FILTER-SOURCE-REVIEW.md) is source/API accepted: both-side cardinality at least two, exact normalized original switching evaluator iff and same-X inherited structural splice equality. New compilation and biological law/master consumers remain separate.
 
 [Actual focal ancestry/count law adapter](G3-ACTUAL-ANCESTRY-COUNT-HAND-SOURCE-REVIEW.md) is HAND/source accepted in the passive natural INDEPENDENT quartet scope. It relates deterministic contributing hybrids to true total H and the law recurrence; the graph draft proves only set/count facts, and graph-to-word formalization/general G3 remain open.
+
+[All-six-order 1:6:10 response obstruction](G4-SIX-ORDER-RESPONSE-OBSTRUCTION-HAND-REVIEW.md) is HAND accepted for the exact near-identity three-cell ordinary-return architecture; nonzero prescribed factors, six-cell concatenations and general G4 remain open. [Returned complementary ancestry/count review](G3-ANCESTRY-COUNT-COMPLEMENTARY-REVIEW-RECEIPT.md) independently agrees with the primary passive law/count scope.
