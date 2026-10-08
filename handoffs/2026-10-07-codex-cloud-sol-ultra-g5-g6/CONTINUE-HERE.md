@@ -1,4 +1,6 @@
-> [01:00 molecular delivery and sole finite-cut continuation](checkpoints/20261008T010000Z-MOLECULAR-DELIVERY-AND-CUT-CONTINUATION.md): offline applications delivered; source-reviewed sole run37710655968 active, result pending.
+> Latest observation, 2026-10-08 01:30 UTC: [general proofs resumed; API deferred](../../research/2026-10-08-cloud-general-proof-resume-0130z/README.md). Actual 377106 has canonical163 / 344 / full 3965 / 2589 acceptance; Finite passed, History failed, Observation blocked. Sole reviewed successor37713030087is in progress, result pending. Older entries below remain dated history.
+
+> [01:00 molecular delivery and sole finite-cut continuation](checkpoints/20261008T010000Z-MOLECULAR-DELIVERY-AND-CUT-CONTINUATION.md): offline applications delivered; source-reviewed sole run 37710655968 active, result pending.
 
 > Latest continuation, 2026-10-08 00:56 UTC: [molecular applications delivered offline](../../research/2026-10-08-cloud-molecular-applications-0020z/CONTINUATION.md), with private source and public sanitized evidence. [Actual calendar Context now passes](../../research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37708772293-FAILED/README.md); the finite-cut repair remains uncompiled. Follow the sole owner's exact dispatch/terminal records rather than restarting a competing build. Older checkpoint statements below remain dated history.
 
