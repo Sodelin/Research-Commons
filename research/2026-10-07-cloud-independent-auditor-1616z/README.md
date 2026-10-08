@@ -1,6 +1,8 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:26 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 01:47 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+
+The [latest actual endpoint-history repair failure](ENDPOINT-HISTORY-REDUNDANT-TACTIC-FAILED-REVIEW.md) independently preserves the unchanged **163 custom modules /344 named reports /3,965 owned declarations /2,589 theorems**. The full inventory and every preceding row remain exact. EndpointHistory d6a2 alone fails on a redundant tactic after its goal has already closed; the whole module and blocked Observation wrapper remain excluded. The [deletion-only source gate](ENDPOINT-HISTORY-REDUNDANT-TACTIC-SOURCE-REVIEW.md) accepts exact e420a827 without changing any remaining source byte; its compiler gate remains separate.
 
 The [new complete-observation prefix consumer](COMPLETE-OBSERVATION-PREFIX-SOURCE-REVIEW.md) clears independent one-definition/six-theorem hand/source review. Actual Gamma/refined-history attachment followed by the identical original completion kernel gives one joint complete-readout domination, TV/event and occurrence budget. Explicit cut, fixed-bin and ancestral-tail support contracts remain; physical supplied-past/menu/backend attachment remains open. This draft is compiler UNCHECKED and outside the current165 selection.
 
