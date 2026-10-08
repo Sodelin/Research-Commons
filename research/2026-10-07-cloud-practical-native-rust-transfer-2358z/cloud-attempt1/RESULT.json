@@ -1,0 +1,100 @@
+{
+  "all34_transferred_payloads_unchanged_before_after": true,
+  "benchmark_run": false,
+  "binary_bytes": 636056,
+  "binary_published": false,
+  "binary_sha256": "8a0df53da5dc58f3cb07ad1bbf4b7ea8d55be6e6edb17ad897269c1626458688",
+  "cached_pinned_dependencies": [
+    {
+      "checksum": "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53",
+      "name": "autocfg",
+      "version": "1.5.1"
+    },
+    {
+      "checksum": "a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9",
+      "name": "num-bigint",
+      "version": "0.4.6"
+    },
+    {
+      "checksum": "7ce2d95d4b3734dc35aa2f45e1aa22cd416814592a4f9d9205e11affd5b8e10b",
+      "name": "num-integer",
+      "version": "0.1.47"
+    },
+    {
+      "checksum": "f83d14da390562dca69fc84082e73e548e1ad308d24accdedd2720017cb37824",
+      "name": "num-rational",
+      "version": "0.4.2"
+    },
+    {
+      "checksum": "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841",
+      "name": "num-traits",
+      "version": "0.2.19"
+    }
+  ],
+  "date_utc": "2026-10-08T00:02:48.795681+00:00",
+  "executions": [
+    {
+      "address_space_bytes_limit": 2147483648,
+      "command": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--all-targets",
+        "-j",
+        "1"
+      ],
+      "cpu_seconds_limit": 30,
+      "exit": 0,
+      "external_failure": null,
+      "name": "unit_tests",
+      "stderr_sha256": "3b61fac450f605e307ba391dc94b496522552c71a6b75122941776880e830758",
+      "stdout_sha256": "390ad2c383d65912eebe0bff002765f6a4f74e5b11c0db6601ad401b8cdaa363",
+      "wall_seconds": 5.545794077999744,
+      "wall_seconds_limit": 45
+    },
+    {
+      "address_space_bytes_limit": 2147483648,
+      "command": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/cargo",
+        "build",
+        "--offline",
+        "--locked",
+        "--release",
+        "-j",
+        "1"
+      ],
+      "cpu_seconds_limit": 30,
+      "exit": 0,
+      "external_failure": null,
+      "name": "release_build",
+      "stderr_sha256": "eaa6e7ff8a805f6b57dbde29c8962844254d743f466ed962f6c7238c5d384e5c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "wall_seconds": 7.758552846000384,
+      "wall_seconds_limit": 45
+    }
+  ],
+  "limits": [
+    "Linux x86_64/Rust1.90 only; Rust1.74 minimum not tested",
+    "finite golden comparison, not universal equivalence or formal executable proof",
+    "no full solver/statistical confidence/production/license gate closure"
+  ],
+  "matches_reported_dot_root_binary": false,
+  "mode": "actual --offline --locked; fresh isolated target; -j1; no installation",
+  "publisher_executor": "Codex Cloud practical lane",
+  "replay": {
+    "additional_boundaries": 5,
+    "corpus_sha256": "5d70e84d9912694e959e44df44d18d1c7b4afa8caad62f462d19309016580783",
+    "invalid_cli_cases": 22,
+    "saved_complete_byte_exact_cases": 1693,
+    "scope": "new Cloud executable compared with immutable Dot golden corpus; no new universal theorem or benchmark",
+    "status": "PASS",
+    "wall_seconds": 2.6431352750005317
+  },
+  "schema": "cloud_dot_native_rust_rebuild_v1",
+  "script_sha256": "f7226d1a0ed7b09a77b101cadf2ab6d2f58d01fba99d210560f796bfe7745f64",
+  "source_publication_commit": "d3b0821f33a1144ff1c50478fdaa8289e890abcd",
+  "toolchain_cargo": "cargo 1.90.0 (840b83a10 2025-07-30)",
+  "toolchain_rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)\nbinary: rustc\ncommit-hash: 1159e78c4747b02ef996e55082b704c09b970588\ncommit-date: 2025-09-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.90.0\nLLVM version: 20.1.8",
+  "unit_tests_passed": 10
+}

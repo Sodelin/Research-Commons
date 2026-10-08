@@ -17,16 +17,19 @@ The source/tests/reference/documentation/reviews/sanitized historical evidence
 are attached unchanged at [the intended native pilot prefix](../2026-10-07-rust-count-pilot/README.md).
 No binary/toolchain/cache is copied. The historical author, review and
 aggregate manifests retain their dated pre-publication status fields.
-A separate Cloud publication/readback record will identify the actual new
-immutable attachment rather than rewriting those historical records.
+[PUBLICATION.json](PUBLICATION.json) identifies the actual new immutable
+attachment `d3b0821f` and all34 immutable/fetched-main readbacks, without
+rewriting those historical records.
 
 Dot reports optimized Rust1.90,10 unit tests,1693 full-field/byte-exact
 corpus cases and CLI/boundary controls; its review reports64 independent
 valid cases plus invalid/large-budget checks. Dot's reported root rebuild
 used its same compiler/cache/machine. Those are preserved **reported prior
-executions**, not Cloud executions. Cloud's own locked/offline fresh-target
-rebuild is a separate next gate, contingent on already available pinned
-toolchain/dependencies. No benchmark is rerun or speedup inferred.
+executions**, not Cloud executions. [Cloud's actual locked/offline
+fresh-target rebuild](REBUILD-RESULT.md) now passed10 unit tests,1693 complete
+byte-exact golden cases,22 invalid CLI cases and5 boundaries. Its binary
+hash differs from the recorded Dot product; no executable byte-reproducibility
+claim is issued. No benchmark is rerun or speedup inferred.
 
 The pilot is a native exact normalized-count implementation. It remains
 separate from Cloud's C/GMP kernel and Rust FFI adapter. Preserving both
