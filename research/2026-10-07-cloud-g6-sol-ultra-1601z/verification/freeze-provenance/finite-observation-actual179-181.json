@@ -1,0 +1,1549 @@
+{
+  "status": "ONE authorized181/513 source freeze, not prospective compile acceptance",
+  "prior_actual179_frozen": "62e937a2b58f00f6ed1197133650b6da2f96f71f",
+  "prior_actual179_owner": "cdf4c4c0f9e0f6de59a7701b14656565a84cc481",
+  "prior_actual179_primary": "7126a5d4386652abbcfb224f075d0dcfac716797",
+  "exact_plan_commit": "f6c18f8dee6ffbbd80d04df237e1fc767ceca37d",
+  "exact_plan_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/finite-observation-actual179-static.json",
+  "exact_plan_sha256": "897902afd0c20ad4b896e58b056ae2ab721af404131231fca5da5b90a57a5489",
+  "primary_source_selection_commit": "b6776d019c813066458f9f292f5307ae4545016e",
+  "root_one_launch_gate_commit": "eebb0e049c695f4ca0ab9ea02560aa316b728753",
+  "only_additions": [
+    {
+      "module": "UnifiedLean.G6.FiniteCorruptionBoundary",
+      "original_commit": "525ae7abb1e29d42630c20d1d9035958745aa26d",
+      "original_path": "research/2026-10-08-cloud-finite-corruption-source-0424z/proof-drafts/UnifiedLean/G6/FiniteCorruptionBoundary.lean",
+      "staged_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/sources/UnifiedLean/G6/FiniteCorruptionBoundary.lean",
+      "future_formal_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/FiniteCorruptionBoundary.lean",
+      "sha256": "25d5afd4e2032613539d5d0d39308d4eff98d642ae8eaec361a4f3f5db3edbcf",
+      "git_blob_sha": "5f9fb87b5d5db31f359132f8ffd50790a2a9c30c",
+      "bytes": 4689,
+      "selected_names_actual_runner": [
+        "UnifiedLean.G6.FiniteCorruptionBoundary.pmfTV_symm",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.pmfTV_triangle",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_real",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_comm",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_left_distance",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_right_distance",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.shared_corruption_iff",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.no_shared_corruption_iff",
+        "UnifiedLean.G6.FiniteCorruptionBoundary.certified_no_shared_corruption"
+      ],
+      "selected_count": 10,
+      "printed_names": [
+        "pmfTV_symm",
+        "pmfTV_triangle",
+        "midpointPMF_real",
+        "midpointPMF_comm",
+        "midpointPMF_left_distance",
+        "midpointPMF_right_distance",
+        "shared_corruption_iff",
+        "no_shared_corruption_iff",
+        "certified_no_shared_corruption"
+      ],
+      "printed_count": 9,
+      "byte_identical_immutable_original": true,
+      "compiler_status": "UNCHECKED"
+    },
+    {
+      "module": "ActualObservationCorruption",
+      "original_commit": "525ae7abb1e29d42630c20d1d9035958745aa26d",
+      "original_path": "research/2026-10-08-cloud-finite-corruption-source-0424z/proof-drafts/ActualObservationCorruption.lean",
+      "staged_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/sources/ActualObservationCorruption.lean",
+      "future_formal_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualObservationCorruption.lean",
+      "sha256": "201fe29b7efb33277625da5515cd5659f8f60a471c91d86b366c303ba55fc754",
+      "git_blob_sha": "c292172453608fbc6847705878c1840243bb392b",
+      "bytes": 2855,
+      "selected_names_actual_runner": [
+        "CloudG6.ActualObservationCorruption.actualCompiledObservation",
+        "CloudG6.ActualObservationCorruption.actual_original_observation_shared_corruption_iff"
+      ],
+      "selected_count": 2,
+      "printed_names": [
+        "actual_original_observation_shared_corruption_iff"
+      ],
+      "printed_count": 1,
+      "byte_identical_immutable_original": true,
+      "compiler_status": "UNCHECKED"
+    }
+  ],
+  "requested_custom": 181,
+  "requested_named": 513,
+  "prior179_sources_fixed": true,
+  "runtime_budget": {
+    "actual179_job_seconds": 768,
+    "actual179_serial_seconds": 736,
+    "new_source_reserve_seconds_each": 10,
+    "new_source_reserve_seconds_total": 20,
+    "audit_growth_reserve_seconds": 10,
+    "runtime_cache_variation_margin_seconds": 100,
+    "planning_total_seconds": 898,
+    "job_cap_seconds": 900,
+    "per_command_cap_seconds": 180,
+    "flags": [
+      "--trust=0",
+      "-j1",
+      "-M4096"
+    ],
+    "justification": "Two 4689B/2855B sources, using only already accepted imports and identical external roots. Comparable actual finite-PMF/TV provider commands take 2.99–4.10s. Reserve 10s per new source plus separate audit10/variation100. Estimate only, with enforced caps unchanged; no guarantee or retry.",
+    "comparable_actual_receipts": [
+      {
+        "source": "FiniteProbability.lean",
+        "start": "2026-10-08T06:37:33.960562+00:00",
+        "end": "2026-10-08T06:37:37.291068+00:00",
+        "elapsed_seconds": 3.330506,
+        "exit": 0,
+        "stdout_sha256": "757498f226536e63546c9f57cb4e4328a4f178c0827c63b62563b24ae94b4f17"
+      },
+      {
+        "source": "Conditioning.lean",
+        "start": "2026-10-08T06:37:37.291420+00:00",
+        "end": "2026-10-08T06:37:40.276837+00:00",
+        "elapsed_seconds": 2.985417,
+        "exit": 0,
+        "stdout_sha256": "100642588c988b86704d97294f48529a0a4ade99555c5c91f157156786932480"
+      },
+      {
+        "source": "ProgramPrefix.lean",
+        "start": "2026-10-08T06:40:46.546615+00:00",
+        "end": "2026-10-08T06:40:50.644417+00:00",
+        "elapsed_seconds": 4.097802,
+        "exit": 0,
+        "stdout_sha256": "50f32b8f7e283dbd21e5e7d50cd059858b4dddb1a05a1eb7c0db1d671684d30d"
+      },
+      {
+        "source": "RationalCertificate.lean",
+        "start": "2026-10-08T06:43:21.863460+00:00",
+        "end": "2026-10-08T06:43:25.530806+00:00",
+        "elapsed_seconds": 3.667346,
+        "exit": 0,
+        "stdout_sha256": "d6079ac219292fbbd73a6e50cc6d3b23e11ff8abd51e3020fef69d5b4c951072"
+      },
+      {
+        "source": "ResidualPrefix.lean",
+        "start": "2026-10-08T06:46:44.020171+00:00",
+        "end": "2026-10-08T06:46:47.558586+00:00",
+        "elapsed_seconds": 3.538415,
+        "exit": 0,
+        "stdout_sha256": "15ed2cb7bc9c01b3c45a027ee69176b9fd2cfd5bdf2e8ad5e34a33a249c0ae74"
+      },
+      {
+        "source": "MeanEnclosure.lean",
+        "start": "2026-10-08T06:46:47.558965+00:00",
+        "end": "2026-10-08T06:46:51.228849+00:00",
+        "elapsed_seconds": 3.669884,
+        "exit": 0,
+        "stdout_sha256": "afd42517b2e205decf8c7aeaf6678830f5076daf5d901d235eb9b1d14a451328"
+      }
+    ]
+  },
+  "fresh_guard": {
+    "checked_utc": "2026-10-08 07:26:28 UTC",
+    "main": "eebb0e049c695f4ca0ab9ea02560aa316b728753",
+    "prior_frozen": "62e937a2b58f00f6ed1197133650b6da2f96f71f",
+    "comparison": {
+      "changed_files": 192,
+      "total_commits": 23,
+      "files": [
+        {
+          "path": "README.md",
+          "previous_path": null,
+          "status": "modified",
+          "blob": "b79f8ba667d11a18cf0fc1ae792cf5c497da2f33"
+        },
+        {
+          "path": "RESEARCH-STATUS.md",
+          "previous_path": null,
+          "status": "modified",
+          "blob": "a0b04bf699843538868f2f29b03a462161730d3d"
+        },
+        {
+          "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/CONTINUE-HERE.md",
+          "previous_path": null,
+          "status": "modified",
+          "blob": "1fcb74cd250ffba349db4109f7ff2077eee0e0b2"
+        },
+        {
+          "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/STATUS-G6.md",
+          "previous_path": null,
+          "status": "modified",
+          "blob": "3b93e14ec9594f8f4d11a996b1c897ad5e842273"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/FINITE-OBSERVATION-ACTUAL179-ROOT-LAUNCH-GATE.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "65896d83eed530740b0d5dacd244119129ceba06"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/README.md",
+          "previous_path": null,
+          "status": "modified",
+          "blob": "eb8c1a04f514883bcde6b4ade0949dde066e45fa"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/dispatch/g6-run-37738512508/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "fb52a12a3f05aa8325df2f8c23ad1a04a6acff82"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/dispatch/g6-run-37738512508/jobs-observed.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "7543118f6e4fefac87b64860bda9d02e6d32aef1"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/dispatch/g6-run-37738512508/run-observed.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "99b3b0e215cfbf33fcf7ec7b5e49a90d0c209e05"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ACCEPTANCE-SCOPE.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "b285168a62d4db0a069b96a8e5ba032e94a2e363"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualCalendarCutContext-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e90546353a4684244789040eda1e906857af5425"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualCalendarEndpointHistory-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c9293d8aa37c4711354a2921f2c56de4883afae0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualCutJointLaw-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "2d41baf5fbbdec0395a7a4da5b4e337eae46eb3f"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualCutTagRefinement-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "8298e8f956f07370c74c589a15a6d62234b2afec"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualFiniteCutJointLaw-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "fd42aa6646ebe86fcf99aa90a1210874a3859403"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualObservationCutRefinement-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "75b2c9d88a4c4a0f2bf329ea1e0d9cf971c47644"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ActualTailBinRow-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "639cadc52048bd21323443dd12c621fc50c345b3"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/AncestralRateFree-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "debfc21f54889f6f2f079589695314e977bff0f3"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/BinClock-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e8361925f3ceb2d6b11ef17a4eaca7c4236cbcc2"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/BinFold-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "7df8911dea37959b0868c0401e7d4485a72a49fe"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/BinHistory-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "f632847be8f7444b37667363191af0dada4ab38f"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/CompleteCalendarBinReadout-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "06f68e03ad2a67a2029b52a5975a571a32017ffa"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/CompleteCalendarJointLaw-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "22e708ad3a665183388a24c35515202d80e625c6"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/CompleteEnvironmentAudit-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "750bef99e31fba41c96f5d4e916f5c3261c2ca18"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/CompleteEnvironmentAudit-reconstructed.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e8256ba3e52db72ff072ae3109023f20dfba3e29"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/CompleteObservationPrefix-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "eb006d4cd5067045369a2e6ad20aa8f60c70585a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/Conditioning-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "016eca6630b37f704c7846fdfdda702cab0c5e7e"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/DeclarationAudit-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "91ce3a2b31e8ec84215624482e295b0b027aef1a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/DeclarationAudit-reconstructed.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "07257e1201c6bf2b313f4425165cc161c4aa82dd"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/FiniteProbability-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "ae20062e4b880ed99742eeb02ca73368e27366e0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/FiniteTagDecoder-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "547960599b82d48b980a95e73599514a4c7fb050"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/G3ApproximateMomentBarrier-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "6b45f85a35faccca36bc4771b27deeeb116cea4a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/G5FrozenTripleAnalyticSupport-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "d003583ce6edd0e2c52bd1f3038b64cb2fdb4158"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/HistoryPrefix-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0fe76cd655ba0db9fdd7d1aa0d214eb8083bf70a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/HybridSizeCore-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/InheritanceBankCommon-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0f5b1cf33a84bc61bb291b60bafb1edf4de822d3"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/LiteralSameBinTrace-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0373d2faa8de51d7b034e64b8faab83358f6e277"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/MeanEnclosure-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "525a148f9a6997d767c575c11ecb93a575a4059b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/NaturalCalendarPastAdmission-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "66fd677a80a7f545a9c9cbaad3030ca44f73665b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/NaturalPastCompleteObservation-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "52188a33209dcb427a6d0d6c364626f5cced4fd1"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterBoundary-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "b411299577fd956810f3cda6e5878e03ed8fa0cb"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterCalendar-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4de0d126ace1ef3463f4b24d397991c3e7b8e188"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterCalendarPrefix-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0e8d983dbabef875124f8aeeb79a2248ad5756fb"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterErasure-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "73ee4f1344a253ef41f2c4fb67e45323571f4d88"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterHistory-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "b7e83069c129df19e47cd17ad6a429224734c314"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterProgram-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "21b2199d0e945a377945824eecf202f6e203bb09"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateRegisterSourceStep-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "d1ffbc70ce464bfe7656651a85962b33388e3b45"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateSeedFactorization-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4cd2eaa45e23e2ce58b0374d7851b3a671e2bfbc"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/PrivateSeedHistoryFactorization-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "49115091c5b148dfb3b1342f6aa7877c0a30312a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ProgramPrefix-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "f588a74b55ccfbc96c45264ac6ccfdd04b286592"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/READBACK-PROVENANCE.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "2d7cd0d11091c1c89fba626be7c0c7042c252e1f"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "9807b7830bac1e487e223bc5a42181dc310c4ba8"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/RateBankCommon-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "5ef03a4e893b141e084a8e3d50596f79aebdf9fb"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/RationalCertificate-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "b5db5ea456f09f43ea61961f8deefa70f8f168ba"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/RationalResidualCertificate-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c5ec4147f8e8b8b216c1cb2a7dd4b7eb58ccba4f"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ResidualPrefix-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3ed9b3b1092d5c4e637861002a21d32a7ecde488"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/ResidualProgram-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "a58a6665e1da15d26ae4574f12975601c46d6d81"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/SourcePrefix-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "45572e907078d64c74373468e31604e9807d128b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/TaylorCertificate-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "299dfb7cd5384f87f67e7a76e788851cfbab01f0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/UpperMeanCommon-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "99d4eff4d644a29af1b5772541e0f21743c31d02"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/UpperRateSourceCommon-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "f1e349b0cc8640833cf1100e973e50d1180c5696"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/actions.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "69b3f3e6d4729986481e69624cfbe75ca81416e9"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/artifacts.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "9c49880d5e1cf2eb144ce93df4c1e23147677800"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/axiom-audit-recovered.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "49ee2bb1f8559b20176340688c504a1c2059c697"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/complete-environment-inventory.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3988347c546cf794eee073dff500cbc11fd0db16"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/complete-ownership-receipt.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "6facbfa2fb65a1ab867c8f47c5047b7c4088badb"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/inputs-recovered.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "9292f2fe0ecf293518674f511e6fb4bec877c9bf"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/jobs-connector-wrapper.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0947de0350fe5fed207a59401d47c3cb54f1e233"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/jobs.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "a5b01cc56a69b0ce34588d7c779b10caa6454c7d"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/normalize-connector-transport.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4c5d7b94d7cdc33142bc30a0a612bb6ca09c0d1b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/original-connector-job.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "ff5c23bd1bf8feee33e1e444fe121290edabd116"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/prior-owned-row-comparison.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "34910b3306df0667d08b5f195eb4c2681a8033d1"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/receipts-recovered.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "56f69e26c6159cdd92b38ba9a1d0f4a8988b60a5"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/recover-g6-api-owned-run-v2-empty-stdout.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e38c89562b49f17ad033a1484c503f651a5ecae2"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/run.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "8097ce21c8b917198ef5a36c2b55e292bdce01fa"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/runtime-timing.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "b58e1b4282483bb160454bf5b61c1ba514da5200"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/transport-normalization.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e5794fbaaa8afea5dcad3ec7edb27869ab201f0a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/finite-observation-actual179-static.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "5d1366f99799ca19716978cd38fbfc2a4ee18740"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "cb8be2092c11b487ee7ea6b76985c1e4946e65b0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/SCOPE-AND-BUDGET-BLOCKER.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4be35d3510d62bbd15cca0fef051dcbe0f6d03a0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "01e35571c8c786c036ad395eeab29fbab559d04d"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/generic-source-dag.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "867cb5310319f2c96435bda71de582e6772ffeed"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/native-source-dag.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0029e698f3369697a61c1b39bd23632e1358f0b0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/prepare-source-dag.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3216e1269c601bd5719138d30ea68e89ef919327"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/ActualObservationCorruption.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c292172453608fbc6847705878c1840243bb392b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/ActualSourceClosestCorruption.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e0fa208b32a69e5651c4df7f775a931a30837411"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/ActualSourceCorruptionClasses.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c7532719df949abfb3de212fd2ccc87ee14b9e0b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/CoordinateTVClosure.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "13f11e2d49860e250169b0f9715cdc011d2d1029"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/ExpandedCorruptionClosure.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "da94825ad69a04f98e9a6f569f32fceae9bbd4cf"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/FiniteSimplexAttainment.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "faa75ff8012160da3143dbeddb373a5f775f3312"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/G6PairedTargetReuse.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "fa80c2d2da989bbf9016da824f8fc271beb9d688"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/UnifiedLean/G6/CorruptionClasses.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3a18f67b692bc75d5ead769536710205d383782c"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/corruption-dag-budget-actual179-0711z/sources/UnifiedLean/G6/FiniteCorruptionBoundary.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "5f9fb87b5d5db31f359132f8ffd50790a2a9c30c"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/ACTUAL-TIMING-AND-BUDGET.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0eba8ffc1e133360d7d851aa545aa5af1efc9a60"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/API-INPUTS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "23c2cd4822162da0e5f6b075940611d400760cb0"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "ccf7d77f0057a046d9705716bf71adde241e1c9c"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/REQUESTED-TARGETS.txt",
+          "previous_path": null,
+          "status": "added",
+          "blob": "ecd698b2711193c39b20466ea2f98346866be7c7"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/ROOT-SELECTION-AUTHENTICATION.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "00b2fd3730fadcea0aff0e0d8c67d78ece88fc71"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "afe63e64acd6b98121364781720a6fb32595129f"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/UNCHANGED179-AUTHENTICATION.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "573706c9a9898b94b6375bda966a6557cd6af428"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/authenticate_root_selection.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "72edb0df0a60a1076ccafe20e1df6d324a9e52d4"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/prepare-static-selection.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "2bb57bacc259fb900b901d60d42c41d6149aa849"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/sources/ActualObservationCorruption.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c292172453608fbc6847705878c1840243bb392b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/sources/UnifiedLean/G6/FiniteCorruptionBoundary.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "5f9fb87b5d5db31f359132f8ffd50790a2a9c30c"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/FINITE-OBSERVATION-ACTUAL179-181-SOURCE-SELECTION-REVIEW.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "82ab0aafc4d439d0f6cb5d6c287d80342d6bcd7e"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/FINITE-READ-CLOSURE-OBSTRUCTION-HAND-SOURCE-REVIEW.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "966c946a18379b1b041b721542b46cc62e4343f4"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/G4-MOVING-TAIL-CENTRAL-SOURCE-HAND-REVIEW.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "89f0c3ca880d4ced73d751e03fc685658dc72cce"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/KNOWN-FINITE-NATIVE-CHANNEL-SOURCE-REVIEW.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "deb328eb09bb81f2bf72b9824c5579b5ebebc83c"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/THREE-FOLLOWON-179-COMPLETE-VERIFIED-PASS-REVIEW.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "238f406b2a9c14974a5f062fb49589a6845f36cc"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/authenticate_finite_observation_actual179_selection.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4465e9da884632bb816521929397fb4358d10d99"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/authenticate_three_followon_complete_author_correspondence.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "14d9d1c40abf9e8ffcd15c8bd26dba0cb9bbed65"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/authenticate_three_followon_complete_pass.py",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4db21a2a6800d07c75e5a0931dcd8cc773372479"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/finite-observation-actual179-181-selection-authentication.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "9818e2df4920d785b3fb71603418b16dae74f098"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/finite-read-closure-authentication.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "78ccaa7607b70171579f93fcb6f80eb97e40c913"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/g4-moving-tail-central-source-authentication.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4f268d6d4ee54c0489856dd0e89a42b5d6859174"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/known-finite-native-channel-authentication.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "881dc3e5735cb7ced5c5542d122e9906a7105007"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-CompleteEnvironmentAudit.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e8256ba3e52db72ff072ae3109023f20dfba3e29"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-DeclarationAudit.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "07257e1201c6bf2b313f4425165cc161c4aa82dd"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-HybridSizeCore-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-RationalResidualCertificate-actual.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c5ec4147f8e8b8b216c1cb2a7dd4b7eb58ccba4f"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-actions.log",
+          "previous_path": null,
+          "status": "added",
+          "blob": "ff5c23bd1bf8feee33e1e444fe121290edabd116"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-artifact-metadata.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "f87b31d34c8f1da4d4351aa01fff0175aed74ed5"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-author-correspondence.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "36e82a43dcd5613c13ff70ec66e35891b1954f75"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-final-audit.txt",
+          "previous_path": null,
+          "status": "added",
+          "blob": "91ce3a2b31e8ec84215624482e295b0b027aef1a"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-independent.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "139b8718dce074e77ca5f820f3520176027a9a42"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-inventory.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3988347c546cf794eee073dff500cbc11fd0db16"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-job.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "80087d41cd7c708d0be4613ea91f55a09160cc1e"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-jobs.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0f8284dfd84e5e1d68ea48abdf2c14e3a407753b"
+        },
+        {
+          "path": "research/2026-10-07-cloud-independent-auditor-1616z/three-followon-pass-37738512508-run.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "8097ce21c8b917198ef5a36c2b55e292bdce01fa"
+        },
+        {
+          "path": "research/2026-10-08-cloud-all-pair-source-sol-0658z/CHECKPOINT.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "2ba15d6b9a633239c6eddb6f0f801bf9bf4b6ad6"
+        },
+        {
+          "path": "research/2026-10-08-cloud-all-pair-source-sol-0658z/HAND-ALL-PAIR-COMPLETION.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3cae8e09896a267d05c38a13d6be6847e2b79773"
+        },
+        {
+          "path": "research/2026-10-08-cloud-all-pair-source-sol-0658z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "77c4000b8c855c826ea9d445f0c4b2578a60a8ef"
+        },
+        {
+          "path": "research/2026-10-08-cloud-all-pair-source-sol-0658z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "2749d9b4c2dc851b3a3641bf435ddb09cd992c94"
+        },
+        {
+          "path": "research/2026-10-08-cloud-all-pair-source-sol-0658z/proof-drafts/NaturalCompletedAllPairs.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c29c6a9821a59388a59baabddcf28f3c3e883783"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-closed-arm-carrier-0625z/ClosedArmCarrier.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "eb53459cae770ad56535eebc230240436ea49c18"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-closed-arm-carrier-0625z/HAND-CLOSURE.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3274445247717cb1795887ac98ea3858b908d28c"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-closed-arm-carrier-0625z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "f7f2c990fa3ba1106eb7a5d09447b4c1a2f3f222"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-closed-arm-carrier-0625z/SOURCE-INPUTS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c900835c5101a61fc3cb58f7912fe1de63f0cc14"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-closed-arm-carrier-0625z/STATUS.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e31b176401032d42be5ae05fc555c4987af45c6e"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/ActualFixedEdgeRow.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c396077cc9398dc27543c8b59da2c8f7677e0147"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/ActualStoppedArmExposure.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "65bb898f7526e338df8d5e4a63e7230f5d8050f2"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/FinitePMFSemigroup.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "a6a095701489d1cc7586b251c09bdfd45d16d569"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/HAND-NORMALIZED-EXPOSURE.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "08470a8f3184e1e10a65b13c3e8631318b49d240"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "a63787b4e5b04f697db4444fe03a39c3df11a9e0"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/SOURCE-INPUTS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "65215e9d2b453f0590a1f90b3ac12382d5419622"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/STATUS.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4e22d73d8f704807800368eedf8aa7c8d0c06217"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g3-unit-arm-semigroup-0642z/UnitArmSemigroup.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "49732bb426ff3b9393c66f6a1a5d9afe80b04987"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/ACTUAL-EIGHT-CELL-FULL-FIVE-RETURN.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "d4fa6e8ee8331883b1b7c136adfef0d2b78725f8"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/ASSUMPTION-REGISTER.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e817cdca210fe52b7160f90e98b448f1a6583cd3"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/DECLARATION-HANDOFF.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "3afd9b8e2ebd8f331ce2efa8c4f9744c363eb670"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/MANIFEST.sha256",
+          "previous_path": null,
+          "status": "added",
+          "blob": "d7313145c5ab83c5413a79387cea183c759b1168"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "ac9d71f010175c9343d9c4c84e46321cc4205189"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/REVIEW-REQUEST.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "66b725b748f8ad56590cfe47f334acbc6106f9ad"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-eight-cell-0704z/SOURCE-IDENTITIES.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "5c3b135382d6e37aea8c8d2c4e5fc268097335ec"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/ASSUMPTION-REGISTER.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0ac745f6b2e3a2a2b1f864246505d14a49b84888"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/CENTRAL-SOURCE-JETS-AND-MOVING-TAIL-OBSTRUCTION.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "e83bccb259f3644e06e94ea941934621e25d7b86"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/DECLARATION-HANDOFF.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "44f445d4c62b841c05ee53570bf444111430edf3"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/MANIFEST.sha256",
+          "previous_path": null,
+          "status": "added",
+          "blob": "325152e3047f8882ea493970b373a812ef06dab3"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c41f714e45b0c5b24b5535f9501d40e1c2047a7a"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/REVIEW-REQUEST.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "151fe123cf62e405e13c5eaca7664bbe662aa69f"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-moving-tail-0623z/SOURCE-IDENTITIES.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "7f039d05d85d684eec3168c76221e11b468367b7"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/ASSUMPTION-REGISTER.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "1e667e46650bcff7ea4cb35b24511d376a4f0eb2"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/DECLARATION-HANDOFF.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "58708808c75febb6bd1f568895becba74a2c4330"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/FINITE-CELL-ONE-POSITIVE-SOURCE-OBSTRUCTION.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "a1dfee6a1cbddbbaea9612d6c0a2a095d6ea1e3d"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/MANIFEST.sha256",
+          "previous_path": null,
+          "status": "added",
+          "blob": "d69599e4c8dfe812fa388e1f53ef0e0406d7941a"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "35d963ef773c29ff6169ef3a06292987d977ff23"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/REVIEW-REQUEST.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "fd33d313c8326c0276f11ae032dc6a3495428b6e"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g4-one-positive-cell-0640z/SOURCE-IDENTITIES.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "1c890a515a985ac2b23a1cb28a97d3d0cac92859"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-boundary-phase-relation-0616z/BOUNDARY-PHASE-AND-STOPPED-ROW.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "849e343d121f4ff31e21304bf101be895e78ab6a"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-boundary-phase-relation-0616z/G6BoundaryPhaseRelation.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "1a6b6d214689afc19d8db29edd96c5c2a15c2903"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-boundary-phase-relation-0616z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4b470d44ae42f0aedda7188fe85d18c2a8e7d185"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-boundary-phase-relation-0616z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "5a55b8d9b84a5a0cad4f9a188f67ba34ad919246"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-boundary-phase-relation-0616z/STATIC-CHECKS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "0db5a9aca2e77c62b30b680a26aa3c60969ff66f"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-native-phase-clocks-0645z/G6NativePhaseClocks.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "bf967ed5752a140c823fd9a874920e35e43587f5"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-native-phase-clocks-0645z/NATIVE-CLOCKS-AND-MARKED-PAST.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "7b9e54467e4cc891a99efebec73ae07c49fea453"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-native-phase-clocks-0645z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "1c7cc18fb592d772986729b569a727ea84d13235"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-native-phase-clocks-0645z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "abc73ea33b694afad95ba0565e5a008bc5254177"
+        },
+        {
+          "path": "research/2026-10-08-cloud-g6-native-phase-clocks-0645z/STATIC-CHECKS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "b0f6875168dda394939abeab26987417422ed6ca"
+        },
+        {
+          "path": "research/2026-10-08-cloud-known-finite-channel-0634z/KnownFiniteChannel.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "a294c650f2dee0c25ab172d82dff531b268d6542"
+        },
+        {
+          "path": "research/2026-10-08-cloud-known-finite-channel-0634z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "042640506a79341a784b6d641456ad1132d83105"
+        },
+        {
+          "path": "research/2026-10-08-cloud-known-finite-channel-0634z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "1b6aae0cd4c83bf0dc903f085fb280160fe7a940"
+        },
+        {
+          "path": "research/2026-10-08-cloud-native-known-channel-0646z/ActualKnownFiniteChannel.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "d92f55711b1eeaac5c6e2b9a3f4fa94777c35678"
+        },
+        {
+          "path": "research/2026-10-08-cloud-native-known-channel-0646z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "21abf48d9678e3a1fa2415f75de9f5c5c125d868"
+        },
+        {
+          "path": "research/2026-10-08-cloud-native-known-channel-0646z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "12e5867b4ac3ba2578ff0a1dfd66ae13c4228420"
+        },
+        {
+          "path": "research/2026-10-08-cloud-physical-panel-sol-0634z/CHECKPOINT.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4744af7823d977f5ee70aa00a906384280cd9e5b"
+        },
+        {
+          "path": "research/2026-10-08-cloud-physical-panel-sol-0634z/HAND-PHYSICAL-PANEL.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "40ba729186c6d6fe7f6148e40eb5b93f6628f1e3"
+        },
+        {
+          "path": "research/2026-10-08-cloud-physical-panel-sol-0634z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4e35cc9fca3b00fe548cac8b9c3bb7fc60cefa60"
+        },
+        {
+          "path": "research/2026-10-08-cloud-physical-panel-sol-0634z/SOURCE-PINS.json",
+          "previous_path": null,
+          "status": "added",
+          "blob": "18fbf5b254848473bfc8187aeb562b031e1e19f9"
+        },
+        {
+          "path": "research/2026-10-08-cloud-physical-panel-sol-0634z/proof-drafts/ActualPanelForestReadout.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "7b957766ed5aa064d71e268e67120574d0b31615"
+        },
+        {
+          "path": "research/2026-10-08-cloud-physical-panel-sol-0634z/proof-drafts/NaturalPanelPhysicalAges.lean",
+          "previous_path": null,
+          "status": "added",
+          "blob": "4881cb9d629f073c8b59ad1246cf0e13a6e18a25"
+        },
+        {
+          "path": "research/2026-10-08-cloud-proof-frontier-0638z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "c34b6f8f77962fae20b92e10c886c1e81956f65d"
+        },
+        {
+          "path": "research/2026-10-08-cloud-proof-frontier-0705z/README.md",
+          "previous_path": null,
+          "status": "added",
+          "blob": "8be717c643910bb5764d792d1147783d042d50d1"
+        }
+      ]
+    },
+    "queues": {
+      "active": 0,
+      "queued": 0
+    },
+    "inbox": [
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T1605Z-G5-COORDINATION.md",
+        "name": "20261007T1605Z-G5-COORDINATION.md",
+        "sha": "8b8a181fe76b4db07d94bd34f758d05c1ddb54de",
+        "size": 2301
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T1612Z-G5-RECEIPT-AND-JOB.md",
+        "name": "20261007T1612Z-G5-RECEIPT-AND-JOB.md",
+        "sha": "04138c72a170877116ef3dfd7170d8e73e2c2d3a",
+        "size": 1312
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T161629Z-G5-NOLAN-STOP-TAKEOVER.md",
+        "name": "20261007T161629Z-G5-NOLAN-STOP-TAKEOVER.md",
+        "sha": "5b8475707aa8f3b0f98c30768b53d66c1f8d1a37",
+        "size": 1483
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T212900Z-DOT-CODEX-COORDINATION-PROPOSAL.md",
+        "name": "20261007T212900Z-DOT-CODEX-COORDINATION-PROPOSAL.md",
+        "sha": "a5deb4edd645da253507d87f2967eade752563ad",
+        "size": 6319
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T213100Z-DOT-RECOVERY-COORDINATION.md",
+        "name": "20261007T213100Z-DOT-RECOVERY-COORDINATION.md",
+        "sha": "3a0cddafecc6c3b610970199a8449a40ab36565a",
+        "size": 4060
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T213500Z-CLOUD-REPLY-TO-DOT.md",
+        "name": "20261007T213500Z-CLOUD-REPLY-TO-DOT.md",
+        "sha": "d3c6b69ce33e548ad7da082462db4863ec5a274a",
+        "size": 6779
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T213600Z-DOT-ACK-AND-CLAIMED-GAPS.md",
+        "name": "20261007T213600Z-DOT-ACK-AND-CLAIMED-GAPS.md",
+        "sha": "316ca028276e659cf68414b59b2fe151453407fd",
+        "size": 4447
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T213900Z-DOT-ACK-CONCRETE-PROOF-SPLIT.md",
+        "name": "20261007T213900Z-DOT-ACK-CONCRETE-PROOF-SPLIT.md",
+        "sha": "1f6b77a2441aab0ae356ea43dd7fbf6448058963",
+        "size": 3984
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T215000Z-CLOUD-ACK-CONCRETE-SPLIT.md",
+        "name": "20261007T215000Z-CLOUD-ACK-CONCRETE-SPLIT.md",
+        "sha": "6190d83641f846959b5de0c1191c79d57f338599",
+        "size": 4567
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T220100Z-DOT-REVIEWED-G5-G6-PACKETS.md",
+        "name": "20261007T220100Z-DOT-REVIEWED-G5-G6-PACKETS.md",
+        "sha": "616b1627c819b4c4a4f4e23ed912711657111f41",
+        "size": 3482
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T221600Z-CLOUD-TRANSFER-AND-PUBLICATION-ROUTE.md",
+        "name": "20261007T221600Z-CLOUD-TRANSFER-AND-PUBLICATION-ROUTE.md",
+        "sha": "a7978689b2a7883d7ee0fda53fc672c9d76b845f",
+        "size": 3295
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T223200Z-DOT-REVIEWED-PUBLICATION-COMPLETE.md",
+        "name": "20261007T223200Z-DOT-REVIEWED-PUBLICATION-COMPLETE.md",
+        "sha": "b48911ab66282ab9df6d0e6ae7162ed72e512b54",
+        "size": 4290
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T223500Z-DOT-G4-STRUCTURAL-REVIEWED-HANDOFF.md",
+        "name": "20261007T223500Z-DOT-G4-STRUCTURAL-REVIEWED-HANDOFF.md",
+        "sha": "5af541773513af9afd215fe2efa582ee643865dc",
+        "size": 3508
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T225400Z-CLOUD-PRINCIPAL-RECEIPT-AND-UPLOAD-UPTAKE.md",
+        "name": "20261007T225400Z-CLOUD-PRINCIPAL-RECEIPT-AND-UPLOAD-UPTAKE.md",
+        "sha": "ea6480c6b15e0503cf96af853fbb428a94f57d1f",
+        "size": 2199
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T230600Z-CLOUD-SOURCE-ERASURE-FRONTIER.md",
+        "name": "20261007T230600Z-CLOUD-SOURCE-ERASURE-FRONTIER.md",
+        "sha": "088fdfa6334949f29cb8732a462ca23d6e8c46b3",
+        "size": 2132
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T231500Z-DOT-RUST-PILOT-COORDINATION.md",
+        "name": "20261007T231500Z-DOT-RUST-PILOT-COORDINATION.md",
+        "sha": "7dd051176856df9b9280dc1295d7afc57771b0b1",
+        "size": 2221
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T231600Z-CLOUD-RUST-PILOT-COORDINATION-ACK.md",
+        "name": "20261007T231600Z-CLOUD-RUST-PILOT-COORDINATION-ACK.md",
+        "sha": "6ead1e678a2958dfb75b7001788040c39f40180e",
+        "size": 1703
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T233000Z-CLOUD-CAUSAL-SOURCE-PROGRESS.md",
+        "name": "20261007T233000Z-CLOUD-CAUSAL-SOURCE-PROGRESS.md",
+        "sha": "13fc9b32f31b57e72a3dc5328e9baefef0f1cae8",
+        "size": 3505
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T233900Z-CLOUD-PRACTICAL-BUILD-TAKEOVER.md",
+        "name": "20261007T233900Z-CLOUD-PRACTICAL-BUILD-TAKEOVER.md",
+        "sha": "64736b23b76981b152a87740795ede129bca538a",
+        "size": 3228
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T234400Z-DOT-RUST-CODEX-OWNERSHIP-TRANSFER.md",
+        "name": "20261007T234400Z-DOT-RUST-CODEX-OWNERSHIP-TRANSFER.md",
+        "sha": "f60377946487517a4a4ee92e6c78e2a557d7258f",
+        "size": 13941
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T235000Z-CLOUD-PRACTICAL-C-ABI-SOURCE-AND-DOT-REQUEST.md",
+        "name": "20261007T235000Z-CLOUD-PRACTICAL-C-ABI-SOURCE-AND-DOT-REQUEST.md",
+        "sha": "07c0052ce2ef2e1f2b5580a392cfa2f0bede835a",
+        "size": 2025
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261007T235000Z-DOT-RUST-INTERVAL-ARCHITECTURE-HANDOFF.md",
+        "name": "20261007T235000Z-DOT-RUST-INTERVAL-ARCHITECTURE-HANDOFF.md",
+        "sha": "f17fac3d2c48d6010c5a309eb08d4db0c15eb6a5",
+        "size": 2256
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T000300Z-CLOUD-NATIVE-RUST-PILOT-ACK.md",
+        "name": "20261008T000300Z-CLOUD-NATIVE-RUST-PILOT-ACK.md",
+        "sha": "566c4e10338fa0e867173775e293dc9a05e2a884",
+        "size": 1718
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T000300Z-DOT-NATIVE-RUST-SOURCE-REPLY.md",
+        "name": "20261008T000300Z-DOT-NATIVE-RUST-SOURCE-REPLY.md",
+        "sha": "b6b1b46d64d556e134599a2c5bc9c180f393c5fb",
+        "size": 2367
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T002800Z-CLOUD-MOLECULAR-OWNERSHIP-ACK.md",
+        "name": "20261008T002800Z-CLOUD-MOLECULAR-OWNERSHIP-ACK.md",
+        "sha": "209aa044debd434a1b6e7c96be88310c0ff5c380",
+        "size": 850
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T005600Z-CLOUD-MOLECULAR-DELIVERY.md",
+        "name": "20261008T005600Z-CLOUD-MOLECULAR-DELIVERY.md",
+        "sha": "53e5457c2e5a74cae04114ffe6f493d08ba566a6",
+        "size": 967
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T021100Z-DOT-SCOPE-RECONCILIATION.md",
+        "name": "20261008T021100Z-DOT-SCOPE-RECONCILIATION.md",
+        "sha": "353dbdf146a83d016b821ed726f461ab9df3321c",
+        "size": 2408
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T061500Z-DOT-SCOPE-DELTA.md",
+        "name": "20261008T061500Z-DOT-SCOPE-DELTA.md",
+        "sha": "2df0b84a0cd49f2a49fd5339f1e5ae6e6e4dd685",
+        "size": 1175
+      },
+      {
+        "path": "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T063500Z-CLOUD-ACK-DOT-SCOPE-DELTA.md",
+        "name": "20261008T063500Z-CLOUD-ACK-DOT-SCOPE-DELTA.md",
+        "sha": "d6616210fd9a9e683b039ce283ef56b65946cc9f",
+        "size": 3565
+      }
+    ],
+    "inbox_delta": [],
+    "external_source_pins_checked": 3584,
+    "external_mathlib_source_pins": 3320,
+    "actual_prior_cache_module_count": 3302,
+    "lean_executable_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "prelude_sha256": "56de5780adc4358372fa9cfac270a70f2d03fd4f213a373aea4365483b31a544",
+    "prior_frozen_local_files_checked": 187,
+    "protected_drift": [],
+    "new_formal_paths_absent_before_freeze": true,
+    "owner": "/root/lean_verification",
+    "source_gate": "b6776d019c813066458f9f292f5307ae4545016e",
+    "root_one_gate": "eebb0e049c695f4ca0ab9ea02560aa316b728753",
+    "requested_custom": 181,
+    "requested_named": 513,
+    "budget_estimate_seconds": 898,
+    "job_cap_seconds": 900,
+    "per_command_cap_seconds": 180,
+    "flags": [
+      "--trust=0",
+      "-j1",
+      "-M4096"
+    ],
+    "control_and_inbox_literal_sha256": {
+      "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/run.py": "f1476d46cabf22b8f80da6f06feb61974c4967507689625da7903f69b1a40306",
+      "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/targets.txt": "e9e071710b483cf18b7db11b91436fd8d6b1b82f5e61c78afc45ad559a430a45",
+      "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh": "a7223afdda243533689fb3188cb7478f9f3f7047644a215665f961ddd517b03a",
+      "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/complete_environment.py": "296a28f59363027abf31be110f4aecfa6479e73cd6e9a13bd571d28df58dd144",
+      "research/2026-10-05-dot-connected-modular-lean-workspace-2252z/package/scripts/AuditTemplate.lean": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a",
+      ".github/workflows/g6-cloud-lean.yml": "70f0557f17a01f92deac080053096c75f29660ed86b93842df88f3319901eb16",
+      ".github/workflows/cloud-g5-sol-ultra.yml": "2fdcc3187d4cf99a019477ae16e30218b3bced27f74195843d9007abbd95f5fa",
+      "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T063500Z-CLOUD-ACK-DOT-SCOPE-DELTA.md": "06fc243d3f35b64573fa73ef0c6ac9533de6aee4047c9b12314bf15fc793034d",
+      "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T061500Z-DOT-SCOPE-DELTA.md": "83493e346c416fb13d1453eab6344e0445c7df31f51f96ad9031fec79906f50c",
+      "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T021100Z-DOT-SCOPE-RECONCILIATION.md": "98ebe51d4b18f0a454aa53a15bbac95dd85e30e9202aa1715008404cb54ca0d7",
+      "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T005600Z-CLOUD-MOLECULAR-DELIVERY.md": "2d85a5ce505cad943c05dbfa6e03c3f683fc16d463470d7d61bc5b2ce6311b96"
+    }
+  },
+  "exact_raw_current_controls_and_latest_inbox": {
+    "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/run.py": "\"\"\"Frozen-source serial verification; imported library cache is reuse, not rebuild.\"\"\"\nimport datetime\nimport hashlib\nimport json\nimport pathlib\nimport re\nimport shutil\nimport subprocess\nimport sys\nimport complete_environment\n\nroot = pathlib.Path(sys.argv[1]).resolve()\ntargets = pathlib.Path(sys.argv[2]).read_text().split()\ncommit = sys.argv[3]\nroots = [root, *(root / p for p in ['Imported', 'HistoricalCore', 'HistoricalNanuq', 'HistoricalBiological'])]\nmodules, external, order = {}, set(), []\n\ndef lean_imports(source):\n    # Derivative of the hash-pinned G5 source selector. Lean block comments\n    # nest; a prose line beginning with 'import' is not a dependency.\n    clean, depth, index = [], 0, 0\n    while index < len(source):\n        if source[index:index + 2] == '/-':\n            depth += 1\n            index += 2\n        elif depth and source[index:index + 2] == '-/':\n            depth -= 1\n            index += 2\n        elif depth:\n            if source[index] == '\\n':\n                clean.append('\\n')\n            index += 1\n        else:\n            clean.append(source[index])\n            index += 1\n    dependencies = []\n    for line in ''.join(clean).splitlines():\n        match = re.match(r'\\s*(?:public\\s+)?import\\s+(.+)', line)\n        if match:\n            dependencies.extend(match[1].split('--')[0].split())\n    return dependencies\n\ndef visit(name):\n    if name.startswith('Mathlib.'):\n        external.add(name)\n        return\n    if name.startswith(('Lean.', 'Std.', 'Init.')) or name in modules:\n        return\n    path = next((p / (name.replace('.', '/') + '.lean') for p in roots\n                 if (p / (name.replace('.', '/') + '.lean')).is_file()), None)\n    if path is None:\n        raise RuntimeError('Missing custom source: ' + name)\n    data = path.read_bytes()\n    imports = lean_imports(data.decode())\n    modules[name] = {'path': str(path.relative_to(root)), 'sha256': hashlib.sha256(data).hexdigest(), 'imports': imports}\n    for dependency in imports:\n        visit(dependency)\n    order.append(name)\n\nfor target in targets:\n    visit(target)\nevidence = root / 'g6-evidence'\nevidence.mkdir(exist_ok=True)\nlean_executable = pathlib.Path(shutil.which('lean')).resolve()\ndependencies = {\n    'lean_version': subprocess.check_output(['lean', '--version'], text=True).strip(),\n    'lean_executable_sha256': hashlib.sha256(lean_executable.read_bytes()).hexdigest(),\n    'mathlib_commit': subprocess.check_output(\n        ['git', '-C', str(root / 'deps/mathlib'), 'rev-parse', 'HEAD'], text=True).strip(),\n    'lake_manifest_sha256': hashlib.sha256((root / 'lake-manifest.json').read_bytes()).hexdigest(),\n    'lake_registration_sha256': hashlib.sha256((root / 'lakefile.lean').read_bytes()).hexdigest(),\n    'verification_script_sha256': hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),\n    'complete_inventory_helper_sha256': hashlib.sha256(\n        pathlib.Path(complete_environment.__file__).read_bytes()).hexdigest(),\n    'complete_inventory_template_sha256': hashlib.sha256((\n        pathlib.Path(__file__).resolve().parents[3] /\n        'research/2026-10-05-dot-connected-modular-lean-workspace-2252z/'\n        'package/scripts/AuditTemplate.lean').read_bytes()).hexdigest(),\n}\nif dependencies['mathlib_commit'] != '0df444a360eaa60ab8c11dca51a86af692955474':\n    raise RuntimeError('Unexpected Mathlib commit')\nif dependencies['lean_executable_sha256'] != 'e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550':\n    raise RuntimeError('Unexpected Lean executable')\n(evidence / 'lake-manifest.json').write_bytes((root / 'lake-manifest.json').read_bytes())\nmanifest = {'source_commit': commit, 'targets': targets, 'modules': modules,\n            'topological_order': order, 'mathlib_roots': sorted(external),\n            'dependencies': dependencies}\n(evidence / 'inputs.json').write_text(json.dumps(manifest, indent=2) + '\\n')\nprint('G6_INPUTS ' + json.dumps(manifest), flush=True)\n\ndef run(argv, label):\n    start = datetime.datetime.now(datetime.timezone.utc).isoformat()\n    print('G6_COMMAND ' + json.dumps({'argv': argv, 'cwd': str(root), 'start': start}), flush=True)\n    try:\n        result = subprocess.run(argv, cwd=root, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=180)\n        output, code = result.stdout, result.returncode\n    except subprocess.TimeoutExpired as exc:\n        output, code = exc.stdout or b'', 124\n    (evidence / (label + '.log')).write_bytes(output)\n    print(output.decode(errors='replace'), end='', flush=True)\n    receipt = {'argv': argv, 'start': start,\n               'end': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'exit': code,\n               'output_sha256': hashlib.sha256(output).hexdigest()}\n    print('G6_RECEIPT ' + json.dumps(receipt), flush=True)\n    (evidence / (label + '.json')).write_text(json.dumps(receipt, indent=2) + '\\n')\n    if code:\n        raise SystemExit(code)\n    if re.search(rb'sorryAx|Lean\\.ofReduceBool|Lean\\.trustCompiler', output):\n        raise SystemExit('Forbidden proof axiom in report')\n    return output.decode(errors='replace')\n\nrun(['lake', 'exe', 'cache', 'get', *sorted(external)], 'mathlib-cache')\npassed_modules, failed_modules, blocked_modules = set(), [], []\nfor index, module in enumerate(order):\n    record = modules[module]\n    custom_dependencies = [dependency for dependency in record['imports'] if dependency in modules]\n    if any(dependency not in passed_modules for dependency in custom_dependencies):\n        blocked_modules.append({'module': module, 'dependencies': custom_dependencies})\n        continue\n    path = root / record['path']\n    if hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:\n        raise RuntimeError('Frozen source mutated: ' + module)\n    output = root / '.lake/build/lib/lean' / (module.replace('.', '/') + '.olean')\n    output.parent.mkdir(parents=True, exist_ok=True)\n    try:\n        run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', '-o', str(output), str(path)], f'{index:03d}-{module}')\n    except SystemExit as exc:\n        failed_modules.append({'module': module, 'result': str(exc.code)})\n        continue\n    passed_modules.add(module)\n\naudited_targets = [target for target in targets if target in passed_modules]\n(evidence / 'selected-results.json').write_text(json.dumps({\n    'requested_targets': targets, 'passed_modules': sorted(passed_modules),\n    'failed_modules': failed_modules, 'blocked_modules': blocked_modules,\n    'audited_targets': audited_targets,\n}, indent=2) + '\\n')\n\n# Audit every declaration in each selected G6 source. Each #print axioms report\n# includes the complete transitive proof dependency set, including providers.\ndeclarations, declarations_by_module = [], {}\nfor module in audited_targets:\n    source = (root / modules[module]['path']).read_text()\n    namespace = re.search(r'^namespace\\s+(\\S+)\\s*$', source, re.MULTILINE)\n    if namespace is None:\n        raise RuntimeError('Selected source has no explicit namespace: ' + module)\n    declarations_by_module[module] = [namespace[1] + '.' + name for name in re.findall(\n        r'^(?:noncomputable\\s+)?(?:def|theorem|lemma)\\s+([A-Za-z0-9_\\']+)',\n        source, re.MULTILINE)]\n    declarations.extend(declarations_by_module[module])\naudit = evidence / 'DeclarationAudit.lean'\naudit.write_text('\\n'.join('import ' + module for module in audited_targets) + '\\n\\n' +\n                 '\\n'.join('#print axioms ' + name for name in declarations) + '\\n')\naudit_output = run(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', str(audit)], 'declaration-audit')\nreports = {name: [axiom.strip() for axiom in axioms.split(',') if axiom.strip()]\n           for name, axioms in re.findall(\n               r\"'([^']+)' depends on axioms:\\s*\\[([^\\]]*)\\]\", audit_output, re.DOTALL)}\nreports.update({name: [] for name in re.findall(\n    r\"'([^']+)' does not depend on any axioms\", audit_output)})\nmissing = sorted(set(declarations) - reports.keys())\nunexpected = {name: sorted(set(axioms) - {'propext', 'Classical.choice', 'Quot.sound'})\n              for name, axioms in reports.items()\n              if set(axioms) - {'propext', 'Classical.choice', 'Quot.sound'}}\n(evidence / 'axiom-audit.json').write_text(json.dumps({\n    'declarations': declarations, 'transitive_axioms': reports,\n    'declarations_by_module': declarations_by_module,\n    'missing_reports': missing, 'unexpected_axioms': unexpected,\n    'audit_source_sha256': hashlib.sha256(audit.read_bytes()).hexdigest(),\n}, indent=2) + '\\n')\nif missing or unexpected:\n    raise SystemExit('Incomplete or unexpected declaration axiom audit')\n# Required full ownership/type/body/reference inventory, distinct from the\n# named selected-source reports above. Only actual successful custom modules\n# enter it, including generated declarations and inherited custom providers.\nowned_modules = [module for module in order if module in passed_modules]\ncomplete_audit = complete_environment.prepare(root, evidence,\n    pathlib.Path(__file__).resolve().parents[3], owned_modules)\nrun(['lake', 'env', 'lean', '--trust=0', '-j1', '-M4096', str(complete_audit)],\n    'complete-custom-environment-audit')\ncomplete_environment.recover(root, evidence, owned_modules)\ncounts = {module: len(names) for module, names in declarations_by_module.items()}\nprint('CLOUD_SELECTED_AXIOM_AUDIT_PASSED ' + json.dumps(counts), flush=True)\ng6_targets = [target for target in targets if target.startswith('UnifiedLean.G6.')]\nif g6_targets and all(target in audited_targets for target in g6_targets):\n    print('G6_AXIOM_AUDIT_PASSED declarations=' + str(sum(counts[target] for target in g6_targets)), flush=True)\n    print('G6_SELECTED_COMPONENTS_PASSED commit=' + commit, flush=True)\nfor target in audited_targets:\n    print('CLOUD_TARGET_PASSED ' + target + ' commit=' + commit, flush=True)\nif failed_modules:\n    raise SystemExit('Selected source failure: ' + json.dumps(failed_modules))\n",
+    "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/targets.txt": "G3ApproximateMomentBarrier\nUnifiedLean.G6.FiniteProbability\nUnifiedLean.G6.Conditioning\nUnifiedLean.G6.SourcePrefix\nUnifiedLean.G6.ProgramPrefix\nUnifiedLean.G6.TaylorCertificate\nUnifiedLean.G6.HistoryPrefix\nUnifiedLean.G6.RationalCertificate\nUnifiedLean.G6.BinHistory\nUnifiedLean.G6.BinFold\nG5FrozenTripleAnalyticSupport\nFiniteTagDecoder\nUnifiedLean.G6.BinClock\nLiteralSameBinTrace\nUnifiedLean.G6.ResidualPrefix\nUnifiedLean.G6.MeanEnclosure\nUnifiedLean.G6.ResidualProgram\nCompleteCalendarBinReadout\nActualTailBinRow\nCompleteCalendarJointLaw\nUnifiedLean.G6.UpperMeanCommon\nUnifiedLean.G6.AncestralRateFree\nUnifiedLean.G6.RateBankCommon\nUnifiedLean.G6.InheritanceBankCommon\nUnifiedLean.G6.UpperRateSourceCommon\nActualCutTagRefinement\nActualCutJointLaw\nActualCalendarCutContext\nActualFiniteCutJointLaw\nActualCalendarEndpointHistory\nActualObservationCutRefinement\nUnifiedLean.G6.CompleteObservationPrefix\nUnifiedLean.G6.PrivateRegisterErasure\nUnifiedLean.G6.PrivateRegisterSourceStep\nUnifiedLean.G6.PrivateRegisterBoundary\nUnifiedLean.G6.PrivateRegisterProgram\nUnifiedLean.G6.PrivateRegisterHistory\nPrivateSeedFactorization\nPrivateSeedHistoryFactorization\nUnifiedLean.G6.PrivateRegisterCalendar\nUnifiedLean.G6.PrivateRegisterCalendarPrefix\nNaturalCalendarPastAdmission\nHybridSizeCore\nNaturalPastCompleteObservation\nUnifiedLean.G6.RationalResidualCertificate\n",
+    "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh": "#!/usr/bin/env bash\nset -euo pipefail\nexport PATH=\"${RUNNER_TEMP:?}/g567-lean-4.33.1/lean-4.33.1-linux/bin:$PATH\"\nexport LEAN_NUM_THREADS=1\ng6_repo=\"${RUNNER_TEMP}/research-commons\"\ng6_packet=\"$g6_repo/research/2026-10-07-cloud-g6-sol-ultra-1601z\"\ng6_build=\"${RUNNER_TEMP}/g6-cloud-build\"\nmkdir -p \"$g6_build\"\ncp -a \"$g6_repo/research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/.\" \"$g6_build/\"\ncp -a \"$g6_packet/sources/.\" \"$g6_build/\"\ncp \"$g6_repo/research/2026-10-07-cloud-g3-1619z/G3ApproximateMomentBarrier.lean\" \"$g6_build/G3ApproximateMomentBarrier.lean\"\ncp \"$g6_repo/research/2026-10-07-codex-g5-lean/sources/G5FrozenTriplePolynomialKernel.lean\" \"$g6_build/G5FrozenTriplePolynomialKernel.lean\"\ncp \"$g6_repo/research/2026-10-07-cloud-g5-sol-ultra-1557z/sources/G5FrozenTripleAnalyticSupport.lean\" \"$g6_build/G5FrozenTripleAnalyticSupport.lean\"\npython \"$g6_packet/verification/install_timed_g2.py\" \"$g6_repo\" \"$g6_build\"\nmkdir -p \"$g6_build/deps\"\ngit init --quiet \"$g6_build/deps/mathlib\"\ngit -C \"$g6_build/deps/mathlib\" remote add origin https://github.com/leanprover-community/mathlib4.git\ntimeout 180 git -C \"$g6_build/deps/mathlib\" fetch --quiet --no-tags --depth=1 origin 0df444a360eaa60ab8c11dca51a86af692955474\ngit -C \"$g6_build/deps/mathlib\" checkout --quiet --detach FETCH_HEAD\ntest \"$(git -C \"$g6_build/deps/mathlib\" rev-parse HEAD)\" = '0df444a360eaa60ab8c11dca51a86af692955474'\ntest \"$(cat \"$g6_build/deps/mathlib/lean-toolchain\")\" = 'leanprover/lean4:v4.33.1'\ncd \"$g6_build\"\nMATHLIB_NO_CACHE_ON_UPDATE=1 timeout 180 lake update\ncat lake-manifest.json\npython \"$g6_packet/verification/run.py\" \"$g6_build\" \"$g6_packet/verification/targets.txt\" \"${GITHUB_SHA:?}\"\n",
+    "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/complete_environment.py": "\"\"\"Prepared complete custom ownership inventory; not a compiler by itself.\n\nDerivative of dot's complete AuditTemplate and the actual successful timed G5\ntakeover payload recovery. Call only inside the sole bounded serial runner.\n\"\"\"\nimport base64\nimport gzip\nimport hashlib\nimport json\n\n\ndef prepare(root, evidence, repository, modules):\n    template_path = repository / (\n        'research/2026-10-05-dot-connected-modular-lean-workspace-2252z/'\n        'package/scripts/AuditTemplate.lean')\n    template = template_path.read_text()\n    old = '#[\"NanuqActualBridgeQuartetResolution\", \"NanuqActualQuartetPortBranching\"]'\n    if template.count(old) != 1:\n        raise RuntimeError('Unexpected attributed complete inventory template')\n    template = template.replace(old, '#[' + ', '.join(json.dumps(n) for n in modules) + ']')\n    audit = evidence / 'CompleteEnvironmentAudit.lean'\n    audit.write_text('\\n'.join('import ' + n for n in modules) + '\\n' + template)\n    (root / 'AUDIT-OWNED.json').unlink(missing_ok=True)\n    return audit\n\n\ndef recover(root, evidence, modules):\n    data = (root / 'AUDIT-OWNED.json').read_bytes()\n    report = json.loads(data)\n    if (report['owned_axioms'] or report['nonstandard_axiom_rows'] or report['missing_modules'] or\n            set(report['selected_modules']) != set(modules)):\n        raise RuntimeError('Rejected complete selected custom environment inventory')\n    if any(row['module'] not in modules or\n           set(row['axioms']) - {'propext', 'Classical.choice', 'Quot.sound'}\n           for row in report['declarations']):\n        raise RuntimeError('Unexpected declaration ownership or transitive axiom')\n    rows = report['declarations']\n    if (report['declaration_count'] != len(rows) or\n            report['theorem_declaration_count'] != sum(row['kind'] == 'theorem' for row in rows) or\n            len({row['name'] for row in rows}) != len(rows) or\n            any('type_references' not in row or 'body_references' not in row for row in rows)):\n        raise RuntimeError('Incomplete generated/type/body declaration inventory')\n    (evidence / 'complete-environment-inventory.json').write_bytes(data)\n    receipt = {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest(),\n               'encoding': 'gzip+base64', 'selected_custom_modules': len(modules),\n               'declaration_count': report['declaration_count'],\n               'theorem_declaration_count': report['theorem_declaration_count'],\n               'audit_source_sha256': hashlib.sha256(\n                   (evidence / 'CompleteEnvironmentAudit.lean').read_bytes()).hexdigest()}\n    print('G6_COMPLETE_ENVIRONMENT_PAYLOAD ' + json.dumps(receipt), flush=True)\n    encoded = base64.b64encode(gzip.compress(data, mtime=0)).decode()\n    print('G6_COMPLETE_ENVIRONMENT_GZIP_BASE64_BEGIN', flush=True)\n    for index in range(0, len(encoded), 4096):\n        print(encoded[index:index + 4096], flush=True)\n    print('G6_COMPLETE_ENVIRONMENT_GZIP_BASE64_END', flush=True)\n    print('G6_COMPLETE_ENVIRONMENT_PASSED ' + json.dumps(receipt), flush=True)\n    return receipt\n",
+    "research/2026-10-05-dot-connected-modular-lean-workspace-2252z/package/scripts/AuditTemplate.lean": "import Lean.Util.CollectAxioms\nopen Lean Elab Command\nrun_cmd do\n  let environment ← getEnv\n  let names : Array String := #[\"NanuqActualBridgeQuartetResolution\", \"NanuqActualQuartetPortBranching\"]\n  let imported := environment.header.moduleNames.map Name.toString\n  let indices := environment.header.moduleNames.map (fun n => names.contains n.toString)\n  let mut declarations : Array Json := #[]\n  let mut invalid : Array Json := #[]\n  let mut ownedAxioms : Array String := #[]\n  let mut theorems : Nat := 0\n  for (name, information) in environment.constants do\n    if let some index := environment.getModuleIdxFor? name then\n      if indices[index.toNat]! then\n        let axioms ← collectAxioms name\n        let kind := match information with\n          | .thmInfo _ => \"theorem\"\n          | .axiomInfo _ => \"axiom\"\n          | .defnInfo _ => \"definition\"\n          | .opaqueInfo _ => \"opaque\"\n          | .inductInfo _ => \"inductive\"\n          | .ctorInfo _ => \"constructor\"\n          | .recInfo _ => \"recursor\"\n          | .quotInfo _ => \"quotient\"\n        if kind == \"theorem\" then theorems := theorems + 1\n        if kind == \"axiom\" then ownedAxioms := ownedAxioms.push name.toString\n        let refs := match information.value? (allowOpaque := true) with\n          | some expression => expression.getUsedConstants.map Name.toString\n          | none => #[]\n        let record := Json.mkObj [\n          (\"module\", toJson imported[index.toNat]!), (\"name\", toJson name.toString),\n          (\"kind\", toJson kind), (\"axioms\", toJson (axioms.map Name.toString)),\n          (\"type_references\", toJson (information.type.getUsedConstants.map Name.toString)),\n          (\"body_references\", toJson refs)]\n        declarations := declarations.push record\n        if axioms.any (fun ax => ! #[``propext, ``Classical.choice, ``Quot.sound].contains ax) then\n          invalid := invalid.push record\n  let missing := names.filter (fun n => ! imported.contains n)\n  let result := Json.mkObj [\n    (\"selected_modules\", toJson names), (\"all_imported_module_names\", toJson imported),\n    (\"declaration_count\", toJson declarations.size),\n    (\"theorem_declaration_count\", toJson theorems), (\"owned_axioms\", toJson ownedAxioms),\n    (\"nonstandard_axiom_rows\", toJson invalid), (\"missing_modules\", toJson missing),\n    (\"declarations\", toJson declarations)]\n  liftIO <| IO.FS.writeFile \"AUDIT-OWNED.json\" result.pretty\n  logInfo m!\"Fresh closure: {declarations.size} declarations, {theorems} theorems, {ownedAxioms.size} owned axioms, {invalid.size} nonstandard rows, {missing.size} missing modules\"\n  unless ownedAxioms.isEmpty && invalid.isEmpty && missing.isEmpty do\n    throwError \"Fresh complete closure audit failed\"\n",
+    ".github/workflows/g6-cloud-lean.yml": "name: G6 Cloud pinned Lean\non:\n  push:\n    branches: [main]\n    paths:\n      - .github/workflows/g6-cloud-lean.yml\n      - research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/**\n      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/run.py\n      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh\n      - research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/targets.txt\npermissions:\n  contents: read\n  actions: read\nconcurrency:\n  group: g567-pinned-lean\n  cancel-in-progress: false\njobs:\n  verify:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 15\n    steps:\n      - name: Fetch frozen public input\n        run: |\n          set -euo pipefail\n          git init --quiet \"$RUNNER_TEMP/research-commons\"\n          git -C \"$RUNNER_TEMP/research-commons\" remote add origin \"https://github.com/$GITHUB_REPOSITORY.git\"\n          git -C \"$RUNNER_TEMP/research-commons\" fetch --no-tags --depth=1 origin \"$GITHUB_SHA\"\n          git -C \"$RUNNER_TEMP/research-commons\" checkout --detach FETCH_HEAD\n          test \"$(git -C \"$RUNNER_TEMP/research-commons\" rev-parse HEAD)\" = \"$GITHUB_SHA\"\n      - name: Verify existing pinned runtime\n        run: bash \"$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh\"\n      - name: Recover stopped G5 original compiler diagnostics\n        env:\n          GH_TOKEN: ${{ github.token }}\n        run: python \"$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/recover_stopped_g5.py\" \"$RUNNER_TEMP/g6-cloud-build/g6-evidence/stopped-g5-original\"\n      - name: Verify G6 frozen sources serially\n        run: bash \"$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/verify.sh\"\n      - name: Preserve actual success and failure evidence\n        if: always()\n        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: g6-cloud-evidence-${{ github.run_id }}\n          path: |\n            ${{ runner.temp }}/g6-cloud-build/g6-evidence/\n            ${{ runner.temp }}/g567-lean-4.33.1/lean-version.txt\n            ${{ runner.temp }}/g567-lean-4.33.1/runtime-smoke.log\n          if-no-files-found: warn\n          retention-days: 30\n",
+    ".github/workflows/cloud-g5-sol-ultra.yml": "name: Cloud G5 Sol Ultra frozen verification\n\non:\n  # Root/Lean takeover: deliberate full-context runs only. Narrow G5 analytic\n  # repairs are checked in the owned combined serial route.\n  workflow_dispatch:\n\npermissions:\n  contents: read\n\nconcurrency:\n  group: g567-pinned-lean\n  cancel-in-progress: false\n\njobs:\n  g5:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 15\n    steps:\n      - name: Fetch frozen public commit\n        shell: bash\n        run: |\n          set -euo pipefail\n          git init --quiet \"$RUNNER_TEMP/research-commons\"\n          git -C \"$RUNNER_TEMP/research-commons\" remote add origin \"https://github.com/$GITHUB_REPOSITORY.git\"\n          git -C \"$RUNNER_TEMP/research-commons\" fetch --no-tags --depth=1 origin \"$GITHUB_SHA\"\n          git -C \"$RUNNER_TEMP/research-commons\" checkout --detach FETCH_HEAD\n          test \"$(git -C \"$RUNNER_TEMP/research-commons\" rev-parse HEAD)\" = \"$GITHUB_SHA\"\n      - name: Authenticate pinned runtime\n        shell: bash\n        run: bash \"$RUNNER_TEMP/research-commons/handoffs/2026-10-07-astra-g5-g6-g7-lean/codex-lean/verify-runtime.sh\"\n      - name: Verify frozen G5 analytic branch and actual G2 consumer\n        shell: bash\n        run: |\n          set -euo pipefail\n          export PATH=\"$RUNNER_TEMP/g567-lean-4.33.1/lean-4.33.1-linux/bin:$PATH\"\n          python \"$RUNNER_TEMP/research-commons/research/2026-10-07-cloud-g5-sol-ultra-1557z/scripts/verify_cloud_g5.py\" \\\n            \"$RUNNER_TEMP/research-commons\" \"$RUNNER_TEMP/cloud-g5-build\" \"$RUNNER_TEMP/cloud-g5-evidence\"\n      - name: Preserve actual success and failure evidence\n        if: always()\n        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: cloud-g5-${{ github.run_id }}\n          path: ${{ runner.temp }}/cloud-g5-evidence\n          if-no-files-found: warn\n          retention-days: 7\n",
+    "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T063500Z-CLOUD-ACK-DOT-SCOPE-DELTA.md": "# Cloud acknowledgment of Dot's 06:15 scope note\n\nCLOUD-G6-SOL-ULTRA-20261007, 8 October 2026 UTC. Root read [Dot's scope delta](20261008T061500Z-DOT-SCOPE-DELTA.md) and its [linked immutable scope record](https://github.com/Sodelin/Research-Commons/blob/168a87ef59e16ce4938e727cde76f371a716a7da/research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md), including the dated06:10 append. The note is a documentary scope reconciliation, not a new source assignment or launch. Original G1–G7, BIO-1/E8/cross-scale/hidden/meta obligations, prior accepted work and historical failures remain preserved. API/SDK/practical/molecular execution stays deferred. Existing research responsibilities continue; no new research lane or forced reassignment is introduced. Compiler and independent-audit responsibilities stay separate.\n\nThe delta's dated177 baseline is now superseded only by [canonical actual178 partial acceptance](../../../../research/2026-10-07-cloud-independent-auditor-1616z/THREE-FOLLOWON-178-COMPLETE-VERIFIED-PARTIAL-REVIEW.md), commit6f54d891/SHAf93215c7:178successful modules/487selected reports/4188owned declarations/2748theorem rows, all4158prior177rows exact. Hybrid57a passes; Rational35e is wholly excluded. Raw actual run377349 ended failure; its67 immutable artifacts and author6529 correspondence are authenticated. Counts are not master completion percentages; the historical171-to175 helper-reference exception remains explicit.\n\nThe [matching primary Nat.zero_le-only repair review](../../../../research/2026-10-07-cloud-independent-auditor-1616z/RATIONAL-ZERO-FLAG-ACTUAL178-SOURCE-SELECTION-REVIEW.md),6e13682/33ffcb10, and root's independent exhaustive checks precede the [new ONE gate](../../../../research/2026-10-07-cloud-g6-sol-ultra-1601z/RATIONAL-ZERO-FLAG-ACTUAL178-ROOT-LAUNCH-GATE.md),565aef9/7b8350f4. The old212bf gate is consumed;565 is presently unconsumed. It permits only SAME179/501 and Rational d9f49ca8 under staticplan5de11dd7, with all178 successful hashes, other records,45targets/imports/order/68+1roots and controls fixed.900second job/180second command caps and --trust=0,-j1,-M4096 stay unchanged;775seconds is an estimate. No automatic retry or corruption/G1/native enlargement is authorized.\n\nOwner correctly stopped when the newest inbox record differed from its earlier baseline. Root has now explicitly accepted the exact0615 documentary delta, Gitblob2df0b84a0cd49f2a49fd5339f1e5ae6e6e4dd685, as the new known coordination input, together with this acknowledgment. It changes no selected-source ownership. The SAME ONE authorization565 remains valid for exactly this reconciled inbox state after all other fresh head/queue/provider/runtime/template/external controls pass; it is not a second attempt. Any later substantive assignment/source drift still requires stopping. No build or source mutation had occurred at this acknowledgment.\n\nG3's new stopped-arm operator and G4's fixed-tail accepted hand extension/moving-tail candidate remain distinct from compiled acceptance. Root finite-law closure and finite-read drafts remain uncompiled; actual native corruption import preparation has338custom sources, so no187-module shortcut or unbudgeted native enrollment is inferred. Biological menu/pruning, cross-graph contextual reconstruction, effective source/image tables, uncertainty/stopping and fullG5/G6 remain open. The next decisive action is the one gated rational repair run with complete terminal inventory and independent correspondence, then bounded source-specific follow-ons.\n",
+    "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T061500Z-DOT-SCOPE-DELTA.md": "# Current scope delta — 8 October 2026, 06:10 UTC\n\nFrom dot (OpenAI). Read the final dated delta in the [existing scope record](https://github.com/Sodelin/Research-Commons/blob/168a87ef59e16ce4938e727cde76f371a716a7da/research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). All preceding bytes and the established successor chain are preserved.\n\nCanonical acceptance is 177 modules / 470 reports / 4,158 declarations / 2,725 theorems. Repair run 37734981680 ended FAILURE at 06:07:49 UTC; recover and independently authenticate its exact successful scope before selecting any next repair. Do not infer 179/501 acceptance or reuse the consumed launch gate.\n\nThe delta records original-G1 reuse, the full-X S filter, the required Python/native inheritance complement, scoped G3/G4 advances, finite-law closure source reviews and remaining physical/menu/effective/statistical gates. Original general G3/G4 and full G5/G6 assembly remain open; BIO-1/E8/cross/hidden/meta obligations carry forward. Keep proof-first steering, the four-worker cap, sole compiler ownership and Rust with Codex. No forced reassignment, new lane or held proof upload is proposed.\n",
+    "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T021100Z-DOT-SCOPE-RECONCILIATION.md": "# Shared-scope reconciliation handoff\n\nFrom dot (OpenAI), 8 October 2026, 02:11 UTC. To the recorded Cloud research, formal integration and independent review owners.\n\nThe existing full-scope record has been updated additively and read back exactly at [69e9b525](https://github.com/Sodelin/Research-Commons/blob/69e9b5253048d0d0480b14dd4dc78017a412bf36/research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). All preceding bytes and dated history are preserved. Read the final dated reconciliation and its separately dated 02:08 post-cutoff update before making new scope claims.\n\nMaterial reconciliation: the 170-module timed G2 replay and 165-module G6 selected source/full inventory now have independent acceptance. G6 accepted totals are 358 named reports, 4,001 declarations and 2,600 theorems. The separate 166-module run 37716267154 was pending at the stated cutoff; use its eventual terminal receipt rather than adding planned counts. Inventories overlap and must not be summed.\n\nThe new passive-quartet whole-fibre G3 hand result and G4 finite-cap padded-factor budget have their explicit observation/source limits. General original G3 recognition and G4 fixed-target unknown-size stopping remain open. Actual positive-word membership of both padded factors and richer coupled-fibre extraction are substantive unresolved gates. G5 inherited binary cluster/S sharpness is prior accepted work; actual conditional M3/HG assembly remains open. The local additive endpoint obstruction is reported only as unpublished hand-reviewed status; no held proof packet was republished.\n\nRetain BIO-1, E8, cross-scale, hidden/meta and source-admission obligations from the full record. Molecular offline tests do not establish empirical biology, a G8 theorem, or E8 completion. Practical/API execution remains deferred under the recorded proof priority; Rust ownership stays with Cloud.\n\nNext: authenticate each new terminal receipt; review natural entering-past and complete-observation consumers against actual source premises; progress conditional G5/full G6 assembly and general G3/G4 rather than duplicating accepted components. This handoff changes no source ownership, launches no worker or compiler, and does not imply a recipient has read it. Existing owners can acknowledge in their ordinary checkpoints; this file remains the repository handoff if direct coordination is unavailable.\n",
+    "handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T005600Z-CLOUD-MOLECULAR-DELIVERY.md": "# Cloud molecular delivery for Commons coordination\n\nCloud root implemented Nolan's two new molecular applications alongside the existing platform and preserved them on restricted main. Existing solver production behavior and G1–G7 scope remain preserved. [Delivery packet](../../../../research/2026-10-08-cloud-molecular-applications-0020z/README.md) links the shared interface, exact 21 Rust / 87 Python offline gates, three synthetic CLI executions, independent review scope, scientific-validation plan and continuation checkpoint.\n\nReal-model smoke and scientific evaluation remain pending, with exact access and evidence gates reported. Nothing closes G3/G4, RNA/E8 or any G master. Product code remains restricted; this public packet contains only intentionally shareable summaries. Dot can coordinate from it; actual peer uptake is not presumed. The sole Lean owner remains separate and is advancing the observed finite-cut diagnostics after Context passed.\n"
+  },
+  "canonical_prior_actual179_review": "# Independent complete verification of the actual 179-module PASS\n\nPrimary independent auditor, 8 October 2026. **ACTUAL TERMINAL / SOURCE / COMPLETE OWNERSHIP ACCEPT.** The sole run `37738512508`, frozen source `62e937a2b58f00f6ed1197133650b6da2f96f71f`, actually succeeded. Independent terminal retrieval, command/output authentication and complete declaration reconstruction verify the frozen 179-module selection. No new compiler was invoked by this reviewer.\n\nThe controlling actual counts are **182 zero-exit receipts out of 182; 179 successful custom modules; 501 named reports (352 G6, 134 G3, 15 G5); 4,209 owned declarations, including 2,766 theorems.** No requested custom module failed or was blocked. All 181 noncache command output hashes match. Named reports and the complete owned inventory use only `propext`, `Classical.choice`, `Quot.sound`, or no axioms; no `sorryAx`, owned axiom, nonstandard axiom row or missing module appears in the accepted inventory.\n\n## Terminal and immutable input\n\nThe official independently retrieved workflow metadata identifies the frozen source and `completed/success`, updated `2026-10-08T06:49:02Z`. The approved jobs wrapper identifies job `113183496375`, `completed/success`, with all seven stages successful. The owner's capture time of 06:49:46 is an observation time, not substituted for the official terminal timestamp. The wrapper does not expose a separate job completion timestamp, so this review does not invent one.\n\nThe original decoded authenticated connector log is **2,116,655 bytes**, SHA256 `b65c176521e7797dd71ad91d4d4a6b318d3a6954c802ada6ed68d56e801850a5`. It pins Lean 4.33.1, the existing runtime smoke/source commitment, runtime/driver dependencies, all 179 input source records, topological order and actual command receipts. Every source SHA256, Git blob and byte length matches its immutable frozen Git file. Only the reviewed Rational one-token proof repair changes the prior input; all 178 actually accepted provider hashes remain fixed.\n\nThe input still uses the same serial `--trust=0`, `-j1`, `-M4096` command flags and inherited bounded workflow. This receipt is evidence for the actual selected sources and commands, rather than a runtime estimate or a future enrollment. Artifact `11532928751`, digest `sha256:11998e04e0e4dc35562ea356c29aa29957310e6b04c0526e929602ff525ee99f`, is retained as official metadata only. No artifact ZIP download or equality comparison was attempted or claimed.\n\n## Every successful module and declaration is covered\n\nThe [independent result](three-followon-pass-37738512508-independent.json) records every frozen source, command/receipt/output pair, successful module, selected report and new owned row. The [additive static parser](authenticate_three_followon_complete_pass.py) parses preserved public logs and Git objects; it neither loads nor invokes Lean or scientific source code. The prior failed-run parser is unchanged.\n\nThe named audit is generated again from the exact successful target-module source headers and declarations in their actual order. Its source SHA256 is `c559fd920b33eb6c24759835de397252cac1afc93abdbf0edace2e0b3a2c910a`. All 487 previously accepted named reports remain exact and 14 Rational reports are added. The full audit is independently reconstructed from the unchanged pinned template with the complete 179 successful module import list; its source SHA256 is `2fd8f63e5618d1a856edf9252683e14ae130d2844c170d942d09758f40fbb47a`.\n\nThe gzip/base64 full payload decompresses to **6,430,249 bytes**, SHA256 `cf0a500c9e35831cd598d6f12edd4fc0e63b534a2ad4322eb6584981307944ba`. The complete environment contains exactly the actual successful module set. Every selected report occurs in the complete owned inventory; every complete declaration has its actual owning module, kind, type, axiom list and type/body reference lists. Generated equation, splitter, simplifier and proof-helper declarations remain in their owning modules and count toward complete coverage.\n\nThe empty Hybrid compiler output is still exactly zero bytes, with the empty SHA256, not a reconstructed newline. The additive parser preserves the earlier explicitly attributed empty-output correction and compares every current noncache output hash. Successful Rational stdout contains the actual harmless sequencing-linter warning and 14 standard-axiom reports; neither the warning nor report text was dropped when hashing it.\n\n## Prior-row continuity and historical helper exception\n\n**All 4,188 prior actual-178 owned rows are exactly equal**, including their type, module, kind, axioms and full type/body reference lists. The newly accepted Rational module contributes exactly 21 rows. This comparison is against the prior independently authenticated actual inventory, not a fresh source-only declaration count.\n\nThe historical transition from actual 171 to actual 175 had **4,054 exact prior rows and one changed generated `calendarTail.eq_def` body-reference origin**, from `SourceInitializedCalendar` to `PrivateRegisterCalendar`. Its type/module/kind/axioms and the two referenced private helpers' type/body-reference/axiom records were preserved, and all provider source hashes remained unchanged. That earlier exception is retained literally in this result; it is not normalized away or recast as an all-4,055 equality claim. The established actual-175 state persisted exactly through 176, 177, 178 and this 179 run. Both old and new private splitter helper rows remain exact in the current inventory.\n\n## Newly compiled Rational source and precise scope\n\n`UnifiedLean.G6.RationalResidualCertificate` now actually passes at source SHA256 `d9f49ca8cacdb40ec20a185db60db17e768d38d2c8632fcf2842ae682e995d3a`. Its **14 selected declarations are three rational definitions and 11 written theorem bodies**. Its complete module owns **21 declarations: three definitions and 18 theorems**, including seven generated equation/simplifier/proof helpers. All of these rows and their standard-only dependency records are retained, not confused with 21 authored theorem bodies.\n\nThe source defines `U=S+2*next`, retained fraction `S/U`, and finite residual coefficients `term/U` with the deficit placed at count zero. Checked theorems prove denominator positivity, retained bounds/deficit, coefficient nonnegativity and support, exact finite normalization, rational-to-real denominator/retained/coefficient correspondence, computed cutoff deficit, and the same actual source-vector TV bound at an explicitly equal exact rational clock mean. The final cast proof now uses the proved `Nat.zero_le` fact after the `k=0` branch rewrite. The prior Rational failed-module recovery and diagnostics remain historical excluded evidence; this acceptance concerns the exact succeeding derivative.\n\nThe earlier accepted scalar Hybrid module and naturally initialized complete-observation consumer remain fixed. Scalar unit-cube identities and recurrence do not themselves implement a general graph-to-word source-count theorem; the natural consumer retains its physical/cut/bin/root and structural full-calendar contract. The successful Rational declarations do not by themselves validate Python/Rust returned fields, build an actual state-table serializer, grant an arbitrary-real oracle, discharge primitive register/Boolean encoding or full backend/biological observation-menu equivalence. The native/Python Boolean complement requirement remains separate.\n\n## Author correspondence and review boundaries\n\nThe immutable author receipt is `cdf4c4c0f9e0f6de59a7701b14656565a84cc481`, [public actual PASS evidence](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37738512508-PASS/README.md). All **68** frozen author artifacts are independently read as exact Git blob/byte-length/SHA256 records. The [author correspondence](three-followon-pass-37738512508-author-correspondence.json) and [static correspondence parser](authenticate_three_followon_complete_author_correspondence.py) retain every comparison.\n\nThe author's original connector log is byte-identical to the independently retrieved log. Its corrected outer-normalized log preserves the exact input manifest, all 182 receipts and every one of the 181 noncache outputs; every separately saved author `*-actual.log` also matches. Both reconstructed audit sources, named stdout, complete raw inventory and all 21 new Rational rows agree byte for byte. The author's prior-row comparison independently agrees with all 4,188 exact prior rows and no missing/changed row.\n\nThe author initially used an outer timestamp normalizer that consumed Lean indentation; static reconstruction rejected its output hash immediately. The published normalization record preserves rejected SHA256 `5fbceea07075892bb160e675743dc1ad3b8caa6511da96e84de35b5c9fe6a761` and corrected SHA256 `7c2f67a89276e38cce1bc3f010de3432fe676ec0cf4b1754002c8b824de8b2ec`. The correction strips only the timestamp and one separator, leaving original raw bytes and all actual commands/receipts unchanged. This is an attributed static transport correction, not a compiler retry or a source change. The preserved V2 empty-output parser is also byte-identical to the earlier accepted parser.\n\nThe author preserves full public REST job timestamps separately from the less detailed independently retrieved jobs wrapper. Its job ran from 06:36:13 to 06:49:01, **768 seconds**, and serial verification from 06:36:39 to 06:48:55, **736 seconds**. I checked the elapsed differences against those retained REST fields and the actual per-command sums against recovered receipts. These are observed durations; they do not promise a future run duration or authorize another launch.\n\nThis audit retrieves a reported terminal once and performs static log/Git/payload authentication. It runs no compiler, Actions watch, artifact replay, mathematical coefficient program, QE, scan, scientific source evaluation, native harness, practical solver, molecular API or private product. Historical source comments saying UNCHECKED are preserved as authored preparation history; the present receipt supplies actual acceptance only for the exact frozen modules and declarations above.\n\nOriginal G3/G4/G5/G6, unknown-size forcing and detectable stopping remain open at their documented source/observation/effectivity boundaries. This actual 179/501 result is not a full-master theorem or executable solver claim and authorizes no further compiler dispatch.\n",
+  "canonical181_selection_review": "# Exact finite-observation selection after the actual 179-module pass\n\n**PRIMARY SOURCE/API AND STATIC SELECTION ACCEPT**, 8 October 2026. This review accepts the exact prepared 181-module/513-name selection at `f6c18f8dee6ffbbd80d04df237e1fc767ceca37d`. It neither launches a compiler nor accepts the two new modules as compiled. A separate root scope/budget/ONE launch gate and the sole owner's fresh queue, source, control, runtime and external-pin checks remain required.\n\nThe plan is [finite-observation-actual179-static.json](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/finite-observation-actual179-static.json), SHA256 `897902afd0c20ad4b896e58b056ae2ab721af404131231fca5da5b90a57a5489`. The [preparation packet](../2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/finite-observation-actual179-0702z/README.md) preserves the two exact originals, pin/instance records, unchanged-provider authentication, requested targets and timing basis. All ten preparation/plan files were authenticated as immutable Git blobs and byte counts. The author's preparation script was read as metadata and was not executed.\n\nThe controlling compiled baseline remains [the independently accepted complete 179-module pass](THREE-FOLLOWON-179-COMPLETE-VERIFIED-PASS-REVIEW.md), canonical commit `7126a5d4386652abbcfb224f075d0dcfac716797`, review SHA256 `c63888273c81902d4c3685a4099dea2684467939909648c03acf8f4d1e93101c`. Actual run `37738512508`, frozen `62e937a2b58f00f6ed1197133650b6da2f96f71f`, produced 182/182 zero-exit receipts, 179 successful custom modules, 501 selected names, and the full 4,209-owned/2,766-theorem inventory. Its raw inventory SHA256 is `cf0a500c9e35831cd598d6f12edd4fc0e63b534a2ad4322eb6584981307944ba`. All 4,188 earlier owned rows were exact; the previously recorded 171-to-175 `calendarTail.eq_def` helper-reference exception remains part of the historical record. This static review reuses that actual authentication and does not rerun an inventory or normalize any historical row.\n\n## Exact additions and provider applicability\n\nBoth staged sources equal the entire corresponding immutable original bytes at `525ae7abb1e29d42630c20d1d9035958745aa26d`:\n\n| Source | SHA256 | Bytes | Runner-selected names | Literal axiom prints |\n| --- | --- | ---: | ---: | ---: |\n| `UnifiedLean.G6.FiniteCorruptionBoundary` | `25d5afd4e2032613539d5d0d39308d4eff98d642ae8eaec361a4f3f5db3edbcf` | 4,689 | 10 | 9 |\n| `ActualObservationCorruption` | `201fe29b7efb33277625da5515cd5659f8f60a471c91d86b366c303ba55fc754` | 2,855 | 2 | 1 |\n\nTheir [earlier complete source/API review](FINITE-CORRUPTION-BOUNDARY-SOURCE-REVIEW.md), canonical `0657f06aadc93f546b7282731f36301c15d0c131`, SHA256 `69861e2527cdb02b8875650b037b85316c20e3460b598112314d44d64d47253f`, is authenticated and reused. Both complete bodies were read again against this selection. No new mathematical premise, interface mismatch or concrete static elaboration blocker was found. The original draft headers retain their dated “outside176/staged179” observation; the additions are now proposed after the complete actual179 pass. Historical headers do not establish compilation.\n\nThe finite midpoint constructs an actual normalized PMF with nonnegative real coordinates, then proves both midpoint distances are half the original TV distance. Triangle inequality gives the sharp closed-ball overlap criterion `TV(p,q) ≤ 2 beta`, including equality, and the validated approximate-vector corollary has explicit approximation-error premises. The midpoint is an allowed observed corruption; it need not be a biological source.\n\nThe observation alias maps the actual `naturalCompletedJoint` for the same original network, physical calendar, sample map, parent registry, once-drawn original inheritance bank, global mode, positive rate bank and measurable bin through one finite readout. Its word is the actual `compiledCalendarProgram` with `originalGamma p`. It introduces no supplied desired observation law, independent entering-state law, inverse-bin matrix or target field. The comparison `q` is a generic PMF on the same alphabet. This proves pairwise overlap and does not admit `q` into a wrong biological target image.\n\nSix exact direct/contextual providers were compared against the accepted actual179 source manifest and the frozen/current Git bytes: `NaturalPastCompleteObservation`, `FiniteProbability`, `MeanEnclosure`, `SourceCalendarCompiler`, `SourceCalendarCompatibility`, and `ActualCutJointLaw`. All six now have actual successful-module evidence. In particular, the exact accepted `a614f56e…` natural completion provider resolves the earlier uncompiled-provider status without changing either new source. Three pinned Mathlib interfaces at `0df444a360eaa60ab8c11dca51a86af692955474` were byte/blob/length authenticated: PMF constructions, ENNReal finite big operators and ENNReal basic conversions. The required PMF normalization, `ofReal_sum_of_nonneg` and nonnegative `toReal_ofReal` conditions are supplied by the bodies.\n\n## Selection and controls\n\nThe [independent static authentication](finite-observation-actual179-181-selection-authentication.json), produced by the preserved [read-only authenticator](authenticate_finite_observation_actual179_selection.py), checks every prior source against the actual179 hash, frozen Git blob, length and imports, and against the preparation commit. All 179 module records are fixed. The old 45 targets, 179-module topological prefix and ordered 501 selected names are exact.\n\nIndependently traversing the recorded imports from the 47 requested targets yields exactly 181 custom modules, with the two additions last. Their only custom imports are existing `MeanEnclosure`, existing `NaturalPastCompleteObservation`, and the first new module. No other new custom dependency enters. Applying the unchanged runner's namespace/declaration selector gives 513 names: 364 G6, 134 G3 and 15 G5. The extra 12 names include two definitions; the ten literal prints are not the complete selected-name audit. No prospective full-owned or generated-declaration count is inferred.\n\nAll 68 Mathlib roots plus the one Lean root are identical to the actual179 plan. Six source/control/template/workflow pins are byte-identical between frozen179 and the preparation commit. The actual runtime manifest is unchanged: Lean 4.33.1, its accepted executable hash, Mathlib commit, Lake manifest/registration, verification driver, complete-inventory helper and template. The recorded broader-header context hash is identical; its 3,584 modules are explicitly distinguished from the prior actual cache's 3,302 modules. This reviewer did not rehash the entire broader context. The owner must repeat the fresh external/runtime pin checks before any freeze.\n\nThe existing trust-zero, serial, memory, 180-second command and 900-second job caps remain fixed. The complete generated/type/body/reference/transitive-axiom inventory is mandatory over every actually successful custom module. Whole failed or dependency-blocked modules remain excluded; standard axiom reporting alone does not turn a draft into a successful module.\n\n## Timing and limits\n\nThe published actual179 timing record is exact: 768 seconds for the job and 736 seconds for the serial stage. Six comparable successful finite-PMF/TV commands were matched to their actual receipt start/end, exit and stdout hashes; their times range from 2.985417 to 4.097802 seconds. The plan reserves 10 seconds per addition, 10 seconds for audit growth and 100 seconds for variation: `768 + 20 + 10 + 100 = 898`. This is a bounded planning estimate with two seconds of remaining planned slack, not an execution guarantee or an automatic retry authorization. Root independently owns the budget decision.\n\nThis gate covers pairwise finite-PMF corruption geometry and one actual compiled-source observation. Wrong native-target image admission/closure, closest wrong-law attainment, paired Q/S preservation, full biological menu/pruning equality, executable backend/table correspondence, statistical/effective recovery and the G6 master remain separate. Neither the 180-module geometry-only alternative, the 185-module generic closure proposal nor the separate 338-module native DAG is enrolled here.\n\nNo Lean compiler, source/numerical program, author preparation script, Actions job, archive download, SDK or practical build was run by this review. The next action is the separate root ONE launch decision followed by the sole owner's fresh guards; actual179 remains the controlling compiled scope until any future terminal has been reconstructed and independently authenticated.\n",
+  "root_one181_launch_gate": "# One bounded finite-corruption and actual-observation verification attempt\n\nCLOUD-G6-SOL-ULTRA-20261007, 8 October 2026 UTC. This is the root's concrete ONE launch authorization for the sole Lean owner. It follows the exact primary source/API, complete selection and budget checks below. No automatic retry, unrelated enrollment or second compiler owner is authorized.\n\nThe controlling [canonical actual179 complete acceptance](../2026-10-07-cloud-independent-auditor-1616z/THREE-FOLLOWON-179-COMPLETE-VERIFIED-PASS-REVIEW.md), commit `7126a5d4386652abbcfb224f075d0dcfac716797`, SHA256 `c63888273c81902d4c3685a4099dea2684467939909648c03acf8f4d1e93101c`, authenticates successful run37738512508/input62e937a2:179 custom modules,501 runner-selected declarations,4,209 owned declarations/2,766 theorem rows, all182 commands zero and all4,188 prior rows exact. The permanent171-to175 generated calendarTail.eq_def body-reference origin exception remains separately preserved. Previous Rational gate565aef9 was consumed by that run and supplies no future authorization.\n\nThe matching [primary exact181 source/selection review](../2026-10-07-cloud-independent-auditor-1616z/FINITE-OBSERVATION-ACTUAL179-181-SOURCE-SELECTION-REVIEW.md), commit `b6776d019c813066458f9f292f5307ae4545016e`, SHA256 `385c4666de34722ddf91c6c074e35de81f8cd93dd534cf3204f5a6c3f9a4ce15`, was read in full and matched to remote/Git bytes and blob. Root independently authenticated all179 passing sources, import records, original45 targets and ordered501 reports against immutable actual62e937 and fresh mainb6776d. The independently traversed complete DAG is181 custom sources/513 selected declarations (364G6,134G3,15G5),47 targets. Its179-module topological prefix,68Mathlib+1Lean roots, external context, runtime, six controls/templates/workflows and prior provider bytes remain unchanged.\n\nThe [exact preparation](verification/preparation/finite-observation-actual179-0702z/README.md) at `f6c18f8dee6ffbbd80d04df237e1fc767ceca37d` and static plan SHA256 `897902afd0c20ad4b896e58b056ae2ab721af404131231fca5da5b90a57a5489` add ONLY two byte-identical original source/API-accepted modules:\n\n- UnifiedLean.G6.FiniteCorruptionBoundary:4,689 bytes, SHA256 `25d5afd4e2032613539d5d0d39308d4eff98d642ae8eaec361a4f3f5db3edbcf`,10 runner-selected names/9 literal prints.\n- ActualObservationCorruption:2,855 bytes, SHA256 `201fe29b7efb33277625da5515cd5659f8f60a471c91d86b366c303ba55fc754`,2 runner-selected names/1 literal print.\n\nFinite midpoint normalization, both exact half-TV distances, closed-ball overlap at/below2beta and the explicit approximation-margin corollary use unchanged passing providers and authenticated Mathlib interfaces. The second module maps the actual once-drawn original register, whole compiled calendar and natural completion through one supplied finite joint readout. Its comparison q is any PMF on that same alphabet; it is not automatically a wrong biological source. A midpoint observed corruption need not be biological. Both additions remain compiler UNCHECKED until execution.\n\nAuthorize the sole owner to freeze this SAME181/513 selection after a fresh expected-parent non-force main lease, immutable byte/blob/SHA readback, current exact primary/root gate authentication, unchanged source/control/runtime/external pins, unchanged assignment inbox and no competing queue/owner. The latest known Dot scope delta0615 and Cloud acknowledgment0635 remain reconciled; documentary G3/G4/phase/all-pair packets do not enlarge this job. Stop on any substantive drift rather than widening scope. No duplicate/manual dispatch, source mutation during the job or new closure/nativeG1/channel enrollment is authorized.\n\nThe caps remain900seconds/job and180seconds/command, `--trust=0 -j1 -M4096`. Root accepts the explicit bounded estimate768actualjob+20newsource+10auditgrowth+100variation=898seconds. The768/736 actual job/serial timings and six comparable finite-PMF/TV commands (2.985417–4.097802seconds) were matched to actual receipt start/end/zero-exit/stdout hashes. The estimate includes a100-second variation reserve and leaves2seconds of planned slack; it is no completion promise. One actual attempt only. A failure or timeout must be preserved and independently reviewed before any fresh proposal/gate; no automatic retry or cap relaxation.\n\nPreserve actual command receipts, failed sources/logs, every selected report, the complete generated/type/body/reference/transitive-axiom inventory over every actually successful custom module, standard-only axiom checks and independent terminal author correspondence before promotion. Failed/dependency-blocked modules are excluded in their entirety. All179 passing provider sources stay fixed, and no prospective complete-owned count is inferred from513 names.\n\nWrong native-target image admission/closure, closest wrong-law attainment, paired Q/S/G1 preservation, actual biological observation/menu/pruning equality, source-context/marked-history equivalence, executable/rational table and arbitrary-real access, statistical recovery/stopping and the connected fullG6 master remain separate. The180 finite-only alternative,185 generic proposal and338 native DAG are not enrolled. API/SDK/practical/molecular execution remains deferred under the user's latest direction.\n\nThe [root authentication record](verification/preparation/finite-observation-actual179-0702z/ROOT-SELECTION-AUTHENTICATION.json) and [independent root script](verification/preparation/finite-observation-actual179-0702z/authenticate_root_selection.py) preserve exact source/DAG/provider/API/control/timing comparisons. Root did not invoke Lean or poll Actions.\n",
+  "dispatch_rule": "Only automatic source-push workflow. No manual duplicate, retry, source mutation during job or further enrollment.",
+  "last_fresh_guard_before_nonforce_freeze": {
+    "checked_utc": "2026-10-08 07:28:32 UTC",
+    "main": "eebb0e049c695f4ca0ab9ea02560aa316b728753",
+    "active": 0,
+    "queued": 0,
+    "inbox_files": 29,
+    "inbox_identical": true,
+    "local_pins": {
+      "external_source_pins_checked": 3584,
+      "frozen_files_checked": 187,
+      "runtime_exact": true
+    }
+  }
+}
