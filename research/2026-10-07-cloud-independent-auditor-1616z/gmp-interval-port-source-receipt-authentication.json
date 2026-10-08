@@ -1,0 +1,157 @@
+{
+  "status": "CODE/SOURCE ACCEPT; immutable saved author evidence correspondence PASS",
+  "author_commit": "d90bca775931e3db6f65193b54a4be603427d2a4",
+  "manifest_sha256": "472cdd1274660c6cff95ce22718400083cc0d44ef41d4b4eeac452ff4a85f9cb",
+  "artifacts": [
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/include/certified_forward_gmp.hpp",
+      "sha256": "1aea02e7310612e65a630d0f5d94d4f101971422b031dbb9825fc42ef95ea1db",
+      "bytes": 2235,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/src/certified_forward_gmp.cpp",
+      "sha256": "e13585e3c09cc39c20fcf282fa04ab4481ce8b23d017cb88fa842779d7594dc1",
+      "bytes": 5524,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/src/interval_probe.cpp",
+      "sha256": "ea13ab20c3268b68ae0c10d2ad9ab0d989fb71eadc4cfef38c7acd2880065b69",
+      "bytes": 6679,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/Makefile",
+      "sha256": "039a3398b51db2a829fcbc00a4022d31beb50a0186df8ba5c9563ccdd8ef5986",
+      "bytes": 427,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/tests/differential.py",
+      "sha256": "e5ee87aef378a298ece98b761e42025d5c5d31f993469375511ff163ff5a563f",
+      "bytes": 11399,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/reference/certified_forward.py",
+      "sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+      "bytes": 6604,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/build.json",
+      "sha256": "dd190e6ce3806e01cd5dbd1a6736c26418333d9230944deaedfb859c205532b3",
+      "bytes": 785,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/differential.json",
+      "sha256": "3fabf5aaa05f4b5d94fbf93404f73ccb3f80490519b6b1d60eb354558f76b7b6",
+      "bytes": 1913,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/differential-inputs.txt",
+      "sha256": "465ec1ed6d6a4225923fb399007770aab0473a3aaa029d76fd583a10f53d01d3",
+      "bytes": 252759,
+      "immutable_Git_byte_identity": true
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/probe-output.jsonl",
+      "sha256": "6046f023aa7e18d8c451a36fb7d66f11fda4b709dd57c92c51d19d652d9b3697",
+      "bytes": 409633,
+      "immutable_Git_byte_identity": true
+    }
+  ],
+  "frozen_reference_equals_immutable_original": true,
+  "record_count": 2414,
+  "actual_author_primitive_comparison_cases": 2408,
+  "actual_author_separate_parser_cases": 6,
+  "actual_author_exact_property_assertions": 5204,
+  "reviewer_static_complete_interval_arithmetic_records": 1975,
+  "reviewer_static_successful_exponential_shape_checks": 332,
+  "reviewer_static_exp_type_domain_refusals": 48,
+  "reviewer_static_parser_phase_count": 6,
+  "input_sha256": "465ec1ed6d6a4225923fb399007770aab0473a3aaa029d76fd583a10f53d01d3",
+  "output_sha256": "6046f023aa7e18d8c451a36fb7d66f11fda4b709dd57c92c51d19d652d9b3697",
+  "build_receipt": {
+    "command": [
+      "make",
+      "BUILD_DIR=/workspace/cloud-gmp-interval-sol-build"
+    ],
+    "compiler_flags": "-std=c++17 -O2 -Wall -Wextra -Werror -pedantic",
+    "libraries": [
+      "gmpxx",
+      "gmp"
+    ],
+    "cpu_seconds_limit": 60,
+    "wall_seconds_limit": 90,
+    "address_space_bytes_limit": 1073741824,
+    "file_bytes_limit": 67108864,
+    "returncode": 0,
+    "elapsed_seconds": 1.99,
+    "stdout": "mkdir -p /workspace/cloud-gmp-interval-sol-build\ng++ -std=c++17 -O2 -Wall -Wextra -Werror -pedantic -Iinclude src/certified_forward_gmp.cpp src/interval_probe.cpp -lgmpxx -lgmp -o /workspace/cloud-gmp-interval-sol-build/interval_probe\n",
+    "stderr": "",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "binary_sha256": "82880e13a23e0de9ebee4efb9fa3c92daf8ab1c9f4e30fd9f0c9b5d6795b051e"
+  },
+  "differential_receipt": {
+    "status": "PASS",
+    "oracle_sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+    "oracle_bytes": 6604,
+    "oracle_execution": "one hash-verified byte buffer compiled in memory; primitive methods only, no parameter parser",
+    "seed": 202610072354,
+    "case_count": 2414,
+    "categories": {
+      "interval-sign-products": 432,
+      "interval-basic-unit": 324,
+      "interval-scalar": 864,
+      "closed-endpoints": 216,
+      "signed-dyadic": 108,
+      "all-sign-quadrants": 36,
+      "closed-intersection": 36,
+      "interval-refusal-and-canonical": 11,
+      "exp-halving-shortcut-boundaries": 136,
+      "exp-integer-zero": 8,
+      "exp-rational-sample": 180,
+      "no-256-2048-input-cap": 6,
+      "no-256-input-cap-series": 1,
+      "no-2048-input-cap-series": 1,
+      "exp-refusal-before-shortcut": 30,
+      "exp-x-type-refusal-first": 18,
+      "separate-parser-contract": 6,
+      "stream-recovery-after-parser-refusals": 1
+    },
+    "exact_status_counts": {
+      "ok": 2307,
+      "ValueError": 48,
+      "ZeroDivisionError": 5,
+      "DomainError": 51,
+      "ResourceBound": 3
+    },
+    "exact_property_assertions": 5204,
+    "cpp_returncode": 0,
+    "primitive_comparison_cases": 2408,
+    "separate_parser_contract_cases": 6,
+    "input_sha256": "465ec1ed6d6a4225923fb399007770aab0473a3aaa029d76fd583a10f53d01d3",
+    "cpp_output_sha256": "6046f023aa7e18d8c451a36fb7d66f11fda4b709dd57c92c51d19d652d9b3697",
+    "limits": {
+      "harness_cpu_seconds": 90,
+      "harness_wall_seconds": 120,
+      "harness_address_space_bytes": 536870912,
+      "cpp_cpu_seconds": 45,
+      "cpp_wall_seconds": 60,
+      "cpp_address_space_bytes": 268435456
+    },
+    "elapsed_seconds": 0.186,
+    "no_float_certification": true,
+    "float_values_only_used_as_refusal_type_fixtures": true,
+    "failure_count": 0,
+    "failures": [],
+    "scope": "interval/exp_neg primitives only; finite differential evidence, not full330-feature/inverse/confidence or formal proof"
+  },
+  "probe_compiler_harness_or_Python_reference_execution_by_reviewer": false,
+  "author_execution_binding_limit": "Harness does not hash launched executable at call; separate author build record pins binary. No independent source-to-binary attestation or replay.",
+  "scope": "Exact rational interval and exp_neg admitted typed primitive port only; full evaluator/inverse/statistical/width backend remains separate."
+}
