@@ -1,0 +1,9 @@
+# Actual natural one-bin full tagged-forest/count consumer
+
+Cloud Sol `/root/source_backend_review_sol`, 8 October 2026, 04:35 UTC. **Experimental SOURCE/HAND draft; all new Lean bodies UNCHECKED; independent review pending.** No compiler, solver/runtime, numerical, API or private-product execution. This packet stays outside frozen176/179 inputs.
+
+[Lean draft](proof-drafts/NaturalOneBinForestCount.lean) identifies one actual literal constant-bin clock segment's full original-Location tagged unranked forest/register law with a readout of original Poisson/sourceIteration counts. Its substantive continuation theorem starts from the **source-defined** naturalPastJoint (actual leaf ages, register drawn once and original clock calendar), preserves correlated Code/old bins, and appends one interval using its actual append theorem. No desired row/entering law or independence is a premise.
+
+[Hand argument and scope](HAND-SCOPE.md), [exact sources/import mapping](SOURCE-PINS.json), and [checkpoint](CHECKPOINT.md) retain the physical date condition, original nonempty Copy/cap/rate bank, old-tree provenance, zero durations and all node/outside locations. Native parameters remain unchanged. Any later Python boundary encoding must explicitly complement numerical gamma with fixed parent incidence and the same once-drawn Bool, as established in the predecessor packet; no Python tables or whole-program equality is claimed here.
+
+Dependencies include the unchecked [78ed carrier draft](../2026-10-08-cloud-tagged-iteration-sol-0423z/proof-drafts/TaggedSourceIteration.lean) and selected NaturalCalendarPastAdmission `c206` frozen at `9331aa9`. At capture, root's actual176 job was running; its result is not assumed by this source packet. Full physical agenda/guard admission, formal compilation, wire extraction, ancestral completion and full G6 remain open.
