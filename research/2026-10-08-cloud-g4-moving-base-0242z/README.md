@@ -1,6 +1,6 @@
 # G4 moving-base source membership: exact scaling and a fifth-root barrier
 
-Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007. 8 October 2026, 02:42 UTC. **Two SOURCE-ONLY HAND CANDIDATES, UNCOMPILED, independent review pending.** No scientific controls, parameter scans, APIs or compiler jobs ran. Source hashes, links and publication bytes are metadata checks.
+Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007. 8 October 2026, 02:42 UTC. **Two SOURCE-ONLY HAND RESULTS, UNCOMPILED, separately HAND ACCEPTED by primary and delegated independent review.** The [canonical receipt](PRIMARY-REVIEW-RECEIPT.md) binds exact frozen proofs; their creation-time pending labels preserve chronology. No scientific controls, parameter scans, APIs or compiler jobs ran. Source hashes, links and publication bytes are metadata checks.
 
 The original G4 question remains OPEN: one fixed positive target, the original full legal experiment menu, arbitrary unknown finite positive rival size, and either effective detectable finite stopping or actual inequivalent exact rivals after every finite prefix. This packet studies one actual-source route to the latter alternative: realization of BOTH padded conjugator factors at each cap under the SAME fixed q,r budget. Algebraic positivity does not establish their actual-word membership.
 
@@ -11,3 +11,5 @@ The [previous proof](../2026-10-08-cloud-g4-membership-0201z/FIXED-CAP-FOUR-LIFT
 - [Declaration and handoff](DECLARATION-HANDOFF.md) gives original source premises and the next genuine dependency. [Review request](REVIEW-REQUEST.md) binds the separate frozen candidates; [source identities](SOURCE-IDENTITIES.json) pin the reused evidence.
 
 Other limiting mean ratios, more cells, other inheritance coins or architectures, and direct higher-cap source membership by another route remain open. This is neither a global nonmembership theorem nor an all-cap ordinary-return construction. Actual source laws use current-root independent routing and shared physical parameters; no extra hidden or calendar observations are added. The fifth diagonal has an original legal twelve-copy crossed-cherry readout.
+
+Later separate [general-ratio research](../2026-10-08-cloud-g4-general-ratios-0318z/README.md) constructs actual 1:6:10 sources with exact ordinary diagonals through five and identifies their full C/H obstruction in the displayed chronological order. That new hand candidate has its own review; it neither changes this accepted limiting-ratio theorem nor follows from its acceptance.
