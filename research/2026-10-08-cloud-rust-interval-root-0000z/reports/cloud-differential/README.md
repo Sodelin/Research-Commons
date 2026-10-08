@@ -1,0 +1,9 @@
+# Cloud exact Rust interval differential harness
+
+Contributor: Codex, delegated Cloud G6 harness author, 8 October 2026. **Source prepared and hash-frozen; NOT EXECUTED at this checkpoint.** Root owns the separate repaired fixture and Rust build. The original interval library, probe, parsers and two Python reference sources are unchanged.
+
+`differential_check.py` compiles/executes the exact pinned reference buffers, stages the forward provider at the original nested path required by the unmodified receiver, and mirrors the actual tab-separated probe transport. Its deterministic bounded corpus covers complete exact endpoints, refusal codes/call counts, signed outward rounding/operations, empty/unit/denominator/context gates, pre-rounding bit growth, raw-versus-reduced256-bit parser policies and Unicode, scalar exp domain/range-reduction/shortcut boundaries, receiver64/128-bit precision and repeated calls through budget exhaustion. The unused second interval is parsed for unary operations, and repeated exp evaluates the SAME input, matching the Rust adapter.
+
+The planned single native process emits one output per input. Reports preserve complete case command, wire input, expected/actual output, process exit/stderr SHA, binary SHA and input hashes before/after. Protocol guards are separate from kernel refusals. Python forward scalar division's native ZeroDivisionError is explicitly mapped to the probe ZERO_DIVISION label, with the raw exception retained. All endpoint comparison is exact, without decimal tolerance.
+
+The run-once marker prevents overwriting or silently repeating a native execution. No added reference trust/cache shortcut, compiler/provider modification, scientific control replay, full solver/biological model acceptance, confidence certificate, Lean proof or speedup is claimed. Root must preserve the frozen source before execution; actual outcomes will be written under run-once/.

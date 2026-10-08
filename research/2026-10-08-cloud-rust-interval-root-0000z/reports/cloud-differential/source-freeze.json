@@ -1,0 +1,67 @@
+{
+  "status": "HARNESS_SOURCE_READY_NOT_EXECUTED",
+  "contributor": "Cloud G6 delegated differential harness author",
+  "scope": "Bounded deterministic exact arithmetic/protocol corpus, not full solver/Lean/confidence/speedup",
+  "inputs": {
+    "differential_check.py": {
+      "sha256": "ad79b676870221b6ca0ca101655ae42ffa40fc56f7261fd1009385028ee602e6",
+      "bytes": 26359
+    },
+    "tests/core.rs": {
+      "sha256": "aa34abd32c5cae20bdeee26b60275c79cbce8a9c326e428ae9d87144da67cef1",
+      "bytes": 4366
+    },
+    "reference/certified_forward.py": {
+      "sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+      "bytes": 6604
+    },
+    "reference/signed_receiver.py": {
+      "sha256": "61db9997db84b925c6eff405744726e01dcec14d0090192e834f33a75aeafc1f",
+      "bytes": 10433
+    },
+    "src/lib.rs": {
+      "sha256": "bfe48152cd63b8abd6bb7257e986b50dec741ec351770c58b19272543b46c1d1",
+      "bytes": 9836
+    },
+    "src/main.rs": {
+      "sha256": "7ae7cc17ed3fc79a2be9c75fb3f54e6e663a7365bcb1ef31866bade4e79dad70",
+      "bytes": 3775
+    },
+    "src/parse.rs": {
+      "sha256": "471dca6bd05291811aa07d6440e3c5d3a6aec58a742a37d08a2008de5b1cad4e",
+      "bytes": 3163
+    },
+    "Cargo.lock": {
+      "sha256": "551be9605ca2258dd60dbbc49e10aa8d95759866523e754b10feb4b51a7510ca",
+      "bytes": 1398
+    },
+    "Cargo.toml": {
+      "sha256": "ad120771a9f79c7880ceb5e66eca4814c819773ea0b7330263ca04cef5ba93c2",
+      "bytes": 465
+    }
+  },
+  "binary": {
+    "path": "/workspace/cloud-practical-runtime/rust-interval-root-target/release/interval-probe",
+    "sha256": "1927426e00f8b0fc736954ef0fd3f449511b8c3054085e5298341985a2e0c4d0",
+    "bytes": 688344
+  },
+  "staged_provider": {
+    "path": "reports/cloud-differential/reference-root/research/2026-10-05-dot-msci-330-feature-forward-interface-1039z/evaluator/certified_forward.py",
+    "sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace"
+  },
+  "planned_native_processes": 1,
+  "bounded_case_limit": 3499,
+  "reference_execution": "compile_exec exact pinned buffers; unmodified Arithmetic authenticates original nested staged provider; original exp cache unchanged",
+  "probe_protocol": "f8/r10/parse-r/parse-f/exp; both intervals parsed even unary; errors classified separately; repeated exp uses same input and actual two-call charge",
+  "native_transport_num_bigint_version": "0.4.6; optional sign, ASCII leading digit, ignored subsequent underscores; raw probe rational byte cap8192",
+  "unicode_Nd_coverage": "All 68 exact Rust frozen zero blocks; runtime UCD recorded on execution",
+  "execution_command": [
+    "python",
+    "differential_check.py",
+    "--binary",
+    "/workspace/cloud-practical-runtime/rust-interval-root-target/release/interval-probe"
+  ],
+  "controls_or_Lean_run": false,
+  "children_spawned": false,
+  "original_sources_modified": false
+}
