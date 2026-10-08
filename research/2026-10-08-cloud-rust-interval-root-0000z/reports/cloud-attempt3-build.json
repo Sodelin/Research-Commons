@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "observed_utc": "2026-10-07T23:59:58.197661+00:00",
+  "source_before_after_identical": true,
+  "pins": {
+    "research/2026-10-08-cloud-rust-interval-root-0000z/Cargo.toml": "ad120771a9f79c7880ceb5e66eca4814c819773ea0b7330263ca04cef5ba93c2",
+    "research/2026-10-08-cloud-rust-interval-root-0000z/Cargo.lock": "551be9605ca2258dd60dbbc49e10aa8d95759866523e754b10feb4b51a7510ca",
+    "research/2026-10-08-cloud-rust-interval-root-0000z/src/lib.rs": "bfe48152cd63b8abd6bb7257e986b50dec741ec351770c58b19272543b46c1d1",
+    "research/2026-10-08-cloud-rust-interval-root-0000z/src/main.rs": "7ae7cc17ed3fc79a2be9c75fb3f54e6e663a7365bcb1ef31866bade4e79dad70",
+    "research/2026-10-08-cloud-rust-interval-root-0000z/src/parse.rs": "471dca6bd05291811aa07d6440e3c5d3a6aec58a742a37d08a2008de5b1cad4e",
+    "research/2026-10-08-cloud-rust-interval-root-0000z/tests/core.rs": "aa34abd32c5cae20bdeee26b60275c79cbce8a9c326e428ae9d87144da67cef1"
+  },
+  "commands": [
+    {
+      "tag": "attempt3-tests",
+      "command": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "research/2026-10-08-cloud-rust-interval-root-0000z/Cargo.toml"
+      ],
+      "exit": 0,
+      "elapsed_seconds": 0.116944882000098,
+      "wall_timeout_seconds": 120,
+      "cpu_seconds": 90,
+      "address_space_bytes": 2147483648,
+      "stdout_sha256": "b3439566eb8d5d3cd77418f449200e380e60e3ed757d2b9ac21f0d0c967d4eff",
+      "stderr_sha256": "86bbc630fc0d224d742ad5177fe59aee20e765877d85ad8a0d9f58e2db94c457"
+    },
+    {
+      "tag": "attempt3-release",
+      "command": [
+        "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "research/2026-10-08-cloud-rust-interval-root-0000z/Cargo.toml"
+      ],
+      "exit": 0,
+      "elapsed_seconds": 4.049482391998026,
+      "wall_timeout_seconds": 120,
+      "cpu_seconds": 90,
+      "address_space_bytes": 2147483648,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "eaef29cc5b1622332e61cb62605c5d20dd05a3f96ad7d004e14df9e8f9297c4e"
+    }
+  ],
+  "binary_sha256": "1927426e00f8b0fc736954ef0fd3f449511b8c3054085e5298341985a2e0c4d0",
+  "binary_bytes": 688344,
+  "rustdoc_explicit": "/workspace/cloud-practical-runtime/rustup/toolchains/1.90.0-x86_64-unknown-linux-gnu/bin/rustdoc",
+  "scientific_scope": "native Rust interval 10 unit fixtures, doctests and release build; differential pending"
+}

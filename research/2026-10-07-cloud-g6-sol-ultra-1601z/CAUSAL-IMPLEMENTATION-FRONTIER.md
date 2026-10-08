@@ -55,3 +55,10 @@ Root/primary/secondary review is pending; all14 remain compiler UNCHECKED.
 Private node ages and private edge SOURCE ages are bounded by the upper
 guard, with root protected. Suffix persistence, structural placement of
 the private sets, full marks/bin and cross-graph consumers remain separate.
+
+
+## Source and compiler reconciliation at8 October00:02
+
+Gate3 physical14 now has [canonical primary source acceptance](../2026-10-07-cloud-independent-auditor-1616z/PRIVATE-PHYSICAL-UPPER-PREFIX-SOURCE-REVIEW.md) atfb2c71e538d4b3ef494822281fc515c17cdd498f, following separate secondary review. The earlier review-pending supplement is superseded; compilation, structural placement, suffix persistence and full marked/bin/cross-graph consumers remain open. Gate4 stage2 endpoint-history source acceptance remains as above, with compiler acceptance still required.
+
+[Actual377039](verification/evidence/g6-run-37703936206-FAILED/README.md) leaves161/313/full3912/2547 byte-identical and this entire causal family excluded from the input. Context errors reduced to one, still failed. [The explicit conversion repair](CALENDAR-CONTEXT-MEASURE-CLOSURE-ROOT-REVIEW.md) is a separate source-reviewed candidate for the SAME165/358 selection. No successful causal compiler scope is inferred.
