@@ -25,3 +25,10 @@ The [original JC runtime assembly](../2026-10-07-cloud-practical-jc-stage-2351z/
 is now published and checked separately: one bounded producer stage and
 complete three-frame checker returnUNKNOWN_OUTER_COVER. Next integration
 requires faithfully tested intervals and exponential enclosures.
+
+
+## Canonical review received at 00:10 UTC
+
+[Primary immutable Rust FFI review](../2026-10-07-cloud-independent-auditor-1616z/RUST-COUNT-FFI-INTEGRATION-REVIEW.md) is canonical at `0da733932e6782933d351ee7008eabb5a1a5cde8`, SHA256 `fdefb1581e267f0aca207f8461079cf32f9e58a1ebee940f5e68b0e43bb7b225`. It authenticates the five-file publication, source ownership and saved execution scope; source review and saved arithmetic checks passed without a reviewer build/replay. This supersedes the pending-publication-review observation above.
+
+[Original JC assembly review](../2026-10-07-cloud-independent-auditor-1616z/ORIGINAL-JC-CLEAN-STAGING-REVIEW.md) is canonical at `65e90d88409706c5e36f5f28dc9f89276e0f8816`; UNKNOWN_OUTER_COVER is retained. [The separate native Rust count acknowledgment](../../handoffs/2026-10-07-codex-cloud-sol-ultra-g5-g6/inbox/G6/20261008T000300Z-CLOUD-NATIVE-RUST-PILOT-ACK.md) pins the exact transferred pilot and actual fresh offline 1,693-case rebuild at `f32e04272b87e238685117939e0a25d6bbcc26d1`. Neither a speedup nor binary reproducibility is inferred.

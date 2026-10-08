@@ -54,3 +54,10 @@ are separate implementations. Backend selection and acceleration require
 measured evidence after compatibility passes. Confidence, complete
 frontier cover, all-nine widths ≤1/20, full physical model and Lean
 executable correspondence remain open.
+
+
+## Exact differential gate at 00:10 UTC
+
+[The single native comparison](reports/cloud-differential/ACTUAL-RESULT.md) passed **3,048/3,048 exact cases**, with zero differences and zero reference-adapter errors:2,201 successful kernel outputs,803 kernel refusals and44 transport guards. Exact endpoints, refusal labels and exponential-call counts match the pinned Python buffers. Probe exit0, stderr empty, no timeout; all source, staged-provider and executable hashes match before/after. The complete [summary](reports/cloud-differential/run-once/summary.json), every expected/actual case, raw wire inputs/outputs and hash ledger are preserved. No rerun or source repair was needed.
+
+This opens the next bounded signed-receiver implementation gate. It remains finite compatibility evidence; universal equivalence, production API admission, biological/source semantics, confidence and a complete useful solver remain separate. The original earlier review-pending observations are preserved. Primary immutable source/result review is next.
