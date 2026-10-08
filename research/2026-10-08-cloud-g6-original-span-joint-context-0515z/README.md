@@ -1,0 +1,13 @@
+# Fixed original span: admitted calendar window and joint tagged continuation
+
+Cloud literature/organization structural source lane, 8 October 2026, 05:15 UTC. Original graph/calendar/clock/graft providers: Dot; finite-bin reader: Cloud G3/source bridge. **HAND/source draft, compiler UNCHECKED, outside proposed179; independent review separate.**
+
+[G6OriginalSpanJointContext.lean](G6OriginalSpanJointContext.lean) constructs the **actual original calendar window** from the protected child's lower interface to the original entry's older interface. It includes all intermediate original dates, every tied outside operation, both original arms and their exits, the actual h/r node phases and the original entry population. It ends after all older-interface exits and before that node batch. The entering state is the full original `Code` with its current-population/owner partition and entire original register.
+
+Six public proof bodies and one generic list helper derive date/agenda constraints, initialized physical frontier support and full register retention, a normalized actual joint endpoint/tag row, its original source-program marginal, an arbitrary same-history whole-outside-context readout, and finite-tag decoding on the same actual live genealogy/real-age record. The joint row is an actual recorded-source pushforward; no desired law or replacement kernel is a field.
+
+[The proof and conditional-context map](ACTUAL-WINDOW-AND-CONDITIONAL-CONTEXT.md) gives the exact boundary phases, absolute-age telescoping, correlated entering-past interpretation and remaining cross-graph gap. This is positive original-source reuse. It does not identify the full calendar window with a bare isolated component word, erase outside roots/register correlations, construct a reduced source, or prove a physical positive-chain replacement.
+
+[SOURCE-PINS.json](SOURCE-PINS.json) records exact selected G2/bin providers, direct original-G1 support providers, actual read depth and historical receipt limits. [STATIC-CHECKS.json](STATIC-CHECKS.json) records static identity/count/link checks only. No compiler, Actions, API, runtime or practical execution ran.
+
+The preceding three carrier packets now have [canonical primary SOURCE/API acceptance](../2026-10-07-cloud-independent-auditor-1616z/GUARDED-CHILD-PHASE-SUPPORT-SOURCE-REVIEW.md), `0ccc428c`, for their frozen 318c/227a/667f sources. That receipt does not verify this successor. The next obligation is source-connected two-graph transport of this admitted joint conditional row with protected crossing populations and the actual old history, followed by the required positive-word construction. Full G6 remains open.
