@@ -1,0 +1,168 @@
+{
+  "status": "SOURCE-AUTHOR EXPERIMENTAL REPAIR; candidate compiler UNCHECKED",
+  "contributor": "CLOUD-CALENDAR-REVIEW-SOL",
+  "observed_utc": "2026-10-08 UTC",
+  "actual_failure": {
+    "run_id": 37722519417,
+    "frozen_commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+    "module": "NaturalCalendarPastAdmission",
+    "original": {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/NaturalCalendarPastAdmission.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "c60fe659a8314c1f14097cc1d35a421366c89694",
+      "sha256": "20eefb59d591608cacaa9592092527ed315f6aaf7b5f14159cba138e802c256a",
+      "bytes": 19503
+    },
+    "actual_log": {
+      "observed_absolute_path": "/workspace/cloud-lean/research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37722519417-FAILED/NaturalCalendarPastAdmission-actual.log",
+      "commons_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/evidence/g6-run-37722519417-FAILED/NaturalCalendarPastAdmission-actual.log",
+      "sha256": "943084a72d814edb0e6ba97c7c40ac3b5c1c855089161e1dc693798ac4ada330",
+      "bytes": 17937,
+      "provenance": "Read-only owner-captured actual failure log; owner owns canonical terminal175 evidence preservation. No replay or compiler invocation by this author."
+    }
+  },
+  "candidate": {
+    "path": "research/2026-10-08-cloud-natural-past-actual-repair-sol-0358z/proof-drafts/NaturalCalendarPastAdmission.lean",
+    "sha256": "c2066c3e9ce58fccd4f78e2db982dcb92d5a905c34c8d6c01c6b6802755b66b1",
+    "bytes": 19672,
+    "imports_unchanged": true,
+    "theorem_bodies": 12,
+    "public_theorems": 11,
+    "private_helpers": 1,
+    "definitions": 3
+  },
+  "diff": {
+    "path": "research/2026-10-08-cloud-natural-past-actual-repair-sol-0358z/NaturalCalendarPastAdmission.diff",
+    "sha256": "552a6e7cade00ec392a3c0791e5a1774c88c1abc92e3e81b491326f55844d6e3",
+    "bytes": 2349,
+    "scope": [
+      "Two namespace opens restore intended existing provider bindings.",
+      "One successor-length change at h before Fin zero in erasure induction.",
+      "Unfold local read in both hn/hout PMF-map continuations."
+    ]
+  },
+  "elaboration_scope": "Written declaration and premise text is unchanged. Missing names were autoImplicit in the failed original, so no literal elaborated-statement equivalence is asserted. Candidate restores exact intended original provider types pinned below.",
+  "original_context_manifest": {
+    "path": "research/2026-10-08-cloud-natural-past-source-sol-0155z/SOURCE-PINS.json",
+    "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+    "blob": "1a3b2078bbda8e93540730a71343b4cad07b40ff",
+    "sha256": "60ac55009b931e84c6a1c115e6346037335ec134add7883d6ef15c4bbf9881d1",
+    "bytes": 19152
+  },
+  "repair_interface_inputs": [
+    {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompatibility.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "4aa45e6031c2a6b85f54a2eb47037a247b34450b",
+      "sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc",
+      "bytes": 7931,
+      "interfaces": [
+        {
+          "qualified_name": "UnifiedLean.Source.SourceCalendarCompatibility.firstOriginalDate",
+          "literal_definition": "noncomputable def firstOriginalDate (N : RootedBinary V E X) (C : Calendar N.graph) : ℝ :=\n  (originalDates N C).min' (originalDates_nonempty N C)",
+          "meaning": "Minimum of the finite original vertex-age set; SAME real initialized calendar offset, not an arbitrary date parameter."
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCutJointLaw.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "1519b7b7b289e102ae196a69e7a13b986c8d7177",
+      "sha256": "3b0ccda0c4b96fe9e077817d4971fa38a1c7e3be1e3472fa037a88bfbecda93e",
+      "bytes": 10072,
+      "interfaces": [
+        {
+          "qualified_name": "CloudG3.ActualCutJointLaw.TaggedEndpoint",
+          "literal_definition": "abbrev TaggedEndpoint (N : RootedBinary V E X) (sample : Copy → X) :=\n  Code N sample × (Copy → Copy → Tag)",
+          "meaning": "SAME original admitted Code jointly with the complete finite Copy-by-Copy tag matrix; Tag is an implicit section type argument."
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualCalendarEndpointHistory.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "4e4c12c009e790bdd0e176b87eb815f8e1e34e39",
+      "sha256": "e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a",
+      "bytes": 12571,
+      "interfaces": [
+        {
+          "qualified_name": "CloudG3.ActualCalendarEndpointHistory.physicalOps",
+          "literal_definition": "def physicalOps (N : RootedBinary V E X) (word : List (ProgramStep N × Tag)) :\n    List (ProgramStep N) := word.map Prod.fst",
+          "derived_definitional_shape": "(physicalOps N (q :: word)).length = (physicalOps N word).length + 1"
+        },
+        {
+          "qualified_name": "CloudG3.ActualCalendarEndpointHistory.endpointHistoryReadout",
+          "cons_normalization": "change (Fin ((physicalOps N word).length + 1) → Code N sample) at h",
+          "meaning": "Existing compiled reader uses exactly this successor length exposure; the derivative applies it before numeral-zero elaboration in its erasure proof."
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-06-dot-g2-source-finite-history-checkpoint-2141z/G2SourceFiniteHistory.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "3628acc34196a6c4e6d5ae8087be66bc071c3c89",
+      "sha256": "1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5",
+      "bytes": 6419,
+      "interfaces": [
+        {
+          "qualified_name": "GProgram.G2.SourceFiniteHistory.historyProjection",
+          "literal_definition": "def historyProjection {S Q : Type*} {n : Nat} (f : S → Q) (z : Fin n → S) : Fin n → Q :=\n  fun i => f (z i)",
+          "meaning": "Pointwise register erasure retains every operation endpoint and index."
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/proof-drafts/PrivateRegisterHistory.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "2681b7074ce3ba4854788396403d94927e380aba",
+      "sha256": "b122672904d07b1cc0567fab832994f7d3dcba18490f55b0b7c79485b7702202",
+      "bytes": 5804,
+      "interfaces": [
+        {
+          "qualified_name": "UnifiedLean.G6.PrivateRegisterHistory.initializedSourceHistory",
+          "codomain": "PMF (Old × (Code N sample × (Fin ops.length → Code N sample)))",
+          "definition_rhs": "initial.bind (fun a => (sourceHistoryLaw N r ops a.2).map\n    (fun z => (a.1, (a.2, z))))",
+          "meaning": "Retains latent label, SAME initialized Code, and all future endpoints."
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-07-cloud-private-seed-factorization-sol-2306z/stage2-operation-history/PrivateSeedHistoryFactorization.lean",
+      "commit": "9483fb588f6d76e5e305c3187949acebb08e27bd",
+      "blob": "36e3c11da4fd020e4424afe697ca02c8bbbc2dca",
+      "sha256": "8bba9735a9514154492be2d8f6a3a8cad8781963559a5da6568011b14bc8e80a",
+      "bytes": 10667,
+      "interfaces": [
+        {
+          "qualified_name": "CloudG6.PrivateSeedHistoryFactorization.initializedEndpointLaw",
+          "codomain": "PMF (Code N sample × (Fin ops.length → Code N sample))",
+          "definition_rhs": "initial.bind (fun s => (sourceHistoryLaw N r ops s).map (fun h => (s, h)))",
+          "meaning": "The final product-map continuation binds the SAME outside initial law and source history; local read unfolding exposes identical callbacks."
+        }
+      ]
+    }
+  ],
+  "mathlib_interface": {
+    "path": "Mathlib/Probability/ProbabilityMassFunction/Constructions.lean",
+    "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "sha256": "09a7cf241524c158d4174e994e04140901630c7e0629ceee9b7ba7ec347d2cd4",
+    "bytes": 11701,
+    "interfaces": [
+      "PMF.map_comp",
+      "PMF.map_bind",
+      "PMF.bind_map"
+    ],
+    "scope": "Static API read only; no API, provider, or source-body change."
+  },
+  "gates": [
+    "Root and primary independent source/interface review of this exact candidate.",
+    "Sole Lean owner may integrate and test ONE same176 successor only after explicit gates.",
+    "No pass promotion before actual complete success and attributable axiom/ownership receipt."
+  ],
+  "unchanged": [
+    "Original20eef and all ten selected176 sources in shared provider/freeze trees.",
+    "Scientific hypotheses: all finite Copy counts, actual original sample leaves/register/bank, first original physical age, legal cuts, fixed bins and actual operation no-read.",
+    "Full old tag matrix, SAME Code/history and derived private seed factorization.",
+    "General G6 remaining sorted-cut, physical chronology/output/pruning, cross-graph and master-closure gates."
+  ]
+}
