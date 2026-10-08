@@ -1,0 +1,34 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/PrivateRegisterBoundary.lean:64:2: error: No goals to be solved
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/PrivateRegisterBoundary.lean:88:13: error: unsolved goals
+case common
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+P : Finset V
+s : Code N sample
+H : GProgram.G2.OriginalHybridParents N
+hop : NoPrivateRead N P (BoundaryOperation.common H)
+hH : H.hybrid ∉ P
+⊢ PMF.pure (pulseCode H (erasePrivateCode N P s) fun x => (state s).register H.hybrid) =
+    PMF.pure (pulseCode H (erasePrivateCode N P s) fun x => (state s).register H.hybrid)
+'UnifiedLean.G6.PrivateRegisterBoundary.erase_exitCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.PrivateRegisterBoundary.erase_ordinaryCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.PrivateRegisterBoundary.erase_rootCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.PrivateRegisterBoundary.erase_pulseCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.PrivateRegisterBoundary.actual_independent_pulse_erasure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.PrivateRegisterBoundary.actual_boundary_erasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

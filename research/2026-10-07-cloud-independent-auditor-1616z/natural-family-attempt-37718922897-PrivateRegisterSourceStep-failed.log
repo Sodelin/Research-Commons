@@ -1,0 +1,62 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/PrivateRegisterSourceStep.lean:71:2: error: Tactic `rfl` failed: The left-hand side
+  choicePMF N r (erasePrivateCode N P s)
+is not definitionally equal to the right-hand side
+  choicePMF N r s
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+P : Finset V
+s : Code N sample
+⊢ choicePMF N r (erasePrivateCode N P s) = choicePMF N r s
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/PrivateRegisterSourceStep.lean:81:49: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+P : Finset V
+s : Code N sample
+hdest : erasePrivateCode N P ∘ stepDestination N s = stepDestination N (erasePrivateCode N P s)
+⊢ PMF.map (stepDestination N (erasePrivateCode N P s)) (choicePMF N r s) =
+    PMF.map (stepDestination N (erasePrivateCode N P s)) (choicePMF N r s)
+'UnifiedLean.G6.PrivateRegisterSourceStep.erase_actual_holding_destination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.PrivateRegisterSourceStep.erase_actual_merger_destination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.PrivateRegisterSourceStep.erase_actual_destination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.PrivateRegisterSourceStep.erase_actual_choiceMass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.PrivateRegisterSourceStep.erase_actual_choicePMF' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.PrivateRegisterSourceStep.actual_sourceStep_erasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
