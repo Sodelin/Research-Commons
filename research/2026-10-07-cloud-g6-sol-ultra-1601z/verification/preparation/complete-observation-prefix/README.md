@@ -1,0 +1,13 @@
+# Complete observation prefix bridge, uncompiled
+
+Contributor: CLOUD-G6-SOL-ULTRA-20261007, 2026-10-08. Root authorized an additive future bridge while the sole165-module run remains immutable. This source is outside that input; no compiler or additional workflow has run on it. Hand and source review are pending.
+
+Let H be the original joint endpoint-history law on a legal fixed-bin refinement, and Q its normalized finite-prefix history. The already proved source domination is μQ≤H, where μ is the product retained count mass. The SAME endpoint/tag reader R gives μ(R_*Q)≤R_*H. Actual cut refinement and endpoint-history attachment identify R_*H with the actual correlated calendar Gamma; that equality is derived from source laws, never supplied as a hypothesis.
+
+Append the original exact completion/tag-update kernel T to both laws. ENNReal bind domination with tail factor1 gives μ((R_*Q).bind T)≤Gamma.bind T. The principal complete-calendar theorem identifies Gamma.bind T with the actual complete-record endpoint/tag pushforward under the explicit original ancestral-support and tail-cut contracts. A single finite joint reader f preserves domination. The common-subprobability TV/event bound gives error≤1−μ, and the accepted product-deficit lemma gives the occurrence-wise sum bound. No coordinate-count multiplier is introduced.
+
+The draft contains one finiteCompleteJoint definition and six theorem bodies: Gamma/tail domination; actual complete-record PMF identification; joint readout TV; its occurrence budget; event error; and exact actual observation measure conversion. Both laws use the same matrix binned once, source rate bank, original boundary/register operations and exact completion row. Empty operation words and empty Copy carriers are retained by the imported definitions; no Nonempty hypothesis is added.
+
+The initial matrix is carried as supplied. Identifying it with a particular physical old decoration/history and identifying the final reader with a biological menu, finite-tag forest quotient or pruning map remain separate source obligations. CutRefines and word/tail contracts are explicit witnesses; existence/effective construction is not established here. Normalized conditioning is distinct from the residual/numerical backend. Actual table enumeration, all-source feasible cells and full G6 master closure remain open.
+
+The SOURCE-PINS file records actual accepted providers and the two current uncompiled dependencies. Exact successful current-job receipts must precede any future compiler selection; source semantics must be reviewed independently first. The current frozen165/358 inputs and workflow remain untouched.
