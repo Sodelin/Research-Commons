@@ -1,0 +1,37 @@
+--- 1ca2d3d33188a060dc5c40a263aea53988a332ec:research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/ActualFiniteCutJointLaw.lean
++++ research/2026-10-08-cloud-finite-cut-preflight-sol-0005z/proof-drafts/ActualFiniteCutJointLaw.lean
+@@ -59,0 +60,4 @@
++  change Measurable (Sum.elim (fun _ : Unit => (s, B))
++    (fun q : (Σ d : Code N sample, Choice N d → ℝ) =>
++      tailTraceReadout N bin q.1 offset B
++        (literalMarkedTrace N (Fintype.card Copy) v q.1 q.2)))
+@@ -178 +182,2 @@
+-  exact finite_observed_fibre_kernel (actualMarkedTraceLaw N r (Fintype.card Copy) s (t : ℝ))
++  refine Eq.trans ?_ (finite_observed_fibre_kernel
++    (actualMarkedTraceLaw N r (Fintype.card Copy) s (t : ℝ))
+@@ -187 +192,24 @@
+-    (fun q => interval_segment_joint_toMeasure N r bin hbin q.1 (offset + (t : ℝ)) v q.2)
++    (fun q => interval_segment_joint_toMeasure N r bin hbin q.1 (offset + (t : ℝ)) v q.2))
++  apply Finset.sum_congr rfl
++  intro d _
++  have hl := prefix_tail_readout_measurable N bin hbin s d offset (t : ℝ) B
++  have hr : Measurable (fun z :
++      (Bool × ClockTrace N sample (Fintype.card Copy)) ×
++        (Bool × ClockTrace N sample (Fintype.card Copy)) =>
++      g (tailTraceReadout N bin s offset B z.1, z.2)) :=
++    hg.comp ((tail_trace_readout_measurable N bin hbin s offset B).prodMap measurable_id)
++  have hD : MeasurableSet
++      {h : Bool × ClockTrace N sample (Fintype.card Copy) |
++        traceEndpoint N (Fintype.card Copy) s h.2 = d} :=
++    measurableSet_eq_fun (raw_tail_endpoint_measurable N s) measurable_const
++  apply Measure.map_congr
++  apply (Measure.ae_prod_iff_ae_ae (measurableSet_eq_fun hl hr)).mpr
++  filter_upwards [ae_restrict_mem hD] with past hp
++  change traceEndpoint N (Fintype.card Copy) s past.2 = d at hp
++  exact Filter.Eventually.of_forall (fun z => by
++    change tailTraceReadout N bin d (offset + (t : ℝ))
++        (foldTags N bin (Fintype.card Copy) s offset B past.2) z =
++      tailTraceReadout N bin (traceEndpoint N (Fintype.card Copy) s past.2)
++        (offset + (t : ℝ))
++        (foldTags N bin (Fintype.card Copy) s offset B past.2) z
++    rw [hp])
