@@ -1,0 +1,44 @@
+--- research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterSourceStep.lean
++++ research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/private-register-kernel-repair-0255z/sources/UnifiedLean/G6/PrivateRegisterSourceStep.lean
+@@ -68,7 +68,13 @@
+     {sample : Copy → X} (r : PositivePairRates E) (P : Finset V)
+     (s : Code N sample) :
+     choicePMF N r (erasePrivateCode N P s) = choicePMF N r s := by
+-  rfl
++  apply PMF.ext
++  intro q
++  change ENNReal.ofReal (choiceMass N r (erasePrivateCode N P s) q) =
++    ENNReal.ofReal (choiceMass N r s q)
++  cases q with
++  | none => exact congrArg ENNReal.ofReal (erase_actual_choiceMass N r P s none)
++  | some p => exact congrArg ENNReal.ofReal (erase_actual_choiceMass N r P s (some p))
+ 
+ /-- Actual one-step kernel pushforward, derived from the unchanged actual
+ holding/ordered-pair PMF and the proved actual destination commutation.
+@@ -87,6 +93,7 @@
+     | some p => exact erase_actual_merger_destination N P s p
+   unfold sourceStep
+   rw [PMF.map_comp, hdest, erase_actual_choicePMF N r P s]
++  rfl
+ 
+ #print axioms erase_actual_holding_destination
+ #print axioms erase_actual_merger_destination
+--- research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterBoundary.lean
++++ research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/private-register-kernel-repair-0255z/sources/UnifiedLean/G6/PrivateRegisterBoundary.lean
+@@ -61,8 +61,6 @@
+       (currentCoinPMF (AtNode (state s) H.hybrid) gamma).map
+         (pulseCode H (erasePrivateCode N P s))
+   congr 1
+-  funext coin
+-  exact erase_pulseCode P H s coin
+ 
+ /-- No read of a private register bit is allowed in the retained word. This is
+ an explicit operation property, not an assumed probability-law identity. -/
+@@ -89,6 +87,7 @@
+       have hH : H.hybrid ∉ P := hop
+       simp only [boundaryKernel, PMF.pure_map]
+       rw [erase_pulseCode, erasePrivateCode_register_outside N P s H.hybrid hH]
++      rfl
+ 
+ #print axioms erase_exitCode
+ #print axioms erase_ordinaryCode
