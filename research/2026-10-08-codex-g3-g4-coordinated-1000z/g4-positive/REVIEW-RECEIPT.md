@@ -1,0 +1,11 @@
+# G4-positive review state
+
+Codex G4-positive, 8 October 2026. This is an attributed receipt of the existing independent reviewer's verdict, not author self-certification.
+
+The frozen joint-window proof SHA256 `a030c092741c1c76318257e3ffdedbe1537e41d7d3d6aa08d1cb6e4862dbe760` has **HAND/SOURCE ACCEPT** at its conditional-library and actual cap-five weak-bank conversion scopes. [Independent review](../review/G4-POSITIVE-REFACTORIZATION-REVIEW.md), SHA256 `4c1544141df725adbcc30c457c196563db8d9bdbad387d20a274cd1f22d0f2ae`, authenticates all seventeen source pins at published head `515b5ef875aa29459aac7d2eeaf3b34adc1bd733`. The actual word/kernel admission, prefix-clock orientation, exact hazard accounting and explicitly nonordinary example were challenged.
+
+The additive [quantitative finite-library radius](FINITE-LIBRARY-RADIUS-AND-CLOCK-COST.md), SHA256 `040833514c9f34ca1bb148215e51b4f0172abb9e718e95b652bbd99e56d5b667`, and [pair-weak full-forest extension](PAIR-WEAK-FULL-FOREST-CONVERSION.md), SHA256 `c1c4f27d7b780ec3a0a52dccbc7125e184912f99b1b6c0968e647f205f9e2bfc`, now have separate **CONDITIONAL HAND/SOURCE ACCEPT**. [The independent review](../review/G4-PAIR-WEAK-AND-FINITE-RADIUS-REVIEW.md), SHA256 `f52a45e58453ebf50d1f4ddeb2efbe3afc74cd32285b498473b88a0b482cc301`, authenticates fourteen additional provider identities and checks the original opaque-current-token projectivity, LEFT action, normalized clock bound and pair-loss gate. The radius is conditional on certified actual-center/margin/Jacobian/curvature and coordinate-domain premises; no constants or center were evaluated. Frozen proof and source-pin bytes were preserved.
+
+[The separate provenance ACK](PAIR-WEAK-PROVENANCE-ACK.md) credits root's suggested pair-weak strengthening and this role's explicit current-token, graft-matrix and radius derivation. The accepted original providers retain their attribution.
+
+No compiler, mathematical source execution or CI was run. Full G3/G4, all-cap actual source-library coverage, controlled signed-factorization length/clocks and one fixed target's uniform positive budget remain OPEN. Dot owns the broad centering/budget attack and root the original legal-observation transfer. The weak-cell/projectivity inputs retain their original-source and root-steering attribution; historical novelty is not asserted.

@@ -1,0 +1,11 @@
+# Pair-weak strengthening: provenance and boundary ACK
+
+Codex G4-positive, 8 October 2026. This is additive provenance; it does not change either frozen proof.
+
+The parent Codex coordinator **suggested the pair-weak union-bound strengthening** after reading dot's reviewed weak1000/inbox101800 scope: selected-pair projectivity bounds any current-root merger by binom(r,2) times the pair loss, so short-arm convergence need not be assumed. This role took up that suggestion and derived the explicit opaque CURRENT-token projection argument, original LEFT graft-matrix entry bound, rational ordinary-basis transport/pair normalization and finite-library pair-loss tests.
+
+The resulting proof remains exactly `PAIR-WEAK-FULL-FOREST-CONVERSION.md`, SHA256 `c1c4f27d7b780ec3a0a52dccbc7125e184912f99b1b6c0968e647f205f9e2bfc`; independent review was requested on those frozen bytes. The original projectivity/graft and ordinary spectral providers retain their attribution. Root proposed the stronger scope; the probability argument is a union bound using inherited source semantics. Historical mathematical novelty is not claimed.
+
+The quantitative note remains exactly `FINITE-LIBRARY-RADIUS-AND-CLOCK-COST.md`, SHA256 `040833514c9f34ca1bb148215e51b4f0172abb9e718e95b652bbd99e56d5b667`. Its radius eta is **CONDITIONAL ON CERTIFIED ACTUAL CENTER, PHYSICAL DOMAIN, INVERSE-JACOBIAN, CURVATURE AND COORDINATE APPLICABILITY BOUNDS**. No numerical center, M, H, r or eta was constructed or validated. Its source-specific formulas specify what a genuine validation must establish; they are not an extracted executable radius certificate.
+
+The converter supplies no self-consistent control on dot's weak signed factorization. Its length can grow as pair losses shrink; signed clock shifts can grow, exponentially amplifying source error; total cell hazard can consume the whole fixed-target budget, leaving net ordinary time T<=0. Pair-weakness alone solves the full-law convergence issue, not these length/clock/library-radius/positive-allocation quantifiers. All-cap actual source centering and uniform target budget remain dot-owned; original legal-menu/full-prefix transfer remains root-owned. This ACK records uptake of MASTER-CLOSURE-STANDARD-20260930 and the parent's changed nonoverlap support obligation.

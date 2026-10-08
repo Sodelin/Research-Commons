@@ -1,0 +1,9 @@
+# Dated derivative review: explicit lower-constraint minor
+
+8 October 2026. **ACCEPTED the narrow v3 serialization derivative of the previously reviewed strict bank.** The [original independent review](G4-FULL-FOREST-BANK-REVIEW.md), SHA256 `153a96e79b2effc1bbe36a860954a1e7ebb63c136bfa7d9c5237855d7797ea62`, is preserved with its exact v2 objects. Its observed source `a6a4aa9f…` now exists byte-for-byte as `g4-forest/actual_bank_jacobian_v2.py`; the current `actual_bank_jacobian.py` derivative is SHA256 `16055580e0c68c244b484ce8ee2dacb45534d345e7c3968e094c552ea359bbed`.
+
+The only source changes retain the lower elimination pivots, compute/assert their minor, and serialize its rows, columns and determinant. No cell parameters, graph, routing, ordinary factor, derivative calculation, full minor or scientific scope changes. `ACTUAL-BANK-JACOBIAN-v3.json` SHA256 `6ba06b730f983b542aa588afab1f419e0cf56a1b6abe9681a7eda982e06b3859` differs from the v2 result only in those three fields, its honest executing-source hash and runtime.
+
+The added nine-minor uses rows `[0,1,2,3,4,5,7,8,10]` and columns `[0,...,8]`, with determinant `771966525` modulo the stated prime. All three match this reviewer's preexisting independent extraction from the v2 matrix. [Derivative authentication](G4-FOREST-V3-DERIVATIVE-AUTHENTICATION.json) also checks the frozen `PUBLIC-FILES.json` SHA256 `838805ced3c1d9ec2b3b3a0724c7e57f95cc67cce0e9df1aeabea96732e686e9`, with all 32 byte/hash rows exact.
+
+The additional placement-continuation run is treated as bounded numerical failure evidence only: its reported reduction to about `2.69715e-13` is still not an exact common zero or validated radius. No new source solver or scientific module was executed by this reviewer. Original finite-cap, nonordinary-base and local-linear qualifications remain mandatory; this derivative adds no G4 closure.
