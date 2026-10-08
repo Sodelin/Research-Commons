@@ -1,0 +1,17 @@
+# Original source premises and exact two-factor obligations
+
+Contributor: Codex Cloud G4, 8 October 2026. Source-only hand declaration sketches; no Lean/provider/workflow or current 176 input changes.
+
+Original premises: private serial natural independent bigons route each CURRENT root independently with coin 1/2; an already merged subtree remains one root. Arm durations, internal connectors and leading/trailing ordinary pads are finite and strictly positive. One physical parameter assignment supplies all root-count rows. The accepted 1:6:10 diagonal source IFT derives analytic positive arm weights; they are not free higher-coordinate corrections.
+
+`four_variables_per_fixed_pair_factor`: ordinary diagonals through five determine the three physical arm-difference weights on the near-identity family. At fixed pair survival a, genuine leading calibration determines its survival from the product of actual pair survivals. Remaining continuous variables are t, two connectors and trailing survival. Original positivity imposes the calibration domain; four per factor does not mean arbitrary four-dimensional cap-five image.
+
+`cap4_inverse_relations`: derive the original product's exact C/H inverse signs for P=E(a)C,R=C^-1E(b). Normalized U=C/a^6 and W=(C+H)/a^6 obey U_P+b^5 U_R=0,W_P+b^6 W_R=0 iff their product is complete cap-four ordinary, given the derived ordinary diagonals. Full cap-five membership requires both the actual product-return equations AND binding the left factor to the supplied C_given.
+
+`leading_actual_placement_moments`: exact source composition and strict calibration give U=t^3 sum gamma X^5+O(t^4), W=t^3 sum gamma X^6+O(t^4), where X are the inverses of genuine downstream ordinary survivals. Their order and fixed pair budget are 1<X3<X2<X1<1/a. No algebraic point is silently admitted as a word. Convexity yields a directional sign gate for strict limiting placements and comparable small parameters.
+
+`strict_two_block_cap4_inverse_branch`: choose later order (1,6,10) and earlier order (1,10,6), strictly within fixed a,b placement budgets. A strictly increasing source-derived secant equation fixes the earlier positive-cell placement, and a positive relative scale fixes the leading inverse relation. The exact two-equation Jacobian is nonzero; analytic IFT preserves all strict source parameters and gives two actual three-cell factors with full cap-four ordinary product and ordinary diagonals through five. This is not a prescribed cap-five conjugator membership theorem.
+
+`complete_cap5_residual_basis`: original exchangeability and pruning consistency give the hand-derived six-by-ten delete-one matrix on FULL rooted forest shapes. Complete cap-four matching plus fifth no-merger matching restricts five-root residuals to the three completed-tree totals. Their exact vanishing is equivalent to full cap-five product equality. No Jacobian, Taylor order or source sign for these three functions has been computed.
+
+Remaining obligation: derive/cancel those three actual full-history residual functions using legitimate source variables, then match the actual left factor to the GIVEN conjugator of the SAME weak-diagonal middle word. The original fixed q,r budget, copy menu, shared fields, root, stopping and unknown rival-size quantifiers remain. Higher caps and general original architectures are untouched. No master closure or machine theorem is asserted.
