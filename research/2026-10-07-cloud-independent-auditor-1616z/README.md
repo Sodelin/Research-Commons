@@ -1,6 +1,6 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:03 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:05 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [latest actual Context closure failure](CALENDAR-CONTEXT-CLOSURE-FAILED-REVIEW.md) independently authenticates **161 custom modules /313 named reports /3,912 owned declarations and 2,547 theorems**. Actual run37703936206 retains the whole preceding inventory byte-for-byte. Context has one closing rewrite failure and is wholly excluded; three downstream modules are blocked. There is no achieved358-report or full cut/history acceptance.
 
@@ -30,7 +30,7 @@ The [natural private-seed consumer](PRIVATE-SEED-NATURAL-FACTORIZATION-SOURCE-RE
 
 The [new private-seed endpoint-history draft](PRIVATE-SEED-ENDPOINT-HISTORY-SOURCE-REVIEW.md) clears ten-body source review. The actual natural product and derived no-read history transport retain private seed, initialized Code and every endpoint, including empty words. It remains compiler UNCHECKED; literal clock/mark/bin history and arbitrary entering/posterior independence are outside its conclusion.
 
-The [new C/GMP kernel and C++ adapter](C-GMP-CPP-COUNT-PORT-REVIEW.md) clear independent code/contract review and inspected author build,39 complete-output differential/22 invalid, ABI and focused sanitizer receipts. Saved exact outputs were independently checked without executing either implementation. This is the scalar normalized-prefix component; Rust and the original-D statistical/inverse/cover pipeline remain separate.
+The [new C/GMP kernel and C++ adapter](C-GMP-CPP-COUNT-PORT-REVIEW.md) clear independent code/contract review and inspected author build,39 complete-output differential/22 invalid, ABI and focused sanitizer receipts. Saved exact outputs were independently checked without executing either implementation. This is the scalar normalized-prefix component. The [Rust FFI integration](RUST-COUNT-FFI-INTEGRATION-REVIEW.md) separately clears code/ownership review and immutable author build/80-case full-output/21-case invalid receipt authentication, with independent saved-output arithmetic checks. All three interfaces use one C/GMP algorithm; the original-D statistical/inverse/cover pipeline remains separate.
 
 The [signed receiver guard derivative](SIGNED-RECEIVER-GUARD-REPAIR-REVIEW.md) now clears source/code review and inspected author controls: the verified byte buffer executes directly, and bounded n/d parsing precedes Fraction allocation. The same three geometry results remain exact; observed confidence and a useful complete cover remain open.
 
