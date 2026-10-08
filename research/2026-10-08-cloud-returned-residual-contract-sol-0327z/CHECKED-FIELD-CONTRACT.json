@@ -1,0 +1,39 @@
+{
+  "status": "Specification of finite checks; NO implemented/compiled/executed new checker",
+  "reference": "PrefixCertificate.validate and poisson_prefix at pinnedf54e18f2",
+  "primitive_fields": {
+    "mean": "exact rational q encoded by integer numerator/positive integer denominator",
+    "tolerance": "exact rational epsilon",
+    "degree": "natural integer K",
+    "terms": "K+1 exact rationals u[0..K]",
+    "upper_exp": "exact rational U"
+  },
+  "derived_fields_not_supplied_law_premises": {
+    "partial": "S=sum terms",
+    "next_term": "T=u[K]*q/(K+1)",
+    "deficit": "Delta=1-S/U",
+    "retained": "u[k]/U",
+    "weights": "u[k]/U+Delta when k=0, otherwise u[k]/U"
+  },
+  "minimal_arithmetic_checks": [
+    "q>=0 and 0<epsilon<1",
+    "K>=0; length terms=K+1; u[0]=1",
+    "For0<=j<K: (j+1)*u[j+1]=q*u[j]",
+    "U=S+2*T",
+    "K+2>=2*q",
+    "Delta<=epsilon"
+  ],
+  "redundant_existing_validator_checks": [
+    "Delta>=0",
+    "Each derivedweight>=0",
+    "Sum derivedweights=1"
+  ],
+  "return_path_type_fact": "poisson_prefix rational() converts ordinary inputs to Fraction; m starts integer0; all term/upper fields remain exact Fraction",
+  "wire_type_requirement": "Decode exact integer ratios first; dataclass annotations/validate alone are not a generic serialized type decoder",
+  "external_count_extension": "Weights at k>K are mathematically0, not an additional returned field",
+  "backend_law_field": false,
+  "exact_mean_application": "globalClockRate(r)*t=q in SAME original source; only after actual clock/population/carrier decoding is derived",
+  "upper_mean_application": "a<=b and certifiedb-a<=eta, b=q; SAME kernel required for count-only bound, or actualratebank primitivebounds for perturbed kernel; not direct exactmean49eba instantiation",
+  "source_epoch_return": "(result_dictionary, PrefixCertificate); internal transitioncache is not returned as an authenticated table",
+  "transition_encoding_status": "OPEN; original validation does not supply actual Code decoder or marked quotient proof"
+}
