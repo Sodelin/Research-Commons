@@ -1,0 +1,35 @@
+# Two proof repairs after independently authenticated actual177
+
+SOURCE/API and exact STATIC selection ACCEPT for the separate two-source candidates at [852463f6e690330ab789f694ca2e4ce57b83aa6a](https://github.com/Sodelin/Research-Commons/commit/852463f6e690330ab789f694ca2e4ce57b83aa6a). Compiler UNCHECKED for both derivatives. This review does not dispatch a job or accept requested179/501 as an actual result.
+
+The controlling actual baseline is [the independently authenticated run37731710313 partial receipt](THREE-FOLLOWON-177-COMPLETE-VERIFIED-PARTIAL-REVIEW.md), canonical48d318b09136550347c43196f8e90d46ca2cef11, SHA0160eb585548f35af00d6e58a05b934193eb9a6bc21262ba5d23b0e1ae11f181:177 successful custom modules,470 named declarations,4158 complete owned declarations and2725 theorems. HybridSizeCore and RationalResidualCertificate failed and remain wholly excluded. NaturalPastCompleteObservation is actually accepted, including its cross-namespace generated helper under the actual module owner. All4150 earlier rows were exact. The older171-to175 calendarTail.eq_def helper-reference exception stays preserved; it is not erased by the later exact comparisons.
+
+## Exact source repairs
+
+HybridSizeCore candidate SHA57a02d071f2338e22af6bb0bfa80b13d87d8666f72c8f8c45c57fae413dbd760,6351 bytes, changes only `def cellT` to `noncomputable def cellT`. This addresses the actual Real-division code-generation failure at13:4. The expression, logical type, two scalar definitions,15 theorem bodies, imports, namespace, scientific gates and target list remain fixed. The modifier does not turn the real scalar function into an executable biological source or supply a graph-to-word law. Removing only this modifier recovers original879306ccff19ee9eae137679d4c404fd914db5a3f1df30eb012b5123dd4a41c3 exactly. Diff SHA5ec4083b864c1fd31fbdee393bd8d2fee7417c1c35e20e7c70124d28d5fe678c.
+
+RationalResidualCertificate candidate SHA35e3b2ef67a82c6c637b0d814fa2b217302765bb3904db3b1cca8fdb0bceb820,7157 bytes, changes only two proof bodies. Diff SHA7128142b2a0afefdfd9b1baaaba223b2188b5fe8ef621bd059298ff7eed5e310. All three computable rational definitions and11 declaration headers remain fixed, along with the exact source mean, cutoff, residual placement at the same initial state, finite support, law and readout premises.
+
+The nonnegativity proof explicitly derives the residual error from `2*next/U` using inherited next-term nonnegativity and denominator positivity. It then proves the two summands separately: the retained term is nonnegative in the `k≤K` branch and zero otherwise; the residual error is nonnegative at `k=0` and zero otherwise. This discharges the actual failed positivity branches without strengthening assumptions.
+
+The cast proof splits the same two existing flags `k≤K` and `k=0` before coercion. Pinned Rat.cast_add/div/zero and the unchanged rationalTerm_real, rationalDenominator_real and rationalError_real identify each of the four cases with the existing residualCountReal_coefficients statement, under the original `a=q` coercion equality. No conditional rational quantity is assumed equal to its target. The positive denominator remains derived from the retained prefix and next term.
+
+All other source bytes are identical to failed original49eba2288f7e32b415b8409c2ddeb8a39f192374d31cad40132a5ae6771a7386. In particular rationalResidualCount_sum and its final `rfl` remain exact. The earlier predicted redundant-rfl concern was withdrawn after reading the pinned reducible-only `rw` closure; the actual failed log also contains no error in that sum proof. This candidate adds no speculative deletion for the withdrawn forecast.
+
+The four API inputs are authenticated against the exact actual RationalCertificate56b27794 and ResidualPrefix569ef4c9 providers and pinned Mathlib Rat/Cast/CharZero39c30fd9 and Rat/Cast/Defs0e71257b source bytes. The required term/error cast and residual coefficient APIs, and the rational-to-real cast directions, were read directly. No blocking semantic or concrete static API issue was found. Elaboration and generated-axiom acceptance still require an actual successful run.
+
+## Exact matching selection
+
+Plan `verification/freeze-plans/two-followon-actual177-repair-static.json`, SHA c8c55ecc312deb0b4c3577d85225b31ab87acced40c3f8b77cf503ecbde79395, preserves the same requested179 custom modules and501 named declarations:352G6+134G3+15G5. Relative to the dated original179 plan, only the two failed-module source hashes change. All177 actually successful module hashes, all other177 requested hashes, every module path/import, topological order,45 ordered targets, named counts,68 Mathlib direct roots plus the same Lean Omega root, and external context ledger are fixed. There are no new modules or transitive source additions.
+
+The old broader3584-source header ledger,3320 Mathlib-source count and actual earlier cache3302 count keep their distinct meanings. This static gate does not manufacture a new cache receipt. The complete source-connected generated/type/body/reference/axiom audit remains required for the actual successful selection; whole failed modules and recovery declarations remain excluded.
+
+The owner estimate727 actual job seconds+30 repair reserve+10 audit reserve+100 variability=867 seconds is arithmetically correct and below the unchanged900-second job cap. It leaves33 seconds and is an estimate, not a completion guarantee. The180-second per-command cap and `--trust=0`, `-j1`, `-M4096` controls stay unchanged. Runtime/workflow/runner/template checks and fresh sole-job guards belong to the separate root/owner final launch gate.
+
+The plan's dated prior-independent-acceptance field predates canonical48d318; this review explicitly supplies that actual177 correspondence. A future freeze must cite the concrete canonical receipt and this matching gate rather than treating preparation-time pending text as a new scientific uncertainty. No API, numerical, private-product, molecular, graph reduction or other draft is enrolled here.
+
+## Authentication and limits
+
+[The read-only authentication script](authenticate_actual177_two_followon_repair.py) and [its saved evidence](actual177-two-followon-repair-authentication.json) verify all eight immutable candidate packet/plan files, both literal diffs and exhaustive old-to-new transforms, four API source pins, unchanged sum proof, exact selection invariants and all177 actual-successful source hashes. This is static inspection and Git/source comparison only. No Lean process, Actions poll, archive transport, coefficient harness, numerical evaluation or biological source execution was performed by the reviewer.
+
+No compiler acceptance, Python/Rust returned-object or table semantics, arbitrary-real oracle, observed statistical admission, source-state enumeration, graph-to-word admission, biological menu/pruning completion, cross-graph transfer or full G3/G6 closure follows from these repairs. Root final scope/budget authorization and a sole-owner guarded freeze are separate from this source and static selection verdict.
