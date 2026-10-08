@@ -93,8 +93,8 @@
   "module2": {
     "expression_only_baseline": "scale REF total abundance by predicted expression change; keep REF relative isoform/junction usage",
     "expanded_readout": "predeclared normalized splice/junction information or positional RNA coverage; no learned weighting",
-    "primary_splicing_metric": "MAE of delta PSI on [0,1], only after exact target correspondence",
-    "primary_apa_metric": "MAE of delta proximal usage, only after exact target correspondence",
+    "primary_splicing_metric": "MAE of signed delta PSI in fraction units (each PSI in [0,1], delta PSI in [-1,1]), only after exact target correspondence",
+    "primary_apa_metric": "MAE of signed delta proximal usage in fraction units (each usage in [0,1], delta usage in [-1,1]), only after exact target correspondence",
     "secondary_metrics": [
       "effect direction",
       "Spearman",
@@ -108,7 +108,7 @@
     "resamples": 2000,
     "resampling_unit": "locus/component including all matched records and replicates",
     "seed": "research-commons-molecular-v1-20261008/bootstrap-v1",
-    "interval": "95 percent percentile bootstrap on paired metric difference",
+    "interval": "nominal 95 percent percentile bootstrap on paired metric difference; coverage not established for these datasets",
     "experimental_uncertainty": "replicate-aware assay estimates",
     "model_confidence": "NOT_CALIBRATED_NOT_PROVIDED"
   },

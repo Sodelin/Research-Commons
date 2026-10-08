@@ -11,3 +11,5 @@ This packet reviews primary sources for the two [molecular applications](../2026
 - [Machine-readable protocol](VALIDATION-PROTOCOL.json) and [dataset source ledger](DATASET-SOURCES.json): declared settings and metadata authentication.
 
 Status: source review and protocol design complete for this bounded task. No dataset is yet admitted as an independent benchmark, no actual held-out file manifest exists, and no scientific evaluation has run. Dataset availability, permission to use an artifact, and absence of training overlap are separate questions.
+
+[Wording correction to the original protocol](CORRECTION-20261008.md): signed fraction changes and nominal bootstrap intervals.
