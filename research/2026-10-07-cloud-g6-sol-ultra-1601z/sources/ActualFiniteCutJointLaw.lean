@@ -57,6 +57,10 @@ theorem cut_interval_readout_measurable (N : RootedBinary V E X)
     intro d
     exact ((tail_trace_readout_measurable N bin hbin d offset B).comp
       (marked_trace_measurable N (Fintype.card Copy) d v)) hA
+  change Measurable (Sum.elim (fun _ : Unit => (s, B))
+    (fun q : (Σ d : Code N sample, Choice N d → ℝ) =>
+      tailTraceReadout N bin q.1 offset B
+        (literalMarkedTrace N (Fintype.card Copy) v q.1 q.2)))
   exact measurable_const.sumElim hm
 
 theorem same_clock_finite_joint_cut_refinement (N : RootedBinary V E X)
@@ -140,9 +144,14 @@ theorem interval_cut_fibre_joint_source_law (N : RootedBinary V E X)
         simpa only [Measure.map_id] using
           Measure.map_prod_map P (currentPairClockMeasure N r d) measurable_id
             (marked_trace_measurable N (Fintype.card Copy) d (v : ℝ))
-      rw [Measure.map_map hF he, actualMarkedTraceLaw, hprod,
-        Measure.map_map hg
-          (measurable_id.prodMap (marked_trace_measurable N (Fintype.card Copy) d (v : ℝ)))]
+      rw [Measure.map_map hF he]
+      change (P.prod (currentPairClockMeasure N r d)).map
+          (F ∘ (fun z => (z.1, encodeResidual N d z.2))) =
+        (P.prod ((currentPairClockMeasure N r d).map
+          (literalMarkedTrace N (Fintype.card Copy) (v : ℝ) d))).map
+            (prefixTailReadout N bin s d offset (t : ℝ) B)
+      rw [hprod, Measure.map_map hg
+        (measurable_id.prodMap (marked_trace_measurable N (Fintype.card Copy) d (v : ℝ)))]
       rfl
 
 theorem interval_segment_joint_toMeasure (N : RootedBinary V E X) {sample : Copy → X}
@@ -175,7 +184,8 @@ theorem interval_joint_cut_bind (N : RootedBinary V E X) {sample : Copy → X}
   rw [interval_segment_joint_toMeasure, NNReal.coe_add,
     interval_cut_fibre_joint_source_law N r s bin hbin offset t v B]
   simp_rw [decoded_raw_endpoint_restrict]
-  exact finite_observed_fibre_kernel (actualMarkedTraceLaw N r (Fintype.card Copy) s (t : ℝ))
+  refine Eq.trans ?_ (finite_observed_fibre_kernel
+    (actualMarkedTraceLaw N r (Fintype.card Copy) s (t : ℝ))
     (fun h => traceEndpoint N (Fintype.card Copy) s h.2)
     (tailTraceReadout N bin s offset B) Prod.fst
     (raw_tail_endpoint_measurable N s) (tail_trace_readout_measurable N bin hbin s offset B)
@@ -184,7 +194,30 @@ theorem interval_joint_cut_bind (N : RootedBinary V E X) {sample : Copy → X}
     (segmentJoint N r bin hbin (.interval t) s offset B)
     (interval_segment_joint_toMeasure N r bin hbin s offset t B).symm g hg
     (fun q => segmentJoint N r bin hbin (.interval v) q.1 (offset + (t : ℝ)) q.2)
-    (fun q => interval_segment_joint_toMeasure N r bin hbin q.1 (offset + (t : ℝ)) v q.2)
+    (fun q => interval_segment_joint_toMeasure N r bin hbin q.1 (offset + (t : ℝ)) v q.2))
+  apply Finset.sum_congr rfl
+  intro d _
+  have hl := prefix_tail_readout_measurable N bin hbin s d offset (t : ℝ) B
+  have hr : Measurable (fun z :
+      (Bool × ClockTrace N sample (Fintype.card Copy)) ×
+        (Bool × ClockTrace N sample (Fintype.card Copy)) =>
+      g (tailTraceReadout N bin s offset B z.1, z.2)) :=
+    hg.comp ((tail_trace_readout_measurable N bin hbin s offset B).prodMap measurable_id)
+  have hD : MeasurableSet
+      {h : Bool × ClockTrace N sample (Fintype.card Copy) |
+        traceEndpoint N (Fintype.card Copy) s h.2 = d} :=
+    measurableSet_eq_fun (raw_tail_endpoint_measurable N s) measurable_const
+  apply Measure.map_congr
+  apply (Measure.ae_prod_iff_ae_ae (measurableSet_eq_fun hl hr)).mpr
+  filter_upwards [ae_restrict_mem hD] with past hp
+  change traceEndpoint N (Fintype.card Copy) s past.2 = d at hp
+  exact Filter.Eventually.of_forall (fun z => by
+    change tailTraceReadout N bin d (offset + (t : ℝ))
+        (foldTags N bin (Fintype.card Copy) s offset B past.2) z =
+      tailTraceReadout N bin (traceEndpoint N (Fintype.card Copy) s past.2)
+        (offset + (t : ℝ))
+        (foldTags N bin (Fintype.card Copy) s offset B past.2) z
+    rw [hp])
 
 theorem calendar_joint_interval_refinement (N : RootedBinary V E X) {sample : Copy → X}
     (r : PositivePairRates E) (bin : ℝ → Tag) (hbin : Measurable bin)
@@ -206,15 +239,15 @@ theorem calendar_joint_interval_refinement (N : RootedBinary V E X) {sample : Co
 All its boundary operations and old tag correlation remain in the same bind. -/
 theorem calendar_joint_refinement_in_context (N : RootedBinary V E X)
     {sample : Copy → X} (r : PositivePairRates E) (bin : ℝ → Tag)
-    (hbin : Measurable bin) (prefix ops : List (ProgramStep N))
+    (hbin : Measurable bin) («prefix» ops : List (ProgramStep N))
     (s : Code N sample) (offset : ℝ) (t v : ℝ≥0) (B : Copy → Copy → Tag) :
-    calendarJoint N r bin hbin (prefix ++ .interval (t + v) :: ops) s offset B =
-      calendarJoint N r bin hbin (prefix ++ .interval t :: .interval v :: ops) s offset B := by
+    calendarJoint N r bin hbin («prefix» ++ .interval (t + v) :: ops) s offset B =
+      calendarJoint N r bin hbin («prefix» ++ .interval t :: .interval v :: ops) s offset B := by
   rw [calendar_joint_append, calendar_joint_append]
-  apply congrArg (PMF.bind (calendarJoint N r bin hbin prefix s offset B))
+  apply congrArg (PMF.bind (calendarJoint N r bin hbin «prefix» s offset B))
   funext q
   exact calendar_joint_interval_refinement N r bin hbin ops q.1
-    (offset + (programDuration N prefix : ℝ)) t v q.2
+    (offset + (programDuration N «prefix» : ℝ)) t v q.2
 
 #print axioms cut_interval_readout_measurable
 #print axioms same_clock_finite_joint_cut_refinement

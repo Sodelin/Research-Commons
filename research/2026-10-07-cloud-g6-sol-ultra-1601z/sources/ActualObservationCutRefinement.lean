@@ -32,9 +32,9 @@ boundary, inserts a register draw, or changes an interval's total duration. -/
 inductive CutRefines (N : RootedBinary V E X) :
     List (ProgramStep N) → List (ProgramStep N) → Prop
   | refl (ops : List (ProgramStep N)) : CutRefines N ops ops
-  | split (prefix suffix : List (ProgramStep N)) (t v : ℝ≥0) :
-      CutRefines N (prefix ++ .interval (t + v) :: suffix)
-        (prefix ++ .interval t :: .interval v :: suffix)
+  | split («prefix» suffix : List (ProgramStep N)) (t v : ℝ≥0) :
+      CutRefines N («prefix» ++ .interval (t + v) :: suffix)
+        («prefix» ++ .interval t :: .interval v :: suffix)
   | trans {a b c : List (ProgramStep N)} :
       CutRefines N a b → CutRefines N b c → CutRefines N a c
 
@@ -48,8 +48,8 @@ theorem cut_refines_actual_calendar_joint (N : RootedBinary V E X)
       calendarJoint N r bin hbin refined s offset B := by
   induction href with
   | refl ops => rfl
-  | split prefix suffix t v =>
-      exact calendar_joint_refinement_in_context N r bin hbin prefix suffix
+  | split «prefix» suffix t v =>
+      exact calendar_joint_refinement_in_context N r bin hbin «prefix» suffix
         s offset t v B
   | trans h₁ h₂ ih₁ ih₂ => exact ih₁.trans ih₂
 
