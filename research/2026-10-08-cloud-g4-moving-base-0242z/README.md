@@ -1,0 +1,13 @@
+# G4 moving-base source membership: exact scaling and a fifth-root barrier
+
+Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007. 8 October 2026, 02:42 UTC. **Two SOURCE-ONLY HAND CANDIDATES, UNCOMPILED, independent review pending.** No scientific controls, parameter scans, APIs or compiler jobs ran. Source hashes, links and publication bytes are metadata checks.
+
+The original G4 question remains OPEN: one fixed positive target, the original full legal experiment menu, arbitrary unknown finite positive rival size, and either effective detectable finite stopping or actual inequivalent exact rivals after every finite prefix. This packet studies one actual-source route to the latter alternative: realization of BOTH padded conjugator factors at each cap under the SAME fixed q,r budget. Algebraic positivity does not establish their actual-word membership.
+
+The [previous proof](../2026-10-08-cloud-g4-membership-0201z/FIXED-CAP-FOUR-LIFT-FIFTH-OBSTRUCTION.md), now [independently accepted](../2026-10-08-cloud-g4-membership-0201z/PRIMARY-REVIEW-RECEIPT.md), ruled out a fixed positive cap-four inverse base. This packet addresses its moving-base escape in the same source family.
+
+- [Moving-base fifth-diagonal obstruction](MOVING-BASE-FIFTH-DIAGONAL-OBSTRUCTION.md): exact third/fourth ordinary diagonals force bounded physical arm coefficients and then a positive fifth defect t^5/16+O(t^6), uniformly over all connector/pad/shear choices. It excludes every shrinking-base rate in the half-coin three-cell family A=(1,2,1), and paths whose mean ratios tend to those values. No analytic parameter path or fixed positive inverse neighborhood is assumed.
+- [Rescaled cap-four shear compatibility](RESCALED-CAP-FOUR-SHEAR-COMPATIBILITY.md): a joint analytic source IFT does realize both order-t^5 shear coordinates through cap four. The exact limiting equation is P(L)-3c/2+15h/2=0. Genuine positive padding retains the same fixed pair survival. Better scaling cannot cancel the companion fifth defect.
+- [Declaration and handoff](DECLARATION-HANDOFF.md) gives original source premises and the next genuine dependency. [Review request](REVIEW-REQUEST.md) binds the separate frozen candidates; [source identities](SOURCE-IDENTITIES.json) pin the reused evidence.
+
+Other limiting mean ratios, more cells, other inheritance coins or architectures, and direct higher-cap source membership by another route remain open. This is neither a global nonmembership theorem nor an all-cap ordinary-return construction. Actual source laws use current-root independent routing and shared physical parameters; no extra hidden or calendar observations are added. The fifth diagonal has an original legal twelve-copy crossed-cherry readout.
