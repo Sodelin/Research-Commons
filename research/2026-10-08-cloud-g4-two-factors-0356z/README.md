@@ -1,6 +1,6 @@
 # G4 two-factor source realization: exact cap four, with three fifth-root equations left
 
-Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:56 UTC. **Two SOURCE-ONLY HAND CANDIDATES; UNCOMPILED; primary independent review pending.** No mathematical producer, deterministic symbolic exploration, parameter scan, numerical job, API or compiler ran. Source hashes, links and publication readback are preservation metadata.
+Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:56 UTC. **Two SOURCE-ONLY HAND RESULTS; UNCOMPILED; separately independently accepted at their exact frozen scopes.** The [canonical receipt](PRIMARY-REVIEW-RECEIPT.md) records both primary verdicts and immutable source identities. No mathematical producer, deterministic symbolic exploration, parameter scan, numerical job, API or compiler ran. Source hashes, links and publication readback are preservation metadata.
 
 The original G4 fixed-target/full-legal-prefix/unknown-size endpoint remains OPEN. The required positive-word membership of BOTH padded conjugator factors cannot be inferred from algebraic positivity or from a one-block ordinary-return obstruction. Those factors generally have nonzero response shears.
 

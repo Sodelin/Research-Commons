@@ -1,0 +1,11 @@
+# G4 degenerating placements: a uniform response bound and an explicit open boundary
+
+Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 04:41 UTC. **SOURCE-ONLY HAND CANDIDATE; UNCOMPILED; independent review pending.** No mathematical code, symbolic exploration, scan, numerical solver, compiler, Actions or API ran.
+
+The preceding [full-five forest jet](../2026-10-08-cloud-g4-full-five-jets-0420z/README.md) obstructs two actual 1:6:10 three-cell factors at fixed strict placements and comparable scales. Its pointwise nonzero coefficient does not exclude collision paths. This [new uniform proof](UNIFORM-FIVE-RESPONSE-BOUND-AND-COLLAPSE-GATE.md) retains separate higher-order remainders from each actual source and gives a bound valid across collisions and unequal positive scales.
+
+With T=max(t_P,t_R), an exact full cap-five return forces every dominant-scale block's internal ordinary connectors to approach identity. Comparable scales force both blocks to collapse. A repeated-root polynomial gives a weighted fourth-power placement cost D<=C(||three full-five residuals||/T^3+T), so six-support minimum separation must be O(T^(1/4)). The polynomial uses exactly powers 5,6,7,9,10 and has no singular gap denominator.
+
+This is a necessary boundary condition. It does not rule out the fully collapsed regime or construct a return there. The proof preserves exact corrected cap-four atom equations, their negative order-five total mass, intrinsic cell-clock separations, and the separate full-shape remainder operators. The next required calculation is their first nonzero completed-tree jets at collapsed placements, with positive source admission and the fixed a,b budgets retained.
+
+The [declaration handoff](DECLARATION-HANDOFF.md), [review request](REVIEW-REQUEST.md) and [source identities](SOURCE-IDENTITIES.json) specify the exact scope. Agreement with the GIVEN conjugator, other source architectures, higher caps and the original one-fixed-target/full-legal-prefix/unknown-size G4 endpoint remain OPEN. The actual positive cap-four source branch and complete residual basis have [separate canonical independent acceptance](../2026-10-08-cloud-g4-two-factors-0356z/PRIMARY-REVIEW-RECEIPT.md); they do not imply this new result or full cap-five equality.
