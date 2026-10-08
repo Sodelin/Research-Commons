@@ -1,0 +1,77 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:54:26: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:66:46: error: failed to prove positivity/nonnegativity/nonzeroness
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:66:46: error: failed to prove positivity/nonnegativity/nonzeroness
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:110:67: error: unsolved goals
+q : ℚ
+a : ℝ≥0
+ha : ↑a = ↑q
+K k : ℕ
+⊢ ↑(if k ≤ K then rationalTerm q k / (rationalPrefix q K + 2 * rationalTerm q (K + 1)) else 0) +
+      ↑(if k = 0 then rationalError q K else 0) =
+    (if k ≤ K then taylorTerm (↑q) k / (taylorPrefix (↑q) K + 2 * taylorTerm (↑q) (K + 1)) else 0) +
+      if k = 0 then errorBound (↑q) K else 0
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:112:52: warning: This simp argument is unused:
+  rationalTerm_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rationalResidualCount, rationalDenominator, rationalPrefix_real, rationalError_real, ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:113:4: warning: This simp argument is unused:
+  rationalPrefix_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rationalResidualCount, rationalDenominator, rationalTerm_real, rationalError_real, ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/RationalResidualCertificate.lean:113:25: warning: This simp argument is unused:
+  rationalError_real
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rationalResidualCount, rationalDenominator, rationalTerm_real, rationalPrefix_real, ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'UnifiedLean.G6.RationalResidualCertificate.rationalDenominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalDenominator_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_nonneg' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalDenominator_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalRetained_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.rationalResidualCount_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.cutoff_residual_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalResidualCertificate.actual_source_residual_tv_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
