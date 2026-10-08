@@ -192,3 +192,5 @@ Actual natural-family attempt [37718922897](NATURAL-FAMILY-PARTIAL-VERIFIED-REVI
 [Actual parallel-arm switching](PARALLEL-ARM-SWITCHING-SOURCE-REVIEW.md) is source/API accepted after a full independent 24-body review and complementary check. It derives original selected-edge occurrence transport and both fixed endpoints; compilation, suppression/replacement and cross-network Q/S remain separate.
 
 [Rational residual count coefficients](RATIONAL-RESIDUAL-CERTIFICATE-SOURCE-REVIEW.md) are source/API accepted: three rational definitions, eleven bodies and the exact-mean inherited cutoff/source TV consumer. Compilation, executable semantics and source table enumeration remain separate.
+
+[Original G1 splice constructor reuse](ORIGINAL-G1-SPLICE-REUSE-SOURCE-REVIEW.md) is source/API accepted under the same generic original RootedBinary, explicit child-cut and actual nonroot two-port premises. Seventeen historical source rows and four exact-current model identities match; the new thin adapter remains uncompiled. Physical spine and G6 nontrivial-split consumers remain separate.
