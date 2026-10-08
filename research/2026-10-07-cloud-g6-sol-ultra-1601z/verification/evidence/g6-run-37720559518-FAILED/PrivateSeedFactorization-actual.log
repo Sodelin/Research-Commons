@@ -1,0 +1,46 @@
+/home/runner/work/_temp/g6-cloud-build/PrivateSeedFactorization.lean:84:0: warning: automatically included section variable(s) unused in theorem `CloudG6.PrivateSeedFactorization.actual_original_coin_split`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/runner/work/_temp/g6-cloud-build/PrivateSeedFactorization.lean:108:2: error: unsolved goals
+case pos
+V : Type u
+E : Type v
+X : Type x
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+P : Finset V
+coin : Hybrid N → Bool
+v : V
+hv : v ∈ P
+⊢ false = if h : v ∈ P then false else if h : N.graph.IsHybrid v then coin ⟨v, ⋯⟩ else false
+'CloudG6.PrivateSeedFactorization.actual_original_coin_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG6.PrivateSeedFactorization.erase_initialCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG6.PrivateSeedFactorization.erased_originalRegister_outside' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG6.PrivateSeedFactorization.erase_natural_initialCode' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG6.PrivateSeedFactorization.natural_initial_toMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG6.PrivateSeedFactorization.outside_initial_toMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CloudG6.PrivateSeedFactorization.actual_private_seed_erased_initial_product' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG6.PrivateSeedFactorization.actual_natural_initial_erased_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CloudG6.PrivateSeedFactorization.actual_no_read_natural_program_erased_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

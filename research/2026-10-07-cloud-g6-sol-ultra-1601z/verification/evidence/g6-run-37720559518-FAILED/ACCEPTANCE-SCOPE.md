@@ -1,0 +1,9 @@
+# Actual successful scope and exclusions
+
+Run 37720559518 at frozen 28921f4ff46126897828244e8cad86b13ff603b9 failed overall. The accepted-by-compiler selection contains 171 custom modules, 403 standard-only named reports (271 G6, 117 G3, 15 G5) and 4,055 complete owned declarations, including 2,643 theorems. All 4,027 previously accepted rows remain byte-identical. Independent authentication is a separate publication.
+
+The two repaired modules and their direct program/history consumers passed: PrivateRegisterSourceStep has 6 owned rows; PrivateRegisterBoundary 9; PrivateRegisterProgram 8; PrivateRegisterHistory 5. These 28 new rows comprise 21 theorems and 7 definitions. They prove register-only erasure transport through the SAME actual source holding/merger choices, no-private-read boundary operations, program kernels and complete finite endpoint vector. Supplied no-read premises, same original Code, source bank and correlated initial label remain explicit. No cross-graph or observational-menu conclusion is added.
+
+PrivateSeedFactorization failed at 108:2 with an unresolved membership-dependent register branch. PrivateRegisterCalendar failed at 230:6 because its preceding rewrite had already closed the goal. Both WHOLE modules and every recovery report are excluded from named and complete acceptance, including recovery reports with standard-only axioms. PrivateSeedHistoryFactorization, PrivateRegisterCalendarPrefix and NaturalCalendarPastAdmission are blocked and have no compiler command. Physical natural-past binding is therefore still unaccepted.
+
+The requested 176-module/463-name selection is distinct from this actual 171/403 successful selection. The original failed receipts and immutable author source bytes remain preserved. Complete ownership covers generated declarations, type and body references and transitive axioms; it does not claim a fresh full-corpus build, executable table correspondence or G6 master closure.
