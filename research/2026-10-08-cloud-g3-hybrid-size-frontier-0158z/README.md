@@ -15,3 +15,7 @@ It also identifies the exact finite-hybrid lower frontier by a fixed-cell algebr
 - [Frozen source identities and actual read depth](SOURCE-INPUTS.json).
 
 The current sole Lean job and its input files are untouched. No compiler, QE, source enumeration, optimizer, numerical control, dataset or API task ran here. This is a hand candidate, not machine verification or executed computation of `m` or the frontier.
+
+## Author correction, 02:10 UTC
+
+Primary review found that Section 2, equation (4), of the archived original proof had an incorrect displayed factorization. The [erratum and corrected full derivative](correction-0210z/ERRATUM.md) supply the valid nonnegative factorization while preserving all original bytes. Use that derivative for the new source-size argument. Exact corrected hand review remains pending; the original uncorrected displayed identity is not accepted.
