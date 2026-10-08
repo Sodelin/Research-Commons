@@ -1,0 +1,21 @@
+--- actual-failed/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/PrivateSeedFactorization.lean
++++ separate-candidate/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/PrivateSeedFactorization.lean
+@@ -105,7 +105,7 @@
+       outsideRegister N P (fun h => coin h.val) := by
+   funext v
+   by_cases hv : v ∈ P
+-  · simp only [outsideRegister, if_pos hv]
++  · simp only [outsideRegister, dif_pos hv, if_pos hv]
+   · by_cases hh : N.graph.IsHybrid v <;>
+       simp [outsideRegister, originalRegister, hv, hh]
+ 
+--- actual-failed/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterCalendar.lean
++++ separate-candidate/research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/PrivateRegisterCalendar.lean
+@@ -227,7 +227,6 @@
+   | cons d pre ih =>
+       simp only [List.cons_append, calendarTail, List.cons_append, List.append_assoc]
+       rw [ih d]
+-      simp only [List.append_assoc]
+ 
+ #print axioms originalNodeOperation_noPrivateRead
+ #print axioms boundaryOperations_noPrivateWordRead
