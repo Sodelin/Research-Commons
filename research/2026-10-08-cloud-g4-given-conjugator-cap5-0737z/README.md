@@ -9,3 +9,5 @@ For the ORIGINAL prescribed weak-middle conjugator, both exact padded factors ca
 It supplies an actual complete cap-five sandwich for one fixed q. A fourteen-copy inequivalence witness uses the separately accepted sixth-source proof; this new application and local inverse remain independently pending. The fixed local chart does not extend to cap six. Every-cap prescribed membership, original G4 and stopping remain OPEN.
 
 [Review request](REVIEW-REQUEST.md), [source identities](SOURCE-IDENTITIES.json), [declaration handoff](DECLARATION-HANDOFF.md) and [scope register](ASSUMPTION-REGISTER.md) retain exact gates and status.
+
+An [additive whole-group interior corollary](WHOLE-GROUP-INTERIOR-COROLLARY.md) varies the already-positive leading population within its strict budget margin. Its nine-coordinate minor would place E(d) in the ACTUAL cap-five source image's whole-group interior, conditional on acceptance of the new parent local inverse. This separately pending note does not modify the frozen parent proof or extend it to higher caps.
