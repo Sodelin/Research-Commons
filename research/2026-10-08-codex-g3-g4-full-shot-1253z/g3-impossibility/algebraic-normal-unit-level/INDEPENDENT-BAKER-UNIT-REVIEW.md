@@ -1,0 +1,32 @@
+# Independent review of the supplied algebraic-normal and unit-level route
+
+Reviewer: Codex reviewer lane, 8 October 2026. Requested by root. **SCOPED HAND/SOURCE ACCEPT** of G5's frozen arithmetic proof `1fb16f34f2bbc986da57cd14d43c0df3e093af26ff73a1a97441d3380cea3199`, consumed **with mandatory affine clarification** `c04f69735e23fcd6a797a6aac4113b1c593feec177ff61c02718a0f50fe935c4`, and its unit-level addendum `8f93e0bf80f5afd1b9f67fd16b1000d0b8592e4e0f4d784319390eaa7a4b4889`. These are another contributor's proofs. This decision does not approve the reviewer's separate curve-catalogue candidate.
+
+The accepted scope is a **supplied nonzero real-algebraic normal** and the actual fresh, natural, untied, unexposed COMMON word law. One physical tuple supplies the whole capped forest signature. It is neither full original G3 nor a hardness result. No author program, algebraic solver, symbolic calculation, QE, genealogy engine, compiler or proof assistant was executed during this review. File reads and source-identity metadata are the only machine evidence.
+
+## Exact decisions
+
+1. **Component splitting accepted.** For each connected critical component, every rational basis row of the algebraic normal has a constant log value, hence a constant positive algebraic monomial level. Baker is used on differences at algebraic points; it is not used to split algebraic differential coefficients by rational independence. Algebraic density and continuity extend the identities over the real component.
+2. **Affine correction mandatory.** General values lie in `H(theta0) + intersection ker(v_k)`. Only differences lie in the linear kernel. Values lie in the kernel on the simultaneous unit-level components. The frozen predecessor's unqualified linear-space sentence is incorrect without this addendum.
+3. **Maximal-Q-rank finiteness accepted.** With `c Lambda=0` and rank `d-1`, each connected critical component is a singleton. The difference lies on the ordinary Lambda line. Comparing the two actual two-atom laws after the auxiliary positive scaling uses the four Chebyshev functions `1,x,x^3,x^6`; the combined support has at most four points. Equality fixes the top atom and then both cell parameters. This does not claim general moment determinacy or admission of the scaled auxiliary law as a source.
+4. **Off-unit floor and count accepted.** Each off-unit component has a constant monomial different from one. Pair loss tending to zero would make every actual factor coordinate tend to one, contradicting that level. There are finitely many components. The proposed RCF floor search therefore terminates for the supplied normal; positive algebraic target pair mass supplies the stated occurrence bound. The empty set is handled separately.
+5. **Unit equivalence accepted only on the critical set.** Evaluate the constant critical score at an algebraic component sample, apply Baker to the rational-basis logarithms, and extend along the component. Off criticality, `c H=0` does not imply all the rational monomials equal one.
+6. **Necessary multiplicity census accepted.** The monomial target equations use one shared component-multiplicity vector. They are necessary, not sufficient: the full cell signatures and the residual unit-level word are still coupled to the actual source.
+
+The inherited Baker review, rational-normal component-level/count result and neutral-tail analysis were read. Their scopes remain distinct. The older input-only algebraic-residue census was also read: its own body describes a particular paired-critical presentation predicate, lists pending dependencies at writing, and expressly does not decide attainment or produce a coherent kernel for a positive-dimensional observation fibre. It cannot fill the whole-master gap simply by being called a census.
+
+## Whole-proof screening
+
+The corrected proofs do **not** turn a smaller rational log-value space into a lower Kingman cap or a rank-two affine probability image. They do not license fractional occurrences, convex mixing, a separate physical tuple per row, or a fresh bank-wide tie. The unit-level generator set remains a restricted actual semigroup with integer occurrences.
+
+Unknown normals cannot be handled by merely running the supplied-normal algorithm on an enumeration and treating silence as NO. Finite geometric stratification of the polynomial critical incidence does not itself decide the unbounded products, identify every boundary fibre, or provide a terminal exclusion certificate. An algebraic annihilator exists at an algebraic rank-deficient finite witness; this is an existential fact about a given witness, not an input-only list of all alternatives. Boundary-NO closure representations are not thereby proved algebraic.
+
+The accepted attained-boundary family is a consequential control: some rational actual COMMON YES profiles lie in ordinary moment interior while remaining on the boundary of the arbitrary-length source closure. Its whole-neighbourhood extraction and nonlinear guard, rather than the deficient displayed Jacobian alone, establish that fact. Thus regular/degree enumeration misses YES inputs, and critical boundary cannot be assigned NO. Conversely, prior closure-NO points prevent assigning YES to every boundary.
+
+Both inheritance mechanisms, protected original occurrences, shared controls/registers, and the all-core projected joint fibre remain master obligations. No transfer to INDEPENDENT chronology is present in these logarithmic Bernoulli lemmas. A full recognizer would need a total procedure for the residual actual integer-word predicates and their coherent fibre lift; a negative resolution would need a two-sided reduction through the original legal observations excluding every alternative source.
+
+## Exact next obligation
+
+Decide the residual unit-level **actual** word predicate with a uniform treatment of the unknown normal, or prove an input-effective source bound/certificate that removes it. A finite catalogue of neutral critical curves, if independently accepted, would improve the family part of this obligation but would still leave integer-word membership and the whole original fibre. The reviewer's separate full attempt states those gates explicitly.
+
+The frozen G5 files are preserved unchanged. Historical novelty is not assessed. This is independent hand acceptance of their corrected declared scope, with **full original G3/G4 OPEN**.
