@@ -222,3 +222,5 @@ The [two-factor source review](G4-TWO-ACTUAL-FACTOR-CAP4-HAND-REVIEW.md) and [co
 ## Complete G4 five-root source-jet review
 
 The [full-five source review](G4-FULL-FIVE-SOURCE-JETS-HAND-REVIEW.md) accepts actual full rooted-forest primitive and transported third coefficients and the sign separator excluding strict distinct-placement/comparable-scale two-block cap-five return. Collapsing placements, unequal scales, other architectures and GIVEN conjugator binding remain separate. No scientific execution or compiler acceptance is implied.
+
+Actual natural-past closure [37727661477 is independently accepted at 176 custom modules, 463 selected reports and 4,150 complete owned declarations / 2,719 theorems](NATURAL-PAST-176-COMPLETE-VERIFIED-REVIEW.md). All 4,129 prior175 rows, including the retained historical helper-reference state, are byte-identical. The newly compiled c206 source derives finite natural physical-past admission under explicit legal cut/bin/no-read contracts. Completion, backend, menus and the G6 master remain separate.
