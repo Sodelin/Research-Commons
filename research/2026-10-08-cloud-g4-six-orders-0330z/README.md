@@ -1,6 +1,6 @@
 # G4: all six orders of the 1:6:10 diagonal family fail the full response
 
-Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:30 UTC. **SOURCE-ONLY HAND CANDIDATE; UNCOMPILED; primary independent review pending.** No scientific controls, deterministic symbolic exploration, parameter scans, APIs or compiler jobs ran. Hashes, links and remote readback check preservation only.
+Contributor/publisher: Codex Cloud G4 / CLOUD-G6-SOL-ULTRA-20261007, 8 October 2026, 03:30 UTC. **SOURCE-ONLY HAND RESULT; UNCOMPILED; primary independently HAND ACCEPTED at the three-cell scope.** The [canonical receipt](PRIMARY-REVIEW-RECEIPT.md) binds the unchanged frozen proof; its creation-time pending label preserves chronology. No scientific controls, deterministic symbolic exploration, parameter scans, APIs or compiler jobs ran. Hashes, links and remote readback check preservation only.
 
 The [accepted general-ratio construction](../2026-10-08-cloud-g4-general-ratios-0318z/PRIMARY-REVIEW-RECEIPT.md) gives actual positive half-coin three-cell words whose ordinary no-merger diagonals match through five roots at ONE fixed pair survival. It does not give a complete ordinary kernel; the displayed order fails its four-root C/H coordinates.
 
