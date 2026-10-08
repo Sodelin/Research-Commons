@@ -1,0 +1,46 @@
+# G3/G4 checkpoint: exact cap-five library, sixth-root failure, and joint source certificates
+
+Codex root, 8 October 2026. Incremental source/evidence checkpoint. The original master scope and Dot's complementary ownership are preserved. **General G3 and G4 remain open.** No new Lean/compiler/CI invocation, application change or live genome service activation occurred.
+
+## Reviewed G4 result and its actual limit
+
+[The concrete interval source gate](g4-positive/library-centre/ACTUAL-CENTRE-AND-RADIUS.md) now certifies an exact ordinary E(1/4) centre inside a literal strict eight-control cube, and a complete nine-coordinate cap-five source image with scaled radius about 1.8153e-34. The displayed rational seed is approximate; the exact centre is the unique implicit solution in the cube. All current-root routing, complete forest shapes, shared physical ties and strict populations are retained. [Independent root review](ROOT-CAP5-INTERVAL-REVIEW.md) includes a 160-digit replay, exact-rational bounds, and independent full ten-coordinate reconstruction of determinant 2/1875. Outward interval arithmetic is an explicit computational dependency; this is uncompiled.
+
+[The same source cube at six roots](g4-forest/SAME-CAP5-BOX-CAP6-GATE.md) has a strict diagonal difference about -4.081186131413476e-33; every one of twenty complete forest residual enclosures excludes zero. The whole cube contains the implicit cap-five root. Root independently replayed the twenty enclosures and independently evaluated the diagonal with exact Fraction intervals. [The independent reviewer](review/G4-SAME-CAP5-BOX-SIXTH-DEFECT-REVIEW.md) separately verifies that diagonal by another exact source calculation. Repetitions of these cube factors and ordinary pads cannot repair the negative additive sixth-diagonal score. The next useful correction must leave this particular library or introduce an opposite source branch while preserving every lower equation. This is not an all-source obstruction.
+
+[One exact signed shifted factor](g4-positive/library-centre/SHIFTED-FACTOR-MEMBERSHIP.md) passes the evaluated complete source-image gate. It therefore has a genuine positive eight-cell realization through five. Its proof expression contains E(4); its physical replacement has strictly positive populations. It differs from an ordinary target already at three roots and is not a G4 replica. [Root review and replay](ROOT-CAP6-AND-SHIFTED-FACTOR-REVIEW.md) verify both this finite library use and the sixth-root failure.
+
+## Reviewed G3 results
+
+[The arbitrary finite-rank source theorem](g3-coupled/UNIFORM-HIGH-RANK-DEGREE.md) covers one declared original COMMON graph/program/menu family and an explicit joint open input box for every finite q. Its actual source is singular in that chart, but the product odd-degree argument yields positive joint witnesses, including an explicit same-word approximation consumer. [Independent review](review/G3-UNIFORM-HIGH-RANK-DEGREE-REVIEW.md) supplies the approval because root materially contributed the arbitrary-q formula. It does not classify arbitrary higher-rank fibres or rigid/read-only banks.
+
+[The same menu's strict face guard](g3-coupled/ALL-CORE-COMMON-CLOSURE-FACE.md) excludes the all-half rational input across all natural COMMON cores, while an admitted coupled sequence approaches it. [Independent review](review/G3-ALL-CORE-COMMON-FACE-REVIEW.md) checks the arbitrary-core conditional path argument. The exclusion is model-specific and does not extend to INDEPENDENT routing.
+
+[The compressed three-channel exposing slice](g3-singular/CHECKPOINT-REVIEWED-EXPOSED-SLICE.md) gives a complete algebraic-input classifier on its original calibrated COMMON five-row slice, a literal rational all-core NO, and sharp zero/one/two-hybrid witnesses. The rational executable emits original graphs and parameter certificates, including quadratic root isolations. The prior geometric atomic obstruction is reused and credited; the new implication is the compressed channel/all-core interface. Corrected captured-buffer runs pass 55 arithmetic assertions and 14 recognizer cases/67 assertions. [The theorem](review/G3-EXPOSED-RANK-THREE-SLICE-REVIEW.md) and [corrected execution review](review/G3-EXPOSED-V2-EXECUTION-REVIEW.md) are accepted independently. Earlier loader receipts retain their explicit execution-identity limitation; they are not silently upgraded.
+
+## Corrected source energy and unresolved full fibre
+
+[The exact chronological energy](g4-stopping/two-insertion/EXACT-CHRONOLOGICAL-ENERGY-DEFECT.md) is accepted only with [its mandatory correction](g4-stopping/two-insertion/JET-DEFECT-IDENTITY-AND-CORRECTION.md). Under coincident leading placements, beta-kappa enters at grade eight, while the square and beta-zeta can enter at seven. Exact arbitrary-word identities and the actual selected T/U cancellation are unchanged. [Independent root review](ROOT-TWO-INSERTION-REVIEW.md) verifies the source pins, byte-identical 540-check replay and 19 independent symbolic source-series identities.
+
+The selected source example fails an inherited cap-four diagonal guard. Full lower-cap-eight equality and ordinary diagonal nine also do not currently have a recovered source identity forcing top-row X9=Y9=0; those remain additional premises of the negative-square specialization. [The full-fibre ledger](g4-stopping/two-insertion/FULL-FIBRE-CHECKPOINT.md) preserves this gap. [The all-copy ordinary classification](g4-stopping/two-insertion/ADDENDUM-ALLCOPY-ORDINARY-CLASSIFICATION.md) is prior work, not a new finite unknown-size forcing theorem. The additive selected-lower both-sign source proof is preserved as **a separately unreviewed candidate**; this checkpoint makes no acceptance claim for it.
+
+## Failed routes and exact next obligations
+
+| Master obligation | Closest usable evidence | Remaining implication / current owner |
+|---|---|---|
+| G4 actual full source centring at successive caps | Certified full cap-five centre and tiny finite library | Complete lower-preserving opposite sixth-diagonal branch or a different actual bank; practical lane completed a declared three-point numerical outside-cube continuation without finding an opposite branch; no new centre certificate is claimed |
+| G4 positive realization of complete signed factors | One evaluated shifted-factor gate; accepted joint-window identity | Compatible full libraries, signed clocks/length and one fixed positive target budget; Dot retains the broad all-cap route |
+| G4 constrained chronological sign/equality | Corrected exact two-defect identity | Full forest constraints plus explicit top-row premises, not selected bands alone; source-energy lane retains the ledger |
+| G3 general one-witness bound / terminating NO | Accepted source-specific singular YES boxes and calibrated exact NO slice | Effective source-faithful handling of unrestricted higher-rank/boundary fibres and fixed banks; correspondence investigates recovered product/critical-census limitations |
+| G3 robust all-core exclusion near the exposed slice | Accepted exact calibrated NO and prior closure providers | Weak-limit/product classification with original calibration modulus; G5 lane prepares an extension, not yet accepted here |
+| Integration correctness | Frozen independent reviews, exact source pins and replays | Reviewer owns new claims independently; no compiler scheduling takeover |
+
+Numerical centring attempts, including freed means, placements and inheritance coins, still have nonzero residuals. Their bounded failures are saved and [independently scoped as numerical evidence](review/G4-NUMERICAL-CENTERING-ADDENDUM-REVIEW.md). High decimal precision alone never certifies equality. Exact fractions and outward interval enclosures perform distinct checks.
+
+## Dot coordination, ownership and reproducibility
+
+Recovered Dot's common-parabolic R2 and its fixed-coin/short-arm diagonal strengthening at commits 01f2feaf and 8f7091b4, plus inbox 10:54. These retain their separate reviewed assumptions: the common linear palette is not actual noncommutative centring; the short-arm diagonal theorem is not full forest equality; signed saturation still permits negative ordinary time. Dot owns the new ordinary-weight-split residual module across a fixed positive window. Codex retains actual source-library replacement and concrete constrained cancellation. A diagnostic of transporting the **old** parabolic rescaling is being prepared separately; no new split module is taken over.
+
+The older Cloud conversation retains its original sources and sole Lean/compiler scheduling. These lanes prepare isolated source/evidence only. No worker is described as continuously thinking while idle. Published artifacts carry exact paths, hashes, stated proof status and original source attribution in the accompanying manifest. New mathematics here has no new Lean declaration coverage; implementation and bounded checks are linked above. Previous accepted modules/application packets and the canonical scope record remain preserved.
+
+The prior 10:38 publication passed immutable remote readback for all 105 selected files, 1,554,487 bytes; [its saved receipt](ROOT-PUBLICATION-1038Z-READBACK.json) is included. This checkpoint is published with ordinary non-force updates and a separate remote fidelity check.

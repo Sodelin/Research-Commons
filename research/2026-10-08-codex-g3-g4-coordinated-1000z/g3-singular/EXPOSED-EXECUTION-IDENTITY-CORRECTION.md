@@ -1,0 +1,13 @@
+# Additive correction: bind the executed source to one captured buffer
+
+Contributor: Codex G3 singular lane, 8 October 2026. This supersedes the source-execution identity claim of the initial exposed arithmetic and in-process recognizer-validation receipts; their source and results are preserved unchanged. The frozen mathematical proof and recognizer are unchanged.
+
+Independent reviewer identified that the initial scripts used SourceFileLoader and later reopened the provider path to hash it. The `-B` flag prevents bytecode writes but does not establish that the loader executed the bytes subsequently hashed; stale bytecode and a read/reopen race remain possible. The serialized arithmetic can still be independently checked, but those v1 receipts alone do not establish execution of the pinned source.
+
+The additive [arithmetic v2](derive_rank_three_exposed_v2.py) and [validation v2](validate_exposed_rational_v2.py) instead read a bounded source buffer once, require its fixed expected SHA256, and execute only that decoded buffer through ModuleType and `compile(..., dont_inherit=True)`. The monophyly/exposing JSON data are similarly captured once, size-bounded and fixed-hash checked before interpretation. No provider SourceFileLoader or provider read/reopen hash is used.
+
+The [new arithmetic receipt](RANK-THREE-EXPOSED-ARITHMETIC-v2.json) passes 55/55 checks; the [new recognizer receipt](RANK-THREE-EXPOSED-RECOGNIZER-VALIDATION-v2.json) passes all 14 cases and 67/67 assertions. Only these minimal arithmetic/recognizer reruns were performed. No coalescent forward simulation, native solver/QE, Lean/compiler or CI was run. Executing Python's captured-source interpreter input is the corrected loader, not a Lean proof build.
+
+The [exact derivative comparison](EXPOSED-EXECUTION-IDENTITY-CORRECTION.json) authenticates all old/new hashes. Apart from explicit execution/version metadata, every serialized arithmetic value, check and profile is identical; all 14 new recognizer outputs are byte-identical to the earlier ones. This identity does not retroactively authenticate the initial execution. The three earlier direct CLI calls retain their separate, narrower dated evidence and were not repeated.
+
+Use v2 for the stronger execution claim. The original channel-definition JSON remains the recognizer's frozen data identity; its exact mathematical values are independently recovered by the fixed-buffer v2 derivation. Existing documentation and the frozen proof reference the v1 filenames as historical objects; this note supplies the correction pointer without silently editing those artifacts. Review acceptance, mathematical correspondence and general G3/G4 openness remain separate from these execution receipts.

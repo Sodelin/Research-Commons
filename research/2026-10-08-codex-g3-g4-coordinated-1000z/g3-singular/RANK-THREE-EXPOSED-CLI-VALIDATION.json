@@ -1,0 +1,47 @@
+{
+  "schema": "g3-exposed-rational-recognizer-cli-v1",
+  "recorded_utc": "2026-10-08T10:53:01.982788+00:00",
+  "program_path": "research/2026-10-08-codex-g3-g4-coordinated-1000z/g3-singular/recognize_exposed_rational.py",
+  "program_sha256": "65dcb9e351ba27dda9173c1710d1252fc7932ffaf8bcf43edc5548e72b5f5624",
+  "runtime": "supplied /workspace/scratch/integration-lean/product-venv/bin/python -B",
+  "command_pattern": "python -B recognize_exposed_rational.py CASE.input.json --output CASE.cli-output.json",
+  "cases": [
+    {
+      "case": "literal_rational_all_core_NO",
+      "input_file": "literal_rational_all_core_NO.input.json",
+      "input_sha256": "0598578c2444abafc924980e080ea7d0deece4d38dec938355025e9f54e4d1be",
+      "output_file": "literal_rational_all_core_NO.cli-output.json",
+      "output_sha256": "320fec986c09eb279d9006330235b7ade213ebce689a996f49af6a9c109a0b7b",
+      "observed_exec_exit_code": 0,
+      "observed_stdout_stderr": "empty",
+      "status": "NO",
+      "identical_to_in_process_output": true
+    },
+    {
+      "case": "two_hybrid_irrational_weights_YES",
+      "input_file": "two_hybrid_irrational_weights_YES.input.json",
+      "input_sha256": "3f3dfd79389b72b22da2536bae512f4d4213881b4e8e84d23d258fae3fbd87f5",
+      "output_file": "two_hybrid_irrational_weights_YES.cli-output.json",
+      "output_sha256": "7b3119644a7c31ea61069838719411e5499d184e71ff5a74e87de6e55898c248",
+      "observed_exec_exit_code": 0,
+      "observed_stdout_stderr": "empty",
+      "status": "YES",
+      "identical_to_in_process_output": true
+    },
+    {
+      "case": "richer_input_not_dropped",
+      "input_file": "richer_input_not_dropped.input.json",
+      "input_sha256": "302fd08e01d0776479a501cf82530ce09f4cf07110fd74d180be8f96fc9f51ae",
+      "output_file": "richer_input_not_dropped.cli-output.json",
+      "output_sha256": "c67be6c3d97789d53713954ae7f9ca736518c40c653379a48862bedcdcb314bb",
+      "observed_exec_exit_code": 0,
+      "observed_stdout_stderr": "empty",
+      "status": "UNKNOWN",
+      "identical_to_in_process_output": true
+    }
+  ],
+  "status": "PASS",
+  "assertions_passed": 6,
+  "assertions_total": 6,
+  "limits": "Three actual CLI calls, statuses and byte-identical mathematical certificates checked; no source simulation/QE/compiler."
+}

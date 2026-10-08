@@ -1,0 +1,45 @@
+{
+  "contributor": "Codex G4-positive",
+  "observed_utc": "2026-10-08T10:58:27.124311+00:00",
+  "cwd": "/workspace/Research-Commons",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "boundary": "Local finitecap Python source evaluation only; no compiler/Lean/CI/API or original mutations",
+  "final_interval_run": {
+    "command": "python research/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/certify_cap5_box.py --input research/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/RATIONAL-BOX-INPUT.json --output scratch/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/interval-box-final.json",
+    "exit_code": 0,
+    "tool_chunk_id": "0c2589",
+    "output_file": "research/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/INTERVAL-BOX-CERTIFICATE.json",
+    "output_sha256": "30c045b785dc0e2e8fe5b7ef3dd794c128638d39dd8766d8b613b326991cbe28",
+    "own_source_sha256": "861766646095eb5346529216e679a5851d5dd84e2f5c0a8d969d1dc748b26497",
+    "input_sha256": "bb6bcc498125a86b797748f8f936b60051ac327f07d761fab2caeab531d70a8e",
+    "recorded_runtime_seconds": 1.0175274490011361,
+    "status": "EXECUTED_OUTWARD_INTERVAL_CONTRACTION_GATE_PASS"
+  },
+  "rational_audit_run": {
+    "command": "python research/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/check_cap5_box_certificate.py --input research/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/RATIONAL-BOX-INPUT.json --certificate research/2026-10-08-codex-g3-g4-coordinated-1000z/g4-positive/library-centre/INTERVAL-BOX-CERTIFICATE.json",
+    "exit_code": 0,
+    "tool_chunk_id": "3ff998",
+    "own_source_sha256": "9fde9a75f7a0d948f56de7e107f7460e68c897e3de7048518826289180f08626",
+    "status": "EXACT_RATIONAL_BOUND_AND_DOMAIN_AUDIT_PASS"
+  },
+  "earlier_failure_evidence": [
+    "INTERVAL-AD-FIRST-FAILURE.json",
+    "certify_cap5_box_v1.py",
+    "INTERVAL-AD-SECOND-FAILURE.json",
+    "certify_cap5_box_v2.py"
+  ],
+  "successful_predecessor": [
+    "certify_cap5_box_v3.py",
+    "INTERVAL-BOX-CERTIFICATE-V3.json"
+  ],
+  "approximate_seed": [
+    "extract_cap5_centre.py",
+    "APPROXIMATE-CENTRE-100DIGITS.json"
+  ],
+  "limitations": [
+    "mp100 residual is only approximate seed",
+    "Outward interval AD source/Jacobian needs independent review",
+    "Exact rational audit checks saved bound arithmetic/domain not an independently derived Jacobian",
+    "Allcap and fixedbudget master open"
+  ]
+}
