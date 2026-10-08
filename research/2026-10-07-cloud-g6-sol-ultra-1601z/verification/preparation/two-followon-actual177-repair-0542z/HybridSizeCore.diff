@@ -1,0 +1,11 @@
+--- research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/HybridSizeCore.lean@73f7fda
++++ research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/two-followon-actual177-repair-0542z/sources/HybridSizeCore.lean
+@@ -10,7 +10,7 @@
+ 
+ namespace CloudG3.HybridSizeCore
+ 
+-def cellT (p q u v : ℝ) : ℝ :=
++noncomputable def cellT (p q u v : ℝ) : ℝ :=
+   (2 / 3 : ℝ) * (q * u ^ 3 + p * v ^ 3 - 3 * p * q * (u - v) ^ 2)
+ 
+ theorem drop_v_identity (p q u v : ℝ) :

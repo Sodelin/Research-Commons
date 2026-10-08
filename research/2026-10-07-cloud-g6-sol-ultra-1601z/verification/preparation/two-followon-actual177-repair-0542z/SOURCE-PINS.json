@@ -1,0 +1,48 @@
+{
+  "status": "UNCHECKED attributed two-source derivatives, no compiler run",
+  "actual_input": "73f7fda44fa43f293a9ab46774560f2b029f9758",
+  "actual_receipt_commit": "0066fe52e73e5c1a1a07fab1a1e1e6688d9eaf73",
+  "originals_preserved": true,
+  "changes": {
+    "HybridSizeCore": {
+      "formal_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/HybridSizeCore.lean",
+      "old_sha256": "879306ccff19ee9eae137679d4c404fd914db5a3f1df30eb012b5123dd4a41c3",
+      "candidate_sha256": "57a02d071f2338e22af6bb0bfa80b13d87d8666f72c8f8c45c57fae413dbd760",
+      "candidate_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/two-followon-actual177-repair-0542z/sources/HybridSizeCore.lean",
+      "candidate_bytes": 6351,
+      "diff_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/two-followon-actual177-repair-0542z/HybridSizeCore.diff",
+      "diff_sha256": "5ec4083b864c1fd31fbdee393bd8d2fee7417c1c35e20e7c70124d28d5fe678c",
+      "imports": [
+        "Mathlib.Tactic"
+      ],
+      "notes": [
+        "Only cellT receives the noncomputable modifier required by actual Real division; expression and logical type fixed."
+      ]
+    },
+    "UnifiedLean.G6.RationalResidualCertificate": {
+      "formal_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/RationalResidualCertificate.lean",
+      "old_sha256": "49eba2288f7e32b415b8409c2ddeb8a39f192374d31cad40132a5ae6771a7386",
+      "candidate_sha256": "35e3b2ef67a82c6c637b0d814fa2b217302765bb3904db3b1cca8fdb0bceb820",
+      "candidate_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/two-followon-actual177-repair-0542z/sources/UnifiedLean/G6/RationalResidualCertificate.lean",
+      "candidate_bytes": 7157,
+      "diff_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/preparation/two-followon-actual177-repair-0542z/RationalResidualCertificate.diff",
+      "diff_sha256": "7128142b2a0afefdfd9b1baaaba223b2188b5fe8ef621bd059298ff7eed5e310",
+      "imports": [
+        "UnifiedLean.G6.RationalCertificate",
+        "UnifiedLean.G6.ResidualPrefix",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise"
+      ],
+      "notes": [
+        "Nonnegativity applies inherited rationalTerm_nonneg, denominator positivity and exact conditional cases.",
+        "Cast correspondence splits only k≤K and k=0 and uses the unchanged proved denominator/cast lemmas.",
+        "The rationalResidualCount_sum proof, including its trailing rfl, is byte-identical."
+      ]
+    }
+  },
+  "static_plan_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/verification/freeze-plans/two-followon-actual177-repair-static.json",
+  "static_plan_sha256": "c8c55ecc312deb0b4c3577d85225b31ab87acced40c3f8b77cf503ecbde79395",
+  "all177_successful_hashes_fixed": true,
+  "other177_requested_module_hashes_fixed": true,
+  "header_checks": "All Rational declaration headers unchanged; Hybrid cellT logical type/expression unchanged with noncomputable code-generation modifier only.",
+  "compiler_invocations": 0
+}
