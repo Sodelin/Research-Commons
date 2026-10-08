@@ -140,8 +140,6 @@ theorem actual_calendar_joint_endpoint_history (N : RootedBinary V E X)
             (endpointHistoryReadout N word d (endpointStepTags N q.1 q.2 s d B)) := by
         rw [PMF.map_comp]
         congr 1
-        funext z
-        simp only [Function.comp_def, endpointHistoryReadout, Fin.cons_zero, Fin.tail_cons]
       calc
         _ = (sourceProgramStep N r q.1 s).bind (fun d =>
             calendarJoint N r bin hbin (physicalOps N word) d (segmentOffset N q.1 offset)
