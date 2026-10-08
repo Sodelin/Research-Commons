@@ -451,15 +451,18 @@ theorem actual_complete_calendar_cut_refinement (N : RootedBinary V E X)
     (completed_joint_toMeasure N r bin hbin
       (ops ++ [(.interval t : ProgramStep N)]) s offset B)
   apply congrArg PMF.toMeasure
-  rw [completed_joint_bind_calendar N r bin hbin ops s offset B,
-    completed_joint_bind_calendar N r bin hbin (ops ++ [.interval t]) s offset B,
-    calendar_joint_append N r bin hbin ops [.interval t] s offset B, PMF.bind_bind]
+  refine (completed_joint_bind_calendar N r bin hbin ops s offset B).trans ?_
+  refine Eq.trans ?_
+    (completed_joint_bind_calendar N r bin hbin
+      (ops ++ [(.interval t : ProgramStep N)]) s offset B).symm
+  rw [calendar_joint_append N r bin hbin ops [(.interval t : ProgramStep N)]
+    s offset B, PMF.bind_bind]
   apply congrArg (PMF.bind (calendarJoint N r bin hbin ops s offset B))
   funext q
-  rw [calendar_joint_single N r bin hbin (.interval t) q.1
+  rw [calendar_joint_single N r bin hbin (.interval t : ProgramStep N) q.1
     (offset + (programDuration N ops : ℝ)) q.2]
   rw [tail_joint_cut_bind N r bin hbin q.1 (offset + (programDuration N ops : ℝ)) t q.2]
-  apply congrArg (PMF.bind (segmentJoint N r bin hbin (.interval t) q.1
+  apply congrArg (PMF.bind (segmentJoint N r bin hbin (.interval t : ProgramStep N) q.1
     (offset + (programDuration N ops : ℝ)) q.2))
   funext e
   simp only [program_duration_append, programDuration, add_zero, NNReal.coe_add, add_assoc]
