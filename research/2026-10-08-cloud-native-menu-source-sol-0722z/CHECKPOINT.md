@@ -1,0 +1,17 @@
+# Checkpoint — actual finite-reader menu connection
+
+Cloud Sol `/root/source_backend_review_sol`, 8 October 2026, 07:22 UTC capture. `MASTER-CLOSURE-STANDARD-20260930` remains accepted; full original G6 IN PROGRESS.
+
+Existing worktree `/workspace/cloud-physical-panel-sol`, own branch `cloud-native-menu-source-sol-0722z`; no additional disk-heavy checkout. Initial useful reader/menu source and hand capture were committed early at local `28a4683`, endpoint/projectivity draft at `194d4db`, and expanded scientific boundaries at `a01f1ab`. Those original local capture objects remain preserved after fresh-main reconciliation. Root's short publication hold was respected; it was lifted after the sole owner's exact181 freeze readbacks. This lane neither observed nor changed that compiler job or any selected input.
+
+[NativeFiniteReaderMenu](proof-drafts/NativeFiniteReaderMenu.lean) gives the full actual native finiteReader support consumer, actual selected pair-bin witness, fixed finite tuple carrier/readout and one shared whole-tree/real-decoration witness. The tuple law is the SAME full native source pushed through deterministic panels. Actual Option reader failures retain their zero mass; no arbitrary finite observation enumeration or target law is supplied.
+
+[NativePanelTopologyProjectivity](proof-drafts/NativePanelTopologyProjectivity.lean) derives actual complete-record unconditional success, raw endpoint source law, initialized/natural completedJoint endpoint marginal, then composes existing exact ALL-panel original topology projectivity. It handles empty panels via the original theorem; smaller source sample/cap normalization uses the original providers, not a fixed dummy-count comparison. Original source/sample/parents/calendar/rates/register prior/mode are retained.
+
+Thirteen theorem bodies, four definitions and one abbreviation are compiler UNCHECKED/outside179/181; independent exact review PENDING. [Source/API pins](SOURCE-PINS.json) distinguish full new interface/proof reads from inherited context; no whole-provider or compiler acceptance is inferred. Static author preflight is not independent verification.
+
+The [hand obligation register](HAND-NATIVE-READER-MENU.md) preserves necessary consistency versus exact source-image characterization, actual projection versus separately initialized topology law, joint menu correlation versus independent panel draws, finite tags versus real ages, and the still missing full chronological decorated joint tree/bin cross-carrier consumer. No stronger law is an input or an asserted consequence of topology equality. The native/Python Boolean complement and literal backend/cap/rate/count gates remain separate.
+
+Actual checks: source/API reads, hashes, git objects and relative links only. Publication must use fresh-main nonforce expected-parent update with immutable/main byte readback; its exact identity is reported separately without a self-referential packet hash. No compiler, Actions poll, scientific numerical/reference/native/solver execution, SDK/API/private-product work, child, shared provider/workflow or frozen179/181 mutation.
+
+Next action: independent root/primary SOURCE/API review of both exact drafts; later compiler remains sole-owner scope. Then attack the explicit actual whole-calendar decorated cross-carrier implication using original initialization, epoch path, tied-boundary and ancestral-path/graft providers. General biological menus, backend law, exact source-image separation/effectiveness/robust statistics and full G6 remain OPEN.
