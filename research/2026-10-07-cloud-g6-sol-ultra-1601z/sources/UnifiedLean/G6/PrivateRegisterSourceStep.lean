@@ -68,7 +68,13 @@ theorem erase_actual_choicePMF (N : RootedBinary V E X)
     {sample : Copy → X} (r : PositivePairRates E) (P : Finset V)
     (s : Code N sample) :
     choicePMF N r (erasePrivateCode N P s) = choicePMF N r s := by
-  rfl
+  apply PMF.ext
+  intro q
+  change ENNReal.ofReal (choiceMass N r (erasePrivateCode N P s) q) =
+    ENNReal.ofReal (choiceMass N r s q)
+  cases q with
+  | none => exact congrArg ENNReal.ofReal (erase_actual_choiceMass N r P s none)
+  | some p => exact congrArg ENNReal.ofReal (erase_actual_choiceMass N r P s (some p))
 
 /-- Actual one-step kernel pushforward, derived from the unchanged actual
 holding/ordered-pair PMF and the proved actual destination commutation.
@@ -87,6 +93,7 @@ theorem actual_sourceStep_erasure (N : RootedBinary V E X)
     | some p => exact erase_actual_merger_destination N P s p
   unfold sourceStep
   rw [PMF.map_comp, hdest, erase_actual_choicePMF N r P s]
+  rfl
 
 #print axioms erase_actual_holding_destination
 #print axioms erase_actual_merger_destination

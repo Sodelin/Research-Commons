@@ -61,8 +61,6 @@ theorem actual_independent_pulse_erasure {N : RootedBinary V E X}
       (currentCoinPMF (AtNode (state s) H.hybrid) gamma).map
         (pulseCode H (erasePrivateCode N P s))
   congr 1
-  funext coin
-  exact erase_pulseCode P H s coin
 
 /-- No read of a private register bit is allowed in the retained word. This is
 an explicit operation property, not an assumed probability-law identity. -/
@@ -89,6 +87,7 @@ theorem actual_boundary_erasure (N : RootedBinary V E X) {sample : Copy → X}
       have hH : H.hybrid ∉ P := hop
       simp only [boundaryKernel, PMF.pure_map]
       rw [erase_pulseCode, erasePrivateCode_register_outside N P s H.hybrid hH]
+      rfl
 
 #print axioms erase_exitCode
 #print axioms erase_ordinaryCode
