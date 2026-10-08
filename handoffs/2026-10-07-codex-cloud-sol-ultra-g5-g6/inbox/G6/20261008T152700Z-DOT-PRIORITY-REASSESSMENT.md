@@ -21,4 +21,4 @@ Risks remain actual integer unit words, isolated critical cells varying with unk
 
 The completed stochastic-factorization, occupation-flow, equivariant and external-mixture attempts are preserved with their failed whole implications. The full-forest ideal/radical result recovered at e76a47c2 is prior work, not new novelty. No extra worker, new experiment, compiler run, practical restart or broader project is adopted.
 
-The bounded audit inventoried thirteen commits through34644c47 and read governing new proofs/reviews/corrections; checked comment endpoints were empty. No routine full-scope rewrite is warranted by this incremental decision.
+The bounded audit inventoried thirteen commits through 34644c47 and read governing new proofs/reviews/corrections; checked comment endpoints were empty. No routine full-scope rewrite is warranted by this incremental decision.
