@@ -1,0 +1,95 @@
+{
+  "contributor_publisher": "CLOUD-GMP-INTERVAL-SOL-2354Z",
+  "status": "ACTUAL C++17/GMP BUILD PASS; finite exact differential/property PASS; independent implementation review pending",
+  "authoritative_reference": {
+    "path": "research/2026-10-05-dot-msci-330-feature-forward-interface-1039z/evaluator/certified_forward.py",
+    "sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+    "bytes": 6604,
+    "primitive_lines": "34-89"
+  },
+  "artifacts": [
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/include/certified_forward_gmp.hpp",
+      "sha256": "1aea02e7310612e65a630d0f5d94d4f101971422b031dbb9825fc42ef95ea1db",
+      "bytes": 2235
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/src/certified_forward_gmp.cpp",
+      "sha256": "e13585e3c09cc39c20fcf282fa04ab4481ce8b23d017cb88fa842779d7594dc1",
+      "bytes": 5524
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/src/interval_probe.cpp",
+      "sha256": "ea13ab20c3268b68ae0c10d2ad9ab0d989fb71eadc4cfef38c7acd2880065b69",
+      "bytes": 6679
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/Makefile",
+      "sha256": "039a3398b51db2a829fcbc00a4022d31beb50a0186df8ba5c9563ccdd8ef5986",
+      "bytes": 427
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/tests/differential.py",
+      "sha256": "e5ee87aef378a298ece98b761e42025d5c5d31f993469375511ff163ff5a563f",
+      "bytes": 11399
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/reference/certified_forward.py",
+      "sha256": "c8487100113c15804775d4c569a5a71c13b6916736f99242a2e9ed6e621abace",
+      "bytes": 6604
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/build.json",
+      "sha256": "dd190e6ce3806e01cd5dbd1a6736c26418333d9230944deaedfb859c205532b3",
+      "bytes": 785
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/differential.json",
+      "sha256": "3fabf5aaa05f4b5d94fbf93404f73ccb3f80490519b6b1d60eb354558f76b7b6",
+      "bytes": 1913
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/differential-inputs.txt",
+      "sha256": "465ec1ed6d6a4225923fb399007770aab0473a3aaa029d76fd583a10f53d01d3",
+      "bytes": 252759
+    },
+    {
+      "path": "research/2026-10-07-cloud-gmp-interval-sol-2354z/results/probe-output.jsonl",
+      "sha256": "6046f023aa7e18d8c451a36fb7d66f11fda4b709dd57c92c51d19d652d9b3697",
+      "bytes": 409633
+    }
+  ],
+  "library_api": "RationalInterval exact canonical mpq endpoints, arithmetic/scalar casting/division, width/contains/intersects/dyadic/unit; exp_neg tagged integer/rational/nonexact types",
+  "parser_contract": "Probe-only max line65536B/numeric payload8192chars/dyadicshift65536; no reduced-rational256/2048bit cap in primitive",
+  "exp_contract": "x exact integer/Fraction; x\u22650,bits integer8..192 checked before shortcuts; halving u\u22641,m,q=bits+m+4,Taylor j\u2264512,width stop2^-q,dyadic+unit after series and EACH squaring,final width\u22642^-bits",
+  "build": {
+    "returncode": 0,
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "flags": "-std=c++17 -O2 -Wall -Wextra -Werror -pedantic",
+    "gmp_libraries": [
+      "gmpxx",
+      "gmp"
+    ],
+    "binary_sha256": "82880e13a23e0de9ebee4efb9fa3c92daf8ab1c9f4e30fd9f0c9b5d6795b051e"
+  },
+  "finite_tests": {
+    "case_count": 2414,
+    "primitive_comparisons": 2408,
+    "separate_parser_cases": 6,
+    "exact_property_assertions": 5204,
+    "failures": 0,
+    "input_sha256": "465ec1ed6d6a4225923fb399007770aab0473a3aaa029d76fd583a10f53d01d3",
+    "output_sha256": "6046f023aa7e18d8c451a36fb7d66f11fda4b709dd57c92c51d19d652d9b3697",
+    "limits": {
+      "harness_cpu_seconds": 90,
+      "harness_wall_seconds": 120,
+      "harness_address_space_bytes": 536870912,
+      "cpp_cpu_seconds": 45,
+      "cpp_wall_seconds": 60,
+      "cpp_address_space_bytes": 268435456
+    }
+  },
+  "evidence_limits": "Finite differential evidence, not universal proof. Taylor cap/final-width failure branches retained but not reached by valid fixtures. No full330-feature evaluator,9parameter inverse,confidence or biological readout result.",
+  "preservation": "Historical/G6/authoritative Python/Rust stage unchanged; frozen reference bytes exact; no Lean/provider/workflow/current-job mutations or children",
+  "next_action": "Independent exact implementation/source review, then root practical solver integration"
+}
