@@ -105,7 +105,7 @@ theorem erased_originalRegister_outside (N : RootedBinary V E X) (P : Finset V)
       outsideRegister N P (fun h => coin h.val) := by
   funext v
   by_cases hv : v ∈ P
-  · simp only [outsideRegister, if_pos hv]
+  · simp only [outsideRegister, dif_pos hv, if_pos hv]
   · by_cases hh : N.graph.IsHybrid v <;>
       simp [outsideRegister, originalRegister, hv, hh]
 

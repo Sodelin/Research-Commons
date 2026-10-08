@@ -227,7 +227,6 @@ theorem calendarTail_split_after_boundary (N : RootedBinary V E X)
   | cons d pre ih =>
       simp only [List.cons_append, calendarTail, List.cons_append, List.append_assoc]
       rw [ih d]
-      simp only [List.append_assoc]
 
 #print axioms originalNodeOperation_noPrivateRead
 #print axioms boundaryOperations_noPrivateWordRead
