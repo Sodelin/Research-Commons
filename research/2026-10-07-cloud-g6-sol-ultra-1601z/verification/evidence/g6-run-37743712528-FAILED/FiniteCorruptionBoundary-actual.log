@@ -1,0 +1,47 @@
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteCorruptionBoundary.lean:32:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (∑ i ∈ ?s, ?f i) / ?a
+in the target expression
+  ENNReal.ofReal (∑ a, ((p a).toReal + (q a).toReal) / 2) = 1
+
+A : Type u_1
+inst✝ : Fintype A
+p q : PMF A
+h0 : ∀ (a : A), 0 ≤ ((p a).toReal + (q a).toReal) / 2
+hsum : ENNReal.ofReal (∑ a, ((p a).toReal + (q a).toReal) / 2) = ∑ a, ENNReal.ofReal (((p a).toReal + (q a).toReal) / 2)
+⊢ ENNReal.ofReal (∑ a, ((p a).toReal + (q a).toReal) / 2) = 1
+/home/runner/work/_temp/g6-cloud-build/UnifiedLean/G6/FiniteCorruptionBoundary.lean:49:49: error: unsolved goals
+A : Type u_1
+inst✝ : Fintype A
+p q : PMF A
+hpoint : ∀ (a : A), |(p a).toReal - ((p a).toReal + (q a).toReal) / 2| = |(p a).toReal - (q a).toReal| / 2
+⊢ ∑ i, |(p i).toReal - (q i).toReal| / 2 / 2 = (∑ x, |(p x).toReal - (q x).toReal|) / 2 / 2
+'UnifiedLean.G6.FiniteCorruptionBoundary.pmfTV_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.pmfTV_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_real' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_comm' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_left_distance' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.midpointPMF_right_distance' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.shared_corruption_iff' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.no_shared_corruption_iff' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.FiniteCorruptionBoundary.certified_no_shared_corruption' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

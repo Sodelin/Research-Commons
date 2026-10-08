@@ -1,0 +1,9 @@
+# Actual failed two-source successor scope
+
+Run37743712528, frozen ceadcd149cd3a7f093853815cad2489b91380ba7, ended FAILURE. Of183 actual receipts182 exited zero. Exactly179 custom sources and501 selected declarations passed; full inventory4209owned/2766theorems is byte-identical to prior actual179, with all4209 prior rows exact and no new owned row. The existing standard foundations are unchanged.
+
+The WHOLE FiniteCorruptionBoundary module is excluded: actual errors at32:16 and49:49 leave its midpoint normalization/half-distance proofs unfinished, and seven dependent recovery reports contain sorryAx. No declaration in that failed module is promoted from recovery prints. ActualObservationCorruption has no compiler command because its dependency failed, and remains wholly unverified. Requested181/513 counts are not actual acceptance.
+
+The original decoded connector log is retained exactly. An interior BOM before the final payload line's outer timestamp initially made the static recovery drop that base64 line and stop with gzipEOF. The attributed normalizer now removes only optional outer BOM/timestamp and exactly one separating space. All182 noncache stdout hashes subsequently authenticate. One standalone failure-summary stderr line inside the gzip/base64 payload is separately retained in complete-ownership-receipt.json; filtering that recorded transport interleave recovers the exact6430249B/cf0a500c inventory. No Lean/compiler rerun or source edit occurred during recovery.
+
+The older calendarTail.eq_def helper-reference exception remains immutable history; every row in this179→179 comparison includes that established state exactly. Artifact metadata is preserved; no ZIP/archive was downloaded or compared. No native wrong-source image, complete G6 master, executable state-table correspondence or applicability obligation is discharged by this failed successor.
