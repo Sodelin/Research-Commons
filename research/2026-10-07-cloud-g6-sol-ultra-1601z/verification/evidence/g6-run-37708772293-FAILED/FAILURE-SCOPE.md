@@ -1,0 +1,9 @@
+# Context verified; finite-cut wrapper failed
+
+Actual run37708772293 at frozen cb68cbcf9513d8aa86562b7ec64aaefc143c12ef is overall FAILURE. It records166 command receipts,165 zero exits,162 passing custom modules and336 named reports (226 G6,95 G3,15 G5). Context3694d292bc754e48c07a8dc32a62783eb2534b9bc80016c71b427bf835d742d7 now genuinely passes23 named reports and44 complete owned rows:35 theorems,9 definitions.
+
+Complete ownership is3956 declarations/2582 theorems across162 passing custom modules. Every previous3912 owned row is unchanged; the only44 new rows belong to Context. Raw inventory5,935,192 bytes SHAae94f599af1d823334cf934a80bc64f46e38978cc43b0743486509c9ba8becaf; reconstructed audit sourceab76405da6032793739cdaa8ea4c0ab53e5fa061893586eec3ae0eace9d10587.
+
+ONLY ActualFiniteCutJointLaw772e6a1a99ad0fefd85ac0e0bb1a0f4d4762d83840af6b8c64bc691e1d0ce325 failed:60:2 Sum.elim/match measurability,143:55 product-map rewrite after the first actualMarkedTraceLaw occurrence unfolds,178:2 fixed-d versus raw-prefix endpoint fibre callback,209 reserved identifier prefix and parser cascades. Actual stdout159a8a15880c81a3a0e8e34d36b3adad81b72d8ddf8d012a1d606d12622d1b47 remains preserved. The WHOLE failed module is excluded despite some standard-only recovery reports. ActualCalendarEndpointHistory and ActualObservationCutRefinement were dependency-blocked and uncompiled.
+
+The SOURCE-accepted root finite-cut preflight is now relevant to two observed failure sites; it remains an uncompiled separate candidate until a reviewed successor is frozen. No repair is inferred from this receipt. Molecular projects, erasure/seed/support/WholeBank/Rust drafts remain outside the input. Artifact11521685668 metadata only is retained; no archive download/comparison is claimed. Exact source/stdout/current-stage ownership payloads were authenticated instead.
