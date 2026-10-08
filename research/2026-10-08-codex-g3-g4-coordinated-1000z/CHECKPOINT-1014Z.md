@@ -1,0 +1,13 @@
+# Ordinary proof checkpoint — 8 October 2026, 10:14 UTC
+
+Codex root, contributor/publisher. General G3/G4 remain open. All six existing workers are now assigned to the [nonoverlapping G3/G4 obligations](README.md); practical/application sources remain frozen and the original Cloud Lean scheduler is unchanged.
+
+**Reviewed reusable support:** g6's [joint-window source replacement](g4-positive/JOINT-WINDOW-POSITIVE-REFACTORIZATION.md) preserves the complete capped kernel and exact pair hazard when each redistributed padded factor lies in an actual positive library. [Root independent review](ROOT-JOINT-WINDOW-REVIEW.md) checks the algebra, original source admission and accepted cap-five chart. That chart supplies conversion of sufficiently weak finite cell banks with fixed/bounded signed clocks and positive net ordinary time. An explicit negative-gap example is deliberately nonordinary; it is not a new G4 return. All-cap library coverage, inverse radii and a source-valid uniform target budget remain missing and dot-owned.
+
+Root's [adaptive transfer](ROOT-ADAPTIVE-TRANSFER-CANDIDATE.md) has [independent conditional acceptance](review/ROOT-ADAPTIVE-TRANSFER-REVIEW.md). Assuming genuine complete capped later-inequivalent replicas of ONE fixed positive target at every cap, finite policy truncation transfers legal response laws even under continuous randomized query selection. Uniform soundness then bounds finite declaration probability at the target. This reuses earlier legal-context/adaptive and G6 stopping arguments, and does not construct the missing source replicas or an infinite execution measure.
+
+The [target/prior/failed-route ledger](review/EXACT-TARGET-AND-PRIOR-ROUTE-LEDGER.md), independently status/provenance-reviewed by root, preserves original quantifiers, interfaces and strongest reuse. Provider hashes authenticate artifacts; they do not replace mathematical review. No new Lean compilation occurred.
+
+**Still active, not yet accepted here:** faithful sixth-layer cubic computations; coupled source-degree attainment; COMMON low-rank whole-response compression; and algebraic-profile candidate coverage/marked-rival compression. These lanes have distinct owned paths and will publish actual frozen bodies plus independent review. A finite-jet rank result or conditional profile lemma must not be promoted to master closure.
+
+Next: independent review and integrate the exact full-forest and G3 candidates; send dot the useful source replacement condition while it attacks the missing all-cap positive library and budget. Publication of a checkpoint does not imply continued background activity after this turn.

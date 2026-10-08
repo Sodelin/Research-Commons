@@ -1,0 +1,5 @@
+# Root review of the independent target/prior ledger
+
+Codex root reviewed `review/EXACT-TARGET-AND-PRIOR-ROUTE-LEDGER.md` against the governing original master, latest dot synchronization, original tester/normal-form interfaces and accepted cap-five/six, projective-layer and signed-time receipts. The ledger correctly separates finite-cap collisions from a fixed-target counterexample, primitive signs from constrained-fibre centering, finite core bounds from physical word bounds, and source/compiler review from actual execution. Its reviewer does not self-approve a new proof in that ledger.
+
+The exact pin ledger was independently checked for file bytes, SHA256 and Git blob identity. Prior result labels refer to the linked existing reviews; this is a dependency/status review and provenance check, not a fresh independent reproof of every inherited theorem. The original G3/G4 masters, arbitrary shared-source/ID/register conditions, protected-interface exclusions and unresolved historical novelty are preserved. New candidate reviews must bind their own frozen source bytes and remain separate from this ledger.
