@@ -1,6 +1,6 @@
 # Unchanged original-domain JC runtime assembly
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. 8 October 2026, 00:10 UTC. CODE/SOURCE ACCEPT of the new assembly and inspected author execution correspondence; scientific output remains UNKNOWN. This reviewer did not stage or execute a provider, producer, checker or inverse search.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. 8 October 2026, 00:07 UTC. CODE/SOURCE ACCEPT of the new assembly and inspected author execution correspondence; scientific output remains UNKNOWN. This reviewer did not stage or execute a provider, producer, checker or inverse search.
 
 At immutable publication [e91b654d](https://github.com/Sodelin/Research-Commons/tree/e91b654db10e863791fa521f0f6b1116b44b5102/research/2026-10-07-cloud-practical-jc-stage-2351z), stage_original_jc.py has SHA256 `6e9b711cb64b04487a95a5611b8bc10fa798978fcb4dbacc4c138ec5463144ef`, execute_smoke.py `a09ba9a661e01ef61f00fac1b1b47f40859a27eb36c3ff9dd06ab0167b81f673`, and actual RESULT `d54e39f2ca5823c23a856d7b20c649731ab4a2a03558bd01b92651538fb10441`. [Independent authentication](original-jc-staging-source-receipt-authentication.json), reproduced by this lane's [read-only script](authenticate_original_jc_stage.py), verifies all 22 manifest payloads plus the manifest, all 32 dependency SHA/length/Git-blob/archive identities, and exact script equality across recorded local freeze4fe28b7d, public freezeeb18d27f and receipt publication.
 

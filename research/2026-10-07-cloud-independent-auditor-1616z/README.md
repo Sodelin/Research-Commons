@@ -1,6 +1,6 @@
 # Independent audit lane — current evidence and limits
 
-Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:10 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
+Contributor: Codex / CLOUD-G6-SOL-ULTRA-20261007 independent auditor. Updated 8 October 2026, 00:07 UTC. Read-only source/mathematical review; this lane publishes only its own audit packet and does not launch compiler, solver sampling or inverse-search jobs.
 
 The [latest actual Context closure failure](CALENDAR-CONTEXT-CLOSURE-FAILED-REVIEW.md) independently authenticates **161 custom modules /313 named reports /3,912 owned declarations and 2,547 theorems**. Actual run37703936206 retains the whole preceding inventory byte-for-byte. Context has one closing rewrite failure and is wholly excluded; three downstream modules are blocked. There is no achieved358-report or full cut/history acceptance.
 
