@@ -6,6 +6,6 @@ The [new source proof](UNIFORM-COLLAPSE-AND-UNEQUAL-SCALE-OBSTRUCTION.md) addres
 
 A mixed atomic/collapsed separator then excludes exact full five-root ordinary returns for sufficiently small cell scales, even if the scales shrink at different rates and either connector pair stays apart. This advances the previous finite-linear-clock/comparable-scale obstruction without assuming formal positive matrices are actual words.
 
-The exact fifth source layer reused here and this new theorem are both independently pending. Canonically accepted prerequisites are pinned in [source identities](SOURCE-IDENTITIES.json). [Review request](REVIEW-REQUEST.md) and [informal declaration handoff](DECLARATION-HANDOFF.md) specify the checks and full-contract bridge.
+The preceding restricted fifth-source layer now has [canonical independent HAND acceptance](PRIMARY-FIFTH-DEPENDENCY-RECEIPT.md). THIS new uniform theorem remains independently pending; no broader scope is inferred from that receipt. Canonically accepted prerequisites are pinned in [source identities](SOURCE-IDENTITIES.json). [Review request](REVIEW-REQUEST.md) and [informal declaration handoff](DECLARATION-HANDOFF.md) specify the checks and full-contract bridge.
 
 Trailing pads approaching the common block boundary remain OPEN, as do other architectures, GIVEN conjugator binding, higher caps and original unknown-size/full-prefix G4. The fixed positive pad gap is an explicit hypothesis, not an inferred uniform margin.
