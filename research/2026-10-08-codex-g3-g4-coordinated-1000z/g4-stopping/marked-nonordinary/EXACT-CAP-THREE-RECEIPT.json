@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "scope": "Exact actual full three-root forest matrix and marked one-cell ordinary-target witnesses; no larger cap or catalogue",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "script_sha256": "ee94f55923ca1b44aa13dad978156da5e89a8d1dc46cade1c07093aef9dc2f56",
+  "states": [
+    "1|2|3",
+    "(12)|3",
+    "(13)|2",
+    "(23)|1",
+    "((12)3)",
+    "((13)2)",
+    "((23)1)"
+  ],
+  "chronology": "ordinary(a) * actual bare(s-h,s+h,1/2) * ordinary(a)",
+  "generic_bare_row_mass_identities": 7,
+  "generic_bare_identity_boundary_entries": 49,
+  "symbolic_word_full_matrix_zero_residues": 49,
+  "symbolic_relations": [
+    "h^2=(1-s)^3/(6s)",
+    "a^2=2q/(1+s)"
+  ],
+  "positive_source_fixtures": [
+    {
+      "q": "1/2",
+      "s": "3/4",
+      "h": "sqrt(2)/24",
+      "x": "3/4 - sqrt(2)/24",
+      "y": "sqrt(2)/24 + 3/4",
+      "ordinary_pad": "2*sqrt(7)/7",
+      "physical_strict": true,
+      "full_matrix_entries_equal": 49,
+      "rows_stochastic": 7
+    },
+    {
+      "q": "3/4",
+      "s": "7/8",
+      "h": "sqrt(42)/336",
+      "x": "7/8 - sqrt(42)/336",
+      "y": "sqrt(42)/336 + 7/8",
+      "ordinary_pad": "2*sqrt(5)/5",
+      "physical_strict": true,
+      "full_matrix_entries_equal": 49,
+      "rows_stochastic": 7
+    },
+    {
+      "q": "1/10",
+      "s": "1/2",
+      "h": "sqrt(6)/12",
+      "x": "1/2 - sqrt(6)/12",
+      "y": "sqrt(6)/12 + 1/2",
+      "ordinary_pad": "sqrt(30)/15",
+      "physical_strict": true,
+      "full_matrix_entries_equal": 49,
+      "rows_stochastic": 7
+    }
+  ],
+  "equal_arm_negative_control": "(r - 1)**3/(r + 1)**3",
+  "all_copy_inequivalence": "Inherited strict-word chain-count theorem, not tested by this finite matrix",
+  "lean_ci_qe_parameter_search_executed": false
+}
