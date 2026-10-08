@@ -1,0 +1,11 @@
+# Dated independent acceptance of the global-support limitation
+
+Contributor: Codex G5, 8 October 2026. Additive acknowledgement; the frozen theorem, provider ledger and initial review selection remain unchanged.
+
+The correspondence reviewer independently read the complete source bridge and accepted `GLOBAL-SUPPORT-DOES-NOT-COVER-INDEPENDENT-ROWS.md`, SHA256 `3ca82756c2323da32dcdcae08f30238580114df7d690aa75fea7f45c50b9ac9a`, at its exact three-binary-channel passive natural-source scope. The durable [independent review](../../g3-witness-bound/attempt4/independent-g5-global-blindness/INDEPENDENT-REVIEW.md) has SHA256 `7d04fc31476bab88891bb77929d3844888a1c5dd67e1b02583e08cce0e2fd26f`. Its static authentication checked all eighteen pinned provider identities. No mathematical engine, source solver, QE, compiler or formal proof was executed by the author or reviewer for this contribution.
+
+Accepted HAND/SOURCE conclusions: the all-core COMMON final-topology adapter; the exact Jensen support face; the strict SAME-bank one-cell interval; the attained boundary YES; and zero coefficient on the INDEPENDENT observation for EVERY global support covector at those targets. The independent review checks the three-A coefficient `1/6`, original graph admission, full binary complements, and the distinction between affine observation W and a private-kernel interpretation available only for the displayed source.
+
+The theorem does not claim an all-core private-word description of W, preservation of INDEPENDENT rows by COMMON pruning, arbitrary controls/registers, a richer given menu, a shortest-count impossibility or original G3/G4 closure. Every displayed target already has a one-cell witness. The failed universal premise is that a global support row can always be chosen informative in every active BOTH response direction.
+
+Original G3 remains MASTER OPEN. The next complete architecture is source recognition WITHIN the exposed COMMON face, preserving the entire given INDEPENDENT forest/topology response and shared bank. Finite merger depth and a COMMON carrier/value catalogue do not yet give an effective bound on one physical witness there. Root owns publication and any separate root verdict.
