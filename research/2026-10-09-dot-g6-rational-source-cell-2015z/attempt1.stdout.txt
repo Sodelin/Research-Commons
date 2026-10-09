@@ -1,0 +1,105 @@
+RationalNaturalCellWitness.lean:22:19: error: ambiguous term, use fully qualified name, possible interpretations [_root_.Rel, @StrictAffineElimination.Rel]
+RationalNaturalCellWitness.lean:61:31: error(lean.unknownIdentifier): Unknown identifier `layout`
+RationalNaturalCellWitness.lean:62:20: error(lean.unknownIdentifier): Unknown identifier `layout`
+RationalNaturalCellWitness.lean:59:39: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+I : Type u_4
+C : Type u_5
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : Fintype I
+inst✝⁴ : Fintype C
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : DecidableEq I
+inst✝ : DecidableEq C
+N : RootedBinary V E X
+chronology : C → AgeConstraint V
+rows : I → Exposure V E
+coins : Hybrid N → RationalInterval
+h : originalCellFeasible N chronology rows coins
+q : Fin ?m.197 → ℚ
+hedge :
+  ∀ (e : E), agesOf N sorry (fun i => ↑(q i)) (N.graph.target e) < agesOf N sorry (fun i => ↑(q i)) (N.graph.source e)
+htip : ∀ (x : X), agesOf N sorry (fun i => ↑(q i)) (N.leaf x) = 0
+hu : ∀ (e : Option E), 0 < inverseRatesOf N sorry (fun i => ↑(q i)) e
+hg0 : ∀ (h : Hybrid N), 0 < coinsOf N sorry (fun i => ↑(q i)) h
+hg1 : ∀ (h : Hybrid N), coinsOf N sorry (fun i => ↑(q i)) h < 1
+horder : ∀ (j : C), (chronology j).holds (agesOf N sorry fun i => ↑(q i))
+hcoins : ∀ (h : Hybrid N), (coins h).contains (coinsOf N sorry (fun i => ↑(q i)) h)
+hrows :
+  ∀ (i : I),
+    (rows i).cell.scaled ((rows i).duration (agesOf N sorry fun i => ↑(q i)))
+      (inverseRatesOf N sorry (fun i => ↑(q i)) (rows i).population)
+⊢ ∃ c r g,
+    (∀ (x : X), c.age (N.leaf x) = 0) ∧
+      (∀ (j : C), (chronology j).holds c.age) ∧
+        (∀ (h : Hybrid N), (coins h).contains (g.gamma h)) ∧
+          (∀ (i : I), (rows i).cell.contains (pairRate r (rows i).population * (rows i).duration c.age)) ∧
+            (∀ (v : V), ∃ a, c.age v = ↑a) ∧
+              (∀ (e : Option E), ∃ a, pairRate r e = ↑a) ∧ ∀ (h : Hybrid N), ∃ a, g.gamma h = ↑a
+RationalNaturalCellWitness.lean:77:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.RationalNaturalCellWitness.atom_rational`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+RationalNaturalCellWitness.lean:83:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.RationalNaturalCellWitness.exposure_duration_rational`:
+  [Fintype E]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype E] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+RationalNaturalCellWitness.lean:106:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℝ≥0 { r // 0 ≤ r } ?m.35
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+RationalNaturalCellWitness.lean:111:23: error(lean.unknownIdentifier): Unknown identifier `Copy`
+RationalNaturalCellWitness.lean:112:39: error(lean.unknownIdentifier): Unknown identifier `Copy`
+RationalNaturalCellWitness.lean:112:14: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  HMul ℝ≥0 { r // 0 ≤ r } ?m.97
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+RationalNaturalCellWitness.lean:117:39: error(lean.unknownIdentifier): Unknown identifier `Copy`
+RationalNaturalCellWitness.lean:107:67: error: unsolved goals
+E : Type u_2
+inst✝¹ : Fintype E
+inst✝ : DecidableEq E
+r : PositivePairRates E
+d : ℚ
+hd : 0 ≤ d
+a : Option E → ℚ
+ha : ∀ (e : Option E), pairRate r e = ↑(a e)
+q : ℚ := (1 + ∑ e, a e) * (1 + sorry ^ 2) * d
+he : ↑sorry = ↑q
+⊢ 0 ≤ q
+RationalNaturalCellWitness.lean:133:43: error: Invalid argument name `Copy` for function `rational_source_mean`
+
+Hint: Perhaps you meant one of the following parameter names:
+  • `E`: C̵o̵p̵y̵E̲
+  • `r`: C̵o̵p̵y̵r̲
+  • `hr`: C̵o̵p̵y̵h̲r̲
+  • `d`: C̵o̵p̵y̵d̲
+  • `hd`: C̵o̵p̵y̵h̲d̲
+RationalNaturalCellWitness.lean:133:9: error: Tactic `rcases` failed: `x✝ : ?m.91` is not an inductive datatype
+'UnifiedLean.G6.RationalNaturalCellWitness.rational_bank_conditions' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.rational_original_source' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.rational_source_mean' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.rational_source_epoch_certificate' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
