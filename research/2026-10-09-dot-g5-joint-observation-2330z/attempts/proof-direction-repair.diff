@@ -1,0 +1,11 @@
+--- candidate-v2
++++ candidate-v3
+@@ -128,7 +128,7 @@
+   have hr : Measurable reader := measurable_of_countable _
+   rw [← Measure.map_map hr (observed_forest_bins_measurable bin hbin),
+     actual_observed_completed_forest_bins N C sample H p common r bin hbin,
+-    ← PMF.toMeasure_map _ _ hr,PMF.map_comp]
++    PMF.toMeasure_map _ _ hr,PMF.map_comp]
+ 
+ #print axioms actual_original_observed_forest_bins
+ #print axioms actual_observed_completed_forest_bins

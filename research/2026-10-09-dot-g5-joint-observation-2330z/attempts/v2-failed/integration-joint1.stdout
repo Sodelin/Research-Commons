@@ -1,0 +1,88 @@
+/workspace/shared/g5-joint-observed-integration-20261009-2241z/candidate-v2/sources/G5ObservedForestBins.lean:28:17: warning: Definition `GProgram.G2.CompleteCalendarAttachment.unrankedForestMeasurable` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+/workspace/shared/g5-joint-observed-integration-20261009-2241z/candidate-v2/sources/G5ObservedForestBins.lean:45:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.ObservedForestBins.observed_forest_bins_measurable`:
+  [Fintype Tag]
+  [MeasurableSingletonClass Tag]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Tag] [MeasurableSingletonClass Tag] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/shared/g5-joint-observed-integration-20261009-2241z/candidate-v2/sources/G5ObservedForestBins.lean:51:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.ObservedForestBins.completed_forest_bins_measurable`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/shared/g5-joint-observed-integration-20261009-2241z/candidate-v2/sources/G5ObservedForestBins.lean:57:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.ObservedForestBins.actual_original_observed_forest_bins`:
+  [Fintype Tag]
+  [MeasurableSpace Tag]
+  [MeasurableSingletonClass Tag]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Tag] [MeasurableSpace Tag] [MeasurableSingletonClass Tag] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/shared/g5-joint-observed-integration-20261009-2241z/candidate-v2/sources/G5ObservedForestBins.lean:67:15: warning: Variable name `y` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _y
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/workspace/shared/g5-joint-observed-integration-20261009-2241z/candidate-v2/sources/G5ObservedForestBins.lean:131:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (PMF.map reader ?m.163).toMeasure
+in the target expression
+  Measure.map reader
+      (PMF.map (completedForestBins N)
+          (naturalCompletedJoint N C sample p r bin hbin
+            (compiledCalendarProgram N C H (originalGamma p) common))).toMeasure =
+    (PMF.map (reader ∘ completedForestBins N)
+        (naturalCompletedJoint N C sample p r bin hbin
+          (compiledCalendarProgram N C H (originalGamma p) common))).toMeasure
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Tag : Type u_5
+inst✝¹⁰ : DecidableEq V
+inst✝⁹ : DecidableEq E
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq Copy
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype Tag
+inst✝² : MeasurableSpace Tag
+inst✝¹ : MeasurableSingletonClass Tag
+O : Type u_6
+inst✝ : MeasurableSpace O
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+reader : Finset (UnrankedTree Copy) × (Copy → Copy → Tag) → O
+hr : Measurable reader
+⊢ Measure.map reader
+      (PMF.map (completedForestBins N)
+          (naturalCompletedJoint N C sample p r bin hbin
+            (compiledCalendarProgram N C H (originalGamma p) common))).toMeasure =
+    (PMF.map (reader ∘ completedForestBins N)
+        (naturalCompletedJoint N C sample p r bin hbin
+          (compiledCalendarProgram N C H (originalGamma p) common))).toMeasure
+'GProgram.G5.ObservedForestBins.actual_original_observed_forest_bins' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.ObservedForestBins.actual_observed_completed_forest_bins' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.ObservedForestBins.actual_observed_completed_forest_bins_extended' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.ObservedForestBins.actual_observed_finite_forest_bin_reader' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
