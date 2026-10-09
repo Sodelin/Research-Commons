@@ -1,0 +1,57 @@
+/workspace/shared/g34-actual-bigon-survival-20261009-2028z/ActualBigonBinomial.lean:33:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑{x ∈ ?s | ?p x}.card
+in the target expression
+  {l | c l = false}.card = count0 c
+
+n : ℕ
+c : Fin n → Bool
+⊢ {l | c l = false}.card = count0 c
+/workspace/shared/g34-actual-bigon-survival-20261009-2028z/ActualBigonBinomial.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑{x ∈ ?s | ?p x}.card
+in the target expression
+  {l | c l = true}.card = count1 c
+
+n : ℕ
+c : Fin n → Bool
+⊢ {l | c l = true}.card = count1 c
+/workspace/shared/g34-actual-bigon-survival-20261009-2028z/ActualBigonBinomial.lean:52:40: error: Ambiguous term
+  bitWeight
+Possible interpretations:
+  GProgram.G4.IndependentRouting.bitWeight : ℝ → Bool → ℝ
+  
+  GProgram.SourceForest.bitWeight : ℚ → Bool → ℚ
+/workspace/shared/g34-actual-bigon-survival-20261009-2028z/ActualBigonBinomial.lean:52:40: error: Ambiguous term
+  bitWeight
+Possible interpretations:
+  GProgram.G4.IndependentRouting.bitWeight : ℝ → Bool → ℝ
+  
+  GProgram.SourceForest.bitWeight : ℚ → Bool → ℚ
+/workspace/shared/g34-actual-bigon-survival-20261009-2028z/ActualBigonBinomial.lean:47:31: error: unsolved goals
+case false
+Site : Type u_1
+inst✝ : Fintype Site
+n : ℕ
+e : Fin n ≃ Site
+c : Fin n → Bool
+g : ℝ
+i : Fin n
+a✝ : i ∈ Finset.univ
+hc : c i = false
+⊢ 1 - g = GProgram.G4.IndependentRouting.bitWeight (1 - g) false
+
+case true
+Site : Type u_1
+inst✝ : Fintype Site
+n : ℕ
+e : Fin n ≃ Site
+c : Fin n → Bool
+g : ℝ
+i : Fin n
+a✝ : i ∈ Finset.univ
+hc : c i = true
+⊢ g = GProgram.G4.IndependentRouting.bitWeight (1 - g) true
+'DotG34.ActualBigonBinomial.actual_bigon_private_sum' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualBigonBinomial.actual_bigon_binomial' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
