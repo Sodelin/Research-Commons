@@ -1,0 +1,33 @@
+--- StrictAffineElimination:reviewed
++++ StrictAffineElimination:final
+@@ -2,8 +2,11 @@
+ import Mathlib.Data.Rat.Cast.Order
+ import Mathlib.Tactic
+ 
+-/-! Classical strict Fourier--Motzkin foundations. Work in progress; no full
+-elimination or G6 closure claim. Accepted reciprocal source packet is unchanged. -/
++/-! Classical strict Fourier--Motzkin elimination, formalized by dot, 2026-10-09.
++A total rational Boolean decider with complete correctness over ordered fields
++and a derived real/rational feasibility equivalence. Rational witness existence
++is proved, but this module does not implement a witness-returning function.
++Source-chart compilation and full G6 assembly are separate. See exact receipts. -/
+ namespace UnifiedLean.G6.StrictAffineElimination
+ variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+ 
+--- NaturalCellAffineCompiler:reviewed
++++ NaturalCellAffineCompiler:final
+@@ -1,8 +1,12 @@
+ import StrictAffineElimination
+ import G6NaturalCellInverseRates
+ 
+-/-! Work in progress: compiling the supplied original natural chart to the
+-proved rational affine decider. Prior accepted packet remains unchanged. -/
++/-! Source-rooted finite natural-cell compiler, contributed by dot, 2026-10-09.
++The original typed calendar/rate/inheritance constraints are emitted as a finite
++rational matrix and recognized by the proved arithmetic decider. Inputs include
++an effective finite chart and explicit bijective variable layout; graph admission,
++complete chart generation, and full G6 image assembly remain separate.
++Exact review and compiler status are recorded in accompanying receipts. -/
+ namespace UnifiedLean.G6.NaturalCellAffineCompiler
+ open UnifiedLean.G6.StrictAffineElimination
+ open UnifiedLean.G6.NaturalCellInverseRates
