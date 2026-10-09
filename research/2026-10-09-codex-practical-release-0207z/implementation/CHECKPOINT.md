@@ -1,0 +1,11 @@
+# Application role checkpoint, 9 October 2026
+
+Contributor/executor: Codex application role; integration and publication owned by root. No nested workers. Owns only the new practical solver entry point and implementation evidence.
+
+Recovered immutable nine-file dependency-free Python producer/checker, exact original full domain/targets, archived near-exact request and 1,024-locus finite bands. Loader correction executes authenticated captured helper bytes. Native signed-nine receiver remains a post-checker diagnostic. Prior scratch/toolchain absent; Python 3.12.14 present. Prior artifacts remain unchanged.
+
+Implementation: dependency-free Python entry point with fresh run, saved display and whole-journal recheck, strict bounded request admission, standalone HTML/Markdown plus JSON, complete journal, original runtime hashes, optional native/reference pair diagnostic. Next action: execute original controls before derivative completion; then request independent adversarial validation.
+
+Completed core integration and six fresh/saved export controls. Original near-exact baseline reproduced max normalized width 0.0037718044494779073; finite-data preserves UNKNOWN all widths1. Native provision/39 differential replay performed separately by coordinator. Current source pins all included example identities, saved historical identities and finite-data obstruction; independent contracts-role flagged the fixed-band attribution issue before confirming the correction. Validation role has running adversarial controls. README/full report/publication still owned by root. Next action: resolve independent validation findings, then preserve final hashes and fresh evidence.
+
+Production source frozen for final independent validation. `run.py` SHA256 b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143; `diagnostic.py` SHA256 7f639f44e2c6d768d02e00a036569e7b32e3744d23cb636b6cde8a2d05e3ca25. See SOURCE-SNAPSHOT.json for full source identities. Core first executes authenticated unchanged original producer, then separate complete-journal checker, then only diagnostic geometry; complete checked cover remains authoritative. Final evidence will be independent role 4's suite against these exact bytes. Source modifications require direct coordination and preserved successor evidence.

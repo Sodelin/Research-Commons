@@ -1,0 +1,889 @@
+{
+  "status": "FAILED",
+  "cases": [
+    {
+      "name": "informative",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "informative",
+        "--output",
+        "/workspace/scratch/practical-validation-final/informative"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 6.7083413329999075,
+      "expected_exit_code": 0,
+      "stdout_sha256": "da7f119e70e160ae77ddc23d0029bb222bd76d21defb25a848ad7878d208a586",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/informative",
+      "status": "CONDITIONAL_UNION_WIDTH_CERTIFIED",
+      "passed": true
+    },
+    {
+      "name": "finite-data",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "finite-data",
+        "--output",
+        "/workspace/scratch/practical-validation-final/finite-data"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.202248943000086,
+      "expected_exit_code": 0,
+      "stdout_sha256": "9a843c2d43547859f093b4971bda1fb8891ba691e9e3f20c3ec9a5f79fe6c2cb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/finite-data",
+      "status": "UNKNOWN_OUTER_COVER",
+      "passed": true
+    },
+    {
+      "name": "unsupported",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "unsupported",
+        "--output",
+        "/workspace/scratch/practical-validation-final/unsupported"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.03898349600012807,
+      "expected_exit_code": 0,
+      "stdout_sha256": "6af4a332d271d09efe8455c8cda3991e4642ab9f71617be4d5921825052baa1c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/unsupported",
+      "status": "MODEL_NOT_ADMITTED",
+      "passed": true
+    },
+    {
+      "name": "saved",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "show",
+        "--example",
+        "informative",
+        "--output",
+        "/workspace/scratch/practical-validation-final/saved"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.03801793999991787,
+      "expected_exit_code": 0,
+      "stdout_sha256": "cec217e82eaad91b78912ded970fe57ae1dab5e05e25db0fba9de656e173291e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/saved",
+      "status": "CONDITIONAL_UNION_WIDTH_CERTIFIED",
+      "passed": true
+    },
+    {
+      "name": "recheck",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/informative",
+        "--output",
+        "/workspace/scratch/practical-validation-final/recheck"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.263871856999913,
+      "expected_exit_code": 0,
+      "stdout_sha256": "bc7aabc4b23c4e127b1094f619f99721217c9cc0f7824fe65a875c9d359220c4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/recheck",
+      "status": "CONDITIONAL_UNION_WIDTH_CERTIFIED",
+      "passed": true
+    },
+    {
+      "name": "existing-output",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "informative",
+        "--output",
+        "/workspace/scratch/practical-validation-final/informative"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.04086968699994031,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5e6f915b87d9f58dfbed6bbb377810bc5b149949d28a7de4ea8a7d6ac763b702",
+      "passed": true
+    },
+    {
+      "name": "malformed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/malformed.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/malformed"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.04105479000008927,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "ed6c3488ad71a3bb34018791bdee14cc6fb522edc492d89f7ff60be67b105c8a",
+      "passed": true
+    },
+    {
+      "name": "top-list",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/top-list.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/top-list"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.056993250999994416,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "79d43e0d470034136680ebf0972fb47a101b260e0aa4c7d27daf73ee4908e9f9",
+      "passed": true
+    },
+    {
+      "name": "duplicate-key",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/duplicate-key.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/duplicate-key"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.044404034999843134,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "549333373a5f5f4c542f9136b14e072d59c6a754ab70752670322c7afe53c7b8",
+      "passed": true
+    },
+    {
+      "name": "nan",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/nan.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/nan"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.045702961999950276,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "36a577ca371bc2045b829127788baabf1fca5682de1a52387bb04b8f64d42e40",
+      "passed": true
+    },
+    {
+      "name": "float",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/float.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/float"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.042540451999911966,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "f3d089b5db7dfb9207c8a419be36702a54eb5feabca4ef84e7a9dcef68128507",
+      "passed": true
+    },
+    {
+      "name": "oversized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/oversized.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/oversized"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.038368636999848604,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3baacb239c0580802ac63768ce46ab8b3ad29bd2c4ad5f3163e30cf573cdaf30",
+      "passed": true
+    },
+    {
+      "name": "nesting",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/nesting.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/nesting"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03882093600009284,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "79d43e0d470034136680ebf0972fb47a101b260e0aa4c7d27daf73ee4908e9f9",
+      "passed": true
+    },
+    {
+      "name": "missing-feature",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/missing-feature.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/missing-feature"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.039467519000027096,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "814e53c07dc2b317ce4e3f18e08aeb574b7150cf1bbd57b6172d033732a54c1b",
+      "passed": true
+    },
+    {
+      "name": "reversed-interval",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/reversed-interval.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/reversed-interval"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03754656500018427,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "462538edd415be808965d3cfd12f719133a7c967445b06f0790cb9c5dbc59134",
+      "passed": true
+    },
+    {
+      "name": "out-of-range",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/out-of-range.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/out-of-range"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03828682700009267,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "462538edd415be808965d3cfd12f719133a7c967445b06f0790cb9c5dbc59134",
+      "passed": true
+    },
+    {
+      "name": "zero-denominator",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/zero-denominator.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/zero-denominator"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03830899500007945,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "33382174b8c32fa4574b6c80b880eb58f4bc68c13f4722f9c56c0801728edfad",
+      "passed": true
+    },
+    {
+      "name": "huge-rational",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/huge-rational.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/huge-rational"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03811764800002493,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0ad9dc0850efd3bb21a839dbb7bf435a1ec5e840930121e419e7b457ad01371d",
+      "passed": true
+    },
+    {
+      "name": "integer-endpoint",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/integer-endpoint.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/integer-endpoint"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03988555000000815,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0ad9dc0850efd3bb21a839dbb7bf435a1ec5e840930121e419e7b457ad01371d",
+      "passed": true
+    },
+    {
+      "name": "boolean-budget",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/boolean-budget.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/boolean-budget"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03834824699993078,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "9f1988c7eed451a6310f433a9ed85b402c434840e2cf729a07b1976cedb6cb32",
+      "passed": true
+    },
+    {
+      "name": "over-budget",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/over-budget.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/over-budget"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03649326600020686,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "9f1988c7eed451a6310f433a9ed85b402c434840e2cf729a07b1976cedb6cb32",
+      "passed": true
+    },
+    {
+      "name": "zero-states",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/zero-states.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/zero-states"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03626117900012105,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3dbcb31902a3ec4d6739548cba0c68f6dee073c46aece50d7631480ccd84551c",
+      "passed": true
+    },
+    {
+      "name": "missing-budget",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/missing-budget.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/missing-budget"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.04151894500000708,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "f8898abd7263bc8796294a2b748ea0ed24c270bb308d1d1696ef7e777aa66467",
+      "passed": true
+    },
+    {
+      "name": "extra-field",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/extra-field.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/extra-field"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03643436500010466,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "7c6e7a7935745672f79b5a2ec280a1bf1a20285908eeb3a553cf8c6f7615019e",
+      "passed": true
+    },
+    {
+      "name": "wrong-model",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/wrong-model.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/wrong-model"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.03888174400003663,
+      "expected_exit_code": 0,
+      "stdout_sha256": "48aa8a338b64d8dc02e72f6ca7a4df367ff7d4df0998b66f63be99ab20f19ec5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/wrong-model",
+      "status": "MODEL_NOT_ADMITTED",
+      "passed": true
+    },
+    {
+      "name": "wrong-schema",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/wrong-schema.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/wrong-schema"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.036777284999971016,
+      "expected_exit_code": 0,
+      "stdout_sha256": "5b61dff666adb9aa8fc08a4dfb59a64c2eac9c863324ff787601718b001614a0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/wrong-schema",
+      "status": "MODEL_NOT_ADMITTED",
+      "passed": true
+    },
+    {
+      "name": "wrong-domain",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/wrong-domain.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/wrong-domain"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.040365813999869715,
+      "expected_exit_code": 0,
+      "stdout_sha256": "d8c1092566706ca6c41b98ffe564b3c3f92fe82326b16d13c72cfb54308dee61",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/wrong-domain",
+      "status": "MODEL_NOT_ADMITTED",
+      "passed": true
+    },
+    {
+      "name": "wrong-target",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/wrong-target.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/wrong-target"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.04022473100008028,
+      "expected_exit_code": 0,
+      "stdout_sha256": "52abefab76ba9decfb76c86f05e5ab77a4f8d77aeb35bdf86961f7575afe0c4d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/wrong-target",
+      "status": "MODEL_NOT_ADMITTED",
+      "passed": true
+    },
+    {
+      "name": "zero-stages",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/zero-stages.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/zero-stages"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.29267430499999136,
+      "expected_exit_code": 0,
+      "stdout_sha256": "9578633cd735738c257ed1bd2ce9a3edb39ef70ac188c9deae6ea796c4dccbd2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/zero-stages",
+      "status": "UNKNOWN_OUTER_COVER",
+      "passed": true
+    },
+    {
+      "name": "zero-wall",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/zero-wall.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/zero-wall"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.24749135600018235,
+      "expected_exit_code": 0,
+      "stdout_sha256": "bc165cd73f337a260e58a75156999ebfbdf23329a1c05b8c64d60cd916c535cf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/zero-wall",
+      "status": "RECOVERED_UNKNOWN",
+      "passed": true
+    },
+    {
+      "name": "uninformative-boundary",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/uninformative-boundary.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/uninformative-boundary"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.23972346599998673,
+      "expected_exit_code": 0,
+      "stdout_sha256": "c62b859aac25212fb8a37a24fbd85fbd383469ad099a9e46da4e503cbd37836c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/uninformative-boundary",
+      "status": "UNKNOWN_OUTER_COVER",
+      "passed": true
+    },
+    {
+      "name": "symlink-request",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--request",
+        "/workspace/scratch/practical-validation-final/requests/symlink.json",
+        "--output",
+        "/workspace/scratch/practical-validation-final/symlink-request"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03553802300007192,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "72c90cb75abbaa06a1c52d09f354e410652fae558303d0bb6616bccc446c3178",
+      "passed": true
+    },
+    {
+      "name": "tamper-journal-check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/tamper-journal",
+        "--output",
+        "/workspace/scratch/practical-validation-final/tamper-journal-check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.10513501500008715,
+      "expected_exit_code": 0,
+      "stdout_sha256": "632c24f9e656694185c180e06f95e86544e0b455c33dbeeb247abb04e07f32a6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/tamper-journal-check",
+      "status": "RECOVERED_UNKNOWN",
+      "passed": true
+    },
+    {
+      "name": "missing-frame-check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/missing-frame",
+        "--output",
+        "/workspace/scratch/practical-validation-final/missing-frame-check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.10463902399988001,
+      "expected_exit_code": 0,
+      "stdout_sha256": "1298df1842dec44f5fe59e60596135524fee8c1c97516c99e67db7eef7900599",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/missing-frame-check",
+      "status": "RECOVERED_UNKNOWN",
+      "passed": true
+    },
+    {
+      "name": "semantic-forgery-check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/semantic-forgery",
+        "--output",
+        "/workspace/scratch/practical-validation-final/semantic-forgery-check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.364696287000015,
+      "expected_exit_code": 0,
+      "stdout_sha256": "4a3d387ee9eee602938290c4144476f512fc401fbaa3e874436edbfeb116b9ab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/semantic-forgery-check",
+      "status": "RECOVERED_UNKNOWN",
+      "passed": true
+    },
+    {
+      "name": "tamper-request-check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/tamper-request",
+        "--output",
+        "/workspace/scratch/practical-validation-final/tamper-request-check"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.04465500199989947,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "dbf712b4618d4caedc494fcc56d0a30046496177c3ee59cebe81c9843f850d53",
+      "passed": true
+    },
+    {
+      "name": "tamper-source-check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/tamper-source",
+        "--output",
+        "/workspace/scratch/practical-validation-final/tamper-source-check"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.0408977889999278,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "d221fbe4c70628f9f53daac9d21160ac6dbf03bc7cc9b674307366f4576cfeb6",
+      "passed": true
+    },
+    {
+      "name": "journal-exhaustion-check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "check",
+        "--run",
+        "/workspace/scratch/practical-validation-final/journal-exhaustion",
+        "--output",
+        "/workspace/scratch/practical-validation-final/journal-exhaustion-check"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.03828708299988648,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8aee98f079ba2ecb25b355ab10d7c713c1204055251e4d4eb18408a9f8417975",
+      "passed": true
+    },
+    {
+      "name": "missing-native",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "finite-data",
+        "--native-binary",
+        "/workspace/scratch/practical-validation-final/NO-BINARY",
+        "--output",
+        "/workspace/scratch/practical-validation-final/missing-native"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.202664433999871,
+      "expected_exit_code": 0,
+      "stdout_sha256": "59df4c622c0e641e971e61bcaac234317a627d52ad6083fa732ac421668d8484",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/missing-native",
+      "status": "UNKNOWN_OUTER_COVER",
+      "passed": true
+    },
+    {
+      "name": "native-full-path",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "finite-data",
+        "--native-binary",
+        "/workspace/scratch/practical-release-native-v2/runtime/signed-target/release/signed-nine-probe",
+        "--output",
+        "/workspace/scratch/practical-validation-final/native-full-path"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.3038997220000965,
+      "expected_exit_code": 0,
+      "stdout_sha256": "a5cd1acc4c87fa887a3e5e89d91b1771bf01696115d6dd55677e3f759763ebcc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/native-full-path",
+      "status": "UNKNOWN_OUTER_COVER",
+      "passed": true
+    },
+    {
+      "name": "molecular-full-path",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/applications/practical-solver/run.py",
+        "molecular",
+        "--output",
+        "/workspace/scratch/practical-validation-final/molecular-full-path"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.15504269600000953,
+      "expected_exit_code": 0,
+      "stdout_sha256": "a2bc8e3bab72740594bfcbde2992ee492d66368a9637c6f6dab766492661eaae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/workspace/scratch/practical-validation-final/molecular-full-path",
+      "status": "SUCCESS",
+      "passed": false,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "example-identity-tamper",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/practical-validation-final/claim-integrity/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "finite-data",
+        "--output",
+        "/workspace/scratch/practical-validation-final/example-identity-tamper"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 0.036323615000128484,
+      "expected_exit_code": 2,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "dd7573e6c79ea79673f1f4c09156f7addc64a65ebd5e97c79b64007972c400f5",
+      "passed": true
+    },
+    {
+      "name": "source-manifest-tamper",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/practical-validation-final/claim-integrity/applications/practical-solver/run.py",
+        "run",
+        "--example",
+        "informative",
+        "--output",
+        "/workspace/scratch/practical-validation-final/source-manifest-tamper"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.04099234300019816,
+      "expected_exit_code": 1,
+      "stdout_sha256": "9df096b13c3ebbcb46416221782a92ce89c4e72485ac5e3431bec90d8b0cb63c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    }
+  ],
+  "passed": 42,
+  "total": 43,
+  "source_before": {
+    "applications/practical-solver/SOURCE-IDENTITIES.json": "375641ef893ca6af8cbec518a24d20d158dc04630dca1543e109679de347fded",
+    "applications/practical-solver/diagnostic.py": "7f639f44e2c6d768d02e00a036569e7b32e3744d23cb636b6cde8a2d05e3ca25",
+    "applications/practical-solver/examples/finite-data.json": "13fc5b7a1c9f27bad24e1dd28e83a40ff554d940cba96aa5a513f116b2d486d2",
+    "applications/practical-solver/examples/informative.json": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+    "applications/practical-solver/examples/unsupported.json": "3e281d177eb5c74a5094e146cfb89a0659e05b89cd13ea7cb4177af079e093d9",
+    "applications/practical-solver/run.py": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143",
+    "applications/practical-solver-biology/ingestion.py": "1c2668b9adca3b6d681125f0a5b8d537f39ab573ed4f0af3b544da4ed88fb631",
+    "applications/practical-solver-biology/offline.py": "625faf7dac9d8230e7385e2efff288ab015499d4aabfc3b55a3a7c3403e4fcb6",
+    "applications/practical-solver-biology/test_biology.py": "5ff268bf9d12a6e6678c9520922c545373594011a5821f29dc52a98bd2781c3b"
+  },
+  "source_after": {
+    "applications/practical-solver/SOURCE-IDENTITIES.json": "375641ef893ca6af8cbec518a24d20d158dc04630dca1543e109679de347fded",
+    "applications/practical-solver/diagnostic.py": "7f639f44e2c6d768d02e00a036569e7b32e3744d23cb636b6cde8a2d05e3ca25",
+    "applications/practical-solver/examples/finite-data.json": "13fc5b7a1c9f27bad24e1dd28e83a40ff554d940cba96aa5a513f116b2d486d2",
+    "applications/practical-solver/examples/informative.json": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+    "applications/practical-solver/examples/unsupported.json": "3e281d177eb5c74a5094e146cfb89a0659e05b89cd13ea7cb4177af079e093d9",
+    "applications/practical-solver/run.py": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143",
+    "applications/practical-solver-biology/ingestion.py": "1c2668b9adca3b6d681125f0a5b8d537f39ab573ed4f0af3b544da4ed88fb631",
+    "applications/practical-solver-biology/offline.py": "625faf7dac9d8230e7385e2efff288ab015499d4aabfc3b55a3a7c3403e4fcb6",
+    "applications/practical-solver-biology/test_biology.py": "5ff268bf9d12a6e6678c9520922c545373594011a5821f29dc52a98bd2781c3b"
+  },
+  "production_sources_unchanged": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "verification_scope": "independent execution and adversarial CLI tests; no empirical sampling-law or universal correctness proof"
+}

@@ -1,5 +1,20 @@
 # Research Commons applications
 
+The [practical genealogy solver release candidate](practical-solver/README.md)
+provides a fresh producer → separate whole-journal checker workflow with HTML,
+Markdown and exact JSON exports:
+
+```sh
+python3 -B applications/practical-solver/run.py run --example informative
+```
+
+Choose `finite-data` for explained UNKNOWN or `unsupported` for model refusal.
+The release freshly reproduces 39/39 signed-nine tests and the near-exact
+maximum width ≈0.00377180445; the archived 1,024-locus bands remain wide. These
+are different tests. Optional Rust remains a post-checker diagnostic and the
+molecular command stays offline. Read the
+[research report and independent review](../research/2026-10-09-codex-practical-release-0207z/README.md).
+
 These recovered applications are now publicly integrated under [Apache 2.0](LICENSE), following Nolan's authorization. They reuse the existing mathematical and software work. [Migration provenance](MIGRATION-PROVENANCE.json) distinguishes inherited source pins from the newly written common entry point. Earlier private-location references in inherited documents describe their history; [the current publication authority](AGENTS.md) applies to these named applications.
 
 From the Research Commons repository root, run:

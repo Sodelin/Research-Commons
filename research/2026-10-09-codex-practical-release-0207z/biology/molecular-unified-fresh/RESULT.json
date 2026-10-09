@@ -1,0 +1,576 @@
+{
+  "adapter_sha256": "625faf7dac9d8230e7385e2efff288ab015499d4aabfc3b55a3a7c3403e4fcb6",
+  "ancestry_observation_admitted": false,
+  "application": "rna_processing",
+  "biological_conclusion_established": false,
+  "context": {
+    "model_version": "synthetic-v1",
+    "output_types": [
+      "RNA_SEQ",
+      "SPLICE_SITES",
+      "SPLICE_SITE_USAGE"
+    ],
+    "preprocessing": "forward_reference_fixed_left_v1",
+    "tissue": "UBERON:0002107",
+    "transcript": {
+      "end0": 160,
+      "exons": [
+        [
+          104,
+          120
+        ],
+        [
+          140,
+          160
+        ]
+      ],
+      "gene_id": "SYNTHETIC_GENE",
+      "source": "synthetic annotation",
+      "start0": 104,
+      "strand": "+",
+      "transcript_id": "SYNTHETIC_TX",
+      "version": "fixture-v1"
+    },
+    "window": {
+      "assembly": "hg38",
+      "chromosome": "chr1",
+      "sha256": "e6e7085c62baaea7009a786db048a97ec7383f9a8540d7d897d1e8fe3dd43cc1",
+      "source": "synthetic software fixture, not genomic evidence",
+      "start0": 100
+    }
+  },
+  "contract_version": "molecular-apps-v1",
+  "credentials_accessed": false,
+  "derived_scenarios": {
+    "A": "inherited ALT: chr1:108 A>G (0-based)",
+    "AB": "both substitutions in the same reference window",
+    "B": "new synthetic chr1:109 C>G (0-based)"
+  },
+  "endpoint_specs": [
+    {
+      "aggregation": "mean",
+      "alignment": "reference_retained",
+      "end0": 160,
+      "family": "expression",
+      "id": "expr",
+      "output_type": "RNA_SEQ",
+      "pseudocount": 0.001,
+      "scale": "log",
+      "site_annotation_source": "",
+      "site_annotation_version": "",
+      "site_windows": [],
+      "start0": 104
+    },
+    {
+      "aggregation": "mean",
+      "alignment": "reference_retained",
+      "end0": 160,
+      "family": "splice_usage",
+      "id": "splice",
+      "output_type": "SPLICE_SITE_USAGE",
+      "pseudocount": 0.001,
+      "scale": "linear",
+      "site_annotation_source": "",
+      "site_annotation_version": "",
+      "site_windows": [],
+      "start0": 104
+    },
+    {
+      "aggregation": "site_ratio",
+      "alignment": "reference_retained",
+      "end0": 160,
+      "family": "polyadenylation",
+      "id": "pas-proxy",
+      "output_type": "RNA_SEQ",
+      "pseudocount": 0.001,
+      "scale": "log",
+      "site_annotation_source": "synthetic site annotation for software testing only",
+      "site_annotation_version": "fixture-v1",
+      "site_windows": [
+        [
+          108,
+          112
+        ],
+        [
+          152,
+          156
+        ]
+      ],
+      "start0": 104
+    }
+  ],
+  "endpoints": {
+    "expr": {
+      "aggregation": "mean",
+      "alignment": "reference_retained",
+      "biological_conclusion_established": false,
+      "changes_vs_reference": {
+        "A": 0.02197021450569414,
+        "AB": 0.032776924673230345,
+        "B": 0.032776924673230345,
+        "REF": 0.0
+      },
+      "direction_by_scenario": {
+        "A": "increase",
+        "AB": "increase",
+        "B": "increase",
+        "REF": "unchanged"
+      },
+      "family": "expression",
+      "formula_matches_recommended_expression_transform": true,
+      "id": "expr",
+      "limitations": [
+        "Declared transcript-exon coverage proxy; not a measured gene count or the SDK gene scorer's union of all gene exons."
+      ],
+      "method": "annotated_transcript_exon_coverage_proxy_v1",
+      "output_type": "RNA_SEQ",
+      "pseudocount": 0.001,
+      "raw_values_by_scenario": {
+        "A": 2.5555555555555554,
+        "AB": 2.5833333333333335,
+        "B": 2.5833333333333335,
+        "REF": 2.5
+      },
+      "reference_mask_base_count": 36,
+      "reference_mask_windows": [
+        [
+          104,
+          120
+        ],
+        [
+          140,
+          160
+        ]
+      ],
+      "region": {
+        "coordinate_convention": "0-based-half-open",
+        "end0": 160,
+        "start0": 104
+      },
+      "scale": "log",
+      "scale_definition": "log(raw aggregation + pseudocount)",
+      "semantics": "derived",
+      "site_annotation_source": "",
+      "site_annotation_version": "",
+      "site_windows": [],
+      "source_output_semantics": "direct_model_prediction",
+      "status": "SUCCESS",
+      "successful_computation": true,
+      "track_metadata_by_scenario": {
+        "A": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "AB": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "B": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "REF": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        }
+      },
+      "value": 0.916690651895482,
+      "values_by_scenario": {
+        "A": 0.9386608664011762,
+        "AB": 0.9494675765687124,
+        "B": 0.9494675765687124,
+        "REF": 0.916690651895482
+      }
+    },
+    "pas-proxy": {
+      "aggregation": "site_ratio",
+      "alignment": "reference_retained",
+      "biological_conclusion_established": false,
+      "changes_vs_reference": {
+        "A": -0.18225491456274812,
+        "AB": -0.2622719894262864,
+        "B": -0.2622719894262864,
+        "REF": 0.0
+      },
+      "direction_by_scenario": {
+        "A": "decrease",
+        "AB": "decrease",
+        "B": "decrease",
+        "REF": "unchanged"
+      },
+      "family": "polyadenylation",
+      "formula_matches_recommended_expression_transform": false,
+      "id": "pas-proxy",
+      "limitations": [
+        "Declared two-window coverage proxy; not normalized isoform usage or the official maximum across all proximal/distal splits."
+      ],
+      "method": "two_annotated_window_coverage_ratio_v1",
+      "output_type": "RNA_SEQ",
+      "pseudocount": 0.001,
+      "raw_values_by_scenario": {
+        "A": 0.8333888703765412,
+        "AB": 0.7693017533066749,
+        "B": 0.7693017533066749,
+        "REF": 1.0
+      },
+      "reference_mask_base_count": 8,
+      "reference_mask_windows": [
+        [
+          108,
+          112
+        ],
+        [
+          152,
+          156
+        ]
+      ],
+      "region": {
+        "coordinate_convention": "0-based-half-open",
+        "end0": 160,
+        "start0": 104
+      },
+      "scale": "log",
+      "scale_definition": "(distal_mean+p)/(proximal_mean+p), then declared log if requested",
+      "semantics": "derived",
+      "site_annotation_source": "synthetic site annotation for software testing only",
+      "site_annotation_version": "fixture-v1",
+      "site_windows": [
+        [
+          108,
+          112
+        ],
+        [
+          152,
+          156
+        ]
+      ],
+      "source_output_semantics": "direct_model_prediction",
+      "status": "SUCCESS",
+      "successful_computation": true,
+      "track_metadata_by_scenario": {
+        "A": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "AB": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "B": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "REF": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-RNA_SEQ",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        }
+      },
+      "value": 0.0,
+      "values_by_scenario": {
+        "A": -0.18225491456274812,
+        "AB": -0.2622719894262864,
+        "B": -0.2622719894262864,
+        "REF": 0.0
+      },
+      "window_values_by_scenario": {
+        "A": {
+          "distal_mean": 2.5,
+          "proximal_mean": 3.0
+        },
+        "AB": {
+          "distal_mean": 2.5,
+          "proximal_mean": 3.25
+        },
+        "B": {
+          "distal_mean": 2.5,
+          "proximal_mean": 3.25
+        },
+        "REF": {
+          "distal_mean": 2.5,
+          "proximal_mean": 2.5
+        }
+      }
+    },
+    "splice": {
+      "aggregation": "mean",
+      "alignment": "reference_retained",
+      "biological_conclusion_established": false,
+      "changes_vs_reference": {
+        "A": 0.0,
+        "AB": 0.0,
+        "B": 0.0071428571428571175,
+        "REF": 0.0
+      },
+      "direction_by_scenario": {
+        "A": "unchanged",
+        "AB": "unchanged",
+        "B": "increase",
+        "REF": "unchanged"
+      },
+      "family": "splice_usage",
+      "formula_matches_recommended_expression_transform": false,
+      "id": "splice",
+      "limitations": [
+        "Per-scenario scalar change is a difference of declared aggregates; it is distinct from the positional maximum-change diagnostic."
+      ],
+      "max_absolute_positional_change_vs_reference": {
+        "A": 0.0,
+        "AB": 0.0,
+        "B": 0.39999999999999997,
+        "REF": 0.0
+      },
+      "method": "declared_per_base_splice_aggregate_v1",
+      "output_type": "SPLICE_SITE_USAGE",
+      "pseudocount": 0.001,
+      "raw_values_by_scenario": {
+        "A": 0.3,
+        "AB": 0.3,
+        "B": 0.3071428571428571,
+        "REF": 0.3
+      },
+      "reference_mask_base_count": 56,
+      "reference_mask_windows": [
+        [
+          104,
+          160
+        ]
+      ],
+      "region": {
+        "coordinate_convention": "0-based-half-open",
+        "end0": 160,
+        "start0": 104
+      },
+      "scale": "linear",
+      "scale_definition": "raw aggregation",
+      "semantics": "derived",
+      "site_annotation_source": "",
+      "site_annotation_version": "",
+      "site_windows": [],
+      "source_output_semantics": "direct_model_prediction",
+      "status": "SUCCESS",
+      "successful_computation": true,
+      "track_metadata_by_scenario": {
+        "A": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-SPLICE_SITE_USAGE",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "AB": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-SPLICE_SITE_USAGE",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "B": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-SPLICE_SITE_USAGE",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        },
+        "REF": {
+          "alignment": "reference_retained",
+          "alignment_assumption": "equal-length positional RNA scenario; no indel inference",
+          "coordinate_space": "reference",
+          "fixture_rule": "deterministic-v1",
+          "name": "synthetic-SPLICE_SITE_USAGE",
+          "strand": "+",
+          "synthetic": true,
+          "tissue": "UBERON:0002107",
+          "tissue_specific": true
+        }
+      },
+      "value": 0.3,
+      "values_by_scenario": {
+        "A": 0.3,
+        "AB": 0.3,
+        "B": 0.3071428571428571,
+        "REF": 0.3
+      }
+    }
+  },
+  "evidence": "MOCK_SYNTHETIC",
+  "evidence_origin": "inherited public synthetic RNA fixture plus explicitly derived equal-length scenarios",
+  "executed_at_utc": "2026-10-09T02:26:02.184769+00:00",
+  "executed_inherited_source_sha256": {
+    "examples/synthetic-rna-processing.json": "96b0f8c616d6e7f8fcd993aaba30bd5898356361960f760a19f8b2a4774b9625",
+    "molecular_apps/cli.py": "cddeec13db9194f5d3f59842e8e2531de3bd7fa6d295fad356d63199138f3449",
+    "molecular_apps/contracts.py": "32d6b69ce48412de21e5160aac287415500c79a95aa306b29a6ea90ce3d71e67",
+    "molecular_apps/providers.py": "a1494dd5de42dd77afed22396c6b45f41c8ebf1eaab596a819f95f7ad4befe01",
+    "molecular_apps/rna_processing.py": "f0f46b37cefca4d232eb01f37be1c3aa0d5cec84da635e3b603c238711c2d68a"
+  },
+  "execution": {
+    "address_space_limit_bytes": 536870912,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/Research-Commons/applications/practical-solver-biology/offline.py",
+      "--output",
+      "/workspace/Research-Commons/research/2026-10-09-codex-practical-release-0207z/biology/molecular-unified-fresh/molecular"
+    ],
+    "cpu_limit_seconds": 30,
+    "cpu_seconds": 0.06762299999999999,
+    "cumulative_children_max_rss_kib": 17408,
+    "exit_code": 0,
+    "minimal_environment_no_credentials": true,
+    "per_file_limit_bytes": 16777216,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "c57a3ba17d880d83416f4ed527a75353630feefe1f0ab056c067d77f3e80a828",
+    "timeout": false,
+    "wall_limit_seconds": 45,
+    "wall_seconds": 0.11463584300008733
+  },
+  "execution_mode": "FRESH_OFFLINE_FIXTURE_COMPUTATION",
+  "execution_status": "FRESH_OFFLINE_FIXTURE_COMPUTATION",
+  "identity": {
+    "annotation_source": "synthetic annotation",
+    "annotation_version": "fixture-v1",
+    "assembly": "hg38",
+    "chromosome": "chr1",
+    "gene_id": "SYNTHETIC_GENE",
+    "model_version": "synthetic-v1",
+    "preprocessing": "forward_reference_fixed_left_v1",
+    "reference_guard_sha256": "e6e7085c62baaea7009a786db048a97ec7383f9a8540d7d897d1e8fe3dd43cc1",
+    "reference_source": "synthetic software fixture, not genomic evidence",
+    "strand": "+",
+    "tissue": "UBERON:0002107",
+    "transcript_end0": 160,
+    "transcript_id": "SYNTHETIC_TX",
+    "transcript_start0": 104,
+    "window_end0": 164,
+    "window_start0": 100
+  },
+  "input_sequence_sha256": {
+    "A": "d3942e506a59a37deed60d76690296206263c7dc78769effd4c8168f4e48afc2",
+    "AB": "91b3274b63b9acf1dc8118647661966a81a3f67af89c78aa1a6b64d4de22dbb5",
+    "B": "09cdd7772d24d8d7775aa4df461b195a27bae06a9e46587309714121ce2b9bb0",
+    "REF": "5369e9f0ef18d3cab80dc0e79e90c2473ab0b492ee34b25d695287411f48a9fe"
+  },
+  "interactions": {
+    "expr": {
+      "evidence": "MOCK_SYNTHETIC",
+      "family": "expression",
+      "formula": "yAB-yA-yB+yREF",
+      "interpretation": "deterministic fixture arithmetic; not measured or model-validated biology",
+      "scale": "log",
+      "value": -0.02197021450569414
+    },
+    "pas-proxy": {
+      "evidence": "MOCK_SYNTHETIC",
+      "family": "polyadenylation",
+      "formula": "yAB-yA-yB+yREF",
+      "interpretation": "deterministic fixture arithmetic; not measured or model-validated biology",
+      "scale": "log",
+      "value": 0.18225491456274812
+    },
+    "splice": {
+      "evidence": "MOCK_SYNTHETIC",
+      "family": "splice_usage",
+      "formula": "yAB-yA-yB+yREF",
+      "interpretation": "deterministic fixture arithmetic; not measured or model-validated biology",
+      "scale": "linear",
+      "value": -0.0071428571428571175
+    }
+  },
+  "limitations": [
+    "Expression is a declared transcript-exon coverage proxy from RNA_SEQ.",
+    "Splice usage is a separate declared SPLICE_SITE_USAGE aggregate.",
+    "PAS is a derived two-annotation-window RNA coverage ratio, not direct PAS output or isoform usage.",
+    "The deterministic synthetic provider is not AlphaGenome inference or experimental validation.",
+    "Human-labelled synthetic context does not supply plant or hemlock ancestry observations."
+  ],
+  "live_api_calls": 0,
+  "matched_scenarios": [
+    "REF",
+    "A",
+    "B",
+    "AB"
+  ],
+  "phase": {
+    "evidence": "software fixture; no specimen phase inference",
+    "kind": "hypothetical_cis"
+  },
+  "prediction_only": true,
+  "provider": "deterministic_mock",
+  "schema": "practical-solver-offline-molecular-v1",
+  "settings_sha256": "ad99c97650741e525a72b98e5f0f9676131334585b6377af48a793a37bb97c53",
+  "status": "SUCCESS",
+  "successful_computation": true,
+  "unsupported_endpoints": [
+    "typed splice-junction adapter",
+    "validated PSI method",
+    "official multisplit PAS scoring"
+  ],
+  "whole_application_lean_verified": false
+}

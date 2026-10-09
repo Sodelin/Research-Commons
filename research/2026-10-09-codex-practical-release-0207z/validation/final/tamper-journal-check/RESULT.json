@@ -1,0 +1,408 @@
+{
+  "execution": {
+    "address_space_limit_bytes": 536870912,
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/scratch/practical-validation-final2/tamper-journal/runtime/msci-ab-profile-implementation-20261005-1612z/global_check.py",
+      "--request",
+      "/workspace/scratch/practical-validation-final2/tamper-journal/REQUEST.json",
+      "--request-sha256",
+      "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+      "--checkpoints",
+      "/workspace/scratch/practical-validation-final2/tamper-journal/journal",
+      "--source-pins",
+      "/workspace/scratch/practical-validation-final2/tamper-journal/CHECKER-PINS.json",
+      "--source-pins-sha256",
+      "b2eeb211ad58f45aabded39952e7b8e27025b614428cc086f30dc54c57de77ca",
+      "--normal"
+    ],
+    "cpu_limit_seconds": 30,
+    "cpu_seconds": 0.059870999999999994,
+    "cumulative_children_max_rss_kib": 14464,
+    "exit_code": 0,
+    "minimal_environment_no_credentials": true,
+    "per_file_limit_bytes": 16777216,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e0a0e661f74dd64786172a97377b0d2066be78715ef54cb4b21fdb8d1b46ea02",
+    "timeout": false,
+    "wall_limit_seconds": 45,
+    "wall_seconds": 0.06454676899988954
+  },
+  "execution_mode": "FRESH_INDEPENDENT_RECHECK",
+  "explanation": "UNKNOWN: the complete checked outer cover remains wider than the requested target or replay was incomplete. The cover may contain non-solutions; retained cells are not verified feasible source assignments. Narrower scientifically justified observation bands or more computation may help, but sufficiency is not established for this input. Stop reason: {'all_inherited_narrowing_discarded': True, 'failure_type': 'ValueError', 'reason': 'JSON identity/size'}",
+  "original_complete_checker": {
+    "augmented_states": [
+      {
+        "birth_order": 0,
+        "id": "r",
+        "root_prefix": true,
+        "stage_index": 0,
+        "state": {
+          "aux": {
+            "A": [
+              "1/16",
+              "1/4"
+            ],
+            "L": [
+              "1/16",
+              "1/4"
+            ],
+            "T": [
+              "3/32",
+              "3/8"
+            ]
+          },
+          "moments": {
+            "AA1": [
+              "0",
+              "1"
+            ],
+            "AB1": [
+              "0",
+              "1"
+            ],
+            "AB2": [
+              "0",
+              "1"
+            ],
+            "AC1": [
+              "0",
+              "1"
+            ],
+            "AC2": [
+              "0",
+              "1"
+            ],
+            "BB1": [
+              "0",
+              "1"
+            ],
+            "BC1": [
+              "0",
+              "1"
+            ],
+            "BC2": [
+              "0",
+              "1"
+            ],
+            "CC1": [
+              "0",
+              "1"
+            ]
+          },
+          "physical": {
+            "g": [
+              "1/6",
+              "2/3"
+            ],
+            "h": [
+              "1/32",
+              "1/8"
+            ],
+            "rA": [
+              "1/2",
+              "6"
+            ],
+            "rAB": [
+              "1/2",
+              "6"
+            ],
+            "rB": [
+              "1/2",
+              "6"
+            ],
+            "rC": [
+              "1/2",
+              "6"
+            ],
+            "rR": [
+              "1/2",
+              "6"
+            ],
+            "u": [
+              "1/32",
+              "1/8"
+            ],
+            "v": [
+              "1/32",
+              "1/8"
+            ]
+          }
+        },
+        "status": "unresolved_original_root"
+      }
+    ],
+    "details": {
+      "all_inherited_narrowing_discarded": true,
+      "failure_type": "ValueError",
+      "reason": "JSON identity/size"
+    },
+    "diagnostic_union_width_target_observed": false,
+    "mode": "recovered_authenticated_original_domain",
+    "model": "fixed-six-copy-clock-jc-nine-v1",
+    "nonempty_cover": true,
+    "parameter_accuracy_released": false,
+    "physical_cover": [
+      {
+        "box": {
+          "g": [
+            "1/6",
+            "2/3"
+          ],
+          "h": [
+            "1/32",
+            "1/8"
+          ],
+          "rA": [
+            "1/2",
+            "6"
+          ],
+          "rAB": [
+            "1/2",
+            "6"
+          ],
+          "rB": [
+            "1/2",
+            "6"
+          ],
+          "rC": [
+            "1/2",
+            "6"
+          ],
+          "rR": [
+            "1/2",
+            "6"
+          ],
+          "u": [
+            "1/32",
+            "1/8"
+          ],
+          "v": [
+            "1/32",
+            "1/8"
+          ]
+        },
+        "id": "r"
+      }
+    ],
+    "ranked_histories": null,
+    "raw_feature_order": [
+      "AC1",
+      "AC2",
+      "CC1",
+      "BC1",
+      "BC2",
+      "AB1",
+      "AB2",
+      "AA1",
+      "BB1"
+    ],
+    "recommended_history": null,
+    "request_sha256": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+    "schema": "global-triangular-outer-cover-v1",
+    "source_feasibility_certified": false,
+    "statistical_coverage_verified": false,
+    "status": "RECOVERED_UNKNOWN",
+    "whole_union_width_target_met": false,
+    "width_certificate_is_conditional_geometry_only": true,
+    "widths": {
+      "g": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "1/2",
+        "pre_fixed": false,
+        "tolerance": "1/40",
+        "width": "1/2"
+      },
+      "h": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "3/32",
+        "pre_fixed": false,
+        "tolerance": "3/640",
+        "width": "3/32"
+      },
+      "rA": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "11/2",
+        "pre_fixed": false,
+        "tolerance": "11/40",
+        "width": "11/2"
+      },
+      "rAB": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "11/2",
+        "pre_fixed": false,
+        "tolerance": "11/40",
+        "width": "11/2"
+      },
+      "rB": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "11/2",
+        "pre_fixed": false,
+        "tolerance": "11/40",
+        "width": "11/2"
+      },
+      "rC": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "11/2",
+        "pre_fixed": false,
+        "tolerance": "11/40",
+        "width": "11/2"
+      },
+      "rR": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "11/2",
+        "pre_fixed": false,
+        "tolerance": "11/40",
+        "width": "11/2"
+      },
+      "u": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "3/32",
+        "pre_fixed": false,
+        "tolerance": "3/640",
+        "width": "3/32"
+      },
+      "v": {
+        "met": false,
+        "normalized_ratio": "1",
+        "original": "3/32",
+        "pre_fixed": false,
+        "tolerance": "3/640",
+        "width": "3/32"
+      }
+    }
+  },
+  "parameter_accuracy_released": false,
+  "request_sha256": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+  "retained_complete_outer_cover": [
+    {
+      "box": {
+        "g": [
+          "1/6",
+          "2/3"
+        ],
+        "h": [
+          "1/32",
+          "1/8"
+        ],
+        "rA": [
+          "1/2",
+          "6"
+        ],
+        "rAB": [
+          "1/2",
+          "6"
+        ],
+        "rB": [
+          "1/2",
+          "6"
+        ],
+        "rC": [
+          "1/2",
+          "6"
+        ],
+        "rR": [
+          "1/2",
+          "6"
+        ],
+        "u": [
+          "1/32",
+          "1/8"
+        ],
+        "v": [
+          "1/32",
+          "1/8"
+        ]
+      },
+      "id": "r"
+    }
+  ],
+  "schema": "practical_solver_release_recheck_v1",
+  "source_feasibility_certified": false,
+  "source_run": "/workspace/scratch/practical-validation-final2/tamper-journal",
+  "statistical_coverage_verified": false,
+  "status": "RECOVERED_UNKNOWN",
+  "widths": {
+    "g": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "1/2",
+      "pre_fixed": false,
+      "tolerance": "1/40",
+      "width": "1/2"
+    },
+    "h": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "3/32",
+      "pre_fixed": false,
+      "tolerance": "3/640",
+      "width": "3/32"
+    },
+    "rA": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "11/2",
+      "pre_fixed": false,
+      "tolerance": "11/40",
+      "width": "11/2"
+    },
+    "rAB": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "11/2",
+      "pre_fixed": false,
+      "tolerance": "11/40",
+      "width": "11/2"
+    },
+    "rB": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "11/2",
+      "pre_fixed": false,
+      "tolerance": "11/40",
+      "width": "11/2"
+    },
+    "rC": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "11/2",
+      "pre_fixed": false,
+      "tolerance": "11/40",
+      "width": "11/2"
+    },
+    "rR": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "11/2",
+      "pre_fixed": false,
+      "tolerance": "11/40",
+      "width": "11/2"
+    },
+    "u": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "3/32",
+      "pre_fixed": false,
+      "tolerance": "3/640",
+      "width": "3/32"
+    },
+    "v": {
+      "met": false,
+      "normalized_ratio": "1",
+      "original": "3/32",
+      "pre_fixed": false,
+      "tolerance": "3/640",
+      "width": "3/32"
+    }
+  }
+}

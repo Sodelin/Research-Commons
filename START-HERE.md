@@ -1,5 +1,12 @@
 # Start here
 
+**Practical release, 2026-10-09:** [Launch the researcher solver](applications/practical-solver/README.md)
+for fresh arithmetic localization, explained finite-data UNKNOWN, model refusal,
+readable reports and complete checked evidence. The
+[release packet](research/2026-10-09-codex-practical-release-0207z/README.md)
+preserves the distinct numerical/biological evidence, independent review and
+G1–G7 contracts. General G3/G4 remain separate open research obligations.
+
 **Read [What research has actually been done?](RESEARCH-STATUS.md) first** for current outcomes, actual Lean/test evidence, remaining questions and links across the full programme. The older dated status notices below preserve chronology; use the current overview and its linked receipts to find the strongest established scope.
 
 **[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**

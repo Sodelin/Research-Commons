@@ -1,0 +1,87 @@
+{
+  "context": {
+    "model_version": "synthetic-v1",
+    "output_types": [
+      "RNA_SEQ",
+      "SPLICE_SITES",
+      "SPLICE_SITE_USAGE"
+    ],
+    "preprocessing": "forward_reference_fixed_left_v1",
+    "tissue": "UBERON:0002107",
+    "transcript": {
+      "end0": 160,
+      "exons": [
+        [
+          104,
+          120
+        ],
+        [
+          140,
+          160
+        ]
+      ],
+      "gene_id": "SYNTHETIC_GENE",
+      "source": "synthetic annotation",
+      "start0": 104,
+      "strand": "+",
+      "transcript_id": "SYNTHETIC_TX",
+      "version": "fixture-v1"
+    },
+    "window": {
+      "assembly": "hg38",
+      "chromosome": "chr1",
+      "guard_sequence": "ACGTACGT",
+      "sequence": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+      "sha256": "e6e7085c62baaea7009a786db048a97ec7383f9a8540d7d897d1e8fe3dd43cc1",
+      "source": "synthetic software fixture, not genomic evidence",
+      "start0": 100
+    }
+  },
+  "endpoints": [
+    {
+      "aggregation": "mean",
+      "end0": 160,
+      "family": "expression",
+      "id": "expr",
+      "output_type": "RNA_SEQ",
+      "scale": "log",
+      "start0": 104
+    },
+    {
+      "aggregation": "mean",
+      "end0": 160,
+      "family": "splice_usage",
+      "id": "splice",
+      "output_type": "SPLICE_SITE_USAGE",
+      "scale": "linear",
+      "start0": 104
+    },
+    {
+      "aggregation": "site_ratio",
+      "end0": 160,
+      "family": "polyadenylation",
+      "id": "pas-proxy",
+      "output_type": "RNA_SEQ",
+      "scale": "log",
+      "site_annotation_source": "synthetic site annotation for software testing only",
+      "site_annotation_version": "fixture-v1",
+      "site_windows": [
+        [
+          108,
+          112
+        ],
+        [
+          152,
+          156
+        ]
+      ],
+      "start0": 104
+    }
+  ],
+  "sequence_scenarios": {
+    "A": "ACGTACGTGCGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+    "AB": "ACGTACGTGGGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+    "B": "ACGTACGTAGGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT",
+    "REF": "ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT"
+  }
+}
