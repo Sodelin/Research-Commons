@@ -104,3 +104,10 @@ The exact executed replay script is preserved in the clean evidence archive. `re
 The evidence archives are lossless UTF-8 JSON containers, with each original file path, content, byte count and SHA256. They preserve failed attempts, original and repaired sources, logs and exact commands. Reconstruct an entry by writing its `text` as UTF-8 and checking its byte count and hash. Paths in historical receipts are generic shared-workspace paths; they contain no personal home directory or credentials. Mathematical private-register/seed terminology names public source definitions. No source bytes or historical receipts were normalized. The inherited Codex provider and G2 dependency chain are attributed reuse. The prior baseline is available with its existing public certificate; it is not duplicated here.
 
 The remaining whole-calendar natural-law conditioning and structural decoder obligations above are unchanged by compilation. No new source simulation, full G5 completion, HG transfer or G4 result is claimed.
+
+
+## Correction, 2026-10-09 19:57 UTC
+
+The actual whole-calendar composition, subdivision, complete-tail continuation and natural-register past/suffix law were already proved and have compiled. The earlier phrase “whole-calendar assembly” names only the remaining G5-specific two-cut reader/conditioning use-site; it must not be read as an unproved whole-calendar Markov law. The finite-cut construction also already exists by hand. See [the exact prior/use-site audit](WHOLE-CALENDAR-PRIOR-AUDIT-1957Z.md) and its [matched compiler receipts](WHOLE-CALENDAR-PRIOR-BUILD-EVIDENCE-1957Z.json). All original proof sources and certificates are preserved.
+
+MANIFEST.json records the original immutable packet at commit 80075e21e022b73c12e93b1c1372501481bcca96. This additive correction changes only this README and adds the two audit files; source and compiler-evidence hashes from that manifest remain unchanged.
