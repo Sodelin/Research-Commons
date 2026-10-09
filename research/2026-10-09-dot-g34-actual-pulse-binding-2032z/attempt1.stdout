@@ -1,0 +1,38 @@
+/workspace/shared/g34-actual-pulse-survival-20261009-2013z/ActualPulseSurvival.lean:36:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (PMF.map liveCard (sourceTimeKernel ?N ?r ?t ?s)) (liveCard ?s)
+in the target expression
+  (currentCoinPMF (AtNode (state s) H.hybrid) gamma) coin *
+      (PMF.map liveCard (((fun x => sourceTimeKernel N r t x) ∘ pulseCode H s) coin)) (liveCard (pulseCode H s coin)) =
+    (currentCoinPMF (AtNode (state s) H.hybrid) gamma) coin *
+      ENNReal.ofReal (Real.exp (-(totalRate N r (pulseCode H s coin) * ↑t)))
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+H : GProgram.G2.OriginalHybridParents N
+gamma : ↑unitInterval
+t : ℝ≥0
+s : Code N sample
+coin : AtNode (state s) H.hybrid → Bool
+a✝ : coin ∈ Finset.univ
+hc : liveCard (pulseCode H s coin) = liveCard s
+⊢ (currentCoinPMF (AtNode (state s) H.hybrid) gamma) coin *
+      (PMF.map liveCard (((fun x => sourceTimeKernel N r t x) ∘ pulseCode H s) coin)) (liveCard (pulseCode H s coin)) =
+    (currentCoinPMF (AtNode (state s) H.hybrid) gamma) coin *
+      ENNReal.ofReal (Real.exp (-(totalRate N r (pulseCode H s coin) * ↑t)))
+'DotG34.ActualPulseSurvival.actual_independent_epoch_survival' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualPulseSurvival.actual_common_epoch_survival' depends on axioms: [propext, Classical.choice, Quot.sound]
