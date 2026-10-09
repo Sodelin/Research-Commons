@@ -1,0 +1,9 @@
+# Binding scope clarification: pointwise run membership is decidable
+
+This accompanies CYCLIC-ELIMINATION-AND-VARIABLE-SOURCE-BASES.md, SHA-256 51580ac163a38642b2dd8556b322de3fc46bf0564b058862b311f8c4ab4c5b88. The frozen argument and its no-G3-hardness limits are unchanged.
+
+For a fully supplied effectively algebraic triple (b,t,y), membership in the displayed relation P is decidable. First check b in (1/2,3/4) and 0<t<1. Multiply t successively by two until the result is at least one. This terminates because t is a fixed positive number. If the first such result is greater than one, t is not a permitted tag. If it equals one after n steps, test the exact algebraic equality y=b^n. Thus the same actual family has easy pointwise recognition even though its uniform relation is not first-order definable in the chosen decidable expanded field.
+
+In source terms, supplying the normalized COMMON coordinate fixes the run count because each cell in this selected family has COMMON pair survival exactly 1/2. This is consistent with the previously accepted positive-clock bound; it is not a new count obstruction. The distinction matters because the proposed elimination strategy wanted to retain unknown latent tags and shared bases under other original response equations in one uniform logical formula. The manuscript disproves that definability premise. It does not rule out a bespoke projected-image algorithm, external algebraic point-membership procedure or an input-dependent presentation change.
+
+No original finite observation menu is shown to force arbitrary fresh cells into this repeated-base family. The derivative formula is a first-order mathematical construction with alternating quantifiers, not a legal original source experiment. The whole original G3 recognizer and any source-faithful undecidability reduction remain unproved.
