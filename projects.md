@@ -4,7 +4,17 @@
 
 Active research instruction: [full-master completion standard](docs/RESEARCH-COMPLETION-STANDARD.md) and [current-owner receipt request](communications/2026-09-30-master-closure-standard-and-receipt-request.md). Component delivery does not close an unresolved promised master or downstream application.
 
-## Latest Astra query/statistical handoff, 2026-09-30
+## Current G1–G7 navigation, 9 October 2026
+
+- [Current results, evidence and remaining obligations](RESEARCH-STATUS.md) and [Start Here](START-HERE.md)
+- [Canonical full scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) and [original master statements](research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md)
+- [G5 actual triple](research/2026-10-09-dot-g5-actual-frozen-triple-1852z/README.md), [G6 source-chart decision](research/2026-10-09-dot-g6-proved-natural-cell-decision-1902z/README.md), [G7 original registry/admission](research/2026-10-09-dot-g7-original-registry-admission-1908z/README.md), [181-module replay](research/2026-10-09-dot-g6-natural-cell-feasibility-1835z/README.md)
+- [Practical solver](applications/practical-solver/README.md) and [conditional proof/code bridge](research/2026-10-09-codex-conditional-bridge-1630z/README.md)
+- [Four-lane allocation and revision history](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md): G5, G6, G7 and combined G3/G4 Lean formalization
+
+The sections below preserve earlier dated entry points and canonical homes. Their words “active,” “current” and “pending” describe their recorded dates; use newer evidence above before resuming an old assignment. [Pre-refresh project index](https://github.com/Sodelin/Research-Commons/blob/f31ff0a5e56abe3f6b35e473aba634352ad08002/projects.md).
+
+## Historical Astra query/statistical handoff, 2026-09-30
 
 The [sparse-query delivery](communications/2026-09-30-astra-sparse-completed-delivery.md), ID `ASTRA-SPARSE-DELIVERY-20260930`, and [statistical peer's final handoff](communications/2026-09-30-astra-stat-final-handoff.md) supersede the earlier proposal-only / no-reply snapshots below for those sessions. Their records show request, reply, acceptance, executed research, received corrections and actual cross-component use, not automatic message delivery.
 
