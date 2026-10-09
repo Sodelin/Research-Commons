@@ -1,0 +1,204 @@
+{
+  "status": "PASS",
+  "cases": 27,
+  "evidence_tier": "AUTHORED_EXECUTION_NOT_INDEPENDENT_REVIEW",
+  "backend_python": "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+  "results": [
+    {
+      "case": "exact_rational_ceiling",
+      "status": "CONDITIONAL_ARITHMETIC_ONLY",
+      "parameters": {
+        "b": "3/4",
+        "epsilon": "1/3",
+        "sigma": "1/4",
+        "M": "2"
+      },
+      "delta": "1/24",
+      "rational_upper_bound": "200/3",
+      "cell_count_bound": 67,
+      "zero_length_case": "0 <= cell_count_bound",
+      "ceiling_check": true,
+      "provider_verified": false,
+      "source_count_bound_verified": false
+    },
+    {
+      "case": "missing_cover",
+      "status": "UNKNOWN",
+      "reason": "UNKNOWN_PROVIDER_VERIFIER_UNAVAILABLE",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "approximate_zero",
+      "status": "REFUSED_REQUEST",
+      "reason": "endpoint_score requires an exact integer or p/q string, never a decimal or float",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "positive_exact_score",
+      "status": "REFUSED_REQUEST",
+      "reason": "An exact zero endpoint score is required; positive or approximate scores give no count bound",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "invented_floor",
+      "status": "REFUSED_REQUEST",
+      "reason": "Unobserved survival floors cannot be invented; supply a fibre-bound derivation",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "zero_floor",
+      "status": "REFUSED_REQUEST",
+      "reason": "b must be strictly between zero and one",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "negative_modulus",
+      "status": "REFUSED_REQUEST",
+      "reason": "epsilon and sigma must be positive and M nonnegative",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "floating_epsilon",
+      "status": "REFUSED_REQUEST",
+      "reason": "Floating or approximate input is unsupported",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "boolean_provider",
+      "status": "REFUSED_REQUEST",
+      "reason": "provider_evidence must be an object",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "boolean_coverage",
+      "status": "REFUSED_REQUEST",
+      "reason": "count_certificate contains unsupported fields: all_core_coverage",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "independent_duplicate_slot_fit",
+      "status": "REFUSED_REQUEST",
+      "reason": "Repeated physical slots cannot be fitted independently",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "incompatible_common_mode",
+      "status": "REFUSED_REQUEST",
+      "reason": "Independent resource bound needs INDEPENDENT or BOTH",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "both_compiler_missing",
+      "status": "UNKNOWN",
+      "reason": "UNKNOWN_PROVIDER_VERIFIER_UNAVAILABLE",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "candidate_mode_union_is_not_both",
+      "status": "REFUSED_REQUEST",
+      "reason": "The count interface needs the INDEPENDENT source mechanism; alternatives do not encode BOTH rows",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "cross_request_provider",
+      "status": "REFUSED_REQUEST",
+      "reason": "Count certificate changed the complete source request",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "extra_slot_fit_field",
+      "status": "REFUSED_REQUEST",
+      "reason": "row contains unsupported fields: independent_slot_values",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "unencoded_shared_clock",
+      "status": "REFUSED_REQUEST",
+      "reason": "Tied clocks or shared physical restrictions need their actual joint encoder",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "unknown_original_id",
+      "status": "REFUSED_REQUEST",
+      "reason": "Controls must retain original named IDs and incoming bits",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "duplicate_json_fields",
+      "status": "REFUSED_REQUEST"
+    },
+    {
+      "case": "pre_dispatch_authentication_failure",
+      "status": "REFUSED_REQUEST",
+      "reason": "Inherited adapter manifest changed",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "default_missing_dependencies",
+      "status": "UNKNOWN",
+      "reason": "UNKNOWN_BACKEND_UNAVAILABLE",
+      "solver_called": false,
+      "checker_called": false
+    },
+    {
+      "case": "finite_witness",
+      "status": "CERTIFIED_SOURCE_WITNESS",
+      "reason": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+      "solver_called": true,
+      "checker_called": true
+    },
+    {
+      "case": "all_shared_rows_excluded",
+      "status": "CERTIFIED_EXCLUSION_WITHIN_VERIFIED_COVERED_CLASS",
+      "reason": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+      "solver_called": true,
+      "checker_called": true
+    },
+    {
+      "case": "strict_positive_boundary",
+      "status": "CERTIFIED_EXCLUSION_WITHIN_VERIFIED_COVERED_CLASS",
+      "reason": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+      "solver_called": true,
+      "checker_called": true
+    },
+    {
+      "case": "bounded_positive_witness",
+      "status": "CERTIFIED_SOURCE_WITNESS",
+      "reason": "SAT_ADMITTED_SOURCE_UNKNOWN_SIZE_SEARCH",
+      "solver_called": true,
+      "checker_called": true
+    },
+    {
+      "case": "bounded_exhaustion_is_unknown",
+      "status": "UNKNOWN",
+      "reason": "UNKNOWN_BOUNDED_SEARCH_EXHAUSTED",
+      "solver_called": true,
+      "checker_called": false
+    },
+    {
+      "case": "valid_certificate_for_other_rows",
+      "status": "REFUSED_REQUEST",
+      "reason": "Backend certificate changed or omitted original rows, IDs, modes or shared source request",
+      "solver_called": true,
+      "checker_called": false
+    }
+  ]
+}

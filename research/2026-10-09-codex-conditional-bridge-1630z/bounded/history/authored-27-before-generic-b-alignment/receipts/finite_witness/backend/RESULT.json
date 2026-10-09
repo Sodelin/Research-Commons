@@ -1,0 +1,229 @@
+{
+  "schema": "actual-finite-original-registry-coupled-source-solver-v1",
+  "request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 3,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "independent",
+      "common"
+    ],
+    "limits": {
+      "seconds": 30,
+      "max_sources": 100,
+      "smt_milliseconds": 10000
+    },
+    "rows": [
+      {
+        "law": [
+          {
+            "outcome": [
+              "L0",
+              [
+                "L1",
+                "L2"
+              ]
+            ],
+            "p": "2/3"
+          },
+          {
+            "outcome": [
+              "L1",
+              [
+                "L0",
+                "L2"
+              ]
+            ],
+            "p": "1/6"
+          },
+          {
+            "outcome": [
+              "L2",
+              [
+                "L0",
+                "L1"
+              ]
+            ],
+            "p": "1/6"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "499edeb9d5a5b96dac3527014364834d644eb3261ec1f19014e75dbcdd2fcd8d",
+  "upstream": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+    "files": [
+      {
+        "path": "upstream/source_census.py",
+        "bytes": 6474,
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+      },
+      {
+        "path": "upstream/law_compiler.py",
+        "bytes": 9360,
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+      },
+      {
+        "path": "upstream/continuous_optimizer.wl",
+        "bytes": 2401,
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+      },
+      {
+        "path": "upstream/README.md",
+        "bytes": 7949,
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+      }
+    ]
+  },
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "z3": "4.15.3"
+  },
+  "unknown_size_termination_or_global_NO_claimed": false,
+  "Lean_verification_claimed": false,
+  "empirical_admission_claimed": false,
+  "status": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+  "verification": "INDEPENDENT_EXACT_SYMPY_WITNESS_AND_SOURCE_ADMISSION_CHECK",
+  "scope": "declared complete finite registry; one graph/assignment shared across every row",
+  "source_count_examined": 1,
+  "catalogue_exhausted": false,
+  "entries": [
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "1/3 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 1/6"
+      ],
+      "equation_sha256": "31da92c7ee2efba4633721746fcb7beb0976a002d2534fa8f01a12c6368078cd",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "query": "query-0.smt2",
+      "query_sha256": "c414a47f7be29c9292a350d5c4e931788f024ce2a1537f9e6eb965c78e0c2ac0",
+      "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+      "values": {
+        "x0": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x1": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x2": {
+          "kind": "rational",
+          "value": "1/2"
+        },
+        "x3": {
+          "kind": "rational",
+          "value": "1/2"
+        }
+      },
+      "physical_realization": {
+        "original_vertex_ages": {
+          "L0": 0,
+          "L1": 0,
+          "L2": 0,
+          "R": 2,
+          "T0": 1
+        },
+        "contemporaneous_tip_age": 0,
+        "original_edges": [
+          {
+            "original_edge_id": 0,
+            "parent": "R",
+            "child": "T0",
+            "duration": 1,
+            "survival_parameter": "x0",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 1,
+            "parent": "R",
+            "child": "L0",
+            "duration": 2,
+            "survival_parameter": "x1",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 2,
+            "parent": "T0",
+            "child": "L1",
+            "duration": 1,
+            "survival_parameter": "x2",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          },
+          {
+            "original_edge_id": 3,
+            "parent": "T0",
+            "child": "L2",
+            "duration": 1,
+            "survival_parameter": "x3",
+            "survival_value": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "positive_rate_definition": "-log(survival_value)/duration"
+          }
+        ],
+        "ancestral_root_rate": "1",
+        "natural_inheritance_values": {},
+        "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations"
+      }
+    }
+  ],
+  "witness_entry": 0,
+  "elapsed_seconds": 0.05228380100004415
+}

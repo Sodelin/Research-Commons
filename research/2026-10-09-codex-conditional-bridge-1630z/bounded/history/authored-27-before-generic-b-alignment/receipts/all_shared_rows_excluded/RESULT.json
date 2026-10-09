@@ -1,0 +1,744 @@
+{
+  "schema": "same_source_certified_bounds_result_v1",
+  "status": "CERTIFIED_EXCLUSION_WITHIN_VERIFIED_COVERED_CLASS",
+  "request": {
+    "schema": "same_source_certified_bounds_v1",
+    "operation": "finite_registry",
+    "source_request": {
+      "observation_kind": "exact_unranked_law",
+      "n": 3,
+      "registry": {
+        "complete": true,
+        "hybrid_ids": []
+      },
+      "mechanisms": [
+        "independent",
+        "common"
+      ],
+      "limits": {
+        "seconds": 30,
+        "max_sources": 100,
+        "smt_milliseconds": 10000
+      },
+      "rows": [
+        {
+          "law": [
+            {
+              "outcome": [
+                "L0",
+                [
+                  "L1",
+                  "L2"
+                ]
+              ],
+              "p": "2/3"
+            },
+            {
+              "outcome": [
+                "L1",
+                [
+                  "L0",
+                  "L2"
+                ]
+              ],
+              "p": "1/6"
+            },
+            {
+              "outcome": [
+                "L2",
+                [
+                  "L0",
+                  "L1"
+                ]
+              ],
+              "p": "1/6"
+            }
+          ]
+        },
+        {
+          "law": [
+            {
+              "outcome": [
+                "L0",
+                [
+                  "L1",
+                  "L2"
+                ]
+              ],
+              "p": "1/6"
+            },
+            {
+              "outcome": [
+                "L1",
+                [
+                  "L0",
+                  "L2"
+                ]
+              ],
+              "p": "2/3"
+            },
+            {
+              "outcome": [
+                "L2",
+                [
+                  "L0",
+                  "L1"
+                ]
+              ],
+              "p": "1/6"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "request_sha256": "70deb1367fb72cb128d4a06999d2d92885b1e9b839c6712cfe61cae19e628f31",
+  "execution_mode": "FRESH_RUN",
+  "solver_called": true,
+  "checker_called": true,
+  "source_feasibility_certified": false,
+  "unrestricted_NO_claimed": false,
+  "general_G3_resolved": false,
+  "Lean_kernel_verification_claimed": false,
+  "statistical_coverage_verified": false,
+  "source_request_sha256": "4f0fc981db752a53045965c45a75ac1473c905e21ede88d966e81425a3b2acb2",
+  "source_manifest": {
+    "schema": "same_source_certified_bounds_sources_v1",
+    "source_commit": "cf6c1b32c6127af9568c18a65c25d738d288a3e7",
+    "role": "Existing original-source census, shared-row exact feasibility and semantic certificate checker; not the nine-parameter interval outer-cover engine or Rust diagnostic.",
+    "files": [
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+        "runtime_relative": "solver.py",
+        "sha256": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+        "bytes": 28449
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/bounded_search.py",
+        "runtime_relative": "bounded_search.py",
+        "sha256": "7906ad84dc31ae2add6349a8166c4626826b4e09eaf8dad1e86426710076f7e7",
+        "bytes": 5120
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+        "runtime_relative": "verify_certificate.py",
+        "sha256": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840",
+        "bytes": 10389
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_search.py",
+        "runtime_relative": "verify_search.py",
+        "sha256": "0698a99f0eef559e582b6e0b36d2c9bfb0c2c8ad94856c9ef62d58f631a3bf51",
+        "bytes": 3556
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/UPSTREAM-IDENTITY.json",
+        "runtime_relative": "UPSTREAM-IDENTITY.json",
+        "sha256": "bf569af6ea20629ceb75e19d2d077659a19039af78ca20b8b3ae31cad91cba2d",
+        "bytes": 1023
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/requirements.txt",
+        "runtime_relative": "requirements.txt",
+        "sha256": "05851fd3a70a531a52520f17346fcefe447028337446393daf5e0e7a956d2071",
+        "bytes": 48
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/source_census.py",
+        "runtime_relative": "upstream/source_census.py",
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "bytes": 6474
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/law_compiler.py",
+        "runtime_relative": "upstream/law_compiler.py",
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "bytes": 9360
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/continuous_optimizer.wl",
+        "runtime_relative": "upstream/continuous_optimizer.wl",
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "bytes": 2401
+      },
+      {
+        "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/README.md",
+        "runtime_relative": "upstream/README.md",
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "bytes": 7949
+      }
+    ]
+  },
+  "dependencies": {
+    "available": true,
+    "versions": {
+      "sympy": "1.14.0",
+      "networkx": "3.5",
+      "z3-solver": "4.15.3.0"
+    },
+    "required": {
+      "sympy": "1.14.0",
+      "networkx": "3.5",
+      "z3-solver": "4.15.3.0"
+    },
+    "execution": {
+      "command": [
+        "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "import importlib.metadata as m,json; d={};\nfor p in ['sympy','networkx','z3-solver']:\n try: d[p]=m.version(p)\n except m.PackageNotFoundError: d[p]=None\nprint(json.dumps(d))"
+      ],
+      "invoked": true,
+      "timeout": false,
+      "returncode": 0,
+      "elapsed_seconds": 0.13121096700001544
+    }
+  },
+  "solver_execution": {
+    "command": [
+      "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+      "-B",
+      "/workspace/scratch/conditional-bridge-bounded/tests-final/all_shared_rows_excluded/runtime/solver.py",
+      "/workspace/scratch/conditional-bridge-bounded/tests-final/all_shared_rows_excluded/SOURCE-REQUEST.json",
+      "--output",
+      "/workspace/scratch/conditional-bridge-bounded/tests-final/all_shared_rows_excluded/backend"
+    ],
+    "invoked": true,
+    "timeout": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.7664531460000035
+  },
+  "backend_result": {
+    "schema": "actual-finite-original-registry-coupled-source-solver-v1",
+    "request": {
+      "observation_kind": "exact_unranked_law",
+      "n": 3,
+      "registry": {
+        "complete": true,
+        "hybrid_ids": []
+      },
+      "mechanisms": [
+        "independent",
+        "common"
+      ],
+      "limits": {
+        "seconds": 30,
+        "max_sources": 100,
+        "smt_milliseconds": 10000
+      },
+      "rows": [
+        {
+          "law": [
+            {
+              "outcome": [
+                "L0",
+                [
+                  "L1",
+                  "L2"
+                ]
+              ],
+              "p": "2/3"
+            },
+            {
+              "outcome": [
+                "L1",
+                [
+                  "L0",
+                  "L2"
+                ]
+              ],
+              "p": "1/6"
+            },
+            {
+              "outcome": [
+                "L2",
+                [
+                  "L0",
+                  "L1"
+                ]
+              ],
+              "p": "1/6"
+            }
+          ]
+        },
+        {
+          "law": [
+            {
+              "outcome": [
+                "L0",
+                [
+                  "L1",
+                  "L2"
+                ]
+              ],
+              "p": "1/6"
+            },
+            {
+              "outcome": [
+                "L1",
+                [
+                  "L0",
+                  "L2"
+                ]
+              ],
+              "p": "2/3"
+            },
+            {
+              "outcome": [
+                "L2",
+                [
+                  "L0",
+                  "L1"
+                ]
+              ],
+              "p": "1/6"
+            }
+          ]
+        }
+      ]
+    },
+    "request_sha256": "4f0fc981db752a53045965c45a75ac1473c905e21ede88d966e81425a3b2acb2",
+    "upstream": {
+      "repository": "Sodelin/Research-Commons",
+      "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+      "files": [
+        {
+          "path": "upstream/source_census.py",
+          "bytes": 6474,
+          "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+          "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+        },
+        {
+          "path": "upstream/law_compiler.py",
+          "bytes": 9360,
+          "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+          "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+        },
+        {
+          "path": "upstream/continuous_optimizer.wl",
+          "bytes": 2401,
+          "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+          "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+        },
+        {
+          "path": "upstream/README.md",
+          "bytes": 7949,
+          "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+          "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+        }
+      ]
+    },
+    "software": {
+      "python": "3.12.14",
+      "sympy": "1.14.0",
+      "z3": "4.15.3"
+    },
+    "unknown_size_termination_or_global_NO_claimed": false,
+    "Lean_verification_claimed": false,
+    "empirical_admission_claimed": false,
+    "status": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+    "verification": "INDEPENDENT_EXACT_LINEAR_CERTIFICATES",
+    "scope": "complete supplied n/original-ID registry ONLY; not unknown-size global NO",
+    "source_count_examined": 3,
+    "catalogue_exhausted": true,
+    "entries": [
+      {
+        "graph": {
+          "edges": [
+            [
+              "R",
+              "T0"
+            ],
+            [
+              "R",
+              "L0"
+            ],
+            [
+              "T0",
+              "L1"
+            ],
+            [
+              "T0",
+              "L2"
+            ]
+          ],
+          "root": "R",
+          "leaves": [
+            "L0",
+            "L1",
+            "L2"
+          ]
+        },
+        "mechanism": "independent",
+        "equations": [
+          "1/3 - 2*x0/3",
+          "x0/3 - 1/6",
+          "x0/3 - 1/6",
+          "5/6 - 2*x0/3",
+          "x0/3 - 2/3",
+          "x0/3 - 1/6"
+        ],
+        "equation_sha256": "8ee551a3b792bbb37ef708dad3aaed3c42551bfe3ad16d7b6e0b3741d3fad71c",
+        "target": {
+          "nontrivial_displayed_split_union": [],
+          "whole_switching_split_systems": [
+            []
+          ]
+        },
+        "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+        "certificate": {
+          "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+          "multipliers": [
+            "-1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          "reason": "nonzero_constant",
+          "constant": "1/2"
+        }
+      },
+      {
+        "graph": {
+          "edges": [
+            [
+              "R",
+              "T0"
+            ],
+            [
+              "R",
+              "L0"
+            ],
+            [
+              "T0",
+              "L1"
+            ],
+            [
+              "T0",
+              "L2"
+            ]
+          ],
+          "root": "R",
+          "leaves": [
+            "L0",
+            "L1",
+            "L2"
+          ]
+        },
+        "mechanism": "common",
+        "equations": [
+          "1/3 - 2*x0/3",
+          "x0/3 - 1/6",
+          "x0/3 - 1/6",
+          "5/6 - 2*x0/3",
+          "x0/3 - 2/3",
+          "x0/3 - 1/6"
+        ],
+        "equation_sha256": "8ee551a3b792bbb37ef708dad3aaed3c42551bfe3ad16d7b6e0b3741d3fad71c",
+        "target": {
+          "nontrivial_displayed_split_union": [],
+          "whole_switching_split_systems": [
+            []
+          ]
+        },
+        "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+        "certificate": {
+          "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+          "multipliers": [
+            "-1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          "reason": "nonzero_constant",
+          "constant": "1/2"
+        }
+      },
+      {
+        "graph": {
+          "edges": [
+            [
+              "R",
+              "T0"
+            ],
+            [
+              "T0",
+              "L0"
+            ],
+            [
+              "R",
+              "L1"
+            ],
+            [
+              "T0",
+              "L2"
+            ]
+          ],
+          "root": "R",
+          "leaves": [
+            "L0",
+            "L1",
+            "L2"
+          ]
+        },
+        "mechanism": "independent",
+        "equations": [
+          "x0/3 - 2/3",
+          "5/6 - 2*x0/3",
+          "x0/3 - 1/6",
+          "x0/3 - 1/6",
+          "1/3 - 2*x0/3",
+          "x0/3 - 1/6"
+        ],
+        "equation_sha256": "1032c448d2c87d73121c346e1b38c5b118c856ce72f276ba0a7b51ebb5f185f3",
+        "target": {
+          "nontrivial_displayed_split_union": [],
+          "whole_switching_split_systems": [
+            []
+          ]
+        },
+        "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+        "certificate": {
+          "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+          "multipliers": [
+            "3",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reason": "strict_unit_domain",
+          "variable": "x0",
+          "coefficient": "1",
+          "constant": "-2",
+          "forced_value": "2"
+        }
+      },
+      {
+        "graph": {
+          "edges": [
+            [
+              "R",
+              "T0"
+            ],
+            [
+              "T0",
+              "L0"
+            ],
+            [
+              "R",
+              "L1"
+            ],
+            [
+              "T0",
+              "L2"
+            ]
+          ],
+          "root": "R",
+          "leaves": [
+            "L0",
+            "L1",
+            "L2"
+          ]
+        },
+        "mechanism": "common",
+        "equations": [
+          "x0/3 - 2/3",
+          "5/6 - 2*x0/3",
+          "x0/3 - 1/6",
+          "x0/3 - 1/6",
+          "1/3 - 2*x0/3",
+          "x0/3 - 1/6"
+        ],
+        "equation_sha256": "1032c448d2c87d73121c346e1b38c5b118c856ce72f276ba0a7b51ebb5f185f3",
+        "target": {
+          "nontrivial_displayed_split_union": [],
+          "whole_switching_split_systems": [
+            []
+          ]
+        },
+        "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+        "certificate": {
+          "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+          "multipliers": [
+            "3",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reason": "strict_unit_domain",
+          "variable": "x0",
+          "coefficient": "1",
+          "constant": "-2",
+          "forced_value": "2"
+        }
+      },
+      {
+        "graph": {
+          "edges": [
+            [
+              "R",
+              "T0"
+            ],
+            [
+              "T0",
+              "L0"
+            ],
+            [
+              "T0",
+              "L1"
+            ],
+            [
+              "R",
+              "L2"
+            ]
+          ],
+          "root": "R",
+          "leaves": [
+            "L0",
+            "L1",
+            "L2"
+          ]
+        },
+        "mechanism": "independent",
+        "equations": [
+          "x0/3 - 2/3",
+          "x0/3 - 1/6",
+          "5/6 - 2*x0/3",
+          "x0/3 - 1/6",
+          "x0/3 - 2/3",
+          "5/6 - 2*x0/3"
+        ],
+        "equation_sha256": "589744ebab0dde456b069dc8f096ed6f7fe6691d761cd057eb192f4460e14c64",
+        "target": {
+          "nontrivial_displayed_split_union": [],
+          "whole_switching_split_systems": [
+            []
+          ]
+        },
+        "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+        "certificate": {
+          "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+          "multipliers": [
+            "3",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reason": "strict_unit_domain",
+          "variable": "x0",
+          "coefficient": "1",
+          "constant": "-2",
+          "forced_value": "2"
+        }
+      },
+      {
+        "graph": {
+          "edges": [
+            [
+              "R",
+              "T0"
+            ],
+            [
+              "T0",
+              "L0"
+            ],
+            [
+              "T0",
+              "L1"
+            ],
+            [
+              "R",
+              "L2"
+            ]
+          ],
+          "root": "R",
+          "leaves": [
+            "L0",
+            "L1",
+            "L2"
+          ]
+        },
+        "mechanism": "common",
+        "equations": [
+          "x0/3 - 2/3",
+          "x0/3 - 1/6",
+          "5/6 - 2*x0/3",
+          "x0/3 - 1/6",
+          "x0/3 - 2/3",
+          "5/6 - 2*x0/3"
+        ],
+        "equation_sha256": "589744ebab0dde456b069dc8f096ed6f7fe6691d761cd057eb192f4460e14c64",
+        "target": {
+          "nontrivial_displayed_split_union": [],
+          "whole_switching_split_systems": [
+            []
+          ]
+        },
+        "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+        "certificate": {
+          "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+          "multipliers": [
+            "3",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reason": "strict_unit_domain",
+          "variable": "x0",
+          "coefficient": "1",
+          "constant": "-2",
+          "forced_value": "2"
+        }
+      }
+    ],
+    "elapsed_seconds": 0.060896070000012514
+  },
+  "checker_execution": {
+    "command": [
+      "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+      "-B",
+      "/workspace/scratch/conditional-bridge-bounded/tests-final/all_shared_rows_excluded/runtime/verify_certificate.py",
+      "/workspace/scratch/conditional-bridge-bounded/tests-final/all_shared_rows_excluded/backend/RESULT.json",
+      "--replay-backend"
+    ],
+    "invoked": true,
+    "timeout": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.6450482079999347
+  },
+  "semantic_check": {
+    "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION",
+    "entries": 6,
+    "independent_exact_entries": 6,
+    "same_backend_unsat_replays": 0,
+    "global_unknown_size_NO_inferred": false,
+    "Lean_verification_inferred": false
+  },
+  "reason": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+  "covered_class": {
+    "n": 3,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "independent",
+      "common"
+    ],
+    "clock_contract": "free_positive_edge_specific"
+  },
+  "scope": "Every source in the declared complete finite registry only; no unknown-size or unrestricted NO."
+}

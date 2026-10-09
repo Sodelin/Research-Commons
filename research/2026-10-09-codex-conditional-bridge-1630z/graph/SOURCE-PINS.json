@@ -1,0 +1,88 @@
+{
+  "schema": "ordinary_forest_baseline_source_pins_v1",
+  "contributor": "Codex graph lane",
+  "inherited_contributor": "dot (OpenAI)",
+  "reviewed_baseline_commit": "00ecd0b5f444a12d6ce01ee5128791a772fbf055",
+  "reviewed_oracle_audit_commit": "af7107c57d75f241df5018347fda26d21e4f3267",
+  "recovered_repository_head": "cf6c1b32c6127af9568c18a65c25d738d288a3e7",
+  "pins": {
+    "implementation": {
+      "path": "applications/practical-solver/forest_baseline.py",
+      "sha256": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac"
+    },
+    "authored_tests": {
+      "path": "research/2026-10-09-codex-conditional-bridge-1630z/graph/test_forest_baseline.py",
+      "sha256": "a42bcae1ceb40b01978deed93e157bb65e19d0506bd76c9a789bdc5500df3dfd"
+    },
+    "benchmark": {
+      "path": "research/2026-10-09-codex-conditional-bridge-1630z/graph/benchmark_forest_baseline.py",
+      "sha256": "1aeade20e0494c29eeb92da6793ee98ee2ce545182672260a80372b297bd223a"
+    },
+    "inherited_explicit_engine": {
+      "path": "research/2026-10-01-g4-admitted-testers-0819z/forest_algebra.py",
+      "sha256": "850589b346a6cc000e102c594a1ebc6342e9e1ba4604edace20fe5ecdc385884"
+    },
+    "inherited_forest_compiler_proof": {
+      "path": "research/2026-10-01-g4-admitted-testers-0819z/PROOF.md",
+      "sha256": "661696b322c1ee2f57ffeb45ada556808f945d698ef0187c1a32ec0d881e40a1"
+    },
+    "reviewed_baseline": {
+      "path": "research/2026-10-09-dot-source-quantum-baseline-assessments-1557z/forest/SPARSE-FOREST-FAMILY-AND-ORIGINAL-OBSERVABLE-BASELINE.md",
+      "sha256": "79d9da64c950ddbd2d77d59cbbc930f293a19daa234e9bf9546051f6131c1d52"
+    },
+    "baseline_independent_hand_review": {
+      "path": "research/2026-10-09-dot-source-quantum-baseline-assessments-1557z/forest/INDEPENDENT-CONSTRUCTION-LANE-REVIEW.md",
+      "sha256": "88659880b6a1a80ae1b927329368d2cc9011739b9404b43554d36875a9ba57e0"
+    },
+    "baseline_bounded_checker": {
+      "path": "research/2026-10-09-dot-source-quantum-baseline-assessments-1557z/forest/check_forest_oracles.py",
+      "sha256": "8a7b0668108f37e0e33fe8322a70d80eb60499548597c614ab14b43e2de490df"
+    },
+    "oracle_audit": {
+      "path": "research/2026-10-09-dot-quantum-oracle-resource-audit-1544z/PHASE-SENSITIVE-TRANSFER-COST-AND-OBSTRUCTION.md",
+      "sha256": "87e750bb74e3248231b3830a988b951330d52f5e77a5ca69b2f9b2d881c57e7e"
+    },
+    "oracle_quantitative_theorem": {
+      "path": "research/2026-10-09-dot-quantum-oracle-resource-audit-1544z/ON-DEMAND-ORACLE-QUANTITATIVE-THEOREM.md",
+      "sha256": "52618390ac747ca8443b7976a8179318d0f59e59a9e98b46af8afcca0fde508e"
+    },
+    "deep_equality_expression_check": {
+      "path": "research/2026-10-09-codex-conditional-bridge-1630z/graph/reproduce_prior_equality_failure.py",
+      "sha256": "f1d48d9a89e24ac2cf8932fb2d5efc32bb5ace2a1def2ae2ed3883e9355ae868"
+    }
+  },
+  "evidence_tier": "authored_execution; inherited hand reviews retained; independent new-module review owned separately by validation lane; no Lean/circuit/hardware evidence",
+  "python": "3.12.14",
+  "commands": [
+    {
+      "command": "python3 research/2026-10-09-codex-conditional-bridge-1630z/graph/test_forest_baseline.py",
+      "exit_code": 0,
+      "saved_output": "TEST-RESULT.json"
+    },
+    {
+      "command": "python3 research/2026-10-09-codex-conditional-bridge-1630z/graph/benchmark_forest_baseline.py",
+      "exit_code": 0,
+      "saved_output": "BENCHMARK-RESULT.json"
+    },
+    {
+      "command": "python3 research/2026-10-09-codex-conditional-bridge-1630z/graph/reproduce_prior_equality_failure.py",
+      "exit_code": 0,
+      "saved_output": "DEEP-EQUALITY-CHECK.json"
+    },
+    {
+      "command": "python3 applications/practical-solver/forest_baseline.py --request research/2026-10-09-codex-conditional-bridge-1630z/graph/examples/one-ordinary-population.json --output NEW_DIR",
+      "exit_code": 0,
+      "saved_output": "CLI-RESULT.json; CLI-REPORT.md"
+    },
+    {
+      "command": "Previous failure-seeking expression probe f==g at m=1100, using current encoder/decoder; expected RecursionError absent",
+      "exit_code": 1,
+      "saved_output": "DEEP-EQUALITY-PROBE-FIRST.json"
+    },
+    {
+      "command": "Previous failure-seeking expression probe f==g at m=2000, using current encoder/decoder; expected RecursionError absent",
+      "exit_code": 1,
+      "saved_output": "DEEP-EQUALITY-PROBE-SECOND.json"
+    }
+  ]
+}

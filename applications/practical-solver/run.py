@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Run the inherited exact nine-parameter solver and independently replay its complete journal.
 
-Python 3.10+ and a POSIX resource module suffice. No network or third-party
-Python package is used. Results never issue biological accuracy or confidence.
+Default paths use Python 3.10+ and the POSIX resource module, without network
+or third-party packages. The optional exact source backend needs a separately
+prepared pinned environment. Results never issue biological accuracy or confidence.
 """
 from __future__ import annotations
 import argparse
@@ -137,26 +138,33 @@ def authenticate(out):
         raise SourceError('Checker source pins do not match inherited runtime')
     return result
 
-def execute(out,name,command):
+def execute(out,name,command,on_launch=None,accepted_exit_codes=(0,)):
     def limits():
         resource.setrlimit(resource.RLIMIT_CPU,(30,30));resource.setrlimit(resource.RLIMIT_AS,(512*2**20,512*2**20))
         resource.setrlimit(resource.RLIMIT_FSIZE,(16*2**20,16*2**20));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
     env={'PATH':os.defpath,'LANG':'C.UTF-8','PYTHONNOUSERSITE':'1','PYTHONDONTWRITEBYTECODE':'1','PYTHONHASHSEED':'0'}
     start=time.monotonic(); before=resource.getrusage(resource.RUSAGE_CHILDREN)
     with (out/(name+'.stdout')).open('xb') as stdout,(out/(name+'.stderr')).open('xb') as stderr:
-        process=subprocess.Popen(command,env=env,stdout=stdout,stderr=stderr,preexec_fn=limits)
+        try:
+            process=subprocess.Popen(command,env=env,stdout=stdout,stderr=stderr,preexec_fn=limits)
+        except Exception as error:
+            write(out/(name+'.execution.json'),{'command':command,'process_started':False,
+                'launch_error':str(error),'wall_seconds':time.monotonic()-start,
+                'minimal_environment_no_credentials':True})
+            raise
+        if on_launch: on_launch()
         timeout=False
         try:process.wait(timeout=45)
         except subprocess.TimeoutExpired: process.kill();process.wait();timeout=True
     after=resource.getrusage(resource.RUSAGE_CHILDREN)
-    receipt={'command':command,'exit_code':process.returncode,'timeout':timeout,'wall_seconds':time.monotonic()-start,
+    receipt={'command':command,'process_started':True,'exit_code':process.returncode,'timeout':timeout,'wall_seconds':time.monotonic()-start,
              'cpu_seconds':after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime,
              'cumulative_children_max_rss_kib':after.ru_maxrss,'cpu_limit_seconds':30,'wall_limit_seconds':45,
              'address_space_limit_bytes':512*2**20,'per_file_limit_bytes':16*2**20,
              'stdout_sha256':sha((out/(name+'.stdout')).read_bytes()),'stderr_sha256':sha((out/(name+'.stderr')).read_bytes()),
              'minimal_environment_no_credentials':True}
     write(out/(name+'.execution.json'),receipt)
-    if process.returncode or timeout: raise RuntimeError(name+' failed or exhausted resources; logs preserved in '+str(out))
+    if process.returncode not in accepted_exit_codes or timeout: raise RuntimeError(name+' failed or exhausted resources; logs preserved in '+str(out))
     return receipt
 
 def common_args(out,request_hash):
@@ -206,17 +214,19 @@ def run(args):
     reason=admit(request);out=create_output(args.output)
     result={'schema':'practical_solver_release_result_v1','execution_mode':'FRESH_RUN','started_utc':datetime.now(timezone.utc).isoformat(),
        'request_sha256':sha(raw),'example':args.example,'source_feasibility_certified':False,'statistical_coverage_verified':False,
-       'parameter_accuracy_released':False,'whole_application_lean_verified':False,'program_sha256':sha(Path(__file__).read_bytes())}
+       'parameter_accuracy_released':False,'whole_application_lean_verified':False,'program_sha256':sha(Path(__file__).read_bytes()),
+       'solver_called':False,'checker_called':False,'diagnostic_called':False}
     try:
         if reason:
             result.update(status='MODEL_NOT_ADMITTED',explanation=reason,solver_called=False,required_model=MODEL)
         else:
             with (out/'REQUEST.json').open('xb') as f:f.write(raw)
             runtime,engine=stage(out);before=authenticate(out)
-            executions=[execute(out,'producer',[sys.executable,'-B',str(engine/'global_engine.py'),*common_args(out,sha(raw))]),
-                        execute(out,'checker',checker_command(out,sha(raw)))]
+            executions=[execute(out,'producer',[sys.executable,'-B',str(engine/'global_engine.py'),*common_args(out,sha(raw))],
+                                on_launch=lambda:result.update(solver_called=True)),
+                        execute(out,'checker',checker_command(out,sha(raw)),on_launch=lambda:result.update(checker_called=True))]
             _,checked=read(out/'checker.stdout',16*2**20)
-            result.update(status=checked['status'],solver_called=True,original_complete_checker=checked,
+            result.update(status=checked['status'],original_complete_checker=checked,
                           retained_complete_outer_cover=checked.get('physical_cover',[]),widths=checked.get('widths'),executions=executions,
                           source_bytes_unchanged=before==authenticate(out),explanation=explanation(checked,args.example))
             if args.example=='finite-data':
@@ -228,12 +238,12 @@ def run(args):
             diagnostic_args=[sys.executable,'-B',str(APP/'diagnostic.py'),'--request',str(out/'REQUEST.json'),'--checker',str(out/'checker.stdout'),'--output',str(out/'diagnostic')]
             if args.native_binary: diagnostic_args+=['--native-binary',str(args.native_binary.absolute())]
             try:
-                receipt=execute(out,'diagnostic',diagnostic_args);_,diag=read(out/'diagnostic/RESULT.json',16*2**20)
+                receipt=execute(out,'diagnostic',diagnostic_args,on_launch=lambda:result.update(diagnostic_called=True));_,diag=read(out/'diagnostic/RESULT.json',16*2**20)
                 result.update(native_reference_post_checker=diag,diagnostic_execution=receipt,diagnostic_description=diag['description'])
             except Exception as error:
                 result.update(native_reference_post_checker={'status':'DIAGNOSTIC_FAILED','reason':str(error)},diagnostic_description='optional diagnostic failed; complete checked cover preserved')
     except Exception as error:
-        result.update(status='RESOURCE_OR_EXECUTION_FAILURE',explanation=str(error),solver_called=True)
+        result.update(status='RESOURCE_OR_EXECUTION_FAILURE',explanation=str(error))
     result['ended_utc']=datetime.now(timezone.utc).isoformat();write(out/'RESULT.json',result);report(out,result);write(out/'ARTIFACTS.json',inventory(out))
     print(json.dumps({'status':result['status'],'execution_mode':result['execution_mode'],'output':str(out),'report':str(out/'REPORT.html')},sort_keys=True))
     return 1 if result['status']=='RESOURCE_OR_EXECUTION_FAILURE' else 0
@@ -247,7 +257,8 @@ def show(args):
     result={'schema':'practical_solver_release_result_v1','execution_mode':'SAVED_RESULTS','status':checked.get('status',saved.get('status')),
       'explanation':'Saved 8 October 2026 evidence displayed. No solver, checker, native binary or service was executed by this command.',
       'saved_source':str(source.relative_to(ROOT)),'saved_source_sha256':sha(raw),'saved_result':saved,'widths':checked.get('widths'),
-      'source_feasibility_certified':False,'statistical_coverage_verified':False,'parameter_accuracy_released':False,'solver_called':False}
+      'source_feasibility_certified':False,'statistical_coverage_verified':False,'parameter_accuracy_released':False,
+      'solver_called':False,'checker_called':False,'diagnostic_called':False}
     write(out/'RESULT.json',result);report(out,result);write(out/'ARTIFACTS.json',inventory(out))
     print(json.dumps({'execution_mode':'SAVED_RESULTS','status':result['status'],'output':str(out)},sort_keys=True));return 0
 
@@ -264,7 +275,8 @@ def check(args):
     result={'schema':'practical_solver_release_recheck_v1','execution_mode':'FRESH_INDEPENDENT_RECHECK','status':checked['status'],
       'explanation':explanation(checked),'source_run':str(source),'request_sha256':sha(raw),'original_complete_checker':checked,
       'retained_complete_outer_cover':checked.get('physical_cover',[]),'widths':checked.get('widths'),'execution':receipt,
-      'source_feasibility_certified':False,'statistical_coverage_verified':False,'parameter_accuracy_released':False}
+      'source_feasibility_certified':False,'statistical_coverage_verified':False,'parameter_accuracy_released':False,
+      'solver_called':False,'checker_called':receipt['process_started'],'diagnostic_called':False}
     write(out/'RESULT.json',result);report(out,result);write(out/'ARTIFACTS.json',inventory(out))
     print(json.dumps({'execution_mode':result['execution_mode'],'status':result['status'],'output':str(out)},sort_keys=True));return 0
 
@@ -282,6 +294,70 @@ def molecular(args):
     print(json.dumps({'execution_mode':result['execution_mode'],'status':result['status'],'evidence':result['evidence'],
                       'live_api_calls':0,'output':str(out)},sort_keys=True));return 0
 
+def component_report(out,title,result):
+    child=result.get('component_result',{})
+    text_body='# '+title+'\n\n**'+result['execution_mode']+' — '+result['status']+'**\n\n'+result['explanation']+'\n'
+    if (out/'component/REPORT.md').is_file():
+        text_body+='\n'+(out/'component/REPORT.md').read_text()
+    for row in child.get('conditional_counts',[]):
+        text_body+='\nSlot '+row['slot_id']+': delta = '+row['delta']+', rational upper bound = '+row['rational_upper_bound']+', ceiling = '+str(row['cell_count_bound'])+'. Conditional arithmetic only; provider verification remains unavailable.\n'
+    text_body+='\nNo statistical confidence or biological parameter accuracy is issued. General original G3/G4 and whole-application formal correctness remain unproved. Inspect component/RESULT.json for complete scoped evidence.\n'
+    (out/'REPORT.md').write_text(text_body)
+    page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>'+html.escape(title)+'</title><style>body{font:17px/1.55 system-ui;margin:2rem auto;max-width:1000px;padding:0 1rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>'+html.escape(title)+'</h1><pre>'+html.escape(text_body)+'</pre><p><a href="RESULT.json">Complete machine-readable result</a> · <a href="REPORT.md">Markdown report</a> · <a href="ARTIFACTS.json">Artifact hashes</a></p></html>\n'
+    (out/'REPORT.html').write_text(page)
+
+def component(args):
+    """Delegate an existing scoped module; never reinterpret bounded UNKNOWN as NO."""
+    raw,_request=read(args.request);out=create_output(args.output)
+    name=args.command
+    module=APP/('certified_bounds.py' if name=='certified-bounds' else 'forest_baseline.py')
+    title='Same-source conditional bounds and exact backend' if name=='certified-bounds' else 'Exact classical ordinary-forest coordinate'
+    result={'schema':'practical_solver_component_result_v1','execution_mode':'FRESH_COMPONENT_EXECUTION',
+        'component':name,'component_called':False,'original_nine_parameter_producer_called':False,
+        'request_bytes_sha256':sha(raw),'launcher_sha256':sha(Path(__file__).read_bytes()),
+        'component_source_sha256':sha(module.read_bytes()),'statistical_coverage_verified':False,
+        'parameter_accuracy_released':False,'whole_application_lean_verified':False,
+        'started_utc':datetime.now(timezone.utc).isoformat()}
+    with (out/'REQUEST.json').open('xb') as f:f.write(raw)
+    command=[sys.executable,'-B',str(module),'--request',str(out/'REQUEST.json'),'--output',str(out/'component')]
+    if name=='certified-bounds' and args.python_executable:
+        command+=['--python-executable',str(args.python_executable.absolute())]
+    code=1
+    try:
+        receipt=execute(out,name,command,on_launch=lambda:result.update(component_called=True),accepted_exit_codes=(0,1,2))
+        result['execution']=receipt;code=receipt['exit_code']
+        if (out/'component/RESULT.json').is_file():
+            _,child=read(out/'component/RESULT.json',16*2**20,exact=False)
+            expected_schema='same_source_certified_bounds_result_v1' if name=='certified-bounds' else 'ordinary_forest_result_v1'
+            if child.get('schema')!=expected_schema:raise SourceError('Unexpected scoped component result schema')
+            if name=='certified-bounds':
+                expected={'CERTIFIED_SOURCE_WITNESS':0,'CERTIFIED_EXCLUSION_WITHIN_VERIFIED_COVERED_CLASS':0,'UNKNOWN':2,'REFUSED_REQUEST':1}
+            else:expected={'EXACT_CLASSICAL_COORDINATE':0}
+            if child.get('status') not in expected or code!=expected[child['status']]:
+                raise SourceError('Scoped component status and exit receipt disagree')
+            result.update(status=child['status'],component_result=child,
+                explanation=child.get('scope',child.get('scientific_scope',child.get('reason','Scoped component result'))))
+        elif code in (1,2):
+            if name=='certified-bounds':
+                _,refusal=read(out/(name+'.stdout'),16*2**20,exact=False)
+                if not isinstance(refusal,dict) or refusal.get('status')!='REFUSED_REQUEST' or code!=1:
+                    raise SourceError('Component produced no scoped refusal or result evidence')
+                reason=str(refusal.get('reason','Refused scoped request'))
+            else:
+                reason=(out/(name+'.stderr')).read_text()[:2000]
+                if code!=2 or not reason.startswith('Invalid ordinary-forest request:'):
+                    raise SourceError('Component produced no scoped refusal or result evidence')
+            result.update(status='REFUSED_REQUEST',explanation=reason)
+        else:raise SourceError('Component produced no result evidence')
+        if sha(module.read_bytes())!=result['component_source_sha256']:raise SourceError('Component source changed during execution')
+        result['component_source_unchanged']=True
+    except Exception as error:
+        result.update(status='RESOURCE_OR_EXECUTION_FAILURE',explanation=str(error));code=1
+    result['ended_utc']=datetime.now(timezone.utc).isoformat()
+    write(out/'RESULT.json',result);component_report(out,title,result);write(out/'ARTIFACTS.json',inventory(out))
+    print(json.dumps({'status':result['status'],'execution_mode':result['execution_mode'],'output':str(out),'report':str(out/'REPORT.html')},sort_keys=True))
+    return code
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='command',required=True)
     fresh=sub.add_parser('run',help='Fresh producer + independent complete-journal checker + pair diagnostic')
@@ -291,6 +367,11 @@ def main():
     recheck=sub.add_parser('check',help='Independently replay a prior complete journal');recheck.add_argument('--run',type=Path,required=True);recheck.add_argument('--output',type=Path);recheck.set_defaults(func=check)
     mol=sub.add_parser('molecular',help='Fresh optional matched REF/A/B/AB synthetic fixture; zero live calls')
     mol.add_argument('--output',type=Path);mol.set_defaults(func=molecular)
+    bounds=sub.add_parser('certified-bounds',help='Consume conditional count data or reuse the existing same-source exact backend')
+    bounds.add_argument('--request',type=Path,required=True);bounds.add_argument('--output',type=Path)
+    bounds.add_argument('--python-executable',type=Path,help='Optional pinned scratch Python backend environment');bounds.set_defaults(func=component)
+    forest=sub.add_parser('forest-baseline',help='Exact classical specified-forest coordinate for one ordinary population')
+    forest.add_argument('--request',type=Path,required=True);forest.add_argument('--output',type=Path);forest.set_defaults(func=component)
     args=parser.parse_args()
     try:return args.func(args)
     except (InputError,SourceError,OSError,ValueError,RuntimeError) as error:print('ERROR: '+str(error),file=sys.stderr);return 2

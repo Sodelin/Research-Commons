@@ -1,0 +1,57 @@
+{
+  "schema": "same_source_certified_bounds_v1",
+  "operation": "finite_registry",
+  "source_request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 3,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "independent",
+      "common"
+    ],
+    "limits": {
+      "seconds": 30,
+      "max_sources": 100,
+      "smt_milliseconds": 10000
+    },
+    "rows": [
+      {
+        "law": [
+          {
+            "outcome": [
+              "L0",
+              [
+                "L1",
+                "L2"
+              ]
+            ],
+            "p": "1/3"
+          },
+          {
+            "outcome": [
+              "L1",
+              [
+                "L0",
+                "L2"
+              ]
+            ],
+            "p": "1/3"
+          },
+          {
+            "outcome": [
+              "L2",
+              [
+                "L0",
+                "L1"
+              ]
+            ],
+            "p": "1/3"
+          }
+        ]
+      }
+    ]
+  }
+}

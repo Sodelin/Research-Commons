@@ -1,0 +1,102 @@
+{
+  "schema": "bounded-incomplete-original-registry-YES-search-v1",
+  "request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 3,
+    "registry": {
+      "complete": false,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "independent",
+      "common"
+    ],
+    "limits": {
+      "seconds": 30,
+      "max_sources": 100,
+      "smt_milliseconds": 10000
+    },
+    "rows": [
+      {
+        "law": [
+          {
+            "outcome": [
+              "L0",
+              [
+                "L1",
+                "L2"
+              ]
+            ],
+            "p": "1/3"
+          },
+          {
+            "outcome": [
+              "L1",
+              [
+                "L0",
+                "L2"
+              ]
+            ],
+            "p": "1/3"
+          },
+          {
+            "outcome": [
+              "L2",
+              [
+                "L0",
+                "L1"
+              ]
+            ],
+            "p": "1/3"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "d4ce2cf65742469cf9578cfed81e01aaf7c972e04d5482dd10780c606d76393e",
+  "max_extra_hybrids_searched": 0,
+  "upstream": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+    "files": [
+      {
+        "path": "upstream/source_census.py",
+        "bytes": 6474,
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+      },
+      {
+        "path": "upstream/law_compiler.py",
+        "bytes": 9360,
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+      },
+      {
+        "path": "upstream/continuous_optimizer.wl",
+        "bytes": 2401,
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+      },
+      {
+        "path": "upstream/README.md",
+        "bytes": 7949,
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+      }
+    ]
+  },
+  "members": [
+    {
+      "extra_hybrids": 0,
+      "result": "extra-0/RESULT.json",
+      "sha256": "91b8212c9466307ef6ba9470cda402ba37c9625b7beb1e4afad166a4f6478620",
+      "status": "UNSAT_COMPLETE_KNOWN_REGISTRY"
+    }
+  ],
+  "unknown_size_termination_or_global_NO_claimed": false,
+  "Lean_verification_claimed": false,
+  "empirical_admission_claimed": false,
+  "status": "UNKNOWN_BOUNDED_SEARCH_EXHAUSTED",
+  "source_count_examined": 3,
+  "scope": "No certified witness found in finite attempted registries; larger or unresolved admitted sources remain possible."
+}

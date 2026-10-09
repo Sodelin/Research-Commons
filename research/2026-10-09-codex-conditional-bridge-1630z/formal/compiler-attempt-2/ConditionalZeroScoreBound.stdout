@@ -1,0 +1,24 @@
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:156:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (1 - ↑d.delta / (2 * (1 + ↑d.delta))) * (2 * (1 + ↑d.delta))
+in the target expression
+  2 * (1 + ↑d.delta) * beta ≤ 2 * (1 + ↑d.delta) * (1 - ↑d.delta / (2 * (1 + ↑d.delta)))
+
+d : NumericData
+p q beta : ℝ
+hp : p ≤ 1 / 4
+hq : q ≤ 1
+hqdelta : (1 + ↑d.delta) * q ≤ 1
+hbeta : beta = q + 2 * p * (1 - q)
+hd : 0 < ↑d.delta
+hmid : beta ≤ (1 + q) / 2
+hden : 0 < 2 * (1 + ↑d.delta)
+hloss : ↑d.loss = ↑d.delta / (2 * (1 + ↑d.delta))
+hscaled : beta * (2 * (1 + ↑d.delta)) ≤ (1 + q) / 2 * (2 * (1 + ↑d.delta))
+hid : (1 - ↑d.delta / (2 * (1 + ↑d.delta))) * (2 * (1 + ↑d.delta)) = 2 + ↑d.delta
+⊢ 2 * (1 + ↑d.delta) * beta ≤ 2 * (1 + ↑d.delta) * (1 - ↑d.delta / (2 * (1 + ↑d.delta)))
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:160:34: warning: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

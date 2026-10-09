@@ -1,0 +1,72 @@
+{
+  "schema": "same_source_certified_bounds_result_v1",
+  "status": "REFUSED_REQUEST",
+  "request": {
+    "schema": "same_source_certified_bounds_v1",
+    "operation": "finite_registry",
+    "source_request": {
+      "observation_kind": "exact_unranked_law",
+      "n": 3,
+      "registry": {
+        "complete": true,
+        "hybrid_ids": []
+      },
+      "mechanisms": [
+        "independent",
+        "common"
+      ],
+      "limits": {
+        "seconds": 30,
+        "max_sources": 100,
+        "smt_milliseconds": 10000
+      },
+      "rows": [
+        {
+          "law": [
+            {
+              "outcome": [
+                "L0",
+                [
+                  "L1",
+                  "L2"
+                ]
+              ],
+              "p": "2/3"
+            },
+            {
+              "outcome": [
+                "L1",
+                [
+                  "L0",
+                  "L2"
+                ]
+              ],
+              "p": "1/6"
+            },
+            {
+              "outcome": [
+                "L2",
+                [
+                  "L0",
+                  "L1"
+                ]
+              ],
+              "p": "1/6"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "request_sha256": "081d2eb27d51aada3ce9b448798155d11a540560dfcb2bb8fa561d6036729693",
+  "execution_mode": "FRESH_RUN",
+  "solver_called": false,
+  "checker_called": false,
+  "source_feasibility_certified": false,
+  "unrestricted_NO_claimed": false,
+  "general_G3_resolved": false,
+  "Lean_kernel_verification_claimed": false,
+  "statistical_coverage_verified": false,
+  "source_request_sha256": "499edeb9d5a5b96dac3527014364834d644eb3261ec1f19014e75dbcdd2fcd8d",
+  "reason": "Inherited adapter manifest changed"
+}

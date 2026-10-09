@@ -7,6 +7,12 @@ readable reports and complete checked evidence. The
 preserves the distinct numerical/biological evidence, independent review and
 G1–G7 contracts. General G3/G4 remain separate open research obligations.
 
+**Conditional bridge, 2026-10-09:** [Verified proof/code/check packet](research/2026-10-09-codex-conditional-bridge-1630z/README.md)
+adds a Lean conditional count consumer, the inherited exact-source backend adapter,
+local G4 certificates and lazy ordinary-forest probabilities, with independently
+replayed launcher provenance repairs. Missing source providers, core/BOTH compilation
+and global rival localization remain explicit; general G3/G4 are OPEN.
+
 **Read [What research has actually been done?](RESEARCH-STATUS.md) first** for current outcomes, actual Lean/test evidence, remaining questions and links across the full programme. The older dated status notices below preserve chronology; use the current overview and its linked receipts to find the strongest established scope.
 
 **[October research roadmap and live status](timelines/2026-10-october-research-roadmap.md): weekly milestones, target dates and evidence gates toward 31 October 2026.**

@@ -1,0 +1,28 @@
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:67:17: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:67:17: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:151:32: error(lean.invalidField): Invalid field `mp`: The environment does not contain `Function.mp`, so it is not possible to project the field `mp` from an expression
+  mul_le_mul_right ?m.199
+of type
+  ∀ (a : ?m.193), a * ?m.197 ≤ a * ?m.198
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:151:26: error: Application type mismatch: The argument
+  hden
+has type
+  0 < 2 * (1 + ↑d.delta)
+but is expected to have type
+  ?m.197 ≤ ?m.198
+in the application
+  mul_le_mul_right hden
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:160:34: warning: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+UnifiedLean/G3/ConditionalZeroScoreBound.lean:180:44: error: mod_cast has type
+  d.loss < 1 / 2
+but is expected to have type
+  ↑d.loss < 1 / 2

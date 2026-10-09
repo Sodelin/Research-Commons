@@ -1,0 +1,67 @@
+{
+  "schema": "independent-backend-source-audit-v1",
+  "reviewer": "Codex independent validation lane",
+  "python": "3.12.14",
+  "dependencies": {
+    "sympy": true,
+    "z3": false
+  },
+  "sources": [
+    {
+      "path": "applications/practical-solver/run.py",
+      "sha256": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143",
+      "bytes": 23157
+    },
+    {
+      "path": "applications/practical-solver/DEPENDENCIES.json",
+      "sha256": "12e1f864762e49063b5202d8e20aeb0f5086b74a8f35733f62ffcda4e8a3b672",
+      "bytes": 1076
+    },
+    {
+      "path": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py",
+      "sha256": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+      "bytes": 28449
+    },
+    {
+      "path": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/bounded_search.py",
+      "sha256": "7906ad84dc31ae2add6349a8166c4626826b4e09eaf8dad1e86426710076f7e7",
+      "bytes": 5120
+    },
+    {
+      "path": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_search.py",
+      "sha256": "0698a99f0eef559e582b6e0b36d2c9bfb0c2c8ad94856c9ef62d58f631a3bf51",
+      "bytes": 3556
+    },
+    {
+      "path": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py",
+      "sha256": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840",
+      "bytes": 10389
+    },
+    {
+      "path": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/source_census.py",
+      "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+      "bytes": 6474
+    },
+    {
+      "path": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/law_compiler.py",
+      "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+      "bytes": 9360
+    },
+    {
+      "path": "research/2026-10-09-dot-reviewed-guard-boundaries-1615z/g3/WHOLE-FIBRE-ZERO-SCORE-CRITERION.md",
+      "sha256": "da43907a6c48829151445955944fb827cda84aa7bc6cf3fdbe1586e242baf3e9",
+      "bytes": 12869
+    },
+    {
+      "path": "research/2026-10-09-dot-reviewed-guard-boundaries-1615z/g3/INDEPENDENT-SURVIVAL-FLOOR-ADDENDUM.md",
+      "sha256": "9c4fa66e7362fc8fdc9e556e1ee3d0f35062f8995c41c842f3cda52150d5d420",
+      "bytes": 3696
+    },
+    {
+      "path": "research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md",
+      "sha256": "e3b949a1bbb86aeff07de0f127243da560d3a0844247d3b8ce92110827473432",
+      "bytes": 10081
+    }
+  ],
+  "result": "Existing exact coupled-source Python/SymPy/Z3 backend located; missing z3 prevents backend execution. Existing practical numerical engine is a distinct fixed-domain arithmetic outer-cover engine, not source feasibility. Source-provider verifier and bound-to-original-catalogue compiler remain unavailable."
+}

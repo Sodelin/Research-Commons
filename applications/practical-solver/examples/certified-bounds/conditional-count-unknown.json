@@ -1,0 +1,79 @@
+{
+  "schema": "same_source_certified_bounds_v1",
+  "operation": "conditional_count",
+  "source_request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 3,
+    "registry": {
+      "complete": false,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "independent"
+    ],
+    "limits": {
+      "seconds": 30,
+      "max_sources": 100,
+      "smt_milliseconds": 10000
+    },
+    "rows": [
+      {
+        "law": [
+          {
+            "outcome": [
+              "L0",
+              [
+                "L1",
+                "L2"
+              ]
+            ],
+            "p": "2/3"
+          },
+          {
+            "outcome": [
+              "L1",
+              [
+                "L0",
+                "L2"
+              ]
+            ],
+            "p": "1/6"
+          },
+          {
+            "outcome": [
+              "L2",
+              [
+                "L0",
+                "L1"
+              ]
+            ],
+            "p": "1/6"
+          }
+        ]
+      }
+    ]
+  },
+  "count_certificate": {
+    "schema": "conditional_independent_zero_score_v1",
+    "mode": "INDEPENDENT",
+    "source_request_sha256": "c817077e532b8c5975969edb79984c411d251262f993cadafb2607d98c3fe90d",
+    "slots": [
+      {
+        "slot_id": "UNVERIFIED_SLOT_0",
+        "b": "1/4",
+        "epsilon": "1/2",
+        "sigma": "1",
+        "M": "0",
+        "endpoint_score": "0",
+        "survival_floor_evidence": {
+          "provider_id": "UNVERIFIED_EXAMPLE_PLACEHOLDER",
+          "artifact_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "source_request_sha256": "c817077e532b8c5975969edb79984c411d251262f993cadafb2607d98c3fe90d",
+          "row_indices": [
+            0
+          ]
+        }
+      }
+    ]
+  }
+}

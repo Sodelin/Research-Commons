@@ -20,11 +20,12 @@ and inherited deterministic provider. Expression, splice usage and the
 derived two-window PAS proxy remain separate. No key, client, SDK install,
 live prediction or experimental validation is required or performed.
 
-The ingestion command freshly replays the SHA-authenticated literal
+The **archived-panel audit** command (`ingestion.py`) freshly replays the SHA-authenticated literal
 1,024-locus extractor, exact fixed-band arithmetic, one affine mean
 conversion, and the two-point containment/separation obstruction. It checks
 inherited forward enclosures rather than claiming a fresh forward run or new
-confidence event. Scientific confidence and biological accuracy stay false.
+confidence event. It takes no new alignment or panel input and labels its
+result `ARCHIVED_PANEL_AUDIT`. Scientific confidence and biological accuracy stay false.
 
 Current official API-source checks, secure future setup requirements, better
 statistics proposals, hemlock admission limits and exact evidence are in

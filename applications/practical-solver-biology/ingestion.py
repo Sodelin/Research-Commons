@@ -1,4 +1,4 @@
-"""Exact replay of archived observation extraction and finite-band obstruction.
+"""Archived-panel audit of pinned observation extraction and finite-band obstruction.
 
 This audits input arithmetic. It never issues scientific data admission or a
 new confidence event, and does not replace the producer or whole-journal check.
@@ -87,6 +87,7 @@ def audit_archived_panel():
         raise ValueError("archived finite-band precision obstruction differs")
     return {
         "schema": "practical-solver-biological-input-audit-v1", "status": "PASS",
+        "audit_kind": "ARCHIVED_PANEL_AUDIT",
         "execution_status": "FRESH_LITERAL_EXTRACTION_AND_EXACT_CONTAINMENT_REPLAY",
         "loci": extraction["m"], "counts": extraction["counts"],
         "selection_sha256": extraction["selection_sha256"], "radius": str(radius),

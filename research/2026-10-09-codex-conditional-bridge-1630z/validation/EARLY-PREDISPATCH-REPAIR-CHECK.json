@@ -1,0 +1,41 @@
+{
+  "reviewer": "Codex independent validation lane",
+  "scope": "Baseline launcher before provenance repair; actual CLI with corrupted copied public source manifest",
+  "source_sha256": "5e489adfbb13487aad2d9e12f4c9fc59c78bec4cf3a6b7386db067216c2decf2",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/validation-predispatch-o3d0k6sg/applications/practical-solver/run.py",
+    "run",
+    "--request",
+    "/workspace/Research-Commons/applications/practical-solver/examples/informative.json",
+    "--output",
+    "/workspace/scratch/validation-predispatch-o3d0k6sg/run"
+  ],
+  "exit_code": 1,
+  "stdout": "{\"execution_mode\": \"FRESH_RUN\", \"output\": \"/workspace/scratch/validation-predispatch-o3d0k6sg/run\", \"report\": \"/workspace/scratch/validation-predispatch-o3d0k6sg/run/REPORT.html\", \"status\": \"RESOURCE_OR_EXECUTION_FAILURE\"}\n",
+  "stderr": "",
+  "result": {
+    "checker_called": false,
+    "diagnostic_called": false,
+    "ended_utc": "2026-10-09T16:33:10.790380+00:00",
+    "example": null,
+    "execution_mode": "FRESH_RUN",
+    "explanation": "Inherited source manifest identity mismatch",
+    "parameter_accuracy_released": false,
+    "program_sha256": "5e489adfbb13487aad2d9e12f4c9fc59c78bec4cf3a6b7386db067216c2decf2",
+    "request_sha256": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+    "schema": "practical_solver_release_result_v1",
+    "solver_called": false,
+    "source_feasibility_certified": false,
+    "started_utc": "2026-10-09T16:33:10.790161+00:00",
+    "statistical_coverage_verified": false,
+    "status": "RESOURCE_OR_EXECUTION_FAILURE",
+    "whole_application_lean_verified": false
+  },
+  "producer_execution_exists": false,
+  "producer_stdout_exists": false,
+  "expected_solver_called": false,
+  "assertion_passed": true,
+  "scratch_directory": "/workspace/scratch/validation-predispatch-o3d0k6sg"
+}

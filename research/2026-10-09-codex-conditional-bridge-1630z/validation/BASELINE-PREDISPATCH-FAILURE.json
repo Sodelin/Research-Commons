@@ -1,0 +1,40 @@
+{
+  "reviewer": "Codex independent validation lane",
+  "scope": "Pinned cf6c1b32 baseline launcher, actual CLI corrupted copied public source manifest",
+  "source_commit": "cf6c1b32c6127af9568c18a65c25d738d288a3e7",
+  "source_sha256": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/validation-baseline-predispatch-yf8f6hzr/applications/practical-solver/run.py",
+    "run",
+    "--request",
+    "/workspace/Research-Commons/applications/practical-solver/examples/informative.json",
+    "--output",
+    "/workspace/scratch/validation-baseline-predispatch-yf8f6hzr/run"
+  ],
+  "exit_code": 1,
+  "stdout": "{\"execution_mode\": \"FRESH_RUN\", \"output\": \"/workspace/scratch/validation-baseline-predispatch-yf8f6hzr/run\", \"report\": \"/workspace/scratch/validation-baseline-predispatch-yf8f6hzr/run/REPORT.html\", \"status\": \"RESOURCE_OR_EXECUTION_FAILURE\"}\n",
+  "stderr": "",
+  "result": {
+    "ended_utc": "2026-10-09T16:33:27.702460+00:00",
+    "example": null,
+    "execution_mode": "FRESH_RUN",
+    "explanation": "Inherited source manifest identity mismatch",
+    "parameter_accuracy_released": false,
+    "program_sha256": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143",
+    "request_sha256": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+    "schema": "practical_solver_release_result_v1",
+    "solver_called": true,
+    "source_feasibility_certified": false,
+    "started_utc": "2026-10-09T16:33:27.702244+00:00",
+    "statistical_coverage_verified": false,
+    "status": "RESOURCE_OR_EXECUTION_FAILURE",
+    "whole_application_lean_verified": false
+  },
+  "producer_execution_exists": false,
+  "producer_stdout_exists": false,
+  "expected_solver_called": false,
+  "assertion_passed": false,
+  "scratch_directory": "/workspace/scratch/validation-baseline-predispatch-yf8f6hzr"
+}

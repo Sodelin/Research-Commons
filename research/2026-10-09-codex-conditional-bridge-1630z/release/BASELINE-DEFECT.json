@@ -1,0 +1,39 @@
+{
+  "checker_log_exists": false,
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/bridge-release-baseline/applications/practical-solver/run.py",
+    "run",
+    "--example",
+    "informative",
+    "--output",
+    "/workspace/scratch/bridge-release-baseline/pre-dispatch-result"
+  ],
+  "exit_code": 1,
+  "producer_log_exists": false,
+  "result": {
+    "ended_utc": "2026-10-09T16:32:36.763830+00:00",
+    "example": "informative",
+    "execution_mode": "FRESH_RUN",
+    "explanation": "Inherited source manifest identity mismatch",
+    "parameter_accuracy_released": false,
+    "program_sha256": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143",
+    "request_sha256": "81de438bcffe5f80a7ca3fa997365b1ecf6996a3171f81a0067f58acfe428e1f",
+    "schema": "practical_solver_release_result_v1",
+    "solver_called": true,
+    "source_feasibility_certified": false,
+    "started_utc": "2026-10-09T16:32:36.763572+00:00",
+    "statistical_coverage_verified": false,
+    "status": "RESOURCE_OR_EXECUTION_FAILURE",
+    "whole_application_lean_verified": false
+  },
+  "schema": "launcher-provenance-baseline-v1",
+  "scope": "authentic manifest-tamper refusal before dispatch incorrectly claims solver_called=true; no arithmetic discrepancy",
+  "source_sha256": {
+    "README.md": "6a22e6798ba690b7e05f84950a98df42659a4f973c6af50b45363586141a9f10",
+    "SOURCE-IDENTITIES.json": "375641ef893ca6af8cbec518a24d20d158dc04630dca1543e109679de347fded",
+    "run.py": "b3bb290eb899f5a5550907047115de989d35a16d78b6b9cdb8f178b5ad046143"
+  },
+  "status": "REPRODUCED_DEFECT"
+}

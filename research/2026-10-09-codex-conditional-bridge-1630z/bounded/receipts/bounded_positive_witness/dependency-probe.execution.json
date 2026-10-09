@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+    "-I",
+    "-B",
+    "-c",
+    "import importlib.metadata as m,json; d={};\nfor p in ['sympy','networkx','z3-solver']:\n try: d[p]=m.version(p)\n except m.PackageNotFoundError: d[p]=None\nprint(json.dumps(d))"
+  ],
+  "invoked": true,
+  "timeout": false,
+  "returncode": 0,
+  "elapsed_seconds": 0.1435318289999259
+}

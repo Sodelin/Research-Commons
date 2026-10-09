@@ -20,7 +20,7 @@ python3 -B applications/practical-solver/run.py run --example informative
 
 The command prints a new dated output directory and its `REPORT.html` path.
 Open that file in a browser. `REPORT.md` is portable Markdown and `RESULT.json`
-contains exact bounds and the complete retained solution cover. Defaults save
+contains exact bounds and the complete retained outer cover. Defaults save
 under `runs/`; choose explicit fresh directories for reproducible demonstrations:
 
 ```sh
@@ -31,6 +31,66 @@ python3 -B applications/practical-solver/run.py run --example unsupported --outp
 
 Output directories must be absent. Reusing a path is refused to preserve
 previous results. Paths shown here are examples; use new names for later runs.
+
+## Conditional count and exact source backend
+
+Use the same launcher to consume the reviewed count arithmetic or invoke the
+existing exact source census/backend:
+
+```sh
+python3 -B applications/practical-solver/run.py certified-bounds --request applications/practical-solver/examples/certified-bounds/conditional-count-unknown.json --output /tmp/solver-count-new
+python3 -B applications/practical-solver/run.py certified-bounds --request applications/practical-solver/examples/certified-bounds/finite-witness.json --output /tmp/solver-source-new
+```
+
+The first example computes delta=1/2 and ceiling=24, then returns **UNKNOWN**:
+its placeholder provider is unverified, and no all-core source catalogue bridge
+exists. An artifact hash or supplied hypothesis does not discharge that
+obligation. The bound is not applied as a hybrid-count budget.
+
+The second command reuses the original exact shared-row feasibility backend.
+It also returns UNKNOWN when pinned backend dependencies are absent. A prepared
+scratch environment can be selected with `--python-executable /absolute/path/to/venv/bin/python`;
+see the [bounded integration packet](../../research/2026-10-09-codex-conditional-bridge-1630z/bounded/README.md)
+for exact pinned setup, complete request contract, examples and replay evidence.
+The default launcher never installs dependencies or uses the network.
+
+| Scoped outcome | Meaning |
+|---|---|
+| `CERTIFIED_SOURCE_WITNESS` | One strict source and physical assignment pass exact software recomputation for every supplied row |
+| `CERTIFIED_EXCLUSION_WITHIN_VERIFIED_COVERED_CLASS` | Exclusion inside the declared verified complete finite registry only |
+| `UNKNOWN` | Missing provider/backend, exhausted bounded scan, or incomplete evidence; no unrestricted NO |
+| `REFUSED_REQUEST` | Input violates the scoped contract |
+
+These commands preserve shared parameters, original IDs and all supplied rows;
+independently fitted rows are invalid. Certified results exit 0, UNKNOWN exits
+2 and refused bounded requests exit 1. `RESULT.json` retains the full delegated
+result as `component_result`, including actual backend/checker invocation,
+coverage scope and execution receipts. This original-source path is distinct
+from the nine-parameter clock-JC outer-cover command above and its optional
+Rust diagnostic.
+
+## Exact classical ordinary-forest coordinate
+
+```sh
+python3 -B applications/practical-solver/run.py forest-baseline --request research/2026-10-09-codex-conditional-bridge-1630z/graph/examples/one-ordinary-population.json --output /tmp/solver-forest-new
+```
+
+The example gives exact probability 7/192 for the specified four-label forest
+at survival 1/2. The module counts compatible histories and exposes lazy
+neighbours without constructing the full forest law. Its request uses
+`ordinary_forest_request_v1`, a canonical forest, 1..64 labels and a strictly
+interior exact rational survival with integer numerator/denominator of at most
+256 bits. Success exits 0; refused input exits 2. It computes one ordinary
+stochastic coordinate, and establishes no source fit or quantum advantage.
+The optional Hermitian-dilation API specifies a different evolution and is not
+used by this command. See the [graph packet](../../research/2026-10-09-codex-conditional-bridge-1630z/graph/README.md)
+for API checks, classical cost measurements and remaining quantum costs.
+
+Both delegated commands show `FRESH_COMPONENT_EXECUTION`, export readable
+reports and preserve their exact scoped result and child logs under
+`component/`. They use the same process limits and fresh-output safeguards.
+Read the [limitations and failure recovery page](../../research/2026-10-09-codex-conditional-bridge-1630z/release/LIMITATIONS.md)
+before interpreting any result as a scientific certificate.
 
 ## What the three examples mean
 
@@ -79,6 +139,39 @@ numerical journals fall back conservatively; source/request identity errors
 are explicit refusals. Hashes detect changes relative to trusted records;
 they are not signatures or protection against an attacker who replaces the
 entire package and its expected hashes.
+
+## Invocation provenance and failure recovery
+
+`solver_called` becomes true only after the producer process starts. Staging,
+source authentication and process-creation failures leave it false. A launched
+producer that exits unsuccessfully keeps it true. `checker_called` and
+`diagnostic_called` track their separate process starts; a recheck launches
+only the checker. Execution receipts record `process_started`, and failed
+process creation preserves its error receipt.
+
+`RESOURCE_OR_EXECUTION_FAILURE` is an execution failure and issues no new
+numerical certificate. Inspect `RESULT.json` and the preserved stage logs;
+restore trusted package bytes after an identity mismatch, or use a fresh
+output directory after an interrupted run. Do not patch expected hashes to
+make modified runtime files pass. A failed optional diagnostic leaves the
+independently checked numerical result visible. More resource budget does not
+resolve missing source coverage or finite-data ambiguity.
+
+The [current correction and replay packet](../../research/2026-10-09-codex-conditional-bridge-1630z/release/README.md)
+preserves the pre-dispatch defect, repaired positive and negative controls,
+and current derivative identities. The earlier release packet and its byte
+manifests describe historical source versions; they remain preserved.
+
+Check the published current bridge byte manifest from the repository root:
+
+```sh
+python3 -B research/2026-10-09-codex-conditional-bridge-1630z/verify_bridge.py
+```
+
+This verifies pinned bytes, and supplies no scientific or mathematical
+certification. The older `verify_release.py` is the archived release's byte
+checker: it intentionally reports that current derivative application files
+have changed. Use the current bridge manifest for current application identity.
 
 ## Inputs and exported evidence
 
@@ -141,8 +234,12 @@ The molecular report compares matched REF/A/B/AB contexts with the inherited
 deterministic synthetic provider. Expression, splicing and the derived
 polyadenylation proxy remain separate. No network or credentials are used;
 predictions do not become experimental validation or ancestry observations.
-The input audit freshly recounts the archived loci, once-only mean conversion
-and exact 3/55 obstruction without issuing scientific confidence.
+The **archived-panel audit** command (`ingestion.py`) freshly recounts the
+pinned archived 1,024 loci, once-only mean conversion and exact 3/55
+obstruction. It accepts no new panel, alignment or observation bands and
+creates no new confidence event. Its result carries
+`audit_kind: ARCHIVED_PANEL_AUDIT`; forward enclosures remain inherited
+authenticated evidence, with containment freshly rechecked.
 
 The [biological contract and official-source audit](../../research/2026-10-09-codex-practical-release-0207z/biology/BIOLOGICAL-INPUTS.md)
 records current AlphaGenome SDK capabilities. Substantive current service terms

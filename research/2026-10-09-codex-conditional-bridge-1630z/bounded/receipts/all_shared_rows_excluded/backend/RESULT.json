@@ -1,0 +1,497 @@
+{
+  "schema": "actual-finite-original-registry-coupled-source-solver-v1",
+  "request": {
+    "observation_kind": "exact_unranked_law",
+    "n": 3,
+    "registry": {
+      "complete": true,
+      "hybrid_ids": []
+    },
+    "mechanisms": [
+      "independent",
+      "common"
+    ],
+    "limits": {
+      "seconds": 30,
+      "max_sources": 100,
+      "smt_milliseconds": 10000
+    },
+    "rows": [
+      {
+        "law": [
+          {
+            "outcome": [
+              "L0",
+              [
+                "L1",
+                "L2"
+              ]
+            ],
+            "p": "2/3"
+          },
+          {
+            "outcome": [
+              "L1",
+              [
+                "L0",
+                "L2"
+              ]
+            ],
+            "p": "1/6"
+          },
+          {
+            "outcome": [
+              "L2",
+              [
+                "L0",
+                "L1"
+              ]
+            ],
+            "p": "1/6"
+          }
+        ]
+      },
+      {
+        "law": [
+          {
+            "outcome": [
+              "L0",
+              [
+                "L1",
+                "L2"
+              ]
+            ],
+            "p": "1/6"
+          },
+          {
+            "outcome": [
+              "L1",
+              [
+                "L0",
+                "L2"
+              ]
+            ],
+            "p": "2/3"
+          },
+          {
+            "outcome": [
+              "L2",
+              [
+                "L0",
+                "L1"
+              ]
+            ],
+            "p": "1/6"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "4f0fc981db752a53045965c45a75ac1473c905e21ede88d966e81425a3b2acb2",
+  "upstream": {
+    "repository": "Sodelin/Research-Commons",
+    "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+    "files": [
+      {
+        "path": "upstream/source_census.py",
+        "bytes": 6474,
+        "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+        "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79"
+      },
+      {
+        "path": "upstream/law_compiler.py",
+        "bytes": 9360,
+        "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+        "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2"
+      },
+      {
+        "path": "upstream/continuous_optimizer.wl",
+        "bytes": 2401,
+        "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+        "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f"
+      },
+      {
+        "path": "upstream/README.md",
+        "bytes": 7949,
+        "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+        "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f"
+      }
+    ]
+  },
+  "software": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "z3": "4.15.3"
+  },
+  "unknown_size_termination_or_global_NO_claimed": false,
+  "Lean_verification_claimed": false,
+  "empirical_admission_claimed": false,
+  "status": "UNSAT_COMPLETE_KNOWN_REGISTRY",
+  "verification": "INDEPENDENT_EXACT_LINEAR_CERTIFICATES",
+  "scope": "complete supplied n/original-ID registry ONLY; not unknown-size global NO",
+  "source_count_examined": 3,
+  "catalogue_exhausted": true,
+  "entries": [
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "1/3 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 1/6",
+        "5/6 - 2*x0/3",
+        "x0/3 - 2/3",
+        "x0/3 - 1/6"
+      ],
+      "equation_sha256": "8ee551a3b792bbb37ef708dad3aaed3c42551bfe3ad16d7b6e0b3741d3fad71c",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "reason": "nonzero_constant",
+        "constant": "1/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "R",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "1/3 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 1/6",
+        "5/6 - 2*x0/3",
+        "x0/3 - 2/3",
+        "x0/3 - 1/6"
+      ],
+      "equation_sha256": "8ee551a3b792bbb37ef708dad3aaed3c42551bfe3ad16d7b6e0b3741d3fad71c",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "-1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "reason": "nonzero_constant",
+        "constant": "1/2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "x0/3 - 2/3",
+        "5/6 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 1/6",
+        "1/3 - 2*x0/3",
+        "x0/3 - 1/6"
+      ],
+      "equation_sha256": "1032c448d2c87d73121c346e1b38c5b118c856ce72f276ba0a7b51ebb5f185f3",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x0",
+        "coefficient": "1",
+        "constant": "-2",
+        "forced_value": "2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "R",
+            "L1"
+          ],
+          [
+            "T0",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x0/3 - 2/3",
+        "5/6 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 1/6",
+        "1/3 - 2*x0/3",
+        "x0/3 - 1/6"
+      ],
+      "equation_sha256": "1032c448d2c87d73121c346e1b38c5b118c856ce72f276ba0a7b51ebb5f185f3",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x0",
+        "coefficient": "1",
+        "constant": "-2",
+        "forced_value": "2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "independent",
+      "equations": [
+        "x0/3 - 2/3",
+        "x0/3 - 1/6",
+        "5/6 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 2/3",
+        "5/6 - 2*x0/3"
+      ],
+      "equation_sha256": "589744ebab0dde456b069dc8f096ed6f7fe6691d761cd057eb192f4460e14c64",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x0",
+        "coefficient": "1",
+        "constant": "-2",
+        "forced_value": "2"
+      }
+    },
+    {
+      "graph": {
+        "edges": [
+          [
+            "R",
+            "T0"
+          ],
+          [
+            "T0",
+            "L0"
+          ],
+          [
+            "T0",
+            "L1"
+          ],
+          [
+            "R",
+            "L2"
+          ]
+        ],
+        "root": "R",
+        "leaves": [
+          "L0",
+          "L1",
+          "L2"
+        ]
+      },
+      "mechanism": "common",
+      "equations": [
+        "x0/3 - 2/3",
+        "x0/3 - 1/6",
+        "5/6 - 2*x0/3",
+        "x0/3 - 1/6",
+        "x0/3 - 2/3",
+        "5/6 - 2*x0/3"
+      ],
+      "equation_sha256": "589744ebab0dde456b069dc8f096ed6f7fe6691d761cd057eb192f4460e14c64",
+      "target": {
+        "nontrivial_displayed_split_union": [],
+        "whole_switching_split_systems": [
+          []
+        ]
+      },
+      "status": "UNSAT_INDEPENDENT_EXACT_LINEAR_CERTIFICATE",
+      "certificate": {
+        "kind": "EXACT_LINEAR_IDEAL_CONTRADICTION",
+        "multipliers": [
+          "3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "reason": "strict_unit_domain",
+        "variable": "x0",
+        "coefficient": "1",
+        "constant": "-2",
+        "forced_value": "2"
+      }
+    }
+  ],
+  "elapsed_seconds": 0.056208138999977564
+}

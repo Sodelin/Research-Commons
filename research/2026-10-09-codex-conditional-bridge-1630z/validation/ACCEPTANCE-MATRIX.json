@@ -1,0 +1,613 @@
+{
+  "schema": "conditional_bridge_independent_acceptance_matrix_v1",
+  "reviewer": "Codex independent validation lane",
+  "status": "ACCEPT_SCOPED_DELIVERABLES_MASTERS_OPEN",
+  "original_master_G3": "OPEN",
+  "original_master_G4": "OPEN",
+  "significance": "Implementation, formalization and independent replay of accepted conditional theory plus provenance repair; no new general recognition/forcing theorem or historical novelty claim.",
+  "rows": [
+    {
+      "id": "formal-consumer",
+      "status": "ACCEPT_GENERIC_KERNEL_SCOPE",
+      "artifacts": [
+        {
+          "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/G3/ConditionalZeroScoreBound.lean",
+          "sha256": "16341d7d932fa67bd6be0cea81aa6b51d9d46396d49819cf87999d47fca14c97"
+        },
+        {
+          "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/G3/ConditionalZeroScoreConsumer.lean",
+          "sha256": "0d0b53477642edf3656146071709629424afaa0af9661d915600549484de17dc"
+        },
+        {
+          "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/lean-replay/receipt.json",
+          "sha256": "943dc6dc528c8643efa2f3a6e37093ebd635b365945329c96938d23942192ad7"
+        },
+        {
+          "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/lean-replay/axiom-inventory.json",
+          "sha256": "c0f79084fcaf066650467f6a3f81a4ff5ba08f7f1103bc033c88f413af0bbc10"
+        }
+      ],
+      "scope": "Abstract rational count lemmas and typed whole-fibre consumer, original source provider uninstantiated",
+      "assumptions": [
+        "Positive rational b/epsilon/sigma; M nonnegative",
+        "Exact positive-weighted endpoint zero; nonnegative same-source additive cell score; quantitative uniform weak-cell modulus",
+        "Actual equal-arm pair law, exponential-duration comparison, chronological product and same-source survival floor",
+        "All-core/piece coverage, sound exclusions, actual physical length identity and piece-uniform numeric data"
+      ],
+      "actual_execution": [
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/formal-accepted.json",
+            "sha256": "41a0f7d7b516face06ce7e8d764fc0bfc36f395c22ba10a83d5c3094ad8ea3ff"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/formal/verify_lean.py",
+            "--lean-bin",
+            "/workspace/scratch/formal-runtime/lean-4.33.1-linux/bin",
+            "--mathlib",
+            "/workspace/scratch/formal-runtime/mathlib",
+            "--evidence",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/lean-replay"
+          ],
+          "exit_code": 0,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/G3/ConditionalZeroScoreBound.lean": "16341d7d932fa67bd6be0cea81aa6b51d9d46396d49819cf87999d47fca14c97",
+            "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/G3/ConditionalZeroScoreConsumer.lean": "0d0b53477642edf3656146071709629424afaa0af9661d915600549484de17dc",
+            "research/2026-10-09-codex-conditional-bridge-1630z/formal/verify_lean.py": "adac0bb8e2907b19d32b0bef109050e14d8a8711797c9f289b39190811862d17"
+          }
+        },
+        {
+          "exact_kernel_commands": [
+            {
+              "module": "UnifiedLean.G3.ConditionalZeroScoreBound",
+              "command": [
+                "/workspace/scratch/formal-runtime/lean-4.33.1-linux/bin/lean",
+                "-j1",
+                "-M4096",
+                "-Ddebug.skipKernelTC=false",
+                "-o",
+                "/workspace/scratch/conditional-zero-score-3dvpps8i/objects/UnifiedLean/G3/ConditionalZeroScoreBound.olean",
+                "UnifiedLean/G3/ConditionalZeroScoreBound.lean"
+              ],
+              "cwd": "/workspace/scratch/conditional-zero-score-3dvpps8i",
+              "source_sha256": "16341d7d932fa67bd6be0cea81aa6b51d9d46396d49819cf87999d47fca14c97",
+              "exit_code": 0,
+              "seconds": 3.6117439289998856,
+              "stdout_sha256": "a2a90db4de7ff78bacc5f323eb5d2bc3e8f1a8cd89d8842f9e37c7e36fec5fbb",
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "source_stable": true,
+              "object_sha256": "d52831d637a010f3e665135d283fb3005cb0bd7124514568330c96c54b6b9a5b"
+            },
+            {
+              "module": "UnifiedLean.G3.ConditionalZeroScoreConsumer",
+              "command": [
+                "/workspace/scratch/formal-runtime/lean-4.33.1-linux/bin/lean",
+                "-j1",
+                "-M4096",
+                "-Ddebug.skipKernelTC=false",
+                "-o",
+                "/workspace/scratch/conditional-zero-score-3dvpps8i/objects/UnifiedLean/G3/ConditionalZeroScoreConsumer.olean",
+                "UnifiedLean/G3/ConditionalZeroScoreConsumer.lean"
+              ],
+              "cwd": "/workspace/scratch/conditional-zero-score-3dvpps8i",
+              "source_sha256": "0d0b53477642edf3656146071709629424afaa0af9661d915600549484de17dc",
+              "exit_code": 0,
+              "seconds": 1.5343186640000113,
+              "stdout_sha256": "6822e73c629a156bfa98fe57c21e173559fb767e8810489e80c8a918f2e15768",
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "source_stable": true,
+              "object_sha256": "48a7cf4192b3d16d08078be92fc79bd574c4848087629e3343c2d8482b9755bb"
+            },
+            {
+              "module": "AxiomAudit",
+              "command": [
+                "/workspace/scratch/formal-runtime/lean-4.33.1-linux/bin/lean",
+                "-j1",
+                "-M4096",
+                "-Ddebug.skipKernelTC=false",
+                "-o",
+                "/workspace/scratch/conditional-zero-score-3dvpps8i/objects/AxiomAudit.olean",
+                "AxiomAudit.lean"
+              ],
+              "cwd": "/workspace/scratch/conditional-zero-score-3dvpps8i",
+              "source_sha256": "2fbfd793a1b4d5d8ccd989b5b8e02748d8fe7660d74f2bf54b364255afd0218c",
+              "exit_code": 0,
+              "seconds": 1.9163285810000161,
+              "stdout_sha256": "fdb8c93ea2c6fd1c39ba5ff4e895a3c9f05d62afd763d4567415ac2de110a17c",
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "source_stable": true,
+              "object_sha256": "f7ac85fd612d513a5e32e20f85da1fb1d02fd6f8e0b96934817cea9b8aa90717"
+            }
+          ],
+          "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+          "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+          "dependency_pins": {
+            "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+            "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+            "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+            "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+            "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+            "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+            "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+            "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+          }
+        }
+      ],
+      "result": "Fresh independent two-module and complete axiom audit all exit0 with kernel checking enabled. 146 owned declarations, 69 theorem declarations including generated/projection declarations; zero owned axioms or nonstandard axiom rows. Allowed union propext, Classical.choice, Quot.sound. No original source provider constructed and prior181 modules not rebuilt.",
+      "unresolved_dependencies": [
+        "Original source interpretation, analytic provider construction and complete all-core/piece coverage",
+        "Bound-to-original-catalogue compiler and BOTH observation row compiler",
+        "Whole practical solver/source theorem formal verification remains separate"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "INDEPENDENT_KERNEL_REPLAY_OF_GENERIC_CONDITIONAL_THEOREMS"
+    },
+    {
+      "id": "conditional-count",
+      "status": "ACCEPT_SCOPED",
+      "artifacts": [
+        {
+          "path": "applications/practical-solver/certified_bounds.py",
+          "sha256": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa"
+        },
+        {
+          "path": "applications/practical-solver/certified-bounds-sources.json",
+          "sha256": "4f873fa8ee34d4147712ab6eeb15abe45f71b64b0f7d4b312bd35e56b377e1b1"
+        }
+      ],
+      "scope": "Exact rational arithmetic consumer; provider unavailable yields UNKNOWN and does not dispatch source solver",
+      "assumptions": [
+        "Numeric assumptions explicit; endpoint exact zero and request/floor row binding checked",
+        "No accepted provider registry; complete original-source obligations remain unverified"
+      ],
+      "actual_execution": [
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/bounded-definitive.json",
+            "sha256": "261d75591e1f5a4d5bfacad6e1ec252c1c63809384d70e8e7e673745c3cfb5b1"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/bounded/test_certified_bounds.py",
+            "--backend-python",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+            "--output",
+            "/workspace/scratch/validation-bounded-definitive"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "research/2026-10-09-codex-conditional-bridge-1630z/bounded/test_certified_bounds.py": "e543b54d5f9f24f41d402b4d64fb2ba58e8184dffa1cd9f82237be43c77fbca7",
+            "applications/practical-solver/certified-bounds-sources.json": "4f873fa8ee34d4147712ab6eeb15abe45f71b64b0f7d4b312bd35e56b377e1b1"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/adversarial-definitive.json",
+            "sha256": "7c9b805e88149070ab81e4382b2620d8ec36cceca96a0b681ad4539527785166"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/adversarial_check.py",
+            "--python-executable",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/adversarial_check.py": "287bd4866559a57561da14c34a69a897779459639bf13cf719d91f3e6bdcc443"
+          }
+        }
+      ],
+      "result": "28 inherited integration controls and 989 independent exact/provenance checks pass. Forged provider booleans, near-zero endpoints, unobserved floors, duplicate slots, changed rows and mode substitution refused. BOTH compiler absence explicit.",
+      "unresolved_dependencies": [
+        "Verified source-provider constructor and finite coverage",
+        "Private-slot bound to census compiler",
+        "BOTH observations on one graph/shared tuple compiler"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "independent_replay_and_source_review"
+    },
+    {
+      "id": "existing-source-backend",
+      "status": "ACCEPT_SCOPED",
+      "artifacts": [
+        {
+          "path": "applications/practical-solver/certified_bounds.py",
+          "sha256": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa"
+        }
+      ],
+      "scope": "Authenticated wrapper around attributed existing exact source catalogue/backend; positive witness or exclusion only within supplied complete registry; bounded exhaustion UNKNOWN",
+      "assumptions": [
+        "Pinned Python/SymPy1.14.0/networkx3.5/Z3-solver4.15.3.0",
+        "Free positive edge-specific clocks; actual exact unranked readout and fixed candidate mechanism across every row",
+        "Wrapper transport caps n2..4, <=2 hybrids, <=8 sampled copies, <=32 rows and finite resources",
+        "Inherited source census/law compiler correctness; checker rederives complete source equations and strict physical witness",
+        "General backend UNSAT retains same-backend replay trust, distinct from exact witness/linear-certificate verification"
+      ],
+      "actual_execution": [
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/bounded-definitive.json",
+            "sha256": "261d75591e1f5a4d5bfacad6e1ec252c1c63809384d70e8e7e673745c3cfb5b1"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/bounded/test_certified_bounds.py",
+            "--backend-python",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python",
+            "--output",
+            "/workspace/scratch/validation-bounded-definitive"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "research/2026-10-09-codex-conditional-bridge-1630z/bounded/test_certified_bounds.py": "e543b54d5f9f24f41d402b4d64fb2ba58e8184dffa1cd9f82237be43c77fbca7",
+            "applications/practical-solver/certified-bounds-sources.json": "4f873fa8ee34d4147712ab6eeb15abe45f71b64b0f7d4b312bd35e56b377e1b1"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/release-accepted.json",
+            "sha256": "c22c593d5e7736bf5c6da3f9a10a70cbb2b5915c183b4957811878a59a0fa502"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/release/test_release.py",
+            "--output",
+            "/workspace/scratch/validation-release-accepted",
+            "--backend-python",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/run.py": "038806682634b11db85179270304f0ea78e88c14230d83ba3e4703fa52a1be88",
+            "applications/practical-solver-biology/ingestion.py": "dac7d2e94e889ec27a279d8881ef44770e53e2d4f2ffa723aa4aede2c1984228",
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/release/test_release.py": "cbd2551238bb7bb0283a96b704a8539f782c2250d08f3b615b387562e608c835"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/adversarial-definitive.json",
+            "sha256": "7c9b805e88149070ab81e4382b2620d8ec36cceca96a0b681ad4539527785166"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/adversarial_check.py",
+            "--python-executable",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/adversarial_check.py": "287bd4866559a57561da14c34a69a897779459639bf13cf719d91f3e6bdcc443"
+          }
+        }
+      ],
+      "result": "Actual pinned backend and semantic checker invoked for witness, shared-row/positivity exclusion and bounded positive search. Larger unresolved catalogue exhaustion remains UNKNOWN. Real correctly certified row-dropped artifact substitution rejected by complete request binding.",
+      "unresolved_dependencies": [
+        "No unknown-size NO without full provider/census bridge",
+        "No joint BOTH observed rows in legacy interface",
+        "Whole solver not Lean verified"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "independent_replay_and_source_review"
+    },
+    {
+      "id": "g4-exact-tools",
+      "status": "ACCEPT_SCOPED",
+      "artifacts": [
+        {
+          "path": "applications/genealogy-compatibility-workbench/genealogy_workbench/g4_certificates.py",
+          "sha256": "400f96e37b9809afd0dc349f3f08a1f9e4284dead247d68580060592553d29a2"
+        },
+        {
+          "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/LOCAL-CERTIFICATE-AUDIT.md",
+          "sha256": "abd979daeeaf7bc9dec30e79cdaf99a79680e10e9dd203c382ac7436bd1ef4af"
+        }
+      ],
+      "scope": "Exact arity12 conic enclosure; sufficient rational Bernstein local separator; complete supplied finite private-word BOTH kernels",
+      "assumptions": [
+        "Attributed source formulas, calibrated BOTH menu and observed COMMON clock at actual provider contract",
+        "Local biased persistent body already in certified (p,y) neighbourhood; all extras weak; exact target diagonals",
+        "Finite supplied words use one shared parameter bank, original occurrences and chronology; computed forest coordinates do not become extra authorized observations"
+      ],
+      "actual_execution": [
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/g4-controls-accepted.json",
+            "sha256": "45afea43b2595a223cd2b8816bbd925db877db6403d246275a9bdea3bfa8bb87"
+          },
+          "command": [
+            "env",
+            "PYTHONPATH=applications/genealogy-compatibility-workbench",
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/run_controls.py",
+            "--output",
+            "/workspace/scratch/validation-g4-controls-accepted"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/genealogy-compatibility-workbench/genealogy_workbench/g4_certificates.py": "400f96e37b9809afd0dc349f3f08a1f9e4284dead247d68580060592553d29a2",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/run_controls.py": "7215026893fa90a52b1215a87ee3b7d6c8dc343122f3d468f9891c534084c7de"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/g4-construction-accepted.json",
+            "sha256": "a6197b770748c3b393bc397c0fff5de0e8367a569ed06f274a6e38dc021dcd3a"
+          },
+          "command": [
+            "env",
+            "PYTHONPATH=applications/genealogy-compatibility-workbench",
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/build_evidence.py",
+            "--output",
+            "/workspace/scratch/validation-g4-construction-accepted"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/genealogy-compatibility-workbench/genealogy_workbench/g4_certificates.py": "400f96e37b9809afd0dc349f3f08a1f9e4284dead247d68580060592553d29a2",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/build_evidence.py": "42fed2ef6d22572701f9869a35e7b9d7c201e156269963718eb40adbbda6a91b"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/g4-cone.json",
+            "sha256": "ba0e989d8f233ec346327a1693992088c0c729964af47daeea3fca96734f4620"
+          },
+          "command": [
+            "env",
+            "PYTHONPATH=applications/genealogy-compatibility-workbench",
+            "python3",
+            "-B",
+            "-m",
+            "genealogy_workbench.g4_certificates",
+            "check-cone",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/cone-request.json",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/cone-certificate.json"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/genealogy-compatibility-workbench/genealogy_workbench/g4_certificates.py": "400f96e37b9809afd0dc349f3f08a1f9e4284dead247d68580060592553d29a2",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/cone-request.json": "84e72c535a21aac4c151d3552c20c756ac95b010e0fe320a725eabc05c863e05",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/cone-certificate.json": "44b013fe084fc305b489369f9d548a74c9e8c356f6861ce032bb6cb599942386"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/g4-local.json",
+            "sha256": "66fce7caf10b7dc06c661f8621b37e97bbc08b3ea7f78c190eaf0b7a4dd44f73"
+          },
+          "command": [
+            "env",
+            "PYTHONPATH=applications/genealogy-compatibility-workbench",
+            "python3",
+            "-B",
+            "-m",
+            "genealogy_workbench.g4_certificates",
+            "check-separator",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/local-request.json",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/local-certificate.json"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/genealogy-compatibility-workbench/genealogy_workbench/g4_certificates.py": "400f96e37b9809afd0dc349f3f08a1f9e4284dead247d68580060592553d29a2",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/local-request.json": "5b03478ebfc2353bc99970431f12a9717f60b5b23285e6a0d016a4d6a293b670",
+            "research/2026-10-09-codex-conditional-bridge-1630z/g4/local-certificate.json": "91d7babc3a7a30a3377ad1b4946004e51a59aaf3ca5cfcf4fd231b65803e7f42"
+          }
+        }
+      ],
+      "result": "87 exact/adversarial controls pass; frozen corrected cone replay is byte-identical and its earlier failed checker is preserved. Local full-interval positivity/tangent and explicit epsilon/eta pass exact replay; local constants additionally reviewed by hand.",
+      "unresolved_dependencies": [
+        "All-rival localization and arbitrary-target/global G4 stopping",
+        "General effectively algebraic RCF separator search beyond sufficient rational Bernstein subset",
+        "Original whole-tree legal observation producer/decoder integration",
+        "Conic weights are not physical word multiplicities"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "independent_replay_and_source_review"
+    },
+    {
+      "id": "graph-baseline",
+      "status": "ACCEPT_SCOPED",
+      "artifacts": [
+        {
+          "path": "applications/practical-solver/forest_baseline.py",
+          "sha256": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac"
+        }
+      ],
+      "scope": "Lazy ordinary-population graph API, exact specified-forest probability and classical Hermitian-dilation access specification",
+      "assumptions": [
+        "Canonical labelled rooted binary forests; strict exact ordinary survival by default",
+        "Boundary values explicit diagnostic-only flag",
+        "Hermitian dilation is a different evolution; no coherent quantum circuit or speedup claim"
+      ],
+      "actual_execution": [
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/graph-accepted.json",
+            "sha256": "1af060d8b4bec38f434cac8fefd1749799b5e8740bfda9ae2acf7a3c8166d08d"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/graph/test_forest_baseline.py"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/graph/test_forest_baseline.py": "a42bcae1ceb40b01978deed93e157bb65e19d0506bd76c9a789bdc5500df3dfd"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/graph-benchmark.json",
+            "sha256": "99ecbd231088a17eb8bc3ffab4c7f58b86cc34c8cb27b00a3282eaaa2b06300a"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/graph/benchmark_forest_baseline.py"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/graph/benchmark_forest_baseline.py": "1aeade20e0494c29eeb92da6793ee98ee2ce545182672260a80372b297bd223a"
+          }
+        },
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/adversarial-definitive.json",
+            "sha256": "7c9b805e88149070ab81e4382b2620d8ec36cceca96a0b681ad4539527785166"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/adversarial_check.py",
+            "--python-executable",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/validation/adversarial_check.py": "287bd4866559a57561da14c34a69a897779459639bf13cf719d91f3e6bdcc443"
+          }
+        }
+      ],
+      "result": "11 regression tests pass; 10,976 same-input explicit-engine coordinate comparisons, 2,744 canonical/history cases, 12,532 location probes. Independent 465 pure-death polynomial recurrences through30 labels and exhaustive18-bit two-leaf encoding pass. Benchmark36 cases pass with exact bit sizes and no full graph materialization.",
+      "unresolved_dependencies": [
+        "No complete network/source inverse solver",
+        "End-to-end quantum preparation/access/simulation/measurement/readout cost and advantage unestablished"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "independent_replay_and_source_review"
+    },
+    {
+      "id": "release-provenance",
+      "status": "ACCEPT_SCOPED",
+      "artifacts": [
+        {
+          "path": "applications/practical-solver/run.py",
+          "sha256": "038806682634b11db85179270304f0ea78e88c14230d83ba3e4703fa52a1be88"
+        },
+        {
+          "path": "applications/practical-solver-biology/ingestion.py",
+          "sha256": "dac7d2e94e889ec27a279d8881ef44770e53e2d4f2ffa723aa4aede2c1984228"
+        },
+        {
+          "path": "applications/practical-solver/README.md",
+          "sha256": "055405dd7951f1aca0b5f59be0e46563986af512d2b3ab8824a3c8dad56228e2"
+        }
+      ],
+      "scope": "Actual-launch provenance repair and integrated component launch/status paths, preserved conditional numerical reports and archived/mock labels",
+      "assumptions": [
+        "Default numerical app remains inherited fixed-model outer-cover workflow, not source witness/statistical coverage",
+        "Saved/fresh/rechecked labels retained; archived panel audit is not generic new-data alignment pipeline",
+        "Offline molecular fixtures remain MOCK_SYNTHETIC with zero live calls"
+      ],
+      "actual_execution": [
+        {
+          "receipt": {
+            "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/replays/release-accepted.json",
+            "sha256": "c22c593d5e7736bf5c6da3f9a10a70cbb2b5915c183b4957811878a59a0fa502"
+          },
+          "command": [
+            "python3",
+            "-B",
+            "research/2026-10-09-codex-conditional-bridge-1630z/release/test_release.py",
+            "--output",
+            "/workspace/scratch/validation-release-accepted",
+            "--backend-python",
+            "/workspace/scratch/conditional-bridge-bounded/venv/bin/python"
+          ],
+          "exit_code": 0,
+          "timeout": false,
+          "sources_unchanged": true,
+          "source_hashes": {
+            "applications/practical-solver/run.py": "038806682634b11db85179270304f0ea78e88c14230d83ba3e4703fa52a1be88",
+            "applications/practical-solver-biology/ingestion.py": "dac7d2e94e889ec27a279d8881ef44770e53e2d4f2ffa723aa4aede2c1984228",
+            "applications/practical-solver/certified_bounds.py": "4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa",
+            "applications/practical-solver/forest_baseline.py": "a456bd19a311c1823afa73454858c9f08ba530fca41afa342ad77619c064ddac",
+            "research/2026-10-09-codex-conditional-bridge-1630z/release/test_release.py": "cbd2551238bb7bb0283a96b704a8539f782c2250d08f3b615b387562e608c835"
+          }
+        }
+      ],
+      "result": "21 meaningful controls pass on stable final source. Pre-stage/auth/Popen failures show no producer invocation; launched nonzero children show true invocation. Semantic refusals differ from child crashes; incomplete component output returns execution failure.",
+      "unresolved_dependencies": [
+        "General statistical/scientific observation admission and source feasibility for numerical workflow",
+        "Native Rust remains optional post-checker diagnostic, not demonstrated acceleration"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "independent_replay_and_source_review"
+    },
+    {
+      "id": "prior-packet-replays",
+      "status": "ACCEPT_ATTRIBUTED_PRIOR",
+      "artifacts": [
+        {
+          "path": "research/2026-10-09-codex-conditional-bridge-1630z/validation/PRIOR-REPLAY-RECEIPTS.json",
+          "sha256": "0ee22fee027a41282ab97badaa162197a1546cbeb60ad16021b76769c63e5205"
+        }
+      ],
+      "scope": "Fresh independent bounded reruns of dot cone, local determinant, cap9 spectral gap and sparse forest check; prior hand theorems retain original attribution",
+      "assumptions": [
+        "Original master quantifiers and published exact provider scope unchanged"
+      ],
+      "actual_execution": [],
+      "result": "Four actual bounded commands exit0. These are reruns of attributed prior results, not new general proof/coverage/quantum results.",
+      "unresolved_dependencies": [
+        "COMMON regular additive zero-score universal coverage refuted at stated carrier",
+        "Lower-fibre stochastic group kernel does not prove positive physical source word"
+      ],
+      "reviewer": "Codex independent validation lane",
+      "evidence_tier": "independent_bounded_prior_replay"
+    }
+  ],
+  "preserved_nonaccepting_evidence": [
+    "BASELINE-PREDISPATCH-FAILURE.json",
+    "ADVERSARIAL-UNSTABLE-SNAPSHOT.stderr",
+    "replays/bounded-final.json",
+    "replays/release-final.json"
+  ],
+  "publication_review": "Pending final manifest byte/tamper review; public-material scan recorded separately."
+}
