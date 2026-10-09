@@ -1,0 +1,400 @@
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualFrozenTripleRow.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualFrozenTripleRow.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualFrozenTripleRow.lean	2026-10-09 14:15:31.791541415 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualFrozenTripleRow.lean	2026-10-09 14:32:11.429127379 -0400
+@@ -3,7 +3,7 @@
+ /-!
+ # Actual frozen triple source row, joined to the checked polynomial kernel
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ The input is an actual admitted original source state with singleton genealogy
+ and active original populations. The complete five-partition law is derived
+ from actual pair/triple survival and normalization, including second mergers.
+@@ -13,6 +13,7 @@
+ set_option backward.isDefEq.respectTransparency false
+ open Nanuq.Source GProgram.SourceForest
+ open UnifiedLean.Source.UniformizedSourceStep
++open UnifiedLean.Source.SourcePoissonKernel
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.SourceForestSilentPruning
+ open GProgram.G5.OriginalProgramSurvival
+@@ -123,7 +124,7 @@
+     change (((((sourceTimeKernel N r t s).map (actualTriplePartition N)).map
+       partitionPair01) true).toReal) = _
+     rw [PMF.map_comp]
+-    have hf : partitionPair01 ∘ actualTriplePartition N = pairDistinct N 0 1 := by
++    have hf : partitionPair01 ∘ actualTriplePartition N (sample := sample) = pairDistinct N 0 1 := by
+       funext d; exact actual_partition_pair01_readout N d
+     rw [hf, actual_pair_distinct_survival N r s hs place hloc 0 1 (by decide) t]
+     exact (polynomial_pair01_clock r place (t : ℝ)).symm
+@@ -133,7 +134,7 @@
+     change (((((sourceTimeKernel N r t s).map (actualTriplePartition N)).map
+       partitionPair02) true).toReal) = _
+     rw [PMF.map_comp]
+-    have hf : partitionPair02 ∘ actualTriplePartition N = pairDistinct N 0 2 := by
++    have hf : partitionPair02 ∘ actualTriplePartition N (sample := sample) = pairDistinct N 0 2 := by
+       funext d; exact actual_partition_pair02_readout N d
+     rw [hf, actual_pair_distinct_survival N r s hs place hloc 0 2 (by decide) t]
+     exact (polynomial_pair02_clock r place (t : ℝ)).symm
+@@ -143,7 +144,7 @@
+     change (((((sourceTimeKernel N r t s).map (actualTriplePartition N)).map
+       partitionPair12) true).toReal) = _
+     rw [PMF.map_comp]
+-    have hf : partitionPair12 ∘ actualTriplePartition N = pairDistinct N 1 2 := by
++    have hf : partitionPair12 ∘ actualTriplePartition N (sample := sample) = pairDistinct N 1 2 := by
+       funext d; exact actual_partition_pair12_readout N d
+     rw [hf, actual_pair_distinct_survival N r s hs place hloc 1 2 (by decide) t]
+     exact (polynomial_pair12_clock r place (t : ℝ)).symm
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualNoMergerReadout.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualNoMergerReadout.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualNoMergerReadout.lean	2026-10-09 14:16:02.210289400 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualNoMergerReadout.lean	2026-10-09 14:32:11.429428358 -0400
+@@ -3,7 +3,7 @@
+ /-!
+ # Exact no-loss-of-live-roots readout of the actual source kernel
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ Every genuine source merger drops the actual live-root count. Therefore an
+ endpoint with the initial count is precisely the unchanged source code on
+ kernel support, not merely a superset with a positive witness. This binds a
+@@ -60,7 +60,7 @@
+ theorem actual_maximal_live_card_iff (N : RootedBinary V E X)
+     {sample : Copy → X} (s : Code N sample) :
+     liveCard s = Fintype.card Copy ↔ Function.Injective (state s).ancestor := by
+-  have hv := s.property.forest
++  have hv : Valid (state s) := s.property.forest
+   have huniv : liveCard s = Fintype.card Copy ↔ (state s).live = Finset.univ := by
+     change (state s).live.card = Fintype.card Copy ↔ _
+     exact Finset.card_eq_iff_eq_univ _
+@@ -96,8 +96,8 @@
+         by_contra hz
+         exact hds (actual_kernel_same_card_eq N r t s d
+           ((PMF.mem_support_iff _ _).mpr hz) hc)
+-      simp [eq_comm, hc, hz]
+-    · simp [eq_comm, hc]
++      simp [hc, hz]
++    · simp only [if_neg (Ne.symm hc)]
+   · intro hs
+     exact False.elim (hs (Finset.mem_univ s))
+ 
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualPosteriorGerm.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualPosteriorGerm.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualPosteriorGerm.lean	2026-10-09 14:19:14.048903966 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualPosteriorGerm.lean	2026-10-09 14:32:11.430264600 -0400
+@@ -5,7 +5,7 @@
+ /-!
+ # Actual finite-source posterior mixtures and the accepted analytic germ consumer
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ The seed carrier is the support of an actual PMF on admitted original-source
+ codes. Positive seed weights are derived from that PMF. Its future partition
+ law is derived from the actual source kernel and the source-bound triple row.
+@@ -19,6 +19,7 @@
+ set_option backward.isDefEq.respectTransparency false
+ open Nanuq.Source GProgram.SourceForest
+ open UnifiedLean.Source.UniformizedSourceStep
++open UnifiedLean.Source.SourcePoissonKernel
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.NativeIndependentPairMixture
+ open UnifiedLean.Source.SourceForestSilentPruning
+@@ -65,7 +66,7 @@
+   · intro s hs
+     rw [actual_frozen_triple_row N r s (hstart ⟨s,hs⟩) (place ⟨s,hs⟩)
+       (hloc ⟨s,hs⟩) t gene]
+-    rfl
++    simp only [actualSeedWeight, neg_mul]
+   · intro s hs
+     have hz : mu s = 0 := by
+       simpa only [PMF.mem_support_iff, not_not] using hs
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualTripleMoments.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualTripleMoments.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5ActualTripleMoments.lean	2026-10-09 14:13:16.993122477 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5ActualTripleMoments.lean	2026-10-09 14:32:11.429827041 -0400
+@@ -4,7 +4,7 @@
+ /-!
+ # Four exact moments of the actual frozen triple source
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ These are source theorems, not fitted moment assumptions. The pair readouts
+ come from actual selected-copy epoch transport; the triple readout uses the
+ actual three-copy catalogue. The clocks are those of the unchanged original
+@@ -14,6 +14,7 @@
+ set_option backward.isDefEq.respectTransparency false
+ open Nanuq.Source GProgram.SourceForest
+ open UnifiedLean.Source.UniformizedSourceStep
++open UnifiedLean.Source.SourcePoissonKernel
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.SourceForestSilentPruning
+ open UnifiedLean.Source.SourceCrossCarrierEpoch
+@@ -51,9 +52,9 @@
+       fun d : Code N sample => joinedProjection N {i,j} (.inl d)) =
+       pairDistinct N i j := by
+     funext d
+-    unfold selectedDiscreteReadout pairDistinct
+-    congr 1
+-    exact propext (actual_pair_discrete_view N d i j hij)
++    change decide (DiscreteView {i,j} (selectedView (state d) {i,j})) =
++      decide ((state d).ancestor i ≠ (state d).ancestor j)
++    simp only [actual_pair_discrete_view N d i j hij]
+   rw [hf] at h
+   exact h
+ 
+@@ -74,10 +75,9 @@
+       fun d : Code N sample => joinedProjection N Finset.univ (.inl d)) =
+       tripleDistinct N := by
+     funext d
+-    unfold selectedDiscreteReadout tripleDistinct
+-    congr 1
+-    have he := actual_discrete_view_iff_injOn N d Finset.univ
+-    simpa only [Finset.coe_univ, Set.injOn_univ] using propext he
++    change decide (DiscreteView Finset.univ (selectedView (state d) Finset.univ)) =
++      decide (Function.Injective (state d).ancestor)
++    simp only [actual_discrete_view_iff_injOn, Finset.coe_univ, Set.injOn_univ]
+   rw [hf] at h
+   exact h
+ 
+Only in /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources: G5IntegrationAudit.lean
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5OriginalConditionedContinuation.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5OriginalConditionedContinuation.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5OriginalConditionedContinuation.lean	2026-10-09 14:02:16.064509110 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5OriginalConditionedContinuation.lean	2026-10-09 14:32:11.428936072 -0400
+@@ -4,7 +4,7 @@
+ # Actual original-source continuation after selected-singleton conditioning
+ 
+ Contributor: dot, 2026-10-09.
+-STATUS: source draft; compiler unchecked.
++VERIFICATION: see the packet's exact-byte build and owned-declaration audit receipt.
+ 
+ The input is the actual original finite-program law, restricted BEFORE
+ projection to the selected-singleton event. The output is the actual source
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5OriginalProgramSurvival.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5OriginalProgramSurvival.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5OriginalProgramSurvival.lean	2026-10-09 14:16:57.318888685 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5OriginalProgramSurvival.lean	2026-10-09 14:32:11.428581057 -0400
+@@ -5,6 +5,11 @@
+ # Positive selected-singleton mass in the actual initialized original program
+ 
+ Contributor: Codex integration G5 lane, 2026-10-08.
++
++dot integration derivative, 2026-10-09: compatibility-only proof-script
++repairs; theorem statements and source semantics are unchanged. The original
++draft label below is preserved as history. Current verification is governed
++by this packet's exact-byte build and full owned-declaration audit receipt.
+ STATUS: SOURCE DRAFT / COMPILER UNCHECKED. No compiler was run by this lane.
+ 
+ This discharges a bounded part of G5-B: the finite original program has a
+@@ -117,7 +122,7 @@
+     exact Real.exp_pos _
+   apply (PMF.mem_support_iff _ _).mpr
+   intro hz
+-  rw [hz, ENNReal.zero_toReal] at hp
++  rw [hz, ENNReal.toReal_zero] at hp
+   exact (lt_irrefl 0) hp
+ 
+ /-- A supported selected-singleton branch is constructed by induction on
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5OriginalSelectedPosterior.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5OriginalSelectedPosterior.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5OriginalSelectedPosterior.lean	2026-10-09 14:16:57.319103444 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5OriginalSelectedPosterior.lean	2026-10-09 14:32:11.430607765 -0400
+@@ -5,6 +5,11 @@
+ # Exact selected-singleton conditioning of the ORIGINAL finite source program
+ 
+ Contributor: Codex integration G5 lane, 2026-10-08.
++
++dot integration derivative, 2026-10-09: compatibility-only proof-script
++repairs; theorem statements and source semantics are unchanged. The original
++draft label below is preserved as history. Current verification is governed
++by this packet's exact-byte build and full owned-declaration audit receipt.
+ STATUS: SOURCE DRAFT / COMPILER UNCHECKED. No compiler was run by this lane.
+ 
+ G5-B bounded consumer of the independently accepted original-view posterior
+@@ -54,7 +59,8 @@
+       by_cases haD : a ∈ D <;> by_cases haB : a ∈ B <;>
+         simp [haD, haB, PMF.filter_apply, PMF.toOuterMeasure_apply]
+     _ = p.toOuterMeasure (D ∩ B) * (p.toOuterMeasure D)⁻¹ := by
+-      rw [PMF.toOuterMeasure_apply, ENNReal.tsum_mul_right]
++      simp_rw [PMF.toOuterMeasure_apply]
++      rw [ENNReal.tsum_mul_right]
+ 
+ /-- Restricting the original code event before projection is exactly
+ conditioning its pushforward on the SAME event in the projected view. -/
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5SelectedDiscreteSurvival.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5SelectedDiscreteSurvival.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5SelectedDiscreteSurvival.lean	2026-10-09 14:08:31.784245909 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5SelectedDiscreteSurvival.lean	2026-10-09 14:32:11.429975586 -0400
+@@ -4,7 +4,7 @@
+ /-!
+ # Selected genealogy-discreteness survival from the actual full source
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ This is a genealogy-only Boolean readout. Its exact probability is derived
+ using the actual small-copy state constructed from the selected-singleton
+ view, then the actual no-loss-of-roots source theorem. Original populations
+@@ -14,6 +14,7 @@
+ set_option backward.isDefEq.respectTransparency false
+ open Nanuq.Source GProgram.SourceForest
+ open UnifiedLean.Source.UniformizedSourceStep
++open UnifiedLean.Source.SourcePoissonKernel
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.SourceForestSilentPruning
+ open UnifiedLean.Source.SourceCopyCarrierTransport
+@@ -92,8 +93,10 @@
+         (selectedDiscreteReadout N keep)) true).toReal =
+       Real.exp (-(totalRate N r (selectedSingletonCode N keep s) * (t : ℝ))) := by
+   rw [actual_selected_singleton_epoch N r keep s hs t, PMF.map_comp]
+-  have hf : (selectedDiscreteReadout N keep ∘
+-      fun d => joinedProjection N keep (.inr d)) = discreteReadout N := by
++  have hf : (selectedDiscreteReadout N (sample := sample) keep ∘
++      fun d : Code N (selectedSample sample keep) =>
++        joinedProjection N (sample := sample) keep (.inr d)) =
++        discreteReadout N (sample := selectedSample sample keep) := by
+     funext d
+     exact selected_discrete_small_readout N keep d
+   rw [hf]
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5SelectedSingletonCarrier.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5SelectedSingletonCarrier.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5SelectedSingletonCarrier.lean	2026-10-09 14:12:51.044837350 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5SelectedSingletonCarrier.lean	2026-10-09 14:32:11.429267777 -0400
+@@ -3,7 +3,7 @@
+ /-!
+ # Canonical actual singleton source carrier for a selected posterior state
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ A selected-singleton view of an actual original state has a canonical source
+ realization on the actual selected-copy subtype. It inherits the original
+ population of each selected label and the SAME shared register. Original
+@@ -16,8 +16,10 @@
+ open Nanuq.Source GProgram.SourceForest
+ open UnifiedLean.Source.FiniteSourceSnapshot
+ open UnifiedLean.Source.UniformizedSourceStep
++open UnifiedLean.Source.SourcePoissonKernel
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.SourceForestSilentPruning
++open UnifiedLean.Source.SourceCompletedUnrankedTree
+ open UnifiedLean.Source.SourceCopyCarrierTransport
+ open UnifiedLean.Source.SourceCrossCarrierEpoch
+ open GProgram.G5.OriginalProgramSurvival
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5SelectedSingletonRates.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5SelectedSingletonRates.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5SelectedSingletonRates.lean	2026-10-09 14:12:23.349995661 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5SelectedSingletonRates.lean	2026-10-09 14:32:11.429587941 -0400
+@@ -3,7 +3,7 @@
+ /-!
+ # Current pair rates of the actual selected singleton source
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ Counts are derived from the actual CURRENT pair catalogue on the selected
+ original-copy subtype. Each ordered orientation has half the population rate.
+ Original parallel edge IDs and the original ancestral population stay distinct.
+@@ -122,7 +122,7 @@
+       if place a = i ∧ place b = i then pairRate r i else 0 := by
+     intro i
+     by_cases ha : place a = i <;> by_cases hb : place b = i <;>
+-      simp [Finset.filter_insert, Finset.filter_singleton, ha, hb, hab]
++      simp [Finset.filter_insert, Finset.filter_singleton, ha, hb, hab] <;> ring
+   simp_rw [hd]
+   unfold coincidentPairRate
+   by_cases he : place a = place b
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5TripleMomentReconstruction.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5TripleMomentReconstruction.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5TripleMomentReconstruction.lean	2026-10-09 14:14:22.904346118 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5TripleMomentReconstruction.lean	2026-10-09 14:32:11.430156058 -0400
+@@ -3,7 +3,7 @@
+ /-!
+ # Exact five-partition reconstruction from four actual source moments
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ The linear step uses only normalization and the three pair-discreteness
+ events plus the all-three-discrete atom. It retains second mergers.
+ -/
+@@ -23,8 +23,10 @@
+     (mu 0).toReal + (mu 1).toReal + (mu 2).toReal +
+       (mu 3).toReal + (mu 4).toReal = 1 := by
+   have h : ∑ i : Fin 5, (mu i).toReal = 1 := by
+-    rw [← ENNReal.toReal_sum (fun i _ => PMF.apply_ne_top mu i),
+-      ← tsum_fintype, PMF.tsum_coe, ENNReal.toReal_one]
++    rw [← ENNReal.toReal_sum (fun i _ => PMF.apply_ne_top mu i)]
++    have he : (∑ i : Fin 5, mu i) = 1 := by
++      simpa only [tsum_fintype] using mu.tsum_coe
++    rw [he, ENNReal.toReal_one]
+   simpa [Fin.sum_univ_succ, add_assoc] using h
+ 
+ lemma five_pmf_pair01 (mu : PMF (Fin 5)) :
+@@ -55,7 +57,12 @@
+     (h12 : p 0 + p 1 + p 2 = q 0 + q 1 + q 2) :
+     p = q := by
+   funext g
+-  fin_cases g <;> linarith
++  fin_cases g
++  · change p 0 = q 0; exact hd
++  · change p 1 = q 1; linarith
++  · change p 2 = q 2; linarith
++  · change p 3 = q 3; linarith
++  · change p 4 = q 4; linarith
+ 
+ variable {V E X : Type*}
+ variable [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype X]
+diff -ru /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5TriplePartitionReadout.lean /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5TriplePartitionReadout.lean
+--- /workspace/shared/g5-modular-integration-20261009-1754z/review-v1/sources/G5TriplePartitionReadout.lean	2026-10-09 14:13:38.669975907 -0400
++++ /workspace/shared/g5-modular-integration-20261009-1754z/review-final/sources/G5TriplePartitionReadout.lean	2026-10-09 14:32:11.430066672 -0400
+@@ -4,7 +4,7 @@
+ /-!
+ # Five genealogy partitions read from the actual source ancestry
+ 
+-Contributor: dot, 2026-10-09. SOURCE DRAFT / COMPILER UNCHECKED.
++Contributor: dot, 2026-10-09. Verification is recorded by the packet's exact-byte build and owned-declaration audit receipt.
+ The finite partition code reads the existing actual ancestor map. Pair and
+ triple discreteness are genealogy-only selected-view events, with explicit
+ identities connecting them to this code. No population is observed.
+@@ -26,9 +26,10 @@
+     (x y : Copy) (hx : x ∈ keep) (hy : y ∈ keep) :
+     y ∈ Genealogy.optionLeaves ((selectedView (state s) keep).genealogy x) ↔
+       (state s).ancestor y = (state s).ancestor x := by
++  have hv : Valid (state s) := s.property.forest
+   rw [selected_view_block_leaves (state s) keep hx,
+-    selectedBlock_eq_fiber (state s) s.property.forest keep
+-      (s.property.forest.ancestor_live x) y]
++    selectedBlock_eq_fiber (state s) hv keep
++      (hv.ancestor_live x) y]
+   simp only [hy, true_and]
+ 
+ theorem actual_discrete_view_iff_injOn (N : RootedBinary V E X)
+@@ -72,14 +73,14 @@
+   have hi : Function.Injective a ↔ a 0 ≠ a 1 ∧ a 0 ≠ a 2 ∧ a 1 ≠ a 2 := by
+     constructor
+     · intro h
+-      exact ⟨fun he => (by norm_num : (0 : Fin 3) ≠ 1) (h he),
+-        fun he => (by norm_num : (0 : Fin 3) ≠ 2) (h he),
+-        fun he => (by norm_num : (1 : Fin 3) ≠ 2) (h he)⟩
++      exact ⟨fun he => (by decide : (0 : Fin 3) ≠ 1) (h he),
++        fun he => (by decide : (0 : Fin 3) ≠ 2) (h he),
++        fun he => (by decide : (1 : Fin 3) ≠ 2) (h he)⟩
+     · rintro ⟨h01,h02,h12⟩ x y he
+       fin_cases x <;> fin_cases y <;> simp_all
+   rw [hi]
+   unfold ancestorPartition
+-  split_ifs <;> simp_all
++  split_ifs <;> simp_all [eq_comm]
+ 
+ /-- Every actual triple ancestry, regardless of hidden populations, obeys
+ the exact event table. The impossible nontransitive equality cases vanish. -/
+@@ -87,19 +88,19 @@
+     a 0 ≠ a 1 ↔ ancestorPartition a = 0 ∨
+       ancestorPartition a = 2 ∨ ancestorPartition a = 3 := by
+   unfold ancestorPartition
+-  split_ifs <;> simp_all
++  split_ifs <;> simp_all [eq_comm]
+ 
+ theorem ancestor_partition_pair02 (a : Fin 3 → Fin 3) :
+     a 0 ≠ a 2 ↔ ancestorPartition a = 0 ∨
+       ancestorPartition a = 1 ∨ ancestorPartition a = 3 := by
+   unfold ancestorPartition
+-  split_ifs <;> simp_all
++  split_ifs <;> simp_all [eq_comm]
+ 
+ theorem ancestor_partition_pair12 (a : Fin 3 → Fin 3) :
+     a 1 ≠ a 2 ↔ ancestorPartition a = 0 ∨
+       ancestorPartition a = 1 ∨ ancestorPartition a = 2 := by
+   unfold ancestorPartition
+-  split_ifs <;> simp_all
++  split_ifs <;> simp_all [eq_comm]
+ 
+ #print axioms actual_genealogy_leaf_member
+ #print axioms actual_discrete_view_iff_injOn
