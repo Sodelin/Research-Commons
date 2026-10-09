@@ -1,0 +1,74 @@
+{
+  "status": "PASS_SELECTED_MODULE_REPLAY",
+  "lean": "4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "runs": [
+    {
+      "module": "ExactAbstraction",
+      "source_sha256": "a5c8c5113532bfabb84e5259be91c551ab4210ce4301afc7a6fc233cab40c42e",
+      "exit_code": 0,
+      "seconds": 0.9554226398468018,
+      "flags": [
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false"
+      ],
+      "stdout": "[(false, false), (false, true), (true, false), (false, true), (true, false)]\n[(false, true), (true, false), (false, true), (true, false), (false, true)]\n'ExactAbstraction.exact_factor_iff' depends on axioms: [Classical.choice]\n'ExactAbstraction.exact_factor_unique' depends on axioms: [Quot.sound]\n'ExactAbstraction.trajectory_preservation' depends on axioms: [propext]\n'ExactAbstraction.compatible_gives_trajectories' depends on axioms: [propext, Classical.choice]\n'ExactAbstraction.TwoBit.projection_collision' does not depend on any axioms\n'ExactAbstraction.TwoBit.no_state_only_update' depends on axioms: [Classical.choice]\n'ExactAbstraction.TwoBit.period_two_after_first' does not depend on any axioms\n'ExactAbstraction.TwoBit.exact_period_two_after_first' does not depend on any axioms\n",
+      "stderr": ""
+    },
+    {
+      "module": "PredictiveState",
+      "source_sha256": "4738c91ecdac1be616ab0716c09b80aa6c40e691bcac0ef2e4298410656f6f94",
+      "exit_code": 0,
+      "seconds": 1.420074462890625,
+      "flags": [
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "StochasticAbstraction",
+      "source_sha256": "943a395e85d3df0fbd8e4570fa205f3a2748cfdaa744ce1add9380b8d41453ce",
+      "exit_code": 0,
+      "seconds": 2.325362205505371,
+      "flags": [
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "module": "ActualSourceAdaptiveAbstraction",
+      "source_sha256": "ea288d64ef3eb3a0a8c61f15456b1c8c1affb1d03d8ec3c67d18ff695170c733",
+      "exit_code": 0,
+      "seconds": 2.4565701484680176,
+      "flags": [
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false"
+      ],
+      "stdout": "'Dot.ActualSourceAdaptiveAbstraction.actual_source_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Dot.ActualSourceAdaptiveAbstraction.actual_adaptive_selected_history' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'Dot.ActualSourceAdaptiveAbstraction.actual_adaptive_observed_history' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": ""
+    }
+  ],
+  "adapter_named_axiom_reports": 3,
+  "adapter_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "full_owned_census": false,
+  "independent_compiler_replay": false,
+  "full_unified_lake_replay": false,
+  "upstream_bytes_exact": true,
+  "actual_source_dependency_context": "authenticated baseline181"
+}
