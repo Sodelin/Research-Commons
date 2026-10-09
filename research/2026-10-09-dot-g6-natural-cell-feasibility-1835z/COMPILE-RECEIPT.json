@@ -1,0 +1,92 @@
+{
+  "status": "ELABORATION_PASS",
+  "exit_code": 0,
+  "seconds": 3.5032947063446045,
+  "source_sha256": "bd35c3f3f47ada67cceb9887059a3a9ed8662129bcab4dbe5d5ade07a377de5f",
+  "object_sha256": "7c6555966cb1c1fdc2cb379732838deca8220107c0e41fa96b8035d996338f3a",
+  "scope": "source-typed simultaneous reciprocal-rate equivalence only; no formal Fourier--Motzkin or full G6 assembly",
+  "date_utc": "2026-10-09",
+  "portable_command": [
+    "$LEAN_BIN/lean",
+    "--trust=0",
+    "-j1",
+    "-M4096",
+    "-Ddebug.skipKernelTC=false",
+    "-o",
+    "build/G6NaturalCellInverseRates.olean",
+    "G6NaturalCellInverseRates.lean"
+  ],
+  "working_directory": "directory containing the source file",
+  "lean_path": [
+    "$BASELINE_BUILD",
+    "$MATHLIB/.lake/build/lib/lean",
+    "$MATHLIB/.lake/packages/<each pinned package>/.lake/build/lib/lean"
+  ],
+  "original_source_freeze": "916e02a1d51d79cdffd300b9d8313df2608b08bc",
+  "direct_source_provider_authentication": {
+    "UnifiedLean.Source.NativePairClockLaw": {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativePairClockLaw.lean",
+      "bytes": 7243,
+      "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "git_blob": "62c8d7d924080346cfb10e5d68c808f8446126d1"
+    },
+    "UnifiedLean.Source.NativeIndependentPairMixture": {
+      "path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeIndependentPairMixture.lean",
+      "bytes": 7816,
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "git_blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8"
+    }
+  },
+  "named_theorem_axioms": {
+    "UnifiedLean.G6.NaturalCellInverseRates.interval_div_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.interval_rate_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.inverse_bank_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.constructed_pair_rate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.reconstructed_inverse_bank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.all_hazard_cells_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.reconstructed_bank_satisfies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnifiedLean.G6.NaturalCellInverseRates.original_cell_iff_inverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "all_8_named_theorems_standard_axioms_only": true,
+  "full_owned_declaration_census": false,
+  "mathlib": "official cache at 0df444a360eaa60ab8c11dca51a86af692955474",
+  "lean_version": "4.33.1, commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "logs": {
+    "stdout": "b8f35cc29091397fba053bd1e6aa56c519806af70f1d54d905265c73d42dda75",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "raw_receipt_sha256": "642b38017eab8b940c94eb1cb579596add5c1a4d718309dbde407c7f6e689367",
+  "first_attempt": "passed unchanged; second pass changed only historical status wording and added the eighth axiom print"
+}
