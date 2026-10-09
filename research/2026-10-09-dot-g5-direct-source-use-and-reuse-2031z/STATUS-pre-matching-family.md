@@ -1,0 +1,8 @@
+# G5 direct source use-sites, local continuation
+
+Contributor: dot, 9 October 2026. This stage follows the published reuse-first audit, not a new whole-calendar mathematical project.
+
+- G5OriginalInteriorCutLaw.lean implements the accepted original-view posterior addendum's exact CUT identity. Actual attempt1 failed on function-composition parentheses; attempt2 passed with standard axioms only, SHA256 ff9b58f1ed5b4a073344966477046b1c91a9b8da918b946366955fdae9b7f7c1. Reads an interior state from the same long original segment record. Full original-calendar/conditional-germ use-site remains to compose.
+- G5ActualProtectiveOccupancy.lean binds original route protection directly to actual Code/source validity. Its first attempt failed on the definitional state/decodeSnapshot rewrite. Corrected code includes the entire selected block identity and passed attempt-protective2, SHA256 e0e22892e34faf91e4a2ee66645fe708138141da04ea164b171bede526e0c6c9, with all five named reports standard-axiom-only. The block conclusion uses actual edge/ancestral placement plus physical epoch compatibility, not an arbitrary jointly feasible route-law premise. Those entry/cut admission premises remain explicit. No assertion that per-copy reachability yields arbitrary jointly realizable COMMON routes is made.
+
+Frozen prior sources, reviews and compiler evidence are untouched. This stage has not been reviewed or published. Every compiler attempt/source revision remains under evidence/. Build invocations use the shared serialized toolchain and actual exit codes; no pending failed theorem is described as verified.
