@@ -1,0 +1,26 @@
+# Reuse-first formal integration coordination
+Contributor: dot (OpenAI). 9 October 2026, 20:14 UTC.
+
+## Decision
+Keep the four current mathematical assignments: G5 source/recovery, G6 source/certification, G7 source/design, and combined G3/G4 formal integration. Continue accepted-proof-to-source integration before introducing another component ladder. Nolan explicitly prioritizes proof work; the financial tangent is deferred. No additional worker or broader research scope is introduced.
+
+The full-scope record remains [CURRENT-SCOPE](../../research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md), with its dated revisions. This is an incremental coordination checkpoint, not a replacement of original master statements or prior accepted results.
+
+## Concrete reuse decisions
+- G5: whole-calendar composition, refinement, natural register mixing and completed past/suffix laws already have compiled providers. Interior-epoch posterior and original-view conditional germ already have accepted hand proofs. Follow the direct stopped-record argument, then bind actual occupancy/boundary histories to the structural decoder. Per-copy reachability is not arbitrary joint-route feasibility. [Bounded audit](https://github.com/Sodelin/Research-Commons/blob/1ac905b313c1a15ba18ef3c437c3b6a0b1f62288/research/2026-10-09-dot-g5-timed-cut-source-integration-1943z/G5-REUSE-FIRST-CONSUMER-AUDIT-2000Z.md).
+- G6: use the rational same-cell witness and inherited rational count backend instead of the older algebraic-to-nearby-rational detour in the finite rational natural grammar. Legal chart coverage and source-bound within-cell hazard comparison remain explicit formal obligations. No uniform clock cutoff over an unbounded saturated cell is required by the accepted local-witness consumer. [Audit](https://github.com/Sodelin/Research-Commons/blob/6fb0006d8c218b79bffc91b68be73079ee2ef2d1/research/2026-10-09-dot-g6-source-reuse-2003z/REUSE-AND-NEXT-SOURCE-OBLIGATION.md).
+- G7: reuse the complete G1 geometric/contextual-history providers, existing G2 source completion/readout, and existing joint-frontier polynomial algorithm. The next formal adapter transports actual completion and readout across original graph labels. Original planarity/census and full compiler/policy formalization remain. [Audit](https://github.com/Sodelin/Research-Commons/blob/d5ebd34bc562518c3b769772897b123ead1005f9/research/2026-10-09-dot-g7-prior-reuse-audit-2004z/REUSE-AUDIT.md).
+- G3/G4: compose the actual no-loss source-program recursion from G5 interval and count providers, then bind the accepted paired guard to actual serial-source factors and original observation tomography. The reviewed [guard packet](https://github.com/Sodelin/Research-Commons/tree/c7e8c90d6efa3d985b577af6b1458f2a4bd81738/research/2026-10-09-dot-g34-paired-guard-lean-1959z) is formalization of earlier accepted hand mathematics. It does not close general G3/G4.
+
+## Integration correction
+Legacy G7 Python and some G4 routing formulas use gamma for parent0; current Lean natural initialization uses gamma for true/parent1. Both conventions are valid. Their adapter must use g_python = 1 - gamma_Lean or prove simultaneous parent/bit transport. Equal-arm expressions depending on g(1-g) and fairness at 1/2 are invariant. Unequal-arm connections must retain the explicit conversion. This is an integration risk, not evidence the old independent results are false.
+
+## Modular-package finish line
+A reproducible combined package of currently reviewed formal results is a separate achievable deliverable from formalizing every master theorem. Freeze exact sources, reconcile module identities, pin Lean/Mathlib, provide a top-level import and clean build, and audit the actual combined declaration/dependency closure. Exclude unfinished drafts from the default build while preserving them separately.
+
+Current compatibility evidence: Lean4.33.1 and Mathlib0df444a360eaa60ab8c11dca51a86af692955474 are shared by the current stages. The G7 inventory found no module-name collision with baseline181; all93 modules shared between baseline181 and the complete467 G1 registry are byte-identical. This is not a fresh joint467-plus181 build. The historical825 corpus has not been fully compared in this pass. Separate successful builds do not establish one combined reproducible build.
+
+## Reporting and remaining risk
+Label inherited mathematics, newly compiled adapters, source/interface review, actual execution and public delivery separately. Failed compilations and corrected source versions remain preserved. A Lean proof still needs a source-contract audit; compiling a weaker statement cannot discharge an original master obligation. No new historical novelty, exact G3 recognizer, general G4 forcing theorem, practical speedup or empirical biological impact is claimed.
+
+The bounded audits found reusable positive matches; they do not prove repository-wide absence of other providers. The expected benefit is fewer redundant proofs and a shorter explicit dependency chain. The unresolved risks are missing faithful source adapters, still-supplied coverage assumptions, and combined-package integration failures. Do not erase accepted hand endpoints merely because their complete formal assembly remains unfinished.
