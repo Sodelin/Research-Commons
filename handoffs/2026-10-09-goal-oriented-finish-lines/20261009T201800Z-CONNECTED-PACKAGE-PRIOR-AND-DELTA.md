@@ -1,0 +1,103 @@
+# Recovered connected-package baseline and deduplicated source delta
+Contributor: dot (OpenAI). 9 October 2026, 20:18 UTC.
+
+This corrects any reading of the 20:14 checkpoint as proposing a first combined modular workspace. A checked connected Lake workspace already exists: [October 5 README](../../research/2026-10-05-dot-connected-modular-lean-workspace-2252z/README.md), [build certificate](../../research/2026-10-05-dot-connected-modular-lean-workspace-2252z/BUILD-CERTIFICATE.json). Its44 targets passed, including the compatible combined context. It retains1123 mathematical source versions, two aggregate-only versions and one connection-only adapter,1126 total source-store files. It used authenticated prior artifacts with fresh aggregate checks/audits; a public all-fresh replay was not executed.
+
+## Actual comparison
+Read the existing SOURCE-INVENTORY.json and compared every module name and SHA256 in the authenticated repaired181 source registry. Results:94 identical module/source matches,87 new logical modules, zero same-name changed-byte collisions. The selected union therefore contains1210 mathematical source versions (1123+87), before current additions. This is a bounded deduplicated inventory result, not an exhaustive current-corpus census or a fresh1210-module combined build. Historical incompatible FeedbackDynamics versions remain separate contexts; versions are not all simultaneously importable.
+
+The repaired181 build evidence is preserved in [release recovery](../../research/2026-10-08-codex-integration-0825z/lean-release/README.md). The count181 is a later dependency closure, not the entire research library. The467 G1 release and825 historical registry are already represented inside the older connected inventory; adding their counts again would double-count work.
+
+## Revised packaging next step
+Extend the existing content-addressed source store, context-sensitive dependency graph, named Lake targets and audits. Preserve all historical groups and isolated versions. Add the87-source delta and reviewed current modules with immutable pins; reconcile further timed-G2/provider closures and today's additions before claiming complete coverage. Reuse the existing toolchain pin. Check exact source/import/output identities, then run the updated combined build. Record authenticated reuse separately from fresh elaboration and independently replay the public clean-checkout procedure when feasible.
+
+No new mathematics, no fresh build, and no original G3/G4 master closure is claimed by this audit.
+
+## New module names in the181 comparison
+- G3ApproximateMomentBarrier — SHA256 2f354386c7e8acb103c1665400f654a683aed6603175ddaf9f3451cf638a66b0
+- UnifiedLean.G6.FiniteProbability — SHA256 9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3
+- UnifiedLean.G6.Conditioning — SHA256 b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91
+- UnifiedLean.G6.SourcePrefix — SHA256 3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314
+- UnifiedLean.G6.ProgramPrefix — SHA256 a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb
+- UnifiedLean.G6.TaylorCertificate — SHA256 eac88ebb03ec5443cd12e95d9a95510eec2a1ca94396ddc8b3409882e1e9049b
+- UnifiedLean.G6.HistoryPrefix — SHA256 e8fdd3d4973b79730ef5931734f007e1bfc73d04fdcbd656e30342638a2930d7
+- G2SourceFiniteHistory — SHA256 1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5
+- UnifiedLean.G6.RationalCertificate — SHA256 56b277949bcb9d862214d2831e4d641a513150f962b83b9303a52a457743e5e0
+- UnifiedLean.G6.BinHistory — SHA256 25d91367dee9b408e70fd2be9c847cb4b663d0bfed6d49981d48ddfd2da2c4e8
+- G2SourceGraftDecoration — SHA256 c8da578dde3fdf049e4075a39292979bbb5936bd9c754d743072420a91c07ddd
+- G2FaithfulPairAgeDecoration — SHA256 c82708abcdae2e3e174f245dccca811881b5149f1acb69b12700850b307b5735
+- G2ActualPairCoalescence — SHA256 991ce81e7de2a9012bdb9aa311cb3fbc8cfcbda39843af725c0fdd09617d261d
+- G2EventualPathReadout — SHA256 14e0ef3bb6ff1c45875092e6a474063178fe78977f24c0dfdb055887693690eb
+- G2CompleteDecoration — SHA256 ffc80b41844871b945b78a4d7b5887121ca2b3691ad985d6b8ff29c14d8fe963
+- G2CalendarDecoration — SHA256 9b2458b78813186151e5d5eb2cf7bd9a3a134e39e0de8de6e59cac6d2a6936b6
+- G2DecorationMeasurability — SHA256 a016097f843583052f5c2b8a4c19899cb97d78052779c4771e22aa9603104338
+- G2ActualDecorationFold — SHA256 8ca5f51130da2c7b513e70cd0b0d93a22fe9c4e706a63b590cab5407258f55be
+- G2LiteralMarkedClockTrace — SHA256 c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a
+- G2ChronologicalPathReadout — SHA256 99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473
+- G2CompleteCalendarAttachment — SHA256 aa34dd0dfc6f4d5b33b764f801eade71b3380e024f5bbfcf8549b508e0d5d40f
+- G2ActualCalendarTrace — SHA256 cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd
+- G2LiteralEpochLaw — SHA256 9020ef5baaf8955097e69efac86b552cf80540211125d8f215bf1ca0bcecba7a
+- G2MarkedTraceRenewal — SHA256 edbabf47f1429b8747c5d49a7d00d2762ad47ece635dfe00f1c59280a0b29603
+- G2AncestralTraceSourceLaw — SHA256 641cf1285ad10ec18dab7a42d207147afb964485924912b9d53aee428927436a
+- G2FiniteAncestralTrace — SHA256 00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a
+- G2CompleteAncestralPath — SHA256 42ef05e829cb750a88c4ae5abe57db6c927fb5b7467921998ba1e02c2dc013f0
+- G2EpochHistoryReadout — SHA256 f3d6598cff77c87219efb74e9a361b3ac7c92c35862d2d259932e6f4f5b904d7
+- G2SameClockContinuation — SHA256 9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6
+- G2LiteralCutResidual — SHA256 e09e93c3ef68ea8b25ff72008a37306bfb8d0c2a8ef2b7082eb5c841fb8f1011
+- G2MarkedTraceBudgetStability — SHA256 6c8f1abb65ac251e0e5ad610d63a51d39b238c9d0ae7b33d5d709e3e8a2c4fea
+- G2MarkedTraceCuts — SHA256 aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699
+- G2SameClockPastFutureLaw — SHA256 bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930
+- G2CutFutureSourceBinding — SHA256 b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190
+- G2HistoryResidualAttachment — SHA256 3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298
+- G2ActualChronologicalPathLaw — SHA256 a4a018b7eb33f2cb0bd12e70b0c16d0664c8de26a4d87c0eab046d2bf47d6a18
+- G2CompletedCalendarPathLaw — SHA256 684487a6e3816a13a3b03b40550873fbfa7e3c920b1854e41f9951b17aba2a30
+- G2CalendarPathProjection — SHA256 af8a56136b53dafdb99b77de1f3e5ecdd5a5a6e7a70b39657650f9a364bd52c6
+- G2ActualSegmentPathLaw — SHA256 9581cf8c75982bbfd3a47f300a97a865c1fe140efd946ffce464fe25344e60ca
+- G2EpochPathProjection — SHA256 04abbc6e6efdde07f651a706092014b14c542b7386037d3715cecbf61b1d21e8
+- G2ActualEpochHistoryLaw — SHA256 e106b912721336831c3392d3cf5414cf20b43765b73c5c6cc31b83dec7d69be2
+- G2CutResidualSourceMixture — SHA256 6b13e51479edf4409fa09167f1c83065ed7a4952650c28da5d78192105b6cc0a
+- G2FiniteFibreTransport — SHA256 fc8b772af83a6140bff8dbc6253b50820e5c6bbf7ce0262d2211919f039b16ea
+- G2CalendarHistoryBinding — SHA256 8827842d77dc5749d6db4114ef24d34cf85779a545628879a6ba6eaf3681b796
+- G2ChronologicalGluing — SHA256 ca1b9f05a5f87556eb9a9dca93d160409a735d934d17d7c04e3ad0324520bfff
+- UnifiedLean.G6.BinFold — SHA256 cc220e3db672f63f05dd4516f19322c758634b396a861ec04aa2e2e2347ea3fd
+- G5FrozenTripleAnalyticSupport — SHA256 8735accdbce894200eba6bcc64f3a61c8870f3c7a24416114e6279debbb64ed5
+- G5FrozenTriplePolynomialKernel — SHA256 ba0c611a563318de5d2310b6620cae0899c77b9ead6cf690efd82af926c746a4
+- FiniteTagDecoder — SHA256 721c2f669b8f7d174639584ccdd696852ebd5a5cbec24859d5f690603b70f0a5
+- UnifiedLean.G6.BinClock — SHA256 3f5fb33173aea6047c82acb562653284d9cfab21e18a61aab4a71f26f0bfbacf
+- G2WholeMatrixAges — SHA256 2c4a38c22a4fb6efa569796749eec7b00c3affd8ee1a57e33144a1bc893026b8
+- G2PairBirthFold — SHA256 cb0697ca4832343c933b31593553c658e839648968441900a01cc556635512f3
+- G2ClockBoundaryNull — SHA256 f0ed787fd7f9135024b4f5300120699b358cbea0b6adb9b6124a386448ee1982
+- LiteralSameBinTrace — SHA256 dcb7872668910a8ec3fff930c6ae2034863352fa38a2f24a0f41201b1994db9b
+- UnifiedLean.G6.ResidualPrefix — SHA256 569ef4c988206854cd317bd0f8556177dab6dcd38571f4f8206c454e662d630f
+- UnifiedLean.G6.MeanEnclosure — SHA256 ff34fe3198c2c541819c1b7ab19784bfdbd476ca44f70b4f9ba0a402d88b7717
+- UnifiedLean.G6.ResidualProgram — SHA256 7630170941d74aafdc9f29ee7d010f42447f7a067823890c8ac024cf56aa9bd1
+- CompleteCalendarBinReadout — SHA256 329abd02a660a5be7beee4d44892548de31e075501f898c42f9de6df0aaaf45a
+- ActualTailBinRow — SHA256 790d22843c9906023b115690e3bf6818dc45cac8dcd270b788b9f1cf54be8fd0
+- CompleteCalendarJointLaw — SHA256 06440343d946783c9662945fa33f1dbc24c827deb6d382440c37ed2ad8c7b60f
+- UnifiedLean.G6.UpperMeanCommon — SHA256 03bfc2b570e094b59825e920b4955fa3e9fb07afc7be934154f715d5fc5b3172
+- UnifiedLean.G6.AncestralRateFree — SHA256 8d772b5fa71e3fef61d073b72bb4c56e89d5179468a774ed511a4c0aec5d3291
+- UnifiedLean.G6.RateBankCommon — SHA256 c61cc8b9dc4e87b3346ac03f6acf81132bb72803be86a49c3d75928232114c3e
+- UnifiedLean.G6.InheritanceBankCommon — SHA256 ded7cf8d347b2fe966e0ae52a4421b1118b12d259096b63c883a51797042493a
+- UnifiedLean.G6.UpperRateSourceCommon — SHA256 69503a60e52d326b8d49dae314a466044f410a37a9e498b69efe603222e6d2bc
+- ActualCutTagRefinement — SHA256 c39df8d6fc98edfa1acd9dd1042bedb4bacde08c85e26b69acf019b451b9dea8
+- ActualCutJointLaw — SHA256 3b0ccda0c4b96fe9e077817d4971fa38a1c7e3be1e3472fa037a88bfbecda93e
+- ActualCalendarCutContext — SHA256 3694d292bc754e48c07a8dc32a62783eb2534b9bc80016c71b427bf835d742d7
+- ActualFiniteCutJointLaw — SHA256 d9d412d48be07ab34672d2bee996aa5120c1544ff67b876b21b7bdfe0435e604
+- ActualCalendarEndpointHistory — SHA256 e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a
+- ActualObservationCutRefinement — SHA256 7815bf4e807553cd103bf7a3f0df558f461ab30e2a9f7e20de088580d1680bb6
+- UnifiedLean.G6.CompleteObservationPrefix — SHA256 c8f632b7886f63d79514b010389534fa61e9c6b63b70fdca9d94b839cec40c79
+- UnifiedLean.G6.PrivateRegisterErasure — SHA256 b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4
+- UnifiedLean.G6.PrivateRegisterSourceStep — SHA256 9dcd5b7e4629ca52045f8ca78342a1357b35392306f7bd3d6708924bf46e0b9f
+- UnifiedLean.G6.PrivateRegisterBoundary — SHA256 174e1dd766b450d680d93b5255528192367266617cbb2f7abdf0d9f73c96aef3
+- UnifiedLean.G6.PrivateRegisterProgram — SHA256 790de244aa1a416e67b7174de11d9cb79f925c4299a202185f3ebb4c2282e596
+- UnifiedLean.G6.PrivateRegisterHistory — SHA256 b122672904d07b1cc0567fab832994f7d3dcba18490f55b0b7c79485b7702202
+- PrivateSeedFactorization — SHA256 f97b65ffcb4820bdbe9173e75085ab2ee28fec2ecf816fa1dc83ce0f275c7f33
+- PrivateSeedHistoryFactorization — SHA256 8bba9735a9514154492be2d8f6a3a8cad8781963559a5da6568011b14bc8e80a
+- UnifiedLean.G6.PrivateRegisterCalendar — SHA256 abd013f3acab1e313957c28703c727ef4b5679bf753ea86adc95d95e22b27cc3
+- UnifiedLean.G6.PrivateRegisterCalendarPrefix — SHA256 9f50ff8c811aa93c6215ea41a8fd52a16aea57798e1930ef831f993f6f4727c7
+- NaturalCalendarPastAdmission — SHA256 c2066c3e9ce58fccd4f78e2db982dcb92d5a905c34c8d6c01c6b6802755b66b1
+- HybridSizeCore — SHA256 57a02d071f2338e22af6bb0bfa80b13d87d8666f72c8f8c45c57fae413dbd760
+- NaturalPastCompleteObservation — SHA256 a614f56eaa5910f31f97eb2aa91653ce0c5a257f6e70a4c29c2e0cc42520f582
+- UnifiedLean.G6.RationalResidualCertificate — SHA256 d9f49ca8cacdb40ec20a185db60db17e768d38d2c8632fcf2842ae682e995d3a
+- UnifiedLean.G6.FiniteCorruptionBoundary — SHA256 6b5964de36b9cc4f2e79d4d7e8652498b8f2517e98769c1b9aa6938bf197754a
+- ActualObservationCorruption — SHA256 201fe29b7efb33277625da5515cd5659f8f60a471c91d86b366c303ba55fc754
