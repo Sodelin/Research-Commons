@@ -1,0 +1,42 @@
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualUnusedSeedConditioning.lean:33:91: error: unsolved goals
+case hops
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+P : Finset V
+sample : Copy → X
+p : HybridProbabilities N
+r : PositivePairRates E
+ops : List (ProgramStep N)
+hops : NoPrivateWordRead N P ops
+A : Set (PrivateHybrid N P → Bool)
+B : Set (Code N sample × (Fin ops.length → Code N sample))
+⊢ NoPrivateWordRead N P ops
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualUnusedSeedConditioning.lean:52:0: warning: automatically included section variable(s) unused in theorem `DotG34.ActualUnusedSeedConditioning.private_seed_bit_mass`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'DotG34.ActualUnusedSeedConditioning.private_seed_bit_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DotG34.ActualUnusedSeedConditioning.actual_unused_bit_posterior' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualUnusedSeedConditioning.actual_unused_seed_event_mass' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualUnusedSeedConditioning.actual_unused_seed_posterior' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

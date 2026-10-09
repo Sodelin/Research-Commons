@@ -1,0 +1,9 @@
+# Independent parent source review — 9 October 2026, 21:18 UTC
+
+Reviewer: dot. SCOPED SOURCE ACCEPTANCE. Read all four selected module bodies and the scope README; compared exact source hashes to successful contributor receipts 1, 3, 7 and 9 and the audit source to receipt 10. Full selected owned audit reports 19 declarations/theorem rows, no owned or nonstandard axioms and no missing selected modules. No independent compiler replay.
+
+The COMMON pulse primitive uses the actual entering register, retains true=parent1, and requires all current live roots at the specified hybrid. Natural one-site marginal is unconditional and is kept separate from posterior claims. The posterior consumer correctly invokes the actual prior seed/erased initialized endpoint-history product theorem under NoPrivateWordRead, divides by an explicitly nonzero finite probability mass, and then specializes the actual original Bernoulli measure. It does not infer independence merely from register constancy.
+
+The register invariant is derived through actual step, iteration, epoch, every boundary and finite program kernels. Support pushes to a singleton original register. The final COMMON continuation therefore uses that original bit at any supported endpoint satisfying the explicit entrance hypothesis. These are internal source facts; the code does not falsely supply a legal observed event decoder or physical entrance from an arbitrary operation word.
+
+Prior authenticated providers are reused, not rediscovered. The excluded uncompiled naturality scaffold is not part of the accepted module set. Remaining end-to-end obligations: combine event-conditioned continuation law with actual physical calendar entrance/rejoin, serial composition and the declared original G4 unranked observation/readout. General G3/G4 remain open; no historical novelty claim.

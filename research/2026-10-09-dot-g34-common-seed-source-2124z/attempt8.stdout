@@ -1,0 +1,80 @@
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualStoredRegister.lean:24:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  PMF.map (Function.const ?m.196 ?b) ?p
+in the target expression
+  PMF.map (fun x => (state s).register) (choicePMF N r s) = PMF.pure (state s).register
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+he : (fun d => (state d).register) ∘ stepDestination N s = fun x => (state s).register
+⊢ PMF.map (fun x => (state s).register) (choicePMF N r s) = PMF.pure (state s).register
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualStoredRegister.lean:31:9: error: unsolved goals
+case zero
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+⊢ PMF.map (fun d => (state d).register) (PMF.pure s) = PMF.pure (state s).register
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualStoredRegister.lean:38:35: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualStoredRegister.lean:38:37: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/workspace/shared/g34-common-source-binding-20261009-2044z/ActualStoredRegister.lean:67:8: error: unsolved goals
+case nil
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+⊢ PMF.map (fun d => (state d).register) (PMF.pure s) = PMF.pure (state s).register
+'DotG34.ActualStoredRegister.actual_step_register' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'DotG34.ActualStoredRegister.actual_iteration_register' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualStoredRegister.actual_epoch_register' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'DotG34.ActualStoredRegister.actual_boundary_register' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DotG34.ActualStoredRegister.actual_program_register' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
