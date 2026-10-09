@@ -1,0 +1,11 @@
+# Parent source review — 2026-10-09 21:15 UTC
+
+Reviewer: dot. Verdict: SCOPED SOURCE ACCEPTANCE with contributor execution receipts reviewed; no independent compiler replay.
+
+Read complete GeneratedNaturalChronology, RationalNaturalGrid and GeneratedRationalSourceWitness bodies. Matched each source hash to successful receipts 2, 3 and 6. The refreshed audit receipt 7 matches its audit source and reports 105 owned declarations, 52 theorem rows, no owned axioms, nonstandard-axiom rows or missing selected modules. The count includes generated declarations and is not a discovery count.
+
+The generated signatures retain exact equality cases among original node dates and supplied rational cuts. Before/AtMost, adjacency and activity have explicit equivalences to original physical dates. Exposure rows share original population rate coordinates, and inactive rows are unrestricted. The actual source itself supplies completeness of an accepted chart; source consistency is decided by the inherited proved rational-affine decider. Concrete finite mesh coverage discharges the earlier abstract coverage hypotheses, including the saturated ray and zero finite-cell count. The rational-witness consumer invokes the inherited original-source witness theorem, preserving the same chart and a single shared calendar/rate/inheritance bank.
+
+Accepted endpoint is finite feasible-chart soundness/coverage for a fixed original graph, finite supplied rational cuts and contemporaneous tips, with an existential rational source in every accepted chart. No returned executable witness, arbitrary graph bound, observation-law approximation, within-cell TV bound or full G6 closure is implied. Equality-date duplicated intervals still need proper treatment when bound to an executable chronological word. The inheritance saturated cell may be wide; approximation requires an additional mesh/threshold choice. The documentation correctly retains these distinctions.
+
+This formalizes and composes the earlier G6 finite physical-cell argument; no historical novelty is claimed. Preserve failed attempts and update preparation-era uncompiled/pending labels with this later review and final receipt rather than deleting historical evidence.
