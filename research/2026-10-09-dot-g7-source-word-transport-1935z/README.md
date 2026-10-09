@@ -33,7 +33,7 @@ The actual source state, admitted snapshots, Bernoulli product measures, uniform
 
 ## Execution and review
 
-Author compilation uses the shared Lean 4.33.1 toolchain, authenticated baseline objects, `--trust=0`, one job, and `debug.skipKernelTC=false`. Failed attempts and final successful hashes are retained. The requested audit covers all 65 explicit named declarations in the six continuation modules, including 54 theorem/lemma declarations; generated auxiliary declarations are not separately inventoried. The finite-program module passed on attempt3, and all65 requested audit reports passed on the first audit invocation at19:33 UTC, with only propext, Classical.choice and Quot.sound. Independent source review is pending; no independent Lean rerun is claimed. The runner requires the preceding published original-relabelling object in its build path, in addition to the authenticated baseline.
+Author compilation uses the shared Lean 4.33.1 toolchain, authenticated baseline objects, `--trust=0`, one job, and `debug.skipKernelTC=false`. Failed attempts and final successful hashes are retained. The requested audit covers all 65 explicit named declarations in the six continuation modules, including 54 theorem/lemma declarations; generated auxiliary declarations are not separately inventoried. The finite-program module passed on attempt3, and all65 requested audit reports passed on the first audit invocation at19:33 UTC, with only propext, Classical.choice and Quot.sound. The hash-bound [parent source/interface review](PARENT-TRANSPORT-REVIEW.md) accepts the six modules at the stated supplied-word/endpoint-snapshot scope and cross-checks the65-declaration audit. No independent Lean rerun is claimed. The runner requires the preceding published original-relabelling object in its build path, in addition to the authenticated baseline.
 
 ## Replay configuration and predecessor
 
@@ -41,7 +41,7 @@ Author compilation uses the shared Lean 4.33.1 toolchain, authenticated baseline
 
 Set `LEAN_RUNTIME` to the shared-layout toolchain directory and `G7_PREDECESSOR_BUILD` to the directory containing the compiled predecessor `G7OriginalRelabelling.olean`. Optional overrides: `LEAN_BINARY`, `MATHLIB_ROOT`, and `BASELINE_BUILD`. Use the exact authenticated Lean4.33.1/mathlib/baseline artifacts from the preceding build evidence. No package download or installation is performed by this wrapper.
 
-The exact predecessor source is `research/2026-10-09-dot-g7-original-registry-admission-1908z/G7OriginalRelabelling.lean` at commit `36ed458fc734b7e5398f8e54d167713d7b72e8fd`, SHA256 `beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0`. The manifest of that packet is authoritative for the source hash. Compile that module against its authenticated baseline first. Then, with this packet as the working directory, invoke `python run_one.py MODULE LABEL` in this order:
+The exact predecessor source is `research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalRelabelling.lean` at commit `36ed458fc734b7e5398f8e54d167713d7b72e8fd`, SHA256 `beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0`. The manifest of that packet is authoritative for the source hash. Compile that module against its authenticated baseline first. Then, with this packet as the working directory, invoke `python run_one.py MODULE LABEL` in this order:
 
 1. `G7SourceStateRelabelling`
 2. `G7SnapshotRelabelling`
