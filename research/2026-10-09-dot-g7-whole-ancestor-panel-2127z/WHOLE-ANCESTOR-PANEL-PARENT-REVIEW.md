@@ -1,0 +1,9 @@
+# Parent source review — 2026-10-09 21:26 UTC
+
+Reviewer: dot. SCOPED SOURCE AND REPORTED EXECUTION ACCEPTANCE. Read the entire G7WholeAncestorPanelCode.lean (SHA256 28b1d4e57968a22ff2d7bd3ba57629a98888366cc5cc1a41cf21a53ec90c91e2), checked successful whole-panel-4 and whole-panel-audit-1 against the source hashes and all 19 explicit reports. No independent replay or complete generated owned census.
+
+AncestorClosed is actual membership equivalence with the original ancestor map, not a supplied source-law equation. Whole carried genealogies can be relabelled into the selected subtype because every leaf lies in the complete retained ancestral block. Validity retains live representatives, leaf fibres and well-labelled trees. The actual original descendant condition, graph, sample labels and shared register survive in panelCode. Irrelevant history/dead entries are not claimed to be reconstructed; the theorem proves the actual selected-view interface.
+
+The panelCode_view theorem discharges the inherited arbitrary-compatible-state cross-carrier programme premise. Location panels are ancestor-closed by actual representative validity, and their constructed smaller Code is co-located at its original population. The own-rate-only marginal corollary then follows from the already accepted single-population theorem without changing the full entering state or drawing a new register.
+
+The retained panel is selected at the entering state and then fixed for that theorem. It is not a dynamically recomputed population-membership abstraction after every boundary. Arbitrary programme constructors still need physical calendar admission at applications. Full selected-view tensor reassembly, whole-calendar polynomial variables and original G7 observation/policy admission remain open assembly obligations. No injectivity of all selected views on arbitrary raw Code, no whole raw-Code reconstruction and no general G7 closure are asserted.
