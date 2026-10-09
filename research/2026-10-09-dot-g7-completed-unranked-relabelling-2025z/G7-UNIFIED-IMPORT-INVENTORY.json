@@ -1,0 +1,320 @@
+{
+  "baseline": "research/2026-10-05-dot-connected-modular-lean-workspace-2252z",
+  "baseline_pin": "419b9305da70b1a0b96510dba1244d41f79afaf1",
+  "scope": "source identity only; no combined build",
+  "local_sources": 27,
+  "overlap": [
+    {
+      "module": "G7OriginalCensus",
+      "sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "old_versions": [
+        "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517"
+      ],
+      "matches_old": true
+    }
+  ],
+  "new_modules": [
+    "G7ActualClockUnrankedRelabelling",
+    "G7AdmissionAudit",
+    "G7AdmissionChecks",
+    "G7BoundaryExitCommutation",
+    "G7BoundaryPhasePermutation",
+    "G7BoundaryRelabelling",
+    "G7CalendarAgendaRelabelling",
+    "G7CalendarNodeRelabelling",
+    "G7CalendarRelabellingAudit",
+    "G7CoinReindexing",
+    "G7CompletedReadoutAudit",
+    "G7CompletedUnrankedRelabelling",
+    "G7FiniteReachability",
+    "G7GlobalOwnerCoins",
+    "G7NaturalCalendarRelabelling",
+    "G7NaturalWordAudit",
+    "G7NaturalWordRelabelling",
+    "G7NodeActions",
+    "G7OriginalAdmission",
+    "G7OriginalFiniteEncoding",
+    "G7OriginalRelabelling",
+    "G7ProgramRelabelling",
+    "G7SnapshotRelabelling",
+    "G7SourceStateRelabelling",
+    "G7SourceStepRelabelling",
+    "G7TransportAudit"
+  ],
+  "records": [
+    {
+      "module": "G7ActualClockUnrankedRelabelling",
+      "sha256": "7fb47eb4e8ee18b4bea926b3bca24472a88493ce96839b2370c103b4a44474cd",
+      "imports": [
+        "G7CompletedUnrankedRelabelling",
+        "G2CompleteCalendarAttachment"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7AdmissionAudit",
+      "sha256": "cfcadb039d6f21beaf7d48d197a37f261b1b7db0dde479a7caa3e26efc15059b",
+      "imports": [
+        "G7OriginalAdmission"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7AdmissionChecks",
+      "sha256": "7834bc20dab2b73af5d397c67cf02eb12f5c1cda89a5a7828eba9f67d91631e3",
+      "imports": [
+        "G7OriginalAdmission"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7BoundaryExitCommutation",
+      "sha256": "735b155e36f9654676953f8a0f3e6bf85ac81b469e2bf9efd24c2aebf9d0eeda",
+      "imports": [
+        "G7GlobalOwnerCoins"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7BoundaryPhasePermutation",
+      "sha256": "fea51a87be89f084752b22df8c52ae345515f1a0986cd0475d1a4be09453b4cf",
+      "imports": [
+        "G7NodeActions",
+        "G7BoundaryExitCommutation"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7BoundaryRelabelling",
+      "sha256": "d10eb8af3f73675bd8567801bfc3133bced8fa180b913f6ffa24c2726042e00f",
+      "imports": [
+        "G7SnapshotRelabelling",
+        "G7CoinReindexing"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7CalendarAgendaRelabelling",
+      "sha256": "4152623b044ffa06c2bae39b8a042ad69e2b56f13966f739f9c61f952066945c",
+      "imports": [
+        "G7CalendarNodeRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7CalendarNodeRelabelling",
+      "sha256": "9794a86a7d40203e3b719ddd62f711205dba149dd6f2a8fe49fdca5ca17a6f2c",
+      "imports": [
+        "G7NaturalWordRelabelling",
+        "G7BoundaryPhasePermutation"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7CalendarRelabellingAudit",
+      "sha256": "8076e83f920dd87932544443470388d3def7104c81d01d87c33977bf4ff0d2ba",
+      "imports": [
+        "G7NaturalCalendarRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7CoinReindexing",
+      "sha256": "a11ce95779a8b7beec03539a63fb2a2c940d4e5dfcdaa4d14351e67f2dfab049",
+      "imports": [
+        "G7OriginalRelabelling",
+        "UnifiedLean.Source.SourceBoundaryKernels",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7CompletedReadoutAudit",
+      "sha256": "e1dd1ba4e94b6dd5354c0dcd9232ebd1c095d95083781db10535cb91bed15231",
+      "imports": [
+        "G7ActualClockUnrankedRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7CompletedUnrankedRelabelling",
+      "sha256": "1e83997dd3725c1d7f428b1921f88945a55557ccb626504a57d0444dc4686b38",
+      "imports": [
+        "G7NaturalCalendarRelabelling",
+        "UnifiedLean.Source.SourceCompletionHarmonic",
+        "UnifiedLean.Source.SourceCompletedUnrankedTree"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7FiniteReachability",
+      "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Fintype.Card"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7GlobalOwnerCoins",
+      "sha256": "a8ce7af87d48354493a9a5b6ce283fcfb0116f3a51ef8ecc10fc872784edca1a",
+      "imports": [
+        "G7BoundaryRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7NaturalCalendarRelabelling",
+      "sha256": "02fa61d3a04b0eecfddcec8d90bf45a3b86c38978552f1c45288eec14a681137",
+      "imports": [
+        "G7CalendarAgendaRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7NaturalWordAudit",
+      "sha256": "7f18a1a7356e11f113d665671e1396ddfe8f27ec7ebcd8d090c1d41a463b6c33",
+      "imports": [
+        "G7NaturalWordRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7NaturalWordRelabelling",
+      "sha256": "2cb2ad261610961d40b66a5a321eb0055733477abef9c4854b4e73fa9ea12de1",
+      "imports": [
+        "G7ProgramRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7NodeActions",
+      "sha256": "478d9505249525e3710c5ed1bf4e1c3d8b107c217b88d8f86d9863fd959c0967",
+      "imports": [
+        "G7GlobalOwnerCoins",
+        "UnifiedLean.Source.SourceCalendarCompiler"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7OriginalAdmission",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "imports": [
+        "G7OriginalFiniteEncoding",
+        "G7FiniteReachability",
+        "Mathlib.Data.Fintype.Inv"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7OriginalCensus",
+      "sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "old_versions": [
+        "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517"
+      ],
+      "matches_old": true
+    },
+    {
+      "module": "G7OriginalFiniteEncoding",
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "imports": [
+        "G7OriginalRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7OriginalRelabelling",
+      "sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+      "imports": [
+        "G7OriginalCensus",
+        "UnifiedLean.Source.NativePairClockLaw",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7ProgramRelabelling",
+      "sha256": "29400abd0ba07b5181bca3ccc4d478afcba8806eff18b5dd1743a0f58118bd1a",
+      "imports": [
+        "G7SourceStepRelabelling",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7SnapshotRelabelling",
+      "sha256": "cabdfe7caf9e2161b0e3c84d33a6ed388f6b4c00e529023eac0077803250cb7f",
+      "imports": [
+        "G7SourceStateRelabelling",
+        "UnifiedLean.Source.FiniteSourceSnapshot",
+        "UnifiedLean.Source.UniformizedSourceStep"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7SourceStateRelabelling",
+      "sha256": "3181b57b5a5511a837df2b05d9d6e332e485959ca571f6d85862cfc9a11e5d14",
+      "imports": [
+        "G7OriginalRelabelling",
+        "SourceLabelledForest"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7SourceStepRelabelling",
+      "sha256": "fca5902fa3e6bef8f57d41b8bb2ab3092faf50d181cd1cdcf375dbdba74d302b",
+      "imports": [
+        "G7BoundaryRelabelling",
+        "UnifiedLean.Source.SourcePoissonKernel"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    },
+    {
+      "module": "G7TransportAudit",
+      "sha256": "554601e5ec2e9a0e366c151e58b4a2ec64c3ce4131dd30378ebb9c52ca01dbfc",
+      "imports": [
+        "G7ProgramRelabelling"
+      ],
+      "old_versions": [],
+      "matches_old": false
+    }
+  ]
+}
