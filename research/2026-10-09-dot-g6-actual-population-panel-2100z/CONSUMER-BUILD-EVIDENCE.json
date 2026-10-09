@@ -1,0 +1,49 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "seconds": 2.926562786102295,
+      "command": [
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "ActualPopulationPanelSplit.olean",
+        "ActualPopulationPanelSplit.lean"
+      ],
+      "source_sha256": "5f7efab14ea1c5751e017dd9a12d42146ef2ecd75abb4fb3916240674b484a73",
+      "object_sha256": "b17470a50336a403fdf7ca5a23a8db3ff9880092bd2d44988246df04995b2f7a",
+      "stdout_original_sha256": "2804f91c70071e17b7aa115ae52fca8ee5ab6cfdac562719183eda8519f613b7",
+      "stdout": "ActualPopulationPanelSplit.lean:27:8: warning: automatically included section variable(s) unused in theorem `DotG6.ActualPopulationPanelSplit.mem_populationPanel`:\n  [Fintype V]\n  [Fintype E]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype V] [Fintype E] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'DotG6.ActualPopulationPanelSplit.actual_population_separated' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'DotG6.ActualPopulationPanelSplit.actual_population_epoch_agenda' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'DotG6.ActualPopulationPanelSplit.actual_population_epoch_product' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'DotG6.ActualPopulationPanelSplit.actual_population_mixture' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr_original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    },
+    {
+      "attempt": 2,
+      "exit_code": 0,
+      "seconds": 4.180596113204956,
+      "command": [
+        "lean",
+        "--trust=0",
+        "-j1",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "G6PopulationPanelAudit.olean",
+        "G6PopulationPanelAudit.lean"
+      ],
+      "source_sha256": "28ad2e67c968e33319c8740d1365b59dce0b9da8d6a6e0efa70361aaa241dc98",
+      "object_sha256": "80374b16a4dd8ab7541ea57f4bcb1f5df12eb7ddd4667a3bce665a4254f15eeb",
+      "stdout_original_sha256": "124ef70529b87e44cd5392b76c4bba3b542e4ea7189b0e340eb246ca4cc2ba1e",
+      "stdout": "Fresh closure: 13 declarations, 11 theorems, 0 owned axioms, 0 nonstandard rows, 0 missing modules\n",
+      "stderr_original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    }
+  ],
+  "toolchain": "Lean4.33.1",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474"
+}
