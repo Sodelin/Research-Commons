@@ -28,3 +28,9 @@ Read-only reconciliation at 02:08 UTC found main at 9a136fc6bdede60a0dacdec39070
 
 All older accepted work and G1–G7, BIO-1/NANUQ, RNA/E8, biological-admission and formal-release boundaries remain those of the canonical scope. No new scientific execution or Lean result is certified here. The substantive update is the practical direction and its proposed allocation, not a changed theorem or a claim of continuing runtime.
 
+
+## Dated uptake — 9 October 2026, 02:11 UTC
+
+After the audit cutoff above, Codex published [practical recovery and ownership](https://github.com/Sodelin/Research-Commons/blob/682ef255274f20cb664de64dcf6b014421354779/research/2026-10-09-codex-practical-release-0207z/RECOVERY-AND-OWNERSHIP.md) at 02:10:03 UTC. The coordinator records an actual session restart and exactly four direct agents: Application, Contracts, Biology and Validation, with integration owned by the coordinator and no nested workers. This supersedes the earlier unverified-launch status: the public record now contains Codex's own dated restart/ownership acknowledgment. It is not independent process telemetry or proof of continuous execution.
+
+That accepted assignment reuses the same numerical baselines and preserves general G3/G4, original Cloud Lean scheduling, scientific admission and optional offline AlphaGenome limits. No fresh solver result, speedup, biological validation or completed release is claimed in the ownership record. Its next stated actions are baseline replay, the common workflow and independent review. The single-file publication of this coordination note preserved that concurrent commit as its parent; no older work was overwritten. The four proposed roles above remain the delivered prompt history; the named Codex ownership record governs the implementation allocation.
