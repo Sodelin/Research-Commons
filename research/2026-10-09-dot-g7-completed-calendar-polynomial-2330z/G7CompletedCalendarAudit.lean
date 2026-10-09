@@ -1,0 +1,18 @@
+import G7SelectedCompletionPolynomial
+import G7CompletedCalendarPolynomial
+
+/-! Integration completion-adapter explicit declaration audit. Prepared only. -/
+
+#print axioms GProgram.G7.SelectedCompletionPolynomial.FullRoot
+#print axioms GProgram.G7.SelectedCompletionPolynomial.actual_root_projection
+#print axioms GProgram.G7.SelectedCompletionPolynomial.representative_ancestral
+#print axioms GProgram.G7.SelectedCompletionPolynomial.selectedCompletion
+#print axioms GProgram.G7.SelectedCompletionPolynomial.actual_source_completion_projection
+#print axioms GProgram.G7.SelectedCompletionPolynomial.completionRational
+#print axioms GProgram.G7.SelectedCompletionPolynomial.actual_selected_completion_rational
+#print axioms GProgram.G7.SelectedCompletionPolynomial.actual_root_law_completion_projection
+#print axioms GProgram.G7.SelectedCompletionPolynomial.projected_root_support
+#print axioms GProgram.G7.CompletedCalendarPolynomial.completedPolynomial
+#print axioms GProgram.G7.CompletedCalendarPolynomial.actual_root_law_completed_polynomial
+#print axioms GProgram.G7.CompletedCalendarPolynomial.actual_natural_completed_calendar_polynomial
+#print axioms GProgram.G7.CompletedCalendarPolynomial.actual_controlled_completed_calendar_polynomial

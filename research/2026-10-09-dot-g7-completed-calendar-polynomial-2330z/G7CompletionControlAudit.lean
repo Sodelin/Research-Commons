@@ -1,0 +1,24 @@
+import G7AncestralRationalCompletion
+import G7ControlledWordPolynomial
+import G7ControlledCalendarPolynomial
+
+/-! All explicit declarations of the three reviewed completion/control consumers.
+Prepared for integration replay; no independent audit execution claimed. -/
+
+#print axioms GProgram.G7.AncestralRationalCompletion.actual_completion_at_zero
+#print axioms GProgram.G7.AncestralRationalCompletion.actual_completion_rational
+#print axioms GProgram.G7.ControlledWordPolynomial.controlVariable
+#print axioms GProgram.G7.ControlledWordPolynomial.substituteControl
+#print axioms GProgram.G7.ControlledWordPolynomial.controlVariable_eval
+#print axioms GProgram.G7.ControlledWordPolynomial.substituteControl_eval
+#print axioms GProgram.G7.ControlledWordPolynomial.controlledWordLaw
+#print axioms GProgram.G7.ControlledWordPolynomial.controlledWordPolynomial
+#print axioms GProgram.G7.ControlledWordPolynomial.controlledWordLaw_projected
+#print axioms GProgram.G7.ControlledWordPolynomial.actual_controlled_word_polynomial
+#print axioms GProgram.G7.ControlledCalendarPolynomial.instantiateGammaStep
+#print axioms GProgram.G7.ControlledCalendarPolynomial.indexedSymbols_gamma
+#print axioms GProgram.G7.ControlledCalendarPolynomial.boundary_gamma
+#print axioms GProgram.G7.ControlledCalendarPolynomial.tail_gamma
+#print axioms GProgram.G7.ControlledCalendarPolynomial.actual_gamma_calendar_schema
+#print axioms GProgram.G7.ControlledCalendarPolynomial.actual_controlled_schema
+#print axioms GProgram.G7.ControlledCalendarPolynomial.actual_controlled_calendar_polynomial

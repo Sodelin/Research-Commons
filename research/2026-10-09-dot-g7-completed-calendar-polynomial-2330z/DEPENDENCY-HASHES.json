@@ -1,0 +1,1441 @@
+{
+  "scope": "Path-free logical dependency identities; no execution workspace/object paths. External source retrieval and integration are required; this is not a self-contained replay package.",
+  "sources": [
+    {
+      "logical_module": "ActualBigonRate",
+      "source_sha256": "241c551b7e4fb1e15b1d7795434f6c20f41c39fedf2d3ac289dbc5c7dc147199",
+      "imports": [
+        "ActualPulseOccupancy"
+      ],
+      "public_path": "research/2026-10-09-dot-g34-actual-bigon-binomial-2101z/ActualBigonRate.lean",
+      "public_git_blob": "144495aa4e3d54481f2016b8d439ad5f2935d0d4"
+    },
+    {
+      "logical_module": "ActualBigonSurvival",
+      "source_sha256": "2dd02b834a4b57889a6d0574aa1cfffe576933f750002a03f92bd2705f3c6230",
+      "imports": [
+        "ActualBigonRate"
+      ],
+      "public_path": "research/2026-10-09-dot-g34-actual-bigon-binomial-2101z/ActualBigonSurvival.lean",
+      "public_git_blob": "e0296a0a84282570e1669bec929aa89510e1d2bd"
+    },
+    {
+      "logical_module": "ActualPopulationPanelSplit",
+      "source_sha256": "5f7efab14ea1c5751e017dd9a12d42146ef2ecd75abb4fb3916240674b484a73",
+      "imports": [
+        "G1ActualJointProgram"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-actual-population-panel-2100z/ActualPopulationPanelSplit.lean",
+      "public_commit": "be0f412bcef8337d96e4c66c8a5bddc18be8e00d"
+    },
+    {
+      "logical_module": "ActualPopulationRate",
+      "source_sha256": "a44ab66a57e870c3b7b0379b44386b8b86a56361543d73e98eee0b46192eff2f",
+      "imports": [
+        "ActualPulseSurvival",
+        "Mathlib.Data.Nat.Choose.Cast"
+      ],
+      "public_path": "research/2026-10-09-dot-g34-actual-pulse-binding-2032z/ActualPopulationRate.lean",
+      "public_git_blob": "6cb7175208db42a63c77d7a64ae667c96dc647ca"
+    },
+    {
+      "logical_module": "ActualPulseOccupancy",
+      "source_sha256": "85d5978d0acf6f227e0031334a747465c5b28f05af42ef5757c0182e985ce404",
+      "imports": [
+        "ActualPopulationRate"
+      ],
+      "public_path": "research/2026-10-09-dot-g34-actual-pulse-binding-2032z/ActualPulseOccupancy.lean",
+      "public_git_blob": "863f6169e0baddd1b1e1b4091572e1080d2b1f41"
+    },
+    {
+      "logical_module": "ActualPulseSurvival",
+      "source_sha256": "3860386161710b89bb7cdf0020a71cf59baa2d1b3013379e9c5d44687acd6ad1",
+      "imports": [
+        "ActualSerialSurvival"
+      ],
+      "public_path": "research/2026-10-09-dot-g34-actual-pulse-binding-2032z/ActualPulseSurvival.lean",
+      "public_git_blob": "be528063f4265571025a481ccb0a2e06c33d23c9"
+    },
+    {
+      "logical_module": "ActualSerialSurvival",
+      "source_sha256": "02c033b1d92b35dcabab3c8f8c01a9df8bbd6f3953de762a55ff059015235fee",
+      "imports": [
+        "G5ActualRoutingSupport"
+      ],
+      "public_path": "research/2026-10-09-dot-g34-actual-serial-survival-2014z/ActualSerialSurvival.lean",
+      "public_git_blob": "20654de8351678c80343960030f7e32b678c8b25"
+    },
+    {
+      "logical_module": "G1ActualJointBoundary",
+      "source_sha256": "b130de2603b8926cca2ef0e0b4a843d8e3bd23e0e7a64a79a364ece6ddae8a18",
+      "imports": [
+        "G1ActualJointEpoch",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1ActualJointBoundary.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1ActualJointEpoch",
+      "source_sha256": "9f63c136a257ca4b9daeeca6ab1ccd5bcc1ccad5e5ce30cf03eb95f4d6220998",
+      "imports": [
+        "G1ActualJointGenerator",
+        "G1TensorExponential"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1ActualJointEpoch.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1ActualJointGenerator",
+      "source_sha256": "7c45788aeab504e0743c62d2b3597143589a370a80b2d7af20dd176718333ce1",
+      "imports": [
+        "G1JointSeparatedSourceGeometry",
+        "Mathlib.LinearAlgebra.Matrix.Kronecker"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1ActualJointGenerator.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1ActualJointProgram",
+      "source_sha256": "8d8b5177193a6e80241d1d8435bc2461221191965d8f7f285634b9fe180f2cc7",
+      "imports": [
+        "G1ActualJointBoundary"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1ActualJointProgram.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1ContextualForestReplacement",
+      "source_sha256": "feab5f5e12f34a5e579be3baecfb6c327dccdc85a32323c2a96378b3f6f4ec32",
+      "imports": [
+        "G1OpaqueSourceGrafting"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1ContextualForestReplacement.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1JointSeparatedSourceGeometry",
+      "source_sha256": "3eabef781ff430ed5907608f7eb16ff275b61e3f13af0466980144d670245962",
+      "imports": [
+        "G1NonrootBigonKernel",
+        "UnifiedLean.Source.SourceCrossCarrierEpoch"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1JointSeparatedSourceGeometry.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1NonrootBigonKernel",
+      "source_sha256": "7e228b06208880369b455914a855249337b6acecf9b4c9d70067c7ff9baab003",
+      "imports": [
+        "G1OriginalCurrentRootReconstruction"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1NonrootBigonKernel.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1OpaqueSourceGrafting",
+      "source_sha256": "0e12dae33df64ad82d198a31cfabafb00ce7f47053e11a6fc729cdc5c63b15d0",
+      "imports": [
+        "UnifiedLean.Source.SourceProgramTransport",
+        "UnifiedLean.Source.UnrankedGenealogyObservation"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1OpaqueSourceGrafting.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1OriginalCurrentRootReconstruction",
+      "source_sha256": "d5331d24f331235712f10cf66d25a8c5062a376d86249dd2def9d5497c399956",
+      "imports": [
+        "G1ContextualForestReplacement",
+        "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+        "UnifiedLean.Source.SourceCrossCarrierProgram"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1OriginalCurrentRootReconstruction.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G1SharedRegisterStress",
+      "source_sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "imports": [
+        "Mathlib.Probability.Distributions.Exponential",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G1SharedRegisterStress.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G1TensorExponential",
+      "source_sha256": "52d4fc7f045841949839b03bff4ce077fcf66b80018dd0f65831ad57c680a740",
+      "imports": [
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "Mathlib.LinearAlgebra.Matrix.Kronecker"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/G1TensorExponential.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "G2LiveLineageRouting",
+      "source_sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Rat.Lemmas",
+        "Mathlib.Tactic.Ring"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G2LiveLineageRouting.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G4AllRootPairClocks",
+      "source_sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "imports": [
+        "G4IndependentRoutingBridge",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4AllRootPairClocks.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G4FourRootPositivity",
+      "source_sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4FourRootPositivity.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G4IndependentRoutingBridge",
+      "source_sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "imports": [
+        "G2LiveLineageRouting",
+        "G1SharedRegisterStress",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Lean.Elab.Tactic.Omega",
+        "G4FourRootPositivity",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4IndependentRoutingBridge.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G4PathResolvedMeasurement",
+      "source_sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+      "imports": [
+        "G4TwoRootSourceStopping",
+        "G4AllRootPairClocks",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4PathResolvedMeasurement.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G4TwoRootSourceStopping",
+      "source_sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4TwoRootSourceStopping.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ActualComponentSupport",
+      "source_sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "imports": [
+        "G5ComponentCalendarCoverage"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ActualComponentSupport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ActualNoMergerReadout",
+      "source_sha256": "8669d5ddb672ef15ccd06a94ff8c6fe38fd8326f3fc605e1a8cc887a5189cedc",
+      "imports": [
+        "UnifiedLean.Source.SourceActualHoldingClocks"
+      ],
+      "public_path": "research/2026-10-09-dot-g5-actual-frozen-triple-1852z/sources/G5ActualNoMergerReadout.lean",
+      "public_git_blob": "a97e50fe32eaf57c1212b184a4555b15a2e9d94c"
+    },
+    {
+      "logical_module": "G5ActualRoutingSupport",
+      "source_sha256": "f83ab05731a8f4a121c63775e81a52b3e7c1ca49911ec24be63dbaf460e81601",
+      "imports": [
+        "G5ActualNoMergerReadout",
+        "G5OriginalProgramSurvival",
+        "G5OriginalSelectedPosterior"
+      ],
+      "public_path": "research/2026-10-09-dot-g5-timed-cut-source-integration-1943z/sources/G5ActualRoutingSupport.lean",
+      "public_git_blob": "b7679336d46d74fb2edeb0c19b5bb97e99196645"
+    },
+    {
+      "logical_module": "G5BridgeBarrier",
+      "source_sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "imports": [
+        "GraphCuts"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeBarrier.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5BridgeComponentEntries",
+      "source_sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "imports": [
+        "G6BridgeCannotEnterHybrid",
+        "G5CalendarRoutes"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5BridgeComponentEntries.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5CalendarRoutes",
+      "source_sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "imports": [
+        "G5BridgeBarrier",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CalendarRoutes.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ComponentCalendarCoverage",
+      "source_sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "imports": [
+        "G5BridgeComponentEntries",
+        "G5NonbridgeRouteBound",
+        "Mathlib.Tactic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ComponentCalendarCoverage.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5CoupledQuartetKernel",
+      "source_sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "imports": [
+        "Mathlib.Tactic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CoupledQuartetKernel.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5CurrentPortTwoPositions",
+      "source_sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "imports": [
+        "G5RootRouteCurrentSupport"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5CurrentPortTwoPositions.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ExponentialGermIdentification",
+      "source_sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "imports": [
+        "Mathlib.LinearAlgebra.Vandermonde",
+        "Mathlib.Analysis.SpecialFunctions.Exp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ExponentialGermIdentification.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5FairOriginalCoinLaw",
+      "source_sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "imports": [
+        "SourceLabelledForest",
+        "G5FairSelectorMoments",
+        "Mathlib.Data.Rat.BigOperators",
+        "Mathlib.Data.ENNReal.BigOperators",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairOriginalCoinLaw.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5FairSelectorMoments",
+      "source_sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+      "imports": [
+        "G5CoupledQuartetKernel",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5FairSelectorMoments.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5MinimalGraphInterface",
+      "source_sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "imports": [
+        "GraphCuts"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5MinimalGraphInterface.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5NonbridgeRouteBound",
+      "source_sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "imports": [
+        "G5CalendarRoutes",
+        "Mathlib.Data.Fintype.Card"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5NonbridgeRouteBound.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5OriginalCoinPMF",
+      "source_sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "imports": [
+        "G5FairOriginalCoinLaw"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalCoinPMF.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5OriginalProgramSurvival",
+      "source_sha256": "69d9a67e359fc2f071f1863278e86566c3d9b2fad059bad95d2a6947ff4d94e7",
+      "imports": [
+        "UnifiedLean.Source.SourceNaturalInitialization",
+        "UnifiedLean.Source.SourceActualHoldingClocks"
+      ],
+      "public_path": "research/2026-10-09-dot-g5-actual-frozen-triple-1852z/sources/G5OriginalProgramSurvival.lean",
+      "public_git_blob": "a7e4a4103125eed5d80ad1802eed497da9854fba"
+    },
+    {
+      "logical_module": "G5OriginalRouteHazard",
+      "source_sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "imports": [
+        "G5SafePastMeetingPermanence",
+        "G5UnknownRateSupport",
+        "Mathlib.Data.Finset.Max"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalRouteHazard.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5OriginalSelectedPosterior",
+      "source_sha256": "388ea7302a7c00d8b0bee40a5ee2e5af44f7561aa033fa240070b04d101efff3",
+      "imports": [
+        "G5OriginalProgramSurvival",
+        "UnifiedLean.Source.SourceCrossCarrierNatural"
+      ],
+      "public_path": "research/2026-10-09-dot-g5-actual-frozen-triple-1852z/sources/G5OriginalSelectedPosterior.lean",
+      "public_git_blob": "1e5e0c849aafd685bcdb2bccd460dbcb32a3ac52"
+    },
+    {
+      "logical_module": "G5OriginalTipCurrentSupport",
+      "source_sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "imports": [
+        "G5CurrentPortTwoPositions"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5OriginalTipCurrentSupport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5PairOnlySureBlockChronology",
+      "source_sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "imports": [
+        "G5SafePastHybridDisjointness"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5PairOnlySureBlockChronology.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ParentChoiceCalendar",
+      "source_sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "imports": [
+        "G5OriginalTipCurrentSupport"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentChoiceCalendar.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ParentPositionPushforward",
+      "source_sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "imports": [
+        "G5ParentChoiceCalendar",
+        "G5OriginalCoinPMF"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ParentPositionPushforward.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5ProtectiveBlock",
+      "source_sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "imports": [
+        "G5CalendarRoutes"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5ProtectiveBlock.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5RootRouteCurrentSupport",
+      "source_sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "imports": [
+        "G5ActualComponentSupport"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5RootRouteCurrentSupport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5SafePastHybridDisjointness",
+      "source_sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "imports": [
+        "G5ProtectiveBlock",
+        "G5ParentPositionPushforward"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastHybridDisjointness.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5SafePastMeetingPermanence",
+      "source_sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "imports": [
+        "G5PairOnlySureBlockChronology"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5SafePastMeetingPermanence.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G5UnknownRateSupport",
+      "source_sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "imports": [
+        "G5ExponentialGermIdentification",
+        "Mathlib.Algebra.BigOperators.Finsupp.Basic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G5UnknownRateSupport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G6BridgeCannotEnterHybrid",
+      "source_sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "imports": [
+        "G5MinimalGraphInterface",
+        "G2LiveLineageRouting"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G6BridgeCannotEnterHybrid.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "G6NaturalCellInverseRates",
+      "source_sha256": "bd35c3f3f47ada67cceb9887059a3a9ed8662129bcab4dbe5d5ade07a377de5f",
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "UnifiedLean.Source.NativeIndependentPairMixture",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-natural-cell-feasibility-1835z/G6NaturalCellInverseRates.lean",
+      "public_commit": "a70cd6a090bcadd7f200f149db39dedd981f7aa0"
+    },
+    {
+      "logical_module": "G7AncestralPolynomialKernel",
+      "source_sha256": "d35da5cdf199ab9f4bb616812bb20e76c67dd1a5fe36ca8c3e644c348364cdcb",
+      "imports": [
+        "UnifiedLean.G6.AncestralRateFree",
+        "UnifiedLean.Source.SourceFiniteJumpExpansion",
+        "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "Mathlib.Algebra.Polynomial.Degree.Operations",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-actual-ancestral-polynomial-2101z/G7AncestralPolynomialKernel.lean",
+      "public_git_blob": "7c71a1d40a775de79430ff87c2df7e8ac743ada9"
+    },
+    {
+      "logical_module": "G7AncestralRationalCompletion",
+      "source_sha256": "5ecdd44f021e9643ecfa82eb755951c804dea80ed224961110f0fe5fce74c7e4",
+      "imports": [
+        "G7AncestralPolynomialKernel",
+        "UnifiedLean.Source.SourceEventualCompletionLimit",
+        "Mathlib.Topology.Algebra.Polynomial"
+      ],
+      "included_file": "G7AncestralRationalCompletion.lean"
+    },
+    {
+      "logical_module": "G7CompletedCalendarPolynomial",
+      "source_sha256": "3f3181e98fe595a82b56db06e8b8252e15a235b71630cce314bec13028a3c2dd",
+      "imports": [
+        "G7SelectedCompletionPolynomial",
+        "G7ControlledCalendarPolynomial"
+      ],
+      "included_file": "G7CompletedCalendarPolynomial.lean"
+    },
+    {
+      "logical_module": "G7ControlledCalendarPolynomial",
+      "source_sha256": "d9efb1b177fbe61d2cdaccd64d44f420d8f9f04504f85ef8df2895f97b88c503",
+      "imports": [
+        "G7ControlledWordPolynomial",
+        "G7NaturalCalendarPolynomial"
+      ],
+      "included_file": "G7ControlledCalendarPolynomial.lean"
+    },
+    {
+      "logical_module": "G7ControlledWordPolynomial",
+      "source_sha256": "0734c0e30fcad3a51ce4cceba5167b200f094e7fba544df4899c0b502fc83e28",
+      "imports": [
+        "G7SymbolicProgramPolynomial",
+        "UnifiedLean.Source.ControlledUnrankedSourceProjectivity"
+      ],
+      "included_file": "G7ControlledWordPolynomial.lean"
+    },
+    {
+      "logical_module": "G7FiniteForestReassembly",
+      "source_sha256": "7d0c5dd5f6844348eee3f001f04b2ac87747d5c3b25fe4730b57c43322b96554",
+      "imports": [
+        "G7PopulationForestReassembly"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-full-epoch-polynomial-2148z/G7FiniteForestReassembly.lean",
+      "public_git_blob": "4033daa49b17eca6ba6150a3ab102df9a121b544"
+    },
+    {
+      "logical_module": "G7FullEpochPolynomial",
+      "source_sha256": "fc3a6ccca93b085f42b3b6b403094922cabc87b5b92b551a982f958438472ec2",
+      "imports": [
+        "G7FiniteForestReassembly",
+        "Mathlib.Algebra.MvPolynomial.Eval"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-full-epoch-polynomial-2148z/G7FullEpochPolynomial.lean",
+      "public_git_blob": "bd9aff66161606d520e893f0de9fdccc09caee22"
+    },
+    {
+      "logical_module": "G7NaturalCalendarPolynomial",
+      "source_sha256": "1f5517ecae07d26a5ec76b9c6a8959830655a649312b97b8d3f80ecb02e91ddd",
+      "imports": [
+        "G7SymbolicProgramPolynomial",
+        "OriginalCalendarPattern"
+      ],
+      "included_file": "G7NaturalCalendarPolynomial.lean"
+    },
+    {
+      "logical_module": "G7OriginalBoundaryPolynomial",
+      "source_sha256": "f447e7ad6c52ab2a16781fb4671e33eadf508309789f2f0046f2765237efcf4c",
+      "imports": [
+        "G7FullEpochPolynomial",
+        "ActualBigonSurvival",
+        "UnifiedLean.Source.SourceCalendarCompiler"
+      ],
+      "included_file": "G7OriginalBoundaryPolynomial.lean"
+    },
+    {
+      "logical_module": "G7OriginalInitializationPolynomial",
+      "source_sha256": "b8654be54432ee28f616ea9140d9522a43d8484594f865b7aeb8c2e77e26d0e2",
+      "imports": [
+        "G7OriginalBoundaryPolynomial",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ],
+      "included_file": "G7OriginalInitializationPolynomial.lean"
+    },
+    {
+      "logical_module": "G7PopulationForestReassembly",
+      "source_sha256": "4058566366f2006d40096804259a74feda9027e5636090f8b578b69df51f4da3",
+      "imports": [
+        "G7PopulationPanelPolynomial",
+        "ActualPopulationPanelSplit"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-full-epoch-polynomial-2148z/G7PopulationForestReassembly.lean",
+      "public_git_blob": "6c1a0aec6e2368e3fbf65650e6e34541895ee126"
+    },
+    {
+      "logical_module": "G7PopulationPanelPolynomial",
+      "source_sha256": "7bd29400d04af6a19b3120b0e0826a926a387e04f16577682cf30ee6b8c0f96d",
+      "imports": [
+        "G7WholeAncestorPanelCode"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-full-epoch-polynomial-2148z/G7PopulationPanelPolynomial.lean",
+      "public_git_blob": "7ea7df132056cc4c39cf41a454173de761c956b1"
+    },
+    {
+      "logical_module": "G7SelectedCompletionPolynomial",
+      "source_sha256": "e9941a690a40853c8833ac2230d7031aa0831aa2d929af7c62181ee86855f659",
+      "imports": [
+        "G7AncestralRationalCompletion",
+        "G7SelectedKernelPolynomial",
+        "UnifiedLean.Source.SourceNaturalCompletedLimit"
+      ],
+      "included_file": "G7SelectedCompletionPolynomial.lean"
+    },
+    {
+      "logical_module": "G7SelectedKernelPolynomial",
+      "source_sha256": "2333a9c93d5e24c9722a4337b6d83315119dbe79d52eb10e73941a3a903638ba",
+      "imports": [
+        "G7OriginalBoundaryPolynomial"
+      ],
+      "included_file": "G7SelectedKernelPolynomial.lean"
+    },
+    {
+      "logical_module": "G7SinglePopulationPolynomialKernel",
+      "source_sha256": "b4434eb89aecfc007546908f404efc41cc0de809eb8497ed22c9e48a87e4dddf",
+      "imports": [
+        "UnifiedLean.G6.AncestralRateFree",
+        "UnifiedLean.Source.SourceFiniteJumpExpansion",
+        "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "Mathlib.Algebra.Polynomial.Degree.Operations",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-single-population-polynomial-2117z/G7SinglePopulationPolynomialKernel.lean",
+      "public_git_blob": "48a550dbf1a6bdbe140bb6037d44ecb68d015aff"
+    },
+    {
+      "logical_module": "G7SymbolicProgramPolynomial",
+      "source_sha256": "17619976e462ada4686ab1d018d67c712c69defbf20e1d9a8a97299f7dbb7230",
+      "imports": [
+        "G7SelectedKernelPolynomial",
+        "G7OriginalInitializationPolynomial",
+        "OriginalCalendarSchema",
+        "Mathlib.Algebra.MvPolynomial.Rename"
+      ],
+      "included_file": "G7SymbolicProgramPolynomial.lean"
+    },
+    {
+      "logical_module": "G7WholeAncestorPanelCode",
+      "source_sha256": "28b1d4e57968a22ff2d7bd3ba57629a98888366cc5cc1a41cf21a53ec90c91e2",
+      "imports": [
+        "UnifiedLean.Source.SourceCrossCarrierProgram",
+        "G7SinglePopulationPolynomialKernel"
+      ],
+      "public_path": "research/2026-10-09-dot-g7-whole-ancestor-panel-2127z/G7WholeAncestorPanelCode.lean",
+      "public_git_blob": "dabd9759915e1543400afe1ff239baa73e93bf81"
+    },
+    {
+      "logical_module": "GeneratedNaturalChronology",
+      "source_sha256": "d0b678579b7407580719fecb945563851aaae799ea083c3a0ab3548edca355ea",
+      "imports": [
+        "NaturalCellAffineCompiler"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-generated-source-charts-2115z/GeneratedNaturalChronology.lean",
+      "public_commit": "ada760abb463da92e2c88b3e2bb3fc6493adb096"
+    },
+    {
+      "logical_module": "GraphCuts",
+      "source_sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "imports": [
+        "GraphLeaves"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphCuts.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "GraphLeaves",
+      "source_sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/GraphLeaves.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "NaturalCellAffineCompiler",
+      "source_sha256": "b381a99725e1817b93a48a8356c282c08b6198d36794a2b5cd358f5368161ea0",
+      "imports": [
+        "StrictAffineElimination",
+        "G6NaturalCellInverseRates"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-proved-natural-cell-decision-1902z/NaturalCellAffineCompiler.lean",
+      "public_commit": "550343dc55daff7daa80ca6811f70b154310913e"
+    },
+    {
+      "logical_module": "OriginalCalendarPattern",
+      "source_sha256": "3d2982e5ca3886575e1edc6cf1e742c1ba7b5465a2bcecec249869cde4cfb691",
+      "imports": [
+        "OriginalCalendarSchema",
+        "GeneratedNaturalChronology",
+        "Mathlib.Data.List.Sort"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-original-calendar-schema-2223z/OriginalCalendarPattern.lean",
+      "public_commit": "77bd6cc5e00a4eb63ff0c8fca53cdf9432403847"
+    },
+    {
+      "logical_module": "OriginalCalendarSchema",
+      "source_sha256": "68f5c295b6bce18e6944d641149885620dadf6d0ab9afd52e24cd3c928fd8a59",
+      "imports": [
+        "G6NaturalCellInverseRates",
+        "UnifiedLean.Source.SourceCalendarCompiler",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-original-calendar-schema-2223z/OriginalCalendarSchema.lean",
+      "public_commit": "77bd6cc5e00a4eb63ff0c8fca53cdf9432403847"
+    },
+    {
+      "logical_module": "SourceForestKingmanPopulationProjection",
+      "source_sha256": "e8733ab8e66c60f98cfcfcd56e703b55a5ad8674dc5361f4ac6cb0c35f80f6e4",
+      "imports": [
+        "SourceForestKingmanProjection"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceForestKingmanPopulationProjection.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "SourceForestKingmanProjection",
+      "source_sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0",
+      "imports": [
+        "SourceLabelledForest",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Finset.Prod",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceForestKingmanProjection.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "SourceLabelledForest",
+      "source_sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "imports": [
+        "G2LiveLineageRouting",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceLabelledForest.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "SourceNetwork",
+      "source_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/SourceNetwork.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "StrictAffineElimination",
+      "source_sha256": "a0f597c021b761bfe79561eac03c19d754f93b4fa024ffb229ecaccdaeadf1f2",
+      "imports": [
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Rat.Cast.Order",
+        "Mathlib.Tactic"
+      ],
+      "public_path": "research/2026-10-09-dot-g6-proved-natural-cell-decision-1902z/StrictAffineElimination.lean",
+      "public_commit": "550343dc55daff7daa80ca6811f70b154310913e"
+    },
+    {
+      "logical_module": "UnifiedLean.G6.AncestralRateFree",
+      "source_sha256": "8d772b5fa71e3fef61d073b72bb4c56e89d5179468a774ed511a4c0aec5d3291",
+      "imports": [
+        "UnifiedLean.Source.SourceCompletionHarmonic"
+      ],
+      "public_path": "research/2026-10-07-cloud-g6-sol-ultra-1601z/sources/UnifiedLean/G6/AncestralRateFree.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+      "source_sha256": "6ba2f40bd84c286a6281335b26e9e96efd20e10e6ab6cca5919ddbb7b8f2a5e5",
+      "imports": [
+        "UnifiedLean.Source.OriginalFixedIDControls"
+      ],
+      "public_path": "research/2026-10-05-dot-connected-modular-lean-workspace-2252z/package/source-store/6ba2f40bd84c286a6281335b26e9e96efd20e10e6ab6cca5919ddbb7b8f2a5e5.lean",
+      "public_git_blob": "17dda0052375031a7b4c5b239e2a60395c303815"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "source_sha256": "3d862f8d9f9a43aed6324954ebea749001fd2b221dd90dd7d58cf4e4419fbcac",
+      "imports": [
+        "UnifiedLean.Source.SourceForestSilentPruning",
+        "Mathlib.Data.Fintype.Sum"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteGenealogyEncoding.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.FiniteSourceSnapshot",
+      "source_sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+      "imports": [
+        "UnifiedLean.Source.FiniteGenealogyEncoding",
+        "UnifiedLean.Source.SourceForestSilentPruning"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/FiniteSourceSnapshot.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.MatrixProjectionExponential",
+      "source_sha256": "870438089e6cf05dd93761172ea1bf6b2aa96654708e97b9d348e0dfcb44dfa2",
+      "imports": [
+        "Mathlib.Analysis.Normed.Algebra.MatrixExponential"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/MatrixProjectionExponential.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "source_sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Countable"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeIndependentPairMixture.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.NativePairClockLaw",
+      "source_sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "imports": [
+        "UnifiedLean.Source.NativeParentRouting",
+        "G4AllRootPairClocks",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativePairClockLaw.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.NativeParentRouting",
+      "source_sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "imports": [
+        "G5OriginalRouteHazard",
+        "G4PathResolvedMeasurement",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Finset.Card"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/NativeParentRouting.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.OriginalFixedIDControls",
+      "source_sha256": "5b32ee2edff84d6ef7c75549b55e7368380fcff9dbb3b0cd4397584746bb224d",
+      "imports": [
+        "UnifiedLean.Source.SourceUnrankedAllPanels"
+      ],
+      "public_path": "research/2026-10-05-dot-connected-modular-lean-workspace-2252z/package/source-store/5b32ee2edff84d6ef7c75549b55e7368380fcff9dbb3b0cd4397584746bb224d.lean",
+      "public_git_blob": "31e646b9b517df5efc73b8d93f36d0202ea63647"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceActualHoldingClocks",
+      "source_sha256": "498417275660b696c24f4c8cd83d84532a96f14b82f35bc3e49217c154e8c677",
+      "imports": [
+        "UnifiedLean.Source.SourceEpochSemigroup",
+        "UnifiedLean.Source.SourceInitializedCalendar"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceActualHoldingClocks.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceAncestralAbsorption",
+      "source_sha256": "07b0d22fe372b38a1dd0e1256e0f328901ff74feb9a172a6748a19b903e06061",
+      "imports": [
+        "UnifiedLean.Source.SourceAncestralDrift",
+        "Mathlib.Analysis.SpecificLimits.Basic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralAbsorption.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceAncestralCompletion",
+      "source_sha256": "da44afa6b8039afb1f90128af2f1b62234f3dfd0197ef9399c52873bf865caa5",
+      "imports": [
+        "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralCompletion.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceAncestralDrift",
+      "source_sha256": "258fa001910c1e483b782be4d7a01d239ebc5f53dda8f00348239643fdb88725",
+      "imports": [
+        "UnifiedLean.Source.SourceCompletedUnrankedTree",
+        "UnifiedLean.Source.SourceEpochRenewal"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceAncestralDrift.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceBoundaryKernels",
+      "source_sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d",
+      "imports": [
+        "UnifiedLean.Source.SourceFiniteProjection",
+        "UnifiedLean.Source.SourceForestPulseMeasure",
+        "UnifiedLean.Source.SourceForestCommonPulse"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryKernels.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceBoundaryLocations",
+      "source_sha256": "f7c050056e121c7e0e12eb071383cb1369e8fe9de887d7ad875a76904d48de5b",
+      "imports": [
+        "UnifiedLean.Source.SourceCalendarCompiler"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryLocations.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceBoundaryProjection",
+      "source_sha256": "f1cb1e557b5f08cba2d37465bc4386bc6adc2f19fd12a132f7d6f835b1e24f0f",
+      "imports": [
+        "UnifiedLean.Source.SourceBoundaryKernels"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceBoundaryProjection.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCalendarCompatibility",
+      "source_sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc",
+      "imports": [
+        "UnifiedLean.Source.SourcePoissonKernel",
+        "G5CalendarRoutes"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompatibility.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCalendarCompiler",
+      "source_sha256": "9974446d99fa344593d294e315e349ab71fdbe7574e932bb8b1a16ee1b2369fd",
+      "imports": [
+        "UnifiedLean.Source.SourceCalendarCompatibility",
+        "UnifiedLean.Source.SourceProgramTransport",
+        "UnifiedLean.Source.NativeParentRouting",
+        "Mathlib.Data.Finset.Sort"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarCompiler.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+      "source_sha256": "e725dd61c850d3f5f92925c0de08122dd25f9d1660d9264d1ac47eb4d2bc88bf",
+      "imports": [
+        "UnifiedLean.Source.SourceBoundaryLocations",
+        "UnifiedLean.Source.SourceCalendarTiming"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarPhysicalSupport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCalendarTiming",
+      "source_sha256": "5e534089f17dc7d9ab40338cb0ca75789e0951bb6b5893ba24d514b8cd07d4f8",
+      "imports": [
+        "UnifiedLean.Source.SourceCalendarCompiler"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCalendarTiming.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCompletedUnrankedTree",
+      "source_sha256": "a3f28f51080370eeb6d625685f89927ca983c00ab6ac6739533c20754e60f06b",
+      "imports": [
+        "UnifiedLean.Source.SourceAncestralCompletion",
+        "UnifiedLean.Source.UnrankedGenealogyObservation"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletedUnrankedTree.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCompletionHarmonic",
+      "source_sha256": "5a15f085181e1f6f514d629db289db4a11d6b91032267ecf73a795b0a4f1bfd0",
+      "imports": [
+        "UnifiedLean.Source.SourceAncestralAbsorption"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCompletionHarmonic.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCopyCarrierTransport",
+      "source_sha256": "09d3d2dcb27d49cb1f85a8e78a5dfc385778a0c885b5a9e42f445246cc3bf966",
+      "imports": [
+        "UnifiedLean.Source.SourceNaturalCompletedLimit"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCopyCarrierTransport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCrossCarrierBoundary",
+      "source_sha256": "c3d453eb58dcf0a21f06acc4513428cb9d6ff31093a73e9a284b992531514308",
+      "imports": [
+        "UnifiedLean.Source.SourceSmallCarrierPulse"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierBoundary.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCrossCarrierEpoch",
+      "source_sha256": "d62727cc73f62775f43c83cb882602fcb55e2757123b0ba126d6feffe497d725",
+      "imports": [
+        "UnifiedLean.Source.SourceSmallCarrierGenerator"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierEpoch.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCrossCarrierNatural",
+      "source_sha256": "1d4c912aade4355a65b017b7fc02cee977cf0567728cd488c97c9a6de76c439c",
+      "imports": [
+        "UnifiedLean.Source.SourceCrossCarrierProgram"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/SourceCrossCarrierNatural.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceCrossCarrierProgram",
+      "source_sha256": "bc26f80643ff737bd3a4dcda630631584b0166b2905b3cb48fd876c08fe5489a",
+      "imports": [
+        "UnifiedLean.Source.SourceCrossCarrierBoundary"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceCrossCarrierProgram.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceDestinationClockReset",
+      "source_sha256": "ec910abde269d665081f7c064b6567f45fca58ba26e183ab29e21037fb84344a",
+      "imports": [
+        "UnifiedLean.Source.SourceMergerClockCatalogue",
+        "Mathlib.Probability.Independence.Basic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceDestinationClockReset.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+      "source_sha256": "560f2174634b137eca95c83616b2b50a4e7671f51cfd62c275a7f7c206890d37",
+      "imports": [
+        "UnifiedLean.Source.SourceRaceWinnerSelection"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEmbeddedJumpLaw.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceEpochRenewal",
+      "source_sha256": "5035fb830ed695b7aac5525c28f24d528be3c1b9a2c2c6f831f23b3cc6692bef",
+      "imports": [
+        "UnifiedLean.Source.SourceDestinationClockReset",
+        "UnifiedLean.Source.SourceEpochSemigroup",
+        "Mathlib.Analysis.SpecialFunctions.Exponential",
+        "Mathlib.Analysis.Normed.Module.FiniteDimension",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochRenewal.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceEpochSemigroup",
+      "source_sha256": "845739bc6b110eadd611e0133906ec3f9b036d66f17902f46885c660213b179f",
+      "imports": [
+        "UnifiedLean.Source.SourcePoissonExponential"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEpochSemigroup.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceEventualCompletionLimit",
+      "source_sha256": "0c886c979caa8725b7babd734c3bfabd5842c4aa065bd8886ce4a8abc24a33cd",
+      "imports": [
+        "UnifiedLean.Source.SourceCompletionHarmonic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceEventualCompletionLimit.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceExponentialRace",
+      "source_sha256": "d979f1bf3bbbac3eb3c396991a513a3624f310bf03273890e13c6d5029931afe",
+      "imports": [
+        "UnifiedLean.Source.SourceFirstMarkDistribution",
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Map"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialRace.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceExponentialRaceDensity",
+      "source_sha256": "3fa36827b3553923fa1c1d48db4b2823c7b53e589696c3a1476f9aac8f760c29",
+      "imports": [
+        "UnifiedLean.Source.SourceExponentialRace"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialRaceDensity.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceExponentialResiduals",
+      "source_sha256": "8861858b9309fd43e22424382c1f1513111514ef792354c7cf4b48a0ae4b19e7",
+      "imports": [
+        "UnifiedLean.Source.SourceExponentialRaceDensity",
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Order"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceExponentialResiduals.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceFiniteJumpExpansion",
+      "source_sha256": "6a14b2de7bcdf28ae3293a23adde3234da7adb5dd503cfd007b711f1a52d786b",
+      "imports": [
+        "UnifiedLean.Source.SourceEpochRenewal"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFiniteJumpExpansion.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceFiniteProjection",
+      "source_sha256": "09398c920468ba6ead16b523cecd9f86e7648e7063602256ee4634385df1cab3",
+      "imports": [
+        "UnifiedLean.Source.SourceStepGeneratorBinding",
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFiniteProjection.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceFirstMarkDistribution",
+      "source_sha256": "abd6230f1155ab6cf73bf3d4b55bbe04df408ca73caee81a8807b15b17e9ad29",
+      "imports": [
+        "UnifiedLean.Source.SourceFirstMergerMark"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFirstMarkDistribution.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceFirstMergerMark",
+      "source_sha256": "2bc08f45d7ea76476f6fe485cdce68293a3d44cbc3b2aa108b6b45ce5d1182d1",
+      "imports": [
+        "UnifiedLean.Source.SourceActualHoldingClocks"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceFirstMergerMark.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceForestCommonPulse",
+      "source_sha256": "cac1082f66a84b943dbc8ba9f2e8082ce12bbb42a4b1503e31722597b0faa138",
+      "imports": [
+        "UnifiedLean.Source.SourceForestPulseTransport"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestCommonPulse.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "source_sha256": "b186f0d381b0e62078d887f90ce46ecbe91def99ec66ec51c98053b9d60c0f28",
+      "imports": [
+        "UnifiedLean.Source.SourceForestSilentPruning",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestGeneratorIntertwining.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "source_sha256": "b282351bf116ae756c7e9c6ee1e3cbace41a8d753b47cac7e53c4a918c82d16f",
+      "imports": [
+        "UnifiedLean.Source.SourceForestGeneratorIntertwining"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestIntrinsicGenerator.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceForestPulseMeasure",
+      "source_sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f",
+      "imports": [
+        "UnifiedLean.Source.SourceForestPulseTransport",
+        "Mathlib.Probability.Distributions.Bernoulli",
+        "Mathlib.MeasureTheory.Constructions.Pi"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseMeasure.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceForestPulseTransport",
+      "source_sha256": "8e1a3d62afab25247dd3a281d30f7dc20db1949ea1b589c2d77980b3b48874f1",
+      "imports": [
+        "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+        "G2LiveLineageRouting"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestPulseTransport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceForestSilentPruning",
+      "source_sha256": "86f61cc8ce06af574ee98b37db0ecd7c8cbc2df99e495ce1b9a66605ea8fb5c2",
+      "imports": [
+        "SourceForestKingmanPopulationProjection"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceForestSilentPruning.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceGeneratorExponential",
+      "source_sha256": "f761ddf2f5efb9906ec8f841567d02fae946cce763260f238834a147090e461d",
+      "imports": [
+        "UnifiedLean.Source.SourceFiniteProjection"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceGeneratorExponential.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceInitializedCalendar",
+      "source_sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535",
+      "imports": [
+        "UnifiedLean.Source.SourceCalendarPhysicalSupport"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceInitializedCalendar.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceMergerClockCatalogue",
+      "source_sha256": "147da19d2d89135e00c140b3a7a88cd3d53271954e5752a23e5e0ff30376a147",
+      "imports": [
+        "UnifiedLean.Source.SourceWinningClockReset"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceMergerClockCatalogue.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceNaturalCompletedLimit",
+      "source_sha256": "182b8694bea7594102468caa1009046668198f67fe67f8d67bf89bf1ce4604e5",
+      "imports": [
+        "UnifiedLean.Source.SourceEventualCompletionLimit"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalCompletedLimit.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceNaturalInitialization",
+      "source_sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "imports": [
+        "UnifiedLean.Source.SourceInitializedCalendar",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceNaturalInitialization.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourcePoissonExponential",
+      "source_sha256": "463eb0e4a9cd9307898eface172100183b8ac9d412c1389a2c5b9ad4981c2d9a",
+      "imports": [
+        "UnifiedLean.Source.SourcePoissonKernel",
+        "UnifiedLean.Source.SourceGeneratorExponential"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourcePoissonExponential.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourcePoissonKernel",
+      "source_sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c",
+      "imports": [
+        "UnifiedLean.Source.SourceFiniteProjection",
+        "Mathlib.Probability.Distributions.Poisson.Basic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourcePoissonKernel.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceProgramTransport",
+      "source_sha256": "d009fdfc510bfcaffaeea3bc241401eaf2996178ff4b82376eb22f1e49387831",
+      "imports": [
+        "UnifiedLean.Source.SourceBoundaryProjection",
+        "UnifiedLean.Source.SourcePoissonKernel"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceProgramTransport.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceRaceWinnerSelection",
+      "source_sha256": "ad882b44f7fd97f5ac7e5b7e125cce7e7f6640c065ff616f08c85b26dd9d4caf",
+      "imports": [
+        "UnifiedLean.Source.SourceFiniteJumpExpansion"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceRaceWinnerSelection.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceSmallCarrierGenerator",
+      "source_sha256": "b85c1308c6206d377aca54b2073088e39250b57abac7df8c628f100189546106",
+      "imports": [
+        "UnifiedLean.Source.SourceCopyCarrierTransport"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceSmallCarrierGenerator.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceSmallCarrierPulse",
+      "source_sha256": "e33e4751b9b8d665aaf18074f4d3430f0f13d7b5e67a90ec96ec229a14fb7f20",
+      "imports": [
+        "UnifiedLean.Source.SourceCrossCarrierEpoch"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceSmallCarrierPulse.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "source_sha256": "8021b8bddcc5cd070185843ca5454dfb289572a2592854efbbdd9e41d48396d0",
+      "imports": [
+        "UnifiedLean.Source.UniformizedSourceStep",
+        "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+        "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+        "Mathlib.MeasureTheory.Integral.Bochner.Basic"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceStepGeneratorBinding.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceUnrankedAllPanels",
+      "source_sha256": "4936fb211505d9c5961256ba4f1a4c63db0065c7c94ccadf3fcd67a320f270c3",
+      "imports": [
+        "UnifiedLean.Source.SourceUnrankedCopyProjectivity"
+      ],
+      "public_path": "research/2026-10-05-dot-connected-modular-lean-workspace-2252z/package/source-store/4936fb211505d9c5961256ba4f1a4c63db0065c7c94ccadf3fcd67a320f270c3.lean",
+      "public_git_blob": "0e17f185d357211dc08c43a2781c2b1287e97dad"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+      "source_sha256": "ef2c49cbbbd519616e29f5e213e4e0e267626423b6c951d794647d2095eab55d",
+      "imports": [
+        "UnifiedLean.Source.SourceCrossCarrierNatural"
+      ],
+      "public_path": "research/2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/SourceUnrankedCopyProjectivity.lean",
+      "public_commit": "419b9305da70b1a0b96510dba1244d41f79afaf1"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.SourceWinningClockReset",
+      "source_sha256": "7a831640fec35d92f99e65e6f98e2874602fb5b040ff6b112c16b77a271f2038",
+      "imports": [
+        "UnifiedLean.Source.SourceExponentialResiduals"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/SourceWinningClockReset.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.UniformizedSourceStep",
+      "source_sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c",
+      "imports": [
+        "UnifiedLean.Source.FiniteSourceSnapshot",
+        "UnifiedLean.Source.NativePairClockLaw",
+        "SourceForestKingmanPopulationProjection",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Algebra.BigOperators.Field"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/UniformizedSourceStep.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    },
+    {
+      "logical_module": "UnifiedLean.Source.UnrankedGenealogyObservation",
+      "source_sha256": "1ee536501f1fc77c70eb9098af054ecf2a2c8cbdd9aef4375bd5cdda10ca73c8",
+      "imports": [
+        "UnifiedLean.Source.SourceNaturalInitialization",
+        "Mathlib.Data.Finset.Union"
+      ],
+      "public_path": "research/2026-10-04-dot-verified-lean-825-0203z/package/baseline/UnifiedLean/Source/UnrankedGenealogyObservation.lean",
+      "public_commit": "916e02a1d51d79cdffd300b9d8313df2608b08bc"
+    }
+  ],
+  "lean_version": "4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474"
+}

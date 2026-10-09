@@ -1,0 +1,4 @@
+import G7NaturalCalendarPolynomial
+#print axioms GProgram.G7.NaturalCalendarPolynomial.instantiateGamma_original
+#print axioms GProgram.G7.NaturalCalendarPolynomial.actual_initialized_schema
+#print axioms GProgram.G7.NaturalCalendarPolynomial.actual_natural_calendar_polynomial
