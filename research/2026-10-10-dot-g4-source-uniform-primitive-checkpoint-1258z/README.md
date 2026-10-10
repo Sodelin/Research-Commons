@@ -94,3 +94,12 @@ The [independent review and replay](linear-filter-countercontrol/independent/IND
 The mixture has no asserted original-source realization or legal shared-selector operation; colour blocks do not supply binary genealogy resolutions. This establishes that generic count positivity/projectivity is insufficient for the source test. It does not produce an admitted rival, an exact target match or a complete G4 recognition criterion. Original observation use of the necessary filter still requires the calibrated legal decoder.
 
 All earlier bodies and README text are preserved. FILTER-ADDENDUM-MANIFEST-1347.json binds the added evidence and this appended status.
+
+
+## 13:56 UTC source-interface check: the extra Green term can oppose its partner even with equal arms
+
+The [exact equal-arm countercheck](equalarm-extra-term-countercheck/EQUAL-ARM-EXTRA-TERM-COUNTERCHECK.md) revisits the inherited 9/7/6/4 source-state formula. Its older opposite-sign example had unequal arm survivals, leaving a narrower calibrated premise unchecked. The strict actual cell with both arm survivals 1/5 and inheritance 17/50 has signed per-labelled D6>0 but the separate EPPF term e<0, with both full rational values preserved.
+
+An [independent killed-coalescent ODE replay](equalarm-extra-term-countercheck/independent/INDEPENDENT-REVIEW.md) matches the author’s separate EPPF/count calculation exactly. Both use at most seven roots and the same original IID routing law. Here D6 is the signed spectral cherry coefficient, not the no-merger diagonal used elsewhere in this checkpoint.
+
+Thus equal-arm COMMON calibration does not rescue the same-sign simplification in the exact Green formula. The actual transports and extra term still have to be retained. This is a targeted check of a rejected proof shortcut, not a sign theorem for the full chronological sum, an exact rival, or a G4 conclusion. All earlier bodies and README text remain unchanged. EQUALARM-ADDENDUM-MANIFEST-1356.json binds the complete author and independent evidence plus this dated status.
