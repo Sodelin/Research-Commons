@@ -31,3 +31,7 @@ This illustrates a route compatible with the earlier obstruction to finite fixed
 The [reviewed effectivity supplement](effective-radius/README.md) gives a terminating procedure computing the slice's rational validity radius and finite per-query source-search cap. This supersedes the existential-radius limitation above at the mathematical algorithm-specification level. The original theorem and its historical status remain preserved. No numerical radius, cutoff, concrete witness, RCF execution or implementation has yet been produced. The supplied critical slice and calibrated COMMON scope are unchanged; novelty remains unresolved.
 
 The parent MANIFEST.json records the original d127cd80 publication snapshot; its historical hashes are preserved. The supplement has its own manifest for its new frozen proof, review and status files.
+
+## 10 October 2026, 13:42 UTC: numeric-input adapter
+
+The [handoff's base-recovery adapter](CODEX-HANDOFF.md#10-october-2026-1342-utc-recover-the-base-from-the-numeric-profile) recovers A,b uniquely from the first two numeric moments, checks the remaining fixed-coordinate identities and the effective validity radius, then invokes this branch. It retains the theorem's rational-b condition. Failed branch tests make no global NO claim. This is prior-reuse algebra, separate from unknown-head/residue/normal acquisition.

@@ -25,3 +25,22 @@ For the original problem, use only the accepted calibrated A/B COMMON compiler a
 ## 10 October 2026, 13:33 UTC: algorithmic effectivity update
 
 The [effective-radius proof and review](effective-radius/README.md) now specify a terminating procedure returning a rational validity neighborhood and algebraic-query count cap. Once its certificate is produced, the neighborhood promise can itself be checked by exact algebraic comparisons and covered YES queries have a finite witness search. This is not an emitted numeric certificate: no cutoff/radius, RCF instance or physical witness has been executed. The free-odds polynomial extraction system deliberately avoids treating the analytic parameter u^2 as algebraic. Original source scope and the unresolved global acquisition obligation are unchanged.
+
+## 10 October 2026, 13:42 UTC: recover the base from the numeric profile
+
+This is an algebraic adapter for the existing fixed-head, fixed-r=1/2 branch, not a new source theorem. Apply the accepted calibrated A/B COMMON compiler first, including its exact consistency checks, to recover the six algebraic moments. The head theta_* is the fixed certified branch datum; it is not supplied source provenance.
+
+Put x_l=m_l/f_l(theta_*). If x_1,x_3 are positive, recover the unique positive algebraic candidates
+
+    b=(x_1^3/x_3)^(8/5),    A=x_1/sqrt(b).
+
+Indeed x_1=A b^(1/2), x_3=A^3 b^(7/8), and 3/2-7/8=5/8. Positive real roots remove every branch ambiguity. Require A in (0,1), b rational in (1/2,1), and 1-b<u_bar/4. Rationality of a represented algebraic number is decidable from its minimal polynomial. The rational-b check preserves the frozen effectivity theorem's precise input contract.
+
+Recover every base coordinate algebraically: let z be the unique positive root of z^(2^21)=b and set
+
+    m0_l=A^l f_l(theta_*) z^(2^21-2^(21-l)),
+    l in {1,3,6,10,15,21}.
+
+Check m_l=m0_l for l=6,10,15; the l=1,3 equalities follow from the inversion (and may also be checked). Run the reviewed effectivity procedure at the recovered A,b and check |m_21-m0_21|<mu. These finite algebraic tests certify that the numerical input lies in this recognizer's domain. Within that domain, m_21>m0_21 gives actual YES with the returned finite source-search cap; equality or a lower sixth moment gives the established all-rival NO. A failed domain test means only "outside this recognizer"; continue the master search.
+
+The exponent identities were checked using exact rational arithmetic: 3(1-1/2)-(1-1/8)=5/8, and (2^21-2^(21-l))/2^21=1-2^(-l) for all six l. No cutoff/radius or query certificate was evaluated. This adapter reuses the prior semialgebraic base family and the published effectivity procedure. It removes an artificial supplied-A,b premise for covered numeric inputs; it does not acquire an unknown head, residue node or critical normal.
