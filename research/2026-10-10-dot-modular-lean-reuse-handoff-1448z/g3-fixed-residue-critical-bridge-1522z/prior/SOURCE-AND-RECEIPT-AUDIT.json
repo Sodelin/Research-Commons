@@ -1,0 +1,195 @@
+{
+  "status": "READ_ONLY_COVERAGE_AUDIT_NO_NEW_COMPILATION",
+  "canonical_modules": 1411,
+  "source_commit": "6207670fa7fbce788d01584a033c0471ae918aaa",
+  "canonical_profile": "connected/20261009-canonical",
+  "profile_result_sha256": "189c7bbe005625528227fc08573abca0ea01b78916b39b917e186013158b6057",
+  "profile_audit_sha256": "70bdcdf450a76de2fdee83e4144c9a65828eb1ded659e62bb70d2febba778bb2",
+  "owned_axioms": [],
+  "nonstandard_axiom_rows": 0,
+  "missing_modules": [],
+  "modules": [
+    {
+      "module": "G3AllResiduePositivity",
+      "source_sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "declarations": 119,
+      "theorem_declarations": 106,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "fresh_component_receipts": [
+        {
+          "receipt_sha256": "acdd9c6b610702bbb0e4cdd82e2783860dba5addc6b43dcc41dbd35c2f5c69a3",
+          "status": "PASS_FRESH_KERNEL_CHECK",
+          "exit_code": 0,
+          "source_sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+          "source_and_imports_stable": true,
+          "elapsed_seconds": 8.241266181998071
+        }
+      ]
+    },
+    {
+      "module": "G3AllResidueNormalIdentities",
+      "source_sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+      "imports": [
+        "G3AllResiduePositivity",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "declarations": 147,
+      "theorem_declarations": 139,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "fresh_component_receipts": [
+        {
+          "receipt_sha256": "6ca4e0c3185239ef70b4d3b6de12984727afac352bbbdcef151d8475776a96d8",
+          "status": "PASS_FRESH_KERNEL_CHECK",
+          "exit_code": 0,
+          "source_sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+          "source_and_imports_stable": true,
+          "elapsed_seconds": 13.666560001001926
+        }
+      ]
+    },
+    {
+      "module": "G3BernoulliDerivatives",
+      "source_sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+        "Mathlib.Analysis.Calculus.Deriv.Pow",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "declarations": 9,
+      "theorem_declarations": 7,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "fresh_component_receipts": [
+        {
+          "receipt_sha256": "2244902de6ad6db23c458b4ddde84e52a51609c2cd94e06513da933083f643bb",
+          "status": "PASS_FRESH_KERNEL_CHECK",
+          "exit_code": 0,
+          "source_sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+          "source_and_imports_stable": true,
+          "elapsed_seconds": 2.8389199129960616
+        }
+      ]
+    },
+    {
+      "module": "G3BernoulliCriticalNumerators",
+      "source_sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+      "imports": [
+        "G3BernoulliDerivatives",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "declarations": 24,
+      "theorem_declarations": 19,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "fresh_component_receipts": [
+        {
+          "receipt_sha256": "2758ed37368ad09a726d9601d97494b9bd918f56d5065288c82f702a6516cd1e",
+          "status": "PASS_FRESH_KERNEL_CHECK",
+          "exit_code": 0,
+          "source_sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+          "source_and_imports_stable": true,
+          "elapsed_seconds": 2.7071571470005438
+        }
+      ]
+    },
+    {
+      "module": "G3BernoulliVerticalExclusion",
+      "source_sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+      "imports": [
+        "G3BernoulliCriticalNumerators",
+        "G3AllResidueNormalIdentities",
+        "Mathlib.Algebra.Polynomial.BigOperators",
+        "Mathlib.Algebra.Polynomial.Roots",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "declarations": 28,
+      "theorem_declarations": 22,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "fresh_component_receipts": [
+        {
+          "receipt_sha256": "03d9c25add1a75a18fda76142c5e02167f89a5bce4da5e4d7527f9c90ff16c89",
+          "status": "PASS_FRESH_KERNEL_CHECK",
+          "exit_code": 0,
+          "source_sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+          "source_and_imports_stable": true,
+          "elapsed_seconds": 2.7527448239998193
+        }
+      ]
+    },
+    {
+      "module": "G3FixedDegreeResultants",
+      "source_sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+      "imports": [
+        "G3BernoulliVerticalExclusion",
+        "Mathlib.RingTheory.Polynomial.Resultant.Basic"
+      ],
+      "declarations": 40,
+      "theorem_declarations": 32,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "fresh_component_receipts": [
+        {
+          "receipt_sha256": "1dd0259839ddf805527bec1e5098e71e494a50b735f303ae0d1b1622a3d0aa1b",
+          "status": "PASS_FRESH_KERNEL_CHECK",
+          "exit_code": 0,
+          "source_sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+          "source_and_imports_stable": true,
+          "elapsed_seconds": 4.7686838490044465
+        }
+      ]
+    }
+  ],
+  "resultant_payload_sizes": [
+    {
+      "file": "slice-3-resultant.json",
+      "degree": 385,
+      "coefficient_count": 386,
+      "nonzero_coefficients": 364,
+      "max_primitive_coefficient_bits": 316,
+      "content_bits": 465,
+      "source_bytes": 33751
+    },
+    {
+      "file": "slice-5-resultant.json",
+      "degree": 385,
+      "coefficient_count": 386,
+      "nonzero_coefficients": 364,
+      "max_primitive_coefficient_bits": 392,
+      "content_bits": 680,
+      "source_bytes": 42028
+    }
+  ]
+}

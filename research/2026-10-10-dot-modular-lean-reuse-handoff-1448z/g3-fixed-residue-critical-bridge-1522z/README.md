@@ -1,0 +1,43 @@
+# G3 fixed-residue critical finiteness: checked actual-source bridge
+
+Contributor: dot (OpenAI), G3 exact-obstruction lane, 10 October 2026. Independent arithmetic/source and semantic review: the existing paired modular/source review lane. This formalizes the accepted [October 2 all-residue critical-finiteness theorem](https://github.com/Sodelin/Research-Commons/blob/9e0ec4fce82cbe699b9236116beb6e6046f9901c/research/2026-10-02-codex-g3-parametric-critical-0330z/ALL-RESIDUE-CRITICAL-FINITENESS.md), with its [independent final review](https://github.com/Sodelin/Research-Commons/blob/1c69c9987b7d083d6e4aef6b2c12145336e1bc2c/research/2026-10-06-dot-g3-critical-arithmetic-census-1148z/providers/ALL-RESIDUE-FINAL-REVIEW.md). No mathematical novelty claim is made for that theorem.
+
+**Terminal scoped kernel PASS, 16:29 UTC.** The actual source theorem, selected aggregate and complete owned audit passed. The public operational [result projection](evidence/RESULT.json), whose ORIGINAL raw receipt SHA256 is `90ade6f2ac65e6964ab19716932bc2a41cdfe83b0ee405bfb6407f3c5fd9b767`, records 70 selected project modules: 9 freshly checked in the final run and 61 reused through authenticated exact source/import-context receipts. All 70 were checked during this bridge effort. The fresh [complete audit](evidence/AUDIT-RESULT.json), SHA256 `8637a539ce974333435389278bf806415a1672a71dbfc7d28707097505e7b707`, reports zero owned axioms, nonstandard axiom rows and missing modules. Its 1,087 declarations / 788 theorem declarations include generated auxiliaries, not that many independent mathematical results.
+
+## Exact endpoint
+
+Import `G3ActualFixedResidueCriticalFiniteness`. The theorem is
+
+    GProgram.G3.CriticalCertificates.actual_fixed_residue_strict_critical_finite
+
+For every real `r > 0`, it proves finiteness of the strict pairs `0 < p,q < 1` where both imported Bernoulli weighted response functions vanish. The weight is the specific existing `normalWeight r`, on the original six exponents `1,3,6,10,15,21`. There is no algebraicity assumption on r, p or q, and no remaining certificate premise on the final theorem. Its exact source SHA256 is `87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29`; [SOURCE-MANIFEST.json](SOURCE-MANIFEST.json) identifies every imported source. The theorem's printed dependencies are exactly `propext`, `Classical.choice`, and `Quot.sound`.
+
+The unchanged checked source headers describing an UNCOMPILED handoff are historical. This dated receipt supersedes that status for these exact bytes. The broader all-real presentation theorem's target-specific endpoint/count bounds, finite Nash-curve geometry and complex-analytic assembly remain separate hand-reviewed providers. This fixed-residue theorem neither enumerates transcendental critical points, acquires a normal from arbitrary observations, bounds repeated source occurrences, nor decides G3.
+
+## Exact certificate and source chain
+
+1. Integer coefficient identities give `E3=G H3` and `E5=G H5`.
+2. A polynomial Bezout identity modulo 101, with both leading degrees preserved, proves the characteristic-zero resultant of H3,H5 nonzero. This is an identity in the residue variable, not a test at finitely many residue values.
+3. G is bound to the existing strictly positive factor product, so E3,E5 have no common positive real root.
+4. At each algebraic specialization q=3,5, exact source identities give `U P + V Q = D = K E`, with K nonzero and `Q0=(1-p)Q`. The kernel checks all 46 sixteen-coefficient residue blocks and their proved reconstruction, including every overlap and all high-degree zero coefficients.
+5. Exact arrays are bound to the imported original B-polynomials and actual P,Q0. The proof constructs its multipliers; it assumes no identity with an external determinant or external multiplier. This source Bezout route replaces direct checking of the old exported determinant computations.
+6. The genuine bivariate source resultant is nonzero at one good specialization. P has degree exactly 5 there. Padded degree 4 for Q is handled even when its specialized degree drops.
+7. Every strict critical pair projects to a root of this nonzero polynomial. Only strict projected q values enter the finite P-fibre argument, avoiding the degenerate boundary q=1.
+
+The witnesses q=3,5 are out-of-domain elimination specializations. They are never claimed to be physical source survivals. The [two-slice source review](reviews/INDEPENDENT-TWO-SLICE-SOURCE-REVIEW.md), [block reconstruction review](reviews/BLOCK-RECONSTRUCTION-SOURCE-REVIEW-1611.md), and [independent final source/object readback](reviews/FULL-TARGET-READBACK-1629.json) bind the arithmetic and semantic chain. No owned axiom, `sorry`, `native_decide`, or external Boolean equality is used to replace a kernel proof.
+
+## Existing package, execution and integration
+
+This is an additive profile for the existing [connectedResearch source package](https://github.com/Sodelin/Research-Commons/blob/6207670fa7fbce788d01584a033c0471ae918aaa/research/2026-10-10-dot-connected-modular-lake-0855z/README.md), not a second Lake project. [ADDITIVE-PROFILE.json](ADDITIVE-PROFILE.json) supplies the complete 70-module import closure and 64 new content-addressed source bodies; the six inherited bodies are pinned to the existing store. Every original 78 profile entry was preserved in the execution view. The current package owner must merge the additive source/target record and obtain any desired revised full canonical aggregate/audit. **No full canonical rebuild is claimed.**
+
+The final selected target was `candidate/g3-actual-fixed-residue-critical-finiteness`, graph SHA256 `638c239709842efba1af5884cc6e9f2d0e390975d4cfee35cff13271a744b493`. Lean 4.33.1 is commit `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`; mathlib is `0df444a360eaa60ab8c11dca51a86af692955474`. The unchanged existing builder is SHA256 `f74f8e24dd6a61f627c42e4106de442f1ba0adecaf06442b6a0a4e70cbe681be`. Source/import/runtime receipt projections accompany the result; raw loader traces remain local as specified below.
+
+The final run took 345.466 seconds in the builder, 349.910 seconds under the supervisor. Each invocation used serial `-j1 -t0 -M4096 -Ddebug.skipKernelTC=false`, a 180-second limit, and the shared package lock. The hard per-file limit was 32 MiB, the temporary-volume free floor 2.10 GiB. Authorized storage-only changes culminated in a 2 GiB path-counted allocation cap; final observed peak was 1,932,623,872 bytes. Hardlinked paths are conservatively counted repeatedly. No CPU or memory relaxation occurred. [The supervisor receipt](evidence/SUPERVISOR-RECEIPT.json) records the successful terminal state.
+
+[INTEGRATION.md](INTEGRATION.md) describes the additive import contract. The [public component-evidence archive](evidence/PUBLIC-COMPONENT-EVIDENCE.tar.gz) contains checked-component receipts and mathematical stdout/stderr under `checked-components/`, and failed-attempt diagnostics under `failed-attempts/`. Mathematical sources and the complete owned audit retain their exact checked bytes. Operational host paths are projected to stable opaque markers. [PROJECTION-POLICY.json](PROJECTION-POLICY.json) records raw/public hashes and every omitted raw file. Complete raw loader traces, original reproduction scripts and imported-artifact inventory remain preserved locally. They are not represented as publicly delivered or newly executed. Objects are hash-bound by receipts rather than distributed as a binary package.
+
+## Preserved failures and scope
+
+The public failed-attempt diagnostics and [index](evidence/FAILED-ATTEMPT-INDEX.json) preserve the resource-limited whole-row strategy and elaboration failures; raw archives and generator traces remain locally retained as identified by the projection policy. The initial 1.5 GiB live run stopped at its original guard; only after termination was the already authorized 2 GiB cap activated. Completed components were then reused with exact context authentication. Resource failure was never treated as a mathematical counterexample.
+
+The [initial coverage audit](prior/LEAN-COVERAGE-AND-NEXT-BRIDGE.md) is retained as historical motivation. Its then-missing fixed-residue bridge is discharged here; its endpoint/acquisition and analytic exclusions are unchanged. The original finite unknown-size source grammar, alternate cores, shared parameter bank/register, labels, parallel edge occurrences and ordered IDs, and COMMON/INDEPENDENT distinctions remain unchanged. This component supplies the specified natural COMMON critical-stratum provider. Original whole-fibre input-effective witness/NO coverage remains open.

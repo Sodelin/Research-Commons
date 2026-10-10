@@ -1,0 +1,263 @@
+--- owner-initial-uncompiled
++++ reviewer-owned-uncompiled
+@@ -1,14 +1,21 @@
+ import G3FixedDegreeResultants
+ import Mathlib.Algebra.Polynomial.Div
++import Mathlib.Data.Set.Finite.Lattice
++import Mathlib.Tactic.Omega
+ 
+ /-! Genuine bivariate source polynomials with the mandatory p=1 boundary
+-factor removed by monic division. No source eliminant is assumed nonzero. -/
++factor removed by monic division.
++
++UNCOMPILED DEVELOPMENT DRAFT. The terminal theorem is conditional on the
++explicit sourceSliceCoprime disjunction for the actual q=3/q=5 source
++polynomials. No axiom or placeholder proof closes that interface. The
++certificate owner must discharge it and run the combined dependency/audit
++checks before claiming the actual source theorem. No eliminant is assumed
++nonzero as a substitute for that source premise. -/
+ noncomputable section
+ namespace GProgram.G3.CriticalCertificates
+ open Polynomial
+ open scoped BigOperators
+-set_option maxHeartbeats 0
+-set_option maxRecDepth 100000
+ 
+ private def pFactor (n : ℕ) : Polynomial (Polynomial ℝ) :=
+   C 1 + C (X^n-1)*X
+@@ -41,11 +48,13 @@
+     _ = 5 := by simp
+ 
+ theorem sourceP_degree_le (r : ℝ) : (sourceP r).natDegree ≤ 5 := by
++  unfold sourceP
+   apply Polynomial.natDegree_sum_le_of_forall_le
+   intro i _
+   exact (Polynomial.natDegree_C_mul_le _ _).trans (pFactor_prod_degree_le i)
+ 
+ theorem sourceQ0_degree_le (r : ℝ) : (sourceQ0 r).natDegree ≤ 5 := by
++  unfold sourceQ0
+   apply Polynomial.natDegree_sum_le_of_forall_le
+   intro i _
+   exact (Polynomial.natDegree_C_mul_le _ _).trans (pFactor_prod_degree_le i)
+@@ -63,12 +72,14 @@
+ theorem sourceP_map (r q : ℝ) :
+     (sourceP r).map (Polynomial.evalRingHom q) =
+     AllResidue.criticalProbabilityPolynomial (AllResidue.normalWeight r) AllResidue.capSevenExponent q := by
+-  simp [sourceP, AllResidue.criticalProbabilityPolynomial, pFactor_map]
++  simp [sourceP, AllResidue.criticalProbabilityPolynomial,
++    Polynomial.map_sum, Polynomial.map_prod, pFactor_map]
+ 
+ theorem sourceQ0_map (r q : ℝ) :
+     (sourceQ0 r).map (Polynomial.evalRingHom q) =
+     AllResidue.sourceQProbabilityPolynomial (AllResidue.normalWeight r) AllResidue.capSevenExponent q := by
+-  simp [sourceQ0, AllResidue.sourceQProbabilityPolynomial, pFactor_map]
++  simp [sourceQ0, AllResidue.sourceQProbabilityPolynomial,
++    Polynomial.map_sum, Polynomial.map_prod, pFactor_map]
+ 
+ private theorem pFactor_eval_one (n : ℕ) : (pFactor n).eval 1 = X^n := by
+   simp [pFactor]
+@@ -77,9 +88,14 @@
+     (X : Polynomial ℝ)^(AllResidue.capSevenExponent i-1) *
+       ∏ j ∈ Finset.univ.erase i, X^(AllResidue.capSevenExponent j) = X^55 := by
+   classical
+-  fin_cases i <;>
+-    norm_num [AllResidue.capSevenExponent, Finset.prod_eq_multiset_prod, Finset.univ, Multiset.prod]
+-  all_goals ring
++  rw [Finset.prod_pow_eq_pow_sum, ← pow_add]
++  congr 1
++  have hsum : ∑ j : Fin 6, AllResidue.capSevenExponent j = 56 := by
++    norm_num [Fin.sum_univ_succ, AllResidue.capSevenExponent]
++  have he := Finset.add_sum_erase Finset.univ AllResidue.capSevenExponent
++    (Finset.mem_univ i)
++  have hi := AllResidue.cap_seven_exponent_ne_zero i
++  omega
+ 
+ theorem sourceQ0_root_one (r : ℝ) : (sourceQ0 r).IsRoot 1 := by
+   change (sourceQ0 r).eval 1 = 0
+@@ -96,12 +112,185 @@
+   have h := (Polynomial.mul_divByMonic_eq_iff_isRoot (p := sourceQ0 r)
+     (a := (1 : Polynomial ℝ))).2 (sourceQ0_root_one r)
+   calc
+-    _ = (X-C 1) * (sourceQ0 r /ₘ (X-C 1)) := by simp only [sourceQ]; simp only [map_one]; ring
++    _ = (X-C 1) * (sourceQ0 r /ₘ (X-C 1)) := by
++      simp only [sourceQ, Polynomial.C_1]
++      ring
+     _ = _ := h
+ 
+ def sourceProjection (r : ℝ) : Polynomial ℝ :=
+   Polynomial.resultant (sourceP r) (sourceQ r) 5 4
+ 
++/-- The real source quotient in the convention used by the integer certificates. -/
++def sourceQAt (r q : ℝ) : Polynomial ℝ :=
++  -(AllResidue.sourceQProbabilityPolynomial (AllResidue.normalWeight r)
++      AllResidue.capSevenExponent q /ₘ (X-C 1))
++
++theorem sourceQ_map (r q : ℝ) :
++    (sourceQ r).map (Polynomial.evalRingHom q) = sourceQAt r q := by
++  unfold sourceQ sourceQAt
++  rw [Polynomial.map_neg,
++    Polynomial.map_divByMonic _ (Polynomial.monic_X_sub_C _), sourceQ0_map]
++  simp only [Polynomial.map_sub, Polynomial.map_X, Polynomial.map_C, map_one]
++
++/-- This is the explicit unclosed source-certificate interface. -/
++def sourceSliceCoprime (r q : ℝ) : Prop :=
++  IsCoprime
++    (AllResidue.criticalProbabilityPolynomial (AllResidue.normalWeight r)
++      AllResidue.capSevenExponent q)
++    (sourceQAt r q)
++
++theorem sourceProjection_specialization (r q : ℝ) :
++    Polynomial.resultant ((sourceP r).map (Polynomial.evalRingHom q))
++      ((sourceQ r).map (Polynomial.evalRingHom q)) 5 4 =
++        (sourceProjection r).eval q := by
++  exact AllResidue.fixed_resultant_specialization (sourceP r) (sourceQ r) q
++
++/-- At the algebraic witness q>1, use the general coefficient identity,
++not the existing strict-survival convenience lemma. -/
++theorem sourceP_map_coeff_five_ne_zero {r q : ℝ}
++    (hr : 0 < r) (hq : 1 < q) :
++    ((sourceP r).map (Polynomial.evalRingHom q)).coeff 5 ≠ 0 := by
++  rw [sourceP_map, AllResidue.critical_probability_coeff_five,
++    AllResidue.normal_weight_sum]
++  apply mul_ne_zero (neg_ne_zero.mpr (AllResidue.normal_mass_ne_zero hr))
++  apply Finset.prod_ne_zero_iff.mpr
++  intro i _
++  exact sub_ne_zero.mpr (ne_of_lt
++    (one_lt_pow₀ hq (AllResidue.cap_seven_exponent_ne_zero i)))
++
++theorem sourceP_map_natDegree {r q : ℝ} (hr : 0 < r) (hq : 1 < q) :
++    ((sourceP r).map (Polynomial.evalRingHom q)).natDegree = 5 := by
++  apply le_antisymm
++  · exact (Polynomial.natDegree_map_le).trans (sourceP_degree_le r)
++  · exact Polynomial.le_natDegree_of_ne_zero
++      (sourceP_map_coeff_five_ne_zero hr hq)
++
++/-- Only P is required to retain its full padded degree. Q may specialize
++at lower degree. -/
++theorem source_padded_resultant_ne_zero {r q : ℝ}
++    (hr : 0 < r) (hq : 1 < q) (hc : sourceSliceCoprime r q) :
++    Polynomial.resultant ((sourceP r).map (Polynomial.evalRingHom q))
++      ((sourceQ r).map (Polynomial.evalRingHom q)) 5 4 ≠ 0 := by
++  let f := (sourceP r).map (Polynomial.evalRingHom q)
++  let g := (sourceQ r).map (Polynomial.evalRingHom q)
++  have hcop : IsCoprime f g := by
++    simpa only [f, g, sourceP_map, sourceQ_map, sourceSliceCoprime] using hc
++  have hfn : f.natDegree = 5 := sourceP_map_natDegree hr hq
++  have hgn : g.natDegree ≤ 4 :=
++    (Polynomial.natDegree_map_le).trans (sourceQ_degree_le r)
++  have hfc : f.coeff 5 ≠ 0 := sourceP_map_coeff_five_ne_zero hr hq
++  have hbase : Polynomial.resultant f g 5 g.natDegree ≠ 0 := by
++    simpa only [hfn] using Polynomial.resultant_ne_zero f g hcop
++  have hpad := Polynomial.resultant_add_right_deg f g 5 g.natDegree
++    (4-g.natDegree) (le_refl g.natDegree)
++  have hsum : g.natDegree + (4-g.natDegree) = 4 := Nat.add_sub_of_le hgn
++  rw [hsum] at hpad
++  change Polynomial.resultant f g 5 4 ≠ 0
++  rw [hpad]
++  exact mul_ne_zero (pow_ne_zero _ hfc) hbase
++
++theorem sourceProjection_ne_zero_of_slice_coprime {r : ℝ} (hr : 0 < r)
++    (hsource : sourceSliceCoprime r 3 ∨ sourceSliceCoprime r 5) :
++    sourceProjection r ≠ 0 := by
++  have witness (q : ℝ) (hq : 1 < q) (hc : sourceSliceCoprime r q) :
++      sourceProjection r ≠ 0 := by
++    have hz : (sourceProjection r).eval q ≠ 0 := by
++      rw [← sourceProjection_specialization r q]
++      exact source_padded_resultant_ne_zero hr hq hc
++    intro hzero
++    apply hz
++    rw [hzero, Polynomial.eval_zero]
++  rcases hsource with h3 | h5
++  · exact witness 3 (by norm_num) h3
++  · exact witness 5 (by norm_num) h5
++
++/-- The original actual-source criticality predicate, retaining both strict
++coordinates and both existing response functions. -/
++def strictSourceCriticalSet (r : ℝ) : Set (ℝ × ℝ) :=
++  {pq | 0 < pq.1 ∧ pq.1 < 1 ∧ 0 < pq.2 ∧ pq.2 < 1 ∧
++    AllResidue.weightedPResponse (AllResidue.normalWeight r)
++      AllResidue.capSevenExponent pq.1 pq.2 = 0 ∧
++    AllResidue.weightedQResponse (AllResidue.normalWeight r)
++      AllResidue.capSevenExponent pq.1 pq.2 = 0}
++
++/-- Padded Bezout handles all degree drops at an actual critical q. -/
++theorem strict_source_critical_projection_root {r p q : ℝ}
++    (hcrit : (p,q) ∈ strictSourceCriticalSet r) :
++    (sourceProjection r).IsRoot q := by
++  rcases hcrit with ⟨hp0,hp1,hq0,_hq1,hpResponse,hqResponse⟩
++  have hpval : ((sourceP r).map (Polynomial.evalRingHom q)).eval p = 0 := by
++    rw [sourceP_map, AllResidue.critical_probability_eval]
++    exact (AllResidue.p_response_zero_iff (AllResidue.normalWeight r)
++      AllResidue.capSevenExponent hp0 hp1 hq0).mp hpResponse
++  have hq0val : ((sourceQ0 r).map (Polynomial.evalRingHom q)).eval p = 0 := by
++    rw [sourceQ0_map, AllResidue.source_q_probability_eval]
++    exact (AllResidue.q_response_zero_iff (AllResidue.normalWeight r)
++      AllResidue.capSevenExponent hp0 hp1 hq0).mp hqResponse
++  have hfactor := congrArg
++    (fun f : Polynomial (Polynomial ℝ) =>
++      (f.map (Polynomial.evalRingHom q)).eval p) (sourceQ_factorization r)
++  simp only [Polynomial.map_mul, Polynomial.map_sub, Polynomial.map_one,
++    Polynomial.map_X, Polynomial.eval_mul, Polynomial.eval_sub,
++    Polynomial.eval_one, Polynomial.eval_X] at hfactor
++  rw [hq0val] at hfactor
++  have hqval : ((sourceQ r).map (Polynomial.evalRingHom q)).eval p = 0 :=
++    (mul_eq_zero.mp hfactor).resolve_left (sub_ne_zero.mpr (ne_of_gt hp1))
++  have hdegP : ((sourceP r).map (Polynomial.evalRingHom q)).natDegree ≤ 5 :=
++    (Polynomial.natDegree_map_le).trans (sourceP_degree_le r)
++  have hdegQ : ((sourceQ r).map (Polynomial.evalRingHom q)).natDegree ≤ 4 :=
++    (Polynomial.natDegree_map_le).trans (sourceQ_degree_le r)
++  obtain ⟨u,v,_hu,_hv,he⟩ := Polynomial.exists_mul_add_mul_eq_C_resultant
++    (m := 5) (n := 4)
++    ((sourceP r).map (Polynomial.evalRingHom q))
++    ((sourceQ r).map (Polynomial.evalRingHom q)) hdegP hdegQ (by decide)
++  have heval := congrArg (fun f : Polynomial ℝ => f.eval p) he
++  simp only [Polynomial.eval_add, Polynomial.eval_mul, hpval, hqval,
++    zero_mul, zero_add, Polynomial.eval_C] at heval
++  change (sourceProjection r).eval q = 0
++  rw [← sourceProjection_specialization r q]
++  exact heval.symm
++
++/-- Conditional semantic assembly only. The actual arithmetic/source
++certificate modules must discharge hsource before the fixed-r theorem is
++reported as closed. No algebraicity assumption is imposed on r,p,q. -/
++theorem strictSourceCriticalSet_finite_of_slice_coprime {r : ℝ} (hr : 0 < r)
++    (hsource : sourceSliceCoprime r 3 ∨ sourceSliceCoprime r 5) :
++    (strictSourceCriticalSet r).Finite := by
++  classical
++  have hT := Polynomial.finite_setOfPred_isRoot
++    (sourceProjection_ne_zero_of_slice_coprime hr hsource)
++  have himage : (Prod.snd '' strictSourceCriticalSet r).Finite := by
++    apply hT.subset
++    rintro q ⟨⟨p,q'⟩,hpq,heq⟩
++    have heq' : q' = q := heq
++    subst q'
++    exact strict_source_critical_projection_root hpq
++  apply Set.Finite.of_finite_fibers Prod.snd himage
++  intro q hqimage
++  obtain ⟨pq,hpq,heq⟩ := hqimage
++  have hq0 : 0 < q := by
++    rw [← heq]
++    exact hpq.2.2.1
++  have hq1 : q < 1 := by
++    rw [← heq]
++    exact hpq.2.2.2.1
++  have hpNonzero := AllResidue.normal_probability_polynomial_ne_zero hr hq0 hq1
++  have hproots := Polynomial.finite_setOfPred_isRoot hpNonzero
++  apply (hproots.image (fun p : ℝ => (p,q))).subset
++  rintro ⟨p,q'⟩ ⟨hmem,hfiber⟩
++  have hqq : q' = q := hfiber
++  subst q'
++  refine ⟨p, ?_, rfl⟩
++  change (AllResidue.criticalProbabilityPolynomial (AllResidue.normalWeight r)
++    AllResidue.capSevenExponent q).eval p = 0
++  rw [AllResidue.critical_probability_eval]
++  exact (AllResidue.p_response_zero_iff (AllResidue.normalWeight r)
++    AllResidue.capSevenExponent hmem.1 hmem.2.1 hmem.2.2.1).mp hmem.2.2.2.2.1
++
+ #print axioms sourceQ0_root_one
+ #print axioms sourceQ_factorization
++#print axioms sourceQ_map
++#print axioms source_padded_resultant_ne_zero
++#print axioms strict_source_critical_projection_root
++#print axioms strictSourceCriticalSet_finite_of_slice_coprime
+ end GProgram.G3.CriticalCertificates
