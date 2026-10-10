@@ -1,0 +1,28 @@
+[package]
+name = "research-commons-calendar-cli"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+description = "Supplied-calendar entrypoint into the preserved exact source libraries"
+
+[lib]
+name = "calendar_cli"
+path = "src/lib.rs"
+
+[[bin]]
+name = "calendar-solver"
+path = "src/main.rs"
+
+[[bin]]
+name = "source-fit-solver"
+path = "src/source_fit_main.rs"
+
+[dependencies]
+research-commons-parity-solver = { path = ".." }
+num-bigint = "=0.4.6"
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = { version = "=1.0.145", features = ["raw_value"] }
+
+[profile.release]
+overflow-checks = true
