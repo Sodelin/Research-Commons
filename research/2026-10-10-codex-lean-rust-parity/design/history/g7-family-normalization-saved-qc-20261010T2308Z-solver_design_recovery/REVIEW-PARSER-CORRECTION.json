@@ -1,0 +1,12 @@
+{
+  "schema": "family_saved_review_parser_correction_v1",
+  "contributor": "Codex / solver_design_recovery",
+  "observed_utc": "2026-10-10T23:10:00Z",
+  "failed_receipt": "FAMILY-SAVED-QC-ATTEMPT1.json",
+  "failed_receipt_sha256": "73bc16ad7c982967f775cc2009ea16f9716eb04562e098f09cc0a519dd0b1257",
+  "preserved_reviewer_v1": "versions/2b5ca708fa4c979499c9156435c5f7cc9d54039f437745839c4d829fa28e1a66.py",
+  "diagnosis": "The four protected Mathlib sources use public import; the independent inspection parser recognized only import and reported zero imports for those four. All 168 executable project-module import lists already matched.",
+  "correction": "Recognize both import and public import in the independent saved-source parser.",
+  "Lean_or_target_sources_or_evidence_changed": false,
+  "compiler_helper_evaluator_adapter_native_processes_started": 0
+}

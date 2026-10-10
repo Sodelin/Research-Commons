@@ -1,0 +1,13 @@
+--- 0eed/source_fit_reference.py
++++ derivative/source_fit_reference.py
+@@ -572,8 +572,8 @@
+ 
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument("--request", required=True)
+-    parser.add_argument("--certificate", required=True)
++    parser.add_argument("--request", type=Path, required=True)
++    parser.add_argument("--certificate", type=Path, required=True)
+     parser.add_argument("--exit-code", type=int, choices=(0, 1, 2))
+     args = parser.parse_args()
+     try:

@@ -33,6 +33,13 @@ def main():
         "rust/native_component.py", "rust/Cargo.toml", "rust/Cargo.lock",
         "rust/INHERITED-SOURCES.json", "rust/COMPONENT-PINS.json",
         "design/certificate_check.py", "design/CONTRACT.md",
+        "rust/native_source_fit_component.py", "design/source_fit_reference.py",
+        "design/source_fit_reference_v2.py",
+        "rust/fitted_source_request.py",
+        "design/FITTER-WITNESS-TRANSPORT-20261010T2240Z.md",
+        "design/FITTER-WITNESS-TRANSPORT-CORRECTION-20261010T2241Z.md",
+        "design/SOURCE-FIT-REFERENCE-CONTRACT-20261010T2223Z.md",
+        "rust/notes/SOURCE-FIT-COMPONENT-REFERENCE-CONTRACT-20261010T2228Z.md",
         "rust/native_chart_component.py", "design/chart_check.py", "design/CHART-CONTRACT.md",
         "rust/native_law_component.py", "rust/law_component_requirements.txt",
         "design/law_check.py", "design/LAW-CONTRACT.md",
@@ -49,9 +56,11 @@ def main():
     files.update((PACKET / "rust/src").glob("*.rs"))
     files.update((PACKET / "rust/calendar-cli/src").glob("*.rs"))
     files.update((PACKET / "rust/calendar-cli/tests").glob("*.rs"))
+    files.update((PACKET / "rust/fixtures/source-fit").glob("*.json"))
+    files.add(PACKET / "design/fixtures/source-fit-reference-four-copy-fork.request.json")
     pins = {
         "schema": "application_derivative_byte_pins_v1",
-        "scope": "Current finite-cell, genealogy-law and supplied-calendar launcher derivative with runtime/reference sources",
+        "scope": "Current finite-cell, genealogy-law, supplied-calendar and supplied-fit bank/rooted-readout launcher derivative with runtime/reference sources",
         "inherited_manifest": identity(PREVIOUS),
         "inherited_derivatives": [
             {"path": row["path"], "previous_sha256": row["sha256"]}
@@ -74,7 +83,7 @@ def main():
     if prior_path.exists():
         prior = json.loads(prior_path.read_text())
         for key in ("private_word_completion_source_refresh", "private_calendar_source_refresh",
-                    "application_calendar_integration"):
+                    "application_calendar_integration", "application_source_fit_integration"):
             if key in prior:
                 pins[key] = prior[key]
     (PACKET / "APPLICATION-DERIVATIVE-PINS.json").write_text(

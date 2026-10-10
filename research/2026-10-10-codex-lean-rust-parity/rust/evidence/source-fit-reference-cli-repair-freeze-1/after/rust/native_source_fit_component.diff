@@ -1,0 +1,20 @@
+--- before/rust/native_source_fit_component.py
++++ after/rust/native_source_fit_component.py
+@@ -24,7 +24,7 @@
+ ROOT = transport.ROOT
+ SCHEMA = "rust_source_fit_component_result_v1"
+ TRANSPORT_SHA = "cbad55d031621f8e6d29ddc58d6156188c6b9344705d4612642b2423ca6aea3c"
+-REFERENCE_HELPER_SHA = "0eedff2d9ab21514e3788ae5f9310e33bd57d8ce86e4cf038bb08520ccd99fc6"
++REFERENCE_HELPER_SHA = "ca7f78096a55a962573cdd5490cc9609f9462035f6e7ca864d1eb050ef46dfbb"
+ BASELINE_SHA = "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7"
+ BACKEND_REQUIREMENTS = {"sympy": "1.14.0", "mpmath": "1.3.0"}
+ INHERITED_PINS = [
+@@ -150,7 +150,7 @@
+     specs = [
+         ("certificate_check", HERE.parent / "design/certificate_check.py", transport.EXPECTED_FRACTION_HELPER_SHA),
+         ("chart_check", HERE.parent / "design/chart_check.py", transport.EXPECTED_CHART_FRACTION_HELPER_SHA),
+-        ("pinned_source_fit_reference", HERE.parent / "design/source_fit_reference.py", REFERENCE_HELPER_SHA),
++        ("pinned_source_fit_reference", HERE.parent / "design/source_fit_reference_v2.py", REFERENCE_HELPER_SHA),
+         ("pinned_oct1_law_compiler", ROOT / INHERITED_PINS[2][0], BASELINE_SHA),
+     ]
+     captured = component / "reference-sources"

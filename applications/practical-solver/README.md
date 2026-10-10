@@ -32,6 +32,71 @@ python3 -B applications/practical-solver/run.py run --example unsupported --outp
 Output directories must be absent. Reusing a path is refused to preserve
 previous results. Paths shown here are examples; use new names for later runs.
 
+## Supplied exact fit and shared-bank readout
+
+The `source-fit-bank` command checks an exact rational assignment against a
+supplied sparse equation trace and binds it to one original graph, occurrence
+registry and physical parameter bank. `source-fit-readout` uses that same bank
+to evaluate the natural, completed rooted genealogy distribution:
+
+```sh
+python3 -B applications/practical-solver/run.py source-fit-bank --request research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-sat.request.json --native-binary /path/to/source-fit-solver --output /tmp/source-fit-bank-new
+python3 -B applications/practical-solver/run.py source-fit-readout --request research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-sat.request.json --native-binary /path/to/source-fit-solver --output /tmp/source-fit-readout-new
+```
+
+Build `source-fit-solver` from the packet's `rust/calendar-cli/Cargo.toml` using
+the locked Cargo dependencies. Add `--expected-binary-sha256` with a trusted
+build digest to require that exact executable. Each fresh output preserves the
+request, parameter-bank response, full rooted polynomial/probability table,
+actual native replay receipt and report. The parent occurrence order stays
+fixed: the older fitter's parent-zero probability becomes `1 - gamma` in the
+original source convention.
+
+Positive rates remain exact logarithmic expressions. Calendar subdivisions
+share the same original edge-survival atom; the bridge never rounds those rates
+into the rational-calendar input format. The rooted readout first combines all
+terms for its declared observer, then checks whether the remaining powers can
+be evaluated exactly. Unsupported algebraic roots or residual fractional powers
+return **UNSUPPORTED**; exhausted budgets return **UNKNOWN**.
+
+This branch consumes a supplied fit. Checking its equations does not establish
+that they came from admitted observations or an exhaustive source search.
+The public readout is rooted and unranked; it does not emit merger ages or a
+full evaluated register law. Native replay uses the same implementation and is
+identified separately from an independent coefficient check. Existing source
+admission, observation, confidence and whole-solver verification gates remain
+explicit in `RESULT.json`.
+
+For an independent comparison of every rooted polynomial coefficient and exact
+probability, add `--reference-python /path/to/prepared/python` to
+`source-fit-readout`. That environment needs SymPy 1.14.0 and mpmath 1.3.0.
+The checker reuses the preserved October 1 law compiler in an isolated child;
+requesting it requires an actual passing check before a successful rooted result
+is released. Budget and unsupported outcomes remain explicitly incomplete.
+
+To reuse a saved positive witness from the existing exact source fitter, export
+its explicitly selected panel into this request format first:
+
+```sh
+python3 -B research/2026-10-10-codex-lean-rust-parity/rust/fitted_source_request.py --fit-result /path/to/BACKEND-RESULT.json --row-index 0 --output /tmp/fit-export-new
+python3 -B applications/practical-solver/run.py source-fit-readout --request /tmp/fit-export-new/SOURCE-FIT-REQUEST.json --native-binary /path/to/source-fit-solver --reference-python /path/to/prepared/python --output /tmp/fit-readout-new
+```
+
+The export preserves the exact backend bytes and all original experiment rows,
+actions and shared equations in `BACKEND-RESULT.json` and `ORIGIN.json`.
+Selecting a panel chooses its copy mapping; it does not discard the other
+constraints. The supported native readout has at most four selected copies.
+Its output is the natural completed rooted law. A panel with interventions or
+a different observer is explicitly recorded as a counterfactual natural
+readout; it is not a reproduction of that panel's experiment. Algebraic root
+descriptors remain exact and return UNSUPPORTED for native evaluation.
+
+The tested connection reuses two actual saved fitter witnesses and preserves
+their full traces. The subsequent application/native/reference pipeline and
+34 transport controls pass; [saved evidence](../../research/2026-10-10-codex-lean-rust-parity/rust/evidence/source-fit-fitted-transport-20261010T230001.714430Z-TRANSPORT34-PIPELINE-PASS/transport/review/RECEIPT.json)
+records that bounded scope. Exporting a witness does not establish the source
+or observation provenance, scientific admission or exhaustive source search.
+
 ## Conditional count and exact source backend
 
 Use the same launcher to consume the reviewed count arithmetic or invoke the

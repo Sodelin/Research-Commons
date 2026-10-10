@@ -1,0 +1,223 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g7_family_normalization_20261010_v3.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g6_parallel_arm_transport_20261010.py
+@@ -1,8 +1,8 @@
+ #!/usr/bin/env python3
+-"""Freeze one new family consumer over the accepted 1504 exact local context.
++"""Freeze one new parallel-arm transport consumer over the accepted 1504 exact local context.
+ 
+ Contributor: Codex / lean_integration_successor, 2026-10-10.
+-Only the minimal168 proof target is executable; four protected namespace provider records are additionally staged. This script never runs Lean.
++Only the minimal117 proof target is executable; four protected namespace provider records are additionally staged. This script never runs Lean.
+ The original strict builder, namespace providers, flags and caps are retained.
+ """
+ from __future__ import annotations
+@@ -20,8 +20,9 @@
+ from check_core import save, sha
+ 
+ ROOT = Path(__file__).resolve().parents[1]
++REPOSITORY = ROOT.parents[2]
+ PARENT = Path('/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z')
+-FREEZE = ROOT / 'proposals/reuse-integration-20261010T2138Z/family-normalization/PROPOSAL-FREEZE.json'
++FREEZE = ROOT / 'proposals/reuse-integration-20261010T2138Z/parallel-arm-transport/PROPOSAL-FREEZE.json'
+ CORE = '13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc'
+ AUDIT = 'f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a'
+ OVERLAY = '09b24ef22790f14e0fa7bc3ae6b0a9c2b1fe8d2d9cbfdfae5333b0dd566536c0'
+@@ -63,17 +64,19 @@
+ 
+ def main():
+     proposal = json.loads(FREEZE.read_bytes())
+-    assert sha(FREEZE) == 'b36eb33a1a0a857928c04b6d5b5c95699d231d6913ca1fb532f8dfe6c56d87e5'
+-    for key in ['accepted_parent_certificate', 'independent_parent_QC']:
+-        assert sha(Path(proposal[key]['path'])) == proposal[key]['sha256']
++    assert sha(FREEZE) == '73e28655aa7277e838c37bf84e56bfe275e5fc592ddc137baa6ce66c99cdb24b'
++    accepted = proposal['accepted_provider_context']
++    for key in ['certificate', 'root_qc']:
++        assert sha(REPOSITORY / accepted[key]) == accepted[key + '_sha256']
+     graph_path = PARENT / 'DEPENDENCY-GRAPH.json'
+     parent_graph = json.loads(graph_path.read_bytes())
+     parent = parent_graph['targets']['current/connected']
+     parent_prep = json.loads((PARENT / 'PREPARATION.json').read_bytes())
+     parent_plan = json.loads((PARENT / 'RESOURCE-AND-RUN-PLAN.json').read_bytes())
+     assert len(parent['modules']) == 1504
+-    pins = proposal['literal_import_closure']['source_pins']
+-    assert len(pins) == 167 and len({r['module'] for r in pins}) == 167
++    pins = [{**r, 'source_path': str(REPOSITORY / r['accepted_source'])}
++            for r in accepted['providers']]
++    assert len(pins) == 116 and len({r['module'] for r in pins}) == 116
+     modules = {}
+     for row in pins:
+         module = row['module']
+@@ -81,12 +84,13 @@
+         assert (original['sha256'], original['imports']) == (row['sha256'], row['imports'])
+         assert sha(Path(row['source_path'])) == row['sha256']
+         modules[module] = original
+-    source = Path(proposal['immutable_source_path'])
+-    assert sha(source) == proposal['sha256'] == '81dcd9983e73eecd5f59caac14ee6231825fdd9ae25dd9cf64bafbc06b6f2f08'
+-    module = proposal['module']
++    source_pin = proposal['source']
++    source = REPOSITORY / source_pin['immutable_version']
++    assert sha(source) == sha(REPOSITORY / source_pin['path']) == source_pin['sha256'] == 'f40a0d66db43984f05ca250dc1d4e9e79372141a498732414d8acde11162d6dc'
++    module = source_pin['module']
+     imports = re.findall(r'^(?:public\s+)?import\s+([A-Za-z_][A-Za-z0-9_.]*)', source.read_text(), re.M)
+-    assert imports == proposal['imports']
+-    fresh = {module: {'module': module, 'sha256': proposal['sha256'], 'imports': imports}}
++    assert imports == source_pin['imports']
++    fresh = {module: {'module': module, 'sha256': source_pin['sha256'], 'imports': imports}}
+     modules.update(fresh)
+     order, seen, active = [], set(), set()
+ 
+@@ -105,9 +109,9 @@
+         order.append(name)
+ 
+     visit(module)
+-    assert len(order) == len(modules) == 168
+-    assert order[:-1] == proposal['literal_import_closure']['order']
+-    label = 'extraction/g7-original-family-calendar-normalization'
++    assert len(order) == len(modules) == 117
++    assert order[:-1] == [r['module'] for r in pins]
++    label = proposal['intended_target']['suggested_target']
+     target = {'roots': [module], 'order': order, 'modules': {n: modules[n] for n in order},
+               'required_for_accepted_release': False, 'status': 'UNCOMPILED_EXACT_PROOF_EXTENSION'}
+     protected = {n: r for n,r in parent['modules'].items() if n.startswith('Mathlib.')}
+@@ -117,10 +121,11 @@
+     guards = {'roots': guard_order, 'order': guard_order, 'modules': protected,
+         'required_for_accepted_release': False, 'status': 'PROTECTED_NAMESPACE_CONTEXT_ONLY_NOT_EXECUTED'}
+     graph = {'targets': {label: target, 'context/protected-mathlib-providers': guards},
+-        'scope': '168-module executable family root plus four exact accepted protected namespace providers. Overall staging graph172; provider context is not requested for execution or claimed as a new proof root.'}
++        'scope': '117-module executable parallel-arm transport root plus four exact accepted protected namespace providers. Overall staging graph121; provider context is not requested for execution or claimed as a new proof root.'}
+     staging_order = order + guard_order
+     roots = list(parent_plan['allocation_roots'])
+-    roots += [str(p) for p in sorted(Path('/dev/shm').glob('rc-lean-g7-family-normalization-*')) if p.is_dir()]
++    roots += [str(p) for pattern in ['rc-lean-g7-family-normalization-*', 'rc-lean-g6-parallel-arm-transport-*']
++              for p in sorted(Path('/dev/shm').glob(pattern)) if p.is_dir()]
+     roots = list(dict.fromkeys(roots))
+     existing = allocated(roots)
+     reserves = {'fresh_component_and_companion_cache': 64 * 2**20,
+@@ -131,7 +136,7 @@
+     assert bound < 2**31 - 128 * 2**20
+     assert shutil.disk_usage('/dev/shm').free > sum(reserves.values())
+     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
+-    work = Path('/dev/shm') / ('rc-lean-g7-family-normalization-' + stamp)
++    work = Path('/dev/shm') / ('rc-lean-g6-parallel-arm-transport-' + stamp)
+     evidence = work / 'evidence/preparation'
+     evidence.mkdir(parents=True)
+     (work / 'scripts').mkdir()
+@@ -164,7 +169,7 @@
+             'source_path': str(work / 'source-store' / (rec['source_sha256'] + '.lean')),
+             'cache_entry': str(entry), 'cache_key': entry.name, 'receipt_sha256': sha(receipt),
+             'cached_object': rec['cached_object'], 'object_artifacts': rec['object_artifacts']}
+-    assert len(cache_by_module) == 171 and set(cache_by_module) == set(modules) - {module}
++    assert len(cache_by_module) == 120 and set(cache_by_module) == set(modules) - {module}
+     selected = [cache_by_module[n] for n in staging_order if n != module]
+     save(work / 'SELECTED-CACHE-IDENTITIES.json', selected)
+     wrappers = PARENT / parent_prep['cache_install_transport_derivation']['evidence']
+@@ -184,7 +189,7 @@
+     before = '    assert len(identities) == len(selected)\n    assert {row["module"] for row in identities} == set(selected)'
+     after = '''    fresh = json.loads((destination / 'FRESH-SOURCES.json').read_bytes())
+     warm = {row['module'] for row in identities}
+-    assert len(selected) == 172 and len(identities) == len(warm) == 171 and len(fresh) == 1
++    assert len(selected) == 121 and len(identities) == len(warm) == 120 and len(fresh) == 1
+     assert warm == set(selected) - set(fresh)
+     assert all(selected[m] == row for m, row in fresh.items())'''
+     assert seeder.count(before) == 1
+@@ -193,48 +198,52 @@
+     before = '    assert len(selected) == len(owned) and {r["module"] for r in selected} == set(owned)'
+     after = '''    fresh = json.loads((work / 'FRESH-SOURCES.json').read_bytes())
+     warm = {r['module'] for r in selected}
+-    assert len(owned) == 172 and len(selected) == len(warm) == 171 and len(fresh) == 1
++    assert len(owned) == 121 and len(selected) == len(warm) == 120 and len(fresh) == 1
+     assert warm == set(owned) - set(fresh)
+     assert all(owned[m] == row for m, row in fresh.items())'''
+     assert installer.count(before) == 1
+-    installer = installer.replace(before, after).replace('CACHE-INSTALL-TRANSPORT-HISTORY-1497-DERIVATION.json', 'CACHE-INSTALL-TRANSPORT-G7-FAMILY168-DERIVATION.json')
++    installer = installer.replace(before, after).replace('CACHE-INSTALL-TRANSPORT-HISTORY-1497-DERIVATION.json', 'CACHE-INSTALL-TRANSPORT-G6-PARALLEL117-DERIVATION.json')
+     guard_original = ROOT / 'scripts/guard_g7_survival_run_20261010_v2.py'
+     assert sha(guard_original) == GUARD
+     guard = guard_original.read_text()
+     before = "choices=['primary', 'secondary', 'union1503', 'union1504']"
+     assert guard.count(before) == 1
+-    guard = guard.replace(before, "choices=['family']")
+-    for name, text in [('seed_g7_family_cache.py', seeder), ('prepare_g7_family_install.py', installer), ('guard_g7_family_normalization_20261010.py', guard)]:
++    guard = guard.replace(before, "choices=['parallel']")
++    for name, text in [('seed_g6_parallel_cache.py', seeder), ('prepare_g6_parallel_install.py', installer), ('guard_g6_parallel_arm_transport_20261010.py', guard)]:
+         compile(text, name, 'exec')
+         (work / 'scripts' / name).write_text(text)
+     budget = {'prior1497_and_all_G7_contexts_distinct_inode_allocated_bytes': existing,
+         'new_allocation_reserves': reserves, 'planned_combined_allocation_bound_bytes': bound,
+         'combined_scratch_limit_bytes': 2**31, 'abort_at_bytes_with_transient_headroom': 2**31 - 128 * 2**20,
+         'memory_nonreclaimable_abort_bytes': 15 * 2**30, 'monitor_poll_seconds': 0.5,
+-        'packet_export_policy': 'Measure exact lossless gzip allocation before writing; existing parent sources remain referenced by immutable distributed path/hash, raw audit stays fixed in shmem; no ELF or duplicate object export.'}
+-    derivation = {'status': 'PRE_USE_MINIMAL_FAMILY168_LOCATION_AND_TRANSPORT_DERIVATION',
++        'packet_export_policy': 'Pre-stage exact lossless gzip/text evidence in the fixed new shmem context. Copy to the packet only when measured portable bytes plus8MiB reserve fit live overlay capacity; otherwise retain the complete fixed shmem export and save a small explicit distribution manifest, without silent omission. Parent sources are linked by existing immutable distributed paths/hashes; raw audits remain fixed shmem originals. No ELF, objects or duplicate parent source export.',
++        'overlay_free_bytes_at_preparation': shutil.disk_usage(str(ROOT)).free,
++        'packet_export_transient_reserve_bytes': 8 * 2**20,
++        'prospective_overlay_portable_byte_ceiling': max(0, shutil.disk_usage(str(ROOT)).free - 8 * 2**20)}
++    derivation = {'status': 'PRE_USE_MINIMAL_PARALLEL117_LOCATION_AND_TRANSPORT_DERIVATION',
+         'preparer_sha256': sha(Path(__file__)), 'parent_workspace': str(PARENT),
+         'parent_graph_sha256': sha(graph_path), 'parent_preparation_sha256': sha(PARENT / 'PREPARATION.json'),
+-        'parent_certificate': proposal['accepted_parent_certificate'], 'parent_QC': proposal['independent_parent_QC'],
++        'parent_certificate': {'path': str(REPOSITORY / accepted['certificate']), 'sha256': accepted['certificate_sha256']},
++        'parent_QC': {'path': str(REPOSITORY / accepted['root_qc']), 'sha256': accepted['root_qc_sha256']},
+         'proposal_freeze_path': str(FREEZE), 'proposal_freeze_sha256': sha(FREEZE),
+-        'source_partition': {'executable_accepted_parent_modules': 167, 'protected_provider_records': protected, 'staged_warm': 171, 'fresh_modules': fresh, 'executed_total': 168, 'guard_complete_staging_graph': 172},
+-        'preserved_preflight_failure_workspace': '/dev/shm/rc-lean-g7-family-normalization-20261010T225713.818482Z',
+-        'preflight_repair': 'Retain all four required accepted Mathlib guard records in a nonexecuted provider context; no source, wrapper assertion, core, audit, flags or cap changes.',
++        'source_partition': {'executable_accepted_parent_modules': 116, 'protected_provider_records': protected, 'staged_warm': 120, 'fresh_modules': fresh, 'executed_total': 117, 'guard_complete_staging_graph': 121},
++        'guard_complete_context_policy': 'Retain all four required accepted Mathlib provider records in a nonexecuted provider context from the beginning. Exact accepted Family-v3 namespace staging precedent; no guard omission or wrapper/core/assertion relaxation.',
++        'preparer_derivation_base': {'path': str(ROOT / 'scripts/prepare_g7_family_normalization_20261010_v3.py'), 'sha256': '362fb7c8b0757328717ce55d4914b61304d96999997c04a570a82ad5dd6d9347'},
+         'original_seeder_path': str(seeder_original), 'original_seeder_sha256': sha(seeder_original),
+-        'derived_seeder_sha256': sha(work / 'scripts/seed_g7_family_cache.py'),
++        'derived_seeder_sha256': sha(work / 'scripts/seed_g6_parallel_cache.py'),
+         'original_install_preparer_path': str(installer_original), 'original_install_preparer_sha256': sha(installer_original),
+-        'derived_install_preparer_sha256': sha(work / 'scripts/prepare_g7_family_install.py'),
++        'derived_install_preparer_sha256': sha(work / 'scripts/prepare_g6_parallel_install.py'),
+         'original_guard_path': str(guard_original), 'original_guard_sha256': GUARD,
+-        'derived_guard_sha256': sha(work / 'scripts/guard_g7_family_normalization_20261010.py'),
+-        'guard_derivation': 'Replace only four prior phase labels with family. All prelaunch pins, cleanup, final gates, memory/storage thresholds and child grouping are unchanged.',
+-        'transport_derivation': 'Only exact coverage assertions change to 171 authenticated warm (167 executable + four protected providers) + one pinned fresh; installer metadata filename changes. Existing cache admission, install, copy/hash policy and original receipts remain unchanged.',
++        'derived_guard_sha256': sha(work / 'scripts/guard_g6_parallel_arm_transport_20261010.py'),
++        'guard_derivation': 'Replace only four prior phase labels with parallel. All prelaunch pins, cleanup, final gates, memory/storage thresholds and child grouping are unchanged.',
++        'transport_derivation': 'Only exact coverage assertions change to 120 authenticated warm (116 executable + four protected providers) + one pinned fresh; installer metadata filename changes. Existing cache admission, install, copy/hash policy and original receipts remain unchanged.',
+         'budget': budget, 'original_sources_receipts_native_or_accepted_evidence_written': False,
+         'compiler_flags_caps_core_mathlib_guards_audit_changed': False, 'compiler_launched': False}
+-    prep = {'status': 'PREPARED_UNCOMPILED_G7_FAMILY_NORMALIZATION168', 'workspace': str(work), 'evidence': str(evidence),
+-        'targets': [label, 'context/protected-mathlib-providers'], 'requested_targets': [label], 'executed_modules': 168, 'staging_modules': 172, 'graph_sha256': sha(work / 'DEPENDENCY-GRAPH.json'),
++    prep = {'status': 'PREPARED_UNCOMPILED_G6_PARALLEL_ARM_TRANSPORT117', 'workspace': str(work), 'evidence': str(evidence),
++        'targets': [label, 'context/protected-mathlib-providers'], 'requested_targets': [label], 'executed_modules': 117, 'staging_modules': 121, 'graph_sha256': sha(work / 'DEPENDENCY-GRAPH.json'),
+         'contexts': [{'workspace': str(PARENT), 'target': 'current/connected', 'graph_sha256': sha(graph_path),
+-                      'selected_modules': 171, 'provenance': '167 exact executable parent components plus four protected namespace provider records from accepted1504; no new target acceptance is copied.'}],
+-        'derivatives': [{'module': module, 'source': str(source), 'source_sha256': proposal['sha256'], 'replaces_original_sha256': None}],
++                      'selected_modules': 120, 'provenance': '116 exact executable parent components plus four protected namespace provider records from accepted1504; no new target acceptance is copied.'}],
++        'derivatives': [{'module': module, 'source': str(source), 'source_sha256': source_pin['sha256'], 'replaces_original_sha256': None}],
+         'source_versions_and_literal_imports_pinned': True, 'source_pins': {n: r['sha256'] for n,r in modules.items()},
+         'builder_sha256': CORE, 'audit_template_sha256': AUDIT, 'official_complete_mathlib_namespace_overlay': True,
+         'namespace_overlay_wrapper_sha256': OVERLAY, 'optimized_overlay_sha256': AUTH,
+@@ -244,23 +253,23 @@
+     save(evidence / 'PREPARATION.json', prep)
+     save(work / 'LOCATION-AND-COMPOSITION-DERIVATION.json', derivation)
+     selection = str(work / 'SELECTED-CACHE-IDENTITIES.json')
+-    for script in ['seed_g7_family_cache.py', 'prepare_g7_family_install.py']:
++    for script in ['seed_g6_parallel_cache.py', 'prepare_g6_parallel_install.py']:
+         subprocess.run([sys.executable, str(work / 'scripts' / script), str(work), '--selection-manifest', selection], check=True)
+     plan = {'status': 'READY_FOR_ROOT_PLAN_REVIEW_NO_COMPILER_LAUNCHED', 'workspace': str(work),
+         'graph_sha256': sha(work / 'DEPENDENCY-GRAPH.json'), 'preparation_sha256': sha(work / 'PREPARATION.json'),
+-        'monitor_sha256': sha(work / 'scripts/guard_g7_family_normalization_20261010.py'),
+-        'monitor_path': str(work / 'scripts/guard_g7_family_normalization_20261010.py'),
++        'monitor_sha256': sha(work / 'scripts/guard_g6_parallel_arm_transport_20261010.py'),
++        'monitor_path': str(work / 'scripts/guard_g6_parallel_arm_transport_20261010.py'),
+         'python': sys.executable, 'launcher': str(ROOT / 'scripts/run_proof_extensions.py'),
+         'launcher_sha256': sha(ROOT / 'scripts/run_proof_extensions.py'),
+         'lean_bin': '/workspace/toolchains/lean-4.33.1-linux/bin', 'mathlib': '/workspace/dependencies/mathlib4',
+-        'phases': {'family': {'target': label, 'requires': []}}, 'allocation_roots': [*roots, str(work)],
++        'phases': {'parallel': {'target': label, 'requires': []}}, 'allocation_roots': [*roots, str(work)],
+         'scratch_abort_bytes': 2**31 - 128 * 2**20, 'scratch_hard_limit_bytes': 2**31,
+         'memory_abort_bytes': 15 * 2**30, 'budget': budget, 'compiler_launched': False,
+         'normal_compiler_caps': 'Unchanged original4GiB/180s; -j1 -t0 -Ddebug.skipKernelTC=false',
+         'preservation': budget['packet_export_policy']}
+     save(work / 'RESOURCE-AND-RUN-PLAN.json', plan)
+     shutil.copyfile(Path(__file__), evidence / 'PREPARER.py')
+-    packet = ROOT / ('G7-FAMILY-NORMALIZATION-PREPARATION-' + stamp + '.json')
++    packet = ROOT / ('G6-PARALLEL-ARM-TRANSPORT-PREPARATION-' + stamp + '.json')
+     save(packet, {'status': plan['status'], 'workspace': str(work), 'evidence': str(evidence),
+         'plan_path': str(work / 'RESOURCE-AND-RUN-PLAN.json'), 'plan_sha256': sha(work / 'RESOURCE-AND-RUN-PLAN.json'),
+         'preparer_sha256': sha(Path(__file__)), 'graph_sha256': plan['graph_sha256'],

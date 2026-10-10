@@ -518,6 +518,110 @@ def native_cell(args):
         'output':str(out),'report':str(out/'REPORT.html')},sort_keys=True))
     return code
 
+def source_fit(args):
+    """Bind a supplied exact fit and optionally evaluate its completed rooted law."""
+    raw,_request=read(args.request)
+    operation='bank' if args.command=='source-fit-bank' else 'readout'
+    if operation=='bank' and args.reference_python:
+        raise InputError('The independent rooted coefficient checker applies to source-fit-readout')
+    module=ROOT/'research/2026-10-10-codex-lean-rust-parity/rust/native_source_fit_component.py'
+    if module.is_symlink() or not module.is_file():
+        raise SourceError('The supplied-fit component is absent or not a regular file')
+    out=create_output(args.output)
+    flags=('certificate_valid','source_admission_verified','source_observation_fit_verified',
+        'source_provenance_verified','timed_readout_verified','full_code_evaluated',
+        'universal_native_refinement_verified','full_solver_verified',
+        'source_witness_certified','unrestricted_exclusion_certified',
+        'complete_source_registry_verified','observation_law_admission_verified',
+        'statistical_confidence_verified','physical_survival_image_verified',
+        'full_joint_calendar_law_verified')
+    result={'schema':'practical_solver_component_result_v1',
+        'execution_mode':'FRESH_COMPONENT_EXECUTION','component':args.command,
+        'component_called':False,'native_solver_called':False,'native_checker_called':False,
+        'reference_checker_called':False,'independent_all_coefficients_checked':False,
+        'native_replay_verified':False,'supplied_trace_checked':False,'rooted_law_evaluated':False,
+        'original_nine_parameter_producer_called':False,'request_bytes_sha256':sha(raw),
+        'launcher_sha256':sha(Path(__file__).read_bytes()),
+        'component_source_sha256':sha(module.read_bytes()),
+        **dict.fromkeys(flags,False),'statistical_coverage_verified':False,
+        'parameter_accuracy_released':False,'whole_application_lean_verified':False,
+        'started_utc':datetime.now(timezone.utc).isoformat()}
+    staged_request=out/'REQUEST.json'
+    with staged_request.open('xb') as stream:stream.write(raw)
+    command=[sys.executable,'-B',str(module),'--operation',operation,
+        '--request',str(staged_request),'--output',str(out/'component'),
+        '--binary',str(args.native_binary.absolute())]
+    if args.expected_binary_sha256:
+        command+=['--expected-binary-sha256',args.expected_binary_sha256]
+    if args.reference_python:
+        command+=['--reference-python',str(args.reference_python.absolute())]
+    def launched():
+        result.update(component_called=True,native_solver_called=None,
+            native_checker_called=None,reference_checker_called=None)
+    code=1
+    try:
+        receipt=execute(out,args.command,command,on_launch=launched,accepted_exit_codes=(0,1,2))
+        result['execution']=receipt;code=receipt['exit_code']
+        _,child=read(out/'component/RESULT.json',16*2**20,exact=False)
+        if child.get('schema')!='rust_source_fit_component_result_v1' or child.get('operation')!=operation.upper():
+            raise SourceError('Unexpected supplied-fit component schema or operation')
+        if staged_request.read_bytes()!=raw:
+            raise SourceError('Supplied-fit request snapshot changed during execution')
+        if child.get('status')!='REFUSED_REQUEST' or 'request_sha256' in child:
+            if child.get('request_sha256')!=sha(raw):
+                raise SourceError('Supplied-fit component does not bind the launcher request')
+        for name in flags:
+            if child.get(name) is not False:
+                raise SourceError('Supplied-fit component does not establish '+name)
+        for name in ('solver_called','checker_called','reference_checker_called',
+                'independent_all_coefficients_checked','native_replay_verified',
+                'supplied_trace_checked','rooted_law_evaluated'):
+            if type(child.get(name)) is not bool:
+                raise SourceError('Missing supplied-fit execution evidence: '+name)
+        result.update(native_solver_called=child['solver_called'],native_checker_called=child['checker_called'],
+            reference_checker_called=child['reference_checker_called'],component_result=child)
+        expected={'SUPPLIED_FIT_BANK':0,'SUPPLIED_FIT_ROOTED_LAW':0,'UNKNOWN':2,'UNSUPPORTED':2,
+            'REFUSED_REQUEST':1,'RESOURCE_OR_EXECUTION_FAILURE':1}
+        status=child.get('status')
+        if status not in expected or code!=expected[status] or child.get('exit_code')!=code:
+            raise SourceError('Supplied-fit component status and exit receipt disagree')
+        if status in ('SUPPLIED_FIT_BANK','SUPPLIED_FIT_ROOTED_LAW'):
+            for name in ('solver_called','checker_called','native_replay_verified',
+                    'supplied_trace_checked','source_identity_recheck_stable','staged_identity_recheck_stable',
+                    'semantic_request_echo_checked'):
+                if child.get(name) is not True:
+                    raise SourceError('Missing checked supplied-fit evidence: '+name)
+            if (status=='SUPPLIED_FIT_ROOTED_LAW')!=(operation=='readout'):
+                raise SourceError('Supplied-fit result does not match the selected operation')
+            if child['rooted_law_evaluated']!=(operation=='readout'):
+                raise SourceError('Supplied-fit result changes the selected observer')
+        if child['independent_all_coefficients_checked'] and not child['reference_checker_called']:
+            raise SourceError('Independent coefficient check has no process-start evidence')
+        if args.reference_python and status=='SUPPLIED_FIT_ROOTED_LAW':
+            for name in ('reference_checker_called','independent_all_coefficients_checked',
+                    'independent_probabilities_checked'):
+                if child.get(name) is not True:
+                    raise SourceError('Requested independent rooted check did not pass: '+name)
+        result['independent_probabilities_checked']=child.get('independent_probabilities_checked',False)
+        if type(result['independent_probabilities_checked']) is not bool:
+            raise SourceError('Missing independent probability-check evidence')
+        for name in ('independent_all_coefficients_checked','native_replay_verified',
+                'supplied_trace_checked','rooted_law_evaluated'):
+            result[name]=child[name]
+        result.update(status=status,explanation=child.get('scope','Supplied exact fit and shared physical bank.'))
+        if sha(module.read_bytes())!=result['component_source_sha256']:
+            raise SourceError('Supplied-fit component changed during execution')
+        result['component_source_unchanged']=True
+    except Exception as error:
+        result.update(status='RESOURCE_OR_EXECUTION_FAILURE',explanation=str(error));code=1
+    result['ended_utc']=datetime.now(timezone.utc).isoformat()
+    write(out/'RESULT.json',result)
+    component_report(out,'Supplied exact fit and shared-bank genealogy readout',result)
+    write(out/'ARTIFACTS.json',inventory(out))
+    print(json.dumps({'status':result['status'],'execution_mode':result['execution_mode'],
+        'output':str(out),'report':str(out/'REPORT.html')},sort_keys=True))
+    return code
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='command',required=True)
     fresh=sub.add_parser('run',help='Fresh producer + independent complete-journal checker + pair diagnostic')
@@ -543,10 +647,20 @@ def main():
         native.add_argument('--native-binary',type=Path,required=True)
         native.add_argument('--expected-binary-sha256',help='Optional trusted SHA256 pin for the selected executable')
         native.set_defaults(func=native_cell)
+    for name,help_text in (
+        ('source-fit-bank','Check a supplied exact equation trace and bind one symbolic physical bank'),
+        ('source-fit-readout','Evaluate the natural completed rooted genealogy law using that same bank'),
+    ):
+        fitted=sub.add_parser(name,help=help_text)
+        fitted.add_argument('--request',type=Path,required=True);fitted.add_argument('--output',type=Path)
+        fitted.add_argument('--native-binary',type=Path,required=True)
+        fitted.add_argument('--expected-binary-sha256',help='Optional trusted SHA256 pin for the selected executable')
+        fitted.add_argument('--reference-python',type=Path,help='Optional prepared Python environment for an independent rooted coefficient check')
+        fitted.set_defaults(func=source_fit)
     args=parser.parse_args()
     try:return args.func(args)
     except (InputError,SourceError,OSError,ValueError,RuntimeError) as error:
         print('ERROR: '+str(error),file=sys.stderr)
-        return 1 if args.command=='calendar-law' else 2
+        return 1 if args.command in ('calendar-law','source-fit-bank','source-fit-readout') else 2
 
 if __name__=='__main__':raise SystemExit(main())

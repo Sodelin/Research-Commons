@@ -1,0 +1,54 @@
+# Combined library and physical-bank integration review
+
+Contributor: Codex / solver_design. Dated continuation requested at 21:38 UTC, 10 October 2026. Status: **read-only source/contract review**. This contribution changes only this note and its companion JSON. No compiler, native solver, backend or accepted artifact is run or edited.
+
+The new DOT theorem can be integrated with the accepted library without solving another mathematical problem. That integration still requires an actual local build. The next practical connection is an exact representation certificate from the older source fitter to one shared physical bank; another optimizer would duplicate existing work.
+
+## Resource authority and the proposed combined check
+
+The **1 GiB scratch limit was the parent's operational budget for the dated 1497 preparation**, not a user mathematical requirement or a standing Commons rule. The sole scheduler identified the earlier instruction as “max new allocated 1 GiB,” including copied inputs, aggregate/audit outputs and transients. Its [preparation](../lean/HISTORY-ACCEPTED-UNION-1497-PREPARATION.json) and [preparer](../lean/scripts/prepare_history_accepted_union_1497.py:88) encode that budget. [AGENTS.md](../../../AGENTS.md), [Start Here](../../../START-HERE.md) and the [completion standard](../../../docs/RESEARCH-COMPLETION-STANDARD.md) contain no such storage ceiling. This finding is limited to those governing files and the identified operational instruction; it is not an audit of every historical user message.
+
+Storage allocation is separate from the [strict compiler core](../lean/scripts/build_connected.py:57): serial execution, pinned compiler/mathlib/native identities, trust zero, kernel checking, exact import companion bundles, ordinary 4 GiB/180-second component bounds and the previously qualified 6 GiB/300-second combined aggregate/audit bounds. The [resource-qualified public contract](../../../research/2026-10-10-dot-connected-modular-lake-0855z/RESOURCE-QUALIFIED-RUN-CONTRACT.md) concerns invocation memory/time and fail-closed monitoring. Its 1 GiB available-memory safety floor is **RAM observation**, not scratch authorization.
+
+The parent can approve a new, measured storage policy for an isolated 1561 run while preserving those proof checks and the historical 1497 budget. Such approval does not rewrite a failed or accepted receipt. The prior [G3 owner manifest](../lean/HISTORY-CONTEXT-COVERAGE-AUDIT-G3-OWNER-20261010T210353.534731Z.json) correctly reports that its carried-forward budget could not certify unknown compiler-output sizes. The external 2 GiB path-counted peak is neither a local output bound nor permission to reuse external objects.
+
+Before a local **1561** acceptance, the successor must preserve these gates:
+
+1. Merge the exact 64 new bodies and literal imports with all 1497 accepted entries; the six shared sources remain identical. Preserve excluded provisional profiles and separately accepted global `Main` contexts.
+2. Admit existing components only through authenticated **local** compiler/native/import-bundle identities. External projected receipts have a different native digest and deliver no compiled companions; their 9-fresh/61-reuse counts do not become local counts.
+3. Compile every locally missing component under the unchanged checks, then run a fresh combined aggregate and complete owned-declaration audit. A static collision screen or successful component alone is insufficient.
+4. Bind the actual fixed-residue endpoint in the combined audit, retain every prior declaration's module/kind/axiom/type/body metadata, report actual fresh/reuse counts, and remeasure sources, imported companions, compiler and native libraries. Preserve any failure and effective resource qualification.
+
+These are acceptance conditions, **not a report that 1561 has passed**. The companion receipt records the exact successor plan inspected, if one has been delivered before this review is frozen.
+
+The [desktop ownership checkpoint at `bb010efa`](https://github.com/Sodelin/Research-Commons/blob/bb010efab40c9d1f8d08e587b56e3b0df67bbadb/communications/2026-10-10-codex-desktop-g3-union-integration-claim.md), published at 21:41 UTC, explicitly claims only this additive replay and no union acceptance. Its isolated-checkout/dependency-authentication/publication scope is compatible. The parent paused the cloud replay before launch to avoid duplicate work. Desktop replay followed by cloud independent evidence review is the current division; this review does not establish that the desktop has received that coordination or finished the run.
+
+## What the larger library would and would not discharge
+
+| Existing obligation | Exact contribution and remaining premise |
+| --- | --- |
+| `G3-GLOBAL` | [DOT's actual fixed-residue theorem](../../../research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/README.md) removes the old certificate premise for the specific six-exponent `normalWeight r`, for every real `r > 0` and strict real `p,q`. It does not acquire that normal, enumerate transcendental solutions, bound source occurrences, or decide every unknown-size observation fibre. |
+| `G6-WHOLE-EDGE-LIFT` | The older [software construction](../../../research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py:364) already supplies a positive logarithmic rate bank. The particular [new typed lift draft](../reuse/sources/G6OriginalWholeEdgeSurvivalLift.lean) is marked pending and is absent from the accepted 1497 graph. Accepted gathering or scalar log lemmas must not be relabelled as acceptance of that draft. |
+| `G7-CALENDAR-PHASE-CONSUMERS` | [Accepted physical consumers](CALENDAR-OBLIGATION-SUPPLEMENT-20261010T1730Z.md) bind three fixed calendar families, arbitrary finite samples, one shared rate bank and original interior coins to full selected completed PMFs. They do not prove the generic Rust parser/date/slot representation, calibrated independent slot variables or a timed merger-age observer. |
+| `G7-POLICY-MASTER` | Older admission, source fitting, policy verification and bounded synthesis code are real reusable implementations. A coherent proof library and one forward table do not supply complete source images, effective whole-policy extraction or unknown-size NO. |
+
+Original G1/G2 and the established binary timed-M3 G5 result retain their own mathematical scope. Their downstream Rust representation gaps do not reopen those theorems. Conversely, the finite endpoint snapshot cannot serve as their full timed observation carrier: [its original decoder](../../../research/2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/FiniteSourceSnapshot.lean:67) explicitly sets `history := []`.
+
+## Minimal source-fit to physical-bank contract
+
+Reuse [the existing fitter](../../../research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py:225) and [its verifier](../../../research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py:65). They already compile all observation rows under one graph/assignment and independently check exact rational/algebraic positivity and equations. Their input contract is a completed finite registry, exact unranked-law observations and free positive edge-specific clocks; it explicitly rejects empirical/timed inputs and additional rate ties.
+
+The Rust owner's proposed first port is **bounded rational supplied assignments**, not a replacement for the older algebraic fitter. Its certificate should contain:
+
+- Original vertex, edge-occurrence, hybrid and sample-label bijections; preserve both incoming occurrence IDs even for parallel edges. Retain the source request and equation-producer hashes, complete joint row/program weights and variable-bank order.
+- One strict integer-height calendar from the existing construction. For each original edge, `d_e = age(parent)-age(child) > 0`, `0 < z_e < 1`, and the exact expressions `rate_e = -log(z_e)/d_e`, `inverse_rate_e = d_e/(-log(z_e))`; ancestral rate is one. No decimal or rational-rate surrogate is substituted.
+- The orientation map `gamma_original = 1 - g_old`, because [the old compiler](../../../research/2026-10-01-g7-continuous-design/law_compiler.py:169) weights incoming occurrence 0 by `g_old`, whereas original `true` selects occurrence 1. Forced bits stay 0/1. Map one old global mechanism to the corresponding constant native mode vector; mixed native modes are not inherited fitted observations.
+- Every active segment survival derives from that same edge: `X(slot,e) = z_e^(delta_slot/d_e)`. If the reduced positive ratio is `a/b`, retain the unique positive-root constraint `X^b = z_e^a`. Rational inputs and rational dates make this root algebraic; actually evaluating it is a separate codec/effectivity step. Inactive coordinates are not extra fit variables. The ancestral exponential remains separately identified.
+
+The [current calendar DTO](../rust/calendar-cli/src/request.rs:100) accepts rational inverse rates. Even `z=1/2` generally produces a logarithmic inverse rate, so it cannot losslessly receive this bank. Preserve that frontend and give the bridge its own exact expression carrier. Preserve unsupported algebraic `RootOf` metadata rather than claiming rational compatibility or positivity.
+
+The Rust owner proposes reusing the unchanged calendar producer with unit inverse rates **only to extract the rate-independent agenda and symbolic child word**. This is a compatible implementation shortcut if both proxy physical coordinates and any echoed unit-rate parent request are discarded. The final bank certificate must bind the original assignment and logarithmic expressions, and must not use the old rational-calendar result envelope to authenticate different physical parameters. Incoming occurrence 0 preceding occurrence 1 is a disclosed restriction matching the older compiler's enumeration, not permission to reorder original controls.
+
+Checking caller-supplied polynomial equations proves those equations only. **Source-observation fit requires their binding to the pinned actual joint compiler and original request**, or that flag remains false. A randomized observation row does not authorize its deterministic summands as extra observations. This certificate proves neither general source admission nor timed-history reconstruction, confidence, unknown-size exclusion or policy extraction.
+
+Useful focused controls are asymmetric `g_old=1/3` → `gamma_original=2/3`, distinct parallel incoming IDs, two cuts on one edge whose ratios must share `z_e`, a fractional-power root, an algebraic input preserved as unsupported, a forged zero-equation trace, and a timed-history request refused at this endpoint scope. These are proposed controls; this review launches none.

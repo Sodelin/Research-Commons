@@ -1,16 +1,25 @@
 # Modular Lean baseline and corresponding Rust solver
 
-## Latest checked integration — 10 October 2026, 20:56 UTC
+## Latest checked integration — 10 October 2026, 16:17 PDT / 23:17 UTC
 
 Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
-The current coherent library has**1,497 modules /100,764 owned declarations /
-91,540 theorem declarations**; [independent context review](quality/HISTORY-ACCEPTED-UNION-1497-REVIEW.json)
-and [inventory review](quality/HISTORY-UNION-INVENTORY-REVIEW.json) pass. The earlier
-1,487 and other rows below keep their own dated scopes and receipts. Latest
+The current coherent library has **1,504 modules / 100,985 owned declarations /
+91,690 theorem declarations**; [root acceptance](lean/HISTORY-SURVIVAL-UNION-1504-ACCEPTANCE.json)
+and [independent context review](quality/HISTORY-SURVIVAL-UNION-1504-REVIEW-20261010T224327.307430Z.json)
+pass. All 100,764 earlier declaration records and all 1,497 earlier source/import
+graph records are retained. The recovered G7 whole-edge survival chain now supplies
+the [G6 positive-exposure consumer](design/WHOLE-EDGE-ENDPOINT-SCOPE-20261010T2244Z.md).
+The earlier 1,497, 1,487 and other rows below keep their own dated scopes and receipts. Latest
 DOT's70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
 outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
 corrects claims that old census/target/policy implementations were absent.
 The full practical source-to-optimal-policy solver remains incomplete.
+
+Lean is the governing specification. Rust consumes accepted mathematical
+contracts through explicitly mapped representations and independently checked
+outputs. A passing finite comparison does not establish a universal native
+refinement theorem. New Lean consumers are accepted separately before their
+contracts are promoted into the practical solver.
 
 
 Codex coordinator, 10 October 2026. **MASTER IN PROGRESS.** The requested four
@@ -33,13 +42,18 @@ epochs from Lake builds and explains the implementation choices.
 The starting baseline is commit `32f1538ebcd1a80b999bb14e08df905d13184ec7` on local
 branch `codex/lean-rust-parity-20261010`. Main through `a24730be` was merged locally as `fa9b47f0` on
 10 October after checking that incoming files did not overlap working changes.
-Historical source and certificate bytes are preserved. No remote publication
-or perpetual hosted job has been installed.
+Historical source and certificate bytes are preserved. The current cloud work
+is published on `codex/lean-rust-parity-cloud-20261010`; dated coordination
+notes on main identify its accepted scope. No perpetual hosted job is installed.
 
 ## Checked results
 
 | Result | Evidence | Meaning |
 |---|---|---|
+| Original-family calendar normalization | [Separate 168-module acceptance](lean/G7-ORIGINAL-FAMILY-CALENDAR-NORMALIZATION-168-ACCEPTANCE.json), [root evidence review](quality/FAMILY-NORMALIZATION-168-ROOT-REVIEW-20261010T2310Z.json) | One new module and 167 authenticated parent components pass a fresh aggregate/full audit: 4,907 owned declarations / 3,072 theorem declarations. Supplied strict comparison calendars preserve controlled completed full-Code laws, row/programme responses and whole-history consistency using original fields. Root and independent design review accept the exact narrow-context qualification. The coherent 1,504-module certificate remains unchanged; no 1,505 union has run. |
+| Actual inherited fitter to Rust application | [Scoped acceptance](rust/SOURCE-FIT-REFERENCE-AND-FITTED-TRANSPORT-ACCEPTANCE-20261010T2318Z.json), [saved transport review](quality/FITTED-TRANSPORT-SAVED-ROOT-REVIEW-20261010T2302Z.json), [application byte review](quality/APPLICATION-FITTED-SOURCE-BYTE-REVIEW-20261010T2305Z.json) | 34 transport controls and one actual old-witness export/current-application/native/replay/older-compiler pipeline pass. Both DTOs preserve original rows/actions/equations and exact origin; explicit panel selection feeds bounded natural rooted readout. Three rows/seven terms retain earlier table bytes. Requested reference failure is refused; source/observation provenance, selected-experiment reproduction and universal refinement remain separate. |
+| Recovered whole-edge source chart and supplied G6 image | [1,504-module certificate](lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json), [independent inherited-record review](quality/HISTORY-SURVIVAL-UNION-1504-REVIEW-20261010T224327.307430Z.json), [endpoint scope](design/WHOLE-EDGE-ENDPOINT-SCOPE-20261010T2244Z.md) | Six recovered G7 providers and the G6 consumer pass separate 122/123 roots and the connected 1,504-module audit. One positive original rate/coin bank realizes supplied whole-edge coordinates before all comparison calendars and control masks; completed natural/controlled full-Code laws agree without SameOrder. Supplied calendars/exposures remain explicit; legal compressed-source reconstruction, timed runtime and complete policy synthesis remain separate. |
+| Exact supplied-fit Rust bank and rooted readout | [native receipt](rust/evidence/source-fit-native-slot-20261010T221453.635194Z/FINAL-RECEIPT.json), [independent older-compiler comparison](quality/SOURCE-FIT-SAVED-REFERENCE-ROOT-REVIEW-20261010T2238Z.json), [selected-reference saved review](quality/SELECTED-REFERENCE-SAVED-ROOT-REVIEW-20261010T2300Z.json) | Fourteen focused native tests, 27 CLI controls plus the separately qualified typed-rational control, and six native-only application cases pass. The inherited Oct1 law compiler independently agrees on nine rooted rows/27 terms and exact probabilities; eleven additional controls pass. The repaired optional-reference path passes eight component and four application controls, including four successful component tables with 24 rooted rows/49 terms and the four-copy table with 15 rows/22 terms. Requested-reference failure and coefficient forgery are refused. General native refinement and source/observation provenance remain open. |
 | Supplied rational compression chain | [Combined root review](quality/RATIONAL-COMPRESSION-CHAIN-REVIEW.json), [checked rows](quality/RATIONAL-COMPRESSION-CHECKED-ROWS-REVIEW.json) | Old exact rational elimination port at M=2,3,4 passes10 Rust tests,8 certificate cases,25 controls and331 saved row transfers. Generic soundness98, finite fixture/Main99/100,9 actual outcomes, kernel Facts100 and listed-original-row consumers101 pass separately; accepted libraries are now in the1,487 union. Universal native refinement and legal biological reconstruction remain open. Private component, no new public command. |
 | Concrete original-calendar law consumers | [Phase review](quality/ORIGINAL-CALENDAR-PHASES-REVIEW.json), [root review](quality/ORIGINAL-CALENDAR-ROOT-REVIEW.json), [law review](quality/ORIGINAL-CALENDAR-LAW-REVIEW.json) | Separate200/201/202 audits now accept phase permutations, all-raw-endpoint root/completed coefficients and the full selected physical PMF for the three fixed calendar families. One positive original rate bank, interior gammas, exact durations and finite nonempty samples remain explicit. Timed merger-age readout and universal native refinement remain separate. |
 | Named original source decoding | [172-module proof review](quality/NAMED-CALENDAR-SOURCE-ADMISSION-REVIEW.json), [three exact input projections](quality/NAMED-CALENDAR-INPUT-REVIEW.json) | Fixed N2 fork and NP parallel codes decode to the accepted original sources/registries, retaining labels/site and distinct parent edge occurrences2/3. No general native parser/validator refinement or labelled-planarity/source-census promotion. |

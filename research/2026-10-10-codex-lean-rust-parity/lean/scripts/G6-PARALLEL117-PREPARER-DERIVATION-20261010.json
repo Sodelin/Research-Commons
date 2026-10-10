@@ -1,0 +1,200 @@
+{
+  "status": "PRE_USE_PREPARER_ONLY_DERIVATION_NO_COMPILER",
+  "contributor": "Codex / lean_integration_successor",
+  "base": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g7_family_normalization_20261010_v3.py",
+    "sha256": "362fb7c8b0757328717ce55d4914b61304d96999997c04a570a82ad5dd6d9347"
+  },
+  "derived": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g6_parallel_arm_transport_20261010.py",
+    "sha256": "9f5adc616ace7a0e28669b2b67293a8c897a32bb2eb334dd8814e84d28405e7e"
+  },
+  "changes": [
+    {
+      "before": "Freeze one new family consumer",
+      "after": "Freeze one new parallel-arm transport consumer",
+      "occurrences": 1
+    },
+    {
+      "before": "Only the minimal168 proof target is executable",
+      "after": "Only the minimal117 proof target is executable",
+      "occurrences": 1
+    },
+    {
+      "before": "ROOT = Path(__file__).resolve().parents[1]",
+      "after": "ROOT = Path(__file__).resolve().parents[1]\nREPOSITORY = ROOT.parents[2]",
+      "occurrences": 1
+    },
+    {
+      "before": "family-normalization/PROPOSAL-FREEZE.json'",
+      "after": "parallel-arm-transport/PROPOSAL-FREEZE.json'",
+      "occurrences": 1
+    },
+    {
+      "before": "'b36eb33a1a0a857928c04b6d5b5c95699d231d6913ca1fb532f8dfe6c56d87e5'",
+      "after": "'73e28655aa7277e838c37bf84e56bfe275e5fc592ddc137baa6ce66c99cdb24b'",
+      "occurrences": 1
+    },
+    {
+      "before": "    for key in ['accepted_parent_certificate', 'independent_parent_QC']:\n        assert sha(Path(proposal[key]['path'])) == proposal[key]['sha256']",
+      "after": "    accepted = proposal['accepted_provider_context']\n    for key in ['certificate', 'root_qc']:\n        assert sha(REPOSITORY / accepted[key]) == accepted[key + '_sha256']",
+      "occurrences": 1
+    },
+    {
+      "before": "    pins = proposal['literal_import_closure']['source_pins']",
+      "after": "    pins = [{**r, 'source_path': str(REPOSITORY / r['accepted_source'])}\n            for r in accepted['providers']]",
+      "occurrences": 1
+    },
+    {
+      "before": "    assert len(pins) == 167 and len({r['module'] for r in pins}) == 167",
+      "after": "    assert len(pins) == 116 and len({r['module'] for r in pins}) == 116",
+      "occurrences": 1
+    },
+    {
+      "before": "    source = Path(proposal['immutable_source_path'])\n    assert sha(source) == proposal['sha256'] == '81dcd9983e73eecd5f59caac14ee6231825fdd9ae25dd9cf64bafbc06b6f2f08'\n    module = proposal['module']",
+      "after": "    source_pin = proposal['source']\n    source = REPOSITORY / source_pin['immutable_version']\n    assert sha(source) == sha(REPOSITORY / source_pin['path']) == source_pin['sha256'] == 'f40a0d66db43984f05ca250dc1d4e9e79372141a498732414d8acde11162d6dc'\n    module = source_pin['module']",
+      "occurrences": 1
+    },
+    {
+      "before": "assert imports == proposal['imports']",
+      "after": "assert imports == source_pin['imports']",
+      "occurrences": 1
+    },
+    {
+      "before": "'sha256': proposal['sha256']",
+      "after": "'sha256': source_pin['sha256']",
+      "occurrences": 1
+    },
+    {
+      "before": "    assert len(order) == len(modules) == 168\n    assert order[:-1] == proposal['literal_import_closure']['order']\n    label = 'extraction/g7-original-family-calendar-normalization'",
+      "after": "    assert len(order) == len(modules) == 117\n    assert order[:-1] == [r['module'] for r in pins]\n    label = proposal['intended_target']['suggested_target']",
+      "occurrences": 1
+    },
+    {
+      "before": "168-module executable family root",
+      "after": "117-module executable parallel-arm transport root",
+      "occurrences": 1
+    },
+    {
+      "before": "Overall staging graph172",
+      "after": "Overall staging graph121",
+      "occurrences": 1
+    },
+    {
+      "before": "    roots += [str(p) for p in sorted(Path('/dev/shm').glob('rc-lean-g7-family-normalization-*')) if p.is_dir()]",
+      "after": "    roots += [str(p) for pattern in ['rc-lean-g7-family-normalization-*', 'rc-lean-g6-parallel-arm-transport-*']\n              for p in sorted(Path('/dev/shm').glob(pattern)) if p.is_dir()]",
+      "occurrences": 1
+    },
+    {
+      "before": "('rc-lean-g7-family-normalization-' + stamp)",
+      "after": "('rc-lean-g6-parallel-arm-transport-' + stamp)",
+      "occurrences": 1
+    },
+    {
+      "before": "len(cache_by_module) == 171",
+      "after": "len(cache_by_module) == 120",
+      "occurrences": 1
+    },
+    {
+      "before": "len(selected) == 172 and len(identities) == len(warm) == 171",
+      "after": "len(selected) == 121 and len(identities) == len(warm) == 120",
+      "occurrences": 1
+    },
+    {
+      "before": "len(owned) == 172 and len(selected) == len(warm) == 171",
+      "after": "len(owned) == 121 and len(selected) == len(warm) == 120",
+      "occurrences": 1
+    },
+    {
+      "before": "CACHE-INSTALL-TRANSPORT-G7-FAMILY168-DERIVATION.json",
+      "after": "CACHE-INSTALL-TRANSPORT-G6-PARALLEL117-DERIVATION.json",
+      "occurrences": 1
+    },
+    {
+      "before": "choices=['family']",
+      "after": "choices=['parallel']",
+      "occurrences": 1
+    },
+    {
+      "before": "seed_g7_family_cache.py",
+      "after": "seed_g6_parallel_cache.py",
+      "occurrences": 3
+    },
+    {
+      "before": "prepare_g7_family_install.py",
+      "after": "prepare_g6_parallel_install.py",
+      "occurrences": 3
+    },
+    {
+      "before": "guard_g7_family_normalization_20261010.py",
+      "after": "guard_g6_parallel_arm_transport_20261010.py",
+      "occurrences": 4
+    },
+    {
+      "before": "'packet_export_policy': 'Measure exact lossless gzip allocation before writing; existing parent sources remain referenced by immutable distributed path/hash, raw audit stays fixed in shmem; no ELF or duplicate object export.'",
+      "after": "'packet_export_policy': 'Pre-stage exact lossless gzip/text evidence in the fixed new shmem context. Copy to the packet only when measured portable bytes plus8MiB reserve fit live overlay capacity; otherwise retain the complete fixed shmem export and save a small explicit distribution manifest, without silent omission. Parent sources are linked by existing immutable distributed paths/hashes; raw audits remain fixed shmem originals. No ELF, objects or duplicate parent source export.',\n        'overlay_free_bytes_at_preparation': shutil.disk_usage(str(ROOT)).free,\n        'packet_export_transient_reserve_bytes': 8 * 2**20,\n        'prospective_overlay_portable_byte_ceiling': max(0, shutil.disk_usage(str(ROOT)).free - 8 * 2**20)",
+      "occurrences": 1
+    },
+    {
+      "before": "PRE_USE_MINIMAL_FAMILY168_LOCATION_AND_TRANSPORT_DERIVATION",
+      "after": "PRE_USE_MINIMAL_PARALLEL117_LOCATION_AND_TRANSPORT_DERIVATION",
+      "occurrences": 1
+    },
+    {
+      "before": "'parent_certificate': proposal['accepted_parent_certificate'], 'parent_QC': proposal['independent_parent_QC']",
+      "after": "'parent_certificate': {'path': str(REPOSITORY / accepted['certificate']), 'sha256': accepted['certificate_sha256']},\n        'parent_QC': {'path': str(REPOSITORY / accepted['root_qc']), 'sha256': accepted['root_qc_sha256']}",
+      "occurrences": 1
+    },
+    {
+      "before": "'source_partition': {'executable_accepted_parent_modules': 167, 'protected_provider_records': protected, 'staged_warm': 171, 'fresh_modules': fresh, 'executed_total': 168, 'guard_complete_staging_graph': 172}",
+      "after": "'source_partition': {'executable_accepted_parent_modules': 116, 'protected_provider_records': protected, 'staged_warm': 120, 'fresh_modules': fresh, 'executed_total': 117, 'guard_complete_staging_graph': 121}",
+      "occurrences": 1
+    },
+    {
+      "before": "        'preserved_preflight_failure_workspace': '/dev/shm/rc-lean-g7-family-normalization-20261010T225713.818482Z',\n        'preflight_repair': 'Retain all four required accepted Mathlib guard records in a nonexecuted provider context; no source, wrapper assertion, core, audit, flags or cap changes.'",
+      "after": "        'guard_complete_context_policy': 'Retain all four required accepted Mathlib provider records in a nonexecuted provider context from the beginning. Exact accepted Family-v3 namespace staging precedent; no guard omission or wrapper/core/assertion relaxation.',\n        'preparer_derivation_base': {'path': str(ROOT / 'scripts/prepare_g7_family_normalization_20261010_v3.py'), 'sha256': '362fb7c8b0757328717ce55d4914b61304d96999997c04a570a82ad5dd6d9347'}",
+      "occurrences": 1
+    },
+    {
+      "before": "Replace only four prior phase labels with family.",
+      "after": "Replace only four prior phase labels with parallel.",
+      "occurrences": 1
+    },
+    {
+      "before": "171 authenticated warm (167 executable + four protected providers)",
+      "after": "120 authenticated warm (116 executable + four protected providers)",
+      "occurrences": 1
+    },
+    {
+      "before": "PREPARED_UNCOMPILED_G7_FAMILY_NORMALIZATION168",
+      "after": "PREPARED_UNCOMPILED_G6_PARALLEL_ARM_TRANSPORT117",
+      "occurrences": 1
+    },
+    {
+      "before": "'executed_modules': 168, 'staging_modules': 172",
+      "after": "'executed_modules': 117, 'staging_modules': 121",
+      "occurrences": 1
+    },
+    {
+      "before": "'selected_modules': 171, 'provenance': '167 exact executable parent components",
+      "after": "'selected_modules': 120, 'provenance': '116 exact executable parent components",
+      "occurrences": 1
+    },
+    {
+      "before": "'source_sha256': proposal['sha256']",
+      "after": "'source_sha256': source_pin['sha256']",
+      "occurrences": 1
+    },
+    {
+      "before": "'phases': {'family':",
+      "after": "'phases': {'parallel':",
+      "occurrences": 1
+    },
+    {
+      "before": "'G7-FAMILY-NORMALIZATION-PREPARATION-'",
+      "after": "'G6-PARALLEL-ARM-TRANSPORT-PREPARATION-'",
+      "occurrences": 1
+    }
+  ],
+  "policy": "Only proposal schema/path, exact117/121 partition, helper names, narrow phase and attributed preservation/capacity metadata differ. Same builder, namespace/auth wrappers, audit, seeder/installer admission policy and resource caps. No compiler/native/evaluator started; accepted inputs unchanged."
+}
