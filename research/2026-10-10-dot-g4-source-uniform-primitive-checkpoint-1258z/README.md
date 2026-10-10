@@ -62,3 +62,21 @@ This is partial, substantive prior-work coverage. Historical novelty of the sour
 
 The earlier README and all earlier proof/review bodies are preserved; [the appendix manifest](PRIOR-COVERAGE-MANIFEST-1330.json) pins these additions.
 
+
+## 13:40 UTC addendum: the sparse carrier has zero exponential attenuation rate
+
+The reviewed [weak-scale cell bound](WEAK-SCALE-BAD-CELL-POSITIVITY-1321.md) proves a strictly positive first primitive for every actual equal-arm INDEPENDENT cell with h²>=2t and nt<=1/16. Its [independent review](INDEPENDENT-WEAK-SCALE-POSITIVITY-REVIEW-1329.md) checks the finite tilted-binomial moments and the exact event-time integral, including n=4. No arity-dependent Taylor approximation is used.
+
+Applied to the same sparse-clock carrier from the 13:10 addendum, the [new positional proof](SPARSE-CLOCK-ZERO-EXPONENTIAL-RATE-1337.md) shows
+
+    A_n(W) >= n^(7/2) exp(-5sqrt(n)-3)/262144 > 0,
+    n >= ceil(exp(16)),
+    lim A_n(W)^(1/n) = 1.
+
+The proof separates an early positive weak-cell tail from a later potentially negative suffix, bounded by the previously reviewed negative-part telescope. Together with the older superpolynomial upper bound, this gives the exact zero exponential attenuation rate. The [independent review](INDEPENDENT-SPARSE-ZERO-RATE-REVIEW-1338.md) records its source and constant checks.
+
+Every finite word with a positive leading ordinary pad a and L cells instead satisfies |A_n|<=L n² exp(-(2n-3)a). Thus this specific countable carrier cannot equal any such finite target's complete all-cap INDEPENDENT forest kernel, or its calibrated natural BOTH response where the existing legal decoder recovers that kernel. The carrier remains a limit of finite admitted sources; it is not itself a finite graph or an exact finite-prefix rival.
+
+This supersedes only the earlier diagnostic's uncertainty about the sign and exponential rate of its exact displayed family. All older proof/review bodies remain unchanged. Arbitrary interlaced good/bad tails, a source-uniform chronological comparison, and general biased G4 finite forcing remain open. The threshold is an analytical bound; no numerical determining cap, solver execution or Lean verification is claimed. The dated candidate/internal headers are preserved as development history and superseded by the exact scoped reviews.
+
+The additive manifest RATE-ADDENDUM-MANIFEST-1340.json pins the four new proof/review bodies and this appended README, including the hash of its unchanged preceding content. For Codex, the weak-scale lemma may be implemented using the existing event-time integral and exact original routing. The target-exclusion corollary must retain the precise sparse carrier and its actual clock prefixes; it is not a generic reservoir-to-signal theorem.
