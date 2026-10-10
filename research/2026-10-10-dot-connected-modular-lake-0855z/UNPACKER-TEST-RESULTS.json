@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "unpacker_sha256": "014630e6ca83beff61b9398d451572cb435791b0da0b2ab5935af8e9e6d110e6",
+  "test_sha256": "ecb2d1d8234075663f8f4f088292f2644686b71ee53086416b3f6b31cc651865",
+  "controls": [
+    {
+      "name": "fresh_exact_unpack",
+      "status": "PASS"
+    },
+    {
+      "name": "idempotent_exact_existing_files",
+      "status": "PASS"
+    },
+    {
+      "name": "verify_only_no_output",
+      "status": "PASS"
+    },
+    {
+      "name": "reject_differing_existing_file",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_corrupt_encoded_part",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_index_hash_drift",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unsafe_path_'../escape'",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unsafe_path_'/absolute'",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unsafe_path_'a/../b'",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unsafe_path_'a//b'",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unsafe_path_'a\\\\b'",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unsafe_path_''",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_parent_symlink",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_final_symlink",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_unlisted_tar_member",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "name": "reject_duplicate_tar_member",
+      "status": "PASS_REJECTED"
+    }
+  ],
+  "actual_artifact_verification": {
+    "status": "PASS_VERIFY_ONLY",
+    "index_sha256": "8c08d3aaeb0eeef36cd2c925e19af430d2d06b796841424d75ccd5619c392cb2",
+    "files_verified": 25,
+    "decoded_bytes": 236459333,
+    "compiled_or_executed_archive_contents": false,
+    "differing_existing_files_overwritten": false
+  },
+  "fresh_mathematical_replay_claimed": false
+}

@@ -1,0 +1,74 @@
+import G7ExactLawResourceGame
+import G7ActualExactLawResponses
+import G7ExactLawRankCompression
+import G7OriginalFamilyStrategy
+import G7OriginalCarrierCoverage
+
+#print axioms GProgram.G7.ExactLawResourceGame.Experiment
+#print axioms GProgram.G7.ExactLawResourceGame.History
+#print axioms GProgram.G7.ExactLawResourceGame.Consistent
+#print axioms GProgram.G7.ExactLawResourceGame.Homogeneous
+#print axioms GProgram.G7.ExactLawResourceGame.consistent_extend
+#print axioms GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal
+#print axioms GProgram.G7.ExactLawResourceGame.Winning
+#print axioms GProgram.G7.ExactLawResourceGame.Plan
+#print axioms GProgram.G7.ExactLawResourceGame.Valid
+#print axioms GProgram.G7.ExactLawResourceGame.run
+#print axioms GProgram.G7.ExactLawResourceGame.valid_implies_winning
+#print axioms GProgram.G7.ExactLawResourceGame.winning_has_plan
+#print axioms GProgram.G7.ExactLawResourceGame.winning_iff_valid_plan
+#print axioms GProgram.G7.ExactLawResourceGame.valid_run_identifies
+#print axioms GProgram.G7.ExactLawResourceGame.losing_step
+#print axioms GProgram.G7.ExactLawResourceGame.losing_has_full_history_pair
+#print axioms GProgram.G7.ExactLawResourceGame.usedRows
+#print axioms GProgram.G7.ExactLawResourceGame.usedSites
+#print axioms GProgram.G7.ExactLawResourceGame.Budget
+#print axioms GProgram.G7.ExactLawResourceGame.WithinBudget
+#print axioms GProgram.G7.ExactLawResourceGame.usedRows_sublist
+#print axioms GProgram.G7.ExactLawResourceGame.trajectory_budget_deletion_closed
+#print axioms GProgram.G7.ActualExactLawResponses.readoutPolynomial
+#print axioms GProgram.G7.ActualExactLawResponses.actual_readout_polynomial
+#print axioms GProgram.G7.ActualExactLawResponses.unrankedPolynomial
+#print axioms GProgram.G7.ActualExactLawResponses.actual_controlled_unranked_readout_polynomial
+#print axioms GProgram.G7.ActualExactLawResponses.SourcePoint
+#print axioms GProgram.G7.ActualExactLawResponses.actualBaseVector
+#print axioms GProgram.G7.ActualExactLawResponses.polynomialBaseVector
+#print axioms GProgram.G7.ActualExactLawResponses.actual_base_vector_eq_polynomial
+#print axioms GProgram.G7.ActualExactLawResponses.affineResponse
+#print axioms GProgram.G7.ActualExactLawResponses.actual_affine_response_eq_polynomial
+#print axioms GProgram.G7.ActualExactLawResponses.actualExperiment
+#print axioms GProgram.G7.ActualExactLawResponses.actual_history_consistency_iff_polynomial
+#print axioms GProgram.G7.ExactLawRankCompression.Policy
+#print axioms GProgram.G7.ExactLawRankCompression.CorrectRun
+#print axioms GProgram.G7.ExactLawRankCompression.correct_at_stop
+#print axioms GProgram.G7.ExactLawRankCompression.correct_after_ask
+#print axioms GProgram.G7.ExactLawRankCompression.Determined
+#print axioms GProgram.G7.ExactLawRankCompression.equalizer
+#print axioms GProgram.G7.ExactLawRankCompression.redundant_response_unique
+#print axioms GProgram.G7.ExactLawRankCompression.determined_extend
+#print axioms GProgram.G7.ExactLawRankCompression.InformativeStep
+#print axioms GProgram.G7.ExactLawRankCompression.first_informative
+#print axioms GProgram.G7.ExactLawRankCompression.total_strategy_wins_with_rank_budget
+#print axioms GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon
+#print axioms GProgram.G7.OriginalFamilyStrategy.OriginalFamily
+#print axioms GProgram.G7.OriginalFamilyStrategy.Programme
+#print axioms GProgram.G7.OriginalFamilyStrategy.rowLaw
+#print axioms GProgram.G7.OriginalFamilyStrategy.baseVector
+#print axioms GProgram.G7.OriginalFamilyStrategy.programmeLaw
+#print axioms GProgram.G7.OriginalFamilyStrategy.coefficient
+#print axioms GProgram.G7.OriginalFamilyStrategy.measurement
+#print axioms GProgram.G7.OriginalFamilyStrategy.measurement_apply
+#print axioms GProgram.G7.OriginalFamilyStrategy.actual_programme_response_linear
+#print axioms GProgram.G7.OriginalFamilyStrategy.programmeSupport
+#print axioms GProgram.G7.OriginalFamilyStrategy.rowSites
+#print axioms GProgram.G7.OriginalFamilyStrategy.experiment
+#print axioms GProgram.G7.OriginalFamilyStrategy.original_programme_legal_deletion
+#print axioms GProgram.G7.OriginalFamilyStrategy.actual_total_original_strategy_bounded_winning
+#print axioms GProgram.G7.OriginalFamilyStrategy.actual_total_original_strategy_has_bounded_plan
+#print axioms GProgram.G7.OriginalFamilyStrategy.actual_losing_budget_excludes_total_policy
+#print axioms GProgram.G7.OriginalCarrierCoverage.OriginalPoint
+#print axioms GProgram.G7.OriginalCarrierCoverage.fixedFamily
+#print axioms GProgram.G7.OriginalCarrierCoverage.originalRowLaw
+#print axioms GProgram.G7.OriginalCarrierCoverage.every_original_row_has_fixed_carrier_response
+#print axioms GProgram.G7.OriginalCarrierCoverage.originalProgrammeLaw
+#print axioms GProgram.G7.OriginalCarrierCoverage.every_original_programme_has_fixed_carrier_response

@@ -1,0 +1,62 @@
+G7EffectivePopulationCoefficients.lean:56:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectivePopulationCoefficients.merger_eq`:
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectivePopulationCoefficients.lean:72:37: error: Function expected at
+  FinEnum.nodup_toList
+but this term has type
+  (FinEnum.toList ?m.10).Nodup
+
+Note: Expected a function because this term is being applied to the argument
+  A
+G7EffectivePopulationCoefficients.lean:88:8: error: Tactic `apply` failed: could not unify the conclusion of `List.Perm.append (List.Perm.refl ?m.94)`
+  (?m.94 ++ ?m.91).Perm (?m.94 ++ ?m.92)
+with the goal
+  List.Perm
+    ([((↑s).live.card.choose 2, if s = d then 1 else 0)] ++
+      List.flatMap (fun p => liftExpr ((↑s).live.card.choose 2) (coefficients N fuel (merger N s p) d))
+        (FinEnum.toList (Choice N s)))
+    (if (↑s).live.card ≤ 1 then [(0, if s = d then 1 else 0)]
+    else
+      [((↑s).live.card.choose 2, if s = d then 1 else 0)] ++
+        List.flatMap (fun p => liftExpr ((↑s).live.card.choose 2) (kernelExpr N fuel (stepDestination N s (some p)) d))
+          Finset.univ.toList)
+
+Note: The full type of `List.Perm.append (List.Perm.refl ?m.94)` is
+  List.Perm ?m.91 ?m.92 → (?m.94 ++ ?m.91).Perm (?m.94 ++ ?m.92)
+
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+d : Code N sample
+fuel : ℕ
+ih : ∀ (s : Code N sample), List.Perm (coefficients N fuel s d) (kernelExpr N fuel s d)
+s : Code N sample
+h : ¬(↑s).live.card ≤ 1
+⊢ List.Perm
+    ([((↑s).live.card.choose 2, if s = d then 1 else 0)] ++
+      List.flatMap (fun p => liftExpr ((↑s).live.card.choose 2) (coefficients N fuel (merger N s p) d))
+        (FinEnum.toList (Choice N s)))
+    (if (↑s).live.card ≤ 1 then [(0, if s = d then 1 else 0)]
+    else
+      [((↑s).live.card.choose 2, if s = d then 1 else 0)] ++
+        List.flatMap (fun p => liftExpr ((↑s).live.card.choose 2) (kernelExpr N fuel (stepDestination N s (some p)) d))
+          Finset.univ.toList)
