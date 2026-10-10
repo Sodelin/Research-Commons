@@ -22,3 +22,7 @@ This packet supplies an independently/root-reviewed hand algorithm at its stated
 - Known source YES points with exponentially large minimum witnesses lie elsewhere; this local three-cell bound is not a global count bound.
 
 Practical use: this supplies an exact boundary-contact certificate architecture with a complete local positive side. General target-to-chart acquisition and completeness over all remaining strata are still missing.
+
+## Limitation on global chart assembly
+
+The reviewed [limitation appendix](FIXED-SOURCE-CHART-COVER-OBSTRUCTION.md) gives a same-cap algebraic control: approaching YES inputs near a fixed Poisson NO need unbounded minimum source counts. Thus finitely many fixed finite-word lift maps cannot cover all nearby YES inputs there. Do not infer a universal locally finite fixed-source atlas from this local three-cell theorem. A successful larger recognizer may still use unbounded synthesis or other input-dependent certificates. No additional cap-eight numerical threshold was evaluated.
