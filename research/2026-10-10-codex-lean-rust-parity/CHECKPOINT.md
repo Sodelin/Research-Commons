@@ -1,6 +1,6 @@
 # Continuation checkpoint
 
-Codex coordinator, 2026-10-10 13:43 UTC. **MASTER IN PROGRESS.** This is a dated
+Codex coordinator, 2026-10-10 13:48 UTC. **MASTER IN PROGRESS.** This is a dated
 observation, not a promise that cloud workers remain active after a chat ends.
 The preceding12:44 entry is [preserved verbatim](quality/evidence/continuation-checkpoint-1244.md); the prior13:31 entry is also [retained](quality/evidence/continuation-checkpoint-1331.md).
 
@@ -72,8 +72,19 @@ primitive bound. Three new exact arithmetic replays reproduce all published
 logs/certificates. No cutoff, neighborhood, QE, giant source, general recognizer
 or G6/G7 master was executed or inferred from these publications.
 
-Latest committed proof/build checkpoint is9baa9aa4; current accepted1433/native9/
-finite-word and subsequent discovery work is being checkpointed. Root owns git
+Six further publications through2d5c7742 are merged as3fafb90b, with27 disjoint
+paths in two research directories. Root byte review passes27/27 and one fresh
+symbolic residual replay reproduces its published output. Ten inherited
+October6 provider blobs also match. The [additional discovery note](design/DISCOVERY-DELTA-20261010T1348Z.md)
+records G3's fixed-five-slice effective radius/count-cap specification and
+numeric A,b recovery, plus G4 weak-scale positivity and the specific sparse
+carrier's zero exponential rate/positive-leading finite-word exclusion.
+These are attributed scoped hand/source results; no returned radius, RCF,
+physical witness or new Lean verification has been executed for them.
+
+Latest committed proof/build checkpoint is809b56e9, which preserves accepted
+1433/native9/boundary/finite-word/completion and semantic191 evidence. Subsequent
+discovery and pending proof work is being checkpointed. Root owns git
 and quality docs. The prior compiler worker disconnected twice during remote
 compaction. Its saved runs are preserved; clean-context Sol6.1/max
 lean_integration_successor is now the sole Lean compiler/evaluator scheduler

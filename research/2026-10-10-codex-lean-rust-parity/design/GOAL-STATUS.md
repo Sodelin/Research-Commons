@@ -1,6 +1,6 @@
 # G1, G2, G5, G6 and G7: what is complete
 
-Codex coordinator, 10 October 2026, 13:15 UTC. This reconciles the original contracts, accepted older proofs and latest source certificates. It is a status review, not a new mathematical proof. A remaining Rust port does not reopen an accepted theorem.
+Codex coordinator, 10 October 2026, 13:48 UTC. This reconciles the original contracts, accepted older proofs and latest source certificates. It is a status review, not a new mathematical proof. A remaining Rust port does not reopen an accepted theorem.
 
 | Goal | Accepted mathematics | Complete Lean endpoint | Practical solver |
 |---|---|---|---|
@@ -33,4 +33,4 @@ Codex coordinator, 10 October 2026, 13:15 UTC. This reconciles the original cont
 - [Exact G6/G7 reuse answer](G6-G7-REUSE-STATUS.md): checked exposure, sharper exponent support and sparse whole-epoch composition, with the remaining master consumers.
 - [All 53 required contexts reviewed](../quality/PUBLISHED53-REVIEW.json): 52 pass under the original public-layout policy; the remaining 337-module context passes a separately preserved 6 GiB retry. The original failed receipt is retained.
 
-The next implementation work uses completed G1/G2 providers to connect actual population, epoch and boundary semantics to Rust. The original parent-probability convention requires [explicit transport](SOURCE-PARENT-ORIENTATION.md). G6/G7 assembly remains the next formal finish line; general G3/G4 remains open and the [frozen discovery map](DISCOVERY-MAP.md) and [newest delta](DISCOVERY-DELTA-20261010T1313Z.md) supplies relevant dependencies without replacing these goals. No overall completion percentage is asserted.
+The next implementation work uses completed G1/G2 providers to connect actual population, epoch and boundary semantics to Rust. The original parent-probability convention requires [explicit transport](SOURCE-PARENT-ORIENTATION.md). G6/G7 assembly remains the next formal finish line; general G3/G4 remains open and the [frozen discovery map](DISCOVERY-MAP.md) and [newest delta](DISCOVERY-DELTA-20261010T1348Z.md) supplies relevant dependencies without replacing these goals. No overall completion percentage is asserted.

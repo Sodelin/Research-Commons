@@ -1,0 +1,381 @@
+{
+  "schema": "calendar_complete_reference_review_v1",
+  "pass": true,
+  "claim": "INDEPENDENT_INPUT_AND_ORACLE_PREPARATION_ONLY",
+  "native_processes_executed": false,
+  "Lean_execution": false,
+  "cases_total": 32,
+  "cases_passed": 32,
+  "full_view_rows_total": 163,
+  "controls": [
+    "parallel occurrence collapsed",
+    "wrong shared inverse exposure",
+    "exit/entry phase swapped",
+    "original gamma complemented",
+    "scientific gate promoted",
+    "same weak-order formal table / distinct physical exposures",
+    "different incomparable order / distinct word"
+  ],
+  "cases": [
+    {
+      "fixture": "twoTipCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": null,
+      "full_view_rows": 2,
+      "pass": true
+    },
+    {
+      "fixture": "singletonCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": null,
+      "full_view_rows": 1,
+      "pass": true
+    },
+    {
+      "fixture": "emptyNaturalCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 13,
+        "slots": 3,
+        "variables": 19
+      },
+      "unknown_scope": null,
+      "full_view_rows": 2,
+      "pass": true
+    },
+    {
+      "fixture": "ordinaryThreeCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 11,
+        "slots": 2,
+        "variables": 10
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "ordinaryThreeRetimed",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 11,
+        "slots": 2,
+        "variables": 10
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "serialNegativeTips",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 7,
+        "slots": 2,
+        "variables": 6
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "tiedInternalCohort",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 15,
+        "slots": 2,
+        "variables": 14
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "incomparableOrderLeft",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 16,
+        "slots": 3,
+        "variables": 21
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "incomparableOrderRight",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 16,
+        "slots": 3,
+        "variables": 21
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "parallelCommonCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 13,
+        "slots": 3,
+        "variables": 19
+      },
+      "unknown_scope": null,
+      "full_view_rows": 24,
+      "pass": true
+    },
+    {
+      "fixture": "parallelIndependentCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 13,
+        "slots": 3,
+        "variables": 19
+      },
+      "unknown_scope": null,
+      "full_view_rows": 24,
+      "pass": true
+    },
+    {
+      "fixture": "permutedLabelsCalendar",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 11,
+        "slots": 2,
+        "variables": 10
+      },
+      "unknown_scope": null,
+      "full_view_rows": 12,
+      "pass": true
+    },
+    {
+      "fixture": "largeExactExposure",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": null,
+      "full_view_rows": 2,
+      "pass": true
+    },
+    {
+      "fixture": "reversedParallelParents",
+      "expected_status": "TABLE",
+      "requirements": {
+        "word_length": 13,
+        "slots": 3,
+        "variables": 19
+      },
+      "unknown_scope": null,
+      "full_view_rows": 24,
+      "pass": true
+    },
+    {
+      "fixture": "validFortyThreeLetters",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 43,
+        "slots": 14,
+        "variables": 210
+      },
+      "unknown_scope": "COMPILER",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "compilerLimit_word_length",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "COMPILER",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "compilerLimit_slots",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "COMPILER",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "compilerLimit_variables",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "COMPILER",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "compilerPriority",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "COMPILER",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "wordQueryLimit",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "WORD",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "boundaryAssignmentLimit",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "WORD",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "epochCallLimit",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "WORD",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "completionCallLimit",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "WORD",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "wordQueryBeforeProviderLimit",
+      "expected_status": "UNKNOWN",
+      "requirements": {
+        "word_length": 6,
+        "slots": 1,
+        "variables": 3
+      },
+      "unknown_scope": "WORD",
+      "full_view_rows": 0,
+      "pass": true
+    },
+    {
+      "fixture": "emptyCompletionRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_WORD_COMPLETION_EMPTY_COPY",
+      "pass": true
+    },
+    {
+      "fixture": "zeroInverseRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_INVERSE_RATE",
+      "pass": true
+    },
+    {
+      "fixture": "negativeInverseRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_INVERSE_RATE",
+      "pass": true
+    },
+    {
+      "fixture": "equalEdgeAgeRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_STRICT_EDGE",
+      "pass": true
+    },
+    {
+      "fixture": "reversedEdgeAgeRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_STRICT_EDGE",
+      "pass": true
+    },
+    {
+      "fixture": "gammaZeroRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_GAMMA",
+      "pass": true
+    },
+    {
+      "fixture": "gammaOneRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_GAMMA",
+      "pass": true
+    },
+    {
+      "fixture": "aboveHardcapRejected",
+      "expected_status": "INVALID_INPUT",
+      "invalid_code": "SOURCE_CALENDAR_LIMITS",
+      "pass": true
+    }
+  ],
+  "pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_calendar_oracle.py": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-REFINEMENT-20261010T1340Z.md": "7e2202aeac884c2024e3f168031b8e90ae73f3c9c924252e7e3705aeb8cba478",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24"
+  },
+  "pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_calendar_oracle.py": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-REFINEMENT-20261010T1340Z.md": "7e2202aeac884c2024e3f168031b8e90ae73f3c9c924252e7e3705aeb8cba478",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24"
+  },
+  "source_admission_verified": false,
+  "universal_calendar_refinement_proved": false,
+  "arbitrary_nondefault_provider_work_equivalence_claimed": false,
+  "observed_at_utc": "2026-10-10T13:51:31Z"
+}

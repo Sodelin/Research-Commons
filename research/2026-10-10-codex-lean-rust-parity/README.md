@@ -6,7 +6,7 @@ design. The coordinator checks their integration and scientific scope. The
 [mission](MISSION.md) preserves the full original problem and
 [traceability map](design/TRACEABILITY.md) records remaining obligations.
 The [frozen discovery map](design/DISCOVERY-MAP.md) and the [latest publication
-delta](design/DISCOVERY-DELTA-20261010T1313Z.md) connect DOT G3/G4 results to
+delta](design/DISCOVERY-DELTA-20261010T1348Z.md) connect DOT G3/G4 results to
 their older providers and remaining gaps.
 The [one-page research brief](design/RESEARCH-BRIEF.md) gives the four-lane overview.
 The [goal completion sheet](design/GOAL-STATUS.md) distinguishes completed original
@@ -17,7 +17,7 @@ The [Lean/Python/Rust explanation](design/LEAN-TO-RUST.md) distinguishes model
 epochs from Lake builds and explains the implementation choices.
 
 The starting baseline is commit `32f1538ebcd1a80b999bb14e08df905d13184ec7` on local
-branch `codex/lean-rust-parity-20261010`. Main through `44d29bc9` was merged on
+branch `codex/lean-rust-parity-20261010`. Main through `2d5c7742` was merged on
 10 October after checking that incoming files did not overlap working changes.
 Historical source and certificate bytes are preserved. No remote publication
 or perpetual hosted job has been installed.

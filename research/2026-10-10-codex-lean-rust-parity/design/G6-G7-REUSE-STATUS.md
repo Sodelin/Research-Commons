@@ -70,3 +70,13 @@ binds the separately accepted source audits to actual Lean/Rust execution.
 The [supplied-calendar proposal](../rust/notes/CALENDAR-TO-WORD-READINESS-20261010T1330Z.md)
 reuses old initialization, phase-permutation and calendar-support proofs;
 its producer/schema fixtures are being frozen before an additive private build.
+
+
+The [six further publications](DISCOVERY-DELTA-20261010T1348Z.md) add a reviewed
+terminating validity-radius/count-cap specification for the narrow fixed-five
+COMMON G3 slice and an algebraic numeric-base adapter. They provide a future
+bounded synthesis consumer within that slice, with no emitted constants or
+witness yet. G4 now resolves eventual positivity and zero exponential rate
+for its exact sparse countable carrier, excluding positive-leading finite
+equal-arm words. These results strengthen scoped providers but do not close
+general G6 reconstruction or G7 source census/QE/optimal-policy assembly.
