@@ -1,0 +1,20 @@
+--- reviewed-draft-7199cde9
++++ public-clarified-proof
+@@ -16,7 +16,7 @@
+ 
+ For L=0, the COMMON-normalized INDEPENDENT pair diagonal is product_i[1+2p_i(exp(t_i)-1)], strictly greater than one whenever a strict cell exists. Thus cap two suffices. Below assume L>=1.
+ 
+-The algorithm uses the reviewed all-fair skeleton and the independently reviewed higher-jet local theorem. This note supplies the GLOBAL effective neighborhood cover left open by their separate existential compactness argument.
++The algorithm uses the reviewed all-fair skeleton and the independently reviewed higher-jet local theorem. This note supplies the GLOBAL effective neighborhood cover left open by their separate existential compactness argument. The returned certificates described here belong to a mathematical algorithm specification: no QE implementation, certificate-generating program, or numerical cap has been run.
+ 
+ ## 2. Effective local certificate
+ 
+@@ -35,7 +35,7 @@
+        sum_n a_n D_n(y)>=1  for every 1<=y<=Q.
+ 
+    All finite jet entries are real algebraic: derivatives of log R_n are rational functions of the positive polynomial R_n, evaluated at algebraic survivals. D_n is polynomial. The higher-jet/cone theorem proves eventual success. A semialgebraic witness can be chosen effectively real algebraic. One need not determine the rank of the infinite sequence space in advance.
+-4. Compute rational upper bounds for the finitely many derivatives and remainders used by the local proof. The full body kernels are polynomial; log R_n derivatives are rational functions with positive denominators on a rational compact box. QE can bound them, or explicit coefficient bounds can be used. R_n>=1 in the physical weak-cell rectangle gives effective constants for the uniform w D_n+O(w^2) expansion. Same-duration replacement and fairization constants are likewise finite polynomial/analytic bounds. The pair relation gives S<=C_pair(delta+B) near the target. Shrink a rational open body neighborhood U until the proof's strict remainder inequality holds.
++4. Compute rational upper bounds for the finitely many derivatives and remainders used by the local proof. The full body kernels are polynomial; log R_n derivatives are rational functions with positive denominators on a rational compact box. QE can bound them, or explicit coefficient bounds can be used. R_n>=1 in the physical weak-cell rectangle gives effective constants for the uniform w D_n+O(w^2) expansion. Same-duration replacement and fairization constants are likewise finite polynomial bounds: the polynomial matrix B(q,p)-E(q) vanishes at p=0 and q=1, hence is divisible by p(1-q); since p(1-q)<=w, its quotient has a computably bounded norm on c<=q<=1 and 0<=p<=1/4. The pair relation gives S<=C_pair(delta+B) near the target. Shrink a rational open body neighborhood U until the proof's strict remainder inequality holds.
+ 
+ Consequently this finite search returns a cap N_loc and an explicitly given OPEN semialgebraic neighborhood U of (q,z,1/4,...,1/4). Its certified implication is:
+ 
