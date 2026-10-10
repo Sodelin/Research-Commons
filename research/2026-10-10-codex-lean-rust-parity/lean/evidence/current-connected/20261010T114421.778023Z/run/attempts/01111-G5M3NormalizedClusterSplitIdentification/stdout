@@ -1,0 +1,29 @@
+G5M3NormalizedClusterSplitIdentification.lean:40:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.M3NormalizedClusterSplitIdentification.mem_normalized_clusters_iff_vertex`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G5M3NormalizedClusterSplitIdentification.lean:127:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.M3NormalizedClusterSplitIdentification.mem_normalized_splits_iff_cluster`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G5M3NormalizedClusterSplitIdentification.lean:179:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'GProgram.G5.M3NormalizedClusterSplitIdentification.vertex_cluster_iff_calendar_block' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.M3NormalizedClusterSplitIdentification.mem_normalized_splits_iff_cluster' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.M3NormalizedClusterSplitIdentification.m3_identifies_documented_full_cluster_split_unions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

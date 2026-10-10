@@ -1,0 +1,26 @@
+UnifiedLean/Source/SourceForestGeneratorIntertwining.lean:79:22: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [merge, ha, Genealogy.prune]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+UnifiedLean/Source/SourceForestGeneratorIntertwining.lean:110:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceForestGeneratorIntertwining.visible_offDiag_subset`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.SourceForestGeneratorIntertwining.viewBlockTree_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestGeneratorIntertwining.selectedView_merge_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceForestGeneratorIntertwining.actual_population_generator_intertwining' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

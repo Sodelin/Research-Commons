@@ -1,0 +1,29 @@
+G5FairRawQuartetIdentificationFiniteLabels.lean:21:0: warning: Definition `GProgram.G5.AttainedChronology.sharedOriginalLabelOrder` of class type is semireducible. Most type class instances should be instance-reducible, so consider marking this
+definition with `@[instance_reducible]`. If it is intentionally semireducible, this warning can be disabled with `set_option warn.classDefReducibility false`.
+G5FairRawQuartetIdentificationFiniteLabels.lean:40:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'GProgram.G5.AttainedChronology.fair_m2_identifies_actual_raw_displayed_quartets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@fair_m2_identifies_actual_raw_displayed_quartets : ∀ {V : Type u_6} {E : Type u_7} {X : Type u_8} {V₂ : Type u_9}
+  {E₂ : Type u_10} [inst : Fintype V] [inst_1 : Fintype E] [inst_2 : Fintype X] [inst_3 : DecidableEq V]
+  [inst_4 : DecidableEq E] [inst_5 : Fintype V₂] [inst_6 : Fintype E₂] [inst_7 : DecidableEq V₂]
+  [inst_8 : DecidableEq E₂] (N : RootedBinary V E X) (C : Calendar N.graph),
+  (∀ (e : E), N.graph.IsHybrid (N.graph.source e) → N.graph.IsBridge e) →
+    ∀ (H : OriginalParentRegistry N) (r : PositivePairRates E) (common : Bool) (N₂ : RootedBinary V₂ E₂ X)
+      (C₂ : Calendar N₂.graph),
+      (∀ (e : E₂), N₂.graph.IsHybrid (N₂.graph.source e) → N₂.graph.IsBridge e) →
+        ∀ (H₂ : OriginalParentRegistry N₂) (r₂ : PositivePairRates E₂) (common₂ : Bool) {s : ℝ},
+          (∀ (x : X), C.age (N.leaf x) = s) →
+            (∀ (x : X), C₂.age (N₂.leaf x) = s) →
+              (∀ (x y : X),
+                  x ≠ y →
+                    pairCalendarLaw N C H (fairParameters N) r common x y =
+                      pairCalendarLaw N₂ C₂ H₂ (fairParameters N₂) r₂ common₂ x y) →
+                ∀ (q : Fin 4 ↪ X), N.rawDisplayedQuartets q = N₂.rawDisplayedQuartets q

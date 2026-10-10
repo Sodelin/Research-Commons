@@ -1,0 +1,14 @@
+G1UnrankedActualFuture.lean:77:0: warning: automatically included section variable(s) unused in theorem `G1UnrankedActualFuture.actual_unranked_view_forest`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'G1UnrankedActualFuture.actual_unranked_source_program' depends on axioms: [propext, Classical.choice, Quot.sound]
+'G1UnrankedActualFuture.actual_same_original_unranked_forest_future' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

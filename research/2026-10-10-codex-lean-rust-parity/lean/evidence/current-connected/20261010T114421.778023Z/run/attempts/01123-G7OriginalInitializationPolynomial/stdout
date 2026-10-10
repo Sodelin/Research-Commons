@@ -1,0 +1,29 @@
+G7OriginalInitializationPolynomial.lean:19:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalInitializationPolynomial.actual_original_coin_mass`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalInitializationPolynomial.lean:27:21: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bitMeasure, ← measureReal_def, bernoulliMeasure_real_apply, originalGamma]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalInitializationPolynomial.lean:27:24: warning: This simp argument is unused:
+  ← measureReal_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bitMeasure, hb, bernoulliMeasure_real_apply, originalGamma]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalInitializationPolynomial.lean:27:42: warning: This simp argument is unused:
+  bernoulliMeasure_real_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bitMeasure, hb, ← measureReal_def, originalGamma]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

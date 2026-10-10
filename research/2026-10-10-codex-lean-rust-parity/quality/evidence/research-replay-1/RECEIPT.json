@@ -1,0 +1,227 @@
+{
+  "checks": {
+    "exposure_certificate_bytes_match_published": true,
+    "five_inverse_fixtures_match_published_except_elapsed_time": true,
+    "independent_exact_matrices_bytes_match_published": true,
+    "independent_inverse_result_bytes_match_published": true,
+    "killing_normal_and_quotient_match_published": true
+  },
+  "executions": [
+    {
+      "exit_code": 0,
+      "group": "killing",
+      "pass": true,
+      "script": "check_killing_normal.py",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 725,
+        "sha256": "18be44f419ab299aaaa4beb8a748062eea000ea73a835b8c6d064910abb54dcf"
+      }
+    },
+    {
+      "exit_code": 0,
+      "group": "valuation",
+      "pass": true,
+      "script": "check_valuation_independence.py",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 457,
+        "sha256": "d819b97426079d1de9961d55fda0b0e8fb994ac0d8b3575c7ed6b5a3518a0122"
+      }
+    },
+    {
+      "exit_code": 0,
+      "group": "extraction",
+      "pass": true,
+      "script": "check_exposure.py",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 1319,
+        "sha256": "c0c49f69aa80bfcd10383bd373eaac6ff3d1512dfcd8c4a70b52db59e511906f"
+      }
+    },
+    {
+      "exit_code": 0,
+      "group": "extraction",
+      "pass": true,
+      "script": "independent_exposure_multiplication.py",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 264,
+        "sha256": "e479c7f5a51c99005c6305d9f2337772ddf7aa89f29b25f433d0f33bb0969d2d"
+      }
+    },
+    {
+      "exit_code": 0,
+      "group": "inverse_primary",
+      "pass": true,
+      "script": "check.py",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 909,
+        "sha256": "35f9eb2fda661b79f9fb38d660889b750c2b2f371a92d97f1c1370e105cbb6f3"
+      }
+    },
+    {
+      "exit_code": 0,
+      "group": "inverse_independent",
+      "pass": true,
+      "script": "check_inverse.py",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 1287,
+        "sha256": "d36f22a53286bee3057b8477a693db208f363b47c87711353601eb05ced076af"
+      }
+    }
+  ],
+  "not_verified": [
+    "All-length analytic extraction and weak-collar proofs",
+    "Numerical killing cutoff or specified rational NO witness",
+    "General opaque-forest inverse norm theorem",
+    "G3 or G4 completeness",
+    "Lean formalization"
+  ],
+  "observed_utc": "2026-10-10T11:40:05.380204+00:00",
+  "outputs": {
+    "extraction/exposure-certificate.json": {
+      "bytes": 2949,
+      "sha256": "edfff76840c38b5b32b5bf781ac07ef32ece066fe16b2f1337d0e117eca35292"
+    },
+    "inverse_independent/EXACT-MATRICES.json": {
+      "bytes": 10207,
+      "sha256": "dc3b58776ab5c1e993a059d043031c6ed15e40aaf3a00cb316ad55e006ca61e6"
+    },
+    "inverse_independent/RESULT.json": {
+      "bytes": 1287,
+      "sha256": "d36f22a53286bee3057b8477a693db208f363b47c87711353601eb05ced076af"
+    },
+    "inverse_primary/RESULT.json": {
+      "bytes": 9828,
+      "sha256": "29ebbca124fbc9f99bbbcc9811f4ac2e533a72f9dd0c7d1ed5d4675259d8cd73"
+    },
+    "killing/killing-normal-certificate.json": {
+      "bytes": 145660,
+      "sha256": "c2a25bbbfd7026db4ad2dc477006a587bec27b162f9702068fe4bf2b4a3e6c39"
+    }
+  },
+  "pass": true,
+  "reviewer_sha256": "c2d8fd0f5cc77e394e2f509e2c021739a47a7b2f8c88c54936275a8fd4ee86d0",
+  "schema": "new_dot_exact_arithmetic_replay_v1",
+  "source_identities_stable": true,
+  "source_pins_after": {
+    "research/2026-10-10-dot-g3-effective-fair-head-extraction-1122z/check_exposure.py": {
+      "bytes": 2164,
+      "sha256": "2b770cb750c33fb25c859fbd22e658f29d984e2f79da1b4e3f5bd086d21742ed"
+    },
+    "research/2026-10-10-dot-g3-effective-fair-head-extraction-1122z/exposure-certificate.json": {
+      "bytes": 2949,
+      "sha256": "edfff76840c38b5b32b5bf781ac07ef32ece066fe16b2f1337d0e117eca35292"
+    },
+    "research/2026-10-10-dot-g3-effective-fair-head-extraction-1122z/independent_exposure_multiplication.py": {
+      "bytes": 1389,
+      "sha256": "4ada4d986b270692c37f96e144979ee0fd5be1c5fd15a6a74be7ff91a4e1b0c7"
+    },
+    "research/2026-10-10-dot-g3-fair-head-killing-1111z/check_killing_normal.py": {
+      "bytes": 2572,
+      "sha256": "0ed8325a07c37051090d1a59b21c59ca077a4865f22d92b85011ac3f92be536f"
+    },
+    "research/2026-10-10-dot-g3-fair-head-killing-1111z/normal_certificate.json": {
+      "bytes": 1856,
+      "sha256": "ab1953c04e8b5a8a462f20b01349ad81bcbc58653ba69264481c7beffd1d5ae3"
+    },
+    "research/2026-10-10-dot-g3-fair-head-killing-1111z/rational-zero-level-supplement/check_valuation_independence.py": {
+      "bytes": 1010,
+      "sha256": "52dffd1f9fecad7d0d83ec978db36bb52c245ada789cfbf55b54a30346c16ccf"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/independent/EXACT-MATRICES.json": {
+      "bytes": 10207,
+      "sha256": "dc3b58776ab5c1e993a059d043031c6ed15e40aaf3a00cb316ad55e006ca61e6"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/independent/RESULT.json": {
+      "bytes": 1287,
+      "sha256": "d36f22a53286bee3057b8477a693db208f363b47c87711353601eb05ced076af"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/independent/check_inverse.py": {
+      "bytes": 3793,
+      "sha256": "9f93d0c81f7787350665e8bb8b5a91e7881dbb2c6245350a5354a358fac7bb29"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/primary/RESULT.json": {
+      "bytes": 9828,
+      "sha256": "b20d79cd0a16b47aafa7265b5430a45fe5dd2ef6cf64f64df98df8a13c844cb1"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/primary/check.py": {
+      "bytes": 2393,
+      "sha256": "07195496d2b6432bf7f72716b21f120583583ca6b147538517ab7b21909f473b"
+    }
+  },
+  "source_pins_before": {
+    "research/2026-10-10-dot-g3-effective-fair-head-extraction-1122z/check_exposure.py": {
+      "bytes": 2164,
+      "sha256": "2b770cb750c33fb25c859fbd22e658f29d984e2f79da1b4e3f5bd086d21742ed"
+    },
+    "research/2026-10-10-dot-g3-effective-fair-head-extraction-1122z/exposure-certificate.json": {
+      "bytes": 2949,
+      "sha256": "edfff76840c38b5b32b5bf781ac07ef32ece066fe16b2f1337d0e117eca35292"
+    },
+    "research/2026-10-10-dot-g3-effective-fair-head-extraction-1122z/independent_exposure_multiplication.py": {
+      "bytes": 1389,
+      "sha256": "4ada4d986b270692c37f96e144979ee0fd5be1c5fd15a6a74be7ff91a4e1b0c7"
+    },
+    "research/2026-10-10-dot-g3-fair-head-killing-1111z/check_killing_normal.py": {
+      "bytes": 2572,
+      "sha256": "0ed8325a07c37051090d1a59b21c59ca077a4865f22d92b85011ac3f92be536f"
+    },
+    "research/2026-10-10-dot-g3-fair-head-killing-1111z/normal_certificate.json": {
+      "bytes": 1856,
+      "sha256": "ab1953c04e8b5a8a462f20b01349ad81bcbc58653ba69264481c7beffd1d5ae3"
+    },
+    "research/2026-10-10-dot-g3-fair-head-killing-1111z/rational-zero-level-supplement/check_valuation_independence.py": {
+      "bytes": 1010,
+      "sha256": "52dffd1f9fecad7d0d83ec978db36bb52c245ada789cfbf55b54a30346c16ccf"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/independent/EXACT-MATRICES.json": {
+      "bytes": 10207,
+      "sha256": "dc3b58776ab5c1e993a059d043031c6ed15e40aaf3a00cb316ad55e006ca61e6"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/independent/RESULT.json": {
+      "bytes": 1287,
+      "sha256": "d36f22a53286bee3057b8477a693db208f363b47c87711353601eb05ced076af"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/independent/check_inverse.py": {
+      "bytes": 3793,
+      "sha256": "9f93d0c81f7787350665e8bb8b5a91e7881dbb2c6245350a5354a358fac7bb29"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/primary/RESULT.json": {
+      "bytes": 9828,
+      "sha256": "b20d79cd0a16b47aafa7265b5430a45fe5dd2ef6cf64f64df98df8a13c844cb1"
+    },
+    "research/2026-10-10-dot-g4-sign-free-inverse-estimate-1116z/primary/check.py": {
+      "bytes": 2393,
+      "sha256": "07195496d2b6432bf7f72716b21f120583583ca6b147538517ab7b21909f473b"
+    }
+  },
+  "verified": [
+    "Rational killing normal, exact positive quotient and Sturm check",
+    "Seven-prime valuation determinant and rational zero-level obstruction algebra",
+    "Sparse exposure polynomial, positive coefficients and independent multiplication",
+    "Actual finite count-kernel inverse sign counterexample with independent exact matrices"
+  ]
+}

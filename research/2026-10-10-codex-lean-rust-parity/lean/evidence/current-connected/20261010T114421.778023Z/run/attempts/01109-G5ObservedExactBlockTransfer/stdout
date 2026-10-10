@@ -1,0 +1,20 @@
+G5ObservedExactBlockTransfer.lean:52:0: warning: automatically included section variable(s) unused in theorem `GProgram.G5.ObservedExactBlockTransfer.exactBlock_inter`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G5ObservedExactBlockTransfer.lean:127:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'GProgram.G5.ObservedExactBlockTransfer.observed_triple_transfers_selected_block' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.ObservedExactBlockTransfer.equal_m3_laws_safe_possible_blocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

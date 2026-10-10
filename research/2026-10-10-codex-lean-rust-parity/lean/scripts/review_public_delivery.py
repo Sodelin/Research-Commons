@@ -68,6 +68,10 @@ def main():
         "research/2026-10-10-dot-g7-pending-codex-recovery-0952z/README.md",
         "research/2026-10-10-dot-g6-forest-exposure-handoff-0941z/README.md",
         "research/2026-10-10-dot-g7-qe-interface-review-0026z/README.md"]
+    recent_hand_packets = sorted({str(p.relative_to(REPO)) for pattern in [
+        "research/2026-10-10-dot-g3-*/README.md", "research/2026-10-10-dot-g4-*/README.md"]
+        for p in REPO.glob(pattern)})
+    records.extend(recent_hand_packets)
     pins = [{"path": p, "sha256": digest(REPO / p), "bytes": (REPO / p).stat().st_size} for p in records]
     review = {"schema": "PUBLIC_DELIVERY_SOURCE_CONTEXT_REVIEW_V1",
         "status": "PASS_STATIC_IDENTITIES_AND_CONTEXT_COMPARISON_ONLY",
@@ -92,6 +96,9 @@ def main():
              "Now publicly delivered as failed/uncompiled recovery sources. Compile repaired isolated contexts with their own audits and separate code-generation smoke."},
             {"scope": "G6 full-forest exposure hand/source argument", "disposition":
              "Integrate scoped proof obligations separately; no Lean pass inherited from the handoff."},
+            {"scope": "Later published G3/G4 source-specific handproof and counterexample packets",
+             "public_records": recent_hand_packets, "disposition":
+             "Tracked as scoped mathematical evidence with their original assumptions and open implications. Their publication adds no accepted Lean provider or automatic executable source/coverage gate."},
             {"scope": "G7 QE interface, master G3/G4/G6/G7 admission/coverage", "disposition":
              "Guidance or unresolved mathematical obligations, not missing accepted Lean providers. Retain original quantifiers and explicit gates."}],
         "reproduction_plan": {"workspace": str(UNPACKED),

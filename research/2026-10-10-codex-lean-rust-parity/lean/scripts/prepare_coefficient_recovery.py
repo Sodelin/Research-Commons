@@ -8,6 +8,7 @@ proof derivative owned and documented by the reuse worker.
 """
 from __future__ import annotations
 import datetime
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -21,6 +22,10 @@ SOURCE = ROOT.parent / "reuse/sources/G7EffectiveFullEpochCoefficients.lean"
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--smoke-source", type=Path,
+                        help="Separately pinned elaboration repair of the inherited executable smoke.")
+    args = parser.parse_args()
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
     work = ROOT / ".build/recovery/coefficients" / stamp
     evidence = ROOT / "evidence/recovery/coefficients" / stamp
@@ -35,6 +40,15 @@ def main():
         assert row["sha256"] == provenance["original_sha256"]
         row["sha256"] = sha(SOURCE)
         target["status"] = "UNCOMPILED_SEPARATELY_PINNED_PROOF_REPAIR"
+    smoke_repair = None
+    if args.smoke_source:
+        smoke_source = args.smoke_source.resolve()
+        module = "G7EffectiveCoefficientSmoke"
+        old_hash = graph["targets"]["evidence/g7-coefficient-codegen-smoke"]["modules"][module]["sha256"]
+        graph["targets"]["evidence/g7-coefficient-codegen-smoke"]["modules"][module]["sha256"] = sha(smoke_source)
+        smoke_repair = {"module": module, "original_sha256": old_hash,
+                        "derivative_sha256": sha(smoke_source),
+                        "change": "Explicit proof-bounded Fin zero constructors in forkCode replace unresolved dependent OfNat instances. Original source endpoints/root and executable coefficient computations are retained."}
     graph["scope"]["status"] = "Separately pinned proof repair; historical source and failed attempts preserved."
     graph["scope"]["source_manifest"] = "PREPARATION.json"
     graph["scope"].pop("source_manifest_sha256", None)
@@ -50,6 +64,8 @@ def main():
         shutil.copy2(source, store / source.name)
         sources.append({"sha256": source.stem, "bytes": source.stat().st_size})
     shutil.copy2(SOURCE, store / (sha(SOURCE) + ".lean"))
+    if args.smoke_source:
+        shutil.copy2(smoke_source, store / (sha(smoke_source) + ".lean"))
     scripts = work / "scripts"
     scripts.mkdir()
     for name in ["build_connected.py", "AuditTemplate.lean"]:
@@ -81,12 +97,16 @@ def main():
         "kernel_target": "candidate/g7-coefficients",
         "separate_explicit_audit_target": "evidence/g7-coefficients-explicit-audit",
         "separate_execution_target": "evidence/g7-coefficient-codegen-smoke"}
+    if smoke_repair:
+        receipt["smoke_elaboration_repair"] = smoke_repair
     save(work / "PREPARATION.json", receipt)
     save(evidence / "PREPARATION.json", receipt)
-    save(ROOT / "COEFFICIENT-RECOVERY-PREPARATION.json", receipt)
+    save(ROOT / ("COEFFICIENT-SMOKE-PREPARATION.json" if smoke_repair else "COEFFICIENT-RECOVERY-PREPARATION.json"), receipt)
     frozen = evidence / "derivative/G7EffectiveFullEpochCoefficients.lean"
     frozen.parent.mkdir(parents=True)
     frozen.write_bytes(SOURCE.read_bytes())
+    if args.smoke_source:
+        (frozen.parent / "G7EffectiveCoefficientSmoke.lean").write_bytes(smoke_source.read_bytes())
     (evidence / "ORIGINAL-DEPENDENCY-GRAPH.json").write_bytes(graph_bytes)
     (evidence / "DEPENDENCY-GRAPH.json").write_bytes((work / "DEPENDENCY-GRAPH.json").read_bytes())
     print(json.dumps({"status": receipt["status"], "workspace": str(work),

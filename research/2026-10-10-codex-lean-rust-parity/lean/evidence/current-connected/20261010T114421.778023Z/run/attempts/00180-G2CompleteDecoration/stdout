@@ -1,0 +1,27 @@
+G2CompleteDecoration.lean:27:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.CompleteDecoration.trace_end_joint_measurable`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2CompleteDecoration.lean:92:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G2CompleteDecoration.lean:93:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'GProgram.G2.CompleteDecoration.actual_complete_matrix_decorates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.CompleteDecoration.complete_matrix_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]

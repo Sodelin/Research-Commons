@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from fractions import Fraction
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import time
@@ -233,12 +234,15 @@ def check_probe(actual, expected):
                 and all(type(value) is int and value >= 0 for value in work.values()), "malformed observed work metadata")
         # Operation counts are observations of the native algorithm, not a
         # consequence of this different spectral implementation or a proof.
+    def exact_json(value):
+        return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
     for field in ("schema", "fixture", "context"):
-        require(actual[field] == expected[field], "probe changed " + field)
+        require(exact_json(actual[field]) == exact_json(expected[field]), "probe changed " + field)
     for field in ("rows", "unordered"):
         normalized = sorted(actual[field], key=lambda value: json.dumps(value, sort_keys=True))
         wanted = sorted(expected[field], key=lambda value: json.dumps(value, sort_keys=True))
-        require(normalized == wanted, "complete " + field + " differs from ordered-generator spectral coefficients")
+        require(exact_json(normalized) == exact_json(wanted),
+                "complete " + field + " differs from ordered-generator spectral coefficients")
 
 
 def run(args):
@@ -249,6 +253,23 @@ def run(args):
     own_sha = hashlib.sha256(own.read_bytes()).hexdigest()
     (output / "population_oracle.py").write_bytes(own.read_bytes())
     probes = {name: path.resolve() for name, path in (("rust", args.rust_probe), ("lean", args.lean_probe)) if path}
+    modes = {name: "standalone_executable" for name in probes}
+    commands = {name: [str(path)] for name, path in probes.items()}
+    if args.lean_evaluator:
+        require(args.lean_driver and args.lean_path, "Lean evaluator needs a driver and explicit LEAN_PATH")
+        probes["lean"] = args.lean_evaluator.resolve()
+        modes["lean"] = "compiled_lean_evaluator_not_standalone_elf"
+        driver_raw = args.lean_driver.read_bytes()
+        staged_driver = output / "LEAN-DRIVER.lean"
+        staged_driver.write_bytes(driver_raw)
+        commands["lean"] = [str(probes["lean"]), *args.lean_arg, "--run", str(staged_driver)]
+    else:
+        require(not args.lean_driver and not args.lean_path and not args.lean_workdir and not args.lean_arg,
+                "Lean evaluator options need --lean-evaluator")
+    observed_inputs = [Path(__file__).resolve(), *args.lean_artifact]
+    if args.lean_evaluator:
+        observed_inputs.append(args.lean_driver.resolve())
+    input_pins = {str(path.resolve()): hashlib.sha256(path.read_bytes()).hexdigest() for path in observed_inputs}
     binary_pins = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in probes.items()}
     cases = []
     for name, context in fixtures().items():
@@ -259,32 +280,64 @@ def run(args):
         require((len(expected["rows"]), len(expected["unordered"])) == sizes[name], "ordered/fibre row census control failed")
         (output / (name + ".expected.json")).write_text(json.dumps(expected, indent=2, sort_keys=True)+"\n")
         results, errors = {}, []
-        for language, binary in probes.items():
+        for language in probes:
             start = time.monotonic()
-            process = subprocess.run([str(binary), name], capture_output=True, timeout=30)
-            (output / (name+"."+language+".stdout")).write_bytes(process.stdout)
-            (output / (name+"."+language+".stderr")).write_bytes(process.stderr)
-            results[language] = {"exit_code": process.returncode, "process_started": True,
-                                 "elapsed_seconds": time.monotonic()-start,
-                                 "stdout_sha256": hashlib.sha256(process.stdout).hexdigest()}
+            command = [*commands[language], name]
+            environment = None
+            directory = None
+            if language == "lean" and args.lean_evaluator:
+                environment = dict(os.environ, LEAN_PATH=args.lean_path)
+                directory = args.lean_workdir
+            result = {"command": command, "execution_mode": modes[language],
+                      "process_started": False, "exit_code": None, "timed_out": False}
+            stdout, stderr = b"", b""
             try:
+                process = subprocess.run(command, capture_output=True, timeout=30,
+                                         env=environment, cwd=directory)
+                stdout, stderr = process.stdout, process.stderr
+                result.update(process_started=True, exit_code=process.returncode)
                 require(process.returncode == 0, language+" probe failed")
-                check_probe(json.loads(process.stdout), expected)
-            except (ValueError, TypeError, KeyError) as error:
+                def object_fields(pairs):
+                    answer = {}
+                    for key, value in pairs:
+                        require(key not in answer, "duplicate JSON key")
+                        answer[key] = value
+                    return answer
+                def nonfinite(value):
+                    raise ValueError("nonfinite JSON value: "+value)
+                check_probe(json.loads(stdout, object_pairs_hook=object_fields, parse_constant=nonfinite), expected)
+            except subprocess.TimeoutExpired as error:
+                result.update(process_started=True, timed_out=True)
+                stdout, stderr = error.stdout or b"", error.stderr or b""
+                errors.append(language+": execution timeout")
+            except (OSError, ValueError, TypeError, KeyError) as error:
                 errors.append(language+": "+str(error))
+            (output / (name+"."+language+".stdout")).write_bytes(stdout)
+            (output / (name+"."+language+".stderr")).write_bytes(stderr)
+            result.update(elapsed_seconds=time.monotonic()-start,
+                          stdout_sha256=hashlib.sha256(stdout).hexdigest())
+            results[language] = result
         cases.append({"fixture": name, "literal_rows": len(expected["rows"]),
-                      "unordered_rows": len(expected["unordered"]), "native_runs": results,
+                      "unordered_rows": len(expected["unordered"]), "process_runs": results,
                       "errors": errors, "pass": not errors})
     after = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in probes.items()}
-    receipt = {"schema": "ordered_snapshot_spectral_review_v1", "source_admission_claim": False,
-               "general_refinement_proof_claim": False, "native_languages_executed": list(probes),
+    inputs_after = {str(path.resolve()): hashlib.sha256(path.read_bytes()).hexdigest() for path in observed_inputs}
+    receipt = {"schema": "ordered_snapshot_spectral_review_v2", "source_admission_claim": False,
+               "general_refinement_proof_claim": False,
+               "languages_executed": list(probes), "execution_modes": modes,
+               "native_languages_executed": [name for name in probes if modes[name] == "standalone_executable"],
+               "lean_import_path": args.lean_path, "lean_workdir": str(args.lean_workdir) if args.lean_workdir else None,
+               "observed_input_pins_before": input_pins, "observed_input_pins_after": inputs_after,
+               "import_context_qualification": "Lean imported artifacts are authenticated by the separately supplied integration receipts; these observed input pins do not independently prove that closure.",
                "oracle_algorithm": "Sparse spectral row projectors of literal ordered-half-rate generator",
                "executed_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                "binary_pins_before": binary_pins, "binary_pins_after": after,
                "oracle_sha256": own_sha, "cases": cases, "cases_total": len(cases),
                "cases_passed": sum(case["pass"] for case in cases),
-               "pass": all(case["pass"] for case in cases) and binary_pins == after,
-               "claim": "ORACLE_SELF_CHECK_ONLY" if not probes else "FINITE_NATIVE_LITERAL_POPULATION_COEFFICIENT_REVIEW"}
+               "pass": all(case["pass"] for case in cases) and binary_pins == after and input_pins == inputs_after,
+               "claim": "ORACLE_SELF_CHECK_ONLY" if not probes else (
+                   "FINITE_ORIGINAL_COMPILED_EVALUATOR_COEFFICIENT_REVIEW" if args.lean_evaluator
+                   else "FINITE_NATIVE_LITERAL_POPULATION_COEFFICIENT_REVIEW")}
     (output / "RECEIPT.json").write_text(json.dumps(receipt, indent=2, sort_keys=True)+"\n")
     print(json.dumps({key: receipt[key] for key in ("claim", "pass", "cases_total", "cases_passed")}))
     return 0 if receipt["pass"] else 1
@@ -293,7 +346,14 @@ def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--rust-probe", type=Path)
-    parser.add_argument("--lean-probe", type=Path)
+    lean = parser.add_mutually_exclusive_group()
+    lean.add_argument("--lean-probe", type=Path)
+    lean.add_argument("--lean-evaluator", type=Path)
+    parser.add_argument("--lean-driver", type=Path)
+    parser.add_argument("--lean-path")
+    parser.add_argument("--lean-workdir", type=Path)
+    parser.add_argument("--lean-artifact", type=Path, action="append", default=[])
+    parser.add_argument("--lean-arg", action="append", default=[])
     parser.add_argument("--output", type=Path, required=True)
     return run(parser.parse_args())
 

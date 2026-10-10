@@ -61,7 +61,8 @@ theorem coefficients_zero_of_not_mem (N : RootedBinary V E X) {sample : Copy →
       · have hsd : s ≠ d := by
           intro h
           apply hd
-          simp [destinations, hk, h]
+          rw [destinations, if_pos hk]
+          exact List.mem_singleton.mpr h.symm
         intro z hz
         have hz0 : z = (0, 0) := by simpa [coefficients, hk, hsd] using hz
         subst z
@@ -69,7 +70,8 @@ theorem coefficients_zero_of_not_mem (N : RootedBinary V E X) {sample : Copy →
       · have hsd : s ≠ d := by
           intro h
           apply hd
-          simp [destinations, hk, h]
+          rw [destinations, if_neg hk]
+          exact List.mem_cons.mpr (Or.inl h.symm)
         have hchildren (p : Choice N s) (hp : p ∈ FinEnum.toList (Choice N s)) :
             d ∉ destinations N fuel (merger N s p) := by
           intro hm

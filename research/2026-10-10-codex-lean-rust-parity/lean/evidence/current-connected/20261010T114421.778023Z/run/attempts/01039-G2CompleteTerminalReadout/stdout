@@ -1,0 +1,25 @@
+G2CompleteTerminalReadout.lean:49:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G2CompleteTerminalReadout.lean:50:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'GProgram.G2.CompleteTerminalReadout.actual_terminal_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+G2CompleteTerminalReadout.lean:87:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.FaithfulTimedOutput.completePath`:
+  [DecidableEq E]
+  [MeasurableSpace Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [MeasurableSpace Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G2.FaithfulTimedOutput.completePath' depends on axioms: [propext, Classical.choice, Quot.sound]

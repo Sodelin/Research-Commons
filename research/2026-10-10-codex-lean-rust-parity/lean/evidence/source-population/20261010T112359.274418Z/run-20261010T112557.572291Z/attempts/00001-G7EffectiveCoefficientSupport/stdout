@@ -1,0 +1,68 @@
+G7EffectiveCoefficientSupport.lean:61:28: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+d : Code N sample
+fuel : ℕ
+ih : ∀ (s : Code N sample), d ∉ destinations N fuel s → ∀ z ∈ coefficients N fuel s d, z.2 = 0
+s : Code N sample
+hd : d ∉ destinations N (fuel + 1) s
+hk : (↑s).live.card ≤ 1
+h : s = d
+⊢ d ∈
+    if (↑d).live.card ≤ 1 then [d]
+    else d :: List.flatMap (fun p => destinations N fuel (merger N s p)) (FinEnum.toList (Choice N s))
+G7EffectiveCoefficientSupport.lean:69:28: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+d : Code N sample
+fuel : ℕ
+ih : ∀ (s : Code N sample), d ∉ destinations N fuel s → ∀ z ∈ coefficients N fuel s d, z.2 = 0
+s : Code N sample
+hd : d ∉ destinations N (fuel + 1) s
+hk : ¬(↑s).live.card ≤ 1
+h : s = d
+⊢ d ∈
+    if (↑d).live.card ≤ 1 then [d]
+    else d :: List.flatMap (fun p => destinations N fuel (merger N s p)) (FinEnum.toList (Choice N s))
+G7EffectiveCoefficientSupport.lean:64:30: warning: This simp argument is unused:
+  hk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [destinations, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7EffectiveCoefficientSupport.lean:72:30: warning: This simp argument is unused:
+  hk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [destinations, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

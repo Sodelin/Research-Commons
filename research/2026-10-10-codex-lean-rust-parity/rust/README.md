@@ -216,11 +216,18 @@ generator; it uses neither the new recursive lift algorithm nor LAW's merger
 history formula. All eight fixture comparisons passed, including 193 literal
 four-copy destinations, nonminimum representatives, earlier subtrees,
 restricted label permutations and changed frozen registers. The original typed
-Lean coefficient code-generation comparison is still pending. Historical
-component checks in the recovery packet do not establish successful extraction.
-Reachable-row support, label transport and general quotient refinement also
-remain separate proof obligations under the
-[internal refinement contract](../design/POPULATION-REFINEMENT.md).
+Lean compiled evaluator then passed the same eight complete-row comparisons
+against Rust and the spectral oracle in
+[its separate receipt](../design/evidence/population-lean-rust-review-1/RECEIPT.json).
+It executed compiled Lean definitions through `lean --run`; this is distinct
+from a standalone Lean ELF. The original source-side arbitrary-fuel support
+and canonical encoding-image proofs passed in their
+[108-module context](../lean/evidence/source-population/20261010T112848.298732Z/run-20261010T112858.338259Z/targets/extraction_original-population-fixture/RESULT.json).
+The exact native dictionary/normalization correspondence, label transport and
+general quotient refinement still remain separate obligations under the
+[internal refinement contract](../design/POPULATION-REFINEMENT.md). The older
+G1 actual unranked step/epoch PMF lumpability theorem is reused; see the
+[historical-provider correction](G1-REUSE-CORRECTION-20261010T1122Z.md).
 
 The complete accepted LAW v1 sources, helpers and adapter identities were
 preserved before this addition in
@@ -228,10 +235,74 @@ preserved before this addition in
 with its original executable in the scratch `law-v1-frozen` directory. The
 original byte-parity receipts are not relabelled as source-refinement evidence.
 
+## Internal full-source epoch
+
+The library-only [source_epoch.rs](src/source_epoch.rs) consumes the literal
+population recurrence through the actual original whole-copy panel/exterior
+semantics. It takes at most four local copied labels and the current finite
+graph bounds, with an explicit original edge-plus-ancestral bank of at most 32
+coordinates. Parallel original edge occurrences remain distinct. Full selected
+views contain an ancestor's **ordered** genealogy and original location for
+every copy, plus the same entire entering vertex register. Representative and
+ancestor bookkeeping is omitted from the view and retained in its snapshot
+witness. Global label embeddings drive only a separately declared unranked
+readout; the full view uses the original outer local copy IDs.
+
+Every population panel contains complete copied-leaf fibres, including copies
+whose current representative has another ID. The module restricts trees,
+samples and ancestry through an explicit local embedding, runs the exact
+population row and sums equal ordered selected views. Original node copies
+remain exterior identity data. It then glues literal panel witnesses into a
+complete canonical snapshot, checks the forest/descendant invariants and
+verifies that the snapshot's selected view equals the joined key. This avoids
+assuming that arbitrary abstract view products pass the inherited admitted-
+index search. The general Lean panel/range/normalization transport remains
+pending.
+
+Variables are original edge IDs in ascending order, followed by ancestral.
+Physical evaluation would be `X_i=exp(-pairRate(r,i)*t)` for one shared positive
+rate bank and one nonnegative epoch duration. The formal row does not select a
+calendar, gather node boundaries, route a hybrid, initialize its register,
+complete ancestry or fit observations.
+
+Budgets count calls and lifted terms across all panels, including empty identity
+panels; the destination bound is per panel. Before each product stage, the
+module checks cumulative raw selected-row branches and polynomial term products
+before multiplication/normalization. A failed bound returns UNKNOWN with its
+original population, requirement and cap, without a partial table. Defaults
+are 4,096 calls, 4,096 destinations per panel, 65,536 lifted terms, 4,096 product
+branches and 65,536 term products. These are conservative resource gates, not
+source-census or mathematical completeness bounds.
+
+The [separate candidate build](evidence/epoch-build-1/BUILD-RECEIPT.json)
+passes forty tests. The independent single mixed-population generator/spectral
+review passes [nine complete-view fixtures](../design/evidence/epoch-rust-review-1/RECEIPT.json),
+including every coefficient, literal range witness and original location/register,
+with a separate population-preserving unranked pushforward. It constructs one
+mixed generator rather than multiplying the native panel kernels. The candidate
+also passes [all 117 public protocol regressions](../design/evidence/epoch-candidate-regression-1/PARITY-RECEIPT.json).
+These finite checks do not establish a general original full-epoch extraction
+theorem. The test-only probe schema and source assumptions are fixed by
+[EPOCH-REFINEMENT.md](../design/EPOCH-REFINEMENT.md).
+
+The accepted `237e87…` public executable remains unchanged. Its sources and the
+`333d22…` population probe were preserved in
+[population-v1/SNAPSHOT.json](evidence/history/population-v1/SNAPSHOT.json).
+The epoch candidate and its probe are in a separate `epoch-candidate-target-1`
+scratch directory. [build_epoch.py](build_epoch.py) uses fresh target/output
+directories and records the original eight-case evaluator and support-context
+acceptance inputs. It does not replace the accepted runtime. There is no public
+RC1 EPOCH operation, application endpoint or source-admission promotion.
+
 ## Executed verification
 
-- Thirty-two Rust tests passed in the additive
-  [population build](evidence/population-build-2/BUILD-RECEIPT.json). The seven
+- Forty Rust tests passed in the separate
+  [epoch candidate](evidence/epoch-build-1/BUILD-RECEIPT.json). The eight epoch
+  controls check every ordered two-panel coefficient, original nodes/parallel
+  populations, whole copied-leaf fibres and carried nonminimum representatives,
+  literal range witnesses, representative-erasing ordered views, exact budget
+  boundaries and refusal without partial output. The earlier thirty-two tests
+  retain their separate [population build](evidence/population-build-2/BUILD-RECEIPT.json). Its seven
   added checks cover literal ordered half rates, full destination rows,
   original snapshot/descendant invariants, carried subtrees, original parallel
   identities, explicit resource refusal and every unordered coefficient against

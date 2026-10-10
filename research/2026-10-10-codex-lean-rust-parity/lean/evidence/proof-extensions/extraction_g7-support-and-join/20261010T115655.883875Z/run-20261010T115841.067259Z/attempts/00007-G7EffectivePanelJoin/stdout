@@ -1,0 +1,22 @@
+G7EffectivePanelJoin.lean:45:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectivePanelJoin.joinedStateEffective_eq`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectivePanelJoin.lean:57:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectivePanelJoin.joinedCode_eq_joinCode`:
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G7.EffectivePanelJoin.joinedCode_eq_joinCode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.EffectivePanelJoin.joinedSelected_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

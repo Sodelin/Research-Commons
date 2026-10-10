@@ -1,0 +1,16 @@
+G1JointUnrankedForestAssembly.lean:37:0: warning: automatically included section variable(s) unused in theorem `G1JointUnrankedForestAssembly.prune_eq_of_leaf_membership`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G1JointUnrankedForestAssembly.lean:65:0: warning: automatically included section variable(s) unused in theorem `G1JointUnrankedForestAssembly.actual_pruned_forest_union`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'G1JointUnrankedForestAssembly.actual_pruned_forest_union' depends on axioms: [propext, Classical.choice, Quot.sound]

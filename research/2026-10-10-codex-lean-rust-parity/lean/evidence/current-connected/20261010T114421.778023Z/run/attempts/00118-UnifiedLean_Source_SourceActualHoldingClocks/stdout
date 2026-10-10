@@ -1,0 +1,26 @@
+UnifiedLean/Source/SourceActualHoldingClocks.lean:127:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+UnifiedLean/Source/SourceActualHoldingClocks.lean:121:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceActualHoldingClocks.actual_current_clock_no_merger`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.SourceActualHoldingClocks.actual_iteration_no_merger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceActualHoldingClocks.actual_source_kernel_no_merger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceActualHoldingClocks.actual_current_clock_no_merger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceActualHoldingClocks.actual_first_clock_source_binding' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

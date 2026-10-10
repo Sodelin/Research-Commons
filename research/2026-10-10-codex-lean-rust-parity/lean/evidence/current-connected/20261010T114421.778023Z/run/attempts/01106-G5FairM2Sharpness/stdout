@@ -1,0 +1,32 @@
+'GProgram.G5.Sharpness.every_original_singleton_calendar_law_matches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.Sharpness.complete_max_one_calendar_family_matches' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G5.Sharpness.fair_m2_sharpness_actual_source_counterexample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GProgram.G5.Normalization.fair_m2_identifies_documented_normalized_cut_quartets.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1}
+  {E : Type u_2} {X : Type u_3} {V₂ : Type u_4} {E₂ : Type u_5} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]
+  [DecidableEq E] [Fintype V₂] [Fintype E₂] [DecidableEq V₂] [DecidableEq E₂] (N : RootedBinary V E X)
+  (C : Calendar N.graph) (hcut : ∀ (e : E), N.graph.IsHybrid (N.graph.source e) → N.graph.IsBridge e)
+  (H : OriginalParentRegistry N) (r : PositivePairRates E) (common : Bool) (N₂ : RootedBinary V₂ E₂ X)
+  (C₂ : Calendar N₂.graph) (hcut₂ : ∀ (e : E₂), N₂.graph.IsHybrid (N₂.graph.source e) → N₂.graph.IsBridge e)
+  (H₂ : OriginalParentRegistry N₂) (r₂ : PositivePairRates E₂) (common₂ : Bool) {s : ℝ}
+  (htips : ∀ (x : X), C.age (N.leaf x) = s) (htips₂ : ∀ (x : X), C₂.age (N₂.leaf x) = s)
+  (heq :
+    ∀ (x y : X),
+      x ≠ y →
+        UnifiedLean.Source.NativePairCalendarObservation.pairCalendarLaw N C H (fairParameters N) r common x y =
+          UnifiedLean.Source.NativePairCalendarObservation.pairCalendarLaw N₂ C₂ H₂ (fairParameters N₂) r₂ common₂ x y)
+  (q : Fin 4 ↪ X) : normalizedDisplayedCutQuartets N q = normalizedDisplayedCutQuartets N₂ q
+GProgram.G5.Sharpness.fair_m2_sharpness_actual_source_counterexample (commonA commonB : Bool) :
+  (∀ (e : Edge), sourceA.graph.IsHybrid (sourceA.graph.source e) → sourceA.graph.IsBridge e) ∧
+    (∀ (e : Edge), sourceB.graph.IsHybrid (sourceB.graph.source e) → sourceB.graph.IsBridge e) ∧
+      (∀ (x : Taxon), treeCalendar.age (sourceA.leaf x) = 0) ∧
+        (∀ (x : Taxon), treeCalendar.age (sourceB.leaf x) = 0) ∧
+          (∀ (A : SmallPanel),
+              smallPanelCalendarLaw sourceA treeCalendar registryA rates commonA A =
+                smallPanelCalendarLaw sourceB treeCalendar registryB rates commonB A) ∧
+            normalizedDisplayedCutQuartets sourceA quartet ≠ normalizedDisplayedCutQuartets sourceB quartet

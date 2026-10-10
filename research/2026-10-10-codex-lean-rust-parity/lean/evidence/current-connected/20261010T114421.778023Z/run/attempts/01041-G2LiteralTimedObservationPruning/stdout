@@ -1,0 +1,21 @@
+G2LiteralTimedObservationPruning.lean:23:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.LiteralTimedObservationPruning.mem_forest_iff_live`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2LiteralTimedObservationPruning.lean:43:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.LiteralTimedObservationPruning.mem_prune_forest`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G2.LiteralTimedObservationPruning.prune_source_forest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.LiteralTimedObservationPruning.prune_matrix_observation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

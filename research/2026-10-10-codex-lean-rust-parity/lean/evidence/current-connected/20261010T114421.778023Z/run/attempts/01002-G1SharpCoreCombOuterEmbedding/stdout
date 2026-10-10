@@ -1,0 +1,14 @@
+G1SharpCoreCombOuterEmbedding.lean:55:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G1SharpCoreCombOuterEmbedding.lean:82:65: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'G1SharpCoreCombOuterEmbedding.actual_outer_embedding' depends on axioms: [propext, Classical.choice, Quot.sound]

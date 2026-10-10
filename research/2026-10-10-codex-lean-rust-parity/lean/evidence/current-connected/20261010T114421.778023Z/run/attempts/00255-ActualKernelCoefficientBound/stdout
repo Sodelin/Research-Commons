@@ -1,0 +1,22 @@
+ActualKernelCoefficientBound.lean:63:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.ActualKernelCoefficientBound.delta_mass`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ActualKernelCoefficientBound.lean:117:25: warning: This simp argument is unused:
+  List.map_map
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [kernelExpr, if_neg hk, exprMass_append, Finset.sum_add_distrib, flatMap_mass, Function.comp_def,
+    Finset.sum_map_toList, delta_mass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ActualKernelCoefficientBound.lean:117:38: warning: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [kernelExpr, if_neg hk, exprMass_append, Finset.sum_add_distrib, flatMap_mass, List.map_map,
+    Finset.sum_map_toList, delta_mass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

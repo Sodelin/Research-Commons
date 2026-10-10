@@ -57,13 +57,25 @@ def main():
         target = destination / ".build/cache" / entry.name
         target.parent.mkdir(parents=True, exist_ok=True)
         if target.exists():
-            assert (target / "receipt.json").read_bytes() == (entry / "receipt.json").read_bytes()
+            # Two independent fresh runs can authenticate the same exact key
+            # with different receipt paths/timings. Retain the destination's
+            # original receipt rather than replacing its provenance.
+            existing = json.loads((target / "receipt.json").read_bytes())
+            assert existing["status"] == "PASS_FRESH_KERNEL_CHECK"
+            assert existing["module"] == rec["module"]
+            assert existing["source_sha256"] == rec["source_sha256"]
+            assert existing["compiler_sha256"] == rec["compiler_sha256"]
+            assert existing["mathlib_commit"] == rec["mathlib_commit"]
+            assert existing["direct_import_artifacts"] == rec["direct_import_artifacts"]
+            assert existing["native_runtime_digest"] == rec["native_runtime_digest"]
+            assert existing["object_artifacts"] == rec["object_artifacts"]
             assert bundle(target / "artifact.olean") == rec["object_artifacts"]
         else:
             shutil.copytree(entry, target)
             copied += 1
         records.append({"module": rec["module"], "key": entry.name,
             "source_sha256": rec["source_sha256"], "original_receipt_sha256": sha(entry / "receipt.json"),
+            "retained_destination_receipt_sha256": sha(target / "receipt.json"),
             "original_receipt_directory": rec["receipt_directory"],
             "native_runtime_digest": rec["native_runtime_digest"], "object_artifacts": rec["object_artifacts"]})
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")

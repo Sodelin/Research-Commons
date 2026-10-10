@@ -1,0 +1,24 @@
+OriginalCalendarSchema.lean:65:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.OriginalCalendarSchema.duration_eq_literal`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+OriginalCalendarSchema.lean:99:8: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.OriginalCalendarSchema.physical_gamma_coordinate`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+OriginalCalendarSchema.lean:121:38: warning: Unused tactic linter: `change (schema.get i).isInterval = true` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+OriginalCalendarSchema.lean:156:21: warning: This simp argument is unused:
+  ← List.map_ofFn
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [instantiate]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

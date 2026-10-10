@@ -1,0 +1,36 @@
+G2EpochHistoryReadout.lean:32:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.EpochHistoryReadout.cut_endpoint_joint_measurable`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G2EpochHistoryReadout.lean:53:0: warning: automatically included section variable(s) unused in theorem `GProgram.G2.EpochHistoryReadout.cut_endpoint_eq_record_fold`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G2.EpochHistoryReadout.cut_endpoint_joint_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.EpochHistoryReadout.cut_endpoint_eq_record_fold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.EpochHistoryReadout.actual_history_cut_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G2.EpochHistoryReadout.epoch_history_readout_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G2.EpochHistoryReadout.actual_finite_history_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+G2EpochHistoryReadout.lean:114:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'GProgram.G2.EpochHistoryReadout.actual_finite_history_future_source_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
