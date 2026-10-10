@@ -1,0 +1,11 @@
+--- frozen-v1/G3WeakClassPartition.lean
++++ repair-v2/G3WeakClassPartition.lean
+@@ -13,7 +13,7 @@
+ /-- Predicate on the existing real Bernoulli parameters, not a new source type. -/
+ def strictPair (p q : ℝ) : Prop := 0 < p ∧ p < 1 ∧ 0 < q ∧ q < 1
+ 
+-def odds (p : ℝ) : ℝ := p / (1 - p)
++noncomputable def odds (p : ℝ) : ℝ := p / (1 - p)
+ 
+ /-- A rare-node class requires BOTH node membership and the small-odds bound. -/
+ def rare (I : Set ℝ) (z0 p q : ℝ) : Prop :=

@@ -1,0 +1,54 @@
+{
+  "status": "FROZEN_EXECUTION_VIEW_NO_COMPILER_STARTED",
+  "package": "connectedResearch",
+  "base_graph_sha256": "7e4b02f6b482a2e237432ba629f6a09211e72eae483310abe9d72baad46be061",
+  "execution_graph_sha256": "c536c030596609e1b0b0b5b4263bcabbbedba3357e76e5f2a05257fd9219c928",
+  "base_profile_count": 78,
+  "all_prior_profile_records_unchanged": true,
+  "only_requested_profile": "candidate/g3-weak-class-partition",
+  "fresh_cache_empty": true,
+  "builder_sha256": "f74f8e24dd6a61f627c42e4106de442f1ba0adecaf06442b6a0a4e70cbe681be",
+  "audit_template_sha256": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a",
+  "draft_sha256": "40f3367c5e4a4ab578645f00f377af046e4371fac13e9c4919fe660be5d63831",
+  "source_scope": {
+    "roots": [
+      "G3WeakClassPartition"
+    ],
+    "modules": {
+      "G3BernoulliDerivatives": {
+        "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+        "imports": [
+          "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+          "Mathlib.Analysis.Calculus.Deriv.Pow",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "G3WeakClassPartition": {
+        "sha256": "40f3367c5e4a4ab578645f00f377af046e4371fac13e9c4919fe660be5d63831",
+        "imports": [
+          "G3BernoulliDerivatives"
+        ]
+      }
+    },
+    "order": [
+      "G3BernoulliDerivatives",
+      "G3WeakClassPartition"
+    ],
+    "unresolved_imports": [],
+    "required_for_accepted_release": false
+  },
+  "shared_lock": "${BASE_PACKAGE}/.build/lock",
+  "source_store_is_read_only_symlink_view_except_new_draft": true,
+  "no_separate_lake_project": true,
+  "budgets": {
+    "per_invocation_seconds": 180,
+    "memory_mib": 4096,
+    "run_total_allocation_bytes": 268435456,
+    "per_file_bytes": 33554432,
+    "minimum_free_bytes": 2254857830
+  },
+  "prior_failure_final_sha256": "c49a23ee1cd57ee25dde8ace9d81b17bff717021bcea60fc5c34f6ed66c52d2e",
+  "repair": "Mark only real odds definition noncomputable; mathematical statements and hypotheses unchanged"
+}
