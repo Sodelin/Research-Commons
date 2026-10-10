@@ -52,3 +52,13 @@ Its unweighted negative diagonal reservoir is at least (log n)^2/200 for all n>=
 The [independent review](INDEPENDENT-SPARSE-CLOCK-REVIEW.md) binds exact proof SHA256 `0539ec4039f217794b34058a734ca4d560199881154c3cc57e51eebf08ee7a30`. The estimate is only an UPPER bound. It neither refutes exponential-type positional rigidity nor constructs an endpoint-equal finite target or exact finite-prefix rivals. The finite-array realization and generalized infinite limit remain distinct. The proof's dated review-pending header is preserved as development history; the review records subsequent scoped acceptance.
 
 This is a preserved failed-route diagnostic within the same biased-source checkpoint. It leaves the original sharp negative-part theorem and all ten original packet bodies unchanged, apart from this explicitly appended README section. ADDENDUM-MANIFEST-1310.json binds the two additions and the unchanged original README prefix.
+
+
+## Dated prior-work coverage update, 10 October 2026, 13:30 UTC
+
+The [focused coverage and applicability report](G4-PRIOR-APPLICABILITY-COVERAGE-1327.md) maps the all-fair compactification/local/effective/edge-consumer chain, the clock ratio and sharp primitive bound, and the sparse attenuation diagnostic to their inherited providers and checked external primary results. [Independent interface review](INDEPENDENT-G4-PRIOR-COVERAGE-REVIEW-1330.md) accompanies it.
+
+This is partial, substantive prior-work coverage. Historical novelty of the source-specific deductions remains unresolved. Classical error bounds, single-crossing methods and finite-forcing tools are attributed explicitly. The strongest checked external results require additional graph-motif, common-transform or source-class interfaces; none currently closes the biased chronological gate. The report records its version and full-text access limitations. No existing proof status is changed.
+
+The earlier README and all earlier proof/review bodies are preserved; [the appendix manifest](PRIOR-COVERAGE-MANIFEST-1330.json) pins these additions.
+
