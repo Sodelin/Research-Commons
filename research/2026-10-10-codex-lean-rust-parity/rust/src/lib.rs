@@ -13,6 +13,7 @@ pub mod source_boundary;
 pub mod source_calendar;
 pub mod source_completion;
 pub mod source_epoch;
+pub mod source_fit_bank;
 pub mod source_population;
 pub mod source_word;
 

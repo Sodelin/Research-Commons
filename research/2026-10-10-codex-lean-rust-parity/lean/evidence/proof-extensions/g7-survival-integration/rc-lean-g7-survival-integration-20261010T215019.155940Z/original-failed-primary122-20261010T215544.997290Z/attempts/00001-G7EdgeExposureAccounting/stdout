@@ -1,0 +1,123 @@
+G7EdgeExposureAccounting.lean:51:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.gatherFrom_zero`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:57:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.gather_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:67:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.opens_disjoint`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:71:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.retain_idem`:
+  [DecidableEq E]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:74:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.retain_commute`:
+  [DecidableEq E]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:99:45: error: Application type mismatch: The argument
+  at_stop
+has type
+  mark stop
+but is expected to have type
+  ∀ d ∈ bs, d < stop → ¬mark d
+in the application
+  ih b hbs htail at_stop
+G7EdgeExposureAccounting.lean:110:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.whole_edge_date_telescope`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:156:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EdgeExposureAccounting.boundary_clockless`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EdgeExposureAccounting.lean:165:76: error: unsolved goals
+case none
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+a : ℝ
+⊢ (∃ op,
+      ((∃ a_1, a = C.age a_1 ∧ op = Event.node a_1) ∨ ∃ a_1, a = C.age (N.graph.source a_1) ∧ op = Event.exit a_1) ∧
+        match op with
+        | Event.interval time => False
+        | Event.exit e => False
+        | Event.node v => v = N.root) ↔
+    a = C.age N.root
+
+case some
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+a : ℝ
+val✝ : E
+⊢ (∃ op,
+      ((∃ a_1, a = C.age a_1 ∧ op = Event.node a_1) ∨ ∃ a_1, a = C.age (N.graph.source a_1) ∧ op = Event.exit a_1) ∧
+        match op with
+        | Event.interval time => False
+        | Event.exit e => val✝ = e
+        | Event.node v => v = N.graph.target val✝) ↔
+    a = C.age (N.graph.source val✝) ∨ a = C.age (N.graph.target val✝)
+G7EdgeExposureAccounting.lean:174:72: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => (if _a then 0 else untilTouch N i rest) = if endpointDate N C i a then 0 else untilTouch N i rest
+Error: Application type mismatch: The argument
+  List.decidableBEx (Touches N i) (boundaryEvents N C a)
+has type
+  Decidable (∃ x ∈ boundaryEvents N C a, Touches N i x)
+but is expected to have type
+  Decidable _a
+in the application
+  @ite ℝ _a (List.decidableBEx (Touches N i) (boundaryEvents N C a))
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+a : ℝ
+i : Option E
+rest : List (Event V E)
+⊢ (if ∃ op ∈ boundaryEvents N C a, Touches N i op then 0 else untilTouch N i rest) =
+    if endpointDate N C i a then 0 else untilTouch N i rest

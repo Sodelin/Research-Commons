@@ -1,0 +1,120 @@
+{
+  "status": "ROOT_PRE_USE_QC_PASS_LAUNCH_AUTHORIZED",
+  "timestamp_utc": "2026-10-10T21:55:25.544051+00:00",
+  "reviewer": "Codex root",
+  "checks": {
+    "monitor": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/guard_g7_survival_run_20261010_v2.py",
+      "sha256": "4844ff0937b0c19bebca127ad317ea4ae5eb792b1e5f59d84c1dffaed34eb3f4"
+    },
+    "plan": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/RESOURCE-AND-RUN-PLAN.json",
+      "sha256": "e40a58557e63ea22402a995d725d8c93977a2f72fa5236a19da3c0bf6918d0a2"
+    },
+    "graph": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/DEPENDENCY-GRAPH.json",
+      "sha256": "b24796d27b4b88bfda8d442f70d6cc4362a72c9d70ddfeaf7938775109d9c850"
+    },
+    "preparation": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/PREPARATION.json",
+      "sha256": "149da9482e22db2d74c94002f7370b5675755e3f50b31ea18bf42c903d87b9d7"
+    },
+    "launcher": {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/run_proof_extensions.py",
+      "sha256": "9f32b6998cbaabad9867802dd7d88e0b305ab36635252b7e53e0669663c9ef38"
+    },
+    "builder": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/build_connected.py",
+      "sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc"
+    },
+    "audit": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/AuditTemplate.lean",
+      "sha256": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a"
+    },
+    "namespace": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/build_with_mathlib_overlay.py",
+      "sha256": "8a8edaf44b6f356614b7c9969025ff99a8e4dc297d1e9a2daef9c3eee51569fd"
+    },
+    "authenticated": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/build_with_authenticated_overlay.py",
+      "sha256": "161bdd917ab564775c449dac699ab962b21ee41a76bed26cdda6333648c58c58"
+    },
+    "seed_g7_survival_cache.py": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/seed_g7_survival_cache.py",
+      "sha256": "3d2e87a3e8042afe900395b5f433264c5adaaf6010eec5e1e40910741fd58ddb"
+    },
+    "prepare_g7_survival_install.py": {
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z/scripts/prepare_g7_survival_install.py",
+      "sha256": "876c30fb2e796220c7845d1fe8d2add70d2f966d4e497623201cca17a28161df"
+    }
+  },
+  "preserved_parent_modules": 1497,
+  "fresh_modules": {
+    "G7EdgeExposureAccounting": {
+      "module": "G7EdgeExposureAccounting",
+      "sha256": "a4493d5670bc8b1936a0294063cf0ee41359ed87c9da3b415e21a5ab33ba29fb",
+      "imports": [
+        "G7ActualCalendarGathering"
+      ]
+    },
+    "G7CalendarExposureClosedForm": {
+      "module": "G7CalendarExposureClosedForm",
+      "sha256": "f9a9c1803154a99f0558f0a137b6207142c1358d6ac5940041977e71853e9320",
+      "imports": [
+        "G7EdgeExposureAccounting",
+        "UnifiedLean.Source.SourceCalendarTiming"
+      ]
+    },
+    "G7OrderedFrontierProduct": {
+      "module": "G7OrderedFrontierProduct",
+      "sha256": "381e567fe8a48acfbd3e8634bfa922d8ee3bc2326bd07185b3a43eb73fb31725",
+      "imports": [
+        "G7CalendarExposureClosedForm",
+        "G7BoundaryPhasePermutation",
+        "Mathlib.Data.List.Perm.Basic"
+      ]
+    },
+    "G7CalendarFrontierOrder": {
+      "module": "G7CalendarFrontierOrder",
+      "sha256": "f719a1dae4eae2ea0edbe01a3461abe30f61d0018011abf4f040ce3c17ef126a",
+      "imports": [
+        "G7OrderedFrontierProduct"
+      ]
+    },
+    "G7WholeEdgeExposureInvariant": {
+      "module": "G7WholeEdgeExposureInvariant",
+      "sha256": "f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642",
+      "imports": [
+        "G7CalendarFrontierOrder",
+        "G7AncestralRationalCompletion",
+        "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+        "UnifiedLean.Source.SourceCompletedUnrankedTree"
+      ]
+    },
+    "G7OriginalSurvivalCoverage": {
+      "module": "G7OriginalSurvivalCoverage",
+      "sha256": "013d5d57a955e911ba808e4b1f91e5b63e8bdd4523bc1a09db64b5dfc2f73a69",
+      "imports": [
+        "G7WholeEdgeExposureInvariant",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+      ]
+    },
+    "G6OriginalWholeEdgeChartConsumer": {
+      "module": "G6OriginalWholeEdgeChartConsumer",
+      "sha256": "20df02223f9c2c214056f50d4bfa43f7e68ee35a93aead431ef2a02bd81f1163",
+      "imports": [
+        "G7OriginalSurvivalCoverage"
+      ]
+    }
+  },
+  "targets": [
+    122,
+    123,
+    1504
+  ],
+  "strict_core_and_audit_unchanged": true,
+  "resource_policy_authority": "Root dated2GiB continuation of root-self-imposed1497 operational budget; user authorized ongoing integration",
+  "compiler_acceptance_claimed": false,
+  "monitor_review": "Read completev2: process-group exception cleanup, post-exit gates, pre-phase pinned launcher/core/audit/wrappers, prospective1503 forbidden",
+  "independent_design_static_review": "PASS reported by solver_design; no compiler claims"
+}

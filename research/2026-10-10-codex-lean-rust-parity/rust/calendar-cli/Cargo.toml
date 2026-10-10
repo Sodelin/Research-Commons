@@ -14,8 +14,13 @@ path = "src/lib.rs"
 name = "calendar-solver"
 path = "src/main.rs"
 
+[[bin]]
+name = "source-fit-solver"
+path = "src/source_fit_main.rs"
+
 [dependencies]
 research-commons-parity-solver = { path = ".." }
+num-bigint = "=0.4.6"
 serde = { version = "=1.0.228", features = ["derive"] }
 serde_json = { version = "=1.0.145", features = ["raw_value"] }
 

@@ -6,6 +6,7 @@ compile_error!("The calendar request count contract requires a 64-bit target");
 
 pub mod request;
 pub mod response;
+pub mod source_fit;
 
 use request::parse_request;
 use response::{ErrorKind, Frame};
