@@ -1,0 +1,16 @@
+G6RationalCompressionCertificateFacts.lean:15:56: error: Tactic `decide` failed for proposition
+  allChecksPass = true
+because its `Decidable` instance
+  instDecidableEqBool allChecksPass true
+did not reduce to `isTrue` or `isFalse`.
+
+After unfolding the instances `decEq`, `decidable_of_decidable_of_iff`, `decidable_of_iff`, `instDecidableAnd`, `instDecidableEqBool`, `instDecidableEqNat`, `Bool.decEq`, `Int.decEq`, `Int.decLt`, `Int.decNonneg`, `Int.instDecidableEq`, `Nat.decEq`, `Nat.decLe`, `Nat.decidableBallLT`, `Nat.decidableForallFin`, `Rat.instDecidableLt`, and `RationalCompressionCertificate.certificateDecidable`, reduction got stuck at the `Decidable` instance
+  match allChecksPass, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+'GProgram.G6.RationalCompressionCertificateFixture.allChecksPass_true' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

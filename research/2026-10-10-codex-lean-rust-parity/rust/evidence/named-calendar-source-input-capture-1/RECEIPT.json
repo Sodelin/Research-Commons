@@ -1,0 +1,327 @@
+{
+  "after": {
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7AdmissionChecks.lean": "7834bc20dab2b73af5d397c67cf02eb12f5c1cda89a5a7828eba9f67d91631e3",
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7FiniteReachability.lean": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalAdmission.lean": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalFiniteEncoding.lean": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+    "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/INVENTORY.json": "4d39a2d825686e135dc727dd9a705320af0c5b54c4c65d7251c28f42ddb5c2ba",
+    "research/2026-10-10-codex-lean-rust-parity/lean/COEFFICIENT-SMOKE-RESULT.json": "5cab795c29eb3a5c830ece7daa0ba61455c01697717333436687c74989c87189",
+    "research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-CALENDAR-FIXTURE-CERTIFICATE.json": "7dfecc253e3d382497b9d67cb5b50c7721744406bdfc5ca49358e1a239dee4d2",
+    "research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-PARALLEL-EPOCH-FIXTURE-CERTIFICATE.json": "c44950e3f89137208472df9446318e195b75d1fb298c067354339b2f3a664b52",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G6TwoTipChartFixture.lean": "1d7e4d7509022405182bd8c98e98e59d73d013899b4cecd29d55a854a2972bfb",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveCoefficientSmoke.lean": "7137442eab121c30a486abe70efddbf401135b2a3a9cd0c051232a63ea207ff4",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixture.lean": "cc277b23fdd8c2055bab5daad191e591b3a258c1c65d90b7df60209b87e5c11f",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalCompletedCalendarFixture.lean": "92dc399e9695530cffe4538305ef9a72cbf07d8cfec9a95b6f55b88e0e33b18b",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalEpochFixture.lean": "2450446a29be4196e782cb900fa1867e5396436acab391aab207ec8d16a55f10",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalParallelEpochFixture.lean": "eb5db3412042ce9d991c0eb970c7ddd32ecc88e005ec36610dbd56e281274432",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalWordFixture.lean": "6e3e25ccd99e1f52fc75d7584de8e47665b7911f6d04e01e051a09d6b672c2fa"
+  },
+  "before": {
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7AdmissionChecks.lean": "7834bc20dab2b73af5d397c67cf02eb12f5c1cda89a5a7828eba9f67d91631e3",
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7FiniteReachability.lean": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalAdmission.lean": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+    "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalFiniteEncoding.lean": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+    "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/INVENTORY.json": "4d39a2d825686e135dc727dd9a705320af0c5b54c4c65d7251c28f42ddb5c2ba",
+    "research/2026-10-10-codex-lean-rust-parity/lean/COEFFICIENT-SMOKE-RESULT.json": "5cab795c29eb3a5c830ece7daa0ba61455c01697717333436687c74989c87189",
+    "research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-CALENDAR-FIXTURE-CERTIFICATE.json": "7dfecc253e3d382497b9d67cb5b50c7721744406bdfc5ca49358e1a239dee4d2",
+    "research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-PARALLEL-EPOCH-FIXTURE-CERTIFICATE.json": "c44950e3f89137208472df9446318e195b75d1fb298c067354339b2f3a664b52",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G6TwoTipChartFixture.lean": "1d7e4d7509022405182bd8c98e98e59d73d013899b4cecd29d55a854a2972bfb",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveCoefficientSmoke.lean": "7137442eab121c30a486abe70efddbf401135b2a3a9cd0c051232a63ea207ff4",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixture.lean": "cc277b23fdd8c2055bab5daad191e591b3a258c1c65d90b7df60209b87e5c11f",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalCompletedCalendarFixture.lean": "92dc399e9695530cffe4538305ef9a72cbf07d8cfec9a95b6f55b88e0e33b18b",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalEpochFixture.lean": "2450446a29be4196e782cb900fa1867e5396436acab391aab207ec8d16a55f10",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalParallelEpochFixture.lean": "eb5db3412042ce9d991c0eb970c7ddd32ecc88e005ec36610dbd56e281274432",
+    "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalWordFixture.lean": "6e3e25ccd99e1f52fc75d7584de8e47665b7911f6d04e01e051a09d6b672c2fa"
+  },
+  "code_projection": {
+    "path": "CODE-INPUTS.json",
+    "sha256": "1a1fd1475f6ff40dd1094c9c842a41a1086e2cdb33a5d888f69daf839c903431"
+  },
+  "compiled_executables_copied": 0,
+  "compiler_invocations": 0,
+  "contributor": "Codex / rust_implementation",
+  "date_utc": "2026-10-10T17:27:34.445516+00:00",
+  "existing_acceptance_metadata": [
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/INVENTORY.json",
+      "sha256": "4d39a2d825686e135dc727dd9a705320af0c5b54c4c65d7251c28f42ddb5c2ba"
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-PARALLEL-EPOCH-FIXTURE-CERTIFICATE.json",
+      "sha256": "c44950e3f89137208472df9446318e195b75d1fb298c067354339b2f3a664b52"
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-CALENDAR-FIXTURE-CERTIFICATE.json",
+      "sha256": "7dfecc253e3d382497b9d67cb5b50c7721744406bdfc5ca49358e1a239dee4d2"
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/COEFFICIENT-SMOKE-RESULT.json",
+      "sha256": "5cab795c29eb3a5c830ece7daa0ba61455c01697717333436687c74989c87189"
+    }
+  ],
+  "existing_completed_calendar_closure_membership": [
+    {
+      "module": "G7OriginalAdmission",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c"
+    },
+    {
+      "module": "G7OriginalFiniteEncoding",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078"
+    },
+    {
+      "module": "G7FiniteReachability",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35"
+    },
+    {
+      "module": "G7AdmissionChecks",
+      "present_in_completed_calendar_certificate": false,
+      "sha256": "7834bc20dab2b73af5d397c67cf02eb12f5c1cda89a5a7828eba9f67d91631e3"
+    },
+    {
+      "module": "G6TwoTipChartFixture",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "1d7e4d7509022405182bd8c98e98e59d73d013899b4cecd29d55a854a2972bfb"
+    },
+    {
+      "module": "G7OriginalEpochFixture",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "2450446a29be4196e782cb900fa1867e5396436acab391aab207ec8d16a55f10"
+    },
+    {
+      "module": "G7OriginalParallelEpochFixture",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "eb5db3412042ce9d991c0eb970c7ddd32ecc88e005ec36610dbd56e281274432"
+    },
+    {
+      "module": "G7OriginalBoundaryFixture",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "cc277b23fdd8c2055bab5daad191e591b3a258c1c65d90b7df60209b87e5c11f"
+    },
+    {
+      "module": "G7OriginalWordFixture",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "6e3e25ccd99e1f52fc75d7584de8e47665b7911f6d04e01e051a09d6b672c2fa"
+    },
+    {
+      "module": "G7OriginalCompletedCalendarFixture",
+      "present_in_completed_calendar_certificate": true,
+      "sha256": "92dc399e9695530cffe4538305ef9a72cbf07d8cfec9a95b6f55b88e0e33b18b"
+    },
+    {
+      "module": "G7EffectiveCoefficientSmoke",
+      "present_in_completed_calendar_certificate": false,
+      "sha256": "7137442eab121c30a486abe70efddbf401135b2a3a9cd0c051232a63ea207ff4"
+    }
+  ],
+  "expected_output_tables_included": false,
+  "full_source_admission_verified": false,
+  "lean_invocations": 0,
+  "native_invocations": 0,
+  "native_parser_refinement_verified": false,
+  "new_proofs_verified": false,
+  "outer_labelled_planarity_verified": false,
+  "request_inputs": [
+    {
+      "bytes": 1169,
+      "captured": "requests/twoTipCalendar.request.json",
+      "context": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "global_labels": [
+          0,
+          1
+        ],
+        "hybrids": [],
+        "leaves": [
+          1,
+          2
+        ],
+        "local_samples": [
+          0,
+          1
+        ],
+        "root": 0,
+        "vertices": 3
+      },
+      "fixture": "twoTipCalendar",
+      "original": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/twoTipCalendar.request.json",
+      "sha256": "42eb6a95c160825cb19da7945bd025cb2e31e8a2d43aaab4fe1c87a0d4c64dbf",
+      "terminal": "ANCESTRAL_COMPLETE"
+    },
+    {
+      "bytes": 1189,
+      "captured": "requests/serialNegativeTips.request.json",
+      "context": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "global_labels": [
+          0,
+          1,
+          2
+        ],
+        "hybrids": [],
+        "leaves": [
+          1,
+          2
+        ],
+        "local_samples": [
+          0,
+          0,
+          1
+        ],
+        "root": 0,
+        "vertices": 3
+      },
+      "fixture": "serialNegativeTips",
+      "original": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/serialNegativeTips.request.json",
+      "sha256": "435c41549a96c529ce7545480d2f52bef9e2280ce01b64523e5f0a62944a11db",
+      "terminal": "ANCESTRAL_COMPLETE"
+    },
+    {
+      "bytes": 1434,
+      "captured": "requests/parallelCommonCalendar.request.json",
+      "context": {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "global_labels": [
+          0,
+          1,
+          2
+        ],
+        "hybrids": [
+          [
+            3,
+            2,
+            3
+          ]
+        ],
+        "leaves": [
+          1,
+          4
+        ],
+        "local_samples": [
+          0,
+          1,
+          1
+        ],
+        "root": 0,
+        "vertices": 5
+      },
+      "fixture": "parallelCommonCalendar",
+      "original": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/parallelCommonCalendar.request.json",
+      "sha256": "f4c9784938ede6f83c294b037018dac38392e80b91d33d2544b5c9660f334076",
+      "terminal": "ANCESTRAL_COMPLETE"
+    }
+  ],
+  "schema": "named_original_calendar_structural_input_capture_v1",
+  "scope": "Two named graph literals and three unchanged supplied-calendar request bytes. NP already defined by accepted decoder. Fork literal exists in unaccepted smoke candidate; any new minimal consumer remains pending.",
+  "source_files": [
+    {
+      "bytes": 10308,
+      "captured": "sources/G7OriginalAdmission.lean",
+      "path": "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalAdmission.lean",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c"
+    },
+    {
+      "bytes": 4694,
+      "captured": "sources/G7OriginalFiniteEncoding.lean",
+      "path": "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7OriginalFiniteEncoding.lean",
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078"
+    },
+    {
+      "bytes": 3915,
+      "captured": "sources/G7FiniteReachability.lean",
+      "path": "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7FiniteReachability.lean",
+      "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35"
+    },
+    {
+      "bytes": 1145,
+      "captured": "sources/G7AdmissionChecks.lean",
+      "path": "research/2026-10-09-dot-g7-original-registry-admission-1908z/sources/G7AdmissionChecks.lean",
+      "sha256": "7834bc20dab2b73af5d397c67cf02eb12f5c1cda89a5a7828eba9f67d91631e3"
+    },
+    {
+      "bytes": 10703,
+      "captured": "sources/G6TwoTipChartFixture.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G6TwoTipChartFixture.lean",
+      "sha256": "1d7e4d7509022405182bd8c98e98e59d73d013899b4cecd29d55a854a2972bfb"
+    },
+    {
+      "bytes": 11499,
+      "captured": "sources/G7OriginalEpochFixture.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalEpochFixture.lean",
+      "sha256": "2450446a29be4196e782cb900fa1867e5396436acab391aab207ec8d16a55f10"
+    },
+    {
+      "bytes": 3765,
+      "captured": "sources/G7OriginalParallelEpochFixture.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalParallelEpochFixture.lean",
+      "sha256": "eb5db3412042ce9d991c0eb970c7ddd32ecc88e005ec36610dbd56e281274432"
+    },
+    {
+      "bytes": 11816,
+      "captured": "sources/G7OriginalBoundaryFixture.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixture.lean",
+      "sha256": "cc277b23fdd8c2055bab5daad191e591b3a258c1c65d90b7df60209b87e5c11f"
+    },
+    {
+      "bytes": 10169,
+      "captured": "sources/G7OriginalWordFixture.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalWordFixture.lean",
+      "sha256": "6e3e25ccd99e1f52fc75d7584de8e47665b7911f6d04e01e051a09d6b672c2fa"
+    },
+    {
+      "bytes": 6440,
+      "captured": "sources/G7OriginalCompletedCalendarFixture.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalCompletedCalendarFixture.lean",
+      "sha256": "92dc399e9695530cffe4538305ef9a72cbf07d8cfec9a95b6f55b88e0e33b18b"
+    },
+    {
+      "bytes": 2826,
+      "captured": "sources/G7EffectiveCoefficientSmoke.lean",
+      "path": "research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveCoefficientSmoke.lean",
+      "sha256": "7137442eab121c30a486abe70efddbf401135b2a3a9cd0c051232a63ea207ff4"
+    }
+  ],
+  "sources_stable": true,
+  "status": "SOURCE_AND_INPUT_ONLY_CAPTURE_NO_NEW_PROOF_OR_EXECUTION"
+}

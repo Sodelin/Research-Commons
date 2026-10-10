@@ -1,0 +1,633 @@
+{
+  "adversarial_controls": [
+    {
+      "control": "ordered_pair_full_rate_instead_of_half",
+      "reason": "conditional weights not a probability row",
+      "rejected": true
+    },
+    {
+      "control": "wrong_forest_weights_despite_correct_count_mass",
+      "reason": "full source coefficient row does not factor by final count",
+      "rejected": true
+    },
+    {
+      "control": "generator_derivative_sign",
+      "reason": "positive derivative has the wrong generator sign",
+      "rejected": true
+    },
+    {
+      "control": "row_l1_is_not_tv",
+      "reason": "a TV half factor was incorrectly inserted into the row-L1 bound",
+      "rejected": true
+    },
+    {
+      "control": "erase_carried_original_register",
+      "reason": "complete rows differs from ordered-generator spectral coefficients",
+      "rejected": true
+    },
+    {
+      "control": "constant_coordinate_mass_omitted",
+      "reason": "compression changed mass or a generator coordinate",
+      "rejected": true
+    },
+    {
+      "control": "zero_weight_called_strictly_positive",
+      "reason": "too many compressed atoms",
+      "rejected": true
+    },
+    {
+      "control": "same_mass_wrong_generator_coordinate",
+      "reason": "compression changed mass or a generator coordinate",
+      "rejected": true
+    }
+  ],
+  "algorithms": [
+    "actual ordered-merger embedded weights",
+    "scalar pure-death distinct-rate partial fractions",
+    "complete saved polynomial derivative and geometric quotient",
+    "exact rational affine dependence elimination"
+  ],
+  "cases_passed": 8,
+  "cases_total": 8,
+  "claim": "FINITE_SAVED_ORIGINAL_SOURCE_GENERATOR_FACTORIZATION_AND_COMPRESSION_REVIEW",
+  "compression_cases": [
+    {
+      "cap": 2,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/7",
+          "2/3"
+        ],
+        [
+          "2/7",
+          "3/4"
+        ],
+        [
+          "3/7",
+          "4/5"
+        ],
+        [
+          "4/7",
+          "5/6"
+        ],
+        [
+          "5/7",
+          "6/7"
+        ],
+        [
+          "6/7",
+          "7/8"
+        ]
+      ],
+      "original_source_row_checks": 8,
+      "output_atoms": [
+        [
+          "1/7",
+          "1339/280"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 1,
+      "total_mass": "1339/280"
+    },
+    {
+      "cap": 3,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/8",
+          "2/3"
+        ],
+        [
+          "1/4",
+          "3/4"
+        ],
+        [
+          "3/8",
+          "4/5"
+        ],
+        [
+          "1/2",
+          "5/6"
+        ],
+        [
+          "5/8",
+          "6/7"
+        ],
+        [
+          "3/4",
+          "7/8"
+        ],
+        [
+          "7/8",
+          "8/9"
+        ]
+      ],
+      "original_source_row_checks": 65,
+      "output_atoms": [
+        [
+          "3/8",
+          "21121/11520"
+        ],
+        [
+          "5/8",
+          "6877/1792"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 2,
+      "total_mass": "14291/2520"
+    },
+    {
+      "cap": 4,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/9",
+          "2/3"
+        ],
+        [
+          "2/9",
+          "3/4"
+        ],
+        [
+          "1/3",
+          "4/5"
+        ],
+        [
+          "4/9",
+          "5/6"
+        ],
+        [
+          "5/9",
+          "6/7"
+        ],
+        [
+          "2/3",
+          "7/8"
+        ],
+        [
+          "7/9",
+          "8/9"
+        ],
+        [
+          "8/9",
+          "9/10"
+        ]
+      ],
+      "original_source_row_checks": 258,
+      "output_atoms": [
+        [
+          "1/9",
+          "5713724/2724795"
+        ],
+        [
+          "2/3",
+          "191775767/50862840"
+        ],
+        [
+          "8/9",
+          "2982449/4238570"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 3,
+      "total_mass": "16559/2520"
+    },
+    {
+      "cap": 5,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/10",
+          "2/3"
+        ],
+        [
+          "1/5",
+          "3/4"
+        ],
+        [
+          "3/10",
+          "4/5"
+        ],
+        [
+          "2/5",
+          "5/6"
+        ],
+        [
+          "1/2",
+          "6/7"
+        ],
+        [
+          "3/5",
+          "7/8"
+        ],
+        [
+          "7/10",
+          "8/9"
+        ],
+        [
+          "4/5",
+          "9/10"
+        ],
+        [
+          "9/10",
+          "10/11"
+        ]
+      ],
+      "original_source_row_checks": 258,
+      "output_atoms": [
+        [
+          "1/5",
+          "1071167586205/833476592424"
+        ],
+        [
+          "2/5",
+          "41718061183153/12502148886360"
+        ],
+        [
+          "4/5",
+          "9896956998409/4167382962120"
+        ],
+        [
+          "9/10",
+          "922955175866/1910050524305"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 4,
+      "total_mass": "207349/27720"
+    },
+    {
+      "cap": 6,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/11",
+          "2/3"
+        ],
+        [
+          "2/11",
+          "3/4"
+        ],
+        [
+          "3/11",
+          "4/5"
+        ],
+        [
+          "4/11",
+          "5/6"
+        ],
+        [
+          "5/11",
+          "6/7"
+        ],
+        [
+          "6/11",
+          "7/8"
+        ],
+        [
+          "7/11",
+          "8/9"
+        ],
+        [
+          "8/11",
+          "9/10"
+        ],
+        [
+          "9/11",
+          "10/11"
+        ],
+        [
+          "10/11",
+          "11/12"
+        ]
+      ],
+      "original_source_row_checks": 258,
+      "output_atoms": [
+        [
+          "1/11",
+          "74833560903215653582066/46250067444109239546675"
+        ],
+        [
+          "4/11",
+          "1600291970486603489719/1468256109336801255450"
+        ],
+        [
+          "6/11",
+          "6498976287852533336703/1957674812449068340600"
+        ],
+        [
+          "9/11",
+          "29569504281253307501292/18842620069822282778275"
+        ],
+        [
+          "10/11",
+          "222504104336601416659/278195894400657079980"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 5,
+      "total_mass": "232759/27720"
+    },
+    {
+      "cap": 7,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/12",
+          "2/3"
+        ],
+        [
+          "1/6",
+          "3/4"
+        ],
+        [
+          "1/4",
+          "4/5"
+        ],
+        [
+          "1/3",
+          "5/6"
+        ],
+        [
+          "5/12",
+          "6/7"
+        ],
+        [
+          "1/2",
+          "7/8"
+        ],
+        [
+          "7/12",
+          "8/9"
+        ],
+        [
+          "2/3",
+          "9/10"
+        ],
+        [
+          "3/4",
+          "10/11"
+        ],
+        [
+          "5/6",
+          "11/12"
+        ],
+        [
+          "11/12",
+          "12/13"
+        ]
+      ],
+      "original_source_row_checks": 258,
+      "output_atoms": [
+        [
+          "1/6",
+          "55082796932596225858979816110920863881/31694786897663034531175209414836244480"
+        ],
+        [
+          "1/3",
+          "133090736298161509398584112027070845073/54937630622615926520703696319049490432"
+        ],
+        [
+          "7/12",
+          "4895203425725347517137210524944362/4790181241508782655613812806836765"
+        ],
+        [
+          "2/3",
+          "51548749274344278264169965060383723177/24971650283007239327592589235931586560"
+        ],
+        [
+          "5/6",
+          "4615663090977187438264986837422499023/3924116473043994751478835451360677888"
+        ],
+        [
+          "11/12",
+          "234351905748036321016445132039636/261282613173206326669844334918369"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 6,
+      "total_mass": "3358507/360360"
+    },
+    {
+      "cap": 8,
+      "elimination_steps": 5,
+      "input_atoms": [
+        [
+          "1/13",
+          "2/3"
+        ],
+        [
+          "2/13",
+          "3/4"
+        ],
+        [
+          "3/13",
+          "4/5"
+        ],
+        [
+          "4/13",
+          "5/6"
+        ],
+        [
+          "5/13",
+          "6/7"
+        ],
+        [
+          "6/13",
+          "7/8"
+        ],
+        [
+          "7/13",
+          "8/9"
+        ],
+        [
+          "8/13",
+          "9/10"
+        ],
+        [
+          "9/13",
+          "10/11"
+        ],
+        [
+          "10/13",
+          "11/12"
+        ],
+        [
+          "11/13",
+          "12/13"
+        ],
+        [
+          "12/13",
+          "13/14"
+        ]
+      ],
+      "original_source_row_checks": 258,
+      "output_atoms": [
+        [
+          "1/13",
+          "180692003159169538204551410400908444518238527179972794728417/124617748505880766128401987651574490536844201247179041946125"
+        ],
+        [
+          "4/13",
+          "2252644162429748991082419083705156759118977581875943671571/1388043718001620327064919764178061483457068908240487281300"
+        ],
+        [
+          "6/13",
+          "326698861503030702847099927056592705774473202530506877089/116642329243833640929825190267063990206476378843738427000"
+        ],
+        [
+          "9/13",
+          "273507317345949704543715327109383718180099263354816149263907/141233448306664868278855586005117755941756761413469580872275"
+        ],
+        [
+          "10/13",
+          "4034070492122753132225955668281129544440022584742891764319/7703642634908992815210304691188241233186732440734704411215"
+        ],
+        [
+          "11/13",
+          "354539902473238375454979623531729277803197271600162122464/358027149484544925631824542347515858828212218395363782875"
+        ],
+        [
+          "12/13",
+          "104426514734406286629640913229650373857699779257674826497917/112986758645331894623084468804094204753405409130775664697820"
+        ]
+      ],
+      "pass": true,
+      "positive_atoms": 7,
+      "total_mass": "3693127/360360"
+    }
+  ],
+  "compression_source_row_checks": 1363,
+  "count_factorization_cases": [
+    {
+      "copies": 0,
+      "entering_roots": 0,
+      "fixture": "emptyEdge0",
+      "literal_rows": 1,
+      "pass": true
+    },
+    {
+      "copies": 1,
+      "entering_roots": 1,
+      "fixture": "oneAncestral",
+      "literal_rows": 1,
+      "pass": true
+    },
+    {
+      "copies": 2,
+      "entering_roots": 2,
+      "fixture": "twoAncestral",
+      "literal_rows": 3,
+      "pass": true
+    },
+    {
+      "copies": 3,
+      "entering_roots": 3,
+      "fixture": "threeEdge0",
+      "literal_rows": 19,
+      "pass": true
+    },
+    {
+      "copies": 4,
+      "entering_roots": 4,
+      "fixture": "fourAncestral",
+      "literal_rows": 193,
+      "pass": true
+    },
+    {
+      "copies": 4,
+      "entering_roots": 2,
+      "fixture": "carriedNonminimum",
+      "literal_rows": 3,
+      "pass": true
+    },
+    {
+      "copies": 3,
+      "entering_roots": 3,
+      "fixture": "permutedRestrictedEdge0",
+      "literal_rows": 19,
+      "pass": true
+    },
+    {
+      "copies": 3,
+      "entering_roots": 3,
+      "fixture": "frozenRegisterRepeat",
+      "literal_rows": 19,
+      "pass": true
+    }
+  ],
+  "full_literal_rows": 258,
+  "general_source_refinement_proved": false,
+  "generator_points_per_case": 5,
+  "inputs_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/RECEIPT.json": "e6a535e35f528fdda5c35242c04987caa6a9e772ef665d75cc0f85f021a8a115",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/carriedNonminimum.expected.json": "4f62e7bd12d61402f023ca70e188f21a9427a284f8ea0f2c3af1899fa1bab4e7",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/carriedNonminimum.lean.stdout": "58bb860d03a4681295fe8bea42e6e2b4f0bfb49a27952b66c0574db70004fda0",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/carriedNonminimum.rust.stdout": "9a6d9011c26414fba0aaa0e85811515679c6e0ca3778bc36049f9dac9816c1a2",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/emptyEdge0.expected.json": "4ce0e8bad6c0720dcc6c2a9a85569cbbdaeefc04a55dd35d08d4868b1eaeecd7",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/emptyEdge0.lean.stdout": "846f1f460dc36006aa527728c21935eeeeff32604af00da45e009a10781c1483",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/emptyEdge0.rust.stdout": "0e54faf81e88f19774ccf92e0263f9add7ae5fc18be2052d606d5009170ab712",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/fourAncestral.expected.json": "a2b7c60ec7e679cdc328aca4e3e95b9ba9aaf28ba7a69aa2702a5d6fa84892c4",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/fourAncestral.lean.stdout": "5138cc460e3cb3f91326b2a2f71ac21a6a2d2835513d9cca0bf938e92e2ba52a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/fourAncestral.rust.stdout": "2a1b6dc7c27bea3632939d45cce1ac08262882de59be9178eed5f10dd3bde045",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/frozenRegisterRepeat.expected.json": "f2114aeb10e6a89e5015ee333ad2f0d34d82126c05d993d8a16ed0fee61730ce",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/frozenRegisterRepeat.lean.stdout": "781673183434c100ef32959c82c5ce1d15733f8c1db925b6154f2ad2305fe737",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/frozenRegisterRepeat.rust.stdout": "8624c96b18f3230d51b355ee5497d256c3bcbd8872bc91a08a3472ef91c42147",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/oneAncestral.expected.json": "4666a85a09b92b0bc9fc80c6e4d69c98b0f3304e98538c1a927b27b0d9ce6d92",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/oneAncestral.lean.stdout": "37e0208f51ea0798c17a9befa15471a040fef9800613c807553a22834cfcfdb6",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/oneAncestral.rust.stdout": "31bea090b52ea14d18d6e5514120e1adf6b29c34eb443b41bfa49e9532e47c5e",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/permutedRestrictedEdge0.expected.json": "be85e597b8455a8eab4fae3829d59d794ab4323a832a6193adaa9a94992dca32",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/permutedRestrictedEdge0.lean.stdout": "d919411216ba592131d3cf82f4708f03081f0f361093878440242129b60fe84c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/permutedRestrictedEdge0.rust.stdout": "06d321585ba4e1ee803d2b15639a4f5b42e5c40239c84e32e2aee005534ebf03",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/threeEdge0.expected.json": "4d17b6313936239e3d505125d5d15aa49688dab31f54b33abf13bd85875865f5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/threeEdge0.lean.stdout": "ae472bd1880618a3044a373d2192611e2dc1d69e918676f899c9dcfe2a381055",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/threeEdge0.rust.stdout": "2d40147d6a3998ecfdaea05cc2eb0ef0757c8ee6c33fa8cd7d79323f0a0dfc52",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/twoAncestral.expected.json": "117d626f464ccce52abac24a96e0fc5fd93d946033e655ba4ff741636fce9336",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/twoAncestral.lean.stdout": "5fe592690cecc0ba4a10f2318a6353b62493cdf958135871ccf6286b034881ad",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/twoAncestral.rust.stdout": "1cabe47dacc82a7e7979021710c47dd6b3adc24ba901bc79afddc842b753de0c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_g6_source_generators.py": "4760fcd13bb26f648943d9e51a0273e130baa4bf80f56931b305a9874591727e"
+  },
+  "inputs_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/RECEIPT.json": "e6a535e35f528fdda5c35242c04987caa6a9e772ef665d75cc0f85f021a8a115",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/carriedNonminimum.expected.json": "4f62e7bd12d61402f023ca70e188f21a9427a284f8ea0f2c3af1899fa1bab4e7",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/carriedNonminimum.lean.stdout": "58bb860d03a4681295fe8bea42e6e2b4f0bfb49a27952b66c0574db70004fda0",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/carriedNonminimum.rust.stdout": "9a6d9011c26414fba0aaa0e85811515679c6e0ca3778bc36049f9dac9816c1a2",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/emptyEdge0.expected.json": "4ce0e8bad6c0720dcc6c2a9a85569cbbdaeefc04a55dd35d08d4868b1eaeecd7",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/emptyEdge0.lean.stdout": "846f1f460dc36006aa527728c21935eeeeff32604af00da45e009a10781c1483",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/emptyEdge0.rust.stdout": "0e54faf81e88f19774ccf92e0263f9add7ae5fc18be2052d606d5009170ab712",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/fourAncestral.expected.json": "a2b7c60ec7e679cdc328aca4e3e95b9ba9aaf28ba7a69aa2702a5d6fa84892c4",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/fourAncestral.lean.stdout": "5138cc460e3cb3f91326b2a2f71ac21a6a2d2835513d9cca0bf938e92e2ba52a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/fourAncestral.rust.stdout": "2a1b6dc7c27bea3632939d45cce1ac08262882de59be9178eed5f10dd3bde045",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/frozenRegisterRepeat.expected.json": "f2114aeb10e6a89e5015ee333ad2f0d34d82126c05d993d8a16ed0fee61730ce",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/frozenRegisterRepeat.lean.stdout": "781673183434c100ef32959c82c5ce1d15733f8c1db925b6154f2ad2305fe737",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/frozenRegisterRepeat.rust.stdout": "8624c96b18f3230d51b355ee5497d256c3bcbd8872bc91a08a3472ef91c42147",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/oneAncestral.expected.json": "4666a85a09b92b0bc9fc80c6e4d69c98b0f3304e98538c1a927b27b0d9ce6d92",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/oneAncestral.lean.stdout": "37e0208f51ea0798c17a9befa15471a040fef9800613c807553a22834cfcfdb6",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/oneAncestral.rust.stdout": "31bea090b52ea14d18d6e5514120e1adf6b29c34eb443b41bfa49e9532e47c5e",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/permutedRestrictedEdge0.expected.json": "be85e597b8455a8eab4fae3829d59d794ab4323a832a6193adaa9a94992dca32",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/permutedRestrictedEdge0.lean.stdout": "d919411216ba592131d3cf82f4708f03081f0f361093878440242129b60fe84c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/permutedRestrictedEdge0.rust.stdout": "06d321585ba4e1ee803d2b15639a4f5b42e5c40239c84e32e2aee005534ebf03",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/threeEdge0.expected.json": "4d17b6313936239e3d505125d5d15aa49688dab31f54b33abf13bd85875865f5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/threeEdge0.lean.stdout": "ae472bd1880618a3044a373d2192611e2dc1d69e918676f899c9dcfe2a381055",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/threeEdge0.rust.stdout": "2d40147d6a3998ecfdaea05cc2eb0ef0757c8ee6c33fa8cd7d79323f0a0dfc52",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/twoAncestral.expected.json": "117d626f464ccce52abac24a96e0fc5fd93d946033e655ba4ff741636fce9336",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/twoAncestral.lean.stdout": "5fe592690cecc0ba4a10f2318a6353b62493cdf958135871ccf6286b034881ad",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/population-lean-rust-review-1/twoAncestral.rust.stdout": "1cabe47dacc82a7e7979021710c47dd6b3adc24ba901bc79afddc842b753de0c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_g6_source_generators.py": "4760fcd13bb26f648943d9e51a0273e130baa4bf80f56931b305a9874591727e"
+  },
+  "lean_compiler_or_evaluator_executed": false,
+  "native_producer_executed": false,
+  "pass": true,
+  "positive_network_reconstructed": false,
+  "reviewed_at_utc": "2026-10-10T14:50:36Z",
+  "reviewer_sha256": "4760fcd13bb26f648943d9e51a0273e130baa4bf80f56931b305a9874591727e",
+  "schema": "g6_saved_original_generator_review_v1",
+  "scope": "Eight previously executed original encoded source inputs, copied labels<=4; arbitrary-Code theorem, all-cap compression and positive source reconstruction remain separate proof contracts.",
+  "source_admission_promoted": false,
+  "source_kernel_audit_repeated": false
+}

@@ -1,0 +1,35 @@
+{
+  "contributor": "Codex / lean_reuse_successor",
+  "observed_utc": "2026-10-10T16:39:49.367445+00:00",
+  "status": "STATIC_MATHEMATICAL_CERTIFICATE_INTERFACE_REVIEW",
+  "artifacts": [
+    {
+      "path": "reuse/sources/G6RationalCompressionCertificate.lean",
+      "sha256": "353521bc18e3fab1fce6fe6141bc4d5006ceb3d07cc27b9728d66b921abedd3e"
+    },
+    {
+      "path": "rust/rational-compression/src/lib.rs",
+      "sha256": "ed6c877b42b0d9b863258d292d301e84420e0391854d865d0c5b2a1364433c18"
+    },
+    {
+      "path": "rust/rational-compression/src/main.rs",
+      "sha256": "b6e4751bee8b94fb5b78dad555519b9733e1aed79f6c7667a4ab9d546d4bb420"
+    },
+    {
+      "path": "rust/notes/G6-RATIONAL-COMPRESSION-CONTRACT-2-20261010T1632Z.md",
+      "sha256": "c7533524e8f4dfe234dc05c6a6e51a7832f217bd29ba07b6484f9c6e15ab8581"
+    }
+  ],
+  "matched_gates": [
+    "M>=2 (Rust further bounds M<=4)",
+    "All original z are strictly between zero and one, including zero-weight inputs",
+    "All original alpha are nonnegative",
+    "Each output atom is an original input index with a strictly positive beta",
+    "At most M-1 retained atoms",
+    "Exact total mass equality restores the two-lineage coordinate",
+    "Exact geometric tail moments for every lineage level 3 through M"
+  ],
+  "stronger_native_gate": "Output indices are strictly increasing; the typed consumer permits any original-index map.",
+  "limits": "No compiler or native process was executed for this review. The Lean source is frozen pending sole-scheduler compilation. This is not native JSON/parser refinement, RREF producer proof, resource exhaustion verification or legal source-factor reconstruction.",
+  "frozen_map_changed": false
+}

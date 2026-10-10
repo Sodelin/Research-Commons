@@ -1,0 +1,46 @@
+{
+  "schema": "serial_two_hybrid_calendar_input_only_v1",
+  "new_native_execution": false,
+  "parent_calendar_contract_sha256": "7e2202aeac884c2024e3f168031b8e90ae73f3c9c924252e7e3705aeb8cba478",
+  "parent_calendar_oracle_sha256": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c",
+  "independent_control_driver_sha256": "565268c8c5ebea04905a8324d8f34054c11ed09ca152f465c560d9331215ab79",
+  "inputs": [
+    {
+      "fixture": "serialTwoCommonCalendar",
+      "path": "serialTwoCommonCalendar.request.json",
+      "sha256": "ff8aeef5aaf927fda2a7ec0e2d22fdca06a1d2823815112df4627dc0fa1fdd3c"
+    },
+    {
+      "fixture": "serialTwoIndependentCalendar",
+      "path": "serialTwoIndependentCalendar.request.json",
+      "sha256": "f77f1c142015582db13bb08bc1c1ed0ab5167b75c2ec3038667099850ef33a18"
+    }
+  ],
+  "register_marginal_controls": [
+    {
+      "fixture": "serialTwoCommonCalendar",
+      "initial_register_assignments": 4,
+      "initial_raw_monomial_contributions": 9,
+      "exact_register_masses": {
+        "[False, False]": "2/5",
+        "[False, True]": "4/15",
+        "[True, False]": "1/5",
+        "[True, True]": "2/15"
+      },
+      "full_view_rows": 48
+    },
+    {
+      "fixture": "serialTwoIndependentCalendar",
+      "initial_register_assignments": 4,
+      "initial_raw_monomial_contributions": 9,
+      "exact_register_masses": {
+        "[False, False]": "2/5",
+        "[False, True]": "4/15",
+        "[True, False]": "1/5",
+        "[True, True]": "2/15"
+      },
+      "full_view_rows": 48
+    }
+  ],
+  "same_compiler_and_provider_limits": true
+}

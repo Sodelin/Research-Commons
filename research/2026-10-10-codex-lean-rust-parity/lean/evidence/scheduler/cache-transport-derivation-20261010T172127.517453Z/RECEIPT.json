@@ -1,0 +1,58 @@
+{
+  "status": "FROZEN_SOURCE_DERIVATION_AND_READONLY_INSTALLER_REVIEW_BEFORE_USE",
+  "contributor": "Codex / lean_integration_successor",
+  "source_pins": [
+    {
+      "path": "scripts/seed_exact_cache.py",
+      "sha256": "e3ed1782e89359ec321625774552bfdf1226db2a0736df7c6cc13250b67a53ae",
+      "bytes": 5642,
+      "snapshot": "seed_exact_cache.py"
+    },
+    {
+      "path": "scripts/seed_exact_cache_transport.py",
+      "sha256": "bc2a0105a7698b4f391946f6d17c927abb2edf692a6e42ff50aee40da5634e7b",
+      "bytes": 11037,
+      "snapshot": "seed_exact_cache_transport.py"
+    },
+    {
+      "path": "scripts/build_connected.py",
+      "sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc",
+      "bytes": 19016,
+      "snapshot": "build_connected.py"
+    },
+    {
+      "path": "scripts/prepare_coherent_union_overlay_context.py",
+      "sha256": "0a2e319035b2add7c85d0e32f0bf2c7bd6cb86a29f11f63908b4d9fdc13515c1",
+      "bytes": 10395,
+      "snapshot": "prepare_coherent_union_overlay_context.py"
+    },
+    {
+      "path": "scripts/audit_integrated_union_feasibility.py",
+      "sha256": "df4bea081fd59e2d46e20331c0027a66ad4398415fa2f22f87f1ef4b937350b9",
+      "bytes": 11185,
+      "snapshot": "audit_integrated_union_feasibility.py"
+    }
+  ],
+  "changes": [
+    "Only explicit previously authenticated selected module/context cache entries are staged.",
+    "Same-filesystem completed cache files use hard links; EXDEV alone permits SHA256-checked copy2.",
+    "Cache receipt bytes, cached_object paths, context keys, object companions and original source trees remain unchanged.",
+    "Static auditor prefers explicitly supplied accepted context cache entries before the global cache to obtain same-filesystem inputs."
+  ],
+  "unchanged_core_sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc",
+  "unchanged_audit_sha256": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a",
+  "builder_readonly_review": {
+    "completed_component_branch": "Reads exact receipt and cached source companion bundles, then installs only into a new run context.",
+    "install": "Checks equal bytes if destination exists; otherwise creates a new file link or EXDEV copy. Does not open imported/cache inputs for writing.",
+    "cache_result": "Creates a new staging directory and refuses to overwrite an existing completed cache key.",
+    "compiler_outputs": "Fresh attempt paths for new modules/aggregate; imported object files are read-only inputs.",
+    "native_boundary": "Hard-link staging targets only receipt and .olean/private/server/.ilean/.ir cache files, not global native shared libraries."
+  },
+  "required_pre_use_plan": "Freeze source/destination file identities, original receipt paths/key/hash and exact source/cache manifest before creating candidate cache links.",
+  "required_post_run_check": "Rehash every linked/copied source and destination and original cached_object bundle after fresh aggregate/full audit.",
+  "no_shared_chmod_deletion_or_overwrite": true,
+  "accepted_paths_moved_or_removed": false,
+  "kernel_cache_admission_flags_caps_and_audit_changed": false,
+  "compiler_launched_by_derivation_review": false,
+  "evidence": "evidence/scheduler/cache-transport-derivation-20261010T172127.517453Z"
+}

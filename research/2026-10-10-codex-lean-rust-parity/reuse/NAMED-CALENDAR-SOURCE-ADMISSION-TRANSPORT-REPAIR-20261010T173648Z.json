@@ -1,0 +1,37 @@
+{
+  "contributor": "Codex / lean_reuse_successor",
+  "observed_utc": "2026-10-10T17:36:48.337228+00:00",
+  "status": "EXPLICIT_TYPED_TRANSPORT_DERIVATIVE_PENDING_KERNEL_AUDIT",
+  "source": {
+    "path": "reuse/sources/G7NamedCalendarSourceAdmission.lean",
+    "sha256": "7c365d3d7d7c75a7b592443fb82d68a89a8df7000347dcbb8352b988b47f780e"
+  },
+  "failed_source": {
+    "path": "reuse/failed-sources/51e5c021be62995959abadc8b0f6d9c065ea1bc7495ce60292654db6be059534.lean",
+    "sha256": "51e5c021be62995959abadc8b0f6d9c065ea1bc7495ce60292654db6be059534"
+  },
+  "failed_result": {
+    "path": "lean/NAMED-CALENDAR-SOURCE-ADMISSION-51E5-RESULT.json",
+    "sha256": "f83be85f73306d19b78184375c088e1f2e6fafe8bca07d6cf77273bc5b6d3e1a"
+  },
+  "change": "Only registry equality statement expresses its same dependent transport with explicit Eq.mp/congrArg OriginalParentRegistry instead of contextual equality substitution. All graph data, proof bodies/imports/options unchanged.",
+  "diff": [
+    "--- failed51e5\n",
+    "+++ typed_transport\n",
+    "@@ -77,8 +77,9 @@\n",
+    "     rfl",
+    " ",
+    " theorem fork_decodedRegistry_eq_registry2 :",
+    "-    (fork_decodedSource_eq_N2 \u25b8",
+    "-      decodedRegistry forkCode fork_binaryValid fork_registryValid) =",
+    "+    (Eq.mp (congrArg (fun N : RootedBinary (Fin 3) (Fin 2) (Fin 2) =>",
+    "+        OriginalParentRegistry N) fork_decodedSource_eq_N2)",
+    "+      (decodedRegistry forkCode fork_binaryValid fork_registryValid)) =",
+    "         UnifiedLean.G7.OriginalWordFixture.registry2 := by",
+    "   exact registry2_unique _",
+    " "
+  ],
+  "compiler_owner": "lean_integration_successor",
+  "worker_compiler_native_or_git_invocations": 0,
+  "frozen_map_changed": false
+}

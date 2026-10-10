@@ -1,0 +1,716 @@
+G7OriginalCompletedCalendarRoot.lean:45:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalCompletedCalendarRoot.lean:49:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalCompletedCalendarRoot.lean:53:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalCompletedCalendarRoot.lean:64:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalCompletedCalendarRoot.lean:70:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalCompletedCalendarRoot.lean:77:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalCompletedCalendarRoot.lean:79:8: warning: automatically included section variable(s) unused in theorem `_private.G7OriginalCompletedCalendarRoot.0.UnifiedLean.G7.OriginalCompletedCalendarRoot.initial_ready_lower`:
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalCompletedCalendarRoot.lean:87:8: warning: automatically included section variable(s) unused in theorem `_private.G7OriginalCompletedCalendarRoot.0.UnifiedLean.G7.OriginalCompletedCalendarRoot.interval_next_ready`:
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalCompletedCalendarRoot.lean:99:8: warning: automatically included section variable(s) unused in theorem `_private.G7OriginalCompletedCalendarRoot.0.UnifiedLean.G7.OriginalCompletedCalendarRoot.after_latest_root`:
+  [Fintype Copy]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalCompletedCalendarRoot.lean:131:61: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 1 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1, 2]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hd : programTrace N2 (p0 ++ ProgramStep.interval (dur 0) :: p1) (initialCode N2 sample register) d
+v : Fin 3
+hage : twoTipCalendar.age v = 0
+⊢ 0 ≤ if v = 0 then 2 else 0
+
+case inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 1 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1, 2]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hd : programTrace N2 (p0 ++ ProgramStep.interval (dur 0) :: p1) (initialCode N2 sample register) d
+v : Fin 3
+hage : twoTipCalendar.age v = 2
+⊢ 0 ≤ if v = 0 then 2 else 0
+G7OriginalCompletedCalendarRoot.lean:141:19: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 1 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1, 2]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 twoTipCalendar 0 (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 twoTipCalendar 0 (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 p1 m0 d
+v : Fin 3
+hage : twoTipCalendar.age v = 0
+hv : 0 < if v = 0 then 2 else 0
+⊢ 2 ≤ if v = 0 then 2 else 0
+
+case inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 1 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1, 2]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 twoTipCalendar 0 (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 twoTipCalendar 0 (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 p1 m0 d
+v : Fin 3
+hage : twoTipCalendar.age v = 2
+hv : 0 < if v = 0 then 2 else 0
+⊢ 2 ≤ if v = 0 then 2 else 0
+G7OriginalCompletedCalendarRoot.lean:145:49: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 1 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1, 2]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 twoTipCalendar 0 (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 twoTipCalendar 0 (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 p1 m0 d
+hready1 : BoundaryReady N2 twoTipCalendar 2 (state m0)
+hfinal : AfterNodes N2 twoTipCalendar 2 (state d)
+v : Fin 3
+hage : twoTipCalendar.age v = 0
+⊢ (if v = 0 then 2 else 0) ≤ 2
+
+case inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 1 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1, 2]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 twoTipCalendar 0 (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 twoTipCalendar 0 (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 p1 m0 d
+hready1 : BoundaryReady N2 twoTipCalendar 2 (state m0)
+hfinal : AfterNodes N2 twoTipCalendar 2 (state d)
+v : Fin 3
+hage : twoTipCalendar.age v = 2
+⊢ (if v = 0 then 2 else 0) ≤ 2
+G7OriginalCompletedCalendarRoot.lean:171:68: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hd :
+  programTrace N2 (p0 ++ ProgramStep.interval (dur 0) :: (p1 ++ ProgramStep.interval (dur 1) :: p2))
+    (initialCode N2 sample register) d
+v : Fin 3
+hage : serialCalendar.age v = -3 / 2
+⊢ -(3 / 2) ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+
+case inr.inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hd :
+  programTrace N2 (p0 ++ ProgramStep.interval (dur 0) :: (p1 ++ ProgramStep.interval (dur 1) :: p2))
+    (initialCode N2 sample register) d
+v : Fin 3
+hage : serialCalendar.age v = 1 / 4
+⊢ -(3 / 2) ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+
+case inr.inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hd :
+  programTrace N2 (p0 ++ ProgramStep.interval (dur 0) :: (p1 ++ ProgramStep.interval (dur 1) :: p2))
+    (initialCode N2 sample register) d
+v : Fin 3
+hage : serialCalendar.age v = 3 / 2
+⊢ -(3 / 2) ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+G7OriginalCompletedCalendarRoot.lean:181:19: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 (p1 ++ ProgramStep.interval (dur 1) :: p2) m0 d
+v : Fin 3
+hage : serialCalendar.age v = -3 / 2
+hv : -(3 / 2) < if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+⊢ 1 / 4 ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+
+case inr.inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 (p1 ++ ProgramStep.interval (dur 1) :: p2) m0 d
+v : Fin 3
+hage : serialCalendar.age v = 1 / 4
+hv : -(3 / 2) < if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+⊢ 1 / 4 ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+
+case inr.inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hrest0 : programTrace N2 (p1 ++ ProgramStep.interval (dur 1) :: p2) m0 d
+v : Fin 3
+hage : serialCalendar.age v = 3 / 2
+hv : -(3 / 2) < if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+⊢ 1 / 4 ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+G7OriginalCompletedCalendarRoot.lean:191:19: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hready1 : BoundaryReady N2 serialCalendar (1 / 4) (state m0)
+s1 : Code N2 sample
+hphase1 : programTrace N2 p1 m0 s1
+hafter1 : AfterNodes N2 serialCalendar (1 / 4) (state s1)
+m1 : Code N2 sample
+hm1 : programMovement N2 (ProgramStep.interval (dur 1)) s1 m1
+hrest1 : programTrace N2 p2 m1 d
+v : Fin 3
+hage : serialCalendar.age v = -3 / 2
+hv : 1 / 4 < if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+⊢ 3 / 2 ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+
+case inr.inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hready1 : BoundaryReady N2 serialCalendar (1 / 4) (state m0)
+s1 : Code N2 sample
+hphase1 : programTrace N2 p1 m0 s1
+hafter1 : AfterNodes N2 serialCalendar (1 / 4) (state s1)
+m1 : Code N2 sample
+hm1 : programMovement N2 (ProgramStep.interval (dur 1)) s1 m1
+hrest1 : programTrace N2 p2 m1 d
+v : Fin 3
+hage : serialCalendar.age v = 1 / 4
+hv : 1 / 4 < if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+⊢ 3 / 2 ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+
+case inr.inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hready1 : BoundaryReady N2 serialCalendar (1 / 4) (state m0)
+s1 : Code N2 sample
+hphase1 : programTrace N2 p1 m0 s1
+hafter1 : AfterNodes N2 serialCalendar (1 / 4) (state s1)
+m1 : Code N2 sample
+hm1 : programMovement N2 (ProgramStep.interval (dur 1)) s1 m1
+hrest1 : programTrace N2 p2 m1 d
+v : Fin 3
+hage : serialCalendar.age v = 3 / 2
+hv : 1 / 4 < if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+⊢ 3 / 2 ≤ if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4
+G7OriginalCompletedCalendarRoot.lean:195:55: error: unsolved goals
+case inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hready1 : BoundaryReady N2 serialCalendar (1 / 4) (state m0)
+s1 : Code N2 sample
+hphase1 : programTrace N2 p1 m0 s1
+hafter1 : AfterNodes N2 serialCalendar (1 / 4) (state s1)
+m1 : Code N2 sample
+hm1 : programMovement N2 (ProgramStep.interval (dur 1)) s1 m1
+hrest1 : programTrace N2 p2 m1 d
+hready2 : BoundaryReady N2 serialCalendar (3 / 2) (state m1)
+hfinal : AfterNodes N2 serialCalendar (3 / 2) (state d)
+v : Fin 3
+hage : serialCalendar.age v = -3 / 2
+⊢ (if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4) ≤ 3 / 2
+
+case inr.inl
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hready1 : BoundaryReady N2 serialCalendar (1 / 4) (state m0)
+s1 : Code N2 sample
+hphase1 : programTrace N2 p1 m0 s1
+hafter1 : AfterNodes N2 serialCalendar (1 / 4) (state s1)
+m1 : Code N2 sample
+hm1 : programMovement N2 (ProgramStep.interval (dur 1)) s1 m1
+hrest1 : programTrace N2 p2 m1 d
+hready2 : BoundaryReady N2 serialCalendar (3 / 2) (state m1)
+hfinal : AfterNodes N2 serialCalendar (3 / 2) (state d)
+v : Fin 3
+hage : serialCalendar.age v = 1 / 4
+⊢ (if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4) ≤ 3 / 2
+
+case inr.inr
+Copy : Type u_1
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+sample : Copy → Fin 2
+register : Fin 3 → Bool
+gamma : Hybrid N2 → ↑unitInterval
+r : PositivePairRates (Fin 2)
+dur : Fin 2 → ℝ≥0
+d : Code N2 sample
+p0 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [1]
+p1 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [2]
+p2 : List (ProgramStep N2) :=
+  List.map (fun e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)) [0, 1] ++
+    List.map (fun v => ProgramStep.boundary (originalNodeOperation N2 registry2 gamma (fun x => false) v)) [0]
+hready0 : BoundaryReady N2 serialCalendar (-3 / 2) (state (initialCode N2 sample register))
+s0 : Code N2 sample
+hphase0 : programTrace N2 p0 (initialCode N2 sample register) s0
+hafter0 : AfterNodes N2 serialCalendar (-3 / 2) (state s0)
+m0 : Code N2 sample
+hm0 : programMovement N2 (ProgramStep.interval (dur 0)) s0 m0
+hready1 : BoundaryReady N2 serialCalendar (1 / 4) (state m0)
+s1 : Code N2 sample
+hphase1 : programTrace N2 p1 m0 s1
+hafter1 : AfterNodes N2 serialCalendar (1 / 4) (state s1)
+m1 : Code N2 sample
+hm1 : programMovement N2 (ProgramStep.interval (dur 1)) s1 m1
+hrest1 : programTrace N2 p2 m1 d
+hready2 : BoundaryReady N2 serialCalendar (3 / 2) (state m1)
+hfinal : AfterNodes N2 serialCalendar (3 / 2) (state d)
+v : Fin 3
+hage : serialCalendar.age v = 3 / 2
+⊢ (if v = 0 then 3 / 2 else if v = 1 then -(3 / 2) else 1 / 4) ≤ 3 / 2
+G7OriginalCompletedCalendarRoot.lean:260:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:272:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:290:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:298:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:302:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:320:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:324:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:328:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:332:8: error: No goals to be solved
+G7OriginalCompletedCalendarRoot.lean:362:27: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (WordVariable N J)
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:375:48: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (WordVariable N2 (Fin 1))
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:383:48: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (WordVariable N2 (Fin 2))
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:391:48: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (WordVariable NP (Fin 3))
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:402:4: error: Function expected at
+  polynomial
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (readRows (project N2 Finset.univ) (completedNaturalWordRows N2 sample registry2 (fun _ => false) twoTipWord) b)
+
+Hint: The identifier `polynomial` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:399:0: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G7OriginalCompletedCalendarRoot.lean:411:4: error: Function expected at
+  polynomial
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (readRows (project N2 Finset.univ) (completedNaturalWordRows N2 sample registry2 (fun _ => false) serialWord) b)
+
+Hint: The identifier `polynomial` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:408:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G7OriginalCompletedCalendarRoot.lean:420:4: error: Function expected at
+  polynomial
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (readRows (project NP Finset.univ)
+    (completedNaturalWordRows NP sample OriginalParallelEpochFixture.registry (fun _ => true) parallelFiniteWord) b)
+
+Hint: The identifier `polynomial` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalCompletedCalendarRoot.lean:417:0: error: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.twoTip_trace_root' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.twoTip_natural_raw_root' depends on axioms: [sorryAx,
+ twoTip_natural_raw_root]
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.twoTip_completed_polynomial' does not depend on any axioms
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.serial_trace_root' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.serial_natural_raw_root' depends on axioms: [sorryAx,
+ serial_natural_raw_root]
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.serial_completed_polynomial' does not depend on any axioms
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.parallel_trace_root' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.parallel_natural_raw_root' depends on axioms: [sorryAx,
+ parallel_natural_raw_root]
+'UnifiedLean.G7.OriginalCompletedCalendarRoot.parallel_completed_polynomial' does not depend on any axioms

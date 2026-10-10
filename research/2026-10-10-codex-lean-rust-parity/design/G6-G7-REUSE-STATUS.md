@@ -142,3 +142,59 @@ private Rust port and executable rational certificate consumer are being checked
 Old positive-baseline factors and newest retained-node hand reconstruction are
 retained as distinct providers. Native parsing/RREF refinement, arbitrary real
 weights and positive physical source-factor realization remain separate.
+
+## 10:16 PDT integration supplement
+
+The [rational compression chain](../quality/RATIONAL-COMPRESSION-CHAIN-REVIEW.json)
+now passes. It reuses the older deterministic elimination in bounded Rust and
+binds saved original-index output to the generic Lean soundness theorem, finite
+typed literals, nine actual compiled outcomes and a separate kernel theorem
+for those outcomes. This closes that supplied-rational-certificate connection;
+universal native elimination/parser correctness and positive biological source
+realization remain separate. The old/common-atom provider and physical bank
+premises are preserved.
+
+The [three calendar phase consumers](../quality/ORIGINAL-CALENDAR-PHASES-REVIEW.json)
+also pass their separate200-module audit, supplying18 concrete permutations
+and9 paired same-bank PMF/raw-invariant instances from the accepted generic
+provider. Whole-word root and completed physical-law consumers remain under
+repair. These accepted separate contexts are not counted in the earlier1,463
+union until the next coherent aggregate and complete ownership audit passes.
+
+## 10:48 PDT integration supplement
+
+The [coherent1,487-module library audit](../quality/INTEGRATED-LIBRARY-UNION-REVIEW.json)
+now includes accepted rational soundness/Facts/checked-row consumers, concrete
+calendar phases/root/physical law and named graph/registry decoding. All earlier
+1,463 source identities remain. The failed1,489 aggregate is preserved: two
+fixture executables both define global `main`; their libraries integrate and
+both original executable/evaluation contexts remain separate and unchanged.
+
+The [101-module checked-row consumer](../quality/RATIONAL-COMPRESSION-CHECKED-ROWS-REVIEW.json)
+uses the finite Facts theorem and generic soundness to supply original generator
+row compression under CoLocated/live-cap premises. It adds no elimination
+algorithm or copied rational dataset. The [calendar law202](../quality/ORIGINAL-CALENDAR-LAW-REVIEW.json)
+now consumes the accepted phase200/root201 providers to bind the full selected
+physical PMF for the three fixed calendar families. This endpoint law retains
+genealogy/location/register and does not recover merger ages.
+
+The [named source172 consumer](../quality/NAMED-CALENDAR-SOURCE-ADMISSION-REVIEW.json)
+reuses existing BinaryValid/RegistryValid/CutChild and decoder providers. The N2
+fork body came from an older incomplete smoke candidate; the failed smoke is not
+imported. Accepted N2 field proofs and empty-registry uniqueness supply its
+admission. NP already had accepted decoder/registry/parent identities; the new
+consumer exposes them directly. The [three Rust input projections](../quality/NAMED-CALENDAR-INPUT-REVIEW.json)
+match these exact carriers, with distinct original parallel parents2/3.
+
+The next integration target is a supplied-request representation certificate:
+native finite arrays must map losslessly to the existing typed Code, including
+bounds, taxon/hybrid labels and original edge occurrences. Existing source and
+registry decoders should supply the mathematics. Generic native parser/validator
+correspondence is still unproved; no replacement graph engine is needed.
+For timed observations, reuse completed G2 timed providers after representing
+a corresponding timed carrier/observer: decoded endpoint snapshots erase
+history, so endpoint PMF equality alone cannot supply those ages.
+
+Full G6 positive legal reconstruction/cloud/confidence and G7 source census/QE/
+legal-policy assembly remain open. These supplements resolve scoped consumers;
+they do not alter frozen reuse maps or claim full master closure.

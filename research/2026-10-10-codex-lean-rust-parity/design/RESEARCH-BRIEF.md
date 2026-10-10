@@ -1,36 +1,37 @@
 # Research progress at a glance
 
-Codex coordinator, 10 October 2026, 09:42 PDT. **G1, full-timed G2 and binary
+Codex coordinator, 10 October 2026, 10:48 PDT. **G1, full-timed G2 and binary
 M3 G5 remain complete at their declared Lean contracts. Full G6/G7 formal and
 practical assembly remains incomplete.** The [goal sheet](GOAL-STATUS.md)
-defines the finish lines. The [preceding brief](../quality/evidence/status-before-completed-word-comparison-20261010T161951Z/design/RESEARCH-BRIEF.md)
+defines the finish lines. The [preceding brief](../quality/evidence/status-before-expanded-union-20261010T1743Z/design/RESEARCH-BRIEF.md)
 is preserved.
 
 | Lane | What now passes | Next unresolved connection |
 |---|---|---|
-| **Lean integration** | One coherent 1,463-module context: 99,149 declarations, 90,822 theorem declarations, fresh aggregate and full ownership audit, no owned/nonstandard axioms or missing modules. It incorporates the accepted G6 generator/compression and G7 phase/raw-root consumers. [Root review](../quality/COHERENT-UNION-REVIEW.json). | General native parsing, chronological phase order, slot allocation and state encoding still need correspondence proofs. The three concrete calendar phase/root consumers are being checked separately. |
-| **Rust practical calendar solver** | `calendar-law` composes initialization, epochs, boundaries, full operation words and ancestral completion using one original-ID source/register and physical bank. The general frontend passes 11 Rust tests, independent 34-input/259-view checks, adapter controls and 18 current launcher controls. [Application review](../quality/CALENDAR-APPLICATION-REVIEW.json). | Full source admission, physical timed readout, observation fitting and source-to-optimal-policy assembly remain incomplete. Resource UNKNOWN is not a source exclusion. |
-| **Actual Lean/Rust calendar agreement** | Three original completed literal-word Lean evaluations match the saved actual Rust calendar outputs in all 38 ordered views and 66 terms; canonical mathematical payloads agree after normalization, with independent literal-witness checks. [Combined review](../quality/CALENDAR-FIXTURE-REVIEW.json). | Whole producer envelopes/witness choices are not asserted byte-identical. Concrete physical calendar PMF composition and universal refinement remain separate. |
-| **G6 reusable compression** | Original full-row generator/remainder and positive common-atom existence have accepted 93/95-module audits. A 32-provider audit recovers the older exact rational elimination algorithm and positive-factor hand constructions. [Reuse audit](../reuse/G6-LEGAL-FACTOR-EXTRACTOR-AUDIT-20261010T1618Z.md). | A bounded private Rust port and executable rational-certificate-to-original-row Lean consumer are being checked. Arbitrary real extraction, positive legal source reconstruction, cloud/confidence consumers remain open. |
-| **DOT G3/G4 research** | New published local recognizers, restricted finite synthesis/search specifications, prior attribution and exact G4 countercontrols are linked to their old providers. [Latest delta](DISCOVERY-DELTA-20261010T1540Z.md). | General G3 acquisition/observer coverage and full unnormalized G4 forest-law separation remain open. The new scalar and conditional-shape countercontrols eliminate those proposed routes. |
+| **Lean integration** | One coherent **1,487-module library context**,100,217 declarations/91,274 theorem declarations. Earlier1,463 sources are unchanged; accepted compression, calendar-law and decoder consumers are integrated. Fresh aggregate and full ownership audit, no unapproved axioms/missing modules. [Root review](../quality/INTEGRATED-LIBRARY-UNION-REVIEW.json). | General native request/state representation, parsing, chronology and slot correspondence. Two fixture executables stay in separate checked contexts because their global `main` names collide; the failed1,489-module attempt is preserved. |
+| **Rust practical calendar solver** | `calendar-law` composes initialization, epochs, boundaries, operation words and ancestral completion using one original-ID source/register and physical bank.11 frontend tests, independent34-input/259-view checks, adapter and launcher controls pass. [Application review](../quality/CALENDAR-APPLICATION-REVIEW.json). | Full source-class admission, timed readout, observation fitting and source-to-optimal-policy assembly. Resource UNKNOWN is not a source exclusion. |
+| **Actual Lean/Rust calendar agreement** | Three original completed-word evaluations match saved actual Rust outputs in all38 ordered views/66 terms. Complete mathematical payloads agree after normalization; literal witnesses are independently checked. [Combined review](../quality/CALENDAR-FIXTURE-REVIEW.json). | Universal native correspondence and complete producer-byte identity are separate. Finite execution agreement alone does not establish either. |
+| **G6 reusable compression** | Old exact rational elimination has a bounded private Rust port for supplied atoms at M=2,3,4:10 tests,8 certificates,25 controls and331 saved row transfers. Generic Lean soundness,9 actual outcomes, closed finite Facts and listed-certificate-to-original-row consumers pass. [Chain](../quality/RATIONAL-COMPRESSION-CHAIN-REVIEW.json), [checked rows](../quality/RATIONAL-COMPRESSION-CHECKED-ROWS-REVIEW.json). | Native parser/elimination refinement, arbitrary-real extraction, positive legal one-bank source reconstruction and cloud/confidence consumers. This is still a private component. |
+| **Concrete physical calendar laws** | Separate phase200/root201/law202 audits now connect sorted original dates, initialization, all raw endpoints and completion to the full selected physical PMF for the three calendars. Shared positive rates, interior gammas, exact durations and finite nonempty samples remain explicit. [Law review](../quality/ORIGINAL-CALENDAR-LAW-REVIEW.json), [design supplement](CALENDAR-OBLIGATION-SUPPLEMENT-20261010T1730Z.md). | This endpoint genealogy/location/register law does not retain merger ages. Timed carriers and their observers need separate representation. |
+| **Original source decoding** | The fixed N2 fork and NP parallel codes now bind to the accepted sources/registries, preserving labels and incoming parent occurrences2/3.172-module audit and three exact Rust input projections pass. [Proof](../quality/NAMED-CALENDAR-SOURCE-ADMISSION-REVIEW.json), [inputs](../quality/NAMED-CALENDAR-INPUT-REVIEW.json). | Lossless arbitrary-request array-to-Code certification and native validator correspondence; full labelled planarity/cofacial census remains open. Reuse the existing decoder rather than building a graph engine. |
+| **DOT G3/G4 research** | Latest published recognizers, restricted synthesis/search specifications, prior attribution and exact G4 countercontrols are linked to old providers. [Latest delta](DISCOVERY-DELTA-20261010T1540Z.md). A fresh fetch found no newer remote commits. | General G3 acquisition/observer coverage and full unnormalized G4 forest-law separation remain open. Scalar and conditional-shape countercontrols eliminate those proposed routes. |
 
-The 1,463-module run authenticates earlier exact-context component checks;
-its aggregate and complete audit are fresh. The earlier all-fresh 1,340-module
-run and 1,433-module union retain their own receipts. Overlapping module,
-theorem, case, view and term counts are not added or used as a completion
-percentage. Original population, epoch, boundary, finite-word and completion
-execution checks remain linked in [Lean/Python/Rust](LEAN-TO-RUST.md).
+The1,487 components reuse authenticated earlier kernel checks; the aggregate
+and complete audit are fresh. Earlier all-fresh1,340 and coherent1,433/1,463
+runs retain their own receipts. Overlapping modules, theorems, cases and views
+are not added or interpreted as a completion percentage.
 
 An **epoch** here is a biological interval between boundary events. **Lake**
 is Lean's build tool; an epoch is not a layer above a Lake build. Rust is the
-bounded runtime, Lean specifies and proves the model, and Python remains the
-independent research/reference layer. A Lean proof does not automatically
-prove the Rust binary.
+bounded runtime, Lean specifies/proves the model, and Python supplies independent
+research/reference calculations. Lean proofs do not automatically prove a Rust
+binary. [Language and execution details](LEAN-TO-RUST.md).
 
-The [checkpoint](../CHECKPOINT.md) and [G6/G7 reuse sheet](G6-G7-REUSE-STATUS.md)
-give the precise remaining obligations. Integration is the main priority:
-reuse existing definitions and old/new results, then check the connecting
-premises. No exhaustive coverage of unavailable private chats or blanket
-novelty claim is made. Four Sol 6.1/max roles cover Lean integration, reuse,
-Rust implementation and design; root owns QC and preservation. Decisions API
-setup is deferred, with no key or API request created.
+The next integration target is a lossless supplied-request representation
+certificate using the existing original decoder, followed by observation and
+source reconstruction consumers. Whole-context builds currently face a concrete
+storage limit: approximately117MB free in `/tmp` after preserving accepted runs.
+The [checkpoint](../CHECKPOINT.md) and [reuse sheet](G6-G7-REUSE-STATUS.md) record
+what to resume. Frozen discovery/reuse maps and old failures remain unchanged;
+no exhaustive private-chat coverage, blanket novelty or indefinite background
+execution is claimed. Decisions API setup is deferred; no key/request was made.

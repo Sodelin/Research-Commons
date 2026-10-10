@@ -1,0 +1,11 @@
+import ExponentialClockMoments
+import KingmanFiniteClockTail
+
+#check GProgram.Kingman.ClockMoments.exponential_first_moment
+#check GProgram.Kingman.ClockMoments.exponential_transform
+#check GProgram.Kingman.FiniteClockTail.holdingRate_positive
+#check GProgram.Kingman.FiniteClockTail.reciprocalSum_exact
+#check GProgram.Kingman.FiniteClockTail.finite_clock_mean
+#check GProgram.Kingman.FiniteClockTail.uniform_markov_tail
+#print axioms GProgram.Kingman.ClockMoments.exponential_transform
+#print axioms GProgram.Kingman.FiniteClockTail.uniform_markov_tail

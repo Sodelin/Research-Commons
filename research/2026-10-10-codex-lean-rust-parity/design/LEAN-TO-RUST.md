@@ -1,6 +1,6 @@
 # How Lean, Python and Rust fit together
 
-Codex coordinator, 10 October 2026, 09:42 PDT. Explanation and dated status;
+Codex coordinator, 10 October 2026, 10:48 PDT. Explanation and dated status;
 the linked receipts define the precise verification scope.
 
 **Rust is a good choice for the practical engine.** Lean supplies mathematical
@@ -47,7 +47,10 @@ of these languages is claimed.
 
 | Component | Current evidence |
 |---|---|
-| Connected Lean baseline | Latest 1,463-module union has authenticated prior exact-context component checks and a fresh aggregate/full ownership audit: 99,149 declarations, 90,822 theorem declarations, no owned/nonstandard axioms or missing modules. Earlier 1,433 and all-fresh 1,340 runs retain their separate receipts. [Union review](../quality/COHERENT-UNION-REVIEW.json). |
+| Supplied rational compression | Private Rust port at M=2,3,4 passes10 tests,8 certificates,25 controls and331 saved row transfers. Generic soundness98, fixture/Main99/100, actual9 outcomes, kernel Facts100 and checked original rows101 pass separately. Accepted libraries enter the1,487 union. Native refinement, arbitrary-real extraction and legal source reconstruction remain open. [Chain](../quality/RATIONAL-COMPRESSION-CHAIN-REVIEW.json), [checked rows](../quality/RATIONAL-COMPRESSION-CHECKED-ROWS-REVIEW.json). |
+| Concrete original-calendar physical laws | Separate200/201/202 phase/root/law audits now bind sorted phases, initialization, every raw endpoint and completion to the selected physical PMF for the three fixed calendar families. Finite nonempty samples, positive shared rates, interior gammas and exact durations remain explicit; timed merger ages are not retained. [Law review](../quality/ORIGINAL-CALENDAR-LAW-REVIEW.json). |
+| Named original decoder/registry | Fixed N2 fork and NP parallel instances pass a172-module audit; three exact Rust requests match the typed code projections and preserve parent occurrences2/3. Generic native parsing/validation and source census remain separate. [Proof](../quality/NAMED-CALENDAR-SOURCE-ADMISSION-REVIEW.json), [input review](../quality/NAMED-CALENDAR-INPUT-REVIEW.json). |
+| Connected Lean library baseline | Latest1,487-module library union retains all earlier1,463 source pins and integrates the accepted compression/calendar-law/decoder consumers. Authenticated earlier components plus fresh aggregate/full audit:100,217 unique declarations/91,274 theorem declarations, no owned/nonstandard axioms or missing modules. Two executable Main modules retain separate checked contexts after a preserved collision. [Union review](../quality/INTEGRATED-LIBRARY-UNION-REVIEW.json). |
 | Original population recurrence | Eight actual original Lean/Rust/independent-generator comparisons pass. [Receipt](evidence/population-lean-rust-review-1/RECEIPT.json). |
 | Mixed-population epochs | Eight ordinary and one parallel-edge original Lean/Rust/reference comparisons pass. [Ordinary execution](../lean/ORIGINAL-EPOCH-NATIVE-EXECUTION-RESULT.json), [parallel execution](../lean/ORIGINAL-PARALLEL-EPOCH-NATIVE-EXECUTION-RESULT.json). |
 | Boundaries | Generic sparse source-boundary theorem passes a 133-module audit; all twelve actual original Lean/Rust/reference full-table comparisons pass separately. [Proof review](../quality/EFFECTIVE-BOUNDARY-REVIEW.json), [actual execution](../lean/ORIGINAL-BOUNDARY-NATIVE-EXECUTION-RESULT.json). |
@@ -57,7 +60,7 @@ of these languages is claimed.
 | Generated-calendar root and completed coefficients | Separate170-module complete Lean audit proves every naturally initialized raw calendar endpoint has an ancestral root, including zero-coefficient rows. It supplies the old completed-word premise under nonempty-copy, original initialization, positive rates and SameOrder assumptions. Universal native parser/phase/slot/encoder correspondence remains separate. [Proof review](../quality/RAW-CALENDAR-ROOT-REVIEW.json). |
 | G6 original population generator | Separate93-module complete audit proves the physical capped law, identity at survival one, original ordered half-rate generator and coarse full-row L1 remainder, consuming old coefficient/power bounds. Positive compression now passes a separate95-module audit; its real-weight existence proof is noncomputable, so a Rust extractor and legal source reconstruction remain separate. [Proof review](../quality/G6-GENERATOR-REVIEW.json). |
 | Phase-permutation source integration | Separate181-module audit transports complete valid phase lists to the original same-bank physical PMF and supplies raw-root support. This is distinct from symbolic independent-slot polynomial equality and native parser/phase/slot refinement. [Proof review](../quality/CALENDAR-PHASE-REVIEW.json). |
-| Integrated completed-calendar execution | Three actual original Lean completed literal-word evaluations match saved actual Rust application outputs at all 38 complete ordered views/66 terms. Canonical mathematical tables agree after normalization; witnesses are independently checked. Specific physical calendar PMF composition and universal refinement remain separate. [Combined review](../quality/CALENDAR-FIXTURE-REVIEW.json). |
+| Integrated completed-calendar execution | Three actual original Lean completed-word evaluations match saved actual Rust outputs at38 full ordered views/66 terms. Canonical mathematical tables agree after normalization; witnesses are independently checked. The later finite physical-law consumer has separate premises; universal refinement remains open. [Combined review](../quality/CALENDAR-FIXTURE-REVIEW.json). |
 | Ancestral completion | Private completion is independently checked on eleven full tables/330 ordered rows plus five budget and four refusal controls. Its generic Lean bridge passes a140-module audit. Separately, actual original Lean and Rust evaluators agree on six complete tables/257 ordered rows, including permuted and carried genealogies. [Candidate review](../quality/COMPLETION-CANDIDATE-REVIEW.json), [proof review](../quality/SEMANTIC-COMPLETION-REVIEW.json), [actual execution](../lean/ORIGINAL-COMPLETION-NATIVE-EXECUTION-RESULT.json). |
 
 The finite-word row count is `1 + 2 + 2 + 3 + 1 + 1 + 19 + 1 = 30` for
@@ -78,5 +81,5 @@ full G6/G7 formal and practical assembly remains open.
 The [32-provider extractor audit](../reuse/G6-LEGAL-FACTOR-EXTRACTOR-AUDIT-20261010T1618Z.md)
 recovers the existing exact rational geometric-moment elimination algorithm. Its
 bounded private Rust port and a rational certificate-to-original-row Lean consumer
-are being checked separately. This reuses the common-atom baseline; it does not
+now pass the scoped checks above. This reuses the common-atom baseline; it does not
 identify rational atoms with generally transcendental calendar survival values.

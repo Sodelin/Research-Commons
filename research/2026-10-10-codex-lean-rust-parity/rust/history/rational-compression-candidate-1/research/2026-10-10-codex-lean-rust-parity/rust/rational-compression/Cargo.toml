@@ -1,0 +1,24 @@
+[package]
+name = "research-commons-private-rational-compression"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+description = "Private bounded port of the attributed exact common-atom rational extractor"
+
+[lib]
+name = "rational_compression"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rational-compression-probe"
+path = "src/main.rs"
+
+[dependencies]
+research-commons-parity-solver = { path = ".." }
+research-commons-calendar-cli = { path = "../calendar-cli" }
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = { version = "=1.0.145", features = ["raw_value"] }
+
+[profile.release]
+overflow-checks = true

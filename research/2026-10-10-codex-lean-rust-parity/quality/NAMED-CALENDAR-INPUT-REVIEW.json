@@ -1,0 +1,45 @@
+{
+  "checks": {
+    "capture_stable_without_execution_or_promotion": true,
+    "complete_three_inputs_eleven_sources": true,
+    "frozen_projection": true,
+    "frozen_source_input_receipt": true,
+    "parallel_occurrences_and_labels_preserved": true
+  },
+  "errors": [],
+  "full_source_admission_verified": false,
+  "master_complete": false,
+  "native_parser_refinement_proved": false,
+  "observed_utc": "2026-10-10T17:37:49.955911+00:00",
+  "pass": true,
+  "receipt": {
+    "bytes": 14983,
+    "sha256": "025bf9aa31ff8762382e2144144bf47fe9620a0796531a764b432a138f8b08c4"
+  },
+  "requests": [
+    {
+      "exact_projection": true,
+      "fixture": "twoTipCalendar",
+      "named_source": "N2",
+      "sha256": "42eb6a95c160825cb19da7945bd025cb2e31e8a2d43aaab4fe1c87a0d4c64dbf"
+    },
+    {
+      "exact_projection": true,
+      "fixture": "serialNegativeTips",
+      "named_source": "N2",
+      "sha256": "435c41549a96c529ce7545480d2f52bef9e2280ce01b64523e5f0a62944a11db"
+    },
+    {
+      "exact_projection": true,
+      "fixture": "parallelCommonCalendar",
+      "named_source": "NP",
+      "sha256": "f4c9784938ede6f83c294b037018dac38392e80b91d33d2544b5c9660f334076"
+    }
+  ],
+  "reviewer": {
+    "bytes": 5437,
+    "sha256": "6c5dee4971fd9f1577a99b154d7b24fc60bf1539e7c4b07467d141f84a06067e"
+  },
+  "schema": "named_calendar_exact_input_projection_root_review_v1",
+  "scope": "Eleven original source bodies and three raw requests retain exact bytes. Root independently regenerates source/target/root/taxon/hybrid/false-true occurrence projections and finite cardinalities for these inputs only. Two named graphs underlie three calendars; no graph decision or solver executes. Named typed decoder proofs are separately checked, and the old incomplete smoke source is only a literal predecessor."
+}
