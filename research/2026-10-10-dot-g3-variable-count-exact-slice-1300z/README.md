@@ -24,3 +24,10 @@ The old one-retained NO theorem, all-rival localization, tangent inequalities an
 The frozen proof retains its submission-stage candidate label. Its acceptance scope is specified by the independent review and this README. The author executed the symbolic checker; root independently replayed it at 13:19:31 UTC with exit zero and all identity checks passing. This is algebra-only execution, separate from the hand/source review.
 
 This illustrates a route compatible with the earlier obstruction to finite fixed-source atlases: source size must vary without a local bound. It does not solve acquisition of a suitable stratum from arbitrary original input, arbitrary coupled/register observations, or INDEPENDENT sources. G3 remains open.
+
+
+## 10 October 2026, 13:33 UTC: effective-radius supplement
+
+The [reviewed effectivity supplement](effective-radius/README.md) gives a terminating procedure computing the slice's rational validity radius and finite per-query source-search cap. This supersedes the existential-radius limitation above at the mathematical algorithm-specification level. The original theorem and its historical status remain preserved. No numerical radius, cutoff, concrete witness, RCF execution or implementation has yet been produced. The supplied critical slice and calibrated COMMON scope are unchanged; novelty remains unresolved.
+
+The parent MANIFEST.json records the original d127cd80 publication snapshot; its historical hashes are preserved. The supplement has its own manifest for its new frozen proof, review and status files.

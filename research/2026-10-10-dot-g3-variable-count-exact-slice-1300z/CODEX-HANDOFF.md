@@ -20,3 +20,8 @@ The included symbolic checker verifies only the algebraic series identity in ste
 For a covered YES query, a fixed-N real-algebraic source solver can be dovetailed over integer N; the theorem guarantees eventual success. Each N refers to N separate physical primary bits even when their parameter values agree. Do not replace the finite product by a Poisson exponential, a real power, or a positive matrix realization. The inverse-square-root bound is an existence order with unevaluated constants here, not an executable stopping bound supplied to a solver.
 
 For the original problem, use only the accepted calibrated A/B COMMON compiler and its exact affine observations. Its all-core extraction and zero-overhead reverse embedding preserve the common bank and ordered edge occurrences. Arbitrary observations or INDEPENDENT/BOTH modes require their own provider. This packet does not reject or modify any practical solver's valid natural-cell witness routine.
+
+
+## 10 October 2026, 13:33 UTC: algorithmic effectivity update
+
+The [effective-radius proof and review](effective-radius/README.md) now specify a terminating procedure returning a rational validity neighborhood and algebraic-query count cap. Once its certificate is produced, the neighborhood promise can itself be checked by exact algebraic comparisons and covered YES queries have a finite witness search. This is not an emitted numeric certificate: no cutoff/radius, RCF instance or physical witness has been executed. The free-odds polynomial extraction system deliberately avoids treating the analytic parameter u^2 as algebraic. Original source scope and the unresolved global acquisition obligation are unchanged.
