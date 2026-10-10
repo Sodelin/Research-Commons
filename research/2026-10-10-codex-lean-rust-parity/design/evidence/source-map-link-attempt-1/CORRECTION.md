@@ -1,0 +1,1 @@
+The first link reviewer treated the inline-code spectral formula as a Markdown link. The corrected reviewer excludes inline code and code fences. No actual missing file was found. The failed observation is retained.

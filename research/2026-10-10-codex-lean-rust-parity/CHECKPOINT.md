@@ -1,6 +1,6 @@
 # Continuation checkpoint
 
-Codex coordinator, 2026-10-10 10:51 UTC. **MASTER IN PROGRESS.** This records
+Codex coordinator, 2026-10-10 11:14 UTC. **MASTER IN PROGRESS.** This records
 saved work and observed processes; it does not promise that a cloud session or
 workers remain active after the chat ends.
 
@@ -10,7 +10,9 @@ Repository `/workspace/Research-Commons`, local branch
 `codex/lean-rust-parity-20261010`. Starting baseline
 `32f1538ebcd1a80b999bb14e08df905d13184ec7`; first local checkpoint `a5eb2c9e`.
 Incoming main through `4e9f1ef2` was merged as `d244d73f` after checking that
-all 2,511 incoming paths were disjoint from working changes. No changes have
+all 2,511 incoming paths were disjoint from working changes. The next local
+checkpoint is `d9b8bd7c`; later disjoint deliveries through `790edaeb` are also
+merged. No changes have
 been pushed and no PR or recurring automation has been created.
 
 Four active Sol 6.1/max roles: `lean_integration`, `lean_reuse_successor`,
@@ -41,6 +43,14 @@ graph. The new G7 recovery has 219 versions, including 47 absent from the old
 inventory. G6/G7 manifests and exact source pools pass byte checks. These are
 source-identity results, not new proof or compilation certificates.
 
+The latest [publication coverage audit](quality/RECENT-PUBLICATION-COVERAGE.json)
+accounts for all 21 commits and 2,599 changed paths between the first observed
+`c5fec79d` snapshot and published `790edaeb`. All seven recent G3/G4 packets
+appear in the [concise discovery map](design/DISCOVERY-MAP.md), with original
+proofs, independent reviews, older providers and remaining gates. Every
+inventoried local file matches the published Git blob. This establishes bounded
+publication discovery, not an entire historical proof reread or new formalization.
+
 ## Accepted executable components
 
 AFFINE/COUNT native parity passed 281/281. Additive CHART passed 78 native and
@@ -56,15 +66,27 @@ passes trust-zero kernel checking and the complete owned audit: 765 declarations
 Current LAW binary identities:
 
 - Lean `ca465a7b1505ff2e5ff76d3f004ddaf0770077354ada54d26fa9d504fd0bb9b8`.
-- Rust `7b10818370cae2b74860f3e11da42a6aeaec0de6386202d00af04a143d19146d`.
+- Current Rust `237e87a3844a3835cdc2ab6ff3e38c54ddefe04f6f54d10fe7ebf526fc915037`.
+- Preserved LAW-v1 Rust `7b10818370cae2b74860f3e11da42a6aeaec0de6386202d00af04a143d19146d`, with its exact source snapshot.
 
-LAW acceptance passed 117/117 (46 prior affine/count/refusals, 32 chart,
+LAW-v1 acceptance passed 117/117 (46 prior affine/count/refusals, 32 chart,
 39 genealogy cases). Every genealogy table is checked coefficient by coefficient
 against the pinned inherited full-frontier compiler, with exact normalization
 and rooted-to-unrooted pushforward. Thirteen forged tables were rejected.
 Root's separate explicit formulas/budget checks passed 15/15; focused
 serial-two-hybrid review passed both COMMON and INDEPENDENT. Finite acceptance
 does not establish universal original-model refinement.
+
+The current Rust build adds the internal actual ordered population recurrence.
+It passes 32 build/test cases, 8 independent exact spectral-generator cases,
+and a fresh 117-case public-wire regression against the same Lean executable.
+The four-copy probe includes 193 literal destinations and 37 unordered-forest
+rows, with complete fibre summation. Literal source snapshots retain ancestor
+maps, ordered grafts, original placement, register and injective copied labels.
+This is an internal library, not a new public wire operation. Original typed
+native Lean coefficient parity and the general zero-support/quotient proof are
+still pending. The original unrestricted Code universe permits snapshots
+outside the live-Some/dead-None encoded image; do not equate those carriers.
 
 The separate LAW adapter passed 14 authored controls and 12 independent
 challenges, including normalized false tables with valid unrooted pushforward
@@ -77,7 +99,7 @@ admission remains false.
 Root added `genealogy-law` to the application alongside `affine-cell` and
 `natural-cell`. Actual ten-case launcher review plus no-overwrite passed;
 six cell cases are regressions and four exercise LAW. The application byte
-verifier passes for 31 current pins, 534 unchanged inherited files and one
+verifier passes for 32 current pins, 534 unchanged inherited files and one
 explicit intervening navigation update. The default nine-parameter Python
 producer/checker retain their original semantics and finite-data UNKNOWN.
 
@@ -85,15 +107,19 @@ producer/checker retain their original semantics and finite-data UNKNOWN.
 
 The recorded eight-module arithmetic/wire/cap source snapshot passed a complete
 audit: 345 declarations, 175 theorem declarations, standard Lean axioms only.
-Two current proof files were later adjusted for broad Mathlib name collisions;
-their hashes differ from that certificate. The reuse map correctly leaves these
-variants pending their own typed-context audit. Accepted snapshots remain saved.
+Two current proof files were adjusted for broad Mathlib name collisions;
+their hashes differ from that historical certificate. Their current variants
+now pass the separately recorded typed-context audit. Accepted old snapshots
+and failed intermediate attempts remain saved.
 
-The actual original-bank witness, ordered compiler and typed two-tip native
-fixture chain is being repaired and rechecked. Failures remain under
-`lean/evidence/typed-reuse/`. The latest ordered-compiler repair uses
-`List.map_id_fun'`. Its key conclusion remains list `.toFinset = compileCell`;
-the original finite-set compiler supplies no wire row-order promise.
+The [current typed certificate](lean/TYPED-REUSE-CERTIFICATE.json) accepts the
+original-bank witness, ordered compiler and typed two-tip native fixtures.
+Eleven fresh modules plus 41 exact public providers pass the complete 52-module
+audit: 2,272 declarations, 1,136 theorem declarations, no owned/nonstandard
+axioms, trust zero and unchanged original imports. The native fixtures have
+9/17 exact rows. The key general conclusion is list `.toFinset = compileCell`;
+the original finite-set compiler supplies no wire row-order promise. General
+raw-parser admission and universal original-model Rust refinement remain open.
 
 The draft whole-edge cube lift uses historical G4 canonical-duration proofs
 on actual Calendar/PositivePairRates. Delivered G7 OriginalSurvivalCoverage
@@ -110,17 +136,27 @@ assemblies remain unfinished. Reuse its 12 primary source pins alongside
 older G1 bigon and current G7 retained-state providers.
 
 The delivered G7 coefficient chain individually passed enumeration and population
-coefficients. Full-epoch cons-induction normalization failed under the 200k
-heartbeat limit; complete audit and codegen smoke remain unrun. The successor
-is preparing a separately pinned proof repair. The next consequential native
+coefficients. Its original full-epoch cons-induction proof failed under the 200k
+heartbeat limit. The separately attributed repair `85bed5b9…` now passes fresh
+at the same default limit; its 118-module aggregate and complete owned audit
+also pass. Integration is completing import-artifact inventory before issuing
+the final target certificate. Separate code-generation smoke remains pending.
+The next consequential native
 bridge sums all original ordered `Choice.offDiag` destination coefficients
 under a canonical unordered-forest quotient, including half-weighting and
 restricted-copy/global-label embedding. Reversing a pair changes its literal
 survivor and graft: equating one destination or casually canceling two terms
 does not prove the bridge. Graph-only LAW remains gated.
 
-New G3 supplied-normal Puiseux and G4 no-first-cell atom-exclusion results are
-scoped hand/source advances. Original unknown-size G3/G4 masters remain open.
+New G3 supplied-normal loss floors, local-bank obstruction and two-head residue
+attainment are scoped advances. The two-head family is interior YES, not the
+proposed NO fixture. Root's fresh primary/Hessian/Sturm replay passes all three
+scripts and exactly reproduces the published polynomial bytes; analytic
+source-interior providers and source witness extraction remain separate.
+G4 atom exclusion, overshoot and countable-clock compactification together
+exclude effective prefix `c≥a` in the stated calibrated private domain. The
+`c<a` case remains open. These source-reviewed results do not have new Lean
+certificates. Original unknown-size G3/G4 masters remain open.
 
 ## Full Lean replay and resume
 
@@ -135,14 +171,16 @@ finished in 3,664 Lake jobs for 147 requested external roots. The earlier
 project counts. No cache/proxy downgrade was used.
 
 The immutable current union began at 10:21 UTC:
-`lean/.build/runs/20261010T102154.481687Z`. At 10:50:51 it had 328 fresh project
+`lean/.build/runs/20261010T102154.481687Z`. The 11:14 checkpoint observes 689 fresh project
 passes and remained running. Its 1,340-module aggregate and complete owned audit
 are pending. Integration may pause at a completed component boundary for typed
 proof diagnostics and logs interventions separately. Inspect actual processes,
 events and receipts before resuming; do not duplicate the run.
 
-The same scheduler is verifying/unpacking the delivered canonical evidence
-and preparing authoritative `connectedQualified` public-layout replay separately.
+The same scheduler verified/unpacked the delivered canonical evidence and
+is preparing authoritative `connectedQualified` public-layout replay separately.
+It has also prepared the coherent 1,433-module latest union (the delivered
+1,411 graph plus 22 later exact versions), preserving the immutable ongoing run.
 Preserve profile isolation, exact source/import bindings and 25 provisional
 statuses. Do not rewrite our ongoing union.
 
@@ -152,8 +190,8 @@ exception. The delivered wrapper separately defines exact aggregate/audit
 exceptions and memory headroom. Root corrected audit acceptance to require
 integrity PASS and stable compiler identity, not merely exit zero.
 
-Next: finish typed-bank acceptance; repair/audit the delivered G7 coefficient
-chain and run actual codegen smoke; continue the current union and canonical
+Next: finalize acceptance of the repaired G7 coefficient chain and run actual
+typed native codegen checks; continue the current union and canonical
 reproduction; prove the native/original recurrence bridge; then continue named
 source, observation, fitting and statistical obligations using compatible
 old/new providers. A compiling aggregate or tested terminal-law component

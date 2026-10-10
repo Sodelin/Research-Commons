@@ -9,6 +9,7 @@ pub mod law;
 pub mod natural_cell;
 pub mod polynomial;
 pub mod protocol;
+pub mod source_population;
 
 pub use num_rational::BigRational as Rational;
 pub use exact_count_certificate as inherited_poisson;

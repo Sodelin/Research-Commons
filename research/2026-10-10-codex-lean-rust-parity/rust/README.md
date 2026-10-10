@@ -180,9 +180,62 @@ The accepted CHART release/source snapshot remain at
 [evidence/history/chart-v1](evidence/history/chart-v1). The new LAW build has
 its separate [receipt](evidence/law-build-1/BUILD-RECEIPT.json).
 
+## Literal source-population refinement
+
+The internal [source_population.rs](src/source_population.rs) ports the actual
+ordered original-source recurrence recovered in the latest
+[G7 coefficient packet](../../2026-10-10-dot-g7-pending-codex-recovery-0952z/README.md).
+It preserves the live representative, ancestry, ordered genealogy graft,
+original edge or ancestral location, and the entire original vertex register.
+Each of the two ordered merger orientations retains its own destination and
+half rate. Two singleton copies therefore produce two distinct literal merged
+states, each with polynomial `(1-X)/2`. Their full unordered fibre has `1-X`.
+
+The restricted copy carrier has at most four local labels and an injective
+embedding into global copied-label IDs. All local copies must belong to the
+specified original population, and each original sample must descend from it.
+The module checks the literal forest/ancestor invariants and uses the inherited
+`encodeActual` image: live genealogy/population fields are `some`, dead fields
+are `none`. An arbitrary admitted original Code may retain dead garbage or
+active `none` defaults; those variants are outside this library's input scope.
+Carried subtrees remain intact, and representatives
+need not be the smallest label. Explicit library work limits return UNKNOWN
+without a partial row. The module adds no RC1 operation and is not substituted
+for the accepted LAW compiler merely by being linked into the crate.
+
+The fixed-fixture diagnostic probe emits every normalized literal destination
+and every complete unordered fibre sum:
+
+```sh
+/tmp/parity-native-1/runtime/parity-target/release/examples/source_population_probe fourAncestral
+```
+
+Its JSON is test interchange, not a public command contract or a mathematical
+certificate. The independent spectral oracle applies the literal ordered-pair
+generator; it uses neither the new recursive lift algorithm nor LAW's merger
+history formula. All eight fixture comparisons passed, including 193 literal
+four-copy destinations, nonminimum representatives, earlier subtrees,
+restricted label permutations and changed frozen registers. The original typed
+Lean coefficient code-generation comparison is still pending. Historical
+component checks in the recovery packet do not establish successful extraction.
+Reachable-row support, label transport and general quotient refinement also
+remain separate proof obligations under the
+[internal refinement contract](../design/POPULATION-REFINEMENT.md).
+
+The complete accepted LAW v1 sources, helpers and adapter identities were
+preserved before this addition in
+[evidence/history/law-v1/SNAPSHOT.json](evidence/history/law-v1/SNAPSHOT.json),
+with its original executable in the scratch `law-v1-frozen` directory. The
+original byte-parity receipts are not relabelled as source-refinement evidence.
+
 ## Executed verification
 
-- Twenty-five Rust tests passed: thirteen affine/count/certificate controls,
+- Thirty-two Rust tests passed in the additive
+  [population build](evidence/population-build-2/BUILD-RECEIPT.json). The seven
+  added checks cover literal ordered half rates, full destination rows,
+  original snapshot/descendant invariants, carried subtrees, original parallel
+  identities, explicit resource refusal and every unordered coefficient against
+  the accepted LAW edge kernel. The earlier twenty-five tests comprise thirteen affine/count/certificate controls,
   six natural-cell controls and six LAW controls. LAW tests cover the species
   tree closed form, ordinary kernel initial/differential identities, current
   lineage routing, original parallel variables and conservative budget priority.
@@ -217,6 +270,17 @@ its separate [receipt](evidence/law-build-1/BUILD-RECEIPT.json).
   despite fake native acceptance. The evidence export retains requests, exact
   responses, execution/checker logs and the original authored harness; staged
   executable images remain in scratch.
+- The independent source-population spectral review passed eight fixtures;
+  [its receipt](../design/evidence/population-rust-review-2/RECEIPT.json) checks
+  every literal coefficient and complete unordered fibre. The first probe
+  attempt had schema/fixture metadata drift and failed before coefficient
+  comparison. Its receipt and original diagnostic source/binary remain
+  preserved; the corrected contexts match the frozen design fixtures exactly.
+- The rebuilt executable passed all 117 frozen RC1 regression cases against
+  the Lean baseline after the library addition, with exact canonical outputs
+  and independent certificate/reference checks. Its separate
+  [receipt](../design/evidence/law-plus-population-regression-1/PARITY-RECEIPT.json)
+  establishes continued wire behavior, not original source-law refinement.
 - Fresh inherited 39-case signed-nine replay passed. Its unchanged diagnostic
   scope is preserved in [the fresh receipt](evidence/inherited-native-REPLAY-RESULT.json).
 - The first test source compilation failed on two non-Copy array repetitions;

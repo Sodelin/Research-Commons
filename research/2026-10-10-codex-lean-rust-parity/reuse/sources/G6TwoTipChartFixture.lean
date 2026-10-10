@@ -161,10 +161,8 @@ theorem nativeRows_eq_emitted :
   · intro i hi hj
     have hlen : (decodeRows 6 (GParity.Chart.emitRows nativeInput)).length = 9 := by decide
     have hi9 : i < 9 := by omega
-    interval_cases i <;>
-      apply affineRow_ext <;>
-      try (funext j; fin_cases j) <;>
-      rfl
+    interval_cases i <;> apply affineRow_ext
+    all_goals first | rfl | (funext j; fin_cases j <;> rfl)
 
 theorem nativeRows_toFinset :
     (decodeRows 6 (GParity.Chart.emitRows nativeInput)).toFinset =
@@ -237,10 +235,8 @@ theorem nativeTypedRows_eq_emitted :
   · intro i hi hj
     have hlen : (decodeRows 6 (GParity.Chart.emitRows nativeTypedInput)).length = 17 := by decide
     have hi17 : i < 17 := by omega
-    interval_cases i <;>
-      apply affineRow_ext <;>
-      try (funext j; fin_cases j) <;>
-      rfl
+    interval_cases i <;> apply affineRow_ext
+    all_goals first | rfl | (funext j; fin_cases j <;> rfl)
 
 theorem nativeTypedRows_toFinset :
     (decodeRows 6 (GParity.Chart.emitRows nativeTypedInput)).toFinset =

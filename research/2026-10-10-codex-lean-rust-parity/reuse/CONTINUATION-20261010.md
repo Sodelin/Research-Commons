@@ -6,13 +6,14 @@ Observation: 10 October 2026. Status: **MASTER IN PROGRESS**.
 The sole compiler scheduler is `lean_integration`. No compiler or git mutation
 was invoked by this worker. The original G3/G4 master obligations remain open.
 
-The fresh original-bank attempt has checked `G6RationalNaturalCellWitness`
-successfully, as reported by the scheduler. The ordered compiler's finite-list
-identity proof now uses `List.map_id_fun'` followed by `rfl`; its next actual
-check and the two-tip fixture audit are pending. The saved eight-module
-arithmetic receipt remains attached to its exact saved source snapshot. Two
-later source/import variants do not inherit that receipt until a fresh audit
-matches their hashes.
+The fresh original-bank/ordered compiler/two-tip chain has passed the full
+[52-module typed audit](../lean/TYPED-REUSE-CERTIFICATE.json): 2,272 declarations,
+1,136 theorem declarations, zero owned axioms, nonstandard axiom rows or missing
+modules. Eleven roots were freshly checked against 41 exact original public
+providers. Both actual native chart matrices execute; rational extraction gives
+`some [1,0,0,1,1,1]` and `some [2,0,0,5/4,5/4,3/4]`. The earlier eight-module
+arithmetic receipt remains attached to its saved source snapshot; the current
+import-adjusted variants match the separate successful typed audit.
 
 The newest reviewed [forest-exposure handoff](../../2026-10-10-dot-g6-forest-exposure-handoff-0941z/README.md)
 has been read together with the October 1 accepted G6 representative argument
@@ -29,13 +30,21 @@ preserves three incomplete chains. Their exact latest blockers are:
 
 | Chain | Recorded blocker | Current action |
 |---|---|---|
-| Full-epoch coefficients | Default 200,000-heartbeat elaboration timeout in the `cons` semantic induction at lines 296/310/313 of source `a50c2612…` | A separately attributed derivative introduces one explicit recursive-layer equation and explicit induction carrier/sample arguments. No executable definition or prior theorem statement changes; no heartbeat increase. Fresh isolated checking and full audit are pending. |
+| Full-epoch coefficients | Default 200,000-heartbeat elaboration timeouts in the original `a50c2612…` and first derivative `5b87e172…` cons proof | Revised derivative `81b297d1…` adds direct congrArg probability transport and explicit transitivity/substitution instead of costly simplification. All 117 inherited components have been freshly admitted in the isolated context; final derivative checking and full audit remain pending. No executable definition/prior statement change or heartbeat increase. |
 | Whole-edge original source law | `G7OriginalEdgeOperators` has ambiguous matrix sample/type arguments and a `PairAt` versus `offDiag` subtype mismatch | Preserve the governing existing chain and its diagnostics. The saved G6 whole-edge lift duplicates only its constructive image component; it does not establish original calendar-law gathering. |
 | Exact-law resource semantics | `Winning.succ` unfolding and an ambiguous `not_imp` simplification | Preserved outside the current coefficient repair; no pass or effective QE claim. |
 
 The coefficient derivative and exact original hash are recorded in
 [G7-FULL-EPOCH-REPAIR.json](G7-FULL-EPOCH-REPAIR.json). Its logical name must be
 isolated from the original failed context rather than concatenated with it.
+
+The newly merged G3 local-normal-bank and G4 ordinary-overshoot postings were
+read and added to the reuse register with document byte hashes. G3 reuses the
+accepted Oct1 closed-Poisson/compact-image theorem and adds the local double
+sequence/finite critical-bank obstruction. G4 supplies a hand-reviewed exact
+Bernstein overshoot-witness search, conditional on a supplied algebraic survival
+and the natural COMMON/BOTH calibrated original-taxon decoder. No new Lean or
+executed search receipt is supplied by either packet. General G3/G4 remain open.
 
 Rust/design readback identifies a consequential remaining LAW bridge. The
 original `Choice` enumerates ordered pairs at rate `pairRate/2`; swapping a pair
@@ -48,6 +57,8 @@ snapshot garbage/canonical encoding, original labels, locations and registers
 must be handled explicitly. The current native finite parity cases do not prove
 this universally quantified source bridge.
 
-Next action: resolve fresh typed compiler/fixture diagnostics, then check the
-coefficient derivative in the delivered isolated context and preserve its full
-ownership/axiom audit and separately executed coefficient smoke.
+Next action: check the revised coefficient derivative in the delivered isolated
+context and preserve its full ownership/axiom audit. Bind concrete source-valid
+two-tip population snapshots to the actual inherited coefficient definition,
+then compare literal destination rows and explicit unordered quotient fibre
+sums against the independent generator oracle and Rust native execution.

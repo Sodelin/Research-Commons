@@ -66,6 +66,9 @@ def main() -> int:
             os.kill(args.public_pid, signal.SIGSTOP)
             stopped = True
             time.sleep(0.01)
+            state = Path(f"/proc/{args.public_pid}/stat").read_text().rsplit(")", 1)[1].split()[0]
+            if state not in {"T", "t"}:
+                raise RuntimeError("Manager stop could not be confirmed before the extension.")
             if not children(args.public_pid):
                 pause_start = time.monotonic()
                 break

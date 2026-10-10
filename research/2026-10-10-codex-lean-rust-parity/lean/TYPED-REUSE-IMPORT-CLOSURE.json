@@ -1,0 +1,720 @@
+{
+  "status": "PASS_ORIGINAL_BANK_AND_NATIVE_TWO_TIP_COMPILER_FIXTURES",
+  "certificate_sha256": "2d861a833574825c3eb23f07e54ef273989e3e1950beff1f75fbe5bff2a74f80",
+  "selected_modules": [
+    "StrictAffineElimination",
+    "SourceNetwork",
+    "GraphLeaves",
+    "GraphCuts",
+    "G5BridgeBarrier",
+    "G5CalendarRoutes",
+    "G5ProtectiveBlock",
+    "G5MinimalGraphInterface",
+    "G2LiveLineageRouting",
+    "G6BridgeCannotEnterHybrid",
+    "G5BridgeComponentEntries",
+    "G5NonbridgeRouteBound",
+    "G5ComponentCalendarCoverage",
+    "G5ActualComponentSupport",
+    "G5RootRouteCurrentSupport",
+    "G5CurrentPortTwoPositions",
+    "G5OriginalTipCurrentSupport",
+    "G5ParentChoiceCalendar",
+    "SourceLabelledForest",
+    "G5CoupledQuartetKernel",
+    "G5FairSelectorMoments",
+    "G5FairOriginalCoinLaw",
+    "G5OriginalCoinPMF",
+    "G5ParentPositionPushforward",
+    "G5SafePastHybridDisjointness",
+    "G5PairOnlySureBlockChronology",
+    "G5SafePastMeetingPermanence",
+    "G5ExponentialGermIdentification",
+    "G5UnknownRateSupport",
+    "G5OriginalRouteHazard",
+    "G4TwoRootSourceStopping",
+    "G1SharedRegisterStress",
+    "G4FourRootPositivity",
+    "G4IndependentRoutingBridge",
+    "G4AllRootPairClocks",
+    "G4PathResolvedMeasurement",
+    "UnifiedLean.Source.NativeParentRouting",
+    "UnifiedLean.Source.NativePairClockLaw",
+    "UnifiedLean.Source.NativeIndependentPairMixture",
+    "G6NaturalCellInverseRates",
+    "NaturalCellAffineCompiler",
+    "GParity.Rational",
+    "GParity.Affine",
+    "GParity.Chart",
+    "G6RationalAffineWitness",
+    "G6AffineContradictionCertificate",
+    "G6WireAffineRefinement",
+    "G6WireContradictionRefinement",
+    "G6WireAffineCapSemantics",
+    "G6RationalNaturalCellWitness",
+    "G6NaturalCellOrderedCompiler",
+    "G6TwoTipChartFixture"
+  ],
+  "original_provider_context": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/runs/20261010T102154.481687Z",
+  "declarations": 2272,
+  "theorems": 1136,
+  "modules": [
+    {
+      "module": "StrictAffineElimination",
+      "source_sha256": "a0f597c021b761bfe79561eac03c19d754f93b4fa024ffb229ecaccdaeadf1f2",
+      "imports": [
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Rat.Cast.Order",
+        "Mathlib.Tactic"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "42cc94856a70bf3c97d0ae407f2c90d515b32f6467ff30dda1e227231a3a975c"
+      }
+    },
+    {
+      "module": "SourceNetwork",
+      "source_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "5839e58243c6e4e4998b43a12b25e263da4f390ba9507a1cd165b3660df6bd7a"
+      }
+    },
+    {
+      "module": "GraphLeaves",
+      "source_sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "f1f8099e28dbcd098dac8ab61e6afd264fe3500a13867a7ebf9f6578a2864c52"
+      }
+    },
+    {
+      "module": "GraphCuts",
+      "source_sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "imports": [
+        "GraphLeaves"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "8c70b5566b0d9bdc4a0fb67b16250948ff4f373dff9f70aa12a9fc19f01c17d9"
+      }
+    },
+    {
+      "module": "G5BridgeBarrier",
+      "source_sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "imports": [
+        "GraphCuts"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "8f45e753481ec724dfdeb53c07ef94692b282ca39ea202759513e7b6355df159"
+      }
+    },
+    {
+      "module": "G5CalendarRoutes",
+      "source_sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "imports": [
+        "G5BridgeBarrier",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "1e9d5ff7367926c2d7309e8f433676203a9c1b7217e6ba86a06b12c10ae3285f"
+      }
+    },
+    {
+      "module": "G5ProtectiveBlock",
+      "source_sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+      "imports": [
+        "G5CalendarRoutes"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "676fb92eb76bfe71080770a8febc16331128e0a7f9464ea501e3d8c46e498831"
+      }
+    },
+    {
+      "module": "G5MinimalGraphInterface",
+      "source_sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+      "imports": [
+        "GraphCuts"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "3791db6ded4c2c40b5f23a39fe51b8d8066a9d29082ae0e2ead4778b702bba8e"
+      }
+    },
+    {
+      "module": "G2LiveLineageRouting",
+      "source_sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Rat.Lemmas",
+        "Mathlib.Tactic.Ring"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "af00bd42555ed1078283b2cfe09904e77490eec1f6a0416d223aba949d4880ce"
+      }
+    },
+    {
+      "module": "G6BridgeCannotEnterHybrid",
+      "source_sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "imports": [
+        "G5MinimalGraphInterface",
+        "G2LiveLineageRouting"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "80d41efb239a84ca63808d998beb6e9cff5134f273309285ed6f2126900e66a7"
+      }
+    },
+    {
+      "module": "G5BridgeComponentEntries",
+      "source_sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "imports": [
+        "G6BridgeCannotEnterHybrid",
+        "G5CalendarRoutes"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "5bdc5ec595a8e41594610a53aad2b89f1eb452ebc277c707329a5c8bb0ea2904"
+      }
+    },
+    {
+      "module": "G5NonbridgeRouteBound",
+      "source_sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "imports": [
+        "G5CalendarRoutes",
+        "Mathlib.Data.Fintype.Card"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "ba03bc2bfb8bc59f0bde22b4e03f49457cc4481bf23d28aace13f5d9a1bcbfe2"
+      }
+    },
+    {
+      "module": "G5ComponentCalendarCoverage",
+      "source_sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+      "imports": [
+        "G5BridgeComponentEntries",
+        "G5NonbridgeRouteBound",
+        "Mathlib.Tactic"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "ae92a483b3b13a6a3e2ef9278add0198f9ddc0c42480367ad95498e329b328e6"
+      }
+    },
+    {
+      "module": "G5ActualComponentSupport",
+      "source_sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+      "imports": [
+        "G5ComponentCalendarCoverage"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "1712582196e605b6d46a8fc76c95c00fd0013799f828cece48a0a2e8c3956d45"
+      }
+    },
+    {
+      "module": "G5RootRouteCurrentSupport",
+      "source_sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+      "imports": [
+        "G5ActualComponentSupport"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "a631e68de3551c9fe95127e68085cfe0ec571f6207bc34ee4bf3e814816d0a84"
+      }
+    },
+    {
+      "module": "G5CurrentPortTwoPositions",
+      "source_sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+      "imports": [
+        "G5RootRouteCurrentSupport"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "b6fc628aaa5eed0e0aa015f12dbfce350db21735eb0aec3539254f9f9c686a42"
+      }
+    },
+    {
+      "module": "G5OriginalTipCurrentSupport",
+      "source_sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+      "imports": [
+        "G5CurrentPortTwoPositions"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "488ff035b67e8b685e2c6ed4db6b06da1d6f416c07172a00b42a549c7b1b077b"
+      }
+    },
+    {
+      "module": "G5ParentChoiceCalendar",
+      "source_sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+      "imports": [
+        "G5OriginalTipCurrentSupport"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "f309b5bb2cd35b9de626f951a477cc087fc884fe18ed56f776e1bfa15c2bb5e7"
+      }
+    },
+    {
+      "module": "SourceLabelledForest",
+      "source_sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+      "imports": [
+        "G2LiveLineageRouting",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "3af4072d92cb5a79a92a3307f3d3aa3e139f086a4472cc562bf7b74a8d9704fa"
+      }
+    },
+    {
+      "module": "G5CoupledQuartetKernel",
+      "source_sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+      "imports": [
+        "Mathlib.Tactic"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "c54def7335b4306782ee903c4a0e9bcefecb40928e539faaced32c322a4df34d"
+      }
+    },
+    {
+      "module": "G5FairSelectorMoments",
+      "source_sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+      "imports": [
+        "G5CoupledQuartetKernel",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "d41cd28c82783369567cea0aa7f694f0e8859d92a0f81397f5a270e6a5ef9a75"
+      }
+    },
+    {
+      "module": "G5FairOriginalCoinLaw",
+      "source_sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+      "imports": [
+        "SourceLabelledForest",
+        "G5FairSelectorMoments",
+        "Mathlib.Data.Rat.BigOperators",
+        "Mathlib.Data.ENNReal.BigOperators",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "bbee8bc110e6d2369604d8dd97fcb3805ef59b020ef01deb8e840e132ecc8dad"
+      }
+    },
+    {
+      "module": "G5OriginalCoinPMF",
+      "source_sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+      "imports": [
+        "G5FairOriginalCoinLaw"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "158e52e782567dd35a8ee0cde5e4142966fa8139d9ce87da5a196f46c1039e58"
+      }
+    },
+    {
+      "module": "G5ParentPositionPushforward",
+      "source_sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+      "imports": [
+        "G5ParentChoiceCalendar",
+        "G5OriginalCoinPMF"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "3a9998db75e5352859b755fca001e8fd245230a768e324b28d98ca0041fc3d3b"
+      }
+    },
+    {
+      "module": "G5SafePastHybridDisjointness",
+      "source_sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+      "imports": [
+        "G5ProtectiveBlock",
+        "G5ParentPositionPushforward"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "a29e06ebc571ccc09f0dc2f6783e79baee7a26813c9c52263d7323aecdafb283"
+      }
+    },
+    {
+      "module": "G5PairOnlySureBlockChronology",
+      "source_sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+      "imports": [
+        "G5SafePastHybridDisjointness"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "a25210ec4033964a4008d4a709ad1334f5934fbacb8329613050f4fda5e98f2d"
+      }
+    },
+    {
+      "module": "G5SafePastMeetingPermanence",
+      "source_sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+      "imports": [
+        "G5PairOnlySureBlockChronology"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "11755b327f5e0219b9459898d97d9ad6745bf7fdaf2b8fbfe6704d30a601fe6a"
+      }
+    },
+    {
+      "module": "G5ExponentialGermIdentification",
+      "source_sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+      "imports": [
+        "Mathlib.LinearAlgebra.Vandermonde",
+        "Mathlib.Analysis.SpecialFunctions.Exp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "f5871e7e0c92132cfd8ffd2aa2aee62fd531a8135d709fc502f1f81767317fdc"
+      }
+    },
+    {
+      "module": "G5UnknownRateSupport",
+      "source_sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+      "imports": [
+        "G5ExponentialGermIdentification",
+        "Mathlib.Algebra.BigOperators.Finsupp.Basic"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "6c9eab9d43b38f9f40f1ad205e7108c2a66178abca4f457f9f1fb343dfc2dd9e"
+      }
+    },
+    {
+      "module": "G5OriginalRouteHazard",
+      "source_sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+      "imports": [
+        "G5SafePastMeetingPermanence",
+        "G5UnknownRateSupport",
+        "Mathlib.Data.Finset.Max"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "89d0b3f0dc2eeea63c1c2a8b8dae72cc0bb8cab6a2b0eab010918f11989e296d"
+      }
+    },
+    {
+      "module": "G4TwoRootSourceStopping",
+      "source_sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "72d263f68636ae39b9d2fe67cb6529fe0f7611c0581966f863bf52ee1998ea1f"
+      }
+    },
+    {
+      "module": "G1SharedRegisterStress",
+      "source_sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+      "imports": [
+        "Mathlib.Probability.Distributions.Exponential",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "4c6a8d0c66d2af1efd5436d7dea15908fa31da9f3baf141bd36f7b96d4c7d18a"
+      }
+    },
+    {
+      "module": "G4FourRootPositivity",
+      "source_sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "18753586e88359c7aab1ae2afa008f077c5b9472fb6eabb2668e6d49a97d34f5"
+      }
+    },
+    {
+      "module": "G4IndependentRoutingBridge",
+      "source_sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+      "imports": [
+        "G2LiveLineageRouting",
+        "G1SharedRegisterStress",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Lean.Elab.Tactic.Omega",
+        "G4FourRootPositivity",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "ea5fbb96491d873c24dc88cdac2344f3e2724e712d13cd27fac8fc3ed7337705"
+      }
+    },
+    {
+      "module": "G4AllRootPairClocks",
+      "source_sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+      "imports": [
+        "G4IndependentRoutingBridge",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "4087f5cbb0b0ec277ee9f203d0ccc0793ecb1b6bc0a08b12478e3894ea71ff40"
+      }
+    },
+    {
+      "module": "G4PathResolvedMeasurement",
+      "source_sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+      "imports": [
+        "G4TwoRootSourceStopping",
+        "G4AllRootPairClocks",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "adab3a0431f704628780f61af41f103e907d6b438e21e40b77cc79b6a245cf1c"
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "source_sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "imports": [
+        "G5OriginalRouteHazard",
+        "G4PathResolvedMeasurement",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Finset.Card"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "ac8f839ea9e54dfa0b67ff427f396126954bff5e0eff9b4d7634cdcc1695e263"
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "source_sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+      "imports": [
+        "UnifiedLean.Source.NativeParentRouting",
+        "G4AllRootPairClocks",
+        "Mathlib.Data.ENNReal.BigOperators"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "e582019b36bdceb43706e9612dc8f34d7954b98f5f4f3723bdf746038492707a"
+      }
+    },
+    {
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "source_sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Countable"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "85a075591a18237d57ce4afeb495c26a0fa6706cac55fc7755f3a50122377391"
+      }
+    },
+    {
+      "module": "G6NaturalCellInverseRates",
+      "source_sha256": "bd35c3f3f47ada67cceb9887059a3a9ed8662129bcab4dbe5d5ade07a377de5f",
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "UnifiedLean.Source.NativeIndependentPairMixture",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "c85b14bfe4eec443bdf04b93c1288de23f068efeb1f4034a68a952dd11758daa"
+      }
+    },
+    {
+      "module": "NaturalCellAffineCompiler",
+      "source_sha256": "b381a99725e1817b93a48a8356c282c08b6198d36794a2b5cd358f5368161ea0",
+      "imports": [
+        "StrictAffineElimination",
+        "G6NaturalCellInverseRates"
+      ],
+      "status": "REUSED_EXACT_FRESH_PUBLIC_COMPONENT_CONTEXT",
+      "artifacts": {
+        ".olean": "9a1370b7704b501b47f6c6171a18c90023d719ae78971ae7e511c639f9e3cb8c"
+      }
+    },
+    {
+      "module": "GParity.Rational",
+      "source_sha256": "bd054fff73f645f81fbe066daa94efa315efecac7480a8faaf9dc1611c7cff79",
+      "imports": [
+        "Init.Data.Rat",
+        "Std"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "386b96c5d1b110e570707af1ac02ec36f90129b64a8dafa56f1d38eb092e9550"
+      }
+    },
+    {
+      "module": "GParity.Affine",
+      "source_sha256": "db8fe686bd1bdd7ad95064ae3dbaf7666bce1ee8e1539ccb10bb9fb00d4c81f1",
+      "imports": [
+        "GParity.Rational"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "4082cedbf5f38087b85a09bb0400dace200ab0ffcbfac9acde3ca3df874bf361"
+      }
+    },
+    {
+      "module": "GParity.Chart",
+      "source_sha256": "337d5e41153a356df2e9a8d8c7998d1f1d41bc56a331bcae10e8d2693768612a",
+      "imports": [
+        "GParity.Affine"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "365c12eae40fe91d40076867f01e509dc52f0c788e408483e830b9ed72334b40"
+      }
+    },
+    {
+      "module": "G6RationalAffineWitness",
+      "source_sha256": "82da8185b8ac86eb1bcadcf75ec8c5962fd082eae65a3614bf7e7c188a70f1d3",
+      "imports": [
+        "StrictAffineElimination"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "6861063109142dbd1602a5756795c1b744ee3a106decc253ee90e5d8ea7e9e90"
+      }
+    },
+    {
+      "module": "G6AffineContradictionCertificate",
+      "source_sha256": "7574ce62db7caa0ff28f46458888d1c150ce1a9bcdc6bdffa2bc43a226757b7e",
+      "imports": [
+        "G6RationalAffineWitness",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "b857803f58fef2dfd80902ea828fb5ed41a5292ab483eaed3faab6725a8d5d59"
+      }
+    },
+    {
+      "module": "G6WireAffineRefinement",
+      "source_sha256": "d5131590649cc79ff7337b35aa0dbca44964585c8b72c25af812b05d84b78737",
+      "imports": [
+        "G6RationalAffineWitness",
+        "GParity.Affine",
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Data.List.OfFn"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "30ebbb60d545b962d7e4d1062f5e8503d60d1614953642913036edcad2473414"
+      }
+    },
+    {
+      "module": "G6WireContradictionRefinement",
+      "source_sha256": "2d6efd88c767a8edaa7175c0c7351e5460e1d801290a1a59ca54fa02c898f806",
+      "imports": [
+        "G6WireAffineRefinement",
+        "G6AffineContradictionCertificate"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "4f39a19e5aef20678e01fd8ab5e36b13b2caf1ecad6dfe61744b41734d929cac"
+      }
+    },
+    {
+      "module": "G6WireAffineCapSemantics",
+      "source_sha256": "9e0d13cbda00edc446f9068d25cf1a3650d2b7c145a1851a89a77856a6bcfab5",
+      "imports": [
+        "G6RationalAffineWitness",
+        "GParity.Affine"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "54373d78643488c07b410e664ca8febdfff251d530efe567b153a6239afa3c66"
+      }
+    },
+    {
+      "module": "G6RationalNaturalCellWitness",
+      "source_sha256": "4d719dabb10d5d6175d95a6c8bfd43d6829a57067db85139d8b59ea27c450254",
+      "imports": [
+        "G6RationalAffineWitness",
+        "NaturalCellAffineCompiler"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "916a1bbe35291f3885dddb232223f6c593ab41c3190bdcb44bdf8258e24cff33"
+      }
+    },
+    {
+      "module": "G6NaturalCellOrderedCompiler",
+      "source_sha256": "3e5672f9440c910693b5e952d3469ec3212f56b58e2949ff7c4b957e2a923ab2",
+      "imports": [
+        "G6RationalNaturalCellWitness",
+        "G6WireContradictionRefinement"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "25c6cec0226ba4dfa0292689c464f7799daa8a39eb7d0c3d9a4141b49dcfcdf3"
+      }
+    },
+    {
+      "module": "G6TwoTipChartFixture",
+      "source_sha256": "1d7e4d7509022405182bd8c98e98e59d73d013899b4cecd29d55a854a2972bfb",
+      "imports": [
+        "G6NaturalCellOrderedCompiler",
+        "GParity.Chart",
+        "G6WireAffineCapSemantics",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.IntervalCases"
+      ],
+      "status": "PASS_FRESH_KERNEL_CHECK",
+      "artifacts": {
+        ".olean": "29bd705ce15415213738af791971a0cd377743b18244793168fac07dc7d57f5e"
+      }
+    }
+  ],
+  "scope": "Constructive original typed cell bank, ordered typed compiler erasure, two literal native chart fixtures; general parser/graph and whole native solver refinements remain separate."
+}

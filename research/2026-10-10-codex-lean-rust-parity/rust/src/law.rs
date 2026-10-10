@@ -100,6 +100,15 @@ fn edge_kernel(start: &Forest, edge: usize, dimension: usize, vertex: usize, cap
     }
     Ok(outputs.into_values().collect())
 }
+// A test-only view of the accepted kernel. It introduces no wire operation or
+// alternate implementation and lets the literal source recurrence challenge
+// every coefficient of the complete unordered destination row.
+#[cfg(test)]
+pub(crate) fn edge_kernel_for_refinement_test(start: &Forest) -> Result<Kernel, &'static str> {
+    edge_kernel(start, 0, 1, 0, 4096).map_err(|failure| match failure {
+        Failure::Internal(error) => error, Failure::Budget(_) => "TEST_HISTORY_LIMIT",
+    })
+}
 fn root_kernel(start: &Forest, dimension: usize, vertex: usize, cap: usize)
     -> Result<Vec<(Tree, Polynomial)>, Failure> {
     if start.is_empty() { return Err(Failure::Internal("LAW_EMPTY_ROOT")); }

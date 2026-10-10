@@ -1,0 +1,11 @@
+# Solver design checkpoint — 10 October 2026, 11:17 UTC
+
+Contributor: Codex solver_design role. MASTER IN PROGRESS under MASTER-CLOSURE-STANDARD-20260930. No commit or remote write by this role.
+
+The [discovery map](DISCOVERY-MAP.md) now has a short G3/G4 synopsis and exact proof/review/provider links through main `790edaeb`. It distinguishes bounded publication inventory from mathematical verification and corrects attribution of the older closed-Poisson/count-separation argument. The [source map](SOURCE-MAP.json) records the new two-head attainment and countable-clock compactification scopes. Its [fresh review](evidence/source-map-link-review-2/RECEIPT.json) passes 142 file pins and 95 local links, with no compiler or theorem claim. Root separately replays the three exact G3 arithmetic scripts; their finite algebra does not itself prove the inherited analytic/source providers or extract a source list.
+
+Current executable acceptance remains [117 unchanged RC1 comparisons](evidence/law-plus-population-regression-1/PARITY-RECEIPT.json) and [eight literal Rust population coefficient/fibre comparisons](evidence/population-rust-review-2/RECEIPT.json) against the independent exact generator oracle. Production AFFINE/CHART/LAW helpers remain frozen. Earlier failed fixture-schema and link-review attempts are retained.
+
+The [population contract](POPULATION-REFINEMENT.md) now explicitly restricts literal inputs to the canonical inherited `encodeActual` image; `SourceValid (decodeSnapshot code)` alone permits additional representations. The successor's eight original Lean fixtures use that encoding and inherited coefficients, preserving all original population/register data. Their fresh native build and audit remain pending. The drafted arbitrary-fuel support lemma must receive its own kernel receipt; complete unordered-fibre/label and population-split refinements remain separate obligations.
+
+Next action: compare all eight original compiled Lean population fixtures with the Rust probe and spectral oracle, preserving exact source/binary identities and every literal destination row. Then inspect the actual source population-panel consumer for a full-epoch bridge. Full source/observation admission, unknown-size G3/G4 stopping and empirical all-nine-parameter accuracy remain open.

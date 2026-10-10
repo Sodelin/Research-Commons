@@ -1,6 +1,7 @@
 # Reuse proof checkpoint
 
-Contributor: Codex / lean_reuse_recovery. Session: CODEX-LEAN-RUST-20261010.
+Contributors: Codex / lean_reuse_recovery and lean_reuse_successor.
+Session: CODEX-LEAN-RUST-20261010.
 Observation: 10 October 2026. Master status: **MASTER IN PROGRESS**.
 
 The original G source models and statements remain unchanged. This packet
@@ -34,10 +35,14 @@ is no `sorryAx` or custom axiom in this successful audited context. The original
 has a new exact source identity. Earlier failed attempts and earlier derived
 provider provenance remain preserved and are not reassigned successful receipts.
 
-## Saved original-source bridges awaiting compilation
+## Machine-verified original-source bridges
 
-These sources are drafts, not machine-verified claims until their source closure
-and owned audit pass:
+The separate [typed source certificate](../lean/TYPED-REUSE-CERTIFICATE.json)
+and [fresh receipt](../lean/evidence/typed-reuse/20261010T105840.561207Z/RECEIPT.json)
+check 52 modules, 2,272 declarations and 1,136 theorem declarations with zero
+owned axioms, nonstandard axiom rows or missing selected modules. Eleven new
+roots were freshly checked against 41 exact already-fresh original public
+providers. Original provider imports and bodies were not changed.
 
 | Source | Intended discharge |
 |---|---|
@@ -45,10 +50,13 @@ and owned audit pass:
 | `G6NaturalCellOrderedCompiler` | With complete effective original registry lists, emitted ordered rows erase to exactly the inherited `compileCell`. Positive and negative certificates then transfer to the same literal original source cell. |
 | `G6TwoTipChartFixture` | An actual admitted two-tip `RootedBinary`, an explicit effective original-ID bank layout, and the actual `GParity.Chart.emitRows` bind the shared empty 9-row and typed 17-row fixtures to `compileCell`. This is a concrete source instance, not general parser or source-validator correctness. |
 
-The compiler worker owns sole scheduling. Compatible original source modules
-require additional Mathlib objects currently being built from the pinned source.
-The next concrete action is to compile these three modules, fix any diagnostics,
-and preserve their separate exact owned audit.
+Both literal native chart matrices execute, and the inherited typed solver
+returns `some [1,0,0,1,1,1]` for the empty 9-row chart and
+`some [2,0,0,5/4,5/4,3/4]` for the typed 17-row chart. These are tested outputs
+of the checked concrete original source, not general chart admission.
+The current adjusted arithmetic source variants are now bound to this fresh
+typed receipt; the earlier eight-module receipt remains an independent saved
+source snapshot.
 
 An additional [actual COMMON-bigon bridge](COMMON-BIGON-BRIDGE.md) is saved for
 compilation. It uses the existing full single-population polynomial to transport
@@ -60,7 +68,25 @@ The [whole-edge physical lift](WHOLE-EDGE-LIFT.md) is another saved draft. It
 constructs a single actual positive rates/coins bank on a supplied original
 calendar for all interior entire-edge survival coordinates. Multiple cut/bin
 segments sharing an original rate and arbitrary observation/chart admission
-remain separate.
+remain separate. The existing recovered `G7OriginalSurvivalCoverage` candidate
+already contains this constructive image step plus the stronger intended
+natural/all-original-controlled completed-law consumer. Its whole-edge
+gathering chain remains uncompiled after the preserved operator failure; it is
+the governing continuation instead of further duplicate lift development.
+
+The newest [reviewed forest-exposure handoff](../../2026-10-10-dot-g6-forest-exposure-handoff-0941z/README.md)
+and the historical October 1 G6/G7 arguments are now recorded with exact hashes
+and their distinct scopes in the reuse map. All 12 immutable exposure provider
+pins were locally rechecked. Source/hand review does not promote a draft to a
+Lean pass.
+
+The separately attributed [full-epoch coefficient repair](G7-FULL-EPOCH-REPAIR.json)
+preserves every executable definition and existing theorem statement of the
+delivered failed G7 candidate. Explicit one-step recursion normalization
+replaces large inferred elaboration, without increasing heartbeat limits.
+Its isolated compilation, ownership audit and actual coefficient execution are
+pending. The [continuation checkpoint](CONTINUATION-20261010.md) records exact
+diagnostics and the original ordered-pair to native unordered-forest gap.
 
 ## Remaining mission obligations
 

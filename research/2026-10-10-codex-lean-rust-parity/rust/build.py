@@ -38,7 +38,8 @@ def main():
                "provisioning_network_record": str(runtime.parent / "packet/logs/PROVISIONING.json"),
                "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     started = time.monotonic()
-    files = sorted([HERE / "Cargo.toml", HERE / "Cargo.lock", *HERE.glob("src/*.rs"), *HERE.glob("tests/*.rs")])
+    files = sorted([HERE / "Cargo.toml", HERE / "Cargo.lock", *HERE.glob("src/*.rs"),
+                    *HERE.glob("tests/*.rs"), *HERE.glob("examples/*.rs")])
     source_manifest = [{"path": str(path.relative_to(ROOT)), "sha256": sha(path.read_bytes())} for path in files]
     inherited = json.loads((HERE / "INHERITED-SOURCES.json").read_text())
     for entry in inherited["files"]:
@@ -49,7 +50,9 @@ def main():
     commands = [("rustc-version", [runtime / "toolchain/bin/rustc", "--version", "--verbose"]),
                 ("cargo-version", [cargo, "--version", "--verbose"]),
                 ("tests", [cargo, "test", "--locked", "--offline"]),
-                ("release", [cargo, "build", "--release", "--locked", "--offline"])]
+                ("release", [cargo, "build", "--release", "--locked", "--offline"]),
+                ("source-population-probe", [cargo, "build", "--release", "--locked", "--offline",
+                                             "--example", "source_population_probe"])]
     try:
         for name, command in commands:
             before = time.monotonic()
@@ -65,7 +68,10 @@ def main():
             if name == "rustc-version" and b"1159e78c4747b02ef996e55082b704c09b970588" not in child.stdout:
                 raise ValueError("Unexpected Rust compiler commit")
         binary = runtime / "parity-target/release/parity-solver"
-        receipt.update(status="PASS", binary=str(binary), binary_sha256=sha(binary.read_bytes()))
+        probe = runtime / "parity-target/release/examples/source_population_probe"
+        receipt.update(status="PASS", binary=str(binary), binary_sha256=sha(binary.read_bytes()),
+                       source_population_probe=str(probe), source_population_probe_sha256=sha(probe.read_bytes()),
+                       source_population_probe_scope="Fixed internal fixtures; no new RC1 operation or typed source admission")
     finally:
         receipt.update(wall_seconds=time.monotonic() - started,
                        ended_utc=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))

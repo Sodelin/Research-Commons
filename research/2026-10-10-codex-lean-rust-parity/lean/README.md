@@ -40,16 +40,24 @@ python3 scripts/build_connected.py all
 ```
 
 `build_prerequisites.py` uses the selected existing Mathlib checkout and logs
-every attempt. `build_connected.py all` checks all 52 available public contexts,
-including isolated historical variants. It does not reconstruct the held
-53-profile release. `scripts/assemble_public.py` can regenerate the public graph
+every attempt. `build_connected.py all` checks this additive inventory's 52
+contexts, including isolated historical variants. The newly published
+[`2026-10-10-dot-connected-modular-lake-0855z`](../../2026-10-10-dot-connected-modular-lake-0855z/README.md)
+package now supplies the frozen 53 required profiles and 25 provisional profiles;
+the earlier publication hold is superseded. `PUBLIC-DELIVERY-REVIEW.json` pins
+the source/context comparison and the separate qualified reproduction plan.
+`scripts/assemble_public.py` can regenerate the additive public graph
 and content-addressed source store; the checked-in source store supports offline
 proof replay once the pinned external dependencies are available.
 
 ## Source and proof boundaries
 
 `DEPENDENCY-GRAPH.json` describes 1,340 compatible public project modules and
-1,342 source versions across the available contexts. `SOURCE-MANIFEST.json`
+1,342 source versions across its 52 contexts. The later frozen public delivery
+contains 1,440 source versions across 78 isolated profiles, including the exact
+compatible 1,124-module and canonical 1,411-module aggregate contexts. These
+inventories remain distinct; the 22 later source versions in this additive
+union were not inserted into the publisher's frozen release. `SOURCE-MANIFEST.json`
 pins their exact bytes and provenance. These are source inventories, not build
 receipts. The complete original theorem bodies are retained. Historical
 certificates apply only to their historical source and import identities.
@@ -69,6 +77,13 @@ only a broad tactic import to explicit imports, preserving theorem body bytes.
 That context has its own hashes and receipts. The current wire witness and
 contradiction checkers have compiled refinement proofs. This does not yet prove
 the entire native solver, every chart compiler input, or the Rust binary correct.
+
+`scripts/check_typed_reuse.py` checks the original typed bank and concrete native
+compiler fixtures against exact fresh public provider objects. The recovered
+G7 executable coefficient chain is staged separately by
+`scripts/prepare_coefficient_recovery.py`; its prior failed full-epoch source and
+unrun code-generation smoke are preserved. A prepared derivative receives no
+pass until its own bounded check and full audit succeed.
 
 `CORE-CERTIFICATE.json` and `REUSE-CERTIFICATE.json` identify actual accepted
 attempts. Their evidence directories preserve source snapshots, diagnostics,

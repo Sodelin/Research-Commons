@@ -1,0 +1,14 @@
+G7PopulationPanelPolynomial.lean:69:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.PopulationPanelPolynomial.node_choices_empty`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7PopulationPanelPolynomial.lean:86:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
