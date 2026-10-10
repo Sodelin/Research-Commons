@@ -31,3 +31,16 @@ The frozen required-profile replay has 38 of 53 terminal passes, including the 4
 A scheduling-only continuation has reauthenticated all 38 exact source/import/object/audit/runtime contexts and their actual namespace resolution. Its remaining 15 profiles form a disjoint, exhaustive partition with those 38; both large compatible and canonical aggregates remain mandatory. The original graph and reviewed compiler remain unchanged. The continuation has not executed, and no all-53 certificate is claimed.
 
 Retain the current four responsibilities. Resume this verified continuation when its execution blocker is resolved rather than restart successful profiles or allocate another research worker. Preserve the outstanding G7 repair handoff and separate G5/G6 publication status. No new repository commits or issue comments supplied a reason to revise the mathematical plan at this review.
+
+## Verified delivery and execution recovery — 10 October 2026, 07:58 UTC
+
+Previously checked results now have verified public delivery on main:
+
+- [G2 current-source certificate and evidence](https://github.com/Sodelin/Research-Commons/blob/e20f1516fb25e2cba9a0b6461416075811b8b87e/research/2026-10-10-dot-g2-current-source-verification-0042z/README.md), commit `e20f1516fb25e2cba9a0b6461416075811b8b87e`: all 286 packet blobs verified, including exact mathematical source/DAG evidence and the qualified portable operational-evidence archive.
+- [G5 full binary M3 cluster/split proof and evidence](https://github.com/Sodelin/Research-Commons/blob/81ff60aa0ffe6c39e15546b09105f3c3fafbd1ed/research/2026-10-10-dot-g5-full-binary-m3-0209z/README.md), commit `81ff60aa0ffe6c39e15546b09105f3c3fafbd1ed`: all 88 packet blobs and the reviewed 132-entry portable evidence archive verified. Prior failures, exact hypotheses, reuse counts and the separate pending optional quartet corollary are retained.
+
+Both non-force updates preserved prior repository content; exact packet/README identities and main readbacks passed. These deliveries add no proof, novelty or expanded-scope claim. G6 delivery remains with its existing owner, which has resumed its approved upload; no pending G6 write was taken over.
+
+After explicit approval, exactly 244 inactive native-loader traces were losslessly compressed. Each decompressed byte sequence was compared with its original before replacement; all 635 protected cold traces retained their hashes and filesystem identities. All 1,140 raw traces required by the prior-pass verification were excluded. Free space increased from 2.05 to 4.78 GiB. The replacement manifest retains exact raw and compressed hashes and restoration paths. Final compaction receipt SHA256: `9f0ea41818a409dc54dfedebd912e2622fae7e6a0ebcaec731e4a813c4abaebc`.
+
+All 38 prior profiles then passed complete reauthentication again. The unchanged reviewed remaining-15 wrapper started run `20261010T075540.067073Z`; its own reauthentication also passed, and actual fresh NANUQ compilation has resumed, including the previously interrupted NanuqActualSelectedBlobGraph. The frozen graph, source pins and compiler checks remain unchanged. A storage guard preserves partial attempts and pauses at a verified component boundary before storage becomes unsafe. Both large aggregates remain mandatory and pending; no all-53 certificate or single-fresh-run claim is made.
