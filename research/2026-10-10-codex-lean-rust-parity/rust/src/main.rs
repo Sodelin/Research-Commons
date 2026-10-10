@@ -3,7 +3,7 @@
 use parity_solver::protocol::{self, MAX_CERTIFICATE_BYTES, MAX_REQUEST_BYTES};
 use std::{env, fs::{self, OpenOptions}, io::{self, Read, Write}, path::Path, process::ExitCode};
 
-const HELP: &str = "Exact Research Commons RC1 solver\n\nparity-solver solve [REQUEST|-] [--output NEW_FILE]\nparity-solver check REQUEST CERTIFICATE\nparity-solver --help\n\nWithout REQUEST, solve reads stdin. All requests use canonical ASCII RC1.\nSAT/UNSAT exit 0; UNKNOWN and conditional count exit 2; invalid input exits 1.\nCheck independently verifies request-bound witness/exclusion certificates.\nNo scientific source admission or complete unrestricted registry is inferred.\n";
+const HELP: &str = "Exact Research Commons RC1 solver\n\nparity-solver solve [REQUEST|-] [--output NEW_FILE]\nparity-solver check REQUEST CERTIFICATE\nparity-solver --help\n\nWithout REQUEST, solve reads stdin. All requests use canonical ASCII RC1.\nSAT/UNSAT and LAW TABLE exit 0; UNKNOWN and conditional count exit 2; invalid input exits 1.\nCheck independently verifies request-bound witness/exclusion certificates.\nLAW checking replays the bounded full joint genealogy compiler.\nNo scientific source admission or complete unrestricted registry is inferred.\n";
 
 fn read_bounded(reader: impl Read, limit: usize) -> io::Result<Vec<u8>> {
     let mut bytes = Vec::new();

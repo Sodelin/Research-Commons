@@ -76,7 +76,7 @@ theorem valid_excludes_real {m n : ℕ} (rows : Fin m → Row n)
     have hn : (weightedBound rows weights : ℝ) < 0 := by exact_mod_cast hneg
     linarith
   · have hrow : (rows i).eval x < ((rows i).bound : ℝ) := by
-      simpa only [Row.Holds, Rel, hstrict, if_true] using hx i
+      simpa only [Row.Holds, StrictAffineElimination.Rel, hstrict, if_true] using hx i
     have hmul : (weights i : ℝ) * (rows i).eval x <
         (weights i : ℝ) * ((rows i).bound : ℝ) :=
       mul_lt_mul_of_pos_left hrow (by exact_mod_cast hi)

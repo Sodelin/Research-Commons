@@ -71,6 +71,9 @@ def check_unknown_projection(n, rows, cap, dimension, required):
 
 
 def check_response(raw_request, raw_result, exit_code):
+    if raw_request.startswith(b"RC1 LAW "):
+        from law_check import verify_law_certificate
+        return verify_law_certificate(raw_request, raw_result, exit_code)["status"]
     if raw_request.startswith(b"RC1 CHART "):
         from chart_check import verify_chart_certificate, parse_chart, compile_chart
         checked = verify_chart_certificate(raw_request, raw_result, exit_code)
@@ -290,6 +293,80 @@ def chart_verifier_adversarial_checks(responses, output):
     return {"forged_certificates_rejected": len(records), "controls": records}
 
 
+def law_verifier_adversarial_checks(responses, output):
+    from law_check import verify_law_certificate, parse_law, reference_tables, add_poly
+    needed = ("law_three_tip", "law_parallel_three_common", "law_state_limit_zero")
+    if not all(name in responses for name in needed):
+        return {"skipped": "prerequisite native LAW outputs failed acceptance", "forged_certificates_rejected": 0}
+    request, result, exit_code = responses["law_three_tip"]
+    parallel_request, parallel, _ = responses["law_parallel_three_common"]
+    limited_request, limited, _ = responses["law_state_limit_zero"]
+    attacks = []
+
+    def attack(name, req, cert, code):
+        attacks.append((name, req, cert, code))
+
+    attack("table_status_exit_mismatch", request, result, 2)
+    attack("unknown_status_exit_mismatch", limited_request, limited, 0)
+    attack("original_survival_variable_aliased", request, result.replace(b"X:1", b"X:0", 1), exit_code)
+    attack("source_gate_removed", request, result.replace(b"GATE SOURCE_ADMISSION_NOT_ESTABLISHED\n", b"", 1), exit_code)
+    attack("copied_leaf_repeated", request, result.replace(b"TREE ((0,1),2)", b"TREE ((0,0),2)", 1), exit_code)
+    attack("unreduced_polynomial_coefficient", request, result.replace(b"TERM 1/3", b"TERM 2/6", 1), exit_code)
+    attack("zero_polynomial_term", request, result.replace(b"TERM 1/3", b"TERM 0/1", 1), exit_code)
+    attack("unrooted_readout_changed", request, result.replace(b"SPLIT []", b"SPLIT [[0,1]|[2]]", 1), exit_code)
+    attack("truncated_law_table", request, result[:-4], exit_code)
+    fields = result.splitlines(keepends=True)
+    for i, line in enumerate(fields):
+        if line.startswith(b"TERM "):
+            tokens = line.decode().split()
+            tokens[2] = "99"
+            fields[i] = (" ".join(tokens) + "\n").encode()
+            break
+    attack("impossible_original_edge_degree", request, b"".join(fields), exit_code)
+    opposite = parallel_request.replace(b"MECHANISM COMMON", b"MECHANISM INDEPENDENT", 1)
+    attack("common_law_rebound_to_independent", opposite,
+           parallel.replace(b"BEGIN_REQUEST\n"+parallel_request, b"BEGIN_REQUEST\n"+opposite, 1), 0)
+
+    # A normalized nonnegative alternative tree distribution has the same
+    # three-tip unrooted pushforward. Source-derived full coefficients, beyond
+    # the normalization/reader self checks, must reject it.
+    law = parse_law(request)
+    rooted, unrooted = reference_tables(law)
+    rooted = {name: dict(poly) for name, poly in rooted.items()}
+    names = sorted(rooted)
+    constant = (0,)*len(law.variables)
+    rooted[names[0]] = add_poly(rooted[names[0]], {constant: Fraction(1, 5)})
+    rooted[names[-1]] = add_poly(rooted[names[-1]], {constant: Fraction(-1, 5)})
+    body = ["STATUS TABLE", "ROOTED " + str(len(rooted))]
+    for kind, table in (("TREE", rooted), ("SPLIT", unrooted)):
+        if kind == "SPLIT":
+            body.append("UNROOTED " + str(len(unrooted)))
+        for key, poly in sorted(table.items()):
+            body.append(kind + " " + key + " " + str(len(poly)))
+            for exponents, coefficient in sorted(poly.items()):
+                body.append("TERM " + qtext(coefficient) + " " + " ".join(map(str, exponents)))
+    forged = result[:result.index(b"STATUS TABLE\n")] + ("\n".join(body)+"\nEND\n").encode()
+    verify_law_certificate(request, forged, 0, compare_baseline=False)
+    attack("normalized_full_joint_coefficients_forged", request, forged, 0)
+    attack("non_exhausted_budget_forged", limited_request,
+           limited.replace(b"LIMIT STATE 2 1 0", b"LIMIT STATE 2 0 0", 1), 2)
+    output.mkdir()
+    records = []
+    for name, req, cert, code in attacks:
+        (output/(name+".req")).write_bytes(req)
+        (output/(name+".stdout")).write_bytes(cert)
+        try:
+            verify_law_certificate(req, cert, code)
+        except (ValueError, UnicodeError) as error:
+            records.append({"name": name, "rejected": True, "exit_code": code,
+                            "request_sha256": digest(req), "certificate_sha256": digest(cert), "reason": str(error)})
+        else:
+            records.append({"name": name, "rejected": False})
+    require(all(record["rejected"] for record in records), "independent LAW checker accepted forged table")
+    return {"forged_certificates_rejected": len(records), "controls": records,
+            "normalized_wrong_source_table_passed_self_checks_before_baseline_rejection": True}
+
+
 def digest(raw):
     return hashlib.sha256(raw).hexdigest()
 
@@ -315,17 +392,23 @@ def run(args):
     require(not output.exists(), "output path already exists; use a fresh evidence directory")
     lean, rust = args.lean_bin.resolve(), args.rust_bin.resolve()
     require(lean.is_file() and rust.is_file(), "both executable files must exist")
-    cases = [] if args.chart_only else fixed_cases() + randomized_cases(args.seed, args.random_cases)
+    cases = [] if args.chart_only or args.law_only else fixed_cases() + randomized_cases(args.seed, args.random_cases)
     if args.include_chart or args.chart_only:
         from chart_fixtures import chart_cases
         cases.extend(chart_cases())
+    if args.include_law or args.law_only:
+        from law_fixtures import law_cases
+        cases.extend(law_cases())
     if args.requests_dir:
         for path in sorted(args.requests_dir.resolve().glob("*.req")):
             cases.append(Case("external_" + path.stem, path.read_bytes()))
     output.mkdir(parents=True)
     source_names = ["parity_harness.py", "certificate_check.py", "CONTRACT.md"]
-    if args.include_chart or args.chart_only or any(c.request.startswith(b"RC1 CHART ") for c in cases):
+    if args.include_chart or args.chart_only or any(c.request.startswith((b"RC1 CHART ", b"RC1 LAW ")) for c in cases):
         source_names += ["chart_check.py", "chart_fixtures.py", "CHART-CONTRACT.md"]
+    has_law = any(c.request.startswith(b"RC1 LAW ") for c in cases)
+    if has_law:
+        source_names += ["law_check.py", "law_fixtures.py", "LAW-CONTRACT.md"]
     source_snapshot = output / "source-snapshot"
     source_snapshot.mkdir()
     source_identities = {}
@@ -333,6 +416,13 @@ def run(args):
         raw = (DESIGN / name).read_bytes()
         (source_snapshot / name).write_bytes(raw)
         source_identities[name] = {"path": str(DESIGN / name), "sha256": digest(raw)}
+    law_baseline = None
+    if has_law:
+        from law_check import BASELINE, BASELINE_SHA
+        raw = BASELINE.read_bytes()
+        require(digest(raw) == BASELINE_SHA, "inherited LAW baseline identity changed")
+        (source_snapshot / "inherited-law_compiler.py").write_bytes(raw)
+        law_baseline = {"path": str(BASELINE), "sha256": BASELINE_SHA}
     before_binary_hashes = {name: digest(path.read_bytes()) for name, path in (("lean", lean), ("rust", rust))}
     case_dir = output / "cases"
     case_dir.mkdir()
@@ -340,6 +430,7 @@ def run(args):
     passed = 0
     adversarial = verifier_adversarial_checks()
     chart_responses = {}
+    law_responses = {}
     for index, case in enumerate(cases):
         prefix = f"{index:04d}-{case.name}"
         (case_dir / (prefix + ".req")).write_bytes(case.request)
@@ -364,6 +455,14 @@ def run(args):
             errors.append("Lean/Rust exit codes differ")
         if case.expected and any(status != case.expected for status in statuses.values()):
             errors.append("result differs from fixture expectation " + case.expected)
+        if getattr(case, "expected_limit", None):
+            from law_check import verify_law_certificate
+            for name, value in runs.items():
+                if statuses.get(name) == "UNKNOWN":
+                    checked = verify_law_certificate(case.request, value["stdout"], value["exit_code"])
+                    observed = (checked["limit_kind"], checked["vertex"], checked["required"], checked["cap"])
+                    if observed != case.expected_limit:
+                        errors.append(name + " budget metadata differs from hand-derived fixture " + repr(case.expected_limit))
         record = {"name": case.name, "scope": case.source_scope, "expected": case.expected,
                   "request_sha256": digest(case.request), "status": statuses,
                   "pass": not errors, "errors": errors,
@@ -373,18 +472,25 @@ def run(args):
         records.append(record)
         if case.request.startswith(b"RC1 CHART ") and not errors and statuses.get("lean") in ("SAT", "UNSAT", "UNKNOWN"):
             chart_responses.setdefault(statuses["lean"], (case.request, runs["lean"]["stdout"], runs["lean"]["exit_code"]))
+        if case.request.startswith(b"RC1 LAW ") and not errors and statuses.get("lean") in ("TABLE", "UNKNOWN"):
+            law_responses[case.name] = (case.request, runs["lean"]["stdout"], runs["lean"]["exit_code"])
         if not errors:
             passed += 1
         else:
             print(case.name + ": " + "; ".join(errors), file=sys.stderr, flush=True)
-    if chart_responses:
+    if all(status in chart_responses for status in ("SAT", "UNSAT", "UNKNOWN")):
         adversarial["chart_controls"] = chart_verifier_adversarial_checks(chart_responses, output / "checker-controls")
+    if args.include_law or args.law_only:
+        adversarial["law_controls"] = law_verifier_adversarial_checks(law_responses, output / "law-checker-controls")
     after_binary_hashes = {name: digest(path.read_bytes()) for name, path in (("lean", lean), ("rust", rust))}
     identities_stable = before_binary_hashes == after_binary_hashes and all(
         digest((DESIGN / name).read_bytes()) == pinned["sha256"] for name, pinned in source_identities.items())
+    if law_baseline:
+        identities_stable = identities_stable and digest(Path(law_baseline["path"]).read_bytes()) == law_baseline["sha256"]
     identity = {"harness": {"path": str(Path(__file__).resolve()), "sha256": digest(Path(__file__).read_bytes())},
                 "contract": {"path": str(DESIGN / "CONTRACT.md"), "sha256": digest((DESIGN / "CONTRACT.md").read_bytes())},
                 "source_snapshot": source_identities, "binary_sha256_before": before_binary_hashes,
+                "inherited_law_baseline": law_baseline,
                 "binary_sha256_after": after_binary_hashes, "identities_stable": identities_stable,
                 "executables": {name: {"path": str(path), "sha256": digest(path.read_bytes()),
                                        "arguments": command_args}
@@ -414,6 +520,8 @@ def main():
     parser.add_argument("--requests-dir", type=Path)
     parser.add_argument("--include-chart", action="store_true")
     parser.add_argument("--chart-only", action="store_true")
+    parser.add_argument("--include-law", action="store_true")
+    parser.add_argument("--law-only", action="store_true")
     parser.add_argument("--random-cases", type=int, default=200)
     parser.add_argument("--seed", type=int, default=20261010)
     parser.add_argument("--timeout", type=float, default=15)

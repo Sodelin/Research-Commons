@@ -359,12 +359,14 @@ def component(args):
     return code
 
 def native_cell(args):
-    """Run a native finite-cell component and its separate certificate checks."""
+    """Run a native finite-cell or genealogy component with separate checks."""
     module_name,schema,title={
         'affine-cell':('native_component.py','rust_affine_component_result_v1',
             'Exact affine matrix with independently checked native certificate'),
         'natural-cell':('native_chart_component.py','rust_natural_cell_component_result_v1',
             'Original-ID natural cell with independently checked native certificate'),
+        'genealogy-law':('native_law_component.py','rust_genealogy_law_component_result_v1',
+            'Formal genealogy law with independently checked coefficients'),
     }[args.command]
     request_path=args.request
     if request_path.is_symlink() or not request_path.is_file():
@@ -383,7 +385,8 @@ def native_cell(args):
         'launcher_sha256':sha(Path(__file__).read_bytes()),
         'component_source_sha256':sha(module.read_bytes()),'source_admission_verified':False,
         'statistical_coverage_verified':False,'parameter_accuracy_released':False,
-        'whole_application_lean_verified':False,'started_utc':datetime.now(timezone.utc).isoformat()}
+        'whole_application_lean_verified':False,'physical_survival_image_verified':False,
+        'formal_table_checked':False,'started_utc':datetime.now(timezone.utc).isoformat()}
     with (out/'REQUEST.rc1').open('xb') as f:f.write(raw)
     command=[sys.executable,'-B',str(module),'--request',str(out/'REQUEST.rc1'),
         '--output',str(out/'component'),'--binary',str(args.native_binary.absolute())]
@@ -404,12 +407,27 @@ def native_cell(args):
             if type(child.get(name)) is not bool:raise SourceError('Missing native process-start evidence')
         result.update(native_solver_called=child['solver_called'],
             native_checker_called=child['checker_called'],component_result=child)
-        expected={'MATRIX_WITNESS':0,'MATRIX_EXCLUSION':0,'UNKNOWN':2,
-            'REFUSED_REQUEST':1,'RESOURCE_OR_EXECUTION_FAILURE':1}
+        expected={'UNKNOWN':2,'REFUSED_REQUEST':1,'RESOURCE_OR_EXECUTION_FAILURE':1}
+        if args.command=='genealogy-law':expected['FORMAL_GENEALOGY_TABLE']=0
+        else:expected.update(MATRIX_WITNESS=0,MATRIX_EXCLUSION=0)
         if child.get('status') not in expected or code!=expected[child['status']]:
             raise SourceError('Native component status and exit receipt disagree')
         if child.get('source_admission_verified') is not False:
             raise SourceError('The native cell does not establish original source admission')
+        if args.command=='genealogy-law':
+            for name in ('physical_survival_image_verified','observation_law_admission_verified',
+                    'full_joint_calendar_law_verified','statistical_confidence_verified',
+                    'complete_source_registry_verified'):
+                if child.get(name) is not False:
+                    raise SourceError('Formal genealogy component does not establish '+name)
+            if child['status']=='FORMAL_GENEALOGY_TABLE':
+                for name in ('solver_called','checker_called','reference_checker_called',
+                        'formal_table_checked','inherited_baseline_all_coefficients_checked'):
+                    if child.get(name) is not True:
+                        raise SourceError('Missing checked genealogy evidence: '+name)
+                if child.get('certificate_checked') is not False:
+                    raise SourceError('Genealogy replay is not a separate witness certificate')
+                result['formal_table_checked']=True
         result.update(status=child['status'],explanation=child.get('scope',
             'Exact supplied finite cell; original source admission is not established.'))
         if sha(module.read_bytes())!=result['component_source_sha256']:
@@ -442,6 +460,7 @@ def main():
     for name,help_text in (
         ('affine-cell','Exact supplied affine matrix with a separate native certificate check'),
         ('natural-cell','Compile an original-ID natural cell with separate native certificate checks'),
+        ('genealogy-law','Compile a full formal genealogy table with independent coefficient checks'),
     ):
         native=sub.add_parser(name,help=help_text)
         native.add_argument('--request',type=Path,required=True);native.add_argument('--output',type=Path)

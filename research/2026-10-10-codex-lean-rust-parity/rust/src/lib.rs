@@ -5,6 +5,7 @@
 pub mod affine;
 pub mod count;
 pub mod forest;
+pub mod law;
 pub mod natural_cell;
 pub mod polynomial;
 pub mod protocol;

@@ -98,8 +98,15 @@ noncomputable def checkedOriginalCellBank (chronology : C → AgeConstraint V)
     (rows : I → Exposure V E) (coins : Hybrid N → RationalInterval) (q : Fin n → ℚ)
     (hq : checkOriginalCellWitness N layout chronology rows coins q = true) :
     OriginalCellBank N chronology rows coins := by
-  obtain ⟨hedge, htip, hu, hg0, hg1, hchron, hcoins, hrows⟩ :=
-    checkOriginalCellWitness_sound N layout chronology rows coins q hq
+  let h := checkOriginalCellWitness_sound N layout chronology rows coins q hq
+  let hedge := h.1
+  let htip := h.2.1
+  let hu := h.2.2.1
+  let hg0 := h.2.2.2.1
+  let hg1 := h.2.2.2.2.1
+  let hchron := h.2.2.2.2.2.1
+  let hcoins := h.2.2.2.2.2.2.1
+  let hrows := h.2.2.2.2.2.2.2
   refine ⟨calendarOfAges N (agesOf N layout (fun i => (q i : ℝ))) hedge,
     ratesOfInverse (inverseRatesOf N layout (fun i => (q i : ℝ))) hu,
     inheritanceOfValues N (coinsOf N layout (fun i => (q i : ℝ))) hg0 hg1,
@@ -118,7 +125,8 @@ theorem checkedOriginalCellBank_rates (chronology : C → AgeConstraint V)
     (e : Option E) :
     pairRate (checkedOriginalCellBank N layout chronology rows coins q hq).rates e =
       (inverseRatesOf N layout (fun i => (q i : ℝ)) e)⁻¹ := by
-  exact constructed_pair_rate _ _ e
+  exact constructed_pair_rate (inverseRatesOf N layout (fun i => (q i : ℝ)))
+    (checkOriginalCellWitness_sound N layout chronology rows coins q hq).2.2.1 e
 
 theorem checkedOriginalCellBank_coins (chronology : C → AgeConstraint V)
     (rows : I → Exposure V E) (coins : Hybrid N → RationalInterval) (q : Fin n → ℚ)

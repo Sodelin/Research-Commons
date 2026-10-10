@@ -1,0 +1,313 @@
+{
+  "adapter_sha256": "f0e97ee164e466d174e3b00a967c4706184f363d8f24b9b57c8257a83ec56d28",
+  "binary_sha256": "7b10818370cae2b74860f3e11da42a6aeaec0de6386202d00af04a143d19146d",
+  "case_count": 14,
+  "cases": [
+    {
+      "actual_status": "FORMAL_GENEALOGY_TABLE",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/table_observed_identity",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 0,
+      "expected_status": "FORMAL_GENEALOGY_TABLE",
+      "id": "table_observed_identity",
+      "pass": true,
+      "reference_checker_called": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "FORMAL_GENEALOGY_TABLE",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/parallel.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/parallel_pinned_identity",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver",
+        "--expected-binary-sha256",
+        "7b10818370cae2b74860f3e11da42a6aeaec0de6386202d00af04a143d19146d"
+      ],
+      "exit_code": 0,
+      "expected_status": "FORMAL_GENEALOGY_TABLE",
+      "id": "parallel_pinned_identity",
+      "pass": true,
+      "reference_checker_called": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "UNKNOWN",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/unknown.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/history_unknown",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 2,
+      "expected_status": "UNKNOWN",
+      "id": "history_unknown",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": true
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/invalid.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/invalid_structure",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "id": "invalid_structure",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": false
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/wrong-operation.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/wrong_operation",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "id": "wrong_operation",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": false
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/binary_pin_mismatch",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver",
+        "--expected-binary-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "id": "binary_pin_mismatch",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": false
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/launch_failure",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/not-executable"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "launch_failure",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": false
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/post_start_failure",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/crashes"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "post_start_failure",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/table_exit2",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/status-exit-mismatch"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "table_exit2",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/balanced_forged_law",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/balanced-forgery"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "balanced_forged_law",
+      "pass": true,
+      "reference_checker_called": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/promoted_source_gate",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/false-admission"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "promoted_source_gate",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/parallel.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/other_source_request",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/other-request"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "other_source_request",
+      "pass": true,
+      "reference_checker_called": false,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/table.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/native_replay_rejects",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-law-component-controls-1/fixtures/replay-reject"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "id": "native_replay_rejects",
+      "pass": true,
+      "reference_checker_called": true,
+      "solver_called": true
+    },
+    {
+      "id": "fresh_output_preservation",
+      "pass": true
+    }
+  ],
+  "fixture_sources": [
+    {
+      "id": "table",
+      "sha256": "2775a93b55264f1620590f77983a2a12b5795e1bb285a6c03131020671ac62b8",
+      "source": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/law-fixtures/law_three_tip.req"
+    },
+    {
+      "id": "parallel",
+      "sha256": "3d848f3b337e19b1f36eeadab451aabe0fb8b0e23da13d4aafb7f8361e70383b",
+      "source": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/law-fixtures/law_parallel_four_independent.req"
+    },
+    {
+      "id": "unknown",
+      "sha256": "863ad60c2b359951d755c178baa05f2d548ed6dd24068567cc35c0ad40aaf9a7",
+      "source": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/law-fixtures/law_history_limit_zero.req"
+    },
+    {
+      "id": "invalid",
+      "sha256": "3ddeb034750303afeb82aefa8bcda714e9d02de59cd3b6866ec228f6184e0edb",
+      "source": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/law-fixtures/law_bad_parent_alias.req"
+    }
+  ],
+  "schema": "native_law_component_controls_v1",
+  "scope": "Bounded formal joint genealogy tables and captured inherited-coefficient comparison. All scientific admission/confidence flags false.",
+  "status": "PASS"
+}

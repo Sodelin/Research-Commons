@@ -34,13 +34,15 @@ theorem step_rank {a b : Fin 3} (h : graph.DStep a b) : a.val < b.val := by
   obtain ⟨e, rfl, rfl⟩ := h
   simp [graph]
 
+theorem path_rank {a b : Fin 3} (h : Relation.TransGen graph.DStep a b) :
+    a.val < b.val := by
+  induction h with
+  | single h => exact step_rank h
+  | tail _ h ih => exact lt_trans ih (step_rank h)
+
 theorem graph_acyclic : graph.Acyclic := by
   intro a ha
-  have hlt : a.val < a.val := by
-    induction ha with
-    | single h => exact step_rank h
-    | tail _ h ih => exact lt_trans ih (step_rank h)
-  exact (lt_irrefl _) hlt
+  exact (lt_irrefl _) (path_rank ha)
 
 theorem graph_rooted : ∀ a, graph.DReach 0 a := by
   intro a
@@ -66,13 +68,21 @@ def source : RootedBinary (Fin 3) (Fin 2) (Fin 2) where
   at_least_two_taxa := by decide
   root_degrees := by decide
   leaf_degrees := by decide
-  internal_degrees := by decide
+  internal_degrees := by
+    intro a hroot hleaf
+    fin_cases a
+    · exact False.elim (hroot rfl)
+    · exact False.elim (hleaf 0 rfl)
+    · exact False.elim (hleaf 1 rfl)
   acyclic := graph_acyclic
   rooted := graph_rooted
   least_stable := graph_least_stable
 
 theorem noHybrid (h : Hybrid source) : False := by
-  have hn : ∀ v : Fin 3, ¬ graph.IsHybrid v := by decide
+  have hn : ∀ v : Fin 3, ¬ graph.IsHybrid v := by
+    intro v
+    unfold EdgeGraph.IsHybrid
+    fin_cases v <;> decide
   exact hn h.val h.property
 
 def encodeVar : BankVar source → Fin 6
@@ -120,8 +130,8 @@ theorem emitted_toFinset :
     | none => simp
     | some e => fin_cases e <;> simp
   · intro h; exact False.elim (noHybrid h)
-  · exact Fin.elim0
-  · exact Fin.elim0
+  · intro j; exact Fin.elim0 j
+  · intro i; exact Fin.elim0 i
 
 def nativeSource : GParity.Chart.Source :=
   ⟨3, 0, [⟨0, 1⟩, ⟨0, 2⟩], [1, 2], []⟩
@@ -130,6 +140,16 @@ def nativeInput : GParity.Chart.Input :=
   ⟨nativeSource, [], [], [], 4096⟩
 
 theorem nativeSource_valid : nativeSource.valid = true := by decide
+
+theorem affineRow_ext {n : Nat} {a b : Row n}
+    (hc : a.coeff = b.coeff) (hb : a.bound = b.bound) (hs : a.strict = b.strict) :
+    a = b := by
+  cases a
+  cases b
+  cases hc
+  cases hb
+  cases hs
+  rfl
 
 /-- Native multiplier bookkeeping is erased only after actual row emission.
 Every coefficient, bound and strictness bit is compared with the typed source
@@ -142,7 +162,7 @@ theorem nativeRows_eq_emitted :
     have hlen : (decodeRows 6 (GParity.Chart.emitRows nativeInput)).length = 9 := by decide
     have hi9 : i < 9 := by omega
     interval_cases i <;>
-      apply Row.ext <;>
+      apply affineRow_ext <;>
       try (funext j; fin_cases j) <;>
       rfl
 
@@ -218,7 +238,7 @@ theorem nativeTypedRows_eq_emitted :
     have hlen : (decodeRows 6 (GParity.Chart.emitRows nativeTypedInput)).length = 17 := by decide
     have hi17 : i < 17 := by omega
     interval_cases i <;>
-      apply Row.ext <;>
+      apply affineRow_ext <;>
       try (funext j; fin_cases j) <;>
       rfl
 

@@ -1,6 +1,7 @@
 import GParity.Affine
 import GParity.Count
 import GParity.Chart
+import GParity.Law
 
 namespace GParity.Protocol
 open GParity.Rational GParity.Affine
@@ -15,6 +16,7 @@ inductive Request where
   | affine : AffineInput → Request
   | count : GParity.Count.Input → Request
   | chart : GParity.Chart.Input → Request
+  | law : GParity.Law.Input → Request
   deriving Repr
 
 def parseRow (n m i : Nat) (line : String) : Option Row := do
@@ -60,6 +62,16 @@ def parseRequest (raw : String) : Option Request := do
         let x ← parseNat xs
         let cap ← parseNat caps
         some (.chart (← GParity.Chart.parseChart v e l h c x cap (lines.drop 1)))
+    | ["RC1", "LAW", vs, es, ls, hs, ss, scs, tcs, hcs] =>
+        let v ← parseNat vs
+        let e ← parseNat es
+        let l ← parseNat ls
+        let h ← parseNat hs
+        let samples ← parseNat ss
+        let stateCap ← parseNat scs
+        let termCap ← parseNat tcs
+        let historyCap ← parseNat hcs
+        some (.law (← GParity.Law.parseLaw v e l h samples stateCap termCap historyCap (lines.drop 1)))
     | _ => none
 
 def envelope (command raw body : String) : String :=
@@ -91,5 +103,21 @@ def execute (raw : String) : String × UInt32 :=
   | some (.chart i) =>
       let rows := GParity.Chart.emitRows i
       executeAffine "CHART" raw (GParity.Chart.matrix i rows) ⟨i.source.dimension, i.cap, rows⟩
+  | some (.law i) =>
+      match GParity.Law.compile i with
+      | .error limit =>
+          if limit.kind == "INTERNAL" then ("RC1 ERROR INTERNAL_CERTIFICATE\n",1)
+          else (envelope "LAW" raw (GParity.Law.unknownBody i limit),2)
+      | .ok (rooted,unrooted) =>
+          let one := GParity.Polynomial.constant i.dimension 1
+          if GParity.Polynomial.sum (rooted.map (·.2)) != one ||
+              GParity.Polynomial.sum (unrooted.map (·.2)) != one then
+            ("RC1 ERROR INTERNAL_CERTIFICATE\n",1)
+          else
+            let output := envelope "LAW" raw (GParity.Law.tableBody i rooted unrooted)
+            if output.utf8ByteSize > 4194304 then
+              (envelope "LAW" raw (GParity.Law.unknownBody i
+                ⟨"OUTPUT",i.source.root,output.utf8ByteSize,4194304⟩),2)
+            else (output,0)
 
 end GParity.Protocol

@@ -41,6 +41,10 @@ def main():
         ('chart-budget', 'natural-cell', unknown, 'UNKNOWN', 2, None),
         ('chart-invalid-structure', 'natural-cell', invalid, 'REFUSED_REQUEST', 1, None),
         ('chart-bad-pin', 'natural-cell', examples / 'natural-cell.rc1', 'REFUSED_REQUEST', 1, '0' * 64),
+        ('law-table-example', 'genealogy-law', examples / 'genealogy-law.rc1', 'FORMAL_GENEALOGY_TABLE', 0, identities['binary']),
+        ('law-budget', 'genealogy-law', PACKET / 'design/law-fixtures/law_history_limit_zero.req', 'UNKNOWN', 2, None),
+        ('law-invalid-structure', 'genealogy-law', PACKET / 'design/law-fixtures/law_bad_parent_alias.req', 'REFUSED_REQUEST', 1, None),
+        ('law-bad-pin', 'genealogy-law', examples / 'genealogy-law.rc1', 'REFUSED_REQUEST', 1, '0' * 64),
     ]
     results, commands = [], {}
     for name, command, request, expected_status, expected_code, pin in cases:
@@ -62,6 +66,7 @@ def main():
             errors.append('Wrong delegation provenance')
         for flag in ('source_admission_verified', 'statistical_coverage_verified',
                      'parameter_accuracy_released', 'whole_application_lean_verified',
+                     'physical_survival_image_verified',
                      'original_nine_parameter_producer_called'):
             if data[flag] is not False:
                 errors.append('Unexpected promotion ' + flag)
@@ -69,7 +74,19 @@ def main():
         if expected_status in ('MATRIX_WITNESS', 'MATRIX_EXCLUSION'):
             if not (data['native_solver_called'] and data['native_checker_called'] and child['fraction_checker_called']):
                 errors.append('Missing native/Fraction start evidence')
-        if name == 'chart-bad-pin' and (data['native_solver_called'] or data['native_checker_called']):
+        if expected_status == 'FORMAL_GENEALOGY_TABLE':
+            if not (data['native_solver_called'] and data['native_checker_called']
+                    and child['reference_checker_called'] and data['formal_table_checked']
+                    and child['inherited_baseline_all_coefficients_checked']):
+                errors.append('Missing full table coefficient-check evidence')
+            for flag in ('physical_survival_image_verified', 'observation_law_admission_verified',
+                         'full_joint_calendar_law_verified', 'statistical_confidence_verified',
+                         'complete_source_registry_verified', 'certificate_checked'):
+                if child.get(flag) is not False:
+                    errors.append('Unexpected LAW promotion ' + flag)
+            if child.get('native_checker_algorithm_independent') is not False:
+                errors.append('Native replay presented as independent algorithm')
+        if name.endswith('bad-pin') and (data['native_solver_called'] or data['native_checker_called']):
             errors.append('Bad pin reached native process')
         if not all((output / name).is_file() for name in ('REPORT.md', 'REPORT.html', 'ARTIFACTS.json')):
             errors.append('Missing readable/artifact report')
@@ -86,7 +103,7 @@ def main():
     receipt = {'status': 'PASS' if stable and overwrite_refused and all(row['pass'] for row in results) else 'FAIL',
                'cases': results, 'fresh_output_overwrite_refused': overwrite_refused,
                'source_and_binary_stable': stable, 'identities': identities,
-               'scope': 'Actual native-cell application delegation, refusal and process provenance. No new source admission or biological accuracy.'}
+               'scope': 'Actual finite-cell and genealogy-law application delegation, refusal and process provenance. No new source admission or biological accuracy.'}
     (args.output / 'RECEIPT.json').write_text(json.dumps(receipt, sort_keys=True, indent=2) + '\n')
     print(json.dumps({'status': receipt['status'], 'cases_passed': sum(row['pass'] for row in results),
                       'cases_total': len(results), 'fresh_output_overwrite_refused': overwrite_refused}))

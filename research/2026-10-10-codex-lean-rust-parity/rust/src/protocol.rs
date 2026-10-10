@@ -2,7 +2,7 @@
 //! Requests carry exact shared-row semantics; certificates echo every request
 //! byte. Independent checking accepts mathematical certificates, not claims of
 //! source-chart admission or of unrestricted registry coverage.
-use crate::{affine::{self, Decision, Row}, canonical, count, q, Rational};
+use crate::{affine::{self, Decision, Row}, canonical, count, law, polynomial::Polynomial, q, Rational};
 use num_bigint::BigInt;
 use num_traits::Zero;
 use crate::natural_cell::{self as cell, AgeAtom, AgeConstraint, Bound, Chart,
@@ -18,6 +18,7 @@ pub enum Request {
     Affine { n: usize, rows: Vec<Row>, cap: usize },
     Count { b: Rational, epsilon: Rational, sigma: Rational, modulus: Rational },
     Chart(Chart),
+    Law(law::Request),
 }
 
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -147,6 +148,57 @@ fn chart(header: &[&str], lines: &[&str]) -> Result<Chart, &'static str> {
     Ok(chart)
 }
 
+fn law_request(header: &[&str], lines: &[&str]) -> Result<law::Request, &'static str> {
+    if header.len() != 10 { return Err("LAW_HEADER"); }
+    let v = natural(header[2], 32)?;
+    let e = natural(header[3], 32)?;
+    let l = natural(header[4], 32)?;
+    let h = natural(header[5], 32)?;
+    let s = natural(header[6], 4)?;
+    let budgets = law::Budgets { states: natural(header[7], 4096)?, terms: natural(header[8], 65536)?,
+        histories: natural(header[9], 4096)? };
+    if v < 3 || e < 2 || l < 2 || s == 0 || v + e + 1 + h > 32
+        || lines.len() != 3 + e + l + h + s { return Err("LAW_SIZE"); }
+    let mut index = 1;
+    let mut next = || { let line = lines[index]; index += 1; fields(line) };
+    let mechanism = match next()?.as_slice() {
+        ["MECHANISM", "COMMON"] => law::Mechanism::Common,
+        ["MECHANISM", "INDEPENDENT"] => law::Mechanism::Independent,
+        _ => return Err("LAW_MECHANISM"),
+    };
+    let root_fields = next()?;
+    if root_fields.len() != 2 || root_fields[0] != "ROOT" { return Err("ROOT_RECORD"); }
+    let root = reference(root_fields[1], v)?;
+    let mut edges = Vec::with_capacity(e);
+    for id in 0..e {
+        let f = next()?;
+        if f.len() != 4 || f[0] != "EDGE" || natural(f[1], 32)? != id { return Err("EDGE_RECORD"); }
+        edges.push(Edge { source: reference(f[2], v)?, target: reference(f[3], v)? });
+    }
+    let mut leaves = Vec::with_capacity(l);
+    for id in 0..l {
+        let f = next()?;
+        if f.len() != 3 || f[0] != "LEAF" || natural(f[1], 32)? != id { return Err("LEAF_RECORD"); }
+        leaves.push(reference(f[2], v)?);
+    }
+    let mut hybrids = Vec::with_capacity(h);
+    for id in 0..h {
+        let f = next()?;
+        if f.len() != 5 || f[0] != "HYBRID" || natural(f[1], 32)? != id { return Err("HYBRID_RECORD"); }
+        hybrids.push(Hybrid { vertex: reference(f[2], v)?, incoming: [reference(f[3], e)?, reference(f[4], e)?] });
+    }
+    let mut samples = Vec::with_capacity(s);
+    for id in 0..s {
+        let f = next()?;
+        if f.len() != 3 || f[0] != "SAMPLE" || natural(f[1], 4)? != id { return Err("SAMPLE_RECORD"); }
+        samples.push(reference(f[2], l)?);
+    }
+    let request = law::Request { source: Source { vertices: v, root, edges, leaves, hybrids },
+        samples, mechanism, budgets };
+    request.validate()?;
+    Ok(request)
+}
+
 pub fn parse(bytes: &[u8]) -> Result<Request, &'static str> {
     if !valid_ascii(bytes, MAX_REQUEST_BYTES) { return Err("FRAME"); }
     let text = std::str::from_utf8(bytes).map_err(|_| "ASCII")?;
@@ -182,6 +234,7 @@ pub fn parse(bytes: &[u8]) -> Result<Request, &'static str> {
             Ok(request)
         }
         "CHART" => Ok(Request::Chart(chart(&header, &lines)?)),
+        "LAW" => Ok(Request::Law(law_request(&header, &lines)?)),
         _ => Err("COMMAND"),
     }
 }
@@ -237,6 +290,47 @@ fn chart_prefix(chart: &Chart, compiled: &cell::Compiled, raw: &str) -> String {
     output
 }
 
+fn law_prefix(request: &law::Request, raw: &str) -> String {
+    let variables: Vec<_> = (0..request.source.edges.len()).map(|i| format!("X:{i}"))
+        .chain((0..request.source.hybrids.len()).map(|i| format!("G:{i}"))).collect();
+    format!("{}VARIABLES {} {}\nGATE SOURCE_ADMISSION_NOT_ESTABLISHED\n",
+        prefix("LAW", raw), variables.len(), variables.join(" "))
+}
+fn polynomial_terms(output: &mut String, polynomial: &Polynomial) {
+    for (powers, coefficient) in &polynomial.terms {
+        output.push_str(&format!("TERM {}", canonical(coefficient)));
+        for power in powers { output.push_str(&format!(" {power}")); }
+        output.push('\n');
+    }
+}
+fn law_unknown(request: &law::Request, raw: &str, limit: &law::Limit) -> Response {
+    Response { bytes: format!("{}STATUS UNKNOWN\nLIMIT {} {} {} {}\nEND\n",
+        law_prefix(request, raw), limit.kind.token(), limit.vertex, limit.required, limit.cap), exit_code: 2 }
+}
+fn law_response(request: &law::Request, raw: &str, decision: law::Decision) -> Response {
+    match decision {
+        law::Decision::Unknown(limit) => law_unknown(request, raw, &limit),
+        law::Decision::Table(table) => {
+            let mut output = law_prefix(request, raw);
+            output.push_str(&format!("STATUS TABLE\nROOTED {}\n", table.rooted.len()));
+            for (tree, (_, polynomial)) in &table.rooted {
+                output.push_str(&format!("TREE {} {}\n", tree, polynomial.terms.len()));
+                polynomial_terms(&mut output, polynomial);
+            }
+            output.push_str(&format!("UNROOTED {}\n", table.unrooted.len()));
+            for (split, polynomial) in &table.unrooted {
+                output.push_str(&format!("SPLIT {} {}\n", split, polynomial.terms.len()));
+                polynomial_terms(&mut output, polynomial);
+            }
+            output.push_str("END\n");
+            if output.len() > MAX_CERTIFICATE_BYTES {
+                law_unknown(request, raw, &law::Limit { kind: law::LimitKind::Output, vertex: request.source.root,
+                    required: output.len().into(), cap: MAX_CERTIFICATE_BYTES.into() })
+            } else { Response { bytes: output, exit_code: 0 } }
+        }
+    }
+}
+
 pub fn execute(bytes: &[u8]) -> Response {
     let invalid = || Response { bytes: INVALID.into(), exit_code: 1 };
     let request = match parse(bytes) { Ok(value) => value, Err(_) => return invalid() };
@@ -273,6 +367,12 @@ pub fn execute(bytes: &[u8]) -> Response {
             output.push_str("END\n");
             Response { bytes: output, exit_code }
         }
+        Request::Law(request) => {
+            match law::compile(&request) {
+                Ok(decision) => law_response(&request, text, decision),
+                Err(_) => Response { bytes: INTERNAL.into(), exit_code: 1 },
+            }
+        }
     }
 }
 
@@ -285,6 +385,8 @@ fn parsed_vector(line: &str, label: &str, expected: usize) -> Result<Vec<Rationa
 /// Verify the echoed request, every reported evaluation and an exact witness
 /// or Farkas contradiction. UNKNOWN/count gate outputs are not certificates of
 /// feasibility or exclusion. This function does not invoke the affine solver.
+/// LAW uses exact bounded forward re-execution, so its check is a replay, not
+/// an independent law algorithm or scientific source-admission proof.
 pub fn check(request_bytes: &[u8], certificate: &[u8]) -> Result<(), &'static str> {
     let request = parse(request_bytes)?;
     if !valid_ascii(certificate, MAX_CERTIFICATE_BYTES) { return Err("CERTIFICATE_FRAME"); }
@@ -345,6 +447,12 @@ pub fn check(request_bytes: &[u8], certificate: &[u8]) -> Result<(), &'static st
                 Some("STATUS UNKNOWN") => Err("UNKNOWN_NOT_CERTIFICATE"),
                 _ => Err("CERTIFICATE_SHAPE"),
             }
+        }
+        Request::Law(_) => {
+            let response = execute(request_bytes);
+            if response.exit_code != 0 { return Err("LAW_UNKNOWN_NOT_CERTIFICATE"); }
+            if response.bytes.as_bytes() != certificate { return Err("LAW_REPLAY_DIFFERENCE"); }
+            Ok(())
         }
     }
 }

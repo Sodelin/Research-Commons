@@ -131,6 +131,39 @@ of those literal constraints; active-epoch interpretation and observation-law
 admission remain unverified. The source gate stays in every result, including
 exclusions. See the [chart contract](../../research/2026-10-10-codex-lean-rust-parity/design/CHART-CONTRACT.md).
 
+## Full formal genealogy tables
+
+`genealogy-law` computes the complete joint terminal genealogy table for a
+supplied finite graph with one to four sampled copies. It preserves distinct
+original edges, shared hybrid probabilities and the COMMON or INDEPENDENT
+routing mechanism. The output includes rooted-tree polynomials and their
+root-suppressed unrooted split probabilities. The native solver uses exact
+rational polynomial coefficients.
+
+The separate coefficient checker requires SymPy 1.14.0 and mpmath 1.3.0 in
+the launcher's Python environment. These dependencies are used only by this
+optional command. Prepare that environment explicitly if needed:
+
+```sh
+python3 -m pip install -r research/2026-10-10-codex-lean-rust-parity/rust/law_component_requirements.txt
+python3 -B applications/practical-solver/run.py genealogy-law --request applications/practical-solver/examples/genealogy-law.rc1 --native-binary research/2026-10-10-codex-lean-rust-parity/rust/target/release/parity-solver --output /tmp/solver-genealogy-law-new
+```
+
+The example has a parallel-edge hybrid with two copies sharing a sampled
+taxon. Success returns `FORMAL_GENEALOGY_TABLE` and exits 0 after native replay
+and an independent comparison of every coefficient against the pinned
+inherited joint-law compiler. History, state or polynomial-work budgets can
+return `UNKNOWN` with exit 2; refusals and execution failures exit 1. Saved
+evidence includes `component/TABLE.rc1`, separate checker logs, source
+identities and observed scientific-runtime versions and origins.
+
+These are formal survival-variable polynomials for the supplied graph. The
+command does not yet certify their correspondence to a physical calendar,
+observation data or a complete source catalogue. Source admission and
+statistical confidence remain unestablished. See the
+[LAW contract](../../research/2026-10-10-codex-lean-rust-parity/design/LAW-CONTRACT.md)
+for exact input bounds, variable order and budget semantics.
+
 ## What the three examples mean
 
 | Example | Expected checked result | Interpretation |

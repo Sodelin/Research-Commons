@@ -1,0 +1,68 @@
+G6RationalNaturalCellWitness.lean:109:0: error: Not a definitional equality: the left-hand side
+  (checkedOriginalCellBank N layout chronology rows coins q hq).calendar.age
+is not definitionally equal to the right-hand side
+  agesOf N layout fun i => ↑(q i)
+G6RationalNaturalCellWitness.lean:113:46: error: Type mismatch
+  rfl
+has type
+  ?m.74 = ?m.74
+but is expected to have type
+  (checkedOriginalCellBank N layout chronology rows coins q hq).calendar.age = agesOf N layout fun i => ↑(q i)
+G6RationalNaturalCellWitness.lean:121:2: error: Type mismatch
+  constructed_pair_rate ?m.77 ?m.78 e
+has type
+  pairRate (ratesOfInverse ?m.77 ?m.78) e = (?m.77 e)⁻¹
+but is expected to have type
+  pairRate (checkedOriginalCellBank N layout chronology rows coins q hq).rates e =
+    (inverseRatesOf N layout (fun i => ↑(q i)) e)⁻¹
+G6RationalNaturalCellWitness.lean:123:0: error: Not a definitional equality: the left-hand side
+  (checkedOriginalCellBank N layout chronology rows coins q hq).inheritance.gamma
+is not definitionally equal to the right-hand side
+  coinsOf N layout fun i => ↑(q i)
+G6RationalNaturalCellWitness.lean:127:47: error: Type mismatch
+  rfl
+has type
+  ?m.79 = ?m.79
+but is expected to have type
+  (checkedOriginalCellBank N layout chronology rows coins q hq).inheritance.gamma = coinsOf N layout fun i => ↑(q i)
+G6RationalNaturalCellWitness.lean:138:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.RationalNaturalCellWitness.solveOriginalCellCertified_values`:
+  [DecidableEq E]
+  [DecidableEq I]
+  [DecidableEq C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq I] [DecidableEq C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.G6.RationalNaturalCellWitness.checkOriginalCellWitness_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.solveOriginalCell_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.solveOriginalCell_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.solveOriginalCell_none_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.checkedOriginalCellBank' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.checkedOriginalCellBank_ages' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.checkedOriginalCellBank_rates' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.checkedOriginalCellBank_coins' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.solveOriginalCellCertified_values' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalNaturalCellWitness.checkedOriginalCellBank_feasible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

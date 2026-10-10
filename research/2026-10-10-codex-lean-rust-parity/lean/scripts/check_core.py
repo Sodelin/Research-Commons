@@ -12,7 +12,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[2]
-MODULES = ["GParity.Rational", "GParity.Affine", "GParity.Count", "GParity.Chart", "GParity.Protocol", "GParity.Main"]
+MODULES = ["GParity.Rational", "GParity.Affine", "GParity.Count", "GParity.Chart", "GParity.Polynomial", "GParity.Law", "GParity.Protocol", "GParity.Main"]
 COMPILER = "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
 SUFFIXES = [".olean", ".olean.private", ".olean.server", ".ilean", ".ir"]
 

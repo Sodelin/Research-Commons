@@ -2,7 +2,7 @@
 
 `lake build` builds the exact-rational `gparity` executable. `lake build formal`
 checks the available public G1–G7 source union in a separate proof context. The
-native program accepts the ASCII `RC1 AFFINE`, `RC1 COUNT`, and `RC1 CHART`
+native program accepts the ASCII `RC1 AFFINE`, `RC1 COUNT`, `RC1 CHART`, and `RC1 LAW`
 contracts in the adjacent `design/` directory.
 
 The executable uses one shared vector for every affine row. It produces an
@@ -11,6 +11,14 @@ weights. Projection-cap exhaustion returns `UNKNOWN`. `CHART` prints its literal
 original-ID shared bank and compiled matrix; its source-admission gate remains
 `SOURCE_ADMISSION_NOT_ESTABLISHED`. `COUNT` evaluates the inherited conditional
 arithmetic and retains `UNKNOWN_SOURCE_PROVIDER`.
+
+`LAW` compiles the full joint terminal genealogy distribution through the
+original edge frontier, including shared COMMON or current-lineage INDEPENDENT
+hybrid routing and infinite ancestral completion. It emits every expanded
+rooted polynomial and the complete unrooted split pushforward. It checks the
+formal sums equal one and applies exact history/state/term/output budgets.
+The source-admission and natural physical-image correspondences remain explicit
+obligations; this terminal genealogy table does not replace a full tagged-bin law.
 
 ## Reproduce
 
@@ -65,6 +73,7 @@ the entire native solver, every chart compiler input, or the Rust binary correct
 `CORE-CERTIFICATE.json` and `REUSE-CERTIFICATE.json` identify actual accepted
 attempts. Their evidence directories preserve source snapshots, diagnostics,
 import bindings, and audit results. The original affine/count sources and binary
-identity remain under `evidence/history/affine-v1`. Full-union progress is recorded
+identity remain under `evidence/history/affine-v1`; the accepted chart baseline is
+also preserved under `evidence/history/chart-v1`. Full-union progress is recorded
 in `.build/LATEST-RUN.json` once that runner starts; no full-union pass is claimed
 by the source inventory alone.

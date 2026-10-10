@@ -56,6 +56,12 @@ the entire original retained-state and arbitrary joint-context law at equal
 selected-arm exposure. Normalized arm identification, guarded full-forest
 Bernoulli mixture and positive bounded-chain realization remain explicit.
 
+The [whole-edge physical lift](WHOLE-EDGE-LIFT.md) is another saved draft. It
+constructs a single actual positive rates/coins bank on a supplied original
+calendar for all interior entire-edge survival coordinates. Multiple cut/bin
+segments sharing an original rate and arbitrary observation/chart admission
+remain separate.
+
 ## Remaining mission obligations
 
 Universal refinement of the native projection/extremum witness algorithm to the

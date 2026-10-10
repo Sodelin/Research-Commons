@@ -115,7 +115,8 @@ theorem decode_encodeRow {n : ℕ} (r : Row n) :
 theorem decode_encodeRows {n : ℕ} (rows : List (Row n)) :
     decodeRows n (encodeRows rows) = rows := by
   simp only [decodeRows, encodeRows, List.map_map, Function.comp_def, decode_encodeRow,
-    List.map_id_fun]
+    List.map_id_fun']
+  rfl
 
 theorem encodedRows_wellFormed {n : ℕ} (rows : List (Row n)) :
     RowsWellFormed n (encodeRows rows) := by

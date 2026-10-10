@@ -1,4 +1,4 @@
-# Exact native matrix and natural-cell components
+# Exact native matrix, natural-cell and genealogy-law components
 
 Contributor: Codex Rust implementation role, 10 October 2026. This derivative
 extends the inherited Rust exact-arithmetic packages with a complete finite
@@ -7,6 +7,8 @@ multipliers and independently checked native execution. An additive literal
 natural-cell compiler now builds these rows on one shared original-ID bank.
 The inherited typed G6 theorem and compiler are attributed in
 [INHERITED-SOURCES.json](INHERITED-SOURCES.json).
+The actual G7 joint-frontier compiler is now ported as an additive formal
+genealogy-law operation, retaining that same provenance discipline.
 
 For one finite rational matrix, all rows use one shared parameter vector.
 `SAT` supplies an assignment satisfying every original row. `UNSAT` supplies
@@ -120,11 +122,70 @@ The original AFFINE release and source snapshot are preserved separately under
 [evidence/history/affine-v1](evidence/history/affine-v1). The additive CHART
 build receipt is [chart-build-1](evidence/chart-build-1/BUILD-RECEIPT.json).
 
+## Formal joint genealogy law
+
+The [LAW contract](../design/LAW-CONTRACT.md) ports the actual inherited
+[full joint-frontier compiler](../../2026-10-01-g7-continuous-design/law_compiler.py).
+It follows all correlated edge forests together, routes whole current lineages
+at original hybrids, applies the shared exact ordinary-population kernel and
+completes the ancestral root. COMMON draws one route for the current locus;
+INDEPENDENT enumerates the current lineage choices. A merged tree remains one
+lineage. Distinct parallel edges keep distinct formal survival variables.
+
+Outputs include every nonzero rooted genealogy polynomial and its complete
+unrooted split pushforward. Coefficients are reduced rationals; sparse exponent
+vectors use original edge variables followed by original hybrid variables.
+Three copied tips reproduce the species-tree coefficients `1−2X/3, X/3, X/3`.
+Up to four distinct copied labels may attach to repeated or unsampled taxa.
+Declared history/state/term budgets are checked before generating the new
+stage; exhaustion returns UNKNOWN with no partial table. Full table response
+bytes are capped at 4MiB.
+
+```sh
+python3 -B research/2026-10-10-codex-lean-rust-parity/rust/native_law_component.py --request research/2026-10-10-codex-lean-rust-parity/design/law-fixtures/law_three_tip.req --binary /tmp/parity-native-1/runtime/parity-target/release/parity-solver --output /tmp/native-law-1
+```
+
+This separate bounded adapter reports `FORMAL_GENEALOGY_TABLE`, schema
+`rust_genealogy_law_component_result_v1`. Native `check` replays the forward
+compiler; it is not an independent law algorithm. A separate isolated child
+compares every coefficient with the captured, hash-pinned original Python
+compiler, and independently checks normalization and the unrooted pushforward.
+It captures all four provider/checker source buffers before launch. SymPy
+1.14.0 and mpmath 1.3.0 are required by
+[law_component_requirements.txt](law_component_requirements.txt); the bounded
+child records their observed versions, origins and initializer identities.
+This does not verify every byte of the supplied third-party runtime.
+
+`formal_table_checked` and `inherited_baseline_all_coefficients_checked` become
+true only after both native replay and independent checking succeed.
+`certificate_checked` stays false: a compiled formal table is not a
+mathematical source certificate. Source admission, physical survival image,
+full joint calendar law, observation admission and statistical confidence
+remain false. Independent rational X probes need not lie on the shared
+calendar/rate image `X_e=exp(−rho_e·duration_e)`.
+
+The original source/menu discipline is recorded in
+[MASTER-STATEMENTS.md](../../2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md).
+The October 1 compiler and accepted mathematics are earlier providers, rather
+than new polynomiality claims. The latest
+[completed-calendar theorem](../../2026-10-09-dot-g7-completed-calendar-polynomial-2330z/README.md)
+retains one shared original physical rate/probability bank, natural register
+initialization and ancestral completion. Its noncomputable polynomial choices
+are not an extracted frontier compiler. The next required correspondence is
+from this effective frontier to that actual selected-state/source-program
+law, with the correct admitted reader and physical image.
+
+The accepted CHART release/source snapshot remain at
+`/workspace/scratch/lean-rust-parity-native/runtime/chart-v1-frozen/` and
+[evidence/history/chart-v1](evidence/history/chart-v1). The new LAW build has
+its separate [receipt](evidence/law-build-1/BUILD-RECEIPT.json).
+
 ## Executed verification
 
-- Nineteen Rust tests passed: thirteen affine/count/certificate controls plus
-  six natural-cell controls for original IDs, parallel occurrences, graph
-  refusal, shared exposure contradictions and compiler/certificate binding.
+- Twenty-five Rust tests passed: thirteen affine/count/certificate controls,
+  six natural-cell controls and six LAW controls. LAW tests cover the species
+  tree closed form, ordinary kernel initial/differential identities, current
+  lineage routing, original parallel variables and conservative budget priority.
   The optimized build passed with locked offline dependencies.
 - The design owner's Lean/Rust canonical byte differential passed 281 cases
   with independent Fraction certificate checking and forged controls. Its
@@ -132,6 +193,11 @@ build receipt is [chart-build-1](evidence/chart-build-1/BUILD-RECEIPT.json).
 - The focused additive replay passed 78 cases: 46 frozen AFFINE/COUNT cases and
   32 CHART cases. Fifteen altered CHART certificates were independently rejected.
   See `../design/evidence/chart-parity-attempt-1/PARITY-RECEIPT.json`.
+- The additive LAW native replay passed 117 cases, comprising the 78 frozen
+  prior cases plus 39 LAW cases. Every TABLE coefficient matched the pinned
+  original full-joint compiler; thirteen forgeries were rejected. Its receipt
+  is `../design/evidence/law-parity-attempt-1/PARITY-RECEIPT.json`; repeated cases
+  are not additional scientific coverage.
 - [Exact Z3 adjunct](evidence/exact-z3-oracle-RESULT.json): 250 seeded matrices
   matched exact QF_LRA statuses; all 250 returned certificates passed direct
   Fraction original-row checks. Eight native CLI/certificate controls passed.
@@ -145,6 +211,12 @@ build receipt is [chart-build-1](evidence/chart-build-1/BUILD-RECEIPT.json).
   passed, including altered matrix/witness rejection despite fake native-check
   acceptance, false gate promotion, original-chart substitution, producer
   status/exit mismatch, process-start provenance and fresh-output preservation.
+- [Fourteen LAW adapter controls](evidence/law-component-controls-1/TEST-RESULT.json)
+  passed. A balanced false law preserved exact normalization and the unrooted
+  pushforward, and was rejected by the independent full-coefficient comparator
+  despite fake native acceptance. The evidence export retains requests, exact
+  responses, execution/checker logs and the original authored harness; staged
+  executable images remain in scratch.
 - Fresh inherited 39-case signed-nine replay passed. Its unchanged diagnostic
   scope is preserved in [the fresh receipt](evidence/inherited-native-REPLAY-RESULT.json).
 - The first test source compilation failed on two non-Copy array repetitions;
@@ -155,6 +227,8 @@ build receipt is [chart-build-1](evidence/chart-build-1/BUILD-RECEIPT.json).
 Finite tests are evidence of execution, not a universal proof of Rust or of the
 complete scientific pipeline. Next: prove that the executable graph validator
 and ordered compiler refine the inherited typed graph and cell predicates,
-establish active-epoch chart admission, then connect actual coefficient/law
-fitting, complete source census and G7 confidence/count policy. A literal chart
-matrix decision alone does not discharge those obligations.
+establish active-epoch chart admission, connect the effective frontier to the
+actual completed source-program law and physical image, then implement joint
+fitting, complete source census and G7 confidence/count policy. Neither a
+literal chart matrix decision nor a formal terminal genealogy table alone
+discharges those obligations.

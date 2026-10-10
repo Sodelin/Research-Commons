@@ -126,6 +126,13 @@ add('G6-COMMON-EXPOSURE','G6','Actual COMMON-bigon full retained-state and joint
  'Transfers the entire actual original Code law between physical banks at equal selected arm exposure, retaining every original forest/register/past field rather than only root-count survival',
  ['Compilation pending on compatible original provider closure','Identification of both arm laws with one normalized full-forest generator and guarded Bernoulli mixture','Positive bounded-chain realization, cross-graph source surgery and joint cut/bin transport'],
  [base+'2026-10-10-codex-lean-rust-parity/reuse/COMMON-BIGON-BRIDGE.md'], ['G1 original bigon/current-root transport','G7 full single-population polynomial','G6-PROTECTED-BINS'])
+add('G6-WHOLE-EDGE-LIFT','G6/G7','Actual fixed-calendar whole-edge survival and original-coin physical image','new_proof_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G6OriginalWholeEdgeSurvivalLift.lean',['UnifiedLean.G6.OriginalWholeEdgeSurvivalLift.ratesOfWholeEdgeSurvivals','UnifiedLean.G6.OriginalWholeEdgeSurvivalLift.lifted_whole_edge_survivals','UnifiedLean.G6.OriginalWholeEdgeSurvivalLift.lift_recovers_edge_rates','UnifiedLean.G6.OriginalWholeEdgeSurvivalLift.whole_edge_image_iff','UnifiedLean.G6.OriginalWholeEdgeSurvivalLift.whole_edge_and_coin_image_iff']),
+ (base+'2026-10-04-dot-verified-lean-825-0203z/package/baseline/Imported/G4OrdinaryTripletReadout.lean',['G4OrdinaryTripletReadout.canonicalDuration_positive','G4OrdinaryTripletReadout.canonicalDuration_survival'])],
+ ['Supplied actual original Calendar with every original edge duration strictly positive','Freely assignable independent positive original edge rates and one positive ancestral rate','Whole-edge survival coordinates and original hybrid probabilities strictly between zero and one'],
+ 'Constructs one literal original rates/coins bank on the same supplied calendar: rate_e=-log(z_e)/duration_e and ancestral rate one; all whole-edge coordinates are realized simultaneously and original edge rates are recovered at fixed calendar',
+ ['Compilation pending on compatible original provider closure','No independent arbitrary cut/bin segment cube or arbitrary observation/probe/chart admission','Real logarithmic lift is not native rational witness extraction; calendar existence and complete source enumeration remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/WHOLE-EDGE-LIFT.md'], ['G4 canonical positive exponential duration','G6 original pair rates/calendar','G7 whole-source physical image consumer'])
 add('G6-MASTER','G6','Effective target-preserving source-image clouds with both Hausdorff directions and robust statistical consumer','formalization_open',[],
  ['Accepted raw nonplanar binary temporal child-bridge source class','Declared finite natural bin profile and target fibre'],
  'G1 core/target transport and G7 nonplanar structural census are compatible first dependencies; finite supplied-chart witness extraction can provide local rational clouds',
@@ -156,13 +163,17 @@ add('G7-POLICY-MASTER','G7','Effective finite-registry legal Pareto/policy or ad
  [base+'2026-10-10-dot-g7-qe-interface-review-0026z/README.md',base+'2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md'], ['G7-CENSUS','G7-COMPLETED-LAW','G1 causal unranked context','G2 sample deletion'])
 # Only a full successful fresh audit at the exact source hash promotes a new
 # provider. Historical source reads and failed attempts never count as passes.
-certificate = HERE.parent / 'lean/REUSE-CERTIFICATE.json'
-if certificate.exists():
+for certificate_name, accepted_status in [
+    ('REUSE-CERTIFICATE.json', 'PASS_NEW_ARITHMETIC_REUSE_AND_WIRE_CHECKER'),
+    ('TYPED-REUSE-CERTIFICATE.json', 'PASS_ORIGINAL_BANK_AND_NATIVE_TWO_TIP_COMPILER_FIXTURES')]:
+    certificate = HERE.parent / 'lean' / certificate_name
+    if not certificate.exists():
+        continue
     cert = json.loads(certificate.read_text())
-    if (cert.get('status') == 'PASS_NEW_ARITHMETIC_REUSE_AND_WIRE_CHECKER'
+    if (cert.get('status') == accepted_status
         and not cert.get('owned_axioms') and not cert.get('nonstandard_axiom_rows')
         and not cert.get('missing_modules') and cert.get('kernel_checking')):
-        compiled = {r['module']:r for r in cert['records'] if r['exit_code'] == 0}
+        compiled = {r['module']:r for r in cert.get('new_module_records', cert.get('records', [])) if r['exit_code'] == 0}
         for record in records:
             owned = [p for p in record['providers'] if '/reuse/sources/' in p['path']]
             if owned and all(Path(p['path']).stem in compiled

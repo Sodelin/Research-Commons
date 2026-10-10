@@ -71,9 +71,11 @@ theorem decodeRow_holds (n : ℕ) (r : GParity.Affine.Row) (x : List Rat)
     (hr : r.coeff.length = n) (hx : x.length = n) :
     r.holds x = true ↔ (decodeRow n r).Holds (decodeVector n x) := by
   have he := decodeRow_eval n r x hr hx
-  change r.holds x = true ↔ Rel r.strict ((decodeRow n r).eval (decodeVector n x)) r.bound
+  change r.holds x = true ↔ StrictAffineElimination.Rel r.strict
+    ((decodeRow n r).eval (decodeVector n x)) r.bound
   rw [he]
-  cases hs : r.strict <;> simp [GParity.Affine.Row.holds, Rel, hs]
+  cases hs : r.strict <;>
+    simp [GParity.Affine.Row.holds, StrictAffineElimination.Rel, hs]
 
 /-- The runtime's positive-output checker has precisely the typed affine
 meaning, including the exact returned dimension. -/

@@ -25,17 +25,21 @@ def main():
     baseline_updates = {"START-HERE.md"}
     files = {ROOT / name for name in derivative_names}
     files.add(ROOT / "applications/practical-solver/examples/natural-cell.rc1")
+    files.add(ROOT / "applications/practical-solver/examples/genealogy-law.rc1")
+    files.add(ROOT / "research/2026-10-01-g7-continuous-design/law_compiler.py")
     files.update(ROOT / name for name in baseline_updates)
     files.update(PACKET / name for name in (
         "rust/native_component.py", "rust/Cargo.toml", "rust/Cargo.lock",
         "rust/INHERITED-SOURCES.json", "rust/COMPONENT-PINS.json",
         "design/certificate_check.py", "design/CONTRACT.md",
         "rust/native_chart_component.py", "design/chart_check.py", "design/CHART-CONTRACT.md",
+        "rust/native_law_component.py", "rust/law_component_requirements.txt",
+        "design/law_check.py", "design/LAW-CONTRACT.md",
         "verify_derivative.py", "generate_application_pins.py"))
     files.update((PACKET / "rust/src").glob("*.rs"))
     pins = {
         "schema": "application_derivative_byte_pins_v1",
-        "scope": "Current affine-cell launcher derivative and its runtime sources",
+        "scope": "Current finite-cell and genealogy-law launcher derivative and its runtime sources",
         "inherited_manifest": identity(PREVIOUS),
         "inherited_derivatives": [
             {"path": row["path"], "previous_sha256": row["sha256"]}
