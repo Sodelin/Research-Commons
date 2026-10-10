@@ -9,6 +9,7 @@ pub mod law;
 pub mod natural_cell;
 pub mod polynomial;
 pub mod protocol;
+pub mod source_boundary;
 pub mod source_epoch;
 pub mod source_population;
 

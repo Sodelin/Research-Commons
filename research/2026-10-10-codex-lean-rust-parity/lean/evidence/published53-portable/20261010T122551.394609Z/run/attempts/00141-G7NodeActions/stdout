@@ -1,0 +1,58 @@
+G7NodeActions.lean:61:8: warning: automatically included section variable(s) unused in theorem `GProgram.G7.NodeActions.target_not_node`:
+  [DecidableEq E]
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7NodeActions.lean:71:18: warning: This simp argument is unused:
+  Ne.symm h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [route, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7NodeActions.lean:74:18: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [route, Ne.symm h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7NodeActions.lean:138:12: warning: This simp argument is unused:
+  Canonical
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [admittedCode, state, encodeSnapshot, decodeSnapshot, hl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7NodeActions.lean:139:12: warning: This simp argument is unused:
+  Canonical
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [admittedCode, state, encodeSnapshot, decodeSnapshot, hl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7NodeActions.lean:142:12: warning: This simp argument is unused:
+  Canonical
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [admittedCode, state, encodeSnapshot, decodeSnapshot, hl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7NodeActions.lean:161:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.NodeActions.state_ext`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G7.NodeActions.kernel_fixed_carrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.NodeActions.destination_location' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.NodeActions.kernels_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.NodeActions.original_operation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.NodeActions.original_site' depends on axioms: [propext, Classical.choice, Quot.sound]

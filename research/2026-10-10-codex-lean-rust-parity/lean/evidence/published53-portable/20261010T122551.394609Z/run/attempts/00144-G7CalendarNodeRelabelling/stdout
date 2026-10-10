@@ -1,0 +1,16 @@
+G7CalendarNodeRelabelling.lean:18:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarNodeRelabelling.incoming_unique`:
+  [Fintype V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarNodeRelabelling.lean:33:36: warning: This simp argument is unused:
+  Equiv.symm_apply_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [network, graph_target]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'GProgram.G7.CalendarNodeRelabelling.ordinary_selector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.CalendarNodeRelabelling.node_operation' depends on axioms: [propext, Classical.choice, Quot.sound]

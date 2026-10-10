@@ -1,0 +1,219 @@
+{
+  "algorithm": "Whole outer-Copy coin enumeration with exact unused-bit marginalization",
+  "binary_pins_after": {},
+  "binary_pins_before": {},
+  "cases": [
+    {
+      "errors": [],
+      "fixture": "emptyCommon",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 0,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "emptyIndependent",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 0,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "commonFalse",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 2,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "commonTrue",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 2,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "independentTwo",
+      "literal_destinations": 4,
+      "pass": true,
+      "runs": {},
+      "selected_views": 4,
+      "unranked_views": 4,
+      "work": {
+        "assignments": 4,
+        "destinations": 4,
+        "owners": 2,
+        "term_contributions": 8
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "carriedOwnerOutside",
+      "literal_destinations": 2,
+      "pass": true,
+      "runs": {},
+      "selected_views": 2,
+      "unranked_views": 2,
+      "work": {
+        "assignments": 2,
+        "destinations": 2,
+        "owners": 1,
+        "term_contributions": 3
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "noOwnerAtSite",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 0,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "parallelExit",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 1,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "ordinaryEntry",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 1,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "rootEntry",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 2,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "registerRepeat",
+      "literal_destinations": 1,
+      "pass": true,
+      "runs": {},
+      "selected_views": 1,
+      "unranked_views": 1,
+      "work": {
+        "assignments": 1,
+        "destinations": 1,
+        "owners": 1,
+        "term_contributions": 1
+      }
+    },
+    {
+      "errors": [],
+      "fixture": "permutedIndependent",
+      "literal_destinations": 4,
+      "pass": true,
+      "runs": {},
+      "selected_views": 4,
+      "unranked_views": 4,
+      "work": {
+        "assignments": 4,
+        "destinations": 4,
+        "owners": 2,
+        "term_contributions": 8
+      }
+    }
+  ],
+  "cases_passed": 12,
+  "cases_total": 12,
+  "claim": "ORACLE_SELF_CHECK_ONLY",
+  "controls": {
+    "asymmetric_gamma": "1/3",
+    "carried_one_coin": true,
+    "exit_before_entry_separated": true,
+    "required_LAW_G": "2/3",
+    "two_owner_weights": [
+      "4/9",
+      "2/9",
+      "2/9",
+      "1/9"
+    ],
+    "wrong_direct_gamma_binding_rejected": true
+  },
+  "general_refinement_proof_claim": false,
+  "languages_executed": [],
+  "observed_at_utc": "2026-10-10T12:14:27Z",
+  "pass": true,
+  "schema": "conditional_source_boundary_whole_copy_review_v1",
+  "source_admission_claim": false,
+  "source_pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff"
+  },
+  "source_pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff"
+  }
+}

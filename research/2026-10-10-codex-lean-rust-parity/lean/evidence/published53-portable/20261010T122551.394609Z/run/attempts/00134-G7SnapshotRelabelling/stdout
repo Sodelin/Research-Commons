@@ -1,0 +1,20 @@
+G7SnapshotRelabelling.lean:26:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.SnapshotRelabelling.decode_commutes`:
+  [Fintype V]
+  [Fintype E]
+  [Fintype W]
+  [Fintype F]
+  [DecidableEq V]
+  [DecidableEq W]
+  [DecidableEq E]
+  [DecidableEq F]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype
+  V] [Fintype
+  E] [Fintype
+  W] [Fintype F] [DecidableEq V] [DecidableEq W] [DecidableEq E] [DecidableEq F] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G7.SnapshotRelabelling.snapshot_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.SnapshotRelabelling.admittedCode_commutes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.SnapshotRelabelling.entire_genealogy_preserved' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,6 +1,6 @@
 # G1, G2, G5, G6 and G7: what is complete
 
-Codex coordinator, 10 October 2026, 12:11 UTC. This reconciles the original contracts, accepted older proofs and latest source certificates. It is a status review, not a new mathematical proof. A remaining Rust port does not reopen an accepted theorem.
+Codex coordinator, 10 October 2026, 12:44 UTC. This reconciles the original contracts, accepted older proofs and latest source certificates. It is a status review, not a new mathematical proof. A remaining Rust port does not reopen an accepted theorem.
 
 | Goal | Accepted mathematics | Complete Lean endpoint | Practical solver |
 |---|---|---|---|
@@ -30,5 +30,7 @@ Codex coordinator, 10 October 2026, 12:11 UTC. This reconciles the original cont
 - [Accepted G6 nonplanar master](../../2026-10-01-sol61-head-audit-1956z/G6-NONPLANAR-FINITE-CERTIFICATION.md) and [precise remaining formal reconstruction](../../2026-10-10-dot-g6-forest-exposure-handoff-0941z/UNFINISHED-RECONSTRUCTION.md).
 - [Accepted G7 exact master](../../2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md), [reuse obligations](../reuse/OBLIGATION-REUSE-MAP.json) and [application traceability](TRACEABILITY.md).
 - [Fresh complete 1,340-module union review](../quality/CURRENT-CONNECTED-REVIEW.json), distinct from the later 1,433-module union and 53-profile reproduction.
+- [Exact G6/G7 reuse answer](G6-G7-REUSE-STATUS.md): checked exposure, sharper exponent support and sparse whole-epoch composition, with the remaining master consumers.
+- [All 53 required contexts reviewed](../quality/PUBLISHED53-REVIEW.json): 52 pass under the original public-layout policy; the remaining 337-module context passes a separately preserved 6 GiB retry. The original failed receipt is retained.
 
 The next implementation work uses completed G1/G2 providers to connect actual population, epoch and boundary semantics to Rust. The original parent-probability convention requires [explicit transport](SOURCE-PARENT-ORIENTATION.md). G6/G7 assembly remains the next formal finish line; general G3/G4 remains open and its [newest/oldest discovery map](DISCOVERY-MAP.md) supplies relevant dependencies without replacing these goals. No overall completion percentage is asserted.
