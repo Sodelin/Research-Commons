@@ -80,3 +80,17 @@ Every finite word with a positive leading ordinary pad a and L cells instead sat
 This supersedes only the earlier diagnostic's uncertainty about the sign and exponential rate of its exact displayed family. All older proof/review bodies remain unchanged. Arbitrary interlaced good/bad tails, a source-uniform chronological comparison, and general biased G4 finite forcing remain open. The threshold is an analytical bound; no numerical determining cap, solver execution or Lean verification is claimed. The dated candidate/internal headers are preserved as development history and superseded by the exact scoped reviews.
 
 The additive manifest RATE-ADDENDUM-MANIFEST-1340.json pins the four new proof/review bodies and this appended README, including the hash of its unchanged preceding content. For Codex, the weak-scale lemma may be implemented using the existing event-time integral and exact original routing. The target-exclusion corollary must retain the precise sparse carrier and its actual clock prefixes; it is not a generic reservoir-to-signal theorem.
+
+## 13:47 UTC addendum: exact non-source countercontrol for the finite filter
+
+The sharper arity-dependent source bound also gives the finite linear necessary test
+
+    F_n(K)=c_n(K)+n/[16(2n-3)](d_(n-2)(K)-d_n(K)) >= 0.
+
+The reviewed [countercontrol](linear-filter-countercontrol/FINITE-LINEAR-FILTER-COUNTERCONTROL.md) shows why its actual-source hypothesis matters. Mix a three-colour IID paintbox partition with ordinary Kingman coalescence at survival 1/2, using mixture weight 1/2. This generic partition kernel is exchangeable and projectively consistent, and all admissible count entries are strictly positive. Nevertheless F_5=-20245/18579456<0.
+
+The [independent review and replay](linear-filter-countercontrol/independent/INDEPENDENT-FILTER-COUNTERCONTROL-REVIEW.md) confirm the exact fractions using a separate pure-death ODE recurrence and direct colour enumeration. Author and independent scripts/results are preserved. Only cap five was executed, with rational arithmetic.
+
+The mixture has no asserted original-source realization or legal shared-selector operation; colour blocks do not supply binary genealogy resolutions. This establishes that generic count positivity/projectivity is insufficient for the source test. It does not produce an admitted rival, an exact target match or a complete G4 recognition criterion. Original observation use of the necessary filter still requires the calibrated legal decoder.
+
+All earlier bodies and README text are preserved. FILTER-ADDENDUM-MANIFEST-1347.json binds the added evidence and this appended status.
