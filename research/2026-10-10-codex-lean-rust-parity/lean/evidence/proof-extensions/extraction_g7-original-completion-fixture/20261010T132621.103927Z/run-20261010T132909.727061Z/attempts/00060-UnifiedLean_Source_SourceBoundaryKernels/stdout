@@ -1,0 +1,20 @@
+UnifiedLean/Source/SourceBoundaryKernels.lean:79:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.Source.SourceBoundaryKernels.actual_population_transport_view`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.Source.SourceBoundaryKernels.actual_population_transport_view' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceBoundaryKernels.independent_pulse_kernel_view_measure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.Source.SourceBoundaryKernels.common_boundary_kernel_view' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,17 @@
+G7OriginalCarrierCoverage.lean:33:0: warning: `OriginalPoint`: universes `u`, `v` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+G7OriginalCarrierCoverage.lean:71:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalCarrierCoverage.every_original_row_has_fixed_carrier_response`:
+  [Nonempty Copy]
+  [Fintype Row]
+  [Fintype Obs]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty Copy] [Fintype Row] [Fintype Obs] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalCarrierCoverage.lean:100:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalCarrierCoverage.every_original_programme_has_fixed_carrier_response`:
+  [Fintype Out]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Out] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`

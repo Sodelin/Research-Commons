@@ -1,0 +1,62 @@
+G7ExactLawRankCompression.lean:67:45: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+G7ExactLawRankCompression.lean:68:43: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+G7ExactLawRankCompression.lean:198:12: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => linear step.action o ∈ _a
+Error: Application type mismatch: The argument
+  step
+has type
+  InformativeStep E linear policy L physical past
+but is expected to have type
+  InformativeStep E linear policy _a physical past
+in the application
+  step.action
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+S : Type u_1
+A : Type u_2
+O : Type u_3
+T : Type u_4
+V : Type u_5
+inst✝² : AddCommGroup V
+inst✝¹ : Module ℝ V
+E : Experiment S A (O → ℝ) T (List A)
+base : S → V
+linear : A → O → Module.Dual ℝ V
+offset : A → O → ℝ
+affine : ∀ (s : S) (a : A) (o : O), E.response s a o = (linear a o) (base s) + offset a o
+inst✝ : FiniteDimensional ℝ V
+policy : Policy A O T
+deletion : ∀ {small large : List A}, small.Sublist large → ∀ (a : A), E.legal large a → E.legal small a
+update : ∀ (past : List A) (a : A), E.update past a = a :: past
+d : ℕ
+ih :
+  ∀ m < d,
+    ∀ (L : Submodule ℝ (Module.Dual ℝ V)) (physical virtual : History A (O → ℝ)) (past virtualPast : List A),
+      Module.finrank ℝ (Module.Dual ℝ V) ≤ Module.finrank ℝ ↥L + m →
+        Determined E base L physical →
+          (∀ (s : S), Consistent E physical s ↔ Consistent E virtual s) →
+            past.Sublist virtualPast →
+              (∀ (s : S), Consistent E virtual s → CorrectRun E policy s virtual virtualPast) →
+                Winning E m physical past
+L : Submodule ℝ (Module.Dual ℝ V)
+physical virtual : History A (O → ℝ)
+past virtualPast : List A
+capacity : Module.finrank ℝ (Module.Dual ℝ V) ≤ Module.finrank ℝ ↥L + d
+hd : Determined E base L physical
+same : ∀ (s : S), Consistent E physical s ↔ Consistent E virtual s
+sub : past.Sublist virtualPast
+total : ∀ (s : S), Consistent E virtual s → CorrectRun E policy s virtual virtualPast
+homogeneous : ¬Homogeneous E physical
+s₀ : S
+hs₀ : Consistent E physical s₀
+step : InformativeStep E linear policy L physical past
+L' : Submodule ℝ (Module.Dual ℝ V) := ⋯
+he : L = L ⊔ Submodule.span ℝ (Set.range (linear step.action))
+o : O
+ho : linear step.action o ∉ L
+⊢ linear step.action o ∈ L
+G7ExactLawRankCompression.lean:227:80: error: unexpected token 'include'; expected 'lemma'
+G7ExactLawRankCompression.lean:239:24: error(lean.unknownIdentifier): Unknown constant `Submodule.mem_bot.mp`

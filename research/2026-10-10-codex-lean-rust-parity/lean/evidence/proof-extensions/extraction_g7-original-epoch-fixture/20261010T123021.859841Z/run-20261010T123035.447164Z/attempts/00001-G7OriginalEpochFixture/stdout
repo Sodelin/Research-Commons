@@ -1,0 +1,38 @@
+G7OriginalEpochFixture.lean:107:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G7OriginalEpochFixture.lean:162:34: error: Function expected at
+  SelectedIndex
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `SelectedIndex` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7OriginalEpochFixture.lean:176:22: error: unexpected token 'variables'; expected '_' or identifier
+G7OriginalEpochFixture.lean:176:22: warning: 'variables' has been replaced by 'variable' in lean 4
+G7OriginalEpochFixture.lean:176:32: error: unexpected token ':'; expected command
+G7OriginalEpochFixture.lean:179:31: error: unexpected token 'variables'; expected '_' or identifier
+G7OriginalEpochFixture.lean:179:31: warning: 'variables' has been replaced by 'variable' in lean 4
+G7OriginalEpochFixture.lean:179:41: error: unexpected token ':'; expected command
+G7OriginalEpochFixture.lean:181:41: warning: 'variables' has been replaced by 'variable' in lean 4
+G7OriginalEpochFixture.lean:181:51: error: unexpected identifier; expected command
+G7OriginalEpochFixture.lean:209:5: error: unexpected token 'variables'; expected '(', ':=', 'rec', '|' or term
+G7OriginalEpochFixture.lean:209:6: warning: 'variables' has been replaced by 'variable' in lean 4
+G7OriginalEpochFixture.lean:209:16: error: unexpected token ':'; expected command
+G7OriginalEpochFixture.lean:216:54: error: unexpected token '('; expected ')'
+'UnifiedLean.G7.OriginalEpochFixture.twoEdgeState_sourceValid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G7.OriginalEpochFixture.edgeAncestralState_sourceValid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G7.OriginalEpochFixture.carriedNodeState_sourceValid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

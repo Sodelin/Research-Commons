@@ -1,0 +1,38 @@
+G7SparseRowProducts.lean:105:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (List.map (fun a => weightA a * ?g (keyA a)) left).sum
+in the target expression
+  (List.map (fun a => weightA a * (List.map (fun b => weightB b * h (keyA a) (keyB b)) right).sum) left).sum =
+    ∑ ka,
+      ∑ kb,
+        (List.map (fun a => if keyA a = ka then weightA a else 0) left).sum *
+            (List.map (fun b => if keyB b = kb then weightB b else 0) right).sum *
+          h ka kb
+
+A : Type u_1
+B : Type u_2
+KA : Type u_3
+KB : Type u_4
+M : Type u_5
+inst✝⁴ : Fintype KA
+inst✝³ : DecidableEq KA
+inst✝² : Fintype KB
+inst✝¹ : DecidableEq KB
+inst✝ : Semiring M
+left : List A
+right : List B
+keyA : A → KA
+keyB : B → KB
+weightA : A → M
+weightB : B → M
+h : KA → KB → M
+⊢ (List.map (fun a => weightA a * (List.map (fun b => weightB b * h (keyA a) (keyB b)) right).sum) left).sum =
+    ∑ ka,
+      ∑ kb,
+        (List.map (fun a => if keyA a = ka then weightA a else 0) left).sum *
+            (List.map (fun b => if keyB b = kb then weightB b else 0) right).sum *
+          h ka kb
+'GProgram.G7.SparseRowProducts.polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.SparseRowProducts.polynomial_read_multiplyRows_partition' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

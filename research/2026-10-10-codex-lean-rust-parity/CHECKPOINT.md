@@ -1,66 +1,92 @@
 # Continuation checkpoint
 
-Codex coordinator, 2026-10-10 12:44 UTC. **MASTER IN PROGRESS.** This records
-saved work and observed processes; it does not promise that a cloud session or
-workers remain active after the chat ends.
+Codex coordinator, 2026-10-10 13:43 UTC. **MASTER IN PROGRESS.** This is a dated
+observation, not a promise that cloud workers remain active after a chat ends.
+The preceding12:44 entry is [preserved verbatim](quality/evidence/continuation-checkpoint-1244.md); the prior13:31 entry is also [retained](quality/evidence/continuation-checkpoint-1331.md).
 
 ## Current goal reconciliation and newest evidence
 
-[Goal scopes](design/GOAL-STATUS.md) preserve **complete original G1, current
-binary timed G2 and binary full-timed M3 G5 Lean endpoints**. HG remains a
-separate formal extension. G6/G7 hand masters are accepted; full formal and
-executable assembly remains incomplete. The [concise reuse answer](design/G6-G7-REUSE-STATUS.md)
-records precisely what existing proofs already solve and which consumers remain.
+Original G1, current binary full-timed G2 and binary full-timed M3 G5 remain
+complete at their [declared Lean contracts](design/GOAL-STATUS.md). Higher-indegree
+HG formal assembly is separate. G6/G7 hand masters are accepted; full formal
+and practical assembly remains incomplete. The [concise reuse sheet](design/G6-G7-REUSE-STATUS.md)
+and [Lean/Python/Rust explanation](design/LEAN-TO-RUST.md) state the current
+checked connections and implementation choices.
 
-New original G6 exposure and sharp exponent-support roots pass separate complete
-88-module audits. New G7 sparse whole-epoch equality passes a 124-module audit.
-`quality/PROOF-EXTENSION-REVIEW.json` independently binds their exact source,
-complete owned audits and fresh kernel flags. The earlier constructive joining
-and selected support audits remain accepted. No overlapping counts are added.
+Latest1,433-module union PASS: all components are authenticated earlier exact
+checks; aggregate/full ownership audit is fresh, with98,330 declarations and
+90,253 theorem declarations, no owned/nonstandard axioms or missing modules.
+`quality/LATEST-UNION-REVIEW.json` independently checks the portable sources,
+imports, component receipts and audit. The earlier all-fresh1,340-module union
+is retained unchanged. All53 canonical contexts have been checked:52 under the
+original policy, plus the separate passing6GiB retry of the337-module context
+whose original4GiB failure remains preserved. No overlapping counts are added.
 
-All 53 required canonical public-layout contexts have been checked: 52/53 pass
-under the original policy; the 337-module base audit retains its original 4 GiB
-failure and has a separate passing 6 GiB retry. Canonical 1,411-module and
-compatible 1,124-module complete audits pass. `quality/PUBLISHED53-REVIEW.json`
-checks the original contexts and separate resource exception, plus lossless
-portable evidence restoring 2,736 exact artifacts. Do not rewrite the failed
-original run as 53/53 under its original policy. The pending 1,433-module union
-is separate from the accepted fresh 1,340-module union.
+The new original G6 exposure and sharp exponent-support roots remain accepted
+in separate88-module audits. Sparse original full-epoch equality has a124-module
+audit. Generic source-boundary sparse coefficients now have a133-module audit
+and separate root review `quality/EFFECTIVE-BOUNDARY-REVIEW.json`. They do not
+establish generic Rust refinement or global G6 positive reconstruction.
 
-Main through `4d7a0467` is merged as `31c9a56e`, after verifying all 40 incoming
-research paths were disjoint from local changes. Frozen earlier discovery covers
-29 commits / 2,659 paths / 13 G3/G4 packets through `d47787d8`. A separate
-`quality/evidence/publication-delta-4d7a0467/RECEIPT.json` passes six further
-commits / 40 paths / six packets. Immutable source-map review 5 remains unchanged.
-Three fresh rational/symbolic scripts exactly reproduce the newest minimum
-explicit-witness count and three-log branch certificates. No enormous rational
-target/source was expanded, nonlinear log zero decided or G4 QE cutoff executed.
-Design owns the separately attributed latest discovery delta.
+Actual original Lean/Rust/independent-generator epoch comparisons now pass
+all9 contexts: ordinary8 plus parallel1. Full coefficients, ordered selected
+views and literal witnesses agree. The isolated670-module native dependency
+closure and all prior failures are preserved; this is a compiled Lean evaluator,
+not a standalone extracted Lean ELF. Saved native/parallel design reviews pass.
 
-The original eight ordinary epoch fixture/main proof audits pass in 139/140
-contexts. The first actual eight-fixture evaluator comparison failed on missing
-native `FinEnum.fin` before coefficients; all process/source/import pins remain
-preserved. Native dependency closure is being repaired outside accepted source
-and Mathlib artifacts. The sole integration scheduler now has an authenticated
-ordinary evaluator configuration for a separately attributed retry. The parallel
-ninth, boundary sparse draft and full semantic rank recovery remain pending.
-No failed evaluator receipt is promoted.
+Private finite-word candidate is accepted at8+2 full-table contexts. Root
+`quality/WORD-CANDIDATE-REVIEW.json` checks all42 captured full rows, exact work,
+literal range witnesses,254 artifact identities and both separately frozen
+builds. Sixty Rust tests and117 public protocol cases pass. The public runtime
+and application pins remain unchanged. The separately frozen ancestral completion
+candidate is independently checked:71 Rust tests;20 controls, comprising11
+complete tables/330 ordered rows, five budget Unknowns and four invalid-input
+refusals. Root quality/COMPLETION-CANDIDATE-REVIEW.json passes248 artifact
+identities, all complete tables/work/witnesses, unchanged finite8+2 and a fresh
+117-case actual Lean/Rust protocol receipt. Its generic140-module source bridge
+now passes complete kernel/ownership audit. Separate original completion fixture
+audits pass156/157 modules,4743/4744 declarations and2787 theorem declarations;
+actual original Lean/Rust execution passes six complete tables/257 ordered rows
+and five adversarial table controls. Root quality/COMPLETION-FIXTURE-REVIEW.json
+checks all836 preserved audit artifacts and actual comparison bindings. It extracts constant coefficients from the original
+population recurrence under nonempty/all-copy-root-support premises and reuses
+the old positive-rate infinite-time proof. Its frozen candidate snapshot does
+not claim independent acceptance.
 
-Internal conditional boundary candidate has a stable separate build receipt,
-49 passing Rust tests, 12/12 full coefficient/range checks against independent
-whole-Copy coin marginalization, and all 117 existing RC1 cases passing. Accepted
-public runtime remains unchanged. Actual typed sparse extraction is pending.
-The next private source-word contract is root-reviewed and frozen at
-`dabc36aef7265cef2efeac982b6f191540eaf12f809045bce75e6e5161952458`;
-Rust is authorized for additive implementation preserving previous accepted
-components. It must retain original mode/register/occurrence IDs, one shared
-slot-major physical/gamma bank, literal witnesses and honest resource Unknown.
-General calendar/menu admission, marked-time readout and G6/G7 master gates
-remain separate. Design owns the independent supplied-word oracle.
+Compatible resource/response/rank/family/carrier recovery now passes one
+complete191-module audit, with5130 declarations/3221 theorem declarations
+and no owned/nonstandard axioms or missing modules. Root
+quality/SEMANTIC-COMPLETION-REVIEW.json passes exact sources/context/kernel
+receipts for that assembly and the separate140-module completion bridge. Original whole-edge gathering proof recovery, typed
+initialization and chosen single-epoch polynomial uniqueness
+are separate scheduler obligations. Draft files or partial target passes are
+not aggregate acceptance.
 
-Previous local proof/build checkpoint is `132daefe`; subsequent finite proof, boundary,
-portable profile and newest research integration work remains to checkpoint.
-No push, PR, external message or recurring job has been created.
+Newest main44d29bc9 was merged asf1a76a0b after checking39 incoming paths were
+disjoint from local work. New byte review passes five commits/39paths, three
+new packets and one prior supplement. The separate previous delta retains
+six commits/40paths, and the frozen earlier13-packet map retains its identity.
+The [latest discovery note](design/DISCOVERY-DELTA-20261010T1313Z.md) records
+local G3 recognition/atlas limits and G4's sharp1/20 source-uniform negative
+primitive bound. Three new exact arithmetic replays reproduce all published
+logs/certificates. No cutoff, neighborhood, QE, giant source, general recognizer
+or G6/G7 master was executed or inferred from these publications.
+
+Latest committed proof/build checkpoint is9baa9aa4; current accepted1433/native9/
+finite-word and subsequent discovery work is being checkpointed. Root owns git
+and quality docs. The prior compiler worker disconnected twice during remote
+compaction. Its saved runs are preserved; clean-context Sol6.1/max
+lean_integration_successor is now the sole Lean compiler/evaluator scheduler
+and recovered without rerunning accepted baselines. Reuse successor, Rust
+implementation and solver design retain the other three requested roles.
+No push, PR, external message or recurring job has been created. Current application source-byte manifest is refreshed for the separately
+checked private completion implementation; its prior exact manifest is
+preserved and verification passes39 current/534 unchanged inherited files.
+No public runtime or source-admission gate changed. Next concrete action:
+finish chosen-polynomial/word proof composition and the supplied-calendar-to-word
+producer. Root has reviewed its sourced scope; design is freezing concrete
+schema/input fixtures before Rust's additive private build. Exact chronology,
+shared physical-bank metadata and existing operational caps remain binding.
 
 ## Workspace, source reconciliation and ownership
 

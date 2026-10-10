@@ -1,0 +1,430 @@
+{
+  "Lean_standalone_ELF_claim": false,
+  "all_fixture_names": [
+    "empty",
+    "oneAncestral",
+    "nodeIdentity",
+    "twoEdgePanels",
+    "edgeAncestral",
+    "carriedNodeExterior",
+    "permutedRestricted",
+    "frozenRegister",
+    "parallelPanels"
+  ],
+  "binary_pins_after": {
+    "lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "rust": "98dfe4358ef1452b638faead3a95a5a34b0c36913dea1c37d2f8e4e53301bf45"
+  },
+  "binary_pins_before": {
+    "lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "rust": "98dfe4358ef1452b638faead3a95a5a34b0c36913dea1c37d2f8e4e53301bf45"
+  },
+  "cases": [
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "empty",
+      "literal_support": 1,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "empty"
+          ],
+          "elapsed_seconds": 1.7287051160001283,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "empty"
+          ],
+          "elapsed_seconds": 0.001500369999121176,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "c4ea36929b2acdea120ba9dc32b416907c86ad5129969c457cd9f35ba43274dc",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "oneAncestral",
+      "literal_support": 1,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "oneAncestral"
+          ],
+          "elapsed_seconds": 1.6218531110007461,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "oneAncestral"
+          ],
+          "elapsed_seconds": 0.0013963749988761265,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "ef18193bdfcc1b7f93cc9e87a5be74d84057559a5b5cba437499d9b5f8209bc1",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "twoEdgePanels",
+      "literal_support": 9,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "twoEdgePanels"
+          ],
+          "elapsed_seconds": 1.5914370800001052,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "twoEdgePanels"
+          ],
+          "elapsed_seconds": 0.002203965001172037,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "f0208ef344fe752f640de0bd9aa940909d68f8f920fe362e6c69032b2d8913cb",
+          "timed_out": false
+        }
+      },
+      "selected_views": 9,
+      "unranked_views": 4
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "edgeAncestral",
+      "literal_support": 9,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "edgeAncestral"
+          ],
+          "elapsed_seconds": 1.6781733269999677,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "edgeAncestral"
+          ],
+          "elapsed_seconds": 0.002164207999157952,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "673bcf0cc5a4aa2498012e9df181f82b1804ba574e60f1ee7d2a1c1d930e3a06",
+          "timed_out": false
+        }
+      },
+      "selected_views": 9,
+      "unranked_views": 4
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "nodeIdentity",
+      "literal_support": 1,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "nodeIdentity"
+          ],
+          "elapsed_seconds": 1.6419884770002682,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "nodeIdentity"
+          ],
+          "elapsed_seconds": 0.0014785679995839018,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "0260fef18e3316007e92f0678ce41ddc8baa507540c4d3f0afe02c3a59574d5f",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "carriedNodeExterior",
+      "literal_support": 1,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "carriedNodeExterior"
+          ],
+          "elapsed_seconds": 1.6410027220008487,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "carriedNodeExterior"
+          ],
+          "elapsed_seconds": 0.003453631999946083,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "214d13ffa9363374f3daf5b8cd102ca2e2679ce8fe14d4ab27ec6c338c77410f",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "permutedRestricted",
+      "literal_support": 3,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "permutedRestricted"
+          ],
+          "elapsed_seconds": 1.511390699999538,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "permutedRestricted"
+          ],
+          "elapsed_seconds": 0.00178331000097387,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "70fa29bd784f5b7dfde1785c747f08488ec068def39aa28023bf613e39c717e0",
+          "timed_out": false
+        }
+      },
+      "selected_views": 3,
+      "unranked_views": 2
+    },
+    {
+      "errors": [
+        "lean: lean fixture process failed"
+      ],
+      "fixture": "frozenRegister",
+      "literal_support": 9,
+      "pass": false,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-review-1/LEAN-DRIVER.lean",
+            "frozenRegister"
+          ],
+          "elapsed_seconds": 1.5365431109985366,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 1,
+          "process_started": true,
+          "stderr_sha256": "e881777588719d6130a97b89078c96f9fdeaece6b9a805363ae4a1c19cb4ca23",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "frozenRegister"
+          ],
+          "elapsed_seconds": 0.0021739910007454455,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "84d5fa358f3d2af5a41f75e606763bc882609ebcdf7b902dd31ac05c0787e102",
+          "timed_out": false
+        }
+      },
+      "selected_views": 9,
+      "unranked_views": 4
+    }
+  ],
+  "cases_passed": 0,
+  "cases_total": 8,
+  "claim": "FINITE_IMPORTED_ORIGINAL_EVALUATOR_COEFFICIENT_REVIEW",
+  "controls": {},
+  "execution_modes": {
+    "lean": "compiled_lean_evaluator_not_standalone_elf",
+    "rust": "standalone_executable"
+  },
+  "family": "epoch",
+  "fixtures_executed": [
+    "empty",
+    "oneAncestral",
+    "twoEdgePanels",
+    "edgeAncestral",
+    "nodeIdentity",
+    "carriedNodeExterior",
+    "permutedRestricted",
+    "frozenRegister"
+  ],
+  "fixtures_not_executed": [
+    "parallelPanels"
+  ],
+  "general_Rust_refinement_claim": false,
+  "kernel_qualification": "Imported artifact closure and executable-refinement theorem status must be authenticated by the separate integration receipt; these file observations do not establish it.",
+  "languages_executed": [
+    "rust",
+    "lean"
+  ],
+  "lean_import_path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-epoch-fixture/20261010T123237.624669Z/.build/runs/20261010T123317.244784Z/targets/extraction_g7-original-epoch-fixture_G7OriginalEpochFixtureMain/objects:/workspace/dependencies/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/Qq/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/aesop/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/batteries/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/plausible/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/build/lib/lean:/workspace/toolchains/lean-4.33.1-linux/lib/lean",
+  "lean_workdir": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-epoch-fixture/20261010T123237.624669Z",
+  "observed_at_utc": "2026-10-10T12:37:23Z",
+  "observed_input_pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_compiled_fixtures.py": "a715751866efd7c543b27d16802067f4a8e9188a84852e6185ac0724cef4369b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-epoch-fixture/20261010T123237.624669Z/Runner_G7OriginalEpochFixtureMain.lean": "1563848c54cb83e1998fa536842009fdbf54b9f6cc22fb28321cf76ee3d661ad",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-EPOCH-EXECUTION-PREPARATION.json": "8bf0d8802ac22f983f15ea10da8b02bcd6edd79e0e931d7086d98b9ec7e55686",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-epoch-execution/20261010T123655.426237Z/ACTUAL-IMPORTED-ARTIFACTS.json": "6ef3c3cd6148988ec3bed47dcd570a7da0a41cc554bcd7879d3e3613199f1e05",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-epoch-execution/20261010T123655.426237Z/NATIVE-RUNTIME-PINS.json": "0cdd477881afb1fe1703f72e69788287b3aa7e8527e145482d7cceb542516ae6"
+  },
+  "observed_input_pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_compiled_fixtures.py": "a715751866efd7c543b27d16802067f4a8e9188a84852e6185ac0724cef4369b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-epoch-fixture/20261010T123237.624669Z/Runner_G7OriginalEpochFixtureMain.lean": "1563848c54cb83e1998fa536842009fdbf54b9f6cc22fb28321cf76ee3d661ad",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-EPOCH-EXECUTION-PREPARATION.json": "8bf0d8802ac22f983f15ea10da8b02bcd6edd79e0e931d7086d98b9ec7e55686",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-epoch-execution/20261010T123655.426237Z/ACTUAL-IMPORTED-ARTIFACTS.json": "6ef3c3cd6148988ec3bed47dcd570a7da0a41cc554bcd7879d3e3613199f1e05",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-epoch-execution/20261010T123655.426237Z/NATIVE-RUNTIME-PINS.json": "0cdd477881afb1fe1703f72e69788287b3aa7e8527e145482d7cceb542516ae6"
+  },
+  "oracle_algorithm": "Single full mixed ordered-half-rate generator spectral projectors",
+  "pass": false,
+  "schema": "compiled_original_fixture_oracle_review_v1",
+  "separately_authenticated_kernel_evidence": "evidence/proof-extensions/extraction_g7-original-epoch-fixture/20261010T123237.624669Z/run-20261010T123317.244784Z",
+  "source_admission_claim": false
+}

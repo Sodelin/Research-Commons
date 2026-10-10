@@ -1,0 +1,401 @@
+{
+  "case_count": 24,
+  "cli_refusals": 4,
+  "coefficient_oracle_acceptance_claimed": false,
+  "full_view_tables": 8,
+  "identities_stable": true,
+  "original_lean_word_execution_claimed": false,
+  "pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/WORD-REFINEMENT.md": "dabc36aef7265cef2efeac982b6f191540eaf12f809045bce75e6e5161952458",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/carriedOutsideWord.request.json": "ee40f397aefe2e441b502e1189c30ad7193e0764e42b45db31830cf39baa9c62",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonFalseWord.request.json": "cd9b7a2be45c26e19965ec22c18a3597d878465128a38208595863bc307734c2",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonTrueWord.request.json": "a2154c505257068c3fc2a7e927b422ad7b23083fe01d38e6f67c0d83420b4371",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyConditionalWord.request.json": "e60422f11866b4afa54ac8f210634224db08eaba535bac3b38dd1f3ab87ab6e9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalCommonWord.request.json": "86fb022a4b3e184763877aa61ee35a8c4d471412c822cb42562b863ff4eb02d5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalWord.request.json": "3113b7000adba3b0ca13db119fdde8159f51fd8cc679e9b655aa70668062c2e3",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/ordinaryThreeComplete.request.json": "54f673b3e9a1c40084ea8c528126d5e802939464d84eadb1c54f3168bdf7e752",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/ordinaryThreeFinite.request.json": "6754b3cc7bbeb87a46f141b95e38bef3e95d6f701e1469d73e59a9d5f1cbcf8b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/parallelCommonCalendar.request.json": "b1f6826803eca7189000b33b6c565b3b50511d18ab2d20c791430f6e330f5ad4",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/parallelIndependentCalendar.request.json": "94599cd4f08ee94b222b71e347f1d17eeb9b3f6a62e49fcfc9705849a1158900",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/permutedCalendar.request.json": "f27bb2bc02c4848ac9154f6f579649b4424e6f3bc0d68868c8cc592488800b56",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/repeatedIntervalSlot.request.json": "9a6afbe1192bd0d6d3553756d8f13057cc3941a3642fe1a818ca97f95df04482",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/singletonCalendar.request.json": "9d6f9035c349533f8d0a3d4639cf5d0afc486719a53735dd6a8363b491b55af5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/word-probe-controls-1/CONTROL-HARNESS.py": "77fd50fea27b9ab16623f56eb1324bc3b88f3cb965f0f1f479df06cb395cf5fb",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/WORD-SOURCE-FREEZE-1.json": "7f434129cc95df0298089ade5db5e69ec3176cda3fc0bcf3fed9c75aa3177da8",
+    "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe": "f7f8a9b47e34536c33e52661d98bcb17ac3defb4ccf27ec4ac1376897c92a49a"
+  },
+  "pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/WORD-REFINEMENT.md": "dabc36aef7265cef2efeac982b6f191540eaf12f809045bce75e6e5161952458",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/carriedOutsideWord.request.json": "ee40f397aefe2e441b502e1189c30ad7193e0764e42b45db31830cf39baa9c62",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonFalseWord.request.json": "cd9b7a2be45c26e19965ec22c18a3597d878465128a38208595863bc307734c2",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonTrueWord.request.json": "a2154c505257068c3fc2a7e927b422ad7b23083fe01d38e6f67c0d83420b4371",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyConditionalWord.request.json": "e60422f11866b4afa54ac8f210634224db08eaba535bac3b38dd1f3ab87ab6e9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalCommonWord.request.json": "86fb022a4b3e184763877aa61ee35a8c4d471412c822cb42562b863ff4eb02d5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalWord.request.json": "3113b7000adba3b0ca13db119fdde8159f51fd8cc679e9b655aa70668062c2e3",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/ordinaryThreeComplete.request.json": "54f673b3e9a1c40084ea8c528126d5e802939464d84eadb1c54f3168bdf7e752",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/ordinaryThreeFinite.request.json": "6754b3cc7bbeb87a46f141b95e38bef3e95d6f701e1469d73e59a9d5f1cbcf8b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/parallelCommonCalendar.request.json": "b1f6826803eca7189000b33b6c565b3b50511d18ab2d20c791430f6e330f5ad4",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/parallelIndependentCalendar.request.json": "94599cd4f08ee94b222b71e347f1d17eeb9b3f6a62e49fcfc9705849a1158900",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/permutedCalendar.request.json": "f27bb2bc02c4848ac9154f6f579649b4424e6f3bc0d68868c8cc592488800b56",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/repeatedIntervalSlot.request.json": "9a6afbe1192bd0d6d3553756d8f13057cc3941a3642fe1a818ca97f95df04482",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/singletonCalendar.request.json": "9d6f9035c349533f8d0a3d4639cf5d0afc486719a53735dd6a8363b491b55af5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/word-probe-controls-1/CONTROL-HARNESS.py": "77fd50fea27b9ab16623f56eb1324bc3b88f3cb965f0f1f479df06cb395cf5fb",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/WORD-SOURCE-FREEZE-1.json": "7f434129cc95df0298089ade5db5e69ec3176cda3fc0bcf3fed9c75aa3177da8",
+    "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe": "f7f8a9b47e34536c33e52661d98bcb17ac3defb4ccf27ec4ac1376897c92a49a"
+  },
+  "results": [
+    {
+      "case": "carriedOutsideWord",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "carriedOutsideWord"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 1,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "de19e71f818eca00ed53f30df954e9bd4dc154754d9bcb91c293962729236a5c"
+    },
+    {
+      "case": "conditionalCommonFalseWord",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "conditionalCommonFalseWord"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 1,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a40a0a879c3949f65e0dd6b2951427b2aa968a5bab4cbcb04080ba2c4ee2fd73"
+    },
+    {
+      "case": "conditionalCommonTrueWord",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "conditionalCommonTrueWord"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 1,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d39cd5c1987f88fea3fad8d3a482e52c96fb615449eba91c57c939c58cc20db0"
+    },
+    {
+      "case": "emptyConditionalWord",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyConditionalWord"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 1,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "27a3a436a310409e731951e6bf704acb11803efd5a6819aad874d849297ee1e8"
+    },
+    {
+      "case": "emptyNaturalCommonWord",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyNaturalCommonWord"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 2,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d878d001a83b6d582b996f8cb59cf2ff2013e04aac02137d182c4f822b5a85b1"
+    },
+    {
+      "case": "emptyNaturalWord",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyNaturalWord"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 2,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1f145fae2eb6b63b9c95e1b66b4bc7db039469c387564647fcfdf2d3a04ad2f4"
+    },
+    {
+      "case": "ordinaryThreeComplete",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "ordinaryThreeComplete"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNSUPPORTED",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6cb8dabaa28248cef5b40f7b10a7a98b833bc02fbb33e7da17b1bad6ea380266"
+    },
+    {
+      "case": "ordinaryThreeFinite",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "ordinaryThreeFinite"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 3,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2f9474735e020eb931955b146c495a8c4c16d7905680bcb5bd0663dfa6bfa77d"
+    },
+    {
+      "case": "parallelCommonCalendar",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "parallelCommonCalendar"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNSUPPORTED",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "dad7ae662b300d27e0a5dd163c6b52d1fc9d5cefe19efce77400fba1a56d1486"
+    },
+    {
+      "case": "parallelIndependentCalendar",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "parallelIndependentCalendar"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNSUPPORTED",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a856f53c73f4e5bec4087ff3fad56c683c36eb850a77019afe1ab95d9ad72a2e"
+    },
+    {
+      "case": "permutedCalendar",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "permutedCalendar"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNSUPPORTED",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "526b3f4283c8e2fae668529a32fff37e9d69fcf5ba84ee97b54c44857d0bdf43"
+    },
+    {
+      "case": "repeatedIntervalSlot",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "repeatedIntervalSlot"
+      ],
+      "exit_code": 0,
+      "observed_status": "TABLE",
+      "process_started": true,
+      "rows": 19,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "13c6a8450deff1280cb479e1d404ad1760c208cc3c18b2d24ab6058c008f7d9c"
+    },
+    {
+      "case": "singletonCalendar",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "singletonCalendar"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNSUPPORTED",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "852de9dee355e03912b0beafa50d4e9da59d1d999761b7e0d4534ad9503a5984"
+    },
+    {
+      "case": "unknown-initial_assignments",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyNaturalWord",
+        "--limit",
+        "initial_assignments",
+        "1"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "247cce8a8a829b68e498ba50d9c523fa23fad0a10bc8970c7f685d960e30c145"
+    },
+    {
+      "case": "unknown-initial_terms",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyNaturalWord",
+        "--limit",
+        "initial_terms",
+        "2"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "49a1450bfe62e1ff719983ba0d58ad69e1d7ba208a2597fcdb94b935b42511f6"
+    },
+    {
+      "case": "unknown-queries",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "conditionalCommonFalseWord",
+        "--limit",
+        "queries",
+        "0"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6375860e2eb85f44d60d743c4087d9930c0822fcac0b9bc078c7ff99a6c31c7e"
+    },
+    {
+      "case": "unknown-branches",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "conditionalCommonFalseWord",
+        "--limit",
+        "branches",
+        "0"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "bf18a981db27f65e8fff7c47717719fdc40bbb5f170cbdd730fc5dd0d50c707c"
+    },
+    {
+      "case": "unknown-term_products",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "conditionalCommonFalseWord",
+        "--limit",
+        "term_products",
+        "0"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ba35bd5b8c2905eb9adf87e3a476650ac647610ae0a75d5ec25c674fdc5aefd0"
+    },
+    {
+      "case": "unknown-destinations",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyConditionalWord",
+        "--limit",
+        "destinations",
+        "0"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8bc06f19ef8bfd5cac133d561d14c2785afc6bbe40109a35616bb817cbebadeb"
+    },
+    {
+      "case": "unknown-terms",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyConditionalWord",
+        "--limit",
+        "terms",
+        "0"
+      ],
+      "exit_code": 0,
+      "observed_status": "UNKNOWN",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "00407d1746962db87335bab6c27f88fd609d86854c8422dbf0114d610a9e2780"
+    },
+    {
+      "case": "missing-fixture",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe"
+      ],
+      "exit_code": 2,
+      "observed_status": "CLI_REFUSAL",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "invalid-fixture",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "not-a-fixture"
+      ],
+      "exit_code": 2,
+      "observed_status": "CLI_REFUSAL",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "invalid-count",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyNaturalWord",
+        "--limit",
+        "queries",
+        "bad"
+      ],
+      "exit_code": 2,
+      "observed_status": "CLI_REFUSAL",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "invalid-limit",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-1/release/examples/source_word_probe",
+        "emptyNaturalWord",
+        "--limit",
+        "invented",
+        "0"
+      ],
+      "exit_code": 2,
+      "observed_status": "CLI_REFUSAL",
+      "process_started": true,
+      "status": "PASS",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "rust_private_word_probe_controls_v1",
+  "scope": "Actual private probe framing and refusal controls; mathematical coefficient acceptance is separate",
+  "source_admission_verified": false,
+  "status": "PASS",
+  "unknown_controls": 7,
+  "unsupported_completion_cases": 5,
+  "wall_seconds": 0.022851001000162796
+}

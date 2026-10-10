@@ -1,0 +1,134 @@
+{
+  "schema": "original_completion_compiled_fixture_review_v1",
+  "pass": true,
+  "claim": "ORACLE_SELF_CHECK_ONLY",
+  "execution_modes": {},
+  "languages_executed": [],
+  "cases_total": 6,
+  "cases_passed": 6,
+  "full_view_rows_total": 257,
+  "cases": [
+    {
+      "fixture": "completion1",
+      "full_view_rows": 1,
+      "closed_form": {
+        "ordered_rows": 1,
+        "weight": "1"
+      },
+      "runs": {},
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "completion2",
+      "full_view_rows": 2,
+      "closed_form": {
+        "ordered_rows": 2,
+        "weight": "1/2"
+      },
+      "runs": {},
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "completion3",
+      "full_view_rows": 12,
+      "closed_form": {
+        "ordered_rows": 12,
+        "weight": "1/12"
+      },
+      "runs": {},
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "completion4",
+      "full_view_rows": 120,
+      "closed_form": {
+        "ordered_rows": 120,
+        "balanced_rows": 24,
+        "balanced_weight": "1/72",
+        "pectinate_rows": 96,
+        "pectinate_weight": "1/144"
+      },
+      "runs": {},
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "completionCarriedNonminimum",
+      "full_view_rows": 2,
+      "closed_form": {
+        "ordered_rows": 2,
+        "weight": "1/2"
+      },
+      "runs": {},
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "completionPermutedFour",
+      "full_view_rows": 120,
+      "closed_form": {
+        "ordered_rows": 120,
+        "balanced_rows": 24,
+        "balanced_weight": "1/72",
+        "pectinate_rows": 96,
+        "pectinate_weight": "1/144"
+      },
+      "runs": {},
+      "errors": [],
+      "pass": true
+    }
+  ],
+  "invalid_table_controls_rejected": [
+    "balanced mass-preserving wrong weights",
+    "noncanonical rational",
+    "wrong original register",
+    "duplicate/missing full destination",
+    "unknown top-level field"
+  ],
+  "oracle_algorithm": "Full ordered half-rate generator zero spectral projector",
+  "pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_completion_compiled_fixtures.py": "f87671690a634f9a7c12094828f7b5e5b39fc36ef9bf32f142098d08e35f2602",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_completion_controls.py": "61dac01fae9a034870d9bc3471e978da8de98c4d864bb4dc19fc6d281b94d0c8",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/WORD-COMPLETION-EXTENSION-20261010T1300Z.md": "272e1694ebe29a6d707435a623d94c99b45fd17f9e88cb06114fe4c109db274f",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/INVENTORY.json": "5e9e8f6d15c02b51379aa2f12f1678557e7fd1a489edda8fc786f5c9bd45da76",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion1.request.json": "467656dedebf99bfedd591991164f0114f1108b380cc23738829aedfd729ed49",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion2.request.json": "f49c9065a8818709682c3ad06ba1627d4240b8b74885ca6907943e6ea7e16b89",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion3.request.json": "1cee5b5da1e747ecd1f2a1d719092f68d7ffea91c7b72a1ac594b82a28ddff2b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion4.request.json": "659d15e6b9ce4aef5ce4f66013eb91235c45332edcb8390ec5739832f391bd21",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completionCarriedNonminimum.request.json": "1af9bf6b8b00defc1635c48c1acb12ec1f76b234b1a5fc987f8c5291749517da",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completionPermutedFour.request.json": "4e636d82e3a8adf7da82cd9330f365d8dc19dcff07b1a927363e753b1eda035c"
+  },
+  "pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_completion_compiled_fixtures.py": "f87671690a634f9a7c12094828f7b5e5b39fc36ef9bf32f142098d08e35f2602",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_completion_controls.py": "61dac01fae9a034870d9bc3471e978da8de98c4d864bb4dc19fc6d281b94d0c8",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/WORD-COMPLETION-EXTENSION-20261010T1300Z.md": "272e1694ebe29a6d707435a623d94c99b45fd17f9e88cb06114fe4c109db274f",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/INVENTORY.json": "5e9e8f6d15c02b51379aa2f12f1678557e7fd1a489edda8fc786f5c9bd45da76",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion1.request.json": "467656dedebf99bfedd591991164f0114f1108b380cc23738829aedfd729ed49",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion2.request.json": "f49c9065a8818709682c3ad06ba1627d4240b8b74885ca6907943e6ea7e16b89",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion3.request.json": "1cee5b5da1e747ecd1f2a1d719092f68d7ffea91c7b72a1ac594b82a28ddff2b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completion4.request.json": "659d15e6b9ce4aef5ce4f66013eb91235c45332edcb8390ec5739832f391bd21",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completionCarriedNonminimum.request.json": "1af9bf6b8b00defc1635c48c1acb12ec1f76b234b1a5fc987f8c5291749517da",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-2/completionPermutedFour.request.json": "4e636d82e3a8adf7da82cd9330f365d8dc19dcff07b1a927363e753b1eda035c"
+  },
+  "separately_authenticated_kernel_evidence": null,
+  "kernel_qualification": "Separate integration receipts must authenticate the exact completion theorem, fixture context and imported/native runtime closure.",
+  "Lean_standalone_ELF_claim": false,
+  "general_native_refinement_claim": false,
+  "source_admission_verified": false,
+  "chosen_epoch_table_identity_claim": false
+}

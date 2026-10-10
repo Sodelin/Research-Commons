@@ -1,0 +1,121 @@
+{
+  "Lean_standalone_ELF_claim": false,
+  "all_fixture_names": [
+    "empty",
+    "oneAncestral",
+    "nodeIdentity",
+    "twoEdgePanels",
+    "edgeAncestral",
+    "carriedNodeExterior",
+    "permutedRestricted",
+    "frozenRegister",
+    "parallelPanels"
+  ],
+  "binary_pins_after": {
+    "lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "rust": "98dfe4358ef1452b638faead3a95a5a34b0c36913dea1c37d2f8e4e53301bf45"
+  },
+  "binary_pins_before": {
+    "lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "rust": "98dfe4358ef1452b638faead3a95a5a34b0c36913dea1c37d2f8e4e53301bf45"
+  },
+  "cases": [
+    {
+      "errors": [],
+      "fixture": "parallelPanels",
+      "literal_support": 9,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/epoch-lean-rust-parallel-review-1/LEAN-DRIVER.lean",
+            "parallelPanels"
+          ],
+          "elapsed_seconds": 1.7232524689989077,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "41eb12d49dc55ae10a0de35413e7bf404a237dd2fe5dd8757e8c4b516096543c",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/epoch-candidate-target-1/release/examples/source_epoch_probe",
+            "parallelPanels"
+          ],
+          "elapsed_seconds": 0.00238213099873974,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "ee7bcc1c9ab0f4721ac5b3323e10f717cbf8f35320a1da8cb33ef77b3c7664eb",
+          "timed_out": false
+        }
+      },
+      "selected_views": 9,
+      "unranked_views": 4
+    }
+  ],
+  "cases_passed": 1,
+  "cases_total": 1,
+  "claim": "FINITE_IMPORTED_ORIGINAL_EVALUATOR_COEFFICIENT_REVIEW",
+  "controls": {},
+  "execution_modes": {
+    "lean": "compiled_lean_evaluator_not_standalone_elf",
+    "rust": "standalone_executable"
+  },
+  "family": "epoch",
+  "fixtures_executed": [
+    "parallelPanels"
+  ],
+  "fixtures_not_executed": [
+    "empty",
+    "oneAncestral",
+    "nodeIdentity",
+    "twoEdgePanels",
+    "edgeAncestral",
+    "carriedNodeExterior",
+    "permutedRestricted",
+    "frozenRegister"
+  ],
+  "general_Rust_refinement_claim": false,
+  "kernel_qualification": "Imported artifact closure and executable-refinement theorem status must be authenticated by the separate integration receipt; these file observations do not establish it.",
+  "languages_executed": [
+    "rust",
+    "lean"
+  ],
+  "lean_import_path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-parallel-epoch-fixture/20261010T125723.258990Z/.build/runs/20261010T125754.947360Z/targets/extraction_g7-original-parallel-epoch-fixture_G7OriginalParallelEpochFixtureMain/objects:/workspace/dependencies/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/Qq/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/aesop/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/batteries/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/plausible/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/build/lib/lean:/workspace/toolchains/lean-4.33.1-linux/lib/lean",
+  "lean_workdir": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-parallel-epoch-fixture/20261010T125723.258990Z",
+  "observed_at_utc": "2026-10-10T12:59:18Z",
+  "observed_input_pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_compiled_fixtures.py": "a715751866efd7c543b27d16802067f4a8e9188a84852e6185ac0724cef4369b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-parallel-epoch-fixture/20261010T125723.258990Z/Runner_G7OriginalParallelEpochFixtureMain.lean": "1fb27df628191676d4830177ce6057a16b4ffaa668ca7fe3cfab73c02cb34b1e",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-PARALLEL-EPOCH-NATIVE-EXECUTION-PREPARATION.json": "c99a87139e5c8b5a18859d1174595bd58054d0826c197decc374699950d6dd56",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-parallel-epoch-execution-native/20261010T125852.879257Z/ACTUAL-IMPORTED-ARTIFACTS.json": "e44def7bdd3a5b056448b6abff0290d5b273b41ba6dea32e7da9389c0f9d7d59",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-parallel-epoch-execution-native/20261010T125852.879257Z/NATIVE-RUNTIME-PINS.json": "2d7b00c8017584b2bd700ec4a80c3260472b14072940abf03e81b5608a633d42"
+  },
+  "observed_input_pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_compiled_fixtures.py": "a715751866efd7c543b27d16802067f4a8e9188a84852e6185ac0724cef4369b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-parallel-epoch-fixture/20261010T125723.258990Z/Runner_G7OriginalParallelEpochFixtureMain.lean": "1fb27df628191676d4830177ce6057a16b4ffaa668ca7fe3cfab73c02cb34b1e",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-PARALLEL-EPOCH-NATIVE-EXECUTION-PREPARATION.json": "c99a87139e5c8b5a18859d1174595bd58054d0826c197decc374699950d6dd56",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-parallel-epoch-execution-native/20261010T125852.879257Z/ACTUAL-IMPORTED-ARTIFACTS.json": "e44def7bdd3a5b056448b6abff0290d5b273b41ba6dea32e7da9389c0f9d7d59",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-parallel-epoch-execution-native/20261010T125852.879257Z/NATIVE-RUNTIME-PINS.json": "2d7b00c8017584b2bd700ec4a80c3260472b14072940abf03e81b5608a633d42"
+  },
+  "oracle_algorithm": "Single full mixed ordered-half-rate generator spectral projectors",
+  "pass": true,
+  "schema": "compiled_original_fixture_oracle_review_v1",
+  "separately_authenticated_kernel_evidence": "evidence/proof-extensions/extraction_g7-original-parallel-epoch-fixture/20261010T125723.258990Z/run-20261010T125754.947360Z",
+  "source_admission_claim": false
+}

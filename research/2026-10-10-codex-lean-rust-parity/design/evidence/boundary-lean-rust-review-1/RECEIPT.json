@@ -1,0 +1,613 @@
+{
+  "Lean_standalone_ELF_claim": false,
+  "all_fixture_names": [
+    "emptyCommon",
+    "emptyIndependent",
+    "commonFalse",
+    "commonTrue",
+    "independentTwo",
+    "carriedOwnerOutside",
+    "noOwnerAtSite",
+    "parallelExit",
+    "ordinaryEntry",
+    "rootEntry",
+    "registerRepeat",
+    "permutedIndependent"
+  ],
+  "binary_pins_after": {
+    "lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "rust": "66567a44a243f03b741954da0f52083eb2963346b89778de318c8cd2c265b3e6"
+  },
+  "binary_pins_before": {
+    "lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "rust": "66567a44a243f03b741954da0f52083eb2963346b89778de318c8cd2c265b3e6"
+  },
+  "cases": [
+    {
+      "errors": [],
+      "fixture": "emptyCommon",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "emptyCommon"
+          ],
+          "elapsed_seconds": 1.7109320019990264,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "b744758921d701de6b243b11cff1fba886a28be9b0569f32b184c520bc87a278",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "emptyCommon"
+          ],
+          "elapsed_seconds": 0.0016149399998539593,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "8c358c5446369a9cfe909e053ad0a72f8e48fa8163e8a9c6b389fd70af5bf6ef",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "emptyIndependent",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "emptyIndependent"
+          ],
+          "elapsed_seconds": 1.5483609179991618,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "56c525d89e578ed5060949599b351523b2a6f09e008f2ef399c65b5f4030af95",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "emptyIndependent"
+          ],
+          "elapsed_seconds": 0.0014817139999649953,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "35bb4d026d4ffd960a56359d801bf73c27e686a5a7bac6cf6538b99ef4793b11",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "commonFalse",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "commonFalse"
+          ],
+          "elapsed_seconds": 1.5607571360014845,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "fdff3a3b95eb84bbb54ade722e1eba1b7b0b6c02c572b38827f6f6aa3e863ef3",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "commonFalse"
+          ],
+          "elapsed_seconds": 0.001396196999849053,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "b49e1d6a7453174953e71304487ec79261051277d87f4bef027d7ffb08551110",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "commonTrue",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "commonTrue"
+          ],
+          "elapsed_seconds": 1.6288146259994392,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "8516beb102b37d3123eada17ec54dc1c4894f16735afe5c825c08357fc445aa0",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "commonTrue"
+          ],
+          "elapsed_seconds": 0.001378869999825838,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "6d308b4a02301bdd8d0636ee085e7ee57b9b5a027f4de4db02d7f75414082adc",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "independentTwo",
+      "literal_support": 4,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "independentTwo"
+          ],
+          "elapsed_seconds": 1.5090221110003768,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "286bb4d167dd2ffcf186abb5a5444962a2d0ff3e3f6119e38750cd153197c51a",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "independentTwo"
+          ],
+          "elapsed_seconds": 0.0016911439997784328,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "10dba0ec533f808e30eab466038e58f20acc041789a9f2ae0b98ed07af309c5c",
+          "timed_out": false
+        }
+      },
+      "selected_views": 4,
+      "unranked_views": 4
+    },
+    {
+      "errors": [],
+      "fixture": "noOwnerAtSite",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "noOwnerAtSite"
+          ],
+          "elapsed_seconds": 1.5239002099988284,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "8cf3909c8411cbdb637d65fa75e876b797ad8b6fd463d15e0ee4934835ea8793",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "noOwnerAtSite"
+          ],
+          "elapsed_seconds": 0.0014564350003638538,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "da03dc59ccc02fc42aae3110536ad418a0f21fd322b9332ab9f21f31766e6525",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "carriedOwnerOutside",
+      "literal_support": 2,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "carriedOwnerOutside"
+          ],
+          "elapsed_seconds": 1.5594806090011843,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "86dd028fe760afd3809d806137327e40936d952a1fd9b91791590e9b3116abfd",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "carriedOwnerOutside"
+          ],
+          "elapsed_seconds": 0.0014985379984864267,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "4c2a2cde730fbe6514fb4d48a05335319ff78ccc8444a75b5a7581e2cbdff243",
+          "timed_out": false
+        }
+      },
+      "selected_views": 2,
+      "unranked_views": 2
+    },
+    {
+      "errors": [],
+      "fixture": "permutedIndependent",
+      "literal_support": 4,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "permutedIndependent"
+          ],
+          "elapsed_seconds": 1.5627182309999625,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "c7122616453b1e45eeac9a6d6624e18dca30e4190544eea15989b5b2dac6ea24",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "permutedIndependent"
+          ],
+          "elapsed_seconds": 0.001643854000576539,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "0c447385009635550300ba54dac78c87ce2075bea9a85215c3eb8d76f742d3ff",
+          "timed_out": false
+        }
+      },
+      "selected_views": 4,
+      "unranked_views": 4
+    },
+    {
+      "errors": [],
+      "fixture": "registerRepeat",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "registerRepeat"
+          ],
+          "elapsed_seconds": 1.6234029419993021,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "8f3df9990f995dc21616ac0aa7af5e4ad39b63a33d0d1e6e1f71450d7a567c57",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "registerRepeat"
+          ],
+          "elapsed_seconds": 0.0014822929988440592,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "8e607ec058ab3dc9b2d6e20b2e11f5664294a7c44ffd740aad46d2776a8625b1",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "ordinaryEntry",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "ordinaryEntry"
+          ],
+          "elapsed_seconds": 1.4652575820000493,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "a819cc8fa7b35e3381f11cb63b75610308defd72bebb47f6645da882459b7d17",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "ordinaryEntry"
+          ],
+          "elapsed_seconds": 0.0014115180001681438,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "d371759f0d0d7fc1a51f0ee99880676481d6283b459bf87e0709fc65cdf74f90",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "rootEntry",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "rootEntry"
+          ],
+          "elapsed_seconds": 1.4604686740003672,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "3032129f480d3be21a99dbe7fe80feb046fafe1e8da84b09ecf0c2ada9108bba",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "rootEntry"
+          ],
+          "elapsed_seconds": 0.00134358699870063,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "143141124a737aaff63984b50f0626a570c0360040acf2dd915d84a6ab32af2c",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    },
+    {
+      "errors": [],
+      "fixture": "parallelExit",
+      "literal_support": 1,
+      "pass": true,
+      "runs": {
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/boundary-lean-rust-review-1/LEAN-DRIVER.lean",
+            "parallelExit"
+          ],
+          "elapsed_seconds": 1.5942964590012707,
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "0ac6d84ad4205641f68bb9509be935064da48ca25ab4b10707989febad13c443",
+          "timed_out": false
+        },
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/boundary-candidate-target-1/release/examples/source_boundary_probe",
+            "parallelExit"
+          ],
+          "elapsed_seconds": 0.0014451480001298478,
+          "execution_mode": "standalone_executable",
+          "exit_code": 0,
+          "process_started": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "4451e051b3058ddf71990821d0f28fafad603e199c33ef3870acd6c3dceae94c",
+          "timed_out": false
+        }
+      },
+      "selected_views": 1,
+      "unranked_views": 1
+    }
+  ],
+  "cases_passed": 12,
+  "cases_total": 12,
+  "claim": "FINITE_IMPORTED_ORIGINAL_EVALUATOR_COEFFICIENT_REVIEW",
+  "controls": {
+    "asymmetric_gamma": "1/3",
+    "carried_one_coin": true,
+    "exit_before_entry_separated": true,
+    "required_LAW_G": "2/3",
+    "two_owner_weights": [
+      "4/9",
+      "2/9",
+      "2/9",
+      "1/9"
+    ],
+    "wrong_direct_gamma_binding_rejected": true
+  },
+  "execution_modes": {
+    "lean": "compiled_lean_evaluator_not_standalone_elf",
+    "rust": "standalone_executable"
+  },
+  "family": "boundary",
+  "fixtures_executed": [
+    "emptyCommon",
+    "emptyIndependent",
+    "commonFalse",
+    "commonTrue",
+    "independentTwo",
+    "noOwnerAtSite",
+    "carriedOwnerOutside",
+    "permutedIndependent",
+    "registerRepeat",
+    "ordinaryEntry",
+    "rootEntry",
+    "parallelExit"
+  ],
+  "fixtures_not_executed": [],
+  "general_Rust_refinement_claim": false,
+  "kernel_qualification": "Imported artifact closure and executable-refinement theorem status must be authenticated by the separate integration receipt; these file observations do not establish it.",
+  "languages_executed": [
+    "rust",
+    "lean"
+  ],
+  "lean_import_path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-boundary-fixture/20261010T131253.658791Z/.build/runs/20261010T131343.394864Z/targets/extraction_g7-original-boundary-fixture_G7OriginalBoundaryFixtureMain/objects:/workspace/dependencies/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/Qq/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/aesop/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/batteries/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/plausible/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/dependencies/mathlib4/.lake/build/lib/lean:/workspace/toolchains/lean-4.33.1-linux/lib/lean",
+  "lean_workdir": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-boundary-fixture/20261010T131253.658791Z",
+  "observed_at_utc": "2026-10-10T13:16:20Z",
+  "observed_input_pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_compiled_fixtures.py": "a715751866efd7c543b27d16802067f4a8e9188a84852e6185ac0724cef4369b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-boundary-fixture/20261010T131253.658791Z/Runner_G7OriginalBoundaryFixtureMain.lean": "b9f7649a06d282842e9369c64717c20338d350aa742ad30e22d12887453115f9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-BOUNDARY-NATIVE-EXECUTION-PREPARATION.json": "a5736ccee2e6494ba0923fa427989826065932c88816fb159a0f059cd81a74d9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-boundary-execution-native/20261010T131519.629987Z/ACTUAL-IMPORTED-ARTIFACTS.json": "dae452010a9ff3f1ac086faa3e2f221a2b1e3c98d85649939e3bb9655424d08d",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-boundary-execution-native/20261010T131519.629987Z/NATIVE-RUNTIME-PINS.json": "2d7b00c8017584b2bd700ec4a80c3260472b14072940abf03e81b5608a633d42"
+  },
+  "observed_input_pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_compiled_fixtures.py": "a715751866efd7c543b27d16802067f4a8e9188a84852e6185ac0724cef4369b",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-boundary-fixture/20261010T131253.658791Z/Runner_G7OriginalBoundaryFixtureMain.lean": "b9f7649a06d282842e9369c64717c20338d350aa742ad30e22d12887453115f9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-BOUNDARY-NATIVE-EXECUTION-PREPARATION.json": "a5736ccee2e6494ba0923fa427989826065932c88816fb159a0f059cd81a74d9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-boundary-execution-native/20261010T131519.629987Z/ACTUAL-IMPORTED-ARTIFACTS.json": "dae452010a9ff3f1ac086faa3e2f221a2b1e3c98d85649939e3bb9655424d08d",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-boundary-execution-native/20261010T131519.629987Z/NATIVE-RUNTIME-PINS.json": "2d7b00c8017584b2bd700ec4a80c3260472b14072940abf03e81b5608a633d42"
+  },
+  "oracle_algorithm": "Whole-Copy unused-bit exact marginalization",
+  "pass": true,
+  "schema": "compiled_original_fixture_oracle_review_v1",
+  "separately_authenticated_kernel_evidence": "evidence/proof-extensions/extraction_g7-original-boundary-fixture/20261010T131253.658791Z/run-20261010T131343.394864Z",
+  "source_admission_claim": false
+}

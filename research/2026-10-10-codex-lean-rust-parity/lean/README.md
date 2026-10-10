@@ -1,9 +1,29 @@
 # Lean executable and modular proof package
 
 `lake build` builds the exact-rational `gparity` executable. `lake build formal`
-checks the available public G1–G7 source union in a separate proof context. The
+checks the earlier 1,340-module public G1–G7 union; `lake build latestFormal`
+checks the latest compatible 1,433-module composition in a separate context. The
 native program accepts the ASCII `RC1 AFFINE`, `RC1 COUNT`, `RC1 CHART`, and `RC1 LAW`
 contracts in the adjacent `design/` directory.
+
+The current 1,340-module public union has completed a fresh source build and
+complete owned-declaration audit: **97,493 declarations, including 89,658
+theorems**, with no owned or nonstandard axioms. Every component was compiled
+in that run; no component cache was reused. The exact sources, import closure,
+kernel receipts and losslessly compressed full audit are bound by
+[`CURRENT-CONNECTED-CERTIFICATE.json`](CURRENT-CONNECTED-CERTIFICATE.json).
+This source compilation retains each theorem's original scientific premises.
+
+The latest compatible public composition also passed its fresh combined import
+and complete ownership audit: **1,433 modules, 98,330 declarations and 90,253
+theorems**, with no owned or nonstandard axioms. That run authenticated 1,433
+exact component contexts from earlier accepted compilations and performed a
+fresh aggregate and audit. It adds 93 published canonical modules and retains
+22 later current modules outside the publisher's frozen canonical context.
+[`LATEST-PUBLIC-UNION-CERTIFICATE.json`](LATEST-PUBLIC-UNION-CERTIFICATE.json)
+binds every exact source body, its import closure and original context, and the
+losslessly compressed full audit. The original 1,340 fresh-run certificate and
+all historical profiles remain separate.
 
 The executable uses one shared vector for every affine row. It produces an
 independently checked rational witness or nonnegative original-row contradiction
@@ -36,6 +56,7 @@ python3 scripts/build_native.py
 python3 scripts/check_core.py
 python3 scripts/build_prerequisites.py
 lake build formal
+lake build latestFormal
 python3 scripts/build_connected.py all
 ```
 
@@ -46,6 +67,20 @@ contexts, including isolated historical variants. The newly published
 package now supplies the frozen 53 required profiles and 25 provisional profiles;
 the earlier publication hold is superseded. `PUBLIC-DELIVERY-REVIEW.json` pins
 the source/context comparison and the separate qualified reproduction plan.
+Its byte-identical `lake build connectedQualified` replay completed **52 of 53
+required profiles**, including the 1,124-module compatible and 1,411-module
+canonical full audits. The original 4 GiB audit failure in the historical
+337-module `825/base` context remains recorded in
+`PUBLISHED53-PORTABLE-CERTIFICATE.json`. A separately attributed retry of that
+same context passed at 6 GiB and 180 seconds, with 12,052 owned declarations and
+8,775 theorems; `BASE-RESOURCE-EXCEPTION-CERTIFICATE.json` preserves that audit.
+This retry does not rewrite the original frozen reproduction's status.
+`latestFormal` reconstructs an isolated context from the portable exact source
+manifest, invokes the frozen accepted builder and authenticates each available
+component cache before use. Its aggregate and complete audit are always new;
+its separate `LATEST-PUBLIC-REPLAY-RESULT.json` reports actual fresh/reuse counts.
+`python3 scripts/replay_latest_union.py --prepare-only` verifies and stages that
+source context without starting a compiler.
 `scripts/assemble_public.py` can regenerate the additive public graph
 and content-addressed source store; the checked-in source store supports offline
 proof replay once the pinned external dependencies are available.
@@ -78,17 +113,80 @@ That context has its own hashes and receipts. The current wire witness and
 contradiction checkers have compiled refinement proofs. This does not yet prove
 the entire native solver, every chart compiler input, or the Rust binary correct.
 
+`TYPED-REUSE-CERTIFICATE.json` accepts the full original typed bank and two
+concrete native chart compiler fixtures over 52 modules. It checks the actual
+calendar, shared inverse-rate and hybrid-coin bank, and exact finite-set equality
+between the native 9/17 emitted rows and the original compiler. General raw
+source admission and all chart inputs remain separate obligations.
+
 `scripts/check_typed_reuse.py` checks the original typed bank and concrete native
 compiler fixtures against exact fresh public provider objects. The recovered
 G7 executable coefficient chain is staged separately by
 `scripts/prepare_coefficient_recovery.py`; its prior failed full-epoch source and
-unrun code-generation smoke are preserved. A prepared derivative receives no
-pass until its own bounded check and full audit succeed.
+all failed smoke attempts are preserved. `COEFFICIENT-RECOVERY-CERTIFICATE.json`
+accepts the repaired full-epoch root over its exact 118-module context, retaining
+all original executable definitions and theorem statements at the default
+heartbeat limit. The original enumeration provider's native runtime has linked
+from its exact generated C and 670 dependency modules. Its unchanged broad
+coefficient smoke reached the 180-second limit; no complete smoke pass is
+assigned. `NATIVE-SYMBOL-CLOSURE-RESULT.json` and
+`FINENUM-SMOKE-RUNTIME-RESULT.json` preserve the distinct link and execution
+results. The support-based original epoch evaluator is checked separately.
+
+`POPULATION-FIXTURE-CERTIFICATE.json` binds the 108-module original population
+kernel audit and actual compiled-evaluator executions. All eight complete literal
+tables and unordered fibres agree with Rust and an independent spectral oracle,
+including the 193 supported four-copy outputs. This evaluator is distinct from
+the standalone `gparity` executable, and these fixtures do not establish a
+universal Rust quotient or whole-epoch refinement.
+
+`SUPPORT-JOIN-CERTIFICATE.json` accepts three separate new proof roots: admitted
+panel joining, exact support-only population polynomial readout, and executable
+panel joining. Their 117/120/120-module audits overlap; counts must not be added.
+The generic support readout avoids enumerating the full raw Code carrier while
+proving equality to the unchanged inherited rational polynomial.
+
+`FULL-EPOCH-SUPPORT-CERTIFICATE.json` accepts the generic finite support and
+literal-join whole-epoch compiler over 124 modules. Its complete audit checks
+3,398 declarations and 2,161 theorems, including equality of the entire rational
+multivariate polynomial to the unchanged inherited `fullCoefficients` and the
+original physical epoch corollary. Actual mixed-epoch evaluator fixtures have
+separately attributed evidence below; universal Rust refinement remains open.
+
+The original mixed-epoch evaluator has now executed all nine fixed contexts:
+the eight ordinary fixtures and the separately admitted parallel-occurrence
+fixture. Every complete literal selected view, witness and rational coefficient
+table agrees with Rust and the independent single mixed-generator oracle.
+`ORIGINAL-EPOCH-FIXTURE-CERTIFICATE.json` and
+`ORIGINAL-PARALLEL-EPOCH-FIXTURE-CERTIFICATE.json` bind their complete kernel
+audits. `ORIGINAL-EPOCH-NATIVE-EXECUTION-RESULT.json` and
+`ORIGINAL-PARALLEL-EPOCH-NATIVE-EXECUTION-RESULT.json` bind the separate actual
+executions, including the exact generated native enumeration provider. These
+are compiled Lean evaluator results; a general Rust refinement and standalone
+original-source ELF remain separate obligations.
+
+`EFFECTIVE-BOUNDARY-CERTIFICATE.json` accepts the sparse original pulse and
+deterministic boundary compiler over 133 modules, including exact equality to
+the inherited polynomial and actual source kernel. The separately checked
+`ORIGINAL-BOUNDARY-FIXTURE-CERTIFICATE.json` binds 157/158-module complete audits;
+`ORIGINAL-BOUNDARY-NATIVE-EXECUTION-RESULT.json` records **12/12** exact evaluator
+comparisons with Rust and the independent finite-action oracle. These preserve
+the actual entering register, current live owners and original parallel IDs.
+The generic Lean equality and finite execution tests do not establish a
+universal Rust refinement or raw source-admission theorem.
 
 `CORE-CERTIFICATE.json` and `REUSE-CERTIFICATE.json` identify actual accepted
 attempts. Their evidence directories preserve source snapshots, diagnostics,
 import bindings, and audit results. The original affine/count sources and binary
 identity remain under `evidence/history/affine-v1`; the accepted chart baseline is
-also preserved under `evidence/history/chart-v1`. Full-union progress is recorded
-in `.build/LATEST-RUN.json` once that runner starts; no full-union pass is claimed
-by the source inventory alone.
+also preserved under `evidence/history/chart-v1`. Kernel acceptance and actual
+execution evidence are recorded separately; source inventories alone assign no
+pass. The full 109,658,348-byte union audit is distributed as a 7,210,461-byte gzip
+with its raw SHA256 and restoration manifest. Verify it with
+`scripts/restore_distributed_evidence.py`; archived scratch loader diagnostics
+can be verified or restored with `scripts/restore_loader_logs.py`. Neither
+compression nor diagnostic reclamation changes original receipts or objects.
+The portable published-profile projection retains all original certificate
+bytes and a reversible mapping for every snapshot file. Verify the complete
+original snapshot identities with `scripts/restore_evidence_projection.py` and
+its `RESTORE-MANIFEST.json`; the bulky original snapshot remains local evidence.

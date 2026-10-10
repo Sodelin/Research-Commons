@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reproducible theorem-level map; source reads are not new compiler receipts."""
 from pathlib import Path
-import hashlib, json, re
+import gzip, hashlib, json, re
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
 records = []
@@ -57,6 +57,11 @@ add('G4-ORDINARY-OVERSHOOT-CERTIFICATE','G4','Finite exact Bernstein witness exc
  'Terminating enumeration of exact finite ordinary inverse blocks and strictly negative Bernstein moment inequalities; the original-taxon decoder learns the unknown completion law rather than observing hidden forest/root-count channels',
  ['Search and exact algebraic sign-certificate implementation are unexecuted','No uniform practical cap as c approaches a; arbitrary real c is not an effective input','Only an upper prefix constraint is supplied; smaller-prefix rivals, uncalibrated networks and INDEPENDENT-only menus remain unresolved; full G4 remains open'],
  [document_ref(base+'2026-10-10-dot-g4-ordinary-overshoot-certificate-1053z/ORDINARY-OVERSHOOT-MOMENT-CERTIFICATE.md'),document_ref(base+'2026-10-10-dot-g4-ordinary-overshoot-certificate-1053z/INDEPENDENT-REVIEW.md'),document_ref(base+'2026-10-10-dot-g4-ordinary-overshoot-certificate-1053z/CODEX-HANDOFF.md'),document_ref(base+'2026-10-09-dot-calibrated-tree-edge-reduction-1531z/CALIBRATED-ORIGINAL-TAXON-FOREST-DECODER.md')], ['G4-GLOBAL'])
+add('G4-SOURCE-UNIFORM-NEGATIVE-PRIMITIVE','G4','Sharp source-uniform chronological negative-part bound in actual equal-arm INDEPENDENT forest cells','independently_reviewed_hand_source_corollary',[],
+ ['Actual current-root unmarked opaque-forest equal-arm B(t,g), ordinary pair-rate coalescence and complete pooling','One unchanged original IID routing bank, t>=0 and interior g','Arity n>=4 for the first nonzero primitive; fixed arity in shared-source countable limits','Natural BOTH observations additionally require the original same-bank COMMON calibration and calibrated decoder'],
+ 'Exact binomial two-merger integral and no-merger diagonal-ratio transport give prefix-weighted sum of negative primitive parts <=1/20, sharp via strict finite n=4 cells approaching the infinite-time limit',
+ ['No Lean source/build or executed solver is supplied','Positive chronological reservoir layer or exact source-valid fixed-target rivals remain unresolved; full G4 is open','No arbitrary exchangeable projective kernel, retained-tag/timed-bin/controlled-register/arbitrary-graph extension or global G6 forest norm follows'],
+ [document_ref(base+'2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/CODEX-INTEGRATION-CONTRACT.md'),document_ref(base+'2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/SOURCE-TWO-MERGER-TIME-INTEGRAL.md'),document_ref(base+'2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/INDEPENDENT-NEGATIVE-PRIMITIVE-REVIEW.md'),document_ref(base+'2026-10-10-dot-g4-source-uniform-primitive-checkpoint-1258z/PROVIDER-PINS.json')], ['G4-GLOBAL'])
 add('G5-BINARY-M3','G5','Arbitrary-weight binary source triple full timed laws identify full normalized cluster and split unions','inherited_formal_complete',[
  (base+'2026-10-10-dot-g5-full-binary-m3-0209z/sources/G5M3NormalizedClusterSplitIdentification.lean',['GProgram.G5.M3NormalizedClusterSplitIdentification.m3_identifies_documented_full_cluster_split_unions'])],
  ['Finite binary temporal LSA directed multigraph; hybrid outgoing original edges are undirected bridges','Positive original and ancestral pair rates, interior source-specific inheritance','At least three original taxa; contemporaneous tips at same age','Each source retains its own COMMON/current-owner INDEPENDENT mechanism','Equality of ordinary hidden-register full timed genealogy laws on every original three-tip panel'],
@@ -205,12 +210,20 @@ add('G7-ORIGINAL-WHOLE-EDGE-CANDIDATE','G7/G6','Whole-edge calendar gathering an
  ['Whole-edge chain stops at OriginalEdgeOperators matrix type inference and PairAt/offDiag subtype normalization diagnostics','All subsequent candidate components and complete audit remain uncompiled/unrun','Constructive coordinate image alone does not imply whole chronological source-law equality'],
  [recovery+'source-notes/ALL-ORIGINAL-EDGE-EXPOSURE-PRESERVATION.md',recovery+'LATEST-CANDIDATE-STATUS.json',recovery+'attempts/20261010T025931.806556Z__00001-G7OriginalEdgeOperators/stdout',base+'2026-10-01-g7-continuous-design/PROOFS.md',base+'2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md'],
  ['G7-EPOCH','G1 actual frontier/context algebra','G2 source completion/control semantics'])
+add('G1-UNRANKED-SOURCE-LUMPABILITY','G1/G7/G6/Rust','Actual original step and epoch PMFs descend to the same unranked label/population/register view','inherited_scoped_formal_complete',[
+ (base+'2026-10-04-dot-complete-original-g1-1549z/src/G1UnrankedSourceView.lean',['G1UnrankedSourceView.actual_unranked_population_blocks','G1UnrankedSourceView.actual_unranked_projected_merger']),
+ (base+'2026-10-04-dot-complete-original-g1-1549z/src/G1UnrankedActualGenerator.lean',['G1UnrankedActualGenerator.actual_unranked_step_row_independent']),
+ (base+'2026-10-04-dot-complete-original-g1-1549z/src/G1UnrankedActualEpoch.lean',['G1UnrankedActualEpoch.actual_unranked_time_kernel','G1UnrankedActualEpoch.actual_unranked_epoch_row_independent'])],
+ ['Same actual finite N, sample, selected Copy panel and positive original rate bank','Equal full unranked selected subtree view, retaining each original population and SAME vertex register','Same nonnegative epoch duration; child-swap quotient preserves original labels and rooted topology'],
+ 'Existing original-source PMF lumpability erases implementation representatives and child orientations. This is reused as the source-side quotient premise rather than proved anew from a native formula',
+ ['Native canonical global-label forest encoder agreement and explicit coefficient fibre sums remain separate','LAW divided-difference/history coefficient recurrence and injective restricted-carrier transport remain separate','Different original populations at equal exposure need an additional normalized forest-key bridge; the existing theorem keeps population IDs equal'],
+ [base+'2026-10-04-dot-complete-original-g1-1549z/certificate/fresh/SERIAL-BUILD-RECEIPT.json'], ['G1-ORIGINAL','NATIVE-LAW-ORIGINAL-QUOTIENT'])
 add('NATIVE-LAW-ORIGINAL-QUOTIENT','G7/G6/Rust','Native unordered ordinary forest kernel as pushforward of literal original ordered source coefficients','formalization_open',[],
  ['Actual admitted source-valid local Code with canonical live-only encoding and original sample/label embedding','All local Copy colocated in one original edge or ancestral population','Ordered source merger preserves first representative, ordered child graft, original locations/register; each orientation has half rate','Requested native forest coefficient is the sum over every literal Code destination in its explicit unordered canonical quotient fibre'],
- 'Rust/design agree exact original recurrence and destination encoding; inherited population-split theorem supplies the required restricted-carrier architecture for mixed global frontiers',
+ 'Rust/design agree exact original recurrence and destination encoding; inherited G1 source PMF lumpability supplies representative/orientation erasure at equal full unranked population/register view, and the original population split supplies restricted-carrier architecture for mixed global frontiers',
  ['Proved original Code/encoding and ordered-to-unordered quotient transport','Actual inherited-definition native coefficient oracle and separately executed codegen receipt','Universal fibre-sum equality to LAW edgeKernel and label/population reassembly; finite examples do not establish it'],
  [base+'2026-10-10-codex-lean-rust-parity/design/POPULATION-REFINEMENT.md'],
- ['G7-FULL-EPOCH-COEFFICIENTS','G7 actual population split/reassembly'])
+ ['G7-FULL-EPOCH-COEFFICIENTS','G1-UNRANKED-SOURCE-LUMPABILITY','G7 actual population split/reassembly'])
 add('G7-EXECUTABLE-COEFFICIENT-SUPPORT','G7/G6/Rust','Zero actual population coefficients outside literal fuel-bounded original merger closure','new_draft_compilation_pending',[
  (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveCoefficientSupport.lean',['GProgram.G7.EffectiveCoefficientSupport.destinations','GProgram.G7.EffectiveCoefficientSupport.coefficients_zero_of_not_mem','GProgram.G7.EffectiveCoefficientSupport.coefficients_polynomial_zero_of_not_mem','GProgram.G7.EffectiveCoefficientSupport.actual_population_zero_of_not_mem'])],
  ['Any actual source-valid Code, arbitrary coefficient fuel and finite copy cardinality','Literal original Choice and merger with exact Code equality','Actual semantic zero-kernel conclusion additionally assumes all-Copy CoLocated in one original population'],
@@ -229,6 +242,135 @@ add('G7-ORIGINAL-POPULATION-NATIVE-FIXTURES','G7/G6/Rust','Execute inherited ori
  'Saved native main implements exact design source_population_probe_v1 schema with literal Code rows plus sums over entire canonical global-label forest fibres; avoids full Code FinEnum scan',
  ['Source/proof compilation, full selected ownership/axiom audit and separate native code generation are pending','Eight-fixture independent Lean/Rust/oracle execution remains pending','Finite canonical serializer checks do not establish a universal Code-to-LAW quotient theorem'],
  [document_ref(base+'2026-10-10-codex-lean-rust-parity/design/population_oracle.py'),base+'2026-10-10-codex-lean-rust-parity/design/POPULATION-REFINEMENT.md',base+'2026-10-10-codex-lean-rust-parity/reuse/POPULATION-FIXTURE.md'], ['G6-NATIVE-TWO-TIP-COMPILER','G7-EXECUTABLE-COEFFICIENT-SUPPORT','NATIVE-LAW-ORIGINAL-QUOTIENT'])
+add('G7-CONSTRUCTIVE-PANEL-JOIN','G7/G6/Rust','Construct an actual admitted global Code for every pair of admitted whole-copy panel indices','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7ConstructivePanelJoin.lean',['GProgram.G7.ConstructivePanelJoin.joinedState_valid','GProgram.G7.ConstructivePanelJoin.joinedState_sourceValid','GProgram.G7.ConstructivePanelJoin.joinCode_view','GProgram.G7.ConstructivePanelJoin.admitted_join_view','GProgram.G7.ConstructivePanelJoin.joinIndex_value']),
+ (base+'2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/SourceCopyCarrierTransport.lean',['UnifiedLean.Source.SourceCopyCarrierTransport.mapLabels_wellLabelled','UnifiedLean.Source.SourceCopyCarrierTransport.lifted_original_genealogy','UnifiedLean.Source.SourceCopyCarrierTransport.lifted_original_population']),
+ (base+'2026-10-09-dot-g7-full-epoch-polynomial-2148z/G7FiniteForestReassembly.lean',['GProgram.G7.FiniteForestReassembly.viewIndex','GProgram.G7.FiniteForestReassembly.joinIndex'])],
+ ['Any finite original Copy panel and its disjoint complement','Actually source-valid local Code states with the original graph and restricted original sample assignments','Literal tree-label subtype lifts, original locations and inherited LEFT-register join convention'],
+ 'Constructive joined state and encodeActual witness are intended to eliminate inherited index fallback on admitted local products, without scanning all Code states or equating decoded dead garbage',
+ ['Fresh source checking and complete ownership/axiom audit pending','Same entering register and valid population factorization remain the inherited epoch-law premises','Normalized restricted coefficient table equality and full executable epoch extraction remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/CONSTRUCTIVE-PANEL-JOIN.md',base+'2026-10-10-codex-lean-rust-parity/design/EPOCH-REFINEMENT.md'], ['G7-FULL-EPOCH-COEFFICIENTS','G7-ENCODED-MERGER-SUPPORT'])
+add('G7-SUPPORT-SELECTED-EXTRACTION','G7/G6/Rust','Support-only selected-row extraction equals the entire inherited rational populationSelected polynomial','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7PopulationSelectedSupport.lean',['GProgram.G7.PopulationSelectedSupport.populationSelectedSupport','GProgram.G7.PopulationSelectedSupport.polynomial_populationSelectedSupport','GProgram.G7.PopulationSelectedSupport.value_populationSelectedSupport','GProgram.G7.PopulationSelectedSupport.populationSelectedSupport_actual']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveFullEpochCoefficients.lean',['GProgram.G7.EffectiveFullEpochCoefficients.populationSelected','GProgram.G7.EffectiveFullEpochCoefficients.polynomial','GProgram.G7.EffectiveFullEpochCoefficients.populationSelected_actual'])],
+ ['Any admitted original Code, finite original Copy carrier and complete FinEnum providers','Exact deduplicated original Choice/merger closure at copy-cardinality fuel','Rational polynomial identity requires no physical-bank or CoLocated premise; actual-kernel interpretation additionally requires all-Copy CoLocated'],
+ 'The accepted outside-support raw-zero theorem removes every omitted Code term from the complete selected-view pushforward, proving exact polynomial equality independent of list ordering and raw duplicate monomials',
+ ['Fresh source checking and complete ownership/axiom audit pending','General sparse normalization/serializer equality and universal Rust refinement remain separate','Full epoch row-product support and selected-index extraction correspondence remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/SUPPORT-SELECTED-EXTRACTION.md',base+'2026-10-10-codex-lean-rust-parity/design/EPOCH-REFINEMENT.md'], ['G7-EXECUTABLE-COEFFICIENT-SUPPORT','G7-FULL-EPOCH-COEFFICIENTS','G7-CONSTRUCTIVE-PANEL-JOIN'])
+add('G7-EFFECTIVE-PANEL-JOIN','G7/G6/Rust','Executable panel constructor refines inherited selected-index join on actual local Code witnesses','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectivePanelJoin.lean',['GProgram.G7.EffectivePanelJoin.joinedStateEffective','GProgram.G7.EffectivePanelJoin.joinedCode','GProgram.G7.EffectivePanelJoin.joinedSelected_eq'])],
+ ['Actually admitted local original Code witnesses on a finite copy panel/complement','Original restricted sample maps, ordered trees, populations and inherited LEFT-register convention'],
+ 'Pure constructor and original encodeActual/project refine inherited joinSelected without extracting a Prop witness or scanning Code',
+ ['Fresh checking and complete audit pending','Full epoch product extraction and universal Rust refinement remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/CONSTRUCTIVE-PANEL-JOIN.md'], ['G7-CONSTRUCTIVE-PANEL-JOIN','G7-FULL-EPOCH-COEFFICIENTS'])
+add('G7-SPARSE-ROW-PRODUCTS','G7/G6/Rust','Exact selected polynomial of supplied literal-row products equals the finite selected-key fibre sum','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7SparseRowProducts.lean',['GProgram.G7.SparseRowProducts.readRows','GProgram.G7.SparseRowProducts.multiplyRows','GProgram.G7.SparseRowProducts.polynomial_product','GProgram.G7.SparseRowProducts.polynomial_read_multiplyRows_partition'])],
+ ['Explicit projected literal join equals the inherited selected-key join','All supplied literal rows in every selected-key fibre contribute; repeated keys are summed'],
+ 'Pure list row products admit a universal rational polynomial pushforward identity; no complete finite Code carrier is enumerated',
+ ['Fresh checking and complete audit pending','Specific full original epoch consumer and normalized serializer/refinement remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/FULL-EPOCH-SUPPORT.md'], ['G7-SUPPORT-SELECTED-EXTRACTION','G7-EFFECTIVE-PANEL-JOIN'])
+add('G7-FULL-EPOCH-SUPPORT','G7/G6/Rust','Support-only literal whole-epoch rows refine unchanged inherited fullCoefficients and actual epoch law','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7FullEpochSupport.lean',['GProgram.G7.FullEpochSupport.fullRows','GProgram.G7.FullEpochSupport.fullRows_register','GProgram.G7.FullEpochSupport.polynomial_fullRows','GProgram.G7.FullEpochSupport.epochRows_actual'])],
+ ['Any actual admitted original entering Code and finite original copy carrier','Whole current-population ancestor fibres, original restricted sample maps and subtype label lifts','Entire original entering register preserved by every row witness','Full polynomial identity is algebraic; physical fullRows law retains ActiveIn, positive original bank and nonnegative duration'],
+ 'New executable support lists and constructive Code joins are intended to give exact whole selected-view polynomial output without complete Code/selected-index scans',
+ ['Fresh checking and complete audit pending','Eight ordinary and separately typed parallel mixed epoch compiled evaluator comparisons pending','General normalized dictionary/serializer and universal Rust refinement remain open'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/FULL-EPOCH-SUPPORT.md',base+'2026-10-10-codex-lean-rust-parity/design/EPOCH-REFINEMENT.md'], ['G7-SPARSE-ROW-PRODUCTS','G7-SUPPORT-SELECTED-EXTRACTION','G7-EFFECTIVE-PANEL-JOIN','G7-FULL-EPOCH-COEFFICIENTS'])
+add('G7-RANK-COMPRESSION-REPAIR','G7','Pointwise-total exact-law policy has a finite rank bound on physical informative calls','new_elaboration_derivative_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7ExactLawRankCompression.lean',['GProgram.G7.ExactLawRankCompression.redundant_response_unique','GProgram.G7.ExactLawRankCompression.first_informative','GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon'])],
+ ['Original affine response representation, finite-dimensional base coefficient space','Pointwise CorrectRun on actual admitted sources; deletion-closed legality and original path update'],
+ 'Explicit include affine scopes restore declared proof premises dropped by section-variable inference; executable definitions and resources preserved',
+ ['Fresh checking and complete audit pending','Effective simulation, span testing, complete QE/CAD and G7 Pareto extraction remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/reuse/G7-RANK-COMPRESSION-REPAIR.json'], ['G7-POLICY-MASTER'])
+add('G7-ORIGINAL-FAMILY-CARRIER-COMPOSITION','G7','Actual positive-support programme resources and census-derived response-preserving original carrier assembly','inherited_exact_candidates_compilation_pending',[
+ (recovery+'latest/semantic/source-store/1a95edf6b4a0e361ccc053531fd24de4de45b6253a139b266e68d282c3fbecd5.lean',['GProgram.G7.OriginalFamilyStrategy.actual_programme_response_linear','GProgram.G7.OriginalFamilyStrategy.original_programme_legal_deletion','GProgram.G7.OriginalFamilyStrategy.actual_total_original_strategy_bounded_winning','GProgram.G7.OriginalFamilyStrategy.actual_losing_budget_excludes_total_policy']),
+ (recovery+'latest/semantic/source-store/78f22f5917212683b4429d446231907bb8694b17b58d9234cd869eabd8099c6e.lean',['GProgram.G7.OriginalCarrierCoverage.every_original_row_has_fixed_carrier_response','GProgram.G7.OriginalCarrierCoverage.every_original_programme_has_fixed_carrier_response']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalCarrierCoverage.lean',['GProgram.G7.OriginalCarrierCoverage.every_original_row_has_fixed_carrier_response','GProgram.G7.OriginalCarrierCoverage.every_original_programme_has_fixed_carrier_response'])],
+ ['Complete original hybrid registry and same original graph/calendar/positive bank across all reset rows','Literal pre-source PMF programme randomization, finite output channels and positive support costs','Pointwise total exact-law policy; union-site/row/call path budget preserved under sublist deletion','Exact original census carrier equivalences, no padding or refitted bank'],
+ 'Existing compatible semantic consumers derive linear responses and physical path costs, compose F1 rank horizon, and preserve every actual original row/programme on exact finite carriers; reuse these proofs before creating another strategy argument',
+ ['Repair rank section elaboration and compile/audit complete original semantic191 context','Effective syntax, cofacial admission, independent whole-edge coverage and real QE/selection/Pareto producer remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/G7-CLOSURE-AUDIT-20261010.md'),recovery+'source-notes/FORMAL-COVERAGE.md'], ['G7-RANK-COMPRESSION-REPAIR','G7-CENSUS','G7-COMPLETED-LAW','G7-POLICY-MASTER'])
+add('G7-ORIGINAL-EPOCH-NATIVE-FIXTURES','G7/G6/Rust','Eight ordinary and ninth actual parallel-source whole selected-view epoch comparisons','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalEpochFixture.lean',['UnifiedLean.G7.OriginalEpochFixture.twoEdgeState_sourceValid','UnifiedLean.G7.OriginalEpochFixture.edgeAncestralState_sourceValid','UnifiedLean.G7.OriginalEpochFixture.carriedNodeState_sourceValid','UnifiedLean.G7.OriginalEpochFixture.fixtureJson','UnifiedLean.G7.OriginalEpochFixture.fixtureNamed']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalEpochFixtureMain.lean',['main']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalParallelEpochFixture.lean',['UnifiedLean.G7.OriginalParallelEpochFixture.graphCode_valid','UnifiedLean.G7.OriginalParallelEpochFixture.graphCode_registryValid','UnifiedLean.G7.OriginalParallelEpochFixture.parentOccurrence_exact','UnifiedLean.G7.OriginalParallelEpochFixture.initialState_sourceValid','UnifiedLean.G7.OriginalParallelEpochFixture.fixture']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalParallelEpochFixtureMain.lean',['main'])],
+ ['Actual encodeActual entering images and complete original sample/label embeddings','Complete ordered selected genealogy/population/full-register output and literal Code witnesses','Separately typed rooted binary LSA parallel parent occurrences E2/E3, complete original registry false=2/true=3','Exact sparse support-only baseline polynomial_fullRows, no complete four-copy Code enumeration'],
+ 'Source-valid empty/singleton/mixed edge/ancestral/node exterior/carried/permuted/parallel contexts instantiate the exact original sparse epoch baseline and serialize every selected-view fibre',
+ ['Fresh separate source/audit checks and actual compiled-evaluator runs pending','Independent nine-context Lean/Rust/whole-generator comparison pending','General normalization/serializer correctness and universal Rust refinement remain open'],
+ [base+'2026-10-10-codex-lean-rust-parity/design/EPOCH-REFINEMENT.md',base+'2026-10-10-codex-lean-rust-parity/reuse/FULL-EPOCH-SUPPORT.md'], ['G7-FULL-EPOCH-SUPPORT','G7-CENSUS','G6-NATIVE-TWO-TIP-COMPILER'])
+add('G7-EXECUTABLE-BOUNDARY-COEFFICIENTS','G7/G6/Rust','Conditional original current-owner and stored-register boundary sparse rows refine inherited polynomial readouts','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveBoundaryCoefficients.lean',['GProgram.G7.EffectiveBoundaryCoefficients.pulseCodeEffective_eq','GProgram.G7.EffectiveBoundaryCoefficients.exitCodeEffective_eq','GProgram.G7.EffectiveBoundaryCoefficients.polynomial_pulseRows','GProgram.G7.EffectiveBoundaryCoefficients.polynomial_commonRows','GProgram.G7.EffectiveBoundaryCoefficients.pulseRows_register','GProgram.G7.EffectiveBoundaryCoefficients.pulseRows_actual']),
+ (recovery+'source-store/f447e7ad6c52ab2a16781fb4671e33eadf508309789f2f0046f2765237efcf4c.lean',['GProgram.G7.OriginalBoundaryPolynomial.coinPolynomial','GProgram.G7.OriginalBoundaryPolynomial.pulsePolynomial','GProgram.G7.OriginalBoundaryPolynomial.actual_pulse_polynomial'])],
+ ['Actual rooted binary graph, admitted entering Code and genuine original hybrid-parent pair','Exactly current AtNode live owners, each complete ancestral fibre shares one pulse coin','Original gamma is probability true/parent1; COMMON uses entering stored bit and conditional constant1','Complete entering register, genealogy, ancestor and original location/edge IDs retained'],
+ 'New executable literal witness and sparse coefficient composition reuses unchanged inherited boundary polynomial; no reproof of source boundary projectivity and no full Code/selected-index enumeration',
+ ['Fresh source/audit checks and twelve typed boundary evaluator comparisons pending','General normalization/serialization and universal Rust refinement remain open','Finite word/calendar legal-order and once-drawn initialization/completion coefficient composition remain separate'],
+ [base+'2026-10-10-codex-lean-rust-parity/design/BOUNDARY-REFINEMENT.md',base+'2026-10-10-codex-lean-rust-parity/design/SOURCE-PARENT-ORIENTATION.md'], ['G7-SPARSE-ROW-PRODUCTS','G7-FULL-EPOCH-SUPPORT','G2-TIMED','G7-COMPLETED-LAW'])
+add('G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7/G6/Rust','Executable once-drawn complete original hybrid register mixture refines unchanged initialPolynomial','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveInitializationCoefficients.lean',['GProgram.G7.EffectiveInitializationCoefficients.originalRegisterEffective_eq','GProgram.G7.EffectiveInitializationCoefficients.initialCodeEffective_eq','GProgram.G7.EffectiveInitializationCoefficients.polynomial_initialRows','GProgram.G7.EffectiveInitializationCoefficients.initialRows_actual']),
+ (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7OriginalInitializationPolynomial.lean',['GProgram.G7.OriginalInitializationPolynomial.registerPolynomial','GProgram.G7.OriginalInitializationPolynomial.initialPolynomial','GProgram.G7.OriginalInitializationPolynomial.actual_original_initial_polynomial'])],
+ ['Same original graph, hybrid carrier and sample map; actual encodeActual source initialization','True is original parent1, nonhybrid register bits false, every hybrid register drawn once including empty Copy','Explicit shared variable embedding; physical evaluation substitutes the same original gamma assignment'],
+ 'Pure finite register/initial-Code support targets exact rename of the unchanged original initialization polynomial without a whole Code or selected-index scan',
+ ['Fresh boundary dependency and initialization kernel/audit check pending','Concrete natural word composition, normalization/serializer correctness and universal Rust refinement remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md'),base+'2026-10-10-codex-lean-rust-parity/design/WORD-REFINEMENT.md'], ['G7-EXECUTABLE-BOUNDARY-COEFFICIENTS','G7-COMPLETED-LAW'])
+add('G7-SPARSE-WORD-COMPOSITION','G7/G6/Rust','Finite literal dependent-row composition for exact polynomial or shared-bank physical original words','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7SparseWordComposition.lean',['GProgram.G7.SparseWordComposition.bindRows','GProgram.G7.SparseWordComposition.followRows','GProgram.G7.SparseWordComposition.polynomial_followRows','GProgram.G7.SparseWordComposition.polynomial_original_word','GProgram.G7.SparseWordComposition.actual_followRows','GProgram.G7.SparseWordComposition.evaluated_original_word']),
+ (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7SymbolicProgramPolynomial.lean',['GProgram.G7.SymbolicProgramPolynomial.wordPolynomial','GProgram.G7.SymbolicProgramPolynomial.actual_source_word_polynomial','GProgram.G7.SymbolicProgramPolynomial.actual_natural_word_polynomial']),
+ (base+'2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/SourceProgramTransport.lean',['UnifiedLean.Source.SourceProgramTransport.actual_program_step_projection','UnifiedLean.Source.SourceProgramTransport.actual_source_program_projection'])],
+ ['Complete literal conditional support lists, actual admitted Code witnesses, exact coefficient products and full destination fibre sums','Exact word coefficient theorem requires exact per-step selected-table coefficient identity','Separate physical theorem requires actual per-step law and one shared positive original rate bank, nonnegative slot durations, gamma and mode vector'],
+ 'Executable bind/follow recurrence visits finite supplied supports; existing actual source projection transports the physical word law while coefficient identity retains its stronger explicit premise',
+ ['Fresh kernel/audit checking pending','Concrete original node/slot/natural initialization consumer remains to be composed','Chosen epochTable/representative polynomial uniqueness is an explicit gap; shared-slot physical evaluation is not an arbitrary survival cube','General normalized dictionary/serializer correctness, runtime cap semantics and universal Rust refinement remain open'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/WORD-CHOSEN-TABLE-OBLIGATION-20261010T1240Z.md')], ['G7-SPARSE-ROW-PRODUCTS','G7-FULL-EPOCH-SUPPORT','G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7-COMPLETED-LAW'])
+add('G7-SUPPORT-ANCESTRAL-COMPLETION','G7/G6/Rust','Support-only exact rational rows for actual infinite ancestral completion','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveAncestralCompletion.lean',['GProgram.G7.EffectiveAncestralCompletion.kernelExpr_eq_ancestral','GProgram.G7.EffectiveAncestralCompletion.constantCoefficients','GProgram.G7.EffectiveAncestralCompletion.readRational_ancestral','GProgram.G7.EffectiveAncestralCompletion.rationalRows_actual','GProgram.G7.EffectiveAncestralCompletion.readRational_eq_completionRational','GProgram.G7.EffectiveAncestralCompletion.completionRows_actual']),
+ (base+'2026-10-09-dot-g7-actual-ancestral-polynomial-2101z/G7AncestralPolynomialKernel.lean',['GProgram.G7.AncestralPolynomialKernel.kernelExpr','GProgram.G7.AncestralPolynomialKernel.ancestralPolynomial']),
+ (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7AncestralRationalCompletion.lean',['GProgram.G7.AncestralRationalCompletion.actual_completion_at_zero','GProgram.G7.AncestralRationalCompletion.actual_completion_rational']),
+ (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7SelectedCompletionPolynomial.lean',['GProgram.G7.SelectedCompletionPolynomial.actual_source_completion_projection','GProgram.G7.SelectedCompletionPolynomial.actual_selected_completion_rational'])],
+ ['Algebraic recurrence-name equality at arbitrary fuel and actual admitted Code','Actual completion statements require nonempty Copy, full all-copy AncestralRoot support and positive original rate bank','Complete ordered selected genealogy/location/full original register retained; no additional survival variable'],
+ 'Reuses identical inherited ordered-half-rate recurrence bodies, accepted outside-support zero and the genuine original completion limit to identify exact rational sparse fibre rows with completionKernel and unchanged completionRational',
+ ['Fresh kernel checking and complete audit pending','Six direct original rational completion fixtures and whole finite-word completion composition remain pending','General native encoding/normalization refinement and chosen epoch-table coefficient identity remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/design/WORD-COMPLETION-EXTENSION-20261010T1300Z.md'),document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md')], ['G7-EXECUTABLE-COEFFICIENT-SUPPORT','G7-SUPPORT-SELECTED-EXTRACTION','G7-COMPLETED-LAW'])
+add('G7-ORIGINAL-COMPLETION-NATIVE-FIXTURES','G7/G6/Rust','Six direct source-valid complete rational ancestral-root selected-law controls','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalCompletionFixture.lean',['UnifiedLean.G7.OriginalCompletionFixture.flatState_sourceValid','UnifiedLean.G7.OriginalCompletionFixture.encoded_ancestral','UnifiedLean.G7.OriginalCompletionFixture.carriedState_sourceValid','UnifiedLean.G7.OriginalCompletionFixture.carriedCode_ancestral','UnifiedLean.G7.OriginalCompletionFixture.fixtureNamed']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalCompletionFixtureMain.lean',['main'])],
+ ['Actual encodeActual image on the original typed two-tip source','Nonempty1..4 Copy, all-copy AncestralRoot and complete conditional registerTFT','Ordered carried subtree/nonminimum representative and injective permuted global label controls'],
+ 'Runs only actual merger-support coefficient lists, sums exact rational coefficient0 over every complete selected fibre, and retains a literal witness with nonzero constant contribution',
+ ['Fresh separate source/audit and compiled-evaluator comparisons pending','General native encoding/normalization refinement and full word wrapper/work correspondence remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/design/WORD-COMPLETION-EXTENSION-20261010T1300Z.md'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/evidence/word-completion-fixture-freeze-1/INVENTORY.json')], ['G7-SUPPORT-ANCESTRAL-COMPLETION','G7-ORIGINAL-EPOCH-NATIVE-FIXTURES'])
+add('G7-SINGLE-EPOCH-TABLE-IDENTITY','G7/G6/Rust','Entire effective sparse epoch polynomial equals the unchanged chosen selected epochTable before word composition','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7SelectedEpochTableUniqueness.lean',['GProgram.G7.SelectedEpochTableUniqueness.survival_inverseLogRates','GProgram.G7.SelectedEpochTableUniqueness.polynomial_eq_of_single_epoch_evaluations','GProgram.G7.SelectedEpochTableUniqueness.polynomial_epochRows_eq_epochTable','GProgram.G7.SelectedEpochTableUniqueness.polynomial_epochRows_representative_independent','GProgram.G7.SelectedEpochTableUniqueness.renamed_epochRows_eq_epochTable']),
+ ('/workspace/dependencies/mathlib4/Mathlib/Algebra/MvPolynomial/Funext.lean',['MvPolynomial.funext_set']),
+ (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7SelectedKernelPolynomial.lean',['GProgram.G7.SelectedKernelPolynomial.epochTable','GProgram.G7.SelectedKernelPolynomial.actual_selected_epoch_table'])],
+ ['Every actual admitted finite original Code and same complete selected genealogy/location/register fibre','At one physical epoch time1 independently positive original pair rates -log(x_i) realize x_i in(0,1)','Injective rational-to-real coefficient map and exact existing source-time kernel projection','Slot rename may identify/repeat coordinates only after the single-epoch polynomial identity'],
+ 'Reuses exact Mathlib infinite-box polynomial uniqueness and existing original PMF projectivity to identify the entire rational coefficient table and prove admitted-representative independence',
+ ['Fresh kernel checking and complete audit pending','Concrete original node/exit table coefficient binding and exact word/natural/completed consumer still need composition','General native encoding/normalization refinement remains separate; shared multi-slot calendar evaluations do not form an independent cube'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/EXACT-PROVIDER-LEADS-20261010T1315Z.json'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/WORD-CHOSEN-TABLE-OBLIGATION-20261010T1240Z.md')], ['G7-FULL-EPOCH-SUPPORT','G7-SPARSE-WORD-COMPOSITION','G7-COMPLETED-LAW'])
+add('G7-ORIGINAL-BOUNDARY-PHASE-PERMUTATION','G7/G6/Rust','Original full-Code calendar law is invariant under finite reordering within each boundary phase','inherited_scoped_formal_complete',[
+ (base+'2026-10-09-dot-g7-natural-calendar-relabelling-1958z/G7BoundaryPhasePermutation.lean',['GProgram.G7.BoundaryPhasePermutation.program_append','GProgram.G7.BoundaryPhasePermutation.exit_phase_perm','GProgram.G7.BoundaryPhasePermutation.node_phase_perm']),
+ (base+'2026-10-09-dot-g7-natural-calendar-relabelling-1958z/G7BoundaryExitCommutation.lean',['GProgram.G7.BoundaryExitCommutation.exit_code_commute']),
+ (base+'2026-10-09-dot-g7-natural-calendar-relabelling-1958z/G7NodeActions.lean',['GProgram.G7.NodeActions.kernels_commute'])],
+ ['Same original graph, admitted Code, positive bank, original parent registry/gamma/COMMON assignment','Lists are permutations within the exit phase or within the original node-entry phase','Exit and entry phases retain their original order'],
+ 'Existing exact sourceProgram PMF equalities already prove same-phase kernel commutation/permutation; sorted original-ID execution needs a finite list Perm certificate and word composition, not a new source kernel theorem',
+ ['Effective sorted enumeration permutation/calendar-date/refinement composition remains separate','Entire coefficient identity must use the per-step coefficient bridges; physical calendar evaluation alone does not prove arbitrary shared-slot coefficients'],
+ [base+'2026-10-10-codex-lean-rust-parity/lean/SEMANTIC-RANK-RECOVERY-CERTIFICATE.json',document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md')], ['G7-SPARSE-WORD-COMPOSITION','G7-COMPLETED-LAW'])
+add('G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES','G7/G6/Rust','Twelve exact conditional original boundary tables with complete selected views and literal witnesses','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixture.lean',['UnifiedLean.G7.OriginalBoundaryFixture.siteState_sourceValid','UnifiedLean.G7.OriginalBoundaryFixture.carriedState_sourceValid','UnifiedLean.G7.OriginalBoundaryFixture.ordinary_degree','UnifiedLean.G7.OriginalBoundaryFixture.fixtureNamed']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixtureMain.lean',['main'])],
+ ['Actual encodeActual entering image on the two-tip and separately admitted original parallel source','Original gamma=true/parent1; COMMON conditions on the unchanged entering register','Current live-owner fibres, empty copies, carried and outside trees, permuted injective labels and original E2/E3 occurrence IDs','Ordinary entry has the actual incoming degree-one proof; root entry keeps the actual original root'],
+ 'Saved actual-source fixture definitions and serializer match the twelve frozen design contexts; the actual inherited sparse boundary readout is used instead of an approximate independent recurrence',
+ ['Fresh boundary proof, source/audit and actual evaluator checks pending','Twelve independent Lean/Rust/whole-copy marginalization comparisons pending','Generic normalization/serializer correctness and universal Rust refinement remain open'],
+ [base+'2026-10-10-codex-lean-rust-parity/design/BOUNDARY-REFINEMENT.md',base+'2026-10-10-codex-lean-rust-parity/reuse/CONTINUATION-20261010.md'], ['G7-EXECUTABLE-BOUNDARY-COEFFICIENTS','G7-ORIGINAL-EPOCH-NATIVE-FIXTURES'])
+add('G6-ORIGINAL-POPULATION-EXPOSURE','G6/G7','Same original retained-state epoch law at equal positive population exposure','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G6OriginalPopulationExposure.lean',['GProgram.G6.OriginalPopulationExposure.original_epoch_eq_of_survival_eq','GProgram.G6.OriginalPopulationExposure.original_epoch_eq_of_exposure_eq','GProgram.G6.OriginalPopulationExposure.original_epoch_reader_eq_of_exposure_eq','GProgram.G6.OriginalPopulationExposure.original_epoch_entering_mixture_eq_of_exposure_eq'])],
+ ['Same actual original source, entering Code and original population','All Copy co-located in that population; positive original rate banks and nonnegative durations','Arbitrary same-Code reader and arbitrary correlated entering prior supported on co-located codes'],
+ 'Direct reuse of unchanged actual_population_polynomial transports the entire retained PMF at equal exposure, including all genealogy, location and original register fields',
+ ['Different population/graph forest-key transport remains separate','No positive compressed-chain reconstruction, chronological internal-merger retiming or global G6 closure follows'],
+ [base+'2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-POPULATION-CERTIFICATE.json',base+'2026-10-10-codex-lean-rust-parity/quality/PROOF-EXTENSION-REVIEW.json'], ['G7-EPOCH','G1-ORIGINAL'])
+add('G6-ORIGINAL-POPULATION-SPECTRAL-SUPPORT','G6/G7','Every nonzero original population coefficient has a Kingman lineage-count death-level exponent','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G6OriginalPopulationSpectralSupport.lean',['GProgram.G6.OriginalPopulationSpectralSupport.original_kernelExpr_level_support','GProgram.G6.OriginalPopulationSpectralSupport.original_populationPolynomial_coeff_zero_of_non_level','GProgram.G6.OriginalPopulationSpectralSupport.original_populationPolynomial_nonzero_coeff_level'])],
+ ['Any actual admitted entering/destination Code and arbitrary finite original Copy','Unchanged kernelExpr recurrence, arbitrary fuel and exact rational polynomial'],
+ 'Every surviving monomial lies at choose(j,2) with j no larger than the entering live count; this reuses the actual original merger-cardinality theorem',
+ ['Coefficient norm bounds, count-conditioned forest weights, Caratheodory compression and positive reconstruction remain separate','No full G6 master certificate follows'],
+ [base+'2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-POPULATION-CERTIFICATE.json',base+'2026-10-10-codex-lean-rust-parity/quality/PROOF-EXTENSION-REVIEW.json'], ['G7-EPOCH','G6-ORIGINAL-POPULATION-EXPOSURE'])
 add('G7-COMPLETED-LAW','G7/G6','Natural/controlled original completed-calendar polynomial response chain','inherited_scoped_formal_complete',[
  (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7CompletedCalendarPolynomial.lean',['GProgram.G7.CompletedCalendarPolynomial.actual_natural_completed_calendar_polynomial','GProgram.G7.CompletedCalendarPolynomial.actual_controlled_completed_calendar_polynomial'])],
  ['One finite original graph and parent registry','One original natural register draw and source-specific COMMON/current-owner INDEPENDENT routing','Shared actual segment-survival/gamma coordinates; fixed original-ID masks','Nonempty finite copy carrier for infinite completion interpretation'],
@@ -238,8 +380,8 @@ add('G7-COMPLETED-LAW','G7/G6','Natural/controlled original completed-calendar p
 add('G7-POLICY-MASTER','G7','Effective finite-registry legal Pareto/policy or admitted response-consistent lower-certificate endpoint','formalization_open',[],
  ['Complete finite original registry','Original finite unranked readout menu and shared source bank','Exact-law reset/deletion-closed trajectory resource contract','Semialgebraic real action/sign/algebraic-selection model'],
  'Accepted hand characterization and source/compiler components remain the governing mathematics',
- ['Exact cofacial admission and executable rational polynomial whole-table extraction','Verified full-history shared-source Winning syntax and effective complete real QE','Action/lower-witness selection relative to actual history, resource-rank/deletion assembly and Pareto output'],
- [base+'2026-10-10-dot-g7-qe-interface-review-0026z/README.md',base+'2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md'], ['G7-CENSUS','G7-COMPLETED-LAW','G1 causal unranked context','G2 sample deletion'])
+ ['Exact original cofacial admission and independent whole-edge source-family coverage','Executable coefficient composition from checked sparse epoch through boundaries/once-drawn initialization/completed calendars','Complete same-source Winning syntax and effective real QE, with action/lower-witness selection relative to the actual history field','Exact Pareto/policy/certificate producer; semantic rank/deletion consumers are existing candidates requiring repair/composition rather than absent proofs'],
+ [base+'2026-10-10-dot-g7-qe-interface-review-0026z/README.md',base+'2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md',document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/G7-CLOSURE-AUDIT-20261010.md'),document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/G7-CLOSURE-DISCOVERY-20261010.json')], ['G7-CENSUS','G7-COMPLETED-LAW','G7-ORIGINAL-FAMILY-CARRIER-COMPOSITION','G1 causal unranked context','G2 sample deletion'])
 # Only a full successful fresh audit at the exact source hash promotes a new
 # provider. Historical source reads and failed attempts never count as passes.
 for certificate_name, accepted_status in [
@@ -260,6 +402,442 @@ for certificate_name, accepted_status in [
                 record['status'] = 'new_kernel_checked_exact_source'
                 record['evidence'].append('research/2026-10-10-codex-lean-rust-parity/lean/' + cert['evidence'] + '/RECEIPT.json')
                 record['genuinely_remaining'] = [g for g in record['genuinely_remaining'] if 'compilation pending' not in g.lower()]
+# The separately isolated recovered graph preserves the original failed source
+# and admits this exact repaired derivative with a complete owned audit.
+accepted_recovery=HERE.parent/'lean/evidence/recovery/coefficients/20261010T111018.094654Z/run-20261010T111032.651895Z'
+if accepted_recovery.exists():
+    final=json.loads((accepted_recovery/'FINAL-RECEIPT.json').read_text())
+    component=json.loads((accepted_recovery/'attempts/00001-G7EffectiveFullEpochCoefficients/receipt.json').read_text())
+    audit=json.loads((accepted_recovery/'attempts/00003-OwnedAudit/work/AUDIT-RESULT.json').read_text())
+    derivative=next(r for r in records if r['id']=='G7-FULL-EPOCH-COEFFICIENTS')
+    current=next(p for p in derivative['providers'] if '/reuse/sources/' in p['path'])
+    if (final['status']=='PASS_ALL_REQUESTED_TARGETS' and final['kernel_checking']
+        and final['compiler_identity_stable'] and final['native_runtime_final_rehash_stable']
+        and component['exit_code']==0 and component['source_and_imports_stable']
+        and component['source_sha256']==current['sha256']
+        and not audit['owned_axioms'] and not audit['nonstandard_axiom_rows'] and not audit['missing_modules']):
+        derivative['status']='new_kernel_checked_exact_source'
+        derivative['evidence'].append(str((accepted_recovery/'FINAL-RECEIPT.json').relative_to(ROOT)))
+        derivative['evidence'].append(str((accepted_recovery/'attempts/00003-OwnedAudit/work/AUDIT-RESULT.json').relative_to(ROOT)))
+        derivative['genuinely_remaining']=['Separate actual native coefficient codegen/runtime extraction receipt','Efficient restricted coefficient table/dictionary correspondence','Native unordered LAW quotient and universal Rust refinement; full G3/G4 remain open']
+# The support/encoding proofs and original native fixture share a complete
+# isolated audit. Only each exact freshly compiled source is promoted here;
+# the successful aggregate does not establish native execution or Rust parity.
+accepted_population=HERE.parent/'lean/evidence/source-population/20261010T112848.298732Z/run-20261010T112858.338259Z'
+if accepted_population.exists():
+    final=json.loads((accepted_population/'FINAL-RECEIPT.json').read_text())
+    target=json.loads((accepted_population/'targets/extraction_original-population-fixture/RESULT.json').read_text())
+    audit_path=accepted_population/'attempts/00016-OwnedAudit/work/AUDIT-RESULT.json'
+    audit=json.loads(audit_path.read_text())
+    selected=set(audit['selected_modules'])
+    if (final['status']=='PASS_ALL_REQUESTED_TARGETS' and final['kernel_checking']
+        and final['trust_level']==0 and final['compiler_identity_stable']
+        and final['native_runtime_final_rehash_stable'] and target['status']=='PASS'
+        and len(selected)==target['closure_modules']
+        and not audit['owned_axioms'] and not audit['nonstandard_axiom_rows']
+        and not audit['missing_modules']):
+        for key,attempt,gaps in [
+            ('G7-EXECUTABLE-COEFFICIENT-SUPPORT','00001-G7EffectiveCoefficientSupport',[
+                'Complete normalized coefficient table/dictionary correspondence remains separate',
+                'Ordered-to-unordered quotient aggregation and universal Rust refinement remain separate']),
+            ('G7-ENCODED-MERGER-SUPPORT','00002-G7EncodedMergerSupport',[
+                'Full normalized dictionary/serialization equality, quotient linearity and universal Rust refinement remain separate']),
+            ('G7-ORIGINAL-POPULATION-NATIVE-FIXTURES','00014-G7OriginalPopulationFixture',[
+                'Separate native code generation and eight-fixture independent Lean/Rust/oracle execution remain pending',
+                'Finite canonical serializer checks do not establish a universal Code-to-LAW quotient theorem'])]:
+            record=next(r for r in records if r['id']==key)
+            current=next(p for p in record['providers'] if '/reuse/sources/' in p['path'])
+            component_path=accepted_population/'attempts'/attempt/'receipt.json'
+            component=json.loads(component_path.read_text())
+            if (component['status']=='PASS_FRESH_KERNEL_CHECK' and component['exit_code']==0
+                and component['source_and_imports_stable']
+                and component['module'] in selected
+                and component['source_sha256']==current['sha256']):
+                record['status']='new_kernel_checked_exact_source'
+                record['evidence'].extend(str(p.relative_to(ROOT)) for p in [
+                    accepted_population/'FINAL-RECEIPT.json',component_path,audit_path])
+                record['genuinely_remaining']=gaps
+                record['fresh_audit_context']={
+                    'modules':target['closure_modules'],
+                    'declarations':audit['declaration_count'],
+                    'theorems':audit['theorem_declaration_count'],
+                    'fresh_components':final['counts']['fresh_components'],
+                    'exact_context_reuses':final['counts']['cache_reuse'],
+                    'native_execution_claimed':False}
+# Actual imported-definition evaluation and independent finite comparison are
+# separate from the kernel audit. Lean's execution mode is preserved exactly.
+execution_path=HERE.parent/'lean/evidence/source-population-execution/20261010T113514.964547Z/RECEIPT.json'
+comparison_path=HERE.parent/'design/evidence/population-lean-rust-review-1/RECEIPT.json'
+accepted_join=HERE.parent/'lean/evidence/proof-extensions/extraction_g7-support-and-join/20261010T115655.883875Z/run-20261010T115841.067259Z'
+if (accepted_join/'FINAL-RECEIPT.json').exists():
+    final=json.loads((accepted_join/'FINAL-RECEIPT.json').read_text())
+    assert final['status']=='PASS_ALL_REQUESTED_TARGETS'
+    assert final['kernel_checking'] and final['trust_level']==0
+    assert final['compiler_identity_stable'] and final['native_runtime_final_rehash_stable']
+    for key,module,attempt,audit_attempt,gaps in [
+        ('G7-CONSTRUCTIVE-PANEL-JOIN','G7ConstructivePanelJoin','00001','00003',[
+            'Same entering register and valid population factorization remain inherited epoch-law premises',
+            'Whole executable epoch extraction and universal Rust refinement remain separate']),
+        ('G7-SUPPORT-SELECTED-EXTRACTION','G7PopulationSelectedSupport','00004','00006',[
+            'General sparse normalization/serializer and universal Rust refinement remain separate',
+            'Full epoch row-product consumer and compiled mixed fixtures remain separate']),
+        ('G7-EFFECTIVE-PANEL-JOIN','G7EffectivePanelJoin','00007','00009',[
+            'Whole epoch support products, normalized dictionary and universal Rust refinement remain separate'])]:
+        record=next(r for r in records if r['id']==key)
+        own=next(p for p in record['providers'] if '/reuse/sources/' in p['path'])
+        component_path=accepted_join/'attempts'/f'{attempt}-{module}'/'receipt.json'
+        component=json.loads(component_path.read_text())
+        audit_path=accepted_join/'attempts'/f'{audit_attempt}-OwnedAudit/work/AUDIT-RESULT.json'
+        if audit_path.exists():
+            audit=json.loads(audit_path.read_text())
+        else:
+            audit_path=Path(str(audit_path)+'.gz')
+            audit=json.loads(gzip.decompress(audit_path.read_bytes()))
+        target_path=accepted_join/'targets'/f'extraction_g7-support-and-join_{module}'/'RESULT.json'
+        target=json.loads(target_path.read_text())
+        if (component['status']=='PASS_FRESH_KERNEL_CHECK' and component['exit_code']==0
+            and component['source_and_imports_stable'] and component['source_sha256']==own['sha256']
+            and target['status']=='PASS' and len(audit['selected_modules'])==target['closure_modules']
+            and module in audit['selected_modules'] and not audit['owned_axioms']
+            and not audit['nonstandard_axiom_rows'] and not audit['missing_modules']):
+            record['status']='new_kernel_checked_exact_source'
+            record['genuinely_remaining']=gaps
+            record['evidence'].extend(str(p.relative_to(ROOT)) for p in [
+                accepted_join/'FINAL-RECEIPT.json',component_path,target_path,audit_path])
+            record['fresh_audit_context']={'modules':target['closure_modules'],
+                'declarations':audit['declaration_count'],'theorems':audit['theorem_declaration_count'],
+                'native_execution_claimed':False,'scope':'Separate exact target; context counts overlap'}
+# A passing separately audited target may be preserved in a run that also
+# contains an unrelated failed target. Promote only the named PASS target;
+# the run's overall failure remains part of the evidence, never a whole-run pass.
+for key,module,stamp,run,gaps in [
+    ('G7-SPARSE-ROW-PRODUCTS','G7SparseRowProducts','20261010T122448.514985Z','20261010T122456.335105Z',[
+        'General normalized dictionary/serializer correctness and universal Rust refinement remain open']),
+    ('G7-FULL-EPOCH-SUPPORT','G7FullEpochSupport','20261010T122657.858633Z','20261010T122706.573931Z',[
+        'Eight ordinary and separately typed parallel mixed epoch compiled evaluator comparisons pending',
+        'General normalized dictionary/serializer correctness and universal Rust refinement remain open',
+        'Sparse original boundary/initialization/calendar/completion composition remains separate'])]:
+    accepted=HERE.parent/'lean/evidence/proof-extensions/extraction_g7-full-epoch-support'/stamp/('run-'+run)
+    if not accepted.exists():
+        continue
+    final_path=accepted/'FINAL-RECEIPT.json'
+    component_path=accepted/'attempts'/f'00001-{module}'/'receipt.json'
+    target_path=accepted/'targets'/f'extraction_g7-full-epoch-support_{module}'/'RESULT.json'
+    audit_path=accepted/'attempts/00003-OwnedAudit/work/AUDIT-RESULT.json'
+    if not audit_path.exists():
+        audit_path=Path(str(audit_path)+'.gz')
+    raw=audit_path.read_bytes()
+    audit=json.loads(gzip.decompress(raw) if audit_path.suffix=='.gz' else raw)
+    final=json.loads(final_path.read_text())
+    component=json.loads(component_path.read_text())
+    target=json.loads(target_path.read_text())
+    record=next(r for r in records if r['id']==key)
+    own=next(p for p in record['providers'] if '/reuse/sources/' in p['path'])
+    if (final['status'] in ['PASS_ALL_REQUESTED_TARGETS','INCOMPLETE_TARGET_FAILURES_PRESERVED']
+        and final['kernel_checking'] and final['trust_level']==0
+        and final['compiler_identity_stable'] and final['native_runtime_final_rehash_stable']
+        and target['status']=='PASS' and len(audit['selected_modules'])==target['closure_modules']
+        and module in audit['selected_modules'] and not audit['owned_axioms']
+        and not audit['nonstandard_axiom_rows'] and not audit['missing_modules']
+        and component['status']=='PASS_FRESH_KERNEL_CHECK' and component['exit_code']==0
+        and component['source_and_imports_stable'] and component['source_sha256']==own['sha256']):
+        record['status']='new_kernel_checked_exact_source'
+        record['genuinely_remaining']=gaps
+        record['evidence'].extend(str(p.relative_to(ROOT)) for p in [
+            final_path,component_path,target_path,audit_path])
+        record['fresh_audit_context']={'modules':target['closure_modules'],
+            'declarations':audit['declaration_count'],'theorems':audit['theorem_declaration_count'],
+            'native_execution_claimed':False,
+            'scope':'Only this passing complete exact target; separate target counts overlap',
+            'overall_run_status':final['status']}
+# Later separate complete certificates can cover only a subset of one fixture
+# obligation. Keep that partial status rather than promoting uncompiled peers.
+for certificate_name,keys in [
+    ('ORIGINAL-POPULATION-CERTIFICATE.json',{
+        'G6-ORIGINAL-POPULATION-EXPOSURE':'G6OriginalPopulationExposure',
+        'G6-ORIGINAL-POPULATION-SPECTRAL-SUPPORT':'G6OriginalPopulationSpectralSupport'}),
+    ('ORIGINAL-EPOCH-FIXTURE-CERTIFICATE.json',{
+        'G7-ORIGINAL-EPOCH-NATIVE-FIXTURES':None}),
+    ('ORIGINAL-PARALLEL-EPOCH-FIXTURE-CERTIFICATE.json',{
+        'G7-ORIGINAL-EPOCH-NATIVE-FIXTURES':None}),
+    ('EFFECTIVE-BOUNDARY-CERTIFICATE.json',{
+        'G7-EXECUTABLE-BOUNDARY-COEFFICIENTS':'G7EffectiveBoundaryCoefficients'}),
+    ('ORIGINAL-BOUNDARY-FIXTURE-CERTIFICATE.json',{
+        'G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES':None}),
+    ('EFFECTIVE-COMPLETION-CERTIFICATE.json',{
+        'G7-SUPPORT-ANCESTRAL-COMPLETION':'G7EffectiveAncestralCompletion'})]:
+    certificate_path=HERE.parent/'lean'/certificate_name
+    if not certificate_path.exists():
+        continue
+    certificate=json.loads(certificate_path.read_text())
+    if certificate['status']!='PASS_COMPLETE_OWNED_AUDITS_FOR_SEPARATE_NEW_PROOF_ROOTS':
+        continue
+    accepted=HERE.parent/'lean'/certificate['evidence']
+    final_path=accepted/'FINAL-RECEIPT.json'
+    final=json.loads(final_path.read_text())
+    if not (final['status']=='PASS_ALL_REQUESTED_TARGETS' and final['kernel_checking']
+        and final['trust_level']==0 and final['compiler_identity_stable']
+        and final['native_runtime_final_rehash_stable']):
+        continue
+    for key,required_module in keys.items():
+        record=next(r for r in records if r['id']==key)
+        owned=[p for p in record['providers'] if '/reuse/sources/' in p['path']]
+        validated=[]
+        for own in owned:
+            module=Path(own['path']).stem
+            if required_module and module!=required_module:
+                continue
+            matches=[(name,t) for name,t in certificate['targets'].items() if t['roots']==[module]]
+            if len(matches)!=1:
+                continue
+            target_name,target=matches[0]
+            component_paths=list(accepted.glob(f'attempts/*-{module}/receipt.json'))
+            if len(component_paths)!=1:
+                continue
+            component_path=component_paths[0]
+            component=json.loads(component_path.read_text())
+            audit_path=accepted/target['audit_distribution']
+            raw=audit_path.read_bytes()
+            if audit_path.suffix=='.gz':
+                raw=gzip.decompress(raw)
+            audit=json.loads(raw)
+            if (target['status']=='PASS_FRESH_AGGREGATE_AND_COMPLETE_OWNED_AUDIT'
+                and component['status']=='PASS_FRESH_KERNEL_CHECK' and component['exit_code']==0
+                and component['source_sha256']==own['sha256'] and component['source_and_imports_stable']
+                and hashlib.sha256(raw).hexdigest()==target['audit_raw_sha256']
+                and module in audit['selected_modules']
+                and len(audit['selected_modules'])==target['closure_modules']
+                and audit['declaration_count']==target['owned_declarations']
+                and audit['theorem_declaration_count']==target['owned_theorems']
+                and not audit['owned_axioms'] and not audit['nonstandard_axiom_rows']
+                and not audit['missing_modules']):
+                validated.append({'module':module,'source_sha256':own['sha256'],
+                    'modules':target['closure_modules'],'declarations':audit['declaration_count'],
+                    'theorems':audit['theorem_declaration_count'],'native_execution_claimed':False,
+                    'component_receipt':str(component_path.relative_to(ROOT)),
+                    'owned_audit':str(audit_path.relative_to(ROOT))})
+                record['evidence'].extend(str(p.relative_to(ROOT)) for p in [certificate_path,final_path,component_path,audit_path])
+        if validated:
+            prior={v['module']:v for v in record.get('fresh_source_validation',[])}
+            prior.update({v['module']:v for v in validated})
+            record['fresh_source_validation']=list(prior.values())
+            record['status']=('new_kernel_checked_exact_source' if len(prior)==len(owned)
+                else 'partially_kernel_checked_exact_sources_execution_pending')
+            if key=='G7-ORIGINAL-EPOCH-NATIVE-FIXTURES':
+                record['genuinely_remaining']=[
+                    'Eight ordinary compiled-evaluator comparisons and separately typed parallel ninth remain pending',
+                    'General normalized dictionary/serializer correctness and universal Rust refinement remain open']
+            elif key=='G7-EXECUTABLE-BOUNDARY-COEFFICIENTS':
+                record['genuinely_remaining']=[
+                    'Twelve typed original boundary evaluator comparisons remain pending',
+                    'General normalization/serialization and universal Rust refinement remain open',
+                    'Finite word/calendar legal-order and once-drawn initialization/completion composition remain separate']
+            elif key=='G7-SUPPORT-ANCESTRAL-COMPLETION':
+                record['genuinely_remaining']=[
+                    'Six direct typed original compiled-evaluator completion comparisons remain pending',
+                    'Concrete full word completion/encoding/normalization refinement remains separate',
+                    'Chosen epoch-table coefficient identity is a separate pending composition']
+# Rank and carrier roots share one complete five-root semantic target. Exact
+# cached kernel admissions remain distinguished from the fresh carrier check.
+semantic_path=HERE.parent/'lean/SEMANTIC-RANK-RECOVERY-CERTIFICATE.json'
+if semantic_path.exists():
+    certificate=json.loads(semantic_path.read_text())
+    accepted=HERE.parent/'lean'/certificate['evidence']
+    final_path=accepted/'FINAL-RECEIPT.json'
+    final=json.loads(final_path.read_text())
+    target=certificate['targets']['recovery/g7-semantic-rank']
+    audit_path=accepted/target['audit_distribution']
+    raw=gzip.decompress(audit_path.read_bytes())
+    audit=json.loads(raw)
+    roots={'G7ExactLawResourceGame','G7ActualExactLawResponses','G7ExactLawRankCompression',
+        'G7OriginalFamilyStrategy','G7OriginalCarrierCoverage'}
+    if (certificate['status']=='PASS_COMPLETE_OWNED_AUDITS_FOR_SEPARATE_NEW_PROOF_ROOTS'
+        and final['status']=='PASS_ALL_REQUESTED_TARGETS' and final['kernel_checking']
+        and final['trust_level']==0 and final['compiler_identity_stable']
+        and final['native_runtime_final_rehash_stable']
+        and set(target['roots'])==roots and roots.issubset(audit['selected_modules'])
+        and hashlib.sha256(raw).hexdigest()==target['audit_raw_sha256']
+        and len(audit['selected_modules'])==target['closure_modules']
+        and audit['declaration_count']==target['owned_declarations']
+        and audit['theorem_declaration_count']==target['owned_theorems']
+        and not audit['owned_axioms'] and not audit['nonstandard_axiom_rows']
+        and not audit['missing_modules']):
+        rank=next(r for r in records if r['id']=='G7-RANK-COMPRESSION-REPAIR')
+        family=next(r for r in records if r['id']=='G7-ORIGINAL-FAMILY-CARRIER-COMPOSITION')
+        rank_provider=rank['providers'][0]
+        family_provider=family['providers'][0]
+        carrier_provider=next(p for p in family['providers'] if '/reuse/sources/' in p['path'])
+        pins=certificate['source_pins']
+        if (pins['G7ExactLawRankCompression']==rank_provider['sha256']
+            and pins['G7OriginalFamilyStrategy']==family_provider['sha256']
+            and pins['G7OriginalCarrierCoverage']==carrier_provider['sha256']):
+            for record in [rank,family]:
+                record['status']='new_kernel_checked_exact_compatible_composition'
+                record['evidence'].extend(str(p.relative_to(ROOT)) for p in
+                    [semantic_path,final_path,audit_path])
+                record['fresh_audit_context']={'modules':target['closure_modules'],
+                    'declarations':audit['declaration_count'],
+                    'theorems':audit['theorem_declaration_count'],
+                    'kernel_admission':'Exact original-context caches plus fresh carrier; complete new aggregate/audit',
+                    'native_execution_claimed':False,
+                    'older_failed_source_bytes_promoted':False}
+            rank['genuinely_remaining']=[
+                'Effective simulation/span testing, complete real QE/action selection and G7 Pareto extraction remain separate']
+            family['validated_composition_sources']=[
+                {'module':'G7OriginalFamilyStrategy','source_sha256':family_provider['sha256']},
+                {'module':'G7OriginalCarrierCoverage','source_sha256':carrier_provider['sha256']},
+                {'module':'G7ExactLawRankCompression','source_sha256':rank_provider['sha256']}]
+            family['genuinely_remaining']=[
+                'Effective syntax, cofacial admission, whole-edge coverage and real QE/selection/Pareto producer remain separate']
+            policy=next(r for r in records if r['id']=='G7-POLICY-MASTER')
+            policy['accepted_semantic_dependency']={
+                'certificate':str(semantic_path.relative_to(ROOT)),
+                'modules':target['closure_modules'],
+                'declarations':audit['declaration_count'],
+                'theorems':audit['theorem_declaration_count'],
+                'roots':sorted(roots),
+                'effective_policy_engine_claimed':False}
+            policy['genuinely_remaining']=[
+                'Exact original cofacial admission and independent whole-edge source-family coverage',
+                'Executable coefficient composition from checked sparse epoch through boundaries/once-drawn initialization/completed calendars',
+                'Complete same-source Winning syntax and effective real QE, with action/lower-witness selection relative to the actual history field',
+                'Exact Pareto/policy/certificate producer; the accepted semantic rank/deletion/family/carrier composition is a dependency, not an effective producer']
+# The ordinary eight and parallel ninth retain separate complete source contexts
+# and separate evaluator receipts. Neither certificate alone promotes all nine.
+epoch_fixture=next(r for r in records if r['id']=='G7-ORIGINAL-EPOCH-NATIVE-FIXTURES')
+if epoch_fixture['status']=='new_kernel_checked_exact_source':
+    groups=[('ORIGINAL-EPOCH-NATIVE-EXECUTION-RESULT.json',
+        'epoch-lean-rust-review-2',
+        {'empty','oneAncestral','twoEdgePanels','edgeAncestral','nodeIdentity',
+         'carriedNodeExterior','permutedRestricted','frozenRegister'},
+        {'G7OriginalEpochFixture','G7OriginalEpochFixtureMain'}),
+        ('ORIGINAL-PARALLEL-EPOCH-NATIVE-EXECUTION-RESULT.json',
+        'epoch-lean-rust-parallel-review-1',{'parallelPanels'},
+        {'G7OriginalParallelEpochFixture','G7OriginalParallelEpochFixtureMain'})]
+    accepted_groups=[]
+    for execution_name,comparison_name,expected,modules in groups:
+        execution_path_epoch=HERE.parent/'lean'/execution_name
+        comparison_path_epoch=HERE.parent/'design/evidence'/comparison_name/'RECEIPT.json'
+        if not execution_path_epoch.exists() or not comparison_path_epoch.exists():
+            continue
+        execution=json.loads(execution_path_epoch.read_text())
+        comparison=json.loads(comparison_path_epoch.read_text())
+        cases={c['fixture']:c for c in comparison['cases']}
+        own={Path(p['path']).stem:p['sha256'] for p in epoch_fixture['providers']}
+        if (execution['status']=='PASS_CHECKED_ORIGINAL_EVALUATOR_DIFFERENTIAL'
+            and execution['exit_code']==0
+            and execution['all_actual_imported_artifacts_compiler_and_native_libraries_final_stable']
+            and execution['fixtures_total']==len(expected)
+            and execution['fixtures_passed']==len(expected)
+            and hashlib.sha256(comparison_path_epoch.read_bytes()).hexdigest()==execution['coefficient_review_receipt_sha256']
+            and all(execution['source_pins'].get(module)==own[module] for module in modules)
+            and comparison['pass'] and comparison['cases_passed']==len(expected)
+            and comparison['cases_total']==len(expected) and set(cases)==expected
+            and comparison['binary_pins_before']==comparison['binary_pins_after']
+            and comparison['observed_input_pins_before']==comparison['observed_input_pins_after']
+            and all(c['pass'] and not c['errors']
+                and c['runs']['lean']['exit_code']==0 and c['runs']['rust']['exit_code']==0
+                and not c['runs']['lean']['timed_out'] and not c['runs']['rust']['timed_out']
+                for c in cases.values())):
+            accepted_groups.append({'fixtures':sorted(expected),'cases_passed':len(expected),
+                'cases_total':len(expected),'execution_mode':execution['execution_mode'],
+                'standalone_elf_claimed':execution['standalone_elf_claimed'],
+                'general_refinement_proof_claimed':False,
+                'execution_receipt':str(execution_path_epoch.relative_to(ROOT)),
+                'comparison_receipt':str(comparison_path_epoch.relative_to(ROOT))})
+            epoch_fixture['evidence'].extend(str(p.relative_to(ROOT)) for p in
+                [execution_path_epoch,comparison_path_epoch])
+    epoch_fixture['finite_comparison_groups']=accepted_groups
+    if len(accepted_groups)==len(groups):
+        epoch_fixture['status']='new_kernel_checked_and_nine_finite_original_comparisons_pass'
+        epoch_fixture['genuinely_remaining']=[
+            'General normalization/serializer correctness and universal Rust refinement remain open',
+            'Whole word/calendar input admission and composed coefficient identity remain separate']
+        epoch_support=next(r for r in records if r['id']=='G7-FULL-EPOCH-SUPPORT')
+        epoch_support['finite_consumer_comparisons']=accepted_groups
+        epoch_support['genuinely_remaining']=[
+            'General normalization/serializer correctness and universal Rust refinement remain open',
+            'Concrete once-drawn initialization, word/calendar input admission and composed coefficient identity remain separate']
+boundary_fixture=next(r for r in records if r['id']=='G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES')
+boundary_execution_path=HERE.parent/'lean/ORIGINAL-BOUNDARY-NATIVE-EXECUTION-RESULT.json'
+boundary_comparison_path=HERE.parent/'design/evidence/boundary-lean-rust-review-1/RECEIPT.json'
+if (boundary_fixture['status']=='new_kernel_checked_exact_source'
+    and boundary_execution_path.exists() and boundary_comparison_path.exists()):
+    execution=json.loads(boundary_execution_path.read_text())
+    comparison=json.loads(boundary_comparison_path.read_text())
+    expected={'emptyCommon','emptyIndependent','commonFalse','commonTrue','independentTwo',
+        'noOwnerAtSite','carriedOwnerOutside','permutedIndependent','registerRepeat',
+        'ordinaryEntry','rootEntry','parallelExit'}
+    cases={c['fixture']:c for c in comparison['cases']}
+    own={Path(p['path']).stem:p['sha256'] for p in boundary_fixture['providers']}
+    if (execution['status']=='PASS_CHECKED_ORIGINAL_EVALUATOR_DIFFERENTIAL'
+        and execution['exit_code']==0
+        and execution['all_actual_imported_artifacts_compiler_and_native_libraries_final_stable']
+        and execution['fixtures_total']==12 and execution['fixtures_passed']==12
+        and hashlib.sha256(boundary_comparison_path.read_bytes()).hexdigest()==execution['coefficient_review_receipt_sha256']
+        and all(execution['source_pins'].get(module)==source_hash for module,source_hash in own.items())
+        and comparison['pass'] and comparison['cases_passed']==12 and comparison['cases_total']==12
+        and set(cases)==expected
+        and comparison['binary_pins_before']==comparison['binary_pins_after']
+        and comparison['observed_input_pins_before']==comparison['observed_input_pins_after']
+        and all(c['pass'] and not c['errors']
+            and c['runs']['lean']['exit_code']==0 and c['runs']['rust']['exit_code']==0
+            and not c['runs']['lean']['timed_out'] and not c['runs']['rust']['timed_out']
+            for c in cases.values())):
+        boundary_fixture['status']='new_kernel_checked_and_twelve_finite_original_comparisons_pass'
+        boundary_fixture['evidence'].extend(str(p.relative_to(ROOT)) for p in
+            [boundary_execution_path,boundary_comparison_path])
+        boundary_fixture['finite_comparison']={'cases_passed':12,'cases_total':12,
+            'execution_mode':execution['execution_mode'],
+            'standalone_elf_claimed':execution['standalone_elf_claimed'],
+            'oracle_algorithm':comparison['oracle_algorithm'],'general_refinement_proof_claimed':False}
+        boundary_fixture['genuinely_remaining']=[
+            'General normalization/serializer correctness and universal Rust refinement remain open',
+            'Natural initialization/full word/completion composition remains separate']
+        boundary=next(r for r in records if r['id']=='G7-EXECUTABLE-BOUNDARY-COEFFICIENTS')
+        boundary['finite_consumer_comparison']=boundary_fixture['finite_comparison']
+        boundary['genuinely_remaining']=[
+            'General normalization/serialization and universal Rust refinement remain open',
+            'Finite word/calendar legal-order and once-drawn initialization/completion composition remain separate']
+fixture=next(r for r in records if r['id']=='G7-ORIGINAL-POPULATION-NATIVE-FIXTURES')
+if execution_path.exists() and fixture['status']=='new_kernel_checked_exact_source':
+    execution=json.loads(execution_path.read_text())
+    expected={'emptyEdge0','oneAncestral','twoAncestral','threeEdge0','fourAncestral',
+        'carriedNonminimum','permutedRestrictedEdge0','frozenRegisterRepeat'}
+    runs={r['fixture']:r for r in execution['records']}
+    if (execution['status']=='PASS_EIGHT_IMPORTED_ORIGINAL_COEFFICIENT_EXECUTIONS'
+        and execution['source_and_import_artifacts_stable']
+        and execution['fixture_source_sha256']==fixture['providers'][0]['sha256']
+        and set(runs)==expected and all(r['exit_code']==0 for r in runs.values())):
+        fixture['status']='new_kernel_checked_and_eight_imported_evaluations_pass'
+        fixture['evidence'].append(str(execution_path.relative_to(ROOT)))
+        fixture['execution_mode']=execution['execution_mode']
+        fixture['standalone_native_elf_claimed']=execution['standalone_native_elf_claimed']
+        fixture['genuinely_remaining']=[
+            'Independent eight-fixture Lean/Rust/spectral-oracle comparison remains pending',
+            'Generic normalized dictionary/serialization equality and universal Code-to-LAW quotient theorem remain separate']
+        if comparison_path.exists():
+            comparison=json.loads(comparison_path.read_text())
+            cases={c['fixture']:c for c in comparison['cases']}
+            if (comparison['pass'] and comparison['cases_passed']==8
+                and comparison['cases_total']==8 and set(cases)==expected
+                and comparison['binary_pins_before']==comparison['binary_pins_after']
+                and comparison['observed_input_pins_before']==comparison['observed_input_pins_after']
+                and all(c['pass'] and not c['errors']
+                    and c['process_runs']['lean']['exit_code']==0
+                    and c['process_runs']['rust']['exit_code']==0
+                    and c['process_runs']['lean']['stdout_sha256']==runs[name]['stdout_sha256']
+                    for name,c in cases.items())):
+                fixture['status']='new_kernel_checked_and_eight_finite_original_comparisons_pass'
+                fixture['evidence'].append(str(comparison_path.relative_to(ROOT)))
+                fixture['finite_comparison']={
+                    'cases_passed':8,'cases_total':8,
+                    'execution_modes':comparison['execution_modes'],
+                    'oracle_algorithm':comparison['oracle_algorithm'],
+                    'general_refinement_proof_claimed':False}
+                fixture['genuinely_remaining']=[
+                    'Generic normalized dictionary/serialization equality and universal Code-to-LAW quotient theorem remain separate',
+                    'Full epoch population-panel extraction and universal Rust refinement remain separate']
 result={'schema':'commons-obligation-reuse-map-v1','contributor':'Codex / lean_reuse_recovery and lean_reuse_successor','created_utc':'2026-10-10','snapshot_kind':'source-read audit plus exact fresh kernel receipts where matched','source_hashes_checked':True,
  'global_constraints':['No sorry/admitted/custom axioms authorized','Inherited receipts remain attached only to their exact prior source/import context','Build/module counts do not establish master mathematical completion','Generic matrix/theorem validity does not supply biological measurement admission','Finite registry/rational chart exclusion is not unknown-size G3 NO coverage'],
  'obligations':records}

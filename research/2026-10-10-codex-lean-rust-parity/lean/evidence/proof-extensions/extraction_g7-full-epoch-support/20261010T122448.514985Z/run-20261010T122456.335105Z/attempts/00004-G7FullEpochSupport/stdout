@@ -1,0 +1,156 @@
+G7FullEpochSupport.lean:44:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.FullEpochSupport.read_populationRows`:
+  [FinEnum V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7FullEpochSupport.lean:56:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.FullEpochSupport.merger_register`:
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7FullEpochSupport.lean:90:7: warning: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7FullEpochSupport.lean:90:15: warning: Variable name `sample` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _sample
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7FullEpochSupport.lean:91:12: warning: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7FullEpochSupport.lean:168:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : FinEnum V
+inst✝³ : FinEnum E
+N : RootedBinary V E X
+i : Option E
+todo : List (Option E)
+ih :
+  ∀ (C : Type uC) [inst : DecidableEq C] [inst_1 : Fintype C] [inst_2 : FinEnum C] (sample : C → X) (s : Code N sample)
+    (a : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (fullRows N todo C sample s) a) =
+      polynomial (fullCoefficients N todo C sample s a)
+C : Type uC
+inst✝² : DecidableEq C
+inst✝¹ : Fintype C
+inst✝ : FinEnum C
+sample : C → X
+s : Code N sample
+a : SelectedIndex N sample Finset.univ
+keep : Finset C := populationPanel (state s) (originalPlace N i)
+hc : AncestorClosed (state s) keep := locationPanel_closed (state s) s.property.forest (originalPlace N i)
+left : Code N (selectedSample sample keep) := panel N s keep hc
+right : Code N (selectedSample sample (Finset.univ \ keep)) := panel N s (Finset.univ \ keep) ⋯
+hrows :
+  fullRows N (i :: todo) C sample s =
+    multiplyRows (joinedCode N keep) (populationRows N left i)
+      (fullRows N todo (SelectedCopy (Finset.univ \ keep)) (selectedSample sample (Finset.univ \ keep)) right)
+ab :
+  SelectedIndex N (selectedSample sample keep) Finset.univ ×
+    SelectedIndex N (selectedSample sample (Finset.univ \ keep)) Finset.univ
+a✝ : ab ∈ Finset.univ
+h : joinSelected N s keep ab = a
+⊢ polynomial (populationSelected N left i ab.1) *
+      polynomial
+        (fullCoefficients N todo (SelectedCopy (Finset.univ \ keep)) (selectedSample sample (Finset.univ \ keep)) right
+          ab.2) =
+    polynomial
+      (if joinSelected N s (populationPanel (state s) (originalPlace N i)) ab = a then
+        product (populationSelected N (panel N s (populationPanel (state s) (originalPlace N i)) ⋯) i ab.1)
+          (fullCoefficients N todo (SelectedCopy (Finset.univ \ populationPanel (state s) (originalPlace N i)))
+            (selectedSample sample (Finset.univ \ populationPanel (state s) (originalPlace N i)))
+            (panel N s (Finset.univ \ populationPanel (state s) (originalPlace N i)) ⋯) ab.2)
+      else [])
+G7FullEpochSupport.lean:170:6: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : FinEnum V
+inst✝³ : FinEnum E
+N : RootedBinary V E X
+i : Option E
+todo : List (Option E)
+ih :
+  ∀ (C : Type uC) [inst : DecidableEq C] [inst_1 : Fintype C] [inst_2 : FinEnum C] (sample : C → X) (s : Code N sample)
+    (a : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (fullRows N todo C sample s) a) =
+      polynomial (fullCoefficients N todo C sample s a)
+C : Type uC
+inst✝² : DecidableEq C
+inst✝¹ : Fintype C
+inst✝ : FinEnum C
+sample : C → X
+s : Code N sample
+a : SelectedIndex N sample Finset.univ
+keep : Finset C := populationPanel (state s) (originalPlace N i)
+hc : AncestorClosed (state s) keep := locationPanel_closed (state s) s.property.forest (originalPlace N i)
+left : Code N (selectedSample sample keep) := panel N s keep hc
+right : Code N (selectedSample sample (Finset.univ \ keep)) := panel N s (Finset.univ \ keep) ⋯
+hrows :
+  fullRows N (i :: todo) C sample s =
+    multiplyRows (joinedCode N keep) (populationRows N left i)
+      (fullRows N todo (SelectedCopy (Finset.univ \ keep)) (selectedSample sample (Finset.univ \ keep)) right)
+ab :
+  SelectedIndex N (selectedSample sample keep) Finset.univ ×
+    SelectedIndex N (selectedSample sample (Finset.univ \ keep)) Finset.univ
+a✝ : ab ∈ Finset.univ
+h : ¬joinSelected N s keep ab = a
+⊢ 0 =
+    (List.map (fun z => MvPolynomial.C z.2 * (List.map (fun a => MvPolynomial.X a.1 ^ a.2) z.1).prod)
+        (if joinSelected N s (populationPanel (state s) (originalPlace N i)) ab = a then
+          product (populationSelected N (panel N s (populationPanel (state s) (originalPlace N i)) ⋯) i ab.1)
+            (fullCoefficients N todo (SelectedCopy (Finset.univ \ populationPanel (state s) (originalPlace N i)))
+              (selectedSample sample (Finset.univ \ populationPanel (state s) (originalPlace N i)))
+              (panel N s (Finset.univ \ populationPanel (state s) (originalPlace N i)) ⋯) ab.2)
+        else [])).sum
+G7FullEpochSupport.lean:168:28: warning: This simp argument is unused:
+  polynomial_product
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos h, polynomial_populationRows]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7FullEpochSupport.lean:170:39: warning: This simp argument is unused:
+  List.map_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg h, polynomial, List.sum_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7FullEpochSupport.lean:170:52: warning: This simp argument is unused:
+  List.sum_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg h, polynomial, List.map_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'GProgram.G7.FullEpochSupport.polynomial_fullRows' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GProgram.G7.FullEpochSupport.fullRows_register' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.FullEpochSupport.fullRows_actual' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GProgram.G7.FullEpochSupport.epochRows_actual' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

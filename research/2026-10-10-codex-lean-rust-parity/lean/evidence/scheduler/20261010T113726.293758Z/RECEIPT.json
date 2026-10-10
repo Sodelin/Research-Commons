@@ -1,0 +1,16 @@
+{
+  "public_pid": 49137,
+  "public_command": "python3 scripts/build_connected.py current/connected --wait-external-seconds 7200 ",
+  "extension_command": [
+    "python3",
+    "-c",
+    "import json,pathlib,subprocess,sys; sys.exit(subprocess.run(json.loads(pathlib.Path(\".build/population-oracle-command.json\").read_bytes())).returncode)"
+  ],
+  "status": "EXTENSION_COMPLETED",
+  "active_compiler_paused": false,
+  "manager_paused_utc": "2026-10-10T11:37:30.777935+00:00",
+  "public_children_at_boundary": [],
+  "extension_exit_code": 0,
+  "manager_resumed": true,
+  "manager_pause_seconds": 23.360945643000377
+}

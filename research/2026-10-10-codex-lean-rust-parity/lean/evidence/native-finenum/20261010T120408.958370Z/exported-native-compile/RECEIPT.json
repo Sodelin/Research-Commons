@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/workspace/toolchains/lean-4.33.1-linux/bin/leanc",
+    "-O2",
+    "-shared",
+    "-fPIC",
+    "-DLEAN_EXPORTING",
+    "-o",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-finenum/20261010T120408.958370Z/libOriginalFinEnumExported.so",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-finenum/20261010T120408.958370Z/FinEnum.c"
+  ],
+  "exit_code": 0,
+  "seconds": 0.3147954150008445,
+  "source_c_sha256": "248c08bff703b279cec928675ed8ef29c476b947d4a84863988f7b92fda4975d",
+  "leanc_sha256": "cc293b2c81b7bc16d750959c7c82d61f4b95f50c2942d1131d57c078b8245ac1",
+  "plugin_sha256": "ea80b6237bd2e30bf1ae0879668173c61158b6b52b881532a8c1e792b25cb2ae",
+  "no_lean_process_or_global_dependency_mutation": true,
+  "reason": "Standard LEAN_EXPORTING definition exports exact generated provider symbols; prior shared compile hid/garbage-collected them."
+}

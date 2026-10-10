@@ -1,0 +1,55 @@
+G7OriginalCarrierCoverage.lean:27:0: warning: `OriginalPoint`: universes `u`, `v` only occur together. This usually means there is a `max` expression in the type where none of these universes appear on their own.
+
+Note: This linter can be disabled with `set_option linter.checkUnivs false`
+G7OriginalCarrierCoverage.lean:75:2: error: Type mismatch: After simplification, term
+  mapped
+ has type
+  @Eq (PMF Obs)
+    (PMF.map observe
+      (controlledCompletedUnrankedLaw s.source.network s.source.calendar sample s.parents s.inheritance
+        (fun x => s.common) s.rates fun h => rows row (s.ids.symm h)))
+    (PMF.map observe
+      (controlledCompletedUnrankedLaw
+        (network s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids))
+        (calendar s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids)
+          s.source.calendar)
+        sample
+        (registry s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids)
+          s.parents)
+        (inheritance s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids)
+          s.inheritance)
+        (CalendarNodeRelabelling.common s.source.network (vertexNumbering s.source.network s.ids)
+          (edgeNumbering s.source.network s.ids) fun x => s.common)
+        (rates (edgeNumbering s.source.network s.ids) s.rates) fun h =>
+        rows row
+          ((s.ids.trans
+                (hybrids s.source.network (vertexNumbering s.source.network s.ids)
+                  (edgeNumbering s.source.network s.ids))).symm
+            h)))
+but is expected to have type
+  @Eq (PMF Obs)
+    (PMF.map observe
+      (controlledCompletedUnrankedLaw s.source.network s.source.calendar sample s.parents s.inheritance
+        (fun x => s.common) s.rates fun h => rows row (s.ids.symm h)))
+    (PMF.map observe
+      (controlledCompletedUnrankedLaw
+        (network s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids))
+        (calendar s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids)
+          s.source.calendar)
+        sample
+        (registry s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids)
+          s.parents)
+        (inheritance s.source.network (vertexNumbering s.source.network s.ids) (edgeNumbering s.source.network s.ids)
+          s.inheritance)
+        (fun x => s.common) (rates (edgeNumbering s.source.network s.ids) s.rates) fun h =>
+        rows row
+          ((s.ids.trans
+                (hybrids s.source.network (vertexNumbering s.source.network s.ids)
+                  (edgeNumbering s.source.network s.ids))).symm
+            h)))
+G7OriginalCarrierCoverage.lean:87:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalCarrierCoverage.every_original_programme_has_fixed_carrier_response`:
+  [Fintype Out]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Out] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`

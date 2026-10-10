@@ -1,0 +1,39 @@
+G7ExactLawRankCompression.lean:59:45: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+G7ExactLawRankCompression.lean:60:43: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+G7ExactLawRankCompression.lean:72:6: error(lean.unknownIdentifier): Unknown identifier `affine`
+G7ExactLawRankCompression.lean:70:39: error: unsolved goals
+S : Type u_1
+A : Type u_2
+O : Type u_3
+T : Type u_4
+V : Type u_5
+inst✝¹ : AddCommGroup V
+inst✝ : Module ℝ V
+E : Experiment S A (O → ℝ) T (List A)
+base : S → V
+linear : A → O → Module.Dual ℝ V
+L : Submodule ℝ (Module.Dual ℝ V)
+h : History A (O → ℝ)
+hd : Determined E base L h
+a : A
+ha : ∀ (o : O), linear a o ∈ L
+s t : S
+hs : Consistent E h s
+ht : Consistent E h t
+o : O
+⊢ E.response s a o = E.response t a o
+G7ExactLawRankCompression.lean:88:10: error(lean.unknownIdentifier): Unknown identifier `affine`
+G7ExactLawRankCompression.lean:137:72: error(lean.unknownIdentifier): Unknown identifier `offset`
+G7ExactLawRankCompression.lean:137:79: error(lean.unknownIdentifier): Unknown identifier `affine`
+G7ExactLawRankCompression.lean:177:48: error(lean.unknownIdentifier): Unknown identifier `linear`
+G7ExactLawRankCompression.lean:177:55: error(lean.unknownIdentifier): Unknown identifier `offset`
+G7ExactLawRankCompression.lean:177:62: error(lean.unknownIdentifier): Unknown identifier `affine`
+G7ExactLawRankCompression.lean:177:13: error: Tactic `rcases` failed: `x✝ : ?m.205` is not an inductive datatype
+G7ExactLawRankCompression.lean:222:47: error(lean.unknownIdentifier): Unknown identifier `base`
+G7ExactLawRankCompression.lean:222:52: error(lean.unknownIdentifier): Unknown identifier `linear`
+G7ExactLawRankCompression.lean:222:59: error(lean.unknownIdentifier): Unknown identifier `offset`
+G7ExactLawRankCompression.lean:222:66: error(lean.unknownIdentifier): Unknown identifier `affine`
+G7ExactLawRankCompression.lean:223:25: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Bot (List A)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.

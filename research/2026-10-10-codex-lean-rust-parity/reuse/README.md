@@ -83,10 +83,50 @@ Lean pass.
 The separately attributed [full-epoch coefficient repair](G7-FULL-EPOCH-REPAIR.json)
 preserves every executable definition and existing theorem statement of the
 delivered failed G7 candidate. Explicit one-step recursion normalization
-replaces large inferred elaboration, without increasing heartbeat limits.
-Its isolated compilation, ownership audit and actual coefficient execution are
-pending. The [continuation checkpoint](CONTINUATION-20261010.md) records exact
-diagnostics and the original ordered-pair to native unordered-forest gap.
+and direct equality transports replace large inferred elaboration, without
+increasing heartbeat limits. The final derivative `85bed5b9…` passed its
+[isolated 118-module context](../lean/evidence/recovery/coefficients/20261010T111018.094654Z/run-20261010T111032.651895Z/FINAL-RECEIPT.json)
+and complete ownership/axiom audit: 3,288 declarations, 2,074 theorems, zero
+owned axioms, nonstandard axiom rows or missing modules. The repaired root was
+freshly checked; 117 providers were admitted by exact artifact-context reuse.
+Earlier failed derivatives remain pinned to their actual diagnostics. Native
+coefficient code generation/execution is a separate pending receipt.
+
+The [original population fixture checkpoint](POPULATION-FIXTURE.md) records
+the eight exact native test contexts and checked generic zero-support/encoding
+proofs. Their separate 108-module aggregate/complete audit passed with 3,741
+declarations and 2,052 theorems, zero owned/nonstandard axioms or missing
+modules; 14 components were freshly checked and 94 exact contexts reused.
+Eight original compiled-evaluator/Rust/spectral-oracle comparisons passed
+every literal coefficient and unordered fibre, including 193/37 four-copy
+rows. This does not claim a standalone extracted Lean ELF or universal Rust
+refinement. Historical G1 original-source unranked PMF lumpability was found
+and reused; native canonical encoding and LAW coefficient equality remain
+distinct. The [continuation checkpoint](CONTINUATION-20261010.md) retains those
+boundaries. The newest G3 local-normal-bank and G4 ordinary-overshoot hand/source
+corollaries are registered alongside their governing historical providers.
+The [constructive panel join](CONSTRUCTIVE-PANEL-JOIN.md), executable companion,
+and [support-selected extraction](SUPPORT-SELECTED-EXTRACTION.md) now passed
+separate complete exact target audits. Their 117/120-module counts overlap.
+The new [full epoch support](FULL-EPOCH-SUPPORT.md) roots passed separate
+121/124-module complete audits, with zero own/nonstandard axioms or missing
+modules. They prove literal finite-row products equal the unchanged inherited
+whole-epoch rational polynomial. Mixed original evaluator comparisons remain
+pending; overlapping audit counts are not added.
+The [G1 scope readback](G1-MASTER-SCOPE-20261010.md) confirms the original
+mathematical master is complete and separates downstream runtime obligations.
+
+The [G7 closure audit](G7-CLOSURE-AUDIT-20261010.md) and exact-byte discovery
+inventory distinguish existing source proofs/candidates from missing
+composition, different observation/resource contracts, and formal QE/cofacial
+consumers absent in the inspected corpus. The original accepted G7 hand master
+is preserved; saved rank/family/carrier proofs are the next compatible reuse.
+
+The [word provider readback](WORD-PROVIDER-READBACK-20261010.md) reuses the
+existing natural initialization, source word and completed-calendar transport.
+New finite initialization and word-composition sources are pending, with exact
+coefficient identity distinguished from shared-bank physical evaluation.
+The inherited chosen epoch-table coefficient bridge remains explicit.
 
 ## Remaining mission obligations
 
@@ -100,3 +140,17 @@ for those universally quantified theorems.
 The [theorem-level obligation map](OBLIGATION-REUSE-MAP.json) attaches inherited
 scope and exact source hashes. Its builder promotes a new source only when the
 successful fresh owned audit matches its current source hash.
+
+
+Latest scoped receipts authenticate all nine original mixed-epoch evaluator
+comparisons (ordinary8 plus parallel1, separate source contexts) and generic
+boundary coefficient refinement133. The support-only rational ancestral
+completion bridge and six direct controls remain drafts. The continuation and
+machine map preserve earlier native failures and current source hashes.
+
+
+Exact compatible semantic rank/family/carrier composition is now accepted in
+its complete191-module audit. The support-only actual rational ancestral
+completion bridge is accepted in a separate140-module audit. Their contexts
+overlap earlier proofs and counts are not added; six direct completion native
+controls and the chosen-table/word consumers are still pending.
