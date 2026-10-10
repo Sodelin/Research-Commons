@@ -1,0 +1,491 @@
+{
+  "status": "PASS_PRIVATE_CLI_STDIN_FILE_AND_CHECK_CHALLENGES",
+  "binary_sha256": "443a1eb6d35154e827b3f0236ab6c5c458752fd6f5480463f390e74a99bd4f00",
+  "cases": [
+    {
+      "name": "hybrid-common-sat-bank-file",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.02763657399918884,
+      "stdout_sha256": "b1ab694b1a9816d7dbe4c29fb9d59fb5ae8ccfe4997c05c92e958d82e1762e03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "SYMBOLIC_BANK",
+      "actual_status": "SYMBOLIC_BANK",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-bank-stdin",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "-"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.02723290400172118,
+      "stdout_sha256": "b1ab694b1a9816d7dbe4c29fb9d59fb5ae8ccfe4997c05c92e958d82e1762e03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "SYMBOLIC_BANK",
+      "actual_status": "SYMBOLIC_BANK",
+      "input_sha256": "63d6b2242c428d98fe89c3c6e6295948026de220095a3fe852d5e66069db6591",
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-bank-check-good",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.bank.response.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.027461673998914193,
+      "stdout_sha256": "fb6e14421c46493a78cb9b05c1f2cd29738c9c371ddb9a5873e197d305ec6cf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "ACCEPT",
+      "actual_status": "ACCEPT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-bank-check-forged",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.bank.forged.json"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.029364401998464018,
+      "stdout_sha256": "e5db0188ab49e0c144580f93e099fe128eab5796df0a25626cbde83291c5ad80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": "REJECT",
+      "actual_status": "REJECT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-readout-file",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0587448329970357,
+      "stdout_sha256": "3f21282fe0bdc8ecba4e8d4b4779ce3dfc3677bf4bccf904ff367c760b966039",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "TABLE",
+      "actual_status": "TABLE",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-readout-stdin",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "-"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.055720502001349814,
+      "stdout_sha256": "3f21282fe0bdc8ecba4e8d4b4779ce3dfc3677bf4bccf904ff367c760b966039",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "TABLE",
+      "actual_status": "TABLE",
+      "input_sha256": "63d6b2242c428d98fe89c3c6e6295948026de220095a3fe852d5e66069db6591",
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-readout-check-good",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check-readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.readout.response.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.054434901001513936,
+      "stdout_sha256": "fb6e14421c46493a78cb9b05c1f2cd29738c9c371ddb9a5873e197d305ec6cf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "ACCEPT",
+      "actual_status": "ACCEPT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-sat-readout-check-forged",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check-readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-sat.readout.forged.json"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.08119554300355958,
+      "stdout_sha256": "e5db0188ab49e0c144580f93e099fe128eab5796df0a25626cbde83291c5ad80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": "REJECT",
+      "actual_status": "REJECT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-bank-file",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.02772743900277419,
+      "stdout_sha256": "e63c95f3c2b7031b277d83150efb90db2c07a88d065d42a7d477cab9981e8377",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "SYMBOLIC_BANK",
+      "actual_status": "SYMBOLIC_BANK",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-bank-stdin",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "-"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.027596995001658797,
+      "stdout_sha256": "e63c95f3c2b7031b277d83150efb90db2c07a88d065d42a7d477cab9981e8377",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "SYMBOLIC_BANK",
+      "actual_status": "SYMBOLIC_BANK",
+      "input_sha256": "0d3d30b9be0cf8ccbb9473c5fdeffd6a4c6a129fa122fff1ea0b181411dd7ef4",
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-bank-check-good",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.bank.response.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.027627008996205404,
+      "stdout_sha256": "fb6e14421c46493a78cb9b05c1f2cd29738c9c371ddb9a5873e197d305ec6cf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "ACCEPT",
+      "actual_status": "ACCEPT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-bank-check-forged",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.bank.forged.json"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.027254376000200864,
+      "stdout_sha256": "e5db0188ab49e0c144580f93e099fe128eab5796df0a25626cbde83291c5ad80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": "REJECT",
+      "actual_status": "REJECT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-readout-file",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.10808195099525619,
+      "stdout_sha256": "16bc758e3cc05c9277859bac9c29b3b3586de7ff9d8c379011303ecdef0bcbdb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "TABLE",
+      "actual_status": "TABLE",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-readout-stdin",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "-"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.11012906500400277,
+      "stdout_sha256": "16bc758e3cc05c9277859bac9c29b3b3586de7ff9d8c379011303ecdef0bcbdb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "TABLE",
+      "actual_status": "TABLE",
+      "input_sha256": "0d3d30b9be0cf8ccbb9473c5fdeffd6a4c6a129fa122fff1ea0b181411dd7ef4",
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-readout-check-good",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check-readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.readout.response.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.10800156299956143,
+      "stdout_sha256": "fb6e14421c46493a78cb9b05c1f2cd29738c9c371ddb9a5873e197d305ec6cf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "ACCEPT",
+      "actual_status": "ACCEPT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-independent-sat-readout-check-forged",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check-readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-independent-sat.readout.forged.json"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.13780070000211708,
+      "stdout_sha256": "e5db0188ab49e0c144580f93e099fe128eab5796df0a25626cbde83291c5ad80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": "REJECT",
+      "actual_status": "REJECT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-bank-file",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.027904432005016133,
+      "stdout_sha256": "defdd8b65f741c10fa8ca1194720e3a13304ed3fd1e66a161bb3a296c097e4ff",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "SYMBOLIC_BANK",
+      "actual_status": "SYMBOLIC_BANK",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-bank-stdin",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "-"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.027627329000097234,
+      "stdout_sha256": "defdd8b65f741c10fa8ca1194720e3a13304ed3fd1e66a161bb3a296c097e4ff",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "SYMBOLIC_BANK",
+      "actual_status": "SYMBOLIC_BANK",
+      "input_sha256": "a01f07c1cd2fa5a84880bd46ea7a3890356af9c936ca4873ebd5bb7b5f40875e",
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-bank-check-good",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.bank.response.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.027922328998101875,
+      "stdout_sha256": "fb6e14421c46493a78cb9b05c1f2cd29738c9c371ddb9a5873e197d305ec6cf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "ACCEPT",
+      "actual_status": "ACCEPT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-bank-check-forged",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.bank.forged.json"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.028255964003619738,
+      "stdout_sha256": "e5db0188ab49e0c144580f93e099fe128eab5796df0a25626cbde83291c5ad80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": "REJECT",
+      "actual_status": "REJECT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-readout-file",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.request.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.05618703599611763,
+      "stdout_sha256": "446d2dfb9f66dca6155ffbb48d5a39c3aa7550175441a043cac57457fd59e352",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "TABLE",
+      "actual_status": "TABLE",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-readout-stdin",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "-"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.05574101200181758,
+      "stdout_sha256": "446d2dfb9f66dca6155ffbb48d5a39c3aa7550175441a043cac57457fd59e352",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "TABLE",
+      "actual_status": "TABLE",
+      "input_sha256": "a01f07c1cd2fa5a84880bd46ea7a3890356af9c936ca4873ebd5bb7b5f40875e",
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-readout-check-good",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check-readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.readout.response.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.055381247999321204,
+      "stdout_sha256": "fb6e14421c46493a78cb9b05c1f2cd29738c9c371ddb9a5873e197d305ec6cf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 0,
+      "expected_status": "ACCEPT",
+      "actual_status": "ACCEPT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "hybrid-common-permuted-readout-check-forged",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "check-readout",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.request.json",
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/cli-challenges/hybrid-common-permuted.readout.forged.json"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.05539943499752553,
+      "stdout_sha256": "e5db0188ab49e0c144580f93e099fe128eab5796df0a25626cbde83291c5ad80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": "REJECT",
+      "actual_status": "REJECT",
+      "input_sha256": null,
+      "status": "PASS"
+    },
+    {
+      "name": "unknown-field-rejected",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "-"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.02904946399939945,
+      "stdout_sha256": "2a2fd6ed84384b66e9982a6cb8b7c80ab162e66a9c6e0b3b05162e227f1ff3e8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": null,
+      "actual_status": "INVALID_REQUEST",
+      "input_sha256": "fb80e9448440b0d29cd217d09a65f913002de3f213319762117e39d8a6cd5709",
+      "status": "PASS"
+    },
+    {
+      "name": "noncanonical-rational-rejected",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "bank",
+        "-"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.028550922994327266,
+      "stdout_sha256": "2a2fd6ed84384b66e9982a6cb8b7c80ab162e66a9c6e0b3b05162e227f1ff3e8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 1,
+      "expected_status": null,
+      "actual_status": "INVALID_REQUEST",
+      "input_sha256": "77345281d435460fa0a2e75ae1ab6ada80aaf68f747cb0774d23458ee8b7bccd",
+      "status": "PASS"
+    },
+    {
+      "name": "full-view-readout-refused",
+      "command": [
+        "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+        "readout",
+        "-"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 0.02967409299890278,
+      "stdout_sha256": "b89cb70443f22e15ff7a6516303ce3fddd2ab53507d26e28da3cdce0d88370e8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_exit_code": 2,
+      "expected_status": "UNSUPPORTED",
+      "actual_status": "UNSUPPORTED",
+      "input_sha256": "b94942efc684a73f0f980ab760667380d45ccf36d8329aea89480acf7f6ba599",
+      "status": "PASS"
+    }
+  ],
+  "command_count": 27,
+  "saved_original_rooted_laws_compared": 3,
+  "original_and_frozen_inputs_stable": true,
+  "source_pins_stable": true,
+  "native_allocation_bytes": 121405440,
+  "final_memory": {
+    "anon": 66633728,
+    "shmem": 10387218432,
+    "kernel": 854528000,
+    "nonreclaimable_estimate": 11308380160,
+    "memory_current_informational_only": 17035718656
+  },
+  "source_admission_or_universal_refinement_claim": false,
+  "scope": "Supplied exact bank/trace and completed rooted readout at rational assignments; no source provenance, full-Code, timed readout or full solver claim."
+}

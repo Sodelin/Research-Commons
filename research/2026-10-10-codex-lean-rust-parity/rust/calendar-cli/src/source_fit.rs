@@ -120,6 +120,8 @@ pub fn error(code: &'static str) -> Frame {
     failure("INVALID_REQUEST", code, 1)
 }
 pub fn execution_error(code: &'static str) -> Frame { failure("EXECUTION_FAILURE", code, 1) }
+pub fn internal_error(code: &'static str) -> Frame { failure("INTERNAL", code, 1) }
+pub fn limit_error(code: &'static str) -> Frame { failure("UNKNOWN", code, 2) }
 pub fn bind(raw: &[u8]) -> Frame {
     let request = match parse(raw) { Ok(r) => r, Err(code) => return error(code) };
     let decision = match bank::bind(&request) {

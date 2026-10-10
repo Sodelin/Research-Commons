@@ -1,0 +1,82 @@
+{
+  "status": "PRESERVED_NATIVE_COMMAND_FAILURE",
+  "workspace": "/dev/shm/rc-source-fit-native-20261010T221259.859010Z",
+  "plan_sha256": "c6314926ef4d8d1344258602b4e19dce82247e91d631621e3b72243948ce3cc8",
+  "steps": [
+    {
+      "status": "PASS",
+      "name": "library-source-fit",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/toolchain/bin/cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--jobs",
+        "1",
+        "--lib",
+        "source_fit"
+      ],
+      "cwd": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust",
+      "exit_code": 0,
+      "abort_reason": null,
+      "monitor_error": null,
+      "source_pins_stable": true,
+      "elapsed_seconds": 3.5096111050006584,
+      "peak_nonreclaimable_bytes": 11336364032,
+      "peak_allocated_bytes": 18247680,
+      "stdout_sha256": "f5e8fab093671692f31c7a83200976a5b1d89d998a835dff79febf2faad6e097",
+      "stderr_sha256": "b2802d76197b80a02306630de92262153c836f3faf8076923e8efc904d921958"
+    },
+    {
+      "status": "PASS",
+      "name": "saved-source-fit-program",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/toolchain/bin/cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--jobs",
+        "1",
+        "--test",
+        "source_fit_program"
+      ],
+      "cwd": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust",
+      "exit_code": 0,
+      "abort_reason": null,
+      "monitor_error": null,
+      "source_pins_stable": true,
+      "elapsed_seconds": 2.007755887003441,
+      "peak_nonreclaimable_bytes": 11347730432,
+      "peak_allocated_bytes": 34664448,
+      "stdout_sha256": "b8ec14d5bf726a399a250020d240d41c4a8d7bcdeb79b3f374bc4268c5e509ba",
+      "stderr_sha256": "2fc12b377bcdfc6be3a83ed3c1b209c083604c6af42dde3824f1cd5008b0a88e"
+    },
+    {
+      "status": "PRESERVED_NATIVE_FAILURE",
+      "name": "frontend-source-fit",
+      "command": [
+        "/workspace/scratch/lean-rust-parity-native/runtime/toolchain/bin/cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--jobs",
+        "1",
+        "--lib",
+        "source_fit"
+      ],
+      "cwd": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli",
+      "exit_code": 101,
+      "abort_reason": null,
+      "monitor_error": null,
+      "source_pins_stable": true,
+      "elapsed_seconds": 0.5036117199997534,
+      "peak_nonreclaimable_bytes": 11220680704,
+      "peak_allocated_bytes": 34676736,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "ab02074de44bcf52cd844b36773b0cd5f1a505a1a128f51e57a1b14668a9f491"
+    }
+  ],
+  "target_allocated_bytes": 34680832,
+  "lean_or_old_native_targets_written": false,
+  "source_and_toolchain_pins_stable": true
+}
