@@ -1,0 +1,269 @@
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:19:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.StrictAffineElimination.rel_le`:
+  [Field K]
+  [IsStrictOrderedRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field K] [IsStrictOrderedRing K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:22:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.StrictAffineElimination.rel_of_lt`:
+  [Field K]
+  [IsStrictOrderedRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field K] [IsStrictOrderedRing K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:27:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.StrictAffineElimination.rel_or_left`:
+  [Field K]
+  [IsStrictOrderedRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field K] [IsStrictOrderedRing K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:30:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.StrictAffineElimination.rel_or_right`:
+  [Field K]
+  [IsStrictOrderedRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field K] [IsStrictOrderedRing K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:33:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.StrictAffineElimination.rel_trans`:
+  [Field K]
+  [IsStrictOrderedRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Field K] [IsStrictOrderedRing K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:143:11: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (a✝² = b✝²)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:145:12: error: unknown namespace `BigOperators`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:148:2: error: expected token
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:159:12: error(lean.unknownIdentifier): Unknown constant `Fin.snoc`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:160:18: error(lean.unknownIdentifier): Unknown constant `Fin.sum_univ_castSucc`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:159:62: error: unsolved goals
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+⊢ r.coeff (Fin.last n) = 0 ∨ z = 0
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:160:8: warning: declaration uses `sorry`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:160:41: warning: This simp argument is unused:
+  Row.drop
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Row.eval, Fin.sum_univ_castSucc, Row.last]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:166:33: error(lean.unknownIdentifier): Unknown constant `Fin.snoc`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:169:2: error: Type mismatch
+  rel_upper
+    (cast
+      (Eq.trans (congrFun' (congrArg LT.lt (Eq.symm Nat.cast_zero)) r.last)
+        (congrFun' (congrArg LT.lt Nat.cast_zero) r.last))
+      hr)
+has type
+  Rel.{0} ?m.43 (?m.46 + r.last * ?m.47) ?m.45 ↔ Rel ?m.43 ?m.47 ((?m.45 - ?m.46) / r.last)
+but is expected to have type
+  Rel.{u_2} r.strict (r.drop.eval ?x + ↑r.last * ?z) ↑r.bound ↔ Rel r.strict z ((↑r.bound - r.drop.eval x) / ↑r.last)
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:172:33: error(lean.unknownIdentifier): Unknown constant `Fin.snoc`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:175:2: error: Type mismatch
+  rel_lower
+    (cast (Eq.trans (congrArg (LT.lt r.last) (Eq.symm Nat.cast_zero)) (congrArg (LT.lt r.last) Nat.cast_zero)) hr)
+has type
+  Rel.{0} ?m.43 (?m.46 + r.last * ?m.47) ?m.45 ↔ Rel ?m.43 ((?m.45 - ?m.46) / r.last) ?m.47
+but is expected to have type
+  Rel.{u_2} r.strict (r.drop.eval ?x + ↑r.last * ?z) ↑r.bound ↔ Rel r.strict ((↑r.bound - r.drop.eval x) / ↑r.last) z
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:178:33: error(lean.unknownIdentifier): Unknown constant `Fin.snoc`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:178:67: error: unsolved goals
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+hr : r.last = 0
+⊢ Rel r.strict ({ coeff := fun i => r.coeff i.castSucc, bound := r.bound, strict := r.strict }.eval ?x + 0) ↑r.bound ↔
+    Rel r.strict ({ coeff := fun i => r.coeff i.castSucc, bound := r.bound, strict := r.strict }.eval x) ↑r.bound
+
+case x
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+hr : r.last = 0
+⊢ Fin n → ?m.22 r x z hr
+
+case z
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+hr : r.last = 0
+⊢ ?m.22 r x z hr
+
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+hr : r.last = 0
+⊢ Field (?m.22 r x z hr)
+
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+hr : r.last = 0
+⊢ LinearOrder (?m.22 r x z hr)
+
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+r : Row (n + 1)
+x : Fin n → K
+z : K
+hr : r.last = 0
+⊢ IsStrictOrderedRing (?m.22 r x z hr)
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:181:38: warning: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Rat.cast_zero, zero_mul, Row.drop]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:191:24: error(lean.unknownIdentifier): Unknown constant `Finset.sum_add_distrib`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:191:48: error(lean.unknownIdentifier): Unknown constant `Finset.mul_sum`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:189:89: error: unsolved goals
+K : Type u_1
+inst✝² : Field K
+inst✝¹ : LinearOrder K
+inst✝ : IsStrictOrderedRing K
+n : ℕ
+p m : Row (n + 1)
+x : Fin n → K
+⊢ sorry = -↑m.last * sorry + ↑p.last * sorry
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:190:13: warning: declaration uses `sorry`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:190:23: warning: This simp argument is unused:
+  Row.combine
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.drop, Rat.cast_add, Rat.cast_mul, Rat.cast_neg, add_mul, mul_assoc,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:190:36: warning: This simp argument is unused:
+  Row.drop
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.combine, Rat.cast_add, Rat.cast_mul, Rat.cast_neg, add_mul, mul_assoc,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:190:46: warning: This simp argument is unused:
+  Rat.cast_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.combine, Row.drop, Rat.cast_mul, Rat.cast_neg, add_mul, mul_assoc,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:190:60: warning: This simp argument is unused:
+  Rat.cast_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.combine, Row.drop, Rat.cast_add, Rat.cast_neg, add_mul, mul_assoc,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:190:74: warning: This simp argument is unused:
+  Rat.cast_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.combine, Row.drop, Rat.cast_add, Rat.cast_mul, add_mul, mul_assoc,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:191:4: warning: This simp argument is unused:
+  add_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.combine, Row.drop, Rat.cast_add, Rat.cast_mul, Rat.cast_neg, mul_assoc,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:191:13: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Row.eval, Row.combine, Row.drop, Rat.cast_add, Rat.cast_mul, Rat.cast_neg, add_mul,
+    Finset.sum_add_distrib, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:204:27: error(lean.invalidField): Invalid field notation: Type of
+  r
+is not known; cannot resolve field `last`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `Fin.last`
+  • `Row.last`
+  • `Lean.Meta.Grind.Arith.Cutsat.CooperSplitProof.last`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:208:32: error(lean.unknownIdentifier): Unknown constant `Fin.snoc`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:216:15: error(lean.invalidField): Invalid field `holds_zero`: The environment does not contain `UnifiedLean.G6.StrictAffineElimination.Row.holds_zero`, so it is not possible to project the field `holds_zero` from an expression
+  r
+of type `Row (n + 1)`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:249:15: error(lean.invalidField): Invalid field `holds_zero`: The environment does not contain `UnifiedLean.G6.StrictAffineElimination.Row.holds_zero`, so it is not possible to project the field `holds_zero` from an expression
+  r
+of type `Row (n + 1)`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:250:12: error(lean.unknownIdentifier): Unknown identifier `h`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:264:12: error(lean.unknownIdentifier): Unknown constant `Fin.init`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:264:25: error(lean.unknownIdentifier): Unknown identifier `project_iff`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:265:4: error: No goals to be solved
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:268:22: error(lean.unknownIdentifier): Unknown identifier `project_iff`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:268:11: error: Tactic `rcases` failed: `x✝ : ?m.45` is not an inductive datatype
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:285:39: error(lean.unknownIdentifier): Unknown constant `Finset.univ_eq_empty`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:285:61: error(lean.unknownIdentifier): Unknown constant `Finset.sum_empty`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:291:37: error(lean.unknownIdentifier): Unknown constant `Finset.univ_eq_empty`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:291:59: error(lean.unknownIdentifier): Unknown constant `Finset.sum_empty`
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:285:29: warning: declaration uses `sorry`
+'UnifiedLean.G6.StrictAffineElimination.decideFeasible_correct' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.StrictAffineElimination.real_feasible_iff_rational' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.StrictAffineElimination.rational_witness_of_real' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/derived-providers/StrictAffineElimination.lean:325:14: error(lean.unknownIdentifier): Unknown constant `project_iff`
+'UnifiedLean.G6.StrictAffineElimination.feasible_project_iff' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.StrictAffineElimination.finite_bounds_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,92 @@
+G6RationalAffineWitness.lean:81:10: error: Type mismatch: After simplification, term
+  hz
+ has type
+  Rel l.2 l.1 (B.min' hB)
+but is expected to have type
+  Rel l.2 l.1 a
+G6RationalAffineWitness.lean:169:2: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Decidable (∀ r ∈ R, r.Holds q)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6RationalAffineWitness.lean:172:60: error: unsolved goals
+n : ℕ
+R : Finset (Row n)
+q : Fin n → ℚ
+⊢ sorry = true ↔ ∀ r ∈ R, r.Holds q
+G6RationalAffineWitness.lean:173:13: warning: declaration uses `sorry`
+G6RationalAffineWitness.lean:173:35: warning: This simp argument is unused:
+  decide_eq_true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [checkRationalWitness]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6RationalAffineWitness.lean:211:50: error: Application type mismatch: The argument
+  q
+has type
+  Fin n → ℚ
+but is expected to have type
+  Fin n → ℝ
+in the application
+  r.eval q
+G6RationalAffineWitness.lean:212:20: error(lean.unknownIdentifier): Unknown constant `Rat.cast_sum`
+G6RationalAffineWitness.lean:211:60: error: unsolved goals
+n : ℕ
+R : Finset (Row n)
+q : Fin n → ℚ
+hq : ∀ r ∈ R, r.Holds q
+r : Row n
+hr : r ∈ R
+⊢ ∑ x, ↑(r.coeff x) * ↑(q x) = ∑ x, ↑(r.coeff x) * sorry () x
+G6RationalAffineWitness.lean:212:34: warning: This simp argument is unused:
+  Rat.cast_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Row.eval, Rat.cast_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6RationalAffineWitness.lean:244:41: warning: This simp argument is unused:
+  Finset.mem_product
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [projectList, project, List.mem_toFinset, List.mem_append, List.mem_map, List.mem_flatMap,
+    List.mem_filter, Finset.mem_union, Finset.mem_image, Finset.mem_filter, List.mem_toFinset, Prod.exists]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'UnifiedLean.G6.RationalAffineWitness.boundsWitness_spec' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.liftWitness_correct' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.checkRationalWitness_correct' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveRational_isSome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveRational_sound' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.rationalWitness_real' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveRational_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveRational_none_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveRational_checked' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.projectList_toFinset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveList_eq_solveRational' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveList_sound' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveList_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.RationalAffineWitness.solveList_none_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

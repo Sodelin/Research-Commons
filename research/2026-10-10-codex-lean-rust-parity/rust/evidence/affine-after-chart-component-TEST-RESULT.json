@@ -1,0 +1,312 @@
+{
+  "adapter_sha256": "cbad55d031621f8e6d29ddc58d6156188c6b9344705d4612642b2423ca6aea3c",
+  "binary_sha256": "9e2bafa8d82e108820ba46c866e7826dd872d3075df8f9709bc6fd1020e1f5d4",
+  "case_count": 15,
+  "cases": [
+    {
+      "actual_status": "MATRIX_WITNESS",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/sat_observed_identity",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 0,
+      "expected_status": "MATRIX_WITNESS",
+      "fraction_checker_called": true,
+      "id": "sat_observed_identity",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "MATRIX_WITNESS",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/sat_expected_pin",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver",
+        "--expected-binary-sha256",
+        "9e2bafa8d82e108820ba46c866e7826dd872d3075df8f9709bc6fd1020e1f5d4"
+      ],
+      "exit_code": 0,
+      "expected_status": "MATRIX_WITNESS",
+      "fraction_checker_called": true,
+      "id": "sat_expected_pin",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "MATRIX_EXCLUSION",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/unsat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/unsat",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 0,
+      "expected_status": "MATRIX_EXCLUSION",
+      "fraction_checker_called": true,
+      "id": "unsat",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "UNKNOWN",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/unknown.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/unknown",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 2,
+      "expected_status": "UNKNOWN",
+      "fraction_checker_called": false,
+      "id": "unknown",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/count.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/count_refused",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "fraction_checker_called": false,
+      "id": "count_refused",
+      "pass": true,
+      "solver_called": false
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/invalid.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/malformed_refused",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "fraction_checker_called": false,
+      "id": "malformed_refused",
+      "pass": true,
+      "solver_called": false
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/symlink.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/symlink_refused",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "fraction_checker_called": false,
+      "id": "symlink_refused",
+      "pass": true,
+      "solver_called": false
+    },
+    {
+      "actual_status": "REFUSED_REQUEST",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/pin_mismatch",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver",
+        "--expected-binary-sha256",
+        "0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "exit_code": 1,
+      "expected_status": "REFUSED_REQUEST",
+      "fraction_checker_called": false,
+      "id": "pin_mismatch",
+      "pass": true,
+      "solver_called": false
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/launch_failure",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/cannot-launch"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "fraction_checker_called": false,
+      "id": "launch_failure",
+      "pass": true,
+      "solver_called": false
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/post_start_failure",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/post-start-failure"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "fraction_checker_called": false,
+      "id": "post_start_failure",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/sat_exit2_refused",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat-wrong-exit"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "fraction_checker_called": false,
+      "id": "sat_exit2_refused",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/forged_witness",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/forged-witness"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "fraction_checker_called": true,
+      "id": "forged_witness",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": false,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/unsat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/other_request",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/certificate-other-request"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "fraction_checker_called": false,
+      "id": "other_request",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "actual_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "checker_called": true,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+        "--request",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/sat.rc1",
+        "--output",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/native_check_rejection",
+        "--binary",
+        "/workspace/scratch/lean-rust-parity-affine-component-after-chart-freeze-1/fixtures/native-checker-rejects"
+      ],
+      "exit_code": 1,
+      "expected_status": "RESOURCE_OR_EXECUTION_FAILURE",
+      "fraction_checker_called": true,
+      "id": "native_check_rejection",
+      "pass": true,
+      "solver_called": true
+    },
+    {
+      "id": "fresh_output_preservation",
+      "pass": true
+    }
+  ],
+  "schema": "native_affine_component_controls_v1",
+  "scope": "Authored bounded execution, identity and certificate-forgery controls. No biological source admission.",
+  "status": "PASS"
+}

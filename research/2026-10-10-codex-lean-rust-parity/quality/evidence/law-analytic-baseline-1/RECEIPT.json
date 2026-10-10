@@ -1,0 +1,90 @@
+{
+  "cases": [
+    {
+      "case": "ordinary",
+      "emitted_exact_polynomials": {
+        "ab": "x1/3",
+        "ac": "x1/3",
+        "bc": "1 - 2*x1/3"
+      },
+      "expected_exact_polynomials": {
+        "ab": "x1/3",
+        "ac": "x1/3",
+        "bc": "1 - 2*x1/3"
+      },
+      "normalization_exactly_one": true,
+      "pass": true
+    },
+    {
+      "case": "common",
+      "emitted_exact_polynomials": {
+        "ab": "g_3*x1*x2*x4/3 - g_3*x1*x3*x4/3 + x1*x3*x4/3",
+        "ac": "g_3*x1*x2*x4/3 - g_3*x1*x3*x4/3 + x1*x3*x4/3",
+        "bc": "-2*g_3*x1*x2*x4/3 + 2*g_3*x1*x3*x4/3 - 2*x1*x3*x4/3 + 1"
+      },
+      "expected_exact_polynomials": {
+        "ab": "g_3*x1*x2*x4/3 - g_3*x1*x3*x4/3 + x1*x3*x4/3",
+        "ac": "g_3*x1*x2*x4/3 - g_3*x1*x3*x4/3 + x1*x3*x4/3",
+        "bc": "-2*g_3*x1*x2*x4/3 + 2*g_3*x1*x3*x4/3 - 2*x1*x3*x4/3 + 1"
+      },
+      "normalization_exactly_one": true,
+      "pass": true
+    },
+    {
+      "case": "independent",
+      "emitted_exact_polynomials": {
+        "ab": "g_3**2*x1*x2*x4/3 + g_3**2*x1*x3*x4/3 - 2*g_3**2*x1*x4/3 - 2*g_3*x1*x3*x4/3 + 2*g_3*x1*x4/3 + x1*x3*x4/3",
+        "ac": "g_3**2*x1*x2*x4/3 + g_3**2*x1*x3*x4/3 - 2*g_3**2*x1*x4/3 - 2*g_3*x1*x3*x4/3 + 2*g_3*x1*x4/3 + x1*x3*x4/3",
+        "bc": "-2*g_3**2*x1*x2*x4/3 - 2*g_3**2*x1*x3*x4/3 + 4*g_3**2*x1*x4/3 + 4*g_3*x1*x3*x4/3 - 4*g_3*x1*x4/3 - 2*x1*x3*x4/3 + 1"
+      },
+      "expected_exact_polynomials": {
+        "ab": "g_3**2*x1*x2*x4/3 + g_3**2*x1*x3*x4/3 - 2*g_3**2*x1*x4/3 - 2*g_3*x1*x3*x4/3 + 2*g_3*x1*x4/3 + x1*x3*x4/3",
+        "ac": "g_3**2*x1*x2*x4/3 + g_3**2*x1*x3*x4/3 - 2*g_3**2*x1*x4/3 - 2*g_3*x1*x3*x4/3 + 2*g_3*x1*x4/3 + x1*x3*x4/3",
+        "bc": "-2*g_3**2*x1*x2*x4/3 - 2*g_3**2*x1*x3*x4/3 + 4*g_3**2*x1*x4/3 + 4*g_3*x1*x3*x4/3 - 4*g_3*x1*x4/3 - 2*x1*x3*x4/3 + 1"
+      },
+      "normalization_exactly_one": true,
+      "pass": true
+    },
+    {
+      "case": "forced-0",
+      "emitted_exact_polynomials": {
+        "ab": "x1*x2*x4/3",
+        "ac": "x1*x2*x4/3",
+        "bc": "-2*x1*x2*x4/3 + 1"
+      },
+      "expected_exact_polynomials": {
+        "ab": "x1*x2*x4/3",
+        "ac": "x1*x2*x4/3",
+        "bc": "-2*x1*x2*x4/3 + 1"
+      },
+      "normalization_exactly_one": true,
+      "pass": true
+    },
+    {
+      "case": "forced-1",
+      "emitted_exact_polynomials": {
+        "ab": "x1*x3*x4/3",
+        "ac": "x1*x3*x4/3",
+        "bc": "-2*x1*x3*x4/3 + 1"
+      },
+      "expected_exact_polynomials": {
+        "ab": "x1*x3*x4/3",
+        "ac": "x1*x3*x4/3",
+        "bc": "-2*x1*x3*x4/3 + 1"
+      },
+      "normalization_exactly_one": true,
+      "pass": true
+    }
+  ],
+  "cases_passed": 5,
+  "cases_total": 5,
+  "contrast_formula_checked": true,
+  "independent_minus_common_no_merger": "g_3*x1*x4*(g_3 - 1)*(x2 + x3 - 2)",
+  "inherited_provider": "research/2026-10-01-g7-continuous-design/law_compiler.py",
+  "oracle_source_sha256": "28698ec1f8a7965668684a2fcfc5d450fd2c355e6de3d5cef0a5d06c52e4c341",
+  "provider_bytes_stable": true,
+  "provider_sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+  "scope": "Inherited Python full-joint provider agrees with five independent symbolic three-sample formulas. No native parity, physical source admission, calibration or unknown-size source-coverage claim.",
+  "status": "PASS",
+  "sympy_version": "1.14.0"
+}

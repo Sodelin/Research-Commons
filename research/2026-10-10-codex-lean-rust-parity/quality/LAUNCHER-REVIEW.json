@@ -1,0 +1,48 @@
+{
+  "status": "LAUNCHER_REVIEW_PASS",
+  "cases": [
+    {
+      "case": "sat",
+      "status": "MATRIX_WITNESS",
+      "exit_code": 0,
+      "request_sha256": "ff250bc5f52495c292e99774d9ae0f7a1c9421c47934d7233d490fe25b8c749b",
+      "result_sha256": "ccb2196d04c349e3d5ec5d9117c1e3f4a7a0295268c96b6aa18b921785e2dfdb",
+      "output": "/workspace/scratch/lean-rust-parity-launcher/sat",
+      "native_solver_called": true,
+      "native_checker_called": true
+    },
+    {
+      "case": "unsat",
+      "status": "MATRIX_EXCLUSION",
+      "exit_code": 0,
+      "request_sha256": "882d6e5fbe77b172999061dcb2e7e848a76b9146c33f360df32a5626c1e996f4",
+      "result_sha256": "e56b86000d1bb289ed5f78ead54ee46ac80e0fbfc8e408811cd5239a154004ef",
+      "output": "/workspace/scratch/lean-rust-parity-launcher/unsat",
+      "native_solver_called": true,
+      "native_checker_called": true
+    },
+    {
+      "case": "unknown",
+      "status": "UNKNOWN",
+      "exit_code": 2,
+      "request_sha256": "d4fe01393389456ff4814a28e8acc232df2fb0ef3c7fbe7971ddcc9722a5032d",
+      "result_sha256": "7d952c8a19fd577a85bba8ffd935f5be825a85b7b9c514e060b616a3e3922531",
+      "output": "/workspace/scratch/lean-rust-parity-launcher/unknown",
+      "native_solver_called": true,
+      "native_checker_called": false
+    },
+    {
+      "case": "bad-pin",
+      "status": "REFUSED_REQUEST",
+      "exit_code": 1,
+      "request_sha256": "ff250bc5f52495c292e99774d9ae0f7a1c9421c47934d7233d490fe25b8c749b",
+      "result_sha256": "06c1f00b736dfdb279fa93f2ef620586ea8f66a93539f3938b75231410a5efc4",
+      "output": "/workspace/scratch/lean-rust-parity-launcher/bad-pin",
+      "native_solver_called": false,
+      "native_checker_called": false
+    }
+  ],
+  "fresh_output_overwrite_refused": true,
+  "launcher_sha256": "3c18e9ddc5e4576c40e391ac8135b6fd37180524ae1012ed735ca98cce4584d9",
+  "scope": "Supplied affine-matrix results with separate native and Fraction checks; no scientific source admission."
+}

@@ -358,6 +358,73 @@ def component(args):
     print(json.dumps({'status':result['status'],'execution_mode':result['execution_mode'],'output':str(out),'report':str(out/'REPORT.html')},sort_keys=True))
     return code
 
+def native_cell(args):
+    """Run a native finite-cell component and its separate certificate checks."""
+    module_name,schema,title={
+        'affine-cell':('native_component.py','rust_affine_component_result_v1',
+            'Exact affine matrix with independently checked native certificate'),
+        'natural-cell':('native_chart_component.py','rust_natural_cell_component_result_v1',
+            'Original-ID natural cell with independently checked native certificate'),
+    }[args.command]
+    request_path=args.request
+    if request_path.is_symlink() or not request_path.is_file():
+        raise InputError('A regular nonsymlink RC1 request file is required')
+    if request_path.stat().st_size>MAX_INPUT_BYTES:
+        raise InputError('RC1 request exceeds the 64 KiB input limit')
+    raw=request_path.read_bytes()
+    if len(raw)>MAX_INPUT_BYTES:raise InputError('RC1 request grew beyond its byte limit')
+    module=ROOT/'research/2026-10-10-codex-lean-rust-parity/rust'/module_name
+    if not module.is_file():raise SourceError('The selected native cell component is absent')
+    out=create_output(args.output)
+    result={'schema':'practical_solver_component_result_v1',
+        'execution_mode':'FRESH_COMPONENT_EXECUTION','component':args.command,
+        'component_called':False,'native_solver_called':False,'native_checker_called':False,
+        'original_nine_parameter_producer_called':False,'request_bytes_sha256':sha(raw),
+        'launcher_sha256':sha(Path(__file__).read_bytes()),
+        'component_source_sha256':sha(module.read_bytes()),'source_admission_verified':False,
+        'statistical_coverage_verified':False,'parameter_accuracy_released':False,
+        'whole_application_lean_verified':False,'started_utc':datetime.now(timezone.utc).isoformat()}
+    with (out/'REQUEST.rc1').open('xb') as f:f.write(raw)
+    command=[sys.executable,'-B',str(module),'--request',str(out/'REQUEST.rc1'),
+        '--output',str(out/'component'),'--binary',str(args.native_binary.absolute())]
+    if args.expected_binary_sha256:
+        command+=['--expected-binary-sha256',args.expected_binary_sha256]
+    def launched():
+        # Until the child receipt arrives, the wrapper's start says nothing
+        # about whether either native subprocess actually started.
+        result.update(component_called=True,native_solver_called=None,native_checker_called=None)
+    code=1
+    try:
+        receipt=execute(out,args.command,command,on_launch=launched,accepted_exit_codes=(0,1,2))
+        result['execution']=receipt;code=receipt['exit_code']
+        _,child=read(out/'component/RESULT.json',16*2**20,exact=False)
+        if child.get('schema')!=schema:
+            raise SourceError('Unexpected native cell component schema')
+        for name in ('solver_called','checker_called'):
+            if type(child.get(name)) is not bool:raise SourceError('Missing native process-start evidence')
+        result.update(native_solver_called=child['solver_called'],
+            native_checker_called=child['checker_called'],component_result=child)
+        expected={'MATRIX_WITNESS':0,'MATRIX_EXCLUSION':0,'UNKNOWN':2,
+            'REFUSED_REQUEST':1,'RESOURCE_OR_EXECUTION_FAILURE':1}
+        if child.get('status') not in expected or code!=expected[child['status']]:
+            raise SourceError('Native component status and exit receipt disagree')
+        if child.get('source_admission_verified') is not False:
+            raise SourceError('The native cell does not establish original source admission')
+        result.update(status=child['status'],explanation=child.get('scope',
+            'Exact supplied finite cell; original source admission is not established.'))
+        if sha(module.read_bytes())!=result['component_source_sha256']:
+            raise SourceError('Native component source changed during execution')
+        result['component_source_unchanged']=True
+    except Exception as error:
+        result.update(status='RESOURCE_OR_EXECUTION_FAILURE',explanation=str(error));code=1
+    result['ended_utc']=datetime.now(timezone.utc).isoformat()
+    write(out/'RESULT.json',result)
+    component_report(out,title,result)
+    write(out/'ARTIFACTS.json',inventory(out))
+    print(json.dumps({'status':result['status'],'execution_mode':result['execution_mode'],
+        'output':str(out),'report':str(out/'REPORT.html')},sort_keys=True))
+    return code
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);sub=parser.add_subparsers(dest='command',required=True)
     fresh=sub.add_parser('run',help='Fresh producer + independent complete-journal checker + pair diagnostic')
@@ -372,6 +439,15 @@ def main():
     bounds.add_argument('--python-executable',type=Path,help='Optional pinned scratch Python backend environment');bounds.set_defaults(func=component)
     forest=sub.add_parser('forest-baseline',help='Exact classical specified-forest coordinate for one ordinary population')
     forest.add_argument('--request',type=Path,required=True);forest.add_argument('--output',type=Path);forest.set_defaults(func=component)
+    for name,help_text in (
+        ('affine-cell','Exact supplied affine matrix with a separate native certificate check'),
+        ('natural-cell','Compile an original-ID natural cell with separate native certificate checks'),
+    ):
+        native=sub.add_parser(name,help=help_text)
+        native.add_argument('--request',type=Path,required=True);native.add_argument('--output',type=Path)
+        native.add_argument('--native-binary',type=Path,required=True)
+        native.add_argument('--expected-binary-sha256',help='Optional trusted SHA256 pin for the selected executable')
+        native.set_defaults(func=native_cell)
     args=parser.parse_args()
     try:return args.func(args)
     except (InputError,SourceError,OSError,ValueError,RuntimeError) as error:print('ERROR: '+str(error),file=sys.stderr);return 2

@@ -1,0 +1,30 @@
+G6AffineContradictionCertificate.lean:74:17: error: don't know how to synthesize implicit argument `s`
+  @Finset.sum_le_sum (Fin m) ℝ Real.instAddCommMonoid Real.instPreorder (fun i => ↑(weights i) * (rows i).eval x)
+    (fun i => ↑(weights i) * ↑(rows i).bound) ?m.153 IsOrderedAddMonoid.toAddLeftMono fun i x => hle i
+context:
+m n : ℕ
+rows : Fin m → Row n
+weights : Fin m → ℚ
+x : Fin n → ℝ
+hx : ∀ (i : Fin m), (rows i).Holds x
+hw : ∀ (i : Fin m), 0 ≤ weights i
+hc : ∀ (j : Fin n), weightedCoeff rows weights j = 0
+he : ∑ i, ↑(weights i) * (rows i).eval x = 0
+hle : ∀ (i : Fin m), ↑(weights i) * (rows i).eval x ≤ ↑(weights i) * ↑(rows i).bound
+hbcast : ∑ i, ↑(weights i) * ↑(rows i).bound = ↑(weightedBound rows weights)
+hneg : weightedBound rows weights < 0
+⊢ Finset (Fin m)
+G6AffineContradictionCertificate.lean:74:42: error(lean.inferBinderTypeFailed): Failed to infer binder type
+G6AffineContradictionCertificate.lean:74:9: error: failed to infer `have` declaration type
+'UnifiedLean.G6.AffineContradictionCertificate.check_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.AffineContradictionCertificate.weighted_eval_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AffineContradictionCertificate.valid_excludes_real' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.AffineContradictionCertificate.checked_excludes_real' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

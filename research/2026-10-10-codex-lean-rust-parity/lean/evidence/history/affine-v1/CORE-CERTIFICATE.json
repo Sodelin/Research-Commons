@@ -1,0 +1,210 @@
+{
+  "status": "PASS_FRESH_CORE_AND_COMPLETE_OWNED_AUDIT",
+  "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "trust_level": 0,
+  "kernel_checking": true,
+  "project_modules_fresh": [
+    "GParity.Rational",
+    "GParity.Affine",
+    "GParity.Count",
+    "GParity.Protocol",
+    "GParity.Main"
+  ],
+  "standard_library_artifacts_reused": true,
+  "mathlib_used": false,
+  "records": [
+    {
+      "module": "GParity.Rational",
+      "source_sha256": "bd054fff73f645f81fbe066daa94efa315efecac7480a8faaf9dc1611c7cff79",
+      "command": [
+        "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/core/20261010T095305.466772Z/objects/GParity/Rational.olean",
+        "GParity/Rational.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.2924935500000174,
+      "direct_import_artifacts": {
+        "Init.Data.Rat": {
+          ".olean": "92eaa46aff649f53e9371f8cf4b1d312d5a5592bd1e0d747d11f11c0efb1c888",
+          ".olean.private": "cebfa3c45fc4247267db1923da147bdf50bd3ee24d7127cbed6b1b646890f744",
+          ".olean.server": "64d217085dba5123378347cc2377c9d9f8c599d0b5f67f804466483fd74a7dcb",
+          ".ilean": "238f50f7f1f41c0cbeb2f4c46087d0050bda841dd328c5d2984c8b896e75193f",
+          ".ir": "99f111873ece9e75128bd4ff10456b76e5d5614235c385731a6267840ed319a2"
+        },
+        "Std": {
+          ".olean": "588b5b6ddf35e57a5d542cfb86c8752ddfa5c100eb559e569e90e06a54184f67",
+          ".olean.private": "7077fd9645d07eb27c2740a58e2f76c1d360330d59ba1342786b32e44ff2c775",
+          ".olean.server": "3b8b7f9ee09aaf3ecbb42d98516e21f649db3b014f7621b0fe14fbb95604cbc1",
+          ".ilean": "74d1115bce7bce3064e7877b7faaa3e35fee149e2978c25114af4f6133a688cb",
+          ".ir": "d25b2901f628f4fd1c83d4b65b21d8785711706bd06d047e811aaa0196ad2dc6"
+        }
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fresh_project_compilation": true,
+      "output_artifacts": {
+        ".olean": "386b96c5d1b110e570707af1ac02ec36f90129b64a8dafa56f1d38eb092e9550"
+      }
+    },
+    {
+      "module": "GParity.Affine",
+      "source_sha256": "db8fe686bd1bdd7ad95064ae3dbaf7666bce1ee8e1539ccb10bb9fb00d4c81f1",
+      "command": [
+        "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/core/20261010T095305.466772Z/objects/GParity/Affine.olean",
+        "GParity/Affine.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.43678734200000235,
+      "direct_import_artifacts": {
+        "GParity.Rational": {
+          ".olean": "386b96c5d1b110e570707af1ac02ec36f90129b64a8dafa56f1d38eb092e9550"
+        }
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fresh_project_compilation": true,
+      "output_artifacts": {
+        ".olean": "4082cedbf5f38087b85a09bb0400dace200ab0ffcbfac9acde3ca3df874bf361"
+      }
+    },
+    {
+      "module": "GParity.Count",
+      "source_sha256": "442c330852c4a19ba80a245d3e0b8b9ceed5039f4005da372b27edc5eb839f32",
+      "command": [
+        "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/core/20261010T095305.466772Z/objects/GParity/Count.olean",
+        "GParity/Count.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.32315470200001073,
+      "direct_import_artifacts": {
+        "GParity.Rational": {
+          ".olean": "386b96c5d1b110e570707af1ac02ec36f90129b64a8dafa56f1d38eb092e9550"
+        }
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fresh_project_compilation": true,
+      "output_artifacts": {
+        ".olean": "af33674fad271e0dd9bf1a1fcf7649a7094744c09b90eda69bd378cfe8448319"
+      }
+    },
+    {
+      "module": "GParity.Protocol",
+      "source_sha256": "7d37cd0abd87f86ba04b6209a869f105140c6030fa59fe5a5581f7b9dd552064",
+      "command": [
+        "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/core/20261010T095305.466772Z/objects/GParity/Protocol.olean",
+        "GParity/Protocol.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.38261933799992676,
+      "direct_import_artifacts": {
+        "GParity.Affine": {
+          ".olean": "4082cedbf5f38087b85a09bb0400dace200ab0ffcbfac9acde3ca3df874bf361"
+        },
+        "GParity.Count": {
+          ".olean": "af33674fad271e0dd9bf1a1fcf7649a7094744c09b90eda69bd378cfe8448319"
+        }
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fresh_project_compilation": true,
+      "output_artifacts": {
+        ".olean": "7b51737190fcfa9e5dd7fd965478d0625570bf45c564d7793de61c8e20912b26"
+      }
+    },
+    {
+      "module": "GParity.Main",
+      "source_sha256": "c7bb179e30689c1d2dcd8f2a93c71c5b81afcef977f4d2c89e55e6f245f0f5b5",
+      "command": [
+        "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/core/20261010T095305.466772Z/objects/GParity/Main.olean",
+        "GParity/Main.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.24147185300000729,
+      "direct_import_artifacts": {
+        "GParity.Protocol": {
+          ".olean": "7b51737190fcfa9e5dd7fd965478d0625570bf45c564d7793de61c8e20912b26"
+        }
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fresh_project_compilation": true,
+      "output_artifacts": {
+        ".olean": "152f83495867606aeeefbed2b6cc3c8e9c48271f5783872e10905eb4b2250a56"
+      }
+    },
+    {
+      "module": "CoreAudit",
+      "source_sha256": "bd3a009dc8a122935cb7bc6bd33e88bbe0235f4f79a4d8be429d30dec2438e27",
+      "command": [
+        "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "CoreAudit.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6713883200000055,
+      "direct_import_artifacts": {
+        "GParity.Main": {
+          ".olean": "152f83495867606aeeefbed2b6cc3c8e9c48271f5783872e10905eb4b2250a56"
+        },
+        "Lean.Elab.Command": {
+          ".olean": "fd56797f05c27aa4d103055d8405872b8b36e46e4d47c61ea9cf9a5fb584d628",
+          ".olean.private": "1f898328684c6c97b81bd5e08f08f820bd935308a78b69af6a86b8b516c67a6b",
+          ".olean.server": "d2a640d2e37edb0c90e65f06ac828921e9f499df4896040f8c211adb87fc267f",
+          ".ilean": "2010a257e2594af372c2c43b58cc4226f8241b4481de957f9189c853e85c4df2",
+          ".ir": "cc26ab850cc5b42e42cfb3f0a7976245c4def7de35f13107443db63fe1c9164c"
+        },
+        "Lean.Util.CollectAxioms": {
+          ".olean": "4cae189c9ee60f5fa53f6008942e8d00953894e460f8aa244ff06c38ac33551d",
+          ".olean.private": "1ab89cbac2f98e0f9c3cedd98fc294718b0e9e668992ef79d6f3a6e9bf6a11f7",
+          ".olean.server": "d10ff4518153afa782210e2da08a02d6be8d5fe62f87e78c7dfe1c8d049d4c5a",
+          ".ilean": "6f65315071bee6d34e8f979147e90cd0f247ca31e0343efae60dca6525aa99a4",
+          ".ir": "e221164732b40f161a810056b15147ccd0fa065da4b7d5c39eba7605fbc3c7ed"
+        }
+      },
+      "stdout_sha256": "894ccdbba9f427879e35e625e6d0d234e48be8ff8af11f83786ca328a31a4ac7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fresh_project_compilation": true
+    }
+  ],
+  "declarations": 209,
+  "theorem_declarations": 30,
+  "owned_axioms": 0,
+  "nonstandard_axiom_rows": 0,
+  "native_binary_sha256": "795fd20be92a466ac8d7069824744d3d9837fe8c7893ff3d56958bef998ec68e",
+  "audit_sha256": "6551a91cfc26c4073a36139076070eb0fba145c496f2bcb8e21bc04fe836d8b5",
+  "evidence": "evidence/core/20261010T095305.466772Z",
+  "scope": "Exact executable arithmetic and protocol; no assertion of full G1-G7 scientific closure or native Rust theorem refinement."
+}

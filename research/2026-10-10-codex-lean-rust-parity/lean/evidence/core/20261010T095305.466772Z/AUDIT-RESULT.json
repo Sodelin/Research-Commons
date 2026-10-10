@@ -1,0 +1,6353 @@
+{
+  "theorem_declaration_count": 30,
+  "selected_modules": [
+    "GParity.Rational",
+    "GParity.Affine",
+    "GParity.Count",
+    "GParity.Protocol",
+    "GParity.Main"
+  ],
+  "owned_axioms": [],
+  "nonstandard_axiom_rows": [],
+  "missing_modules": [],
+  "declarations": [
+    {
+      "type_references": [
+        "List",
+        "GParity.Affine.Row",
+        "Nat"
+      ],
+      "name": "GParity.Affine.projectedSize",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "GParity.Affine.Row",
+        "HAdd.hAdd",
+        "Nat",
+        "instHAdd",
+        "instAddNat",
+        "List.length",
+        "GParity.Affine.zeros",
+        "HMul.hMul",
+        "instHMul",
+        "instMulNat",
+        "GParity.Affine.positives",
+        "GParity.Affine.negatives"
+      ],
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Outcome.ctorElimType",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Nat",
+        "cond",
+        "Nat.ble",
+        "PULift",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Protocol.instReprRequest.repr",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "Nat",
+        "GParity.Protocol.instReprRequest.repr.match_1",
+        "Std.Format",
+        "GParity.Protocol.AffineInput",
+        "Repr.addAppParen",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "ite",
+        "Int",
+        "GE.ge",
+        "instLENat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Nat.decLe",
+        "instOfNat",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.text",
+        "Std.Format.line",
+        "reprArg",
+        "GParity.Protocol.instReprAffineInput",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "GParity.Count.Input",
+        "GParity.Count.instReprInput"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Count.Input",
+      "module": "GParity.Count",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk"
+      ],
+      "name": "GParity.Affine.instBEqRow.beq.match_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk",
+        "GParity.Affine.Row.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Count.Input",
+        "GParity.Count.Input._sizeOf_inst",
+        "GParity.Count.Input.mk",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Rat._sizeOf_inst"
+      ],
+      "name": "GParity.Count.Input.mk.sizeOf_spec",
+      "module": "GParity.Count",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "Rat._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Affine.Outcome.recOn",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown",
+        "GParity.Affine.Outcome.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Protocol.instReprAffineInput.repr",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "Std.Format.bracket",
+        "HAppend.hAppend",
+        "Std.Format",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.nil",
+        "Std.Format.text",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "OfNat.ofNat",
+        "Int",
+        "instOfNat",
+        "repr",
+        "instReprNat",
+        "GParity.Protocol.AffineInput.n",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "Std.Format.line",
+        "GParity.Protocol.AffineInput.cap",
+        "List",
+        "GParity.Affine.Row",
+        "instReprList",
+        "GParity.Affine.instReprRow",
+        "GParity.Protocol.AffineInput.rows"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint.mk"
+      ],
+      "name": "GParity.Affine.Endpoint.rec",
+      "module": "GParity.Affine",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "String",
+        "Prod",
+        "UInt32"
+      ],
+      "name": "GParity.Protocol.execute",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "GParity.Protocol.execute.match_3",
+        "Option",
+        "GParity.Protocol.Request",
+        "Prod",
+        "UInt32",
+        "GParity.Protocol.parseRequest",
+        "Unit",
+        "Prod.mk",
+        "OfNat.ofNat",
+        "UInt32.instOfNat",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.execute.match_1",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.solve",
+        "GParity.Protocol.AffineInput.n",
+        "GParity.Protocol.AffineInput.rows",
+        "GParity.Protocol.AffineInput.cap",
+        "List",
+        "Rat",
+        "ite",
+        "Eq",
+        "Bool",
+        "GParity.Affine.checkWitness",
+        "Bool.true",
+        "instDecidableEqBool",
+        "GParity.Protocol.envelope",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "instAppendString",
+        "GParity.Rational.line",
+        "List.map",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.eval",
+        "GParity.Affine.checkContradiction",
+        "GParity.Affine.Row.weights",
+        "ToString.toString",
+        "instToStringString",
+        "GParity.Rational.wire",
+        "GParity.Affine.Row.bound",
+        "GParity.Affine.Row.strict",
+        "Nat",
+        "instToStringNat",
+        "GParity.Count.Input",
+        "GParity.Count.Output",
+        "GParity.Count.compute",
+        "GParity.Count.Output.delta",
+        "GParity.Count.Output.bound",
+        "GParity.Count.Output.ceiling"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "GParity.Affine.Endpoint"
+      ],
+      "name": "GParity.Affine.endpoint",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "GParity.Affine.Endpoint.mk",
+        "HDiv.hDiv",
+        "instHDiv",
+        "Rat.instDiv",
+        "HSub.hSub",
+        "instHSub",
+        "Rat.instSub",
+        "GParity.Affine.Row.bound",
+        "GParity.Rational.dot",
+        "List.take",
+        "GParity.Affine.Row.coeff",
+        "GParity.Affine.Row.last",
+        "GParity.Affine.Row.strict"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "Option",
+        "GParity.Affine.Row",
+        "Option.some",
+        "Unit",
+        "Option.none"
+      ],
+      "name": "GParity.Affine.solve.match_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Option",
+        "GParity.Affine.Row",
+        "Option.some",
+        "Unit",
+        "Option.none",
+        "Option.casesOn",
+        "Unit.unit"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat",
+        "GParity.Count.Input.mk"
+      ],
+      "name": "GParity.Count.Input.rec",
+      "module": "GParity.Count",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput.mk"
+      ],
+      "name": "GParity.Protocol.AffineInput.rec",
+      "module": "GParity.Protocol",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint"
+      ],
+      "name": "GParity.Affine.Endpoint.mk._flat_ctor",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint.mk"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Prod",
+        "String",
+        "Nat",
+        "Prod.mk"
+      ],
+      "name": "GParity.Protocol.parseRequest.match_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Prod",
+        "String",
+        "Nat",
+        "Prod.mk",
+        "Prod.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat"
+      ],
+      "name": "GParity.Affine.Outcome.unsat.elim",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "GParity.Affine.Outcome.ctorElim",
+        "Eq.symm",
+        "PULift.up"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat"
+      ],
+      "name": "GParity.Count.Input.epsilon",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "String"
+      ],
+      "name": "GParity.Protocol.envelope",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "instAppendString",
+        "ToString.toString",
+        "instToStringString"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.sat"
+      ],
+      "name": "GParity.Affine.Outcome.sat.injEq",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "List",
+        "Rat",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Outcome.sat.inj",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk"
+      ],
+      "name": "GParity.Affine.Row.mk.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk",
+        "id",
+        "GParity.Affine.Row.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.AffineInput.ctorIdx",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Rat",
+        "Bool"
+      ],
+      "name": "GParity.Affine.checkWitness",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Rat",
+        "Bool.and",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqNat",
+        "List.length",
+        "List.all",
+        "GParity.Affine.Row.coeff",
+        "GParity.Affine.Row.holds"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Bool"
+      ],
+      "name": "GParity.Affine.Row.strict",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Nat",
+        "GParity.Count.Output"
+      ],
+      "name": "GParity.Count.Output.mk",
+      "module": "GParity.Count",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Count.Output",
+      "module": "GParity.Count",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.instReprRow",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Affine.Row",
+        "GParity.Affine.instReprRow.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Affine.Endpoint",
+      "module": "GParity.Affine",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "String",
+        "List.cons"
+      ],
+      "name": "GParity.Protocol.parseRow.match_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "String",
+        "List.cons",
+        "GParity.Protocol.parseRow._sparseCasesOn_1",
+        "Nat.hasNotBit",
+        "List.ctorIdx"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat"
+      ],
+      "name": "GParity.Affine.Row.weights",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.rec",
+      "module": "GParity.Protocol",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat"
+      ],
+      "name": "GParity.Affine.Row.eval",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "GParity.Rational.dot",
+        "GParity.Affine.Row.coeff"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Endpoint.ctorIdx",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Rat"
+      ],
+      "name": "GParity.Count.Output.delta",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput.mk"
+      ],
+      "name": "GParity.Protocol.AffineInput.recOn",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput.mk",
+        "GParity.Protocol.AffineInput.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "List.nil",
+        "Nat.hasNotBit",
+        "List.ctorIdx"
+      ],
+      "name": "GParity.Protocol.parseRequest._sparseCasesOn_3",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "List.nil",
+        "List.rec",
+        "Nat.hasNotBit",
+        "List.ctorIdx",
+        "List.cons",
+        "Nat.ne_of_beq_eq_false",
+        "Nat.land",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat",
+        "Nat.shiftRight",
+        "Eq.refl",
+        "Bool",
+        "Bool.false"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input"
+      ],
+      "name": "GParity.Count.Input.noConfusionType",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "GParity.Count.Input.casesOn",
+        "Rat",
+        "Eq"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.casesOn",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count",
+        "GParity.Protocol.Request.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.Row.mk._flat_ctor",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "String",
+        "List.cons",
+        "List.nil"
+      ],
+      "name": "GParity.Rational.parse.match_1",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "String",
+        "List.cons",
+        "List.nil",
+        "GParity.Rational.parse._sparseCasesOn_1",
+        "GParity.Rational.parse._sparseCasesOn_2",
+        "Nat.hasNotBit",
+        "List.ctorIdx"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "IO",
+        "UInt32"
+      ],
+      "name": "main",
+      "module": "GParity.Main",
+      "kind": "definition",
+      "body_references": [
+        "Bind.bind",
+        "IO",
+        "Monad.toBind",
+        "instMonadEIO",
+        "IO.Error",
+        "IO.FS.Stream",
+        "UInt32",
+        "liftM",
+        "BaseIO",
+        "EIO",
+        "instMonadLiftTOfMonadLift",
+        "instMonadLiftBaseIOEIO",
+        "instMonadLiftT",
+        "IO.getStdin",
+        "IO.getStdout",
+        "String",
+        "MonadExcept.tryCatch",
+        "instMonadExceptOfMonadExceptOf",
+        "instMonadExceptOfEIO",
+        "IO.FS.Stream.readToEnd",
+        "Pure.pure",
+        "Applicative.toPure",
+        "Monad.toApplicative",
+        "main.match_1",
+        "Prod",
+        "GParity.Protocol.execute",
+        "Unit",
+        "IO.FS.Stream.putStr"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unsat"
+      ],
+      "name": "GParity.Affine.Outcome.unsat.injEq",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unsat",
+        "GParity.Affine.Outcome.unsat.inj",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Nat",
+        "GParity.Count.Output"
+      ],
+      "name": "GParity.Count.Output.mk._flat_ctor",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "Nat",
+        "GParity.Count.Output.mk"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome._sizeOf_inst",
+        "GParity.Affine.Outcome.unsat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "GParity.Affine.Row._sizeOf_inst"
+      ],
+      "name": "GParity.Affine.Outcome.unsat.sizeOf_spec",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "GParity.Affine.Row._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request"
+      ],
+      "name": "GParity.Protocol.Request.affine",
+      "module": "GParity.Protocol",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "List",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Protocol.AffineInput.rows",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat"
+      ],
+      "name": "GParity.Count.Input.M",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Count.instReprInput.repr",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "Nat",
+        "Std.Format.bracket",
+        "HAppend.hAppend",
+        "Std.Format",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.nil",
+        "Std.Format.text",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "OfNat.ofNat",
+        "Int",
+        "instOfNat",
+        "repr",
+        "Rat",
+        "instReprRat",
+        "GParity.Count.Input.b",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "Std.Format.line",
+        "GParity.Count.Input.epsilon",
+        "GParity.Count.Input.sigma",
+        "GParity.Count.Input.M"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "String",
+        "Option",
+        "GParity.Protocol.Request"
+      ],
+      "name": "GParity.Protocol.parseRequest",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "ite",
+        "Option",
+        "GParity.Protocol.Request",
+        "Eq",
+        "Bool",
+        "Bool.or",
+        "Decidable.decide",
+        "GT.gt",
+        "Nat",
+        "instLTNat",
+        "String.utf8ByteSize",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Nat.decLt",
+        "Bool.not",
+        "String.endsWith",
+        "String.Slice.Pattern.BackwardSliceSearcher.instBackwardPattern_1",
+        "List.all",
+        "Char",
+        "String.toList",
+        "LT.lt",
+        "Char.toNat",
+        "Bool.true",
+        "instDecidableEqBool",
+        "Option.none",
+        "List",
+        "String.splitOn",
+        "Bind.bind",
+        "Monad.toBind",
+        "instMonadOption",
+        "List.head?",
+        "GParity.Protocol.parseRequest.match_3",
+        "GParity.Rational.parseNat",
+        "bne",
+        "instBEqOfDecidableEq",
+        "instDecidableEqNat",
+        "List.length",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "GParity.Affine.Row",
+        "List.mapM",
+        "Prod",
+        "GParity.Protocol.parseRequest.match_1",
+        "GParity.Protocol.parseRow",
+        "List.zipIdx",
+        "List.take",
+        "List.drop",
+        "Option.some",
+        "GParity.Protocol.Request.affine",
+        "GParity.Protocol.AffineInput.mk",
+        "Rat",
+        "GParity.Rational.parse",
+        "LE.le",
+        "Rat.instLE",
+        "Rat.instOfNat",
+        "Rat.instDecidableLe",
+        "Rat.instLT",
+        "Rat.instDecidableLt",
+        "GParity.Protocol.Request.count",
+        "GParity.Count.Input.mk"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Affine.Outcome.unknown.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unknown",
+        "id",
+        "GParity.Affine.Outcome.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Row.ctorIdx",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Affine.Outcome.unknown.elim",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "GParity.Affine.Outcome.unknown",
+        "GParity.Affine.Outcome.ctorElim",
+        "Eq.symm",
+        "PULift.up"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Eq",
+        "GParity.Affine.Endpoint.noConfusionType"
+      ],
+      "name": "GParity.Affine.Endpoint.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Affine.Endpoint.noConfusionType",
+        "GParity.Affine.Endpoint.casesOn",
+        "Rat",
+        "Bool",
+        "Eq.refl"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Nat"
+      ],
+      "name": "GParity.Count.Input._sizeOf_1",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "GParity.Count.Input.rec",
+        "Nat",
+        "Rat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "Rat._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.Outcome.sat",
+      "module": "GParity.Affine",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.affine"
+      ],
+      "name": "GParity.Protocol.Request.affine.inj",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.affine",
+        "GParity.Protocol.Request.affine.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Nat.succ"
+      ],
+      "name": "GParity.Affine.solve.match_3",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Nat.succ",
+        "Nat.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "List.cons",
+        "Nat.hasNotBit",
+        "List.ctorIdx"
+      ],
+      "name": "GParity.Protocol.parseRow._sparseCasesOn_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "List.cons",
+        "List.rec",
+        "Nat.hasNotBit",
+        "List.ctorIdx",
+        "List.nil",
+        "Nat.ne_of_beq_eq_false",
+        "Nat.land",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat",
+        "Nat.shiftRight",
+        "Eq.refl",
+        "Bool",
+        "Bool.false"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Rat"
+      ],
+      "name": "GParity.Count.Output.bound",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.mk",
+        "And"
+      ],
+      "name": "GParity.Affine.Endpoint.mk.inj",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.mk",
+        "GParity.Affine.Endpoint.mk.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Bool"
+      ],
+      "name": "GParity.Affine.instBEqRow.beq",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "GParity.Affine.instBEqRow.beq.match_1",
+        "Bool",
+        "List",
+        "Rat",
+        "Bool.and",
+        "BEq.beq",
+        "List.instBEq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqRat",
+        "instDecidableEqBool",
+        "Bool.false"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.Request.ctorIdx",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.casesOn",
+        "Nat",
+        "GParity.Protocol.AffineInput",
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput"
+      ],
+      "name": "GParity.Protocol.AffineInput.noConfusionType",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.casesOn",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Protocol.AffineInput"
+      ],
+      "name": "GParity.Protocol.instReprAffineInput",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.instReprAffineInput.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Nat",
+        "Eq",
+        "GParity.Count.Output",
+        "GParity.Count.Output.mk",
+        "And"
+      ],
+      "name": "GParity.Count.Output.mk.inj",
+      "module": "GParity.Count",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Nat",
+        "Eq",
+        "GParity.Count.Output",
+        "GParity.Count.Output.mk",
+        "GParity.Count.Output.mk.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.sat"
+      ],
+      "name": "GParity.Affine.Outcome.sat.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "Rat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.sat",
+        "id",
+        "GParity.Affine.Outcome.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool"
+      ],
+      "name": "GParity.Affine.Row.holds",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "ite",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Row.strict",
+        "Bool.true",
+        "instDecidableEqBool",
+        "Decidable.decide",
+        "LT.lt",
+        "Rat.instLT",
+        "GParity.Affine.Row.eval",
+        "GParity.Affine.Row.bound",
+        "Rat.instDecidableLt",
+        "LE.le",
+        "Rat.instLE",
+        "Rat.instDecidableLe"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.solve._unsafe_rec",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.solve.match_3",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.solve.match_1",
+        "Option",
+        "List.find?",
+        "Bool.not",
+        "GParity.Affine.Row.holds",
+        "List.nil",
+        "Rat",
+        "GParity.Affine.Outcome.unsat",
+        "Unit",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.projectedSize",
+        "ite",
+        "LT.lt",
+        "instLTNat",
+        "Nat.decLt",
+        "GParity.Affine.Outcome.unknown",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "GParity.Affine.instReprOutcome.repr.match_1",
+        "GParity.Affine.solve._unsafe_rec",
+        "GParity.Affine.projectList",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "List.instAppend",
+        "List.cons",
+        "GParity.Affine.chooseLast"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Rat"
+      ],
+      "name": "GParity.Affine.chooseLast",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Rat",
+        "Option",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.lowerExtremum",
+        "List.map",
+        "GParity.Affine.endpoint",
+        "GParity.Affine.negatives",
+        "GParity.Affine.upperExtremum",
+        "GParity.Affine.positives",
+        "GParity.Affine.chooseLast.match_1",
+        "Unit",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Rat.instAdd",
+        "GParity.Affine.Endpoint.value",
+        "HSub.hSub",
+        "instHSub",
+        "Rat.instSub",
+        "ite",
+        "LT.lt",
+        "Rat.instLT",
+        "Rat.instDecidableLt",
+        "HDiv.hDiv",
+        "instHDiv",
+        "Rat.instDiv"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Nat"
+      ],
+      "name": "GParity.Count.Output.ceiling",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput"
+      ],
+      "name": "GParity.Protocol.AffineInput.mk._flat_ctor",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput.mk"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Row._sizeOf_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.rec",
+        "Nat",
+        "List",
+        "Rat",
+        "Bool",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "List._sizeOf_inst",
+        "Rat._sizeOf_inst",
+        "Bool._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.mk",
+        "And"
+      ],
+      "name": "GParity.Protocol.AffineInput.mk.inj",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.mk",
+        "GParity.Protocol.AffineInput.mk.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Affine.instReprOutcome.repr.match_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown",
+        "GParity.Affine.Outcome.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk"
+      ],
+      "name": "GParity.Affine.Row.recOn",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk",
+        "GParity.Affine.Row.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat",
+        "GParity.Count.Input.mk"
+      ],
+      "name": "GParity.Count.Input.casesOn",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "Rat",
+        "GParity.Count.Input.mk",
+        "GParity.Count.Input.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Prod",
+        "String",
+        "UInt32",
+        "Prod.mk"
+      ],
+      "name": "main.match_1",
+      "module": "GParity.Main",
+      "kind": "definition",
+      "body_references": [
+        "Prod",
+        "String",
+        "UInt32",
+        "Prod.mk",
+        "Prod.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Protocol.Request"
+      ],
+      "name": "GParity.Protocol.Request._sizeOf_inst",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Outcome.ctorIdx",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.casesOn",
+        "Nat",
+        "List",
+        "Rat",
+        "GParity.Affine.Row"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "Nat.below",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.solve._f",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "Nat.below",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.solve.match_3",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "GParity.Affine.solve.match_1",
+        "Option",
+        "List.find?",
+        "Bool.not",
+        "GParity.Affine.Row.holds",
+        "List.nil",
+        "Rat",
+        "GParity.Affine.Outcome.unsat",
+        "Unit",
+        "GParity.Affine.Outcome.sat",
+        "Nat.succ",
+        "GParity.Affine.projectedSize",
+        "ite",
+        "LT.lt",
+        "instLTNat",
+        "Nat.decLt",
+        "GParity.Affine.Outcome.unknown",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "GParity.Affine.instReprOutcome.repr.match_1",
+        "GParity.Affine.projectList",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "List.instAppend",
+        "List.cons",
+        "GParity.Affine.chooseLast"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.AffineInput._sizeOf_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.rec",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "instSizeOfNat",
+        "List._sizeOf_inst",
+        "GParity.Affine.Row._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "String",
+        "Option",
+        "Int"
+      ],
+      "name": "GParity.Rational.parseInt",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "Bind.bind",
+        "Option",
+        "Monad.toBind",
+        "instMonadOption",
+        "Int",
+        "String.toInt?",
+        "ite",
+        "Eq",
+        "Bool",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqString",
+        "ToString.toString",
+        "instToStringInt",
+        "Bool.true",
+        "instDecidableEqBool",
+        "Option.some",
+        "Option.none"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint.mk"
+      ],
+      "name": "GParity.Affine.Endpoint.recOn",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint.mk",
+        "GParity.Affine.Endpoint.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "String",
+        "List.cons",
+        "List.nil"
+      ],
+      "name": "GParity.Protocol.parseRequest.match_3",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "String",
+        "List.cons",
+        "List.nil",
+        "GParity.Protocol.parseRow._sparseCasesOn_1",
+        "dite",
+        "Eq",
+        "instDecidableEqString",
+        "Eq.ndrec_symm",
+        "GParity.Protocol.parseRequest._sparseCasesOn_3",
+        "Nat.hasNotBit",
+        "List.ctorIdx",
+        "Not"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "String",
+        "Option",
+        "Nat"
+      ],
+      "name": "GParity.Rational.parseNat",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "Bind.bind",
+        "Option",
+        "Monad.toBind",
+        "instMonadOption",
+        "Nat",
+        "String.toNat?",
+        "ite",
+        "Eq",
+        "Bool",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqString",
+        "ToString.toString",
+        "instToStringNat",
+        "Bool.true",
+        "instDecidableEqBool",
+        "Option.some",
+        "Option.none"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "GParity.Affine.Endpoint",
+        "Option"
+      ],
+      "name": "GParity.Affine.upperExtremum",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "GParity.Affine.Endpoint",
+        "List.foldl",
+        "Option",
+        "GParity.Affine.lowerExtremum.match_1",
+        "Unit",
+        "Option.some",
+        "ite",
+        "LT.lt",
+        "Rat",
+        "Rat.instLT",
+        "GParity.Affine.Endpoint.value",
+        "Rat.instDecidableLt",
+        "Eq",
+        "Bool",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqRat",
+        "Bool.true",
+        "instDecidableEqBool",
+        "GParity.Affine.Endpoint.mk",
+        "Bool.or",
+        "GParity.Affine.Endpoint.strict",
+        "Option.none"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request._sizeOf_inst",
+        "GParity.Protocol.Request.affine",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "GParity.Protocol.AffineInput._sizeOf_inst"
+      ],
+      "name": "GParity.Protocol.Request.affine.sizeOf_spec",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "GParity.Protocol.AffineInput._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.Outcome.noConfusionType",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.casesOn",
+        "List",
+        "Rat",
+        "dite",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "Nat.decEq",
+        "GParity.Affine.Outcome.sat.elim",
+        "Not",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat.elim",
+        "GParity.Affine.Outcome.unknown.elim"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Affine.Outcome",
+      "module": "GParity.Affine",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Protocol.Request"
+      ],
+      "name": "GParity.Protocol.instReprRequest",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.instReprRequest.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.Request.ctorElimType",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "Nat",
+        "cond",
+        "Nat.ble",
+        "PULift",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Count.Output"
+      ],
+      "name": "GParity.Count.instReprOutput",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Count.Output",
+        "GParity.Count.instReprOutput.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Nat"
+      ],
+      "name": "GParity.Count.Input.ctorIdx",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.count.injEq",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Count.Input",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.count",
+        "GParity.Protocol.Request.count.inj",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.Row.drop",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk",
+        "List.take",
+        "Rat",
+        "GParity.Affine.Row.coeff",
+        "GParity.Affine.Row.bound",
+        "GParity.Affine.Row.strict",
+        "GParity.Affine.Row.weights"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Rat",
+        "Bool"
+      ],
+      "name": "GParity.Affine.checkContradiction",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Rat",
+        "Prod",
+        "List.zip",
+        "List.foldl",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Rat.instAdd",
+        "HMul.hMul",
+        "instHMul",
+        "Rat.instMul",
+        "Prod.snd",
+        "GParity.Affine.Row.bound",
+        "Prod.fst",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "Bool.and",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqNat",
+        "List.length",
+        "List.all",
+        "GParity.Affine.Row.coeff",
+        "Decidable.decide",
+        "LE.le",
+        "Rat.instLE",
+        "Rat.instDecidableLe",
+        "List.range",
+        "instDecidableEqRat",
+        "Option.getD",
+        "GetElem?.getElem?",
+        "LT.lt",
+        "instLTNat",
+        "List.instGetElem?NatLtLength",
+        "Bool.or",
+        "Rat.instLT",
+        "Rat.instDecidableLt",
+        "List.any",
+        "GParity.Affine.Row.strict"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.Row.mk",
+      "module": "GParity.Affine",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "String",
+        "List",
+        "Rat"
+      ],
+      "name": "GParity.Rational.line",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "List",
+        "Rat",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "instAppendString",
+        "ToString.toString",
+        "Nat",
+        "instToStringNat",
+        "List.length",
+        "ite",
+        "Eq",
+        "Bool",
+        "List.isEmpty",
+        "Bool.true",
+        "instDecidableEqBool",
+        "String.intercalate",
+        "List.map",
+        "GParity.Rational.wire"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unsat"
+      ],
+      "name": "GParity.Affine.Outcome.unsat.inj",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unsat",
+        "GParity.Affine.Outcome.unsat.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Nat",
+        "Eq",
+        "GParity.Count.Output",
+        "GParity.Count.Output.mk",
+        "And"
+      ],
+      "name": "GParity.Count.Output.mk.injEq",
+      "module": "GParity.Count",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Nat",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Count.Output",
+        "GParity.Count.Output.mk",
+        "And",
+        "GParity.Count.Output.mk.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "GParity.Protocol.Request"
+      ],
+      "name": "GParity.Protocol.Request.count",
+      "module": "GParity.Protocol",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.solve",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Nat.brecOn",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.solve._f"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Protocol.AffineInput.noConfusionType"
+      ],
+      "name": "GParity.Protocol.AffineInput.noConfusion",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Protocol.AffineInput.noConfusionType",
+        "GParity.Protocol.AffineInput.casesOn",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq.refl"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Nat",
+        "Eq",
+        "GParity.Protocol.Request.ctorIdx",
+        "GParity.Protocol.Request.ctorElimType"
+      ],
+      "name": "GParity.Protocol.Request.ctorElim",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "Nat",
+        "Eq",
+        "GParity.Protocol.Request.ctorIdx",
+        "GParity.Protocol.Request.ctorElimType",
+        "GParity.Protocol.Request.casesOn",
+        "GParity.Protocol.AffineInput",
+        "PULift.down",
+        "GParity.Protocol.Request.affine",
+        "Eq.ndrec",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.mk"
+      ],
+      "name": "GParity.Protocol.AffineInput.mk.noConfusion",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.mk",
+        "id",
+        "GParity.Protocol.AffineInput.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unknown",
+        "And"
+      ],
+      "name": "GParity.Affine.Outcome.unknown.inj",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unknown",
+        "GParity.Affine.Outcome.unknown.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Bool",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint._sizeOf_inst",
+        "GParity.Affine.Endpoint.mk",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Rat._sizeOf_inst",
+        "Bool._sizeOf_inst"
+      ],
+      "name": "GParity.Affine.Endpoint.mk.sizeOf_spec",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Bool",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "Rat._sizeOf_inst",
+        "Bool._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.instReprOutcome",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.instReprOutcome.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.mk"
+      ],
+      "name": "GParity.Affine.Endpoint.mk.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.mk",
+        "id",
+        "GParity.Affine.Endpoint.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk"
+      ],
+      "name": "GParity.Affine.Row.casesOn",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk",
+        "GParity.Affine.Row.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Count.instReprOutput.repr",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output",
+        "Nat",
+        "Std.Format.bracket",
+        "HAppend.hAppend",
+        "Std.Format",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.nil",
+        "Std.Format.text",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "OfNat.ofNat",
+        "Int",
+        "instOfNat",
+        "repr",
+        "Rat",
+        "instReprRat",
+        "GParity.Count.Output.delta",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "Std.Format.line",
+        "GParity.Count.Output.bound",
+        "instReprNat",
+        "GParity.Count.Output.ceiling"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Count.Output"
+      ],
+      "name": "GParity.Count.Output._sizeOf_inst",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Count.Output",
+        "GParity.Count.Output._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat",
+        "GParity.Count.Input.mk"
+      ],
+      "name": "GParity.Count.Input.recOn",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "Rat",
+        "GParity.Count.Input.mk",
+        "GParity.Count.Input.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.zeros",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "GParity.Affine.Row",
+        "List.filter",
+        "BEq.beq",
+        "Rat",
+        "instBEqOfDecidableEq",
+        "instDecidableEqRat",
+        "GParity.Affine.Row.last",
+        "OfNat.ofNat",
+        "Rat.instOfNat"
+      ],
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Affine.Outcome.casesOn",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown",
+        "GParity.Affine.Outcome.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint.mk"
+      ],
+      "name": "GParity.Affine.Endpoint.casesOn",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint.mk",
+        "GParity.Affine.Endpoint.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Rat"
+      ],
+      "name": "GParity.Affine.Endpoint.value",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "GParity.Affine.Endpoint",
+        "Option"
+      ],
+      "name": "GParity.Affine.lowerExtremum",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "GParity.Affine.Endpoint",
+        "List.foldl",
+        "Option",
+        "GParity.Affine.lowerExtremum.match_1",
+        "Unit",
+        "Option.some",
+        "ite",
+        "LT.lt",
+        "Rat",
+        "Rat.instLT",
+        "GParity.Affine.Endpoint.value",
+        "Rat.instDecidableLt",
+        "Eq",
+        "Bool",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqRat",
+        "Bool.true",
+        "instDecidableEqBool",
+        "GParity.Affine.Endpoint.mk",
+        "Bool.or",
+        "GParity.Affine.Endpoint.strict",
+        "Option.none"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.sat"
+      ],
+      "name": "GParity.Affine.Outcome.sat.inj",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "List",
+        "Rat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Outcome.sat.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.affine"
+      ],
+      "name": "GParity.Protocol.Request.affine.noConfusion",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.affine",
+        "id",
+        "GParity.Protocol.Request.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Rat"
+      ],
+      "name": "GParity.Affine.Row.bound",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat"
+      ],
+      "name": "GParity.Affine.Row.coeff",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Eq",
+        "GParity.Count.Input",
+        "GParity.Count.Input.mk",
+        "And"
+      ],
+      "name": "GParity.Count.Input.mk.injEq",
+      "module": "GParity.Count",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Count.Input",
+        "GParity.Count.Input.mk",
+        "And",
+        "GParity.Count.Input.mk.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.mk",
+        "And"
+      ],
+      "name": "GParity.Affine.Endpoint.mk.injEq",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Bool",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.mk",
+        "And",
+        "GParity.Affine.Endpoint.mk.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint"
+      ],
+      "name": "GParity.Affine.Endpoint.noConfusionType",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.casesOn",
+        "Rat",
+        "Bool",
+        "Eq"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Affine.instReprRow.repr",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Nat",
+        "Std.Format.bracket",
+        "HAppend.hAppend",
+        "Std.Format",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.nil",
+        "Std.Format.text",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "OfNat.ofNat",
+        "Int",
+        "instOfNat",
+        "repr",
+        "List",
+        "Rat",
+        "instReprList",
+        "instReprRat",
+        "GParity.Affine.Row.coeff",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "Std.Format.line",
+        "GParity.Affine.Row.bound",
+        "Bool",
+        "instReprBool",
+        "GParity.Affine.Row.strict",
+        "GParity.Affine.Row.weights"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome._sizeOf_inst",
+        "GParity.Affine.Outcome.sat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "List._sizeOf_inst",
+        "Rat._sizeOf_inst"
+      ],
+      "name": "GParity.Affine.Outcome.sat.sizeOf_spec",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "List",
+        "Rat",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "List._sizeOf_inst",
+        "Rat._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Nat"
+      ],
+      "name": "GParity.Count.Output.ctorIdx",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "GParity.Count.Input"
+      ],
+      "name": "GParity.Count.Input.mk",
+      "module": "GParity.Count",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Rat",
+        "Nat",
+        "GParity.Count.Output.mk"
+      ],
+      "name": "GParity.Count.Output.rec",
+      "module": "GParity.Count",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Option",
+        "GParity.Protocol.Request",
+        "Unit",
+        "Option.none",
+        "GParity.Protocol.AffineInput",
+        "Option.some",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.execute.match_3",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Option",
+        "GParity.Protocol.Request",
+        "Unit",
+        "Option.none",
+        "GParity.Protocol.AffineInput",
+        "Option.some",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count",
+        "Option.casesOn",
+        "Unit.unit",
+        "GParity.Protocol.Request.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome.ctorIdx",
+        "GParity.Affine.Outcome.ctorElimType"
+      ],
+      "name": "GParity.Affine.Outcome.ctorElim",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome.ctorIdx",
+        "GParity.Affine.Outcome.ctorElimType",
+        "GParity.Affine.Outcome.casesOn",
+        "List",
+        "Rat",
+        "PULift.down",
+        "GParity.Affine.Outcome.sat",
+        "Eq.ndrec",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat"
+      ],
+      "name": "GParity.Rational.dot",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "Rat",
+        "List.foldl",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Rat.instAdd",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "List.zipWith",
+        "HMul.hMul",
+        "instHMul",
+        "Rat.instMul"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Affine.Endpoint"
+      ],
+      "name": "GParity.Affine.Endpoint._sizeOf_inst",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row._sizeOf_inst",
+        "GParity.Affine.Row.mk",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "List._sizeOf_inst",
+        "Rat._sizeOf_inst",
+        "Bool._sizeOf_inst"
+      ],
+      "name": "GParity.Affine.Row.mk.sizeOf_spec",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "List._sizeOf_inst",
+        "Rat._sizeOf_inst",
+        "Bool._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.solve._sunfold",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Affine.solve.match_3",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.solve.match_1",
+        "Option",
+        "List.find?",
+        "Bool.not",
+        "GParity.Affine.Row.holds",
+        "List.nil",
+        "Rat",
+        "GParity.Affine.Outcome.unsat",
+        "Unit",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.projectedSize",
+        "ite",
+        "LT.lt",
+        "instLTNat",
+        "Nat.decLt",
+        "GParity.Affine.Outcome.unknown",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "GParity.Affine.instReprOutcome.repr.match_1",
+        "GParity.Affine.solve",
+        "GParity.Affine.projectList",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "List.instAppend",
+        "List.cons",
+        "GParity.Affine.chooseLast"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Eq",
+        "Nat",
+        "GParity.Protocol.Request.ctorIdx",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine"
+      ],
+      "name": "GParity.Protocol.Request.affine.elim",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "Eq",
+        "Nat",
+        "GParity.Protocol.Request.ctorIdx",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Protocol.Request.ctorElim",
+        "Eq.symm",
+        "PULift.up"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Bool"
+      ],
+      "name": "GParity.Affine.Endpoint.strict",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput"
+      ],
+      "name": "GParity.Protocol.AffineInput.mk",
+      "module": "GParity.Protocol",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk",
+        "And"
+      ],
+      "name": "GParity.Affine.Row.mk.injEq",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk",
+        "And",
+        "GParity.Affine.Row.mk.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.AffineInput.cap",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Rat",
+        "Nat",
+        "GParity.Count.Output.mk"
+      ],
+      "name": "GParity.Count.Output.casesOn",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output",
+        "Rat",
+        "Nat",
+        "GParity.Count.Output.mk",
+        "GParity.Count.Output.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Eq",
+        "Nat",
+        "GParity.Protocol.Request.ctorIdx",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.count.elim",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "Eq",
+        "Nat",
+        "GParity.Protocol.Request.ctorIdx",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count",
+        "GParity.Protocol.Request.ctorElim",
+        "Eq.symm",
+        "PULift.up"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput.mk"
+      ],
+      "name": "GParity.Protocol.AffineInput.casesOn",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "GParity.Protocol.AffineInput.mk",
+        "GParity.Protocol.AffineInput.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat"
+      ],
+      "name": "GParity.Affine.Outcome.sat.elim",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Nat",
+        "GParity.Affine.Outcome.ctorIdx",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Outcome.ctorElim",
+        "Eq.symm",
+        "PULift.up"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Eq",
+        "GParity.Count.Input",
+        "GParity.Count.Input.mk"
+      ],
+      "name": "GParity.Count.Input.mk.noConfusion",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "Eq",
+        "GParity.Count.Input",
+        "GParity.Count.Input.mk",
+        "id",
+        "GParity.Count.Input.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Protocol.AffineInput",
+      "module": "GParity.Protocol",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.positives",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "GParity.Affine.Row",
+        "List.filter",
+        "Decidable.decide",
+        "LT.lt",
+        "Rat",
+        "Rat.instLT",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "GParity.Affine.Row.last",
+        "Rat.instDecidableLt"
+      ],
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.Request._sizeOf_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.rec",
+        "Nat",
+        "GParity.Protocol.AffineInput",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "GParity.Protocol.AffineInput._sizeOf_inst",
+        "GParity.Count.Input",
+        "GParity.Count.Input._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Rat",
+        "Nat",
+        "GParity.Count.Output.mk"
+      ],
+      "name": "GParity.Count.Output.recOn",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output",
+        "Rat",
+        "Nat",
+        "GParity.Count.Output.mk",
+        "GParity.Count.Output.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.Outcome.unknown",
+      "module": "GParity.Affine",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.count.inj",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.count",
+        "GParity.Protocol.Request.count.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Affine.Endpoint"
+      ],
+      "name": "GParity.Affine.instReprEndpoint",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.instReprEndpoint.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Nat"
+      ],
+      "name": "GParity.Protocol.AffineInput.n",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.AffineInput"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Nat",
+        "Eq",
+        "GParity.Count.Output",
+        "GParity.Count.Output.mk"
+      ],
+      "name": "GParity.Count.Output.mk.noConfusion",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "Nat",
+        "Eq",
+        "GParity.Count.Output",
+        "GParity.Count.Output.mk",
+        "id",
+        "GParity.Count.Output.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Endpoint._sizeOf_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint",
+        "GParity.Affine.Endpoint.rec",
+        "Nat",
+        "Rat",
+        "Bool",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "Rat._sizeOf_inst",
+        "Bool._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.instReprRequest.repr.match_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count",
+        "GParity.Protocol.Request.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Eq",
+        "GParity.Count.Input",
+        "GParity.Count.Input.mk",
+        "And"
+      ],
+      "name": "GParity.Count.Input.mk.inj",
+      "module": "GParity.Count",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Eq",
+        "GParity.Count.Input",
+        "GParity.Count.Input.mk",
+        "GParity.Count.Input.mk.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "GParity.Count.Input.noConfusionType"
+      ],
+      "name": "GParity.Count.Input.noConfusion",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Count.Input.noConfusionType",
+        "GParity.Count.Input.casesOn",
+        "Rat",
+        "Eq.refl"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.Outcome.unsat",
+      "module": "GParity.Affine",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "List",
+        "Rat",
+        "Bool",
+        "GParity.Affine.Row.mk"
+      ],
+      "name": "GParity.Affine.Row.rec",
+      "module": "GParity.Affine",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Affine.Row",
+      "module": "GParity.Affine",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [],
+      "name": "GParity.Protocol.Request",
+      "module": "GParity.Protocol",
+      "kind": "inductive",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "String",
+        "Option",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Protocol.parseRow",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "String",
+        "GParity.Protocol.parseRow.match_1",
+        "List",
+        "Option",
+        "GParity.Affine.Row",
+        "String.splitOn",
+        "Bool",
+        "Bind.bind",
+        "Monad.toBind",
+        "instMonadOption",
+        "Rat",
+        "GParity.Rational.parse",
+        "List.mapM",
+        "ite",
+        "Eq",
+        "bne",
+        "instBEqOfDecidableEq",
+        "instDecidableEqNat",
+        "List.length",
+        "Bool.true",
+        "instDecidableEqBool",
+        "Option.none",
+        "Option.some",
+        "GParity.Affine.Row.mk",
+        "List.map",
+        "BEq.beq",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "List.range",
+        "instDecidableEqString",
+        "Bool.false"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Affine.Outcome.rec",
+      "module": "GParity.Affine",
+      "kind": "recursor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Protocol.AffineInput"
+      ],
+      "name": "GParity.Protocol.AffineInput._sizeOf_inst",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "Eq",
+        "GParity.Protocol.Request.noConfusionType"
+      ],
+      "name": "GParity.Protocol.Request.noConfusion",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Protocol.Request.noConfusionType",
+        "GParity.Protocol.Request.casesOn",
+        "GParity.Protocol.AffineInput",
+        "Eq.refl",
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "GParity.Affine.Outcome.noConfusionType"
+      ],
+      "name": "GParity.Affine.Outcome.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Affine.Outcome.noConfusionType",
+        "GParity.Affine.Outcome.casesOn",
+        "List",
+        "Rat",
+        "Eq.refl",
+        "GParity.Affine.Row",
+        "Nat"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Rat"
+      ],
+      "name": "GParity.Affine.Row.last",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Option.getD",
+        "Rat",
+        "List.getLast?",
+        "GParity.Affine.Row.coeff",
+        "OfNat.ofNat",
+        "Rat.instOfNat"
+      ],
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Endpoint",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Affine.instReprEndpoint.repr",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Endpoint",
+        "Nat",
+        "Std.Format.bracket",
+        "HAppend.hAppend",
+        "Std.Format",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.nil",
+        "Std.Format.text",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "OfNat.ofNat",
+        "Int",
+        "instOfNat",
+        "repr",
+        "Rat",
+        "instReprRat",
+        "GParity.Affine.Endpoint.value",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "Std.Format.line",
+        "Bool",
+        "instReprBool",
+        "GParity.Affine.Endpoint.strict"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request"
+      ],
+      "name": "GParity.Protocol.Request.noConfusionType",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.casesOn",
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request._sizeOf_inst",
+        "GParity.Protocol.Request.count",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "GParity.Count.Input._sizeOf_inst"
+      ],
+      "name": "GParity.Protocol.Request.count.sizeOf_spec",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Count.Input",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "GParity.Count.Input._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "List.nil",
+        "Nat.hasNotBit",
+        "List.ctorIdx"
+      ],
+      "name": "GParity.Rational.parse._sparseCasesOn_2",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "List.nil",
+        "List.rec",
+        "Nat.hasNotBit",
+        "List.ctorIdx",
+        "List.cons",
+        "Nat.ne_of_beq_eq_false",
+        "Nat.land",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat",
+        "Nat.shiftRight",
+        "Eq.refl",
+        "Bool",
+        "Bool.false"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Option",
+        "GParity.Affine.Endpoint",
+        "Unit",
+        "Option.none",
+        "Option.some"
+      ],
+      "name": "GParity.Affine.lowerExtremum.match_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Option",
+        "GParity.Affine.Endpoint",
+        "Unit",
+        "Option.none",
+        "Option.some",
+        "Option.casesOn",
+        "Unit.unit"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.Row.noConfusionType",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.casesOn",
+        "List",
+        "Rat",
+        "Bool",
+        "Eq"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "Eq",
+        "SizeOf.sizeOf",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome._sizeOf_inst",
+        "GParity.Affine.Outcome.unknown",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "instSizeOfNat"
+      ],
+      "name": "GParity.Affine.Outcome.unknown.sizeOf_spec",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "Nat",
+        "Eq.refl",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "instSizeOfNat"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "BEq",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.instBEqRow",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "BEq.mk",
+        "GParity.Affine.Row",
+        "GParity.Affine.instBEqRow.beq"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output"
+      ],
+      "name": "GParity.Count.Output.noConfusionType",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output",
+        "GParity.Count.Output.casesOn",
+        "Rat",
+        "Nat",
+        "Eq"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "String",
+        "Option",
+        "Rat"
+      ],
+      "name": "GParity.Rational.parse",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "String",
+        "GParity.Rational.parse.match_1",
+        "List",
+        "Option",
+        "Rat",
+        "String.splitOn",
+        "Bind.bind",
+        "Monad.toBind",
+        "instMonadOption",
+        "Int",
+        "GParity.Rational.parseInt",
+        "Nat",
+        "GParity.Rational.parseNat",
+        "ite",
+        "Eq",
+        "Bool",
+        "Bool.or",
+        "BEq.beq",
+        "instBEqOfDecidableEq",
+        "instDecidableEqNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Decidable.decide",
+        "GE.ge",
+        "instLENat",
+        "Int.natAbs",
+        "HPow.hPow",
+        "instHPow",
+        "instPowNat",
+        "instNatPowNat",
+        "Nat.decLe",
+        "Bool.true",
+        "instDecidableEqBool",
+        "Option.none",
+        "mkRat",
+        "instDecidableEqString",
+        "GParity.Rational.wire",
+        "Option.some"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat"
+      ],
+      "name": "GParity.Count.Input.sigma",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.Row._sizeOf_inst",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Repr",
+        "GParity.Count.Input"
+      ],
+      "name": "GParity.Count.instReprInput",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "Repr.mk",
+        "GParity.Count.Input",
+        "GParity.Count.instReprInput.repr"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unknown",
+        "And"
+      ],
+      "name": "GParity.Affine.Outcome.unknown.injEq",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "Nat",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unknown",
+        "And",
+        "GParity.Affine.Outcome.unknown.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "GParity.Count.Output"
+      ],
+      "name": "GParity.Count.compute",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "Rat",
+        "Min.min",
+        "Rat.instMin",
+        "GParity.Count.Input.epsilon",
+        "HDiv.hDiv",
+        "instHDiv",
+        "Rat.instDiv",
+        "GParity.Count.Input.sigma",
+        "HMul.hMul",
+        "instHMul",
+        "Rat.instMul",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Rat.instAdd",
+        "GParity.Count.Input.M",
+        "GParity.Count.Input.b",
+        "GParity.Count.Output.mk",
+        "Nat",
+        "Nat.instDiv",
+        "HSub.hSub",
+        "instHSub",
+        "instSubNat",
+        "instAddNat",
+        "Int.toNat",
+        "Rat.num",
+        "Rat.den",
+        "instOfNatNat"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.count.noConfusion",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.count",
+        "id",
+        "GParity.Protocol.Request.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Affine.Outcome"
+      ],
+      "name": "GParity.Affine.Outcome._sizeOf_inst",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Option",
+        "GParity.Affine.Endpoint",
+        "Unit",
+        "Option.none",
+        "Option.some"
+      ],
+      "name": "GParity.Affine.chooseLast.match_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Option",
+        "GParity.Affine.Endpoint",
+        "Unit",
+        "Option.none",
+        "Option.some",
+        "Option.casesOn",
+        "Unit.unit"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Bool",
+        "GParity.Affine.Endpoint"
+      ],
+      "name": "GParity.Affine.Endpoint.mk",
+      "module": "GParity.Affine",
+      "kind": "constructor",
+      "body_references": [],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Input",
+        "Rat"
+      ],
+      "name": "GParity.Count.Input.b",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Input"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown"
+      ],
+      "name": "GParity.Protocol.execute.match_1",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "List",
+        "Rat",
+        "GParity.Affine.Outcome.sat",
+        "GParity.Affine.Row",
+        "GParity.Affine.Outcome.unsat",
+        "Nat",
+        "GParity.Affine.Outcome.unknown",
+        "GParity.Affine.Outcome.casesOn"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "GParity.Count.Input"
+      ],
+      "name": "GParity.Count.Input.mk._flat_ctor",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "GParity.Count.Input.mk"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "List",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.negatives",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "GParity.Affine.Row",
+        "List.filter",
+        "Decidable.decide",
+        "LT.lt",
+        "Rat",
+        "Rat.instLT",
+        "GParity.Affine.Row.last",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "Rat.instDecidableLt"
+      ],
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "List.cons",
+        "Nat.hasNotBit",
+        "List.ctorIdx"
+      ],
+      "name": "GParity.Rational.parse._sparseCasesOn_1",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "List",
+        "List.cons",
+        "List.rec",
+        "Nat.hasNotBit",
+        "List.ctorIdx",
+        "List.nil",
+        "Nat.ne_of_beq_eq_false",
+        "Nat.land",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat",
+        "Nat.shiftRight",
+        "Eq.refl",
+        "Bool",
+        "Bool.false"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Eq",
+        "GParity.Count.Output.noConfusionType"
+      ],
+      "name": "GParity.Count.Output.noConfusion",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Count.Output.noConfusionType",
+        "GParity.Count.Output.casesOn",
+        "Rat",
+        "Nat",
+        "Eq.refl"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count"
+      ],
+      "name": "GParity.Protocol.Request.recOn",
+      "module": "GParity.Protocol",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Protocol.Request",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.Request.affine",
+        "GParity.Count.Input",
+        "GParity.Protocol.Request.count",
+        "GParity.Protocol.Request.rec"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Nat",
+        "Std.Format"
+      ],
+      "name": "GParity.Affine.instReprOutcome.repr",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "Nat",
+        "GParity.Affine.instReprOutcome.repr.match_1",
+        "Std.Format",
+        "List",
+        "Rat",
+        "Repr.addAppParen",
+        "Std.Format.group",
+        "Std.Format.nest",
+        "ite",
+        "Int",
+        "GE.ge",
+        "instLENat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Nat.decLe",
+        "instOfNat",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "Std.Format.instAppend",
+        "Std.Format.text",
+        "Std.Format.line",
+        "reprArg",
+        "instReprList",
+        "instReprRat",
+        "Std.Format.FlattenBehavior.allOrNone",
+        "GParity.Affine.Row",
+        "GParity.Affine.instReprRow",
+        "instReprNat"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Rat",
+        "String"
+      ],
+      "name": "GParity.Rational.wire",
+      "module": "GParity.Rational",
+      "kind": "definition",
+      "body_references": [
+        "Rat",
+        "HAppend.hAppend",
+        "String",
+        "instHAppendOfAppend",
+        "instAppendString",
+        "ToString.toString",
+        "Int",
+        "instToStringInt",
+        "Rat.num",
+        "instToStringString",
+        "Nat",
+        "instToStringNat",
+        "Rat.den"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.projectList",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "HAppend.hAppend",
+        "instHAppendOfAppend",
+        "List.instAppend",
+        "List.map",
+        "GParity.Affine.Row.drop",
+        "GParity.Affine.zeros",
+        "List.flatMap",
+        "GParity.Affine.Row.combine",
+        "GParity.Affine.negatives",
+        "GParity.Affine.positives"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.affine"
+      ],
+      "name": "GParity.Protocol.Request.affine.injEq",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "GParity.Protocol.AffineInput",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Protocol.Request",
+        "GParity.Protocol.Request.affine",
+        "GParity.Protocol.Request.affine.inj",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "GParity.Affine.Row"
+      ],
+      "name": "GParity.Affine.Row.combine",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "Nat",
+        "GParity.Affine.Row",
+        "Rat",
+        "Neg.neg",
+        "Rat.instNeg",
+        "GParity.Affine.Row.last",
+        "GParity.Affine.Row.mk",
+        "List.zipWith",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Rat.instAdd",
+        "HMul.hMul",
+        "instHMul",
+        "Rat.instMul",
+        "List.take",
+        "GParity.Affine.Row.coeff",
+        "GParity.Affine.Row.bound",
+        "Bool.or",
+        "GParity.Affine.Row.strict",
+        "GParity.Affine.Row.weights"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.mk",
+        "And"
+      ],
+      "name": "GParity.Protocol.AffineInput.mk.injEq",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq.propIntro",
+        "Eq",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput.mk",
+        "And",
+        "GParity.Protocol.AffineInput.mk.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "type_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk",
+        "And"
+      ],
+      "name": "GParity.Affine.Row.mk.inj",
+      "module": "GParity.Affine",
+      "kind": "theorem",
+      "body_references": [
+        "List",
+        "Rat",
+        "Bool",
+        "Eq",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row.mk",
+        "GParity.Affine.Row.mk.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq",
+        "SizeOf.sizeOf",
+        "GParity.Protocol.AffineInput",
+        "GParity.Protocol.AffineInput._sizeOf_inst",
+        "GParity.Protocol.AffineInput.mk",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "instSizeOfNat",
+        "List._sizeOf_inst",
+        "GParity.Affine.Row._sizeOf_inst"
+      ],
+      "name": "GParity.Protocol.AffineInput.mk.sizeOf_spec",
+      "module": "GParity.Protocol",
+      "kind": "theorem",
+      "body_references": [
+        "Nat",
+        "List",
+        "GParity.Affine.Row",
+        "Eq.refl",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "instSizeOfNat",
+        "List._sizeOf_inst",
+        "GParity.Affine.Row._sizeOf_inst"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Count.Output",
+        "Nat"
+      ],
+      "name": "GParity.Count.Output._sizeOf_1",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Count.Output",
+        "GParity.Count.Output.rec",
+        "Nat",
+        "Rat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "Rat._sizeOf_inst",
+        "instSizeOfNat"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Affine.Row.noConfusionType"
+      ],
+      "name": "GParity.Affine.Row.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "Eq.ndrec",
+        "GParity.Affine.Row.noConfusionType",
+        "GParity.Affine.Row.casesOn",
+        "List",
+        "Rat",
+        "Bool",
+        "Eq.refl"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unsat"
+      ],
+      "name": "GParity.Affine.Outcome.unsat.noConfusion",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Row",
+        "Eq",
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.unsat",
+        "id",
+        "GParity.Affine.Outcome.noConfusion"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "SizeOf",
+        "GParity.Count.Input"
+      ],
+      "name": "GParity.Count.Input._sizeOf_inst",
+      "module": "GParity.Count",
+      "kind": "definition",
+      "body_references": [
+        "SizeOf.mk",
+        "GParity.Count.Input",
+        "GParity.Count.Input._sizeOf_1"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "Rat",
+        "Nat",
+        "Eq",
+        "SizeOf.sizeOf",
+        "GParity.Count.Output",
+        "GParity.Count.Output._sizeOf_inst",
+        "GParity.Count.Output.mk",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "Rat._sizeOf_inst",
+        "instSizeOfNat"
+      ],
+      "name": "GParity.Count.Output.mk.sizeOf_spec",
+      "module": "GParity.Count",
+      "kind": "theorem",
+      "body_references": [
+        "Rat",
+        "Nat",
+        "Eq.refl",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "Rat._sizeOf_inst",
+        "instSizeOfNat"
+      ],
+      "axioms": []
+    },
+    {
+      "type_references": [
+        "GParity.Affine.Outcome",
+        "Nat"
+      ],
+      "name": "GParity.Affine.Outcome._sizeOf_1",
+      "module": "GParity.Affine",
+      "kind": "definition",
+      "body_references": [
+        "GParity.Affine.Outcome",
+        "GParity.Affine.Outcome.rec",
+        "Nat",
+        "List",
+        "Rat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "List._sizeOf_inst",
+        "Rat._sizeOf_inst",
+        "GParity.Affine.Row",
+        "GParity.Affine.Row._sizeOf_inst",
+        "instSizeOfNat"
+      ],
+      "axioms": []
+    }
+  ],
+  "declaration_count": 209,
+  "all_imported_module_names": [
+    "Init.Prelude",
+    "Init.Coe",
+    "Init.Notation",
+    "Init.Tactics",
+    "Init.SizeOf",
+    "Init.Core",
+    "Init.BinderNameHint",
+    "Init.Control.Basic",
+    "Init.Control.MonadAttach",
+    "Init.Control.Id",
+    "Init.Control.Except",
+    "Init.Grind.Attr",
+    "Init.Grind.Interactive",
+    "Init.Grind.Tactics",
+    "Init.Data.Option.Basic",
+    "Init.Control.Option",
+    "Init.Control.Do",
+    "Init.Data.Cast",
+    "Init.SimpLemmas",
+    "Init.Data.Zero",
+    "Init.Data.NeZero",
+    "Init.Data.Nat.Basic",
+    "Init.Data.Int.Basic",
+    "Init.Data.List.Notation",
+    "Init.Data.List.Basic",
+    "Init.Data.ByteArray.Bootstrap",
+    "Init.Data.BitVec.BasicAux",
+    "Init.WF",
+    "Init.MetaTypes",
+    "Init.WFTactics",
+    "Init.Data.Nat.Div.Basic",
+    "Init.Data.Nat.Bitwise.Basic",
+    "Init.Data.Fin.Basic",
+    "Init.Data.UInt.BasicAux",
+    "Init.Data.Char.Basic",
+    "Init.Data.String.Bootstrap",
+    "Init.Control.State",
+    "Init.Data.Format.Basic",
+    "Init.Data.Repr",
+    "Init.Data.ToString.Basic",
+    "Init.Util",
+    "Init.GetElem",
+    "Init.Data.List.ToArrayImpl",
+    "Init.Data.Array.Set",
+    "Init.Data.Array.Basic",
+    "Init.Data.Array.GetLit",
+    "Init.Meta.Defs",
+    "Init.Syntax",
+    "Init.Meta",
+    "Init.TacticsExtra",
+    "Init.ByCases",
+    "Init.RCases",
+    "Init.Conv",
+    "Init.NotationExtra",
+    "Init.PropLemmas",
+    "Init.Classical",
+    "Init.System.ST",
+    "Init.Control.Reader",
+    "Init.Control.StateRef",
+    "Init.Ext",
+    "Init.Control.Lawful.Basic",
+    "Init.Control.Lawful.Instances",
+    "Init.Control.Lawful.Lemmas",
+    "Init.Control.Lawful.MonadLift.Basic",
+    "Init.Control.Lawful.MonadLift.Lemmas",
+    "Init.Control.ExceptCps",
+    "Init.Control.StateCps",
+    "Init.Control.Lawful.MonadLift.Instances",
+    "Init.Control.Lawful.MonadLift",
+    "Init.Control.Lawful.MonadAttach.Lemmas",
+    "Init.Control.EState",
+    "Init.Control.Lawful.MonadAttach.Instances",
+    "Init.Control.Lawful.MonadAttach",
+    "Init.Control.Lawful",
+    "Init.Control",
+    "Init.WFComputable",
+    "Init.Data.Nat.Dvd",
+    "Init.Data.Nat.Log2",
+    "Init.Data.RArray",
+    "Init.Data.Bool",
+    "Init.LawfulBEqTactics",
+    "Init.Data.Prod",
+    "Init.Data.Nat.Internal.Linear",
+    "Init.Data.Nat.MinMax",
+    "Init.Data.Int.DivMod.Basic",
+    "Init.Data.Int.Lemmas",
+    "Init.Data.Order.Classes",
+    "Init.Data.Order.Factories",
+    "Init.Data.BEq",
+    "Init.Data.Order.Lemmas",
+    "Init.Data.Int.Order",
+    "Init.Omega.Int",
+    "Init.Data.Int.DivMod.Bootstrap",
+    "Init.Data.Nat.Gcd",
+    "Init.Omega.IntList",
+    "Init.Omega.Coeffs",
+    "Init.Data.ToString.Macro",
+    "Init.Omega.LinearCombo",
+    "Init.Omega.Constraint",
+    "Init.Omega.Logic",
+    "Init.Data.Nat.Order",
+    "Init.Omega",
+    "Init.Data.Nat.Mod",
+    "Init.Data.Nat.Lemmas",
+    "Init.Data.Nat.Simproc",
+    "Init.Data.Nat.Div.Lemmas",
+    "Init.Data.Nat.Div",
+    "Init.Data.Nat.Coprime",
+    "Init.BinderPredicates",
+    "Init.Data.Int.Pow",
+    "Init.Data.Nat.Bitwise.Lemmas",
+    "Init.Data.Nat.Bitwise",
+    "Init.Data.Nat.Control",
+    "Init.Data.Nat.Power2.Basic",
+    "Init.Data.Nat.Power2.Lemmas",
+    "Init.Data.Nat.Power2",
+    "Init.Data.List.BasicAux",
+    "Init.Data.Nat.Internal.SOM",
+    "Init.Data.Nat.Internal",
+    "Init.Data.Nat.Lcm",
+    "Init.Data.Ord.Basic",
+    "Init.Data.Order.ClassesExtra",
+    "Init.Data.Nat.Compare",
+    "Init.Hints",
+    "Init.Data.Fin.Lemmas",
+    "Init.Data.Fin.Fold",
+    "Init.Data.List.Control",
+    "Init.Grind.Annotated",
+    "Init.Data.Option.Instances",
+    "Init.Data.Option.BasicAux",
+    "Init.Data.Option.Lemmas",
+    "Init.Data.List.Lemmas",
+    "Init.Data.List.OfFn",
+    "Init.Grind.Util",
+    "Init.Data.List.TakeDrop",
+    "Init.Data.List.Sublist",
+    "Init.Data.List.Count",
+    "Init.Data.Subtype.Basic",
+    "Init.Data.List.Attach",
+    "Init.Data.Array.Bootstrap",
+    "Init.Data.List.Monadic",
+    "Init.Data.List.FinRange",
+    "Init.Data.Nat.Fold",
+    "Init.Data.Int.Bitwise.Basic",
+    "Init.Data.BitVec.Basic",
+    "Init.Data.UInt.Basic",
+    "Init.Data.Fin.Bitwise",
+    "Init.Data.BitVec.Bootstrap",
+    "Init.Data.List.Impl",
+    "Init.Data.Function",
+    "Init.Data.List.Zip",
+    "Init.Data.List.Range",
+    "Init.Data.List.Find",
+    "Init.Data.List.Nat.TakeDrop",
+    "Init.Data.Int.DivMod.Lemmas",
+    "Init.Data.Int.Gcd",
+    "Init.Data.AC",
+    "Init.Data.Int.Cooper",
+    "Init.Data.Int.LemmasAux",
+    "Init.Data.Int.Linear",
+    "Init.Data.OfScientific.Basic",
+    "Init.Data.List.Nat.BEq",
+    "Init.Data.Array.DecidableEq",
+    "Init.Data.List.Pairwise",
+    "Init.Data.List.Erase",
+    "Init.Data.List.Nat.Erase",
+    "Init.Data.List.Nat.Modify",
+    "Init.Data.List.Nat.InsertIdx",
+    "Init.Data.List.ToArray",
+    "Init.Data.Subtype.Order",
+    "Init.Data.List.MinMax",
+    "Init.Data.List.Nat.Basic",
+    "Init.Data.Array.Lemmas",
+    "Init.Data.ByteArray.Basic",
+    "Init.Data.String.PosRaw",
+    "Init.Data.Array.Extract",
+    "Init.Data.ByteArray.Lemmas",
+    "Init.Data.String.Defs",
+    "Init.Data.Int.Repr",
+    "Init.Data.ToString.Extra",
+    "Init.Data.Hashable",
+    "Init.Data.Rat.Basic",
+    "Init.Data.Rat.Lemmas",
+    "Init.Grind.ToInt",
+    "Init.Grind.Module.Basic",
+    "Init.Grind.Ring.Basic",
+    "Init.Grind.Ring.Field",
+    "Init.Grind.Ring.OfScientific",
+    "Init.Grind.Norm",
+    "Init.Data.Int.Bitwise.Lemmas",
+    "Init.Data.BitVec.Lemmas",
+    "Init.System.Platform",
+    "Init.Data.UInt.Lemmas",
+    "Init.Data.Char.Lemmas",
+    "Init.Data.UInt.Bitwise",
+    "Init.Data.String.Decode",
+    "Init.Data.String.Basic",
+    "Init.Data.String.Length",
+    "Init.Data.Nat.ToString",
+    "Init.Data.Nat.Sqrt.Basic",
+    "Init.Data.Nat.Sqrt.Lemmas",
+    "Init.Data.Nat.Sqrt",
+    "Init.Data.Nat",
+    "Init.Data.Int.DivMod.Pow",
+    "Init.Data.Int.DivMod",
+    "Init.Data.Fin.Iterate",
+    "Init.Data.BitVec.Folds",
+    "Init.Data.BitVec.Decidable",
+    "Init.Data.BitVec.Bitblast",
+    "Init.Data.BitVec",
+    "Init.Data.Char.Order",
+    "Init.Data.Fin.OverflowAware",
+    "Init.Grind.Lemmas",
+    "Init.Grind.Cases",
+    "Init.Grind.Propagator",
+    "Init.Grind.Offset",
+    "Init.Grind.PP",
+    "Init.Grind.Ordered.Order",
+    "Init.Grind.Ordered.Module",
+    "Init.Grind.Ordered.Ring",
+    "Init.Grind.Ring.Envelope",
+    "Init.GrindInstances.Ring.Int",
+    "Init.Grind.Ring.CommSolver",
+    "Init.Grind.Ring.CommSemiringAdapter",
+    "Init.Grind.Ring.ToInt",
+    "Init.Grind.Ring",
+    "Init.Grind.Module.Envelope",
+    "Init.Grind.Module.OfNatModule",
+    "Init.Grind.Ordered.Linarith",
+    "Init.Grind.Module.NatModuleNorm",
+    "Init.Grind.Module",
+    "Init.Grind.Ordered.Field",
+    "Init.Grind.Ordered.Int",
+    "Init.GrindInstances.Ring.Rat",
+    "Init.Grind.Ordered.Rat",
+    "Init.Grind.Ordered",
+    "Init.Grind.Ext",
+    "Init.Grind.ToIntLemmas",
+    "Init.Grind.AC",
+    "Init.Grind.Injective",
+    "Init.Grind.Order",
+    "Init.Grind.Lint",
+    "Init.Grind.FieldNormNum",
+    "Init.Grind.Config",
+    "Init.Grind",
+    "Init.Data.SInt.Basic",
+    "Init.Data.SInt.Lemmas",
+    "Init.GrindInstances.ToInt",
+    "Init.Data.Int.OfNat",
+    "Init.Data.Char.Ordinal",
+    "Init.Data.Char",
+    "Init.Data.Iterators.Basic",
+    "Init.Data.Iterators.Consumers.Monadic.Partial",
+    "Init.Data.Iterators.Internal.LawfulMonadLiftFunction",
+    "Init.WFExtrinsicFix",
+    "Init.Data.Iterators.Consumers.Monadic.Total",
+    "Init.Data.Iterators.Consumers.Monadic.Loop",
+    "Init.Data.Ord.Array",
+    "Init.Data.Order.Ord",
+    "Init.Data.Order.FactoriesExtra",
+    "Init.Data.Order.LemmasExtra",
+    "Init.Data.Order.PackageFactories",
+    "Init.Data.String.OrderInstances",
+    "Init.Data.String.Lemmas.Basic",
+    "Init.Data.String.FindPos",
+    "Init.Data.String.Lemmas.Order",
+    "Init.Data.String.Lemmas.FindPos",
+    "Init.Data.Iterators.Consumers.Partial",
+    "Init.Data.Iterators.Consumers.Total",
+    "Init.Data.Iterators.Consumers.Loop",
+    "Init.Data.String.Lemmas.IsEmpty",
+    "Init.Data.String.Lemmas.Splits",
+    "Init.Data.String.Termination",
+    "Init.Data.String.Pattern.Basic",
+    "Init.Data.String.Pattern.Pred",
+    "Init.Data.String.Pattern.Char",
+    "Init.Data.Array.MinMax",
+    "Init.Data.List.Nat.Sum",
+    "Init.Data.List.Nat.Prod",
+    "Init.Data.Array.Nat",
+    "Init.Data.Iterators.Consumers.Monadic.Collect",
+    "Init.Data.Iterators.Lemmas.Monadic.Basic",
+    "Init.Data.Iterators.Lemmas.Consumers.Monadic.Collect",
+    "Init.Data.Iterators.Lemmas.Consumers.Monadic.Loop",
+    "Init.Data.Range.Polymorphic.UpwardEnumerable",
+    "Init.Data.Range.Polymorphic.PRange",
+    "Init.Data.Iterators.Consumers.Monadic.Access",
+    "Init.Data.Range.Polymorphic.RangeIterator",
+    "Init.Data.Array.InsertIdx",
+    "Init.Data.List.Nat.Count",
+    "Init.Data.Array.Count",
+    "Init.Data.Array.Attach",
+    "Init.Data.Option.List",
+    "Init.Data.Option.Array",
+    "Init.Data.Option.Attach",
+    "Init.Data.List.Nat.Range",
+    "Init.Data.List.MapIdx",
+    "Init.Data.Array.Monadic",
+    "Init.Data.Array.OfFn",
+    "Init.Data.Array.MapIdx",
+    "Init.Data.Range.Polymorphic.Basic",
+    "Init.Data.Iterators.Consumers.Collect",
+    "Init.Data.Range.Polymorphic.Iterators",
+    "Init.Data.Range.Polymorphic.Instances",
+    "Init.Data.Range.Polymorphic.Nat",
+    "Init.Data.Vector.Basic",
+    "Init.Data.String.Pattern.String",
+    "Init.Data.String.Pattern",
+    "Init.Data.Iterators.PostconditionMonad",
+    "Init.Data.Iterators.Combinators.Monadic.FilterMap",
+    "Init.Data.Iterators.Combinators.FilterMap",
+    "Init.Data.String.ToSlice",
+    "Init.Data.String.Subslice",
+    "Init.Data.String.Iter.Basic",
+    "Init.Data.String.Iterate",
+    "Init.Data.String.Slice",
+    "Init.Data.String.Search",
+    "Init.Data.String.Extra",
+    "Init.Data.String.Modify",
+    "Init.Data.String.Iterator",
+    "Init.Data.String.Lemmas.Modify",
+    "Init.Data.String.Lemmas.Pattern.Memcmp",
+    "Init.Data.String.Lemmas.Slice",
+    "Init.Data.String.Lemmas.Search",
+    "Init.Data.Iterators.Consumers.Access",
+    "Init.Data.Iterators.Lemmas.Basic",
+    "Init.Data.Iterators.Lemmas.Consumers.Collect",
+    "Init.Data.String.Lemmas.Pattern.Basic",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic.FilterMap",
+    "Init.Data.Iterators.Lemmas.Consumers.Loop",
+    "Init.Data.Iterators.Lemmas.Combinators.FilterMap",
+    "Init.Data.String.Lemmas.Iterate",
+    "Init.Data.String.Lemmas.Pattern.Pred",
+    "Init.Data.String.Lemmas.Pattern.Char",
+    "Init.Data.String.Lemmas.Intercalate",
+    "Init.Data.String.Lemmas.Pattern.String.Basic",
+    "Init.Data.String.Lemmas.Pattern.String.ForwardPattern",
+    "Init.Data.List.Nat.Find",
+    "Init.Data.Array.Find",
+    "Init.Data.Vector.Lemmas",
+    "Init.Data.String.Lemmas.Pattern.String.ForwardSearcher",
+    "Init.Data.String.Lemmas.Pattern.String",
+    "Init.Data.String.Lemmas.Pattern.Split.Basic",
+    "Init.Data.List.SplitOn.Basic",
+    "Init.Data.List.SplitOn.Lemmas",
+    "Init.Data.String.Lemmas.Pattern.Split.Pred",
+    "Init.Data.String.Lemmas.Pattern.Split.Char",
+    "Init.Data.String.Lemmas.Pattern.Split",
+    "Init.Data.String.Lemmas.Pattern.Find.Basic",
+    "Init.Data.String.Lemmas.Pattern.Find.Char",
+    "Init.Data.String.Lemmas.Pattern.Find.Pred",
+    "Init.Data.String.Lemmas.Pattern.Find.String",
+    "Init.Data.String.Lemmas.Pattern.Find",
+    "Init.Data.String.Substring",
+    "Init.Data.String.TakeDrop",
+    "Init.Data.String.Lemmas.Pattern.TakeDrop.Basic",
+    "Init.Data.String.Lemmas.Pattern.TakeDrop.Char",
+    "Init.Data.String.Lemmas.Pattern.TakeDrop.Pred",
+    "Init.Data.String.Lemmas.Pattern.TakeDrop.String",
+    "Init.Data.String.Lemmas.Pattern.TakeDrop",
+    "Init.Data.String.Lemmas.Pattern",
+    "Init.Data.String.Iter.Intercalate",
+    "Init.Data.String.Lemmas.Iter",
+    "Init.Data.LawfulHashable",
+    "Init.Data.String.Lemmas.Hashable",
+    "Init.Data.String.Lemmas.TakeDrop",
+    "Init.Data.List.Lex",
+    "Init.Data.String.Lemmas.StringOrder",
+    "Init.Data.String.Lemmas.Length",
+    "Init.Data.String.Lemmas",
+    "Init.Data.Range.Basic",
+    "Init.Data.Range.Lemmas",
+    "Init.Data.Range",
+    "Init.Data.Slice.Basic",
+    "Init.Data.Iterators.ToIterator",
+    "Init.Data.Slice.Operations",
+    "Init.Data.Array.Subarray",
+    "Init.Data.Slice.Notation",
+    "Init.Data.Slice.Array.Basic",
+    "Init.Data.Stream",
+    "Init.Data.String.Stream",
+    "Init.Data.String.Legacy",
+    "Init.Data.String.Iter",
+    "Init.Data.String.Hashable",
+    "Init.Data.String",
+    "Init.Data.Order.Opposite",
+    "Init.Data.Order.MinMaxOn",
+    "Init.Data.List.MinMaxOn",
+    "Init.Data.List.MinMaxIdx",
+    "Init.Data.List.Nat.Pairwise",
+    "Init.Data.List.Nat.Sublist",
+    "Init.Data.List.Perm",
+    "Init.Data.List.Nat.Perm",
+    "Init.Data.List.Nat",
+    "Init.Data.List.Int.Sum",
+    "Init.Data.List.Int.Prod",
+    "Init.Data.List.Int",
+    "Init.Data.List.Sort.Basic",
+    "Init.Data.List.Sort.Lemmas",
+    "Init.Data.List.Sort.Impl",
+    "Init.Data.List.Sort",
+    "Init.Data.List.Scan.Basic",
+    "Init.Data.List.Scan.Lemmas",
+    "Init.Data.List.Scan",
+    "Init.Data.List.ControlImpl",
+    "Init.Data.List.SplitOn",
+    "Init.Data.List",
+    "Init.Data.Int.Bitwise",
+    "Init.Data.Int.Compare",
+    "Init.Data.Int.ToString",
+    "Init.Data.Int",
+    "Init.Data.Array.QSort.Basic",
+    "Init.Data.Array.QSort",
+    "Init.Data.Array.BinSearch",
+    "Init.Data.Array.InsertionSort",
+    "Init.Data.Array.Mem",
+    "Init.Data.Array.BasicAux",
+    "Init.Data.Array.TakeDrop",
+    "Init.Data.Array.FinRange",
+    "Init.Data.Array.Perm",
+    "Init.Data.Array.Lex.Basic",
+    "Init.Data.Range.Polymorphic.Lemmas",
+    "Init.Data.Range.Polymorphic.NatLemmas",
+    "Init.Data.Array.Lex.Lemmas",
+    "Init.Data.Array.Lex",
+    "Init.Data.Array.Zip",
+    "Init.Data.Array.Range",
+    "Init.Data.Array.Erase",
+    "Init.Data.Array.Int",
+    "Init.Data.Array.Subarray.Split",
+    "Init.Data.Slice.Array.Iterator",
+    "Init.Data.Iterators.Lemmas.Consumers.Monadic",
+    "Init.Data.Iterators.Lemmas.Consumers.Access",
+    "Init.Data.Iterators.Lemmas.Consumers",
+    "Init.Data.Slice.InternalLemmas",
+    "Init.Data.Slice.Lemmas",
+    "Init.Data.Slice.List.Basic",
+    "Init.Data.Iterators.Consumers.Monadic",
+    "Init.Data.Iterators.Consumers.Stream",
+    "Init.Data.Iterators.Consumers",
+    "Init.Data.Iterators.Producers.Monadic.List",
+    "Init.Data.Iterators.Producers.List",
+    "Init.Data.Iterators.Combinators.Monadic.Take",
+    "Init.Data.Iterators.Combinators.Take",
+    "Init.Data.Slice.List.Iterator",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic.Take",
+    "Init.Data.Iterators.Lemmas.Combinators.Take",
+    "Init.Data.Iterators.Lemmas.Producers.Monadic.List",
+    "Init.Data.Iterators.Lemmas.Producers.List",
+    "Init.Data.Slice.List.Lemmas",
+    "Init.Data.Slice.Array.Lemmas",
+    "Init.Data.Slice.Array",
+    "Init.Data.Array.Sort.Basic",
+    "Init.Data.Array.Sort.Lemmas",
+    "Init.Data.Array.Sort",
+    "Init.Data.Array",
+    "Init.Data.ByteArray.Extra",
+    "Init.Data.ByteArray",
+    "Init.Data.Float.Model.Unpacked.Sign",
+    "Init.Data.Float.Model.Unpacked.Basic",
+    "Init.Data.Float.Model.Format.Basic",
+    "Init.Data.Float.Model.Unpacked.Pack.Basic",
+    "Init.Data.Float.Model.Format.Valid",
+    "Init.Data.Float.Model.Unpacked.Pack.Lemmas",
+    "Init.Data.Float.Model.Unpacked.Round",
+    "Init.Data.Float.Model.Unpacked.Operations.Add",
+    "Init.Data.Float.Model.Unpacked.Operations.Mul",
+    "Init.Data.Float.Model.Unpacked.Operations.Sub",
+    "Init.Data.Float.Model.Unpacked.Operations.Div",
+    "Init.Data.Float.Model.Unpacked.Operations.Sqrt",
+    "Init.Data.Float.Model.Unpacked.Operations.Compare",
+    "Init.Data.Float.Model.Unpacked.Operations.Sign",
+    "Init.Data.Float.Model.Unpacked.Operations.Status",
+    "Init.Data.Float.Model.Unpacked.Operations.OfNat",
+    "Init.Data.Float.Model.Unpacked.Operations.ToNat",
+    "Init.Data.Float.Model.Unpacked.Operations.OfScientific",
+    "Init.Data.Float.Model.Unpacked.Operations",
+    "Init.Data.Float.Model.Float",
+    "Init.Data.Float.Float",
+    "Init.Data.FloatArray.Basic",
+    "Init.Data.FloatArray",
+    "Init.Data.Fin.Log2",
+    "Init.Data.Fin",
+    "Init.Data.UInt.Log2",
+    "Init.Data.UInt.IntToBitVec",
+    "Init.Data.UInt",
+    "Init.Data.SInt.Float",
+    "Init.Data.Float.Model.Float32",
+    "Init.Data.Float.Float32",
+    "Init.Data.SInt.Float32",
+    "Init.Data.SInt.Bitwise",
+    "Init.Data.SInt.IntToBitVec",
+    "Init.Data.SInt",
+    "Init.Data.Float.Model.Format",
+    "Init.Data.Float.Model.Unpacked.Pack",
+    "Init.Data.Float.Model.Unpacked",
+    "Init.Data.Float.Model",
+    "Init.Data.Float",
+    "Init.Data.Option.Coe",
+    "Init.Data.Option.Monadic",
+    "Init.Data.Option.Function",
+    "Init.Data.Option",
+    "Init.Data.Ord.BitVec",
+    "Init.Data.Ord.SInt",
+    "Init.Data.Ord.String",
+    "Init.Data.Ord.UInt",
+    "Init.Data.Ord.Vector",
+    "Init.Data.Ord",
+    "Init.System.IOError",
+    "Init.System.FilePath",
+    "Init.System.IO",
+    "Init.Data.Random",
+    "Init.Data.ToString.Name",
+    "Init.Data.ToString",
+    "Init.Data.OfScientific",
+    "Init.Data.Format.Macro",
+    "Init.Data.Format.Instances",
+    "Init.Data.Format.Syntax",
+    "Init.Data.Format",
+    "Init.Data.Queue",
+    "Init.Data.Sum.Basic",
+    "Init.Data.Sum.Lemmas",
+    "Init.Data.Sum",
+    "Init.Data.Subtype.OrderExtra",
+    "Init.Data.Subtype",
+    "Init.Data.ULift",
+    "Init.Data.PLift",
+    "Init.Data.Vector.Lex",
+    "Init.Data.Vector.Attach",
+    "Init.Data.Vector.MapIdx",
+    "Init.Data.Vector.Count",
+    "Init.Data.Vector.DecidableEq",
+    "Init.Data.Vector.Zip",
+    "Init.Data.Vector.Monadic",
+    "Init.Data.Vector.OfFn",
+    "Init.Data.Vector.Range",
+    "Init.Data.Vector.Erase",
+    "Init.Data.Vector.InsertIdx",
+    "Init.Data.Vector.FinRange",
+    "Init.Data.Vector.Extract",
+    "Init.Data.Vector.Perm",
+    "Init.Data.Vector.Find",
+    "Init.Data.Vector.Algebra",
+    "Init.Data.Vector.Stream",
+    "Init.Data.Vector.Nat",
+    "Init.Data.Vector.Int",
+    "Init.Data.Vector",
+    "Init.Data.Iterators.Producers.Monadic",
+    "Init.Data.Iterators.Producers",
+    "Init.Data.Iterators.Combinators.Monadic.Append",
+    "Init.Data.Iterators.Combinators.Append",
+    "Init.Data.Iterators.Combinators.Monadic.FlatMap",
+    "Init.Data.Iterators.Combinators.Monadic.ULift",
+    "Init.Data.Iterators.Combinators.Monadic",
+    "Init.Data.Iterators.Combinators.FlatMap",
+    "Init.Data.Iterators.Combinators.ULift",
+    "Init.Data.Iterators.Combinators",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic.Append",
+    "Init.Data.Iterators.Lemmas.Combinators.Append",
+    "Init.Data.Iterators.Combinators.Monadic.Attach",
+    "Init.Data.Iterators.Combinators.Attach",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic.Attach",
+    "Init.Data.Iterators.Lemmas.Combinators.Attach",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic.FlatMap",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic.ULift",
+    "Init.Data.Iterators.Lemmas.Combinators.Monadic",
+    "Init.Data.Iterators.Lemmas.Combinators.FlatMap",
+    "Init.Data.Iterators.Lemmas.Combinators.ULift",
+    "Init.Data.Iterators.Lemmas.Combinators",
+    "Init.Data.Iterators.Lemmas.Producers.Monadic",
+    "Init.Data.Iterators.Lemmas.Producers",
+    "Init.Data.Iterators.Lemmas",
+    "Init.Data.Iterators.Internal",
+    "Init.Data.Iterators",
+    "Init.Data.Range.Polymorphic.Stream",
+    "Init.Data.Range.Polymorphic.Map",
+    "Init.Data.Range.Polymorphic.Fin",
+    "Init.Data.Range.Polymorphic.Char",
+    "Init.Data.Range.Polymorphic.Int",
+    "Init.Data.Range.Polymorphic.BitVec",
+    "Init.Data.Range.Polymorphic.UInt",
+    "Init.Data.Range.Polymorphic.Internal.SignedBitVec",
+    "Init.Data.Range.Polymorphic.SInt",
+    "Init.Data.Range.Polymorphic.IntLemmas",
+    "Init.Data.Range.Polymorphic.GetElemTactic",
+    "Init.Data.Range.Polymorphic",
+    "Init.Data.Slice.List",
+    "Init.Data.Slice",
+    "Init.Data.Order",
+    "Init.Data.Rat",
+    "Init.Data.Dyadic.Basic",
+    "Init.Data.Dyadic.Instances",
+    "Init.Data.Dyadic.Round",
+    "Init.Data.Dyadic.Inv",
+    "Init.Data.Dyadic",
+    "Init.Data",
+    "Init.While",
+    "Init.System.Uri",
+    "Init.System.Promise",
+    "Init.System.CancelToken",
+    "Init.System",
+    "Init.Dynamic",
+    "Init.ShareCommon",
+    "Init.Guard",
+    "Init.Simproc",
+    "Init.CbvSimproc",
+    "Init.SizeOfLemmas",
+    "Init.MacroTrace",
+    "Init.GrindInstances.Ring.Nat",
+    "Init.GrindInstances.Ring.UInt",
+    "Init.GrindInstances.Ring.SInt",
+    "Init.GrindInstances.Ring.Fin",
+    "Init.GrindInstances.Ring.BitVec",
+    "Init.GrindInstances.Ring",
+    "Init.GrindInstances.Nat",
+    "Init.GrindInstances",
+    "Init.Sym.Lemmas",
+    "Init.Sym.Simp.SimprocDSL",
+    "Init.Sym.DSimp.DSimprocDSL",
+    "Init.Sym",
+    "Init.Internal.Order.Basic",
+    "Init.Internal.Order.Lemmas",
+    "Init.Internal.Order.MonadTail",
+    "Init.Internal.Order.While",
+    "Init.Internal.Order.Tactic",
+    "Init.Internal.Order",
+    "Init.Internal",
+    "Init.Try",
+    "Init.Task",
+    "Init.MethodSpecsSimp",
+    "Init",
+    "Std.Data.DHashMap.Internal.AssocList.Basic",
+    "Std.Data.DHashMap.RawDef",
+    "Std.Data.Internal.List.Defs",
+    "Std.Data.DHashMap.Internal.Index",
+    "Std.Data.DHashMap.Internal.Defs",
+    "Std.Data.DHashMap.Raw",
+    "Std.Data.DHashMap.Basic",
+    "Std.Data.DHashMap.Internal.Raw",
+    "Std.Data.Internal.List.Associative",
+    "Std.Data.DHashMap.Internal.HashesTo",
+    "Std.Data.DHashMap.Internal.AssocList.Lemmas",
+    "Std.Data.DHashMap.Internal.Model",
+    "Std.Data.DHashMap.Internal.WF",
+    "Std.Data.DHashMap.AdditionalOperations",
+    "Std.Data.Iterators.Producers.Monadic.Array",
+    "Std.Data.Iterators.Producers.Array",
+    "Std.Data.DHashMap.Internal.AssocList.Iterator",
+    "Std.Data.DHashMap.Iterator",
+    "Std.Data.DHashMap.Internal.RawLemmas",
+    "Std.Data.DHashMap.Lemmas",
+    "Std.Data.Iterators.Producers.Monadic.Vector",
+    "Std.Data.Iterators.Producers.Monadic.Empty",
+    "Std.Data.Iterators.Producers.Monadic",
+    "Std.Data.Iterators.Producers.Vector",
+    "Std.Data.Iterators.Producers.Empty",
+    "Std.Data.Iterators.Producers.Range",
+    "Std.Data.Iterators.Producers.Repeat",
+    "Std.Data.Iterators.Producers.Slice",
+    "Std.Data.Iterators.Producers",
+    "Std.Data.Iterators.Combinators.Monadic.TakeWhile",
+    "Std.Data.Iterators.Combinators.Monadic.Drop",
+    "Std.Data.Iterators.Combinators.Monadic.DropWhile",
+    "Std.Data.Iterators.Combinators.Monadic.StepSize",
+    "Std.Data.Iterators.Combinators.Monadic.Zip",
+    "Std.Data.Iterators.Combinators.Monadic",
+    "Std.Data.Iterators.Combinators.TakeWhile",
+    "Std.Data.Iterators.Combinators.Drop",
+    "Std.Data.Iterators.Combinators.DropWhile",
+    "Std.Data.Iterators.Combinators.StepSize",
+    "Std.Data.Iterators.Combinators.Zip",
+    "Std.Data.Iterators.Combinators",
+    "Std.Data.Iterators.Lemmas.Monadic",
+    "Std.Data.Iterators.Lemmas.Equivalence.HetT",
+    "Std.Data.Iterators.Lemmas.Equivalence.Basic",
+    "Std.Data.Iterators.Lemmas.Equivalence.StepCongr",
+    "Std.Data.Iterators.Lemmas.Consumers.Monadic.Collect",
+    "Std.Data.Iterators.Lemmas.Consumers.Monadic.Loop",
+    "Std.Data.HashMap.Basic",
+    "Std.Data.HashSet.Basic",
+    "Std.Data.ExtDHashMap.Basic",
+    "Std.Data.ExtHashMap.Basic",
+    "Std.Data.ExtHashSet.Basic",
+    "Std.Data.DTreeMap.Internal.Def",
+    "Std.Data.DTreeMap.Internal.Balanced",
+    "Std.Data.DTreeMap.Internal.Balancing",
+    "Std.Data.Internal.Cut",
+    "Std.Data.DTreeMap.Internal.Ordered",
+    "Std.Data.DTreeMap.Internal.Queries",
+    "Std.Data.DTreeMap.Internal.Operations",
+    "Std.Data.DTreeMap.Internal.WF.Defs",
+    "Std.Data.DTreeMap.Basic",
+    "Std.Data.TreeMap.Basic",
+    "Std.Data.TreeSet.Basic",
+    "Std.Data.DTreeMap.Internal.Cell",
+    "Std.Data.DTreeMap.Internal.Model",
+    "Std.Data.DTreeMap.Internal.WF.Lemmas",
+    "Std.Data.DTreeMap.Internal.Lemmas",
+    "Std.Data.DTreeMap.Raw.Basic",
+    "Std.Data.DTreeMap.AdditionalOperations",
+    "Std.Data.DTreeMap.Lemmas",
+    "Std.Data.ExtDTreeMap.Basic",
+    "Std.Data.ExtTreeMap.Basic",
+    "Std.Data.ExtTreeSet.Basic",
+    "Std.Data.Iterators.Consumers.Monadic.Set",
+    "Std.Data.ExtDHashMap.Lemmas",
+    "Std.Data.ExtHashMap.Lemmas",
+    "Std.Data.ExtHashSet.Lemmas",
+    "Std.Data.ExtDTreeMap.Lemmas",
+    "Std.Data.ExtTreeMap.Lemmas",
+    "Std.Data.ExtTreeSet.Lemmas",
+    "Std.Data.Iterators.Lemmas.Consumers.Monadic.Set",
+    "Std.Data.Iterators.Lemmas.Consumers.Monadic",
+    "Std.Data.Iterators.Lemmas.Combinators.Monadic.TakeWhile",
+    "Std.Data.Iterators.Lemmas.Combinators.Monadic.Drop",
+    "Std.Data.Iterators.Lemmas.Combinators.Monadic.DropWhile",
+    "Std.Data.Iterators.Lemmas.Combinators.Monadic.FilterMap",
+    "Std.Data.Iterators.Lemmas.Combinators.Monadic.Zip",
+    "Std.Data.Iterators.Lemmas.Combinators.Monadic",
+    "Std.Data.Iterators.Lemmas.Consumers.Collect",
+    "Std.Data.Iterators.Lemmas.Consumers.Loop",
+    "Std.Data.Iterators.Consumers.Set",
+    "Std.Data.HashMap.Raw",
+    "Std.Data.HashMap.AdditionalOperations",
+    "Std.Data.HashMap.Lemmas",
+    "Std.Data.HashSet.Lemmas",
+    "Std.Data.TreeMap.Raw.Basic",
+    "Std.Data.TreeMap.AdditionalOperations",
+    "Std.Data.TreeMap.Lemmas",
+    "Std.Data.TreeSet.Raw.Basic",
+    "Std.Data.TreeSet.AdditionalOperations",
+    "Std.Data.TreeSet.Lemmas",
+    "Std.Data.Iterators.Lemmas.Consumers.Set",
+    "Std.Data.Iterators.Lemmas.Consumers",
+    "Std.Data.Iterators.Lemmas.Combinators.TakeWhile",
+    "Std.Data.Iterators.Lemmas.Combinators.Drop",
+    "Std.Data.Iterators.Lemmas.Combinators.DropWhile",
+    "Std.Data.Iterators.Lemmas.Combinators.Zip",
+    "Std.Data.Iterators.Lemmas.Combinators",
+    "Std.Data.Iterators.Lemmas.Producers.Monadic.List",
+    "Std.Data.Iterators.Lemmas.Producers.Monadic.Array",
+    "Std.Data.Iterators.Lemmas.Producers.Monadic.Vector",
+    "Std.Data.Iterators.Lemmas.Producers.Monadic.Empty",
+    "Std.Data.Iterators.Lemmas.Producers.Monadic",
+    "Std.Data.Iterators.Lemmas.Producers.Array",
+    "Std.Data.Iterators.Lemmas.Producers.Vector",
+    "Std.Data.Iterators.Lemmas.Producers.Empty",
+    "Std.Data.Iterators.Lemmas.Producers.Repeat",
+    "Std.Data.Iterators.Lemmas.Producers.Range",
+    "Std.Data.Iterators.Lemmas.Producers.Slice",
+    "Std.Data.Iterators.Lemmas.Producers",
+    "Std.Data.Iterators.Lemmas.Equivalence",
+    "Std.Data.Iterators.Lemmas",
+    "Std.Data.Iterators.Consumers.Monadic",
+    "Std.Data.Iterators.Consumers",
+    "Std.Data.Iterators",
+    "Std.Data.DHashMap.RawLemmas",
+    "Std.Data.DHashMap.IteratorLemmas",
+    "Std.Data.DHashMap.DecidableEquiv",
+    "Std.Data.DHashMap",
+    "Std.Data.HashMap.Iterator",
+    "Std.Data.HashMap.RawLemmas",
+    "Std.Data.HashMap.IteratorLemmas",
+    "Std.Data.HashMap.DecidableEquiv",
+    "Std.Data.HashMap",
+    "Std.Data.HashSet.Raw",
+    "Std.Data.HashSet.Iterator",
+    "Std.Data.HashSet.RawLemmas",
+    "Std.Data.HashSet.IteratorLemmas",
+    "Std.Data.HashSet.DecidableEquiv",
+    "Std.Data.HashSet",
+    "Std.Data.DTreeMap.Internal.Zipper",
+    "Std.Data.DTreeMap.Raw.Iterator",
+    "Std.Data.DTreeMap.Iterator",
+    "Std.Data.DTreeMap.Raw.Slice",
+    "Std.Data.DTreeMap.Slice",
+    "Std.Data.DTreeMap.Raw.AdditionalOperations",
+    "Std.Data.DTreeMap.Raw.Lemmas",
+    "Std.Data.DTreeMap.Raw.WF",
+    "Std.Data.DTreeMap.Raw.DecidableEquiv",
+    "Std.Data.DTreeMap.Raw",
+    "Std.Data.DTreeMap.DecidableEquiv",
+    "Std.Data.DTreeMap",
+    "Std.Data.TreeMap.Iterator",
+    "Std.Data.TreeMap.Raw.Slice",
+    "Std.Data.TreeMap.Slice",
+    "Std.Data.TreeMap.DecidableEquiv",
+    "Std.Data.TreeMap",
+    "Std.Data.TreeSet.Iterator",
+    "Std.Data.TreeSet.Raw.Slice",
+    "Std.Data.TreeSet.Slice",
+    "Std.Data.TreeSet.DecidableEquiv",
+    "Std.Data.TreeSet",
+    "Std.Data.ExtDHashMap",
+    "Std.Data.ExtHashMap",
+    "Std.Data.ExtHashSet",
+    "Std.Data.ExtDTreeMap",
+    "Std.Data.ExtTreeMap",
+    "Std.Data.ExtTreeSet",
+    "Std.Data.DHashMap.RawDecidableEquiv",
+    "Std.Data.HashMap.RawDecidableEquiv",
+    "Std.Data.HashSet.RawDecidableEquiv",
+    "Std.Data.TreeMap.Raw.AdditionalOperations",
+    "Std.Data.TreeMap.Raw.Lemmas",
+    "Std.Data.TreeMap.Raw.WF",
+    "Std.Data.TreeMap.Raw.Iterator",
+    "Std.Data.TreeMap.Raw.DecidableEquiv",
+    "Std.Data.TreeMap.Raw",
+    "Std.Data.TreeSet.Raw.Lemmas",
+    "Std.Data.TreeSet.Raw.WF",
+    "Std.Data.TreeSet.Raw.Iterator",
+    "Std.Data.TreeSet.Raw.DecidableEquiv",
+    "Std.Data.TreeSet.Raw",
+    "Std.Data.ByteSlice",
+    "Std.Do.SPred.SVal",
+    "Std.Do.SPred.SPred",
+    "Std.Tactic.Do.ProofMode",
+    "Std.Do.SPred.Notation.Basic",
+    "Std.Do.SPred.Notation",
+    "Std.Do.SPred.Laws",
+    "Std.Do.SPred.DerivedLaws",
+    "Std.Do.SPred",
+    "Std.Do.PostCond",
+    "Std.Do.PredTrans",
+    "Std.Do.WP.Basic",
+    "Std.Do.WP.Monad",
+    "Std.Do.WP.SimpLemmas",
+    "Std.Do.Internal.Ensures.Def",
+    "Std.Do.Internal.Ensures.Lemmas",
+    "Std.Do.Internal.Ensures",
+    "Std.Do.WP.Sound",
+    "Std.Do.WP",
+    "Std.Do.Triple.Basic",
+    "Std.Do.Triple.SpecLemmas",
+    "Std.Do.Triple",
+    "Std.Do.Internal",
+    "Std.Do",
+    "Std.Tactic.Do.Syntax",
+    "Std.Tactic.Do",
+    "Std.Data.String.ToNat",
+    "Std.Data.String.ToInt",
+    "Std.Data.String",
+    "Std.Data",
+    "Std.Sat.AIG.Basic",
+    "Std.Sat.AIG.LawfulOperator",
+    "Std.Sat.AIG.Lemmas",
+    "Std.Sat.AIG.Cached",
+    "Std.Sat.AIG.CachedLemmas",
+    "Std.Sat.AIG.CachedGates",
+    "Std.Sat.AIG.CachedGatesLemmas",
+    "Std.Sat.CNF.Literal",
+    "Std.Sat.CNF.Basic",
+    "Std.Sat.CNF.Relabel",
+    "Std.Sat.CNF.RelabelFin",
+    "Std.Sat.CNF.Dimacs",
+    "Std.Sat.CNF",
+    "Std.Sat.AIG.CNF",
+    "Std.Sat.AIG.Relabel",
+    "Std.Sat.AIG.RelabelNat",
+    "Std.Sat.AIG.RefVec",
+    "Std.Sat.AIG.LawfulVecOperator",
+    "Std.Sat.AIG.RefVecOperator.Map",
+    "Std.Sat.AIG.RefVecOperator.Zip",
+    "Std.Sat.AIG.RefVecOperator.Fold",
+    "Std.Sat.AIG.RefVecOperator",
+    "Std.Sat.AIG.If",
+    "Std.Sat.AIG",
+    "Std.Sat",
+    "Std.Sync.Basic",
+    "Std.Sync.Mutex",
+    "Std.Async.Basic",
+    "Std.Async.Select",
+    "Std.Async.IO",
+    "Std.Sync.Channel",
+    "Std.Sync.RecursiveMutex",
+    "Std.Sync.Barrier",
+    "Std.Sync.Semaphore",
+    "Std.Sync.SharedMutex",
+    "Std.Sync.Notify",
+    "Std.Sync.Broadcast",
+    "Std.Sync.StreamMap",
+    "Std.Sync.CancellationToken",
+    "Std.Sync.CancellationContext",
+    "Std.Sync",
+    "Std.Time.Internal.Bounded",
+    "Std.Time.Internal.UnitVal",
+    "Std.Time.Internal",
+    "Std.Time.Time.Unit.Nanosecond",
+    "Std.Time.Time.Unit.Second",
+    "Std.Time.Time.Unit.Minute",
+    "Std.Time.Time.Unit.Hour",
+    "Std.Time.Time.Unit.Millisecond",
+    "Std.Time.Time.Unit.Basic",
+    "Std.Time.Time.Basic",
+    "Std.Time.Time.HourMarker",
+    "Std.Time.Time.PlainTime",
+    "Std.Time.Time",
+    "Std.Time.Date.Unit.Day",
+    "Std.Time.Date.Unit.Month",
+    "Std.Time.Date.Unit.Year",
+    "Std.Time.Date.Unit.Weekday",
+    "Std.Time.Date.Unit.Week",
+    "Std.Time.Date.Unit.Basic",
+    "Std.Time.Date.ValidDate",
+    "Std.Time.Date.Basic",
+    "Std.Time.Date.PlainDate",
+    "Std.Time.Date",
+    "Std.Time.Duration",
+    "Std.Time.DateTime.WallTime",
+    "Std.Time.DateTime.Timestamp",
+    "Std.Time.Zoned.TimeZone",
+    "Std.Time.Zoned.RecurringRule",
+    "Std.Time.Zoned.ZoneRules",
+    "Std.Internal.Parsec.Basic",
+    "Std.Internal.Parsec.String",
+    "Std.Internal.Parsec.ByteArray",
+    "Std.Internal.Parsec",
+    "Std.Time.Zoned.Database.TzIf",
+    "Std.Time.Zoned.Database.PosixTz",
+    "Std.Time.Zoned.Database.Basic",
+    "Std.Time.Zoned.Database.TZdb",
+    "Std.Time.Zoned.Database.Windows",
+    "Std.Time.DateTime.PlainDateTime",
+    "Std.Time.DateTime",
+    "Std.Time.Zoned.Database",
+    "Std.Time.Zoned",
+    "Std.Time.Format.Modifier",
+    "Std.Time.Format.DateFormat",
+    "Std.Time.Format.Basic",
+    "Std.Time.Notation.Spec",
+    "Std.Time.Format",
+    "Std.Time.Notation",
+    "Std.Time",
+    "Std.Tactic.BVDecide.Bitblast.BoolExpr.Basic",
+    "Std.Tactic.BVDecide.Bitblast.BoolExpr",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Basic",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.GetLsbD",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Var",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.ShiftRight",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Append",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Replicate",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Extract",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.RotateLeft",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.RotateRight",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Add",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.ShiftLeft",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Const",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Mul",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Not",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Neg",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Sub",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Eq",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Carry",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Ult",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.ZeroExtend",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Udiv",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Umod",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Reverse",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Clz",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Operations.Cpop",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Expr",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Pred",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl.Substructure",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Impl",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Basic",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Var",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.ShiftRight",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Append",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Replicate",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Extract",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.RotateLeft",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.RotateRight",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Add",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.ShiftLeft",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Const",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Mul",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Not",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Neg",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Sub",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.ZeroExtend",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Eq",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Carry",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Ult",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.GetLsbD",
+    "Std.Tactic.BVDecide.Normalize.Bool",
+    "Std.Tactic.BVDecide.Syntax",
+    "Std.Tactic.BVDecide.Normalize.Canonicalize",
+    "Std.Tactic.BVDecide.Normalize.BitVec",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Udiv",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Umod",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Reverse",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Clz",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Operations.Cpop",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Expr",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas.Pred",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit.Lemmas",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr.Circuit",
+    "Std.Tactic.BVDecide.Bitblast.BVExpr",
+    "Std.Tactic.BVDecide.Bitblast",
+    "Std.Tactic.BVDecide.LRAT.Actions",
+    "Std.Tactic.BVDecide.LRAT.Internal.Entails",
+    "Std.Tactic.BVDecide.LRAT.Internal.PosFin",
+    "Std.Tactic.BVDecide.LRAT.Internal.Assignment",
+    "Std.Tactic.BVDecide.LRAT.Internal.Clause",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.Class",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.Implementation",
+    "Std.Tactic.BVDecide.LRAT.Internal.CNF",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.Lemmas",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.RupAddResult",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.RupAddSound",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.RatAddResult",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.RatAddSound",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula.Instance",
+    "Std.Tactic.BVDecide.LRAT.Internal.Formula",
+    "Std.Tactic.BVDecide.LRAT.Internal.Convert",
+    "Std.Tactic.BVDecide.LRAT.Internal.LRATChecker",
+    "Std.Tactic.BVDecide.LRAT.Internal.Actions",
+    "Std.Tactic.BVDecide.LRAT.Internal.LRATCheckerSound",
+    "Std.Tactic.BVDecide.LRAT.Internal.CompactLRATChecker",
+    "Std.Tactic.BVDecide.LRAT.Internal.CompactLRATCheckerSound",
+    "Std.Tactic.BVDecide.LRAT.Checker",
+    "Std.Tactic.BVDecide.LRAT.Parser",
+    "Std.Tactic.BVDecide.LRAT",
+    "Std.Tactic.BVDecide.Normalize.Equal",
+    "Std.Tactic.BVDecide.Normalize.Prop",
+    "Std.Tactic.BVDecide.Normalize",
+    "Std.Tactic.BVDecide.Reflect",
+    "Std.Tactic.BVDecide",
+    "Std.Tactic",
+    "Std.Internal.UV.Loop",
+    "Std.Internal.UV.Timer",
+    "Std.Net.Addr",
+    "Std.Net",
+    "Std.Internal.UV.TCP",
+    "Std.Internal.UV.UDP",
+    "Std.Internal.UV.System",
+    "Std.Internal.UV.DNS",
+    "Std.Internal.UV.Signal",
+    "Std.Internal.UV",
+    "Std.Async.Timer",
+    "Std.Async.ContextAsync",
+    "Std.Async.TCP",
+    "Std.Async.UDP",
+    "Std.Async.DNS",
+    "Std.Async.Process",
+    "Std.Async.System",
+    "Std.Async.Signal",
+    "Std.Async",
+    "Std.Http.Internal.Char",
+    "Std.Http.Internal.ChunkedBuffer",
+    "Std.Http.Internal.LowerCase",
+    "Std.Http.Internal.IndexMultiMap",
+    "Std.Http.Data.Version",
+    "Std.Http.Internal.Encode",
+    "Std.Http.Internal.String",
+    "Std.Http.Internal",
+    "Std.Http.Data.Method",
+    "Std.Http.Data.Extensions",
+    "Std.Http.Data.URI.Encoding",
+    "Std.Http.Data.URI.Basic",
+    "Std.Http.Data.URI.Config",
+    "Std.Http.Data.URI.Parser",
+    "Std.Http.Data.URI",
+    "Std.Http.Data.Headers.Name",
+    "Std.Http.Data.Headers.Value",
+    "Std.Http.Data.Headers.Basic",
+    "Std.Http.Data.Headers",
+    "Std.Http.Data.Request",
+    "Std.Http.Data.Status",
+    "Std.Http.Data.Response",
+    "Std.Http.Data.Chunk",
+    "Std.Http.Data.Body.Length",
+    "Std.Http.Data.Body.Basic",
+    "Std.Http.Data.Body.Any",
+    "Std.Http.Data.Body.Stream",
+    "Std.Http.Data.Body.Empty",
+    "Std.Http.Data.Body.Full",
+    "Std.Http.Data.Body",
+    "Std.Http.Data",
+    "Std.Http.Protocol.H1.Config",
+    "Std.Http.Protocol.H1.Parser",
+    "Std.Http.Protocol.H1.Message",
+    "Std.Http.Protocol.H1.Error",
+    "Std.Http.Protocol.H1.Reader",
+    "Std.Http.Protocol.H1.Writer",
+    "Std.Http.Protocol.H1.Event",
+    "Std.Http.Protocol.H1",
+    "Std.Http.Server.Config",
+    "Std.Http.Server.Handler",
+    "Std.Http.Transport",
+    "Std.Http.Server.Connection",
+    "Std.Http.Server",
+    "Std.Http.Test.Helpers",
+    "Std.Http",
+    "Std.Internal.Do.Order.Basic",
+    "Std.Internal.Do.Order.PreservesSup",
+    "Std.Internal.Do.Order.Heyting",
+    "Std.Internal.Do.Order.Lemmas",
+    "Std.Internal.Do.Order.Instances",
+    "Std.Internal.Do.Assertion",
+    "Std.Internal.Do.ExceptPost",
+    "Std.Internal.Do.PredTrans",
+    "Std.Internal.Do.WP.Basic",
+    "Std.Internal.Do.WP.Conjunctive",
+    "Std.Internal.Do.WP.Frame",
+    "Std.Internal.Do.WP.Lemmas",
+    "Std.Internal.Do.WP",
+    "Std.Internal.Do.Triple.Basic",
+    "Std.Internal.Do.Triple.Gadget",
+    "Std.Internal.Do.Triple.SpecLemmas",
+    "Std.Internal.Do.Triple",
+    "Std.Internal.Do",
+    "Std.Internal",
+    "Std",
+    "GParity.Rational",
+    "GParity.Affine",
+    "GParity.Count",
+    "GParity.Protocol",
+    "GParity.Main",
+    "Lean.Data.LOption",
+    "Lean.ImportingFlag",
+    "Lean.Data.KVMap",
+    "Lean.Data.PersistentHashMap",
+    "Lean.Data.Iterators.Producers.PersistentHashMap",
+    "Lean.Data.SMap",
+    "Lean.Data.SSet",
+    "Lean.Data.Name",
+    "Lean.Data.NameMap.Basic",
+    "Lean.Data.Options",
+    "Lean.Util.RecDepth",
+    "Lean.Data.PrefixTree",
+    "Lean.Data.NameTrie",
+    "Lean.Data.Json.Basic",
+    "Lean.Data.Json.Parser",
+    "Lean.Data.Format",
+    "Lean.Data.Json.Printer",
+    "Lean.Data.Json.FromToJson.Basic",
+    "Lean.Util.LeanOptions",
+    "Lean.Setup",
+    "Lean.Data.PersistentArray",
+    "Lean.Data.PersistentHashSet",
+    "Lean.Hygiene",
+    "Lean.Level",
+    "Lean.Expr",
+    "Lean.LocalContext",
+    "Lean.Util.Path",
+    "Lean.Util.FindExpr",
+    "Lean.Util.Profile",
+    "Lean.Util.PtrSet",
+    "Lean.Util.ReplaceExpr",
+    "Lean.Util.InstantiateLevelParams",
+    "Lean.Declaration",
+    "Lean.Util.FoldConsts",
+    "Lean.PrivateName",
+    "Lean.LoadDynlib",
+    "Lean.CompactedRegion",
+    "Lean.Environment",
+    "Lean.EnvExtension",
+    "Lean.Modifiers",
+    "Lean.InternalExceptionId",
+    "Lean.ToLevel",
+    "Lean.ToExpr",
+    "Lean.Data.Position",
+    "Lean.Data.DeclarationRange",
+    "Lean.Data.OpenDecl",
+    "Lean.Util.MonadCache",
+    "Lean.MetavarContext",
+    "Lean.Data.PPContext",
+    "Lean.Server.Rpc.Basic",
+    "Lean.Widget.Types",
+    "Lean.Elab.InfoTree.Types",
+    "Lean.Util.PPExt",
+    "Lean.Util.Sorry",
+    "Lean.Message",
+    "Lean.Syntax",
+    "Lean.DocString.Links",
+    "Lean.ErrorExplanation",
+    "Lean.Exception",
+    "Lean.Namespace",
+    "Lean.Log",
+    "Lean.ResolveName",
+    "Lean.Data.Trie",
+    "Lean.Elab.Exception",
+    "Lean.AuxRecursor",
+    "Lean.Compiler.Old",
+    "Lean.MonadEnv",
+    "Lean.DeclarationRange",
+    "Lean.DocString.Types",
+    "Lean.DocString.DeferredCheck",
+    "Lean.DocString.Extension",
+    "Lean.Parser.Types",
+    "Lean.Util.Trace",
+    "Lean.Elab.InfoTree.Basic",
+    "Lean.Language.Basic",
+    "Lean.Compiler.NoncomputableAttr",
+    "Lean.CoreM",
+    "Lean.Compiler.MetaAttr",
+    "Lean.Attributes",
+    "Lean.Util.CollectLevelParams",
+    "Lean.Class",
+    "Lean.ScopedEnvExtension",
+    "Lean.ReducibilityAttrs",
+    "Lean.Util.MonadBacktrack",
+    "Lean.Meta.RecExt",
+    "Lean.Compiler.InlineAttrs",
+    "Lean.Meta.TransparencyMode",
+    "Lean.Meta.Basic",
+    "Lean.Data.Lsp.BasicAux",
+    "Lean.Data.Lsp.Utf16",
+    "Lean.Meta.ForEachExpr",
+    "Lean.Data.LBool",
+    "Lean.Meta.InferType",
+    "Lean.Util.Recognizers",
+    "Lean.Meta.Sorry",
+    "Lean.Util.CollectAxioms",
+    "Lean.OriginalConstKind",
+    "Lean.ProjFns",
+    "Lean.Structure",
+    "Lean.AutoDecl",
+    "Lean.Linter.Init",
+    "Lean.AddDecl",
+    "Lean.Meta.PPGoal",
+    "Lean.ReservedNameAction",
+    "Lean.Elab.InfoTree.Main",
+    "Lean.Compiler.NameMangling",
+    "Lean.Compiler.ModPkgExt",
+    "Lean.Compiler.InitAttr",
+    "Lean.Compiler.ExternAttr",
+    "Lean.Compiler.IR.Basic",
+    "Lean.Compiler.IR.Format",
+    "Lean.Compiler.ExportAttr",
+    "Lean.Compiler.LCNF.PublicDeclsExt",
+    "Lean.Meta.DiscrTree.Types",
+    "Lean.Meta.DiscrTree.Basic",
+    "Lean.Util.SafeExponentiation",
+    "Lean.Meta.GetUnfoldableConst",
+    "Lean.Meta.LitValues",
+    "Lean.Meta.NatInstTesters",
+    "Lean.Meta.Offset",
+    "Lean.Meta.CtorRecognizer",
+    "Lean.Meta.Match.MatcherInfo",
+    "Lean.Meta.Match.MatchPatternAttr",
+    "Lean.Meta.FunInfo",
+    "Lean.Meta.Transform",
+    "Lean.Meta.WHNF",
+    "Lean.Meta.DiscrTree.Main",
+    "Lean.Util.CollectMVars",
+    "Lean.Meta.CollectMVars",
+    "Lean.Meta.PPBinder",
+    "Lean.Util.UnusedBinders",
+    "Lean.Util.CollectFVars",
+    "Lean.Meta.CollectFVars",
+    "Lean.Meta.Instances",
+    "Lean.Compiler.Specialize",
+    "Lean.Compiler.BorrowedAnnotation",
+    "Lean.Compiler.LCNF.Types",
+    "Lean.Compiler.LCNF.Basic",
+    "Lean.Compiler.IR.CompilerM",
+    "Lean.ExtraModUses",
+    "Lean.KeyedDeclsAttribute",
+    "Lean.Meta.AbstractMVars",
+    "Lean.Meta.Check",
+    "Lean.Meta.SynthInstance",
+    "Lean.Util.FindMVar",
+    "Lean.Util.FindLevelMVar",
+    "Lean.Util.ReplaceLevel",
+    "Lean.PrettyPrinter.Delaborator.Attributes",
+    "Lean.PrettyPrinter.Delaborator.Options",
+    "Lean.PrettyPrinter.Delaborator.FieldNotation",
+    "Lean.SubExpr",
+    "Lean.PrettyPrinter.Delaborator.SubExpr",
+    "Lean.Elab.Config",
+    "Lean.PrettyPrinter.Delaborator.TopDownAnalyze",
+    "Lean.PrettyPrinter.Delaborator.Basic",
+    "Lean.Elab.ErrorUtils",
+    "Lean.PrettyPrinter.Delaborator.Metavariable",
+    "Lean.Meta.CoeAttr",
+    "Lean.Meta.DecLevel",
+    "Lean.Meta.HasAssignableMVar",
+    "Lean.Meta.AppBuilder",
+    "Lean.Meta.Structure",
+    "Lean.Parser.Basic",
+    "Lean.DocString.Markdown",
+    "Lean.BuiltinDocAttr",
+    "Lean.Parser.Extension",
+    "Lean.Parser.StrInterpolation",
+    "Lean.ParserCompiler.Attribute",
+    "Lean.PrettyPrinter.Basic",
+    "Lean.PrettyPrinter.Formatter",
+    "Lean.PrettyPrinter.Parenthesizer",
+    "Lean.Parser.Extra",
+    "Lean.Parser.Attr",
+    "Lean.Parser.Level",
+    "Lean.Parser.Term.Doc",
+    "Lean.Parser.Term.Basic",
+    "Lean.DocString.Syntax",
+    "Lean.DocString.Parser",
+    "Lean.DocString.Formatter",
+    "Lean.Parser.Term",
+    "Lean.Parser.Do",
+    "Lean.Parser.Command",
+    "Lean.PrettyPrinter.Delaborator.DeclWithSig",
+    "Lean.PrettyPrinter.Delaborator.Builtins",
+    "Lean.PrettyPrinter.Delaborator",
+    "Lean.Parser.Module.Syntax",
+    "Lean.Parser.Module",
+    "Lean.Meta.ReduceEval",
+    "Lean.ParserCompiler",
+    "Lean.Util.NumObjs",
+    "Lean.Util.ShareCommon",
+    "Lean.PrettyPrinter",
+    "Lean.Meta.Diagnostics",
+    "Lean.DefEqAttrib",
+    "Lean.Meta.Tactic.AuxLemma",
+    "Lean.Util.ForEachExpr",
+    "Lean.Meta.Closure",
+    "Lean.Util.ForEachExprWhere",
+    "Lean.Meta.Tactic.Util",
+    "Lean.Meta.Tactic.Assumption",
+    "Lean.Meta.RecursorInfo",
+    "Lean.Meta.Tactic.Clear",
+    "Lean.Meta.Tactic.Revert",
+    "Lean.Meta.Tactic.Intro",
+    "Lean.Data.AssocList",
+    "Lean.Meta.Tactic.FVarSubst",
+    "Lean.Meta.Tactic.Induction",
+    "Lean.Meta.MatchUtil",
+    "Lean.Meta.Tactic.Assert",
+    "Lean.Meta.Tactic.Replace",
+    "Lean.Meta.ACLt",
+    "Lean.Meta.Match.Value",
+    "Lean.Meta.Match.NamedPatterns",
+    "Lean.Meta.Match.Basic",
+    "Lean.Meta.LetToHave",
+    "Lean.Meta.Eqns",
+    "Lean.Meta.Match.MatchEqsExt",
+    "Lean.Meta.Tactic.Subst",
+    "Lean.Meta.Tactic.Injection",
+    "Lean.Meta.Tactic.UnifyEq",
+    "Lean.Util.SortExprs",
+    "Lean.HeadIndex",
+    "Lean.Meta.KExprMap",
+    "Lean.Data.RArray",
+    "Lean.Meta.Tactic.Simp.Arith.Nat.Basic",
+    "Lean.Meta.Tactic.Simp.Arith.Util",
+    "Lean.Meta.Tactic.Simp.Arith.Nat.Simp",
+    "Lean.Meta.Tactic.Simp.Arith.Nat",
+    "Lean.Meta.IntInstTesters",
+    "Lean.Meta.Tactic.Simp.Arith.Int.Basic",
+    "Lean.Meta.Tactic.Simp.Arith.Int.Simp",
+    "Lean.Meta.Tactic.Simp.Arith.Int",
+    "Lean.Meta.Tactic.Simp.Arith",
+    "Lean.Meta.CongrTheorems",
+    "Lean.Parser.Tactic.Doc",
+    "Lean.DocString",
+    "Lean.Meta.Tactic.Simp.SimpTheorems",
+    "Lean.Meta.Tactic.Simp.SimpCongrTheorems",
+    "Lean.Meta.Tactic.Simp.Types",
+    "Lean.Meta.Tactic.Simp.Simproc",
+    "Lean.Meta.Tactic.Simp.Attr",
+    "Lean.Meta.BinderNameHint",
+    "Lean.Meta.Tactic.Simp.Rewrite",
+    "Lean.Meta.Tactic.Simp.Diagnostics",
+    "Lean.Meta.MonadSimp",
+    "Lean.Util.CollectLooseBVars",
+    "Lean.Meta.HaveTelescope",
+    "Lean.Meta.Tactic.Simp.Main",
+    "Lean.Meta.Tactic.Acyclic",
+    "Lean.Meta.CompletionName",
+    "Lean.Linter.Deprecated",
+    "Lean.Meta.Constructions.CtorIdx",
+    "Lean.Meta.HasNotBit",
+    "Lean.Meta.Constructions.SparseCasesOn",
+    "Lean.Meta.Tactic.Cases",
+    "Lean.Meta.Tactic.Apply",
+    "Lean.Meta.Tactic.Contradiction",
+    "Lean.Meta.KAbstract",
+    "Lean.Meta.GeneralizeTelescope",
+    "Lean.Meta.Match.MatcherApp.Basic",
+    "Lean.Meta.Match.MVarRenaming",
+    "Lean.Meta.Match.SimpH",
+    "Lean.Meta.Match.SolveOverlap",
+    "Lean.Meta.Match.CaseValues",
+    "Lean.Meta.Match.CaseArraySizes",
+    "Lean.Meta.Match.Match",
+    "Lean.Meta.GeneralizeVars",
+    "Lean.Elab.BindersUtil",
+    "Lean.Meta.Coe",
+    "Lean.Util.CollectLevelMVars",
+    "Lean.Elab.Util",
+    "Lean.Elab.DeprecatedSyntax",
+    "Lean.Elab.Attributes",
+    "Lean.Data.Json.Stream",
+    "Lean.Data.Json.FromToJson.Extra",
+    "Lean.Data.Json.FromToJson",
+    "Lean.Data.Json.Elab",
+    "Lean.Data.Json",
+    "Lean.Data.Lsp.Basic",
+    "Lean.Meta.TryThis",
+    "Lean.Util.Diff",
+    "Lean.Meta.Hint",
+    "Lean.Elab.AutoBound",
+    "Lean.Elab.Level",
+    "Lean.Elab.PreDefinition.TerminationHint",
+    "Lean.Elab.DeclarationRange",
+    "Lean.Elab.WhereFinally",
+    "Lean.Elab.InfoTree.InlayHints",
+    "Lean.Elab.Term.TermElabM",
+    "Lean.Elab.Command.Scope",
+    "Lean.Elab.DocString",
+    "Lean.DocString.Add",
+    "Lean.Elab.DeclModifiers",
+    "Lean.Elab.Term",
+    "Lean.Elab.Arg",
+    "Lean.Elab.MatchAltView",
+    "Lean.Elab.PatternVar",
+    "Lean.Elab.Quotation.Util",
+    "Lean.Elab.Quotation.Precheck",
+    "Lean.Util.OccursCheck",
+    "Lean.Elab.Tactic.Basic",
+    "Lean.Meta.AbstractNestedProofs",
+    "Lean.Elab.SyntheticMVars",
+    "Lean.Elab.Match",
+    "Lean.Elab.Binders",
+    "Lean.Elab.InfoTree",
+    "Lean.Elab.SetOption",
+    "Lean.Elab.Command"
+  ]
+}

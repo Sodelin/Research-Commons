@@ -1,0 +1,175 @@
+{
+  "cases": [
+    {
+      "case": "actual_witness",
+      "elapsed_seconds": 0.04246684700001424,
+      "errors": [],
+      "expected": "MATRIX_WITNESS",
+      "observed": "MATRIX_WITNESS",
+      "pass": true,
+      "result": "actual_witness/RESULT.json"
+    },
+    {
+      "case": "actual_exclusion",
+      "elapsed_seconds": 0.04264928699990378,
+      "errors": [],
+      "expected": "MATRIX_EXCLUSION",
+      "observed": "MATRIX_EXCLUSION",
+      "pass": true,
+      "result": "actual_exclusion/RESULT.json"
+    },
+    {
+      "case": "actual_projection_unknown",
+      "elapsed_seconds": 0.007357126999977481,
+      "errors": [],
+      "expected": "UNKNOWN",
+      "observed": "UNKNOWN",
+      "pass": true,
+      "result": "actual_projection_unknown/RESULT.json"
+    },
+    {
+      "case": "expected_binary_mismatch",
+      "elapsed_seconds": 0.0036697560001357488,
+      "errors": [],
+      "expected": "REFUSED_REQUEST",
+      "observed": "REFUSED_REQUEST",
+      "pass": true,
+      "result": "expected_binary_mismatch/RESULT.json"
+    },
+    {
+      "case": "before_start_exec_failure",
+      "elapsed_seconds": 0.0038692220000484667,
+      "errors": [],
+      "expected": "RESOURCE_OR_EXECUTION_FAILURE",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": true,
+      "result": "before_start_exec_failure/RESULT.json"
+    },
+    {
+      "case": "after_start_crash",
+      "elapsed_seconds": 0.019995424999933675,
+      "errors": [],
+      "expected": "RESOURCE_OR_EXECUTION_FAILURE",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": true,
+      "result": "after_start_crash/RESULT.json"
+    },
+    {
+      "case": "sat_status_exit_mismatch",
+      "elapsed_seconds": 0.02030019800008631,
+      "errors": [
+        "status RESOURCE_OR_EXECUTION_FAILURE != REFUSED_REQUEST"
+      ],
+      "expected": "REFUSED_REQUEST",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": false,
+      "result": "sat_status_exit_mismatch/RESULT.json"
+    },
+    {
+      "case": "unknown_status_exit_mismatch",
+      "elapsed_seconds": 0.02003386199999113,
+      "errors": [
+        "status RESOURCE_OR_EXECUTION_FAILURE != REFUSED_REQUEST"
+      ],
+      "expected": "REFUSED_REQUEST",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": false,
+      "result": "unknown_status_exit_mismatch/RESULT.json"
+    },
+    {
+      "case": "request_substitution",
+      "elapsed_seconds": 0.011499684999989768,
+      "errors": [
+        "status RESOURCE_OR_EXECUTION_FAILURE != REFUSED_REQUEST"
+      ],
+      "expected": "REFUSED_REQUEST",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": false,
+      "result": "request_substitution/RESULT.json"
+    },
+    {
+      "case": "forged_witness_native_accepts",
+      "elapsed_seconds": 0.06921846900013406,
+      "errors": [
+        "status RESOURCE_OR_EXECUTION_FAILURE != REFUSED_REQUEST"
+      ],
+      "expected": "REFUSED_REQUEST",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": false,
+      "result": "forged_witness_native_accepts/RESULT.json"
+    },
+    {
+      "case": "forged_strictness_native_accepts",
+      "elapsed_seconds": 0.057984046999990824,
+      "errors": [
+        "status RESOURCE_OR_EXECUTION_FAILURE != REFUSED_REQUEST"
+      ],
+      "expected": "REFUSED_REQUEST",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": false,
+      "result": "forged_strictness_native_accepts/RESULT.json"
+    },
+    {
+      "case": "truncated_certificate",
+      "elapsed_seconds": 0.07124517300007938,
+      "errors": [
+        "status RESOURCE_OR_EXECUTION_FAILURE != REFUSED_REQUEST"
+      ],
+      "expected": "REFUSED_REQUEST",
+      "observed": "RESOURCE_OR_EXECUTION_FAILURE",
+      "pass": false,
+      "result": "truncated_certificate/RESULT.json"
+    },
+    {
+      "case": "fraction_helper_hash_drift",
+      "elapsed_seconds": 0.0004906490000848862,
+      "errors": [],
+      "expected": "REFUSED_REQUEST",
+      "observed": "REFUSED_REQUEST",
+      "pass": true,
+      "result": "fraction_helper_hash_drift/RESULT.json"
+    },
+    {
+      "case": "source_hash_drift",
+      "elapsed_seconds": 0.0024302629999510827,
+      "errors": [],
+      "expected": "REFUSED_REQUEST",
+      "observed": "REFUSED_REQUEST",
+      "pass": true,
+      "result": "source_hash_drift/RESULT.json"
+    },
+    {
+      "case": "fresh_output_no_overwrite",
+      "errors": [],
+      "pass": true,
+      "result_after_sha256": "01779ca963d0ca65d2f4486587fbd4cf25aec2a9eec652c5b3d08d5f22d8e86b",
+      "result_before_sha256": "01779ca963d0ca65d2f4486587fbd4cf25aec2a9eec652c5b3d08d5f22d8e86b"
+    }
+  ],
+  "cases_passed": 9,
+  "cases_total": 15,
+  "claim": "INDEPENDENT_BOUNDED_NATIVE_ADAPTER_CHALLENGES",
+  "executed_at_utc": "2026-10-10T09:57:46Z",
+  "identities": {
+    "adapter": {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py",
+      "sha256": "1cff9eaaa87e191b826237244f0ceeba563bb4700020b81cde21aee34a6963f8",
+      "stable": true
+    },
+    "binary": {
+      "path": "/workspace/scratch/lean-rust-parity-native/runtime/parity-target/release/parity-solver",
+      "sha256": "b7890e7d3f6d450c3c8c2a2efd23d830b4bf744d9869c533c26dfc2a07ac00a4",
+      "stable": true
+    },
+    "challenge_harness": {
+      "sha256": "28dc6185fc146d5d963ffe133a8815a63ff373dca6875eb6f166a6a9d44533c8"
+    },
+    "fraction_checker": {
+      "sha256": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+      "stable": true
+    }
+  },
+  "pass": false,
+  "source_admission_claim": false,
+  "universal_correspondence_claim": false
+}

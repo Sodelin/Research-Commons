@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+import sys
+if len(sys.argv) > 1 and sys.argv[1] == 'check':
+    sys.stdout.buffer.write(b'RC1 CHECK ACCEPT\n')
+    sys.exit(0)
+sys.stdout.buffer.write(b'RC1 RESULT AFFINE\nBEGIN_REQUEST\nRC1 AFFINE 1 1 4096\nLE 1/1 1/1\nEND_REQUEST\nSTATUS SAT\nWITNESS 1 0/1\nEVAL 1 0/1\n')
+sys.exit(0)

@@ -1,0 +1,11 @@
+# Native chart matrix result
+
+Status: **UNKNOWN**.
+
+Source admission: **SOURCE_ADMISSION_NOT_ESTABLISHED**.
+
+Literal original-ID natural cell, software-validated rooted binary structural predicates, exact forms compiled jointly on one shared age/inverse-rate/coin bank. Typed-source refinement, active-epoch chart coverage, cut-child/class admission, observation-law fitting, statistical confidence and unrestricted G3/G4 remain unestablished.
+
+Producer started: True; native checker started: False; Fraction checker started: False.
+
+Binary identity: EXPECTED_PIN_MATCHED. Digests detect byte changes; they are not signatures.

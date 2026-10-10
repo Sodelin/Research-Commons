@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+import sys
+if len(sys.argv) > 1 and sys.argv[1] == 'check':
+    sys.stdout.buffer.write(b'RC1 CHECK ACCEPT\n')
+    sys.exit(0)
+sys.stdout.buffer.write(b'RC1 RESULT CHART\nBEGIN_REQUEST\nRC1 CHART 3 2 2 0 0 0 0\nROOT 0\nEDGE 0 0 1\nEDGE 1 0 2\nLEAF 0 1\nLEAF 1 2\nEND_REQUEST\nBANK 6 AGE:0 AGE:1 AGE:2 RATE:0 RATE:1 RATE:A\nMATRIX 6 9 0\nLT 0/1 -1/1 1/1 0/1 0/1 0/1 0/1\nLT 0/1 -1/1 0/1 1/1 0/1 0/1 0/1\nLE 0/1 0/1 1/1 0/1 0/1 0/1 0/1\nLE 0/1 0/1 -1/1 0/1 0/1 0/1 0/1\nLE 0/1 0/1 0/1 1/1 0/1 0/1 0/1\nLE 0/1 0/1 0/1 -1/1 0/1 0/1 0/1\nLT 0/1 0/1 0/1 0/1 -1/1 0/1 0/1\nLT 0/1 0/1 0/1 0/1 0/1 -1/1 0/1\nLT 0/1 0/1 0/1 0/1 0/1 0/1 -1/1\nEND_MATRIX\nGATE SOURCE_ADMISSION_NOT_ESTABLISHED\nSTATUS UNKNOWN\nLIMIT 6 8 0\nEND\n')
+sys.exit(0)

@@ -92,6 +92,45 @@ reports and preserve their exact scoped result and child logs under
 Read the [limitations and failure recovery page](../../research/2026-10-09-codex-conditional-bridge-1630z/release/LIMITATIONS.md)
 before interpreting any result as a scientific certificate.
 
+## Native exact finite cells
+
+The additive Rust component uses the same canonical RC1 requests and result
+bytes as the executable Lean baseline. Build it with Rust 1.90 or later:
+
+```sh
+cargo build --locked --release --manifest-path research/2026-10-10-codex-lean-rust-parity/rust/Cargo.toml
+python3 -B applications/practical-solver/run.py affine-cell --request research/2026-10-10-codex-lean-rust-parity/design/fixtures/two_tip_natural_cell.req --native-binary research/2026-10-10-codex-lean-rust-parity/rust/target/release/parity-solver --output /tmp/solver-affine-new
+python3 -B applications/practical-solver/run.py natural-cell --request applications/practical-solver/examples/natural-cell.rc1 --native-binary research/2026-10-10-codex-lean-rust-parity/rust/target/release/parity-solver --output /tmp/solver-natural-cell-new
+```
+
+The result contains one exact vector satisfying every supplied affine row,
+or nonnegative original-row multipliers proving that matrix infeasible.
+The runner preserves the request and certificate, stages the executable,
+and invokes both its native checker and a separately bounded exact rational
+checker. An optional `--expected-binary-sha256` verifies a trusted executable
+pin; without it, the digest is an observed identity.
+
+`MATRIX_WITNESS` and `MATRIX_EXCLUSION` exit 0. Projection-budget exhaustion
+returns `UNKNOWN` and exits 2. Refused requests and execution failures exit 1.
+Reports retain `SOURCE_ADMISSION_NOT_ESTABLISHED`: supplying a matrix does not
+validate an original graph/chart or exclude every source. See the
+[exact contract and correspondence scope](../../research/2026-10-10-codex-lean-rust-parity/design/CONTRACT.md)
+and [full solver obligation map](../../research/2026-10-10-codex-lean-rust-parity/design/TRACEABILITY.md).
+The launcher uses a fresh output directory and preserves actual producer and
+checker start records.
+
+`natural-cell` accepts original vertex/edge/hybrid records, literal age
+comparisons and exposure/coin intervals. It checks the finite rooted binary
+graph predicate and compiles one shared bank: vertex ages, one inverse rate
+per original edge, one ancestral inverse rate, and one coordinate per hybrid.
+Returned physical rates are reciprocals of the positive inverse coordinates.
+The independent checker regenerates the bank and matrix from the request
+before checking the certificate. The example constrains a two-tip graph with
+two exposures sharing its ancestral rate. Its result establishes feasibility
+of those literal constraints; active-epoch interpretation and observation-law
+admission remain unverified. The source gate stays in every result, including
+exclusions. See the [chart contract](../../research/2026-10-10-codex-lean-rust-parity/design/CHART-CONTRACT.md).
+
 ## What the three examples mean
 
 | Example | Expected checked result | Interpretation |
@@ -162,16 +201,16 @@ preserves the pre-dispatch defect, repaired positive and negative controls,
 and current derivative identities. The earlier release packet and its byte
 manifests describe historical source versions; they remain preserved.
 
-Check the published current bridge byte manifest from the repository root:
+Check the current application derivative's byte manifest from the repository root:
 
 ```sh
-python3 -B research/2026-10-09-codex-conditional-bridge-1630z/verify_bridge.py
+python3 -B research/2026-10-10-codex-lean-rust-parity/verify_derivative.py
 ```
 
-This verifies pinned bytes, and supplies no scientific or mathematical
-certification. The older `verify_release.py` is the archived release's byte
-checker: it intentionally reports that current derivative application files
-have changed. Use the current bridge manifest for current application identity.
+This verifies the new derivative and the unchanged inherited bridge files;
+it supplies no scientific or mathematical certification. The October 9
+`verify_bridge.py` and earlier `verify_release.py` retain their historical
+manifests and report the subsequently changed launcher/documentation bytes.
 
 ## Inputs and exported evidence
 
