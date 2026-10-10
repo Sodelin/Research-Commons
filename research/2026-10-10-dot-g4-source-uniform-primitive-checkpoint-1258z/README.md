@@ -131,3 +131,11 @@ The decisive implication Z_T remains OPEN: equality of the legal complete forest
 
 If Z_T were proved, the already accepted October 9 finite-persistent classification would give an existential finite determining cap for the stated single biased calibrated target. This note supplies neither Z_T, a computable global cap, a new legal graph-density observation, nor general biased G4 closure. Its [independent review](target-relative-rank/INDEPENDENT-REVIEW.md) checks the exact source and operator domains. A tiny symbolic expansion check concerns only the displayed polynomial coefficients; no Lean, QE or source simulation ran. All earlier text and results are preserved. SPECTRAL-ZERO-ADDENDUM-MANIFEST-1431.json pins this appendix.
 
+
+## 15:28 UTC route check: conditional one-root shapes lose essential information
+
+The reviewed [one-root shape diagnostic](one-root-shape-route/ONE-ROOT-SHAPE-CONTRAST-COUNTERCONTROL.md) rejects two narrower routes to the open target-relative spectral implication. At a shared COMMON survival 1/80, two actual strict equal-arm two-cell words give opposite values, 1/2400 and -237/500000, for the balanced-minus-one-third contrast after the supplied ordinary postpad is linearly cancelled. A fixed biased one-cell target at that clock gives zero. The complete 37-state, cap-four rational checker and [independent review](one-root-shape-route/INDEPENDENT-ONE-ROOT-SHAPE-REVIEW.md) are preserved, including the initial failed zero-mass representation control and its exact repair.
+
+More generally, a strict one-cell target and the ordinary source with the same COMMON clock have identical post-cancelled CONDITIONAL one-root Kingman topology laws at every cap. Their auxiliary spectral zeros differ. Thus even that entire conditional shape hierarchy plus the COMMON clock cannot alone supply Z_T. Unnormalized absorption probabilities and multi-root rows were discarded by this statistic and remain available in the actual full-law problem. No complete target-law match, general G4 negative result, new observation or physical inverse follows.
+
+This is an append-only failed-route record for the existing global-head-entry investigation. Earlier bodies are unchanged; ONE-ROOT-SHAPE-ADDENDUM-MANIFEST-1528.json pins the evidence and the complete unchanged README prefix. No Lean or higher-cap numerical execution is claimed.
