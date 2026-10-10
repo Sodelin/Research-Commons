@@ -41,3 +41,14 @@ The six proof/review bodies are preserved exactly at the hashes in MANIFEST.json
 The source semantics, selected-copy projectivity, ordinary pair-choice law and primitive/cocycle framework are inherited prior work. The present finite-binomial comparison and its quantitative consequence are scoped research results; historical novelty is unassessed. No compiler, Lean audit, simulation, numerical screen or executed solver is claimed for this checkpoint.
 
 [The Codex contract](CODEX-INTEGRATION-CONTRACT.md) specifies the reusable statements and source restrictions. This material is separate from the frozen 53-profile build. Continue using the calibrated original-law decoder if consuming hidden forest/count rows through original observations; the algebra here adds no observation rights.
+
+
+## 13:10 UTC addendum: a failed polynomial endpoint-signal route
+
+The independently reviewed [sparse-clock diagnostic](SPARSE-CLOCK-ATTENUATION-DIAGNOSTIC-1306.md) tests the next tempting inference. It constructs one actual shared-clock sequence of strict finite words, with cells at s_i=1/i, durations exp(-i) and h_i^2=(2i-1)exp(-i), starting at i=2. The intervals are disjoint inside [0,1], and every finite word has exact COMMON clock one. Its source-derived countable carrier has zero initial ordinary prefix in that representation. No uniqueness or law-identifiability of the representation is inferred.
+
+Its unweighted negative diagonal reservoir is at least (log n)^2/200 for all n>=ceil(exp(200)), while the absolute endpoint primitive is bounded by an explicit polynomial times exp(-sqrt(n)). These are analytic bounds with all constants checked; no numerical search or practical sample cap was computed. Thus reservoir size alone cannot force a polynomial-sized positive endpoint signal. The preceding clock genuinely matters.
+
+The [independent review](INDEPENDENT-SPARSE-CLOCK-REVIEW.md) binds exact proof SHA256 `0539ec4039f217794b34058a734ca4d560199881154c3cc57e51eebf08ee7a30`. The estimate is only an UPPER bound. It neither refutes exponential-type positional rigidity nor constructs an endpoint-equal finite target or exact finite-prefix rivals. The finite-array realization and generalized infinite limit remain distinct. The proof's dated review-pending header is preserved as development history; the review records subsequent scoped acceptance.
+
+This is a preserved failed-route diagnostic within the same biased-source checkpoint. It leaves the original sharp negative-part theorem and all ten original packet bodies unchanged, apart from this explicitly appended README section. ADDENDUM-MANIFEST-1310.json binds the two additions and the unchanged original README prefix.
