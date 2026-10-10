@@ -101,3 +101,13 @@ S. Karlin and H. Rubin, *The Theory of Decision Procedures for Distributions wit
 Searches included serial network/coalescent identifiability, two-cycle suppression, quadratic-binomial and discrete concentration comparisons, finite forcing, and Laplace/sign-change identifiability. Relevant primary theorem sections were read; whole literatures were not exhausted. Failed exact-phrase searches establish no novelty.
 
 The next mathematical target remains the biased exponential-type positional gate. Static motif forcing is useful only after a legal adapter; variation-diminishing theory is useful only after a common-transform/sign-control theorem. The sharp negative-part bound alone supplies neither. Earlier atom-exclusion, overshoot, inverse-norm and reservoir packets retain their own attribution/limitations; this focused pass is not a retroactive claim that all their historical novelty questions have been completed.
+
+
+## Dated adapter clarification and finite-cap obstruction, 10 October 2026, 14:11 UTC
+
+The earlier G1–G2 paragraph's phrase “has not been shown to recover arbitrary graph densities” must be read with a finite-observation qualifier. The accepted supplied private-chain passive normal form already determines the ordered finite source from its complete all-copy law, up to arm exchange, so it determines every static routing-kernel motif. A supplied common rival length bound also yields finite motif recovery by the existing finite shape-pair prefix procedures. These are inherited results, not new claims here.
+
+The separately reviewed [new finite-cap theorem](routing-motif-adapter/FINITE-CAP-STAR-MOTIF-NONRECOVERY.md) now rules out a universal fixed-cap adapter for even P3 over unbounded finite equal-arm words: at every fixed complete forest cap there are exact strict positive same-response/same-COMMON-clock sources with different P3 density. The proof establishes a genuine positive source fibre; it does not substitute an algebraic group relation for source reachability. The common target can depend on the cap.
+
+This closes only that universal adapter route. Target-specific certification against unbounded rivals, or a different source-faithful sufficient family for a target-step-dependent forcing theorem, remains open. All-copy and bounded-rival recovery remain accepted. The external graphon/kernel forcing theorems retain their exact statements and are not refuted. See the [prior/quantifier supplement](routing-motif-adapter/PRIOR-AND-QUANTIFIER-BOUNDARY.md) and [independent review](routing-motif-adapter/INDEPENDENT-REVIEW.md). The earlier report is preserved in full above; its original review and novelty limitations remain attached to those original bytes.
+

@@ -80,3 +80,54 @@ Every finite word with a positive leading ordinary pad a and L cells instead sat
 This supersedes only the earlier diagnostic's uncertainty about the sign and exponential rate of its exact displayed family. All older proof/review bodies remain unchanged. Arbitrary interlaced good/bad tails, a source-uniform chronological comparison, and general biased G4 finite forcing remain open. The threshold is an analytical bound; no numerical determining cap, solver execution or Lean verification is claimed. The dated candidate/internal headers are preserved as development history and superseded by the exact scoped reviews.
 
 The additive manifest RATE-ADDENDUM-MANIFEST-1340.json pins the four new proof/review bodies and this appended README, including the hash of its unchanged preceding content. For Codex, the weak-scale lemma may be implemented using the existing event-time integral and exact original routing. The target-exclusion corollary must retain the precise sparse carrier and its actual clock prefixes; it is not a generic reservoir-to-signal theorem.
+
+## 13:47 UTC addendum: exact non-source countercontrol for the finite filter
+
+The sharper arity-dependent source bound also gives the finite linear necessary test
+
+    F_n(K)=c_n(K)+n/[16(2n-3)](d_(n-2)(K)-d_n(K)) >= 0.
+
+The reviewed [countercontrol](linear-filter-countercontrol/FINITE-LINEAR-FILTER-COUNTERCONTROL.md) shows why its actual-source hypothesis matters. Mix a three-colour IID paintbox partition with ordinary Kingman coalescence at survival 1/2, using mixture weight 1/2. This generic partition kernel is exchangeable and projectively consistent, and all admissible count entries are strictly positive. Nevertheless F_5=-20245/18579456<0.
+
+The [independent review and replay](linear-filter-countercontrol/independent/INDEPENDENT-FILTER-COUNTERCONTROL-REVIEW.md) confirm the exact fractions using a separate pure-death ODE recurrence and direct colour enumeration. Author and independent scripts/results are preserved. Only cap five was executed, with rational arithmetic.
+
+The mixture has no asserted original-source realization or legal shared-selector operation; colour blocks do not supply binary genealogy resolutions. This establishes that generic count positivity/projectivity is insufficient for the source test. It does not produce an admitted rival, an exact target match or a complete G4 recognition criterion. Original observation use of the necessary filter still requires the calibrated legal decoder.
+
+All earlier bodies and README text are preserved. FILTER-ADDENDUM-MANIFEST-1347.json binds the added evidence and this appended status.
+
+
+## 13:56 UTC source-interface check: the extra Green term can oppose its partner even with equal arms
+
+The [exact equal-arm countercheck](equalarm-extra-term-countercheck/EQUAL-ARM-EXTRA-TERM-COUNTERCHECK.md) revisits the inherited 9/7/6/4 source-state formula. Its older opposite-sign example had unequal arm survivals, leaving a narrower calibrated premise unchecked. The strict actual cell with both arm survivals 1/5 and inheritance 17/50 has signed per-labelled D6>0 but the separate EPPF term e<0, with both full rational values preserved.
+
+An [independent killed-coalescent ODE replay](equalarm-extra-term-countercheck/independent/INDEPENDENT-REVIEW.md) matches the author’s separate EPPF/count calculation exactly. Both use at most seven roots and the same original IID routing law. Here D6 is the signed spectral cherry coefficient, not the no-merger diagonal used elsewhere in this checkpoint.
+
+Thus equal-arm COMMON calibration does not rescue the same-sign simplification in the exact Green formula. The actual transports and extra term still have to be retained. This is a targeted check of a rejected proof shortcut, not a sign theorem for the full chronological sum, an exact rival, or a G4 conclusion. All earlier bodies and README text remain unchanged. EQUALARM-ADDENDUM-MANIFEST-1356.json binds the complete author and independent evidence plus this dated status.
+
+
+## 14:11 UTC adapter result: a uniform finite cap cannot recover even the routing star
+
+The reviewed [finite-cap motif theorem](routing-motif-adapter/FINITE-CAP-STAR-MOTIF-NONRECOVERY.md) shows that, for every finite cap m, two genuine strict positive equal-arm serial sources can have exactly the same complete INDEPENDENT forest response through m and the same natural COMMON clock, while their static routing-kernel two-edge-star densities differ. One joint source tuple supplies all rows of each word. The proof uses an actual finite positive word submersion, not a physical interpretation of algebraic inverses.
+
+Thus the fixed graph P3 has no observation cap that works uniformly over all unknown word lengths. The two sources, and their common target, may change with m. This is not a fixed-target G4 counterexample, and it does not reject target-specific finite forcing.
+
+The [prior and quantifier supplement](routing-motif-adapter/PRIOR-AND-QUANTIFIER-BOUNDARY.md) also corrects an overbroad reading of the earlier adapter gap: the accepted private ordered normal form already determines every static motif from the entire all-copy hierarchy, and supplies finite recovery when a rival length bound is given. The unresolved interface is a supplied-target certificate against unbounded rivals, or another legally recoverable sufficient family. These distinctions preserve the proved all-fair branch and leave general biased G4 open.
+
+The [independent review](routing-motif-adapter/INDEPENDENT-REVIEW.md) and [Codex contract](routing-motif-adapter/CODEX-ADAPTER-CONTRACT.md) pin the proof and its mathematical witness-extraction specification. No QE witness search or Lean formalization was run. Existing source-patch, forest-algebra and normal-form results retain attribution; novelty of this source-specific motif consequence is unassessed. Earlier bodies are unchanged, and ROUTING-MOTIF-ADDENDUM-MANIFEST-1411.json pins the new files and unchanged prefixes of the two appended reports.
+
+
+## 14:20 UTC own-work reuse and composition audit
+
+The [prior/composition checkpoint](G4-PRIOR-COMPOSITION-CHECKPOINT-1420.md) pins the already accepted one-biased-cell local separator, finite-persistent array classification, finite boundary-pivot exclusion, maximal stochastic-prefix limitation and monotone-signature obstruction, with their independent review receipts. It records how target-close head recovery would combine with the old local theorem and supplied-shape finder, rather than proposing another local separator.
+
+The unresolved step remains global head entry for arbitrary varying biased arrays. The pair identity makes all extras weak once a target-close cell exists; it does not prove that such a cell exists. Today's sparse exponential-rate result excludes its one exact carrier, while arbitrary interlaced good/bad tails remain open. The brief signature applicability screen is attributed to the stronger October 9 source obstruction. No new theorem, executed solver or novelty claim is made by this audit.
+
+
+## 14:31 UTC conditional synthesis: one target-relative spectral zero
+
+The reviewed [spectral-zero reduction](target-relative-rank/TARGET-RELATIVE-SPECTRAL-ZERO-REDUCTION.md) combines the accepted countable source compactification with the older biased one-cell local and finite-persistent results. Its auxiliary routing kernel has finite L2 operator rank exactly when the extracted representation has finitely many strict persistent cells. For a supplied one-cell target, a specific nonnegative combination of C4–C8 cycle densities vanishes at that target and forces finite rank. The polynomial-operator mechanism is classical and explicitly attributed; the source-family composition is a conditional reuse argument.
+
+The decisive implication Z_T remains OPEN: equality of the legal complete forest hierarchy with the target has not been shown to force this auxiliary spectral zero. Static per-vertex routing types cannot be substituted for the biological current roots after mergers. Finite-word all-copy normal form and continuity along arrays do not by themselves extend motif constancy to new fibres in the countable closure.
+
+If Z_T were proved, the already accepted October 9 finite-persistent classification would give an existential finite determining cap for the stated single biased calibrated target. This note supplies neither Z_T, a computable global cap, a new legal graph-density observation, nor general biased G4 closure. Its [independent review](target-relative-rank/INDEPENDENT-REVIEW.md) checks the exact source and operator domains. A tiny symbolic expansion check concerns only the displayed polynomial coefficients; no Lean, QE or source simulation ran. All earlier text and results are preserved. SPECTRAL-ZERO-ADDENDUM-MANIFEST-1431.json pins this appendix.
+
