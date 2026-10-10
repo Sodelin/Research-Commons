@@ -1,0 +1,52 @@
+{
+  "all_prior_failures_preserved": true,
+  "attempts": [
+    {
+      "module": "G6ProtectedBinEndpoint",
+      "source_sha256": "f50d6cf7d720e7145098d348787b3c97b2d093e7ca11eb30ceff5b9794670f2e",
+      "final_sha256": "bf11b0ef8e028fc57ed4421235c2041778b494b38004882003f74a99a07d5164",
+      "receipt_sha256": "75026db4fb12967f76e3231e1e5f57a3b2a731d277423a786067e927ef298b94",
+      "stdout_sha256": "ed76cd2575e75214f4fb229316eee91c8b0f5e710e54b7f3739d1007a06db300",
+      "status": "FAILED_ATTEMPT_PRESERVED",
+      "run_identifier": "20261010T090045.049758Z",
+      "diagnostic": "history/20261010T090045.049758Z/G6ProtectedBinEndpoint.stdout"
+    },
+    {
+      "module": "G6GuardedBinErasure",
+      "source_sha256": "106b2307745fcfc99ce289ab840dbaca6af63ae41f67fcf7c23a01c9c740d938",
+      "final_sha256": "828077557b5914addda627c6a163df311ddc764f164b45213681c59b12a722c1",
+      "receipt_sha256": "dd935fe6817eceecc5a2b9b496a621cacba5f20257369a7c08bbc4a15a6e3ab4",
+      "stdout_sha256": "847527590713210e216c1afd2f17b7b40b85907f269f55ee424c3211393082ec",
+      "status": "FAILED_ATTEMPT_PRESERVED",
+      "run_identifier": "20261010T090408.511138Z",
+      "diagnostic": "history/20261010T090408.511138Z/G6GuardedBinErasure.stdout"
+    },
+    {
+      "module": "G6UnrankedBinContinuation",
+      "source_sha256": "883bb3e89a896036678425f1c72bda935fe84038d980ba5dfd32c0cb0b89052e",
+      "final_sha256": "991c1c58c3e226411d0eddc4a5c99216238a68e17561d9579c53e13802f0c7fc",
+      "receipt_sha256": "47fbe50c0757b96fdc100cc154298a907056751c94a1f159a1927aabfac3d8fa",
+      "stdout_sha256": "d6f55978f83ccd4367802b15e779cc15c7ea4c70aaa5537d4a847ca27a14ec66",
+      "status": "FAILED_ATTEMPT_PRESERVED",
+      "run_identifier": "20261010T090737.169503Z",
+      "diagnostic": "history/20261010T090737.169503Z/G6UnrankedBinContinuation.stdout"
+    }
+  ],
+  "changes": [
+    {
+      "module": "G6ProtectedBinEndpoint",
+      "change": "Resolve intended NNReal type explicitly; reduce the composed continuation definitionally before induction rewrite."
+    },
+    {
+      "module": "G6GuardedBinErasure",
+      "change": "Reuse the accepted structural erasure proof without its unused finite-Tag section instance; unfold the dependent jump-choice point mass; remove tactics after already closed goals."
+    },
+    {
+      "module": "G6UnrankedBinContinuation",
+      "change": "Rewrite proved same-block equivalences propositionally through conditional expressions rather than requiring identical Decidable instances."
+    }
+  ],
+  "mathematical_hypotheses_unchanged": true,
+  "budget_increase": false,
+  "new_axiom_or_sorry": false
+}

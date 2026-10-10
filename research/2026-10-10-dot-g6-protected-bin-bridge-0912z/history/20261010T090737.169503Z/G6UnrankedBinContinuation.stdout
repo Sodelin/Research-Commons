@@ -1,0 +1,32 @@
+G6UnrankedBinContinuation.lean:44:2: error: 'change' tactic failed, pattern
+  @ite Tag (¬sameBlock (selectedView (state s) Finset.univ) x y ∧ sameBlock (selectedView (state d) Finset.univ) x y)
+      (@instDecidableAnd (¬sameBlock (selectedView (state s) Finset.univ) x y)
+        (sameBlock (selectedView (state d) Finset.univ) x y)
+        (@instDecidableNot (sameBlock (selectedView (state s) Finset.univ) x y)
+          (Classical.propDecidable (sameBlock (selectedView (state s) Finset.univ) x y)))
+        (Classical.propDecidable (sameBlock (selectedView (state d) Finset.univ) x y)))
+      tag (B x y) =
+    ?m.220
+is not definitionally equal to target
+  @ite Tag
+      (y ∉ Genealogy.optionLeaves ((selectedView (state s) Finset.univ).genealogy x) ∧
+        y ∈ Genealogy.optionLeaves ((selectedView (state d) Finset.univ).genealogy x))
+      (@instDecidableAnd (y ∉ Genealogy.optionLeaves ((selectedView (state s) Finset.univ).genealogy x))
+        (y ∈ Genealogy.optionLeaves ((selectedView (state d) Finset.univ).genealogy x))
+        (@instDecidableNot (y ∈ Genealogy.optionLeaves ((selectedView (state s) Finset.univ).genealogy x))
+          (Finset.decidableMem y (Genealogy.optionLeaves ((selectedView (state s) Finset.univ).genealogy x))))
+        (Finset.decidableMem y (Genealogy.optionLeaves ((selectedView (state d) Finset.univ).genealogy x))))
+      tag (B x y) =
+    if (state s).ancestor x ≠ (state s).ancestor y ∧ (state d).ancestor x = (state d).ancestor y then tag else B x y
+'UnifiedLean.G6.UnrankedBinContinuation.actual_guarded_unranked_bin_future' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.UnrankedBinContinuation.actual_unranked_observed_history_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.UnrankedBinContinuation.actual_unranked_bin_future' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

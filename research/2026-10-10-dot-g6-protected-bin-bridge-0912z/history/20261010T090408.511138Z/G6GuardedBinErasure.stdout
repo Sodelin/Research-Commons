@@ -1,0 +1,56 @@
+G6GuardedBinErasure.lean:55:3: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype Tag
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6GuardedBinErasure.lean:143:29: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (sourceJumpChoice ?N ?r ?s) ?q
+in the target expression
+  ENNReal.ofReal (jumpMass N r (erasePrivateCode N P s) q) = (sourceJumpChoice N r s) q
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+P : Finset V
+s : Code N sample
+q : Option (Choice N (erasePrivateCode N P s))
+⊢ ENNReal.ofReal (jumpMass N r (erasePrivateCode N P s) q) = (sourceJumpChoice N r s) q
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    sourceJumpChoice N r s
+  has type
+    PMF (Option (Choice N s))
+  but is expected to have type
+    PMF (Option (Choice N (erasePrivateCode N P s)))
+  in the application
+    ⇑(sourceJumpChoice N r s)
+G6GuardedBinErasure.lean:159:2: error: No goals to be solved
+G6GuardedBinErasure.lean:186:2: error: No goals to be solved
+'UnifiedLean.G6.GuardedBinErasure.actual_joint_completed_erasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.GuardedBinErasure.actual_guarded_suffix_joint_erasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.GuardedBinErasure.actual_joint_tail_erasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.GuardedBinErasure.actual_joint_tail_observation_erasure' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

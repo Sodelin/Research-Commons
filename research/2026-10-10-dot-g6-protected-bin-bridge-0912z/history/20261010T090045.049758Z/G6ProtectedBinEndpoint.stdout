@@ -1,0 +1,72 @@
+G6ProtectedBinEndpoint.lean:47:55: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6ProtectedBinEndpoint.lean:47:57: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6ProtectedBinEndpoint.lean:68:8: warning: declaration uses `sorry`
+G6ProtectedBinEndpoint.lean:128:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  calendarJoint N r bin hbin ops d (segmentOffset N op offset) (endpointStepTags N op tag s d B)
+in the target expression
+  ((fun q => calendarJoint N r bin hbin ops q.1 (segmentOffset N op offset) q.2) ∘ fun d =>
+        (d, endpointStepTags N op tag s d B))
+      d =
+    PMF.map (fun d => (d, tagUpdate N s d tag B)) (sourceProgram N r ops d)
+
+case cons
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Tag : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+tag : Tag
+op : ProgramStep N
+ops : List (ProgramStep N)
+ih :
+  ∀ (s : Code N sample) (offset : ℝ) (B : Copy → Copy → Tag),
+    wordBinContract N bin (List.map (fun op => (op, tag)) ops) offset →
+      calendarJoint N r bin hbin ops s offset B =
+        PMF.map (fun d => (d, tagUpdate N s d tag B)) (sourceProgram N r ops s)
+s : Code N sample
+offset : ℝ
+B : Copy → Copy → Tag
+hword : wordBinContract N bin (List.map (fun op => (op, tag)) (op :: ops)) offset
+hh : stepBinContract N bin offset op tag
+ht : wordBinContract N bin (List.map (fun op => (op, tag)) ops) (segmentOffset N op offset)
+d : Code N sample
+hd : d ∈ (sourceProgramStep N r op s).support
+⊢ ((fun q => calendarJoint N r bin hbin ops q.1 (segmentOffset N op offset) q.2) ∘ fun d =>
+        (d, endpointStepTags N op tag s d B))
+      d =
+    PMF.map (fun d => (d, tagUpdate N s d tag B)) (sourceProgram N r ops d)
+'UnifiedLean.G6.ProtectedBinEndpoint.actual_constant_bin_word' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ProtectedBinEndpoint.actual_constant_bin_forest_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ProtectedBinEndpoint.actual_word_exit_reconstructed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
