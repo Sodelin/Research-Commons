@@ -103,3 +103,15 @@ The [exact equal-arm countercheck](equalarm-extra-term-countercheck/EQUAL-ARM-EX
 An [independent killed-coalescent ODE replay](equalarm-extra-term-countercheck/independent/INDEPENDENT-REVIEW.md) matches the author’s separate EPPF/count calculation exactly. Both use at most seven roots and the same original IID routing law. Here D6 is the signed spectral cherry coefficient, not the no-merger diagonal used elsewhere in this checkpoint.
 
 Thus equal-arm COMMON calibration does not rescue the same-sign simplification in the exact Green formula. The actual transports and extra term still have to be retained. This is a targeted check of a rejected proof shortcut, not a sign theorem for the full chronological sum, an exact rival, or a G4 conclusion. All earlier bodies and README text remain unchanged. EQUALARM-ADDENDUM-MANIFEST-1356.json binds the complete author and independent evidence plus this dated status.
+
+
+## 14:11 UTC adapter result: a uniform finite cap cannot recover even the routing star
+
+The reviewed [finite-cap motif theorem](routing-motif-adapter/FINITE-CAP-STAR-MOTIF-NONRECOVERY.md) shows that, for every finite cap m, two genuine strict positive equal-arm serial sources can have exactly the same complete INDEPENDENT forest response through m and the same natural COMMON clock, while their static routing-kernel two-edge-star densities differ. One joint source tuple supplies all rows of each word. The proof uses an actual finite positive word submersion, not a physical interpretation of algebraic inverses.
+
+Thus the fixed graph P3 has no observation cap that works uniformly over all unknown word lengths. The two sources, and their common target, may change with m. This is not a fixed-target G4 counterexample, and it does not reject target-specific finite forcing.
+
+The [prior and quantifier supplement](routing-motif-adapter/PRIOR-AND-QUANTIFIER-BOUNDARY.md) also corrects an overbroad reading of the earlier adapter gap: the accepted private ordered normal form already determines every static motif from the entire all-copy hierarchy, and supplies finite recovery when a rival length bound is given. The unresolved interface is a supplied-target certificate against unbounded rivals, or another legally recoverable sufficient family. These distinctions preserve the proved all-fair branch and leave general biased G4 open.
+
+The [independent review](routing-motif-adapter/INDEPENDENT-REVIEW.md) and [Codex contract](routing-motif-adapter/CODEX-ADAPTER-CONTRACT.md) pin the proof and its mathematical witness-extraction specification. No QE witness search or Lean formalization was run. Existing source-patch, forest-algebra and normal-form results retain attribution; novelty of this source-specific motif consequence is unassessed. Earlier bodies are unchanged, and ROUTING-MOTIF-ADDENDUM-MANIFEST-1411.json pins the new files and unchanged prefixes of the two appended reports.
+
