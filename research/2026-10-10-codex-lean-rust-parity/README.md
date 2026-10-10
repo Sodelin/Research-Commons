@@ -19,6 +19,15 @@ algorithm and the particular sparse-carrier ordinary-factor obstruction.
 These have no new Lean or practical execution receipt.
 The full practical source-to-optimal-policy solver remains incomplete.
 
+The [fixed audit-storage trial](rust/AUDIT-STREAM-CODEC-FIXED-VALIDATION-ACCEPTANCE-20261010T2357Z.json)
+passes eight bounded byte-preservation controls: a 72,532-byte patch reproduces
+the complete accepted 6,629,112-byte family168 audit against preserved originals.
+A separate standalone decoder and compressed build-log capture are still under
+review. The [natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V2.json)
+connects original once-stored seeds, literal tied-calendar prefixes and carried
+forest arm laws in a proposed 141-module context; its current review is static,
+with no kernel receipt yet. These additions do not enlarge the coherent1,504 union.
+
 Lean is the governing specification. Rust consumes accepted mathematical
 contracts through explicitly mapped representations and independently checked
 outputs. A passing finite comparison does not establish a universal native

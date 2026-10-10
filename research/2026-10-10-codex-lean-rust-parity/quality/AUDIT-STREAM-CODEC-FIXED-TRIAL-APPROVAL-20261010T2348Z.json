@@ -1,0 +1,65 @@
+{
+  "address_space_cap_bytes": 268435456,
+  "approved_argv": [
+    "python3",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/review_audit_copy_literal_codec.py",
+    "--output",
+    "/dev/shm/rc-audit-stream-codec-family168-trial-1"
+  ],
+  "approved_cases": [
+    "stream producer exact legacy raw patch",
+    "stream restore to independent hash and complete byte comparison",
+    "optional exclusive6629112-byte output",
+    "no overwrite",
+    "compressed patch hash refusal before output",
+    "raw patch hash refusal before output",
+    "oversized literal target range refusal before output",
+    "optional output size refusal before output"
+  ],
+  "approved_utc": "2026-10-10T23:47:59.623021+00:00",
+  "bindings": {
+    "design/history/audit-stream-codec-static-qc-20261010T2346Z-solver_design_recovery/AUDIT-STREAM-CODEC-STATIC-QC-ATTEMPT1.json": "e418c820ae7c863b97a5b6c82476009d5b08ea18064061cda1e49ab403226a08",
+    "rust/audit_copy_literal_codec.py": "cdb613eab954437ea47a441f5bd0e2bfdddb98e835a7ed1cd21559056f54257c",
+    "rust/evidence/audit-stream-codec-source-freeze-1/SCENARIO.json": "518a53f1ac9bc14ad3d1c70e65dee732d49df4957a3072452e4d1dd8afe946ae",
+    "rust/evidence/audit-stream-codec-source-freeze-1/SOURCE-FREEZE.json": "50d3940f17e58698fd99b3e00fa89ce44514bd71367f965c09ba6fde274b723c",
+    "rust/review_audit_copy_literal_codec.py": "edea7f912a357c2f64785ead9a15a481fad6993f668b36a3c33200407776eea4"
+  },
+  "compiler_or_solver_runs_authorized": false,
+  "failure_policy": "Preserve any partial source/output/error receipt; no overwrite, retry with new versions only after review; do not raise caps.",
+  "future_union_synthesis_authorized": false,
+  "new_output_root": "/dev/shm/rc-audit-stream-codec-family168-trial-1",
+  "outer_wall_time_cap_seconds": 90,
+  "scratch_cap_bytes": 33554432,
+  "status": "ROOT_APPROVED_FIXED_SAVED_BYTE_TRIAL_ONLY",
+  "unchanged_accepted_inputs": {
+    "base_gzip": {
+      "bytes": 7868154,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/g7-survival-integration/rc-lean-g7-survival-integration-20261010T223510.923050Z/COHERENT-PASS-UNION1504-EXPORT-V5-20261010T223805.816906Z/attempts/00002-OwnedAudit/work/AUDIT-RESULT.json.gz",
+      "sha256": "ee19e06b02138e891f71b90f16497f0439dd2db0b00e4b191811c8f8f8f1be40"
+    },
+    "base_raw": {
+      "bytes": 114300292,
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/.build/runs/20261010T223805.816906Z/attempts/00002-OwnedAudit/work/AUDIT-RESULT.json",
+      "sha256": "554a83beeeef1ebc438451d051bead1030796a36bac0db3c8f6e803c5ec09813"
+    },
+    "limits": {
+      "line_bytes": 1048576,
+      "literal_buffer_bytes": 1048576,
+      "operation_count": 500000,
+      "optional_output_bytes": 16777216,
+      "patch_gzip_bytes": 1048576,
+      "patch_raw_bytes": 201326592,
+      "raw_file_bytes": 134217728,
+      "record_bytes": 2097152,
+      "record_count": 200000,
+      "scratch_bytes": 33554432
+    },
+    "schema": "audit_copy_literal_plan_v1",
+    "scratch_root": "/dev/shm/rc-audit-stream-codec-family168-trial-1",
+    "target_raw": {
+      "bytes": 6629112,
+      "path": "/dev/shm/rc-lean-g7-family-normalization-20261010T230143.534018Z/.build/runs/20261010T230235.850157Z/attempts/00003-OwnedAudit/work/AUDIT-RESULT.json",
+      "sha256": "0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e"
+    }
+  }
+}
