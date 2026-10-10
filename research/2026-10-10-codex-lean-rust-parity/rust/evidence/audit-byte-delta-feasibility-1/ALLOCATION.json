@@ -1,0 +1,41 @@
+{
+  "future_large_union_requirements": [
+    "do not map two114MiB files; keep only base map/index and stream one bounded target record/chunk",
+    "write compressed patch directly with an explicit compressed-output cap; oversized literal fallback refuses instead of filling storage",
+    "portable restoration of a114MiB target needs separately authorized output storage or a verified monotone streaming strategy; not covered by current32MiB scratch allocation",
+    "new actual compiler outputs and receipts must be captured independently before any delta or acceptance claim"
+  ],
+  "general_untrusted_decoder_accepted": false,
+  "observed_max_rss_kib": 168536,
+  "observed_scratch_bytes": 7112501,
+  "portable_publication_excludes": [
+    "6629112-byte restored raw audit",
+    "7868154-byte existing portable base gzip",
+    "compiler/native executables"
+  ],
+  "portable_publication_includes": [
+    "exact source",
+    "raw and gzip patch",
+    "small logs",
+    "original receipt",
+    "header spans",
+    "format and allocation qualification"
+  ],
+  "prospective1505_created": false,
+  "prospective1506_created": false,
+  "read_buffers_max_bytes": 1048576,
+  "rlimit_as_bytes": 268435456,
+  "saved_input_maps_bytes": [
+    114300292,
+    6629112
+  ],
+  "schema": "audit_delta_allocation_record_v1",
+  "scope": "EXISTING_FAMILY168_STORAGE_EXPERIMENT_ONLY",
+  "scratch_cap_bytes": 33554432,
+  "scratch_original_preserved": "/dev/shm/rc-audit-delta-20261010T2320Z-gabukgew",
+  "scratch_prechecks": [
+    "charge literal-target plus operation framing before patch",
+    "charge restored target before materialization",
+    "charge compressed patch allowance before gzip"
+  ]
+}

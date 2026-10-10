@@ -1,0 +1,51 @@
+{
+  "accepted_inputs_preserved": true,
+  "compiler_native_reference_processes": 0,
+  "created_utc": "2026-10-10T23:33:17.570890+00:00",
+  "fixed_patch_decode_preconditions_for_later_independent_replay": {
+    "base_raw_bytes": 114300292,
+    "gzip_delta_sha256": "8ffaeca558d58b02632cbe3e3f56f5e7112bda7568a44525a6e55af7d4271e02",
+    "max_copy_ranges": 4879,
+    "max_operations": 9759,
+    "qualification": "original pinned prototype checks target overflow after literal write; this is not adequate general untrusted decoding. Preserve source unchanged and add pre-write guard only in a reviewed derivative.",
+    "raw_delta_sha256": "050bcdda12538f74ed1a401eb51a59f9052141ef6dfe61613d4e11230c99dd8f",
+    "target_raw_bytes": 6629112,
+    "validate_before_decode": [
+      "frozen compressed/raw patch identities",
+      "trusted base and target digests/lengths",
+      "opcode count",
+      "nonzero lengths",
+      "source range bounds",
+      "target position plus literal/copy length bounds before writes",
+      "copy-range strategy restrictions"
+    ]
+  },
+  "future_allocation_gate": {
+    "compressed_export_cap": "root must set from actual portable headroom before new exporter runs",
+    "current_experiment_scratch_cap_bytes": 33554432,
+    "large_restored_file_currently_authorized": false,
+    "producer_address_space_cap_bytes": 268435456,
+    "two_large_maps_allowed": false
+  },
+  "future_production_steps": [
+    "sole scheduler independently creates actual new final union output; no metadata synthesized from separate accepted roots",
+    "authenticate old base raw and existing portable gzip; record actual new raw identity and all affected source/compiler/context pins separately",
+    "audit producer uses only one old base map/index; stream bounded new declaration objects rather than mapping two114MiB files",
+    "stream copy/literal operations directly into a create-new capped gzip; refuse export on compressed-output/operation/record limits rather than overflow storage",
+    "changed/new declarations and every changed header/context/path/count remain complete literal bytes",
+    "for monotone metadata copies, consume portable base sequentially and hash all bytes; emit decoded target into bounded compare/hash consumer without materializing a second target file",
+    "for nonmonotone declaration copies, approved raw-base random access permits streamed target verification; portable gzip-only replay needs separately authorized raw-base or random-write-target storage",
+    "compare reconstructed stream with actual saved target and hash full length; preserve new failure evidence and all old exports"
+  ],
+  "mathematical_acceptance_claim": false,
+  "monotone_measurement_receipt_sha256": "42c90e67a978b0062e1b8c447eeae0f7745aaec95f8d48244ff3e4bca147988d",
+  "new_restoration_executed": false,
+  "observed_metadata_pair": "saved1497 final -> saved1504 final",
+  "prospective1505_audit_created": false,
+  "prospective1506_audit_created": false,
+  "proven_existing168_restore_receipt_sha256": "53613aec37dfda2f128f59ffc6469a7b0113139d254e8f762123e6a843139a5f",
+  "schema": "audit_compact_export_readiness_v1",
+  "scope": "PROPOSED_NEW_ACTUAL_UNION_EXPORT_ONLY_NO_AUDIT_CREATED",
+  "scratch_original_preserved": "/dev/shm/rc-audit-metadata-eligibility-20261010T2335Z-_s7_31rg",
+  "source_inspection_qualification": "Design recovery reviewed only the fixed saved168 prototype; current monotone measurement/production adaptation not inferred accepted"
+}

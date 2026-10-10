@@ -1,0 +1,134 @@
+{
+  "schema": "g6_next_consumer_guarded_bin_interface_v1",
+  "recorded_utc": "2026-10-10T23:29:27.811934+00:00",
+  "contributor": "Codex Lean reuse /root/lean_reuse_successor",
+  "status": "DECLARATION_LEVEL_EXTENSION_OF_SAME_PROPOSED_CONSUMER; no new theorem, engine or compilation",
+  "extends_outline": {
+    "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/parallel-arm-transport/NEXT-CONSUMER-OUTLINE-20261010T2325Z.json",
+    "sha256": "0f55468b1c960c0b29554572b0d1b27b4dd69a8d636a74f3d984d1308df3f7ea"
+  },
+  "existing_obligation_ids": [
+    "G6-COMMON-EXPOSURE",
+    "G6-REVIEWED-FOREST-EXPOSURE",
+    "G6-MASTER"
+  ],
+  "reviewed_hand_argument": {
+    "path": "research/2026-10-10-dot-g6-forest-exposure-handoff-0941z/EXPOSURE-HAND-PROOF.md",
+    "sha256": "c8f6829d9e27a65542e1b29a37160c5fb6bb99348a57bcb1adb3a8c9e5262d4b",
+    "relevant_body_lines": [
+      78,
+      88
+    ],
+    "scope": "actual physical exposure and protected forest-bin interface hand argument; not a Lean receipt for the new assembled natural COMMON factorization"
+  },
+  "providers": [
+    {
+      "module": "NaturalCalendarPastAdmission",
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/NaturalCalendarPastAdmission.lean",
+      "sha256": "c2066c3e9ce58fccd4f78e2db982dcb92d5a905c34c8d6c01c6b6802755b66b1",
+      "literal_imports": [
+        "ActualObservationCutRefinement",
+        "PrivateSeedHistoryFactorization",
+        "UnifiedLean.G6.PrivateRegisterCalendarPrefix"
+      ],
+      "acceptance": "authenticated source in accepted1504, proof/body read directly",
+      "declarations": [
+        {
+          "fully_qualified_name": "CloudG6.NaturalCalendarPastAdmission.actual_private_seed_old_bin_product",
+          "line": 256,
+          "header": "theorem actual_private_seed_old_bin_product (N : RootedBinary V E X)\n    (C : Calendar N.graph) (P : Finset V) (sample : Copy \u2192 X)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (bin : \u211d \u2192 Tag) (hbin : Measurable bin)\n    (ops : List (ProgramStep N)) (word : List (ProgramStep N \u00d7 Tag))\n    (href : CutRefines N ops (physicalOps N word))\n    (hword : wordBinContract N bin word (firstOriginalDate N C))\n    (hops : NoPrivateWordRead N P ops) :\n    (naturalSeedPastJoint N C P sample p r bin hbin ops).map\n        (fun a => (a.1, (erasePrivateCode N P a.2.1, a.2.2))) =\n      independentPMF (privateSeedPMF N P p)\n        ((outsideInitialCodeLaw N P sample p).bind (fun s =>\n          calendarJointPMF N r bin hbin ops s (firstOriginalDate N C)\n            (leafAgeMatrix N C sample)))",
+          "header_sha256": "e664d138635504aa0ee87d8877b57bc2a5bbb09e7c7468884721bd18b364461f",
+          "body_span_sha256": "6068ee103665d5449ca8e1d18fb0e0691a5b90809eb97d1ec5e95105f4cc6910",
+          "body_span_line_count": 57
+        },
+        {
+          "fully_qualified_name": "CloudG6.NaturalCalendarPastAdmission.actual_guarded_private_seed_old_bin_product",
+          "line": 313,
+          "header": "theorem actual_guarded_private_seed_old_bin_product (N : RootedBinary V E X)\n    (C : Calendar N.graph) (P : Finset V) (sample : Copy \u2192 X)\n    (H : OriginalParentRegistry N) (p : HybridProbabilities N)\n    (common : Hybrid N \u2192 Bool) (r : PositivePairRates E)\n    (bin : \u211d \u2192 Tag) (hbin : Measurable bin) (guard : \u211d) (pre post : List \u211d)\n    (hprivate : \u2200 v \u2208 P, guard < C.age v)\n    (hsplit : sortedOriginalDates N C = pre ++ guard :: post)\n    (word : List (ProgramStep N \u00d7 Tag))\n    (href : CutRefines N\n      (match pre ++ [guard] with\n       | [] => []\n       | a :: dates => boundaryOperations N C H (originalGamma p) common a ++\n           calendarTail N C H (originalGamma p) common a dates)\n      (physicalOps N word))\n    (hword : wordBinContract N bin word (firstOriginalDate N C)) :\n    (naturalSeedPastJoint N C P sample p r bin hbin\n      (match pre ++ [guard] with\n       | [] => []\n       | a :: dates => boundaryOperations N C H (originalGamma p) common a ++\n           calendarTail N C H (originalGamma p) common a dates)).map\n        (fun a => (a.1, (erasePrivateCode N P a.2.1, a.2.2))) =\n      independentPMF (privateSeedPMF N P p)\n        ((outsideInitialCodeLaw N P sample p).bind (fun s =>\n          calendarJointPMF N r bin hbin\n            (match pre ++ [guard] with\n             | [] => []\n             | a :: dates => boundaryOperations N C H (originalGamma p) common a ++\n                 calendarTail N C H (originalGamma p) common a dates)\n            s (firstOriginalDate N C) (leafAgeMatrix N C sample)))",
+          "header_sha256": "36477d74b36cccaf713746defcb8e4ab312bb54b8dbfaaac99fee8d1fb27b558",
+          "body_span_sha256": "5d03225c3627978170af07c64acd14b177edc6a597e02cfcc1bd1627c6839128",
+          "body_span_line_count": 32
+        }
+      ]
+    },
+    {
+      "module": "G6ProtectedBinEndpoint",
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G6ProtectedBinEndpoint.lean",
+      "sha256": "2e7c9ef60485011dc1fd73b645c7bb8e3d3a8ee46f1e630c56b54925b28fa827",
+      "literal_imports": [
+        "G6SelectedBinHistory",
+        "G1KOnlyCurrentRootExitView",
+        "G1FiniteTwoPortChain"
+      ],
+      "acceptance": "authenticated source in accepted1504, proof/body read directly",
+      "declarations": [
+        {
+          "fully_qualified_name": "UnifiedLean.G6.ProtectedBinEndpoint.actual_constant_bin_forest_law",
+          "line": 178,
+          "header": "theorem actual_constant_bin_forest_law [Fintype Tag] [MeasurableSpace Tag]\n    [MeasurableSingletonClass Tag] (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (bin : \u211d \u2192 Tag) (hbin : Measurable bin)\n    (ops : List (ProgramStep N)) (tag : Tag) (s : Code N sample)\n    (offset : \u211d) (B : Copy \u2192 Copy \u2192 Tag)\n    (hword : wordBinContract N bin (ops.map (fun op => (op,tag))) offset) :\n    (calendarJoint N r bin hbin ops s offset B).map\n      (fun q => (sourceUnrankedForest (state q.1) Finset.univ,q.2)) =\n      ((sourceProgram N r ops s).map\n        (fun d => sourceUnrankedForest (state d) Finset.univ)).map\n          (forestBinDecoder (sourceUnrankedForest (state s) Finset.univ) tag B)",
+          "header_sha256": "c02997d9b67901fbc52782563ead0b31a88a86b3ded6dfc2c8a37e54db72a988",
+          "body_span_sha256": "b31f26bcb42c062a3f6e5e249fede7fe38b1992aea66ebe799fbe685f5227024",
+          "body_span_line_count": 19
+        }
+      ]
+    },
+    {
+      "module": "G6GuardedBinErasure",
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G6GuardedBinErasure.lean",
+      "sha256": "65b78157176670b3ddd775217fa1d9f9a79ee038b720d4ed13eb4d7472e8488d",
+      "literal_imports": [
+        "G6ProtectedBinEndpoint",
+        "NaturalCalendarPastAdmission"
+      ],
+      "acceptance": "authenticated source in accepted1504, proof/body read directly",
+      "declarations": [
+        {
+          "fully_qualified_name": "UnifiedLean.G6.GuardedBinErasure.actual_guarded_suffix_joint_erasure",
+          "line": 115,
+          "header": "theorem actual_guarded_suffix_joint_erasure (N : RootedBinary V E X)\n    {sample : Copy \u2192 X} (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool)\n    (r : PositivePairRates E) (P : Finset V) (upper : V) (pre post : List \u211d)\n    (hprivate : \u2200 v \u2208 P, C.age v < C.age upper)\n    (hsplit : sortedOriginalDates N C = pre ++ C.age upper :: post)\n    (bin : \u211d \u2192 Tag) (hbin : Measurable bin) (word : List (ProgramStep N \u00d7 Tag))\n    (href : CutRefines N\n      (boundaryOperations N C H gamma common (C.age upper) ++\n        calendarTail N C H gamma common (C.age upper) post) (physicalOps N word))\n    (s : Code N sample) (B : Copy \u2192 Copy \u2192 Tag)\n    (hword : wordBinContract N bin word (C.age upper)) :\n    (calendarJoint N r bin hbin\n      (boundaryOperations N C H gamma common (C.age upper) ++\n        calendarTail N C H gamma common (C.age upper) post) s (C.age upper) B).map\n          (eraseTagged N P) =\n    calendarJoint N r bin hbin\n      (boundaryOperations N C H gamma common (C.age upper) ++\n        calendarTail N C H gamma common (C.age upper) post)\n      (erasePrivateCode N P s) (C.age upper) B",
+          "header_sha256": "42e09faead622440a954811e6361335ba08962b12738ea1094cefec6b27c1414",
+          "body_span_sha256": "a0718de94568e7eb0a306eaecf6fc12ffff0dce838069a2c194d89d8f4331c7e",
+          "body_span_line_count": 27
+        }
+      ]
+    },
+    {
+      "module": "G6UnrankedBinContinuation",
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G6UnrankedBinContinuation.lean",
+      "sha256": "6c002b2160ab0f33f07a4fe698b2d62cdc804b843703c7b5d0ca35e748c9c450",
+      "literal_imports": [
+        "G6GuardedBinErasure"
+      ],
+      "acceptance": "authenticated source in accepted1504, proof/body read directly",
+      "declarations": [
+        {
+          "fully_qualified_name": "UnifiedLean.G6.UnrankedBinContinuation.actual_guarded_unranked_bin_future",
+          "line": 154,
+          "header": "theorem actual_guarded_unranked_bin_future [Fintype Tag] [MeasurableSpace Tag]\n    [MeasurableSingletonClass Tag] (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (C : GProgram.G5.Calendar N.graph) (H : OriginalParentRegistry N)\n    (gamma : Hybrid N \u2192 unitInterval) (common : Hybrid N \u2192 Bool)\n    (r : PositivePairRates E) (P : Finset V) (upper : V) (pre post : List \u211d)\n    (hprivate : \u2200 v \u2208 P, C.age v < C.age upper)\n    (hsplit : sortedOriginalDates N C = pre ++ C.age upper :: post)\n    (bin : \u211d \u2192 Tag) (hbin : Measurable bin) (word : List (ProgramStep N \u00d7 Tag))\n    (href : CutRefines N\n      (boundaryOperations N C H gamma common (C.age upper) ++\n        calendarTail N C H gamma common (C.age upper) post) (physicalOps N word))\n    (s z : Code N sample) (B : Copy \u2192 Copy \u2192 Tag)\n    (hword : wordBinContract N bin word (C.age upper))\n    (hview : unrankedView (selectedView (state (erasePrivateCode N P s)) Finset.univ) =\n      unrankedView (selectedView (state (erasePrivateCode N P z)) Finset.univ)) :\n    (calendarJoint N r bin hbin\n      (boundaryOperations N C H gamma common (C.age upper) ++\n        calendarTail N C H gamma common (C.age upper) post) s (C.age upper) B).map\n          (observedEndpoint N) =\n    (calendarJoint N r bin hbin\n      (boundaryOperations N C H gamma common (C.age upper) ++\n        calendarTail N C H gamma common (C.age upper) post) z (C.age upper) B).map\n          (observedEndpoint N)",
+          "header_sha256": "a7d1a8f5c1adf0de3a40aac3c9bcdf342b779ea04581635131cb86ace4a68d87",
+          "body_span_sha256": "f33454075ed41a75c8203164b1aadf48398fb693957095928b883082c6dbd78c",
+          "body_span_line_count": 39
+        }
+      ]
+    }
+  ],
+  "precise_composition": [
+    "Use the accepted strict lower-guard complete original agenda product for the same naturally drawn private bit, full entering erased Code, and complete old-bin matrix. Preserve hprivate, hsplit, CutRefines and wordBinContract literally.",
+    "If the actual COMMON pulse occurs after that guard, transport this SAME product across the intervening literal original operations with the already accepted no-read calendar/history transport. The completed lower-guard boundary is not the pre-pulse entering state. Derive no-read from those actual constructors and stop before the selected COMMON operation.",
+    "For a supplied local protected-bin word whose tag is constant, actual_constant_bin_forest_law turns its exact physical forest/bin endpoint into a deterministic decoder of the complete initial and final labelled unranked forests and the old matrix. Thus the conditional forest identity can be reused without pretending to retime arbitrary internal merger observations.",
+    "At the actual upper population port, erase the private register bit only through the already accepted guarded suffix. actual_guarded_unranked_bin_future requires the full erased unranked view, including original outside locations and all outside register coordinates. G1 supplies the same complete forest/exterior/one-population interface with arbitrary carried genealogy.",
+    "Integrate the natural seed only after these joint causal views are fixed. Nothing licenses independent marginal fitting of old-bin entries, future bins, or forest destinations."
+  ],
+  "still_required": [
+    "Assembly of natural COMMON seed marginalization with the f40 conditional parallel-arm interface, f008 exposure normalization and actual time_add/zero on one physical population.",
+    "Concrete literal lower-guard to pre-pulse no-read proof when that intervening word is used; exact source registry/Boolean orientation and physical entering-cohort support.",
+    "The supplied guarded cut-refinement/bin grammar and local constant-tag word; no arbitrary future merger-time observer is inferred.",
+    "Legal positive replacement-source construction/common bank and the quantitative joint forest/cloud bound remain outside this compatibility consumer."
+  ],
+  "execution": {
+    "producer_runs": 0,
+    "compiler_runs_by_writer": 0,
+    "frozen_parent_register_changed": false,
+    "accepted_source_changed": false
+  }
+}

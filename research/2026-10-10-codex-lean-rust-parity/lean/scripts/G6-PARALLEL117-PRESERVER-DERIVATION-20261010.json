@@ -1,0 +1,54 @@
+{
+  "status": "PRE_USE_EXPORT_ONLY_DERIVATION_NO_COMPILER",
+  "base": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/preserve_g7_family_normalization_20261010_v2.py",
+    "sha256": "62971176114e792ecc1dad62c5487603d817aa588d5890d9ccd6cc7669c174cb"
+  },
+  "derived": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/preserve_g6_parallel_arm_transport_20261010.py",
+    "sha256": "a60c9a16fd1641e40bda49d3a42d8c5dde5d44830a01942a1244e9ddef98c154"
+  },
+  "changes": [
+    {
+      "before": "Losslessly export bounded nonbinary G7 evidence",
+      "after": "Losslessly export bounded nonbinary G6 parallel-arm evidence"
+    },
+    {
+      "before": "Only the new family source body is copied",
+      "after": "Only the new parallel-arm source body is copied"
+    },
+    {
+      "before": "'EXPORT-FAMILY-HEADROOM-PREFLIGHT-FAILURE-20261010.json'",
+      "after": "'EXPORT-PARALLEL-HEADROOM-PREFLIGHT-FAILURE-20261010.json',\n                 'PRE-USE-STATIC-MEASUREMENT-20261010.json'"
+    },
+    {
+      "before": "    assert shutil.disk_usage(ROOT).free >= export_bytes + 8 * 2**20\n    evidence = ROOT / 'evidence/proof-extensions/g7-family-normalization' / work.name / (args.label + '-' + run.name)\n    assert not evidence.exists()",
+      "after": "    packet_evidence = ROOT / 'evidence/proof-extensions/g6-parallel-arm-transport' / work.name / (args.label + '-' + run.name)\n    free_before = shutil.disk_usage(ROOT).free\n    reserve = 8 * 2**20\n    # The complete lossless stage is always preserved before deciding distribution.\n    # Reserve an additional64KiB for this manifest/result, beyond the measured bodies.\n    copy_to_packet = free_before >= export_bytes + reserve + 65536\n    evidence = packet_evidence if copy_to_packet else stage\n    assert not packet_evidence.exists()"
+    },
+    {
+      "before": "'evidence': str(evidence.relative_to(ROOT)), 'final_receipt': final",
+      "after": "'evidence': str(evidence.relative_to(ROOT)) if copy_to_packet else str(evidence), 'final_receipt': final,\n        'lossless_distribution': 'PACKET_COPY' if copy_to_packet else 'FIXED_SHMEM_EXPORT_ONLY_EXPLICIT_CAPACITY_BOUNDARY',\n        'complete_lossless_export_original': str(stage),\n        'packet_distribution_complete': copy_to_packet,\n        'overlay_capacity_preflight': {'free_before_bytes': free_before, 'transient_reserve_bytes': reserve,\n            'measured_payload_bytes': export_bytes, 'manifest_and_result_reserve_bytes': 65536,\n            'source_or_evidence_deleted': False}"
+    },
+    {
+      "before": "        'parent_exporter_sha256': '3873b352a3c2ecbe5945c6cd140f7a3b6d66f70871db8221523850c4a08cdd33',\n        'exporter_derivation': 'Root authorized export-only16MiB to8MiB reserve after separate Git object/index storage; also bind the preserved16MiB preflight failure. Familyv1 exporter, raw run/audit, source, core and guard policies remain unchanged.',",
+      "after": "        'historical_export_policy': 'Same accepted Family-v2 eightMiB headroom rationale: Git object/index writes use a separate measured pool. Current Root authorized measured packet export or explicitly bound fixed shmem lossless fallback; no deletion or math run policy change.',"
+    },
+    {
+      "before": "        'parent_exporter_path': str(Path(__file__).with_name('preserve_g7_survival_run_20261010_v3.py')),\n        'parent_exporter_sha256': '629d9401104f2bfa9de2bdf65c26b897488a7bdc3e9b25d74501ea5ec556e898',\n        'exporter_derivation': 'Only require, authenticate and distribute the current successful run post-transport report and bind this unchanged parent.'",
+      "after": "        'parent_exporter_path': str(Path(__file__).with_name('preserve_g7_family_normalization_20261010_v2.py')),\n        'parent_exporter_sha256': '62971176114e792ecc1dad62c5487603d817aa588d5890d9ccd6cc7669c174cb',\n        'exporter_derivation': 'Only parallel namespace/scope and explicit lossless capacity fallback metadata/control differ from accepted Family-v2. Exact byte gzip distribution, complete raw runs, fresh sources, resource and transport verification policies remain unchanged; duplicate inherited parent metadata keys are replaced by this one precise parent binding.'"
+    },
+    {
+      "before": "    evidence.parent.mkdir(parents=True, exist_ok=True)\n    shutil.copytree(stage, evidence)\n    for p in stage.rglob('*'):\n        if p.is_file():\n            assert sha(p) == sha(evidence / p.relative_to(stage))",
+      "after": "    if copy_to_packet:\n        exact_bytes = sum(p.stat().st_size for p in stage.rglob('*') if p.is_file())\n        assert shutil.disk_usage(ROOT).free >= exact_bytes + reserve\n        evidence.parent.mkdir(parents=True, exist_ok=True)\n        shutil.copytree(stage, evidence)\n        for p in stage.rglob('*'):\n            if p.is_file():\n                assert sha(p) == sha(evidence / p.relative_to(stage))"
+    },
+    {
+      "before": "'G7-FAMILY-NORMALIZATION-'",
+      "after": "'G6-PARALLEL-ARM-TRANSPORT-'"
+    },
+    {
+      "before": "'preserved_files': len(rows), 'measured_export_bytes': export_bytes",
+      "after": "'preserved_files': len(rows), 'measured_export_bytes': export_bytes,\n                      'packet_distribution_complete': copy_to_packet, 'fixed_lossless_stage': str(stage),\n                      'overlay_free_after_bytes': shutil.disk_usage(ROOT).free"
+    }
+  ],
+  "policy": "Complete raw originals preserved; no ELF/object/duplicate parent exports, compressor and raw-byte verification unchanged. Explicit capacity boundary never becomes implicit packet completeness. Root plan approval remains required for compiler."
+}

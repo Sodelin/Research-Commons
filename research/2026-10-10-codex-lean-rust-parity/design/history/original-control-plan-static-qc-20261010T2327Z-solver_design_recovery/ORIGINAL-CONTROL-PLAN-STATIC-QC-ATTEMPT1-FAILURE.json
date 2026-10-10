@@ -1,0 +1,14 @@
+{
+  "schema": "independent_static_qc_reviewer_failure_v1",
+  "contributor": "Codex / solver_design_recovery",
+  "observed_utc": "2026-10-10T23:24:32.499110+00:00",
+  "status": "FAILED_REVIEWER_ATTEMPT; no acceptance receipt emitted",
+  "reviewer_sha256": "c561bd6c67437ca034ca29d5863b688cc804896bab0deac1305112fa10d03683",
+  "preserved_reviewer": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/original-control-plan-static-qc-20261010T2327Z-solver_design_recovery/versions/c561bd6c67437ca034ca29d5863b688cc804896bab0deac1305112fa10d03683.py",
+  "exit_code": 1,
+  "failure": "AssertionError at review_plan.py line69: expected source boundary register-preservation clause was absent from by_name[source_boundary.rs]",
+  "cause": "Filename-only source lookup overwrote rust/src/source_boundary.rs with the separately pinned rust/tests/source_boundary.rs. Source pins themselves had all matched.",
+  "correction": "Exclude rust/tests from the source-body lookup, retaining all31 tests/provider/guard pins in the byte checks.",
+  "target_processes": 0,
+  "affected_source_bytes_changed": false
+}

@@ -1,0 +1,458 @@
+{
+  "schema": "independent_original_control_plan_static_qc_v1",
+  "contributor": "Codex / solver_design_recovery",
+  "observed_utc": "2026-10-10T23:24:41.485443+00:00",
+  "status": "PASS_STATIC_FORMULA_AND_SCOPE_WITH_EXPLICIT_RESOURCE_QUALIFICATION; proposal only",
+  "reviewer": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/original-control-plan-static-qc-20261010T2327Z-solver_design_recovery/review_plan.py",
+    "sha256": "c3f17313c16e6b4424c13bec0dfee82d91826f410a3a6c725b90e00cdfd6380a",
+    "bytes": 13109
+  },
+  "note": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/SOURCE-FIT-ORIGINAL-CONTROL-REUSE-20261010T2312Z.md",
+    "sha256": "66051721d6081e8bd431aa30c0f9e061aae40e27a55a17bbfb0938981c5fff02",
+    "bytes": 15065
+  },
+  "capture": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/SOURCE-FIT-ORIGINAL-CONTROL-REUSE-20261010T2312Z.json",
+    "sha256": "ce28a0c52ec5181d4b9938a57bf0b4d394a28b9e095e536beb2675a595bdaf33",
+    "bytes": 18093
+  },
+  "accepted_1504_certificate": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json",
+    "sha256": "1f45babae7a183dc1638ebfd7de210fddcf2dd872e8498f3f80ede4d06e9fcc2",
+    "bytes": 221353
+  },
+  "source_pin_checks": {
+    "all_current_capture_pins": 31,
+    "accepted_1504_provider_bindings": 13,
+    "runtime_guard_pins": 11,
+    "all_current_bytes_matched": true
+  },
+  "pins": [
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_fit_bank.rs",
+      "sha256": "e31b80a3648e6aa15c8c99f30f4eb94e3fb06c6487f7241064391c05c12ffa5a",
+      "bytes": 52208,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "Bank",
+        "Bank::forced_parent",
+        "Bank::symbolic_word",
+        "bind"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_fit_readout.rs",
+      "sha256": "7a3a75b60af55f1138e82aa66c5a2e94b5dc9c8a597eadb0ff25230f03dae7c5",
+      "bytes": 23589,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "ProgramTerm",
+        "Request::natural",
+        "collect",
+        "run",
+        "readout"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_boundary.rs",
+      "sha256": "f089b81fa649aaea6e1db1da5b373cee8e9e5be2cacb54942a261bc24b845cdb",
+      "bytes": 9240,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "Action",
+        "resolve",
+        "assignment_polynomial",
+        "boundary_row"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_word.rs",
+      "sha256": "7fbb4e6389c72f09f6799f7fd4c3fc1942d5fa1b0f92fb37792c10f21589d332",
+      "bytes": 21174,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "Initial",
+        "resolve",
+        "initial_rows",
+        "provider_row",
+        "compose",
+        "word_row"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_population.rs",
+      "sha256": "6afebffe8bb727a1c92bd113d479f01f0b2877bbf527c79866247805bc21da7c",
+      "bytes": 19011,
+      "role": "carrier_and_existing_provider_guard",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_epoch.rs",
+      "sha256": "c46a498ac2b5a0f3bc3ea246cc4f6d012ff58871292b8af84cfebe3d45b40354",
+      "bytes": 17352,
+      "role": "carrier_and_existing_provider_guard",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_completion.rs",
+      "sha256": "52a410c7489414bc4a97de67b509c33ae85f1f9c9400d2381fac51d0fab6713f",
+      "bytes": 4789,
+      "role": "carrier_and_existing_provider_guard",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/tests/source_boundary.rs",
+      "sha256": "40a7f54d225f0a9eab3e709aff40a341ba267f34173741f3ab7100650cfb1a1f",
+      "bytes": 12911,
+      "role": "existing_authored_controls_read_only",
+      "inspected_declarations": [
+        "common_reuses_the_entering_site_register_without_redrawing_or_mutating_any_bit",
+        "carried_nonminimum_owner_gets_one_coin_and_keeps_the_other_population",
+        "original_parallel_exits_and_ordinary_entry_do_not_commute_in_reverse_order"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/tests/source_fit_program.rs",
+      "sha256": "407adcd399adc1199998d6e3f9c6b4e1051088b5e250eb4e38adcdb80eb562fc",
+      "bytes": 4416,
+      "role": "existing_authored_rooted_program_read_only",
+      "inspected_declarations": [
+        "saved_program_keeps_labelled_alpha_laws_and_explicit_label_forgetting"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/source_fit_forward.rs",
+      "sha256": "0eef0719f7e5343bd3fc4655cc0dbba629dc29afe79e3cc7638e22fd8e03d2d5",
+      "bytes": 10855,
+      "role": "current_public_natural_only_consumer",
+      "inspected_declarations": [
+        "natural"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/source_fit_main.rs",
+      "sha256": "b4b539439678b4a681c385ee1472072f648caf30cd53a8d501171e4034b8454e",
+      "bytes": 3370,
+      "role": "current_public_commands",
+      "inspected_declarations": [
+        "bank",
+        "readout",
+        "check",
+        "check-readout"
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/OriginalFixedIDControls.lean",
+      "sha256": "5b32ee2edff84d6ef7c75549b55e7368380fcff9dbb3b0cd4397584746bb224d",
+      "bytes": 7183,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "OriginalMask",
+        "controlledGamma",
+        "controlledMode",
+        "controlledCalendarProgram",
+        "actual_forced_hybrid_kernel",
+        "actual_forced_owner_route"
+      ],
+      "module": "UnifiedLean.Source.OriginalFixedIDControls"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/ControlledUnrankedSourceProjectivity.lean",
+      "sha256": "6ba2f40bd84c286a6281335b26e9e96efd20e10e6ab6cca5919ddbb7b8f2a5e5",
+      "bytes": 12213,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "controlledCalendarLaw",
+        "controlledCompletedLaw",
+        "controlled_calendar_ancestral_support",
+        "actual_controlled_complete_unranked_all_panel_projectivity",
+        "empty_mask_completed_original_law"
+      ],
+      "module": "UnifiedLean.Source.ControlledUnrankedSourceProjectivity"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceNaturalInitialization.lean",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "bytes": 6232,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "originalGamma",
+        "originalRegister",
+        "originalRegisterPMF",
+        "naturalCalendarLaw"
+      ],
+      "module": "UnifiedLean.Source.SourceNaturalInitialization"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceBoundaryKernels.lean",
+      "sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d",
+      "bytes": 8870,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "BoundaryOperation",
+        "pulseCode",
+        "independentPulseKernel",
+        "boundaryKernel"
+      ],
+      "module": "UnifiedLean.Source.SourceBoundaryKernels"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/FiniteSourceSnapshot.lean",
+      "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+      "bytes": 7035,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "Snapshot",
+        "encodeSnapshot",
+        "decodeSnapshot"
+      ],
+      "module": "UnifiedLean.Source.FiniteSourceSnapshot"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/ActualStoredRegister.lean",
+      "sha256": "1417d1a45a68372298aa4897fbd73bb5f7b037902c7bc4bd6058c7c4ffd7330a",
+      "bytes": 5309,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "actual_program_register",
+        "actual_program_register_support"
+      ],
+      "module": "ActualStoredRegister"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7OriginalControlRelabelling.lean",
+      "sha256": "6709ad22f6ec80b67783b5099e9d89607fc31b43421ca065e43492b53a5942fe",
+      "bytes": 5320,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "mask",
+        "named_mask",
+        "controlled_calendar",
+        "controlled_completed"
+      ],
+      "module": "G7OriginalControlRelabelling"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/sources/G7OriginalSurvivalCoverage.lean",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "bytes": 7614,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "ratesFromSurvival",
+        "every_actual_source_has_fixed_calendar_representative",
+        "actual_source_survival_chart"
+      ],
+      "module": "G7OriginalSurvivalCoverage"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveWordCoefficients.lean",
+      "sha256": "3839949842457220e139bacabf0fa8d03abd3ae722a15bdc3b6f2555214f0336",
+      "bytes": 8134,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "wordRows",
+        "polynomial_wordRows",
+        "wordRows_actual",
+        "naturalWordRows"
+      ],
+      "module": "G7EffectiveWordCoefficients"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveBoundaryCoefficients.lean",
+      "sha256": "7ebec0103f2e98fbcf2aba89b6fde8c48c4af850eec76013cd19b9d71116e3ad",
+      "bytes": 10515,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "pulseCodeEffective",
+        "pulseRows",
+        "commonRows",
+        "pulseRows_register"
+      ],
+      "module": "G7EffectiveBoundaryCoefficients"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveCompletedWordCoefficients.lean",
+      "sha256": "ad551d3c1f1224b184df4d96dea1725c4c8c2fd3087baccc0738755e82c145c5",
+      "bytes": 5610,
+      "role": "inspected_source",
+      "inspected_declarations": [
+        "completedWordRows"
+      ],
+      "module": "G7EffectiveCompletedWordCoefficients"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7ControlledWordPolynomial.lean",
+      "sha256": "0734c0e30fcad3a51ce4cceba5167b200f094e7fba544df4899c0b502fc83e28",
+      "bytes": 6090,
+      "role": "accepted_original_control_coefficient_source",
+      "inspected_declarations": [
+        "controlVariable",
+        "substituteControl",
+        "controlledWordLaw",
+        "controlledWordPolynomial",
+        "actual_controlled_word_polynomial"
+      ],
+      "module": "G7ControlledWordPolynomial"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7ControlledCalendarPolynomial.lean",
+      "sha256": "d9efb1b177fbe61d2cdaccd64d44f420d8f9f04504f85ef8df2895f97b88c503",
+      "bytes": 6053,
+      "role": "accepted_original_control_coefficient_source",
+      "inspected_declarations": [
+        "actual_controlled_schema",
+        "actual_controlled_calendar_polynomial"
+      ],
+      "module": "G7ControlledCalendarPolynomial"
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json",
+      "sha256": "1f45babae7a183dc1638ebfd7de210fddcf2dd872e8498f3f80ede4d06e9fcc2",
+      "bytes": 221353,
+      "role": "existing_saved_acceptance_or_scope_record",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/HISTORY-SURVIVAL-UNION-1504-ACCEPTANCE.json",
+      "sha256": "554461bf84edc6eba14ecb2a7feba86c8632a53f0bfedc81b15b88222019c838",
+      "bytes": 2151,
+      "role": "existing_saved_acceptance_or_scope_record",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/EFFECTIVE-WORD-CERTIFICATE.json",
+      "sha256": "3e2333bfa740ad8c12a0f8eba59202962c0038bf3b50276e2f45dc0b22dbf061",
+      "bytes": 20148,
+      "role": "existing_saved_acceptance_or_scope_record",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/EFFECTIVE-BOUNDARY-CERTIFICATE.json",
+      "sha256": "6fbddc45f55754319a85b616f8c0572ad5983c9c747984f3e28b1586f524336d",
+      "bytes": 17877,
+      "role": "existing_saved_acceptance_or_scope_record",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/EFFECTIVE-COMPLETED-WORD-CERTIFICATE.json",
+      "sha256": "3460eba0d9a715b604dfcd11bd94a601209d49ff9e2077a6ec2a01580797d97b",
+      "bytes": 21784,
+      "role": "existing_saved_acceptance_or_scope_record",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/source-fit-program-reference-1/RECEIPT.json",
+      "sha256": "e337f3c2d9235ad29bb9fab325fbcd362e5fd9e8a130648f3c29d4753ecac8cd",
+      "bytes": 1603,
+      "role": "existing_saved_acceptance_or_scope_record",
+      "inspected_declarations": []
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-01-g7-continuous-design/law_compiler.py",
+      "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+      "bytes": 9360,
+      "role": "old_rooted_observer_reference_source_read_only",
+      "inspected_declarations": [
+        "Network.structure",
+        "compile_law"
+      ]
+    }
+  ],
+  "mathematical_contract_assessment": {
+    "classification": "Sourced finding plus hand-derived finite assembly argument; no new kernel or runtime verification.",
+    "scope": "One original partial Boolean mask on one immutable supplied rational Bank, naturally initialized nonempty <=4-copy generated complete calendar; formal slot-bank full selected-view law with complete original register.",
+    "formula": "P_mask(view) = sum_reg I_reg(original_gamma) * endpoint_substitute_mask(K_reg, controlledMode)(view)",
+    "source_basis": [
+      "OriginalFixedIDControls.controlledGamma",
+      "OriginalFixedIDControls.controlledMode",
+      "OriginalFixedIDControls.actual_forced_hybrid_kernel",
+      "ControlledUnrankedSourceProjectivity.controlledCalendarLaw",
+      "G7ControlledWordPolynomial.controlledWordPolynomial",
+      "G7ControlledWordPolynomial.actual_controlled_word_polynomial"
+    ],
+    "finding": "The proposed formula places the unchanged original initializer outside endpoint substitution, exactly as the accepted controlled-word body. Forced sites switch to IH endpoint pulses; unforced COMMON sites keep the entering stored bit. All current owners are routed as whole carried genealogies, without per-tip splitting.",
+    "register_retention": "Initializer and each conditional witness/view retain the original whole V register. Forced parent selection may differ from that stored bit without changing it.",
+    "orientation": "Original true means parent1; original gamma=1-old_g, where old_g is P(parent0). Forcing b names the original incoming occurrence b; it is never complemented when gamma is converted.",
+    "observer_boundary": "Full selected-view keys retain per-copy ordered genealogy/location and every register bit, but omit representative/ancestor IDs. A selected-fibre coefficient dictionary with a literal range witness is not a dictionary of every full Code state.",
+    "current_rooted_specialization": "Current source_fit_readout constructs a Natural completed word table and substitutes ProgramTerm::forcing into every gamma power, including initializer powers, before its explicit rooted-unranked observer forgets register. Existing rooted comparisons do not establish a register-preserving control law.",
+    "hand_derived_separating_example": {
+      "kind": "Algebraic consequence of the accepted initializer and control formula, not a new native run.",
+      "original_gamma": "2/3",
+      "natural_register_false_mass": "1/3",
+      "natural_register_true_mass": "2/3",
+      "forced_parent": 0,
+      "proposed_retained_register_true_mass": "2/3",
+      "global_endpoint_substitution_if_interpreted_as_register_law_true_mass": "0",
+      "meaning": "Forgetting register can hide this difference; keeping the whole register distinguishes the contracts."
+    }
+  },
+  "resource_qualification": {
+    "source": "Pinned source_word.rs compose body; independent read-only ordering check.",
+    "actual_order": [
+      "check cumulative query requirement",
+      "invoke provider_row and generate each bounded conditional provider table",
+      "compute and check cumulative branch and term-product requirements",
+      "multiply conditional transition polynomials",
+      "check output destination and normalized-term counts"
+    ],
+    "required_language_for_future_freeze": "Remaining query caps are checked before provider calls. Remaining branch/product caps are composition caps checked after bounded provider rows have been generated and before word-stage multiplication. They are not caps preventing all provider-row generation.",
+    "wrapper_requirements": [
+      "Validate mask/registry and Bank natural/generated/complete domain before soft limits.",
+      "Precheck 2^h initializer assignments, 3^h initializer terms and the one-mask conditional-call requirement before allocating/generating those stages.",
+      "Consume explicit cumulative child query/branch/product counters across every conditional call; separately account for initializer-times-transition products before that multiplication.",
+      "Keep unchanged per-provider caps and their stage/kind/population/required/cap metadata, with no partial rows on UNKNOWN.",
+      "Specify whether child and outer products share one aggregate counter in the implementation freeze; recommended contract uses one cumulative allowance.",
+      "Cap wrapper normalized destinations/terms, checked count arithmetic, rational operand/result sizes and bounded output; account for cancellation and deterministic canonical witness selection.",
+      "Keep OS/provider arithmetic qualifications explicit. Row mass or moment checking does not authenticate executed work or budget exhaustion."
+    ],
+    "semantic_formula_blocker": false,
+    "executed_work_bound_verified": false
+  },
+  "remaining_native_binding_obligations": [
+    "Exact JSON -> original registry/parallel occurrence/mask decoding and immutable shared Bank binding.",
+    "Literal admitted canonical entering carrier and complete selected-fibre aggregation correspondence, including ancestor/representative variants.",
+    "Conditional-only endpoint substitution, exact zero normalization, symbolic mass one and untouched natural initializer.",
+    "Generated agenda/phase ordering and root support for every formal completion input before numerical/endpoint pruning.",
+    "Explicit rooted observer/register forgetting, original gamma and exponent transport for any later rational evaluated consumer.",
+    "Additive versioned public mask/observer envelope and independent reference extension only in a separately authorized future change; current frontend is natural-only."
+  ],
+  "meaningful_future_acceptance_controls": [
+    "Empty mask equals the unchanged natural full selected table.",
+    "Forced parent0/parent1 with opposite entering stored bit retains original 1/3,2/3 register marginal and the addressed E occurrence.",
+    "Two live IH owners, including a nonminimum representative carrying three original copies, receive deterministic owner routing without splitting the carried fibre.",
+    "Parallel incoming E occurrences with equal endpoint V labels remain distinct in masks, placement and exposure.",
+    "Two-hybrid partial mask leaves the other original gamma, mode and register unchanged on one bank.",
+    "Low caps refuse without partial tables; malformed registry/mask is rejected before budget refusal; original child refusal metadata is preserved."
+  ],
+  "claims_kept_false": [
+    "new implementation",
+    "public API promotion",
+    "full Code native dictionary evaluation",
+    "source admission/reconstruction",
+    "source-equation provenance",
+    "timed histories",
+    "universal native refinement",
+    "G6/G7 master closure",
+    "full solver verification"
+  ],
+  "source_mutations": [],
+  "target_execution_in_this_review": {
+    "producer": 0,
+    "compiler": 0,
+    "helper": 0,
+    "native": 0,
+    "adapter": 0,
+    "reference": 0,
+    "fitter": 0
+  },
+  "implementation_authorized_by_this_receipt": false,
+  "next_action": "Root decides whether to freeze a later private implementation scope after the Lean-first gates; retain the precise composition-cap qualification in that freeze.",
+  "post_review_current_capture_pins_matched": true,
+  "preserved_prior_reviewer_failure": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/original-control-plan-static-qc-20261010T2327Z-solver_design_recovery/ORIGINAL-CONTROL-PLAN-STATIC-QC-ATTEMPT1-FAILURE.json",
+    "sha256": "b1d042533b63ba5000d479fb050de8a1077840218a4db59c428f3d4184c38bb1",
+    "bytes": 1131
+  }
+}

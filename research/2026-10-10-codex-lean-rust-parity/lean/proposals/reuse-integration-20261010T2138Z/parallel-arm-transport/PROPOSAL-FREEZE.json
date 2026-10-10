@@ -1,0 +1,1203 @@
+{
+  "schema": "research_commons_source_proposal_v1",
+  "contributor": "Codex Lean reuse successor",
+  "utc_created": "2026-10-10T23:12:33.395142+00:00",
+  "status": "SOURCE_PROPOSAL_UNCOMPILED; independent Design QC pending; no acceptance inferred",
+  "owned_obligation_ids": [
+    "G6-COMMON-EXPOSURE",
+    "G6-REVIEWED-FOREST-EXPOSURE",
+    "G6-MASTER"
+  ],
+  "source": {
+    "module": "G6OriginalParallelArmTransport",
+    "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/parallel-arm-transport/G6OriginalParallelArmTransport.lean",
+    "sha256": "f40a0d66db43984f05ca250dc1d4e9e79372141a498732414d8acde11162d6dc",
+    "immutable_version": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/parallel-arm-transport/versions/f40a0d66db43984f05ca250dc1d4e9e79372141a498732414d8acde11162d6dc.lean",
+    "imports": [
+      "G1NonrootBigonKernel",
+      "G7ProgramRelabelling",
+      "G7CompletedUnrankedRelabelling"
+    ],
+    "declarations": [
+      {
+        "line": 51,
+        "header": "def edgeSwap (N : RootedBinary V E X) (B : NonrootBigon N) : E \u2243 E",
+        "sha256": "2641e3b03afba33abda26a2fd2f434de74392f19b927f8f99d5b7265bef3a1d6"
+      },
+      {
+        "line": 54,
+        "header": "theorem arm_swap_source (N : RootedBinary V E X) (B : NonrootBigon N) (e : E) :\n    N.graph.source (edgeSwap N B e) = N.graph.source e",
+        "sha256": "f625b1e81921ba9075fe0795be27454e3a6b98120728326aeedc05499764896f"
+      },
+      {
+        "line": 59,
+        "header": "theorem arm_swap_target (N : RootedBinary V E X) (B : NonrootBigon N) (e : E) :\n    N.graph.target (edgeSwap N B e) = N.graph.target e",
+        "sha256": "5af119a46fa6cf42c9095359cada87f4a85b8f397f486c6c766baf218b5b8530"
+      },
+      {
+        "line": 64,
+        "header": "private theorem edgeGraph_eq {G H : EdgeGraph V E}\n    (hs : G.source = H.source) (ht : G.target = H.target) : G = H",
+        "sha256": "be63b5c07a78061dc376833f4af96ef905025ff04e8dbde989e0b6ead7df83a2"
+      },
+      {
+        "line": 72,
+        "header": "private theorem rootedBinary_eq {N M : RootedBinary V E X}\n    (hg : N.graph = M.graph) (hr : N.root = M.root) (hl : N.leaf = M.leaf) : N = M",
+        "sha256": "f6ed8211542ae4a8107973e8090943bfead408310d111776780b596c12851fe2"
+      },
+      {
+        "line": 83,
+        "header": "theorem arm_network_eq (N : RootedBinary V E X) (B : NonrootBigon N) :\n    network N (Equiv.refl V) (edgeSwap N B) = N",
+        "sha256": "b8af602b456ccfac9a887fad12dd176f766de448ecc36d3961cb421ab86f1926"
+      },
+      {
+        "line": 98,
+        "header": "theorem arm_parent_occurrence (N : RootedBinary V E X) (B : NonrootBigon N) (b : Bool) :\n    (parents N (Equiv.refl V) (edgeSwap N B) B.parents).parent b =\n      B.parents.parent (!b)",
+        "sha256": "08e56caf3ec03ede6282555b5eb5913659cbdb2125426b53539f080b0321114d"
+      },
+      {
+        "line": 103,
+        "header": "theorem arm_rate_occurrence (N : RootedBinary V E X) (B : NonrootBigon N)\n    (r : PositivePairRates E) (b : Bool) :\n    (rates (edgeSwap N B) r).edge (B.parents.parent (!b)) =\n      r.edge (B.parents.parent b)",
+        "sha256": "696823db68078fcb8a858b4775e43a73e4794f6cb5123bd685c9a4fe9755de8e"
+      },
+      {
+        "line": 109,
+        "header": "private noncomputable def castCode {N M : RootedBinary V E X}\n    {sample : Copy \u2192 X} (h : M = N) (s : Code M sample) : Code N sample",
+        "sha256": "48495025f4e5abfb639af6f9725a8ace46ea328035d35d85db0e944fd6391369"
+      },
+      {
+        "line": 113,
+        "header": "private theorem castCode_val {N M : RootedBinary V E X}\n    {sample : Copy \u2192 X} (h : M = N) (s : Code M sample) :\n    (castCode h s).val = s.val",
+        "sha256": "863d3d48e153498199f456788f5070c140893a3c27914f3e48d577454300e6ca"
+      },
+      {
+        "line": 119,
+        "header": "private theorem castCode_time {N M : RootedBinary V E X}\n    {sample : Copy \u2192 X} (h : M = N) (r : PositivePairRates E)\n    (t : \u211d\u22650) (s : Code M sample) :\n    (sourceTimeKernel M r t s).map (castCode h) =\n      sourceTimeKernel N r t (castCode h s)",
+        "sha256": "77f1f88a95b3cdaf70b4cbc31d1d0b018999dfa3cd214ca5512a12bc604a4a48"
+      },
+      {
+        "line": 129,
+        "header": "noncomputable def armCode (N : RootedBinary V E X) (B : NonrootBigon N)\n    {sample : Copy \u2192 X} (s : Code N sample) : Code N sample",
+        "sha256": "fd0404e079a869376823bcfa62e22a06b5a71691da1ebf8864358d81770c0ee6"
+      },
+      {
+        "line": 133,
+        "header": "theorem armCode_val (N : RootedBinary V E X) (B : NonrootBigon N)\n    {sample : Copy \u2192 X} (s : Code N sample) :\n    (armCode N B s).val = snapshot (Equiv.refl V) (edgeSwap N B) s.val",
+        "sha256": "e975addf2b8ada439e10673a8ae586960d0501384a4a6d8a9bdd8f204731e80b"
+      },
+      {
+        "line": 140,
+        "header": "theorem armCode_full_forest_register (N : RootedBinary V E X) (B : NonrootBigon N)\n    {sample : Copy \u2192 X} (s : Code N sample) :\n    ((state (armCode N B s)).register, rootForest N (armCode N B s)) =\n      ((state s).register, rootForest N s)",
+        "sha256": "64c285cf08927c4cec1cae3115514a7760d246d25822825301615054ecd09aa3"
+      },
+      {
+        "line": 153,
+        "header": "theorem armCode_constant_pulse (N : RootedBinary V E X) (B : NonrootBigon N)\n    {sample : Copy \u2192 X} (s : Code N sample)\n    (hinput : \u2200 l \u2208 (state s).live, (state s).location l = .node B.parents.hybrid)\n    (b : Bool) :\n    armCode N B (pulseCode B.parents s (fun _ => b)) =\n      pulseCode B.parents s (fun _ => !b)",
+        "sha256": "1dcbc8fe69873aab577e53464cf09c7d7ada9be6aad08acb20eb05529dac1fdb"
+      },
+      {
+        "line": 175,
+        "header": "theorem armCode_time_kernel (N : RootedBinary V E X) (B : NonrootBigon N)\n    {sample : Copy \u2192 X} (r : PositivePairRates E) (t : \u211d\u22650) (s : Code N sample) :\n    (sourceTimeKernel N r t s).map (armCode N B) =\n      sourceTimeKernel N (rates (edgeSwap N B) r) t (armCode N B s)",
+        "sha256": "1e7eb3bd2c7aaf7ffa55a5a754f2e9c30b9408c37f4c53bed315cf4697b48336"
+      },
+      {
+        "line": 196,
+        "header": "theorem actual_parallel_arm_full_forest_transport\n    (N : RootedBinary V E X) (B : NonrootBigon N) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (t : \u211d\u22650) (s : Code N sample)\n    (hinput : \u2200 l \u2208 (state s).live, (state s).location l = .node B.parents.hybrid)\n    (b : Bool) :\n    (sourceTimeKernel N r t (pulseCode B.parents s (fun _ => b))).map\n      (fun d => ((state d).register, rootForest N d)) =\n    (sourceTimeKernel N (rates (edgeSwap N B) r) t\n      (pulseCode B.parents s (fun _ => !b))).map\n      (fun d => ((state d).register, rootForest N d))",
+        "sha256": "680cc7f6f54fc2b7e22bb5e0e061af57636fa50dd008f765ea57d89e7ea87be5"
+      }
+    ]
+  },
+  "intended_target": {
+    "root": "G6OriginalParallelArmTransport",
+    "parents": 116,
+    "exact_import_closure_size": 117,
+    "suggested_target": "extraction/g6-original-parallel-arm-transport-f40a0d66"
+  },
+  "accepted_provider_context": {
+    "certificate": "research/2026-10-10-codex-lean-rust-parity/lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json",
+    "certificate_sha256": "1f45babae7a183dc1638ebfd7de210fddcf2dd872e8498f3f80ede4d06e9fcc2",
+    "root_qc": "research/2026-10-10-codex-lean-rust-parity/quality/HISTORY-SURVIVAL-UNION-1504-REVIEW-20261010T224327.307430Z.json",
+    "root_qc_sha256": "e10e65a37003efcd1c9dce3d7cb80a154b034f66bb8dd740ee061f9e35bc33cb",
+    "providers": [
+      {
+        "module": "SourceNetwork",
+        "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+        "imports": [
+          "Mathlib.Data.Fintype.Card",
+          "Mathlib.Logic.Relation"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/SourceNetwork.lean"
+      },
+      {
+        "module": "G2LiveLineageRouting",
+        "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Data.Rat.Lemmas",
+          "Mathlib.Tactic.Ring"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G2LiveLineageRouting.lean"
+      },
+      {
+        "module": "SourceLabelledForest",
+        "sha256": "d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d",
+        "imports": [
+          "G2LiveLineageRouting",
+          "Mathlib.Data.Finset.Card",
+          "Mathlib.Data.Fintype.BigOperators",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+          "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+          "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+          "Lean.Elab.Tactic.Omega"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/SourceLabelledForest.lean"
+      },
+      {
+        "module": "SourceForestKingmanProjection",
+        "sha256": "781d4a7ee62e5e98fa15e056e201a2c753a2f945bd536cf9df6cb04d906511a0",
+        "imports": [
+          "SourceLabelledForest",
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Data.Finset.Prod",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Tactic.NormNum"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/SourceForestKingmanProjection.lean"
+      },
+      {
+        "module": "SourceForestKingmanPopulationProjection",
+        "sha256": "e8733ab8e66c60f98cfcfcd56e703b55a5ad8674dc5361f4ac6cb0c35f80f6e4",
+        "imports": [
+          "SourceForestKingmanProjection"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/SourceForestKingmanPopulationProjection.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceForestSilentPruning",
+        "sha256": "86f61cc8ce06af574ee98b37db0ecd7c8cbc2df99e495ce1b9a66605ea8fb5c2",
+        "imports": [
+          "SourceForestKingmanPopulationProjection"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceForestSilentPruning.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.FiniteGenealogyEncoding",
+        "sha256": "3d862f8d9f9a43aed6324954ebea749001fd2b221dd90dd7d58cf4e4419fbcac",
+        "imports": [
+          "UnifiedLean.Source.SourceForestSilentPruning",
+          "Mathlib.Data.Fintype.Sum"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/FiniteGenealogyEncoding.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.FiniteSourceSnapshot",
+        "sha256": "4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744",
+        "imports": [
+          "UnifiedLean.Source.FiniteGenealogyEncoding",
+          "UnifiedLean.Source.SourceForestSilentPruning"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/FiniteSourceSnapshot.lean"
+      },
+      {
+        "module": "GraphLeaves",
+        "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Data.Fintype.EquivFin"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/GraphLeaves.lean"
+      },
+      {
+        "module": "GraphCuts",
+        "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+        "imports": [
+          "GraphLeaves"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/GraphCuts.lean"
+      },
+      {
+        "module": "G5BridgeBarrier",
+        "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+        "imports": [
+          "GraphCuts"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5BridgeBarrier.lean"
+      },
+      {
+        "module": "G5CalendarRoutes",
+        "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+        "imports": [
+          "G5BridgeBarrier",
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Linarith"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5CalendarRoutes.lean"
+      },
+      {
+        "module": "G5ProtectiveBlock",
+        "sha256": "45d1f8284504ee2b591c4d56654ce7375e3979b1a97495fc439c6f4477dcffe9",
+        "imports": [
+          "G5CalendarRoutes"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5ProtectiveBlock.lean"
+      },
+      {
+        "module": "G5MinimalGraphInterface",
+        "sha256": "20e09481ee4518de56cf201c978d98b4cec0d94c0fbfebd40008d3a3fa799281",
+        "imports": [
+          "GraphCuts"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5MinimalGraphInterface.lean"
+      },
+      {
+        "module": "G6BridgeCannotEnterHybrid",
+        "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+        "imports": [
+          "G5MinimalGraphInterface",
+          "G2LiveLineageRouting"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G6BridgeCannotEnterHybrid.lean"
+      },
+      {
+        "module": "G5BridgeComponentEntries",
+        "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+        "imports": [
+          "G6BridgeCannotEnterHybrid",
+          "G5CalendarRoutes"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5BridgeComponentEntries.lean"
+      },
+      {
+        "module": "G5NonbridgeRouteBound",
+        "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+        "imports": [
+          "G5CalendarRoutes",
+          "Mathlib.Data.Fintype.Card"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5NonbridgeRouteBound.lean"
+      },
+      {
+        "module": "G5ComponentCalendarCoverage",
+        "sha256": "3d73d592d4c129b1b06f2eccd48a94fd8afe1e50f030a5eb18e8c3ddb9f12c10",
+        "imports": [
+          "G5BridgeComponentEntries",
+          "G5NonbridgeRouteBound",
+          "Mathlib.Tactic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5ComponentCalendarCoverage.lean"
+      },
+      {
+        "module": "G5ActualComponentSupport",
+        "sha256": "5da0a86f2d1caf9b3a78a0fd75765194fa5652ad1a55c09382502d8354faaec7",
+        "imports": [
+          "G5ComponentCalendarCoverage"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5ActualComponentSupport.lean"
+      },
+      {
+        "module": "G5RootRouteCurrentSupport",
+        "sha256": "c72a58ae14539e524c37c97193d2343158eff784557fef12a7e4b7360157b554",
+        "imports": [
+          "G5ActualComponentSupport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5RootRouteCurrentSupport.lean"
+      },
+      {
+        "module": "G5CurrentPortTwoPositions",
+        "sha256": "c24d3d860a5369434f6d236c37003d3045e6452fd57dd21396dd877a5a452ce9",
+        "imports": [
+          "G5RootRouteCurrentSupport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5CurrentPortTwoPositions.lean"
+      },
+      {
+        "module": "G5OriginalTipCurrentSupport",
+        "sha256": "4324f00cb8db4d3c6ab0bfaa5e7283fcde521568f40d95aaddb9e32f896cdba2",
+        "imports": [
+          "G5CurrentPortTwoPositions"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5OriginalTipCurrentSupport.lean"
+      },
+      {
+        "module": "G5ParentChoiceCalendar",
+        "sha256": "357d5e59016672583318546b03bebb04ccdd5fbf95247cab22c98465dbf715b9",
+        "imports": [
+          "G5OriginalTipCurrentSupport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5ParentChoiceCalendar.lean"
+      },
+      {
+        "module": "G5CoupledQuartetKernel",
+        "sha256": "f9275364f5777a968c37ce39c24ea95179d23b4e54414463a62a4860c33361c1",
+        "imports": [
+          "Mathlib.Tactic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5CoupledQuartetKernel.lean"
+      },
+      {
+        "module": "G5FairSelectorMoments",
+        "sha256": "97a29621340a7dd103409ee8ce84675560f4b8e03aa7db63314ca24b337be71f",
+        "imports": [
+          "G5CoupledQuartetKernel",
+          "Mathlib.Probability.Distributions.Uniform"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5FairSelectorMoments.lean"
+      },
+      {
+        "module": "G5FairOriginalCoinLaw",
+        "sha256": "6a8905aa53481bdc37914e5d01197af12a9ddde1ffc42fc4b896603a6b61aa8e",
+        "imports": [
+          "SourceLabelledForest",
+          "G5FairSelectorMoments",
+          "Mathlib.Data.Rat.BigOperators",
+          "Mathlib.Data.ENNReal.BigOperators",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Sigma"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5FairOriginalCoinLaw.lean"
+      },
+      {
+        "module": "G5OriginalCoinPMF",
+        "sha256": "ae0e933761b49e5ca244a1756b77ba3c0e545bf1aa33ca75d51fc8caf8a1b5c1",
+        "imports": [
+          "G5FairOriginalCoinLaw"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5OriginalCoinPMF.lean"
+      },
+      {
+        "module": "G5ParentPositionPushforward",
+        "sha256": "4f81aef02bb0f225aea6b377757f9282d336da685eb3e728dad1cf133f83d8db",
+        "imports": [
+          "G5ParentChoiceCalendar",
+          "G5OriginalCoinPMF"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5ParentPositionPushforward.lean"
+      },
+      {
+        "module": "G5SafePastHybridDisjointness",
+        "sha256": "99c5803e9c056152a260eccff1b8351239c12ca9e5ef40b51a419419992efe97",
+        "imports": [
+          "G5ProtectiveBlock",
+          "G5ParentPositionPushforward"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5SafePastHybridDisjointness.lean"
+      },
+      {
+        "module": "G5PairOnlySureBlockChronology",
+        "sha256": "1ac87b91536cbe08b2ec4afe4ca3ea28c21386b6c432c6bd81731a30ea39871b",
+        "imports": [
+          "G5SafePastHybridDisjointness"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5PairOnlySureBlockChronology.lean"
+      },
+      {
+        "module": "G5SafePastMeetingPermanence",
+        "sha256": "30864de3e16b9d9b9a80c0139ac2173e10cf71f4b30e2b324dee9d54d0eefc9e",
+        "imports": [
+          "G5PairOnlySureBlockChronology"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5SafePastMeetingPermanence.lean"
+      },
+      {
+        "module": "G5ExponentialGermIdentification",
+        "sha256": "c87eb5933db663acbed6128f9898ed357c1c0ba9a8fbf287ebb04cbecffa13d0",
+        "imports": [
+          "Mathlib.LinearAlgebra.Vandermonde",
+          "Mathlib.Analysis.SpecialFunctions.Exp",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Ring"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5ExponentialGermIdentification.lean"
+      },
+      {
+        "module": "G5UnknownRateSupport",
+        "sha256": "5138246c24f49bc7b4b2adf28fd776b1b89f16e5cf7bc5bfa1b27c97afa7fa93",
+        "imports": [
+          "G5ExponentialGermIdentification",
+          "Mathlib.Algebra.BigOperators.Finsupp.Basic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5UnknownRateSupport.lean"
+      },
+      {
+        "module": "G5OriginalRouteHazard",
+        "sha256": "9cf84860342b132e474d034ae05034129b47aa116e8bcf0e965989e7e58e4e8a",
+        "imports": [
+          "G5SafePastMeetingPermanence",
+          "G5UnknownRateSupport",
+          "Mathlib.Data.Finset.Max"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G5OriginalRouteHazard.lean"
+      },
+      {
+        "module": "G4TwoRootSourceStopping",
+        "sha256": "b5dd33d135fcb9267ae3297229e51434b5cfd434e08ef89ecacf34affd5e541d",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Data.Fintype.Basic",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G4TwoRootSourceStopping.lean"
+      },
+      {
+        "module": "G1SharedRegisterStress",
+        "sha256": "d65004b11e07bb553637161bd7b1395186ea20e2c39e7c50c800af4871f018db",
+        "imports": [
+          "Mathlib.Probability.Distributions.Exponential",
+          "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.NormNum"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1SharedRegisterStress.lean"
+      },
+      {
+        "module": "G4FourRootPositivity",
+        "sha256": "24823aa835fb0649d8754777d975315e82ead74d3f065093e2d03c743f7356fa",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G4FourRootPositivity.lean"
+      },
+      {
+        "module": "G4IndependentRoutingBridge",
+        "sha256": "e30d82ea7e57138d463c779205dfcf686b520cb649d9d5767ee3c13853f19f6b",
+        "imports": [
+          "G2LiveLineageRouting",
+          "G1SharedRegisterStress",
+          "Mathlib.Data.Nat.Choose.Basic",
+          "Lean.Elab.Tactic.Omega",
+          "G4FourRootPositivity",
+          "Mathlib.Data.Fin.Tuple.Basic",
+          "Mathlib.Data.Fintype.BigOperators",
+          "Mathlib.Algebra.BigOperators.Fin",
+          "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Tactic.NormNum"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G4IndependentRoutingBridge.lean"
+      },
+      {
+        "module": "G4AllRootPairClocks",
+        "sha256": "149c8603c734e2ccb021963be42609698285033c1296b2bca18d0716f4258744",
+        "imports": [
+          "G4IndependentRoutingBridge",
+          "Mathlib.MeasureTheory.Constructions.Pi",
+          "Mathlib.Data.Fintype.Powerset",
+          "Mathlib.Data.ENNReal.BigOperators"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G4AllRootPairClocks.lean"
+      },
+      {
+        "module": "G4PathResolvedMeasurement",
+        "sha256": "af20fe6e206d9b407ad7b16310d75eb12191b0b7a137d189b466209ed02f0eb9",
+        "imports": [
+          "G4TwoRootSourceStopping",
+          "G4AllRootPairClocks",
+          "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G4PathResolvedMeasurement.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.NativeParentRouting",
+        "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+        "imports": [
+          "G5OriginalRouteHazard",
+          "G4PathResolvedMeasurement",
+          "Mathlib.MeasureTheory.Constructions.Pi",
+          "Mathlib.Data.Finset.Card"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/NativeParentRouting.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.NativePairClockLaw",
+        "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae",
+        "imports": [
+          "UnifiedLean.Source.NativeParentRouting",
+          "G4AllRootPairClocks",
+          "Mathlib.Data.ENNReal.BigOperators"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/NativePairClockLaw.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.UniformizedSourceStep",
+        "sha256": "9d5a95047e3c04f9e12334cd4b5569e36e1dfa2cd4b1573f217eeb559ff9691c",
+        "imports": [
+          "UnifiedLean.Source.FiniteSourceSnapshot",
+          "UnifiedLean.Source.NativePairClockLaw",
+          "SourceForestKingmanPopulationProjection",
+          "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+          "Mathlib.Algebra.BigOperators.Field"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/UniformizedSourceStep.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+        "sha256": "b186f0d381b0e62078d887f90ce46ecbe91def99ec66ec51c98053b9d60c0f28",
+        "imports": [
+          "UnifiedLean.Source.SourceForestSilentPruning",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceForestGeneratorIntertwining.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+        "sha256": "b282351bf116ae756c7e9c6ee1e3cbace41a8d753b47cac7e53c4a918c82d16f",
+        "imports": [
+          "UnifiedLean.Source.SourceForestGeneratorIntertwining"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceForestIntrinsicGenerator.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceStepGeneratorBinding",
+        "sha256": "8021b8bddcc5cd070185843ca5454dfb289572a2592854efbbdd9e41d48396d0",
+        "imports": [
+          "UnifiedLean.Source.UniformizedSourceStep",
+          "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+          "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+          "Mathlib.MeasureTheory.Integral.Bochner.Basic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceStepGeneratorBinding.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.MatrixProjectionExponential",
+        "sha256": "870438089e6cf05dd93761172ea1bf6b2aa96654708e97b9d348e0dfcb44dfa2",
+        "imports": [
+          "Mathlib.Analysis.Normed.Algebra.MatrixExponential"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/MatrixProjectionExponential.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceFiniteProjection",
+        "sha256": "09398c920468ba6ead16b523cecd9f86e7648e7063602256ee4634385df1cab3",
+        "imports": [
+          "UnifiedLean.Source.SourceStepGeneratorBinding",
+          "UnifiedLean.Source.MatrixProjectionExponential",
+          "Mathlib.Data.ENNReal.BigOperators"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceFiniteProjection.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceForestPulseTransport",
+        "sha256": "8e1a3d62afab25247dd3a281d30f7dc20db1949ea1b589c2d77980b3b48874f1",
+        "imports": [
+          "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+          "G2LiveLineageRouting"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceForestPulseTransport.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceForestPulseMeasure",
+        "sha256": "04a3a1c1f027903e62b77f966639c80da77aaa776871a0d9bd0657eac35b9e4f",
+        "imports": [
+          "UnifiedLean.Source.SourceForestPulseTransport",
+          "Mathlib.Probability.Distributions.Bernoulli",
+          "Mathlib.MeasureTheory.Constructions.Pi"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceForestPulseMeasure.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceForestCommonPulse",
+        "sha256": "cac1082f66a84b943dbc8ba9f2e8082ce12bbb42a4b1503e31722597b0faa138",
+        "imports": [
+          "UnifiedLean.Source.SourceForestPulseTransport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceForestCommonPulse.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceBoundaryKernels",
+        "sha256": "994b25e798e39889a56084b267c3e896580cd21e902764c3c6922d9bfdd6070d",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteProjection",
+          "UnifiedLean.Source.SourceForestPulseMeasure",
+          "UnifiedLean.Source.SourceForestCommonPulse"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceBoundaryKernels.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceBoundaryProjection",
+        "sha256": "f1cb1e557b5f08cba2d37465bc4386bc6adc2f19fd12a132f7d6f835b1e24f0f",
+        "imports": [
+          "UnifiedLean.Source.SourceBoundaryKernels"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceBoundaryProjection.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourcePoissonKernel",
+        "sha256": "13ab4d1a209554878e189061cbede00154c7b72548465757624cc2e4af66e98c",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteProjection",
+          "Mathlib.Probability.Distributions.Poisson.Basic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourcePoissonKernel.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceProgramTransport",
+        "sha256": "d009fdfc510bfcaffaeea3bc241401eaf2996178ff4b82376eb22f1e49387831",
+        "imports": [
+          "UnifiedLean.Source.SourceBoundaryProjection",
+          "UnifiedLean.Source.SourcePoissonKernel"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceProgramTransport.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCalendarCompatibility",
+        "sha256": "98abb2982bcd061f931ed4a55816f00d54d4ce2c73c29e036dbd29ede303b3dc",
+        "imports": [
+          "UnifiedLean.Source.SourcePoissonKernel",
+          "G5CalendarRoutes"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCalendarCompatibility.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCalendarCompiler",
+        "sha256": "9974446d99fa344593d294e315e349ab71fdbe7574e932bb8b1a16ee1b2369fd",
+        "imports": [
+          "UnifiedLean.Source.SourceCalendarCompatibility",
+          "UnifiedLean.Source.SourceProgramTransport",
+          "UnifiedLean.Source.NativeParentRouting",
+          "Mathlib.Data.Finset.Sort"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCalendarCompiler.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceBoundaryLocations",
+        "sha256": "f7c050056e121c7e0e12eb071383cb1369e8fe9de887d7ad875a76904d48de5b",
+        "imports": [
+          "UnifiedLean.Source.SourceCalendarCompiler"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceBoundaryLocations.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCalendarTiming",
+        "sha256": "5e534089f17dc7d9ab40338cb0ca75789e0951bb6b5893ba24d514b8cd07d4f8",
+        "imports": [
+          "UnifiedLean.Source.SourceCalendarCompiler"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCalendarTiming.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+        "sha256": "e725dd61c850d3f5f92925c0de08122dd25f9d1660d9264d1ac47eb4d2bc88bf",
+        "imports": [
+          "UnifiedLean.Source.SourceBoundaryLocations",
+          "UnifiedLean.Source.SourceCalendarTiming"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCalendarPhysicalSupport.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceInitializedCalendar",
+        "sha256": "47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535",
+        "imports": [
+          "UnifiedLean.Source.SourceCalendarPhysicalSupport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceInitializedCalendar.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+        "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+        "imports": [
+          "UnifiedLean.Source.NativePairClockLaw",
+          "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+          "Mathlib.MeasureTheory.Integral.Lebesgue.Countable"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/NativeIndependentPairMixture.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceNaturalInitialization",
+        "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+        "imports": [
+          "UnifiedLean.Source.SourceInitializedCalendar",
+          "UnifiedLean.Source.NativeIndependentPairMixture"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceNaturalInitialization.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.UnrankedGenealogyObservation",
+        "sha256": "1ee536501f1fc77c70eb9098af054ecf2a2c8cbdd9aef4375bd5cdda10ca73c8",
+        "imports": [
+          "UnifiedLean.Source.SourceNaturalInitialization",
+          "Mathlib.Data.Finset.Union"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/UnrankedGenealogyObservation.lean"
+      },
+      {
+        "module": "G1OpaqueSourceGrafting",
+        "sha256": "0e12dae33df64ad82d198a31cfabafb00ce7f47053e11a6fc729cdc5c63b15d0",
+        "imports": [
+          "UnifiedLean.Source.SourceProgramTransport",
+          "UnifiedLean.Source.UnrankedGenealogyObservation"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1OpaqueSourceGrafting.lean"
+      },
+      {
+        "module": "G1ContextualForestReplacement",
+        "sha256": "feab5f5e12f34a5e579be3baecfb6c327dccdc85a32323c2a96378b3f6f4ec32",
+        "imports": [
+          "G1OpaqueSourceGrafting"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1ContextualForestReplacement.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceGeneratorExponential",
+        "sha256": "f761ddf2f5efb9906ec8f841567d02fae946cce763260f238834a147090e461d",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteProjection"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceGeneratorExponential.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourcePoissonExponential",
+        "sha256": "463eb0e4a9cd9307898eface172100183b8ac9d412c1389a2c5b9ad4981c2d9a",
+        "imports": [
+          "UnifiedLean.Source.SourcePoissonKernel",
+          "UnifiedLean.Source.SourceGeneratorExponential"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourcePoissonExponential.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceEpochSemigroup",
+        "sha256": "845739bc6b110eadd611e0133906ec3f9b036d66f17902f46885c660213b179f",
+        "imports": [
+          "UnifiedLean.Source.SourcePoissonExponential"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceEpochSemigroup.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceActualHoldingClocks",
+        "sha256": "498417275660b696c24f4c8cd83d84532a96f14b82f35bc3e49217c154e8c677",
+        "imports": [
+          "UnifiedLean.Source.SourceEpochSemigroup",
+          "UnifiedLean.Source.SourceInitializedCalendar"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceActualHoldingClocks.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceFirstMergerMark",
+        "sha256": "2bc08f45d7ea76476f6fe485cdce68293a3d44cbc3b2aa108b6b45ce5d1182d1",
+        "imports": [
+          "UnifiedLean.Source.SourceActualHoldingClocks"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceFirstMergerMark.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceFirstMarkDistribution",
+        "sha256": "abd6230f1155ab6cf73bf3d4b55bbe04df408ca73caee81a8807b15b17e9ad29",
+        "imports": [
+          "UnifiedLean.Source.SourceFirstMergerMark"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceFirstMarkDistribution.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceExponentialRace",
+        "sha256": "d979f1bf3bbbac3eb3c396991a513a3624f310bf03273890e13c6d5029931afe",
+        "imports": [
+          "UnifiedLean.Source.SourceFirstMarkDistribution",
+          "Mathlib.MeasureTheory.Integral.Prod",
+          "Mathlib.MeasureTheory.Integral.Lebesgue.Map"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceExponentialRace.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceExponentialRaceDensity",
+        "sha256": "3fa36827b3553923fa1c1d48db4b2823c7b53e589696c3a1476f9aac8f760c29",
+        "imports": [
+          "UnifiedLean.Source.SourceExponentialRace"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceExponentialRaceDensity.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceExponentialResiduals",
+        "sha256": "8861858b9309fd43e22424382c1f1513111514ef792354c7cf4b48a0ae4b19e7",
+        "imports": [
+          "UnifiedLean.Source.SourceExponentialRaceDensity",
+          "Mathlib.MeasureTheory.Constructions.BorelSpace.Order"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceExponentialResiduals.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceWinningClockReset",
+        "sha256": "7a831640fec35d92f99e65e6f98e2874602fb5b040ff6b112c16b77a271f2038",
+        "imports": [
+          "UnifiedLean.Source.SourceExponentialResiduals"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceWinningClockReset.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceMergerClockCatalogue",
+        "sha256": "147da19d2d89135e00c140b3a7a88cd3d53271954e5752a23e5e0ff30376a147",
+        "imports": [
+          "UnifiedLean.Source.SourceWinningClockReset"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceMergerClockCatalogue.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceDestinationClockReset",
+        "sha256": "ec910abde269d665081f7c064b6567f45fca58ba26e183ab29e21037fb84344a",
+        "imports": [
+          "UnifiedLean.Source.SourceMergerClockCatalogue",
+          "Mathlib.Probability.Independence.Basic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceDestinationClockReset.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceEpochRenewal",
+        "sha256": "5035fb830ed695b7aac5525c28f24d528be3c1b9a2c2c6f831f23b3cc6692bef",
+        "imports": [
+          "UnifiedLean.Source.SourceDestinationClockReset",
+          "UnifiedLean.Source.SourceEpochSemigroup",
+          "Mathlib.Analysis.SpecialFunctions.Exponential",
+          "Mathlib.Analysis.Normed.Module.FiniteDimension",
+          "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceEpochRenewal.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceFiniteJumpExpansion",
+        "sha256": "6a14b2de7bcdf28ae3293a23adde3234da7adb5dd503cfd007b711f1a52d786b",
+        "imports": [
+          "UnifiedLean.Source.SourceEpochRenewal"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceFiniteJumpExpansion.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceRaceWinnerSelection",
+        "sha256": "ad882b44f7fd97f5ac7e5b7e125cce7e7f6640c065ff616f08c85b26dd9d4caf",
+        "imports": [
+          "UnifiedLean.Source.SourceFiniteJumpExpansion"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceRaceWinnerSelection.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+        "sha256": "560f2174634b137eca95c83616b2b50a4e7671f51cfd62c275a7f7c206890d37",
+        "imports": [
+          "UnifiedLean.Source.SourceRaceWinnerSelection"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceEmbeddedJumpLaw.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceAncestralCompletion",
+        "sha256": "da44afa6b8039afb1f90128af2f1b62234f3dfd0197ef9399c52873bf865caa5",
+        "imports": [
+          "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+          "UnifiedLean.Source.SourceNaturalInitialization"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceAncestralCompletion.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCompletedUnrankedTree",
+        "sha256": "a3f28f51080370eeb6d625685f89927ca983c00ab6ac6739533c20754e60f06b",
+        "imports": [
+          "UnifiedLean.Source.SourceAncestralCompletion",
+          "UnifiedLean.Source.UnrankedGenealogyObservation"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCompletedUnrankedTree.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceAncestralDrift",
+        "sha256": "258fa001910c1e483b782be4d7a01d239ebc5f53dda8f00348239643fdb88725",
+        "imports": [
+          "UnifiedLean.Source.SourceCompletedUnrankedTree",
+          "UnifiedLean.Source.SourceEpochRenewal"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceAncestralDrift.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceAncestralAbsorption",
+        "sha256": "07b0d22fe372b38a1dd0e1256e0f328901ff74feb9a172a6748a19b903e06061",
+        "imports": [
+          "UnifiedLean.Source.SourceAncestralDrift",
+          "Mathlib.Analysis.SpecificLimits.Basic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceAncestralAbsorption.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCompletionHarmonic",
+        "sha256": "5a15f085181e1f6f514d629db289db4a11d6b91032267ecf73a795b0a4f1bfd0",
+        "imports": [
+          "UnifiedLean.Source.SourceAncestralAbsorption"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCompletionHarmonic.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceEventualCompletionLimit",
+        "sha256": "0c886c979caa8725b7babd734c3bfabd5842c4aa065bd8886ce4a8abc24a33cd",
+        "imports": [
+          "UnifiedLean.Source.SourceCompletionHarmonic"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceEventualCompletionLimit.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceNaturalCompletedLimit",
+        "sha256": "182b8694bea7594102468caa1009046668198f67fe67f8d67bf89bf1ce4604e5",
+        "imports": [
+          "UnifiedLean.Source.SourceEventualCompletionLimit"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceNaturalCompletedLimit.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCopyCarrierTransport",
+        "sha256": "09d3d2dcb27d49cb1f85a8e78a5dfc385778a0c885b5a9e42f445246cc3bf966",
+        "imports": [
+          "UnifiedLean.Source.SourceNaturalCompletedLimit"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCopyCarrierTransport.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceSmallCarrierGenerator",
+        "sha256": "b85c1308c6206d377aca54b2073088e39250b57abac7df8c628f100189546106",
+        "imports": [
+          "UnifiedLean.Source.SourceCopyCarrierTransport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceSmallCarrierGenerator.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCrossCarrierEpoch",
+        "sha256": "d62727cc73f62775f43c83cb882602fcb55e2757123b0ba126d6feffe497d725",
+        "imports": [
+          "UnifiedLean.Source.SourceSmallCarrierGenerator"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCrossCarrierEpoch.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceSmallCarrierPulse",
+        "sha256": "e33e4751b9b8d665aaf18074f4d3430f0f13d7b5e67a90ec96ec229a14fb7f20",
+        "imports": [
+          "UnifiedLean.Source.SourceCrossCarrierEpoch"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceSmallCarrierPulse.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCrossCarrierBoundary",
+        "sha256": "c3d453eb58dcf0a21f06acc4513428cb9d6ff31093a73e9a284b992531514308",
+        "imports": [
+          "UnifiedLean.Source.SourceSmallCarrierPulse"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCrossCarrierBoundary.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCrossCarrierProgram",
+        "sha256": "bc26f80643ff737bd3a4dcda630631584b0166b2905b3cb48fd876c08fe5489a",
+        "imports": [
+          "UnifiedLean.Source.SourceCrossCarrierBoundary"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCrossCarrierProgram.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceCrossCarrierNatural",
+        "sha256": "1d4c912aade4355a65b017b7fc02cee977cf0567728cd488c97c9a6de76c439c",
+        "imports": [
+          "UnifiedLean.Source.SourceCrossCarrierProgram"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceCrossCarrierNatural.lean"
+      },
+      {
+        "module": "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+        "sha256": "ef2c49cbbbd519616e29f5e213e4e0e267626423b6c951d794647d2095eab55d",
+        "imports": [
+          "UnifiedLean.Source.SourceCrossCarrierNatural"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/UnifiedLean/Source/SourceUnrankedCopyProjectivity.lean"
+      },
+      {
+        "module": "G1OriginalCurrentRootReconstruction",
+        "sha256": "d5331d24f331235712f10cf66d25a8c5062a376d86249dd2def9d5497c399956",
+        "imports": [
+          "G1ContextualForestReplacement",
+          "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+          "UnifiedLean.Source.SourceCrossCarrierProgram"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1OriginalCurrentRootReconstruction.lean"
+      },
+      {
+        "module": "G1NonrootBigonKernel",
+        "sha256": "7e228b06208880369b455914a855249337b6acecf9b4c9d70067c7ff9baab003",
+        "imports": [
+          "G1OriginalCurrentRootReconstruction"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1NonrootBigonKernel.lean"
+      },
+      {
+        "module": "G7OriginalCensus",
+        "sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517",
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+          "Mathlib.Data.Fintype.EquivFin"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7OriginalCensus.lean"
+      },
+      {
+        "module": "G7OriginalRelabelling",
+        "sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+        "imports": [
+          "G7OriginalCensus",
+          "UnifiedLean.Source.NativePairClockLaw",
+          "UnifiedLean.Source.NativeIndependentPairMixture"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7OriginalRelabelling.lean"
+      },
+      {
+        "module": "G7SourceStateRelabelling",
+        "sha256": "3181b57b5a5511a837df2b05d9d6e332e485959ca571f6d85862cfc9a11e5d14",
+        "imports": [
+          "G7OriginalRelabelling",
+          "SourceLabelledForest"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7SourceStateRelabelling.lean"
+      },
+      {
+        "module": "G7SnapshotRelabelling",
+        "sha256": "cabdfe7caf9e2161b0e3c84d33a6ed388f6b4c00e529023eac0077803250cb7f",
+        "imports": [
+          "G7SourceStateRelabelling",
+          "UnifiedLean.Source.FiniteSourceSnapshot",
+          "UnifiedLean.Source.UniformizedSourceStep"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7SnapshotRelabelling.lean"
+      },
+      {
+        "module": "G7CoinReindexing",
+        "sha256": "a11ce95779a8b7beec03539a63fb2a2c940d4e5dfcdaa4d14351e67f2dfab049",
+        "imports": [
+          "G7OriginalRelabelling",
+          "UnifiedLean.Source.SourceBoundaryKernels",
+          "UnifiedLean.Source.SourceNaturalInitialization"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7CoinReindexing.lean"
+      },
+      {
+        "module": "G7BoundaryRelabelling",
+        "sha256": "d10eb8af3f73675bd8567801bfc3133bced8fa180b913f6ffa24c2726042e00f",
+        "imports": [
+          "G7SnapshotRelabelling",
+          "G7CoinReindexing"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7BoundaryRelabelling.lean"
+      },
+      {
+        "module": "G7SourceStepRelabelling",
+        "sha256": "fca5902fa3e6bef8f57d41b8bb2ab3092faf50d181cd1cdcf375dbdba74d302b",
+        "imports": [
+          "G7BoundaryRelabelling",
+          "UnifiedLean.Source.SourcePoissonKernel"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7SourceStepRelabelling.lean"
+      },
+      {
+        "module": "G7ProgramRelabelling",
+        "sha256": "29400abd0ba07b5181bca3ccc4d478afcba8806eff18b5dd1743a0f58118bd1a",
+        "imports": [
+          "G7SourceStepRelabelling",
+          "UnifiedLean.Source.SourceProgramTransport"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7ProgramRelabelling.lean"
+      },
+      {
+        "module": "G7NaturalWordRelabelling",
+        "sha256": "2cb2ad261610961d40b66a5a321eb0055733477abef9c4854b4e73fa9ea12de1",
+        "imports": [
+          "G7ProgramRelabelling"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7NaturalWordRelabelling.lean"
+      },
+      {
+        "module": "G7GlobalOwnerCoins",
+        "sha256": "a8ce7af87d48354493a9a5b6ce283fcfb0116f3a51ef8ecc10fc872784edca1a",
+        "imports": [
+          "G7BoundaryRelabelling"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7GlobalOwnerCoins.lean"
+      },
+      {
+        "module": "G7NodeActions",
+        "sha256": "478d9505249525e3710c5ed1bf4e1c3d8b107c217b88d8f86d9863fd959c0967",
+        "imports": [
+          "G7GlobalOwnerCoins",
+          "UnifiedLean.Source.SourceCalendarCompiler"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7NodeActions.lean"
+      },
+      {
+        "module": "G7BoundaryExitCommutation",
+        "sha256": "735b155e36f9654676953f8a0f3e6bf85ac81b469e2bf9efd24c2aebf9d0eeda",
+        "imports": [
+          "G7GlobalOwnerCoins"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7BoundaryExitCommutation.lean"
+      },
+      {
+        "module": "G7BoundaryPhasePermutation",
+        "sha256": "fea51a87be89f084752b22df8c52ae345515f1a0986cd0475d1a4be09453b4cf",
+        "imports": [
+          "G7NodeActions",
+          "G7BoundaryExitCommutation"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7BoundaryPhasePermutation.lean"
+      },
+      {
+        "module": "G7CalendarNodeRelabelling",
+        "sha256": "9794a86a7d40203e3b719ddd62f711205dba149dd6f2a8fe49fdca5ca17a6f2c",
+        "imports": [
+          "G7NaturalWordRelabelling",
+          "G7BoundaryPhasePermutation"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7CalendarNodeRelabelling.lean"
+      },
+      {
+        "module": "G7CalendarAgendaRelabelling",
+        "sha256": "4152623b044ffa06c2bae39b8a042ad69e2b56f13966f739f9c61f952066945c",
+        "imports": [
+          "G7CalendarNodeRelabelling"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7CalendarAgendaRelabelling.lean"
+      },
+      {
+        "module": "G7NaturalCalendarRelabelling",
+        "sha256": "02fa61d3a04b0eecfddcec8d90bf45a3b86c38978552f1c45288eec14a681137",
+        "imports": [
+          "G7CalendarAgendaRelabelling"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7NaturalCalendarRelabelling.lean"
+      },
+      {
+        "module": "G7CompletedUnrankedRelabelling",
+        "sha256": "1e83997dd3725c1d7f428b1921f88945a55557ccb626504a57d0444dc4686b38",
+        "imports": [
+          "G7NaturalCalendarRelabelling",
+          "UnifiedLean.Source.SourceCompletionHarmonic",
+          "UnifiedLean.Source.SourceCompletedUnrankedTree"
+        ],
+        "accepted_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7CompletedUnrankedRelabelling.lean"
+      }
+    ]
+  },
+  "precise_scope": [
+    "N is the actual original RootedBinary; B is its existing NonrootBigon, with two distinct parallel original parent occurrence IDs.",
+    "All finite Copy and original labels, any entering admitted Code s with every live owner at B.parents.hybrid, arbitrary carried genealogy and raw dead fields.",
+    "Vertex and Copy maps are identity; exact original source network is equal after the two edge occurrence names are exchanged.",
+    "Original Boolean parent labels are transported without reinterpretation; mapped parent bit b names original occurrence !b. Original V register labels and values are retained.",
+    "Full forest/register actual epoch PMF is identical for pulse route b with bank r and pulse route !b with edge-swapped bank; all other original rate entries are unchanged and ancestral rate is preserved.",
+    "No natural COMMON Bernoulli mixture is asserted for a fixed entering Code; its stored bit already selects an arm."
+  ],
+  "remaining_factorization_interface": [
+    "Natural source prior and actual NoPrivateWordRead prefix; marginalize private bit using accepted PrivateSeedHistoryFactorization/ActualUnusedSeedConditioning, not a fresh arbitrary coin.",
+    "Use existing same-place positive exposure transport and actual_source_time_add/zero to split smaller arm exposure and nonnegative residual, with correct parent1 gamma or complement.",
+    "For erasure in a later exterior, require actual no-read continuation of the private bit. Original full register may otherwise distinguish the two modes.",
+    "Global positive legal source reconstruction/one joint forest norm, graph factor production, multiple protected bins, timed histories and universal native representation refinement remain outside this conditional port identity."
+  ],
+  "execution": {
+    "lean_compilation": false,
+    "native_execution": false,
+    "git_or_index_changes": false,
+    "scheduler": "/root/lean_integration_successor"
+  },
+  "reuse_boundary": "Instantiates existing original source relabelling and full forest readout at the actual parallel-arm automorphism; no new Kingman kernel, recurrence, tree representation or clock construction."
+}

@@ -1,6 +1,6 @@
 # What is already built, and what still needs connecting
 
-Codex coordinator, 10 October 2026, 16:17 PDT / 23:17 UTC. Lean governs the
+Codex coordinator, 10 October 2026, 16:32 PDT / 23:32 UTC. Lean governs the
 mathematical design; Rust implements accepted contracts with explicit
 representation links and independent output checks. Proposed Lean consumers
 remain proposals until their exact compiler/audit receipts pass.
@@ -38,6 +38,15 @@ entire-history consistency on supplied strict comparison calendars. The original
 source IDs, parent registry, natural inheritance and supplied admission/action
 fields remain explicit. Both root and design reviews pass. The 1,504-module
 combined certificate remains unchanged; a 1,505-module union has not run.
+
+The [original G6 parallel-arm transport](../lean/G6-ORIGINAL-PARALLEL-ARM-TRANSPORT-117-ACCEPTANCE.json)
+is also accepted separately: **117 modules / 3,063 owned declarations / 1,976
+theorem declarations**. Swapping the two original edge occurrences and rates
+preserves the joint original register and rooted labelled unranked forest epoch
+law, with arbitrary carried genealogy. The exact eleven generated-context
+differences are qualified; root and design reviews pass. The natural no-read
+seed mixture and joint positive source/forest/bin reconstruction still require
+their existing providers and actual constructor-level premises.
 
 The supplied-fit Rust bank/readout passes 14 focused native tests, 27 CLI
 controls plus one separately qualified rational control, and six native-only
@@ -79,7 +88,7 @@ assembly open.
 | Fit one shared source | The old exact fitter has shared-source equations, positive witnesses, known-registry target identification and ambiguity certificates. The accepted actual-witness exporter retains original rows/actions/equations and maps them to the Rust bank; 34 controls and one current application pipeline pass. | General algebraic evaluation, selected-experiment reproduction, source/observation provenance refinement and unknown-size acquisition. |
 | Compute a forward law | Accepted initialization/epoch/boundary/word/completion providers feed Rust. Three original Lean/Rust calendars match 38 ordered views / 66 terms. Optional older-compiler comparison checks the supplied-fit rooted readout. | General native refinement and admitted-source/observation binding. Endpoint laws omit merger ages and do not implement full timed G2. |
 | Compose an original family | Accepted family/resource/carrier providers and the whole-edge chart feed the separately accepted 168-module family normalization. | Include the new module in a coherent union and connect effective coefficient/source-image and legal selector interfaces. Normalization supplies no QE or policy synthesis. |
-| Compress G6 forests | Accepted legal splicing, target-preserving finite cores, opaque grafting and the nonroot bigon kernel exist. Original private-seed/erased-history factorization and unused-seed conditioning already supply the independence interface. | Check the concrete original parallel-arm transport proposal, then compose population forgetting with natural-seed marginalization, uniformly short positive realization and joint protected-bin/cloud law. Reuse the existing graph constructors. |
+| Compress G6 forests | Accepted legal splicing, target-preserving finite cores, opaque grafting, the nonroot bigon kernel and the separately checked parallel-arm transport exist. Original private-seed/erased-history factorization, guarded old-bin product, full-forest bin decoder and erased upper-guard continuation supply existing interfaces. | Compose population forgetting with natural-seed marginalization, prove or recover the literal lower-guard/pre-pulse no-read condition, then join uniformly short positive realization and protected-bin/cloud law. Reuse the existing graph constructors. |
 | Select experiments and calibrate data | Old adaptive-tree verification, restricted CAD policies and anytime quartet confidence arithmetic exist. | General legal optimal-policy synthesis and lower certificates; admitted data/error/gap/stopping premises tied to one reconstructed source. |
 
 The parent convention is explicit: old `g=P(parent0)` becomes original
@@ -105,6 +114,9 @@ reports an interrupted build, with aggregate and complete audit unexecuted;
 no desktop union is accepted. A later joint context would contain
 1,568 modules only after exact compatibility and a new aggregate/full audit;
 including the separately checked family module would make that proposal 1,569.
+Including the newly checked G6 arm module as well would make it 1,570. That
+cloud integration option is under static resource/prerequisite assessment;
+no 1,506 or 1,570 combined run is claimed.
 
 The available-history inventory covers 1,667 Git commits, 96,043 path-change
 records and 94,996 unique paths. This establishes discovery coverage of available
