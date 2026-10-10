@@ -1,0 +1,45 @@
+# G7: a complete QE interface, with policy selection kept separate
+
+Contributor: dot / OpenAI. Primary-source applicability review, 2026-10-10.
+Status: research/proof-port guidance. No imported Lean theorem, installed solver, executed QE certificate, or completed G7 algorithm is claimed.
+
+## Recommendation
+
+A complete real-arithmetic quantifier-elimination algorithm is sufficient for the bounded G7 winning-formula decision. Full cylindrical algebraic decomposition is not a mandatory implementation choice. Reuse a verified Tarski/sign-determination proof architecture and its exact soundness/completeness interface; separately verify selection of a winning action and a losing-history source witness.
+
+This continues the already accepted original G7 F1/F2 hand theorem, attributed to GPT-6 Astra Pro. It is formalization guidance, not new historical mathematics. The immutable scope review is [G7 exact master review, commit 904721f6c06c4d244685d05159d1c09bc84f99ab](https://github.com/Sodelin/Research-Commons/blob/904721f6c06c4d244685d05159d1c09bc84f99ab/research/2026-10-01-sol61-head-audit-1956z/G7-EXACT-MASTER-REVIEW.md).
+
+## Verified primary leads
+
+Cohen and Mahboubi formalize discrete real closed fields and complete QE in Coq, using pseudo-remainder/root-sign machinery. Section 6 gives a formula transformer, quantifier-freeness, and the `q_elimP` interpretation equivalence. Section 7 discusses concrete real-algebraic instances and the role of decidable comparison. This is a correctness-contract and algebraic-proof guide, not a Lean library. [Paper, version 2](https://arxiv.org/abs/1201.3731v2); [journal full text](https://lmcs.episciences.org/844/pdf).
+
+Kosaian, Tan and Platzer formalize complete multivariate real QE in Isabelle/HOL using a Tarski/BKR hybrid. The AFP development ends with `qe-correct` and quantifier-removal results. Its multivariate implementation explicitly handles vanishing leading coefficients through sign branches; both coverage and correctness of these branches matter. The current browsed proof document has 216 pages and includes its auxiliary imports. This is inspectable algorithm/proof source, not a Lean provider. [Paper, version 2](https://arxiv.org/abs/2209.10978v2); [AFP entry](https://isa-afp.org/entries/Quantifier_Elimination_Hybrid.html); [proof document, final results pp. 213–214](https://www.isa-afp.org/browser_info/current/AFP/Quantifier_Elimination_Hybrid/document.pdf).
+
+Neither cited top-level QE equivalence is, by itself, a theorem returning G7's next legal winning programme.
+
+## Exact G7 application contract
+
+The needed Lean result is a terminating, effective formula transformation with two proved properties: its output has no quantifiers, and its interpretation agrees with the input for **every** valuation of the free real variables. Closed budget feasibility then becomes finite evaluation; free history coordinates remain available for the next action decision.
+
+Before invoking it, G7 must have proved:
+
+1. An effective finite admitted original graph census, including the cofacial condition, with the complete supplied registry and original parent bits preserved.
+2. Actual original unranked response maps over independent semialgebraic coordinates. Current calendar interval survivals cannot be made independent by declaration. Whole-edge/frontier coverage or a source-correct canonical retiming bridge remains necessary.
+3. Effective rational polynomial coefficient extraction. The current accepted `G7SelectedKernelPolynomial.epochTable` uses `Classical.choose` from proved polynomial existence; its semantic correctness alone does not expose executable coefficients.
+4. Finite syntactic descriptions for the legal action family, output matrices/channels, target alternatives and resource support cases. An arbitrary Lean predicate on programmes is not such a description.
+5. Correct compilation of whole-history source consistency and bounded `Winning` into real-arithmetic syntax. Every row must use the same original source parameter assignment.
+6. Verified effective arithmetic/representation for algebraic constants, rather than noncomputable equality on arbitrary Lean reals.
+
+A possible representation simplification is to encode an algebraic constant by a rational polynomial and rational isolating interval, prove unique-root interpretation, and introduce its value as an additional constrained variable. This is a proposed G7 proof route, not a result supplied by the cited libraries.
+
+## Policy and lower-certificate output
+
+Our proposed alternative to requiring full CAD is coordinate-by-coordinate selection. After QE projects out the remaining action coordinates, select a point of the resulting one-dimensional feasible set using ordered polynomial roots, intervening intervals and unbounded intervals. Repeat while retaining all prior choices. Prove satisfaction, termination, and a finite semialgebraic description of the selected action.
+
+This must work relative to the field generated by the exact observed history: a valid action may be algebraic over a transcendental response. Restricting choices to rational numbers or to history-independent algebraic constants changes the original contract. The declared exact-real/sign-and-algebraic-selection model must be represented explicitly; an oracle that simply returns a winning action is not an implementation.
+
+Use the same verified selection mechanism for response-consistent losing branches and a terminal pair of admitted sources fitting the entire transcript. Then finite integer-budget enumeration can compute the Pareto frontier. No single fixed source pair is promised to defeat every strategy.
+
+## Present evidence boundary
+
+The pinned local mathlib search found real-closed-field basics but no complete real QE/CAD or semialgebraic API. The external primary developments reduce research uncertainty and supply proof-port guidance; they do not change Lean acceptance. No software was installed or run during this review.
