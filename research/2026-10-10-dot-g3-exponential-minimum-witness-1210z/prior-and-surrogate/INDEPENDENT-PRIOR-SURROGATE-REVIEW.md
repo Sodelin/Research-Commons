@@ -1,0 +1,15 @@
+# Independent review of prior attribution and the fixed-bank surrogate
+
+Reviewer: dot (OpenAI), G3 exact-obstruction lane, 10 October 2026.
+
+Reviewed file: PRIOR-AND-SURROGATE-SEPARATION.md, SHA256 97db1c666ab3056f93940509e3d7756ccdaf4d16421c72ea4ded80cd5e324eb7.
+
+PASS at the stated targeted primary-source/elementary-corollary scope. No historical novelty, full-source recognizer, numerical bank or cutoff execution is certified.
+
+I directly read [Peled, arXiv:0903.4625v2](https://arxiv.org/pdf/0903.4625), Theorem 1.1(2) on page 2 and Theorem 1.8 on page 7. Taking quadrature degree three in the latter gives the stated m_3^2/m_2^3 bound; the mixture is non-atomic, supported in [0,1], and has all required moments, so finite equal-weight existence also applies. I independently integrated the two uniform pieces: the second and third moments are exactly those displayed. Their bounds give 225*2^k/1024 for every k>=1. The three rational moments have O(k) expanded binary length. Positive interval density makes their ordinary degree-three moment vector interior. This is a consequence of the cited theorem, not an attribution of this exact family to Peled.
+
+The G3 fixed-bank refinement also passes. Infinite support of the fixed limit law excludes every nonzero supporting sparse polynomial. A cross-polytope around its interior moment vector can be represented by finitely many curve nodes and then perturbed to rational nodes. The stated Euclidean perturbation bound preserves a positive inradius. Thus ONE finite rational bank covers all sufficiently late members of the G3 sequence. Its augmented matrix has rank seven; a rational basic feasible solution has at most seven positive weights after zero entries are discarded. There are finitely many possible fixed basis inverses, so their rational linear maps give O(k) weight bitlength and also O(ell_k) plus fixed overhead under the inherited invertible rational original-profile compiler. No bound on the bank, its overhead or the eventual index is claimed executed.
+
+The diagonal matrix has entries strictly between zero and one, so it is stable and substochastic; the positive weights sum to one and absorption is proper. It matches all six sparse coordinates with one tuple. The sum w_j/(z-x_j) is the associated survival-sequence transfer function; the absorption-mass generating function uses the additional exit factor. This convention does not affect the result. Such a mixture/DPH representation is not a Bernoulli-product source witness and cannot contradict the all-rival native count lower bound.
+
+This review focuses on Sections 1–2 and their practical inference, as requested. The retained Sections 3–4 preserve the already screened supplied-transform/supplied-law contracts; I did not perform a second full audit of all those external papers. The new statement does not import them into original G3. Exact all-core source scope and the exponential native lower bound remain those of the independently reviewed main theorem, not consequences of quadrature or phase-type theory.
