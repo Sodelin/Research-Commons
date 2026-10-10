@@ -68,3 +68,16 @@ The additive Linux/glibc `connectedQualified` reproduction configuration has pas
 The separately checked [G6 completed-cell/TV packet](https://github.com/Sodelin/Research-Commons/blob/de3011fa352e04f9be64cf9f4da8a5528cad68db/research/2026-10-10-dot-g6-completed-cell-tv-0258z/README.md) is now verified on main. Later candidate checks remain outside the frozen 53-profile graph. General theorem-scope and novelty limits are unchanged; this is an execution/delivery update, not a new full-scope claim.
 
 A separate three-source G6 protected-bin, guard-erasure and unranked-continuation chain also passed its 319-module aggregate and full owned audit: 6,386 declarations and 4,214 theorem declarations, with zero owned axioms, nonstandard-axiom rows or missing modules. Its final run used one fresh component and 318 authenticated cache admissions, followed by fresh aggregate/audit checks. The exact source repairs added no assumptions. Final receipt SHA256: `108f9802164c0f861ee9658c5d281812eefbe6b252828c0f6de3d031b6db05c0`. This scoped component remains outside the frozen 53-profile release and does not establish positive compression or the full G6 master theorem; its separate packet is being prepared.
+
+
+## 2026-10-10 09:21 UTC — integration priority and next G6 obligation
+
+The existing four-lane, integration-first allocation and sole-compiler ownership are retained. Reuse the checked old-bin readers, suffix-erasure results and finite-history providers rather than rebuilding those components.
+
+The next G6 obligation is complete forest epoch-law equality derived from physical exposure and a mixture over one original COMMON routing bit. INDEP and COMMON retain their distinct quantitative bounds. Positive realization by an admissible original biological source remains a separate required step; an abstract kernel identity or a combinatorial rewrite does not supply it.
+
+The protected-bin/erasure/unranked-continuation component and the frozen 53-profile build establish their recorded scoped statements and verification boundaries. Neither closes a master G theorem. No full-scope statement or hypothesis has been weakened by this scheduling decision.
+
+The full modular source-package upload remains held after its specific cancelled tree action, pending renewed approval. Compilation is safely paused at the disk boundary. Existing proofs, unsuccessful attempts and successful certificates are preserved.
+
+The separate [G6 protected-bin bridge packet](https://github.com/Sodelin/Research-Commons/blob/2e625f740c18d18742cbfa2eed63a6a98a43a697/research/2026-10-10-dot-g6-protected-bin-bridge-0912z/README.md) is now published and verified on main. It retains the preceding component/certificate boundaries and does not change the next G6 obligations above.
