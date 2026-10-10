@@ -1,0 +1,35 @@
+{
+  "accepted_fixture_claimed": false,
+  "errors": [],
+  "failures": [
+    {
+      "bytes": 6719,
+      "counts": {},
+      "path": "lean/ORIGINAL-CALENDAR-4993-TMP-PREFLIGHT-FAILED-RESULT.json",
+      "preserved_artifacts": 22,
+      "sha256": "b5cdfefdf5f9903755131d3b00d24888d9a6f6d87fd2b45e34cdc2345e8b646f",
+      "targets_passed": []
+    },
+    {
+      "bytes": 8083,
+      "counts": {
+        "cache_reuse": 396
+      },
+      "path": "lean/ORIGINAL-CALENDAR-4993-FAILED-RESULT.json",
+      "preserved_artifacts": 27,
+      "sha256": "ff5b4b433d6c1374f0ee787b7e13a97baacd6387722f18db0c7e9062203cd57a",
+      "targets_passed": []
+    }
+  ],
+  "master_complete": false,
+  "new_compiler_or_native_execution": false,
+  "observed_utc": "2026-10-10T16:08:07.613127+00:00",
+  "pass": true,
+  "review": "Static source review: transport uses hard links ordinarily; only EXDEV permits copy2, with complete companion bundles verified before and after. Strict source/module guards, compiler flags and core are retained. Actual failed Lean run demonstrates transport proceeded but is not an accepted fixture or evaluator run.",
+  "schema": "calendar_fixture_storage_and_failed_evidence_review_v1",
+  "source": {
+    "bytes": 10257,
+    "path": "lean/scripts/prepare_funext_copy_overlay_context.py",
+    "sha256": "6bb8c78cda181f5879fe48c5d135f79b94ced4eeca6311664f40323b8caea504"
+  }
+}

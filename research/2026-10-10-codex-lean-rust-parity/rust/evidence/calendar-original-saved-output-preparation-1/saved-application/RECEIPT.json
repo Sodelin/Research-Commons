@@ -1,0 +1,435 @@
+{
+  "Lean_execution": false,
+  "all_input_and_source_identities_stable": true,
+  "binary": "/workspace/scratch/lean-rust-parity-native/runtime/calendar-cli-artifact-1/calendar-solver",
+  "binary_sha256": "580bab497f2f2963ec938891e69d1cbdcf443b1c2dea694e548817b14fbebd05",
+  "broader_suites_rerun": false,
+  "captured_reference_sha256": "27495813e160bc58fa69e803c8fb960f8e8cc40ec96a24847ad730901cd5a89c",
+  "cases": [
+    {
+      "application_result_sha256": "22cc483a56c78fe6da92e08751adbaa627925c3170ab128aa58bd028c4d90975",
+      "component_result_sha256": "6de7c85d22ea1035fca910d224c4c08a22c5d5e73d536ba8dc5e9847c692b70a",
+      "fixture": "twoTipCalendar",
+      "fresh_auditor_helper_checked": true,
+      "full_original_register_retained": true,
+      "full_view_rows": 2,
+      "independent_reference_called": true,
+      "native_executions": {
+        "checker_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/component/native/calendar-solver",
+            "check",
+            "--request",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/REQUEST.json",
+            "--certificate",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/TABLE.json"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 56,
+          "stdout_sha256": "6db11734dacf05856df805178a9db51428ae37b29890ba286cdfcb3c30d71ce1",
+          "timed_out": false,
+          "wall_seconds": 0.0018614470027387142,
+          "wall_timeout_seconds": 45
+        },
+        "reference_checker_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-I",
+            "-B",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/component/native/calendar_check.py",
+            "--request",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/REQUEST.json",
+            "--certificate",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/TABLE.json",
+            "--exit-code",
+            "0"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 849,
+          "stdout_sha256": "9e087548cfadea50bb40e8b8fb7a41ac4356fd1220cad5f9abc5379d409585a6",
+          "timed_out": false,
+          "wall_seconds": 0.06437990400081617,
+          "wall_timeout_seconds": 45
+        },
+        "solver_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar/component/component/native/calendar-solver",
+            "solve"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 3004,
+          "stdout_sha256": "6064705e90fc9427d9a3a176698151ff757045dc08d480100d71006bd897b6a1",
+          "timed_out": false,
+          "wall_seconds": 0.002304707002622308,
+          "wall_timeout_seconds": 45
+        }
+      },
+      "native_replay_called": true,
+      "native_solver_called": true,
+      "origin_request": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/twoTipCalendar.request.json",
+      "original_ancestral_location_checked": true,
+      "outer_execution": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "/workspace/Research-Commons/applications/practical-solver/run.py",
+          "calendar-law",
+          "--request",
+          "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/inputs/twoTipCalendar.request.json",
+          "--native-binary",
+          "/workspace/scratch/lean-rust-parity-native/runtime/calendar-cli-artifact-1/calendar-solver",
+          "--expected-binary-sha256",
+          "580bab497f2f2963ec938891e69d1cbdcf443b1c2dea694e548817b14fbebd05",
+          "--output",
+          "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/twoTipCalendar"
+        ],
+        "exit_code": 0,
+        "process_started": true,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "1e0d0be132b54561fa8a6984302d0d8e7788313fac54317da84b3819c4732fdb",
+        "timed_out": false,
+        "wall_seconds": 0.20105935399988084
+      },
+      "request_sha256": "42eb6a95c160825cb19da7945bd025cb2e31e8a2d43aaab4fe1c87a0d4c64dbf",
+      "status": "PASS",
+      "table_sha256": "6064705e90fc9427d9a3a176698151ff757045dc08d480100d71006bd897b6a1",
+      "terminal": "ANCESTRAL_COMPLETE",
+      "terms": 2
+    },
+    {
+      "application_result_sha256": "1f056494afc94696fc8af32766aaab315f6aee6c4f99be01df1ea3fff6ec4c86",
+      "component_result_sha256": "4b1d918ccbbff41c6b8c222486f46ef9244ca48ae8cf5bbc18b9e01af1db5f9d",
+      "fixture": "serialNegativeTips",
+      "fresh_auditor_helper_checked": true,
+      "full_original_register_retained": true,
+      "full_view_rows": 12,
+      "independent_reference_called": true,
+      "native_executions": {
+        "checker_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/component/native/calendar-solver",
+            "check",
+            "--request",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/REQUEST.json",
+            "--certificate",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/TABLE.json"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 56,
+          "stdout_sha256": "6db11734dacf05856df805178a9db51428ae37b29890ba286cdfcb3c30d71ce1",
+          "timed_out": false,
+          "wall_seconds": 0.003951564998715185,
+          "wall_timeout_seconds": 45
+        },
+        "reference_checker_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-I",
+            "-B",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/component/native/calendar_check.py",
+            "--request",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/REQUEST.json",
+            "--certificate",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/TABLE.json",
+            "--exit-code",
+            "0"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 852,
+          "stdout_sha256": "243ca257a2d74740964289d6a60ecba414b415b8f0b81da159f618cf329355ae",
+          "timed_out": false,
+          "wall_seconds": 0.06416443299895036,
+          "wall_timeout_seconds": 45
+        },
+        "solver_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips/component/component/native/calendar-solver",
+            "solve"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 6679,
+          "stdout_sha256": "4f078ab80f06b82006d3a287258125def9eb135431fa3830132b0a0c3499fbcb",
+          "timed_out": false,
+          "wall_seconds": 0.004522284001723165,
+          "wall_timeout_seconds": 45
+        }
+      },
+      "native_replay_called": true,
+      "native_solver_called": true,
+      "origin_request": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/serialNegativeTips.request.json",
+      "original_ancestral_location_checked": true,
+      "outer_execution": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "/workspace/Research-Commons/applications/practical-solver/run.py",
+          "calendar-law",
+          "--request",
+          "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/inputs/serialNegativeTips.request.json",
+          "--native-binary",
+          "/workspace/scratch/lean-rust-parity-native/runtime/calendar-cli-artifact-1/calendar-solver",
+          "--expected-binary-sha256",
+          "580bab497f2f2963ec938891e69d1cbdcf443b1c2dea694e548817b14fbebd05",
+          "--output",
+          "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/serialNegativeTips"
+        ],
+        "exit_code": 0,
+        "process_started": true,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "f7d6b766bb313b0b52b35aef3e0f6c26c969af0de401192ef0fcaa584b73b07c",
+        "timed_out": false,
+        "wall_seconds": 0.19937667900012457
+      },
+      "request_sha256": "435c41549a96c529ce7545480d2f52bef9e2280ce01b64523e5f0a62944a11db",
+      "status": "PASS",
+      "table_sha256": "4f078ab80f06b82006d3a287258125def9eb135431fa3830132b0a0c3499fbcb",
+      "terminal": "ANCESTRAL_COMPLETE",
+      "terms": 16
+    },
+    {
+      "application_result_sha256": "81200cb6d576c6cbd4d8abc82c87a9ea8104511bf7c8105cdfac3f437c42bd71",
+      "component_result_sha256": "455d6eabd0ca515c205f31f1141499177c6fe6759f2638b8e32dfbf1353b12fb",
+      "fixture": "parallelCommonCalendar",
+      "fresh_auditor_helper_checked": true,
+      "full_original_register_retained": true,
+      "full_view_rows": 24,
+      "independent_reference_called": true,
+      "native_executions": {
+        "checker_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/component/native/calendar-solver",
+            "check",
+            "--request",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/REQUEST.json",
+            "--certificate",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/TABLE.json"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 56,
+          "stdout_sha256": "6db11734dacf05856df805178a9db51428ae37b29890ba286cdfcb3c30d71ce1",
+          "timed_out": false,
+          "wall_seconds": 0.008170777997293044,
+          "wall_timeout_seconds": 45
+        },
+        "reference_checker_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "-I",
+            "-B",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/component/native/calendar_check.py",
+            "--request",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/REQUEST.json",
+            "--certificate",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/TABLE.json",
+            "--exit-code",
+            "0"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 852,
+          "stdout_sha256": "3a3893a1a15d13a56ba3d2c2198868bb089558b08aa9aeb9fd29d288548a4f63",
+          "timed_out": false,
+          "wall_seconds": 0.11486349699771381,
+          "wall_timeout_seconds": 45
+        },
+        "solver_execution": {
+          "address_space_bytes": 536870912,
+          "command": [
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar/component/component/native/calendar-solver",
+            "solve"
+          ],
+          "cpu_limit_seconds": 30,
+          "ended_utc": "2026-10-10T15:41:58Z",
+          "exit_code": 0,
+          "per_file_bytes": 16777216,
+          "process_started": true,
+          "schema": "native_affine_execution_v1",
+          "started_utc": "2026-10-10T15:41:58Z",
+          "stderr_bytes": 0,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_bytes": 14187,
+          "stdout_sha256": "44a9c4ca0bfd0156ee2192a0adb4112572b43ccd729b4081aef57317106c2850",
+          "timed_out": false,
+          "wall_seconds": 0.009104216002015164,
+          "wall_timeout_seconds": 45
+        }
+      },
+      "native_replay_called": true,
+      "native_solver_called": true,
+      "origin_request": "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-original-input-freeze-1/parallelCommonCalendar.request.json",
+      "original_ancestral_location_checked": true,
+      "outer_execution": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "/workspace/Research-Commons/applications/practical-solver/run.py",
+          "calendar-law",
+          "--request",
+          "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/inputs/parallelCommonCalendar.request.json",
+          "--native-binary",
+          "/workspace/scratch/lean-rust-parity-native/runtime/calendar-cli-artifact-1/calendar-solver",
+          "--expected-binary-sha256",
+          "580bab497f2f2963ec938891e69d1cbdcf443b1c2dea694e548817b14fbebd05",
+          "--output",
+          "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/calendar-completed-application-1/cases/parallelCommonCalendar"
+        ],
+        "exit_code": 0,
+        "process_started": true,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "f2a1437e97d92d3ab08a8fa2773e0e17698a53fd5c580abc2a9ea6696e0f0614",
+        "timed_out": false,
+        "wall_seconds": 0.2500824269991426
+      },
+      "request_sha256": "f4c9784938ede6f83c294b037018dac38392e80b91d33d2544b5c9660f334076",
+      "status": "PASS",
+      "table_sha256": "44a9c4ca0bfd0156ee2192a0adb4112572b43ccd729b4081aef57317106c2850",
+      "terminal": "ANCESTRAL_COMPLETE",
+      "terms": 48
+    }
+  ],
+  "cases_passed": 3,
+  "certificate_valid": false,
+  "ended_utc": "2026-10-10T15:41:58Z",
+  "full_solver_verified": false,
+  "full_view_rows": 38,
+  "guards": [
+    {
+      "path": "applications/practical-solver/run.py",
+      "sha256": "8c00f261d180452daa094b87f50a788b862efe7c0c5b0e2e133e44bb269352a7"
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/native_calendar_component.py",
+      "sha256": "9de9c1bf056a7b0d40900b33ebd3d29f12b2efacab61e90f9ab5b633a86f0db6"
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/calendar_check.py",
+      "sha256": "6190bcd125c51d2e133b571ecc9fe08298fe5a731dc6536459f66446f0ae29bb"
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/CALENDAR-COMPONENT-PINS.json",
+      "sha256": "23751b40d609fce76ae82c0d921e81e74669a0dd0fe9b7da72f436ce92a99800"
+    }
+  ],
+  "harness_sha256": "cc231546e68cb8ae61ed0a8a73a89dbc34de819b17f033d07098679b2a50ae86",
+  "input_inventory_sha256": "4d39a2d825686e135dc727dd9a705320af0c5b54c4c65d7251c28f42ddb5c2ba",
+  "native_completion_execution": true,
+  "original_calendar_phase_PMF_correspondence_checked": false,
+  "reference_sources": [
+    {
+      "module": "certificate_check",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py",
+      "sha256": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24"
+    },
+    {
+      "module": "chart_check",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/chart_check.py",
+      "sha256": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a"
+    },
+    {
+      "module": "population_oracle",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py",
+      "sha256": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff"
+    },
+    {
+      "module": "epoch_oracle",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py",
+      "sha256": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd"
+    },
+    {
+      "module": "boundary_oracle",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py",
+      "sha256": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29"
+    },
+    {
+      "module": "source_word_oracle",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py",
+      "sha256": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102"
+    },
+    {
+      "module": "source_calendar_oracle",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/source_calendar_oracle.py",
+      "sha256": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c"
+    },
+    {
+      "module": "calendar_check",
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/calendar_check.py",
+      "sha256": "6190bcd125c51d2e133b571ecc9fe08298fe5a731dc6536459f66446f0ae29bb"
+    }
+  ],
+  "schema": "completed_calendar_application_review_v1",
+  "scope": "Exactly three supplied completed-calendar forward tables through the current application. Full coefficients, views, witnesses, registers, agenda and physical substitutions independently checked by the captured existing spectral/copy helper. Original-calendar phase PMF/code correspondence and universal native refinement remain separate.",
+  "source_admission_verified": false,
+  "started_utc": "2026-10-10T15:41:58Z",
+  "status": "PASS"
+}

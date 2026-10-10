@@ -1,0 +1,78 @@
+{
+  "Lean_execution_review": {
+    "bytes": 1518,
+    "sha256": "4325155f50a4fd17564cba7ac393dd1e80b8e0f21ac960a72cbd240ef436926d"
+  },
+  "Rust_application_receipt": {
+    "bytes": 22326,
+    "sha256": "a8b95013a5a8b2dd9f07c97ef8ea3b5db1a58272380e1f733f9383296c4cd578"
+  },
+  "cases": [
+    {
+      "canonical_mathematical_payload_sha256": "a60fd592f6bb6e89b8fc191cb1e48cb81444b33ac3fef0fbcc67034d8147d86d",
+      "fixture": "twoTipCalendar",
+      "full_views": 2,
+      "literal_witness_validation": {
+        "Lean_native_work_counters_inferred": false,
+        "full_view_rows": 2,
+        "literal_support_states": 2,
+        "status": "PASS",
+        "terms": 2
+      },
+      "pass": true,
+      "terms": 2
+    },
+    {
+      "canonical_mathematical_payload_sha256": "ff3d30fc70421d757823bcd906210c8af9f4cea52e9382bc611b778a6c0f1297",
+      "fixture": "serialNegativeTips",
+      "full_views": 12,
+      "literal_witness_validation": {
+        "Lean_native_work_counters_inferred": false,
+        "full_view_rows": 12,
+        "literal_support_states": 12,
+        "status": "PASS",
+        "terms": 16
+      },
+      "pass": true,
+      "terms": 16
+    },
+    {
+      "canonical_mathematical_payload_sha256": "380ce8905de79d46e40e930a317ed3586660cc4683c346be115479b67fda5920",
+      "fixture": "parallelCommonCalendar",
+      "full_views": 24,
+      "literal_witness_validation": {
+        "Lean_native_work_counters_inferred": false,
+        "full_view_rows": 24,
+        "literal_support_states": 24,
+        "status": "PASS",
+        "terms": 48
+      },
+      "pass": true,
+      "terms": 48
+    }
+  ],
+  "checks": {
+    "independent_review_complete": true,
+    "no_unneeded_native_rerun": true,
+    "root_proof_and_actual_execution": true,
+    "same_actual_Lean_receipt": true,
+    "same_saved_Rust_execution": true,
+    "scope_preserved": true,
+    "whole_canonical_tables": true
+  },
+  "errors": [],
+  "independent_review": {
+    "bytes": 282329,
+    "sha256": "72a1a8446a81bb43d95cca0c2e8368686c4de618648fbcdbe583f5f948eeeed3"
+  },
+  "master_complete": false,
+  "observed_utc": "2026-10-10T16:37:14.516632+00:00",
+  "pass": true,
+  "reviewer": {
+    "bytes": 6312,
+    "sha256": "9094a27726ec445630791000789cd5b6b1ae751d07947247480b45392202ec03"
+  },
+  "schema": "completed_literal_word_actual_Lean_saved_Rust_root_review_v1",
+  "scope": "Three original completed literal-word Lean evaluations match earlier actual Rust calendar/completion outputs at all38 ordered full views and66 terms. Canonical mathematical table payloads agree byte-for-byte after explicit normalization; whole producer envelopes and witness choices are not asserted identical. Witnesses are independently checked. Specific finite calendar phase/physical composition, generic parser/encoder refinement and source admission remain separate. No solver rerun here.",
+  "source_admission_verified": false
+}

@@ -118,3 +118,27 @@ The [08:02 PDT](DISCOVERY-DELTA-20261010T1502Z.md) and
 G3/G4 conclusions with their old providers and assumptions. The corrected G3
 partition is separately kernel checked; critical-presentation finiteness remains
 a scoped hand result and does not calculate a complete source census.
+
+
+## 09:42 PDT integration supplement
+
+The [coherent1,463-module review](../quality/COHERENT-UNION-REVIEW.json) now joins
+the accepted G6 generator/compression and G7 phase/raw-root contexts without
+source/import conflicts. Components are authenticated earlier checks; aggregate
+and complete ownership audit are fresh. The earlier1,433 baseline remains intact.
+
+[Actual original completed literal-word comparison](../quality/CALENDAR-FIXTURE-REVIEW.json)
+passes three Lean/Rust calendars at38 full views/66 terms, with canonical full
+mathematical payload and independent literal-witness agreement. Concrete phase
+permutations and complete physical calendar PMF composition remain separate.
+The older generic phase/root proofs supply the intended premises; no alternate
+calendar or population engine was added.
+
+The [new extractor audit](../reuse/G6-LEGAL-FACTOR-EXTRACTOR-AUDIT-20261010T1618Z.md)
+authenticates32 old/new provider identities. October's existing geometric moment
+reducer has the required common mass/levels3..M moments; September's probability
+moment reducer has different coordinates and is not substituted. A bounded
+private Rust port and executable rational certificate consumer are being checked.
+Old positive-baseline factors and newest retained-node hand reconstruction are
+retained as distinct providers. Native parsing/RREF refinement, arbitrary real
+weights and positive physical source-factor realization remain separate.

@@ -35,26 +35,59 @@ def parallelAge (v : Fin 5) : Rat :=
 noncomputable def twoTipCalendar : Calendar N2.graph where
   age v := twoTipAge v
   edge_older e := by
-    fin_cases e <;> norm_num [twoTipAge,N2,OriginalBoundaryFixture.N2,
-      OriginalEpochFixture.N,UnifiedLean.G6.TwoTipChartFixture.source,
-      UnifiedLean.G6.TwoTipChartFixture.graph]
+    have h0 : twoTipAge 0 = 2 := by decide
+    have h1 : twoTipAge 1 = 0 := by decide
+    have h2 : twoTipAge 2 = 0 := by decide
+    fin_cases e
+    · change ((twoTipAge 1 : Rat) : ℝ) < ((twoTipAge 0 : Rat) : ℝ)
+      rw [h1,h0]
+      norm_num
+    · change ((twoTipAge 2 : Rat) : ℝ) < ((twoTipAge 0 : Rat) : ℝ)
+      rw [h2,h0]
+      norm_num
 
 noncomputable def serialCalendar : Calendar N2.graph where
   age v := serialAge v
   edge_older e := by
-    fin_cases e <;> norm_num [serialAge,N2,OriginalBoundaryFixture.N2,
-      OriginalEpochFixture.N,UnifiedLean.G6.TwoTipChartFixture.source,
-      UnifiedLean.G6.TwoTipChartFixture.graph]
+    have h0 : serialAge 0 = 3 / 2 := by
+      rw [serialAge,if_pos rfl]
+    have h1 : serialAge 1 = -3 / 2 := by
+      rw [serialAge,if_neg (show (1 : Fin 3) ≠ 0 by decide),if_pos rfl]
+    have h2 : serialAge 2 = 1 / 4 := by
+      rw [serialAge,if_neg (show (2 : Fin 3) ≠ 0 by decide),
+        if_neg (show (2 : Fin 3) ≠ 1 by decide)]
+    fin_cases e
+    · change ((serialAge 1 : Rat) : ℝ) < ((serialAge 0 : Rat) : ℝ)
+      rw [h1,h0]
+      norm_num
+    · change ((serialAge 2 : Rat) : ℝ) < ((serialAge 0 : Rat) : ℝ)
+      rw [h2,h0]
+      norm_num
 
 noncomputable def parallelCalendar : Calendar NP.graph where
   age v := parallelAge v
   edge_older e := by
+    have h0 : parallelAge 0 = 3 := by decide
+    have h1 : parallelAge 1 = 0 := by decide
+    have h2 : parallelAge 2 = 2 := by decide
+    have h3 : parallelAge 3 = 1 := by decide
+    have h4 : parallelAge 4 = 0 := by decide
     fin_cases e
-    · change (0 : ℝ) < 3; norm_num
-    · change (2 : ℝ) < 3; norm_num
-    · change (1 : ℝ) < 2; norm_num
-    · change (1 : ℝ) < 2; norm_num
-    · change (0 : ℝ) < 1; norm_num
+    · change ((parallelAge 1 : Rat) : ℝ) < ((parallelAge 0 : Rat) : ℝ)
+      rw [h1,h0]
+      norm_num
+    · change ((parallelAge 2 : Rat) : ℝ) < ((parallelAge 0 : Rat) : ℝ)
+      rw [h2,h0]
+      norm_num
+    · change ((parallelAge 3 : Rat) : ℝ) < ((parallelAge 2 : Rat) : ℝ)
+      rw [h3,h2]
+      norm_num
+    · change ((parallelAge 3 : Rat) : ℝ) < ((parallelAge 2 : Rat) : ℝ)
+      rw [h3,h2]
+      norm_num
+    · change ((parallelAge 4 : Rat) : ℝ) < ((parallelAge 3 : Rat) : ℝ)
+      rw [h4,h3]
+      norm_num
 
 def twoTipWord : List (Symbol (Fin 1) (Fin 3) (Fin 2)) :=
   [.enter 1,.enter 2,.interval 0,.exit 0,.exit 1,.enter 0]
