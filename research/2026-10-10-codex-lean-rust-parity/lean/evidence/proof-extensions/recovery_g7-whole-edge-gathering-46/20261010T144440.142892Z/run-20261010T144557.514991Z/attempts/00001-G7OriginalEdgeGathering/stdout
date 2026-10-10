@@ -1,0 +1,145 @@
+G7OriginalEdgeGathering.lean:54:35: error: Application type mismatch: The argument
+  bankGenerator_commute N w z
+has type
+  @Commute (Matrix (Code N ?m.69) (Code N ?m.69) ℝ) instMulOfFintypeOfAddCommMonoid (bankGenerator N w)
+    (bankGenerator N z)
+but is expected to have type
+  @Commute ?m.52 instDistribOfSemiring.toMul ?m.56 ?m.57
+in the application
+  NormedSpace.exp_add_of_commute (bankGenerator_commute N w z)
+G7OriginalEdgeGathering.lean:52:92: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+w z : ExposureBank E
+⊢ exp (bankGenerator N w + bankGenerator N z) = exp (bankGenerator N w) * exp (bankGenerator N z)
+G7OriginalEdgeGathering.lean:60:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeGathering.retain_split`:
+  [DecidableEq E]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeGathering.lean:186:100: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+register : V → Bool
+i : Option E
+⊢ (1 / 2) • (initialRow N sample register * ∑ p, (pairMatrix N i p - 1)) = 0
+G7OriginalEdgeGathering.lean:187:49: warning: This simp argument is unused:
+  Finset.mul_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Matrix.mul_sub, initial_absorbs_pair, Matrix.mul_one,
+    sub_self, Finset.sum_const_zero, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:187:64: warning: This simp argument is unused:
+  Matrix.mul_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Finset.mul_sum, initial_absorbs_pair, Matrix.mul_one,
+    sub_self, Finset.sum_const_zero, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:188:4: warning: This simp argument is unused:
+  initial_absorbs_pair
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Finset.mul_sum, Matrix.mul_sub, Matrix.mul_one, sub_self,
+    Finset.sum_const_zero, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:188:25: warning: This simp argument is unused:
+  Matrix.mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Finset.mul_sum, Matrix.mul_sub, initial_absorbs_pair,
+    sub_self, Finset.sum_const_zero, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:188:40: warning: This simp argument is unused:
+  sub_self
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Finset.mul_sum, Matrix.mul_sub, initial_absorbs_pair,
+    Matrix.mul_one, Finset.sum_const_zero, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:188:49: warning: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Finset.mul_sum, Matrix.mul_sub, initial_absorbs_pair,
+    Matrix.mul_one, sub_self, smul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:188:71: warning: This simp argument is unused:
+  smul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [populationGenerator, Matrix.mul_smul, Finset.mul_sum, Matrix.mul_sub, initial_absorbs_pair,
+    Matrix.mul_one, sub_self, Finset.sum_const_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:193:85: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+register : V → Bool
+w : ExposureBank E
+⊢ initialRow N sample register *
+      (w none • populationGenerator N none + ∑ i, w (some i) • populationGenerator N (some i)) =
+    0
+G7OriginalEdgeGathering.lean:194:24: warning: This simp argument is unused:
+  Finset.mul_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bankGenerator, Matrix.mul_smul, initial_annihilates_population]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:194:39: warning: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bankGenerator, Finset.mul_sum, initial_annihilates_population]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:194:55: warning: This simp argument is unused:
+  initial_annihilates_population
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [bankGenerator, Finset.mul_sum, Matrix.mul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

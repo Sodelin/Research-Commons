@@ -9,10 +9,10 @@ The [goal sheet](GOAL-STATUS.md) preserves completed original G1/G2/binary M3 G5
 | Obligation | What can already be reused | What remains |
 |---|---|---|
 | G6 population exposure | New `G6OriginalPopulationExposure` composes the unchanged original G7 population kernel: equal rate×duration gives equal full retained-state laws, including arbitrary correlated entering priors and deterministic readers. Complete 88-module audit passes. | Transport across different graph/population carriers and observations retaining internal merger times needs additional adapters. |
-| G6 generator coordinates | New `G6OriginalPopulationSpectralSupport` proves every listed original kernel exponent is choose(j,2), with j no greater than the entering live count; excluded coefficients are zero. Complete 88-module audit passes. This discharges the sharper-support gap explicitly listed in DOT's quantitative assembly. | Count-conditioned forest weights/norms, positive generator compression, one-bank graph reconstruction and the global joint-bin approximation consumer remain. |
+| G6 generator coordinates | New `G6OriginalPopulationSpectralSupport` proves every listed original kernel exponent is choose(j,2), with j no greater than the entering live count; excluded coefficients are zero. Complete 88-module audit passes. This discharges the sharper-support gap explicitly listed in DOT's quantitative assembly. | The original generator/remainder93 and positive generator compression95 audits now pass separately. Sharper count-conditioned constants, executable atom extraction, one-bank source reconstruction and the global joint-bin approximation consumer remain. |
 | G6 numerical and adaptive transport | Older exact rational cutoff, normalized row-error/finite-trace composition, midpoint-grid TV and actual adaptive retained-mass budget providers already exist and have accepted contexts. | Bind their rows, budgets and observations to the reconstructed source; assemble witness-returning clouds and robust-fibre confidence inversion. They do not promise stopping at ambiguous fibres. |
 | G7 full-epoch coefficients | Repaired original coefficient statements, constructive literal panel joins and selected support are checked. New `G7FullEpochSupport` proves the sparse product equals the unchanged original whole-epoch polynomial; complete 124-module audit passes. | All nine original Lean/Rust/reference epoch execution contexts now pass separately. General Rust support/encoding refinement remains open. |
-| G7 operation words and histories | Existing original initialization/boundary/completed-calendar polynomials and actual source-program/adaptive projection already preserve one source, original occurrence IDs and the entire register. | Sparse boundary133, initialization135, chosen epoch139, concrete node141 and finite word150 audits now pass. Actual original Lean/Rust finite words pass9/39; generic completion140 also passes. Generated-calendar endpoint support, general native refinement and source/physical admission remain explicit. |
+| G7 operation words and histories | Existing original initialization/boundary/completed-calendar polynomials and actual source-program/adaptive projection already preserve one source, original occurrence IDs and the entire register. | Sparse boundary133, initialization135, chosen epoch139, concrete node141 and finite word150 audits now pass. Actual original Lean/Rust finite words pass9/39; generic completion140 also passes. Generated-calendar every-raw-endpoint root support now passes a170-module audit and supplies the166-module completed-word premise. Universal native parser/phase/slot/encoder refinement and source/physical admission remain separate. |
 | G7 resource/rank game | Existing compatible exact-law response, affine-rank, original-family and carrier proofs supply the intended semantic argument. The full compatible191-module semantic context now passes its complete ownership audit, including all five resource/response/rank/family/carrier roots. | Effective winning syntax, complete real QE, legal action/lower-witness selection, Pareto extraction and cofacial source-census admission still lack complete compatible formal consumers in the inspected corpus. |
 
 The [saved proof review](../quality/PROOF-EXTENSION-REVIEW.json) independently
@@ -82,8 +82,39 @@ equal-arm words. These results strengthen scoped providers but do not close
 general G6 reconstruction or G7 source census/QE/optimal-policy assembly.
 
 [Conditional completed-word review](../quality/COMPLETED-WORD-REVIEW.json)
-passes the166-module source audit, with explicit nonempty-copy, positive-bank
-and EVERY raw endpoint row ancestral-root premises. Native nonzero selected
-rows and a physical positive-PMF support theorem do not supply that raw-list
-premise. The next calendar adapter must prove structural raw support or an
-explicit zero-filter polynomial refinement.
+passes the166-module source audit. The new
+[raw-calendar root review](../quality/RAW-CALENDAR-ROOT-REVIEW.json) supplies its
+EVERY raw endpoint ancestral-root premise for naturally initialized generated
+calendars, including coefficient-zero rows. Nonempty copies, original singleton
+tips, positive original rates and SameOrder remain explicit. The independent
+170-module audit proves structural raw support rather than silently dropping
+zero-polynomial rows. Universal native parser/date/phase/slot/encoder refinement
+remains open.
+
+The existing calendar/word/completion Rust providers are now composed in the
+public `calendar-law` application. [Root acceptance](../quality/CALENDAR-APPLICATION-REVIEW.json)
+binds the general frontend, independent34-input/259-view coefficient checks,
+18 adapter plus6 independent controls, and14 current launcher checks plus4
+lifecycle/request-binding controls. Old unchanged RC1 exact117 evidence remains
+separate. These are finite execution checks, not full source admission or an
+automatic proof of Rust from the Lean theorem.
+
+The G6 generator/remainder adapter now passes its93-module complete kernel
+and ownership audit; [root saved review](../quality/G6-GENERATOR-REVIEW.json)
+authenticates31 artifacts. It consumes the accepted original recurrence,
+coefficient mass and scalar-power bounds for the full original row. Positive
+compression now also passes its95-module full audit;
+[root saved review](../quality/G6-COMPRESSION-REVIEW.json) authenticates38
+artifacts. It consumes the identity-at-one result, spectral support and original
+Mathlib Caratheodory to choose one positive original atom list before every
+source/sample/state/population row. Real-weight existence remains noncomputable;
+this does not implement a Rust extractor or construct legal source factors. The [assembly contract](G6-SOURCE-GENERATOR-ASSEMBLY-20261010T1443Z.md)
+keeps row-L1/TV, original ordered half-rates, total positive weight and the
+one-common-atom-list requirements explicit. Positive source reconstruction,
+cloud/confidence and complete G7 policy assembly are separate consumers.
+
+The [08:02 PDT](DISCOVERY-DELTA-20261010T1502Z.md) and
+[08:21 PDT](DISCOVERY-DELTA-20261010T1521Z.md) research supplements record new
+G3/G4 conclusions with their old providers and assumptions. The corrected G3
+partition is separately kernel checked; critical-presentation finiteness remains
+a scoped hand result and does not calculate a complete source census.

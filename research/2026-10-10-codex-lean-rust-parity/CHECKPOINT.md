@@ -1,102 +1,121 @@
 # Continuation checkpoint
 
-Codex coordinator, 10 October 2026, 07:44 PDT. **MASTER IN PROGRESS.** This is a dated observation;
-it does not promise that workers remain active after the chat ends. Earlier
-[13:48 UTC checkpoint](quality/evidence/continuation-checkpoint-1348.md) and
-previous dated checkpoints remain preserved. The
-[one-page brief](design/RESEARCH-BRIEF.md) is the short entry point.
+Codex coordinator, 10 October 2026, 08:52 PDT. **MASTER IN PROGRESS.** This is a
+dated observation. The [preceding checkpoint](quality/evidence/status-before-calendar-application-20261010T1536Z/CHECKPOINT.md)
+and earlier evidence remain preserved. The [one-page brief](design/RESEARCH-BRIEF.md)
+is the short entry point.
 
 ## Current checked state
 
-Original G1, binary full-timed G2 and binary M3 G5 remain complete at their
+Original G1, full-timed G2 and binary M3 G5 remain complete at their
 [declared Lean contracts](design/GOAL-STATUS.md). Full G6/G7 formal and practical
-assembly remains incomplete. Latest1,433-module union retains authenticated
-prior component checks and a fresh complete aggregate/ownership audit:
+assembly remains incomplete. The accepted 1,433-module union retains earlier
+exact-context component checks and a fresh complete aggregate/ownership audit:
 98,330 declarations/90,253 theorem declarations, no owned/nonstandard axioms or
-missing modules. Earlier all-fresh1,340, canonical53-context policy/retry and
-all preserved failures are unchanged; overlapping counts are not added.
+missing modules. Earlier all-fresh 1,340 and canonical policy/retry evidence
+remain unchanged. Overlapping module and theorem counts are not added.
 
-New source bridges pass separate complete audits: natural initialization135,
-chosen single-epoch139, generic sparse-word composition138, concrete node141
-and concrete finite word150 modules. The concrete word supplies actual old
-providers for every generic step and draws the natural original register once.
-[Root review](quality/WORD-BRIDGES-REVIEW.json) authenticates190 preserved
-artifacts. Single-epoch polynomial uniqueness does not imply independence of
-physical coordinates shared across multiple intervals.
+**The supplied-calendar Rust pipeline is integrated into the application.**
+`calendar-law` accepts an original-ID graph, copied samples, rational dates and
+one shared physical bank, composes the existing epoch/boundary/word/completion
+providers, and independently checks every ordered genealogy-state coefficient,
+agenda and symbolic physical substitution. The separate general frontend passes
+11 Rust tests and independent 34-input/259-view review, plus 21 parser,
+four semantic and three native replay controls. The adapter passes 18 own and
+six independent controls. The current launcher passes 12 fresh functional cases,
+two outer input controls and four focused process-lifecycle/request-binding
+controls. [Root application review](quality/CALENDAR-APPLICATION-REVIEW.json)
+binds the precise sources, executable and preserved evidence. Provider work and
+exhaustion are not independently established; native checking uses replay.
 
-Actual original finite-word fixture/main audits pass171/172 modules with
-5,287/5,288 declarations and3,078 theorem declarations;341 authenticated reuse
-events and two fresh components, with overlapping contexts counted separately.
-Both compiled original Lean and Rust execute all nine fixtures, matching39 full
-ordered views and rejecting eight adversarial tables. The
-[root fixture review](quality/WORD-FIXTURE-REVIEW.json) authenticates60 preserved
-audit artifacts; the [independent saved replay](design/evidence/word-saved-review-1/RECEIPT.json)
-rechecks both complete coefficient/view/literal-witness outputs. This is Lean's
-compiled evaluator with the qualified native closure, not a standalone Lean ELF
-or a universal Rust refinement proof.
+Three additional complete calendar-to-ancestral-completion application cases
+pass38 ordered views/66 terms, with every completed view at the original root
+and its full register retained. [Root saved review](quality/COMPLETED-CALENDAR-APPLICATION-REVIEW.json)
+authenticates actual native/replay/reference evidence; this remains separate
+from an original-calendar executable comparison and universal refinement.
 
-Earlier actual population8, mixed epoch9, boundary12 and direct completion6
-contexts remain accepted separately. Completion6 matches257 ordered rows;
-private completion has11 tables/330 rows plus five budget Unknowns/four refusals,
-71 Rust tests and a fresh117 protocol receipt. Generic completion140 and the
-compatible five-root semantic191 audits remain accepted. Their domains and
-counts are distinct from the new finite-word fixtures.
+The current application manifest passes 63 source pins and 534 unchanged
+inherited files, with one earlier navigation update attributed separately.
+Its prior 43-pin manifest and exact launcher bytes remain preserved. The
+separately built calendar executable is not assigned the old RC1 executable's
+receipt. Unchanged old RC1 bytes retain their exact 117-case acceptance;
+those tests were not rerun for the new frontend. Three earlier affine/natural/
+genealogy application regressions are preserved with their actual older launcher
+identities. Frozen Rust core, checker and public COMPONENT-PINS bytes are unchanged.
 
-Supplied rational calendar-to-word Rust now passes34 inputs/259 ordered views:
-original32/163 plus serial-hybrid2/96. Exact chronology/occurrence IDs, shared
-original gamma bank, symbolic physical exposure metadata, full original
-registers, coefficients, work and literal witnesses match independent
-references. Both frozen candidates pass82 Rust tests. Candidate2 changes only
-the private probe's two request arms; its public main bytes equal candidate1,
-so the exact117-case Lean/Rust receipt is reused by verified identity. The
-[root review](quality/CALENDAR-CANDIDATE-REVIEW.json) authenticates984 artifacts;
-[design saved review3](design/evidence/calendar-saved-review-3/RECEIPT.json)
-checks both request/source versions and complete saved outputs. Old snapshots
-and failures remain unchanged. No calendar Lean evaluator, universal native
-refinement, calibrated timed observation law or full source admission is claimed.
+**Generated-calendar root support is now proved.** Seven separate Lean roots
+pass complete audits: whole-edge boundary98, gathering99, actual-calendar
+gathering100, raw epoch125, raw boundary142, raw program153 and raw calendar170.
+These are overlapping dependency contexts. The
+[raw-calendar root review](quality/RAW-CALENDAR-ROOT-REVIEW.json) authenticates
+38 artifacts and the 170-module certificate (4,659 declarations/2,936 theorem
+declarations). Every naturally initialized raw compiled-calendar endpoint has
+an ancestral root, including coefficient-zero rows. This discharges the old
+completed-word theorem's every-raw-endpoint premise for the generated calendar
+and supplies its full rational-coefficient identity. Nonempty copies, original
+singleton-tip initialization, positive original rates and SameOrder retiming
+remain premises. Universal native parsing, numeric ascending phase order,
+slot allocation and entering-state encoding remain separate obligations.
 
-Current application source-byte manifest passes43 current files and534
-unchanged inherited files. Its exact previous manifest is
-[preserved](quality/evidence/application-identity-refresh-20261010T1426Z/BEFORE.json).
-Four additive calendar files and the library export are attributed to frozen
-candidate2. Public runtime/COMPONENT-PINS and scientific admission gates are
-unchanged; byte identity is not mathematical solver acceptance.
+Earlier source bridges135/139/138/141/150, actual word fixture/main171/172,
+conditional completed-word166, semantic191 and population/epoch/boundary/
+completion execution evidence remain accepted in their exact contexts. Actual
+finite-word Lean/Rust agreement covers nine cases/39 views; actual completion
+covers six tables/257 rows. Private calendar34/259, completion11/330 and their
+budget/refusal controls remain historical baselines. Failures and namespace/API
+repairs remain preserved. No standalone original-calendar Lean evaluator or
+universal Rust refinement is claimed.
 
-Latest published research through main2d5c7742 is locally merged as3fafb90b;
-f845be09 preserves scoped discovery reconciliation and the pre-native calendar
-contract. The [latest discovery delta](design/DISCOVERY-DELTA-20261010T1348Z.md)
-records G3 narrow fixed-five COMMON slice radius/cap specification and numeric
-base recovery, plus G4 exact sparse-carrier weak-scale positivity and zero
-exponential rate. Root checks27 published paths, one fresh symbolic arithmetic
-replay and10 inherited October6 provider blobs. No radius/constants/RCF/witness
-or new Lean formalization was executed for these hand-source results. Older
-frozen discovery maps and prior attribution remain preserved.
+Latest published main through `a24730be` is merged locally as `fa9b47f0`.
+The [08:02 PDT delta](design/DISCOVERY-DELTA-20261010T1502Z.md) records G3/G4
+prior reuse, corrected weak-class conditions and still-open legal observer
+requirements. The [08:21 PDT supplement](design/DISCOVERY-DELTA-20261010T1521Z.md)
+checks 37 incoming files and the separately audited corrected G3 partition
+(two modules/21 declarations/15 theorems). It retains qualified public operational
+projections and does not promote the 1,433 union. Real critical-presentation
+finiteness and zero-head acquisition connections remain scoped hand results,
+not an effective census or G6/G7 master closure. Frozen discovery maps remain
+unchanged; unavailable private chat coverage and blanket novelty are not claimed.
 
-Conditional completed-word composition now passes its166-module complete
-audit,4599 declarations/2887 theorem declarations,165 authenticated admissions
-and one fresh component. [Root review](quality/COMPLETED-WORD-REVIEW.json)
-checks38 preserved artifacts. Its nonempty-copy, positive physical bank and
-EVERY raw endpoint row ancestral-root premises remain explicit. This includes
-coefficient-zero rows; physical PMF support alone does not discharge the premise.
+G6 original-row generator/remainder now passes its separate93-module audit,
+2,453 declarations/1,538 theorem declarations,92 authenticated parents and one
+fresh root. [Root review](quality/G6-GENERATOR-REVIEW.json) authenticates31 artifacts.
+It proves the original fuel-M physical law, P(1)=delta, ordered-choice half-rate
+generator Q=-P'(1) and coarse cap-only full-row L1 remainder, consuming the old
+recurrence/coefficient-mass/scalar-power bounds. Positive generator compression
+now also passes a separate95-module audit,2,492 declarations/1,575 theorem
+declarations,94 authenticated parents and one fresh root.
+[Root compression review](quality/G6-COMPRESSION-REVIEW.json) authenticates38
+artifacts, including the privately prepared original Mathlib Caratheodory
+provider. For M>=2 one positive list of at most M-1 original supplied atoms is
+chosen before all source/sample/state/population quantifiers and preserves
+every admitted full-row quotient generator. This is noncomputable real-weight
+existence; a Rust extractor and legal source-factor reconstruction remain open. No second recurrence was added. The two proof roles own disjoint
+adapters; integration is the sole Lean compiler/evaluator scheduler. The next
+finite comparison is three typed original completed-calendar fixtures against
+the accepted practical outputs, once exact sources are frozen. The calendar
+phase consumer now passes a separate181-module audit (4,978 declarations/3,189
+theorems); [root review](quality/CALENDAR-PHASE-REVIEW.json) authenticates38
+artifacts. It transports complete matching-date phase lists to the original
+same-physical-bank PMF. Equality of independent symbolic slot polynomials and
+universal native phase order remain separate. G6 positive source
+reconstruction/cloud/confidence and G7 complete source census/QE/legal-policy
+consumers remain open.
 
-Original whole-edge operator and boundary derivatives now have fresh component
-kernel passes; the complete gathering target remains blocked by its next
-original API/proof errors, with full failures preserved. Separate root ownership
-audits remain distinct from the full gathering chain.
+The [08:40 PDT G4 supplement](design/DISCOVERY-DELTA-20261010T1540Z.md) checks
+nine new publication files and freshly replays the exact cap-four one-root
+countercontrol. It rules out scalar-sign and conditional-shape-only routes;
+full unnormalized forest-law Z_T remains open. The current reuse register
+passes65 obligations/106 hashed provider references
+(100 distinct provider paths), with accepted and remaining
+consumers distinguished; all131 hashed source/evidence paths match.
 
-Next proof work: whole-edge gathering recovery and actual generated-calendar
-raw endpoint support. Older accepted G6 coefficient-bound and epoch-continuity
-providers have been rediscovered in the checked1340 union; new consumers should
-reuse them. No blanket novelty or complete prior-work coverage is claimed. G6 positive reconstruction/cloud/confidence and G7 complete source
-census/QE/legal-policy consumers remain open. Partial component success or
-drafts do not imply aggregate acceptance.
-
-Four requested Sol6.1/max roles remain Lean integration/reuse, Rust and design;
-lean_integration_successor is the sole compiler/evaluator scheduler. Root owns
-QC/git/application pins. The extra Luna lane is stopped; proof strategy remains in the existing reuse
-role. Decisions API setup is deferred at the user’s request:
-only a secure picker was opened; no API key was created, no secret was written
-and no Decisions request was made. No push/PR/recurring job was created.
+Four requested Sol6.1/max roles cover Lean integration/reuse, Rust and design.
+Root owns QC/git/application pins. The extra Luna lane is stopped and Decisions
+API setup remains deferred; no key or API call was created. No push, PR or
+recurring hosted job was created. Rebuildable debug caches were copied and
+verified before removal from the constrained overlay; accepted release/native
+and Lean evidence paths remain unchanged.
 
 ## Earlier detailed trajectory
 

@@ -379,6 +379,37 @@ add('G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS','G7/G6/Rust','Finite lite
  'Reuses accepted genuine rational ancestral-completion identity before literal bind/product partition; conditional and natural word endpoints target the unchanged entire completedPolynomial',
  ['Fresh prerequisites and kernel/audit checking pending','Derivation of raw sparse-row ancestral support for every generated calendar remains separate','General native dictionary/normalization and terminal-wrapper refinement remain separate'],
  [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/WORD-COMPLETION-EXTENSION-20261010T1300Z.md')], ['G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS','G7-SUPPORT-ANCESTRAL-COMPLETION','G7-COMPLETED-LAW'])
+add('G7-EVERY-RAW-EPOCH-LOCATIONS','G7/G6/Rust','Every literal raw full epoch row preserves each original copy population','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7RawEpochLocations.lean',['GProgram.G7.RawEpochLocations.destinations_copyLocation','GProgram.G7.RawEpochLocations.fullRows_copyLocation','GProgram.G7.RawEpochLocations.epochRows_copyLocation'])],
+ ['Arbitrary finite original source and admitted entering Code','Every raw literal row, including zero or cancelling coefficients','Inherited exact legal-merger encoding, ancestor-closed panel restriction and constructive admitted join'],
+ 'Reuses oldest merge_population_preserved and decode_encode_copyLocation through actual merger support and the full finite panel product',
+ ['Complete raw calendar tail/root consumer and general native encoding refinement remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/RAW-CALENDAR-PROOF-20261010T1454Z.json')], ['G7-FULL-EPOCH-SUPPORT'])
+add('G7-EVERY-RAW-BOUNDARY-LOCATIONS','G7/G6/Rust','Every literal raw exit/node row follows the original pointwise movement','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7RawBoundaryLocations.lean',['GProgram.G7.RawBoundaryLocations.exitRows_destination','GProgram.G7.RawBoundaryLocations.nodeRows_movement','GProgram.G7.RawBoundaryLocations.nodeRows_after_exits'])],
+ ['Same original parent occurrence registry and stored register','Every enumerated current-owner coin, including polynomial-zero outcomes','Inherited source node movement and exact exit location'],
+ 'Reuses pointwise original boundary locations rather than substituting positive PMF support for raw coefficient support',
+ ['Complete raw calendar tail/root consumer and general native encoding refinement remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/RAW-CALENDAR-PROOF-20261010T1454Z.json')], ['G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS'])
+add('G7-EVERY-RAW-WORD-TRACE','G7/G6/Rust','Every literal raw word row follows the unchanged instantiated ProgramStep list','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7RawProgramLocations.lean',['GProgram.G7.RawProgramLocations.programMovement_original_node','GProgram.G7.RawProgramLocations.programTrace_append','GProgram.G7.RawProgramLocations.wordRows_trace'])],
+ ['Arbitrary original literal word and admitted entering Code','Same original registry/modes; intervals preserve all copy populations','Every raw branch, including zero coefficients; no PMF support premise'],
+ 'Composes the two pointwise raw providers into a structural trace over the existing original operation list',
+ ['Natural singleton-tip initialization and complete generated-calendar root consumer remain separate','No native date/slot/dictionary refinement follows'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/RAW-CALENDAR-PROOF-20261010T1454Z.json')], ['G7-EVERY-RAW-EPOCH-LOCATIONS','G7-EVERY-RAW-BOUNDARY-LOCATIONS','G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS'])
+add('G7-GENERATED-CALENDAR-RAW-ROOT','G7/G6/Rust','All raw natural generated-calendar endpoints are at the original root, discharging the completed-word support premise','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7RawCalendarRoot.lean',['GProgram.G7.RawCalendarRoot.calendar_tail_trace','GProgram.G7.RawCalendarRoot.initialized_calendar_trace_root','GProgram.G7.RawCalendarRoot.natural_calendar_raw_root','GProgram.G7.RawCalendarRoot.polynomial_generated_completedRows'])],
+ ['Actual original singleton-tip natural initialization and complete original sorted agenda','SameOrder retiming and existing indexedSymbols_instantiates/actual_calendar_schema list equality','Every raw coefficient row including polynomial zero; Nonempty Copy and positive original bank for completion'],
+ 'Reuses old BoundaryReady/AfterExits/AfterNodes/FutureComplete invariants, then the accepted entire completed-word coefficient identity',
+ ['Fresh root kernel and complete owned audit pending','Native ascending phase/date representative/interval index and full dictionary refinement remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/RAW-CALENDAR-PROOF-20261010T1454Z.json')], ['G7-EVERY-RAW-WORD-TRACE','G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS'])
+add('G7-CALENDAR-PHASE-CONSUMERS','G7/G6/Rust','Literal complete phase traces and original physical law survive within-phase permutations','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7CalendarPhaseConsumers.lean',['GProgram.G7.CalendarPhaseConsumers.exit_phase_trace_complete','GProgram.G7.CalendarPhaseConsumers.node_phase_trace_complete','GProgram.G7.CalendarPhaseConsumers.boundary_phase_trace_complete','GProgram.G7.CalendarPhaseConsumers.actual_boundary_phase_program']),
+ (base+'2026-10-09-dot-g7-natural-calendar-relabelling-1958z/G7BoundaryPhasePermutation.lean',['GProgram.G7.BoundaryPhasePermutation.exit_phase_perm','GProgram.G7.BoundaryPhasePermutation.node_phase_perm'])],
+ ['Literal phases have the exact original finite membership; all exits precede all entries','Same original parent occurrence registry, gamma/mode and positive physical rate bank','Raw traces include polynomial-zero branches'],
+ 'Consumes old phase-Perm physical source law and the checked complete-phase structural invariants without choosing a new agenda',
+ ['Fresh kernel and complete owned audit pending','No equality to choice-based Finset.toList tie order or arbitrary independent-slot polynomial cube is asserted','Native generated date/interval-slot/dictionary refinement and finite completed calendar controls remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/RAW-CALENDAR-PROOF-20261010T1454Z.json')], ['G7-GENERATED-CALENDAR-RAW-ROOT'])
 add('G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES','G7/G6/Rust','Twelve exact conditional original boundary tables with complete selected views and literal witnesses','new_draft_compilation_pending',[
  (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixture.lean',['UnifiedLean.G7.OriginalBoundaryFixture.siteState_sourceValid','UnifiedLean.G7.OriginalBoundaryFixture.carriedState_sourceValid','UnifiedLean.G7.OriginalBoundaryFixture.ordinary_degree','UnifiedLean.G7.OriginalBoundaryFixture.fixtureNamed']),
  (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixtureMain.lean',['main'])],
@@ -398,6 +429,20 @@ add('G6-ORIGINAL-POPULATION-SPECTRAL-SUPPORT','G6/G7','Every nonzero original po
  'Every surviving monomial lies at choose(j,2) with j no larger than the entering live count; this reuses the actual original merger-cardinality theorem',
  ['Coefficient norm bounds, count-conditioned forest weights, Caratheodory compression and positive reconstruction remain separate','No full G6 master certificate follows'],
  [base+'2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-POPULATION-CERTIFICATE.json',base+'2026-10-10-codex-lean-rust-parity/quality/PROOF-EXTENSION-REVIEW.json'], ['G7-EPOCH','G6-ORIGINAL-POPULATION-EXPOSURE'])
+add('G6-ORIGINAL-GENERATOR-REMAINDER','G6','Actual ordered-half-rate full-Code generator and a coarse cap-only complete-row L1 remainder','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G6OriginalPopulationGeneratorBounds.lean',['GProgram.G6.OriginalPopulationGeneratorBounds.kernelExpr_eval_one','GProgram.G6.OriginalPopulationGeneratorBounds.cappedPolynomial_actual','GProgram.G6.OriginalPopulationGeneratorBounds.populationGenerator_eq_ordered_choice','GProgram.G6.OriginalPopulationGeneratorBounds.row_generator_remainder']),
+ (base+'2026-10-09-dot-g6-effective-source-epoch-modulus-2151z/ActualKernelCoefficientBound.lean',['UnifiedLean.G6.ActualKernelCoefficientBound.actual_row_mass_bound']),
+ (base+'2026-10-09-dot-g7-single-population-polynomial-2117z/G7SinglePopulationPolynomialKernel.lean',['GProgram.G7.SinglePopulationPolynomialKernel.kernelExpr_actual'])],
+ ['Arbitrary finite original source and admitted full-Code entering/destination states','All-copy CoLocated and entering liveCard<=M; fuel is M even if Copy carrier is larger','Unchanged ordered Choice weights1/2, survival sign Q=-P derivative at1; no encoded-image restriction'],
+ 'Consumes original fuel-free physical kernel identity and raw complete-row coefficient mass bound; geometric secants give coarseRemainder without a Code-carrier multiplier',
+ ['Fresh complete kernel/audit pending until exact source certificate is authenticated','The larger coarse constant does not prove Appendix A sharper count-conditioned R_M','Positive source construction, shared-bank splice and stochastic semigroup consumers remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/design/G6-SOURCE-GENERATOR-ASSEMBLY-20261010T1443Z.md'),base+'2026-10-10-codex-lean-rust-parity/lean/G6-GENERATOR-CERTIFICATE.json',base+'2026-10-10-codex-lean-rust-parity/quality/G6-GENERATOR-REVIEW.json'], ['G6-ORIGINAL-POPULATION-SPECTRAL-SUPPORT','G6-ORIGINAL-POPULATION-EXPOSURE'])
+add('G6-POSITIVE-GENERATOR-COMPRESSION','G6','One positive list of at most M-1 supplied original atoms preserves every capped full-Code population generator','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G6PositiveGeneratorCompression.lean',['GProgram.G6.PositiveGeneratorCompression.positive_tail_compression','GProgram.G6.PositiveGeneratorCompression.all_level_moments','GProgram.G6.PositiveGeneratorCompression.centered_compression','GProgram.G6.PositiveGeneratorCompression.original_population_compression','GProgram.G6.PositiveGeneratorCompression.exists_uniform_original_population_compression'])],
+ ['M>=2, supplied finite survival atoms in (0,1), nonnegative original weights','Preserve total alpha as well as tail geometric moments j3..M; choose original preimages with strictly positive new weights','Arbitrary original source and admitted full carried Code, liveCard<=M and all-copy CoLocated; no canonical encoded-image restriction'],
+ 'Consumes actual Mathlib convex Caratheodory and finite-dimensional card bounds; accepted Kingman level support transfers one atom choice to every full original row through Adapter A eval1=delta',
+ ['Adapter A and isolated Caratheodory prerequisite passed; fresh repaired B kernel/owned audit remains pending','Noncomputable real-weight existence is not an executable extractor','Positive source factors, same-bank source splice, semigroup approximation and full G6 master remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/G6-POSITIVE-COMPRESSION-CAPTURE-20261010T1530Z.json'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/G6-SOURCE-GENERATOR-ASSEMBLY-20261010T1443Z.md')], ['G6-ORIGINAL-GENERATOR-REMAINDER','G6-ORIGINAL-POPULATION-SPECTRAL-SUPPORT','G6-ORIGINAL-POPULATION-EXPOSURE'])
 add('G7-COMPLETED-LAW','G7/G6','Natural/controlled original completed-calendar polynomial response chain','inherited_scoped_formal_complete',[
  (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7CompletedCalendarPolynomial.lean',['GProgram.G7.CompletedCalendarPolynomial.actual_natural_completed_calendar_polynomial','GProgram.G7.CompletedCalendarPolynomial.actual_controlled_completed_calendar_polynomial'])],
  ['One finite original graph and parent registry','One original natural register draw and source-specific COMMON/current-owner INDEPENDENT routing','Shared actual segment-survival/gamma coordinates; fixed original-ID masks','Nonempty finite copy carrier for infinite completion interpretation'],
@@ -608,7 +653,14 @@ for certificate_name,keys in [
     ('ORIGINAL-WORD-FIXTURE-CERTIFICATE.json',{
         'G7-ORIGINAL-WORD-NATIVE-FIXTURES':None}),
     ('EFFECTIVE-COMPLETED-WORD-CERTIFICATE.json',{
-        'G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS':'G7EffectiveCompletedWordCoefficients'})]:
+        'G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS':'G7EffectiveCompletedWordCoefficients'}),
+    ('RAW-EPOCH-CERTIFICATE.json',{'G7-EVERY-RAW-EPOCH-LOCATIONS':'G7RawEpochLocations'}),
+    ('RAW-BOUNDARY-CERTIFICATE.json',{'G7-EVERY-RAW-BOUNDARY-LOCATIONS':'G7RawBoundaryLocations'}),
+    ('RAW-PROGRAM-CERTIFICATE.json',{'G7-EVERY-RAW-WORD-TRACE':'G7RawProgramLocations'}),
+    ('RAW-CALENDAR-ROOT-CERTIFICATE.json',{'G7-GENERATED-CALENDAR-RAW-ROOT':'G7RawCalendarRoot'}),
+    ('G6-GENERATOR-CERTIFICATE.json',{'G6-ORIGINAL-GENERATOR-REMAINDER':'G6OriginalPopulationGeneratorBounds'}),
+    ('CALENDAR-PHASE-CONSUMER-CERTIFICATE.json',{'G7-CALENDAR-PHASE-CONSUMERS':'G7CalendarPhaseConsumers'}),
+    ('G6-COMPRESSION-CERTIFICATE.json',{'G6-POSITIVE-GENERATOR-COMPRESSION':'G6PositiveGeneratorCompression'})]:
     certificate_path=HERE.parent/'lean'/certificate_name
     if not certificate_path.exists():
         continue
@@ -710,6 +762,32 @@ for certificate_name,keys in [
                 record['genuinely_remaining']=[
                     'Derivation of raw sparse-row ancestral support for every generated calendar remains separate',
                     'General native dictionary/normalization and terminal-wrapper refinement remain separate']
+            elif key=='G7-GENERATED-CALENDAR-RAW-ROOT':
+                record['genuinely_remaining']=[
+                    'Native ascending phase/date representative/interval index and full dictionary refinement remain separate',
+                    'Finite completed calendar evaluator controls and general runtime correspondence remain separate']
+            elif key=='G6-ORIGINAL-GENERATOR-REMAINDER':
+                record['genuinely_remaining']=[
+                    'The larger coarse constant does not prove Appendix A sharper count-conditioned R_M',
+                    'Positive compression, source factors/shared-bank splice and stochastic semigroup consumers remain separate',
+                    'No general runtime extractor or G6 master closure follows']
+            elif key=='G7-CALENDAR-PHASE-CONSUMERS':
+                record['genuinely_remaining']=[
+                    'No equality to choice-based Finset.toList tie order or arbitrary independent-slot polynomial cube is asserted',
+                    'Native generated date/interval-slot/dictionary refinement and finite completed calendar controls remain separate']
+            elif key=='G6-POSITIVE-GENERATOR-COMPRESSION':
+                record['genuinely_remaining']=[
+                    'Noncomputable real-weight existence is not an executable extractor',
+                    'Positive source factors, same-bank source splice, semigroup approximation and full G6 master remain separate']
+# A checked complete-agenda raw-root consumer discharges the conditional
+# completed-word premise without changing the old root or promoting Rust.
+raw_calendar=next(r for r in records if r['id']=='G7-GENERATED-CALENDAR-RAW-ROOT')
+if raw_calendar['status']=='new_kernel_checked_exact_source':
+    completed=next(r for r in records if r['id']=='G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS')
+    completed['accepted_generated_calendar_support']='G7-GENERATED-CALENDAR-RAW-ROOT'
+    completed['genuinely_remaining']=[
+        'General native dictionary/normalization and terminal-wrapper refinement remain separate',
+        'Native generated dates, phase tie order and interval-slot refinement remain separate']
 # Rank and carrier roots share one complete five-root semantic target. Exact
 # cached kernel admissions remain distinguished from the fresh carrier check.
 semantic_path=HERE.parent/'lean/SEMANTIC-RANK-RECOVERY-CERTIFICATE.json'
@@ -989,6 +1067,28 @@ if completed_word['status']=='new_kernel_checked_exact_source':
                 'Every-raw-endpoint ancestral support for generated calendars remains separate',
                 'General native encoding/normalization/dictionary and terminal-wrapper refinement remain separate']
             record['checked_conditional_word_composition']='G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS'
+if (raw_calendar['status']=='new_kernel_checked_exact_source'
+    and completed_word['status']=='new_kernel_checked_exact_source'):
+    for key in ['G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS',
+        'G7-SUPPORT-ANCESTRAL-COMPLETION','G7-ORIGINAL-COMPLETION-NATIVE-FIXTURES',
+        'G7-FULL-EPOCH-SUPPORT','G7-EXECUTABLE-BOUNDARY-COEFFICIENTS',
+        'G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS']:
+        record=next(r for r in records if r['id']==key)
+        if record['status'].startswith('new_kernel_checked'):
+            record['accepted_generated_calendar_support']='G7-GENERATED-CALENDAR-RAW-ROOT'
+            record['genuinely_remaining']=[
+                'Native generated date/phase tie-order/interval-occurrence and canonical dictionary refinement remain separate',
+                'General native normalization/resource-cap/terminal-wrapper correspondence remains separate']
+    policy=next(r for r in records if r['id']=='G7-POLICY-MASTER')
+    policy['accepted_generated_coefficient_composition']=[
+        'G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS',
+        'G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS',
+        'G7-GENERATED-CALENDAR-RAW-ROOT']
+    policy['genuinely_remaining']=[
+        'Exact original cofacial admission and independent whole-edge source-family coverage',
+        'Complete same-source Winning syntax and effective real QE, with action/lower-witness selection relative to the actual history field',
+        'Exact Pareto/policy/certificate producer; checked semantic and coefficient dependencies do not supply an effective producer',
+        'General native encoding/generated date/phase/interval-slot/dictionary/resource-cap refinement remains separate']
 fixture=next(r for r in records if r['id']=='G7-ORIGINAL-POPULATION-NATIVE-FIXTURES')
 if execution_path.exists() and fixture['status']=='new_kernel_checked_exact_source':
     execution=json.loads(execution_path.read_text())

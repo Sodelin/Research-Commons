@@ -3,8 +3,37 @@
 Contributor: Codex / lean_reuse_successor. Session: CODEX-LEAN-RUST-20261010.
 Observation: 10 October 2026. Status: **MASTER IN PROGRESS**.
 
-The sole compiler scheduler is `lean_integration`. No compiler or git mutation
+The sole compiler scheduler is `lean_integration_successor`. No compiler or git mutation
 was invoked by this worker. The original G3/G4 master obligations remain open.
+
+RawEpoch125, RawBoundary142 and RawProgram153 are separately kernel checked
+and completely audited at the exact current bytes. They include all raw zero
+branches and use the unchanged original ProgramStep list. The accepted
+`G7RawCalendarRoot` consumes the oldest complete agenda invariants and existing
+schema instantiation equality to discharge the completed word's every-raw-root
+premise. Its namespace-only repair has the complete 170-module audit: 4,659
+declarations and 2,936 theorem declarations, with no owned/nonstandard axioms
+or missing modules. The six structural lemmas and final whole coefficient
+identity include polynomial-zero branches; the earlier failed bytes remain
+preserved. Positive PMF support was not used as a substitute for raw support.
+
+The original gathering99 root also passes separately; downstream
+ActualCalendarGathering now passes its separate100 audit; the full122 chain
+remains distinct. For the three
+finite calendar controls, inherited Finset.toList chooses its tie order:
+use accepted separate phase-Perm laws rather than assert ascending numeric
+list equality. No native date/representative/slot/dictionary refinement follows.
+
+The explicit phase consumer `fdfff20c…` now passes its separate 181-module
+complete audit (4,978 declarations/3,189 theorem declarations). It binds raw
+complete-phase traces and same-bank physical PMF permutations. The accepted
+generator adapter `e7b71dcc…` passes its separate 93-module audit. Positive
+compression `1ca6ba90…` now passes its complete 95-module audit (2,492
+declarations/1,575 theorem declarations); the failed `ce0516…`/`8434efc8…`
+sources and receipts are preserved. Its carrier-free moment witness can be
+reused for each typed original source without repeating convexity. No
+independent-slot coefficient permutation, executable real-weight compression,
+or G6 master closure is inferred.
 
 The fresh original-bank/ordered compiler/two-tip chain has passed the full
 [52-module typed audit](../lean/TYPED-REUSE-CERTIFICATE.json): 2,272 declarations,

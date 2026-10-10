@@ -9,6 +9,40 @@ extracts usable witnesses and certificate semantics from the inherited G6
 strict affine eliminator and supplied natural-cell compiler. It does not solve
 G3/G4, infer a complete source census, or establish biological input admission.
 
+The [raw-calendar checkpoint](RAW-CALENDAR-PROOF-20261010T1454Z.json) now binds
+four separately audited providers: every raw epoch row preserves copied
+populations (125 modules), every boundary row follows original movement (142),
+and every word row follows the unchanged instantiated operation list (153).
+Each includes polynomial-zero rows. The complete-calendar root consumer now
+passes its [170-module audit](../lean/RAW-CALENDAR-ROOT-CERTIFICATE.json),
+including the whole completed-coefficient identity for actual natural
+initialization, SameOrder retiming, nonempty copies and a positive original bank.
+Native date, tie-order, interval-index and dictionary refinement remain separate.
+These overlapping counts are not added.
+
+The [181-module phase consumer](../lean/CALENDAR-PHASE-CONSUMER-CERTIFICATE.json)
+also passes its complete audit. It transports every raw complete-phase trace
+and the original physical PMF through within-phase permutations. It does not
+assert equality of arbitrary independent-slot polynomial coordinates or of
+the native ascending order to inherited choice-based `Finset.toList`.
+
+The [positive-compression capture](G6-POSITIVE-COMPRESSION-CAPTURE-20261010T1530Z.json)
+pins the checked G6 adapter: one list of at most `M-1` supplied original
+survival atoms preserves total weight and every capped full-Code generator row.
+It consumes Mathlib Caratheodory, the accepted Kingman-level support, and the
+separate [93-module generator adapter](../lean/G6-GENERATOR-CERTIFICATE.json).
+The exact `1ca6ba90…` source passes its complete
+[95-module audit](../lean/G6-COMPRESSION-CERTIFICATE.json): 2,492 declarations,
+1,575 theorem declarations, zero owned/nonstandard axioms or missing modules.
+Earlier failed bytes and diagnostics are preserved. Real-weight existence does
+not supply an executable extractor or a positive biological source construction.
+
+The repaired original whole-edge gathering root has its separate
+[99-module audit](../lean/WHOLE-EDGE-GATHERING-ROOT-CERTIFICATE.json).
+It factors an arbitrary entering word with a residual bank; absorption requires
+the actual singleton-tip initial code. The complete 122-module coverage chain
+still awaits its next original consumer repair.
+
 ## Machine-verified arithmetic component
 
 The fresh [eight-module receipt](../lean/evidence/reuse/20261010T101638.330657Z/RECEIPT.json)

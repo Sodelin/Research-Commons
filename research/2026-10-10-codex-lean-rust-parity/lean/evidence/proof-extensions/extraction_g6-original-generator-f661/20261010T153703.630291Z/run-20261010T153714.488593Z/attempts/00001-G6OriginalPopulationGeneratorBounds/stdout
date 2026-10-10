@@ -1,0 +1,261 @@
+G6OriginalPopulationGeneratorBounds.lean:262:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G6OriginalPopulationGeneratorBounds.lean:265:11: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s d : Code N sample
+i : Option E
+hs : CoLocated N s i
+hk : liveCard s ≤ 1
+this : IsEmpty (Choice N s) := choice_empty_of_terminal_card N s hk
+hc : (liveCard s).choose 2 = 0
+hM : liveCard s ≤ 0
+h : s = d
+⊢ (liveCard d).choose 2 = 0
+G6OriginalPopulationGeneratorBounds.lean:268:18: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s d : Code N sample
+i : Option E
+hs : CoLocated N s i
+hk : liveCard s ≤ 1
+this : IsEmpty (Choice N s) := choice_empty_of_terminal_card N s hk
+hc : (liveCard s).choose 2 = 0
+budget : ℕ
+hM : liveCard s ≤ budget + 1
+h : s = d
+⊢ (liveCard d).choose 2 = 0
+G6OriginalPopulationGeneratorBounds.lean:318:15: error: don't know how to synthesize implicit argument `c`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul SubtractionMonoid.toSubNegZeroMonoid.toNegZeroClass.toZero
+    Real.instPreorder (1 - x) (triangleCoefficient ?m.419 * ↑(rowMass N M s))
+    (triangleCoefficient ?m.419 * ↑(1 + M * M) ^ M) Real.instIsOrderedRing.toMulPosMono
+    (mul_le_mul_of_nonneg_left hm (triangleCoefficient_nonneg ?m.419)) (sub_nonneg.mpr (LT.lt.le hx1))
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+M : ℕ
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hM : liveCard s ≤ M
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+hd : ∀ (d : Code N sample), ∀ a ∈ kernelExpr N M s d, a.1 ≤ M.choose 2
+hp :
+  ∀ (d : Code N sample),
+    |populationQuotient N M s d x - populationGenerator N M s d| ≤
+      triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+hsum :
+  ∑ i, |populationQuotient N M s i x - populationGenerator N M s i| ≤
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+hm : ↑(rowMass N M s) ≤ ↑(1 + M * M) ^ M
+he :
+  ∑ d, triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x) =
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+⊢ ℝ
+G6OriginalPopulationGeneratorBounds.lean:318:15: error: don't know how to synthesize implicit argument `b`
+  @mul_le_mul_of_nonneg_right ℝ Real.instMul SubtractionMonoid.toSubNegZeroMonoid.toNegZeroClass.toZero
+    Real.instPreorder (1 - x) (triangleCoefficient ?m.419 * ↑(rowMass N M s))
+    (triangleCoefficient ?m.419 * ↑(1 + M * M) ^ M) Real.instIsOrderedRing.toMulPosMono
+    (mul_le_mul_of_nonneg_left hm (triangleCoefficient_nonneg ?m.419)) (sub_nonneg.mpr (LT.lt.le hx1))
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+M : ℕ
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hM : liveCard s ≤ M
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+hd : ∀ (d : Code N sample), ∀ a ∈ kernelExpr N M s d, a.1 ≤ M.choose 2
+hp :
+  ∀ (d : Code N sample),
+    |populationQuotient N M s d x - populationGenerator N M s d| ≤
+      triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+hsum :
+  ∑ i, |populationQuotient N M s i x - populationGenerator N M s i| ≤
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+hm : ↑(rowMass N M s) ≤ ↑(1 + M * M) ^ M
+he :
+  ∑ d, triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x) =
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+⊢ ℝ
+G6OriginalPopulationGeneratorBounds.lean:319:5: error: don't know how to synthesize implicit argument `a`
+  @mul_le_mul_of_nonneg_left ℝ Real.instMul Real.instZero Real.instPreorder (triangleCoefficient ?m.419)
+    (↑(rowMass N M s)) (↑(1 + M * M) ^ M) Real.instIsOrderedRing.toPosMulMono hm (triangleCoefficient_nonneg ?m.419)
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+M : ℕ
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hM : liveCard s ≤ M
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+hd : ∀ (d : Code N sample), ∀ a ∈ kernelExpr N M s d, a.1 ≤ M.choose 2
+hp :
+  ∀ (d : Code N sample),
+    |populationQuotient N M s d x - populationGenerator N M s d| ≤
+      triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+hsum :
+  ∑ i, |populationQuotient N M s i x - populationGenerator N M s i| ≤
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+hm : ↑(rowMass N M s) ≤ ↑(1 + M * M) ^ M
+he :
+  ∑ d, triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x) =
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+⊢ ℝ
+G6OriginalPopulationGeneratorBounds.lean:319:62: error: don't know how to synthesize placeholder for argument `D`
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+M : ℕ
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hM : liveCard s ≤ M
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+hd : ∀ (d : Code N sample), ∀ a ∈ kernelExpr N M s d, a.1 ≤ M.choose 2
+hp :
+  ∀ (d : Code N sample),
+    |populationQuotient N M s d x - populationGenerator N M s d| ≤
+      triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+hsum :
+  ∑ i, |populationQuotient N M s i x - populationGenerator N M s i| ≤
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+hm : ↑(rowMass N M s) ≤ ↑(1 + M * M) ^ M
+he :
+  ∑ d, triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x) =
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+⊢ ℕ
+G6OriginalPopulationGeneratorBounds.lean:318:7: error: failed to infer `have` declaration type
+G6OriginalPopulationGeneratorBounds.lean:301:33: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+M : ℕ
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hM : liveCard s ≤ M
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+hd : ∀ (d : Code N sample), ∀ a ∈ kernelExpr N M s d, a.1 ≤ M.choose 2
+hp :
+  ∀ (d : Code N sample),
+    |populationQuotient N M s d x - populationGenerator N M s d| ≤
+      triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+hsum :
+  ∑ i, |populationQuotient N M s i x - populationGenerator N M s i| ≤
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+hm : ↑(rowMass N M s) ≤ ↑(1 + M * M) ^ M
+he :
+  ∑ d, triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x) =
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+⊢ ∑ d, |populationQuotient N M s d x - populationGenerator N M s d| ≤ coarseRemainder M * (1 - x)
+'GProgram.G6.OriginalPopulationGeneratorBounds.kernelExpr_eval_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalPopulationGeneratorBounds.cappedPolynomial_actual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalPopulationGeneratorBounds.populationGenerator_eq_ordered_choice' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalPopulationGeneratorBounds.row_generator_remainder' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

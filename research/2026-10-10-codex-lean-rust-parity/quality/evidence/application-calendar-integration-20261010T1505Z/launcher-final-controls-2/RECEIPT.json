@@ -1,0 +1,132 @@
+{
+  "focused_controls": [
+    {
+      "execution_receipt_sha256": "18489c953fff8cd2641d1692d25653067e4033687d54d89e534ae5e02fd223bc",
+      "name": "outerTimeoutKillsDetachedChildAndGrandchild",
+      "pass": true,
+      "pids_terminated": [
+        174298,
+        174299
+      ],
+      "production_wall_timeout_seconds": 45,
+      "test_wall_timeout_seconds": 0.5
+    },
+    {
+      "name": "launchCallbackFailureKillsDetachedDescendants",
+      "pass": true,
+      "pids_terminated": [
+        174301,
+        174302
+      ]
+    },
+    {
+      "actual_native_execution": false,
+      "name": "foreign-child-request",
+      "pass": true,
+      "result_sha256": "cf6a70843cd2ba2ca0695bbeca6c5535b624857068c6e74d797ebd0d773013d0"
+    },
+    {
+      "actual_native_execution": false,
+      "name": "changed-staged-request",
+      "pass": true,
+      "result_sha256": "a7a5e4e88c89868a9fabb19ab25bb92c21c56ebf8d22daa67a0bcbb26597c05b"
+    }
+  ],
+  "focused_controls_passed": 4,
+  "full_solver_verified": false,
+  "functional_cases": [
+    {
+      "exit_code": 0,
+      "name": "two-tip",
+      "pass": true,
+      "result_sha256": "be643fdf3c18851c2e3765387e0a22aabcf75e9ab2f497219ef03e25a6fb7ad2",
+      "status": "SUPPLIED_CALENDAR_TABLE"
+    },
+    {
+      "exit_code": 0,
+      "name": "serial-negative",
+      "pass": true,
+      "result_sha256": "5fce0a8ecb4ca7d997ddb7bc59ce6a97a46e89637ca0bc9c9dd2b9d6407cb10e",
+      "status": "SUPPLIED_CALENDAR_TABLE"
+    },
+    {
+      "exit_code": 0,
+      "name": "parallel-common",
+      "pass": true,
+      "result_sha256": "32800f6e83c5652a9b40ddc6a07e03996c37f241c018b36afd6100f3ab0439df",
+      "status": "SUPPLIED_CALENDAR_TABLE"
+    },
+    {
+      "exit_code": 0,
+      "name": "two-hybrid-common",
+      "pass": true,
+      "result_sha256": "4b06da30305c072d0b29d6106d2e7e3281624a4ee8fa15ccc0f770fc8b729706",
+      "status": "SUPPLIED_CALENDAR_TABLE"
+    },
+    {
+      "exit_code": 0,
+      "name": "empty-full-view",
+      "pass": true,
+      "result_sha256": "fdd598e2ab524168109575caf833f361e8a9c05fb93398f9c8ccf6224b85f1fd",
+      "status": "SUPPLIED_CALENDAR_TABLE"
+    },
+    {
+      "exit_code": 2,
+      "name": "compiler-unknown",
+      "pass": true,
+      "result_sha256": "e3bd87921a56e2a737a2e91699d1947e95a385ddd7080eb9ec59564814e7c141",
+      "status": "UNKNOWN"
+    },
+    {
+      "exit_code": 2,
+      "name": "word-unknown",
+      "pass": true,
+      "result_sha256": "44b1c0f0a309d5267acf4258746c389c3d556680a6ff5620292fe44872d9c08d",
+      "status": "UNKNOWN"
+    },
+    {
+      "exit_code": 2,
+      "name": "provider-unknown",
+      "pass": true,
+      "result_sha256": "99fd43a09820bdab84469e4295ca31f10e26eab83ab4c2895febf16387350350",
+      "status": "UNKNOWN"
+    },
+    {
+      "exit_code": 1,
+      "name": "pin-mismatch",
+      "pass": true,
+      "result_sha256": "0d94745c3fc57df46a6e8aa852864c3cde7137e6b1fb6f69fe49c44975a3951c",
+      "status": "REFUSED_REQUEST"
+    },
+    {
+      "exit_code": 1,
+      "name": "duplicate-key",
+      "pass": true,
+      "result_sha256": "425a50837d5348f74a4225eac6e49822046610ac092eba0b288c575513a6dace",
+      "status": "REFUSED_REQUEST"
+    },
+    {
+      "exit_code": 1,
+      "name": "invalid-utf8",
+      "pass": true,
+      "result_sha256": "58dff1b5121e369f7b0ec7c6a6708ba317bdacb9bdb0acad630aa684a5d02e5b",
+      "status": "REFUSED_REQUEST"
+    },
+    {
+      "exit_code": 1,
+      "name": "empty-completion",
+      "pass": true,
+      "result_sha256": "21e50ae08f3ad1873362b1dbbede32c2a650e8c60df3f3db636187bccfa9bb9e",
+      "status": "REFUSED_REQUEST"
+    }
+  ],
+  "functional_cases_passed": 12,
+  "launcher_sha256": "8c00f261d180452daa094b87f50a788b862efe7c0c5b0e2e133e44bb269352a7",
+  "native_binary_sha256": "580bab497f2f2963ec938891e69d1cbdcf443b1c2dea694e548817b14fbebd05",
+  "observed_utc": "2026-10-10T15:34:07.820853+00:00",
+  "pass": true,
+  "reviewer_sha256": "690a1b9e5e04739107d4d71852f5f10a3eb75df0f9ef43fc260d104dffc65192",
+  "schema": "calendar_launcher_final_controls_v1",
+  "scope": "Four lifecycle/request-binding controls and twelve fresh outer-application functional cases after cleanup/binding changes. Accepted native/frontend/117 suites were not rerun. Synthetic receipt tests do not execute a native solver.",
+  "source_admission_verified": false
+}

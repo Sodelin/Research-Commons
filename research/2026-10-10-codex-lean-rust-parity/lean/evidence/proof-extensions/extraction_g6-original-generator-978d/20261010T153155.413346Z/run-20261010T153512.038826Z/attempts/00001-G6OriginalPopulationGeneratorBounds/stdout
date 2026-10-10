@@ -1,0 +1,203 @@
+G6OriginalPopulationGeneratorBounds.lean:76:16: error: unsolved goals
+case cons
+n : ℕ
+a : ℕ × ℚ
+p : List (ℕ × ℚ)
+ih : exprEval (liftExpr n p) 1 = 0
+⊢ exprEval (List.flatMap (liftTerm n) p) 1 = 0
+G6OriginalPopulationGeneratorBounds.lean:76:86: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [liftExpr, List.flatMap_cons, exprEval_append, liftTerm_eval_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G6OriginalPopulationGeneratorBounds.lean:91:16: error: unsolved goals
+case cons
+n : ℕ
+a : ℕ × ℚ
+p : List (ℕ × ℚ)
+ih : (∀ a ∈ p, a.1 < n) → exprDerivativeAtOne (liftExpr n p) = -exprEval p 1 / 2
+hp : ∀ a_1 ∈ a :: p, a_1.1 < n
+ha : a.1 < n
+ht : exprDerivativeAtOne (liftExpr n p) = -exprEval p 1 / 2
+⊢ ↑a.2 * (-1 / 2) + exprDerivativeAtOne (List.flatMap (liftTerm n) p) = ↑a.2 * (-1 / 2) + exprEval p 1 * (-1 / 2)
+G6OriginalPopulationGeneratorBounds.lean:95:40: warning: This simp argument is unused:
+  ht
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [liftExpr, List.flatMap_cons, exprDerivativeAtOne_append, liftTerm_derivative_at_one n a ha,
+    exprEval_cons, one_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6OriginalPopulationGeneratorBounds.lean:99:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+G6OriginalPopulationGeneratorBounds.lean:180:16: error: unexpected token '|*'; expected '|' or '|ₘ'
+G6OriginalPopulationGeneratorBounds.lean:172:16: error: unsolved goals
+case hh
+D : ℕ
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+a : ℕ × ℚ
+p : List (ℕ × ℚ)
+ih :
+  (∀ a ∈ p, a.1 ≤ D) → |centeredQuotient p x + exprDerivativeAtOne p| ≤ triangleCoefficient D * ↑(exprMass p) * (1 - x)
+hD : ∀ a_1 ∈ a :: p, a_1.1 ≤ D
+ha : a.1 ≤ D
+ht : |centeredQuotient p x + exprDerivativeAtOne p| ≤ triangleCoefficient D * ↑(exprMass p) * (1 - x)
+hg : 0 ≤ ↑a.1 - geometricSum a.1 x ∧ ↑a.1 - geometricSum a.1 x ≤ triangleCoefficient a.1 * (1 - x)
+hb : ↑a.1 - geometricSum a.1 x ≤ triangleCoefficient D * (1 - x)
+⊢ |↑a.2 * (↑a.1 - geometricSum a.1 x)| ≤ |↑a.2|
+
+case cons
+D : ℕ
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+a : ℕ × ℚ
+p : List (ℕ × ℚ)
+ih :
+  (∀ a ∈ p, a.1 ≤ D) → |centeredQuotient p x + exprDerivativeAtOne p| ≤ triangleCoefficient D * ↑(exprMass p) * (1 - x)
+hD : ∀ a_1 ∈ a :: p, a_1.1 ≤ D
+ha : a.1 ≤ D
+ht : |centeredQuotient p x + exprDerivativeAtOne p| ≤ triangleCoefficient D * ↑(exprMass p) * (1 - x)
+hg : 0 ≤ ↑a.1 - geometricSum a.1 x ∧ ↑a.1 - geometricSum a.1 x ≤ triangleCoefficient a.1 * (1 - x)
+hb : ↑a.1 - geometricSum a.1 x ≤ triangleCoefficient D * (1 - x)
+hh : |↑a.2 * (↑a.1 - geometricSum a.1 x)| ≤ |↑a.2|
+⊢ |centeredQuotient (a :: p) x + exprDerivativeAtOne (a :: p)| ≤ triangleCoefficient D * ↑(exprMass (a :: p)) * (1 - x)
+G6OriginalPopulationGeneratorBounds.lean:206:16: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s d : Code N sample
+budget : ℕ
+hk : liveCard s ≤ 1
+h : s = d
+⊢ exprEval
+      (if liveCard d ≤ 1 then [(0, 1)]
+      else
+        ((liveCard d).choose 2, 1) ::
+          List.flatMap
+            (fun p => liftExpr ((liveCard d).choose 2) (kernelExpr N budget (stepDestination N s (some p)) d))
+            Finset.univ.toList)
+      1 =
+    1
+
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s d : Code N sample
+budget : ℕ
+hk : ¬liveCard s ≤ 1
+h : s = d
+⊢ exprEval
+      (if liveCard d ≤ 1 then [(0, 1)]
+      else
+        ((liveCard d).choose 2, 1) ::
+          List.flatMap
+            (fun p => liftExpr ((liveCard d).choose 2) (kernelExpr N budget (stepDestination N s (some p)) d))
+            Finset.univ.toList)
+      1 =
+    1
+G6OriginalPopulationGeneratorBounds.lean:208:28: warning: This simp argument is unused:
+  exprEval_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [kernelExpr, hk, h, exprEval_flatMap, liftExpr_eval_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6OriginalPopulationGeneratorBounds.lean:222:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'triangleCoefficient', which is 'noncomputable'
+G6OriginalPopulationGeneratorBounds.lean:235:36: error: Function expected at
+  sourceTimeKernel
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `sourceTimeKernel` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6OriginalPopulationGeneratorBounds.lean:254:12: error(lean.unknownIdentifier): Unknown identifier `choice_empty_of_terminal_card`
+G6OriginalPopulationGeneratorBounds.lean:294:4: error: 'change' tactic failed, pattern
+  |centeredQuotient (kernelExpr N M s d) x + exprDerivativeAtOne (kernelExpr N M s d)| ≤ ?m.285
+is not definitionally equal to target
+  |centeredQuotient (kernelExpr N M s d) x - populationGenerator N M s d| ≤
+    triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+G6OriginalPopulationGeneratorBounds.lean:287:33: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+M : ℕ
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hM : liveCard s ≤ M
+x : ℝ
+hx0 : 0 ≤ x
+hx1 : x < 1
+hd : ∀ (d : Code N sample), ∀ a ∈ kernelExpr N M s d, a.1 ≤ M.choose 2
+hp :
+  ∀ (d : Code N sample),
+    |populationQuotient N M s d x - populationGenerator N M s d| ≤
+      triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x)
+hsum :
+  ∑ i, |populationQuotient N M s i x - populationGenerator N M s i| ≤
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+hm : ↑(rowMass N M s) ≤ ↑(1 + M * M) ^ M
+he :
+  ∑ d, triangleCoefficient (M.choose 2) * ↑(exprMass (kernelExpr N M s d)) * (1 - x) =
+    triangleCoefficient (M.choose 2) * ↑(rowMass N M s) * (1 - x)
+⊢ ∑ d, |populationQuotient N M s d x - populationGenerator N M s d| ≤ coarseRemainder M * (1 - x)
+'GProgram.G6.OriginalPopulationGeneratorBounds.kernelExpr_eval_one' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalPopulationGeneratorBounds.cappedPolynomial_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalPopulationGeneratorBounds.populationGenerator_eq_ordered_choice' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalPopulationGeneratorBounds.row_generator_remainder' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

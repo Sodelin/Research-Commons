@@ -26,6 +26,7 @@ def main():
     files = {ROOT / name for name in derivative_names}
     files.add(ROOT / "applications/practical-solver/examples/natural-cell.rc1")
     files.add(ROOT / "applications/practical-solver/examples/genealogy-law.rc1")
+    files.add(ROOT / "applications/practical-solver/examples/calendar-law.json")
     files.add(ROOT / "research/2026-10-01-g7-continuous-design/law_compiler.py")
     files.update(ROOT / name for name in baseline_updates)
     files.update(PACKET / name for name in (
@@ -35,11 +36,22 @@ def main():
         "rust/native_chart_component.py", "design/chart_check.py", "design/CHART-CONTRACT.md",
         "rust/native_law_component.py", "rust/law_component_requirements.txt",
         "design/law_check.py", "design/LAW-CONTRACT.md",
+        "rust/build_word.py", "rust/build_calendar.py",
+        "rust/tests/source_word.rs", "rust/tests/source_completion.rs", "rust/tests/source_calendar.rs",
+        "rust/examples/source_word_probe.rs", "rust/examples/source_calendar_probe.rs",
+        "rust/native_calendar_component.py", "rust/build_calendar_cli.py",
+        "rust/CALENDAR-COMPONENT-PINS.json", "rust/calendar-cli/README.md",
+        "rust/calendar-cli/Cargo.toml", "rust/calendar-cli/Cargo.lock",
+        "design/CALENDAR-APPLICATION-CONTRACT-20261010T1458Z.md",
+        "design/calendar_check.py", "design/source_calendar_oracle.py", "design/source_word_oracle.py",
+        "design/boundary_oracle.py", "design/epoch_oracle.py", "design/population_oracle.py",
         "verify_derivative.py", "generate_application_pins.py"))
     files.update((PACKET / "rust/src").glob("*.rs"))
+    files.update((PACKET / "rust/calendar-cli/src").glob("*.rs"))
+    files.update((PACKET / "rust/calendar-cli/tests").glob("*.rs"))
     pins = {
         "schema": "application_derivative_byte_pins_v1",
-        "scope": "Current finite-cell and genealogy-law launcher derivative and its runtime sources",
+        "scope": "Current finite-cell, genealogy-law and supplied-calendar launcher derivative with runtime/reference sources",
         "inherited_manifest": identity(PREVIOUS),
         "inherited_derivatives": [
             {"path": row["path"], "previous_sha256": row["sha256"]}
@@ -55,6 +67,16 @@ def main():
         "whole_solver_refinement_verified": False,
         "note": "The prior manifest remains a historical byte record. These pins do not certify a supplied binary or establish source-model admission."
     }
+    # Earlier refresh records describe their historical source changes. Keep
+    # those records when regenerating current identities, without reassigning
+    # their accepted hashes to the new bytes.
+    prior_path = PACKET / "APPLICATION-DERIVATIVE-PINS.json"
+    if prior_path.exists():
+        prior = json.loads(prior_path.read_text())
+        for key in ("private_word_completion_source_refresh", "private_calendar_source_refresh",
+                    "application_calendar_integration"):
+            if key in prior:
+                pins[key] = prior[key]
     (PACKET / "APPLICATION-DERIVATIVE-PINS.json").write_text(
         json.dumps(pins, sort_keys=True, indent=2) + "\n")
     print(json.dumps({"pinned_files": len(pins["files"]),

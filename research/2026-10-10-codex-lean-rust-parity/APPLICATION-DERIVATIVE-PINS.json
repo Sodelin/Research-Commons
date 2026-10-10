@@ -1,4 +1,37 @@
 {
+  "application_calendar_integration": {
+    "calendar_cases": {
+      "bytes": 8343,
+      "path": "research/2026-10-10-codex-lean-rust-parity/quality/evidence/application-calendar-integration-20261010T1505Z/CALENDAR-CASES.json",
+      "sha256": "7b634d3ed0a3113c288e7d697e033856aa644d808ae6ee79d90973afd7697204"
+    },
+    "certificate_valid": false,
+    "component_pins": {
+      "bytes": 8168,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/CALENDAR-COMPONENT-PINS.json",
+      "sha256": "23751b40d609fce76ae82c0d921e81e74669a0dd0fe9b7da72f436ce92a99800"
+    },
+    "contract": {
+      "bytes": 7912,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-APPLICATION-CONTRACT-20261010T1458Z.md",
+      "sha256": "7ef233395d60a3e7cd6edd1418df428b5cb9f842088ac87ddc85f957b3eb18c4"
+    },
+    "full_solver_verified": false,
+    "observed_utc": "2026-10-10T15:27:00Z",
+    "pre_edit_sources": {
+      "bytes": 781,
+      "path": "research/2026-10-10-codex-lean-rust-parity/quality/evidence/application-calendar-integration-20261010T1505Z/BEFORE.json",
+      "sha256": "ca9cb6b0612dac1d0286c766802e5719de355ce41fe0440269868ee08a3b053c"
+    },
+    "previous_manifest": {
+      "bytes": 12102,
+      "path": "research/2026-10-10-codex-lean-rust-parity/quality/evidence/application-calendar-integration-20261010T1505Z/before/research/2026-10-10-codex-lean-rust-parity/APPLICATION-DERIVATIVE-PINS.json",
+      "sha256": "840060699d42a230b9b0dedac0a561804187dca88950b6da836cebb9e23ac086"
+    },
+    "reason": "Additive general supplied-calendar Rust frontend and independent checker integrated into existing application; previous43-pin bytes preserved, new63-current-source pins separately attributed. No source-admission or master-solver promotion.",
+    "review_path": "research/2026-10-10-codex-lean-rust-parity/quality/evidence/application-calendar-integration-20261010T1505Z/RECEIPT.json",
+    "source_admission_verified": false
+  },
   "files": [
     {
       "bytes": 4636,
@@ -6,9 +39,14 @@
       "sha256": "2d9878c73d9fc589f24fdba9ae84171ca178727e80d2483123903f345655f693"
     },
     {
-      "bytes": 19626,
+      "bytes": 21644,
       "path": "applications/practical-solver/README.md",
-      "sha256": "78a20045226ec6c2f543b371804f401a169ea8c2c06c22f52d7925168699eda8"
+      "sha256": "a94333a9cdbec1daec356ac57baeb3e6c89b1554e4d17344b481ac368211c5f2"
+    },
+    {
+      "bytes": 1169,
+      "path": "applications/practical-solver/examples/calendar-law.json",
+      "sha256": "42eb6a95c160825cb19da7945bd025cb2e31e8a2d43aaab4fe1c87a0d4c64dbf"
     },
     {
       "bytes": 179,
@@ -21,14 +59,19 @@
       "sha256": "b33621f7c8400a79bf8b9b0b6647b7931cda3c4a4e27452f182d0cf3dac6ba96"
     },
     {
-      "bytes": 36608,
+      "bytes": 41141,
       "path": "applications/practical-solver/run.py",
-      "sha256": "54d62ecbce91dd03440c54d7203c04f2d41ff5d5dd8e5e37ff1713a5d7178724"
+      "sha256": "8c00f261d180452daa094b87f50a788b862efe7c0c5b0e2e133e44bb269352a7"
     },
     {
       "bytes": 9360,
       "path": "research/2026-10-01-g7-continuous-design/law_compiler.py",
       "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7"
+    },
+    {
+      "bytes": 7912,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-APPLICATION-CONTRACT-20261010T1458Z.md",
+      "sha256": "7ef233395d60a3e7cd6edd1418df428b5cb9f842088ac87ddc85f957b3eb18c4"
     },
     {
       "bytes": 9348,
@@ -46,6 +89,16 @@
       "sha256": "1a9b0941ea7b17950155b4d885497e1d19ae88ab47f010b6edf6a73b94032afa"
     },
     {
+      "bytes": 17304,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py",
+      "sha256": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29"
+    },
+    {
+      "bytes": 14876,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/calendar_check.py",
+      "sha256": "6190bcd125c51d2e133b571ecc9fe08298fe5a731dc6536459f66446f0ae29bb"
+    },
+    {
       "bytes": 10550,
       "path": "research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py",
       "sha256": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24"
@@ -56,14 +109,39 @@
       "sha256": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a"
     },
     {
+      "bytes": 19469,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py",
+      "sha256": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd"
+    },
+    {
       "bytes": 15413,
       "path": "research/2026-10-10-codex-lean-rust-parity/design/law_check.py",
       "sha256": "d6c62271373c2b4a6fd60aa1371d8d6a582368f4506e2d6bc2e3da43704b3e4d"
     },
     {
-      "bytes": 3279,
+      "bytes": 18874,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py",
+      "sha256": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff"
+    },
+    {
+      "bytes": 24689,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/source_calendar_oracle.py",
+      "sha256": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c"
+    },
+    {
+      "bytes": 32192,
+      "path": "research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py",
+      "sha256": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102"
+    },
+    {
+      "bytes": 4819,
       "path": "research/2026-10-10-codex-lean-rust-parity/generate_application_pins.py",
-      "sha256": "7fa7f84c428ccb98a49d3bd1433701531f638cc592cbd3a70c1b5d2d0f48ac4d"
+      "sha256": "d3d0f9e7327bcafd7ee72c3d5b7517539599ff67913eb7dc0673a22c083b8823"
+    },
+    {
+      "bytes": 8168,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/CALENDAR-COMPONENT-PINS.json",
+      "sha256": "23751b40d609fce76ae82c0d921e81e74669a0dd0fe9b7da72f436ce92a99800"
     },
     {
       "bytes": 6895,
@@ -91,9 +169,54 @@
       "sha256": "12cb2dfda66672da7bbb5b5b358207259bfc8a7e5c4a0806b123dd86d05d9f40"
     },
     {
+      "bytes": 6068,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/build_calendar_cli.py",
+      "sha256": "15bfa668b6defa73104875057bdea13a0c452fb7355cd18993296ca1d109b45f"
+    },
+    {
       "bytes": 6662,
       "path": "research/2026-10-10-codex-lean-rust-parity/rust/build_word.py",
       "sha256": "407ec1b831bd390a8a2d6541ef6c094746b34a9f6f37e5bfa9711fec62e5dcf2"
+    },
+    {
+      "bytes": 4492,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/Cargo.lock",
+      "sha256": "fd40f1b92df7d0419adada9a734e26c9bc5bf0281ed9575927cc68d8efaafa19"
+    },
+    {
+      "bytes": 540,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/Cargo.toml",
+      "sha256": "4c7ac2e86802b44df9a873c60b137bf34711663ca04fece7ac9ac881f7b9e566"
+    },
+    {
+      "bytes": 2078,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/README.md",
+      "sha256": "75f2cfbbed958586f2111bc9835174efc1d1553fb290f5c69f28732132a1aed7"
+    },
+    {
+      "bytes": 1337,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/lib.rs",
+      "sha256": "e6979598d0345965a3cad277771972ffef5a4078bea7734c254696bd1d60cf11"
+    },
+    {
+      "bytes": 4216,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/main.rs",
+      "sha256": "9a520716535b175bce4131d80252cda50117eea15bf7d75878cae5a42b5cc497"
+    },
+    {
+      "bytes": 7289,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/request.rs",
+      "sha256": "1bb2b9569f47c101705e63b011cc4c8b4a58f6e8702bb404813d7659702f462a"
+    },
+    {
+      "bytes": 10424,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/response.rs",
+      "sha256": "f4c7d38ecfddca6e3f120e3e84a6e8fde698459fbb0f7b3fe0b7348123ac013e"
+    },
+    {
+      "bytes": 7148,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/tests/frontend.rs",
+      "sha256": "5c99e753c4609bc02e6e1c9c72ae7c515d62b999ca57d6067ad7ea285ba4239a"
     },
     {
       "bytes": 61602,
@@ -109,6 +232,11 @@
       "bytes": 181,
       "path": "research/2026-10-10-codex-lean-rust-parity/rust/law_component_requirements.txt",
       "sha256": "c036c8c30d33f81f67163d64ecf28e0da4ed11a1e4bd2e169138292e4ab8a038"
+    },
+    {
+      "bytes": 15066,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/native_calendar_component.py",
+      "sha256": "9de9c1bf056a7b0d40900b33ebd3d29f12b2efacab61e90f9ab5b633a86f0db6"
     },
     {
       "bytes": 1659,
@@ -169,6 +297,11 @@
       "bytes": 23633,
       "path": "research/2026-10-10-codex-lean-rust-parity/rust/src/protocol.rs",
       "sha256": "0bcf6e0e099d5983604c8d3e6fe189fbb0431de390b7d0f8c7306bbbced2e72a"
+    },
+    {
+      "bytes": 9240,
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/src/source_boundary.rs",
+      "sha256": "f089b81fa649aaea6e1db1da5b373cee8e9e5be2cacb54942a261bc24b845cdb"
     },
     {
       "bytes": 12140,
@@ -288,6 +421,6 @@
   },
   "schema": "application_derivative_byte_pins_v1",
   "scientific_claims_verified": false,
-  "scope": "Current finite-cell and genealogy-law launcher derivative and its runtime sources",
+  "scope": "Current finite-cell, genealogy-law and supplied-calendar launcher derivative with runtime/reference sources",
   "whole_solver_refinement_verified": false
 }

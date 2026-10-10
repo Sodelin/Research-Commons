@@ -1,0 +1,36 @@
+G7ActualCalendarGathering.lean:47:8: error: unsolved goals
+case nil
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+d s : Code N sample
+⊢ (if d = s then 1 else 0) = (if d = s then 1 else 0).toReal
+G7ActualCalendarGathering.lean:100:6: error: Function expected at
+  initialRow N sample register * (List.map (gatheredMatrix N H gamma common) (gather N r (calendarEvents N C)).2).prod
+but this term has type
+  ?m.126
+
+Note: Expected a function because this term is being applied to the argument
+  ()
+G7ActualCalendarGathering.lean:115:8: error: Function expected at
+  initialRow N sample register *
+    (List.map (gatheredMatrix N H (originalGamma p) common) (gather N r (calendarEvents N C)).2).prod
+but this term has type
+  ?m.132
+
+Note: Expected a function because this term is being applied to the argument
+  ()

@@ -1,0 +1,111 @@
+G6PositiveGeneratorCompression.lean:60:36: error(lean.invalidField): Invalid field `symm`: The environment does not contain `Function.symm`, so it is not possible to project the field `symm` from an expression
+  hzero
+of type `∑ a, alpha a = 0 → False`
+G6PositiveGeneratorCompression.lean:74:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G6PositiveGeneratorCompression.lean:110:47: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?g (e i)
+in the target expression
+  A * ∑ b, w (e b) * v (e b) j = A * ∑ i, w i * v i j
+
+n M : ℕ
+hM : 2 ≤ M
+z alpha : Fin n → ℝ
+halpha : ∀ (a : Fin n), 0 ≤ alpha a
+hzero : ¬∑ a, alpha a = 0
+A : ℝ := ∑ a, alpha a
+hA : 0 < A
+hAn : A ≠ 0
+q : Fin n → ℝ := fun a => alpha a / A
+hq : ∀ (a : Fin n), 0 ≤ q a
+hqsum : ∑ a, q a = 1
+x : Fin (M - 2) → ℝ := ∑ a, q a • tailVector M (z a)
+hx : x ∈ (convexHull ℝ) (Set.range fun a => tailVector M (z a))
+ι : Type
+hι : Fintype ι
+v : ι → Fin (M - 2) → ℝ
+w : ι → ℝ
+hv : Set.range v ⊆ Set.range fun a => tailVector M (z a)
+hind : AffineIndependent ℝ v
+hw : ∀ (i : ι), 0 < w i
+hwsum : ∑ i, w i = 1
+hwv : ∑ i, w i • v i = x
+this : Fintype ι := hι
+a : ι → Fin n
+ha : ∀ (i : ι), tailVector M (z (a i)) = v i
+e : Fin (Fintype.card ι) ≃ ι := (Fintype.equivFin ι).symm
+hspan : Module.finrank ℝ ↥(vectorSpan ℝ (Set.range v)) ≤ M - 2
+hcard : Fintype.card ι ≤ M - 1
+j : Fin (M - 2)
+hc : ∑ i, w i * v i j = ∑ a, q a * tailVector M (z a) j
+⊢ A * ∑ b, w (e b) * v (e b) j = A * ∑ i, w i * v i j
+G6PositiveGeneratorCompression.lean:194:56: error: Function expected at
+  Code
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `Code` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6PositiveGeneratorCompression.lean:194:56: error: Function expected at
+  Code
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `Code` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6PositiveGeneratorCompression.lean:195:50: error: Function expected at
+  liveCard
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  s
+
+Hint: The identifier `liveCard` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6PositiveGeneratorCompression.lean:215:60: error: Function expected at
+  Code
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `Code` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6PositiveGeneratorCompression.lean:215:60: error: Function expected at
+  Code
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `Code` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6PositiveGeneratorCompression.lean:216:42: error: Function expected at
+  liveCard
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  s
+
+Hint: The identifier `liveCard` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+'GProgram.G6.PositiveGeneratorCompression.positive_tail_compression' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.PositiveGeneratorCompression.all_level_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G6.PositiveGeneratorCompression.centered_compression' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+G6PositiveGeneratorCompression.lean:229:14: error(lean.unknownIdentifier): Unknown constant `original_population_compression`
+G6PositiveGeneratorCompression.lean:230:14: error(lean.unknownIdentifier): Unknown constant `exists_uniform_original_population_compression`

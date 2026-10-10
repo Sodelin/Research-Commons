@@ -1,0 +1,28 @@
+G7RawCalendarRoot.lean:41:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.RawCalendarRoot.exit_trace_list`:
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7RawCalendarRoot.lean:299:16: error: Function expected at
+  readRows
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (project N Finset.univ)
+
+Hint: The identifier `readRows` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7RawCalendarRoot.lean:293:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+'GProgram.G7.RawCalendarRoot.exit_trace_batch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.RawCalendarRoot.node_trace_batch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.RawCalendarRoot.calendar_tail_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.RawCalendarRoot.initialized_calendar_trace_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.RawCalendarRoot.natural_calendar_raw_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.RawCalendarRoot.polynomial_generated_completedRows' does not depend on any axioms

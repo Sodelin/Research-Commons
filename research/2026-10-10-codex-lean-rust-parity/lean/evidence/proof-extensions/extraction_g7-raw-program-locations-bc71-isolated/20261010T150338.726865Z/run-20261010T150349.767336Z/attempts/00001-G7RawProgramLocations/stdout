@@ -1,0 +1,84 @@
+G7RawProgramLocations.lean:57:2: error: unsolved goals
+case pos
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+s d : Code N sample
+⊢ (match
+      if h : True then BoundaryOperation.root
+      else
+        if hh : N.graph.IsHybrid N.root then
+          if common ⟨N.root, hh⟩ = true then BoundaryOperation.common (H.parents ⟨N.root, hh⟩)
+          else BoundaryOperation.independent (H.parents ⟨N.root, hh⟩) (gamma ⟨N.root, hh⟩)
+        else BoundaryOperation.ordinary ((defaultSelector N).edge ⟨N.root, ⋯⟩) ⋯ with
+    | BoundaryOperation.exit e => ∀ (x : Copy), copyLocation (state d) x = exitLocation N e (copyLocation (state s) x)
+    | BoundaryOperation.ordinary e degree =>
+      ∀ (x : Copy), NodeMovement N (N.graph.target e) (copyLocation (state s) x) (copyLocation (state d) x)
+    | BoundaryOperation.root =>
+      ∀ (x : Copy), NodeMovement N N.root (copyLocation (state s) x) (copyLocation (state d) x)
+    | BoundaryOperation.independent H gamma =>
+      ∀ (x : Copy), NodeMovement N H.hybrid (copyLocation (state s) x) (copyLocation (state d) x)
+    | BoundaryOperation.common H =>
+      ∀ (x : Copy), NodeMovement N H.hybrid (copyLocation (state s) x) (copyLocation (state d) x)) ↔
+    ∀ (x : Copy), NodeMovement N N.root (copyLocation (state s) x) (copyLocation (state d) x)
+G7RawProgramLocations.lean:58:37: warning: This simp argument is unused:
+  dif_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [originalNodeOperation, programMovement]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7RawProgramLocations.lean:71:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.RawProgramLocations.programTrace_append`:
+  [Fintype Copy]
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7RawProgramLocations.lean:87:42: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G7RawProgramLocations.lean:87:44: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G7RawProgramLocations.lean:115:42: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G7RawProgramLocations.lean:115:44: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+'GProgram.G7.RawProgramLocations.programMovement_original_node' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.RawProgramLocations.programTrace_append' depends on axioms: [propext, Classical.choice, Quot.sound]
+G7RawProgramLocations.lean:134:14: error(lean.unknownIdentifier): Unknown constant `stepRows_movement`
+G7RawProgramLocations.lean:135:14: error(lean.unknownIdentifier): Unknown constant `wordRows_trace`

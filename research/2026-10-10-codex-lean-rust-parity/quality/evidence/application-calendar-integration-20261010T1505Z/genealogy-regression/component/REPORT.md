@@ -1,0 +1,11 @@
+# Formal genealogy-law result
+
+Status: **FORMAL_GENEALOGY_TABLE**.
+
+Source admission: **SOURCE_ADMISSION_NOT_ESTABLISHED**.
+
+Complete formal supplied-source terminal rooted genealogy table and root-suppressed unrooted pushforward. Natural physical survival image, typed/class/active-word admission, full joint calendar readout, source census and statistical/biological conclusions remain unestablished.
+
+Producer started: True; native replay started: True; independent coefficient checker started: True.
+
+SymPy/mpmath versions and origins are observed in the bounded checker process; their complete runtime has no universal verification claim.

@@ -1,0 +1,266 @@
+{
+  "request": {
+    "context": {
+      "vertices": 3,
+      "root": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "leaves": [
+        1,
+        2
+      ],
+      "hybrids": [],
+      "local_samples": [
+        0,
+        0,
+        1
+      ],
+      "global_labels": [
+        0,
+        1,
+        2
+      ]
+    },
+    "ages": [
+      "3/2",
+      "-3/2",
+      "1/4"
+    ],
+    "inverse_rates": [
+      "7/3",
+      "11/5",
+      "2/3"
+    ],
+    "original_gamma": [],
+    "common": [],
+    "terminal": "ANCESTRAL_COMPLETE",
+    "compiler_limits": {
+      "word_length": 32,
+      "slots": 16,
+      "variables": 256
+    },
+    "word_limits": {
+      "initial_assignments": 16,
+      "initial_terms": 256,
+      "queries": 4096,
+      "branches": 65536,
+      "term_products": 262144,
+      "destinations": 4096,
+      "terms": 65536
+    },
+    "provider_limits": {
+      "epoch": {
+        "calls": 4096,
+        "destinations": 4096,
+        "lifted_terms": 65536,
+        "branches": 4096,
+        "term_products": 65536
+      },
+      "boundary": {
+        "assignments": 16,
+        "destinations": 16,
+        "term_contributions": 128
+      },
+      "completion": {
+        "calls": 4096,
+        "destinations": 4096,
+        "lifted_terms": 65536
+      }
+    }
+  },
+  "requirements": {
+    "word_length": 7,
+    "slots": 2,
+    "variables": 6
+  },
+  "agenda": {
+    "dates": [
+      "-3/2",
+      "1/4",
+      "3/2"
+    ],
+    "cohorts": [
+      {
+        "date_index": 0,
+        "representative": 1,
+        "vertices": [
+          1
+        ],
+        "exits": []
+      },
+      {
+        "date_index": 1,
+        "representative": 2,
+        "vertices": [
+          2
+        ],
+        "exits": []
+      },
+      {
+        "date_index": 2,
+        "representative": 0,
+        "vertices": [
+          0
+        ],
+        "exits": [
+          0,
+          1
+        ]
+      }
+    ],
+    "word": [
+      [
+        "ENTER",
+        1
+      ],
+      [
+        "INTERVAL",
+        0
+      ],
+      [
+        "ENTER",
+        2
+      ],
+      [
+        "INTERVAL",
+        1
+      ],
+      [
+        "EXIT",
+        0
+      ],
+      [
+        "EXIT",
+        1
+      ],
+      [
+        "ENTER",
+        0
+      ]
+    ],
+    "origins": [
+      {
+        "date_index": 0,
+        "phase": "ENTER",
+        "index": 1
+      },
+      {
+        "date_index": 1,
+        "phase": "INTERVAL",
+        "index": 0
+      },
+      {
+        "date_index": 1,
+        "phase": "ENTER",
+        "index": 2
+      },
+      {
+        "date_index": 2,
+        "phase": "INTERVAL",
+        "index": 1
+      },
+      {
+        "date_index": 2,
+        "phase": "EXIT",
+        "index": 0
+      },
+      {
+        "date_index": 2,
+        "phase": "EXIT",
+        "index": 1
+      },
+      {
+        "date_index": 2,
+        "phase": "ENTER",
+        "index": 0
+      }
+    ],
+    "slots": [
+      {
+        "slot": 0,
+        "word_position": 1,
+        "younger_date": "-3/2",
+        "older_date": "1/4",
+        "duration": "7/4"
+      },
+      {
+        "slot": 1,
+        "word_position": 3,
+        "younger_date": "1/4",
+        "older_date": "3/2",
+        "duration": "5/4"
+      }
+    ],
+    "physical_coordinates": [
+      {
+        "variable": [
+          "X",
+          0,
+          "E",
+          0
+        ],
+        "kind": "EXP_NEG",
+        "argument": "3/4"
+      },
+      {
+        "variable": [
+          "X",
+          0,
+          "E",
+          1
+        ],
+        "kind": "EXP_NEG",
+        "argument": "35/44"
+      },
+      {
+        "variable": [
+          "X",
+          0,
+          "A",
+          0
+        ],
+        "kind": "EXP_NEG",
+        "argument": "21/8"
+      },
+      {
+        "variable": [
+          "X",
+          1,
+          "E",
+          0
+        ],
+        "kind": "EXP_NEG",
+        "argument": "15/28"
+      },
+      {
+        "variable": [
+          "X",
+          1,
+          "E",
+          1
+        ],
+        "kind": "EXP_NEG",
+        "argument": "25/44"
+      },
+      {
+        "variable": [
+          "X",
+          1,
+          "A",
+          0
+        ],
+        "kind": "EXP_NEG",
+        "argument": "15/8"
+      }
+    ],
+    "leaf_age_zero": false
+  }
+}

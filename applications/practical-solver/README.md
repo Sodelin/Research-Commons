@@ -164,6 +164,39 @@ statistical confidence remain unestablished. See the
 [LAW contract](../../research/2026-10-10-codex-lean-rust-parity/design/LAW-CONTRACT.md)
 for exact input bounds, variable order and budget semantics.
 
+## Supplied calendar and genealogy table
+
+`calendar-law` connects the existing calendar compiler, finite-word evaluator
+and ancestral completion. Its JSON request supplies the original graph,
+sampled copies, vertex ages, one shared inverse-rate bank, hybrid probabilities,
+COMMON/INDEPENDENT mechanisms and explicit work limits.
+
+```sh
+cargo build --locked --release --manifest-path research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/Cargo.toml
+python3 -B applications/practical-solver/run.py calendar-law --request applications/practical-solver/examples/calendar-law.json --native-binary research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/target/release/calendar-solver --output /tmp/solver-calendar-new
+```
+
+The example has two tips and their complete calendar. The command preserves
+the full ordered genealogy-state polynomial table, original registers,
+literal range witnesses and exact calendar substitutions. Each `EXP_NEG`
+coordinate records `exp(-duration / shared_inverse_rate)` symbolically.
+The reference checker uses Python's standard library and a different
+coefficient algorithm from the Rust producer.
+
+`SUPPLIED_CALENDAR_TABLE` exits 0 after native replay and independent checks
+of every coefficient, the agenda and physical substitutions. Bounded
+`UNKNOWN` exits 2; refusals and execution failures exit 1. An inner provider's
+UNKNOWN authenticates its request and limit frame; it does not establish
+an independently proved exhaustion result or source exclusion. Saved artifacts
+record exactly which checks ran. Existing fresh-output and optional executable
+SHA-256 checks apply.
+
+This is a forward calculation for supplied inputs. Source-census completeness,
+observation-law admission, statistical confidence and full solver/policy
+completion remain unestablished. See the
+[calendar application contract](../../research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-APPLICATION-CONTRACT-20261010T1458Z.md)
+for the exact nine-field request, graph/copy limits and result scope.
+
 ## What the three examples mean
 
 | Example | Expected checked result | Interpretation |

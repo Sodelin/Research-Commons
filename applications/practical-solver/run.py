@@ -16,6 +16,7 @@ import os
 from pathlib import Path
 import re
 import resource
+import signal
 import subprocess
 import sys
 import time
@@ -138,8 +139,40 @@ def authenticate(out):
         raise SourceError('Checker source pins do not match inherited runtime')
     return result
 
+def terminate_process_tree(process):
+    """Stop descendants before killing, including children in new sessions."""
+    stopped={process.pid}; pending=[process.pid]
+    try: os.kill(process.pid,signal.SIGSTOP)
+    except ProcessLookupError: pass
+    # Read parent IDs from proc stat: some kernels omit per-thread children
+    # files. Stopping each parent prevents further forks during traversal.
+    proc=Path('/proc')
+    if proc.is_dir():
+        while pending:
+            parent=pending.pop()
+            for entry in proc.iterdir():
+                if not entry.name.isdecimal(): continue
+                try: stat=(entry/'stat').read_text()
+                except (FileNotFoundError,ProcessLookupError): continue
+                fields=stat[stat.rfind(')')+2:].split()
+                if int(fields[1])!=parent: continue
+                pid=int(entry.name)
+                if pid in stopped: continue
+                try: os.kill(pid,signal.SIGSTOP)
+                except ProcessLookupError: continue
+                stopped.add(pid);pending.append(pid)
+    for pid in stopped-{process.pid}:
+        try: os.kill(pid,signal.SIGKILL)
+        except ProcessLookupError: pass
+    try: os.killpg(process.pid,signal.SIGKILL)
+    except ProcessLookupError: pass
+    process.wait()
+    return {'descendant_cleanup_method':'STOP_AND_WALK_LINUX_PROC' if proc.is_dir() else 'PROCESS_GROUP',
+            'descendants_killed':len(stopped)-1}
+
 def execute(out,name,command,on_launch=None,accepted_exit_codes=(0,)):
     def limits():
+        os.setsid()
         resource.setrlimit(resource.RLIMIT_CPU,(30,30));resource.setrlimit(resource.RLIMIT_AS,(512*2**20,512*2**20))
         resource.setrlimit(resource.RLIMIT_FSIZE,(16*2**20,16*2**20));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
     env={'PATH':os.defpath,'LANG':'C.UTF-8','PYTHONNOUSERSITE':'1','PYTHONDONTWRITEBYTECODE':'1','PYTHONHASHSEED':'0'}
@@ -152,10 +185,15 @@ def execute(out,name,command,on_launch=None,accepted_exit_codes=(0,)):
                 'launch_error':str(error),'wall_seconds':time.monotonic()-start,
                 'minimal_environment_no_credentials':True})
             raise
-        if on_launch: on_launch()
-        timeout=False
-        try:process.wait(timeout=45)
-        except subprocess.TimeoutExpired: process.kill();process.wait();timeout=True
+        timeout=False;cleanup=None
+        try:
+            if on_launch: on_launch()
+            try:process.wait(timeout=45)
+            except subprocess.TimeoutExpired:
+                cleanup=terminate_process_tree(process);timeout=True
+        except BaseException:
+            if process.poll() is None: terminate_process_tree(process)
+            raise
     after=resource.getrusage(resource.RUSAGE_CHILDREN)
     receipt={'command':command,'process_started':True,'exit_code':process.returncode,'timeout':timeout,'wall_seconds':time.monotonic()-start,
              'cpu_seconds':after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime,
@@ -163,6 +201,7 @@ def execute(out,name,command,on_launch=None,accepted_exit_codes=(0,)):
              'address_space_limit_bytes':512*2**20,'per_file_limit_bytes':16*2**20,
              'stdout_sha256':sha((out/(name+'.stdout')).read_bytes()),'stderr_sha256':sha((out/(name+'.stderr')).read_bytes()),
              'minimal_environment_no_credentials':True}
+    if cleanup is not None: receipt['timeout_cleanup']=cleanup
     write(out/(name+'.execution.json'),receipt)
     if process.returncode not in accepted_exit_codes or timeout: raise RuntimeError(name+' failed or exhausted resources; logs preserved in '+str(out))
     return receipt
@@ -367,14 +406,18 @@ def native_cell(args):
             'Original-ID natural cell with independently checked native certificate'),
         'genealogy-law':('native_law_component.py','rust_genealogy_law_component_result_v1',
             'Formal genealogy law with independently checked coefficients'),
+        'calendar-law':('native_calendar_component.py','rust_calendar_component_result_v1',
+            'Supplied calendar with independently checked genealogy coefficients'),
     }[args.command]
+    calendar=args.command=='calendar-law'
+    request_format='JSON calendar' if calendar else 'RC1'
     request_path=args.request
     if request_path.is_symlink() or not request_path.is_file():
-        raise InputError('A regular nonsymlink RC1 request file is required')
+        raise InputError('A regular nonsymlink '+request_format+' request file is required')
     if request_path.stat().st_size>MAX_INPUT_BYTES:
-        raise InputError('RC1 request exceeds the 64 KiB input limit')
+        raise InputError(request_format+' request exceeds the 64 KiB input limit')
     raw=request_path.read_bytes()
-    if len(raw)>MAX_INPUT_BYTES:raise InputError('RC1 request grew beyond its byte limit')
+    if len(raw)>MAX_INPUT_BYTES:raise InputError(request_format+' request grew beyond its byte limit')
     module=ROOT/'research/2026-10-10-codex-lean-rust-parity/rust'/module_name
     if not module.is_file():raise SourceError('The selected native cell component is absent')
     out=create_output(args.output)
@@ -387,8 +430,10 @@ def native_cell(args):
         'statistical_coverage_verified':False,'parameter_accuracy_released':False,
         'whole_application_lean_verified':False,'physical_survival_image_verified':False,
         'formal_table_checked':False,'started_utc':datetime.now(timezone.utc).isoformat()}
-    with (out/'REQUEST.rc1').open('xb') as f:f.write(raw)
-    command=[sys.executable,'-B',str(module),'--request',str(out/'REQUEST.rc1'),
+    if calendar:result['reference_checker_called']=False
+    staged_request=out/('REQUEST.json' if calendar else 'REQUEST.rc1')
+    with staged_request.open('xb') as f:f.write(raw)
+    command=[sys.executable,'-B',str(module),'--request',str(staged_request),
         '--output',str(out/'component'),'--binary',str(args.native_binary.absolute())]
     if args.expected_binary_sha256:
         command+=['--expected-binary-sha256',args.expected_binary_sha256]
@@ -396,6 +441,7 @@ def native_cell(args):
         # Until the child receipt arrives, the wrapper's start says nothing
         # about whether either native subprocess actually started.
         result.update(component_called=True,native_solver_called=None,native_checker_called=None)
+        if calendar:result['reference_checker_called']=None
     code=1
     try:
         receipt=execute(out,args.command,command,on_launch=launched,accepted_exit_codes=(0,1,2))
@@ -403,12 +449,25 @@ def native_cell(args):
         _,child=read(out/'component/RESULT.json',16*2**20,exact=False)
         if child.get('schema')!=schema:
             raise SourceError('Unexpected native cell component schema')
+        if calendar:
+            if staged_request.read_bytes()!=raw:
+                raise SourceError('Calendar request snapshot changed during execution')
+            # A malformed optional binary pin can be refused before the adapter
+            # reads the request. Every result after request reading must bind it.
+            if child.get('status')!='REFUSED_REQUEST' or 'request_sha256' in child:
+                if child.get('request_sha256')!=sha(raw):
+                    raise SourceError('Calendar component request does not match the launcher snapshot')
         for name in ('solver_called','checker_called'):
             if type(child.get(name)) is not bool:raise SourceError('Missing native process-start evidence')
         result.update(native_solver_called=child['solver_called'],
             native_checker_called=child['checker_called'],component_result=child)
+        if calendar:
+            if type(child.get('reference_checker_called')) is not bool:
+                raise SourceError('Missing independent calendar process-start evidence')
+            result['reference_checker_called']=child['reference_checker_called']
         expected={'UNKNOWN':2,'REFUSED_REQUEST':1,'RESOURCE_OR_EXECUTION_FAILURE':1}
         if args.command=='genealogy-law':expected['FORMAL_GENEALOGY_TABLE']=0
+        elif calendar:expected['SUPPLIED_CALENDAR_TABLE']=0
         else:expected.update(MATRIX_WITNESS=0,MATRIX_EXCLUSION=0)
         if child.get('status') not in expected or code!=expected[child['status']]:
             raise SourceError('Native component status and exit receipt disagree')
@@ -428,6 +487,22 @@ def native_cell(args):
                 if child.get('certificate_checked') is not False:
                     raise SourceError('Genealogy replay is not a separate witness certificate')
                 result['formal_table_checked']=True
+        if calendar:
+            for name in ('physical_survival_image_verified','observation_law_admission_verified',
+                    'full_joint_calendar_law_verified','statistical_confidence_verified',
+                    'complete_source_registry_verified','full_solver_verified','certificate_valid'):
+                if child.get(name) is not False:
+                    raise SourceError('Supplied calendar component does not establish '+name)
+            if child['status']=='SUPPLIED_CALENDAR_TABLE':
+                for name in ('solver_called','checker_called','reference_checker_called',
+                        'formal_table_checked','independent_all_coefficients_checked',
+                        'calendar_agenda_checked','physical_substitutions_checked'):
+                    if child.get(name) is not True:
+                        raise SourceError('Missing checked calendar evidence: '+name)
+                if child.get('certificate_valid') is not False:
+                    raise SourceError('Calendar replay is not a separate witness certificate')
+                result.update(formal_table_checked=True,calendar_agenda_checked=True,
+                    physical_substitutions_checked=True,independent_all_coefficients_checked=True)
         result.update(status=child['status'],explanation=child.get('scope',
             'Exact supplied finite cell; original source admission is not established.'))
         if sha(module.read_bytes())!=result['component_source_sha256']:
@@ -461,6 +536,7 @@ def main():
         ('affine-cell','Exact supplied affine matrix with a separate native certificate check'),
         ('natural-cell','Compile an original-ID natural cell with separate native certificate checks'),
         ('genealogy-law','Compile a full formal genealogy table with independent coefficient checks'),
+        ('calendar-law','Compile a supplied physical calendar and independently check every genealogy coefficient'),
     ):
         native=sub.add_parser(name,help=help_text)
         native.add_argument('--request',type=Path,required=True);native.add_argument('--output',type=Path)
@@ -469,6 +545,8 @@ def main():
         native.set_defaults(func=native_cell)
     args=parser.parse_args()
     try:return args.func(args)
-    except (InputError,SourceError,OSError,ValueError,RuntimeError) as error:print('ERROR: '+str(error),file=sys.stderr);return 2
+    except (InputError,SourceError,OSError,ValueError,RuntimeError) as error:
+        print('ERROR: '+str(error),file=sys.stderr)
+        return 1 if args.command=='calendar-law' else 2
 
 if __name__=='__main__':raise SystemExit(main())

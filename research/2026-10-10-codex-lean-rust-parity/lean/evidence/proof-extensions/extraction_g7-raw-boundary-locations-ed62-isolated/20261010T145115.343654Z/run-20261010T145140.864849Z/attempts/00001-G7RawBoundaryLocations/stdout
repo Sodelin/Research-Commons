@@ -1,0 +1,154 @@
+G7RawBoundaryLocations.lean:28:60: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  I
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7RawBoundaryLocations.lean:30:43: error: Application type mismatch: The argument
+  hrow
+has type
+  row ∈ pureRows a
+but is expected to have type
+  ?m.21 ∈ [?m.22]
+in the application
+  List.mem_singleton.mp hrow
+G7RawBoundaryLocations.lean:33:55: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  I
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7RawBoundaryLocations.lean:35:9: error(lean.unknownIdentifier): Unknown identifier `pureRows_destination`
+G7RawBoundaryLocations.lean:40:47: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (Hybrid N)
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7RawBoundaryLocations.lean:47:8: error(lean.unknownIdentifier): Unknown identifier `pureRows_destination`
+G7RawBoundaryLocations.lean:55:19: error(lean.unknownIdentifier): Unknown identifier `pureRows_destination`
+G7RawBoundaryLocations.lean:61:34: error: Invalid `⟨...⟩` notation: The expected type of this term could not be determined
+G7RawBoundaryLocations.lean:63:8: error: Tactic `generalize` failed: result is not type correct
+  (∃ a ∈ ?m.271, ?m.270 a = ?m.269) → NodeMovement N v (copyLocation (state s) x) (copyLocation (state row.1) x)
+
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+x✝ : Sort u_5
+Sparse : x✝
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+v : V
+s : Code N sample
+row : Code N sample × sorry
+hrow : row ∈ nodeRows N H common v s
+x : Copy
+hr : ¬v = N.root
+hh : N.graph.IsHybrid v
+hc : ¬common ⟨v, hh⟩ = true
+hm : sorry
+⊢ NodeMovement N v (copyLocation (state s) x) (copyLocation (state row.1) x)
+G7RawBoundaryLocations.lean:85:64: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  I
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7RawBoundaryLocations.lean:87:6: error(lean.unknownIdentifier): Unknown identifier `exitRows_destination`
+G7RawBoundaryLocations.lean:86:73: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+x✝ : Sort u_6
+Sparse : x✝
+I : Type u_5
+N : RootedBinary V E X
+C : G5.Calendar N.graph
+sample : Copy → X
+a : ℝ
+s : Code N sample
+e : E
+he : C.age (N.graph.source e) = a
+hs : BoundaryReady N C a (state s)
+row : Code N sample × sorry
+hrow : row ∈ exitRows N s e
+⊢ BoundaryReady N C a (state row.1)
+G7RawBoundaryLocations.lean:94:27: error: Function expected at
+  Sparse
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  (Hybrid N)
+
+Hint: The identifier `Sparse` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G7RawBoundaryLocations.lean:96:60: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+x✝ : Sort u_5
+Sparse : x✝
+N : RootedBinary V E X
+C : G5.Calendar N.graph
+sample : Copy → X
+a : ℝ
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+v : V
+hv : C.age v = a
+s : Code N sample
+hs : AfterExits N C a (state s)
+row : Code N sample × sorry
+hrow : row ∈ nodeRows N H common v s
+⊢ AfterExits N C a (state row.1) ∧ ∀ (x : Copy), copyLocation (state row.1) x ≠ Location.node v
+'GProgram.G7.RawBoundaryLocations.nodeRows_movement' depends on axioms: [sorryAx, nodeRows_movement]
+G7RawBoundaryLocations.lean:107:14: error(lean.unknownIdentifier): Unknown constant `exitRows_ready`
+'GProgram.G7.RawBoundaryLocations.nodeRows_after_exits' depends on axioms: [sorryAx, nodeRows_after_exits]
