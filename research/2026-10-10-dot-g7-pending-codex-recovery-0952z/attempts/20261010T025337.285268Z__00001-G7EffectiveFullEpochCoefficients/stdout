@@ -1,0 +1,234 @@
+G7EffectiveFullEpochCoefficients.lean:50:71: error: unsolved goals
+I : Type u_4
+p : Sparse I
+x : I → ℝ
+⊢ (List.map
+        (fun x_1 =>
+          ↑x_1.2 * MvPolynomial.eval₂ (Rat.castHom ℝ) x (List.map (fun a => MvPolynomial.X a.1 ^ a.2) x_1.1).prod)
+        p).sum =
+    (List.map (fun z => ↑z.2 * (List.map (fun a => x a.1 ^ a.2) z.1).prod) p).sum
+G7EffectiveFullEpochCoefficients.lean:52:38: warning: This simp argument is unused:
+  map_list_prod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [polynomial, value, map_list_sum, List.map_map, Function.comp_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7EffectiveFullEpochCoefficients.lean:94:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr`:
+  [DecidableEq E]
+  [Fintype E]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype E] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:145:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.restrictGenealogy_eq`:
+  [Fintype Copy]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:151:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.sourceState_eq`:
+  [DecidableEq E]
+  [FinEnum V]
+  [FinEnum E]
+  [Fintype Copy]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum V] [FinEnum E] [Fintype Copy] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:154:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.place_eq`:
+  [DecidableEq E]
+  [FinEnum V]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum V] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:173:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.panelState_eq`:
+  [FinEnum V]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:183:10: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => SourceValid N (selectedSample sample keep) (panelState _a ⋯ keep hc)
+Error: Application type mismatch: The argument
+  s.property.forest
+has type
+  Valid (decodeSnapshot N.root ↑s)
+but is expected to have type
+  Valid _a
+in the application
+  panelState _a ⋯
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : FinEnum V
+inst✝³ : FinEnum E
+Copy : Type uC
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+keep : Finset Copy
+hc : AncestorClosed (state s) keep
+⊢ SourceValid N (selectedSample sample keep) (panelState (sourceState s) ⋯ keep hc)
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    s.property.forest
+  has type
+    @Valid Copy V E inst✝² (decodeSnapshot N.root ↑s)
+  but is expected to have type
+    @Valid Copy V E inst✝² (sourceState s)
+  in the application
+    panelState (sourceState s) ⋯
+G7EffectiveFullEpochCoefficients.lean:216:13: warning: declaration uses `sorry`
+G7EffectiveFullEpochCoefficients.lean:212:8: warning: declaration uses `sorry`
+G7EffectiveFullEpochCoefficients.lean:246:7: warning: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7EffectiveFullEpochCoefficients.lean:246:15: warning: Variable name `sample` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _sample
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7EffectiveFullEpochCoefficients.lean:247:12: warning: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7EffectiveFullEpochCoefficients.lean:288:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  value (List.flatMap ?f (FinEnum.toList ?m.345)) ?x
+in the target expression
+  value
+      (List.flatMap
+        (fun ab =>
+          if joinSelected N s {x | copyLocation (state s) x = place N i} ab = a then
+            product (populationSelected N (panel N s {x | copyLocation (state s) x = place N i} ⋯) i ab.1)
+              (fullCoefficients N todo (SelectedCopy (Finset.univ \ {x | copyLocation (state s) x = place N i}))
+                (selectedSample sample (Finset.univ \ {x | copyLocation (state s) x = place N i}))
+                (panel N s (Finset.univ \ {x | copyLocation (state s) x = place N i}) ⋯) ab.2)
+          else [])
+        (FinEnum.toList
+          (SelectedIndex N (selectedSample sample {x | copyLocation (state s) x = place N i}) Finset.univ ×
+            SelectedIndex N (selectedSample sample (Finset.univ \ {x | copyLocation (state s) x = place N i}))
+              Finset.univ)))
+      (survival r t) =
+    ∑ a_1,
+      ((G1ActualJointEpoch.independentProduct
+              (PMF.map (projection N Finset.univ)
+                (sourceTimeKernel N r t (panelCode N s (populationPanel (state s) (originalPlace N i)) ⋯)))
+              (PMF.map (projection N Finset.univ)
+                (sourceTimeKernel N r t
+                  (panelCode N s (Finset.univ \ populationPanel (state s) (originalPlace N i)) ⋯))))
+            a_1).toReal *
+        if joinIndex N s (populationPanel (state s) (originalPlace N i)) a_1 = a then 1 else 0
+
+case cons
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : FinEnum V
+inst✝³ : FinEnum E
+N : RootedBinary V E X
+i : Option E
+todo : List (Option E)
+ih :
+  ∀ (C : Type uC) [inst : DecidableEq C] [inst_1 : Fintype C] [inst_2 : FinEnum C] (sample : C → X) (s : Code N sample),
+    ActiveIn N s todo.toFinset →
+      ∀ (a : SelectedIndex N sample Finset.univ) (r : PositivePairRates E) (t : ℝ≥0),
+        value (fullCoefficients N todo C sample s a) (survival r t) =
+          ((PMF.map (projection N Finset.univ) (sourceTimeKernel N r t s)) a).toReal
+C : Type uC
+inst✝² : DecidableEq C
+inst✝¹ : Fintype C
+inst✝ : FinEnum C
+sample : C → X
+s : Code N sample
+hs : ActiveIn N s (i :: todo).toFinset
+a : SelectedIndex N sample Finset.univ
+r : PositivePairRates E
+t : ℝ≥0
+keep : Finset C := populationPanel (state s) (originalPlace N i)
+hc : AncestorClosed (state s) keep
+hr :
+  let keep := populationPanel (state s) (originalPlace N i);
+  have hc := ⋯;
+  ActiveIn N (panelCode N s (Finset.univ \ keep) ⋯) todo.toFinset
+⊢ value
+      (List.flatMap
+        (fun ab =>
+          if joinSelected N s {x | copyLocation (state s) x = place N i} ab = a then
+            product (populationSelected N (panel N s {x | copyLocation (state s) x = place N i} ⋯) i ab.1)
+              (fullCoefficients N todo (SelectedCopy (Finset.univ \ {x | copyLocation (state s) x = place N i}))
+                (selectedSample sample (Finset.univ \ {x | copyLocation (state s) x = place N i}))
+                (panel N s (Finset.univ \ {x | copyLocation (state s) x = place N i}) ⋯) ab.2)
+          else [])
+        (FinEnum.toList
+          (SelectedIndex N (selectedSample sample {x | copyLocation (state s) x = place N i}) Finset.univ ×
+            SelectedIndex N (selectedSample sample (Finset.univ \ {x | copyLocation (state s) x = place N i}))
+              Finset.univ)))
+      (survival r t) =
+    ∑ a_1,
+      ((G1ActualJointEpoch.independentProduct
+              (PMF.map (projection N Finset.univ)
+                (sourceTimeKernel N r t (panelCode N s (populationPanel (state s) (originalPlace N i)) ⋯)))
+              (PMF.map (projection N Finset.univ)
+                (sourceTimeKernel N r t
+                  (panelCode N s (Finset.univ \ populationPanel (state s) (originalPlace N i)) ⋯))))
+            a_1).toReal *
+        if joinIndex N s (populationPanel (state s) (originalPlace N i)) a_1 = a then 1 else 0
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    fun a => instDecidableEqLocation (copyLocation (sourceState s) a) (place N i)
+  has type
+    (a : C) → Decidable (copyLocation (sourceState s) a = place N i)
+  but is expected to have type
+    DecidablePred fun x => copyLocation (state s) x = place N i
+  in the application
+    @Finset.filter C (fun x => copyLocation (state s) x = place N i) fun a =>
+      instDecidableEqLocation (copyLocation (sourceState s) a) (place N i)
+G7EffectiveFullEpochCoefficients.lean:278:33: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [fullCoefficients, h, PMF.pure_apply, Ne.symm hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7EffectiveFullEpochCoefficients.lean:287:49: warning: This simp argument is unused:
+  place_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullCoefficients, sourceState_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

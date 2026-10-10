@@ -1,0 +1,24 @@
+G7ExactLawResourceGame.lean:80:14: error: Type mismatch
+  hh
+has type
+  Homogeneous E h
+but is expected to have type
+  Winning E n✝ h u
+G7ExactLawResourceGame.lean:81:16: error: Type mismatch
+  Or.inl hh
+has type
+  Homogeneous E h ∨ ?m.76
+but is expected to have type
+  Winning E n✝ h u
+G7ExactLawResourceGame.lean:141:37: error: Ambiguous term
+  not_imp
+Possible interpretations:
+  _root_.not_imp : ¬(?m.76 → ?m.77) ↔ ?m.76 ∧ ¬?m.77
+  
+  Classical.not_imp : ¬(?m.76 → ?m.77) ↔ ?m.76 ∧ ¬?m.77
+G7ExactLawResourceGame.lean:141:2: error: Type mismatch: After simplification, term
+  hn
+ has type
+  ∃ x x_1, ∃ (_ : Consistent E h x) (_ : Consistent E h x_1), ¬E.target x = E.target x_1
+but is expected to have type
+  ∃ s t, Consistent E h s ∧ Consistent E h t ∧ E.target s ≠ E.target t

@@ -1,0 +1,436 @@
+G7OriginalEdgeOperators.lean:36:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeOperators.pairAt_iff`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeOperators.lean:76:22: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+x : Copy
+⊢ (match
+      if h : ¬x = p.2 ∧ x ∈ (↑s).live then
+        some
+          ⟨if x = p.1 then
+              (match (↑s).genealogy p.1 with
+                  | some t => ↑t
+                  | none => Genealogy.leaf p.1).graft
+                (match (↑s).genealogy p.2 with
+                | some t => ↑t
+                | none => Genealogy.leaf p.2)
+            else
+              match (↑s).genealogy x with
+              | some t => ↑t
+              | none => Genealogy.leaf x,
+            ⋯⟩
+      else none with
+    | some t => ↑t
+    | none => Genealogy.leaf x) =
+    if ¬x = p.2 ∧ x ∈ (↑s).live then
+      if x = p.1 then
+        (match (↑s).genealogy p.1 with
+            | some t => ↑t
+            | none => Genealogy.leaf p.1).graft
+          (match (↑s).genealogy p.2 with
+          | some t => ↑t
+          | none => Genealogy.leaf p.2)
+      else
+        match (↑s).genealogy x with
+        | some t => ↑t
+        | none => Genealogy.leaf x
+    else Genealogy.leaf x
+G7OriginalEdgeOperators.lean:83:85: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+x : Copy
+⊢ (match
+      if ¬x = p.2 ∧ x ∈ (↑s).live then
+        some
+          (match (↑s).population x with
+          | some p => p
+          | none => Location.node N.root)
+      else none with
+    | some p => p
+    | none => Location.node N.root) =
+    if ¬x = p.2 ∧ x ∈ (↑s).live then
+      match (↑s).population x with
+      | some p => p
+      | none => Location.node N.root
+    else Location.node N.root
+G7OriginalEdgeOperators.lean:97:38: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+⊢ SourceValid N sample (merge (state s) (↑⟨i, ⟨p, hp⟩⟩.snd).1 (↑⟨i, ⟨p, hp⟩⟩.snd).2)
+G7OriginalEdgeOperators.lean:95:35: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+⊢ Canonical (stepDestination N s (some ⟨i, ⟨p, hp⟩⟩))
+G7OriginalEdgeOperators.lean:127:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeOperators.different_population_roots`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeOperators.lean:156:14: error(lean.unknownIdentifier): Unknown constant `Finset.erase_comm`
+G7OriginalEdgeOperators.lean:173:10: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i j : Option E
+hij : i ≠ j
+p q : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hq : PairAt N j q s
+hp' : PairAt N i p (mergeAt N j q s)
+hq' : PairAt N j q (mergeAt N i p s)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+qq :
+  q.1 ∈ (state s).live ∧
+    (state s).location q.1 = originalPlace N j ∧
+      q.2 ∈ (state s).live ∧ (state s).location q.2 = originalPlace N j ∧ q.1 ≠ q.2
+hac : p.1 ≠ q.1
+had : p.1 ≠ q.2
+hbc : p.2 ≠ q.1
+hbd : p.2 ≠ q.2
+x : Copy
+hxa : ¬x = p.1
+hxc : ¬x = q.1
+⊢ (if ¬x = p.2 ∧ ¬x = q.2 ∧ x ∈ (state s).live then
+      if ¬x = p.2 ∧ x ∈ (state s).live then (state s).genealogy x else Genealogy.leaf x
+    else Genealogy.leaf x) =
+    if ¬x = p.2 ∧ ¬x = q.2 ∧ x ∈ (state s).live then
+      if ¬x = q.2 ∧ x ∈ (state s).live then (state s).genealogy x else Genealogy.leaf x
+    else Genealogy.leaf x
+G7OriginalEdgeOperators.lean:174:6: error: unsolved goals
+case hp
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i j : Option E
+hij : i ≠ j
+p q : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hq : PairAt N j q s
+hp' : PairAt N i p (mergeAt N j q s)
+hq' : PairAt N j q (mergeAt N i p s)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+qq :
+  q.1 ∈ (state s).live ∧
+    (state s).location q.1 = originalPlace N j ∧
+      q.2 ∈ (state s).live ∧ (state s).location q.2 = originalPlace N j ∧ q.1 ≠ q.2
+hac : p.1 ≠ q.1
+had : p.1 ≠ q.2
+hbc : p.2 ≠ q.1
+hbd : p.2 ≠ q.2
+x : Copy
+⊢ (if ¬x = p.2 ∧ ¬x = q.2 ∧ x ∈ (state s).live then
+      if ¬x = p.2 ∧ x ∈ (state s).live then (state s).location x else Location.node N.root
+    else Location.node N.root) =
+    if ¬x = p.2 ∧ ¬x = q.2 ∧ x ∈ (state s).live then
+      if ¬x = q.2 ∧ x ∈ (state s).live then (state s).location x else Location.node N.root
+    else Location.node N.root
+G7OriginalEdgeOperators.lean:167:30: warning: This simp argument is unused:
+  qq.1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc, Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:167:35: warning: This simp argument is unused:
+  qq.2.2.1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had, Ne.symm hbc,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:167:55: warning: This simp argument is unused:
+  qq.2.2.2.2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had, Ne.symm hbc,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:168:28: warning: This simp argument is unused:
+  Ne.symm hac
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm had, Ne.symm hbc,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:168:40: warning: This simp argument is unused:
+  Ne.symm had
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm hbc,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:168:52: warning: This simp argument is unused:
+  Ne.symm hbc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:168:64: warning: This simp argument is unused:
+  Ne.symm hbd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:171:18: warning: This simp argument is unused:
+  pp.1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc, Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:171:23: warning: This simp argument is unused:
+  pp.2.2.1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had, Ne.symm hbc,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:171:46: warning: This simp argument is unused:
+  pp.2.2.2.2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, qq.2.2.2.2, hac, had, hbc, hbd, Ne.symm hac, Ne.symm had, Ne.symm hbc,
+    Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:172:14: warning: This simp argument is unused:
+  hac
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, had, hbc, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc, Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:172:18: warning: This simp argument is unused:
+  had
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, hbc, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc, Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:172:22: warning: This simp argument is unused:
+  hbc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbd, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc, Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:172:26: warning: This simp argument is unused:
+  hbd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pp.1, pp.2.2.1, qq.1, qq.2.2.1, pp.2.2.2.2, qq.2.2.2.2, hac, had, hbc, Ne.symm hac, Ne.symm had,
+    Ne.symm hbc, Ne.symm hbd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:173:57: warning: This simp argument is unused:
+  and_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hxa, hxc, Finset.mem_erase, and_left_comm, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:173:66: warning: This simp argument is unused:
+  and_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hxa, hxc, Finset.mem_erase, and_left_comm, and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:178:45: warning: This simp argument is unused:
+  and_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.mem_erase, and_left_comm, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:178:54: warning: This simp argument is unused:
+  and_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.mem_erase, and_left_comm, and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:201:4: error: Function expected at
+  pairMatrix N i p * pairMatrix N j q
+but this term has type
+  ?m.85
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G7OriginalEdgeOperators.lean:202:62: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i j : Option E
+p q : Copy × Copy
+s d : Code N sample
+⊢ sorry () = if mergeAt N j q (mergeAt N i p s) = d then 1 else 0
+G7OriginalEdgeOperators.lean:203:8: warning: This simp argument is unused:
+  Matrix.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [pairMatrix]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:203:25: warning: This simp argument is unused:
+  pairMatrix
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeOperators.lean:216:12: error: typeclass instance problem is stuck
+  Fintype ?m.133
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Fintype` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+G7OriginalEdgeOperators.lean:279:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G7OriginalEdgeOperators.lean:286:64: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s d : Code N sample
+i : Option E
+a✝ : i ∈ Finset.univ
+⊢ (pairRate r i * ∑ x, ((if stepDestination N s (some ⟨i, x⟩) = d then 1 else 0) - if s = d then 1 else 0)) * (1 / 2) =
+    (pairRate r i * ∑ x, ((-if s = d then 1 else 0) + if stepDestination N s (some ⟨i, ⟨↑x, ⋯⟩⟩) = d then 1 else 0)) *
+      (1 / 2)

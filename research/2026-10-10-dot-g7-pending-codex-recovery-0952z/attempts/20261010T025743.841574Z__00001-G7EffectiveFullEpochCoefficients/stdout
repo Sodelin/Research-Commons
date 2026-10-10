@@ -1,0 +1,80 @@
+G7EffectiveFullEpochCoefficients.lean:109:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr`:
+  [DecidableEq E]
+  [Fintype E]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype E] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:160:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.restrictGenealogy_eq`:
+  [Fintype Copy]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:166:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.sourceState_eq`:
+  [DecidableEq E]
+  [FinEnum V]
+  [FinEnum E]
+  [Fintype Copy]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum V] [FinEnum E] [Fintype Copy] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:169:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.place_eq`:
+  [DecidableEq E]
+  [FinEnum V]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum V] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:188:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveFullEpochCoefficients.panelState_eq`:
+  [FinEnum V]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveFullEpochCoefficients.lean:263:7: warning: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7EffectiveFullEpochCoefficients.lean:263:15: warning: Variable name `sample` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _sample
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7EffectiveFullEpochCoefficients.lean:264:12: warning: Variable name `C` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G7EffectiveFullEpochCoefficients.lean:310:10: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G7EffectiveFullEpochCoefficients.lean:313:8: error: (deterministic) timeout at `«tactic execution»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G7EffectiveFullEpochCoefficients.lean:296:19: error: (deterministic) timeout at `«tactic execution»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G7EffectiveFullEpochCoefficients.lean:295:33: warning: This simp argument is unused:
+  hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [fullCoefficients, h, PMF.pure_apply, Ne.symm hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
