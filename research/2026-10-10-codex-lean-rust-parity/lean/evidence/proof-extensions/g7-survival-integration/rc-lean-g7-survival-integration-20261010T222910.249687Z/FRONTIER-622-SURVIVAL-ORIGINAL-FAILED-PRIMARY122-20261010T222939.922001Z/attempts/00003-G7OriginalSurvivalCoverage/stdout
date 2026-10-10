@@ -1,0 +1,25 @@
+G7OriginalSurvivalCoverage.lean:31:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalSurvivalCoverage.exposure_pos`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalSurvivalCoverage.lean:43:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalSurvivalCoverage.ratesFromLengths_exposure`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalSurvivalCoverage.lean:74:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalSurvivalCoverage.survival_eq_iff_exposure`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalSurvivalCoverage.lean:108:4: error: Type mismatch
+  Eq.symm (ratesFromLengths_exposure N C₀ ?m.159 ?m.160 e)
+has type
+  ?m.159 e = exposure N C₀ (ratesFromLengths N C₀ ?m.159 ?m.160) e
+but is expected to have type
+  r.edge e * (C.age (N.graph.source e) - C.age (N.graph.target e)) =
+    r₀.edge e * (C₀.age (N.graph.source e) - C₀.age (N.graph.target e))

@@ -1,0 +1,295 @@
+G7OrderedFrontierProduct.lean:34:29: error(lean.unknownIdentifier): Unknown constant `List.mem_split`
+G7OrderedFrontierProduct.lean:34:11: error: Tactic `rcases` failed: `x✝ : ?m.57` is not an inductive datatype
+G7OrderedFrontierProduct.lean:63:2: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+reg : V → Bool
+coin : Copy → Bool
+l : Copy
+⊢ target a reg coin l = Location.edge e → Location.node (N.graph.source e) = target a reg coin l
+G7OrderedFrontierProduct.lean:64:29: warning: This simp argument is unused:
+  ht reg coin l
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [route, exitLocation]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OrderedFrontierProduct.lean:67:31: warning: This simp argument is unused:
+  hs
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [route, exitLocation, Ne.symm hs]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OrderedFrontierProduct.lean:76:2: error: unsolved goals
+case hl
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+s : Code N sample
+coin : Copy → Bool
+⊢ (state
+        (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+          ⋯)).live =
+    (state s).live
+G7OrderedFrontierProduct.lean:77:2: error: unsolved goals
+case ha
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+s : Code N sample
+coin : Copy → Bool
+⊢ (state
+        (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+          ⋯)).ancestor =
+    (state s).ancestor
+G7OrderedFrontierProduct.lean:78:2: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+s : Code N sample
+coin : Copy → Bool
+l : Copy
+hl : l ∈ (state s).live
+⊢ (state
+          (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+            ⋯)).genealogy
+      l =
+    (state s).genealogy l
+
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+s : Code N sample
+coin : Copy → Bool
+l : Copy
+hl : l ∉ (state s).live
+⊢ (state
+          (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+            ⋯)).genealogy
+      l =
+    Genealogy.leaf l
+G7OrderedFrontierProduct.lean:85:6: error: Type mismatch
+  route_exit_commute a e ht hs ?m.249 coin l ?m.250
+has type
+  exitLocation N e (route a ?m.249 coin l ?m.250) = route a ?m.249 coin l (exitLocation N e ?m.250)
+but is expected to have type
+  (state
+          (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+            ⋯)).location
+      l =
+    route a (state s).register coin l (exitLocation N e ((state s).location l))
+G7OrderedFrontierProduct.lean:86:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+s : Code N sample
+coin : Copy → Bool
+l : Copy
+hl : l ∉ (state s).live
+⊢ (state
+          (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+            ⋯)).location
+      l =
+    Location.node N.root
+G7OrderedFrontierProduct.lean:87:2: error: unsolved goals
+case hr
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+a : Action N
+e : E
+ht : AvoidsPopulation a (some e)
+hs : site a ≠ N.graph.source e
+s : Code N sample
+coin : Copy → Bool
+⊢ (state
+        (UnifiedLean.Source.FiniteSourceSnapshot.admittedCode N sample (exitEdge N (state (destination a s coin)) e)
+          ⋯)).register =
+    (state s).register
+G7OrderedFrontierProduct.lean:79:62: warning: This simp argument is unused:
+  destination_live
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_genealogy, destination_genealogy, exit_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OrderedFrontierProduct.lean:82:60: warning: This simp argument is unused:
+  destination_live
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_location, destination_location, exit_live, exit_register, destination_register]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OrderedFrontierProduct.lean:82:91: warning: This simp argument is unused:
+  destination_register
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_location, destination_location, exit_live, destination_live, exit_register]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OrderedFrontierProduct.lean:103:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  boundaryKernel ?m.260 (operation ?a) ?s
+in the target expression
+  (match operation a with
+        | BoundaryOperation.exit e => PMF.pure (exitCode N s e)
+        | BoundaryOperation.ordinary e degree => PMF.pure (ordinaryCode N s e)
+        | BoundaryOperation.root => PMF.pure (rootCode N s)
+        | BoundaryOperation.independent H gamma => independentPulseKernel H gamma s
+        | BoundaryOperation.common H => PMF.pure (pulseCode H s fun x => (state s).register H.hybrid)).bind
+      (boundaryKernel N (BoundaryOperation.exit e)) =
+    match operation a with
+    | BoundaryOperation.exit e_1 => PMF.pure (exitCode N (exitCode N s e) e_1)
+    | BoundaryOperation.ordinary e_1 degree => PMF.pure (ordinaryCode N (exitCode N s e) e_1)
+    | BoundaryOperation.root => PMF.pure (rootCode N (exitCode N s e))
+    | BoundaryOperation.independent H gamma => independentPulseKernel H gamma (exitCode N s e)
+    | BoundaryOperation.common H =>
+      PMF.pure (pulseCode H (exitCode N s e) fun x => (state (exitCode N s e)).register H.hybrid)
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+e : E
+ht : v ≠ N.graph.target e
+hs : v ≠ N.graph.source e
+a : Action N := originalAction N H gamma common v
+hs' : site a ≠ N.graph.source e
+ht' : AvoidsPopulation a (some e)
+s : Code N sample
+⊢ (match operation a with
+        | BoundaryOperation.exit e => PMF.pure (exitCode N s e)
+        | BoundaryOperation.ordinary e degree => PMF.pure (ordinaryCode N s e)
+        | BoundaryOperation.root => PMF.pure (rootCode N s)
+        | BoundaryOperation.independent H gamma => independentPulseKernel H gamma s
+        | BoundaryOperation.common H => PMF.pure (pulseCode H s fun x => (state s).register H.hybrid)).bind
+      (boundaryKernel N (BoundaryOperation.exit e)) =
+    match operation a with
+    | BoundaryOperation.exit e_1 => PMF.pure (exitCode N (exitCode N s e) e_1)
+    | BoundaryOperation.ordinary e_1 degree => PMF.pure (ordinaryCode N (exitCode N s e) e_1)
+    | BoundaryOperation.root => PMF.pure (rootCode N (exitCode N s e))
+    | BoundaryOperation.independent H gamma => independentPulseKernel H gamma (exitCode N s e)
+    | BoundaryOperation.common H =>
+      PMF.pure (pulseCode H (exitCode N s e) fun x => (state (exitCode N s e)).register H.hybrid)
+G7OrderedFrontierProduct.lean:170:2: error: Type mismatch: After simplification, term
+  hm
+ has type
+  (∑ a_1, (boundaryKernel N a s) a_1 * (boundaryKernel N b a_1) d).toReal =
+    (∑ a_1, (boundaryKernel N b s) a_1 * (boundaryKernel N a a_1) d).toReal
+but is expected to have type
+  ∑ x, ((boundaryKernel N a s) x).toReal * ((boundaryKernel N b x) d).toReal =
+    ∑ x, ((boundaryKernel N b s) x).toReal * ((boundaryKernel N a x) d).toReal
+G7OrderedFrontierProduct.lean:217:58: error(lean.invalidField): Invalid field `symm`: The environment does not contain `Function.symm`, so it is not possible to project the field `symm` from an expression
+  h
+of type `v = u → False`

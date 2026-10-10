@@ -1,0 +1,113 @@
+--- 381e567fe8a48acfbd3e8634bfa922d8ee3bc2326bd07185b3a43eb73fb31725
++++ f41429ea4f33e5bee5218097f2ecf8b553ecf5439fc7acb58ed24bea0d665617
+@@ -1,6 +1,12 @@
+ import G7CalendarExposureClosedForm
+ import G7BoundaryPhasePermutation
+ import Mathlib.Data.List.Perm.Basic
++
++/- Proof/API derivative: Codex / lean_reuse_successor, 2026-10-10.
++   Original 381e567fe8a48acfbd3e8634bfa922d8ee3bc2326bd07185b3a43eb73fb31725
++   is preserved separately. Existing snapshot field lemmas and real bind-law
++   identities are applied explicitly before reduction; all declaration types,
++   definitions, hypotheses, import edges and resource options are unchanged. -/
+ 
+ /-! Schedule-independent evaluation of the actual whole-edge frontier. The
+ only noncommuting pairs are an original edge's own entry/exit interfaces.
+@@ -31,7 +37,7 @@
+     simp [he]
+   | cons a xs ih =>
+     have hmem : a ∈ ys := hp.mem_iff.mp (by simp)
+-    obtain ⟨pre,post,rfl⟩ := List.mem_split hmem
++    obtain ⟨pre,post,rfl⟩ := List.append_of_mem hmem
+     have hpre := List.pairwise_append.mp hy
+     have hxs := List.pairwise_cons.mp hx
+     have htail : (pre++post).Pairwise R := List.pairwise_append.mpr
+@@ -61,7 +67,9 @@
+     exitLocation N e (route a reg coin l loc) = route a reg coin l (exitLocation N e loc) := by
+   by_cases hn : loc = .node (site a)
+   · subst loc
+-    simp [route,exitLocation,ht reg coin l]
++    have htarget := ht reg coin l
++    change target a reg coin l ≠ Location.edge e at htarget
++    simp [route,exitLocation,htarget]
+   · by_cases he : loc = .edge e
+     · subst loc
+       simp [route,exitLocation,hs,Ne.symm hs]
+@@ -71,20 +79,37 @@
+     (a : Action N) (e : E) (ht : AvoidsPopulation (Copy:=Copy) a (some e))
+     (hs : site a ≠ N.graph.source e) (s : Code N sample) (coin : Copy → Bool) :
+     exitCode N (destination a s coin) e = destination a (exitCode N s e) coin := by
+-  apply canonical_ext _ _ (admitted_canonical N sample _ _) (destination_canonical _ _ _)
++  have hleft : Canonical (exitCode N (destination a s coin) e) :=
++    admitted_canonical N sample _ _
++  apply canonical_ext (exitCode N (destination a s coin) e)
++    (destination a (exitCode N s e) coin) hleft (destination_canonical _ _ _)
+   apply state_ext
+-  · simp only [exit_live,destination_live]
+-  · simp only [exit_ancestor,destination_ancestor]
++  · rw [GProgram.G7.OriginalEdgeBoundary.exit_live N (destination a s coin) e,
++      destination_live a s coin,destination_live a (exitCode N s e) coin,
++      GProgram.G7.OriginalEdgeBoundary.exit_live N s e]
++  · rw [GProgram.G7.OriginalEdgeBoundary.exit_ancestor N (destination a s coin) e,
++      destination_ancestor a s coin,destination_ancestor a (exitCode N s e) coin,
++      GProgram.G7.OriginalEdgeBoundary.exit_ancestor N s e]
+   · funext l
+-    simp only [exit_genealogy,destination_genealogy,exit_live,destination_live]
+-    by_cases hl : l ∈ (state s).live <;> simp [hl]
++    rw [GProgram.G7.OriginalEdgeBoundary.exit_genealogy N (destination a s coin) e l,
++      destination_live a s coin,destination_genealogy a s coin l,
++      destination_genealogy a (exitCode N s e) coin l,
++      GProgram.G7.OriginalEdgeBoundary.exit_live N s e,
++      GProgram.G7.OriginalEdgeBoundary.exit_genealogy N s e l]
+   · funext l
+-    simp only [exit_location,destination_location,exit_live,destination_live,exit_register,destination_register]
++    rw [GProgram.G7.OriginalEdgeBoundary.exit_location N (destination a s coin) e l,
++      destination_live a s coin,destination_location a s coin l,
++      destination_location a (exitCode N s e) coin l,
++      GProgram.G7.OriginalEdgeBoundary.exit_live N s e,
++      GProgram.G7.OriginalEdgeBoundary.exit_register N s e,
++      GProgram.G7.OriginalEdgeBoundary.exit_location N s e l]
+     by_cases hl : l ∈ (state s).live
+     · simp only [hl,if_pos]
+       exact route_exit_commute a e ht hs _ coin l _
+-    · simp [hl]
+-  · simp only [exit_register,destination_register]
++    · simp only [if_neg hl]
++  · rw [GProgram.G7.OriginalEdgeBoundary.exit_register N (destination a s coin) e,
++      destination_register a s coin,destination_register a (exitCode N s e) coin,
++      GProgram.G7.OriginalEdgeBoundary.exit_register N s e]
+   · rfl
+ 
+ lemma original_node_exit_matrix_commute (N : RootedBinary V E X) {sample : Copy → X}
+@@ -99,8 +124,10 @@
+   have hk (s : Code N sample) :
+       ((boundaryKernel N (operation a) s).bind (boundaryKernel N (.exit e))) =
+         ((boundaryKernel N (.exit e) s).bind (boundaryKernel N (operation a))) := by
+-    simp only [boundaryKernel,PMF.pure_bind]
+-    rw [kernel_fixed_carrier,PMF.bind_map,kernel_fixed_carrier]
++    change ((boundaryKernel N (operation a) s).bind
++      (fun q : Code N sample => PMF.pure (exitCode N q e))) =
++      (PMF.pure (exitCode N s e)).bind (boundaryKernel N (operation a))
++    rw [PMF.pure_bind,kernel_fixed_carrier,PMF.bind_map,kernel_fixed_carrier]
+     change (coinLaw (Copy:=Copy) a).map (fun coin => exitCode N (destination a s coin) e) = _
+     congr 1
+     funext coin
+@@ -167,7 +194,8 @@
+   change _ * _ = _ * _
+   ext s d
+   have hm := congrArg (fun p : PMF (Code N sample) => (p d).toReal) (h s)
+-  simpa [bind_probability_real,tsum_fintype,Matrix.mul_apply,boundaryMatrix] using hm
++  simp only [bind_probability_real,tsum_fintype] at hm
++  simpa only [Matrix.mul_apply,boundaryMatrix] using hm
+ 
+ lemma original_node_matrices_commute (N : RootedBinary V E X) {sample : Copy → X}
+     (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval)
+@@ -214,7 +242,7 @@
+       by_cases h : v=u
+       · subst u; exact Commute.refl _
+       · exact ((original_node_matrices_commute N H gamma common v u).mul_right
+-          (other_node_bank_commute N H gamma common u v h.symm w).symm).mul_left
++          (other_node_bank_commute N H gamma common u v (Ne.symm h) w).symm).mul_left
+           ((other_node_bank_commute N H gamma common v u h w).mul_right
+             (bankExponential_commute N _ _))
+ 

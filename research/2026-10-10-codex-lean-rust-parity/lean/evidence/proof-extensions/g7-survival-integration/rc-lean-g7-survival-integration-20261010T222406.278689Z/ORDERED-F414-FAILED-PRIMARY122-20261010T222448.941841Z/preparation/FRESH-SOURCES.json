@@ -1,0 +1,58 @@
+{
+  "G7EdgeExposureAccounting": {
+    "module": "G7EdgeExposureAccounting",
+    "sha256": "786e16b4bcd19de06b338820f905803209fc4e0a36f08a8c00e347a9a8caed1a",
+    "imports": [
+      "G7ActualCalendarGathering"
+    ]
+  },
+  "G7CalendarExposureClosedForm": {
+    "module": "G7CalendarExposureClosedForm",
+    "sha256": "2219717f88d723114683e9a440dd06c71dfb0646b8ccd2e0f1756df5cb52d585",
+    "imports": [
+      "G7EdgeExposureAccounting",
+      "UnifiedLean.Source.SourceCalendarTiming"
+    ]
+  },
+  "G7OrderedFrontierProduct": {
+    "module": "G7OrderedFrontierProduct",
+    "sha256": "f41429ea4f33e5bee5218097f2ecf8b553ecf5439fc7acb58ed24bea0d665617",
+    "imports": [
+      "G7CalendarExposureClosedForm",
+      "G7BoundaryPhasePermutation",
+      "Mathlib.Data.List.Perm.Basic"
+    ]
+  },
+  "G7CalendarFrontierOrder": {
+    "module": "G7CalendarFrontierOrder",
+    "sha256": "f719a1dae4eae2ea0edbe01a3461abe30f61d0018011abf4f040ce3c17ef126a",
+    "imports": [
+      "G7OrderedFrontierProduct"
+    ]
+  },
+  "G7WholeEdgeExposureInvariant": {
+    "module": "G7WholeEdgeExposureInvariant",
+    "sha256": "f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642",
+    "imports": [
+      "G7CalendarFrontierOrder",
+      "G7AncestralRationalCompletion",
+      "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+      "UnifiedLean.Source.SourceCompletedUnrankedTree"
+    ]
+  },
+  "G7OriginalSurvivalCoverage": {
+    "module": "G7OriginalSurvivalCoverage",
+    "sha256": "013d5d57a955e911ba808e4b1f91e5b63e8bdd4523bc1a09db64b5dfc2f73a69",
+    "imports": [
+      "G7WholeEdgeExposureInvariant",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+    ]
+  },
+  "G6OriginalWholeEdgeChartConsumer": {
+    "module": "G6OriginalWholeEdgeChartConsumer",
+    "sha256": "20df02223f9c2c214056f50d4bfa43f7e68ee35a93aead431ef2a02bd81f1163",
+    "imports": [
+      "G7OriginalSurvivalCoverage"
+    ]
+  }
+}

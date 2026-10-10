@@ -1,0 +1,67 @@
+{
+  "status": "READY_FOR_ROOT_PLAN_REVIEW_NO_COMPILER_LAUNCHED",
+  "workspace": "/dev/shm/rc-lean-g7-survival-integration-20261010T215937.269892Z",
+  "graph_sha256": "dcc1f31f55a42386fa84cac11b2b79ef487d5ca251887a17f77f939b174606ab",
+  "preparation_sha256": "5c5352aef01b8d48b25478813a7ecc806bc4f8eb7a0aa1d76f30e6eaaf4da313",
+  "monitor_sha256": "4844ff0937b0c19bebca127ad317ea4ae5eb792b1e5f59d84c1dffaed34eb3f4",
+  "monitor_path": "/dev/shm/rc-lean-g7-survival-integration-20261010T215937.269892Z/scripts/guard_g7_survival_run_20261010_v2.py",
+  "python": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "launcher": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/run_proof_extensions.py",
+  "launcher_sha256": "9f32b6998cbaabad9867802dd7d88e0b305ab36635252b7e53e0669663c9ef38",
+  "lean_bin": "/workspace/toolchains/lean-4.33.1-linux/bin",
+  "mathlib": "/workspace/dependencies/mathlib4",
+  "phases": {
+    "primary": {
+      "target": "recovery/g7-original-survival-six",
+      "requires": []
+    },
+    "secondary": {
+      "target": "recovery/g6-whole-edge-chart-consumer",
+      "requires": [
+        "primary"
+      ]
+    },
+    "union1503": {
+      "target": "history/survival-library1503",
+      "requires": [
+        "primary"
+      ],
+      "status": "PROSPECTIVE_ONLY_DO_NOT_EXECUTE"
+    },
+    "union1504": {
+      "target": "current/connected",
+      "requires": [
+        "primary",
+        "secondary"
+      ]
+    }
+  },
+  "allocation_roots": [
+    "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z",
+    "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z",
+    "/dev/shm/rc-lean-g7-survival-integration-20261010T215937.269892Z"
+  ],
+  "scratch_abort_bytes": 2013265920,
+  "scratch_hard_limit_bytes": 2147483648,
+  "memory_abort_bytes": 16106127360,
+  "budget": {
+    "all_prior1497_and_G7_attempts_distinct_inode_allocated_bytes": 814465024,
+    "new_allocation_reserves": {
+      "fresh_seven_attempt_and_cache_bundle_copies": 268435456,
+      "two_minimal_root_runs_audits_and_metadata": 100663296,
+      "one_full_coherent_run_and_raw_audit": 268435456,
+      "source_transport_metadata_and_transient_writes": 67108864
+    },
+    "planned_combined_allocation_bound_bytes": 1519108096,
+    "combined_scratch_limit_bytes": 2147483648,
+    "abort_at_bytes_with_transient_headroom": 2013265920,
+    "memory_nonreclaimable_abort_bytes": 16106127360,
+    "monitor_poll_seconds": 0.5,
+    "packet_lossless_export_reserved_bytes": 41943040,
+    "packet_lossless_export_constraint": "Measure gzip bytes before writing packet; raw audits stay at fixed scratch paths. Prior1497 full source closure is already distributed and linked by exact source hashes."
+  },
+  "compiler_launched": false,
+  "normal_compiler_caps": "Unchanged original4GiB/180s; -j1 -t0 -Ddebug.skipKernelTC=false",
+  "full_coherent_caps": "Unchanged current/connected6GiB/300s; no core changes",
+  "preservation": "No objects or duplicate1497 sources exported. Lossless gzip retains raw SHA bindings; full original scratch files stay at fixed paths."
+}

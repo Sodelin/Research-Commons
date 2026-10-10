@@ -1,0 +1,25 @@
+--- original/G7OriginalSurvivalCoverage.lean
++++ derivative/G7OriginalSurvivalCoverage.lean
+@@ -1,5 +1,12 @@
+ import G7WholeEdgeExposureInvariant
+ import Mathlib.Analysis.SpecialFunctions.Log.Basic
++
++/- Proof-only compatibility derivative by Codex / lean_reuse_successor,
++2026-10-10. Original source SHA256:
++013d5d57a955e911ba808e4b1f91e5b63e8bdd4523bc1a09db64b5dfc2f73a69.
++Supply the already defined exposure vector and its positivity proof explicitly
++in the fixed-calendar representative equality. Declaration types, definitions,
++imports and options are unchanged. -/
+ 
+ /-!
+ # Exact physical image of the original independent-edge source contract
+@@ -105,7 +112,8 @@
+   let r₀ := ratesFromLengths N C₀ (exposure N C r) (exposure_pos N C r)
+   have he : SameWholeEdgeExposure N C C₀ r r₀ := by
+     intro e
+-    exact (ratesFromLengths_exposure N C₀ _ _ e).symm
++    change exposure N C r e = exposure N C₀ r₀ e
++    exact (ratesFromLengths_exposure N C₀ (exposure N C r) (exposure_pos N C r) e).symm
+   refine ⟨r₀,((survival_eq_iff_exposure N C C₀ r r₀).mpr he).symm,?_,?_⟩
+   · exact actual_natural_completed_exposure_invariant N C C₀ sample H p common r r₀ he
+   · intro mask

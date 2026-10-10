@@ -1,0 +1,83 @@
+{
+  "status": "PRE_USE_NATIVE_ONLY_APPLICATION_CONTROLS",
+  "script_sha256": "61938a01ce25ce63443369f7684d4adb98310988691cc6fa9af86e9491bfdce8",
+  "workspace": "/dev/shm/rc-source-fit-application-20261010T222259.832312Z",
+  "pins": {
+    "/workspace/Research-Commons/applications/practical-solver/run.py": "82f4547efeb1ee118398a46fb5c0c29d1137b87b8643be40e615d9c4e642baf0",
+    "/workspace/Research-Commons/applications/practical-solver/README.md": "e8a40f40e805d07f4e42e40c4b710f746655e0a4dd2086a469d0b474143e27dd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_source_fit_component.py": "6f02d176aaa25a723796496a01ebdaafd5b4b842a4853f94befd419133a0f2ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/native_component.py": "cbad55d031621f8e6d29ddc58d6156188c6b9344705d4612642b2423ca6aea3c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/guard_g7_survival_run_20261010_v2.py": "4844ff0937b0c19bebca127ad317ea4ae5eb792b1e5f59d84c1dffaed34eb3f4",
+    "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver": "443a1eb6d35154e827b3f0236ab6c5c458752fd6f5480463f390e74a99bd4f00"
+  },
+  "inputs": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-sat.request.json": "63d6b2242c428d98fe89c3c6e6295948026de220095a3fe852d5e66069db6591",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-sat.expected.json": "924d317dd1ccfbcc939fe447888bb1e2e92a306008624479b584279575c2c518",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-independent-sat.request.json": "0d3d30b9be0cf8ccbb9473c5fdeffd6a4c6a129fa122fff1ea0b181411dd7ef4",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-independent-sat.expected.json": "4072d9a6ea8dc3a98022b66d2b562bf360fe8f9ec6fae98b5dd58f1d504a1cd6",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-permuted.request.json": "a01f07c1cd2fa5a84880bd46ea7a3890356af9c936ca4873ebd5bb7b5f40875e",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/fixtures/source-fit/hybrid-common-permuted.expected.json": "efdd97b6eb1e8d23fe6424e0f1e450482ec6752444208adcf8f5792511e4c7a7"
+  },
+  "cases": [
+    [
+      "common-bank",
+      "source-fit-bank",
+      "hybrid-common-sat",
+      0,
+      "SUPPLIED_FIT_BANK"
+    ],
+    [
+      "common-readout",
+      "source-fit-readout",
+      "hybrid-common-sat",
+      0,
+      "SUPPLIED_FIT_ROOTED_LAW"
+    ],
+    [
+      "independent-readout",
+      "source-fit-readout",
+      "hybrid-independent-sat",
+      0,
+      "SUPPLIED_FIT_ROOTED_LAW"
+    ],
+    [
+      "permuted-readout",
+      "source-fit-readout",
+      "hybrid-common-permuted",
+      0,
+      "SUPPLIED_FIT_ROOTED_LAW"
+    ],
+    [
+      "mismatched-pin",
+      "source-fit-bank",
+      "hybrid-common-sat",
+      1,
+      "REFUSED_REQUEST"
+    ],
+    [
+      "equations-zero",
+      "source-fit-bank",
+      "equations-zero",
+      2,
+      "UNKNOWN"
+    ]
+  ],
+  "allocation_roots": [
+    "/dev/shm/rc-source-fit-native-20261010T221453.635194Z",
+    "/dev/shm/rc-source-fit-native-20261010T221259.859010Z",
+    "/dev/shm/rc-source-fit-application-20261010T222259.832312Z"
+  ],
+  "native_limit_bytes": 1073741824,
+  "native_abort_bytes": 939524096,
+  "memory_abort_bytes": 16106127360,
+  "initial_memory": {
+    "anon": 73621504,
+    "shmem": 10421161984,
+    "kernel": 794701824,
+    "nonreclaimable_estimate": 11289485312,
+    "memory_current_informational_only": 17058361344
+  },
+  "reference_python_selected": false,
+  "compiler_invoked": false,
+  "child_cleanup": "Pinned launcher STOP_AND_WALK_LINUX_PROC handles nested child process sessions."
+}

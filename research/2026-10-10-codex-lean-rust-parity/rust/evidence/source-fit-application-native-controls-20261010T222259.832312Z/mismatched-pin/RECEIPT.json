@@ -1,0 +1,29 @@
+{
+  "name": "mismatched-pin",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/Research-Commons/applications/practical-solver/run.py",
+    "source-fit-bank",
+    "--request",
+    "/dev/shm/rc-source-fit-application-20261010T222259.832312Z/hybrid-common-sat.request.json",
+    "--output",
+    "/dev/shm/rc-source-fit-application-20261010T222259.832312Z/mismatched-pin/application",
+    "--native-binary",
+    "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+    "--expected-binary-sha256",
+    "0000000000000000000000000000000000000000000000000000000000000000"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "expected_status": "REFUSED_REQUEST",
+  "monitor_error": null,
+  "stdout_sha256": "da8f70139f4403d8a2836664791f753931d7f39bd1504403e6c878dc8d49172c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "elapsed_seconds": 0.11979351199988741,
+  "peak_nonreclaimable_bytes": 11325837312,
+  "peak_native_allocated_bytes": 139206656,
+  "status": "PASS",
+  "application_result_sha256": "fa0043c0c4d5db4abbae82bbb9ddd31e6cb28fa18744b723a6c6d85b48898162",
+  "component_result_sha256": "cc031111d9e50dcec444211e73ac464abe005d9c71e39fb7966b5cbd3b8b9ef7"
+}

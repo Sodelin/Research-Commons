@@ -1,0 +1,23 @@
+--- original/G7CalendarFrontierOrder.lean
++++ derivative/G7CalendarFrontierOrder.lean
+@@ -1,4 +1,10 @@
+ import G7OrderedFrontierProduct
++
++/- Proof-only compatibility derivative by Codex / lean_reuse_successor,
++2026-10-10. Original source SHA256:
++f719a1dae4eae2ea0edbe01a3461abe30f61d0018011abf4f040ce3c17ef126a.
++The two same-kind boundary Pairwise goals use the existing list membership
++API explicitly. Declaration types, definitions, imports and options are unchanged. -/
+ 
+ /-! Every literal original calendar supplies a complete compatible frontier
+ order. The whole-edge product is consequently calendar-order independent.
+@@ -85,7 +91,9 @@
+   apply List.pairwise_append.mpr
+   refine ⟨?_,?_,?_⟩
+   · simp [List.pairwise_map,Compatible,RequiredBefore]
++    exact List.pairwise_of_forall_mem_list (fun _ _ _ _ => trivial)
+   · simp [List.pairwise_map,Compatible,RequiredBefore]
++    exact List.pairwise_of_forall_mem_list (fun _ _ _ _ => trivial)
+   · intro x hx y hy hbad
+     obtain ⟨e,he,rfl⟩ := List.mem_map.mp hx
+     obtain ⟨v,hv,rfl⟩ := List.mem_map.mp hy

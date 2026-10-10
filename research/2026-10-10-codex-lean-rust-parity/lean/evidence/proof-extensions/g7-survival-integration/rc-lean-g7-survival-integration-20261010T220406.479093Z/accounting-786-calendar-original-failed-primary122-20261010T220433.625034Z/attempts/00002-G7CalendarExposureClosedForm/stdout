@@ -1,0 +1,118 @@
+G7CalendarExposureClosedForm.lean:18:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarExposureClosedForm.gatherFrom_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarExposureClosedForm.lean:27:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarExposureClosedForm.gathered_exit_batch`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarExposureClosedForm.lean:51:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+r : PositivePairRates E
+w : ExposureBank E
+v : V
+nodes : List V
+ih :
+  nodes.Nodup →
+    gatherFrom N r w (List.map Event.node nodes) =
+      (retain (fun i => ∀ v ∈ nodes, ¬Opens N v i) w, List.map (fun v => Gathered.node v (retain (Opens N v) w)) nodes)
+hn : (v :: nodes).Nodup
+hp : v ∉ nodes ∧ nodes.Nodup
+i : Option E
+hv : Opens N v i
+hall : ∀ u ∈ nodes, ¬Opens N u i
+⊢ ∀ x ∈ nodes, Opens N x i → 0 = w i
+G7CalendarExposureClosedForm.lean:55:24: warning: This simp argument is unused:
+  hall
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [retain, hv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7CalendarExposureClosedForm.lean:91:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarExposureClosedForm.completeDates_tail`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarExposureClosedForm.lean:212:6: error: Function expected at
+  initialRow N sample register *
+    (List.map (gatheredMatrix N H gamma common) (wholeEdgeFrontier N C r (sortedOriginalDates N C))).prod
+but this term has type
+  ?m.124
+
+Note: Expected a function because this term is being applied to the argument
+  ()
+G7CalendarExposureClosedForm.lean:213:114: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+register : V → Bool
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+d : Code N sample
+⊢ (initialRow N sample register *
+        (List.map (gatheredMatrix N H gamma common) (wholeEdgeFrontier N C r (sortedOriginalDates N C))).prod)
+      () d =
+    sorry
+G7CalendarExposureClosedForm.lean:221:8: error: Function expected at
+  initialRow N sample register *
+    (List.map (gatheredMatrix N H (originalGamma p) common) (wholeEdgeFrontier N C r (sortedOriginalDates N C))).prod
+but this term has type
+  ?m.130
+
+Note: Expected a function because this term is being applied to the argument
+  ()
+G7CalendarExposureClosedForm.lean:223:73: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+r : PositivePairRates E
+d : Code N sample
+⊢ ∑ register,
+      ((originalRegisterPMF N p) register).toReal *
+        (initialRow N sample register *
+            (List.map (gatheredMatrix N H (originalGamma p) common)
+                (wholeEdgeFrontier N C r (sortedOriginalDates N C))).prod)
+          () d =
+    ∑ register, ((originalRegisterPMF N p) register).toReal * sorry

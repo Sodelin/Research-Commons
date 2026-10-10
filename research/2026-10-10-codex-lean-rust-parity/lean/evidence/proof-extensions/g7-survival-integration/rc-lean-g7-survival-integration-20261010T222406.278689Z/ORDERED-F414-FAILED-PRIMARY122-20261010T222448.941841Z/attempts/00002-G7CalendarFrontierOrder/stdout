@@ -1,0 +1,46 @@
+G7CalendarFrontierOrder.lean:30:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarFrontierOrder.mem_boundaryAtoms`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarFrontierOrder.lean:34:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarFrontierOrder.boundaryAtoms_nodup`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarFrontierOrder.lean:71:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.CalendarFrontierOrder.required_age_le`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7CalendarFrontierOrder.lean:87:2: error: unsolved goals
+case refine_1
+V : Type u_1
+E : Type u_2
+X : Type u_4
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+a : ℝ
+⊢ List.Pairwise (fun a b => True) {e | C.age (N.graph.source e) = a}.toList
+G7CalendarFrontierOrder.lean:88:2: error: unsolved goals
+case refine_2
+V : Type u_1
+E : Type u_2
+X : Type u_4
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+a : ℝ
+⊢ List.Pairwise (fun a b => True) {v | C.age v = a}.toList

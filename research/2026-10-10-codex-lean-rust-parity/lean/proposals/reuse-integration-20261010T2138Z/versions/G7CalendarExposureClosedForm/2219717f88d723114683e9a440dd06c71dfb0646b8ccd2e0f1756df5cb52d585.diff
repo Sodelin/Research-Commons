@@ -1,0 +1,43 @@
+--- f9a9c1803154a99f0558f0a137b6207142c1358d6ac5940041977e71853e9320
++++ 2219717f88d723114683e9a440dd06c71dfb0646b8ccd2e0f1756df5cb52d585
+@@ -1,5 +1,11 @@
+ import G7EdgeExposureAccounting
+ import UnifiedLean.Source.SourceCalendarTiming
++
++/- Proof/API derivative: Codex / lean_reuse_successor, 2026-10-10.
++   Original f9a9c1803154a99f0558f0a137b6207142c1358d6ac5940041977e71853e9320
++   is preserved separately. The two explicit matrix result types resolve the
++   already quantified sample carrier; mathematical statements, executable
++   definitions, hypotheses and import edges remain unchanged. -/
+ 
+ /-! Closing the actual calendar accumulator: all original node/edge dates are
+ used, and the emitted bank is the literal whole-edge exposure. Uncompiled
+@@ -52,7 +58,7 @@
+           intro u hu hui
+           have hne : v ≠ u := by intro h; subst u; exact hp.1 hu
+           exact opens_disjoint N hne i ⟨hv,hui⟩
+-        simp [retain,hv,hall]
++        simp only [retain,if_pos hv,if_pos hall]
+       · simp [retain,hv]
+     rw [he]
+     apply Prod.ext
+@@ -210,7 +216,8 @@
+     (r : PositivePairRates E) (d : Code N sample) :
+     (sourceProgram N r (compiledCalendarProgram N C H gamma common) (initialCode N sample register) d).toReal =
+       (initialRow N sample register *
+-        ((wholeEdgeFrontier N C r (sortedOriginalDates N C)).map (gatheredMatrix N H gamma common)).prod) () d := by
++        ((wholeEdgeFrontier N C r (sortedOriginalDates N C)).map (gatheredMatrix N H gamma common)).prod :
++        Matrix Unit (Code N sample) ℝ) () d := by
+   rw [actual_initialized_calendar_gathering,actual_calendar_gathered_closed_form]
+ 
+ theorem actual_natural_whole_edge_frontier (N : RootedBinary V E X) (C : Calendar N.graph)
+@@ -220,7 +227,8 @@
+       ∑ register : V → Bool, (originalRegisterPMF N p register).toReal *
+         (initialRow N sample register *
+           ((wholeEdgeFrontier N C r (sortedOriginalDates N C)).map
+-            (gatheredMatrix N H (originalGamma p) common)).prod) () d := by
++            (gatheredMatrix N H (originalGamma p) common)).prod :
++          Matrix Unit (Code N sample) ℝ) () d := by
+   rw [actual_natural_calendar_gathering,actual_calendar_gathered_closed_form]
+ 
+ end GProgram.G7.CalendarExposureClosedForm
