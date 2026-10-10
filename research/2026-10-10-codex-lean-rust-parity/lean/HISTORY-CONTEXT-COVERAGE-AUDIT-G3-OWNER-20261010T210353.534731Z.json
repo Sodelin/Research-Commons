@@ -1,0 +1,1068 @@
+{
+  "schema": "g3_additive_profile_static_owner_handoff_v1",
+  "status": "CHECKED_EXTERNAL_SOURCE_PROFILE_COMPATIBLE_BUT_NEW_LOCAL_RUN_NOT_BUDGET_CERTIFIED",
+  "observed_utc": "2026-10-10T21:03:53.534731+00:00",
+  "contributor": "Codex / lean_integration_successor",
+  "source_manifest": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/SOURCE-MANIFEST.json",
+    "sha256": "e9d84561ba660aa554aee63413393019827528f0761d0998914de954d752cc34",
+    "bytes": 29215
+  },
+  "additive_profile": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/ADDITIVE-PROFILE.json",
+    "sha256": "7c551dfa8959b8115a3a9fe8e7f5c4226735032b45c128fb16f23e582d186eeb",
+    "bytes": 20548
+  },
+  "public_projection_policy": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/PROJECTION-POLICY.json",
+    "sha256": "e4b951b6a11cb4e1f1e6228e5eaea95ebdce80e0bb7c65af28d14198f5be6d7f",
+    "bytes": 134666
+  },
+  "public_result": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/evidence/RESULT.json",
+    "sha256": "b5d6aec62e39adc2ec6216ce8a350645b6247627739d585d2e4132d8a5ab7c35",
+    "bytes": 498956
+  },
+  "complete_exact_public_audit": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/evidence/AUDIT-RESULT.json",
+    "sha256": "8637a539ce974333435389278bf806415a1672a71dbfc7d28707097505e7b707",
+    "bytes": 1290407
+  },
+  "external_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+  "external_profile_graph_sha256": "638c239709842efba1af5884cc6e9f2d0e390975d4cfee35cff13271a744b493",
+  "sources": {
+    "G3BernoulliDerivatives": {
+      "source": {
+        "path": "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z/source-store/7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0.lean",
+        "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+        "bytes": 3264
+      },
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+        "Mathlib.Analysis.Calculus.Deriv.Pow",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "new_source": false
+    },
+    "G3BernoulliCriticalNumerators": {
+      "source": {
+        "path": "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z/source-store/f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2.lean",
+        "sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+        "bytes": 4012
+      },
+      "imports": [
+        "G3BernoulliDerivatives",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "new_source": false
+    },
+    "G3AllResiduePositivity": {
+      "source": {
+        "path": "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z/source-store/07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166.lean",
+        "sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+        "bytes": 7302
+      },
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "new_source": false
+    },
+    "G3AllResidueNormalIdentities": {
+      "source": {
+        "path": "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z/source-store/bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749.lean",
+        "sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+        "bytes": 8106
+      },
+      "imports": [
+        "G3AllResiduePositivity",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "new_source": false
+    },
+    "G3BernoulliVerticalExclusion": {
+      "source": {
+        "path": "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z/source-store/8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0.lean",
+        "sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+        "bytes": 5641
+      },
+      "imports": [
+        "G3BernoulliCriticalNumerators",
+        "G3AllResidueNormalIdentities",
+        "Mathlib.Algebra.Polynomial.BigOperators",
+        "Mathlib.Algebra.Polynomial.Roots",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "new_source": false
+    },
+    "G3FixedDegreeResultants": {
+      "source": {
+        "path": "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z/source-store/5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02.lean",
+        "sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+        "bytes": 2586
+      },
+      "imports": [
+        "G3BernoulliVerticalExclusion",
+        "Mathlib.RingTheory.Polynomial.Resultant.Basic"
+      ],
+      "new_source": false
+    },
+    "G3CriticalProjectionPolynomials": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/be32be9a1e07f6c12dfb3f6d9c4e88a7428bd34531e04b48655e0b68ec6176ae.lean",
+        "sha256": "be32be9a1e07f6c12dfb3f6d9c4e88a7428bd34531e04b48655e0b68ec6176ae",
+        "bytes": 13575
+      },
+      "imports": [
+        "G3FixedDegreeResultants",
+        "Mathlib.Algebra.Polynomial.Div",
+        "Mathlib.Data.Set.Finite.Lattice"
+      ],
+      "new_source": true
+    },
+    "G3CriticalCoefficientLists": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/f54a534e5e8aaff659cc4f257a329fdbaa75b94bd2fffd71809da1ce66f5e185.lean",
+        "sha256": "f54a534e5e8aaff659cc4f257a329fdbaa75b94bd2fffd71809da1ce66f5e185",
+        "bytes": 3559
+      },
+      "imports": [
+        "Mathlib.Algebra.Polynomial.Basic",
+        "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "Mathlib.Algebra.Polynomial.Degree.Lemmas",
+        "Mathlib.Tactic.Ring"
+      ],
+      "new_source": true
+    },
+    "G3CriticalBivariateLists": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/163be58a5d84b6fef701d464f02bf61420e7c68981162a5a2e8432490306a28b.lean",
+        "sha256": "163be58a5d84b6fef701d464f02bf61420e7c68981162a5a2e8432490306a28b",
+        "bytes": 2568
+      },
+      "imports": [
+        "G3CriticalCoefficientLists"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceArrayBinding": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/709c12f0c2c1b85f809f8432246f674803dd2e791d4274975f2095ba6b9933eb.lean",
+        "sha256": "709c12f0c2c1b85f809f8432246f674803dd2e791d4274975f2095ba6b9933eb",
+        "bytes": 4570
+      },
+      "imports": [
+        "G3CriticalBivariateLists",
+        "G3FixedDegreeResultants"
+      ],
+      "new_source": true
+    },
+    "G3CriticalFinSixExpansion": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/d66a22f00830c6d9ee4db4bd99d79f743fa61d24b0367de4632b76ce2d470270.lean",
+        "sha256": "d66a22f00830c6d9ee4db4bd99d79f743fa61d24b0367de4632b76ce2d470270",
+        "bytes": 2425
+      },
+      "imports": [
+        "G3CriticalSourceArrayBinding"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceFactors3": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/ef238ba797a9079b2da1fb691cdf7553ad09ad388c8586ff59df4053a2caf829.lean",
+        "sha256": "ef238ba797a9079b2da1fb691cdf7553ad09ad388c8586ff59df4053a2caf829",
+        "bytes": 13940
+      },
+      "imports": [
+        "G3CriticalBivariateLists"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSliceSourceBinding3": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/20ab4005616e05d1492236e0abb79c0dea87f89008c79e4bef80ce2158ad891b.lean",
+        "sha256": "20ab4005616e05d1492236e0abb79c0dea87f89008c79e4bef80ce2158ad891b",
+        "bytes": 4936
+      },
+      "imports": [
+        "G3CriticalFinSixExpansion",
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceFactors5": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/5566c5efc73360c3c9cf973303cbe59083a4a4a0761fe0dc69b49884e9a79cc3.lean",
+        "sha256": "5566c5efc73360c3c9cf973303cbe59083a4a4a0761fe0dc69b49884e9a79cc3",
+        "bytes": 18773
+      },
+      "imports": [
+        "G3CriticalBivariateLists"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSliceSourceBinding5": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/94b8fdf572164653b798b107529c28bc47ef3c9ea81deea658e7f368b46282d6.lean",
+        "sha256": "94b8fdf572164653b798b107529c28bc47ef3c9ea81deea658e7f368b46282d6",
+        "bytes": 4936
+      },
+      "imports": [
+        "G3CriticalFinSixExpansion",
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_0": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/c6ec0a048b71cdab8ed7ff9c9ced519ed161edb2594119f4a00bcc58b19e292a.lean",
+        "sha256": "c6ec0a048b71cdab8ed7ff9c9ced519ed161edb2594119f4a00bcc58b19e292a",
+        "bytes": 59128
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_1": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/234a0fbb8e142ba43da5e088111f029687bbb192f2ccbaf03c3c6ca8193fb0cf.lean",
+        "sha256": "234a0fbb8e142ba43da5e088111f029687bbb192f2ccbaf03c3c6ca8193fb0cf",
+        "bytes": 97706
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_2": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/4564898a56e0e50fd73224a6d352ebbdc37030c7363bd0de7e88567c960988c6.lean",
+        "sha256": "4564898a56e0e50fd73224a6d352ebbdc37030c7363bd0de7e88567c960988c6",
+        "bytes": 108005
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_3": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/705e902a490966cc7fd4313a10e9e7fdc0f61a3504638e7ce1c26f279d0741dc.lean",
+        "sha256": "705e902a490966cc7fd4313a10e9e7fdc0f61a3504638e7ce1c26f279d0741dc",
+        "bytes": 113048
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_4": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/57894a72b4eca5ad86ed4a49e7749377245ae7a8e84d306aa74529eebb05f693.lean",
+        "sha256": "57894a72b4eca5ad86ed4a49e7749377245ae7a8e84d306aa74529eebb05f693",
+        "bytes": 117325
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_5": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/a178fa3e5f583a5d29aafdc4b4ea9d5eeecac2cf9063aa7950105f5943fffcb8.lean",
+        "sha256": "a178fa3e5f583a5d29aafdc4b4ea9d5eeecac2cf9063aa7950105f5943fffcb8",
+        "bytes": 120871
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_6": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/b7d06b1e2134d28181cd72ca45dfdfe8c6d03db0d7a6535b7d4eea85b1c83603.lean",
+        "sha256": "b7d06b1e2134d28181cd72ca45dfdfe8c6d03db0d7a6535b7d4eea85b1c83603",
+        "bytes": 123722
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_7": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/509c1ec423b8d9bf908bbe2710a91719d5cbfbe406dec7075c1ade68fbd2af66.lean",
+        "sha256": "509c1ec423b8d9bf908bbe2710a91719d5cbfbe406dec7075c1ade68fbd2af66",
+        "bytes": 126238
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_8": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/57d36cd614687a272b1b2937df19043d1359ca3f91de886bde96a5f05df9447f.lean",
+        "sha256": "57d36cd614687a272b1b2937df19043d1359ca3f91de886bde96a5f05df9447f",
+        "bytes": 128123
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_9": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/39341df90940d29260969dbf86795d3b2ad328305b1bd19b6562162c3dec1a8c.lean",
+        "sha256": "39341df90940d29260969dbf86795d3b2ad328305b1bd19b6562162c3dec1a8c",
+        "bytes": 129445
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_10": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/09c73eb4fa268030a16440de2a99389a192de2f119b056ebf734ee395125032c.lean",
+        "sha256": "09c73eb4fa268030a16440de2a99389a192de2f119b056ebf734ee395125032c",
+        "bytes": 130336
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_11": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/cef567a05601a92cac820523f3fb3963bf8bbae660b19d94f4781eee5f7ee027.lean",
+        "sha256": "cef567a05601a92cac820523f3fb3963bf8bbae660b19d94f4781eee5f7ee027",
+        "bytes": 130841
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_12": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/960497bef993bf3654af3b662dd44f2030b2cdd2ebd43ff186daa02a0c1bef3a.lean",
+        "sha256": "960497bef993bf3654af3b662dd44f2030b2cdd2ebd43ff186daa02a0c1bef3a",
+        "bytes": 130980
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_13": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/ccc66c2accf8fb89cbb09f46dc1c24e6fec92058424c1c458ce54851b06bfef9.lean",
+        "sha256": "ccc66c2accf8fb89cbb09f46dc1c24e6fec92058424c1c458ce54851b06bfef9",
+        "bytes": 130766
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_14": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/e0ed068d0e3f38fd1e7e4cc7d9d0f66ae6ee61975c3f2f507d9d6e76ffebccfb.lean",
+        "sha256": "e0ed068d0e3f38fd1e7e4cc7d9d0f66ae6ee61975c3f2f507d9d6e76ffebccfb",
+        "bytes": 130196
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_15": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/8e94577723d82153fd832b7035eb4e2c90d8bbefab8bda637053503c7c4a23c5.lean",
+        "sha256": "8e94577723d82153fd832b7035eb4e2c90d8bbefab8bda637053503c7c4a23c5",
+        "bytes": 129266
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_16": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/fecfbaf20e298a11ccd4c56d5dae7495e9a9a2aa9772dc17b258847e92040ae4.lean",
+        "sha256": "fecfbaf20e298a11ccd4c56d5dae7495e9a9a2aa9772dc17b258847e92040ae4",
+        "bytes": 127916
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_17": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/0c08960d66305e921c41363f6f882aa32712d9ea0caee0274de4296217ccb212.lean",
+        "sha256": "0c08960d66305e921c41363f6f882aa32712d9ea0caee0274de4296217ccb212",
+        "bytes": 126079
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_18": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/0d8528fcf45fe9ba5f938e6243148915b1870832b2556555966365924cc865f2.lean",
+        "sha256": "0d8528fcf45fe9ba5f938e6243148915b1870832b2556555966365924cc865f2",
+        "bytes": 123664
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_19": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/ebe9f869a6a09a4c881afdd8cb590d7963201c0ed4a31a91d327386b513b6b44.lean",
+        "sha256": "ebe9f869a6a09a4c881afdd8cb590d7963201c0ed4a31a91d327386b513b6b44",
+        "bytes": 120629
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_20": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/a626a95e39e59f5d21c4fe6f2070cc957975af9e8f15c78f568dfcf47fd513bf.lean",
+        "sha256": "a626a95e39e59f5d21c4fe6f2070cc957975af9e8f15c78f568dfcf47fd513bf",
+        "bytes": 116598
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_21": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/50a342d56666c26734d42bd9f97d01361f3513f50ddab4446fb1a4d292c62180.lean",
+        "sha256": "50a342d56666c26734d42bd9f97d01361f3513f50ddab4446fb1a4d292c62180",
+        "bytes": 111871
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock3_22": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/8423267f854c8e135e0e7279c888fca8479266fdec2747dea319f51745dd6224.lean",
+        "sha256": "8423267f854c8e135e0e7279c888fca8479266fdec2747dea319f51745dd6224",
+        "bytes": 83697
+      },
+      "imports": [
+        "G3CriticalSourceFactors3"
+      ],
+      "new_source": true
+    },
+    "G3CriticalBlockReconstruction": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/4d7a1baa8a540b9748db437d3c63b3aa7ef18701cf7d8e731b47e56fade72ac1.lean",
+        "sha256": "4d7a1baa8a540b9748db437d3c63b3aa7ef18701cf7d8e731b47e56fade72ac1",
+        "bytes": 2206
+      },
+      "imports": [
+        "G3CriticalBivariateLists"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSliceCoefficientData": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/e7d2d8ea4190aeefcc7fcd962a229df95ea76da0691d7941553d6274d324adb0.lean",
+        "sha256": "e7d2d8ea4190aeefcc7fcd962a229df95ea76da0691d7941553d6274d324adb0",
+        "bytes": 101673
+      },
+      "imports": [
+        "G3CriticalCoefficientLists",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlockAssembly3": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/ee0c97669bf8473ed07bf801441cf72eba91b645f0ac622db8de63296168ef18.lean",
+        "sha256": "ee0c97669bf8473ed07bf801441cf72eba91b645f0ac622db8de63296168ef18",
+        "bytes": 62480
+      },
+      "imports": [
+        "G3CriticalSourceBlock3_0",
+        "G3CriticalSourceBlock3_1",
+        "G3CriticalSourceBlock3_2",
+        "G3CriticalSourceBlock3_3",
+        "G3CriticalSourceBlock3_4",
+        "G3CriticalSourceBlock3_5",
+        "G3CriticalSourceBlock3_6",
+        "G3CriticalSourceBlock3_7",
+        "G3CriticalSourceBlock3_8",
+        "G3CriticalSourceBlock3_9",
+        "G3CriticalSourceBlock3_10",
+        "G3CriticalSourceBlock3_11",
+        "G3CriticalSourceBlock3_12",
+        "G3CriticalSourceBlock3_13",
+        "G3CriticalSourceBlock3_14",
+        "G3CriticalSourceBlock3_15",
+        "G3CriticalSourceBlock3_16",
+        "G3CriticalSourceBlock3_17",
+        "G3CriticalSourceBlock3_18",
+        "G3CriticalSourceBlock3_19",
+        "G3CriticalSourceBlock3_20",
+        "G3CriticalSourceBlock3_21",
+        "G3CriticalSourceBlock3_22",
+        "G3CriticalBlockReconstruction",
+        "G3CriticalSliceCoefficientData",
+        "Mathlib.Tactic.IntervalCases"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_0": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/439c4a6ce8d27c9136d34bf0a2922c0d231969b461554df99832b6a7dd4931d0.lean",
+        "sha256": "439c4a6ce8d27c9136d34bf0a2922c0d231969b461554df99832b6a7dd4931d0",
+        "bytes": 82058
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_1": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/bdd560455252b016606a3b37d89f483cee587149b00da4f225851c346ea29aab.lean",
+        "sha256": "bdd560455252b016606a3b37d89f483cee587149b00da4f225851c346ea29aab",
+        "bytes": 135683
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_2": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/2bd3e63cd29f6338c7f1f431c6a98d5959a665574de2d17a641d4901878b79cd.lean",
+        "sha256": "2bd3e63cd29f6338c7f1f431c6a98d5959a665574de2d17a641d4901878b79cd",
+        "bytes": 149320
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_3": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/66755abda6f52959520bdb3fc6edf7c3d3606a5e20d5db176c5ee65cbcc155c1.lean",
+        "sha256": "66755abda6f52959520bdb3fc6edf7c3d3606a5e20d5db176c5ee65cbcc155c1",
+        "bytes": 155831
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_4": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/11296ca4bb39d043c86f0d2685d5be4afb161ebdffa826a91fd52a4786850bcd.lean",
+        "sha256": "11296ca4bb39d043c86f0d2685d5be4afb161ebdffa826a91fd52a4786850bcd",
+        "bytes": 160745
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_5": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/b7d8d20ea25981f3a87ec8e0037174db606e4df35243eb7fd2cc9608bf925f2f.lean",
+        "sha256": "b7d8d20ea25981f3a87ec8e0037174db606e4df35243eb7fd2cc9608bf925f2f",
+        "bytes": 164693
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_6": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/d7a9fb7f4f5b052ee5ae57b6ef5da86d2d23e242fe175adcf5d8e574c02b7f0d.lean",
+        "sha256": "d7a9fb7f4f5b052ee5ae57b6ef5da86d2d23e242fe175adcf5d8e574c02b7f0d",
+        "bytes": 167924
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_7": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/a92bbb82f685365e68b1454ffff6247e8fc372d45102ffa449a7b48b606595a5.lean",
+        "sha256": "a92bbb82f685365e68b1454ffff6247e8fc372d45102ffa449a7b48b606595a5",
+        "bytes": 170266
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_8": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/95a694b9d8b0b51877364bfb4f605bafdbbe36f9fc81a303658395be6e54d2a1.lean",
+        "sha256": "95a694b9d8b0b51877364bfb4f605bafdbbe36f9fc81a303658395be6e54d2a1",
+        "bytes": 171980
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_9": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/d2371a4a052d465df0cbd5a5f00409c8320c8afbf1959b02a24527da5eabf73d.lean",
+        "sha256": "d2371a4a052d465df0cbd5a5f00409c8320c8afbf1959b02a24527da5eabf73d",
+        "bytes": 173259
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_10": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/e55257e911dcda2cafb33e1693048ce0e9029c6d9a5a25c4be7d0c7af968f72e.lean",
+        "sha256": "e55257e911dcda2cafb33e1693048ce0e9029c6d9a5a25c4be7d0c7af968f72e",
+        "bytes": 174118
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_11": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/64944d507bf4f1b4f1a4eaa5e3c064e7d7baeead9824615ecedaa7cc1d4d73c5.lean",
+        "sha256": "64944d507bf4f1b4f1a4eaa5e3c064e7d7baeead9824615ecedaa7cc1d4d73c5",
+        "bytes": 174584
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_12": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/35c734529d3d1c289a2f1fa30b9d0023d26e2fc3cd608dc3efcf47e84f523bcc.lean",
+        "sha256": "35c734529d3d1c289a2f1fa30b9d0023d26e2fc3cd608dc3efcf47e84f523bcc",
+        "bytes": 174687
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_13": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/01122c9273e3ff2ef6d21a61cd65ca0626243b97169ce37f01e883de1db1d68a.lean",
+        "sha256": "01122c9273e3ff2ef6d21a61cd65ca0626243b97169ce37f01e883de1db1d68a",
+        "bytes": 174468
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_14": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/5dbaedf26efac2abb379a414cd30b3171dde19aa205634672c49ea5d4d61389d.lean",
+        "sha256": "5dbaedf26efac2abb379a414cd30b3171dde19aa205634672c49ea5d4d61389d",
+        "bytes": 173892
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_15": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/004cdfaf73ff14d03f59d5f7d2abdb7428a5c62f2bfcd66818319792c1dc4b4a.lean",
+        "sha256": "004cdfaf73ff14d03f59d5f7d2abdb7428a5c62f2bfcd66818319792c1dc4b4a",
+        "bytes": 172949
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_16": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/7f65625752fcd1ddfaca4e2048c77e4eb76c5d8519b9d858d5416980e17c97b5.lean",
+        "sha256": "7f65625752fcd1ddfaca4e2048c77e4eb76c5d8519b9d858d5416980e17c97b5",
+        "bytes": 171625
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_17": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/ddd5cfa475a635e1cfa733be7236b4688e5109427033c29db16ed240ffa8ae58.lean",
+        "sha256": "ddd5cfa475a635e1cfa733be7236b4688e5109427033c29db16ed240ffa8ae58",
+        "bytes": 169847
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_18": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/a50e72f6aed53b8bcb75d465b174e1fc8b7331b85aeffa64ae8fa8b82c9ca787.lean",
+        "sha256": "a50e72f6aed53b8bcb75d465b174e1fc8b7331b85aeffa64ae8fa8b82c9ca787",
+        "bytes": 167525
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_19": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/a67dfb2802b00cc1a7dff4161c42f11458018a0515bef3c214c528b5dbe91f95.lean",
+        "sha256": "a67dfb2802b00cc1a7dff4161c42f11458018a0515bef3c214c528b5dbe91f95",
+        "bytes": 164492
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_20": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/d6b7aa9b411f6dc417e26b55b41f1936927872acf986480023557beb7980c230.lean",
+        "sha256": "d6b7aa9b411f6dc417e26b55b41f1936927872acf986480023557beb7980c230",
+        "bytes": 160525
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_21": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/b76de8f4a9f78a0bc2bb7c0c49f92ca4fb22a700d37798c29d7c6e179693506f.lean",
+        "sha256": "b76de8f4a9f78a0bc2bb7c0c49f92ca4fb22a700d37798c29d7c6e179693506f",
+        "bytes": 154892
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlock5_22": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/43d0244624cd69c39cbb4b20b80ba5e89256227338a6086b00b57c509d34abe9.lean",
+        "sha256": "43d0244624cd69c39cbb4b20b80ba5e89256227338a6086b00b57c509d34abe9",
+        "bytes": 116332
+      },
+      "imports": [
+        "G3CriticalSourceFactors5"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceBlockAssembly5": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/4d3e0f80ffaadf4c62d57dae62a1cebafb22c8983120326af1ea596f872d5cb5.lean",
+        "sha256": "4d3e0f80ffaadf4c62d57dae62a1cebafb22c8983120326af1ea596f872d5cb5",
+        "bytes": 82059
+      },
+      "imports": [
+        "G3CriticalSourceBlock5_0",
+        "G3CriticalSourceBlock5_1",
+        "G3CriticalSourceBlock5_2",
+        "G3CriticalSourceBlock5_3",
+        "G3CriticalSourceBlock5_4",
+        "G3CriticalSourceBlock5_5",
+        "G3CriticalSourceBlock5_6",
+        "G3CriticalSourceBlock5_7",
+        "G3CriticalSourceBlock5_8",
+        "G3CriticalSourceBlock5_9",
+        "G3CriticalSourceBlock5_10",
+        "G3CriticalSourceBlock5_11",
+        "G3CriticalSourceBlock5_12",
+        "G3CriticalSourceBlock5_13",
+        "G3CriticalSourceBlock5_14",
+        "G3CriticalSourceBlock5_15",
+        "G3CriticalSourceBlock5_16",
+        "G3CriticalSourceBlock5_17",
+        "G3CriticalSourceBlock5_18",
+        "G3CriticalSourceBlock5_19",
+        "G3CriticalSourceBlock5_20",
+        "G3CriticalSourceBlock5_21",
+        "G3CriticalSourceBlock5_22",
+        "G3CriticalBlockReconstruction",
+        "G3CriticalSliceCoefficientData",
+        "Mathlib.Tactic.IntervalCases"
+      ],
+      "new_source": true
+    },
+    "G3CriticalModularLifting": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/ddedbdba3ec000cd49d76e16c2ecfe78335515d32552c2e754a0ba8eb493f8f5.lean",
+        "sha256": "ddedbdba3ec000cd49d76e16c2ecfe78335515d32552c2e754a0ba8eb493f8f5",
+        "bytes": 3115
+      },
+      "imports": [
+        "G3CriticalSliceCoefficientData",
+        "Mathlib.RingTheory.Polynomial.Resultant.Basic",
+        "Mathlib.Algebra.Field.ZMod",
+        "Mathlib.Data.Real.Basic"
+      ],
+      "new_source": true
+    },
+    "G3CriticalPositiveProduct": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/4049000f83c150353f4283dbb3bc340cca9f7a5f4885a60889768891abece94c.lean",
+        "sha256": "4049000f83c150353f4283dbb3bc340cca9f7a5f4885a60889768891abece94c",
+        "bytes": 6153
+      },
+      "imports": [
+        "G3CriticalSliceCoefficientData",
+        "G3AllResiduePositivity"
+      ],
+      "new_source": true
+    },
+    "G3CriticalExportedNoCommon": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/cc1fe521130d3c50c09acaffb2d21b4f961dcb7542a81ad5b838cf024a87863d.lean",
+        "sha256": "cc1fe521130d3c50c09acaffb2d21b4f961dcb7542a81ad5b838cf024a87863d",
+        "bytes": 1413
+      },
+      "imports": [
+        "G3CriticalModularLifting",
+        "G3CriticalPositiveProduct"
+      ],
+      "new_source": true
+    },
+    "G3CriticalSourceSliceCoprime": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/c353c266216b7022648c1959dcb8a4740a93ae85da0cc26e0f88a844ac61644f.lean",
+        "sha256": "c353c266216b7022648c1959dcb8a4740a93ae85da0cc26e0f88a844ac61644f",
+        "bytes": 3295
+      },
+      "imports": [
+        "G3CriticalSliceSourceBinding3",
+        "G3CriticalSliceSourceBinding5",
+        "G3CriticalSourceBlockAssembly3",
+        "G3CriticalSourceBlockAssembly5",
+        "G3CriticalExportedNoCommon"
+      ],
+      "new_source": true
+    },
+    "G3ActualFixedResidueCriticalFiniteness": {
+      "source": {
+        "path": "/workspace/Research-Commons/research/2026-10-10-dot-modular-lean-reuse-handoff-1448z/g3-fixed-residue-critical-bridge-1522z/source-store/87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29.lean",
+        "sha256": "87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29",
+        "bytes": 942
+      },
+      "imports": [
+        "G3CriticalProjectionPolynomials",
+        "G3CriticalSourceSliceCoprime"
+      ],
+      "new_source": true
+    }
+  },
+  "matched_existing_six": {
+    "G3BernoulliDerivatives": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+    "G3BernoulliCriticalNumerators": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+    "G3AllResiduePositivity": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+    "G3AllResidueNormalIdentities": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+    "G3BernoulliVerticalExclusion": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+    "G3FixedDegreeResultants": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02"
+  },
+  "new_bodies_64": {
+    "G3CriticalProjectionPolynomials": "be32be9a1e07f6c12dfb3f6d9c4e88a7428bd34531e04b48655e0b68ec6176ae",
+    "G3CriticalCoefficientLists": "f54a534e5e8aaff659cc4f257a329fdbaa75b94bd2fffd71809da1ce66f5e185",
+    "G3CriticalBivariateLists": "163be58a5d84b6fef701d464f02bf61420e7c68981162a5a2e8432490306a28b",
+    "G3CriticalSourceArrayBinding": "709c12f0c2c1b85f809f8432246f674803dd2e791d4274975f2095ba6b9933eb",
+    "G3CriticalFinSixExpansion": "d66a22f00830c6d9ee4db4bd99d79f743fa61d24b0367de4632b76ce2d470270",
+    "G3CriticalSourceFactors3": "ef238ba797a9079b2da1fb691cdf7553ad09ad388c8586ff59df4053a2caf829",
+    "G3CriticalSliceSourceBinding3": "20ab4005616e05d1492236e0abb79c0dea87f89008c79e4bef80ce2158ad891b",
+    "G3CriticalSourceFactors5": "5566c5efc73360c3c9cf973303cbe59083a4a4a0761fe0dc69b49884e9a79cc3",
+    "G3CriticalSliceSourceBinding5": "94b8fdf572164653b798b107529c28bc47ef3c9ea81deea658e7f368b46282d6",
+    "G3CriticalSourceBlock3_0": "c6ec0a048b71cdab8ed7ff9c9ced519ed161edb2594119f4a00bcc58b19e292a",
+    "G3CriticalSourceBlock3_1": "234a0fbb8e142ba43da5e088111f029687bbb192f2ccbaf03c3c6ca8193fb0cf",
+    "G3CriticalSourceBlock3_2": "4564898a56e0e50fd73224a6d352ebbdc37030c7363bd0de7e88567c960988c6",
+    "G3CriticalSourceBlock3_3": "705e902a490966cc7fd4313a10e9e7fdc0f61a3504638e7ce1c26f279d0741dc",
+    "G3CriticalSourceBlock3_4": "57894a72b4eca5ad86ed4a49e7749377245ae7a8e84d306aa74529eebb05f693",
+    "G3CriticalSourceBlock3_5": "a178fa3e5f583a5d29aafdc4b4ea9d5eeecac2cf9063aa7950105f5943fffcb8",
+    "G3CriticalSourceBlock3_6": "b7d06b1e2134d28181cd72ca45dfdfe8c6d03db0d7a6535b7d4eea85b1c83603",
+    "G3CriticalSourceBlock3_7": "509c1ec423b8d9bf908bbe2710a91719d5cbfbe406dec7075c1ade68fbd2af66",
+    "G3CriticalSourceBlock3_8": "57d36cd614687a272b1b2937df19043d1359ca3f91de886bde96a5f05df9447f",
+    "G3CriticalSourceBlock3_9": "39341df90940d29260969dbf86795d3b2ad328305b1bd19b6562162c3dec1a8c",
+    "G3CriticalSourceBlock3_10": "09c73eb4fa268030a16440de2a99389a192de2f119b056ebf734ee395125032c",
+    "G3CriticalSourceBlock3_11": "cef567a05601a92cac820523f3fb3963bf8bbae660b19d94f4781eee5f7ee027",
+    "G3CriticalSourceBlock3_12": "960497bef993bf3654af3b662dd44f2030b2cdd2ebd43ff186daa02a0c1bef3a",
+    "G3CriticalSourceBlock3_13": "ccc66c2accf8fb89cbb09f46dc1c24e6fec92058424c1c458ce54851b06bfef9",
+    "G3CriticalSourceBlock3_14": "e0ed068d0e3f38fd1e7e4cc7d9d0f66ae6ee61975c3f2f507d9d6e76ffebccfb",
+    "G3CriticalSourceBlock3_15": "8e94577723d82153fd832b7035eb4e2c90d8bbefab8bda637053503c7c4a23c5",
+    "G3CriticalSourceBlock3_16": "fecfbaf20e298a11ccd4c56d5dae7495e9a9a2aa9772dc17b258847e92040ae4",
+    "G3CriticalSourceBlock3_17": "0c08960d66305e921c41363f6f882aa32712d9ea0caee0274de4296217ccb212",
+    "G3CriticalSourceBlock3_18": "0d8528fcf45fe9ba5f938e6243148915b1870832b2556555966365924cc865f2",
+    "G3CriticalSourceBlock3_19": "ebe9f869a6a09a4c881afdd8cb590d7963201c0ed4a31a91d327386b513b6b44",
+    "G3CriticalSourceBlock3_20": "a626a95e39e59f5d21c4fe6f2070cc957975af9e8f15c78f568dfcf47fd513bf",
+    "G3CriticalSourceBlock3_21": "50a342d56666c26734d42bd9f97d01361f3513f50ddab4446fb1a4d292c62180",
+    "G3CriticalSourceBlock3_22": "8423267f854c8e135e0e7279c888fca8479266fdec2747dea319f51745dd6224",
+    "G3CriticalBlockReconstruction": "4d7a1baa8a540b9748db437d3c63b3aa7ef18701cf7d8e731b47e56fade72ac1",
+    "G3CriticalSliceCoefficientData": "e7d2d8ea4190aeefcc7fcd962a229df95ea76da0691d7941553d6274d324adb0",
+    "G3CriticalSourceBlockAssembly3": "ee0c97669bf8473ed07bf801441cf72eba91b645f0ac622db8de63296168ef18",
+    "G3CriticalSourceBlock5_0": "439c4a6ce8d27c9136d34bf0a2922c0d231969b461554df99832b6a7dd4931d0",
+    "G3CriticalSourceBlock5_1": "bdd560455252b016606a3b37d89f483cee587149b00da4f225851c346ea29aab",
+    "G3CriticalSourceBlock5_2": "2bd3e63cd29f6338c7f1f431c6a98d5959a665574de2d17a641d4901878b79cd",
+    "G3CriticalSourceBlock5_3": "66755abda6f52959520bdb3fc6edf7c3d3606a5e20d5db176c5ee65cbcc155c1",
+    "G3CriticalSourceBlock5_4": "11296ca4bb39d043c86f0d2685d5be4afb161ebdffa826a91fd52a4786850bcd",
+    "G3CriticalSourceBlock5_5": "b7d8d20ea25981f3a87ec8e0037174db606e4df35243eb7fd2cc9608bf925f2f",
+    "G3CriticalSourceBlock5_6": "d7a9fb7f4f5b052ee5ae57b6ef5da86d2d23e242fe175adcf5d8e574c02b7f0d",
+    "G3CriticalSourceBlock5_7": "a92bbb82f685365e68b1454ffff6247e8fc372d45102ffa449a7b48b606595a5",
+    "G3CriticalSourceBlock5_8": "95a694b9d8b0b51877364bfb4f605bafdbbe36f9fc81a303658395be6e54d2a1",
+    "G3CriticalSourceBlock5_9": "d2371a4a052d465df0cbd5a5f00409c8320c8afbf1959b02a24527da5eabf73d",
+    "G3CriticalSourceBlock5_10": "e55257e911dcda2cafb33e1693048ce0e9029c6d9a5a25c4be7d0c7af968f72e",
+    "G3CriticalSourceBlock5_11": "64944d507bf4f1b4f1a4eaa5e3c064e7d7baeead9824615ecedaa7cc1d4d73c5",
+    "G3CriticalSourceBlock5_12": "35c734529d3d1c289a2f1fa30b9d0023d26e2fc3cd608dc3efcf47e84f523bcc",
+    "G3CriticalSourceBlock5_13": "01122c9273e3ff2ef6d21a61cd65ca0626243b97169ce37f01e883de1db1d68a",
+    "G3CriticalSourceBlock5_14": "5dbaedf26efac2abb379a414cd30b3171dde19aa205634672c49ea5d4d61389d",
+    "G3CriticalSourceBlock5_15": "004cdfaf73ff14d03f59d5f7d2abdb7428a5c62f2bfcd66818319792c1dc4b4a",
+    "G3CriticalSourceBlock5_16": "7f65625752fcd1ddfaca4e2048c77e4eb76c5d8519b9d858d5416980e17c97b5",
+    "G3CriticalSourceBlock5_17": "ddd5cfa475a635e1cfa733be7236b4688e5109427033c29db16ed240ffa8ae58",
+    "G3CriticalSourceBlock5_18": "a50e72f6aed53b8bcb75d465b174e1fc8b7331b85aeffa64ae8fa8b82c9ca787",
+    "G3CriticalSourceBlock5_19": "a67dfb2802b00cc1a7dff4161c42f11458018a0515bef3c214c528b5dbe91f95",
+    "G3CriticalSourceBlock5_20": "d6b7aa9b411f6dc417e26b55b41f1936927872acf986480023557beb7980c230",
+    "G3CriticalSourceBlock5_21": "b76de8f4a9f78a0bc2bb7c0c49f92ca4fb22a700d37798c29d7c6e179693506f",
+    "G3CriticalSourceBlock5_22": "43d0244624cd69c39cbb4b20b80ba5e89256227338a6086b00b57c509d34abe9",
+    "G3CriticalSourceBlockAssembly5": "4d3e0f80ffaadf4c62d57dae62a1cebafb22c8983120326af1ea596f872d5cb5",
+    "G3CriticalModularLifting": "ddedbdba3ec000cd49d76e16c2ecfe78335515d32552c2e754a0ba8eb493f8f5",
+    "G3CriticalPositiveProduct": "4049000f83c150353f4283dbb3bc340cca9f7a5f4885a60889768891abece94c",
+    "G3CriticalExportedNoCommon": "cc1fe521130d3c50c09acaffb2d21b4f961dcb7542a81ad5b838cf024a87863d",
+    "G3CriticalSourceSliceCoprime": "c353c266216b7022648c1959dcb8a4740a93ae85da0cc26e0f88a844ac61644f",
+    "G3ActualFixedResidueCriticalFiniteness": "87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29"
+  },
+  "source_and_literal_import_conflicts": [],
+  "prospective_union_modules": 1561,
+  "new_selected_declaration_name_collisions": [],
+  "shared_owned_metadata_rows_checked": 367,
+  "shared_owned_metadata_differences": [],
+  "external_selected_modules": 70,
+  "external_fresh_components_in_final_run": 9,
+  "external_authenticated_reused_components_in_final_run": 61,
+  "external_owned_declarations": 1087,
+  "external_theorem_declarations": 788,
+  "external_owned_axioms": [],
+  "external_nonstandard_axiom_rows": [],
+  "external_missing_modules": [],
+  "external_endpoint_owned_audit_row": {
+    "type_references": [
+      "Real",
+      "LT.lt",
+      "Real.instLT",
+      "OfNat.ofNat",
+      "Zero.toOfNat0",
+      "Real.instZero",
+      "Set.Finite",
+      "Prod",
+      "GProgram.G3.CriticalCertificates.strictSourceCriticalSet"
+    ],
+    "name": "GProgram.G3.CriticalCertificates.actual_fixed_residue_strict_critical_finite",
+    "module": "G3ActualFixedResidueCriticalFiniteness",
+    "kind": "theorem",
+    "body_references": [
+      "Real",
+      "LT.lt",
+      "Real.instLT",
+      "OfNat.ofNat",
+      "Zero.toOfNat0",
+      "Real.instZero",
+      "GProgram.G3.CriticalCertificates.strictSourceCriticalSet_finite_of_slice_coprime",
+      "id",
+      "Or",
+      "GProgram.G3.CriticalCertificates.sourceSliceCoprime",
+      "instOfNatAtLeastTwo",
+      "Real.instNatCast",
+      "Nat.instAtLeastTwoHAddOfNat",
+      "Nat",
+      "instOfNatNat",
+      "Nat.instNeZeroSucc",
+      "GProgram.G3.CriticalCertificates.actual_slice_coprime"
+    ],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "external_raw_result_sha256": "90ade6f2ac65e6964ab19716932bc2a41cdfe83b0ee405bfb6407f3c5fd9b767",
+  "local_cache_directories_scanned": 117,
+  "distinct_local_cache_receipts_scanned": 17109,
+  "matching_new64_local_cache_receipts": {},
+  "distributed_compiled_object_files": [],
+  "external_native_runtime_digest": "9abbda18c78f86cc03f83b2a0c9fb12b16161efdd912ebaadda7a9d39a78f0e7",
+  "local_native_runtime_digest": "6f8ad181b1b3b832d74cf0f88255b519a3512252c343d3e0cde0c540cbfe7aac",
+  "external_receipt_admitted_as_local_cache": false,
+  "allocation": {
+    "existing1497_scratch_distinct_inode": {
+      "allocated_bytes": 770646016,
+      "logical_bytes": 761535630,
+      "distinct_inode_files": 4565
+    },
+    "existing1497_packet_exports": {
+      "allocated_bytes": 52293632,
+      "logical_bytes": 52194899,
+      "distinct_inode_files": 42
+    },
+    "total_new_scratch_cap_bytes": 1073741824,
+    "remaining_scratch_bytes_before_new70": 303095808,
+    "remaining_after_existing_exports_if_also_charged": 250802176,
+    "new64_source_logical_bytes": 6730763,
+    "new64_source_rounded_bytes": 6860800,
+    "new64_compiler_output_bundle_bytes": null,
+    "reason_output_bytes_unknown": "Objects/companions are not delivered and projected receipts provide their hashes without byte sizes. No matching local artifacts exist.",
+    "external_observed_path_counted_peak_bytes": 1932623872,
+    "external_peak_is_not_a_local_remaining_allocation_bound": true,
+    "conservative_fresh_coherent_aggregate_audit_reserve_bytes": 268435456,
+    "full_new_union_remaining_before_64_outputs_or_metadata": 27799552,
+    "current_available_bytes": {
+      "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean": 103755776,
+      "/tmp": 116936704,
+      "/dev/shm": 8670695424
+    },
+    "new_profile_materialized": false,
+    "compiler_started": false
+  },
+  "owner_action": "Preserve this additive target as a separately checked external exact-source profile. Do not add it to the accepted1497 graph or promote external9abb receipts into local6f8 caches. A later local recheck requires a measured component-output/export budget or revised storage authorization; existing mathematical sources/core/flags/caps stay unchanged.",
+  "mathematical_scope": "For every real r>0, the strict pairs 0<p,q<1 solving both supplied original Bernoulli weighted response equations for normalWeight r on exponents1,3,6,10,15,21 form a finite set. Final theorem has no certificate/algebraicity premise. It does not acquire the normal, enumerate transcendental solutions, bound repeated source occurrences, construct a whole-fibre source witness, or decide G3.",
+  "accepted1497_modified": false,
+  "new_target_or_aggregate_accepted_locally": false,
+  "compiler_evaluator_or_native_process_invoked": false,
+  "auditor": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/audit_history_context_coverage_20261010.py",
+    "sha256": "60521f72042ac256332603a349fc56d1f0b24b4ae47299e6c8002d57a0d248af",
+    "bytes": 25727
+  }
+}

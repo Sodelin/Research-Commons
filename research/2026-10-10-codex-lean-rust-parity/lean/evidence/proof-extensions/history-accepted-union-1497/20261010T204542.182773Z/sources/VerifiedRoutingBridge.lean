@@ -1,0 +1,16 @@
+import G4IndependentRoutingBridge
+
+#check GProgram.G4.IndependentRouting.routingWeight_normalized
+#check GProgram.G4.IndependentRouting.routingWeight_nonnegative
+#check GProgram.G4.IndependentRouting.count_partition
+#check GProgram.G4.IndependentRouting.actual_parent0_count
+#check GProgram.G4.IndependentRouting.actual_parent1_count
+#check GProgram.G4.IndependentRouting.generic_two
+#check GProgram.G4.IndependentRouting.generic_three
+#check GProgram.G4.IndependentRouting.generic_four
+#check GProgram.G4.IndependentRouting.firstHoldingKernel_eq_power
+#check GProgram.G4.IndependentRouting.exponential_four_root_arm_law
+#check GProgram.G4.IndependentRouting.original_source_coordinates
+#check GProgram.G4.IndependentRouting.exponential_model_original_coordinates
+#print axioms GProgram.G4.IndependentRouting.exponential_model_original_coordinates
+#print axioms GProgram.G4.IndependentRouting.routingWeight_nonnegative

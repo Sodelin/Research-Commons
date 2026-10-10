@@ -1,5 +1,33 @@
 # Continuation checkpoint
 
+## Current reconciliation — 10 October 2026, 20:56 UTC / 13:56 PDT
+
+**One coherent1,497-module library now passes independent review**:100,764 owned
+declarations/91,540 theorem declarations, ten separately accepted missing
+semantic/gathering/completion modules integrated, all100,217 prior owned records
+retained. Components reuse exact earlier kernel checks; aggregate and complete
+audit are fresh. [Proof/context QC](quality/HISTORY-ACCEPTED-UNION-1497-REVIEW.json)
+and [inventory QC](quality/HISTORY-UNION-INVENTORY-REVIEW.json) pass.
+
+Read the [concise history/integration report](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md)
+and [historical assembly audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md).
+All65 existing obligations and100 provider bindings were reconciled. Old census,
+source fitting, target/policy and confidence implementations exist; general
+native representation, bank/timed-observer correspondence and downstream
+assembly remain open. G1/full timedG2/binaryM3G5 stay complete; fullG6/G7 practical
+and formal assembly stays in progress.
+
+Fresh DOT main f1636499b was merged: the [new fixed-residue G3 bridge](design/DISCOVERY-DELTA-20261010T2048Z.md)
+is a separately accepted70-module profile; its public source/audit lineage
+passes [root review](quality/NEWEST-DOT-BRIDGE-REVIEW.json). It is outside frozen1497
+and supplies no effective source acquisition or generalG6/G7 closure.
+
+Cloud `/tmp` has117MB free; the user's D drive is not mounted. A separately
+probed RAM-backed scratch mount permitted the new union under a measured900MiB
+budget, preserving old paths/bytes. Earlier status below is dated history;
+its exact prior bytes are [saved](quality/evidence/status-before-history-reconciliation-20261010T2046Z/SNAPSHOT.json).
+
+
 Codex coordinator, 10 October 2026, 10:48 PDT. **MASTER IN PROGRESS.** This is a
 dated observation. The [preceding status](quality/evidence/status-before-expanded-union-20261010T1743Z/CHECKPOINT.md)
 and raw evidence remain preserved. The [one-page brief](design/RESEARCH-BRIEF.md)

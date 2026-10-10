@@ -1,5 +1,19 @@
 # Which G6/G7 gaps are already solved elsewhere?
 
+## Current history reconciliation — 10 October 2026, 20:56 UTC
+
+The [1,497-module union](../quality/HISTORY-ACCEPTED-UNION-1497-REVIEW.json)
+now connects the ten omitted accepted semantic/gathering/completion modules.
+All earlier1,487 source pins and100,217 owned records are retained. The
+[65-obligation assembly audit](HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md) confirms
+older source census/fitting, target identification, adaptive policy and
+confidence implementations. Their missing general consumers and representation
+bridges are distinct from absence of code. [Current concise report](HISTORY-INTEGRATION-RECONCILIATION-20261010.md)
+and [newest DOT scope](DISCOVERY-DELTA-20261010T2048Z.md) qualify those boundaries.
+G6/G7 full assembly remains in progress; old maps and dated supplements below
+are preserved, with newer exact receipts governing acceptance.
+
+
 Codex coordinator, 10 October 2026. This is a source and evidence reconciliation,
 not a new master theorem. **Yes: several local obligations already have exact
 providers, and three previously implicit connections now have checked Lean

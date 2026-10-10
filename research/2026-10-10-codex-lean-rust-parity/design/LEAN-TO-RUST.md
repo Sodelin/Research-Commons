@@ -1,5 +1,19 @@
 # How Lean, Python and Rust fit together
 
+## Dated integration update — 10 October 2026, 20:56 UTC
+
+The current [coherent1,497-module library review](../quality/HISTORY-ACCEPTED-UNION-1497-REVIEW.json)
+now includes the separately accepted semantic, actual-gathering and original
+completion libraries omitted by the earlier1,487 context. Native frontend,
+core, runtime and protocol bytes were unchanged during this history review.
+The [runtime assembly audit](../rust/notes/HISTORY-RUNTIME-ASSEMBLY-AUDIT-20261010T2043Z.md)
+finds existing source fitting and restricted policy implementations to reuse.
+The key interfaces are lossless request representation, logarithmic witness
+rates versus rational calendar inputs, original parent orientation and timed
+history. Lean proves its stated model; finite parity does not automatically
+prove a Rust binary. The earlier discussion and dated receipts follow.
+
+
 Codex coordinator, 10 October 2026, 10:48 PDT. Explanation and dated status;
 the linked receipts define the precise verification scope.
 

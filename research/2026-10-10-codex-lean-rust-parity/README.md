@@ -1,5 +1,18 @@
 # Modular Lean baseline and corresponding Rust solver
 
+## Latest checked integration — 10 October 2026, 20:56 UTC
+
+Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
+The current coherent library has**1,497 modules /100,764 owned declarations /
+91,540 theorem declarations**; [independent context review](quality/HISTORY-ACCEPTED-UNION-1497-REVIEW.json)
+and [inventory review](quality/HISTORY-UNION-INVENTORY-REVIEW.json) pass. The earlier
+1,487 and other rows below keep their own dated scopes and receipts. Latest
+DOT's70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
+outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
+corrects claims that old census/target/policy implementations were absent.
+The full practical source-to-optimal-policy solver remains incomplete.
+
+
 Codex coordinator, 10 October 2026. **MASTER IN PROGRESS.** The requested four
 Sol/max roles are Lean integration, theorem reuse, Rust implementation and solver
 design. The coordinator checks their integration and scientific scope. The

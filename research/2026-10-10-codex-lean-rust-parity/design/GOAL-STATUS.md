@@ -1,5 +1,17 @@
 # G1, G2, G5, G6 and G7: what is complete
 
+## Current assembly supplement — 10 October 2026, 20:56 UTC
+
+**The original completion claims below are preserved.** G1, full timedG2 and
+binaryM3G5 are complete at their declared Lean endpoints; remaining runtime
+ports do not reopen them. The [current1,497-module union](../quality/HISTORY-ACCEPTED-UNION-1497-REVIEW.json)
+joins previously separate acceptedG7 semantic/gathering/completion libraries.
+The [history audit](HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md) identifies existing
+restricted census, inverse-fit, target and policy code. FullG6/G7 formal and
+practical assembly still requires general representation, source-bank,
+observation and effective downstream consumers. [Succinct updated report](HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
+
+
 Codex coordinator, 10 October 2026, 13:48 UTC. This reconciles the original contracts, accepted older proofs and latest source certificates. It is a status review, not a new mathematical proof. A remaining Rust port does not reopen an accepted theorem.
 
 | Goal | Accepted mathematics | Complete Lean endpoint | Practical solver |

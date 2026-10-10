@@ -1,0 +1,20 @@
+--- old-frozen-preparer
++++ new-context-preparer
+@@ -9,6 +9,8 @@
+ This preparer accepts only a new, uncompiled, four-provider context.
+ """
+ from __future__ import annotations
++# Dated history1497 metadata-output derivative; original SHA256 5f5a4c31e04b9d3a87f4e2fb2384e23a7cf5a4b5a531024a35caa0b2a00f45c6.
++# Transport/admission/rehash code is unchanged; accepted generic output is preserved.
+ 
+ import argparse
+ import datetime
+@@ -188,7 +190,7 @@
+     if not evidence_prep.is_absolute():
+         evidence_prep = ROOT / evidence_prep
+     save(evidence_prep / "PREPARATION.json", prep)
+-    save(ROOT / "CACHE-INSTALL-TRANSPORT-DERIVATION.json", derivation)
++    save(ROOT / "CACHE-INSTALL-TRANSPORT-HISTORY-1497-DERIVATION.json", derivation)
+     print(json.dumps({k: derivation[k] for k in ["status", "entries", "alias_manifest_sha256", "derived_namespace_wrapper_sha256", "evidence"]}))
+ 
+ 
