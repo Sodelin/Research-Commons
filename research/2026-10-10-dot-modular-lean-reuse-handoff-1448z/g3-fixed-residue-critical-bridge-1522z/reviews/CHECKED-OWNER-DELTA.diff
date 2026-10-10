@@ -1,0 +1,19 @@
+--- owned-frozen-draft
++++ owner-checked-source
+@@ -1,7 +1,6 @@
+ import G3FixedDegreeResultants
+ import Mathlib.Algebra.Polynomial.Div
+ import Mathlib.Data.Set.Finite.Lattice
+-import Mathlib.Tactic.Omega
+ 
+ /-! Genuine bivariate source polynomials with the mandatory p=1 boundary
+ factor removed by monic division.
+@@ -130,7 +129,7 @@
+   unfold sourceQ sourceQAt
+   rw [Polynomial.map_neg,
+     Polynomial.map_divByMonic _ (Polynomial.monic_X_sub_C _), sourceQ0_map]
+-  simp only [Polynomial.map_sub, Polynomial.map_X, Polynomial.map_C, map_one]
++  simp only [Polynomial.map_sub, Polynomial.map_X, Polynomial.map_C, Polynomial.map_one, map_one]
+ 
+ /-- This is the explicit unclosed source-certificate interface. -/
+ def sourceSliceCoprime (r q : ℝ) : Prop :=

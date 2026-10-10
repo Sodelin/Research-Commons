@@ -1,0 +1,12 @@
+# Additive integration contract
+
+Use the existing pinned connectedResearch package and its authenticated modular builder. First ask the current integration owner whether a newer equivalent has already been supplied. The 16:24 UTC public handoff read at main a24730bea273313f0a553a4cedf195b92a04c0ca still indexed the six original providers and the separate weak-class regression; no newer external owner manifest was verified.
+
+1. Copy the 64 new `source-store/<sha256>.lean` files into that package's content-addressed source store after verifying SOURCE-MANIFEST.json. Keep the six original modules at their pinned hashes and preserve all unrelated files/profiles.
+2. Read ADDITIVE-PROFILE.json. Add its `source_scope` value under the `profile` key in the existing dependency graph's `targets` object. This record includes the exact roots, dependency order, module source hashes and imports. Do not replace the whole graph with this packet or reinterpret the historical graph hash as the new combined graph hash.
+3. Run the unchanged existing builder for `candidate/g3-actual-fixed-residue-critical-finiteness` with the package's serialization, resource and complete-audit discipline. Authentic exact-context cache reuse is valid. The final evidence here includes 9 fresh and 61 authenticated reused project components, plus a fresh selected aggregate and full owned audit.
+4. For a revised canonical release, separately include the new module in the owner's chosen accepted/canonical profile and execute its aggregate and complete audit. This packet does not claim that broader run has happened.
+
+The importable endpoint is GProgram.G3.CriticalCertificates.actual_fixed_residue_strict_critical_finite in G3ActualFixedResidueCriticalFiniteness. It is an unconditional finite-set theorem for the supplied real normal parameter r>0 and the strict source response equations. It contains no algorithm for finding the parameter, listing transcendental solutions, or deciding the original observation fibre.
+
+The delivered exact source bodies can be replayed with the unchanged existing builder and pinned dependencies using the steps above. Original host-bound generator/reproduction scripts are retained locally, with their hashes in PROJECTION-POLICY.json; they are not published as portable scripts. The mathematical coefficient certificates are included and independently checkable. No new installation or separate project is required.

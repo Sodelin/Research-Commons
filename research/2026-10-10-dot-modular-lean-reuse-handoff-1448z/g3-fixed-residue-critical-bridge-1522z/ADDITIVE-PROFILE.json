@@ -1,0 +1,594 @@
+{
+  "profile": "candidate/g3-actual-fixed-residue-critical-finiteness",
+  "source_scope": {
+    "roots": [
+      "G3ActualFixedResidueCriticalFiniteness"
+    ],
+    "modules": {
+      "G3BernoulliDerivatives": {
+        "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+        "imports": [
+          "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+          "Mathlib.Analysis.Calculus.Deriv.Pow",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "G3BernoulliCriticalNumerators": {
+        "sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+        "imports": [
+          "G3BernoulliDerivatives",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Tactic.FieldSimp"
+        ]
+      },
+      "G3AllResiduePositivity": {
+        "sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "G3AllResidueNormalIdentities": {
+        "sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+        "imports": [
+          "G3AllResiduePositivity",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "G3BernoulliVerticalExclusion": {
+        "sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+        "imports": [
+          "G3BernoulliCriticalNumerators",
+          "G3AllResidueNormalIdentities",
+          "Mathlib.Algebra.Polynomial.BigOperators",
+          "Mathlib.Algebra.Polynomial.Roots",
+          "Mathlib.Tactic.FinCases",
+          "Mathlib.Tactic.NormNum"
+        ]
+      },
+      "G3FixedDegreeResultants": {
+        "sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+        "imports": [
+          "G3BernoulliVerticalExclusion",
+          "Mathlib.RingTheory.Polynomial.Resultant.Basic"
+        ]
+      },
+      "G3CriticalProjectionPolynomials": {
+        "sha256": "be32be9a1e07f6c12dfb3f6d9c4e88a7428bd34531e04b48655e0b68ec6176ae",
+        "imports": [
+          "G3FixedDegreeResultants",
+          "Mathlib.Algebra.Polynomial.Div",
+          "Mathlib.Data.Set.Finite.Lattice"
+        ]
+      },
+      "G3CriticalCoefficientLists": {
+        "sha256": "f54a534e5e8aaff659cc4f257a329fdbaa75b94bd2fffd71809da1ce66f5e185",
+        "imports": [
+          "Mathlib.Algebra.Polynomial.Basic",
+          "Mathlib.Algebra.Polynomial.Eval.Defs",
+          "Mathlib.Algebra.Polynomial.Degree.Lemmas",
+          "Mathlib.Tactic.Ring"
+        ]
+      },
+      "G3CriticalBivariateLists": {
+        "sha256": "163be58a5d84b6fef701d464f02bf61420e7c68981162a5a2e8432490306a28b",
+        "imports": [
+          "G3CriticalCoefficientLists"
+        ]
+      },
+      "G3CriticalSourceArrayBinding": {
+        "sha256": "709c12f0c2c1b85f809f8432246f674803dd2e791d4274975f2095ba6b9933eb",
+        "imports": [
+          "G3CriticalBivariateLists",
+          "G3FixedDegreeResultants"
+        ]
+      },
+      "G3CriticalFinSixExpansion": {
+        "sha256": "d66a22f00830c6d9ee4db4bd99d79f743fa61d24b0367de4632b76ce2d470270",
+        "imports": [
+          "G3CriticalSourceArrayBinding"
+        ]
+      },
+      "G3CriticalSourceFactors3": {
+        "sha256": "ef238ba797a9079b2da1fb691cdf7553ad09ad388c8586ff59df4053a2caf829",
+        "imports": [
+          "G3CriticalBivariateLists"
+        ]
+      },
+      "G3CriticalSliceSourceBinding3": {
+        "sha256": "20ab4005616e05d1492236e0abb79c0dea87f89008c79e4bef80ce2158ad891b",
+        "imports": [
+          "G3CriticalFinSixExpansion",
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceFactors5": {
+        "sha256": "5566c5efc73360c3c9cf973303cbe59083a4a4a0761fe0dc69b49884e9a79cc3",
+        "imports": [
+          "G3CriticalBivariateLists"
+        ]
+      },
+      "G3CriticalSliceSourceBinding5": {
+        "sha256": "94b8fdf572164653b798b107529c28bc47ef3c9ea81deea658e7f368b46282d6",
+        "imports": [
+          "G3CriticalFinSixExpansion",
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock3_0": {
+        "sha256": "c6ec0a048b71cdab8ed7ff9c9ced519ed161edb2594119f4a00bcc58b19e292a",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_1": {
+        "sha256": "234a0fbb8e142ba43da5e088111f029687bbb192f2ccbaf03c3c6ca8193fb0cf",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_2": {
+        "sha256": "4564898a56e0e50fd73224a6d352ebbdc37030c7363bd0de7e88567c960988c6",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_3": {
+        "sha256": "705e902a490966cc7fd4313a10e9e7fdc0f61a3504638e7ce1c26f279d0741dc",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_4": {
+        "sha256": "57894a72b4eca5ad86ed4a49e7749377245ae7a8e84d306aa74529eebb05f693",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_5": {
+        "sha256": "a178fa3e5f583a5d29aafdc4b4ea9d5eeecac2cf9063aa7950105f5943fffcb8",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_6": {
+        "sha256": "b7d06b1e2134d28181cd72ca45dfdfe8c6d03db0d7a6535b7d4eea85b1c83603",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_7": {
+        "sha256": "509c1ec423b8d9bf908bbe2710a91719d5cbfbe406dec7075c1ade68fbd2af66",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_8": {
+        "sha256": "57d36cd614687a272b1b2937df19043d1359ca3f91de886bde96a5f05df9447f",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_9": {
+        "sha256": "39341df90940d29260969dbf86795d3b2ad328305b1bd19b6562162c3dec1a8c",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_10": {
+        "sha256": "09c73eb4fa268030a16440de2a99389a192de2f119b056ebf734ee395125032c",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_11": {
+        "sha256": "cef567a05601a92cac820523f3fb3963bf8bbae660b19d94f4781eee5f7ee027",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_12": {
+        "sha256": "960497bef993bf3654af3b662dd44f2030b2cdd2ebd43ff186daa02a0c1bef3a",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_13": {
+        "sha256": "ccc66c2accf8fb89cbb09f46dc1c24e6fec92058424c1c458ce54851b06bfef9",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_14": {
+        "sha256": "e0ed068d0e3f38fd1e7e4cc7d9d0f66ae6ee61975c3f2f507d9d6e76ffebccfb",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_15": {
+        "sha256": "8e94577723d82153fd832b7035eb4e2c90d8bbefab8bda637053503c7c4a23c5",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_16": {
+        "sha256": "fecfbaf20e298a11ccd4c56d5dae7495e9a9a2aa9772dc17b258847e92040ae4",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_17": {
+        "sha256": "0c08960d66305e921c41363f6f882aa32712d9ea0caee0274de4296217ccb212",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_18": {
+        "sha256": "0d8528fcf45fe9ba5f938e6243148915b1870832b2556555966365924cc865f2",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_19": {
+        "sha256": "ebe9f869a6a09a4c881afdd8cb590d7963201c0ed4a31a91d327386b513b6b44",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_20": {
+        "sha256": "a626a95e39e59f5d21c4fe6f2070cc957975af9e8f15c78f568dfcf47fd513bf",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_21": {
+        "sha256": "50a342d56666c26734d42bd9f97d01361f3513f50ddab4446fb1a4d292c62180",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalSourceBlock3_22": {
+        "sha256": "8423267f854c8e135e0e7279c888fca8479266fdec2747dea319f51745dd6224",
+        "imports": [
+          "G3CriticalSourceFactors3"
+        ]
+      },
+      "G3CriticalBlockReconstruction": {
+        "sha256": "4d7a1baa8a540b9748db437d3c63b3aa7ef18701cf7d8e731b47e56fade72ac1",
+        "imports": [
+          "G3CriticalBivariateLists"
+        ]
+      },
+      "G3CriticalSliceCoefficientData": {
+        "sha256": "e7d2d8ea4190aeefcc7fcd962a229df95ea76da0691d7941553d6274d324adb0",
+        "imports": [
+          "G3CriticalCoefficientLists",
+          "Mathlib.Data.ZMod.Basic",
+          "Mathlib.Tactic.NormNum"
+        ]
+      },
+      "G3CriticalSourceBlockAssembly3": {
+        "sha256": "ee0c97669bf8473ed07bf801441cf72eba91b645f0ac622db8de63296168ef18",
+        "imports": [
+          "G3CriticalSourceBlock3_0",
+          "G3CriticalSourceBlock3_1",
+          "G3CriticalSourceBlock3_2",
+          "G3CriticalSourceBlock3_3",
+          "G3CriticalSourceBlock3_4",
+          "G3CriticalSourceBlock3_5",
+          "G3CriticalSourceBlock3_6",
+          "G3CriticalSourceBlock3_7",
+          "G3CriticalSourceBlock3_8",
+          "G3CriticalSourceBlock3_9",
+          "G3CriticalSourceBlock3_10",
+          "G3CriticalSourceBlock3_11",
+          "G3CriticalSourceBlock3_12",
+          "G3CriticalSourceBlock3_13",
+          "G3CriticalSourceBlock3_14",
+          "G3CriticalSourceBlock3_15",
+          "G3CriticalSourceBlock3_16",
+          "G3CriticalSourceBlock3_17",
+          "G3CriticalSourceBlock3_18",
+          "G3CriticalSourceBlock3_19",
+          "G3CriticalSourceBlock3_20",
+          "G3CriticalSourceBlock3_21",
+          "G3CriticalSourceBlock3_22",
+          "G3CriticalBlockReconstruction",
+          "G3CriticalSliceCoefficientData",
+          "Mathlib.Tactic.IntervalCases"
+        ]
+      },
+      "G3CriticalSourceBlock5_0": {
+        "sha256": "439c4a6ce8d27c9136d34bf0a2922c0d231969b461554df99832b6a7dd4931d0",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_1": {
+        "sha256": "bdd560455252b016606a3b37d89f483cee587149b00da4f225851c346ea29aab",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_2": {
+        "sha256": "2bd3e63cd29f6338c7f1f431c6a98d5959a665574de2d17a641d4901878b79cd",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_3": {
+        "sha256": "66755abda6f52959520bdb3fc6edf7c3d3606a5e20d5db176c5ee65cbcc155c1",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_4": {
+        "sha256": "11296ca4bb39d043c86f0d2685d5be4afb161ebdffa826a91fd52a4786850bcd",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_5": {
+        "sha256": "b7d8d20ea25981f3a87ec8e0037174db606e4df35243eb7fd2cc9608bf925f2f",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_6": {
+        "sha256": "d7a9fb7f4f5b052ee5ae57b6ef5da86d2d23e242fe175adcf5d8e574c02b7f0d",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_7": {
+        "sha256": "a92bbb82f685365e68b1454ffff6247e8fc372d45102ffa449a7b48b606595a5",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_8": {
+        "sha256": "95a694b9d8b0b51877364bfb4f605bafdbbe36f9fc81a303658395be6e54d2a1",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_9": {
+        "sha256": "d2371a4a052d465df0cbd5a5f00409c8320c8afbf1959b02a24527da5eabf73d",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_10": {
+        "sha256": "e55257e911dcda2cafb33e1693048ce0e9029c6d9a5a25c4be7d0c7af968f72e",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_11": {
+        "sha256": "64944d507bf4f1b4f1a4eaa5e3c064e7d7baeead9824615ecedaa7cc1d4d73c5",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_12": {
+        "sha256": "35c734529d3d1c289a2f1fa30b9d0023d26e2fc3cd608dc3efcf47e84f523bcc",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_13": {
+        "sha256": "01122c9273e3ff2ef6d21a61cd65ca0626243b97169ce37f01e883de1db1d68a",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_14": {
+        "sha256": "5dbaedf26efac2abb379a414cd30b3171dde19aa205634672c49ea5d4d61389d",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_15": {
+        "sha256": "004cdfaf73ff14d03f59d5f7d2abdb7428a5c62f2bfcd66818319792c1dc4b4a",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_16": {
+        "sha256": "7f65625752fcd1ddfaca4e2048c77e4eb76c5d8519b9d858d5416980e17c97b5",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_17": {
+        "sha256": "ddd5cfa475a635e1cfa733be7236b4688e5109427033c29db16ed240ffa8ae58",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_18": {
+        "sha256": "a50e72f6aed53b8bcb75d465b174e1fc8b7331b85aeffa64ae8fa8b82c9ca787",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_19": {
+        "sha256": "a67dfb2802b00cc1a7dff4161c42f11458018a0515bef3c214c528b5dbe91f95",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_20": {
+        "sha256": "d6b7aa9b411f6dc417e26b55b41f1936927872acf986480023557beb7980c230",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_21": {
+        "sha256": "b76de8f4a9f78a0bc2bb7c0c49f92ca4fb22a700d37798c29d7c6e179693506f",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlock5_22": {
+        "sha256": "43d0244624cd69c39cbb4b20b80ba5e89256227338a6086b00b57c509d34abe9",
+        "imports": [
+          "G3CriticalSourceFactors5"
+        ]
+      },
+      "G3CriticalSourceBlockAssembly5": {
+        "sha256": "4d3e0f80ffaadf4c62d57dae62a1cebafb22c8983120326af1ea596f872d5cb5",
+        "imports": [
+          "G3CriticalSourceBlock5_0",
+          "G3CriticalSourceBlock5_1",
+          "G3CriticalSourceBlock5_2",
+          "G3CriticalSourceBlock5_3",
+          "G3CriticalSourceBlock5_4",
+          "G3CriticalSourceBlock5_5",
+          "G3CriticalSourceBlock5_6",
+          "G3CriticalSourceBlock5_7",
+          "G3CriticalSourceBlock5_8",
+          "G3CriticalSourceBlock5_9",
+          "G3CriticalSourceBlock5_10",
+          "G3CriticalSourceBlock5_11",
+          "G3CriticalSourceBlock5_12",
+          "G3CriticalSourceBlock5_13",
+          "G3CriticalSourceBlock5_14",
+          "G3CriticalSourceBlock5_15",
+          "G3CriticalSourceBlock5_16",
+          "G3CriticalSourceBlock5_17",
+          "G3CriticalSourceBlock5_18",
+          "G3CriticalSourceBlock5_19",
+          "G3CriticalSourceBlock5_20",
+          "G3CriticalSourceBlock5_21",
+          "G3CriticalSourceBlock5_22",
+          "G3CriticalBlockReconstruction",
+          "G3CriticalSliceCoefficientData",
+          "Mathlib.Tactic.IntervalCases"
+        ]
+      },
+      "G3CriticalModularLifting": {
+        "sha256": "ddedbdba3ec000cd49d76e16c2ecfe78335515d32552c2e754a0ba8eb493f8f5",
+        "imports": [
+          "G3CriticalSliceCoefficientData",
+          "Mathlib.RingTheory.Polynomial.Resultant.Basic",
+          "Mathlib.Algebra.Field.ZMod",
+          "Mathlib.Data.Real.Basic"
+        ]
+      },
+      "G3CriticalPositiveProduct": {
+        "sha256": "4049000f83c150353f4283dbb3bc340cca9f7a5f4885a60889768891abece94c",
+        "imports": [
+          "G3CriticalSliceCoefficientData",
+          "G3AllResiduePositivity"
+        ]
+      },
+      "G3CriticalExportedNoCommon": {
+        "sha256": "cc1fe521130d3c50c09acaffb2d21b4f961dcb7542a81ad5b838cf024a87863d",
+        "imports": [
+          "G3CriticalModularLifting",
+          "G3CriticalPositiveProduct"
+        ]
+      },
+      "G3CriticalSourceSliceCoprime": {
+        "sha256": "c353c266216b7022648c1959dcb8a4740a93ae85da0cc26e0f88a844ac61644f",
+        "imports": [
+          "G3CriticalSliceSourceBinding3",
+          "G3CriticalSliceSourceBinding5",
+          "G3CriticalSourceBlockAssembly3",
+          "G3CriticalSourceBlockAssembly5",
+          "G3CriticalExportedNoCommon"
+        ]
+      },
+      "G3ActualFixedResidueCriticalFiniteness": {
+        "sha256": "87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29",
+        "imports": [
+          "G3CriticalProjectionPolynomials",
+          "G3CriticalSourceSliceCoprime"
+        ]
+      }
+    },
+    "order": [
+      "G3BernoulliDerivatives",
+      "G3BernoulliCriticalNumerators",
+      "G3AllResiduePositivity",
+      "G3AllResidueNormalIdentities",
+      "G3BernoulliVerticalExclusion",
+      "G3FixedDegreeResultants",
+      "G3CriticalProjectionPolynomials",
+      "G3CriticalCoefficientLists",
+      "G3CriticalBivariateLists",
+      "G3CriticalSourceArrayBinding",
+      "G3CriticalFinSixExpansion",
+      "G3CriticalSourceFactors3",
+      "G3CriticalSliceSourceBinding3",
+      "G3CriticalSourceFactors5",
+      "G3CriticalSliceSourceBinding5",
+      "G3CriticalSourceBlock3_0",
+      "G3CriticalSourceBlock3_1",
+      "G3CriticalSourceBlock3_2",
+      "G3CriticalSourceBlock3_3",
+      "G3CriticalSourceBlock3_4",
+      "G3CriticalSourceBlock3_5",
+      "G3CriticalSourceBlock3_6",
+      "G3CriticalSourceBlock3_7",
+      "G3CriticalSourceBlock3_8",
+      "G3CriticalSourceBlock3_9",
+      "G3CriticalSourceBlock3_10",
+      "G3CriticalSourceBlock3_11",
+      "G3CriticalSourceBlock3_12",
+      "G3CriticalSourceBlock3_13",
+      "G3CriticalSourceBlock3_14",
+      "G3CriticalSourceBlock3_15",
+      "G3CriticalSourceBlock3_16",
+      "G3CriticalSourceBlock3_17",
+      "G3CriticalSourceBlock3_18",
+      "G3CriticalSourceBlock3_19",
+      "G3CriticalSourceBlock3_20",
+      "G3CriticalSourceBlock3_21",
+      "G3CriticalSourceBlock3_22",
+      "G3CriticalBlockReconstruction",
+      "G3CriticalSliceCoefficientData",
+      "G3CriticalSourceBlockAssembly3",
+      "G3CriticalSourceBlock5_0",
+      "G3CriticalSourceBlock5_1",
+      "G3CriticalSourceBlock5_2",
+      "G3CriticalSourceBlock5_3",
+      "G3CriticalSourceBlock5_4",
+      "G3CriticalSourceBlock5_5",
+      "G3CriticalSourceBlock5_6",
+      "G3CriticalSourceBlock5_7",
+      "G3CriticalSourceBlock5_8",
+      "G3CriticalSourceBlock5_9",
+      "G3CriticalSourceBlock5_10",
+      "G3CriticalSourceBlock5_11",
+      "G3CriticalSourceBlock5_12",
+      "G3CriticalSourceBlock5_13",
+      "G3CriticalSourceBlock5_14",
+      "G3CriticalSourceBlock5_15",
+      "G3CriticalSourceBlock5_16",
+      "G3CriticalSourceBlock5_17",
+      "G3CriticalSourceBlock5_18",
+      "G3CriticalSourceBlock5_19",
+      "G3CriticalSourceBlock5_20",
+      "G3CriticalSourceBlock5_21",
+      "G3CriticalSourceBlock5_22",
+      "G3CriticalSourceBlockAssembly5",
+      "G3CriticalModularLifting",
+      "G3CriticalPositiveProduct",
+      "G3CriticalExportedNoCommon",
+      "G3CriticalSourceSliceCoprime",
+      "G3ActualFixedResidueCriticalFiniteness"
+    ],
+    "unresolved_imports": [],
+    "required_for_accepted_release": false
+  },
+  "graph_sha256": "638c239709842efba1af5884cc6e9f2d0e390975d4cfee35cff13271a744b493",
+  "all_original_profiles_unchanged": true
+}
