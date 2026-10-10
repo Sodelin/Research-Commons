@@ -1,0 +1,39 @@
+{
+  "status": "PROPOSED_UNCOMPILED_ADDITIVE_TARGET_NOT_APPLIED",
+  "package": "connectedResearch",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "target_name": "candidate/g3-weak-class-partition",
+  "target_record": {
+    "roots": [
+      "G3WeakClassPartition"
+    ],
+    "modules": {
+      "G3BernoulliDerivatives": {
+        "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+        "imports": [
+          "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+          "Mathlib.Analysis.Calculus.Deriv.Pow",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "G3WeakClassPartition": {
+        "sha256": "b09f9679927e8e3e32d1b9310cfa1241da633474776c7553d51aeb34665f960d",
+        "imports": [
+          "G3BernoulliDerivatives"
+        ]
+      }
+    },
+    "order": [
+      "G3BernoulliDerivatives",
+      "G3WeakClassPartition"
+    ],
+    "unresolved_imports": [],
+    "required_for_accepted_release": false
+  },
+  "new_source_store_path": "source-store/b09f9679927e8e3e32d1b9310cfa1241da633474776c7553d51aeb34665f960d.lean",
+  "existing_source_store_path": "source-store/7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0.lean",
+  "post_pass_obligation": "Add the checked module to a new connected canonical profile revision and obtain its aggregate plus complete owned audit. The frozen 53-target graph and certificate stay historical."
+}
