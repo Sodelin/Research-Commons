@@ -115,3 +115,9 @@ The [prior and quantifier supplement](routing-motif-adapter/PRIOR-AND-QUANTIFIER
 
 The [independent review](routing-motif-adapter/INDEPENDENT-REVIEW.md) and [Codex contract](routing-motif-adapter/CODEX-ADAPTER-CONTRACT.md) pin the proof and its mathematical witness-extraction specification. No QE witness search or Lean formalization was run. Existing source-patch, forest-algebra and normal-form results retain attribution; novelty of this source-specific motif consequence is unassessed. Earlier bodies are unchanged, and ROUTING-MOTIF-ADDENDUM-MANIFEST-1411.json pins the new files and unchanged prefixes of the two appended reports.
 
+
+## 14:20 UTC own-work reuse and composition audit
+
+The [prior/composition checkpoint](G4-PRIOR-COMPOSITION-CHECKPOINT-1420.md) pins the already accepted one-biased-cell local separator, finite-persistent array classification, finite boundary-pivot exclusion, maximal stochastic-prefix limitation and monotone-signature obstruction, with their independent review receipts. It records how target-close head recovery would combine with the old local theorem and supplied-shape finder, rather than proposing another local separator.
+
+The unresolved step remains global head entry for arbitrary varying biased arrays. The pair identity makes all extras weak once a target-close cell exists; it does not prove that such a cell exists. Today's sparse exponential-rate result excludes its one exact carrier, while arbitrary interlaced good/bad tails remain open. The brief signature applicability screen is attributed to the stronger October 9 source obstruction. No new theorem, executed solver or novelty claim is made by this audit.
