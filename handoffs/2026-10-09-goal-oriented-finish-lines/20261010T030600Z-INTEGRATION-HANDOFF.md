@@ -81,3 +81,12 @@ The protected-bin/erasure/unranked-continuation component and the frozen 53-prof
 The full modular source-package upload remains held after its specific cancelled tree action, pending renewed approval. Compilation is safely paused at the disk boundary. Existing proofs, unsuccessful attempts and successful certificates are preserved.
 
 The separate [G6 protected-bin bridge packet](https://github.com/Sodelin/Research-Commons/blob/2e625f740c18d18742cbfa2eed63a6a98a43a697/research/2026-10-10-dot-g6-protected-bin-bridge-0912z/README.md) is now published and verified on main. It retains the preceding component/certificate boundaries and does not change the next G6 obligations above.
+
+
+## 2026-10-10 09:47 UTC — delivered modular package and Codex build handoff
+
+The complete [modular source/configuration/evidence package](https://github.com/Sodelin/Research-Commons/blob/6207670fa7fbce788d01584a033c0471ae918aaa/research/2026-10-10-dot-connected-modular-lake-0855z/README.md) is published and verified on main: all 1,520 exact blobs, including 1,440 source versions and 80 configuration/evidence files. This supersedes the earlier package-upload hold. The frozen 53-profile qualified cross-run certificate is unchanged; fresh mathematical replay from the public layout remains a separate task.
+
+The user has assigned full Lean and practical-build continuation to a separate Codex agent. The [Codex start-here handoff](20261010T094500Z-CODEX-BUILD-HANDOFF.md) provides reproduction commands, source/resource pins, later checked packets, G7 recovery boundaries, and the published G6 forest-exposure hand proof. No further compilation is started here.
+
+The four research routes now return to two G3 routes (constructive source realization and exact obstruction/NO completeness) and two G4 routes (finite forcing/invariants and exact rivals/counterconstruction). Full source/master quantifiers and all limitations remain unchanged. Pending G7 candidate delivery is separate from the frozen graph and carries explicit failed/uncompiled status.
