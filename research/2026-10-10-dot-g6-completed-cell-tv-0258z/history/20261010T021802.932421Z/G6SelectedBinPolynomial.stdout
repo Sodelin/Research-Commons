@@ -1,0 +1,69 @@
+G6SelectedBinPolynomial.lean:72:15: error: `simp` made no progress
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    PMF.map (Fin.cons a) (historyLaw (sourceProgramStep N r) (physicalOps N word) a)
+  has type
+    PMF (Fin (q.1 :: physicalOps N word).length → Code N sample)
+  but is expected to have type
+    PMF (Fin (physicalOps N (q :: word)).length → Code N sample)
+  in the application
+    PMF.map (fun h => projectTagged N (endpointHistoryReadout N (q :: word) s B h))
+      (PMF.map (Fin.cons a) (historyLaw (sourceProgramStep N r) (physicalOps N word) a))
+G6SelectedBinPolynomial.lean:87:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.SelectedBinPolynomial.actual_symbolic_step_tags`:
+  [Fintype Tag]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Tag] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G6SelectedBinPolynomial.lean:179:93: error: unsolved goals
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+p : HybridProbabilities N
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+word : List (ProgramStep N × Tag)
+href : CutRefines N ops (physicalOps N word)
+hword : wordBinContract N bin word (firstOriginalDate N C)
+⊢ ((naturalInitialCodeLaw N sample p).bind fun a =>
+      selectedBinWordLaw N r word (projection N Finset.univ a, fun x y => bin (leafAgeMatrix N C sample x y))) =
+    (naturalInitialCodeLaw N sample p).bind
+      ((fun a => selectedBinWordLaw N r word (a, fun x y => bin (leafAgeMatrix N C sample x y))) ∘
+        projection N Finset.univ)
+'UnifiedLean.G6.SelectedBinPolynomial.actual_selected_history_fold' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_bin_word_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_natural_bin_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_natural_past_selected_fold' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_natural_clock_bin_polynomial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

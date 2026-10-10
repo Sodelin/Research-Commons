@@ -1,0 +1,60 @@
+ActualCalendarCutPattern.lean:25:62: error: Application type mismatch: The argument
+  ih
+has type
+  Anchored z ys c → Anchored b (ws ++ ys) c
+but is expected to have type
+  Anchored b (ws.append ys) c
+in the application
+  Anchored.interval a b c tag (ws.append ys) ih
+ActualCalendarCutPattern.lean:26:54: error: Application type mismatch: The argument
+  ih
+has type
+  Anchored z ys c → Anchored a (ws ++ ys) c
+but is expected to have type
+  Anchored a (ws.append ys) c
+in the application
+  Anchored.exit a c e tag (ws.append ys) ih
+ActualCalendarCutPattern.lean:27:56: error: Application type mismatch: The argument
+  ih
+has type
+  Anchored z ys c → Anchored a (ws ++ ys) c
+but is expected to have type
+  Anchored a (ws.append ys) c
+in the application
+  Anchored.enter a c v tag (ws.append ys) ih
+ActualCalendarCutPattern.lean:29:1: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.ActualCalendarCutPattern.boundaries_anchored`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ActualCalendarCutPattern.lean:145:7: error: Function expected at
+  physicalOps
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `physicalOps` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+ActualCalendarCutPattern.lean:154:4: error: Function expected at
+  wordBinContract
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `wordBinContract` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+'UnifiedLean.G6.ActualCalendarCutPattern.actual_calendar_ranked_refines' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ActualCalendarCutPattern.actual_calendar_ranked_bin_contract' does not depend on any axioms
+'UnifiedLean.G6.ActualCalendarCutPattern.actual_calendar_ranked_schema' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

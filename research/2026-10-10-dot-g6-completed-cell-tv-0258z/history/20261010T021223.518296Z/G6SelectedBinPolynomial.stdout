@@ -1,0 +1,297 @@
+G6SelectedBinPolynomial.lean:52:8: error: unsolved goals
+case nil
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Fintype Tag
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+B : Copy → Copy → Tag
+⊢ PMF.map (fun h => (projection N Finset.univ s, B)) (historyLaw (sourceProgramStep N r) (List.map Prod.fst []) s) =
+    PMF.pure (projection N Finset.univ s, B)
+G6SelectedBinPolynomial.lean:64:6: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G6SelectedBinPolynomial.lean:65:8: error: (deterministic) timeout at `«synthesize pending MVars»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G6SelectedBinPolynomial.lean:53:29: warning: This simp argument is unused:
+  List.map_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [physicalOps, sourceHistoryLaw, historyLaw, PMF.pure_map, endpointHistoryReadout, projectTagged,
+    selectedBinWordLaw]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6SelectedBinPolynomial.lean:53:59: warning: This simp argument is unused:
+  historyLaw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [physicalOps, List.map_nil, sourceHistoryLaw, PMF.pure_map, endpointHistoryReadout, projectTagged,
+    selectedBinWordLaw]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6SelectedBinPolynomial.lean:53:70: warning: This simp argument is unused:
+  PMF.pure_map
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [physicalOps, List.map_nil, sourceHistoryLaw, historyLaw, endpointHistoryReadout, projectTagged,
+    selectedBinWordLaw]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6SelectedBinPolynomial.lean:82:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.SelectedBinPolynomial.actual_symbolic_step_tags`:
+  [Fintype Tag]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Tag] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G6SelectedBinPolynomial.lean:171:12: error: Function expected at
+  CutRefines
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `CutRefines` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6SelectedBinPolynomial.lean:172:41: error: Function expected at
+  firstOriginalDate
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `firstOriginalDate` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6SelectedBinPolynomial.lean:174:93: error: unsolved goals
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+x✝¹ : Sort u_7
+CutRefines : x✝¹
+x✝ : Sort u_8
+firstOriginalDate : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+p : HybridProbabilities N
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+word : List (ProgramStep N × Tag)
+href : sorry
+hword : wordBinContract N bin word sorry
+⊢ PMF.map (projectTagged N) (naturalPastJoint N C sample p r bin hbin ops) =
+    naturalBinWordLaw N sample p r word fun x y => bin (leafAgeMatrix N C sample x y)
+G6SelectedBinPolynomial.lean:190:12: error: Function expected at
+  CutRefines
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `CutRefines` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6SelectedBinPolynomial.lean:193:7: error: Function expected at
+  firstOriginalDate
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `firstOriginalDate` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G6SelectedBinPolynomial.lean:196:91: error: unsolved goals
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+x✝¹ : Sort u_7
+CutRefines : x✝¹
+x✝ : Sort u_8
+firstOriginalDate : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+dur : J → ℝ≥0
+word : List (Symbol J V E × Tag)
+href : sorry
+hword : wordBinContract N bin (instantiateTagged N H (originalGamma p) common dur word) sorry
+b : SelectedTagged N sample
+⊢ Sort ?u.137
+
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+x✝¹ : Sort u_7
+CutRefines : x✝¹
+x✝ : Sort u_8
+firstOriginalDate : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+dur : J → ℝ≥0
+word : List (Symbol J V E × Tag)
+href : sorry
+hword : wordBinContract N bin (instantiateTagged N H (originalGamma p) common dur word) sorry
+b : SelectedTagged N sample
+⊢ ?m.175
+
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+x✝¹ : Sort u_7
+CutRefines : x✝¹
+x✝ : Sort u_8
+firstOriginalDate : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+dur : J → ℝ≥0
+word : List (Symbol J V E × Tag)
+href : sorry
+hword : wordBinContract N bin (instantiateTagged N H (originalGamma p) common dur word) sorry
+b : SelectedTagged N sample
+⊢ Sort ?u.136
+
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+Tag : Type u_6
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq Copy
+inst✝³ : Fintype Copy
+inst✝² : Fintype Tag
+inst✝¹ : MeasurableSpace Tag
+inst✝ : MeasurableSingletonClass Tag
+x✝¹ : Sort u_7
+CutRefines : x✝¹
+x✝ : Sort u_8
+firstOriginalDate : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+r : PositivePairRates E
+bin : ℝ → Tag
+hbin : Measurable bin
+ops : List (ProgramStep N)
+dur : J → ℝ≥0
+word : List (Symbol J V E × Tag)
+href : sorry
+hword : wordBinContract N bin (instantiateTagged N H (originalGamma p) common dur word) sorry
+b : SelectedTagged N sample
+⊢ ?m.177
+'UnifiedLean.G6.SelectedBinPolynomial.actual_selected_history_fold' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_bin_word_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_natural_bin_polynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_natural_past_selected_fold' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinPolynomial.actual_natural_clock_bin_polynomial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

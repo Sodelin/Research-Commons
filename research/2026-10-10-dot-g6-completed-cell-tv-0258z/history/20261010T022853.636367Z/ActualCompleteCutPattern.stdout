@@ -1,0 +1,87 @@
+ActualCompleteCutPattern.lean:63:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ActualCompleteCutPattern.lean:60:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.ActualCompleteCutPattern.end_atom_ge`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ActualCompleteCutPattern.lean:83:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.ActualCompleteCutPattern.end_atom_available`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ActualCompleteCutPattern.lean:135:96: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+j : ℕ
+cuts : Fin j → ℚ
+sig : Signature V j
+hc : Realizes cuts sig C.age
+ks : List (Fin j)
+kend : Fin j
+hlast : ↑(cuts kend) = lastCut (values cuts ks)
+v z : V
+ha : Anchored (AgeAtom.node v) (List.map (fun s => (s, ())) (calendarSchema N C)) (AgeAtom.node z)
+hfirst : ∀ (D : Calendar N.graph), SameOrder C.age D.age → D.age v = firstOriginalDate N D
+schema : List (Step V E) := calendarSchema N C ++ [endStep C.age z (cuts kend)]
+hs : ∀ (a b : AgeAtom V), Step.interval a b ∈ schema → Available cuts a ∧ Available cuts b
+ha' : Anchored (AgeAtom.node v) (List.map (fun s => (s, ())) schema) (endAtom C.age z (cuts kend))
+D : Calendar N.graph
+hd : Realizes cuts sig D.age
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+horder : SameOrder C.age D.age
+hend : endAtom C.age z (cuts kend) = endAtom D.age z (cuts kend)
+ho : Ordered D.age (List.map (fun s => (s, ())) schema)
+hdur :
+  AgeAtom.eval D.age (AgeAtom.node v) +
+      ↑(programDuration N
+          (instantiate N D H p common (List.map Prod.fst (List.map (fun s => (s, ())) (calendarSchema N C))))) =
+    AgeAtom.eval D.age (AgeAtom.node z)
+⊢ List.map (Prod.fst ∘ fun s => (s, ())) (calendarSchema N C) = calendarSchema N C
+ActualCompleteCutPattern.lean:205:2: error: Type mismatch: After simplification, term
+  actual_complete_word_per_cell N C (completedCutBank cuts ks) sig hc (List.map Fin.succ ks) 0
+    (completed_cut_bank_bound cuts ks)
+ has type
+  ∃ (w : List (Step V E × Fin ((values (completedCutBank cuts ks) (List.map Fin.succ ks)).length + 1))),
+    ∀ (D : Calendar N.graph),
+      Realizes (completedCutBank cuts ks) sig D.age →
+        ∀ (H : OriginalParentRegistry N) (p : HybridProbabilities N) (common : Hybrid N → Bool),
+          interpret N D H p common w =
+              originalCutWord N D H p common (values (completedCutBank cuts ks) (List.map Fin.succ ks)) ∧
+            CutRefines N (extendedOriginalOps N D H p common (values cuts ks))
+                (physicalOps N (interpret N D H p common w)) ∧
+              wordBinContract N (rankBin (values (completedCutBank cuts ks) (List.map Fin.succ ks)))
+                (interpret N D H p common w) (firstOriginalDate N D)
+but is expected to have type
+  ∃ (w : List (Step V E × Fin ((values cuts ks).length + 1))),
+    ∀ (D : Calendar N.graph),
+      Realizes (completedCutBank cuts ks) sig D.age →
+        ∀ (H : OriginalParentRegistry N) (p : HybridProbabilities N) (common : Hybrid N → Bool),
+          interpret N D H p common w = originalCutWord N D H p common (values cuts ks) ∧
+            CutRefines N (extendedOriginalOps N D H p common (values cuts ks))
+                (physicalOps N (interpret N D H p common w)) ∧
+              wordBinContract N (rankBin (values cuts ks)) (interpret N D H p common w) (firstOriginalDate N D)
+'UnifiedLean.G6.ActualCompleteCutPattern.anchored_duration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'UnifiedLean.G6.ActualCompleteCutPattern.actual_complete_word_per_cell' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ActualCompleteCutPattern.actual_complete_word_from_augmented_cell' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

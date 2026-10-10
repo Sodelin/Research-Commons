@@ -1,0 +1,82 @@
+G6SelectedBinHistory.lean:87:63: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin (physicalOps N ((op, tag) :: word)).length) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Fin (physicalOps N ((op, tag) :: word)).length
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6SelectedBinHistory.lean:88:40: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin (physicalOps N ((op, tag) :: word)).length) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Fin (physicalOps N ((op, tag) :: word)).length
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6SelectedBinHistory.lean:89:67: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin (physicalOps N ((op, tag) :: word)).length) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Fin (physicalOps N ((op, tag) :: word)).length
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6SelectedBinHistory.lean:91:41: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat (Fin (physicalOps N ((op, tag) :: word)).length) 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Fin (physicalOps N ((op, tag) :: word)).length
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G6SelectedBinHistory.lean:102:0: warning: automatically included section variable(s) unused in theorem `UnifiedLean.G6.SelectedBinHistory.actual_forest_bins_project`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G6SelectedBinHistory.lean:136:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  selectedCompletion N r (projection N Finset.univ q.1)
+in the target expression
+  PMF.map (projectTagged N) (PMF.map (fun e => (e, tagUpdate N q.1 e tag q.2)) (completionKernel N r q.1)) =
+    PMF.map (fun d => (d, selectedTagUpdate N (projectTagged N q).1 d tag (projectTagged N q).2))
+      (selectedCompletion N r (projectTagged N q).1)
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Tag : Type u_5
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+tag : Tag
+q : Code N sample × (Copy → Copy → Tag)
+hq : AncestralRoot N q.1
+⊢ PMF.map (projectTagged N) (PMF.map (fun e => (e, tagUpdate N q.1 e tag q.2)) (completionKernel N r q.1)) =
+    PMF.map (fun d => (d, selectedTagUpdate N (projectTagged N q).1 d tag (projectTagged N q).2))
+      (selectedCompletion N r (projectTagged N q).1)
+'UnifiedLean.G6.SelectedBinHistory.actual_tag_update_projects' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinHistory.actual_endpoint_history_readout_projects' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinHistory.actual_observed_history_projects' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinHistory.actual_joint_tail_projects' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.SelectedBinHistory.actual_joint_completion_projects' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

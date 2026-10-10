@@ -1,0 +1,36 @@
+G6ActualCellObservedTV.lean:59:58: error: unexpected token '('; expected ')', ',' or ':'
+G6ActualCellObservedTV.lean:59:16: error: Type mismatch: After simplification, term
+  mul_le_mul_of_nonneg_right hx1
+ has type
+  0 ≤ ?m.436 → x i * ?m.436 ≤ ?m.436
+but is expected to have type
+  ?m.427 ≤ ?m.428
+G6ActualCellObservedTV.lean:36:22: error: unsolved goals
+case insert.calc.step
+I : Type u_1
+x y : I → ℝ
+i : I
+s : Finset I
+hi : i ∉ s
+ih : (∀ i ∈ s, 0 ≤ x i ∧ x i ≤ 1) → (∀ i ∈ s, 0 ≤ y i ∧ y i ≤ 1) → |∏ i ∈ s, x i - ∏ i ∈ s, y i| ≤ ∑ i ∈ s, |x i - y i|
+hx : ∀ i_1 ∈ insert i s, 0 ≤ x i_1 ∧ x i_1 ≤ 1
+hy : ∀ i_1 ∈ insert i s, 0 ≤ y i_1 ∧ y i_1 ≤ 1
+hx0 : 0 ≤ x i
+hx1 : x i ≤ 1
+hys0 : 0 ≤ ∏ j ∈ s, y j
+hys1 : ∏ j ∈ s, y j ≤ 1
+ht : |∏ i ∈ s, x i - ∏ i ∈ s, y i| ≤ ∑ i ∈ s, |x i - y i|
+he : x i * ∏ j ∈ s, x j - y i * ∏ j ∈ s, y j = x i * (∏ j ∈ s, x j - ∏ j ∈ s, y j) + (x i - y i) * ∏ j ∈ s, y j
+⊢ |∏ j ∈ s, x j - ∏ j ∈ s, y j| + |x i - y i| ≤ |x i - y i| + ∑ x_1 ∈ s, |x x_1 - y x_1|
+'UnifiedLean.G6.ActualCellObservedTV.polynomial_cube_lipschitz' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ActualCellObservedTV.polynomial_law_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ActualCellObservedTV.actual_cell_completed_observed_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

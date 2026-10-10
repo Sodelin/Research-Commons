@@ -1,0 +1,110 @@
+G6ActualCellObservedTV.lean:55:20: error: unexpected token '|*'; expected '|' or '|ₘ'
+G6ActualCellObservedTV.lean:36:22: error: unsolved goals
+case insert.calc.step
+I : Type u_1
+x y : I → ℝ
+i : I
+s : Finset I
+hi : i ∉ s
+ih : (∀ i ∈ s, 0 ≤ x i ∧ x i ≤ 1) → (∀ i ∈ s, 0 ≤ y i ∧ y i ≤ 1) → |∏ i ∈ s, x i - ∏ i ∈ s, y i| ≤ ∑ i ∈ s, |x i - y i|
+hx : ∀ i_1 ∈ insert i s, 0 ≤ x i_1 ∧ x i_1 ≤ 1
+hy : ∀ i_1 ∈ insert i s, 0 ≤ y i_1 ∧ y i_1 ≤ 1
+hx0 : 0 ≤ x i
+hx1 : x i ≤ 1
+hys0 : 0 ≤ ∏ j ∈ s, y j
+hys1 : ∏ j ∈ s, y j ≤ 1
+ht : |∏ i ∈ s, x i - ∏ i ∈ s, y i| ≤ ∑ i ∈ s, |x i - y i|
+he : x i * ∏ j ∈ s, x j - y i * ∏ j ∈ s, y j = x i * (∏ j ∈ s, x j - ∏ j ∈ s, y j) + (x i - y i) * ∏ j ∈ s, y j
+⊢ x i * |∏ j ∈ s, x j - ∏ j ∈ s, y j| + |x i - y i| ≤ |x i - y i| + ∑ x_1 ∈ s, |x x_1 - y x_1|
+G6ActualCellObservedTV.lean:107:27: error: Application type mismatch: The argument
+  P
+has type
+  MvPolynomial I ℚ
+but is expected to have type
+  MvPolynomial I ℝ
+in the application
+  MvPolynomial.coeff d P
+G6ActualCellObservedTV.lean:112:21: error: Application type mismatch: The argument
+  P
+has type
+  MvPolynomial I ℚ
+but is expected to have type
+  MvPolynomial I ℝ
+in the application
+  MvPolynomial.coeff d P
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G6ActualCellObservedTV.lean:112:48: error: unsolved goals
+I : Type u_1
+inst✝ : Fintype I
+P : MvPolynomial I ℚ
+x y : I → ℝ
+hx : ∀ (i : I), 0 ≤ x i ∧ x i ≤ 1
+hy : ∀ (i : I), 0 ≤ y i ∧ y i ≤ 1
+epsilon : ℝ
+he : ∀ (i : I), |x i - y i| ≤ epsilon
+d : I →₀ ℕ
+a✝ : d ∈ P.support
+⊢ (|MvPolynomial.coeff d sorry| * ∑ i, ↑(d i)) * epsilon = ?m.245
+G6ActualCellObservedTV.lean:113:13: error: unsolved goals
+I : Type u_1
+inst✝ : Fintype I
+P : MvPolynomial I ℚ
+x y : I → ℝ
+hx : ∀ (i : I), 0 ≤ x i ∧ x i ≤ 1
+hy : ∀ (i : I), 0 ≤ y i ∧ y i ≤ 1
+epsilon : ℝ
+he : ∀ (i : I), |x i - y i| ≤ epsilon
+⊢ ∑ d ∈ P.support, (|MvPolynomial.coeff d sorry| * ∑ i, ↑(d i)) * epsilon =
+    ∑ i ∈ P.support, (|↑(MvPolynomial.coeff i P)| * ∑ x, ↑(i x)) * epsilon
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G6ActualCellObservedTV.lean:139:13: error: unsolved goals
+I : Type u_1
+O : Type u_2
+inst✝¹ : Fintype I
+inst✝ : Fintype O
+Q : O → MvPolynomial I ℚ
+p q : PMF O
+x y : I → ℝ
+hx : ∀ (i : I), 0 ≤ x i ∧ x i ≤ 1
+hy : ∀ (i : I), 0 ≤ y i ∧ y i ≤ 1
+hp : ∀ (o : O), MvPolynomial.eval₂ (Rat.castHom ℝ) x (Q o) = (p o).toReal
+hq : ∀ (o : O), MvPolynomial.eval₂ (Rat.castHom ℝ) y (Q o) = (q o).toReal
+epsilon : ℝ
+he : ∀ (i : I), |x i - y i| ≤ epsilon
+hsum : ∑ x, |(p x).toReal - (q x).toReal| ≤ ∑ i, ↑(coefficientSlope (Q i)) * epsilon
+⊢ (∑ x, ↑(coefficientSlope (Q x)) * epsilon) * (1 / 2) = (epsilon * ∑ i, ↑(coefficientSlope (Q i))) * (1 / 2)
+G6ActualCellObservedTV.lean:140:71: warning: This simp argument is unused:
+  Finset.sum_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [tableTVSlope, Rat.cast_div, Rat.cast_sum, Rat.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6ActualCellObservedTV.lean:202:41: error: Type mismatch
+  abs_nonneg ?m.476
+has type
+  @OfNat.ofNat ?m.471 0 (@Zero.toOfNat0 ?m.471 SubtractionMonoid.toSubNegZeroMonoid.toNegZeroClass.toZero) ≤ |?m.476|
+but is expected to have type
+  @OfNat.ofNat ?m.463 0 (@Zero.toOfNat0 ?m.463 AddCommMonoid.toAddMonoid.toAddZeroClass.toZero) ≤ ?m.466 i
+'UnifiedLean.G6.ActualCellObservedTV.polynomial_cube_lipschitz' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ActualCellObservedTV.polynomial_law_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.ActualCellObservedTV.actual_cell_completed_observed_tv' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

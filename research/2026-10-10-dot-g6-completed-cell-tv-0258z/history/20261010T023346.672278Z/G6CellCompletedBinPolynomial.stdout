@@ -1,0 +1,179 @@
+G6CellCompletedBinPolynomial.lean:54:66: error: unsolved goals
+case interval
+V : Type u_1
+E : Type u_2
+X : Type u_4
+Tag : Type u_5
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+w : List (OriginalCalendarSchema.Step V E × Tag)
+i : Fin w.length
+younger✝ older✝ : AgeAtom V
+h : (w.get i).1 = Step.interval younger✝ older✝
+⊢ (match
+      match w[↑i].1 with
+      | Step.interval younger older => Symbol.interval i
+      | OriginalCalendarSchema.Step.exit e => Symbol.exit e
+      | Step.enter v => Symbol.enter v with
+    | Symbol.interval j =>
+      ProgramStep.interval
+        (AgeAtom.eval C.age
+              (match w[↑j].1 with
+              | Step.interval younger b => b
+              | x => AgeAtom.fixed 0) -
+            AgeAtom.eval C.age
+              (match w[↑j].1 with
+              | Step.interval a older => a
+              | x => AgeAtom.fixed 0)).toNNReal
+    | Symbol.exit e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)
+    | Symbol.enter v => ProgramStep.boundary (originalNodeOperation N H (originalGamma p) common v)) =
+    ProgramStep.interval (AgeAtom.eval C.age older✝ - AgeAtom.eval C.age younger✝).toNNReal
+
+case exit
+V : Type u_1
+E : Type u_2
+X : Type u_4
+Tag : Type u_5
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+w : List (OriginalCalendarSchema.Step V E × Tag)
+i : Fin w.length
+edge✝ : E
+h : (w.get i).1 = OriginalCalendarSchema.Step.exit edge✝
+⊢ (match
+      match w[↑i].1 with
+      | Step.interval younger older => Symbol.interval i
+      | OriginalCalendarSchema.Step.exit e => Symbol.exit e
+      | Step.enter v => Symbol.enter v with
+    | Symbol.interval j =>
+      ProgramStep.interval
+        (AgeAtom.eval C.age
+              (match w[↑j].1 with
+              | Step.interval younger b => b
+              | x => AgeAtom.fixed 0) -
+            AgeAtom.eval C.age
+              (match w[↑j].1 with
+              | Step.interval a older => a
+              | x => AgeAtom.fixed 0)).toNNReal
+    | Symbol.exit e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)
+    | Symbol.enter v => ProgramStep.boundary (originalNodeOperation N H (originalGamma p) common v)) =
+    ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit edge✝)
+
+case enter
+V : Type u_1
+E : Type u_2
+X : Type u_4
+Tag : Type u_5
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+w : List (OriginalCalendarSchema.Step V E × Tag)
+i : Fin w.length
+node✝ : V
+h : (w.get i).1 = Step.enter node✝
+⊢ (match
+      match w[↑i].1 with
+      | Step.interval younger older => Symbol.interval i
+      | OriginalCalendarSchema.Step.exit e => Symbol.exit e
+      | Step.enter v => Symbol.enter v with
+    | Symbol.interval j =>
+      ProgramStep.interval
+        (AgeAtom.eval C.age
+              (match w[↑j].1 with
+              | Step.interval younger b => b
+              | x => AgeAtom.fixed 0) -
+            AgeAtom.eval C.age
+              (match w[↑j].1 with
+              | Step.interval a older => a
+              | x => AgeAtom.fixed 0)).toNNReal
+    | Symbol.exit e => ProgramStep.boundary (Source.SourceBoundaryKernels.BoundaryOperation.exit e)
+    | Symbol.enter v => ProgramStep.boundary (originalNodeOperation N H (originalGamma p) common v)) =
+    ProgramStep.boundary (originalNodeOperation N H (originalGamma p) common node✝)
+G6CellCompletedBinPolynomial.lean:56:25: warning: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [taggedSymbolAt, instantiateGamma, instantiateStep, taggedDuration, Step.younger, Step.older]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6CellCompletedBinPolynomial.lean:63:36: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_4
+Tag : Type u_5
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+common : Hybrid N → Bool
+w : List (OriginalCalendarSchema.Step V E × Tag)
+⊢ (List.ofFn fun x => (instantiateStep N C H p common w[↑x].1, w[↑x].2)) =
+    List.map (fun z => (instantiateStep N C H p common z.1, z.2)) w
+G6CellCompletedBinPolynomial.lean:65:18: warning: This simp argument is unused:
+  ← List.map_ofFn
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [interpret]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6CellCompletedBinPolynomial.lean:81:17: error: Application type mismatch: The argument
+  decide
+has type
+  (p : Prop) → [h : Decidable p] → Bool
+but is expected to have type
+  Prop → ?m.92
+in the application
+  congrArg decide
+G6CellCompletedBinPolynomial.lean:91:2: error: Type mismatch: After simplification, term
+  actual_node_rank_bin_stable (completedCutBank cuts ks) (List.map Fin.succ ks) sig hc hd (N.leaf (sample x))
+ has type
+  rankBin (values (completedCutBank cuts ks) (List.map Fin.succ ks)) (C.age (N.leaf (sample x))) =
+    rankBin (values (completedCutBank cuts ks) (List.map Fin.succ ks)) (D.age (N.leaf (sample x)))
+but is expected to have type
+  rankBin (values cuts ks) (C.age (N.leaf (sample x))) = rankBin (values cuts ks) (D.age (N.leaf (sample x)))
+'UnifiedLean.G6.CellCompletedBinPolynomial.actual_tagged_symbols' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.CellCompletedBinPolynomial.actual_initial_bins_stable' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.CellCompletedBinPolynomial.actual_cell_completed_bin_polynomial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'UnifiedLean.G6.CellCompletedBinPolynomial.actual_cell_observed_bin_polynomial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
