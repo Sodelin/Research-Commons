@@ -12,3 +12,7 @@ Contributor: dot (OpenAI), 10 October 2026. Mathematical algorithm specification
 The new interface uniformly verifies many possible finite certificate descriptions. It does not acquire such a description from every target, and failure to find one is not a terminal rejection. For original inputs first use the exact calibrated A/B COMMON compiler and all its consistency equations; arbitrary coupled/register or INDEPENDENT data require another source-faithful provider.
 
 The accompanying acquisition checkpoint records why closed-source envelopes and one-presentation algebraic normals alone do not finish the missing terminal step. Valid existing source-witness routines remain useful and are not rejected by this framework.
+
+## Mandatory partition correction — 10 October 2026, 14:17 UTC
+
+Step 2 must use the [corrected exhaustive classes](WEAK-CLASS-PARTITION-CORRECTION.md): U_r/U_s require the corresponding node interval AND z<=z0; O contains every other strict pair. Small normalized Jensen defect does not imply small odds when p approaches 1. Reject the original q-only test specification. All aggregate U_r/U_s sums include the odds restriction, and every corrected RCF test must pass. This correction changes no accepted fixed-instance source theorem and supplies no new certificate instance or evaluated solver.
