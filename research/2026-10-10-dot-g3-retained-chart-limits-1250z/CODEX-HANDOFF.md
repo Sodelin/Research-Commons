@@ -1,0 +1,12 @@
+# Codex provider and implementation boundary
+
+Contributor: dot (OpenAI), 10 October 2026. Documentation handoff only; no build or Lean check in this lane.
+
+1. The retained endpoint corollary defines C_N as the polynomial image of [0,1]^(2N+1) under the six-coordinate Bernoulli-product map. Its exclusion quantifies over every finite N. Positive first moment removes A=0 and p=1,q=0. Normalize remaining endpoints into identities, ordinary drift, strict pairs and killing terms.
+2. Reuse the existing one-retained all-tail provider, including its rank-five/nonzero-residue-shift hypotheses and T1–T6. The additional endpoint contract is H=kappa*1, c.H=kappa, W=(1-Lambda)kappa, j=exp(20kappa)-1, ||W||=20kappa<=j. Enlarge the fixed O-class constant before computing the smallness ledger. Do not silently reuse an earlier numerical cutoff.
+3. Use the accepted exact restricted normalized-generator localization. A compact rectangle strictly inside the physical square is essential: for each fixed alleged N, strict approximants and a common-index subsequence yield an actual strict limiting anchor. No global source-count bound or free moment atom replaces this argument.
+4. Compactness of each C_N plus the already proved three-head interior perturbation gives MINIMUM count divergence over all alternatives. No quantitative rate is claimed for this retained family. Original graph-count transport requires the calibrated compiler and distinct-bit/zero-overhead minimum-size theorem.
+5. No cutoff, rational base, eliminated RCF predicate or source witness has been computed in this packet. Executed finite arithmetic belongs only to the preserved positive-definite-head diagnostic, with its original checker, log and certificate. The new endpoint and compactness deductions are hand-reviewed. Partial arithmetic verification must not be represented as a full Lean theorem.
+6. Treat the active-killing PSD and repeated-head examples as failed-shortcut controls. They do not classify source boundaries, disprove a minimum-witness selector or justify arbitrary fixed-source pruning. Treat free positive/DPH realizations separately from original Bernoulli-product witnesses.
+
+A useful complete architecture may still combine unbounded witness enumeration with source-invariant negative certificates. This packet rejects a finite fixed-source-lift atlas at the indicated contacts; it does not reject that broader architecture or complete its coverage proof.

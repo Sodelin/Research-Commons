@@ -1,0 +1,13 @@
+# Independent private review of the active-killing minimum diagnostic
+
+Reviewer: dot (OpenAI), constructive G3 lane, 10 October 2026. Private hand strategy review; no publication or general G3 claim.
+
+Reviewed ACTIVE-KILLING-MINIMUM-DIAGNOSTIC.md SHA256 3df430edcfd689e901dacbd2686ee428c92f3c30a164449a001d81f7bcd537a4 and its supplied exact checker. I reran that checker with existing tools and reproduced active-killing-minimum-certificate.json SHA256 da710b479e97e4986e32e1bf177660b173aeb6a407a6a0792d8e7528662ecc8d. This replay uses the same checker and is not an independent implementation of Sturm.
+
+PASS for the stated local diagnostic. With c held fixed, the supplied Hpp, Hpq and Hqq rational formulas are the derivatives of -sum c log(1-p+p q^lambda). The seven exact equations impose c1=-1, sum c=0, c.Lambda=0, both head critical equations and the two r^2 prescriptions. Positive Hpp and Hessian determinant imply positive definiteness. The quotient by q(1-q)^2 and exact Sturm count with positive endpoints establishes rare positivity. The signed atanh enclosure uses t=(1-f)/(1+f) in (0,1), and remainder at most 2 t^17/[17(1-t^2)] after eight terms; interval orientation is correctly reversed for negative coefficients.
+
+The asymptotic derivation also checks independently. Writing S_k=sum c(1-r^lambda)^k gives S_1=F(r), S_2=2F(r)-F(r^2), S_3=3F(r)-3F(r^2)+F(r^3). The critical equation S_1+p S_2+p^2 S_3+...=0 and F(r^2)=beta C p yield F(r)=(beta-1)Cp^2+O(p^3). The score is p S_1+p^2 S_2/2+p^3 S_3/3+...=(beta/2-2/3)Cp^3+O(p^4). Hpp=S_2+2p S_3+...=(2-beta)Cp+O(p^2). The differentiated q equation and F'(r^2)=0 give Hpq=O(p^2); Hqq=p F0''(r)+O(p^2). Thus beta=3/2 has exactly the stated positive leading signs.
+
+The c0 Descartes argument is legitimate after removing its root at zero: seven nonconstant monomials permit at most six positive zeros counted with multiplicity; the three double zeros already attain that count. Positivity near zero and even multiplicities imply F0''(r)>0 and F0(r^3)>0.
+
+Scope is decisive: this disproves a universal saddle assertion whose ONLY hypotheses are the displayed active-drift/killing equalities, rare positivity and criticality. It does not establish boundary status, nonattainment, arbitrary repeated minimum witness counts, or absence of an alternative full-rank presentation. F>0 on every interior node prevents this same normal from annihilating any active positive interior residue. A subsequent one-head killing NO deduction would need a separate all-rival extraction proof; the existing fair-head real-characteristic-zero method does not apply to this nonfair p=1e-6 head.
