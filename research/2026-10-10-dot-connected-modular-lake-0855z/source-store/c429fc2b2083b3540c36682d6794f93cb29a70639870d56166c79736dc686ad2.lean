@@ -1,0 +1,10 @@
+import G7OriginalControlRelabelling
+
+#print axioms GProgram.G7.OriginalControlRelabelling.mask
+#print axioms GProgram.G7.OriginalControlRelabelling.mask_id
+#print axioms GProgram.G7.OriginalControlRelabelling.named_mask
+#print axioms GProgram.G7.OriginalControlRelabelling.controlled_gamma
+#print axioms GProgram.G7.OriginalControlRelabelling.controlled_mode
+#print axioms GProgram.G7.OriginalControlRelabelling.controlled_calendar
+#print axioms GProgram.G7.OriginalControlRelabelling.controlled_completed
+#print axioms GProgram.G7.OriginalControlRelabelling.controlled_completed_unranked
