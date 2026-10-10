@@ -16,7 +16,7 @@ These results do not close the positive representative, joint-bin catalogue tran
 
 Keep original source contracts and executable bodies fixed during proof repair. Do not rerun unchanged failed inputs.
 
-- Executable coefficient chain: enumeration and single-population coefficients passed. Full-epoch source SHA256 a50c2612 remains pending after ordinary 200,000-heartbeat conversion/tactic failures in its final recursion. Repair normalization and dependent interfaces before rerunning; full chain audit and executable smoke remain unrun.
+- Executable coefficient chain: enumeration and single-population coefficients passed. Full-epoch source hash prefix a50c2612 remains pending after ordinary 200,000-heartbeat conversion/tactic failures in its final recursion. Repair normalization and dependent interfaces before rerunning; full chain audit and executable smoke remain unrun.
 - Whole-edge source-law chain: the original operator module at source hash prefix 1fbdf2ea remains pending after its second proof/API check. All-edge natural/controlled completion and physical open-cube claims retain provisional source-review status only.
 - Five-module semantic chain: first source G7ExactLawResourceGame failed at depth-indexed Winning base/step simplifications and an ambiguous implication-negation/witness conjunction proof. No downstream semantic root or complete audit passed.
 
