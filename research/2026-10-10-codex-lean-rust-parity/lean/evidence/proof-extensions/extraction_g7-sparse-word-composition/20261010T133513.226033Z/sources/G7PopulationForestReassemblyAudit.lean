@@ -1,0 +1,13 @@
+import G7PopulationForestReassembly
+
+#print axioms GProgram.G7.PopulationForestReassembly.joinViews
+#print axioms GProgram.G7.PopulationForestReassembly.closed_complement
+#print axioms GProgram.G7.PopulationForestReassembly.selected_genealogy_whole
+#print axioms GProgram.G7.PopulationForestReassembly.full_view_reassembly
+#print axioms GProgram.G7.PopulationForestReassembly.map_eq_on_support
+#print axioms GProgram.G7.PopulationForestReassembly.epoch_panel_closed
+#print axioms GProgram.G7.PopulationForestReassembly.actual_full_forest_population_product
+#print axioms GProgram.G7.PopulationForestReassembly.actual_panel_view_epoch
+#print axioms GProgram.G7.PopulationForestReassembly.independentProduct_map
+#print axioms GProgram.G7.PopulationForestReassembly.actual_full_forest_view_product
+#print axioms GProgram.G7.PopulationForestReassembly.actual_smaller_source_reassembly

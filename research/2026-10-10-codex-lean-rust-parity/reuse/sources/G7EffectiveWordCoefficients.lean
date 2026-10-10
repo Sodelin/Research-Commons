@@ -17,12 +17,14 @@ policy/QE endpoint is inferred. Draft pending sole-scheduler kernel/audit.
 namespace GProgram.G7.EffectiveWordCoefficients
 open Nanuq.Source GProgram.SourceForest
 open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
+open UnifiedLean.Source.NativeIndependentPairMixture
 open UnifiedLean.Source.UniformizedSourceStep UnifiedLean.Source.SourceFiniteProjection
 open UnifiedLean.Source.SourceProgramTransport
 open UnifiedLean.Source.SourceNaturalInitialization
 open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
 open GProgram.G7.EffectiveSourceEnumeration GProgram.G7.EffectivePopulationCoefficients
 open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
+open GProgram.G7.PopulationSelectedSupport
 open GProgram.G7.FullEpochSupport GProgram.G7.SelectedEpochTableUniqueness
 open GProgram.G7.EffectiveBoundaryCoefficients GProgram.G7.EffectiveNodeCoefficients
 open GProgram.G7.EffectiveInitializationCoefficients GProgram.G7.SparseWordComposition
@@ -50,6 +52,7 @@ lemma polynomial_read_renameRows {I J A K : Type*} [DecidableEq K]
     polynomial (readRows key (renameRows f rows) target) =
       MvPolynomial.rename f (polynomial (readRows key rows target)) := by
   rw [renameRows,readRows_map,polynomial_flatMap,polynomial_readRows,map_list_sum]
+  simp only [List.map_map,Function.comp_def]
   apply congrArg List.sum
   apply List.map_congr_left
   intro a _

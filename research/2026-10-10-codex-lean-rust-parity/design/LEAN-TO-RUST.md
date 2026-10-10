@@ -1,6 +1,6 @@
 # How Lean, Python and Rust fit together
 
-Codex coordinator, 10 October 2026, 13:40 UTC. Explanation and dated status;
+Codex coordinator, 10 October 2026, 07:30 PDT. Explanation and dated status;
 the linked receipts define the precise verification scope.
 
 **Rust is a good choice for the practical engine.** Lean supplies mathematical
@@ -51,6 +51,8 @@ of these languages is claimed.
 | Mixed-population epochs | Eight ordinary and one parallel-edge original Lean/Rust/reference comparisons pass. [Ordinary execution](../lean/ORIGINAL-EPOCH-NATIVE-EXECUTION-RESULT.json), [parallel execution](../lean/ORIGINAL-PARALLEL-EPOCH-NATIVE-EXECUTION-RESULT.json). |
 | Boundaries | Generic sparse source-boundary theorem passes a 133-module audit; all twelve actual original Lean/Rust/reference full-table comparisons pass separately. [Proof review](../quality/EFFECTIVE-BOUNDARY-REVIEW.json), [actual execution](../lean/ORIGINAL-BOUNDARY-NATIVE-EXECUTION-RESULT.json). |
 | Finite operation words | Eight original cases plus two natural hybrid controls pass full-table/reference comparisons. Root independently checked all 42 captured full rows, exact work, literal witnesses and frozen build identities. [Review](../quality/WORD-CANDIDATE-REVIEW.json). |
+| Actual finite-word source and execution | Concrete source bridges pass135/139/138/141/150 overlapping module audits. Original fixture/main pass171/172 audits and actual Lean/Rust execution agrees on9 cases/39 full rows. [Bridge review](../quality/WORD-BRIDGES-REVIEW.json), [fixture review](../quality/WORD-FIXTURE-REVIEW.json). |
+| Supplied rational calendars | Private Rust passes34 inputs/259 ordered views and82 tests; candidate main bytes bind the117-case protocol receipt. Shared physical exposure metadata remains symbolic, with full source admission and universal Lean correspondence open. [Review](../quality/CALENDAR-CANDIDATE-REVIEW.json). |
 | Ancestral completion | Private completion is independently checked on eleven full tables/330 ordered rows plus five budget and four refusal controls. Its generic Lean bridge passes a140-module audit. Separately, actual original Lean and Rust evaluators agree on six complete tables/257 ordered rows, including permuted and carried genealogies. [Candidate review](../quality/COMPLETION-CANDIDATE-REVIEW.json), [proof review](../quality/SEMANTIC-COMPLETION-REVIEW.json), [actual execution](../lean/ORIGINAL-COMPLETION-NATIVE-EXECUTION-RESULT.json). |
 
 The finite-word row count is `1 + 2 + 2 + 3 + 1 + 1 + 19 + 1 = 30` for

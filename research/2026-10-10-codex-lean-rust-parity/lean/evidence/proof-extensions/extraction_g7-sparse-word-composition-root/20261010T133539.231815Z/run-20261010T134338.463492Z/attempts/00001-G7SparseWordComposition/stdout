@@ -1,0 +1,245 @@
+G7SparseWordComposition.lean:43:26: error(lean.unknownIdentifier): Unknown identifier `polynomial_append`
+G7SparseWordComposition.lean:74:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  MvPolynomial.eval₂ (Rat.castHom ℝ) ?x (polynomial ?p)
+in the target expression
+  (MvPolynomial.eval₂Hom (Rat.castHom ℝ) x) (polynomial (readRows key (bindRows rows next) target)) =
+    (MvPolynomial.eval₂Hom (Rat.castHom ℝ) x)
+      (List.map (fun a => polynomial a.2 * polynomial (readRows key (next a.1) target)) rows).sum
+
+I : Type u_1
+A : Type u_2
+B : Type u_3
+K : Type u_4
+inst✝ : DecidableEq K
+key : B → K
+rows : Rows I A
+next : A → Rows I B
+target : K
+x : I → ℝ
+h :
+  (MvPolynomial.eval₂Hom (Rat.castHom ℝ) x) (polynomial (readRows key (bindRows rows next) target)) =
+    (MvPolynomial.eval₂Hom (Rat.castHom ℝ) x)
+      (List.map (fun a => polynomial a.2 * polynomial (readRows key (next a.1) target)) rows).sum
+⊢ value (readRows key (bindRows rows next) target) x =
+    (List.map (fun a => value a.2 x * value (readRows key (next a.1) target) x) rows).sum
+G7SparseWordComposition.lean:128:6: error: don't know how to synthesize implicit argument `α`
+  @Eq (MvPolynomial (WordVariable N ?m.178) ℚ) (tableWord (stepPolynomial N H common) ops a b)
+    (wordPolynomial N H common ops a b)
+context:
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b : SelectedIndex N sample Finset.univ
+ops : List (Symbol ?m.178 V E)
+a : SelectedIndex N sample Finset.univ
+⊢ Type (max (max u_2 u_3) ?u.142)
+G7SparseWordComposition.lean:128:54: error: don't know how to synthesize implicit argument `J`
+  @wordPolynomial ?m.178 V E Copy X inst✝⁹ inst✝⁸ inst✝⁶ inst✝⁵ inst✝³ inst✝⁷ inst✝⁴ N sample H common ops a b
+context:
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b : SelectedIndex N sample Finset.univ
+ops : List (Symbol ?m.178 V E)
+a : SelectedIndex N sample Finset.univ
+⊢ Type ?u.142
+G7SparseWordComposition.lean:128:6: error: don't know how to synthesize implicit argument `Op`
+  @tableWord (WordVariable N ?m.178) (SelectedIndex N sample Finset.univ) (Symbol ?m.178 V E)
+    (selectedIndexFintype N sample Finset.univ) (fun a b => Subtype.instDecidableEq a b) (stepPolynomial N H common) ops
+    a b
+context:
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b : SelectedIndex N sample Finset.univ
+ops : List (Symbol ?m.178 V E)
+a : SelectedIndex N sample Finset.univ
+⊢ Type (max (max u_2 u_3) ?u.142)
+G7SparseWordComposition.lean:128:6: error: don't know how to synthesize implicit argument `I`
+  @tableWord (WordVariable N ?m.178) (SelectedIndex N sample Finset.univ) (Symbol ?m.178 V E)
+    (selectedIndexFintype N sample Finset.univ) (fun a b => Subtype.instDecidableEq a b) (stepPolynomial N H common) ops
+    a b
+context:
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b : SelectedIndex N sample Finset.univ
+ops : List (Symbol ?m.178 V E)
+a : SelectedIndex N sample Finset.univ
+⊢ Type (max (max u_2 u_3) ?u.142)
+G7SparseWordComposition.lean:128:17: error: don't know how to synthesize implicit argument `J`
+  @stepPolynomial ?m.178 V E Copy X inst✝⁹ inst✝⁸ inst✝⁶ inst✝⁵ inst✝³ inst✝⁷ inst✝⁴ N sample H common
+context:
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b : SelectedIndex N sample Finset.univ
+ops : List (Symbol ?m.178 V E)
+a : SelectedIndex N sample Finset.univ
+⊢ Type ?u.142
+G7SparseWordComposition.lean:127:14: error(lean.inferBinderTypeFailed): Failed to infer type of binder `ops`
+G7SparseWordComposition.lean:126:68: error: unsolved goals
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b : SelectedIndex N sample Finset.univ
+⊢ polynomial (readRows (project N Finset.univ) (followRows step word s) b) =
+    wordPolynomial N H common word (project N Finset.univ s) b
+'GProgram.G7.SparseWordComposition.polynomial_read_bindRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.SparseWordComposition.polynomial_followRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.SparseWordComposition.polynomial_original_word' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.SparseWordComposition.actual_followRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.SparseWordComposition.evaluated_original_word' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -21,6 +21,7 @@ open Nanuq.Source GProgram.SourceForest
 open UnifiedLean.Source.NativePairClockLaw UnifiedLean.Source.UniformizedSourceStep
 open UnifiedLean.Source.SourcePoissonKernel UnifiedLean.Source.SourceFiniteProjection
 open GProgram.G7.FullEpochPolynomial GProgram.G7.EffectiveFullEpochCoefficients
+open GProgram.G7.EffectiveSourceEnumeration
 open GProgram.G7.SparseRowProducts GProgram.G7.FullEpochSupport
 open GProgram.G7.SelectedKernelPolynomial
 

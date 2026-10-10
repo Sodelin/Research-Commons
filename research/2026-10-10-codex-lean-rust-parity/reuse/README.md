@@ -111,8 +111,8 @@ separate complete exact target audits. Their 117/120-module counts overlap.
 The new [full epoch support](FULL-EPOCH-SUPPORT.md) roots passed separate
 121/124-module complete audits, with zero own/nonstandard axioms or missing
 modules. They prove literal finite-row products equal the unchanged inherited
-whole-epoch rational polynomial. Mixed original evaluator comparisons remain
-pending; overlapping audit counts are not added.
+whole-epoch rational polynomial. All nine mixed original finite comparisons
+passed in separate ordinary8/parallel1 contexts; overlapping counts are not added.
 The [G1 scope readback](G1-MASTER-SCOPE-20261010.md) confirms the original
 mathematical master is complete and separates downstream runtime obligations.
 
@@ -120,13 +120,14 @@ The [G7 closure audit](G7-CLOSURE-AUDIT-20261010.md) and exact-byte discovery
 inventory distinguish existing source proofs/candidates from missing
 composition, different observation/resource contracts, and formal QE/cofacial
 consumers absent in the inspected corpus. The original accepted G7 hand master
-is preserved; saved rank/family/carrier proofs are the next compatible reuse.
+is preserved; exact rank/family/carrier composition passed its complete
+191-module semantic target.
 
 The [word provider readback](WORD-PROVIDER-READBACK-20261010.md) reuses the
 existing natural initialization, source word and completed-calendar transport.
-New finite initialization and word-composition sources are pending, with exact
-coefficient identity distinguished from shared-bank physical evaluation.
-The inherited chosen epoch-table coefficient bridge remains explicit.
+Finite initialization, chosen epoch-table identity and concrete word coefficient
+composition now have separate complete audits. Entire coefficient identities
+are distinguished from shared-bank physical evaluation.
 
 ## Remaining mission obligations
 
@@ -143,14 +144,25 @@ successful fresh owned audit matches its current source hash.
 
 
 Latest scoped receipts authenticate all nine original mixed-epoch evaluator
-comparisons (ordinary8 plus parallel1, separate source contexts) and generic
-boundary coefficient refinement133. The support-only rational ancestral
-completion bridge and six direct controls remain drafts. The continuation and
-machine map preserve earlier native failures and current source hashes.
+comparisons (ordinary8 plus parallel1, separate source contexts), generic
+boundary coefficient refinement133 and twelve original boundary controls.
+The continuation and machine map preserve earlier failures and exact hashes.
 
 
 Exact compatible semantic rank/family/carrier composition is now accepted in
 its complete191-module audit. The support-only actual rational ancestral
 completion bridge is accepted in a separate140-module audit. Their contexts
-overlap earlier proofs and counts are not added; six direct completion native
-controls and the chosen-table/word consumers are still pending.
+overlap earlier proofs and counts are not added. Six direct completion controls
+passed separate156/157-module audits and original compiled-evaluator/Rust/
+independent zero-spectral-projector comparisons of all257 complete selected
+views. Initialization135, chosen single-epoch table uniqueness139, generic
+sparse word composition138 and concrete original node/exit assembly141 now
+have separate complete owned audits at their exact current source pins. The
+generic word theorem retains its explicit per-step coefficient premise; the
+accepted concrete word assembly150 supplies it. Nine original-word controls
+passed separate171/172 audits and the actual compiled Lean/Rust/independent
+oracle comparison of all39 full selected views. Conditional completed-word166
+is also accepted, with nonempty Copy, a positive bank and every raw endpoint's
+ancestral-root support retained as explicit premises.
+Universal native encoding/normalization and generated-calendar refinement
+remain separate.

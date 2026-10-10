@@ -1,0 +1,168 @@
+G7OriginalEdgeGathering.lean:45:47: error: Ambiguous term
+  exp_add_of_commute
+Possible interpretations:
+  NormedSpace.exp_add_of_commute ?m.70 : exp (?m.56 + ?m.57) = exp ?m.56 * exp ?m.57
+  
+  Matrix.exp_add_of_commute
+    ?m.71 : ∀ (B : Matrix ?m.52 ?m.52 ?m.53), Commute ?m.71 B → exp (?m.71 + B) = exp ?m.71 * exp B
+G7OriginalEdgeGathering.lean:44:92: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+w z : ExposureBank E
+⊢ exp (bankGenerator N w + bankGenerator N z) = exp (bankGenerator N w) * exp (bankGenerator N z)
+G7OriginalEdgeGathering.lean:51:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeGathering.retain_split`:
+  [DecidableEq E]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeGathering.lean:85:55: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+w : ExposureBank E
+hs : w = retain (fun i => ¬Opens N v i) w + retain (Opens N v) w
+⊢ bankExponential N (retain (fun i => ¬Opens N v i) w) *
+      (boundaryMatrix N (originalNodeOperation N H gamma common v) * bankExponential N (retain (Opens N v) w)) =
+    bankExponential N (retain (fun i => ¬Opens N v i) (retain (fun i => ¬Opens N v i) w + retain (Opens N v) w)) *
+      (boundaryMatrix N (originalNodeOperation N H gamma common v) *
+        bankExponential N (retain (Opens N v) (retain (fun i => ¬Opens N v i) w + retain (Opens N v) w)))
+G7OriginalEdgeGathering.lean:97:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (decodeSnapshot N.root ↑(exitCode N s e)).ancestor p.1
+in the target expression
+  (state (exitCode N s e)).location ((state (exitCode N s e)).ancestor p.1) = Location.edge e
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+e : E
+s : Code N sample
+p : Copy × Copy
+hp : PairAt N (some e) p (exitCode N s e)
+pp :
+  p.1 ∈ (state (exitCode N s e)).live ∧
+    (state (exitCode N s e)).location p.1 = originalPlace N (some e) ∧
+      p.2 ∈ (state (exitCode N s e)).live ∧ (state (exitCode N s e)).location p.2 = originalPlace N (some e) ∧ p.1 ≠ p.2
+⊢ (state (exitCode N s e)).location ((state (exitCode N s e)).ancestor p.1) = Location.edge e
+G7OriginalEdgeGathering.lean:101:106: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+e : E
+p : Copy × Copy
+s d : Code N sample
+⊢ (∑ x, if mergeAt N (some e) p x = d then (if x = exitCode N s e then 1 else 0).toReal else 0) =
+    (if d = exitCode N s e then 1 else 0).toReal
+G7OriginalEdgeGathering.lean:104:8: warning: This simp argument is unused:
+  mergeAt_of_not_mem N (some e) p (exitCode N s e) (exit_has_no_pair N e s p)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:138:89: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+e : E
+w : ExposureBank E
+hs : w = retain (fun i => i ≠ some e) w + retain (fun i => i = some e) w
+⊢ bankExponential N (retain (fun i => i ≠ some e) w) * boundaryMatrix N (BoundaryOperation.exit e) =
+    bankExponential N (retain (fun i => i ≠ some e) (retain (fun i => i ≠ some e) w + retain (fun i => i = some e) w)) *
+      boundaryMatrix N (BoundaryOperation.exit e)
+G7OriginalEdgeGathering.lean:155:86: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+register : V → Bool
+i : Option E
+p : Copy × Copy
+u : Unit
+d : Code N sample
+⊢ (∑ x, if mergeAt N i p x = d then if initialCode N sample register = x then 1 else 0 else 0) =
+    if initialCode N sample register = d then 1 else 0
+G7OriginalEdgeGathering.lean:158:4: warning: This simp argument is unused:
+  mergeAt_of_not_mem N i p (initialCode N sample register) (initial_has_no_pair N sample register i p)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_apply, initialRow, pairMatrix]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeGathering.lean:161:52: error: typeclass instance problem is stuck
+  Fintype ?m.18
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Fintype` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+G7OriginalEdgeGathering.lean:168:43: error: typeclass instance problem is stuck
+  Fintype ?m.65
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `Fintype` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.

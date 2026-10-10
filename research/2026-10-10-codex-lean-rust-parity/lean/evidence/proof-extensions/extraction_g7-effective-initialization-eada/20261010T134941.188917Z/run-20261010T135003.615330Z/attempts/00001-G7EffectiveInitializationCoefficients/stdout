@@ -1,0 +1,66 @@
+G7EffectiveInitializationCoefficients.lean:48:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveInitializationCoefficients.originalRegisterEffective_eq`:
+  [DecidableEq E]
+  [FinEnum V]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum V] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveInitializationCoefficients.lean:60:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveInitializationCoefficients.initialCodeEffective_eq`:
+  [FinEnum V]
+  [FinEnum E]
+  [FinEnum Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] [FinEnum E] [FinEnum Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveInitializationCoefficients.lean:84:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveInitializationCoefficients.polynomial_registerSparse`:
+  [DecidableEq E]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveInitializationCoefficients.lean:127:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  fun h => x (i h)
+in the target expression
+  MvPolynomial.eval₂ (Rat.castHom ℝ) (x ∘ i) (initialPolynomial N sample a) =
+    ((PMF.map (projection N Finset.univ) (PMF.map (initialCode N sample) (originalRegisterPMF N p))) a).toReal
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+I : Type u_5
+N : RootedBinary V E X
+sample : Copy → X
+i : Hybrid N → I
+p : HybridProbabilities N
+a : SelectedIndex N sample Finset.univ
+x : I → ℝ
+hx : ∀ (h : Hybrid N), x (i h) = p.gamma h
+⊢ MvPolynomial.eval₂ (Rat.castHom ℝ) (x ∘ i) (initialPolynomial N sample a) =
+    ((PMF.map (projection N Finset.univ) (PMF.map (initialCode N sample) (originalRegisterPMF N p))) a).toReal
+'GProgram.G7.EffectiveInitializationCoefficients.originalRegisterEffective_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveInitializationCoefficients.initialCodeEffective_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveInitializationCoefficients.polynomial_initialRows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveInitializationCoefficients.initialRows_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

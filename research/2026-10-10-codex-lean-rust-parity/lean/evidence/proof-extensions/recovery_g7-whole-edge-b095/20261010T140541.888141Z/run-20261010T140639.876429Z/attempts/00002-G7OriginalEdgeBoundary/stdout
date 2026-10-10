@@ -1,0 +1,424 @@
+G7OriginalEdgeBoundary.lean:28:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeBoundary.route_population_iff`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeBoundary.lean:95:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeBoundary.original_node_avoids_other_edge`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeBoundary.lean:126:4: error: Tactic `split` failed: Could not split an `if` or `match` expression in the goal
+
+Hint: Use `set_option trace.split.failure true` to display additional diagnostic information
+
+case isTrue
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+h : v ≠ N.root
+reg : V → Bool
+coin : Copy → Bool
+l : Copy
+h✝ : False
+⊢ target Action.root reg coin l ≠ originalPlace N none
+G7OriginalEdgeBoundary.lean:127:2: error: unsolved goals
+case isFalse
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+h : v ≠ N.root
+reg : V → Bool
+coin : Copy → Bool
+l : Copy
+h✝ : ¬False
+⊢ ¬(match
+        if h : N.graph.IsHybrid v then
+          if common ⟨v, ⋯⟩ = true then Action.common (H.parents ⟨v, ⋯⟩)
+          else Action.independent (H.parents ⟨v, ⋯⟩) (gamma ⟨v, ⋯⟩)
+        else Action.ordinary ((defaultSelector N).edge ⟨v, ⋯⟩) ⋯ with
+      | Action.ordinary e degree => Location.edge e
+      | Action.root => Location.rootPopulation N.root
+      | Action.independent H gamma => Location.edge (H.parent (coin l))
+      | Action.common H => Location.edge (H.parent (reg H.hybrid))) =
+      Location.rootPopulation N.root
+G7OriginalEdgeBoundary.lean:124:15: warning: This simp argument is unused:
+  dif_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:151:2: error: Type mismatch
+  Eq.symm hm
+has type
+  ((boundaryKernel N (operation a) (mergeAt N i p s)) d).toReal =
+    ∑ a_1,
+      ((boundaryKernel N (operation a) s) a_1).toReal *
+        @ite ℝ (mergeAt N i p a_1 = d) (Classical.propDecidable (mergeAt N i p a_1 = d)) 1 0
+but is expected to have type
+  ((boundaryKernel N (operation a) (mergeAt N i p s)) d).toReal =
+    ∑ x,
+      ((boundaryKernel N (operation a) s) x).toReal *
+        @ite ℝ (mergeAt N i p x = d) (Subtype.instDecidableEq (mergeAt N i p x) d) 1 0
+G7OriginalEdgeBoundary.lean:169:71: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+e : E
+x : Copy
+⊢ (match
+      if h : x ∈ (↑s).live then
+        some
+          ⟨match (↑s).genealogy x with
+            | some t => ↑t
+            | none => Genealogy.leaf x,
+            ⋯⟩
+      else none with
+    | some t => ↑t
+    | none => Genealogy.leaf x) =
+    if x ∈ (↑s).live then
+      match (↑s).genealogy x with
+      | some t => ↑t
+      | none => Genealogy.leaf x
+    else Genealogy.leaf x
+G7OriginalEdgeBoundary.lean:174:94: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+e : E
+x : Copy
+⊢ (match
+      if x ∈ (↑s).live then
+        some
+          (if
+              (match (↑s).population x with
+                | some p => p
+                | none => Location.node N.root) =
+                Location.edge e then
+            Location.node (N.graph.source e)
+          else
+            match (↑s).population x with
+            | some p => p
+            | none => Location.node N.root)
+      else none with
+    | some p => p
+    | none => Location.node N.root) =
+    if x ∈ (↑s).live then
+      if
+          (match (↑s).population x with
+            | some p => p
+            | none => Location.node N.root) =
+            Location.edge e then
+        Location.node (N.graph.source e)
+      else
+        match (↑s).population x with
+        | some p => p
+        | none => Location.node N.root
+    else Location.node N.root
+G7OriginalEdgeBoundary.lean:186:39: warning: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [exitLocation, originalPlace, Ne.symm hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:213:4: error: unsolved goals
+case pos.hl
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).live = (state s).live.erase p.2
+G7OriginalEdgeBoundary.lean:214:4: error: unsolved goals
+case pos.ha
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+x : Copy
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).ancestor x =
+    if (state s).ancestor x = p.2 then p.1 else (state s).ancestor x
+G7OriginalEdgeBoundary.lean:220:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+x : Copy
+hx : x ∈ (state s).live.erase p.2
+hxold : x ∈ (state s).live
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).genealogy x =
+    if x = p.1 then ((state s).genealogy p.1).graft ((state s).genealogy p.2) else (state s).genealogy x
+G7OriginalEdgeBoundary.lean:222:6: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+x : Copy
+hx : x ∉ (state s).live.erase p.2
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).genealogy x = Genealogy.leaf x
+G7OriginalEdgeBoundary.lean:227:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+x : Copy
+hx : x ∈ (state s).live.erase p.2
+hxold : x ∈ (state s).live
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).location x =
+    exitLocation N e ((state s).location x)
+G7OriginalEdgeBoundary.lean:229:6: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+x : Copy
+hx : x ∉ (state s).live.erase p.2
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).location x = Location.node N.root
+G7OriginalEdgeBoundary.lean:230:4: error: unsolved goals
+case hr
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s : Code N sample
+hp : PairAt N i p s
+hp' : PairAt N i p (exitCode N s e)
+pp :
+  p.1 ∈ (state s).live ∧
+    (state s).location p.1 = originalPlace N i ∧
+      p.2 ∈ (state s).live ∧ (state s).location p.2 = originalPlace N i ∧ p.1 ≠ p.2
+⊢ (state (admittedCode N sample (exitEdge N (state (mergeAt N i p s)) e) ⋯)).register = (state s).register
+G7OriginalEdgeBoundary.lean:213:27: warning: This simp argument is unused:
+  merged_live N i p s hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_live, merged_live N i p _ hp']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:215:31: warning: This simp argument is unused:
+  merged_ancestor N i p s hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_ancestor, merged_ancestor N i p _ hp']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:217:32: warning: This simp argument is unused:
+  merged_genealogy N i p s hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_genealogy, merged_genealogy N i p _ hp', exit_live, merged_live N i p s hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:218:47: warning: This simp argument is unused:
+  merged_live N i p s hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_genealogy, merged_genealogy N i p s hp, merged_genealogy N i p _ hp', exit_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:224:31: warning: This simp argument is unused:
+  merged_location N i p s hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_location, merged_location N i p _ hp', exit_live, merged_live N i p s hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:225:46: warning: This simp argument is unused:
+  merged_live N i p s hp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [exit_location, merged_location N i p s hp, merged_location N i p _ hp', exit_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:242:13: error(lean.unknownIdentifier): Unknown constant `ENNReal.toReal_ite`
+G7OriginalEdgeBoundary.lean:242:2: error: `simp` made no progress

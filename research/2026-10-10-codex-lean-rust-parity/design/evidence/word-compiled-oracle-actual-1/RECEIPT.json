@@ -1,0 +1,582 @@
+{
+  "schema": "original_word_compiled_fixture_review_v1",
+  "pass": true,
+  "claim": "FINITE_IMPORTED_ORIGINAL_EVALUATOR_COEFFICIENT_REVIEW",
+  "execution_modes": {
+    "rust": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+    "lean": "compiled_lean_evaluator_not_standalone_elf"
+  },
+  "languages_executed": [
+    "rust",
+    "lean"
+  ],
+  "cases_total": 9,
+  "cases_passed": 9,
+  "full_view_rows_total": 39,
+  "cases": [
+    {
+      "fixture": "emptyConditionalWord",
+      "full_view_rows": 1,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "emptyConditionalWord"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "27a3a436a310409e731951e6bf704acb11803efd5a6819aad874d849297ee1e8",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.0016051560014602728
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "emptyConditionalWord"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "79dec5969b1307a8055c4471f03d709f30b838108b544a8ebb512b3a1cfe0e46",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.4782395120018919
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "emptyNaturalWord",
+      "full_view_rows": 2,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "emptyNaturalWord"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 2,
+            "literal_support_states": 2,
+            "terms": 3,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "1f145fae2eb6b63b9c95e1b66b4bc7db039469c387564647fcfdf2d3a04ad2f4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.0015532289980910718
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "emptyNaturalWord"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 2,
+            "literal_support_states": 2,
+            "terms": 3,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "cb24f41873da90d5de90b4b87a5211f22215490f3b9c6af56ee2174fb8fa013e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.5108296100006555
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "emptyNaturalCommonWord",
+      "full_view_rows": 2,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "emptyNaturalCommonWord"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 2,
+            "literal_support_states": 2,
+            "terms": 3,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "d878d001a83b6d582b996f8cb59cf2ff2013e04aac02137d182c4f822b5a85b1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.0015393579997180495
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "emptyNaturalCommonWord"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 2,
+            "literal_support_states": 2,
+            "terms": 3,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "5c64f86a2476a1348f2b1247682f219aecbb7e06b16164c569dbbf6b9db91730",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.5031558299997414
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "conditionalCommonFalseWord",
+      "full_view_rows": 1,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "conditionalCommonFalseWord"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "a40a0a879c3949f65e0dd6b2951427b2aa968a5bab4cbcb04080ba2c4ee2fd73",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.0015158429996517953
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "conditionalCommonFalseWord"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "cd1e077ecefb739f74e7a70370875fe30b552f27ea3929d8cc1a41653f842e2a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.5033434789984312
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "conditionalCommonTrueWord",
+      "full_view_rows": 1,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "conditionalCommonTrueWord"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "d39cd5c1987f88fea3fad8d3a482e52c96fb615449eba91c57c939c58cc20db0",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.0014379770000232384
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "conditionalCommonTrueWord"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "49aa21d791a8af4011fa61eac24742e6c646437828b669be18c687175efb6c37",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.5145814759998757
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "repeatedIntervalSlot",
+      "full_view_rows": 19,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "repeatedIntervalSlot"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 19,
+            "literal_support_states": 19,
+            "terms": 49,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "13c6a8450deff1280cb479e1d404ad1760c208cc3c18b2d24ab6058c008f7d9c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.005964766998658888
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "repeatedIntervalSlot"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 19,
+            "literal_support_states": 19,
+            "terms": 49,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "395f5f7cac36701ec99410cf994e4c05e4cd0edd6a3983e2bd331579a213a21f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 3.600094122997689
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "carriedOutsideWord",
+      "full_view_rows": 1,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "carriedOutsideWord"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "de19e71f818eca00ed53f30df954e9bd4dc154754d9bcb91c293962729236a5c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.002833046000887407
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "carriedOutsideWord"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 1,
+            "literal_support_states": 1,
+            "terms": 1,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "14a826bf8b497ab96c420dec6ffe927f6e949c243317c128c2063f8d2c8a19b8",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.508819641003356
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "parallelCommonFinite",
+      "full_view_rows": 6,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "parallelCommonFinite"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 6,
+            "literal_support_states": 6,
+            "terms": 15,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "670d47268c661c93e289c821b987ee847eeb5b7d908daf064e0b88416c93701e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.004460201002075337
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "parallelCommonFinite"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 6,
+            "literal_support_states": 6,
+            "terms": 15,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "061aa33e4a16a71ded0a7124e24046528a9231cdbf53a3fa24c1a30a36b1e63d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 1.9409954430011567
+        }
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "fixture": "parallelIndependentFinite",
+      "full_view_rows": 6,
+      "runs": {
+        "rust": {
+          "command": [
+            "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe",
+            "parallelIndependentFinite"
+          ],
+          "execution_mode": "private_native_word_envelope_projected_to_direct_coefficient_rows",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 6,
+            "literal_support_states": 6,
+            "terms": 51,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "637a00813af2fbf3b386996d9863244435e17186a365e1f83278400a699683d6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 0.006050134001270635
+        },
+        "lean": {
+          "command": [
+            "/workspace/toolchains/lean-4.33.1-linux/bin/lean",
+            "-j1",
+            "-t0",
+            "-M4096",
+            "-Ddebug.skipKernelTC=false",
+            "--load-dynlib=/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/native-symbol-closure/20261010T124908.995747Z/libOriginalFinEnumRuntime.so",
+            "--run",
+            "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-compiled-oracle-actual-1/LEAN-DRIVER.lean",
+            "parallelIndependentFinite"
+          ],
+          "execution_mode": "compiled_lean_evaluator_not_standalone_elf",
+          "process_started": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "coefficient_review": {
+            "status": "PASS",
+            "full_view_rows": 6,
+            "literal_support_states": 6,
+            "terms": 51,
+            "Lean_native_work_counters_inferred": false
+          },
+          "stdout_sha256": "cadd1157c6306c3b2bce2b30eba52fb0e72cc97598ee638be564b46c2a47b9e0",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elapsed_seconds": 3.5840640799979155
+        }
+      },
+      "errors": [],
+      "pass": true
+    }
+  ],
+  "invalid_table_controls_rejected": [
+    "unknown native work field",
+    "original gamma bank aliased",
+    "stored original register changed",
+    "duplicate full selected destination",
+    "full destination omitted",
+    "coefficient changed",
+    "boolean exponent masquerading as integer",
+    "COMMON substituted for INDEPENDENT"
+  ],
+  "oracle_algorithm": "Full ordered half-rate coupled-generator spectral projectors and independent whole-Copy boundary marginalization",
+  "pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_word_compiled_fixtures.py": "f0763dadfe55ba1f6ba40e2f545637966082347226c1796eeffea8cf4e6691c8",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/WORD-REFINEMENT.md": "dabc36aef7265cef2efeac982b6f191540eaf12f809045bce75e6e5161952458",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyConditionalWord.request.json": "e60422f11866b4afa54ac8f210634224db08eaba535bac3b38dd1f3ab87ab6e9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalWord.request.json": "3113b7000adba3b0ca13db119fdde8159f51fd8cc679e9b655aa70668062c2e3",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalCommonWord.request.json": "86fb022a4b3e184763877aa61ee35a8c4d471412c822cb42562b863ff4eb02d5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonFalseWord.request.json": "cd9b7a2be45c26e19965ec22c18a3597d878465128a38208595863bc307734c2",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonTrueWord.request.json": "a2154c505257068c3fc2a7e927b422ad7b23083fe01d38e6f67c0d83420b4371",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/repeatedIntervalSlot.request.json": "9a6afbe1192bd0d6d3553756d8f13057cc3941a3642fe1a818ca97f95df04482",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/carriedOutsideWord.request.json": "ee40f397aefe2e441b502e1189c30ad7193e0764e42b45db31830cf39baa9c62",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-hybrid-fixture-freeze-1/parallelCommonFinite.request.json": "b73d6395dd19fc72533f3ede5f7d9b29a66b116590dabfae2f551c7a16539683",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-hybrid-fixture-freeze-1/parallelIndependentFinite.request.json": "69fb82ae1b33ae9a303fe183f82d960326730084e8add0a468061b5b5e8baa6a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-word-execution-native/20261010T142106.801288Z/ACTUAL-IMPORTED-ARTIFACTS.json": "2bea351af260122def2afe6a8b570f378602d3dfeca3eda4b3b5c56531f14585",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-word-execution-native/20261010T142106.801288Z/NATIVE-RUNTIME-PINS.json": "2d7b00c8017584b2bd700ec4a80c3260472b14072940abf03e81b5608a633d42",
+    "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe": "1542890abffe8c7764b50661573c3df92c23166cdc46115e290cb34f22c3d999",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-WORD-NATIVE-EXECUTION-PREPARATION.json": "2958bfb3334d9b796fc8decd7b97eaae6874746ce5d0558e95999c90ac965ffa",
+    "/workspace/toolchains/lean-4.33.1-linux/bin/lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-word-fixture-6e-isolated/20261010T141914.473357Z/Runner_G7OriginalWordFixtureMain.lean": "45040cf8386a472ad25356de5004ac722b559dba45016e2cfe41743698dac0c7"
+  },
+  "pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_word_compiled_fixtures.py": "f0763dadfe55ba1f6ba40e2f545637966082347226c1796eeffea8cf4e6691c8",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/WORD-REFINEMENT.md": "dabc36aef7265cef2efeac982b6f191540eaf12f809045bce75e6e5161952458",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyConditionalWord.request.json": "e60422f11866b4afa54ac8f210634224db08eaba535bac3b38dd1f3ab87ab6e9",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalWord.request.json": "3113b7000adba3b0ca13db119fdde8159f51fd8cc679e9b655aa70668062c2e3",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/emptyNaturalCommonWord.request.json": "86fb022a4b3e184763877aa61ee35a8c4d471412c822cb42562b863ff4eb02d5",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonFalseWord.request.json": "cd9b7a2be45c26e19965ec22c18a3597d878465128a38208595863bc307734c2",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/conditionalCommonTrueWord.request.json": "a2154c505257068c3fc2a7e927b422ad7b23083fe01d38e6f67c0d83420b4371",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/repeatedIntervalSlot.request.json": "9a6afbe1192bd0d6d3553756d8f13057cc3941a3642fe1a818ca97f95df04482",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/carriedOutsideWord.request.json": "ee40f397aefe2e441b502e1189c30ad7193e0764e42b45db31830cf39baa9c62",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-hybrid-fixture-freeze-1/parallelCommonFinite.request.json": "b73d6395dd19fc72533f3ede5f7d9b29a66b116590dabfae2f551c7a16539683",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/evidence/word-hybrid-fixture-freeze-1/parallelIndependentFinite.request.json": "69fb82ae1b33ae9a303fe183f82d960326730084e8add0a468061b5b5e8baa6a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-word-execution-native/20261010T142106.801288Z/ACTUAL-IMPORTED-ARTIFACTS.json": "2bea351af260122def2afe6a8b570f378602d3dfeca3eda4b3b5c56531f14585",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/original-word-execution-native/20261010T142106.801288Z/NATIVE-RUNTIME-PINS.json": "2d7b00c8017584b2bd700ec4a80c3260472b14072940abf03e81b5608a633d42",
+    "/workspace/scratch/lean-rust-parity-native/runtime/word-candidate-target-3/release/examples/source_word_probe": "1542890abffe8c7764b50661573c3df92c23166cdc46115e290cb34f22c3d999",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/ORIGINAL-WORD-NATIVE-EXECUTION-PREPARATION.json": "2958bfb3334d9b796fc8decd7b97eaae6874746ce5d0558e95999c90ac965ffa",
+    "/workspace/toolchains/lean-4.33.1-linux/bin/lean": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/.build/proof-extensions/extraction_g7-original-word-fixture-6e-isolated/20261010T141914.473357Z/Runner_G7OriginalWordFixtureMain.lean": "45040cf8386a472ad25356de5004ac722b559dba45016e2cfe41743698dac0c7"
+  },
+  "separately_authenticated_kernel_evidence": "evidence/proof-extensions/extraction_g7-original-word-fixture-6e-isolated/20261010T141914.473357Z/run-20261010T141924.653124Z",
+  "kernel_qualification": "Separate scheduler receipts authenticate exact chosen-table/init/word proofs, fixtures and imported/native artifacts.",
+  "Lean_native_work_counters_inferred": false,
+  "Lean_standalone_ELF_claim": false,
+  "general_native_refinement_claim": false,
+  "source_admission_verified": false,
+  "ancestral_completion_claim": false,
+  "observed_at_utc": "2026-10-10T14:21:54Z"
+}

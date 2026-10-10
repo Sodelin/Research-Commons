@@ -12,7 +12,7 @@ The [goal sheet](GOAL-STATUS.md) preserves completed original G1/G2/binary M3 G5
 | G6 generator coordinates | New `G6OriginalPopulationSpectralSupport` proves every listed original kernel exponent is choose(j,2), with j no greater than the entering live count; excluded coefficients are zero. Complete 88-module audit passes. This discharges the sharper-support gap explicitly listed in DOT's quantitative assembly. | Count-conditioned forest weights/norms, positive generator compression, one-bank graph reconstruction and the global joint-bin approximation consumer remain. |
 | G6 numerical and adaptive transport | Older exact rational cutoff, normalized row-error/finite-trace composition, midpoint-grid TV and actual adaptive retained-mass budget providers already exist and have accepted contexts. | Bind their rows, budgets and observations to the reconstructed source; assemble witness-returning clouds and robust-fibre confidence inversion. They do not promise stopping at ambiguous fibres. |
 | G7 full-epoch coefficients | Repaired original coefficient statements, constructive literal panel joins and selected support are checked. New `G7FullEpochSupport` proves the sparse product equals the unchanged original whole-epoch polynomial; complete 124-module audit passes. | All nine original Lean/Rust/reference epoch execution contexts now pass separately. General Rust support/encoding refinement remains open. |
-| G7 operation words and histories | Existing original initialization/boundary/completed-calendar polynomials and actual source-program/adaptive projection already preserve one source, original occurrence IDs and the entire register. | Generic sparse source-boundary extraction now passes a133-module audit; private finite Rust words pass8+2 full-table checks. Completion extraction/word refinement and calendar/physical admission remain explicit. |
+| G7 operation words and histories | Existing original initialization/boundary/completed-calendar polynomials and actual source-program/adaptive projection already preserve one source, original occurrence IDs and the entire register. | Sparse boundary133, initialization135, chosen epoch139, concrete node141 and finite word150 audits now pass. Actual original Lean/Rust finite words pass9/39; generic completion140 also passes. Generated-calendar endpoint support, general native refinement and source/physical admission remain explicit. |
 | G7 resource/rank game | Existing compatible exact-law response, affine-rank, original-family and carrier proofs supply the intended semantic argument. The full compatible191-module semantic context now passes its complete ownership audit, including all five resource/response/rank/family/carrier roots. | Effective winning syntax, complete real QE, legal action/lower-witness selection, Pareto extraction and cofacial source-census admission still lack complete compatible formal consumers in the inspected corpus. |
 
 The [saved proof review](../quality/PROOF-EXTENSION-REVIEW.json) independently
@@ -69,7 +69,7 @@ generic native/calendar refinement remain outstanding.
 binds the separately accepted source audits to actual Lean/Rust execution.
 The [supplied-calendar proposal](../rust/notes/CALENDAR-TO-WORD-READINESS-20261010T1330Z.md)
 reuses old initialization, phase-permutation and calendar-support proofs;
-its producer/schema fixtures are being frozen before an additive private build.
+its private producer now passes34 frozen inputs/259 ordered rows and82 Rust tests, with117 public cases bound to identical main bytes. [Root review](../quality/CALENDAR-CANDIDATE-REVIEW.json) retains the separate source-admission/native-proof obligations.
 
 
 The [six further publications](DISCOVERY-DELTA-20261010T1348Z.md) add a reviewed
@@ -80,3 +80,10 @@ witness yet. G4 now resolves eventual positivity and zero exponential rate
 for its exact sparse countable carrier, excluding positive-leading finite
 equal-arm words. These results strengthen scoped providers but do not close
 general G6 reconstruction or G7 source census/QE/optimal-policy assembly.
+
+[Conditional completed-word review](../quality/COMPLETED-WORD-REVIEW.json)
+passes the166-module source audit, with explicit nonempty-copy, positive-bank
+and EVERY raw endpoint row ancestral-root premises. Native nonzero selected
+rows and a physical positive-PMF support theorem do not supply that raw-list
+premise. The next calendar adapter must prove structural raw support or an
+explicit zero-filter polynomial refinement.

@@ -1,0 +1,62 @@
+G7OriginalEdgeBoundary.lean:33:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeBoundary.route_population_iff`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeBoundary.lean:100:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeBoundary.original_node_avoids_other_edge`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeBoundary.lean:123:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.OriginalEdgeBoundary.original_node_avoids_root`:
+  [DecidableEq Copy]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7OriginalEdgeBoundary.lean:179:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalEdgeBoundary.lean:185:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G7OriginalEdgeBoundary.lean:196:39: warning: This simp argument is unused:
+  hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [exitLocation, originalPlace, Ne.symm hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G7OriginalEdgeBoundary.lean:251:80: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+e : E
+hi : i ≠ some e
+p : Copy × Copy
+s d : Code N sample
+⊢ (∑ x, if d = exitCode N x e then if mergeAt N i p s = x then 1 else 0 else 0) =
+    ∑ x, if mergeAt N i p x = d then if x = exitCode N s e then 1 else 0 else 0
+G7OriginalEdgeBoundary.lean:256:8: warning: This simp argument is unused:
+  exit_mergeAt_commute N i e hi p s
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

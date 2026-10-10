@@ -1,0 +1,85 @@
+{
+  "schema": "serial_two_hybrid_calendar_review_v1",
+  "pass": true,
+  "claim": "INPUT_AND_ORACLE_PREPARATION_ONLY",
+  "native_execution": false,
+  "Lean_execution": false,
+  "cases_total": 2,
+  "cases_passed": 2,
+  "full_view_rows_total": 96,
+  "cases": [
+    {
+      "fixture": "serialTwoCommonCalendar",
+      "request_sha256": "ff8aeef5aaf927fda2a7ec0e2d22fdca06a1d2823815112df4627dc0fa1fdd3c",
+      "full_view_rows": 48,
+      "pass": true
+    },
+    {
+      "fixture": "serialTwoIndependentCalendar",
+      "request_sha256": "f77f1c142015582db13bb08bc1c1ed0ab5167b75c2ec3038667099850ef33a18",
+      "full_view_rows": 48,
+      "pass": true
+    }
+  ],
+  "register_marginal_controls": [
+    {
+      "fixture": "serialTwoCommonCalendar",
+      "initial_register_assignments": 4,
+      "initial_raw_monomial_contributions": 9,
+      "exact_register_masses": {
+        "[False, False]": "2/5",
+        "[False, True]": "4/15",
+        "[True, False]": "1/5",
+        "[True, True]": "2/15"
+      },
+      "full_view_rows": 48
+    },
+    {
+      "fixture": "serialTwoIndependentCalendar",
+      "initial_register_assignments": 4,
+      "initial_raw_monomial_contributions": 9,
+      "exact_register_masses": {
+        "[False, False]": "2/5",
+        "[False, True]": "4/15",
+        "[True, False]": "1/5",
+        "[True, True]": "2/15"
+      },
+      "full_view_rows": 48
+    }
+  ],
+  "adversarial_controls_rejected": [
+    "second original gamma aliased",
+    "second parallel occurrence omitted",
+    "second stored register erased",
+    "natural raw nine contributions collapsed"
+  ],
+  "pins_before": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_calendar_serial_hybrids.py": "565268c8c5ebea04905a8324d8f34054c11ed09ca152f465c560d9331215ab79",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_calendar_oracle.py": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-REFINEMENT-20261010T1340Z.md": "7e2202aeac884c2024e3f168031b8e90ae73f3c9c924252e7e3705aeb8cba478",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+    "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-serial-hybrid-fixture-freeze-1/serialTwoCommonCalendar.request.json": "ff8aeef5aaf927fda2a7ec0e2d22fdca06a1d2823815112df4627dc0fa1fdd3c",
+    "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-serial-hybrid-fixture-freeze-1/serialTwoIndependentCalendar.request.json": "f77f1c142015582db13bb08bc1c1ed0ab5167b75c2ec3038667099850ef33a18"
+  },
+  "pins_after": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/review_calendar_serial_hybrids.py": "565268c8c5ebea04905a8324d8f34054c11ed09ca152f465c560d9331215ab79",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_calendar_oracle.py": "3f01def72cbd1b999099f713764e97941753a12349bcf4e23f3e7d90b63de27c",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/CALENDAR-REFINEMENT-20261010T1340Z.md": "7e2202aeac884c2024e3f168031b8e90ae73f3c9c924252e7e3705aeb8cba478",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/source_word_oracle.py": "bb9f4470e9a5ca4358e5916d546c9009c9abfb62bfa9fc415f589891bfde5102",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/boundary_oracle.py": "0d85747a1f58c4c78b4aa7b0a8f671cd145b7a5f4ce990f9ed33df6b4766db29",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/epoch_oracle.py": "da66bf78d538d7acdc8d67b560b3d7fe95fd987d614cf34ffd3803c03c8235bd",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/population_oracle.py": "216d83a844019f115de1dfa19c12827e0570348181d380f1435dc6ee646748ff",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/chart_check.py": "3de5f13954f6aa40b53c0cf5a8b57d8895046becfd36989087fb6ec0748b5e8a",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/certificate_check.py": "ec55b12c10b8e5fd2eec29f72b4d14138b57d84139239e04e0c8907602e58e24",
+    "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-serial-hybrid-fixture-freeze-1/serialTwoCommonCalendar.request.json": "ff8aeef5aaf927fda2a7ec0e2d22fdca06a1d2823815112df4627dc0fa1fdd3c",
+    "research/2026-10-10-codex-lean-rust-parity/design/evidence/calendar-serial-hybrid-fixture-freeze-1/serialTwoIndependentCalendar.request.json": "f77f1c142015582db13bb08bc1c1ed0ab5167b75c2ec3038667099850ef33a18"
+  },
+  "source_admission_verified": false,
+  "general_calendar_refinement_proved": false,
+  "observed_at_utc": "2026-10-10T14:12:39Z"
+}

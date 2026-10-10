@@ -1,0 +1,42 @@
+G7EffectiveWordCoefficients.lean:53:30: error(lean.unknownIdentifier): Unknown identifier `polynomial_flatMap`
+G7EffectiveWordCoefficients.lean:52:71: error: unsolved goals
+I : Type u_1
+J : Type u_2
+A : Type u_3
+K : Type u_4
+inst✝ : DecidableEq K
+f : I → J
+key : A → K
+rows : Rows I A
+target : K
+⊢ polynomial
+      (List.flatMap (fun a => if key (a.1, renameSparse f a.2).1 = target then (a.1, renameSparse f a.2).2 else [])
+        rows) =
+    (MvPolynomial.rename f) (polynomial (readRows key rows target))
+'GProgram.G7.EffectiveWordCoefficients.polynomial_renameSparse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_read_renameRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_stepRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_wordRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.wordRows_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_naturalWordRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.naturalWordRows_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

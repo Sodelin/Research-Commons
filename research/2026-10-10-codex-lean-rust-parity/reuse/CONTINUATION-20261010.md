@@ -178,3 +178,26 @@ queue has six completion fixtures, initialization9f595e57, sparse wordaa014b88
 and chosen single-epoch table4a139e0b; all accepted source bytes stay frozen.
 Map54 obligations/89 exact hashed references includes the newest scoped G4
 negative primitive and the original same-phase permutation providers.
+
+
+Latest mutable checkpoint: completion fixture f8c08aec/main67be7182 now PASS complete156/157 audits (4,743/4,744 declarations,2,787 theorems) and original evaluator/Rust/zero-spectral-projector6/6 comparison of all257 full views. Map56 obligations/92 exact source references authenticates these exact receipts. Initialization9f and genericwordaa failed missing namespaces/coercion/local binder; exact failures saved. Revised init eada4124 and genericword640734f5 are pending. Concrete Node7d72 and Word38da drafts now supply the generic step premise but are uncompiled. Chosen epoch4a was blocked before Lean by missing Mathlib Funext .olean; the sole scheduler stages exactly its missing2-source closure. Root wholeedge f6c12ced retry is separately owned and pending.
+
+
+2026-10-10 14:32Z mutable checkpoint: initialization c6, chosen epoch412,
+generic word247, node428 and concrete Word383 now have separate complete
+135/139/138/141/150 audits. Original word fixture6e/mainc685 have separate
+171/172 audits and actual compiled Lean/Rust/independent-oracle PASS9/39 plus
+eight adversarial controls. Conditional CompletedWordad551 has accepted166
+audit4599/2887, keeping Nonempty Copy/positivebank/EVERY raw finite endpoint
+AncestralRoot, including zero-coefficient branches. Generated-calendar date/phase/
+interval-occurrence refinement and all-raw root support remain separate.
+
+Root-authorized inherited Boundary328a API repair is now under
+quality/repairs/G7OriginalEdgeBoundary.lean, currenta0d841a8 pending sole scheduler.
+Original328a, failed051 and failedffa bytes/diagnostics are preserved; all2
+definitions/19 statements and compiler options remain unchanged. Root-owned
+operatorb095 has a component pass, but the complete whole-edge chain is pending.
+Gathering keeps a residual bank for arbitrary entering Code and absorbs it only
+for actual singleton-tip initialCode. Do not infer a general warm-start image,
+timed/bin retiming or crossgraph coverage. Current sole compiler remains
+/root/lean_integration_successor; this worker invokes no Lean or git writes.

@@ -1,0 +1,27 @@
+G7EffectiveNodeCoefficients.lean:40:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveNodeCoefficients.incomingEdges_nonempty`:
+  [FinEnum V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FinEnum V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G7EffectiveNodeCoefficients.lean:101:0: warning: automatically included section variable(s) unused in theorem `GProgram.G7.EffectiveNodeCoefficients.polynomial_eq_of_gamma_evaluations`:
+  [DecidableEq E]
+  [FinEnum V]
+  [FinEnum E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [FinEnum V] [FinEnum E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'GProgram.G7.EffectiveNodeCoefficients.incomingEdgeEffective_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveNodeCoefficients.polynomial_nodeRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.EffectiveNodeCoefficients.polynomial_eq_of_gamma_evaluations' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveNodeCoefficients.polynomial_nodeRows_eq_nodeTable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveNodeCoefficients.polynomial_exitRows_eq_exitTable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

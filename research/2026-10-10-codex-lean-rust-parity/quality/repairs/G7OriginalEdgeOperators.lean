@@ -313,10 +313,12 @@ theorem actual_generator_all_populations (N : RootedBinary V E X) {sample : Copy
   rw [←Finset.mul_sum]
   ring_nf
   congr 2
-  apply Finset.sum_congr rfl
-  intro p _
-  simp only [sub_eq_add_neg]
-  ring
+  apply Finset.sum_congr
+  · ext p
+    simp
+  · intro p _
+    simp only [sub_eq_add_neg]
+    ring
 
 /-- Literal all-population exponential factors. This is a matrix built from
 actual merger trials, not a probability table supplied by the caller. -/

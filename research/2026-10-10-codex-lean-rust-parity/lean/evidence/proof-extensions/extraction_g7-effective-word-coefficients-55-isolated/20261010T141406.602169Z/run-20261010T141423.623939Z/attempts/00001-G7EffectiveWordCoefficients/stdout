@@ -1,0 +1,50 @@
+G7EffectiveWordCoefficients.lean:56:2: error: Tactic `apply` failed: could not unify the conclusion of `@List.map_congr_left`
+  List.map ?f ?l = List.map.{?u.56, ?u.55} ?g ?l
+with the goal
+  List.map (fun a => polynomial (if key (a.1, renameSparse f a.2).1 = target then (a.1, renameSparse f a.2).2 else []))
+      rows =
+    List.map.{u_1, u_2} (⇑(MvPolynomial.rename f))
+      (List.map (fun row => if key row.1 = target then polynomial row.2 else 0) rows)
+
+Note: The full type of `@List.map_congr_left` is
+  ∀ {α : Type ?u.56} {l : List α} {α_1 : Type ?u.55} {f g : α → α_1}, (∀ a ∈ l, f a = g a) → List.map f l = List.map g l
+
+I : Type u_1
+J : Type u_2
+A : Type u_3
+K : Type u_4
+inst✝ : DecidableEq K
+f : I → J
+key : A → K
+rows : Rows I A
+target : K
+⊢ List.map (fun a => polynomial (if key (a.1, renameSparse f a.2).1 = target then (a.1, renameSparse f a.2).2 else []))
+      rows =
+    List.map (⇑(MvPolynomial.rename f)) (List.map (fun row => if key row.1 = target then polynomial row.2 else 0) rows)
+'GProgram.G7.EffectiveWordCoefficients.polynomial_renameSparse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_read_renameRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_stepRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_wordRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.wordRows_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.polynomial_naturalWordRows' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.EffectiveWordCoefficients.naturalWordRows_actual' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

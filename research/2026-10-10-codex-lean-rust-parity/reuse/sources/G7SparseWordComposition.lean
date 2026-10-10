@@ -22,6 +22,7 @@ open UnifiedLean.Source.SourcePoissonExponential
 open UnifiedLean.G6.OriginalCalendarSchema (Symbol)
 open GProgram.G7.EffectiveSourceEnumeration GProgram.G7.EffectivePopulationCoefficients
 open GProgram.G7.EffectiveFullEpochCoefficients GProgram.G7.SparseRowProducts
+open GProgram.G7.PopulationSelectedSupport
 open GProgram.G7.SymbolicProgramPolynomial
 open scoped BigOperators NNReal
 
@@ -71,8 +72,9 @@ theorem value_read_bindRows {I A B K : Type*} [DecidableEq K]
       (rows.map fun a => value a.2 x * value (readRows key (next a.1) target) x).sum := by
   have h := congrArg (MvPolynomial.eval₂Hom (Rat.castHom ℝ) x)
     (polynomial_read_bindRows key rows next target)
-  rw [eval_polynomial,map_list_sum] at h
-  simp only [List.map_map,Function.comp_def,MvPolynomial.eval₂_mul,eval_polynomial] at h
+  rw [map_list_sum] at h
+  simp only [List.map_map,Function.comp_def,MvPolynomial.coe_eval₂Hom,
+    MvPolynomial.eval₂_mul,eval_polynomial] at h
   exact h
 
 def followRows {I A Op : Type*} (step : Op → A → Rows I A) : List Op → A → Rows I A
@@ -124,11 +126,13 @@ theorem polynomial_original_word (N : RootedBinary V E X) {sample : Copy → X}
     (b : SelectedIndex N sample Finset.univ) :
     polynomial (readRows (project N Finset.univ) (followRows step word s) b) =
       wordPolynomial N H common word (project N Finset.univ s) b := by
-  have ht : ∀ ops a,
+  have ht : ∀ (ops : List (Symbol J V E)) (a : SelectedIndex N sample Finset.univ),
       tableWord (stepPolynomial N H common) ops a b = wordPolynomial N H common ops a b := by
     intro ops
     induction ops with
-    | nil => intro a; rfl
+    | nil =>
+        intro a
+        by_cases h : a=b <;> simp [tableWord,wordPolynomial,h]
     | cons op ops ih =>
         intro a
         rw [tableWord,wordPolynomial]

@@ -1,0 +1,62 @@
+{
+  "contributor": "Codex / lean_reuse_successor",
+  "original_contributor": "dot",
+  "status": "SOURCE_PROOF_API_REPAIR_PENDING_SOLE_SCHEDULER",
+  "original_source": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/recovery_g7-whole-edge-b095/20261010T140541.888141Z/sources/G7OriginalEdgeBoundary.lean",
+  "original_sha256": "328a2a5b0c3804da7165e4698e3d87933497c75ccde7cbc348b39aad8f99b53a",
+  "derivative_source": "research/2026-10-10-codex-lean-rust-parity/quality/repairs/G7OriginalEdgeBoundary.lean",
+  "derivative_sha256": "a0d841a86484004739f54468e0534c08bb87015083b32dafa89ddf122bb99cb9",
+  "failed_diagnostic": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/recovery_g7-whole-edge-b095/20261010T140541.888141Z/run-20261010T140639.876429Z/attempts/00002-G7OriginalEdgeBoundary/stdout",
+  "diagnostic_sha256": "abed0a61cb9accee3a0fc105bf01d1cc44a90a7a8f338ca219455724b4cc3cff",
+  "definitions_preserved": [
+    "AvoidsPopulation",
+    "boundaryMatrix"
+  ],
+  "theorem_and_lemma_statements_preserved": [
+    "route_population_iff",
+    "node_pair_preserved",
+    "node_mergeAt_commute",
+    "original_node_avoids_other_edge",
+    "original_node_avoids_root",
+    "node_pair_matrix_commute",
+    "node_population_generator_commute",
+    "exit_live",
+    "exit_ancestor",
+    "exit_register",
+    "exit_genealogy",
+    "exit_location",
+    "exit_population_iff",
+    "exit_pair_preserved",
+    "exit_mergeAt_commute",
+    "exit_pair_matrix_commute",
+    "exit_population_generator_commute",
+    "original_node_population_exponential_commute",
+    "other_exit_population_exponential_commute"
+  ],
+  "compiler_options_unchanged": true,
+  "repair_scope": [
+    "Explicit dependent-if root exclusion",
+    "Normalize different Decidable instances by finite sum congruence",
+    "Split encoded live/dead projections explicitly",
+    "Keep explicit exitCode arguments during canonical extensionality",
+    "Reuse established apply_ite API from old source limit provider",
+    "Normalize finite matrix delta sums with exact inherited Finset equality-sum lemmas",
+    "Use explicit finite sum_eq_single for deterministic destination delta normalization"
+  ],
+  "physical_scope": "Safe node/other-population and other-edge-exit interchanges only, constructed from original endpoint identities. No global source epoch/boundary permutation; downstream gathering and arbitrary strict-calendar exposure invariance remain separately uncompiled.",
+  "source_provider_api_reused": "research/2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/SourceEventualCompletionLimit.lean",
+  "kernel_or_native_acceptance_claimed": false,
+  "preceding_failed_derivatives": [
+    {
+      "sha256": "051c1fae539dacff43e8d476b7a0404b3c1d9c21d2257f8511818fc31483d108",
+      "diagnostic": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/recovery_g7-whole-edge-boundary-051/20261010T142355.181414Z/run-20261010T142448.686680Z/attempts/00001-G7OriginalEdgeBoundary/stdout",
+      "note": "Twelve inherited errors resolved; remaining exit pair matrix delta sum"
+    },
+    {
+      "sha256": "ffa2fb5865be770f929bfa5f139c16adeda43eff3b408a5ad11febdd5cb6365b",
+      "diagnostic": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/recovery_g7-whole-edge-boundary-ffa/20261010T142854.935901Z/run-20261010T143001.916001Z/attempts/00001-G7OriginalEdgeBoundary/stdout",
+      "diagnostic_sha256": "8f7d98cc0ee1f3644775fd203ccef3769e28a8eaf89adaa355538f0744b6c052",
+      "note": "Generic apply_ite changed nesting; equality-index sums did not match."
+    }
+  ]
+}

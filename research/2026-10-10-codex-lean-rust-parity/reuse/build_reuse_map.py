@@ -310,7 +310,7 @@ add('G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7/G6/Rust','Executable once-dr
  (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7OriginalInitializationPolynomial.lean',['GProgram.G7.OriginalInitializationPolynomial.registerPolynomial','GProgram.G7.OriginalInitializationPolynomial.initialPolynomial','GProgram.G7.OriginalInitializationPolynomial.actual_original_initial_polynomial'])],
  ['Same original graph, hybrid carrier and sample map; actual encodeActual source initialization','True is original parent1, nonhybrid register bits false, every hybrid register drawn once including empty Copy','Explicit shared variable embedding; physical evaluation substitutes the same original gamma assignment'],
  'Pure finite register/initial-Code support targets exact rename of the unchanged original initialization polynomial without a whole Code or selected-index scan',
- ['Fresh boundary dependency and initialization kernel/audit check pending','Concrete natural word composition, normalization/serializer correctness and universal Rust refinement remain separate'],
+ ['Revised initialization kernel/audit check pending; accepted boundary dependency remains frozen','Concrete natural word composition, normalization/serializer correctness and universal Rust refinement remain separate'],
  [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md'),base+'2026-10-10-codex-lean-rust-parity/design/WORD-REFINEMENT.md'], ['G7-EXECUTABLE-BOUNDARY-COEFFICIENTS','G7-COMPLETED-LAW'])
 add('G7-SPARSE-WORD-COMPOSITION','G7/G6/Rust','Finite literal dependent-row composition for exact polynomial or shared-bank physical original words','new_draft_compilation_pending',[
  (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7SparseWordComposition.lean',['GProgram.G7.SparseWordComposition.bindRows','GProgram.G7.SparseWordComposition.followRows','GProgram.G7.SparseWordComposition.polynomial_followRows','GProgram.G7.SparseWordComposition.polynomial_original_word','GProgram.G7.SparseWordComposition.actual_followRows','GProgram.G7.SparseWordComposition.evaluated_original_word']),
@@ -352,6 +352,33 @@ add('G7-ORIGINAL-BOUNDARY-PHASE-PERMUTATION','G7/G6/Rust','Original full-Code ca
  'Existing exact sourceProgram PMF equalities already prove same-phase kernel commutation/permutation; sorted original-ID execution needs a finite list Perm certificate and word composition, not a new source kernel theorem',
  ['Effective sorted enumeration permutation/calendar-date/refinement composition remains separate','Entire coefficient identity must use the per-step coefficient bridges; physical calendar evaluation alone does not prove arbitrary shared-slot coefficients'],
  [base+'2026-10-10-codex-lean-rust-parity/lean/SEMANTIC-RANK-RECOVERY-CERTIFICATE.json',document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md')], ['G7-SPARSE-WORD-COMPOSITION','G7-COMPLETED-LAW'])
+add('G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS','G7/G6/Rust','Finite original node resolver and entire sparse node/exit identities with inherited selected tables','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveNodeCoefficients.lean',['GProgram.G7.EffectiveNodeCoefficients.incomingEdgeEffective_eq','GProgram.G7.EffectiveNodeCoefficients.polynomial_nodeRows','GProgram.G7.EffectiveNodeCoefficients.polynomial_eq_of_gamma_evaluations','GProgram.G7.EffectiveNodeCoefficients.polynomial_nodeRows_eq_nodeTable','GProgram.G7.EffectiveNodeCoefficients.polynomial_exitRows_eq_exitTable']),
+ (base+'2026-10-04-dot-complete-original-g1-1549z/src/UnifiedLean/Source/SourceBoundaryProjection.lean',['UnifiedLean.Source.SourceBoundaryProjection.actual_boundary_projection'])],
+ ['Every admitted original entering Code and complete selected genealogy/location/register fibre','Finite incoming edge filter/head equals inherited arbitrary selector only at actual proven indegree-one nodes','Original current-owner INDEPENDENT gamma is true/parent1; stored COMMON bit retained','Original boundary projection and polynomial uniqueness on the original-gamma open box'],
+ 'New concrete composition reuses checked pulse/common/pure rows and already proved source boundary projectivity to supply inherited nodeTable/exitTable coefficient identities',
+ ['Fresh prerequisite and root kernel/audit checks pending','Concrete word/natural/calendar composition and universal native encoding/normalization remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md')], ['G7-EXECUTABLE-BOUNDARY-COEFFICIENTS','G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7-SPARSE-WORD-COMPOSITION'])
+add('G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS','G7/G6/Rust','Actual interval/exit/enter sparse rows identify entire inherited wordPolynomial and naturalWordPolynomial','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveWordCoefficients.lean',['GProgram.G7.EffectiveWordCoefficients.polynomial_renameSparse','GProgram.G7.EffectiveWordCoefficients.polynomial_stepRows','GProgram.G7.EffectiveWordCoefficients.polynomial_wordRows','GProgram.G7.EffectiveWordCoefficients.wordRows_actual','GProgram.G7.EffectiveWordCoefficients.polynomial_naturalWordRows','GProgram.G7.EffectiveWordCoefficients.naturalWordRows_actual'])],
+ ['Every literal original admitted entering Code and finite original-ID word','Same symbolic variable bank across all interval slots and original hybrids, including repeated slots','Exact per-step coefficient identities supplied by epoch uniqueness and concrete node/exit providers','Natural initialization enumerates the complete once-drawn original register, including empty Copy'],
+ 'Concrete stepRows and sparse coordinate renaming discharge the generic word theorem premise; natural literal bind preserves all destination fibres and the original register draw',
+ ['Fresh prerequisite and root kernel/audit checks pending','Generated calendar/date/phase permutation and optional terminal-completion consumers remain separate','Universal native encoding/normalization and runtime dictionary/cap correspondence remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md')], ['G7-SINGLE-EPOCH-TABLE-IDENTITY','G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS','G7-SPARSE-WORD-COMPOSITION','G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7-COMPLETED-LAW'])
+add('G7-ORIGINAL-WORD-NATIVE-FIXTURES','G7/G6/Rust','Nine typed original full-word coefficient controls from unchanged private input origins','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalWordFixture.lean',['UnifiedLean.G7.OriginalWordFixture.registry2','UnifiedLean.G7.OriginalWordFixture.rootState_sourceValid','UnifiedLean.G7.OriginalWordFixture.fixtureNamed']),
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalWordFixtureMain.lean',['main'])],
+ ['Previously admitted two-tip and parallel-occurrence sources, literal encodeActual conditional input images','Same frozen sample/label map, original register, current-owner routing and registry-ID gamma convention','Full ordered selected-view fibres, exact whole exponent vectors and rational coefficients; repeated slots reuse coordinates','Seven frozen finite word controls plus the two separately frozen parallel finite hybrid controls; no terminal completion'],
+ 'Instantiates the concrete actual sparse word and once-drawn natural providers on exact original typed sources, preserving every coefficient and one literal destination witness per selected fibre',
+ ['Fresh prerequisite/root kernel checking, complete owned audits and actual nine-context evaluator comparison pending','The omitted ordinaryThreeFinite needs a separately admitted three-taxon original source','General encoding/normalization/dictionary/resource-cap and generated-calendar refinement remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/design/evidence/word-fixture-freeze-1/INVENTORY.json'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/evidence/word-hybrid-fixture-freeze-1/INVENTORY.json'),document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md')], ['G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS','G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES'])
+add('G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS','G7/G6/Rust','Finite literal full-root word endpoints compose to unchanged completedPolynomial at every coefficient','new_draft_compilation_pending',[
+ (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7EffectiveCompletedWordCoefficients.lean',['GProgram.G7.EffectiveCompletedWordCoefficients.polynomial_completedRows','GProgram.G7.EffectiveCompletedWordCoefficients.polynomial_completedWordRows','GProgram.G7.EffectiveCompletedWordCoefficients.polynomial_completedNaturalWordRows']),
+ (base+'2026-10-09-dot-g7-completed-calendar-polynomial-2330z/G7CompletedCalendarPolynomial.lean',['GProgram.G7.CompletedCalendarPolynomial.completedPolynomial','GProgram.G7.CompletedCalendarPolynomial.actual_natural_completed_calendar_polynomial'])],
+ ['Nonempty Copy and one positive original pair-rate bank','Every literal raw finite endpoint, including zero-coefficient branches, has actual all-copy AncestralRoot support','Complete selected genealogy/location/full-register fibre and same original symbolic bank'],
+ 'Reuses accepted genuine rational ancestral-completion identity before literal bind/product partition; conditional and natural word endpoints target the unchanged entire completedPolynomial',
+ ['Fresh prerequisites and kernel/audit checking pending','Derivation of raw sparse-row ancestral support for every generated calendar remains separate','General native dictionary/normalization and terminal-wrapper refinement remain separate'],
+ [document_ref(base+'2026-10-10-codex-lean-rust-parity/reuse/WORD-PROVIDER-READBACK-20261010.md'),document_ref(base+'2026-10-10-codex-lean-rust-parity/design/WORD-COMPLETION-EXTENSION-20261010T1300Z.md')], ['G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS','G7-SUPPORT-ANCESTRAL-COMPLETION','G7-COMPLETED-LAW'])
 add('G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES','G7/G6/Rust','Twelve exact conditional original boundary tables with complete selected views and literal witnesses','new_draft_compilation_pending',[
  (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixture.lean',['UnifiedLean.G7.OriginalBoundaryFixture.siteState_sourceValid','UnifiedLean.G7.OriginalBoundaryFixture.carriedState_sourceValid','UnifiedLean.G7.OriginalBoundaryFixture.ordinary_degree','UnifiedLean.G7.OriginalBoundaryFixture.fixtureNamed']),
  (base+'2026-10-10-codex-lean-rust-parity/reuse/sources/G7OriginalBoundaryFixtureMain.lean',['main'])],
@@ -565,7 +592,23 @@ for certificate_name,keys in [
     ('ORIGINAL-BOUNDARY-FIXTURE-CERTIFICATE.json',{
         'G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES':None}),
     ('EFFECTIVE-COMPLETION-CERTIFICATE.json',{
-        'G7-SUPPORT-ANCESTRAL-COMPLETION':'G7EffectiveAncestralCompletion'})]:
+        'G7-SUPPORT-ANCESTRAL-COMPLETION':'G7EffectiveAncestralCompletion'}),
+    ('ORIGINAL-COMPLETION-FIXTURE-CERTIFICATE.json',{
+        'G7-ORIGINAL-COMPLETION-NATIVE-FIXTURES':None}),
+    ('EFFECTIVE-INITIALIZATION-CERTIFICATE.json',{
+        'G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS':'G7EffectiveInitializationCoefficients'}),
+    ('SELECTED-EPOCH-UNIQUENESS-CERTIFICATE.json',{
+        'G7-SINGLE-EPOCH-TABLE-IDENTITY':'G7SelectedEpochTableUniqueness'}),
+    ('SPARSE-WORD-COMPOSITION-CERTIFICATE.json',{
+        'G7-SPARSE-WORD-COMPOSITION':'G7SparseWordComposition'}),
+    ('EFFECTIVE-NODE-CERTIFICATE.json',{
+        'G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS':'G7EffectiveNodeCoefficients'}),
+    ('EFFECTIVE-WORD-CERTIFICATE.json',{
+        'G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS':'G7EffectiveWordCoefficients'}),
+    ('ORIGINAL-WORD-FIXTURE-CERTIFICATE.json',{
+        'G7-ORIGINAL-WORD-NATIVE-FIXTURES':None}),
+    ('EFFECTIVE-COMPLETED-WORD-CERTIFICATE.json',{
+        'G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS':'G7EffectiveCompletedWordCoefficients'})]:
     certificate_path=HERE.parent/'lean'/certificate_name
     if not certificate_path.exists():
         continue
@@ -637,6 +680,36 @@ for certificate_name,keys in [
                     'Six direct typed original compiled-evaluator completion comparisons remain pending',
                     'Concrete full word completion/encoding/normalization refinement remains separate',
                     'Chosen epoch-table coefficient identity is a separate pending composition']
+            elif key=='G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS':
+                record['genuinely_remaining']=[
+                    'Concrete natural word/calendar composition and actual typed evaluator comparisons remain separate',
+                    'General normalization/serializer correctness and universal Rust refinement remain open']
+            elif key=='G7-SINGLE-EPOCH-TABLE-IDENTITY':
+                record['genuinely_remaining']=[
+                    'Concrete node/exit table and word/natural/completed consumers remain separate compositions',
+                    'General native encoding/normalization refinement remains separate; shared multi-slot calendar evaluations do not form an independent cube']
+            elif key=='G7-SPARSE-WORD-COMPOSITION':
+                record['genuinely_remaining']=[
+                    'Exact per-step selected polynomial identity remains an explicit premise of this generic theorem',
+                    'Concrete original node/slot/natural word and calendar consumer remain separate compositions',
+                    'General normalized dictionary/serializer correctness, resource-cap semantics and universal Rust refinement remain open']
+            elif key=='G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS':
+                record['genuinely_remaining']=[
+                    'Concrete word/natural/calendar composition and actual evaluator controls remain separate',
+                    'Universal native input encoding/normalization and dictionary refinement remain separate']
+            elif key=='G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS':
+                record['genuinely_remaining']=[
+                    'Generated calendar/date/phase enumeration and terminal completion consumers remain separate',
+                    'Universal native encoding/normalization and runtime dictionary/cap correspondence remain separate']
+            elif key=='G7-ORIGINAL-WORD-NATIVE-FIXTURES':
+                record['genuinely_remaining']=[
+                    'Nine original-word evaluator comparisons remain separately pending',
+                    'The omitted ordinaryThreeFinite requires a separately admitted three-taxon original source',
+                    'General native encoding/normalization/dictionary/resource-cap and generated-calendar refinement remain separate']
+            elif key=='G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS':
+                record['genuinely_remaining']=[
+                    'Derivation of raw sparse-row ancestral support for every generated calendar remains separate',
+                    'General native dictionary/normalization and terminal-wrapper refinement remain separate']
 # Rank and carrier roots share one complete five-root semantic target. Exact
 # cached kernel admissions remain distinguished from the fresh carrier check.
 semantic_path=HERE.parent/'lean/SEMANTIC-RANK-RECOVERY-CERTIFICATE.json'
@@ -799,6 +872,123 @@ if (boundary_fixture['status']=='new_kernel_checked_exact_source'
         boundary['genuinely_remaining']=[
             'General normalization/serialization and universal Rust refinement remain open',
             'Finite word/calendar legal-order and once-drawn initialization/completion composition remain separate']
+completion_fixture=next(r for r in records if r['id']=='G7-ORIGINAL-COMPLETION-NATIVE-FIXTURES')
+completion_execution_path=HERE.parent/'lean/ORIGINAL-COMPLETION-NATIVE-EXECUTION-RESULT.json'
+completion_comparison_path=HERE.parent/'design/evidence/completion-compiled-oracle-actual-1/RECEIPT.json'
+if (completion_fixture['status']=='new_kernel_checked_exact_source'
+    and completion_execution_path.exists() and completion_comparison_path.exists()):
+    execution=json.loads(completion_execution_path.read_text())
+    comparison=json.loads(completion_comparison_path.read_text())
+    expected={'completion1','completion2','completion3','completion4',
+        'completionCarriedNonminimum','completionPermutedFour'}
+    cases={c['fixture']:c for c in comparison['cases']}
+    own={Path(p['path']).stem:p['sha256'] for p in completion_fixture['providers']}
+    if (execution['status']=='PASS_CHECKED_ORIGINAL_EVALUATOR_DIFFERENTIAL'
+        and execution['exit_code']==0 and not execution['errors']
+        and execution['all_actual_imported_artifacts_compiler_and_native_libraries_final_stable']
+        and execution['fixtures_total']==6 and execution['fixtures_passed']==6
+        and execution['full_view_rows_total']==257
+        and hashlib.sha256(completion_comparison_path.read_bytes()).hexdigest()==execution['coefficient_review_receipt_sha256']
+        and all(execution['source_pins'].get(module)==source_hash for module,source_hash in own.items())
+        and comparison['pass'] and comparison['cases_passed']==6 and comparison['cases_total']==6
+        and comparison['full_view_rows_total']==257 and set(cases)==expected
+        and comparison['pins_before']==comparison['pins_after']
+        and all(c['pass'] and not c['errors']
+            and c['runs']['lean']['exit_code']==0 and c['runs']['rust']['exit_code']==0
+            and not c['runs']['lean']['timed_out'] and not c['runs']['rust']['timed_out']
+            for c in cases.values())):
+        completion_fixture['status']='new_kernel_checked_and_six_finite_original_comparisons_pass'
+        completion_fixture['evidence'].extend(str(p.relative_to(ROOT)) for p in
+            [completion_execution_path,completion_comparison_path])
+        completion_fixture['finite_comparison']={'cases_passed':6,'cases_total':6,
+            'full_view_rows':257,'execution_mode':execution['execution_mode'],
+            'standalone_elf_claimed':execution['standalone_elf_claimed'],
+            'oracle_algorithm':comparison['oracle_algorithm'],'general_refinement_proof_claimed':False}
+        completion_fixture['genuinely_remaining']=[
+            'General native encoding/normalization refinement and full word wrapper/work correspondence remain separate']
+        completion=next(r for r in records if r['id']=='G7-SUPPORT-ANCESTRAL-COMPLETION')
+        completion['finite_consumer_comparison']=completion_fixture['finite_comparison']
+        completion['genuinely_remaining']=[
+            'Concrete full word completion/encoding/normalization refinement remains separate']
+        chosen=next(r for r in records if r['id']=='G7-SINGLE-EPOCH-TABLE-IDENTITY')
+        if chosen['status']!='new_kernel_checked_exact_source':
+            completion['genuinely_remaining'].append(
+                'Chosen epoch-table coefficient identity is a separate pending composition')
+word_fixture=next(r for r in records if r['id']=='G7-ORIGINAL-WORD-NATIVE-FIXTURES')
+word_execution_path=HERE.parent/'lean/ORIGINAL-WORD-NATIVE-EXECUTION-RESULT.json'
+word_comparison_path=HERE.parent/'design/evidence/word-compiled-oracle-actual-1/RECEIPT.json'
+if (word_fixture['status']=='new_kernel_checked_exact_source'
+    and word_execution_path.exists() and word_comparison_path.exists()):
+    execution=json.loads(word_execution_path.read_text())
+    comparison=json.loads(word_comparison_path.read_text())
+    expected={'emptyConditionalWord','emptyNaturalWord','emptyNaturalCommonWord',
+        'conditionalCommonFalseWord','conditionalCommonTrueWord','repeatedIntervalSlot',
+        'carriedOutsideWord','parallelCommonFinite','parallelIndependentFinite'}
+    cases={c['fixture']:c for c in comparison['cases']}
+    own={Path(p['path']).stem:p['sha256'] for p in word_fixture['providers']}
+    if (execution['status']=='PASS_CHECKED_ORIGINAL_EVALUATOR_DIFFERENTIAL'
+        and execution['exit_code']==0 and not execution['errors']
+        and execution['all_actual_imported_artifacts_compiler_and_native_libraries_final_stable']
+        and execution['fixtures_total']==9 and execution['fixtures_passed']==9
+        and execution['full_view_rows_total']==39
+        and hashlib.sha256(word_comparison_path.read_bytes()).hexdigest()==execution['coefficient_review_receipt_sha256']
+        and all(execution['source_pins'].get(module)==source_hash for module,source_hash in own.items())
+        and comparison['pass'] and comparison['cases_passed']==9 and comparison['cases_total']==9
+        and comparison['full_view_rows_total']==39 and set(cases)==expected
+        and comparison['pins_before']==comparison['pins_after']
+        and all(c['pass'] and not c['errors']
+            and c['runs']['lean']['exit_code']==0 and c['runs']['rust']['exit_code']==0
+            and not c['runs']['lean']['timed_out'] and not c['runs']['rust']['timed_out']
+            for c in cases.values())):
+        word_fixture['status']='new_kernel_checked_and_nine_finite_original_comparisons_pass'
+        word_fixture['evidence'].extend(str(p.relative_to(ROOT)) for p in
+            [word_execution_path,word_comparison_path])
+        word_fixture['finite_comparison']={'cases_passed':9,'cases_total':9,
+            'full_view_rows':39,'execution_mode':execution['execution_mode'],
+            'standalone_elf_claimed':execution['standalone_elf_claimed'],
+            'oracle_algorithm':comparison['oracle_algorithm'],'general_refinement_proof_claimed':False}
+        word_fixture['genuinely_remaining']=[
+            'The omitted ordinaryThreeFinite requires a separately admitted three-taxon original source',
+            'General native encoding/normalization/dictionary/resource-cap and generated-calendar refinement remain separate']
+        word=next(r for r in records if r['id']=='G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS')
+        word['finite_consumer_comparison']=word_fixture['finite_comparison']
+# The concrete checked word supplies every per-step identity while the generic
+# theorem retains its explicit premise. Update only these compatible dependency
+# gaps; generated-calendar enumeration and general Rust refinement stay open.
+word=next(r for r in records if r['id']=='G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS')
+if word['status']=='new_kernel_checked_exact_source':
+    for key in ['G7-FULL-EPOCH-SUPPORT','G7-ORIGINAL-EPOCH-NATIVE-FIXTURES',
+        'G7-EXECUTABLE-BOUNDARY-COEFFICIENTS','G7-ORIGINAL-BOUNDARY-NATIVE-FIXTURES',
+        'G7-EXECUTABLE-INITIALIZATION-COEFFICIENTS','G7-SINGLE-EPOCH-TABLE-IDENTITY',
+        'G7-CONCRETE-ORIGINAL-NODE-COEFFICIENTS']:
+        record=next(r for r in records if r['id']==key)
+        if record['status'].startswith('new_kernel_checked'):
+            record['genuinely_remaining']=[
+                'Generated-calendar date/phase/interval-occurrence refinement and terminal support remain separate',
+                'General native encoding/normalization/dictionary/resource-cap and universal Rust refinement remain open']
+            record['checked_word_composition']='G7-CONCRETE-ORIGINAL-WORD-COEFFICIENTS'
+    generic=next(r for r in records if r['id']=='G7-SPARSE-WORD-COMPOSITION')
+    generic['genuinely_remaining']=[
+        'Exact per-step coefficient identity remains an explicit premise; the separate concrete original-word theorem supplies it',
+        'Generated-calendar refinement, terminal support and general native dictionary/resource-cap refinement remain separate']
+    policy=next(r for r in records if r['id']=='G7-POLICY-MASTER')
+    policy['genuinely_remaining']=[
+        'Exact original cofacial admission and independent whole-edge source-family coverage',
+        'Generated-calendar and terminal-support consumers of the checked sparse word coefficient composition',
+        'Complete same-source Winning syntax and effective real QE, with action/lower-witness selection relative to the actual history field',
+        'Exact Pareto/policy/certificate producer; checked semantic and coefficient dependencies do not supply an effective producer']
+completed_word=next(r for r in records if r['id']=='G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS')
+if completed_word['status']=='new_kernel_checked_exact_source':
+    word['genuinely_remaining']=[
+        'Generated-calendar date/phase/interval-occurrence refinement and every-raw-endpoint ancestral support remain separate',
+        'Universal native encoding/normalization and runtime dictionary/cap correspondence remain separate']
+    for key in ['G7-SUPPORT-ANCESTRAL-COMPLETION','G7-ORIGINAL-COMPLETION-NATIVE-FIXTURES']:
+        record=next(r for r in records if r['id']==key)
+        if record['status'].startswith('new_kernel_checked'):
+            record['genuinely_remaining']=[
+                'Every-raw-endpoint ancestral support for generated calendars remains separate',
+                'General native encoding/normalization/dictionary and terminal-wrapper refinement remain separate']
+            record['checked_conditional_word_composition']='G7-CONCRETE-ORIGINAL-COMPLETED-WORD-COEFFICIENTS'
 fixture=next(r for r in records if r['id']=='G7-ORIGINAL-POPULATION-NATIVE-FIXTURES')
 if execution_path.exists() and fixture['status']=='new_kernel_checked_exact_source':
     execution=json.loads(execution_path.read_text())

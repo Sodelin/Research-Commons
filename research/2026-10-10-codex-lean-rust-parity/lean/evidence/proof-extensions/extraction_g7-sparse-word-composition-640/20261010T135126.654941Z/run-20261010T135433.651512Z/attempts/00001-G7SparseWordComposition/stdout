@@ -1,0 +1,42 @@
+G7SparseWordComposition.lean:133:22: error: Tactic `rfl` failed: The left-hand side
+  tableWord (stepPolynomial N H common) [] a b
+is not definitionally equal to the right-hand side
+  wordPolynomial N H common [] a b
+
+case nil
+J : Type u_1
+V : Type u_2
+E : Type u_3
+Copy : Type u_4
+X : Type u_5
+inst✝⁹ : DecidableEq V
+inst✝⁸ : DecidableEq E
+inst✝⁷ : DecidableEq Copy
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype Copy
+inst✝³ : Fintype X
+inst✝² : FinEnum V
+inst✝¹ : FinEnum E
+inst✝ : FinEnum Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : OriginalParentRegistry N
+common : Hybrid N → Bool
+step : Symbol J V E → Code N sample → Rows (WordVariable N J) (Code N sample)
+hstep :
+  ∀ (op : Symbol J V E) (s : Code N sample) (b : SelectedIndex N sample Finset.univ),
+    polynomial (readRows (project N Finset.univ) (step op s) b) =
+      stepPolynomial N H common op (project N Finset.univ s) b
+word : List (Symbol J V E)
+s : Code N sample
+b a : SelectedIndex N sample Finset.univ
+⊢ tableWord (stepPolynomial N H common) [] a b = wordPolynomial N H common [] a b
+'GProgram.G7.SparseWordComposition.polynomial_read_bindRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.SparseWordComposition.polynomial_followRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.SparseWordComposition.polynomial_original_word' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G7.SparseWordComposition.actual_followRows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G7.SparseWordComposition.evaluated_original_word' depends on axioms: [propext, Classical.choice, Quot.sound]

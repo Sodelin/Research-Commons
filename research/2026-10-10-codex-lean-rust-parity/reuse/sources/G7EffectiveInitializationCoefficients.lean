@@ -17,11 +17,13 @@ namespace GProgram.G7.EffectiveInitializationCoefficients
 open Nanuq.Source GProgram.SourceForest
 open UnifiedLean.Source.UniformizedSourceStep
 open UnifiedLean.Source.NativeParentRouting
+open UnifiedLean.Source.NativeIndependentPairMixture
 open UnifiedLean.Source.SourceFiniteProjection
 open UnifiedLean.Source.SourceInitializedCalendar
 open UnifiedLean.Source.SourceNaturalInitialization
 open GProgram.G7.EffectiveSourceEnumeration GProgram.G7.EffectivePopulationCoefficients
 open GProgram.G7.EffectiveFullEpochCoefficients
+open GProgram.G7.PopulationSelectedSupport
 open GProgram.G7.SparseRowProducts GProgram.G7.EffectiveBoundaryCoefficients
 open GProgram.G7.OriginalInitializationPolynomial
 open scoped BigOperators
@@ -122,6 +124,7 @@ theorem initialRows_actual {I : Type*} (N : RootedBinary V E X) (sample : Copy �
       ((((originalRegisterPMF N p).map (initialCode N sample)).map
         (projection N Finset.univ)) a).toReal := by
   rw [← eval_polynomial,polynomial_initialRows,MvPolynomial.eval₂_rename]
+  simp only [Function.comp_def]
   rw [show (fun h => x (i h)) = p.gamma from funext hx]
   exact actual_original_initial_polynomial N sample p a
 

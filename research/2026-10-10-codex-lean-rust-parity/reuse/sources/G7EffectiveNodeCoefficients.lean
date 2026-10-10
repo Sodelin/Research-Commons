@@ -88,9 +88,11 @@ theorem polynomial_nodeRows (N : RootedBinary V E X) {sample : Copy → X}
   · by_cases hh : N.graph.IsHybrid v
     · by_cases hc : common ⟨v,hh⟩ = true
       · simp only [nodeRows,dif_neg hr,dif_pos hh,if_pos hc,
-          nodePolynomial,polynomial_commonRows,hp]
+          nodePolynomial,polynomial_commonRows]
+        rw [hp]
       · simp only [nodeRows,dif_neg hr,dif_pos hh,if_neg hc,
-          nodePolynomial,polynomial_pulseRows,hp]
+          nodePolynomial,polynomial_pulseRows]
+        rw [hp]
     · simp only [nodeRows,dif_neg hr,dif_neg hh,nodePolynomial,
         polynomial_pureRows,ordinaryCodeEffective_eq,incomingEdgeEffective_eq N v hr hh,hp]
 
