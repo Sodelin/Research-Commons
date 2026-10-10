@@ -1,6 +1,6 @@
 # Modular Lean baseline and corresponding Rust solver
 
-## Latest checked integration — 10 October 2026, 16:32 PDT / 23:32 UTC
+## Latest checked state — 10 October 2026, 16:40 PDT / 23:40 UTC
 
 Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
 The current coherent library has **1,504 modules / 100,985 owned declarations /
@@ -9,10 +9,14 @@ and [independent context review](quality/HISTORY-SURVIVAL-UNION-1504-REVIEW-2026
 pass. All 100,764 earlier declaration records and all 1,497 earlier source/import
 graph records are retained. The recovered G7 whole-edge survival chain now supplies
 the [G6 positive-exposure consumer](design/WHOLE-EDGE-ENDPOINT-SCOPE-20261010T2244Z.md).
-The earlier 1,497, 1,487 and other rows below keep their own dated scopes and receipts. Latest
-DOT's70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
+The earlier 1,497, 1,487 and other rows below keep their own dated scopes and receipts.
+DOT's 70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
 outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
 corrects claims that old census/target/policy implementations were absent.
+The [newest DOT source delta](design/DISCOVERY-DELTA-20261010T2340Z.md) records
+the hand-reviewed zero-drift local classifier, its accepted effective-radius
+algorithm and the particular sparse-carrier ordinary-factor obstruction.
+These have no new Lean or practical execution receipt.
 The full practical source-to-optimal-policy solver remains incomplete.
 
 Lean is the governing specification. Rust consumes accepted mathematical
@@ -29,7 +33,7 @@ Decisions API setup is deferred, with no key created or API call made. The
 [mission](MISSION.md) preserves the full original problem and
 [traceability map](design/TRACEABILITY.md) records remaining obligations.
 The [frozen discovery map](design/DISCOVERY-MAP.md) and the [latest publication
-delta](design/DISCOVERY-DELTA-20261010T1540Z.md) connect DOT G3/G4 results to
+delta](design/DISCOVERY-DELTA-20261010T2340Z.md) connect DOT G3/G4 results to
 their older providers and remaining gaps.
 The [one-page research brief](design/RESEARCH-BRIEF.md) gives the four-lane overview.
 The [goal completion sheet](design/GOAL-STATUS.md) distinguishes completed original

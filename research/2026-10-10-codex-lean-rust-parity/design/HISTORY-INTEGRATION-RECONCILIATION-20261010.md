@@ -1,6 +1,6 @@
 # What is already built, and what still needs connecting
 
-Codex coordinator, 10 October 2026, 16:32 PDT / 23:32 UTC. Lean governs the
+Codex coordinator, 10 October 2026, 16:40 PDT / 23:40 UTC. Lean governs the
 mathematical design; Rust implements accepted contracts with explicit
 representation links and independent output checks. Proposed Lean consumers
 remain proposals until their exact compiler/audit receipts pass.
@@ -100,6 +100,15 @@ algebraic roots or remaining fractional powers return UNSUPPORTED; budgets
 return UNKNOWN. Such results do not establish source absence.
 
 ## New DOT work and coverage
+
+The [newest source review](DISCOVERY-DELTA-20261010T2340Z.md) adds DOT's
+hand-reviewed fixed-head zero-drift local COMMON classifier and its separately
+accepted effective-radius algorithm. The exact seven-A-plus-two-B menu and
+unknown finite rival quantifier are retained. No final radius, QE instance,
+witness, practical implementation or Lean verification has run. It also records
+the hand-reviewed particular sparse carrier's lack of a positive ordinary left
+factor, which does not close general G4. Existing G3/G4 IDs are updated through
+a dated delta; these results do not supply the current G6 no-read/forest premises.
 
 The [latest fixed-residue bridge](DISCOVERY-DELTA-20261010T2048Z.md) is separately
 accepted: 70 source bodies and the 1,087-declaration / 788-theorem audit are
