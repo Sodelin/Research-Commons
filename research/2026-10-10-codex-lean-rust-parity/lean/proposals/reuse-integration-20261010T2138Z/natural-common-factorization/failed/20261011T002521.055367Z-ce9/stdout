@@ -1,0 +1,75 @@
+G6OriginalCommonPrefix.lean:143:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?as ++ ?bs ++ ?cs
+in the target expression
+  op ∈
+    match a :: dates, hdates, hd, hdateAbsent, hboundary with
+    | [], hdates, hd, hdateAbsent, hboundary => []
+    | a :: dates, hdates, hd, hdateAbsent, hboundary =>
+      boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a dates ++
+        [ProgramStep.interval (C.age site - finalDate a dates).toNNReal]
+
+case cons
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+site : V
+post : List ℝ
+nodesBefore nodesAfter : List V
+hnodes : {v | C.age v = C.age site}.toList = nodesBefore ++ site :: nodesAfter
+hn : (nodesBefore ++ site :: nodesAfter).Nodup
+hnodeAbsent : site ∉ nodesBefore
+a : ℝ
+dates : List ℝ
+hdates : sortedOriginalDates N C = a :: dates ++ C.age site :: post
+hd : (a :: dates ++ C.age site :: post).Nodup
+hdateAbsent : C.age site ∉ a :: dates
+hboundary : ∀ d ∈ a :: dates, NoPrivateWordRead N {site} (boundaryOperations N C H gamma common d)
+hb : NoPrivateWordRead N {site} (boundaryOperations N C H gamma common a)
+ht : NoPrivateWordRead N {site} (calendarTail N C H gamma common a dates)
+op : ProgramStep N
+hop :
+  op ∈
+    match a :: dates, hdates, hd, hdateAbsent, hboundary with
+    | [], hdates, hd, hdateAbsent, hboundary => []
+    | a :: dates, hdates, hd, hdateAbsent, hboundary =>
+      boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a dates ++
+        [ProgramStep.interval (C.age site - finalDate a dates).toNNReal]
+⊢ NoPrivateStepRead N {site} op
+G6OriginalCommonPrefix.lean:155:16: error: Application type mismatch: The argument
+  hpMem
+has type
+  op ∈
+    match pre with
+    | [] => []
+    | a :: dates =>
+      boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a dates ++
+        [ProgramStep.interval (C.age site - finalDate a dates).toNNReal]
+but is expected to have type
+  op ∈
+    match pre, hdates, hd, hdateAbsent, hboundary with
+    | [], hdates, hd, hdateAbsent, hboundary => []
+    | a :: dates, hdates, hd, hdateAbsent, hboundary =>
+      boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a dates ++
+        [ProgramStep.interval (C.age site - finalDate a dates).toNNReal]
+in the application
+  hp op hpMem
+'GProgram.G6.OriginalCommonPrefix.actual_compiled_before_node_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalCommonPrefix.actual_before_node_noPrivateWordRead' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalCommonPrefix.actual_compiled_before_common_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,6 +1,6 @@
 # Modular Lean baseline and corresponding Rust solver
 
-## Latest checked state — 11 October 2026, 00:22 UTC
+## Latest checked state — 11 October 2026 UTC
 Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
 The current coherent library has **1,504 modules / 100,985 owned declarations /
 91,690 theorem declarations**; [root acceptance](lean/HISTORY-SURVIVAL-UNION-1504-ACCEPTANCE.json)
@@ -12,10 +12,11 @@ The earlier 1,497, 1,487 and other rows below keep their own dated scopes and re
 DOT's 70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
 outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
 corrects claims that old census/target/policy implementations were absent.
-The [newest DOT source delta](design/DISCOVERY-DELTA-20261011T0025Z.md) records
-the hand-reviewed zero-drift local classifier, its accepted effective-radius
-algorithm and the particular sparse-carrier ordinary-factor obstruction.
-These have no new Lean or practical execution receipt.
+The [newest integration checkpoint](design/DISCOVERY-DELTA-20261011T0113Z.md)
+connects DOT's finite-residue lift, simultaneous-square rank result and two new
+G4 forward source drafts to older providers and the current Lean/Rust work.
+The two G4 drafts remain uncompiled; the G3 hand results have no new Lean or
+practical witness receipt here.
 The full practical source-to-optimal-policy solver remains incomplete.
 
 The [fixed audit-storage trial](rust/AUDIT-STREAM-CODEC-FIXED-VALIDATION-ACCEPTANCE-20261010T2357Z.json)
@@ -25,12 +26,24 @@ the complete accepted 6,629,112-byte family168 audit against preserved originals
 passes nine controls; [compressed loader storage](quality/COMPRESSED-STDERR-SOURCE-SAVED-BYTE-GATE-20261011T0010Z.json)
 passes fifteen saved-byte/cache controls. A first real compiler attempt preserved all 12,579,325 diagnostic bytes in
 290,507 gzip bytes, but its new prefix proof failed; the aggregate/audit were
-not reached. The [failed run](lean/G6-NATURAL-COMMON-FACTORIZATION-PREFIX-68E-FAILED-20261011T001624.474830Z-RESULT.json)
-and [proof-only repair](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V3.json)
-retain that distinction. The [natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V3.json)
+not reached. The [first failed run](lean/G6-NATURAL-COMMON-FACTORIZATION-PREFIX-68E-FAILED-20261011T001624.474830Z-RESULT.json)
+retains that distinction. The fourth attempt kernel-checks the prefix;
+the [complete fourth outcome](lean/G6-NATURAL-COMMON-FACTORIZATION-MAIN-FCAD-FAILED-20261011T003950.153734Z-RESULT.json)
+then records the first factorization failure. The [fifth outcome](lean/G6-NATURAL-COMMON-FACTORIZATION-MAIN-1CF-FAILED-20261011T010231.626199Z-RESULT.json)
+reuses that exact successful prefix and narrows the factorization failure to
+three proof/API sites. A frozen proof-only repair remains uncompiled. The
+[natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V6.json)
 connects original once-stored seeds, literal tied-calendar prefixes and carried
-forest arm laws in a proposed 141-module context; its current review is static,
-with no passing kernel receipt yet. These additions do not enlarge the coherent1,504 union.
+forest arm laws in a proposed 141-module context; the factorization, aggregate
+and complete ownership audit remain pending. These additions do not enlarge
+the coherent1,504 union.
+The separate [forest/register compression101 acceptance](lean/G6-FOREST-REGISTER-COMPRESSION-101-ACCEPTANCE-20261011T0109Z.json)
+now passes the fresh component, aggregate, complete owned audit and two saved
+evidence reviews: 2,786 owned declarations / 1,758 theorem declarations.
+Its complete 66-file export is preserved as regular Git files without duplicate
+local materialization. This proves a full forest/register pushforward under
+explicit co-location/live-count premises; physical source reconstruction and
+native refinement remain separate.
 DOT reports a separate live [persistent 1,568-source build](../../communications/2026-10-11-dot-persistent-union1568-running-0005z.md);
 our full-G3 replay is held while its aggregate/audit acceptance remains pending.
 
@@ -48,7 +61,7 @@ Decisions API setup is deferred, with no key created or API call made. The
 [mission](MISSION.md) preserves the full original problem and
 [traceability map](design/TRACEABILITY.md) records remaining obligations.
 The [frozen discovery map](design/DISCOVERY-MAP.md) and the [latest publication
-delta](design/DISCOVERY-DELTA-20261011T0025Z.md) connect DOT G3/G4 results to
+delta](design/DISCOVERY-DELTA-20261011T0113Z.md) connect DOT G3/G4 results to
 their older providers and remaining gaps.
 The [one-page research brief](design/RESEARCH-BRIEF.md) gives the four-lane overview.
 The [goal completion sheet](design/GOAL-STATUS.md) distinguishes completed original
@@ -69,6 +82,7 @@ notes on main identify its accepted scope. No perpetual hosted job is installed.
 
 | Result | Evidence | Meaning |
 |---|---|---|
+| Full original forest/register compression | [Separate101 acceptance](lean/G6-FOREST-REGISTER-COMPRESSION-101-ACCEPTANCE-20261011T0109Z.json), [root saved review](quality/G6-FOREST101-SAVED-ROOT-REVIEW-20261011T0101Z.json) | One fresh module, 100 authenticated parent components, fresh aggregate/full audit and independent saved review pass: 2,786 owned declarations / 1,758 theorem declarations. The existing positive-generator compression and rational certificate push forward through finite full-Code fibres to the complete original register and rooted labelled unranked forest. CoLocated and liveCard≤M remain explicit; one atom list precedes all source/row/output quantifiers. No new law engine, physical source reconstruction, decoder, native refinement or enlarged1,504 union. |
 | Original G6 parallel-arm transport | [Separate 117-module acceptance](lean/G6-ORIGINAL-PARALLEL-ARM-TRANSPORT-117-ACCEPTANCE.json), [root evidence review](quality/G6-PARALLEL-117-ROOT-REVIEW-20261010T2330Z.json), [final handoff](lean/G6-ORIGINAL-PARALLEL-ARM-TRANSPORT-117-FINAL-HANDOFF.json) | One fresh module, 116 authenticated parent components and a fresh aggregate/full audit pass: 3,063 owned declarations / 1,976 theorem declarations. On the actual original parallel arms, swapping occurrence IDs and rates preserves the joint original register and rooted labelled unranked forest epoch law, including carried genealogy. Root and design accept the exact 11 generated-context differences. Natural no-read seed marginalization and joint positive source/forest/bin reconstruction remain separate; the 1,504 union remains unchanged. |
 | Original-family calendar normalization | [Separate 168-module acceptance](lean/G7-ORIGINAL-FAMILY-CALENDAR-NORMALIZATION-168-ACCEPTANCE.json), [root evidence review](quality/FAMILY-NORMALIZATION-168-ROOT-REVIEW-20261010T2310Z.json) | One new module and 167 authenticated parent components pass a fresh aggregate/full audit: 4,907 owned declarations / 3,072 theorem declarations. Supplied strict comparison calendars preserve controlled completed full-Code laws, row/programme responses and whole-history consistency using original fields. Root and independent design review accept the exact narrow-context qualification. The coherent 1,504-module certificate remains unchanged; no 1,505 union has run. |
 | Actual inherited fitter to Rust application | [Scoped acceptance](rust/SOURCE-FIT-REFERENCE-AND-FITTED-TRANSPORT-ACCEPTANCE-20261010T2318Z.json), [saved transport review](quality/FITTED-TRANSPORT-SAVED-ROOT-REVIEW-20261010T2302Z.json), [application byte review](quality/APPLICATION-FITTED-SOURCE-BYTE-REVIEW-20261010T2305Z.json) | 34 transport controls and one actual old-witness export/current-application/native/replay/older-compiler pipeline pass. Both DTOs preserve original rows/actions/equations and exact origin; explicit panel selection feeds bounded natural rooted readout. Three rows/seven terms retain earlier table bytes. Requested reference failure is refused; source/observation provenance, selected-experiment reproduction and universal refinement remain separate. |

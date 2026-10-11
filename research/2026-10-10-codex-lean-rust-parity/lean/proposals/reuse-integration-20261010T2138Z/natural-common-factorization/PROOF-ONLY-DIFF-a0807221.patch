@@ -1,0 +1,22 @@
+--- G6OriginalCommonPrefix-a2275917b1a844e7b12c5198419f17f51646ff5ac84fee435e0c90f1b129eca3.lean
++++ G6OriginalCommonPrefix-a080722170d367fe9aa7420c5c5488fe4c7df73a6d994aba15346a8d2ee4c917.lean
+@@ -9,6 +9,8 @@
+ singleton/nil normalization; definitions, statements and imports are unchanged.
+ The ce9ec8df retry additionally needs a data-only local List.casesOn prefix
+ type, without the earlier hypotheses being generalized into its match.
++The a2275917 retry leaves only the final recursor-to-match application;
++local constructor cases make that conversion explicit.
+ 
+ The older calendar providers already exclude private reads at every strictly
+ earlier original date. This adapter ends the actual compiler prefix within the
+@@ -156,7 +158,9 @@
+   unfold beforeNodeWord at hop
+   rw [List.append_assoc] at hop
+   rcases List.mem_append.mp hop with hpMem | hremaining
+-  · exact hp op hpMem
++  · cases pre with
++    | nil => exact hp op hpMem
++    | cons a dates => exact hp op hpMem
+   · rcases List.mem_append.mp hremaining with hexit | hnode
+     · obtain ⟨e, _, rfl⟩ := List.mem_map.mp hexit
+       trivial

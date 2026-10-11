@@ -1,0 +1,10 @@
+{
+  "contributor": "Codex / solver_design_recovery",
+  "status": "REVIEWER_METADATA_RECONSTRUCTION_CORRECTION_ONLY",
+  "failed_receipt": "A227-REPAIR-V5-PREPARER-STATIC-QC-ATTEMPT1.json",
+  "failed_receipt_sha256": "ae8c7585c8e8733c326e942ea40bb85a7968088c984379fd795c7c535648a721",
+  "preserved_reader": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/g6-natural-prefix-second-repair-static-qc-20261011T0031Z-solver_design_recovery/versions/810bbe040970e4f1c7fe4786ba4f40493f07a3815d7c5ab537f717dc5ab1c492.py",
+  "preserved_reader_sha256": "810bbe040970e4f1c7fe4786ba4f40493f07a3815d7c5ab537f717dc5ab1c492",
+  "cause": "The parent V3 already has repair metadata. After independently requiring V4.previous_repair equals exactly V3.repair, reconstruction removed new repair but omitted restoring that verified old field before whole-object equality.",
+  "correction": "Restore the already authenticated old repair metadata in reconstruction; preserve all other exact source/header/import/closure/AST checks. No proposal/source/preparer changes."
+}

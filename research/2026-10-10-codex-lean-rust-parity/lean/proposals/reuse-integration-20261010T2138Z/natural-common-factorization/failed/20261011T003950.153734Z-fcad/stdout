@@ -1,0 +1,165 @@
+G6NaturalCommonForestFactorization.lean:90:73: error(lean.invalidField): Invalid field `nonneg`: The environment does not contain `Subtype.nonneg`, so it is not possible to project the field `nonneg` from an expression
+  t
+of type `{ r // 0 ≤ r }`
+G6NaturalCommonForestFactorization.lean:100:0: warning: automatically included section variable(s) unused in theorem `GProgram.G6.NaturalCommonForestFactorization.actual_arm_exposure_positive`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G6NaturalCommonForestFactorization.lean:142:43: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+B : NonrootBigon N
+sample : Copy → X
+P : Finset V
+r : PositivePairRates E
+t : ℝ≥0
+s : Code N sample
+hinput : ∀ l ∈ (state s).live, (state s).location l = Location.node B.parents.hybrid
+b : Bool
+hi :
+  ∀ l ∈ (state (erasePrivateCode N P s)).live,
+    (state (erasePrivateCode N P s)).location l = Location.node B.parents.hybrid
+⊢ r.edge (B.parents.parent b) * ↑t = ↑⟨r.edge (B.parents.parent b) * ↑t, ⋯⟩
+G6NaturalCommonForestFactorization.lean:146:72: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  sourceTimeKernel N r t (pulseCode B.parents (erasePrivateCode N P s) fun x => b)
+in the target expression
+  PMF.map (forestRegister N) (sourceTimeKernel N r t (pulseCode B.parents (erasePrivateCode N P s) fun x => b)) =
+    PMF.map (forestRegister N)
+      (sourceTimeKernel N unitRates (armExposure N B r t b) (referencePulse N B (erasePrivateCode N P s)))
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+B : NonrootBigon N
+sample : Copy → X
+P : Finset V
+r : PositivePairRates E
+t : ℝ≥0
+s : Code N sample
+hinput : ∀ l ∈ (state s).live, (state s).location l = Location.node B.parents.hybrid
+b : Bool
+hi :
+  ∀ l ∈ (state (erasePrivateCode N P s)).live,
+    (state (erasePrivateCode N P s)).location l = Location.node B.parents.hybrid
+he :
+  sourceTimeKernel N r t (pulseCode B.parents (erasePrivateCode N P s) fun x => b) =
+    sourceTimeKernel N unitRates (armExposure N B r t b) (pulseCode B.parents (erasePrivateCode N P s) fun x => b)
+⊢ PMF.map (forestRegister N) (sourceTimeKernel N r t (pulseCode B.parents (erasePrivateCode N P s) fun x => b)) =
+    PMF.map (forestRegister N)
+      (sourceTimeKernel N unitRates (armExposure N B r t b) (referencePulse N B (erasePrivateCode N P s)))
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    fun x => b
+  has type
+    AtNode (state s) B.parents.hybrid → Bool
+  but is expected to have type
+    AtNode (state (erasePrivateCode N P s)) B.parents.hybrid → Bool
+  in the application
+    pulseCode B.parents (erasePrivateCode N P s) fun x => b
+G6NaturalCommonForestFactorization.lean:143:38: warning: declaration uses `sorry`
+G6NaturalCommonForestFactorization.lean:165:4: error: 'change' tactic failed, pattern
+  (decodeSnapshot N.root (encodeSnapshot (exitEdge N (state s) e) ?m.188)).genealogy l = ?m.194
+is not definitionally equal to target
+  (fun l => toUnranked ((state (exitCode N s e)).genealogy l)) l = (fun l => toUnranked ((state s).genealogy l)) l
+G6NaturalCommonForestFactorization.lean:230:5: error: unexpected token 'prefix'; expected '_' or identifier
+G6NaturalCommonForestFactorization.lean:230:13: error: unexpected identifier; expected prec
+G6NaturalCommonForestFactorization.lean:233:50: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:240:43: error: unexpected token '_'; expected ':'
+G6NaturalCommonForestFactorization.lean:271:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  if ?m.155 = ?m.155 then ?m.157 else ?m.158
+in the target expression
+  sourceTimeKernel N unitRates (armExposure N B r t longArm) (referencePulse N B s) =
+    (sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s)).bind fun s =>
+      if longArm = longArm then
+        sourceTimeKernel N unitRates (armExposure N B r t longArm - armExposure N B r t !longArm) s
+      else PMF.pure s
+
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+B : NonrootBigon N
+sample : Copy → X
+r : PositivePairRates E
+t : ℝ≥0
+s : Code N sample
+longArm : Bool
+hle : (armExposure N B r t !longArm) ≤ armExposure N B r t longArm
+⊢ sourceTimeKernel N unitRates (armExposure N B r t longArm) (referencePulse N B s) =
+    (sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s)).bind fun s =>
+      if longArm = longArm then
+        sourceTimeKernel N unitRates (armExposure N B r t longArm - armExposure N B r t !longArm) s
+      else PMF.pure s
+G6NaturalCommonForestFactorization.lean:276:4: error: `simp` made no progress
+G6NaturalCommonForestFactorization.lean:289:5: error: unexpected token 'prefix'; expected '_' or identifier
+G6NaturalCommonForestFactorization.lean:289:13: error: unexpected identifier; expected prec
+G6NaturalCommonForestFactorization.lean:289:81: error: unexpected token ')'; expected ':'
+G6NaturalCommonForestFactorization.lean:290:56: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:298:40: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:302:38: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:312:46: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:331:67: error: unexpected identifier; expected ':'
+G6NaturalCommonForestFactorization.lean:339:83: error: unexpected identifier; expected ':'
+G6NaturalCommonForestFactorization.lean:344:38: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:345:61: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:383:7: error: unexpected token 'prefix'; expected '(', ':=', 'rec', '|' or term
+G6NaturalCommonForestFactorization.lean:383:14: error: unexpected token ':='; expected ':'
+G6NaturalCommonForestFactorization.lean:384:58: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:393:12: error: unexpected token '++'; expected ':'
+G6NaturalCommonForestFactorization.lean:398:40: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:402:38: error: unexpected token '('; expected ':'
+G6NaturalCommonForestFactorization.lean:413:12: error: unexpected token ':='; expected ':'
+G6NaturalCommonForestFactorization.lean:423:12: error: unexpected token '('; expected ':'
+'GProgram.G6.NaturalCommonForestFactorization.actual_arm_exposure_positive' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_arm_erased_reference' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_common_erased_reference' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+G6NaturalCommonForestFactorization.lean:441:14: error(lean.unknownIdentifier): Unknown constant `actual_natural_stored_selector`
+'GProgram.G6.NaturalCommonForestFactorization.actual_private_bit_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+G6NaturalCommonForestFactorization.lean:443:14: error(lean.unknownIdentifier): Unknown constant `actual_natural_common_erased_full_forest_factorization`
+'GProgram.G6.NaturalCommonForestFactorization.actual_tied_calendar_common_factorization' does not depend on any axioms
+'GProgram.G6.NaturalCommonForestFactorization.actual_no_read_future_erased_full_forest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

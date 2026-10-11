@@ -1,0 +1,616 @@
+{
+  "status": "PASS_ALL_REQUESTED_TARGETS",
+  "workspace": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z",
+  "actual_run": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z",
+  "evidence": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/lossless-export/proof101-20261011T005209.997288Z",
+  "final_receipt": {
+    "status": "PASS_ALL_REQUESTED_TARGETS",
+    "graph_sha256": "ac8042a7a5bba64aa11d775eb971fe2491c7669cb2a658faa01a057cf8be547d",
+    "native_runtime_digest": "6f8ad181b1b3b832d74cf0f88255b519a3512252c343d3e0cde0c540cbfe7aac",
+    "native_runtime_final_rehash_stable": true,
+    "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "compiler_final_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "compiler_identity_stable": true,
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "targets_requested": [
+      "extraction/g6-original-forest-register-compression-2fc15e1e"
+    ],
+    "targets_passed": [
+      "extraction/g6-original-forest-register-compression-2fc15e1e"
+    ],
+    "counts": {
+      "cache_reuse": 100,
+      "fresh_components": 1
+    },
+    "run": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z",
+    "new_mathematical_theorem_claimed": false,
+    "fresh_all_sources_claimed": false,
+    "fresh_every_selected_component_context_in_this_run": false,
+    "freshness_note": "Explicit counts and each component receipt directory establish current-run compilation versus authenticated exact-context reuse. Never infer freshness from successful aggregates or absence of prior candidate reuse.",
+    "trust_level": 0,
+    "kernel_checking": true,
+    "ordinary_memory_cap_mib": 4096,
+    "single_exact_source_memory_exception": {
+      "module": "ThetaCertificate5",
+      "sha256": "e541af41b215cf473e63d4e968fdc42b31fe74f6384387f66de61f1ebbd7fbab",
+      "memory_mib": 6144,
+      "seconds": 600
+    },
+    "component_count_semantics": "Successful exact artifact-context cache admissions and reuse events; unique source and context identities remain in the component receipts"
+  },
+  "lossless_distribution": "FIXED_SHMEM_EXPORT_ONLY_EXPLICIT_CAPACITY_BOUNDARY",
+  "complete_lossless_export_original": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/lossless-export/proof101-20261011T005209.997288Z",
+  "packet_distribution_complete": false,
+  "overlay_capacity_preflight": {
+    "free_before_bytes": 8421376,
+    "transient_reserve_bytes": 8388608,
+    "measured_payload_bytes": 4363174,
+    "manifest_and_result_reserve_bytes": 65536,
+    "source_or_evidence_deleted": false
+  },
+  "executed_target_module_counts": {
+    "extraction/g6-original-forest-register-compression-2fc15e1e": 101
+  },
+  "guard_complete_staging_graph_modules": 104,
+  "protected_provider_context_executed": false,
+  "historical_export_policy": "Same accepted Family-v2 eightMiB headroom rationale: Git object/index writes use a separate measured pool. Current Root authorized measured packet export or explicitly bound fixed shmem lossless fallback; no deletion or math run policy change.",
+  "preserved_files": [
+    {
+      "path": "AUTHENTICATED-OVERLAY-PINS.json",
+      "sha256": "408538eaafc725950b9a092a5495e9696553b8d12ea448d2740ef6d5367f1bbb",
+      "bytes": 462,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/AUTHENTICATED-OVERLAY-PINS.json",
+      "original_sha256": "408538eaafc725950b9a092a5495e9696553b8d12ea448d2740ef6d5367f1bbb"
+    },
+    {
+      "path": "AUTHENTICATED-OVERLAY-WRAPPER.py",
+      "sha256": "38e5f72964cb93668132cb7fbda80c1b24801c6d207e267a7ba2633186165020",
+      "bytes": 4475,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/AUTHENTICATED-OVERLAY-WRAPPER.py",
+      "original_sha256": "38e5f72964cb93668132cb7fbda80c1b24801c6d207e267a7ba2633186165020"
+    },
+    {
+      "path": "AuditTemplate.lean",
+      "sha256": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a",
+      "bytes": 2709,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/AuditTemplate.lean",
+      "original_sha256": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a"
+    },
+    {
+      "path": "BUILDER.py",
+      "sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc",
+      "bytes": 19016,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/BUILDER.py",
+      "original_sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc"
+    },
+    {
+      "path": "CACHE-INSTALL-ALIASES.json.gz",
+      "sha256": "11fb0ab4843361441533c4a8400d9b94ac8a917b9ecaa4eaab4f5fbf8a45f9aa",
+      "bytes": 22436,
+      "encoding": "gzip",
+      "restored_path": "CACHE-INSTALL-ALIASES.json",
+      "restored_sha256": "2e4697b4d4ee95da57522827d0146ded5d9ad52211b47709c61db323947e81b9",
+      "restored_bytes": 126989,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/CACHE-INSTALL-ALIASES.json",
+      "original_sha256": "2e4697b4d4ee95da57522827d0146ded5d9ad52211b47709c61db323947e81b9"
+    },
+    {
+      "path": "CACHE-INSTALL-TRANSPORT-CHECKS.jsonl.gz",
+      "sha256": "69525fc61c9eb03c2c802766c5bd881c358de4b858010260a80630735b9cd55b",
+      "bytes": 14811,
+      "encoding": "gzip",
+      "restored_path": "CACHE-INSTALL-TRANSPORT-CHECKS.jsonl",
+      "restored_sha256": "cb3b8614bd3cbc65c2b76b8fe036755318dfe973e1e3ec74ca139a0cf7594c89",
+      "restored_bytes": 152745,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/CACHE-INSTALL-TRANSPORT-CHECKS.jsonl",
+      "original_sha256": "cb3b8614bd3cbc65c2b76b8fe036755318dfe973e1e3ec74ca139a0cf7594c89"
+    },
+    {
+      "path": "CACHE-INSTALL-TRANSPORT-PINS.json",
+      "sha256": "b30ff75f6a2b04fad2e9f23743cdf98c3ff8bd0feee1e26a97a10cff9b7dab7b",
+      "bytes": 468,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/CACHE-INSTALL-TRANSPORT-PINS.json",
+      "original_sha256": "b30ff75f6a2b04fad2e9f23743cdf98c3ff8bd0feee1e26a97a10cff9b7dab7b"
+    },
+    {
+      "path": "COMPRESSED-STDERR-STORAGE-PINS.json",
+      "sha256": "0dc3edb79a67c593bdc85dc5497f53b56bbc1e7f7a61c7a70c837de038d6f84f",
+      "bytes": 690,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/COMPRESSED-STDERR-STORAGE-PINS.json",
+      "original_sha256": "0dc3edb79a67c593bdc85dc5497f53b56bbc1e7f7a61c7a70c837de038d6f84f"
+    },
+    {
+      "path": "COMPRESSED-STDERR-STORAGE-WRAPPER.py",
+      "sha256": "d774eb292aa0b819791458c51a9353885d3d31b2bde781b85b3c26829e61c810",
+      "bytes": 18086,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/COMPRESSED-STDERR-STORAGE-WRAPPER.py",
+      "original_sha256": "d774eb292aa0b819791458c51a9353885d3d31b2bde781b85b3c26829e61c810"
+    },
+    {
+      "path": "DEPENDENCY-GRAPH.json.gz",
+      "sha256": "39cae016378c6af7d9d62062f08915ea91edecb978276f7a027c6cb440a2500e",
+      "bytes": 8844,
+      "encoding": "gzip",
+      "restored_path": "DEPENDENCY-GRAPH.json",
+      "restored_sha256": "ac8042a7a5bba64aa11d775eb971fe2491c7669cb2a658faa01a057cf8be547d",
+      "restored_bytes": 42542,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/DEPENDENCY-GRAPH.json",
+      "original_sha256": "ac8042a7a5bba64aa11d775eb971fe2491c7669cb2a658faa01a057cf8be547d"
+    },
+    {
+      "path": "EVENTS.jsonl",
+      "sha256": "fc72bf842306f1e228ac17f6735f84379eaef21eeb1cc9a73c74ba4beadd1f1c",
+      "bytes": 214,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/EVENTS.jsonl",
+      "original_sha256": "fc72bf842306f1e228ac17f6735f84379eaef21eeb1cc9a73c74ba4beadd1f1c"
+    },
+    {
+      "path": "FINAL-RECEIPT.json",
+      "sha256": "6ad366f9459a94023734baeb2eb3a09bb6c4484f13d4e94256882af12cdd69d5",
+      "bytes": 1770,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/FINAL-RECEIPT.json",
+      "original_sha256": "6ad366f9459a94023734baeb2eb3a09bb6c4484f13d4e94256882af12cdd69d5"
+    },
+    {
+      "path": "MULTI-TARGET-LAUNCHER-PINS.json",
+      "sha256": "47d63d656812e94843cef805bbc17a9e4e215155f68d57f4117e5e7124041f4f",
+      "bytes": 428,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/MULTI-TARGET-LAUNCHER-PINS.json",
+      "original_sha256": "47d63d656812e94843cef805bbc17a9e4e215155f68d57f4117e5e7124041f4f"
+    },
+    {
+      "path": "MULTI-TARGET-LAUNCHER.py",
+      "sha256": "1ecc750032bbe5d0c44ae11dd1ca330db7e607a890c56b2a4c4516b202446b6c",
+      "bytes": 3857,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/MULTI-TARGET-LAUNCHER.py",
+      "original_sha256": "1ecc750032bbe5d0c44ae11dd1ca330db7e607a890c56b2a4c4516b202446b6c"
+    },
+    {
+      "path": "NAMESPACE-OVERLAY-PINS.json",
+      "sha256": "5247380015724a35c7d904242a5b9de93296cb8ee929bebc3a483b3eb392abe4",
+      "bytes": 1470,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/NAMESPACE-OVERLAY-PINS.json",
+      "original_sha256": "5247380015724a35c7d904242a5b9de93296cb8ee929bebc3a483b3eb392abe4"
+    },
+    {
+      "path": "NAMESPACE-OVERLAY-WRAPPER.py",
+      "sha256": "ce13457fdd755ae75ddab61e30506554d742920741a8636412a18687b54ab80e",
+      "bytes": 11307,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/NAMESPACE-OVERLAY-WRAPPER.py",
+      "original_sha256": "ce13457fdd755ae75ddab61e30506554d742920741a8636412a18687b54ab80e"
+    },
+    {
+      "path": "NAMESPACE-RESOLUTION-CHECKS.jsonl.gz",
+      "sha256": "1c1cb01deb4e219e86139d0b23dc6756aa100a5b92315ce403fbcaf2c0e951f4",
+      "bytes": 1201793,
+      "encoding": "gzip",
+      "restored_path": "NAMESPACE-RESOLUTION-CHECKS.jsonl",
+      "restored_sha256": "b8c187f3e3299c278e71b9e711ae85c9599c7f60cff5260eb6567cc4041a427f",
+      "restored_bytes": 5157631,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/NAMESPACE-RESOLUTION-CHECKS.jsonl",
+      "original_sha256": "b8c187f3e3299c278e71b9e711ae85c9599c7f60cff5260eb6567cc4041a427f"
+    },
+    {
+      "path": "NATIVE-RUNTIME-FINAL-REHASH.json",
+      "sha256": "f9c59dc6a457383abb3d70ab390e8054691e5c894e2ed0ea3b59efb324ff8f89",
+      "bytes": 3850,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/NATIVE-RUNTIME-FINAL-REHASH.json",
+      "original_sha256": "f9c59dc6a457383abb3d70ab390e8054691e5c894e2ed0ea3b59efb324ff8f89"
+    },
+    {
+      "path": "NATIVE-RUNTIME-PINS.json",
+      "sha256": "0cdd477881afb1fe1703f72e69788287b3aa7e8527e145482d7cceb542516ae6",
+      "bytes": 9190,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/NATIVE-RUNTIME-PINS.json",
+      "original_sha256": "0cdd477881afb1fe1703f72e69788287b3aa7e8527e145482d7cceb542516ae6"
+    },
+    {
+      "path": "RUNNER-AND-INPUT-PINS.json",
+      "sha256": "21b41297a86b57dc008fbeb84634cd8ddea9a41de64e22e5c7a5050f253b6b2b",
+      "bytes": 272,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/RUNNER-AND-INPUT-PINS.json",
+      "original_sha256": "21b41297a86b57dc008fbeb84634cd8ddea9a41de64e22e5c7a5050f253b6b2b"
+    },
+    {
+      "path": "STDERR-STORAGE-POLICY.json",
+      "sha256": "565e4a0636d8394590ec5bfbd84233f08905c105b2ef9de7280749268ba8c95c",
+      "bytes": 550,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/STDERR-STORAGE-POLICY.json",
+      "original_sha256": "565e4a0636d8394590ec5bfbd84233f08905c105b2ef9de7280749268ba8c95c"
+    },
+    {
+      "path": "TARGET-SUMMARY.json",
+      "sha256": "9ba3c7c67fa4942e01b15fed028910d07ffb918bd1b7989512663609ab5b734d",
+      "bytes": 237,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/TARGET-SUMMARY.json",
+      "original_sha256": "9ba3c7c67fa4942e01b15fed028910d07ffb918bd1b7989512663609ab5b734d"
+    },
+    {
+      "path": "attempts/00001-G6OriginalForestRegisterCompression/STDERR-CAPTURE.json",
+      "sha256": "212816de087fc94b54284b62a93f84396aa944932fd16358c8228f10d13276cc",
+      "bytes": 515,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00001-G6OriginalForestRegisterCompression/STDERR-CAPTURE.json",
+      "original_sha256": "212816de087fc94b54284b62a93f84396aa944932fd16358c8228f10d13276cc"
+    },
+    {
+      "path": "attempts/00001-G6OriginalForestRegisterCompression/receipt.json",
+      "sha256": "d50b1430e8c483048ecc1608f88d2e4b04d4e088d9fcc0ac9ea5541f4f119847",
+      "bytes": 8673,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00001-G6OriginalForestRegisterCompression/receipt.json",
+      "original_sha256": "d50b1430e8c483048ecc1608f88d2e4b04d4e088d9fcc0ac9ea5541f4f119847"
+    },
+    {
+      "path": "attempts/00001-G6OriginalForestRegisterCompression/stderr.raw.gz",
+      "sha256": "d5a59f5199a01e2083d03496ea54a00dc422b53ff0e187a2ded5f84400ed4126",
+      "bytes": 290899,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00001-G6OriginalForestRegisterCompression/stderr.raw.gz",
+      "original_sha256": "d5a59f5199a01e2083d03496ea54a00dc422b53ff0e187a2ded5f84400ed4126"
+    },
+    {
+      "path": "attempts/00001-G6OriginalForestRegisterCompression/stdout",
+      "sha256": "c9987e0c1925c338da74cc019655cd8bf262afd5b7235c4c4d483498073b4cec",
+      "bytes": 591,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00001-G6OriginalForestRegisterCompression/stdout",
+      "original_sha256": "c9987e0c1925c338da74cc019655cd8bf262afd5b7235c4c4d483498073b4cec"
+    },
+    {
+      "path": "attempts/00001-G6OriginalForestRegisterCompression/work/G6OriginalForestRegisterCompression.lean",
+      "sha256": "2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a",
+      "bytes": 8581,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00001-G6OriginalForestRegisterCompression/work/G6OriginalForestRegisterCompression.lean",
+      "original_sha256": "2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a"
+    },
+    {
+      "path": "attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/STDERR-CAPTURE.json",
+      "sha256": "1f2fd24ff994fd6510e1c1522b6b310feccb84b15f59d34e3e57dced5906555f",
+      "bytes": 549,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/STDERR-CAPTURE.json",
+      "original_sha256": "1f2fd24ff994fd6510e1c1522b6b310feccb84b15f59d34e3e57dced5906555f"
+    },
+    {
+      "path": "attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/receipt.json",
+      "sha256": "49e5f73b3beb0658f34263cd6d917c8d19e7976cfce39abcd9435d2b14fd0e5d",
+      "bytes": 7546,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/receipt.json",
+      "original_sha256": "49e5f73b3beb0658f34263cd6d917c8d19e7976cfce39abcd9435d2b14fd0e5d"
+    },
+    {
+      "path": "attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/stderr.raw.gz",
+      "sha256": "0dc67b05ec46132cd546760d8e7008ca39cdc7cf9efecf747eca17f674653664",
+      "bytes": 286095,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/stderr.raw.gz",
+      "original_sha256": "0dc67b05ec46132cd546760d8e7008ca39cdc7cf9efecf747eca17f674653664"
+    },
+    {
+      "path": "attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/stdout",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/work/Connected_extraction_g6-original-forest-register-compression-2fc15e1e.lean",
+      "sha256": "64ad19b5ccb7a79fc282d2edf4f3370fcaf98e64232238bde8e4f3a7b5fcd4e0",
+      "bytes": 43,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00002-Connected_extraction_g6-original-forest-register-compression-2fc15e1e/work/Connected_extraction_g6-original-forest-register-compression-2fc15e1e.lean",
+      "original_sha256": "64ad19b5ccb7a79fc282d2edf4f3370fcaf98e64232238bde8e4f3a7b5fcd4e0"
+    },
+    {
+      "path": "attempts/00003-OwnedAudit/STDERR-CAPTURE.json",
+      "sha256": "45642278dbd68c517463bba6702a3e9acba5471171a21a8066e1d6dafc429baf",
+      "bytes": 490,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00003-OwnedAudit/STDERR-CAPTURE.json",
+      "original_sha256": "45642278dbd68c517463bba6702a3e9acba5471171a21a8066e1d6dafc429baf"
+    },
+    {
+      "path": "attempts/00003-OwnedAudit/receipt.json",
+      "sha256": "4beb5f067e88796f3ebc42511304deeeb78425a0c9a2902b1217b29f5c85192a",
+      "bytes": 8152,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00003-OwnedAudit/receipt.json",
+      "original_sha256": "4beb5f067e88796f3ebc42511304deeeb78425a0c9a2902b1217b29f5c85192a"
+    },
+    {
+      "path": "attempts/00003-OwnedAudit/stderr.raw.gz",
+      "sha256": "ff3287afd0153b286d27491e344a15e265f3e8bfb81690e984d55f3564b02d96",
+      "bytes": 289852,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00003-OwnedAudit/stderr.raw.gz",
+      "original_sha256": "ff3287afd0153b286d27491e344a15e265f3e8bfb81690e984d55f3564b02d96"
+    },
+    {
+      "path": "attempts/00003-OwnedAudit/stdout",
+      "sha256": "5f70310bb396d292967579f9f3c4e0564c6c1bff53b2c45b7b731c1798238a38",
+      "bytes": 103,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00003-OwnedAudit/stdout",
+      "original_sha256": "5f70310bb396d292967579f9f3c4e0564c6c1bff53b2c45b7b731c1798238a38"
+    },
+    {
+      "path": "attempts/00003-OwnedAudit/work/AUDIT-RESULT.json.gz",
+      "sha256": "c73e6b54fab1d700eb2ea364231cc1bf9a94af79f23093db1c9a07126cecddcb",
+      "bytes": 424721,
+      "encoding": "gzip",
+      "restored_path": "attempts/00003-OwnedAudit/work/AUDIT-RESULT.json",
+      "restored_sha256": "a12d00f96a1ec86e899b84f08043bcd242c899f7b94f07a67bc74b4cbc5a8d93",
+      "restored_bytes": 3882493,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00003-OwnedAudit/work/AUDIT-RESULT.json",
+      "original_sha256": "a12d00f96a1ec86e899b84f08043bcd242c899f7b94f07a67bc74b4cbc5a8d93"
+    },
+    {
+      "path": "attempts/00003-OwnedAudit/work/OwnedAudit.lean",
+      "sha256": "47b1b5b6d4f523d76e9368308c581d0135e6eb62fd2236540f34734a52a4233e",
+      "bytes": 6465,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/attempts/00003-OwnedAudit/work/OwnedAudit.lean",
+      "original_sha256": "47b1b5b6d4f523d76e9368308c581d0135e6eb62fd2236540f34734a52a4233e"
+    },
+    {
+      "path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/ACTUAL-IMPORTED-ARTIFACTS.json.gz",
+      "sha256": "3c6b1fce7109299f7e83c108dd998f598b36a9fd6e7cbe8b1be20ad7e05f2a9a",
+      "bytes": 1419134,
+      "encoding": "gzip",
+      "restored_path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/ACTUAL-IMPORTED-ARTIFACTS.json",
+      "restored_sha256": "e246d4d9c7116b5f68518d6befb82fec2cc978182f5723c63bcaf1563cff1ddd",
+      "restored_bytes": 9591380,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/targets/extraction_g6-original-forest-register-compression-2fc15e1e/ACTUAL-IMPORTED-ARTIFACTS.json",
+      "original_sha256": "e246d4d9c7116b5f68518d6befb82fec2cc978182f5723c63bcaf1563cff1ddd"
+    },
+    {
+      "path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/Connected_extraction_g6-original-forest-register-compression-2fc15e1e.lean",
+      "sha256": "64ad19b5ccb7a79fc282d2edf4f3370fcaf98e64232238bde8e4f3a7b5fcd4e0",
+      "bytes": 43,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/targets/extraction_g6-original-forest-register-compression-2fc15e1e/Connected_extraction_g6-original-forest-register-compression-2fc15e1e.lean",
+      "original_sha256": "64ad19b5ccb7a79fc282d2edf4f3370fcaf98e64232238bde8e4f3a7b5fcd4e0"
+    },
+    {
+      "path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/FINAL-NAMESPACE-AUTHENTICATION.json",
+      "sha256": "0343d21927becaa436522ee8878d3be56fbd352ae250943506055d2126338736",
+      "bytes": 262,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/targets/extraction_g6-original-forest-register-compression-2fc15e1e/FINAL-NAMESPACE-AUTHENTICATION.json",
+      "original_sha256": "0343d21927becaa436522ee8878d3be56fbd352ae250943506055d2126338736"
+    },
+    {
+      "path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/MATHLIB-NAMESPACE-OVERLAY.json.gz",
+      "sha256": "64e0893fcbbd9da48967f170ee09f4c65a773c8a0df98919040daef573de506b",
+      "bytes": 6155,
+      "encoding": "gzip",
+      "restored_path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/MATHLIB-NAMESPACE-OVERLAY.json",
+      "restored_sha256": "264da45ea3dfe3c779e485ed9742f1f45f2cfa27a0b6120ec3ebaea98d50778d",
+      "restored_bytes": 162367,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/targets/extraction_g6-original-forest-register-compression-2fc15e1e/MATHLIB-NAMESPACE-OVERLAY.json",
+      "original_sha256": "264da45ea3dfe3c779e485ed9742f1f45f2cfa27a0b6120ec3ebaea98d50778d"
+    },
+    {
+      "path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/OwnedAudit.lean",
+      "sha256": "47b1b5b6d4f523d76e9368308c581d0135e6eb62fd2236540f34734a52a4233e",
+      "bytes": 6465,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/targets/extraction_g6-original-forest-register-compression-2fc15e1e/OwnedAudit.lean",
+      "original_sha256": "47b1b5b6d4f523d76e9368308c581d0135e6eb62fd2236540f34734a52a4233e"
+    },
+    {
+      "path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/RESULT.json.gz",
+      "sha256": "f3a91787af2c7b21a36accbd47bfa6c55491b3616c162304b1c97aac77ba6180",
+      "bytes": 68636,
+      "encoding": "gzip",
+      "restored_path": "targets/extraction_g6-original-forest-register-compression-2fc15e1e/RESULT.json",
+      "restored_sha256": "27c355c9deb1d0fdb701962957f9cfd5ceda74c1cc213265b229608aa16cdb0c",
+      "restored_bytes": 901260,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/.build/runs/20261011T005209.997288Z/targets/extraction_g6-original-forest-register-compression-2fc15e1e/RESULT.json",
+      "original_sha256": "27c355c9deb1d0fdb701962957f9cfd5ceda74c1cc213265b229608aa16cdb0c"
+    },
+    {
+      "path": "preparation/PREPARATION.json",
+      "sha256": "3bdb3eded7c07885b7173a38c56087e2b56990b02a3d8bb6e49185269089fa6a",
+      "bytes": 25676,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/PREPARATION.json",
+      "original_sha256": "3bdb3eded7c07885b7173a38c56087e2b56990b02a3d8bb6e49185269089fa6a"
+    },
+    {
+      "path": "preparation/DEPENDENCY-GRAPH.json.gz",
+      "sha256": "39cae016378c6af7d9d62062f08915ea91edecb978276f7a027c6cb440a2500e",
+      "bytes": 8844,
+      "encoding": "gzip",
+      "restored_path": "preparation/DEPENDENCY-GRAPH.json",
+      "restored_sha256": "ac8042a7a5bba64aa11d775eb971fe2491c7669cb2a658faa01a057cf8be547d",
+      "restored_bytes": 42542,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/DEPENDENCY-GRAPH.json",
+      "original_sha256": "ac8042a7a5bba64aa11d775eb971fe2491c7669cb2a658faa01a057cf8be547d"
+    },
+    {
+      "path": "preparation/SOURCE-CLOSURE.json.gz",
+      "sha256": "0a4d21b8c6ebc3f7df6d76a080e31f3b62a6215b2c03d9edb8e23e1369cf3bd0",
+      "bytes": 8698,
+      "encoding": "gzip",
+      "restored_path": "preparation/SOURCE-CLOSURE.json",
+      "restored_sha256": "1d1ca4dd5aef7acc57ed445bdb2d9ebd8ad286afc0381d47fa345acdd7816812",
+      "restored_bytes": 69069,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/SOURCE-CLOSURE.json",
+      "original_sha256": "1d1ca4dd5aef7acc57ed445bdb2d9ebd8ad286afc0381d47fa345acdd7816812"
+    },
+    {
+      "path": "preparation/SOURCE-TRANSPORT.json.gz",
+      "sha256": "1c2d0d76b79e1f220ddd86be1ee0d77de81ac236fead844b984b869b905d8895",
+      "bytes": 6193,
+      "encoding": "gzip",
+      "restored_path": "preparation/SOURCE-TRANSPORT.json",
+      "restored_sha256": "c8ccf2f744a3fc889eb56a26b3f181cba385b9926951800c84366fd7b114ea70",
+      "restored_bytes": 50571,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/SOURCE-TRANSPORT.json",
+      "original_sha256": "c8ccf2f744a3fc889eb56a26b3f181cba385b9926951800c84366fd7b114ea70"
+    },
+    {
+      "path": "preparation/FRESH-SOURCES.json",
+      "sha256": "97cb8a8672bb3abdf598f158ff07709ba6b3bc818c1f41c5b0c78df6b93db35b",
+      "bytes": 329,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/FRESH-SOURCES.json",
+      "original_sha256": "97cb8a8672bb3abdf598f158ff07709ba6b3bc818c1f41c5b0c78df6b93db35b"
+    },
+    {
+      "path": "preparation/LOCATION-AND-COMPOSITION-DERIVATION.json",
+      "sha256": "6d583d23e79841446c1b75f862e1793ff2aab21b9788677bb4e2cc291563ca2d",
+      "bytes": 4793,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/LOCATION-AND-COMPOSITION-DERIVATION.json",
+      "original_sha256": "6d583d23e79841446c1b75f862e1793ff2aab21b9788677bb4e2cc291563ca2d"
+    },
+    {
+      "path": "preparation/RESOURCE-AND-RUN-PLAN.json",
+      "sha256": "d2b3e624605b04a864b0f8ae6522c8567b17d7a2d739b09efe8559b7109354ff",
+      "bytes": 4282,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/RESOURCE-AND-RUN-PLAN.json",
+      "original_sha256": "d2b3e624605b04a864b0f8ae6522c8567b17d7a2d739b09efe8559b7109354ff"
+    },
+    {
+      "path": "preparation/CACHE-SEED-RECEIPT.json.gz",
+      "sha256": "6f61f49cf11140145359cc231e53672c78c067b681046ae6b020be26b5e48409",
+      "bytes": 29191,
+      "encoding": "gzip",
+      "restored_path": "preparation/CACHE-SEED-RECEIPT.json",
+      "restored_sha256": "50a51a4e5351a81c85edeefdafefed54ca376283b6c72167f2fd3314f41d6d2f",
+      "restored_bytes": 275613,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/CACHE-SEED-RECEIPT.json",
+      "original_sha256": "50a51a4e5351a81c85edeefdafefed54ca376283b6c72167f2fd3314f41d6d2f"
+    },
+    {
+      "path": "preparation/CACHE-TRANSPORT-PRE-USE-PLAN.json.gz",
+      "sha256": "f5a8fc7ff4eab17fe8f9d5a01bd9d666827754d04765f4aebf953fa6b7289544",
+      "bytes": 27864,
+      "encoding": "gzip",
+      "restored_path": "preparation/CACHE-TRANSPORT-PRE-USE-PLAN.json",
+      "restored_sha256": "48928d429ea6db4df1c90263283777ed3eb0f3467248a06bbfcd4f91e29f169e",
+      "restored_bytes": 239689,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/CACHE-TRANSPORT-PRE-USE-PLAN.json",
+      "original_sha256": "48928d429ea6db4df1c90263283777ed3eb0f3467248a06bbfcd4f91e29f169e"
+    },
+    {
+      "path": "preparation/CACHE-INSTALL-ALIASES.json.gz",
+      "sha256": "11fb0ab4843361441533c4a8400d9b94ac8a917b9ecaa4eaab4f5fbf8a45f9aa",
+      "bytes": 22436,
+      "encoding": "gzip",
+      "restored_path": "preparation/CACHE-INSTALL-ALIASES.json",
+      "restored_sha256": "2e4697b4d4ee95da57522827d0146ded5d9ad52211b47709c61db323947e81b9",
+      "restored_bytes": 126989,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/CACHE-INSTALL-ALIASES.json",
+      "original_sha256": "2e4697b4d4ee95da57522827d0146ded5d9ad52211b47709c61db323947e81b9"
+    },
+    {
+      "path": "preparation/CACHE-INSTALL-TRANSPORT-DERIVATION.json",
+      "sha256": "65b50e7149a2822d808648efe9b98af18667227082f10b648cd10eb9c0f3101f",
+      "bytes": 2439,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/CACHE-INSTALL-TRANSPORT-DERIVATION.json",
+      "original_sha256": "65b50e7149a2822d808648efe9b98af18667227082f10b648cd10eb9c0f3101f"
+    },
+    {
+      "path": "preparation/STDERR-STORAGE-POLICY.json",
+      "sha256": "565e4a0636d8394590ec5bfbd84233f08905c105b2ef9de7280749268ba8c95c",
+      "bytes": 550,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/STDERR-STORAGE-POLICY.json",
+      "original_sha256": "565e4a0636d8394590ec5bfbd84233f08905c105b2ef9de7280749268ba8c95c"
+    },
+    {
+      "path": "preparation/PARENT-WRAPPER-EQUIVALENCE.json",
+      "sha256": "49dd5cba5333b1e4de2529a7a85a591ebcbf10a8620e6d6be118a7a1804a7ad6",
+      "bytes": 1745,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/PARENT-WRAPPER-EQUIVALENCE.json",
+      "original_sha256": "49dd5cba5333b1e4de2529a7a85a591ebcbf10a8620e6d6be118a7a1804a7ad6"
+    },
+    {
+      "path": "post-run/POST-RUN-TRANSPORT-REHASH-20261011T005209.997288Z.json.gz",
+      "sha256": "4cb9e3fe2a1c156c1d027ec0ad137cea54d684baa8d89bb2d6f87f0c364a4757",
+      "bytes": 22872,
+      "encoding": "gzip",
+      "restored_path": "post-run/POST-RUN-TRANSPORT-REHASH-20261011T005209.997288Z.json",
+      "restored_sha256": "04dbaf1129fcf9e8f41ce3fdb66eed54b0e747a75072760e1adeb8a055429be1",
+      "restored_bytes": 147072,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/POST-RUN-TRANSPORT-REHASH-20261011T005209.997288Z.json",
+      "original_sha256": "04dbaf1129fcf9e8f41ce3fdb66eed54b0e747a75072760e1adeb8a055429be1"
+    },
+    {
+      "path": "sources/G6OriginalForestRegisterCompression.lean",
+      "sha256": "2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a",
+      "bytes": 8581,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/source-store/2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a.lean",
+      "original_sha256": "2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a"
+    },
+    {
+      "path": "resource-guard/forest-20261011T005209.307622Z/PRE-PHASE-INPUT-PINS.json",
+      "sha256": "41a992a3acf18fd91ea7fef8b98d5c67640ca756b6b332874ce84b1fca702175",
+      "bytes": 4307,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/guard-runs/forest-20261011T005209.307622Z/PRE-PHASE-INPUT-PINS.json",
+      "original_sha256": "41a992a3acf18fd91ea7fef8b98d5c67640ca756b6b332874ce84b1fca702175"
+    },
+    {
+      "path": "resource-guard/forest-20261011T005209.307622Z/RECEIPT.json",
+      "sha256": "331944e51076989749607f27419a96896ecec0f914a3101281281faab14d56c1",
+      "bytes": 1846,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/guard-runs/forest-20261011T005209.307622Z/RECEIPT.json",
+      "original_sha256": "331944e51076989749607f27419a96896ecec0f914a3101281281faab14d56c1"
+    },
+    {
+      "path": "resource-guard/forest-20261011T005209.307622Z/resource-samples.jsonl",
+      "sha256": "f4e56571916b62bfedac0b70662c7741007db5b3e22b00a863a74cf976e91967",
+      "bytes": 11484,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/guard-runs/forest-20261011T005209.307622Z/resource-samples.jsonl",
+      "original_sha256": "f4e56571916b62bfedac0b70662c7741007db5b3e22b00a863a74cf976e91967"
+    },
+    {
+      "path": "resource-guard/forest-20261011T005209.307622Z/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/guard-runs/forest-20261011T005209.307622Z/stderr.txt",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "resource-guard/forest-20261011T005209.307622Z/stdout.txt",
+      "sha256": "fc72bf842306f1e228ac17f6735f84379eaef21eeb1cc9a73c74ba4beadd1f1c",
+      "bytes": 214,
+      "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/guard-runs/forest-20261011T005209.307622Z/stdout.txt",
+      "original_sha256": "fc72bf842306f1e228ac17f6735f84379eaef21eeb1cc9a73c74ba4beadd1f1c"
+    }
+  ],
+  "compiled_artifact_bytes_distributed": false,
+  "original_attempts_overwritten": false,
+  "prior1497_sources_duplicated": false,
+  "preparation_sha256": "3bdb3eded7c07885b7173a38c56087e2b56990b02a3d8bb6e49185269089fa6a",
+  "compressed_distributions_manifest_sha256": "c9c95c2da3f9aa05be941dd27d2bf49360b787394559fcad3d33bc3f0aa4f628",
+  "measured_export_bytes_before_manifest": 4363174,
+  "original_raw_audits_and_full_run_files_preserved_at_fixed_scratch_paths": true,
+  "explicit_optional_preparation_artifacts_absent": [
+    {
+      "path": "MONITOR-REVIEW-CORRECTION.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    },
+    {
+      "path": "PRE-USE-MONITOR-VALIDATION.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    },
+    {
+      "path": "PARTIAL-COMPONENT-ADMISSION-PROVENANCE.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    },
+    {
+      "path": "PRESERVATION-PREFLIGHT-FAILURE-v2.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    },
+    {
+      "path": "EXPORT-PARALLEL-HEADROOM-PREFLIGHT-FAILURE-20261010.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    },
+    {
+      "path": "PRE-USE-STATIC-MEASUREMENT-20261010.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    },
+    {
+      "path": "PREPARATION-INVOCATION-QUALIFICATION.json",
+      "qualification": "Not applicable to this dated context; the current guard hash and provenance are bound by its preparation/run plan."
+    }
+  ],
+  "post_run_transport_verification": {
+    "original_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/POST-RUN-TRANSPORT-REHASH-20261011T005209.997288Z.json",
+    "original_sha256": "04dbaf1129fcf9e8f41ce3fdb66eed54b0e747a75072760e1adeb8a055429be1"
+  },
+  "parent_exporter_path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/preserve_g6_parallel_arm_transport_20261010.py",
+  "parent_exporter_sha256": "a60c9a16fd1641e40bda49d3a42d8c5dde5d44830a01942a1244e9ddef98c154",
+  "exporter_derivation": "Natural scope/count filenames,8MiB portable reserve, required storage policy/parent-source derivation and identity-preserving already-gzip distribution replace the accepted G6 exporter. All decoded evidence, failures, full raw runs, source, resource and transport checks remain required. Combined stderr is already gzip; its encoded identity is distributed unchanged and its capture descriptor binds raw decoded identity.",
+  "natural_exporter_parent_sha256": "8eb80aa506cf29e59035968975ff63f2e1feca2be37ff85b2becefc6eceab366",
+  "natural_exporter_v2_derivation": "Only add the actual relative capture-gate launch working-directory qualification to optional preserved preparation evidence; all byte distributions, reserves, fallback and checks unchanged.",
+  "forest_exporter_parent_sha256": "81d0df529fa183deb5b8881090690d50b172b905716dbffc182e1f68b11e44c4",
+  "forest_exporter_derivation": "Only scope filenames/directory and documentation change from exact natural exporter v2; all lossless rows, partial sidecars, mandatory success postauthentication, original paths,8MiB reserves and explicit fixed-shmem fallback are unchanged.",
+  "exporter_sha256": "f10e3d240ee100572a211bc0d5f598ddfca15fe4a75b20c21b2fdf873fe311af"
+}

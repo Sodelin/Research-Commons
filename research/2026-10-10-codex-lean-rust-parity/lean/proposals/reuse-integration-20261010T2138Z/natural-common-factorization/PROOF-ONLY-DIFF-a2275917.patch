@@ -1,0 +1,36 @@
+--- G6OriginalCommonPrefix-ce9ec8df671d52cb45d3855353faa7c46cffb6660a00cdc2e0f61110602507bd.lean
++++ G6OriginalCommonPrefix-a2275917b1a844e7b12c5198419f17f51646ff5ac84fee435e0c90f1b129eca3.lean
+@@ -7,6 +7,8 @@
+ Proof-only compatibility derivative, 11 October 2026, of frozen 68e0130b.
+ The first compiler attempt exposed left-associated append membership and
+ singleton/nil normalization; definitions, statements and imports are unchanged.
++The ce9ec8df retry additionally needs a data-only local List.casesOn prefix
++type, without the earlier hypotheses being generalized into its match.
+ 
+ The older calendar providers already exclude private reads at every strictly
+ earlier original date. This adapter ends the actual compiler prefix within the
+@@ -124,11 +126,10 @@
+     subst v
+     exact hdateAbsent (by rw [he]; exact hd)
+   have hp : NoPrivateWordRead N {site}
+-      (match pre with
+-       | [] => []
+-       | a :: dates => boundaryOperations N C H gamma common a ++
++      (List.casesOn pre ([] : List (ProgramStep N))
++       (fun a dates => boundaryOperations N C H gamma common a ++
+            calendarTail N C H gamma common a dates ++
+-           [.interval (Real.toNNReal (C.age site - finalDate a dates))]) := by
++           [.interval (Real.toNNReal (C.age site - finalDate a dates))])) := by
+     cases pre with
+     | nil => intro op hop; exact False.elim (List.not_mem_nil hop)
+     | cons a dates =>
+@@ -140,6 +141,9 @@
+           subst v
+           exact hdateAbsent (by rw [he]; exact List.mem_cons_of_mem a hd)
+         intro op hop
++        change op ∈ (boundaryOperations N C H gamma common a ++
++          calendarTail N C H gamma common a dates) ++
++            [.interval (Real.toNNReal (C.age site - finalDate a dates))] at hop
+         rw [List.append_assoc] at hop
+         rcases List.mem_append.mp hop with hboundaryMem | htailMem
+         · exact hb op hboundaryMem

@@ -1,0 +1,123 @@
+G6NaturalCommonForestFactorization.lean:105:0: warning: automatically included section variable(s) unused in theorem `GProgram.G6.NaturalCommonForestFactorization.actual_arm_exposure_positive`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G6NaturalCommonForestFactorization.lean:287:4: error: `simp` made no progress
+G6NaturalCommonForestFactorization.lean:292:4: error: Type mismatch: After simplification, term
+  Eq.symm (PMF.bind_pure (sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s)))
+ has type
+  sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s) =
+    (sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s)).bind PMF.pure
+but is expected to have type
+  sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s) =
+    (sourceTimeKernel N unitRates (armExposure N B r t !longArm) (referencePulse N B s)).bind
+      (residualEpoch N (armExposure N B r t longArm - armExposure N B r t !longArm) longArm !longArm)
+G6NaturalCommonForestFactorization.lean:350:8: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => (state (recordEnd pastOps.length a.2.1 a.2.2)).register _a = a.1 ⟨h, ⋯⟩
+Error: Application type mismatch: The argument
+  a
+has type
+  (PrivateHybrid N {↑h} → Bool) × Code N sample × (Fin pastOps.length → Code N sample)
+but is expected to have type
+  (PrivateHybrid N {_a} → Bool) × Code N sample × (Fin pastOps.length → Code N sample)
+in the application
+  a.2
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+Old : Type u_5
+N : RootedBinary V E X
+C : Calendar N.graph
+B : NonrootBigon N
+h : Hybrid N
+hsite : B.parents.hybrid = ↑h
+sample : Copy → X
+p : HybridProbabilities N
+r : PositivePairRates E
+pastOps : List (ProgramStep N)
+hprefix : NoPrivateWordRead N {↑h} pastOps
+hinput :
+  ∀ a ∈ (initializedSourceHistory N r pastOps (naturalInitialJoint N {↑h} sample p)).support,
+    ∀ l ∈ (state (recordEnd pastOps.length a.2.1 a.2.2)).live,
+      (state (recordEnd pastOps.length a.2.1 a.2.2)).location l = Location.node B.parents.hybrid
+old : Code N sample × (Fin pastOps.length → Code N sample) → Old
+longArm : Bool
+hle : (armExposure N B r (bigonDuration N C B) !longArm) ≤ armExposure N B r (bigonDuration N C B) longArm
+J : PMF ((PrivateHybrid N {↑h} → Bool) × Code N sample × (Fin pastOps.length → Code N sample)) :=
+  initializedSourceHistory N r pastOps (naturalInitialJoint N {↑h} sample p)
+eraseJoint : (PrivateHybrid N {↑h} → Bool) × Code N sample × (Fin pastOps.length → Code N sample) →
+  (PrivateHybrid N {↑h} → Bool) × Code N sample × (Fin pastOps.length → Code N sample) :=
+  fun a => (a.1, erasedRecord N {↑h} a.2)
+row : (PrivateHybrid N {↑h} → Bool) × Code N sample × (Fin pastOps.length → Code N sample) →
+  PMF (Old × (V → Bool) × Finset (UnrankedTree Copy)) :=
+  fun a =>
+    PMF.map (fun d => (old a.2, forestRegister N d))
+      (sourceTimeKernel N unitRates (armExposure N B r (bigonDuration N C B) (a.1 ⟨h, ⋯⟩))
+        (referencePulse N B (recordEnd pastOps.length a.2.1 a.2.2)))
+a : (PrivateHybrid N {↑h} → Bool) × Code N sample × (Fin pastOps.length → Code N sample)
+ha : a ∈ J.support
+he :
+  PMF.map (erasedForestRegister N {↑h})
+      (sourceProgram N r (bigonProgram N C B (originalGamma p h) true) (recordEnd pastOps.length a.2.1 a.2.2)) =
+    PMF.map (forestRegister N)
+      (sourceTimeKernel N unitRates
+        (armExposure N B r (bigonDuration N C B)
+          ((state (recordEnd pastOps.length a.2.1 a.2.2)).register B.parents.hybrid))
+        (referencePulse N B (erasePrivateCode N {↑h} (recordEnd pastOps.length a.2.1 a.2.2))))
+hb : (state (recordEnd pastOps.length a.2.1 a.2.2)).register ↑h = a.1 ⟨h, ⋯⟩
+⊢ PMF.map (fun d => (old (erasedRecord N {↑h} a.2), erasedForestRegister N {↑h} d))
+      (sourceProgram N r (bigonProgram N C B (originalGamma p h) true) (recordEnd pastOps.length a.2.1 a.2.2)) =
+    (row ∘ eraseJoint) a
+G6NaturalCommonForestFactorization.lean:402:7: warning: Variable name `hinput` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hinput
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G6NaturalCommonForestFactorization.lean:408:5: warning: Variable name `hle` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hle
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'GProgram.G6.NaturalCommonForestFactorization.actual_arm_exposure_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_arm_erased_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_common_erased_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_natural_stored_selector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_private_bit_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_natural_common_erased_full_forest_factorization' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_tied_calendar_common_factorization' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_no_read_future_erased_full_forest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

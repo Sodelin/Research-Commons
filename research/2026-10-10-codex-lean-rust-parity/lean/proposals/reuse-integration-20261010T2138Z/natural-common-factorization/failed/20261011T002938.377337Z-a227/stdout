@@ -1,0 +1,26 @@
+G6OriginalCommonPrefix.lean:159:16: error: Application type mismatch: The argument
+  hpMem
+has type
+  op ∈
+    match pre with
+    | [] => []
+    | a :: dates =>
+      boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a dates ++
+        [ProgramStep.interval (C.age site - finalDate a dates).toNNReal]
+but is expected to have type
+  op ∈
+    List.casesOn pre [] fun a dates =>
+      boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a dates ++
+        [ProgramStep.interval (C.age site - finalDate a dates).toNNReal]
+in the application
+  hp op hpMem
+'GProgram.G6.OriginalCommonPrefix.actual_compiled_before_node_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalCommonPrefix.actual_before_node_noPrivateWordRead' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.OriginalCommonPrefix.actual_compiled_before_common_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

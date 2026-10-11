@@ -9,6 +9,11 @@ import UnifiedLean.Source.SourceEpochSemigroup
 /-!
 Codex Lean reuse, 10 October 2026. PROPOSAL; no kernel receipt yet.
 
+Proof/API compatibility derivative, 11 October 2026, of frozen fcadb6c4.
+The reserved local/binder name prefix is alpha-renamed to pastOps below.
+Physical expressions, imports and mathematical premises are unchanged;
+subtype, pulse-erasure and residual-bind proof interfaces are made explicit.
+
 Finite actual original COMMON factorization at a local nonroot parallel bigon.
 The initializer is the unchanged original natural register draw. Its stored
 bit remains the COMMON selector through the actual prefix; it is not redrawn.
@@ -87,7 +92,7 @@ noncomputable def unitRates : PositivePairRates E :=
 
 noncomputable def armExposure (N : RootedBinary V E X) (B : NonrootBigon N)
     (r : PositivePairRates E) (t : ℝ≥0) (b : Bool) : ℝ≥0 :=
-  ⟨r.edge (B.parents.parent b) * (t : ℝ), mul_nonneg (r.edge_pos _).le t.nonneg⟩
+  ⟨r.edge (B.parents.parent b) * (t : ℝ), mul_nonneg (r.edge_pos _).le t.property⟩
 
 noncomputable def referencePulse (N : RootedBinary V E X) (B : NonrootBigon N)
     {sample : Copy → X} (s : Code N sample) : Code N sample :=
@@ -140,17 +145,30 @@ theorem actual_arm_erased_reference (N : RootedBinary V E X) (B : NonrootBigon N
     (pulseCode B.parents (erasePrivateCode N P s) (fun _ => b))
     (some (B.parents.parent b)) (constant_pulse_coLocated N B _ hi b)
     r unitRates t (armExposure N B r t b) (by
-      simp only [pairRate, unitRates, armExposure, one_mul])
+      change r.edge (B.parents.parent b) * (t : ℝ) =
+        1 * (r.edge (B.parents.parent b) * (t : ℝ))
+      exact (one_mul _).symm)
+  have hp : erasePrivateCode N P (pulseCode B.parents s (fun _ => b)) =
+      pulseCode B.parents (erasePrivateCode N P s) (fun _ => b) :=
+    erase_pulseCode P B.parents s (fun _ => b)
+  have ht := (actual_sourceTimeKernel_erasure N r P t
+    (pulseCode B.parents s (fun _ => b))).trans
+      ((congrArg (sourceTimeKernel N r t) hp).trans he)
   change ((sourceTimeKernel N r t (pulseCode B.parents s (fun _ => b))).map
     ((forestRegister N) ∘ erasePrivateCode N P)) = _
-  rw [← PMF.map_comp, actual_sourceTimeKernel_erasure, erase_pulseCode, he]
-  cases b with
-  | false => rfl
-  | true =>
-      have h := actual_parallel_arm_full_forest_transport N B unitRates
-        (armExposure N B r t true) (erasePrivateCode N P s) hi true
-      rw [unit_rate_swap] at h
-      exact h
+  rw [← PMF.map_comp]
+  calc
+    _ = (sourceTimeKernel N unitRates (armExposure N B r t b)
+        (pulseCode B.parents (erasePrivateCode N P s) (fun _ => b))).map
+          (forestRegister N) := congrArg (PMF.map (forestRegister N)) ht
+    _ = _ := by
+      cases b with
+      | false => rfl
+      | true =>
+          have h := actual_parallel_arm_full_forest_transport N B unitRates
+            (armExposure N B r t true) (erasePrivateCode N P s) hi true
+          rw [unit_rate_swap] at h
+          exact h
 
 private theorem exit_forest_register (N : RootedBinary V E X) {sample : Copy → X}
     (s : Code N sample) (e : E) : forestRegister N (exitCode N s e) = forestRegister N s := by
@@ -161,9 +179,8 @@ private theorem exit_forest_register (N : RootedBinary V E X) {sample : Copy →
     change (state s).live.image (fun l => toUnranked ((state (exitCode N s e)).genealogy l)) = _
     apply Finset.image_congr
     intro l hl
-    congr 1
-    change (decodeSnapshot N.root (encodeSnapshot (exitEdge N (state s) e) _)).genealogy l = _
-    exact decode_encode_live_genealogy N.root (exitEdge N (state s) e) _ hl
+    exact congrArg toUnranked (decode_encode_live_genealogy N.root (exitEdge N (state s) e)
+      (exitEdge_source_valid N sample _ s.property e).forest hl)
 
 private theorem exit_erased_forest_register (N : RootedBinary V E X) {sample : Copy → X}
     (P : Finset V) (s : Code N sample) (e : E) :
@@ -227,17 +244,17 @@ private theorem recordEnd_register_support (N : RootedBinary V E X)
 COMMON selector at the end of the prefix, including the empty prefix. -/
 theorem actual_natural_stored_selector (N : RootedBinary V E X) (h : Hybrid N)
     (sample : Copy → X) (p : HybridProbabilities N) (r : PositivePairRates E)
-    (prefix : List (ProgramStep N))
+    (pastOps : List (ProgramStep N))
     {a : (PrivateHybrid N {h.val} → Bool) ×
-      (Code N sample × (Fin prefix.length → Code N sample))}
-    (ha : a ∈ (initializedSourceHistory N r prefix
+      (Code N sample × (Fin pastOps.length → Code N sample))}
+    (ha : a ∈ (initializedSourceHistory N r pastOps
       (naturalInitialJoint N {h.val} sample p)).support) :
-    (state (recordEnd prefix.length a.2.1 a.2.2)).register h.val =
+    (state (recordEnd pastOps.length a.2.1 a.2.2)).register h.val =
       a.1 ⟨h, Finset.mem_singleton_self _⟩ := by
   obtain ⟨a0, h0, ha⟩ := (PMF.mem_support_bind_iff _ _ _).mp ha
   obtain ⟨z, hz, rfl⟩ := (PMF.mem_support_map_iff _ _ _).mp ha
   obtain ⟨coin, _, rfl⟩ := (PMF.mem_support_map_iff _ _ _).mp h0
-  rw [recordEnd_register_support N r prefix _ hz]
+  rw [recordEnd_register_support N r pastOps _ hz]
   change originalRegister N coin h.val = coin h
   simp only [originalRegister, dif_pos h.property]
 
@@ -267,13 +284,14 @@ private theorem actual_arm_baseline_residual (N : RootedBinary V E X)
             longArm b) := by
   by_cases hb : b = longArm
   · subst b
-    unfold residualEpoch
-    rw [if_pos rfl, ← actual_source_time_add]
+    simp only [residualEpoch, if_pos rfl]
+    rw [← actual_source_time_add]
     rw [add_tsub_cancel_of_le hle]
   · have hb' : b = !longArm := by cases b <;> cases longArm <;> simp_all
-    rw [hb']
     have hne : (!longArm) ≠ longArm := by cases longArm <;> decide
-    simp only [residualEpoch, if_neg hne, PMF.bind_pure]
+    simpa only [residualEpoch, hb', if_neg hne] using
+      (PMF.bind_pure (sourceTimeKernel N unitRates (armExposure N B r t (!longArm))
+        (referencePulse N B s))).symm
 
 /-- Natural once-drawn COMMON, erased entire past, and complete forest/register
 factorization. ONE positive minimum-exposure epoch precedes the original seed's
@@ -286,49 +304,49 @@ theorem actual_natural_common_erased_full_forest_factorization {Old : Type*}
     (N : RootedBinary V E X) (C : Calendar N.graph) (B : NonrootBigon N)
     (h : Hybrid N) (hsite : B.parents.hybrid = h.val)
     (sample : Copy → X) (p : HybridProbabilities N) (r : PositivePairRates E)
-    (prefix : List (ProgramStep N)) (hprefix : NoPrivateWordRead N {h.val} prefix)
-    (hinput : ∀ a ∈ (initializedSourceHistory N r prefix
+    (pastOps : List (ProgramStep N)) (hprefix : NoPrivateWordRead N {h.val} pastOps)
+    (hinput : ∀ a ∈ (initializedSourceHistory N r pastOps
       (naturalInitialJoint N {h.val} sample p)).support,
-      ∀ l ∈ (state (recordEnd prefix.length a.2.1 a.2.2)).live,
-        (state (recordEnd prefix.length a.2.1 a.2.2)).location l = .node B.parents.hybrid)
-    (old : Code N sample × (Fin prefix.length → Code N sample) → Old)
+      ∀ l ∈ (state (recordEnd pastOps.length a.2.1 a.2.2)).live,
+        (state (recordEnd pastOps.length a.2.1 a.2.2)).location l = .node B.parents.hybrid)
+    (old : Code N sample × (Fin pastOps.length → Code N sample) → Old)
     (longArm : Bool)
     (hle : armExposure N B r (bigonDuration N C B) (!longArm) ≤
       armExposure N B r (bigonDuration N C B) longArm) :
-    (initializedSourceHistory N r prefix (naturalInitialJoint N {h.val} sample p)).bind
+    (initializedSourceHistory N r pastOps (naturalInitialJoint N {h.val} sample p)).bind
       (fun a => (sourceProgram N r (bigonProgram N C B (originalGamma p h) true)
-        (recordEnd prefix.length a.2.1 a.2.2)).map
+        (recordEnd pastOps.length a.2.1 a.2.2)).map
           (fun d => (old (erasedRecord N {h.val} a.2), erasedForestRegister N {h.val} d))) =
-    (initializedEndpointLaw N r prefix (outsideInitialCodeLaw N {h.val} sample p)).bind
+    (initializedEndpointLaw N r pastOps (outsideInitialCodeLaw N {h.val} sample p)).bind
       (fun a => (sourceTimeKernel N unitRates
         (armExposure N B r (bigonDuration N C B) (!longArm))
-        (referencePulse N B (recordEnd prefix.length a.1 a.2))).bind
+        (referencePulse N B (recordEnd pastOps.length a.1 a.2))).bind
           (fun z => ((bitMeasure (originalGamma p h)).toPMF).bind
             (fun b => (residualEpoch N
               (armExposure N B r (bigonDuration N C B) longArm -
                 armExposure N B r (bigonDuration N C B) (!longArm))
               longArm b z).map
                 (fun d => (old a, forestRegister N d))))) := by
-  let J := initializedSourceHistory N r prefix (naturalInitialJoint N {h.val} sample p)
+  let J := initializedSourceHistory N r pastOps (naturalInitialJoint N {h.val} sample p)
   let eraseJoint := fun a : (PrivateHybrid N {h.val} → Bool) ×
-      (Code N sample × (Fin prefix.length → Code N sample)) =>
+      (Code N sample × (Fin pastOps.length → Code N sample)) =>
     (a.1, erasedRecord N {h.val} a.2)
   let row := fun a : (PrivateHybrid N {h.val} → Bool) ×
-      (Code N sample × (Fin prefix.length → Code N sample)) =>
+      (Code N sample × (Fin pastOps.length → Code N sample)) =>
     (sourceTimeKernel N unitRates
       (armExposure N B r (bigonDuration N C B) (a.1 ⟨h, Finset.mem_singleton_self _⟩))
-      (referencePulse N B (recordEnd prefix.length a.2.1 a.2.2))).map
+      (referencePulse N B (recordEnd pastOps.length a.2.1 a.2.2))).map
         (fun d => (old a.2, forestRegister N d))
   have hrow : J.bind (fun a => (sourceProgram N r
         (bigonProgram N C B (originalGamma p h) true)
-        (recordEnd prefix.length a.2.1 a.2.2)).map
+        (recordEnd pastOps.length a.2.1 a.2.2)).map
           (fun d => (old (erasedRecord N {h.val} a.2), erasedForestRegister N {h.val} d))) =
       J.bind (row ∘ eraseJoint) := by
     apply bind_eq_of_eq_on_support
     intro a ha
     have he := actual_common_erased_reference N C B {h.val} r (originalGamma p h)
-      (recordEnd prefix.length a.2.1 a.2.2) (hinput a ha)
-    have hb := actual_natural_stored_selector N h sample p r prefix ha
+      (recordEnd pastOps.length a.2.1 a.2.2) (hinput a ha)
+    have hb := actual_natural_stored_selector N h sample p r pastOps ha
     rw [← hsite] at hb
     rw [hb] at he
     have hp := congrArg (PMF.map (Prod.mk (old (erasedRecord N {h.val} a.2)))) he
@@ -336,27 +354,27 @@ theorem actual_natural_common_erased_full_forest_factorization {Old : Type*}
     simpa only [row, eraseJoint, Function.comp_def, erasedRecord, recordEnd_map] using hp
   change J.bind _ = _
   rw [hrow, ← PMF.bind_map]
-  have hj := actual_private_seed_erased_history_product N {h.val} sample p r prefix hprefix
+  have hj := actual_private_seed_erased_history_product N {h.val} sample p r pastOps hprefix
   change J.map eraseJoint = _ at hj
   rw [hj]
   simp only [independentPMF, PMF.bind_bind, PMF.bind_map, Function.comp_def]
   rw [PMF.bind_comm (privateSeedPMF N {h.val} p)
-    (initializedEndpointLaw N r prefix (outsideInitialCodeLaw N {h.val} sample p))]
-  apply congrArg (PMF.bind (initializedEndpointLaw N r prefix
+    (initializedEndpointLaw N r pastOps (outsideInitialCodeLaw N {h.val} sample p))]
+  apply congrArg (PMF.bind (initializedEndpointLaw N r pastOps
     (outsideInitialCodeLaw N {h.val} sample p)))
   funext a
   unfold row
   have hsplit (coin : PrivateHybrid N {h.val} → Bool) :=
     actual_arm_baseline_residual N B r (bigonDuration N C B)
-      (recordEnd prefix.length a.1 a.2) longArm
+      (recordEnd pastOps.length a.1 a.2) longArm
       (coin ⟨h, Finset.mem_singleton_self _⟩) hle
   simp_rw [hsplit, PMF.map_bind]
   rw [PMF.bind_comm (privateSeedPMF N {h.val} p)
     (sourceTimeKernel N unitRates (armExposure N B r (bigonDuration N C B) (!longArm))
-      (referencePulse N B (recordEnd prefix.length a.1 a.2)))]
+      (referencePulse N B (recordEnd pastOps.length a.1 a.2)))]
   apply congrArg (PMF.bind (sourceTimeKernel N unitRates
     (armExposure N B r (bigonDuration N C B) (!longArm))
-      (referencePulse N B (recordEnd prefix.length a.1 a.2))))
+      (referencePulse N B (recordEnd pastOps.length a.1 a.2))))
   funext z
   change (privateSeedPMF N {h.val} p).bind
     ((fun b : Bool => (residualEpoch N
@@ -380,29 +398,29 @@ theorem actual_tied_calendar_common_factorization {Old : Type*}
       pre ++ C.age h.val :: post)
     (hnodes : (Finset.univ.filter (fun v : V => C.age v = C.age h.val)).toList =
       nodesBefore ++ h.val :: nodesAfter) :
-    let prefix := beforeNodeWord N C H (originalGamma p) common h.val pre nodesBefore
-    ∀ (hinput : ∀ a ∈ (initializedSourceHistory N r prefix
+    let pastOps := beforeNodeWord N C H (originalGamma p) common h.val pre nodesBefore
+    ∀ (hinput : ∀ a ∈ (initializedSourceHistory N r pastOps
       (naturalInitialJoint N {h.val} sample p)).support,
-      ∀ l ∈ (state (recordEnd prefix.length a.2.1 a.2.2)).live,
-        (state (recordEnd prefix.length a.2.1 a.2.2)).location l = .node B.parents.hybrid)
-    (old : Code N sample × (Fin prefix.length → Code N sample) → Old)
+      ∀ l ∈ (state (recordEnd pastOps.length a.2.1 a.2.2)).live,
+        (state (recordEnd pastOps.length a.2.1 a.2.2)).location l = .node B.parents.hybrid)
+    (old : Code N sample × (Fin pastOps.length → Code N sample) → Old)
     (longArm : Bool)
     (hle : armExposure N B r (bigonDuration N C B) (!longArm) ≤
       armExposure N B r (bigonDuration N C B) longArm),
     UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H (originalGamma p) common =
-      prefix ++ [.boundary (.common B.parents)] ++
+      pastOps ++ [.boundary (.common B.parents)] ++
         nodesAfter.map (fun v => .boundary
           (UnifiedLean.Source.SourceCalendarCompiler.originalNodeOperation N H (originalGamma p) common v)) ++
         UnifiedLean.Source.SourceCalendarCompiler.calendarTail N C H (originalGamma p) common
           (C.age h.val) post ∧
-    (initializedSourceHistory N r prefix (naturalInitialJoint N {h.val} sample p)).bind
+    (initializedSourceHistory N r pastOps (naturalInitialJoint N {h.val} sample p)).bind
       (fun a => (sourceProgram N r (bigonProgram N C B (originalGamma p h) true)
-        (recordEnd prefix.length a.2.1 a.2.2)).map
+        (recordEnd pastOps.length a.2.1 a.2.2)).map
           (fun d => (old (erasedRecord N {h.val} a.2), erasedForestRegister N {h.val} d))) =
-    (initializedEndpointLaw N r prefix (outsideInitialCodeLaw N {h.val} sample p)).bind
+    (initializedEndpointLaw N r pastOps (outsideInitialCodeLaw N {h.val} sample p)).bind
       (fun a => (sourceTimeKernel N unitRates
         (armExposure N B r (bigonDuration N C B) (!longArm))
-        (referencePulse N B (recordEnd prefix.length a.1 a.2))).bind
+        (referencePulse N B (recordEnd pastOps.length a.1 a.2))).bind
           (fun z => ((bitMeasure (originalGamma p h)).toPMF).bind
             (fun b => (residualEpoch N
               (armExposure N B r (bigonDuration N C B) longArm -
@@ -410,7 +428,7 @@ theorem actual_tied_calendar_common_factorization {Old : Type*}
                 (fun d => (old a, forestRegister N d))))) := by
   dsimp only
   intro hinput old longArm hle
-  let prefix := beforeNodeWord N C H (originalGamma p) common h.val pre nodesBefore
+  let pastOps := beforeNodeWord N C H (originalGamma p) common h.val pre nodesBefore
   constructor
   · have hs := actual_compiled_before_common_split N C H (originalGamma p) common h hc
       pre post nodesBefore nodesAfter hdates hnodes
@@ -420,7 +438,7 @@ theorem actual_tied_calendar_common_factorization {Old : Type*}
       rw [← hparents]
       exact H.original_site h
     exact actual_natural_common_erased_full_forest_factorization N C B h hsite sample p r
-      prefix (actual_before_node_noPrivateWordRead N C H (originalGamma p) common h.val
+      pastOps (actual_before_node_noPrivateWordRead N C H (originalGamma p) common h.val
         pre post nodesBefore nodesAfter hdates hnodes) hinput old longArm hle
 
 /-- Erasing the private bit before a permitted SAME-source future preserves

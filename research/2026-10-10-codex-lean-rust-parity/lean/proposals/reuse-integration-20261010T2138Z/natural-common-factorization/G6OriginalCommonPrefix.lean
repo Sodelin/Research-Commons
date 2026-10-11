@@ -7,6 +7,10 @@ Codex Lean reuse, 10 October 2026. PROPOSAL; no kernel receipt yet.
 Proof-only compatibility derivative, 11 October 2026, of frozen 68e0130b.
 The first compiler attempt exposed left-associated append membership and
 singleton/nil normalization; definitions, statements and imports are unchanged.
+The ce9ec8df retry additionally needs a data-only local List.casesOn prefix
+type, without the earlier hypotheses being generalized into its match.
+The a2275917 retry leaves only the final recursor-to-match application;
+local constructor cases make that conversion explicit.
 
 The older calendar providers already exclude private reads at every strictly
 earlier original date. This adapter ends the actual compiler prefix within the
@@ -124,11 +128,10 @@ theorem actual_before_node_noPrivateWordRead
     subst v
     exact hdateAbsent (by rw [he]; exact hd)
   have hp : NoPrivateWordRead N {site}
-      (match pre with
-       | [] => []
-       | a :: dates => boundaryOperations N C H gamma common a ++
+      (List.casesOn pre ([] : List (ProgramStep N))
+       (fun a dates => boundaryOperations N C H gamma common a ++
            calendarTail N C H gamma common a dates ++
-           [.interval (Real.toNNReal (C.age site - finalDate a dates))]) := by
+           [.interval (Real.toNNReal (C.age site - finalDate a dates))])) := by
     cases pre with
     | nil => intro op hop; exact False.elim (List.not_mem_nil hop)
     | cons a dates =>
@@ -140,6 +143,9 @@ theorem actual_before_node_noPrivateWordRead
           subst v
           exact hdateAbsent (by rw [he]; exact List.mem_cons_of_mem a hd)
         intro op hop
+        change op ∈ (boundaryOperations N C H gamma common a ++
+          calendarTail N C H gamma common a dates) ++
+            [.interval (Real.toNNReal (C.age site - finalDate a dates))] at hop
         rw [List.append_assoc] at hop
         rcases List.mem_append.mp hop with hboundaryMem | htailMem
         · exact hb op hboundaryMem
@@ -152,7 +158,9 @@ theorem actual_before_node_noPrivateWordRead
   unfold beforeNodeWord at hop
   rw [List.append_assoc] at hop
   rcases List.mem_append.mp hop with hpMem | hremaining
-  · exact hp op hpMem
+  · cases pre with
+    | nil => exact hp op hpMem
+    | cons a dates => exact hp op hpMem
   · rcases List.mem_append.mp hremaining with hexit | hnode
     · obtain ⟨e, _, rfl⟩ := List.mem_map.mp hexit
       trivial

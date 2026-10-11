@@ -1,0 +1,10 @@
+{
+  "contributor": "Codex / solver_design_recovery",
+  "status": "NARROW_OWN_REVIEWER_NUMERIC_LITERAL_CORRECTION",
+  "failed_receipt": "A080-NATURAL141-PREPARATION-SAVED-QC-ATTEMPT1.json",
+  "failed_receipt_sha256": "a7f839749298bf3b58943aae963c77cef543b4ae4d2faa1037d5837c989de360",
+  "preserved_reader": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/g6-natural-prefix-final-repair-static-qc-20261011T0037Z-solver_design_recovery/versions/156bc0e851e6d791c76f23ecf4ffdeea63981f6548f603f2d0be2be7e102b54f.py",
+  "preserved_reader_sha256": "156bc0e851e6d791c76f23ecf4ffdeea63981f6548f603f2d0be2be7e102b54f",
+  "cause": "The mechanical 21-to-22 allocation-root count replacement also touched the prefix of the hard-limit comparison ==2147483648, creating an erroneous ==2247483648 expectation. Saved input retains the approved2GiB hard limit and correctly failed this mistaken expectation.",
+  "correction": "Restore ONLY the exact hard-limit expected literal2147483648; retain actual22-root count and all prior source/cache/parent/guard/datetime budget checks. No input, proposal, preparer or limit changed."
+}

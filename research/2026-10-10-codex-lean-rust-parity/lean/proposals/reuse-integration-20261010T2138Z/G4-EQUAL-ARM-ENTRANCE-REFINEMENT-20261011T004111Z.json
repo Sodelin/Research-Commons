@@ -1,0 +1,75 @@
+{
+  "schema": "existing_obligation_scope_refinement_v1",
+  "created_utc": "2026-10-11T00:41:11.618189+00:00",
+  "contributor": "Codex / lean_reuse_successor",
+  "existing_obligation_ids": [
+    "G4-GLOBAL",
+    "G6-COMMON-EXPOSURE",
+    "G6-REVIEWED-FOREST-EXPOSURE"
+  ],
+  "immutable_prior_compatibility": {
+    "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/G4-ACTUAL-SPAN-COMPATIBILITY-20261011T003557Z.json",
+    "sha256": "2c987c35263a2a0fa2202c21995b96e6a8d769c419f154fbc576d724cfaa7545"
+  },
+  "draft": {
+    "path": "research/2026-10-11-dot-g4-actual-span-source-interface-0011z/G4ActualOriginalSpanDiagonal.lean",
+    "sha256": "f24e71c6d3ee88f6cfa3d89b5b04cd93aa4b84c0050f49c3c4648b82d7899c2a",
+    "status": "UNCOMPILED_STATIC_REVIEW_ONLY; held pending peer1568 terminal per delivered handoff",
+    "declarations": [
+      {
+        "name": "DotG34.ActualOriginalSpanDiagonal.EqualCommonArms",
+        "start_line": 160,
+        "raw_span_end_line": 168,
+        "header": "def EqualCommonArms (N : RootedBinary V E X) (C : Calendar N.graph)\n    (r : PositivePairRates E) (common : V \u2192 Bool) {a b : V} : OriginalSpan N a b \u2192 Prop",
+        "header_sha256": "cf629a039f16b4c888c638c55b9e125c5b7365af7c1b52fb904e2187a4fd2a62",
+        "raw_span_sha256": "8f7448bd4700f54532e996cb71df019db0ecd76417aba5a535e302e2872d5f33"
+      },
+      {
+        "name": "DotG34.ActualOriginalSpanDiagonal.spanDiagonal_register_independent",
+        "start_line": 168,
+        "raw_span_end_line": 189,
+        "header": "theorem spanDiagonal_register_independent (N : RootedBinary V E X) (C : Calendar N.graph)\n    (r : PositivePairRates E) (gamma : V \u2192 unitInterval) (common : V \u2192 Bool)\n    (register register' : V \u2192 Bool) (n : \u2115) {a b : V} (word : OriginalSpan N a b)\n    (hequal : EqualCommonArms N C r common word) :\n    spanDiagonal N C r gamma common register n word =\n      spanDiagonal N C r gamma common register' n word",
+        "header_sha256": "03233c930d6bab17ec3ffbb1b2618452399ba90f9e6ec21e713cc6776f701cdd",
+        "raw_span_sha256": "5ccaf8173a85bbd76d4c443ccbf441fcc7ba73c470f6115cb4195b51c3366cb1"
+      },
+      {
+        "name": "DotG34.ActualOriginalSpanDiagonal.actual_entrance_mixture_no_loss",
+        "start_line": 189,
+        "raw_span_end_line": 211,
+        "header": "theorem actual_entrance_mixture_no_loss (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (C : Calendar N.graph) (r : PositivePairRates E)\n    (gamma : V \u2192 unitInterval) (common : V \u2192 Bool)\n    {a b : V} (word : OriginalSpan N a b) (prior : PMF (Code N sample)) (n : \u2115)\n    (hcount : \u2200 s \u2208 prior.support, liveCard s = n)\n    (hplace : \u2200 s \u2208 prior.support, \u2200 l \u2208 (state s).live,\n      (state s).location l = .node a) :\n    ((prior.bind (sourceProgram N r (spanProgram N C gamma common word))).map liveCard) n =\n      \u2211' s, prior s * spanDiagonal N C r gamma common (state s).register n word",
+        "header_sha256": "0f7b7cc99a6fcbb6af1eb9f0583266c4c68b6f64f8f37dd27b8bd29d7cf6ad6d",
+        "raw_span_sha256": "52da0463b30c79a22ef09177d147e856b901fc9cb8c6167e7e1d9481cc6a7167"
+      },
+      {
+        "name": "DotG34.ActualOriginalSpanDiagonal.actual_equal_common_arms_entrance_no_loss",
+        "start_line": 211,
+        "raw_span_end_line": 228,
+        "header": "theorem actual_equal_common_arms_entrance_no_loss\n    (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (C : Calendar N.graph) (r : PositivePairRates E)\n    (gamma : V \u2192 unitInterval) (common : V \u2192 Bool)\n    {a b : V} (word : OriginalSpan N a b) (prior : PMF (Code N sample)) (n : \u2115)\n    (hcount : \u2200 s \u2208 prior.support, liveCard s = n)\n    (hplace : \u2200 s \u2208 prior.support, \u2200 l \u2208 (state s).live,\n      (state s).location l = .node a)\n    (hequal : EqualCommonArms N C r common word) (register : V \u2192 Bool) :\n    ((prior.bind (sourceProgram N r (spanProgram N C gamma common word))).map liveCard) n =\n      spanDiagonal N C r gamma common register n word",
+        "header_sha256": "ff0c2013a5c691d53d0be29a3d0ade410d100de0eec11c1b4366d9f9aacdd518",
+        "raw_span_sha256": "a57bd11d41e3f61533dcf30bb6d2ce695fa70950a92efe168ed6408a392fa29b"
+      }
+    ]
+  },
+  "refinement": {
+    "statement": "For the scalar no-loss/current-root-count marginal only, equal actual COMMON arm survivals remove the stored-register dependence of every conditional factor. The arbitrary entrance PMF may already be history-biased; it need not be a fresh natural bank or be independent of the register.",
+    "exact_remaining_hypotheses": [
+      "One supplied RootedBinary N, strict Calendar C, positive original rate bank r, same vertex gamma and common-mode assignment",
+      "Endpoint-typed OriginalSpan N a b",
+      "For every supported prior Code, liveCard equals the supplied n and every live owner is at .node a",
+      "EqualCommonArms checks the actual parent-edge survival equality at each COMMON bigon used by that span"
+    ],
+    "body_route": "Retain actual_entrance_mixture_no_loss with the actual prior weights; rewrite each conditional spanDiagonal using spanDiagonal_register_independent, then normalize by PMF.tsum_coe. No no-read premise or fresh product register is substituted.",
+    "unequal_arm_boundary": "Without EqualCommonArms, retain the coupled expectation of a single original register product; a fresh natural product law requires the separate actual no-read/source-admission bridge.",
+    "not_full_forest": "The conclusion is one probability that the current root count stays n. It does not identify the complete forest/register PMF, erase a correlated private seed from an arbitrary Old reader, decode hidden rows from terminal topology data, or establish a legal source factor.",
+    "relation_to_pending_consumers": "Natural141 targets a complete erased forest/register law with any correlated Old reader of the actual initialized endpoint vector and its no-read prefix; forest101 transfers uniform full-Code quotient compression over finite forest/register fibres. Their stronger premises/conclusions are neither removed nor discharged by this scalar refinement."
+  },
+  "execution": {
+    "compiler_calls": 0,
+    "native_calls": 0,
+    "git_writes": 0,
+    "draft_source_edits": 0,
+    "accepted_source_edits": 0,
+    "active_import_edits": 0
+  },
+  "metadata_preflight": "An initial in-memory span-index expression stopped before any file was written; corrected iterator naming only. No draft/body mutation or compiler occurred."
+}
