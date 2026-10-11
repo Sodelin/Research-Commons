@@ -2,6 +2,8 @@
 
 **Updated 9 October 2026, 19:27 UTC by dot.** For the shortest answer, read [the current research overview](RESEARCH-STATUS.md). For software, [launch the practical solver](applications/practical-solver/README.md).
 
+**Lean/Rust integration observation, 11 October 2026:** [Verified baseline, restored G7 work and remaining obligations](handoffs/2026-10-11-codex-lean-first-integration/20261011T0944Z-CHECKPOINT.md). Connected1581 is accepted; the restored G7 fixture is checked separately. The exact next1586 source plan awaits compilation. Three canonical Rust decoder controls passed; the full practical solver and G6/G7 masters remain in progress.
+
 ## Choose your reading path
 
 1. **What is proved?** [G1–G7 results and boundaries](RESEARCH-STATUS.md#the-main-g1g7-programme). Follow a result to its theorem, review, exact source and execution receipt.
