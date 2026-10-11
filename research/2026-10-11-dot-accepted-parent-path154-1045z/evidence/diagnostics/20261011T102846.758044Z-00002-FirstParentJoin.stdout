@@ -1,0 +1,164 @@
+FirstParentJoin.lean:37:0: warning: automatically included section variable(s) unused in theorem `CloudG3.FirstParentJoin.path_start_is_source`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+FirstParentJoin.lean:44:0: warning: automatically included section variable(s) unused in theorem `CloudG3.FirstParentJoin.path_target_is_end_or_source`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+FirstParentJoin.lean:80:16: error: Function expected at
+  ih he (Exists.intro f ⟨hf, hfv⟩)
+but this term has type
+  C.age (G.source e) ≤ C.age v
+
+Note: Expected a function because this term is being applied to the argument
+  ha
+FirstParentJoin.lean:159:0: warning: automatically included section variable(s) unused in theorem `CloudG3.FirstParentJoin.actual_route_edge_into_h_is_original_parent`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+FirstParentJoin.lean:235:0: warning: automatically included section variable(s) unused in theorem `CloudG3.FirstParentJoin.path_source_at_equal_start_age`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+FirstParentJoin.lean:313:0: warning: automatically included section variable(s) unused in theorem `CloudG3.FirstParentJoin.actual_distinct_edge_panels_separated`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+FirstParentJoin.lean:365:35: error: Function expected at
+  jointProjection
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `jointProjection` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+FirstParentJoin.lean:398:7: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+FirstParentJoin.lean:457:7: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+FirstParentJoin.lean:477:7: error: Function expected at
+  initialCode
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+FirstParentJoin.lean:459:49: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+x✝ : Sort u_5
+initialCode : x✝
+N : RootedBinary V E X
+hc : CutChild N
+C : Calendar N.graph
+H : GProgram.G2.OriginalHybridParents N
+sample : Copy → X
+register : V → Bool
+R : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+s : Code N sample
+hs : s ∈ (sourceProgram N r (actualFrontierProgram N C R gamma common (C.age H.hybrid)) sorry).support
+x : Copy
+hx : N.graph.DReach H.hybrid (N.leaf (sample x))
+child : E
+hsource : N.graph.source child = H.hybrid
+right✝ : ∀ (y : E), (fun e => N.graph.source e = H.hybrid) y → y = child
+hhybrid : N.graph.IsHybrid (N.graph.source child)
+hbridge : N.graph.IsBridge child
+hr : N.graph.source child ≠ N.root
+hne : H.hybrid ≠ N.leaf (sample x)
+hxchild : N.graph.DReach (N.graph.target child) (N.leaf (sample x))
+hschild :
+  s ∈ (sourceProgram N r (actualFrontierProgram N C R gamma common (C.age (N.graph.source child))) sorry).support
+⊢ copyLocation (state s) x = Location.node H.hybrid
+FirstParentJoin.lean:491:7: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+FirstParentJoin.lean:498:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  copyLocation (state s) x
+in the target expression
+  DescendsTo N (copyLocation (decodeSnapshot N.root ↑s) x) (sample x)
+
+case mpr
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+x✝ : Sort u_5
+initialCode : x✝
+N : RootedBinary V E X
+hc : CutChild N
+C : Calendar N.graph
+H : GProgram.G2.OriginalHybridParents N
+sample : Copy → X
+register : V → Bool
+R : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+r : PositivePairRates E
+s : Code N sample
+hs : s ∈ (sourceProgram N r (actualFrontierProgram N C R gamma common (C.age H.hybrid)) sorry).support
+x : Copy
+hx : copyLocation (state s) x = Location.node H.hybrid
+hv : DescendsTo N (copyLocation (decodeSnapshot N.root ↑s) x) (sample x)
+⊢ N.graph.DReach H.hybrid (N.leaf (sample x))

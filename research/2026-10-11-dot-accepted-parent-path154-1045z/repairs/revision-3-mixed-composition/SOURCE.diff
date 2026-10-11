@@ -1,0 +1,10 @@
+--- revision2
++++ revision3
+@@ -316,6 +316,7 @@
+         (selectedProgram N r keep wholeBatch) := by
+       rw [PMF.bind_map]
+       simp only [Function.comp_apply, actual_source_program_projection]
++      rfl
+     _ = ((sourceTimeKernel N r (Real.toNNReal (cut-t)) s).map (projection N keep)).bind
+         (selectedProgram N r keep wholeBatch) := by
+       rw [actual_parent_pair_slice_source_row N C R gamma common H he hl hu r keep s hs]

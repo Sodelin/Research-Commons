@@ -1,0 +1,183 @@
+MixedParentBoundary.lean:58:0: warning: automatically included section variable(s) unused in theorem `CloudG3.MixedParentBoundary.actual_foreign_node_set_absent`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+MixedParentBoundary.lean:143:0: warning: automatically included section variable(s) unused in theorem `CloudG3.MixedParentBoundary.actual_original_exit_mem_iff`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+MixedParentBoundary.lean:192:75: error: unexpected token ')'; expected ':=', 'where' or '|'
+MixedParentBoundary.lean:189:6: error: Type mismatch
+  sourceProgram N r
+    (List.map (fun e => ?m.124) (originalExits N C b) ++
+      nodeListProgram N R gamma common (List.filter (fun v => decide (v ∈ endingNodes N C b edges)) vs))
+    s
+has type
+  PMF (Code N sample)
+but is expected to have type
+  PMF (SelectedIndex N sample keep)
+MixedParentBoundary.lean:215:45: error: Application type mismatch: The argument
+  hv
+has type
+  V
+of sort `Type u_1` but is expected to have type
+  ?m.199 ∈ Finset.image ?m.197 ?m.198
+of sort `Prop` in the application
+  Finset.mem_image.mp hv
+MixedParentBoundary.lean:212:70: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+hc : CutChild N
+C : Calendar N.graph
+H : GProgram.G2.OriginalHybridParents N
+entry : V
+he : ParentCalendar.IsComponentEntryFor N entry H.hybrid
+t : ℝ
+hl : C.age H.hybrid ≤ t
+ht : t < C.age (firstParentJoin N C H he)
+hcut : nextParentCut N C H he hl ⋯ < C.age (firstParentJoin N C H he)
+hu : t < C.age entry := LT.lt.trans_le ht (actual_first_join_age_window N C H he).right
+v : t < C.age entry := LT.lt.trans_le ht (actual_first_join_age_window N C H he).right
+hv : V
+e : ?m.194
+hem : e ∈ Finset.filter ?m.227 ?m.229
+hsrc : ?m.197 e = ?m.199
+⊢ hv ∈ endingNodes N C (nextParentCut N C H he hl v) (occupiedParentEdges N C H he hl v) → N.graph.inDegree hv = 1
+MixedParentBoundary.lean:243:7: error: Function expected at
+  initialCode
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `initialCode` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+MixedParentBoundary.lean:296:7: error: Function expected at
+  sourceTimeKernel
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `sourceTimeKernel` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+MixedParentBoundary.lean:306:5: error: Function expected at
+  sourceTimeKernel
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+MixedParentBoundary.lean:317:10: error: Function expected at
+  sourceTimeKernel
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+MixedParentBoundary.lean:320:9: error: Function expected at
+  sourceTimeKernel
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+MixedParentBoundary.lean:315:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (PMF.map ?f ?p).bind ?q
+in the target expression
+  ((sourceProgram N r slice s).bind fun d => selectedProgram N r keep wholeBatch (projection N keep d)) =
+    (selectedProgram N r keep slice (projection N keep s)).bind (selectedProgram N r keep wholeBatch)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+x✝ : Sort u_5
+sourceTimeKernel : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+R : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+H : GProgram.G2.OriginalHybridParents N
+entry : V
+he : ParentCalendar.IsComponentEntryFor N entry H.hybrid
+t : ℝ
+hl : C.age H.hybrid ≤ t
+hu : t < C.age entry
+sample : Copy → X
+r : PositivePairRates E
+keep : Finset Copy
+s : Code N sample
+hs : AtEdgePanel (state s) keep (occupiedParentEdges N C H he hl hu)
+cut : ℝ := nextParentCut N C H he hl hu
+nodes : Finset V := endingNodes N C cut (occupiedParentEdges N C H he hl hu)
+vs : List V := {v | C.age v = cut}.toList
+batch : List (ProgramStep N) :=
+  List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (originalExits N C cut) ++
+    nodeListProgram N R gamma common (List.filter (fun v => decide (v ∈ nodes)) vs)
+slice : List (ProgramStep N) := parentPairSliceProgram N C R gamma common H he hl hu
+wholeBatch : List (ProgramStep N) := boundaryOperations N C R gamma common cut
+⊢ ((sourceProgram N r slice s).bind fun d => selectedProgram N r keep wholeBatch (projection N keep d)) =
+    (selectedProgram N r keep slice (projection N keep s)).bind (selectedProgram N r keep wholeBatch)
+MixedParentBoundary.lean:318:49: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+x✝ : Sort u_5
+sourceTimeKernel : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+R : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+H : GProgram.G2.OriginalHybridParents N
+entry : V
+he : ParentCalendar.IsComponentEntryFor N entry H.hybrid
+t : ℝ
+hl : C.age H.hybrid ≤ t
+hu : t < C.age entry
+sample : Copy → X
+r : PositivePairRates E
+keep : Finset Copy
+s : Code N sample
+hs : AtEdgePanel (state s) keep (occupiedParentEdges N C H he hl hu)
+cut : ℝ := nextParentCut N C H he hl hu
+nodes : Finset V := endingNodes N C cut (occupiedParentEdges N C H he hl hu)
+vs : List V := {v | C.age v = cut}.toList
+batch : List (ProgramStep N) :=
+  List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (originalExits N C cut) ++
+    nodeListProgram N R gamma common (List.filter (fun v => decide (v ∈ nodes)) vs)
+slice : List (ProgramStep N) := parentPairSliceProgram N C R gamma common H he hl hu
+wholeBatch : List (ProgramStep N) := boundaryOperations N C R gamma common cut
+⊢ (PMF.map (projection N keep)
+          (UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel N r (nextParentCut N C H he hl hu - t).toNNReal
+            s)).bind
+      (selectedProgram N r keep wholeBatch) =
+    sorry

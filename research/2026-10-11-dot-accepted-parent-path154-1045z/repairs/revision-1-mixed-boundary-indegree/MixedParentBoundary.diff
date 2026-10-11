@@ -1,0 +1,11 @@
+--- original/MixedParentBoundary.lean
++++ revision-1/MixedParentBoundary.lean
+@@ -228,7 +228,7 @@
+       exact hcut
+     exact (not_lt_of_ge hle) hrootlt
+   rw [← hsrc]
+-  exact N.indegree_one_of_nonroot_nonhybrid _ hroot hh
++  exact N.indegree_one_of_nonroot_nonhybrid hroot hh
+ 
+ /-- Focal pulse in the true initialized larger source, BEFORE h's node batch.
+ Only the selected descendants are at h; the full outside source is unrestricted.

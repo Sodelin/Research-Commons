@@ -1,0 +1,57 @@
+MixedParentBoundary.lean:59:0: warning: automatically included section variable(s) unused in theorem `CloudG3.MixedParentBoundary.actual_foreign_node_set_absent`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+MixedParentBoundary.lean:144:0: warning: automatically included section variable(s) unused in theorem `CloudG3.MixedParentBoundary.actual_original_exit_mem_iff`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+MixedParentBoundary.lean:316:49: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+R : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+H : GProgram.G2.OriginalHybridParents N
+entry : V
+he : ParentCalendar.IsComponentEntryFor N entry H.hybrid
+t : ℝ
+hl : C.age H.hybrid ≤ t
+hu : t < C.age entry
+sample : Copy → X
+r : PositivePairRates E
+keep : Finset Copy
+s : Code N sample
+hs : AtEdgePanel (state s) keep (occupiedParentEdges N C H he hl hu)
+cut : ℝ := nextParentCut N C H he hl hu
+nodes : Finset V := endingNodes N C cut (occupiedParentEdges N C H he hl hu)
+vs : List V := {v | C.age v = cut}.toList
+batch : List (ProgramStep N) :=
+  List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (originalExits N C cut) ++
+    nodeListProgram N R gamma common (List.filter (fun v => decide (v ∈ nodes)) vs)
+slice : List (ProgramStep N) := parentPairSliceProgram N C R gamma common H he hl hu
+wholeBatch : List (ProgramStep N) := boundaryOperations N C R gamma common cut
+⊢ ((sourceProgram N r slice s).bind fun d => selectedProgram N r keep wholeBatch (projection N keep d)) =
+    (sourceProgram N r slice s).bind (selectedProgram N r keep wholeBatch ∘ projection N keep)
+MixedParentBoundary.lean:318:17: warning: This simp argument is unused:
+  Function.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [actual_source_program_projection]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

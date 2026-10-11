@@ -1,0 +1,10 @@
+--- revision2
++++ revision3
+@@ -403,6 +403,7 @@
+     actual_initialized_frontier_support N C sample register R gamma common r _ hs
+   have hleaf := (actual_bridge_target_side_descendant N child hbridge _).mpr hx
+   have hvalid := s.property.original_descendant x
++  change DescendsTo N (copyLocation (state s) x) (sample x) at hvalid
+   have hp := hready.1 x
+   cases hloc : copyLocation (state s) x with
+   | node v =>

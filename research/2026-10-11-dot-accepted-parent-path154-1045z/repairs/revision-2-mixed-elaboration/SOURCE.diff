@@ -1,0 +1,39 @@
+--- reviewed1
++++ revision2
+@@ -22,6 +22,7 @@
+ open G1OriginalEpochPanelSilence G1ExteriorBoundarySilence G1ActualJointProgram
+ open G1OriginalCalendarDecomposition G1CanonicalComponentSegment
+ open G1InitializedFrontierPrefix G1CutChildPorts
++open UnifiedLean.Source.SourceInitializedCalendar UnifiedLean.Source.SourcePoissonKernel
+ open CloudG3.FirstParentJoin CloudG3.GroupedParentPathCalendar
+ open scoped Classical NNReal
+ 
+@@ -189,7 +190,7 @@
+       (sourceProgram N r
+         ((originalExits N C b).map (fun e => .boundary (.exit e)) ++
+           nodeListProgram N R gamma common
+-            (vs.filter (fun v => decide (v ∈ endingNodes N C b edges))))) s).map (projection N keep) := by
++            (vs.filter (fun v => decide (v ∈ endingNodes N C b edges)))) s).map (projection N keep) := by
+   change (sourceProgram N r
+       ((originalExits N C b).map (fun e => .boundary (.exit e)) ++
+         nodeListProgram N R gamma common ((Finset.univ.filter (fun v : V => C.age v = b)).toList)) s).map
+@@ -211,6 +212,8 @@
+     ∀ v ∈ endingNodes N C (nextParentCut N C H he hl hu)
+       (occupiedParentEdges N C H he hl hu), N.graph.inDegree v = 1 := by
+   let hu := ht.trans_le (actual_first_join_age_window N C H he).2
++  change ∀ v ∈ endingNodes N C (nextParentCut N C H he hl hu)
++    (occupiedParentEdges N C H he hl hu), N.graph.inDegree v = 1
+   intro v hv
+   obtain ⟨e,hem,hsrc⟩ := Finset.mem_image.mp hv
+   have hedges := (Finset.mem_filter.mp hem).1
+@@ -311,9 +314,8 @@
+       rw [sourceProgram_append,PMF.map_bind]
+     _ = ((sourceProgram N r slice s).map (projection N keep)).bind
+         (selectedProgram N r keep wholeBatch) := by
+-      simp_rw [actual_source_program_projection]
+       rw [PMF.bind_map]
+-      rfl
++      simp only [Function.comp_apply, actual_source_program_projection]
+     _ = ((sourceTimeKernel N r (Real.toNNReal (cut-t)) s).map (projection N keep)).bind
+         (selectedProgram N r keep wholeBatch) := by
+       rw [actual_parent_pair_slice_source_row N C R gamma common H he hl hu r keep s hs]

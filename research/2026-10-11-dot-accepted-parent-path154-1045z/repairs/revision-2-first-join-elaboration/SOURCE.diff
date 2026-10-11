@@ -1,0 +1,29 @@
+--- reviewed1
++++ revision2
+@@ -26,7 +26,8 @@
+ open G1InitializedFrontierPrefix G1ActualCutDescendants G1NaturalCalendarNodes
+ open G1NonrootBigonKernel G1OriginalNodeBatchBinding
+ open G1JointSeparatedSourceGeometry G1ActualJointProgram G1ActualJointEpoch
+-open G1CanonicalThreeEpochList
++open G1CanonicalThreeEpochList G1ActualJointGenerator
++open UnifiedLean.Source.SourceInitializedCalendar
+ open scoped Classical NNReal
+ 
+ variable {V E X Copy : Type*}
+@@ -77,7 +78,7 @@
+           have hle := rest.source_age_le C hf
+           rw [hfv] at hle
+           exact False.elim ((not_le_of_gt ht) (hle.trans ha.1))
+-        · exact ih he ⟨f,hf,hfv⟩ ha ht
++        · exact ih he ⟨f,hf,hfv⟩
+ 
+ noncomputable def routeSourceVertices (N : RootedBinary V E X)
+     (H : GProgram.G2.OriginalHybridParents N) {entry : V}
+@@ -495,6 +496,7 @@
+   · exact actual_initialized_hybrid_descendant_frontier N hc C H sample register R gamma common r hs x
+   · intro hx
+     have hv := s.property.original_descendant x
++    change DescendsTo N (copyLocation (state s) x) (sample x) at hv
+     rw [hx] at hv
+     exact hv
+ 
