@@ -1,0 +1,1409 @@
+[
+  {
+    "module": "G3AllResiduePositivity",
+    "sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+    "imports": [
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "named_source_declarations": [
+      "exceptionalJ",
+      "exceptionalRemainder",
+      "quadratic_factor_pos",
+      "exceptionalJ_exact",
+      "exceptional_remainder_nonneg",
+      "exceptionalJ_pos",
+      "factor0",
+      "factor0_pos",
+      "factor1",
+      "factor1_pos",
+      "factor2",
+      "factor2_pos",
+      "factor3",
+      "factor3_pos",
+      "factor4",
+      "factor4_pos",
+      "factor5",
+      "factor5_pos",
+      "factor6",
+      "factor6_pos",
+      "factor7",
+      "factor7_pos",
+      "factor8",
+      "factor8_pos",
+      "factor9",
+      "factor9_pos",
+      "criticalGcdProduct",
+      "critical_gcd_product_pos"
+    ]
+  },
+  {
+    "module": "G3AllResidueNormalIdentities",
+    "sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+    "imports": [
+      "G3AllResiduePositivity",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "named_source_declarations": [
+      "normalB0",
+      "normalB1",
+      "normalB2",
+      "normalB3",
+      "normalB4",
+      "normalB5",
+      "normalMassPositiveFactor",
+      "normalMass",
+      "normal_sum",
+      "normal_drift",
+      "normal_residue_value",
+      "normal_residue_derivative",
+      "normal_square_value",
+      "normal_square_derivative",
+      "normal_mass_pos",
+      "normal_mass_ne_zero"
+    ]
+  },
+  {
+    "module": "G3BernoulliDerivatives",
+    "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+    "imports": [
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.Calculus.Deriv.Pow",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "named_source_declarations": [
+      "bernoulliFactor",
+      "bernoulliLog",
+      "bernoulli_factor_pos",
+      "bernoulli_factor_lt_one",
+      "hasDerivAt_bernoulliFactor_p",
+      "hasDerivAt_bernoulliFactor_q",
+      "hasDerivAt_bernoulliLog_p",
+      "hasDerivAt_bernoulliLog_q"
+    ]
+  },
+  {
+    "module": "G3BernoulliCriticalNumerators",
+    "sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+    "imports": [
+      "G3BernoulliDerivatives",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "Mathlib.Tactic.FieldSimp"
+    ],
+    "named_source_declarations": [
+      "sourceDenominator",
+      "weightedPResponse",
+      "weightedQResponse",
+      "pCriticalNumerator",
+      "qCriticalNumerator",
+      "source_denominator_pos",
+      "clear_p_response",
+      "clear_q_response",
+      "p_response_zero_iff",
+      "q_response_zero_iff"
+    ]
+  },
+  {
+    "module": "G3BernoulliVerticalExclusion",
+    "sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+    "imports": [
+      "G3BernoulliCriticalNumerators",
+      "G3AllResidueNormalIdentities",
+      "Mathlib.Algebra.Polynomial.BigOperators",
+      "Mathlib.Algebra.Polynomial.Roots",
+      "Mathlib.Tactic.FinCases",
+      "Mathlib.Tactic.NormNum"
+    ],
+    "named_source_declarations": [
+      "probabilityPolynomial",
+      "criticalProbabilityPolynomial",
+      "probability_polynomial_degree_le",
+      "probability_polynomial_coeff_one",
+      "probability_polynomial_eval",
+      "critical_probability_eval",
+      "critical_probability_coeff_five",
+      "capSevenExponent",
+      "normalWeight",
+      "normal_weight_sum",
+      "cap_seven_exponent_ne_zero",
+      "strict_q_loss_product_pos",
+      "normal_probability_coeff_five_ne_zero",
+      "normal_probability_polynomial_ne_zero",
+      "no_strict_vertical_critical_line"
+    ]
+  },
+  {
+    "module": "G3CapSixDeterminant",
+    "sha256": "c88684e903928fbce3064f7729a5635833dae2d9cea8c4dd1b053beabd869e78",
+    "imports": [
+      "Mathlib.LinearAlgebra.Matrix.Determinant.Basic",
+      "Mathlib.Tactic.FinCases",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.Linarith"
+    ],
+    "named_source_declarations": [
+      "exponent",
+      "R",
+      "Rprime",
+      "J0",
+      "P",
+      "determinantFactor",
+      "Q",
+      "L",
+      "U",
+      "Q_positive",
+      "LU_eq_J0",
+      "det_L",
+      "det_U",
+      "exact_determinant",
+      "P_positive",
+      "determinantFactor_positive",
+      "J0_nonsingular",
+      "columnScale",
+      "J",
+      "scaled_determinant",
+      "scaled_J_nonsingular"
+    ]
+  },
+  {
+    "module": "G3FiniteMomentBarrier",
+    "sha256": "83f6c1cc2519769a9d84d77477d2fc518683b6736e1f74d076dfc707e7e908a7",
+    "imports": [
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "named_source_declarations": [
+      "exact_double_sum",
+      "finite_moment_inequality",
+      "coupled_barrier_minimal",
+      "coupled_barrier"
+    ]
+  },
+  {
+    "module": "G3FixedDegreeResultants",
+    "sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+    "imports": [
+      "G3BernoulliVerticalExclusion",
+      "Mathlib.RingTheory.Polynomial.Resultant.Basic"
+    ],
+    "named_source_declarations": [
+      "fullWeight",
+      "normalFreeWeight",
+      "full_weight_drift_zero",
+      "full_weight_normal",
+      "sourceQProbabilityPolynomial",
+      "source_q_probability_eval",
+      "fixed_sylvester_specialization",
+      "fixed_resultant_specialization"
+    ]
+  },
+  {
+    "module": "G3ApproximateMomentBarrier",
+    "sha256": "2f354386c7e8acb103c1665400f654a683aed6603175ddaf9f3451cf638a66b0",
+    "imports": [
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "named_source_declarations": [
+      "approximate_coupled_barrier"
+    ]
+  },
+  {
+    "module": "UnifiedLean.G3.ConditionalZeroScoreBound",
+    "sha256": "16341d7d932fa67bd6be0cea81aa6b51d9d46396d49819cf87999d47fca14c97",
+    "imports": [
+      "Mathlib.Data.Rat.Floor",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.FieldSimp",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "named_source_declarations": [
+      "NumericData",
+      "NumericData.delta",
+      "NumericData.loss",
+      "NumericData.independentBound",
+      "delta_pos",
+      "delta_le_epsilon",
+      "modulus_margin",
+      "loss_pos",
+      "loss_lt_half",
+      "bound_reciprocal",
+      "rational_count_ceiling",
+      "expression_le_ceiling",
+      "ceiling_le_iff",
+      "zero_length",
+      "cells_zero_of_weighted_endpoint_zero",
+      "weak_cell_score_positive",
+      "zero_score_duration_gap",
+      "equal_arm_pair_loss",
+      "geometric_budget",
+      "independent_product_count"
+    ]
+  },
+  {
+    "module": "UnifiedLean.G3.ConditionalZeroScoreConsumer",
+    "sha256": "0d0b53477642edf3656146071709629424afaa0af9661d915600549484de17dc",
+    "imports": [
+      "UnifiedLean.G3.ConditionalZeroScoreBound"
+    ],
+    "named_source_declarations": [
+      "SupportedMode",
+      "PieceCertificate",
+      "PieceCertificate.cell_score_zero",
+      "PieceCertificate.duration_gap",
+      "PieceCertificate.slot_count_bound",
+      "WholeFibreProvider",
+      "WholeFibreProvider.every_fitting_source_bounded"
+    ]
+  },
+  {
+    "sha256": "be32be9a1e07f6c12dfb3f6d9c4e88a7428bd34531e04b48655e0b68ec6176ae",
+    "imports": [
+      "G3FixedDegreeResultants",
+      "Mathlib.Algebra.Polynomial.Div",
+      "Mathlib.Data.Set.Finite.Lattice"
+    ],
+    "named_source_declarations": [
+      "pFactor",
+      "sourceP",
+      "sourceQ0",
+      "sourceQ",
+      "pFactor_degree_le",
+      "pFactor_prod_degree_le",
+      "sourceP_degree_le",
+      "sourceQ0_degree_le",
+      "sourceQ_degree_le",
+      "pFactor_map",
+      "sourceP_map",
+      "sourceQ0_map",
+      "pFactor_eval_one",
+      "cap7_power_product",
+      "sourceQ0_root_one",
+      "sourceQ_factorization",
+      "sourceProjection",
+      "sourceQAt",
+      "sourceQ_map",
+      "sourceSliceCoprime",
+      "sourceProjection_specialization",
+      "sourceP_map_coeff_five_ne_zero",
+      "sourceP_map_natDegree",
+      "source_padded_resultant_ne_zero",
+      "sourceProjection_ne_zero_of_slice_coprime",
+      "strictSourceCriticalSet",
+      "strict_source_critical_projection_root",
+      "strictSourceCriticalSet_finite_of_slice_coprime"
+    ],
+    "module": "G3CriticalProjectionPolynomials"
+  },
+  {
+    "sha256": "f54a534e5e8aaff659cc4f257a329fdbaa75b94bd2fffd71809da1ce66f5e185",
+    "imports": [
+      "Mathlib.Algebra.Polynomial.Basic",
+      "Mathlib.Algebra.Polynomial.Eval.Defs",
+      "Mathlib.Algebra.Polynomial.Degree.Lemmas",
+      "Mathlib.Tactic.Ring"
+    ],
+    "named_source_declarations": [
+      "ofCoeffs",
+      "addCoeffs",
+      "scaleCoeffs",
+      "mulCoeffs",
+      "ofCoeffs_add",
+      "ofCoeffs_scale",
+      "ofCoeffs_mul",
+      "ofCoeffs_zeros",
+      "polynomial_identity_of_coefficient_identity",
+      "coeff_ofCoeffs",
+      "natDegree_ofCoeffs_le",
+      "natDegree_ofCoeffs_eq",
+      "map_ofCoeffs"
+    ],
+    "module": "G3CriticalCoefficientLists"
+  },
+  {
+    "sha256": "163be58a5d84b6fef701d464f02bf61420e7c68981162a5a2e8432490306a28b",
+    "imports": [
+      "G3CriticalCoefficientLists"
+    ],
+    "named_source_declarations": [
+      "ofRows",
+      "addRows",
+      "scaleRows",
+      "mulRows",
+      "map_addRows",
+      "map_scaleRows",
+      "map_mulRows",
+      "ofRows_add",
+      "ofRows_mul",
+      "coeff_ofRows",
+      "natDegree_ofRows_le",
+      "ofCoeffs_append_zeros"
+    ],
+    "module": "G3CriticalBivariateLists"
+  },
+  {
+    "sha256": "709c12f0c2c1b85f809f8432246f674803dd2e791d4274975f2095ba6b9933eb",
+    "imports": [
+      "G3CriticalBivariateLists",
+      "G3FixedDegreeResultants"
+    ],
+    "named_source_declarations": [
+      "evalRows",
+      "evalRows_add",
+      "evalRows_mul",
+      "evalRows_const",
+      "evalRows_factor",
+      "normalRow0",
+      "normalRow0_eval",
+      "normalRow1",
+      "normalRow1_eval",
+      "normalRow2",
+      "normalRow2_eval",
+      "normalRow3",
+      "normalRow3_eval",
+      "normalRow4",
+      "normalRow4_eval",
+      "normalRow5",
+      "normalRow5_eval",
+      "fin6_erase_0",
+      "fin6_erase_1",
+      "fin6_erase_2",
+      "fin6_erase_3",
+      "fin6_erase_4",
+      "fin6_erase_5"
+    ],
+    "module": "G3CriticalSourceArrayBinding"
+  },
+  {
+    "sha256": "d66a22f00830c6d9ee4db4bd99d79f743fa61d24b0367de4632b76ce2d470270",
+    "imports": [
+      "G3CriticalSourceArrayBinding"
+    ],
+    "named_source_declarations": [
+      "fin6_sum_expansion",
+      "fin6_prod_erase_0",
+      "fin6_prod_erase_1",
+      "fin6_prod_erase_2",
+      "fin6_prod_erase_3",
+      "fin6_prod_erase_4",
+      "fin6_prod_erase_5"
+    ],
+    "module": "G3CriticalFinSixExpansion"
+  },
+  {
+    "sha256": "ef238ba797a9079b2da1fb691cdf7553ad09ad388c8586ff59df4053a2caf829",
+    "imports": [
+      "G3CriticalBivariateLists"
+    ],
+    "named_source_declarations": [
+      "s3PRows",
+      "s3QRows"
+    ],
+    "module": "G3CriticalSourceFactors3"
+  },
+  {
+    "sha256": "20ab4005616e05d1492236e0abb79c0dea87f89008c79e4bef80ce2158ad891b",
+    "imports": [
+      "G3CriticalFinSixExpansion",
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3PSourceRows",
+      "s3Q0SourceRows",
+      "s3_P_source_coefficients",
+      "s3_Q0_source_coefficients",
+      "s3_P_source_binding",
+      "s3_Q0_source_binding"
+    ],
+    "module": "G3CriticalSliceSourceBinding3"
+  },
+  {
+    "sha256": "5566c5efc73360c3c9cf973303cbe59083a4a4a0761fe0dc69b49884e9a79cc3",
+    "imports": [
+      "G3CriticalBivariateLists"
+    ],
+    "named_source_declarations": [
+      "s5PRows",
+      "s5QRows"
+    ],
+    "module": "G3CriticalSourceFactors5"
+  },
+  {
+    "sha256": "94b8fdf572164653b798b107529c28bc47ef3c9ea81deea658e7f368b46282d6",
+    "imports": [
+      "G3CriticalFinSixExpansion",
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5PSourceRows",
+      "s5Q0SourceRows",
+      "s5_P_source_coefficients",
+      "s5_Q0_source_coefficients",
+      "s5_P_source_binding",
+      "s5_Q0_source_binding"
+    ],
+    "module": "G3CriticalSliceSourceBinding5"
+  },
+  {
+    "sha256": "c6ec0a048b71cdab8ed7ff9c9ced519ed161edb2594119f4a00bcc58b19e292a",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block0U",
+      "s3Block0V",
+      "s3Block0T",
+      "s3_block0_coefficients",
+      "s3_block0_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_0"
+  },
+  {
+    "sha256": "234a0fbb8e142ba43da5e088111f029687bbb192f2ccbaf03c3c6ca8193fb0cf",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block1U",
+      "s3Block1V",
+      "s3Block1T",
+      "s3_block1_coefficients",
+      "s3_block1_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_1"
+  },
+  {
+    "sha256": "4564898a56e0e50fd73224a6d352ebbdc37030c7363bd0de7e88567c960988c6",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block2U",
+      "s3Block2V",
+      "s3Block2T",
+      "s3_block2_coefficients",
+      "s3_block2_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_2"
+  },
+  {
+    "sha256": "705e902a490966cc7fd4313a10e9e7fdc0f61a3504638e7ce1c26f279d0741dc",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block3U",
+      "s3Block3V",
+      "s3Block3T",
+      "s3_block3_coefficients",
+      "s3_block3_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_3"
+  },
+  {
+    "sha256": "57894a72b4eca5ad86ed4a49e7749377245ae7a8e84d306aa74529eebb05f693",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block4U",
+      "s3Block4V",
+      "s3Block4T",
+      "s3_block4_coefficients",
+      "s3_block4_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_4"
+  },
+  {
+    "sha256": "a178fa3e5f583a5d29aafdc4b4ea9d5eeecac2cf9063aa7950105f5943fffcb8",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block5U",
+      "s3Block5V",
+      "s3Block5T",
+      "s3_block5_coefficients",
+      "s3_block5_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_5"
+  },
+  {
+    "sha256": "b7d06b1e2134d28181cd72ca45dfdfe8c6d03db0d7a6535b7d4eea85b1c83603",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block6U",
+      "s3Block6V",
+      "s3Block6T",
+      "s3_block6_coefficients",
+      "s3_block6_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_6"
+  },
+  {
+    "sha256": "509c1ec423b8d9bf908bbe2710a91719d5cbfbe406dec7075c1ade68fbd2af66",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block7U",
+      "s3Block7V",
+      "s3Block7T",
+      "s3_block7_coefficients",
+      "s3_block7_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_7"
+  },
+  {
+    "sha256": "57d36cd614687a272b1b2937df19043d1359ca3f91de886bde96a5f05df9447f",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block8U",
+      "s3Block8V",
+      "s3Block8T",
+      "s3_block8_coefficients",
+      "s3_block8_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_8"
+  },
+  {
+    "sha256": "39341df90940d29260969dbf86795d3b2ad328305b1bd19b6562162c3dec1a8c",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block9U",
+      "s3Block9V",
+      "s3Block9T",
+      "s3_block9_coefficients",
+      "s3_block9_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_9"
+  },
+  {
+    "sha256": "09c73eb4fa268030a16440de2a99389a192de2f119b056ebf734ee395125032c",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block10U",
+      "s3Block10V",
+      "s3Block10T",
+      "s3_block10_coefficients",
+      "s3_block10_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_10"
+  },
+  {
+    "sha256": "cef567a05601a92cac820523f3fb3963bf8bbae660b19d94f4781eee5f7ee027",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block11U",
+      "s3Block11V",
+      "s3Block11T",
+      "s3_block11_coefficients",
+      "s3_block11_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_11"
+  },
+  {
+    "sha256": "960497bef993bf3654af3b662dd44f2030b2cdd2ebd43ff186daa02a0c1bef3a",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block12U",
+      "s3Block12V",
+      "s3Block12T",
+      "s3_block12_coefficients",
+      "s3_block12_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_12"
+  },
+  {
+    "sha256": "ccc66c2accf8fb89cbb09f46dc1c24e6fec92058424c1c458ce54851b06bfef9",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block13U",
+      "s3Block13V",
+      "s3Block13T",
+      "s3_block13_coefficients",
+      "s3_block13_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_13"
+  },
+  {
+    "sha256": "e0ed068d0e3f38fd1e7e4cc7d9d0f66ae6ee61975c3f2f507d9d6e76ffebccfb",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block14U",
+      "s3Block14V",
+      "s3Block14T",
+      "s3_block14_coefficients",
+      "s3_block14_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_14"
+  },
+  {
+    "sha256": "8e94577723d82153fd832b7035eb4e2c90d8bbefab8bda637053503c7c4a23c5",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block15U",
+      "s3Block15V",
+      "s3Block15T",
+      "s3_block15_coefficients",
+      "s3_block15_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_15"
+  },
+  {
+    "sha256": "fecfbaf20e298a11ccd4c56d5dae7495e9a9a2aa9772dc17b258847e92040ae4",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block16U",
+      "s3Block16V",
+      "s3Block16T",
+      "s3_block16_coefficients",
+      "s3_block16_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_16"
+  },
+  {
+    "sha256": "0c08960d66305e921c41363f6f882aa32712d9ea0caee0274de4296217ccb212",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block17U",
+      "s3Block17V",
+      "s3Block17T",
+      "s3_block17_coefficients",
+      "s3_block17_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_17"
+  },
+  {
+    "sha256": "0d8528fcf45fe9ba5f938e6243148915b1870832b2556555966365924cc865f2",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block18U",
+      "s3Block18V",
+      "s3Block18T",
+      "s3_block18_coefficients",
+      "s3_block18_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_18"
+  },
+  {
+    "sha256": "ebe9f869a6a09a4c881afdd8cb590d7963201c0ed4a31a91d327386b513b6b44",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block19U",
+      "s3Block19V",
+      "s3Block19T",
+      "s3_block19_coefficients",
+      "s3_block19_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_19"
+  },
+  {
+    "sha256": "a626a95e39e59f5d21c4fe6f2070cc957975af9e8f15c78f568dfcf47fd513bf",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block20U",
+      "s3Block20V",
+      "s3Block20T",
+      "s3_block20_coefficients",
+      "s3_block20_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_20"
+  },
+  {
+    "sha256": "50a342d56666c26734d42bd9f97d01361f3513f50ddab4446fb1a4d292c62180",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block21U",
+      "s3Block21V",
+      "s3Block21T",
+      "s3_block21_coefficients",
+      "s3_block21_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_21"
+  },
+  {
+    "sha256": "8423267f854c8e135e0e7279c888fca8479266fdec2747dea319f51745dd6224",
+    "imports": [
+      "G3CriticalSourceFactors3"
+    ],
+    "named_source_declarations": [
+      "s3Block22U",
+      "s3Block22V",
+      "s3Block22T",
+      "s3_block22_coefficients",
+      "s3_block22_identity"
+    ],
+    "module": "G3CriticalSourceBlock3_22"
+  },
+  {
+    "sha256": "4d7a1baa8a540b9748db437d3c63b3aa7ef18701cf7d8e731b47e56fade72ac1",
+    "imports": [
+      "G3CriticalBivariateLists"
+    ],
+    "named_source_declarations": [
+      "shiftRows",
+      "ofCoeffs_zeros_append",
+      "ofRows_shiftRows",
+      "combineRows",
+      "RowBezoutData",
+      "reconstruct_block_bezout"
+    ],
+    "module": "G3CriticalBlockReconstruction"
+  },
+  {
+    "sha256": "e7d2d8ea4190aeefcc7fcd962a229df95ea76da0691d7941553d6274d324adb0",
+    "imports": [
+      "G3CriticalCoefficientLists",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic.NormNum"
+    ],
+    "named_source_declarations": [
+      "gCoeffs",
+      "h3Coeffs",
+      "h5Coeffs",
+      "e3Coeffs",
+      "e5Coeffs",
+      "h3ModCoeffs",
+      "h5ModCoeffs",
+      "sModCoeffs",
+      "tModCoeffs",
+      "integer_product_3",
+      "integer_product_5",
+      "modular_map_3",
+      "modular_map_5",
+      "modular_bezout",
+      "h3_length",
+      "h5_length",
+      "h3_mod_length",
+      "h5_mod_length",
+      "h3_last_ne_zero",
+      "h5_last_ne_zero",
+      "h3_mod_last",
+      "h5_mod_last"
+    ],
+    "module": "G3CriticalSliceCoefficientData"
+  },
+  {
+    "sha256": "ee0c97669bf8473ed07bf801441cf72eba91b645f0ac622db8de63296168ef18",
+    "imports": [
+      "G3CriticalSourceBlock3_0",
+      "G3CriticalSourceBlock3_1",
+      "G3CriticalSourceBlock3_2",
+      "G3CriticalSourceBlock3_3",
+      "G3CriticalSourceBlock3_4",
+      "G3CriticalSourceBlock3_5",
+      "G3CriticalSourceBlock3_6",
+      "G3CriticalSourceBlock3_7",
+      "G3CriticalSourceBlock3_8",
+      "G3CriticalSourceBlock3_9",
+      "G3CriticalSourceBlock3_10",
+      "G3CriticalSourceBlock3_11",
+      "G3CriticalSourceBlock3_12",
+      "G3CriticalSourceBlock3_13",
+      "G3CriticalSourceBlock3_14",
+      "G3CriticalSourceBlock3_15",
+      "G3CriticalSourceBlock3_16",
+      "G3CriticalSourceBlock3_17",
+      "G3CriticalSourceBlock3_18",
+      "G3CriticalSourceBlock3_19",
+      "G3CriticalSourceBlock3_20",
+      "G3CriticalSourceBlock3_21",
+      "G3CriticalSourceBlock3_22",
+      "G3CriticalBlockReconstruction",
+      "G3CriticalSliceCoefficientData",
+      "Mathlib.Tactic.IntervalCases"
+    ],
+    "named_source_declarations": [
+      "s3Blocks",
+      "s3CombinedOutput",
+      "s3DCoeffs",
+      "s3K",
+      "s3_block_identities",
+      "s3_combined_row0",
+      "s3_combined_row1",
+      "s3_combined_row2",
+      "s3_combined_row3",
+      "s3_combined_row4",
+      "s3_combined_row5",
+      "s3_combined_row6",
+      "s3_combined_row7",
+      "s3_combined_row8",
+      "s3_combined_length",
+      "s3_combined_polynomial",
+      "s3_D_coefficients",
+      "s3_K_ne_zero",
+      "s3_D_binding",
+      "s3_source_bezout"
+    ],
+    "module": "G3CriticalSourceBlockAssembly3"
+  },
+  {
+    "sha256": "439c4a6ce8d27c9136d34bf0a2922c0d231969b461554df99832b6a7dd4931d0",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block0U",
+      "s5Block0V",
+      "s5Block0T",
+      "s5_block0_coefficients",
+      "s5_block0_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_0"
+  },
+  {
+    "sha256": "bdd560455252b016606a3b37d89f483cee587149b00da4f225851c346ea29aab",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block1U",
+      "s5Block1V",
+      "s5Block1T",
+      "s5_block1_coefficients",
+      "s5_block1_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_1"
+  },
+  {
+    "sha256": "2bd3e63cd29f6338c7f1f431c6a98d5959a665574de2d17a641d4901878b79cd",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block2U",
+      "s5Block2V",
+      "s5Block2T",
+      "s5_block2_coefficients",
+      "s5_block2_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_2"
+  },
+  {
+    "sha256": "66755abda6f52959520bdb3fc6edf7c3d3606a5e20d5db176c5ee65cbcc155c1",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block3U",
+      "s5Block3V",
+      "s5Block3T",
+      "s5_block3_coefficients",
+      "s5_block3_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_3"
+  },
+  {
+    "sha256": "11296ca4bb39d043c86f0d2685d5be4afb161ebdffa826a91fd52a4786850bcd",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block4U",
+      "s5Block4V",
+      "s5Block4T",
+      "s5_block4_coefficients",
+      "s5_block4_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_4"
+  },
+  {
+    "sha256": "b7d8d20ea25981f3a87ec8e0037174db606e4df35243eb7fd2cc9608bf925f2f",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block5U",
+      "s5Block5V",
+      "s5Block5T",
+      "s5_block5_coefficients",
+      "s5_block5_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_5"
+  },
+  {
+    "sha256": "d7a9fb7f4f5b052ee5ae57b6ef5da86d2d23e242fe175adcf5d8e574c02b7f0d",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block6U",
+      "s5Block6V",
+      "s5Block6T",
+      "s5_block6_coefficients",
+      "s5_block6_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_6"
+  },
+  {
+    "sha256": "a92bbb82f685365e68b1454ffff6247e8fc372d45102ffa449a7b48b606595a5",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block7U",
+      "s5Block7V",
+      "s5Block7T",
+      "s5_block7_coefficients",
+      "s5_block7_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_7"
+  },
+  {
+    "sha256": "95a694b9d8b0b51877364bfb4f605bafdbbe36f9fc81a303658395be6e54d2a1",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block8U",
+      "s5Block8V",
+      "s5Block8T",
+      "s5_block8_coefficients",
+      "s5_block8_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_8"
+  },
+  {
+    "sha256": "d2371a4a052d465df0cbd5a5f00409c8320c8afbf1959b02a24527da5eabf73d",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block9U",
+      "s5Block9V",
+      "s5Block9T",
+      "s5_block9_coefficients",
+      "s5_block9_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_9"
+  },
+  {
+    "sha256": "e55257e911dcda2cafb33e1693048ce0e9029c6d9a5a25c4be7d0c7af968f72e",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block10U",
+      "s5Block10V",
+      "s5Block10T",
+      "s5_block10_coefficients",
+      "s5_block10_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_10"
+  },
+  {
+    "sha256": "64944d507bf4f1b4f1a4eaa5e3c064e7d7baeead9824615ecedaa7cc1d4d73c5",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block11U",
+      "s5Block11V",
+      "s5Block11T",
+      "s5_block11_coefficients",
+      "s5_block11_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_11"
+  },
+  {
+    "sha256": "35c734529d3d1c289a2f1fa30b9d0023d26e2fc3cd608dc3efcf47e84f523bcc",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block12U",
+      "s5Block12V",
+      "s5Block12T",
+      "s5_block12_coefficients",
+      "s5_block12_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_12"
+  },
+  {
+    "sha256": "01122c9273e3ff2ef6d21a61cd65ca0626243b97169ce37f01e883de1db1d68a",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block13U",
+      "s5Block13V",
+      "s5Block13T",
+      "s5_block13_coefficients",
+      "s5_block13_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_13"
+  },
+  {
+    "sha256": "5dbaedf26efac2abb379a414cd30b3171dde19aa205634672c49ea5d4d61389d",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block14U",
+      "s5Block14V",
+      "s5Block14T",
+      "s5_block14_coefficients",
+      "s5_block14_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_14"
+  },
+  {
+    "sha256": "004cdfaf73ff14d03f59d5f7d2abdb7428a5c62f2bfcd66818319792c1dc4b4a",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block15U",
+      "s5Block15V",
+      "s5Block15T",
+      "s5_block15_coefficients",
+      "s5_block15_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_15"
+  },
+  {
+    "sha256": "7f65625752fcd1ddfaca4e2048c77e4eb76c5d8519b9d858d5416980e17c97b5",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block16U",
+      "s5Block16V",
+      "s5Block16T",
+      "s5_block16_coefficients",
+      "s5_block16_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_16"
+  },
+  {
+    "sha256": "ddd5cfa475a635e1cfa733be7236b4688e5109427033c29db16ed240ffa8ae58",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block17U",
+      "s5Block17V",
+      "s5Block17T",
+      "s5_block17_coefficients",
+      "s5_block17_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_17"
+  },
+  {
+    "sha256": "a50e72f6aed53b8bcb75d465b174e1fc8b7331b85aeffa64ae8fa8b82c9ca787",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block18U",
+      "s5Block18V",
+      "s5Block18T",
+      "s5_block18_coefficients",
+      "s5_block18_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_18"
+  },
+  {
+    "sha256": "a67dfb2802b00cc1a7dff4161c42f11458018a0515bef3c214c528b5dbe91f95",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block19U",
+      "s5Block19V",
+      "s5Block19T",
+      "s5_block19_coefficients",
+      "s5_block19_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_19"
+  },
+  {
+    "sha256": "d6b7aa9b411f6dc417e26b55b41f1936927872acf986480023557beb7980c230",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block20U",
+      "s5Block20V",
+      "s5Block20T",
+      "s5_block20_coefficients",
+      "s5_block20_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_20"
+  },
+  {
+    "sha256": "b76de8f4a9f78a0bc2bb7c0c49f92ca4fb22a700d37798c29d7c6e179693506f",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block21U",
+      "s5Block21V",
+      "s5Block21T",
+      "s5_block21_coefficients",
+      "s5_block21_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_21"
+  },
+  {
+    "sha256": "43d0244624cd69c39cbb4b20b80ba5e89256227338a6086b00b57c509d34abe9",
+    "imports": [
+      "G3CriticalSourceFactors5"
+    ],
+    "named_source_declarations": [
+      "s5Block22U",
+      "s5Block22V",
+      "s5Block22T",
+      "s5_block22_coefficients",
+      "s5_block22_identity"
+    ],
+    "module": "G3CriticalSourceBlock5_22"
+  },
+  {
+    "sha256": "4d3e0f80ffaadf4c62d57dae62a1cebafb22c8983120326af1ea596f872d5cb5",
+    "imports": [
+      "G3CriticalSourceBlock5_0",
+      "G3CriticalSourceBlock5_1",
+      "G3CriticalSourceBlock5_2",
+      "G3CriticalSourceBlock5_3",
+      "G3CriticalSourceBlock5_4",
+      "G3CriticalSourceBlock5_5",
+      "G3CriticalSourceBlock5_6",
+      "G3CriticalSourceBlock5_7",
+      "G3CriticalSourceBlock5_8",
+      "G3CriticalSourceBlock5_9",
+      "G3CriticalSourceBlock5_10",
+      "G3CriticalSourceBlock5_11",
+      "G3CriticalSourceBlock5_12",
+      "G3CriticalSourceBlock5_13",
+      "G3CriticalSourceBlock5_14",
+      "G3CriticalSourceBlock5_15",
+      "G3CriticalSourceBlock5_16",
+      "G3CriticalSourceBlock5_17",
+      "G3CriticalSourceBlock5_18",
+      "G3CriticalSourceBlock5_19",
+      "G3CriticalSourceBlock5_20",
+      "G3CriticalSourceBlock5_21",
+      "G3CriticalSourceBlock5_22",
+      "G3CriticalBlockReconstruction",
+      "G3CriticalSliceCoefficientData",
+      "Mathlib.Tactic.IntervalCases"
+    ],
+    "named_source_declarations": [
+      "s5Blocks",
+      "s5CombinedOutput",
+      "s5DCoeffs",
+      "s5K",
+      "s5_block_identities",
+      "s5_combined_row0",
+      "s5_combined_row1",
+      "s5_combined_row2",
+      "s5_combined_row3",
+      "s5_combined_row4",
+      "s5_combined_row5",
+      "s5_combined_row6",
+      "s5_combined_row7",
+      "s5_combined_row8",
+      "s5_combined_length",
+      "s5_combined_polynomial",
+      "s5_D_coefficients",
+      "s5_K_ne_zero",
+      "s5_D_binding",
+      "s5_source_bezout"
+    ],
+    "module": "G3CriticalSourceBlockAssembly5"
+  },
+  {
+    "sha256": "ddedbdba3ec000cd49d76e16c2ecfe78335515d32552c2e754a0ba8eb493f8f5",
+    "imports": [
+      "G3CriticalSliceCoefficientData",
+      "Mathlib.RingTheory.Polynomial.Resultant.Basic",
+      "Mathlib.Algebra.Field.ZMod",
+      "Mathlib.Data.Real.Basic"
+    ],
+    "named_source_declarations": [
+      "reduce101",
+      "H3",
+      "H5",
+      "H3_natDegree",
+      "H5_natDegree",
+      "H3_map",
+      "H5_map",
+      "H3_map_natDegree",
+      "H5_map_natDegree",
+      "reduced_coprime",
+      "integer_resultant_ne_zero",
+      "quotients_no_common_real_root"
+    ],
+    "module": "G3CriticalModularLifting"
+  },
+  {
+    "sha256": "4049000f83c150353f4283dbb3bc340cca9f7a5f4885a60889768891abece94c",
+    "imports": [
+      "G3CriticalSliceCoefficientData",
+      "G3AllResiduePositivity"
+    ],
+    "named_source_declarations": [
+      "factorCoeffs0",
+      "factorCoeffs1",
+      "factorCoeffs2",
+      "factorCoeffs3",
+      "factorCoeffs4",
+      "factorCoeffs5",
+      "factorCoeffs6",
+      "factorCoeffs7",
+      "factorCoeffs8",
+      "factorCoeffs9",
+      "powerCoeffs",
+      "ofCoeffs_power",
+      "factorProductCoeffs",
+      "factor_product_coefficients",
+      "factor0_eval",
+      "factor1_eval",
+      "factor2_eval",
+      "factor3_eval",
+      "factor4_eval",
+      "factor5_eval",
+      "factor6_eval",
+      "factor7_eval",
+      "factor8_eval",
+      "factor9_eval",
+      "g_eval_eq_positive_product",
+      "g_eval_pos"
+    ],
+    "module": "G3CriticalPositiveProduct"
+  },
+  {
+    "sha256": "cc1fe521130d3c50c09acaffb2d21b4f961dcb7542a81ad5b838cf024a87863d",
+    "imports": [
+      "G3CriticalModularLifting",
+      "G3CriticalPositiveProduct"
+    ],
+    "named_source_declarations": [
+      "E3",
+      "E5",
+      "E3_eq_product",
+      "E5_eq_product",
+      "exported_no_common_positive_root"
+    ],
+    "module": "G3CriticalExportedNoCommon"
+  },
+  {
+    "sha256": "c353c266216b7022648c1959dcb8a4740a93ae85da0cc26e0f88a844ac61644f",
+    "imports": [
+      "G3CriticalSliceSourceBinding3",
+      "G3CriticalSliceSourceBinding5",
+      "G3CriticalSourceBlockAssembly3",
+      "G3CriticalSourceBlockAssembly5",
+      "G3CriticalExportedNoCommon"
+    ],
+    "named_source_declarations": [
+      "coprime_of_integer_source_bezout",
+      "quotient_from_factorization",
+      "actual_slice_coprime"
+    ],
+    "module": "G3CriticalSourceSliceCoprime"
+  },
+  {
+    "sha256": "87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29",
+    "imports": [
+      "G3CriticalProjectionPolynomials",
+      "G3CriticalSourceSliceCoprime"
+    ],
+    "named_source_declarations": [
+      "actual_fixed_residue_strict_critical_finite"
+    ],
+    "module": "G3ActualFixedResidueCriticalFiniteness"
+  },
+  {
+    "module": "G3BernoulliSmoothness",
+    "sha256": "3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8",
+    "imports": [
+      "G3BernoulliDerivatives",
+      "Mathlib.Analysis.Calculus.ContDiff.Comp",
+      "Mathlib.Analysis.Calculus.ContDiff.Operations"
+    ],
+    "named_source_declarations": [
+      "contDiffAt_bernoulliFactor",
+      "contDiffAt_bernoulliLog_of_factor_pos"
+    ]
+  },
+  {
+    "module": "G3BernoulliSmoothnessBoundaryChecks",
+    "sha256": "b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b",
+    "imports": [
+      "G3BernoulliSmoothness"
+    ],
+    "named_source_declarations": []
+  },
+  {
+    "module": "G3FiniteWordLogSignature",
+    "sha256": "4db92b1e81133d1221ed84ef0b99a59af7017df1c4d5bf6f18429cd825c6bcf4",
+    "imports": [
+      "G3BernoulliSmoothness",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+    ],
+    "named_source_declarations": [
+      "FiniteWordParameters",
+      "finiteWordMoment",
+      "finiteWordLog",
+      "finiteWordMoment_pos",
+      "neg_log_finiteWordMoment",
+      "exp_neg_finiteWordLog",
+      "contDiffAt_finiteWordLog",
+      "contDiffAt_finiteWordLog_vector"
+    ]
+  }
+]
