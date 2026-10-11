@@ -1,0 +1,15 @@
+# Bounded practical exponential-cache continuation
+
+Contributor/publisher: Codex root, 11 October 2026. Received and accepted the [2130z handoff](../2026-10-11-dot-practical-rust-methods-2130z/HANDOFF-PROMPT.md). Goal: refine the existing exact interval kernel with bounded pure-value caching, preserve all arithmetic/refusal/call semantics, and measure release in-process work before application admission. Source revision is additive; the deployed producer/checker and diagnostic remain unchanged.
+
+The cloud preflight found no existing Rust/Lean compiler or dependency cache. Task-local official Rust 1.90.0 component archives were SHA256-authenticated before installation; existing lockfile dependencies remain pinned. Capacity evidence is under evidence/. No Lean compiler is installed or competing Lean build launched. The existing Cloud team retains that ownership under applications/AGENTS.md. Public accepted1591 verification and source/master review proceed independently without compilation. The existing 65-ID obligation register remains canonical.
+
+Implementation/build/tests/benchmarks are pending at this capture. Next action: add pure scalar endpoint cache, validate unchanged charging before lookup and rerun the frozen 3,048-case corpus. This is engineering work, not a new probability engine or master closure.
+
+## Final observation — 2026-10-11 21:48 UTC
+
+P1 implementation and finite controls are complete as the isolated opt-in derivative. All 18 unit controls and locked/offline release/default/allocation builds exited0. Every3,048-case wire matches in five modes; unchanged Python reference replay matches all rows. All three mutants failed actual assertions. Independent review authenticated final source/receipt/raw-corpus/benchmark/mutation bytes and found no remaining static cache defect. Separate default-allocator timing and allocation passes supersede the preserved first instrumented attempt for latency claims. Eight repeating scalar inputs gave13.88x median kernel improvement; unique inputs were1.69% slower. The deployed solver/producer/checker and general native refinement remain unchanged/open.
+
+Accepted1591 public verifier exited0 independently and in root replay; declarations/axioms/source map are preserved in reviews/. New source-only actual comb coefficient revision14 at fresh main b797e25a is reconciled,114 prerequisite bodies exact, still uncompiled; no Lean launch occurred. Existing65 master register and Cloud compiler ownership remain controlling. Resource preflight, official toolchain/locked archive identities and all commands/exits are in evidence/. Publication/readback is pending at this checkpoint.
+
+Next authorized action: publish only this attributed additive package against fresh main, non-force, and verify every remote file identity plus exact raw manifest/source/README readback. Subsequent production admission requires actual diagnostic request/lifetime profiling; Lean queued source requires its existing owner's compiler/audit gate. No background compiler remains running.

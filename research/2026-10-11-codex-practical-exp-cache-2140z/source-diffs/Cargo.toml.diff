@@ -1,0 +1,12 @@
+--- baseline/Cargo.toml
++++ revision/Cargo.toml
+@@ -5,6 +5,9 @@
+ rust-version = "1.74"
+ description = "Separate exact forward and signed-receiver interval compatibility kernels"
+ publish = false
++
++[features]
++allocation-counts = []
+ 
+ [lib]
+ name = "exact_interval_pilot"

@@ -1,0 +1,782 @@
+[
+  {
+    "label": "rustc-version",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/rustc",
+      "--version",
+      "--verbose"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.009156827000026624,
+    "child_cpu_seconds": 0.0077659999999999995,
+    "children_cumulative_maxrss_kib": 31100,
+    "stdout_sha256": "938db28b83089ab88301ca425f99fa1d8b61ee66e0371babe1db6373ae9810a3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": null
+  },
+  {
+    "label": "cargo-version",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "--version"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.004560273999970832,
+    "child_cpu_seconds": 0.004387999999999999,
+    "children_cumulative_maxrss_kib": 31100,
+    "stdout_sha256": "5f9bdc5e0a6960db4a3cc66e9b3ae15bad5b9b506e8b7c49739c88dc5355c3f1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": null
+  },
+  {
+    "label": "locked-fetch",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "fetch",
+      "--locked"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.015830259999972895,
+    "child_cpu_seconds": 0.015261,
+    "children_cumulative_maxrss_kib": 31100,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": null
+  },
+  {
+    "label": "release-tests",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--offline"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 2.607905736999953,
+    "child_cpu_seconds": 5.67493,
+    "children_cumulative_maxrss_kib": 173496,
+    "stdout_sha256": "0a7d18b55dee33bccfc2f921a9ba0e86e8070f103a79916e00976d323621a24e",
+    "stderr_sha256": "45600ea6e9280752bde3bccc2dee6b704ec9e768b4459bf6edd5c8ee3f0837e6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "release-build",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "build",
+      "--release",
+      "--locked",
+      "--offline",
+      "--bins"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.01474119099998461,
+    "child_cpu_seconds": 0.014576999999999896,
+    "children_cumulative_maxrss_kib": 173496,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "6bfa9e18ffdef821c711a542cfebd7db0982665615563e5a191285e489609c6f",
+    "stdin_sha256": null
+  },
+  {
+    "label": "baseline-build",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "build",
+      "--release",
+      "--locked",
+      "--offline",
+      "--bin",
+      "interval-probe"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-08-cloud-rust-interval-root-0000z",
+    "exit": 0,
+    "wall_seconds": 3.253705642,
+    "child_cpu_seconds": 7.547136000000001,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "8ca070b4c1e86e3158ee0221851c057eba7a4c705fe94b0de5a8cb35334b728a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "baseline-corpus",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/baseline-target/release/interval-probe"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.9362029719999896,
+    "child_cpu_seconds": 0.9343779999999987,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "d3f5817f7e0ee6109657676b16e056b70adaee20f458c229381e42df4046197f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": "5a2826b10d075932446980905dfd994975d40cb2078a59de0a15075096b297ea"
+  },
+  {
+    "label": "revision-uncached-corpus",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/interval-probe"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.9259512829999608,
+    "child_cpu_seconds": 0.9256369999999999,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "d3f5817f7e0ee6109657676b16e056b70adaee20f458c229381e42df4046197f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdin_sha256": "5a2826b10d075932446980905dfd994975d40cb2078a59de0a15075096b297ea"
+  },
+  {
+    "label": "revision-cache0-corpus",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/interval-probe",
+      "--cache-entries",
+      "0"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.9233595619999733,
+    "child_cpu_seconds": 0.9229110000000026,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "d3f5817f7e0ee6109657676b16e056b70adaee20f458c229381e42df4046197f",
+    "stderr_sha256": "73ad5f7bae178bfe9d53e7c841dc21f68fe9b43abec65c358b0227f2bfa9673a",
+    "stdin_sha256": "5a2826b10d075932446980905dfd994975d40cb2078a59de0a15075096b297ea"
+  },
+  {
+    "label": "revision-cache64-corpus",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/interval-probe",
+      "--cache-entries",
+      "64"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.04936311699998441,
+    "child_cpu_seconds": 0.045097000000000054,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "d3f5817f7e0ee6109657676b16e056b70adaee20f458c229381e42df4046197f",
+    "stderr_sha256": "c8b0ee9c9367ea1adcc48292fd8708e3556749785b41cef2d37ef25fe2b7c5d9",
+    "stdin_sha256": "5a2826b10d075932446980905dfd994975d40cb2078a59de0a15075096b297ea"
+  },
+  {
+    "label": "revision-cache1-corpus",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/interval-probe",
+      "--cache-entries",
+      "1"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.929720102000033,
+    "child_cpu_seconds": 0.9295040000000013,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "d3f5817f7e0ee6109657676b16e056b70adaee20f458c229381e42df4046197f",
+    "stderr_sha256": "d7eb1bc3767a52435705094953cda52aa110c64cbbe544fa18928ea979c187df",
+    "stdin_sha256": "5a2826b10d075932446980905dfd994975d40cb2078a59de0a15075096b297ea"
+  },
+  {
+    "label": "bench-0-repeated-1-cap0-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-1",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.07114733899999237,
+    "child_cpu_seconds": 0.07079600000000308,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "31b563fc7d39ac92c09a24c84ac620f05ebb0eecdd207889c84300040d8d5638",
+    "stderr_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-0-repeated-1-cap64-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-1",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.0031352249999940796,
+    "child_cpu_seconds": 0.002871000000000623,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "557a2a54ba3b13593ed5ada42e97deed869497c4a60db0c3bd78fedf3719c20a",
+    "stderr_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-0-repeated-1-cap64-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-1",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.002767295000012382,
+    "child_cpu_seconds": 0.002582999999999447,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "273e142dcf492e2d361771ea322c5c671c1e1e76a8d4ed46e78bb7f0bbe7b85d",
+    "stderr_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-0-repeated-1-cap0-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-1",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.07391031800000292,
+    "child_cpu_seconds": 0.07364800000000382,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "cb4d73e2f9c17ad3b1b3cde9892ef75a6622e005e5bccdbe44de1cf09c072e22",
+    "stderr_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-0-repeated-1-cap0-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-1",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.06872313300004862,
+    "child_cpu_seconds": 0.06849699999999881,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "4671abe51e13b4011d7a1cbd8e22e5a5fbf6d161b538af69884848bd3cfb7c0c",
+    "stderr_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-0-repeated-1-cap64-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-1",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.002606767999964177,
+    "child_cpu_seconds": 0.0024140000000010264,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "bdb5e3942509921bcbe8b031f7bb017ba979103831421875cf7c42da4d7580ff",
+    "stderr_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-1-repeated-8-cap0-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08618147399999998,
+    "child_cpu_seconds": 0.08602299999999663,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "00d15a5d8278da1d3970bb42d5958e840376ddb504e951ad2d0e6c3b00f59d02",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-1-repeated-8-cap64-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.009125356999959422,
+    "child_cpu_seconds": 0.008961000000001773,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "00eb8ea7fed574a6bcbc62f37197cf09836b0a7e8c8b8f27bd71c1303cb2d318",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-1-repeated-8-cap64-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.008011537000015778,
+    "child_cpu_seconds": 0.0077579999999991545,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "e890cc5bc691ae6af1ad03ed4e552f04aa87d49c4029d78a69b17a9abe87dbe4",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-1-repeated-8-cap0-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08746025800002144,
+    "child_cpu_seconds": 0.08722099999999966,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "7d9f8b0f38e1c90282cbfabc8b2342a279d33e7d54b26486cc0a7959dcd495c5",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-1-repeated-8-cap0-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08704550999999583,
+    "child_cpu_seconds": 0.08675600000000128,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "65eedb4d135f922687cfc7b3d494c79a603e2324e9c26eb05815cffac2563abc",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-1-repeated-8-cap64-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.007570102999977735,
+    "child_cpu_seconds": 0.007275000000000809,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "24e156df9032d2ed21b33ecf4adf9d0ef1471ddc60011c62bbdb08cf074131d0",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-2-unique-cap0-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "unique",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.12862922300001856,
+    "child_cpu_seconds": 0.12833300000000225,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "22252153622380d0b2e58dc2e2ad11081626297ae75ce8ed226371ed04b95e5d",
+    "stderr_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-2-unique-cap64-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "unique",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.12502994699997316,
+    "child_cpu_seconds": 0.12475599999999876,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "81149d93fc779309a1c11310e660ef76199d5b3769ef3f4210067ffe4fd3fdd1",
+    "stderr_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-2-unique-cap64-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "unique",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.12770402400002467,
+    "child_cpu_seconds": 0.1274289999999979,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "e3a0198f4e0394ca73b0cbfeda6fe67cac612a5cd3849889dbed503df107e0ee",
+    "stderr_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-2-unique-cap0-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "unique",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.13281471099998043,
+    "child_cpu_seconds": 0.13249599999999817,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "27422b60a839a3a2b266395dd3efe912e6cd56bebe7a71b417eff72ade2a2203",
+    "stderr_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-2-unique-cap0-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "unique",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.1266348209999819,
+    "child_cpu_seconds": 0.12644599999999628,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "b046f42724311c80cf8634ba52b3c6a2e5e5dab4bfc87043a99561da149cee59",
+    "stderr_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-2-unique-cap64-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "unique",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.12673649800001385,
+    "child_cpu_seconds": 0.12653000000000092,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "4176468e026f6111ac8a8db8a5be994e90d52ecf31c03d2bc27302ec4b43e488",
+    "stderr_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-3-repeated-8-cap0-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08978831599995374,
+    "child_cpu_seconds": 0.0884359999999964,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "6f9c2e095c999134cd96f1e413d5a8f0284ff1a414b93139c9bd89416b2f019d",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-3-repeated-8-cap4-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "4",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.09052352400004793,
+    "child_cpu_seconds": 0.08920000000000017,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "e6bdc12d95eacb16555fbbd03a1dc7924424c1dd852f73d2e12c072c07745d74",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-3-repeated-8-cap4-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "4",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08708972099998391,
+    "child_cpu_seconds": 0.08571800000000196,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "ae873f6df9301284ba95f6c0551fd6ee3ba362e3753c528cef5b8d31f1175fb4",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-3-repeated-8-cap0-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08876583399995752,
+    "child_cpu_seconds": 0.087445,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "c9a18e1f14b76cfa06df63d2a9a8dbc7fa4d70673bd8b7a7b491f13752b8d70d",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-3-repeated-8-cap0-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.0882655199999931,
+    "child_cpu_seconds": 0.08688000000000184,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "65a8a25a1522ae5a16e06e6a137e472203680a5e38e0abc06b3e59d6cdeebac3",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-3-repeated-8-cap4-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "repeated-8",
+      "4",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.08815972400003602,
+    "child_cpu_seconds": 0.08800500000000011,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "098e53d7c59d1ec55526df2cf7ffd10d0233a14c4a41ce99906adaa352c64993",
+    "stderr_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-4-shortcut-cap0-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "shortcut",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.001999946000012187,
+    "child_cpu_seconds": 0.0018460000000015686,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "be7eb5ce712297ea420414e34a85fe30ce9ca84e5946c0080ed3e770f1b7abd7",
+    "stderr_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-4-shortcut-cap64-round0",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "shortcut",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.0021441600000002836,
+    "child_cpu_seconds": 0.0019730000000006687,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "eb8e3886fac4e89fd81ee7a3a7c42ac3cbb77008f293680fc9995c4acf6adbc5",
+    "stderr_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-4-shortcut-cap64-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "shortcut",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.001916400999959933,
+    "child_cpu_seconds": 0.0017550000000003951,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "56943a79115f8ed8e137265046761708778f397323c00ca2bac05932021872f9",
+    "stderr_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-4-shortcut-cap0-round1",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "shortcut",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.001985703000002559,
+    "child_cpu_seconds": 0.0018220000000011005,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "3254ee9da5e32683d78d83554066cd09a346469383b229f0a5bf20f4531429c4",
+    "stderr_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-4-shortcut-cap0-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "shortcut",
+      "0",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.001999327999953948,
+    "child_cpu_seconds": 0.0017949999999982147,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "bfe09fda00691f40046f5a58c745cbaf5fe49c2130778e5de2e140570b7d969a",
+    "stderr_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "bench-4-shortcut-cap64-round2",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/target/release/cache-bench",
+      "shortcut",
+      "64",
+      "3",
+      "128"
+    ],
+    "cwd": "/workspace/Research-Commons/research/2026-10-11-codex-practical-exp-cache-2140z/crate",
+    "exit": 0,
+    "wall_seconds": 0.0021409720000065136,
+    "child_cpu_seconds": 0.001958999999999822,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "44c948acaba74a88a8f464cfa04841d5ae7a605a0d5db9234ae7005cd3473673",
+    "stderr_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "mutation-charge-erased",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--offline",
+      "--test",
+      "cache"
+    ],
+    "cwd": "/workspace/scratch/practical-exp-cache/mutations/charge-erased",
+    "exit": 101,
+    "wall_seconds": 5.660021616999984,
+    "child_cpu_seconds": 11.123652,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "dc0ab632c457a3d7ab4d2e9cb2bc80728cda4c5e7b3658b9223ab7adcbdf94a4",
+    "stderr_sha256": "d1e6a3f0ad75becc96afdb981c69ba6dc41b3298bfad40efa31aff89d43b814a",
+    "stdin_sha256": null
+  },
+  {
+    "label": "mutation-precision-key-erased",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--offline",
+      "--test",
+      "cache"
+    ],
+    "cwd": "/workspace/scratch/practical-exp-cache/mutations/precision-key-erased",
+    "exit": 101,
+    "wall_seconds": 2.4112547510000013,
+    "child_cpu_seconds": 4.508755999999996,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "16e2a5f1a180294f9cccf9270375c75b4e83d0bd3fc8c8ea56c15033ed6b2be8",
+    "stderr_sha256": "e72ba9152398dc536debc8689fd2c19027d6cd692caec759a3d36a52ee86d7bf",
+    "stdin_sha256": null
+  },
+  {
+    "label": "mutation-argument-key-erased",
+    "command": [
+      "/workspace/scratch/practical-exp-cache/toolchain/bin/cargo",
+      "test",
+      "--release",
+      "--locked",
+      "--offline",
+      "--test",
+      "cache"
+    ],
+    "cwd": "/workspace/scratch/practical-exp-cache/mutations/argument-key-erased",
+    "exit": 101,
+    "wall_seconds": 1.5404401239999856,
+    "child_cpu_seconds": 3.684980000000002,
+    "children_cumulative_maxrss_kib": 226368,
+    "stdout_sha256": "149aac781a19dd0ecd22c7a2b503e4a0c398be19b98fae29c5ff5a5521f2252c",
+    "stderr_sha256": "85570b2a1d10a6ed75cb2a40d8ef5ed2a370332f61aaf41ff6f189af476513bd",
+    "stdin_sha256": null
+  }
+]

@@ -1,0 +1,59 @@
+
+running 8 tests
+test charging_cutoffs_and_validation_precede_hits ... ok
+test bounded_fifo_bypass_and_failures ... FAILED
+test exact_values_precision_and_range_boundaries ... FAILED
+test reduced_key_numerator_and_denominator_bit_boundary ... FAILED
+test independent_exact_taylor_and_dyadic_control ... FAILED
+test deterministic_generated_endpoints_and_budget_sequences ... FAILED
+test held_cache_borrows_fall_back_without_new_refusals ... ok
+test shared_plain_values_keep_contexts_and_budgets_independent ... ok
+
+failures:
+
+---- bounded_fifo_bypass_and_failures stdout ----
+
+thread 'bounded_fifo_bypass_and_failures' panicked at tests/cache.rs:33:28:
+assertion `left == right` failed
+  left: Ok(ForwardInterval { lo: Ratio { numer: 1, denom: 1 }, hi: Ratio { numer: 1, denom: 1 } })
+ right: Ok(ForwardInterval { lo: Ratio { numer: 753, denom: 2048 }, hi: Ratio { numer: 377, denom: 1024 } })
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- exact_values_precision_and_range_boundaries stdout ----
+
+thread 'exact_values_precision_and_range_boundaries' panicked at tests/cache.rs:13:13:
+assertion `left == right` failed
+  left: Ok(ForwardInterval { lo: Ratio { numer: 1, denom: 1 }, hi: Ratio { numer: 1, denom: 1 } })
+ right: Ok(ForwardInterval { lo: Ratio { numer: 1467, denom: 2048 }, hi: Ratio { numer: 367, denom: 512 } })
+
+---- reduced_key_numerator_and_denominator_bit_boundary stdout ----
+
+thread 'reduced_key_numerator_and_denominator_bit_boundary' panicked at tests/cache.rs:164:9:
+assertion `left == right` failed
+  left: Ok(ForwardInterval { lo: Ratio { numer: 0, denom: 1 }, hi: Ratio { numer: 1, denom: 256 } })
+ right: Ok(ForwardInterval { lo: Ratio { numer: 4079, denom: 4096 }, hi: Ratio { numer: 255, denom: 256 } })
+
+---- independent_exact_taylor_and_dyadic_control stdout ----
+
+thread 'independent_exact_taylor_and_dyadic_control' panicked at tests/cache.rs:112:5:
+assertion `left == right` failed
+  left: ForwardInterval { lo: Ratio { numer: 108578846420302164395, denom: 295147905179352825856 }, hi: Ratio { numer: 27144711605075541099, denom: 73786976294838206464 } }
+ right: ForwardInterval { lo: Ratio { numer: 1, denom: 1 }, hi: Ratio { numer: 1, denom: 1 } }
+
+---- deterministic_generated_endpoints_and_budget_sequences stdout ----
+
+thread 'deterministic_generated_endpoints_and_budget_sequences' panicked at tests/cache.rs:151:59:
+assertion `left == right` failed
+  left: Ratio { numer: 63, denom: 2305843009213693952 }
+ right: Ratio { numer: 519, denom: 18446744073709551616 }
+
+
+failures:
+    bounded_fifo_bypass_and_failures
+    deterministic_generated_endpoints_and_budget_sequences
+    exact_values_precision_and_range_boundaries
+    independent_exact_taylor_and_dyadic_control
+    reduced_key_numerator_and_denominator_bit_boundary
+
+test result: FAILED. 3 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+

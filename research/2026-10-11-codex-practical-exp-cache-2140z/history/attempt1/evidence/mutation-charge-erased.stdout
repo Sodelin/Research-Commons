@@ -1,0 +1,34 @@
+
+running 7 tests
+test charging_cutoffs_and_validation_precede_hits ... ok
+test bounded_fifo_bypass_and_failures ... ok
+test independent_exact_taylor_and_dyadic_control ... ok
+test held_cache_borrows_fall_back_without_new_refusals ... FAILED
+test shared_plain_values_keep_contexts_and_budgets_independent ... FAILED
+test exact_values_precision_and_range_boundaries ... ok
+test deterministic_generated_endpoints_and_budget_sequences ... ok
+
+failures:
+
+---- held_cache_borrows_fall_back_without_new_refusals stdout ----
+
+thread 'held_cache_borrows_fall_back_without_new_refusals' panicked at tests/cache.rs:133:5:
+assertion `left == right` failed
+  left: 0
+ right: 4
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- shared_plain_values_keep_contexts_and_budgets_independent stdout ----
+
+thread 'shared_plain_values_keep_contexts_and_budgets_independent' panicked at tests/cache.rs:86:5:
+assertion `left == right` failed
+  left: 0
+ right: 2
+
+
+failures:
+    held_cache_borrows_fall_back_without_new_refusals
+    shared_plain_values_keep_contexts_and_budgets_independent
+
+test result: FAILED. 5 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.50s
+

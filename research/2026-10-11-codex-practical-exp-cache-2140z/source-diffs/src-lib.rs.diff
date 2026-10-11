@@ -1,0 +1,143 @@
+--- baseline/src/lib.rs
++++ revision/src/lib.rs
+@@ -6,7 +6,7 @@
+ use num_integer::Integer;
+ use num_rational::BigRational;
+ use num_traits::{One, Signed, Zero};
+-use std::{cell::Cell, fmt, rc::Rc};
++use std::{cell::{Cell, RefCell}, collections::{HashMap, VecDeque}, fmt, rc::Rc};
+ pub mod parse;
+ pub type Rational = BigRational;
+ pub type Result<T> = std::result::Result<T, Error>;
+@@ -77,6 +77,14 @@
+ /// dyadic squaring. No floating-point computation or provider subprocess.
+ /// A missing memoization cache changes performance only, never call accounting.
+ pub fn exp_neg(x: &Rational, bits: i32) -> Result<ForwardInterval> {
++    exp_neg_work(x, bits, &mut ExpWork::default())
++}
++
++#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
++pub struct ExpWork { pub evaluations: u64, pub taylor_terms: u64, pub squarings: u64 }
++
++fn exp_neg_work(x: &Rational, bits: i32, work: &mut ExpWork) -> Result<ForwardInterval> {
++    work.evaluations = work.evaluations.saturating_add(1);
+     if x.is_negative() || !(8..=192).contains(&bits) {
+         return error("exponential domain/precision");
+     }
+@@ -91,6 +99,7 @@
+     let (mut lower,mut upper,mut s,mut term)=(integer(0),integer(1),integer(1),integer(1));
+     let mut reached=false;
+     for j in 1..=512 {
++        work.taylor_terms = work.taylor_terms.saturating_add(1);
+         term *= &u/integer(j);
+         if j%2==1 { s -= &term; lower=s.clone(); }
+         else { s += &term; upper=s.clone(); }
+@@ -99,6 +108,7 @@
+     if !reached { return error("Taylor term cap exceeded"); }
+     let mut ans=ForwardInterval::new(lower,upper)?.dyadic(q).unit_intersection()?;
+     for _ in 0..m {
++        work.squarings = work.squarings.saturating_add(1);
+         ans=ForwardInterval::new(&ans.lo*&ans.lo,&ans.hi*&ans.hi)?.dyadic(q).unit_intersection()?;
+     }
+     if ans.width() > Rational::new(BigInt::one(),scale(bits as u32)) {
+@@ -107,19 +117,78 @@
+     Ok(ans)
+ }
+ 
++/// Policy names the unchanged scalar algorithm, not the compiled binary.
++pub const EXP_POLICY: &str = "frozen-exp-neg-v1-bfe48152";
++#[derive(Clone, Debug, Hash, PartialEq, Eq)]
++struct ExpKey { x: Rational, bits: i32, policy: &'static str }
++
++#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
++pub struct CacheStats {
++    pub hits: u64, pub misses: u64, pub evictions: u64, pub bypasses: u64,
++    pub work: ExpWork,
++}
++
++/// Task-local FIFO cache of successful plain values only. Key bit size and entry
++/// count are bounded independently. Capacity zero executes the same scalar path
++/// with counters. Errors are never admitted; hash equality also checks full keys.
+ #[derive(Debug)]
+-struct ReceiverState { precision: u32, max_bits:u64, max_exp_calls:u32, exp_calls:Cell<u32> }
++pub struct ExpCache {
++    capacity: usize, max_key_bits: u64,
++    values: HashMap<ExpKey, ForwardInterval>, order: VecDeque<ExpKey>, stats: CacheStats,
++}
++impl ExpCache {
++    pub fn new(capacity: usize, max_key_bits: u64) -> Self {
++        Self { capacity, max_key_bits, values: HashMap::new(), order: VecDeque::new(), stats: CacheStats::default() }
++    }
++    pub fn stats(&self) -> CacheStats { self.stats }
++    pub fn len(&self) -> usize { self.values.len() }
++    pub fn is_empty(&self) -> bool { self.values.is_empty() }
++    pub fn exp_neg(&mut self, x: &Rational, bits: i32) -> Result<ForwardInterval> {
++        // Validation precedes even key construction; invalid requests cannot hit.
++        if x.is_negative() || !(8..=192).contains(&bits) {
++            return error("exponential domain/precision");
++        }
++        if self.capacity == 0 || bit_size(x) > self.max_key_bits {
++            self.stats.bypasses = self.stats.bypasses.saturating_add(1);
++            return exp_neg_work(x, bits, &mut self.stats.work);
++        }
++        let key = ExpKey { x: x.clone(), bits, policy: EXP_POLICY };
++        if let Some(value) = self.values.get(&key) {
++            self.stats.hits = self.stats.hits.saturating_add(1);
++            return Ok(value.clone());
++        }
++        self.stats.misses = self.stats.misses.saturating_add(1);
++        let value = exp_neg_work(x, bits, &mut self.stats.work)?;
++        if self.values.len() == self.capacity {
++            let oldest = self.order.pop_front().expect("FIFO/cache cardinality invariant");
++            self.values.remove(&oldest);
++            self.stats.evictions = self.stats.evictions.saturating_add(1);
++        }
++        self.order.push_back(key.clone());
++        self.values.insert(key, value.clone());
++        Ok(value)
++    }
++}
++
++#[derive(Debug)]
++struct ReceiverState { precision: u32, max_bits:u64, max_exp_calls:u32, exp_calls:Cell<u32>, cache: Option<Rc<RefCell<ExpCache>>> }
+ /// Clone shares identity and deterministic exponential-call count. A fresh
+ /// context, even with the same configuration, cannot mix intervals with it.
+ #[derive(Clone, Debug)]
+ pub struct ReceiverContext(Rc<ReceiverState>);
+ impl ReceiverContext {
+     pub fn new(precision:i32,max_bits:i32,max_exp_calls:i32) -> Result<Self> {
++        Self::construct(precision, max_bits, max_exp_calls, None)
++    }
++    pub fn new_with_cache(precision:i32,max_bits:i32,max_exp_calls:i32,cache:Rc<RefCell<ExpCache>>) -> Result<Self> {
++        Self::construct(precision, max_bits, max_exp_calls, Some(cache))
++    }
++    fn construct(precision:i32,max_bits:i32,max_exp_calls:i32,cache:Option<Rc<RefCell<ExpCache>>>) -> Result<Self> {
+         if !(64..=128).contains(&precision) { return error("PRECISION"); }
+         if !(256..=16384).contains(&max_bits) { return error("BIT_BUDGET"); }
+         if !(0..=32).contains(&max_exp_calls) { return error("EXP_BUDGET"); }
+         Ok(Self(Rc::new(ReceiverState {precision:precision as u32,max_bits:max_bits as u64,
+-            max_exp_calls:max_exp_calls as u32,exp_calls:Cell::new(0)})))
++            max_exp_calls:max_exp_calls as u32,exp_calls:Cell::new(0),cache})))
+     }
+     pub fn precision(&self) -> u32 { self.0.precision }
+     pub fn max_bits(&self) -> u64 { self.0.max_bits }
+@@ -143,8 +212,17 @@
+         if calls+2>self.0.max_exp_calls { return error("EXP_CALLS"); }
+         // Calls are charged before invoking either endpoint, even on failure.
+         self.0.exp_calls.set(calls+2);
+-        let lo=exp_neg(&x.hi,self.0.precision as i32+4)?.lo;
+-        let hi=exp_neg(&x.lo,self.0.precision as i32+4)?.hi;
++        let scalar = |q: &Rational| match &self.0.cache {
++            Some(cache) => match cache.try_borrow_mut() {
++                Ok(mut cache) => cache.exp_neg(q, self.0.precision as i32+4),
++                // Optional optimization cannot add a RefCell-borrow refusal or
++                // panic. Charge already occurred; pure uncached work is valid.
++                Err(_) => exp_neg(q, self.0.precision as i32+4),
++            },
++            None => exp_neg(q, self.0.precision as i32+4),
++        };
++        let lo=scalar(&x.hi)?.lo;
++        let hi=scalar(&x.lo)?.hi;
+         self.interval(lo,hi)
+     }
+     pub fn exp_neg_scalar(&self,x:Rational) -> Result<ReceiverInterval> {

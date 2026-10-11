@@ -1,0 +1,277 @@
+[
+  {
+    "workload": "repeated-1",
+    "calls_per_repetition": 128,
+    "bits": 128,
+    "repetitions": 9,
+    "cache_capacity": 64,
+    "output_sha256": "e71c5dc12e03af584874f47f8109885b9d8e5b2fa809ea310a87e43bd7bdc7ff",
+    "input_rule": "128 copies of 1/3",
+    "exact_cached_uncached_outputs_equal": true,
+    "modes": {
+      "0": {
+        "median_wall_ns": 14693269,
+        "median_cpu_ns": 14694152,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 0,
+        "median_bypasses": 128,
+        "median_evaluations": 128,
+        "median_taylor_terms": 3456,
+        "median_squarings": 0,
+        "median_evictions": 0
+      },
+      "64": {
+        "median_wall_ns": 168622,
+        "median_cpu_ns": 169096,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 127,
+        "median_misses": 1,
+        "median_bypasses": 0,
+        "median_evaluations": 1,
+        "median_taylor_terms": 27,
+        "median_squarings": 0,
+        "median_evictions": 0
+      }
+    },
+    "separate_allocation_measurement": {
+      "0": {
+        "alloc_events": 348416,
+        "requested_bytes": 4609024,
+        "peak_extra_live": 16832
+      },
+      "64": {
+        "alloc_events": 3878,
+        "requested_bytes": 57740,
+        "peak_extra_live": 13668
+      }
+    },
+    "timing_allocator": "default System; allocation-counts feature disabled",
+    "uncached_over_cached_median_wall": 87.13731897379938,
+    "input_sha256": "a86cda5cbe08a265a9210fc37a88776f80b82a964e8f2501d3c13af71ccfbe1e"
+  },
+  {
+    "workload": "repeated-8",
+    "calls_per_repetition": 128,
+    "bits": 128,
+    "repetitions": 9,
+    "cache_capacity": 64,
+    "output_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "input_rule": "(i % 8 + 1)/9",
+    "exact_cached_uncached_outputs_equal": true,
+    "modes": {
+      "0": {
+        "median_wall_ns": 20077085,
+        "median_cpu_ns": 20078196,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 0,
+        "median_bypasses": 128,
+        "median_evaluations": 128,
+        "median_taylor_terms": 3696,
+        "median_squarings": 0,
+        "median_evictions": 0
+      },
+      "64": {
+        "median_wall_ns": 1446582,
+        "median_cpu_ns": 1447097,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 120,
+        "median_misses": 8,
+        "median_bypasses": 0,
+        "median_evaluations": 8,
+        "median_taylor_terms": 231,
+        "median_squarings": 0,
+        "median_evictions": 0
+      }
+    },
+    "separate_allocation_measurement": {
+      "0": {
+        "alloc_events": 383744,
+        "requested_bytes": 5594112,
+        "peak_extra_live": 19408
+      },
+      "64": {
+        "alloc_events": 25496,
+        "requested_bytes": 383868,
+        "peak_extra_live": 17384
+      }
+    },
+    "timing_allocator": "default System; allocation-counts feature disabled",
+    "uncached_over_cached_median_wall": 13.878981627035316,
+    "input_sha256": "f33cd4356bf0f037f7a6e87a79a6d9d561b930a24473b7a1fc50322ce42d3274"
+  },
+  {
+    "workload": "unique",
+    "calls_per_repetition": 128,
+    "bits": 128,
+    "repetitions": 9,
+    "cache_capacity": 64,
+    "output_sha256": "906a918fb9fe09791356bf6c953689519c7da4975f87c9a59a79b02f4e366ea6",
+    "input_rule": "(i+1)/129",
+    "exact_cached_uncached_outputs_equal": true,
+    "modes": {
+      "0": {
+        "median_wall_ns": 32806576,
+        "median_cpu_ns": 32808090,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 0,
+        "median_bypasses": 128,
+        "median_evaluations": 128,
+        "median_taylor_terms": 3653,
+        "median_squarings": 0,
+        "median_evictions": 0
+      },
+      "64": {
+        "median_wall_ns": 33360016,
+        "median_cpu_ns": 33358895,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 128,
+        "median_bypasses": 0,
+        "median_evaluations": 128,
+        "median_taylor_terms": 3653,
+        "median_squarings": 0,
+        "median_evictions": 64
+      }
+    },
+    "separate_allocation_measurement": {
+      "0": {
+        "alloc_events": 412958,
+        "requested_bytes": 7859832,
+        "peak_extra_live": 26168
+      },
+      "64": {
+        "alloc_events": 417862,
+        "requested_bytes": 8013588,
+        "peak_extra_live": 67672
+      }
+    },
+    "timing_allocator": "default System; allocation-counts feature disabled",
+    "uncached_over_cached_median_wall": 0.9834100798992422,
+    "input_sha256": "8a57cdfbc84ddc35eea4f89d82cff641170b8a4e5f23c6e9f06227b295e9cb0e"
+  },
+  {
+    "workload": "repeated-8",
+    "calls_per_repetition": 128,
+    "bits": 128,
+    "repetitions": 9,
+    "cache_capacity": 4,
+    "output_sha256": "e91f01465ffe3111edf62b3ad6f2a38eee57f0265582639d5dc7df454270a23a",
+    "input_rule": "(i % 8 + 1)/9",
+    "exact_cached_uncached_outputs_equal": true,
+    "modes": {
+      "0": {
+        "median_wall_ns": 20534985,
+        "median_cpu_ns": 20534020,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 0,
+        "median_bypasses": 128,
+        "median_evaluations": 128,
+        "median_taylor_terms": 3696,
+        "median_squarings": 0,
+        "median_evictions": 0
+      },
+      "4": {
+        "median_wall_ns": 20309806,
+        "median_cpu_ns": 20310693,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 128,
+        "median_bypasses": 0,
+        "median_evaluations": 128,
+        "median_taylor_terms": 3696,
+        "median_squarings": 0,
+        "median_evictions": 124
+      }
+    },
+    "separate_allocation_measurement": {
+      "0": {
+        "alloc_events": 383744,
+        "requested_bytes": 5594112,
+        "peak_extra_live": 19408
+      },
+      "4": {
+        "alloc_events": 386675,
+        "requested_bytes": 5646852,
+        "peak_extra_live": 22040
+      }
+    },
+    "timing_allocator": "default System; allocation-counts feature disabled",
+    "uncached_over_cached_median_wall": 1.0110872058551421,
+    "input_sha256": "f33cd4356bf0f037f7a6e87a79a6d9d561b930a24473b7a1fc50322ce42d3274"
+  },
+  {
+    "workload": "shortcut",
+    "calls_per_repetition": 128,
+    "bits": 128,
+    "repetitions": 9,
+    "cache_capacity": 64,
+    "output_sha256": "6bb6885f5a23a3ebfa6b5b7f8e89f65983d520fd2b76f652ba1941ce26a7952a",
+    "input_rule": "128 + i % 8",
+    "exact_cached_uncached_outputs_equal": true,
+    "modes": {
+      "0": {
+        "median_wall_ns": 37998,
+        "median_cpu_ns": 38287,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 0,
+        "median_misses": 0,
+        "median_bypasses": 128,
+        "median_evaluations": 128,
+        "median_taylor_terms": 0,
+        "median_squarings": 0,
+        "median_evictions": 0
+      },
+      "64": {
+        "median_wall_ns": 26426,
+        "median_cpu_ns": 26733,
+        "median_alloc_events": 0,
+        "median_requested_bytes": 0,
+        "median_peak_extra_live": 0,
+        "median_hits": 120,
+        "median_misses": 8,
+        "median_bypasses": 0,
+        "median_evaluations": 8,
+        "median_taylor_terms": 0,
+        "median_squarings": 0,
+        "median_evictions": 0
+      }
+    },
+    "separate_allocation_measurement": {
+      "0": {
+        "alloc_events": 1536,
+        "requested_bytes": 22528,
+        "peak_extra_live": 5176
+      },
+      "64": {
+        "alloc_events": 902,
+        "requested_bytes": 17044,
+        "peak_extra_live": 9904
+      }
+    },
+    "timing_allocator": "default System; allocation-counts feature disabled",
+    "uncached_over_cached_median_wall": 1.4379020661469764,
+    "input_sha256": "4abddeeb34ae4d09335ac4b686a32f772167ee164f4a5dd233408dc2a7c8dde5"
+  }
+]
