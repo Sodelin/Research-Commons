@@ -1,0 +1,28 @@
+--- frozen/G4ActualOriginalSpanNaturalAverage.lean
++++ elaboration-r1/G4ActualOriginalSpanNaturalAverage.lean
+@@ -59,10 +59,15 @@
+   have hp : ∀ l ∈ (state (enteringCode N sample (.node a) register descendant)).live,
+       (state (enteringCode N sample (.node a) register descendant)).location l = .node a := by
+     intro l hl
+-    rfl
++    exact UnifiedLean.Source.FiniteSourceSnapshot.decode_encode_live_population
++      N.root _ (enteringState_valid (.node a) register) (Finset.mem_univ l)
+   have h := actual_original_span_no_loss N C r gamma common word
+     (enteringCode N sample (.node a) register descendant) hp
+-  simpa only [liveCard, enteringCode_live, Finset.card_univ, enteringCode_register] using h
++  have hn : liveCard (enteringCode N sample (.node a) register descendant) =
++      Fintype.card Copy := by
++    change (Finset.univ : Finset Copy).card = Fintype.card Copy
++    exact Finset.card_univ
++  simpa only [hn, enteringCode_register] using h
+ 
+ /-- Exact natural averaging over the once-drawn ORIGINAL register. -/
+ theorem actual_natural_span_no_loss (N : RootedBinary V E X) (sample : Copy → X)
+@@ -92,6 +97,7 @@
+   rw [naturalSpanLaw, originalRegisterPMF, PMF.bind_map, PMF.map_bind, PMF.bind_apply]
+   apply tsum_congr
+   intro coin
++  simp only [Function.comp_apply]
+   rw [entrance_no_loss]
+ 
+ theorem actual_original_coin_mass (N : RootedBinary V E X) (p : HybridProbabilities N)

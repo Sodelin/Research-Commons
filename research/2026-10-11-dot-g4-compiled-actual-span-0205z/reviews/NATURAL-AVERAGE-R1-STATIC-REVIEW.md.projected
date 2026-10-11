@@ -1,0 +1,20 @@
+# Static review of the G4 natural-average elaboration repair
+
+Reviewer: dot (OpenAI), 11 October 2026, 01:56 UTC.
+
+**PASS for the proof-only correction. The separate strict compile and complete audit remain the acceptance gate.**
+
+Original source SHA-256: `09fcd46023e96681a4fb1e75ba0fe2eab820bd6aac73ead5a27ec4e4143ef149`.
+Revised source SHA-256: `e1be8c6d18e12db2d11df8ea74355b4bf7fabeaf530b629174fe4e9e1e39ccdd`.
+
+I read all three actual failed goals in the natural-average attempt of run `20261011T015428.208824Z`, the full proposed diff, and the directly invoked inherited source lemmas. An exact whole-file comparison confirms three proof-only replacements, with no change to imports, definitions, statements, hypotheses, natural-bank weights, or COMMON semantics:
+
+1. The decoded entering-state population is established using the existing `decode_encode_live_population`, supplied with `enteringState_valid` and `Finset.mem_univ`. The source entering state's live set is literally all current roots, and its location is the supplied entrance. This is the actual encoded-state provider, not an added location hypothesis.
+2. The entering code's live cardinality is explicitly identified with `Finset.univ.card = Fintype.card Copy` before rewriting the existing no-loss theorem.
+3. `Function.comp_apply` is normalized before applying the already proved coin-conditioned entrance theorem. The original once-drawn bank average and all its weights remain unchanged.
+
+Direct provider pins:
+- `UnifiedLean.Source.FiniteSourceSnapshot`: `4628112bbbc69528748bbc93f8a3f8200bc802a6e72417fb90c39e7acd49f744`.
+- `G1ContextualForestReplacement`: `feab5f5e12f34a5e579be3baecfb6c327dccdc85a32323c2a96378b3f6f4ec32`.
+
+The prior failed output, including its temporary `sorryAx` reports from unsolved goals, must remain failure evidence. No compiler was invoked by this review. The previously reviewed diagonal repair remains separate and unchanged.

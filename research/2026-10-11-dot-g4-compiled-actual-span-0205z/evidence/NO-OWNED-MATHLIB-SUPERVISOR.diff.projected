@@ -1,0 +1,11 @@
+--- run_union.attempt1.py	2026-10-10 21:48:52.371441947 -0400
++++ scripts/run_union.py	2026-10-10 21:48:52.389730092 -0400
+@@ -35,7 +35,7 @@
+     assert min(storage['package_filesystem_free'],storage['backing_store_free'])>cap+floor
+     save(ROOT/'STORAGE-PREFLIGHT.json',storage)
+     env=dict(os.environ,CONNECTED_LEAN_BIN=str(args.lean_bin.resolve()),CONNECTED_MATHLIB=str(args.mathlib.resolve()),PYTHONUNBUFFERED='1')
+-    cmd=['/usr/bin/python3',str(ROOT/'scripts/build_desktop.py'),args.target]
++    cmd=['/usr/bin/python3',str(ROOT/'scripts/build_no_owned_mathlib.py'),args.target]
+     def limits():resource.setrlimit(resource.RLIMIT_FSIZE,(perfile,perfile))
+     stamp=time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())
+     stdout=ROOT/('SUPERVISOR-'+stamp+'.stdout');stderr=ROOT/('SUPERVISOR-'+stamp+'.stderr')

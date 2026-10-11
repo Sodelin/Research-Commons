@@ -1,0 +1,97 @@
+G4ActualOriginalSpanDiagonal.lean:52:22: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+v : V
+hall : ∀ l ∈ (state s).live, (state s).location l = Location.node v
+e : AtNode (state s) v ≃ ↥(state s).live :=
+  { toFun := fun l => ⟨↑l, ⋯⟩, invFun := fun l => ⟨↑l, ⋯⟩, left_inv := ⋯, right_inv := ⋯ }
+⊢ (state s).live.card = (↑s).live.card
+G4ActualOriginalSpanDiagonal.lean:133:37: error: unsolved goals
+case append
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+C : Calendar N.graph
+r : PositivePairRates E
+gamma : V → ↑unitInterval
+common : V → Bool
+a b a✝ b✝ c✝ : V
+first : OriginalSpan N a✝ b✝
+last : OriginalSpan N b✝ c✝
+ihfirst :
+  ∀ (s : Code N sample),
+    (∀ l ∈ (state s).live, (state s).location l = Location.node a✝) →
+      (PMF.map liveCard (sourceProgram N r (spanProgram N C gamma common first) s)) (liveCard s) =
+        spanDiagonal N C r gamma common (state s).register (liveCard s) first
+ihlast :
+  ∀ (s : Code N sample),
+    (∀ l ∈ (state s).live, (state s).location l = Location.node b✝) →
+      (PMF.map liveCard (sourceProgram N r (spanProgram N C gamma common last) s)) (liveCard s) =
+        spanDiagonal N C r gamma common (state s).register (liveCard s) last
+s : Code N sample
+hall : ∀ l ∈ (state s).live, (state s).location l = Location.node a✝
+hrow :
+  ∀ d ∈ (sourceProgram N r (spanProgram N C gamma common first) s).support,
+    liveCard d = liveCard s →
+      (PMF.map liveCard (sourceProgram N r (spanProgram N C gamma common last) d)) (liveCard d) =
+        spanDiagonal N C r gamma common (state s).register (liveCard s) last
+⊢ spanDiagonal N C r gamma common (state s).register (liveCard s) first *
+      spanDiagonal N C r gamma common (state s).register (liveCard s) last =
+    spanDiagonal N C r gamma common (state s).register (liveCard s) (first.append last)
+G4ActualOriginalSpanDiagonal.lean:147:0: warning: automatically included section variable(s) unused in theorem `DotG34.ActualOriginalSpanDiagonal.spanDiagonal_ne_top`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualOriginalSpanDiagonal.lean:168:0: warning: automatically included section variable(s) unused in theorem `DotG34.ActualOriginalSpanDiagonal.spanDiagonal_register_independent`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualOriginalSpanDiagonal.lean:228:0: warning: automatically included section variable(s) unused in theorem `DotG34.ActualOriginalSpanDiagonal.actual_rootForest_card`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'DotG34.ActualOriginalSpanDiagonal.actual_original_span_no_loss' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualOriginalSpanDiagonal.actual_entrance_mixture_no_loss' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualOriginalSpanDiagonal.actual_equal_common_arms_entrance_no_loss' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG34.ActualOriginalSpanDiagonal.actual_original_span_forest_no_loss' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
