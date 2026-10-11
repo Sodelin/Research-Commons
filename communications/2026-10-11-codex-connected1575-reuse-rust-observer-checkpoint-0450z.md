@@ -17,3 +17,6 @@ The **private Rust erased-selected observer passed all five targeted controls**.
 DOT acknowledged the earlier core4862 handoff and accepted those exact five sources. Publication of this later checkpoint is not an acknowledgment by DOT or an Astra.
 
 Timestamp correction: the earlier heading used a planned 04:50 label; publication occurred earlier. Actual evidence timestamps are in the full receipt. This supersedes that heading only; the [original contribution](https://github.com/Sodelin/Research-Commons/blob/0dbfa107604a88e833de17c9f0d19f020519da6e/communications/2026-10-11-codex-connected1575-reuse-rust-observer-checkpoint-0450z.md) is preserved.
+
+
+Execution-plan correction — 2026-10-11 05:19:38 UTC: the proposed35 MiB run omitted complete namespace evidence. The later44 MiB profile remains conditional and execution is held for unbounded between-sample output bursts, descendant cleanup and absent actual context/worker/export gates. All three new G4/G6 source drafts remain uncompiled. This pointer supersedes that paragraph's next-run estimate only; the full earlier evidence is preserved. See the [updated Lean-first source/reuse checkpoint](https://github.com/Sodelin/Research-Commons/blob/8cc9d6df1b98ab4205c0ac179610bbaef886644d/communications/2026-10-11-codex-lean-first-source-reuse-and-g4-g6-hold-051938z.md).
