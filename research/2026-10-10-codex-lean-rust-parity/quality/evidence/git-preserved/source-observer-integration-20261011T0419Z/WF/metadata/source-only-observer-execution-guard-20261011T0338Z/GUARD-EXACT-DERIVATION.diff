@@ -1,0 +1,251 @@
+--- /dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/selected-prefix-validation-sourceonly-20261011T0054Z/source-only-execution-guard-20261011T0112Z/guard_selected_prefix_v3.py
++++ /dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/source-only-observer-execution-guard-20261011T0338Z/guard_erased_selected_observer_v1.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Private fixed-input selected-prefix validation guard; SOURCE-ONLY until scheduled.
++"""Private fixed-input erased-selected observer validation; SOURCE-ONLY until scheduled.
+ 
+ Contributor: Codex rust_implementation, 2026-10-11. This guard is Linux-specific.
+ The --execute-approved switch acknowledges the external root/sole-scheduler gate;
+@@ -8,21 +8,30 @@
+ not a native/Lean refinement or source-admission certificate.
+ """
+ from __future__ import annotations
+-import argparse,ctypes,datetime,hashlib,json,os,re,resource,selectors,signal,subprocess,sys,time
++import argparse,ctypes,datetime,hashlib,json,os,re,resource,selectors,signal,stat,subprocess,sys,time
+ from pathlib import Path
+ 
+ SCRATCH_HARD=2*1024**3
+ SCRATCH_ABORT=2013265920
+ MEMORY_HARD=16*1024**3
+ MEMORY_ABORT=15*1024**3
+-OUTPUT_RESERVE=32*1024**2
++OUTPUT_RESERVE=48*1024**2
+ LOG_CAP=1024**2
+ SAMPLE_CAP=1024**2
+ FILE_CAP=16*1024**2
+ COUNTED_WORK=Path('/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z')
+-PLAN_SHA='5b4c8d582187573b1f86e623c764b03ed65b79050adc4fcae108ab11d269ca73'
++PLAN_SHA='862eec74e67825c06b7c682a519f44c4ec3c40c40a3c1536bfb649be86e7aa1e'
+ EXPECTED_CANDIDATE='46172afa3ba29b19ea924a4110be822104ca236566a69d8d91e5170a0b6d7af3'
+-EXPECTED_HARNESS='629bf07a76958e099e7e04343bcb6f2f0ffa682c18a638721a48dc1004200795'
++EXPECTED_HARNESS='8cd6034934823202fce96322a0a95781ef185ecae8de6a045a808af4c5506a21'
++EXPECTED_OBSERVER='fe2c32bef5e3ab0315396e7fc0100d7202ae7aac4fef36915798f9f3fc50d90c'
++PROTECTED_RESULT_SHA='819c426888e1da6d798d169d81ac6f43eb14a6135076f77497d7de85f7a91b64'
++PROTECTED_ARRAY_SHA='651abd23a8b57f1f91c0ccca54e231e8840e3fab8da7ee073b697d9e2f7adf53'
++PRODUCER_SHA='2ce83724b428cf5873587300a5601b89ca07d0a8d0e8d6e6104c7e247bd2a45c'
++CHECKPOINT_SHA='4862b9618ca422da4ad5381b5dec0a3fcac56e76'
++CHECKPOINT_TREE='145eefb4baaec4eafca16622ed9fdfb538313922'
++FIXED_GUARD_DIRECTORY=COUNTED_WORK/'metadata/source-only-observer-execution-guard-20261011T0338Z'
++FIXED_OUTPUT_DIRECTORY=COUNTED_WORK/'metadata/erased-selected-observer-validation-sourceonly-20261011T0327Z/execution-1'
++EXPECTED_TEST_NAMES=('empty_once_seed_closed_form_and_full_original_register', 'upper_erasure_keeps_lower_old_correlation_and_exact_parallel_survival_formula', 'flat_full_old_fibres_preserve_distinct_pasts_sharing_final_forest', 'all_carried_components_large_global_ids_and_literal_tied_order_are_retained', 'invalid_cut_limits_and_child_unknown_return_no_partial_observation')
+ 
+ class Refusal(RuntimeError):pass
+ 
+@@ -42,12 +51,12 @@
+     if len(raw)>cap:raise Refusal('GUARD_METADATA_CAP')
+     with Path(path).open('xb') as stream:stream.write(raw)
+ 
+-def allocated(roots):
+-    """Same distinct-inode lstat/st_blocks accounting as the pinned producer guard.
+-    Directory symlink targets are not traversed; all fixed counted roots must be
+-    supplied by the authenticated current producer plan. Missing roots refuse.
++def allocation_details(roots):
++    """Count distinct lstat inodes plus regular-file symlink targets conservatively.
++    Directory symlink targets are never traversed. All exact counted roots are
++    authenticated; this is declared namespace accounting, not whole-host storage.
+     """
+-    seen=set();total=0
++    seen=set();followed=set();total=0;followed_total=0
+     for root in roots:
+         if not Path(root).is_dir():raise Refusal('COUNTED_ROOT_MISSING:'+root)
+         for directory,dirs,files in os.walk(root,followlinks=False):
+@@ -56,7 +65,20 @@
+                 except FileNotFoundError:continue
+                 key=(st.st_dev,st.st_ino)
+                 if key not in seen:seen.add(key);total+=st.st_blocks*512
+-    return total
++                observed=[st]
++                if stat.S_ISLNK(st.st_mode):
++                    try:target=path.stat()
++                    except FileNotFoundError:raise Refusal('COUNTED_SYMLINK_TARGET_MISSING:'+str(path))
++                    if stat.S_ISREG(target.st_mode):observed.append(target)
++                for item in observed:
++                    identity=(item.st_dev,item.st_ino)
++                    if identity not in followed:
++                        followed.add(identity);followed_total+=item.st_blocks*512
++    return {'lstat_distinct_inode_bytes':total,
++            'lstat_plus_regular_file_symlink_targets_bytes':followed_total,
++            'conservative_max_bytes':max(total,followed_total)}
++
++def allocated(roots):return allocation_details(roots)['conservative_max_bytes']
+ 
+ def memory():
+     values=dict(line.split() for line in Path('/sys/fs/cgroup/memory.stat').read_text().splitlines())
+@@ -71,8 +93,13 @@
+             and Path(root)/'ACTIVE-GUARDED-PROCESS.json'!=own]
+ 
+ def measurements(roots,out=None):
+-    return {'memory':memory(),'global_distinct_inode_allocated_bytes':allocated(roots),
+-            'fresh_output_allocated_bytes':allocated([str(out)]) if out is not None else 0}
++    global_usage=allocation_details(roots)
++    fresh_roots=[str(FIXED_GUARD_DIRECTORY)]
++    if out is not None:fresh_roots.append(str(out))
++    return {'memory':memory(),'allocation_counter':global_usage,
++            'global_distinct_inode_allocated_bytes':global_usage['conservative_max_bytes'],
++            'fresh_output_allocated_bytes':allocated(fresh_roots),
++            'fresh_scope':'entire new fixed guard directory plus fixed execution directory; includes preparation, outer captures, metadata, linker/tmp and private output'}
+ 
+ def limit_reason(measured):
+     m=measured['memory']['nonreclaimable_estimate'];s=measured['global_distinct_inode_allocated_bytes']
+@@ -80,7 +107,7 @@
+     if m>=MEMORY_ABORT:return 'GLOBAL_NONRECLAIMABLE_MEMORY_ABORT'
+     if s>=SCRATCH_HARD:return 'GLOBAL_SCRATCH_HARD_LIMIT'
+     if s>=SCRATCH_ABORT:return 'GLOBAL_SCRATCH_ABORT_WITH_HEADROOM'
+-    if measured['fresh_output_allocated_bytes']>=OUTPUT_RESERVE:return 'FRESH_OUTPUT32MIB_LIMIT'
++    if measured['fresh_output_allocated_bytes']>=OUTPUT_RESERVE:return 'FRESH_OUTPUT48MIB_LIMIT'
+     return None
+ 
+ def proc_rows():
+@@ -162,7 +189,7 @@
+     return apply
+ 
+ def authenticate_all(cfg):
+-    return [authenticate(row) for row in cfg['input_pins']]
++    return [authenticate(row) for row in cfg['input_pins']]+[authenticate(cfg['_configuration_pin'])]
+ 
+ def run_step(name,argv,address_space,wall,env,cfg,out,marker,events,generated=None):
+     stepdir=out/name;stepdir.mkdir(exist_ok=False)
+@@ -246,7 +273,7 @@
+         stable=True
+     except BaseException as exc:reason=reason or 'POST_STEP_PIN_DRIFT';error=repr(exc)
+     peak_global=max(peak_global,after['global_distinct_inode_allocated_bytes']);peak_mem=max(peak_mem,after['memory']['nonreclaimable_estimate']);peak_fresh=max(peak_fresh,after['fresh_output_allocated_bytes'])
+-    result={'schema':'private_selected_prefix_guarded_step_v1','name':name,
++    result={'schema':'private_erased_selected_observer_guarded_step_v1','name':name,
+         'status':'PASS_PROCESS_EXIT_ZERO' if rc==0 and reason is None else 'PRESERVED_FAILED_OR_RESOURCE_ABORTED',
+         'command_argv':argv,'exit_code':rc,'child_started':child is not None,'started_utc':started_utc,
+         'elapsed_seconds':time.monotonic()-started,'abort_reason':reason,'error':error,'cleanup':cleanup,
+@@ -264,28 +291,63 @@
+     if digest(args.config)['sha256']!=args.expected_config_sha256:raise Refusal('CONFIG_PIN')
+     raw=args.config.read_bytes()
+     if len(raw)>1<<20:raise Refusal('CONFIG_BYTES')
+-    cfg=json.loads(raw)
+-    authenticate(cfg['helper_pin']);authenticate(cfg['plan_pin']);authenticate(cfg['current_producer_plan_pin'])
++    cfg=json.loads(raw);cfg['_configuration_pin']=digest(args.config)
++    for key in ('helper_pin','plan_pin','current_producer_plan_pin','protected_result_pin',
++                'checkpoint_descriptor_pin','prior_guard_pin','prior_config_pin'):
++        authenticate(cfg[key])
+     if Path(cfg['helper_pin']['path']).resolve()!=Path(__file__).resolve():raise Refusal('HELPER_PATH')
++    if Path(__file__).resolve().parent!=FIXED_GUARD_DIRECTORY:raise Refusal('FIXED_HELPER_DIRECTORY')
+     if cfg['plan_pin']['sha256']!=PLAN_SHA:raise Refusal('PLAN_SCOPE')
++    if cfg['current_producer_plan_pin']['sha256']!=PRODUCER_SHA:raise Refusal('PRODUCER_SCOPE')
++    if cfg['protected_result_pin']['sha256']!=PROTECTED_RESULT_SHA:raise Refusal('PROTECTED_RESULT_SCOPE')
+     plan=json.loads(Path(cfg['plan_pin']['path']).read_bytes())
+     producer=json.loads(Path(cfg['current_producer_plan_pin']['path']).read_bytes())
+-    if cfg['allocation_roots']!=producer['allocation_roots']:raise Refusal('CURRENT_ROOT_LIST')
++    prior=json.loads(Path(cfg['protected_result_pin']['path']).read_bytes())
++    old_pins=prior['final_authenticated_input_pins']
++    array_sha=hashlib.sha256(json.dumps(old_pins,sort_keys=True,separators=(',',':')).encode()).hexdigest()
++    if len(old_pins)!=43 or array_sha!=PROTECTED_ARRAY_SHA:raise Refusal('ORIGINAL43_ARRAY')
++    if cfg['input_pins'][:43]!=old_pins:raise Refusal('ORIGINAL43_OMITTED_OR_CHANGED')
++    if prior['private_binary'] not in cfg['input_pins']:raise Refusal('OLD_PRIVATE_ELF_UNPROTECTED')
++    if cfg['allocation_roots']!=producer['allocation_roots'] or len(cfg['allocation_roots'])!=26:
++        raise Refusal('CURRENT26_ROOT_LIST')
+     previous=json.loads((COUNTED_WORK/'RESOURCE-AND-RUN-PLAN.json').read_bytes())
+     if not set(previous['allocation_roots']).issubset(cfg['allocation_roots']):raise Refusal('PRIOR_ROOT_OMISSION')
+     if str(COUNTED_WORK) not in cfg['allocation_roots']:raise Refusal('OUTPUT_ROOT_UNCOUNTED')
+-    if len(plan['inputs'])!=18 or cfg['input_pins'][:18]!=plan['inputs']:raise Refusal('FROZEN18INPUTS')
+-    if cfg['expected_test_names']!=[case['name'] for case in plan['cases']]:raise Refusal('FROZEN_FIVE_TEST_HEADS')
+-    if plan['inputs'][0]['sha256']!=EXPECTED_CANDIDATE or plan['inputs'][4]['sha256']!=EXPECTED_HARNESS:raise Refusal('FROZEN_SOURCE_SCOPE')
+-    if cfg['compile_argv']!=plan['preferred_build']['command_argv'] or cfg['runtime_argv']!=plan['runtime']['command_argv']:raise Refusal('EXACT_COMMAND_DRIFT')
+-    if cfg['scratch_hard_bytes']!=SCRATCH_HARD or cfg['scratch_abort_bytes']!=SCRATCH_ABORT or cfg['memory_hard_bytes']!=MEMORY_HARD or cfg['memory_abort_bytes']!=MEMORY_ABORT:raise Refusal('GLOBAL_LIMIT_DRIFT')
+-    if cfg['fresh_output_reserve_bytes']!=OUTPUT_RESERVE or cfg['log_cap_per_stream_bytes']!=LOG_CAP:raise Refusal('OUTPUT_LIMIT_DRIFT')
+-    if producer['scratch_hard_limit_bytes']!=SCRATCH_HARD or producer['scratch_abort_bytes']!=SCRATCH_ABORT or producer['memory_abort_bytes']!=MEMORY_ABORT:raise Refusal('PRODUCER_LIMIT_DRIFT')
++    if cfg['expected_test_names']!=list(EXPECTED_TEST_NAMES) or cfg['expected_test_names']!=[case['name'] for case in plan['cases']]:
++        raise Refusal('FROZEN_FIVE_OBSERVER_TEST_HEADS')
++    for label,path,size,sha in plan['new_inputs']:
++        if {'path':path,'bytes':size,'sha256':sha} not in cfg['input_pins']:raise Refusal('NEW_INPUT_OMITTED:'+label)
++    if cfg['observer_pin']['sha256']!=EXPECTED_OBSERVER or cfg['harness_pin']['sha256']!=EXPECTED_HARNESS:
++        raise Refusal('FROZEN_OBSERVER_SOURCE_SCOPE')
++    if old_pins[0]['sha256']!=EXPECTED_CANDIDATE or cfg['observer_pin'] not in cfg['input_pins'] or cfg['harness_pin'] not in cfg['input_pins']:
++        raise Refusal('FROZEN_RECORDER_OBSERVER_HARNESS')
++    if cfg['compile_argv']!=plan['compile_argv'] or cfg['runtime_argv']!=plan['runtime_argv']:
++        raise Refusal('EXACT_COMMAND_DRIFT')
++    if cfg['scratch_hard_bytes']!=SCRATCH_HARD or cfg['scratch_abort_bytes']!=SCRATCH_ABORT or cfg['memory_hard_bytes']!=MEMORY_HARD or cfg['memory_abort_bytes']!=MEMORY_ABORT:
++        raise Refusal('GLOBAL_LIMIT_DRIFT')
++    if cfg['fresh_output_reserve_bytes']!=OUTPUT_RESERVE or cfg['log_cap_per_stream_bytes']!=LOG_CAP:
++        raise Refusal('OUTPUT_LIMIT_DRIFT')
++    if cfg['compile_address_space_bytes']!=2*1024**3 or cfg['runtime_address_space_bytes']!=512*1024**2 or cfg['compile_wall_seconds']!=120 or cfg['runtime_wall_seconds']!=120:
++        raise Refusal('PROCESS_LIMIT_DRIFT')
++    if producer['scratch_hard_limit_bytes']!=SCRATCH_HARD or producer['scratch_abort_bytes']!=SCRATCH_ABORT or producer['memory_abort_bytes']!=MEMORY_ABORT:
++        raise Refusal('PRODUCER_LIMIT_DRIFT')
++    r=plan['resources']
++    if (r['compile_AS'],r['test_AS'],r['compile_wall_s'],r['test_wall_s'],r['fresh_reserve'],r['logcap_each'],r['scratch_abort'],r['scratch_hard'],r['memory_hard'],r['nonreclaimable_abort'],r['proposed_filecap'])!=(2*1024**3,512*1024**2,120,120,OUTPUT_RESERVE,LOG_CAP,SCRATCH_ABORT,SCRATCH_HARD,MEMORY_HARD,MEMORY_ABORT,FILE_CAP):
++        raise Refusal('PLAN_LIMIT_SCOPE')
+     out=Path(cfg['output_directory'])
+-    expected=Path(plan['preferred_build']['output']).parent
+-    if out!=expected or not out.is_relative_to(COUNTED_WORK/'metadata'):raise Refusal('FIXED_OUTPUT_PATH')
+-    if cfg['compile_argv'][0]!=plan['inputs'][12]['path'] or cfg['runtime_argv'][0]!=plan['preferred_build']['output']:raise Refusal('TARGET_SCOPE')
++    if out!=FIXED_OUTPUT_DIRECTORY or str(out)!=plan['working_directory'] or out!=Path(cfg['runtime_argv'][0]).parent:
++        raise Refusal('FIXED_OUTPUT_PATH')
++    if cfg['compile_argv'][0]!=old_pins[12]['path'] or cfg['compile_argv'][-1]!=cfg['runtime_argv'][0] or cfg['compile_argv'][3]!=cfg['harness_pin']['path']:
++        raise Refusal('TARGET_SCOPE')
+     if 'cargo' in Path(cfg['compile_argv'][0]).name:raise Refusal('NO_CARGO_REBUILD')
++    if cfg['environment']!=plan['environment']:raise Refusal('FROZEN_ENVIRONMENT')
++    for key in ('TMPDIR','TMP','TEMP'):
++        if cfg['environment'][key]!=str(out/'tmp'):raise Refusal('COUNTED_TMPDIR')
++    checkpoint=json.loads(Path(cfg['checkpoint_descriptor_pin']['path']).read_bytes())
++    if checkpoint['checkpoint']!=CHECKPOINT_SHA or checkpoint['tree']!=CHECKPOINT_TREE or checkpoint['status']!='ROOT_SUPPLIED_SOURCE_DESCRIPTOR_ONLY':
++        raise Refusal('ROOT_CHECKPOINT_DESCRIPTOR')
++    if checkpoint['reused_rlibs_or_native_rebuilt_at_checkpoint'] is not False:
++        raise Refusal('NO_FALSE_REBUILD_ATTRIBUTION')
+     authenticate_all(cfg)
+     return cfg,plan,out
+ 
+@@ -302,23 +364,23 @@
+     initial=measurements(cfg['allocation_roots'])
+     reason=limit_reason(initial)
+     if reason:raise Refusal('PRELAUNCH_'+reason)
+-    if initial['global_distinct_inode_allocated_bytes']+OUTPUT_RESERVE>=SCRATCH_ABORT:raise Refusal('PRELAUNCH32MIB_RESERVE_NOT_AVAILABLE')
++    if initial['global_distinct_inode_allocated_bytes']+OUTPUT_RESERVE>=SCRATCH_ABORT:raise Refusal('PRELAUNCH48MIB_RESERVE_NOT_AVAILABLE')
+     become_subreaper()
+-    marker=COUNTED_WORK/'ACTIVE-GUARDED-PROCESS.json';marker_bytes=(json.dumps({'pid':os.getpid(),'phase':'private-selected-prefix','output':str(out)},sort_keys=True)+'\n').encode()
++    marker=COUNTED_WORK/'ACTIVE-GUARDED-PROCESS.json';marker_bytes=(json.dumps({'pid':os.getpid(),'phase':'private-erased-selected-observer','output':str(out)},sort_keys=True)+'\n').encode()
+     fd=os.open(marker,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
+     with os.fdopen(fd,'wb') as stream:stream.write(marker_bytes)
+     steps=[];events={};out_created=False;error=None;binary_pin=None;started=stamp()
+     try:
+         if active_markers(cfg['allocation_roots'],marker):raise Refusal('FOREIGN_ACTIVE_PRODUCER_AFTER_SERIAL_MARKER')
+         out.mkdir(mode=0o700,exist_ok=False);out_created=True;(out/'tmp').mkdir(exist_ok=False)
+-        env=dict(os.environ);env.update(plan['preferred_build']['environment'])
++        env=dict(os.environ);env.update(plan['environment'])
+         env['PYTHONDONTWRITEBYTECODE']='1';env['CARGO_INCREMENTAL']='0'
+         save_new(out/'PRE-RUN-PINS.json',{'checked':authenticate_all(cfg),'config':digest(args.config),'helper':digest(__file__),
+                                        'producer_plan':cfg['current_producer_plan_pin'],'initial':initial})
+         compile_step=run_step('compile',cfg['compile_argv'],2*1024**3,120,env,cfg,out,marker,events)
+         steps.append(compile_step)
+         if compile_step['status']=='PASS_PROCESS_EXIT_ZERO':
+-            binary_pin=digest(plan['preferred_build']['output'])
++            binary_pin=digest(cfg['runtime_argv'][0])
+             steps.append(run_step('tests',cfg['runtime_argv'],512*1024**2,120,env,cfg,out,marker,events,binary_pin))
+     except BaseException as exc:error=repr(exc)
+     finally:
+@@ -346,7 +408,7 @@
+     final_pins=[]
+     try:final_pins=authenticate_all(cfg)
+     except BaseException as exc:passed=False;error=error or repr(exc)
+-    result={'schema':'private_selected_prefix_validation_execution_v1','status':'PASS_FIVE_TARGETED_TESTS' if passed else 'PRESERVED_FAILED_OR_RESOURCE_ABORTED',
++    result={'schema':'private_erased_selected_observer_validation_execution_v1','status':'PASS_FIVE_TARGETED_TESTS' if passed else 'PRESERVED_FAILED_OR_RESOURCE_ABORTED',
+             'started_utc':started,'ended_utc':stamp(),'helper':digest(__file__),'config':digest(args.config),
+             'compiler_called':bool(events.get('compile',{}).get('child_started')),'test_binary_called':bool(events.get('tests',{}).get('child_started')),
+             'actual_launch_events':events,
+@@ -356,6 +418,9 @@
+             'private_harness_reuses_existing_accepted_library':True,
+             'cargo_or_dependencies_rebuilt':False,'old_elf_or_rlib_copied':False,
+             'source_admission_verified':False,'native_lean_refinement_verified':False,'compiler_literal_order_verified':False,
++            'root_checkpoint_source_descriptor':cfg['checkpoint_descriptor_pin'],
++            'reused_rlibs_or_native_rebuilt_at_checkpoint':False,
++            'selected_observer_uses_no_new_kernel':True,
+             'literal_code_history_verified':False,'timed_merger_history_supported':False,
+             'independence_claimed':False,'new_G6_factorization_acceptance_claimed':False}
+     if out_created:save_new(out/'RESULT.json',result)

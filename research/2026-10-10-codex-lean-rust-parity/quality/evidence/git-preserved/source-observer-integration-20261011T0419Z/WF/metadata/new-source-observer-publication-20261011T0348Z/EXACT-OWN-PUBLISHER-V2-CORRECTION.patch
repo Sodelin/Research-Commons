@@ -1,0 +1,14 @@
+--- publish_reviewed_text.py
++++ publish_reviewed_text_v2.py
+@@ -90,8 +90,9 @@
+     assert review['manifest_sha256']==sha(M.read_bytes()) and review['funding_gate_sha256']==sha(G.read_bytes())
+     assert g['publisher_sha256']==sha(pathlib.Path(__file__).read_bytes()) and g['manifest_sha256']==sha(M.read_bytes())
+     m,rows,raw,entries=inputs();assert sha(raw)==g['base_index_sha256'];r=resource()
+-    rows.extend([row(G,m['prefix']+'/FUNDING-GATE.json'),row(pathlib.Path(review_path),m['prefix']+'/INDEPENDENT-PUBLICATION-QC.json')])
+-    for x in rows:
++    extra=[row(G,m['prefix']+'/FUNDING-GATE.json'),row(pathlib.Path(review_path),m['prefix']+'/INDEPENDENT-PUBLICATION-QC.json')]
++    rows.extend(extra)
++    for x in extra:
+         assert x['git_tree_path'].encode() not in entries;entries[x['git_tree_path'].encode()]=('100644',x['git_blob'])
+     verified_tree,_=A.trees(entries)
+     receipt={'status':'PASS_FULL_LISTED_INPUT_BYTES_INDEXED','utc':stamp(),'publisher_sha256':sha(pathlib.Path(__file__).read_bytes()),'manifest_sha256':sha(M.read_bytes()),'funding_gate_sha256':sha(G.read_bytes()),'independent_review_sha256':sha(pathlib.Path(review_path).read_bytes()),'base_head':HEAD,'base_tree':TREE,'verified_inputs_tree_excluding_this_receipt':verified_tree,'listed_input_rows_excluding_this_receipt':len(rows),'full_original_utf8_bytes_and_100644_stage0_skip_worktree_verified':True,'all_old_entries_preserved':True,'one_final_physical_tree_write':True,'resource_before':r,'scope':'This full receipt is written only after all listed original input/index readbacks. Final receipt readback and final tree/resource result are returned by invocation; no recursive self hash, compiler/kernel/master/cache/remote acceptance.'}

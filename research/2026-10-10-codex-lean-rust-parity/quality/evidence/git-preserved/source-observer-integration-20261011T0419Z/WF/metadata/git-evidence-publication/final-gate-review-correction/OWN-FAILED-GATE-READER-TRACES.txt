@@ -1,0 +1,21 @@
+ATTEMPT1: original frozen wrapper pure gate, no target mutation. Complete combined output:
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/final-fixed-late-publication-20261011T0320Z-solver_design_recovery/review_final_gate_with_exact_seven_notes.py", line 26, in <module>
+    protocol=source();state,e=saved_state();mi,m=load(B/'FINAL-REMAINING-FULLTEXT-INPUTS.json')
+             ^^^^^^^^
+TypeError: 'PosixPath' object is not callable
+
+ATTEMPT2: own ephemeral loop-variable-only correction, no target mutation. Complete combined output:
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/final-fixed-late-publication-20261011T0320Z-solver_design_recovery/review_final_gate_with_exact_seven_notes.py#local-note-variable-correction", line 31, in <module>
+{"status": "OWN_PURE_GATE_READER_LOCAL_NAME_CORRECTION", "original_wrapper_sha256": "c163a40c2d8c03fe8493fafe482d190e8f8a0c66164ed1a27503a32bdddf237d", "derived_execution_source_sha256": "e1def6f2dd2bb75f52c5cdb67fb3df35908f017448e7d1e63334b39b6be158ec", "exact_three_text_replacements": [["path=r['path'];source=Path(r['source_path']);data=source.read_bytes()", "path=r['path'];saved_note=Path(r['source_path']);data=saved_note.read_bytes()"], ["and source.is_file() and not source.is_symlink()", "and saved_note.is_file() and not saved_note.is_symlink()"], ["bindings.append([path,str(source),oid,len(data),digest(data)])", "bindings.append([path,str(saved_note),oid,len(data),digest(data)])"]], "original_failure": "TypeError: PosixPath object is not callable at protocol=source(); API note loop shadowed own source() function.", "all_frozen_sources_manifest_gate_and_target_state_unchanged": true}
+  File "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/final-fixed-late-publication-20261011T0320Z-solver_design_recovery/review_finalizer_source_state_and_gate.py#explicit-seven-only", line 7, in frozen_gate
+  File "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/exact-publication-recovery-v3-20261011T0302Z-solver_design_recovery/review_partial_and_recovery_v3.py", line 22, in require
+    if not ok: raise AssertionError(why)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: exact approved prefix

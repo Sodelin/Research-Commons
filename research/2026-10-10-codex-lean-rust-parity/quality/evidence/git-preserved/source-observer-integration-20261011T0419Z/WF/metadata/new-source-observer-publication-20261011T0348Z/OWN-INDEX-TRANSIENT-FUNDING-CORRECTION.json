@@ -1,0 +1,19 @@
+{
+  "status": "SOURCE_ONLY_INDEX_TRANSIENT_UNDERESTIMATE_CORRECTED_BEFORE_PREPARE_OR_MUTATION",
+  "utc": "2026-10-11T04:02:17.087969+00:00",
+  "original_v2_sha256": "9970fdb3088e4f441aa162191ac4cdb30dfe8df5794e1f5f3edc71fdb28a9f1c",
+  "new_v3_sha256": "6c9fd8cd57d8cc8400804e104c652857275ab66c1559f98a68e8dbbff71da15c",
+  "old_source_allocation_reserve_bytes": 6291456,
+  "new_loose_metadata_reserve_bytes": 6291456,
+  "separate_index_rewrite_reserve_bytes": 12582912,
+  "total_publication_allocation_reserve_bytes": 18874368,
+  "fixed_overall_scratch_abort_bytes": 2013265920,
+  "fixed_overall_scratch_hard_bytes": 2147483648,
+  "fixed_pool_limit_bytes": 100663296,
+  "reason": "Six MiB funding covered objects/metadata but not full ~9.95MB index lock rewrites. Future fixed v4 index is now bounded using actual canonical entries and all future TREE nodes, checked before any writes.",
+  "independent_design_review": "v4 new-entry/old-successor/TREE envelope method accepted; full frozen M/G review still pending.",
+  "own_initial_index_reader_failure_trace": "Traceback (most recent call last):\\n  File \"<stdin>\", line 3, in <module>\\nAssertionError\\n",
+  "own_initial_index_reader_failed_assumption": "assert magic==bDIRC and version in (2,3); actual header is4,105182 entries. No file/Git mutation or native process.",
+  "new_source_syntax_compiled_without_execution": true,
+  "all_previous_full_source_versions_and_exact_diffs_retained": true
+}

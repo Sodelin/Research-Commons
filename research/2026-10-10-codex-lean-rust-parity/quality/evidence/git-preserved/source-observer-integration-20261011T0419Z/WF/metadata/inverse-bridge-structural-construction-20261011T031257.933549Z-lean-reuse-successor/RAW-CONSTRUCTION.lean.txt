@@ -1,0 +1,148 @@
+/-
+Source-only fragment, not an installed module or a compiled theorem receipt.
+Use the exact existing EdgeGraph / RootedBinary / Calendar / EdgePath APIs.
+Existing provider imports are recorded in PROVENANCE.json; no build target or
+accepted import list is changed. The companion hand proof derives admission
+fields. This fragment does not take those fields or a desired stochastic law
+as assumptions and does not declare an unproved RootedBinary constructor.
+Contributor: lean_reuse_successor, 2026-10-11.
+-/
+
+namespace G1InverseBridgeInsertionProposal
+open Nanuq.Source GProgram.G5
+universe u v w
+
+abbrev InsertedVertex (V : Type u) := V ⊕ Fin 2
+abbrev OtherEdge (E : Type v) (e : E) := {f : E // f ≠ e}
+abbrev InsertedEdge (E : Type v) (e : E) := OtherEdge E e ⊕ Fin 4
+
+variable {V : Type u} {E : Type v}
+
+def upper : InsertedVertex V := .inr 0
+def hybrid : InsertedVertex V := .inr 1
+def entry (e : E) : InsertedEdge E e := .inr 0
+def parent0 (e : E) : InsertedEdge E e := .inr 1
+def parent1 (e : E) : InsertedEdge E e := .inr 2
+def child (e : E) : InsertedEdge E e := .inr 3
+
+/-- Literal original occurrences survive as subtype values. The two parent
+occurrences have the same endpoints but different Fin4 identities. -/
+def insertedGraph (G : EdgeGraph V E) (e : E) :
+    EdgeGraph (InsertedVertex V) (InsertedEdge E e) where
+  source
+    | .inl f => .inl (G.source f.val)
+    | .inr i => if i = 0 then .inl (G.source e) else
+        if i = 3 then hybrid else upper
+  target
+    | .inl f => .inl (G.target f.val)
+    | .inr i => if i = 0 then upper else
+        if i = 3 then .inl (G.target e) else hybrid
+
+lemma retained_source (G : EdgeGraph V E) (e : E) (f : OtherEdge E e) :
+    (insertedGraph G e).source (.inl f) = .inl (G.source f.val) := rfl
+lemma retained_target (G : EdgeGraph V E) (e : E) (f : OtherEdge E e) :
+    (insertedGraph G e).target (.inl f) = .inl (G.target f.val) := rfl
+lemma entry_source (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).source (entry e) = .inl (G.source e) := rfl
+lemma entry_target (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).target (entry e) = upper := rfl
+lemma parent0_source (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).source (parent0 e) = upper := rfl
+lemma parent0_target (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).target (parent0 e) = hybrid := rfl
+lemma parent1_source (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).source (parent1 e) = upper := rfl
+lemma parent1_target (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).target (parent1 e) = hybrid := rfl
+lemma child_source (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).source (child e) = hybrid := rfl
+lemma child_target (G : EdgeGraph V E) (e : E) :
+    (insertedGraph G e).target (child e) = .inl (G.target e) := rfl
+
+section DecidableOccurrences
+variable [DecidableEq E]
+
+/-- Incoming and outgoing maps differ at the removed occurrence, exactly
+as required by the original incident-edge subtype degree definition. -/
+def inDestination (e f : E) : InsertedEdge E e :=
+  if hf : f = e then child e else .inl ⟨f,hf⟩
+def outDestination (e f : E) : InsertedEdge E e :=
+  if hf : f = e then entry e else .inl ⟨f,hf⟩
+
+lemma inDestination_target (G : EdgeGraph V E) (e f : E) :
+    (insertedGraph G e).target (inDestination e f) = .inl (G.target f) := by
+  unfold inDestination
+  split_ifs with hf
+  · subst f; rfl
+  · rfl
+lemma outDestination_source (G : EdgeGraph V E) (e f : E) :
+    (insertedGraph G e).source (outDestination e f) = .inl (G.source f) := by
+  unfold outDestination
+  split_ifs with hf
+  · subst f; rfl
+  · rfl
+
+/-- An ordered edge-ID path uses parent0 only to witness reachability.
+It does not assert any routing probability, nor identify parent0 and parent1. -/
+def liftEdge (e f : E) : List (InsertedEdge E e) :=
+  if hf : f = e then [entry e,parent0 e,child e] else [.inl ⟨f,hf⟩]
+
+lemma lifted_edge_path (G : EdgeGraph V E) (e f : E) :
+    EdgePath (insertedGraph G e) (.inl (G.source f)) (.inl (G.target f))
+      (liftEdge e f) := by
+  unfold liftEdge
+  split_ifs with hf
+  · subst f
+    exact .cons rfl (.cons rfl (.cons rfl (.nil _)))
+  · exact .cons rfl (.nil _)
+
+lemma lifted_directed_step (G : EdgeGraph V E) (e : E) {a b : V}
+    (hab : G.DStep a b) :
+    (insertedGraph G e).DReach (.inl a) (.inl b) := by
+  obtain ⟨f,hs,ht⟩ := hab
+  have h := (lifted_edge_path G e f).directed
+  rw [hs,ht] at h
+  exact h
+
+lemma lifted_directed_reach (G : EdgeGraph V E) (e : E) {a b : V}
+    (hab : G.DReach a b) :
+    (insertedGraph G e).DReach (.inl a) (.inl b) := by
+  induction hab with
+  | refl => exact .refl
+  | tail _ hstep ih => exact ih.trans (lifted_directed_step G e hstep)
+
+end DecidableOccurrences
+
+/-- Both collapses are needed for the two fresh bookend bridge proofs. -/
+def collapseToSource (G : EdgeGraph V E) (e : E) : InsertedVertex V → V
+  | .inl v => v
+  | .inr _ => G.source e
+
+def collapseToTarget (G : EdgeGraph V E) (e : E) : InsertedVertex V → V
+  | .inl v => v
+  | .inr _ => G.target e
+
+noncomputable def insertedAge (G : EdgeGraph V E) (e : E) (C : Calendar G) :
+    InsertedVertex V → ℝ
+  | .inl v => C.age v
+  | .inr i => if i = 0 then
+      C.age (G.target e) + 2 * (C.age (G.source e) - C.age (G.target e)) / 3
+    else C.age (G.target e) + (C.age (G.source e) - C.age (G.target e)) / 3
+
+lemma old_age (G : EdgeGraph V E) (e : E) (C : Calendar G) (v : V) :
+    insertedAge G e C (.inl v) = C.age v := rfl
+
+section Labels
+variable {X : Type w} [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]
+
+def insertedRoot (N : RootedBinary V E X) : InsertedVertex V := .inl N.root
+
+def insertedLeaf (N : RootedBinary V E X) : X ↪ InsertedVertex V where
+  toFun x := .inl (N.leaf x)
+  inj' x y h := N.leaf.injective (Sum.inl.inj h)
+
+lemma taxon_label (N : RootedBinary V E X) (x : X) :
+    insertedLeaf N x = .inl (N.leaf x) := rfl
+
+end Labels
+end G1InverseBridgeInsertionProposal

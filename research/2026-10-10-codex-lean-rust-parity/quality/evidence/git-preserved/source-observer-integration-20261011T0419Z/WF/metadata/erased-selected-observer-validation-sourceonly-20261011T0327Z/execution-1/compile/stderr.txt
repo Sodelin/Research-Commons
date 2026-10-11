@@ -1,0 +1,71 @@
+warning: variant `BeforeCommon` is never constructed
+  --> /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/source_selected_prefix.rs:26:30
+   |
+26 | pub enum End { After(usize), BeforeCommon(usize) }
+   |          ---                 ^^^^^^^^^^^^
+   |          |
+   |          variant in this enum
+   |
+   = note: `End` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: multiple methods are never used
+   --> /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/source_selected_prefix.rs:102:12
+    |
+100 | impl<'a> Table<'a> {
+    | ------------------ methods in this implementation
+101 |     pub fn bank(&self)->&'a Bank {self.bank}
+102 |     pub fn spec(&self)->&Spec {&self.spec}
+    |            ^^^^
+...
+105 |     pub fn origins(&self)->&[Origin] {&self.origins}
+    |            ^^^^^^^
+106 |     pub fn prefix_len(&self)->usize {self.prefix_len}
+107 |     pub fn private_site(&self)->Option<PrivateSite> {self.private_site}
+    |            ^^^^^^^^^^^^
+108 |     pub fn order_relation(&self)->OrderRelation {self.relation}
+    |            ^^^^^^^^^^^^^^
+...
+113 |     pub fn compiler_literal_order_bound(&self)->bool {false}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+114 |     pub fn literal_code_history_verified(&self)->bool {false}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+115 |     pub fn native_refinement_verified(&self)->bool {false}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+116 |     pub fn source_admission_verified(&self)->bool {false}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+117 |     pub fn timed_history_supported(&self)->bool {false}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^
+...
+137 |     pub fn stored_seed(&self,leaf:PathId,hid:usize)->Result<bool,Error> {
+    |            ^^^^^^^^^^^
+
+warning: field `site` is never read
+  --> /dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/selected-prefix-erased-observer-sourceonly-20261011T0254Z/source_erased_selected_observer.rs:82:54
+   |
+81 | pub struct Table<'table, 'bank> {
+   |            ----- field in this struct
+82 |     input: &'table prefix::Table<'bank>, spec: Spec, site: prefix::PrivateSite,
+   |                                                      ^^^^
+   |
+   = note: `Table` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: methods `spec`, `site`, `variables`, `states`, and `nodes` are never used
+  --> /dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/selected-prefix-erased-observer-sourceonly-20261011T0254Z/source_erased_selected_observer.rs:87:12
+   |
+85 | impl<'table, 'bank> Table<'table, 'bank> {
+   | ---------------------------------------- methods in this implementation
+86 |     pub fn input(&self) -> &'table prefix::Table<'bank> { self.input }
+87 |     pub fn spec(&self) -> &Spec { &self.spec }
+   |            ^^^^
+88 |     pub fn site(&self) -> prefix::PrivateSite { self.site }
+   |            ^^^^
+89 |     pub fn variables(&self) -> &[word::Variable] { self.input.variables() }
+   |            ^^^^^^^^^
+90 |     pub fn states(&self) -> &[ObservedState] { &self.states }
+   |            ^^^^^^
+91 |     pub fn nodes(&self) -> &[HistoryNode] { &self.nodes }
+   |            ^^^^^
+
+warning: 4 warnings emitted
+
