@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "$INDEPENDENT_REVIEW/check_preflight.py", line 29, in <module>
+    kd={'module':n,'source':r['source_sha256'],'compiler':m.BIN,'mathlib':m.MATHLIB,'trust':0,'kernel_check':True,'imports':r['direct_import_artifacts'],'native_runtime_digest':r['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'};key=hashlib.sha256(json.dumps(kd,sort_keys=True).encode()).hexdigest();cp=P/'.build/cache'/key/'receipt.json';original=root/'.build/cache'/key/'receipt.json';assert rd(cp)==rd(original)==r;shared.add(inode(original));m.bundle(cp.parent/'artifact.olean',r['object_artifacts']);m.bundle(Path(r['cached_object']),r['object_artifacts'])
+                                                                                                                                                                                                                                                                                                                                                                                                                                                ^^^^^^
+  File "$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py", line 20, in read
+    def read(p):return json.loads(p.read_bytes())
+                                  ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '$PACKAGE/.build/cache/422b0bed57e803a4778f1e3d6f63842b5fc5e13d7649a29b2175549bf248193a/receipt.json'

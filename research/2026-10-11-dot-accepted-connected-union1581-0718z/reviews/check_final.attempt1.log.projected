@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "$INDEPENDENT_REVIEW/check_final.py", line 231, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "$INDEPENDENT_REVIEW/check_final.py", line 228, in main
+    expected={**b,**records};report=final_check(g,expected);assert report['audit_sha256']=='c87ba37f9362b9dbc995bcb24903cb710e6b538455f406260da14cccb1ddc9b1'
+                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "$INDEPENDENT_REVIEW/check_final.py", line 66, in final_check
+    assert f['counts']=={'cache_reuse':1581,'fresh_components':0},f['counts']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'cache_reuse': 1581}

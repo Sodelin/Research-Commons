@@ -1,0 +1,64 @@
+{
+  "status": "READONLY_EXACT_ADDITIVE_PLAN_NO_PREPARATION_OR_BUILD",
+  "base_count": 1575,
+  "new_count": 6,
+  "total": 1581,
+  "additions": {
+    "G3BernoulliSmoothness": {
+      "module": "G3BernoulliSmoothness",
+      "sha256": "3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8",
+      "imports": [
+        "G3BernoulliDerivatives",
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.Analysis.Calculus.ContDiff.Operations"
+      ]
+    },
+    "G3BernoulliSmoothnessBoundaryChecks": {
+      "module": "G3BernoulliSmoothnessBoundaryChecks",
+      "sha256": "b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b",
+      "imports": [
+        "G3BernoulliSmoothness"
+      ]
+    },
+    "G4LiteralLastChildExitCut": {
+      "module": "G4LiteralLastChildExitCut",
+      "sha256": "d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349",
+      "imports": [
+        "G1OriginalCalendarDecomposition",
+        "G1SeparatedAgendaSupportCuts",
+        "G1OriginalExitBatchBinding"
+      ]
+    },
+    "G4PartialExitSeparation": {
+      "module": "G4PartialExitSeparation",
+      "sha256": "04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae",
+      "imports": [
+        "G4LiteralLastChildExitCut"
+      ]
+    },
+    "G6ErasedSelectedProjection": {
+      "module": "G6ErasedSelectedProjection",
+      "sha256": "6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterErasure",
+        "G7EffectiveSourceEnumeration"
+      ]
+    },
+    "G4ActualBelowMeetingSupport": {
+      "module": "G4ActualBelowMeetingSupport",
+      "sha256": "cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf",
+      "imports": [
+        "G4PartialExitSeparation"
+      ]
+    }
+  },
+  "origins": {
+    "G3BernoulliSmoothness": "g3-smoothness-check-20261011-0427z",
+    "G3BernoulliSmoothnessBoundaryChecks": "g3-smoothness-check-20261011-0427z",
+    "G4LiteralLastChildExitCut": "g46-frozen-check-20261011-0608z",
+    "G4PartialExitSeparation": "g46-frozen-check-20261011-0608z",
+    "G6ErasedSelectedProjection": "g46-frozen-check-20261011-0608z",
+    "G4ActualBelowMeetingSupport": "g4-below-meeting-check-20261011-0643z"
+  },
+  "base_graph_sha256": "e88ad8e80c518a40cc5546a9961a1e08df202ab0e0104bae39e9aca00f20e6eb"
+}

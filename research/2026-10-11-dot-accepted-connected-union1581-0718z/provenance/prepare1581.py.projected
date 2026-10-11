@@ -1,0 +1,35 @@
+from pathlib import Path
+import json,hashlib,shutil,os
+R=Path(__file__).resolve().parent;B=Path('$ACCEPTED1575');O=Path('$PACKAGE');cap=64*2**20;floor=20*2**30;start=shutil.disk_usage(B).free;assert start>floor+cap;assert not O.exists();O.mkdir();newfiles=[];sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def guard():
+ used=sum(p.stat().st_blocks*512 for p in newfiles if p.exists());free=shutil.disk_usage(O).free;assert used<=cap and start-free<=cap;assert free>floor;return used,free
+def copy(p,q):guard();q.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,q);newfiles.append(q);guard()
+def write(q,d):guard();q.parent.mkdir(parents=True,exist_ok=True);q.write_text(json.dumps(d,indent=2)+'\n');newfiles.append(q);guard()
+def link(p,q):guard();q.parent.mkdir(parents=True,exist_ok=True);os.link(p,q);guard()
+plan=json.loads((R/'PROSPECTIVE-1581-SOURCE-PLAN.json').read_text());g=json.loads((B/'DEPENDENCY-GRAPH.json').read_text());base=g['targets']['current/connected'];g['targets']['history/accepted1575']=json.loads(json.dumps(base))
+for n,m in plan['additions'].items():assert n not in base['modules'];base['modules'][n]=m;base['order'].append(n);base['roots'].append(n)
+assert len(base['modules'])==1581;seen=set()
+for n in base['order']:assert all(i in seen or i not in base['modules'] for i in base['modules'][n]['imports']);seen.add(n)
+base['external_imports']=sorted(set(i for m in base['modules'].values() for i in m['imports'] if i not in base['modules']));g['scope']='Exact accepted1575 plus six checked local source modules; coherent aggregate/full audit pending. Receiver duplicate source-only natural pair excluded.';write(O/'DEPENDENCY-GRAPH.json',g)
+for n,m in base['modules'].items():
+ origin=Path('$SHARED_WORKSPACE')/plan['origins'][n] if n in plan['additions'] else B;p=origin/'source-store'/(m['sha256']+'.lean');assert sha(p)==m['sha256'];link(p,O/'source-store'/(m['sha256']+'.lean'))
+for p in (B/'scripts').iterdir():
+ if p.is_file():copy(p,O/'scripts'/p.name)
+for n in ['lakefile.lean','lean-toolchain','lake-manifest.json']:copy(B/n,O/n)
+records=[];found=set()
+for origin in [B]+[Path('$SHARED_WORKSPACE')/x for x in dict.fromkeys(plan['origins'].values())]:
+ for p in (origin/'.build/cache').glob('*/receipt.json'):
+  r=json.loads(p.read_text());n=r['module']
+  if n in found or n not in base['modules'] or r['source_sha256']!=base['modules'][n]['sha256']:continue
+  if origin!=B and n not in plan['additions']:continue
+  assert r['exit_code']==0 and r['source_and_imports_stable'];dest=O/'.build/cache'/p.parent.name
+  for q in p.parent.iterdir():
+   if q.is_file():
+    if q.name=='receipt.json':copy(q,dest/q.name)
+    else:link(q,dest/q.name)
+  found.add(n);records.append({'module':n,'key':p.parent.name,'receipt_sha256':sha(p),'source_sha256':r['source_sha256'],'object_sha256':r['object_sha256'],'accepted_origin':origin.name,'original_receipt_path':str(p)})
+assert found==set(base['modules']) and len(records)==1581
+write(O/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json',{'status':'PREPARED_REQUIRES_INDEPENDENT_PREFLIGHT','records':records,'source_plan':plan,'foreign_compiled_objects_admitted':False})
+for n in ['DEPENDENCY-GRAPH.json','PUBLICATION-RECEIPT.json']:copy(B/n,O/'provenance'/('accepted1575-'+n))
+for n in ['PROSPECTIVE-1581-SOURCE-PLAN.json','EXECUTION-BEFORE.json','EXECUTION-AFTER.json']:copy(R/n,O/'provenance'/n)
+copy(Path(__file__),O/'provenance/prepare1581.py');prep={'status':'PREPARED_SIX_ADDITIONS_PENDING_REVIEW','graph_sha256':sha(O/'DEPENDENCY-GRAPH.json'),'source_bytes':sum((O/'source-store'/(m['sha256']+'.lean')).stat().st_size for m in base['modules'].values()),'new_source_bytes':sum((O/'source-store'/(m['sha256']+'.lean')).stat().st_size for m in plan['additions'].values()),'scripts':{p.name:sha(p) for p in (O/'scripts').iterdir() if p.is_file()}};write(O/'PREPARATION.json',prep);used,free=guard();write(O/'STAGING-BUDGET-RECEIPT.json',{'status':'PASS_HARD_64MIB_PREPARATION','start_free':start,'end_free':free,'observed_consumption':start-free,'new_regular_file_allocation':used,'preparation_cap':cap,'launch_threshold':floor,'compiler_invoked':False});print(O,prep['graph_sha256'],used,free)

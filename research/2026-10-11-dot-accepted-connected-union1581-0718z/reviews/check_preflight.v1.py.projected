@@ -1,0 +1,67 @@
+"""Read-only exact additive union preflight; no compiler, no raw restoration."""
+from pathlib import Path
+import hashlib,importlib.util,json,shutil,time
+O=Path(__file__).parent;P=Path('$PACKAGE');B=Path('$ACCEPTED1575')
+spec=importlib.util.spec_from_file_location('review_helpers',Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);h=m.sha;rd=m.read;start=time.time()
+pin='2af123d700b2956a0cd5146cd7625c55db06153990c219d00f4c11d3d4428e69';assert h(P/'DEPENDENCY-GRAPH.json')==pin;allg=rd(P/'DEPENDENCY-GRAPH.json');oldall=rd(B/'DEPENDENCY-GRAPH.json');g=allg['targets']['current/connected'];bg=oldall['targets']['current/connected']
+new={'G3BernoulliSmoothness':'3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8','G3BernoulliSmoothnessBoundaryChecks':'b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b','G4LiteralLastChildExitCut':'d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349','G4PartialExitSeparation':'04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae','G6ErasedSelectedProjection':'6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007','G4ActualBelowMeetingSupport':'cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf'}
+assert len(g['modules'])==1581 and set(g['modules'])-set(bg['modules'])==set(new);assert g['roots']==bg['roots']+list(new)
+assert set(allg['targets'])==set(oldall['targets'])|{'history/accepted1575'};assert allg['targets']['history/accepted1575']==bg
+for n,t in oldall['targets'].items():
+ if n!='current/connected':assert allg['targets'][n]==t
+origins={
+'base':(B,'.build/runs/20261011T040211.744850Z/targets/current_connected/RESULT.json'),
+'smooth':(Path('$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z'),'.build/runs/20261011T043239.135086Z/targets/candidate_g3-smoothness/RESULT.json'),
+'adapters':(Path('$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z'),'.build/runs/20261011T061330.120140Z/targets/candidate_g46-frozen/RESULT.json'),
+'support':(Path('$SHARED_WORKSPACE/g4-below-meeting-check-20261011-0643z'),'.build/runs/20261011T064842.285117Z/targets/candidate_g4-below-meeting/RESULT.json')}
+by={};results={}
+for key,(root,p) in origins.items():
+ r=rd(root/p);assert r['status']=='PASS';results[key]=r;by[key]={x['module']:x for x in r['component_receipts']}
+def origin(n):return 'base' if n not in new else 'smooth' if n.startswith('G3BernoulliSmoothness') else 'support' if n=='G4ActualBelowMeetingSupport' else 'adapters'
+claimed=rd(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json');claim={x['module']:x for x in claimed['records']};assert len(claim)==len(claimed['records'])==1581;assert not claimed['foreign_compiled_objects_admitted']
+shared=set();pins=[]
+def inode(p):s=p.stat();return s.st_dev,s.st_ino
+for n,v in g['modules'].items():
+ root=origins[origin(n)][0];f=P/'source-store'/(v['sha256']+'.lean');bf=root/'source-store'/(v['sha256']+'.lean');assert h(f)==v['sha256'];assert f.read_bytes()==bf.read_bytes();assert m.imports(f.read_bytes())==v['imports'];shared.add(inode(bf))
+ if n in new:assert v['sha256']==new[n]
+ else:assert v==bg['modules'][n]
+ r=by[origin(n)][n];assert r['status']=='PASS_FRESH_KERNEL_CHECK' and r['exit_code']==0 and r['source_and_imports_stable'] and r['native_runtime_stat_stable'];assert r['compiler_sha256']==m.BIN and r['mathlib_commit']==m.MATHLIB
+ kd={'module':n,'source':r['source_sha256'],'compiler':m.BIN,'mathlib':m.MATHLIB,'trust':0,'kernel_check':True,'imports':r['direct_import_artifacts'],'native_runtime_digest':r['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'};key=hashlib.sha256(json.dumps(kd,sort_keys=True).encode()).hexdigest();cp=P/'.build/cache'/key/'receipt.json';original=root/'.build/cache'/key/'receipt.json';assert rd(cp)==rd(original)==r;shared.add(inode(original));m.bundle(cp.parent/'artifact.olean',r['object_artifacts']);m.bundle(Path(r['cached_object']),r['object_artifacts'])
+ for suffix in r['object_artifacts']:shared.add(inode(m.companion(Path(r['cached_object']),suffix)))
+ for i,z in r['direct_import_bindings'].items():
+  assert z['artifacts']==r['direct_import_artifacts'][i];m.bundle(Path(z['path']),z['artifacts'])
+  if i in g['modules']:assert z['artifacts']==by[origin(i)][i]['object_artifacts']
+ c=claim[n];assert c['key']==key and c['receipt_sha256']==h(cp) and c['source_sha256']==v['sha256'] and c['object_sha256']==r['object_sha256'];assert Path(c['original_receipt_path'])==original
+ pins.append({'module':n,'origin':origin(n),'cache_key':key,'receipt_sha256':h(cp),'source_sha256':v['sha256']})
+assert len(list((P/'.build/cache').glob('*/receipt.json')))==1581
+pos={n:i for i,n in enumerate(g['order'])};assert len(g['order'])==1581 and set(pos)==set(g['modules'])
+for n,v in g['modules'].items():
+ for i in v['imports']:
+  if i in pos:assert pos[i]<pos[n]
+seen=set()
+def visit(n):
+ if n in seen:return
+ seen.add(n)
+ for i in g['modules'][n]['imports']:
+  if i in g['modules']:visit(i)
+for n in g['roots']:visit(n)
+assert seen==set(g['modules']);assert set(g['external_imports'])=={i for v in g['modules'].values() for i in v['imports'] if i not in g['modules']}
+owned={n:v['sha256'] for n,v in g['modules'].items() if n.startswith('Mathlib.')};assert len(owned)==4 and owned=={n:v['sha256'] for n,v in bg['modules'].items() if n.startswith('Mathlib.')}
+prep=rd(P/'PREPARATION.json');assert prep['graph_sha256']==pin
+for n,v in prep['scripts'].items():assert h(P/'scripts'/n)==v and (P/'scripts'/n).read_bytes()==(B/'scripts'/n).read_bytes()
+assert prep['scripts']['run_union.py']=='fbacfbb57330651053acc1848c6b1c31fdcda121b6f8c4cadf088b45617692ee';assert not (P/'scripts/build_no_owned_mathlib.py').exists()
+assert h(Path(next(iter(by['base'].values()))['command'][0]))==m.BIN
+base_run=B/'.build/runs/20261011T040211.744850Z';native=rd(base_run/'NATIVE-RUNTIME-PINS.json')
+for p,v in native['libraries'].items():assert h(Path(p))==v['sha256']
+# Explicit authenticated reader: never trust the absent historical raw audit.
+tp=Path('$TRANSPORT/audit_transport.py');assert h(tp)=='690c83dff9193a351c85ddca20e89429245e69e42a9a107b96de397212b30af8';sp=importlib.util.spec_from_file_location('transport',tp);t=importlib.util.module_from_spec(sp);sp.loader.exec_module(t)
+rawpath=Path(results['base']['audit_receipt']['audit_output']);assert not rawpath.exists();recovered=t.read_audit(str(rawpath));assert len(recovered)==115316459 and hashlib.sha256(recovered).hexdigest()=='9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2';del recovered
+seenin=set();allocated=0
+for f in [P,*P.rglob('*')]:
+ s=f.lstat();i=(s.st_dev,s.st_ino)
+ if i not in seenin and i not in shared:allocated+=s.st_blocks*512
+ seenin.add(i)
+st=rd(P/'STAGING-BUDGET-RECEIPT.json');assert st['preparation_cap']==64*2**20 and st['observed_consumption']==st['start_free']-st['end_free']<st['preparation_cap'] and st['new_regular_file_allocation']<st['preparation_cap'] and allocated<st['preparation_cap'];assert st['launch_threshold']==20*2**30
+free=shutil.disk_usage(P).free;mem=int(next(l.split()[1] for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemAvailable:')))*1024;assert free>20*2**30 and mem>=7*2**30;assert not (P/'.build/LATEST-RUN.json').exists()
+out={'status':'PASS_EXACT1581_ADDITIVE_PREFLIGHT_PENDING_FRESH_AGGREGATE_AND_AUDIT','graph_sha256':pin,'old_modules_literal_unchanged':1575,'six_accepted_additions':new,'all_selected_cache_receipts_literal':1581,'historical_targets_preserved':True,'four_owned_mathlib_sources_unchanged':owned,'scripts_literal_accepted1575':True,'independent_conservative_new_allocated_bytes':allocated,'staging_budget':st,'observed_free_bytes':free,'observed_available_memory_bytes':mem,'archived1575_bytes_authentically_recovered_without_raw_restore':115316459,'foreign_objects_admitted':False,'compiler_invoked':False,'required_target':'current/connected','required_lean_bin_kind':'directory','receipt_pins':pins,'elapsed_seconds':time.time()-start,'files_hashed':len(m.MEMO),'bytes_hashed':m.hashed_bytes}
+(O/'PREFLIGHT-RESULT.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({k:v for k,v in out.items() if k!='receipt_pins'},indent=2))

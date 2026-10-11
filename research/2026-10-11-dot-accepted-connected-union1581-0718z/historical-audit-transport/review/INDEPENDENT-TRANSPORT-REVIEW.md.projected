@@ -1,0 +1,50 @@
+# Independent agent review: one completed 1,575-module audit transport
+
+Date: 11 October 2026, 07:04 UTC. Read-only review of the actual audit; mutations were confined to newly created synthetic fixtures. No compiler was invoked.
+
+## Verdict
+
+**PASS for the explicitly allowlisted reversible representation change, under the proposal's quiescent-workspace/cooperating-process assumption.** The actual completed audit remained present and byte-identical throughout this review. This is not authorization to touch any other evidence or change any execution guard.
+
+Bound proposal: `55d05f6fef7bb9c3f7072babe96504aa8070c5dbf7e4fa5f178cb16ad056146a`.
+Bound transport script: `690c83dff9193a351c85ddca20e89429245e69e42a9a107b96de397212b30af8`.
+Bound index: `e4db17c27e6ec41e92d37d8bab01c2e8c19f1a733c64d4b569ee10d7915b0559`.
+Preserved earlier reviewed script: `44b49ea19dbee3cf3cc25ec9e5d07c64d216721c009bda01c6b293f44423fe2d`.
+
+The only eligible real payload is the completed accepted 1,575-module audit, SHA `9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2`, exactly 115,316,459 bytes. Its current inode has one link and 115,318,784 allocated bytes. Its existing published gzip-part representation is pinned at [accepted 1,575-module packet](https://github.com/Sodelin/Research-Commons/tree/f50f8950d560d6ed593d4d29a166c7bc58bbe9e1/research/2026-10-11-dot-accepted-connected-union1575-0415z).
+
+## Exact checks
+
+I checked the full source and preserved patch. Exact diff and normalized syntax-tree comparison establish that executable changes from the prior reviewed transport are limited to the pinned index digest, the one-path allowlist, and expected entry count two to one. Documentation changes identify the newly eligible completed audit. No archive, restore, journaling, identity, reader or error-handling implementation was weakened.
+
+Independent recovery verified every part's length/hash and order, the complete gzip hash, the transport manifest hash, the successful target result, completed final receipt and exact audit auxiliary-output path/length/hash. All decompressed bytes were compared directly with the present raw audit, not just with a claimed checksum. The raw inode, size, modification time and change time remained unchanged. The later 242-module audit also remained exact.
+
+I replayed the thirteen existing synthetic controls: corrupt/missing archive, receipt hash drift, wrong receipt path, failed receipt, wrong auxiliary hash, stale RUNNING final receipt, conflicting raw bytes, wrong gzip hash, wrong part path, archive symlink, exact fixture archive/restore roundtrip and unlisted reader path. All passed.
+
+Five independently applied synthetic failure injections also passed:
+
+1. Journal failure before unlink leaves the exact raw bytes present.
+2. Interruption immediately after unlink leaves authenticated archive recovery available; explicit restoration returns exact bytes.
+3. Interruption after the exclusive restore link leaves an exact raw file; retry validates it without overwriting, with temporary evidence retained.
+4. A pre-existing corrupt raw file is rejected and never overwritten or silently replaced by the archive.
+5. Raw metadata drift after verification blocks unlink.
+
+## Operational conditions and limits
+
+The archive operation validates everything before changing representation, fsyncs the pinned index/transport/parts and their parent directories, records and fsyncs the pre-change journal, checks raw identity again, then unlinks only the allowlisted raw representation. The verified archives remain. Post-change validation and journaling make the active representation explicit.
+
+Restoration writes an exclusive temporary file, verifies its complete original length/hash, fsyncs it and uses an exclusive hard link to the raw pathname. This cannot overwrite an existing pathname. Existing raw bytes are validated, with no archive fallback if they disagree. Interrupted temporary files are preserved rather than automatically discarded. The explicit reader similarly rejects an unlisted path, changed receipt, missing/corrupt archive, bad raw bytes or wrong binding.
+
+The advisory lock and stat-identity checks assume no hostile/noncooperating concurrent replacement. The owner must arrange the stated quiet interval with no compiler or historical reader using the eligible pathname. This is not a claim of race-proof operation against arbitrary concurrent mutation.
+
+Legacy direct-file readers do not automatically acquire archive support. They must use the authenticated `read_audit` adapter or explicitly restore the exact raw file. There is no monkeypatch or silent filesystem fallback. The raw receipt paths and their original byte hashes remain historical facts; the transport index documents their current representation.
+
+Expected capacity recovery is the measured inode allocation, not guaranteed future free space. The unchanged greater-than-20-GiB launch reserve must be rechecked after the owner's operation. No source, object, native trace, receipt, failed evidence, later audit or execution limit is eligible for alteration. This review neither stages nor accepts the prospective 1,581-module union.
+
+## Evidence pins
+
+- Independent read-only byte/identity check and fixture injector: `cc74c4bddbda1ac3462fc97eb129ae064a6b46c502a4bcb4d8e41addb3e94f5b`.
+- Independent result: `aa13ff339019f150f6bcbea8297a774498db485a7ed1e2aa6581ee5ccc0ce96d`.
+- Replayed thirteen-control log: `6fbbae22ede531c864ce6f80d6f07c5a65eeb0ff14b5296c6f1be711ebe817d9`.
+
+Raw operational paths remain in the locally preserved evidence. If published projections parameterize those paths, public and raw hashes must be labelled separately. No real audit representation was changed by this reviewer.

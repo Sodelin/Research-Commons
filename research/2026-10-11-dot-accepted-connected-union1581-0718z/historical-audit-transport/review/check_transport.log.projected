@@ -1,0 +1,26 @@
+{
+  "status": "PASS_INDEPENDENT_READONLY_RECOVERY_AND_SYNTHETIC_FAILURE_CONTROLS",
+  "reviewed_script_sha256": "690c83dff9193a351c85ddca20e89429245e69e42a9a107b96de397212b30af8",
+  "reviewed_index_sha256": "e4db17c27e6ec41e92d37d8bab01c2e8c19f1a733c64d4b569ee10d7915b0559",
+  "historical_audits": [
+    {
+      "raw_sha256": "9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2",
+      "raw_bytes": 115316459,
+      "all_recovered_bytes_equal": true,
+      "raw_unchanged": true,
+      "nlink": 1,
+      "allocated_bytes": 115318784
+    }
+  ],
+  "new_failure_controls": [
+    "pre_unlink_journal_failure_preserves_raw",
+    "post_unlink_interruption_exact_archive_recovery",
+    "post_link_interruption_keeps_exact_raw_and_retry_validates",
+    "existing_corrupt_raw_not_overwritten",
+    "metadata_drift_blocks_unlink"
+  ],
+  "owner_controls_pass_count": 13,
+  "historical_mutations": 0,
+  "later_242_raw_unchanged": true,
+  "compiler_invoked": false
+}

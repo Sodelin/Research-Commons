@@ -1,0 +1,13 @@
+from pathlib import Path
+import json,hashlib,importlib.util,collections
+O=Path(__file__).parent;tp=Path('$TRANSPORT/audit_transport.py');assert hashlib.sha256(tp.read_bytes()).hexdigest()=='690c83dff9193a351c85ddca20e89429245e69e42a9a107b96de397212b30af8';sp=importlib.util.spec_from_file_location('t',tp);t=importlib.util.module_from_spec(sp);sp.loader.exec_module(t)
+root=Path('$ACCEPTED1575/.build/runs/20261011T040211.744850Z');br=json.loads((root/'targets/current_connected/RESULT.json').read_text());raw=t.read_audit(br['audit_receipt']['audit_output']);assert hashlib.sha256(raw).hexdigest()=='9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2';base={x['name']:x for x in json.loads(raw)['declarations']};del raw
+expected=dict(base);narrow={};pins=[]
+for p in ['$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z/.build/runs/20261011T043239.135086Z/targets/candidate_g3-smoothness/RESULT.json','$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z/.build/runs/20261011T061330.120140Z/targets/candidate_g46-frozen/RESULT.json','$SHARED_WORKSPACE/g4-below-meeting-check-20261011-0643z/.build/runs/20261011T064842.285117Z/targets/candidate_g4-below-meeting/RESULT.json']:
+ r=json.loads(Path(p).read_text());ap=Path(r['audit_receipt']['audit_output']);a=json.loads(ap.read_text());pins.append({'result':p,'audit_sha256':hashlib.sha256(ap.read_bytes()).hexdigest()})
+ for x in a['declarations']:
+  n=x['name']
+  if n not in base:
+   if n in narrow:assert narrow[n]==x
+   narrow[n]=x;expected[n]=x
+r=json.loads(Path('$PACKAGE/.build/runs/20261011T071024.079941Z/targets/current_connected/RESULT.json').read_text());a=json.loads(Path(r['audit_receipt']['audit_output']).read_text());actual={x['name']:x for x in a['declarations']};print('expected/actual',len(expected),len(actual),'new',len(narrow),'newtheorems',sum(x['kind']=='theorem' for x in narrow.values()));print('missing',set(expected)-set(actual),'extra',set(actual)-set(expected));delta=[{'name':n,'fields':{k:{'expected':expected[n].get(k),'actual':x.get(k)} for k in set(x)|set(expected[n]) if x.get(k)!=expected[n].get(k)},'was_base':n in base} for n,x in actual.items() if n in expected and x!=expected[n]];print(json.dumps(delta,indent=2));(O/'EXPECTED-NEW-RECORDS.json').write_text(json.dumps(narrow,indent=2)+'\n');(O/'EXPECTED-RECORD-DELTAS.json').write_text(json.dumps(delta,indent=2)+'\n');(O/'PRIOR-AUDIT-PINS.json').write_text(json.dumps(pins,indent=2)+'\n')

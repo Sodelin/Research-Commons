@@ -1,0 +1,79 @@
+"""Receipt-bound reversible transport for exactly one completed accepted1575 audit.
+Default CLI is read-only. No later profile audit or compiler/native/source is eligible.
+"""
+from pathlib import Path
+import argparse,fcntl,gzip,hashlib,io,json,os,time
+ROOT=Path(__file__).resolve().parent
+INDEX_SHA='e4db17c27e6ec41e92d37d8bab01c2e8c19f1a733c64d4b569ee10d7915b0559'
+ALLOWED={'$ACCEPTED1575/.build/runs/20261011T040211.744850Z/attempts/00007-OwnedAudit/work/AUDIT-RESULT.json': ('9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2', 115316459)}
+CHUNK=1024*1024
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def require(ok,msg):
+ if not ok:raise ValueError(msg)
+def exact(path,digest,size=None):
+ p=Path(path);require(not p.is_symlink(),'symlink not eligible');b=p.read_bytes();require(sha(b)==digest,'file hash mismatch: '+str(p));require(size is None or len(b)==size,'file length mismatch');return b
+def entries():
+ d=json.loads(exact(ROOT/'INDEX.json',INDEX_SHA));es=d['entries'];require(len(es)==1,'wrong entry count');require({e['raw_path']:(e['raw_sha256'],e['raw_bytes']) for e in es}==ALLOWED,'allowlist mismatch');return es
+def lookup(path):
+ p=str(Path(path).absolute());return next((e for e in entries() if e['raw_path']==p),None)
+def binding(e):
+ d=json.loads(exact(e['result_path'],e['result_sha256']));require(d['status']=='PASS','target not PASS');a=d['audit_receipt'];require(a['status']=='PASS_FRESH_KERNEL_CHECK' and a['exit_code']==0 and a['kind']=='complete-owned-audit' and a['source_and_imports_stable'],'audit receipt not successful');require(a['audit_output']==e['raw_path'],'receipt path mismatch');aux=[x for x in a['auxiliary_outputs'] if x['path']=='work/AUDIT-RESULT.json'];require(len(aux)==1 and aux[0]['sha256']==e['raw_sha256'] and aux[0]['bytes']==e['raw_bytes'],'receipt raw binding mismatch');require(str(Path(a['receipt_directory'])/'work/AUDIT-RESULT.json')==e['raw_path'],'receipt directory mismatch');f=json.loads(exact(e['final_receipt_path'],e['final_receipt_sha256']));require(f['status']=='PASS_ALL_REQUESTED_TARGETS','nonterminal run');t=json.loads(exact(e['transport_path'],e['transport_sha256']));require(t['raw_sha256']==e['raw_sha256'] and t['gzip_sha256']==e['gzip_sha256'],'transport binding mismatch');base=Path(e['transport_path']).parent;require(e['parts']==[{'path':str(base/x['path']),'bytes':x['bytes'],'sha256':x['sha256']} for x in t['parts']],'part path binding mismatch')
+def chunks(e):
+ binding(e);z=b''.join(exact(x['path'],x['sha256'],x['bytes']) for x in e['parts']);require(sha(z)==e['gzip_sha256'],'gzip hash mismatch');h=hashlib.sha256();n=0
+ with gzip.GzipFile(fileobj=io.BytesIO(z)) as f:
+  while True:
+   b=f.read(CHUNK)
+   if not b:break
+   n+=len(b);require(n<=e['raw_bytes'],'decompression exceeds bound');h.update(b);yield b
+ require(n==e['raw_bytes'] and h.hexdigest()==e['raw_sha256'],'decompressed raw mismatch')
+def validate(e):
+ p=Path(e['raw_path']);require(not p.is_symlink(),'raw symlink');f=p.open('rb') if p.exists() else None;h=hashlib.sha256();n=0
+ try:
+  for b in chunks(e):
+   if f:require(f.read(len(b))==b,'existing raw differs; no fallback allowed')
+   n+=len(b);h.update(b)
+  if f:require(not f.read(1),'raw extra bytes')
+ finally:
+  if f:f.close()
+ return {'raw_path':str(p),'raw_present':p.exists(),'raw_bytes':n,'raw_sha256':h.hexdigest(),'receipt_archive_raw_binding':'PASS'}
+def read_audit(path):
+ """Explicit reader adapter. Never monkeypatches filesystem or silently trusts absence."""
+ e=lookup(path);require(e is not None,'unlisted audit path');validate(e)
+ if Path(path).exists():return exact(path,e['raw_sha256'],e['raw_bytes'])
+ return b''.join(chunks(e))
+def syncdir(p):
+ fd=os.open(p,os.O_RDONLY|os.O_DIRECTORY)
+ try:os.fsync(fd)
+ finally:os.close(fd)
+def journal(event):
+ p=ROOT/'OPERATIONS.jsonl'
+ with p.open('a') as f:f.write(json.dumps(event,sort_keys=True)+'\n');f.flush();os.fsync(f.fileno())
+ syncdir(ROOT)
+def identity(s):return (s.st_dev,s.st_ino,s.st_mode,s.st_size,s.st_mtime_ns,s.st_ctime_ns)
+def archive_raw(e):
+ """Representation change; main requires explicit commit flag after external review."""
+ p=Path(e['raw_path']);require(p.exists(),'raw already absent; use check, not repeat mutation');before=identity(p.stat())
+ with p.open('rb') as raw:
+  fcntl.flock(raw.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB);validate(e)
+  for q in [ROOT/'INDEX.json',Path(e['transport_path']),*[Path(x['path']) for x in e['parts']]]:
+   with q.open('rb') as f:os.fsync(f.fileno())
+   syncdir(q.parent)
+  require(identity(p.stat())==before,'raw metadata changed during validation');journal({'stage':'VERIFIED_BEFORE_RAW_REPRESENTATION_REPLACEMENT','entry':e,'time':time.time()});require(identity(p.stat())==before,'raw changed before replacement');p.unlink();syncdir(p.parent)
+ validate(e);journal({'stage':'LOSSLESS_ARCHIVE_ACTIVE','raw_path':str(p),'raw_sha256':e['raw_sha256'],'time':time.time()})
+def restore_raw(e):
+ p=Path(e['raw_path'])
+ if p.exists():validate(e);return
+ validate(e);tmp=p.with_name(p.name+'.restore-'+str(os.getpid()));require(not tmp.exists(),'restore scratch exists');h=hashlib.sha256();n=0
+ with tmp.open('xb') as f:
+  for b in chunks(e):f.write(b);h.update(b);n+=len(b)
+  f.flush();os.fsync(f.fileno())
+ require(n==e['raw_bytes'] and h.hexdigest()==e['raw_sha256'],'restore failed');os.link(tmp,p);syncdir(p.parent);require(exact(p,e['raw_sha256'],e['raw_bytes']) is not None,'restored mismatch');tmp.unlink();syncdir(p.parent);journal({'stage':'RAW_RESTORED_EXACTLY','raw_path':str(p),'raw_sha256':e['raw_sha256'],'time':time.time()})
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('mode',choices=['check','archive','restore'],default='check',nargs='?');ap.add_argument('--commit-reviewed-representation-change',action='store_true');a=ap.parse_args()
+ if a.mode!='check':require(a.commit_reviewed_representation_change,'read-only unless explicit reviewed commit flag')
+ es=entries()
+ for e in es:
+  if a.mode=='archive':archive_raw(e)
+  elif a.mode=='restore':restore_raw(e)
+ print(json.dumps({'mode':a.mode,'entries':[validate(e) for e in es]},indent=2))
+if __name__=='__main__':main()

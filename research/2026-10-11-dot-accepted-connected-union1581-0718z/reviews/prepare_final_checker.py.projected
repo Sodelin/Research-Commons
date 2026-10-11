@@ -1,0 +1,55 @@
+from pathlib import Path
+O=Path(__file__).parent;s=Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py').read_text()
+def sub(a,b):
+ global s
+ assert a in s,a[:100]
+ s=s.replace(a,b)
+sub("ROOT=Path('$ACCEPTED1575')","ROOT=Path('$PACKAGE')\nBASE1575=Path('$ACCEPTED1575')\nSMOOTH=Path('$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z')\nG46=Path('$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z')\nSUPPORT=Path('$SHARED_WORKSPACE/g4-below-meeting-check-20261011-0643z')\nACCEPTED_RECEIPTS={}")
+sub('e88ad8e80c518a40cc5546a9961a1e08df202ab0e0104bae39e9aca00f20e6eb','2af123d700b2956a0cd5146cd7625c55db06153990c219d00f4c11d3d4428e69')
+sub("{'cache_reuse':1570,'fresh_components':5}","{'cache_reuse':1581,'fresh_components':0}")
+sub("tr['closure_modules']==1575","tr['closure_modules']==1581")
+sub('[OLDEST,G4,BASE,ROOT]','[OLDEST,G4,BASE,BASE1575,SMOOTH,G46,SUPPORT,ROOT]')
+sub('len(records)==1575','len(records)==1581');sub('len(bymodule)==1575','len(bymodule)==1581')
+sub("context=RUN/'targets/current_connected/objects';fresh=[];reused=[];receipt_summary=[]", "assert bymodule==ACCEPTED_RECEIPTS\n context=RUN/'targets/current_connected/objects';fresh=[];reused=[];receipt_summary=[]")
+sub('len(fresh)==5 and len(reused)==1570','len(fresh)==0 and len(reused)==1581')
+sub("sum(e.get('status')=='FRESH_KERNEL_PASS' for e in events)==5","sum(e.get('status')=='FRESH_KERNEL_PASS' for e in events)==0")
+sub('==101835','==101910')
+a=s.index(' deltas=[]\n');b=s.index(" assert sum(x['kind']=='theorem'",a)
+s=s[:a]+" assert actual==expected,'serialized full declaration record mismatch'\n"+s[b:]
+sub('==92247','==92301')
+sub('PASS_INDEPENDENT_EXACT_1575_CONTEXT_REVIEW','PASS_INDEPENDENT_EXACT_1581_CONTEXT_REVIEW')
+sub("'fresh_components':5,'authenticated_component_reuse':1570","'fresh_components':0,'authenticated_component_reuse':1581")
+sub("'old_records_literal_equal':101748,'qualified_old_body_reference_differences':1", "'old_records_literal_equal':101835,'qualified_old_body_reference_differences':0")
+sub("'globally_new_declarations':86,'globally_new_theorems':65", "'globally_new_declarations':75,'globally_new_theorems':54")
+sub("'declarations':101835,'theorems':92247", "'declarations':101910,'theorems':92301")
+a=s.index('def main():')
+s=s[:a]+'''def main():
+ global RUN,ACCEPTED_RECEIPTS
+ import importlib.util
+ start=time.time();RUN=Path(read(ROOT/'.build/LATEST-RUN.json')['run']);assert RUN.name=='20261011T071024.079941Z'
+ for name,w in PINS.items():check(ROOT/name,w)
+ check(ROOT/'DEPENDENCY-GRAPH.json',GRAPH);check(RUN/'DEPENDENCY-GRAPH.json',GRAPH)
+ graph=read(ROOT/'DEPENDENCY-GRAPH.json');g=graph['targets']['current/connected']
+ for n,x in g['modules'].items():
+  p=ROOT/'source-store'/(x['sha256']+'.lean');check(p,x['sha256']);assert imports(p.read_bytes())==x['imports']
+ base_result=read(BASE1575/'.build/runs/20261011T040211.744850Z/targets/current_connected/RESULT.json')
+ tp=Path('$TRANSPORT/audit_transport.py');check(tp,'690c83dff9193a351c85ddca20e89429245e69e42a9a107b96de397212b30af8');sp=importlib.util.spec_from_file_location('explicit_transport',tp);t=importlib.util.module_from_spec(sp);sp.loader.exec_module(t)
+ raw=t.read_audit(base_result['audit_receipt']['audit_output']);assert len(raw)==115316459 and digest_bytes(raw)=='9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2';b={x['name']:x for x in json.loads(raw)['declarations']};del raw;assert len(b)==101835
+ ACCEPTED_RECEIPTS={r['module']:r for r in base_result['component_receipts']};records={}
+ provider=[(SMOOTH,'.build/runs/20261011T043239.135086Z/targets/candidate_g3-smoothness/RESULT.json','5bf1613041a5b36b89b3cbe1e6f7ca662797b4a8d09ab31c8409b59da6143c19',['G3BernoulliSmoothness','G3BernoulliSmoothnessBoundaryChecks']), (G46,'.build/runs/20261011T061330.120140Z/targets/candidate_g46-frozen/RESULT.json','0fda31efdb23628408079c9fa6d01cc08c954a0381f4f691764897e51c115c7f',['G4LiteralLastChildExitCut','G4PartialExitSeparation','G6ErasedSelectedProjection']), (SUPPORT,'.build/runs/20261011T064842.285117Z/targets/candidate_g4-below-meeting/RESULT.json','69eaffd09e0febccb8404b0ec8f0607467a2e58443c55743a94f6df525479bd8',['G4ActualBelowMeetingSupport'])]
+ for root,rpath,ah,names in provider:
+  result=read(root/rpath);assert result['status']=='PASS';ap=Path(result['audit_receipt']['audit_output']);check(ap,ah)
+  for x in read(ap)['declarations']:
+   if x['name'] not in b:
+    if x['name'] in records:assert records[x['name']]==x
+    records[x['name']]=x
+  for r in result['component_receipts']:
+   if r['module'] in names:assert r['module'] not in ACCEPTED_RECEIPTS;ACCEPTED_RECEIPTS[r['module']]=r
+ assert len(ACCEPTED_RECEIPTS)==1581 and len(records)==75 and sum(x['kind']=='theorem' for x in records.values())==54
+ (OUT/'EXACT-NEW-DECLARATION-RECORDS.json').write_text(json.dumps(records,indent=2)+'\\n')
+ expected={**b,**records};report=final_check(g,expected);assert report['audit_sha256']=='c87ba37f9362b9dbc995bcb24903cb710e6b538455f406260da14cccb1ddc9b1'
+ report.update(graph_sha256=GRAPH,compiler_invoked=False,distinct_file_hashes=len(MEMO),bytes_hashed=hashed_bytes,elapsed_seconds=time.time()-start,archived_base_authenticated_reader=True)
+ check(ROOT/'DEPENDENCY-GRAPH.json',GRAPH);(OUT/'FINAL-UNION-REVIEW.json').write_text(json.dumps(report,indent=2)+'\\n');print(json.dumps({k:v for k,v in report.items() if k!='component_records'},indent=2))
+if __name__=='__main__':main()
+'''
+(O/'check_final.py').write_text(s)

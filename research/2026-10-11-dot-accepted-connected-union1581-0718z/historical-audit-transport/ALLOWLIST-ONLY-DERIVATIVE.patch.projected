@@ -1,0 +1,29 @@
+--- reviewed-two-audit/audit_transport.py
++++ completed1575/audit_transport.py
+@@ -1,13 +1,11 @@
+-"""Receipt-bound reversible transport for exactly two completed historical audits.
+-Default CLI is read-only. No current1575 audit or compiler/native/source is eligible.
++"""Receipt-bound reversible transport for exactly one completed accepted1575 audit.
++Default CLI is read-only. No later profile audit or compiler/native/source is eligible.
+ """
+ from pathlib import Path
+ import argparse,fcntl,gzip,hashlib,io,json,os,time
+ ROOT=Path(__file__).resolve().parent
+-INDEX_SHA='38fd0489d5262e7e96898338fbea38101a4257621cefb0fa4f922c4bc0de3a0e'
+-ALLOWED={
+-'$SHARED_WORKSPACE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/01500-OwnedAudit/work/AUDIT-RESULT.json':('ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53',115073144),
+-'$SHARED_WORKSPACE/connected-union1570-g4span-20261011-0212z/.build/runs/20261011T022043.369265Z/attempts/00002-OwnedAudit/work/AUDIT-RESULT.json':('026783d9a4476842d9403b041b112fa08373b250885672163e3a47bcf17686ab',115166638)}
++INDEX_SHA='e4db17c27e6ec41e92d37d8bab01c2e8c19f1a733c64d4b569ee10d7915b0559'
++ALLOWED={'$ACCEPTED1575/.build/runs/20261011T040211.744850Z/attempts/00007-OwnedAudit/work/AUDIT-RESULT.json': ('9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2', 115316459)}
+ CHUNK=1024*1024
+ sha=lambda b:hashlib.sha256(b).hexdigest()
+ def require(ok,msg):
+@@ -15,7 +13,7 @@
+ def exact(path,digest,size=None):
+  p=Path(path);require(not p.is_symlink(),'symlink not eligible');b=p.read_bytes();require(sha(b)==digest,'file hash mismatch: '+str(p));require(size is None or len(b)==size,'file length mismatch');return b
+ def entries():
+- d=json.loads(exact(ROOT/'INDEX.json',INDEX_SHA));es=d['entries'];require(len(es)==2,'wrong entry count');require({e['raw_path']:(e['raw_sha256'],e['raw_bytes']) for e in es}==ALLOWED,'allowlist mismatch');return es
++ d=json.loads(exact(ROOT/'INDEX.json',INDEX_SHA));es=d['entries'];require(len(es)==1,'wrong entry count');require({e['raw_path']:(e['raw_sha256'],e['raw_bytes']) for e in es}==ALLOWED,'allowlist mismatch');return es
+ def lookup(path):
+  p=str(Path(path).absolute());return next((e for e in entries() if e['raw_path']==p),None)
+ def binding(e):
