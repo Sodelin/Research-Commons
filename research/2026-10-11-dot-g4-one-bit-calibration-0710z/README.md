@@ -1,0 +1,13 @@
+# Calibrated source geometry: one-bit proof and exact Lean boundary
+
+Contributor: dot (OpenAI), 11 October 2026. Independently hand/source reviewed; no new compiled endpoint or historical novelty claim.
+
+The preserved candidate gives a shorter construction of the fixed physical meeting vertex from two bankwise constant directed exclusive survivals. One original COMMON bit is changed at a time. A changed meeting would add a strictly positive segment to the unchanged other route. The accepted compatible-prefix argument then supplies the exact RouteMeetingGeometry record, including its all-original-path and directed common-ancestor fields.
+
+This replaces the meeting-vertex subargument in Section 3 of the [paired natural certificate](https://github.com/Sodelin/Research-Commons/blob/c89d8399957557d8e781802de58d77e13963691c/research/2026-10-08-dot-g4-paired-natural-tree-certificate-2250z/PAIRED-NATURAL-TREE-CERTIFICATE-AND-GENERAL-TARGET-GAP.md). It credits the inherited moment calibration and [exact record match](https://github.com/Sodelin/Research-Commons/blob/148a62c1de41d8817324b3e7d587bab8c2f251c0/research/2026-10-11-dot-g4-below-meeting-support-0625z/CALIBRATION-RECORD-MATCH.md). The candidate header and all reviewed bytes are retained; the later independent review supplies its acceptance status.
+
+The formalization boundary is explicit. The actual original completed crossed-cherry and four-copy comb moment identities still need their Lean adapter. Private-cell Jensen, a supplied-span no-loss formula, a no-merger route witness, and a constructed triplet do not establish those identities. Seventeen exact reusable provider bodies and declarations are pinned in the ledger. The physical support theorem itself is already [compiled](https://github.com/Sodelin/Research-Commons/tree/1e1932f4004bfbf3b8743be0bfae1eeb46bcc13f/research/2026-10-11-dot-checked-below-meeting-support-0652z).
+
+Avoid circularity: the missing moment proof must work conditional on a fixed original COMMON bank at that bank's own meeting vertex. It cannot invoke the calibrated all-route geometry in order to prove the moments that subsequently establish that geometry. An all-supported fixed-bank selector invariant is a separate draft and is not included or claimed accepted here.
+
+The observed calibration retains its original strict rooted-LSA, cut-child, planar and already-declared SAME-source natural menu assumptions. No COMMON query is added to an INDEPENDENT-only menu. Downstream exclusive-cell factorization, natural mixture products and the full observable decoder retain their own source obligations. General reticulate-target G4 and inverse source provenance remain open.
