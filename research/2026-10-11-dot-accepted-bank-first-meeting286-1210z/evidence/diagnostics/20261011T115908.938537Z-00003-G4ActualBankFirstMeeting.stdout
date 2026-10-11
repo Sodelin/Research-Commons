@@ -1,0 +1,103 @@
+G4ActualBankFirstMeeting.lean:171:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  P
+in the target expression
+  CommonOnlyWord N (compiledCalendarProgram N C H gamma fun x => true)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+k : ℕ
+s : Code N (repeatedSample k i j)
+hs :
+  s ∈
+    (sourceProgram N r
+        (List.take (bankFirstMeetingIndex N C H gamma r coin i j) (compiledCalendarProgram N C H gamma fun x => true))
+        (initialCode N (repeatedSample k i j) (originalRegister N coin))).support
+P : List (ProgramStep N) := compiledCalendarProgram N C H gamma fun x => true
+m : ℕ := bankFirstMeetingIndex N C H gamma r coin i j
+hfull : CommonOnlyWord N (compiledCalendarProgram N C H gamma fun x => true)
+happ : P = List.take m P ++ List.drop m P
+⊢ CommonOnlyWord N (List.take m P)
+G4ActualBankFirstMeeting.lean:195:15: error: Function expected at
+  UnrankedView
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  V
+
+Hint: The identifier `UnrankedView` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBankFirstMeeting.lean:204:7: error: Function expected at
+  completionKernel
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `completionKernel` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBankFirstMeeting.lean:205:27: error: Function expected at
+  unrankedView
+but this term has type
+  ?m.3
+
+Note: Expected a function because this term is being applied to the argument
+  (selectedView (state d) keep)
+
+Hint: The identifier `unrankedView` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBankFirstMeeting.lean:242:8: error: Type mismatch: After simplification, term
+  ih hc.right (fixedRegisterBoundary N b s)
+ has type
+  weightedRoute N r ops (fixedRegisterBoundary N b s) (fixedRegisterPrefix N ops (fixedRegisterBoundary N b s)) =
+    ENNReal.ofReal (Real.exp (-referenceExposure N r ops (fixedRegisterBoundary N b s)))
+but is expected to have type
+  (if True then 1 else 0) *
+      weightedRoute N r ops (fixedRegisterBoundary N b s) (fixedRegisterPrefix N ops (fixedRegisterBoundary N b s)) =
+    ENNReal.ofReal (Real.exp (-referenceExposure N r ops (fixedRegisterBoundary N b s)))
+G4ActualBankFirstMeeting.lean:245:46: warning: This simp argument is unused:
+  if_neg (Ne.symm hz)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [PMF.pure_apply, if_neg hz, zero_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualBankFirstMeeting.lean:250:55: error: Application type mismatch: The argument
+  s
+has type
+  Code N sample
+but is expected to have type
+  ?m.43
+in the application
+  liveCard s
+G4ActualBankFirstMeeting.lean:269:5: error: Application type mismatch: The argument
+  sourceProgram N r
+    (List.take (bankFirstMeetingIndex N C H gamma r coin i j) (compiledCalendarProgram N C H gamma fun x => true))
+    (initialCode N (repeatedSample 2 i j) (originalRegister N coin))
+has type
+  PMF (Code N (repeatedSample 2 i j))
+but is expected to have type
+  PMF ?m.90
+in the application
+  PMF.map liveCard
+    (sourceProgram N r
+      (List.take (bankFirstMeetingIndex N C H gamma r coin i j) (compiledCalendarProgram N C H gamma fun x => true))
+      (initialCode N (repeatedSample 2 i j) (originalRegister N coin)))
+'DotG4.ActualBankFirstMeeting.pair_meeting_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DotG4.ActualBankFirstMeeting.actual_bank_first_meeting_colocated' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+G4ActualBankFirstMeeting.lean:288:14: error(lean.unknownIdentifier): Unknown constant `actual_bank_first_meeting_completion`
+G4ActualBankFirstMeeting.lean:289:14: error(lean.unknownIdentifier): Unknown constant `actual_bank_three_copy_no_loss`

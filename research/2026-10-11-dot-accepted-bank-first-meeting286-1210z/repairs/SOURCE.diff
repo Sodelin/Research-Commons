@@ -1,0 +1,39 @@
+--- original
++++ elaboration-r1
+@@ -43,6 +43,9 @@
+ open GProgram.G5.SafePrefixRouteBridge
+ open GProgram.G4.ActualCommonSelectorSupport
+ open GProgram.G4.ActualCommonNoLossRoute
++open G1UnrankedSourceView
++open UnifiedLean.Source.SourceCompletionHarmonic
++open UnifiedLean.Source.SourceActualHoldingClocks
+ open DotG34.ActualSerialSurvival
+ open DotG4.ActualColocatedCompletion
+ open scoped Classical NNReal ENNReal
+@@ -166,7 +169,7 @@
+   let P := compiledCalendarProgram N C H gamma (fun _ => true)
+   let m := bankFirstMeetingIndex N C H gamma r coin i j
+   have hc : CommonOnlyWord N (P.take m) := by
+-    have hfull := actual_common_compiled_word_only N C H gamma
++    have hfull : CommonOnlyWord N P := actual_common_compiled_word_only N C H gamma
+     have happ : P = P.take m ++ P.drop m := (List.take_append_drop m P).symm
+     rw [happ] at hfull
+     exact ((commonOnlyWord_append N _ _).mp hfull).1
+@@ -239,7 +242,7 @@
+           ENNReal.ofReal (Real.exp (-referenceExposure N r ops (fixedRegisterBoundary N b s)))
+       rw [actual_common_boundary_kernel N b hc.1 s,
+         tsum_eq_single (fixedRegisterBoundary N b s)]
+-      · simpa only [PMF.pure_apply, if_pos rfl, one_mul] using
++      · simpa only [PMF.pure_apply, if_pos rfl, if_true, one_mul] using
+           ih hc.2 (fixedRegisterBoundary N b s)
+       · intro z hz
+         simp only [PMF.pure_apply, if_neg hz, if_neg (Ne.symm hz), zero_mul]
+@@ -274,7 +277,7 @@
+   let P := compiledCalendarProgram N C H gamma (fun _ => true)
+   let m := bankFirstMeetingIndex N C H gamma r coin i j
+   have hc : CommonOnlyWord N (P.take m) := by
+-    have hfull := actual_common_compiled_word_only N C H gamma
++    have hfull : CommonOnlyWord N P := actual_common_compiled_word_only N C H gamma
+     rw [show P = P.take m ++ P.drop m from (List.take_append_drop m P).symm] at hfull
+     exact ((commonOnlyWord_append N _ _).mp hfull).1
+   have hcard : liveCard (initialCode N (repeatedSample 2 i j) (originalRegister N coin)) = 3 := by
