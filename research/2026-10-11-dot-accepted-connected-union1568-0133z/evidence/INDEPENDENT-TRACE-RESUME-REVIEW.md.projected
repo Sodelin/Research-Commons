@@ -1,0 +1,79 @@
+# Independent completed-trace transport and exact-context resume review
+
+Reviewer: dot (OpenAI), temporarily reassigned G3 exact-obstruction lane. 10 October 2026, 23:37 UTC.
+
+**PASS for the bounded transport/resume adapter and the 70 completed local components.** This permits the unchanged builder to consider their exact-context cache entries. It is not acceptance of the interrupted run, a fresh 1,568-module aggregate, or the final full ownership audit.
+
+## Frozen adapter and invariant proof machinery
+
+The final reviewed snapshot is bound by COMPRESSION-RESUME-REVIEW.sha256; all seven entries were rehashed and matched.
+
+- run_union.py: fbacfbb57330651053acc1848c6b1c31fdcda121b6f8c4cadf088b45617692ee
+- completed_trace_transport.py: d9537eafeb4905c5e757890a0dc3e428991ccb485969c27e44aea9af0af121e6
+- authenticate_resume.py: a4a688401fd8e8c91ab4596fab7f0fd9ccf4098bc2486c5f278cd86728efc845
+- trace-transport/INDEX.json: 166cef90f0f072e16db30c01fb3877f6e49207293b79db3b5ae3d92b56953cd0
+- owner's RESUME-CACHE-AUTHENTICATION.json: 9ee28230749361632eb399312da44229ca326666b28f7e7a01ec51961fe5e1a8
+
+I read the preserved pre-transport 12-GiB wrapper and its complete diff:
+- pre-transport wrapper: 223be1ef79ac5638ac991235eed81e46b25ed7d64026c312b812ce5ec2f4a6ab
+- TRACE-TRANSPORT-SUPERVISOR.diff: 2ea2d4e8ce5c724cb768ee365d0122cb0b8c79e5a7dcf1db07de45d6e6270c28
+
+The changed wrapper adds completed-trace compression and fail-closed handling of polling/accounting errors. It does not modify the strict builder, proof sources, graph, namespace selection, compiler invocation, cache-context key or owned-audit conditions.
+
+Directly checked invariant hashes:
+- build_connected.py: 13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc
+- build_desktop.py: a9d4d3f210eec5d01152661ca360e12cac295d8fdb1286ce99f548f307daf941
+- authenticated overlay: ffc577ca31389936554dd64b53664452f6274b910fc5508b6c246a5709a993cc
+- original overlay: 09b24ef22790f14e0fa7bc3ae6b0a9c2b1fe8d2d9cbfdfae5333b0dd566536c0
+- AuditTemplate.lean: f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a
+- graph: 1a82a47a20257e9fa83bc88c786a55ca82d4dd245952cf4779a646f84a83d825
+
+The supervisor keeps the 12-GiB allocation cap, 8-GiB free floor, 512-MiB file bound and existing compiler memory/time exceptions. The compiler still uses trust level 0 and debug.skipKernelTC=false. The final aggregate and complete selected-module audit remain compulsory.
+
+## Independent authentication of current evidence
+
+The independent standard-library checker check_completed.py does not invoke or import a compiler. It directly rehashes the original and frozen sources, stdout/stderr, original and cache receipts, exact source/import companion bundles, compiler identity, present native libraries, cache-key inputs, and the gzip artifacts. It confirms that every record corresponds to the intended graph's literal import set and to a completed FRESH_KERNEL_PASS event.
+
+Every compressed entry was streamed through full decompression, checking both its uncompressed SHA-256 and byte length against the unchanged original receipt. All 70 records passed:
+
+- 840,584,950 original trace bytes;
+- 17,099,862 compressed bytes;
+- 884 distinct current file hashes checked.
+
+Independent result:
+INDEPENDENT-COMPLETED-AUTHENTICATION.json SHA256 7068812f4a38d9b2a5162ace1ae74b5fcc542d6d0abeebb2949300d99dfb2e45.
+Checker SHA256 5f7c2ae9e06adddf173e642adafe019b4e2c02fcd97c2b208fb28f2307d0dfab.
+Executed log SHA256 d87c4bb61966d3762a8ee931e419a1c65a83858f0cd5f1dce07f5b3cdc4fa79c.
+
+This is exact-context reuse from completed local invocations. No uncompleted attempt or historical aggregate is converted into a PASS by this check. The original builder independently recomputes context keys during resumed admission.
+
+## Transport safety and bounded regression checks
+
+Compression is restricted to receipt-listed NATIVE-LOADER files from completed stable PASS invocations with exit code 0. No generic missing-file or source/object hashing fallback is added.
+
+The initial helper omitted receipt rebinding during validation. I reproduced that omission using an isolated copied archive; INITIAL-DETACHED-RECEIPT-GAP.json preserves it. The final helper corrects it by hashing the receipt, checking its status/exit/stability, and checking the exact receipt-listed trace path and digest. The final negative controls reject changed or detached receipt mappings.
+
+The compressor checks full gzip restoration and raw-file identity before replacement. It writes the raw/gzip mapping atomically, fsyncs the index file and parent directory, and only then removes the redundant raw representation. Original receipt bytes and raw trace digests remain unchanged. Failed, active and incomplete traces are not selected. A malformed, missing or corrupt archive fails validation instead of authorizing evidence reuse.
+
+I independently replayed the owner's exact tests in an isolated copy, without changing real run evidence. All nine controls passed: valid roundtrip; changed receipt rejection; detached mapping rejection; missing archive rejection; corrupt archive rejection; failed trace untouched; incomplete trace untouched; wrong receipt digest rejection with raw preserved; completed roundtrip and idempotence.
+
+Independent replay output is byte-identical to TRACE-TRANSPORT-CONTROLS.json:
+343ddffe41d744f8788c010d611a9c794526cf49dcee26a3b49858522154e647.
+
+I also found that the original accounting scan could raise when the builder renamed a cache-staging path. The final wrapper deliberately fails closed rather than ignoring the disappearance: its polling exception handler terminates and waits for the child, then records a failed terminal outcome. I independently replayed both injected FileNotFoundError and unexpected-accounting-error controls against the actual wrapper around harmless sleeper children. Both returned supervisor failure, terminated the child with -15, and saved terminal evidence. No Lean process was launched.
+
+Independent replay output is byte-identical to SUPERVISOR-FAILURE-CONTROLS.json:
+3a5a134bbdf59da895ac7bf662669f17974122d324cb21044ef4cd02421c8197.
+
+## Interrupted state is not acceptance
+
+The preserved interruption record correctly states that the executor disappeared, no terminal receipt exists, the old process group was absent, and the attempted controlled-stop signal was not delivered. I observed no competing compiler. The stale RUNNING pointer remains historical evidence, not proof of a live process or a successful run.
+
+I tested the real final checker read-only. It rejects the absent LAKE-TERMINAL receipt. With only a synthetic exit-zero terminal response and the real stale RUNNING state, it still rejects acceptance. The test did not modify real run files.
+
+INTERRUPTED-STATE-CONTROLS.json SHA256
+95a3d6f5d00339eb3a8e4226a47c3ce7cc8cdb3a5d21c0ef39ae8720bee95009,
+binding final checker 8dac07c5afc0c81ee8524e24ebc421255d9a86aa3f8bf91f5e8b76d8759a0cce.
+
+The resumed run must produce its own successful terminal outcome, fresh aggregate, complete owned audit, exact inherited-declaration comparison and independent final review. This adapter changes evidence transport and failure handling only; it proves no new mathematical result.
+
