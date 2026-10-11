@@ -59,3 +59,5 @@ No original, register, source, reader or previous QC byte was changed. v1--v4 re
 
 This is an additive mapping of existing IDs only. It is not a register rewrite, master completion, universal historical theorem-absence claim, new acquisition exploration, native proof or private-payload authentication.
 
+
+Current dated corrections: [accepted whole-edge/family coverage and capture-custody correction](G3-ORIGINAL-END-AND-CROSS-GOAL-MAPPING-20261011T0901Z-CURRENT-CORRECTIONS.md), preserved at 5d874142e5a5a315276f6c1c9d0460794bfdbec5. The table above retains the initial dated assessment; these corrections supersede its whole-edge compilation/coverage and local-retention wording.
