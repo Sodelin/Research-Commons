@@ -1,0 +1,12 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g6_natural_common_factorization_20261011.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g6_natural_common_factorization_20261011_v2.py
+@@ -235,7 +235,8 @@
+         'storage_wrapper_sha256':STORAGE_SHA,'storage_policy_sha256':sha(work/'STDERR-STORAGE-POLICY.json'),
+         'additional_storage_input_pins':{'storage_wrapper.py':{'path':str(work/'scripts/storage_wrapper.py'),'sha256':STORAGE_SHA},
+             'storage_policy':{'path':str(work/'STDERR-STORAGE-POLICY.json'),'sha256':sha(work/'STDERR-STORAGE-POLICY.json')},
+-            'capture_gate':{'path':str(args.capture_gate),'sha256':args.capture_gate_sha256}},
++            'capture_gate':{'path':str(args.capture_gate),'sha256':args.capture_gate_sha256},
++            **{'capture_gate_evidence_'+str(i):row for i,row in enumerate(gate['evidence'])}},
+         'scratch_location_derivation':derivation,'historical_passes_copied':False,'native_execution_claimed':False}
+     save(work/'PREPARATION.json',prep);save(evidence/'PREPARATION.json',prep)
+     save(work/'LOCATION-AND-COMPOSITION-DERIVATION.json',derivation)

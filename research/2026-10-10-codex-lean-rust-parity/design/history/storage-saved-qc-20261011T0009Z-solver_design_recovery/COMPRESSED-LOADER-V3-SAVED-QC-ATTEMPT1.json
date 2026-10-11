@@ -1,0 +1,502 @@
+{
+  "actual_controls": [
+    {
+      "control": "saved_raw_lossless_capture",
+      "detail": {
+        "complete": true,
+        "encoding": "gzip",
+        "eof": true,
+        "gzip_bytes": 290421,
+        "gzip_path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz",
+        "gzip_sha256": "5ac7d19869a12ce1dac70c22e41293ff59b015e6d80b6e6d52abba4153fb4d8a",
+        "native_used": [
+          "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+          "/usr/lib/x86_64-linux-gnu/libc.so.6",
+          "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+          "/usr/lib/x86_64-linux-gnu/libm.so.6",
+          "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+          "/usr/lib/x86_64-linux-gnu/librt.so.1",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libInit_shared.so",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared.so",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_1.so",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_2.so"
+        ],
+        "raw_bytes": 12561449,
+        "raw_sha256": "830f7c33aed836755cbe788f5f69343fa15b575c3267305c8ff249708de861f8",
+        "source_path": "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/.build/runs/20261010T232230.265801Z/attempts/00001-G6OriginalParallelArmTransport/NATIVE-LOADER.259880",
+        "source_unchanged": true,
+        "truncated": false
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "native_init_parser_exact_original_receipt",
+      "detail": {
+        "native_library_count": 10
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "sorryAx_crosses_read_boundary",
+      "detail": {
+        "detected": true
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "unbound_native_library_fails_original_known_predicate",
+      "detail": {
+        "native_known": false
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "empty_native_evidence_refused_by_invoke_helper",
+      "detail": {
+        "native_known": false
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "diagnostic_without_native_init_refused_by_invoke_helper",
+      "detail": {
+        "native_known": false
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "forged_raw_digest",
+      "exception_type": "ValueError",
+      "reason": "decoded stream byte identity mismatch",
+      "status": "PASS_EXPECTED_REFUSAL"
+    },
+    {
+      "control": "forged_raw_count",
+      "exception_type": "ValueError",
+      "reason": "decoded stream byte identity mismatch",
+      "status": "PASS_EXPECTED_REFUSAL"
+    },
+    {
+      "control": "gzip_trailer_eof_required",
+      "exception_type": "EOFError",
+      "reason": "Compressed file ended before the end-of-stream marker was reached",
+      "status": "PASS_EXPECTED_REFUSAL"
+    },
+    {
+      "control": "decoded_byte_limit",
+      "exception_type": "CaptureLimit",
+      "reason": "saved raw byte limit",
+      "status": "PASS_EXPECTED_REFUSAL"
+    },
+    {
+      "control": "encoded_byte_limit",
+      "exception_type": "CaptureLimit",
+      "reason": "gzip byte limit before physical write",
+      "status": "PASS_EXPECTED_REFUSAL"
+    },
+    {
+      "control": "failed_cap_captures_preserve_explicit_partial_identities",
+      "detail": [
+        {
+          "failure": "raw-limit",
+          "prefix_bytes": 20,
+          "prefix_sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+          "sidecar_status": "FAILED_PARTIAL_CAPTURE_NOT_VERIFIED"
+        },
+        {
+          "failure": "gzip-limit",
+          "prefix_bytes": 10,
+          "prefix_sha256": "217feb1e7490015dd0a2b231b9cea45804df3d2a9b37287ac861bb45b8c0de55",
+          "sidecar_status": "FAILED_PARTIAL_CAPTURE_NOT_VERIFIED"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "control": "refuse_destination_overwrite",
+      "exception_type": "FileExistsError",
+      "reason": "[Errno 17] File exists: '/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz'",
+      "status": "PASS_EXPECTED_REFUSAL"
+    },
+    {
+      "control": "new_cache_aliases_are_single_copy",
+      "detail": {
+        "aliases": [
+          {
+            "bytes": 39,
+            "same_inode": true,
+            "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4",
+            "suffix": ".olean"
+          },
+          {
+            "bytes": 22,
+            "same_inode": true,
+            "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879",
+            "suffix": ".ilean"
+          }
+        ],
+        "bundle_exact": true,
+        "kernel_or_builder_constructor_called": false
+      },
+      "status": "PASS"
+    },
+    {
+      "control": "completed_new_cache_key_overwrite",
+      "exception_type": "RuntimeError",
+      "reason": "Completed cache key already exists; refusing overwrite aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "status": "PASS_EXPECTED_REFUSAL"
+    }
+  ],
+  "actual_receipt": {
+    "bytes": 7839,
+    "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/RECEIPT.json",
+    "sha256": "05e84f19f8009c17f10a63e30435d4b7dd4a9af49e4f58ebebcd64763efde34c"
+  },
+  "capture_restore_or_producer_trial_rerun": false,
+  "contributor": "Codex / solver_design_recovery",
+  "independent_decoded_bytes_compared": 12561449,
+  "independent_native_identities": [
+    "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+    "/usr/lib/x86_64-linux-gnu/libc.so.6",
+    "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+    "/usr/lib/x86_64-linux-gnu/libm.so.6",
+    "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/usr/lib/x86_64-linux-gnu/librt.so.1",
+    "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libInit_shared.so",
+    "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared.so",
+    "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_1.so",
+    "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_2.so"
+  ],
+  "independent_raw_sha256": "830f7c33aed836755cbe788f5f69343fa15b575c3267305c8ff249708de861f8",
+  "independent_source_qc": {
+    "bytes": 8711,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/compressed-loader-static-qc-20261010T2356Z-solver_design_recovery/COMPRESSED-LOADER-V3-STATIC-QC-ATTEMPT1.json",
+    "sha256": "9fde1c98aea1389b90551f6df8dc1b75a3fc25defb863c4194a609a0f6c8ea18"
+  },
+  "mathematical_acceptance_modified": false,
+  "new_restored_or_captured_artifact_created": false,
+  "observed_resources": {
+    "address_space_cap_bytes": 268435456,
+    "max_rss_kib": 49920,
+    "outer_timeout_seconds": 90,
+    "peak_distinct_inode_allocated_bytes": 720896,
+    "scratch_cap_bytes": 33554432
+  },
+  "observed_utc": "2026-10-11T00:09:59.999324+00:00",
+  "original_and_published_file_pins": [
+    {
+      "bytes": 7839,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/RECEIPT.json",
+      "sha256": "05e84f19f8009c17f10a63e30435d4b7dd4a9af49e4f58ebebcd64763efde34c"
+    },
+    {
+      "bytes": 7839,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/RECEIPT.json",
+      "sha256": "05e84f19f8009c17f10a63e30435d4b7dd4a9af49e4f58ebebcd64763efde34c"
+    },
+    {
+      "bytes": 109,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/cross-chunk-diagnostic.gz",
+      "sha256": "9b0cd243af3906c5a9376ab1192e1b5510b7e0babbb8aad5e331e52b501c987b"
+    },
+    {
+      "bytes": 109,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/cross-chunk-diagnostic.gz",
+      "sha256": "9b0cd243af3906c5a9376ab1192e1b5510b7e0babbb8aad5e331e52b501c987b"
+    },
+    {
+      "bytes": 65541,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/cross-chunk-diagnostic.raw",
+      "sha256": "3fe08ef74f75f4bec2c64c1c81e56ae1076ab64a1a29b35e0b4cfd0f0297a56b"
+    },
+    {
+      "bytes": 65541,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/cross-chunk-diagnostic.raw",
+      "sha256": "3fe08ef74f75f4bec2c64c1c81e56ae1076ab64a1a29b35e0b4cfd0f0297a56b"
+    },
+    {
+      "bytes": 41,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/diagnostic_without_native_init.gz",
+      "sha256": "322698cebd0e2cbac6a3696b200cd36dbd0016926ba95799a968ed92c55e2161"
+    },
+    {
+      "bytes": 41,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/diagnostic_without_native_init.gz",
+      "sha256": "322698cebd0e2cbac6a3696b200cd36dbd0016926ba95799a968ed92c55e2161"
+    },
+    {
+      "bytes": 21,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/diagnostic_without_native_init.raw",
+      "sha256": "3838853fc12fd1dbe5549c4e7a50aa23c86f755176d2ace7675863e5edd5302a"
+    },
+    {
+      "bytes": 21,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/diagnostic_without_native_init.raw",
+      "sha256": "3838853fc12fd1dbe5549c4e7a50aa23c86f755176d2ace7675863e5edd5302a"
+    },
+    {
+      "bytes": 20,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/empty_native_evidence.gz",
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83"
+    },
+    {
+      "bytes": 20,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/empty_native_evidence.gz",
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83"
+    },
+    {
+      "bytes": 0,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/empty_native_evidence.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/empty_native_evidence.raw",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 10,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/gzip-limit.gz",
+      "sha256": "217feb1e7490015dd0a2b231b9cea45804df3d2a9b37287ac861bb45b8c0de55"
+    },
+    {
+      "bytes": 10,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/gzip-limit.gz",
+      "sha256": "217feb1e7490015dd0a2b231b9cea45804df3d2a9b37287ac861bb45b8c0de55"
+    },
+    {
+      "bytes": 916,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/gzip-limit.gz.FAILED-PARTIAL.json",
+      "sha256": "52fff26658bae9110bcb7abd3c959f527ba87eab01d7b7cf168a89b80e9e15ce"
+    },
+    {
+      "bytes": 916,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/gzip-limit.gz.FAILED-PARTIAL.json",
+      "sha256": "52fff26658bae9110bcb7abd3c959f527ba87eab01d7b7cf168a89b80e9e15ce"
+    },
+    {
+      "bytes": 22,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/.staging-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1791677177492539852/artifact.ilean",
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879"
+    },
+    {
+      "bytes": 22,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/.staging-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1791677177492539852/artifact.ilean",
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879"
+    },
+    {
+      "bytes": 39,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/.staging-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1791677177492539852/artifact.olean",
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4"
+    },
+    {
+      "bytes": 39,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/.staging-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1791677177492539852/artifact.olean",
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4"
+    },
+    {
+      "bytes": 544,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/.staging-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1791677177492539852/receipt.json",
+      "sha256": "685094aad630b579b21907ec83910deba5c0c55f0e00f7527f80361e66e2b889"
+    },
+    {
+      "bytes": 544,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/.staging-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1791677177492539852/receipt.json",
+      "sha256": "685094aad630b579b21907ec83910deba5c0c55f0e00f7527f80361e66e2b889"
+    },
+    {
+      "bytes": 22,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/artifact.ilean",
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879"
+    },
+    {
+      "bytes": 22,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/artifact.ilean",
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879"
+    },
+    {
+      "bytes": 39,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/artifact.olean",
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4"
+    },
+    {
+      "bytes": 39,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/artifact.olean",
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4"
+    },
+    {
+      "bytes": 544,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/receipt.json",
+      "sha256": "685094aad630b579b21907ec83910deba5c0c55f0e00f7527f80361e66e2b889"
+    },
+    {
+      "bytes": 544,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-cache/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/receipt.json",
+      "sha256": "685094aad630b579b21907ec83910deba5c0c55f0e00f7527f80361e66e2b889"
+    },
+    {
+      "bytes": 22,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-run/attempts/inert/fixture.ilean",
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879"
+    },
+    {
+      "bytes": 22,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-run/attempts/inert/fixture.ilean",
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879"
+    },
+    {
+      "bytes": 39,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-run/attempts/inert/fixture.olean",
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4"
+    },
+    {
+      "bytes": 39,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/inert-run/attempts/inert/fixture.olean",
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4"
+    },
+    {
+      "bytes": 290413,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/missing-gzip-eof.gz",
+      "sha256": "e5606817fc11c4700b18e93cd3e5617d6d456d5ee43c9d86bcf3c534c5ab5ccf"
+    },
+    {
+      "bytes": 290413,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/missing-gzip-eof.gz",
+      "sha256": "e5606817fc11c4700b18e93cd3e5617d6d456d5ee43c9d86bcf3c534c5ab5ccf"
+    },
+    {
+      "bytes": 20,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/raw-limit.gz",
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83"
+    },
+    {
+      "bytes": 20,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/raw-limit.gz",
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83"
+    },
+    {
+      "bytes": 894,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/raw-limit.gz.FAILED-PARTIAL.json",
+      "sha256": "57ccf50222b553305adaca933e4ff03fa30a33555a24d267ec4bbe428cab776d"
+    },
+    {
+      "bytes": 894,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/raw-limit.gz.FAILED-PARTIAL.json",
+      "sha256": "57ccf50222b553305adaca933e4ff03fa30a33555a24d267ec4bbe428cab776d"
+    },
+    {
+      "bytes": 290421,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz",
+      "sha256": "5ac7d19869a12ce1dac70c22e41293ff59b015e6d80b6e6d52abba4153fb4d8a"
+    },
+    {
+      "bytes": 290421,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz",
+      "sha256": "5ac7d19869a12ce1dac70c22e41293ff59b015e6d80b6e6d52abba4153fb4d8a"
+    },
+    {
+      "bytes": 59,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/unknown-native.gz",
+      "sha256": "ab9f84336d6555689a76941ce6b266b8635448ec028dcffe4b2c36820e24700a"
+    },
+    {
+      "bytes": 59,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/unknown-native.gz",
+      "sha256": "ab9f84336d6555689a76941ce6b266b8635448ec028dcffe4b2c36820e24700a"
+    },
+    {
+      "bytes": 39,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/unknown-native.raw",
+      "sha256": "dcbcff697e118efd7707034d4eb55abbd76ffde16942cfb494bb25dd30b1f914"
+    },
+    {
+      "bytes": 39,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z/unknown-native.raw",
+      "sha256": "dcbcff697e118efd7707034d4eb55abbd76ffde16942cfb494bb25dd30b1f914"
+    },
+    {
+      "bytes": 1192,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/RECEIPT.json",
+      "sha256": "ab2e15d9d23030857b4beb1236eb6f6122a86f5c9f6a573ec782ed0ef37c1dbf"
+    },
+    {
+      "bytes": 1192,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/RECEIPT.json",
+      "sha256": "ab2e15d9d23030857b4beb1236eb6f6122a86f5c9f6a573ec782ed0ef37c1dbf"
+    },
+    {
+      "bytes": 0,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 146,
+      "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/stdout.txt",
+      "sha256": "39c3d7847f1f2ba9b34a1fe1de18c04a4d45380af477ef50c6855a73d54a3260"
+    },
+    {
+      "bytes": 146,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/stdout.txt",
+      "sha256": "39c3d7847f1f2ba9b34a1fe1de18c04a4d45380af477ef50c6855a73d54a3260"
+    }
+  ],
+  "outer_receipt": {
+    "bytes": 1192,
+    "path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer/RECEIPT.json",
+    "sha256": "ab2e15d9d23030857b4beb1236eb6f6122a86f5c9f6a573ec782ed0ef37c1dbf"
+  },
+  "partial_capture_checks": [
+    {
+      "name": "raw-limit",
+      "prefix_bytes": 20,
+      "prefix_sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+      "status": "FAILED_PARTIAL_CAPTURE_NOT_VERIFIED"
+    },
+    {
+      "name": "gzip-limit",
+      "prefix_bytes": 10,
+      "prefix_sha256": "217feb1e7490015dd0a2b231b9cea45804df3d2a9b37287ac861bb45b8c0de55",
+      "status": "FAILED_PARTIAL_CAPTURE_NOT_VERIFIED"
+    }
+  ],
+  "physical_inert_alias_checks": [
+    {
+      "bytes": 39,
+      "same_inode": true,
+      "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4",
+      "suffix": ".olean"
+    },
+    {
+      "bytes": 22,
+      "same_inode": true,
+      "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879",
+      "suffix": ".ilean"
+    }
+  ],
+  "publication": {
+    "bytes": 16323,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/storage-adapters/compressed-loader-v3-saved-trial-20261011T0005Z/PUBLICATION.json",
+    "sha256": "6badc69572b2cbb3bcc0edf09274edd1eeb03a22eb30aed0300ed9b91b60227f"
+  },
+  "qualifications": [
+    "Saved byte/log/parser/sidecar and inert alias trial only; no live combined-stderr capture, new compiler, kernel, aggregate or owned-audit acceptance.",
+    "Independent reader authenticated the already saved gzip against every original raw byte and EOF; no new capture or trial was executed.",
+    "Fake .olean/.ilean bytes remain explicitly INERT_STORAGE_CONTROL_ONLY. Same inode establishes storage aliasing, not checked Lean evidence.",
+    "V1/v2 predecessors and the original native log/receipt remain unchanged; prospective mathematical use requires separate plan/root approval."
+  ],
+  "reviewer_sha256": "18a03b58ac672667d1169d162768924bb51a32e96b80d47649f38a2a69575b71",
+  "root_approval": {
+    "bytes": 2673,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/quality/COMPRESSED-LOADER-V3-FIXED-TRIAL-APPROVAL-20261011T0005Z.json",
+    "sha256": "4a3e6d4d2493552542d04ea39fe089f69592fe544417b10e8da29fd03dc21531"
+  },
+  "schema": "independent_saved_storage_design_qc_v1",
+  "status": "PASS_SAVED_15_BYTE_CONTROLS_AND_LOSSLESS_PUBLICATION_ONLY",
+  "target_compiler_native_adapter_reference_processes_started": 0,
+  "target_modules_imported": false
+}

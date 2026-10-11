@@ -1,0 +1,61 @@
+{
+  "schema": "prospective_compressed_stderr_storage_plan_v2",
+  "status": "SOURCE_ONLY_PENDING_DESIGN_QC_AND_SAVED_BYTE_TRIAL_APPROVAL",
+  "observed_utc": "2026-10-10T23:58:33.183274+00:00",
+  "sources": {
+    "storage_wrapper.py": "57f5ee0580fbab22776f8e5d0c5086be7a96a768a5277cd8c4e615cf2fd51f76",
+    "review_saved_loader.py": "9caa4255d99ca3bee4fae003e3896ca0b2bf38d1e1debac9cb0aecf2ad02fbc7"
+  },
+  "runtime_authorized": false,
+  "raw_limit_bytes": 33554432,
+  "gzip_limit_bytes": 1048576,
+  "compiler_flags_kernel_trust_source_import_native_audit_caps_unchanged": true,
+  "canonical_core_sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc",
+  "logging_environment_change": {
+    "LD_DEBUG": "libs retained",
+    "LD_DEBUG_OUTPUT": "omitted; full combined glibc and Lean stderr captured through pipe"
+  },
+  "changed_reader_contract": {
+    "stderr_sha256": "SHA of complete decoded combined stderr",
+    "stderr_storage": "gzip file SHA/bytes plus raw SHA/bytes/EOF/complete/no-truncation",
+    "native_loader_outputs": "canonical gzip path/encoded SHA plus raw identity; same calling-init regex over authenticated fully decoded text"
+  },
+  "parent_composition": "StorageBuilder(authenticated.OverlayBuilder,StorageInvocation(core.Builder)); parent pre/post invoke inventory, target and dependency checks remain in MRO; core=authenticated.original.core",
+  "fresh_objects": "successful NEW attempt outputs are canonical; same-FS cache/installed aliases; authenticated prior candidates use unchanged cache_result",
+  "source_only_ast_parse": "PASS; no helper or builder executed",
+  "byte_trial_plan": {
+    "driver": "review_saved_loader.py",
+    "control_count": 14,
+    "compiler_native_subprocess_calls": 0,
+    "target": "Existing accepted G6 raw log, storage/identity/native presence controls and inert same-inode new-cache/overwrite controls; no checked object fabricated.",
+    "memory_as_bytes": 268435456,
+    "scratch_bytes": 33554432,
+    "timeout_seconds": 90,
+    "creates_new_directory_only": true,
+    "command_argv": [
+      "python3",
+      "-B",
+      "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v2-native-presence/review_saved_loader.py",
+      "--output",
+      "NEW_DEV_SHM_DIRECTORY_AFTER_ROOT_APPROVAL"
+    ]
+  },
+  "joint1570_status": "Historical measured source-only proposal; after separately accepted natural141, coherent source count would become1572 including the same64 G3 sources, not1570.",
+  "natural141_status": "source gate aeb75ab184e093d90204dc249ef41cbf4c7f735eb8beccbcf80fe9de0582c053; could be first actual wrapper proof test only after source/byte/resource approvals",
+  "scope": "Storage evidence adapter only. Saved byte trial cannot assert fresh compiler, capture_process, kernel or aggregate acceptance.",
+  "supersedes": {
+    "plan": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/SOURCE-ONLY-PLAN.json",
+    "sha256": "1272de869b692695dfd31cfd057035ae8268b0a31a2cf0a9c6edbc128c76ae0e",
+    "old_wrapper_sha256": "ac6033fb98e9d13d2910d0c95d0015540a3aa0472b25963a7b2dc27fe2bed751",
+    "old_driver_sha256": "dffb183f7047dc5850256062805793ec7f5bde76eb8a7918f4587ae759c592f3",
+    "old_files_unchanged": true
+  },
+  "corrected_native_condition": "Exact helper requires complete, untruncated authenticated decoded stream AND at least one initialized native library AND every initialized library pinned.",
+  "intended_parent_context": {
+    "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/scripts/build_connected.py": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc",
+    "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/scripts/build_with_mathlib_overlay.py": "3d613f389158ad106741f72660429a6de28a18da498480c38072ce92b62c0a67",
+    "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/scripts/build_with_authenticated_overlay.py": "5406eb1a68e8f6e35729f8ae991906213cf1e4f2628f6ce4aac019f8ee25ac46",
+    "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/scripts/AuditTemplate.lean": "f74a31db45c2bda1fc9acaa660dd21f28b84d2b7f4e9c8850603719f449fef6a"
+  },
+  "parent_object_identity": "Pass authenticated.original.core as core, not a separately imported duplicate module; intended actual parent is accepted G6 context 5406/3d613."
+}

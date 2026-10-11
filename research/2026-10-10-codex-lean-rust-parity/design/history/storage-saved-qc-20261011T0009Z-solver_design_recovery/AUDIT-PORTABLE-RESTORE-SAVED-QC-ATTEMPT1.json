@@ -1,0 +1,444 @@
+{
+  "actual_receipt": {
+    "bytes": 8563,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/RECEIPT.json",
+    "sha256": "20ba0bac43e165e5387fe96d11cfc143fab6af2b80f0355b44da027a2dba8a47"
+  },
+  "actual_tests": [
+    {
+      "independent_driver_compared_bytes": 6629112,
+      "independent_driver_target_sha256": "0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e",
+      "name": "compressed-only-stream-restorer",
+      "raw_references_passed_to_restorer": 0,
+      "result": {
+        "base_gzip_decompression_passes": 1,
+        "base_gzip_sha256": "ee19e06b02138e891f71b90f16497f0439dd2db0b00e4b191811c8f8f8f1be40",
+        "base_raw_bytes_hashed": 114300292,
+        "base_raw_sha256": "554a83beeeef1ebc438451d051bead1030796a36bac0db3c8f6e803c5ec09813",
+        "codec_source_sha256": "cdb613eab954437ea47a441f5bd0e2bfdddb98e835a7ed1cd21559056f54257c",
+        "compressed_inputs_authenticated_before_output": true,
+        "decoded_pieces": 9762,
+        "final_base_and_target_hashes_checked": true,
+        "mathematical_acceptance_claim": false,
+        "new_large_raw_base_created": false,
+        "optional_base_reference_checked": false,
+        "optional_target_reference_checked": false,
+        "output_file": null,
+        "patch_preflight_completed_before_output": true,
+        "prospective_union_created": false,
+        "required_raw_reference_files": 0,
+        "schema": "audit_portable_restore_result_v1",
+        "second_target_artifact_created": false,
+        "status": "PASS_PINNED_PORTABLE_BYTE_RESTORATION",
+        "target_bytes_hashed": 6629112,
+        "target_sha256": "0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "explicit-optional-comparison-references",
+      "result": {
+        "base_gzip_decompression_passes": 1,
+        "base_gzip_sha256": "ee19e06b02138e891f71b90f16497f0439dd2db0b00e4b191811c8f8f8f1be40",
+        "base_raw_bytes_hashed": 114300292,
+        "base_raw_sha256": "554a83beeeef1ebc438451d051bead1030796a36bac0db3c8f6e803c5ec09813",
+        "codec_source_sha256": "cdb613eab954437ea47a441f5bd0e2bfdddb98e835a7ed1cd21559056f54257c",
+        "compressed_inputs_authenticated_before_output": true,
+        "decoded_pieces": 9762,
+        "final_base_and_target_hashes_checked": true,
+        "mathematical_acceptance_claim": false,
+        "new_large_raw_base_created": false,
+        "optional_base_reference_checked": true,
+        "optional_target_reference_checked": true,
+        "output_file": null,
+        "patch_preflight_completed_before_output": true,
+        "prospective_union_created": false,
+        "required_raw_reference_files": 0,
+        "schema": "audit_portable_restore_result_v1",
+        "second_target_artifact_created": false,
+        "status": "PASS_PINNED_PORTABLE_BYTE_RESTORATION",
+        "target_bytes_hashed": 6629112,
+        "target_sha256": "0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e"
+      },
+      "status": "PASS"
+    },
+    {
+      "consumer_pieces": 0,
+      "name": "wrong-compressed-base-before-output",
+      "output_created": false,
+      "reason": "PINNED_INPUT_HASH",
+      "status": "PASS_EXPECTED_PREFLIGHT_REFUSAL"
+    },
+    {
+      "consumer_pieces": 0,
+      "name": "wrong-compressed-patch-before-output",
+      "output_created": false,
+      "reason": "PINNED_INPUT_HASH",
+      "status": "PASS_EXPECTED_PREFLIGHT_REFUSAL"
+    },
+    {
+      "consumer_pieces": 0,
+      "name": "oversized-literal-before-output",
+      "output_created": false,
+      "reason": "TARGET_RANGE",
+      "status": "PASS_EXPECTED_PREFLIGHT_REFUSAL"
+    },
+    {
+      "name": "wrong-final-target-hash-after-provisional-stream",
+      "output_created": false,
+      "provisional_callback_bytes": 6629112,
+      "provisional_target_sha256": "0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e",
+      "reason": "TARGET_DECODED_HASH",
+      "status": "PASS_EXPECTED_FINAL_IDENTITY_REFUSAL",
+      "verified_result_returned": false
+    },
+    {
+      "name": "wrong-final-base-hash-after-provisional-stream",
+      "output_created": false,
+      "provisional_callback_bytes": 6629112,
+      "provisional_target_sha256": "0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e",
+      "reason": "BASE_GZIP_RAW_HASH",
+      "status": "PASS_EXPECTED_FINAL_IDENTITY_REFUSAL",
+      "verified_result_returned": false
+    },
+    {
+      "consumer_pieces": 0,
+      "name": "optional-output-size-before-output",
+      "output_created": false,
+      "reason": "OPTIONAL_OUTPUT_LIMIT",
+      "status": "PASS_EXPECTED_PREFLIGHT_REFUSAL"
+    },
+    {
+      "consumer_pieces": 0,
+      "existing_file_sha256": "522781617c08dfc8068ea4105a457f0ab0485d181a020dd4677a41ffbf605f62",
+      "existing_output_unchanged": true,
+      "name": "no-overwrite",
+      "status": "PASS"
+    }
+  ],
+  "capture_restore_or_producer_trial_rerun": false,
+  "contributor": "Codex / solver_design_recovery",
+  "independent_negative_header_checks": [
+    {
+      "identity": "TARGET",
+      "only_changed_byte_span": [
+        57,
+        89
+      ],
+      "provisional_bytes": 6629112,
+      "reason": "TARGET_DECODED_HASH",
+      "verified_result_returned": false
+    },
+    {
+      "identity": "BASE",
+      "only_changed_byte_span": [
+        25,
+        57
+      ],
+      "provisional_bytes": 6629112,
+      "reason": "BASE_GZIP_RAW_HASH",
+      "verified_result_returned": false
+    }
+  ],
+  "launch_receipt": {
+    "bytes": 3063,
+    "path": "/dev/shm/rc-audit-portable-restore-family168-launch-1/RECEIPT.json",
+    "sha256": "746172955ca1f6d0d808e37a6285d507e9af199b60ca79d4afc7caa6ce805b56"
+  },
+  "mathematical_acceptance_modified": false,
+  "new_restored_or_captured_artifact_created": false,
+  "observed_resources": {
+    "address_space_cap_bytes": 268435456,
+    "max_rss_kib": 17900,
+    "outer_timeout_seconds": 90,
+    "scratch_bytes": 228624,
+    "scratch_cap_bytes": 33554432
+  },
+  "observed_utc": "2026-10-11T00:10:00.003062+00:00",
+  "original_and_published_file_pins": [
+    {
+      "bytes": 1157,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/BAD-BASE-GZIP-PLAN.json",
+      "sha256": "a8c5c06eca451b6c9bb35e029798e3846dc8184fafa9f19c9f05bafda3966ff9"
+    },
+    {
+      "bytes": 1157,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/BAD-BASE-GZIP-PLAN.json",
+      "sha256": "a8c5c06eca451b6c9bb35e029798e3846dc8184fafa9f19c9f05bafda3966ff9"
+    },
+    {
+      "bytes": 825,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/BAD-PATCH-GZIP-PIN.json",
+      "sha256": "c82369d2ff9ce0d78ae04ae8d5627326f82ecb8ea2964ef81d08fc2714fce1a4"
+    },
+    {
+      "bytes": 825,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/BAD-PATCH-GZIP-PIN.json",
+      "sha256": "c82369d2ff9ce0d78ae04ae8d5627326f82ecb8ea2964ef81d08fc2714fce1a4"
+    },
+    {
+      "bytes": 1156,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/LOW-OPTIONAL-OUTPUT-PLAN.json",
+      "sha256": "c13e9d7272acf36ca1bcf81c18ed1a28d9fde6463baa3623bf8a7ab63a84cc07"
+    },
+    {
+      "bytes": 1156,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/LOW-OPTIONAL-OUTPUT-PLAN.json",
+      "sha256": "c13e9d7272acf36ca1bcf81c18ed1a28d9fde6463baa3623bf8a7ab63a84cc07"
+    },
+    {
+      "bytes": 1066,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/OPTIONAL-COMPARISON-RESTORE.json",
+      "sha256": "9baeafec33c522f8e678c695c5a4b770cc482ae4cbcd1658e237a2109326b8b3"
+    },
+    {
+      "bytes": 1066,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/OPTIONAL-COMPARISON-RESTORE.json",
+      "sha256": "9baeafec33c522f8e678c695c5a4b770cc482ae4cbcd1658e237a2109326b8b3"
+    },
+    {
+      "bytes": 801,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/OVERSIZED-LITERAL-PIN.json",
+      "sha256": "a8c773ada122dcd51ad5e442e29e6b452a901ad55a61b27bbd4d7e14f649b068"
+    },
+    {
+      "bytes": 801,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/OVERSIZED-LITERAL-PIN.json",
+      "sha256": "a8c773ada122dcd51ad5e442e29e6b452a901ad55a61b27bbd4d7e14f649b068"
+    },
+    {
+      "bytes": 825,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/PATCH-PIN.json",
+      "sha256": "f565b44b957fd4d18ee0af2fc12a432d6712ad9e253cc46f4ce1e288c4711297"
+    },
+    {
+      "bytes": 825,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/PATCH-PIN.json",
+      "sha256": "f565b44b957fd4d18ee0af2fc12a432d6712ad9e253cc46f4ce1e288c4711297"
+    },
+    {
+      "bytes": 1157,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/PORTABLE-PLAN.json",
+      "sha256": "426929f4c8d05368cbdc50fc64d8685f16fe251bf2b4b2402f9df449f06bca23"
+    },
+    {
+      "bytes": 1157,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/PORTABLE-PLAN.json",
+      "sha256": "426929f4c8d05368cbdc50fc64d8685f16fe251bf2b4b2402f9df449f06bca23"
+    },
+    {
+      "bytes": 8563,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/RECEIPT.json",
+      "sha256": "20ba0bac43e165e5387fe96d11cfc143fab6af2b80f0355b44da027a2dba8a47"
+    },
+    {
+      "bytes": 8563,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/RECEIPT.json",
+      "sha256": "20ba0bac43e165e5387fe96d11cfc143fab6af2b80f0355b44da027a2dba8a47"
+    },
+    {
+      "bytes": 1068,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/STANDALONE-RESTORE.json",
+      "sha256": "07033d71c054e5042337d4d3d056102cd5731b84b660a2bb107dc7a48ac0f302"
+    },
+    {
+      "bytes": 1068,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/STANDALONE-RESTORE.json",
+      "sha256": "07033d71c054e5042337d4d3d056102cd5731b84b660a2bb107dc7a48ac0f302"
+    },
+    {
+      "bytes": 750,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/WRONG-FINAL-BASE-PIN.json",
+      "sha256": "cf61513181e41bbc026f5251efb75d895569044e91136a21d7294d7ccff6eb44"
+    },
+    {
+      "bytes": 750,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/WRONG-FINAL-BASE-PIN.json",
+      "sha256": "cf61513181e41bbc026f5251efb75d895569044e91136a21d7294d7ccff6eb44"
+    },
+    {
+      "bytes": 1157,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/WRONG-FINAL-BASE-PLAN.json",
+      "sha256": "d1049b9812d008e4232b4d3f2686085301e9c548832a2e41507bc54ea23b3ce4"
+    },
+    {
+      "bytes": 1157,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/WRONG-FINAL-BASE-PLAN.json",
+      "sha256": "d1049b9812d008e4232b4d3f2686085301e9c548832a2e41507bc54ea23b3ce4"
+    },
+    {
+      "bytes": 752,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/WRONG-FINAL-TARGET-PIN.json",
+      "sha256": "839fa35b06d71a8a20858000efde7a9446a86c19f87de60f886b9d8220bd2bed"
+    },
+    {
+      "bytes": 752,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/WRONG-FINAL-TARGET-PIN.json",
+      "sha256": "839fa35b06d71a8a20858000efde7a9446a86c19f87de60f886b9d8220bd2bed"
+    },
+    {
+      "bytes": 1157,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/WRONG-FINAL-TARGET-PLAN.json",
+      "sha256": "ad4d96b3a72a5848d5216d919a4247e063afebbbd01177104297f07d030a4941"
+    },
+    {
+      "bytes": 1157,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/WRONG-FINAL-TARGET-PLAN.json",
+      "sha256": "ad4d96b3a72a5848d5216d919a4247e063afebbbd01177104297f07d030a4941"
+    },
+    {
+      "bytes": 31246,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/audit_copy_literal_codec.py",
+      "sha256": "cdb613eab954437ea47a441f5bd0e2bfdddb98e835a7ed1cd21559056f54257c"
+    },
+    {
+      "bytes": 31246,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/audit_copy_literal_codec.py",
+      "sha256": "cdb613eab954437ea47a441f5bd0e2bfdddb98e835a7ed1cd21559056f54257c"
+    },
+    {
+      "bytes": 14266,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/audit_portable_restore.py",
+      "sha256": "39543d989895218cc91c088a36c747a2a287a32513d37cffb5d2f87ea62a5755"
+    },
+    {
+      "bytes": 14266,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/audit_portable_restore.py",
+      "sha256": "39543d989895218cc91c088a36c747a2a287a32513d37cffb5d2f87ea62a5755"
+    },
+    {
+      "bytes": 14,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/existing-output-must-stay.txt",
+      "sha256": "522781617c08dfc8068ea4105a457f0ab0485d181a020dd4677a41ffbf605f62"
+    },
+    {
+      "bytes": 14,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/existing-output-must-stay.txt",
+      "sha256": "522781617c08dfc8068ea4105a457f0ab0485d181a020dd4677a41ffbf605f62"
+    },
+    {
+      "bytes": 17661,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/review_audit_portable_restore.py",
+      "sha256": "1c4aa22f7cb4fd3eed456aed7fbc41f4da4fd456afb15dd51b721d0a7c460b55"
+    },
+    {
+      "bytes": 17661,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/review_audit_portable_restore.py",
+      "sha256": "1c4aa22f7cb4fd3eed456aed7fbc41f4da4fd456afb15dd51b721d0a7c460b55"
+    },
+    {
+      "bytes": 72502,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/wrong-final-base-hash.copy-literal.gz",
+      "sha256": "910951e42d062b540d181f5c8caa187835f92148c8adcd70d6f46abcb0cbb9fc"
+    },
+    {
+      "bytes": 72502,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/wrong-final-base-hash.copy-literal.gz",
+      "sha256": "910951e42d062b540d181f5c8caa187835f92148c8adcd70d6f46abcb0cbb9fc"
+    },
+    {
+      "bytes": 72501,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-trial-1/wrong-final-target-hash.copy-literal.gz",
+      "sha256": "1e3b7af0c7b3f86f3a60a7075328789eb8d6dba6669110d04c7c7670a9f715a0"
+    },
+    {
+      "bytes": 72501,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/wrong-final-target-hash.copy-literal.gz",
+      "sha256": "1e3b7af0c7b3f86f3a60a7075328789eb8d6dba6669110d04c7c7670a9f715a0"
+    },
+    {
+      "bytes": 2196,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-launch-1/LAUNCH.json",
+      "sha256": "0f756e71db690f5dbe2ef99b30e3e963315a768c624b2450c73e1f443f80eed3"
+    },
+    {
+      "bytes": 2196,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/launch/LAUNCH.json",
+      "sha256": "0f756e71db690f5dbe2ef99b30e3e963315a768c624b2450c73e1f443f80eed3"
+    },
+    {
+      "bytes": 3063,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-launch-1/RECEIPT.json",
+      "sha256": "746172955ca1f6d0d808e37a6285d507e9af199b60ca79d4afc7caa6ce805b56"
+    },
+    {
+      "bytes": 3063,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/launch/RECEIPT.json",
+      "sha256": "746172955ca1f6d0d808e37a6285d507e9af199b60ca79d4afc7caa6ce805b56"
+    },
+    {
+      "bytes": 0,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-launch-1/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/launch/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 286,
+      "path": "/dev/shm/rc-audit-portable-restore-family168-launch-1/stdout",
+      "sha256": "acb966a822418fdc8f7e3833fa903560848889ceb38764519f1556916621b8ae"
+    },
+    {
+      "bytes": 286,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/launch/stdout",
+      "sha256": "acb966a822418fdc8f7e3833fa903560848889ceb38764519f1556916621b8ae"
+    }
+  ],
+  "prior_independent_exact_C_L_byte_proof": {
+    "bytes": 20662,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/audit-stream-codec-saved-qc-20261010T2353Z-solver_design_recovery/AUDIT-STREAM-CODEC-SAVED-QC-ATTEMPT1.json",
+    "sha256": "1d9c1d40dfbf4aac342b1bff191788d0344188557905ca3e98f794e04d26ef7d"
+  },
+  "publication": {
+    "bytes": 18276,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-family168-trial-1/PUBLICATION.json",
+    "sha256": "a42775ca1b982004426fda5a92c138065c916472f119f1a2ac649f74b23a8f4a"
+  },
+  "qualifications": [
+    "No restorer/codec/driver was imported or run and no new restoration was performed by this saved reader.",
+    "Current raw originals and compressed inputs were rehashed; the unchanged050b patch reuses the already independent all4879C/4880L direct byte comparison proof. Small preserved negative patches were decompressed only to inspect their exact header differences.",
+    "Standalone restore received zero raw pins; the separate trial observer held the original target for independent comparison. Explicit optional comparison mode remains distinct.",
+    "Wrong final identities streamed provisional bytes but returned no successful verification; callback/output chunks alone remain unverified.",
+    "Fixed accepted1504\u2192accepted168 byte restoration only, with no new theorem audit, prospective union, generic decoder or future full-union capacity acceptance."
+  ],
+  "reference_pins": [
+    {
+      "bytes": 2857,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-source-freeze-1/SOURCE-FREEZE.json",
+      "sha256": "e63f775d7e5f36932ae4bda659fabe205fe7a72f46c70fd936a43b3dbb941193"
+    },
+    {
+      "bytes": 5735,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-source-freeze-1/SCENARIO.json",
+      "sha256": "0d261669dd3801a9d4fb3e4b088369def3e79951220b5b1def1e9ec4329464b9"
+    },
+    {
+      "bytes": 6358,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-portable-restore-source-freeze-1/PROTOCOL.md",
+      "sha256": "9f9046a82b6106827173daed631c5f0f016cf68d88047de857a548a697390490"
+    },
+    {
+      "bytes": 8686,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/audit-portable-restore-static-qc-20261011T0002Z-solver_design_recovery/AUDIT-PORTABLE-RESTORE-STATIC-QC-ATTEMPT1.json",
+      "sha256": "dad02d4db0058b61085a87557e7846571d1dad650c4cf8bdba89846e85f84c92"
+    },
+    {
+      "bytes": 6051,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/quality/AUDIT-PORTABLE-RESTORE-FIXED-TRIAL-APPROVAL-20261011T0002Z.json",
+      "sha256": "35d92e701013e166eae8f5ddd8be3941b7c1637484a0319b19c3bd3a3f566220"
+    },
+    {
+      "bytes": 14237,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/audit-stream-codec-family168-trial-1/PUBLICATION.json",
+      "sha256": "9f5584bcfbed73a400b7bb4512fa6503f9f271060806c1aef75bb67574c81c57"
+    }
+  ],
+  "reviewer_sha256": "18a03b58ac672667d1169d162768924bb51a32e96b80d47649f38a2a69575b71",
+  "schema": "independent_saved_storage_design_qc_v1",
+  "status": "PASS_SAVED_NINE_FIXED_COMPRESSED_ONLY_BYTE_RESTORE_CONTROLS",
+  "target_compiler_native_adapter_reference_processes_started": 0,
+  "target_modules_imported": false
+}

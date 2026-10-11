@@ -1,0 +1,261 @@
+{
+  "schema": "g4_g6_existing_provider_compatibility_note_v1",
+  "contributor": "Codex / lean_reuse_successor",
+  "created_utc": "2026-10-11T00:08:10.208695+00:00",
+  "existing_obligation_ids": [
+    "G4-GLOBAL",
+    "G6-COMMON-EXPOSURE",
+    "G6-REVIEWED-FOREST-EXPOSURE"
+  ],
+  "purpose": "Bounded source-body compatibility note, not a new obligation register, theorem acceptance, or master completion claim.",
+  "immutable_register": {
+    "path": "research/2026-10-10-codex-lean-rust-parity/reuse/OBLIGATION-REUSE-MAP.json",
+    "sha256": "068d703857328123fdb3be89a7202f59da8260fcb4e1cc24d0ea74c9d6bacab0",
+    "bytes": 219025
+  },
+  "latest_scope": "Root reports merged b90ed33bb; this note reads the delivered G4 formalization map and G3 finite-residue handoff, without fetch/merge/Git writes.",
+  "searched_coverage": "Full G4 gap map; exact accepted original bigon conditional rows, stored-register after-prefix and unused-bit posterior; append proof body and its hq; forward actual private-word extraction/true-K bodies; full frozen natural141 and forest101 proposed sources.",
+  "accepted_providers": [
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/OriginalBigonProgramDiagonal.lean",
+      "sha256": "d161f4cd34da569bf12dd500bc858fc2b2620f77030ffe3f7405ab212f13026e",
+      "bytes": 3811,
+      "module": "OriginalBigonProgramDiagonal",
+      "literal_imports": [
+        "ActualStoredRegister",
+        "G1NonrootBigonKernel"
+      ],
+      "accepted_context": "HISTORY-SURVIVAL-UNION-1504",
+      "declarations": [
+        {
+          "name": "actual_original_bigon_common",
+          "start_line": 51,
+          "raw_span_end_line": 63,
+          "header": "theorem actual_original_bigon_common (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (C : Calendar N.graph) (r : PositivePairRates E) (B : NonrootBigon N)\n    (gamma : unitInterval) (s : Code N sample)\n    (hall : \u2200 l \u2208 (state s).live, (state s).location l = .node B.parents.hybrid) :\n    let n := Fintype.card (AtNode (state s) B.parents.hybrid)\n    (((sourceProgram N r (bigonProgram N C B gamma true) s).map liveCard)\n      (liveCard s)).toReal =\n    if (state s).register B.parents.hybrid then\n      (Real.exp (-(pairRate r (some B.parents.parent1)*(bigonDuration N C B:\u211d))))^(n.choose 2)\n    else (Real.exp (-(pairRate r (some B.parents.parent0)*(bigonDuration N C B:\u211d))))^(n.choose 2)",
+          "raw_span_sha256": "31bc18ba3d7acde49b02a5e26b9bf952ec9ebbb434d24b3fade8785d6d88c726"
+        },
+        {
+          "name": "actual_original_bigon_independent",
+          "start_line": 37,
+          "raw_span_end_line": 51,
+          "header": "theorem actual_original_bigon_independent (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (C : Calendar N.graph) (r : PositivePairRates E) (B : NonrootBigon N)\n    (gamma : unitInterval) (s : Code N sample)\n    (hall : \u2200 l \u2208 (state s).live, (state s).location l = .node B.parents.hybrid) :\n    let n := Fintype.card (AtNode (state s) B.parents.hybrid)\n    (((sourceProgram N r (bigonProgram N C B gamma false) s).map liveCard)\n      (liveCard s)).toReal =\n      \u2211 k \u2208 Finset.range (n+1), (n.choose k : \u211d)*(1-(gamma:\u211d))^k*(gamma:\u211d)^(n-k)*\n        (Real.exp (-(pairRate r (some B.parents.parent0)*(bigonDuration N C B:\u211d))))^(k.choose 2)*\n        (Real.exp (-(pairRate r (some B.parents.parent1)*(bigonDuration N C B:\u211d))))^((n-k).choose 2)",
+          "raw_span_sha256": "edb05d89728f7ccd4a450583ba15f018073624d1a0bf2cc506d9f36f57e9feff"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/ActualSerialNoLossComposition.lean",
+      "sha256": "d6c331d2a0f5b7fd48669ab020507cb7dd00c576ceea9206bc96cb7a78a4e022",
+      "bytes": 2020,
+      "module": "ActualSerialNoLossComposition",
+      "literal_imports": [
+        "OriginalBigonProgramDiagonal"
+      ],
+      "accepted_context": "HISTORY-SURVIVAL-UNION-1504",
+      "declarations": [
+        {
+          "name": "actual_no_loss_append",
+          "start_line": 18,
+          "raw_span_end_line": 41,
+          "header": "theorem actual_no_loss_append (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (pre post : List (ProgramStep N))\n    (s : Code N sample) (q : \u211d\u22650\u221e)\n    (hq : \u2200 d \u2208 (sourceProgram N r pre s).support, liveCard d = liveCard s \u2192\n      ((sourceProgram N r post d).map liveCard) (liveCard d) = q) :\n    ((sourceProgram N r (pre ++ post) s).map liveCard) (liveCard s) =\n      ((sourceProgram N r pre s).map liveCard) (liveCard s) * q",
+          "raw_span_sha256": "2af89b0f2b44286bb87d97a543cf10e966176f9022246b5e6735c29d35fe3280"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/ActualStoredRegister.lean",
+      "sha256": "1417d1a45a68372298aa4897fbd73bb5f7b037902c7bc4bd6058c7c4ffd7330a",
+      "bytes": 5309,
+      "module": "ActualStoredRegister",
+      "literal_imports": [
+        "ActualUnusedSeedConditioning",
+        "ActualCommonBigonSurvival"
+      ],
+      "accepted_context": "HISTORY-SURVIVAL-UNION-1504",
+      "declarations": [
+        {
+          "name": "actual_common_after_prefix",
+          "start_line": 91,
+          "raw_span_end_line": 104,
+          "header": "theorem actual_common_after_prefix (N : RootedBinary V E X) {sample : Copy \u2192 X}\n    (r : PositivePairRates E) (ops : List (ProgramStep N)) (s d : Code N sample)\n    (hd : d \u2208 (sourceProgram N r ops s).support)\n    (H : GProgram.G2.OriginalHybridParents N) (t : \u211d\u22650)\n    (hall : \u2200 l \u2208 (state d).live, (state d).location l = .node H.hybrid) :\n    let n := Fintype.card (AtNode (state d) H.hybrid)\n    (((sourceProgram N r [.boundary (.common H), .interval t] d).map\n      UnifiedLean.Source.SourceActualHoldingClocks.liveCard) (UnifiedLean.Source.SourceActualHoldingClocks.liveCard d)).toReal =\n    if (state s).register H.hybrid then\n      (Real.exp (-(pairRate r (some H.parent1)*(t:\u211d))))^(n.choose 2)\n    else (Real.exp (-(pairRate r (some H.parent0)*(t:\u211d))))^(n.choose 2)",
+          "raw_span_sha256": "b4294964af7d10c75a45bba30c819cd7e3ca0854dc30d926eb433d5972fb3b79"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/ActualUnusedSeedConditioning.lean",
+      "sha256": "458bb5fbb76b5773d5b7fa19b4ea57ec52e3944bc163297fd964bfe952545134",
+      "bytes": 4786,
+      "module": "ActualUnusedSeedConditioning",
+      "literal_imports": [
+        "PrivateSeedHistoryFactorization",
+        "UnifiedLean.G6.PrivateRegisterCalendarPrefix"
+      ],
+      "accepted_context": "HISTORY-SURVIVAL-UNION-1504",
+      "declarations": [
+        {
+          "name": "actual_unused_bit_posterior",
+          "start_line": 64,
+          "raw_span_end_line": 79,
+          "header": "theorem actual_unused_bit_posterior (N : RootedBinary V E X)\n    (P : Finset V) (sample : Copy \u2192 X) (p : HybridProbabilities N)\n    (r : PositivePairRates E) (ops : List (ProgramStep N))\n    (hops : NoPrivateWordRead N P ops) (h : PrivateHybrid N P) (b : Bool)\n    (B : Set (Code N sample \u00d7 (Fin ops.length \u2192 Code N sample)))\n    (hB : (initializedEndpointLaw N r ops\n      (outsideInitialCodeLaw N P sample p)).toMeasure B \u2260 0) :\n    (((initializedSourceHistory N r ops (naturalInitialJoint N P sample p)).map\n      (fun a => (a.1, (erasePrivateCode N P a.2.1,\n        historyProjection (erasePrivateCode N P) a.2.2)))).toMeasure)\n      ({coin | coin h = b} \u00d7\u02e2 B) /\n      (initializedEndpointLaw N r ops (outsideInitialCodeLaw N P sample p)).toMeasure B =\n    bitMeasure (originalGamma p h.val) {b}",
+          "raw_span_sha256": "087e7801b26956f4190aab6980a1b97b056f35315622612e0b69cd92b4cf8d1d"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1CanonicalWholePrivateSourceWord.lean",
+      "sha256": "fecd1a9d088626148f00d6195eb6ed9af11c798f827201a74b0fca128a03ae06",
+      "bytes": 6062,
+      "module": "G1CanonicalWholePrivateSourceWord",
+      "literal_imports": [
+        "G1CanonicalBoundaryPrivateWordBinding"
+      ],
+      "accepted_context": "HISTORY-SURVIVAL-UNION-1504",
+      "declarations": [
+        {
+          "name": "actual_whole_calendar_private_source_kernel_list",
+          "start_line": 63,
+          "raw_span_end_line": 76,
+          "header": "theorem actual_whole_calendar_private_source_kernel_list (O : Source.{u,v,w} X) (H : OriginalParentRegistry O.network)\n    {T : Source X} (D : Decoration O T) (hD : Originated O H D)\n    {Copy : Type*} [Fintype Copy] [DecidableEq Copy] (sample : Copy \u2192 X)\n    (gamma : O.Vertex \u2192 unitInterval) (common : O.Vertex \u2192 Bool) (r : PositivePairRates O.Edge)\n    (actor : BridgeActor T) :\n    ownerKernels actor (canonicalRecordedWholeCalendarOps O H D hD sample gamma common r) =\n      (originalActorSourceWord O H D hD actor gamma common).map\n        (fun op => originalLocalRow O.network sample r (originalInsideCopies O sample (actorInput O D actor)) [op])",
+          "raw_span_sha256": "023f949b443d35dbcd1decee74a8f0507237cd110de8cfccb35478fadd75c2a9"
+        },
+        {
+          "name": "actual_whole_calendar_private_fused_source_row",
+          "start_line": 76,
+          "raw_span_end_line": 85,
+          "header": "theorem actual_whole_calendar_private_fused_source_row (O : Source.{u,v,w} X) (H : OriginalParentRegistry O.network)\n    {T : Source X} (D : Decoration O T) (hD : Originated O H D)\n    {Copy : Type*} [Fintype Copy] [DecidableEq Copy] (sample : Copy \u2192 X)\n    (gamma : O.Vertex \u2192 unitInterval) (common : O.Vertex \u2192 Bool) (r : PositivePairRates O.Edge)\n    (actor : BridgeActor T) (value : UnrankedView O.Vertex O.Edge Copy) :\n    actorWordKernel (ownerKernels actor (canonicalRecordedWholeCalendarOps O H D hD sample gamma common r)) value =\n      originalLocalRow O.network sample r (originalInsideCopies O sample (actorInput O D actor))\n        (originalActorSourceWord O H D hD actor gamma common) value",
+          "raw_span_sha256": "cffe0d482afef899f5ffe879d43d6f281367860284dfa935abdf9632c9a4c136"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1WholeCanonicalPrivateWordTrueK.lean",
+      "sha256": "9fe59f677426d2825ca6344a03cac85fc4c69f02ffc65f3ef53ae001f0ecae20",
+      "bytes": 8131,
+      "module": "G1WholeCanonicalPrivateWordTrueK",
+      "literal_imports": [
+        "G1OriginalPrivateFutureExclusion"
+      ],
+      "accepted_context": "HISTORY-SURVIVAL-UNION-1504",
+      "declarations": [
+        {
+          "name": "actual_whole_original_private_word_is_extracted_span",
+          "start_line": 84,
+          "raw_span_end_line": 101,
+          "header": "theorem actual_whole_original_private_word_is_extracted_span (O : Source.{u,v,w} X) (H : OriginalParentRegistry O.network)\n    {T : Source X} (D : Decoration O T) (hD : Originated O H D)\n    (actor : BridgeActor T) (gamma : O.Vertex \u2192 unitInterval) (common : O.Vertex \u2192 Bool) :\n    originalActorSourceWord O H D hD actor gamma common = extractedActorWord O H D hD actor gamma common",
+          "raw_span_sha256": "9da7e45ac4e4582a93972ab8c22c46c91f625d2dcd88e00a988ebdaa53c4f8ca"
+        },
+        {
+          "name": "actual_whole_original_private_fused_row_is_true_K",
+          "start_line": 101,
+          "raw_span_end_line": 117,
+          "header": "theorem actual_whole_original_private_fused_row_is_true_K (O : Source.{u,v,w} X) (H : OriginalParentRegistry O.network)\n    {T : Source X} (D : Decoration O T) (hD : Originated O H D)\n    {Copy : Type*} [Fintype Copy] [DecidableEq Copy] (sample : Copy \u2192 X)\n    (register : O.Vertex \u2192 Bool) (gamma : O.Vertex \u2192 unitInterval) (common : O.Vertex \u2192 Bool) (r : PositivePairRates O.Edge)\n    (actor : BridgeActor T) (s : Code O.network sample)\n    (hs : s \u2208 (sourceProgram O.network r\n      (actualFrontierProgram O.network O.calendar H (fun h => gamma h.val) (fun h => common h.val)\n        (O.calendar.age (actorInput O D actor))) (initialCode O.network sample register)).support) :\n    actorWordKernel (ownerKernels actor (canonicalRecordedWholeCalendarOps O H D hD sample gamma common r))\n      (unrankedView (selectedView (state s) (originalInsideCopies O sample (actorInput O D actor)))) =\n      canonicalOriginalKActorRow O D gamma common r actor.val actor.property s",
+          "raw_span_sha256": "8c4dc2d27fc3d70cfce677e92cfd009641f0a3f362ce37f21a7e81828c9692b5"
+        }
+      ]
+    }
+  ],
+  "accepted_evidence": [
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json",
+      "sha256": "1f45babae7a183dc1638ebfd7de210fddcf2dd872e8498f3f80ede4d06e9fcc2",
+      "bytes": 221353
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/quality/HISTORY-SURVIVAL-UNION-1504-REVIEW-20261010T224327.307430Z.json",
+      "sha256": "e10e65a37003efcd1c9dce3d7cb80a154b034f66bb8dd740ee061f9e35bc33cb",
+      "bytes": 70507
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/G6-ORIGINAL-PARALLEL-ARM-TRANSPORT-117-ACCEPTANCE.json",
+      "sha256": "3a97ebdad3974a0873e5a1d9f68757f3ecc87bdee1b2b3669be0c6a6eba3a48e",
+      "bytes": 3563
+    }
+  ],
+  "latest_text_bindings": [
+    {
+      "path": "research/2026-10-10-dot-g4-formalization-map-2345z/G4-FORMALIZATION-GAP-MAP.md",
+      "sha256": "18ed6ec0cd93a91cc496f5b43e38ea63858fea74aa0145a71b4e38c330e8f5ab",
+      "bytes": 13251
+    },
+    {
+      "path": "research/2026-10-10-dot-g4-formalization-map-2345z/FORMAL-PROVIDER-PINS.json",
+      "sha256": "c5f9d2f7f1216022d99fe5563d260320ff913a90e59ffb212186e85613295991",
+      "bytes": 29863
+    },
+    {
+      "path": "research/2026-10-10-dot-g3-finite-residue-source-lift-2340z/CODEX-HANDOFF.md",
+      "sha256": "629ca02d84fb2524d63417c1fe940e612203583ed3e990f89433e91944ccc552",
+      "bytes": 2941
+    }
+  ],
+  "frozen_proposal_bindings": [
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/G6OriginalCommonPrefix.lean",
+      "sha256": "68e0130ba41f55a7d87d0d8847dff504d53e55fe947020214e57ba42702b010b",
+      "bytes": 9211
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/G6NaturalCommonForestFactorization.lean",
+      "sha256": "fcadb6c4029b06eed32c8d037f294e373d1f91be692807fa477ccbc8edd75f2c",
+      "bytes": 24817
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V2.json",
+      "sha256": "6a9c47ca70e504477ceb15cbbd98f9f819ffeb4f82805122a004f3b1daec5b49",
+      "bytes": 110703
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/forest-register-compression/G6OriginalForestRegisterCompression.lean",
+      "sha256": "2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a",
+      "bytes": 8581
+    },
+    {
+      "path": "research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/forest-register-compression/PROPOSAL-FREEZE.json",
+      "sha256": "cd0e36cec18afb38fc07e0ad31b5bbaa68addc5f8e920fac7982093c0c04791e",
+      "bytes": 63744
+    }
+  ],
+  "proposal_status": {
+    "natural141": "SOURCE_ONLY_STATIC_QC_PASS_KERNEL_PENDING",
+    "forest101": "SOURCE_ONLY_STATIC_REVIEW_PENDING_KERNEL_PENDING",
+    "no_frozen_source_mutation": true,
+    "no_compiler_native_or_git_invocation": true
+  },
+  "compatibility": [
+    {
+      "id": "G6-COMMON-EXPOSURE",
+      "result": "Natural141 supplies a proposed actual once-drawn stored COMMON selector/erased whole Old-history marginalization at one original nonroot parallel bigon. The actual tied compiler prefix derives no-read from literal date/node-list splits. Both original arm exposures use the same local reference population; positive minimum baseline plus an original-bit mixture of residual epoch and algebraic identity retains carried labelled forest and all other register slots.",
+      "guards": [
+        "Original natural initialization, gamma=P(true/parent1), unchanged original occurrence/registry order",
+        "Every live owner on actual entering support is at the named hybrid; proper outside panels require separate actual local-carrier/context composition",
+        "Old reads the complete erased initialized vector; original private seed is marginalized rather than read",
+        "Positive original rates and strict actual Calendar; zero residual is algebraic identity, never a positive physical edge",
+        "Future erasure requires its stated NoPrivateWordRead guard"
+      ],
+      "g4_use": "If kernel accepted, coarsen this local law or combine its selector/history product with accepted actual_original_bigon_common to obtain the local natural average (1-gamma)*x0^choose(k,2)+gamma*x1^choose(k,2). This is a precise next typed composition, not an accepted scalar averaging theorem in the frozen proposal."
+    },
+    {
+      "id": "G6-REVIEWED-FOREST-EXPOSURE",
+      "result": "Forest101 sums the already accepted full original-Code weighted quotient equality over finite complete-register/rooted-labelled-forest fibres. One supplied positive atom/moment certificate is chosen before every typed source/row/output; no ambient forest Fintype or new generator is assumed.",
+      "guards": [
+        "All-copy CoLocated and cap on CURRENT live roots",
+        "Same original Code source/reader and accepted mass/tail moment equalities",
+        "This is a weighted signed quotient/generator identity, not a positive biological source-factor construction"
+      ],
+      "g4_use": "Useful full forest/register algebra for later source adapters, but it does not prove a scalar no-merger chronological product, expose hidden forest rows from observations, or supply calibrated decoder inversion."
+    },
+    {
+      "id": "G4-GLOBAL",
+      "result": "Accepted actual_no_loss_append still assumes a constant post-block no-loss row q for each reachable pre-state retaining the original live count. Natural141 is one local natural factorization and does not discharge this hq for every extracted private word.",
+      "next_exact_composition": "Reuse actual whole-calendar actor kernel-list/true-K forward extraction, actual current-root/cohort support and original stored-register/no-read interfaces per block. Prove each actual block's reachable-row hq, then apply actual_no_loss_append; only afterward use the calibrated original-taxon forest decoder hand argument.",
+      "remaining": [
+        "Actual supplied private-word/cohort specialization and successive private-bit no-read guards",
+        "Calibrated original-observation decoder: finite natural BOTH observations imply unnormalized exclusive forest-kernel equalities; do not assume those equalities as input",
+        "Unknown rival prefix provenance/global biased target-close head entry remain open mathematics",
+        "Passive full-law spectral-zero Z_T remains open; enlarged observed parent itinerary is not a substitute"
+      ]
+    }
+  ],
+  "new_g3_non_discharge": "The new finite-residue lift assumes supplied retained derivative full rank and effectively algebraic small residue, and returns a hand/algorithm fixed k+2-cell COMMON construction. It gives no Lean receipt, natural stored-seed prefix proof, G4 unknown-rival provenance or G6 general positive reconstruction. No new source-lift engine is warranted here."
+}

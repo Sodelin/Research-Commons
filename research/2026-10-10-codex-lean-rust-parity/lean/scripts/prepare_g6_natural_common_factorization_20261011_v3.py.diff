@@ -1,0 +1,46 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g6_natural_common_factorization_20261011_v2.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/prepare_g6_natural_common_factorization_20261011_v3.py
+@@ -243,6 +243,34 @@
+     selection=str(work/'SELECTED-CACHE-IDENTITIES.json')
+     for name in ['seed_natural_common_cache.py','prepare_natural_common_install.py']:
+         subprocess.run([sys.executable,str(work/'scripts'/name),str(work),'--selection-manifest',selection],check=True)
++    # Actual new parent byte derivation is qualified, not a literal ARM SHA claim.
++    arm_namespace=ARM/'scripts/build_with_mathlib_overlay.py'
++    arm_authenticated=ARM/'scripts/build_with_authenticated_overlay.py'
++    assert sha(arm_namespace)=='3d613f389158ad106741f72660429a6de28a18da498480c38072ce92b62c0a67'
++    assert sha(arm_authenticated)=='5406eb1a68e8f6e35729f8ae991906213cf1e4f2628f6ce4aac019f8ee25ac46'
++    prior_manifest=json.loads((ARM/'PREPARATION.json').read_bytes())['cache_install_transport_derivation']['alias_manifest_sha256']
++    current_prep=json.loads((work/'PREPARATION.json').read_bytes())
++    new_manifest=current_prep['cache_install_transport_derivation']['alias_manifest_sha256']
++    old_namespace=arm_namespace.read_text()
++    assert old_namespace.count(prior_manifest)==1
++    assert old_namespace.replace(prior_manifest,new_manifest)==(work/'scripts/build_with_mathlib_overlay.py').read_text()
++    old_authenticated=arm_authenticated.read_text()
++    assert old_authenticated.count(sha(arm_namespace))==1
++    assert old_authenticated.replace(sha(arm_namespace),sha(work/'scripts/build_with_mathlib_overlay.py'))==(work/'scripts/build_with_authenticated_overlay.py').read_text()
++    equivalence={'status':'EXACT_PARENT_SOURCE_EQUIVALENCE_EXCEPT_MANIFEST_AND_BASE_PINS',
++        'accepted_namespace':{'path':str(arm_namespace),'sha256':sha(arm_namespace)},
++        'accepted_authenticated':{'path':str(arm_authenticated),'sha256':sha(arm_authenticated)},
++        'actual_namespace':{'path':str(work/'scripts/build_with_mathlib_overlay.py'),'sha256':sha(work/'scripts/build_with_mathlib_overlay.py')},
++        'actual_authenticated':{'path':str(work/'scripts/build_with_authenticated_overlay.py'),'sha256':sha(work/'scripts/build_with_authenticated_overlay.py')},
++        'namespace_exact_replacement':{'old':prior_manifest,'new':new_manifest,'occurrences':1},
++        'authenticated_exact_replacement':{'old':sha(arm_namespace),'new':sha(work/'scripts/build_with_mathlib_overlay.py'),'occurrences':1},
++        'inventory_invoke_dependency_core_identity_and_namespace_guard_method_bodies_unchanged':True,
++        'runtime_core_object_binding':'builder_module.original.core; same exact core object used by all parents',
++        'no_literal_runtime_parent_hash_equality_claim':True,'compiler_launched':False}
++    save(work/'PARENT-WRAPPER-EQUIVALENCE.json',equivalence)
++    current_prep['runtime_parent_derivation']={'path':str(work/'PARENT-WRAPPER-EQUIVALENCE.json'),'sha256':sha(work/'PARENT-WRAPPER-EQUIVALENCE.json')}
++    current_prep['additional_storage_input_pins']['actual_parent_source_equivalence']=current_prep['runtime_parent_derivation']
++    save(work/'PREPARATION.json',current_prep);save(evidence/'PREPARATION.json',current_prep)
+     plan={'status':'READY_FOR_ROOT_PLAN_REVIEW_NO_COMPILER_LAUNCHED','workspace':str(work),
+           'graph_sha256':sha(work/'DEPENDENCY-GRAPH.json'),'preparation_sha256':sha(work/'PREPARATION.json'),
+           'monitor_path':str(work/'scripts/guard_natural_common_20261011.py'),
+@@ -252,7 +280,7 @@
+           'phases':{'natural':{'target':label,'requires':[]}},'allocation_roots':roots+[str(work)],
+           'scratch_abort_bytes':2**31-128*2**20,'scratch_hard_limit_bytes':2**31,
+           'memory_abort_bytes':15*2**30,'budget':budget,'compiler_launched':False,
+-          'normal_compiler_caps':'Original4GiB/180s; aggregate/audit6GiB/300s; -j1 -t0 -Ddebug.skipKernelTC=false',
++          'normal_compiler_caps':'Actual extraction components/aggregate/audit unchanged4GiB/180s; retained connected-label policy6GiB/300s; -j1 -t0 -Ddebug.skipKernelTC=false',
+           'preservation':budget['packet_export_policy']}
+     save(work/'RESOURCE-AND-RUN-PLAN.json',plan);shutil.copyfile(Path(__file__),evidence/'PREPARER.py')
+     packet=ROOT/('G6-NATURAL-COMMON-PREPARATION-'+stamp+'.json')

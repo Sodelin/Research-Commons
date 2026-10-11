@@ -1,0 +1,166 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v2-native-presence/storage_wrapper.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v3-partial-failure/storage_wrapper.py
+@@ -84,42 +84,83 @@
+             'encoding': 'gzip', 'complete': True, 'truncated': False}
+ 
+ 
++def preserve_partial_failure(destination, error, observed_hash, observed_count,
++                             supplied_hash, supplied_count, observed_eof=False,
++                             exit_code=None):
++    """Best-effort failure sidecar; prefix identities never establish completeness."""
++    destination = Path(destination)
++    record = {
++        'status':'FAILED_PARTIAL_CAPTURE_NOT_VERIFIED',
++        'complete':False, 'truncated':True, 'eof':False,
++        'observed_pipe_eof':observed_eof, 'exit_code':exit_code,
++        'exception_type':type(error).__name__, 'reason':str(error),
++        'gzip_path':str(destination), 'gzip_integrity_verified':False,
++        'observed_input_bytes':observed_count,
++        'observed_input_sha256':observed_hash.hexdigest(),
++        'chunks_successfully_supplied_to_gzip_bytes':supplied_count,
++        'chunks_successfully_supplied_to_gzip_sha256':supplied_hash.hexdigest(),
++        'identity_qualification':'Observed/supplied prefixes do not bind a complete decoded stream.'}
++    try:
++        if destination.is_file():
++            record.update(preserved_gzip_prefix_bytes=destination.stat().st_size,
++                          preserved_gzip_prefix_sha256=file_sha(destination))
++        sidecar = destination.with_name(destination.name+'.FAILED-PARTIAL.json')
++        with sidecar.open('x') as out:
++            json.dump(record,out,indent=2)
++            out.write('\n')
++    except Exception as preservation_error:
++        # Preserve the original failure and any existing prefix on ENOSPC too.
++        error.add_note('Partial sidecar could not be written: '+repr(preservation_error))
++    return record
++
++
+ def capture_saved_file(source, destination, raw_limit=RAW_LIMIT_BYTES,
+                        gzip_limit=GZIP_LIMIT_BYTES):
+     """Byte-only trial entrypoint; refuses overwriting any destination."""
+     source, destination = Path(source), Path(destination)
+     h, count = hashlib.sha256(), 0
+-    with destination.open('xb') as out:
+-        bounded = LimitedEncodedWriter(out, gzip_limit)
+-        with gzip.GzipFile(filename='', mode='wb', fileobj=bounded,
+-                           compresslevel=6, mtime=0) as encoded:
+-            with source.open('rb') as raw:
+-                for data in iter(lambda: raw.read(READ_BYTES), b''):
+-                    if count + len(data) > raw_limit:
+-                        raise CaptureLimit('saved raw byte limit')
+-                    encoded.write(data)
+-                    h.update(data)
+-                    count += len(data)
+-    result = inspect_capture(destination, h.hexdigest(), count,
+-                             raw_limit, gzip_limit)
+-    result.pop('text')
+-    result['source_path'] = str(source)
+-    result['gzip_path'] = str(destination)
+-    result['source_unchanged'] = file_sha(source) == h.hexdigest()
+-    if not result['source_unchanged']:
+-        raise ValueError('saved source changed during trial')
+-    return result
++    observed_hash, observed_count, created = hashlib.sha256(), 0, False
++    try:
++        with destination.open('xb') as out:
++            created = True
++            bounded = LimitedEncodedWriter(out, gzip_limit)
++            with gzip.GzipFile(filename='', mode='wb', fileobj=bounded,
++                               compresslevel=6, mtime=0) as encoded:
++                with source.open('rb') as raw:
++                    for data in iter(lambda: raw.read(READ_BYTES), b''):
++                        observed_hash.update(data)
++                        observed_count += len(data)
++                        if count + len(data) > raw_limit:
++                            raise CaptureLimit('saved raw byte limit')
++                        encoded.write(data)
++                        h.update(data)
++                        count += len(data)
++        result = inspect_capture(destination, h.hexdigest(), count,
++                                 raw_limit, gzip_limit)
++        result.pop('text')
++        result['source_path'] = str(source)
++        result['gzip_path'] = str(destination)
++        result['source_unchanged'] = file_sha(source) == h.hexdigest()
++        if not result['source_unchanged']:
++            raise ValueError('saved source changed during trial')
++        return result
++    except BaseException as error:
++        if created:
++            preserve_partial_failure(destination,error,observed_hash,observed_count,h,count)
++        raise
+ 
+ 
+ def capture_process(command, cwd, env, stdout, destination, timeout):
+     """One child, one bounded reader; no session, thread or global hook."""
+     destination = Path(destination)
+     h, count, reason, eof, code = hashlib.sha256(), 0, None, False, None
+-    proc = None
++    observed_hash, observed_count, created = hashlib.sha256(), 0, False
++    proc, failure = None, None
+     selector = selectors.DefaultSelector()
+     started = time.monotonic()
+     try:
+         with destination.open('xb') as out:
++            created = True
+             bounded = LimitedEncodedWriter(out, GZIP_LIMIT_BYTES)
+             with gzip.GzipFile(filename='', mode='wb', fileobj=bounded,
+                                compresslevel=6, mtime=0) as encoded:
+@@ -138,6 +179,8 @@
+                             eof = True
+                             selector.unregister(proc.stderr)
+                             break
++                        observed_hash.update(data)
++                        observed_count += len(data)
+                         if count + len(data) > RAW_LIMIT_BYTES:
+                             raise CaptureLimit('decoded hard limit while draining')
+                         encoded.write(data)
+@@ -160,17 +203,39 @@
+                     code = 124
+                 if reason == 'compiler timeout':
+                     code = 124
++    except BaseException as error:
++        failure = error
++        raise
+     finally:
+-        # A reader, compression, filesystem or polling exception cannot leave
+-        # the compiler leader alive. The unchanged outer guard owns the group.
+-        if proc is not None:
+-            if proc.poll() is None:
+-                proc.kill()
+-            proc.wait()
+-            if proc.stderr is not None:
+-                proc.stderr.close()
+-        selector.close()
+-    result = inspect_capture(destination, h.hexdigest(), count)
++        # The unchanged outer guard owns the group. Every local error reaps
++        # the compiler leader before publishing an explicitly partial sidecar.
++        try:
++            if proc is not None:
++                if proc.poll() is None:
++                    try:
++                        proc.kill()
++                    except ProcessLookupError:
++                        pass
++                proc.wait()
++        except BaseException as cleanup_error:
++            if failure is None:
++                failure = cleanup_error
++                raise
++            failure.add_note('Leader cleanup error: '+repr(cleanup_error))
++        finally:
++            try:
++                if proc is not None and proc.stderr is not None:
++                    proc.stderr.close()
++            finally:
++                selector.close()
++                if failure is not None and created:
++                    preserve_partial_failure(destination,failure,observed_hash,observed_count,
++                                             h,count,eof,proc.returncode if proc else None)
++    try:
++        result = inspect_capture(destination, h.hexdigest(), count)
++    except BaseException as error:
++        preserve_partial_failure(destination,error,observed_hash,observed_count,h,count,eof,code)
++        raise
+     result.update(gzip_path=str(destination), reason=reason,
+                   exit_code=code, eof=eof, complete=eof, truncated=False)
+     return result

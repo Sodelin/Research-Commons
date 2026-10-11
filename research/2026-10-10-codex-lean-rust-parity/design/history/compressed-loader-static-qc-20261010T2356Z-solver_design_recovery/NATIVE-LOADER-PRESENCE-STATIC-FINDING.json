@@ -1,0 +1,48 @@
+{
+  "canonical_core": {
+    "bytes": 19016,
+    "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/scripts/build_connected.py",
+    "sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc"
+  },
+  "claim_label": "hand-derived source-level guard counterexample, no compiler/capture run",
+  "compiler_native_reference_processes_started": 0,
+  "contributor": "Codex / solver_design_recovery",
+  "counterexample": {
+    "captured_complete": true,
+    "captured_truncated": false,
+    "meaning": "all(empty) is true; wrapper-created valid gzip does not establish that the dynamic loader emitted evidence",
+    "native_used": [],
+    "proposed_presence_predicate_result": true
+  },
+  "exact_native_known_assignments": [
+    {
+      "line": 67,
+      "scope": "canonical",
+      "text": "native_known=bool(loader_files) and all(p in self.native_runtime for p in native_used)"
+    },
+    {
+      "line": 219,
+      "scope": "proposed",
+      "text": "native_known = captured['complete'] and not captured['truncated'] and all(p in self.native_runtime for p in native_used)"
+    }
+  ],
+  "observed_utc": "2026-10-10T23:55:49.979582+00:00",
+  "old_source": {
+    "bytes": 14601,
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/storage_wrapper.py",
+    "sha256": "ac6033fb98e9d13d2910d0c95d0015540a3aa0472b25963a7b2dc27fe2bed751"
+  },
+  "preserved_old_source": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/history/compressed-loader-static-qc-20261010T2356Z-solver_design_recovery/versions/ac6033fb98e9d13d2910d0c95d0015540a3aa0472b25963a7b2dc27fe2bed751.py",
+  "requested_correction": [
+    "Preserve old ac6033 bytes and use an attributed new derivative.",
+    "Require nonempty initialized-loader evidence together with complete/authenticated raw capture and all library names known; bool(native_used) is a stricter sufficient presence guard.",
+    "Saved-log-only trial must include empty/no-init capture and show it cannot be accepted by the live invoke native predicate."
+  ],
+  "schema": "compressed_loader_native_presence_static_finding_v1",
+  "scope_qualifications": [
+    "This does not assert that the frozen real compiler produced empty loader output, nor challenge an accepted Lean theorem.",
+    "This finding concerns an insufficient source guard in an unexecuted storage derivative."
+  ],
+  "status": "REQUIRES_NARROW_NATIVE_EVIDENCE_PRESENCE_CORRECTION_BEFORE_SOURCE_GATE",
+  "target_modules_imported_or_executed": false
+}

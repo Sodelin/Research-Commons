@@ -1,0 +1,47 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/run_proof_extensions.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/run_proof_extensions_with_storage_20261011.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Run the frozen bounded builder over separate new proof targets serially."""
++"""Run one reviewed storage derivative over a strict authenticated proof target."""
+ from __future__ import annotations
+ import argparse
+ import importlib.util
+@@ -29,13 +29,35 @@
+     spec = importlib.util.spec_from_file_location("frozen_proof_extension_builder", workspace / "scripts" / filename)
+     builder_module = importlib.util.module_from_spec(spec)
+     spec.loader.exec_module(builder_module)
+-    builder = (builder_module.OverlayBuilder if overlay else builder_module.Builder)()
++    assert overlay and optimized, 'Storage derivative requires authenticated namespace parent'
++    adapter_path = workspace / 'scripts/storage_wrapper.py'
++    policy_path = workspace / 'STDERR-STORAGE-POLICY.json'
++    assert sha(adapter_path) == prep['storage_wrapper_sha256']
++    assert sha(policy_path) == prep['storage_policy_sha256']
++    policy = json.loads(policy_path.read_bytes())
++    assert policy['runtime_authorized'] is True
++    adapter_spec = importlib.util.spec_from_file_location('frozen_compressed_stderr_adapter', adapter_path)
++    adapter_module = importlib.util.module_from_spec(adapter_spec)
++    adapter_spec.loader.exec_module(adapter_module)
++    # Bind the SAME core module object already used by the two parent classes.
++    builder_class = adapter_module.make_builder_class(
++        builder_module.OverlayBuilder, builder_module.original.core, policy)
++    builder = builder_class()
++    shutil.copyfile(adapter_path, builder.run / 'COMPRESSED-STDERR-STORAGE-WRAPPER.py')
++    shutil.copyfile(policy_path, builder.run / 'STDERR-STORAGE-POLICY.json')
++    save(builder.run / 'COMPRESSED-STDERR-STORAGE-PINS.json', {
++        'adapter_sha256':sha(adapter_path),'policy_sha256':sha(policy_path),
++        'canonical_core_sha256':sha(workspace / 'scripts/build_connected.py'),
++        'authenticated_parent_sha256':optimized,
++        'namespace_parent_sha256':prep['namespace_overlay_wrapper_sha256'],
++        'same_core_module_object':True,
++        'qualification':'LD_DEBUG libs combined stderr gzip; stronger initialized-native presence; fresh same-FS immutable aliases. Strict compiler/kernel/import/audit policies retained.'})
+     targets = args.target or list(builder.graph["targets"])
+     assert len(targets) == len(set(targets)) and all(t in builder.graph["targets"] for t in targets)
+     shutil.copyfile(Path(__file__), builder.run / "MULTI-TARGET-LAUNCHER.py")
+     save(builder.run / "MULTI-TARGET-LAUNCHER-PINS.json", {
+         "launcher_sha256": sha(Path(__file__)), "preparation_sha256": sha(workspace / "PREPARATION.json"),
+-        "targets": targets, "policy": "Serial invocation of the frozen unchanged builder; no compiler/audit/cap override."})
++        "targets": targets, "policy": "Serial invocation of the strict frozen core through a reviewed logging/cache storage derivative; no compiler/kernel/import/audit/cap override."})
+     raise SystemExit(builder.run_targets(targets))
+ 
+ 

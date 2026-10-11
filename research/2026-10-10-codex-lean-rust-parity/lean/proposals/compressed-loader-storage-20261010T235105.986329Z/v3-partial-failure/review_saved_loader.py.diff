@@ -1,0 +1,30 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v2-native-presence/review_saved_loader.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v3-partial-failure/review_saved_loader.py
+@@ -9,7 +9,7 @@
+ 
+ sys.dont_write_bytecode = True
+ HERE = Path(__file__).resolve().parent
+-WRAPPER_SHA = '57f5ee0580fbab22776f8e5d0c5086be7a96a768a5277cd8c4e615cf2fd51f76'
++WRAPPER_SHA = 'd774eb292aa0b819791458c51a9353885d3d31b2bde781b85b3c26829e61c810'
+ SAVED_RAW = Path('/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/.build/runs/20261010T232230.265801Z/attempts/00001-G6OriginalParallelArmTransport/NATIVE-LOADER.259880')
+ SAVED_RAW_SHA = '830f7c33aed836755cbe788f5f69343fa15b575c3267305c8ff249708de861f8'
+ SAVED_RECEIPT = SAVED_RAW.parent/'receipt.json'
+@@ -91,6 +91,18 @@
+     refuse('gzip_trailer_eof_required',lambda:module.inspect_capture(broken,primary['raw_sha256'],primary['raw_bytes']),(EOFError,OSError))
+     refuse('decoded_byte_limit',lambda:module.capture_saved_file(SAVED_RAW,args.output/'raw-limit.gz',raw_limit=64),(module.CaptureLimit,))
+     refuse('encoded_byte_limit',lambda:module.capture_saved_file(crossing,args.output/'gzip-limit.gz',gzip_limit=16),(module.CaptureLimit,))
++    partials = []
++    for label in ['raw-limit','gzip-limit']:
++        prefix = args.output/(label+'.gz')
++        sidecar = json.loads(prefix.with_name(prefix.name+'.FAILED-PARTIAL.json').read_text())
++        assert sidecar['status']=='FAILED_PARTIAL_CAPTURE_NOT_VERIFIED'
++        assert not sidecar['complete'] and sidecar['truncated'] and not sidecar['eof']
++        assert not sidecar['gzip_integrity_verified'] and 'raw_sha256' not in sidecar
++        assert sidecar['preserved_gzip_prefix_sha256']==sha(prefix)
++        assert sidecar['preserved_gzip_prefix_bytes']==prefix.stat().st_size
++        partials.append({'failure':label,'sidecar_status':sidecar['status'],
++                         'prefix_bytes':prefix.stat().st_size,'prefix_sha256':sha(prefix)})
++    accept('failed_cap_captures_preserve_explicit_partial_identities',lambda:partials)
+     primary_before = sha(primary_path)
+     refuse('refuse_destination_overwrite',lambda:module.capture_saved_file(SAVED_RAW,primary_path),(FileExistsError,))
+     assert sha(primary_path)==primary_before

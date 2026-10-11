@@ -1,0 +1,24 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/storage_wrapper.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v2-native-presence/storage_wrapper.py
+@@ -176,6 +176,12 @@
+     return result
+ 
+ 
++def native_evidence_known(captured, native_used, native_runtime):
++    """Require authenticated initialized-library evidence, not an empty file."""
++    return (captured['complete'] and not captured['truncated'] and
++            bool(native_used) and all(p in native_runtime for p in native_used))
++
++
+ def make_builder_class(parent, core, policy):
+     """Bind a reviewed namespace builder; default policy cannot execute."""
+     if file_sha(core.__file__) != CORE_SHA256:
+@@ -216,7 +222,7 @@
+             core.save(attempt/'STDERR-CAPTURE.json', captured)
+             after = self.dependencies(context, imports)
+             native_stable = all([p.stat().st_dev,p.stat().st_ino,p.stat().st_size,p.stat().st_mtime_ns,p.stat().st_ctime_ns] == self.native_runtime[str(p)]['stat_identity'] for p in self.native_paths)
+-            native_known = captured['complete'] and not captured['truncated'] and all(p in self.native_runtime for p in native_used)
++            native_known = native_evidence_known(captured, native_used, self.native_runtime)
+             stable = before == after and core.sha(source) == core.sha(frozen) and native_stable and native_known
+             log = (attempt/'stdout').read_text(errors='replace') + stderr_text
+             code = captured['exit_code']

@@ -1,0 +1,46 @@
+{
+  "schema": "prospective_compressed_stderr_storage_plan_v1",
+  "status": "SOURCE_ONLY_PENDING_DESIGN_QC_AND_SAVED_BYTE_TRIAL_APPROVAL",
+  "observed_utc": "2026-10-10T23:55:28.793791+00:00",
+  "sources": {
+    "storage_wrapper.py": "ac6033fb98e9d13d2910d0c95d0015540a3aa0472b25963a7b2dc27fe2bed751",
+    "review_saved_loader.py": "dffb183f7047dc5850256062805793ec7f5bde76eb8a7918f4587ae759c592f3"
+  },
+  "runtime_authorized": false,
+  "raw_limit_bytes": 33554432,
+  "gzip_limit_bytes": 1048576,
+  "compiler_flags_kernel_trust_source_import_native_audit_caps_unchanged": true,
+  "canonical_core_sha256": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc",
+  "logging_environment_change": {
+    "LD_DEBUG": "libs retained",
+    "LD_DEBUG_OUTPUT": "omitted; full combined glibc and Lean stderr captured through pipe"
+  },
+  "changed_reader_contract": {
+    "stderr_sha256": "SHA of complete decoded combined stderr",
+    "stderr_storage": "gzip file SHA/bytes plus raw SHA/bytes/EOF/complete/no-truncation",
+    "native_loader_outputs": "canonical gzip path/encoded SHA plus raw identity; same calling-init regex over authenticated fully decoded text"
+  },
+  "parent_composition": "StorageBuilder(authenticated.OverlayBuilder,StorageInvocation(core.Builder)); parent pre/post invoke inventory, target and dependency checks remain in MRO; core=authenticated.original.core",
+  "fresh_objects": "successful NEW attempt outputs are canonical; same-FS cache/installed aliases; authenticated prior candidates use unchanged cache_result",
+  "source_only_ast_parse": "PASS; no helper or builder executed",
+  "byte_trial_plan": {
+    "driver": "review_saved_loader.py",
+    "control_count": 10,
+    "compiler_native_subprocess_calls": 0,
+    "target": "existing accepted G6 raw NativeLoader only plus bounded storage/identity controls",
+    "memory_as_bytes": 268435456,
+    "scratch_bytes": 33554432,
+    "timeout_seconds": 90,
+    "creates_new_directory_only": true,
+    "command_argv": [
+      "python3",
+      "-B",
+      "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/review_saved_loader.py",
+      "--output",
+      "NEW_DEV_SHM_DIRECTORY_AFTER_ROOT_APPROVAL"
+    ]
+  },
+  "joint1570_status": "not materialized; total object size remains unbounded by available receipts",
+  "natural141_status": "source gate aeb75ab184e093d90204dc249ef41cbf4c7f735eb8beccbcf80fe9de0582c053; could be first actual wrapper proof test only after source/byte/resource approvals",
+  "scope": "Storage evidence adapter only. Saved byte trial cannot assert fresh compiler, capture_process, kernel or aggregate acceptance."
+}

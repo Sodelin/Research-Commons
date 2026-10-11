@@ -1,6 +1,6 @@
 # Modular Lean baseline and corresponding Rust solver
 
-## Latest checked state — 10 October 2026, 16:40 PDT / 23:40 UTC
+## Latest checked state — 10 October 2026, 17:12 PDT / 11 October 00:12 UTC
 
 Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
 The current coherent library has **1,504 modules / 100,985 owned declarations /
@@ -13,7 +13,7 @@ The earlier 1,497, 1,487 and other rows below keep their own dated scopes and re
 DOT's 70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
 outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
 corrects claims that old census/target/policy implementations were absent.
-The [newest DOT source delta](design/DISCOVERY-DELTA-20261010T2340Z.md) records
+The [newest DOT source delta](design/DISCOVERY-DELTA-20261011T0012Z.md) records
 the hand-reviewed zero-drift local classifier, its accepted effective-radius
 algorithm and the particular sparse-carrier ordinary-factor obstruction.
 These have no new Lean or practical execution receipt.
@@ -22,8 +22,9 @@ The full practical source-to-optimal-policy solver remains incomplete.
 The [fixed audit-storage trial](rust/AUDIT-STREAM-CODEC-FIXED-VALIDATION-ACCEPTANCE-20261010T2357Z.json)
 passes eight bounded byte-preservation controls: a 72,532-byte patch reproduces
 the complete accepted 6,629,112-byte family168 audit against preserved originals.
-A separate standalone decoder and compressed build-log capture are still under
-review. The [natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V2.json)
+[Standalone reconstruction](rust/AUDIT-PORTABLE-RESTORE-FIXED-ACCEPTANCE-20261011T0010Z.json)
+passes nine controls; [compressed loader storage](quality/COMPRESSED-STDERR-SOURCE-SAVED-BYTE-GATE-20261011T0010Z.json)
+passes fifteen saved-byte/cache controls. Actual live capture still needs its first compiler receipt. The [natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V2.json)
 connects original once-stored seeds, literal tied-calendar prefixes and carried
 forest arm laws in a proposed 141-module context; its current review is static,
 with no kernel receipt yet. These additions do not enlarge the coherent1,504 union.
@@ -42,7 +43,7 @@ Decisions API setup is deferred, with no key created or API call made. The
 [mission](MISSION.md) preserves the full original problem and
 [traceability map](design/TRACEABILITY.md) records remaining obligations.
 The [frozen discovery map](design/DISCOVERY-MAP.md) and the [latest publication
-delta](design/DISCOVERY-DELTA-20261010T2340Z.md) connect DOT G3/G4 results to
+delta](design/DISCOVERY-DELTA-20261011T0012Z.md) connect DOT G3/G4 results to
 their older providers and remaining gaps.
 The [one-page research brief](design/RESEARCH-BRIEF.md) gives the four-lane overview.
 The [goal completion sheet](design/GOAL-STATUS.md) distinguishes completed original

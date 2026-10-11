@@ -1,0 +1,191 @@
+{
+  "status": "PASS_ALL_SAVED_BYTE_CONTROLS",
+  "controls": [
+    {
+      "control": "saved_raw_lossless_capture",
+      "status": "PASS",
+      "detail": {
+        "native_used": [
+          "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+          "/usr/lib/x86_64-linux-gnu/libc.so.6",
+          "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+          "/usr/lib/x86_64-linux-gnu/libm.so.6",
+          "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+          "/usr/lib/x86_64-linux-gnu/librt.so.1",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libInit_shared.so",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared.so",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_1.so",
+          "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_2.so"
+        ],
+        "eof": true,
+        "raw_sha256": "830f7c33aed836755cbe788f5f69343fa15b575c3267305c8ff249708de861f8",
+        "raw_bytes": 12561449,
+        "gzip_sha256": "5ac7d19869a12ce1dac70c22e41293ff59b015e6d80b6e6d52abba4153fb4d8a",
+        "gzip_bytes": 290421,
+        "encoding": "gzip",
+        "complete": true,
+        "truncated": false,
+        "source_path": "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/.build/runs/20261010T232230.265801Z/attempts/00001-G6OriginalParallelArmTransport/NATIVE-LOADER.259880",
+        "gzip_path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz",
+        "source_unchanged": true
+      }
+    },
+    {
+      "control": "native_init_parser_exact_original_receipt",
+      "status": "PASS",
+      "detail": {
+        "native_library_count": 10
+      }
+    },
+    {
+      "control": "sorryAx_crosses_read_boundary",
+      "status": "PASS",
+      "detail": {
+        "detected": true
+      }
+    },
+    {
+      "control": "unbound_native_library_fails_original_known_predicate",
+      "status": "PASS",
+      "detail": {
+        "native_known": false
+      }
+    },
+    {
+      "control": "empty_native_evidence_refused_by_invoke_helper",
+      "status": "PASS",
+      "detail": {
+        "native_known": false
+      }
+    },
+    {
+      "control": "diagnostic_without_native_init_refused_by_invoke_helper",
+      "status": "PASS",
+      "detail": {
+        "native_known": false
+      }
+    },
+    {
+      "control": "forged_raw_digest",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "ValueError",
+      "reason": "decoded stream byte identity mismatch"
+    },
+    {
+      "control": "forged_raw_count",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "ValueError",
+      "reason": "decoded stream byte identity mismatch"
+    },
+    {
+      "control": "gzip_trailer_eof_required",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "EOFError",
+      "reason": "Compressed file ended before the end-of-stream marker was reached"
+    },
+    {
+      "control": "decoded_byte_limit",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "CaptureLimit",
+      "reason": "saved raw byte limit"
+    },
+    {
+      "control": "encoded_byte_limit",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "CaptureLimit",
+      "reason": "gzip byte limit before physical write"
+    },
+    {
+      "control": "failed_cap_captures_preserve_explicit_partial_identities",
+      "status": "PASS",
+      "detail": [
+        {
+          "failure": "raw-limit",
+          "sidecar_status": "FAILED_PARTIAL_CAPTURE_NOT_VERIFIED",
+          "prefix_bytes": 20,
+          "prefix_sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83"
+        },
+        {
+          "failure": "gzip-limit",
+          "sidecar_status": "FAILED_PARTIAL_CAPTURE_NOT_VERIFIED",
+          "prefix_bytes": 10,
+          "prefix_sha256": "217feb1e7490015dd0a2b231b9cea45804df3d2a9b37287ac861bb45b8c0de55"
+        }
+      ]
+    },
+    {
+      "control": "refuse_destination_overwrite",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "FileExistsError",
+      "reason": "[Errno 17] File exists: '/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz'"
+    },
+    {
+      "control": "new_cache_aliases_are_single_copy",
+      "status": "PASS",
+      "detail": {
+        "aliases": [
+          {
+            "suffix": ".olean",
+            "same_inode": true,
+            "sha256": "32cf3444bb42befefc93632ffe6fbcc1baca6daa5d24cf585c6706ab15f3bcb4",
+            "bytes": 39
+          },
+          {
+            "suffix": ".ilean",
+            "same_inode": true,
+            "sha256": "4a4839a6434b641d6848ed7d4543db1aa6cb3a7b55821ce05c938fff0a5fe879",
+            "bytes": 22
+          }
+        ],
+        "bundle_exact": true,
+        "kernel_or_builder_constructor_called": false
+      }
+    },
+    {
+      "control": "completed_new_cache_key_overwrite",
+      "status": "PASS_EXPECTED_REFUSAL",
+      "exception_type": "RuntimeError",
+      "reason": "Completed cache key already exists; refusing overwrite aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "control_count": 15,
+  "script_sha256": "f425ce06219db0245b6e5c936f501022552c74b6e584843749b06d300cc92de7",
+  "inputs": {
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/compressed-loader-storage-20261010T235105.986329Z/v3-partial-failure/storage_wrapper.py": "d774eb292aa0b819791458c51a9353885d3d31b2bde781b85b3c26829e61c810",
+    "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/.build/runs/20261010T232230.265801Z/attempts/00001-G6OriginalParallelArmTransport/NATIVE-LOADER.259880": "830f7c33aed836755cbe788f5f69343fa15b575c3267305c8ff249708de861f8",
+    "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/.build/runs/20261010T232230.265801Z/attempts/00001-G6OriginalParallelArmTransport/receipt.json": "13f45e94ddd8e3e3721ac45600a7f4ab07dae5d976d9ea85de8e1fecd4102059",
+    "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/build_connected.py": "13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc"
+  },
+  "inputs_unchanged": true,
+  "compiler_native_or_subprocess_calls": 0,
+  "source_wrapper_only": true,
+  "positive_capture": {
+    "native_used": [
+      "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+      "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+      "/usr/lib/x86_64-linux-gnu/librt.so.1",
+      "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libInit_shared.so",
+      "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared.so",
+      "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_1.so",
+      "/workspace/toolchains/lean-4.33.1-linux/lib/lean/libleanshared_2.so"
+    ],
+    "eof": true,
+    "raw_sha256": "830f7c33aed836755cbe788f5f69343fa15b575c3267305c8ff249708de861f8",
+    "raw_bytes": 12561449,
+    "gzip_sha256": "5ac7d19869a12ce1dac70c22e41293ff59b015e6d80b6e6d52abba4153fb4d8a",
+    "gzip_bytes": 290421,
+    "encoding": "gzip",
+    "complete": true,
+    "truncated": false,
+    "source_path": "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z/.build/runs/20261010T232230.265801Z/attempts/00001-G6OriginalParallelArmTransport/NATIVE-LOADER.259880",
+    "gzip_path": "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z/saved-native-loader.gz",
+    "source_unchanged": true
+  },
+  "logging_qualification": "Saved existing separated native log exercises lossless encoding and parser, not a fresh combined-stderr compiler invocation.",
+  "runtime_capture_process_or_builder_exercised": false,
+  "inert_cache_result_method_exercised": true,
+  "inert_artifacts_are_not_kernel_evidence": true
+}
