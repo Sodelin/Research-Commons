@@ -13,7 +13,7 @@ Accepted 2026-10-11 after an actual pinned Lake build, fresh aggregate/full owne
 
 Exact graph SHA-256: 1a82a47a20257e9fa83bc88c786a55ca82d4dd245952cf4779a646f84a83d825.
 Exact mathematical audit SHA-256 after gzip decompression: ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53.
-Independent human review raw SHA-256: f6dadeee4ad65f8859718bdb474e9cb2baafdc0531a24a3634c3cdfd619d9594.
+Independent agent review document raw SHA-256: f6dadeee4ad65f8859718bdb474e9cb2baafdc0531a24a3634c3cdfd619d9594.
 
 ## Reproduce
 
@@ -32,3 +32,7 @@ The complete mathematical audit is published as ordered gzip parts without alter
 All1,570 exact loader trace payloads (about344MiB gzip), raw operational originals, interrupted/failed evidence and full local cache authentication are preserved locally. The public LOCAL-ONLY-TRACE-INDEX.json contains their verified raw/archive/receipt hash map; it does not include those payloads or make them publicly retrievable. Independent review actually rehashed/restored those local bytes. This packet supports source reproduction and exact audit comparison; the local native-trace authentication cannot be independently replayed solely from this smaller public distribution.
 
 The previous accepted source commit is38f51fdff9ffa427ec7dabb591ef94711c322a7a; G3 additions are fromf1636499b963d3982b2dfff0f2757042b1796d21. Newer upstream G6/COMMON/compression additions and the two draft G4 source adapters are deliberately outside this frozen union and require separate exact-version reconciliation.
+
+## Attribution correction, 2026-10-11 02:01 UTC
+
+The independent review was performed by an existing dot/OpenAI agent. The earlier word “human” was incorrect; no human certification was performed. This wording correction does not change any source, mathematical audit, review bytes, build result or verification scope.
