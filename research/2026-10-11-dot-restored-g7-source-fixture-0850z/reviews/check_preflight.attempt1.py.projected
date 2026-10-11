@@ -1,0 +1,50 @@
+"""Independent read-only recovery preflight. Does not invoke Lean or Lake."""
+from pathlib import Path
+import hashlib,importlib.util,json,shutil,time
+O=Path(__file__).parent;P=Path('$PACKAGE');B=Path('$SHARED_WORKSPACE/connected-union1581-20261011-0705z');R=B/'.build/runs/20261011T071024.079941Z';D=Path('$SOURCE_PREPARATION/recovered')
+spec=importlib.util.spec_from_file_location('helpers',Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);h=m.sha;rd=m.read;start=time.time()
+pin='08983abecd1eb58dfddc05bd2c28f23897e99e838eb6c9d329c4e2357e2f0ad9';assert h(P/'DEPENDENCY-GRAPH.json')==pin;w=rd(P/'DEPENDENCY-GRAPH.json');target='fixture/g7-population';g=w['targets'][target];oldg=rd(B/'DEPENDENCY-GRAPH.json')['targets']['current/connected'];oldr={x['module']:x for x in rd(R/'targets/current_connected/RESULT.json')['component_receipts']};new={'G7EncodedMergerSupport':'e84085fd7687b13f13c38b8d69fc0961410121c50af47f3927f295cc4c0fd5dc','G7OriginalPopulationFixture':'7544fc1cbe13a340a858ee17a73985881278957ed146ff7f27d5fc80618c52cc'}
+assert len(g['modules'])==111 and set(g['modules'])-set(oldg['modules'])==set(new);maths={n for n in g['modules'] if n.startswith('Mathlib.')};assert maths=={'Mathlib.Algebra.MvPolynomial.Polynomial','Mathlib.Algebra.MvPolynomial.Funext','Mathlib.Analysis.Convex.Caratheodory','Mathlib.LinearAlgebra.Matrix.Adjugate'}
+shared=set();receiptpins=[]
+def inode(p):s=p.stat();return s.st_dev,s.st_ino
+for n,v in g['modules'].items():
+ f=P/'source-store'/(v['sha256']+'.lean');assert h(f)==v['sha256'];assert m.imports(f.read_bytes())==v['imports']
+ if n in new:assert v['sha256']==new[n] and f.read_bytes()==(D/(n+'.lean')).read_bytes()
+ else:
+  assert v==oldg['modules'][n];bf=B/'source-store'/(v['sha256']+'.lean');assert f.read_bytes()==bf.read_bytes();shared.add(inode(bf));r=oldr[n];assert r['status']=='PASS_FRESH_KERNEL_CHECK' and r['exit_code']==0 and r['source_and_imports_stable'] and r['native_runtime_stat_stable'];assert r['compiler_sha256']==m.BIN and r['mathlib_commit']==m.MATHLIB
+  assert '-t0' in r['command'] and '-Ddebug.skipKernelTC=false' in r['command'] and '-M4096' in r['command'] and r['cap_seconds']==180
+  keydata={'module':n,'source':r['source_sha256'],'compiler':m.BIN,'mathlib':m.MATHLIB,'trust':0,'kernel_check':True,'imports':r['direct_import_artifacts'],'native_runtime_digest':r['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'};key=hashlib.sha256(json.dumps(keydata,sort_keys=True).encode()).hexdigest();cr=P/'.build/cache'/key/'receipt.json';br=B/'.build/cache'/key/'receipt.json';assert rd(cr)==r==rd(br);shared.add(inode(br));m.bundle(cr.parent/'artifact.olean',r['object_artifacts']);m.bundle(Path(r['cached_object']),r['object_artifacts'])
+  for suffix in r['object_artifacts']:shared.add(inode(m.companion(Path(r['cached_object']),suffix)))
+  for name,z in r['direct_import_bindings'].items():
+   assert z['artifacts']==r['direct_import_artifacts'][name];m.bundle(Path(z['path']),z['artifacts'])
+   if name in g['modules']:assert z['artifacts']==oldr[name]['object_artifacts']
+  receiptpins.append({'module':n,'cache_key':key,'receipt_sha256':h(cr),'source_sha256':v['sha256']})
+assert len(receiptpins)==109 and len(list((P/'.build/cache').glob('*/receipt.json')))==109
+for tn,t in w['targets'].items():
+ seen=set()
+ def visit(n):
+  if n in seen:return
+  seen.add(n)
+  for i in t['modules'][n]['imports']:
+   if i in t['modules']:visit(i)
+ for n in t['roots']:visit(n)
+ assert seen==set(t['modules']);pos={n:i for i,n in enumerate(t['order'])};assert set(pos)==seen and len(t['order'])==len(seen)
+ for n,v in t['modules'].items():
+  assert v==g['modules'][n]
+  for i in v['imports']:
+   if i in pos:assert pos[i]<pos[n]
+ assert set(t['external_imports'])=={i for v in t['modules'].values() for i in v['imports'] if i not in t['modules']}
+assert len(w['targets']['candidate/g7-encoded-support']['modules'])==96
+prep=rd(P/'PREPARATION.json');assert prep['graph_sha256']==pin
+for n,v in prep['scripts'].items():assert h(P/'scripts'/n)==v and (P/'scripts'/n).read_bytes()==(B/'scripts'/n).read_bytes()
+for n in ['lakefile.lean','lake-manifest.json','lean-toolchain']:assert (P/n).read_bytes()==(B/n).read_bytes()
+native=rd(R/'NATIVE-RUNTIME-PINS.json')
+for p,v in native['libraries'].items():assert h(Path(p))==v['sha256']
+seenin=set();allocated=0
+for f in [P,*P.rglob('*')]:
+ s=f.lstat();i=(s.st_dev,s.st_ino)
+ if i not in seenin and i not in shared:allocated+=s.st_blocks*512
+ seenin.add(i)
+st=rd(P/'STAGING-BUDGET.json');assert st['cap']==8*2**20 and st['conservative_new_nonshared_allocation']<st['cap'] and st['before_free']-st['after_free']<st['cap'] and allocated<st['cap'];assert st['launch_threshold']==20*2**30
+free=shutil.disk_usage(P).free;mem=int(next(l.split()[1] for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemAvailable:')))*1024;assert free>20*2**30 and mem>=7*2**30;assert not (P/'.build/LATEST-RUN.json').exists()
+out={'status':'PASS_111_MODULE_PREFLIGHT_PENDING_COMPILER','graph_sha256':pin,'sources':new,'accepted_literal_receipts':109,'selected_modules':111,'second_library_profile_modules':96,'owned_mathlib_modules':sorted(maths),'scripts_byte_identical_to_accepted1581':prep['scripts'],'independent_conservative_new_allocated_bytes':allocated,'recorded_staging_budget':st,'observed_free_bytes':free,'observed_available_memory_bytes':mem,'required_target_argument':target,'required_lean_bin_kind':'directory','standalone_fixture_main_retained':True,'foreign_objects_admitted':False,'compiler_invoked':False,'receipt_pins':receiptpins,'elapsed_seconds':time.time()-start,'files_hashed':len(m.MEMO),'bytes_hashed':m.hashed_bytes};(O/'PREFLIGHT-RESULT.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({k:v for k,v in out.items() if k!='receipt_pins'},indent=2))

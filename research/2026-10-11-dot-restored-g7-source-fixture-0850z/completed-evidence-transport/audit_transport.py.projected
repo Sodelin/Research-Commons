@@ -1,0 +1,92 @@
+"""Receipt-bound reversible transport for exactly nine completed evidence files.
+Default CLI is read-only. Compiler objects, native traces, sources and failed evidence are ineligible.
+"""
+from pathlib import Path
+import argparse,fcntl,gzip,hashlib,io,json,os,time
+ROOT=Path(__file__).resolve().parent
+INDEX_SHA='431f055e6678394f9111d00cedb63ad70e8f65d1b5f7f395800f6af5fb9e580e'
+ALLOWED={'$SHARED_WORKSPACE/connected-union1581-20261011-0705z/.build/runs/20261011T071024.079941Z/attempts/00002-OwnedAudit/work/AUDIT-RESULT.json': ('c87ba37f9362b9dbc995bcb24903cb710e6b538455f406260da14cccb1ddc9b1', 115432682), '$SHARED_WORKSPACE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/targets/current_connected/ACTUAL-IMPORTED-ARTIFACTS.json': ('beb82bb3c60cc60b30b6c73245578053d49138c525a061b5bc63f8c4a5c63fbe', 10107682), '$SHARED_WORKSPACE/connected-union1570-g4span-20261011-0212z/.build/runs/20261011T022043.369265Z/targets/current_connected/ACTUAL-IMPORTED-ARTIFACTS.json': ('04c4688e503f5b662a7ec8cc423bffd385938e646ea841dcc21e5704d75c8385', 10237986), '$SHARED_WORKSPACE/connected-union1575-20261011-0358z/.build/runs/20261011T040211.744850Z/targets/current_connected/ACTUAL-IMPORTED-ARTIFACTS.json': ('73e733975f8a275852ea21675980570e08062dfb222f0e52e8215a5bfbff477a', 10110208), '$SHARED_WORKSPACE/connected-union1581-20261011-0705z/.build/runs/20261011T071024.079941Z/targets/current_connected/ACTUAL-IMPORTED-ARTIFACTS.json': ('d19411572573bb4db1d40499d18ceaef1a0aa93cef6d5b2799a19e95785f6998', 10112306), '$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z/.build/runs/20261011T043239.135086Z/targets/candidate_g3-smoothness/ACTUAL-IMPORTED-ARTIFACTS.json': ('5847911b4427d3ecef64c3a3ccdac58f8bdf505dd8e3e4ee2a3575b47f6e33f5', 6279023), '$SHARED_WORKSPACE/g4-below-meeting-check-20261011-0643z/.build/runs/20261011T064842.285117Z/targets/candidate_g4-below-meeting/ACTUAL-IMPORTED-ARTIFACTS.json': ('2b9b4eb5526892a16629163506a8de9d20f69ae85788848bbeb860e0fe3371d7', 9264646), '$SHARED_WORKSPACE/g4-span-check-20261011-0146z/.build/runs/20261011T015628.150112Z/targets/candidate_g4-actual-span/ACTUAL-IMPORTED-ARTIFACTS.json': ('a1f8a8d3bf230b93ad6d3f8736d88decbbe9401e699c77e385626270ee7a3a23', 9071157), '$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z/.build/runs/20261011T061330.120140Z/targets/candidate_g46-frozen/ACTUAL-IMPORTED-ARTIFACTS.json': ('07000245b2d1739aef4e5cbbc28195f4fc0e22edb89cc1a45c21d347279a0af1', 9069609)}
+CHUNK=1024*1024
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def require(ok,msg):
+ if not ok:raise ValueError(msg)
+def exact(path,digest,size=None):
+ p=Path(path);require(not p.is_symlink(),'symlink not eligible');b=p.read_bytes();require(sha(b)==digest,'file hash mismatch: '+str(p));require(size is None or len(b)==size,'file length mismatch');return b
+def entries():
+ d=json.loads(exact(ROOT/'INDEX.json',INDEX_SHA));es=d['entries'];require(len(es)==9,'wrong entry count');require({e['raw_path']:(e['raw_sha256'],e['raw_bytes']) for e in es}==ALLOWED,'allowlist mismatch');return es
+def lookup(path):
+ p=str(Path(path).absolute());return next((e for e in entries() if e['raw_path']==p),None)
+def binding(e):
+ d=json.loads(exact(e['result_path'],e['result_sha256']));require(d['status']=='PASS','target not PASS');a=d['audit_receipt'];require(a['status']=='PASS_FRESH_KERNEL_CHECK' and a['exit_code']==0 and a['kind']=='complete-owned-audit' and a['source_and_imports_stable'],'audit receipt not successful');
+ kind=e.get('kind','owned_audit');require(kind in ['owned_audit','imported_artifact_ledger'],'unsupported evidence kind')
+ if kind=='owned_audit':
+  require(a['audit_output']==e['raw_path'],'receipt path mismatch');aux=[x for x in a['auxiliary_outputs'] if x['path']=='work/AUDIT-RESULT.json'];require(len(aux)==1 and aux[0]['sha256']==e['raw_sha256'] and aux[0]['bytes']==e['raw_bytes'],'receipt raw binding mismatch');require(str(Path(a['receipt_directory'])/'work/AUDIT-RESULT.json')==e['raw_path'],'receipt directory mismatch')
+ else:
+  require(Path(e['raw_path'])==Path(e['result_path']).parent/'ACTUAL-IMPORTED-ARTIFACTS.json','ledger target-directory mismatch');require(d['target']==e['target'],'ledger target mismatch');require(Path(e['final_receipt_path'])==Path(e['result_path']).parents[2]/'FINAL-RECEIPT.json','ledger final-run path mismatch')
+  if 'prior_review_path' in e:
+   pr=json.loads(exact(e['prior_review_path'],e['prior_review_sha256']));require(str(pr.get('status','')).startswith('PASS') and e['prior_review_field'] in ['actual_imported_artifacts_sha256','actual_artifacts_sha256'] and pr.get(e['prior_review_field'])==e['raw_sha256'],'prior independent ledger digest mismatch')
+ f=json.loads(exact(e['final_receipt_path'],e['final_receipt_sha256']));require(f['status']=='PASS_ALL_REQUESTED_TARGETS','nonterminal run');
+ if kind=='imported_artifact_ledger':
+  require(e['target'] in f['targets_passed'],'target absent from final receipt');require(f['run']==str(Path(e['result_path']).parents[2]),'final run identity mismatch')
+ t=json.loads(exact(e['transport_path'],e['transport_sha256']));require(t['raw_sha256']==e['raw_sha256'] and t['gzip_sha256']==e['gzip_sha256'],'transport binding mismatch');base=Path(e['transport_path']).parent;require(e['parts']==[{'path':str(base/x['path']),'bytes':x['bytes'],'sha256':x['sha256']} for x in t['parts']],'part path binding mismatch')
+def chunks(e):
+ binding(e);z=b''.join(exact(x['path'],x['sha256'],x['bytes']) for x in e['parts']);require(sha(z)==e['gzip_sha256'],'gzip hash mismatch');h=hashlib.sha256();n=0
+ with gzip.GzipFile(fileobj=io.BytesIO(z)) as f:
+  while True:
+   b=f.read(CHUNK)
+   if not b:break
+   n+=len(b);require(n<=e['raw_bytes'],'decompression exceeds bound');h.update(b);yield b
+ require(n==e['raw_bytes'] and h.hexdigest()==e['raw_sha256'],'decompressed raw mismatch')
+def validate(e):
+ p=Path(e['raw_path']);require(not p.is_symlink(),'raw symlink');f=p.open('rb') if p.exists() else None;h=hashlib.sha256();n=0
+ try:
+  for b in chunks(e):
+   if f:require(f.read(len(b))==b,'existing raw differs; no fallback allowed')
+   n+=len(b);h.update(b)
+  if f:require(not f.read(1),'raw extra bytes')
+ finally:
+  if f:f.close()
+ return {'raw_path':str(p),'raw_present':p.exists(),'raw_bytes':n,'raw_sha256':h.hexdigest(),'receipt_archive_raw_binding':'PASS'}
+def read_audit(path):
+ """Explicit reader adapter. Never monkeypatches filesystem or silently trusts absence."""
+ e=lookup(path);require(e is not None,'unlisted evidence path');validate(e)
+ if Path(path).exists():return exact(path,e['raw_sha256'],e['raw_bytes'])
+ return b''.join(chunks(e))
+read_evidence = read_audit
+
+def syncdir(p):
+ fd=os.open(p,os.O_RDONLY|os.O_DIRECTORY)
+ try:os.fsync(fd)
+ finally:os.close(fd)
+def journal(event):
+ p=ROOT/'OPERATIONS.jsonl'
+ with p.open('a') as f:f.write(json.dumps(event,sort_keys=True)+'\n');f.flush();os.fsync(f.fileno())
+ syncdir(ROOT)
+def identity(s):return (s.st_dev,s.st_ino,s.st_mode,s.st_size,s.st_mtime_ns,s.st_ctime_ns)
+def archive_raw(e):
+ """Representation change; main requires explicit commit flag after external review."""
+ p=Path(e['raw_path']);require(p.exists(),'raw already absent; use check, not repeat mutation');before=identity(p.stat())
+ with p.open('rb') as raw:
+  fcntl.flock(raw.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB);validate(e)
+  for q in [ROOT/'INDEX.json',Path(e['transport_path']),*[Path(x['path']) for x in e['parts']]]:
+   with q.open('rb') as f:os.fsync(f.fileno())
+   syncdir(q.parent)
+  require(identity(p.stat())==before,'raw metadata changed during validation');journal({'stage':'VERIFIED_BEFORE_RAW_REPRESENTATION_REPLACEMENT','entry':e,'time':time.time()});require(identity(p.stat())==before,'raw changed before replacement');p.unlink();syncdir(p.parent)
+ validate(e);journal({'stage':'LOSSLESS_ARCHIVE_ACTIVE','raw_path':str(p),'raw_sha256':e['raw_sha256'],'time':time.time()})
+def restore_raw(e):
+ p=Path(e['raw_path'])
+ if p.exists():validate(e);return
+ validate(e);tmp=p.with_name(p.name+'.restore-'+str(os.getpid()));require(not tmp.exists(),'restore scratch exists');h=hashlib.sha256();n=0
+ with tmp.open('xb') as f:
+  for b in chunks(e):f.write(b);h.update(b);n+=len(b)
+  f.flush();os.fsync(f.fileno())
+ require(n==e['raw_bytes'] and h.hexdigest()==e['raw_sha256'],'restore failed');os.link(tmp,p);syncdir(p.parent);require(exact(p,e['raw_sha256'],e['raw_bytes']) is not None,'restored mismatch');tmp.unlink();syncdir(p.parent);journal({'stage':'RAW_RESTORED_EXACTLY','raw_path':str(p),'raw_sha256':e['raw_sha256'],'time':time.time()})
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('mode',choices=['check','archive','restore'],default='check',nargs='?');ap.add_argument('--commit-reviewed-representation-change',action='store_true');a=ap.parse_args()
+ if a.mode!='check':require(a.commit_reviewed_representation_change,'read-only unless explicit reviewed commit flag')
+ es=entries()
+ for e in es:
+  if a.mode=='archive':archive_raw(e)
+  elif a.mode=='restore':restore_raw(e)
+ print(json.dumps({'mode':a.mode,'entries':[validate(e) for e in es]},indent=2))
+if __name__=='__main__':main()

@@ -1,0 +1,52 @@
+from pathlib import Path
+p=Path(__file__).parent
+src=Path('$SHARED_WORKSPACE/g4-below-meeting-independent-review-20261011-0645z/check_final.py').read_text()
+a=src.index('def trace(');b=src.index("context=R/");trace=src[a:b]
+a=src.index('def receipt(');b=src.index("for n in g['order']:");rec=src[a:b]
+pre='''"""Independent final recovery evidence review. No Lean or Lake invocation."""
+from pathlib import Path
+import collections,gzip,hashlib,importlib.util,json,re,time
+O=Path(__file__).parent;P=Path('$PACKAGE');R=P/'.build/runs/20261011T084427.511721Z';B=Path('$SHARED_WORKSPACE/connected-union1581-20261011-0705z');BR=B/'.build/runs/20261011T071024.079941Z'
+spec=importlib.util.spec_from_file_location('helper',Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);h=m.sha;rd=m.read;start=time.time();pin='08983abecd1eb58dfddc05bd2c28f23897e99e838eb6c9d329c4e2357e2f0ad9'
+assert h(P/'DEPENDENCY-GRAPH.json')==h(R/'DEPENDENCY-GRAPH.json')==pin
+g=rd(P/'DEPENDENCY-GRAPH.json')['targets']['fixture/g7-population'];mods=g['modules'];prep=rd(P/'PREPARATION.json')
+for n,v in prep['scripts'].items():assert h(P/'scripts'/n)==v and (P/'scripts'/n).read_bytes()==(B/'scripts'/n).read_bytes()
+assert rd(P/'LAKE-TERMINAL.json')['exit_code']==0
+final=rd(R/'FINAL-RECEIPT.json');assert final==rd(P/'.build/LATEST-RUN.json');assert final['status']=='PASS_ALL_REQUESTED_TARGETS' and final['counts']=={'cache_reuse':109,'fresh_components':2};assert final['targets_requested']==final['targets_passed']==['fixture/g7-population'];assert final['trust_level']==0 and final['kernel_checking'];assert final['compiler_sha256']==final['compiler_final_sha256']==m.BIN and final['compiler_identity_stable'] and final['native_runtime_final_rehash_stable']
+trp=R/'targets/fixture_g7-population/RESULT.json';tr=rd(trp);assert tr['status']=='PASS' and tr['closure_modules']==111
+by={x['module']:x for x in tr['component_receipts']};assert set(by)==set(mods)
+freshpins={'G7EncodedMergerSupport':'e84085fd7687b13f13c38b8d69fc0961410121c50af47f3927f295cc4c0fd5dc','G7OriginalPopulationFixture':'7544fc1cbe13a340a858ee17a73985881278957ed146ff7f27d5fc80618c52cc'}
+for n,v in freshpins.items():assert mods[n]['sha256']==v
+prior=rd(BR/'targets/current_connected/RESULT.json');priorreceipts={x['module']:x for x in prior['component_receipts']}
+for n,r in by.items():
+ if n not in freshpins:assert r==priorreceipts[n]
+nr=rd(R/'NATIVE-RUNTIME-PINS.json');nf=rd(R/'NATIVE-RUNTIME-FINAL-REHASH.json');assert nf['stable'] and nf['compiler_identity_stable'];native=nr['libraries'];assert nf['hashes']=={p:v['sha256'] for p,v in native.items()}
+for p,v in native.items():assert h(Path(p))==v['sha256']
+entries={};indexpins={};roots={Path(r['receipt_directory'].split('/.build/')[0]) for r in by.values()}|{P}
+for root in roots:
+ ip=root/'trace-transport/INDEX.json';indexpins[root.name]=h(ip)
+ for e in rd(ip)['entries']:entries[str(root/e['raw_path'])]=(root,e)
+traces=[]
+'''
+post='''
+for n in g['order']:
+ v=mods[n];source=(P/'source-store'/(v['sha256']+'.lean')).read_bytes();assert hashlib.sha256(source).hexdigest()==v['sha256'];assert m.imports(source)==v['imports'];receipt(by[n],source,v['imports'],'component');m.bundle(context/(n.replace('.','/')+'.olean'),by[n]['object_artifacts']);m.bundle(Path(by[n]['cached_object']),by[n]['object_artifacts'])
+assert sum(x['fresh'] for x in summary)==2 and {x['module'] for x in summary if x['fresh']}==set(freshpins)
+agg=('\\n'.join('import '+n for n in g['roots'])+'\\n').encode();receipt(tr['aggregate_receipt'],agg,g['roots'],'aggregate');assert summary[-1]['fresh']
+body=(P/'scripts/AuditTemplate.lean').read_text().replace('#["NanuqActualBridgeQuartetResolution", "NanuqActualQuartetPortBranching"]','#'+json.dumps(g['order'])).replace('"AUDIT-OWNED.json"','"AUDIT-RESULT.json"');receipt(tr['audit_receipt'],agg+body.encode(),g['roots']+['Lean.Util.CollectAxioms'],'complete-owned-audit');assert summary[-1]['fresh']
+ap=Path(tr['audit_receipt']['audit_output']);assert h(ap)=='a05f096eca2a3a807b2857d2f90a4afd7a64efc55c003839dc54f5dc46a24f1f';audit=rd(ap);assert audit['selected_modules']==g['order'];assert not audit['owned_axioms'] and not audit['nonstandard_axiom_rows'] and not audit['missing_modules'];decl={x['name']:x for x in audit['declarations']};assert len(decl)==audit['declaration_count']==3768;assert sum(x['kind']=='theorem' for x in decl.values())==audit['theorem_declaration_count']==2078
+for x in decl.values():assert set(x['axioms'])<={'propext','Classical.choice','Quot.sound'}
+spec2=importlib.util.spec_from_file_location('archived',Path('$SHARED_WORKSPACE/completed-evidence-transport-20261011-0832z/audit_transport.py'));ar=importlib.util.module_from_spec(spec2);spec2.loader.exec_module(ar);assert h(Path(spec2.origin))=='7878d1e566b7b505c43e0f8a6969b50c6d9e06be8a3d68fa6dfe4e42b247cd11';basebytes=ar.read_evidence(prior['audit_receipt']['audit_output']);assert hashlib.sha256(basebytes).hexdigest()=='c87ba37f9362b9dbc995bcb24903cb710e6b538455f406260da14cccb1ddc9b1';olddecl={x['name']:x for x in json.loads(basebytes)['declarations']}
+new={n:x for n,x in decl.items() if n not in olddecl};shared=set(decl)&set(olddecl);changes=[{'name':n,'old':olddecl[n],'actual':decl[n]} for n in sorted(shared) if olddecl[n]!=decl[n]];missing=[n for n,x in olddecl.items() if x['module'] in mods and n not in decl]
+compare={'base1581_shared_names':len(shared),'base1581_literal_equal':sum(decl[n]==olddecl[n] for n in shared),'base1581_missing_selected_names':missing,'base1581_deltas':changes,'new_names':new,'new_name_count':len(new),'new_theorem_rows':sum(x['kind']=='theorem' for x in new.values())};(O/'EXACT-DECLARATION-COMPARISON.json').write_text(json.dumps(compare,indent=2)+'\\n')
+imported=rd(R/'targets/fixture_g7-population/ACTUAL-IMPORTED-ARTIFACTS.json');groups=collections.defaultdict(dict)
+for x in imported:assert h(Path(x['path']))==x['sha256'] and Path(x['path']).stat().st_size==x['bytes'];assert x['suffix'] not in groups[x['module']];groups[x['module']][x['suffix']]=x['sha256']
+assert set(groups)==set(audit['all_imported_module_names'])
+for n in mods:assert groups[n]==by[n]['object_artifacts']
+for line in (R/'NAMESPACE-RESOLUTION-CHECKS.jsonl').read_text().splitlines():
+ row=json.loads(line);assert Path(row['context'])==context
+ for n,v in row['imports'].items():assert Path(v['lean_path']).resolve()==Path(v['resolved_target']).resolve();m.bundle(Path(v['lean_path']),v['artifacts'])
+sups=list(P.glob('SUPERVISOR-*.json'));assert len(sups)==1;sup=rd(sups[0]);assert sup['status']=='TERMINAL_EXIT_ZERO' and sup['exit_code']==0 and sup['limit_event'] is None;assert sup['allocation_limit_bytes']==12*2**30 and sup['free_floor_bytes']==8*2**30 and sup['per_file_hard_limit_bytes']==512*2**20;assert sup['peak_path_counted_allocated_bytes']<sup['allocation_limit_bytes'] and sup['minimum_observed_free_bytes']>=sup['free_floor_bytes']
+out={'status':'PASS_EVIDENCE_PENDING_EXACT_DECLARATION_DELTA_REVIEW','graph_sha256':pin,'result_sha256':h(trp),'final_receipt_sha256':h(R/'FINAL-RECEIPT.json'),'audit_sha256':h(ap),'receipt_summary':summary,'declarations':3768,'theorem_rows':2078,'fresh_components':2,'literal_reuse':109,'comparison_summary':{k:v for k,v in compare.items() if k not in ['new_names','base1581_deltas']},'comparison_deltas':changes,'owned_axioms':0,'nonstandard_axiom_rows':0,'missing_modules':0,'imported_modules':len(groups),'imported_artifact_records':len(imported),'actual_imported_artifacts_sha256':h(R/'targets/fixture_g7-population/ACTUAL-IMPORTED-ARTIFACTS.json'),'native_traces':traces,'trace_index_sha256':indexpins,'supervisor_sha256':h(sups[0]),'reviewer_compiler_invoked':False,'elapsed_seconds':time.time()-start,'distinct_files_hashed':len(m.MEMO),'bytes_hashed':m.hashed_bytes};(O/'FINAL-EVIDENCE-RESULT.json').write_text(json.dumps(out,indent=2)+'\\n');print(json.dumps({k:v for k,v in out.items() if k not in ['receipt_summary','native_traces','comparison_deltas']},indent=2));print('DELTAS',[(x['name'],[k for k in x['old'] if x['old'][k]!=x['actual'][k]]) for x in changes])
+'''
+(p/'check_final.py').write_text(pre+trace+"context=R/'targets/fixture_g7-population/objects';summary=[]\n"+rec+post)

@@ -1,0 +1,15 @@
+# Independent agent preflight review: recovered G7 sources
+
+PASS for the prepared separate `fixture/g7-population` check, pending actual compilation and final evidence review. No compiler was invoked by this reviewer.
+
+Graph: `08983abecd1eb58dfddc05bd2c28f23897e99e838eb6c9d329c4e2357e2f0ad9`. The initial target has 111 modules: two exact recovered prior sources and 109 literal same-executor accepted prerequisites. The additional 96-module library profile is defined but is not the requested initial invocation.
+
+The recovered source hashes remain `e84085fd7687b13f13c38b8d69fc0961410121c50af47f3927f295cc4c0fd5dc` and `7544fc1cbe13a340a858ee17a73985881278957ed146ff7f27d5fc80618c52cc`. Their full literal imports, current transitive closure and topological orders match the preparation. The population fixture's standalone `main` is retained in this separate profile. Historical foreign compiler objects have not been admitted.
+
+I independently checked all 109 current cache-key inputs, literal accepted receipts, imported and output companion objects, source hashes, strict flags and current native-library hashes. All four owned Mathlib namespace roots are exactly present. All eight scripts, Lake configuration, manifest and toolchain are byte-identical to accepted1581; the namespace, kernel/trust checks, resource supervisor and audit are unchanged.
+
+Independent conservative nonshared allocation: 1,949,696 bytes, below8MiB. Observed free space: 21,502,869,504 bytes; available memory: 9,162,166,272 bytes. Both exceed the unchanged launch thresholds at this check. The execution owner must recheck immediately before launching the explicit target. This receipt does not relax any guard or authorize a larger union.
+
+The first reviewer script used an incorrect remembered name for the fourth owned Mathlib module. It failed before acceptance. Direct wrapper inspection identified `Mathlib.Data.FinEnum`; the corrected checker passes. The initial checker and failure log remain preserved. No candidate source or builder changed.
+
+Evidence: `check_preflight.py` SHA `a432f4a159f373b0d072cf30b35cebdd846b24280a9472a5ca651f69315f09a3`; `PREFLIGHT-RESULT.json` SHA `b43dd53c10f40cc4e090555443617df10569aa295dbd921943c8238fdbdf9bb7`. The checker authenticated 985 files totaling 602,420,814 bytes. This is preflight evidence only, not a new Lean acceptance or rerun of the eight executable comparisons.

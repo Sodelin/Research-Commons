@@ -1,0 +1,25 @@
+# Independent agent review: completed evidence transport
+
+Verdict: PASS for the exact nine-entry reversible representation change, under the stated quiescent/cooperating-workspace assumption. This is an evidence-transport review; it changes no theorem, compiler, trust setting, cache admission or ownership audit.
+
+## Frozen inputs
+
+- Transport source: `7878d1e566b7b505c43e0f8a6969b50c6d9e06be8a3d68fa6dfe4e42b247cd11`.
+- Exact allowlist index: `431f055e6678394f9111d00cedb63ad70e8f65d1b5f7f395800f6af5fb9e580e`.
+- Proposal: `3d363e2072c8b92488b8c54dc793bd95f4a8b95d0cda21fd018b836b692d196a`.
+
+## Independent checks
+
+All nine original files were present during this review. I independently hashed their 189,685,299 bytes, hashed every archive part, decompressed the complete archives and compared the recovered bytes with the originals. I checked their exact PASS RESULT/final receipts and the target/run identities. The ownership audit retains its receipt auxiliary-output hash binding. Five ledger digests also match the previously frozen independent review fields. The other three ledger digests are explicitly newly pinned byte identities; this does not assert that old RESULT files contained those digests.
+
+An AST comparison with the preserved prior reviewed transport finds changes only in `entries`, `binding` and `read_audit`, besides the explicit allowlist and constants. Archive/restore, journaling, fsync, locking, identity checks, bounded decompression and no-overwrite logic are unchanged. The new ledger branch rejects another target, directory, run, final status, missing target and mismatched prior-review digest. I reran all thirteen inherited and nine ledger-specific synthetic controls successfully. Only synthetic fixture paths were mutated in this review.
+
+The archive is durable and validated before unlinking a raw file. A failure after unlink leaves the exact archive and journal available. Interrupted restore leaves the archive and, possibly, a temporary file; the exclusive-create and hard-link steps reject a conflicting destination rather than overwrite it. A leftover temporary file may require explicit diagnosis, not an unchecked retry. Missing or corrupt archives, raw drift, changed receipts and unlisted reader paths fail closed. Legacy consumers must use explicit exact restoration or the reviewed reader. The code is not a hostile concurrent-filesystem defense, as the proposal states.
+
+All source files, native traces, compiler objects, failed evidence and RESULT/final receipts remain outside the eligible set. This review itself performed no historical representation change. Any later execution must report actual post-recovery hashes and measured free capacity before a build launch.
+
+## Executed evidence
+
+- `INDEPENDENT-RESULT.json`: `2440f68f987e46e8c13585c76448429c48001ccc1816dbce9cf060d40eeda925`.
+- `CONTROL-REPLAY.json`: `6fbbae22ede531c864ce6f80d6f07c5a65eeb0ff14b5296c6f1be711ebe817d9`.
+- `LEDGER-CONTROL-REPLAY.json`: `ffc9326da4e383a423468635f872d8a7431b73088af95dbe81d1dbe023a4d15e`.

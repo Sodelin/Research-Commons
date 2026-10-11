@@ -1,0 +1,44 @@
+from pathlib import Path
+import json,hashlib,re,os,shutil
+A=Path(__file__).resolve().parent;R=Path('$SOURCE_PREPARATION');B=Path('$SHARED_WORKSPACE/connected-union1581-20261011-0705z');O=Path('$PACKAGE');H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();manifest=json.load(open(R/'RESTORATION-MANIFEST.json'));base=json.load(open(B/'DEPENDENCY-GRAPH.json'))['targets']['current/connected'];mods=dict(base['modules']);new={}
+for e in manifest['modules']:
+ n=e['module'];p=R/'recovered'/(n+'.lean');assert H(p)==e['source_sha256'];imports=[x for l in re.findall(r'^(?:public\s+)?import\s+([^\n]+)',p.read_text(),re.M) for x in l.split()];assert imports==e['direct_imports'];new[n]={'module':n,'sha256':H(p),'imports':imports};mods[n]=new[n]
+extras=['Mathlib.Algebra.MvPolynomial.Polynomial','Mathlib.Algebra.MvPolynomial.Funext','Mathlib.Analysis.Convex.Caratheodory'];targets={}
+def profile(roots):
+ order=[];external=set();visiting=set()
+ def visit(n):
+  if n not in mods:external.add(n);return
+  if n in order:return
+  assert n not in visiting;visiting.add(n)
+  for i in mods[n]['imports']:visit(i)
+  visiting.remove(n);order.append(n)
+ for n in roots:visit(n)
+ return {'roots':roots,'order':order,'modules':{n:mods[n] for n in order},'external_imports':sorted(external)}
+targets['candidate/g7-encoded-support']=profile(['G7EncodedMergerSupport']+extras)
+targets['fixture/g7-population']=profile(['G7EncodedMergerSupport','G7OriginalPopulationFixture']+extras)
+selected=targets['fixture/g7-population'];old=set(selected['modules'])-set(new);assert len(selected['modules'])==111 and len(old)==109;assert len(targets['candidate/g7-encoded-support']['modules'])==96
+receipts={}
+for p in (B/'.build/cache').glob('*/receipt.json'):
+ d=json.load(open(p));n=d['module']
+ if n in old:
+  assert d['source_sha256']==mods[n]['sha256'];receipts[n]=str(p)
+assert set(receipts)==old
+for n,e in selected['modules'].items():assert H(R/'recovered'/(n+'.lean') if n in new else B/'source-store'/(e['sha256']+'.lean'))==e['sha256']
+assessment={'status':'EXACT_RECOVERED_SOURCES_CURRENT_CONTEXT_ASSESSED_NO_COMPILER','new':new,'selected_modules':111,'accepted_prerequisites':109,'library_profile_modules':96,'namespace_extras':extras,'accepted_receipts':receipts,'prior_manifest_sha256':H(R/'RESTORATION-MANIFEST.json'),'prior_foreign_objects_imported':False};(A/'ASSESSMENT.json').write_text(json.dumps(assessment,indent=2)+'\n')
+cap=8*2**20;before=shutil.disk_usage(A).free;assert before>20*2**30+cap;assert not O.exists();O.mkdir();[(O/n).mkdir() for n in ['source-store','scripts','provenance']];graph={'targets':targets,'scope':'Separate restored prior G7 proof and isolated fixture profiles; accepted1581 unchanged. Only fixture/g7-population is initially requested; global main is not added to mathematical connected target.'};(O/'DEPENDENCY-GRAPH.json').write_text(json.dumps(graph,indent=2)+'\n')
+for n,e in selected['modules'].items():
+ p=R/'recovered'/(n+'.lean') if n in new else B/'source-store'/(e['sha256']+'.lean');os.link(p,O/'source-store'/(e['sha256']+'.lean'))
+for n,rp in receipts.items():
+ p=Path(rp);d=O/'.build/cache'/p.parent.name;d.mkdir(parents=True)
+ for q in p.parent.iterdir():
+  if q.is_file():
+   if q.name=='receipt.json':shutil.copyfile(q,d/q.name)
+   else:os.link(q,d/q.name)
+for p in (B/'scripts').iterdir():
+ if p.is_file():shutil.copyfile(p,O/'scripts'/p.name)
+for n in ['lakefile.lean','lean-toolchain','lake-manifest.json']:shutil.copyfile(B/n,O/n)
+for p in [A/'ASSESSMENT.json',Path(__file__),R/'RESTORATION-MANIFEST.json']:
+ shutil.copyfile(p,O/'provenance'/p.name)
+for p in (R/'recovered').iterdir():
+ if p.is_file() and p.suffix=='.json':shutil.copyfile(p,O/'provenance'/p.name)
+prep={'status':'PREPARED_PENDING_REVIEW_NO_COMPILER','graph_sha256':H(O/'DEPENDENCY-GRAPH.json'),'source_bytes':sum(p.stat().st_size for p in (O/'source-store').iterdir()),'new_source_bytes':sum((R/'recovered'/(n+'.lean')).stat().st_size for n in new),'scripts':{p.name:H(p) for p in (O/'scripts').iterdir()},'profiles':{n:len(t['modules']) for n,t in targets.items()},'initial_target':'fixture/g7-population','source_statements_changed':False};(O/'PREPARATION.json').write_text(json.dumps(prep,indent=2)+'\n');allocated=sum(p.stat().st_blocks*512 for p in O.rglob('*') if not p.is_symlink() and (p.is_dir() or p.stat().st_nlink==1));after=shutil.disk_usage(O).free;assert allocated<cap and after>20*2**30;(O/'STAGING-BUDGET.json').write_text(json.dumps({'before_free':before,'after_free':after,'conservative_new_nonshared_allocation':allocated,'cap':cap,'launch_threshold':20*2**30,'compiler_started':False},indent=2)+'\n');print(json.dumps({'path':str(O),'graph_sha256':prep['graph_sha256'],'new_allocation':allocated,'free_bytes':after,'profiles':prep['profiles']}))
