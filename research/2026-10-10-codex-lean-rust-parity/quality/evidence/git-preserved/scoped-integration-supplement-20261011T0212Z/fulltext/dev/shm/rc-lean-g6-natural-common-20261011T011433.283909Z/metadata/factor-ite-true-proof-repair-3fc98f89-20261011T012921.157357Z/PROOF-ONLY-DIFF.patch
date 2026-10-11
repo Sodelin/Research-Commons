@@ -1,0 +1,22 @@
+--- /dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z/metadata/factor-proof-repair-5f0143f9-20261011T0109Z/G6NaturalCommonForestFactorization.lean
++++ /dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/factor-ite-true-proof-repair-3fc98f89-20261011T012921.157357Z/G6NaturalCommonForestFactorization.lean
+@@ -17,6 +17,10 @@
+ Proof-only follow-up to the actual 1cf01eb0 run, 11 October 2026.
+ Residual kernels are rewritten by pointwise function equalities; the stored
+ selector is transported only by evaluation at the equal named vertex.
++All declarations, physical values, imports and premises are unchanged.
++
++Proof-only follow-up to the actual 5f0143f9 run, 11 October 2026.
++The remaining pointwise residual kernel equality explicitly reduces ite True.
+ All declarations, physical values, imports and premises are unchanged.
+ 
+ Finite actual original COMMON factorization at a local nonroot parallel bigon.
+@@ -296,7 +300,7 @@
+         sourceTimeKernel N unitRates
+           (armExposure N B r t longArm - armExposure N B r t (!longArm)) := by
+       funext d
+-      simp only [residualEpoch, if_pos rfl]
++      simp only [residualEpoch, if_pos rfl, ite_true]
+     rw [hres, ← actual_source_time_add, add_tsub_cancel_of_le hle]
+   · have hb' : b = !longArm := by cases b <;> cases longArm <;> simp_all
+     have hres :

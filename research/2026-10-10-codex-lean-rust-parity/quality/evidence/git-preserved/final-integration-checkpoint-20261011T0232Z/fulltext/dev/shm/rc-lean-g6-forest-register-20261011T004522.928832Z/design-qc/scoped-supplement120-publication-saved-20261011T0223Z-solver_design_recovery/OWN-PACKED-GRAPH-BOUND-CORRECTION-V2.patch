@@ -1,0 +1,17 @@
+--- review_saved.py
++++ review_saved_v2.py
+@@ -49,7 +49,7 @@
+ PACK_INDEX_CACHE={}
+ PACK_OBJECT_CACHE={}
+ PACK_INDEX_PINS={}
+-MAX_PACKED_BODY=2*1024*1024
++MAX_PACKED_BODY=4*1024*1024
+ 
+ def packed_index(path):
+     if path in PACK_INDEX_CACHE:return PACK_INDEX_CACHE[path]
+@@ -262,4 +262,4 @@
+ report={'schema':'INDEPENDENT_FIXED_SUPPLEMENT120_SAVED_GIT_BYTES_QC_V1','contributor':'Codex solver_design_recovery','utc':datetime.now(timezone.utc).isoformat(),'reviewer_path':str(Path(__file__)),'reviewer_sha256':digest(Path(__file__).read_bytes())}
+ try:report['checks']=check();report['status']='PASS_ALL120_FULL_TEXT_GIT_BYTES_WITH_PRIOR213_AND_UPSTREAM1625_RETAINED'
+ except Exception as e:report['status']='FAIL_OWN_REVIEWER';report['error']=str(e);report['traceback']=traceback.format_exc()
+-out=Q/'SCOPED-SUPPLEMENT120-SAVED-GIT-BYTE-QC-ATTEMPT1.json';require(not out.exists(),'immutable own receipt');out.write_text(json.dumps(report,sort_keys=True,indent=2)+'\n');print(json.dumps({'status':report['status'],'path':str(out),'sha256':digest(out.read_bytes()),'bytes':out.stat().st_size,'error':report.get('error'),'index':report.get('checks',{}).get('current_index')}))
++out=Q/'SCOPED-SUPPLEMENT120-SAVED-GIT-BYTE-QC-ATTEMPT2.json';require(not out.exists(),'immutable own receipt');out.write_text(json.dumps(report,sort_keys=True,indent=2)+'\n');print(json.dumps({'status':report['status'],'path':str(out),'sha256':digest(out.read_bytes()),'bytes':out.stat().st_size,'error':report.get('error'),'index':report.get('checks',{}).get('current_index')}))

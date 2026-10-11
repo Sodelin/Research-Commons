@@ -1,0 +1,22 @@
+warning: methods `bank`, `spec`, `exact_order`, `origins`, and `private_site` are never used
+   --> /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/proposals/selected-prefix-record-20261011T0034Z/source_selected_prefix.rs:101:12
+    |
+100 | impl<'a> Table<'a> {
+    | ------------------ methods in this implementation
+101 |     pub fn bank(&self)->&'a Bank {self.bank}
+    |            ^^^^
+102 |     pub fn spec(&self)->&Spec {&self.spec}
+    |            ^^^^
+103 |     pub fn variables(&self)->&[word::Variable] {&self.variables}
+104 |     pub fn exact_order(&self)->&[word::Symbol] {&self.exact_order}
+    |            ^^^^^^^^^^^
+105 |     pub fn origins(&self)->&[Origin] {&self.origins}
+    |            ^^^^^^^
+106 |     pub fn prefix_len(&self)->usize {self.prefix_len}
+107 |     pub fn private_site(&self)->Option<PrivateSite> {self.private_site}
+    |            ^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: 1 warning emitted
+

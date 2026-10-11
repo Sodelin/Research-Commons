@@ -1,0 +1,707 @@
+{
+  "schema": "research_commons_existing_provider_consumer_plan_v2",
+  "created_utc": "2026-10-11T01:46:45.303987+00:00",
+  "contributor": "Codex lean_reuse_successor",
+  "status": "READ_ONLY_CONSTRUCTOR_MAP; no theorem source/producer/constructor acceptance",
+  "immutable_v1": {
+    "json": {
+      "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/legal-positive-twoport-bin-provider-map-20261011T013349.662735Z/PROVIDER-MAP.json",
+      "sha256": "b9f17f6af9cc508dbf8e1fcacf740cf9cb04d58088bb452bd777b8abc0cea767",
+      "bytes": 63081
+    },
+    "text": {
+      "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/legal-positive-twoport-bin-provider-map-20261011T013349.662735Z/PROVIDER-MAP.md",
+      "sha256": "e5e2faf2ca85fe830ead54bee43d658c938f80cbe23c8109ba2e21aa2342d85d",
+      "bytes": 2354
+    },
+    "inheritance": "Unchanged V1 provider rows, exact blocks and named guards are the base. V2 corrects the already accepted rate stage and supplies a concrete prospective graph construction contract."
+  },
+  "existing_obligation_ids": [
+    "G1-ORIGINAL",
+    "G6-COMMON-EXPOSURE",
+    "G6-REVIEWED-FOREST-EXPOSURE",
+    "G6-POSITIVE-GENERATOR-COMPRESSION",
+    "G6-PROTECTED-BINS",
+    "G6-CELL-JOINT-LAW",
+    "G6-MASTER",
+    "G6-WHOLE-EDGE-LIFT",
+    "G7-ORIGINAL-WHOLE-EDGE-CANDIDATE"
+  ],
+  "frozen_register": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/reuse/OBLIGATION-REUSE-MAP.json",
+    "sha256": "068d703857328123fdb3be89a7202f59da8260fcb4e1cc24d0ea74c9d6bacab0",
+    "bytes": 219025
+  },
+  "accepted1504_source_closure": {
+    "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/SOURCE-CLOSURE.json",
+    "sha256": "a57f5d4519bb3d7f38510dad7d2986fd55bdff0c093f3e8296bb0f6cbbe82c44",
+    "bytes": 951300
+  },
+  "accepted_forest101": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/G6-FOREST-REGISTER-COMPRESSION-101-ACCEPTANCE-20261011T0109Z.json",
+    "sha256": "c6fbef540c9dc2f6456c75cfe79c0b55a5a015f1b4d7f8a0f716233f6844c7ce",
+    "bytes": 3676
+  },
+  "additional_providers": [
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/versions/G7OriginalSurvivalCoverage/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "bytes": 7614,
+      "module": "G7OriginalSurvivalCoverage",
+      "imports": [
+        "G7WholeEdgeExposureInvariant",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+      ],
+      "accepted1504_sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "read_coverage": "Full body read.",
+      "declarations": [
+        {
+          "name": "ratesFromLengths",
+          "kind": "def",
+          "lines": [
+            43,
+            49
+          ],
+          "literal_header": "noncomputable def ratesFromLengths (N : RootedBinary V E X) (C : Calendar N.graph)\n    (ell : E → ℝ) (h : ∀ e, 0 < ell e) : PositivePairRates E",
+          "literal_block": "noncomputable def ratesFromLengths (N : RootedBinary V E X) (C : Calendar N.graph)\n    (ell : E → ℝ) (h : ∀ e, 0 < ell e) : PositivePairRates E where\n  edge e := ell e / (C.age (N.graph.source e)-C.age (N.graph.target e))\n  edge_pos e := div_pos (h e) (sub_pos.mpr (C.edge_older e))\n  ancestral := 1\n  ancestral_pos := zero_lt_one\n",
+          "block_sha256": "47cf918c057ab9d8ea6b6be8fe764704a6499a056910c93a06d657dcde74728c"
+        },
+        {
+          "name": "ratesFromLengths_exposure",
+          "kind": "lemma",
+          "lines": [
+            50,
+            54
+          ],
+          "literal_header": "lemma ratesFromLengths_exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (ell : E → ℝ) (h : ∀ e, 0 < ell e) (e : E) :\n    exposure N C (ratesFromLengths N C ell h) e = ell e",
+          "literal_block": "lemma ratesFromLengths_exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (ell : E → ℝ) (h : ∀ e, 0 < ell e) (e : E) :\n    exposure N C (ratesFromLengths N C ell h) e = ell e := by\n  exact div_mul_cancel₀ _ (ne_of_gt (sub_pos.mpr (C.edge_older e)))\n",
+          "block_sha256": "90180ed8386a92a90ad33b7370290746b3628da71a47d1998f5fe49bdad6002f"
+        },
+        {
+          "name": "OpenCube",
+          "kind": "def",
+          "lines": [
+            58,
+            59
+          ],
+          "literal_header": "def OpenCube (x : E → ℝ) : Prop",
+          "literal_block": "def OpenCube (x : E → ℝ) : Prop := ∀ e, 0 < x e ∧ x e < 1\n",
+          "block_sha256": "3586b121e794c91d94803375c4ae0a01e3ffd987dc22a5bf297657be6f0b164c"
+        },
+        {
+          "name": "ratesFromSurvival",
+          "kind": "def",
+          "lines": [
+            65,
+            69
+          ],
+          "literal_header": "noncomputable def ratesFromSurvival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) (hx : OpenCube x) : PositivePairRates E",
+          "literal_block": "noncomputable def ratesFromSurvival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) (hx : OpenCube x) : PositivePairRates E :=\n  ratesFromLengths N C (fun e => -Real.log (x e))\n    (fun e => neg_pos.mpr (Real.log_neg (hx e).1 (hx e).2))\n",
+          "block_sha256": "686bc8be7ed118e1db720048774b1aff27e9860054f807501e41097fbfbc1327"
+        },
+        {
+          "name": "ratesFromSurvival_exposure",
+          "kind": "lemma",
+          "lines": [
+            70,
+            74
+          ],
+          "literal_header": "lemma ratesFromSurvival_exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) (hx : OpenCube x) (e : E) :\n    exposure N C (ratesFromSurvival N C x hx) e = -Real.log (x e) :=\n  ratesFromLengths_exposure N C _ _ e",
+          "literal_block": "lemma ratesFromSurvival_exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) (hx : OpenCube x) (e : E) :\n    exposure N C (ratesFromSurvival N C x hx) e = -Real.log (x e) :=\n  ratesFromLengths_exposure N C _ _ e\n",
+          "block_sha256": "bd8a6ca84c245509c31a2b000d08b231f86edc6a1e36e54b80143cd98d89fc5b"
+        },
+        {
+          "name": "ratesFromSurvival_survival",
+          "kind": "lemma",
+          "lines": [
+            75,
+            80
+          ],
+          "literal_header": "lemma ratesFromSurvival_survival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) (hx : OpenCube x) : survival N C (ratesFromSurvival N C x hx) = x",
+          "literal_block": "lemma ratesFromSurvival_survival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) (hx : OpenCube x) : survival N C (ratesFromSurvival N C x hx) = x := by\n  funext e\n  rw [survival,ratesFromSurvival_exposure,neg_neg,Real.exp_log (hx e).1]\n\n/-- Equality of survival vectors is precisely equality of whole-edge exposures. -/\n",
+          "block_sha256": "1721cbfb7377bb0bad1d6eebe2cf03e2155c8e0c248a68aae39ed1d1a24c43cb"
+        },
+        {
+          "name": "fixed_calendar_survival_image",
+          "kind": "theorem",
+          "lines": [
+            93,
+            102
+          ],
+          "literal_header": "theorem fixed_calendar_survival_image (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) : (∃ r : PositivePairRates E, survival N C r = x) ↔ OpenCube x",
+          "literal_block": "theorem fixed_calendar_survival_image (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E → ℝ) : (∃ r : PositivePairRates E, survival N C r = x) ↔ OpenCube x := by\n  constructor\n  · rintro ⟨r,rfl⟩\n    exact physical_survival_open_cube N C r\n  · intro hx\n    exact ⟨ratesFromSurvival N C x hx,ratesFromSurvival_survival N C x hx⟩\n\n/-- Every physical source has a representative on any chosen strict calendar,\nusing the same graph, parent registry, natural parameters and original mask. -/\n",
+          "block_sha256": "a90a752fe8f64c1b3f66cd891c05ba69e633e5c69f8ba92e1ce9c3a5913d815d"
+        },
+        {
+          "name": "every_actual_source_has_fixed_calendar_representative",
+          "kind": "theorem",
+          "lines": [
+            103,
+            125
+          ],
+          "literal_header": "theorem every_actual_source_has_fixed_calendar_representative (N : RootedBinary V E X)\n    (C C₀ : Calendar N.graph) (sample : Copy → X) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (common : Hybrid N → Bool) (r : PositivePairRates E) :\n    ∃ r₀ : PositivePairRates E,\n      survival N C₀ r₀ = survival N C r ∧\n      naturalCompletedLaw N C sample H p common r = naturalCompletedLaw N C₀ sample H p common r₀ ∧\n      ∀ mask : OriginalMask N,\n        controlledCompletedLaw N C sample H p common r mask =\n          controlledCompletedLaw N C₀ sample H p common r₀ mask",
+          "literal_block": "theorem every_actual_source_has_fixed_calendar_representative (N : RootedBinary V E X)\n    (C C₀ : Calendar N.graph) (sample : Copy → X) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (common : Hybrid N → Bool) (r : PositivePairRates E) :\n    ∃ r₀ : PositivePairRates E,\n      survival N C₀ r₀ = survival N C r ∧\n      naturalCompletedLaw N C sample H p common r = naturalCompletedLaw N C₀ sample H p common r₀ ∧\n      ∀ mask : OriginalMask N,\n        controlledCompletedLaw N C sample H p common r mask =\n          controlledCompletedLaw N C₀ sample H p common r₀ mask := by\n  let r₀ := ratesFromLengths N C₀ (exposure N C r) (exposure_pos N C r)\n  have he : SameWholeEdgeExposure N C C₀ r r₀ := by\n    intro e\n    change exposure N C r e = exposure N C₀ r₀ e\n    exact (ratesFromLengths_exposure N C₀ (exposure N C r) (exposure_pos N C r) e).symm\n  refine ⟨r₀,((survival_eq_iff_exposure N C C₀ r r₀).mpr he).symm,?_,?_⟩\n  · exact actual_natural_completed_exposure_invariant N C C₀ sample H p common r r₀ he\n  · intro mask\n    exact actual_controlled_completed_exposure_invariant N C C₀ sample H p common r r₀ mask he\n\n/-- Direct whole-family consumer: a point of the independent open cube names an\nactual original source, and every actual source with that point has exactly its\nnatural and ALL original controlled completed laws. No finite readout or panel\nnonemptiness premise is needed. -/\n",
+          "block_sha256": "8504c4e591b746d2a7dc1ccc2a5fe8e8a5a709ecf117479b837e4ab9d96b3746"
+        },
+        {
+          "name": "actual_source_survival_chart",
+          "kind": "theorem",
+          "lines": [
+            126,
+            144
+          ],
+          "literal_header": "theorem actual_source_survival_chart (N : RootedBinary V E X) (C₀ : Calendar N.graph)\n    (sample : Copy → X) (H : OriginalParentRegistry N) (p : HybridProbabilities N)\n    (common : Hybrid N → Bool) (x : E → ℝ) (hx : OpenCube x) :\n    let r₀ := ratesFromSurvival N C₀ x hx\n    survival N C₀ r₀ = x ∧\n      ∀ (C : Calendar N.graph) (r : PositivePairRates E), survival N C r = x →\n        naturalCompletedLaw N C sample H p common r = naturalCompletedLaw N C₀ sample H p common r₀ ∧\n        ∀ mask : OriginalMask N,\n          controlledCompletedLaw N C sample H p common r mask =\n            controlledCompletedLaw N C₀ sample H p common r₀ mask",
+          "literal_block": "theorem actual_source_survival_chart (N : RootedBinary V E X) (C₀ : Calendar N.graph)\n    (sample : Copy → X) (H : OriginalParentRegistry N) (p : HybridProbabilities N)\n    (common : Hybrid N → Bool) (x : E → ℝ) (hx : OpenCube x) :\n    let r₀ := ratesFromSurvival N C₀ x hx\n    survival N C₀ r₀ = x ∧\n      ∀ (C : Calendar N.graph) (r : PositivePairRates E), survival N C r = x →\n        naturalCompletedLaw N C sample H p common r = naturalCompletedLaw N C₀ sample H p common r₀ ∧\n        ∀ mask : OriginalMask N,\n          controlledCompletedLaw N C sample H p common r mask =\n            controlledCompletedLaw N C₀ sample H p common r₀ mask := by\n  dsimp only\n  have h₀ := ratesFromSurvival_survival N C₀ x hx\n  refine ⟨h₀,?_⟩\n  intro C r hr\n  have he := (survival_eq_iff_exposure N C C₀ r _).mp (hr.trans h₀.symm)\n  refine ⟨actual_natural_completed_exposure_invariant N C C₀ sample H p common r _ he,?_⟩\n  intro mask\n  exact actual_controlled_completed_exposure_invariant N C C₀ sample H p common r _ mask he\n",
+          "block_sha256": "713e43006a2070c7b05f1e936819e98471767b86ec742bd8c07a6e7d72c58434"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/SourceNetwork.lean",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "bytes": 8458,
+      "module": "SourceNetwork",
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "accepted1504_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "read_coverage": "Occurrence bridge and complete RootedBinary fields read; not every surrounding source lemma claimed.",
+      "declarations": [
+        {
+          "name": "ReachWithout",
+          "kind": "def",
+          "lines": [
+            80,
+            83
+          ],
+          "literal_header": "def ReachWithout (e : E) (a b : V) : Prop",
+          "literal_block": "def ReachWithout (e : E) (a b : V) : Prop :=\n  G.UReach (fun f => f ≠ e) a b\n\n/-- An edge is a bridge precisely when its endpoints disconnect on its deletion. -/\n",
+          "block_sha256": "d5ef91565ad3888669c6513d6e4edd92f9ea582611e52e95cdfeda36e5855b55"
+        },
+        {
+          "name": "IsBridge",
+          "kind": "def",
+          "lines": [
+            84,
+            86
+          ],
+          "literal_header": "def IsBridge (e : E) : Prop",
+          "literal_block": "def IsBridge (e : E) : Prop :=\n  ¬ G.ReachWithout e (G.source e) (G.target e)\n",
+          "block_sha256": "65cffe657add3329e6907791b17b123edb48b1d0411637ba205edede0760114d"
+        },
+        {
+          "name": "RootedBinary",
+          "kind": "structure",
+          "lines": [
+            211,
+            224
+          ],
+          "literal_header": "structure RootedBinary (V : Type u) (E : Type v) (X : Type w)\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]",
+          "literal_block": "structure RootedBinary (V : Type u) (E : Type v) (X : Type w)\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] where\n  graph : EdgeGraph V E\n  root : V\n  leaf : X ↪ V\n  at_least_two_taxa : 2 ≤ Fintype.card X\n  root_degrees : graph.inDegree root = 0 ∧ graph.outDegree root = 2\n  leaf_degrees : ∀ x, graph.inDegree (leaf x) = 1 ∧ graph.outDegree (leaf x) = 0\n  internal_degrees : ∀ a, a ≠ root → (∀ x, leaf x ≠ a) →\n    (graph.inDegree a = 1 ∧ graph.outDegree a = 2) ∨ graph.IsHybrid a\n  acyclic : graph.Acyclic\n  rooted : ∀ a, graph.DReach root a\n  least_stable : ∀ a, (∀ x, graph.Dominates root a (leaf x)) → a = root\n",
+          "block_sha256": "ac91a27b46f8de086d7daa456c9d815800c24cbb4bceee9d6d165da0113ffaa1"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1SplicedSourceAdmission.lean",
+      "sha256": "d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9",
+      "bytes": 5499,
+      "module": "G1SplicedSourceAdmission",
+      "imports": [
+        "G1SpliceLSA",
+        "Mathlib.Data.Fintype.Sum"
+      ],
+      "accepted1504_sha256": "d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9",
+      "read_coverage": "Full body read.",
+      "declarations": [
+        {
+          "name": "splicedNetwork",
+          "kind": "def",
+          "lines": [
+            24,
+            49
+          ],
+          "literal_header": "noncomputable def splicedNetwork (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b) :\n    RootedBinary (SplicedVertex N b A) (SplicedEdge N b A) X",
+          "literal_block": "noncomputable def splicedNetwork (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b) :\n    RootedBinary (SplicedVertex N b A) (SplicedEdge N b A) X where\n  graph := spliceGraph N hc b A\n  root := retainedRoot N b hb A\n  leaf := retainedTaxa N b A\n  at_least_two_taxa := N.at_least_two_taxa\n  root_degrees := by\n    rw [actual_splice_indegree,actual_splice_outdegree]\n    exact N.root_degrees\n  leaf_degrees x := by\n    rw [actual_splice_indegree,actual_splice_outdegree]\n    exact N.leaf_degrees x\n  internal_degrees v hv hleaf := by\n    have hvr : v.val ≠ N.root := by intro h; exact hv (Subtype.ext h)\n    have hvl : ∀ x : X, N.leaf x ≠ v.val := by\n      intro x h\n      exact hleaf x (Subtype.ext h)\n    rcases N.internal_degrees v.val hvr hvl with ht | hh\n    · exact Or.inl ⟨by rw [actual_splice_indegree]; exact ht.1,\n        by rw [actual_splice_outdegree]; exact ht.2⟩\n    · exact Or.inr ((actual_splice_hybrid_iff N hc b A v).mpr hh)\n  acyclic := actual_splice_acyclic N hc b A\n  rooted := actual_splice_rooted N hc b hb A\n  least_stable := actual_splice_least_stable N hc b hb A\n",
+          "block_sha256": "aa8df28db4d96ab6e692921b99c567cdb3ea0c7a45f6c38bfe848e14312c1f43"
+        },
+        {
+          "name": "actual_spliced_cut_child",
+          "kind": "theorem",
+          "lines": [
+            50,
+            63
+          ],
+          "literal_header": "theorem actual_spliced_cut_child (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b) :\n    CutChild (splicedNetwork N hc b hb A)",
+          "literal_block": "theorem actual_spliced_cut_child (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b) :\n    CutChild (splicedNetwork N hc b hb A) := by\n  intro e hh\n  change (spliceGraph N hc b A).IsHybrid ((spliceGraph N hc b A).source e) at hh\n  change (spliceGraph N hc b A).IsBridge e\n  cases e with\n  | inr u => cases u; exact actual_new_edge_bridge N hc b A\n  | inl e =>\n      have hhy := (actual_splice_hybrid_iff N hc b A ((spliceGraph N hc b A).source (.inl e))).mp hh\n      exact (actual_retained_bridge_iff N hc b A e).mpr (hc e.val hhy)\n\n/-- The retained-node calendar is literally the original one. The synthetic\nedge spans the actual original entry/arm/child dates; no new node ages exist. -/\n",
+          "block_sha256": "df0aaac4180b8b097ec1ed752dc87ac29a6a6a6f5f325246e8c588d38678e29c"
+        },
+        {
+          "name": "splicedCalendar",
+          "kind": "def",
+          "lines": [
+            64,
+            80
+          ],
+          "literal_header": "noncomputable def splicedCalendar (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (C : Calendar N.graph) : Calendar (splicedNetwork N hc b hb A).graph",
+          "literal_block": "noncomputable def splicedCalendar (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (C : Calendar N.graph) : Calendar (splicedNetwork N hc b hb A).graph where\n  age v := C.age v.val\n  edge_older e := by\n    cases e with\n    | inl e => exact C.edge_older e.val\n    | inr u =>\n        have he := C.edge_older A.entry\n        have hp := C.edge_older A.fragment.parents.parent0\n        have hd := C.edge_older A.child\n        rw [A.entry_target] at he\n        rw [show N.graph.source A.fragment.parents.parent0 = A.fragment.upper from A.fragment.arm_sources false,\n          A.fragment.parents.target0] at hp\n        rw [A.child_source] at hd\n        exact hd.trans (hp.trans he)\n",
+          "block_sha256": "2f39c3157c0dafb51573afc6bdfd5c4ab56185b77953c5ce36546b40ff395e1d"
+        },
+        {
+          "name": "actual_splice_vertex_decrement",
+          "kind": "theorem",
+          "lines": [
+            81,
+            90
+          ],
+          "literal_header": "theorem actual_splice_vertex_decrement (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) : Fintype.card (SplicedVertex N b A) + 2 = Fintype.card V",
+          "literal_block": "theorem actual_splice_vertex_decrement (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) : Fintype.card (SplicedVertex N b A) + 2 = Fintype.card V := by\n  have hp := Fintype.card_subtype_eq_or_eq_of_ne (actual_upper_hybrid_distinct N b A)\n  have hc := Fintype.card_subtype_compl (fun v : V => v = A.fragment.upper ∨ v = A.fragment.parents.hybrid)\n  have hle := Fintype.card_subtype_le (fun v : V => v = A.fragment.upper ∨ v = A.fragment.parents.hybrid)\n  rw [hp] at hc hle\n  have hcore : Fintype.card (SplicedVertex N b A) = Fintype.card V - 2 := by\n    simpa only [Fintype.card_subtype,not_or,SplicedVertex] using hc\n  omega\n",
+          "block_sha256": "3964de0cb89cfb0ac2d70fe3c6b7e3d8db00d585a7466141054fa968865e77a3"
+        },
+        {
+          "name": "actual_splice_edge_decrement",
+          "kind": "theorem",
+          "lines": [
+            96,
+            109
+          ],
+          "literal_header": "theorem actual_splice_edge_decrement (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) : Fintype.card (SplicedEdge N b A) + 3 = Fintype.card E",
+          "literal_block": "theorem actual_splice_edge_decrement (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) : Fintype.card (SplicedEdge N b A) + 3 = Fintype.card E := by\n  have hm : Fintype.card {e : E // e ∈ removedEdges N b A} = 4 := by\n    simpa only [Fintype.card_coe] using actual_four_removed_edges N b A\n  have hc := Fintype.card_subtype_compl (fun e : E => e ∈ removedEdges N b A)\n  rw [hm] at hc\n  have hret : Fintype.card (RetainedEdge N b A) = Fintype.card E - 4 := hc\n  have hge : 4 ≤ Fintype.card E := by\n    have h := Finset.card_le_univ (removedEdges N b A)\n    rwa [actual_four_removed_edges] at h\n  have hsum : Fintype.card (SplicedEdge N b A) = Fintype.card (RetainedEdge N b A) + 1 := by\n    simp only [SplicedEdge,Fintype.card_sum,Fintype.card_unit]\n  omega\n",
+          "block_sha256": "31ee1b8e3e720a96ad9b97dac3a9b934b57c53eddc9035587feb95307da478b2"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1SpliceCutTransport.lean",
+      "sha256": "5044ecfc4ddfde0b6d3b3a17bf80bf564aae68f23d9b47fdfb6f87059f6002ec",
+      "bytes": 8638,
+      "module": "G1SpliceCutTransport",
+      "imports": [
+        "G1BigonSpliceGraph"
+      ],
+      "accepted1504_sha256": "5044ecfc4ddfde0b6d3b3a17bf80bf564aae68f23d9b47fdfb6f87059f6002ec",
+      "read_coverage": "Full body read.",
+      "declarations": [
+        {
+          "name": "actual_retained_bridge_iff",
+          "kind": "theorem",
+          "lines": [
+            111,
+            125
+          ],
+          "literal_header": "theorem actual_retained_bridge_iff (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) (e : RetainedEdge N b A) :\n    (spliceGraph N hc b A).IsBridge (.inl e) ↔ N.graph.IsBridge e.val",
+          "literal_block": "theorem actual_retained_bridge_iff (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) (e : RetainedEdge N b A) :\n    (spliceGraph N hc b A).IsBridge (.inl e) ↔ N.graph.IsBridge e.val := by\n  constructor\n  · intro hcore hold\n    have h := actual_original_without_collapse N hc b A e hold\n    have hs := collapse_kept N b A (retainedSource N hc b A e)\n    have ht := collapse_kept N b A (retainedTarget N hc b A e)\n    change collapseVertex N b A (N.graph.source e.val) = retainedSource N hc b A e at hs\n    change collapseVertex N b A (N.graph.target e.val) = retainedTarget N hc b A e at ht\n    rw [hs,ht] at h\n    exact hcore h\n  · intro hold hcore\n    exact hold (actual_core_without_expansion N hc b A e hcore)\n",
+          "block_sha256": "ba78ac3f4a9f49d719babd53c7e278d04840c294ade80ffdae3e7e3cb631f23e"
+        },
+        {
+          "name": "actual_new_edge_bridge",
+          "kind": "theorem",
+          "lines": [
+            143,
+            155
+          ],
+          "literal_header": "theorem actual_new_edge_bridge (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) : (spliceGraph N hc b A).IsBridge (.inr ())",
+          "literal_block": "theorem actual_new_edge_bridge (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) : (spliceGraph N hc b A).IsBridge (.inr ()) := by\n  intro hdetour\n  have h := actual_core_without_new_lift N hc b A hdetour\n  have hcpath : N.graph.ReachWithout A.entry (N.graph.target A.child) A.fragment.parents.hybrid :=\n    N.graph.ureach_single ⟨A.child,(actual_entry_child_distinct N b A).symm,Or.inr ⟨A.child_source,rfl⟩⟩\n  have hppath : N.graph.ReachWithout A.entry A.fragment.parents.hybrid A.fragment.upper :=\n    N.graph.ureach_single ⟨A.fragment.parents.parent0,(actual_entry_parent0_distinct N b A).symm,\n      Or.inr ⟨A.fragment.arm_sources false,A.fragment.parents.target0⟩⟩\n  apply A.entry_bridge\n  rw [A.entry_target]\n  exact h.trans (hcpath.trans hppath)\n",
+          "block_sha256": "ebebde00236be03dc4ae7721a22879122eac80c090266e8581c9c5c339a87f44"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1FiniteNormalizationDisplayedTargets.lean",
+      "sha256": "897737ae6add9d5063203b04b4a3c13bb96f1e28bf0f4c241f9ca235cd592096",
+      "bytes": 3612,
+      "module": "G1FiniteNormalizationDisplayedTargets",
+      "imports": [
+        "G1ActualDisplayedQuartetTransport",
+        "G1FiniteOriginalDecoratedCore"
+      ],
+      "accepted1504_sha256": "897737ae6add9d5063203b04b4a3c13bb96f1e28bf0f4c241f9ca235cd592096",
+      "read_coverage": "Full body read.",
+      "declarations": [
+        {
+          "name": "actual_step_displayed_targets",
+          "kind": "theorem",
+          "lines": [
+            20,
+            29
+          ],
+          "literal_header": "theorem actual_step_displayed_targets {S T : Source.{u,v,w} X} (step : Step S T) (panel : Finset X) :\n    actualDisplayedClusters T.network panel = actualDisplayedClusters S.network panel ∧\n    actualDisplayedSplits T.network panel = actualDisplayedSplits S.network panel ∧\n    ∀ q : Fin 4 ↪ X, normalizedDisplayedCutQuartets T.network q = normalizedDisplayedCutQuartets S.network q",
+          "literal_block": "theorem actual_step_displayed_targets {S T : Source.{u,v,w} X} (step : Step S T) (panel : Finset X) :\n    actualDisplayedClusters T.network panel = actualDisplayedClusters S.network panel ∧\n    actualDisplayedSplits T.network panel = actualDisplayedSplits S.network panel ∧\n    ∀ q : Fin 4 ↪ X, normalizedDisplayedCutQuartets T.network q = normalizedDisplayedCutQuartets S.network q := by\n  cases step with\n  | splice b hb hp =>\n    exact ⟨actual_displayed_clusters_splice S.network S.cutChild b hb _ panel,\n      actual_displayed_splits_splice S.network S.cutChild b hb _ panel,\n      fun q => actual_normalized_displayed_quartets_splice S.network S.calendar S.cutChild b hb _ q⟩\n",
+          "block_sha256": "63cc587cf14aef9d5512076ed171b959322eca7111d5c992efec56d4d3b485ab"
+        },
+        {
+          "name": "actual_steps_displayed_targets",
+          "kind": "theorem",
+          "lines": [
+            30,
+            42
+          ],
+          "literal_header": "theorem actual_steps_displayed_targets {S T : Source.{u,v,w} X} (steps : Steps S T) (panel : Finset X) :\n    actualDisplayedClusters T.network panel = actualDisplayedClusters S.network panel ∧\n    actualDisplayedSplits T.network panel = actualDisplayedSplits S.network panel ∧\n    ∀ q : Fin 4 ↪ X, normalizedDisplayedCutQuartets T.network q = normalizedDisplayedCutQuartets S.network q",
+          "literal_block": "theorem actual_steps_displayed_targets {S T : Source.{u,v,w} X} (steps : Steps S T) (panel : Finset X) :\n    actualDisplayedClusters T.network panel = actualDisplayedClusters S.network panel ∧\n    actualDisplayedSplits T.network panel = actualDisplayedSplits S.network panel ∧\n    ∀ q : Fin 4 ↪ X, normalizedDisplayedCutQuartets T.network q = normalizedDisplayedCutQuartets S.network q := by\n  induction steps with\n  | refl => exact ⟨rfl,rfl,fun _ => rfl⟩\n  | @tail T U _ step ih =>\n    obtain ⟨hc,hs,hq⟩ := actual_step_displayed_targets step panel\n    exact ⟨hc.trans ih.1,hs.trans ih.2.1,fun q => (hq q).trans (ih.2.2 q)⟩\n\n/-- Complete ORIGINAL-provenance physical core existence and all documented\ndisplayed C/S/Q targets, with original census caps. No desired source law,\ntarget equality, level bound or fitted demographic parameter is an input. -/\n",
+          "block_sha256": "67d8d973b902d53f1a1e0cc113c6eaa86da6f5d0a45557105c8ed69f04692766"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1ActualGraphNormalization.lean",
+      "sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6",
+      "bytes": 4636,
+      "module": "G1ActualGraphNormalization",
+      "imports": [
+        "G1SplicedSourceAdmission"
+      ],
+      "accepted1504_sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6",
+      "read_coverage": "Full body read; V1 already binds this source.",
+      "declarations": [
+        {
+          "name": "Source",
+          "kind": "structure",
+          "lines": [
+            19,
+            29
+          ],
+          "literal_header": "structure Source (X : Type w) [Fintype X]",
+          "literal_block": "structure Source (X : Type w) [Fintype X] where\n  Vertex : Type u\n  Edge : Type v\n  vertexFintype : Fintype Vertex\n  edgeFintype : Fintype Edge\n  vertexDecidable : DecidableEq Vertex\n  edgeDecidable : DecidableEq Edge\n  network : @RootedBinary Vertex Edge X vertexFintype edgeFintype _ vertexDecidable\n  cutChild : @CutChild Vertex Edge X vertexFintype edgeFintype _ vertexDecidable network\n  calendar : Calendar network.graph\n",
+          "block_sha256": "dfe25cc751f602cb39dabeb19670224faefd71331bd00dd0357dace8281b9dc0"
+        },
+        {
+          "name": "splice",
+          "kind": "def",
+          "lines": [
+            51,
+            60
+          ],
+          "literal_header": "noncomputable def splice (S : Source X) (b : S.network.graph.Blob)\n    (hb : b ≠ S.network.graph.blobOf S.network.root)\n    (hp : Fintype.card (S.network.BlobPort b) = 2) : Source X",
+          "literal_block": "noncomputable def splice (S : Source X) (b : S.network.graph.Blob)\n    (hb : b ≠ S.network.graph.blobOf S.network.root)\n    (hp : Fintype.card (S.network.BlobPort b) = 2) : Source X :=\n  let A := extractedBigon S.network S.cutChild b hb ((actual_quotient_port_card S.network b).symm.trans hp)\n  admit (splicedNetwork S.network S.cutChild b hb A)\n    (actual_spliced_cut_child S.network S.cutChild b hb A)\n    (splicedCalendar S.network S.cutChild b hb A S.calendar)\n\n/-- A step stores only the original offending blob and equality to the\nconstructed splice. It never takes a desired output graph or law as evidence. -/\n",
+          "block_sha256": "cf3a55c884332df668991f81c696f6209420c76544d08e49c5ad569157e18772"
+        },
+        {
+          "name": "Step",
+          "kind": "inductive",
+          "lines": [
+            61,
+            65
+          ],
+          "literal_header": "inductive Step : Source.{u,v,w} X → Source.{u,v,w} X → Prop\n  | splice (S : Source X) (b : S.network.graph.Blob)\n      (hb : b ≠ S.network.graph.blobOf S.network.root)\n      (hp : Fintype.card (S.network.BlobPort b) = 2) : Step S (splice S b hb hp)",
+          "literal_block": "inductive Step : Source.{u,v,w} X → Source.{u,v,w} X → Prop\n  | splice (S : Source X) (b : S.network.graph.Blob)\n      (hb : b ≠ S.network.graph.blobOf S.network.root)\n      (hp : Fintype.card (S.network.BlobPort b) = 2) : Step S (splice S b hb hp)\n",
+          "block_sha256": "a47bdd1cc5da5daef702a7e1d06e8289a439c256930f8036d502200e2e02efed"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G1FiniteTwoPortChain.lean",
+      "sha256": "80569859221212ab9c4aa850a029d5e6a0adac3f37e481e4304f7e40b10e74de",
+      "bytes": 11119,
+      "module": "G1FiniteTwoPortChain",
+      "imports": [
+        "G1NonrootBigonKernel"
+      ],
+      "accepted1504_sha256": "80569859221212ab9c4aa850a029d5e6a0adac3f37e481e4304f7e40b10e74de",
+      "read_coverage": "These complete definitions read; V1 also binds exit/context bodies.",
+      "declarations": [
+        {
+          "name": "NonrootConnector",
+          "kind": "structure",
+          "lines": [
+            34,
+            39
+          ],
+          "literal_header": "structure NonrootConnector (N : RootedBinary V E X)",
+          "literal_block": "structure NonrootConnector (N : RootedBinary V E X) where\n  edge : E\n  ordinary : N.graph.inDegree (N.graph.target edge) = 1\n  source_nonroot : N.graph.source edge ≠ N.root\n  target_nonroot : N.graph.target edge ≠ N.root\n",
+          "block_sha256": "bff0f65bdbd498b9154d626cebf8bad989aa971feebce423053c9f4d881bb17b"
+        },
+        {
+          "name": "TwoPortWord",
+          "kind": "inductive",
+          "lines": [
+            63,
+            67
+          ],
+          "literal_header": "inductive TwoPortWord (N : RootedBinary V E X) : V → V → Type _\n  | nil (node : V) : TwoPortWord N node node\n  | cons (piece : SourcePiece N) {finish : V}\n      (rest : TwoPortWord N piece.outputNode finish) : TwoPortWord N piece.inputNode finish",
+          "literal_block": "inductive TwoPortWord (N : RootedBinary V E X) : V → V → Type _\n  | nil (node : V) : TwoPortWord N node node\n  | cons (piece : SourcePiece N) {finish : V}\n      (rest : TwoPortWord N piece.outputNode finish) : TwoPortWord N piece.inputNode finish\n",
+          "block_sha256": "0c960caf53595683d0d22e09c7ba879776648dcab542633e1c2fc8b5fda279e9"
+        },
+        {
+          "name": "wordProgram",
+          "kind": "def",
+          "lines": [
+            68,
+            72
+          ],
+          "literal_header": "noncomputable def wordProgram (N : RootedBinary V E X) (C : Calendar N.graph)\n    (gamma : V → unitInterval) (common : V → Bool) {a b : V} : TwoPortWord N a b → List (ProgramStep N)\n  | .nil _ => []\n  | .cons piece rest => pieceProgram N C gamma common piece ++ wordProgram N C gamma common rest",
+          "literal_block": "noncomputable def wordProgram (N : RootedBinary V E X) (C : Calendar N.graph)\n    (gamma : V → unitInterval) (common : V → Bool) {a b : V} : TwoPortWord N a b → List (ProgramStep N)\n  | .nil _ => []\n  | .cons piece rest => pieceProgram N C gamma common piece ++ wordProgram N C gamma common rest\n",
+          "block_sha256": "316cb27c6a791ace5367c1cbd6a08a947928085d9d90c69534ee7de6b4cd630d"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/evidence/proof-extensions/history-accepted-union-1497/20261010T204542.182773Z/sources/G7OriginalRelabelling.lean",
+      "sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+      "bytes": 11573,
+      "module": "G7OriginalRelabelling",
+      "imports": [
+        "G7OriginalCensus",
+        "UnifiedLean.Source.NativePairClockLaw",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "accepted1504_sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+      "read_coverage": "Full body read.",
+      "declarations": [
+        {
+          "name": "network",
+          "kind": "def",
+          "lines": [
+            104,
+            126
+          ],
+          "literal_header": "def network (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F) : RootedBinary W F X",
+          "literal_block": "def network (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F) : RootedBinary W F X where\n  graph := graph N.graph v e\n  root := v N.root\n  leaf := N.leaf.trans v.toEmbedding\n  at_least_two_taxa := N.at_least_two_taxa\n  root_degrees := by simpa using N.root_degrees\n  leaf_degrees x := by simpa using N.leaf_degrees x\n  internal_degrees a hr hl := by\n    have hr' : v.symm a ≠ N.root := fun h => hr (by simpa using congrArg v h)\n    have hl' : ∀ x, N.leaf x ≠ v.symm a := by\n      intro x hx\n      exact hl x (by simpa using congrArg v hx)\n    simpa using N.internal_degrees (v.symm a) hr' hl'\n  acyclic := acyclic N.graph v e N.acyclic\n  rooted a := by simpa using N.rooted (v.symm a)\n  least_stable a h := by\n    have ho : ∀ x, N.graph.Dominates N.root (v.symm a) (N.leaf x) := by\n      intro x\n      simpa using h x\n    have he := N.least_stable (v.symm a) ho\n    simpa using congrArg v he\n\n/-- Strict physical durations are carried through a bijection, not refitted. -/\n",
+          "block_sha256": "7ec71fff9da018b54c6590d1d1d0aff977afa6baf6a4538e19d3d62de88e6ca5"
+        },
+        {
+          "name": "calendar",
+          "kind": "def",
+          "lines": [
+            127,
+            132
+          ],
+          "literal_header": "def calendar (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (c : Calendar N.graph) : Calendar (network N v e).graph",
+          "literal_block": "def calendar (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (c : Calendar N.graph) : Calendar (network N v e).graph where\n  age a := c.age (v.symm a)\n  edge_older f := by simpa [network, graph] using c.edge_older (e.symm f)\n\n/-- One positive physical rate per original edge occurrence, with ancestral rate unchanged. -/\n",
+          "block_sha256": "79e44205406eb27ebc7c69c0157dec73b6d0545e2fa5234ef8ff739dc9f0d2ee"
+        },
+        {
+          "name": "registry",
+          "kind": "def",
+          "lines": [
+            181,
+            187
+          ],
+          "literal_header": "def registry (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (H : OriginalParentRegistry N) : OriginalParentRegistry (network N v e)",
+          "literal_block": "def registry (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (H : OriginalParentRegistry N) : OriginalParentRegistry (network N v e) where\n  parents h := parents N v e (H.parents ((hybrids N v e).symm h))\n  original_site h := by\n    have he := congrArg v (H.original_site ((hybrids N v e).symm h))\n    simpa [parents, hybrids] using he\n",
+          "block_sha256": "4818cb8e15524b6173592b35476f66396ef24ca733efabf32bc058b40af4eaba"
+        },
+        {
+          "name": "parent_bit_preserved",
+          "kind": "theorem",
+          "lines": [
+            188,
+            193
+          ],
+          "literal_header": "theorem parent_bit_preserved (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (H : OriginalParentRegistry N) (h : Hybrid N) (b : Bool) :\n    ((registry N v e H).parents ((hybrids N v e) h)).parent b =\n      e ((H.parents h).parent b)",
+          "literal_block": "theorem parent_bit_preserved (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (H : OriginalParentRegistry N) (h : Hybrid N) (b : Bool) :\n    ((registry N v e H).parents ((hybrids N v e) h)).parent b =\n      e ((H.parents h).parent b) := by\n  cases b <;> simp [registry, parents, GProgram.G2.OriginalHybridParents.parent]\n",
+          "block_sha256": "8ed3d92baddbfc4dbeff96d4a2b626342718918043a5aedc40e351d305931704"
+        },
+        {
+          "name": "bridge_iff",
+          "kind": "theorem",
+          "lines": [
+            225,
+            243
+          ],
+          "literal_header": "@[simp] theorem bridge_iff (G : EdgeGraph V E) (v : V ≃ W) (e : E ≃ F) (f : F) :\n    (graph G v e).IsBridge f ↔ G.IsBridge (e.symm f)",
+          "literal_block": "@[simp] theorem bridge_iff (G : EdgeGraph V E) (v : V ≃ W) (e : E ≃ F) (f : F) :\n    (graph G v e).IsBridge f ↔ G.IsBridge (e.symm f) := by\n  change ¬ (graph G v e).UReach (fun a => a ≠ f)\n    ((graph G v e).source f) ((graph G v e).target f) ↔\n    ¬ G.UReach (fun a => a ≠ e.symm f) (G.source (e.symm f)) (G.target (e.symm f))\n  rw [ureach_iff]\n  simp only [graph, Equiv.symm_apply_apply]\n  have hk : (fun a => e a ≠ f) = (fun a => a ≠ e.symm f) := by\n    funext a\n    apply propext\n    constructor\n    · intro h he\n      apply h\n      simpa using congrArg e he\n    · intro h he\n      apply h\n      simpa using congrArg e.symm he\n  rw [hk]\n",
+          "block_sha256": "1c4a4419f2f60979dcf48b7951ac0529fd5206eb2f5b563e5a9ce24b7510cea5"
+        },
+        {
+          "name": "cut_child_preserved",
+          "kind": "theorem",
+          "lines": [
+            244,
+            254
+          ],
+          "literal_header": "theorem cut_child_preserved (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (hc : ∀ f, N.graph.IsHybrid (N.graph.source f) → N.graph.IsBridge f) :\n    ∀ f, (network N v e).graph.IsHybrid ((network N v e).graph.source f) →\n      (network N v e).graph.IsBridge f",
+          "literal_block": "theorem cut_child_preserved (N : RootedBinary V E X) (v : V ≃ W) (e : E ≃ F)\n    (hc : ∀ f, N.graph.IsHybrid (N.graph.source f) → N.graph.IsBridge f) :\n    ∀ f, (network N v e).graph.IsHybrid ((network N v e).graph.source f) →\n      (network N v e).graph.IsBridge f := by\n  intro f hf\n  apply (bridge_iff N.graph v e f).mpr\n  apply hc (e.symm f)\n  change (graph N.graph v e).IsHybrid ((graph N.graph v e).source f) at hf\n  rw [hybrid_iff] at hf\n  simpa [graph] using hf\n",
+          "block_sha256": "f9b747fea3ac9e22a57ccd127b91ddbb7ddd56cc5d2a97ce69b7a487900688c3"
+        }
+      ]
+    }
+  ],
+  "read_only_reader_correction": {
+    "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/CONSTRUCTOR-MAP-V2-READER-ANNOTATION-FAILURE-20261011T0148Z.json",
+    "sha256": "908ddfb9b182b413193a03031f1cc5e9f4118c71c3cba4295af95b61488e78b5",
+    "bytes": 548
+  },
+  "natural_current_status": {
+    "source": {
+      "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/factor-ite-true-proof-repair-3fc98f89-20261011T012921.157357Z/G6NaturalCommonForestFactorization.lean",
+      "sha256": "3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4",
+      "bytes": 26978
+    },
+    "actual_work": "/dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z",
+    "actual_run": "20261011T014055.249073Z",
+    "scheduler_observation": "Complete141 kernel/aggregate/owned audit PASS,3486decl/2293theorem,140authenticatedreuse including qualified a080+1fresh3fc; posttransport/preservation/Root+Design saved acceptance pending.",
+    "formal_acceptance_asserted": false,
+    "a080_source_sha256": "a080722170d367fe9aa7420c5c5488fe4c7df73a6d994aba15346a8d2ee4c917"
+  },
+  "rate_stage_already_discharge": {
+    "providers": [
+      "ratesFromLengths",
+      "ratesFromLengths_exposure",
+      "ratesFromSurvival",
+      "ratesFromSurvival_survival",
+      "fixed_calendar_survival_image",
+      "actual_source_survival_chart"
+    ],
+    "statement": "For every supplied RootedBinary N, strict Calendar C and positive original-edge exposure vector ell, choose one PositivePairRates bank with exposure ell. For every supplied open original whole-edge survival vector x, choose positive REAL rates with survival x. The same-source natural/all-original-mask completed full-Code law chart is accepted1504.",
+    "composition_scope": "This is the fixed-graph, supplied-calendar bank stage required after an admitted expansion is constructed. No duplicate logarithmic rate or decoder theorem is needed.",
+    "limits": [
+      "No graph/class construction.",
+      "No arbitrary local agenda or timed/bin equality.",
+      "No rational-log or algebraic-rate effectivity.",
+      "No independent symbolic multi-slot physical cube."
+    ]
+  },
+  "smallest_prospective_formal_splice_statement": {
+    "review_name_only": "actual_inverse_nonroot_bridge_bigon_splice",
+    "statement_status": "NOT a declared/elaborated/proved theorem; no new Lean module created.",
+    "inputs": [
+      "Finite X and S : G1ActualGraphNormalization.Source X: actual RootedBinary network, CutChild proof and strict Calendar.",
+      "e : G1FiniteTwoPortChain.NonrootConnector S.network: indegree-one descendant endpoint and both endpoints nonroot.",
+      "he : S.network.graph.IsBridge e.edge, deleting exactly that occurrence ID.",
+      "H : OriginalParentRegistry S.network for the ordered registry extension."
+    ],
+    "construction": {
+      "a": "old target e.edge",
+      "b": "old source e.edge",
+      "Delta": "C.age b−C.age a>0",
+      "Vertex": "S.Vertex ⊕ Fin 2",
+      "Edge": "{f:S.Edge // f≠e.edge} ⊕ Fin 4",
+      "old_vertices": "Sum.inl",
+      "u": "Sum.inr 0",
+      "h": "Sum.inr 1",
+      "new_original_occurrences": [
+        {
+          "id": 0,
+          "source": "old b",
+          "target": "u",
+          "role": "rootward connector"
+        },
+        {
+          "id": 1,
+          "source": "u",
+          "target": "h",
+          "role": "ordered parent0"
+        },
+        {
+          "id": 2,
+          "source": "u",
+          "target": "h",
+          "role": "ordered parent1; true selector"
+        },
+        {
+          "id": 3,
+          "source": "h",
+          "target": "old a",
+          "role": "descendant connector"
+        }
+      ],
+      "old_root_taxa_edges": "Keep root/taxon embedding and every old edge occurrence except e through the literal Sum embeddings.",
+      "calendar": "Keep every old age; age h=age a+Delta/3, age u=age a+2*Delta/3. All four fresh physical edge widths are Delta/3>0."
+    },
+    "outputs_to_derive": [
+      "RootedBinary N′ on those concrete carriers: old degrees unchanged, u:(1,2), h:(2,1), actual DAG/root reachability and least-stable root.",
+      "Actual CutChild N′: all original retained bridge statuses transported; h→a bridge derived from he; top connector is a bridge when it leaves an old hybrid; the two parallel arms are separately nonbridges.",
+      "Strict Calendar C′ retaining old ages, and the admitted Source S′=admit N′ hc′ C′. Derive vertex+2/edge+3 and one fresh hybrid identities.",
+      "Actual fresh nonroot two-port blob and its literal ActualBlobBigon footprint/port-card2 witness, derived from the incidence graph.",
+      "H′ extends H on every old hybrid with the same ordered incoming occurrences; fresh h has parent0 occurrence1,parent1 occurrence2. Derive that there are no other new hybrid sites.",
+      "The actual TwoPortWord N′ (old a) (old b): connector3, new nonroot bigon h→u, connector0.",
+      "The literal Step S′ T whose T is the existing constructed splice; explicit bijections T.Vertex≃S.Vertex and T.Edge≃S.Edge. The vertex subtype maps to old V, retained occurrences map to their original IDs, and the new synthetic splice edge maps to e.",
+      "Equality of the relabelled actual network/calendar/root/taxon fields of T with S, proved pointwise from those concrete maps. Never require or assert literal T=S across different carriers.",
+      "Exact displayed C/S/Q target preservation as a derived corollary of the actual Step and proved field equality, not a desired equality input."
+    ],
+    "dependent_statement_outline": "For all S,e,he,H, produce S′,H′,the fresh blob and actual nonroot/port-card witnesses, the connector–bigon–connector Word, and bijections of T=splice S′ freshBlob… to S, with transported network/calendar fields equal to S. This is a finite actual-source existence/construction theorem. It has no desired PMF/kernel equality, no target equality, no hidden-state size bound and no approximation assumption as input.",
+    "proof_plan": "Lift/collapse old directed and undirected paths through the explicit replacement. Reuse old deletion bridge/degree/LSA arguments, but derive reverse admission rather than invoke a nonexistent inverse theorem. Collapse a new-child avoiding detour to an old-e avoiding detour to use he. Identify the four removed fresh occurrence IDs and the fresh two-node blob. Build the explicit splice-to-old carrier bijections and prove the relabelled incidence/root/taxon/age fields.",
+    "existing_providers_after_construction": [
+      {
+        "module": "G7OriginalRelabelling",
+        "heads": [
+          "network",
+          "calendar",
+          "registry",
+          "parent_bit_preserved",
+          "cut_child_preserved"
+        ],
+        "use": "Already supplies actual finite carrier-bijection transport including original parent order; do not invent a second relabelling engine."
+      },
+      {
+        "module": "G1FiniteNormalizationDisplayedTargets",
+        "heads": [
+          "actual_step_displayed_targets"
+        ],
+        "use": "Step preserves actual C/S/Q; then the constructed relabelling field equality identifies its output with S."
+      },
+      {
+        "module": "G1FiniteTwoPortChain",
+        "heads": [
+          "actual_word_exit_population",
+          "actual_word_calendar_ordered",
+          "actual_cap_m_finite_two_port_g1"
+        ],
+        "use": "Produced actual word derives physical chronology/one exit and full carried-tree/context interface under exact local input support."
+      },
+      {
+        "module": "G7OriginalSurvivalCoverage",
+        "heads": [
+          "ratesFromLengths",
+          "ratesFromSurvival"
+        ],
+        "use": "Positive REAL bank from the supplied exact exposures/open edge survival; all fresh edges are genuine positive populations."
+      },
+      {
+        "module": "G6NaturalCommonForestFactorization",
+        "status": "Actual3fc complete pass; saved acceptance pending",
+        "use": "Natural original stored selector and erased entire initialized Old/private marginalization, only under its explicit all-live/local and no-read premises."
+      },
+      {
+        "module": "G6ProtectedBinEndpoint/G6UnrankedBinContinuation",
+        "heads": [
+          "actual_constant_bin_forest_law",
+          "actual_word_exit_reconstructed",
+          "actual_guarded_unranked_bin_future"
+        ],
+        "use": "Complete carried trees/old tags/same original register and strict no-read future under physical CutRefines/wordBinContract."
+      }
+    ],
+    "old_deletion_body_boundary": "G1SplicedSourceAdmission constructs a smaller RootedBinary/CutChild/Calendar from an already admitted original Source and ActualBlobBigon. G1ActualGraphNormalization.Step stores that constructed deletion. These statements prove no arbitrary selected ordinary-bridge expansion exists. G1OriginalRelabelling is a bijection transport, not source insertion."
+  },
+  "class_and_master_boundary": {
+    "small_constructor_discharge_if_proved": "One finite admitted positive strict-calendar parallel bigon expansion, original occurrence registry, physical two-port word and inverse-normalization/target witness.",
+    "source_class_not_implicit": "Source bundles only RootedBinary, CutChild and Calendar. RootedBinary includes LSA-rooted binary DAG/taxa fields but no outer-labelled planar embedding. For the Oct1 master require/preserve its outer-labelled planar semi-directed cut-child galled witness by an actual local edge-neighborhood insertion argument, or bind a matching formal class constructor.",
+    "master_inputs_retained_separately": [
+      "n≥4/full finite sampling and all contemporaneous-tip ages zero (old count/ages retained).",
+      "Original gamma interior and correctly oriented P(true)=P(parent1), with fixed mode; no fixed-Code Bernoulli mixture.",
+      "Full positive baseline and all Euler factors on one legal source/shared original bank. Delta0/equal arms are deterministic, never zero-duration physical edges. K=0 remains an ordinary positive edge.",
+      "Source-specific weak-factor Poissonization, near-generator limits, Euler coupling/error budgets and uniform contextual TV bounds before a polynomial length claim.",
+      "Proper local-cohort copy/opaque embedding, cap and outside-population separation; whole all-Copy CoLocated does not cover an arbitrary outside panel.",
+      "New private V labels naturally drawn once then marginalized/erased through guards; retain all old V register/carried forest/entire correlated Old.",
+      "Literal physical agenda exit/cohort and CutRefines/wordBinContract plus calibrated decoder; no observational inverse/G4 provenance/global QE/native producer refinement implied."
+    ],
+    "oldest_hand_relation": "Oct1 Lemma3 and AppendixA.2 already supply the source-positive hand construction/approximation argument. guard_chain and clock_embedding_checks are finite component checks, not a matching all-graph Lean constructor. The proposed finite insertion formalizes that source interface only; it does not establish the master polynomial approximation bound.",
+    "forest101_relation": "The accepted finite full-Code→forest/register fibre compression is for centered generator quotients, preserving one atom certificate before all source/rows. It is not direct arbitrary PMF-mixture biological realizability."
+  },
+  "searched_coverage": {
+    "inherited_v1": {
+      "scope": "13 named accepted1504 provider bodies/declaration blocks; forest101 body; pending natural3fc body; Oct1 exact source-class/positive construction plus existing checker guard/rate code;1504 module inventory and1497 sources searched for explicit positive-chain/Euler construction names",
+      "explicit_negative_search": "No matching X_res/positive_chain/positiveChain/binary_factor/factorWord/Poissoniz/poissoniz/euler_reconstruct/Euler text in the inspected1497 .lean source directory. This is a bounded text/source audit, not a proof of absence in all research.",
+      "not_claimed": [
+        "all research proof acceptance",
+        "old hand source positivity formalized",
+        "native full-Code Old/refinement",
+        "timed/metric observer equality",
+        "fullG6/G4 closure"
+      ]
+    },
+    "new_exact_bodies": "The eight accepted1504 source records above were authenticated against literal source/import closure and their recorded declaration blocks. Full G7OriginalRelabelling and G1SpliceCutTransport bodies read; SourceNetwork admission/bridge sections read.",
+    "bounded_keyword_search": "Accepted1497 G1*/G5* .lean screened for SourceIso/SourceEquiv/GraphIso/isomorph/relabell, then accepted G7OriginalRelabelling read. No inverse constructor was established in these inspected bodies; this is not a universal absence claim."
+  },
+  "next_gate": "Root/Design review this actual finite source-construction contract and stronger master-class guard before any new source module. Then sole scheduler measures/authorizes an exact closure if code is requested. No duplicate rate/kernel/count/compression/bin engine.",
+  "execution": {
+    "compiler_calls": 0,
+    "native_calls": 0,
+    "git_writes": 0,
+    "overlay_writes": 0,
+    "new_theorem_sources": 0,
+    "new_metadata_directory": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/legal-positive-twoport-bin-constructor-map-v2-20261011T014645.303868Z"
+  }
+}

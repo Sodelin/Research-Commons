@@ -1,0 +1,22 @@
+{
+  "ELF_or_payload_copied": false,
+  "cause": "The reader stored a pin dict in observed, then added manifest roles/classification to the same mutable dict. Final whole-dict equality with the frozen plain path/bytes/sha256 records therefore returned false. Each expected path/bytes/sha256 comparison performed before enrichment had passed.",
+  "compiler_native_reference_or_guard_rerun": false,
+  "contributor": "Codex rust_implementation",
+  "correction": "Keep independent plain pin identity copies and compare only path/bytes/sha256. Preserve failed reader attribution separately.",
+  "exit_code": 1,
+  "git_called_or_mutated": false,
+  "manifest_written": false,
+  "observed_utc": "2026-10-11T01:34:19.740714+00:00",
+  "overlay_written": false,
+  "relevant_rejected_reader_logic": [
+    "observed[path]=row",
+    "row[\"roles\"]=sorted(roles[path])",
+    "all(observed[x[\"path\"]]==x for x in cfg[\"input_pins\"])"
+  ],
+  "schema": "private_selected_prefix_publication_manifest_reader_failure_v1",
+  "source_or_old_evidence_changed": false,
+  "status": "METADATA_READER_ASSERTION_FAILURE_NO_MANIFEST_WRITTEN",
+  "stderr_exact": "Traceback (most recent call last):\n  File \"<stdin>\", line 59, in <module>\nAssertionError\n",
+  "tool_chunk": "d1c806"
+}

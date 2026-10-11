@@ -1,0 +1,139 @@
+{
+  "additional_checks": "Strict full53file860013byte count, unchanged core and reviewed shmem-only exporter/source-QC pins. No target code imported or invoked.",
+  "contributor": "Codex / solver_design_recovery",
+  "preserved_parent_reader": {
+    "path": "/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z/design-qc/main-1cf-failure-20261011T0110Z-solver_design_recovery/review_saved.py",
+    "sha256": "a7dc6a611697d18901dcf35c88ad659791d1dfe1cca6fde4a25398ca8cd67567"
+  },
+  "reader": {
+    "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/design-qc/main-5f-failure-20261011T0140Z-solver_design_recovery/review_saved.py",
+    "sha256": "3f997dce14d1c02bc44f67677d4b10c93cca6918f74e434202b06b0725a0580a"
+  },
+  "replacements": [
+    [
+      "20261011T005738.287542Z",
+      "20261011T011433.283909Z"
+    ],
+    [
+      "20261011T010231.626199Z",
+      "20261011T012303.766984Z"
+    ],
+    [
+      "main-1cf-failed",
+      "main-5f-failed"
+    ],
+    [
+      "g6-natural-common-forest-factorization-1cf01eb0",
+      "g6-natural-common-forest-factorization-5f0143f9"
+    ],
+    [
+      "1cf01eb0e55c5f75b396208fd236878faab70d0c3b91950bfed905a5025003fd",
+      "5f0143f9f266659cb35c495c3bbb01781039d1338a2eb527e1196bd419b6c4f9"
+    ],
+    [
+      "natural-v8-preparation-20261011T0103Z",
+      "natural-v9-preparation-20261011T0118Z"
+    ],
+    [
+      "V8-ACTUAL-PREPARATION",
+      "V9-ACTUAL-PREPARATION"
+    ],
+    [
+      "c2ccc6e00bf8d47680b8ddf5c46458fcf87f77e60f4cd0d617d3e060a79486d9",
+      "bd8b66e2f5491ae836c07683dcecb6d90efc8fbf03425d363402d5c8aea78693"
+    ],
+    [
+      "P/'lean/G6-NATURAL-COMMON-FACTORIZATION-MAIN-1CF-FAILED-",
+      "W/'G6-NATURAL-COMMON-FACTORIZATION-MAIN-5F-FAILED-"
+    ],
+    [
+      "b8d2be40c66bfeeb15c1300fbd391fad7e3c87da262a377149db92b39fbf442d",
+      "a6dafff494b4b6fd93347c9badd8e34bebf7e1a47b7388340780311f8e64d9c3"
+    ],
+    [
+      "E=P/'lean'/m['evidence']",
+      "E=Path(m['evidence'])"
+    ],
+    [
+      "m['packet_distribution_complete'] and m['lossless_distribution']=='PACKET_COPY'",
+      "not m['packet_distribution_complete'] and m['lossless_distribution']=='FIXED_SHMEM_EXPORT_ONLY_EXPLICIT_CAPACITY_BOUNDARY'"
+    ],
+    [
+      "exact actual failed run and complete packet/fixed export",
+      "exact actual failed run and complete fixed-shmem export; packet explicitly absent"
+    ],
+    [
+      "require(fp['bytes']==ep['bytes']==row['bytes'] and (F/rel).read_bytes()==(E/rel).read_bytes(),'fixed/packet byte equality')",
+      "require(fp['bytes']==ep['bytes']==row['bytes'] and F==E,'manifest fixed path and full-byte identity')"
+    ],
+    [
+      "830934",
+      "829073"
+    ],
+    [
+      "all53 fixed+packet file inventory",
+      "all53 fixed-shmem file inventory"
+    ],
+    [
+      "require(capacity['transient_reserve_bytes']==8388608 and not capacity['source_or_evidence_deleted'] and capacity['free_before_bytes']>=capacity['transient_reserve_bytes']+capacity['measured_payload_bytes']+capacity['manifest_and_result_reserve_bytes'],'dated packet export fits unchanged8MiB reserve')",
+      "require(capacity['transient_reserve_bytes']==8388608 and not capacity['source_or_evidence_deleted'] and capacity['free_before_bytes']>=capacity['transient_reserve_bytes'] and capacity['free_before_bytes']<capacity['transient_reserve_bytes']+capacity['measured_payload_bytes']+capacity['manifest_and_result_reserve_bytes'],'dated fixed-shmem fallback preserves unchanged8MiB reserve'); require(m['natural_exporter_v3_storage_location_derivation']['packet_copy_disabled'] and m['natural_exporter_v3_storage_location_derivation']['result_directory']==str(W) and m['exporter_sha256']=='cb9826d672dde47dd4beb8fa5f739a1d365d06c416ccf38737859a46c3217b04','explicit reviewed location-only exporter no packet copy')"
+    ],
+    [
+      "1db0efe1a7f671cd21074b24608d43df6809faca4258ca04df04af078df0ec25",
+      "5a720018343ddea62a7f04c5e35bccff149208855e2ebcaf132f58f42e0f597e"
+    ],
+    [
+      "ee163f8eb75997868d51c271720500539a78a7e95388627d2873e48efdfc4a57",
+      "979f720bb7e93dda1047efa3a41cc88f61819e1a2a6e08d02501f7bdeb8f873b"
+    ],
+    [
+      "292307",
+      "291825"
+    ],
+    [
+      "5e9f915580e6660aedee208df7a114d6652dc023079bc11648da09212f3e43ae",
+      "ad403abbc1651f67ceb61901476b63aeb5d01d0b93f9219ca0fba6e4f483f2ad"
+    ],
+    [
+      "12637463",
+      "12617424"
+    ],
+    [
+      "334137fd49aa24a9dcdd0a228128a803d615b7b647ede6c31ddc7f9fa8b2f2f2",
+      "44a0b362bf2e1033f9a1108c040bda3860814b1bbc1b062be12f8bbb6a6ac13f"
+    ],
+    [
+      "locations==[[287,4],[292,4],[350,8]]",
+      "locations==[[297,76]]"
+    ],
+    [
+      "exact three ordinary proof/API errors and two diagnostic sorry prints retained",
+      "exact one ordinary ifTrue proof goal and two diagnostic sorry prints retained"
+    ],
+    [
+      "PASS_SAVED_FIFTH_MAIN_1CF_PROOF_FAILURE_COMPLETE_CAPTURE_AND_QUALIFIED_PREFIX_REUSE_QC",
+      "PASS_SAVED_SIXTH_MAIN_5F_PROOF_FAILURE_COMPLETE_CAPTURE_AND_QUALIFIED_PREFIX_REUSE_QC"
+    ],
+    [
+      "'packet_files':53",
+      "'packet_files':0"
+    ],
+    [
+      "'packet_distribution_complete':True",
+      "'packet_distribution_complete':False"
+    ],
+    [
+      "Lean factorization failed at three proof/API sites with two diagnostic sorry prints",
+      "Lean factorization failed at one ifTrue proof goal with two diagnostic sorry prints"
+    ],
+    [
+      "Complete51-row packet/fixed preservation used the dated unchanged8MiB floor. Subsequent explicit root sparse materialization/relocation does not rewrite this historical result.",
+      "Complete51-row fixed-shmem-only preservation is explicit. Encoded/distribution bytes are829073;53 actual files including preservation manifest total860013. The result does not claim a packet copy. Later Git publication must keep this historical storage result unchanged."
+    ],
+    [
+      "natural_main_1cf_failure_saved_design_qc_v1",
+      "natural_main_5f_failure_saved_design_qc_v1"
+    ]
+  ],
+  "schema": "saved_failure_reader_derivative_v1"
+}

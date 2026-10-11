@@ -1,0 +1,7 @@
+{
+  "contributor": "Codex / solver_design_recovery",
+  "error_type": "KeyError",
+  "explanation": "Own inline preliminary reader assumed all V1 provider rows carried literal_imports. Two separately scoped consumer rows omit that field. Corrected reader allows only those two exact module names and compares source imports to their independently pinned original freezes. No target/source/map mutation or PASS output occurred.",
+  "field": "literal_imports",
+  "status": "PRESERVED_OWN_READER_SCHEMA_ASSUMPTION_FAILURE"
+}

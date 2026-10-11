@@ -1,0 +1,21 @@
+--- frozen/G4ActualOriginalSpanDiagonal.lean
++++ elaboration-r1/G4ActualOriginalSpanDiagonal.lean
+@@ -49,7 +49,9 @@
+   calc
+     Fintype.card (AtNode (state s) v) =
+         Fintype.card {l : Copy // l ∈ (state s).live} := Fintype.card_congr e
+-    _ = liveCard s := by simp [liveCard]
++    _ = liveCard s := by
++      simp [liveCard]
++      rfl
+ 
+ noncomputable def edgeDiagonal (N : RootedBinary V E X) (C : Calendar N.graph)
+     (r : PositivePairRates E) (e : E) (n : ℕ) : ℝ≥0∞ :=
+@@ -143,6 +145,7 @@
+       change ((sourceProgram N r (spanProgram N C gamma common first ++
+         spanProgram N C gamma common last) s).map liveCard) (liveCard s) = _
+       rw [actual_no_loss_append N r _ _ s _ hrow, ihfirst s hall]
++      rfl
+ 
+ theorem spanDiagonal_ne_top (N : RootedBinary V E X) (C : Calendar N.graph)
+     (r : PositivePairRates E) (gamma : V → unitInterval) (common : V → Bool)

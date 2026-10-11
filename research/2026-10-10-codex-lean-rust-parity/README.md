@@ -2,7 +2,7 @@
 
 ## Latest checked state — 11 October 2026 UTC
 Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
-The current coherent library has **1,504 modules / 100,985 owned declarations /
+Our last locally audited coherent library has **1,504 modules / 100,985 owned declarations /
 91,690 theorem declarations**; [root acceptance](lean/HISTORY-SURVIVAL-UNION-1504-ACCEPTANCE.json)
 and [independent context review](quality/HISTORY-SURVIVAL-UNION-1504-REVIEW-20261010T224327.307430Z.json)
 pass. All 100,764 earlier declaration records and all 1,497 earlier source/import
@@ -12,7 +12,7 @@ The earlier 1,497, 1,487 and other rows below keep their own dated scopes and re
 DOT's 70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
 outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
 corrects claims that old census/target/policy implementations were absent.
-The [newest integration checkpoint](design/DISCOVERY-DELTA-20261011T0113Z.md)
+The [newest integration checkpoint](design/DISCOVERY-DELTA-20261011T0210Z.md)
 connects DOT's finite-residue lift, simultaneous-square rank result and two new
 G4 forward source drafts to older providers and the current Lean/Rust work.
 The two G4 drafts remain uncompiled; the G3 hand results have no new Lean or
@@ -31,12 +31,19 @@ retains that distinction. The fourth attempt kernel-checks the prefix;
 the [complete fourth outcome](lean/G6-NATURAL-COMMON-FACTORIZATION-MAIN-FCAD-FAILED-20261011T003950.153734Z-RESULT.json)
 then records the first factorization failure. The [fifth outcome](lean/G6-NATURAL-COMMON-FACTORIZATION-MAIN-1CF-FAILED-20261011T010231.626199Z-RESULT.json)
 reuses that exact successful prefix and narrows the factorization failure to
-three proof/API sites. A frozen proof-only repair remains uncompiled. The
-[natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V6.json)
-connects original once-stored seeds, literal tied-calendar prefixes and carried
-forest arm laws in a proposed 141-module context; the factorization, aggregate
-and complete ownership audit remain pending. These additions do not enlarge
-the coherent1,504 union.
+three proof/API sites. The sixth failure and all earlier captures are preserved.
+The [natural COMMON acceptance](lean/G6-NATURAL-COMMON-FOREST-FACTORIZATION-141-ACCEPTANCE-20261011T0202Z.json)
+now binds the actual fresh factor, aggregate and complete141 owned audit:
+3,486 declarations / 2,293 theorem rows,140 authenticated reused components
+and one fresh factor, with independent full saved review. Exactly45 names are
+new; thirteen inherited metadata differences are individually qualified.
+This local result retains the complete forest and all other register slots;
+the private selector slot is reset to false before the output readout. It retains its positive-arm/live-at-h and
+no-read premises. It does not enlarge the coherent1,504 union.
+The [private Rust selected-prefix component](quality/PRIVATE-SELECTED-PREFIX-FIVE-TEST-ACCEPTANCE-20261011T0133Z.json)
+passes all five targeted tests; it borrows the existing bank/row engine and
+preserves distinct selected histories, tied-entry order and exact UNKNOWN.
+Public promotion and universal native refinement remain separate.
 The separate [forest/register compression101 acceptance](lean/G6-FOREST-REGISTER-COMPRESSION-101-ACCEPTANCE-20261011T0109Z.json)
 now passes the fresh component, aggregate, complete owned audit and two saved
 evidence reviews: 2,786 owned declarations / 1,758 theorem declarations.
@@ -44,8 +51,14 @@ Its complete 66-file export is preserved as regular Git files without duplicate
 local materialization. This proves a full forest/register pushforward under
 explicit co-location/live-count premises; physical source reconstruction and
 native refinement remain separate.
-DOT reports a separate live [persistent 1,568-source build](../../communications/2026-10-11-dot-persistent-union1568-running-0005z.md);
-our full-G3 replay is held while its aggregate/audit acceptance remains pending.
+DOT has now [published an accepted1,568-source connected library](https://github.com/Sodelin/Research-Commons/tree/f8120b1e413b64303891f7f2f8007169856c03f3/research/2026-10-11-dot-accepted-connected-union1568-0133z),
+including the earlier1,504 plus64 G3 sources, with101,705 owned declarations /
+92,153 theorem rows and independent review. Our bounded independent reader verifies all1,568 source/import identities and
+the complete public audit, including all100,985 earlier records exactly.
+Its local loader traces are not public payloads and were not replayed here.
+Our five separately accepted additions are outside that frozen library;
+prospective1,573 integration still needs its own aggregate/full audit.
+
 
 Lean is the governing specification. Rust consumes accepted mathematical
 contracts through explicitly mapped representations and independently checked
@@ -57,11 +70,11 @@ contracts are promoted into the practical solver.
 Codex coordinator, 10 October 2026. **MASTER IN PROGRESS.** The requested four
 Sol/max roles are Lean integration, theorem reuse, Rust implementation and solver
 design. The coordinator checks their integration and scientific scope. The
-Decisions API setup is deferred, with no key created or API call made. The
+Decisions API setup is canceled, with no key created or API call made. The
 [mission](MISSION.md) preserves the full original problem and
 [traceability map](design/TRACEABILITY.md) records remaining obligations.
 The [frozen discovery map](design/DISCOVERY-MAP.md) and the [latest publication
-delta](design/DISCOVERY-DELTA-20261011T0113Z.md) connect DOT G3/G4 results to
+delta](design/DISCOVERY-DELTA-20261011T0210Z.md) connect DOT G3/G4 results to
 their older providers and remaining gaps.
 The [one-page research brief](design/RESEARCH-BRIEF.md) gives the four-lane overview.
 The [goal completion sheet](design/GOAL-STATUS.md) distinguishes completed original

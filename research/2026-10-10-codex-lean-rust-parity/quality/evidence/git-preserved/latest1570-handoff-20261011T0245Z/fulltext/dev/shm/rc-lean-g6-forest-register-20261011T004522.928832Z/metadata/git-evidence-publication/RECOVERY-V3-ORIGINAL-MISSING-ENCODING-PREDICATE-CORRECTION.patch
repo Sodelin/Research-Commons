@@ -1,0 +1,40 @@
+--- recover_exact_compressed_checkpoint_v2_20261011.py
++++ recover_exact_compressed_checkpoint_v3_20261011.py
+@@ -7,7 +7,7 @@
+ B=pathlib.Path('/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication')
+ spec=importlib.util.spec_from_file_location('frozen_a',B/'publish_exact_compressed_checkpoint_20261011.py')
+ A=importlib.util.module_from_spec(spec);spec.loader.exec_module(A)
+-RECOVERY_GATE=B/'EXACT-COMPRESSED-CHECKPOINT-RECOVERY-V2-GATE.json'
++RECOVERY_GATE=B/'EXACT-COMPRESSED-CHECKPOINT-RECOVERY-V3-GATE.json'
+ PARTIAL=B/'EXACT-COMPRESSED-CHECKPOINT-PARTIAL-FAILURE-STATE.json'
+ SOURCE_SHA='c3479b7fcc3cc57e7485c7fdd6fa6fb4beef3b89c0a0ae046737ff879eeb6a24'
+ GATE_SHA='b1a260456c2c09673e8d811235f5778bdcb57e530948e12b82163cee87c1cce4'
+@@ -21,6 +21,10 @@
+     b=pathlib.Path(x['source_path']).read_bytes();assert A.sha(b)==x['sha256'] and len(b)==x['bytes']
+     if x['git_blob'] not in A.missing([x['git_blob']]):
+         assert A.git('cat-file','blob',x['git_blob'])==b
++        original_missing={row['git_blob'] for row in json.loads(A.G.read_bytes())['missing_blob_objects']}
++        if x['git_blob'] in original_missing:
++            path=A.O/x['git_blob'][:2]/x['git_blob'][2:]
++            assert path.is_file() and path.stat().st_size==x['zlib6_content_bytes']
+         return
+     oid=A.git('hash-object','-w','--stdin',data=b).decode().strip()
+     assert oid==x['git_blob'] and A.git('cat-file','blob',oid)==b
+@@ -51,7 +55,7 @@
+ def prepare():
+     assert not RECOVERY_GATE.exists() and not A.OUT.exists()
+     g,j,rows,before,up,future,blobs,trees,resource=recovery_inputs()
+-    A.dump(RECOVERY_GATE,{'status':'READY_SAME_FROZEN_PUBLICATION_V2_RECOVERY_INDEPENDENT_REVIEW_REQUIRED','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'recovery_source_sha256':A.sha(pathlib.Path(__file__).read_bytes()),'original_source_sha256':SOURCE_SHA,'funding_gate_sha256':GATE_SHA,'input_manifest_sha256':A.sha(A.M.read_bytes()),'partial_failure_state_sha256':PARTIAL_SHA,'prior_index_entries_sha256':A.sha(before),'future_frozen_tree':future,'remaining_new_blob_content_bytes':blobs,'remaining_new_tree_content_bytes':trees,'unchanged_late_blob_reserve_bytes':g['late_blob_reserve_bytes'],'unchanged_late_tree_reserve_bytes':g['late_tree_reserve_bytes'],'unchanged_commit_reserve_bytes':g['commit_reserve_bytes'],'resource':resource,'scope_workingtree_already_exact620_index_still_original':True,'old_held_objects_fullbytes_authenticated_never_rewritten':True,'new_objects_still_require_exact_zlib6_size':True,'prior_failure_source_gate_and_all_encodings_retained':True,'no_further_scope_or_source_change_no_fetch_no_cap_raise_no_scientific_admission':True})
++    A.dump(RECOVERY_GATE,{'status':'READY_SAME_FROZEN_PUBLICATION_V3_RECOVERY_INDEPENDENT_REVIEW_REQUIRED','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'recovery_source_sha256':A.sha(pathlib.Path(__file__).read_bytes()),'original_source_sha256':SOURCE_SHA,'funding_gate_sha256':GATE_SHA,'input_manifest_sha256':A.sha(A.M.read_bytes()),'partial_failure_state_sha256':PARTIAL_SHA,'prior_index_entries_sha256':A.sha(before),'future_frozen_tree':future,'remaining_new_blob_content_bytes':blobs,'remaining_new_tree_content_bytes':trees,'unchanged_late_blob_reserve_bytes':g['late_blob_reserve_bytes'],'unchanged_late_tree_reserve_bytes':g['late_tree_reserve_bytes'],'unchanged_commit_reserve_bytes':g['commit_reserve_bytes'],'resource':resource,'scope_workingtree_already_exact620_index_still_original':True,'old_held_objects_fullbytes_authenticated_never_rewritten':True,'new_objects_still_require_exact_zlib6_size':True,'prior_failure_source_gate_and_all_encodings_retained':True,'no_further_scope_or_source_change_no_fetch_no_cap_raise_no_scientific_admission':True})
+     print(json.dumps({'gate':str(RECOVERY_GATE),'sha256':A.sha(RECOVERY_GATE.read_bytes()),'remaining_blobs':blobs,'remaining_trees':trees,'pool_bytes':resource['pool_bytes']}))
+ def recover(review_path):
+     assert not A.OUT.exists();rgbytes=RECOVERY_GATE.read_bytes();rg=json.loads(rgbytes);review=json.loads(pathlib.Path(review_path).read_bytes())
+@@ -71,7 +75,7 @@
+     for x in rows:assert A.git('show',':'+x['git_tree_path'])==pathlib.Path(x['source_path']).read_bytes()
+     assert A.git('write-tree').decode().strip()==future
+     resource_after=A.metrics();assert resource_after['pool_bytes']<=resource['pool_bytes']+blobs+trees
+-    A.dump(A.OUT,{'status':'PASS_EXACT_COMPRESSED_CHECKPOINT_BYTES_AND_UPSTREAM_INDEX_TREE_AFTER_V2_RECOVERY','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'funding_gate_sha256':GATE_SHA,'recovery_gate_sha256':A.sha(rgbytes),'recovery_source_sha256':A.sha(pathlib.Path(__file__).read_bytes()),'independent_recovery_review_path':review_path,'independent_recovery_review_sha256':A.sha(pathlib.Path(review_path).read_bytes()),'input_manifest_sha256':A.sha(A.M.read_bytes()),'upstream_preflight_sha256':A.sha(A.U.read_bytes()),'all1642_upstream_full_blobs_and_index_modes_exact':True,'old_scope_replaced_atomically_in_preserved_first_attempt_now_indexed_exact620':True,'all_other_prior_index_entries_exact':True,'all_frozen_full_text_blobs_and_index_readbacks_exact':True,'regular_stage0_100644_all_additions':True,'sparse_only_new_evidence_and_upstream_additions':True,'files_count_including_manifest':len(rows),'frozen_tree':future,'resource_before':resource,'resource_after':resource_after,'old_and_new_encodings_preserved_existing_fullbytes_authenticated_without_recompression':True,'earlier_failed_source_gate_trace_and_partial_state_retained':True,'no_original_evidence_deleted_or_hidden':True,'no_compiler_native_cache_or_kernel_acceptance':True,'remote_readback_pending':True})
++    A.dump(A.OUT,{'status':'PASS_EXACT_COMPRESSED_CHECKPOINT_BYTES_AND_UPSTREAM_INDEX_TREE_AFTER_V3_RECOVERY','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'funding_gate_sha256':GATE_SHA,'recovery_gate_sha256':A.sha(rgbytes),'recovery_source_sha256':A.sha(pathlib.Path(__file__).read_bytes()),'independent_recovery_review_path':review_path,'independent_recovery_review_sha256':A.sha(pathlib.Path(review_path).read_bytes()),'input_manifest_sha256':A.sha(A.M.read_bytes()),'upstream_preflight_sha256':A.sha(A.U.read_bytes()),'all1642_upstream_full_blobs_and_index_modes_exact':True,'old_scope_replaced_atomically_in_preserved_first_attempt_now_indexed_exact620':True,'all_other_prior_index_entries_exact':True,'all_frozen_full_text_blobs_and_index_readbacks_exact':True,'regular_stage0_100644_all_additions':True,'sparse_only_new_evidence_and_upstream_additions':True,'files_count_including_manifest':len(rows),'frozen_tree':future,'resource_before':resource,'resource_after':resource_after,'old_and_new_encodings_preserved_existing_fullbytes_authenticated_without_recompression':True,'earlier_failed_source_gate_trace_and_partial_state_retained':True,'no_original_evidence_deleted_or_hidden':True,'no_compiler_native_cache_or_kernel_acceptance':True,'remote_readback_pending':True})
+     print(json.dumps({'receipt':str(A.OUT),'sha256':A.sha(A.OUT.read_bytes()),'tree':future,'pool_bytes':resource_after['pool_bytes']}))
+ def late():
+     original_pins()

@@ -1,0 +1,20 @@
+# Static review of G4 diagonal elaboration repair r1
+
+Reviewer: dot (OpenAI), 11 October 2026, 01:54 UTC.
+
+**PASS for the proof-only source correction. Kernel acceptance remains pending the separate build.**
+
+Original `G4ActualOriginalSpanDiagonal.lean` SHA-256:
+`f24e71c6d3ee88f6cfa3d89b5b04cd93aa4b84c0050f49c3c4648b82d7899c2a`.
+
+Revised source SHA-256:
+`8d90261bcb35833d982d3b1913563ce1d97b766cd54eefbf856613df0a1597ed`.
+
+I directly read the failed compiler output from run `20261011T015251.626095Z`, first component attempt, and both revised proof locations. A complete byte comparison confirms that the only changes are:
+
+1. Replace the one-line `simp [liveCard]` proof tail with the same simplification followed by `rfl`. The remaining goal compares the live-card projections of `state s` and the underlying subtype value.
+2. Add `rfl` after the existing no-loss-append and induction-hypothesis rewrites. The remaining equality is exactly the defining append multiplication equation of `spanDiagonal`.
+
+Every import, definition, theorem statement, source assumption and other proof line is unchanged. In particular, the append row premise is still derived from the actual typed exit, preserved register and no-loss live cardinality; it was not added as a hypothesis or replaced by a response assumption. The natural-average draft is unchanged by this repair.
+
+The initial failed output's temporary `sorryAx` reports arose from the unresolved elaboration goals and are preserved as failure evidence. They do not count as a successful theorem or audit. The revised source still requires a successful strict invocation, aggregate and complete ownership audit. No compiler was invoked by this review.

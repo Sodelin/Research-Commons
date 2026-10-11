@@ -1,0 +1,22 @@
+{
+  "contributor": "Codex / solver_design_recovery",
+  "corrected_reader": {
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/private-selected-prefix-saved-20261011T0126Z-solver_design_recovery/review_saved_v2.py",
+    "sha256": "4c5650e10b722e91610066dcdd0c729df7173c4f443642229bcbc732730dd3ba"
+  },
+  "correction": "A new source derivative selects the two observed nested fields and preserves exact whole argv equality against the frozen execution configuration and actual phase receipts. No guard, test input, target source, identity or resource/scope check changed.",
+  "pass": {
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/private-selected-prefix-saved-20261011T0126Z-solver_design_recovery/PRIVATE-FIVE-TEST-SAVED-QC-ATTEMPT2.json",
+    "sha256": "857a1ac7f0916211667709964bd372a8d60aa3da8b5c38514c22b0fbb5437c11"
+  },
+  "preserved_failure": {
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/private-selected-prefix-saved-20261011T0126Z-solver_design_recovery/PRIVATE-FIVE-TEST-SAVED-QC-ATTEMPT1.json",
+    "sha256": "05930f5b8df1723849f55e32e97fe41e2a04d7f5d7d02d2ccb64958800e96990"
+  },
+  "preserved_reader": {
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/private-selected-prefix-saved-20261011T0126Z-solver_design_recovery/review_saved.py",
+    "sha256": "0f91f847281d2c2f6028b6331b1bfc4382bb8e35163a14201e8e4453f836e63f"
+  },
+  "reason": "The first saved reader looked for guessed top-level compile_argv/runtime_argv fields in the initial build plan. The actual immutable plan nests those exact argv arrays under preferred_build.command_argv and runtime.command_argv; a KeyError stopped the reader before PASS.",
+  "scope": "Own saved JSON reader only; no target module, guard, compiler, runtime or Git operation."
+}

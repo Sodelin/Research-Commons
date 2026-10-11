@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "$G4_PROFILE/scripts/build_desktop.py", line 47, in <module>
+    b=DesktopBuilder();assert args.target in b.graph['targets'];raise SystemExit(b.run_targets([args.target]))
+  File "$G4_PROFILE/scripts/build_desktop.py", line 14, in __init__
+    super().__init__()
+    ~~~~~~~~~~~~~~~~^^
+  File "$G4_PROFILE/scripts/build_with_authenticated_overlay.py", line 35, in __init__
+    super().__init__()
+    ~~~~~~~~~~~~~~~~^^
+  File "$G4_PROFILE/scripts/build_with_mathlib_overlay.py", line 74, in __init__
+    assert owned == OWNED_MATHLIB
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

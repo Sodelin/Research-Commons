@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "$INDEPENDENT_REVIEW/check_final.py", line 222, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "$INDEPENDENT_REVIEW/check_final.py", line 219, in main
+    report=final_check(g,expected);report.update(graph_sha256=GRAPH,compiler_invoked=False,distinct_file_hashes=len(MEMO),bytes_hashed=hashed_bytes,elapsed_seconds=time.time()-start)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "$INDEPENDENT_REVIEW/check_final.py", line 54, in final_check
+    terminal=read(ROOT/'LAKE-TERMINAL.json');assert terminal['exit_code']==0
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

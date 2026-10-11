@@ -1,0 +1,19 @@
+"""Short dated integration note readback; no target execution or mutation."""
+from pathlib import Path
+from datetime import datetime,timezone
+import hashlib,json
+W=Path('/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z')
+Q=W/'design-qc/static1573-and-readout-gap-20261011T0230Z-solver_design_recovery'
+P=Path('/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity')
+def pin(p,h):
+ d=p.read_bytes();assert hashlib.sha256(d).hexdigest()==h;return {'path':str(p),'bytes':len(d),'sha256':h},d
+note,data=pin(P/'design/INTEGRATION-STATE-20261011T0232Z.md','169205b5833dca962e35df66f0b4e3b18f271d293fd093c6f52bc5fdf49561b9')
+static,_=pin(Q/'STATIC1573-INDEPENDENT-SAVED-QC-ATTEMPT2.json','681eee5466636421fde230ec47d64d84528a9518728ed4a324f0b06c8ca33136')
+gap,_=pin(Q/'NATURAL141-RUST-READOUT-GAP-INDEPENDENT-SOURCE-QC-ATTEMPT1.json','b720a3f3520b9642843fc7be19d30b7a0b4b943f9777170cdcc6194ad7cf52b8')
+g4,g4data=pin(W/'metadata/g4-public219-readonly-review-20261011T0232Z/PUBLIC-G4-219-READONLY-REVIEW-ATTEMPT1.json','88c72abf675f477538a1885175168806c5a4428fdeb1547c0c2fef6791dcd118')
+summary,sd=pin(W/'metadata/g4-public219-readonly-review-20261011T0232Z/PUBLIC-G4-219-SAVED-REVIEW-SUMMARY-20261011T0233Z.json','8865bc593dcfb9dfa20847bdd44d64501f61903e857e616ba26993e3c354969f')
+g=json.loads(g4data);s=json.loads(sd);assert g['source_modules_verified']==219 and g['complete219_audit']['declarations']==4381 and g['complete219_audit']['theorems']==2878 and s['global_new_names']==44 and s['global_new_theorems']==29 and s['module_only_changes']==4 and not s['coherent1570_or1575_audit_claimed']
+text=data.decode()
+for phrase in ['private selector slot is reset to false','full carried forest and all other original register slots','static 1,573-module source plan','No combined 1,573 kernel/aggregate/full-owned audit or runnable build context','prospective 1,575','not a combined acceptance','remains uncompiled','Latent transition states retain that bit','Arbitrary literal-Code Old readers need a separate correspondence','calibrated mixed-colour topology observation identity','MASTER IN PROGRESS']:assert phrase in text
+r={'schema':'short_dated_integration_state_readback_qc_v1','contributor':'Codex solver_design_recovery','utc':datetime.now(timezone.utc).isoformat(),'status':'PASS_DATED_INTEGRATION_STATE_SCOPES_MATCH_BOUND_REVIEWS','note':note,'bindings':[static,gap,g4,summary],'scientific_scope':'Separate Natural141 and finiteRust5; exact static1573 only. Separate DOT219 public source/full4381/2878 audit has44globally new/29thm and4module-only qualifications. Adding two DOT-owned versions yields proposed1575, no combined audit. G3 proposal remains uncompiled.','representation_scope':'Erase only named private output slot; retain outside registers/full forest and latent transition bit. Arbitrary literal-Code Old and encoding/quotient/native refinement remain separate.','remaining_research_scope':'Inverse admitted graph/calendar/word/deletion constructor and calibrated mixed-colour observation on a supplied actual source are distinct gaps. No master/global closure.','forthcoming_pointer_qualification':'quality/INTEGRATION-EVIDENCE-POINTER-20261011T0232Z.json was announced by root; this note readback does not authenticate its not-yet-frozen bytes. Root final manifest/gate must bind it.','prior601_documentation_bytes_changed':False,'no_compiler_native_reference_Git_mutation_or_source_edit':True,'reviewer_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+out=Q/'INTEGRATION-STATE-NOTE-SCOPE-READBACK-QC-20261011T0232Z.json';assert not out.exists();out.write_text(json.dumps(r,sort_keys=True,indent=2)+'\n');assert out.stat().st_size<4096;total=sum(p.stat().st_size for p in Q.iterdir() if p.is_file());assert total<128*1024;print(json.dumps({'status':r['status'],'path':str(out),'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'bytes':out.stat().st_size,'directory_bytes':total}))

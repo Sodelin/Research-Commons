@@ -1,0 +1,88 @@
+{
+  "Git_or_compiler_or_native_or_reference_started": false,
+  "accepted_source_or_cache_or_attempt_modified": false,
+  "contributor": "Codex rust_implementation",
+  "current25root_plan": {
+    "bytes": 4411,
+    "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/RESOURCE-AND-RUN-PLAN.json",
+    "sha256": "0db1bb265fec8e2a4c89b0361d2b48f3f38c17d35aeb479b623c0954f097bac5"
+  },
+  "dated_capacity_recomputed_from_authenticated_v1_review": {
+    "conservative_copy_reserve_bytes": 73744384,
+    "headroom_bytes": 136052736,
+    "input_allocated_file_bytes": 62386176,
+    "input_compressed_content_bytes": 55754823,
+    "input_files": 2261,
+    "next_proof_reserve_bytes": 79691776,
+    "nonreclaim_abort_bytes": 16106127360,
+    "nonreclaim_before": 12175503360,
+    "nonreclaim_with_copy_reserve": 12249247744,
+    "qualification": "Dated parent read-only measurement only, not a new capacity/actual-copy acceptance. V2 remeasures current capacity and all idle markers at actual launch.",
+    "scratch_abort_bytes": 2013265920,
+    "scratch_before": 1723777024,
+    "scratch_with_copy_and_next_reserve": 1877213184,
+    "unchanged_object_payload_cap_bytes": 67108864
+  },
+  "exact_parent_derivative_diff": "--- /dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/relocate_git_object_pool_losslessly_20261011.py\n+++ /dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/relocate_git_object_pool_losslessly_v2_20261011.py\n@@ -106,12 +106,22 @@\n     assert [(r['path'], r['bytes'], r['sha256']) for r in copied] == [(r['path'], r['bytes'], r['sha256']) for r in rows]\n     check_limits(roots)\n     OLD.rename(BACKUP)\n-    OLD.symlink_to(NEW, target_is_directory=True)\n-    # Every original logical object path resolves to the exact retained bytes.\n-    for row in rows:\n-        assert digest(OLD / row['path']) == row['sha256']\n-        assert digest(BACKUP / row['path']) == row['sha256']\n-    assert inventory(NEW) == copied\n+    try:\n+        OLD.symlink_to(NEW, target_is_directory=True)\n+        # Every original logical object path resolves to the exact retained bytes.\n+        for row in rows:\n+            assert digest(OLD / row['path']) == row['sha256']\n+            assert digest(BACKUP / row['path']) == row['sha256']\n+        assert inventory(NEW) == copied\n+    except BaseException:\n+        # Restore the original logical pool after any redirect/verification failure.\n+        # The verified counted copy and every original object byte remain retained.\n+        if OLD.is_symlink():\n+            OLD.unlink()\n+        assert not OLD.exists() and BACKUP.is_dir()\n+        BACKUP.rename(OLD)\n+        assert inventory(OLD) == rows\n+        raise\n     # Remove only the redundant temporary directory after both exact rehashes.\n     # All object content remains at its original logical path and counted target.\n     shutil.rmtree(BACKUP)\n@@ -135,4 +145,26 @@\n \n \n if __name__ == '__main__':\n-    main()\n+    try:\n+        main()\n+    except BaseException as error:\n+        failure = WORK / 'metadata/git-evidence-publication/GIT-OBJECT-POOL-RELOCATION-V2-FAILURE-20261011.json'\n+        states = []\n+        for path in (OLD, NEW, BACKUP):\n+            states.append({'path': str(path), 'exists': path.exists(),\n+                           'is_symlink': path.is_symlink(), 'is_directory': path.is_dir(),\n+                           'resolved_path': str(path.resolve())})\n+        report = {'status': 'RELOCATION_FAILED_ALL_SURVIVING_POOLS_PRESERVED',\n+                  'utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),\n+                  'error_type': type(error).__name__, 'error_text': str(error),\n+                  'pool_states': states,\n+                  'partial_counted_copy_deleted': False,\n+                  'source_cache_attempt_receipt_index_reference_changes': False}\n+        try:\n+            with failure.open('x') as stream:\n+                json.dump(report, stream, indent=2, sort_keys=True)\n+                stream.write('\\n')\n+        except OSError as receipt_error:\n+            print(json.dumps({'failure_receipt_write_error': type(receipt_error).__name__,\n+                              'pool_states': states}))\n+        raise\n",
+  "object_files_reread_or_copied_by_reviewer": false,
+  "observed_utc": "2026-10-11T01:38:27.533975+00:00",
+  "overlay_written": false,
+  "parent_design_v1_held_review": {
+    "bytes": 498091,
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/git-object-pool-relocation-source-20261011T0130Z-solver_design_recovery/OBJECT-POOL-RELOCATION-V1-SOURCE-QC.json",
+    "sha256": "d1a45ca6222f09ad594a27d47891afb62ff2d7e2ab0174961ccbed10ee348aff"
+  },
+  "passed_findings": [
+    "Only two diff hunks: inner BaseException rollback for symlink creation/post-redirect whole-file verification; outer best-effort failure receipt with surviving OLD/NEW/BACKUP states. Parent copying/hashes/resource functions/constants unchanged.",
+    "OLD remains untouched throughout stream copy. Destination files are create-new, copied in65536-byte chunks, flushed/fsynced, copystat and SHA/length checked. Source full inventory unchanged and destination whole path/size/SHA inventory match before redirect.",
+    "On normal symlink creation or post-redirect verification exception, remove only the redirected symlink, restore the original BACKUP through same-/tmp-parent rename, revalidate restored inventory, then propagate the exception. Retained verified/partial counted copy is not deleted.",
+    "Backup data deletion occurs only after every redirected logical object and BACKUP file hash check and complete destination inventory equality. Under the declared no-other-Git-writers gate, the removed backup is redundant; original logical object paths resolve to the verified counted destination.",
+    "Failure after copying/deletion or failure during rollback is reported by the outer handler when possible, naming all surviving paths; no second copy or source/index/ref write is introduced. Failed receipt write is separately printed; no unconditional success is emitted.",
+    "Target is inside an already counted W004522 root; exact plan SHA0db1 and25-root list authenticated.64MiB payload cap, scratch2GiBhard/1.875GiBabort and15GiBnonreclaim limits unchanged; copy/next-proof reserve checks precede mutation and remeasure at runtime."
+  ],
+  "preserved_parent_source": {
+    "bytes": 6006,
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/relocate_git_object_pool_losslessly_20261011.py",
+    "sha256": "7e92cda2d3b076f6edee1a597077202c04957ec90555eeb68538ec1b0a9caf50"
+  },
+  "qc_storage_scope": "New small text receipt in existing counted W004522 metadata, parent source/review bytes untouched.",
+  "recovery_qualification": {
+    "inner_try_line": 109,
+    "no_forced_stop_of_root_owned_normal_migration_requested": true,
+    "other_excluded_cases": [
+      "SIGKILL/power-loss cannot be caught by Python or guaranteed to emit a failure receipt.",
+      "No adversarial/concurrent Git object writer guarantee; root states all Git/math/native producers idle and owns the exclusive relocation.",
+      "All preservation guarantees concern logical file paths/bytes, not original inode identity or metadata of empty directories."
+    ],
+    "qualifies_not_a_current_byte_loss_finding": true,
+    "redundant_backup_delete_line": 127,
+    "remaining_asynchronous_boundary": "OLD.rename(BACKUP) occurs just before entering the inner try. An asynchronous interruption after rename but before protected suite entry can leave OLD absent while intact BACKUP and verified NEW remain. Outer failure receipt names them when execution continues; this is recoverable preserved bytes, not comprehensive crash-atomic rollback.",
+    "rename_line": 108
+  },
+  "reviewed_scope": "Fixed opaque Git object file pool relocation. No Git command, mathematical compiler, native/reference producer, source/cache/attempt/index/reference mutation performed by reviewer. Actual relocation is root-owned and separately gated.",
+  "schema": "git_object_pool_lossless_relocation_v2_independent_source_qc_v1",
+  "source": {
+    "bytes": 7652,
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/relocate_git_object_pool_losslessly_v2_20261011.py",
+    "sha256": "53082e706eeb223b03f541d7af2b514f1a6be9c6aa4e1960ca930b2955a4d30f"
+  },
+  "source_parsed_as_ast_not_imported_or_executed": true,
+  "status": "PASS_FIXED_SOURCE_ONLY_WITH_EXPLICIT_RECOVERY_QUALIFICATION",
+  "target_module_imported_or_executed": false,
+  "unchanged_function_asts": [
+    "digest",
+    "inventory",
+    "measured",
+    "check_limits"
+  ],
+  "unchanged_top_level_assignments_seen": [
+    "WORK",
+    "OLD",
+    "NEW",
+    "BACKUP",
+    "PLAN",
+    "PLAN_SHA",
+    "OUT",
+    "OBJECT_CAP"
+  ]
+}

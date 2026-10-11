@@ -1,0 +1,38 @@
+--- /dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z/scripts/prepare_g6_natural_common_factorization_20261011_v9_shmem_metadata.py
++++ /dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/scripts/prepare_g6_natural_common_factorization_20261011_v10_shmem_metadata.py
+@@ -22,7 +22,7 @@
+      'sha256': 'bd50bf4feda9bbcb5a5ddc9e870a9b017b372ce62844110d1595bb8be2ba0ecf'},
+     {'path': str(ROOT.parent/'design/history/g6-natural-main-fcad-failure-saved-qc-20261011T0044Z-solver_design_recovery/FOURTH-LIVE-A080-PASS-FCAD-FAILURE-SAVED-QC-ATTEMPT1.json'),
+      'sha256': '34a434cc420b59e696964d5a95cedf7833abfaa82a8c4f8e3af64c6ff737c5bc'}]
+-FREEZE = Path('/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z/metadata/factor-proof-repair-5f0143f9-20261011T0109Z/PROPOSAL-FREEZE-V8.json')
++FREEZE = Path('/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/factor-ite-true-proof-repair-3fc98f89-20261011T012921.157357Z/PROPOSAL-FREEZE-V10-ITE-TRUE.json')
+ STORAGE = ROOT/'proposals/compressed-loader-storage-20261010T235105.986329Z/v3-partial-failure/storage_wrapper.py'
+ STORAGE_SHA = 'd774eb292aa0b819791458c51a9353885d3d31b2bde781b85b3c26829e61c810'
+ CORE = '13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc'
+@@ -73,7 +73,7 @@
+     for row in gate['evidence']:
+         assert sha(Path(row['path']))==row['sha256']
+     assert sha(LAUNCHER)==LAUNCHER_SHA
+-    assert sha(FREEZE)=='fdc04904a17a0c686231e2aa09e859e4b3d7461204d84dc191c5c39642a8ccfb'
++    assert sha(FREEZE)=='d54d69c760f24b6e6a2e6fb7310c6b6d5a489250663bfafb82b0adda62d9da9f'
+     proposal=json.loads(FREEZE.read_bytes())
+     for row in proposal['acceptance_bindings']:
+         assert sha(REPOSITORY/row['path'])==row['sha256']
+@@ -259,12 +259,12 @@
+         'storage_changes':'Combined stderr gzip replaces separated raw loader logs; native presence explicitly required; only fresh attempt/cache companions get same-FS aliases. Canonical core and all policy checks/caps remain frozen.',
+         'transport_changes':'Coverage assertions144 warm+1 pendingfresh/145 staged with2newsourceversions and pinnedpartialprefix kernel provenance and unique derivative outputname; source/cache hardlinks with EXDEV hash-checked copy; installer alias policy unchanged.',
+         'guard_changes':'Only natural phase label and explicit prelaunch adapter/policy/source-byte-gate hash gates; final thresholds, process-group cleanup, all kernel/resource caps unchanged.',
+-        'source_repair_derivation':{'prior_preparer_sha256':'d38052feb8649d744e12cd1735ddf146be43802e2364213e87b63e87090af1ed',
+-            'prior_workspace':'/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z',
+-            'failed_source_sha256':'1cf01eb0e55c5f75b396208fd236878faab70d0c3b91950bfed905a5025003fd',
+-            'proof_only_repair_sha256':'5f0143f9f266659cb35c495c3bbb01781039d1338a2eb527e1196bd419b6c4f9',
++        'source_repair_derivation':{'prior_preparer_sha256':'41e1e65485c5ae4764b963df95f10bc881eecbaffb459fe560c806a3e8db8614',
++            'prior_workspace':'/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z',
++            'failed_source_sha256':'5f0143f9f266659cb35c495c3bbb01781039d1338a2eb527e1196bd419b6c4f9',
++            'proof_only_repair_sha256':'3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4',
+             'prefix_source_sha256':partial['source_sha256'],'partial_component_gate_bindings':PARTIAL_GATES,
+-            'qualification':'The preserved V8 source freeze repairs only the three actual1cf proof errors using pointwise function equalities and register-value congruence. All24 declaration heads/definitions/imports/options/premises unchanged. Prefixa080/key54ae unchanged and admitted only as authenticated component.141 topology,139 accepted parents,4 protected guards/storage/core/kernel/caps unchanged. All failed natural/forest/support contexts and newmetadata counted; no overlay writes.'},
++            'qualification':'The preserved V10 source freeze adds only ite_true at the unique actual5f positive residualEpoch proof goal, plus attribution. All24 declaration heads/eight definitions/imports/options/premises unchanged. Prefixa080/key54ae unchanged and admitted only as authenticated component.141 topology,139 accepted parents,4 protected guards/storage/core/kernel/caps unchanged. All failed natural/forest/support contexts and new metadata counted; no overlay writes.'},
+         'metadata_location_derivation':{'prior_preparer_sha256':'cacb3ab268d391c8dc65ead0f01c52d0ff7e5db1043979142a12467484c67447',
+             'reason':'Rootpausedalloverlaywrites; keepnewhelper/preparationmetadata insidecountedimmutablecontext paths.',
+             'input_ROOT':str(ROOT),'new_packet_pointer_directory':str(work),

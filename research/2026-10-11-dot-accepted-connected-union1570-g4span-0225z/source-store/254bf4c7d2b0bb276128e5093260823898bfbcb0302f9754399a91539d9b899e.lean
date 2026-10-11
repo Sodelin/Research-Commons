@@ -1,0 +1,13 @@
+import G4AllRootPairClocks
+import G4AllRootBinomialCompression
+
+#check GProgram.G4.PairClocks.livePair_card
+#check GProgram.G4.PairClocks.noFirstMergeEvent_iff
+#check GProgram.G4.PairClocks.all_root_no_first_merge
+#check GProgram.G4.PairClocks.product_clock_eq_holding_model
+#check GProgram.G4.PairClocks.private_arms_no_first_merge
+#check GProgram.G4.BinomialCompression.all_root_binomial_sum
+#check GProgram.G4.BinomialCompression.original_all_root_binomial_sum
+#check GProgram.G4.BinomialCompression.original_all_root_exponential_coefficients
+#print axioms GProgram.G4.PairClocks.private_arms_no_first_merge
+#print axioms GProgram.G4.BinomialCompression.original_all_root_exponential_coefficients

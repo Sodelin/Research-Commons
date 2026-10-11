@@ -1,0 +1,61 @@
+{
+  "actual_output_contract": {
+    "conclusion": "The complete carried forest and the full register outside the private hybrid slot are retained. Output privately resets that slot to false; its original Bernoulli distribution is marginalized, not retained in the output coordinate.",
+    "exact_erasure_value": "register v = if v \u2208 P then false else previous_register v",
+    "literal_natural_factor_header": "theorem actual_natural_common_erased_full_forest_factorization {Old : Type*}\n    (N : RootedBinary V E X) (C : Calendar N.graph) (B : NonrootBigon N)\n    (h : Hybrid N) (hsite : B.parents.hybrid = h.val)\n    (sample : Copy \u2192 X) (p : HybridProbabilities N) (r : PositivePairRates E)\n    (pastOps : List (ProgramStep N)) (hprefix : NoPrivateWordRead N {h.val} pastOps)\n    (hinput : \u2200 a \u2208 (initializedSourceHistory N r pastOps\n      (naturalInitialJoint N {h.val} sample p)).support,\n      \u2200 l \u2208 (state (recordEnd pastOps.length a.2.1 a.2.2)).live,\n        (state (recordEnd pastOps.length a.2.1 a.2.2)).location l = .node B.parents.hybrid)\n    (old : Code N sample \u00d7 (Fin pastOps.length \u2192 Code N sample) \u2192 Old)\n    (longArm : Bool)\n    (hle : armExposure N B r (bigonDuration N C B) (!longArm) \u2264\n      armExposure N B r (bigonDuration N C B) longArm) :\n    (initializedSourceHistory N r pastOps (naturalInitialJoint N {h.val} sample p)).bind\n      (fun a => (sourceProgram N r (bigonProgram N C B (originalGamma p h) true)\n        (recordEnd pastOps.length a.2.1 a.2.2)).map\n          (fun d => (old (erasedRecord N {h.val} a.2), erasedForestRegister N {h.val} d))) =\n    (initializedEndpointLaw N r pastOps (outsideInitialCodeLaw N {h.val} sample p)).bind\n      (fun a => (sourceTimeKernel N unitRates\n        (armExposure N B r (bigonDuration N C B) (!longArm))\n        (referencePulse N B (recordEnd pastOps.length a.1 a.2))).bind\n          (fun z => ((bitMeasure (originalGamma p h)).toPMF).bind\n            (fun b => (residualEpoch N\n              (armExposure N B r (bigonDuration N C B) longArm -\n                armExposure N B r (bigonDuration N C B) (!longArm))\n              longArm b z).map\n                (fun d => (old a, forestRegister N d))))) ",
+    "natural_private_set": "P = {h.val}",
+    "private_erasure_provider": "/dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z/source-store/b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4.lean",
+    "private_erasure_provider_sha256": "b9c845b56653599d0015e63d3d400e574fbec5955cde5b95271b4e4d5d8777c4",
+    "sha256": "3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4",
+    "source": "/dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z/source-store/3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4.lean"
+  },
+  "captured_documents": [
+    {
+      "bytes": 4696,
+      "captured_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/scientific-scope-docs-20261011T0218Z-solver_design_recovery/DISCOVERY-DELTA-BEFORE-SCOPE-CLARIFICATION.md",
+      "original_path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/design/DISCOVERY-DELTA-20261011T0210Z.md",
+      "sha256": "8271ceb28c5eb47267a4fe0ace9ec47adc1016b909f96efd5ff3d2a4643297f0"
+    },
+    {
+      "bytes": 38146,
+      "captured_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/scientific-scope-docs-20261011T0218Z-solver_design_recovery/README-BEFORE-SCOPE-CLARIFICATION.md",
+      "original_path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/README.md",
+      "sha256": "3bda3f125322a8959dea5c10df53cd18b957d97acf4c7f8ab2f7cb9eb460031c"
+    }
+  ],
+  "confirmed_scopes": [
+    "141/3486/2293;140reused qualifiedprefix included,1fresh factor/freshaggregate/fullaudit;45unique names vs48ownerlabels;exact13contextqualifications.",
+    "Private finite5 tests use onceNatural/Conditional/DAG/sharedbank and retain explicitUNKNOWN; publicnative and universalrefinement/source/Code gates unchanged.",
+    "Peer1568 is a separatelypublished acceptedreport/publicaudit; fullprivate loader replay not local. 1509/1573 identity counts are prospective, not newcoherent local certificates.",
+    "Existing supplied-calendarbank/actualTwoPortWord exits/fullcorrelatedcontext/bin/future laws retain specific premises. Inverse bridge splice/globalpositiveapproximation/calibratedobservations/master remain downstream."
+  ],
+  "contributor": "Codex / solver_design_recovery",
+  "formal_natural_acceptance": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/G6-NATURAL-COMMON-FOREST-FACTORIZATION-141-ACCEPTANCE-20261011T0202Z.json",
+    "sha256": "4b38e92700caa3ec2bd853b119fb2aa90d5cbf49af71081a1e6cfbbbcd73514d"
+  },
+  "formal_private_acceptance": {
+    "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/quality/PRIVATE-SELECTED-PREFIX-FIVE-TEST-ACCEPTANCE-20261011T0133Z.json",
+    "sha256": "0b51469b602b32907770e61cf1518a6fb2d9da9778255b487d29f8e46aab4bd0"
+  },
+  "observed_utc": "2026-10-11T02:08:25.707118+00:00",
+  "overlay_writes": 0,
+  "producers_or_git_mutations": 0,
+  "qualification": "Typed/kernel result and formal acceptance remain valid; this is documentation precision and current status correction. Existing4b38/0b514 records and scientific sources are immutable. No source/core/proof acceptance mutation or theorem/compiler/native/producer/Git execution by reviewer. Root owns current docs and any new clarification.",
+  "requested_current_document_edits": [
+    {
+      "change": "Say full carried forest and all original register slots outside the erased private selector slot, or erased full register. Do not claim retaining the private selector distribution.",
+      "location": "Brief11/README40 and any natural full-register phrasing"
+    },
+    {
+      "change": "96MiB allocation is now independently reviewed b65 and full73 publication independently checked f2c5; paused status is historical.",
+      "location": "Brief27 storage status"
+    },
+    {
+      "change": "User canceled setup, so use canceled rather than deferred.",
+      "location": "README71 Decisions API"
+    }
+  ],
+  "schema": "current_scientific_summary_scope_clarification_memo_v1",
+  "status": "SOURCE_AND_ACCEPTANCE_SCOPE_ALIGNED_WITH_THREE_REQUESTED_CURRENT_DOCUMENT_CLARIFICATIONS"
+}

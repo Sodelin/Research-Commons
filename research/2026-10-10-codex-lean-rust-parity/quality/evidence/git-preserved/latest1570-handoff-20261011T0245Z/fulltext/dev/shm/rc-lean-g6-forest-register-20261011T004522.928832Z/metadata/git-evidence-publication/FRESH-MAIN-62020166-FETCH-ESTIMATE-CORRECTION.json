@@ -1,0 +1,19 @@
+{
+  "status": "CORRECTION_FETCH_SUCCEEDED_BUT_ESTIMATE_ASSERTION_FAILED",
+  "supersedes": "FRESH-MAIN-62020166-FETCH-ADMISSION.json",
+  "actual_result": {
+    "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/FRESH-MAIN-62020166-FETCH-RESULT.json",
+    "sha256": "7b749f5cc6de951a36ace7db07014a22a1cf543dafacd8deaef0a72099dd004d",
+    "bytes": 796
+  },
+  "admitted_new_pack_bytes": 16777216,
+  "actual_new_pack_bytes": 17494055,
+  "underestimate_bytes": 716839,
+  "actual_pool_bytes": 99267430,
+  "fixed_pool_limit_bytes": 100663296,
+  "pool_headroom_bytes": 1395866,
+  "reason": "A missing-manifest-blob inventory did not bound Git negotiated pack transfer, which can contain already held objects.",
+  "actions": "Preserved all prior and new packs, stopped Git writes, obtained independent read-only resource and exact-tree review, and require a frozen exact-compressed remaining publication funding gate. No further fetch under this plan.",
+  "global_scratch_and_memory_caps_unchanged": true,
+  "no_original_deletion_or_payload_hide": true
+}

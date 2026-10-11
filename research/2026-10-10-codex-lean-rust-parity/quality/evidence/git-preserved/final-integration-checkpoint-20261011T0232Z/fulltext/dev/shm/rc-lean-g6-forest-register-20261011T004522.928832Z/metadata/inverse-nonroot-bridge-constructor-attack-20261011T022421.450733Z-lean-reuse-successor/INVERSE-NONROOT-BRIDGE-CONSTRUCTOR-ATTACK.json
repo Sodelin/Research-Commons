@@ -1,0 +1,1066 @@
+{
+  "accepted1504_closure": {
+    "bytes": 951300,
+    "modules": 1504,
+    "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/SOURCE-CLOSURE.json",
+    "sha256": "a57f5d4519bb3d7f38510dad7d2986fd55bdff0c093f3e8296bb0f6cbbe82c44",
+    "source_store": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/source-store"
+  },
+  "accepted_imports_for_a_future_minimal_constructor": [
+    "G1ActualGraphNormalization",
+    "G1FiniteTwoPortChain",
+    "G6BridgeCannotEnterHybrid",
+    "G7OriginalRelabelling",
+    "G1FiniteNormalizationDisplayedTargets"
+  ],
+  "compatible_old_inverse_constructor_found": false,
+  "concrete_proof_attack": [
+    {
+      "argument": "Give exact incident-occurrence bijections: replace incoming e at a by3 and outgoing e at b by0; other old incidence sets unchanged. Enumerate the four fresh Fin4 occurrences.",
+      "goal": "Old degrees are unchanged; u has(1,2), h has(2,1).",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 1
+    },
+    {
+      "argument": "Lift every original directed step e to0;1;3, all other steps directly. New u/h are reached by root->b then0/[1]. For acyclicity, use the explicit strictly decreasing Cprime age along each directed edge and TransGen induction; do not assume new admission.",
+      "goal": "Nprime is rooted and acyclic.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 2
+    },
+    {
+      "argument": "For an old blocked v, lift any original AvoidReach v root taxon; replacement interior is fresh so the avoid condition is preserved. For u/h, a\u2260root and original least_stable give some taxon reachable while avoiding a; such a path never uses e, so its lift avoids both fresh vertices. This derives their failure to dominate every taxon.",
+      "goal": "Least-stable root survives, including both new vertices.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 3
+    },
+    {
+      "argument": "Lift original avoiding walks through0;1;3. Conversely collapse u,h to b; occurrence3 maps to e,0/1/2 are stutters. This preserves omission of a retained f\u2260e and proves both directions for ReachWithout f.",
+      "goal": "Each retained old edge has exactly its old bridge status.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 4
+    },
+    {
+      "argument": "For0 collapse both fresh vertices to a: every walk omitting0 maps to an old walk omitting e from b to a. For3 collapse them to b: a walk omitting3 maps to an old e-avoiding walk from b to a. Contradict he. Use accepted not_bridge_of_parallel separately for1/2 with distinct original IDs.",
+      "goal": "Fresh0 and3 are bridges;1 and2 are separately nonbridges.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 5
+    },
+    {
+      "argument": "Apply old CutChild to retained hybrid-source edges and transport their bridge status. New h has only child3; if b is an old hybrid its replacement child0 is also a bridge. SameBlob paths starting at u cannot leave{u,h} because only1/2 are nonbridge incident edges. Derive both port memberships and no other ports; use actual_quotient_port_card for the typed port count.",
+      "goal": "CutChild Nprime and the exact fresh blob/ports.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 6
+    },
+    {
+      "argument": "Old parent occurrences cannot equal e because e targets an indegree-one node. Inject the old ordered pair and preserve each site; fresh h gets1/2. Connector3 has ordinary target a and connector0 has ordinary target u, with both endpoints nonroot. Compose connector3,bigon,connector0 using the accepted inductive word constructors.",
+      "goal": "Ordered original registry extension and literal TwoPortWord.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 7
+    },
+    {
+      "argument": "Step uses extractedBigon, whose parent ordering may swap1/2. Do not assume extracted witness equals the hand-built witness. Derive upper=u,hybrid=h,entry=0,child=3 and the unordered parent set{1,2} from exact blob/degree facts. Hence its removedEdges is precisely all four fresh IDs. Map retained vertices/edges to old ones and the sole synthetic edge to e; prove bijections and every transported field pointwise.",
+      "goal": "Roundtrip through actual splice, including Classical.choice extraction.",
+      "status": "UNPROVED_CONSTRUCTION_FACT",
+      "step": 8
+    }
+  ],
+  "contributor": "Codex lean_reuse_successor",
+  "coverage": {
+    "additional_exact_contract_modules": [
+      "G1ActualGraphNormalization",
+      "G1ActualTwoPortBlob",
+      "G1BigonFootprint",
+      "G1FiniteNormalizationDisplayedTargets",
+      "G1FiniteTwoPortChain",
+      "G1LiftedOriginalBigon",
+      "G1OriginatedClosingSourceAdmission",
+      "G7OriginalAdmission",
+      "G7OriginalRelabelling"
+    ],
+    "all1504_module_names_screened": true,
+    "full_source_bodies_hashed_and_literalimports_checked": 67,
+    "manual_contract_modules": [
+      "SourceNetwork",
+      "G6BridgeCannotEnterHybrid",
+      "G1NonrootBigonKernel",
+      "G1ActualTwoPortBlob",
+      "G1BigonFootprint",
+      "G1BigonSpliceGraph",
+      "G1SpliceCutTransport",
+      "G1SpliceRootBlob",
+      "G1SpliceDegrees",
+      "G1SpliceLSA",
+      "G1SplicedSourceAdmission",
+      "G1ActualGraphNormalization",
+      "G1LiftedOriginalBigon",
+      "G1DecoratedSpliceConstruction",
+      "G1OriginatedClosingSourceAdmission",
+      "G1FiniteTwoPortChain",
+      "G1ActualKProductInsertion",
+      "G1OriginalRootSubdivisionData",
+      "G1RootSubdivisionIncidence",
+      "G1RootSubdivisionPlanarAdmission",
+      "G1ActualBigonSpliceSimpleCurve",
+      "G1SharpCoreCombDefinition",
+      "G1SharpCoreCombAdmission",
+      "G1AllNActualOuterSourceSharpness",
+      "G1FullOriginalClassMasterAndSharpness",
+      "G7OriginalAdmission",
+      "G7OriginalRelabelling",
+      "G1FiniteNormalizationDisplayedTargets"
+    ],
+    "name_pattern": "Splice|Subdivision|Bridge|NonrootBigon|Binary|Sharp|Insert|Delete|Deletion",
+    "peer1568_graph_or_terminal_receipt_not_assumed": true,
+    "relevant_name_hits": 58,
+    "unrelated_whole_corpus_history_not_rescanned": true
+  },
+  "created_utc": "2026-10-11T02:24:21.450733+00:00",
+  "current_natural_output_qualification": {
+    "accepted3fc_conclusion_checked": "The complete carried forest and the full register outside the private hybrid slot are retained. Output privately resets that slot to false; its original Bernoulli distribution is marginalized, not retained in the output coordinate.",
+    "exact_private_set_and_reset": "P={h.val}; register[h.val] resets false; all other original register slots/full carried forest are retained. Original4b38 acceptance remains immutable.",
+    "memo": {
+      "bytes": 6419,
+      "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/scientific-scope-docs-20261011T0218Z-solver_design_recovery/SCIENCE-SCOPE-CLARIFICATION-MEMO.json",
+      "sha256": "bedbe80c29226563b06701259c528542d02c4d75d2037557c79f185849c255a9"
+    },
+    "root_clarification": {
+      "bytes": 1552,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/quality/NATURAL141-ERASED-REGISTER-OUTPUT-CLARIFICATION-20261011T0207Z.json",
+      "sha256": "ac517709335995660c595a057b087bd552bd4254d7e4d0f19b535403c51d31fc"
+    }
+  },
+  "exact_existing_type_and_deletion_blocks": [
+    {
+      "declaration": "RootedBinary",
+      "first_line": 211,
+      "last_line": 223,
+      "literal_block": "structure RootedBinary (V : Type u) (E : Type v) (X : Type w)\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] where\n  graph : EdgeGraph V E\n  root : V\n  leaf : X \u21aa V\n  at_least_two_taxa : 2 \u2264 Fintype.card X\n  root_degrees : graph.inDegree root = 0 \u2227 graph.outDegree root = 2\n  leaf_degrees : \u2200 x, graph.inDegree (leaf x) = 1 \u2227 graph.outDegree (leaf x) = 0\n  internal_degrees : \u2200 a, a \u2260 root \u2192 (\u2200 x, leaf x \u2260 a) \u2192\n    (graph.inDegree a = 1 \u2227 graph.outDegree a = 2) \u2228 graph.IsHybrid a\n  acyclic : graph.Acyclic\n  rooted : \u2200 a, graph.DReach root a\n  least_stable : \u2200 a, (\u2200 x, graph.Dominates root a (leaf x)) \u2192 a = root\n",
+      "literal_block_sha256": "ac91a27b46f8de086d7daa456c9d815800c24cbb4bceee9d6d165da0113ffaa1",
+      "module": "SourceNetwork",
+      "source_sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7"
+    },
+    {
+      "declaration": "Source",
+      "first_line": 19,
+      "last_line": 28,
+      "literal_block": "structure Source (X : Type w) [Fintype X] where\n  Vertex : Type u\n  Edge : Type v\n  vertexFintype : Fintype Vertex\n  edgeFintype : Fintype Edge\n  vertexDecidable : DecidableEq Vertex\n  edgeDecidable : DecidableEq Edge\n  network : @RootedBinary Vertex Edge X vertexFintype edgeFintype _ vertexDecidable\n  cutChild : @CutChild Vertex Edge X vertexFintype edgeFintype _ vertexDecidable network\n  calendar : Calendar network.graph\n",
+      "literal_block_sha256": "dfe25cc751f602cb39dabeb19670224faefd71331bd00dd0357dace8281b9dc0",
+      "module": "G1ActualGraphNormalization",
+      "source_sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6"
+    },
+    {
+      "declaration": "Step",
+      "first_line": 61,
+      "last_line": 64,
+      "literal_block": "inductive Step : Source.{u,v,w} X \u2192 Source.{u,v,w} X \u2192 Prop\n  | splice (S : Source X) (b : S.network.graph.Blob)\n      (hb : b \u2260 S.network.graph.blobOf S.network.root)\n      (hp : Fintype.card (S.network.BlobPort b) = 2) : Step S (splice S b hb hp)\n",
+      "literal_block_sha256": "a47bdd1cc5da5daef702a7e1d06e8289a439c256930f8036d502200e2e02efed",
+      "module": "G1ActualGraphNormalization",
+      "source_sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6"
+    },
+    {
+      "declaration": "NonrootConnector",
+      "first_line": 34,
+      "last_line": 38,
+      "literal_block": "structure NonrootConnector (N : RootedBinary V E X) where\n  edge : E\n  ordinary : N.graph.inDegree (N.graph.target edge) = 1\n  source_nonroot : N.graph.source edge \u2260 N.root\n  target_nonroot : N.graph.target edge \u2260 N.root\n",
+      "literal_block_sha256": "bff0f65bdbd498b9154d626cebf8bad989aa971feebce423053c9f4d881bb17b",
+      "module": "G1FiniteTwoPortChain",
+      "source_sha256": "80569859221212ab9c4aa850a029d5e6a0adac3f37e481e4304f7e40b10e74de"
+    },
+    {
+      "declaration": "TwoPortWord",
+      "first_line": 63,
+      "last_line": 66,
+      "literal_block": "inductive TwoPortWord (N : RootedBinary V E X) : V \u2192 V \u2192 Type _\n  | nil (node : V) : TwoPortWord N node node\n  | cons (piece : SourcePiece N) {finish : V}\n      (rest : TwoPortWord N piece.outputNode finish) : TwoPortWord N piece.inputNode finish\n",
+      "literal_block_sha256": "0c960caf53595683d0d22e09c7ba879776648dcab542633e1c2fc8b5fda279e9",
+      "module": "G1FiniteTwoPortChain",
+      "source_sha256": "80569859221212ab9c4aa850a029d5e6a0adac3f37e481e4304f7e40b10e74de"
+    },
+    {
+      "declaration": "NonrootBigon",
+      "first_line": 31,
+      "last_line": 35,
+      "literal_block": "structure NonrootBigon (N : RootedBinary V E X) where\n  parents : GProgram.G2.OriginalHybridParents N\n  upper : V\n  upper_nonroot : upper \u2260 N.root\n  arm_sources : \u2200 b, N.graph.source (parents.parent b) = upper\n",
+      "literal_block_sha256": "eee735e4e5de8cbbe310bcee89acca819d6d307b384ca9e2307d5d0f0053e0de",
+      "module": "G1NonrootBigonKernel",
+      "source_sha256": "7e228b06208880369b455914a855249337b6acecf9b4c9d70067c7ff9baab003"
+    },
+    {
+      "declaration": "ActualBlobBigon",
+      "first_line": 99,
+      "last_line": 113,
+      "literal_block": "structure ActualBlobBigon (N : RootedBinary V E X) (b : N.graph.Blob) where\n  fragment : NonrootBigon N\n  upper_in_blob : N.graph.blobOf fragment.upper = b\n  hybrid_in_blob : N.graph.blobOf fragment.parents.hybrid = b\n  vertices_exact : \u2200 v, N.graph.blobOf v = b \u2194 v = fragment.upper \u2228 v = fragment.parents.hybrid\n  entry : E\n  entry_bridge : N.graph.IsBridge entry\n  entry_target : N.graph.target entry = fragment.upper\n  entry_source_outside : N.graph.blobOf (N.graph.source entry) \u2260 b\n  child : E\n  child_bridge : N.graph.IsBridge child\n  child_source : N.graph.source child = fragment.parents.hybrid\n  child_target_outside : N.graph.blobOf (N.graph.target child) \u2260 b\n  internal_edges_exact : \u2200 e, e \u2208 internalEdges N b \u2194\n    e = fragment.parents.parent0 \u2228 e = fragment.parents.parent1\n",
+      "literal_block_sha256": "db0a6e94d581f230b2a2eae07eec639d762428a52b0754e1fcbe62b6b76db774",
+      "module": "G1ActualTwoPortBlob",
+      "source_sha256": "66d66a433f3e993ff71be3745e37ec53b0d1e31573d8902ee494e9d03b90e5c9"
+    },
+    {
+      "declaration": "actual_step_displayed_targets",
+      "first_line": 20,
+      "last_line": 28,
+      "literal_block": "theorem actual_step_displayed_targets {S T : Source.{u,v,w} X} (step : Step S T) (panel : Finset X) :\n    actualDisplayedClusters T.network panel = actualDisplayedClusters S.network panel \u2227\n    actualDisplayedSplits T.network panel = actualDisplayedSplits S.network panel \u2227\n    \u2200 q : Fin 4 \u21aa X, normalizedDisplayedCutQuartets T.network q = normalizedDisplayedCutQuartets S.network q := by\n  cases step with\n  | splice b hb hp =>\n    exact \u27e8actual_displayed_clusters_splice S.network S.cutChild b hb _ panel,\n      actual_displayed_splits_splice S.network S.cutChild b hb _ panel,\n      fun q => actual_normalized_displayed_quartets_splice S.network S.calendar S.cutChild b hb _ q\u27e9\n",
+      "literal_block_sha256": "63cc587cf14aef9d5512076ed171b959322eca7111d5c992efec56d4d3b485ab",
+      "module": "G1FiniteNormalizationDisplayedTargets",
+      "source_sha256": "897737ae6add9d5063203b04b4a3c13bb96f1e28bf0f4c241f9ca235cd592096"
+    }
+  ],
+  "exact_master_boundary": {
+    "G6_residual": "This finite constructor would close the source-interface existence/roundtrip gate only. Positive short-chain allocation, a single legal shared bank, global contextual forest action, chronological physical exit/no-read and calibrated bins, and master polynomial approximation/error remain distinct. Delta=0 residual identity is not a strict-calendar positive physical edge.",
+    "accepted_master": "G1FullOriginalClassMasterAndSharpness.actual_G1_original_class_master_with_all_n_sharpness",
+    "inverse_class_guard_not_closed": "To use the full original galled/outer-labelled class, separately derive its SemidirectedPartner/outer curve and galledness admission for the insertion. Existing forward splice curves and root-arc subdivision do not prove this arbitrary inverse parallel-arc lens construction.",
+    "lines": [
+      43,
+      63
+    ],
+    "master_guard": "HasGalledOuterSemidirectedPartner O, n>=4; Source alone does not carry this predicate.",
+    "source_sha256": "3109b3e555c3a00799c3c9efbb882992cf194d78392d6e4af47ca3b4c82a7a35"
+  },
+  "execution": {
+    "compiler_or_native_or_producer_started": false,
+    "git_or_accepted_library_or_frozen_register_mutated": false,
+    "new_Lean_module_or_proof_placeholder_created": false,
+    "new_metadata_only_in_counted_WF": true
+  },
+  "existing_obligation_ids": [
+    "G1-ORIGINAL",
+    "G6-COMMON-EXPOSURE",
+    "G6-REVIEWED-FOREST-EXPOSURE",
+    "G6-POSITIVE-GENERATOR-COMPRESSION",
+    "G6-PROTECTED-BINS",
+    "G6-CELL-JOINT-LAW",
+    "G6-MASTER",
+    "G6-WHOLE-EDGE-LIFT",
+    "G7-ORIGINAL-WHOLE-EDGE-CANDIDATE"
+  ],
+  "immutable_prior_map": {
+    "bytes": 56325,
+    "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/metadata/legal-positive-twoport-bin-constructor-map-v2-20261011T014645.303868Z/CONSTRUCTOR-PROVIDER-MAP-V2.json",
+    "sha256": "a8ae28ac04e54e9fa8fb11ad9747b1d8ed667899a498b3b25aed28e4f44ef7e1"
+  },
+  "near_matches": [
+    {
+      "existing_direction": "Admitted original bigon -> smaller admitted graph/calendar; Step names only that constructed deletion.",
+      "missing_reverse_output": "No theorem here produces an arbitrary ordinary-bridge expansion and its admission from S,e,he.",
+      "modules": [
+        "G1BigonSpliceGraph",
+        "G1SplicedSourceAdmission",
+        "G1ActualGraphNormalization"
+      ]
+    },
+    {
+      "existing_direction": "Lift a later extracted bigon into its already supplied original source and label a deletion synthetic edge by the existing original span.",
+      "missing_reverse_output": "The source O and Decoration O S are inputs; this is not construction of O by adding two vertices/four fresh edges.",
+      "modules": [
+        "G1LiftedOriginalBigon",
+        "G1DecoratedSpliceConstruction"
+      ]
+    },
+    {
+      "existing_direction": "Insert/replace a current-root K law inside a separated fixed-source PMF/future, with physical exit and cohort premises.",
+      "missing_reverse_output": "No vertex/edge carrier, new RootedBinary or strict Calendar is constructed.",
+      "modules": [
+        "G1ActualKProductInsertion"
+      ]
+    },
+    {
+      "existing_direction": "Restore curves for an already supplied RootedBinary N from its suppressed drawing, using its existing two root edges.",
+      "missing_reverse_output": "Does not add a nonroot parallel bigon or prove rooted binary admission for an arbitrary replaced ordinary edge.",
+      "modules": [
+        "G1OriginalRootSubdivisionData",
+        "G1RootSubdivisionIncidence",
+        "G1RootSubdivisionPlanarAdmission"
+      ]
+    },
+    {
+      "existing_direction": "Explicit fixed all-n comb-family incidence/rank/calendar and admission/sharpness.",
+      "missing_reverse_output": "No supplied S or chosen bridge e argument; local module has five vertices/eight edges and two hybrids, rather than the required one-hybrid inverse splice.",
+      "modules": [
+        "G1SharpCoreCombDefinition",
+        "G1SharpCoreCombAdmission",
+        "G1AllNActualOuterSourceSharpness"
+      ]
+    },
+    {
+      "existing_direction": "Finite supplied Code validity/registry proof -> decoded source, plus complete encoded-source filtering.",
+      "missing_reverse_output": "BinaryValid/RegistryValid are assumptions to sourceOfValid; the decoder does not derive those predicates for a new graph.",
+      "modules": [
+        "G7OriginalAdmission"
+      ]
+    }
+  ],
+  "recommendation": "If the source-interface constructor is authorized later, prove steps1-6 as the first real admission target, then registry/roundtrip steps7-8. Do not compile a generic law wrapper or pass desired RootedBinary/PMF equality as an input. The future stronger outer/galled membership target must be explicit before any full G6 legal-source claim.",
+  "schema": "bounded_existing_provider_structural_attack_v1",
+  "smallest_structural_target": {
+    "calendar": {
+      "Delta": "S.calendar.age b - S.calendar.age a > 0",
+      "all_four_fresh_widths": "Delta/3 > 0",
+      "h_age": "S.calendar.age a + Delta/3",
+      "old_ages": "Cprime.age(.inl v)=S.calendar.age v",
+      "u_age": "S.calendar.age a + 2*Delta/3"
+    },
+    "fresh_original_occurrences": [
+      {
+        "id": 0,
+        "role": "rootward connector",
+        "source": "Sum.inl b",
+        "target": "u"
+      },
+      {
+        "id": 1,
+        "role": "ordered parent0 = false",
+        "source": "u",
+        "target": "h"
+      },
+      {
+        "id": 2,
+        "role": "ordered parent1 = true",
+        "source": "u",
+        "target": "h"
+      },
+      {
+        "id": 3,
+        "role": "descendant connector",
+        "source": "h",
+        "target": "Sum.inl a"
+      }
+    ],
+    "inputs": [
+      "X finite; S : G1ActualGraphNormalization.Source X (already RootedBinary, actual CutChild and strict Calendar).",
+      "e : G1FiniteTwoPortChain.NonrootConnector S.network; he : S.network.graph.IsBridge e.edge, deleting exactly that original occurrence ID.",
+      "H : OriginalParentRegistry S.network, preserving the old ordered incoming occurrence labels."
+    ],
+    "literal_carriers": {
+      "Eprime": "{f:S.Edge // f\u2260e.edge} \u2295 Fin 4",
+      "Vprime": "S.Vertex \u2295 Fin 2",
+      "h": "Sum.inr 1",
+      "old_a": "S.network.graph.target e.edge",
+      "old_b": "S.network.graph.source e.edge",
+      "old_leaf": "x \u21a6 Sum.inl (S.network.leaf x)",
+      "old_root": "Sum.inl S.network.root",
+      "u": "Sum.inr 0"
+    },
+    "no_desired_equality_input": true,
+    "no_extra_admission_as_premise": true,
+    "no_probability_or_approximation_in_construction_inputs": true,
+    "not_a_Lean_declaration": true,
+    "ordinary_guard_is_reusable": "NonrootConnector records indegree(target e)=1. BridgeEntry.bridge_target_indegree_one already derives this for any original bridge in a rooted acyclic source; original_bridge_target_not_hybrid prevents e from being a retained hybrid parent.",
+    "outputs_to_derive": [
+      "Nprime : RootedBinary Vprime Eprime X, actual CutChild Nprime and the explicit strict Cprime, hence Sprime=admit Nprime hcprime Cprime.",
+      "Fresh ordered Hprime extends H on every old hybrid; only fresh h is new; its incoming original occurrences are1/2 in that fixed order.",
+      "bprime=Nprime.graph.blobOf u has exactly vertices{u,h}, is outside the root blob, and has exactly incoming occurrence0 and outgoing occurrence3 as its two ports.",
+      "ActualBlobBigon Nprime bprime with those concrete bookends/arms, and Fintype.card(Nprime.BlobPort bprime)=2 derived from actual incidence/bridge facts.",
+      "A literal TwoPortWord Nprime (.inl a) (.inl b): connector3; bigon(h->u); connector0. Every physical subinterval has positive width Delta/3.",
+      "T=G1ActualGraphNormalization.splice Sprime bprime hbprime hpprime; Step Sprime T by the existing constructor.",
+      "Explicit vertex and edge bijections T.Vertex\u2243S.Vertex and T.Edge\u2243S.Edge; relabelled incidence, root, taxa and retained calendar fields equal those of S.",
+      "Derived cardinal increments V+2/E+3/one hybrid and displayed C/S/Q preservation via existing actual_step_displayed_targets and proved graph transport."
+    ],
+    "retained_incidence": "For .inl \u27e8f,hf\u27e9 use .inl (old source f) and .inl (old target f). No old occurrence except e is changed or identified.",
+    "review_name": "actual_inverse_nonroot_bridge_bigon_insertion",
+    "roundtrip_warning": "T and S have different carrier types. Prove explicit relabelled field equalities, never literal T=S across carriers. Synthetic deletion edges carry original span provenance; graph/calendar equality alone is not scalar-demographic or full PMF equality."
+  },
+  "source_pins": [
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3390,
+      "imports": [
+        "G1FinitePendingActorPromotion"
+      ],
+      "module": "G1ActiveCoreBridgeCohorts",
+      "sha256": "f151af318c45641723a5920bb3b58c1cc5b9df413ab91c7f7b9755e28e9d3f44",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 7606,
+      "imports": [
+        "G1SimpleCurveConcatenation"
+      ],
+      "module": "G1ActualBigonSpliceSimpleCurve",
+      "sha256": "57a38cabd514ab44224d7409ac3da5957a033d41584f86cef75fd1529fbb042e",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 5424,
+      "imports": [
+        "G1ActualUnrankedCompletedFuture",
+        "G1ActualKProductInsertion"
+      ],
+      "module": "G1ActualCompletedKInsertion",
+      "sha256": "93cd417e3aef969863feb394f52f3a21cc5bc122b914f4e8dd27805664672423",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 4636,
+      "imports": [
+        "G1SplicedSourceAdmission"
+      ],
+      "module": "G1ActualGraphNormalization",
+      "sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 5880,
+      "imports": [
+        "G1ActualUnrankedKMacro"
+      ],
+      "module": "G1ActualKProductInsertion",
+      "sha256": "c188ec733e67f93f1c160f6d867e9c36fe552600ad0632f81aea849a74983179",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 6917,
+      "imports": [
+        "G1ActualBigonSpliceSimpleCurve"
+      ],
+      "module": "G1ActualSplicedPlanarCurves",
+      "sha256": "95f72782b7aa8431b97a16353c1b5499e77d1523f330211a271e12a4f0de7531",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 8368,
+      "imports": [
+        "G1BlobDegreeBalance",
+        "G1NonrootBigonKernel"
+      ],
+      "module": "G1ActualTwoPortBlob",
+      "sha256": "66d66a433f3e993ff71be3745e37ec53b0d1e31573d8902ee494e9d03b90e5c9",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 4154,
+      "imports": [
+        "G1SharpCoreCombOuterEmbedding",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "module": "G1AllNActualOuterSourceSharpness",
+      "sha256": "3dda7087b127e9fbac61998fa04cd797ff251d4f94f13aa3525d7e59e36319b4",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 8890,
+      "imports": [
+        "G1ExtractedComponentProgram"
+      ],
+      "module": "G1BigonFootprint",
+      "sha256": "1ce45744e9c3cb3cda22e15630563d94c4fd415d7b0fd080fa80d7829aeb1052",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 9446,
+      "imports": [
+        "G1BigonFootprint"
+      ],
+      "module": "G1BigonSpliceGraph",
+      "sha256": "a2274c7d32f068322449a4fbf0848ffe16fc54cfc35e55cab3e99d0d40a79e05",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 5889,
+      "imports": [
+        "G1ReducedCoreCounts"
+      ],
+      "module": "G1BinaryCoreBudgets",
+      "sha256": "a793dab560b94617eb80b1e397bd2a252e2ec3ac2909b82e0c2689f853d7ff48",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3499,
+      "imports": [
+        "G1CanonicalCompletedFutureRootAdmission",
+        "G1UnrankedExteriorHistoryKInsertion"
+      ],
+      "module": "G1CompletedExteriorHistoryKInsertion",
+      "sha256": "5bf5c266941dca8ad419ae6c7baf1f82f8d0d04d56c77aa25933d397a740d95f",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 4355,
+      "imports": [
+        "G1LiftedOriginalBigon"
+      ],
+      "module": "G1DecoratedSpliceConstruction",
+      "sha256": "e8b758279cd762124433cfe8309974022fc95cdca0192ff182241a92120c1d43",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3023,
+      "imports": [
+        "G1SharpOriginalUnboundedTaxonFace"
+      ],
+      "module": "G1ExactOriginalClassAllNSharpness",
+      "sha256": "7fe6554d923e8f2b836482cbfff4f5aad507d0f358131c1c21ed6e3405500440",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 3612,
+      "imports": [
+        "G1ActualDisplayedQuartetTransport",
+        "G1FiniteOriginalDecoratedCore"
+      ],
+      "module": "G1FiniteNormalizationDisplayedTargets",
+      "sha256": "897737ae6add9d5063203b04b4a3c13bb96f1e28bf0f4c241f9ca235cd592096",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 11119,
+      "imports": [
+        "G1NonrootBigonKernel"
+      ],
+      "module": "G1FiniteTwoPortChain",
+      "sha256": "80569859221212ab9c4aa850a029d5e6a0adac3f37e481e4304f7e40b10e74de",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 4939,
+      "imports": [
+        "G1ExactOriginalClassAllNSharpness"
+      ],
+      "module": "G1FullOriginalClassMasterAndSharpness",
+      "sha256": "3109b3e555c3a00799c3c9efbb882992cf194d78392d6e4af47ca3b4c82a7a35",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3767,
+      "imports": [
+        "G1RootSuppressedPlanarCurves"
+      ],
+      "module": "G1InjectiveHalfArcSubdivision",
+      "sha256": "dedcef342145074debf7e9026e5f2ed351fbae23eae722ddf1558ef78054cdba",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 6658,
+      "imports": [
+        "G1DecoratedOriginalProvenance"
+      ],
+      "module": "G1LiftedOriginalBigon",
+      "sha256": "7b6266a6ee51edd572bc5851c0f72c79bd41afc2a3f9079df491c085fed4f576",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 13204,
+      "imports": [
+        "G1OriginalCurrentRootReconstruction"
+      ],
+      "module": "G1NonrootBigonKernel",
+      "sha256": "7e228b06208880369b455914a855249337b6acecf9b4c9d70067c7ff9baab003",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 2749,
+      "imports": [
+        "G1ActualKProductInsertion"
+      ],
+      "module": "G1OriginalForestKOnlyInsertion",
+      "sha256": "f70a9fe1beaaba3e11e248260f3b8d689cc654e31afbfbe1307251cb664e3efc",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 5447,
+      "imports": [
+        "G1InjectiveHalfArcSubdivision"
+      ],
+      "module": "G1OriginalRootSubdivisionData",
+      "sha256": "e7112e471fb17288511d34caf285d5baee50079b41beec3c84d685531109785c",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3158,
+      "imports": [
+        "G1OriginatedBridgeCalendarAdmission"
+      ],
+      "module": "G1OriginalSpanBridgeBookends",
+      "sha256": "4cbc3c36b8c9e419e37f1373ab8b291708f5c80ea1f6c895cb303ac64ff31215",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3358,
+      "imports": [
+        "G1OriginalSpanBridgeBookends"
+      ],
+      "module": "G1OriginatedBridgeBookends",
+      "sha256": "677c2374f8cf6d9a3ead865c0864b343cd5f84dd3ad19ca8e4f132d229c9b1dc",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4861,
+      "imports": [
+        "G1OriginatedSpanRegistryAdmission"
+      ],
+      "module": "G1OriginatedBridgeCalendarAdmission",
+      "sha256": "7caf3ff8e69d52b8edb0fecfb458e7192beea45ec3e5268472f355201b7c3741",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 6197,
+      "imports": [
+        "G1OriginalExteriorCohort"
+      ],
+      "module": "G1OriginatedClosingSourceAdmission",
+      "sha256": "6123fa0fd4f8d2fd0d1e336f3c2b6d9df034073a4f19d4a8cd5066e0a49d1052",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 5989,
+      "imports": [
+        "G1OriginalRootSubdivisionData"
+      ],
+      "module": "G1RootSubdivisionIncidence",
+      "sha256": "97636f7291a11d990cc88bc85be0fcee3bbf021b43d5baf7666146bb8d6d2876",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 6426,
+      "imports": [
+        "G1RootSubdivisionIncidence"
+      ],
+      "module": "G1RootSubdivisionPlanarAdmission",
+      "sha256": "1559293074709da6e88db435fa654ca69bf258ed5124a7388b02463751194334",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 1658,
+      "imports": [
+        "G1SemidirectedMergedRootCutPaths"
+      ],
+      "module": "G1SelectedOriginalDeletionPathEquivalence",
+      "sha256": "d143c80d241309179dc80ef5d3a4856059709f3e4d39b47210914257bd4488ea",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 2216,
+      "imports": [
+        "G1SharpCoreCombLSA"
+      ],
+      "module": "G1SharpCoreCombAdmission",
+      "sha256": "9afe11442c13f71b2c531f40cc844897a3412dfc1dc03f15622377ad9c80f9f0",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 2687,
+      "imports": [
+        "G1SharpCoreCombAdmission"
+      ],
+      "module": "G1SharpCoreCombCutChild",
+      "sha256": "725721496546412ab8a49f246f122d786bb3702cb9980fd06420f4e71167a5b4",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 3296,
+      "imports": [
+        "G1CutChildPorts",
+        "G1BinaryCoreBudgets",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "module": "G1SharpCoreCombDefinition",
+      "sha256": "a19019c5a223e811fd565032d95555ad2286e7c62466910a53c2e875a8421fff",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4205,
+      "imports": [
+        "G1SharpCoreCombDefinition"
+      ],
+      "module": "G1SharpCoreCombDegrees",
+      "sha256": "13846910cdd65ff64ff91a9fe2df799c6ca1761a74a059e805aeba94cffa7ef9",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4511,
+      "imports": [
+        "G1SharpCoreCombRootedness"
+      ],
+      "module": "G1SharpCoreCombLSA",
+      "sha256": "9313724d6f58d0f279059eb532fa71eb6358740c48f614ac6629e697c9f2dc08",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 7922,
+      "imports": [
+        "G1SharpCoreCombOuterOrder",
+        "G1ConvexOriginalEdgeDrawing"
+      ],
+      "module": "G1SharpCoreCombOuterEmbedding",
+      "sha256": "132a206a94ec2e01e38306bcca04655febafc720334a9561e2aac86589182d61",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4083,
+      "imports": [
+        "G1SharpCoreCombReduced"
+      ],
+      "module": "G1SharpCoreCombOuterOrder",
+      "sha256": "90f9e9cd844d77331ad6b6e0e4d2f993324f9e54745383faa285f9035137e5c1",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4587,
+      "imports": [
+        "G1SharpCoreCombCutChild"
+      ],
+      "module": "G1SharpCoreCombReduced",
+      "sha256": "96213ceae5d36a7694bba2ef08e568a40990ce202db1c86e68f1e10d8322f65c",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 2910,
+      "imports": [
+        "G1SharpCoreCombDegrees"
+      ],
+      "module": "G1SharpCoreCombRootedness",
+      "sha256": "49fa53968d0721eec1b09de2b64841efa487a6c9ecb89b43fa930979cd942744",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4817,
+      "imports": [
+        "G1OriginalClassSameCoreAssembly",
+        "G1AllNActualOuterSourceSharpness",
+        "Mathlib.Analysis.Convex.PathConnected"
+      ],
+      "module": "G1SharpOriginalSegmentsToFaithfulCurves",
+      "sha256": "76e71ccb8c6a28f86fb0a984ec297d484e18f46294e154b671994bae8018abc6",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4329,
+      "imports": [
+        "G1SharpOriginalSegmentsToFaithfulCurves"
+      ],
+      "module": "G1SharpOriginalUnboundedTaxonFace",
+      "sha256": "5ce67a35f090d34f32a3bea4250d1874f651425e09f458e97ba31d6e806aec78",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 8638,
+      "imports": [
+        "G1BigonSpliceGraph"
+      ],
+      "module": "G1SpliceCutTransport",
+      "sha256": "5044ecfc4ddfde0b6d3b3a17bf80bf564aae68f23d9b47fdfb6f87059f6002ec",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 9444,
+      "imports": [
+        "G1SpliceRootBlob"
+      ],
+      "module": "G1SpliceDegrees",
+      "sha256": "cc7e4eaba214a2a53be7499f49e5b36432b362500ae5886e90e7194b67eb008c",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 9943,
+      "imports": [
+        "G1SpliceDegrees"
+      ],
+      "module": "G1SpliceLSA",
+      "sha256": "112275cf0315d578fe4022be4e2f47bfe99493df84e08234f2ca7a3687ff83f1",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 2925,
+      "imports": [
+        "G1ActualSplicedPlanarCurves"
+      ],
+      "module": "G1SpliceOuterLabelledCurveAdmission",
+      "sha256": "925c1e3ad3d0aedcc4c85bf6c5b66fe9a81e247cf26032883620cc47e666ddd7",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 7736,
+      "imports": [
+        "G1SpliceCutTransport"
+      ],
+      "module": "G1SpliceRootBlob",
+      "sha256": "6e6380769ec684373a13adcdd56f14368a0bf3ba542dd65f181c650b80f2d8f3",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 6713,
+      "imports": [
+        "G1SplicedSourceAdmission",
+        "SourceResolve"
+      ],
+      "module": "G1SplicedOriginalSwitching",
+      "sha256": "e350c5d7f8103c9a50f14fd315b53a21d232b646e4a2b65d3ea7c1bf905a4127",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 5499,
+      "imports": [
+        "G1SpliceLSA",
+        "Mathlib.Data.Fintype.Sum"
+      ],
+      "module": "G1SplicedSourceAdmission",
+      "sha256": "d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 7501,
+      "imports": [
+        "G1OriginalForestKOnlyInsertion"
+      ],
+      "module": "G1UnrankedExteriorHistoryKInsertion",
+      "sha256": "8071e3d71347a8fe0b215e77867ec71a95e9df9b0820e5d1d22c640e4310ecef",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 6036,
+      "imports": [
+        "G5NormalizedSwitchingQuartetCompatibility"
+      ],
+      "module": "G5BinaryRootSuppressedCutEncoding",
+      "sha256": "afdbc8769b0eb410ae0a497e7074eca87efd82bbd8c57cbfa4a2b2e5207bb9e4",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3984,
+      "imports": [
+        "GraphCuts"
+      ],
+      "module": "G5BridgeBarrier",
+      "sha256": "0e2af6987c473e34c09a74ab41b3ede45ce049cbc04fde42b1d2108162467f77",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4488,
+      "imports": [
+        "G6BridgeCannotEnterHybrid",
+        "G5CalendarRoutes"
+      ],
+      "module": "G5BridgeComponentEntries",
+      "sha256": "286bcf82d6f79056a8d0d443aa6d4f19c7ca5a72669e62d8f2f4868ef0d6acc6",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 5141,
+      "imports": [
+        "G5ActualSingletonCalendarObservation"
+      ],
+      "module": "G5FairM2Sharpness",
+      "sha256": "5ca29ebd3b4b2b4d563872b69e1803012f98d80e122beb62c51f8f53c5299594",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 6425,
+      "imports": [
+        "G5FairNormalizedCutQuartetIdentification",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "module": "G5FairSharpnessSources",
+      "sha256": "5a50d3873b3f4b656f6dc32ca48f36bf1478751a708b9f923d43c10eeec5bf7e",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3609,
+      "imports": [
+        "G5FairSharpnessSources"
+      ],
+      "module": "G5FairSharpnessTargets",
+      "sha256": "b2cb8ce21f39d1cfa839e6f6fcc762c12c5f74b6fc25986236c0d551563d544c",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4940,
+      "imports": [
+        "G5OriginalTipRepresentativeDeletion"
+      ],
+      "module": "G5FiniteAttainedDeletionTrace",
+      "sha256": "59c3f13d891ae01334578aab33184ec005270b4cfae32cf6b2555bdde095c485",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 8540,
+      "imports": [
+        "G5CalendarRoutes",
+        "Mathlib.Data.Fintype.Card"
+      ],
+      "module": "G5NonbridgeRouteBound",
+      "sha256": "7a0c7b0010fe42167fab26da7daf366f695c448b283a211751c5dd5416920525",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 7675,
+      "imports": [
+        "G5AttainedOriginalTipChronology"
+      ],
+      "module": "G5OriginalTipRepresentativeDeletion",
+      "sha256": "965b427aa67a521adc34ab71788866c7efc2d7f7e838ed9035bfb0f7d1c0f307",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 45662,
+      "imports": [
+        "G5StrictBoundaryRoutes",
+        "G5SafeCommonGroupSelector",
+        "G5OlderSideCutChart",
+        "G1InitializedFrontierPrefix",
+        "G5ActualProtectiveOccupancy"
+      ],
+      "module": "G5SafePrefixRouteBridge",
+      "sha256": "46a8a090dcd67361eeebf32c0f0d5ddc78e14adc3c0499b6806451832d62a004",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 5059,
+      "imports": [
+        "G5SynchronizedObservableChronology",
+        "G5OriginalGroupPathChronology"
+      ],
+      "module": "G5SharedObservableDeletionTrace",
+      "sha256": "cdfeec7980f1bf1fa80a33d2971cec3ad8e8359c1cf21c132740b0e7ef9af745",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 3752,
+      "imports": [
+        "G5MinimalGraphInterface",
+        "G2LiveLineageRouting"
+      ],
+      "module": "G6BridgeCannotEnterHybrid",
+      "sha256": "60befd0f3660e56b46ca80f17a0c11f8ecd415833d0d52fad5ecafef7df6389e",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 10308,
+      "imports": [
+        "G7OriginalFiniteEncoding",
+        "G7FiniteReachability",
+        "Mathlib.Data.Fintype.Inv"
+      ],
+      "module": "G7OriginalAdmission",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 11573,
+      "imports": [
+        "G7OriginalCensus",
+        "UnifiedLean.Source.NativePairClockLaw",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "module": "G7OriginalRelabelling",
+      "sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 2502,
+      "imports": [
+        "GraphCuts"
+      ],
+      "module": "GraphBridgeSplits",
+      "sha256": "4ccf9c017dcbcccfcd967e5870e942318f9ef82758f6a9bbdeeb1a9e42e5d95d",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 4515,
+      "imports": [
+        "GraphLeaves"
+      ],
+      "module": "GraphCuts",
+      "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 3064,
+      "imports": [
+        "OriginalBigonProgramDiagonal",
+        "G1ExtractedComponentProgram",
+        "G7SinglePopulationPolynomialKernel"
+      ],
+      "module": "OriginalOrdinaryConnector",
+      "sha256": "4b1163c623b1d5285ce8cf5c229a2a2b7d3cea49f0f6a87edfc5328cb8d00ec0",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "declaration/body contract inspected",
+      "bytes": 8458,
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "module": "SourceNetwork",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "source_body_read": true
+    },
+    {
+      "analysis_depth": "full-byte bounded lexical constructor screen",
+      "bytes": 12293,
+      "imports": [
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Data.Fintype.BigOperators",
+        "E8SupportedTracebackLaw"
+      ],
+      "module": "UnifiedLean.Source.E8PaperObservableBridge",
+      "sha256": "250f7410f09ef0f192f57a62ee119d00b4e422226d6d6746325fb4435e1ab3df",
+      "source_body_read": true
+    }
+  ],
+  "status": "SOURCE_ONLY_NO_COMPATIBLE_ACCEPTED_INVERSE_CONSTRUCTOR_FOUND_IN_THE_BOUNDED_SCREEN",
+  "why_existing_arguments_are_reusable": "The forward G1 splice already provides actual path collapse/expansion, degree bijections, bridge transport and LSA reasoning. The missing work is their concrete reverse instantiation and exact extraction/registry roundtrip, rather than another bank, probability kernel, graph decoder or convexity engine."
+}

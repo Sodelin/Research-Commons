@@ -1,0 +1,51 @@
+from pathlib import Path
+import hashlib
+D=Path(__file__).resolve().parent
+P=Path('$SHARED_WORKSPACE/union1568-independent-final-review-20261011-0112z/check_union.py')
+s=P.read_text();assert hashlib.sha256(P.read_bytes()).hexdigest()=='ad94fd9a14c3369bbd0bbc23f7a45ac19a4d0783405017a321d3b631726d7fa5'
+prefix=s[:s.index('def preflight():')]
+prefix=prefix.replace("ROOT=Path('$ACCEPTED1568')","ROOT=Path('$PACKAGE')\nBASE=Path('$ACCEPTED1568')\nG4=Path('$ACCEPTED219')")
+prefix=prefix.replace("RUN=ROOT/'.build/runs/20261010T233820.417934Z'","RUN=Path(read_run) if False else None")
+prefix=prefix.replace("GRAPH='1a82a47a20257e9fa83bc88c786a55ca82d4dd245952cf4779a646f84a83d825'","GRAPH='ba9148757fda063c86b40db0d453a3eccd85c224800a8b98ebd12f6ffe31f367'")
+fn=s[s.index('def final_check(g,expected):'):s.index("if __name__=='__main__':main()")]
+fn=fn.replace("{'cache_reuse':70,'fresh_components':1498}","{'cache_reuse':1570}")
+fn=fn.replace("tr['closure_modules']==1568","tr['closure_modules']==1570")
+fn=fn.replace("indexp=ROOT/'trace-transport/INDEX.json';indexbytes=indexp.read_bytes();index=json.loads(indexbytes)\n entries={str(ROOT/e['raw_path']):e for e in index['entries']};assert len(entries)==len(index['entries'])", "index_snapshots={};entries={};new_entries=set()\n for origin in [BASE,G4,ROOT]:\n  ip=origin/'trace-transport/INDEX.json'\n  if not ip.exists():\n   assert origin==ROOT;continue\n  ib=ip.read_bytes();ix=json.loads(ib);index_snapshots[ip]=ib\n  for e in ix['entries']:\n   raw=str(origin/e['raw_path']);assert raw not in entries;entries[raw]=(origin,e)\n   if origin==ROOT:new_entries.add(raw)")
+fn=fn.replace("raw=Path(t['path']);e=entries.get(str(raw));h=hashlib.sha256();n=0;used=set();carry=b''", "raw=Path(t['path']);pair=entries.get(str(raw));origin,e=pair if pair else (None,None);h=hashlib.sha256();n=0;used=set();carry=b''")
+fn=fn.replace("str(ROOT/e['receipt_path'])","str(origin/e['receipt_path'])").replace("arc=ROOT/e['archive_path']","arc=origin/e['archive_path']")
+fn=fn.replace("len(records)==1568","len(records)==1570").replace("len(bymodule)==1568","len(bymodule)==1570")
+fn=fn.replace("len(fresh)==1498 and len(reused)==70","len(fresh)==0 and len(reused)==1570")
+fn=fn.replace("sum(e.get('status')=='FRESH_KERNEL_PASS' for e in events)==1498","sum(e.get('status')=='FRESH_KERNEL_PASS' for e in events)==0")
+fn=fn.replace("==101705","==101749").replace("==92153","==92182")
+fn=fn.replace("assert actual==expected,'full inherited declaration metadata mismatch'", "assert set(actual)==set(expected),'full declaration name mismatch'\n deltas=[]\n allowed={'MeasureTheory.Measure.toPMF.congr_simp','UnifiedLean.Source.SourceBoundaryKernels.ordinaryLocation.eq_1','UnifiedLean.Source.SourceNaturalInitialization.originalGamma.eq_1','UnifiedLean.Source.SourceNaturalInitialization.originalRegisterPMF.eq_1'}\n for name,x in actual.items():\n  y=expected[name];assert {k:v for k,v in x.items() if k!='module'}=={k:v for k,v in y.items() if k!='module'},('declaration metadata',name)\n  if x['module']!=y['module']:\n   assert name in allowed;deltas.append({'name':name,'reference_module':y['module'],'actual_module':x['module']})\n (OUT/'FINAL-MODULE-ATTRIBUTION-DELTA.json').write_text(json.dumps(deltas,indent=2)+'\\n')")
+fn=fn.replace("assert set(entries)<=traced,'unreviewed compressed trace'\n assert indexp.read_bytes()==indexbytes,'trace index changed during review'", "assert new_entries<=traced,'unreviewed new compressed trace'\n for ip,ib in index_snapshots.items():assert ip.read_bytes()==ib,'trace index changed during review'")
+fn=fn.replace(" interruption=read(ROOT/'EXECUTOR-INTERRUPTION.json');assert interruption['status']=='EXECUTOR_INTERRUPTED_WITHOUT_TERMINAL_RECEIPT' and interruption['controlled_stop_signal_delivered'] is False", " assert not (ROOT/'EXECUTOR-INTERRUPTION.json').exists()")
+fn=fn.replace("PASS_INDEPENDENT_EXACT_1568_CONTEXT_REVIEW","PASS_INDEPENDENT_EXACT_1570_CONTEXT_REVIEW")
+fn=fn.replace("'trace_index_sha256':digest_bytes(indexbytes)","'trace_index_sha256s':{str(ip.parent.parent.name):digest_bytes(ib) for ip,ib in index_snapshots.items()}")
+fn=fn.replace("'fresh_components':1498,'authenticated_interrupted_run_components':70", "'fresh_components':0,'authenticated_component_reuse':1570")
+fn=fn.replace("'all_declaration_records_exactly_preserved':True", "'all_nonmodule_declaration_metadata_exactly_preserved':True,'module_attribution_deltas':deltas,'globally_new_declarations':44,'globally_new_theorems':29,'declarations':101749,'theorems':92182")
+main='''
+def main():
+ global RUN
+ start=time.time();RUN=Path(read(ROOT/'.build/LATEST-RUN.json')['run'])
+ for name,w in PINS.items():check(ROOT/name,w)
+ check(ROOT/'DEPENDENCY-GRAPH.json',GRAPH);check(RUN/'DEPENDENCY-GRAPH.json',GRAPH)
+ graph=read(ROOT/'DEPENDENCY-GRAPH.json');g=graph['targets']['current/connected']
+ # Preflight is a separate executed exact source/cache check; bind its result.
+ check(OUT/'PREFLIGHT-REVIEW.json','b1187881c1c87dd5501eb5817c57c12a50c248382567a8809fb39d42a950579f')
+ for m,x in g['modules'].items():
+  p=ROOT/'source-store'/(x['sha256']+'.lean');check(p,x['sha256']);assert imports(p.read_bytes())==x['imports']
+ ba=BASE/'.build/runs/20261010T233820.417934Z/targets/current_connected/RESULT.json';check(ba,'50d1532ebb1c867a7226ecb2f42a520f937ed91715566865404bfa435a604f3d')
+ ga=G4/'.build/runs/20261011T015628.150112Z/targets/candidate_g4-actual-span/RESULT.json';check(ga,'8809186c09118c667b8e69155327398b343ec176aeaf81dc6a3414af2a9660cb')
+ bap=Path(read(ba)['audit_receipt']['audit_output']);gap=Path(read(ga)['audit_receipt']['audit_output'])
+ check(bap,'ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53');check(gap,'964136ed38c4dbd2dc5f11b9c6fd9fd48ca0cd31627baa63db56002520c0e807')
+ b={x['name']:x for x in read(bap)['declarations']};c={x['name']:x for x in read(gap)['declarations']}
+ fresh={n:x for n,x in c.items() if n not in b};assert len(fresh)==44 and sum(x['kind']=='theorem' for x in fresh.values())==29
+ expected={**b,**fresh};assert len(expected)==101749
+ report=final_check(g,expected);report.update(graph_sha256=GRAPH,compiler_invoked=False,distinct_file_hashes=len(MEMO),bytes_hashed=hashed_bytes,elapsed_seconds=time.time()-start)
+ (OUT/'FINAL-UNION-REVIEW.json').write_text(json.dumps(report,indent=2)+'\\n')
+ print(json.dumps({k:v for k,v in report.items() if k!='component_records'},indent=2))
+if __name__=='__main__':main()
+'''
+(D/'check_final.py').write_text(prefix+fn+main)
+print('Generated complete explicit read-only verifier, not executed.')

@@ -1,0 +1,46 @@
+--- review_scope.py
++++ review_scope_v3.py
+@@ -18,9 +18,19 @@
+ assert sha(M1) == 'b9f17f6af9cc508dbf8e1fcacf740cf9cb04d58088bb452bd777b8abc0cea767'
+ assert sha(M2) == 'a8ae28ac04e54e9fa8fb11ad9747b1d8ed667899a498b3b25aed28e4f44ef7e1'
+ a, b = json.loads(M1.read_bytes()), json.loads(M2.read_bytes())
+-parent = json.loads((P / 'lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json').read_bytes())
+-forestfreeze = json.loads((P / 'lean/proposals/reuse-integration-20261010T2138Z/forest-register-compression/PROPOSAL-FREEZE.json').read_bytes())
+-naturalfreeze = json.loads((OW / 'metadata/factor-ite-true-proof-repair-3fc98f89-20261011T012921.157357Z/PROPOSAL-FREEZE-V10-ITE-TRUE.json').read_bytes())
++parentpath = P / 'lean/HISTORY-SURVIVAL-UNION-1504-CERTIFICATE.json'
++assert sha(parentpath) == '1f45babae7a183dc1638ebfd7de210fddcf2dd872e8498f3f80ede4d06e9fcc2'
++parent = json.loads(parentpath.read_bytes())
++forestpath = P / 'lean/proposals/reuse-integration-20261010T2138Z/forest-register-compression/PROPOSAL-FREEZE.json'
++assert sha(forestpath) == 'cd0e36cec18afb38fc07e0ad31b5bbaa68addc5f8e920fac7982093c0c04791e'
++forestfreeze = json.loads(forestpath.read_bytes())
++naturalpath = OW / 'metadata/factor-ite-true-proof-repair-3fc98f89-20261011T012921.157357Z/PROPOSAL-FREEZE-V10-ITE-TRUE.json'
++assert sha(naturalpath) == 'd54d69c760f24b6e6a2e6fb7310c6b6d5a489250663bfafb82b0adda62d9da9f'
++naturalfreeze = json.loads(naturalpath.read_bytes())
++current_source = W / 'source-store/3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4.lean'
++assert sha(current_source) == naturalfreeze['sources'][1]['sha256'] == '3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4'
++fullqa = W / 'design-qc/natural141-saved-20261011T0152Z-solver_design_recovery/NATURAL141-SAVED-QC-ATTEMPT2.json'
++assert sha(fullqa) == '6ed6b44b114704fb39a236a126b1f2a36197a6b443d53da5a2816a7efa5a19c4'
+ special_imports = {'G6OriginalForestRegisterCompression': forestfreeze['source']['imports'], 'G6NaturalCommonForestFactorization': naturalfreeze['sources'][1]['imports']}
+ rows, blocks = [], 0
+ for r in a['providers']:
+@@ -49,7 +59,8 @@
+     text = p.read_text()
+     assert re.findall(r'^import\s+(\S+)', text, re.M) == r['imports']
+     for d in r['declarations']:
+-        block = ''.join(text.splitlines(True)[d['lines'][0] - 1:d['lines'][1]])
++        # V2 literal capture strips trailing blank whitespace and restores one LF.
++        block = ''.join(text.splitlines(True)[d['lines'][0] - 1:d['lines'][1]]).rstrip() + '\n'
+         assert block == d['literal_block'] and hashlib.sha256(block.encode()).hexdigest() == d['block_sha256']
+         assert d['literal_header'] in text
+         blocks += 1
+@@ -69,8 +80,8 @@
+     {'interface': 'Meaningful finite constructor contract', 'provider': 'read-only V2 concrete inverse nonroot bridge insertion', 'conclusion': 'Concrete V+2/E+3 carrier, four ordered occurrences, retained old ages with new one-third/two-thirds dates, connector/bigon/connector word, original registry extension and deletion Step with explicit carrier equivalences back to S.', 'remaining': 'These outputs are still unproved: RootedBinary/DAG/LSA/CutChild/calendar/blob admission, physical word and inverse Step field equality. The old outer-labelled planar/galled master class needs an explicit extra witness. Do not substitute desired kernel equality as input.'},
+     {'interface': 'Positive bounded biological source', 'provider': 'Oct1 AppendixA.2; accepted forest101', 'conclusion': 'Old hand algebra gives a=1-(1-X)/(4K+1), X_res=X/a^(2K), positive armsa/az plus connectora;K0 ordinary positive edge. Forest101 transfers one supplied centered-generator certificate over full register/forest fibres.', 'remaining': 'Formal admitted insertion/shared-bank/cohort/refinement and stochastic Poissonization/Euler/error budgets remain downstream. Signed generator equality is not arbitrary PMF-mixture realizability or a formal polynomial-length biological approximation theorem.'}
+ ]
+-report = {'schema': 'natural141_existing_legal_source_calibrated_decoder_scope_challenge_v1', 'contributor': 'Codex / solver_design_recovery', 'observed_utc': datetime.now(timezone.utc).isoformat(), 'reviewer_sha256': sha(Path(__file__)), 'status': 'PASS_READ_ONLY_SCOPE_AND_PROSPECTIVE_CONSTRUCTOR_CONTRACT_REVIEW; not a proved constructor', 'provider_maps': [{'path': str(M1), 'sha256': sha(M1)}, {'path': str(M2), 'sha256': sha(M2)}], 'authenticated_source_records': rows, 'authenticated_declaration_blocks': blocks, 'whole_edge_original_coin_chart': {'path': str(chart), 'sha256': sha(chart)}, 'actual_natural_source': '3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4', 'findings': findings, 'own_schema_correction': {'path': str(failure), 'sha256': sha(failure)}, 'qualification': 'Bounded existing-body readback and scope challenge, not universal absence of providers, new mathematical acceptance, a proved outline, fullG6/G7/G4/native/master closure or promotion of the fixed65-ID register. Full3fc transport/capture/byte QA is a separate acceptance gate.', 'new_theorem_sources_or_decoders_authored': 0, 'target_imports_compiler_native_helper_invocations': 0, 'git_or_external_mutations': 0, 'overlay_writes': 0}
+-out = Q / 'EXISTING-LEGAL-SOURCE-AND-CALIBRATED-DECODER-SCOPE-CHALLENGE-ATTEMPT2.json'
++report = {'schema': 'natural141_existing_legal_source_calibrated_decoder_scope_challenge_v1', 'contributor': 'Codex / solver_design_recovery', 'observed_utc': datetime.now(timezone.utc).isoformat(), 'reviewer_sha256': sha(Path(__file__)), 'status': 'PASS_READ_ONLY_SCOPE_AND_PROSPECTIVE_CONSTRUCTOR_CONTRACT_REVIEW; not a proved constructor', 'provider_maps': [{'path': str(M1), 'sha256': sha(M1)}, {'path': str(M2), 'sha256': sha(M2)}], 'authenticated_source_records': rows, 'authenticated_declaration_blocks': blocks, 'whole_edge_original_coin_chart': {'path': str(chart), 'sha256': sha(chart)}, 'actual_natural_source': '3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4', 'findings': findings, 'current_source_pin': {'path': str(current_source), 'bytes': current_source.stat().st_size, 'sha256': sha(current_source)}, 'full_saved_qc': {'path': str(fullqa), 'sha256': sha(fullqa)}, 'own_schema_correction': {'path': str(failure), 'sha256': sha(failure)}, 'own_v2_block_boundary_correction': {'path': str(Q / 'OWN-READER-BLOCK-BOUNDARY-FAILURE-AND-CORRECTION-V3.json'), 'sha256': sha(Q / 'OWN-READER-BLOCK-BOUNDARY-FAILURE-AND-CORRECTION-V3.json')}, 'qualification': 'Bounded existing-body readback and scope challenge, not universal absence of providers, new mathematical acceptance, a proved outline, fullG6/G7/G4/native/master closure or promotion of the fixed65-ID register. Full3fc transport/capture/byte QA is a separate acceptance gate.', 'new_theorem_sources_or_decoders_authored': 0, 'target_imports_compiler_native_helper_invocations': 0, 'git_or_external_mutations': 0, 'overlay_writes': 0}
++out = Q / 'EXISTING-LEGAL-SOURCE-AND-CALIBRATED-DECODER-SCOPE-CHALLENGE-ATTEMPT3.json'
+ with out.open('x') as f:
+     json.dump(report, f, indent=2, sort_keys=True)
+     f.write('\n')

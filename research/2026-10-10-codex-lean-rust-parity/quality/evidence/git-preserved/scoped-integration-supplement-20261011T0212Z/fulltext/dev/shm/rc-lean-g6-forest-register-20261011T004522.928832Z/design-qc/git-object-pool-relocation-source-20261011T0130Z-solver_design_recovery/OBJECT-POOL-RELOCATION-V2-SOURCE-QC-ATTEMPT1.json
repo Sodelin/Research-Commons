@@ -1,0 +1,78 @@
+{
+  "contributor": "Codex / solver_design_recovery",
+  "data_preservation": [
+    "Pre-redirect copy failures retain the original regular pool and any partial create-new counted copy.",
+    "Caught redirect or logical/backup hash failures unlink only the new redirect, restore the verified original backup to the logical path, rehash it and re-raise.",
+    "Only the redundant backup is removed after all original and counted object bytes have been verified. Failures after successful redirection retain the complete counted pool and logical redirect.",
+    "The outer failure trace records surviving OLD/NEW/BACKUP states; a failure to write that create-new trace reports pool states to stdout."
+  ],
+  "dated_capacity": {
+    "allocation_roots": [
+      "/dev/shm/rc-lean-history-accepted-union-1497-20261010T204542.182773Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T215019.155940Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T215937.269892Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T220406.479093Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T220716.887146Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T222406.278689Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T222910.249687Z",
+      "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z",
+      "/dev/shm/rc-lean-g7-family-normalization-20261010T225713.818482Z",
+      "/dev/shm/rc-lean-g7-family-normalization-20261010T230143.534018Z",
+      "/dev/shm/rc-lean-g6-parallel-arm-transport-20261010T231844.690779Z",
+      "/dev/shm/rc-lean-g6-natural-common-20261011T001250.195773Z",
+      "/dev/shm/rc-lean-g6-natural-common-20261011T002247.540229Z",
+      "/dev/shm/rc-lean-g6-natural-common-20261011T002733.947509Z",
+      "/dev/shm/rc-lean-g6-natural-common-20261011T003502.004915Z",
+      "/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z",
+      "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z",
+      "/dev/shm/rc-audit-stream-codec-family168-trial-1",
+      "/dev/shm/rc-audit-stream-codec-family168-launch-1",
+      "/dev/shm/rc-audit-portable-restore-family168-trial-1",
+      "/dev/shm/rc-audit-portable-restore-family168-launch-1",
+      "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z",
+      "/dev/shm/rc-compressed-loader-v3-saved-trial-20261011T0005Z-outer",
+      "/dev/shm/rc-audit-delta-20261010T2320Z-gabukgew",
+      "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z"
+    ],
+    "copy_reserve_bytes": 73744384,
+    "markers_absent": true,
+    "next_proof_reserve_bytes": 79691776,
+    "nonreclaim_bytes": 12181671936,
+    "plan": {
+      "bytes": 4411,
+      "path": "/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/RESOURCE-AND-RUN-PLAN.json",
+      "sha256": "0db1bb265fec8e2a4c89b0361d2b48f3f38c17d35aeb479b623c0954f097bac5"
+    },
+    "scratch_bytes": 1724993536,
+    "scratch_with_copy_and_next": 1878429696
+  },
+  "git_commands_or_mutations": 0,
+  "observed_utc": "2026-10-11T01:36:51.541732+00:00",
+  "opaque_input_revalidation": {
+    "all_exact_prior_rows_rehashed": true,
+    "allocated_bytes": 62386176,
+    "content_bytes": 55754823,
+    "files": 2261
+  },
+  "preserved_specific_v1_hold": {
+    "bytes": 498091,
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/design-qc/git-object-pool-relocation-source-20261011T0130Z-solver_design_recovery/OBJECT-POOL-RELOCATION-V1-SOURCE-QC.json",
+    "sha256": "d1a45ca6222f09ad594a27d47891afb62ff2d7e2ab0174961ccbed10ee348aff"
+  },
+  "prior_reader_writer_preflight": "A prior reader-file writer failed Python parsing due nested string delimiters before writing or executing any reader. This immutable reader corrects only its own construction.",
+  "qualification": "Source-only review, not invocation or completed relocation. This is ordinary caught-exception recovery, not atomic path availability across SIGKILL/power loss or a durability claim for shared memory. A rollback filesystem error still requires recovery from surviving pools. Recheck exact 25-root plan, idle markers and resource limits at invocation; a new producer context requires a new bound plan.",
+  "schema": "git_object_pool_lossless_relocation_source_design_qc_v2",
+  "source_v1": {
+    "bytes": 6006,
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/relocate_git_object_pool_losslessly_20261011.py",
+    "sha256": "7e92cda2d3b076f6edee1a597077202c04957ec90555eeb68538ec1b0a9caf50"
+  },
+  "source_v2": {
+    "bytes": 7652,
+    "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/git-evidence-publication/relocate_git_object_pool_losslessly_v2_20261011.py",
+    "sha256": "53082e706eeb223b03f541d7af2b514f1a6be9c6aa4e1960ca930b2955a4d30f"
+  },
+  "status": "PASS_SOURCE_ONLY_NARROW_ROLLBACK_AND_FAILURE_TRACE",
+  "target_module_or_producer_imports_or_runs": 0,
+  "whole_ast_check": "Full source AST equals V1 after unwrapping only the redirect rollback try and replacing only the outer entrypoint failure trace."
+}

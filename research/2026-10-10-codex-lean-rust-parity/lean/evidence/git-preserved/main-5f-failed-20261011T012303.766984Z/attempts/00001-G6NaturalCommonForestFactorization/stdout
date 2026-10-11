@@ -1,0 +1,75 @@
+G6NaturalCommonForestFactorization.lean:110:0: warning: automatically included section variable(s) unused in theorem `GProgram.G6.NaturalCommonForestFactorization.actual_arm_exposure_positive`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G6NaturalCommonForestFactorization.lean:297:76: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+B : NonrootBigon N
+sample : Copy → X
+r : PositivePairRates E
+t : ℝ≥0
+s : Code N sample
+longArm : Bool
+hle : (armExposure N B r t !longArm) ≤ armExposure N B r t longArm
+d : Code N sample
+⊢ (if True then sourceTimeKernel N unitRates (armExposure N B r t longArm - armExposure N B r t !longArm) d
+    else PMF.pure d) =
+    sourceTimeKernel N unitRates (armExposure N B r t longArm - armExposure N B r t !longArm) d
+G6NaturalCommonForestFactorization.lean:299:32: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [residualEpoch]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G6NaturalCommonForestFactorization.lean:420:7: warning: Variable name `hinput` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hinput
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G6NaturalCommonForestFactorization.lean:426:5: warning: Variable name `hle` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hle
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'GProgram.G6.NaturalCommonForestFactorization.actual_arm_exposure_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_arm_erased_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_common_erased_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_natural_stored_selector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_private_bit_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_natural_common_erased_full_forest_factorization' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_tied_calendar_common_factorization' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'GProgram.G6.NaturalCommonForestFactorization.actual_no_read_future_erased_full_forest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,24 @@
+--- /dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z/scripts/compare_natural141_owned_20261011.py
++++ /dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z/scripts/compare_natural141_owned_20261011_v2.py
+@@ -38,15 +38,18 @@
+                 break
+             assert len(header) < 2**20, 'Audit header exceeds explicit bound'
+         prefix, buf = header[:match.start()], header[match.end():]
+-        expected = int(re.search(r'"declaration_count"\s*:\s*(\d+)', prefix).group(1))
+-        for key in ('owned_axioms', 'nonstandard_axiom_rows', 'missing_modules'):
+-            assert re.search('"' + key + r'"\s*:\s*\[\s*\]', prefix)
+         count = 0
+         while True:
+             buf = buf.lstrip()
+             if buf.startswith(','):
+                 buf = buf[1:].lstrip()
+             if buf.startswith(']'):
++                tail = buf[1:] + f.read(4 * 2**20)
++                assert not f.read(1), 'Trailing audit metadata exceeds explicit bound'
++                metadata = prefix + tail
++                expected = int(re.search(r'"declaration_count"\s*:\s*(\d+)', metadata).group(1))
++                for key in ('owned_axioms', 'nonstandard_axiom_rows', 'missing_modules'):
++                    assert re.search('"' + key + r'"\s*:\s*\[\s*\]', metadata)
+                 assert count == expected
+                 return
+             try:

@@ -1,0 +1,105 @@
+--- /dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z/design-qc/main-1cf-failure-20261011T0110Z-solver_design_recovery/review_saved.py
++++ /dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/design-qc/main-5f-failure-20261011T0140Z-solver_design_recovery/review_saved.py
+@@ -9,12 +9,12 @@
+ import sys
+ 
+ P=Path('/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity')
+-W=Path('/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z')
+-R=W/'.build/runs/20261011T010231.626199Z'
+-F=W/'lossless-export/main-1cf-failed-20261011T010231.626199Z'
+-TARGET='extraction/g6-natural-common-forest-factorization-1cf01eb0'
+-TD=R/'targets/extraction_g6-natural-common-forest-factorization-1cf01eb0'
+-SOURCE='1cf01eb0e55c5f75b396208fd236878faab70d0c3b91950bfed905a5025003fd'
++W=Path('/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z')
++R=W/'.build/runs/20261011T012303.766984Z'
++F=W/'lossless-export/main-5f-failed-20261011T012303.766984Z'
++TARGET='extraction/g6-natural-common-forest-factorization-5f0143f9'
++TD=R/'targets/extraction_g6-natural-common-forest-factorization-5f0143f9'
++SOURCE='5f0143f9f266659cb35c495c3bbb01781039d1338a2eb527e1196bd419b6c4f9'
+ 
+ def require(ok, label):
+     if not ok:
+@@ -44,13 +44,13 @@
+     return {s:pin(companion(p,s),h) for s,h in expected.items()}
+ 
+ def check():
+-    prep_qc=pin(W/'design-qc/natural-v8-preparation-20261011T0103Z-solver_design_recovery/V8-ACTUAL-PREPARATION-SAVED-QC-ATTEMPT1.json','c2ccc6e00bf8d47680b8ddf5c46458fcf87f77e60f4cd0d617d3e060a79486d9')
+-    result_pin=pin(P/'lean/G6-NATURAL-COMMON-FACTORIZATION-MAIN-1CF-FAILED-20261011T010231.626199Z-RESULT.json','b8d2be40c66bfeeb15c1300fbd391fad7e3c87da262a377149db92b39fbf442d')
++    prep_qc=pin(W/'design-qc/natural-v9-preparation-20261011T0118Z-solver_design_recovery/V9-ACTUAL-PREPARATION-SAVED-QC-ATTEMPT1.json','bd8b66e2f5491ae836c07683dcecb6d90efc8fbf03425d363402d5c8aea78693')
++    result_pin=pin(W/'G6-NATURAL-COMMON-FACTORIZATION-MAIN-5F-FAILED-20261011T012303.766984Z-RESULT.json','a6dafff494b4b6fd93347c9badd8e34bebf7e1a47b7388340780311f8e64d9c3')
+     pin(F/'PRESERVATION-MANIFEST.json',result_pin['sha256'])
+     m=load(result_pin['path'])
+-    E=P/'lean'/m['evidence']
++    E=Path(m['evidence'])
+     pin(E/'PRESERVATION-MANIFEST.json',result_pin['sha256'])
+-    require(m['status']=='INCOMPLETE_TARGET_FAILURES_PRESERVED' and m['packet_distribution_complete'] and m['lossless_distribution']=='PACKET_COPY' and m['actual_run']==str(R) and m['complete_lossless_export_original']==str(F),'exact actual failed run and complete packet/fixed export')
++    require(m['status']=='INCOMPLETE_TARGET_FAILURES_PRESERVED' and not m['packet_distribution_complete'] and m['lossless_distribution']=='FIXED_SHMEM_EXPORT_ONLY_EXPLICIT_CAPACITY_BOUNDARY' and m['actual_run']==str(R) and m['complete_lossless_export_original']==str(F),'exact actual failed run and complete fixed-shmem export; packet explicitly absent')
+     require(not m['compiled_artifact_bytes_distributed'] and not m['original_attempts_overwritten'] and not m['protected_provider_context_executed'],'no distributed compiled bytes/attempt overwrite/guard execution')
+     rows=m['preserved_files']
+     require(len(rows)==len({x['path'] for x in rows})==51,'51 unique preserved rows')
+@@ -60,7 +60,7 @@
+         rel=Path(row['path'])
+         require(not rel.is_absolute() and '..' not in rel.parts,'relative evidence paths')
+         fp,ep,op=pin(F/rel,row['sha256']),pin(E/rel,row['sha256']),pin(row['original_path'],row['original_sha256'])
+-        require(fp['bytes']==ep['bytes']==row['bytes'] and (F/rel).read_bytes()==(E/rel).read_bytes(),'fixed/packet byte equality')
++        require(fp['bytes']==ep['bytes']==row['bytes'] and F==E,'manifest fixed path and full-byte identity')
+         encoded=(F/rel).read_bytes()
+         require(encoded[:4]!=b'\x7fELF','zero exported ELF')
+         if row.get('encoding')=='gzip':
+@@ -73,23 +73,24 @@
+     dp=pin(F/'COMPRESSED-DISTRIBUTIONS.json',m['compressed_distributions_manifest_sha256'])
+     pin(E/'COMPRESSED-DISTRIBUTIONS.json',dp['sha256'])
+     distribution=load(dp['path'])
+-    require(distribution['distributions']==compressed and distribution['original_run_unchanged'] and sum(x['bytes'] for x in rows)+dp['bytes']==m['measured_export_bytes_before_manifest']==830934,'exact lossless distribution/payload')
++    require(distribution['distributions']==compressed and distribution['original_run_unchanged'] and sum(x['bytes'] for x in rows)+dp['bytes']==m['measured_export_bytes_before_manifest']==829073,'exact lossless distribution/payload')
+     expected={x['path'] for x in rows}|{'PRESERVATION-MANIFEST.json','COMPRESSED-DISTRIBUTIONS.json'}
+-    require({str(p.relative_to(F)) for p in F.rglob('*') if p.is_file()}==expected and {str(p.relative_to(E)) for p in E.rglob('*') if p.is_file()}==expected,'all53 fixed+packet file inventory')
++    require({str(p.relative_to(F)) for p in F.rglob('*') if p.is_file()}==expected and {str(p.relative_to(E)) for p in E.rglob('*') if p.is_file()}==expected,'all53 fixed-shmem file inventory')
+     capacity=m['overlay_capacity_preflight']
+-    require(capacity['transient_reserve_bytes']==8388608 and not capacity['source_or_evidence_deleted'] and capacity['free_before_bytes']>=capacity['transient_reserve_bytes']+capacity['measured_payload_bytes']+capacity['manifest_and_result_reserve_bytes'],'dated packet export fits unchanged8MiB reserve')
++    require(capacity['transient_reserve_bytes']==8388608 and not capacity['source_or_evidence_deleted'] and capacity['free_before_bytes']>=capacity['transient_reserve_bytes'] and capacity['free_before_bytes']<capacity['transient_reserve_bytes']+capacity['measured_payload_bytes']+capacity['manifest_and_result_reserve_bytes'],'dated fixed-shmem fallback preserves unchanged8MiB reserve'); require(m['natural_exporter_v3_storage_location_derivation']['packet_copy_disabled'] and m['natural_exporter_v3_storage_location_derivation']['result_directory']==str(W) and m['exporter_sha256']=='cb9826d672dde47dd4beb8fa5f739a1d365d06c416ccf38737859a46c3217b04','explicit reviewed location-only exporter no packet copy')
++    require(sum(p.stat().st_size for p in F.rglob('*') if p.is_file())==860013,'exact full53file byte total'); pin(P/'lean/scripts/build_connected.py','13ee72208587df0bd417c060df93d00d494c0e5c8e6c5c02e27f87f8a07123cc'); pin(Path('/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z')/'design-qc/natural-v9-and-output-helpers-20261011T0114Z-solver_design_recovery/V9-AND-SHMEM-OUTPUT-STATIC-QC-ATTEMPT2.json','557186c0e928aa3a08248371787ca42593117f0f1a02688b4b6a245c0be3a2ce'); pin(Path('/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z')/'scripts/preserve_g6_natural_common_20261011_v3_shmem_metadata.py',m['exporter_sha256'])
+     final=load(R/'FINAL-RECEIPT.json')
+     require(final==m['final_receipt'] and final['status']=='INCOMPLETE_TARGET_FAILURES_PRESERVED' and final['targets_requested']==[TARGET] and final['targets_passed']==[] and final['counts']=={'cache_reuse':140} and final['trust_level']==0 and final['kernel_checking'] and final['compiler_identity_stable'] and final['native_runtime_final_rehash_stable'],'exact140warm nofresh admitted/no complete target')
+     a=R/'attempts/00001-G6NaturalCommonForestFactorization'
+     require({p.name for p in (R/'attempts').iterdir()}=={a.name},'only one failed main attempt; no aggregate/audit')
+-    recpin=pin(a/'receipt.json','1db0efe1a7f671cd21074b24608d43df6809faca4258ca04df04af078df0ec25')
++    recpin=pin(a/'receipt.json','5a720018343ddea62a7f04c5e35bccff149208855e2ebcaf132f58f42e0f597e')
+     rec=load(recpin['path'])
+     descriptor=pin(a/'STDERR-CAPTURE.json')
+     cap=load(descriptor['path'])
+     require(rec['stderr_storage']==cap and cap['complete'] and cap['eof'] and not cap['truncated'] and cap['reason'] is None and cap['exit_code']==rec['exit_code']==1,'complete nontruncated actualfailed livecapture')
+-    gp=pin(a/'stderr.raw.gz','ee163f8eb75997868d51c271720500539a78a7e95388627d2873e48efdfc4a57')
++    gp=pin(a/'stderr.raw.gz','979f720bb7e93dda1047efa3a41cc88f61819e1a2a6e08d02501f7bdeb8f873b')
+     raw=gzip.decompress(Path(gp['path']).read_bytes())
+-    require(gp['bytes']==cap['gzip_bytes']==292307 and digest(raw)==cap['raw_sha256']==rec['stderr_sha256']=='5e9f915580e6660aedee208df7a114d6652dc023079bc11648da09212f3e43ae' and len(raw)==cap['raw_bytes']==12637463,'full raw/encoded identities EOF/bounds')
++    require(gp['bytes']==cap['gzip_bytes']==291825 and digest(raw)==cap['raw_sha256']==rec['stderr_sha256']=='ad403abbc1651f67ceb61901476b63aeb5d01d0b93f9219ca0fba6e4f483f2ad' and len(raw)==cap['raw_bytes']==12617424,'full raw/encoded identities EOF/bounds')
+     require(not (a/'stderr').exists(),'no separate raw live capture claimed')
+     native=load(R/'NATIVE-RUNTIME-PINS.json')
+     current=[]
+@@ -104,10 +105,10 @@
+     resolved={str(Path(n.decode()).resolve()) for n in names}
+     require(len(names)==len(resolved)==10 and resolved==set(rec['native_initialized_libraries']) and rec['native_initialized_libraries_bound'] and all(rec['native_initialized_libraries'][k]==native['libraries'][k] for k in resolved),'ten full actual initialized native identities')
+     require(rec['native_loader_outputs']==[{'path':gp['path'],'sha256':gp['sha256'],'encoding':'gzip','raw_sha256':digest(raw),'raw_bytes':len(raw)}],'exact actualnative evidenceframe')
+-    stdoutpin=pin(a/'stdout','334137fd49aa24a9dcdd0a228128a803d615b7b647ede6c31ddc7f9fa8b2f2f2')
++    stdoutpin=pin(a/'stdout','44a0b362bf2e1033f9a1108c040bda3860814b1bbc1b062be12f8bbb6a6ac13f')
+     stdout=Path(stdoutpin['path']).read_text()
+     locations=[list(map(int,x)) for x in re.findall(r'^G6NaturalCommonForestFactorization\.lean:(\d+):(\d+): error',stdout,re.M)]
+-    require(locations==[[287,4],[292,4],[350,8]] and stdout.count('sorryAx')==2,'exact three ordinary proof/API errors and two diagnostic sorry prints retained')
++    require(locations==[[297,76]] and stdout.count('sorryAx')==2,'exact one ordinary ifTrue proof goal and two diagnostic sorry prints retained')
+     require(rec['status']=='FAILED_OR_RESOURCE' and 'object_artifacts' not in rec and not (a/'G6NaturalCommonForestFactorization.olean').exists(),'no successful factorization object/cache admission')
+     require(rec['source_sha256']==SOURCE and rec['cap_memory_mib']==4096 and rec['cap_seconds']==180 and all(x in rec['command'] for x in ('-j1','-t0','-M4096','-Ddebug.skipKernelTC=false')) and rec['source_and_imports_stable'] and rec['native_runtime_stat_stable'],'actualstrict unchanged4GiB180s inputs/flags')
+     sourcepin=pin(a/'work/G6NaturalCommonForestFactorization.lean',SOURCE)
+@@ -143,10 +144,10 @@
+     storage=load(R/'COMPRESSED-STDERR-STORAGE-PINS.json')
+     equivalence=load(W/'PARENT-WRAPPER-EQUIVALENCE.json')
+     require(storage['same_core_module_object'] and storage['adapter_sha256']=='d774eb292aa0b819791458c51a9353885d3d31b2bde781b85b3c26829e61c810' and storage['authenticated_parent_sha256']==equivalence['actual_authenticated']['sha256'] and storage['namespace_parent_sha256']==equivalence['actual_namespace']['sha256'],'actualsamecore/namespace/authenticated composition unchanged')
+-    return {'status':'PASS_SAVED_FIFTH_MAIN_1CF_PROOF_FAILURE_COMPLETE_CAPTURE_AND_QUALIFIED_PREFIX_REUSE_QC','prior_prepared_qc':prep_qc,'preservation_result':result_pin,'distribution_manifest':dp,'all_export_original_comparisons':compared,'file_counts':{'rows':51,'fixed_files':53,'packet_files':53,'gzip_restorations':len(compressed),'payload_bytes':830934,'packet_distribution_complete':True,'ELFs':0},'actual_attempt':recpin,'capture_descriptor':descriptor,'encoded_capture':gp,'raw_identity':{'bytes':len(raw),'sha256':digest(raw),'full_gzip_eof':True,'initialized_paths':sorted(resolved)},'stdout':stdoutpin,'actual_errors':locations,'diagnostic_sorry_prints':2,'current28native':current,'compiler':compiler,'actual_source':sourcepin,'failed_actual_imports':failedimports,'admitted140component_pins':checked,'qualified_prefix_cache_key':Path(prefix['cached_object']).parent.name,'prelaunchpins':prelaunch,'additional_gatepins':gatepins,'guard':pin(guarddir/'RECEIPT.json'),'qualification':['Capture/preservation PASS; Lean factorization failed at three proof/API sites with two diagnostic sorry prints, all retained. No successful factorization object, aggregate or owned audit, no141 acceptance.', '140 actual warm admissions comprise139 accepted parent providers plus separately qualifieda080 kernel component; no newsource-version or currentfreshness/parent-root acceptance inferred.', 'Complete51-row packet/fixed preservation used the dated unchanged8MiB floor. Subsequent explicit root sparse materialization/relocation does not rewrite this historical result.', 'Source/input/core/storage/strict kernel/resource policy unchanged. No compiler/helper/Builder/target module imported or invoked by this reader.']}
++    return {'status':'PASS_SAVED_SIXTH_MAIN_5F_PROOF_FAILURE_COMPLETE_CAPTURE_AND_QUALIFIED_PREFIX_REUSE_QC','prior_prepared_qc':prep_qc,'preservation_result':result_pin,'distribution_manifest':dp,'all_export_original_comparisons':compared,'file_counts':{'rows':51,'fixed_files':53,'packet_files':0,'gzip_restorations':len(compressed),'payload_bytes':829073,'packet_distribution_complete':False,'ELFs':0},'actual_attempt':recpin,'capture_descriptor':descriptor,'encoded_capture':gp,'raw_identity':{'bytes':len(raw),'sha256':digest(raw),'full_gzip_eof':True,'initialized_paths':sorted(resolved)},'stdout':stdoutpin,'actual_errors':locations,'diagnostic_sorry_prints':2,'current28native':current,'compiler':compiler,'actual_source':sourcepin,'failed_actual_imports':failedimports,'admitted140component_pins':checked,'qualified_prefix_cache_key':Path(prefix['cached_object']).parent.name,'prelaunchpins':prelaunch,'additional_gatepins':gatepins,'guard':pin(guarddir/'RECEIPT.json'),'qualification':['Capture/preservation PASS; Lean factorization failed at one ifTrue proof goal with two diagnostic sorry prints, all retained. No successful factorization object, aggregate or owned audit, no141 acceptance.', '140 actual warm admissions comprise139 accepted parent providers plus separately qualifieda080 kernel component; no newsource-version or currentfreshness/parent-root acceptance inferred.', 'Complete51-row fixed-shmem-only preservation is explicit. Encoded/distribution bytes are829073;53 actual files including preservation manifest total860013. The result does not claim a packet copy. Later Git publication must keep this historical storage result unchanged.', 'Source/input/core/storage/strict kernel/resource policy unchanged. No compiler/helper/Builder/target module imported or invoked by this reader.']}
+ 
+ def main():
+-    report={'schema':'natural_main_1cf_failure_saved_design_qc_v1','contributor':'Codex / solver_design_recovery','observed_utc':datetime.now(timezone.utc).isoformat(),'reviewer_sha256':pin(__file__)['sha256'],'target_modules_imported_or_producer_processes_started':0,'mathematical_acceptance_modified':False}
++    report={'schema':'natural_main_5f_failure_saved_design_qc_v1','contributor':'Codex / solver_design_recovery','observed_utc':datetime.now(timezone.utc).isoformat(),'reviewer_sha256':pin(__file__)['sha256'],'target_modules_imported_or_producer_processes_started':0,'mathematical_acceptance_modified':False}
+     try:
+         report.update(check())
+     except Exception as e:

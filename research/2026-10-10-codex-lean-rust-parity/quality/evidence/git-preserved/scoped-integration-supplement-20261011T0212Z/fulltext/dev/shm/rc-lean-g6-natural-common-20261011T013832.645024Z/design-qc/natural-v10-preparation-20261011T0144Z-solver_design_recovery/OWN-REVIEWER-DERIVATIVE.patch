@@ -1,0 +1,117 @@
+--- /dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z/design-qc/natural-v9-preparation-20261011T0118Z-solver_design_recovery/review_preparation.py
++++ /dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z/design-qc/natural-v10-preparation-20261011T0144Z-solver_design_recovery/review_preparation.py
+@@ -8,7 +8,7 @@
+ import sys
+ 
+ P = Path('/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity')
+-W = Path('/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z')
++W = Path('/dev/shm/rc-lean-g6-natural-common-20261011T013832.645024Z')
+ PREV = Path('/dev/shm/rc-lean-g6-natural-common-20261011T005738.287542Z')
+ OLD = Path('/dev/shm/rc-lean-g6-natural-common-20261011T003502.004915Z')
+ 
+@@ -40,14 +40,14 @@
+     return base.with_suffix(suffix) if suffix in ('.olean', '.ilean', '.ir') else Path(str(base) + suffix[len('.olean'):])
+ 
+ def check():
+-    plan_pin = pin(W/'RESOURCE-AND-RUN-PLAN.json', '0db1bb265fec8e2a4c89b0361d2b48f3f38c17d35aeb479b623c0954f097bac5')
+-    prep_pin = pin(W/'PREPARATION.json', 'a9ada8ed3e133db5a67747960612e5e07b814f138e6c1d47cec1f59c64f21a23')
+-    graph_pin = pin(W/'DEPENDENCY-GRAPH.json', '8d82964541cb994b18ea5f81eebda605e51640a9d1bf06d71db6d5585c476b86')
+-    closure_pin = pin(W/'SOURCE-CLOSURE.json', '6991ccf7006c8f544296a32d00ccfaa23f08602d0ebfb6a49dc80eef675c7eec')
++    plan_pin = pin(W/'RESOURCE-AND-RUN-PLAN.json', '2ce83724b428cf5873587300a5601b89ca07d0a8d0e8d6e6104c7e247bd2a45c')
++    prep_pin = pin(W/'PREPARATION.json', 'cf51798f50180944db0bc26bee7e008f13f538a5c6825255e39bebe871914d16')
++    graph_pin = pin(W/'DEPENDENCY-GRAPH.json', 'cc990a0238c1c1ae300b61fcd37303fa044439dc711041ba90de1412c3222b1b')
++    closure_pin = pin(W/'SOURCE-CLOSURE.json', 'c39b15f32be30c93df85e0ed7fd6b80301a074ce7715737c170a0c1fb579a835')
+     plan, prep, graph = (load(x['path']) for x in (plan_pin, prep_pin, graph_pin))
+     require(plan['preparation_sha256'] == prep_pin['sha256'] and plan['graph_sha256'] == prep['graph_sha256'] == graph_pin['sha256'], 'actual prepared pins agree')
+     deriv = prep['scratch_location_derivation']
+-    freeze_pin = pin(deriv['source_freeze']['path'], 'fdc04904a17a0c686231e2aa09e859e4b3d7461204d84dc191c5c39642a8ccfb')
++    freeze_pin = pin(deriv['source_freeze']['path'], 'd54d69c760f24b6e6a2e6fb7310c6b6d5a489250663bfafb82b0adda62d9da9f')
+     freeze = load(freeze_pin['path'])
+     qcdir = OLD/'design-qc/natural-v7-preparer-20261011T0100Z-solver_design_recovery'
+     static_gates = [
+@@ -56,9 +56,10 @@
+         pin(PREV/'design-qc/factor-5f-source-20261011T0113Z-solver_design_recovery/FACTOR-5F-PROOF-ONLY-STATIC-QC-ATTEMPT2.json', '9a100e62a31c06981db763719e94d91c0f3db05ef3397d2cb676aa49cb80b4bb'),
+         pin(PREV/'design-qc/natural-v9-and-output-helpers-20261011T0114Z-solver_design_recovery/V9-AND-SHMEM-OUTPUT-STATIC-QC-ATTEMPT2.json', '557186c0e928aa3a08248371787ca42593117f0f1a02688b4b6a245c0be3a2ce'),
+     ]
+-    preparer = pin(PREV/'scripts/prepare_g6_natural_common_factorization_20261011_v9_shmem_metadata.py', '41e1e65485c5ae4764b963df95f10bc881eecbaffb459fe560c806a3e8db8614')
+-    require(deriv['preparer_sha256'] == preparer['sha256'], 'reviewed v9 preparer identity')
+-    target_name = 'extraction/g6-natural-common-forest-factorization-5f0143f9'
++    static_gates.append(pin(Path('/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z')/'design-qc/factor-3fc-and-v10-source-20261011T0132Z-solver_design_recovery/FACTOR-3FC-AND-V10-STATIC-QC-ATTEMPT2.json','a7ecbf6ce59c8ed585589c9e8439de98340f06796b8a95d49cc077a186fb74ab'))
++    preparer = pin(Path('/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z')/'scripts/prepare_g6_natural_common_factorization_20261011_v10_shmem_metadata.py', '7ea1b1f9d4b917bcf33d91246bfc4920e70a6783179e589b76875e9d7add181e')
++    require(deriv['preparer_sha256'] == preparer['sha256'], 'reviewed v10 preparer identity')
++    target_name = 'extraction/g6-natural-common-forest-factorization-3fc98f89'
+     target, guards = graph['targets'][target_name], graph['targets']['context/protected-mathlib-providers']
+     modules = {**target['modules'], **guards['modules']}
+     require(len(target['modules']) == len(target['order']) == 141 and len(guards['modules']) == 4 and len(modules) == 145 and not set(target['modules']) & set(guards['modules']), '141 actual and four guard-only staging records')
+@@ -75,7 +76,7 @@
+     fresh = load(W/'FRESH-SOURCES.json')
+     require({n: r['sha256'] for n, r in fresh.items()} == {r['module']: r['sha256'] for r in freeze['sources']} == {
+         'G6OriginalCommonPrefix': 'a080722170d367fe9aa7420c5c5488fe4c7df73a6d994aba15346a8d2ee4c917',
+-        'G6NaturalCommonForestFactorization': '5f0143f9f266659cb35c495c3bbb01781039d1338a2eb527e1196bd419b6c4f9'}, 'two immutable new source versions')
++        'G6NaturalCommonForestFactorization': '3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4'}, 'two immutable new source versions')
+     closure = load(closure_pin['path'])
+     require(len(closure) == 145 and {r['module'] for r in closure} == set(modules), '145 exact staged source records')
+     for row in closure:
+@@ -85,7 +86,7 @@
+         require(re.findall(r'^(?:public\s+)?import\s+([A-Za-z_][A-Za-z0-9_.]*)', Path(row['scratch_source']).read_text(), re.M) == row['imports'], 'literal normal/public import bytes')
+     additional = [pin(r['path'], r['sha256']) for r in prep['additional_storage_input_pins'].values()]
+     require(Path(prep['additional_storage_input_pins']['capture_gate']['path']).is_absolute(), 'absolute capture gate')
+-    eq_pin = pin(prep['runtime_parent_derivation']['path'], '100166a427bb80a9c230f1878e49eb7b6621cb372064da58b6ce0ad1dc32f04b')
++    eq_pin = pin(prep['runtime_parent_derivation']['path'], '1a6d3fd26e3fc51ffaa7699166196e548a9b7a6d6b5745a37a6d96b9f48d69eb')
+     eq = load(eq_pin['path'])
+     for role in ('namespace', 'authenticated'):
+         old, new, rep = eq['accepted_'+role], eq['actual_'+role], eq[role+'_exact_replacement']
+@@ -147,21 +148,47 @@
+             filebytes += item['bytes']
+     require(artifact_count == 156 and files == artifact_count + len(selection) == 300 and filebytes == 50855764, '156 artifacts+144 receipts=300 exact hardlink files/50855764B')
+     budget = plan['budget']
+-    require(budget['planned_conservative_combined_bound_bytes'] == budget['conservative_followed_target_prior_bytes'] + sum(budget['new_allocation_reserves'].values()) == 1836621824, 'dated bound arithmetic')
+-    require(plan['scratch_abort_bytes'] == 2013265920 and plan['scratch_hard_limit_bytes'] == 2147483648 and plan['memory_abort_bytes'] == 16106127360 and len(plan['allocation_roots']) == 25 and budget['packet_export_transient_reserve_bytes'] == 8388608, 'unchanged25-root2GiB/15GiB/8MiB policy')
++    require(budget['planned_conservative_combined_bound_bytes'] == budget['conservative_followed_target_prior_bytes'] + sum(budget['new_allocation_reserves'].values()) == 1917931520, 'dated bound arithmetic')
++    require(plan['scratch_abort_bytes'] == 2013265920 and plan['scratch_hard_limit_bytes'] == 2147483648 and plan['memory_abort_bytes'] == 16106127360 and len(plan['allocation_roots']) == 26 and budget['packet_export_transient_reserve_bytes'] == 8388608, 'unchanged2GiB/15GiB/8MiB policy with all26 roots')
+     roots = set(plan['allocation_roots'])
+-    require(roots == set(load(PREV/'RESOURCE-AND-RUN-PLAN.json')['allocation_roots']) | {str(W)}, 'all24 prior roots retained plus exact new natural context')
++    require(roots == set(load(Path('/dev/shm/rc-lean-g6-natural-common-20261011T011433.283909Z')/'RESOURCE-AND-RUN-PLAN.json')['allocation_roots']) | {str(W)}, 'all25 prior roots retained plus exact new natural context; relocated object pool counted inside forest root')
+     require(plan['phases']['natural']['requires'] == [] and not plan['compiler_launched'], 'saved prelaunch plan has no hidden targets or claimed compiler launch')
+     require({str(OLD), str(PREV), '/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z', str(W)} <= roots and set(load(prep['additional_storage_input_pins']['capture_gate']['path'])['byte_trial_allocation_roots']) <= roots, 'forest/full export, old failed contexts and seven support roots counted')
+-    return {'status': 'PASS_SAVED_V9_PREPARATION_IDENTITIES_AND_QUALIFIED_PREFIX_REUSE_ONLY', 'plan': plan_pin, 'preparation': prep_pin, 'graph': graph_pin, 'closure': closure_pin, 'freeze': freeze_pin, 'preparer': preparer, 'prior_static_gates': static_gates, 'actual_parent_equivalence': eq_pin, 'policy_pins': policy_pins, 'compiler_pin': compiler_pin, 'additional_prelaunch_pins': additional, 'checked_counts': {'executed_modules_planned': 141, 'staged_sources': 145, 'accepted_root_providers': 139, 'qualified_prefix_components': 1, 'pending_fresh_components': 1, 'new_source_versions_retained': 2, 'warm_receipt_pairs': 144, 'artifact_companion_pairs': 156, 'same_inode_cache_transport_files': 300, 'transport_bytes': 50855764, 'distinct_current_compiled_direct_import_files': 513, 'allocation_roots': 25}, 'dated_conservative_bound_bytes': 1836621824, 'qualification': ['Saved preparation identities only; no target/helper/guard/compiler imported or executed by this reviewer.', 'a080 is one authenticated kernel component in a failed141 run, distinct from139 accepted root providers. No previous full141 audit/aggregate acceptance inferred.', 'Source141, staging145 and warm144 labels are distinct. Exact current source/import/native/kernel admissions and current-resource launch remain Root/sole scheduler gates.', 'Original once-drawn private seed/erased Old/local support/no-read and physical exit/context/bin/decoder/global positive construction boundaries remain unchanged.']}
++    import os
++    forest = Path('/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z')
++    migration_path = forest/'metadata/git-evidence-publication/GIT-OBJECT-POOL-LOSSLESS-RELOCATION-20261011.json'
++    migration_pin = pin(migration_path)
++    migration = load(migration_path)
++    prior_inventory = load(forest/'design-qc/git-object-pool-relocation-source-20261011T0130Z-solver_design_recovery/OBJECT-POOL-RELOCATION-V1-SOURCE-QC.json')['actual_input_inventory']['rows']
++    require(migration['status']=='FULL_GIT_OBJECT_POOL_RELOCATED_WITH_IDENTICAL_LOGICAL_BYTES' and migration['rows']==prior_inventory and migration['objects_count']==2261 and migration['content_bytes']==55754823 and migration['object_cap_bytes_unchanged']==67108864,'complete original migration receipt and frozen2261 rows')
++    logical, counted = Path(migration['old_logical_path']), Path(migration['counted_preserved_path'])
++    require(logical.is_symlink() and logical.resolve()==counted and str(counted).startswith(str(forest)+'/') and not Path('/tmp/rc-cloud-git-objects-verified-redirect-backup-20261011').exists(),'original logical pool readthrough counted forest and temporary backup absent')
++    for row in migration['rows']:
++        require(pin(logical/row['path'],row['sha256'])['bytes']==pin(counted/row['path'],row['sha256'])['bytes']==row['bytes'],'all migrated object original logical/fullcounted bytes')
++        same_inode(logical/row['path'],counted/row['path'])
++    total_pool_bytes=sum(p.stat().st_size for p in counted.rglob('*') if p.is_file())
++    require(total_pool_bytes<67108864,'actual current object pool below unchanged64MiB content cap')
++    seen, allocation = set(), 0
++    for root in roots:
++        require(Path(root).is_dir() and not (Path(root)/'ACTIVE-GUARDED-PROCESS.json').exists(),'all26 current roots idle at inspection')
++        for directory, dirs, files in os.walk(root,followlinks=False):
++            for path in [Path(directory),*(Path(directory)/name for name in files)]:
++                st=path.lstat();key=(st.st_dev,st.st_ino)
++                if key not in seen:
++                    seen.add(key);allocation+=st.st_blocks*512
++    mem=dict(line.split() for line in Path('/sys/fs/cgroup/memory.stat').read_text().splitlines())
++    nonreclaim=sum(int(mem[k]) for k in ('anon','shmem','kernel'))
++    require(allocation+sum(budget['new_allocation_reserves'].values())<plan['scratch_abort_bytes'] and nonreclaim<plan['memory_abort_bytes'],'actual current26-root lstat+fullproofreserve fits unchanged limits')
++    current_measurement={'distinct_inode_lstat_bytes':allocation,'full_next_phase_reserves':sum(budget['new_allocation_reserves'].values()),'with_reserves':allocation+sum(budget['new_allocation_reserves'].values()),'nonreclaim_bytes':nonreclaim,'current_object_pool_content_bytes':total_pool_bytes,'all26_markers_absent':True,'migration':migration_pin,'all2261logical_objects_rehashed':True}
++    return {'current_resource_and_relocation_readback':current_measurement,'status': 'PASS_SAVED_V10_PREPARATION_IDENTITIES_AND_QUALIFIED_PREFIX_REUSE_ONLY', 'plan': plan_pin, 'preparation': prep_pin, 'graph': graph_pin, 'closure': closure_pin, 'freeze': freeze_pin, 'preparer': preparer, 'prior_static_gates': static_gates, 'actual_parent_equivalence': eq_pin, 'policy_pins': policy_pins, 'compiler_pin': compiler_pin, 'additional_prelaunch_pins': additional, 'checked_counts': {'executed_modules_planned': 141, 'staged_sources': 145, 'accepted_root_providers': 139, 'qualified_prefix_components': 1, 'pending_fresh_components': 1, 'new_source_versions_retained': 2, 'warm_receipt_pairs': 144, 'artifact_companion_pairs': 156, 'same_inode_cache_transport_files': 300, 'transport_bytes': 50855764, 'distinct_current_compiled_direct_import_files': 513, 'allocation_roots': 26}, 'dated_conservative_bound_bytes': 1917931520, 'qualification': ['Saved preparation identities only; no target/helper/guard/compiler imported or executed by this reviewer.', 'a080 is one authenticated kernel component in a failed141 run, distinct from139 accepted root providers. No previous full141 audit/aggregate acceptance inferred.', 'Source141, staging145 and warm144 labels are distinct. Exact current source/import/native/kernel admissions and current-resource launch remain Root/sole scheduler gates.', 'Original once-drawn private seed/erased Old/local support/no-read and physical exit/context/bin/decoder/global positive construction boundaries remain unchanged.']}
+ 
+ def main():
+     out = Path(sys.argv[1])
+-    report = {'schema': 'natural_v9_saved_preparation_design_qc_v1', 'contributor': 'Codex / solver_design_recovery', 'observed_utc': datetime.now(timezone.utc).isoformat(), 'reviewer_sha256': sha(__file__), 'target_modules_imported_or_producer_processes_started': 0, 'mathematical_acceptance_modified': False}
++    report = {'schema': 'natural_v10_saved_preparation_design_qc_v1', 'contributor': 'Codex / solver_design_recovery', 'observed_utc': datetime.now(timezone.utc).isoformat(), 'reviewer_sha256': sha(__file__), 'target_modules_imported_or_producer_processes_started': 0, 'mathematical_acceptance_modified': False}
+     try:
+         report.update(check())
+     except Exception as e:
+-        report.update(status='FAIL_SAVED_V9_PREPARATION_QC', error_type=type(e).__name__, error=str(e))
++        report.update(status='FAIL_SAVED_V10_PREPARATION_QC', error_type=type(e).__name__, error=str(e))
+     with out.open('x') as f:
+         json.dump(report, f, indent=2, sort_keys=True)
+         f.write('\n')
