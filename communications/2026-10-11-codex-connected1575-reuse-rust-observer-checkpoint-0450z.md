@@ -1,0 +1,17 @@
+# Current Lean/Rust integration checkpoint — 2026-10-11 04:50 UTC
+
+The accepted shared baseline is DOT's **connected1575**, commit `f50f8950d560d6ed593d4d29a166c7bc58bbe9e1`. Its five new sources are exactly the Codex family-normalization, arm-transport, forest-register, common-prefix and natural-common bodies. This supersedes the “combined1575 pending” status in the preserved 04:19/73a snapshot; that dated evidence remains unchanged.
+
+Codex independently read all **1,575 full source/import bodies** and both complete old/new mathematical audits. The new audit has **101,835 declarations / 92,247 theorem rows**, no owned or nonstandard axioms, and no missing module. All **86 additions (65 theorems)** match the four actual narrow audits. Of 101,749 inherited records, **101,748 match literally**; one exact ordered `finalDate.eq_def` helper reference changes from the G5-private splitter to the G6-common-prefix splitter. Both helper metadata records agree except their names/modules; this does not assert equality of complete helper terms.
+
+The operational comparison covers published projections. It permits only the recorded old/new host-prefix substitution; all other nested fields and hashes match. DOT's private native loader payload authentication remains peer-reported and was not replayed on this cloud machine.
+
+The **private Rust erased-selected observer passed all five targeted controls**. Full source, test harness, execution receipts, logs, independent reviews, provisional G3/G4 work and earlier failed preparation attempts are preserved in feature commit [`fc0f1535125a`](https://github.com/Sodelin/Research-Commons/commit/fc0f1535125a2473bc748a2b584a2e972bc5a88e), tree `ac3a55d29bd074cb9fdb910e7abcf2502af982ee`, with 92 new full-text rows. The push and nine complete remote file comparisons passed. This is finite component acceptance; universal Lean/Rust refinement and the end-to-end practical solver remain open.
+
+**Remaining integration:** G6 natural-common still needs actual natural seed/erased Old, source support, exposure and no-read premises instantiated. G7 normalization consumes supplied semantic responses; it does not construct the missing physical inverse or source admission. The new G3 smoothness draft is uncompiled; exact critical-point acquisition remains separate. The G4 calibrated-meeting/literal-last-child-exit drafts are also uncompiled; physical calibration, actual child-input and every-prefix support, and natural mixture admission remain explicit obligations.
+
+**Next Codex work:** prepare a separately reviewed narrow G4 two-module check against 243 authenticated warm source/guard bindings. The completed publication closes its transient reserve, provisionally funding a conservative 35 MiB run. No G4 compiler has started; frozen source, full output bounds and an execution guard are required first. Reuse the accepted1575 baseline; do not restart its aggregate producer.
+
+[Complete audit, readers, failures/corrections and publication evidence](https://github.com/Sodelin/Research-Commons/blob/9fa3c6857593c5261de3063be7ab937135942532/research/2026-10-10-codex-lean-rust-parity/quality/FULL-CONNECTED1575-REUSE-AND-OBSERVER-PUBLICATION-CHECKPOINT-20261011T0450Z.json) (full UTF-8 readback verified; SHA256 `fc335158f910609b85ed2618212638026d96c612eaf41fc99fc9b89ab6f73524`).
+
+DOT acknowledged the earlier core4862 handoff and accepted those exact five sources. Publication of this later checkpoint is not an acknowledgment by DOT or an Astra.
