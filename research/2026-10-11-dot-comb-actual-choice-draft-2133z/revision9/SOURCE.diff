@@ -1,0 +1,173 @@
+--- revision8
++++ revision9
+@@ -116,7 +116,7 @@
+   as.Nodup ∧ b ∉ as ∧ as ≠ []
+ 
+ -- Remaining substantive source consumer: under AdmissibleLabels, establish
+--- target-compatible carried-prefix support and the unique next prescribed
++-- target-compatible carried-pref support and the unique next prescribed
+ -- unordered pair. Its two ordered source choices may produce different Codes;
+ -- their event continuation agrees on the inherited child-swap quotient.
+ -- Then derive the coefficient2^k/((k+1)!k!) from the actual ancestral recurrence.
+@@ -163,7 +163,7 @@
+       · exact Finset.Subset.trans (Finset.subset_insert _ _) (ih _ h)
+ 
+ /-- Exact internal clades of the prescribed spine added to an already carried
+-prefix tree. This retains every old clade instead of replacing that tree by a
++pref tree. This retains every old clade instead of replacing that tree by a
+ fresh leaf on the original carrier. -/
+ lemma fold_internalClades (t : Genealogy Copy) (as : List Copy) :
+     internalClades (as.foldl (fun u a => .graft u (.leaf a)) t) =
+@@ -184,7 +184,7 @@
+   · exact Finset.mem_insert_self _ _
+   · exact spineClade_contains_start (insert a S) as h (Finset.mem_insert_self _ _)
+ 
+-/-- Exactly the next prescribed singleton can join the carried prefix without
++/-- Exactly the next prescribed singleton can join the carried pref without
+ creating a clade absent from the target. The wrong B-A2 case is excluded here. -/
+ lemma next_attachment_iff (S : Finset Copy) (a next : Copy) (rest : List Copy)
+     (hnext : next ∉ S) :
+@@ -205,7 +205,7 @@
+   simp only [Finset.mem_insert,Finset.mem_singleton] at hm
+   exact hm.elim hba hbc
+ 
+-/-- Complete target-clade test for the prefix/singleton merger. -/
++/-- Complete target-clade test for the pref/singleton merger. -/
+ lemma next_attachment_target_iff (t : Genealogy Copy) (a next : Copy)
+     (rest : List Copy) (ha : a ∉ t.leaves) (hn : next ∉ t.leaves) :
+     insert a t.leaves ∈ internalClades
+@@ -218,7 +218,7 @@
+   exact next_attachment_iff t.leaves a next rest hn
+ 
+ /-- Every pair of remaining singleton labels is incompatible with the target.
+-The B-containing prefix and disjoint singleton leaves are explicit, actual
++The B-containing pref and disjoint singleton leaves are explicit, actual
+ forest invariants to be supplied at the source use-site. -/
+ lemma singleton_pair_not_target (t : Genealogy Copy) (as : List Copy)
+     (b a c : Copy) (hb : b ∈ t.leaves) (ha : a ∉ t.leaves)
+@@ -239,7 +239,7 @@
+     (hs.representative (s.ancestor a) hl)
+   simpa only [ha, Genealogy.leaves, Finset.mem_singleton] using hm
+ 
+-/-- One carried prefix and the remaining labelled singletons, covering the
++/-- One carried pref and the remaining labelled singletons, covering the
+ actual original-copy carrier. This is an invariant to establish at each
+ successful merger, not a hypothesis about the desired event probability. -/
+ structure CombFrontier (s : State V E Copy) (t : Genealogy Copy)
+@@ -299,7 +299,7 @@
+   have he := singleton_ancestor_eq s hs a (h.singleton a ha)
+   simpa only [he] using h.singleton a ha
+ 
+-/-- First successful ordered orientation: the existing prefix representative
++/-- First successful ordered orientation: the existing pref representative
+ survives. This is the original source merger, with its actual live labels. -/
+ lemma frontier_merge_prefix_survives (s : State V E Copy) (hs : Valid s)
+     (t : Genealogy Copy) (p a : Copy) (rest : List Copy)
+@@ -333,7 +333,7 @@
+       not_or] using And.intro (h.disjoint c hcfull) hca
+ 
+ /-- Second successful ordered orientation: the next singleton becomes the
+-survivor. Only quotient equivalence of the prefix is asserted; the Code and
++survivor. Only quotient equivalence of the pref is asserted; the Code and
+ recorded child orientation need not equal those of the first orientation. -/
+ lemma frontier_merge_singleton_survives (s : State V E Copy) (hs : Valid s)
+     (t : Genealogy Copy) (p a : Copy) (rest : List Copy)
+@@ -571,7 +571,7 @@
+   simpa only [codeClade,he] using hkeep
+ 
+ /-- Target-tree version of the support exclusion, needed while the induction
+-carries an arbitrary already-correct prefix tree. -/
++carries an arbitrary already-correct pref tree. -/
+ theorem actual_completion_excludes_wrong_tree (N : RootedBinary V E X)
+     {sample : Copy → X} (r : PositivePairRates E) (b x : Copy)
+     (target : Genealogy Copy) (s d : Code N sample)
+@@ -594,17 +594,17 @@
+ /-- A wrong actual ordered Choice creates the incompatible clade in its
+ admitted finite snapshot. The representative is live before decoding. -/
+ lemma actual_wrong_choice_clade (N : RootedBinary V E X) {sample : Copy → X}
+-    (s : Code N sample) (t : Genealogy Copy) (prefix next b : Copy)
+-    (rest : List Copy) (h : CombFrontier (state s) t prefix (next :: rest))
++    (s : Code N sample) (t : Genealogy Copy) (pref next b : Copy)
++    (rest : List Copy) (h : CombFrontier (state s) t pref (next :: rest))
+     (hb : b ∈ t.leaves) (p : Choice N s)
+-    (hwrong : ¬ ((p.2.val.1 = prefix ∧ p.2.val.2 = next) ∨
+-      (p.2.val.1 = next ∧ p.2.val.2 = prefix))) :
++    (hwrong : ¬ ((p.2.val.1 = pref ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = pref))) :
+     ∃ A, codeClade N A p.2.val.1 (stepDestination N s (some p)) ∧
+       A ∉ internalClades ((next :: rest).foldl (fun u z => .graft u (.leaf z)) t) := by
+   let hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
+     (originalPlace_not_node N p.1) p.2.property
+   obtain ⟨A,hA,hnot⟩ := frontier_wrong_merge_clade (state s) s.property.forest
+-    t prefix next b rest h hb p.2.val.1 p.2.val.2
++    t pref next b rest h hb p.2.val.1 p.2.val.2
+     hm.first_live hm.second_live hm.different hwrong
+   refine ⟨A,?_,hnot⟩
+   let u := merge (state s) p.2.val.1 p.2.val.2
+@@ -623,16 +623,16 @@
+ merger theorem, not assumed for the successor. -/
+ theorem actual_wrong_choice_completion_excluded (N : RootedBinary V E X)
+     {sample : Copy → X} (r : PositivePairRates E) (s d : Code N sample)
+-    (t : Genealogy Copy) (prefix next b : Copy) (rest : List Copy)
++    (t : Genealogy Copy) (pref next b : Copy) (rest : List Copy)
+     (hroot : AncestralRoot N s)
+-    (h : CombFrontier (state s) t prefix (next :: rest)) (hb : b ∈ t.leaves)
++    (h : CombFrontier (state s) t pref (next :: rest)) (hb : b ∈ t.leaves)
+     (p : Choice N s)
+-    (hwrong : ¬ ((p.2.val.1 = prefix ∧ p.2.val.2 = next) ∨
+-      (p.2.val.1 = next ∧ p.2.val.2 = prefix)))
++    (hwrong : ¬ ((p.2.val.1 = pref ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = pref)))
+     (hd : d ∈ (completionKernel N r (stepDestination N s (some p))).support) :
+     toUnranked ((state d).genealogy ((state d).ancestor b)) ≠
+       toUnranked ((next :: rest).foldl (fun u z => .graft u (.leaf z)) t) := by
+-  obtain ⟨A,hA,hnot⟩ := actual_wrong_choice_clade N s t prefix next b rest h hb p hwrong
++  obtain ⟨A,hA,hnot⟩ := actual_wrong_choice_clade N s t pref next b rest h hb p hwrong
+   exact actual_completion_excludes_wrong_tree N r b p.2.val.1 _ _ d
+     (ancestral_merger_preserved N s hroot p) A hA hnot hd
+ 
+@@ -640,12 +640,12 @@
+ genealogy is live. Dead-genealogy defaults are never used. -/
+ lemma admitted_frontier (N : RootedBinary V E X) (sample : Copy → X)
+     (u : State V E Copy) (hu : SourceValid N sample u)
+-    (t : Genealogy Copy) (prefix : Copy) (rest : List Copy)
+-    (h : CombFrontier u t prefix rest) :
+-    CombFrontier (state (admittedCode N sample u hu)) t prefix rest := by
++    (t : Genealogy Copy) (pref : Copy) (rest : List Copy)
++    (h : CombFrontier u t pref rest) :
++    CombFrontier (state (admittedCode N sample u hu)) t pref rest := by
+   refine ⟨h.prefix_live,?_,?_,h.cover,h.disjoint,h.nodup⟩
+   · change UnorderedEquiv
+-      ((decodeSnapshot N.root (encodeSnapshot u hu.forest)).genealogy prefix) t
++      ((decodeSnapshot N.root (encodeSnapshot u hu.forest)).genealogy pref) t
+     rw [decode_encode_live_genealogy N.root u hu.forest h.prefix_live]
+     exact h.prefix_tree
+   · intro a ha
+@@ -658,11 +658,11 @@
+ Code. The new representative is the first ordered component, so it can differ
+ between orientations even though the carried topology agrees. -/
+ lemma actual_correct_choice_frontier (N : RootedBinary V E X) {sample : Copy → X}
+-    (s : Code N sample) (t : Genealogy Copy) (prefix next : Copy)
+-    (rest : List Copy) (h : CombFrontier (state s) t prefix (next :: rest))
++    (s : Code N sample) (t : Genealogy Copy) (pref next : Copy)
++    (rest : List Copy) (h : CombFrontier (state s) t pref (next :: rest))
+     (p : Choice N s)
+-    (hgood : (p.2.val.1 = prefix ∧ p.2.val.2 = next) ∨
+-      (p.2.val.1 = next ∧ p.2.val.2 = prefix)) :
++    (hgood : (p.2.val.1 = pref ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = pref)) :
+     CombFrontier (state (stepDestination N s (some p)))
+       (.graft t (.leaf next)) p.2.val.1 rest := by
+   let hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
+@@ -672,9 +672,9 @@
+   have hf : CombFrontier u (.graft t (.leaf next)) p.2.val.1 rest := by
+     rcases hgood with ⟨hfirst,hsecond⟩ | ⟨hfirst,hsecond⟩
+     · simpa only [u,hfirst,hsecond] using
+-        frontier_merge_prefix_survives (state s) s.property.forest t prefix next rest h
++        frontier_merge_prefix_survives (state s) s.property.forest t pref next rest h
+     · simpa only [u,hfirst,hsecond] using
+-        frontier_merge_singleton_survives (state s) s.property.forest t prefix next rest h
++        frontier_merge_singleton_survives (state s) s.property.forest t pref next rest h
+   exact admitted_frontier N sample u hu (.graft t (.leaf next)) p.2.val.1 rest hf
+ 
+ end ActualCompletion

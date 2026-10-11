@@ -1,0 +1,71 @@
+--- revision3
++++ revision4
+@@ -229,6 +229,68 @@
+   rintro (h | h)
+   · exact ha (internalClade_subset_leaves h (Finset.mem_insert_self _ _))
+   · exact two_singletons_not_spine t.leaves as b a c hb hba hbc h
++
++/-- A singleton's live representative is its original label. This uses the
++actual forest's leaf fibres, rather than introducing abstract root names. -/
++lemma singleton_ancestor_eq (s : State V E Copy) (hs : Valid s) (a : Copy)
++    (ha : s.genealogy (s.ancestor a) = .leaf a) : s.ancestor a = a := by
++  have hl := hs.ancestor_live a
++  have hm := (hs.leaf_fiber (s.ancestor a) hl (s.ancestor a)).mpr
++    (hs.representative (s.ancestor a) hl)
++  simpa only [ha, Genealogy.leaves, Finset.mem_singleton] using hm
++
++/-- One carried prefix and the remaining labelled singletons, covering the
++actual original-copy carrier. This is an invariant to establish at each
++successful merger, not a hypothesis about the desired event probability. -/
++structure CombFrontier (s : State V E Copy) (t : Genealogy Copy)
++    (p : Copy) (rest : List Copy) : Prop where
++  prefix_live : p ∈ s.live
++  prefix_tree : UnorderedEquiv (s.genealogy p) t
++  singleton : ∀ a ∈ rest, s.genealogy (s.ancestor a) = .leaf a
++  cover : ∀ x, x ∈ t.leaves ∨ x ∈ rest
++  disjoint : ∀ a ∈ rest, a ∉ t.leaves
++  nodup : rest.Nodup
++
++lemma frontier_singleton_live (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p : Copy) (rest : List Copy)
++    (h : CombFrontier s t p rest) {a : Copy} (ha : a ∈ rest) : a ∈ s.live := by
++  have he := singleton_ancestor_eq s hs a (h.singleton a ha)
++  simpa only [he] using hs.ancestor_live a
++
++lemma frontier_prefix_not_remaining (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p : Copy) (rest : List Copy)
++    (h : CombFrontier s t p rest) : p ∉ rest := by
++  intro hp
++  apply h.disjoint p hp
++  rw [← unordered_leaves h.prefix_tree]
++  exact (hs.leaf_fiber p h.prefix_live p).mpr (hs.representative p h.prefix_live)
++
++lemma frontier_live_exact (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p : Copy) (rest : List Copy)
++    (h : CombFrontier s t p rest) : s.live = insert p rest.toFinset := by
++  ext x
++  constructor
++  · intro hx
++    rcases h.cover x with ht | hr
++    · have ht' : x ∈ (s.genealogy p).leaves := by
++        rw [unordered_leaves h.prefix_tree]
++        exact ht
++      have he := (hs.leaf_fiber p h.prefix_live x).mp ht'
++      have hxp : x = p := (hs.representative x hx).symm.trans he
++      exact Finset.mem_insert.mpr (Or.inl hxp)
++    · exact Finset.mem_insert.mpr (Or.inr (List.mem_toFinset.mpr hr))
++  · intro hx
++    rcases Finset.mem_insert.mp hx with rfl | hr
++    · exact h.prefix_live
++    · exact frontier_singleton_live s hs t p rest h (List.mem_toFinset.mp hr)
++
++lemma frontier_live_card (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p : Copy) (rest : List Copy)
++    (h : CombFrontier s t p rest) : s.live.card = rest.length + 1 := by
++  rw [frontier_live_exact s hs t p rest h]
++  rw [Finset.card_insert_of_notMem]
++  · rw [List.toFinset_card_of_nodup h.nodup]
++  · simpa only [List.mem_toFinset] using frontier_prefix_not_remaining s hs t p rest h
+ 
+ section ActualCompletion
+ open UnifiedLean.Source.FiniteSourceSnapshot

@@ -1,0 +1,49 @@
+--- revision7
++++ revision8
+@@ -636,5 +636,46 @@
+   exact actual_completion_excludes_wrong_tree N r b p.2.val.1 _ _ d
+     (ancestral_merger_preserved N s hroot p) A hA hnot hd
+ 
++/-- Snapshot admission preserves the concrete frontier because every accessed
++genealogy is live. Dead-genealogy defaults are never used. -/
++lemma admitted_frontier (N : RootedBinary V E X) (sample : Copy → X)
++    (u : State V E Copy) (hu : SourceValid N sample u)
++    (t : Genealogy Copy) (prefix : Copy) (rest : List Copy)
++    (h : CombFrontier u t prefix rest) :
++    CombFrontier (state (admittedCode N sample u hu)) t prefix rest := by
++  refine ⟨h.prefix_live,?_,?_,h.cover,h.disjoint,h.nodup⟩
++  · change UnorderedEquiv
++      ((decodeSnapshot N.root (encodeSnapshot u hu.forest)).genealogy prefix) t
++    rw [decode_encode_live_genealogy N.root u hu.forest h.prefix_live]
++    exact h.prefix_tree
++  · intro a ha
++    change (decodeSnapshot N.root (encodeSnapshot u hu.forest)).genealogy
++      (u.ancestor a) = .leaf a
++    rw [decode_encode_live_genealogy N.root u hu.forest (hu.forest.ancestor_live a)]
++    exact h.singleton a ha
++
++/-- Both successful actual Choices produce the next frontier in the finite
++Code. The new representative is the first ordered component, so it can differ
++between orientations even though the carried topology agrees. -/
++lemma actual_correct_choice_frontier (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (t : Genealogy Copy) (prefix next : Copy)
++    (rest : List Copy) (h : CombFrontier (state s) t prefix (next :: rest))
++    (p : Choice N s)
++    (hgood : (p.2.val.1 = prefix ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = prefix)) :
++    CombFrontier (state (stepDestination N s (some p)))
++      (.graft t (.leaf next)) p.2.val.1 rest := by
++  let hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
++    (originalPlace_not_node N p.1) p.2.property
++  let u := merge (state s) p.2.val.1 p.2.val.2
++  have hu := merge_source_valid N sample (state s) s.property hm
++  have hf : CombFrontier u (.graft t (.leaf next)) p.2.val.1 rest := by
++    rcases hgood with ⟨hfirst,hsecond⟩ | ⟨hfirst,hsecond⟩
++    · simpa only [u,hfirst,hsecond] using
++        frontier_merge_prefix_survives (state s) s.property.forest t prefix next rest h
++    · simpa only [u,hfirst,hsecond] using
++        frontier_merge_singleton_survives (state s) s.property.forest t prefix next rest h
++  exact admitted_frontier N sample u hu (.graft t (.leaf next)) p.2.val.1 rest hf
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent

@@ -1,0 +1,82 @@
+--- frontier-clades
++++ actual-wrong-clade-completion
+@@ -298,5 +298,79 @@
+       _ (d.property.forest.ancestor_live b)
+   apply bad_excludes_specified b as
+   simpa only [codeBad,he] using hb
++/-- A concrete internal clade follows the original copy through the actual
++merger, independent of whether it omits B. This also catches wrong B-Aj joins. -/
++lemma actual_merge_preserves_clade (A : Finset Copy) (s : State V E Copy)
++    (a c x : Copy) (hA : A ∈ internalClades (s.genealogy (s.ancestor x))) :
++    A ∈ internalClades ((merge s a c).genealogy ((merge s a c).ancestor x)) := by
++  by_cases hx : s.ancestor x = c
++  · simp only [merge,hx,if_pos,ite_true,internalClades]
++    exact Finset.mem_insert_of_mem (Finset.mem_union_right _ (by simpa only [hx] using hA))
++  · by_cases ha : s.ancestor x = a
++    · simp only [merge,if_neg hx,if_pos ha,internalClades]
++      exact Finset.mem_insert_of_mem (Finset.mem_union_left _ (by simpa only [ha] using hA))
++    · simpa only [merge,if_neg hx,if_neg ha] using hA
++
++def codeClade (N : RootedBinary V E X) {sample : Copy → X}
++    (A : Finset Copy) (x : Copy) (s : Code N sample) : Prop :=
++  A ∈ internalClades ((state s).genealogy ((state s).ancestor x))
++
++lemma actual_destination_clade (N : RootedBinary V E X) {sample : Copy → X}
++    (A : Finset Copy) (x : Copy) (s : Code N sample) (p : Choice N s)
++    (h : codeClade N A x s) : codeClade N A x (stepDestination N s (some p)) := by
++  let hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
++    (originalPlace_not_node N p.1) p.2.property
++  let t := merge (state s) p.2.val.1 p.2.val.2
++  have ht := merge_source_valid N sample (state s) s.property hm
++  change A ∈ internalClades ((decodeSnapshot N.root (encodeSnapshot t ht.forest)).genealogy
++    (t.ancestor x))
++  rw [decode_encode_live_genealogy N.root t ht.forest (ht.forest.ancestor_live x)]
++  exact actual_merge_preserves_clade A (state s) p.2.val.1 p.2.val.2 x h
++
++lemma actual_jump_supported_clade (N : RootedBinary V E X) {sample : Copy → X}
++    (r : PositivePairRates E) (A : Finset Copy) (x : Copy) (s d : Code N sample)
++    (h : codeClade N A x s) (hd : d ∈ (sourceJumpStep N r s).support) :
++    codeClade N A x d := by
++  rcases source_jump_support_cases N r s hd with hhold | ⟨p,hp⟩
++  · simpa only [hhold.1] using h
++  · subst d
++    exact actual_destination_clade N A x s p h
++
++lemma actual_completion_supported_clade (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (A : Finset Copy) (x : Copy)
++    (fuel : Nat) (s d : Code N sample) (h : codeClade N A x s)
++    (hd : d ∈ (ancestralCompletion N r fuel s).support) : codeClade N A x d := by
++  induction fuel generalizing s with
++  | zero =>
++      have he : d = s := by simpa only [ancestralCompletion,PMF.mem_support_pure_iff] using hd
++      simpa only [he] using h
++  | succ fuel ih =>
++      obtain ⟨z,hz,hdz⟩ := (PMF.mem_support_bind_iff _ _ _).mp hd
++      exact ih z (actual_jump_supported_clade N r A x s z h hz) hdz
++
++/-- Any clade absent from the specified labelled target rules out that target
++on every actual completion endpoint. In particular the wrong B-A2 first join
++is rejected even though its new clade contains B. -/
++theorem actual_completion_excludes_wrong_clade (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (b x : Copy) (as : List Copy)
++    (s d : Code N sample) (hroot : AncestralRoot N s) (A : Finset Copy)
++    (hA : codeClade N A x s) (hwrong : A ∉ internalClades (comb b as))
++    (hd : d ∈ (completionKernel N r s).support) :
++    ¬ specifiedEvent b as
++      (toUnranked ((state d).genealogy ((state d).ancestor b))) := by
++  intro hevent
++  have hc := ancestral_completion_terminal_support N r (Fintype.card Copy)
++    s hroot (Finset.card_le_univ s.val.live) hd
++  have hkeep := actual_completion_supported_clade N r A x (Fintype.card Copy) s d hA hd
++  have he : (state d).ancestor x = (state d).ancestor b :=
++    (Finset.card_le_one.mp hc.2) _ (d.property.forest.ancestor_live x)
++      _ (d.property.forest.ancestor_live b)
++  have htree : UnorderedEquiv
++      ((state d).genealogy ((state d).ancestor b)) (comb b as) :=
++    (toUnranked_eq_iff _ _).mp hevent
++  apply hwrong
++  rw [← internalClades_unordered htree]
++  simpa only [codeClade,he] using hkeep
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent

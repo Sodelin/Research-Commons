@@ -1,0 +1,85 @@
+--- revision4
++++ revision5
+@@ -291,6 +291,82 @@
+   rw [Finset.card_insert_of_notMem]
+   · rw [List.toFinset_card_of_nodup h.nodup]
+   · simpa only [List.mem_toFinset] using frontier_prefix_not_remaining s hs t p rest h
++
++lemma frontier_singleton_tree (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p : Copy) (rest : List Copy)
++    (h : CombFrontier s t p rest) {a : Copy} (ha : a ∈ rest) :
++    s.genealogy a = .leaf a := by
++  have he := singleton_ancestor_eq s hs a (h.singleton a ha)
++  simpa only [he] using h.singleton a ha
++
++/-- First successful ordered orientation: the existing prefix representative
++survives. This is the original source merger, with its actual live labels. -/
++lemma frontier_merge_prefix_survives (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p a : Copy) (rest : List Copy)
++    (h : CombFrontier s t p (a :: rest)) :
++    CombFrontier (merge s p a) (.graft t (.leaf a)) p rest := by
++  have hpnot := frontier_prefix_not_remaining s hs t p (a :: rest) h
++  have hpa : p ≠ a := by intro he; apply hpnot; simp [he]
++  have hanot : a ∉ rest := (List.nodup_cons.mp h.nodup).1
++  have hatree := frontier_singleton_tree s hs t p (a :: rest) h (by simp : a ∈ a :: rest)
++  refine ⟨?_, ?_, ?_, ?_, ?_, (List.nodup_cons.mp h.nodup).2⟩
++  · exact Finset.mem_erase.mpr ⟨hpa, h.prefix_live⟩
++  · simpa only [merge, if_pos rfl, hatree] using
++      (UnorderedEquiv.graft h.prefix_tree (UnorderedEquiv.refl (.leaf a)))
++  · intro c hc
++    have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
++    have hca : c ≠ a := by intro he; subst c; exact hanot hc
++    have hcp : c ≠ p := by intro he; subst c; exact hpnot hcfull
++    have hac := singleton_ancestor_eq s hs c (h.singleton c hcfull)
++    have hctree := frontier_singleton_tree s hs t p (a :: rest) h hcfull
++    simpa only [merge, hac, if_neg hca, if_neg hcp] using hctree
++  · intro x
++    rcases h.cover x with hx | hx
++    · exact Or.inl (Finset.mem_union.mpr (Or.inl hx))
++    · rcases List.mem_cons.mp hx with rfl | hr
++      · exact Or.inl (Finset.mem_union.mpr (Or.inr (Finset.mem_singleton_self a)))
++      · exact Or.inr hr
++  · intro c hc
++    have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
++    have hca : c ≠ a := by intro he; subst c; exact hanot hc
++    simpa only [Genealogy.leaves, Finset.mem_union, Finset.mem_singleton,
++      not_or] using And.intro (h.disjoint c hcfull) hca
++
++/-- Second successful ordered orientation: the next singleton becomes the
++survivor. Only quotient equivalence of the prefix is asserted; the Code and
++recorded child orientation need not equal those of the first orientation. -/
++lemma frontier_merge_singleton_survives (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p a : Copy) (rest : List Copy)
++    (h : CombFrontier s t p (a :: rest)) :
++    CombFrontier (merge s a p) (.graft t (.leaf a)) a rest := by
++  have hpnot := frontier_prefix_not_remaining s hs t p (a :: rest) h
++  have hpa : p ≠ a := by intro he; apply hpnot; simp [he]
++  have hanot : a ∉ rest := (List.nodup_cons.mp h.nodup).1
++  have halive := frontier_singleton_live s hs t p (a :: rest) h (by simp : a ∈ a :: rest)
++  have hatree := frontier_singleton_tree s hs t p (a :: rest) h (by simp : a ∈ a :: rest)
++  refine ⟨?_, ?_, ?_, ?_, ?_, (List.nodup_cons.mp h.nodup).2⟩
++  · exact Finset.mem_erase.mpr ⟨Ne.symm hpa, halive⟩
++  · have hg := UnorderedEquiv.graft (UnorderedEquiv.refl (.leaf a)) h.prefix_tree
++    have he := UnorderedEquiv.trans hg (UnorderedEquiv.swap (.leaf a) t)
++    simpa only [merge, if_pos rfl, hatree] using he
++  · intro c hc
++    have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
++    have hca : c ≠ a := by intro he; subst c; exact hanot hc
++    have hcp : c ≠ p := by intro he; subst c; exact hpnot hcfull
++    have hac := singleton_ancestor_eq s hs c (h.singleton c hcfull)
++    have hctree := frontier_singleton_tree s hs t p (a :: rest) h hcfull
++    simpa only [merge, hac, if_neg hcp, if_neg hca] using hctree
++  · intro x
++    rcases h.cover x with hx | hx
++    · exact Or.inl (Finset.mem_union.mpr (Or.inl hx))
++    · rcases List.mem_cons.mp hx with rfl | hr
++      · exact Or.inl (Finset.mem_union.mpr (Or.inr (Finset.mem_singleton_self a)))
++      · exact Or.inr hr
++  · intro c hc
++    have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
++    have hca : c ≠ a := by intro he; subst c; exact hanot hc
++    simpa only [Genealogy.leaves, Finset.mem_union, Finset.mem_singleton,
++      not_or] using And.intro (h.disjoint c hcfull) hca
+ 
+ section ActualCompletion
+ open UnifiedLean.Source.FiniteSourceSnapshot

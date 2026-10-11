@@ -1,0 +1,74 @@
+--- revision6
++++ revision7
+@@ -570,5 +570,71 @@
+   rw [← internalClades_unordered htree]
+   simpa only [codeClade,he] using hkeep
+ 
++/-- Target-tree version of the support exclusion, needed while the induction
++carries an arbitrary already-correct prefix tree. -/
++theorem actual_completion_excludes_wrong_tree (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (b x : Copy)
++    (target : Genealogy Copy) (s d : Code N sample)
++    (hroot : AncestralRoot N s) (A : Finset Copy)
++    (hA : codeClade N A x s) (hwrong : A ∉ internalClades target)
++    (hd : d ∈ (completionKernel N r s).support) :
++    toUnranked ((state d).genealogy ((state d).ancestor b)) ≠ toUnranked target := by
++  intro hevent
++  have hc := ancestral_completion_terminal_support N r (Fintype.card Copy)
++    s hroot (Finset.card_le_univ s.val.live) hd
++  have hkeep := actual_completion_supported_clade N r A x (Fintype.card Copy) s d hA hd
++  have he : (state d).ancestor x = (state d).ancestor b :=
++    (Finset.card_le_one.mp hc.2) _ (d.property.forest.ancestor_live x)
++      _ (d.property.forest.ancestor_live b)
++  have htree := (toUnranked_eq_iff _ _).mp hevent
++  apply hwrong
++  rw [← internalClades_unordered htree]
++  simpa only [codeClade,he] using hkeep
++
++/-- A wrong actual ordered Choice creates the incompatible clade in its
++admitted finite snapshot. The representative is live before decoding. -/
++lemma actual_wrong_choice_clade (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (t : Genealogy Copy) (prefix next b : Copy)
++    (rest : List Copy) (h : CombFrontier (state s) t prefix (next :: rest))
++    (hb : b ∈ t.leaves) (p : Choice N s)
++    (hwrong : ¬ ((p.2.val.1 = prefix ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = prefix))) :
++    ∃ A, codeClade N A p.2.val.1 (stepDestination N s (some p)) ∧
++      A ∉ internalClades ((next :: rest).foldl (fun u z => .graft u (.leaf z)) t) := by
++  let hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
++    (originalPlace_not_node N p.1) p.2.property
++  obtain ⟨A,hA,hnot⟩ := frontier_wrong_merge_clade (state s) s.property.forest
++    t prefix next b rest h hb p.2.val.1 p.2.val.2
++    hm.first_live hm.second_live hm.different hwrong
++  refine ⟨A,?_,hnot⟩
++  let u := merge (state s) p.2.val.1 p.2.val.2
++  have hu := merge_source_valid N sample (state s) s.property hm
++  have hanc : u.ancestor p.2.val.1 = p.2.val.1 := by
++    simp only [u,merge,s.property.forest.representative p.2.val.1 hm.first_live,
++      if_neg hm.different]
++  change A ∈ internalClades ((decodeSnapshot N.root (encodeSnapshot u hu.forest)).genealogy
++    (u.ancestor p.2.val.1))
++  rw [decode_encode_live_genealogy N.root u hu.forest
++    (hu.forest.ancestor_live p.2.val.1),hanc]
++  exact hA
++
++/-- Every completion supported after a wrong actual ordered Choice misses the
++specified fold target. Root preservation is supplied by the inherited source
++merger theorem, not assumed for the successor. -/
++theorem actual_wrong_choice_completion_excluded (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (s d : Code N sample)
++    (t : Genealogy Copy) (prefix next b : Copy) (rest : List Copy)
++    (hroot : AncestralRoot N s)
++    (h : CombFrontier (state s) t prefix (next :: rest)) (hb : b ∈ t.leaves)
++    (p : Choice N s)
++    (hwrong : ¬ ((p.2.val.1 = prefix ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = prefix)))
++    (hd : d ∈ (completionKernel N r (stepDestination N s (some p))).support) :
++    toUnranked ((state d).genealogy ((state d).ancestor b)) ≠
++      toUnranked ((next :: rest).foldl (fun u z => .graft u (.leaf z)) t) := by
++  obtain ⟨A,hA,hnot⟩ := actual_wrong_choice_clade N s t prefix next b rest h hb p hwrong
++  exact actual_completion_excludes_wrong_tree N r b p.2.val.1 _ _ d
++    (ancestral_merger_preserved N s hroot p) A hA hnot hd
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent

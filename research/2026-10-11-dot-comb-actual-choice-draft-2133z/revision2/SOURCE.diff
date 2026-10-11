@@ -1,0 +1,118 @@
+--- reviewed-actual-support
++++ target-compatible-frontier
+@@ -121,6 +121,115 @@
+ -- their event continuation agrees on the inherited child-swap quotient.
+ -- Then derive the coefficient2^k/((k+1)!k!) from the actual ancestral recurrence.
+ -- A-only obstruction alone does not exclude a wrong B-A2 first merger.
++/- Source-only exact target-compatible-frontier extension. It is intended for
++insertion into the same namespace; no new carrier/process is introduced. -/
++def internalClades : Genealogy Copy → Finset (Finset Copy)
++  | .leaf _ => ∅
++  | .graft l r => insert (l.leaves ∪ r.leaves) (internalClades l ∪ internalClades r)
++
++lemma internalClades_unordered {t u : Genealogy Copy} (h : UnorderedEquiv t u) :
++    internalClades t = internalClades u := by
++  induction h with
++  | refl t => rfl
++  | symm h ih => exact ih.symm
++  | trans h1 h2 ih1 ih2 => exact ih1.trans ih2
++  | graft h1 h2 ih1 ih2 =>
++      simp only [internalClades,unordered_leaves h1,unordered_leaves h2,ih1,ih2]
++  | swap t u => simp only [internalClades,Finset.union_comm]
++
++lemma internalClade_subset_leaves {t : Genealogy Copy} {A : Finset Copy}
++    (h : A ∈ internalClades t) : A ⊆ t.leaves := by
++  induction t with
++  | leaf x => simp [internalClades] at h
++  | graft l r ihl ihr =>
++      simp only [internalClades,Finset.mem_insert,Finset.mem_union] at h
++      rcases h with h | h | h
++      · simpa only [Genealogy.leaves,h]
++      · exact Finset.Subset.trans (ihl h) Finset.subset_union_left
++      · exact Finset.Subset.trans (ihr h) Finset.subset_union_right
++
++def spineClades (S : Finset Copy) : List Copy → Finset (Finset Copy)
++  | [] => ∅
++  | a::as => insert (insert a S) (spineClades (insert a S) as)
++
++lemma spineClade_contains_start (S : Finset Copy) (as : List Copy)
++    {A : Finset Copy} (h : A ∈ spineClades S as) : S ⊆ A := by
++  induction as generalizing S with
++  | nil => simp [spineClades] at h
++  | cons a as ih =>
++      simp only [spineClades,Finset.mem_insert] at h
++      rcases h with rfl | h
++      · exact Finset.subset_insert _ _
++      · exact Finset.Subset.trans (Finset.subset_insert _ _) (ih _ h)
++
++/-- Exact internal clades of the prescribed spine added to an already carried
++prefix tree. This retains every old clade instead of replacing that tree by a
++fresh leaf on the original carrier. -/
++lemma fold_internalClades (t : Genealogy Copy) (as : List Copy) :
++    internalClades (as.foldl (fun u a => .graft u (.leaf a)) t) =
++      internalClades t ∪ spineClades t.leaves as := by
++  induction as generalizing t with
++  | nil => simp [spineClades]
++  | cons a as ih =>
++      rw [List.foldl_cons,ih]
++      ext A
++      simp only [internalClades,Genealogy.leaves,spineClades,
++        Finset.union_singleton,Finset.union_empty,Finset.mem_union,Finset.mem_insert]
++      tauto
++
++lemma first_label_in_spineClade (S : Finset Copy) (a : Copy) (as : List Copy)
++    {A : Finset Copy} (h : A ∈ spineClades S (a::as)) : a ∈ A := by
++  simp only [spineClades,Finset.mem_insert] at h
++  rcases h with rfl | h
++  · exact Finset.mem_insert_self _ _
++  · exact spineClade_contains_start (insert a S) as h (Finset.mem_insert_self _ _)
++
++/-- Exactly the next prescribed singleton can join the carried prefix without
++creating a clade absent from the target. The wrong B-A2 case is excluded here. -/
++lemma next_attachment_iff (S : Finset Copy) (a next : Copy) (rest : List Copy)
++    (hnext : next ∉ S) :
++    insert a S ∈ spineClades S (next::rest) ↔ a = next := by
++  constructor
++  · intro h
++    have hn := first_label_in_spineClade S next rest h
++    have he : next = a := (Finset.mem_insert.mp hn).resolve_right hnext
++    exact he.symm
++  · rintro rfl
++    exact Finset.mem_insert_self _ _
++
++lemma two_singletons_not_spine (S : Finset Copy) (as : List Copy)
++    (b a c : Copy) (hb : b ∈ S) (hba : b ≠ a) (hbc : b ≠ c) :
++    ({a,c} : Finset Copy) ∉ spineClades S as := by
++  intro h
++  have hm := spineClade_contains_start S as h hb
++  simp only [Finset.mem_insert,Finset.mem_singleton] at hm
++  exact hm.elim hba hbc
++
++/-- Complete target-clade test for the prefix/singleton merger. -/
++lemma next_attachment_target_iff (t : Genealogy Copy) (a next : Copy)
++    (rest : List Copy) (ha : a ∉ t.leaves) (hn : next ∉ t.leaves) :
++    insert a t.leaves ∈ internalClades
++      ((next::rest).foldl (fun u z => .graft u (.leaf z)) t) ↔ a = next := by
++  rw [fold_internalClades,Finset.mem_union]
++  have hnot : insert a t.leaves ∉ internalClades t := by
++    intro h
++    exact ha (internalClade_subset_leaves h (Finset.mem_insert_self _ _))
++  simp only [hnot,false_or]
++  exact next_attachment_iff t.leaves a next rest hn
++
++/-- Every pair of remaining singleton labels is incompatible with the target.
++The B-containing prefix and disjoint singleton leaves are explicit, actual
++forest invariants to be supplied at the source use-site. -/
++lemma singleton_pair_not_target (t : Genealogy Copy) (as : List Copy)
++    (b a c : Copy) (hb : b ∈ t.leaves) (ha : a ∉ t.leaves)
++    (hba : b ≠ a) (hbc : b ≠ c) :
++    ({a,c} : Finset Copy) ∉ internalClades
++      (as.foldl (fun u z => .graft u (.leaf z)) t) := by
++  rw [fold_internalClades,Finset.mem_union]
++  rintro (h | h)
++  · exact ha (internalClade_subset_leaves h (Finset.mem_insert_self _ _))
++  · exact two_singletons_not_spine t.leaves as b a c hb hba hbc h
++
+ section ActualCompletion
+ open UnifiedLean.Source.FiniteSourceSnapshot
+ open UnifiedLean.Source.UniformizedSourceStep

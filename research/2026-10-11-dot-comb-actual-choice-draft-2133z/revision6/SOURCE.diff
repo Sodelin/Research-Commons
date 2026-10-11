@@ -1,0 +1,69 @@
+--- revision5
++++ revision6
+@@ -368,6 +368,66 @@
+     simpa only [Genealogy.leaves, Finset.mem_union, Finset.mem_singleton,
+       not_or] using And.intro (h.disjoint c hcfull) hca
+ 
++lemma frontier_live_cases (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p : Copy) (rest : List Copy)
++    (h : CombFrontier s t p rest) {x : Copy} (hx : x ∈ s.live) :
++    x = p ∨ x ∈ rest := by
++  rw [frontier_live_exact s hs t p rest h] at hx
++  simpa only [Finset.mem_insert, List.mem_toFinset] using hx
++
++lemma actual_merge_creates_clade (s : State V E Copy) (x y : Copy) :
++    (s.genealogy x).leaves ∪ (s.genealogy y).leaves ∈
++      internalClades ((merge s x y).genealogy x) := by
++  simp only [merge, if_pos rfl, internalClades, Finset.mem_insert_self]
++
++/-- Every actual merger other than the two ordered orientations of the next
++prescribed pair creates a clade incompatible with the exact target. This also
++rejects the wrong B-spine attachment; no B-free-only shortcut is used. -/
++lemma frontier_wrong_merge_clade (s : State V E Copy) (hs : Valid s)
++    (t : Genealogy Copy) (p a b : Copy) (rest : List Copy)
++    (h : CombFrontier s t p (a :: rest)) (hb : b ∈ t.leaves)
++    (x y : Copy) (hx : x ∈ s.live) (hy : y ∈ s.live) (hxy : x ≠ y)
++    (hwrong : ¬ ((x = p ∧ y = a) ∨ (x = a ∧ y = p))) :
++    ∃ A, A ∈ internalClades ((merge s x y).genealogy x) ∧
++      A ∉ internalClades ((a :: rest).foldl (fun u z => .graft u (.leaf z)) t) := by
++  refine ⟨(s.genealogy x).leaves ∪ (s.genealogy y).leaves,
++    actual_merge_creates_clade s x y, ?_⟩
++  have haout := h.disjoint a (by simp : a ∈ a :: rest)
++  by_cases hxp : x = p
++  · subst x
++    have hyp : y ≠ p := Ne.symm hxy
++    have hym : y ∈ a :: rest :=
++      (frontier_live_cases s hs t p (a :: rest) h hy).resolve_left hyp
++    have hytree := frontier_singleton_tree s hs t p (a :: rest) h hym
++    have hyout := h.disjoint y hym
++    have hya : y ≠ a := by
++      intro he
++      exact hwrong (Or.inl ⟨rfl,he⟩)
++    rw [unordered_leaves h.prefix_tree, hytree, Genealogy.leaves]
++    rw [Finset.union_singleton]
++    exact fun hc => hya ((next_attachment_target_iff t y a rest hyout haout).mp hc)
++  · have hxm : x ∈ a :: rest :=
++      (frontier_live_cases s hs t p (a :: rest) h hx).resolve_left hxp
++    have hxtree := frontier_singleton_tree s hs t p (a :: rest) h hxm
++    by_cases hyp : y = p
++    · subst y
++      have hxout := h.disjoint x hxm
++      have hxa : x ≠ a := by
++        intro he
++        exact hwrong (Or.inr ⟨he,rfl⟩)
++      rw [hxtree, Genealogy.leaves, unordered_leaves h.prefix_tree]
++      rw [Finset.singleton_union]
++      exact fun hc => hxa ((next_attachment_target_iff t x a rest hxout haout).mp hc)
++    · have hym : y ∈ a :: rest :=
++        (frontier_live_cases s hs t p (a :: rest) h hy).resolve_left hyp
++      have hytree := frontier_singleton_tree s hs t p (a :: rest) h hym
++      have hxout := h.disjoint x hxm
++      have hyout := h.disjoint y hym
++      have hbx : b ≠ x := by intro he; apply hxout; simpa only [← he] using hb
++      have hby : b ≠ y := by intro he; apply hyout; simpa only [← he] using hb
++      simpa only [hxtree,hytree,Genealogy.leaves,Finset.singleton_union] using
++        singleton_pair_not_target t (a :: rest) b x y hb hxout hbx hby
++
+ section ActualCompletion
+ open UnifiedLean.Source.FiniteSourceSnapshot
+ open UnifiedLean.Source.UniformizedSourceStep
