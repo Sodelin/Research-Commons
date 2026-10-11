@@ -1,0 +1,314 @@
+{
+  "schema": "checked_source_union1581_static_integration_plan_v1",
+  "status": "PASS_ROOT_AND_INDEPENDENT_STATIC_GRAPH_SOURCE_RECONCILIATION_ONLY",
+  "UTC": "2026-10-11T07:23:56.307844+00:00",
+  "independent_contributor": "lean_reuse_successor,message-only full graph/source comparison",
+  "reader_source_utf8": "from pathlib import Path\nimport datetime,hashlib,json,re\nD=Path(\"/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z\");WF=D.parent.parent\nsha=lambda b:hashlib.sha256(b).hexdigest()\nspecs=[\n('base',WF/'metadata/peer-1575-public-full-20261011T0423Z/research/2026-10-11-dot-accepted-connected-union1575-0415z/DEPENDENCY-GRAPH.json','current/connected','e88ad8e80c518a40cc5546a9961a1e08df202ab0e0104bae39e9aca00f20e6eb'),\n('G3',D/'g3-full-public/DEPENDENCY-GRAPH.json','candidate/g3-smoothness','01328e89d32418a3f3c78e2b162dbb4b85d409a96a022624287330c2492cffd2'),\n('G46',D/'g46-full-public-capture/public/DEPENDENCY-GRAPH.json','candidate/g46-frozen','7724e2ef8e9e333f677af10a993b1455377ec4b182545ebab52dcb69d27ce727'),\n('G4new',D/'g4-242-full-public-capture/public/DEPENDENCY-GRAPH.json','candidate/g4-below-meeting','06a2bc656ac573ac19ac4eb6924afc528a2f436616c959e1085de80b8ccaef88')]\nunion={};order=[];pins=[];targets={};new=[];historical_variants=[]\nfor label,p,target,expected in specs:\n b=p.read_bytes();assert sha(b)==expected;g=json.loads(b);t=g['targets'][target];targets[label]=t\n pins.append({'label':label,'path':str(p),'bytes':len(b),'sha256':expected,'target':target,'selected_modules':len(t['order'])})\n # Record preserved historical graph variants; only final selected graphs are union-admission contexts.\n for other_target,other in g['targets'].items():\n  for name,record in other['modules'].items():\n   if name in t['modules'] and t['modules'][name]!=record:\n    assert record['sha256']==t['modules'][name]['sha256'] and record['imports']==t['modules'][name]['imports']\n    historical_variants.append({'graph':label,'historical_target':other_target,'module':name,'historical_record':record,'selected_final_record':t['modules'][name]})\n for name in t['order']:\n  record=t['modules'][name]\n  if name in union:assert union[name]==record,(label,name)\n  else:\n   union[name]=record;order.append(name)\n   if label!='base':\n    source=p.parent/'source-store'/(record['sha256']+'.lean');raw=source.read_bytes();assert sha(raw)==record['sha256']\n    imports=[w for line in raw.decode().splitlines() if line.startswith('import ') for w in line[7:].split()]\n    assert imports==record['imports']\n    new.append({'label':label,**record,'source_path':str(source),'bytes':len(raw)})\nassert len(order)==len(union)==1581 and len(new)==6 and order[:1575]==targets['base']['order']\npos={n:i for i,n in enumerate(order)};external=set()\nallowed_platform_imports=set(targets['base']['external_imports'])|{'Mathlib.Analysis.Calculus.ContDiff.Comp','Mathlib.Analysis.Calculus.ContDiff.Operations'}\nfor name,r in union.items():\n for dep in r['imports']:\n  if dep in union:assert pos[dep]<pos[name],(name,dep)\n  else:\n   assert dep in allowed_platform_imports,(name,dep)\n   external.add(dep)\nassert len(external)==183 and len(set(targets['base']['external_imports']))==181\nfrontier=['G3BernoulliSmoothnessBoundaryChecks','G6ErasedSelectedProjection','G4ActualBelowMeetingSupport']\nroots=targets['base']['roots']+frontier;assert len(roots)==1460\nreached=set()\ndef visit(n):\n if n in reached:return\n reached.add(n)\n for dep in union[n]['imports']:\n  if dep in union:visit(dep)\nfor n in roots:visit(n)\nassert reached==set(union)\ntuples=[[n,union[n]['sha256'],union[n]['imports']] for n in order];digest=sha(json.dumps(tuples,ensure_ascii=False,separators=(',',':')).encode())\nassert digest=='f36084a0370f1d96b86074da2123b7fcb67c46bfd6ec9b0094fe931acd8f2ee4'\nguards={n:r for n,r in targets['base']['modules'].items() if n.startswith('Mathlib.')};assert len(guards)==4\nj={'schema':'checked_source_union1581_static_integration_plan_v1','status':'PASS_ROOT_AND_INDEPENDENT_STATIC_GRAPH_SOURCE_RECONCILIATION_ONLY','UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'independent_contributor':'lean_reuse_successor,message-only full graph/source comparison','reader_source_utf8':Path(__file__).read_text(),'graphs':pins,'unchanged_baseline_modules':1575,'planned_connected_modules':1581,'append_order':new,'frontier_roots':frontier,'total_roots':1460,'external_platform_imports':183,'new_external_imports':sorted(external-set(targets['base']['external_imports'])),'historical_schema_only_record_differences_not_source_variants':historical_variants,'historical_source_import_identity_variant_count':0,'conflicts':[],'cycles':[],'missing_project_imports':[],'ordered_source_import_tuple_sha256':digest,'tuple_serialization':'UTF8 compact JSON [[module,sha256,imports]] in unchanged1575order plus six append order, ensure_ascii=False,separators=(comma,colon), no trailing newline','protected_existing_official_Mathlib_guard_records':guards,'no_new_build_or_compiler_invocation':True,'scope':'Four separately checked final profiles have no source-name/import/hash conflict. This reconciles source integration, not a connected1581 kernel/audit receipt. The acceptedconnected1575 build remains unchanged. Historical rejected/uncompiled attempts remain in whole evidence archives. DOT sole compatible executor should preserve full originalgraph/source/order/guards, append six exact finals, produce onefresh aggregate + full declarationownershipaudit and own bounded native import/artifact preflight. No duplicate34c/6a07 compilation, no omittedguard namespace or countdoubleadd.'}\nraw=(json.dumps(j,indent=2)+'\\n').encode();assert len(raw)<24576\np=D/'CHECKED-SOURCE-UNION-INTEGRATION-PLAN-FINAL.json'\nwith p.open('xb') as f:f.write(raw)\nassert p.read_bytes()==raw\nprint(json.dumps({'plan_path':str(p),'bytes':len(raw),'sha256':sha(raw),'union':1581,'tuple_sha256':digest,'static_only':True}))\n",
+  "graphs": [
+    {
+      "label": "base",
+      "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/peer-1575-public-full-20261011T0423Z/research/2026-10-11-dot-accepted-connected-union1575-0415z/DEPENDENCY-GRAPH.json",
+      "bytes": 4364603,
+      "sha256": "e88ad8e80c518a40cc5546a9961a1e08df202ab0e0104bae39e9aca00f20e6eb",
+      "target": "current/connected",
+      "selected_modules": 1575
+    },
+    {
+      "label": "G3",
+      "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g3-full-public/DEPENDENCY-GRAPH.json",
+      "bytes": 1821,
+      "sha256": "01328e89d32418a3f3c78e2b162dbb4b85d409a96a022624287330c2492cffd2",
+      "target": "candidate/g3-smoothness",
+      "selected_modules": 3
+    },
+    {
+      "label": "G46",
+      "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g46-full-public-capture/public/DEPENDENCY-GRAPH.json",
+      "bytes": 91134,
+      "sha256": "7724e2ef8e9e333f677af10a993b1455377ec4b182545ebab52dcb69d27ce727",
+      "target": "candidate/g46-frozen",
+      "selected_modules": 249
+    },
+    {
+      "label": "G4new",
+      "path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g4-242-full-public-capture/public/DEPENDENCY-GRAPH.json",
+      "bytes": 87548,
+      "sha256": "06a2bc656ac573ac19ac4eb6924afc528a2f436616c959e1085de80b8ccaef88",
+      "target": "candidate/g4-below-meeting",
+      "selected_modules": 242
+    }
+  ],
+  "unchanged_baseline_modules": 1575,
+  "planned_connected_modules": 1581,
+  "append_order": [
+    {
+      "label": "G3",
+      "module": "G3BernoulliSmoothness",
+      "sha256": "3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8",
+      "imports": [
+        "G3BernoulliDerivatives",
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.Analysis.Calculus.ContDiff.Operations"
+      ],
+      "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g3-full-public/source-store/3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8.lean",
+      "bytes": 1994
+    },
+    {
+      "label": "G3",
+      "module": "G3BernoulliSmoothnessBoundaryChecks",
+      "sha256": "b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b",
+      "imports": [
+        "G3BernoulliSmoothness"
+      ],
+      "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g3-full-public/source-store/b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b.lean",
+      "bytes": 1272
+    },
+    {
+      "label": "G46",
+      "module": "G4LiteralLastChildExitCut",
+      "sha256": "d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349",
+      "imports": [
+        "G1OriginalCalendarDecomposition",
+        "G1SeparatedAgendaSupportCuts",
+        "G1OriginalExitBatchBinding"
+      ],
+      "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g46-full-public-capture/public/source-store/d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349.lean",
+      "bytes": 10406
+    },
+    {
+      "label": "G46",
+      "module": "G4PartialExitSeparation",
+      "sha256": "04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae",
+      "imports": [
+        "G4LiteralLastChildExitCut"
+      ],
+      "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g46-full-public-capture/public/source-store/04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae.lean",
+      "bytes": 6073
+    },
+    {
+      "label": "G46",
+      "module": "G6ErasedSelectedProjection",
+      "sha256": "6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007",
+      "imports": [
+        "UnifiedLean.G6.PrivateRegisterErasure",
+        "G7EffectiveSourceEnumeration"
+      ],
+      "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g46-full-public-capture/public/source-store/6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007.lean",
+      "bytes": 1871
+    },
+    {
+      "label": "G4new",
+      "module": "G4ActualBelowMeetingSupport",
+      "sha256": "cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf",
+      "imports": [
+        "G4PartialExitSeparation"
+      ],
+      "source_path": "/dev/shm/rc-lean-g6-forest-register-20261011T004522.928832Z/metadata/continuation-20261011T0622Z/g4-242-full-public-capture/public/source-store/cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf.lean",
+      "bytes": 17181
+    }
+  ],
+  "frontier_roots": [
+    "G3BernoulliSmoothnessBoundaryChecks",
+    "G6ErasedSelectedProjection",
+    "G4ActualBelowMeetingSupport"
+  ],
+  "total_roots": 1460,
+  "external_platform_imports": 183,
+  "new_external_imports": [
+    "Mathlib.Analysis.Calculus.ContDiff.Comp",
+    "Mathlib.Analysis.Calculus.ContDiff.Operations"
+  ],
+  "historical_schema_only_record_differences_not_source_variants": [
+    {
+      "graph": "base",
+      "historical_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+      "module": "G3BernoulliDerivatives",
+      "historical_record": {
+        "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+        "imports": [
+          "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+          "Mathlib.Analysis.Calculus.Deriv.Pow",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "selected_final_record": {
+        "module": "G3BernoulliDerivatives",
+        "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+        "imports": [
+          "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+          "Mathlib.Analysis.Calculus.Deriv.Pow",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      }
+    },
+    {
+      "graph": "base",
+      "historical_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+      "module": "G3BernoulliCriticalNumerators",
+      "historical_record": {
+        "sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+        "imports": [
+          "G3BernoulliDerivatives",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Tactic.FieldSimp"
+        ]
+      },
+      "selected_final_record": {
+        "module": "G3BernoulliCriticalNumerators",
+        "sha256": "f6753a1adf395015801f2fb7def4abb550aa611fb9dcce8160bef325660ff3f2",
+        "imports": [
+          "G3BernoulliDerivatives",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Tactic.FieldSimp"
+        ]
+      }
+    },
+    {
+      "graph": "base",
+      "historical_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+      "module": "G3AllResiduePositivity",
+      "historical_record": {
+        "sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "selected_final_record": {
+        "module": "G3AllResiduePositivity",
+        "sha256": "07b6e0ab7a32d2c4959c57da4e213b10ce1a7268e7ae28dedc6df205938ea166",
+        "imports": [
+          "Mathlib.Data.Real.Basic",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Linarith",
+          "Mathlib.Tactic.Positivity"
+        ]
+      }
+    },
+    {
+      "graph": "base",
+      "historical_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+      "module": "G3AllResidueNormalIdentities",
+      "historical_record": {
+        "sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+        "imports": [
+          "G3AllResiduePositivity",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Positivity"
+        ]
+      },
+      "selected_final_record": {
+        "module": "G3AllResidueNormalIdentities",
+        "sha256": "bbe8ec1f645faeb7436828c9a7e00bb23138a6361fcadd098a8804b50d0c4749",
+        "imports": [
+          "G3AllResiduePositivity",
+          "Mathlib.Tactic.Ring",
+          "Mathlib.Tactic.Positivity"
+        ]
+      }
+    },
+    {
+      "graph": "base",
+      "historical_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+      "module": "G3BernoulliVerticalExclusion",
+      "historical_record": {
+        "sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+        "imports": [
+          "G3BernoulliCriticalNumerators",
+          "G3AllResidueNormalIdentities",
+          "Mathlib.Algebra.Polynomial.BigOperators",
+          "Mathlib.Algebra.Polynomial.Roots",
+          "Mathlib.Tactic.FinCases",
+          "Mathlib.Tactic.NormNum"
+        ]
+      },
+      "selected_final_record": {
+        "module": "G3BernoulliVerticalExclusion",
+        "sha256": "8b82021743289ae90d796cad631315c8a9323b2377a006e6c1f5a5ed13cd71d0",
+        "imports": [
+          "G3BernoulliCriticalNumerators",
+          "G3AllResidueNormalIdentities",
+          "Mathlib.Algebra.Polynomial.BigOperators",
+          "Mathlib.Algebra.Polynomial.Roots",
+          "Mathlib.Tactic.FinCases",
+          "Mathlib.Tactic.NormNum"
+        ]
+      }
+    },
+    {
+      "graph": "base",
+      "historical_target": "candidate/g3-actual-fixed-residue-critical-finiteness",
+      "module": "G3FixedDegreeResultants",
+      "historical_record": {
+        "sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+        "imports": [
+          "G3BernoulliVerticalExclusion",
+          "Mathlib.RingTheory.Polynomial.Resultant.Basic"
+        ]
+      },
+      "selected_final_record": {
+        "module": "G3FixedDegreeResultants",
+        "sha256": "5d3f1450cbc9f3f24a966ce8cac06d31b0739845887bd7cac05cc5b4f8d5ef02",
+        "imports": [
+          "G3BernoulliVerticalExclusion",
+          "Mathlib.RingTheory.Polynomial.Resultant.Basic"
+        ]
+      }
+    }
+  ],
+  "historical_source_import_identity_variant_count": 0,
+  "conflicts": [],
+  "cycles": [],
+  "missing_project_imports": [],
+  "ordered_source_import_tuple_sha256": "f36084a0370f1d96b86074da2123b7fcb67c46bfd6ec9b0094fe931acd8f2ee4",
+  "tuple_serialization": "UTF8 compact JSON [[module,sha256,imports]] in unchanged1575order plus six append order, ensure_ascii=False,separators=(comma,colon), no trailing newline",
+  "protected_existing_official_Mathlib_guard_records": {
+    "Mathlib.Analysis.Convex.Caratheodory": {
+      "module": "Mathlib.Analysis.Convex.Caratheodory",
+      "sha256": "8e2ead25535366604c2caab3071e5549586f909fe70b885d1c75784e117720f2",
+      "imports": [
+        "Mathlib.Analysis.Convex.Combination",
+        "Mathlib.LinearAlgebra.AffineSpace.Independent",
+        "Mathlib.Tactic.FieldSimp"
+      ]
+    },
+    "Mathlib.Data.FinEnum": {
+      "module": "Mathlib.Data.FinEnum",
+      "sha256": "381c6f445637fdf6bc04a77f062ed2079d9856eeb260b30b609f3c098a3e430a",
+      "imports": [
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.EquivFin",
+        "Mathlib.Data.List.ProdSigma",
+        "Mathlib.Data.List.Pi"
+      ]
+    },
+    "Mathlib.Algebra.MvPolynomial.Polynomial": {
+      "module": "Mathlib.Algebra.MvPolynomial.Polynomial",
+      "sha256": "43330a5e928a56af89b209101f98be347937384d2d435f875e2eaff698ccd650",
+      "imports": [
+        "Mathlib.Algebra.MvPolynomial.Equiv"
+      ]
+    },
+    "Mathlib.Algebra.MvPolynomial.Funext": {
+      "module": "Mathlib.Algebra.MvPolynomial.Funext",
+      "sha256": "cb1821884a139917b692103a0b267115179cd4e7084da5487857ec49abb0cc7e",
+      "imports": [
+        "Mathlib.Algebra.Polynomial.RingDivision",
+        "Mathlib.Algebra.Polynomial.Roots",
+        "Mathlib.Algebra.MvPolynomial.CommRing",
+        "Mathlib.Algebra.MvPolynomial.Polynomial",
+        "Mathlib.Algebra.MvPolynomial.Rename"
+      ]
+    }
+  },
+  "no_new_build_or_compiler_invocation": true,
+  "scope": "Four separately checked final profiles have no source-name/import/hash conflict. This reconciles source integration, not a connected1581 kernel/audit receipt. The acceptedconnected1575 build remains unchanged. Historical rejected/uncompiled attempts remain in whole evidence archives. DOT sole compatible executor should preserve full originalgraph/source/order/guards, append six exact finals, produce onefresh aggregate + full declarationownershipaudit and own bounded native import/artifact preflight. No duplicate34c/6a07 compilation, no omittedguard namespace or countdoubleadd."
+}
