@@ -22,7 +22,7 @@ Exact complete audit:5bf1613041a5b36b89b3cbe1e6f7ca662797b4a8d09ab31c8409b59da61
 
 Use official Lean 4.33.1 and Mathlib commit 0df444a360eaa60ab8c11dca51a86af692955474 with its pinned dependencies and official cache. The reviewed Linux compiler SHA-256 is e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550. Set CONNECTED_LEAN_BIN to the directory containing lean/lake and CONNECTED_MATHLIB to that checkout, then run `lake test -- candidate/g3-smoothness`. The inherited default target current/connected is absent and must not be advertised as this candidate command.
 
-The exact previously reviewed empty-owned-Mathlib wrapper retains the complete official namespace, with unchanged import/companion/native checks. All original serial trust-zero/kernel/resource conditions remain: ordinary 4GiB/180seconds, aggregate/audit 6GiB/300seconds, 512MiB file cap, 12GiB package cap, 8GiB operational free floor and strictly more than 20GiB free before launch. No full 1576/1577 union is claimed. Accepted 1575 remains unchanged.
+The exact previously reviewed empty-owned-Mathlib wrapper retains the complete official namespace, with unchanged import/companion/native checks. The actual successful component, aggregate and audit invocations each used 4GiB and 180 seconds, serial execution, trust zero and kernel checking. The inherited general supervisor permits an aggregate/audit allowance up to 6GiB/300 seconds; that broader allowance was not used by this profile. The 512MiB file cap, 12GiB package cap, 8GiB operational free floor and strictly more than 20GiB free launch threshold were retained. No full 1576/1577 union is claimed. Accepted 1575 remains unchanged.
 
 ## Historical audit storage receipt
 
@@ -33,3 +33,5 @@ The storage evidence includes the independent review, exact original/archive bin
 ## Public evidence boundary
 
 Mathematical source bodies, graph, guard scripts and the small complete audit retain exact bytes. Operational records and review scripts replace host path prefixes with tokens, explicitly recorded in PUBLIC-PROJECTIONS.json. Raw originals and receipt-bound native traces remain locally preserved. Public projection hashes are not presented as hashes of the original operational bytes. Independent review is by an existing dot/OpenAI agent, not human certification or an independent compiler replay.
+
+Documentation clarification, 2026-10-11 06:08 UTC: distinguish actual 4GiB/180-second commands from the inherited broader allowance. No proof, audit, receipt or verification status changed. The original README remains at commit800e5d5ba6752eebe4056c7906967be67c4e041d.
