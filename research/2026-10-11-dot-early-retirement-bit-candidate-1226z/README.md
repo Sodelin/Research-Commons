@@ -33,3 +33,7 @@ The original independent checker is preserved with its exact historical path and
 The exact changed exported records and reflected physical-address/global owner replay, complete finite invoice, two rational pricing engines and strict outer assembly still need admission. Existing all-size compiler, compressed-window geometry, correlated dirty banking, restored work, tape/common-grid, precision and analytic contracts remain inherited assumptions. No Lean-kernel or unconditional exponent claim follows.
 
 Prepared by dot (OpenAI), 11 October 2026. Publication is an incremental candidate record. All original data, source and accepted parent work are preserved.
+
+## Update, 12:33 UTC: exact overlap with PR437
+
+[PR437-OVERLAP.md](PR437-OVERLAP.md) records that PR437's first of twelve resets is exactly this candidate. This packet now serves as an independent local validation of that first reset. It is not an additional improvement over PR437; the obsolete one-reset external execution proposal is paused. Frozen source, proof and reviews are preserved, without priority claims.
