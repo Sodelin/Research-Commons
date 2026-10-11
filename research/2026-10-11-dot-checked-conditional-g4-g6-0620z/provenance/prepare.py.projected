@@ -1,0 +1,20 @@
+from pathlib import Path
+import json,hashlib,os,shutil
+A=Path(__file__).resolve().parent;B=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z');O=Path('$PACKAGE');assert not O.exists();start=shutil.disk_usage(A).free;cap=8*2**20;assert start>20*2**30+cap
+j=json.loads((A/'ASSESSMENT.json').read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();O.mkdir();[ (O/n).mkdir() for n in ['source-store','scripts','provenance']]
+g={'targets':{'candidate/g46-frozen':{'roots':list(j['new'])+['Mathlib.Algebra.MvPolynomial.Polynomial','Mathlib.Algebra.MvPolynomial.Funext','Mathlib.Analysis.Convex.Caratheodory'],'order':j['order'],'modules':j['modules'],'external_imports':j['external_imports']}},'scope':'Separate3-draft check plus246 accepted providers, including3 additional unchanged official namespace roots; accepted1575 unchanged.'};(O/'DEPENDENCY-GRAPH.json').write_text(json.dumps(g,indent=2)+'\n')
+for n,m in j['modules'].items():
+ p=A/(n+'.lean') if n in j['new'] else B/'source-store'/(m['sha256']+'.lean');assert sha(p)==m['sha256'];os.link(p,O/'source-store'/(m['sha256']+'.lean'))
+for n,rp in j['accepted_receipts'].items():
+ p=Path(rp);d=O/'.build/cache'/p.parent.name;d.mkdir(parents=True)
+ for q in p.parent.iterdir():
+  if q.is_file():
+   if q.name=='receipt.json':shutil.copyfile(q,d/q.name)
+   else:os.link(q,d/q.name)
+for p in (B/'scripts').iterdir():
+ if p.is_file():shutil.copyfile(p,O/'scripts'/p.name)
+for n in ['lakefile.lean','lean-toolchain','lake-manifest.json']:shutil.copyfile(B/n,O/n)
+prep={'status':'PREPARED_PENDING_INDEPENDENT_REVIEW_NO_COMPILER','graph_sha256':sha(O/'DEPENDENCY-GRAPH.json'),'source_bytes':sum(p.stat().st_size for p in (O/'source-store').iterdir()),'new_source_bytes':j['source_bytes'],'scripts':{p.name:sha(p) for p in (O/'scripts').iterdir()},'minimal_count':246,'selected_count':249,'namespace_extras':j['namespace_extra_modules'],'raw_source_packet_commit':'78bfafca754b63510a708a7f0ca366ac0a18f252'};(O/'PREPARATION.json').write_text(json.dumps(prep,indent=2)+'\n')
+for p in [A/'ASSESSMENT.json',A/'FROZEN-PACKET.json',Path(__file__)]:shutil.copyfile(p,O/'provenance'/p.name)
+end=shutil.disk_usage(O).free;allocated=sum(p.stat().st_blocks*512 for p in O.rglob('*') if not p.is_symlink() and (p.is_dir() or p.stat().st_nlink==1));assert allocated<cap and end>20*2**30
+(O/'STAGING-BUDGET.json').write_text(json.dumps({'start_free':start,'end_free':end,'measured_free_delta':start-end,'conservative_new_nonshared_allocation':allocated,'preparation_cap':cap,'launch_threshold':20*2**30,'compiler_started':False},indent=2)+'\n');print(O,prep['graph_sha256'],allocated,end)

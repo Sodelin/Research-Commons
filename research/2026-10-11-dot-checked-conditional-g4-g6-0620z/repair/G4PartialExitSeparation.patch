@@ -1,0 +1,11 @@
+--- original/G4PartialExitSeparation
++++ revision1/G4PartialExitSeparation
+@@ -88,7 +88,7 @@
+       (es.take n).map (fun e => .boundary (.exit e)) := by
+     rw [← List.map_take, List.take_take, Nat.min_eq_left (le_of_lt hnk)]
+   rw [ht, actual_exit_list_program] at hd
+-  obtain rfl := PMF.mem_support_pure_iff.mp hd
++  obtain rfl := (PMF.mem_support_pure_iff _ _).mp hd
+   have hb : ¬ (ei ∈ es.take n ∧ ej ∈ es.take n) :=
+     not_both_child_hits (by simpa only [k, lastChildCutLength, es] using hnk)
+   apply separated_after_exit_list N (es.take n) inside outside ei ej s hne hl hr

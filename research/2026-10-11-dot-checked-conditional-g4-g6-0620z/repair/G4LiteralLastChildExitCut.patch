@@ -1,0 +1,31 @@
+--- original/G4LiteralLastChildExitCut
++++ revision1/G4LiteralLastChildExitCut
+@@ -68,8 +68,8 @@
+     PopulationSeparated (state s) inside outside := by
+   intro x hx y hy
+   apply descendant_locations_ne N C hg
+-  · simpa only [hinside x hx] using s.property.original_descendant x
+-  · simpa only [houtside y hy] using s.property.original_descendant y
++  · simpa only [state, hinside x hx] using s.property.original_descendant x
++  · simpa only [state, houtside y hy] using s.property.original_descendant y
+   · exact hyoung x hx
+ 
+ /-- First indices in the compiler's unchanged original exit list. -/
+@@ -115,7 +115,7 @@
+     calendarTail N C H gamma common (C.age v)
+       ((sortedOriginalDates N C).filter (fun a => decide (C.age v < a))) = _
+   rw [hex]
+-  simp only [literalPrefix, literalSuffix, List.append_assoc]
++  simp only [literalPrefix, literalSuffix, es, k, List.append_assoc]
+ 
+ lemma child_mem_exits (N : RootedBinary V E X) (C : Calendar N.graph)
+     (v : V) (e : E) (hsource : N.graph.source e = v) :
+@@ -183,7 +183,7 @@
+         (fun e => .boundary (.exit e))) s).support) :
+     ∀ x ∈ inside ∪ outside, copyLocation (state d) x = .node v := by
+   rw [actual_exit_list_program] at hd
+-  obtain rfl := PMF.mem_support_pure_iff.mp hd
++  obtain rfl := (PMF.mem_support_pure_iff _ _).mp hd
+   have hm := last_child_cut_members N C v ei ej hi hj
+   intro x hx
+   rcases Finset.mem_union.mp hx with hx | hx

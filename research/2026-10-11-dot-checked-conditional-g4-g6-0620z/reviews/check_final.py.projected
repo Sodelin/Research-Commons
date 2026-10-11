@@ -1,0 +1,107 @@
+"""Read-only final source/receipt/import/native/audit review; no compiler."""
+from pathlib import Path
+import collections,gzip,hashlib,importlib.util,json,re,time
+O=Path(__file__).resolve().parent;P=Path('$PACKAGE');R=P/'.build/runs/20261011T061330.120140Z';B=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z/.build/runs/20261011T040211.744850Z');OLD=Path('$SHARED_WORKSPACE/connected-union1568-20261010-2318z')
+spec=importlib.util.spec_from_file_location('reviewhelper',Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+h=m.sha;rd=m.read;start=time.time();pin='7724e2ef8e9e333f677af10a993b1455377ec4b182545ebab52dcb69d27ce727'
+assert h(P/'DEPENDENCY-GRAPH.json')==h(R/'DEPENDENCY-GRAPH.json')==pin
+g=rd(P/'DEPENDENCY-GRAPH.json')['targets']['candidate/g46-frozen'];mods=g['modules'];prep=rd(P/'PREPARATION.json')
+for n,v in prep['scripts'].items():assert h(P/'scripts'/n)==v
+assert prep['scripts']['build_with_authenticated_overlay.py']==m.PINS['scripts/build_with_authenticated_overlay.py'];assert prep['scripts']['run_union.py']==m.PINS['scripts/run_union.py']
+for n,v in prep['scripts'].items():assert (P/'scripts'/n).read_bytes()==(B.parents[2]/'scripts'/n).read_bytes()
+assert rd(P/'LAKE-ATTEMPT2-TERMINAL.json')['exit_code']==0
+final=rd(R/'FINAL-RECEIPT.json');assert final==rd(P/'.build/LATEST-RUN.json');assert final['status']=='PASS_ALL_REQUESTED_TARGETS' and final['counts']=={'cache_reuse':246,'fresh_components':3};assert final['targets_requested']==final['targets_passed']==['candidate/g46-frozen'];assert final['trust_level']==0 and final['kernel_checking'];assert final['compiler_sha256']==final['compiler_final_sha256']==m.BIN and final['compiler_identity_stable'] and final['native_runtime_final_rehash_stable']
+trp=R/'targets/candidate_g46-frozen/RESULT.json';tr=rd(trp);assert tr['status']=='PASS' and tr['closure_modules']==249
+by={x['module']:x for x in tr['component_receipts']};assert set(by)==set(mods)
+freshpins={'G4LiteralLastChildExitCut':'d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349','G4PartialExitSeparation':'04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae','G6ErasedSelectedProjection':'6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007'}
+for n,hv in freshpins.items():assert mods[n]['sha256']==hv
+prior=rd(B/'targets/current_connected/RESULT.json');priorreceipts={x['module']:x for x in prior['component_receipts']};assert len(by)==249
+for n,r in by.items():
+ if n not in freshpins:assert r==priorreceipts[n]
+assert len(set(by)-set(freshpins))==246
+nr=rd(R/'NATIVE-RUNTIME-PINS.json');nf=rd(R/'NATIVE-RUNTIME-FINAL-REHASH.json');assert nf['stable'] and nf['compiler_identity_stable'];native=nr['libraries'];assert nf['hashes']=={p:v['sha256'] for p,v in native.items()}
+for p,v in native.items():assert h(Path(p))==v['sha256']
+entries={};indexpins={}
+for root in [P,OLD,B.parents[2],Path('$SHARED_WORKSPACE/connected-union1570-g4span-20261011-0212z'),Path('$SHARED_WORKSPACE/g4-span-check-20261011-0146z')]:
+ ip=root/'trace-transport/INDEX.json';indexpins[str(root.name)]=h(ip)
+ for e in rd(ip)['entries']:entries[str(root/e['raw_path'])]=(root,e)
+traces=[]
+def trace(t,rp):
+ root,e=entries[t['path']];assert str(root/e['receipt_path'])==str(rp);assert h(rp)==e['receipt_sha256'];assert e['receipt_status']=='PASS_FRESH_KERNEL_CHECK';a=root/e['archive_path'];assert h(a)==e['archive_sha256'] and a.stat().st_size==e['archive_bytes'];assert t['sha256']==e['raw_sha256'];z=gzip.open(a,'rb');hh=hashlib.sha256();n=0;used=set();carry=b''
+ with z:
+  for b in iter(lambda:z.read(1048576),b''):
+   hh.update(b);n+=len(b);lines=(carry+b).split(b'\n');carry=lines.pop()
+   for line in lines:
+    hit=re.search(rb'calling init:\s*(/[^\s]+)',line)
+    if hit:used.add(str(Path(hit.group(1).decode()).resolve()))
+ assert hh.hexdigest()==t['sha256'] and n==e['raw_bytes'];traces.append({'raw_sha256':t['sha256'],'raw_bytes':n});return used
+context=R/'targets/candidate_g46-frozen/objects';summary=[]
+def receipt(r,source,imports,kind):
+ rp=Path(r['receipt_directory'])/'receipt.json';assert rd(rp)=={k:v for k,v in r.items() if k not in ['cached_object','audit_output']};assert r['kind']==kind and r['status']=='PASS_FRESH_KERNEL_CHECK' and r['exit_code']==0;assert r['source_and_imports_stable'] and r['native_runtime_stat_stable'] and r['native_initialized_libraries_bound'];assert r['native_runtime_digest']==nr['native_runtime_digest'];assert r['compiler_sha256']==m.BIN and r['mathlib_commit']==m.MATHLIB
+ assert r['source_sha256']==hashlib.sha256(source).hexdigest();f=Path(r['working_directory'])/(r['module'].replace('.','/')+'.lean');assert f.read_bytes()==source
+ cmd=r['command'];assert h(Path(cmd[0]))==m.BIN and cmd[1:5]==['-j1','-t0','-M4096','-Ddebug.skipKernelTC=false'];assert r['cap_memory_mib']==4096 and r['cap_seconds']==180
+ assert cmd[-1]==str(f.relative_to(r['working_directory']))
+ for k in ['stdout','stderr']:assert h(rp.parent/k)==r[k+'_sha256'];assert b'sorryAx' not in (rp.parent/k).read_bytes()
+ assert set(r['direct_import_bindings'])==set(imports)==set(r['direct_import_artifacts'])
+ for name,b in r['direct_import_bindings'].items():
+  assert b['artifacts']==r['direct_import_artifacts'][name];m.bundle(Path(b['path']),b['artifacts'])
+  if name in mods:assert b['artifacts']==by[name]['object_artifacts']
+ if kind!='complete-owned-audit':m.bundle(Path(cmd[-2]),r['object_artifacts'])
+ used=set()
+ for t in r['native_loader_outputs']:used|=trace(t,rp)
+ assert used==set(r['native_initialized_libraries'])
+ for name in used:assert r['native_initialized_libraries'][name]==native[name]
+ for a in r['auxiliary_outputs']:assert h(rp.parent/a['path'])==a['sha256'] and (rp.parent/a['path']).stat().st_size==a['bytes']
+ summary.append({'module':r['module'],'source_sha256':r['source_sha256'],'receipt_sha256':h(rp),'fresh':R in rp.parents})
+for n in g['order']:
+ v=mods[n];source=(P/'source-store'/(v['sha256']+'.lean')).read_bytes();assert hashlib.sha256(source).hexdigest()==v['sha256'];assert m.imports(source)==v['imports'];receipt(by[n],source,v['imports'],'component');m.bundle(context/(n.replace('.','/')+'.olean'),by[n]['object_artifacts']);m.bundle(Path(by[n]['cached_object']),by[n]['object_artifacts'])
+assert sum(x['fresh'] for x in summary)==3
+assert {x['module'] for x in summary if x['fresh']}==set(freshpins)
+agg=('\n'.join('import '+n for n in g['roots'])+'\n').encode();receipt(tr['aggregate_receipt'],agg,g['roots'],'aggregate');assert summary[-1]['fresh']
+body=(P/'scripts/AuditTemplate.lean').read_text().replace('#["NanuqActualBridgeQuartetResolution", "NanuqActualQuartetPortBranching"]','#'+json.dumps(g['order'])).replace('"AUDIT-OWNED.json"','"AUDIT-RESULT.json"');receipt(tr['audit_receipt'],agg+body.encode(),g['roots']+['Lean.Util.CollectAxioms'],'complete-owned-audit');assert summary[-1]['fresh']
+ap=Path(tr['audit_receipt']['audit_output']);assert h(ap)=='0fda31efdb23628408079c9fa6d01cc08c954a0381f4f691764897e51c115c7f';audit=rd(ap);assert audit['selected_modules']==g['order'];assert not audit['owned_axioms'] and not audit['nonstandard_axiom_rows'] and not audit['missing_modules'];decl={x['name']:x for x in audit['declarations']};assert len(decl)==audit['declaration_count']==5051;assert sum(x['kind']=='theorem' for x in decl.values())==audit['theorem_declaration_count']==3208
+for x in decl.values():assert set(x['axioms'])<={'propext','Classical.choice','Quot.sound'}
+prioraudit=rd(Path(prior['audit_receipt']['audit_output']));olddecl={x['name']:x for x in prioraudit['declarations']};new={n:x for n,x in decl.items() if n not in olddecl};changed=[]
+module_deltas={'Nanuq.Source.EdgeGraph.inDegree.eq_1':('G5NonbridgeRouteBound','G1BlobDegreeBalance'),'Nanuq.Source.EdgeGraph.IsHybrid.congr_simp':('G6BridgeCannotEnterHybrid','G1BlobDegreeBalance'),'UnifiedLean.Source.UniformizedSourceStep.state.eq_1':('G7NodeActions','G4LiteralLastChildExitCut')}
+alias='UnifiedLean.Source.SourceCalendarCompiler.calendarTail.eq_def'
+oldhelper='_private.UnifiedLean.G6.PrivateRegisterCalendar.0.UnifiedLean.Source.SourceCalendarCompiler.calendarTail.match_1.splitter'
+newhelper='_private.UnifiedLean.Source.SourceInitializedCalendar.0.UnifiedLean.Source.SourceCalendarCompiler.calendarTail.match_1.splitter'
+for n in set(decl)&set(olddecl):
+ if decl[n]!=olddecl[n]:
+  if n in module_deltas:
+   assert (olddecl[n]['module'],decl[n]['module'])==module_deltas[n]
+   assert {k:v for k,v in decl[n].items() if k!='module'}=={k:v for k,v in olddecl[n].items() if k!='module'}
+  else:
+   assert n==alias
+   assert {k:v for k,v in decl[n].items() if k!='body_references'}=={k:v for k,v in olddecl[n].items() if k!='body_references'}
+   assert olddecl[n]['body_references'].count(oldhelper)==1 and newhelper not in olddecl[n]['body_references']
+   assert decl[n]['body_references']==[newhelper if v==oldhelper else v for v in olddecl[n]['body_references']]
+  changed.append({'name':n,'old':olddecl[n],'actual':decl[n]})
+assert {x['name'] for x in changed}==set(module_deltas)|{alias}
+assert decl[newhelper]==olddecl[newhelper]
+assert {k:v for k,v in olddecl[oldhelper].items() if k not in ['name','module']}=={k:v for k,v in decl[newhelper].items() if k not in ['name','module']}
+assert oldhelper not in decl
+assert len(new)==40 and sum(x['kind']=='theorem' for x in new.values())==27
+assert all(x['module'] in freshpins for x in new.values())
+for module in freshpins:
+ source=(P/'source-store'/(mods[module]['sha256']+'.lean')).read_text()
+ ns=re.search(r'^namespace (\S+)',source,re.M).group(1)
+ for _,n in re.findall(r'^(?:noncomputable )?(def|lemma|theorem|structure) (\S+)',source,re.M):assert ns+'.'+n in new,(module,n)
+assert len(set(decl)&set(olddecl))==5011
+(O/'EXACT-SHARED-RECORD-DELTAS.json').write_text(json.dumps({'deltas':sorted(changed,key=lambda x:x['name']),'old_helper':olddecl[oldhelper],'selected_helper':decl[newhelper],'qualification':'Dependency-reference metadata only; no full term-expression identity is inferred.'},indent=2)+'\n')
+(O/'EXACT-NEW-DECLARATION-RECORDS.json').write_text(json.dumps(new,indent=2)+'\n')
+imported=rd(R/'targets/candidate_g46-frozen/ACTUAL-IMPORTED-ARTIFACTS.json');groups=collections.defaultdict(dict)
+for x in imported:assert h(Path(x['path']))==x['sha256'] and Path(x['path']).stat().st_size==x['bytes'];assert x['suffix'] not in groups[x['module']];groups[x['module']][x['suffix']]=x['sha256']
+assert set(groups)==set(audit['all_imported_module_names'])
+for n in mods:assert groups[n]==by[n]['object_artifacts']
+mask=rd(R/'DESKTOP-NAMESPACE-MASK.json');assert mask['status']=='PASS_READONLY_NAMESPACE_MASK' and len(mask['owned_exact_upstream_sources'])==4
+for n,hv in mask['owned_exact_upstream_sources'].items():
+ assert mods[n]['sha256']==hv and not (Path(mask['actual_filtered_external_root'])/(n.replace('.','/')+'.olean')).exists()
+ m.bundle(context/(n.replace('.','/')+'.olean'),by[n]['object_artifacts'])
+for line in (R/'NAMESPACE-RESOLUTION-CHECKS.jsonl').read_text().splitlines():
+ row=json.loads(line);assert Path(row['context'])==context
+ for n,v in row['imports'].items():assert Path(v['lean_path']).resolve()==Path(v['resolved_target']).resolve();m.bundle(Path(v['lean_path']),v['artifacts'])
+sup=rd(P/'SUPERVISOR-20261011T061329Z.json');assert sup['status']=='TERMINAL_EXIT_ZERO' and sup['exit_code']==0 and sup['limit_event'] is None;assert sup['allocation_limit_bytes']==12*2**30 and sup['free_floor_bytes']==8*2**30 and sup['per_file_hard_limit_bytes']==512*2**20;assert sup['peak_path_counted_allocated_bytes']<sup['allocation_limit_bytes'] and sup['minimum_observed_free_bytes']>=sup['free_floor_bytes']
+assert (P/'.build/runs/20261011T061106.911237Z/FINAL-RECEIPT.json').is_file();assert rd(P/'LAKE-TERMINAL.json')['exit_code']!=0
+out={'status':'PASS_INDEPENDENT_SEPARATE_G46_PROFILE','graph_sha256':pin,'result_sha256':h(trp),'final_receipt_sha256':h(R/'FINAL-RECEIPT.json'),'audit_sha256':h(ap),'receipt_summary':summary,'declarations':5051,'theorem_rows':3208,'globally_new_names':list(new),'shared_record_exceptions':len(changed),'old_records_literal_equal':5007,'new_theorem_rows':27,'owned_axioms':0,'nonstandard_axiom_rows':0,'missing_modules':0,'imported_modules':len(groups),'imported_artifact_records':len(imported),'native_traces':traces,'trace_index_sha256':indexpins,'supervisor_sha256':h(P/'SUPERVISOR-20261011T061329Z.json'),'initial_source_failure_preserved':True,'reviewer_compiler_invoked':False,'elapsed_seconds':time.time()-start,'distinct_files_hashed':len(m.MEMO),'bytes_hashed':m.hashed_bytes}
+(O/'FINAL-REVIEW-RESULT.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

@@ -1,0 +1,59 @@
+from pathlib import Path
+p=Path('$SHARED_WORKSPACE/g3-smoothness-independent-review-20261011-0429z/check_final.py');s=p.read_text()
+s=s.replace("P=Path('$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z')","P=Path('$PACKAGE')")
+s=s.replace('20261011T043239.135086Z','20261011T061330.120140Z').replace('01328e89d32418a3f3c78e2b162dbb4b85d409a96a022624287330c2492cffd2','7724e2ef8e9e333f677af10a993b1455377ec4b182545ebab52dcb69d27ce727')
+s=s.replace("assert prep['scripts']['build_no_owned_mathlib.py']=='80a95c662ac89dbd67694a6e024d1a14899bfb27918277de6697ee55a397d3ce';assert prep['scripts']['run_union.py']=='2b1a58b50693fdb4968c68adf315c3be5e1a5d0467dd3ff148a8449ac5a6f2d6'", "assert prep['scripts']['build_with_authenticated_overlay.py']==m.PINS['scripts/build_with_authenticated_overlay.py'];assert prep['scripts']['run_union.py']==m.PINS['scripts/run_union.py']\nfor n,v in prep['scripts'].items():assert (P/'scripts'/n).read_bytes()==(B.parents[2]/'scripts'/n).read_bytes()")
+s=s.replace("{'cache_reuse':1,'fresh_components':2}","{'cache_reuse':246,'fresh_components':3}").replace('candidate/g3-smoothness','candidate/g46-frozen').replace('candidate_g3-smoothness','candidate_g46-frozen').replace("tr['closure_modules']==3","tr['closure_modules']==249")
+a="assert {n:v['sha256'] for n,v in mods.items()}=={'G3BernoulliDerivatives':'7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0','G3BernoulliSmoothness':'3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8','G3BernoulliSmoothnessBoundaryChecks':'b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b'}\nprior=rd(B/'targets/current_connected/RESULT.json');old=next(x for x in prior['component_receipts'] if x['module']=='G3BernoulliDerivatives');assert by['G3BernoulliDerivatives']==old"
+b="""freshpins={'G4LiteralLastChildExitCut':'d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349','G4PartialExitSeparation':'04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae','G6ErasedSelectedProjection':'6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007'}
+for n,hv in freshpins.items():assert mods[n]['sha256']==hv
+prior=rd(B/'targets/current_connected/RESULT.json');priorreceipts={x['module']:x for x in prior['component_receipts']};assert len(by)==249
+for n,r in by.items():
+ if n not in freshpins:assert r==priorreceipts[n]
+assert len(set(by)-set(freshpins))==246"""
+assert a in s;s=s.replace(a,b)
+s=s.replace('for root in [P,OLD]:',"for root in [P,OLD,B.parents[2],Path('$SHARED_WORKSPACE/connected-union1570-g4span-20261011-0212z'),Path('$SHARED_WORKSPACE/g4-span-check-20261011-0146z')]:")
+s=s.replace("assert sum(x['fresh'] for x in summary)==2", "assert sum(x['fresh'] for x in summary)==3\nassert {x['module'] for x in summary if x['fresh']}==set(freshpins)")
+s=s.replace('5bf1613041a5b36b89b3cbe1e6f7ca662797b4a8d09ab31c8409b59da6143c19','0fda31efdb23628408079c9fa6d01cc08c954a0381f4f691764897e51c115c7f').replace("audit['declaration_count']==12","audit['declaration_count']==5051").replace("audit['theorem_declaration_count']==10","audit['theorem_declaration_count']==3208")
+lo=s.index('for n in set(decl)&set(olddecl):');hi=s.index('imported=rd(',lo)
+s=s[:lo]+'''module_deltas={'Nanuq.Source.EdgeGraph.inDegree.eq_1':('G5NonbridgeRouteBound','G1BlobDegreeBalance'),'Nanuq.Source.EdgeGraph.IsHybrid.congr_simp':('G6BridgeCannotEnterHybrid','G1BlobDegreeBalance'),'UnifiedLean.Source.UniformizedSourceStep.state.eq_1':('G7NodeActions','G4LiteralLastChildExitCut')}
+alias='UnifiedLean.Source.SourceCalendarCompiler.calendarTail.eq_def'
+oldhelper='_private.UnifiedLean.G6.PrivateRegisterCalendar.0.UnifiedLean.Source.SourceCalendarCompiler.calendarTail.match_1.splitter'
+newhelper='_private.UnifiedLean.Source.SourceInitializedCalendar.0.UnifiedLean.Source.SourceCalendarCompiler.calendarTail.match_1.splitter'
+for n in set(decl)&set(olddecl):
+ if decl[n]!=olddecl[n]:
+  if n in module_deltas:
+   assert (olddecl[n]['module'],decl[n]['module'])==module_deltas[n]
+   assert {k:v for k,v in decl[n].items() if k!='module'}=={k:v for k,v in olddecl[n].items() if k!='module'}
+  else:
+   assert n==alias
+   assert {k:v for k,v in decl[n].items() if k!='body_references'}=={k:v for k,v in olddecl[n].items() if k!='body_references'}
+   assert olddecl[n]['body_references'].count(oldhelper)==1 and newhelper not in olddecl[n]['body_references']
+   assert decl[n]['body_references']==[newhelper if v==oldhelper else v for v in olddecl[n]['body_references']]
+  changed.append({'name':n,'old':olddecl[n],'actual':decl[n]})
+assert {x['name'] for x in changed}==set(module_deltas)|{alias}
+assert decl[newhelper]==olddecl[newhelper]
+assert {k:v for k,v in olddecl[oldhelper].items() if k not in ['name','module']}=={k:v for k,v in decl[newhelper].items() if k not in ['name','module']}
+assert oldhelper not in decl
+assert len(new)==40 and sum(x['kind']=='theorem' for x in new.values())==27
+assert all(x['module'] in freshpins for x in new.values())
+for module in freshpins:
+ source=(P/'source-store'/(mods[module]['sha256']+'.lean')).read_text()
+ ns=re.search(r'^namespace (\\S+)',source,re.M).group(1)
+ for _,n in re.findall(r'^(?:noncomputable )?(def|lemma|theorem|structure) (\\S+)',source,re.M):assert ns+'.'+n in new,(module,n)
+assert len(set(decl)&set(olddecl))==5011
+(O/'EXACT-SHARED-RECORD-DELTAS.json').write_text(json.dumps({'deltas':sorted(changed,key=lambda x:x['name']),'old_helper':olddecl[oldhelper],'selected_helper':decl[newhelper],'qualification':'Dependency-reference metadata only; no full term-expression identity is inferred.'},indent=2)+'\\n')
+(O/'EXACT-NEW-DECLARATION-RECORDS.json').write_text(json.dumps(new,indent=2)+'\\n')
+''' + s[hi:]
+lo=s.index("mask=rd(R/'NAMESPACE-OVERLAY-PINS.json')");hi=s.index('for line in ',lo)
+s=s[:lo]+'''mask=rd(R/'DESKTOP-NAMESPACE-MASK.json');assert mask['status']=='PASS_READONLY_NAMESPACE_MASK' and len(mask['owned_exact_upstream_sources'])==4
+for n,hv in mask['owned_exact_upstream_sources'].items():
+ assert mods[n]['sha256']==hv and not (Path(mask['actual_filtered_external_root'])/(n.replace('.','/')+'.olean')).exists()
+ m.bundle(context/(n.replace('.','/')+'.olean'),by[n]['object_artifacts'])
+''' +s[hi:]
+s=s.replace('SUPERVISOR-20261011T043238Z.json','SUPERVISOR-20261011T061329Z.json').replace('20261011T043035.363265Z','20261011T061106.911237Z')
+s=s.replace('PASS_INDEPENDENT_SEPARATE_G3_SMOOTHNESS_PROFILE','PASS_INDEPENDENT_SEPARATE_G46_PROFILE')
+s=s.replace("'declarations':12,'theorem_rows':10", "'declarations':5051,'theorem_rows':3208")
+s=s.replace("'shared_record_module_only_deltas':changed", "'shared_record_exceptions':len(changed),'old_records_literal_equal':5007,'new_theorem_rows':27")
+s=s.replace("'initial_parse_failure_preserved':True", "'initial_source_failure_preserved':True")
+Path('$INDEPENDENT_REVIEW/check_final.py').write_text(s)

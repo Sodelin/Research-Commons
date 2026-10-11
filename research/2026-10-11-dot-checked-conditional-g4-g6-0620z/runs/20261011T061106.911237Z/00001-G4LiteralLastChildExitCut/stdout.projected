@@ -1,0 +1,99 @@
+G4LiteralLastChildExitCut.lean:36:0: warning: automatically included section variable(s) unused in theorem `G4LiteralLastChildExitCutDraft.descendant_locations_ne`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4LiteralLastChildExitCut.lean:71:4: error: Type mismatch: After simplification, term
+  s.property.original_descendant x
+ has type
+  @DescendsTo V E X inst✝⁶ inst✝⁵ inst✝⁴ inst✝² N
+    (copyLocation (UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root ↑s) x) i
+but is expected to have type
+  @DescendsTo V E X inst✝⁶ inst✝⁵ inst✝⁴ inst✝² N (copyLocation (state s) x) i
+G4LiteralLastChildExitCut.lean:72:4: error: Type mismatch: After simplification, term
+  s.property.original_descendant y
+ has type
+  @DescendsTo V E X inst✝⁶ inst✝⁵ inst✝⁴ inst✝² N
+    (copyLocation (UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root ↑s) y) j
+but is expected to have type
+  @DescendsTo V E X inst✝⁶ inst✝⁵ inst✝⁴ inst✝² N (copyLocation (state s) y) j
+G4LiteralLastChildExitCut.lean:102:94: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+ei ej : E
+es : List E := originalExits N C (C.age v)
+k : ℕ := lastChildCutLength N C v ei ej
+hex :
+  List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) es =
+    List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (List.take k es) ++
+      List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (List.drop k es)
+⊢ beforeBoundaryProgram N C H gamma common (C.age v) ++
+      (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (List.take k es) ++
+        (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) (List.drop k es) ++
+          (nodeOperations N C H gamma common (C.age v) ++
+            calendarTail N C H gamma common (C.age v)
+              (List.filter (fun a => decide (C.age v < a)) (sortedOriginalDates N C))))) =
+    beforeBoundaryProgram N C H gamma common (C.age v) ++
+      (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e))
+          (List.take (lastChildCutLength N C v ei ej) (originalExits N C (C.age v))) ++
+        (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e))
+            (List.drop (lastChildCutLength N C v ei ej) (originalExits N C (C.age v))) ++
+          (nodeOperations N C H gamma common (C.age v) ++
+            calendarTail N C H gamma common (C.age v)
+              (List.filter (fun a => decide (C.age v < a)) (sortedOriginalDates N C)))))
+G4LiteralLastChildExitCut.lean:120:0: warning: automatically included section variable(s) unused in theorem `G4LiteralLastChildExitCutDraft.child_mem_exits`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4LiteralLastChildExitCut.lean:126:0: warning: automatically included section variable(s) unused in theorem `G4LiteralLastChildExitCutDraft.member_take_of_idx_lt`:
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4LiteralLastChildExitCut.lean:186:16: error(lean.unknownIdentifier): Unknown constant `PMF.mem_support_pure_iff.mp`
+G4LiteralLastChildExitCut.lean:186:9: error: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)
+  ?m.202
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+r : PositivePairRates E
+v : V
+ei ej : E
+hi : N.graph.source ei = v
+hj : N.graph.source ej = v
+inside outside : Finset Copy
+s d : Code N sample
+hleft : ∀ x ∈ inside, copyLocation (state s) x = Location.edge ei
+hright : ∀ y ∈ outside, copyLocation (state s) y = Location.edge ej
+hd :
+  d ∈ (PMF.pure (exitCodeList N (List.take (lastChildCutLength N C v ei ej) (originalExits N C (C.age v))) s)).support
+x✝ : ?m.202
+⊢ ∀ x ∈ inside ∪ outside, copyLocation (state d) x = Location.node v
