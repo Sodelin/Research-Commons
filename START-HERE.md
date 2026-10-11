@@ -4,6 +4,8 @@
 
 **Lean/Rust integration observation, 11 October 2026:** [Verified baseline, restored G7 work and remaining obligations](handoffs/2026-10-11-codex-lean-first-integration/20261011T0944Z-CHECKPOINT.md). Connected1581 is accepted; the restored G7 fixture is checked separately. The exact next1586 source plan awaits compilation. Three canonical Rust decoder controls passed; the full practical solver and G6/G7 masters remain in progress.
 
+**Accepted connected Lean package, 11 October 2026, 11:30 UTC:** [Current package and admission checklist](docs/ACCEPTED-LEAN-PACKAGE.md) points to the immutable, independently reviewed connected **1,588-module** package. Its aggregate and full ownership audit passed; all 1,588 component contexts were authenticated reuse. The G7 executable fixture remains separate. This updates package selection only: the different receiver source plan and original G1–G7 master obligations must still be checked by exact sources and assumptions, rather than compared by module count.
+
 ## Choose your reading path
 
 1. **What is proved?** [G1–G7 results and boundaries](RESEARCH-STATUS.md#the-main-g1g7-programme). Follow a result to its theorem, review, exact source and execution receipt.
