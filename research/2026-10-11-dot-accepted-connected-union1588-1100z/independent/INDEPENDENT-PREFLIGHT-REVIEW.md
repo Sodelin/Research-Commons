@@ -1,0 +1,15 @@
+# Independent agent preflight: coherent 1,585 plus three recovered modules
+
+11 October 2026, 10:53 UTC. Scoped preflight PASS for a guarded fresh aggregate/full-audit run; no new full-union acceptance is claimed yet. No compiler was invoked by this review.
+
+Graph `534564494039d127c137a1ec2a9010fd5250a871dead60dc2d5cf48ae1341919` preserves every old target record and all 1,585 current module records literally, adding only the three source versions accepted in the separate 154 profile: GroupedParentPathCalendar `bb59c82f…`, FirstParentJoin `9596a811…`, MixedParentBoundary `274ec872…`. The old current target is preserved as history/accepted1585 and the checked candidate/parent-path is included unchanged. The G7 fixture main remains outside current/connected.
+
+Independent execution rehashed all 1,589 staged source bodies/cache contexts, including the isolated fixture. Every literal source import and dependency order checked. All 1,588 selected receipts equal their accepted local 1,585 or 154 providers; the isolated fixture receipt equals its restored 111-profile provider. Reconstructed cache keys, all object companions, 3,478 direct-import bundles, actual compiler/library identities and strict flags/caps passed. No foreign compiled objects or unchecked components are admitted. All scripts and Lake/toolchain files match the accepted full wrapper; the original four-owned-Mathlib namespace remains unchanged.
+
+The preparation uses 27,725,824 new regular allocated bytes; observed free-space consumption was 34,668,544 bytes, both below the stricter 40 MiB preparation cap. Independent current observations were 21,489,819,648 free bytes and 9,104,371,712 available-memory bytes. The owner must still apply the unchanged fresh launch gate, explicit current/connected target and compiler-directory environment. The 12 GiB package, 8 GiB free-space floor and all compiler/trust/audit limits remain unchanged.
+
+Two preparation/checking failures remain preserved. The author's first preparer expected a redundant module field absent in six historical records; the final graph keeps those records unchanged. The reviewer's first byte-report assertion treated source_bytes as selected-only, while the recorded number included the isolated fixture. Additive metadata now states selected bytes 15,712,533 plus fixture 10,203 equals all staged bytes 15,722,736; new-source bytes 63,794 is unchanged. Original metadata and the failed checker/log remain present. No proof, graph or guard correction was needed.
+
+Final evidence review must compare every inherited declaration record and the exact 70 new records from the smaller profile. Its four smaller-context metadata differences are not automatically allowed in the full union. Build counts alone establish no original master theorem or source-recognition coverage.
+
+Exact executed checker `8fa25878b3e57a165d74ac68dd4590e864737c12b8576d094626dfe8edb975f4`; log `bc5290262947795dce6594238a9dcd1aac17876fa0c7dc44c99a01f7994b828d`; result `bc5290262947795dce6594238a9dcd1aac17876fa0c7dc44c99a01f7994b828d`. Clarified preparation metadata `55c0a671546a75d950da48bdd316d1da477b8f775c1ce018ed261c45b4915352`.
