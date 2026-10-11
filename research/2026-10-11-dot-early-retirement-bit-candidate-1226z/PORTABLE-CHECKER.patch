@@ -1,0 +1,14 @@
+--- reviewed-original
++++ portable-derivative
+@@ -7,7 +7,10 @@
+ from collections import Counter
+ import base64,gzip,hashlib,json,copy
+ 
+-SRC=Path('/workspace/shared/hamming-retired-frame-screen-20261011-1150z/bit-r767.json.gz.b64')
++import argparse
++_parser=argparse.ArgumentParser(description=__doc__)
++_parser.add_argument('data_directory',type=Path)
++SRC=_parser.parse_args().data_directory/'bit-r767.json.gz.b64'
+ data=base64.b64decode(SRC.read_text())
+ assert hashlib.sha256(data).hexdigest()=='bd3b84244528767b85d8d7fe423b155630b5c659e21e51563674b1dcb6305ad7'
+ assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()=='807cea53ebe1322721463ee2319bcd52b9714f24'
