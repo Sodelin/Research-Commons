@@ -1,0 +1,13 @@
+# Independent agent review: completion proof-only revision 3
+
+2026-10-11. Static source-delta PASS; compilation remains the integration owner's next gate.
+
+This review binds G4ActualColocatedCompletion.lean revision 2 SHA256 `393637206eb12b37fc36651cf4aee2565d70514a03fdd37510227df0144781ac` and revision 3 SHA256 `346415655948c411b9966efa587836b574b8d2434878b1eb7cdccbcbe01f9dcd`.
+
+The independent exact-replacement check verifies precisely three edits inside existing proof bodies. Two add `state` and `decodeSnapshot` to the negative erase-membership normalization. They address the actual snapshot-versus-decoded-state diagnostics at lines 166 and 177. The third replaces broad simplification of an Option-valued PMF image with its single-preimage sum, using the injectivity of the same existing option equivalence. No definition, theorem statement, assumption, import or resource setting changes.
+
+I directly checked the pinned Mathlib `PMF.map_apply`: its summand tests `b = f a`. At image point `f a`, injectivity turns a purported off-diagonal equality `f a = f b` into `a = b`; the supplied symmetry contradicts the required `b ≠ a`. The diagonal term uses reflexivity. This is the correct map identity and avoids unfolding unrelated finite-state structure. The two source-normalization edits only expose the existing encoding definitions.
+
+The preceding failed run's diagnostics were read in full. Its recovery `sorryAx` reports are failures, not accepted proofs. The revised proof still needs successful kernel checking under the unchanged limits. No compiler was invoked by this reviewer. The original and both failed source versions remain preserved.
+
+The separate staged revision-2 graph was also checked against its preserved predecessor: its only graph difference is the already reviewed completion source hash. This does not claim revision 3 has already compiled or been staged.

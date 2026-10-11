@@ -1,0 +1,499 @@
+G4ActualColocatedCompletion.lean:60:10: error: Application type mismatch: The argument
+  s.property.forest
+has type
+  Valid (decodeSnapshot N.root ↑s)
+but is expected to have type
+  Valid (rootState N s)
+in the application
+  SourceValid.mk s.property.forest
+G4ActualColocatedCompletion.lean:156:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+p : Choice N s
+hp : LegalMerge (state s) p.snd.1.1 p.snd.1.2
+x : Copy
+hx : x ∈ (state s).live.erase (↑p.snd).2
+hxlive : x ∈ (state s).live
+ha : (state (rootRepresentation N s)).genealogy p.snd.1.1 = (state s).genealogy p.snd.1.1
+hb : (state (rootRepresentation N s)).genealogy p.snd.1.2 = (state s).genealogy p.snd.1.2
+hg : (state (rootRepresentation N s)).genealogy x = (state s).genealogy x
+⊢ (if h : ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+      some
+        ⟨match
+            if h : ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+              some
+                ⟨if x = (↑p.snd).1 then
+                    (match (↑s).genealogy (↑p.snd).1 with
+                        | some t => ↑t
+                        | none => Genealogy.leaf (↑p.snd).1).graft
+                      (match (↑s).genealogy (↑p.snd).2 with
+                      | some t => ↑t
+                      | none => Genealogy.leaf (↑p.snd).2)
+                  else
+                    match (↑s).genealogy x with
+                    | some t => ↑t
+                    | none => Genealogy.leaf x,
+                  ⋯⟩
+            else none with
+          | some t => ↑t
+          | none => Genealogy.leaf x,
+          ⋯⟩
+    else none) =
+    if h : ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+      some
+        ⟨if x = (↑p.snd).1 then
+            (match
+                  if h : (↑p.snd).1 ∈ (↑s).live then
+                    some
+                      ⟨match (↑s).genealogy (↑p.snd).1 with
+                        | some t => ↑t
+                        | none => Genealogy.leaf (↑p.snd).1,
+                        ⋯⟩
+                  else none with
+                | some t => ↑t
+                | none => Genealogy.leaf (↑p.snd).1).graft
+              (match
+                if h : (↑p.snd).2 ∈ (↑s).live then
+                  some
+                    ⟨match (↑s).genealogy (↑p.snd).2 with
+                      | some t => ↑t
+                      | none => Genealogy.leaf (↑p.snd).2,
+                      ⋯⟩
+                else none with
+              | some t => ↑t
+              | none => Genealogy.leaf (↑p.snd).2)
+          else
+            match
+              if h : x ∈ (↑s).live then
+                some
+                  ⟨match (↑s).genealogy x with
+                    | some t => ↑t
+                    | none => Genealogy.leaf x,
+                    ⋯⟩
+              else none with
+            | some t => ↑t
+            | none => Genealogy.leaf x,
+          ⋯⟩
+    else none
+G4ActualColocatedCompletion.lean:163:6: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+p : Choice N s
+hp : LegalMerge (state s) p.snd.1.1 p.snd.1.2
+x : Copy
+hx : x ∉ (state s).live.erase (↑p.snd).2
+⊢ (if h : ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+      some
+        ⟨match
+            if h : ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+              some
+                ⟨if x = (↑p.snd).1 then
+                    (match (↑s).genealogy (↑p.snd).1 with
+                        | some t => ↑t
+                        | none => Genealogy.leaf (↑p.snd).1).graft
+                      (match (↑s).genealogy (↑p.snd).2 with
+                      | some t => ↑t
+                      | none => Genealogy.leaf (↑p.snd).2)
+                  else
+                    match (↑s).genealogy x with
+                    | some t => ↑t
+                    | none => Genealogy.leaf x,
+                  ⋯⟩
+            else none with
+          | some t => ↑t
+          | none => Genealogy.leaf x,
+          ⋯⟩
+    else none) =
+    if h : ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+      some
+        ⟨if x = (↑p.snd).1 then
+            (match
+                  if h : (↑p.snd).1 ∈ (↑s).live then
+                    some
+                      ⟨match (↑s).genealogy (↑p.snd).1 with
+                        | some t => ↑t
+                        | none => Genealogy.leaf (↑p.snd).1,
+                        ⋯⟩
+                  else none with
+                | some t => ↑t
+                | none => Genealogy.leaf (↑p.snd).1).graft
+              (match
+                if h : (↑p.snd).2 ∈ (↑s).live then
+                  some
+                    ⟨match (↑s).genealogy (↑p.snd).2 with
+                      | some t => ↑t
+                      | none => Genealogy.leaf (↑p.snd).2,
+                      ⋯⟩
+                else none with
+              | some t => ↑t
+              | none => Genealogy.leaf (↑p.snd).2)
+          else
+            match
+              if h : x ∈ (↑s).live then
+                some
+                  ⟨match (↑s).genealogy x with
+                    | some t => ↑t
+                    | none => Genealogy.leaf x,
+                    ⋯⟩
+              else none with
+            | some t => ↑t
+            | none => Genealogy.leaf x,
+          ⋯⟩
+    else none
+G4ActualColocatedCompletion.lean:167:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+p : Choice N s
+hp : LegalMerge (state s) p.snd.1.1 p.snd.1.2
+x : Copy
+hx : x ∈ (state s).live.erase (↑p.snd).2
+hlive : x ∈ (state s).live
+⊢ (if ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then some (Location.rootPopulation N.root) else none) =
+    if ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+      some
+        (match if x ∈ (↑s).live then some (Location.rootPopulation N.root) else none with
+        | some p => p
+        | none => Location.node N.root)
+    else none
+G4ActualColocatedCompletion.lean:171:6: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+p : Choice N s
+hp : LegalMerge (state s) p.snd.1.1 p.snd.1.2
+x : Copy
+hx : x ∉ (state s).live.erase (↑p.snd).2
+⊢ (if ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then some (Location.rootPopulation N.root) else none) =
+    if ¬x = (↑p.snd).2 ∧ x ∈ (↑s).live then
+      some
+        (match if x ∈ (↑s).live then some (Location.rootPopulation N.root) else none with
+        | some p => p
+        | none => Location.node N.root)
+    else none
+G4ActualColocatedCompletion.lean:162:10: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices, hxlive, hp.first_live, hp.second_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:162:14: warning: This simp argument is unused:
+  hxlive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices, hx, hp.first_live, hp.second_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:162:22: warning: This simp argument is unused:
+  hp.first_live
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices, hx, hxlive, hp.second_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:162:37: warning: This simp argument is unused:
+  hp.second_live
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices, hx, hxlive, hp.first_live]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:164:88: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:170:10: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices, hlive]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:170:14: warning: This simp argument is unused:
+  hlive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices, hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:172:88: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [rootRepresentation, rootState, stepDestination, admittedCode, encodeSnapshot, state, decodeSnapshot,
+    merge, rootChoices, populationChoices]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:194:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualColocatedCompletion.lean:193:11: error: unsolved goals
+case some
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+hr : pairRate r i / 2 ≠ 0
+hz : totalRate N r s = 0 ↔ Fintype.card (Choice N s) = 0
+p : Choice N s
+this : Nonempty (Choice N s) := Nonempty.intro p
+hc : ↑(Fintype.card (Choice N s)) ≠ 0
+⊢ pairRate r i / pairRate r i = 1
+G4ActualColocatedCompletion.lean:209:83: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+i : Option E
+hs : CoLocated N s i
+a : Option (Choice N s)
+⊢ ((if a = none then (sourceJumpChoice N r s) none else 0) +
+      ∑ x, if a = some x then (sourceJumpChoice N r s) (some x) else 0) =
+    (sourceJumpChoice N r s) a
+G4ActualColocatedCompletion.lean:283:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualColocatedCompletion.lean:316:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (decodeSnapshot N.root ↑s).ancestor (↑p.snd).1
+in the target expression
+  (state s).location ((state s).ancestor (↑p.snd).1) = Location.node v
+
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+v : V
+hs : ∀ (x : Copy), copyLocation (state s) x = Location.node v
+p : Choice N s
+ha : (↑p.snd).1 ∈ populationRoots (state s) (originalPlace N p.fst)
+halive : (↑p.snd).1 ∈ (state s).live
+haloc : (state s).location (↑p.snd).1 = originalPlace N p.fst
+h : (state s).location ((state s).ancestor (↑p.snd).1) = Location.node v
+⊢ False
+G4ActualColocatedCompletion.lean:342:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualColocatedCompletion.lean:348:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  copyLocation (state s) x
+in the target expression
+  DescendsTo N (copyLocation (decodeSnapshot N.root ↑s) x) (sample x)
+
+case rootPopulation
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Obs : Type u_5
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+keep : Finset Copy
+readout : UnrankedView V E Copy → Obs
+s : Code N sample
+v : V
+hp : ∀ (x : Copy), copyLocation (state s) x = Location.rootPopulation v
+x : Copy
+hx : DescendsTo N (copyLocation (decodeSnapshot N.root ↑s) x) (sample x)
+⊢ (sourceJumpStep N r s).bind (completionReader N r keep readout) = completionReader N r keep readout s
+G4ActualColocatedCompletion.lean:393:57: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+e : E
+hb : CommonBoundary N (BoundaryOperation.exit e)
+⊢ SourceValid N sample
+    (transport (state s)
+      (fun l =>
+        if (state s).location l = Location.edge e then Location.node (N.graph.source e) else (state s).location l)
+      (SourceEvent.edgeExit e))
+G4ActualColocatedCompletion.lean:501:10: error(lean.unknownIdentifier): Unknown identifier `sourceProgram_append`
+G4ActualColocatedCompletion.lean:492:47: error: unsolved goals
+V : Type u_1
+E : Type u_2
+Copy : Type u_3
+X : Type u_4
+Obs : Type u_5
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+C : GProgram.G5.Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+keep : Finset Copy
+readout : UnrankedView V E Copy → Obs
+past future : List (ProgramStep N)
+hp : (compiledCalendarProgram N C H gamma fun x => true) = past ++ future
+s : Code N sample
+hs : s ∈ (sourceProgram N r past (initialCode N sample (originalRegister N coin))).support
+hshared : SharedLocation N s
+hc : CommonOnly N (past ++ future)
+d : Code N sample
+hd : d ∈ (sourceProgram N r future s).support
+⊢ d ∈ (sourceProgram N r (past ++ future) (initialCode N sample (originalRegister N coin))).support
+'DotG4.ActualColocatedCompletion.rootRepresentation_actual_jump' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.completionReader_actual_root' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.completionReader_jump_harmonic' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.completionReader_actual_common_program' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.actual_initialized_common_suffix_completion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

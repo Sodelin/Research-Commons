@@ -1,0 +1,32 @@
+import pathlib,json,hashlib,importlib.util,sys,runpy,os,stat,time
+BASE=pathlib.Path('$DEDUP_TRANSPORT');OUT=pathlib.Path(__file__).resolve().parent;PKG=pathlib.Path('$ACCEPTED1581')
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+expected={'dedup_outputs.py':'052da0926499a9adbaaf2264e6818015e44d9ff80def61265dc3a56507b0d07c','READONLY-INVENTORY.json':'7d9626a8d76659f9e7598af51444fa1c661d1120e66579aef24495bc67b31e0e','READONLY-ARCHIVE-SIZING.json':'ce9677a2edd434947f5c27198441790e524334a5f2cb9083784ea191ba9a6595'}
+for f,s in expected.items():assert h(BASE/f)==s
+start=time.monotonic();inv=json.load(open(BASE/'READONLY-INVENTORY.json'));sizes=json.load(open(BASE/'READONLY-ARCHIVE-SIZING.json'));mods=json.load(open(PKG/'DEPENDENCY-GRAPH.json'))['targets']['current/connected']['modules']
+seen=set();nbytes=0;alloc=0;receipts={}
+for r in inv['rows']:
+ assert r['module'] in mods
+ rp=pathlib.Path(r['receipt_path']);assert h(rp)==r['receipt_sha256'];rec=json.loads(rp.read_bytes());receipts[str(rp)]=r['receipt_sha256']
+ assert rec['status']=='PASS_FRESH_KERNEL_CHECK' and rec['exit_code']==0 and rec['kind']=='component'
+ assert rec['source_and_imports_stable'] and rec['native_runtime_stat_stable']
+ assert rec['module']==r['module'] and rec['object_artifacts'][r['suffix']]==r['sha256']
+ assert r['suffix'] in {'.olean','.olean.private','.olean.server','.ir'}
+ assert rec['command'].count('-o')==1
+ output=rec['command'][rec['command'].index('-o')+1];canonical=rec['cached_object'];assert output[:-6]+r['suffix']==r['attempt_path'];assert canonical[:-6]+r['suffix']==r['cache_path']
+ a=pathlib.Path(r['attempt_path']);c=pathlib.Path(r['cache_path']);assert a.resolve()==a and c.resolve()==c
+ aa=a.lstat();cc=c.lstat();assert stat.S_ISREG(aa.st_mode) and stat.S_ISREG(cc.st_mode)
+ assert aa.st_nlink==1 and (aa.st_dev,aa.st_ino)!=(cc.st_dev,cc.st_ino)
+ assert (aa.st_dev,aa.st_ino) not in seen;seen.add((aa.st_dev,aa.st_ino))
+ assert all(getattr(aa,x)==getattr(cc,x) for x in ['st_dev','st_mode','st_uid','st_gid','st_mtime_ns','st_size'])
+ assert all(getattr(aa,'st_'+x)==r['attempt_stat'][x] for x in ['dev','ino','uid','gid','mtime_ns','ctime_ns','nlink'])
+ assert (cc.st_dev,cc.st_ino)==(r['cache_stat']['dev'],r['cache_stat']['ino'])
+ assert aa.st_size==r['bytes'];assert h(a)==h(c)==r['sha256'];nbytes+=aa.st_size;alloc+=aa.st_blocks*512
+ assert r['sha256'] in sizes['payloads'];assert sizes['payloads'][r['sha256']]['raw_bytes']==aa.st_size
+ assert not (BASE/'archives'/(r['sha256']+'.gz')).exists()
+assert len(seen)==1593 and nbytes==700483912 and alloc==703664128
+# Execute the identical synthetic controls in a fresh reviewer fixture root.
+spec=importlib.util.spec_from_file_location('dedup_outputs',BASE/'dedup_outputs.py');m=importlib.util.module_from_spec(spec);sys.modules['dedup_outputs']=m;spec.loader.exec_module(m);m.ROOT=OUT
+runpy.run_path(str(BASE/'test_controls.py'),run_name='independent_replay')
+obj={'status':'INDEPENDENT_READONLY_ALLOWLIST_AND_SYNTHETIC_REPLAY_PASS','inputs':{f:h(BASE/f) for f in expected}|{'test_controls.py':h(BASE/'test_controls.py'),'PROPOSED-PLAN.md':h(BASE/'PROPOSED-PLAN.md')},'pairs':1593,'raw_bytes':nbytes,'allocated_attempt_bytes':alloc,'distinct_receipts':len(receipts),'all_current1581_module_names':True,'all_real_outputs_independent_before_operation':True,'no_real_archive_or_object_mutated':True,'synthetic_controls':json.load(open(OUT/'SYNTHETIC-CONTROLS.json')),'seconds':time.monotonic()-start}
+(OUT/'INDEPENDENT-RESULT.json').write_text(json.dumps(obj,indent=2)+'\n');print('PASS exact1593 real pairs, eighteen independent synthetic controls; no real mutation')

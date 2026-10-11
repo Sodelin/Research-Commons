@@ -1,0 +1,24 @@
+G3FiniteWordLogSignature.lean:76:75: error: Application type mismatch: The argument
+  heval
+has type
+  ContDiffAt ℝ k (fun y => y.2 i) x
+but is expected to have type
+  ContDiffAt ℝ k (fun y => Real.log (bernoulliFactor n (y.2 i).1 (y.2 i).2)) x
+in the application
+  ContDiffAt.comp x ?m.186 heval
+G3FiniteWordLogSignature.lean:76:10: error: Application type mismatch: The argument
+  contDiffAt_bernoulliLog_of_factor_pos n (hf i)
+has type
+  ContDiffAt ℝ k (fun x => bernoulliLog n x.1 x.2) ((x.2 i).1, (x.2 i).2)
+but is expected to have type
+  ContDiffAt ℝ k Neg.neg (Real.log (bernoulliFactor n (x.2 i).1 (x.2 i).2))
+in the application
+  ContDiffAt.comp x (contDiffAt_bernoulliLog_of_factor_pos n (hf i))
+'GProgram.G3.AllResidue.finiteWordMoment_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G3.AllResidue.neg_log_finiteWordMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G3.AllResidue.exp_neg_finiteWordLog' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GProgram.G3.AllResidue.contDiffAt_finiteWordLog' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'GProgram.G3.AllResidue.contDiffAt_finiteWordLog_vector' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

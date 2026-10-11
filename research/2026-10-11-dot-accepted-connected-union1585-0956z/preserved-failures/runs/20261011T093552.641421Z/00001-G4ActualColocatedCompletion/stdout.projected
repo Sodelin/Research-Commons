@@ -1,0 +1,86 @@
+G4ActualColocatedCompletion.lean:58:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualColocatedCompletion.rootState_valid`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualColocatedCompletion.lean:166:10: error: Type mismatch: After simplification, term
+  hx
+ has type
+  Not (x ≠ (↑p.snd).2 ∧ x ∈ (state s).live)
+but is expected to have type
+  Not (x ≠ (↑p.snd).2 ∧ x ∈ (↑s).live)
+G4ActualColocatedCompletion.lean:177:10: error: Type mismatch: After simplification, term
+  hx
+ has type
+  Not (x ≠ (↑p.snd).2 ∧ x ∈ (state s).live)
+but is expected to have type
+  Not (x ≠ (↑p.snd).2 ∧ x ∈ (↑s).live)
+G4ActualColocatedCompletion.lean:201:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualColocatedCompletion.lean:218:16: error: Tactic `simp` failed with a nested error:
+(deterministic) timeout at `«Lean.Meta.acLt»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G4ActualColocatedCompletion.lean:222:2: error: (deterministic) timeout at `«tactic execution»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+G4ActualColocatedCompletion.lean:218:37: warning: This simp argument is unused:
+  eq_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [PMF.map_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualColocatedCompletion.lean:291:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualColocatedCompletion.lean:316:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualColocatedCompletion.node_choice_empty`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualColocatedCompletion.lean:352:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+'DotG4.ActualColocatedCompletion.rootRepresentation_actual_jump' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.completionReader_actual_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.completionReader_jump_harmonic' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.completionReader_actual_common_program' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualColocatedCompletion.actual_initialized_common_suffix_completion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

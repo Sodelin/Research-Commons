@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "$PACKAGE/scripts/run_union.py", line 77, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "$PACKAGE/scripts/run_union.py", line 34, in main
+    storage={'status':'PASS_PREFLIGHT_GUARDED_ALLOCATION_NOT_UNKNOWN_OUTPUT_CERTIFICATION','package_initial_allocated_bytes':start_size,'source_bytes':prep['source_bytes'],'new_g3_source_bytes':prep['new_source_bytes'],'package_path_counted_limit_bytes':cap,'per_file_hard_limit_bytes':perfile,'free_floor_bytes':floor,'package_filesystem_free':shutil.disk_usage(ROOT).free,'backing_store_free':shutil.disk_usage(args.backing_store).free,'dependency_checkout_allocated_bytes':allocated(args.mathlib)[0],'existing_g3_external_observed_peak_bytes':1932623872,'output_reserve_explanation':'12 GiB monitored package allocation; preserved dependency cache separately measured. Unknown compiler output is guarded rather than inferred from source size. No CPU/kernel/memory/time policy changes.'}
+                                                                                                                                                       ~~~~^^^^^^^^^^^^^^^^
+KeyError: 'source_bytes'

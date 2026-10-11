@@ -1,0 +1,175 @@
+#!/usr/bin/env python3
+"""Offline, allowlisted completed-object representation transport.
+Default check is read-only. Mutations require explicit command AND quiescent flag.
+No security against hostile concurrent filesystem writers is claimed.
+"""
+import argparse, contextlib, fcntl, gzip, hashlib, json, os, stat, time
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+INV_SHA = '7d9626a8d76659f9e7598af51444fa1c661d1120e66579aef24495bc67b31e0e'
+SIZE_SHA = 'ce9677a2edd434947f5c27198441790e524334a5f2cb9083784ea191ba9a6595'
+FLOOR = 8 * 1024**3
+BACKUP_CAP = 256 * 1024**2
+SUFFIXES = {'.olean', '.olean.private', '.olean.server', '.ir'}
+def need(ok, msg):
+    if not ok: raise RuntimeError(msg)
+def sha(b): return hashlib.sha256(b).hexdigest()
+def regular(p):
+    p = Path(p)
+    need(p.is_absolute() and p.resolve() == p, 'nonliteral/symlink path')
+    s = p.lstat(); need(stat.S_ISREG(s.st_mode), 'not regular')
+    return s
+def meta(s):
+    return dict(dev=s.st_dev, ino=s.st_ino, mode=stat.S_IMODE(s.st_mode), uid=s.st_uid,
+                gid=s.st_gid, mtime_ns=s.st_mtime_ns, ctime_ns=s.st_ctime_ns, nlink=s.st_nlink)
+def identity(s): return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns)
+def fsyncdir(p):
+    fd=os.open(p,os.O_RDONLY|os.O_DIRECTORY)
+    try: os.fsync(fd)
+    finally: os.close(fd)
+def free(p):
+    s=os.statvfs(p); return s.f_bavail*s.f_frsize
+class Transport:
+    def __init__(self, root, rows, sizes):
+        self.root=Path(root); self.rows=rows; self.sizes=sizes
+        self.journal=self.root/'OPERATIONS.jsonl'
+    def event(self, phase, row, **extra):
+        payload=dict(time=time.time(),phase=phase,attempt_path=row['attempt_path'],sha256=row['sha256'],**extra)
+        with self.journal.open('ab') as f:
+            f.write((json.dumps(payload,sort_keys=True)+'\n').encode());f.flush();os.fsync(f.fileno())
+        fsyncdir(self.root)
+    def validate(self, r):
+        need(r['suffix'] in SUFFIXES, 'excluded object suffix')
+        rp=Path(r['receipt_path']);regular(rp); rb=rp.read_bytes()
+        need(sha(rb)==r['receipt_sha256'],'receipt digest')
+        rec=json.loads(rb)
+        need(rec['status']=='PASS_FRESH_KERNEL_CHECK' and rec['kind']=='component' and rec['exit_code']==0,'not completed PASS')
+        need(rec['source_and_imports_stable'] and rec['native_runtime_stat_stable'],'unstable receipt')
+        need(rec['module']==r['module'] and rec['object_artifacts'][r['suffix']]==r['sha256'],'object binding')
+        cmd=rec['command']; need(cmd.count('-o')==1,'ambiguous command')
+        out=cmd[cmd.index('-o')+1]; cache=rec['cached_object']
+        need(out.endswith('.olean') and cache.endswith('.olean'),'unexpected output')
+        need(out[:-6]+r['suffix']==r['attempt_path'] and cache[:-6]+r['suffix']==r['cache_path'],'path binding')
+        q=Path(r['attempt_path']);c=Path(r['cache_path']); qs=regular(q);cs=regular(c)
+        need((cs.st_dev,cs.st_ino)==(r['cache_stat']['dev'],r['cache_stat']['ino']),'canonical inode changed')
+        for s,old in [(qs,r['attempt_stat']),(cs,r['cache_stat'])]:
+            now=meta(s)
+            need(all(now[k]==old[k] for k in ('dev','mode','uid','gid','mtime_ns')),'metadata drift')
+        same=(qs.st_dev,qs.st_ino)==(cs.st_dev,cs.st_ino)
+        if not same:
+            initial=(qs.st_dev,qs.st_ino,qs.st_ctime_ns)==(r['attempt_stat']['dev'],r['attempt_stat']['ino'],r['attempt_stat']['ctime_ns'])
+            need(qs.st_nlink==1 and initial,'unrecognized output identity')
+        for p,s in [(q,qs),(c,cs)]:
+            b=p.read_bytes();need(len(b)==r['bytes'] and sha(b)==r['sha256'],'object bytes drift')
+            need(identity(p.stat())==identity(s),'object changed while reading')
+        return q,c,qs,cs,same
+    def archive(self,r): return self.root/'archives'/(r['sha256']+'.gz')
+    def recover(self,r):
+        p=self.archive(r);s=regular(p);z=p.read_bytes();expected=self.sizes[r['sha256']]
+        need(len(z)==expected['gzip_bytes'] and sha(z)==expected['gzip_sha256'],'archive digest')
+        b=gzip.decompress(z)
+        need(len(b)==r['bytes']==expected['raw_bytes'] and sha(b)==r['sha256'],'archive raw digest')
+        need(identity(p.stat())==identity(s),'archive changed')
+        return b
+    def allocated_backups(self):
+        d=self.root/'archives'; seen={}
+        if d.exists():
+            need(d.resolve()==d and d.is_dir(),'archive directory')
+            for p in d.iterdir():
+                s=regular(p);seen[(s.st_dev,s.st_ino)]=s.st_blocks*512
+        return sum(seen.values())
+    def guard(self):
+        need(free(self.root)>FLOOR,'free-space floor')
+        used=self.allocated_backups()
+        need(used<=BACKUP_CAP,'backup cap')
+    def backup(self):
+        for r in self.rows: self.validate(r)
+        d=self.root/'archives'
+        if d.exists(): need(d.is_dir() and d.resolve()==d,'archive directory')
+        else: d.mkdir();fsyncdir(self.root)
+        for r in self.rows:
+            self.guard(); self.validate(r);p=self.archive(r)
+            if p.exists(): self.recover(r);continue
+            tmp=p.with_suffix('.gz.partial')
+            if tmp.exists():
+                regular(tmp);z=tmp.read_bytes()
+            else:
+                b=Path(r['attempt_path']).read_bytes();need(sha(b)==r['sha256'],'backup source drift')
+                z=gzip.compress(b,mtime=0)
+                need(self.allocated_backups()+((len(z)+4095)//4096)*4096<=BACKUP_CAP,'backup cap projection')
+                with tmp.open('xb') as f: f.write(z);f.flush();os.fsync(f.fileno())
+                fsyncdir(d)
+            e=self.sizes[r['sha256']]
+            need(len(z)==e['gzip_bytes'] and sha(z)==e['gzip_sha256'] and sha(gzip.decompress(z))==r['sha256'],'partial backup mismatch')
+            need(not p.exists(),'archive appeared')
+            # Hardlink promotion never overwrites an existing archive; partial retained.
+            os.link(tmp,p);fsyncdir(d);self.recover(r)
+            self.event('BACKUP_READY',r,archive_sha256=e['gzip_sha256'])
+        for r in self.rows: self.recover(r)
+        self.guard()
+    @contextlib.contextmanager
+    def locks(self,q,c):
+        with q.open('rb') as a,c.open('rb') as b:
+            fcntl.flock(a,fcntl.LOCK_EX|fcntl.LOCK_NB);fcntl.flock(b,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            yield
+    def dedup_one(self,r,interrupt=None):
+        self.guard();self.recover(r);q,c,qs,cs,same=self.validate(r)
+        tmp=q.with_name(q.name+'.dedup-'+r['sha256'][:16]+'.tmp')
+        if same:
+            need(not tmp.exists(),'unexpected temporary after committed link');return
+        with self.locks(q,c):
+            q,c,qs,cs,same=self.validate(r);need(not same,'concurrent completion')
+            self.event('DEDUP_INTENT',r,before=meta(qs),canonical=meta(cs))
+            if tmp.exists():
+                ts=regular(tmp);need((ts.st_dev,ts.st_ino)==(cs.st_dev,cs.st_ino),'foreign temporary')
+            else: os.link(c,tmp);fsyncdir(q.parent)
+            if interrupt=='before_replace': raise RuntimeError('synthetic interruption before replacement')
+            self.recover(r);need(identity(q.stat())==identity(qs),'output race')
+            need((c.stat().st_dev,c.stat().st_ino)==(cs.st_dev,cs.st_ino),'canonical race')
+            need(sha(tmp.read_bytes())==r['sha256'],'temporary bytes')
+            os.replace(tmp,q);fsyncdir(q.parent)
+            if interrupt=='after_replace': raise RuntimeError('synthetic interruption after replacement')
+            _,_,after,_,linked=self.validate(r);need(linked,'not linked')
+            self.event('DEDUP_DONE',r,before=meta(qs),after=meta(after))
+    def dedup(self):
+        # Every backup is authenticated before any original is replaced.
+        for r in self.rows: self.validate(r);self.recover(r)
+        for r in self.rows:self.dedup_one(r)
+    def restore_copy(self,r):
+        """Recover to a NEW independent path; never overwrites original or cache.
+        This is the explicit recovery reader, including if a future alias was corrupted.
+        The caller may later authorize placement; inode/ctime are not reconstructed.
+        """
+        b=self.recover(r);d=self.root/'recovered';d.mkdir(exist_ok=True)
+        need(d.resolve()==d and d.is_dir(),'recovery directory')
+        p=d/(r['sha256']+r['suffix']);need(not p.exists(),'recovery destination exists')
+        need(free(self.root)>FLOOR+len(b),'recovery floor')
+        with p.open('xb') as f:f.write(b);f.flush();os.fsync(f.fileno())
+        old=r['attempt_stat'];s=p.stat();need((s.st_uid,s.st_gid)==(old['uid'],old['gid']),'recovery ownership differs')
+        os.chmod(p,old['mode']);os.utime(p,ns=(s.st_atime_ns,old['mtime_ns']))
+        with p.open('rb') as f:os.fsync(f.fileno())
+        fsyncdir(d);need(sha(p.read_bytes())==r['sha256'],'recovery mismatch')
+        self.event('RECOVERY_COPY',r,path=str(p),after=meta(p.stat()))
+        return p
+
+def load_real():
+    a=ROOT/'READONLY-INVENTORY.json';b=ROOT/'READONLY-ARCHIVE-SIZING.json'
+    need(sha(a.read_bytes())==INV_SHA and sha(b.read_bytes())==SIZE_SHA,'frozen allowlist changed')
+    rows=json.loads(a.read_text())['rows'];sizes=json.loads(b.read_text())['payloads']
+    need(len(rows)==1593 and len({r['attempt_path'] for r in rows})==1593,'allowlist count')
+    return Transport(ROOT,rows,sizes)
+def main():
+    p=argparse.ArgumentParser();p.add_argument('operation',choices=['check','backup','dedup','recover-copies'],default='check',nargs='?');p.add_argument('--quiescent-confirmed',action='store_true');args=p.parse_args()
+    t=load_real()
+    if args.operation=='check':
+        for r in t.rows:t.validate(r)
+        print(json.dumps(dict(status='READONLY_PASS',count=len(t.rows))));return
+    need(args.quiescent_confirmed,'explicit quiescent confirmation required')
+    with (ROOT/'TRANSPORT.lock').open('ab') as f:
+        fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        if args.operation=='backup':t.backup()
+        elif args.operation=='dedup':t.dedup()
+        else:
+            for r in t.rows:t.restore_copy(r)
+    print(json.dumps(dict(status='PASS',operation=args.operation,count=len(t.rows))))
+if __name__=='__main__':main()

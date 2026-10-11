@@ -1,0 +1,38 @@
+# Read-only final verification; invoke only after owner reports terminal and releases readers.
+import pathlib,json,hashlib,gzip,stat,time
+BASE=pathlib.Path('$DEDUP_TRANSPORT');OUT=pathlib.Path(__file__).resolve().parent;PKG=pathlib.Path('$ACCEPTED1581')
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+start=time.monotonic();pre=json.load(open(OUT/'INDEPENDENT-RESULT.json'))
+for f,s in pre['inputs'].items():assert h(BASE/f)==s,(f,'input drift')
+inv=json.load(open(BASE/'READONLY-INVENTORY.json'));sizes=json.load(open(BASE/'READONLY-ARCHIVE-SIZING.json'));receipts={};archives=set();objects=set();ar_alloc=0;raw=0
+for r in inv['rows']:
+ rp=pathlib.Path(r['receipt_path']);assert h(rp)==r['receipt_sha256'];rec=json.loads(rp.read_bytes());receipts[str(rp)]=rec
+ a=pathlib.Path(r['attempt_path']);c=pathlib.Path(r['cache_path']);assert a.resolve()==a and c.resolve()==c
+ aa=a.lstat();cc=c.lstat();assert stat.S_ISREG(aa.st_mode) and stat.S_ISREG(cc.st_mode)
+ assert (aa.st_dev,aa.st_ino)==(cc.st_dev,cc.st_ino)==(r['cache_stat']['dev'],r['cache_stat']['ino'])
+ assert all(getattr(aa,'st_'+x)==r['attempt_stat'][x] for x in ['dev','uid','gid','mtime_ns'])
+ assert stat.S_IMODE(aa.st_mode)==r['attempt_stat']['mode']
+ assert aa.st_size==r['bytes'];assert h(a)==h(c)==r['sha256'];raw+=aa.st_size
+ z=BASE/'archives'/(r['sha256']+'.gz');part=z.with_suffix('.gz.partial');assert z.resolve()==z and part.resolve()==part
+ zs=z.lstat();ps=part.lstat();assert stat.S_ISREG(zs.st_mode) and stat.S_ISREG(ps.st_mode)
+ assert (zs.st_dev,zs.st_ino)==(ps.st_dev,ps.st_ino)
+ assert (zs.st_dev,zs.st_ino)!=(cc.st_dev,cc.st_ino)
+ gz=z.read_bytes();ex=sizes['payloads'][r['sha256']];assert len(gz)==ex['gzip_bytes'] and hashlib.sha256(gz).hexdigest()==ex['gzip_sha256']
+ b=gzip.decompress(gz);assert len(b)==r['bytes']==ex['raw_bytes'] and hashlib.sha256(b).hexdigest()==r['sha256']
+ key=(zs.st_dev,zs.st_ino)
+ if key not in archives:ar_alloc+=zs.st_blocks*512;archives.add(key)
+ assert not a.with_name(a.name+'.dedup-'+r['sha256'][:16]+'.tmp').exists()
+for rec in receipts.values():
+ c=rec['cached_object'];out=rec['command'][rec['command'].index('-o')+1]
+ for suf,sh in rec['object_artifacts'].items():
+  for s in [out,c]:
+   p=pathlib.Path(s[:-6]+suf);assert h(p)==sh;objects.add(str(p))
+# All accepted source-store objects and literal graph source pins stay unchanged.
+graph=PKG/'DEPENDENCY-GRAPH.json';mods=json.load(open(graph))['targets']['current/connected']['modules']
+for n,d in mods.items():assert h(PKG/'source-store'/(d['sha256']+'.lean'))==d['sha256']
+assert len(archives)==1593 and ar_alloc<=256*1024**2
+journal=BASE/'OPERATIONS.jsonl';events=[json.loads(l) for l in journal.read_text().splitlines()]
+assert {e['attempt_path'] for e in events if e['phase']=='DEDUP_DONE'}=={r['attempt_path'] for r in inv['rows']}
+assert {e['attempt_path'] for e in events if e['phase']=='BACKUP_READY'}=={r['attempt_path'] for r in inv['rows']}
+result={'status':'INDEPENDENT_TERMINAL_BYTE_RECOVERY_AND_LINK_IDENTITY_PASS','pairs':len(inv['rows']),'restored_raw_bytes':raw,'independent_archive_inodes':len(archives),'archive_allocated_bytes':ar_alloc,'affected_component_receipts_unchanged':len(receipts),'all_affected_original_and_cache_companion_paths_rehashed':len(objects),'accepted_source_bodies_unchanged':len(mods),'accepted_graph_sha256':h(graph),'journal_sha256':h(journal),'all_expected_backup_and_dedup_done_rows':True,'historical_inode_ctime_not_rewritten':True,'read_only_no_compiler':True,'seconds':time.monotonic()-start}
+(OUT/'INDEPENDENT-AFTER-RESULT.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

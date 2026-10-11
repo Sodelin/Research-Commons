@@ -1,0 +1,9 @@
+# Independent agent review: finite-word log composition repair
+
+11 October 2026. Static proof-only delta PASS, pending kernel retry.
+
+This review binds original G3FiniteWordLogSignature source SHA256 `5c5425f9578351fe5c762c4aca34d77b99f2acf762f6e01dc5847b27188c3ca1` and the revised source `4db92b1e81133d1221ed84ef0b99a59af7017df1c4d5bf6f18429cd825c6bcf4`.
+
+An independent exact-replacement check confirms one proof expression changed. The existing cell-smoothness theorem is composed with the same evaluation map, now giving explicit `f` and `g` arguments. The pinned Mathlib ContDiffAt.comp signature takes the outer function smooth at f(x) and the inner function smooth at x; those are precisely the two supplied proofs. The conclusion is the original cell map by definitional composition. This prevents inference from unfolding bernoulliLog into its outer negation and trying to compose the wrong function.
+
+I read the actual failed compiler diagnostics and the pinned composition declaration. The first three product/log identities had standard-only axiom reports; the two smoothness declarations were still failed recovery terms. This revision changes no theorem statement, definition, assumption, import, other proof or resource setting. The finite-word map still uses one shared parameter tuple and does not claim arbitrary original-source extraction, Taylor/IFT or G3 acquisition. No compiler was run by this reviewer. Original failed evidence remains preserved; full acceptance awaits the owner’s successful component, aggregate and audit evidence.

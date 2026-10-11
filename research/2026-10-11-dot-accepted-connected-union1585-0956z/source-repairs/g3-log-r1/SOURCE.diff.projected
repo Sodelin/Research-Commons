@@ -1,0 +1,14 @@
+--- original/G3FiniteWordLogSignature.lean
++++ revision-1/G3FiniteWordLogSignature.lean
+@@ -73,7 +73,10 @@
+     have heval : ContDiffAt ℝ k
+         (fun y : FiniteWordParameters N => y.2 i) x :=
+       (contDiffAt_apply ℝ (ℝ × ℝ) i x.2).comp x htail
+-    exact (contDiffAt_bernoulliLog_of_factor_pos (k := k) n (hf i)).comp x heval
++    exact ContDiffAt.comp
++      (f := fun y : FiniteWordParameters N => y.2 i)
++      (g := fun z : ℝ × ℝ => bernoulliLog n z.1 z.2)
++      x (contDiffAt_bernoulliLog_of_factor_pos (k := k) n (hf i)) heval
+   have hsum : ContDiffAt ℝ k
+       (fun y : FiniteWordParameters N => ∑ i, bernoulliLog n (y.2 i).1 (y.2 i).2) x :=
+     ContDiffAt.sum (fun i _ => hcell i)

@@ -1,0 +1,34 @@
+--- elaboration-r2/G4ActualColocatedCompletion.lean
++++ elaboration-r3/G4ActualColocatedCompletion.lean
+@@ -163,7 +163,7 @@
+           encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices,
+           hx'.1, hx'.2, ha', hb']
+       · have hx' : ¬ (x ≠ p.2.val.2 ∧ x ∈ (s : Snapshot V E Copy).live) := by
+-          simpa only [Finset.mem_erase] using hx
++          simpa only [Finset.mem_erase, state, decodeSnapshot] using hx
+         simp [rootRepresentation, rootState, stepDestination, admittedCode,
+           encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices, hx']
+     · funext x
+@@ -174,7 +174,7 @@
+           encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices,
+           hx'.1, hx'.2]
+       · have hx' : ¬ (x ≠ p.2.val.2 ∧ x ∈ (s : Snapshot V E Copy).live) := by
+-          simpa only [Finset.mem_erase] using hx
++          simpa only [Finset.mem_erase, state, decodeSnapshot] using hx
+         simp [rootRepresentation, rootState, stepDestination, admittedCode,
+           encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices, hx']
+     · rfl
+@@ -215,7 +215,12 @@
+   obtain ⟨a, rfl⟩ := (Equiv.optionCongr (rootChoices N s i hs)).surjective b
+   have hmap : ((sourceJumpChoice N r s).map (Equiv.optionCongr (rootChoices N s i hs)))
+       ((Equiv.optionCongr (rootChoices N s i hs)) a) = sourceJumpChoice N r s a := by
+-    cases a <;> simp [PMF.map_apply, eq_comm]
++    rw [PMF.map_apply, tsum_eq_single a]
++    · exact if_pos rfl
++    · intro b hba
++      apply if_neg
++      intro hab
++      exact hba ((Equiv.optionCongr (rootChoices N s i hs)).injective hab).symm
+   rw [hmap, sourceJumpChoice_apply, sourceJumpChoice_apply,
+     population_jump_mass N r s i hs a,
+     ancestral_jump_mass N r (rootRepresentation N s) (rootRepresentation_ancestral N s)]

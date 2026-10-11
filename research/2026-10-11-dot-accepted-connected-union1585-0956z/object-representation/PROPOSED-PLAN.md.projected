@@ -1,0 +1,33 @@
+# Proposed immutable completed-output deduplication
+
+Status: read-only inventory and backup sizing only. No compiler object, cache object, mode, owner, timestamp or link has been changed. This is outside the earlier log/audit transport allowlists and requires new explicit authorization after independent review.
+
+## Exact eligibility
+
+The frozen inventory identifies 1,593 exclusive successful attempt-output files for the accepted 1,581 components. Each has a separately stored authenticated cache companion with the exact receipt-bound SHA-256 and byte length. Both paths are regular non-symlink files on the same filesystem, with equal mode (0644), owner, group and modification timestamp. Only .olean and the recorded .olean.private/.olean.server/.ir companions are eligible. No native shared library, executable, source, receipt, audit, failed attempt or active output is eligible. Replacing these duplicates could reclaim 703,664,128 allocated bytes before backup costs.
+
+## Independent recovery before any replacement
+
+A safer plan retains an independently stored deterministic gzip backup of every distinct original payload before making any hardlink. Its raw length/hash and gzip length/hash are frozen and verified by complete decompression and byte comparison. Backups, their index and the operation journal are fsynced before replacement. This preserves recovery even if an unforeseen later writer corrupts a shared hardlink. No backup is deleted. Read-only sizing has measured 217,845,760 bytes of allocated backups and 485,818,368 bytes (about 463 MiB) of net recovery before small metadata. Backup preparation is bounded by 256 MiB and retains the existing 8 GiB free floor; no compiler runs during this operation.
+
+## Receipt and workflow invariants
+
+The actual builder binds owned object paths/bytes/hashes and complete companion bundles. The stat-identity pin is for native runtime libraries, which are excluded. The cache installer refuses replacing a completed key, and future builds write isolated fresh attempt directories. Source and proof statements do not change. The intended immutability is a workflow guarantee, not an OS immutable flag: these files remain mode0644, and no security-sensitive permission setting is proposed.
+
+Hardlinking necessarily changes inode/link-count/ctime relationships. Existing historical stat records are preserved verbatim; none may be rewritten to pretend those metadata never changed. The reviewer must confirm no accepted owned-object contract requires the original attempt inode. Unexpected manual writes remain a risk, so all producers/readers must be quiescent, all participants must continue treating accepted artifacts as immutable, exact hash checks must remain active and the separate backup must survive.
+
+## Proposed atomic, recoverable operation
+
+For each allowlisted pair, authenticate the accepted component receipt, exact original command output path, original output and canonical cache hashes, and metadata parity. Acquire advisory locks under a quiescent-workspace premise. Write/fsync a journal intent. Create a uniquely named hardlink temporary in the attempt directory, verify it points to the canonical inode, and recheck the unchanged old output identity. Atomically replace only that exact old output path, then fsync its parent, verify bytes/metadata and record completion.
+
+Interruption before replacement leaves the original path valid and a recoverable temporary; interruption after replacement leaves the new path valid and is recognized by exact inode/hash agreement on resume. Unknown temporary files, changed paths, missing/corrupt backups, nonmatching receipts or any unexpected content fail closed. No arbitrary path or silent overwrite is permitted.
+
+The implemented recovery reader writes a new independent regular-file copy in the dedicated recovered directory, preserving original bytes/mode/owner/group/mtime and refusing any existing destination. It never overwrites an original or cache path. Replacing an original path with that copy would require a separately reviewed placement action. Recovery does not claim to reconstruct an old inode number or ctime. Independent final checks must rehash all affected paths, canonical bundles and untouched receipts before any compiler restart.
+
+## Gate and limits
+
+Next steps are independent plan/implementation/negative-control review, explicit authorization for this new object-representation scope, measured backup allocation and a quiescent execution window. No existing compiler or audit guard is relaxed. The objective is sufficient durable capacity for one coherent batch of restored/accepted proof consumers, not a reason to create another environment or run concurrent compilers.
+
+## Frozen implementation
+
+`dedup_outputs.py` pins both read-only allowlists, authenticates the literal PASS receipt and command paths, verifies metadata and canonical inode, and permits only the four owned-object suffixes. It validates every backup before the first replacement. Backups are written through exclusive partial files and promoted by non-overwriting hardlinks; partial names remain as additional links to the same backup bytes, with allocation counted by unique inode. The only restoration command writes fresh independent recovery copies. Eighteen synthetic controls passed; fixture files are retained. The real `check` operation is read-only. No mutation command is authorized merely by the existence of this script.

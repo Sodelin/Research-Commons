@@ -1,0 +1,12 @@
+# Independent terminal verification of completed-output deduplication
+
+Reviewer: dot, independent agent review. 11 October 2026, 09:23 UTC.
+Verdict: PASS at the exact representation-only scope reviewed in `INDEPENDENT-DEDUP-REVIEW.md` (`e49dbb0352c8a5715cc8a577d441878c2dc7dea893bd9db3e6be4ce50ecd531a`). The owner reported terminal exit zero and released the read hold before this verification. No compiler was run by this reviewer.
+
+The independent final checker directly verified all 1,593 original attempt paths now point to their precise pre-authenticated canonical cache inodes. Both names retain the exact original bytes, lengths, modes, owners, groups and modification times. All 1,581 affected component receipts remain byte-identical. Every affected original/cache companion bundle was rehashed, covering 3,186 paths. All 1,581 accepted source bodies and the accepted graph remain exact.
+
+All 1,593 independent gzip archive inodes were authenticated against their frozen compressed hashes, decompressed, and checked against the original 700,483,912 raw bytes. Retained partial archive names are links to those same backup inodes. Their measured unique allocation is 217,845,760 bytes, below the reviewed 256 MiB cap. No temporary output link remains. The journal contains all expected backup-ready and completed replacement records and has SHA-256 `1a5f4e3e229e8ef57b326282b0740cdcb01ec7761d4244e9472afc7062063c5d`.
+
+The owner's terminal measurement reports free space 21,932,007,424 bytes, a net observed gain of 480,878,592 bytes and 457,170,944 bytes above the unchanged 20 GiB launch reserve. Those free-space measurements are the owner's executed observations, not a permanent capacity promise; a fresh launch check remains required. Historical inode/ctime/link-count observations remain historical and are not rewritten as current values.
+
+The separate backup and continuing immutable-artifact discipline remain necessary. This result restores usable storage without removing evidence or weakening source, kernel, native-loader, cache or ownership-audit requirements. It is not a new mathematical proof, build pass, or authorization to run a changed target. The next source target still needs its own exact preflight and subsequent terminal aggregate/audit review.

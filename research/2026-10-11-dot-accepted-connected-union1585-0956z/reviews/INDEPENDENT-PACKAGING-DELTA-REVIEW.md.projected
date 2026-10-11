@@ -1,0 +1,10 @@
+# Packaging-only correction after first launch
+
+Independent agent reviewer: dot. 11 October 2026, 09:28 UTC.
+Scoped PASS. The preserved initial launch failed at the unchanged supervisor's lookup of `source_bytes`, before its component-builder subprocess was started. No source proof failed. The original preflight checked source/cache/guard identities but did not validate these two supervisor reporting fields; that omission is recorded here rather than treating the first launch as successful.
+
+The sole change from preparation `e0cea5af9656f6ea9bbe663fb94bfc770de0b60ed634e74dd7de2b811fb72402` to `42d826851cff9e62dceb31ed9c657a42ac948955b2c7a7152cfa0dea29f2df4e` adds `source_bytes = 15647358` and `new_source_bytes = 43424`. I independently recomputed them from the selected 1,585 source bodies and four additions. All pre-existing metadata fields are exact. The supervisor reads these solely into its storage report; resource guards are unchanged.
+
+A preserved v2 preflight now asserts both exact sums and rechecks the complete source/import/cache/script evidence. It passes. Graph `150162f07482977f87bbf0ce9e9f5752dc78da3567bfee111c91843ea7f28f54` and all mathematical bodies remain unchanged. Original logs, terminal receipt and preparation bytes are preserved in the failure record. The original checker/review remain frozen; this dated delta supersedes only their preparation-schema coverage.
+
+A retry still requires the owner's fresh reserve check. No future source, aggregate or audit success is inferred.

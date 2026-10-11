@@ -1,0 +1,31 @@
+# Independent review: completed object deduplication proposal
+
+Reviewer: dot, independent agent review. 11 October 2026, 09:10 UTC.
+Verdict: scoped implementation and read-only evidence PASS, conditional on the stated quiescent/cooperating-workspace and continuing artifact-immutability premises. This review authorizes no operation by itself. No real archive or accepted compiler object was changed by the reviewer.
+
+## Frozen inputs and executed checks
+
+- `dedup_outputs.py`: `052da0926499a9adbaaf2264e6818015e44d9ff80def61265dc3a56507b0d07c`.
+- `READONLY-INVENTORY.json`: `7d9626a8d76659f9e7598af51444fa1c661d1120e66579aef24495bc67b31e0e`.
+- `READONLY-ARCHIVE-SIZING.json`: `ce9677a2edd434947f5c27198441790e524334a5f2cb9083784ea191ba9a6595`.
+- Exact plan and control hashes are bound in `INDEPENDENT-RESULT.json`.
+
+The independent checker directly authenticated all 1,593 original/cache pairs, every referenced successful component receipt and output-command mapping, their regular non-symlink status, metadata parity, distinct original inode and exact raw length/SHA. All module names belong to accepted 1,581. Total raw bytes are 700,483,912; exclusive attempt allocation is 703,664,128 bytes. No real archive existed at this pre-operation check. Eighteen synthetic controls were independently rerun in a separate reviewer fixture directory; all passed and their artifacts remain.
+
+## Receipt and recovery boundary
+
+The unchanged accepted builder binds owned object paths, hashes and complete companion bundles. Its native runtime stat identities apply to shared libraries, which the allowlist excludes. Completed cache keys refuse replacement and future attempts have isolated outputs. I found no original-inode requirement for these allowlisted owned objects in the inspected builder/cache contract. Existing source/import/native/audit checks remain mandatory; successful deduplication is not a new proof check.
+
+Only the fixed `.olean`, `.olean.private`, `.olean.server` and `.ir` paths from the digest-bound inventory are eligible. No native library, executable, source, receipt, audit, failed attempt or live output is changed. Inode/link-count/ctime changes are explicitly recorded as operational changes; historical records must remain verbatim.
+
+Every original has an independently stored deterministic gzip backup authenticated before the first replacement. Partial backup names are retained links to the same archive inode, so unique-inode allocation accounting is appropriate. Exclusive creation and non-overwriting link promotion reject unknown/corrupt partials and existing conflicts. The sizing record supplies raw/gzip hashes and bounds the complete backup allocation at 217,845,760 bytes, below 256 MiB. Runtime checks retain the 8 GiB free floor. Expected net recovery before metadata is 485,818,368 bytes. No build launch threshold or compiler limit is relaxed.
+
+The replacement journals and fsyncs intent before creating the canonical hardlink temporary, rechecks the old output identity and exact temporary bytes, atomically replaces only the allowlisted output, fsyncs the parent and authenticates the result. The synthetic controls cover interruption both before and after replacement and exact resumability. An interrupted after-replacement operation can be recognized by canonical inode/hash agreement even before a final journal row; the original intent and subsequent verification remain available.
+
+The recovery command writes a new independent regular-file copy, authenticates it and refuses an existing destination. It cannot silently overwrite the original or canonical cache. It preserves byte content/mode/owner/group/mtime and does not claim to recreate old inode/ctime. A corrupt shared alias remains recoverable from the separately authenticated archive; placing a recovery copy back into an accepted path is a separate action.
+
+## Necessary operational conditions
+
+Advisory locks do not prevent hostile or uncooperative filesystem writers. All producers/readers must be quiescent during replacement, accepted artifacts must remain immutable afterwards, and separate backups must be retained. Unexpected symlinks, metadata/content changes, foreign temporaries, receipt mismatches or absent/corrupt backups fail closed. The plan does not promise resistance to an adversary racing path replacement.
+
+After any authorized real operation, independently rehash every affected attempt/cache pair, all companion bundles and untouched receipts, verify every independent backup, preserve the operation journal and measure actual storage recovery before resuming a compiler. That terminal execution verification remains outstanding at this review freeze.

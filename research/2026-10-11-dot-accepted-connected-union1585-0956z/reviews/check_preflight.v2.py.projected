@@ -1,0 +1,54 @@
+import json,pathlib,hashlib,importlib.util,time,re
+P=pathlib.Path('$PACKAGE');B=pathlib.Path('$ACCEPTED1581');G7=pathlib.Path('$SHARED_WORKSPACE/g7-restoration-check-20261011-0842z');O=pathlib.Path(__file__).resolve().parent
+spec=importlib.util.spec_from_file_location('u','$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py');u=importlib.util.module_from_spec(spec);spec.loader.exec_module(u)
+read=lambda p:json.loads(p.read_bytes());start=time.monotonic();g=read(P/'DEPENDENCY-GRAPH.json');old=read(B/'DEPENDENCY-GRAPH.json');t=g['targets']['current/connected'];mods=t['modules'];before=old['targets']['current/connected']['modules']
+assert u.sha(P/'DEPENDENCY-GRAPH.json')=='150162f07482977f87bbf0ce9e9f5752dc78da3567bfee111c91843ea7f28f54'
+added={'G7EncodedMergerSupport':'e84085fd7687b13f13c38b8d69fc0961410121c50af47f3927f295cc4c0fd5dc','G4ActualCommonPrefixSelector':'6363f0391aa60460a32a176e750477baeb7c82b6d863b003a8fa08a84e0d0a25','G4ActualColocatedCompletion':'2a46fe574078d7dda6d3d620b2372a8d6181e467b58b9087f8a80992746fc4b9','G3FiniteWordLogSignature':'5c5425f9578351fe5c762c4aca34d77b99f2acf762f6e01dc5847b27188c3ca1'}
+assert len(mods)==1585 and set(mods)-set(before)==set(added)
+for n,d in before.items():assert mods[n]==d
+for n,h in added.items():assert mods[n]['sha256']==h
+for label,body in old['targets'].items():assert g['targets']['history/accepted1581' if label=='current/connected' else label]==body
+fixture=g['targets']['fixture/g7-population'];assert 'G7OriginalPopulationFixture' not in mods and 'G7OriginalPopulationFixture' in fixture['modules'];assert fixture==read(G7/'DEPENDENCY-GRAPH.json')['targets']['fixture/g7-population']
+allmods=dict(mods);allmods.update(fixture['modules']);assert len(allmods)==1586
+for n,d in allmods.items():
+ p=P/'source-store'/(d['sha256']+'.lean');u.check(p,d['sha256']);assert u.imports(p.read_bytes())==d['imports'],n
+positions={n:i for i,n in enumerate(t['order'])};assert len(positions)==1585 and set(positions)==set(mods)
+for n,d in mods.items():
+ for q in d['imports']:
+  if q in mods:assert positions[q]<positions[n]
+  else:assert q in t['external_imports']
+owned={n for n in mods if n.startswith('Mathlib.')};assert owned=={'Mathlib.Data.FinEnum','Mathlib.Algebra.MvPolynomial.Polynomial','Mathlib.Algebra.MvPolynomial.Funext','Mathlib.Analysis.Convex.Caratheodory'}
+for f,h in u.PINS.items():u.check(P/f,h);assert (P/f).read_bytes()==(B/f).read_bytes()
+for f in ['scripts/run_current.py','lakefile.lean','lake-manifest.json','lean-toolchain']:assert (P/f).read_bytes()==(B/f).read_bytes()
+auth=read(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json');recs=auth['records'];assert len(recs)==1583;by={r['module']:r for r in recs};assert len(by)==1583
+fresh=set(added)-{'G7EncodedMergerSupport'};assert set(by)==set(allmods)-fresh
+native_digests=set();nimports=0
+for n,row in by.items():
+ rp=P/'.build/cache'/row['key']/'receipt.json';u.check(rp,row['receipt_sha256']);assert rp.read_bytes()==pathlib.Path(row['original_receipt_path']).read_bytes();r=read(rp)
+ assert r['module']==n and r['source_sha256']==allmods[n]['sha256']==row['source_sha256']
+ assert r['status']=='PASS_FRESH_KERNEL_CHECK' and r['kind']=='component' and r['exit_code']==0
+ assert r['source_and_imports_stable'] and r['native_runtime_stat_stable'] and r['native_initialized_libraries_bound']
+ assert r['compiler_sha256']==u.BIN and r['mathlib_commit']==u.MATHLIB
+ cmd=r['command'];u.check(pathlib.Path(cmd[0]),u.BIN);assert cmd[1:3]==['-j1','-t0'] and '-Ddebug.skipKernelTC=false' in cmd
+ cap=(600,6144) if n=='ThetaCertificate5' else (180,4096);assert (r['cap_seconds'],r['cap_memory_mib'])==cap and cmd[3]=='-M'+str(cap[1])
+ assert set(r['direct_import_bindings'])==set(allmods[n]['imports'])
+ u.bundle(pathlib.Path(r['cached_object']),r['object_artifacts']);u.bundle(rp.parent/'artifact.olean',r['object_artifacts'])
+ assert row['object_sha256']==r['object_sha256']
+ for q,ib in r['direct_import_bindings'].items():
+  u.bundle(pathlib.Path(ib['path']),ib['artifacts']);assert ib['sha256']==r['direct_import_sha256'][q] and ib['artifacts']==r['direct_import_artifacts'][q]
+  if q in by:assert ib['artifacts']==read(P/'.build/cache'/by[q]['key']/'receipt.json')['object_artifacts']
+  nimports+=1
+ key_data={'module':n,'source':r['source_sha256'],'compiler':u.BIN,'mathlib':u.MATHLIB,'trust':0,'kernel_check':True,'imports':r['direct_import_artifacts'],'native_runtime_digest':r['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'}
+ if n=='ThetaCertificate5':key_data['resource_exception']={'memory_mib':6144,'seconds':600}
+ assert hashlib.sha256(json.dumps(key_data,sort_keys=True).encode()).hexdigest()==row['key']
+ native_digests.add(r['native_runtime_digest'])
+ for path,v in r['native_initialized_libraries'].items():u.check(pathlib.Path(path),v['sha256'])
+assert len(native_digests)==1
+budget=read(P/'STAGING-BUDGET-RECEIPT.json');assert budget['status']=='PASS_HARD_64MIB_PREPARATION' and budget['new_regular_file_allocation']<64*1024**2 and budget['observed_consumption']<64*1024**2
+assert budget['preparation_cap']==64*1024**2 and budget['launch_threshold']==20*1024**3 and not budget['compiler_invoked']
+prep=read(P/'PREPARATION.json')
+assert prep['source_bytes']==sum((P/'source-store'/(d['sha256']+'.lean')).stat().st_size for d in mods.values())
+assert prep['new_source_bytes']==sum((P/'source-store'/(mods[n]['sha256']+'.lean')).stat().st_size for n in added)
+assert not (P/'.build/LATEST-RUN.json').exists()
+result={'status':'INDEPENDENT_ADDITIVE_PREFLIGHT_PASS_NO_COMPILER','graph_sha256':u.sha(P/'DEPENDENCY-GRAPH.json'),'selected_modules':1585,'old_modules_preserved':1581,'all_old_targets_preserved':True,'source_store_distinct_bodies':1586,'additions':added,'selected_authenticated_reuse':1582,'isolated_fixture_reuse':1,'fresh_uncompiled_sources':sorted(fresh),'receipt_contexts_checked':len(recs),'direct_import_bundle_records_checked':nimports,'native_runtime_digests':sorted(native_digests),'four_owned_namespace_unchanged':True,'strict_scripts_unchanged':True,'staging_budget':budget,'hash_checked_files':len(u.MEMO),'hash_checked_bytes':u.hashed_bytes,'seconds':time.monotonic()-start}
+(O/'PREFLIGHT-RESULT-v2.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

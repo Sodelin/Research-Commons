@@ -1,0 +1,27 @@
+from pathlib import Path
+import hashlib,json,difflib
+root=Path('$SHARED_WORKSPACE/g4-common-completion-assembly-20261011-0837z')
+out=Path('$INDEPENDENT_REVIEW')
+a=root/'elaboration-r2/G4ActualColocatedCompletion.lean'; b=root/'elaboration-r3/G4ActualColocatedCompletion.lean'
+sha=lambda x:hashlib.sha256(x.read_bytes()).hexdigest()
+assert sha(a)=='393637206eb12b37fc36651cf4aee2565d70514a03fdd37510227df0144781ac'
+assert sha(b)=='346415655948c411b9966efa587836b574b8d2434878b1eb7cdccbcbe01f9dcd'
+s=a.read_text(); assert s.count('simpa only [Finset.mem_erase] using hx')==2
+s=s.replace('simpa only [Finset.mem_erase] using hx','simpa only [Finset.mem_erase, state, decodeSnapshot] using hx')
+old='    cases a <;> simp [PMF.map_apply, eq_comm]'
+new='''    rw [PMF.map_apply, tsum_eq_single a]
+    · exact if_pos rfl
+    · intro b hba
+      apply if_neg
+      intro hab
+      exact hba ((Equiv.optionCongr (rootChoices N s i hs)).injective hab).symm'''
+assert s.count(old)==1;s=s.replace(old,new); assert s==b.read_text()
+p=Path('$PACKAGE')
+g0=json.loads((p/'source-revision1/before-DEPENDENCY-GRAPH.json').read_text());g=json.loads((p/'DEPENDENCY-GRAPH.json').read_text())
+assert sha(p/'source-revision1/before-DEPENDENCY-GRAPH.json')=='150162f07482977f87bbf0ce9e9f5752dc78da3567bfee111c91843ea7f28f54'
+g0['targets']['current/connected']['modules']['G4ActualColocatedCompletion']['sha256']=sha(a)
+assert g0==g
+assert sha(p/'DEPENDENCY-GRAPH.json')=='4a3bca8092ad20fdbc2df8c121396806ddba45ce82b5a0ce7e4804d0aa017bf7'
+res={'status':'PASS_STATIC_PROOF_ONLY_DELTA','old_source_sha256':sha(a),'new_source_sha256':sha(b),'exact_replacements':3,'statements_definitions_assumptions_imports_unchanged':True,'compiler_run':False,'staged_previous_revision_graph_only_source_hash_changed':True,'diagnostic_sha256':sha(p/'.build/runs/20261011T093552.641421Z/attempts/00001-G4ActualColocatedCompletion/stdout')}
+(out/'COMPLETION-R3-DELTA-RESULT.json').write_text(json.dumps(res,indent=2)+'\n')
+print(json.dumps(res,indent=2))

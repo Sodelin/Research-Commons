@@ -1,0 +1,12 @@
+# Independent completion elaboration-repair review
+
+Reviewer: dot, independent agent review. 11 October 2026, 09:34 UTC.
+Verdict: scoped static source/API delta PASS; revised elaboration remains untested.
+
+The preserved failed completion source has SHA-256 `2a46fe574078d7dda6d3d620b2372a8d6181e467b58b9087f8a80992746fc4b9`. The revised source is `393637206eb12b37fc36651cf4aee2565d70514a03fdd37510227df0144781ac`. I read the actual failed compiler stdout and the complete proof-only patch, verified both hashes and literal import/declaration-head equality, and checked the newly explicit boundary-validity APIs in the accepted source.
+
+The patch reconstructs the four forest-validity fields for the same rootState; it does not assume root-state validity. It converts decoded live/erase hypotheses into the exact snapshot form used by the existing encoding definitions, preserving the full ancestor/genealogy/register identities. Strict rate positivity discharges the remaining cancellation denominator. The Option cases make the bijective PMF pushforward calculation explicit. Typed state/descendant intermediates expose existing definitional equalities rather than adding premises.
+
+The four boundary cases now supply the exact existing `exitEdge_source_valid`, `enterEdge_source_valid`, `enterRoot_source_valid` and `pulse_source_valid` proofs. The last source-program append invocation is fully qualified to its existing namespace. The original register and forest-preserving COMMON boundary semantics remain unchanged.
+
+No mathematical definition, declaration statement, assumption, import, selected module count or intended source domain changes. There are no new axiom/admit/sorry declarations. The prior semantic review remains applicable, including actual co-location at the cut and the missing fixed-bank topology-moment binding. The failed source and diagnostics must remain preserved; its recovery sorryAx output is not accepted evidence. A new exact source key and actual component/aggregate/full audit success remain required. The selector's separate fresh PASS does not certify this consumer or the combined target.

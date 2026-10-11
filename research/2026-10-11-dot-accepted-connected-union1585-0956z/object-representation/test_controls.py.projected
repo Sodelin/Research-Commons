@@ -1,0 +1,65 @@
+import tempfile,json,gzip,os,shutil
+from pathlib import Path
+import dedup_outputs as m
+RESULT=[]
+def fixture():
+    p=Path(tempfile.mkdtemp(prefix='dedup-control-',dir=str(m.ROOT)));a=p/'attempt.olean';c=p/'cache.olean';data=b'proof fixture bytes\x00'*200
+    a.write_bytes(data);shutil.copy2(a,c)
+    rec={'status':'PASS_FRESH_KERNEL_CHECK','kind':'component','exit_code':0,'source_and_imports_stable':True,'native_runtime_stat_stable':True,'module':'Fixture','command':['lean','-o',str(a)],'cached_object':str(c),'object_artifacts':{'.olean':m.sha(data)}}
+    rp=p/'receipt.json';rp.write_text(json.dumps(rec));r=dict(module='Fixture',suffix='.olean',attempt_path=str(a),cache_path=str(c),sha256=m.sha(data),bytes=len(data),receipt_path=str(rp),receipt_sha256=m.sha(rp.read_bytes()),attempt_stat=m.meta(a.stat()),cache_stat=m.meta(c.stat()))
+    z=gzip.compress(data,mtime=0);sz={r['sha256']:dict(raw_bytes=len(data),gzip_bytes=len(z),gzip_sha256=m.sha(z))}
+    return m.Transport(p,[r],sz),r,a,c,data
+
+def run(name,fn):
+    fn();RESULT.append(dict(name=name,status='PASS'))
+def reject(fn):
+    try:fn()
+    except (RuntimeError,FileNotFoundError,KeyError,gzip.BadGzipFile):return
+    raise AssertionError('expected rejection')
+def control(change):
+    t,r,a,c,data=fixture();change(t,r,a,c);reject(lambda:t.validate(r))
+run('receipt digest mismatch',lambda:control(lambda t,r,a,c:Path(r['receipt_path']).write_text('{}')))
+run('attempt bytes drift',lambda:control(lambda t,r,a,c:a.write_bytes(b'wrong')))
+run('canonical bytes drift',lambda:control(lambda t,r,a,c:c.write_bytes(b'wrong')))
+run('metadata mode drift',lambda:control(lambda t,r,a,c:os.chmod(a,0o600)))
+run('mtime drift',lambda:control(lambda t,r,a,c:os.utime(a,ns=(1,2))))
+def symlink(t,r,a,c):a.rename(a.with_suffix('.saved'));a.symlink_to(c)
+run('symlink rejected',lambda:control(symlink))
+def excluded(t,r,a,c):r['suffix']='.so'
+run('native suffix rejected',lambda:control(excluded))
+def backed():
+    t,r,a,c,data=fixture();t.backup();assert t.recover(r)==data;return t,r,a,c,data
+def missing():
+    t,r,a,c,data=fixture();reject(lambda:t.dedup());assert a.stat().st_ino!=c.stat().st_ino
+run('missing backup fails before mutation',missing)
+def corrupt():
+    t,r,a,c,data=backed();t.archive(r).write_bytes(b'bad');reject(lambda:t.dedup());assert a.stat().st_ino!=c.stat().st_ino
+run('corrupt backup fails before mutation',corrupt)
+def tmp_wrong():
+    t,r,a,c,data=backed();a.with_name(a.name+'.dedup-'+r['sha256'][:16]+'.tmp').write_bytes(b'foreign');reject(lambda:t.dedup())
+run('foreign temporary rejected',tmp_wrong)
+def before():
+    t,r,a,c,data=backed();reject(lambda:t.dedup_one(r,'before_replace'));assert a.stat().st_ino!=c.stat().st_ino;t.dedup();assert a.stat().st_ino==c.stat().st_ino
+run('interruption before atomic replacement resumes',before)
+def after():
+    t,r,a,c,data=backed();reject(lambda:t.dedup_one(r,'after_replace'));assert a.stat().st_ino==c.stat().st_ino;t.dedup();assert t.recover(r)==data
+run('interruption after atomic replacement resumes',after)
+def restore():
+    t,r,a,c,data=backed();t.dedup();t.dedup();p=t.restore_copy(r);assert p.read_bytes()==data and p.stat().st_ino!=c.stat().st_ino;reject(lambda:t.restore_copy(r))
+run('idempotent dedup independent recovery no overwrite',restore)
+def alias():
+    t,r,a,c,data=backed();t.dedup();a.write_bytes(b'corruption');reject(lambda:t.validate(r));p=t.restore_copy(r);assert p.read_bytes()==data
+run('unexpected alias corruption still recoverable',alias)
+def partial():
+    t,r,a,c,data=fixture();d=t.root/'archives';d.mkdir();z=gzip.compress(data,mtime=0);t.archive(r).with_suffix('.gz.partial').write_bytes(z);t.backup();assert t.recover(r)==data
+run('complete interrupted archive resumes without overwrite',partial)
+def badpartial():
+    t,r,a,c,data=fixture();d=t.root/'archives';d.mkdir();t.archive(r).with_suffix('.gz.partial').write_bytes(b'partial');reject(t.backup);assert a.read_bytes()==data
+run('torn archive fails closed and preserves source',badpartial)
+def changedinode():
+    t,r,a,c,data=fixture();p=a.with_suffix('.replacement');shutil.copy2(a,p);os.replace(p,a);reject(lambda:t.validate(r))
+run('new unrecognized identical attempt inode rejected',changedinode)
+def partialall():
+    t,r,a,c,data=backed();r2=dict(r,attempt_path=str(t.root/'missing'));t.rows.append(r2);reject(t.dedup);assert a.stat().st_ino!=c.stat().st_ino
+run('all-row preflight before first mutation',partialall)
+(m.ROOT/'SYNTHETIC-CONTROLS.json').write_text(json.dumps(dict(status='PASS',controls=RESULT,synthetic_fixtures_retained=True),indent=2)+'\n');print(json.dumps(dict(status='PASS',count=len(RESULT))))

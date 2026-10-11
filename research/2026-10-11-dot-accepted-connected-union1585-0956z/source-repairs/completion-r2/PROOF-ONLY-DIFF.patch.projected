@@ -1,0 +1,129 @@
+--- frozen/G4ActualColocatedCompletion.lean
++++ elaboration-r2/G4ActualColocatedCompletion.lean
+@@ -57,9 +57,11 @@
+ 
+ lemma rootState_valid (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) : SourceValid N sample (rootState N s) := by
+-  refine ⟨s.property.forest, ?_⟩
+-  intro x
+-  exact ⟨rfl, N.rooted (N.leaf (sample x))⟩
++  refine ⟨?_, ?_⟩
++  · exact ⟨s.property.forest.ancestor_live, s.property.forest.representative,
++      s.property.forest.leaf_fiber, s.property.forest.wellLabelled⟩
++  · intro x
++    exact ⟨rfl, N.rooted (N.leaf (sample x))⟩
+ 
+ noncomputable def rootRepresentation (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) : Code N sample :=
+@@ -153,23 +155,28 @@
+     · rfl
+     · funext x
+       by_cases hx : x ∈ (state s).live.erase p.2.val.2
+-      · have hxlive := (Finset.mem_erase.mp hx).2
+-        have ha := rootRepresentation_genealogy N s hp.first_live
+-        have hb := rootRepresentation_genealogy N s hp.second_live
+-        have hg := rootRepresentation_genealogy N s hxlive
++      · have hx' : x ≠ p.2.val.2 ∧ x ∈ (s : Snapshot V E Copy).live :=
++          Finset.mem_erase.mp hx
++        have ha' : p.2.val.1 ∈ (s : Snapshot V E Copy).live := hp.first_live
++        have hb' : p.2.val.2 ∈ (s : Snapshot V E Copy).live := hp.second_live
+         simp [rootRepresentation, rootState, stepDestination, admittedCode,
+           encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices,
+-          hx, hxlive, hp.first_live, hp.second_live]
+-      · simp [rootRepresentation, rootState, stepDestination, admittedCode,
+-          encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices, hx]
++          hx'.1, hx'.2, ha', hb']
++      · have hx' : ¬ (x ≠ p.2.val.2 ∧ x ∈ (s : Snapshot V E Copy).live) := by
++          simpa only [Finset.mem_erase] using hx
++        simp [rootRepresentation, rootState, stepDestination, admittedCode,
++          encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices, hx']
+     · funext x
+       by_cases hx : x ∈ (state s).live.erase p.2.val.2
+-      · have hlive := (Finset.mem_erase.mp hx).2
++      · have hx' : x ≠ p.2.val.2 ∧ x ∈ (s : Snapshot V E Copy).live :=
++          Finset.mem_erase.mp hx
+         simp [rootRepresentation, rootState, stepDestination, admittedCode,
+           encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices,
+-          hx, hlive]
+-      · simp [rootRepresentation, rootState, stepDestination, admittedCode,
+-          encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices, hx]
++          hx'.1, hx'.2]
++      · have hx' : ¬ (x ≠ p.2.val.2 ∧ x ∈ (s : Snapshot V E Copy).live) := by
++          simpa only [Finset.mem_erase] using hx
++        simp [rootRepresentation, rootState, stepDestination, admittedCode,
++          encodeSnapshot, state, decodeSnapshot, merge, rootChoices, populationChoices, hx']
+     · rfl
+ 
+ lemma population_total_rate_card (N : RootedBinary V E X) {sample : Copy → X}
+@@ -196,7 +203,8 @@
+       exact_mod_cast (Fintype.card_ne_zero : Fintype.card (Choice N s) ≠ 0)
+     rw [jumpMass, population_choice_rate N r s i hs p, population_total_rate_card N r s i hs]
+     dsimp only [ancestralChoiceMass]
+-    field_simp [hc, hr]
++    have hr0 : pairRate r i ≠ 0 := ne_of_gt (pairRate_pos r i)
++    field_simp [hc, hr, hr0]
+ 
+ lemma rootRepresentation_jump_choice (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (s : Code N sample) (i : Option E) (hs : CoLocated N s i) :
+@@ -207,7 +215,7 @@
+   obtain ⟨a, rfl⟩ := (Equiv.optionCongr (rootChoices N s i hs)).surjective b
+   have hmap : ((sourceJumpChoice N r s).map (Equiv.optionCongr (rootChoices N s i hs)))
+       ((Equiv.optionCongr (rootChoices N s i hs)) a) = sourceJumpChoice N r s a := by
+-    simp [PMF.map_apply]
++    cases a <;> simp [PMF.map_apply, eq_comm]
+   rw [hmap, sourceJumpChoice_apply, sourceJumpChoice_apply,
+     population_jump_mass N r s i hs a,
+     ancestral_jump_mass N r (rootRepresentation N s) (rootRepresentation_ancestral N s)]
+@@ -313,7 +321,9 @@
+   obtain ⟨halive, haloc⟩ := Finset.mem_filter.mp ha
+   have h := hs p.2.val.1
+   change (state s).location ((state s).ancestor p.2.val.1) = _ at h
+-  rw [s.property.forest.representative _ halive] at h
++  have hre : (state s).ancestor p.2.val.1 = p.2.val.1 :=
++    s.property.forest.representative _ halive
++  rw [hre] at h
+   exact originalPlace_not_node N p.1 v (haloc.symm.trans h)
+ 
+ lemma jump_pure_of_empty (N : RootedBinary V E X) {sample : Copy → X}
+@@ -345,6 +355,7 @@
+   | rootPopulation v =>
+     obtain ⟨x⟩ := ‹Nonempty Copy›
+     have hx := s.property.original_descendant x
++    change DescendsTo N (copyLocation (state s) x) (sample x) at hx
+     rw [hp x] at hx
+     have hv : v = N.root := hx.1
+     subst v
+@@ -390,11 +401,20 @@
+     (b : BoundaryOperation N) (hb : CommonBoundary N b) (s : Code N sample) :
+     rootRepresentation N (fixedRegisterBoundary N b s) = rootRepresentation N s := by
+   cases b with
+-  | exit e => exact rootRepresentation_transport N s _ _ _
+-  | ordinary e hd => exact rootRepresentation_transport N s _ _ _
+-  | root => exact rootRepresentation_transport N s _ _ _
++  | exit e =>
++    exact rootRepresentation_transport N s _ _
++      (exitEdge_source_valid N sample (state s) s.property e)
++  | ordinary e hd =>
++    exact rootRepresentation_transport N s _ _
++      (enterEdge_source_valid N sample (state s) s.property e)
++  | root =>
++    exact rootRepresentation_transport N s _ _
++      (enterRoot_source_valid N sample (state s) s.property)
+   | independent H gamma => exact False.elim hb
+-  | common H => exact rootRepresentation_transport N s _ _ _
++  | common H =>
++    exact rootRepresentation_transport N s _ _
++      (pulse_source_valid H sample (state s) s.property
++        (fun _ => (state s).register H.hybrid))
+ 
+ lemma common_boundary_preserves_shared_location
+     (N : RootedBinary V E X) {sample : Copy → X}
+@@ -498,7 +518,7 @@
+   intro d hd
+   apply initialized_original_calendar_ancestral_support N C sample (originalRegister N coin)
+     H gamma (fun _ => true) r
+-  rw [hp, sourceProgram_append]
++  rw [hp, UnifiedLean.Source.SourceCalendarPhysicalSupport.sourceProgram_append]
+   exact (PMF.mem_support_bind_iff _ _ _).mpr ⟨s, hs, hd⟩
+ 
+ #print axioms rootRepresentation_actual_jump
