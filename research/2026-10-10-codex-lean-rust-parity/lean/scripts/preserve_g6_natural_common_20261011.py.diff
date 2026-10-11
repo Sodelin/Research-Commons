@@ -1,0 +1,62 @@
+--- /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/preserve_g6_parallel_arm_transport_20261010.py
++++ /workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/scripts/preserve_g6_natural_common_20261011.py
+@@ -1,8 +1,8 @@
+ #!/usr/bin/env python3
+-"""Losslessly export bounded nonbinary G6 parallel-arm evidence; keep original scratch bytes.
++"""Losslessly export bounded nonbinary G6 natural COMMON evidence; keep original scratch bytes.
+ 
+ Prior1497 sources remain at their already distributed immutable source paths.
+-Only the new parallel-arm source body is copied; parent bodies remain bound by exact immutable distributed paths. Large JSON/loader evidence is
++Only the two new natural COMMON source bodies is copied; parent bodies remain bound by exact immutable distributed paths. Large JSON/loader evidence is
+ compressed before packet capacity is checked; no object, raw audit duplicate,
+ original receipt rewrite, or implicit historical pass promotion is permitted.
+ """
+@@ -42,12 +42,13 @@
+         if source.suffix in ['.olean', '.ilean', '.ir', '.private', '.server']:
+             continue
+         row = distribute_file(source, stage, relative,
+-                              force_gzip=source.stat().st_size >= 32768 or source.name.startswith('NATIVE-LOADER.'))
++                              force_gzip=source.suffix != '.gz' and (source.stat().st_size >= 32768 or source.name.startswith('NATIVE-LOADER.')))
+         rows.append({**row, 'original_path': str(source), 'original_sha256': sha(source)})
+     for name in ['PREPARATION.json', 'DEPENDENCY-GRAPH.json', 'SOURCE-CLOSURE.json', 'SOURCE-TRANSPORT.json',
+                  'FRESH-SOURCES.json', 'LOCATION-AND-COMPOSITION-DERIVATION.json', 'RESOURCE-AND-RUN-PLAN.json',
+                  'CACHE-SEED-RECEIPT.json', 'CACHE-TRANSPORT-PRE-USE-PLAN.json',
+-                 'CACHE-INSTALL-ALIASES.json', 'CACHE-INSTALL-TRANSPORT-DERIVATION.json']:
++                 'CACHE-INSTALL-ALIASES.json', 'CACHE-INSTALL-TRANSPORT-DERIVATION.json',
++                 'STDERR-STORAGE-POLICY.json', 'PARENT-WRAPPER-EQUIVALENCE.json']:
+         source = work / name
+         assert source.is_file()
+         rows.append({**distribute_file(source, stage, Path('preparation') / name, force_gzip=source.stat().st_size >= 32768),
+@@ -97,8 +98,8 @@
+     save(stage / 'COMPRESSED-DISTRIBUTIONS.json', {'status': 'PASS_LOSSLESS_RAW_BYTE_DISTRIBUTION',
+          'distributions': [r for r in rows if r.get('encoding') == 'gzip'], 'original_run_unchanged': True})
+     export_bytes = sum(p.stat().st_size for p in stage.rglob('*') if p.is_file())
+-    assert export_bytes <= 40 * 2**20, ('Measured export exceeds explicit packet reserve', export_bytes)
+-    packet_evidence = ROOT / 'evidence/proof-extensions/g6-parallel-arm-transport' / work.name / (args.label + '-' + run.name)
++    assert export_bytes <= 8 * 2**20, ('Measured export exceeds explicit packet reserve', export_bytes)
++    packet_evidence = ROOT / 'evidence/proof-extensions/g6-natural-common-factorization' / work.name / (args.label + '-' + run.name)
+     free_before = shutil.disk_usage(ROOT).free
+     reserve = 8 * 2**20
+     # The complete lossless stage is always preserved before deciding distribution.
+@@ -126,9 +127,9 @@
+         'original_raw_audits_and_full_run_files_preserved_at_fixed_scratch_paths': True,
+         'explicit_optional_preparation_artifacts_absent': optional_absent,
+         'post_run_transport_verification': post_transport_binding,
+-        'parent_exporter_path': str(Path(__file__).with_name('preserve_g7_family_normalization_20261010_v2.py')),
+-        'parent_exporter_sha256': '62971176114e792ecc1dad62c5487603d817aa588d5890d9ccd6cc7669c174cb',
+-        'exporter_derivation': 'Only parallel namespace/scope and explicit lossless capacity fallback metadata/control differ from accepted Family-v2. Exact byte gzip distribution, complete raw runs, fresh sources, resource and transport verification policies remain unchanged; duplicate inherited parent metadata keys are replaced by this one precise parent binding.',
++        'parent_exporter_path': str(Path(__file__).with_name('preserve_g6_parallel_arm_transport_20261010.py')),
++        'parent_exporter_sha256': 'a60c9a16fd1641e40bda49d3a42d8c5dde5d44830a01942a1244e9ddef98c154',
++        'exporter_derivation': 'Natural scope/count filenames,8MiB portable reserve, required storage policy/parent-source derivation and identity-preserving already-gzip distribution replace the accepted G6 exporter. All decoded evidence, failures, full raw runs, source, resource and transport checks remain required. Combined stderr is already gzip; its encoded identity is distributed unchanged and its capture descriptor binds raw decoded identity.',
+         'exporter_sha256': sha(Path(__file__))}
+     save(stage / 'PRESERVATION-MANIFEST.json', manifest)
+     if copy_to_packet:
+@@ -139,7 +140,7 @@
+         for p in stage.rglob('*'):
+             if p.is_file():
+                 assert sha(p) == sha(evidence / p.relative_to(stage))
+-    result_path = ROOT / ('G6-PARALLEL-ARM-TRANSPORT-' + args.label.upper() + '-' + run.name + '-RESULT.json')
++    result_path = ROOT / ('G6-NATURAL-COMMON-FACTORIZATION-' + args.label.upper() + '-' + run.name + '-RESULT.json')
+     assert not result_path.exists()
+     save(result_path, manifest)
+     print(json.dumps({'status': final['status'], 'evidence': str(evidence), 'result': str(result_path),

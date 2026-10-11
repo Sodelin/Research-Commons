@@ -4,6 +4,10 @@ import UnifiedLean.Source.SourceInitializedCalendar
 /-!
 Codex Lean reuse, 10 October 2026. PROPOSAL; no kernel receipt yet.
 
+Proof-only compatibility derivative, 11 October 2026, of frozen 68e0130b.
+The first compiler attempt exposed left-associated append membership and
+singleton/nil normalization; definitions, statements and imports are unchanged.
+
 The older calendar providers already exclude private reads at every strictly
 earlier original date. This adapter ends the actual compiler prefix within the
 selected date's node batch, immediately before a named original node. Both
@@ -59,6 +63,7 @@ private theorem calendarTail_before_last_boundary
   | cons d dates ih =>
       simp only [List.cons_append, calendarTail, finalDate, List.append_assoc]
       rw [ih d]
+      simp only [List.append_assoc, List.cons_append, List.nil_append]
 
 /-- The prefix is literally part of the original compiled agenda. Finset.toList
 order is retained; no within-phase permutation or symbolic-slot claim is used. -/
@@ -84,7 +89,7 @@ theorem actual_compiled_before_node_split
       simp only [List.cons_append]
       rw [calendarTail_before_last_boundary]
       simp only [beforeNodeWord, boundaryOperations, hnodes, List.map_append,
-        List.map_cons, List.cons_append, List.append_assoc]
+        List.map_cons, List.cons_append, List.nil_append, List.append_assoc]
 
 /-- The actual earlier dates and the actual tied node prefix do not inspect the
 selected original site's register. This includes zero intervening intervals. -/
@@ -135,6 +140,7 @@ theorem actual_before_node_noPrivateWordRead
           subst v
           exact hdateAbsent (by rw [he]; exact List.mem_cons_of_mem a hd)
         intro op hop
+        rw [List.append_assoc] at hop
         rcases List.mem_append.mp hop with hboundaryMem | htailMem
         · exact hb op hboundaryMem
         · rcases List.mem_append.mp htailMem with htailMem | hinterval
@@ -144,6 +150,7 @@ theorem actual_before_node_noPrivateWordRead
             trivial
   intro op hop
   unfold beforeNodeWord at hop
+  rw [List.append_assoc] at hop
   rcases List.mem_append.mp hop with hpMem | hremaining
   · exact hp op hpMem
   · rcases List.mem_append.mp hremaining with hexit | hnode

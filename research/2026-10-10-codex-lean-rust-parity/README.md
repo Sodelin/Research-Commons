@@ -1,7 +1,6 @@
 # Modular Lean baseline and corresponding Rust solver
 
-## Latest checked state — 10 October 2026, 17:12 PDT / 11 October 00:12 UTC
-
+## Latest checked state — 11 October 2026, 00:22 UTC
 Start with the [succinct reconciliation](design/HISTORY-INTEGRATION-RECONCILIATION-20261010.md).
 The current coherent library has **1,504 modules / 100,985 owned declarations /
 91,690 theorem declarations**; [root acceptance](lean/HISTORY-SURVIVAL-UNION-1504-ACCEPTANCE.json)
@@ -13,7 +12,7 @@ The earlier 1,497, 1,487 and other rows below keep their own dated scopes and re
 DOT's 70-module fixed-residue bridge is separately [source/audit reviewed](quality/NEWEST-DOT-BRIDGE-REVIEW.json),
 outside that frozen union. [History audit](design/HISTORY-ASSEMBLY-AUDIT-20261010T2040Z.md)
 corrects claims that old census/target/policy implementations were absent.
-The [newest DOT source delta](design/DISCOVERY-DELTA-20261011T0012Z.md) records
+The [newest DOT source delta](design/DISCOVERY-DELTA-20261011T0025Z.md) records
 the hand-reviewed zero-drift local classifier, its accepted effective-radius
 algorithm and the particular sparse-carrier ordinary-factor obstruction.
 These have no new Lean or practical execution receipt.
@@ -24,10 +23,16 @@ passes eight bounded byte-preservation controls: a 72,532-byte patch reproduces
 the complete accepted 6,629,112-byte family168 audit against preserved originals.
 [Standalone reconstruction](rust/AUDIT-PORTABLE-RESTORE-FIXED-ACCEPTANCE-20261011T0010Z.json)
 passes nine controls; [compressed loader storage](quality/COMPRESSED-STDERR-SOURCE-SAVED-BYTE-GATE-20261011T0010Z.json)
-passes fifteen saved-byte/cache controls. Actual live capture still needs its first compiler receipt. The [natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V2.json)
+passes fifteen saved-byte/cache controls. A first real compiler attempt preserved all 12,579,325 diagnostic bytes in
+290,507 gzip bytes, but its new prefix proof failed; the aggregate/audit were
+not reached. The [failed run](lean/G6-NATURAL-COMMON-FACTORIZATION-PREFIX-68E-FAILED-20261011T001624.474830Z-RESULT.json)
+and [proof-only repair](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V3.json)
+retain that distinction. The [natural COMMON proposal](lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/PROPOSAL-FREEZE-V3.json)
 connects original once-stored seeds, literal tied-calendar prefixes and carried
 forest arm laws in a proposed 141-module context; its current review is static,
-with no kernel receipt yet. These additions do not enlarge the coherent1,504 union.
+with no passing kernel receipt yet. These additions do not enlarge the coherent1,504 union.
+DOT reports a separate live [persistent 1,568-source build](../../communications/2026-10-11-dot-persistent-union1568-running-0005z.md);
+our full-G3 replay is held while its aggregate/audit acceptance remains pending.
 
 Lean is the governing specification. Rust consumes accepted mathematical
 contracts through explicitly mapped representations and independently checked
@@ -43,7 +48,7 @@ Decisions API setup is deferred, with no key created or API call made. The
 [mission](MISSION.md) preserves the full original problem and
 [traceability map](design/TRACEABILITY.md) records remaining obligations.
 The [frozen discovery map](design/DISCOVERY-MAP.md) and the [latest publication
-delta](design/DISCOVERY-DELTA-20261011T0012Z.md) connect DOT G3/G4 results to
+delta](design/DISCOVERY-DELTA-20261011T0025Z.md) connect DOT G3/G4 results to
 their older providers and remaining gaps.
 The [one-page research brief](design/RESEARCH-BRIEF.md) gives the four-lane overview.
 The [goal completion sheet](design/GOAL-STATUS.md) distinguishes completed original

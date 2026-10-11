@@ -1,0 +1,196 @@
+{
+  "aligned_existing_interfaces": [
+    "originalGamma=P(parent1)=1-oldg; parent bits not complemented",
+    "one natural stored bit per hybrid, unchanged through all conditional transitions",
+    "fixed natural initializer must precede conditional-mask specialization",
+    "same original edge occurrences and one shared rate/survival bank"
+  ],
+  "created_at_utc": "2026-10-11T00:20:52.241571+00:00",
+  "current_ce9_prefix_derivative": {
+    "definition_statement_import_change_observed": false,
+    "kernel_acceptance_observed_here": false,
+    "proof_only_delta_read": true,
+    "unified_diff": "--- frozen68e\n\n+++ currentce9\n\n@@ -4,4 +4,8 @@\n\n /-!\n Codex Lean reuse, 10 October 2026. PROPOSAL; no kernel receipt yet.\n+\n+Proof-only compatibility derivative, 11 October 2026, of frozen 68e0130b.\n+The first compiler attempt exposed left-associated append membership and\n+singleton/nil normalization; definitions, statements and imports are unchanged.\n \n The older calendar providers already exclude private reads at every strictly\n@@ -60,4 +64,5 @@\n\n       simp only [List.cons_append, calendarTail, finalDate, List.append_assoc]\n       rw [ih d]\n+      simp only [List.append_assoc, List.cons_append, List.nil_append]\n \n /-- The prefix is literally part of the original compiled agenda. Finset.toList\n@@ -85,5 +90,5 @@\n\n       rw [calendarTail_before_last_boundary]\n       simp only [beforeNodeWord, boundaryOperations, hnodes, List.map_append,\n-        List.map_cons, List.cons_append, List.append_assoc]\n+        List.map_cons, List.cons_append, List.nil_append, List.append_assoc]\n \n /-- The actual earlier dates and the actual tied node prefix do not inspect the\n@@ -136,4 +141,5 @@\n\n           exact hdateAbsent (by rw [he]; exact List.mem_cons_of_mem a hd)\n         intro op hop\n+        rw [List.append_assoc] at hop\n         rcases List.mem_append.mp hop with hboundaryMem | htailMem\n         \u00b7 exact hb op hboundaryMem\n@@ -145,4 +151,5 @@\n\n   intro op hop\n   unfold beforeNodeWord at hop\n+  rw [List.append_assoc] at hop\n   rcases List.mem_append.mp hop with hpMem | hremaining\n   \u00b7 exact hp op hpMem\n"
+  },
+  "execution": {
+    "compiler": 0,
+    "fitter": 0,
+    "native_solver": 0,
+    "rebuilds": 0,
+    "reference_provider": 0,
+    "tests": 0
+  },
+  "existing_runtime_controls_reused_as_saved_pointers_only": true,
+  "full_code_native_refinement_verified": false,
+  "full_solver_verified": false,
+  "historical_contract_compared": "68e/fcad exact preserved versions",
+  "mathematical_scope_reopened": false,
+  "mutation": {
+    "admission_flags_changed": false,
+    "elf_copied": false,
+    "new_note_and_capture_only": true,
+    "runtime_or_accepted_sources_modified": false
+  },
+  "new_mapping_details": [
+    {
+      "code_change_needed_now": false,
+      "facts": [
+        "same positive original duration D",
+        "tau_b=rho_b*t",
+        "at t=D, rho_b=-log(x_b)/D gives exp(-tau_b)=x_b",
+        "unit-rate baseline survival=max(x0,x1)",
+        "unit-rate residual survival=min(x0,x1)/max(x0,x1)",
+        "residual application weight=originalGamma if longArm=true, otherwise1-originalGamma",
+        "delta=0 is algebraic identity, not a positive physical identity edge"
+      ],
+      "topic": "full parallel-arm exposure"
+    },
+    {
+      "facts": [
+        "entering Code plus every prefix endpoint after private erasure",
+        "actual prefix list has inherited Finset.toList order",
+        "native final selected rows and completed rooted output do not retain this Old record",
+        "endpoint phase commutation alone does not identify arbitrary intermediate-column readers"
+      ],
+      "topic": "full finite Old record",
+      "universal_correspondence_present": false
+    },
+    {
+      "facts": [
+        "all entering-law supported live owners must be at named hybrid",
+        "proper exterior panels require restricted-copy/context transport",
+        "private-erased full forest retains other register coordinates and may have multiple roots",
+        "completed rooted consumer instead requires single ancestral genealogy and deliberately forgets latent register",
+        "future erasure requires same-source NoPrivateWordRead"
+      ],
+      "implied_by_generic_native_request": false,
+      "topic": "local incomplete forest/register"
+    }
+  ],
+  "new_natural141_kernel_acceptance_claimed": false,
+  "pins": [
+    {
+      "bytes": 9211,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/versions/G6OriginalCommonPrefix/68e0130ba41f55a7d87d0d8847dff504d53e55fe947020214e57ba42702b010b.lean",
+      "role": "historical_prefix",
+      "sha256": "68e0130ba41f55a7d87d0d8847dff504d53e55fe947020214e57ba42702b010b"
+    },
+    {
+      "bytes": 24817,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/versions/G6NaturalCommonForestFactorization/fcadb6c4029b06eed32c8d037f294e373d1f91be692807fa477ccbc8edd75f2c.lean",
+      "role": "historical_factorization",
+      "sha256": "fcadb6c4029b06eed32c8d037f294e373d1f91be692807fa477ccbc8edd75f2c"
+    },
+    {
+      "bytes": 9597,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/G6OriginalCommonPrefix.lean",
+      "role": "current_prefix_proof_only_pending_kernel",
+      "sha256": "ce9ec8df671d52cb45d3855353faa7c46cffb6660a00cdc2e0f61110602507bd"
+    },
+    {
+      "bytes": 24817,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/lean/proposals/reuse-integration-20261010T2138Z/natural-common-factorization/G6NaturalCommonForestFactorization.lean",
+      "role": "current_factorization",
+      "sha256": "fcadb6c4029b06eed32c8d037f294e373d1f91be692807fa477ccbc8edd75f2c"
+    },
+    {
+      "bytes": 52208,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_fit_bank.rs",
+      "role": "bank",
+      "sha256": "e31b80a3648e6aa15c8c99f30f4eb94e3fb06c6487f7241064391c05c12ffa5a"
+    },
+    {
+      "bytes": 23589,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_fit_readout.rs",
+      "role": "rooted_readout",
+      "sha256": "7a3a75b60af55f1138e82aa66c5a2e94b5dc9c8a597eadb0ff25230f03dae7c5"
+    },
+    {
+      "bytes": 21174,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_word.rs",
+      "role": "word",
+      "sha256": "7fbb4e6389c72f09f6799f7fd4c3fc1942d5fa1b0f92fb37792c10f21589d332"
+    },
+    {
+      "bytes": 9240,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/src/source_boundary.rs",
+      "role": "conditional_boundary",
+      "sha256": "f089b81fa649aaea6e1db1da5b373cee8e9e5be2cacb54942a261bc24b845cdb"
+    },
+    {
+      "bytes": 9748,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/source_fit.rs",
+      "role": "frontend_dto",
+      "sha256": "a4e86fe9948ab93f6128f430e9182b445c69b580f9fee01161f95f41a9966839"
+    },
+    {
+      "bytes": 10855,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/calendar-cli/src/source_fit_forward.rs",
+      "role": "natural_frontend",
+      "sha256": "0eef0719f7e5343bd3fc4655cc0dbba629dc29afe79e3cc7638e22fd8e03d2d5"
+    },
+    {
+      "bytes": 15065,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/SOURCE-FIT-ORIGINAL-CONTROL-REUSE-20261010T2312Z.md",
+      "role": "original_control_plan",
+      "sha256": "66051721d6081e8bd431aa30c0f9e061aae40e27a55a17bbfb0938981c5fff02"
+    },
+    {
+      "bytes": 18093,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/SOURCE-FIT-ORIGINAL-CONTROL-REUSE-20261010T2312Z.json",
+      "role": "original_control_plan_capture",
+      "sha256": "ce28a0c52ec5181d4b9938a57bf0b4d394a28b9e095e536beb2675a595bdaf33"
+    },
+    {
+      "bytes": 4416,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/tests/source_fit_program.rs",
+      "role": "existing_saved_program_control",
+      "sha256": "407adcd399adc1199998d6e3f9c6b4e1051088b5e250eb4e38adcdb80eb562fc"
+    },
+    {
+      "bytes": 1281472,
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/DEPENDENCY-GRAPH.json",
+      "role": "accepted1504_dependency_graph",
+      "sha256": "e05a87db2b34f42aada87a958f7ff9114c68a817458b5919f7ecac62386fbacd"
+    },
+    {
+      "bytes": 13204,
+      "path": "/dev/shm/rc-lean-g7-survival-integration-20261010T223510.923050Z/source-store/7e228b06208880369b455914a855249337b6acecf9b4c9d70067c7ff9baab003.lean",
+      "role": "actual_parallel_arm_geometry",
+      "sha256": "7e228b06208880369b455914a855249337b6acecf9b4c9d70067c7ff9baab003"
+    },
+    {
+      "bytes": 4292856,
+      "path": "/dev/shm/rc-source-fit-native-20261010T221453.635194Z/target/debug/source-fit-solver",
+      "role": "native_guard_only_not_executed",
+      "sha256": "443a1eb6d35154e827b3f0236ab6c5c458752fd6f5480463f390e74a99bd4f00"
+    },
+    {
+      "bytes": 2329,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/evidence/source-fit-native-slot-20261010T221453.635194Z/FINAL-RECEIPT.json",
+      "role": "existing_focused_native_acceptance_not_rerun",
+      "sha256": "9ee7563a650618649863cc0cad174989baa9fa873b7f4455bad5fbb3aa0aea18"
+    },
+    {
+      "bytes": 1960,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/NATURAL-COMMON-CURRENT-PATH-PIN-FAILURE-20261011T0024Z.json",
+      "role": "preserved_current_path_pin_failure",
+      "sha256": "401f013dc9320d1b738de59867653467b0f4094f82526fe1806f791b8a0e06e4"
+    },
+    {
+      "bytes": 8078,
+      "path": "/workspace/Research-Commons/research/2026-10-10-codex-lean-rust-parity/rust/notes/NATURAL-COMMON-BANK-MAPPING-DELTA-20261011T0021Z.md",
+      "role": "new_mapping_note",
+      "sha256": "33b535766eb54e2d24e83b3b3be0c3dc9ff244bb7f592122d981724c41602dba"
+    }
+  ],
+  "resource": {
+    "address_space_cap_bytes": 268435456,
+    "overlay_reserve_bytes": 8388608,
+    "peak_rss_kib": 16508
+  },
+  "schema": "natural_common_bank_mapping_delta_v1",
+  "source_admission_verified": false,
+  "status": "SOURCE_ONLY_MAPPING_AND_GAP_REVIEW",
+  "timed_readout_verified": false
+}
