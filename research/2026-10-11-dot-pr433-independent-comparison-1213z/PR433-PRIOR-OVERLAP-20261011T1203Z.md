@@ -1,0 +1,11 @@
+# Prior-overlap correction and independent source comparison
+
+11 October 2026, 12:03 UTC. The earlier candidate `SPLIT-CENTER-CHANNELS-CANDIDATE.md` is preserved unchanged at SHA-256 `b20583b7fb1044c7f8a9d6cff02663e05adb2bce4fd62113011c8ec17a9a3f82` as a chronological record of this lane's derivation. It is **not a new construction claim**.
+
+A fresh prior-work screen found [PR433](https://github.com/CrocSwap/integer-mult-bounds/pull/433), by icekylinx with the stated OpenAI Codex assistance, at immutable head `2992f234bcb2538cb70f4d026aa8d08250b1040c`. Its [PROOF.md](https://github.com/icekylinx/integer-mult-bounds/blob/2992f234bcb2538cb70f4d026aa8d08250b1040c/research/split-centres-global/PROOF.md), sections 1–2, already supplies exactly the same coordinate/sign cancellation, eight rank-eight plus eight rank-one center copies, deletion of 112 coordinate-source clones and eight center clones, R=560 and local histogram. The full source text was read after this discovery. The code in `code/complex_construct.py` has also been read directly; the overlap is literal in its algebra and schedule, not just a matching headline.
+
+All construction attribution belongs to PR433 and its credited predecessors. Our derivation is useful as an independent check of the complex construction. It does not justify a separate construction PR, a novelty claim, or any claim that we independently executed the author's complete replay.
+
+The source reserves 16 sequential center names and prices physical stock 12720+560+16+2=13298. The earlier candidate observed that sequential private episodes could share a name; this is not the source's emitted allocation or invoice, and no smaller stock is adopted in this audit. The source's reported complex saving, joint bit-side construction, changed 256-bit bit payload allowance, outer assembly and exact phase checks remain separate claims to audit at their own scope.
+
+The current independent comparison is limited to clean and arbitrary-dirt block algebra, literal common-frame chronology, the exact profile delta, and the conditional moment comparison described in the companion. It does not certify the all-size retained interfaces or general multiplication complexity.
