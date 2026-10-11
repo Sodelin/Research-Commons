@@ -1,0 +1,353 @@
+{
+  "schema": "g3-small-residue-incorporation-readiness-v1",
+  "contributor": "dot (OpenAI)",
+  "date_utc": "2026-10-11T22:20:00Z",
+  "status": "Read-only source/API handoff; proposed consumer not drafted or compiled",
+  "hand_providers": [
+    {
+      "name": "FINITE-TWO-CELL-RESIDUE-LIFT.md",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/47a53ccbfbac60f0f230b6357b36e2df65f4085d/research/2026-10-10-dot-g3-finite-residue-source-lift-2340z/FINITE-TWO-CELL-RESIDUE-LIFT.md",
+      "git_blob": "5f1bcb168cb1dde671f28455c869b600cb7138b8",
+      "sha256": "51452e938be4c43d259437b91ad6ab659eb8f6c1b103e40f7abfc49a3ace4541",
+      "bytes": 12189
+    },
+    {
+      "name": "CODEX-HANDOFF.md",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/47a53ccbfbac60f0f230b6357b36e2df65f4085d/research/2026-10-10-dot-g3-finite-residue-source-lift-2340z/CODEX-HANDOFF.md",
+      "git_blob": "0db83fdce0f4a36d46b776a27cb4ee9d9ff786bf",
+      "sha256": "629ca02d84fb2524d63417c1fe940e612203583ed3e990f89433e91944ccc552",
+      "bytes": 2941
+    }
+  ],
+  "selected_source_suppliers": [
+    {
+      "module": "G3BernoulliDerivatives",
+      "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+        "Mathlib.Analysis.Calculus.Deriv.Pow",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0.lean",
+      "declared_names": [
+        "bernoulliFactor",
+        "bernoulliLog",
+        "bernoulli_factor_pos",
+        "bernoulli_factor_lt_one",
+        "hasDerivAt_bernoulliFactor_p",
+        "hasDerivAt_bernoulliFactor_q",
+        "hasDerivAt_bernoulliLog_p",
+        "hasDerivAt_bernoulliLog_q"
+      ]
+    },
+    {
+      "module": "G3BernoulliSmoothness",
+      "sha256": "3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8",
+      "imports": [
+        "G3BernoulliDerivatives",
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.Analysis.Calculus.ContDiff.Operations"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8.lean",
+      "declared_names": [
+        "contDiffAt_bernoulliFactor",
+        "contDiffAt_bernoulliLog_of_factor_pos"
+      ]
+    },
+    {
+      "module": "G3FiniteWordLogSignature",
+      "sha256": "4db92b1e81133d1221ed84ef0b99a59af7017df1c4d5bf6f18429cd825c6bcf4",
+      "imports": [
+        "G3BernoulliSmoothness",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/4db92b1e81133d1221ed84ef0b99a59af7017df1c4d5bf6f18429cd825c6bcf4.lean",
+      "declared_names": [
+        "FiniteWordParameters",
+        "finiteWordMoment",
+        "finiteWordLog",
+        "finiteWordMoment_pos",
+        "neg_log_finiteWordMoment",
+        "exp_neg_finiteWordLog",
+        "contDiffAt_finiteWordLog",
+        "contDiffAt_finiteWordLog_vector"
+      ]
+    },
+    {
+      "module": "G3ActualFixedResidueCriticalFiniteness",
+      "sha256": "87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29",
+      "imports": [
+        "G3CriticalProjectionPolynomials",
+        "G3CriticalSourceSliceCoprime"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/87e3345d116869a0f591ea451ae26649fa9707555d757f29bd75a3019f149f29.lean",
+      "declared_names": [
+        "actual_fixed_residue_strict_critical_finite"
+      ]
+    },
+    {
+      "module": "ActualCommonBigonSurvival",
+      "sha256": "2c6368fc196827b4c9d1a4632f91ba4d02eb6e1d6f41e1d91a1f44d415ced60c",
+      "imports": [
+        "ActualBigonBinomial"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/2c6368fc196827b4c9d1a4632f91ba4d02eb6e1d6f41e1d91a1f44d415ced60c.lean",
+      "declared_names": [
+        "actual_common_bigon_survival"
+      ]
+    },
+    {
+      "module": "G6NaturalCommonForestFactorization",
+      "sha256": "3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4",
+      "imports": [
+        "G6OriginalParallelArmTransport",
+        "G6OriginalPopulationExposure",
+        "G6OriginalCommonPrefix",
+        "PrivateSeedHistoryFactorization",
+        "ActualUnusedSeedConditioning",
+        "G1ActualJointProgram",
+        "UnifiedLean.Source.SourceEpochSemigroup"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4.lean",
+      "declared_names": [
+        "recordEnd",
+        "recordEnd_map",
+        "erasedRecord",
+        "forestRegister",
+        "erasedForestRegister",
+        "unitRates",
+        "armExposure",
+        "referencePulse",
+        "residualEpoch",
+        "actual_arm_exposure_positive",
+        "actual_arm_erased_reference",
+        "actual_common_erased_reference",
+        "actual_natural_stored_selector",
+        "actual_private_bit_law",
+        "actual_natural_common_erased_full_forest_factorization",
+        "actual_tied_calendar_common_factorization",
+        "actual_no_read_future_erased_full_forest"
+      ]
+    },
+    {
+      "module": "G4ActualOriginalSpanNaturalAverage",
+      "sha256": "e1be8c6d18e12db2d11df8ea74355b4bf7fabeaf530b629174fe4e9e1e39ccdd",
+      "imports": [
+        "G4ActualOriginalSpanDiagonal",
+        "OriginalRegisterMarginal"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/e1be8c6d18e12db2d11df8ea74355b4bf7fabeaf530b629174fe4e9e1e39ccdd.lean",
+      "declared_names": [
+        "vertexGamma",
+        "naturalSpanLaw",
+        "actual_natural_span_no_loss",
+        "actual_natural_span_coin_average",
+        "actual_original_coin_mass",
+        "actual_natural_span_finite_real_average",
+        "actual_natural_equal_common_arms_no_loss"
+      ]
+    },
+    {
+      "module": "G1WholeCanonicalPrivateWordTrueK",
+      "sha256": "9fe59f677426d2825ca6344a03cac85fc4c69f02ffc65f3ef53ae001f0ecae20",
+      "imports": [
+        "G1OriginalPrivateFutureExclusion"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/9fe59f677426d2825ca6344a03cac85fc4c69f02ffc65f3ef53ae001f0ecae20.lean",
+      "declared_names": [
+        "IntervalAfter",
+        "original_boundary_interval_after",
+        "actual_stopped_event_intervals_after",
+        "actual_closing_events_private_predicates_same",
+        "actual_whole_original_private_word_is_extracted_span",
+        "actual_whole_original_private_fused_row_is_true_K"
+      ]
+    },
+    {
+      "module": "G7OriginalSurvivalCoverage",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "imports": [
+        "G7WholeEdgeExposureInvariant",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+      ],
+      "url": "https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+      "declared_names": [
+        "exposure",
+        "exposure_pos",
+        "ratesFromLengths",
+        "ratesFromLengths_exposure",
+        "survival",
+        "OpenCube",
+        "physical_survival_open_cube",
+        "ratesFromSurvival",
+        "ratesFromSurvival_exposure",
+        "ratesFromSurvival_survival",
+        "survival_eq_iff_exposure",
+        "fixed_calendar_survival_image",
+        "every_actual_source_has_fixed_calendar_representative",
+        "actual_source_survival_chart"
+      ]
+    }
+  ],
+  "pinned_mathlib": [
+    {
+      "path": "Mathlib/Analysis/SpecialFunctions/Complex/Analytic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "0c4eb8e1498a7b6adb7378eb18b95ed472fc84482b30b4deea85ed712c391928",
+      "git_blob": "3b4689beba9938b3c13d4892e592cfe3d0d9f9e3",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Analysis/SpecialFunctions/Complex/Analytic.lean"
+    },
+    {
+      "path": "Mathlib/Analysis/Analytic/Order.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "d76ba1534b9d8ddc0e1d9a47e488f9745d7b789937ac2b955bb030a222a3f372",
+      "git_blob": "43cc6d88cb0ecba9560d4c29a410b271d9432628",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Analysis/Analytic/Order.lean"
+    },
+    {
+      "path": "Mathlib/Analysis/Calculus/ImplicitContDiff.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "6c104281dd0e0efc9c47236b7fed89ef35869bfba6fa2791cba9891e2c0c5209",
+      "git_blob": "e0bdd104a1df879797eb1fd760c2023fd68f7ff2",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Analysis/Calculus/ImplicitContDiff.lean"
+    },
+    {
+      "path": "Mathlib/Analysis/Calculus/Taylor.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "8032183e5d5bf72c8e0d52919b9cfd25ad6813c2f8a37350b337389535dc6fba",
+      "git_blob": "3e3e885eeeb33d8d2b584868a288c00bcd1af4be",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Analysis/Calculus/Taylor.lean"
+    },
+    {
+      "path": "Mathlib/Analysis/Calculus/ParametricIntegral.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "495f1a89774b147de1528e0213f519817d50fc3602724c9cbea633e9617c3375",
+      "git_blob": "c7937b328d3ab054a967d37f82132612a3ce83e6",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Analysis/Calculus/ParametricIntegral.lean"
+    },
+    {
+      "path": "Mathlib/Topology/MetricSpace/Contracting.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "cc579c4ca94d07166e161387d3f181877fdfd92ddd89ca6956c96c8fcfdf9a92",
+      "git_blob": "c4bd6fe2e61b904dfa1144ab1b7162550c99d1c3",
+      "url": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Topology/MetricSpace/Contracting.lean"
+    }
+  ],
+  "owned_source_search": {
+    "selected_module_count": 1591,
+    "patterns": [
+      "finiteWordLog",
+      "Htilde",
+      "implicitFunction",
+      "ContractingWith",
+      "taylor_integral_remainder",
+      "residueLift",
+      "residue_lift",
+      "divided.*(?:third|3)",
+      "odds.*(?:log|Bernoulli)"
+    ],
+    "matches": [
+      {
+        "module": "G3FiniteWordLogSignature",
+        "sha256": "4db92b1e81133d1221ed84ef0b99a59af7017df1c4d5bf6f18429cd825c6bcf4",
+        "matched_patterns": [
+          "finiteWordLog"
+        ]
+      }
+    ],
+    "limitation": "Bounded source/declaration search plus direct reads of listed providers; not proof that no equivalent theorem exists anywhere in Mathlib/history."
+  },
+  "minimal_consumer": {
+    "suggested_module": "G3TwoCellResidueJet",
+    "conclusion": "For the literal deformation W(t,y), define F(t,y)=finiteWordLog_vector(W(t,y))\u2212target(t). For each finite correction center ybar, construct a jointly C1 (preferably analytic) remainder R near(0,ybar) with F(t,y)=t^3\u00b7(J y+D(r^3)/3+t\u00b7R(t,y)). J is the explicit true response map.",
+    "mathematical_hypotheses": [
+      "finite exponent vector of distinct positive naturals",
+      "finite retained head, every p_i,q_i strictly between0 and1",
+      "0<r<1",
+      "0<A0\u22641",
+      "active ordinary correction only when A0<1; inactive construction inserts1/(1+t^4)",
+      "no killing, other residue or omitted background"
+    ],
+    "rank_needed_for_jet": false,
+    "rank_needed_for_next_IFT": "Yes: J is surjective, equivalently one supplied d-column pivot is invertible. This is the accepted supplied rank certificate, not source acquisition.",
+    "blocked_by": [
+      "no selected owned odds-to-probability log wrapper",
+      "no selected source-specific exact cubic cancellation/remainder consumer",
+      "joint-in-corrections extension must be proved; separate fixed-y Taylor is insufficient"
+    ]
+  },
+  "subsequent_consumers": [
+    {
+      "name": "strict normalized k+2 witness",
+      "dependencies": [
+        "source cubic jet",
+        "existing ContDiffAt implicit-function theorem",
+        "strictness/endpoint preservation",
+        "checked exp_neg_finiteWordLog"
+      ],
+      "status": "Accepted hand conclusion; not selected as a complete Lean endpoint"
+    },
+    {
+      "name": "effective rational t-band and algebraic sampling",
+      "dependencies": [
+        "quantified rational derivative bounds",
+        "Taylor remainder constants1/24",
+        "Banach ball estimates",
+        "effective RCF sampler/representation interface"
+      ],
+      "status": "Hand algorithm specified; cannot infer an executable sampler or evaluated band from qualitative IFT"
+    },
+    {
+      "name": "original calibrated A/B source lift",
+      "dependencies": [
+        "admitted pendant graph/calendar/registry construction",
+        "G7OriginalSurvivalCoverage positive-rate realization",
+        "actual natural source/spans",
+        "full calibrated A/B marginal identification"
+      ],
+      "status": "Forward actual-source providers are checked; no complete reverse normalized-tuple-to-calibrated-source selected declaration was located in this bounded read"
+    }
+  ],
+  "not_dependencies_of_this_lift": [
+    "fixed-r critical finiteness",
+    "all-real critical presentation finiteness",
+    "zero-drift local corner classifier",
+    "simultaneous-square multi-residue theorem"
+  ],
+  "master_limits": [
+    "supplied head/residue/rank only",
+    "rank failure inconclusive",
+    "arbitrary observation input presentation acquisition remains open",
+    "INDEPENDENT/BOTH, retained C/D observations, interventions and tied registers not covered by the COMMON A/B lift"
+  ],
+  "pinned_mathlib_api": {
+    "log_series": [
+      "analyticAt_log",
+      "hasFPowerSeriesAt_log_one_add"
+    ],
+    "scalar_analytic_remainder": [
+      "AnalyticAt.exists_eventuallyEq_sum_add_pow_mul"
+    ],
+    "implicit_function": [
+      "ContDiffAt.implicitFunction",
+      "ContDiffAt.eventually_apply_implicitFunction",
+      "ContDiffAt.implicitFunction_apply_self",
+      "ContDiffAt.contDiffAt_implicitFunction"
+    ],
+    "quantitative_alternatives": [
+      "taylor_integral_remainder",
+      "ContractingWith.exists_fixedPoint'",
+      "hasFDerivAt_integral_of_dominated_loc_of_lip_interval"
+    ],
+    "namespace_warning": "The real log-series names are global declarations in the pinned file, not Real-prefixed names.",
+    "proposed_route": "Extract one scalar analytic log(1+x) remainder and compose with the literal joint polynomial/rational arguments. Exact source cancellation then gives the joint cubic response. This is an uncompiled implementation plan."
+  },
+  "immediate_owned_closure": [
+    "G3BernoulliDerivatives",
+    "G3BernoulliSmoothness",
+    "G3FiniteWordLogSignature"
+  ]
+}
