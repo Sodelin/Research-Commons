@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""Independent exact additive source/cache check. No compiler or owner checker."""
+from pathlib import Path
+import importlib.util,json,hashlib,time
+OUT=Path(__file__).resolve().parent
+P=Path('$PACKAGE')
+B=Path('$ACCEPTED1568')
+C=Path('$ACCEPTED219')
+H=Path('$SHARED_WORKSPACE/union1568-independent-final-review-20261011-0112z/check_union.py')
+assert hashlib.sha256(H.read_bytes()).hexdigest()=='ad94fd9a14c3369bbd0bbc23f7a45ac19a4d0783405017a321d3b631726d7fa5'
+s=importlib.util.spec_from_file_location('prior_independent_helpers',H);h=importlib.util.module_from_spec(s);s.loader.exec_module(h)
+r=h.read;check=h.check;bundle=h.bundle;start=time.time()
+G='ba9148757fda063c86b40db0d453a3eccd85c224800a8b98ebd12f6ffe31f367';check(P/'DEPENDENCY-GRAPH.json',G)
+check(B/'DEPENDENCY-GRAPH.json',h.GRAPH)
+check(C/'DEPENDENCY-GRAPH.json','d6c850c7460c836610812b0f14ca3e12aebad9ad4d11c22e713855638c9f7cae')
+graph=r(P/'DEPENDENCY-GRAPH.json');old=r(B/'DEPENDENCY-GRAPH.json');g=graph['targets']['current/connected'];base=old['targets']['current/connected'];cg=r(C/'DEPENDENCY-GRAPH.json')['targets']['candidate/g4-actual-span'];mods=g['modules']
+new={'G4ActualOriginalSpanDiagonal':'8d90261bcb35833d982d3b1913563ce1d97b766cd54eefbf856613df0a1597ed','G4ActualOriginalSpanNaturalAverage':'e1be8c6d18e12db2d11df8ea74355b4bf7fabeaf530b629174fe4e9e1e39ccdd'}
+assert set(mods)==set(base['modules'])|set(new) and len(mods)==1570
+assert graph['targets']['history/accepted1568']==base
+assert set(graph['targets'])==set(old['targets'])|{'history/accepted1568'}
+for k,t in old['targets'].items():
+ if k!='current/connected':assert graph['targets'][k]==t
+for m,x in base['modules'].items():assert mods[m]==x
+for m,w in new.items():assert mods[m]==cg['modules'][m] and mods[m]['sha256']==w
+assert g['roots']==base['roots']+['G4ActualOriginalSpanNaturalAverage']
+assert len(g['order'])==len(set(g['order']))==1570
+seen=set()
+for m in g['order']:
+ x=mods[m];p=P/'source-store'/(x['sha256']+'.lean');check(p,x['sha256']);assert h.imports(p.read_bytes())==x['imports']
+ assert all(i in seen for i in x['imports'] if i in mods);seen.add(m)
+assert seen==set(mods)
+assert set(g['external_imports'])=={i for x in mods.values() for i in x['imports'] if i not in mods}
+owned={m for m in mods if m.startswith('Mathlib.')};assert len(owned)==4 and owned=={m for m in base['modules'] if m.startswith('Mathlib.')}
+for name,w in h.PINS.items():check(P/name,w);assert (P/name).read_bytes()==(B/name).read_bytes()
+assert not (P/'scripts/build_no_owned_mathlib.py').exists()
+for name in ['lakefile.lean','lake-manifest.json','lean-toolchain','scripts/run_current.py']:assert (P/name).read_bytes()==(B/name).read_bytes()
+br=B/'.build/runs/20261010T233820.417934Z/targets/current_connected/RESULT.json';check(br,'50d1532ebb1c867a7226ecb2f42a520f937ed91715566865404bfa435a604f3d')
+cr=C/'.build/runs/20261011T015628.150112Z/targets/candidate_g4-actual-span/RESULT.json';check(cr,'8809186c09118c667b8e69155327398b343ec176aeaf81dc6a3414af2a9660cb')
+accepted={x['module']:x for x in r(br)['component_receipts']};accepted.update({x['module']:x for x in r(cr)['component_receipts'] if x['module'] in new})
+a=r(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json');assert a['modules']==1570 and a['upstream_other_additions_included'] is False;rows=a['records'];assert len(rows)==1570 and {x['module'] for x in rows}==set(mods)
+for x in rows:
+ m=x['module'];rp=P/'.build/cache'/x['key']/'receipt.json';check(rp,x['receipt_sha256']);v=r(rp);assert v==accepted[m]
+ assert x['accepted_context']==('219' if m in new else '1568')
+ assert v['status']=='PASS_FRESH_KERNEL_CHECK' and v['exit_code']==0 and v['source_and_imports_stable']
+ assert v['source_sha256']==x['source_sha256']==mods[m]['sha256'] and v['object_sha256']==x['object_sha256']
+ assert v['compiler_sha256']==h.BIN and v['mathlib_commit']==h.MATHLIB and '-t0' in v['command'] and '-Ddebug.skipKernelTC=false' in v['command']
+ assert v['cap_seconds']==(600 if m=='ThetaCertificate5' else 180) and v['cap_memory_mib']==(6144 if m=='ThetaCertificate5' else 4096)
+ assert '-M'+str(v['cap_memory_mib']) in v['command']
+ bundle(P/'.build/cache'/x['key']/'artifact.olean',v['object_artifacts']);bundle(Path(v['cached_object']),v['object_artifacts'])
+ assert set(v['direct_import_bindings'])==set(mods[m]['imports'])
+ for name,z in v['direct_import_bindings'].items():
+  bundle(Path(z['path']),z['artifacts']);assert z['artifacts']==v['direct_import_artifacts'][name]
+  if name in mods:assert z['artifacts']==accepted[name]['object_artifacts']
+ kd={'module':m,'source':v['source_sha256'],'compiler':v['compiler_sha256'],'mathlib':v['mathlib_commit'],'trust':0,'kernel_check':True,'imports':v['direct_import_artifacts'],'native_runtime_digest':v['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'}
+ assert hashlib.sha256(json.dumps(kd,sort_keys=True).encode()).hexdigest()==x['key']
+check(P/'DEPENDENCY-GRAPH.json',G)
+out={'status':'PASS_ADDITIVE_PREFLIGHT_ONLY','graph_sha256':G,'manifest_sha256':h.sha(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json'),'accepted1568_preserved':1568,'additional_sources':new,'source_modules':1570,'authenticated_accepted_receipts':1570,'owned_mathlib_modules':sorted(owned),'core_wrappers_and_supervisor_byte_unchanged':True,'compiler_invoked':False,'fresh_aggregate_audit_still_required':True,'file_hashes_checked':len(h.MEMO),'bytes_hashed':h.hashed_bytes,'elapsed_seconds':time.time()-start}
+(OUT/'PREFLIGHT-REVIEW.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "$PACKAGE/scripts/build_desktop.py", line 47, in <module>
+    b=DesktopBuilder();assert args.target in b.graph['targets'];raise SystemExit(b.run_targets([args.target]))
+  File "$PACKAGE/scripts/build_desktop.py", line 14, in __init__
+    super().__init__()
+    ~~~~~~~~~~~~~~~~^^
+  File "$PACKAGE/scripts/build_with_authenticated_overlay.py", line 35, in __init__
+    super().__init__()
+    ~~~~~~~~~~~~~~~~^^
+  File "$PACKAGE/scripts/build_with_mathlib_overlay.py", line 71, in __init__
+    super().__init__()
+    ~~~~~~~~~~~~~~~~^^
+  File "$PACKAGE/scripts/build_connected.py", line 22, in __init__
+    self.bin=Path(os.environ['CONNECTED_LEAN_BIN']).resolve();self.mathlib=Path(os.environ['CONNECTED_MATHLIB']).resolve();assert sha(self.bin/'lean')==BINARY
+                                                                                                                                  ~~~^^^^^^^^^^^^^^^^^
+  File "$PACKAGE/scripts/build_connected.py", line 9, in <lambda>
+    sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+                                ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/pathlib/_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.13/pathlib/_local.py", line 539, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: '$OFFICIAL_RUNTIME/lean-4.33.1-linux/bin/lean/lean'
