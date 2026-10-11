@@ -1,0 +1,73 @@
+from pathlib import Path
+import hashlib
+D=Path(__file__).resolve().parent;P=Path('$SHARED_WORKSPACE/union1570-independent-review-20261011-0215z/check_final.py');assert hashlib.sha256(P.read_bytes()).hexdigest()=='ea221be8e60c2fc0be242ce0cb0bdeed09aeb9992b64cb6ae987369269ecc1ac'
+s=P.read_text();s=s[:s.index('def main():')]
+s=s.replace("ROOT=Path('$ACCEPTED1570')","ROOT=Path('$PACKAGE')")
+s=s.replace("BASE=Path('$SHARED_WORKSPACE/connected-union1568-20261010-2318z')","BASE=Path('$ACCEPTED1570')\nOLDEST=Path('$SHARED_WORKSPACE/connected-union1568-20261010-2318z')")
+s=s.replace("GRAPH='ba9148757fda063c86b40db0d453a3eccd85c224800a8b98ebd12f6ffe31f367'","GRAPH='e88ad8e80c518a40cc5546a9961a1e08df202ab0e0104bae39e9aca00f20e6eb'")
+s=s.replace("terminal=read(ROOT/'LAKE-ATTEMPT2-TERMINAL.json');assert terminal['exit_code']==0\n assert read(ROOT/'LAKE-TERMINAL.json')['exit_code']==1","terminal=read(ROOT/'LAKE-TERMINAL.json');assert terminal['exit_code']==0")
+s=s.replace("{'cache_reuse':1570}","{'cache_reuse':1570,'fresh_components':5}")
+s=s.replace("tr['closure_modules']==1570","tr['closure_modules']==1575").replace("len(records)==1570","len(records)==1575").replace("len(bymodule)==1570","len(bymodule)==1575")
+s=s.replace("for origin in [BASE,G4,ROOT]","for origin in [OLDEST,G4,BASE,ROOT]")
+s=s.replace("len(fresh)==0 and len(reused)==1570","len(fresh)==5 and len(reused)==1570")
+s=s.replace("sum(e.get('status')=='FRESH_KERNEL_PASS' for e in events)==0","sum(e.get('status')=='FRESH_KERNEL_PASS' for e in events)==5")
+s=s.replace('==101749','==101835').replace('==92182','==92247')
+start=s.index(' deltas=[]\n allowed=');end=s.index(" assert sum(x['kind']=='theorem'",start)
+s=s[:start]+''' deltas=[]
+ alias_name='UnifiedLean.Source.SourceInitializedCalendar.finalDate.eq_def'
+ oldhelper='_private.G5OriginalEpochChart.0.UnifiedLean.Source.SourceInitializedCalendar.finalDate.match_1.splitter'
+ newhelper='_private.G6OriginalCommonPrefix.0.UnifiedLean.Source.SourceInitializedCalendar.finalDate.match_1.splitter'
+ for name,x in actual.items():
+  y=expected[name]
+  if x!=y:
+   assert name==alias_name
+   assert {k:v for k,v in x.items() if k!='body_references'}=={k:v for k,v in y.items() if k!='body_references'}
+   assert y['body_references'].count(oldhelper)==1 and newhelper not in y['body_references']
+   assert x['body_references']==[newhelper if z==oldhelper else z for z in y['body_references']]
+   deltas.append({'name':name,'changed_field':'body_references','reference':y,'actual':x})
+ assert len(deltas)==1
+ assert {k:v for k,v in actual[oldhelper].items() if k not in ['name','module']}=={k:v for k,v in actual[newhelper].items() if k not in ['name','module']}
+ (OUT/'EXACT-INHERITED-ALIAS-DELTA.json').write_text(json.dumps({'differences':deltas,'old_helper':actual[oldhelper],'new_helper':actual[newhelper],'qualification':'All serialized helper metadata agree except name/module. Audit rows serialize dependency references, not full term expressions; no separate definitional-equality theorem is inferred.'},indent=2)+'\\n')
+''' +s[end:]
+s=s.replace("PASS_INDEPENDENT_EXACT_1570_CONTEXT_REVIEW","PASS_INDEPENDENT_EXACT_1575_CONTEXT_REVIEW")
+s=s.replace("'fresh_components':0,'authenticated_component_reuse':1570","'fresh_components':5,'authenticated_component_reuse':1570")
+s=s.replace("'all_nonmodule_declaration_metadata_exactly_preserved':True,'module_attribution_deltas':deltas,'globally_new_declarations':44,'globally_new_theorems':29,'declarations':101749,'theorems':92182", "'old_records_literal_equal':101748,'qualified_old_body_reference_differences':1,'module_attribution_deltas':[],'globally_new_declarations':86,'globally_new_theorems':65,'new_records_literal_equal_to_narrow_audits':True,'declarations':101835,'theorems':92247")
+s+='''
+def main():
+ global RUN
+ start=time.time();RUN=Path(read(ROOT/'.build/LATEST-RUN.json')['run'])
+ assert RUN.name=='20261011T040211.744850Z'
+ for name,w in PINS.items():check(ROOT/name,w)
+ check(ROOT/'DEPENDENCY-GRAPH.json',GRAPH);check(RUN/'DEPENDENCY-GRAPH.json',GRAPH)
+ graph=read(ROOT/'DEPENDENCY-GRAPH.json');g=graph['targets']['current/connected']
+ check(OUT/'PREFLIGHT-REVIEW.json','236998f68f332c96c5e7d6355e4b7b935cfd748380790f6ad0679b25939979a5')
+ for m,x in g['modules'].items():
+  p=ROOT/'source-store'/(x['sha256']+'.lean');check(p,x['sha256']);assert imports(p.read_bytes())==x['imports']
+ ba=BASE/'.build/runs/20261011T022043.369265Z/targets/current_connected/RESULT.json';check(ba,'1fc2845c1203da9fa4d8260264c3373a87cdf0eaf86695597a1b6407f91b87c9')
+ bap=Path(read(ba)['audit_receipt']['audit_output']);check(bap,'026783d9a4476842d9403b041b112fa08373b250885672163e3a47bcf17686ab')
+ b={x['name']:x for x in read(bap)['declarations']};assert len(b)==101749
+ records={};remote_pins={
+  'family':('c648760dabe5c75334f8f6b72d3ce4d9fc7155d684d33d33fa15716740ef1ec5','0433bdbbe2b4c2b5ee4d48aa5963de57dd33fd9b658840e1e4c4a53fdc141a8e'),
+  'arm':('b8436ddfd5b53fae8d6d26a1931d262a85df4758ca3aa62057e1f50e00af6210','d76d61da1557b3f607ec9965744d801dea16a85f833837001e5d12e67a668b43'),
+  'forest':('abdcca75e56d23ed127803d3babc0b24b89e048280d283ba07694a465d0c9f33','a12d00f96a1ec86e899b84f08043bcd242c899f7b94f07a67bc74b4cbc5a8d93'),
+  'common':('15525987280d430dcb83585aaf76f5a33042ece6f1a781eeb2ed51949bd78934','6df3d6c8f923bd4d0ee05af2bab474bbed334bf2184879aa5b0354458d217021')}
+ for label,(cp,ap) in remote_pins.items():
+  folder=OUT/'remote-audits';cert=folder/(label+'.certificate.json');gz=folder/(label+'.json.gz');audit=folder/(label+'.audit.json');check(cert,cp);check(audit,ap)
+  raw=gz.read_bytes();meta=read(folder/(label+'.fetch.json'));assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\\0'+raw).hexdigest()==meta['git_blob'];assert gzip.decompress(raw)==audit.read_bytes()
+  assert next(iter(read(cert)['targets'].values()))['audit_raw_sha256']==ap
+  for x in read(audit)['declarations']:
+   n=x['name']
+   if n not in b:
+    if n in records:assert records[n]==x
+    records[n]=x
+ assert len(records)==86 and sum(x['kind']=='theorem' for x in records.values())==65
+ (OUT/'EXACT-NEW-DECLARATION-RECORDS.json').write_text(json.dumps(records,indent=2)+'\\n')
+ expected={**b,**records}
+ report=final_check(g,expected);report.update(graph_sha256=GRAPH,compiler_invoked=False,distinct_file_hashes=len(MEMO),bytes_hashed=hashed_bytes,elapsed_seconds=time.time()-start)
+ check(ROOT/'DEPENDENCY-GRAPH.json',GRAPH)
+ (OUT/'FINAL-UNION-REVIEW.json').write_text(json.dumps(report,indent=2)+'\\n')
+ print(json.dumps({k:v for k,v in report.items() if k!='component_records'},indent=2))
+if __name__=='__main__':main()
+'''
+(D/'check_final.py').write_text(s)
+print('Explicit read-only final checker prepared.')

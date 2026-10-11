@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+"""Independent source/cache/namespace/staging review. Never invokes a compiler."""
+from pathlib import Path
+import hashlib,json,importlib.util,time,os,shutil
+D=Path(__file__).resolve().parent;P=Path('$PACKAGE');B=Path('$ACCEPTED1570');R=Path('$SHARED_WORKSPACE/prospective1575-receipt-review-20261011-0355z')
+H=Path('$SHARED_WORKSPACE/union1568-independent-final-review-20261011-0112z/check_union.py');assert hashlib.sha256(H.read_bytes()).hexdigest()=='ad94fd9a14c3369bbd0bbc23f7a45ac19a4d0783405017a321d3b631726d7fa5'
+s=importlib.util.spec_from_file_location('prior_readonly_helpers',H);h=importlib.util.module_from_spec(s);s.loader.exec_module(h);check=h.check;read=h.read;bundle=h.bundle;start=time.time()
+G='e88ad8e80c518a40cc5546a9961a1e08df202ab0e0104bae39e9aca00f20e6eb';check(P/'DEPENDENCY-GRAPH.json',G);check(B/'DEPENDENCY-GRAPH.json','ba9148757fda063c86b40db0d453a3eccd85c224800a8b98ebd12f6ffe31f367')
+graph=read(P/'DEPENDENCY-GRAPH.json');old=read(B/'DEPENDENCY-GRAPH.json');g=graph['targets']['current/connected'];base=old['targets']['current/connected'];mods=g['modules'];plan=read(R/'SOURCE-PLAN-DELTA.json');new=plan['five_separately_accepted_sources'];newnames={x['module'] for x in new}
+assert len(new)==5 and len(newnames)==5 and len(mods)==1575 and set(mods)==set(base['modules'])|newnames
+assert set(graph['targets'])==set(old['targets'])|{'history/accepted1570'} and graph['targets']['history/accepted1570']==base
+for label,t in old['targets'].items():
+ if label!='current/connected':assert graph['targets'][label]==t
+for m,x in base['modules'].items():assert mods[m]==x
+expected_new={
+'G7OriginalFamilyCalendarNormalization':'81dcd9983e73eecd5f59caac14ee6231825fdd9ae25dd9cf64bafbc06b6f2f08',
+'G6OriginalParallelArmTransport':'f40a0d66db43984f05ca250dc1d4e9e79372141a498732414d8acde11162d6dc',
+'G6OriginalForestRegisterCompression':'2fc15e1e16f8aa5742b06e08473ab22df896e485b6df48d70e3ed703056e123a',
+'G6OriginalCommonPrefix':'a080722170d367fe9aa7420c5c5488fe4c7df73a6d994aba15346a8d2ee4c917',
+'G6NaturalCommonForestFactorization':'3fc98f898f705bf778fa5b2d448ae5e05ce00d262bc3048042f08c07921edac4'}
+for x in new:
+ m=x['module'];assert x['sha256']==expected_new[m];assert mods[m]=={'module':m,'sha256':x['sha256'],'imports':x['literal_imports']}
+ p=P/'source-store'/(x['sha256']+'.lean');raw=p.read_bytes();assert len(raw)==x['bytes'];check(p,x['sha256']);assert raw==(R/(m+'.lean')).read_bytes();assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==x['git_blob']
+ a=x['accepted_scope_origin'];ap=R/Path(a['source_git_path']).name;check(ap,a['sha256']);assert ap.stat().st_size==a['bytes'];assert read(ap)['status'].startswith('ACCEPTED_')
+assert g['roots']==base['roots']+[x['module'] for x in new];assert g['order']==base['order']+[x['module'] for x in new]
+assert len(g['order'])==len(set(g['order']))==1575 and g['external_imports']==base['external_imports']
+seen=set()
+for m in g['order']:
+ x=mods[m];p=P/'source-store'/(x['sha256']+'.lean');check(p,x['sha256']);assert h.imports(p.read_bytes())==x['imports'];assert all(i in seen for i in x['imports'] if i in mods);seen.add(m)
+assert set(g['external_imports'])=={i for x in mods.values() for i in x['imports'] if i not in mods}
+owned={m for m in mods if m.startswith('Mathlib.')};assert len(owned)==4 and owned=={m for m in base['modules'] if m.startswith('Mathlib.')}
+for name,w in h.PINS.items():check(P/name,w);assert (P/name).read_bytes()==(B/name).read_bytes()
+assert not (P/'scripts/build_no_owned_mathlib.py').exists()
+for name in ['lakefile.lean','lake-manifest.json','lean-toolchain','scripts/run_current.py']:assert (P/name).read_bytes()==(B/name).read_bytes()
+trp=B/'.build/runs/20261011T022043.369265Z/targets/current_connected/RESULT.json';check(trp,'1fc2845c1203da9fa4d8260264c3373a87cdf0eaf86695597a1b6407f91b87c9');accepted={x['module']:x for x in read(trp)['component_receipts']}
+a=read(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json');assert a['cloud_compiled_objects_admitted'] is False and a['cloud_source_commit']=='4862b9618ca422da4ad5381b5dec0a3fcac56e76';assert a['new_sources']==new;rows=a['records'];assert len(rows)==1570 and {x['module'] for x in rows}==set(base['modules'])
+assert {q.name for q in (P/'.build/cache').iterdir()}=={x['key'] for x in rows}
+for x in rows:
+ m=x['module'];rp=P/'.build/cache'/x['key']/'receipt.json';check(rp,x['receipt_sha256']);v=read(rp);assert v==accepted[m] and x['accepted_context']=='1570'
+ assert v['status']=='PASS_FRESH_KERNEL_CHECK' and v['exit_code']==0 and v['source_and_imports_stable'] and v['native_runtime_stat_stable'] and v['native_initialized_libraries_bound']
+ assert v['source_sha256']==x['source_sha256']==mods[m]['sha256'] and v['object_sha256']==x['object_sha256']
+ assert v['compiler_sha256']==h.BIN and v['mathlib_commit']==h.MATHLIB and '-t0' in v['command'] and '-Ddebug.skipKernelTC=false' in v['command']
+ assert v['cap_seconds']==(600 if m=='ThetaCertificate5' else 180) and v['cap_memory_mib']==(6144 if m=='ThetaCertificate5' else 4096)
+ bundle(P/'.build/cache'/x['key']/'artifact.olean',v['object_artifacts']);bundle(Path(v['cached_object']),v['object_artifacts'])
+ assert set(v['direct_import_bindings'])==set(mods[m]['imports'])
+ for imp,z in v['direct_import_bindings'].items():
+  bundle(Path(z['path']),z['artifacts']);assert z['artifacts']==v['direct_import_artifacts'][imp]
+  if imp in mods:assert z['artifacts']==accepted[imp]['object_artifacts']
+ kd={'module':m,'source':v['source_sha256'],'compiler':v['compiler_sha256'],'mathlib':v['mathlib_commit'],'trust':0,'kernel_check':True,'imports':v['direct_import_artifacts'],'native_runtime_digest':v['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'}
+ if m=='ThetaCertificate5':
+  assert v['source_sha256']=='e541af41b215cf473e63d4e968fdc42b31fe74f6384387f66de61f1ebbd7fbab';kd['resource_exception']={'memory_mib':6144,'seconds':600}
+ assert hashlib.sha256(json.dumps(kd,sort_keys=True).encode()).hexdigest()==x['key']
+ # All installed cache companions are hard links to the already accepted cache.
+ for q in rp.parent.iterdir():
+  if q.name!='receipt.json':assert os.path.samefile(q,B/'.build/cache'/x['key']/q.name)
+# Independently count all allocation for nonshared inodes in the prepared tree.
+# This conservatively includes directories and the final staging receipt.
+shared=set()
+for origin in [B,R]:
+ for q in origin.rglob('*'):
+  if q.is_file():st=q.stat();shared.add((st.st_dev,st.st_ino))
+newalloc=0;seenino=set()
+for q in [P]+list(P.rglob('*')):
+ st=q.stat();key=(st.st_dev,st.st_ino)
+ if key not in seenino and key not in shared:newalloc+=st.st_blocks*512
+ seenino.add(key)
+budget=read(P/'STAGING-BUDGET-RECEIPT.json');assert budget['status']=='PASS_HARD_64MIB_PREPARATION' and budget['preparation_cap_bytes']==64*2**20
+assert budget['observed_free_consumption']==budget['started_free_bytes']-budget['ended_free_bytes']<=64*2**20
+assert budget['new_regular_file_allocation']<=newalloc<=64*2**20 and budget['required_launch_free_bytes']==20*2**30 and not budget['compiler_invoked']
+free=shutil.disk_usage(P).free;assert free>=20*2**30
+assert not (P/'.build/runs').exists()
+check(P/'DEPENDENCY-GRAPH.json',G);check(B/'DEPENDENCY-GRAPH.json','ba9148757fda063c86b40db0d453a3eccd85c224800a8b98ebd12f6ffe31f367')
+out={'status':'PASS_EXACT_1575_ADDITIVE_PREFLIGHT_ONLY','graph_sha256':G,'preflight_manifest_sha256':h.sha(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json'),'staging_budget_sha256':h.sha(P/'STAGING-BUDGET-RECEIPT.json'),'source_modules':1575,'accepted1570_source_records_unchanged':True,'accepted1570_cache_receipts_authenticated':1570,'new_sources_require_fresh_compilation':expected_new,'foreign_cloud_objects_admitted':False,'original_four_owned_mathlib_and_core_unchanged':True,'conservative_nonshared_preparation_allocation_bytes':newalloc,'preparation_cap_bytes':64*2**20,'free_at_review_bytes':free,'launch_reserve_bytes':20*2**30,'compiler_invoked':False,'aggregate_acceptance_claimed':False,'distinct_file_hashes':len(h.MEMO),'bytes_hashed':h.hashed_bytes,'elapsed_seconds':time.time()-start}
+(D/'PREFLIGHT-REVIEW.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))

@@ -1,0 +1,12 @@
+from pathlib import Path
+import hashlib,json
+D=Path(__file__).resolve().parent;B=Path('$ACCEPTED1570');P=Path('$PACKAGE');run=P/'.build/runs/20261011T040211.744850Z'
+bp=B/'.build/runs/20261011T022043.369265Z/targets/current_connected/RESULT.json';np=run/'targets/current_connected/RESULT.json'
+assert hashlib.sha256(bp.read_bytes()).hexdigest()=='1fc2845c1203da9fa4d8260264c3373a87cdf0eaf86695597a1b6407f91b87c9';assert hashlib.sha256(np.read_bytes()).hexdigest()=='52d54480a55f3ef60f49ead08a94af79964b657125badedb2ad33e61e697f72a'
+b={x['module']:x for x in json.load(open(bp))['component_receipts']};n={x['module']:x for x in json.load(open(np))['component_receipts']}
+expected={x['module'] for x in json.load(open(P/'AUTHENTICATED-ADDITIVE-PREFLIGHT.json'))['new_sources']}
+assert set(n)-set(b)==expected and len(b)==1570
+for name,x in b.items():assert n[name]==x and run not in Path(n[name]['receipt_directory']).parents
+for name in expected:assert run in Path(n[name]['receipt_directory']).parents
+r={'status':'PASS_EXACT_FRESH_SET_AND_ALL_INHERITED_RECEIPTS','old_receipts_literal_equal':1570,'fresh_modules':sorted(expected),'compiler_invoked':False}
+(D/'EXACT-REUSE-REVIEW.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r,indent=2))

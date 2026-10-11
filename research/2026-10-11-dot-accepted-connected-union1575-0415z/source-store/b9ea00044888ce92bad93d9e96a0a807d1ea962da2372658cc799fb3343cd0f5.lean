@@ -1,0 +1,25 @@
+import G7OriginalInitializationPolynomial
+import G7SelectedKernelPolynomial
+
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.coinPolynomial
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.coinPolynomial_eval
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.pulsePolynomial
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.actual_pulse_polynomial
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.embedAt
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.embedAt_eval
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.constantPolynomial
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.constantPolynomial_eval
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.nodePolynomial
+#print axioms GProgram.G7.OriginalBoundaryPolynomial.actual_original_node_polynomial
+#print axioms GProgram.G7.OriginalInitializationPolynomial.actual_original_coin_mass
+#print axioms GProgram.G7.OriginalInitializationPolynomial.registerPolynomial
+#print axioms GProgram.G7.OriginalInitializationPolynomial.registerPolynomial_eval
+#print axioms GProgram.G7.OriginalInitializationPolynomial.initialPolynomial
+#print axioms GProgram.G7.OriginalInitializationPolynomial.actual_original_initial_polynomial
+#print axioms GProgram.G7.SelectedKernelPolynomial.projection_representative
+#print axioms GProgram.G7.SelectedKernelPolynomial.epochTable
+#print axioms GProgram.G7.SelectedKernelPolynomial.actual_selected_epoch_table
+#print axioms GProgram.G7.SelectedKernelPolynomial.nodeTable
+#print axioms GProgram.G7.SelectedKernelPolynomial.actual_selected_node_table
+#print axioms GProgram.G7.SelectedKernelPolynomial.exitTable
+#print axioms GProgram.G7.SelectedKernelPolynomial.actual_selected_exit_table

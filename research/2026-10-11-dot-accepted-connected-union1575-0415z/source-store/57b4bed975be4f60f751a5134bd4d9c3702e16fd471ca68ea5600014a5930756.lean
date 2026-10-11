@@ -1,0 +1,10 @@
+import G6BridgeCannotEnterHybrid
+
+#check GProgram.G6.BridgeEntry.bridge_incoming_unique
+#check GProgram.G6.BridgeEntry.bridge_target_indegree_one
+#check GProgram.G6.BridgeEntry.two_incoming_occurrences_not_bridge
+#check GProgram.G6.BridgeEntry.bridge_targets_injective
+#check GProgram.G6.BridgeEntry.original_bridge_target_not_hybrid
+#check GProgram.G6.BridgeEntry.original_hybrid_parents_nonbridge
+#print axioms GProgram.G6.BridgeEntry.bridge_targets_injective
+#print axioms GProgram.G6.BridgeEntry.original_hybrid_parents_nonbridge
