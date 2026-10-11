@@ -1,0 +1,93 @@
+--- reviewed-event-only
++++ actual-completion-support
+@@ -1,4 +1,6 @@
+ import G1UnrankedSourceView
++import UnifiedLean.Source.SourceAncestralCompletion
++import UnifiedLean.Source.SourceCompletionHarmonic
+ 
+ /-!
+ # Specified labelled-comb event on the actual inherited quotient
+@@ -7,7 +9,8 @@
+ SOURCE-ONLY DRAFT: no compiler or audit acceptance. This implements the concrete
+ single-event/obstruction portion of the reviewed handoff90f99164. It does not
+ identify no-A-clade with one labelled comb, evaluate its completion coefficient,
+-or supply a physical source continuation or natural-bank average.
++or supply a full physical source-law continuation or natural-bank average.
++This extension does prove actual ancestral-completion SUPPORT exclusion.
+ -/
+ namespace DotG34.SpecifiedCombEvent
+ open Nanuq.Source GProgram.SourceForest
+@@ -118,4 +121,73 @@
+ -- their event continuation agrees on the inherited child-swap quotient.
+ -- Then derive the coefficient2^k/((k+1)!k!) from the actual ancestral recurrence.
+ -- A-only obstruction alone does not exclude a wrong B-A2 first merger.
++section ActualCompletion
++open UnifiedLean.Source.FiniteSourceSnapshot
++open UnifiedLean.Source.UniformizedSourceStep
++open UnifiedLean.Source.NativePairClockLaw
++open UnifiedLean.Source.SourceEmbeddedJumpLaw
++open UnifiedLean.Source.SourceAncestralCompletion
++open UnifiedLean.Source.SourceCompletionHarmonic
++variable {X : Type*}
++variable [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E]
++variable [Fintype X] [Fintype Copy]
++
++def codeBad (N : RootedBinary V E X) {sample : Copy → X}
++    (b x : Copy) (s : Code N sample) : Prop :=
++  hasBad b ((state s).genealogy ((state s).ancestor x))
++
++lemma actual_destination_bad (N : RootedBinary V E X) {sample : Copy → X}
++    (b x : Copy) (s : Code N sample) (p : Choice N s)
++    (h : codeBad N b x s) :
++    codeBad N b x (stepDestination N s (some p)) := by
++  let hm := population_pair_is_source_legal (state s) (originalPlace N p.1)
++    (originalPlace_not_node N p.1) p.2.property
++  let t := merge (state s) p.2.val.1 p.2.val.2
++  have ht := merge_source_valid N sample (state s) s.property hm
++  change hasBad b ((decodeSnapshot N.root (encodeSnapshot t ht.forest)).genealogy
++    (t.ancestor x))
++  rw [decode_encode_live_genealogy N.root t ht.forest (ht.forest.ancestor_live x)]
++  exact actual_merge_preserves_bad b (state s) p.2.val.1 p.2.val.2 x h
++
++lemma actual_jump_supported_bad (N : RootedBinary V E X) {sample : Copy → X}
++    (r : PositivePairRates E) (b x : Copy) (s d : Code N sample)
++    (h : codeBad N b x s) (hd : d ∈ (sourceJumpStep N r s).support) :
++    codeBad N b x d := by
++  rcases source_jump_support_cases N r s hd with hhold | ⟨p,hp⟩
++  · simpa only [hhold.1] using h
++  · subst d
++    exact actual_destination_bad N b x s p h
++
++/-- Every supported actual completion preserves the carried obstruction;
++this is induction on the inherited kernel, not on a replacement path model. -/
++lemma actual_completion_supported_bad (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (b x : Copy)
++    (fuel : Nat) (s d : Code N sample) (h : codeBad N b x s)
++    (hd : d ∈ (ancestralCompletion N r fuel s).support) : codeBad N b x d := by
++  induction fuel generalizing s with
++  | zero =>
++      have he : d = s := by simpa only [ancestralCompletion,PMF.mem_support_pure_iff] using hd
++      simpa only [he] using h
++  | succ fuel ih =>
++      obtain ⟨z,hz,hdz⟩ := (PMF.mem_support_bind_iff _ _ _).mp hd
++      exact ih z (actual_jump_supported_bad N r b x s z h hz) hdz
++
++/-- Actual one-tree support joins the originally obstructed copy's ancestor
++with B's ancestor. The event is still the specified labelled comb, not the
++union of all B-spine shapes. -/
++theorem actual_completion_excludes_specified (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (b x : Copy) (as : List Copy)
++    (s d : Code N sample) (hroot : AncestralRoot N s)
++    (h : codeBad N b x s) (hd : d ∈ (completionKernel N r s).support) :
++    ¬ specifiedEvent b as
++      (toUnranked ((state d).genealogy ((state d).ancestor b))) := by
++  have hc := ancestral_completion_terminal_support N r (Fintype.card Copy)
++    s hroot (Finset.card_le_univ s.val.live) hd
++  have hb := actual_completion_supported_bad N r b x (Fintype.card Copy) s d h hd
++  have he : (state d).ancestor x = (state d).ancestor b :=
++    (Finset.card_le_one.mp hc.2) _ (d.property.forest.ancestor_live x)
++      _ (d.property.forest.ancestor_live b)
++  apply bad_excludes_specified b as
++  simpa only [codeBad,he] using hb
++end ActualCompletion
+ end DotG34.SpecifiedCombEvent
