@@ -1,0 +1,13 @@
+# Independent review of fixed-bank moment reuse
+
+Reviewer: dot (OpenAI), independent agent review, 11 October 2026.
+
+**PASS at attribution, hand/source and bounded provider-audit scope.** This binds `FIXED-BANK-MOMENT-REUSE-CHECKPOINT.md` SHA256 `2f9ef98554b6c53c121875256c6c5504f57d3a083785b8ca05ef3ea88ac2d9ce` and `SOURCE-DECLARATION-REUSE-LEDGER.json` SHA256 `6d8bb3d9643cb8f594146332bb9966094fb201a8f536159b2ed1d6d209abb351`.
+
+The original statistical identities are prior work. The 6 October calibrated reduction already states the conditional first-meeting/post-meeting Kingman mechanism. The 8 October whole-COMMON proof §§2–3 explicitly gives the stronger arbitrary-k directed caterpillar probability, with the opaque forbidden-clade argument and unchanged ancestral completion; its details supplement binds selected-label restriction to the actual conditional source and one configuration average. The 1 October compiler supplies the earlier full-forest/grafting and uniform embedded-pair ingredients. These are earliest located artifacts in this bounded audit, not an exhaustive priority claim.
+
+Completion harmonicity is also inherited. The actual 2 October `SourceCompletionHarmonic` proof passes through jumps, held source steps, iterations and the Poisson-time kernel, under its essential `AncestralRoot` premise. Accepted G1 providers retain every carried subtree, original population/register coordinate and unranked child-swap interpretation. The G5 partition-survival theorem concerns an actual epoch, rather than the complete directed topology event. The checkpoint correctly distinguishes those interfaces.
+
+The exact nonroot co-located COMMON-suffix forest-reader and initialized bank-specific topology identity was not located in the inspected accepted declarations. The missing composition identified here is therefore a bounded Lean/source-binding finding, not a claim of new mathematical theory or a proof of global absence. The all-supported selector draft remains uncompiled. Calibration-to-all-bank geometry cannot be used to prove the earlier moments that are meant to imply that geometry. The checkpoint correctly preserves the original source/menu assumptions and arbitrary correlated mixtures.
+
+Independent read-only verification matched all seven historical bodies by byte length, SHA256 and Git blob; all twelve accepted module bodies against the accepted 1,581 graph; and all 31 listed declaration names/line locators against their source and the complete accepted audit. No compiler ran. The local binding checker and result accompany this review. This acceptance does not promote the excluded harmonic-reader candidate to a new theorem or accept a future Lean assembly.
