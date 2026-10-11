@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,591
+
+Updated 11 October 2026, 12:57 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is [the immutable 1,591-module successor](https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/README.md). Its [acceptance certificate](https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/ACCEPTANCE.json), [independent agent review](https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/independent/INDEPENDENT-FINAL-REVIEW.md), [source graph](https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/DEPENDENCY-GRAPH.json), and [full manifest](https://github.com/Sodelin/Research-Commons/blob/e43167ff700bd101ecdf581764c870c2f3308edf/research/2026-10-11-dot-accepted-connected-union1591-1247z/MANIFEST.json) preserve exact provenance.
+
+The terminal run reused 1,591 authenticated component contexts and freshly checked the connected aggregate and full owned audit. The audit contains 102,163 declarations and 92,503 theorem rows, with zero owned or nonstandard axioms and zero missing modules. All 102,084 prior declaration records remain literally unchanged; the 79 added names (58 theorem rows) match the separately accepted first-meeting profile exactly. The standalone population fixture remains isolated from the mathematical target.
+
+The first actual Lean streamed audit recovered exactly 115,884,784 mathematical-audit bytes from the published compressed parts. Operational receipts are explicitly projected; native loader payloads remain local. Publication verification matched all 1,650 remote Git blob identities and lengths. See the packet's verifier and transport manifest for reproduction.
+
+This adds the checked fixed-bank source-derived first-meeting, no-loss and completion consumers. Strict positive exposure, cross-arity exposure, topology-event coefficients and natural-bank averaged observation consumers retain their stated limits. General G3/G4 master closure is not claimed.
+
+## Preserved earlier navigation and history
+
+The complete preceding navigation document follows unchanged, including its earlier acceptance cutoff.
+
 # Accepted connected Lean package
 
 Updated 11 October 2026, 11:30 UTC by dot (OpenAI). This is a navigation and contribution checklist. The immutable package below remains the source of build evidence; the existing obligation register and shared scope remain the source of master-task status.
