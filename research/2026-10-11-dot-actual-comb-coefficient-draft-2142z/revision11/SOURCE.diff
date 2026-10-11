@@ -1,0 +1,56 @@
+--- revision10
++++ revision11
+@@ -760,5 +760,53 @@
+     frontier_live_card (state s) s.property.forest t pref rest h
+   rw [ancestral_choice_card N s hroot,hc,Nat.add_sub_cancel]
+ 
++/-- Concrete ancestral completion tree at B's final live ancestor. Identifying
++this with a legal selected observation remains an explicit later use-site. -/
++noncomputable def completionTreeLaw (N : RootedBinary V E X) {sample : Copy → X}
++    (r : PositivePairRates E) (b : Copy) (s : Code N sample) :
++    PMF (UnrankedTree Copy) :=
++  (completionKernel N r s).map
++    (fun d => toUnranked ((state d).genealogy ((state d).ancestor b)))
++
++/-- The previously proved support exclusion gives actual zero mass for the
++concrete target after every wrong source Choice. -/
++theorem wrong_choice_target_mass_zero (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (s : Code N sample)
++    (t : Genealogy Copy) (pref next b : Copy) (rest : List Copy)
++    (hroot : AncestralRoot N s)
++    (h : CombFrontier (state s) t pref (next :: rest)) (hb : b ∈ t.leaves)
++    (p : Choice N s)
++    (hwrong : ¬ ((p.2.val.1 = pref ∧ p.2.val.2 = next) ∨
++      (p.2.val.1 = next ∧ p.2.val.2 = pref))) :
++    completionTreeLaw N r b (stepDestination N s (some p))
++      (toUnranked ((next :: rest).foldl (fun u z => .graft u (.leaf z)) t)) = 0 := by
++  classical
++  by_contra hn
++  have hm := (PMF.mem_support_iff _ _).mpr hn
++  obtain ⟨d,hd,he⟩ := (PMF.mem_support_map_iff _ _ _).mp hm
++  exact actual_wrong_choice_completion_excluded N r s d t pref next b rest
++    hroot h hb p hwrong hd he
++
++/-- The induction base is a genuine terminal Code: full Copy coverage leaves
++one live root, and B's fibre identifies its carried prefix genealogy. -/
++theorem terminal_frontier_target_mass_one (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (s : Code N sample)
++    (t : Genealogy Copy) (pref b : Copy)
++    (h : CombFrontier (state s) t pref []) (hb : b ∈ t.leaves) :
++    completionTreeLaw N r b s (toUnranked t) = 1 := by
++  have hc : liveCard s = 1 := by
++    simpa only [List.length_nil,Nat.zero_add] using
++      frontier_live_card (state s) s.property.forest t pref [] h
++  have hbleaf : b ∈ ((state s).genealogy pref).leaves := by
++    rw [unordered_leaves h.prefix_tree]
++    exact hb
++  have hanc := (s.property.forest.leaf_fiber pref h.prefix_live b).mp hbleaf
++  have htree : toUnranked ((state s).genealogy ((state s).ancestor b)) =
++      toUnranked t := by
++    rw [hanc]
++    exact (toUnranked_eq_iff _ _).mpr h.prefix_tree
++  unfold completionTreeLaw
++  rw [completion_terminal N r s (by omega),PMF.pure_map,htree,PMF.pure_apply_self]
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent

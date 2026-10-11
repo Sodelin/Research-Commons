@@ -1,0 +1,96 @@
+--- revision9
++++ revision10
+@@ -1,4 +1,5 @@
+ import G1UnrankedSourceView
++import G7AncestralPolynomialKernel
+ import UnifiedLean.Source.SourceAncestralCompletion
+ import UnifiedLean.Source.SourceCompletionHarmonic
+ 
+@@ -677,5 +678,87 @@
+         frontier_merge_singleton_survives (state s) s.property.forest t pref next rest h
+   exact admitted_frontier N sample u hu (.graft t (.leaf next)) p.2.val.1 rest hf
+ 
++open GProgram.G7.AncestralPolynomialKernel
++
++/-- The prescribed forward Choice is obtained from the inherited actual
++rootChoices equivalence, not from a replacement unordered process. -/
++noncomputable def prescribedForward (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
++    (pref next : Copy) (rest : List Copy)
++    (h : CombFrontier (state s) t pref (next :: rest)) : Choice N s :=
++  (rootChoices N s hroot).symm ⟨(pref,next),Finset.mem_offDiag.mpr
++    ⟨h.prefix_live,frontier_singleton_live (state s) s.property.forest t pref
++      (next :: rest) h (by simp),by
++        intro he
++        exact frontier_prefix_not_remaining (state s) s.property.forest t pref
++          (next :: rest) h (by simp [he])⟩⟩
++
++noncomputable def prescribedBackward (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
++    (pref next : Copy) (rest : List Copy)
++    (h : CombFrontier (state s) t pref (next :: rest)) : Choice N s :=
++  (rootChoices N s hroot).symm ⟨(next,pref),Finset.mem_offDiag.mpr
++    ⟨frontier_singleton_live (state s) s.property.forest t pref
++      (next :: rest) h (by simp),h.prefix_live,by
++        intro he
++        exact frontier_prefix_not_remaining (state s) s.property.forest t pref
++          (next :: rest) h (by simp [← he])⟩⟩
++
++noncomputable def prescribedChoices (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
++    (pref next : Copy) (rest : List Copy)
++    (h : CombFrontier (state s) t pref (next :: rest)) : Finset (Choice N s) := by
++  classical
++  exact {prescribedForward N s hroot t pref next rest h,
++    prescribedBackward N s hroot t pref next rest h}
++
++lemma prescribedChoices_card (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
++    (pref next : Copy) (rest : List Copy)
++    (h : CombFrontier (state s) t pref (next :: rest)) :
++    (prescribedChoices N s hroot t pref next rest h).card = 2 := by
++  classical
++  apply Finset.card_pair
++  intro he
++  have hpair := congrArg (fun p : Choice N s => p.2.val.1) he
++  change pref = next at hpair
++  exact frontier_prefix_not_remaining (state s) s.property.forest t pref
++    (next :: rest) h (by simp [hpair])
++
++lemma mem_prescribedChoices (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
++    (pref next : Copy) (rest : List Copy)
++    (h : CombFrontier (state s) t pref (next :: rest)) (p : Choice N s) :
++    p ∈ prescribedChoices N s hroot t pref next rest h ↔
++      ((p.2.val.1 = pref ∧ p.2.val.2 = next) ∨
++       (p.2.val.1 = next ∧ p.2.val.2 = pref)) := by
++  classical
++  change p ∈ {prescribedForward N s hroot t pref next rest h,
++    prescribedBackward N s hroot t pref next rest h} ↔ _
++  rw [Finset.mem_insert,Finset.mem_singleton]
++  constructor
++  · rintro (rfl | rfl)
++    · exact Or.inl ⟨rfl,rfl⟩
++    · exact Or.inr ⟨rfl,rfl⟩
++  · rintro (⟨h1,h2⟩ | ⟨h1,h2⟩)
++    · left
++      apply (rootChoices N s hroot).injective
++      apply Subtype.ext
++      exact Prod.ext h1 h2
++    · right
++      apply (rootChoices N s hroot).injective
++      apply Subtype.ext
++      exact Prod.ext h1 h2
++
++/-- Reuse the accepted total ordered-choice count with the actual frontier
++cardinality. Only the two-choice target subset above is new. -/
++lemma frontier_choice_card (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
++    (pref : Copy) (rest : List Copy) (h : CombFrontier (state s) t pref rest) :
++    Fintype.card (Choice N s) = (rest.length + 1) * rest.length := by
++  have hc : liveCard s = rest.length + 1 :=
++    frontier_live_card (state s) s.property.forest t pref rest h
++  rw [ancestral_choice_card N s hroot,hc,Nat.add_sub_cancel]
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent

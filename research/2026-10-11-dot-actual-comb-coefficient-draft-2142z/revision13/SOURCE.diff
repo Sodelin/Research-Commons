@@ -1,0 +1,87 @@
+--- revision12
++++ revision13
+@@ -895,5 +895,84 @@
+       rw [hsum,frontier_choice_card N s hroot t pref (next :: rest) h]
+       rfl
+ 
++/-- The coefficient for one specified labelled comb, not the union of B-spine
++combs. The n=0 extension is useful only for the induction base. -/
++noncomputable def combWeight (n : Nat) : ℝ :=
++  2^n / ((Nat.factorial (n+1) : ℝ) * (Nat.factorial n : ℝ))
++
++lemma combWeight_nonnegative (n : Nat) : 0 ≤ combWeight n := by
++  unfold combWeight
++  positivity
++
++lemma combWeight_succ (n : Nat) :
++    combWeight (n+1) = (1 / (((n+2)*(n+1) : ℕ) : ℝ)) * (2 * combWeight n) := by
++  have hf : (Nat.factorial n : ℝ) ≠ 0 := by exact_mod_cast Nat.factorial_ne_zero n
++  have h1 : (n : ℝ) + 1 ≠ 0 := by positivity
++  have h2 : (n : ℝ) + 2 ≠ 0 := by positivity
++  simp only [combWeight,Nat.factorial_succ,Nat.cast_mul,Nat.cast_add,
++    Nat.cast_one,Nat.cast_ofNat,pow_succ]
++  field_simp [hf,h1,h2]
++  <;> ring
++
++lemma combProbability_closed_form (n : Nat) :
++    combProbability n = ENNReal.ofReal (combWeight n) := by
++  induction n with
++  | zero => norm_num [combProbability,combWeight]
++  | succ n ih =>
++      rw [combProbability,ih,combWeight_succ]
++      rw [ENNReal.ofReal_mul (by positivity),ENNReal.ofReal_mul (by norm_num)]
++      norm_num
++
++/-- Closed form at an arbitrary carried prefix, proved for the actual
++ancestral completion kernel rather than an abstract pair-merger law. -/
++theorem actual_frontier_comb_closed_form (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (b : Copy) (rest : List Copy)
++    (s : Code N sample) (t : Genealogy Copy) (pref : Copy)
++    (hroot : AncestralRoot N s) (h : CombFrontier (state s) t pref rest)
++    (hb : b ∈ t.leaves) :
++    completionTreeLaw N r b s
++      (toUnranked (rest.foldl (fun u z => .graft u (.leaf z)) t)) =
++      ENNReal.ofReal (2^rest.length /
++        ((Nat.factorial (rest.length+1) : ℝ) * (Nat.factorial rest.length : ℝ))) := by
++  rw [actual_frontier_comb_probability N r b rest s t pref hroot h hb,
++    combProbability_closed_form]
++  rfl
++
++/-- Acquisition of the concrete frontier from a genuinely flat actual forest.
++All original Copy labels must be exactly B and the listed remaining labels. -/
++lemma flat_forest_frontier (s : State V E Copy) (hs : Valid s)
++    (b : Copy) (as : List Copy)
++    (hflat : ∀ x, s.genealogy (s.ancestor x) = .leaf x)
++    (hcover : ∀ x, x = b ∨ x ∈ as) (hnodup : as.Nodup) (hb : b ∉ as) :
++    CombFrontier s (.leaf b) b as := by
++  have he := singleton_ancestor_eq s hs b (hflat b)
++  refine ⟨?_,?_,fun a _ => hflat a,?_,?_,hnodup⟩
++  · simpa only [he] using hs.ancestor_live b
++  · have ht : s.genealogy b = .leaf b := by simpa only [he] using hflat b
++    rw [ht]
++    exact UnorderedEquiv.refl _
++  · intro x
++    simpa only [Genealogy.leaves,Finset.mem_singleton] using hcover x
++  · intro a ha
++    simp only [Genealogy.leaves,Finset.mem_singleton]
++    intro heq
++    subst a
++    exact hb ha
++
++/-- One specified labelled comb, with at least one A copy. This is the exact
++internal ancestral-completion coefficient; legal selected-observation and
++physical source-cut/natural-bank bindings are still separate obligations. -/
++theorem actual_flat_specified_comb_probability (N : RootedBinary V E X)
++    {sample : Copy → X} (r : PositivePairRates E) (s : Code N sample)
++    (b : Copy) (as : List Copy) (hroot : AncestralRoot N s)
++    (hflat : ∀ x, (state s).genealogy ((state s).ancestor x) = .leaf x)
++    (hcover : ∀ x, x = b ∨ x ∈ as) (hnodup : as.Nodup) (hb : b ∉ as)
++    (hnonempty : as ≠ []) :
++    completionTreeLaw N r b s (toUnranked (comb b as)) =
++      ENNReal.ofReal (2^as.length /
++        ((Nat.factorial (as.length+1) : ℝ) * (Nat.factorial as.length : ℝ))) := by
++  have hf := flat_forest_frontier (state s) s.property.forest b as hflat hcover hnodup hb
++  exact actual_frontier_comb_closed_form N r b as s (.leaf b) b hroot hf (by simp [Genealogy.leaves])
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent

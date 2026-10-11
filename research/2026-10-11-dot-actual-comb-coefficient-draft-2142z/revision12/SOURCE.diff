@@ -1,0 +1,95 @@
+--- revision11
++++ revision12
+@@ -808,5 +808,92 @@
+   unfold completionTreeLaw
+   rw [completion_terminal N r s (by omega),PMF.pure_map,htree,PMF.pure_apply_self]
+ 
++open UnifiedLean.G6.AncestralRateFree
++open scoped BigOperators ENNReal
++
++/-- A numerical sequence, independent of any source law. Its recurrence is
++not supplied as a premise for the actual event; that equality is derived below. -/
++noncomputable def combProbability : Nat → ℝ≥0∞
++  | 0 => 1
++  | n+1 => ENNReal.ofReal (1 / (((n+2)*(n+1) : ℕ) : ℝ)) *
++      (2 * combProbability n)
++
++/-- The actual harmonic completion identity, expanded on the inherited
++ordered Choice carrier with its proved uniform ancestral mass. -/
++lemma completionTreeLaw_jump_sum (N : RootedBinary V E X) {sample : Copy → X}
++    (r : PositivePairRates E) (b : Copy) (s : Code N sample)
++    (hroot : AncestralRoot N s) (hcard : Fintype.card (Choice N s) ≠ 0)
++    (target : UnrankedTree Copy) :
++    completionTreeLaw N r b s target =
++      ENNReal.ofReal (1 / (Fintype.card (Choice N s) : ℝ)) *
++        ∑ p : Choice N s, completionTreeLaw N r b (stepDestination N s (some p)) target := by
++  classical
++  have hm : completionTreeLaw N r b s =
++      (sourceJumpChoice N r s).bind (fun q =>
++        completionTreeLaw N r b (stepDestination N s q)) := by
++    unfold completionTreeLaw
++    rw [← completion_jump_harmonic N r s hroot,PMF.map_bind,
++      sourceJumpStep,PMF.bind_map]
++    rfl
++  rw [hm,PMF.bind_apply,tsum_fintype,Fintype.sum_option]
++  simp only [sourceJumpChoice_apply,ancestral_jump_mass N r s hroot,
++    ancestralChoiceMass,hcard,if_false,ENNReal.ofReal_zero,zero_mul,zero_add,add_zero]
++  rw [Finset.mul_sum]
++
++/-- The concrete target coefficient is derived from the actual completion
++kernel. Full Copy coverage, distinct remaining singletons and actual root
++placement are explicit. No recurrence or event coefficient is assumed. -/
++theorem actual_frontier_comb_probability (N : RootedBinary V E X) {sample : Copy → X}
++    (r : PositivePairRates E) (b : Copy) (rest : List Copy)
++    (s : Code N sample) (t : Genealogy Copy) (pref : Copy)
++    (hroot : AncestralRoot N s) (h : CombFrontier (state s) t pref rest)
++    (hb : b ∈ t.leaves) :
++    completionTreeLaw N r b s
++      (toUnranked (rest.foldl (fun u z => .graft u (.leaf z)) t)) =
++        combProbability rest.length := by
++  classical
++  induction rest generalizing s t pref with
++  | nil =>
++      exact terminal_frontier_target_mass_one N r s t pref b h hb
++  | cons next rest ih =>
++      let target := toUnranked ((next :: rest).foldl (fun u z => .graft u (.leaf z)) t)
++      let good := prescribedChoices N s hroot t pref next rest h
++      let f := fun p : Choice N s =>
++        completionTreeLaw N r b (stepDestination N s (some p)) target
++      have hcard : Fintype.card (Choice N s) ≠ 0 := by
++        rw [frontier_choice_card N s hroot t pref (next :: rest) h]
++        simp only [List.length_cons]
++        positivity
++      have hwrong : ∀ p, p ∉ good → f p = 0 := by
++        intro p hp
++        apply wrong_choice_target_mass_zero N r s t pref next b rest hroot h hb p
++        intro hpair
++        exact hp ((mem_prescribedChoices N s hroot t pref next rest h p).mpr hpair)
++      have hright : ∀ p ∈ good, f p = combProbability rest.length := by
++        intro p hp
++        have hpair := (mem_prescribedChoices N s hroot t pref next rest h p).mp hp
++        have hf := actual_correct_choice_frontier N s t pref next rest h p hpair
++        have hb' : b ∈ (Genealogy.graft t (.leaf next)).leaves :=
++          Finset.mem_union.mpr (Or.inl hb)
++        exact ih (stepDestination N s (some p)) (.graft t (.leaf next)) p.2.val.1
++          (ancestral_merger_preserved N s hroot p) hf hb'
++      have hsum : (∑ p : Choice N s, f p) = 2 * combProbability rest.length := by
++        calc
++          (∑ p : Choice N s, f p) = ∑ p ∈ good, f p := by
++            symm
++            apply Finset.sum_subset (Finset.subset_univ good)
++            intro p _ hp
++            exact hwrong p hp
++          _ = ∑ _p ∈ good, combProbability rest.length :=
++            Finset.sum_congr rfl hright
++          _ = 2 * combProbability rest.length := by
++            rw [Finset.sum_const,nsmul_eq_mul]
++            rw [show good.card = 2 from prescribedChoices_card N s hroot t pref next rest h]
++            norm_num
++      rw [completionTreeLaw_jump_sum N r b s hroot hcard]
++      change ENNReal.ofReal (1 / (Fintype.card (Choice N s) : ℝ)) * (∑ p, f p) = _
++      rw [hsum,frontier_choice_card N s hroot t pref (next :: rest) h]
++      rfl
++
+ end ActualCompletion
+ end DotG34.SpecifiedCombEvent
