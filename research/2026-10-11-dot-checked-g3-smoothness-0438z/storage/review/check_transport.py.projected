@@ -1,0 +1,94 @@
+"""Independent read-only historical byte check plus synthetic failure injection.
+Only newly created test fixtures may be archived/restored by this checker.
+"""
+from pathlib import Path
+import gzip,hashlib,importlib.util,io,json,os,time
+P=Path('$TRANSPORT')
+OUT=Path(__file__).resolve().parent
+h=lambda b:hashlib.sha256(b).hexdigest()
+rd=lambda p:json.loads(Path(p).read_bytes())
+pins=rd(P/'FROZEN-REVIEW-MANIFEST.json')
+for f,s in pins.items():assert h((P/f).read_bytes())==s,(f,'changed')
+assert pins['audit_transport.py']=='44b49ea19dbee3cf3cc25ec9e5d07c64d216721c009bda01c6b293f44423fe2d'
+ix=rd(P/'INDEX.json');entries=ix['entries'];assert len(entries)==2
+old_expected=[('ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53',115073144),('026783d9a4476842d9403b041b112fa08373b250885672163e3a47bcf17686ab',115166638)]
+current=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z/.build/runs/20261011T040211.744850Z/attempts/00007-OwnedAudit/work/AUDIT-RESULT.json')
+curstat=current.stat();assert h(current.read_bytes())=='9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2'
+rows=[]
+for e,expected in zip(entries,old_expected):
+ assert (e['raw_sha256'],e['raw_bytes'])==expected
+ raw=Path(e['raw_path']);before=raw.stat();assert before.st_nlink==1 and not raw.is_symlink()
+ for k in ['result','final_receipt','transport']:
+  assert h(Path(e[k+'_path']).read_bytes())==e[k+'_sha256']
+ result=rd(e['result_path']);receipt=result['audit_receipt'];assert result['status']=='PASS'
+ assert receipt['kind']=='complete-owned-audit' and receipt['status']=='PASS_FRESH_KERNEL_CHECK' and receipt['exit_code']==0 and receipt['source_and_imports_stable']
+ assert receipt['audit_output']==str(raw)
+ assert [x for x in receipt['auxiliary_outputs'] if x['path']=='work/AUDIT-RESULT.json']==[{'path':'work/AUDIT-RESULT.json','bytes':e['raw_bytes'],'sha256':e['raw_sha256']}]
+ assert rd(e['final_receipt_path'])['status']=='PASS_ALL_REQUESTED_TARGETS'
+ t=rd(e['transport_path']);assert e['parts']==[dict(x,path=str(Path(e['transport_path']).parent/x['path'])) for x in t['parts']]
+ bs=[]
+ for v in e['parts']:
+  p=Path(v['path']);assert not p.is_symlink();b=p.read_bytes();assert len(b)==v['bytes'] and h(b)==v['sha256'];bs.append(b)
+ z=b''.join(bs);assert h(z)==t['gzip_sha256']==e['gzip_sha256'];hashraw=hashlib.sha256();n=0
+ with gzip.GzipFile(fileobj=io.BytesIO(z)) as dec,raw.open('rb') as r:
+  while b:=dec.read(1024*1024):
+   n+=len(b);assert n<=e['raw_bytes'];assert r.read(len(b))==b;hashraw.update(b)
+  assert not r.read(1)
+ assert (n,hashraw.hexdigest())==(e['raw_bytes'],e['raw_sha256'])
+ after=raw.stat();assert (before.st_ino,before.st_size,before.st_mtime_ns,before.st_ctime_ns)==(after.st_ino,after.st_size,after.st_mtime_ns,after.st_ctime_ns)
+ rows.append({'raw_sha256':e['raw_sha256'],'raw_bytes':n,'all_recovered_bytes_equal':True,'raw_unchanged':True,'nlink':after.st_nlink,'allocated_bytes':after.st_blocks*512})
+spec=importlib.util.spec_from_file_location('transport_reviewed',P/'audit_transport.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+assert len(m.entries())==2
+T=OUT/('fixtures-'+str(time.time_ns()));T.mkdir();m.ROOT=T;(T/'INDEX.json').write_text('fixture-only')
+controls=[]
+def fixture(name):
+ d=T/name;d.mkdir();raw=d/'attempt/work/AUDIT-RESULT.json';raw.parent.mkdir(parents=True)
+ b=(name.encode()+b'\x00exact-fixture\xff\n')*64;raw.write_bytes(b);z=gzip.compress(b,mtime=0);part=d/'part';part.write_bytes(z)
+ t={'raw_sha256':h(b),'gzip_sha256':h(z),'parts':[{'path':'part','bytes':len(z),'sha256':h(z)}]};tp=d/'transport.json';tp.write_text(json.dumps(t))
+ receipt={'status':'PASS','audit_receipt':{'kind':'complete-owned-audit','status':'PASS_FRESH_KERNEL_CHECK','exit_code':0,'source_and_imports_stable':True,'audit_output':str(raw),'receipt_directory':str(raw.parent.parent),'auxiliary_outputs':[{'path':'work/AUDIT-RESULT.json','bytes':len(b),'sha256':h(b)}]}}
+ rp=d/'result.json';rp.write_text(json.dumps(receipt));fp=d/'final.json';fp.write_text(json.dumps({'status':'PASS_ALL_REQUESTED_TARGETS'}))
+ e={'raw_path':str(raw),'raw_sha256':h(b),'raw_bytes':len(b),'gzip_sha256':h(z),'parts':[{'path':str(part),'bytes':len(z),'sha256':h(z)}]}
+ for key,p in [('result',rp),('final_receipt',fp),('transport',tp)]:e[key+'_path']=str(p);e[key+'_sha256']=h(p.read_bytes())
+ return e,b
+# Explicit journal failure occurs before unlink, leaving the original exact.
+e,b=fixture('journal_failure_before_unlink');old=m.journal
+m.journal=lambda ev:(_ for _ in ()).throw(OSError('injected journal failure'))
+try:m.archive_raw(e);raise AssertionError('expected failure')
+except OSError:assert Path(e['raw_path']).read_bytes()==b
+finally:m.journal=old
+controls.append('pre_unlink_journal_failure_preserves_raw')
+# Simulate interruption immediately after raw unlink: verified archive still restores.
+e,b=fixture('interruption_after_unlink');old=m.syncdir;parent=Path(e['raw_path']).parent
+m.syncdir=lambda p:(_ for _ in ()).throw(OSError('injected post-unlink interruption')) if Path(p)==parent else old(p)
+try:m.archive_raw(e);raise AssertionError('expected failure')
+except OSError:assert not Path(e['raw_path']).exists();assert b''.join(m.chunks(e))==b
+finally:m.syncdir=old
+m.restore_raw(e);assert Path(e['raw_path']).read_bytes()==b
+controls.append('post_unlink_interruption_exact_archive_recovery')
+# Simulate restore interruption after exclusive link, before temporary unlink.
+e,b=fixture('interruption_after_restore_link');m.archive_raw(e);old=m.syncdir;parent=Path(e['raw_path']).parent
+m.syncdir=lambda p:(_ for _ in ()).throw(OSError('injected post-link interruption')) if Path(p)==parent else old(p)
+try:m.restore_raw(e);raise AssertionError('expected failure')
+except OSError:assert Path(e['raw_path']).read_bytes()==b
+finally:m.syncdir=old
+m.restore_raw(e);assert Path(e['raw_path']).read_bytes()==b
+controls.append('post_link_interruption_keeps_exact_raw_and_retry_validates')
+# Existing corrupt raw is never overwritten or silently replaced by archives.
+e,b=fixture('restore_no_overwrite');p=Path(e['raw_path']);p.write_bytes(b'corrupt retained fixture')
+try:m.restore_raw(e);raise AssertionError('expected rejection')
+except ValueError:assert p.read_bytes()==b'corrupt retained fixture'
+controls.append('existing_corrupt_raw_not_overwritten')
+# Change raw metadata after verification before journal completion.
+e,b=fixture('metadata_drift_before_unlink');p=Path(e['raw_path']);old=m.journal
+m.journal=lambda event:(old(event),os.utime(p,ns=(p.stat().st_atime_ns,p.stat().st_mtime_ns+1000000)))
+try:m.archive_raw(e);raise AssertionError('expected rejection')
+except ValueError:assert p.read_bytes()==b
+finally:m.journal=old
+controls.append('metadata_drift_blocks_unlink')
+# Do not touch any original. Recheck both raw hashes and the current audit.
+for e in entries:assert h(Path(e['raw_path']).read_bytes())==e['raw_sha256']
+assert current.stat().st_mtime_ns==curstat.st_mtime_ns and current.stat().st_ino==curstat.st_ino
+assert h(current.read_bytes())=='9e9d0a7cae4f2feef7c0f1aeab323c13f0a937847e0510048ab2d95ad2cf18d2'
+for f,s in pins.items():assert h((P/f).read_bytes())==s
+result={'status':'PASS_INDEPENDENT_READONLY_RECOVERY_AND_SYNTHETIC_FAILURE_CONTROLS','reviewed_script_sha256':pins['audit_transport.py'],'reviewed_index_sha256':pins['INDEX.json'],'historical_audits':rows,'new_failure_controls':controls,'owner_controls_pass_count':len(rd(P/'CONTROL-RESULT-FINAL.json')['tests']),'historical_mutations':0,'current_1575_unchanged':True,'compiler_invoked':False}
+(OUT/'INDEPENDENT-CHECK-RESULT.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

@@ -1,0 +1,21 @@
+# Independent agent preflight: separate G3 smoothness profile
+
+2026-10-11 04:30 UTC. Scoped PASS for staging and launch compatibility only; compilation and final audit are pending.
+
+The graph a238055afc9aef21c879fa4c14a8396e4124e24cb73262b32e051b3e0cf8643a contains exactly the accepted G3BernoulliDerivatives provider and the two previously statically reviewed drafts, G3BernoulliSmoothness (5cb2c7a1...) and G3BernoulliSmoothnessBoundaryChecks (8c088e22...). All three source hashes and literal imports match. The two drafts are byte-identical to the frozen author copies.
+
+The single staged provider receipt is literally equal to its accepted 1,575 record. Its full cache key, compiled bundle and all direct-import companion identities were checked. All seven external import bundles were independently rehashed against the accepted 1,575 import ledger, including the two additional ContDiff modules. No foreign compiled draft object is staged.
+
+Every copied script is byte-identical to the already reviewed separate 219-module package. The empty-owned-Mathlib adapter is 80a95c662ac89dbd67694a6e024d1a14899bfb27918277de6697ee55a397d3ce; the supervisor is 2b1a58b50693fdb4968c68adf315c3be5e1a5d0467dd3ff148a8449ac5a6f2d6. The graph has no owned Mathlib source, satisfying that adapter's explicit premise. Core compiler, trust/kernel, native, namespace, receipt, resource and audit behavior are unchanged.
+
+The staging receipt records 155,648 bytes, within the approved 2 MiB preparation envelope. At the executed read-only check, free storage exceeded the unchanged 20 GiB launch threshold and available memory exceeded the inherited 7 GiB initial requirement. The owner must still allow the supervisor to rerun those checks at launch.
+
+Launch must explicitly select `candidate/g3-smoothness`, for example through the existing Lake verify argument. The inherited default `current/connected` is not a target in this small graph and correctly fails closed. CONNECTED_LEAN_BIN must be the pinned compiler directory, not the executable path. These are launch requirements, not a claim that the review set the owner's environment.
+
+No compiler was invoked by this reviewer; accepted 1,575 remains unchanged. This is a separate three-module test, not a new accepted full union or a G3 acquisition result. The first checker version's ambiguous Boolean environment label was replaced by an explicit required-environment-kind field; both versions and successful outputs are retained.
+
+## Bindings
+
+- `check_preflight.py`: `b18ce0d00764a8e37a906e5dd5d7a45e9ccfea2bda6081dc1a6d9ad0f3ef09c4`
+- `PREFLIGHT-RESULT.json`: `b8ee6bc430c4a0eca360b99aaf00fbfa020b99a365ac14bd580e61ac648795fb`
+- `check_preflight.log`: `ff1e67cc14893e7c9454aa1c5134325bc1269d679d63abcfa8d01fca826bc144`

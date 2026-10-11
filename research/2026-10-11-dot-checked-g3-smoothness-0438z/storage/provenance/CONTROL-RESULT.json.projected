@@ -1,0 +1,70 @@
+{
+  "status": "PASS_SYNTHETIC_CONTROLS_NO_HISTORICAL_MUTATION",
+  "tests": [
+    {
+      "test": "corrupt_archive",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "missing_archive",
+      "status": "PASS_REJECTED",
+      "error": "FileNotFoundError"
+    },
+    {
+      "test": "receipt_hash_drift",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "wrong_receipt_path",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "failed_receipt",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "wrong_auxiliary_hash",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "running_final",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "raw_drift_no_fallback",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "wrong_gzip_hash",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "wrong_part_path",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "symlink_archive",
+      "status": "PASS_REJECTED",
+      "error": "ValueError"
+    },
+    {
+      "test": "fixture_archive_restore_exact",
+      "status": "PASS",
+      "bytes": 30000,
+      "sha256": "15059d145620f21e2ec764478a081fe6add7bf17604596c746e57022ec16fab8"
+    },
+    {
+      "test": "unlisted_reader_path",
+      "status": "PASS_REJECTED"
+    }
+  ]
+}

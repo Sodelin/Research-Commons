@@ -1,0 +1,21 @@
+from pathlib import Path
+import json,hashlib,os,shutil,re
+B=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z');W=Path('$SHARED_WORKSPACE/g4-span-check-20261011-0146z');D=Path('$SOURCE_DRAFT');O=Path('$PACKAGE');assert not O.exists();start=shutil.disk_usage(B).free;assert start>20*2**30+2*2**20;O.mkdir();sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();base=json.loads((B/'DEPENDENCY-GRAPH.json').read_text())['targets']['current/connected'];mods={'G3BernoulliDerivatives':base['modules']['G3BernoulliDerivatives']};order=['G3BernoulliDerivatives']
+for n in ['G3BernoulliSmoothness','G3BernoulliSmoothnessBoundaryChecks']:
+ p=D/(n+'.lean');imports=[w for s in re.findall(r'^import\s+([^\n]+)',p.read_text(),re.M) for w in s.split()];mods[n]={'module':n,'sha256':sha(p),'imports':imports};order.append(n)
+g={'targets':{'candidate/g3-smoothness':{'roots':[order[-1]],'order':order,'modules':mods,'external_imports':sorted({i for m in mods.values() for i in m['imports'] if i not in mods})}},'scope':'Separate bounded3-module G3 smoothness candidate; accepted1575 unchanged.'};(O/'DEPENDENCY-GRAPH.json').write_text(json.dumps(g,indent=2)+'\n');(O/'source-store').mkdir();(O/'scripts').mkdir();(O/'provenance').mkdir()
+for n,e in mods.items():
+ p=B/'source-store'/(e['sha256']+'.lean') if n==order[0] else D/(n+'.lean');os.link(p,O/'source-store'/(e['sha256']+'.lean'))
+for p in (W/'scripts').iterdir():
+ if p.is_file() and p.name in ['build_connected.py','AuditTemplate.lean','build_with_mathlib_overlay.py','build_with_authenticated_overlay.py','build_desktop.py','build_no_owned_mathlib.py','run_union.py','run_current.py','completed_trace_transport.py']:shutil.copyfile(p,O/'scripts'/p.name)
+for n in ['lakefile.lean','lean-toolchain','lake-manifest.json']:shutil.copyfile(W/n,O/n)
+for p in (B/'.build/cache').glob('*/receipt.json'):
+ r=json.loads(p.read_text())
+ if r['module']!='G3BernoulliDerivatives':continue
+ dest=O/'.build/cache'/p.parent.name;dest.mkdir(parents=True)
+ for q in p.parent.iterdir():
+  if q.name=='receipt.json':shutil.copyfile(q,dest/q.name)
+  elif q.is_file():os.link(q,dest/q.name)
+ assert r['source_sha256']==mods[order[0]]['sha256'];shutil.copyfile(p,O/'provenance/ACCEPTED-DERIVATIVE-RECEIPT.json')
+assert len(list((O/'.build/cache').glob('*/receipt.json')))==1
+prep={'status':'PREPARED_THREE_MODULE_CANDIDATE_PENDING_PREFLIGHT','graph_sha256':sha(O/'DEPENDENCY-GRAPH.json'),'source_bytes':sum(p.stat().st_size for p in (O/'source-store').iterdir()),'new_source_bytes':sum((D/(n+'.lean')).stat().st_size for n in order[1:]),'scripts':{p.name:sha(p) for p in (O/'scripts').iterdir()}};(O/'PREPARATION.json').write_text(json.dumps(prep,indent=2)+'\n');shutil.copyfile(Path(__file__),O/'provenance/PREPARATION-SCRIPT.py');end=shutil.disk_usage(O).free;assert start-end<2*2**20 and end>20*2**30;(O/'STAGING-BUDGET.json').write_text(json.dumps({'start_free':start,'end_free':end,'measured_consumption':start-end,'cap':2*2**20,'launch_threshold':20*2**30,'compiler_invoked':False},indent=2)+'\n');print(O,prep['graph_sha256'],start-end)

@@ -1,0 +1,53 @@
+{
+  "targets": {
+    "candidate/g3-smoothness": {
+      "roots": [
+        "G3BernoulliSmoothnessBoundaryChecks"
+      ],
+      "order": [
+        "G3BernoulliDerivatives",
+        "G3BernoulliSmoothness",
+        "G3BernoulliSmoothnessBoundaryChecks"
+      ],
+      "modules": {
+        "G3BernoulliDerivatives": {
+          "module": "G3BernoulliDerivatives",
+          "sha256": "7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0",
+          "imports": [
+            "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+            "Mathlib.Analysis.Calculus.Deriv.Pow",
+            "Mathlib.Tactic.Ring",
+            "Mathlib.Tactic.Linarith",
+            "Mathlib.Tactic.Positivity"
+          ]
+        },
+        "G3BernoulliSmoothness": {
+          "module": "G3BernoulliSmoothness",
+          "sha256": "5cb2c7a19d6bfbbc9f630ec969d4fe065e826554c3254eb1cc2a37361193fe50",
+          "imports": [
+            "G3BernoulliDerivatives",
+            "Mathlib.Analysis.Calculus.ContDiff.Comp",
+            "Mathlib.Analysis.Calculus.ContDiff.Operations"
+          ]
+        },
+        "G3BernoulliSmoothnessBoundaryChecks": {
+          "module": "G3BernoulliSmoothnessBoundaryChecks",
+          "sha256": "8c088e22551c22665ae1134182ee3aeb5abc508495ed50d09c85fcbab2dba310",
+          "imports": [
+            "G3BernoulliSmoothness"
+          ]
+        }
+      },
+      "external_imports": [
+        "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "Mathlib.Analysis.Calculus.ContDiff.Operations",
+        "Mathlib.Analysis.Calculus.Deriv.Pow",
+        "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring"
+      ]
+    }
+  },
+  "scope": "Separate bounded3-module G3 smoothness candidate; accepted1575 unchanged."
+}

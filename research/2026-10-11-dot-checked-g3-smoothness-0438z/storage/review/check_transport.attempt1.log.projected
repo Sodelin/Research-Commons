@@ -1,0 +1,34 @@
+{
+  "status": "PASS_INDEPENDENT_READONLY_RECOVERY_AND_SYNTHETIC_FAILURE_CONTROLS",
+  "reviewed_script_sha256": "44b49ea19dbee3cf3cc25ec9e5d07c64d216721c009bda01c6b293f44423fe2d",
+  "reviewed_index_sha256": "38fd0489d5262e7e96898338fbea38101a4257621cefb0fa4f922c4bc0de3a0e",
+  "historical_audits": [
+    {
+      "raw_sha256": "ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53",
+      "raw_bytes": 115073144,
+      "all_recovered_bytes_equal": true,
+      "raw_unchanged": true,
+      "nlink": 1,
+      "allocated_bytes": 115077120
+    },
+    {
+      "raw_sha256": "026783d9a4476842d9403b041b112fa08373b250885672163e3a47bcf17686ab",
+      "raw_bytes": 115166638,
+      "all_recovered_bytes_equal": true,
+      "raw_unchanged": true,
+      "nlink": 1,
+      "allocated_bytes": 115167232
+    }
+  ],
+  "new_failure_controls": [
+    "pre_unlink_journal_failure_preserves_raw",
+    "post_unlink_interruption_exact_archive_recovery",
+    "post_link_interruption_keeps_exact_raw_and_retry_validates",
+    "existing_corrupt_raw_not_overwritten",
+    "metadata_drift_blocks_unlink"
+  ],
+  "owner_controls_pass_count": 13,
+  "historical_mutations": 0,
+  "current_1575_unchanged": true,
+  "compiler_invoked": false
+}

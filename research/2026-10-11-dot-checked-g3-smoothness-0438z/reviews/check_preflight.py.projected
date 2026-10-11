@@ -1,0 +1,30 @@
+from pathlib import Path
+import hashlib,importlib.util,json,shutil
+P=Path('$PACKAGE');O=Path(__file__).resolve().parent
+B=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z/.build/runs/20261011T040211.744850Z')
+A=Path('$SHARED_WORKSPACE/g4-span-check-20261011-0146z');D=Path('$SOURCE_DRAFT')
+h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();read=lambda p:json.loads(p.read_bytes())
+spec=importlib.util.spec_from_file_location('reviewhelper',Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+assert h(P/'DEPENDENCY-GRAPH.json')=='a238055afc9aef21c879fa4c14a8396e4124e24cb73262b32e051b3e0cf8643a'
+graph=read(P/'DEPENDENCY-GRAPH.json');assert set(graph['targets'])=={'candidate/g3-smoothness'};g=graph['targets']['candidate/g3-smoothness'];assert g['order']==['G3BernoulliDerivatives','G3BernoulliSmoothness','G3BernoulliSmoothnessBoundaryChecks'];assert g['roots']==['G3BernoulliSmoothnessBoundaryChecks'];assert not any(n.startswith('Mathlib.') for n in g['modules'])
+for name,v in g['modules'].items():
+ f=P/'source-store'/(v['sha256']+'.lean');assert h(f)==v['sha256'];assert m.imports(f.read_bytes())==v['imports']
+ if name!='G3BernoulliDerivatives':assert f.read_bytes()==(D/(name+'.lean')).read_bytes()
+prep=read(P/'PREPARATION.json');assert prep['graph_sha256']==h(P/'DEPENDENCY-GRAPH.json')
+for n,v in prep['scripts'].items():assert h(P/'scripts'/n)==v;assert (P/'scripts'/n).read_bytes()==(A/'scripts'/n).read_bytes()
+assert prep['scripts']['build_no_owned_mathlib.py']=='80a95c662ac89dbd67694a6e024d1a14899bfb27918277de6697ee55a397d3ce'
+assert prep['scripts']['run_union.py']=='2b1a58b50693fdb4968c68adf315c3be5e1a5d0467dd3ff148a8449ac5a6f2d6'
+rp=list((P/'.build/cache').glob('*/receipt.json'));assert len(rp)==1;r=read(rp[0]);accepted=next(x for x in read(B/'targets/current_connected/RESULT.json')['component_receipts'] if x['module']=='G3BernoulliDerivatives');assert r==accepted
+keydata={'module':r['module'],'source':r['source_sha256'],'compiler':r['compiler_sha256'],'mathlib':r['mathlib_commit'],'trust':0,'kernel_check':True,'imports':r['direct_import_artifacts'],'native_runtime_digest':r['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'}
+key=hashlib.sha256(json.dumps(keydata,sort_keys=True).encode()).hexdigest();assert rp[0].parent.name==key
+m.bundle(Path(r['cached_object']),r['object_artifacts']);m.bundle(rp[0].parent/'artifact.olean',r['object_artifacts'])
+for imp,b in r['direct_import_bindings'].items():m.bundle(Path(b['path']),b['artifacts'])
+ledger=read(B/'targets/current_connected/ACTUAL-IMPORTED-ARTIFACTS.json');ext={}
+for name in g['external_imports']:
+ rows=[x for x in ledger if x['module']==name];assert rows,name
+ for x in rows:assert h(Path(x['path']))==x['sha256']
+ ext[name]={x['suffix']:x['sha256'] for x in rows}
+st=read(P/'STAGING-BUDGET.json');assert st['measured_consumption']==st['start_free']-st['end_free']==155648 and st['cap']==2*2**20 and st['measured_consumption']<st['cap'];assert st['launch_threshold']==20*2**30
+free=shutil.disk_usage(P).free;mem=int(next(l.split()[1] for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemAvailable:')))*1024;assert free>20*2**30 and mem>=7*2**30
+result={'status':'PASS_THREE_MODULE_PREFLIGHT_PENDING_COMPILATION','graph_sha256':h(P/'DEPENDENCY-GRAPH.json'),'draft_sources_literal_equal':2,'accepted_receipts_literal_equal':1,'accepted_cache_key':key,'external_import_objects_rehashed':ext,'preparation_budget':st,'observed_free_bytes':free,'observed_available_memory_bytes':mem,'empty_owned_adapter_sha256':prep['scripts']['build_no_owned_mathlib.py'],'supervisor_sha256':prep['scripts']['run_union.py'],'required_target_argument':'candidate/g3-smoothness','required_lean_bin_environment_kind':'directory','compiler_invoked':False}
+(O/'PREFLIGHT-RESULT.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='external_import_objects_rehashed'},indent=2))

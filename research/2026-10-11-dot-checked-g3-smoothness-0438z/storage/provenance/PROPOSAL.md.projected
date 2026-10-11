@@ -1,0 +1,33 @@
+# Proposed reversible historical audit transport
+
+Status: awaiting independent review and explicit execution handoff. No historical raw audit has been changed. The current1575 audit, compiler/native artifacts, source files, receipts, active traces and failed evidence are ineligible.
+
+## Exact scope
+
+INDEX.json names only the completed accepted1568 and1570 raw AUDIT-RESULT.json paths. Each binds its original successful target RESULT, terminal FINAL-RECEIPT, receipt-listed raw length/SHA, and the already-existing exact public gzip transport manifest/parts. The raw audit hashes are ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53 and026783d9a4476842d9403b041b112fa08373b250885672163e3a47bcf17686ab. Their lengths are115073144 and115166638 bytes. The constant manifest hash and two-entry allowlist in audit_transport.py prevent detached or expanded entries.
+
+The existing archives are complete mathematical audit bytes, already publicly distributed as ordered gzip parts. This does not claim that raw local filesystem paths or native-loader payloads were publicly available. No new compression algorithm, term normalization or mathematical modification is introduced.
+
+## Read-only proof of recovery
+
+`python3 audit_transport.py check` authenticates both success receipts, terminal status, exact ordered archive parts, whole gzip digest, full decompressed raw size/hash, and compares every recovered byte to each still-present raw original. READONLY-VALIDATION.json records actual PASS. No raw original was altered. Thirteen synthetic controls were executed, including a complete archive/restore roundtrip on newly created fixture bytes; the fixtures and journal are retained. Missing/corrupt archives, detached/mismatched/failed receipts, nonterminal runs, wrong auxiliary hash, raw drift, changed part paths, symlinks and unknown reader paths fail closed. No Lean invocation occurs.
+
+## Proposed representation change, only after review
+
+The explicit archive CLI additionally requires --commit-reviewed-representation-change. It revalidates the exact byte equality, locks the original file, checks inode/size/mode/mtime/ctime identity, fsyncs all existing archive parts, transport manifest and pinned index/directories, writes/fsyncs a pre-change journal, and only then removes the redundant raw filesystem representation. It revalidates archive-only recovery and journals completion. The exact bytes remain fully recoverable in already-retained lossless archives; this is not irreversible evidence deletion. Unexpected failure leaves original records and archives intact; a pre-change journal permits recovery if interruption follows replacement. Immutable historical evidence and current1575 files remain otherwise untouched.
+
+The restore CLI verifies the archive and receipts first, writes an exclusive temporary file, hashes/fsyncs it, creates the original path without overwrite, verifies it, and removes only its redundant temporary hardlink. Existing matching raw data are left alone; existing mismatching data cause failure. Failed temporary files are retained. Restored content is exact; recreated filesystem inode/timestamps are not represented as original metadata.
+
+## Reader boundary
+
+No core/compiler/verifier monkeypatch is made. Existing raw-path consumers fail closed when the raw representation is absent. A caller must explicitly use read_audit(path), which authenticates the same pinned entry and returns exact raw bytes, or restore the raw file before using its unchanged legacy reader. The adapter never falls back for an existing corrupt raw file or an unlisted path. Accepted component cache admission does not read these historical audit files; current1575 raw audit remains available for the next additive record comparison. Historical terminal verifiers that read the old files directly require restoration or an explicit reviewed adapter use-site.
+
+## Capacity
+
+Both eligible raw files currently have one hardlink. Existing gzip parts are already allocated, so the recovered capacity is their raw allocated blocks, approximately230MB decimal, with no archive deletion. Journals/manifests are small additional allocations. After any approved execution, measure actual free bytes and rerun the original full launch preflight before a compiler; no promise of future capacity or guard relaxation is made.
+
+All representation operations remain unexecuted on actual historical audits at this proposal stage. The source, index, read-only validation, synthetic tests and their exact hashes are submitted to the existing independent reviewer.
+
+## Quiescent-workspace assumption
+
+This is an offline operation on frozen historical audits. Advisory flock and path identity checks coordinate cooperating processes; they are not a defense against a hostile concurrent namespace replacement. No compiler or other writer may touch the two eligible paths during archive/restore. The exact allowlist and receipt checks remain fail-closed.

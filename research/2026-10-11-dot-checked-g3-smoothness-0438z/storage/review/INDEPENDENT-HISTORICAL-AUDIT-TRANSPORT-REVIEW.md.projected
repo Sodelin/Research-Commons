@@ -1,0 +1,59 @@
+# Independent agent review: reversible historical audit transport
+
+Date: 2026-10-11 04:24 UTC. Reviewer: dot's existing exact-obstructions review lane.
+
+## Verdict and precise boundary
+
+**Scoped PASS** for the proposed explicit archive/restore CLI and explicit read adapter, applied only to the two allowlisted completed 1,568/1,570 mathematical audit files in the frozen index, in a quiescent workspace with cooperating processes. No actual historical raw file was changed during this review. The current 1,575 audit was independently rehashed unchanged. This is a representation/recovery review, not another compiler or mathematical acceptance run, and does not itself execute the proposal.
+
+The script's pinned index plus literal two-entry allowlist bind the exact raw paths, lengths and hashes. Successful historical target/final receipts, the receipt-listed auxiliary file, the transport manifest, every ordered gzip part, the whole gzip digest, and the complete recovered raw size/hash are authenticated before any eligible change. The CLI's archive/restore modes require the explicit reviewed-representation-change switch; the default is read-only. Current audits, sources, compiler/native artifacts, failed or active evidence, and other files are ineligible. The low-level entry functions are implementation helpers used with synthetic entries by tests; the reviewed operational interface is the pinned CLI and allowlisted reader.
+
+## Independently executed checks
+
+An independent standard-library checker recomposed the existing archives and compared every decompressed byte with both still-present historical originals:
+
+- 1,568 audit: SHA-256 `ee29bc1196c22fb27dd024e8593b0208aba5f4195edbf4895871235ee6e42e53`, 115,073,144 bytes.
+- 1,570 audit: SHA-256 `026783d9a4476842d9403b041b112fa08373b250885672163e3a47bcf17686ab`, 115,166,638 bytes.
+
+Both had one hardlink, unchanged inode/size/mtime/ctime during the check, and respectively 115,077,120 and 115,167,232 allocated bytes. The prospective gross block saving is therefore 230,244,352 bytes, before journals and other concurrent allocations; this is not a new compiler-capacity approval.
+
+Five additional failure controls used only newly created fixture bytes:
+
+1. Journal failure before unlink preserves the original raw file.
+2. Interruption immediately after raw unlink leaves exact archive recovery available; restoration recovers every byte.
+3. Interruption after exclusive restore-link creation leaves exact raw data and a retained temporary link; retry validates the existing original without overwrite.
+4. Existing corrupt raw data cause rejection and are not overwritten or silently replaced from an archive.
+5. A metadata change immediately before unlink blocks replacement and preserves the original bytes.
+
+The author's 13 synthetic controls were also independently replayed successfully: missing/corrupt archives, receipt drift, detached or unsuccessful receipt bindings, wrong auxiliary hash, stale RUNNING terminal status, raw drift, wrong gzip/part path, archive symlink, unlisted reader path, and a complete fixture archive/restore roundtrip. No Lean or Lake process was launched.
+
+## Safety and recovery analysis
+
+Before raw unlink, the implementation holds an advisory lock, verifies exact data and path identity, fsyncs the existing archives/index/manifests and their directories, and writes/fsyncs a pre-change journal containing the complete entry. The directory is synced after unlink, and archive-only validation plus a completion journal follow. An interruption after unlink can leave the pre-change journal as the last record; the verified archives remain sufficient to restore the exact original bytes. A completion journal is not fabricated on failure.
+
+Restoration uses an exclusive temporary file, complete hashing and fsync, then a non-overwriting link to the original pathname. It validates the new raw file before removing its redundant temporary link. Failed temporaries are retained. An interrupted operation may require checking or restoring before retrying; the archive mode intentionally rejects an already absent raw file. Recreated inode and timestamps are not claimed to be original metadata.
+
+The advisory lock and path checks do not provide protection against hostile concurrent filesystem replacement or arbitrary writers ignoring the lock. The final proposal now expressly requires a quiescent workspace. Within that premise, no blocker was found. This review assumes the authenticated existing archives and containing storage remain retained, as specified.
+
+The explicit reader validates all recovery bindings and rejects an existing corrupt raw file or an unknown path. It does not monkeypatch the filesystem or silently alter old consumers. Unchanged legacy readers of the raw paths require explicit restoration, or a separately reviewed call-site conversion to this adapter. Existing accepted component-cache receipts do not read these historical audit files. Any future verifier that does must respect this reader boundary.
+
+No source, compiler, namespace adapter, native library, trust flag, kernel check, audit statement, or acceptance rule changes. After approved execution, actual capacity must be measured and the unchanged launch preflight rerun. Public operational projections, if needed, require distinct hashes and honest raw-to-public mappings.
+
+## Frozen binding hashes
+
+- `audit_transport.py`: `44b49ea19dbee3cf3cc25ec9e5d07c64d216721c009bda01c6b293f44423fe2d`
+- `INDEX.json`: `38fd0489d5262e7e96898338fbea38101a4257621cefb0fa4f922c4bc0de3a0e`
+- `PROPOSAL.md`: `1b4385ea4bbe2262e7eab07639045c55023898019e0c4de4dcbd9636daa371f1`
+- `test_transport.py`: `6171feacfc1d3d3051a662765dab7bfda85fe303c8a17208f31a8dfadf3b8b54`
+- `CONTROL-RESULT-FINAL.json`: `6fbbae22ede531c864ce6f80d6f07c5a65eeb0ff14b5296c6f1be711ebe817d9`
+- `READONLY-VALIDATION.json`: `1f09dad3b180c87f237efdcdbc3420ba19e18ab64b8565c21729a68674d149ef`
+- `FROZEN-REVIEW-MANIFEST.json`: `e6ce01c0c5c4bd2d698b81db81054debfeb6e0920d545c26cb3ace38ec1ff8be`
+
+Independent evidence:
+
+- `check_transport.py`: `4d800e613d93d82d4752a56fd50284aff03cb55ed60f5ed46f44f63fddde106b`
+- `INDEPENDENT-CHECK-RESULT.json`: `e5a2c2b6cf3a009d50c0b40417a34a990f7f494d5caa6af6e85895d580bffa80`
+- `check_transport.attempt1.log`: `e5a2c2b6cf3a009d50c0b40417a34a990f7f494d5caa6af6e85895d580bffa80`
+- `owner_controls_replay.log`: `6fbbae22ede531c864ce6f80d6f07c5a65eeb0ff14b5296c6f1be711ebe817d9`
+
+The only proposal revision during review added the explicit quiescent-workspace assumption. The reviewed implementation and index bytes stayed unchanged. All synthetic fixtures and injected-failure evidence are retained.

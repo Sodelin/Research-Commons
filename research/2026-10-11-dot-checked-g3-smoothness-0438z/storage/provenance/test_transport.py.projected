@@ -1,0 +1,30 @@
+from pathlib import Path
+import json,gzip,hashlib,copy,importlib.util,time
+P=Path(__file__).resolve().parent;spec=importlib.util.spec_from_file_location('transport',P/'audit_transport.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);ROOT=P/('test-fixtures-'+str(time.time_ns()));ROOT.mkdir(exist_ok=False);results=[]
+def fixture(name):
+ d=ROOT/name;d.mkdir(exist_ok=False);raw=d/'attempt/work/AUDIT-RESULT.json';raw.parent.mkdir(parents=True);b=(b'complete mathematical fixture\n'*1000);raw.write_bytes(b);z=gzip.compress(b,mtime=0);part=d/'part000';part.write_bytes(z);t={'raw_sha256':m.sha(b),'gzip_sha256':m.sha(z),'parts':[{'path':'part000','bytes':len(z),'sha256':m.sha(z)}]};tp=d/'AUDIT-TRANSPORT.json';tp.write_text(json.dumps(t));rp=d/'RESULT.json';r={'status':'PASS','audit_receipt':{'status':'PASS_FRESH_KERNEL_CHECK','exit_code':0,'kind':'complete-owned-audit','source_and_imports_stable':True,'audit_output':str(raw),'receipt_directory':str(d/'attempt'),'auxiliary_outputs':[{'path':'work/AUDIT-RESULT.json','sha256':m.sha(b),'bytes':len(b)}]}};rp.write_text(json.dumps(r));fp=d/'FINAL.json';fp.write_text(json.dumps({'status':'PASS_ALL_REQUESTED_TARGETS'}));e={'raw_path':str(raw),'raw_sha256':m.sha(b),'raw_bytes':len(b),'result_path':str(rp),'result_sha256':m.sha(rp.read_bytes()),'final_receipt_path':str(fp),'final_receipt_sha256':m.sha(fp.read_bytes()),'transport_path':str(tp),'transport_sha256':m.sha(tp.read_bytes()),'gzip_sha256':m.sha(z),'parts':[{'path':str(part),'bytes':len(z),'sha256':m.sha(z)}]};return e,b
+def reject(name,mutate):
+ e,b=fixture(name);mutate(e)
+ try:m.validate(e)
+ except (ValueError,OSError,EOFError) as ex:results.append({'test':name,'status':'PASS_REJECTED','error':type(ex).__name__});return
+ raise AssertionError('accepted '+name)
+def edit_receipt(e,change):
+ p=Path(e['result_path']);r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r));e['result_sha256']=m.sha(p.read_bytes())
+def edit_final(e):
+ p=Path(e['final_receipt_path']);p.write_text(json.dumps({'status':'RUNNING'}));e['final_receipt_sha256']=m.sha(p.read_bytes())
+reject('corrupt_archive',lambda e:Path(e['parts'][0]['path']).write_bytes(b'bad'))
+reject('missing_archive',lambda e:Path(e['parts'][0]['path']).rename(Path(e['parts'][0]['path']+'.preserved')))
+reject('receipt_hash_drift',lambda e:Path(e['result_path']).write_text('{}'))
+reject('wrong_receipt_path',lambda e:edit_receipt(e,lambda r:r['audit_receipt'].update(audit_output='/wrong')))
+reject('failed_receipt',lambda e:edit_receipt(e,lambda r:r['audit_receipt'].update(exit_code=1)))
+reject('wrong_auxiliary_hash',lambda e:edit_receipt(e,lambda r:r['audit_receipt']['auxiliary_outputs'][0].update(sha256='0'*64)))
+reject('running_final',edit_final)
+reject('raw_drift_no_fallback',lambda e:Path(e['raw_path']).write_bytes(b'bad'))
+reject('wrong_gzip_hash',lambda e:e.update(gzip_sha256='0'*64))
+reject('wrong_part_path',lambda e:e['parts'][0].update(path=e['parts'][0]['path']+'.other'))
+reject('symlink_archive',lambda e:(Path(e['parts'][0]['path']).rename(Path(e['parts'][0]['path']+'.preserved')),Path(e['parts'][0]['path']).symlink_to(Path(e['parts'][0]['path']+'.preserved'))))
+e,b=fixture('roundtrip');m.validate(e);origroot=m.ROOT;m.ROOT=ROOT/'operations';m.ROOT.mkdir();(m.ROOT/'INDEX.json').write_text('{}');m.archive_raw(e);assert not Path(e['raw_path']).exists();assert b''.join(m.chunks(e))==b;m.restore_raw(e);assert Path(e['raw_path']).read_bytes()==b;m.ROOT=origroot;results.append({'test':'fixture_archive_restore_exact','status':'PASS','bytes':len(b),'sha256':m.sha(b)})
+try:m.read_audit('/unlisted/AUDIT-RESULT.json')
+except ValueError:results.append({'test':'unlisted_reader_path','status':'PASS_REJECTED'})
+else:raise AssertionError('unlisted accepted')
+print(json.dumps({'status':'PASS_SYNTHETIC_CONTROLS_NO_HISTORICAL_MUTATION','tests':results},indent=2))

@@ -1,0 +1,49 @@
+# Independent agent final review: separate G3 smoothness check
+
+2026-10-11 04:36 UTC. **Scoped PASS** for the exact three-module profile `candidate/g3-smoothness`, run `20261011T043239.135086Z`. This reviewer executed a separate read-only evidence verifier and did not invoke Lean or Lake.
+
+## Exact accepted endpoint
+
+The literal COMMON Bernoulli factor is jointly `ContDiffAt` in its two real parameters, and its negative-log response is jointly `ContDiffAt` wherever the literal factor is positive. The proof reuses the already accepted source definitions and Mathlib calculus. It also compiles five anonymous boundary applicability examples: p=0, q=1, q=0 with p<1 and nonzero exponent, exponent zero, and rejection of factor positivity at p=1,q=0 for nonzero exponent.
+
+These are calculus statements. Two-sided ambient parameter neighborhoods do not weaken the positive original-source class or the strict ordinary-baseline requirement. No Taylor remainder, inverse-function construction, source witness, effective radius, complete acquisition, or general G3 decision theorem follows from this small profile alone.
+
+## Sources and repair
+
+- Accepted reused `G3BernoulliDerivatives`: `7a3634f53843d6956f1032abde07246db455055f3c26ca5a223a9628247a24b0`.
+- Fresh `G3BernoulliSmoothness`: `3fa811ad071292dff624fe9625093e7d2f9efa92edae509afab123dbdef463a8`.
+- Fresh `G3BernoulliSmoothnessBoundaryChecks`: `b5bc612ab33f228dd005ee9187ad3c247f45d7d0f91dfa8424925b536d110f3b`.
+
+The first run, `20261011T043035.363265Z`, failed during parsing because the draft omitted `open scoped ContDiff` for the smoothness-order notation. The repair adds only that scope-opening line to each file. Imports, declarations, hypotheses and proof bodies are unchanged; the exact delta was independently checked against the pinned notation declaration. Original draft bytes and failed diagnostics are retained. The repaired version, not the original uncompiled hash, is the accepted source.
+
+## Executed evidence checks
+
+There are **two freshly compiled components and one authenticated reused component**, followed by a fresh aggregate and fresh complete ownership audit. The reused receipt is literally equal to its accepted 1,575 record. Source hashes, literal imports, compiled artifacts and companions, saved receipt commands, output logs, source/import stability, native identities, and generated aggregate/audit sources were independently checked.
+
+The final audit reports **12 declaration records and 10 theorem rows**, zero owned axioms, zero nonstandard-axiom rows and zero missing modules. All **nine shared records** are literally equal to the accepted 1,575 audit. There are exactly **three globally new named theorem records**: the two authored `contDiffAt` lemmas and the generated `bernoulliLog.eq_1` equation helper. The five anonymous examples compile but add no persistent owned named rows. No module-attribution or other shared-record difference was needed.
+
+The verifier rehashed all 18,338 imported artifact records covering 3,670 imported modules, checked actual namespace resolutions, and restored all five receipt-bound native traces. In total it hashed 18,412 distinct files (3,502,952,913 bytes). All checks completed in about 6.54 seconds. The native traces recover the exact original receipt-listed bytes.
+
+The empty-owned-Mathlib specialization remains exactly `80a95c662ac89dbd67694a6e024d1a14899bfb27918277de6697ee55a397d3ce`; the strict supervisor remains `2b1a58b50693fdb4968c68adf315c3be5e1a5d0467dd3ff148a8449ac5a6f2d6`. This graph owns no Mathlib module, and the complete pinned official namespace is retained. Every invocation here used trust level zero, kernel checking, `-Ddebug.skipKernelTC=false`, 4,096 MiB and 180 seconds. The final supervisor reports exit zero, no resource event, and compliance with the unchanged storage guards. The accepted full 1,575 target was not changed or rebuilt.
+
+## Reviewer correction history
+
+The first evidence-checker attempt incorrectly expected only the two authored names and stopped on the additional generated equation helper. The second still expected the four-owned desktop mask filename and stopped because this reviewed empty-owned profile instead records `NAMESPACE-OVERLAY-PINS.json` and `EMPTY-OWNED-MATHLIB-PINS.json`. The final checker validates those actual records and allows exactly the three inspected new names. Earlier checker versions and both failed logs are retained. Neither failure was a compiler or proof failure, and no acceptance was inferred before the final verifier passed.
+
+## Binding hashes
+
+- `graph_sha256`: `01328e89d32418a3f3c78e2b162dbb4b85d409a96a022624287330c2492cffd2`
+- `result_sha256`: `7420d5c6645f424edbd169a940250865f1170eb132c1300dcec5b63de8b70c91`
+- `final_receipt_sha256`: `70751bdaad26aa8320dc1699d9b3f93ba5a5798b33d58728976c3cd22e49e3d7`
+- `audit_sha256`: `5bf1613041a5b36b89b3cbe1e6f7ca662797b4a8d09ab31c8409b59da6143c19`
+- `supervisor_sha256`: `7fa1f08d984689b89379912b5eee70c7ff4363d223b3f329c1d53ff420811fe7`
+
+Independent evidence:
+
+- `check_final.py`: `dbfb135ca0814e8247a3113035524958c7af85fa9c1acd9e9695e417d0fec3b2`
+- `FINAL-REVIEW-RESULT.json`: `cff9d202da43c669384175343011ff6ed00ed0c035426d4d6b7d10bc2bd1f32a`
+- `check_final.attempt3.log`: `cff9d202da43c669384175343011ff6ed00ed0c035426d4d6b7d10bc2bd1f32a`
+- `REVISION-1-STATIC-DELTA-REVIEW.json`: `9510bf254bf6b49a9e53c1bf7a8da8c7d2d42b9722049f5fccec379216da09b5`
+- `INDEPENDENT-PREFLIGHT-REVIEW.md`: `0e63b5fe4bfd84f39513b71e9dfe753dc5c2c6c2e15c24a7bfe71d981ba97ad2`
+
+This is acceptance of the separate three-module profile only. It does not claim a newly accepted full 1,576/1,577 union. Operational evidence may be publicly projected with explicit raw/public hash mappings; modified bytes must not be labelled with raw hashes. Exact clean mathematical sources and the audit should remain unchanged.

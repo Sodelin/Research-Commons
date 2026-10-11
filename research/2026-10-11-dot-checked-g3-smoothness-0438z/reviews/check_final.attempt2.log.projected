@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "$INDEPENDENT_REVIEW/check_final.py", line 68, in <module>
+    mask=rd(R/'DESKTOP-NAMESPACE-MASK.json');assert mask['status']=='PASS_READONLY_NAMESPACE_MASK' and not mask['owned_exact_upstream_sources'];empty=rd(R/'EMPTY-OWNED-MATHLIB-PINS.json');assert empty['specialization_sha256']==prep['scripts']['build_no_owned_mathlib.py'] and empty['owned_mathlib_modules']==[]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py", line 20, in read
+    def read(p):return json.loads(p.read_bytes())
+                                  ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '$PACKAGE/.build/runs/20261011T043239.135086Z/DESKTOP-NAMESPACE-MASK.json'
