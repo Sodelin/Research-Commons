@@ -1,0 +1,11 @@
+"""Verify public exact bytes; this is not a compiler replay or local-native authentication."""
+from pathlib import Path
+import gzip,hashlib,json,re
+p=Path(__file__).resolve().parent
+sha=lambda b:hashlib.sha256(b).hexdigest()
+for r in json.loads((p/'MANIFEST.json').read_text()):
+ b=(p/r['path']).read_bytes();assert len(b)==r['bytes'] and sha(b)==r['sha256'],r['path']
+g=json.loads((p/'DEPENDENCY-GRAPH.json').read_text())['targets']['candidate/g4-below-meeting'];assert len(g['modules'])==242
+for n,m in g['modules'].items():
+ b=(p/'source-store'/(m['sha256']+'.lean')).read_bytes();assert sha(b)==m['sha256'];actual=[x for line in re.findall(r'^(?:public )?import\s+([^\n]+)',b.decode(),re.M) for x in line.split()];assert actual==m['imports'],n
+z=(p/'evidence/AUDIT-RESULT.json.gz').read_bytes();tr=json.loads((p/'AUDIT-TRANSPORT.json').read_text());raw=gzip.decompress(z);assert sha(z)==tr['gzip_sha256'] and sha(raw)==tr['raw_sha256'];a=json.loads(raw);assert a['declaration_count']==4771 and a['theorem_declaration_count']==3039;assert not a['owned_axioms'] and not a['nonstandard_axiom_rows'] and not a['missing_modules'];print('PASS public source/import/manifest and exact complete audit; native payload verification remains separately attested.')

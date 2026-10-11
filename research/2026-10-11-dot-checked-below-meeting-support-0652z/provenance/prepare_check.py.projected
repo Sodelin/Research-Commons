@@ -1,0 +1,28 @@
+from pathlib import Path
+import json,re,hashlib,os,shutil
+D=Path(__file__).resolve().parent;B=Path('$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z');W=Path('$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z');O=Path('$PACKAGE');assert not O.exists();start=shutil.disk_usage(D).free;cap=8*2**20;assert start>20*2**30+cap
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();pins=json.loads((D/'DRAFT-DEPENDENCY-PINS.json').read_text());base=json.loads((B/'DEPENDENCY-GRAPH.json').read_text())['targets']['candidate/g46-frozen'];mods={x['module']:x for x in pins['owned_prerequisites']}
+for n,m in mods.items():assert m==base['modules'][n];assert sha(B/'source-store'/(m['sha256']+'.lean'))==m['sha256']
+n=pins['new_module'];f=D/(n+'.lean');assert sha(f)==pins['sha256'];mods[n]={'module':n,'sha256':sha(f),'imports':pins['direct_imports']};assert not any(n.startswith('Mathlib.') for n in mods);order=[n for n in base['order'] if n in mods]+[n];assert len(order)==242
+O.mkdir();[(O/x).mkdir() for x in ['source-store','scripts','provenance']]
+g={'targets':{'candidate/g4-below-meeting':{'roots':[n],'order':order,'modules':mods,'external_imports':sorted({i for m in mods.values() for i in m['imports'] if i not in mods})}},'scope':'Separate242-profile; one new physical support adapter and241 checked providers; accepted1575 and249 unchanged.'};(O/'DEPENDENCY-GRAPH.json').write_text(json.dumps(g,indent=2)+'\n')
+for k,m in mods.items():
+ p=f if k==n else B/'source-store'/(m['sha256']+'.lean');os.link(p,O/'source-store'/(m['sha256']+'.lean'))
+found=set()
+for p in (B/'.build/cache').glob('*/receipt.json'):
+ r=json.loads(p.read_text());k=r['module']
+ if k not in mods or k==n:continue
+ if r['source_sha256']!=mods[k]['sha256']:continue
+ dest=O/'.build/cache'/p.parent.name;dest.mkdir(parents=True)
+ for q in p.parent.iterdir():
+  if q.is_file():
+   if q.name=='receipt.json':shutil.copyfile(q,dest/q.name)
+   else:os.link(q,dest/q.name)
+ found.add(k)
+assert found==set(mods)-{n}
+for p in (W/'scripts').iterdir():
+ if p.is_file():shutil.copyfile(p,O/'scripts'/p.name)
+for k in ['lakefile.lean','lean-toolchain','lake-manifest.json']:shutil.copyfile(W/k,O/k)
+prep={'status':'PREPARED_PENDING_PREFLIGHT','graph_sha256':sha(O/'DEPENDENCY-GRAPH.json'),'source_bytes':sum(p.stat().st_size for p in (O/'source-store').iterdir()),'new_source_bytes':f.stat().st_size,'scripts':{p.name:sha(p) for p in (O/'scripts').iterdir()},'selected_count':242};(O/'PREPARATION.json').write_text(json.dumps(prep,indent=2)+'\n')
+for p in [D/'DRAFT-DEPENDENCY-PINS.json',Path(__file__)]:shutil.copyfile(p,O/'provenance'/p.name)
+allocated=sum(p.stat().st_blocks*512 for p in O.rglob('*') if not p.is_symlink() and (p.is_dir() or p.stat().st_nlink==1));end=shutil.disk_usage(O).free;assert allocated<cap and end>20*2**30;(O/'STAGING-BUDGET.json').write_text(json.dumps({'start_free':start,'end_free':end,'new_nonshared_bytes':allocated,'cap':cap,'launch_threshold':20*2**30,'compiler_started':False},indent=2)+'\n');print(prep['graph_sha256'],allocated,end)

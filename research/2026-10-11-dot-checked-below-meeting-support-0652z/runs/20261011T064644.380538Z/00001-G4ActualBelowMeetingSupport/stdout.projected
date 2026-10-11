@@ -1,0 +1,217 @@
+G4ActualBelowMeetingSupport.lean:36:19: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4ActualBelowMeetingSupport.lean:36:21: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4ActualBelowMeetingSupport.lean:47:4: error: Function expected at
+  EarlierOperation
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `EarlierOperation` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBelowMeetingSupport.lean:49:18: error(nested.lean.propRecLargeElim): Tactic `cases` failed with a nested error:
+Tactic `induction` failed: recursor `Or.casesOn` can only eliminate into `Prop`
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+EarlierOperation : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+a : ℝ
+ha : a < C.age v
+op : ProgramStep N
+hop :
+  op ∈ List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) {e | C.age (N.graph.source e) = a}.toList ∨
+    op ∈ List.map (fun v => ProgramStep.boundary (originalNodeOperation N H gamma common v)) {v | C.age v = a}.toList
+⊢ sorry
+G4ActualBelowMeetingSupport.lean:63:4: error: Function expected at
+  EarlierOperation
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `EarlierOperation` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBelowMeetingSupport.lean:75:24: error(nested.lean.propRecLargeElim): Tactic `cases` failed with a nested error:
+Tactic `induction` failed: recursor `Or.casesOn` can only eliminate into `Prop`
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+EarlierOperation : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+op : ProgramStep N
+b : ℝ
+bs : List ℝ
+ih :
+  List.Pairwise (fun x1 x2 => x1 < x2) bs →
+    C.age v ∈ bs → (a : ℝ) → op ∈ stopBeforeTail N C H gamma common (C.age v) a bs → sorry
+horder : List.Pairwise (fun x1 x2 => x1 < x2) (b :: bs)
+hstop : C.age v ∈ b :: bs
+a : ℝ
+hp : (∀ a' ∈ bs, b < a') ∧ List.Pairwise (fun x1 x2 => x1 < x2) bs
+hb : ¬b = C.age v
+hs : C.age v ∈ bs
+hbt : b < C.age v
+hop :
+  op = ProgramStep.interval (b - a).toNNReal ∨
+    op ∈ boundaryOperations N C H gamma common b ∨ op ∈ stopBeforeTail N C H gamma common (C.age v) b bs
+⊢ sorry
+G4ActualBelowMeetingSupport.lean:85:4: error: Function expected at
+  EarlierOperation
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `EarlierOperation` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBelowMeetingSupport.lean:97:24: error(nested.lean.propRecLargeElim): Tactic `cases` failed with a nested error:
+Tactic `induction` failed: recursor `Or.casesOn` can only eliminate into `Prop`
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+x✝ : Sort u_5
+EarlierOperation : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+op : ProgramStep N
+a : ℝ
+dates : List ℝ
+ho : List.Pairwise (fun x1 x2 => x1 < x2) (a :: dates)
+hs : C.age v ∈ a :: dates
+hd : sortedOriginalDates N C = a :: dates
+hp : (∀ a' ∈ dates, a < a') ∧ List.Pairwise (fun x1 x2 => x1 < x2) dates
+ha : ¬a = C.age v
+htail : C.age v ∈ dates
+hop : op ∈ boundaryOperations N C H gamma common a ∨ op ∈ stopBeforeTail N C H gamma common (C.age v) a dates
+⊢ sorry
+G4ActualBelowMeetingSupport.lean:105:11: error: Function expected at
+  EarlierOperation
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `EarlierOperation` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBelowMeetingSupport.lean:146:24: error: Function expected at
+  EarlierOperation
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `EarlierOperation` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualBelowMeetingSupport.lean:176:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  copyLocation (state (initialCode N sample register)) x
+in the target expression
+  Sort ?u.137
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+v : V
+sample : Copy → X
+register : V → Bool
+r : PositivePairRates E
+x : Copy
+hy : C.age (N.leaf (sample x)) < C.age v
+k : ℕ
+d : Code N sample
+hd :
+  d ∈
+    (sourceProgram N r (List.take k (beforeBoundaryProgram N C H gamma common (C.age v)))
+        (initialCode N sample register)).support
+hinit : copyLocation (state (initialCode N sample register)) x = Location.node (N.leaf (sample x))
+⊢ Sort ?u.137
+G4ActualBelowMeetingSupport.lean:179:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualBelowMeetingSupport.mandatory_child_tip_younger`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualBelowMeetingSupport.lean:206:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualBelowMeetingSupport.mandatory_child_of_ready_below`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'DotG4.ActualBelowMeetingSupport.actual_initialized_take_below' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualBelowMeetingSupport.actual_initialized_before_agenda' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualBelowMeetingSupport.actual_initialized_before_children' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualBelowMeetingSupport.actual_initialized_literal_agenda' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualBelowMeetingSupport.actual_initialized_literal_colocates' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

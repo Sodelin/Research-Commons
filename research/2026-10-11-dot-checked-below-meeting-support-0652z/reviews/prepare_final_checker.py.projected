@@ -1,0 +1,49 @@
+from pathlib import Path
+O=Path(__file__).parent
+s=Path('$SHARED_WORKSPACE/g46-independent-review-20261011-0609z/check_final.py').read_text()
+def sub(a,b):
+ global s
+ assert a in s,a[:80]
+ s=s.replace(a,b)
+sub("P=Path('$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z');R=P/'.build/runs/20261011T061330.120140Z';B=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z/.build/runs/20261011T040211.744850Z')", "P=Path('$PACKAGE');R=P/'.build/runs/20261011T064842.285117Z';B=Path('$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z/.build/runs/20261011T061330.120140Z');BASE1575=Path('$SHARED_WORKSPACE/connected-union1575-20261011-0358z/.build/runs/20261011T040211.744850Z')")
+sub('7724e2ef8e9e333f677af10a993b1455377ec4b182545ebab52dcb69d27ce727','06a2bc656ac573ac19ac4eb6924afc528a2f436616c959e1085de80b8ccaef88')
+sub("['targets']['candidate/g46-frozen']","['targets']['candidate/g4-below-meeting']")
+sub("prep['scripts']['run_union.py']==m.PINS['scripts/run_union.py']", "prep['scripts']['run_union.py']=='2b1a58b50693fdb4968c68adf315c3be5e1a5d0467dd3ff148a8449ac5a6f2d6'")
+sub("(B.parents[2]/'scripts'/n)","(Path('$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z')/'scripts'/n)")
+sub("{'cache_reuse':246,'fresh_components':3}","{'cache_reuse':241,'fresh_components':1}")
+sub("['candidate/g46-frozen']","['candidate/g4-below-meeting']")
+sub("trp=R/'targets/candidate_g46-frozen/RESULT.json'","trp=R/'targets/candidate_g4-below-meeting/RESULT.json'")
+sub("tr['closure_modules']==249","tr['closure_modules']==242")
+sub("freshpins={'G4LiteralLastChildExitCut':'d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349','G4PartialExitSeparation':'04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae','G6ErasedSelectedProjection':'6a84246bf00ae1d20cd903223e6bb18569b8ece80618abd82ea17e4143d2f007'}", "freshpins={'G4ActualBelowMeetingSupport':'cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf'}")
+sub("prior=rd(B/'targets/current_connected/RESULT.json')","prior=rd(B/'targets/candidate_g46-frozen/RESULT.json')")
+sub('len(by)==249','len(by)==242');sub('==246','==241')
+sub('for root in [P,OLD,B.parents[2],','for root in [P,OLD,B.parents[2],BASE1575.parents[2],')
+sub("context=R/'targets/candidate_g46-frozen/objects'","context=R/'targets/candidate_g4-below-meeting/objects'")
+sub("sum(x['fresh'] for x in summary)==3","sum(x['fresh'] for x in summary)==1")
+sub('0fda31efdb23628408079c9fa6d01cc08c954a0381f4f691764897e51c115c7f','69eaffd09e0febccb8404b0ec8f0607467a2e58443c55743a94f6df525479bd8')
+sub('==5051','==4771');sub('==3208','==3039')
+a=s.index('prioraudit=');b=s.index('imported=rd(',a)
+s=s[:a]+'''prioraudit=rd(Path(prior['audit_receipt']['audit_output']));olddecl={x['name']:x for x in prioraudit['declarations']};new={n:x for n,x in decl.items() if n not in olddecl}
+shared=set(decl)&set(olddecl);assert len(shared)==4739 and all(decl[n]==olddecl[n] for n in shared)
+assert not [n for n,x in olddecl.items() if x['module'] in mods and n not in decl]
+assert len(new)==32 and sum(x['kind']=='theorem' for x in new.values())==24 and all(x['module']=='G4ActualBelowMeetingSupport' for x in new.values())
+source=(P/'source-store'/(mods['G4ActualBelowMeetingSupport']['sha256']+'.lean')).read_text();heads=re.findall(r'^(?:inductive|def|lemma|theorem) (\\S+)',source,re.M);assert len(heads)==13
+for n in heads:assert 'DotG4.ActualBelowMeetingSupport.'+n in new
+base_r=rd(BASE1575/'targets/current_connected/RESULT.json');base_a=rd(Path(base_r['audit_receipt']['audit_output']));base_decl={x['name']:x for x in base_a['declarations']}
+expected_path=Path('$SHARED_WORKSPACE/g46-independent-review-20261011-0609z/EXACT-SHARED-RECORD-DELTAS.json');assert h(expected_path)=='e82e1fb96eff3d04e1b67a23b4705c323a1027d77b9f56fe34e8f8ea8449b2e3';expected=rd(expected_path)
+changed=sorted([{'name':n,'old':base_decl[n],'actual':x} for n,x in decl.items() if n in base_decl and x!=base_decl[n]],key=lambda x:x['name']);assert changed==expected['deltas']
+base_new={n:x for n,x in decl.items() if n not in base_decl};assert len(base_new)==70 and sum(x['kind']=='theorem' for x in base_new.values())==50
+assert len(set(decl)&set(base_decl))==4701
+(O/'EXACT-DECLARATION-COMPARISON.json').write_text(json.dumps({'prior249_literal_shared':4739,'prior249_missing_selected_names':[],'prior249_changed':[],'new_names_relative249':new,'new_names_relative1575':base_new,'exact_inherited_four_qualifications':changed,'helper_metadata_qualification':expected['qualification']},indent=2)+'\\n')
+''' +s[b:]
+sub("R/'targets/candidate_g46-frozen/ACTUAL-IMPORTED-ARTIFACTS.json'", "R/'targets/candidate_g4-below-meeting/ACTUAL-IMPORTED-ARTIFACTS.json'")
+a=s.index("mask=rd(R/'DESKTOP-NAMESPACE-MASK.json')");b=s.index("for line in (R/'NAMESPACE-RESOLUTION-CHECKS.jsonl')",a)
+s=s[:a]+'''mask=rd(R/'EMPTY-OWNED-MATHLIB-PINS.json');assert mask['specialization_sha256']=='80a95c662ac89dbd67694a6e024d1a14899bfb27918277de6697ee55a397d3ce' and mask['graph_sha256']==pin and mask['owned_mathlib_modules']==[] and mask['complete_official_namespace_retained'] and mask['inherited_inventory_resolution_companion_kernel_and_audit_checks_unchanged'];assert not any(n.startswith('Mathlib.') for n in mods)
+assert h(R/'EMPTY-OWNED-MATHLIB-WRAPPER.py')==mask['specialization_sha256']
+''' +s[b:]
+sub('SUPERVISOR-20261011T061329Z.json','SUPERVISOR-20261011T064841Z.json')
+sub("P/'.build/runs/20261011T061106.911237Z/FINAL-RECEIPT.json'","P/'.build/runs/20261011T064644.380538Z/FINAL-RECEIPT.json'")
+sub('PASS_INDEPENDENT_SEPARATE_G46_PROFILE','PASS_INDEPENDENT_SEPARATE_BELOW_MEETING_PROFILE')
+sub("'declarations':5051,'theorem_rows':3208","'declarations':4771,'theorem_rows':3039")
+sub("'globally_new_names':list(new),'shared_record_exceptions':len(changed),'old_records_literal_equal':5007,'new_theorem_rows':27", "'new_names_relative249':list(new),'new_names_relative249_count':32,'new_theorem_rows_relative249':24,'shared_record_exceptions_relative249':0,'old_records_literal_equal_relative249':4739,'shared_record_exceptions_relative1575':4,'new_names_relative1575':70,'new_theorem_rows_relative1575':50")
+(O/'check_final.py').write_text(s)

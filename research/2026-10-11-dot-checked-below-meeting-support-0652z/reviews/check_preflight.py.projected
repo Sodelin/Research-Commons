@@ -1,0 +1,56 @@
+"""Read-only 242-module preparation review. Never invokes Lean or Lake."""
+from pathlib import Path
+import hashlib,importlib.util,json,shutil,time
+O=Path(__file__).parent;P=Path('$PACKAGE');B=Path('$SHARED_WORKSPACE/g46-frozen-check-20261011-0608z');R=B/'.build/runs/20261011T061330.120140Z';A=Path('$SHARED_WORKSPACE/g3-smoothness-check-20261011-0427z');D=Path('$SOURCE_PREPARATION')
+spec=importlib.util.spec_from_file_location('independent_helpers',Path('$SHARED_WORKSPACE/union1575-independent-review-20261011-0400z/check_final.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);h=m.sha;rd=m.read;start=time.time()
+pin='aa80fc2cf38898912f824d97fafe361e52d170222c0c54d4345e93684c4a571f';assert h(P/'DEPENDENCY-GRAPH.json')==pin
+whole=rd(P/'DEPENDENCY-GRAPH.json');assert len(whole['targets'])==1;target=next(iter(whole['targets']));g=whole['targets'][target];assert target=='candidate/g4-below-meeting'
+oldg=rd(B/'DEPENDENCY-GRAPH.json')['targets']['candidate/g46-frozen'];oldr={x['module']:x for x in rd(R/'targets/candidate_g46-frozen/RESULT.json')['component_receipts']};new='G4ActualBelowMeetingSupport';hv='31e7d2b12bf9dc8a3c857f3005fc04633c8573c94f843d291d80b3a84b2c3ef2'
+assert g['roots']==[new] and len(g['modules'])==242 and set(g['modules'])-set(oldg['modules'])=={new};assert not any(n.startswith('Mathlib.') for n in g['modules']);pins=rd(D/'DRAFT-DEPENDENCY-PINS.json');assert set(g['modules'])-{new}=={x['module'] for x in pins['owned_prerequisites']}
+shared=set();receiptpins=[]
+def inode(p):s=p.stat();return s.st_dev,s.st_ino
+for n,v in g['modules'].items():
+ f=P/'source-store'/(v['sha256']+'.lean');assert h(f)==v['sha256'];assert m.imports(f.read_bytes())==v['imports']
+ if n==new:assert v['sha256']==hv and f.read_bytes()==(D/(new+'.lean')).read_bytes() and v['imports']==['G4PartialExitSeparation']
+ else:
+  assert v==oldg['modules'][n];bf=B/'source-store'/(v['sha256']+'.lean');assert f.read_bytes()==bf.read_bytes();shared.add(inode(bf))
+  r=oldr[n];assert r['status']=='PASS_FRESH_KERNEL_CHECK' and r['exit_code']==0 and r['source_and_imports_stable'] and r['native_runtime_stat_stable'];assert r['compiler_sha256']==m.BIN and r['mathlib_commit']==m.MATHLIB
+  keydata={'module':n,'source':r['source_sha256'],'compiler':m.BIN,'mathlib':m.MATHLIB,'trust':0,'kernel_check':True,'imports':r['direct_import_artifacts'],'native_runtime_digest':r['native_runtime_digest'],'artifact_boundary':'olean-private-server-ilean-ir-native-v3'}
+  key=hashlib.sha256(json.dumps(keydata,sort_keys=True).encode()).hexdigest();cr=P/'.build/cache'/key/'receipt.json';br=B/'.build/cache'/key/'receipt.json';assert rd(cr)==r==rd(br);shared.add(inode(br));m.bundle(cr.parent/'artifact.olean',r['object_artifacts']);m.bundle(Path(r['cached_object']),r['object_artifacts'])
+  for suffix in r['object_artifacts']:shared.add(inode(m.companion(Path(r['cached_object']),suffix)))
+  for name,z in r['direct_import_bindings'].items():
+   assert z['artifacts']==r['direct_import_artifacts'][name];m.bundle(Path(z['path']),z['artifacts'])
+   if name in g['modules']:assert z['artifacts']==oldr[name]['object_artifacts']
+  receiptpins.append({'module':n,'cache_key':key,'receipt_sha256':h(cr),'source_sha256':v['sha256']})
+assert len(receiptpins)==241 and len(list((P/'.build/cache').glob('*/receipt.json')))==241
+seen=set()
+def visit(n):
+ if n in seen:return
+ seen.add(n)
+ for i in g['modules'][n]['imports']:
+  if i in g['modules']:visit(i)
+visit(new);assert seen==set(g['modules']);pos={n:i for i,n in enumerate(g['order'])};assert set(pos)==seen and len(g['order'])==242
+for n,v in g['modules'].items():
+ for i in v['imports']:
+  if i in pos:assert pos[i]<pos[n]
+assert set(g['external_imports'])=={i for v in g['modules'].values() for i in v['imports'] if i not in g['modules']}
+ledger=rd(R/'targets/candidate_g46-frozen/ACTUAL-IMPORTED-ARTIFACTS.json');ext={}
+for n in g['external_imports']:
+ rows=[x for x in ledger if x['module']==n];assert rows,n
+ for x in rows:assert h(Path(x['path']))==x['sha256'] and Path(x['path']).stat().st_size==x['bytes']
+ ext[n]={x['suffix']:x['sha256'] for x in rows}
+prep=rd(P/'PREPARATION.json');assert prep['graph_sha256']==pin
+for n,v in prep['scripts'].items():assert h(P/'scripts'/n)==v and (P/'scripts'/n).read_bytes()==(A/'scripts'/n).read_bytes()
+assert prep['scripts']['build_no_owned_mathlib.py']=='80a95c662ac89dbd67694a6e024d1a14899bfb27918277de6697ee55a397d3ce';assert prep['scripts']['run_union.py']=='2b1a58b50693fdb4968c68adf315c3be5e1a5d0467dd3ff148a8449ac5a6f2d6'
+native=rd(R/'NATIVE-RUNTIME-PINS.json');assert h(Path(native['compiler']['path']))==m.BIN if 'compiler' in native and isinstance(native['compiler'],dict) else True
+for p,v in native['libraries'].items():assert h(Path(p))==v['sha256']
+seenin=set();allocated=0
+for f in [P,*P.rglob('*')]:
+ s=f.lstat();i=(s.st_dev,s.st_ino)
+ if i not in seenin and i not in shared:allocated+=s.st_blocks*512
+ seenin.add(i)
+st=rd(P/'STAGING-BUDGET.json');assert st['cap']==8*2**20 and st['new_nonshared_bytes']<st['cap'] and st['start_free']-st['end_free']<st['cap'] and allocated<st['cap'];assert st['launch_threshold']==20*2**30
+free=shutil.disk_usage(P).free;mem=int(next(l.split()[1] for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemAvailable:')))*1024;assert free>20*2**30 and mem>=7*2**30
+assert not (P/'.build/LATEST-RUN.json').exists()
+out={'status':'PASS_242_MODULE_PREFLIGHT_PENDING_COMPILER','graph_sha256':pin,'new_source_sha256':hv,'accepted_literal_receipts':241,'selected_modules':242,'owned_mathlib_modules':0,'empty_owned_adapter_sha256':prep['scripts']['build_no_owned_mathlib.py'],'supervisor_sha256':prep['scripts']['run_union.py'],'scripts_identical_to_accepted_separate_profile':True,'independent_conservative_new_allocated_bytes':allocated,'recorded_staging_budget':st,'observed_free_bytes':free,'observed_available_memory_bytes':mem,'required_target_argument':target,'required_lean_bin_kind':'directory','compiler_invoked':False,'receipt_pins':receiptpins,'external_import_artifacts':ext,'elapsed_seconds':time.time()-start,'files_hashed':len(m.MEMO),'bytes_hashed':m.hashed_bytes}
+(O/'PREFLIGHT-RESULT.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({k:v for k,v in out.items() if k not in ['receipt_pins','external_import_artifacts']},indent=2))
