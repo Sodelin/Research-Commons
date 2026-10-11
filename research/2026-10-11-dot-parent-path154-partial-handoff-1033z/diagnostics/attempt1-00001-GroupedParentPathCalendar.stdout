@@ -1,0 +1,68 @@
+GroupedParentPathCalendar.lean:37:0: warning: automatically included section variable(s) unused in theorem `CloudG3.GroupedParentPathCalendar.actual_parent_route_sources_nonhybrid`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+GroupedParentPathCalendar.lean:54:0: warning: automatically included section variable(s) unused in theorem `CloudG3.GroupedParentPathCalendar.actual_parent_route_entry_older`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+GroupedParentPathCalendar.lean:146:0: warning: automatically included section variable(s) unused in theorem `CloudG3.GroupedParentPathCalendar.actual_next_parent_cut_later`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+GroupedParentPathCalendar.lean:217:2: error(lean.unknownIdentifier): Unknown identifier `nodeOperations`
+GroupedParentPathCalendar.lean:237:13: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  calendarTail N C R gamma common (C.age h) (afterDate N C (C.age h))
+in the target expression
+  beforeBoundaryProgram N C R gamma common (C.age h) ++ boundaryOperations N C R gamma common (C.age h) ++
+      calendarTail N C R gamma common (C.age h)
+        (List.filter (fun c => decide (C.age h < c)) (sortedOriginalDates N C)) =
+    actualFrontierProgram N C R gamma common (C.age h) ++ forkCalendarProgram N C R gamma common h join ++
+      forkCalendarFuture N C R gamma common join
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+R : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+h join : V
+hdate : C.age h < C.age join
+hstart :
+  compiledCalendarProgram N C R gamma common =
+    beforeBoundaryProgram N C R gamma common (C.age h) ++ boundaryOperations N C R gamma common (C.age h) ++
+      calendarTail N C R gamma common (C.age h) (List.filter (fun c => decide (C.age h < c)) (sortedOriginalDates N C))
+hmiddle :
+  calendarTail N C R gamma common (C.age h) (afterDate N C (C.age h)) =
+    stopBeforeTail N C R gamma common (C.age join) (C.age h) (afterDate N C (C.age h)) ++
+        boundaryOperations N C R gamma common (C.age join) ++
+      calendarTail N C R gamma common (C.age join)
+        (List.filter (fun c => decide (C.age join < c)) (afterDate N C (C.age h)))
+hf : List.filter (fun c => decide (C.age join < c)) (afterDate N C (C.age h)) = afterDate N C (C.age join)
+⊢ beforeBoundaryProgram N C R gamma common (C.age h) ++ boundaryOperations N C R gamma common (C.age h) ++
+      calendarTail N C R gamma common (C.age h)
+        (List.filter (fun c => decide (C.age h < c)) (sortedOriginalDates N C)) =
+    actualFrontierProgram N C R gamma common (C.age h) ++ forkCalendarProgram N C R gamma common h join ++
+      forkCalendarFuture N C R gamma common join
+GroupedParentPathCalendar.lean:256:53: error: Function expected at
+  rootForest
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `rootForest` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.

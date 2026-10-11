@@ -1,0 +1,15 @@
+--- original/FirstParentJoin.lean
++++ revision-1/FirstParentJoin.lean
+@@ -99,7 +99,11 @@
+ theorem actual_common_route_sources_nonempty (N : RootedBinary V E X)
+     (C : Calendar N.graph) (H : GProgram.G2.OriginalHybridParents N) {entry : V}
+     (he : IsComponentEntryFor N entry H.hybrid) : (commonRouteSources N H he).Nonempty := by
+-  have hne : entry ≠ H.hybrid := (ne_of_gt (actual_parent_route_entry_older N C H he))
++  have hne : entry ≠ H.hybrid := by
++    intro h
++    have ht := actual_parent_route_entry_older N C H he
++    rw [h] at ht
++    exact (lt_irrefl _) ht
+   refine ⟨entry,Finset.mem_inter.mpr ⟨?_,?_⟩⟩
+   · exact (route_source_mem_iff N H he false entry).mpr
+       (path_start_is_source (parentRoute_path H he false) hne)

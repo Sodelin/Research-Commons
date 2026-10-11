@@ -1,0 +1,22 @@
+--- original
++++ revision1
+@@ -24,7 +24,7 @@
+ open UnifiedLean.Source.SourcePoissonKernel UnifiedLean.Source.UnrankedGenealogyObservation
+ open G1CutChildPorts G1OriginalEpochPanelSilence G1OriginalEpochPanelCompression
+ open G1InterleavedEpochCompression G1CanonicalThreeEpochList G1OriginalCalendarDecomposition
+-open G1InitializedFrontierPrefix
++open G1InitializedFrontierPrefix G1CanonicalComponentSegment G1ContextualForestReplacement
+ open G1CanonicalEpochSpecialization G1OriginalCurrentRootReconstruction
+ open scoped Classical NNReal
+ 
+@@ -234,6 +234,10 @@
+     (original_after_member N C _ join hdate) (C.age h)
+   have hf : (afterDate N C (C.age h)).filter (fun c => decide (C.age join < c)) =
+       afterDate N C (C.age join) := filter_after_filter hdate _
++  change compiledCalendarProgram N C R gamma common =
++    beforeBoundaryProgram N C R gamma common (C.age h) ++
++      boundaryOperations N C R gamma common (C.age h) ++
++        calendarTail N C R gamma common (C.age h) (afterDate N C (C.age h)) at hstart
+   rw [hstart,hmiddle,hf]
+   have hbatch (a : ℝ) : boundaryOperations N C R gamma common a =
+       (originalExits N C a).map (fun e => .boundary (.exit e)) ++
