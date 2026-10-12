@@ -1,0 +1,100 @@
+--- published-coefficient.lean
++++ elaboration-r1-coefficient.lean
+@@ -68,7 +68,7 @@
+       · simp only [hasBad]
+         have hm : b ∈ t.leaves ∪ (Genealogy.leaf a).leaves :=
+           Finset.mem_union_left _ hb
+-        simp only [hm, not_true_eq_false, and_false, ht, or_false, false_or]
++        simp only [hm, not_true_eq_false, and_false, ht, or_false, false_or, not_false_eq_true]
+ 
+ lemma comb_no_bad (b : Copy) (as : List Copy) : ¬ hasBad b (comb b as) := by
+   apply fold_no_bad
+@@ -146,7 +146,7 @@
+   | graft l r ihl ihr =>
+       simp only [internalClades,Finset.mem_insert,Finset.mem_union] at h
+       rcases h with h | h | h
+-      · simpa only [Genealogy.leaves,h]
++      · simpa only [Genealogy.leaves,h] using (Finset.Subset.refl (l.leaves ∪ r.leaves))
+       · exact Finset.Subset.trans (ihl h) Finset.subset_union_left
+       · exact Finset.Subset.trans (ihr h) Finset.subset_union_right
+ 
+@@ -313,7 +313,7 @@
+   have hatree := frontier_singleton_tree s hs t p (a :: rest) h (by simp : a ∈ a :: rest)
+   refine ⟨?_, ?_, ?_, ?_, ?_, (List.nodup_cons.mp h.nodup).2⟩
+   · exact Finset.mem_erase.mpr ⟨hpa, h.prefix_live⟩
+-  · simpa only [merge, if_pos rfl, hatree] using
++  · simpa only [merge, ite_true, hatree] using
+       (UnorderedEquiv.graft h.prefix_tree (UnorderedEquiv.refl (.leaf a)))
+   · intro c hc
+     have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
+@@ -326,7 +326,7 @@
+     rcases h.cover x with hx | hx
+     · exact Or.inl (Finset.mem_union.mpr (Or.inl hx))
+     · rcases List.mem_cons.mp hx with rfl | hr
+-      · exact Or.inl (Finset.mem_union.mpr (Or.inr (Finset.mem_singleton_self a)))
++      · exact Or.inl (Finset.mem_union.mpr (Or.inr (Finset.mem_singleton_self _)))
+       · exact Or.inr hr
+   · intro c hc
+     have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
+@@ -350,7 +350,7 @@
+   · exact Finset.mem_erase.mpr ⟨Ne.symm hpa, halive⟩
+   · have hg := UnorderedEquiv.graft (UnorderedEquiv.refl (.leaf a)) h.prefix_tree
+     have he := UnorderedEquiv.trans hg (UnorderedEquiv.swap (.leaf a) t)
+-    simpa only [merge, if_pos rfl, hatree] using he
++    simpa only [merge, ite_true, hatree] using he
+   · intro c hc
+     have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
+     have hca : c ≠ a := by intro he; subst c; exact hanot hc
+@@ -362,7 +362,7 @@
+     rcases h.cover x with hx | hx
+     · exact Or.inl (Finset.mem_union.mpr (Or.inl hx))
+     · rcases List.mem_cons.mp hx with rfl | hr
+-      · exact Or.inl (Finset.mem_union.mpr (Or.inr (Finset.mem_singleton_self a)))
++      · exact Or.inl (Finset.mem_union.mpr (Or.inr (Finset.mem_singleton_self _)))
+       · exact Or.inr hr
+   · intro c hc
+     have hcfull : c ∈ a :: rest := List.mem_cons_of_mem a hc
+@@ -380,7 +380,7 @@
+ lemma actual_merge_creates_clade (s : State V E Copy) (x y : Copy) :
+     (s.genealogy x).leaves ∪ (s.genealogy y).leaves ∈
+       internalClades ((merge s x y).genealogy x) := by
+-  simp only [merge, if_pos rfl, internalClades, Finset.mem_insert_self]
++  simp only [merge, ite_true, internalClades, Finset.mem_insert_self]
+ 
+ /-- Every actual merger other than the two ordered orientations of the next
+ prescribed pair creates a clade incompatible with the exact target. This also
+@@ -437,6 +437,8 @@
+ open UnifiedLean.Source.SourceEmbeddedJumpLaw
+ open UnifiedLean.Source.SourceAncestralCompletion
+ open UnifiedLean.Source.SourceCompletionHarmonic
++open GProgram.SourceForestKingmanPopulationProjection
++open UnifiedLean.Source.SourceActualHoldingClocks
+ variable {X : Type*}
+ variable [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E]
+ variable [Fintype X] [Fintype Copy]
+@@ -692,7 +694,7 @@
+       (next :: rest) h (by simp),by
+         intro he
+         exact frontier_prefix_not_remaining (state s) s.property.forest t pref
+-          (next :: rest) h (by simp [he])⟩⟩
++          (next :: rest) h (List.mem_cons.mpr (Or.inl he))⟩⟩
+ 
+ noncomputable def prescribedBackward (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
+@@ -703,7 +705,7 @@
+       (next :: rest) h (by simp),h.prefix_live,by
+         intro he
+         exact frontier_prefix_not_remaining (state s) s.property.forest t pref
+-          (next :: rest) h (by simp [← he])⟩⟩
++          (next :: rest) h (List.mem_cons.mpr (Or.inl he.symm))⟩⟩
+ 
+ noncomputable def prescribedChoices (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) (hroot : AncestralRoot N s) (t : Genealogy Copy)
+@@ -802,6 +804,7 @@
+     rw [unordered_leaves h.prefix_tree]
+     exact hb
+   have hanc := (s.property.forest.leaf_fiber pref h.prefix_live b).mp hbleaf
++  change (state s).ancestor b = pref at hanc
+   have htree : toUnranked ((state s).genealogy ((state s).ancestor b)) =
+       toUnranked t := by
+     rw [hanc]

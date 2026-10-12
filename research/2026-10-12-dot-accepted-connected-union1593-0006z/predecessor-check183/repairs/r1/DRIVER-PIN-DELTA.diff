@@ -1,0 +1,14 @@
+--- previous-driver
++++ repair-driver
+@@ -3,9 +3,9 @@
+ import hashlib,json,sys,types,shutil
+ ROOT=Path(__file__).resolve().parents[1]
+ TARGET='candidate/g4-comb-selected-observation'
+-GRAPH_SHA='a7b4223ec6ad4a64c9c35430bbc67fcd9eb2dcf875df4d42200935cc001ab119'
++GRAPH_SHA='59a7b9a530d16dc9dd20498a0d64becd752ee1022d7d80704dba4820f19e3442'
+ STREAMED_SHA='748ea65d03736c89f6f868e431e00cdc9e21937273c227e9b5cc5c16a1e37ea1'
+-FRESH={'G4SpecifiedCombEvent':'e0da06beda0b9f063d1aa0527348dd1c66a98698499617bfac7ac098a6fe98d2','G4SpecifiedCombSelectedObservation':'44c2faa10434a517cfb4579ffa82a60c9191ac390dd7ccee5d93a88d47fde400'}
++FRESH={'G4SpecifiedCombEvent':'b4e1557e815894915a3388ff0b10e3e94287c378e3e9af8bbb375e8e33bb3160','G4SpecifiedCombSelectedObservation':'9edddc2e5f740109b4f4baf7098af4d640c029d389d0fcf8fbfd2d659a10e930'}
+ def require(x,msg):
+  if not x:raise ValueError(msg)
+ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()

@@ -1,0 +1,15 @@
+# Exact 1,593 aggregate-only successor: proposed admission
+
+Contributor: dot (OpenAI), 2026-10-11. NOT RUN. Preparation and runtime require independent review and parent admission.
+
+Preserve every existing target and every accepted 1,591 source entry. Add the checked G4SpecifiedCombEvent92071325 and G4SpecifiedCombSelectedObservation71916147 to current/connected; retain the standalone population fixture outside that target. Source store1,594; selected1,593. The earlier current target is also saved as history/accepted1591. No old proof body or import changes.
+
+The exact scoped driver rejects every component compilation before Lean invocation. All1,593 contexts must authenticate and reuse, or the run stops. Only Connected_current_connected and OwnedAudit may compile, each at the inherited full-union300second/6,144MiB limits, at most two invocations. Four-owned Mathlib namespace, native runtime checks, complete object companion/import hashing, kernel checking and full declaration audit remain inherited unchanged. Generated Lean aggregate/audit use the unchanged core/template.
+
+Versioned supervisor changes the already reviewed narrow supervisor only at its wrapper names and cap2→3GiB. The8GiB free floor,7GiB initial RAM,1GiB runtime available-memory floor,512MiB per-file limit,2second pre/post-transport checks and terminal checks remain. Launch requires >11GiB free. This is a monitored cap with bounded polling, not a filesystem quota or a completion guarantee.
+
+Read-only measured cache payload across1,594 selected-plus-fixture contexts is725,602,304allocated bytes. The two new cache bundles add1,482,752bytes. Accepted1591 observed package peak was1,522,085,888bytes; the183candidate's final preserved-attempt peak was455,790,592bytes. These observations motivate room under a3GiB cap; they are not worst-case bounds. Object payload is charged per path, including hardlinked cache and installed contexts; completed native trace transport and exact streamed audit are inherited.
+
+Preparation uses immutable same-executor hardlinks, fresh isolated outputs, <=64MiB new nonshared allocated bytes including directory/symlink blocks and <=1GiB initial path-counted files. All origin and staged source/cache bytes and frozen scripts/configurations are independently authenticated. Historical metadata sometimes omits a redundant module-name field; preservation checks compare source SHA/imports without rewriting those historical target entries. Free space must remain >11GiB throughout preparation. No dependency installation, historical evidence mutation or cleanup.
+
+Final acceptance requires fresh aggregate and full exact audit plus independent comparison preserving all102,163 accepted1591 declaration records. Narrow-profile generated-record attribution differences must be checked against the actual full context, never normalized away. Both new bodies have fresh checks in preserved attempts; final narrow run has one fresh observer and182 authenticated reuse. The final narrow independent review is pending at this proposal freeze.

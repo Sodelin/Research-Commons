@@ -1,0 +1,11 @@
+--- preserved supervisor
++++ audit-output wrapper selection
+@@ -35,7 +35,7 @@
+     assert min(storage['package_filesystem_free'],storage['backing_store_free'])>cap+floor
+     save(ROOT/'STORAGE-PREFLIGHT.json',storage)
+     env=dict(os.environ,CONNECTED_LEAN_BIN=str(args.lean_bin.resolve()),CONNECTED_MATHLIB=str(args.mathlib.resolve()),PYTHONUNBUFFERED='1')
+-    cmd=['/usr/bin/python3',str(ROOT/'scripts/build_desktop.py'),args.target]
++    cmd=['/usr/bin/python3',str(ROOT/'scripts/build_streamed_audit.py'),args.target]
+     def limits():resource.setrlimit(resource.RLIMIT_FSIZE,(perfile,perfile))
+     stamp=time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())
+     stdout=ROOT/('SUPERVISOR-'+stamp+'.stdout');stderr=ROOT/('SUPERVISOR-'+stamp+'.stderr')
