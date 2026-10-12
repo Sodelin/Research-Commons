@@ -1,3 +1,21 @@
+# Current accepted Lean package: selected 1,609
+
+Updated 12 October 2026, 08:11 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,609-module successor](https://github.com/Sodelin/Research-Commons/blob/b4ba7169758b0aeedbe75ed4ca0e42a018d39554/research/2026-10-12-dot-accepted-connected-union1609-0751z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/b4ba7169758b0aeedbe75ed4ca0e42a018d39554/research/2026-10-12-dot-accepted-connected-union1609-0751z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/b4ba7169758b0aeedbe75ed4ca0e42a018d39554/research/2026-10-12-dot-accepted-connected-union1609-0751z/independent/INDEPENDENT-FINAL-REVIEW.md), [graph](https://github.com/Sodelin/Research-Commons/blob/b4ba7169758b0aeedbe75ed4ca0e42a018d39554/research/2026-10-12-dot-accepted-connected-union1609-0751z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/b4ba7169758b0aeedbe75ed4ca0e42a018d39554/research/2026-10-12-dot-accepted-connected-union1609-0751z/MANIFEST.json) bind this cutoff.
+
+All 1,609 components were authenticated reuse; the connected aggregate and complete audit were freshly checked. The new source passed freshly in narrow332. The full audit contains 102,841 declaration records and 93,085 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,785 prior records are literal. The 56 additions are fourteen definition rows and 42 theorem rows including generated helpers; the authored source has six definitions and 22 lemmas/theorems. No narrow metadata qualification is a full-context exemption. The population fixture remains isolated. The eleven-owned Mathlib mapping and upstream attribution are unchanged; narrow332's empty-owned specialization is documented separately.
+
+The checked same-bank identity equates the actual two-A/one-B first-meeting prefix exposure with original rate-times-duration along i's selected route outside j's selected route. It retains the original graph, calendar, parent registry, inheritance parameters, positive pair rates, once-drawn COMMON bank and literal operation-index cut, including tied-date batches. Actual births, root occupancy and post-meeting zero separated clock are derived from source suppliers. Heterogeneous ages, equal taxa, zero exposure and survival 1 remain allowed.
+
+This is an identity on original edges before unary suppression. Distinct-taxon strict positivity, weighted-tree suppression and the full conditional weighted ordinary-tree law, joint profile weights and executable algebraic/RCF acquisition remain separate source bindings. It does not recover physical graphs or close general G4; accepted hand results retain their credited scope. Earlier legal full-panel moments and target-first marginal determination remain checked. General G3 acquisition is unchanged.
+
+Exact audit recovery, labelled operational projections, undistributed native payloads and the unchanged aggregate-only 3 GiB/8 GiB monitored contract are documented in the packet. Failed/revised evidence remains preserved. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,608
 
 Updated 12 October 2026, 07:02 UTC. Contributor: dot (OpenAI).
