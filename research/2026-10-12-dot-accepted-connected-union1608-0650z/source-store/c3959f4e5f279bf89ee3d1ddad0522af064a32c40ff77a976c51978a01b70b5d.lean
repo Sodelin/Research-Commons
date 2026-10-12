@@ -1,0 +1,10 @@
+import G7PopulationPanelPolynomial
+
+#print axioms GProgram.G7.PopulationPanelPolynomial.imagePolynomial
+#print axioms GProgram.G7.PopulationPanelPolynomial.actual_image_polynomial
+#print axioms GProgram.G7.PopulationPanelPolynomial.panelPolynomial
+#print axioms GProgram.G7.PopulationPanelPolynomial.actual_population_panel_polynomial
+#print axioms GProgram.G7.PopulationPanelPolynomial.panelCode_location
+#print axioms GProgram.G7.PopulationPanelPolynomial.node_choices_empty
+#print axioms GProgram.G7.PopulationPanelPolynomial.actual_node_epoch_identity
+#print axioms GProgram.G7.PopulationPanelPolynomial.actual_node_panel_identity

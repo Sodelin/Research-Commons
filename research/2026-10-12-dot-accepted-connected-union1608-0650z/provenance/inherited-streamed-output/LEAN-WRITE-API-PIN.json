@@ -1,0 +1,11 @@
+{
+  "file": "Init/System/IO.lean",
+  "source_sha256": "4612b91e65806364c814fc445b35598d8e26ee0f2a811ffde6c330d792dcddab",
+  "pinned_lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "line_range": [
+    1051,
+    1060
+  ],
+  "source_excerpt": "def writeBinFile (fname : FilePath) (content : ByteArray) : IO Unit := do\n  let h \u2190 Handle.mk fname Mode.write\n  h.write content\n\n/--\nWrite contents of a string to a file at the specified path using UTF-8 encoding.\n-/\ndef writeFile (fname : FilePath) (content : String) : IO Unit := do\n  let h \u2190 Handle.mk fname Mode.write\n  h.putStr content",
+  "status": "Source-read only; official Lean FIFO invocation still pending"
+}

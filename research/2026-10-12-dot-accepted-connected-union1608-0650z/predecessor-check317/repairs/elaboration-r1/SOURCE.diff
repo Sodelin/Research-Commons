@@ -1,0 +1,19 @@
+--- revision1
++++ elaboration-r1
+@@ -13,6 +13,7 @@
+ namespace DotG4.ActualLegalPanelComb
+ set_option backward.isDefEq.respectTransparency false
+ open Nanuq.Source GProgram.SourceForest GProgram.G5
++open GProgram.SourceForestKingmanPopulationProjection DotG34.ActualPopulationRate
+ open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.NativeIndependentPairMixture UnifiedLean.Source.UniformizedSourceStep
+ open UnifiedLean.Source.SourceBoundaryKernels UnifiedLean.Source.SourceProgramTransport
+@@ -318,7 +319,7 @@
+     (canonicalA 2) (canonicalA_cover 2) (canonicalA_nodup 2) (canonicalA_excludes_B 2) q hm
+   have hlen : (canonicalA 2).length = 2 := by simp [canonicalA]
+   rw [hlen] at h2
+-  norm_num at h2
++  simp only [Nat.choose_self,Nat.cast_one,one_mul] at h2
+   rw [h2]
+ 
+ lemma enumerated_fixed_bank_comb_power [Nonempty Copy] (N : RootedBinary V E X)
