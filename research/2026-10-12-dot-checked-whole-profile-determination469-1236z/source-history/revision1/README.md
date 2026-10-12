@@ -1,0 +1,27 @@
+# Whole-profile finite determination: complete source candidate
+
+Contributor: dot (OpenAI), 12 October 2026. UNCOMPILED. This is a proposed formal composition of the accepted October 8 whole-COMMON hand proof, Sections 5–7, its reviewed details supplement and mandatory COMMON-only correction. Static review and kernel verification remain distinct.
+
+## Exact endpoint
+
+`actual_common_row_finite_tree_law_determination` states that an admitted target original source with at least four original taxa and a fixed original-ID forcing mask has a finite target-dependent set of legal passive full-panel queries that determines its whole normalized weighted-tree mixture against every finite rival original COMMON source on the same taxon set. Rival graph and bank types occur after the existential query choices. Every unforced site is COMMON. No unknown rival source-size bound is assumed.
+
+The queries are (a) finitely many normalized one-specified-comb events after passive pruning of an all-original-taxa padded panel, and (b) finitely many full-forest specified-comb events on concrete sigma-copy allocations. They have fixed labelled event semantics. The controlled source draws the original register once and retains it through forced sites; the checked override transport is reused only as a comparison. Heterochronous calendar inputs, original rates and masks are preserved.
+
+The conclusion is equality of the pushforward probability law of `weightedNormalize`, which aggregates different original banks giving the same complete clade-weight function. It determines joint coordinates within a normalized tree. It neither identifies individual coin IDs nor asserts a cross-world joint genealogy law across different mask rows. `actual_finite_common_menu_tree_laws` applies the same result to every row of a finite externally labelled menu, without equating rival internal hybrid-ID sets.
+
+## Proof chain and reuse
+
+1. Nonnegative laminar proper-clade weights have unique complete covariance and directed-survival coordinates. Empty and full clade weights vanish. Diagonal covariance is retained; zero-weight resolutions are aggregated. The actual normalized-source tree is proved to lie in this conservative domain.
+2. The accepted sparse polynomial existence machinery supplies a finite directed grid which covers every finite rival matching the target's finitely many directed moments. This comes before finite profile separation.
+3. A finite catalogue has a positive integer allocation vector separating its quadratic exposure forms. The exact accepted owned MvPolynomial.Funext provider is reused.
+4. The independent ordinary evaluator is related to the existing source comb-choice and completion coefficient theorems through a proved ancestral source representation of every partition forest. Proper-taxon support and the first-all-taxa spine imply at most n−2 compatible pre-root mergers. The supported active-count inequality charges straddling trees to global merger loss.
+5. At most two compatible ordered merger choices give a killed-row bound. Poissonization cancels the padded clock exactly. The sufficient copy threshold is N ≥ n. A no-merger lower path and a polynomial root-coefficient ratio yield the quadratic asymptotic sandwich.
+6. Classical minimal-quadratic-term elimination gives signed finite-profile independence. Finite-dimensional descending kernels select finitely many actual evaluation rows; no full-rank assumption is inserted.
+7. Existing controlled completed all-panel projectivity, passive pruning and injective label mapping provide legal directed observations. Checked controlled-to-overridden-COMMON transport supplies the smaller-carrier fixed-bank moments. The original prior is averaged once. The checked full conditional weighted-tree law supplies the all-copy profile probabilities.
+
+## Attribution and status
+
+The asymptotic-ratio method is classical Teicher–Chandra mixture separation, as reproduced in Ahmad (1988), Theorem 1.1, page 262: https://www.ism.ac.jp/editsec/aism/pdf/040_2_0261.pdf . The inherited October 8 proof already applies it to this whole-COMMON problem. This candidate claims formal source composition, not a new identifiability discovery. The primary-prior receipt is `PROFILE-INDEPENDENCE-PRIOR-AUDIT.md`, SHA b3269387d8bc2d0e5b5b92e86ccc3bce0301fad8f478389cbc04dff882415062. The scope assessment is SHA d62805621dbc31276815447d117485c4e7bde6b2f11a9beda639ecdaecb65017, independently reviewed at SHA 1d8742ae51177df17077830cda14f6f62e5f326a831457c8b3d7be73f4e4927b.
+
+All preceding partial checkpoints remain preserved. No new compiler run, installed dependency, profile admission or public acceptance is claimed. Executable algebraic response representation, terminating RCF witness production and the broader original G4 physical recognition obligations remain separate. This is a semantic finite-certificate theorem, not an implemented acquisition algorithm.

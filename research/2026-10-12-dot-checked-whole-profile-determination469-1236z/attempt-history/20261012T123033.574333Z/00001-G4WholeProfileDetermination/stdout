@@ -1,0 +1,446 @@
+G4WholeProfileDetermination.lean:124:24: error: Application type mismatch: The argument
+  hT.left
+has type
+  l.WellLabelled
+but is expected to have type
+  A ∈ treeClusters l
+in the application
+  ihl A B hT.left
+G4WholeProfileDetermination.lean:129:24: error: Application type mismatch: The argument
+  hT.right.left
+has type
+  r.WellLabelled
+but is expected to have type
+  A ∈ treeClusters r
+in the application
+  ihr A B hT.right.left
+G4WholeProfileDetermination.lean:136:34: warning: Try `simp at ha` instead of `simpa using ha`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:137:44: warning: Try `simp at ha` instead of `simpa using ha`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:138:34: warning: Try `simp at hb` instead of `simpa using hb`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:139:44: warning: Try `simp at hb` instead of `simpa using hb`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:286:6: warning: Try `simp at hp` instead of `simpa using hp`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:308:4: warning: Try `simp at ha` instead of `simpa using ha`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:375:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:396:6: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G4WholeProfileDetermination.lean:465:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:477:32: warning: This simp argument is unused:
+  one_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_eq']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:489:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:540:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G4WholeProfileDetermination.lean:572:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.goodMass_nonnegative`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:575:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.goodMass_pure`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:580:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.goodMass_bind`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:614:42: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:614:52: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:667:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.forestOwner_mem`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:670:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.forestOwner_contains`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:725:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.forestRootState_sourceValid`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:843:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:884:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.partition_trees_equal_of_overlap`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:913:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.treeLeaf_injective`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:936:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.mergeForest_preserves_clade`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1016:10: warning: This simp argument is unused:
+  Finset.sum_boole
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.filter_mem_eq_inter, Finset.inter_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1016:27: warning: This simp argument is unused:
+  Finset.filter_mem_eq_inter
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.sum_boole, Finset.inter_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1109:5: warning: Variable name `hroot` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hroot
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:1288:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.fold_comb_leaves`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1354:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.comb_append`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1414:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.combReachable_good_frontier`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1528:8: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:1528:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:1542:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.active_offDiag_rate`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1694:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:1703:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.pmf_real_le_one`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1706:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.kernelIteration_diagonal_lower`:
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:1794:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:1886:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:1946:40: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1946:50: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1984:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.ordinaryCladeProgram_positiveWord`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1991:40: warning: This simp argument is unused:
+  hz
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, cladeKernel_zero, PMF.pure_bind, positiveCladeWord, List.filter_cons, ne_eq,
+    hz, not_true_eq_false, decide_false, Bool.false_eq_true, ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2001:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.mem_positiveCladeWord`:
+  [Fintype X]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2020:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.cladeIteration_combReachable`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:2073:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:2073:51: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:2177:58: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2177:68: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2203:2: warning: Try `simp at hA` instead of `simpa using hA`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:2205:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.initial_completionCombMass`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2280:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.allocationRep_injective`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2285:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.allocationSample_surjective`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2415:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.positiveWord_weighted_sum`:
+  [Fintype X]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2519:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.allocation_card`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2557:45: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:2645:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G4WholeProfileDetermination.lean:2711:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:2847:49: warning: Variable name `hp'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:2958:51: warning: Variable name `hp'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3107:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.configurationBankPMF_bind`:
+  [Fintype A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:3140:27: warning: Unused tactic linter: `congr 1` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3140:39: warning: Unused tactic linter: `exact Subsingleton.elim _ _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3140:27: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3140:39: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3141:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:3141:35: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:3159:21: warning: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hij, weightedNormalize, ha, hu, or_self, ite_false, NNReal.coe_sum, true_and]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:3224:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.original_bank_real_weight_positive`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:3275:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.controlledFullForestLaw_eq_existing`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:3294:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:3319:5: warning: Variable name `hsurj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hsurj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3411:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:3574:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:3644:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.actual_finite_randomized_common_menu_tree_laws`:
+  [Fintype Row]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Row] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
