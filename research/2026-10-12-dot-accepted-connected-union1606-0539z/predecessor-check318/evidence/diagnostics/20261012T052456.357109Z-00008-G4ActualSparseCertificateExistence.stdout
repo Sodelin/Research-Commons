@@ -1,0 +1,38 @@
+G4ActualSparseCertificateExistence.lean:55:2: error: Type mismatch: After simplification, term
+  LinearIndependent.fintypeLinearCombination_injective h
+ has type
+  @Function.Injective (ι → ℝ) ℝ[X] ⇑(Fintype.linearCombination ℝ ((fun s => (monomial s) 1) ∘ e))
+but is expected to have type
+  @Function.Injective (ι → ℝ) ℝ[X] ⇑(Fintype.linearCombination ℝ fun i => (monomial (e i)) 1)
+G4ActualSparseCertificateExistence.lean:67:60: warning: `Polynomial.finset_sum_coeff` has been deprecated: Use `Polynomial.finsetSum_coeff` instead
+G4ActualSparseCertificateExistence.lean:67:60: warning: This simp argument is unused:
+  Polynomial.finset_sum_coeff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [sparseCombination, Fintype.linearCombination_apply, Polynomial.coeff_smul, Polynomial.coeff_monomial,
+    hne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualSparseCertificateExistence.lean:116:6: error: Type mismatch: After simplification, term
+  hm
+ has type
+  1 < rootMultiplicity a P
+but is expected to have type
+  1 + 1 ≤ rootMultiplicity a P
+G4ActualSparseCertificateExistence.lean:174:6: error: Type mismatch: After simplification, term
+  (hz a ha).left
+ has type
+  ((sparseCombination e) c).IsRoot a
+but is expected to have type
+  eval a ((sparseCombination e) c) = 0
+'DotG4.ActualSparseCertificateExistence.exists_nonnegative_sparse_polynomial' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualSparseCertificateExistence.actual_exists_sparse_observable_certificate' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualSparseCertificateExistence.actual_matching_moments_restrict_bank' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
