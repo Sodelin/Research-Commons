@@ -1,0 +1,83 @@
+--- split-revision1/G4PairedNaturalTreeCertificate.lean
++++ split-revision2b/G4PairedNaturalTreeCertificate.lean
+@@ -453,6 +453,7 @@
+   congr 1
+   funext d
+   rw [renameCode_completion,Fintype.card_congr e]
++  rfl
+ 
+ open UnifiedLean.Source.SourceInitializedCalendar UnifiedLean.Source.SourceCalendarCompiler
+ 
+@@ -469,7 +470,8 @@
+     apply congrArg some
+     apply Subtype.ext
+     simp [renameTree,mapLabels]
+-  · rfl
++  · funext x
++    simp [renameCode,renameSnapshot,initialCode,admittedCode,encodeSnapshot,initial,Function.comp_apply]
+   · rfl
+ 
+ lemma renameCode_fullForest (N : RootedBinary V E X) {sample : A → X}
+@@ -492,7 +494,7 @@
+ theorem independent_completed_copy_enumeration (N : RootedBinary V E X) (C : Calendar N.graph)
+     (sample : A → X) (H : OriginalParentRegistry N) (p : HybridProbabilities N)
+     (r : PositivePairRates E) (e : A ≃ B) (coin : Hybrid N → Bool) :
+-    ((((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) (fun _ => false))
++    (((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) (fun _ => false))
+       (initialCode N sample (originalRegister N coin))).bind
+       (ancestralCompletion N r (Fintype.card A))).map
+       (fun s => sourceUnrankedForest (state s) Finset.univ)).map
+@@ -578,9 +580,11 @@
+     Function.Injective (sharedEmbedding i j m) := by
+   intro a b h
+   cases a with
+-  | inl a => cases b <;> simp_all [sharedEmbedding]
++  | inl a => cases b with
++    | inl b => simpa only [sharedEmbedding,Sum.inr.injEq,Sum.inl.injEq] using h
++    | inr b => cases b <;> simp [sharedEmbedding] at h
+   | inr a => cases b with
+-    | inl b => simp [sharedEmbedding] at h
++    | inl b => cases a <;> simp [sharedEmbedding] at h
+     | inr b => cases a <;> cases b <;> simp_all [sharedEmbedding,Ne.symm hij]
+ 
+ noncomputable def sharedKeep (i j : X) (m : Nat) : Finset (X ⊕ Fin m) :=
+@@ -652,8 +656,8 @@
+     (i j : X) (hij : i ≠ j) (m : Nat) :
+     (((naturalCompletedUnrankedLaw N C (sharedSample i m) H p (fun _ => true) r).map
+       (pruneForest (sharedKeep i j m))) (sharedCombEvent i j m)).toReal =
+-      combProbability N C H p r i j (m+1) := by
+-  unfold sharedCombEvent combProbability
++      DotG4.ActualObservableBankCertificate.combProbability N C H p r i j (m+1) := by
++  unfold sharedCombEvent DotG4.ActualObservableBankCertificate.combProbability
+   rw [actual_full_panel_selected_comb_moment N C H p r i j (sharedSample i m)
+     (sharedSample_surjective i m) (sharedKeep i j m) (sharedB i j m) rfl
+     (shared_A_samples i j hij m) (sharedA i j m) (shared_cover i j m)
+@@ -791,19 +795,19 @@
+   refine ⟨?_,?_,?_⟩
+   · intro i j hij
+     have h := congrArg (fun μ => ((μ.map (pruneForest (sharedKeep i j 1))) (sharedCombEvent i j 1)).toReal) (hq i 0)
+-    simpa only [pairedQueryLaw,pairedQueryExtras,pairedQueryMode,ite_false,ite_true,
+-      actual_shared_common_comb N C H p r i j hij 1,
+-      actual_shared_common_comb N' C' H' p' r' i j hij 1] using h
++    change pairedQueryReadout N' C' H' p' r' i j 0 = pairedQueryReadout N C H p r i j 0 at h
++    simpa only [pairedQueryReadout_zero N C H p r i j hij,
++      pairedQueryReadout_zero N' C' H' p' r' i j hij] using h
+   · intro i j hij
+     have h := congrArg (fun μ => ((μ.map (pruneForest (sharedKeep i j 2))) (sharedCombEvent i j 2)).toReal) (hq i 1)
+-    simpa only [pairedQueryLaw,pairedQueryExtras,pairedQueryMode,ite_false,ite_true,
+-      actual_shared_common_comb N C H p r i j hij 2,
+-      actual_shared_common_comb N' C' H' p' r' i j hij 2] using h
++    change pairedQueryReadout N' C' H' p' r' i j 1 = pairedQueryReadout N C H p r i j 1 at h
++    simpa only [pairedQueryReadout_one N C H p r i j hij,
++      pairedQueryReadout_one N' C' H' p' r' i j hij] using h
+   · intro i j hij
+     have h := congrArg (fun μ => ((μ.map (pruneForest (sharedKeep i j 1))) (sharedCombEvent i j 1)).toReal) (hq i 2)
+-    simpa only [pairedQueryLaw,pairedQueryExtras,pairedQueryMode,ite_false,ite_true,
+-      actual_shared_independent_crossed N C H p r i j hij,
+-      actual_shared_independent_crossed N' C' H' p' r' i j hij] using h
++    change pairedQueryReadout N' C' H' p' r' i j 2 = pairedQueryReadout N C H p r i j 2 at h
++    simpa only [pairedQueryReadout_two N C H p r i j hij,
++      pairedQueryReadout_two N' C' H' p' r' i j hij] using h
+ 
+ /-- The inherited ordinary-target contract: the three shared all-taxon laws per
+ taxon force every future natural response in BOTH modes, against arbitrary

@@ -1,0 +1,15 @@
+# Independent actual paired493 preflight
+
+Reviewed 2026-10-12 16:52 UTC. PASS for the admitted one global attempt 14, conditional on immediate fresh coordinated launch gates. This is not source/kernel acceptance or permission for subsequent retries.
+
+Actual staged graph aa5d2623deb065ef47cff50c60f95d2e22842ddc611c40d4828084fc38568a2c contains the exact reviewed core 7687fb27 and final 3fd84d10 sources with all 491 accepted prerequisites. The core precedes the final module, whose sole direct import is the core. Neither new component has a staged accepted object; both must be freshly compiled under the four-call allowlist before aggregate/audit. All 493 source identities and their graph imports/order authenticate. Existing cache keys, literal receipts, artifacts/companions and immutable hardlink origins match accepted full1611.
+
+Actual compiler/native verification authenticates the exact Lean binary, 28 libraries and native digest 59e64f51cbf0f4e9decd55b01026396941427537c1fcf900ad198a7775ba15e6. The check covers 932 prerequisite direct-import bundles, 99 external roots and 3,550 recursive modules; 3,329 Mathlib source bodies match the pinned official Git commit. The nine owned upstream modules are reuse-only, with their accepted companions and complete official namespace retained. All scripts/configs match the admitted profile; per-call 180 seconds/4096 MiB, trust-zero/kernel checking and other numerical guards are unchanged.
+
+Preparation allocation was 3,149,824 new nonshared bytes, 183,742,464 file-path bytes and 2,162,688 directory/symlink bytes. The exact launcher, process telemetry and history reference add three 4,096-byte blocks: current totals are 3,162,112 new bytes and 183,754,752 file-path bytes. The 1 GiB launch allowance brings the path amount to 1,257,496,576, below the 2 GiB cap. The small history reference and all 31,394 entries across both earlier stages reauthenticate; all thirteen attempts remain preserved in place.
+
+At completion the read-only checks observed 18,480,549,888 free storage bytes, 8,917,848,064 available RAM bytes and no active Lean/Lake process in the local namespace. The owner must repeat coordinated fresh checks; this namespace-local scan alone cannot prove no other coordinated compiler exists. The launcher itself enforces the additional path margin.
+
+Launcher d25e79cc and telemetry b0ad5b64 match their reviewed exact bytes. Actual process samples must later be associated with the source/aggregate/audit receipt commands and executable identity; any phase missing from telemetry remains explicit. Sampled RSS/high-water values are distinct from path-counted package allocation and do not guarantee a process's final maximum.
+
+The only admitted next action is the whole two-source package attempt, followed by report/reassessment. Core-only success does not establish the legal certificate or future-response endpoint. Final acceptance requires both fresh source proofs, aggregate, complete audit and independent terminal/declaration comparison. Full1611 remains accepted. No reviewer Lean/Lake/compiler/build invocation, source edit or remote write occurred.

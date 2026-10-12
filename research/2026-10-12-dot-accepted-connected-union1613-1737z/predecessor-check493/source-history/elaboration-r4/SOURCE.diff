@@ -1,0 +1,22 @@
+--- elaboration-r3/G4PairedNaturalTreeCertificate.lean
++++ elaboration-r4/G4PairedNaturalTreeCertificate.lean
+@@ -3227,7 +3227,7 @@
+       prefixThrough N C H gamma common pre guard ++
+         .interval (Real.toNNReal (next-guard)) :: tail := by
+   rw [literalPrefix,beforeBoundaryProgram_after_guard N C H gamma common pre post guard next (C.age v) hsplit hlt]
+-  let exits := ((G1OriginalCalendarDecomposition.originalExits N C (C.age v)).take (lastChildCutLength N C v ei ej)).map
++  let exits : List (ProgramStep N) := ((G1OriginalCalendarDecomposition.originalExits N C (C.age v)).take (lastChildCutLength N C v ei ej)).map
+     (fun e => ProgramStep.boundary (BoundaryOperation.exit e))
+   by_cases hn : next = C.age v
+   · refine ⟨exits,?_⟩
+@@ -3577,7 +3577,9 @@
+   · dsimp only
+     rw [actual_independent_literal_crossed_reader N C H p r hg sample h0 h1 h2 ρ s
+       ((PMF.mem_support_iff _ _).mpr hs)]
+-    by_cases hc : liveCard s = 3 <;> simp only [hc,eq_comm,if_true,if_false,mul_zero,zero_mul]
++    by_cases hc : liveCard s = 3
++    · simp only [hc,if_true]
++    · simp only [hc,Ne.symm hc,if_false,mul_zero,zero_mul]
+ 
+ noncomputable def tripleSample (i j : X) : Fin 3 → X := fun x => if x = 2 then j else i
+ 

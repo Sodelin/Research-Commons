@@ -1,0 +1,57 @@
+{
+  "status": "OBSERVATIONS_RECORDED",
+  "interval_seconds": 0.1,
+  "samples": 324,
+  "processes": {
+    "22:15602966": {
+      "pid": 22,
+      "start_ticks": 15602966,
+      "argv": [
+        "$LEAN/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "$PACKAGE/.build/runs/20261012T165243.821222Z/attempts/00001-G4PairedNaturalTreeCore/G4PairedNaturalTreeCore.olean",
+        "G4PairedNaturalTreeCore.lean"
+      ],
+      "cwd": "$PACKAGE/.build/runs/20261012T165243.821222Z/attempts/00001-G4PairedNaturalTreeCore/work",
+      "executable": "$LEAN/bin/lean",
+      "first_sample_monotonic": 156029.673533457,
+      "samples": 244,
+      "last_sample_monotonic": 156054.201543468,
+      "maximum_observed_VmPeak_bytes": 10255155200,
+      "maximum_observed_VmSize_bytes": 10188058624,
+      "maximum_observed_VmHWM_bytes": 4343668736,
+      "maximum_observed_VmRSS_bytes": 4343668736
+    },
+    "27:15605506": {
+      "pid": 27,
+      "start_ticks": 15605506,
+      "argv": [
+        "$LEAN/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "$PACKAGE/.build/runs/20261012T165243.821222Z/attempts/00002-G4PairedNaturalTreeCertificate/G4PairedNaturalTreeCertificate.olean",
+        "G4PairedNaturalTreeCertificate.lean"
+      ],
+      "cwd": "$PACKAGE/.build/runs/20261012T165243.821222Z/attempts/00002-G4PairedNaturalTreeCertificate/work",
+      "executable": "$LEAN/bin/lean",
+      "first_sample_monotonic": 156055.112289353,
+      "samples": 80,
+      "last_sample_monotonic": 156063.093014485,
+      "maximum_observed_VmPeak_bytes": 10262990848,
+      "maximum_observed_VmSize_bytes": 10195894272,
+      "maximum_observed_VmHWM_bytes": 4088356864,
+      "maximum_observed_VmRSS_bytes": 4088356864
+    }
+  },
+  "process_read_races": 5,
+  "unexpected_errors": [],
+  "minimum_observed_available_ram_bytes": 8033714176,
+  "semantics": "Per-process /proc observations of actual Lean descendants keyed by PID and start ticks. VmHWM/VmPeak are sampled kernel high-water values; no claim of observing an exited process final maximum. VmSize/VmPeak are virtual address space, not physical RAM. This sampler does not change compiler commands, kernel checks, memory/time limits or supervisor decisions."
+}
