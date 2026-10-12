@@ -1,0 +1,30 @@
+--- original
++++ elaboration-r1
+@@ -52,7 +52,7 @@
+ lemma sparseCombination_injective {ι : Type*} [Fintype ι]
+     (e : ι → Nat) (he : Function.Injective e) : Function.Injective (sparseCombination e) := by
+   have h := (Polynomial.basisMonomials ℝ).linearIndependent.comp e he
+-  simpa only [sparseCombination,Polynomial.coe_basisMonomials,Function.comp_apply] using
++  simpa only [sparseCombination,Polynomial.coe_basisMonomials,Function.comp_def] using
+     h.fintypeLinearCombination_injective
+ 
+ lemma sparseCombination_support {ι : Type*} [Fintype ι]
+@@ -113,7 +113,8 @@
+     by_cases ha : a ∈ A
+     · have hc : A.val.count a = 1 := Multiset.count_eq_one_of_mem A.nodup ha
+       have hm := (Polynomial.one_lt_rootMultiplicity_iff_isRoot hp).mpr (hz a ha)
+-      simpa only [S,Multiset.count_add,hc,Polynomial.count_roots] using hm
++      have hm2 : 2 ≤ Polynomial.rootMultiplicity a P := by omega
++      simpa only [S,Multiset.count_add,hc,Polynomial.count_roots] using hm2
+     · have hc : A.val.count a = 0 := Multiset.count_eq_zero.mpr ha
+       simp only [S,Multiset.count_add,hc,zero_add,Nat.zero_le]
+   obtain ⟨R,hR⟩ := (Multiset.prod_X_sub_C_dvd_iff_le_roots hp S).mpr hS
+@@ -171,7 +172,7 @@
+     · intro x hx
+       simpa only [map_neg,Polynomial.eval_neg,neg_nonneg] using hneg x hx
+     · intro a ha
+-      simpa only [map_neg,Polynomial.eval_neg,neg_eq_zero] using (hz a ha).1
++      simpa only [map_neg,Polynomial.eval_neg,neg_eq_zero,Polynomial.IsRoot] using (hz a ha).1
+ 
+ lemma momentExponent_strictMono : StrictMono (fun n : Nat => (n+1).choose 2) := by
+   apply strictMono_nat_of_lt_succ
