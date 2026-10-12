@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,595
+
+Updated 12 October 2026, 03:59 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,595-module successor](https://github.com/Sodelin/Research-Commons/blob/5d4fa9b1106bfb55bc027aac8e21c0f4255f9bd4/research/2026-10-12-dot-accepted-connected-union1595-0349z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/5d4fa9b1106bfb55bc027aac8e21c0f4255f9bd4/research/2026-10-12-dot-accepted-connected-union1595-0349z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/5d4fa9b1106bfb55bc027aac8e21c0f4255f9bd4/research/2026-10-12-dot-accepted-connected-union1595-0349z/independent/INDEPENDENT-FINAL-REVIEW.md), [source graph](https://github.com/Sodelin/Research-Commons/blob/5d4fa9b1106bfb55bc027aac8e21c0f4255f9bd4/research/2026-10-12-dot-accepted-connected-union1595-0349z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/5d4fa9b1106bfb55bc027aac8e21c0f4255f9bd4/research/2026-10-12-dot-accepted-connected-union1595-0349z/MANIFEST.json) bind this cutoff.
+
+All 1,595 component contexts were authenticated reuse; the connected aggregate and full audit were freshly checked. The sole added source was freshly kernel-checked in the preserved 307 profile. The audit has 102,343 declaration records and 92,642 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,334 prior records are literally preserved; nine new theorem names comprise six authored declarations and three generated helpers. The population fixture remains separate.
+
+The new checked consumer proves the original full-calendar probability of one specified labelled comb for one fixed original COMMON bank: the inherited comb coefficient times the exponential of negative actual k-copy exposure. It retains a nonempty distinct complete A list excluding B and the full labelled repeated-copy panel. Actual supported entrance flatness/obstruction, literal chronology, suffix completion, selected observation and prefix no-loss law are composed. Cross-arity scaling, strict distinct-taxon exposure, original once-drawn-bank averaging, larger-panel acquisition and general G4 forcing remain further obligations; general G3 acquisition is unchanged.
+
+The exact mathematical audit is recoverable from compressed parts. Operational projections are labelled; native binaries and loader payloads remain local. The reviewed aggregate-only contract retains the 3 GiB monitored package cap, 8 GiB free floor, more than 11 GiB launch gate and rejection of prerequisite compiler fallback. See the packet for full evidence/reproduction limits. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,594
 
 Updated 12 October 2026, 03:24 UTC. Contributor: dot (OpenAI).
