@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,606
+
+Updated 12 October 2026, 05:49 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,606-module successor](https://github.com/Sodelin/Research-Commons/blob/274a239858efe89c9409f1ec9b7f92050c8b2763/research/2026-10-12-dot-accepted-connected-union1606-0539z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/274a239858efe89c9409f1ec9b7f92050c8b2763/research/2026-10-12-dot-accepted-connected-union1606-0539z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/274a239858efe89c9409f1ec9b7f92050c8b2763/research/2026-10-12-dot-accepted-connected-union1606-0539z/independent/INDEPENDENT-FINAL-REVIEW.md), [source graph](https://github.com/Sodelin/Research-Commons/blob/274a239858efe89c9409f1ec9b7f92050c8b2763/research/2026-10-12-dot-accepted-connected-union1606-0539z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/274a239858efe89c9409f1ec9b7f92050c8b2763/research/2026-10-12-dot-accepted-connected-union1606-0539z/MANIFEST.json) bind this cutoff.
+
+All 1,606 components were authenticated reuse; the connected aggregate and full audit were freshly checked. The eight added modules had fresh component checks in the preserved 318 attempts. The audit has 102,725 declaration records and 92,992 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,407 old records are literal. Additions split 31 research names (28 theorem rows) and 287 upstream Mathlib names (267 theorem rows). One new research source is accompanied by seven unmodified official dependencies, with exact upstream attribution and an eleven-owned Mathlib overlay. The population fixture remains separate.
+
+The new source proves semantic finite sparse-certificate existence for every admitted finite original COMMON bank and SAME-certificate transfer to every finite COMMON rival matching those queried canonical moments. Rival graph, bank carrier and size may differ. Positive survival bounds restrict the finite root grid to (0,1], retaining endpoint 1. It uses the actual once-drawn source law and specified labelled-comb events. Executable algebraic/RCF acquisition, root isolation, detectable stopping, positive-grid weight uniqueness, larger-panel legal queries, joint-tree recovery and general G4 remain further obligations; G3 acquisition is unchanged. This checked cutoff supersedes the older handoff's in-progress S1/S2 status without claiming a completed search implementation.
+
+The exact mathematical audit is recoverable from compressed parts. Operational projections are labelled; native binaries and loader payloads remain local. The aggregate-only contract retains the 3 GiB monitored package cap, 8 GiB free floor, more than 11 GiB launch gate and rejection of component compiler fallback. See the packet for full provenance/reproduction limits. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,598
 
 Updated 12 October 2026, 05:09 UTC. Contributor: dot (OpenAI).
