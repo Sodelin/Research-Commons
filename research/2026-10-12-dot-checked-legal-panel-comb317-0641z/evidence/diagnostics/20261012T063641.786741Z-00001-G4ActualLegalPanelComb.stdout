@@ -1,0 +1,127 @@
+G4ActualLegalPanelComb.lean:219:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.enumerated_population_choose`:
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:289:10: error: typeclass instance problem is stuck
+  CommMagma ?m.637
+
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `CommMagma` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+G4ActualLegalPanelComb.lean:290:2: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+sample : Copy → X
+b : Copy
+hb : sample b = j
+ha : ∀ (x : Copy), x ≠ b → sample x = i
+as : List Copy
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hnodup : as.Nodup
+hnot : b ∉ as
+q : ℕ
+hq : q < bankFirstMeetingIndex N C H gamma r coin i j
+P : List (ProgramStep N) := List.take q (compiledCalendarProgram N C H gamma fun x => true)
+a : Location V E := copyLocation (state (pairReference N C H gamma coin i j q)) true
+z : Location V E := copyLocation (state (pairReference N C H gamma coin i j q)) false
+s : Code N sample := fixedRegisterPrefix N P (initialCode N sample (originalRegister N coin))
+hsep : a ≠ z
+hl : (state s).live = Finset.univ
+hanc : ∀ (x : Copy), (state s).ancestor x = x
+haloc : ∀ (x : Copy), x ≠ b → (state s).location x = a
+hbloc : (state s).location b = z
+e : Option E
+a✝ : e ∈ Finset.univ
+h : ¬a = originalPlace N e
+⊢ copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N e →
+    as.length.choose 2 = 0 ∨ pairRate r e = 0
+G4ActualLegalPanelComb.lean:379:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.mapLabels_leftInverse`:
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:393:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.mapLabels_fold_comb`:
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:409:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.selected_mapUnranked_injective`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:441:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualLegalPanelComb.lean:430:5: warning: Variable name `hsurj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hsurj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4ActualLegalPanelComb.lean:478:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.paddedCopy_injective`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:482:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.padded_cover`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:491:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.padded_sample_A`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:510:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.paddedA_length`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'DotG4.ActualLegalPanelComb.enumerated_natural_comb_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualLegalPanelComb.actual_full_panel_selected_comb_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualLegalPanelComb.actual_legal_observed_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

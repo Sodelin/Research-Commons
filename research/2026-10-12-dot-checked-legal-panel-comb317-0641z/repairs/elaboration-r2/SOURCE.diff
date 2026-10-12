@@ -1,0 +1,11 @@
+--- elaboration-r1
++++ elaboration-r2
+@@ -284,6 +284,8 @@
+   intro e _
+   rw [enumerated_population_choose (state s) b as hcover hnodup hnot a z (originalPlace N e)
+     hsep hl haloc hbloc]
++  change pairRate r e * ((if a = originalPlace N e then as.length.choose 2 else 0 : Nat) : ℝ) =
++    (as.length.choose 2 : ℝ) * (if a = originalPlace N e then pairRate r e else 0)
+   by_cases h : a = originalPlace N e
+   · simp only [if_pos h]
+     exact mul_comm _ _

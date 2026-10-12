@@ -1,0 +1,303 @@
+G4ActualLegalPanelComb.lean:222:5: error: Function expected at
+  populationRoots
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  s
+
+Hint: The identifier `populationRoots` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualLegalPanelComb.lean:225:14: error: Function expected at
+  populationRoots
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4ActualLegalPanelComb.lean:229:14: error: Invalid argument: Variable `populationRoots` is not a proposition or let-declaration
+G4ActualLegalPanelComb.lean:228:6: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+Copy : Type u_4
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+x✝ : Sort u_5
+populationRoots : x✝
+s : State V E Copy
+b : Copy
+as : List Copy
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hnodup : as.Nodup
+hnot : b ∉ as
+a z place : Location V E
+hsep : a ≠ z
+hlive : s.live = Finset.univ
+ha : ∀ (x : Copy), x ≠ b → s.location x = a
+hb : s.location b = z
+hap : a = place
+hzp : z ≠ place
+⊢ b ∉ sorry ()
+G4ActualLegalPanelComb.lean:231:14: error: Invalid argument: Variable `populationRoots` is not a proposition or let-declaration
+G4ActualLegalPanelComb.lean:230:6: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+Copy : Type u_4
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+inst✝³ : Fintype V
+inst✝² : Fintype E
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+x✝ : Sort u_5
+populationRoots : x✝
+s : State V E Copy
+b : Copy
+as : List Copy
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hnodup : as.Nodup
+hnot : b ∉ as
+a z place : Location V E
+hsep : a ≠ z
+hlive : s.live = Finset.univ
+ha : ∀ (x : Copy), x ≠ b → s.location x = a
+hb : s.location b = z
+hap : a = place
+hzp : z ≠ place
+x : Copy
+hx : ¬x = b
+hm : x ∈ as
+⊢ x ∈ sorry ()
+G4ActualLegalPanelComb.lean:235:16: error: Function expected at
+  populationRoots
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4ActualLegalPanelComb.lean:241:16: error: Function expected at
+  populationRoots
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4ActualLegalPanelComb.lean:229:30: warning: This simp argument is unused:
+  hlive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, hb, hzp, hnot]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualLegalPanelComb.lean:229:36: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, hlive, hzp, hnot]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualLegalPanelComb.lean:229:39: warning: This simp argument is unused:
+  hzp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, hlive, hb, hnot]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualLegalPanelComb.lean:231:30: warning: This simp argument is unused:
+  hlive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, ha x hx, hap, hm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualLegalPanelComb.lean:231:36: warning: This simp argument is unused:
+  ha x hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, hlive, hap, hm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualLegalPanelComb.lean:231:44: warning: This simp argument is unused:
+  hap
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [populationRoots, hlive, ha x hx, hm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualLegalPanelComb.lean:281:6: error(lean.unknownIdentifier): Unknown identifier `actual_rate_choose_two`
+G4ActualLegalPanelComb.lean:260:36: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+sample : Copy → X
+b : Copy
+hb : sample b = j
+ha : ∀ (x : Copy), x ≠ b → sample x = i
+as : List Copy
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hnodup : as.Nodup
+hnot : b ∉ as
+q : ℕ
+hq : q < bankFirstMeetingIndex N C H gamma r coin i j
+P : List (ProgramStep N) := List.take q (compiledCalendarProgram N C H gamma fun x => true)
+a : Location V E := copyLocation (state (pairReference N C H gamma coin i j q)) true
+z : Location V E := copyLocation (state (pairReference N C H gamma coin i j q)) false
+s : Code N sample := fixedRegisterPrefix N P (initialCode N sample (originalRegister N coin))
+hsep : a ≠ z
+hl : (state s).live = Finset.univ
+hanc : ∀ (x : Copy), (state s).ancestor x = x
+haloc : ∀ (x : Copy), x ≠ b → (state s).location x = a
+hbloc : (state s).location b = z
+⊢ totalRate N r s =
+    ↑(as.length.choose 2) *
+      ∑ e,
+        if copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N e then pairRate r e else 0
+G4ActualLegalPanelComb.lean:301:79: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+sample : Copy → X
+b : Copy
+hb : sample b = j
+ha : ∀ (x : Copy), x ≠ b → sample x = i
+as : List Copy
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hnodup : as.Nodup
+hnot : b ∉ as
+q : ℕ
+hq :
+  q <
+    (List.take (bankFirstMeetingIndex N C H gamma r coin i j)
+        (compiledCalendarProgram N C H gamma fun x => true)).length
+hm : q < bankFirstMeetingIndex N C H gamma r coin i j
+ht :
+  List.take q
+      (List.take (bankFirstMeetingIndex N C H gamma r coin i j) (compiledCalendarProgram N C H gamma fun x => true)) =
+    List.take q (compiledCalendarProgram N C H gamma fun x => true)
+hlen : (canonicalA 2).length = 2
+h2 :
+  totalRate N r
+      (fixedRegisterPrefix N (List.take q (compiledCalendarProgram N C H gamma fun x => true))
+        (initialCode N (repeatedSample 2 i j) (originalRegister N coin))) =
+    (if copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N none then pairRate r none
+      else 0) +
+      ∑ i_1,
+        if copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N (some i_1) then
+          pairRate r (some i_1)
+        else 0
+⊢ (↑(as.length.choose 2) *
+      ∑ e,
+        if copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N e then pairRate r e
+        else 0) =
+    ↑(as.length.choose 2) *
+      ((if copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N none then pairRate r none
+        else 0) +
+        ∑ i_1,
+          if copyLocation (state (pairReference N C H gamma coin i j q)) true = originalPlace N (some i_1) then
+            pairRate r (some i_1)
+          else 0)
+G4ActualLegalPanelComb.lean:378:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.mapLabels_leftInverse`:
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:392:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.mapLabels_fold_comb`:
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:408:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.selected_mapUnranked_injective`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:440:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4ActualLegalPanelComb.lean:429:5: warning: Variable name `hsurj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hsurj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4ActualLegalPanelComb.lean:477:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.paddedCopy_injective`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:481:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.padded_cover`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:490:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.padded_sample_A`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualLegalPanelComb.lean:509:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualLegalPanelComb.paddedA_length`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'DotG4.ActualLegalPanelComb.enumerated_natural_comb_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualLegalPanelComb.actual_full_panel_selected_comb_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualLegalPanelComb.actual_legal_observed_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
