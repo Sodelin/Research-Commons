@@ -1,0 +1,11 @@
+# Independent fifth repair-batch review
+
+2026-10-12 10:20 UTC. **PASS for the exact R4 → R5 source/runtime delta**, permitting the authorized same-policy retry after fresh gates. This is not a successful elaboration or endpoint receipt.
+
+Attempt 5, run `20261012T101818.036310Z`, has one source error: the explicit whole-sum change expects product-derived finite membership decisions while the actual PMF uniform summand contains classical decisions. The diagnostic displays the same propositions and scalar expressions with those distinct decision instances. Failed stdout SHA-256: `92f49dbd1d1cd12dea6f5b6c31e4193e4137a849a8f5a098d84f012cf9a8ae5a`.
+
+R5 removes that whole-sum definitional change and its local pretyped helper. It applies sum_congr to the actual residual, then splits on membership and simplifies equality orientation pointwise. This is the same finite sum identity for the same root-pair event. No theorem statement, definition, hypothesis, import or mathematical assumption changes, and no new declaration or proof escape is added.
+
+Exact source `edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9` has 153,015 bytes, a decrease of 635. Ledger `fff395fdce596ae3f6b7ec03331970d93f522c51bfea7e2cbb0ab057cb15cdca` retains all 456 accepted providers/imports. Graph `5b837bc6d27d0dad410b79aa35148fcd9eb13626bc2a4b2bf8e3c56a13c31e41`, driver `e7d0e20ef57ba00da5eaf48addeb253de4f85ec0882ad695e2ff027de1fb57e7`, preparation script `48a1720a7f41c31e6d0e9a4a478384160c48c000f68376131ccccbbd2556fbb1` and actual staged receipt `cde1a940511044d676e4450655da1effa592aae8a873e44686ba645aa0302cb7` were independently authenticated. Exact diff SHA-256: `dd15478f600ceea1ddcd9d278fcb977a02b493cb734b61b53dcab28919549154`; identity result `e9ad1ebaac3b6773565d7b4553da227f9ad5c248426bf2d5c8ddf94f6effdca2`; checker `1a6a1b39c6b61191330a9ca34319315cb032848bdcd4a2d55294f448a7b9dafa`.
+
+Only source/graph/driver pins and exact source-byte totals change. All inherited scripts, native/import policy, compiler flags, heartbeat and process/storage limits, cache authentication and fail-closed prerequisite behavior remain unchanged. All five failed attempts and earlier bodies are preserved. Actual source, aggregate, complete audit and terminal checks still govern acceptance; connected 1,609 remains the accepted baseline.

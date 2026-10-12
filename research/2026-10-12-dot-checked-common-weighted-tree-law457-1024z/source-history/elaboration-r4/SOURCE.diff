@@ -1,0 +1,44 @@
+--- candidate-0933z
++++ elaboration-r1
+@@ -1148,7 +1148,8 @@
+           (pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s))) :=
+       Finset.mem_image.mpr ⟨p,hp,rfl⟩
+     rw [image_population_pairs] at hraw
+-    simpa only [activeTrees,forestCode,colourFibre] using hraw
++    simpa only [activeTrees,forestCode,colourFibre,Finset.mem_offDiag,
++      Finset.mem_filter,Finset.subset_iff] using hraw
+   have hl := (legalPair_iff_mem_active_offDiag (forestCode N s)
+     (actualForest_partition (state s) (code_forest_valid N s)) _ _).mpr hmem
+   apply Prod.ext
+@@ -1260,9 +1261,19 @@
+       if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ *
+           (if pairAction F Finset.univ q = G then 1 else 0) else 0 := by
+     by_cases hq : q ∈ rootPairs F <;> simp [hq,eq_comm]
+-  simp_rw [he]
+-  rw [← Finset.sum_filter]
+-  simp only [Finset.filter_mem_eq_inter,Finset.univ_inter]
++  change (∑ q : WellLabelledTree Copy × WellLabelledTree Copy,
++    (if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ else 0) *
++      (if G = pairAction F Finset.univ q then 1 else 0)) =
++    ∑ q ∈ rootPairs F, ((rootPairs F).card : ℝ)⁻¹ *
++      (if pairAction F Finset.univ q = G then 1 else 0)
++  calc
++    _ = ∑ q : WellLabelledTree Copy × WellLabelledTree Copy,
++        if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ *
++          (if pairAction F Finset.univ q = G then 1 else 0) else 0 :=
++      Finset.sum_congr rfl (fun q _ => he q)
++    _ = _ := by
++      rw [← Finset.sum_filter]
++      simp only [Finset.filter_mem_eq_inter,Finset.univ_inter]
+ 
+ lemma rootStep_bind_probability (F G : Forest Copy) (h : (rootPairs F).Nonempty)
+     (K : Forest Copy → PMF (Forest Copy)) :
+@@ -2700,7 +2711,7 @@
+   have hn' : next ∈ originalDates N C := by simpa only [sortedOriginalDates,Finset.mem_sort] using hn
+   obtain ⟨v,_,hv⟩ := Finset.mem_image.mp hn'
+   have hnr : next ≤ C.age N.root := hv ▸ original_root_latest N C v
+-  apply Finset.eq_empty_iff_forall_not_mem.mpr
++  apply Finset.eq_empty_iff_forall_notMem.mpr
+   intro x hx
+   have hl := (Finset.mem_filter.mp hx).2
+   have he := hgeo.2.1 x

@@ -1,0 +1,20 @@
+--- candidate-0933z
++++ elaboration-r1
+@@ -2842,7 +2842,7 @@
+   rw [cladeClock,Fintype.sum_option]
+   have hr := actual_epoch_root_fibre_empty N C (fun x : X => x) H p r coin pre post guard next hsplit
+   dsimp only at hr
+-  change (if colourFibre _ (.rootPopulation N.root) = A then _ else _) + _ = _
++  change (if colourFibre _ (Location.rootPopulation (E := E) N.root) = A then _ else _) + _ = _
+   rw [hr,if_neg (Ne.symm hA),zero_add]
+   unfold selectedCladeRate
+   apply Finset.sum_congr rfl
+@@ -2851,7 +2851,7 @@
+     pre post guard next hsplit e
+   dsimp only at he
+   have hid (B : Finset X) : cladeCopySet (fun x : X => x) B = B := by ext x; simp [cladeCopySet]
+-  change (if colourFibre _ (.edge e) = A then r.edge e else 0) = _
++  change (if colourFibre _ (Location.edge (V := V) e) = A then r.edge e else 0) = _
+   rw [he,hid]
+   by_cases ha : C.Active guard e <;> simp [ha,hA,Ne.symm hA]
+ 

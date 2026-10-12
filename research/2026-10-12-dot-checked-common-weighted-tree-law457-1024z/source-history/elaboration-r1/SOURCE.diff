@@ -1,0 +1,529 @@
+--- candidate-0933z
++++ elaboration-r1
+@@ -56,6 +56,7 @@
+ open UnifiedLean.Source.NativeParentRouting
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.NativeCommonPairGerm
++open UnifiedLean.Source.NativeIndependentPairMixture
+ open UnifiedLean.Source.OriginalFixedIDControls
+ open GProgram.G5 GProgram.G5.AttainedChronology GProgram.G5.Normalization
+ open G1ActualDisplayedTreeFamily G1ActualDisplayedClusterSplitTransport
+@@ -213,8 +214,7 @@
+     Finset.union_subset hp.2.2.2.1 hp.2.2.2.2.1
+   have htg : t ≠ treeGraft p.1 p.2 hp.2.2.2.2.2 :=
+     (disjoint_fibres_tree_ne hAB _ t hgA ht).symm
+-  simp only [mergeForest,Finset.mem_insert,Finset.mem_erase,hta,htb,htg,
+-    false_or,true_and,not_false_eq_true]
++  simp [mergeForest,hta,htb,htg]
+ 
+ /-- An operation on a disjoint clade cannot enable/disable another clade's
+ whole-tree ordered pair. This is a statement about actual leaf sets. -/
+@@ -247,7 +247,10 @@
+           mergeForest (pairAction F B q) p.1 p.2 hp'.2.2.2.2.2 := dif_pos hp'
+       have hinnerA : pairAction F A p = mergeForest F p.1 p.2 hp.2.2.2.2.2 := dif_pos hp
+       have hinnerB : pairAction F B q = mergeForest F q.1 q.2 hq.2.2.2.2.2 := dif_pos hq
+-      rw [hleft,hright,hinnerA,hinnerB]
++      rw [hleft,hright]
++      change mergeForest (pairAction F A p) q.1 q.2 hq.2.2.2.2.2 =
++        mergeForest (pairAction F B q) p.1 p.2 hp.2.2.2.2.2
++      rw [hinnerA,hinnerB]
+       have hgA : (treeGraft p.1 p.2 hp.2.2.2.2.2).val.leaves ⊆ A :=
+         Finset.union_subset hp.2.2.2.1 hp.2.2.2.2.1
+       have hgB : (treeGraft q.1 q.2 hq.2.2.2.2.2).val.leaves ⊆ B :=
+@@ -271,10 +274,14 @@
+         · exact Or.inr ⟨htf.1,htf.2.1,Or.inr ⟨h.1,h.2.1,htf.2.2⟩⟩
+     · have hq' : ¬ LegalPair (pairAction F A p) B q :=
+         fun h => hq ((legalPair_other_fibre F hAB p q).mp h)
+-      simp only [pairAction,dif_neg hq',dif_neg hq]
++      calc
++        _ = pairAction F A p := dif_neg hq'
++        _ = _ := congrArg (fun G => pairAction G A p) (show pairAction F B q = F from dif_neg hq).symm
+   · have hp' : ¬ LegalPair (pairAction F B q) A p :=
+       fun h => hp ((legalPair_other_fibre F hAB.symm q p).mp h)
+-    simp only [pairAction,dif_neg hp',dif_neg hp]
++    calc
++      _ = pairAction F B q := congrArg (fun G => pairAction G B q) (show pairAction F A p = F from dif_neg hp)
++      _ = _ := (show pairAction (pairAction F B q) A p = pairAction F B q from dif_neg hp').symm
+ 
+ /-- Padding makes the uniformization carrier nonempty even when Copy is empty.
+ Its fixed rate divided by the choice cardinality is exactly one half. -/
+@@ -302,7 +309,7 @@
+ lemma cladeStep_disjoint_commute (F : Forest Copy) {A B : Finset Copy}
+     (hAB : Disjoint A B) :
+     (cladeStep A F).bind (cladeStep B) = (cladeStep B F).bind (cladeStep A) := by
+-  simp only [cladeStep,PMF.bind_map,Function.comp_def,PMF.map]
++  simp only [cladeStep,PMF.map,PMF.bind_bind,PMF.pure_bind]
+   rw [PMF.bind_comm]
+   congr 1
+   funext q
+@@ -459,8 +466,10 @@
+   simp_rw [cladeKernel_exponential]
+   change (exp (((t+u : ℝ≥0) : ℝ) • cladeGenerator A)) F G =
+     (exp ((t : ℝ) • cladeGenerator A) * exp ((u : ℝ) • cladeGenerator A)) F G
+-  rw [NNReal.coe_add,add_smul,NormedSpace.exp_add_of_commute
+-    ((Commute.refl (cladeGenerator A)).smul_left (t : ℝ) |>.smul_right (u : ℝ))]
++  rw [NNReal.coe_add,add_smul]
++  exact congrArg (fun M : Matrix (Forest Copy) (Forest Copy) ℝ => M F G)
++    (NormedSpace.exp_add_of_commute
++      ((Commute.refl (cladeGenerator A)).smul_left (t : ℝ) |>.smul_right (u : ℝ)))
+ 
+ lemma no_legalPair_empty (F : Forest Copy) (p : WellLabelledTree Copy × WellLabelledTree Copy) :
+     ¬ LegalPair F ∅ p := by
+@@ -480,7 +489,9 @@
+   apply (ENNReal.toReal_eq_toReal_iff' (PMF.apply_ne_top _ _) (PMF.apply_ne_top _ _)).mp
+   rw [cladeKernel_exponential,cladeGenerator_empty,smul_zero,exp_zero]
+   simp only [Matrix.one_apply,PMF.pure_apply]
+-  by_cases h : F = G <;> simp [h,eq_comm]
++  by_cases h : F = G
++      · subst G; simp
++      · simp [h,Ne.symm h]
+ 
+ lemma cladeTransition_disjoint_commute {A B : Finset Copy} (hAB : Disjoint A B) :
+     Commute (cladeTransition A) (cladeTransition B) := by
+@@ -558,7 +569,7 @@
+           (if F = G then 1 else 0) else 0) =
+       if LegalPair F A p then f p else 0 := by
+     intro p
+-    by_cases h : LegalPair F A p <;> simp only [f,pairAction,h,dif_pos,dif_neg,if_true,if_false]
++    by_cases h : LegalPair F A p <;> simp [f,pairAction,h]
+   rw [cladeGenerator_apply]
+   simp_rw [ht]
+   rw [← Finset.sum_filter]
+@@ -699,7 +710,7 @@
+ lemma actualForest_card {V E : Type*} (s : State V E Copy) (hs : Valid s) :
+     (actualForest s hs).card = s.live.card := by
+   rw [actualForest,Finset.card_image_iff.mpr]
+-  · exact Finset.card_attach _
++  · exact Finset.card_attach
+   · intro a ha b hb he
+     apply Subtype.ext
+     exact live_genealogy_injective s hs a.property b.property
+@@ -891,6 +902,7 @@
+     obtain ⟨l,hl,he⟩ := (mem_actualForest s hs t).mp ht
+     refine Finset.mem_image.mpr ⟨l,Finset.mem_univ _,?_⟩
+     apply Subtype.ext
++    change s.genealogy (s.ancestor l) = t.val
+     rw [hs.representative l hl]
+     exact he
+   · rintro ht
+@@ -930,7 +942,10 @@
+   induction xs generalizing F with
+   | nil => simp only [List.nil_append,forestProgram,PMF.pure_bind]
+   | cons a xs ih =>
+-      simp only [List.cons_append,forestProgram,ih,PMF.bind_bind]
++      simp only [List.cons_append,forestProgram,PMF.bind_bind]
++      congr 1
++      funext G
++      exact ih G
+ 
+ lemma forestProgram_partition (ops : List (Finset Copy × ℝ≥0))
+     (F : Forest Copy) (hF : Partition F) {G : Forest Copy}
+@@ -968,8 +983,9 @@
+         exact hcomm op List.mem_cons_self b (List.mem_cons_of_mem op hb)
+       rw [forestProgram,bind_probability_real,tsum_fintype]
+       simp_rw [ih htail,cladeKernel_exponential]
+-      rw [List.map_cons,List.sum_cons,NormedSpace.exp_add_of_commute hc]
+-      rfl
++      rw [List.map_cons,List.sum_cons]
++      exact (congrArg (fun M : Matrix (Forest Copy) (Forest Copy) ℝ => M F G)
++        (NormedSpace.exp_add_of_commute hc)).symm
+ 
+ lemma forestProgram_probability_product (ops : List (Finset Copy × ℝ≥0))
+     (F G : Forest Copy) :
+@@ -978,7 +994,9 @@
+   induction ops generalizing F with
+   | nil =>
+       simp only [forestProgram,List.map_nil,List.prod_nil,Matrix.one_apply,PMF.pure_apply]
+-      by_cases h : F = G <;> simp [h,eq_comm]
++      by_cases h : F = G
++      · subst G; simp
++      · simp [h,Ne.symm h]
+   | cons op ops ih =>
+       rw [forestProgram,bind_probability_real,tsum_fintype]
+       simp_rw [ih,cladeKernel_exponential]
+@@ -996,8 +1014,7 @@
+     rcases hab with hab | hab
+     · rcases hba with hba | hba
+       · have he := Finset.Subset.antisymm hab hba
+-        rw [he]
+-        exact Commute.refl _
++        simpa only [he] using (Commute.refl (cladeGenerator b.1))
+       · exact cladeGenerator_disjoint_commute hba.symm
+     · exact cladeGenerator_disjoint_commute hab
+   exact ((hg.smul_left (a.2 : ℝ)).smul_right (b.2 : ℝ)).exp_left.exp_right
+@@ -1023,7 +1040,9 @@
+   | nil => simp only [List.map_nil,List.sum_nil,forestProgram,cladeKernel_zero]
+   | cons t times ih =>
+       simp only [List.map_cons,List.sum_cons,forestProgram]
+-      simp_rw [ih]
++      change (cladeKernel A t F).bind (forestProgram (times.map (fun u => (A,u)))) = _
++      have hf : forestProgram (times.map (fun u => (A,u))) = cladeKernel A times.sum := funext ih
++      rw [hf]
+       exact (cladeKernel_add A t times.sum F).symm
+ 
+ end Forest
+@@ -1047,8 +1066,11 @@
+   intro x hx hy
+   exact h ((Finset.mem_filter.mp hx).2.symm.trans (Finset.mem_filter.mp hy).2)
+ 
++lemma code_forest_valid (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) : Valid (state s) := s.property.forest
++
+ noncomputable def forestCode (N : RootedBinary V E X) {sample : Copy → X}
+-    (s : Code N sample) : Forest Copy := actualForest (state s) s.property.forest
++    (s : Code N sample) : Forest Copy := actualForest (state s) (code_forest_valid N s)
+ 
+ /-- All original zero-time boundary kernels preserve the full ordered forest.
+ The accepted full selected-genealogy preservation theorem includes supported
+@@ -1087,7 +1109,7 @@
+     (s : Code N sample) (p : Choice N s) :
+     forestCode N (stepDestination N s (some p)) =
+       actualForest (merge (state s) p.2.val.1 p.2.val.2)
+-        (merge_valid (state s) s.property.forest
++        (merge_valid (state s) (code_forest_valid N s)
+           (population_pair_is_source_legal (state s) (originalPlace N p.1)
+             (originalPlace_not_node N p.1) p.2.property)) := by
+   rw [stepDestination,forestCode_admitted]
+@@ -1100,7 +1122,9 @@
+     (originalPlace_not_node N p.1) p.2.property
+   change copyLocation (state (stepDestination N s (some p))) x = copyLocation (state s) x
+   rw [stepDestination]
+-  change copyLocation (decodeSnapshot N.root (encodeSnapshot _ _)) x = _
++  change copyLocation (decodeSnapshot N.root (encodeSnapshot
++    (merge (state s) p.2.val.1 p.2.val.2)
++    (merge_valid (state s) (code_forest_valid N s) hm))) x = _
+   rw [decode_encode_copyLocation]
+   exact merge_population_preserved (state s) hm x
+ 
+@@ -1108,19 +1132,19 @@
+     (s : Code N sample) (i : Option E) (p : Copy × Copy) (hp : PairAt N i p s) :
+     colourProjection N (mergeAt N i p s) =
+       (pairAction (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i))
+-        (pairMap (liveTreeOrLeaf (state s) s.property.forest) p),
++        (pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s)) p),
+        copyLocation (state s)) := by
+   have hpair := Finset.mem_offDiag.mp hp
+   have ha := populationRoots_subset_live (state s) (originalPlace N i) hpair.1
+   have hb := populationRoots_subset_live (state s) (originalPlace N i) hpair.2.1
+-  have hmem : pairMap (liveTreeOrLeaf (state s) s.property.forest) p ∈
++  have hmem : pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s)) p ∈
+       (activeTrees (forestCode N s)
+         (colourFibre (copyLocation (state s)) (originalPlace N i))).offDiag := by
+-    change _ ∈ ((actualForest (state s) s.property.forest).filter _).offDiag
++    change _ ∈ ((actualForest (state s) (code_forest_valid N s)).filter _).offDiag
+     rw [← image_population_pairs]
+     exact Finset.mem_image.mpr ⟨p,hp,rfl⟩
+   have hl := (legalPair_iff_mem_active_offDiag (forestCode N s)
+-    (actualForest_partition (state s) s.property.forest) _ _).mpr hmem
++    (actualForest_partition (state s) (code_forest_valid N s)) _ _).mpr hmem
+   apply Prod.ext
+   · change forestCode N (mergeAt N i p s) = _
+     rw [mergeAt_of_mem N i p s hp,forestCode_choice,actualForest_merge,pairAction,dif_pos hl]
+@@ -1138,10 +1162,10 @@
+ 
+ lemma ancestral_forest_pair_image (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) (hs : AncestralRoot N s) :
+-    (state s).live.offDiag.image (pairMap (liveTreeOrLeaf (state s) s.property.forest)) =
++    (state s).live.offDiag.image (pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s))) =
+       rootPairs (forestCode N s) := by
+-  rw [rootPairs_eq_offDiag _ (actualForest_partition (state s) s.property.forest)]
+-  have hi := image_population_pairs (state s) s.property.forest (.rootPopulation N.root)
++  rw [rootPairs_eq_offDiag _ (actualForest_partition (state s) (code_forest_valid N s))]
++  have hi := image_population_pairs (state s) (code_forest_valid N s) (.rootPopulation N.root)
+   rw [ancestral_roots N s hs] at hi
+   have hf := ancestral_colourFibre N s hs
+   change Finset.univ.filter (fun x => copyLocation (state s) x =
+@@ -1154,7 +1178,7 @@
+ noncomputable def rootForestChoice (N : RootedBinary V E X) {sample : Copy → X}
+     (s : Code N sample) (hs : AncestralRoot N s) (p : Choice N s) :
+     {q // q ∈ rootPairs (forestCode N s)} :=
+-  ⟨pairMap (liveTreeOrLeaf (state s) s.property.forest) (rootChoices N s hs p).val,by
++  ⟨pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s)) (rootChoices N s hs p).val,by
+     rw [← ancestral_forest_pair_image N s hs]
+     exact Finset.mem_image.mpr ⟨_,(rootChoices N s hs p).property,rfl⟩⟩
+ 
+@@ -1169,13 +1193,14 @@
+     have hq := Finset.mem_offDiag.mp (rootChoices N s hs q).property
+     have hv := congrArg Subtype.val he
+     apply Prod.ext
+-    · exact liveTreeOrLeaf_injective_on (state s) s.property.forest _ hp.1 _ hq.1
++    · exact liveTreeOrLeaf_injective_on (state s) (code_forest_valid N s) _ hp.1 _ hq.1
+         (congrArg Prod.fst hv)
+-    · exact liveTreeOrLeaf_injective_on (state s) s.property.forest _ hp.2.1 _ hq.2.1
++    · exact liveTreeOrLeaf_injective_on (state s) (code_forest_valid N s) _ hp.2.1 _ hq.2.1
+         (congrArg Prod.snd hv)
+   · intro q
+-    have hq := q.property
+-    rw [← ancestral_forest_pair_image N s hs] at hq
++    have hq : q.val ∈ Finset.image (pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s)))
++        (state s).live.offDiag := by
++      simpa only [ancestral_forest_pair_image N s hs] using q.property
+     obtain ⟨p,hp,he⟩ := Finset.mem_image.mp hq
+     refine ⟨(rootChoices N s hs).symm ⟨p,hp⟩,?_⟩
+     apply Subtype.ext
+@@ -1196,7 +1221,7 @@
+   rw [mergeAt_of_mem N p.1 p.2.val s hp] at ht
+   change forestCode N (stepDestination N s (some p)) = _ at ht
+   simpa only [hi,originalPlace,ancestral_colourFibre N s hs,
+-    rootForestChoice,rootChoices] using ht
++    rootForestChoice,rootChoices,Equiv.coe_fn_mk] using ht
+ 
+ lemma rootStep_probability (F G : Forest Copy) (h : (rootPairs F).Nonempty) :
+     (rootStep F G).toReal =
+@@ -1206,7 +1231,7 @@
+   rw [rootStep,dif_pos h]
+   change (((PMF.uniformOfFinset (rootPairs F) h).bind
+     (fun q => PMF.pure (pairAction F Finset.univ q))) G).toReal = _
+-  rw [bind_probability_real,tsum_fintype,Finset.sum_coe_sort]
++  rw [bind_probability_real,tsum_fintype,← Finset.sum_subtype (rootPairs F) (fun _ => Iff.rfl)]
+   simp only [PMF.uniformOfFinset_apply,apply_ite ENNReal.toReal,
+     ENNReal.toReal_inv,ENNReal.toReal_natCast,ENNReal.toReal_zero,
+     PMF.pure_apply,apply_ite ENNReal.toReal,ENNReal.toReal_one,one_div]
+@@ -1258,10 +1283,10 @@
+       rw [Finset.sum_sub_distrib,hsum]
+       simp only [Finset.sum_const,Finset.card_univ,Fintype.card_coe,nsmul_eq_mul,sub_self]
+     · have he : rootPairs F = ∅ := Finset.not_nonempty_iff_eq_empty.mp hn
+-      rw [Finset.sum_coe_sort,he,Finset.sum_empty]
++      rw [← Finset.sum_subtype (rootPairs F) (fun _ => Iff.rfl),he,Finset.sum_empty]
+   have hd' : (∑ q : WellLabelledTree Copy × WellLabelledTree Copy,
+       (v (pairAction F Finset.univ q) - v F)) = 0 := by
+-    rw [Finset.sum_coe_sort] at hd
++    rw [← Finset.sum_subtype (rootPairs F) (fun _ => Iff.rfl)] at hd
+     calc
+       _ = ∑ q ∈ rootPairs F, (v (pairAction F Finset.univ q) - v F) := by
+         symm
+@@ -1316,9 +1341,9 @@
+ theorem actual_root_step_law (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (s : Code N sample) (hs : AncestralRoot N s) :
+     (sourceJumpStep N r s).map (forestCode N) = rootStep (forestCode N s) := by
+-  have hF := actualForest_partition (state s) s.property.forest
++  have hF := actualForest_partition (state s) (code_forest_valid N s)
+   have hc : (forestCode N s).card = liveCard s := by
+-    exact actualForest_card (state s) s.property.forest
++    exact actualForest_card (state s) (code_forest_valid N s)
+   by_cases ht : liveCard s ≤ 1
+   · rw [source_jump_absorbs_terminal N r s ht,PMF.pure_map]
+     have hn := (rootPairs_empty_iff _ hF).mpr (by simpa only [hc] using ht)
+@@ -1351,7 +1376,11 @@
+         intro p _
+         rw [rootForestChoice_destination N s hs p]
+         simp only [eq_comm]
+-      _ = _ := (rootForestChoices N s hs).sum_comp _
++        rfl
++      _ = _ := by
++        exact (rootForestChoices N s hs).sum_comp (fun q =>
++            (1 / ((rootPairs (forestCode N s)).card : ℝ)) *
++              (if pairAction (forestCode N s) Finset.univ q.val = G then 1 else 0))
+ 
+ /-- Every supported actual root jump retains the ancestral-root condition;
+ this reuses actual source support, rather than an abstract merger relation. -/
+@@ -1377,7 +1406,7 @@
+           intro d hd
+           exact ih d (actual_root_step_preserved N r s hs hd)
+         _ = ((sourceJumpStep N r s).map (forestCode N)).bind (rootIteration n) := by
+-          rw [PMF.bind_map]
++          rw [PMF.bind_map]; rfl
+         _ = _ := by rw [actual_root_step_law N r s hs]
+ 
+ theorem actual_ordinary_completion_law (N : RootedBinary V E X) {sample : Copy → X}
+@@ -1397,7 +1426,7 @@
+   rw [← actual_ordinary_completion_law N r s hs,PMF.map_comp]
+   congr 1
+   funext d
+-  exact (actualForest_observation (state d) d.property.forest).symm
++  exact (actualForest_observation (state d) (code_forest_valid N d)).symm
+ 
+ /-- Root completion depends only on the full carried forest, once actual
+ ancestral entry is proved. In particular an inert stored-register change is
+@@ -1460,7 +1489,7 @@
+     (f : Copy → Location V E) (t : ℝ≥0) :
+     ((fibreEpochOps N r f t).map weightedCladeGenerator).sum = (t : ℝ) • fibreGenerator N r f := by
+   simp only [fibreEpochOps,List.map_map,Function.comp_def,weightedCladeGenerator,
+-    populationExposure,Finset.sum_toList,fibreGenerator,Finset.smul_sum,smul_smul]
++    populationExposure,Finset.sum_map_toList,fibreGenerator,Finset.smul_sum,smul_smul]
+ 
+ lemma fibreEpochKernel_exponential (N : RootedBinary V E X) (r : PositivePairRates E)
+     (f : Copy → Location V E) (t : ℝ≥0) (F G : Forest Copy) :
+@@ -1522,7 +1551,7 @@
+ lemma pairMatrix_readout {Obs : Type*} (N : RootedBinary V E X) {sample : Copy → X}
+     (i : Option E) (p : Copy × Copy) (B : Matrix (Code N sample) Obs ℝ)
+     (s : Code N sample) (d : Obs) :
+-    (pairMatrix N i p * B) s d = B (mergeAt N i p s) d := by
++    ((pairMatrix N (sample := sample) i p * B) : Matrix (Code N sample) Obs ℝ) s d = B (mergeAt N i p s) d := by
+   rw [Matrix.mul_apply]
+   rw [Finset.sum_eq_single (mergeAt N i p s)]
+   · simp [pairMatrix]
+@@ -1533,7 +1562,7 @@
+ lemma populationGenerator_readout {Obs : Type*} (N : RootedBinary V E X)
+     {sample : Copy → X} (i : Option E) (B : Matrix (Code N sample) Obs ℝ)
+     (s : Code N sample) (d : Obs) :
+-    (populationGenerator N i * B) s d =
++    ((populationGenerator N (sample := sample) i * B) : Matrix (Code N sample) Obs ℝ) s d =
+       (1 / 2 : ℝ) * ∑ p : Copy × Copy, (B (mergeAt N i p s) d - B s d) := by
+   rw [populationGenerator,Matrix.smul_mul,Matrix.sum_mul]
+   simp only [Matrix.sub_mul,Matrix.one_mul,Matrix.smul_apply,Matrix.sum_apply,
+@@ -1542,7 +1571,7 @@
+ lemma populationGenerator_readout_active {Obs : Type*} (N : RootedBinary V E X)
+     {sample : Copy → X} (i : Option E) (B : Matrix (Code N sample) Obs ℝ)
+     (s : Code N sample) (d : Obs) :
+-    (populationGenerator N i * B) s d =
++    ((populationGenerator N (sample := sample) i * B) : Matrix (Code N sample) Obs ℝ) s d =
+       (1 / 2 : ℝ) * ∑ p ∈ (populationRoots (state s) (originalPlace N i)).offDiag,
+         (B (mergeAt N i p s) d - B s d) := by
+   rw [populationGenerator_readout]
+@@ -1555,7 +1584,8 @@
+ lemma colourProjectionMatrix_mul (N : RootedBinary V E X) {sample : Copy → X}
+     (B : Matrix (ColouredForest (Location V E) Copy) (ColouredForest (Location V E) Copy) ℝ)
+     (s : Code N sample) (d : ColouredForest (Location V E) Copy) :
+-    (colourProjectionMatrix N * B) s d = B (colourProjection N s) d := by
++    ((colourProjectionMatrix N (sample := sample) * B) :
++      Matrix (Code N sample) (ColouredForest (Location V E) Copy) ℝ) s d = B (colourProjection N s) d := by
+   rw [Matrix.mul_apply]
+   rw [Finset.sum_eq_single (colourProjection N s)]
+   · simp [colourProjectionMatrix]
+@@ -1577,7 +1607,7 @@
+   · subst g
+     simp only [colouredGenerator,colourProjection,if_true]
+     rw [cladeGenerator_active_row (forestCode N s)
+-      (actualForest_partition (state s) s.property.forest)]
++      (actualForest_partition (state s) (code_forest_valid N s))]
+     congr 1
+     let A := colourFibre (copyLocation (state s)) (originalPlace N i)
+     let w := fun q : WellLabelledTree Copy × WellLabelledTree Copy =>
+@@ -1585,16 +1615,16 @@
+         (if forestCode N s = G then 1 else 0)
+     calc
+       _ = ∑ p ∈ (populationRoots (state s) (originalPlace N i)).offDiag,
+-          w (pairMap (liveTreeOrLeaf (state s) s.property.forest) p) := by
++          w (pairMap (liveTreeOrLeaf (state s) (code_forest_valid N s)) p) := by
+         apply Finset.sum_congr rfl
+         intro p hp
+         rw [colourProjectionMatrix,projected_population_merge N s i p hp]
+         simp only [colourProjectionMatrix,colourProjection,Prod.mk.injEq,and_true,w,A]
+       _ = ∑ q ∈ ((populationRoots (state s) (originalPlace N i)).image
+-          (liveTreeOrLeaf (state s) s.property.forest)).offDiag, w q := by
++          (liveTreeOrLeaf (state s) (code_forest_valid N s))).offDiag, w q := by
+         apply projected_pair_sum
+         intro a ha b hb
+-        exact liveTreeOrLeaf_injective_on (state s) s.property.forest a
++        exact liveTreeOrLeaf_injective_on (state s) (code_forest_valid N s) a
+           (populationRoots_subset_live (state s) (originalPlace N i) ha) b
+           (populationRoots_subset_live (state s) (originalPlace N i) hb)
+       _ = _ := by
+@@ -1635,8 +1665,9 @@
+     (((sourceTimeKernel N r t s).map (colourProjection N)) d).toReal =
+       (exp ((t : ℝ) • originalColouredGenerator N (Copy := Copy) r)) (colourProjection N s) d := by
+   calc
+-    _ = (exp ((t : ℝ) • UnifiedLean.Source.SourceGeneratorExponential.sourceGeneratorMatrix N r) *
+-        colourProjectionMatrix N) s d := by
++    _ = ((exp ((t : ℝ) • UnifiedLean.Source.SourceGeneratorExponential.sourceGeneratorMatrix N r) *
++        colourProjectionMatrix N (sample := sample)) :
++          Matrix (Code N sample) (ColouredForest (Location V E) Copy) ℝ) s d := by
+       rw [PMF.map,bind_probability_real,tsum_fintype,Matrix.mul_apply]
+       apply Finset.sum_congr rfl
+       intro z _
+@@ -1644,7 +1675,9 @@
+       by_cases h : colourProjection N z = d
+       · simp [colourProjectionMatrix,PMF.pure_apply,Function.comp_apply,h]
+       · simp [colourProjectionMatrix,PMF.pure_apply,Function.comp_apply,h,Ne.symm h]
+-    _ = (colourProjectionMatrix N * exp ((t : ℝ) • originalColouredGenerator N (Copy := Copy) r)) s d := by
++    _ = ((colourProjectionMatrix N (sample := sample) *
++        exp ((t : ℝ) • originalColouredGenerator N (Copy := Copy) r)) :
++          Matrix (Code N sample) (ColouredForest (Location V E) Copy) ℝ) s d := by
+       rw [actual_colour_epoch_intertwining]
+     _ = _ := colourProjectionMatrix_mul N _ s d
+ 
+@@ -1687,7 +1720,10 @@
+       fibreEpochKernel N r (copyLocation (state s)) t (forestCode N s) := by
+   have h := congrArg (fun p : PMF (ColouredForest (Location V E) Copy) => p.map Prod.fst)
+     (actual_colour_epoch_law N r t s)
+-  simpa only [PMF.map_comp,Function.comp_def,colourProjection,PMF.map_id] using h
++  simp only [PMF.map_comp,Function.comp_def,colourProjection] at h
++  change (sourceTimeKernel N r t s).map (forestCode N) =
++    (fibreEpochKernel N r (copyLocation (state s)) t (forestCode N s)).map id at h
++  simpa only [PMF.map_id] using h
+ 
+ open UnifiedLean.Source.SourceProgramTransport
+ open UnifiedLean.Source.SourceBoundaryKernels
+@@ -1844,7 +1880,7 @@
+               rw [hr,hf]
+             _ = ((sourceTimeKernel N r t s).map (forestCode N)).bind
+                 (routedForestProgram N r (state s).register ops (copyLocation (state s))) := by
+-              rw [PMF.bind_map]
++              rw [PMF.bind_map]; rfl
+             _ = _ := by rw [actual_forest_epoch_law]; rfl
+       | boundary b =>
+           have hb := hops.1
+@@ -1899,12 +1935,17 @@
+       exact initialized_original_calendar_ancestral_support N C sample register H gamma
+         (fun _ => true) r hd
+     _ = (((sourceProgram N r ops s).map (forestCode N)).bind ordinaryCompletion).map
+-        forestObservation := by rw [PMF.map_bind,PMF.bind_map]
++        forestObservation := by rw [PMF.map_bind,PMF.bind_map]; rfl
+     _ = _ := by
+       rw [actual_common_program_forest_law N r ops hc s]
+       have hF := forestCode_initial N sample register
+       change forestCode N s = (initialForest (Copy := Copy)) at hF
+       rw [hF]
++      have hl : copyLocation (state s) = fun x => Location.node (N.leaf (sample x)) := by
++        funext x
++        exact decode_encode_copyLocation N.root (initial N sample register)
++          (initial_source_valid N sample register).forest x
++      rw [hl]
+       rfl
+ 
+ end SourceProjection
+@@ -2029,7 +2070,7 @@
+     · exact Or.inr (Or.inl h)
+     · exact Or.inl h
+     · exact Or.inr (Or.inr h.symm))
+-  exact List.Pairwise.forall_of_forall_of_flip (fun a _ => Or.inl (Finset.Subset.refl _))
++  exact List.Pairwise.forall_of_forall_of_flip (R := R) (fun a _ => Or.inl (Finset.Subset.refl _))
+     hR hflip ha hb
+ 
+ lemma groupedCladeWord_ordered (word : List (Finset X × ℝ≥0))
+@@ -2085,7 +2126,10 @@
+   induction xs generalizing F with
+   | nil => simp only [List.nil_append,ordinaryCladeProgram,PMF.pure_bind]
+   | cons A xs ih =>
+-      simp only [List.cons_append,ordinaryCladeProgram,ih,PMF.bind_bind]
++      simp only [List.cons_append,ordinaryCladeProgram,PMF.bind_bind]
++      congr 1
++      funext G
++      exact ih G
+ 
+ lemma ordinaryCladeProgram_partition (w : CladeWeights X) (sample : Copy → X)
+     (keys : List (Finset X)) (F : Forest Copy) (hF : Partition F) {G : Forest Copy}
+@@ -2198,7 +2242,7 @@
+     (A : Finset X) (ha : A ≠ ∅) (hu : A ≠ Finset.univ) :
+     0 < weightedNormalize N C H r coin A ↔ ∃ e : E, edgeTaxa N C H coin e = A := by
+   rw [weightedNormalize,if_neg (by tauto),
+-    Finset.sum_pos_iff_of_nonneg (fun _ _ => zero_le _)]
++    Finset.sum_pos_iff_of_nonneg (fun _ _ => zero_le)]
+   constructor
+   · rintro ⟨e,_,he⟩
+     by_cases h : edgeTaxa N C H coin e = A
+@@ -2718,7 +2762,7 @@
+   | nil => rfl
+   | cons op ops ih =>
+       by_cases h : op.1 = A <;>
+-        simp [cladeBucketReal,cladeWordWeight,cladeBucket,List.filter,h,ih]
++        simpa [cladeBucketReal,cladeWordWeight,cladeBucket,List.filter,h] using ih
+ 
+ noncomputable def cladeClock (N : RootedBinary V E X) (r : PositivePairRates E)
+     (A : Finset Copy) {sample : Copy → X} (s : Code N sample) : ℝ :=
+@@ -2733,9 +2777,11 @@
+   rw [List.map_map,Finset.sum_map_toList,Finset.sum_mul]
+   apply Finset.sum_congr rfl
+   intro i _
+-  by_cases h : colourFibre f (originalPlace N i) = A <;>
+-    simp only [Function.comp_apply,h,if_true,if_false,zero_mul,populationExposure]
+-  ring
++  by_cases h : colourFibre f (originalPlace N i) = A
++  · simp only [Function.comp_apply,h,if_true,populationExposure]
++    change (t : ℝ) * pairRate r i = pairRate r i * (t : ℝ)
++    ring
++  · simp only [Function.comp_apply,h,if_false,zero_mul]
+ 
+ lemma routedCladeWord_bucket_readout (N : RootedBinary V E X)
+     (r : PositivePairRates E) (ops : List (ProgramStep N)) (A : Finset Copy)

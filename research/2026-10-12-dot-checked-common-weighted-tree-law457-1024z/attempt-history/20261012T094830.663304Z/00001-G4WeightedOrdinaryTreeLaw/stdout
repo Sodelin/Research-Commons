@@ -1,0 +1,1402 @@
+G4WeightedOrdinaryTreeLaw.lean:101:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mergeForest_partition`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:209:54: error: unsolved goals
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+A B : Finset Copy
+hAB : Disjoint A B
+p : WellLabelledTree Copy × WellLabelledTree Copy
+hp : LegalPair F A p
+t : WellLabelledTree Copy
+ht : (↑t).leaves ⊆ B
+hta : t ≠ p.1
+htb : t ≠ p.2
+hgA : (↑(treeGraft p.1 p.2 ⋯)).leaves ⊆ A
+htg : t ≠ treeGraft p.1 p.2 ⋯
+⊢ t ≠ p.2 ∧ t ≠ p.1 ∧ t ∈ F ↔ t ∈ F
+G4WeightedOrdinaryTreeLaw.lean:216:60: warning: This simp argument is unused:
+  hta
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mergeForest, Finset.mem_insert, Finset.mem_erase, htb, htg, false_or, true_and, not_false_eq_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:216:64: warning: This simp argument is unused:
+  htb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mergeForest, Finset.mem_insert, Finset.mem_erase, hta, htg, false_or, true_and, not_false_eq_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:217:13: warning: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mergeForest, Finset.mem_insert, Finset.mem_erase, hta, htb, htg, false_or, not_false_eq_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:217:22: warning: This simp argument is unused:
+  not_false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mergeForest, Finset.mem_insert, Finset.mem_erase, hta, htb, htg, false_or, true_and]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:250:23: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => mergeForest _a q.1 q.2 ⋯ = mergeForest (pairAction F B q) p.1 p.2 ⋯
+Error: Application type mismatch: The argument
+  hq'
+has type
+  LegalPair (pairAction F A p) B q
+but is expected to have type
+  q.1 ∈ _a ∧ q.2 ∈ _a ∧ q.1 ≠ q.2 ∧ (↑q.1).leaves ⊆ B ∧ (↑q.2).leaves ⊆ B ∧ Disjoint (↑q.1).leaves (↑q.2).leaves
+in the application
+  hq'.right
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+case pos
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+A B : Finset Copy
+hAB : Disjoint A B
+p q : WellLabelledTree Copy × WellLabelledTree Copy
+hp : LegalPair F A p
+hq : LegalPair F B q
+hq' : LegalPair (pairAction F A p) B q
+hp' : LegalPair (pairAction F B q) A p
+hleft : pairAction (pairAction F A p) B q = mergeForest (pairAction F A p) q.1 q.2 ⋯
+hright : pairAction (pairAction F B q) A p = mergeForest (pairAction F B q) p.1 p.2 ⋯
+hinnerA : pairAction F A p = mergeForest F p.1 p.2 ⋯
+hinnerB : pairAction F B q = mergeForest F q.1 q.2 ⋯
+⊢ mergeForest (pairAction F A p) q.1 q.2 ⋯ = mergeForest (pairAction F B q) p.1 p.2 ⋯
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    hq'
+  has type
+    LegalPair (pairAction F A p) B q
+  but is expected to have type
+    q.1 ∈ pairAction F A p ∧
+      q.2 ∈ pairAction F A p ∧ q.1 ≠ q.2 ∧ (↑q.1).leaves ⊆ B ∧ (↑q.2).leaves ⊆ B ∧ Disjoint (↑q.1).leaves (↑q.2).leaves
+  in the application
+    hq'.right
+G4WeightedOrdinaryTreeLaw.lean:272:4: error: unsolved goals
+case neg
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+A B : Finset Copy
+hAB : Disjoint A B
+p q : WellLabelledTree Copy × WellLabelledTree Copy
+hp : LegalPair F A p
+hq : ¬LegalPair F B q
+hq' : ¬LegalPair (pairAction F A p) B q
+⊢ (if h : LegalPair (if h : LegalPair F A p then mergeForest F p.1 p.2 ⋯ else F) B q then
+      mergeForest (if h : LegalPair F A p then mergeForest F p.1 p.2 ⋯ else F) q.1 q.2 ⋯
+    else if h : LegalPair F A p then mergeForest F p.1 p.2 ⋯ else F) =
+    if h : LegalPair F A p then mergeForest F p.1 p.2 ⋯ else F
+G4WeightedOrdinaryTreeLaw.lean:275:2: error: unsolved goals
+case neg
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+A B : Finset Copy
+hAB : Disjoint A B
+p q : WellLabelledTree Copy × WellLabelledTree Copy
+hp : ¬LegalPair F A p
+hp' : ¬LegalPair (pairAction F B q) A p
+⊢ (if h : LegalPair F B q then mergeForest F q.1 q.2 ⋯ else F) =
+    if h : LegalPair (if h : LegalPair F B q then mergeForest F q.1 q.2 ⋯ else F) A p then
+      mergeForest (if h : LegalPair F B q then mergeForest F q.1 q.2 ⋯ else F) p.1 p.2 ⋯
+    else if h : LegalPair F B q then mergeForest F q.1 q.2 ⋯ else F
+G4WeightedOrdinaryTreeLaw.lean:274:28: warning: This simp argument is unused:
+  dif_neg hq'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairAction, dif_neg hq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:277:26: warning: This simp argument is unused:
+  dif_neg hp'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [pairAction, dif_neg hp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:306:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  PMF.bind ?p fun a => PMF.bind ?q (?f a)
+in the target expression
+  ((PMF.uniformOfFintype (PaddedChoice Copy)).bind fun x => PMF.pure (paddedAction F A x)).bind (cladeStep B) =
+    ((PMF.uniformOfFintype (PaddedChoice Copy)).bind fun x => PMF.pure (paddedAction F B x)).bind (cladeStep A)
+
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+A B : Finset Copy
+hAB : Disjoint A B
+⊢ ((PMF.uniformOfFintype (PaddedChoice Copy)).bind fun x => PMF.pure (paddedAction F A x)).bind (cladeStep B) =
+    ((PMF.uniformOfFintype (PaddedChoice Copy)).bind fun x => PMF.pure (paddedAction F B x)).bind (cladeStep A)
+G4WeightedOrdinaryTreeLaw.lean:305:23: warning: This simp argument is unused:
+  PMF.bind_map
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cladeStep, Function.comp_def, PMF.map]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:408:2: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.241 ?m.238 = Finset.sum ?m.241 ?m.239
+with the goal
+  ((if F = G then 1 else 0) - if F = G then 1 else 0) +
+      ∑ i, ((if pairAction F A i = G then 1 else 0) - if F = G then 1 else 0) =
+    ∑ p, if h : LegalPair F A p then (if mergeForest F p.1 p.2 ⋯ = G then 1 else 0) - if F = G then 1 else 0 else 0
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.241, ?m.238 x = ?m.239 x) → Finset.sum ?m.241 ?m.238 = Finset.sum ?m.241 ?m.239
+
+case e_a
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+A : Finset Copy
+F G : Forest Copy
+hc : ↑(Fintype.card (PaddedChoice Copy)) ≠ 0
+hdelta : cladeGenerator A F G = 1 / 2 * ∑ p, ((if paddedAction F A p = G then 1 else 0) - if F = G then 1 else 0)
+⊢ ((if F = G then 1 else 0) - if F = G then 1 else 0) +
+      ∑ i, ((if pairAction F A i = G then 1 else 0) - if F = G then 1 else 0) =
+    ∑ p, if h : LegalPair F A p then (if mergeForest F p.1 p.2 ⋯ = G then 1 else 0) - if F = G then 1 else 0 else 0
+G4WeightedOrdinaryTreeLaw.lean:406:26: warning: This simp argument is unused:
+  sub_self
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [paddedAction, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:406:35: warning: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [paddedAction, sub_self]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:462:30: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  exp (↑t • cladeGenerator A + ↑u • cladeGenerator A)
+in the target expression
+  exp (↑t • cladeGenerator A + ↑u • cladeGenerator A) F G =
+    (exp (↑t • cladeGenerator A) * exp (↑u • cladeGenerator A)) F G
+
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+A : Finset Copy
+t u : ℝ≥0
+F G : Forest Copy
+⊢ exp (↑t • cladeGenerator A + ↑u • cladeGenerator A) F G =
+    (exp (↑t • cladeGenerator A) * exp (↑u • cladeGenerator A)) F G
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    exp (↑t • cladeGenerator A + ↑u • cladeGenerator A) F
+G4WeightedOrdinaryTreeLaw.lean:469:8: error(lean.unknownIdentifier): Unknown constant `Finset.not_mem_empty`
+G4WeightedOrdinaryTreeLaw.lean:539:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.legalPair_iff_mem_active_offDiag`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:559:44: error: unsolved goals
+case neg
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+A : Finset Copy
+G : Forest Copy
+f : WellLabelledTree Copy × WellLabelledTree Copy → ℝ :=
+  fun p => (if pairAction F A p = G then 1 else 0) - if F = G then 1 else 0
+p : WellLabelledTree Copy × WellLabelledTree Copy
+h : ¬LegalPair F A p
+⊢ (if h_1 : False then (if mergeForest F p.1 p.2 ⋯ = G then 1 else 0) - if F = G then 1 else 0 else 0) = 0
+G4WeightedOrdinaryTreeLaw.lean:561:71: warning: This simp argument is unused:
+  dif_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [f, pairAction, h, dif_pos, if_true, if_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:681:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mem_actualForest`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:691:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.live_genealogy_injective`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:702:10: error: Function expected at
+  Finset.card_attach
+but this term has type
+  (Finset.attach ?m.35).card = Finset.card ?m.35
+
+Note: Expected a function because this term is being applied to the argument
+  _
+G4WeightedOrdinaryTreeLaw.lean:813:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.liveTreeOrLeaf_val`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:859:46: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype V
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4WeightedOrdinaryTreeLaw.lean:860:9: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Fintype V
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4WeightedOrdinaryTreeLaw.lean:894:8: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => ↑⟨s.genealogy _a, ⋯⟩ = ↑t
+Error: Application type mismatch: The argument
+  hs.ancestor_live l
+has type
+  s.ancestor l ∈ s.live
+but is expected to have type
+  _a ∈ s.live
+in the application
+  hs.wellLabelled _a (hs.ancestor_live l)
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+case mp
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+V : Type u_2
+E : Type u_3
+s : State V E Copy
+hs : Valid s
+t : WellLabelledTree Copy
+ht : t ∈ actualForest s hs
+l : Copy
+hl : l ∈ s.live
+he : s.genealogy l = ↑t
+⊢ ↑⟨s.genealogy (s.ancestor l), ⋯⟩ = ↑t
+G4WeightedOrdinaryTreeLaw.lean:932:17: error: unsolved goals
+case cons
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+ys : List (Finset Copy × ℝ≥0)
+a : Finset Copy × ℝ≥0
+xs : List (Finset Copy × ℝ≥0)
+ih : ∀ (F : Forest Copy), forestProgram (xs ++ ys) F = (forestProgram xs F).bind (forestProgram ys)
+F : Forest Copy
+⊢ (cladeKernel a.1 a.2 F).bind (forestProgram (xs ++ ys)) =
+    (cladeKernel a.1 a.2 F).bind fun a => (forestProgram xs a).bind (forestProgram ys)
+G4WeightedOrdinaryTreeLaw.lean:933:48: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.cons_append, forestProgram, PMF.bind_bind]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:971:38: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  exp (weightedCladeGenerator op + (List.map weightedCladeGenerator ops).sum)
+in the target expression
+  ∑ x, exp (↑op.2 • cladeGenerator op.1) F x * exp (List.map weightedCladeGenerator ops).sum x G =
+    exp (weightedCladeGenerator op + (List.map weightedCladeGenerator ops).sum) F G
+
+case cons
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+G : Forest Copy
+op : Finset Copy × ℝ≥0
+ops : List (Finset Copy × ℝ≥0)
+ih :
+  (∀ a ∈ ops, ∀ b ∈ ops, Commute (weightedCladeGenerator a) (weightedCladeGenerator b)) →
+    ∀ (F : Forest Copy), ((forestProgram ops F) G).toReal = exp (List.map weightedCladeGenerator ops).sum F G
+hcomm : ∀ a ∈ op :: ops, ∀ b ∈ op :: ops, Commute (weightedCladeGenerator a) (weightedCladeGenerator b)
+F : Forest Copy
+htail : ∀ a ∈ ops, ∀ b ∈ ops, Commute (weightedCladeGenerator a) (weightedCladeGenerator b)
+hc : Commute (weightedCladeGenerator op) (List.map weightedCladeGenerator ops).sum
+⊢ ∑ x, exp (↑op.2 • cladeGenerator op.1) F x * exp (List.map weightedCladeGenerator ops).sum x G =
+    exp (weightedCladeGenerator op + (List.map weightedCladeGenerator ops).sum) F G
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    exp (↑op.2 • cladeGenerator op.1) F
+G4WeightedOrdinaryTreeLaw.lean:979:8: error: unsolved goals
+case neg
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+G F : Forest Copy
+h : ¬F = G
+⊢ 0 = (if G = F then 1 else 0).toReal
+G4WeightedOrdinaryTreeLaw.lean:1000:8: error: No goals to be solved
+G4WeightedOrdinaryTreeLaw.lean:1026:15: error: `simp` made no progress
+G4WeightedOrdinaryTreeLaw.lean:1043:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.colourFibres_disjoint`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1064:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  actualForest ?s ?hs
+in the target expression
+  actualForest (state d) ⋯ = actualForest (state s) ⋯
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+op : UnifiedLean.Source.SourceBoundaryKernels.BoundaryOperation N
+s d : Code N sample
+hd : d ∈ (UnifiedLean.Source.SourceBoundaryKernels.boundaryKernel N op s).support
+hg : (selectedView (state d) Finset.univ).genealogy = (selectedView (state s) Finset.univ).genealogy
+⊢ actualForest (state d) ⋯ = actualForest (state s) ⋯
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    forestCode._proof_1 N d
+  has type
+    @Valid Copy V E inst✝ (decodeSnapshot N.root ↑d)
+  but is expected to have type
+    @Valid Copy V E inst✝ (state d)
+  in the application
+    actualForest (state d) ⋯
+G4WeightedOrdinaryTreeLaw.lean:1103:63: error: don't know how to synthesize placeholder for argument `hs`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+p : Choice N s
+x : Copy
+hm : LegalMerge (state s) p.snd.1.1 p.snd.1.2 := ⋯
+⊢ Valid (merge (state s) (↑p.snd).1 (↑p.snd).2)
+G4WeightedOrdinaryTreeLaw.lean:1097:88: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+p : Choice N s
+x : Copy
+hm : LegalMerge (state s) p.snd.1.1 p.snd.1.2 :=
+  population_pair_is_source_legal (state s) (originalPlace N p.fst) (originalPlace_not_node N p.fst) p.snd.property
+⊢ copyLocation (state (admittedCode N sample (merge (state s) (↑p.snd).1 (↑p.snd).2) ⋯)) x = copyLocation (state s) x
+G4WeightedOrdinaryTreeLaw.lean:1120:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  {t ∈ actualForest ?s ?hs | (↑t).leaves ⊆ {x | copyLocation ?s x = ?place}}.offDiag
+in the target expression
+  pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    {t ∈ actualForest (state s) ⋯ | (↑t).leaves ⊆ colourFibre (copyLocation (state s)) (originalPlace N i)}.offDiag
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+p : Copy × Copy
+hp : PairAt N i p s
+hpair :
+  p.1 ∈ populationRoots (state s) (originalPlace N i) ∧ p.2 ∈ populationRoots (state s) (originalPlace N i) ∧ p.1 ≠ p.2
+ha : p.1 ∈ (state s).live
+hb : p.2 ∈ (state s).live
+⊢ pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    {t ∈ actualForest (state s) ⋯ | (↑t).leaves ⊆ colourFibre (copyLocation (state s)) (originalPlace N i)}.offDiag
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    s.property.forest
+  has type
+    @Valid Copy V E inst✝ (decodeSnapshot N.root ↑s)
+  but is expected to have type
+    @Valid Copy V E inst✝ (state s)
+  in the application
+    actualForest (state s) ⋯
+G4WeightedOrdinaryTreeLaw.lean:1125:2: error: unsolved goals
+case fst.hs
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+p : Copy × Copy
+hp : PairAt N i p s
+hpair :
+  p.1 ∈ populationRoots (state s) (originalPlace N i) ∧ p.2 ∈ populationRoots (state s) (originalPlace N i) ∧ p.1 ≠ p.2
+ha : p.1 ∈ (state s).live
+hb : p.2 ∈ (state s).live
+hmem :
+  pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    Finset.offDiag (activeTrees (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i)))
+hl :
+  LegalPair (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i))
+    (pairMap (liveTreeOrLeaf (state s) ⋯) p)
+⊢ Valid (state s)
+
+case fst.hm
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+p : Copy × Copy
+hp : PairAt N i p s
+hpair :
+  p.1 ∈ populationRoots (state s) (originalPlace N i) ∧ p.2 ∈ populationRoots (state s) (originalPlace N i) ∧ p.1 ≠ p.2
+ha : p.1 ∈ (state s).live
+hb : p.2 ∈ (state s).live
+hmem :
+  pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    Finset.offDiag (activeTrees (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i)))
+hl :
+  LegalPair (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i))
+    (pairMap (liveTreeOrLeaf (state s) ⋯) p)
+⊢ LegalMerge (state s) (↑⟨i, ⟨p, hp⟩⟩.snd).1 (↑⟨i, ⟨p, hp⟩⟩.snd).2
+G4WeightedOrdinaryTreeLaw.lean:1143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  rootPairs (actualForest (state s) ⋯)
+in the target expression
+  Finset.image (pairMap (liveTreeOrLeaf (state s) ⋯)) (state s).live.offDiag = rootPairs (forestCode N s)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : AncestralRoot N s
+⊢ Finset.image (pairMap (liveTreeOrLeaf (state s) ⋯)) (state s).live.offDiag = rootPairs (forestCode N s)
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    s.property.forest
+  has type
+    @Valid Copy V E inst✝ (decodeSnapshot N.root ↑s)
+  but is expected to have type
+    @Valid Copy V E inst✝ (state s)
+  in the application
+    liveTreeOrLeaf (state s) ⋯
+G4WeightedOrdinaryTreeLaw.lean:1178:8: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a => ↑q ∈ _a
+Error: Application type mismatch: The argument
+  q
+has type
+  ↥(rootPairs (forestCode N s))
+but is expected to have type
+  ↥_a
+in the application
+  ↑q
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+case right
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : AncestralRoot N s
+q : ↥(rootPairs (forestCode N s))
+hq : ↑q ∈ rootPairs (forestCode N s)
+⊢ ∃ a, rootForestChoice N s hs a = q
+G4WeightedOrdinaryTreeLaw.lean:1198:2: error: Type mismatch: After simplification, term
+  ht
+ has type
+  @Eq (Forest Copy) (forestCode N (stepDestination N s (some p)))
+    (pairAction (forestCode N s) Finset.univ (pairMap (liveTreeOrLeaf (state s) ⋯) ↑p.snd))
+but is expected to have type
+  @Eq (Forest Copy) (forestCode N (stepDestination N s (some p)))
+    (pairAction (forestCode N s) Finset.univ
+      (pairMap (liveTreeOrLeaf (state s) ⋯)
+        ↑({ toFun := fun p => ⟨↑p.snd, ⋯⟩, invFun := fun p => ⟨none, ⟨↑p, ⋯⟩⟩, left_inv := ⋯, right_inv := ⋯ } p)))
+G4WeightedOrdinaryTreeLaw.lean:1209:41: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f ↑i
+in the target expression
+  ∑ b, ((PMF.uniformOfFinset (rootPairs F) h) b).toReal * ((PMF.pure (pairAction F Finset.univ b)) G).toReal =
+    ∑ q, 1 / ↑(rootPairs F).card * if pairAction F Finset.univ ↑q = G then 1 else 0
+
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F G : Forest Copy
+h : (rootPairs F).Nonempty
+⊢ ∑ b, ((PMF.uniformOfFinset (rootPairs F) h) b).toReal * ((PMF.pure (pairAction F Finset.univ b)) G).toReal =
+    ∑ q, 1 / ↑(rootPairs F).card * if pairAction F Finset.univ ↑q = G then 1 else 0
+G4WeightedOrdinaryTreeLaw.lean:1261:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f ↑i
+in the target expression
+  ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+
+case neg
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+G : Forest Copy
+v : Forest Copy → ℝ := fun M => ((ordinaryCompletion M) G).toReal
+hn : ¬(rootPairs F).Nonempty
+he : rootPairs F = ∅
+⊢ ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+G4WeightedOrdinaryTreeLaw.lean:1264:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ i, ?f ↑i
+in the target expression
+  ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+G : Forest Copy
+v : Forest Copy → ℝ := fun M => ((ordinaryCompletion M) G).toReal
+hd : ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+⊢ ∑ q, (v (pairAction F Finset.univ q) - v F) = 0
+G4WeightedOrdinaryTreeLaw.lean:1320:36: error(lean.unknownIdentifier): Unknown identifier `liveCard`
+G4WeightedOrdinaryTreeLaw.lean:1322:16: error(lean.unknownIdentifier): Unknown identifier `liveCard`
+G4WeightedOrdinaryTreeLaw.lean:1326:19: error(lean.unknownIdentifier): Unknown identifier `liveCard`
+G4WeightedOrdinaryTreeLaw.lean:1327:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WeightedOrdinaryTreeLaw.lean:1349:66: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+hs : AncestralRoot N s
+hF : Partition (actualForest (state s) ⋯)
+hc : Finset.card (forestCode N s) = sorry
+ht : ¬sorry ≤ 1
+hnt : 1 < sorry
+this : Nonempty (Choice N s) := ancestral_choice_exists N s hs sorry
+hn : (rootPairs (forestCode N s)).Nonempty
+hcard : Fintype.card (Choice N s) = (rootPairs (forestCode N s)).card
+hpos : Fintype.card (Choice N s) ≠ 0
+G : Forest Copy
+p : Choice N s
+a✝ : p ∈ Finset.univ
+⊢ (1 / ↑(rootPairs (forestCode N s)).card *
+      if G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p) then 1 else 0) =
+    1 / ↑(rootPairs (forestCode N s)).card *
+      if G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p) then 1 else 0
+G4WeightedOrdinaryTreeLaw.lean:1354:15: error: Type mismatch
+  Equiv.sum_comp (rootForestChoices N s hs) ?m.530
+has type
+  ∑ i, ?m.530 ((rootForestChoices N s hs) i) = ∑ i, ?m.530 i
+but is expected to have type
+  (∑ p,
+      1 / ↑(rootPairs (forestCode N s)).card *
+        if pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p) = G then 1 else 0) =
+    ∑ q, 1 / ↑(rootPairs (forestCode N s)).card * if pairAction (forestCode N s) Finset.univ ↑q = G then 1 else 0
+G4WeightedOrdinaryTreeLaw.lean:1379:82: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+n : ℕ
+ih :
+  ∀ (s : Code N sample),
+    AncestralRoot N s → PMF.map (forestCode N) (ancestralCompletion N r n s) = rootIteration n (forestCode N s)
+s : Code N sample
+hs : AncestralRoot N s
+⊢ ((sourceJumpStep N r s).bind fun d => rootIteration n (forestCode N d)) =
+    (sourceJumpStep N r s).bind (rootIteration n ∘ forestCode N)
+G4WeightedOrdinaryTreeLaw.lean:1461:97: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+r : PositivePairRates E
+f : Copy → Location V E
+t : ℝ≥0
+⊢ (List.map (fun x => ↑⟨↑t * pairRate r x, ⋯⟩ • cladeGenerator (colourFibre f (originalPlace N x)))
+        Finset.univ.toList).sum =
+    ∑ x, (↑t * pairRate r x) • cladeGenerator (colourFibre f (originalPlace N x))
+G4WeightedOrdinaryTreeLaw.lean:1463:23: warning: This simp argument is unused:
+  Finset.sum_toList
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fibreEpochOps, List.map_map, Function.comp_def, weightedCladeGenerator, populationExposure,
+    fibreGenerator, Finset.smul_sum, smul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:1485:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mul_fixedColourMatrix`:
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1525:4: error: Function expected at
+  pairMatrix N i p * B
+but this term has type
+  ?m.52
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4WeightedOrdinaryTreeLaw.lean:1536:4: error: Function expected at
+  populationGenerator N i * B
+but this term has type
+  ?m.74
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4WeightedOrdinaryTreeLaw.lean:1538:6: error: Failed to rewrite using equation theorems for `populationGenerator`
+G4WeightedOrdinaryTreeLaw.lean:1545:4: error: Function expected at
+  populationGenerator N i * B
+but this term has type
+  ?m.98
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4WeightedOrdinaryTreeLaw.lean:1558:4: error: Function expected at
+  colourProjectionMatrix N * B
+but this term has type
+  ?m.44
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4WeightedOrdinaryTreeLaw.lean:1569:6: warning: declaration uses `sorry`
+G4WeightedOrdinaryTreeLaw.lean:1575:2: warning: Unused tactic linter: `rw [populationGenerator_readout_active, colourProjectionMatrix_mul]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1576:2: warning: Unused tactic linter: `by_cases hf : copyLocation (state s) = g` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1577:2: warning: Unused tactic linter: `·
+  subst g
+  simp only [colouredGenerator, colourProjection, if_true]
+  rw [cladeGenerator_active_row (forestCode N s) (actualForest_partition (state s) s.property.forest)]
+  congr 1
+  let A := colourFibre (copyLocation (state s)) (originalPlace N i)
+  let w := fun q : WellLabelledTree Copy × WellLabelledTree Copy =>
+    (if pairAction (forestCode N s) A q = G then (1 : ℝ) else 0) - (if forestCode N s = G then 1 else 0)
+  calc
+    _ =
+        ∑ p ∈ (populationRoots (state s) (originalPlace N i)).offDiag,
+          w (pairMap (liveTreeOrLeaf (state s) s.property.forest) p) :=
+      by
+      apply Finset.sum_congr rfl
+      intro p hp
+      rw [colourProjectionMatrix, projected_population_merge N s i p hp]
+      simp only [colourProjectionMatrix, colourProjection, Prod.mk.injEq, and_true, w, A]
+    _ =
+        ∑
+          q ∈
+            ((populationRoots (state s) (originalPlace N i)).image
+                (liveTreeOrLeaf (state s) s.property.forest)).offDiag,
+          w q :=
+      by
+      apply projected_pair_sum
+      intro a ha b hb
+      exact
+        liveTreeOrLeaf_injective_on (state s) s.property.forest a
+          (populationRoots_subset_live (state s) (originalPlace N i) ha) b
+          (populationRoots_subset_live (state s) (originalPlace N i) hb)
+    _ = _ := by
+      rw [image_populationRoots]
+      rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1603:2: warning: Unused tactic linter: `·
+  simp only [colouredGenerator, colourProjection, if_neg hf]
+  rw [mul_eq_zero]
+  right
+  apply Finset.sum_eq_zero
+  intro p hp
+  rw [colourProjectionMatrix, projected_population_merge N s i p hp]
+  simp only [colourProjectionMatrix, colourProjection, Prod.mk.injEq, hf, and_false, if_false, sub_self]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1576:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1577:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1603:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WeightedOrdinaryTreeLaw.lean:1638:8: error: Function expected at
+  exp (↑t • UnifiedLean.Source.SourceGeneratorExponential.sourceGeneratorMatrix N r) * colourProjectionMatrix N
+but this term has type
+  ?m.137
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4WeightedOrdinaryTreeLaw.lean:1647:8: error: Function expected at
+  colourProjectionMatrix N * exp (↑t • originalColouredGenerator N r)
+but this term has type
+  ?m.172
+
+Note: Expected a function because this term is being applied to the argument
+  s
+G4WeightedOrdinaryTreeLaw.lean:1660:4: error: `simp` made no progress
+G4WeightedOrdinaryTreeLaw.lean:1690:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  PMF.map (fun x => forestCode N x) (sourceTimeKernel N r t s) =
+    PMF.map (fun x => x) (fibreEpochKernel N r (copyLocation (state s)) t (forestCode N s))
+but is expected to have type
+  PMF.map (forestCode N) (sourceTimeKernel N r t s) = fibreEpochKernel N r (copyLocation (state s)) t (forestCode N s)
+G4WeightedOrdinaryTreeLaw.lean:1753:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.fibreEpochOps_mem`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1846:93: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+ops : List (ProgramStep N)
+ih :
+  CommonOnlyWord N ops →
+    ∀ (s : Code N sample),
+      PMF.map (forestCode N) (sourceProgram N r ops s) =
+        routedForestProgram N r (state s).register ops (copyLocation (state s)) (forestCode N s)
+s : Code N sample
+t : ℝ≥0
+hops : CommonOnlyWord N (ProgramStep.interval t :: ops)
+⊢ ((sourceTimeKernel N r t s).bind fun d =>
+      routedForestProgram N r (state s).register ops (copyLocation (state s)) (forestCode N d)) =
+    (sourceTimeKernel N r t s).bind
+      (routedForestProgram N r (state s).register ops (copyLocation (state s)) ∘ forestCode N)
+G4WeightedOrdinaryTreeLaw.lean:1902:29: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+sample : Copy → X
+register : V → Bool
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma fun x => true
+s : Code N sample := initialCode N sample register
+hc : CommonOnlyWord N ops
+⊢ ((sourceProgram N r ops s).bind fun d => PMF.map forestObservation (ordinaryCompletion (forestCode N d))) =
+    (sourceProgram N r ops s).bind ((fun a => PMF.map forestObservation (ordinaryCompletion a)) ∘ forestCode N)
+G4WeightedOrdinaryTreeLaw.lean:1908:6: error: Tactic `rfl` failed: The left-hand side
+  PMF.map forestObservation
+    ((routedForestProgram N r (state s).register ops (copyLocation (state s)) initialForest).bind ordinaryCompletion)
+is not definitionally equal to the right-hand side
+  PMF.map forestObservation
+    ((routedForestProgram N r register (compiledCalendarProgram N C H gamma fun x => true)
+          (fun x => Location.node (N.leaf (sample x))) initialForest).bind
+      ordinaryCompletion)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+sample : Copy → X
+register : V → Bool
+ops : List (ProgramStep N) := compiledCalendarProgram N C H gamma fun x => true
+s : Code N sample := initialCode N sample register
+hc : CommonOnlyWord N ops
+hF : forestCode N s = initialForest
+⊢ PMF.map forestObservation
+      ((routedForestProgram N r (state s).register ops (copyLocation (state s)) initialForest).bind
+        ordinaryCompletion) =
+    PMF.map forestObservation
+      ((routedForestProgram N r register (compiledCalendarProgram N C H gamma fun x => true)
+            (fun x => Location.node (N.leaf (sample x))) initialForest).bind
+        ordinaryCompletion)
+G4WeightedOrdinaryTreeLaw.lean:1980:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeBucket_map_preimage`:
+  [Fintype X]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2033:4: error: Application type mismatch: The argument
+  hR
+has type
+  List.Pairwise.{u_1} R word
+but is expected to have type
+  List.Pairwise.{0} (fun a => Or (?m.152 a ⊆ ?m.152 a)) ?m.139
+in the application
+  List.Pairwise.forall_of_forall_of_flip (fun a x => Or.inl (Finset.Subset.refl (?m.152 a))) hR
+G4WeightedOrdinaryTreeLaw.lean:2087:17: error: unsolved goals
+case cons
+X : Type u_1
+Copy : Type u_2
+inst✝³ : Fintype X
+inst✝² : DecidableEq X
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+w : CladeWeights X
+sample : Copy → X
+ys : List (Finset X)
+A : Finset X
+xs : List (Finset X)
+ih :
+  ∀ (F : Forest Copy),
+    ordinaryCladeProgram w sample (xs ++ ys) F =
+      (ordinaryCladeProgram w sample xs F).bind (ordinaryCladeProgram w sample ys)
+F : Forest Copy
+⊢ (cladeKernel (cladeCopySet sample A) (w A) F).bind (ordinaryCladeProgram w sample (xs ++ ys)) =
+    (cladeKernel (cladeCopySet sample A) (w A) F).bind fun a =>
+      (ordinaryCladeProgram w sample xs a).bind (ordinaryCladeProgram w sample ys)
+G4WeightedOrdinaryTreeLaw.lean:2088:55: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [List.cons_append, ordinaryCladeProgram, PMF.bind_bind]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2090:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.ordinaryCladeProgram_partition`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2156:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mem_edgeTaxa`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2174:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.edgeExposure_positive`:
+  [DecidableEq E]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2201:45: error: Function expected at
+  zero_le
+but this term has type
+  0 ≤ ?m.110
+
+Note: Expected a function because this term is being applied to the argument
+  _
+G4WeightedOrdinaryTreeLaw.lean:2199:81: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+coin : CommonSeed N
+A : Finset X
+ha : A ≠ ∅
+hu : A ≠ Finset.univ
+⊢ (0 < ∑ e, if edgeTaxa N C H coin e = A then edgeExposure N C r e else 0) ↔ ∃ e, edgeTaxa N C H coin e = A
+G4WeightedOrdinaryTreeLaw.lean:2271:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mem_forcedVertices`:
+  [DecidableEq E]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2291:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2311:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2325:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2343:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2360:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2377:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.erased_full_observation`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2383:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2432:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2449:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.forced_boundary_eq_common_of_register`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2460:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2488:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.program_eq_of_same_register_steps`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2505:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.same_register_map_steps`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2515:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2532:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2550:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2568:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2593:9: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2616:9: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2641:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.colourFibre_sample_preimage`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2673:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeCopySet_mono`:
+  [DecidableEq Copy]
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2678:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeCopySet_disjoint`:
+  [DecidableEq Copy]
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2719:19: error: unsolved goals
+case pos
+X : Type u_3
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+A : Finset X
+op : Finset X × ℝ≥0
+ops : List (Finset X × ℝ≥0)
+ih : cladeBucketReal ops A = ↑(cladeWordWeight ops A)
+h : op.1 = A
+⊢ (List.map (fun op => if op.1 = A then ↑op.2 else 0) ops).sum =
+    ↑(List.map Prod.snd (List.filter (fun op => decide (op.1 = A)) ops)).sum
+
+case neg
+X : Type u_3
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+A : Finset X
+op : Finset X × ℝ≥0
+ops : List (Finset X × ℝ≥0)
+ih : cladeBucketReal ops A = ↑(cladeWordWeight ops A)
+h : ¬op.1 = A
+⊢ (List.map (fun op => if op.1 = A then ↑op.2 else 0) ops).sum =
+    ↑(List.map Prod.snd (List.filter (fun op => decide (op.1 = A)) ops)).sum
+G4WeightedOrdinaryTreeLaw.lean:2721:72: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [cladeBucketReal, cladeWordWeight, cladeBucket, List.filter, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WeightedOrdinaryTreeLaw.lean:2731:103: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype Copy
+inst✝⁶ : DecidableEq Copy
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+r : PositivePairRates E
+f : Copy → Location V E
+t : ℝ≥0
+A : Finset Copy
+i : Option E
+a✝ : i ∈ Finset.univ
+h : colourFibre f (originalPlace N i) = A
+⊢ ↑⟨↑t * pairRate r i, ⋯⟩ = ↑t * pairRate r i
+G4WeightedOrdinaryTreeLaw.lean:2768:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2793:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2838:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2845:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2854:40: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2857:2: error: Tactic `apply` failed: could not unify the conclusion of `@NNReal.eq`
+  ?n = ?m
+with the goal
+  cladeWordWeight (calendarTaxonWord N C H p r coin) A = weightedNormalize N C H r coin A
+
+Note: The full type of `@NNReal.eq` is
+  ∀ {n m : ℝ≥0}, ↑n = ↑m → n = m
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+x✝ : Sort u_5
+HybridProbabilities : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : sorry
+r : PositivePairRates E
+coin : CommonSeed N
+A : Finset X
+hA : A ≠ ∅
+hU : A ≠ Finset.univ
+⊢ cladeWordWeight (calendarTaxonWord N C H p r coin) A = weightedNormalize N C H r coin A
+G4WeightedOrdinaryTreeLaw.lean:2890:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2917:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WeightedOrdinaryTreeLaw.lean:2932:63: error: Function expected at
+  HybridProbabilities
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `HybridProbabilities` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.

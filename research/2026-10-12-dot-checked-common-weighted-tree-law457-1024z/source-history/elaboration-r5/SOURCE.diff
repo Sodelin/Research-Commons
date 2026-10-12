@@ -1,0 +1,29 @@
+--- candidate-0933z
++++ elaboration-r1
+@@ -1255,22 +1255,14 @@
+   simp only [PMF.uniformOfFinset_apply,apply_ite ENNReal.toReal,
+     ENNReal.toReal_inv,ENNReal.toReal_natCast,ENNReal.toReal_zero,
+     PMF.pure_apply,apply_ite ENNReal.toReal,ENNReal.toReal_one,one_div]
+-  have he (q : WellLabelledTree Copy × WellLabelledTree Copy) :
+-      (if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ else 0) *
+-          (if G = pairAction F Finset.univ q then 1 else 0) =
+-      if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ *
+-          (if pairAction F Finset.univ q = G then 1 else 0) else 0 := by
+-    by_cases hq : q ∈ rootPairs F <;> simp [hq,eq_comm]
+-  change (∑ q : WellLabelledTree Copy × WellLabelledTree Copy,
+-    (if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ else 0) *
+-      (if G = pairAction F Finset.univ q then 1 else 0)) =
+-    ∑ q ∈ rootPairs F, ((rootPairs F).card : ℝ)⁻¹ *
+-      (if pairAction F Finset.univ q = G then 1 else 0)
+   calc
+     _ = ∑ q : WellLabelledTree Copy × WellLabelledTree Copy,
+         if q ∈ rootPairs F then ((rootPairs F).card : ℝ)⁻¹ *
+           (if pairAction F Finset.univ q = G then 1 else 0) else 0 :=
+-      Finset.sum_congr rfl (fun q _ => he q)
++      by
++        apply Finset.sum_congr rfl
++        intro q _
++        by_cases hq : q ∈ rootPairs F <;> simp [hq,eq_comm]
+     _ = _ := by
+       rw [← Finset.sum_filter]
+       simp only [Finset.filter_mem_eq_inter,Finset.univ_inter]

@@ -1,0 +1,39 @@
+--- candidate-0933z
++++ elaboration-r1
+@@ -57,6 +57,7 @@
+ open UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.NativeCommonPairGerm
+ open UnifiedLean.Source.NativeIndependentPairMixture
++open UnifiedLean.Source.SourceActualHoldingClocks
+ open UnifiedLean.Source.OriginalFixedIDControls
+ open GProgram.G5 GProgram.G5.AttainedChronology GProgram.G5.Normalization
+ open G1ActualDisplayedTreeFamily G1ActualDisplayedClusterSplitTransport
+@@ -475,7 +476,7 @@
+     ¬ LegalPair F ∅ p := by
+   intro h
+   obtain ⟨x,hx⟩ := genealogy_leaves_nonempty p.1.val
+-  exact Finset.not_mem_empty x (h.2.2.2.1 hx)
++  exact Finset.notMem_empty x (h.2.2.2.1 hx)
+ 
+ lemma cladeGenerator_empty : cladeGenerator (∅ : Finset Copy) = 0 := by
+   ext F G
+@@ -867,8 +868,8 @@
+   rw [image_offDiag_eq]
+   · rw [image_populationRoots]
+   · intro a ha b hb
+-    exact liveTreeOrLeaf_injective_on s hs a (populationRoots_subset_live s place ha)
+-      b (populationRoots_subset_live s place hb)
++    exact liveTreeOrLeaf_injective_on s hs a ((Finset.mem_filter.mp ha).1)
++      b ((Finset.mem_filter.mp hb).1)
+ 
+ lemma actualForest_partition {V E : Type*} (s : State V E Copy) (hs : Valid s) :
+     Partition (actualForest s hs) := by
+@@ -2651,7 +2652,7 @@
+   by_cases ha : C.Active guard e
+   · simp only [if_pos ha,ha,and_true,cladeCopySet,Finset.mem_filter,Finset.mem_univ,
+       true_and,mem_edgeTaxa]
+-  · simp only [if_neg ha,ha,and_false,Finset.not_mem_empty]
++  · simp only [if_neg ha,ha,and_false,Finset.notMem_empty]
+ 
+ /-- The finite compiled calendar never spends time in the ancestral root
+ population: the actual root date is last. Infinite completion is kept separate. -/

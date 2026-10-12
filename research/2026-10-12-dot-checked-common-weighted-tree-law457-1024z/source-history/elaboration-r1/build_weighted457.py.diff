@@ -1,0 +1,14 @@
+--- pre-R1/build_weighted457.py
++++ R1/build_weighted457.py
+@@ -3,9 +3,9 @@
+ import hashlib,json,sys,types,shutil
+ ROOT=Path(__file__).resolve().parents[1]
+ TARGET='candidate/g4-weighted-ordinary-tree-law'
+-GRAPH_SHA='5ec44a11d0e96e8b1655cb30c7192dca2ceee72fdab15624d962f831f773fc3d'
++GRAPH_SHA='87de17e1ce4d061e41e500ce7f98d8912a689e99fa8c5680429f93d022519021'
+ STREAMED_SHA='748ea65d03736c89f6f868e431e00cdc9e21937273c227e9b5cc5c16a1e37ea1'
+-FRESH={'G4WeightedOrdinaryTreeLaw': '7f3d2391caa60ae51893fc53116974cd61d00019c98ded1feede39fb5d0ca807'}
++FRESH={'G4WeightedOrdinaryTreeLaw': '4d760cde9413e192bbbeda86ccea87b8ae15f68d3afa6bf05c9ebe2e26b4ebb9'}
+ def require(x,msg):
+  if not x:raise ValueError(msg)
+ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()

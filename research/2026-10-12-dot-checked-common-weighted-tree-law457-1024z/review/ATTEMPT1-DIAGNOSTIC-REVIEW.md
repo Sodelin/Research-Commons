@@ -1,0 +1,9 @@
+# Independent first-attempt diagnostic triage
+
+2026-10-12 09:52 UTC. The exact candidate `7f3d2391caa60ae51893fc53116974cd61d00019c98ded1feede39fb5d0ca807` failed source elaboration with exit 1 after 25.19 seconds. The receipt preserves the 180-second / 4,096-MiB limits and reports stable source/imports. Aggregate and complete audit were not reached. The failed stdout SHA-256 is `2033432c78cc945b1f1da475ff4c1f13050cb1d6747b3f8452bde410a934b825`.
+
+All 77 error blocks were independently read and indexed. Repeated causes include a missing NativeIndependentPairMixture namespace for HybridProbabilities; a missing liveCard namespace; dependent Valid/state/decode and mergeForest proof-argument rewriting; insufficiently typed rectangular matrix products; partial-application/function-composition normalization; finite subtype sum instances; and implicit-argument or renamed finite-set APIs. Later unknown-identifier consequences are failed evidence only.
+
+The available `Finset.sum_subtype` supports arbitrary Fintype instances on the root-pair subtype and is a suitable exact replacement for sum_coe_sort where the induced instance failed to match. The generic image_population_pairs proof can retain its existing weak statement: direct finite-filter membership gives the needed subset-live fact without adding Fintype V/E assumptions. These suggestions were sent to the sole source author, who owns edits.
+
+No mathematical counterexample or missing law premise was identified from these diagnostics. This does not certify the proposed repairs. Any successor needs a frozen exact delta, preserved failed evidence, coherent graph/source/allowlist pins and independent review before the same-policy retry. Existing static reviews remain static only; no source or full-law kernel acceptance is claimed.

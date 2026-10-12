@@ -1,0 +1,13 @@
+--- candidate-0933z
++++ elaboration-r1
+@@ -411,8 +411,9 @@
+     field_simp [hc]
+     <;> ring
+   rw [hdelta,Fintype.sum_option]
+-  simp only [paddedAction,sub_self,zero_add]
++  simp only [paddedAction]
+   congr 1
++  simp only [sub_self,zero_add]
+   apply Finset.sum_congr rfl
+   intro p _
+   by_cases h : LegalPair F A p
