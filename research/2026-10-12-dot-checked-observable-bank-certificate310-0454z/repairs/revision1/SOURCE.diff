@@ -1,0 +1,39 @@
+--- original
++++ revision1
+@@ -18,6 +18,7 @@
+ open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativePairClockLaw
+ open UnifiedLean.Source.NativeIndependentPairMixture
+ open UnifiedLean.Source.SourceNaturalInitialization UnifiedLean.Source.SourceCompletedUnrankedTree
++open UnifiedLean.Source.UnrankedGenealogyObservation
+ open DotG34.SpecifiedCombEvent
+ open GProgram.G5.StrictBoundaryRoutes UnifiedLean.Source.SourceEpochSemigroup
+ open DotG4.ActualBankFirstMeeting DotG4.ActualNaturalCombMoments
+@@ -204,6 +205,28 @@
+   apply actual_two_calibration_bank_rigidity N C H p r i j _ _ h2 (h3.trans hcal) coin
+   exact mul_nonneg (by norm_num) ENNReal.toReal_nonneg
+ 
++/-- Exact two-moment calibration is equivalent to constant survival in every
++original bank. This is the inherited paired natural-tree calibration premise. -/
++theorem actual_cubic_observation_iff_constant (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
++    (i j : X) :
++    (18 * combProbability N C H p r i j 3 = (3 * combProbability N C H p r i j 2)^3) ↔
++    (∀ coin, realSurvival N C H p r i j coin = 3 * combProbability N C H p r i j 2) := by
++  constructor
++  · intro h coin
++    exact actual_cubic_observation_forces_constant N C H p r i j h coin
++  · intro h
++    have hm : observedMoment N C H p r i j 3 = (3 * combProbability N C H p r i j 2)^3 := by
++      rw [actual_observed_moment N C H p r i j 3 (by decide)]
++      norm_num [Nat.choose]
++      simp_rw [h]
++      rw [← Finset.sum_mul,coinWeight_sum,one_mul]
++    have h3 : observedMoment N C H p r i j 3 = 18 * combProbability N C H p r i j 3 := by
++      norm_num [observedMoment,combCoefficient]
++      ring
++    exact h3.symm.trans hm
++
++#print axioms actual_cubic_observation_iff_constant
+ #print axioms actual_cubic_observation_forces_constant
+ #print axioms actual_observable_certificate_roots
+ #print axioms actual_two_calibration_bank_rigidity

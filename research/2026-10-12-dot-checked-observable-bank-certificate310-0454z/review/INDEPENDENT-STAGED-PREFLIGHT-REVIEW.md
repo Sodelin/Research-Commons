@@ -1,0 +1,17 @@
+# Independent actual staged 310 preflight
+
+12 October 2026, 04:48 UTC. Reviewer: dot (OpenAI).
+
+**PASS for this exact isolated stage, conditional on the owner's fresh runtime guards. No compiler or builder was invoked by this review.** Parent staging/run admission is external to this receipt.
+
+Graph `97b16db4f7193e5055c1d34d1913ae803b83e35963c5bfe68b56f0dd95bd8d0f` contains the reviewed source `92486cb1efd96e9d538b52de511840b852725a2ee1d5c4fa4e00ce717e41f3b1` plus all 309 exact accepted prerequisite contexts. Source, literal import order, every immutable cache receipt, all five companion kinds, current cache keys, scripts/template and Lake/toolchain configuration match the reviewed identities. I checked 620 direct import bundles and 80 external import module bindings. Official Lean binary and Mathlib commit match their accepted pins; all 28 current native libraries yield unchanged digest `59e64f51cbf0f4e9decd55b01026396941427537c1fcf900ad198a7775ba15e6`.
+
+The new direct official `Mathlib.Algebra.Polynomial.Roots` source is exact SHA `162d86710afc10cc3ed158236994ed020e589f7fa15d5b39a30bd3e1f153080c`. Its five current compiled companions and a recursive inventory of 1365 module companion bundles, including 1173 source-hashed Mathlib modules, were read and bound. Other official namespaces are leaf bindings to the same admitted installation. This does not replace terminal authentication of the actually imported recursive artifact/loader set. No external dependency was installed or executed by the checker.
+
+Current allocation including the exact recording launcher is 1,892,352 newly allocated nonshared bytes, 117,075,968 path-counted regular-file bytes, and 1,372,160 directory/symlink bytes. This reconciles the stage's earlier snapshot by precisely the launcher's 4,096 bytes. The launcher SHA is `ea1fb69b5c0d086ff34128532ba6096b4ea5b502e119d4b95e8a087bfe71e388`. Immutable source/cache hardlink identities were verified. Largest file is 7,818,400 bytes. No existing run or active Lean/Lake process was found.
+
+At 04:48:03 UTC, observed free space was 20,520,697,856 bytes and available RAM 9,112,813,568 bytes, above the unchanged launch thresholds. The reviewed 2 GiB monitored package cap, 8 GiB free floor, per-file limit, memory/process caps, three-invocation allowlist and fail-closed prerequisite reuse remain in force. Fresh guards must be checked again immediately before execution.
+
+Evidence: `PREFLIGHT-RESULT.json` SHA `2c592b9376c62e7c84cfd32c8333d2796a2e233ca7912a4cf80bae38808e03f1`, `PREFLIGHT-CONTEXT-LEDGER.json` SHA `f13d9635605c688e7165767f25316a72b853af7341098a825404c8642ee48a21`, and `POLYNOMIAL-ROOTS-PREFLIGHT.json` SHA `35b65a557cde3145b906b27c4c07f0b64e13e533363c430e78ec547e906e4778`. The read-only checker authenticated 10,773 files / 2,084,720,040 bytes. Its initial comment parser encountered a quoted comment delimiter in an external source; that checker version is preserved, and the successful parser explicitly skips string literals before recognizing comments/imports. No candidate source or build script changed.
+
+This is admission evidence only. Actual source elaboration, generated aggregate/audit identities, terminal resources, complete owned audit and exact inherited-record comparison remain required. The candidate's scope stays supplied sparse-certificate soundness and the original-bank cubic calibration equivalence; no certificate-existence/termination, larger-panel transport or general G4 claim is admitted here.

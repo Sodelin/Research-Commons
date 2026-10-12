@@ -1,0 +1,81 @@
+G4ActualObservableBankCertificate.lean:38:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualObservableBankCertificate.coinWeight_sum`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualObservableBankCertificate.lean:85:23: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (ENNReal.ofReal (combCoefficient k)).toReal
+in the target expression
+  (ENNReal.ofReal (2 ^ k / (↑(k + 1).factorial * ↑k.factorial))).toReal *
+      (∑ coin, (originalRegisterMeasure N p).toPMF coin * bankSurvival N C H p r coin i j ^ k.choose 2).toReal =
+    (∑ coin, coinWeight N p coin * realSurvival N C H p r i j coin ^ k.choose 2) * combCoefficient k
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+k : ℕ
+hk : 0 < k
+⊢ (ENNReal.ofReal (2 ^ k / (↑(k + 1).factorial * ↑k.factorial))).toReal *
+      (∑ coin, (originalRegisterMeasure N p).toPMF coin * bankSurvival N C H p r coin i j ^ k.choose 2).toReal =
+    (∑ coin, coinWeight N p coin * realSurvival N C H p r i j coin ^ k.choose 2) * combCoefficient k
+G4ActualObservableBankCertificate.lean:96:25: warning: `Polynomial.eval_finset_sum` has been deprecated: Use `Polynomial.eval_finsetSum` instead
+G4ActualObservableBankCertificate.lean:121:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a * ∑ i ∈ ?s, ?f i
+in the target expression
+  ∑ x_1, w x_1 * (c k * x x_1 ^ k.choose 2) = ∑ i, c k * (w i * x i ^ k.choose 2)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+levels : Finset ℕ
+c : ℕ → ℝ
+hlevels : ∀ k ∈ levels, 0 < k
+hnonneg : ∀ x ∈ Set.Icc 0 1, 0 ≤ Polynomial.eval x (sparsePolynomial levels c)
+hobs : ∑ k ∈ levels, c k * observedMoment N C H p r i j k = 0
+coin : Hybrid N → Bool
+w : (Hybrid N → Bool) → ℝ := coinWeight N p
+x : (Hybrid N → Bool) → ℝ := realSurvival N C H p r i j
+hn : ∀ (a : Hybrid N → Bool), 0 ≤ w a * Polynomial.eval (x a) (sparsePolynomial levels c)
+k : ℕ
+hk : k ∈ levels
+⊢ ∑ x_1, w x_1 * (c k * x x_1 ^ k.choose 2) = ∑ i, c k * (w i * x i ^ k.choose 2)
+G4ActualObservableBankCertificate.lean:189:34: error: unexpected identifier; expected 'lemma'
+'DotG4.ActualObservableBankCertificate.actual_cubic_observation_iff_constant' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualObservableBankCertificate.actual_cubic_observation_forces_constant' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualObservableBankCertificate.actual_observable_certificate_roots' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualObservableBankCertificate.actual_two_calibration_bank_rigidity' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
