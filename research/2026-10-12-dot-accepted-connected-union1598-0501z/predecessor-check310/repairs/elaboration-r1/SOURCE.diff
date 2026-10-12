@@ -1,0 +1,33 @@
+--- revision1
++++ elaboration-r1
+@@ -82,10 +82,12 @@
+   unfold observedMoment combProbability
+   apply (div_eq_iff (combCoefficient_positive k).ne').mpr
+   rw [actual_natural_completed_comb_finite_moment N C H p r i j k hk,
+-    ENNReal.toReal_mul,ENNReal.toReal_ofReal (combCoefficient_positive k).le,
++    ENNReal.toReal_mul,ENNReal.toReal_ofReal (show 0 ≤ (2:ℝ)^k /
++      ((Nat.factorial (k+1) : ℝ) * (Nat.factorial k : ℝ)) from (combCoefficient_positive k).le),
+     ENNReal.toReal_sum (fun coin _ => ENNReal.mul_ne_top (PMF.apply_ne_top _ _)
+       (ENNReal.pow_ne_top (by simp [bankSurvival])))]
+   simp only [ENNReal.toReal_mul,ENNReal.toReal_pow,coinWeight,realSurvival]
++  unfold combCoefficient
+   ring
+ 
+ noncomputable def sparsePolynomial (levels : Finset Nat) (c : Nat → ℝ) : Polynomial ℝ :=
+@@ -118,7 +120,6 @@
+         rw [Finset.sum_comm]
+         apply Finset.sum_congr rfl
+         intro k hk
+-        rw [Finset.mul_sum]
+         apply Finset.sum_congr rfl
+         intro a ha
+         ring
+@@ -186,7 +187,7 @@
+   have hs := (mul_eq_zero.mp hz).resolve_right hp.ne'
+   exact sub_eq_zero.mp (sq_eq_zero_iff.mp hs)
+ 
+-/-- The literal calibrated three-/four-copy probability equality from the
++/-- The literal calibrated three-copy and four-copy probability equality from the
+ inherited paired natural-tree certificate. The conclusion holds for every
+ original bank, including those not exposed to the observer. -/
+ theorem actual_cubic_observation_forces_constant (N : RootedBinary V E X) (C : Calendar N.graph)
