@@ -1,0 +1,21 @@
+--- revision1
++++ revision2
+@@ -259,7 +259,8 @@
+ theorem actual_exists_finite_survival_law_determination
+     (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
+     (p : HybridProbabilities N) (r : PositivePairRates E) (i j : X) :
+-    ∃ L : Nat, 0 < L ∧ ∀ (N' : RootedBinary V' E' X) (C' : Calendar N'.graph)
++    ∃ L : Nat, 0 < L ∧ ∀ (V' E' : Type*) [DecidableEq V'] [DecidableEq E']
++      [Fintype V'] [Fintype E'] (N' : RootedBinary V' E' X) (C' : Calendar N'.graph)
+       (H' : OriginalParentRegistry N') (p' : HybridProbabilities N') (r' : PositivePairRates E'),
+       (∀ k ∈ momentLevels L, observedMoment N C H p r i j k =
+         observedMoment N' C' H' p' r' i j k) →
+@@ -267,7 +268,7 @@
+         ((originalRegisterMeasure N' p').toPMF.map (realSurvival N' C' H' p' r' i j)) := by
+   obtain ⟨L,c,hL,hne,hpos,hzero⟩ := actual_exists_sparse_observable_certificate N C H p r i j
+   refine ⟨L,hL,?_⟩
+-  intro N' C' H' p' r' hmatch
++  intro V' E' _ _ _ _ N' C' H' p' r' hmatch
+   exact actual_certificate_matching_moments_survival_law N C H p r N' C' H' p' r' i j
+     L c hne hpos hzero hmatch
+ 

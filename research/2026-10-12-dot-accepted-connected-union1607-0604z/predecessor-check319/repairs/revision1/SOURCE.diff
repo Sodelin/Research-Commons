@@ -1,0 +1,98 @@
+--- initial
++++ revision1
+@@ -183,6 +183,95 @@
+   exact (gridWeight_eq_mapped_mass (originalRegisterMeasure N p).toPMF x a).symm.trans
+     ((hall a).trans (gridWeight_eq_mapped_mass (originalRegisterMeasure N' p').toPMF x' a))
+ 
++
++lemma sparsePolynomial_support_card_le_levels (L : Nat) (c : Nat → ℝ) :
++    (sparsePolynomial (momentLevels L) c).support.card ≤ L := by
++  have hs : (sparsePolynomial (momentLevels L) c).support ⊆
++      (momentLevels L).image (fun k => k.choose 2) := by
++    intro n hn
++    by_contra hnot
++    have hne : ∀ k ∈ momentLevels L, k.choose 2 ≠ n := by
++      intro k hk h
++      exact hnot (Finset.mem_image.mpr ⟨k,hk,h⟩)
++    have hz : (sparsePolynomial (momentLevels L) c).coeff n = 0 := by
++      unfold sparsePolynomial
++      rw [Polynomial.finsetSum_coeff]
++      apply Finset.sum_eq_zero
++      intro k hk
++      simp [Polynomial.coeff_monomial,hne k hk]
++    exact (Polynomial.mem_support_iff.mp hn) hz
++  exact (Finset.card_le_card hs).trans (Finset.card_image_le.trans
++    ((Finset.card_image_le (s := (Finset.univ : Finset (Fin L)))).trans (by simp)))
++
++noncomputable def positiveCertificateGrid (L : Nat) (c : Nat → ℝ) : Finset ℝ :=
++  (sparsePolynomial (momentLevels L) c).roots.toFinset.filter (fun x => 0 < x ∧ x ≤ 1)
++
++lemma positiveCertificateGrid_card_lt (L : Nat) (c : Nat → ℝ)
++    (hp : sparsePolynomial (momentLevels L) c ≠ 0) :
++    (positiveCertificateGrid L c).card < L := by
++  let A := positiveCertificateGrid L c
++  have hA : ∀ a ∈ A, 0 < a := fun a ha => (Finset.mem_filter.mp ha).2.1
++  have hz : ∀ a ∈ A, (sparsePolynomial (momentLevels L) c).IsRoot a := by
++    intro a ha
++    exact (Polynomial.mem_roots hp).mp (Multiset.mem_toFinset.mp (Finset.mem_filter.mp ha).1)
++  have hlt : A.card < (sparsePolynomial (momentLevels L) c).support.card := by
++    by_contra h
++    exact hp (zero_of_positive_grid_roots A hA _ (Nat.le_of_not_gt h) hz)
++  exact hlt.trans_le (sparsePolynomial_support_card_le_levels L c)
++
++/-- A nonzero observed certificate already leaves fewer positive grid atoms
++than queried levels. The same finite queries therefore determine the entire
++survival pushforward distribution among arbitrary admitted finite rivals. -/
++theorem actual_certificate_matching_moments_survival_law
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')
++    (p' : HybridProbabilities N') (r' : PositivePairRates E') (i j : X)
++    (L : Nat) (c : Nat → ℝ)
++    (hne : sparsePolynomial (momentLevels L) c ≠ 0)
++    (hpos : ∀ x ∈ Set.Icc (0:ℝ) 1, 0 ≤ (sparsePolynomial (momentLevels L) c).eval x)
++    (hzero : ∑ k ∈ momentLevels L, c k * observedMoment N C H p r i j k = 0)
++    (hmatch : ∀ k ∈ momentLevels L,
++      observedMoment N C H p r i j k = observedMoment N' C' H' p' r' i j k) :
++    ((originalRegisterMeasure N p).toPMF.map (realSurvival N C H p r i j)) =
++      ((originalRegisterMeasure N' p').toPMF.map (realSurvival N' C' H' p' r' i j)) := by
++  let A := positiveCertificateGrid L c
++  have hA : ∀ a ∈ A, 0 < a := fun a ha => (Finset.mem_filter.mp ha).2.1
++  have ha : ∀ coin, realSurvival N C H p r i j coin ∈ A := by
++    intro coin
++    exact Finset.mem_filter.mpr ⟨actual_observable_certificate_roots N C H p r i j
++      (momentLevels L) c (momentLevels_positive L) hne hpos hzero coin,
++      realSurvival_positive N C H p r i j coin,realSurvival_le_one N C H p r i j coin⟩
++  have ha' : ∀ coin, realSurvival N' C' H' p' r' i j coin ∈ A := by
++    intro coin
++    exact Finset.mem_filter.mpr ⟨actual_matching_moments_restrict_bank N C H p r
++      N' C' H' p' r' i j L c hne hpos hzero (fun k hk => (hmatch k hk).symm) coin,
++      realSurvival_positive N' C' H' p' r' i j coin,realSurvival_le_one N' C' H' p' r' i j coin⟩
++  apply actual_matching_grid_moments_survival_law N C H p r N' C' H' p' r' i j A hA ha ha'
++  intro k hk
++  obtain ⟨n,_,rfl⟩ := Finset.mem_image.mp hk
++  apply hmatch
++  exact Finset.mem_image.mpr ⟨⟨n.val,n.isLt.trans (positiveCertificateGrid_card_lt L c hne)⟩,
++    Finset.mem_univ _,rfl⟩
++
++/-- Semantic finite determination of one directed survival distribution.
++This existential query bound is not an executable stopping algorithm. -/
++theorem actual_exists_finite_survival_law_determination
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E) (i j : X) :
++    ∃ L : Nat, 0 < L ∧ ∀ (N' : RootedBinary V' E' X) (C' : Calendar N'.graph)
++      (H' : OriginalParentRegistry N') (p' : HybridProbabilities N') (r' : PositivePairRates E'),
++      (∀ k ∈ momentLevels L, observedMoment N C H p r i j k =
++        observedMoment N' C' H' p' r' i j k) →
++      ((originalRegisterMeasure N p).toPMF.map (realSurvival N C H p r i j)) =
++        ((originalRegisterMeasure N' p').toPMF.map (realSurvival N' C' H' p' r' i j)) := by
++  obtain ⟨L,c,hL,hne,hpos,hzero⟩ := actual_exists_sparse_observable_certificate N C H p r i j
++  refine ⟨L,hL,?_⟩
++  intro N' C' H' p' r' hmatch
++  exact actual_certificate_matching_moments_survival_law N C H p r N' C' H' p' r' i j
++    L c hne hpos hzero hmatch
++
+ #print axioms positive_grid_weights_unique
+ #print axioms actual_matching_grid_moments_survival_law
++#print axioms actual_exists_finite_survival_law_determination
+ end DotG4.ActualPositiveGridUniqueness

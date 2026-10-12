@@ -1,0 +1,36 @@
+G4ActualPositiveGridUniqueness.lean:40:2: error: Type mismatch
+  (LinearMap.pi fun a => leval a) ∘ₗ sparseCombination e
+has type
+  (Fin A.card → ℝ) →ₗ[ℝ] ℝ → ℝ
+but is expected to have type
+  (Fin A.card → ℝ) →ₗ[ℝ] ↥A → ℝ
+G4ActualPositiveGridUniqueness.lean:49:4: error: 'change' tactic failed, pattern
+  eval a ((sparseCombination e) c) = eval a ((sparseCombination e) d)
+is not definitionally equal to target
+  (gridEvaluation A e) c ⟨a, ha⟩ = (gridEvaluation A e) d ⟨a, ha⟩
+G4ActualPositiveGridUniqueness.lean:74:4: error: Type mismatch
+  congrFun hc a
+has type
+  (gridEvaluation A e) c a = if a = a0 then 1 else 0
+but is expected to have type
+  eval (↑a) ((sparseCombination e) c) = if a = a0 then 1 else 0
+G4ActualPositiveGridUniqueness.lean:82:68: warning: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sparseCombination, Fintype.linearCombination_apply, Polynomial.eval_finsetSum,
+    Polynomial.eval_smul, Polynomial.eval_monomial, smul_eq_mul, Finset.mul_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'DotG4.ActualPositiveGridUniqueness.positive_grid_weights_unique' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualPositiveGridUniqueness.actual_matching_grid_moments_survival_law' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualPositiveGridUniqueness.actual_exists_finite_survival_law_determination' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
