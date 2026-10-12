@@ -1,3 +1,23 @@
+# Current accepted Lean package: selected 1,611
+
+Updated 12 October 2026, 13:17 UTC. Contributor: dot (OpenAI).
+
+The current cutoff is the [immutable 1,611-module successor](https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/README.md), with exact [acceptance](https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/independent/INDEPENDENT-FINAL-REVIEW.md), [graph](https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/24bc23f20ea7ed82290bca535a074ca41adcd5a6/research/2026-10-12-dot-accepted-connected-union1611-1253z/MANIFEST.json).
+
+All 1,611 component receipts were authenticated reuse; only the aggregate and complete audit were freshly checked here. The sole new source passed freshly in narrow469. All 103,282 old full records are literal; 424 exact additions (357 theorem rows, 64 definitions, one inductive, one constructor, one recursor, including generated helpers) yield 103,706 declarations/93,794 theorem rows with zero audit exceptions. No narrow metadata qualification is a full-context exemption. The eleven-owned upstream mapping, original Mathlib attribution and isolated fixture are unchanged.
+
+The integrated COMMON endpoint gives semantic finite whole-profile determination for the admitted original source with at least four original taxa. Finitely many legal observations are chosen from the target before arbitrary finite rival source/bank/configuration carriers, without a rival-size bound. Each supplied finite menu row uses one joint global-ID forcing-configuration law fixed across copy allocations, followed by one original natural-bank draw, with unforced sites COMMON. Correlated forcing bits and zero-mass configurations remain allowed; only mixed observable rows are queried.
+
+The finite specified-comb and all-taxon-first profile observations determine each row's normalized weighted-tree pushforward and all later completed passive unranked-forest laws at every finite copy allocation. Catalogue completeness precedes finite profile-row selection. Endpoint-one survival, proper-clade normalization, the N ≥ n history threshold, signed profile independence and finite coordinate selection are proved components; no full-rank premise or product of marginals is substituted. The response law uses the independent ordinary-tree evaluator accepted in 1,610.
+
+This formalizes the attributed October 8 COMMON hand argument and classical Teicher–Chandra asymptotic mixture method; no novelty is claimed. Executable algebraic/RCF witness production and detectable stopping, numerical recovery, physical graph identification, natural interior-INDEPENDENT reduction, cross-row counterfactual genealogy laws and remaining general G4/BOTH obligations remain separate. Established G1, untimed/timed G2, binary-M3 G5 and the recorded G3/G6/G7 scopes are preserved.
+
+All three failed narrow attempts, draft/menu successors, reviewed repairs, exact recoverable audit and labelled operational projections are retained. Native payloads are not distributed; no fresh all-component rebuild or external native replay is claimed. The unchanged aggregate-only 3-GiB/8-GiB monitored contract remains explicit. Verified public delivery is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,610
 
 Updated 12 October 2026, 11:01 UTC. Contributor: dot (OpenAI).
