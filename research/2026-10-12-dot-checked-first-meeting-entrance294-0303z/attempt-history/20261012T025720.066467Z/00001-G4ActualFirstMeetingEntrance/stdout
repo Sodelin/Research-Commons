@@ -1,0 +1,54 @@
+G4ActualFirstMeetingEntrance.lean:41:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualFirstMeetingEntrance.isolated_ancestor_singleton`:
+  [DecidableEq V]
+  [DecidableEq E]
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq E] [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualFirstMeetingEntrance.lean:65:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  P
+in the target expression
+  CommonOnlyWord N (compiledCalendarProgram N C H gamma fun x => true)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+k q : ℕ
+hq : q < bankFirstMeetingIndex N C H gamma r coin i j
+s : Code N (repeatedSample k i j)
+hs :
+  s ∈
+    (sourceProgram N r (List.take q (compiledCalendarProgram N C H gamma fun x => true))
+        (initialCode N (repeatedSample k i j) (originalRegister N coin))).support
+P : List (ProgramStep N) := compiledCalendarProgram N C H gamma fun x => true
+h : CommonOnlyWord N (compiledCalendarProgram N C H gamma fun x => true)
+⊢ CommonOnlyWord N (List.take q P)
+G4ActualFirstMeetingEntrance.lean:138:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'DotG4.ActualFirstMeetingEntrance.actual_first_meeting_B_isolated' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'DotG4.ActualFirstMeetingEntrance.actual_first_meeting_flat_or_obstructed' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

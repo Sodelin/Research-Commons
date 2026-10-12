@@ -1,0 +1,10 @@
+--- revision1
++++ elaboration-r1
+@@ -62,6 +62,7 @@
+   let P := compiledCalendarProgram N C H gamma (fun _ => true)
+   have hc : CommonOnlyWord N (P.take q) := by
+     have h := actual_common_compiled_word_only N C H gamma
++    change CommonOnlyWord N P at h
+     rw [show P = P.take q ++ P.drop q from (List.take_append_drop q P).symm] at h
+     exact ((commonOnlyWord_append N _ _).mp h).1
+   have hl := actual_common_program_copy_locations N r (P.take q) hc
