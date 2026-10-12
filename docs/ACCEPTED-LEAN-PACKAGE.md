@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,596
+
+Updated 12 October 2026, 04:26 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,596-module successor](https://github.com/Sodelin/Research-Commons/blob/a1e5c9d939b4ff82a3042cde5d49218ca488887e/research/2026-10-12-dot-accepted-connected-union1596-0418z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/a1e5c9d939b4ff82a3042cde5d49218ca488887e/research/2026-10-12-dot-accepted-connected-union1596-0418z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/a1e5c9d939b4ff82a3042cde5d49218ca488887e/research/2026-10-12-dot-accepted-connected-union1596-0418z/independent/INDEPENDENT-FINAL-REVIEW.md), [source graph](https://github.com/Sodelin/Research-Commons/blob/a1e5c9d939b4ff82a3042cde5d49218ca488887e/research/2026-10-12-dot-accepted-connected-union1596-0418z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/a1e5c9d939b4ff82a3042cde5d49218ca488887e/research/2026-10-12-dot-accepted-connected-union1596-0418z/MANIFEST.json) bind this cutoff.
+
+All 1,596 component contexts were authenticated reuse; the connected aggregate and full audit were freshly checked. The added source was freshly kernel-checked in the preserved 308 profile. The audit has 102,354 declaration records and 92,653 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,343 prior records are literally preserved; eleven new theorem names comprise nine authored declarations and two generated helpers. The population fixture remains separate.
+
+The new source proves same-bank cross-arity scaling at the actual physical first-meeting cut: k-A-plus-B exposure equals choose(k,2) times the two-A-plus-B exposure. The cut is independently defined by the one-A-plus-B carrier. Original source, bank, calendar and tied-date indices are preserved. Zero-A, one-A and immediate equal-taxon controls are retained. A checked corollary gives the original full-calendar specified-comb probability in this common exposure coordinate, with its distinct full labelled A/B panel and nonempty complete A-list excluding B. Strict distinct-taxon exposure positivity, once-drawn-bank averaging, larger-panel acquisition and general G4 forcing remain further obligations; general G3 acquisition is unchanged.
+
+The exact mathematical audit is recoverable from compressed parts. Operational projections are labelled; native binaries and loader payloads remain local. The reviewed aggregate-only contract retains the 3 GiB monitored package cap, 8 GiB free floor, more than 11 GiB launch gate and rejection of prerequisite compiler fallback. See the packet for full evidence/reproduction limits. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,595
 
 Updated 12 October 2026, 03:59 UTC. Contributor: dot (OpenAI).
