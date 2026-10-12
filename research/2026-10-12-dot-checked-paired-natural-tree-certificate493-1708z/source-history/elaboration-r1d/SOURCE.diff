@@ -1,0 +1,734 @@
+--- revision1-marker-free
++++ elaboration-r1d-marker-free
+@@ -15,13 +15,14 @@
+ -/
+ namespace DotG4.PairedNaturalTreeCertificate
+ set_option backward.isDefEq.respectTransparency false
++set_option Elab.async false
+ open Nanuq.Source GProgram.G5 GProgram.G5.NonbridgeRoutes
+ open GProgram.G5.AttainedChronology GProgram.G5.ComponentCalendar
+ open UnifiedLean.Source.NativeParentRouting UnifiedLean.Source.NativeCommonPairGerm
+ open UnifiedLean.Source.NativePairClockLaw UnifiedLean.Source.NativeIndependentPairMixture
+ open DotG4.ActualObservableBankCertificate DotG4.ActualNaturalCombMoments
+ open DotG4.ActualSelectedPathExposure DotG4.ActualBankFirstMeeting
+-open scoped Classical BigOperators ENNReal
++open scoped Classical BigOperators ENNReal NNReal
+ variable {V E X : Type*}
+ variable [Fintype V] [Fintype E] [Fintype X] [DecidableEq V] [DecidableEq E]
+ 
+@@ -115,11 +116,11 @@
+     cases q with
+     | nil => exact False.elim (original_edge_target_not_root N e ht)
+     | @cons _ _ f fs htf hf tail =>
+-      have hef : e = f := selected_edges_eq_away N P Q h hPQ hp hq
++      have hef : e = f := selected_edges_eq_away N P Q z hPQ hp hq
+         List.mem_cons_self List.mem_cons_self (ht.trans htf.symm)
+         (havoid e List.mem_cons_self)
+       subst f
+-      obtain ⟨us,hus,hup⟩ := ih tail
++      obtain ⟨us,hus,hup⟩ := ih hPQ tail
+         (fun d hd => hp d (List.mem_cons_of_mem e hd))
+         (fun d hd => hq d (List.mem_cons_of_mem e hd))
+         (fun d hd => havoid d (List.mem_cons_of_mem e hd))
+@@ -154,23 +155,12 @@
+     (q : UpPath N.graph (fun _ => True) a N.root fs)
+     (hp : RespectsSelector N P es) (hq : RespectsSelector N Q fs)
+     (havoid : ∀ e ∈ es, N.graph.target e ≠ h) : es = fs := by
+-  induction p generalizing fs with
+-  | nil =>
+-    cases q with
++  obtain ⟨tail,ht,hup⟩ := upPath_prefix_agreement N P Q h hPQ p q hp hq havoid
++  have hz : tail = [] := by
++    cases tail with
+     | nil => rfl
+-    | cons ht hf tail => exact False.elim (original_edge_target_not_root N _ ht)
+-  | @cons a z e es ht he rest ih =>
+-    cases q with
+-    | nil => exact False.elim (original_edge_target_not_root N e ht)
+-    | @cons _ _ f fs htf hf tail =>
+-      have hef : e = f := selected_edges_eq_away N P Q h hPQ hp hq
+-        List.mem_cons_self List.mem_cons_self (ht.trans htf.symm)
+-        (havoid e List.mem_cons_self)
+-      subst f
+-      congr 1
+-      exact ih tail (fun d hd => hp d (List.mem_cons_of_mem e hd))
+-        (fun d hd => hq d (List.mem_cons_of_mem e hd))
+-        (fun d hd => havoid d (List.mem_cons_of_mem e hd))
++    | cons e es => exact False.elim ((hup.nonempty_start_ne_end N.acyclic) rfl)
++  simpa only [hz,List.append_nil] using ht.symm
+ 
+ lemma edgePath_nodup (N : RootedBinary V E X) (C : Calendar N.graph)
+     {a b : V} {es : List E} (p : EdgePath N.graph a b es) : es.Nodup := by
+@@ -189,7 +179,7 @@
+     ∃ pre post, es = (pre ++ [e]) ++ post ∧
+       EdgePath N.graph a (N.graph.target e) (pre ++ [e]) ∧
+       RespectsSelector N P (pre ++ [e]) := by
+-  obtain ⟨pre,post,hlist,hpre,hpost⟩ := p.split_at_original_edge he
++  obtain ⟨pre,post,hlist,hpre,hpost⟩ := GProgram.G5.ComponentCalendar.EdgePath.split_at_original_edge p he
+   refine ⟨pre,post,by simpa only [List.append_assoc,List.singleton_append] using hlist,
+     hpre.append (.cons rfl (.nil _)),?_⟩
+   intro d hd
+@@ -338,7 +328,7 @@
+   have hn : (F.stem ++ F.left).Nodup := edgePath_nodup N C
+     (F.stem_path.append F.left_path)
+   have hd := (List.nodup_append.mp hn).2.2
+-  rw [F.left_eq,F.right_eq,List.mem_append,List.mem_append]
++  simp only [F.left_eq,F.right_eq,List.mem_append]
+   constructor
+   · rintro ⟨he,hf⟩
+     exact he.resolve_left (fun hh => hf (Or.inl hh))
+@@ -431,8 +421,8 @@
+   stem := pre ++ F.stem
+   left := F.left
+   right := F.right
+-  left_eq := by rw [F.left_eq,List.append_assoc]
+-  right_eq := by rw [F.right_eq,List.append_assoc]
++  left_eq := by simpa only [List.append_assoc] using congrArg (pre ++ ·) F.left_eq
++  right_eq := by simpa only [List.append_assoc] using congrArg (pre ++ ·) F.right_eq
+   stem_path := hp.append F.stem_path
+   left_path := F.left_path
+   right_path := F.right_path
+@@ -473,7 +463,7 @@
+   have hsa := (compiledRoute_source_spec N C (coinSelector N H a) (N.leaf i)).2
+   have hpb := (compiledRoute_source_spec N C (coinSelector N H b) (N.leaf i)).1
+   have hsb := (compiledRoute_source_spec N C (coinSelector N H b) (N.leaf i)).2
+-  obtain ⟨pre,post,hlist,hpre,hpost⟩ := hpa.split_at_original_edge he
++  obtain ⟨pre,post,hlist,hpre,hpost⟩ := GProgram.G5.ComponentCalendar.EdgePath.split_at_original_edge hpa he
+   have hpost' : EdgePath N.graph h.1 (N.leaf i) post := by simpa only [ht] using hpost
+   have hsel : RespectsSelector N (coinSelector N H a) post := by
+     intro d hd
+@@ -507,6 +497,7 @@
+       RespectsSelector N (coinSelector N H a) pre := by
+     intro e hee
+     apply (compiledRoute_source_spec N C (coinSelector N H a) (N.leaf x)).2 e
++    change e ∈ (commonRoutes N C H a).edges x
+     rw [he]
+     exact List.mem_append.mpr (Or.inl hee)
+   have selB (x : X) (pre post : List E)
+@@ -514,6 +505,7 @@
+       RespectsSelector N (coinSelector N H b) pre := by
+     intro e hee
+     apply (compiledRoute_source_spec N C (coinSelector N H b) (N.leaf x)).2 e
++    change e ∈ (commonRoutes N C H b).edges x
+     rw [he]
+     exact List.mem_append.mpr (Or.inl hee)
+   have heA := selected_path_unique N (coinSelector N H a) haiP hajP
+@@ -523,16 +515,16 @@
+   obtain ⟨F⟩ := selected_path_fork N (coinSelector N H a) hpi hpj hpiS hpjS
+   have FA : PathFork N N.root (N.leaf i) (N.leaf j)
+       ((commonRoutes N C H a).edges i) ((commonRoutes N C H a).edges j) := by
+-    exact { vertex := F.vertex, stem := ai ++ F.stem, left := F.left, right := F.right
+-      left_eq := by rw [hai,F.left_eq,List.append_assoc]
+-      right_eq := by rw [haj,← heA,F.right_eq,List.append_assoc]
++    exact { vertex := F.vertex, stem := ai ++ F.stem, left := F.left, right := F.right,
++      left_eq := by simpa only [List.append_assoc] using hai.trans (congrArg (ai ++ ·) F.left_eq)
++      right_eq := by simpa only [heA,List.append_assoc] using haj.trans (congrArg (aj ++ ·) F.right_eq)
+       stem_path := haiP.append F.stem_path
+       left_path := F.left_path, right_path := F.right_path, separate := F.separate }
+   have FB : PathFork N N.root (N.leaf i) (N.leaf j)
+       ((commonRoutes N C H b).edges i) ((commonRoutes N C H b).edges j) := by
+-    exact { vertex := F.vertex, stem := bi ++ F.stem, left := F.left, right := F.right
+-      left_eq := by rw [hbi,F.left_eq,List.append_assoc]
+-      right_eq := by rw [hbj,← heB,F.right_eq,List.append_assoc]
++    exact { vertex := F.vertex, stem := bi ++ F.stem, left := F.left, right := F.right,
++      left_eq := by simpa only [List.append_assoc] using hbi.trans (congrArg (bi ++ ·) F.left_eq)
++      right_eq := by simpa only [heB,List.append_assoc] using hbj.trans (congrArg (bj ++ ·) F.right_eq)
+       stem_path := hbiP.append F.stem_path
+       left_path := F.left_path, right_path := F.right_path, separate := F.separate }
+   have hA := (bankFork N C H a i j).vertex_unique N C r FA
+@@ -634,7 +626,7 @@
+     ∃ e : E, N.graph.target e = v ∧ N.graph.DReach w (N.graph.source e) := by
+   rcases Relation.ReflTransGen.cases_tail hr with he | ⟨u,hu,e,hs,ht⟩
+   · exact False.elim (hv he)
+-  · exact ⟨e,ht,by simpa only [hs] using hu⟩
++  · exact ⟨e,ht,by change N.graph.DReach w u at hu; simpa only [hs] using hu⟩
+ 
+ /-- A graph-derived selector which keeps all descendants of w below w until
+ w is reached. No source or observation law is included in its definition. -/
+@@ -649,7 +641,7 @@
+ lemma descendantSelector_parent (N : RootedBinary V E X) (w : V) (v : Nonroot N)
+     (hv : v.1 ≠ w) (hr : N.graph.DReach w v.1) :
+     N.graph.DReach w (N.graph.source ((descendantSelector N w).edge v)) := by
+-  simp only [descendantSelector,dif_pos ⟨hv,hr⟩]
++  simp only [descendantSelector,dif_pos (show v.1 ≠ w ∧ N.graph.DReach w v.1 from ⟨hv,hr⟩)]
+   exact (Classical.choose_spec (descendant_parent_exists N hv hr)).2
+ 
+ lemma descendant_selected_path (N : RootedBinary V E X) (C : Calendar N.graph)
+@@ -721,13 +713,16 @@
+       (hs _ (respects_append N P hspre hsf))
+   have G : PathFork N N.root (N.leaf i) (N.leaf j)
+       ((commonRoutes N C H coin).edges i) ((commonRoutes N C H coin).edges j) :=
+-    { vertex := F.vertex, stem := pre ++ F.stem, left := F.left, right := F.right
+-      left_eq := by rw [hei,F.left_eq,List.append_assoc]
+-      right_eq := by rw [hej,F.right_eq,List.append_assoc]
++    { vertex := F.vertex, stem := pre ++ F.stem, left := F.left, right := F.right,
++      left_eq := by simpa only [List.append_assoc] using hei.trans (congrArg (pre ++ ·) F.left_eq)
++      right_eq := by simpa only [List.append_assoc] using hej.trans (congrArg (pre ++ ·) F.right_eq)
+       stem_path := hpre.append F.stem_path
+       left_path := F.left_path, right_path := F.right_path, separate := F.separate }
+   have hm := (bankFork N C H coin i j).vertex_unique N C r G
+-  exact ⟨coin,hm.symm ▸ F.stem_path.directed⟩
++  refine ⟨coin,?_⟩
++  change N.graph.DReach w (bankFork N C H coin i j).vertex
++  rw [hm]
++  exact F.stem_path.directed
+ 
+ lemma calibrated_common_ancestor_above (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (r : PositivePairRates E) (i j : X)
+@@ -765,7 +760,7 @@
+ lemma original_outdegree_le_two (N : RootedBinary V E X) (v : V) :
+     N.graph.outDegree v ≤ 2 := by
+   by_cases hv : v = N.root
+-  · simpa only [hv,N.root_degrees.2]
++  · simpa only [hv,N.root_degrees.2] using (le_refl (2 : Nat))
+   by_cases hl : ∃ x, N.leaf x = v
+   · obtain ⟨x,hx⟩ := hl
+     rw [← hx,(N.leaf_degrees x).2]
+@@ -803,24 +798,30 @@
+   have hlist : es = F.stem ++ F.left := by
+     rw [← ha]
+     exact F.left_eq
++  have hnil : ∀ {a b : V}, EdgePath N.graph a b [] → a = b := by
++    intro a b hp
++    cases hp
++    rfl
++  have hcons : ∀ {a b : V} {e : E} {xs : List E}, EdgePath N.graph a b (e :: xs) →
++      N.graph.source e = a ∧ EdgePath N.graph (N.graph.target e) b xs := by
++    intro a b e xs hp
++    cases hp with
++    | cons hs rest => exact ⟨hs,rest⟩
+   have hn : F.left ≠ [] := by
+     intro he
+     have hp := F.left_path
+-    rw [he] at hp
+-    cases hp
+-    exact bankMeeting_ne_left_leaf N C H a hij rfl
++    have hv : F.vertex = N.leaf i := hnil (by simpa only [he] using hp)
++    exact bankMeeting_ne_left_leaf N C H a hij hv
+   cases hl : F.left with
+   | nil => exact False.elim (hn hl)
+   | cons e tail =>
+-    have hp := F.left_path
+-    rw [hl] at hp
+-    cases hp with
+-    | cons hs htail =>
+-      refine ⟨e,?_,?_⟩
+-      · rw [hlist,hl]
+-        simp
+-      · simp only [meetingChildSet,Finset.mem_filter,Finset.mem_univ,true_and]
+-        exact ⟨hs.trans hF,htail.directed⟩
++    obtain ⟨hs,htail⟩ := hcons (show EdgePath N.graph F.vertex (N.leaf i) (e :: tail) by
++      simpa only [hl] using F.left_path)
++    refine ⟨e,?_,?_⟩
++    · rw [hlist,hl]
++      simp
++    · simp only [meetingChildSet,Finset.mem_filter,Finset.mem_univ,true_and]
++      exact ⟨hs.trans hF,htail.directed⟩
+ 
+ /-- The exact already-checked geometric input is constructed from the actual
+ observed calibrations. Its all-path fields are not assumed. -/
+@@ -853,7 +854,7 @@
+     intro e he
+     simp only [Finset.mem_insert,Finset.mem_singleton] at he
+     rcases he with rfl | rfl
+-    · simp [outs,his]
++    · simp [outs,his,v]
+     · simp [outs,hjs]
+   have hcard : outs.card ≤ ({ei,ej} : Finset E).card := by
+     have ho := original_outdegree_le_two N v
+@@ -1076,7 +1077,7 @@
+       mapLabels σ ((decodeSnapshot root s).genealogy (σ.symm x)) := by
+   cases h : s.genealogy (σ.symm x) with
+   | none => simp [decodeSnapshot,permuteSnapshot,h,mapLabels]
+-  | some t => rfl
++  | some t => simp [decodeSnapshot,permuteSnapshot,h,permuteTree]
+ 
+ lemma permuteSnapshot_location (root : V) (σ : Equiv.Perm Copy) (s : Snapshot V E Copy) (x : Copy) :
+     (decodeSnapshot root (permuteSnapshot σ s)).location x =
+@@ -1124,7 +1125,7 @@
+ noncomputable def permuteCode (N : RootedBinary V E X) {sample : Copy → X}
+     (σ : Equiv.Perm Copy) (s : Code N sample) : Code N sample :=
+   if hs : CommonDescendants N sample (state s) then
+-    ⟨permuteSnapshot σ s.val,⟨permuteSnapshot_valid N.root σ s.val s.property.forest,
++    ⟨permuteSnapshot σ s.val,⟨permuteSnapshot_valid N.root σ s.val (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest),
+       fun x => (permuteSnapshot_commonDescendants N sample σ s.val hs) x x⟩⟩
+   else s
+ 
+@@ -1153,7 +1154,7 @@
+   toFun := permuteCode N σ
+   invFun := permuteCode N σ.symm
+   left_inv := permuteCode_inverse N σ
+-  right_inv := by simpa using permuteCode_inverse (sample := sample) N σ.symm
++  right_inv s := by simpa only [Equiv.symm_symm] using permuteCode_inverse (sample := sample) N σ.symm s
+ 
+ lemma permuteCode_live (N : RootedBinary V E X) {sample : Copy → X}
+     (σ : Equiv.Perm Copy) (s : Code N sample) (hs : CommonDescendants N sample (state s)) :
+@@ -1276,6 +1277,13 @@
+   rw [permuteCode_val N σ s hs]
+   rfl
+ 
++lemma actual_choice_merge_valid (N : RootedBinary V E X) {sample : Copy → X}
++    (s : Code N sample) (q : Choice N s) :
++    Valid (merge (state s) q.2.val.1 q.2.val.2) :=
++  (merge_source_valid N sample (state s) s.property
++    (population_pair_is_source_legal (state s) (originalPlace N q.1)
++      (originalPlace_not_node N q.1) q.2.property)).forest
++
+ lemma permuteCode_destination (N : RootedBinary V E X) {sample : Copy → X}
+     (σ : Equiv.Perm Copy) (s : Code N sample) (hs : CommonDescendants N sample (state s))
+     (q : Option (Choice N s)) :
+@@ -1286,8 +1294,9 @@
+   | some q =>
+     apply Subtype.ext
+     rw [permuteCode_val N σ _ (commonDescendants_destination N s hs (some q))]
+-    change permuteSnapshot σ (encodeSnapshot (merge (state s) q.2.val.1 q.2.val.2) _) =
+-      encodeSnapshot (merge (state (permuteCode N σ s)) (σ q.2.val.1) (σ q.2.val.2)) _
++    change permuteSnapshot σ (encodeSnapshot (merge (state s) q.2.val.1 q.2.val.2) (actual_choice_merge_valid N s q)) =
++      encodeSnapshot (merge (state (permuteCode N σ s)) (σ q.2.val.1) (σ q.2.val.2))
++        (actual_choice_merge_valid N (permuteCode N σ s) (permuteChoiceEquiv N σ s hs q))
+     apply Snapshot.ext
+     · simp only [permuteSnapshot,encodeSnapshot,merge,permuteCode_live N σ s hs]
+       exact Finset.image_erase σ.injective _ _
+@@ -1373,8 +1382,8 @@
+       admittedCode N sample (transport (state (permuteCode N σ s)) g ev') hv' := by
+   apply Subtype.ext
+   rw [permuteCode_val N σ _ hd]
+-  change permuteSnapshot σ (encodeSnapshot (transport (state s) f ev) _) =
+-    encodeSnapshot (transport (state (permuteCode N σ s)) g ev') _
++  change permuteSnapshot σ (encodeSnapshot (transport (state s) f ev) hv.forest) =
++    encodeSnapshot (transport (state (permuteCode N σ s)) g ev') hv'.forest
+   apply Snapshot.ext
+   · exact (permuteCode_live N σ s hs).symm
+   · funext x
+@@ -1457,10 +1466,13 @@
+   · intro x
+     by_cases hx : x ∈ (state s).live ∧ (state s).location x = .node H.hybrid
+     · have hx' := (permuteCode_node_member N σ s hs H.hybrid x).mpr hx
+-      simp only [dif_pos hx,dif_pos hx',GProgram.G7.CoinReindexing.coinTransport,
+-        permuteNodeEquiv,Equiv.symm_apply_apply]
++      simp only [dif_pos hx,dif_pos hx',GProgram.G7.CoinReindexing.coinTransport]
++      congr 2
++      apply Subtype.ext
++      exact σ.symm_apply_apply x
+     · have hx' := mt (permuteCode_node_member N σ s hs H.hybrid x).mp hx
+-      simp only [dif_neg hx,dif_neg hx',permuteCode_location N σ s hs,Equiv.symm_apply_apply]
++      rw [dif_neg hx',dif_neg hx]
++      simpa only [Equiv.symm_apply_apply] using permuteCode_location N σ s hs (σ x)
+ 
+ lemma permuteCode_independentPulse (N : RootedBinary V E X) {sample : Copy → X}
+     (H : GProgram.G2.OriginalHybridParents N) (gamma : unitInterval)
+@@ -1512,7 +1524,7 @@
+       intro d hd
+       exact ih ht d (commonDescendants_time N r t s hs hd)
+     | boundary b =>
+-      rw [sourceProgram,PMF.map_bind,sourceProgram,← permuteCode_boundary N b hh σ s hs,PMF.bind_map]
++      rw [sourceProgram,PMF.map_bind,sourceProgram,sourceProgramStep,← permuteCode_boundary N b hh σ s hs,PMF.bind_map]
+       apply UnifiedLean.Source.SourceCompletionHarmonic.bind_congr_on_support
+       intro d hd
+       exact ih ht d (commonDescendants_boundary N b s hs hd)
+@@ -1598,7 +1610,7 @@
+     (hc : t.leaves.card = 2) :
+     ∃ a b : Copy, a ≠ b ∧ t = .graft (.leaf a) (.leaf b) := by
+   cases t with
+-  | leaf x => simp only [Genealogy.leaves,Finset.card_singleton] at hc
++  | leaf x => simp only [Genealogy.leaves,Finset.card_singleton] at hc; omega
+   | graft u v =>
+     have hu := Finset.card_pos.mpr (genealogy_leaves_nonempty u)
+     have hv := Finset.card_pos.mpr (genealogy_leaves_nonempty v)
+@@ -1620,7 +1632,7 @@
+     (hc : t.leaves.card = 3) :
+     ∃ a b c : Copy, a ≠ b ∧ a ≠ c ∧ b ≠ c ∧ UnorderedEquiv t (tripletTree a b c) := by
+   cases t with
+-  | leaf x => simp only [Genealogy.leaves,Finset.card_singleton] at hc
++  | leaf x => simp only [Genealogy.leaves,Finset.card_singleton] at hc; omega
+   | graft u v =>
+     have hu := Finset.card_pos.mpr (genealogy_leaves_nonempty u)
+     have hv := Finset.card_pos.mpr (genealogy_leaves_nonempty v)
+@@ -1634,8 +1646,8 @@
+       have hve := G1OriginalCurrentRootReconstruction.wellLabelled_singleton_tree v hwv c hc
+       subst v
+       refine ⟨a,b,c,hab,?_,?_,rfl⟩
+-      · intro h; subst c; exact Finset.disjoint_left.mp hd (by simp [Genealogy.leaves]) (by simp [Genealogy.leaves])
+-      · intro h; subst c; exact Finset.disjoint_left.mp hd (by simp [Genealogy.leaves]) (by simp [Genealogy.leaves])
++      · intro h; subst c; exact (Finset.disjoint_left.mp hd (a := a)) (by simp [Genealogy.leaves]) (by simp [Genealogy.leaves])
++      · intro h; subst c; exact (Finset.disjoint_left.mp hd (a := b)) (by simp [Genealogy.leaves]) (by simp [Genealogy.leaves])
+     by_cases h2 : u.leaves.card = 2
+     · obtain ⟨a,b,c,hab,hac,hbc,he⟩ := side u v ht.1 ht.2.1 ht.2.2 h2 (by omega)
+       exact ⟨a,b,c,hab,hac,hbc,he ▸ UnorderedEquiv.refl _⟩
+@@ -1670,12 +1682,12 @@
+ lemma threeCherry_pair12 (j : Fin 3) :
+     ({1,2} : Finset (Fin 3)) ∈ observedClusters (threeCherry j) ↔ j = 0 := by
+   fin_cases j <;> simp [threeCherry,observedClusters,toUnranked,tripletTree,
+-    treeClusters,Genealogy.leaves,Finset.ext_iff]
++    treeClusters,Genealogy.leaves,Finset.ext_iff] <;> decide
+ 
+ lemma threeCherry_pair02 (j : Fin 3) :
+     ({0,2} : Finset (Fin 3)) ∈ observedClusters (threeCherry j) ↔ j = 1 := by
+   fin_cases j <;> simp [threeCherry,observedClusters,toUnranked,tripletTree,
+-    treeClusters,Genealogy.leaves,Finset.ext_iff]
++    treeClusters,Genealogy.leaves,Finset.ext_iff] <;> decide
+ 
+ lemma threeCherry_injective : Function.Injective threeCherry := by
+   intro i j he
+@@ -1736,14 +1748,15 @@
+     (s : Code N sample) (hc : liveCard s ≤ 1) :
+     ∃ j : Fin 3, sourceUnrankedForest (state s) Finset.univ = {threeCherry j} := by
+   let l := (state s).ancestor 0
+-  have hl : l ∈ (state s).live := s.property.forest.ancestor_live 0
++  have hl : l ∈ (state s).live := (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).ancestor_live 0
+   have ha : ∀ x, (state s).ancestor x = l := by
+     intro x
+-    exact (Finset.card_le_one.mp hc) _ (s.property.forest.ancestor_live x) _ hl
++    exact (Finset.card_le_one.mp hc) _ ((show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).ancestor_live x) _ hl
+   have ht : ((state s).genealogy l).leaves = Finset.univ := by
+     ext x
+-    simp only [s.property.forest.leaf_fiber l hl,ha,Finset.mem_univ]
+-  obtain ⟨j,hj⟩ := threeCherry_covers ((state s).genealogy l) (s.property.forest.wellLabelled l hl) ht
++    rw [(show Valid (state s) from s.property.forest).leaf_fiber l hl]
++    simp only [ha,Finset.mem_univ]
++  obtain ⟨j,hj⟩ := threeCherry_covers ((state s).genealogy l) ((show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).wellLabelled l hl) ht
+   refine ⟨j,?_⟩
+   rw [fullForest_image]
+   simp only [ha,hj]
+@@ -1788,10 +1801,8 @@
+     have he : ({threeCherry (σ j)} : Finset (UnrankedTree (Fin 3))) =
+         ({threeCherry j} : Finset (UnrankedTree (Fin 3))).image (mapUnranked σ) := by
+       simp only [Finset.image_singleton,threeCherry_permutation]
+-    change (if _ = obs (permuteCode N σ s) then p s else 0) = _
+-    rw [show obs (permuteCode N σ s) = (obs s).image (mapUnranked σ) from permuteCode_fullForest N σ s hs,
+-      he]
+-    simp only [hF.eq_iff]
++    have ho : obs (permuteCode N σ s) = (obs s).image (mapUnranked σ) := permuteCode_fullForest N σ s hs
++    simp only [Function.comp_apply,ho,he,hF.eq_iff]
+ 
+ /-- Three disjoint exhaustive terminal cherry events and actual permutation
+ invariance give the exact reader. Later independent splitting is permitted. -/
+@@ -1805,7 +1816,7 @@
+     have h := threeCherry_mass_permutation N p hgood (Equiv.swap j i) (hsym _) j
+     simpa only [Equiv.swap_apply_left] using h
+   have hsum := congrArg ENNReal.toReal (threeCherry_mass_sum N p hterm)
+-  rw [ENNReal.toReal_sum (fun i _ => PMF.apply_ne_top _ _)] at hsum
++  rw [ENNReal.toReal_sum (f := fun i => tripleForestMass N p i) (fun i _ => PMF.apply_ne_top _ _)] at hsum
+   simp only [ENNReal.toReal_one] at hsum
+   simp_rw [heq] at hsum
+   norm_num at hsum
+@@ -1838,7 +1849,7 @@
+     (place : Location V E) (ρ : V → Bool) (hplace : ∀ x, DescendsTo N place (sample x)) :
+     CommonDescendants N sample (state (colocatedCode N sample place ρ hplace)) := by
+   intro x y
+-  change DescendsTo N (copyLocation (decodeSnapshot N.root (encodeSnapshot (colocatedState place ρ) _)) x) (sample y)
++  change DescendsTo N (copyLocation (decodeSnapshot N.root (encodeSnapshot (colocatedState place ρ) (colocatedState_valid place ρ))) x) (sample y)
+   rw [decode_encode_copyLocation]
+   exact hplace y
+ 
+@@ -1848,8 +1859,8 @@
+     permuteCode N σ (colocatedCode N sample place ρ hplace) = colocatedCode N sample place ρ hplace := by
+   apply Subtype.ext
+   rw [permuteCode_val N σ _ (colocatedCode_commonDescendants N sample place ρ hplace)]
+-  change permuteSnapshot σ (encodeSnapshot (colocatedState place ρ) _) =
+-    encodeSnapshot (colocatedState place ρ) _
++  change permuteSnapshot σ (encodeSnapshot (colocatedState place ρ) (colocatedState_valid place ρ)) =
++    encodeSnapshot (colocatedState place ρ) (colocatedState_valid place ρ)
+   apply Snapshot.ext
+   · ext x
+     simp only [permuteSnapshot,encodeSnapshot,colocatedState,Finset.mem_image,Finset.mem_univ,true_and]
+@@ -1919,7 +1930,9 @@
+     Canonical (stepDestination N s q) := by
+   cases q with
+   | none => exact hs
+-  | some q => exact admitted_canonical N sample _ _
++  | some q =>
++    unfold stepDestination
++    exact admitted_canonical N sample _ _
+ 
+ lemma iteration_canonical (N : RootedBinary V E X) {sample : Copy → X}
+     (r : PositivePairRates E) (k : Nat) (s : Code N sample) (hs : Canonical s)
+@@ -1966,15 +1979,17 @@
+     (place : Location V E) (hloc : ∀ x, copyLocation (state s) x = place)
+     (hplace : ∀ x, DescendsTo N place (sample x)) :
+     s = colocatedCode N sample place (state s).register hplace := by
+-  have hl : (state s).live = Finset.univ := Finset.eq_univ_of_card hcard
++  have hl : (state s).live = Finset.univ := Finset.eq_univ_of_card _ hcard
+   have ha : ∀ x, (state s).ancestor x = x := fun x =>
+-    s.property.forest.representative x (by rw [hl]; exact Finset.mem_univ x)
++    (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).representative x (by rw [hl]; exact Finset.mem_univ x)
+   have hg : ∀ x, (state s).genealogy x = .leaf x := by
+     intro x
+     apply G1OriginalCurrentRootReconstruction.wellLabelled_singleton_tree _
+-      (s.property.forest.wellLabelled x (by rw [hl]; exact Finset.mem_univ x)) x
++      ((show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).wellLabelled x (by rw [hl]; exact Finset.mem_univ x)) x
+     ext y
+-    rw [s.property.forest.leaf_fiber x (by rw [hl]; exact Finset.mem_univ x),ha,Finset.mem_singleton]
++    rw [(show Valid (state s) from s.property.forest).leaf_fiber x (by rw [hl]; exact Finset.mem_univ x)]
++    change (state s).ancestor y = x ↔ y ∈ ({x} : Finset Copy)
++    simp only [ha,Finset.mem_singleton]
+   apply canonical_ext s _ hs (admitted_canonical N sample _ _)
+   apply GProgram.G7.NodeActions.state_ext
+   · simpa only [colocatedCode,state,admittedCode,decodeSnapshot,encodeSnapshot,colocatedState] using hl
+@@ -2039,8 +2054,9 @@
+   unfold compiledCalendarProgram
+   cases sortedOriginalDates N C with
+   | nil => intro op hop; cases hop
+-  | cons a dates => exact (independentWord_append N _ _).mpr
+-      ⟨actual_independent_batch N C H gamma a,actual_independent_tail N C H gamma a dates⟩
++  | cons a dates =>
++    apply (independentWord_append N _ _).mpr
++    exact ⟨actual_independent_batch N C H gamma a,actual_independent_tail N C H gamma a dates⟩
+ 
+ /-- Actual calendar specialization: the ancestral-entry condition is discharged
+ from initialized support, with arbitrary original tip ages and literal tied cut.
+@@ -2057,7 +2073,7 @@
+   have hcan : Canonical s := program_canonical N r past _ (admitted_canonical N sample _ _) hs
+   have hplace : ∀ x, DescendsTo N place (sample x) := by
+     intro x
+-    have hx := s.property.original_descendant x
++    have hx : DescendsTo N (copyLocation (state s) x) (sample x) := s.property.original_descendant x
+     rwa [hloc x] at hx
+   have he := canonical_colocated_full_card N s hcan hcard place hloc hplace
+   have hfuture : IndependentWord N future := by
+@@ -2074,6 +2090,7 @@
+ 
+ end ActualTripletCut
+ section IndependentRouteTrace
++open UnifiedLean.Source.SourceInitializedCalendar
+ open UnifiedLean.Source.SourceAncestralCompletion UnifiedLean.Source.SourceForestSilentPruning
+ open UnifiedLean.Source.FiniteSourceSnapshot
+ open GProgram.SourceForestKingmanPopulationProjection
+@@ -2109,7 +2126,7 @@
+ lemma positiveExpectation_map {A B : Type*} (p : PMF A) (g : A → B) (f : B → ℝ≥0∞) :
+     positiveExpectation (p.map g) f = positiveExpectation p (f ∘ g) := by
+   rw [PMF.map,positiveExpectation_bind]
+-  simp only [positiveExpectation_pure,Function.comp_apply]
++  simp only [positiveExpectation_pure,Function.comp_def]
+ 
+ lemma positiveExpectation_mul {A : Type*} (p : PMF A) (c : ℝ≥0∞) (f : A → ℝ≥0∞) :
+     positiveExpectation p (fun a => c * f a) = c * positiveExpectation p f := by
+@@ -2117,6 +2134,7 @@
+   rw [← ENNReal.tsum_mul_left]
+   apply tsum_congr
+   intro a
++  dsimp only
+   ac_rfl
+ 
+ /-- The whole finite no-merger routing trace, including the state before each
+@@ -2179,17 +2197,19 @@
+         (fun states => ENNReal.ofReal (Real.exp (-traceExposure N r ops states))) := by
+   rw [actual_no_loss_event]
+   induction ops generalizing s with
+-  | nil => simp [weightedRoute,routingTrace,positiveExpectation_pure,traceExposure]
++  | nil =>
++    simp only [DotG34.ActualSerialSurvival.weightedRoute,routingTrace,positiveExpectation_pure,traceExposure,neg_zero,Real.exp_zero,ENNReal.ofReal_one]
++    exact (PMF.pure s).tsum_coe
+   | cons op ops ih =>
+     cases op with
+     | interval t =>
+-      simp only [weightedRoute_interval]
+-      rw [ENNReal.tsum_mul_left,ih,routingTrace,positiveExpectation_map]
++      change (∑' d, sourceTimeKernel N r t s s * DotG34.ActualSerialSurvival.weightedRoute N r ops s d) = _
++      rw [ENNReal.tsum_mul_left,ih,actual_holding_weight,routingTrace,positiveExpectation_map]
+       simp only [Function.comp_apply,traceExposure,neg_add,Real.exp_add,
+         ENNReal.ofReal_mul (Real.exp_pos _).le]
+       exact (positiveExpectation_mul _ _ _).symm
+     | boundary b =>
+-      simp only [weightedRoute]
++      change (∑' d, ∑' m, boundaryKernel N b s m * DotG34.ActualSerialSurvival.weightedRoute N r ops m d) = _
+       rw [ENNReal.tsum_comm,routingTrace,positiveExpectation_map]
+       simp only [Function.comp_apply,traceExposure]
+       rw [positiveExpectation_bind]
+@@ -2248,7 +2268,7 @@
+   apply positionTrace_agrees
+   intro u hu
+   have hne : u ≠ v := by intro he; exact hv (he ▸ hu)
+-  simp only [Function.update_noteq hne]
++  exact Function.update_of_ne hne _ _
+ 
+ lemma independent_boundary_copy_bit (N : RootedBinary V E X) {sample : Copy → X}
+     (H : GProgram.G2.OriginalHybridParents N) (gamma : unitInterval) (s : Code N sample)
+@@ -2260,7 +2280,7 @@
+   by_cases hx : copyLocation (state s) x = .node H.hybrid
+   · obtain ⟨bit,hbit⟩ := h.1 hx
+     refine ⟨bit,fun reg hreg => ?_⟩
+-    simpa only [fixedBoundaryLocation,ordinaryLocation,hx,hreg,if_pos rfl] using hbit
++    simpa only [fixedBoundaryLocation,ordinaryLocation,hx,hreg,if_pos rfl,ite_true] using hbit
+   · refine ⟨false,fun reg hreg => ?_⟩
+     simpa only [fixedBoundaryLocation,ordinaryLocation,if_neg hx] using h.2 hx
+ 
+@@ -2297,7 +2317,7 @@
+         let reg' := Function.update reg H.hybrid bit
+         refine ⟨reg',?_⟩
+         simp only [List.map_cons,positionTrace]
+-        rw [← hbit reg' (Function.update_same ..),positionTrace_update_unused N reg ops H.hybrid hsite bit]
++        rw [← hbit reg' (Function.update_self ..),positionTrace_update_unused N reg ops H.hybrid hsite bit]
+         exact congrArg (List.cons (copyLocation (state s) x)) hreg
+       | exit e =>
+         obtain rfl := (PMF.mem_support_pure_iff _ _).mp hd
+@@ -2393,7 +2413,7 @@
+     cases q with
+     | exit e => simp [hybridAtomSite] at h
+     | node u =>
+-      unfold hybridAtomSite at h
++      simp only [hybridAtomSite] at h
+       split_ifs at h with hr hh
+       · simp at h
+       · have he : v = u := by simpa using h
+@@ -2437,9 +2457,9 @@
+     totalRate N r s =
+       if copyLocation (state s) 0 = copyLocation (state s) 1 then
+         singleLocationRate N r (copyLocation (state s) 0) else 0 := by
+-  have hl : (state s).live = Finset.univ := Finset.eq_univ_of_card (by simpa using hc)
++  have hl : (state s).live = Finset.univ := Finset.eq_univ_of_card _ (by simpa using hc)
+   have ha (x : Fin 3) : (state s).ancestor x = x :=
+-    s.property.forest.representative x (by rw [hl]; exact Finset.mem_univ x)
++    (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).representative x (by rw [hl]; exact Finset.mem_univ x)
+   have hloc (x : Fin 3) : copyLocation (state s) x = (state s).location x := by rw [copyLocation,ha]
+   simp only [hloc] at h02 h12 ⊢
+   rw [DotG34.ActualPopulationRate.actual_rate_choose_two]
+@@ -2453,7 +2473,7 @@
+     all_goals first
+       | exact False.elim (h02 (h0.trans h2.symm))
+       | exact False.elim (h12 (h1.trans h2.symm))
+-      | simp [populationRoots,hl,hu,h0,h1,h2]
++      | simp [populationRoots,hl,hu,Finset.filter_insert,Finset.filter_singleton,h0,h1,h2]
+   simp_rw [hpop]
+   by_cases he : (state s).location 0 = (state s).location 1
+   · rw [if_pos he]
+@@ -2587,8 +2607,13 @@
+     (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool) (a : ℝ) :
+     (boundaryOperations N C H gamma common a).map (referenceStep N) =
+       boundaryOperations N C H gamma (fun _ => true) a := by
+-  simp only [boundaryOperations,List.map_append,List.map_map,Function.comp_def,
+-    referenceStep,referenceBoundary,reference_originalNode]
++  simp only [boundaryOperations,List.map_append,List.map_map,Function.comp_def]
++  apply congrArg₂ List.append
++  · rfl
++  · apply List.map_congr_left
++    intro v hv
++    change ProgramStep.boundary (referenceBoundary N (originalNodeOperation N H gamma common v)) = _
++    rw [reference_originalNode]
+ 
+ lemma reference_tail (N : RootedBinary V E X) (C : Calendar N.graph)
+     (H : OriginalParentRegistry N) (gamma : Hybrid N → unitInterval) (common : Hybrid N → Bool)
+@@ -2812,7 +2837,7 @@
+   have ha := actual_initialized_literal_agenda N C H (originalGamma p) (fun _ => false)
+     sample ρ r hg {0,1} {2}
+     (by intro x hx; rcases (by simpa using hx : x = 0 ∨ x = 1) with rfl | rfl <;> assumption)
+-    (by intro x hx; have he : x = 2 := by simpa using hx; subst x; exact h2)
++    (by intro x hx; rcases Finset.mem_singleton.mp hx with rfl; exact h2)
+   have hc : liveCard (initialCode N sample ρ) = 3 := by
+     change (Finset.univ : Finset (Fin 3)).card = 3
+     simp
+@@ -2847,7 +2872,7 @@
+   have ha := actual_initialized_literal_agenda N C H (originalGamma p) (fun _ => false)
+     sample ρ r hg {0,1} {2}
+     (by intro x hx; rcases (by simpa using hx : x = 0 ∨ x = 1) with rfl | rfl <;> assumption)
+-    (by intro x hx; have he : x = 2 := by simpa using hx; subst x; exact h2)
++    (by intro x hx; rcases Finset.mem_singleton.mp hx with rfl; exact h2)
+   have hc : liveCard (initialCode N sample ρ) = 3 := by
+     change (Finset.univ : Finset (Fin 3)).card = 3
+     simp
+@@ -2919,15 +2944,15 @@
+   | root => exact fixedRegisterBoundary_copyLocation N .root s x
+   | common H => exact False.elim hb
+   | independent H gamma =>
+-    have hl : (state s).live = Finset.univ := Finset.eq_univ_of_card (by simpa [liveCard] using hs)
+-    have ha : (state s).ancestor x = x := s.property.forest.representative x (by rw [hl]; exact Finset.mem_univ x)
++    have hl : (state s).live = Finset.univ := Finset.eq_univ_of_card _ (by simpa [liveCard] using hs)
++    have ha : (state s).ancestor x = x := (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).representative x (by rw [hl]; exact Finset.mem_univ x)
+     change copyLocation (state (pulseCode H s (fun owner => reg owner.1 H.hybrid))) x = _
+     rw [show copyLocation (state (pulseCode H s (fun owner => reg owner.1 H.hybrid))) x =
+         copyLocation (pulse H (state s) (fun owner => reg owner.1 H.hybrid)) x from
+       decode_encode_copyLocation N.root _ (pulse_source_valid H sample _ s.property _).forest x]
+     by_cases hx : copyLocation (state s) x = .node H.hybrid
+     · let owner : AtNode (state s) H.hybrid :=
+-        ⟨(state s).ancestor x,⟨s.property.forest.ancestor_live x,hx⟩⟩
++        ⟨(state s).ancestor x,⟨(show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest).ancestor_live x,hx⟩⟩
+       have he := pulse_routes_current_ancestor H (state s) (fun owner => reg owner.1 H.hybrid) owner
+       simpa only [owner,ha,fixedBoundaryLocation,ordinaryLocation,hx,if_pos rfl] using he
+     · have hn : ¬((state s).ancestor x ∈ (state s).live ∧
+@@ -3495,8 +3520,8 @@
+     have he : (Finset.univ.erase (2 : Fin 3)) = {0,1} := by decide
+     have hb := separated_agenda_B_isolated N r (2 : Fin 3) _ (initialCode N sample ρ)
+       (by simpa only [he] using ha) (fun x hx => hx) hs
+-    rcases isolated_flat_or_bad (state s) s.property.forest 2 hb with hf | ⟨x,hbad⟩
+-    · have hcard := (flat_iff_full_card (state s) s.property.forest).mp hf
++    rcases isolated_flat_or_bad (state s) (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest) 2 hb with hf | ⟨x,hbad⟩
++    · have hcard := (flat_iff_full_card (state s) (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest)).mp hf
+       exact False.elim (hc (by simpa only [liveCard,Fintype.card_fin] using hcard))
+     · exact completed_crossed_mass_of_bad N r _ s x hbad
+ 
+@@ -3802,7 +3827,7 @@
+       mapLabels e ((decodeSnapshot root s).genealogy (e.symm x)) := by
+   cases h : s.genealogy (e.symm x) with
+   | none => simp [decodeSnapshot,renameSnapshot,h,mapLabels]
+-  | some t => rfl
++  | some t => simp [decodeSnapshot,renameSnapshot,h,renameTree]
+ 
+ lemma renameSnapshot_copyLocation (root : V) (e : A ≃ B) (s : Snapshot V E A) (x : B) :
+     copyLocation (decodeSnapshot root (renameSnapshot e s)) x =
+@@ -3837,7 +3862,7 @@
+ 
+ noncomputable def renameCode (N : RootedBinary V E X) {sample : A → X}
+     (e : A ≃ B) (s : Code N sample) : Code N (sample ∘ e.symm) :=
+-  ⟨renameSnapshot e s.val,⟨renameSnapshot_valid N.root e s.val s.property.forest,by
++  ⟨renameSnapshot e s.val,⟨renameSnapshot_valid N.root e s.val (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest),by
+     intro x
+     rw [renameSnapshot_copyLocation]
+     exact s.property.original_descendant (e.symm x)⟩⟩
+@@ -3920,8 +3945,9 @@
+   | none => rfl
+   | some q =>
+     apply Subtype.ext
+-    change renameSnapshot σ (encodeSnapshot (merge (state s) q.2.val.1 q.2.val.2) _) =
+-      encodeSnapshot (merge (state (renameCode N σ s)) (σ q.2.val.1) (σ q.2.val.2)) _
++    change renameSnapshot σ (encodeSnapshot (merge (state s) q.2.val.1 q.2.val.2) (actual_choice_merge_valid N s q)) =
++      encodeSnapshot (merge (state (renameCode N σ s)) (σ q.2.val.1) (σ q.2.val.2))
++        (actual_choice_merge_valid N (renameCode N σ s) (renameChoiceEquiv N σ s q))
+     apply Snapshot.ext
+     · simp only [renameSnapshot,encodeSnapshot,merge,renameCode_live N σ s]
+       exact Finset.image_erase σ.injective _ _
+@@ -4004,8 +4030,8 @@
+     renameCode N e (admittedCode N sample (transport (state s) f ev) hv) =
+       admittedCode N (sample ∘ e.symm) (transport (state (renameCode N e s)) g ev') hv' := by
+   apply Subtype.ext
+-  change renameSnapshot e (encodeSnapshot (transport (state s) f ev) _) =
+-    encodeSnapshot (transport (state (renameCode N e s)) g ev') _
++  change renameSnapshot e (encodeSnapshot (transport (state s) f ev) hv.forest) =
++    encodeSnapshot (transport (state (renameCode N e s)) g ev') hv'.forest
+   apply Snapshot.ext
+   · exact (renameCode_live N e s).symm
+   · funext x
+@@ -4080,10 +4106,13 @@
+   intro x
+   by_cases hx : x ∈ (state s).live ∧ (state s).location x = .node H.hybrid
+   · have hx' := (renameCode_node_member N σ s H.hybrid x).mpr hx
+-    simp only [dif_pos hx,dif_pos hx',GProgram.G7.CoinReindexing.coinTransport,
+-      renameNodeEquiv,Equiv.symm_apply_apply]
++    simp only [dif_pos hx,dif_pos hx',GProgram.G7.CoinReindexing.coinTransport]
++    congr 2
++    apply Subtype.ext
++    exact σ.symm_apply_apply x
+   · have hx' := mt (renameCode_node_member N σ s H.hybrid x).mp hx
+-    simp only [dif_neg hx,dif_neg hx',renameCode_location N σ s,Equiv.symm_apply_apply]
++    rw [dif_neg hx',dif_neg hx]
++    simpa only [Equiv.symm_apply_apply] using renameCode_location N σ s (σ x)
+ 
+ lemma renameCode_independentPulse (N : RootedBinary V E X) {sample : A → X}
+     (H : GProgram.G2.OriginalHybridParents N) (gamma : unitInterval)
+@@ -4123,7 +4152,7 @@
+       funext d
+       exact ih ht d
+     | boundary b =>
+-      rw [sourceProgram,PMF.map_bind,sourceProgram,← renameCode_boundary N b hh e s,PMF.bind_map]
++      rw [sourceProgram,PMF.map_bind,sourceProgram,sourceProgramStep,← renameCode_boundary N b hh e s,PMF.bind_map]
+       congr 1
+       funext d
+       exact ih ht d
+@@ -4276,7 +4305,7 @@
+         rw [PMF.map_comp]
+         congr 1
+         funext s
+-        exact prune_source_forest (state s) s.property.forest keep
++        exact prune_source_forest (state s) (show GProgram.SourceForest.Valid (UnifiedLean.Source.UniformizedSourceStep.state s) from s.property.forest) keep
+       _ = _ := actual_complete_unranked_all_panel_projectivity N C sample keep H p (fun _ => false) r
+   have hs : tripleSample i j ∘ e.symm = selectedSample sample keep := by
+     funext x

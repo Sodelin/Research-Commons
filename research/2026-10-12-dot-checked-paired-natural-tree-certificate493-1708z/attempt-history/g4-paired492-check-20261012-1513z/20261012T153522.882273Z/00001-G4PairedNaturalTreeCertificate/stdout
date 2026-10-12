@@ -1,0 +1,1150 @@
+G4PairedNaturalTreeCertificate.lean:69:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.respects_sublist`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:89:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.selected_edges_eq_away`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:129:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.upPath_target_younger`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:140:2: warning: Try `simp at hz` instead of `simpa using hz`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:158:62: error: Application type mismatch: The argument
+  p
+has type
+  UpPath N.graph (fun x => True) a N.root es
+but is expected to have type
+  UpPath N.graph (fun x => True) a h es
+in the application
+  upPath_prefix_agreement N P Q h hPQ p
+G4PairedNaturalTreeCertificate.lean:165:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.edgePath_nodup`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:176:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.selected_prefix_to_target`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:254:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.pathHazard_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:302:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.edgePath_source_unique`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:480:4: error: Type mismatch: After simplification, term
+  hlist
+ has type
+  @Eq (List E) (compiledRoute N C (coinSelector N H a) (N.leaf i)) (pre ++ e :: post)
+but is expected to have type
+  @Eq (List E) ((commonRoutes N C H a).edges i) (pre ++ e :: post)
+G4PairedNaturalTreeCertificate.lean:481:4: error: Type mismatch: After simplification, term
+  congrArg List.reverse htail
+ has type
+  @Eq (List E) (compiledRoute N C (coinSelector N H b) (N.leaf i)) (tail.reverse ++ post)
+but is expected to have type
+  @Eq (List E) ((commonRoutes N C H b).edges i) (tail.reverse ++ post)
+G4PairedNaturalTreeCertificate.lean:518:87: error: unexpected identifier; expected '}'
+G4PairedNaturalTreeCertificate.lean:518:10: error: Fields missing: `left_eq`, `right_eq`, `stem_path`, `left_path`, `right_path`, `separate`
+G4PairedNaturalTreeCertificate.lean:490:57: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+a b : Hybrid N → Bool
+h : Hybrid N
+hab : ∀ (k : Hybrid N), k ≠ h → a k = b k
+i j : X
+hi : ∃ e ∈ (commonRoutes N C H a).edges i, N.graph.target e = ↑h
+hj : ∃ e ∈ (commonRoutes N C H a).edges j, N.graph.target e = ↑h
+ai bi pi : List E
+hai : (commonRoutes N C H a).edges i = ai ++ pi
+hbi : (commonRoutes N C H b).edges i = bi ++ pi
+haiP : EdgePath N.graph N.root (↑h) ai
+hbiP : EdgePath N.graph N.root (↑h) bi
+hpi : EdgePath N.graph (↑h) (N.leaf i) pi
+hpiS : RespectsSelector N (coinSelector N H a) pi
+aj bj pj : List E
+haj : (commonRoutes N C H a).edges j = aj ++ pj
+hbj : (commonRoutes N C H b).edges j = bj ++ pj
+hajP : EdgePath N.graph N.root (↑h) aj
+hbjP : EdgePath N.graph N.root (↑h) bj
+hpj : EdgePath N.graph (↑h) (N.leaf j) pj
+hpjS : RespectsSelector N (coinSelector N H a) pj
+selA :
+  ∀ (x : X) (pre post : List E),
+    (commonRoutes N C H a).edges x = pre ++ post → RespectsSelector N (coinSelector N H a) pre
+selB :
+  ∀ (x : X) (pre post : List E),
+    (commonRoutes N C H b).edges x = pre ++ post → RespectsSelector N (coinSelector N H b) pre
+heA : ai = aj
+heB : bi = bj
+F : PathFork N (↑h) (N.leaf i) (N.leaf j) pi pj
+FA : PathFork N N.root (N.leaf i) (N.leaf j) ((commonRoutes N C H a).edges i) ((commonRoutes N C H a).edges j)
+⊢ bankMeeting N C H a i j = bankMeeting N C H b i j
+G4PairedNaturalTreeCertificate.lean:600:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.hybrid_ne_root`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:624:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.descendant_parent_exists`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:677:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.respects_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:725:2: error: Type mismatch
+  EdgePath.directed F.stem_path
+has type
+  N.graph.DReach w F.vertex
+but is expected to have type
+  N.graph.DReach w G.vertex
+G4PairedNaturalTreeCertificate.lean:736:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.leaf_no_outgoing`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:760:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.original_outdegree_le_two`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:905:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.commonDescendants_of_colocated`:
+  [DecidableEq E]
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1026:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.mapLabels_inverse`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1051:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_inverse`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1068:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_live`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1071:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_ancestor`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1075:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_genealogy`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1082:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_location`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1086:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.permuteSnapshot_copyLocation`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1108:6: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:1321:8: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+q : Choice N s
+hl : σ (↑q.snd).1 ∈ (state (permuteCode N σ s)).live ↔ (↑q.snd).1 ∈ (state s).live
+hy : (↑q.snd).1 ∈ (state s).live.erase (↑q.snd).2
+hy' : σ (↑q.snd).1 ∈ (state (permuteCode N σ s)).live.erase (σ (↑q.snd).2)
+⊢ mapLabels (⇑σ)
+      (if True then ((state s).genealogy (↑q.snd).1).graft ((state s).genealogy (↑q.snd).2)
+      else (state s).genealogy (↑q.snd).1) =
+    if True then
+      (mapLabels (⇑σ) ((state s).genealogy (↑q.snd).1)).graft (mapLabels (⇑σ) ((state s).genealogy (↑q.snd).2))
+    else mapLabels (⇑σ) ((state s).genealogy (↑q.snd).1)
+G4PairedNaturalTreeCertificate.lean:1322:33: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [permuteTree, permuteCode_genealogy N σ s hs, Equiv.symm_apply_apply, mapLabels]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:1323:35: warning: This simp argument is unused:
+  mapLabels
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [permuteTree, if_pos rfl, permuteCode_genealogy N σ s hs, Equiv.symm_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:1471:6: error: Tactic `apply` failed: could not unify the conclusion of `@Subtype.ext`
+  ?a1 = ?a2
+with the goal
+  coin ((permuteNodeEquiv N σ s hs H.hybrid).symm ⟨σ x, ⋯⟩) = coin ⟨x, hx⟩
+
+Note: The full type of `@Subtype.ext` is
+  ∀ {α : Sort ?u.132} {p : α → Prop} {a1 a2 : { x // p x }}, ↑a1 = ↑a2 → a1 = a2
+
+case pos.e_bit
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+H : GProgram.G2.OriginalHybridParents N
+σ : Equiv.Perm Copy
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+coin : AtNode (state s) H.hybrid → Bool
+x : Copy
+hx : x ∈ (state s).live ∧ (state s).location x = Location.node H.hybrid
+hx' : σ x ∈ (state (permuteCode N σ s)).live ∧ (state (permuteCode N σ s)).location (σ x) = Location.node H.hybrid
+⊢ coin ((permuteNodeEquiv N σ s hs H.hybrid).symm ⟨σ x, ⋯⟩) = coin ⟨x, hx⟩
+G4PairedNaturalTreeCertificate.lean:1522:51: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  sourceTimeKernel N r t (permuteCode N σ s)
+in the target expression
+  ((sourceProgramStep N r (ProgramStep.interval t) s).bind fun a =>
+      PMF.map (permuteCode N σ) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.interval t) (permuteCode N σ s)).bind (sourceProgram N r ops)
+
+case cons.interval
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+σ : Equiv.Perm Copy
+ops : List (ProgramStep N)
+ih :
+  IndependentWord N ops →
+    ∀ (s : Code N sample),
+      CommonDescendants N sample (state s) →
+        PMF.map (permuteCode N σ) (sourceProgram N r ops s) = sourceProgram N r ops (permuteCode N σ s)
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+ht : IndependentWord N ops
+t : ℝ≥0
+hops : IndependentWord N (ProgramStep.interval t :: ops)
+hh :
+  match ProgramStep.interval t with
+  | ProgramStep.interval duration => True
+  | ProgramStep.boundary b => IndependentBoundary N b
+⊢ ((sourceProgramStep N r (ProgramStep.interval t) s).bind fun a =>
+      PMF.map (permuteCode N σ) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.interval t) (permuteCode N σ s)).bind (sourceProgram N r ops)
+G4PairedNaturalTreeCertificate.lean:1527:69: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  boundaryKernel N b (permuteCode N σ s)
+in the target expression
+  ((boundaryKernel N b s).bind fun a => PMF.map (permuteCode N σ) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.boundary b) (permuteCode N σ s)).bind (sourceProgram N r ops)
+
+case cons.boundary
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+σ : Equiv.Perm Copy
+ops : List (ProgramStep N)
+ih :
+  IndependentWord N ops →
+    ∀ (s : Code N sample),
+      CommonDescendants N sample (state s) →
+        PMF.map (permuteCode N σ) (sourceProgram N r ops s) = sourceProgram N r ops (permuteCode N σ s)
+s : Code N sample
+hs : CommonDescendants N sample (state s)
+ht : IndependentWord N ops
+b : BoundaryOperation N
+hops : IndependentWord N (ProgramStep.boundary b :: ops)
+hh :
+  match ProgramStep.boundary b with
+  | ProgramStep.interval duration => True
+  | ProgramStep.boundary b => IndependentBoundary N b
+⊢ ((boundaryKernel N b s).bind fun a => PMF.map (permuteCode N σ) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.boundary b) (permuteCode N σ s)).bind (sourceProgram N r ops)
+G4PairedNaturalTreeCertificate.lean:1649:66: error: Application type mismatch: The argument
+  a
+has type
+  Copy
+of sort `Type u_4` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @Iff.mp a
+G4PairedNaturalTreeCertificate.lean:1650:66: error: Application type mismatch: The argument
+  b
+has type
+  Copy
+of sort `Type u_4` but is expected to have type
+  Prop
+of sort `Type` in the application
+  @Iff.mp b
+G4PairedNaturalTreeCertificate.lean:1663:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.triplet_swap`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1747:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.terminal_threeCherry`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1800:2: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Fin 3 → X
+p : PMF (Code N sample)
+hgood : ∀ s ∈ p.support, CommonDescendants N sample (state s)
+σ : Equiv.Perm (Fin 3)
+hsym : PMF.map (permuteCode N σ) p = p
+j : Fin 3
+obs : Code N sample → Finset (UnrankedTree (Fin 3)) := fun s => sourceUnrankedForest (state s) Finset.univ
+hi : Function.Injective (mapUnranked ⇑σ)
+hF : Function.Injective (Finset.image (mapUnranked ⇑σ))
+s : Code N sample
+a✝ : s ∈ Finset.univ
+hp : ¬p s = 0
+hs : CommonDescendants N sample (state s)
+he : {threeCherry (σ j)} = Finset.image (mapUnranked ⇑σ) {threeCherry j}
+ho : obs (permuteCode N σ s) = Finset.image (mapUnranked ⇑σ) (obs s)
+⊢ (if {threeCherry j} = obs s then p s else 0) = if {threeCherry j} = obs s then p s else 0
+G4PairedNaturalTreeCertificate.lean:1836:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.colocatedState_valid`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:1991:4: warning: Unused tactic linter: `change (state s).ancestor y = x ↔ y ∈ ({ x } : Finset Copy)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4PairedNaturalTreeCertificate.lean:2009:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.independentWord_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:2017:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.independentWord_boundary_map`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:2208:6: error: `simp` made no progress
+G4PairedNaturalTreeCertificate.lean:2214:6: error: `simp` made no progress
+G4PairedNaturalTreeCertificate.lean:2306:20: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2325:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2330:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2335:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4PairedNaturalTreeCertificate.lean:2341:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.wordSites_append`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:2347:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.wordSites_boundary_map`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:2419:30: error: Type mismatch: After simplification, term
+  h
+ has type
+  u = v
+but is expected to have type
+  v = u
+G4PairedNaturalTreeCertificate.lean:2460:73: error: Type mismatch: After simplification, term
+  hc
+ has type
+  @Eq ℕ (liveCard s) 3
+but is expected to have type
+  @Eq ℕ (state s).live.card 3
+G4PairedNaturalTreeCertificate.lean:2661:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.boundarySite_isHybrid`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:2810:61: error: No goals to be solved
+G4PairedNaturalTreeCertificate.lean:2810:5: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+coin : Hybrid N → Bool
+z : Code N (pairSample i j) := initialCode N (pairSample i j) (originalRegister N coin)
+hz : copyLocation (state z) true = Location.node (N.leaf i)
+cut :
+  (compiledCalendarProgram N C H (originalGamma p) fun x => true) =
+    literalPrefix N C H (originalGamma p) (fun x => true) v ei ej ++
+      literalSuffix N C H (originalGamma p) (fun x => true) v ei ej
+hw :
+  CommonOnlyWord N (literalPrefix N C H (originalGamma p) (fun x => true) v ei ej) ∧
+    CommonOnlyWord N (literalSuffix N C H (originalGamma p) (fun x => true) v ei ej)
+x : Bool
+hx : x ∈ {true}
+he : x = true
+⊢ pairSample i j x = i
+G4PairedNaturalTreeCertificate.lean:2811:62: error: No goals to be solved
+G4PairedNaturalTreeCertificate.lean:2811:5: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+coin : Hybrid N → Bool
+z : Code N (pairSample i j) := initialCode N (pairSample i j) (originalRegister N coin)
+hz : copyLocation (state z) true = Location.node (N.leaf i)
+cut :
+  (compiledCalendarProgram N C H (originalGamma p) fun x => true) =
+    literalPrefix N C H (originalGamma p) (fun x => true) v ei ej ++
+      literalSuffix N C H (originalGamma p) (fun x => true) v ei ej
+hw :
+  CommonOnlyWord N (literalPrefix N C H (originalGamma p) (fun x => true) v ei ej) ∧
+    CommonOnlyWord N (literalSuffix N C H (originalGamma p) (fun x => true) v ei ej)
+x : Bool
+hx : x ∈ {false}
+he : x = false
+⊢ pairSample i j x = j
+G4PairedNaturalTreeCertificate.lean:2947:75: error: Type mismatch: After simplification, term
+  hs
+ has type
+  @Eq ℕ (↑s).live.card (Fintype.card Copy)
+but is expected to have type
+  @Eq ℕ (state s).live.card (Fintype.card Copy)
+G4PairedNaturalTreeCertificate.lean:2957:6: error: Type mismatch: After simplification, term
+  he
+ has type
+  (pulse H (state s) fun owner => reg (↑owner) H.hybrid).location x = Location.edge (H.parent (reg x H.hybrid))
+but is expected to have type
+  copyLocation (pulse H (state s) fun owner => reg (↑owner) H.hybrid) x =
+    if True then Location.edge (H.parent (reg x H.hybrid)) else Location.node H.hybrid
+G4PairedNaturalTreeCertificate.lean:2958:4: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+reg : Copy → V → Bool
+s : Code N sample
+hs : liveCard s = Fintype.card Copy
+x : Copy
+H : GProgram.G2.OriginalHybridParents N
+gamma : ↑unitInterval
+hb : IndependentBoundary N (BoundaryOperation.independent H gamma)
+hl : (state s).live = Finset.univ
+ha : (state s).ancestor x = x
+hx : ¬copyLocation (state s) x = Location.node H.hybrid
+hn : ¬((state s).ancestor x ∈ (state s).live ∧ (state s).location ((state s).ancestor x) = Location.node H.hybrid)
+⊢ (state s).location ((state s).ancestor x) =
+    if (state s).location ((state s).ancestor x) = Location.node H.hybrid then Location.edge (H.parent (reg x H.hybrid))
+    else (state s).location ((state s).ancestor x)
+G4PairedNaturalTreeCertificate.lean:2960:79: warning: This simp argument is unused:
+  ordinaryLocation
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [copyLocation, pulse, transport, dif_neg hn, fixedBoundaryLocation, if_neg hx]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:2960:96: warning: This simp argument is unused:
+  if_neg hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [copyLocation, pulse, transport, dif_neg hn, fixedBoundaryLocation, ordinaryLocation]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:2972:20: error: Type mismatch: After simplification, term
+  congrArg
+ has type
+  ∀ (f : ?m.186 → ?m.187), ?m.188 = ?m.189 → f ?m.188 = f ?m.189
+but is expected to have type
+  copyLocation (state s) x :: List.map (fun d => copyLocation (state d) x) (prescribedTrace N reg ops s) =
+    copyLocation (state s) x :: positionTrace N (reg x) ops (copyLocation (state s) x)
+G4PairedNaturalTreeCertificate.lean:2971:4: error: Alternative `boundary` has not been provided
+G4PairedNaturalTreeCertificate.lean:2973:17: error: unexpected token '('; expected command
+G4PairedNaturalTreeCertificate.lean:2991:16: error: unsolved goals
+case cons.interval
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+reg : Copy → V → Bool
+s : Code N sample
+ops : List (ProgramStep N)
+duration✝ : ℝ≥0
+⊢ s :: prescribedTrace N reg ops s ≠ []
+
+case cons.boundary
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+reg : Copy → V → Bool
+s : Code N sample
+ops : List (ProgramStep N)
+operation✝ : BoundaryOperation N
+⊢ s :: prescribedTrace N reg ops (prescribedBoundary N reg operation✝ s) ≠ []
+G4PairedNaturalTreeCertificate.lean:2991:59: warning: This simp argument is unused:
+  List.cons_ne_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prescribedTrace]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:3006:16: error: unsolved goals
+case cons.interval
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+reg : V → Bool
+loc : Location V E
+ops : List (ProgramStep N)
+duration✝ : ℝ≥0
+⊢ loc :: positionTrace N reg ops loc ≠ []
+
+case cons.boundary
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+reg : V → Bool
+loc : Location V E
+ops : List (ProgramStep N)
+operation✝ : BoundaryOperation N
+⊢ loc :: positionTrace N reg ops (fixedBoundaryLocation N operation✝ reg loc) ≠ []
+G4PairedNaturalTreeCertificate.lean:3006:57: warning: This simp argument is unused:
+  List.cons_ne_nil
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [positionTrace]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:3066:10: error(lean.unknownIdentifier): Unknown identifier `mul_le_mul_left'`
+G4PairedNaturalTreeCertificate.lean:3077:12: error(lean.unknownIdentifier): Unknown identifier `mul_le_mul_left'`
+G4PairedNaturalTreeCertificate.lean:3080:4: error: Type mismatch
+  ENNReal.mul_lt_mul_left ((PMF.mem_support_iff p a).mp ha) (PMF.apply_ne_top p a) hlt
+has type
+  f a * p a < g a * p a
+but is expected to have type
+  p ?m.26 * f ?m.26 < p ?m.26 * g ?m.26
+G4PairedNaturalTreeCertificate.lean:3073:57: error: unsolved goals
+A : Type u_5
+p : PMF A
+f g : A → ℝ≥0∞
+hf : positiveExpectation p f ≠ ∞
+h : ∀ a ∈ p.support, f a ≤ g a
+a : A
+ha : a ∈ p.support
+hlt : f a < g a
+⊢ A
+G4PairedNaturalTreeCertificate.lean:3161:4: error: Type mismatch: After simplification, term
+  hs
+ has type
+  @LE.le ℝ Real.instPreorder.toLE (if True then pairRate r (some e) else 0)
+    (∑ x,
+      if
+          Location.edge e =
+            match x with
+            | none => Location.rootPopulation N.root
+            | some e => Location.edge e then
+        pairRate r x
+      else 0)
+but is expected to have type
+  @LE.le ℝ Real.instLE (pairRate r (some e))
+    (∑ x,
+      if
+          Location.edge e =
+            match x with
+            | none => Location.rootPopulation N.root
+            | some e => Location.edge e then
+        pairRate r x
+      else 0)
+G4PairedNaturalTreeCertificate.lean:3178:4: error: No goals to be solved
+G4PairedNaturalTreeCertificate.lean:3188:25: error(lean.unknownIdentifier): Unknown identifier `original_dates_strict`
+G4PairedNaturalTreeCertificate.lean:3213:12: error: don't know how to synthesize placeholder for argument `w`
+context:
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+pre post : List ℝ
+guard next : ℝ
+v : V
+ei ej : E
+hsplit : sortedOriginalDates N C = pre ++ guard :: next :: post
+hlt : guard < C.age v
+hn : next = C.age v
+⊢ List (ProgramStep N)
+G4PairedNaturalTreeCertificate.lean:3259:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.hybrid_exposed_taxa`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3270:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.meeting_reaches_right_taxon`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3288:23: error(lean.invalidField): Invalid field `source_reachable_of_mem`: The environment does not contain `GProgram.G5.EdgePath.source_reachable_of_mem`, so it is not possible to project the field `source_reachable_of_mem` from an expression
+  hpost
+of type
+  EdgePath N.graph h (N.leaf i) post
+G4PairedNaturalTreeCertificate.lean:3313:26: error(lean.unknownIdentifier): Unknown constant `List.mem_split`
+G4PairedNaturalTreeCertificate.lean:3313:9: error: Tactic `rcases` failed: `x✝ : ?m.57` is not an inductive datatype
+G4PairedNaturalTreeCertificate.lean:3455:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.bad_fullForest_ne_crossed`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3525:31: error: Type mismatch: After simplification, term
+  hcard
+ has type
+  @Eq ℕ (state s).live.card 3
+but is expected to have type
+  @Eq ℕ (↑s).live.card 3
+G4PairedNaturalTreeCertificate.lean:3528:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.tripleForestMass_bind`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3547:4: error(lean.unknownIdentifier): Unknown identifier `sourceProgram_append`
+G4PairedNaturalTreeCertificate.lean:3545:82: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+v : V
+ei ej : E
+hg : RouteMeetingGeometry N i j v ei ej
+sample : Fin 3 → X
+h0 : sample 0 = i
+h1 : sample 1 = i
+h2 : sample 2 = j
+ρ : V → Bool
+⊢ tripleForestMass N
+      ((sourceProgram N r
+            (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej ++
+              literalSuffix N C H (originalGamma p) (fun x => false) v ei ej)
+            (initialCode N sample ρ)).bind
+        (ancestralCompletion N r (Fintype.card (Fin 3))))
+      0 =
+    (PMF.map liveCard
+          (sourceProgram N r (literalPrefix N C H (originalGamma p) (fun x => false) v ei ej) (initialCode N sample ρ)))
+        3 *
+      ENNReal.ofReal (1 / 3)
+G4PairedNaturalTreeCertificate.lean:3630:2: error: Type mismatch: After simplification, term
+  hreal
+ has type
+  (ENNReal.ofReal (ActualObservableBankCertificate.combProbability N C H p r i j 2)).toReal <
+    (naturalCrossedMass N C H p r (fun x => false) i j).toReal
+but is expected to have type
+  ActualObservableBankCertificate.combProbability N C H p r i j 2 <
+    (naturalCrossedMass N C H p r (fun x => false) i j).toReal
+G4PairedNaturalTreeCertificate.lean:3642:28: error: ambiguous term, use fully qualified name, possible interpretations [DotG34.SpecifiedCombEvent.combProbability,
+ @ActualObservableBankCertificate.combProbability]
+G4PairedNaturalTreeCertificate.lean:3658:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.noHybrids_bank_unique`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3680:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.noHybrids_modes_equal`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3825:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.renameSnapshot_genealogy`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3832:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.renameSnapshot_copyLocation`:
+  [Fintype V]
+  [Fintype E]
+  [DecidableEq V]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3842:2: error: unsolved goals
+case representative
+V : Type u_1
+E : Type u_2
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+root : V
+e : A ≃ B
+s : Snapshot V E A
+hs : Valid (decodeSnapshot root s)
+k : A
+hk : k ∈ s.live
+hl : e k ∈ (decodeSnapshot root (renameSnapshot e s)).live
+⊢ e (s.ancestor k) = e k
+G4PairedNaturalTreeCertificate.lean:3854:6: error: Tactic `assumption` failed
+
+case leaf_fiber.mp
+V : Type u_1
+E : Type u_2
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+root : V
+e : A ≃ B
+s : Snapshot V E A
+hs : Valid (decodeSnapshot root s)
+k : A
+hk : k ∈ s.live
+hl : e k ∈ (decodeSnapshot root (renameSnapshot e s)).live
+y : A
+hy :
+  y ∈
+    (match s.genealogy k with
+      | some t => ↑t
+      | none => Genealogy.leaf k).leaves
+ha : (decodeSnapshot root s).ancestor y = k
+hx :
+  e y ∈
+    Finset.image (⇑e)
+      (match s.genealogy k with
+        | some t => ↑t
+        | none => Genealogy.leaf k).leaves
+⊢ e (s.ancestor y) = e k
+G4PairedNaturalTreeCertificate.lean:3844:68: warning: This simp argument is unused:
+  hs.representative k hk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [decodeSnapshot, renameSnapshot, Equiv.symm_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:3917:0: warning: automatically included section variable(s) unused in theorem `DotG4.PairedNaturalTreeCertificate.rename_globalRateBound`:
+  [DecidableEq E]
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4PairedNaturalTreeCertificate.lean:3923:96: error: unsolved goals
+case some
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+r : PositivePairRates E
+e : A ≃ B
+s : Code N sample
+val✝ : Choice N s
+⊢ pairRate r
+          ({ toFun := fun p => ⟨p.fst, ⟨(e (↑p.snd).1, e (↑p.snd).2), ⋯⟩⟩,
+                invFun := fun p => ⟨p.fst, ⟨(e.symm (↑p.snd).1, e.symm (↑p.snd).2), ⋯⟩⟩, left_inv := ⋯, right_inv := ⋯ }
+              val✝).fst /
+        2 /
+      globalRateBound r =
+    pairRate r val✝.fst / 2 / globalRateBound r
+G4PairedNaturalTreeCertificate.lean:3972:8: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+σ : A ≃ B
+s : Code N sample
+q : Choice N s
+hl : σ (↑q.snd).1 ∈ (state (renameCode N σ s)).live ↔ (↑q.snd).1 ∈ (state s).live
+hy : (↑q.snd).1 ∈ (state s).live.erase (↑q.snd).2
+hy' : σ (↑q.snd).1 ∈ (state (renameCode N σ s)).live.erase (σ (↑q.snd).2)
+⊢ mapLabels (⇑σ)
+      (if True then ((state s).genealogy (↑q.snd).1).graft ((state s).genealogy (↑q.snd).2)
+      else (state s).genealogy (↑q.snd).1) =
+    if True then
+      (mapLabels (⇑σ) ((state s).genealogy (↑q.snd).1)).graft (mapLabels (⇑σ) ((state s).genealogy (↑q.snd).2))
+    else mapLabels (⇑σ) ((state s).genealogy (↑q.snd).1)
+G4PairedNaturalTreeCertificate.lean:3973:32: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [renameTree, renameCode_genealogy N σ s, Equiv.symm_apply_apply, mapLabels]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:3974:35: warning: This simp argument is unused:
+  mapLabels
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [renameTree, if_pos rfl, renameCode_genealogy N σ s, Equiv.symm_apply_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4PairedNaturalTreeCertificate.lean:4111:4: error: Tactic `apply` failed: could not unify the conclusion of `@Subtype.ext`
+  ?a1 = ?a2
+with the goal
+  coin ((renameNodeEquiv N σ s H.hybrid).symm ⟨σ x, ⋯⟩) = coin ⟨x, hx⟩
+
+Note: The full type of `@Subtype.ext` is
+  ∀ {α : Sort ?u.130} {p : α → Prop} {a1 a2 : { x // p x }}, ↑a1 = ↑a2 → a1 = a2
+
+case pos.e_bit
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+H : GProgram.G2.OriginalHybridParents N
+σ : A ≃ B
+s : Code N sample
+coin : AtNode (state s) H.hybrid → Bool
+x : A
+hx : x ∈ (state s).live ∧ (state s).location x = Location.node H.hybrid
+hx' : σ x ∈ (state (renameCode N σ s)).live ∧ (state (renameCode N σ s)).location (σ x) = Location.node H.hybrid
+⊢ coin ((renameNodeEquiv N σ s H.hybrid).symm ⟨σ x, ⋯⟩) = coin ⟨x, hx⟩
+G4PairedNaturalTreeCertificate.lean:4150:51: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  sourceTimeKernel N r t (renameCode N e s)
+in the target expression
+  ((sourceProgramStep N r (ProgramStep.interval t) s).bind fun a =>
+      PMF.map (renameCode N e) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.interval t) (renameCode N e s)).bind (sourceProgram N r ops)
+
+case cons.interval
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+r : PositivePairRates E
+e : A ≃ B
+ops : List (ProgramStep N)
+ih :
+  IndependentWord N ops →
+    ∀ (s : Code N sample), PMF.map (renameCode N e) (sourceProgram N r ops s) = sourceProgram N r ops (renameCode N e s)
+s : Code N sample
+ht : IndependentWord N ops
+t : ℝ≥0
+hops : IndependentWord N (ProgramStep.interval t :: ops)
+hh :
+  match ProgramStep.interval t with
+  | ProgramStep.interval duration => True
+  | ProgramStep.boundary b => IndependentBoundary N b
+⊢ ((sourceProgramStep N r (ProgramStep.interval t) s).bind fun a =>
+      PMF.map (renameCode N e) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.interval t) (renameCode N e s)).bind (sourceProgram N r ops)
+G4PairedNaturalTreeCertificate.lean:4155:69: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  boundaryKernel N b (renameCode N e s)
+in the target expression
+  ((boundaryKernel N b s).bind fun a => PMF.map (renameCode N e) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.boundary b) (renameCode N e s)).bind (sourceProgram N r ops)
+
+case cons.boundary
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁸ : Fintype V
+inst✝⁷ : Fintype E
+inst✝⁶ : Fintype X
+inst✝⁵ : DecidableEq V
+inst✝⁴ : DecidableEq E
+A : Type u_4
+B : Type u_5
+inst✝³ : Fintype A
+inst✝² : Fintype B
+inst✝¹ : DecidableEq A
+inst✝ : DecidableEq B
+N : RootedBinary V E X
+sample : A → X
+r : PositivePairRates E
+e : A ≃ B
+ops : List (ProgramStep N)
+ih :
+  IndependentWord N ops →
+    ∀ (s : Code N sample), PMF.map (renameCode N e) (sourceProgram N r ops s) = sourceProgram N r ops (renameCode N e s)
+s : Code N sample
+ht : IndependentWord N ops
+b : BoundaryOperation N
+hops : IndependentWord N (ProgramStep.boundary b :: ops)
+hh :
+  match ProgramStep.boundary b with
+  | ProgramStep.interval duration => True
+  | ProgramStep.boundary b => IndependentBoundary N b
+⊢ ((boundaryKernel N b s).bind fun a => PMF.map (renameCode N e) (sourceProgram N r ops a)) =
+    (sourceProgramStep N r (ProgramStep.boundary b) (renameCode N e s)).bind (sourceProgram N r ops)
+G4PairedNaturalTreeCertificate.lean:4162:92: error: unsolved goals
+case some
+V :
