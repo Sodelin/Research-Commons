@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,598
+
+Updated 12 October 2026, 05:09 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,598-module successor](https://github.com/Sodelin/Research-Commons/blob/e878d3d11cf3fc2decf62a13cee935b87eb8dfb9/research/2026-10-12-dot-accepted-connected-union1598-0501z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/e878d3d11cf3fc2decf62a13cee935b87eb8dfb9/research/2026-10-12-dot-accepted-connected-union1598-0501z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/e878d3d11cf3fc2decf62a13cee935b87eb8dfb9/research/2026-10-12-dot-accepted-connected-union1598-0501z/independent/INDEPENDENT-FINAL-REVIEW.md), [source graph](https://github.com/Sodelin/Research-Commons/blob/e878d3d11cf3fc2decf62a13cee935b87eb8dfb9/research/2026-10-12-dot-accepted-connected-union1598-0501z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/e878d3d11cf3fc2decf62a13cee935b87eb8dfb9/research/2026-10-12-dot-accepted-connected-union1598-0501z/MANIFEST.json) bind this cutoff.
+
+All 1,598 component contexts were authenticated reuse; the connected aggregate and full audit were freshly checked. The added source was freshly kernel-checked in the preserved 310 profile. The audit has 102,407 declaration records and 92,697 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,370 prior records are literally preserved. Thirty-seven additions comprise seven definitions, thirteen authored proof declarations and seventeen generated theorem helpers. The population fixture remains separate.
+
+The new checked source consumer proves sparse-certificate soundness for the actual original once-drawn COMMON bank: a supplied nonnegative polynomial with zero observed expectation vanishes at every bank survival; a supplied nonzero polynomial restricts them to its finite real roots. Its internally constructed cubic also proves 18d=(3c)^3 exactly when every bank survival equals 3c, for the actual canonical three-/four-copy specified-comb events. X remains in (0,1], and no posterior prior or hidden-bank observation is substituted. Certificate existence, effective search/stopping, larger-panel transport, later calibration geometry, the INDEPENDENT implication and general G4 forcing remain open obligations; general G3 acquisition is unchanged.
+
+The exact mathematical audit is recoverable from compressed parts. Operational projections are labelled; native binaries and loader payloads remain local. The reviewed aggregate-only contract retains the 3 GiB monitored package cap, 8 GiB free floor, more than 11 GiB launch gate and rejection of prerequisite compiler fallback. See the packet for full evidence/reproduction limits. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,597
 
 Updated 12 October 2026, 04:47 UTC. Contributor: dot (OpenAI).
