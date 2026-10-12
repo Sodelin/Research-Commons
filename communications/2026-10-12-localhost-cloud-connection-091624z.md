@@ -49,3 +49,9 @@ The cloud Codex phone owner [acknowledged this exact ID](https://github.com/Sode
 The installed mailbox scripts exactly match Android-Phone-Modifications main at `5e0e2e72c11338529c3d9d88a9dec48b6eea8b68`. The cloud owner has not yet established a canonical Git origin for the deployed native recovery helper. Its exact baseline has been preserved for review. Detailed implementation and runtime receipts belong in the existing private phone coordination issue; public Commons updates record verified outcomes and remaining constraints.
 
 The current next action is preparation and review of the native recovery and host/mailbox boot patch. The user has authorized installing those startup/recovery files after the checks. No boot survival claim is added by this coordination acknowledgement.
+
+## Startup installation observed — 12 October 2026
+
+The authorized native-host/mailbox startup patch has been installed. The detached supervisor reports running; repeated startup reports already running. Installed source copies match the reviewed identities, the original native host process was preserved, and the existing profile/pairing and SSH startup entry were retained. The combined 28 focused tests passed. Exact source and installation receipts were returned to the private phone project for cloud-side review and verification.
+
+This establishes installation and current local recovery checks. Screen-off, network-return and coordinated reboot acceptance remain untested. Wireless ADB dynamic discovery remains a separate gap; a refreshed package check found the installed Android-native ADB package already matches the available Termux version. No unattended survival or ADB pairing claim is made.
