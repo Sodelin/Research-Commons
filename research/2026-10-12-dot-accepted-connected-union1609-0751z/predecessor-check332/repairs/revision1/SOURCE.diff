@@ -1,0 +1,20 @@
+--- initial
++++ revision1
+@@ -405,7 +405,7 @@
+       have hz := activeDuration_after lo hi hi bs hbs (le_refl _)
+       simp only [activeDuration,dateExposure,if_pos hactive,one_mul,
+         GProgram.G7.EdgeExposureAccounting.untilDate,if_pos rfl,add_zero]
+-      exact congrArg (fun z => hi-a+z) hz
++      simpa only [activeDuration,add_zero] using congrArg (fun z => hi-a+z) hz
+     · have bhi : b < hi := (List.pairwise_cons.mp hbs).1 hi h
+       have hlo' : lo ≤ b := le_trans hlo (le_of_lt (ha b (by simp)))
+       have hr := ih b hbs h hlo'
+@@ -484,7 +484,7 @@
+   induction post generalizing pre guard with
+   | nil => rfl
+   | cons next post ih =>
+-    have hrate := actual_epoch_separated_rate N C H p r coin i j pre guard next post 0 hsplit
++    have hrate := actual_epoch_separated_rate N C H p r coin i j pre post guard next 0 hsplit
+     simp only [fixedRegisterPrefix_append,fixedRegisterPrefix] at hrate
+     have hord : (pre ++ guard :: next :: post).Pairwise (· < ·) := by
+       rw [← hsplit]; exact original_dates_strict N C

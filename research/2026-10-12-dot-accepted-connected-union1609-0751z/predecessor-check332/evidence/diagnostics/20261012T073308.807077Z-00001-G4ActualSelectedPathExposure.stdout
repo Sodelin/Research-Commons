@@ -1,0 +1,338 @@
+G4ActualSelectedPathExposure.lean:63:20: error: Type mismatch: After simplification, term
+  ih
+ has type
+  ∀ (s : Code N sample),
+    readoutExposure N rate (xs ++ ys) s =
+      readoutExposure N rate xs s + readoutExposure N rate ys (fixedRegisterPrefix N xs s)
+but is expected to have type
+  readoutExposure N rate (xs ++ ys) (fixedRegisterBoundary N b s) =
+    readoutExposure N rate xs (fixedRegisterBoundary N b s) +
+      readoutExposure N rate ys (fixedRegisterPrefix N xs (fixedRegisterBoundary N b s))
+G4ActualSelectedPathExposure.lean:64:11: error: unexpected token '('; expected command
+G4ActualSelectedPathExposure.lean:123:41: error: Function expected at
+  originalRegister
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `originalRegister` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:126:43: error: Function expected at
+  originalRegister
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+G4ActualSelectedPathExposure.lean:148:45: error: Function expected at
+  originalRegister
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+G4ActualSelectedPathExposure.lean:154:4: error: Type mismatch
+  (bankFirstMeeting_spec N C H gamma r coin i j).right
+has type
+  copyLocation (state (pairReference N C H gamma coin i j (bankFirstMeetingIndex N C H gamma r coin i j))) true =
+    copyLocation (state (pairReference N C H gamma coin i j (bankFirstMeetingIndex N C H gamma r coin i j))) false
+but is expected to have type
+  copyLocation (state (fixedRegisterPrefix N (List.take m P) z)) true =
+    copyLocation (state (fixedRegisterPrefix N (List.take m P) z)) false
+G4ActualSelectedPathExposure.lean:245:37: error: Function expected at
+  originalGamma
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  p
+
+Hint: The identifier `originalGamma` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:246:63: error: Function expected at
+  originalRegister
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `originalRegister` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:252:54: error: Function expected at
+  originalRegister
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+G4ActualSelectedPathExposure.lean:252:82: error: Function expected at
+  originalGamma
+but this term has type
+  x✝¹
+
+Note: Expected a function because this term is being applied to the argument
+  p
+G4ActualSelectedPathExposure.lean:359:28: error: Function expected at
+  originalGamma
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  p
+
+Hint: The identifier `originalGamma` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:360:39: error: Function expected at
+  originalRegister
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `originalRegister` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:364:64: error: Function expected at
+  originalRegister
+but this term has type
+  x✝
+
+Note: Expected a function because this term is being applied to the argument
+  N
+G4ActualSelectedPathExposure.lean:365:5: error: Function expected at
+  originalGamma
+but this term has type
+  x✝¹
+
+Note: Expected a function because this term is being applied to the argument
+  p
+G4ActualSelectedPathExposure.lean:408:6: error: Type mismatch: After simplification, term
+  congrArg (fun z => hi - a + z) hz
+ has type
+  hi - a + dateExposure (fun t => if lo ≤ t ∧ t < hi then 1 else 0) hi bs = hi - a
+but is expected to have type
+  hi - a + dateExposure (fun t => if lo ≤ t ∧ t < hi then 1 else 0) hi bs =
+    hi - a + if True then 0 else GProgram.G7.EdgeExposureAccounting.untilDate (fun t => t = hi) hi bs
+G4ActualSelectedPathExposure.lean:407:53: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [activeDuration, dateExposure, if_pos hactive, one_mul,
+    GProgram.G7.EdgeExposureAccounting.untilDate, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualSelectedPathExposure.lean:407:64: warning: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [activeDuration, dateExposure, if_pos hactive, one_mul,
+    GProgram.G7.EdgeExposureAccounting.untilDate, if_pos rfl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualSelectedPathExposure.lean:442:8: error: Function expected at
+  ih b ht hlo hhi'
+but this term has type
+  activeDuration lo hi b bs = hi - lo
+
+Note: Expected a function because this term is being applied to the argument
+  hlt
+G4ActualSelectedPathExposure.lean:459:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  readoutExposure N rate (List.map (fun a => ProgramStep.boundary (?f a)) ?xs) ?z
+in the target expression
+  readoutExposure N rate
+        (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) {e | C.age (N.graph.source e) = a}.toList)
+        s +
+      readoutExposure N rate
+        (List.map (fun v => ProgramStep.boundary (originalNodeOperation N H gamma common v)) {v | C.age v = a}.toList)
+        (fixedRegisterPrefix N
+          (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e))
+            {e | C.age (N.graph.source e) = a}.toList)
+          s) =
+    0
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : DecidableEq V
+inst✝⁵ : DecidableEq E
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq Copy
+inst✝ : Fintype Copy
+N : RootedBinary V E X
+sample : Copy → X
+rate : Code N sample → ℝ
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+a : ℝ
+s : Code N sample
+hm :
+  ∀ {A : Type u_5} (xs : List A) (f : A → BoundaryOperation N) (z : Code N sample),
+    readoutExposure N rate (List.map (fun a => ProgramStep.boundary (f a)) xs) z = 0
+⊢ readoutExposure N rate
+        (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e)) {e | C.age (N.graph.source e) = a}.toList)
+        s +
+      readoutExposure N rate
+        (List.map (fun v => ProgramStep.boundary (originalNodeOperation N H gamma common v)) {v | C.age v = a}.toList)
+        (fixedRegisterPrefix N
+          (List.map (fun e => ProgramStep.boundary (BoundaryOperation.exit e))
+            {e | C.age (N.graph.source e) = a}.toList)
+          s) =
+    0
+G4ActualSelectedPathExposure.lean:451:0: error: AddConstAsyncResult.commitConst: constant has level params [u_1, u_2, u_3, u_4, u_5] but expected [u_1, u_2, u_3, u_4]
+G4ActualSelectedPathExposure.lean:471:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  calendarTail N C H gamma common a (pre ++ [guard, next])
+in the target expression
+  boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a (pre ++ guard :: ([] ++ [next])) =
+    boundaryOperations N C H gamma common a ++
+      (calendarTail N C H gamma common a (pre ++ [guard]) ++
+        ProgramStep.interval (next - guard).toNNReal :: boundaryOperations N C H gamma common next)
+
+case cons
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+common : Hybrid N → Bool
+guard next a : ℝ
+pre : List ℝ
+⊢ boundaryOperations N C H gamma common a ++ calendarTail N C H gamma common a (pre ++ guard :: ([] ++ [next])) =
+    boundaryOperations N C H gamma common a ++
+      (calendarTail N C H gamma common a (pre ++ [guard]) ++
+        ProgramStep.interval (next - guard).toNNReal :: boundaryOperations N C H gamma common next)
+G4ActualSelectedPathExposure.lean:470:64: warning: This simp argument is unused:
+  List.singleton_append
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [prefixThrough, List.cons_append, List.append_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4ActualSelectedPathExposure.lean:480:27: error: Function expected at
+  originalGamma
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  p
+
+Hint: The identifier `originalGamma` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:481:51: error: Function expected at
+  originalGamma
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  p
+
+Hint: The identifier `originalGamma` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:482:41: error: Function expected at
+  originalRegister
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `originalRegister` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4ActualSelectedPathExposure.lean:519:8: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+b : ℝ
+bs : List ℝ
+ih :
+  ∀ (a : ℝ),
+    dateExposure (selectedSeparatedRate N C H r coin i j) a bs =
+      ∑ e,
+        if e ∈ (commonRoutes N C H coin).edges i ∧ e ∉ (commonRoutes N C H coin).edges j then
+          pairRate r (some e) * activeDuration (C.age (N.graph.target e)) (C.age (N.graph.source e)) a bs
+        else 0
+a : ℝ
+e : E
+a✝ : e ∈ Finset.univ
+hi : e ∈ (commonRoutes N C H coin).edges i
+hj : e ∉ (commonRoutes N C H coin).edges j
+ha : C.age (N.graph.target e) ≤ a ∧ a < C.age (N.graph.source e)
+⊢ (if True ∧ True ∧ C.age (N.graph.target e) ≤ a ∧ a < C.age (N.graph.source e) then pairRate r (some e) else 0) * b -
+        (if True ∧ True ∧ C.age (N.graph.target e) ≤ a ∧ a < C.age (N.graph.source e) then pairRate r (some e) else 0) *
+          a +
+      pairRate r (some e) *
+        dateExposure (fun t => if C.age (N.graph.target e) ≤ t ∧ t < C.age (N.graph.source e) then 1 else 0) b bs =
+    b * pairRate r (some e) - a * pairRate r (some e) +
+      pairRate r (some e) *
+        dateExposure (fun t => if C.age (N.graph.target e) ≤ t ∧ t < C.age (N.graph.source e) then 1 else 0) b bs
+G4ActualSelectedPathExposure.lean:531:33: error: Function expected at
+  originalGamma
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  p
+
+Hint: The identifier `originalGamma` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4ActualSelectedPathExposure.lean:532:51: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+x✝ : Sort u_5
+originalGamma : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+⊢ Sort ?u.57
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+x✝ : Sort u_5
+originalGamma : x✝
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+⊢ ?m.64
