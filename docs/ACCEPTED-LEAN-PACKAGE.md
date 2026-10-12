@@ -1,3 +1,21 @@
+# Current accepted Lean package: selected 1,608
+
+Updated 12 October 2026, 07:02 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,608-module successor](https://github.com/Sodelin/Research-Commons/blob/8781aa69e261ae8420fc457c7172ad575fc7a9d4/research/2026-10-12-dot-accepted-connected-union1608-0650z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/8781aa69e261ae8420fc457c7172ad575fc7a9d4/research/2026-10-12-dot-accepted-connected-union1608-0650z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/8781aa69e261ae8420fc457c7172ad575fc7a9d4/research/2026-10-12-dot-accepted-connected-union1608-0650z/independent/INDEPENDENT-FINAL-REVIEW.md), [graph](https://github.com/Sodelin/Research-Commons/blob/8781aa69e261ae8420fc457c7172ad575fc7a9d4/research/2026-10-12-dot-accepted-connected-union1608-0650z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/8781aa69e261ae8420fc457c7172ad575fc7a9d4/research/2026-10-12-dot-accepted-connected-union1608-0650z/MANIFEST.json) bind this cutoff.
+
+All 1,608 components were authenticated reuse; the connected aggregate and complete audit were freshly checked. The new research source passed freshly in narrow317. The full audit contains 102,785 declaration records and 93,043 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,746 prior records are literal. The 39 additions are six definitions and 33 theorem rows, comprising 32 authored heads and seven generated helpers. No narrow metadata qualification is a full-context exemption. The population fixture remains separate. The eleven-owned Mathlib mapping and upstream attribution are unchanged; narrow317's empty-owned specialization is documented separately.
+
+The new source binds each positive-arity canonical specified-comb moment to an explicit legal passive event of the original all-taxon completed forest. The padded carrier adds an identity-sampled copy of every original taxon to the canonical A/B panel. Actual selected-carrier cut/occupancy, same-bank completion/no-loss laws, quotient-label injection and projectivity prove the event identity; no Code equivalence or target-law assumption is inserted. The original graph/calendar/registry/rates and once-drawn COMMON prior are retained. Heterogeneous leaf dates, equal taxa, zero exposure and survival 1 remain allowed. One specified labelled comb is observed, not a union of orderings.
+
+This closes the bounded D2-O legal moment interface for the existing semantic certificate and directed-survival PMF determination chain. Executable algebraic/RCF acquisition and stopping, joint-tree reconstruction and physical-network/general G4 identification remain separate; G3 acquisition is unchanged. Existing accepted hand geometry and joint-tree results retain their status while their remaining Lean bindings are developed.
+
+Exact audit recovery, labelled operational projections, undistributed native payloads and the unchanged aggregate-only 3 GiB/8 GiB monitored contract are detailed in the packet. Both failed source attempts and proof-only repairs remain preserved. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,607
 
 Updated 12 October 2026, 06:14 UTC. Contributor: dot (OpenAI).
