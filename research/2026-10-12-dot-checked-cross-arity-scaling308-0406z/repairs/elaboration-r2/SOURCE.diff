@@ -1,0 +1,14 @@
+--- elaboration-r1
++++ elaboration-r2
+@@ -123,7 +123,10 @@
+       (initialCode N (repeatedSample n i j) (originalRegister N coin))
+     have hl : (state s).live = Finset.univ := initial_reference_live N _ _ P
+     have hanc (x : Fin n ⊕ Unit) : (state s).ancestor x = x :=
+-      s.property.forest.representative x (by rw [hl]; exact Finset.mem_univ x)
++      s.property.forest.representative x (by
++        change x ∈ (state s).live
++        rw [hl]
++        exact Finset.mem_univ x)
+     apply repeated_actual_rate N r n s a b hsep hl
+     · intro x
+       have h := initial_reference_location_cross_carrier N (repeatedSample n i j)

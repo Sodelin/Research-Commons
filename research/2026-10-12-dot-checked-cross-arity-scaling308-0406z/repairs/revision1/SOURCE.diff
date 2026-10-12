@@ -1,0 +1,42 @@
+--- frozen-scaling-only
++++ revision1-with-mass-corollary
+@@ -20,6 +20,8 @@
+ open UnifiedLean.Source.SourceBoundaryKernels UnifiedLean.Source.SourceProgramTransport
+ open UnifiedLean.Source.SourceCalendarCompiler UnifiedLean.Source.SourceNaturalInitialization
+ open UnifiedLean.Source.SourceInitializedCalendar UnifiedLean.Source.SourceForestSilentPruning
++open UnifiedLean.Source.SourceCompletionHarmonic UnifiedLean.Source.UnrankedGenealogyObservation
++open DotG34.SpecifiedCombEvent
+ open GProgram.G5.SafePrefixRouteBridge
+ open DotG4.ActualBankFirstMeeting DotG34.ActualPopulationRate
+ open scoped Classical NNReal BigOperators
+@@ -191,6 +193,30 @@
+   rw [ht]
+   exact actual_prefix_rate_cross_arity N C H gamma r coin i j k q hm
+ 
++/-- Original fixed-bank completed specified-comb mass with one common
++bank-dependent exposure coordinate for every labelled repeated-copy arity. -/
++theorem actual_fixed_bank_completed_comb_scaled_mass (N : RootedBinary V E X)
++    (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (gamma : Hybrid N → unitInterval) (r : PositivePairRates E)
++    (coin : Hybrid N → Bool) (i j : X) (k : Nat)
++    (as : List (Fin k ⊕ Unit))
++    (hcover : ∀ x, x = Sum.inr () ∨ x ∈ as) (hnodup : as.Nodup)
++    (hb : Sum.inr () ∉ as) (hnonempty : as ≠ []) :
++    (((sourceProgram N r (compiledCalendarProgram N C H gamma (fun _ => true))
++      (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
++      (completionKernel N r)).map (fun d => sourceUnrankedForest (state d) Finset.univ))
++      {toUnranked (comb (Sum.inr ()) as)} =
++    ENNReal.ofReal (2^as.length /
++      ((Nat.factorial (as.length+1) : ℝ) * (Nat.factorial as.length : ℝ))) *
++      ENNReal.ofReal (Real.exp (-((k.choose 2 : ℝ) * referenceExposure N r
++        ((compiledCalendarProgram N C H gamma (fun _ => true)).take
++          (bankFirstMeetingIndex N C H gamma r coin i j))
++        (initialCode N (repeatedSample 2 i j) (originalRegister N coin))))) := by
++  rw [DotG4.ActualFirstMeetingCombMass.actual_fixed_bank_completed_comb_mass
++    N C H gamma r coin i j k as hcover hnodup hb hnonempty]
++  rw [actual_first_meeting_exposure_cross_arity N C H gamma r coin i j k]
++
++#print axioms actual_fixed_bank_completed_comb_scaled_mass
+ #print axioms actual_prefix_rate_cross_arity
+ #print axioms actual_first_meeting_exposure_cross_arity
+ end DotG4.ActualFirstMeetingExposureScaling
