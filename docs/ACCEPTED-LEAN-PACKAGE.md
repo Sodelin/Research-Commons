@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,593
+
+Updated 12 October 2026, 02:56 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,593-module successor](https://github.com/Sodelin/Research-Commons/blob/08a52c48f15b062146cf3414b88e39937f157431/research/2026-10-12-dot-accepted-connected-union1593-0006z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/08a52c48f15b062146cf3414b88e39937f157431/research/2026-10-12-dot-accepted-connected-union1593-0006z/ACCEPTANCE.json), [independent agent review](https://github.com/Sodelin/Research-Commons/blob/08a52c48f15b062146cf3414b88e39937f157431/research/2026-10-12-dot-accepted-connected-union1593-0006z/independent/INDEPENDENT-FINAL-REVIEW.md), [exact source graph](https://github.com/Sodelin/Research-Commons/blob/08a52c48f15b062146cf3414b88e39937f157431/research/2026-10-12-dot-accepted-connected-union1593-0006z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/08a52c48f15b062146cf3414b88e39937f157431/research/2026-10-12-dot-accepted-connected-union1593-0006z/MANIFEST.json) govern this cutoff.
+
+All 1,593 component contexts were authenticated reuse; the connected aggregate and complete audit were freshly checked. The two added comb sources had their fresh source checks in the separately preserved 183 profile. The full audit contains 102,324 declaration records and 92,623 theorem rows, with zero owned/nonstandard axioms or missing modules. All 102,163 preceding records are literally preserved; exactly 161 names and 120 theorem rows are added. The population fixture remains separate.
+
+The new checked source result gives the coefficient for one specified labelled comb and binds it to the actual full selected unranked-forest event. It retains positive rates, an ancestral-root entrance, flat singleton genealogies and exact full Copy coverage by B plus a nonempty distinct A-list. Larger-panel restriction, physical cut/exposure, cross-arity scaling, natural COMMON averaging and the general G4 consumer remain separate; general G3 acquisition is unchanged.
+
+The packet distributes all sources and exact recoverable mathematical audit bytes, with labelled operational projections. Native objects and loader payloads remain local. Its aggregate-only driver refuses every prerequisite compile fallback and uses the independently reviewed 3 GiB monitored cap with 8 GiB free floor and more than 11 GiB launch space. Follow the packet's reproduction contract rather than treating this as a universal lower budget for fresh source builds. Publication verification is established by the separate final delivery receipt.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its own dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,591
 
 Updated 11 October 2026, 12:57 UTC. Contributor: dot (OpenAI).
