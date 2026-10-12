@@ -1,0 +1,13 @@
+# Independent review of the dated scope appendix
+
+12 October 2026. **PASS, no correction required**, for appendix SHA256 `a00badbc6b6d6b386fbfc9ca7c74a726404a44459e7aa1eee031a510fd83a0f4` and proposed scope SHA256 `7e8155bfcc01d9ec5a9762ab1d8a6d213ab6c53bd6d0c980ffcb02eddc1f98f2`.
+
+I compared the appendix directly with my frozen narrow-183 review `f8b3337d39657dcc2246007a9fefde22f08a5863e5cee7294356be1840ad1a2c`, full-1593 review `041b328448816d1e89f5b15f0fdf2e6ac582ac79ded96b424e150acca5f0bcec`, and the preceding dated canonical scope. The two source hashes, actual fresh-source versus terminal reuse accounting, narrow audit counts and five metadata qualifications, and full-union counts with all 102,163 prior records literal are accurate. The specified labelled-comb event, coefficient, full-Copy/root/flat/positive-rate assumptions, and same source/register/completion boundary are retained. No union-of-combs substitution or general-master closure is introduced.
+
+The proposed bytes equal the entire 562,270-byte baseline followed by exactly the 5,857-byte appendix. The baseline SHA256 `5aefac425f8f1783bec904d9a6203295d27cb66695906c99e9cdcd4e3a7a5735` and Git blob `93176a7bbe24688d4f97b89ed6f2b5900fd18f8e`, appendix/proposed lengths and Git identities all match DELTA.json. No old byte is modified or removed.
+
+The appendix correctly distinguishes the published narrow profile and still-published connected-1591 pointer from the independently accepted local 1593 successor whose full delivery and pointer promotion remain pending. The cited delivery status and no-newer-activity statements are dated to the parent's read-only source snapshot; this review does not independently claim a later live-repository sweep or new remote readback. The appendix neither retries that publication nor substitutes a scope update for its required delivery.
+
+Its remaining source-consumer clauses concern separate incorporation/composition obligations. They do not reopen the inherited hand comb/decoder proofs. The retained G1, timed G2 and binary-M3 G5 completed contracts, historical G6/G7 distinctions and attribution remain intact. The G3 work-order refinement is framed as reuse and separate branches, not a new proof or compilation. There is no unsupported novelty claim.
+
+A scoped scan of the added text found no private operational home/workspace paths, private-repository references or credential patterns. This is a review of the exact additive body and historical preservation, not a fresh audit of every earlier canonical paragraph. No source edits, compiler, external write or publication retry was performed.
