@@ -1,0 +1,383 @@
+--- checkpoint-0927z
++++ candidate-0933z
+@@ -23,9 +23,11 @@
+ Contributor: dot (OpenAI), 12 October 2026. WORK IN PROGRESS / UNCOMPILED.
+ Formal composition toward Section 2 of the accepted October 8 whole-COMMON
+ argument; no novelty claim. This file constructs an independent finite forest
+-carrier and ordinary clade kernels. The actual controlled-source equality and
+-normalization proof are still being assembled. No equality is an interface
+-field and no ordinary evaluator is defined by aliasing the network source.
++carrier and ordinary clade kernels, and drafts the complete controlled-source
++equality and normalization proof below. ALL declarations remain UNCOMPILED.
++No equality is an interface field and no ordinary evaluator is defined by
++aliasing the network source. The whole-tree joint-profile rank/weight recovery
++and executable acquisition contracts remain outside this conditional-law endpoint.
+ 
+ Original-copy labels and complete ordered binary genealogies are retained until
+ the actual child-swap quotient observation. Ordered pairs each have half-rate.
+@@ -1961,6 +1963,7 @@
+   apply List.perm_iff_count.mpr
+   intro a
+   rw [groupedCladeWord,List.count_flatMap]
++  simp only [Function.comp_def]
+   have hc (A : Finset X) : List.count a (cladeBucket word A) =
+       if a.1 = A then List.count a word else 0 := by
+     by_cases ha : a.1 = A
+@@ -2002,12 +2005,13 @@
+ 
+ lemma cladeOrder_card_ordered :
+     (cladeOrder X).Pairwise (fun A B => A.card ≤ B.card) := by
+-  unfold cladeOrder
+-  apply List.pairwise_mergeSort
+-  · intro A B C hab hbc
+-    exact le_trans hab hbc
+-  · intro A B
+-    simpa only [Bool.or_eq_true,decide_eq_true_eq] using le_total A.card B.card
++  have hh := List.pairwise_mergeSort
++    (le := fun A B : Finset X => decide (A.card ≤ B.card))
++    (by intro A B C hab hbc
++        simpa using le_trans (of_decide_eq_true hab) (of_decide_eq_true hbc))
++    (by intro A B; simpa using le_total A.card B.card)
++    (Finset.univ : Finset (Finset X)).toList
++  simpa only [cladeOrder,decide_eq_true_eq] using hh
+ 
+ lemma ordered_word_laminar (word : List (Finset X × ℝ≥0))
+     (hw : word.Pairwise CladeBefore) (a b : Finset X × ℝ≥0)
+@@ -2050,6 +2054,91 @@
+       have he := Finset.eq_of_subset_of_card_le h hcard'
+       exact Or.inl (by rw [he])
+     · exact Or.inr h
++
++lemma cladeOrder_nodup : (cladeOrder X).Nodup :=
++  (List.mergeSort_perm (Finset.univ : Finset (Finset X)).toList _).nodup_iff.mpr
++    (Finset.nodup_toList _)
++
++lemma cladeOrder_ends_univ : ∃ pre : List (Finset X),
++    cladeOrder X = pre ++ [Finset.univ] ∧ Finset.univ ∉ pre := by
++  have hm : (Finset.univ : Finset X) ∈ cladeOrder X := by simp [cladeOrder]
++  obtain ⟨pre,post,he⟩ := List.append_of_mem hm
++  have hn := cladeOrder_nodup (X := X)
++  have ho := cladeOrder_card_ordered (X := X)
++  rw [he] at hn ho
++  have hpost : post = [] := by
++    apply List.eq_nil_iff_forall_not_mem.mpr
++    intro A ha
++    have hc := (List.pairwise_cons.mp (List.pairwise_append.mp ho).2.1).1 A ha
++    have heA : A = Finset.univ := Finset.eq_of_subset_of_card_le (Finset.subset_univ A) hc
++    have hnot := (List.nodup_cons.mp (List.nodup_append.mp hn).2.1).1
++    exact hnot (heA ▸ ha)
++  subst post
++  refine ⟨pre,he,?_⟩
++  intro hp
++  exact (List.nodup_append.mp hn).2.2 Finset.univ hp Finset.univ (by simp) rfl
++
++lemma ordinaryCladeProgram_append (w : CladeWeights X) (sample : Copy → X)
++    (xs ys : List (Finset X)) (F : Forest Copy) :
++    ordinaryCladeProgram w sample (xs ++ ys) F =
++      (ordinaryCladeProgram w sample xs F).bind (ordinaryCladeProgram w sample ys) := by
++  induction xs generalizing F with
++  | nil => simp only [List.nil_append,ordinaryCladeProgram,PMF.pure_bind]
++  | cons A xs ih =>
++      simp only [List.cons_append,ordinaryCladeProgram,ih,PMF.bind_bind]
++
++lemma ordinaryCladeProgram_partition (w : CladeWeights X) (sample : Copy → X)
++    (keys : List (Finset X)) (F : Forest Copy) (hF : Partition F) {G : Forest Copy}
++    (hG : G ∈ (ordinaryCladeProgram w sample keys F).support) : Partition G := by
++  induction keys generalizing F with
++  | nil =>
++      have he : G = F := by simpa only [ordinaryCladeProgram,PMF.mem_support_pure_iff] using hG
++      simpa only [he] using hF
++  | cons A keys ih =>
++      obtain ⟨M,hM,hG⟩ := (PMF.mem_support_bind_iff _ _ _).mp hG
++      exact ih M (cladeKernel_partition _ _ F hF hM) hG
++
++lemma ordinaryCladeProgram_congr_proper (w w' : CladeWeights X) (sample : Copy → X)
++    (hw : ∀ A, A ≠ ∅ → A ≠ Finset.univ → w A = w' A)
++    (keys : List (Finset X)) (hkeys : Finset.univ ∉ keys) (F : Forest Copy) :
++    ordinaryCladeProgram w sample keys F = ordinaryCladeProgram w' sample keys F := by
++  induction keys generalizing F with
++  | nil => rfl
++  | cons A keys ih =>
++      have hu : A ≠ Finset.univ := by intro h; exact hkeys (by simp [h])
++      have ht : Finset.univ ∉ keys := fun h => hkeys (List.mem_cons_of_mem A h)
++      by_cases ha : A = ∅
++      · subst A
++        have he : cladeCopySet sample ∅ = ∅ := by ext x; simp [cladeCopySet]
++        simp only [ordinaryCladeProgram,he,cladeKernel_empty,PMF.pure_bind]
++        exact ih ht F
++      · simp only [ordinaryCladeProgram,hw A ha hu]
++        congr 1
++        funext G
++        exact ih ht G
++
++lemma ordinaryCladeProgram_full_tail (w : CladeWeights X) (sample : Copy → X)
++    (keys : List (Finset X)) (F : Forest Copy) (hF : Partition F) :
++    (ordinaryCladeProgram w sample (keys ++ [Finset.univ]) F).bind ordinaryCompletion =
++      (ordinaryCladeProgram w sample keys F).bind ordinaryCompletion := by
++  rw [ordinaryCladeProgram_append,PMF.bind_bind]
++  apply UnifiedLean.Source.SourceCompletionHarmonic.bind_congr_on_support
++  intro G hG
++  have hu : cladeCopySet sample Finset.univ = Finset.univ := by ext x; simp [cladeCopySet]
++  simp only [ordinaryCladeProgram,hu,PMF.bind_pure]
++  exact cladeKernel_full_completion_harmonic _ G
++    (ordinaryCladeProgram_partition w sample keys F hF hG)
++
++/-- Empty clades do nothing and the final all-taxon clade is absorbed by
++ancestral completion. All nonempty proper clade weights remain exact. -/
++theorem ordinaryCompletedTreeLaw_congr_proper (w w' : CladeWeights X)
++    (sample : Copy → X) (hw : ∀ A, A ≠ ∅ → A ≠ Finset.univ → w A = w' A) :
++    ordinaryCompletedTreeLaw w sample = ordinaryCompletedTreeLaw w' sample := by
++  obtain ⟨pre,hpre,hnot⟩ := cladeOrder_ends_univ (X := X)
++  unfold ordinaryCompletedTreeLaw
++  rw [hpre,ordinaryCladeProgram_full_tail w sample pre _ initialForest_partition,
++    ordinaryCladeProgram_full_tail w' sample pre _ initialForest_partition,
++    ordinaryCladeProgram_congr_proper w w' sample hw pre hnot]
+ 
+ end Evaluation
+ section Weights
+@@ -2614,6 +2703,245 @@
+     exact (groupedCladeWord_ordered word hw).imp
+       (fun h => cladeBefore_sample_preimage sample _ _ h)
+ 
++noncomputable def cladeBucketReal {Y : Type*} [DecidableEq Y]
++    (word : List (Finset Y × ℝ≥0)) (A : Finset Y) : ℝ :=
++  (word.map (fun op => if op.1 = A then (op.2 : ℝ) else 0)).sum
++
++lemma cladeBucketReal_append {Y : Type*} [DecidableEq Y]
++    (xs ys : List (Finset Y × ℝ≥0)) (A : Finset Y) :
++    cladeBucketReal (xs ++ ys) A = cladeBucketReal xs A + cladeBucketReal ys A := by
++  simp only [cladeBucketReal,List.map_append,List.sum_append]
++
++lemma cladeBucketReal_weight (word : List (Finset X × ℝ≥0)) (A : Finset X) :
++    cladeBucketReal word A = (cladeWordWeight word A : ℝ) := by
++  induction word with
++  | nil => rfl
++  | cons op ops ih =>
++      by_cases h : op.1 = A <;>
++        simp [cladeBucketReal,cladeWordWeight,cladeBucket,List.filter,h,ih]
++
++noncomputable def cladeClock (N : RootedBinary V E X) (r : PositivePairRates E)
++    (A : Finset Copy) {sample : Copy → X} (s : Code N sample) : ℝ :=
++  ∑ i : Option E, if colourFibre (copyLocation (state s)) (originalPlace N i) = A
++    then pairRate r i else 0
++
++lemma fibreEpochOps_bucket (N : RootedBinary V E X) (r : PositivePairRates E)
++    (f : Copy → Location V E) (t : ℝ≥0) (A : Finset Copy) :
++    cladeBucketReal (fibreEpochOps N r f t) A =
++      (∑ i : Option E, if colourFibre f (originalPlace N i) = A then pairRate r i else 0) * (t : ℝ) := by
++  unfold cladeBucketReal fibreEpochOps
++  rw [List.map_map,Finset.sum_map_toList,Finset.sum_mul]
++  apply Finset.sum_congr rfl
++  intro i _
++  by_cases h : colourFibre f (originalPlace N i) = A <;>
++    simp only [Function.comp_apply,h,if_true,if_false,zero_mul,populationExposure]
++  ring
++
++lemma routedCladeWord_bucket_readout (N : RootedBinary V E X)
++    (r : PositivePairRates E) (ops : List (ProgramStep N)) (A : Finset Copy)
++    {sample : Copy → X} (s : Code N sample) :
++    cladeBucketReal (routedCladeWord N r (state s).register ops (copyLocation (state s))) A =
++      readoutExposure N (cladeClock N r A) ops s := by
++  induction ops generalizing s with
++  | nil => rfl
++  | cons op ops ih =>
++      cases op with
++      | interval t =>
++          rw [routedCladeWord,cladeBucketReal_append,fibreEpochOps_bucket,readoutExposure,ih]
++          rfl
++      | boundary b =>
++          rw [routedCladeWord,readoutExposure,← ih (fixedRegisterBoundary N b s),
++            fixedRegisterBoundary_register]
++          have hf : copyLocation (state (fixedRegisterBoundary N b s)) =
++              fun x => fixedBoundaryLocation N b (state s).register (copyLocation (state s) x) := by
++            funext x
++            exact fixedRegisterBoundary_copyLocation N b s x
++          rw [hf]
++
++noncomputable def selectedCladeRate (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (r : PositivePairRates E) (coin : CommonSeed N)
++    (A : Finset X) (guard : ℝ) : ℝ :=
++  ∑ e : E, if edgeTaxa N C H coin e = A ∧ C.Active guard e then r.edge e else 0
++
++/-- Actual nonempty taxon-clade occupation rate at every compiled epoch. -/
++lemma actual_epoch_clade_clock (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
++    (coin : CommonSeed N) (A : Finset X) (hA : A ≠ ∅)
++    (pre post : List ℝ) (guard next : ℝ)
++    (hsplit : sortedOriginalDates N C = pre ++ guard :: next :: post) :
++    cladeClock N r A (fixedRegisterPrefix N
++      (prefixThrough N C H (originalGamma p) (fun _ => true) pre guard)
++      (initialCode N (fun x : X => x) (originalRegister N coin))) =
++      selectedCladeRate N C H r coin A guard := by
++  rw [cladeClock,Fintype.sum_option]
++  have hr := actual_epoch_root_fibre_empty N C (fun x : X => x) H p r coin pre post guard next hsplit
++  dsimp only at hr
++  change (if colourFibre _ (.rootPopulation N.root) = A then _ else _) + _ = _
++  rw [hr,if_neg (Ne.symm hA),zero_add]
++  unfold selectedCladeRate
++  apply Finset.sum_congr rfl
++  intro e _
++  have he := actual_epoch_selected_clade_fibre N C (fun x : X => x) H p r coin
++    pre post guard next hsplit e
++  dsimp only at he
++  have hid (B : Finset X) : cladeCopySet (fun x : X => x) B = B := by ext x; simp [cladeCopySet]
++  change (if colourFibre _ (.edge e) = A then r.edge e else 0) = _
++  rw [he,hid]
++  by_cases ha : C.Active guard e <;> simp [ha,hA,Ne.symm hA]
++
++lemma actual_tail_clade_clock (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
++    (coin : CommonSeed N) (A : Finset X) (hA : A ≠ ∅)
++    (pre : List ℝ) (guard : ℝ) (post : List ℝ)
++    (hsplit : sortedOriginalDates N C = pre ++ guard :: post) :
++    readoutExposure N (cladeClock N r A)
++      (calendarTail N C H (originalGamma p) (fun _ => true) guard post)
++      (fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun _ => true) pre guard)
++        (initialCode N (fun x : X => x) (originalRegister N coin))) =
++      dateExposure (selectedCladeRate N C H r coin A) guard post := by
++  induction post generalizing pre guard with
++  | nil => rfl
++  | cons next post ih =>
++      have hrate := actual_epoch_clade_clock N C H p r coin A hA pre post guard next hsplit
++      have hlt := (actual_consecutive_duration N C pre post guard next hsplit).1
++      have hnext : sortedOriginalDates N C = (pre ++ [guard]) ++ next :: post := by
++        simpa only [List.append_assoc,List.singleton_append] using hsplit
++      have hrec := ih (pre ++ [guard]) next hnext
++      rw [prefixThrough_snoc,fixedRegisterPrefix_append] at hrec
++      simp only [fixedRegisterPrefix] at hrec
++      rw [calendarTail,readoutExposure,readoutExposure_append,readoutExposure_original_batch,
++        zero_add,hrate,Real.coe_toNNReal _ (sub_nonneg.mpr hlt.le),hrec]
++      rfl
++
++/-- Linearity followed by the accepted scalar edge-duration telescope;
++all original date fragments, including other taxa's births, remain present. -/
++lemma dateExposure_clade_edges (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (r : PositivePairRates E) (coin : CommonSeed N)
++    (A : Finset X) (a : ℝ) (dates : List ℝ) :
++    dateExposure (selectedCladeRate N C H r coin A) a dates =
++      ∑ e : E, if edgeTaxa N C H coin e = A then r.edge e *
++        activeDuration (C.age (N.graph.target e)) (C.age (N.graph.source e)) a dates else 0 := by
++  induction dates generalizing a with
++  | nil => simp [dateExposure,activeDuration]
++  | cons b bs ih =>
++      rw [dateExposure,ih,selectedCladeRate,Finset.sum_mul,← Finset.sum_add_distrib]
++      apply Finset.sum_congr rfl
++      intro e _
++      by_cases he : edgeTaxa N C H coin e = A
++      · by_cases ha : C.age (N.graph.target e) ≤ a ∧ a < C.age (N.graph.source e)
++        · simp only [he,true_and,Calendar.Active,if_pos ha,if_true,activeDuration,dateExposure,one_mul]
++          ring
++        · simp [he,Calendar.Active,ha,activeDuration,dateExposure]
++      · simp [he]
++
++noncomputable def calendarTaxonWord (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
++    (coin : CommonSeed N) : List (Finset X × ℝ≥0) :=
++  routedCladeWord N r (originalRegister N coin)
++    (compiledCalendarProgram N C H (originalGamma p) (fun _ => true))
++      (fun x : X => Location.node (N.leaf x))
++
++lemma calendarTaxonWord_ordered (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
++    (coin : CommonSeed N) :
++    (calendarTaxonWord N C H p r coin).Pairwise CladeBefore :=
++  routedCladeWord_ordered N r _ _ _
++
++/-- Every nonempty proper clade's grouped exposure equals the sum of its
++original selected-edge exposures. Empty/full clades are handled by their
++proved evaluator identities, rather than asserted to have zero source clocks. -/
++theorem calendarTaxonWord_weight (N : RootedBinary V E X) (C : Calendar N.graph)
++    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)
++    (coin : CommonSeed N) (A : Finset X) (hA : A ≠ ∅) (hU : A ≠ Finset.univ) :
++    cladeWordWeight (calendarTaxonWord N C H p r coin) A = weightedNormalize N C H r coin A := by
++  apply NNReal.eq
++  rw [← cladeBucketReal_weight]
++  change cladeBucketReal (routedCladeWord N r
++      (state (initialCode N (fun x : X => x) (originalRegister N coin))).register
++      (compiledCalendarProgram N C H (originalGamma p) (fun _ => true))
++      (copyLocation (state (initialCode N (fun x : X => x) (originalRegister N coin))))) A = _
++  rw [routedCladeWord_bucket_readout]
++  have hroot := original_date_scheduled N C N.root
++  cases hd : sortedOriginalDates N C with
++  | nil => simp [hd] at hroot
++  | cons a dates =>
++      have htail := actual_tail_clade_clock N C H p r coin A hA [] a dates (by simpa using hd)
++      simp only [prefixThrough,List.nil_append,calendarTail,List.append_nil] at htail
++      unfold compiledCalendarProgram
++      rw [hd,readoutExposure_append,readoutExposure_original_batch,zero_add,htail,
++        dateExposure_clade_edges]
++      simp only [weightedNormalize,hA,hU,or_self,if_false,NNReal.coe_sum]
++      apply Finset.sum_congr rfl
++      intro e _
++      by_cases he : edgeTaxa N C H coin e = A
++      · simp only [he,if_true,edgeExposure]
++        congr 1
++        apply activeDuration_full_dates
++        · rw [← hd]; exact original_dates_strict N C
++        · rw [← hd]; exact original_date_scheduled N C (N.graph.target e)
++        · rw [← hd]; exact original_date_scheduled N C (N.graph.source e)
++        · exact C.edge_older e
++      · simp [he]
++
++/-- Full fixed-bank COMMON equality with the independently constructed
++weighted ordinary-tree evaluator. The calendar, exposure grouping, unary
++weights, empty twigs and final common stem are all discharged above. -/
++theorem actual_common_completed_weighted_tree_law (N : RootedBinary V E X)
++    (C : Calendar N.graph) (H : OriginalParentRegistry N) (p : HybridProbabilities N)
++    (r : PositivePairRates E) (sample : Copy → X) (coin : CommonSeed N) :
++    ((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) (fun _ => true))
++      (initialCode N sample (originalRegister N coin))).bind
++        (ancestralCompletion N r (Fintype.card Copy))).map
++          (fun d => sourceUnrankedForest (state d) Finset.univ) =
++      ordinaryCompletedTreeLaw (weightedNormalize N C H r coin) sample := by
++  rw [actual_common_completed_calendar_forest_law N C H (originalGamma p) r sample
++    (originalRegister N coin),routedForestProgram_eq_forestProgram]
++  have hp := routedCladeWord_sample_preimage N r (originalRegister N coin)
++    (compiledCalendarProgram N C H (originalGamma p) (fun _ => true)) sample
++    (fun x : X => Location.node (N.leaf x))
++  rw [hp]
++  change ((forestProgram ((calendarTaxonWord N C H p r coin).map
++    (fun op => (cladeCopySet sample op.1,op.2))) (initialForest (Copy := Copy))).bind
++      ordinaryCompletion).map forestObservation = _
++  rw [ordered_taxon_word_normalization sample _ (calendarTaxonWord_ordered N C H p r coin)]
++  change ordinaryCompletedTreeLaw (cladeWordWeight (calendarTaxonWord N C H p r coin)) sample = _
++  apply ordinaryCompletedTreeLaw_congr_proper
++  intro A hA hU
++  exact calendarTaxonWord_weight N C H p r coin A hA hU
++
++/-- Master-facing conditional ordinary-tree equality for every original-ID
++forcing mask with unforced sites COMMON. The original bank is retained on the
++source side. The independently normalized tree uses its once-overridden selector.
++No equal-tip-age, copy-count cap, desired conditional law or graph refit occurs. -/
++theorem actual_controlled_completed_weighted_tree_law (N : RootedBinary V E X)
++    (C : Calendar N.graph) (H : OriginalParentRegistry N) (p : HybridProbabilities N)
++    (r : PositivePairRates E) (mask : OriginalMask N) (sample : Copy → X)
++    (coin : CommonSeed N) :
++    ((sourceProgram N r (controlledCalendarProgram N C H p (fun _ => true) mask)
++      (initialCode N sample (originalRegister N coin))).bind
++        (ancestralCompletion N r (Fintype.card Copy))).map
++          (fun d => sourceUnrankedForest (state d) Finset.univ) =
++      ordinaryCompletedTreeLaw (weightedNormalize N C H r (overrideBank N mask coin)) sample := by
++  rw [controlled_completed_eq_override_common N C H p r mask sample coin]
++  exact actual_common_completed_weighted_tree_law N C H p r sample (overrideBank N mask coin)
++
++/-- One original COMMON-bank average for each fixed original mask. This is an
++average of full genealogy laws, not a product of directed marginal laws or a
++new distribution over interventions. The same bank indexes the whole family. -/
++theorem actual_original_bank_weighted_tree_average (N : RootedBinary V E X)
++    (C : Calendar N.graph) (H : OriginalParentRegistry N) (p : HybridProbabilities N)
++    (r : PositivePairRates E) (mask : OriginalMask N) (sample : Copy → X) :
++    (originalRegisterMeasure N p).toPMF.bind (fun coin =>
++      ((sourceProgram N r (controlledCalendarProgram N C H p (fun _ => true) mask)
++        (initialCode N sample (originalRegister N coin))).bind
++          (ancestralCompletion N r (Fintype.card Copy))).map
++            (fun d => sourceUnrankedForest (state d) Finset.univ)) =
++      (originalRegisterMeasure N p).toPMF.bind (fun coin =>
++        ordinaryCompletedTreeLaw (weightedNormalize N C H r (overrideBank N mask coin)) sample) := by
++  congr 1
++  funext coin
++  exact actual_controlled_completed_weighted_tree_law N C H p r mask sample coin
++
+ end Weights
+ 
+ end DotG4.WeightedOrdinaryTreeLaw

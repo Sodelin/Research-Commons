@@ -1,0 +1,717 @@
+G4WeightedOrdinaryTreeLaw.lean:103:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mergeForest_partition`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:314:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  PMF.bind ?p fun a => PMF.bind ?q (?f a)
+in the target expression
+  ((PMF.uniformOfFintype (PaddedChoice Copy)).bind fun a => ((PMF.pure ∘ paddedAction F A) a).bind (cladeStep B)) =
+    (PMF.uniformOfFintype (PaddedChoice Copy)).bind fun a => ((PMF.pure ∘ paddedAction F B) a).bind (cladeStep A)
+
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+A B : Finset Copy
+hAB : Disjoint A B
+⊢ ((PMF.uniformOfFintype (PaddedChoice Copy)).bind fun a => ((PMF.pure ∘ paddedAction F A) a).bind (cladeStep B)) =
+    (PMF.uniformOfFintype (PaddedChoice Copy)).bind fun a => ((PMF.pure ∘ paddedAction F B) a).bind (cladeStep A)
+G4WeightedOrdinaryTreeLaw.lean:313:45: warning: This simp argument is unused:
+  PMF.pure_bind
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cladeStep, PMF.map, PMF.bind_bind]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:416:2: error: `simp` made no progress
+G4WeightedOrdinaryTreeLaw.lean:494:19: error: Function expected at
+  G
+but this term has type
+  Forest Copy
+
+Note: Expected a function because this term is being applied to the argument
+  ·
+G4WeightedOrdinaryTreeLaw.lean:495:17: error: `simp` made no progress
+G4WeightedOrdinaryTreeLaw.lean:496:6: error: unexpected token '·'; expected command
+G4WeightedOrdinaryTreeLaw.lean:552:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.legalPair_iff_mem_active_offDiag`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:694:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mem_actualForest`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:704:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.live_genealogy_injective`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:826:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.liveTreeOrLeaf_val`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1064:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.colourFibres_disjoint`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1071:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.code_forest_valid`:
+  [Fintype Copy]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1146:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  {t ∈ actualForest ?s ?hs | (↑t).leaves ⊆ {x | copyLocation ?s x = ?place}}.offDiag
+in the target expression
+  pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    {t ∈ actualForest (state s) ⋯ | (↑t).leaves ⊆ colourFibre (copyLocation (state s)) (originalPlace N i)}.offDiag
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+p : Copy × Copy
+hp : PairAt N i p s
+hpair :
+  p.1 ∈ populationRoots (state s) (originalPlace N i) ∧ p.2 ∈ populationRoots (state s) (originalPlace N i) ∧ p.1 ≠ p.2
+ha : p.1 ∈ (state s).live
+hb : p.2 ∈ (state s).live
+⊢ pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    {t ∈ actualForest (state s) ⋯ | (↑t).leaves ⊆ colourFibre (copyLocation (state s)) (originalPlace N i)}.offDiag
+G4WeightedOrdinaryTreeLaw.lean:1151:2: error: unsolved goals
+case fst.hs
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+p : Copy × Copy
+hp : PairAt N i p s
+hpair :
+  p.1 ∈ populationRoots (state s) (originalPlace N i) ∧ p.2 ∈ populationRoots (state s) (originalPlace N i) ∧ p.1 ≠ p.2
+ha : p.1 ∈ (state s).live
+hb : p.2 ∈ (state s).live
+hmem :
+  pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    Finset.offDiag (activeTrees (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i)))
+hl :
+  LegalPair (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i))
+    (pairMap (liveTreeOrLeaf (state s) ⋯) p)
+⊢ Valid (state s)
+
+case fst.hm
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+i : Option E
+p : Copy × Copy
+hp : PairAt N i p s
+hpair :
+  p.1 ∈ populationRoots (state s) (originalPlace N i) ∧ p.2 ∈ populationRoots (state s) (originalPlace N i) ∧ p.1 ≠ p.2
+ha : p.1 ∈ (state s).live
+hb : p.2 ∈ (state s).live
+hmem :
+  pairMap (liveTreeOrLeaf (state s) ⋯) p ∈
+    Finset.offDiag (activeTrees (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i)))
+hl :
+  LegalPair (forestCode N s) (colourFibre (copyLocation (state s)) (originalPlace N i))
+    (pairMap (liveTreeOrLeaf (state s) ⋯) p)
+⊢ LegalMerge (state s) (↑⟨i, ⟨p, hp⟩⟩.snd).1 (↑⟨i, ⟨p, hp⟩⟩.snd).2
+G4WeightedOrdinaryTreeLaw.lean:1169:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  rootPairs (actualForest (state s) ⋯)
+in the target expression
+  Finset.image (pairMap (liveTreeOrLeaf (state s) ⋯)) (state s).live.offDiag = rootPairs (forestCode N s)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+s : Code N sample
+hs : AncestralRoot N s
+⊢ Finset.image (pairMap (liveTreeOrLeaf (state s) ⋯)) (state s).live.offDiag = rootPairs (forestCode N s)
+G4WeightedOrdinaryTreeLaw.lean:1225:2: error: Type mismatch: After simplification, term
+  ht
+ has type
+  @Eq (Forest Copy) (forestCode N (stepDestination N s (some p)))
+    (pairAction (forestCode N s) Finset.univ (pairMap (liveTreeOrLeaf (state s) ⋯) ↑p.snd))
+but is expected to have type
+  @Eq (Forest Copy) (forestCode N (stepDestination N s (some p)))
+    (pairAction (forestCode N s) Finset.univ
+      (pairMap (liveTreeOrLeaf (state s) ⋯)
+        ↑({ toFun := fun p => ⟨↑p.snd, ⋯⟩, invFun := fun p => ⟨none, ⟨↑p, ⋯⟩⟩, left_inv := ⋯, right_inv := ⋯ } p)))
+G4WeightedOrdinaryTreeLaw.lean:1236:41: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ a, ?f ↑a
+in the target expression
+  ∑ b, ((PMF.uniformOfFinset (rootPairs F) h) b).toReal * ((PMF.pure (pairAction F Finset.univ b)) G).toReal =
+    ∑ q, 1 / ↑(rootPairs F).card * if pairAction F Finset.univ ↑q = G then 1 else 0
+
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F G : Forest Copy
+h : (rootPairs F).Nonempty
+⊢ ∑ b, ((PMF.uniformOfFinset (rootPairs F) h) b).toReal * ((PMF.pure (pairAction F Finset.univ b)) G).toReal =
+    ∑ q, 1 / ↑(rootPairs F).card * if pairAction F Finset.univ ↑q = G then 1 else 0
+G4WeightedOrdinaryTreeLaw.lean:1288:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ a, ?f ↑a
+in the target expression
+  ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+
+case neg
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+G : Forest Copy
+v : Forest Copy → ℝ := fun M => ((ordinaryCompletion M) G).toReal
+hn : ¬(rootPairs F).Nonempty
+he : rootPairs F = ∅
+⊢ ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+G4WeightedOrdinaryTreeLaw.lean:1291:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ a, ?f ↑a
+in the target expression
+  ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+
+Copy : Type u_4
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+G : Forest Copy
+v : Forest Copy → ℝ := fun M => ((ordinaryCompletion M) G).toReal
+hd : ∑ q, (v (pairAction F Finset.univ ↑q) - v F) = 0
+⊢ ∑ q, (v (pairAction F Finset.univ q) - v F) = 0
+G4WeightedOrdinaryTreeLaw.lean:1351:50: error: Type mismatch: After simplification, term
+  ht
+ has type
+  liveCard s ≤ 1
+but is expected to have type
+  Finset.card (actualForest (state s) ⋯) ≤ 1
+G4WeightedOrdinaryTreeLaw.lean:1352:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  dite (rootPairs (actualForest (state s) ⋯)).Nonempty ?m.219 ?m.220
+in the target expression
+  PMF.pure (forestCode N s) =
+    if h : (rootPairs (forestCode N s)).Nonempty then
+      PMF.map (pairAction (forestCode N s) Finset.univ) (PMF.uniformOfFinset (rootPairs (forestCode N s)) h)
+    else PMF.pure (forestCode N s)
+
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+hs : AncestralRoot N s
+hF : Partition (actualForest (state s) ⋯)
+hc : Finset.card (forestCode N s) = liveCard s
+ht : liveCard s ≤ 1
+hn : ¬(rootPairs (actualForest (state s) ⋯)).Nonempty
+⊢ PMF.pure (forestCode N s) =
+    if h : (rootPairs (forestCode N s)).Nonempty then
+      PMF.map (pairAction (forestCode N s) Finset.univ) (PMF.uniformOfFinset (rootPairs (forestCode N s)) h)
+    else PMF.pure (forestCode N s)
+G4WeightedOrdinaryTreeLaw.lean:1354:4: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WeightedOrdinaryTreeLaw.lean:1357:19: error: Type mismatch: After simplification, term
+  (rootPairs_empty_iff (actualForest (state s) (code_forest_valid N s)) hF).mp he
+ has type
+  Finset.card (actualForest (state s) ⋯) ≤ 1
+but is expected to have type
+  liveCard s ≤ 1
+G4WeightedOrdinaryTreeLaw.lean:1381:8: error: Tactic `rfl` failed: The left-hand side
+  1 / ↑(rootPairs (forestCode N s)).card *
+    @ite ℝ (G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p))
+      (Classical.propDecidable (G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p))) 1 0
+is not definitionally equal to the right-hand side
+  1 / ↑(rootPairs (forestCode N s)).card *
+    @ite ℝ (G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p))
+      (Finset.decidableEq G (pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p))) 1 0
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+hs : AncestralRoot N s
+hF : Partition (actualForest (state s) ⋯)
+hc : Finset.card (forestCode N s) = liveCard s
+ht : ¬liveCard s ≤ 1
+hnt : 1 < liveCard s
+this : Nonempty (Choice N s) := ancestral_choice_exists N s hs hnt
+hn : (rootPairs (forestCode N s)).Nonempty
+hcard : Fintype.card (Choice N s) = (rootPairs (forestCode N s)).card
+hpos : Fintype.card (Choice N s) ≠ 0
+G : Forest Copy
+p : Choice N s
+a✝ : p ∈ Finset.univ
+⊢ (1 / ↑(rootPairs (forestCode N s)).card *
+      if G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p) then 1 else 0) =
+    1 / ↑(rootPairs (forestCode N s)).card *
+      if G = pairAction (forestCode N s) Finset.univ ↑(rootForestChoice N s hs p) then 1 else 0
+G4WeightedOrdinaryTreeLaw.lean:1492:97: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+r : PositivePairRates E
+f : Copy → Location V E
+t : ℝ≥0
+⊢ ∑ x, ↑⟨↑t * pairRate r x, ⋯⟩ • cladeGenerator (colourFibre f (originalPlace N x)) =
+    ∑ x, (↑t * pairRate r x) • cladeGenerator (colourFibre f (originalPlace N x))
+G4WeightedOrdinaryTreeLaw.lean:1516:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mul_fixedColourMatrix`:
+  [Fintype V]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:1636:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?m.600 * ?m.601 = 0
+in the target expression
+  1 / 2 *
+      ∑ p ∈ (populationRoots (state s) (originalPlace N i)).offDiag,
+        (colourProjectionMatrix N (mergeAt N i p s) (G, g) - colourProjectionMatrix N s (G, g)) =
+    if copyLocation (state s) = g then
+      cladeGenerator (colourFibre (copyLocation (state s)) (originalPlace N i)) (forestCode N s) G
+    else 0
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+i : Option E
+s : Code N sample
+G : Forest Copy
+g : Copy → Location V E
+hf : ¬copyLocation (state s) = g
+⊢ 1 / 2 *
+      ∑ p ∈ (populationRoots (state s) (originalPlace N i)).offDiag,
+        (colourProjectionMatrix N (mergeAt N i p s) (G, g) - colourProjectionMatrix N s (G, g)) =
+    if copyLocation (state s) = g then
+      cladeGenerator (colourFibre (copyLocation (state s)) (originalPlace N i)) (forestCode N s) G
+    else 0
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    colourProjectionMatrix N (mergeAt N i p s)
+G4WeightedOrdinaryTreeLaw.lean:1635:50: warning: This simp argument is unused:
+  if_neg hf
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [colouredGenerator, colourProjection]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:1695:4: error: `simp` made no progress
+G4WeightedOrdinaryTreeLaw.lean:1791:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.fibreEpochOps_mem`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2023:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeBucket_map_preimage`:
+  [Fintype X]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2059:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.ordered_word_laminar`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2124:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.ordinaryCladeProgram_append`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2136:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.ordinaryCladeProgram_partition`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2202:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mem_edgeTaxa`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2220:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.edgeExposure_positive`:
+  [DecidableEq E]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2317:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.mem_forcedVertices`:
+  [DecidableEq E]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2423:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.erased_full_observation`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2495:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.forced_boundary_eq_common_of_register`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2534:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.program_eq_of_same_register_steps`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2551:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.same_register_map_steps`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2569:8: error(lean.unknownIdentifier): Unknown constant `List.Forall₂.append`
+G4WeightedOrdinaryTreeLaw.lean:2570:2: error: No goals to be solved
+G4WeightedOrdinaryTreeLaw.lean:2590:77: error(lean.invalidField): Invalid field `append`: The environment does not contain `List.Forall₂.append`, so it is not possible to project the field `append` from an expression
+  controlled_batch_override_steps N C H p r mask coin sample b
+of type
+  List.Forall₂ (SameRegisterStep N sample r (originalRegister N (overrideBank N mask coin)))
+    (boundaryOperations N C H (controlledGamma p mask) (controlledMode (fun x => true) mask) b)
+    (boundaryOperations N C H (originalGamma p) (fun x => true) b)
+G4WeightedOrdinaryTreeLaw.lean:2607:75: error(lean.invalidField): Invalid field `append`: The environment does not contain `List.Forall₂.append`, so it is not possible to project the field `append` from an expression
+  controlled_batch_override_steps N C H p r mask coin sample a
+of type
+  List.Forall₂ (SameRegisterStep N sample r (originalRegister N (overrideBank N mask coin)))
+    (boundaryOperations N C H (controlledGamma p mask) (controlledMode (fun x => true) mask) a)
+    (boundaryOperations N C H (originalGamma p) (fun x => true) a)
+G4WeightedOrdinaryTreeLaw.lean:2654:2: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype Copy
+inst✝⁶ : DecidableEq Copy
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+coin : CommonSeed N
+pre post : List ℝ
+guard next : ℝ
+hsplit : sortedOriginalDates N C = pre ++ guard :: next :: post
+e : E
+hi :
+  ∀ (x : Copy) (e : E),
+    copyLocation
+          (state
+            (fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun x => true) pre guard)
+              (initialCode N sample (originalRegister N coin))))
+          x =
+        Location.edge e ↔
+      e ∈ (commonRoutes N C H coin).edges (sample x) ∧ C.Active guard e
+x : Copy
+ha : C.Active guard e
+⊢ e ∈ (commonRoutes N C H coin).edges (sample x) ↔
+    x ∈ if True then {x | e ∈ (commonRoutes N C H coin).edges (sample x)} else ∅
+G4WeightedOrdinaryTreeLaw.lean:2656:2: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype Copy
+inst✝⁶ : DecidableEq Copy
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+coin : CommonSeed N
+pre post : List ℝ
+guard next : ℝ
+hsplit : sortedOriginalDates N C = pre ++ guard :: next :: post
+e : E
+hi :
+  ∀ (x : Copy) (e : E),
+    copyLocation
+          (state
+            (fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun x => true) pre guard)
+              (initialCode N sample (originalRegister N coin))))
+          x =
+        Location.edge e ↔
+      e ∈ (commonRoutes N C H coin).edges (sample x) ∧ C.Active guard e
+x : Copy
+ha : ¬C.Active guard e
+⊢ False ↔ x ∈ if False then cladeCopySet sample (edgeTaxa N C H coin e) else ∅
+G4WeightedOrdinaryTreeLaw.lean:2654:15: warning: This simp argument is unused:
+  if_pos ha
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ha, and_true, cladeCopySet, Finset.mem_filter, Finset.mem_univ, true_and, mem_edgeTaxa]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2654:50: warning: This simp argument is unused:
+  Finset.mem_filter
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ha, ha, and_true, cladeCopySet, Finset.mem_univ, true_and, mem_edgeTaxa]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2654:68: warning: This simp argument is unused:
+  Finset.mem_univ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ha, ha, and_true, cladeCopySet, Finset.mem_filter, true_and, mem_edgeTaxa]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2655:6: warning: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_pos ha, ha, and_true, cladeCopySet, Finset.mem_filter, Finset.mem_univ, mem_edgeTaxa]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2656:15: warning: This simp argument is unused:
+  if_neg ha
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ha, and_false, Finset.notMem_empty]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2656:38: warning: This simp argument is unused:
+  Finset.notMem_empty
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_neg ha, ha, and_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WeightedOrdinaryTreeLaw.lean:2673:47: error: Application type mismatch: The argument
+  pre
+has type
+  List ℝ
+of sort `Type` but is expected to have type
+  sortedOriginalDates N C = ?m.165 ++ ?m.163 :: ?m.164 :: ?m.166
+of sort `Prop` in the application
+  actual_consecutive_duration N C pre
+G4WeightedOrdinaryTreeLaw.lean:2668:73: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype Copy
+inst✝⁶ : DecidableEq Copy
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+C : Calendar N.graph
+sample : Copy → X
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+coin : CommonSeed N
+pre post : List ℝ
+guard next : ℝ
+hsplit : sortedOriginalDates N C = pre ++ guard :: next :: post
+hgeo :
+  fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun x => true) pre guard)
+        (initialCode N sample (originalRegister N coin)) ∈
+      (sourceProgram N r (prefixThrough N C H (originalGamma p) (fun x => true) pre guard ++ [ProgramStep.interval 0])
+          (initialCode N sample (originalRegister N coin))).support ∧
+    UnifiedLean.Source.SourceCalendarCompatibility.EpochCompatible N C guard next
+        (state
+          (fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun x => true) pre guard)
+            (initialCode N sample (originalRegister N coin)))) ∧
+      ∀ (x : Copy),
+        SelectorLocation N (coinSelector N H coin) (sample x)
+          (copyLocation
+            (state
+              (fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun x => true) pre guard)
+                (initialCode N sample (originalRegister N coin))))
+            x)
+⊢ colourFibre
+      (copyLocation
+        (state
+          (fixedRegisterPrefix N (prefixThrough N C H (originalGamma p) (fun x => true) pre guard)
+            (initialCode N sample (originalRegister N coin)))))
+      (Location.rootPopulation N.root) =
+    ∅
+G4WeightedOrdinaryTreeLaw.lean:2687:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.colourFibre_sample_preimage`:
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2719:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeCopySet_mono`:
+  [DecidableEq Copy]
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2724:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeCopySet_disjoint`:
+  [DecidableEq Copy]
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq Copy] [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2761:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.cladeBucketReal_weight`:
+  [Fintype X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2774:0: warning: automatically included section variable(s) unused in theorem `DotG4.WeightedOrdinaryTreeLaw.fibreEpochOps_bucket`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WeightedOrdinaryTreeLaw.lean:2827:28: error(lean.invalidDottedIdent): Invalid dotted identifier notation: The expected type of `.rootPopulation` could not be determined
+
+Hint: Using `Location.rootPopulation would be unambiguous:
+  [apply] `Location.rootPopulation`
+G4WeightedOrdinaryTreeLaw.lean:2854:51: error: Application type mismatch: The argument
+  pre
+has type
+  List ℝ
+of sort `Type` but is expected to have type
+  sortedOriginalDates N C = ?m.193 ++ ?m.191 :: ?m.192 :: ?m.194
+of sort `Prop` in the application
+  actual_consecutive_duration N C pre
+G4WeightedOrdinaryTreeLaw.lean:2907:2: error: 'change' tactic failed, pattern
+  cladeBucketReal
+      (routedCladeWord N r (state (initialCode N (fun x => x) (originalRegister N coin))).register
+        (compiledCalendarProgram N C H (originalGamma p) fun x => true)
+        (copyLocation (state (initialCode N (fun x => x) (originalRegister N coin)))))
+      A =
+    ?m.167
+is not definitionally equal to target
+  cladeBucketReal (calendarTaxonWord N C H p r coin) A = ↑(weightedNormalize N C H r coin A)

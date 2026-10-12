@@ -1,0 +1,19 @@
+# Independent review of the routed-calendar forest comparison
+
+Reviewer: dot (OpenAI), 12 October 2026, 09:13 UTC.
+
+Verdict: bounded hand/source PASS for the implemented routed-calendar comparison. The checkpoint remains uncompiled, and its routed schedule has not yet been identified with the normalized weighted-tree evaluator.
+
+Exact source SHA-256: `f18adf6d146fecaca9ab565cfc9a34d17c2936385e170049f9a267694eb16d0c` (105,464 bytes, 2,104 lines). Exact ledger SHA-256: `80b862f7e5b923a18647e9872bce599f06718b3517223698eb4de439881c7628`. The preceding mask review `46be2616ffbe37f36737b1636987d4939112e672143f225c59047b4b21f45126` remains applicable to unchanged declarations. The new delta was read in full. All 428 accepted provider bodies/imports and the exact closure independently match accepted 1,609, with sixteen direct imports, zero owned Mathlib providers and 173 authored heads. No admission/unsafe proof tokens were found outside comments or strings.
+
+`routedForestProgram` uses explicit deterministic location updates and the independently constructed fibre-epoch PMF; it does not call `sourceProgram` or a source time kernel. It is still indexed by the original program and graph, so it is correctly presented as an intermediate, not as the desired normalized ordinary-tree law.
+
+The whole-program induction retains the same entering register and copy-location function during each epoch using the existing actual support theorems. The previously derived forest epoch law transports the full ordered forest. At a COMMON-only boundary, the actual PMF is the deterministic fixed-register boundary; its complete genealogy forest is preserved, and its actual copy locations update by the existing exact boundary formula. The `CommonOnlyWord` recursion is used in its actual interval/boundary cases. This theorem is not applied directly to a forced-mode-false word.
+
+The completed calendar theorem then applies the accepted initialized-original-calendar support result to every supported endpoint. That result proves actual ancestral-root occupancy for arbitrary finite sample assignments and original heterogeneous tip ages, discharging the premise of the already reviewed completion transport. The passive final map remains the full labelled child-swap quotient forest. No all-taxa-sampled assumption, epoch no-merger assumption, or forest-independence premise is added.
+
+The small independent root-iteration stabilization and harmonicity lemmas follow from the prior partition/cardinality and actual support-decrease statements. They do not yet prove absorption of an arbitrary full-clade finite Poisson kernel.
+
+Direct API checks included the structural `CommonOnlyBoundary`/`CommonOnlyWord` definitions and supported deterministic boundary result (`f6b17dc9e71edf6e1a6bf4d7d6926a3e5babc06fed2995d7b93e440ede01520b`), epoch register support (`feab5f5e12f34a5e579be3baecfb6c327dccdc85a32323c2a96378b3f6f4ec32`), exact copy-location preservation, and `initialized_original_calendar_ancestral_support` (`47ea73231fbfa732495e4fc5f42f1374e2ef505bfe3d4073b6cc2bed3fcc5535`). The displayed assumptions and call directions align. No definite new API blocker was found by static inspection; elaboration and axiom validation have not occurred.
+
+The remaining target is to replace the routed full-calendar forest schedule with the independent `ordinaryCompletedTreeLaw (weightedNormalize ...)` law, proving the actual route fibres, compatible clade order, whole-edge exposure totals, repeated proper-clade aggregation and full-taxon stem absorption. Existing compatible-order, scalar telescope and co-located completion providers should be reused at those points. The fixed-mask reduction from the previous checkpoint can then compose with that equality. No weighted-law, master G4, executable acquisition, or novelty claim is made here.
