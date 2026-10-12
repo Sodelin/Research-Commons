@@ -1,0 +1,54 @@
+G4ActualNaturalCombMoments.lean:136:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (PMF.map (fun d => sourceUnrankedForest (state d) Finset.univ)
+      ((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) fun x => true)
+            (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
+        (completionKernel N r)))
+    {toUnranked (comb (Sum.inr ()) (canonicalA k))}
+in the target expression
+  (originalRegisterMeasure N p).toPMF coin *
+      (PMF.map (fun s => sourceUnrankedForest (state s) Finset.univ)
+          ((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) fun x => true)
+                (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
+            (ancestralCompletion N r (Fintype.card (Fin k ⊕ Unit)))))
+        {toUnranked (comb (Sum.inr ()) (canonicalA k))} =
+    ENNReal.ofReal (2 ^ k / (↑(k + 1).factorial * ↑k.factorial)) *
+      ((originalRegisterMeasure N p).toPMF coin * bankSurvival N C H p r coin i j ^ k.choose 2)
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+p : HybridProbabilities N
+r : PositivePairRates E
+i j : X
+k : ℕ
+hk : 0 < k
+coin : Hybrid N → Bool
+h :
+  (PMF.map (fun d => sourceUnrankedForest (state d) Finset.univ)
+        ((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) fun x => true)
+              (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
+          (completionKernel N r)))
+      {toUnranked (comb (Sum.inr ()) (canonicalA k))} =
+    ENNReal.ofReal (2 ^ k / (↑(k + 1).factorial * ↑k.factorial)) * bankSurvival N C H p r coin i j ^ k.choose 2
+⊢ (originalRegisterMeasure N p).toPMF coin *
+      (PMF.map (fun s => sourceUnrankedForest (state s) Finset.univ)
+          ((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) fun x => true)
+                (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
+            (ancestralCompletion N r (Fintype.card (Fin k ⊕ Unit)))))
+        {toUnranked (comb (Sum.inr ()) (canonicalA k))} =
+    ENNReal.ofReal (2 ^ k / (↑(k + 1).factorial * ↑k.factorial)) *
+      ((originalRegisterMeasure N p).toPMF coin * bankSurvival N C H p r coin i j ^ k.choose 2)
+'DotG4.ActualNaturalCombMoments.bankSurvival_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DotG4.ActualNaturalCombMoments.bankSurvival_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DotG4.ActualNaturalCombMoments.actual_natural_completed_comb_moment' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
