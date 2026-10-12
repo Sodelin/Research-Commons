@@ -1,0 +1,75 @@
+G4ActualFirstMeetingCombMass.lean:40:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualFirstMeetingCombMass.flat_iff_full_card`:
+  [Nonempty Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualFirstMeetingCombMass.lean:66:44: error: Invalid `←` modifier: `sourceUnrankedForest` is a declaration name to be unfolded
+
+Hint: The simplifier cannot "refold" definitions by name. Use `rw` for this instead,
+                      or use the `←` simp modifier with an equational lemma for `sourceUnrankedForest`.
+G4ActualFirstMeetingCombMass.lean:83:4: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state (rootRepresentation N s)).genealogy
+    ((UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root ↑s).ancestor x)
+in the target expression
+  (state (rootRepresentation N s)).genealogy ((state s).ancestor x) = Genealogy.leaf x
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+b : Copy
+as : List Copy
+hf : ∀ (x : Copy), (state s).genealogy ((state s).ancestor x) = Genealogy.leaf x
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hnodup : as.Nodup
+hb : b ∉ as
+hnonempty : as ≠ []
+x : Copy
+⊢ (state (rootRepresentation N s)).genealogy ((state s).ancestor x) = Genealogy.leaf x
+G4ActualFirstMeetingCombMass.lean:95:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (state (rootRepresentation N s)).genealogy
+    ((UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root ↑s).ancestor x)
+in the target expression
+  hasBad b ((state (rootRepresentation N s)).genealogy ((state s).ancestor x))
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : DecidableEq V
+inst✝⁶ : DecidableEq E
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq Copy
+inst✝¹ : Fintype Copy
+inst✝ : Nonempty Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+s : Code N sample
+b x : Copy
+as : List Copy
+hbad : hasBad b ((state s).genealogy ((state s).ancestor x))
+⊢ hasBad b ((state (rootRepresentation N s)).genealogy ((state s).ancestor x))
+G4ActualFirstMeetingCombMass.lean:97:8: error(lean.unknownIdentifier): Unknown identifier `tsum_eq_zero`
+G4ActualFirstMeetingCombMass.lean:98:8: error: No goals to be solved
+G4ActualFirstMeetingCombMass.lean:155:74: error: unexpected token ':='; expected ')', ',' or ':'
+'DotG4.ActualFirstMeetingCombMass.actual_cut_comb_row' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+G4ActualFirstMeetingCombMass.lean:191:14: error(lean.unknownIdentifier): Unknown constant `actual_fixed_bank_completed_comb_mass`

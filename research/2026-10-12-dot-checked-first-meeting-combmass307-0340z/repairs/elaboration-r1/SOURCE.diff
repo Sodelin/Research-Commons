@@ -1,0 +1,54 @@
+--- original
++++ elaboration-r1
+@@ -63,7 +63,7 @@
+     completionReader N r Finset.univ unrankedViewForest s {target} =
+       completionTreeLaw N r b (rootRepresentation N s) target := by
+   unfold completionReader
+-  simp only [← actual_unranked_view_forest, ← sourceUnrankedForest]
++  simp only [← actual_unranked_view_forest]
+   exact actual_completed_forest_singleton_mass N r (rootRepresentation N s)
+     (rootRepresentation_ancestral N s) b target
+ 
+@@ -79,8 +79,8 @@
+   apply actual_flat_specified_comb_probability N r (rootRepresentation N s) b as
+     (rootRepresentation_ancestral N s) _ hcover hnodup hb hnonempty
+   intro x
+-  rw [rootRepresentation_ancestor,
+-    rootRepresentation_genealogy N s (s.property.forest.ancestor_live x)]
++  have hl : (state s).ancestor x ∈ (state s).live := s.property.forest.ancestor_live x
++  rw [rootRepresentation_ancestor, rootRepresentation_genealogy N s hl]
+   exact hf x
+ 
+ lemma reader_obstructed_comb_mass (N : RootedBinary V E X) {sample : Copy → X}
+@@ -91,10 +91,10 @@
+   rw [reader_forest_mass N r s b, completionTreeLaw, PMF.map_apply]
+   have hrootbad : codeBad N b x (rootRepresentation N s) := by
+     unfold codeBad
+-    rw [rootRepresentation_ancestor,
+-      rootRepresentation_genealogy N s (s.property.forest.ancestor_live x)]
++    have hl : (state s).ancestor x ∈ (state s).live := s.property.forest.ancestor_live x
++    rw [rootRepresentation_ancestor, rootRepresentation_genealogy N s hl]
+     exact hbad
+-  apply tsum_eq_zero
++  apply ENNReal.tsum_eq_zero.mpr
+   intro d
+   by_cases hd : completionKernel N r (rootRepresentation N s) d = 0
+   · simp only [hd,ite_self]
+@@ -145,7 +145,7 @@
+     (hb : Sum.inr () ∉ as) (hnonempty : as ≠ []) :
+     (((sourceProgram N r (compiledCalendarProgram N C H gamma (fun _ => true))
+       (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
+-      (completionKernel N r)).map (fun d => sourceUnrankedForest (state d) Finset.univ)
++      (completionKernel N r)).map (fun d => sourceUnrankedForest (state d) Finset.univ))
+       {toUnranked (comb (Sum.inr ()) as)} =
+     ENNReal.ofReal (2^as.length /
+       ((Nat.factorial (as.length+1) : ℝ) * (Nat.factorial as.length : ℝ))) *
+@@ -179,7 +179,7 @@
+   · have hsupport := (PMF.mem_support_iff _ _).mpr hs
+     have hreader := actual_bank_first_meeting_completion N C H gamma r coin i j k
+       Finset.univ unrankedViewForest hsupport
+-    simp only [← actual_unranked_view_forest, ← sourceUnrankedForest] at hreader
++    simp only [← actual_unranked_view_forest] at hreader
+     rw [hreader, actual_cut_comb_row N C H gamma r coin i j k as hcover hnodup hb hnonempty hsupport]
+     rw [hcard]
+     by_cases he : liveCard s = Fintype.card (Fin k ⊕ Unit)

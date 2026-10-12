@@ -1,0 +1,12 @@
+--- r2
++++ r3
+@@ -181,6 +181,9 @@
+     have hreader := actual_bank_first_meeting_completion N C H gamma r coin i j k
+       Finset.univ unrankedViewForest hsupport
+     simp only [← actual_unranked_view_forest] at hreader
++    change ((sourceProgram N r (P.drop m) s).bind (completionKernel N r)).map
++      (fun d => sourceUnrankedForest (state d) Finset.univ) =
++      completionReader N r Finset.univ unrankedViewForest s at hreader
+     rw [hreader, actual_cut_comb_row N C H gamma r coin i j k as hcover hnodup hb hnonempty hsupport]
+     rw [hcard]
+     by_cases he : liveCard s = Fintype.card (Fin k ⊕ Unit)

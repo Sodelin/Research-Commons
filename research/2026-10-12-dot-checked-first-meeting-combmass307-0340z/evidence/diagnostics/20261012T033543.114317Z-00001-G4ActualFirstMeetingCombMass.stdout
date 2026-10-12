@@ -1,0 +1,68 @@
+G4ActualFirstMeetingCombMass.lean:41:0: warning: automatically included section variable(s) unused in theorem `DotG4.ActualFirstMeetingCombMass.flat_iff_full_card`:
+  [Nonempty Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Nonempty Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4ActualFirstMeetingCombMass.lean:184:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  PMF.map (fun d => unrankedForest (selectedView (state d) Finset.univ))
+    ((sourceProgram N r
+          (List.drop (bankFirstMeetingIndex N C H gamma r coin i j) (compiledCalendarProgram N C H gamma fun x => true))
+          s).bind
+      (completionKernel N r))
+in the target expression
+  (sourceProgram N r (List.take m P) start) s *
+      (PMF.map (fun d => sourceUnrankedForest (state d) Finset.univ)
+          ((sourceProgram N r (List.drop m P) s).bind (completionKernel N r)))
+        {toUnranked (comb (Sum.inr ()) as)} =
+    c * if liveCard start = liveCard s then (sourceProgram N r (List.take m P) start) s else 0
+
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : Fintype V
+inst✝¹ : Fintype E
+inst✝ : Fintype X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+gamma : Hybrid N → ↑unitInterval
+r : PositivePairRates E
+coin : Hybrid N → Bool
+i j : X
+k : ℕ
+as : List (Fin k ⊕ Unit)
+hcover : ∀ (x : Fin k ⊕ Unit), x = Sum.inr () ∨ x ∈ as
+hnodup : as.Nodup
+hb : Sum.inr () ∉ as
+hnonempty : as ≠ []
+P : List (ProgramStep N) := compiledCalendarProgram N C H gamma fun x => true
+m : ℕ := bankFirstMeetingIndex N C H gamma r coin i j
+start : Code N (repeatedSample k i j) := initialCode N (repeatedSample k i j) (originalRegister N coin)
+c : ℝ≥0∞ := ENNReal.ofReal (2 ^ as.length / (↑(as.length + 1).factorial * ↑as.length.factorial))
+hc : CommonOnlyWord N (List.take m P)
+hcard : liveCard start = Fintype.card (Fin k ⊕ Unit)
+s : Code N (repeatedSample k i j)
+hs : ¬(sourceProgram N r (List.take m P) start) s = 0
+hsupport : s ∈ (sourceProgram N r (List.take m P) start).support
+hreader :
+  PMF.map (fun d => unrankedForest (selectedView (state d) Finset.univ))
+      ((sourceProgram N r
+            (List.drop (bankFirstMeetingIndex N C H gamma r coin i j)
+              (compiledCalendarProgram N C H gamma fun x => true))
+            s).bind
+        (completionKernel N r)) =
+    completionReader N r Finset.univ unrankedViewForest s
+⊢ (sourceProgram N r (List.take m P) start) s *
+      (PMF.map (fun d => sourceUnrankedForest (state d) Finset.univ)
+          ((sourceProgram N r (List.drop m P) s).bind (completionKernel N r)))
+        {toUnranked (comb (Sum.inr ()) as)} =
+    c * if liveCard start = liveCard s then (sourceProgram N r (List.take m P) start) s else 0
+'DotG4.ActualFirstMeetingCombMass.actual_cut_comb_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'DotG4.ActualFirstMeetingCombMass.actual_fixed_bank_completed_comb_mass' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
