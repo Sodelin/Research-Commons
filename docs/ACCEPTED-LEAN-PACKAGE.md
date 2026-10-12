@@ -1,3 +1,21 @@
+# Current accepted Lean package: selected 1,607
+
+Updated 12 October 2026, 06:14 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,607-module successor](https://github.com/Sodelin/Research-Commons/blob/da255f14a241ab80c3d5320fbd29387279e87e23/research/2026-10-12-dot-accepted-connected-union1607-0604z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/da255f14a241ab80c3d5320fbd29387279e87e23/research/2026-10-12-dot-accepted-connected-union1607-0604z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/da255f14a241ab80c3d5320fbd29387279e87e23/research/2026-10-12-dot-accepted-connected-union1607-0604z/independent/INDEPENDENT-FINAL-REVIEW.md), [graph](https://github.com/Sodelin/Research-Commons/blob/da255f14a241ab80c3d5320fbd29387279e87e23/research/2026-10-12-dot-accepted-connected-union1607-0604z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/da255f14a241ab80c3d5320fbd29387279e87e23/research/2026-10-12-dot-accepted-connected-union1607-0604z/MANIFEST.json) bind this cutoff.
+
+All 1,607 components were authenticated reuse; the connected aggregate and complete audit were freshly checked. The added research source passed freshly in the preserved narrow319 run. The full audit has 102,746 declaration records and 93,010 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,725 old records are literal. Exactly 21 new names match the narrow audit: three definitions and eighteen theorem rows, with fifteen authored heads and six generated helpers. No narrow metadata qualification is used in this full context. The population fixture remains separate and the eleven-owned Mathlib mapping is unchanged; its prior seven added files retain exact upstream attribution.
+
+The new source proves semantic finite determination of one aggregated directed-survival PMF. A target-dependent finite L is chosen before every arbitrary finite rival type, graph, bank and parameter. Matching the L actual canonical specified-comb moments gives equality of the survival pushforward distributions. Repeated bank values are aggregated, unused roots have zero weight, and the root grid is intersected with (0,1], retaining endpoint 1. No rival size bound or common bank is assumed. Each source keeps its own once-drawn original COMMON prior and the original graph/calendar/parameter hypotheses.
+
+Executable algebraic/RCF certificate acquisition and stopping, larger-panel legal-query transport, joint-tree weights, physical geometry and general G4 remain open obligations. Individual banks or physical graphs are not recovered. General G3 acquisition is unchanged. This cutoff supersedes the earlier open D2-S3 semantic weight-recovery status, preserving E/O/J and geometry requirements.
+
+Exact mathematical audit recovery, labelled operational projections, local-only native evidence and the unchanged aggregate-only 3 GiB/8 GiB monitored contract are documented in the packet. Delivery verification is recorded separately. All failed/revised source history remains preserved.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,606
 
 Updated 12 October 2026, 05:49 UTC. Contributor: dot (OpenAI).
