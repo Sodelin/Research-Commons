@@ -1,0 +1,37 @@
+--- build_aggregate1593.py
++++ build_aggregate1594.py
+@@ -1,9 +1,9 @@
+-"""Exact1593 aggregate-only target: all component compiler fallback rejected."""
++"""Exact1594 aggregate-only target: all component compiler fallback rejected."""
+ from pathlib import Path
+ import hashlib,json,sys,types,shutil
+ ROOT=Path(__file__).resolve().parents[1]
+ TARGET='current/connected'
+-GRAPH_SHA='669f2df7f769cdc4d06c6730a555ffeb9353e583a6f0b63ab37e597bf07bf864'
++GRAPH_SHA='13f632ae4ea7b9be2520627adc51351737b55cb26425c523cce9d356854e5b71'
+ STREAMED_SHA='748ea65d03736c89f6f868e431e00cdc9e21937273c227e9b5cc5c16a1e37ea1'
+ def require(x,msg):
+  if not x:raise ValueError(msg)
+@@ -19,18 +19,18 @@
+  raw=p.read_bytes();require(hashlib.sha256(raw).hexdigest()==digest,'streamed wrapper drift')
+  m=types.ModuleType('private_exact_narrow_streamed');m.__file__=str(p)
+  exec(compile(raw,str(p),'exec'),m.__dict__);return m
+-require(sha(ROOT/'DEPENDENCY-GRAPH.json')==GRAPH_SHA,'exact1593 graph required')
++require(sha(ROOT/'DEPENDENCY-GRAPH.json')==GRAPH_SHA,'exact1594 graph required')
+ graph=json.loads((ROOT/'DEPENDENCY-GRAPH.json').read_bytes())
+ require(TARGET in graph['targets'],'exact current target required')
+ mods=graph['targets'][TARGET]['modules']
+-require(len(mods)==1593,'exact1593 graph required')
++require(len(mods)==1594,'exact1594 graph required')
+ streamed=load(ROOT/'scripts/build_streamed_audit.py',STREAMED_SHA)
+ require(len(streamed.desktop.auth.original.OWNED_MATHLIB)==4,'full four-owned namespace required')
+ class AggregateOnlyBuilder(streamed.StreamedAuditBuilder):
+  def __init__(self):
+   super().__init__();self.narrow_invocations=0
+-  streamed.save(self.run/'AGGREGATE1593-PINS.json',{'wrapper_sha256':sha(Path(__file__)),'graph_sha256':GRAPH_SHA,'target':TARGET,'fresh_component_allowlist':{},'prerequisite_compile_fallback':'REJECTED_BEFORE_INVOCATION','owned_mathlib_modules':sorted(streamed.desktop.auth.original.OWNED_MATHLIB),'accepted_four_owned_namespace_retained':True,'max_fresh_invocations':2,'inherited_streamed_wrapper_sha256':STREAMED_SHA,'compiler_memory_time_kernel_import_native_audit_checks_unchanged':True})
+-  shutil.copyfile(Path(__file__),self.run/'AGGREGATE1593-WRAPPER.py')
++  streamed.save(self.run/'AGGREGATE1594-PINS.json',{'wrapper_sha256':sha(Path(__file__)),'graph_sha256':GRAPH_SHA,'target':TARGET,'fresh_component_allowlist':{},'prerequisite_compile_fallback':'REJECTED_BEFORE_INVOCATION','owned_mathlib_modules':sorted(streamed.desktop.auth.original.OWNED_MATHLIB),'accepted_four_owned_namespace_retained':True,'max_fresh_invocations':2,'inherited_streamed_wrapper_sha256':STREAMED_SHA,'compiler_memory_time_kernel_import_native_audit_checks_unchanged':True})
++  shutil.copyfile(Path(__file__),self.run/'AGGREGATE1594-WRAPPER.py')
+  def invoke(self,name,source,obj,imports,context,seconds,memory,kind):
+   require(allowed_invocation(name,sha(source),obj,seconds,memory,kind),'Aggregate-only target refuses prerequisite rebuild or unapproved invocation: '+name)
+   require(self.narrow_invocations<2,'aggregate-only invocation count exceeded')
