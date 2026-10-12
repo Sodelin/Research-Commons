@@ -1,0 +1,16 @@
+--- candidate-1153z/G4WholeProfileDetermination.lean
++++ revision1/G4WholeProfileDetermination.lean
+@@ -2813,7 +2813,12 @@
+       ⟨Multiset.mem_toFinset.mpr ((Polynomial.mem_roots hne).mpr (hroots a)),hx a⟩
+   · intro ι' _ p' hp' x' hx' hmatch
+     apply finiteBank_certificate_restricts p' hp' x' hx' L c hne hnonneg
+-    simpa only [hmatch] using hzero
++    calc
++      _ = ∑ k ∈ momentLevels L, c k * finiteBankMoment p x k := by
++        apply Finset.sum_congr rfl
++        intro k hk
++        rw [hmatch k hk]
++      _ = 0 := hzero
+ 
+ end FiniteBankGridCertificates
+ 

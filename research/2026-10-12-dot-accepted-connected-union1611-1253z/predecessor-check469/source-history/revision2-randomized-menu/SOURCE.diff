@@ -1,0 +1,308 @@
+--- revision1/G4WholeProfileDetermination.lean
++++ revision2-randomized-menu/G4WholeProfileDetermination.lean
+@@ -12,7 +12,7 @@
+ asymptotic-ratio criterion is classical Teicher–Chandra mixture theory.
+ The complete proposed consumer is present, including target-first finite
+ legal-query determination of whole normalized-tree mixture laws for fixed
+-original COMMON mask rows. Every declaration remains UNCOMPILED pending
++original COMMON rows, including supplied joint randomized configurations. Every declaration remains UNCOMPILED pending
+ independent exact-source review and separately admitted bounded verification.
+ -/
+ namespace DotG4.WholeProfileDetermination
+@@ -2955,6 +2955,109 @@
+ 
+ end FiniteTreeMixtures
+ 
++section FinitePositiveSupport
++open DotG4.ActualSparseCertificateExistence
++variable {ι : Type*} [Fintype ι]
++
++/-- Restriction removes only zero-mass atoms and never renormalizes a positive atom. -/
++noncomputable def positiveSupportPMF (p : PMF ι) : PMF {a : ι // p a ≠ 0} :=
++  PMF.ofFintype (fun a => p a.val) (by
++    rw [← Finset.sum_subtype (Finset.univ.filter (fun a => p a ≠ 0))
++      (fun a => by simp) (fun a => p a)]
++    have hs : (∑ a ∈ Finset.univ.filter (fun a => p a ≠ 0), p a) = ∑ a, p a := by
++      rw [Finset.sum_filter]
++      apply Finset.sum_congr rfl
++      intro a _
++      by_cases h : p a = 0 <;> simp [h]
++    rw [hs,← tsum_fintype]
++    exact p.tsum_coe)
++
++lemma positiveSupportPMF_positive (p : PMF ι) (a : {a : ι // p a ≠ 0}) :
++    0 < (positiveSupportPMF p a).toReal :=
++  ENNReal.toReal_pos a.property (p.apply_ne_top a.val)
++
++lemma positiveSupportPMF_sum (p : PMF ι) (f : ι → ℝ) :
++    (∑ a : {a : ι // p a ≠ 0}, (positiveSupportPMF p a).toReal * f a.val) =
++      ∑ a, (p a).toReal * f a := by
++  change (∑ a : {a : ι // p a ≠ 0}, (p a.val).toReal * f a.val) = _
++  rw [← Finset.sum_subtype (Finset.univ.filter (fun a => p a ≠ 0))
++    (fun a => by simp) (fun a => (p a).toReal * f a),Finset.sum_filter]
++  apply Finset.sum_congr rfl
++  intro a _
++  by_cases h : p a = 0 <;> simp [h]
++
++lemma positiveSupportPMF_map {β : Type*} (p : PMF ι) (f : ι → β) :
++    (positiveSupportPMF p).map (fun a => f a.val) = p.map f := by
++  apply PMF.ext
++  intro b
++  apply (ENNReal.toReal_eq_toReal_iff' (PMF.apply_ne_top _ _) (PMF.apply_ne_top _ _)).mp
++  simp only [PMF.map,UnifiedLean.Source.SourcePoissonExponential.bind_probability_real,tsum_fintype]
++  exact positiveSupportPMF_sum p (fun a => (PMF.pure (f a) b).toReal)
++
++/-- The target-uniform theorem permits arbitrary finite rival PMFs, including
++zero weights. Its support reduction is internal and preserves every readout. -/
++theorem finite_tree_mixture_finite_determination_allow_zero
++    {V E X : Type*} [Fintype V] [Fintype E] [Fintype X]
++    [DecidableEq V] [DecidableEq E] [DecidableEq X]
++    (N : RootedBinary V E X) (r : PositivePairRates E)
++    (hn : 2 ≤ Fintype.card X) [Nontrivial X] (x0 : X)
++    (p : PMF ι) (tree : ι → CladeWeights X) (hlam : ∀ a, LaminarWeights (tree a)) :
++    ∃ L : X × X → Nat, (∀ ij, 0 < L ij) ∧
++      ∃ v : X → Nat, ∃ hv : ∀ x, 0 < v x, ∃ T : Finset Nat,
++        ∀ (ι' : Type*) [Fintype ι'] (p' : PMF ι') (tree' : ι' → CladeWeights X),
++          (∀ a, LaminarWeights (tree' a)) →
++          (∀ i j k, k ∈ momentLevels (L (i,j)) →
++            finiteBankMoment p' (fun a => directedSurvival (tree' a) i j) k =
++              finiteBankMoment p (fun a => directedSurvival (tree a) i j) k) →
++          (∀ k ∈ T, treeBankProfile p' tree' v hv x0 k = treeBankProfile p tree v hv x0 k) →
++          p'.map tree' = p.map tree := by
++  obtain ⟨L,hL,v,hv,T,hdet⟩ := finite_tree_mixture_finite_determination N r hn x0 p tree hlam
++  refine ⟨L,hL,v,hv,T,?_⟩
++  intro ι' _ p' tree' hlam' hm hp
++  have he := hdet {a : ι' // p' a ≠ 0} (positiveSupportPMF p')
++    (positiveSupportPMF_positive p') (fun a => tree' a.val) (fun a => hlam' a.val)
++    (by
++      intro i j k hk
++      change (∑ a : {a : ι' // p' a ≠ 0}, (positiveSupportPMF p' a).toReal *
++        directedSurvival (tree' a.val) i j ^ (Nat.choose k 2)) = _
++      rw [positiveSupportPMF_sum]
++      exact hm i j k hk)
++    (by
++      intro k hk
++      change (∑ a : {a : ι' // p' a ≠ 0}, (positiveSupportPMF p' a).toReal *
++        allocationProfile (tree' a.val) v hv x0 k) = _
++      rw [positiveSupportPMF_sum]
++      exact hp k hk)
++  rw [positiveSupportPMF_map] at he
++  exact he
++
++end FinitePositiveSupport
++
++section JointConfiguration
++variable {A B : Type*} [Fintype A] [Fintype B]
++
++/-- One whole configuration draw followed by one bank draw. Correlations
++between forcing sites live inside p, rather than products of site marginals. -/
++noncomputable def configurationBankPMF (p : PMF A) (q : PMF B) : PMF (A × B) :=
++  p.bind (fun a => q.map (fun b => (a,b)))
++
++lemma configurationBankPMF_apply (p : PMF A) (q : PMF B) (a : A) (b : B) :
++    configurationBankPMF p q (a,b) = p a * q b := by
++  simp [configurationBankPMF,PMF.bind_apply,PMF.map_apply,tsum_fintype,Prod.mk.injEq]
++
++lemma configurationBankPMF_sum (p : PMF A) (q : PMF B) (f : A × B → ℝ) :
++    (∑ z, (configurationBankPMF p q z).toReal * f z) =
++      ∑ a, (p a).toReal * ∑ b, (q b).toReal * f (a,b) := by
++  rw [Fintype.sum_prod_type]
++  simp only [configurationBankPMF_apply,ENNReal.toReal_mul,Finset.mul_sum,mul_assoc]
++
++lemma configurationBankPMF_bind {D : Type*} (p : PMF A) (q : PMF B)
++    (f : A × B → PMF D) :
++    (configurationBankPMF p q).bind f = p.bind (fun a => q.bind (fun b => f (a,b))) := by
++  simp only [configurationBankPMF,PMF.bind_bind,PMF.bind_map,Function.comp_def]
++
++end JointConfiguration
++
+ section ActualCoordinates
+ variable {V E X : Type*}
+ variable [Fintype V] [Fintype E] [Fintype X]
+@@ -3293,4 +3396,186 @@
+ 
+ end OriginalCommonFiniteDetermination
+ 
++
++section RandomizedCommonRows
++variable {V E X Config : Type*}
++variable [Fintype V] [Fintype E] [Fintype X] [Fintype Config]
++variable [DecidableEq V] [DecidableEq E] [DecidableEq X]
++open UnifiedLean.Source.NativeIndependentPairMixture UnifiedLean.Source.OriginalFixedIDControls
++open UnifiedLean.Source.SourceNaturalInitialization UnifiedLean.Source.SourcePoissonExponential
++open GProgram.G2.LiteralTimedObservationPruning DotG4.ActualLegalPanelComb
++open DotG34.SpecifiedCombEvent DotG4.ActualSparseCertificateExistence
++
++/-- The supplied randomized experiment draws its whole forcing configuration
++once, then runs that original-ID intervention with the original COMMON bank.
++The same configuration PMF is used for every copy allocation in the row. -/
++noncomputable def randomizedFullForestLaw {Copy : Type*} [Fintype Copy] [DecidableEq Copy]
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) (sample : Copy → X) :
++    PMF (Finset (UnrankedTree Copy)) :=
++  ν.bind (fun cfg => controlledFullForestLaw N C H p r (masks cfg) sample)
++
++noncomputable def randomizedTreeLaw
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) : PMF (CladeWeights X) :=
++  (configurationBankPMF ν (originalRegisterMeasure N p).toPMF).map
++    (fun z => maskedNormalizedTree N C H r (masks z.1) z.2)
++
++/-- Source equality for the mixed row, with deterministic summands only inside
++the proof. No separate component observation is among the hypotheses. -/
++lemma randomizedFullForestLaw_tree_average {Copy : Type*} [Fintype Copy] [DecidableEq Copy]
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) (sample : Copy → X) :
++    randomizedFullForestLaw N C H p r ν masks sample =
++      (configurationBankPMF ν (originalRegisterMeasure N p).toPMF).bind
++        (fun z => ordinaryCompletedTreeLaw (maskedNormalizedTree N C H r (masks z.1) z.2) sample) := by
++  rw [configurationBankPMF_bind]
++  unfold randomizedFullForestLaw
++  congr 1
++  funext cfg
++  exact controlledFullForestLaw_tree_average N C H p r (masks cfg) sample
++
++noncomputable def randomizedLegalCombMoment
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) (i j : X) (k : Nat) : ℝ :=
++  (((randomizedFullForestLaw N C H p r ν masks (paddedSample k i j)).map
++    (pruneForest (paddedKeep k)))
++      {toUnranked (comb (paddedB (X := X) k).val ((paddedA k).map Subtype.val))}).toReal /
++        combCoefficient k
++
++noncomputable def randomizedAllocationProbability
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N)
++    (v : X → Nat) (hv : ∀ x, 0 < v x) (x0 : X) (k : Nat) : ℝ :=
++  (randomizedFullForestLaw N C H p r ν masks (allocationSample (v := v) (scale := k+1))
++    {toUnranked (comb (allocationRep v hv (k+1) (Nat.succ_pos _) x0)
++      (allocationCombTail v hv (k+1) (Nat.succ_pos _) x0))}).toReal
++
++lemma randomizedLegalCombMoment_eq_internal_average
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) (i j : X) (k : Nat) :
++    randomizedLegalCombMoment N C H p r ν masks i j k =
++      ∑ cfg, (ν cfg).toReal * controlledLegalCombMoment N C H p r (masks cfg) i j k := by
++  simp only [randomizedLegalCombMoment,randomizedFullForestLaw,PMF.map_bind,
++    bind_probability_real,tsum_fintype,Finset.sum_div,controlledLegalCombMoment,mul_div_assoc]
++
++lemma actual_randomized_legal_moment
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) (i j : X) (k : Nat) (hk : 0 < k) :
++    randomizedLegalCombMoment N C H p r ν masks i j k =
++      finiteBankMoment (configurationBankPMF ν (originalRegisterMeasure N p).toPMF)
++        (fun z => directedSurvival (maskedNormalizedTree N C H r (masks z.1) z.2) i j) k := by
++  rw [randomizedLegalCombMoment_eq_internal_average]
++  simp_rw [actual_controlled_legal_moment N C H p r _ i j k hk]
++  exact (configurationBankPMF_sum ν (originalRegisterMeasure N p).toPMF
++    (fun z => directedSurvival (maskedNormalizedTree N C H r (masks z.1) z.2) i j ^ k.choose 2)).symm
++
++lemma randomizedAllocationProbability_eq_profile
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N)
++    (v : X → Nat) (hv : ∀ x, 0 < v x) (x0 : X) (k : Nat) :
++    randomizedAllocationProbability N C H p r ν masks v hv x0 k =
++      treeBankProfile (configurationBankPMF ν (originalRegisterMeasure N p).toPMF)
++        (fun z => maskedNormalizedTree N C H r (masks z.1) z.2) v hv x0 k := by
++  rw [randomizedAllocationProbability,randomizedFullForestLaw_tree_average,
++    bind_probability_real,tsum_fintype]
++  rfl
++
++/-- Target-uniform finite determination from the randomized row's observations
++alone. The supplied joint forcing law may have dependent sites and zero-mass
++configurations. Both target and rival draw it once, unchanged across queries;
++the original natural bank is drawn once after that configuration. -/
++theorem actual_randomized_common_row_finite_tree_law_determination
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (ν : PMF Config) (masks : Config → OriginalMask N) (hn : 4 ≤ Fintype.card X) :
++    ∃ L : X × X → Nat, (∀ ij, 0 < L ij) ∧
++      ∃ v : X → Nat, ∃ hv : ∀ x, 0 < v x, ∃ x0 : X, ∃ T : Finset Nat,
++        ∀ (V' E' Config' : Type*) [Fintype V'] [Fintype E'] [Fintype Config']
++          [DecidableEq V'] [DecidableEq E']
++          (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')
++          (p' : HybridProbabilities N') (r' : PositivePairRates E')
++          (ν' : PMF Config') (masks' : Config' → OriginalMask N'),
++          (∀ i j k, k ∈ momentLevels (L (i,j)) →
++            randomizedLegalCombMoment N' C' H' p' r' ν' masks' i j k =
++              randomizedLegalCombMoment N C H p r ν masks i j k) →
++          (∀ k ∈ T, randomizedAllocationProbability N' C' H' p' r' ν' masks' v hv x0 k =
++            randomizedAllocationProbability N C H p r ν masks v hv x0 k) →
++          randomizedTreeLaw N' C' H' p' r' ν' masks' = randomizedTreeLaw N C H p r ν masks := by
++  letI : Nontrivial X := Fintype.one_lt_card_iff_nontrivial.mp (by omega)
++  let x0 : X := Classical.choice (inferInstance : Nonempty X)
++  obtain ⟨L,hL,v,hv,T,hdet⟩ := finite_tree_mixture_finite_determination_allow_zero N r
++    (by omega) x0 (configurationBankPMF ν (originalRegisterMeasure N p).toPMF)
++    (fun z => maskedNormalizedTree N C H r (masks z.1) z.2)
++    (fun z => maskedNormalizedTree_laminar N C H r (masks z.1) z.2)
++  refine ⟨L,hL,v,hv,x0,T,?_⟩
++  intro V' E' Config' _ _ _ _ _ N' C' H' p' r' ν' masks' hm hp
++  apply hdet (Config' × CommonSeed N')
++    (configurationBankPMF ν' (originalRegisterMeasure N' p').toPMF)
++    (fun z => maskedNormalizedTree N' C' H' r' (masks' z.1) z.2)
++    (fun z => maskedNormalizedTree_laminar N' C' H' r' (masks' z.1) z.2)
++  · intro i j k hk
++    rw [← actual_randomized_legal_moment N' C' H' p' r' ν' masks' i j k
++        (momentLevels_positive _ k hk),
++      ← actual_randomized_legal_moment N C H p r ν masks i j k (momentLevels_positive _ k hk)]
++    exact hm i j k hk
++  · intro k hk
++    rw [← randomizedAllocationProbability_eq_profile N' C' H' p' r' ν' masks',
++      ← randomizedAllocationProbability_eq_profile N C H p r ν masks]
++    exact hp k hk
++
++end RandomizedCommonRows
++
++section RandomizedFiniteMenu
++variable {V E X Row : Type*}
++variable [Fintype V] [Fintype E] [Fintype X] [Fintype Row]
++variable [DecidableEq V] [DecidableEq E] [DecidableEq X]
++open UnifiedLean.Source.NativeIndependentPairMixture UnifiedLean.Source.OriginalFixedIDControls
++open DotG4.ActualSparseCertificateExistence
++
++/-- The original finite-menu contract: each row supplies one entire joint
++configuration law, including shared forcing bits. Only that mixed row is
++observed. The conclusion is rowwise recovery of its whole normalized-tree
++mixture; it does not introduce a cross-experiment genealogy coupling. -/
++theorem actual_finite_randomized_common_menu_tree_laws
++    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)
++    (p : HybridProbabilities N) (r : PositivePairRates E)
++    (Config : Row → Type*) [∀ row, Fintype (Config row)]
++    (ν : ∀ row, PMF (Config row)) (masks : ∀ row, Config row → OriginalMask N)
++    (hn : 4 ≤ Fintype.card X) :
++    ∃ L : Row → X × X → Nat, (∀ row ij, 0 < L row ij) ∧
++      ∃ v : Row → X → Nat, ∃ hv : ∀ row x, 0 < v row x,
++      ∃ x0 : Row → X, ∃ T : Row → Finset Nat,
++        ∀ (V' E' : Type*) [Fintype V'] [Fintype E'] [DecidableEq V'] [DecidableEq E']
++          (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')
++          (p' : HybridProbabilities N') (r' : PositivePairRates E')
++          (Config' : Row → Type*) [∀ row, Fintype (Config' row)]
++          (ν' : ∀ row, PMF (Config' row)) (masks' : ∀ row, Config' row → OriginalMask N'),
++          (∀ row i j k, k ∈ momentLevels (L row (i,j)) →
++            randomizedLegalCombMoment N' C' H' p' r' (ν' row) (masks' row) i j k =
++              randomizedLegalCombMoment N C H p r (ν row) (masks row) i j k) →
++          (∀ row k, k ∈ T row →
++            randomizedAllocationProbability N' C' H' p' r' (ν' row) (masks' row)
++              (v row) (hv row) (x0 row) k =
++            randomizedAllocationProbability N C H p r (ν row) (masks row)
++              (v row) (hv row) (x0 row) k) →
++          ∀ row, randomizedTreeLaw N' C' H' p' r' (ν' row) (masks' row) =
++            randomizedTreeLaw N C H p r (ν row) (masks row) := by
++  have h row := actual_randomized_common_row_finite_tree_law_determination
++    N C H p r (ν row) (masks row) hn
++  choose L hL v hv x0 T hdet using h
++  refine ⟨L,hL,v,hv,x0,T,?_⟩
++  intro V' E' _ _ _ _ N' C' H' p' r' Config' _ ν' masks' hm hp row
++  exact hdet row V' E' (Config' row) N' C' H' p' r' (ν' row) (masks' row) (hm row) (hp row)
++
++end RandomizedFiniteMenu
++
+ end DotG4.WholeProfileDetermination

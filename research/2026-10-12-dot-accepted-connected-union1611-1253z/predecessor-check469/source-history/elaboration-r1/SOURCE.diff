@@ -1,0 +1,485 @@
+--- revision3-full-responses
++++ elaboration-r1
+@@ -24,7 +24,8 @@
+ open UnifiedLean.Source.FiniteGenealogyEncoding
+ open DotG4.WeightedOrdinaryTreeLaw DotG4.ActualSelectedPathExposure
+ open G1ActualDisplayedTreeFamily G1UnrankedTreeClusterUniqueness
+-open scoped Classical BigOperators NNReal
++open scoped Classical BigOperators NNReal ENNReal
++open GProgram.G5.AttainedChronology UnifiedLean.Source.SourceInitializedCalendar
+ 
+ section Coordinates
+ variable {X : Type*} [Fintype X] [DecidableEq X]
+@@ -104,6 +105,7 @@
+ lemma treeClusters_laminar (T : Genealogy X) (hT : T.WellLabelled)
+     (A B : Finset X) (hA : A ∈ treeClusters T) (hB : B ∈ treeClusters T) :
+     A ⊆ B ∨ B ⊆ A ∨ Disjoint A B := by
++  cases Subsingleton.elim (inferInstance : DecidableEq X) (Classical.decEq X)
+   induction T generalizing A B with
+   | leaf x =>
+     have ha : A = {x} := by simpa [treeClusters] using hA
+@@ -182,7 +184,7 @@
+         simp [hBA,hij,hab]
+       · simp only [hBA,hij,if_false,zero_add]
+         split_ifs <;> positivity
+-    · have hz : w B = 0 := le_antisymm (le_of_not_gt hB) (zero_le _)
++    · have hz : w B = 0 := le_antisymm (le_of_not_gt hB) zero_le
+       simp [hz]
+ 
+ lemma positive_clade_is_covariance_threshold (w : CladeWeights X)
+@@ -244,7 +246,7 @@
+       · intro h
+         exact ⟨h hA'.2.1,h hA'.2.2⟩
+     simp only [he]
+-  · have hz : w D = 0 := le_antisymm (le_of_not_gt hd) (zero_le _)
++  · have hz : w D = 0 := le_antisymm (le_of_not_gt hd) zero_le
+     simp [hz]
+ 
+ lemma nonempty_positive_threshold_is_clade (w : CladeWeights X)
+@@ -282,7 +284,8 @@
+       apply Finset.nonempty_iff_ne_empty.mpr
+       intro hz
+       simpa [hz,hu.1] using hp
+-    obtain ⟨i,hi⟩ := hne
++    have hne_copy := hne
++    obtain ⟨i,hi⟩ := hne_copy
+     have hh : 0 < ancestorExposure u A :=
+       lt_of_lt_of_le (show 0 < (u A : ℝ) from hp) (weight_le_ancestorExposure u A)
+     have ht : covarianceThreshold u' i (ancestorExposure u A) = A := by
+@@ -303,7 +306,8 @@
+     apply Finset.nonempty_iff_ne_empty.mpr
+     intro h
+     simpa [h,hw.1] using ha
+-  obtain ⟨i,hi⟩ := hne
++  have hne_copy := hne
++  obtain ⟨i,hi⟩ := hne_copy
+   obtain ⟨j,hj,hmin⟩ := Finset.exists_min_image A (fun j => sharedExposure w i j) hne
+   have hp : 0 < sharedExposure w i j :=
+     lt_of_lt_of_le (lt_of_lt_of_le (show 0 < (w A : ℝ) from ha)
+@@ -375,8 +379,8 @@
+       exact NNReal.coe_injective (add_left_cancel hh)
+     · have ha' : ¬ 0 < w' A := fun h => ha
+         ((covariance_eq_positive_support w w' hw hw' he A).mpr h)
+-      exact (le_antisymm (le_of_not_gt ha) (zero_le _)).trans
+-        (le_antisymm (le_of_not_gt ha') (zero_le _)).symm
++      exact (le_antisymm (le_of_not_gt ha) zero_le).trans
++        (le_antisymm (le_of_not_gt ha') zero_le).symm
+ 
+ /-- Every row has a zero shared-height entry outside its maximal positive
+ proper clade. No common-stem parameter survives in this normalized carrier. -/
+@@ -459,7 +463,7 @@
+     intro i j
+     exact congrArg Subtype.val (congrFun he (i,j))
+   letI : Finite D := Finite.of_injective f hf
+-  exact Set.toFinite _
++  exact @Set.toFinite _ {w : CladeWeights X | InDirectedGrid grid w} (by change Finite D; infer_instance)
+ 
+ lemma rootExposure_eq_shared_self (w : CladeWeights X) (i : X) :
+     rootExposure w i = sharedExposure w i i := by
+@@ -516,8 +520,9 @@
+     ∃ v : X → Nat, (∀ i, 0 < v i) ∧
+       Set.InjOn (fun w => quadraticExposure w (fun i => (v i : ℝ))) (H : Set (CladeWeights X)) := by
+   let P : MvPolynomial X ℝ :=
+-    ∏ ab ∈ H.offDiag, quadraticPolynomial ab.1 - quadraticPolynomial ab.2
++    ∏ ab ∈ H.offDiag, (quadraticPolynomial ab.1 - quadraticPolynomial ab.2)
+   have hp : P ≠ 0 := by
++    dsimp only [P]
+     apply Finset.prod_ne_zero_iff.mpr
+     intro ab hab
+     have hm := Finset.mem_offDiag.mp hab
+@@ -551,7 +556,8 @@
+   apply hfactor
+   simp only [map_sub,quadraticPolynomial_eval]
+   have hxv : x = fun i => ((v i+1 : Nat) : ℝ) := funext (fun i => (hv i).symm)
+-  rw [hxv,he,sub_self]
++  rw [hxv]
++  exact sub_eq_zero.mpr he
+ 
+ end Coordinates
+ 
+@@ -568,7 +574,8 @@
+ 
+ lemma goodMass_pure (s : S) (good : S → Prop) :
+     goodMass (PMF.pure s) good = if good s then 1 else 0 := by
+-  by_cases h : good s <;> simp [goodMass,h]
++  rw [goodMass,PMF.pure_map]
++  by_cases h : good s <;> simp [h]
+ 
+ lemma goodMass_bind {A : Type*} (p : PMF A) (K : A → PMF S) (good : S → Prop) :
+     goodMass (p.bind K) good = ∑' a, (p a).toReal * goodMass (K a) good := by
+@@ -616,8 +623,11 @@
+     (Real.exp (-(a : ℝ)))
+   have he : Real.exp (-(a : ℝ)) * Real.exp ((a : ℝ)*q) =
+       Real.exp ((a : ℝ)*(q-1)) := by rw [← Real.exp_add]; congr 1; ring
+-  simpa only [← Real.exp_eq_exp_ℝ,countPMF_real,mul_pow,he,div_eq_mul_inv,mul_assoc,mul_left_comm,mul_comm]
+-    using h
++  rw [← Real.exp_eq_exp_ℝ] at h
++  have hh : HasSum (fun n : Nat => (countPMF a n).toReal * q^n)
++      (Real.exp (-(a : ℝ)) * Real.exp ((a : ℝ)*q)) := by
++    simpa only [countPMF_real,mul_pow,div_eq_mul_inv,mul_assoc,mul_left_comm,mul_comm] using h
++  exact he ▸ hh
+ 
+ lemma killed_poisson_bound (K : S → PMF S) (R good : S → Prop)
+     (q : ℝ) (hq : 0 ≤ q)
+@@ -636,7 +646,7 @@
+   have hlow : Summable (fun n => (countPMF a n).toReal * goodMass (kernelIteration K n s) good) :=
+     Summable.of_nonneg_of_le (fun n => mul_nonneg ENNReal.toReal_nonneg (goodMass_nonnegative _ _))
+       hbound hup.summable
+-  exact (tsum_le_tsum hbound hlow hup.summable).trans_eq hup.tsum_eq
++  exact (hlow.tsum_le_tsum hbound hup.summable).trans_eq hup.tsum_eq
+ 
+ end KilledKernel
+ 
+@@ -752,6 +762,9 @@
+       (treeAnchor t) = t.val := by
+   have hl : treeAnchor t ∈ (forestRootState (E := E) N.root register F hF).live :=
+     Finset.mem_image.mpr ⟨t,ht,rfl⟩
++  change (UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root
++    (UnifiedLean.Source.FiniteSourceSnapshot.encodeSnapshot (forestRootState N.root register F hF)
++      (forestRootState_valid N.root register F hF))).genealogy (treeAnchor t) = _
+   rw [UnifiedLean.Source.FiniteSourceSnapshot.decode_encode_live_genealogy N.root
+     (forestRootState N.root register F hF) (forestRootState_valid N.root register F hF) hl]
+   simp only [forestRootState,forestOwner_anchor F hF t ht]
+@@ -797,7 +810,7 @@
+ labels covered. Child order is retained in F and compared by the accepted
+ child-swap quotient only in the prescribed prefix. -/
+ structure ForestFrontier (F : Forest Copy) (t : Genealogy Copy) (rest : List Copy) : Prop where
+-  prefix : ∃ g ∈ F, UnorderedEquiv g.val t
++  carried : ∃ g ∈ F, UnorderedEquiv g.val t
+   singleton : ∀ a ∈ rest, treeLeaf a ∈ F
+   cover : ∀ x, x ∈ t.leaves ∨ x ∈ rest
+   disjoint : ∀ a ∈ rest, a ∉ t.leaves
+@@ -807,7 +820,7 @@
+     (register : V → Bool) (F : Forest Copy) (hF : Partition F)
+     (t : Genealogy Copy) (rest : List Copy) (h : ForestFrontier F t rest) :
+     ∃ pref : Copy, CombFrontier (state (forestRootCode N sample register F hF)) t pref rest := by
+-  obtain ⟨g,hg,hgt⟩ := h.prefix
++  obtain ⟨g,hg,hgt⟩ := h.carried
+   refine ⟨treeAnchor g,?_,?_,?_,h.cover,h.disjoint,h.nodup⟩
+   · exact Finset.mem_image.mpr ⟨g,hg,rfl⟩
+   · simpa only [forestRootCode_genealogy_anchor N sample register F hF g hg] using hgt
+@@ -903,7 +916,7 @@
+ lemma forestFrontier_card (F : Forest Copy) (hF : Partition F)
+     (t : Genealogy Copy) (rest : List Copy) (h : ForestFrontier F t rest) :
+     F.card = rest.length+1 := by
+-  obtain ⟨g,hg,hgt⟩ := h.prefix
++  obtain ⟨g,hg,hgt⟩ := h.carried
+   have hnot : g ∉ rest.toFinset.image treeLeaf := by
+     rintro hm
+     obtain ⟨a,ha,he⟩ := Finset.mem_image.mp hm
+@@ -1294,7 +1307,7 @@
+     (hfront : ForestFrontier F (comb b (as.take k)) (as.drop k)) : k < n-1 := by
+   by_contra hlt
+   have hnk : n-1 ≤ k := Nat.le_of_not_gt hlt
+-  obtain ⟨g,hg,hgt⟩ := hfront.prefix
++  obtain ⟨g,hg,hgt⟩ := hfront.carried
+   apply hproper g hg
+   apply Finset.eq_univ_iff_forall.mpr
+   intro x
+@@ -1466,7 +1479,8 @@
+   have hD : 0 ≤ (Fintype.card (PaddedChoice Copy) : ℝ)⁻¹ := by positivity
+   have hm := mul_le_mul_of_nonneg_left
+     (sub_le_sub_right hs ((activeTrees F A).offDiag.card : ℝ)) hD
+-  linarith [hm]
++  simp only [div_eq_mul_inv] at *
++  nlinarith [hm]
+ 
+ lemma active_offDiag_le_padding (F : Forest Copy) (A : Finset Copy) :
+     (activeTrees F A).offDiag.card ≤ Fintype.card (PaddedChoice Copy) := by
+@@ -1516,7 +1530,7 @@
+   linarith
+ 
+ /-- Real polynomial form of the ordinary Kingman pair count. -/
+-def pairRatePolynomial (k : ℝ) : ℝ := k*(k-1)/2
++noncomputable def pairRatePolynomial (k : ℝ) : ℝ := k*(k-1)/2
+ 
+ lemma pairRatePolynomial_mono {a b : ℝ} (ha : 1 ≤ a) (hab : a ≤ b) :
+     pairRatePolynomial a ≤ pairRatePolynomial b := by
+@@ -1648,8 +1662,15 @@
+     intro G hG
+     by_cases hg : good G
+     · simp only [hg,ite_true,mul_one]
+-      exact cladeStep_good_row_rate_bound G hG.1 B good hg rmin (hrates G hG hg).2
+-        (combReachable_proper_pair_count N sample register b as n hlen G hG.1 hG.2.1 hG.2.2 hg hcover B)
++      apply cladeStep_good_row_rate_bound G hG.1 B good hg rmin (hrates G hG hg).2
++      have hc := combReachable_proper_pair_count N sample register b as n hlen G hG.1
++        hG.2.1 hG.2.2 hg hcover B
++      have he : ((activeTrees G B).offDiag.filter (fun p => good (pairAction G B p))) =
++          ((activeTrees G B).offDiag.filter (fun p => ¬forbiddenForest (comb b as) (pairAction G B p))) := by
++        ext p
++        simp only [Finset.mem_filter,good]
++      rw [he]
++      exact hc
+     · have hbad : forbiddenForest (comb b as) G := not_not.mp hg
+       have hz : goodMass (cladeStep B G) good = 0 := by
+         apply goodMass_zero_of_support
+@@ -1657,13 +1678,19 @@
+         obtain ⟨D,hD,hnot⟩ := hbad
+         exact hgH ⟨D,cladeStep_preserves_clade G B D hD hH,hnot⟩
+       simp only [hz,hg,ite_false,mul_zero,le_refl]
+-  have hbound := killed_poisson_bound (cladeStep B) R good q hq hinv hrow
++  have hbound := killed_poisson_bound (cladeStep B) R good q hq hinv
++    (by
++      intro G hG
++      by_cases hg : good G
++      · simpa only [hg,ite_true,mul_one] using hrow G hG
++      · simpa only [hg,ite_false,mul_zero] using hrow G hG)
+     (uniformizationRate (Copy := Copy)*t) F ⟨hF,hproper,hreach⟩ hgood
+   have hΛ : Λ ≠ 0 := ne_of_gt (show 0 < Λ from uniformizationRate_positive)
+   have he : ((uniformizationRate (Copy := Copy)*t : ℝ≥0) : ℝ)*(q-1) = -rmin*t+t := by
+     simp only [NNReal.coe_mul]
+     dsimp [q,Λ]
+-    field_simp
++    have hΛ' : (uniformizationRate (Copy := Copy) : ℝ) ≠ 0 := hΛ
++    field_simp [hΛ']
+     <;> ring
+   simpa only [cladeKernel,cladeIteration_eq_kernelIteration,he] using hbound
+ 
+@@ -1687,8 +1714,8 @@
+         _ ≤ (K s s).toReal * (kernelIteration K k s s).toReal :=
+           mul_le_mul_of_nonneg_left ih ENNReal.toReal_nonneg
+         _ ≤ ∑ d : S, (K s d).toReal * (kernelIteration K k d s).toReal :=
+-          Finset.single_le_sum (fun d _ => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg)
+-            (Finset.mem_univ s)
++          Finset.single_le_sum (f := fun d : S => (K s d).toReal * (kernelIteration K k d s).toReal)
++            (fun d _ => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg) (Finset.mem_univ s)
+ 
+ lemma poisson_diagonal_lower (K : S → PMF S) (a : ℝ≥0) (s : S) :
+     Real.exp ((a : ℝ)*((K s s).toReal-1)) ≤
+@@ -1703,8 +1730,8 @@
+     simpa only [one_pow,mul_one] using mul_le_mul_of_nonneg_left
+       (pmf_real_le_one (kernelIteration K k s) s) (ENNReal.toReal_nonneg : 0 ≤ (countPMF a k).toReal)
+   rw [← hl.tsum_eq]
+-  exact tsum_le_tsum (fun k => mul_le_mul_of_nonneg_left
+-    (kernelIteration_diagonal_lower K k s) ENNReal.toReal_nonneg) hl.summable hsum
++  exact hl.summable.tsum_le_tsum (fun k => mul_le_mul_of_nonneg_left
++    (kernelIteration_diagonal_lower K k s) ENNReal.toReal_nonneg) hsum
+ 
+ end NoMergerLowerBound
+ 
+@@ -1744,8 +1771,10 @@
+         simp only [legal_pairAction_ne F hF A p
+           ((legalPair_iff_mem_active_offDiag F hF A p).mpr hp),ite_false,zero_sub]
+       _ = _ := by simp
+-  rw [hz]
+-  ring
++  have ht : (∑ p ∈ (activeTrees F A).offDiag,
++      ((if pairAction F A p = F then (1 : ℝ) else 0)-1)) =
++      -((activeTrees F A).offDiag.card : ℝ) := hz
++  convert congrArg (fun z : ℝ => 1 + (Fintype.card (PaddedChoice Copy) : ℝ)⁻¹*z) ht using 1 <;> ring
+ 
+ lemma cladeKernel_diagonal_lower (F : Forest Copy) (hF : Partition F)
+     (A : Finset Copy) (t : ℝ≥0) :
+@@ -1794,8 +1823,9 @@
+             (le_of_lt (Real.exp_pos _)) ENNReal.toReal_nonneg
+         _ ≤ ∑ G : Forest Copy, (cladeKernel op.1 op.2 F G).toReal *
+             (forestProgram ops G F).toReal :=
+-          Finset.single_le_sum (fun G _ => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg)
+-            (Finset.mem_univ F)
++          Finset.single_le_sum (f := fun G : Forest Copy => (cladeKernel op.1 op.2 F G).toReal *
++            (forestProgram ops G F).toReal)
++            (fun G _ => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg) (Finset.mem_univ F)
+ 
+ noncomputable def programCombMass (ops : List (Finset Copy × ℝ≥0))
+     (F : Forest Copy) (target : Genealogy Copy) : ℝ :=
+@@ -1815,8 +1845,9 @@
+   rw [programCombMass_sum]
+   exact (mul_le_mul_of_nonneg_right (forestProgram_diagonal_lower ops F hF)
+     ENNReal.toReal_nonneg).trans
+-      (Finset.single_le_sum (fun G _ => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg)
+-        (Finset.mem_univ F))
++      (Finset.single_le_sum (f := fun G : Forest Copy => (forestProgram ops F G).toReal *
++          (completionCombMass G target).toReal)
++        (fun G _ => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg) (Finset.mem_univ F))
+ 
+ lemma initialForest_active_card (A : Finset Copy) :
+     (activeTrees initialForest A).card = A.card := by
+@@ -1876,7 +1907,7 @@
+         _ ≤ combCoefficient (l+s) * ((l+s+1 : Nat) : ℝ)^(2*s) := ih
+         _ ≤ (combCoefficient (l+(s+1)) * ((l+(s+1)+1 : Nat) : ℝ)^2) *
+             ((l+(s+1)+1 : Nat) : ℝ)^(2*s) :=
+-          mul_le_mul hstep hpow (by positivity) (by positivity)
++          mul_le_mul hstep hpow (by positivity) (by exact mul_nonneg (combCoefficient_pos _).le (by positivity))
+         _ = _ := by
+           rw [show 2*(s+1) = 2+2*s by omega,pow_add]
+           ring
+@@ -1961,7 +1992,7 @@
+           positiveCladeWord,List.filter_cons,ne_eq,hz,not_true_eq_false,decide_false,
+           Bool.false_eq_true,ite_false]
+         exact ih F
+-      · simp only [ordinaryCladeProgram,positiveCladeWord,List.filter_cons,hz,
++      · simp only [ordinaryCladeProgram,positiveCladeWord,List.filter_cons,ne_eq,hz,
+           not_false_eq_true,decide_true,ite_true,List.map_cons,forestProgram]
+         congr 1
+         funext G
+@@ -2049,7 +2080,13 @@
+       simp only [hz,hg,ite_false,mul_zero,le_refl]
+   rw [ordinaryCladeProgram_positiveWord]
+   simpa only [hgood,ite_true,mul_one] using
+-    forestProgram_goodMass_bound ops R good (compatibleCost n) hinv hrow F ⟨hF,hproper,hreach⟩
++    forestProgram_goodMass_bound ops R good (compatibleCost n) hinv
++      (by
++        intro op hop G hG
++        by_cases hg : good G
++        · simpa only [hg,ite_true,mul_one] using hrow op hop G hG
++        · simpa only [hg,ite_false,mul_zero] using hrow op hop G hG)
++      F ⟨hF,hproper,hreach⟩
+ 
+ end WholeWordCompatibleEstimate
+ 
+@@ -2221,7 +2258,7 @@
+         exact reachable_completion_coefficient_bound N sample r register b as n hn hsize hcover
+           G hstate.1 hstate.2.1 hstate.2.2)
+     apply hreader.trans
+-    apply mul_le_mul_of_nonneg_left _ (by positivity)
++    apply mul_le_mul_of_nonneg_left _ (mul_nonneg (combCoefficient_pos _).le (by positivity))
+     have hu := actual_word_compatible_mass_bound N sample register w hw (cladeOrder X)
+       b as n hn hlen hsize hcover hK initialForest initialForest_partition hp hr hg
+     rw [ordinaryCladeProgram_positiveWord] at hu
+@@ -2351,7 +2388,7 @@
+       scale * ∑ x ∈ A, v x := by
+   calc
+     _ = ∑ c : AllocationCopy v scale, if c.1 ∈ A then (1 : Nat) else 0 := by
+-      simp only [cladeCopySet,allocationSample,Finset.sum_boole]
++      simp only [cladeCopySet,allocationSample,Finset.sum_boole,Nat.cast_id]
+     _ = ∑ x : X, if x ∈ A then scale*v x else 0 := by
+       rw [Fintype.sum_sigma]
+       apply Finset.sum_congr rfl
+@@ -2383,8 +2420,10 @@
+   | nil => rfl
+   | cons A keys ih =>
+       by_cases hz : w A = 0
+-      · simp [positiveCladeWord,hz,ih]
+-      · simp [positiveCladeWord,hz,ih]
++      · simpa only [positiveCladeWord,List.filter_cons,ne_eq,hz,not_true_eq_false,decide_false,
++          Bool.false_eq_true,ite_false,List.map_cons,List.sum_cons,NNReal.coe_zero,mul_zero,zero_add] using ih
++      · simpa only [positiveCladeWord,List.filter_cons,ne_eq,hz,not_false_eq_true,decide_true,ite_true,
++          List.map_cons,List.sum_cons] using congrArg (fun z => f (cladeCopySet sample A)*(w A : ℝ)+z) ih
+ 
+ noncomputable def totalCladeWeight (w : CladeWeights X) : ℝ := ∑ A : Finset X, (w A : ℝ)
+ 
+@@ -2395,7 +2434,8 @@
+         (scale : ℝ)*linearExposure w (fun x => (v x : ℝ)))/2 := by
+   unfold fixedForestHazard
+   simp_rw [initialForest_active_card]
+-  rw [positiveWord_weighted_sum,cladeOrder_sum]
++  rw [positiveWord_weighted_sum w (allocationSample (v := v) (scale := scale))
++    (cladeOrder X) (fun B => pairRatePolynomial (B.card : ℝ)),cladeOrder_sum]
+   simp_rw [allocation_clade_card,Nat.cast_mul,Nat.cast_sum]
+   unfold quadraticExposure linearExposure
+   rw [Finset.mul_sum,Finset.mul_sum,← Finset.sum_sub_distrib,Finset.sum_div]
+@@ -2411,7 +2451,8 @@
+         (((n : ℝ)-2)+1/2)*(scale : ℝ)*linearExposure w (fun x => (v x : ℝ)) +
+         (1-((n : ℝ)-2)*((n : ℝ)-1)/2)*totalCladeWeight w := by
+   unfold compatibleCost
+-  rw [positiveWord_weighted_sum,cladeOrder_sum]
++  rw [positiveWord_weighted_sum w (allocationSample (v := v) (scale := scale))
++    (cladeOrder X) (fun B => -pairRatePolynomial ((B.card : ℝ)-((n : ℝ)-2))+1),cladeOrder_sum]
+   simp_rw [allocation_clade_card,Nat.cast_mul,Nat.cast_sum]
+   unfold quadraticExposure linearExposure totalCladeWeight
+   rw [Finset.mul_sum,Finset.mul_sum,Finset.mul_sum,← Finset.sum_add_distrib,← Finset.sum_add_distrib]
+@@ -2436,7 +2477,7 @@
+   have hbase := (Real.tendsto_pow_mul_exp_neg_atTop_nhds_zero d).comp hx
+   have hupper : Tendsto (fun k : Nat => S^d*Real.exp b *
+       (((k : ℝ)+1)^d*Real.exp (-((k : ℝ)+1)))) atTop (𝓝 0) := by
+-    simpa only [mul_zero] using hbase.const_mul (S^d*Real.exp b)
++    simpa only [mul_zero,Function.comp_apply] using hbase.const_mul (S^d*Real.exp b)
+   apply squeeze_zero' (Eventually.of_forall (fun k => by positivity)) _ hupper
+   filter_upwards [hx.eventually (eventually_ge_atTop ((a+1)/c))] with k hk
+   have hnonneg : 0 ≤ (k : ℝ)+1 := by positivity
+@@ -2513,7 +2554,7 @@
+   rw [allocation_lower_hazard,allocation_upper_exponent,hsize] at h
+   convert h using 1 <;>
+     simp only [allocationCoefficient,allocationProfile,lowerProfileExponent,upperProfileExponent,
+-      Nat.cast_add,Nat.cast_one] <;> ring
++      sample,b,as,Nat.cast_add,Nat.cast_one] <;> ring_nf
+ 
+ lemma allocationProfile_pos (N : RootedBinary V E X) (r : PositivePairRates E)
+     (w : CladeWeights X) (v : X → Nat) (hv : ∀ x, 0 < v x) (x0 : X) (k : Nat) :
+@@ -2702,6 +2743,7 @@
+     simp only [extendCatalogueCoefficients,dif_pos hw,Pi.add_apply]
+     ring
+   map_smul' a c := by
++    simp only [RingHom.id_apply,smul_eq_mul]
+     rw [Finset.mul_sum]
+     apply Finset.sum_congr rfl
+     intro w hw
+@@ -2849,7 +2891,10 @@
+   unfold treeBankWeight
+   apply Finset.sum_congr rfl
+   intro a _
+-  by_cases h : tree a = w <;> simp [PMF.pure_apply,h,eq_comm]
++  by_cases h : tree a = w
++  · simp [PMF.pure_apply,h]
++  · have h' : w ≠ tree a := Ne.symm h
++    simp [PMF.pure_apply,h,h']
+ 
+ lemma treeBankWeight_outside {ι : Type*} [Fintype ι]
+     (p : PMF ι) (tree : ι → CladeWeights X) (H : Finset (CladeWeights X))
+@@ -2969,8 +3014,8 @@
+       apply Finset.sum_congr rfl
+       intro a _
+       by_cases h : p a = 0 <;> simp [h]
+-    rw [hs,← tsum_fintype]
+-    exact p.tsum_coe)
++    rw [hs]
++    simpa only [tsum_fintype] using p.tsum_coe)
+ 
+ lemma positiveSupportPMF_positive (p : PMF ι) (a : {a : ι // p a ≠ 0}) :
+     0 < (positiveSupportPMF p a).toReal :=
+@@ -3020,13 +3065,13 @@
+       intro i j k hk
+       change (∑ a : {a : ι' // p' a ≠ 0}, (positiveSupportPMF p' a).toReal *
+         directedSurvival (tree' a.val) i j ^ (Nat.choose k 2)) = _
+-      rw [positiveSupportPMF_sum]
++      rw [positiveSupportPMF_sum p' (fun a => directedSurvival (tree' a) i j ^ k.choose 2)]
+       exact hm i j k hk)
+     (by
+       intro k hk
+       change (∑ a : {a : ι' // p' a ≠ 0}, (positiveSupportPMF p' a).toReal *
+         allocationProfile (tree' a.val) v hv x0 k) = _
+-      rw [positiveSupportPMF_sum]
++      rw [positiveSupportPMF_sum p' (fun a => allocationProfile (tree' a) v hv x0 k)]
+       exact hp k hk)
+   rw [positiveSupportPMF_map] at he
+   exact he
+@@ -3043,7 +3088,15 @@
+ 
+ lemma configurationBankPMF_apply (p : PMF A) (q : PMF B) (a : A) (b : B) :
+     configurationBankPMF p q (a,b) = p a * q b := by
+-  simp [configurationBankPMF,PMF.bind_apply,PMF.map_apply,tsum_fintype,Prod.mk.injEq]
++  rw [configurationBankPMF,PMF.bind_apply,tsum_fintype]
++  have hm (a' : A) : (q.map (fun b => (a',b))) (a,b) = if a = a' then q b else 0 := by
++    rw [PMF.map_apply,tsum_fintype]
++    by_cases ha : a = a'
++    · subst a'
++      simp
++    · simp [Prod.mk.injEq,ha]
++  simp only [hm,mul_ite,mul_zero]
++  simp
+ 
+ lemma configurationBankPMF_sum (p : PMF A) (q : PMF B) (f : A × B → ℝ) :
+     (∑ z, (configurationBankPMF p q z).toReal * f z) =
+@@ -3083,7 +3136,9 @@
+     (coin : CommonSeed N) : PositiveTreeWeights (weightedNormalize N C H r coin) := by
+   obtain ⟨T,hT,hw,hl⟩ := nonempty_root_pruning_tree_exists N C
+     (commonSwitching N H coin) Finset.univ Finset.univ_nonempty
+-  exact weightedNormalize_positiveTree_of_pruned N C H r coin T hT hw hl
++  apply weightedNormalize_positiveTree_of_pruned N C H r coin T hT
++  · convert hw using 1 <;> congr 1 <;> exact Subsingleton.elim _ _
++  · convert hl using 1 <;> congr 1 <;> exact Subsingleton.elim _ _
+ 
+ /-- Finite grouping only: the source clock/calendar identity is already checked
+ in actual_bank_cut_eq_selected_path. This lemma does not redo that telescope. -/
+@@ -3101,7 +3156,10 @@
+     by_cases hij : i ∈ A ∧ j ∉ A
+     · have ha : A ≠ ∅ := by intro h; simpa [h] using hij.1
+       have hu : A ≠ Finset.univ := by intro h; simpa [h] using hij.2
+-      simp [hij,weightedNormalize,ha,hu]
++      simp only [hij,ite_true,weightedNormalize,ha,hu,or_self,ite_false,NNReal.coe_sum,true_and]
++      apply Finset.sum_congr rfl
++      intro e _
++      by_cases he : edgeTaxa N C H coin e = A <;> simp [he]
+     · simp [hij]
+   unfold directedExposure
+   simp_rw [hterm]

@@ -1,0 +1,82 @@
+--- elaboration-r1
++++ elaboration-r2
+@@ -121,12 +121,12 @@
+           (Finset.mem_insert_of_mem ha))
+       · rcases Finset.mem_union.mp ha with ha | ha <;>
+           rcases Finset.mem_union.mp hb with hb | hb
+-        · exact ihl hT.1 A B ha hb
++        · exact ihl A B hT.1 ha hb
+         · exact Or.inr (Or.inr (hT.2.2.mono
+             (tree_cluster_subset_leaves l ha) (tree_cluster_subset_leaves r hb)))
+         · exact Or.inr (Or.inr (hT.2.2.symm.mono
+             (tree_cluster_subset_leaves r ha) (tree_cluster_subset_leaves l hb)))
+-        · exact ihr hT.2.1 A B ha hb
++        · exact ihr A B hT.2.1 ha hb
+ 
+ lemma positiveTreeWeights_laminar (w : CladeWeights X) (hw : PositiveTreeWeights w) :
+     LaminarWeights w := by
+@@ -840,6 +840,7 @@
+     (b : Copy) (target : Genealogy Copy) :
+     completionCombMass F target = completionTreeLaw N r b
+       (forestRootCode N sample register F hF) (toUnranked target) := by
++  letI : Nonempty Copy := ⟨b⟩
+   unfold completionCombMass
+   rw [ordinaryCompletion_eq_source_root N sample r register F hF]
+   exact actual_completed_forest_singleton_mass N r _
+@@ -1665,12 +1666,11 @@
+       apply cladeStep_good_row_rate_bound G hG.1 B good hg rmin (hrates G hG hg).2
+       have hc := combReachable_proper_pair_count N sample register b as n hlen G hG.1
+         hG.2.1 hG.2.2 hg hcover B
+-      have he : ((activeTrees G B).offDiag.filter (fun p => good (pairAction G B p))) =
+-          ((activeTrees G B).offDiag.filter (fun p => ¬forbiddenForest (comb b as) (pairAction G B p))) := by
+-        ext p
+-        simp only [Finset.mem_filter,good]
+-      rw [he]
+-      exact hc
++      apply le_trans _ hc
++      apply le_of_eq
++      apply congrArg Finset.card
++      ext p
++      simp only [Finset.mem_filter,good]
+     · have hbad : forbiddenForest (comb b as) G := not_not.mp hg
+       have hz : goodMass (cladeStep B G) good = 0 := by
+         apply goodMass_zero_of_support
+@@ -2079,7 +2079,7 @@
+         exact hgH ⟨D,cladeKernel_preserves_clade G (cladeCopySet sample A) D hD (w A) hH,hnot⟩
+       simp only [hz,hg,ite_false,mul_zero,le_refl]
+   rw [ordinaryCladeProgram_positiveWord]
+-  simpa only [hgood,ite_true,mul_one] using
++  simpa only [good,ops,hgood,not_false_eq_true,ite_true,mul_one] using
+     forestProgram_goodMass_bound ops R good (compatibleCost n) hinv
+       (by
+         intro op hop G hG
+@@ -2107,7 +2107,7 @@
+       (combCoefficient as.length * ((as.length+1 : Nat) : ℝ)^(2*(n-2))) *
+         (if ¬ forbiddenForest (comb b as) F then 1 else 0) := by
+   by_cases hg : ¬ forbiddenForest (comb b as) F
+-  · simp only [hg,ite_true,mul_one]
++  · simp only [hg,not_false_eq_true,ite_true,mul_one]
+     obtain ⟨pre,rest,has,hfront⟩ := combReachable_good_frontier b as F hreach hg
+     have hb : b ∈ (comb b pre).leaves := by rw [comb_leaves_eq]; exact Finset.mem_insert_self _ _
+     have he := forestFrontier_completion_probability N sample r register F hF b (comb b pre) rest hfront hb
+@@ -3291,6 +3291,7 @@
+     (controlledFullForestLaw N C H p r mask sample {toUnranked (comb b as)}).toReal =
+       combCoefficient as.length * finiteBankMoment (originalRegisterMeasure N p).toPMF
+         (fun coin => directedSurvival (maskedNormalizedTree N C H r mask coin) i j) as.length := by
++  letI : Nonempty Copy := ⟨b⟩
+   rw [controlledFullForestLaw,bind_probability_real,tsum_fintype]
+   unfold finiteBankMoment
+   rw [Finset.mul_sum]
+@@ -3306,8 +3307,10 @@
+     (fun d => sourceUnrankedForest (state d) Finset.univ)) {toUnranked (comb b as)} =
+       ENNReal.ofReal (combCoefficient as.length) *
+         (bankSurvival N C H p r (overrideBank N mask coin) i j)^(as.length.choose 2) at hm
+-  rw [hm,ENNReal.toReal_mul,ENNReal.toReal_ofReal (le_of_lt (combCoefficient_pos _)),ENNReal.toReal_pow,
+-    maskedNormalizedTree_survival N C H p r mask coin i j]
++  rw [hm,ENNReal.toReal_mul,ENNReal.toReal_ofReal (le_of_lt (combCoefficient_pos _)),ENNReal.toReal_pow]
++  dsimp only
++  rw [maskedNormalizedTree_survival N C H p r mask coin i j]
++  unfold DotG4.ActualObservableBankCertificate.realSurvival
+   ring
+ 
+ lemma controlled_full_panel_comb_real (N : RootedBinary V E X) (C : Calendar N.graph)

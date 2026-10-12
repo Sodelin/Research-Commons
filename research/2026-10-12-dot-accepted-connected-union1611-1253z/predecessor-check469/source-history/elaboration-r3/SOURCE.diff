@@ -1,0 +1,17 @@
+--- elaboration-r2
++++ elaboration-r3
+@@ -121,12 +121,12 @@
+           (Finset.mem_insert_of_mem ha))
+       · rcases Finset.mem_union.mp ha with ha | ha <;>
+           rcases Finset.mem_union.mp hb with hb | hb
+-        · exact ihl A B hT.1 ha hb
++        · exact ihl A B ha hb hT.1
+         · exact Or.inr (Or.inr (hT.2.2.mono
+             (tree_cluster_subset_leaves l ha) (tree_cluster_subset_leaves r hb)))
+         · exact Or.inr (Or.inr (hT.2.2.symm.mono
+             (tree_cluster_subset_leaves r ha) (tree_cluster_subset_leaves l hb)))
+-        · exact ihr A B hT.2.1 ha hb
++        · exact ihr A B ha hb hT.2.1
+ 
+ lemma positiveTreeWeights_laminar (w : CladeWeights X) (hw : PositiveTreeWeights w) :
+     LaminarWeights w := by

@@ -1,0 +1,1556 @@
+G4WholeProfileDetermination.lean:113:11: error: synthesized type class instance is not definitionally equal to expression inferred by typing rules, synthesized
+  fun a b => @Finset.decidableEq X inst✝ a b
+inferred
+  fun a b => @Finset.decidableEq X (fun a b => Classical.propDecidable (a = b)) a b
+G4WholeProfileDetermination.lean:116:13: error: synthesized type class instance is not definitionally equal to expression inferred by typing rules, synthesized
+  fun a b => @Finset.decidableEq X inst✝ a b
+inferred
+  fun a b => @Finset.decidableEq X (fun a b => Classical.propDecidable (a = b)) a b
+G4WholeProfileDetermination.lean:119:11: error: synthesized type class instance is not definitionally equal to expression inferred by typing rules, synthesized
+  fun a b => @Finset.decidableEq X inst✝ a b
+inferred
+  fun a b => @Finset.decidableEq X (fun a b => Classical.propDecidable (a = b)) a b
+G4WholeProfileDetermination.lean:120:15: error: synthesized type class instance is not definitionally equal to expression inferred by typing rules, synthesized
+  fun a b => @Finset.decidableEq X inst✝ a b
+inferred
+  fun a b => @Finset.decidableEq X (fun a b => Classical.propDecidable (a = b)) a b
+G4WholeProfileDetermination.lean:121:17: error: synthesized type class instance is not definitionally equal to expression inferred by typing rules, synthesized
+  fun a b => @Finset.decidableEq X inst✝ a b
+inferred
+  fun a b => @Finset.decidableEq X (fun a b => Classical.propDecidable (a = b)) a b
+G4WholeProfileDetermination.lean:121:17: error: synthesized type class instance is not definitionally equal to expression inferred by typing rules, synthesized
+  fun a b => @Finset.decidableEq X inst✝ a b
+inferred
+  fun a b => @Finset.decidableEq X (fun a b => Classical.propDecidable (a = b)) a b
+G4WholeProfileDetermination.lean:123:32: error: Application type mismatch: The argument
+  hT.right.right
+has type
+  Disjoint (@Genealogy.leaves X inst✝ l) r.leaves
+but is expected to have type
+  Disjoint (@Genealogy.leaves X (fun a b => Classical.propDecidable (a = b)) l) r.leaves
+in the application
+  Disjoint.mono (tree_cluster_subset_leaves l ha) (tree_cluster_subset_leaves r hb) hT.right.right
+G4WholeProfileDetermination.lean:125:32: error: Application type mismatch: The argument
+  Disjoint.symm hT.right.right
+has type
+  Disjoint (@Genealogy.leaves X inst✝ r) l.leaves
+but is expected to have type
+  Disjoint (@Genealogy.leaves X (fun a b => Classical.propDecidable (a = b)) r) l.leaves
+in the application
+  Disjoint.mono (tree_cluster_subset_leaves r ha) (tree_cluster_subset_leaves l hb) (Disjoint.symm hT.right.right)
+G4WholeProfileDetermination.lean:134:34: warning: Try `simp at ha` instead of `simpa using ha`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:135:44: warning: Try `simp at ha` instead of `simpa using ha`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:136:34: warning: Try `simp at hb` instead of `simpa using hb`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:137:44: warning: Try `simp at hb` instead of `simpa using hb`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:185:58: error: Function expected at
+  zero_le
+but this term has type
+  0 ≤ ?m.194
+
+Note: Expected a function because this term is being applied to the argument
+  _
+G4WholeProfileDetermination.lean:247:56: error: Function expected at
+  zero_le
+but this term has type
+  0 ≤ ?m.272
+
+Note: Expected a function because this term is being applied to the argument
+  _
+G4WholeProfileDetermination.lean:284:6: warning: Try `simp at hp` instead of `simpa using hp`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:295:17: error(lean.unknownIdentifier): Unknown identifier `hne`
+G4WholeProfileDetermination.lean:305:4: warning: Try `simp at ha` instead of `simpa using ha`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:307:82: error(lean.unknownIdentifier): Unknown identifier `hne`
+G4WholeProfileDetermination.lean:371:8: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:378:44: error: Function expected at
+  zero_le
+but this term has type
+  0 ≤ ?m.268
+
+Note: Expected a function because this term is being applied to the argument
+  _
+G4WholeProfileDetermination.lean:379:41: error: Function expected at
+  zero_le
+but this term has type
+  0 ≤ ?m.286
+
+Note: Expected a function because this term is being applied to the argument
+  _
+G4WholeProfileDetermination.lean:392:6: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G4WholeProfileDetermination.lean:461:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:462:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Finite ↑{w | InDirectedGrid grid w}
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+G4WholeProfileDetermination.lean:473:32: warning: This simp argument is unused:
+  one_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_eq']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:485:63: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:519:69: error(lean.unknownIdentifier): Unknown identifier `ab`
+G4WholeProfileDetermination.lean:521:4: error: Tactic `apply` failed: could not unify the conclusion of `Finset.prod_ne_zero_iff.mpr`
+  ∏ x ∈ ?m.60, ?m.59 x ≠ 0
+with the goal
+  P ≠ 0
+
+Note: The full type of `Finset.prod_ne_zero_iff.mpr` is
+  (∀ a ∈ ?m.60, ?m.59 a ≠ 0) → ∏ x ∈ ?m.60, ?m.59 x ≠ 0
+
+X : Type u_1
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+H : Finset (CladeWeights X)
+hH : ∀ w ∈ H, LaminarWeights w
+P : MvPolynomial X ℝ := ∏ ab ∈ H.offDiag, quadraticPolynomial ab.1 - quadraticPolynomial sorry
+⊢ P ≠ 0
+G4WholeProfileDetermination.lean:535:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G4WholeProfileDetermination.lean:554:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fun w => quadraticExposure w fun i => ↑((fun i => v i + 1) i)) w
+in the target expression
+  ((quadraticExposure w fun i => ↑(v i + 1)) - quadraticExposure w' fun i => ↑(v i + 1)) = 0
+
+X : Type u_1
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+H : Finset (CladeWeights X)
+hH : ∀ w ∈ H, LaminarWeights w
+P : MvPolynomial X ℝ := ∏ ab ∈ H.offDiag, quadraticPolynomial ab.1 - quadraticPolynomial sorry
+hp : P ≠ 0
+S : Set ℝ := Set.range fun n => ↑(n + 1)
+hs : S.Infinite
+x : X → ℝ
+hx : x ∈ Set.univ.pi fun x => S
+hpx : (MvPolynomial.eval x) P ≠ 0
+v : X → ℕ
+hv : ∀ (i : X), ↑(v i + 1) = x i
+w : CladeWeights X
+hw : w ∈ ↑H
+w' : CladeWeights X
+hw' : w' ∈ ↑H
+he :
+  (fun w => quadraticExposure w fun i => ↑((fun i => v i + 1) i)) w =
+    (fun w => quadraticExposure w fun i => ↑((fun i => v i + 1) i)) w'
+hne : ¬w = w'
+hab : (w, w') ∈ H.offDiag
+hprod : ∏ ab ∈ H.offDiag, (MvPolynomial.eval x) (quadraticPolynomial ab.1 - quadraticPolynomial ab.2) ≠ 0
+hfactor : (MvPolynomial.eval x) (quadraticPolynomial (w, w').1 - quadraticPolynomial (w, w').2) ≠ 0
+hxv : x = fun i => ↑(v i + 1)
+⊢ ((quadraticExposure w fun i => ↑(v i + 1)) - quadraticExposure w' fun i => ↑(v i + 1)) = 0
+G4WholeProfileDetermination.lean:566:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.goodMass_nonnegative`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:570:60: error: unsolved goals
+case pos
+S : Type u_1
+inst✝¹ : Fintype S
+inst✝ : DecidableEq S
+s : S
+good : S → Prop
+h : good s
+⊢ (∑ a, if good a then if a = s then 1 else 0 else 0).toReal = 1
+
+case neg
+S : Type u_1
+inst✝¹ : Fintype S
+inst✝ : DecidableEq S
+s : S
+good : S → Prop
+h : ¬good s
+⊢ (∑ a, if good a then if a = s then 1 else 0 else 0).toReal = 0
+G4WholeProfileDetermination.lean:573:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.goodMass_bind`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:607:42: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:607:52: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:619:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  HasSum (fun i => q ^ i * (↑a ^ i * ((↑i.factorial)⁻¹ * Real.exp (-↑a)))) (Real.exp (q * ↑a) * Real.exp (-↑a))
+but is expected to have type
+  HasSum (fun n => q ^ n * (↑a ^ n * ((↑n.factorial)⁻¹ * Real.exp (-↑a)))) (Real.exp (↑a * (q - 1)))
+G4WholeProfileDetermination.lean:639:9: error(lean.unknownIdentifier): Unknown identifier `tsum_le_tsum`
+G4WholeProfileDetermination.lean:657:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.forestOwner_mem`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:660:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.forestOwner_contains`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:715:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.forestRootState_sourceValid`:
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:755:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot N.root
+        (UnifiedLean.Source.FiniteSourceSnapshot.encodeSnapshot (forestRootState N.root register F hF) ⋯)).genealogy
+    (treeAnchor t)
+in the target expression
+  (UnifiedLean.Source.UniformizedSourceStep.state (forestRootCode N sample register F hF)).genealogy (treeAnchor t) = ↑t
+
+Copy : Type u_1
+inst✝⁶ : Fintype Copy
+inst✝⁵ : DecidableEq Copy
+V : Type u_2
+E : Type u_3
+X : Type u_4
+inst✝⁴ : Fintype V
+inst✝³ : Fintype E
+inst✝² : Fintype X
+inst✝¹ : DecidableEq V
+inst✝ : DecidableEq E
+N : RootedBinary V E X
+sample : Copy → X
+register : V → Bool
+F : Forest Copy
+hF : Partition F
+t : WellLabelledTree Copy
+ht : t ∈ F
+hl : treeAnchor t ∈ (forestRootState N.root register F hF).live
+⊢ (UnifiedLean.Source.UniformizedSourceStep.state (forestRootCode N sample register F hF)).genealogy (treeAnchor t) = ↑t
+G4WholeProfileDetermination.lean:800:10: error: unexpected token '∃'; expected prec
+G4WholeProfileDetermination.lean:810:25: error(lean.invalidField): Invalid field `prefix`: The environment does not contain `DotG4.WholeProfileDetermination.ForestFrontier.prefix`, so it is not possible to project the field `prefix` from an expression
+  h
+of type `ForestFrontier F t rest`
+G4WholeProfileDetermination.lean:810:9: error: Tactic `rcases` failed: `x✝ : ?m.38` is not an inductive datatype
+G4WholeProfileDetermination.lean:822:86: error: expected token
+G4WholeProfileDetermination.lean:825:6: warning: declaration uses `sorry`
+G4WholeProfileDetermination.lean:831:2: warning: Unused tactic linter: `rw [ordinaryCompletion_eq_source_root N sample r register F hF]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:832:2: warning: Unused tactic linter: `exact
+  actual_completed_forest_singleton_mass N r _ (forestRootCode_ancestral N sample register F hF) b _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:832:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:853:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(completionCombMass F ?target)
+in the target expression
+  completionCombMass F target = 0
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : Fintype Copy
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+register : V → Bool
+F : Forest Copy
+hF : Partition F
+b : Copy
+target : Genealogy Copy
+g : WellLabelledTree Copy
+hg : g ∈ F
+A : Finset Copy
+hA : A ∈ internalClades ↑g
+hwrong : A ∉ internalClades target
+⊢ completionCombMass F target = 0
+G4WholeProfileDetermination.lean:870:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.partition_trees_equal_of_overlap`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:884:13: error(lean.invalidField): Invalid field `cover`: The environment does not contain `DotG4.WholeProfileDetermination.ForestFrontier.cover`, so it is not possible to project the field `cover` from an expression
+  h
+of type `ForestFrontier F t rest`
+G4WholeProfileDetermination.lean:884:26: error: Tactic `rcases` failed: `x✝ : ?m.52` is not an inductive datatype
+G4WholeProfileDetermination.lean:897:14: error(lean.invalidField): Invalid field `singleton`: The environment does not contain `DotG4.WholeProfileDetermination.ForestFrontier.singleton`, so it is not possible to project the field `singleton` from an expression
+  h
+of type `ForestFrontier F t rest`
+G4WholeProfileDetermination.lean:899:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.treeLeaf_injective`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:906:25: error(lean.invalidField): Invalid field `prefix`: The environment does not contain `DotG4.WholeProfileDetermination.ForestFrontier.prefix`, so it is not possible to project the field `prefix` from an expression
+  h
+of type `ForestFrontier F t rest`
+G4WholeProfileDetermination.lean:906:9: error: Tactic `rcases` failed: `x✝ : ?m.16` is not an inductive datatype
+G4WholeProfileDetermination.lean:922:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.mergeForest_preserves_clade`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1002:10: warning: This simp argument is unused:
+  Finset.sum_boole
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.filter_mem_eq_inter, Finset.inter_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1002:27: warning: This simp argument is unused:
+  Finset.filter_mem_eq_inter
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.sum_boole, Finset.inter_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1084:9: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `DotG4.WholeProfileDetermination.ForestFrontier.mk` does not have explicit fields, but 5 were provided
+G4WholeProfileDetermination.lean:1085:2: error: No goals to be solved
+G4WholeProfileDetermination.lean:1095:5: warning: Variable name `hroot` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hroot
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:1274:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.fold_comb_leaves`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1297:30: error(lean.invalidField): Invalid field `prefix`: The environment does not contain `DotG4.WholeProfileDetermination.ForestFrontier.prefix`, so it is not possible to project the field `prefix` from an expression
+  hfront
+of type
+  ForestFrontier F (comb b (List.take k as)) (List.drop k as)
+G4WholeProfileDetermination.lean:1297:9: error: Tactic `rcases` failed: `x✝ : ?m.56` is not an inductive datatype
+G4WholeProfileDetermination.lean:1340:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.comb_append`:
+  [Fintype Copy]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1348:9: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `DotG4.WholeProfileDetermination.ForestFrontier.mk` does not have explicit fields, but 5 were provided
+G4WholeProfileDetermination.lean:1349:2: error: No goals to be solved
+G4WholeProfileDetermination.lean:1400:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.combReachable_good_frontier`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1469:2: error: linarith failed to find a contradiction
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+A : Finset Copy
+good : Forest Copy → Prop
+hg : good F
+hcount : {p ∈ Finset.offDiag (activeTrees F A) | good (pairAction F A p)}.card ≤ 2
+hs : (∑ p ∈ Finset.offDiag (activeTrees F A), if good (pairAction F A p) then 1 else 0) ≤ 2
+hD : 0 ≤ (↑(Fintype.card (PaddedChoice Copy)))⁻¹
+hm :
+  (↑(Fintype.card (PaddedChoice Copy)))⁻¹ *
+      ((∑ p ∈ Finset.offDiag (activeTrees F A), if good (pairAction F A p) then 1 else 0) -
+        ↑(Finset.offDiag (activeTrees F A)).card) ≤
+    (↑(Fintype.card (PaddedChoice Copy)))⁻¹ * (2 - ↑(Finset.offDiag (activeTrees F A)).card)
+a✝ :
+  1 - (↑(Finset.offDiag (activeTrees F A)).card - 2) / ↑(Fintype.card (PaddedChoice Copy)) <
+    1 +
+      (↑(Fintype.card (PaddedChoice Copy)))⁻¹ *
+        ((∑ x ∈ Finset.offDiag (activeTrees F A), if good (pairAction F A x) then 1 else 0) -
+          ↑(Finset.offDiag (activeTrees F A)).card)
+⊢ False
+failed
+G4WholeProfileDetermination.lean:1513:8: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:1513:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:1519:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+G4WholeProfileDetermination.lean:1527:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.active_offDiag_rate`:
+  [Fintype Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1652:8: error: Application type mismatch: The argument
+  combReachable_proper_pair_count N sample register b as n hlen G hG.left hG.right.left hG.right.right hg hcover B
+has type
+  {p ∈ Finset.offDiag (activeTrees G B) | ¬forbiddenForest (comb b as) (pairAction G B p)}.card ≤ 2
+but is expected to have type
+  {p ∈ Finset.offDiag (activeTrees G B) | good (pairAction G B p)}.card ≤ 2
+in the application
+  cladeStep_good_row_rate_bound G hG.left B good hg rmin (hrates G hG hg).right
+    (combReachable_proper_pair_count N sample register b as n hlen G hG.left hG.right.left hG.right.right hg hcover B)
+G4WholeProfileDetermination.lean:1660:69: error: Application type mismatch: The argument
+  hrow
+has type
+  ∀ (G : Forest Copy), R G → goodMass (cladeStep B G) good ≤ q * @ite ℝ (good G) instDecidableNot 1 0
+but is expected to have type
+  ∀ (s : Forest Copy), R s → goodMass (cladeStep B s) good ≤ q * @ite ℝ (good s) (Classical.propDecidable (good s)) 1 0
+in the application
+  killed_poisson_bound (cladeStep B) R good q hq hinv hrow
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:1663:83: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : Fintype Copy
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+register : V → Bool
+b : Copy
+as : List Copy
+n : ℕ
+hn : 2 ≤ n
+hlen : n - 1 ≤ as.length
+hsize : Fintype.card Copy = as.length + 1
+hcover : Finset.image sample (insert b (List.take (n - 1) as).toFinset) = Finset.univ
+A : Finset X
+hA : A ≠ Finset.univ
+t : ℝ≥0
+hK : n ≤ (cladeCopySet sample A).card
+F : Forest Copy
+hF : Partition F
+hproper : TaxonProperForest sample F
+hreach : CombReachable b as F
+hgood : ¬forbiddenForest (comb b as) F
+B : Finset Copy := cladeCopySet sample A
+good : Forest Copy → Prop := fun G => ¬forbiddenForest (comb b as) G
+R : Forest Copy → Prop := fun G => Partition G ∧ TaxonProperForest sample G ∧ CombReachable b as G
+rmin : ℝ := pairRatePolynomial (↑B.card - (↑n - 2))
+Λ : ℝ := ↑uniformizationRate
+q : ℝ := 1 - (rmin - 1) / Λ
+hrates : ∀ (G : Forest Copy), R G → good G → 1 ≤ rmin ∧ rmin ≤ ↑(Finset.offDiag (activeTrees G B)).card / 2
+hq : 0 ≤ q
+hinv : ∀ (G : Forest Copy), R G → ∀ H ∈ (cladeStep B G).support, R H
+hrow : ∀ (G : Forest Copy), R G → goodMass (cladeStep B G) good ≤ q * if good G then 1 else 0
+hbound :
+  goodMass
+      ((UnifiedLean.Source.SourcePoissonKernel.countPMF (uniformizationRate * t)).bind fun n =>
+        kernelIteration (cladeStep B) n F)
+      good ≤
+    Real.exp (↑(uniformizationRate * t) * (q - 1))
+hΛ : Λ ≠ 0
+⊢ -(↑uniformizationRate * ↑t * rmin * (↑uniformizationRate)⁻¹) + ↑uniformizationRate * ↑t * (↑uniformizationRate)⁻¹ =
+    ↑t - ↑t * rmin
+G4WholeProfileDetermination.lean:1676:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.pmf_real_le_one`:
+  [Fintype S]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1690:10: error: Type mismatch
+  Finset.single_le_sum (fun d x => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg) (Finset.mem_univ s)
+has type
+  ENNReal.toReal (?m.111 s) * ENNReal.toReal (?m.115 s) ≤ ∑ x, ENNReal.toReal (?m.111 x) * ENNReal.toReal (?m.115 x)
+but is expected to have type
+  ((K s) s).toReal * ((kernelIteration K k s) s).toReal ≤ ∑ d, ((K s) d).toReal * ((kernelIteration K k d) s).toReal
+G4WholeProfileDetermination.lean:1706:8: error(lean.unknownIdentifier): Unknown identifier `tsum_le_tsum`
+G4WholeProfileDetermination.lean:1747:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ p ∈ Finset.offDiag (activeTrees F A), ((if pairAction F A p = F then 1 else 0) - 1)
+in the target expression
+  1 +
+      (↑(Fintype.card (PaddedChoice Copy)))⁻¹ *
+        ∑ x ∈ Finset.offDiag (activeTrees F A), ((if pairAction F A x = F then 1 else 0) - 1) =
+    1 - ↑(Finset.offDiag (activeTrees F A)).card / ↑(Fintype.card (PaddedChoice Copy))
+
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+F : Forest Copy
+hF : Partition F
+A : Finset Copy
+hz :
+  ∑ p ∈ Finset.offDiag (activeTrees F A), ((if pairAction F A p = F then 1 else 0) - 1) =
+    -↑(Finset.offDiag (activeTrees F A)).card
+⊢ 1 +
+      (↑(Fintype.card (PaddedChoice Copy)))⁻¹ *
+        ∑ x ∈ Finset.offDiag (activeTrees F A), ((if pairAction F A x = F then 1 else 0) - 1) =
+    1 - ↑(Finset.offDiag (activeTrees F A)).card / ↑(Fintype.card (PaddedChoice Copy))
+G4WholeProfileDetermination.lean:1765:4: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:1797:10: error: Type mismatch
+  Finset.single_le_sum (fun G x => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg) (Finset.mem_univ F)
+has type
+  ENNReal.toReal (?m.172 F) * ENNReal.toReal (?m.176 F) ≤ ∑ x, ENNReal.toReal (?m.172 x) * ENNReal.toReal (?m.176 x)
+but is expected to have type
+  ((cladeKernel op.1 op.2 F) F).toReal * ((forestProgram ops F) F).toReal ≤
+    ∑ G, ((cladeKernel op.1 op.2 F) G).toReal * ((forestProgram ops G) F).toReal
+G4WholeProfileDetermination.lean:1809:2: error: Tactic `rfl` failed: The left-hand side
+  ∑ b,
+    ((forestProgram ops F) b).toReal * ((PMF.map forestObservation (ordinaryCompletion b)) {toUnranked target}).toReal
+is not definitionally equal to the right-hand side
+  ∑ G, ((forestProgram ops F) G).toReal * ↑(completionCombMass G target)
+
+Copy : Type u_1
+inst✝¹ : Fintype Copy
+inst✝ : DecidableEq Copy
+ops : List (Finset Copy × ℝ≥0)
+F : Forest Copy
+target : Genealogy Copy
+⊢ ∑ b,
+      ((forestProgram ops F) b).toReal *
+        ((PMF.map forestObservation (ordinaryCompletion b)) {toUnranked target}).toReal =
+    ∑ G, ((forestProgram ops F) G).toReal * ↑(completionCombMass G target)
+G4WholeProfileDetermination.lean:1816:2: error: Type mismatch
+  LE.le.trans (mul_le_mul_of_nonneg_right (forestProgram_diagonal_lower ops F hF) ENNReal.toReal_nonneg)
+    (Finset.single_le_sum (fun G x => mul_nonneg ENNReal.toReal_nonneg ENNReal.toReal_nonneg) (Finset.mem_univ F))
+has type
+  Real.exp (-fixedForestHazard F ops) * ENNReal.toReal (?m.66 F) ≤
+    ∑ x, ((forestProgram ops F) x).toReal * ENNReal.toReal (?m.66 x)
+but is expected to have type
+  Real.exp (-fixedForestHazard F ops) * ↑(completionCombMass F target) ≤
+    ∑ G, ((forestProgram ops F) G).toReal * ↑(completionCombMass G target)
+G4WholeProfileDetermination.lean:1855:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+G4WholeProfileDetermination.lean:1879:52: error: failed to prove positivity/nonnegativity/nonzeroness
+G4WholeProfileDetermination.lean:1915:40: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1915:50: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1967:8: error: Tactic `apply` failed: could not unify the conclusion of `@funext`
+  ?f = ?g
+with the goal
+  (cladeKernel (cladeCopySet sample A) (w A) F).bind (ordinaryCladeProgram w sample keys) =
+    forestProgram
+      (List.map (fun A => (cladeCopySet sample A, w A))
+        (if decide (w A ≠ 0) = true then A :: List.filter (fun A => decide (w A ≠ 0)) keys
+        else List.filter (fun A => decide (w A ≠ 0)) keys))
+      F
+
+Note: The full type of `@funext` is
+  ∀ {α : Sort ?u.75} {β : α → Sort ?u.74} {f g : (x : α) → β x}, (∀ (x : α), f x = g x) → f = g
+
+case neg
+X : Type u_1
+Copy : Type u_2
+inst✝³ : Fintype X
+inst✝² : Fintype Copy
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+w : CladeWeights X
+sample : Copy → X
+A : Finset X
+keys : List (Finset X)
+ih : ∀ (F : Forest Copy), ordinaryCladeProgram w sample keys F = forestProgram (positiveCladeWord w sample keys) F
+F : Forest Copy
+hz : ¬w A = 0
+⊢ (cladeKernel (cladeCopySet sample A) (w A) F).bind (ordinaryCladeProgram w sample keys) =
+    forestProgram
+      (List.map (fun A => (cladeCopySet sample A, w A))
+        (if decide (w A ≠ 0) = true then A :: List.filter (fun A => decide (w A ≠ 0)) keys
+        else List.filter (fun A => decide (w A ≠ 0)) keys))
+      F
+G4WholeProfileDetermination.lean:1960:40: warning: This simp argument is unused:
+  hz
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, cladeKernel_zero, PMF.pure_bind, positiveCladeWord, List.filter_cons, ne_eq,
+    hz, not_true_eq_false, decide_false, Bool.false_eq_true, ite_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1964:75: warning: This simp argument is unused:
+  hz
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, positiveCladeWord, List.filter_cons, not_false_eq_true, decide_true,
+    ite_true, List.map_cons, forestProgram]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1965:10: warning: This simp argument is unused:
+  not_false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, positiveCladeWord, List.filter_cons, hz, decide_true, ite_true,
+    List.map_cons, forestProgram]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1965:28: warning: This simp argument is unused:
+  decide_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, positiveCladeWord, List.filter_cons, hz, not_false_eq_true, ite_true,
+    List.map_cons, forestProgram]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1965:40: warning: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, positiveCladeWord, List.filter_cons, hz, not_false_eq_true, decide_true,
+    List.map_cons, forestProgram]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1965:49: warning: This simp argument is unused:
+  List.map_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, positiveCladeWord, List.filter_cons, hz, not_false_eq_true, decide_true,
+    ite_true, forestProgram]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1965:63: warning: This simp argument is unused:
+  forestProgram
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ordinaryCladeProgram, positiveCladeWord, List.filter_cons, hz, not_false_eq_true, decide_true,
+    ite_true, List.map_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:1970:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.mem_positiveCladeWord`:
+  [Fintype X]
+  [DecidableEq Copy]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq Copy] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:1989:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.cladeIteration_combReachable`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:2052:68: error: Application type mismatch: The argument
+  hrow
+has type
+  ∀ op ∈ ops,
+    ∀ (G : Forest Copy),
+      R G →
+        goodMass (cladeKernel op.1 op.2 G) good ≤ Real.exp (compatibleCost n op) * @ite ℝ (good G) instDecidableNot 1 0
+but is expected to have type
+  ∀ op ∈ ops,
+    ∀ (F : Forest Copy),
+      R F →
+        goodMass (cladeKernel op.1 op.2 F) good ≤
+          Real.exp (compatibleCost n op) * @ite ℝ (good F) (Classical.propDecidable (good F)) 1 0
+in the application
+  forestProgram_goodMass_bound ops R good (compatibleCost n) hinv hrow
+G4WholeProfileDetermination.lean:2079:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(completionCombMass F (comb b as))
+in the target expression
+  ↑(completionCombMass F (comb b as)) ≤
+    combCoefficient as.length * ↑(as.length + 1) ^ (2 * (n - 2)) * if ¬False then 1 else 0
+
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : Fintype Copy
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+register : V → Bool
+b : Copy
+as : List Copy
+n : ℕ
+hn : 2 ≤ n
+hsize : Fintype.card Copy = as.length + 1
+hcover : Finset.image sample (insert b (List.take (n - 1) as).toFinset) = Finset.univ
+F : Forest Copy
+hF : Partition F
+hproper : TaxonProperForest sample F
+hreach : CombReachable b as F
+hg : ¬forbiddenForest (comb b as) F
+pre rest : List Copy
+has : as = pre ++ rest
+hfront : ForestFrontier F (comb b pre) rest
+hb : b ∈ (comb b pre).leaves
+he :
+  ↑(completionCombMass F (List.foldl (fun u a => u.graft (Genealogy.leaf a)) (comb b pre) rest)) =
+    ENNReal.ofReal (2 ^ rest.length / (↑(rest.length + 1).factorial * ↑rest.length.factorial))
+hc : ↑(completionCombMass F (comb b as)) = ENNReal.ofReal (combCoefficient rest.length)
+⊢ ↑(completionCombMass F (comb b as)) ≤
+    combCoefficient as.length * ↑(as.length + 1) ^ (2 * (n - 2)) * if ¬False then 1 else 0
+G4WholeProfileDetermination.lean:2085:2: error: unsolved goals
+case neg
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : Fintype Copy
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+register : V → Bool
+b : Copy
+as : List Copy
+n : ℕ
+hn : 2 ≤ n
+hsize : Fintype.card Copy = as.length + 1
+hcover : Finset.image sample (insert b (List.take (n - 1) as).toFinset) = Finset.univ
+F : Forest Copy
+hF : Partition F
+hproper : TaxonProperForest sample F
+hreach : CombReachable b as F
+hg : ¬¬forbiddenForest (comb b as) F
+A : Finset Copy
+hnot : A ∉ internalClades (comb b as)
+g : WellLabelledTree Copy
+hgF : g ∈ F
+hA : A ∈ internalClades ↑g
+⊢ ↑0 ≤ 0
+G4WholeProfileDetermination.lean:2073:18: warning: This simp argument is unused:
+  ite_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2073:27: warning: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2088:15: warning: This simp argument is unused:
+  ENNReal.toReal_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, ite_false, mul_zero, le_refl]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2088:57: warning: This simp argument is unused:
+  le_refl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ENNReal.toReal_zero, hg, ite_false, mul_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2140:58: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_left_comm, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2140:68: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, mul_assoc, mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2153:9: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `DotG4.WholeProfileDetermination.ForestFrontier.mk` does not have explicit fields, but 5 were provided
+G4WholeProfileDetermination.lean:2154:2: error: No goals to be solved
+G4WholeProfileDetermination.lean:2166:2: warning: Try `simp at hA` instead of `simpa using hA`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+G4WholeProfileDetermination.lean:2176:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(completionCombMass initialForest (comb b as))
+in the target expression
+  ↑(completionCombMass initialForest (comb b as)) = combCoefficient as.length
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+Copy : Type u_4
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : Fintype Copy
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+N : RootedBinary V E X
+sample : Copy → X
+r : PositivePairRates E
+register : V → Bool
+b : Copy
+as : List Copy
+hcover : ∀ (x : Copy), x = b ∨ x ∈ as
+hb : b ∉ as
+hn : as.Nodup
+he : ↑(completionCombMass initialForest (comb b as)) = ENNReal.ofReal (combCoefficient as.length)
+⊢ ↑(completionCombMass initialForest (comb b as)) = combCoefficient as.length
+G4WholeProfileDetermination.lean:2224:42: error: failed to prove positivity/nonnegativity/nonzeroness
+G4WholeProfileDetermination.lean:2243:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.allocationRep_injective`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2248:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.allocationSample_surjective`:
+  [Fintype X]
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:2353:74: error: unsolved goals
+X : Type u_1
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+v : X → ℕ
+scale : ℕ
+A : Finset X
+⊢ {x | x.fst ∈ A}.card = ↑{x | x.fst ∈ A}.card
+G4WholeProfileDetermination.lean:2386:6: error: unsolved goals
+case pos
+X : Type u_1
+Copy : Type u_2
+inst✝³ : Fintype X
+inst✝² : Fintype Copy
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+w : CladeWeights X
+sample : Copy → X
+f : Finset Copy → ℝ
+A : Finset X
+keys : List (Finset X)
+ih :
+  (List.map (fun op => f op.1 * ↑op.2) (positiveCladeWord w sample keys)).sum =
+    (List.map (fun A => f (cladeCopySet sample A) * ↑(w A)) keys).sum
+hz : w A = 0
+⊢ (List.map ((fun op => f op.1 * ↑op.2) ∘ fun A => (cladeCopySet sample A, w A))
+        (List.filter (fun A => !decide (w A = 0)) keys)).sum =
+    (List.map (fun A => f (cladeCopySet sample A) * ↑(w A)) keys).sum
+G4WholeProfileDetermination.lean:2387:6: error: unsolved goals
+case neg
+X : Type u_1
+Copy : Type u_2
+inst✝³ : Fintype X
+inst✝² : Fintype Copy
+inst✝¹ : DecidableEq X
+inst✝ : DecidableEq Copy
+w : CladeWeights X
+sample : Copy → X
+f : Finset Copy → ℝ
+A : Finset X
+keys : List (Finset X)
+ih :
+  (List.map (fun op => f op.1 * ↑op.2) (positiveCladeWord w sample keys)).sum =
+    (List.map (fun A => f (cladeCopySet sample A) * ↑(w A)) keys).sum
+hz : ¬w A = 0
+⊢ (List.map ((fun op => f op.1 * ↑op.2) ∘ fun A => (cladeCopySet sample A, w A))
+        (List.filter (fun A => !decide (w A = 0)) keys)).sum =
+    (List.map (fun A => f (cladeCopySet sample A) * ↑(w A)) keys).sum
+G4WholeProfileDetermination.lean:2386:35: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [positiveCladeWord, hz]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2387:35: warning: This simp argument is unused:
+  ih
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [positiveCladeWord, hz]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+G4WholeProfileDetermination.lean:2398:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (List.map (fun op => ?f op.1 * ↑op.2) (positiveCladeWord ?w ?sample ?keys)).sum
+in the target expression
+  (List.map (fun op => pairRatePolynomial ↑op.1.card * ↑op.2)
+        (positiveCladeWord w allocationSample (cladeOrder X))).sum =
+    ((↑scale ^ 2 * quadraticExposure w fun x => ↑(v x)) - ↑scale * linearExposure w fun x => ↑(v x)) / 2
+
+X : Type u_1
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+w : CladeWeights X
+v : X → ℕ
+scale : ℕ
+⊢ (List.map (fun op => pairRatePolynomial ↑op.1.card * ↑op.2)
+        (positiveCladeWord w allocationSample (cladeOrder X))).sum =
+    ((↑scale ^ 2 * quadraticExposure w fun x => ↑(v x)) - ↑scale * linearExposure w fun x => ↑(v x)) / 2
+G4WholeProfileDetermination.lean:2414:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (List.map (fun op => ?f op.1 * ↑op.2) (positiveCladeWord ?w ?sample ?keys)).sum
+in the target expression
+  (List.map (fun op => (-pairRatePolynomial (↑op.1.card - (↑n - 2)) + 1) * ↑op.2)
+        (positiveCladeWord w allocationSample (cladeOrder X))).sum =
+    ((-↑scale ^ 2 / 2 * quadraticExposure w fun x => ↑(v x)) +
+        (↑n - 2 + 1 / 2) * ↑scale * linearExposure w fun x => ↑(v x)) +
+      (1 - (↑n - 2) * (↑n - 1) / 2) * totalCladeWeight w
+
+X : Type u_1
+inst✝¹ : Fintype X
+inst✝ : DecidableEq X
+w : CladeWeights X
+v : X → ℕ
+scale n : ℕ
+⊢ (List.map (fun op => (-pairRatePolynomial (↑op.1.card - (↑n - 2)) + 1) * ↑op.2)
+        (positiveCladeWord w allocationSample (cladeOrder X))).sum =
+    ((-↑scale ^ 2 / 2 * quadraticExposure w fun x => ↑(v x)) +
+        (↑n - 2 + 1 / 2) * ↑scale * linearExposure w fun x => ↑(v x)) +
+      (1 - (↑n - 2) * (↑n - 1) / 2) * totalCladeWeight w
+G4WholeProfileDetermination.lean:2439:4: error: Type mismatch: After simplification, term
+  Tendsto.const_mul (S ^ d * Real.exp b) hbase
+ has type
+  @Tendsto ℕ ℝ (fun x => S ^ d * Real.exp b * ((fun x => x ^ d * Real.exp (-x)) ∘ fun k => ↑k + 1) x) atTop (𝓝 0)
+but is expected to have type
+  @Tendsto ℕ ℝ (fun k => S ^ d * Real.exp b * ((↑k + 1) ^ d * Real.exp (-(↑k + 1)))) atTop (𝓝 0)
+G4WholeProfileDetermination.lean:2478:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.allocation_card`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+G4WholeProfileDetermination.lean:2491:59: error: unsolved goals
+case e'_1
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+r : PositivePairRates E
+w : CladeWeights X
+he : w ∅ = 0
+hu : w Finset.univ = 0
+hn : 2 ≤ Fintype.card X
+v : X → ℕ
+hv : ∀ (x : X), 0 < v x
+x0 : X
+k : ℕ
+hk : Fintype.card X ≤ k + 1
+sample : AllocationCopy v (k + 1) → X := allocationSample
+b : AllocationCopy v (k + 1) := allocationRep v hv (k + 1) ⋯ x0
+as : List (AllocationCopy v (k + 1)) := allocationCombTail v hv (k + 1) ⋯ x0
+hlen : Fintype.card X - 1 ≤ as.length
+hK : ∀ A ∈ cladeOrder X, w A ≠ 0 → Fintype.card X ≤ (cladeCopySet sample A).card
+h :
+  combCoefficient as.length *
+        Real.exp
+          (-(((↑(k + 1) ^ 2 * quadraticExposure w fun x => ↑(v x)) - ↑(k + 1) * linearExposure w fun x => ↑(v x)) /
+              2)) ≤
+      ordinaryCombProbability w sample b as ∧
+    ordinaryCombProbability w sample b as ≤
+      combCoefficient as.length * ((↑k + 1) * ∑ x, ↑(v x)) ^ (2 * (Fintype.card X - 2)) *
+        Real.exp
+          (((-↑(k + 1) ^ 2 / 2 * quadraticExposure w fun x => ↑(v x)) +
+              (↑(Fintype.card X) - 2 + 1 / 2) * ↑(k + 1) * linearExposure w fun x => ↑(v x)) +
+            (1 - (↑(Fintype.card X) - 2) * (↑(Fintype.card X) - 1) / 2) * totalCladeWeight w)
+hsize : ↑(as.length + 1) = (↑k + 1) * ∑ x, ↑(v x)
+⊢ combCoefficient (allocationCombTail v hv (k + 1) ⋯ x0).length *
+        Real.exp
+          (-(↑k * quadraticExposure w fun x => ↑(v x)) + (↑k * linearExposure w fun x => ↑(v x)) * (1 / 2) +
+                (↑k ^ 2 * quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+              (quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+            (linearExposure w fun x => ↑(v x)) * (1 / 2)) ≤
+      ordinaryCombProbability w allocationSample (allocationRep v hv (k + 1) ⋯ x0)
+        (allocationCombTail v hv (k + 1) ⋯ x0) ↔
+    Real.exp
+          (-(↑k * quadraticExposure w fun x => ↑(v x)) + (↑k * linearExposure w fun x => ↑(v x)) * (1 / 2) +
+                (↑k ^ 2 * quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+              (quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+            (linearExposure w fun x => ↑(v x)) * (1 / 2)) *
+        combCoefficient as.length ≤
+      ordinaryCombProbability w sample b as
+
+case e'_2
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+r : PositivePairRates E
+w : CladeWeights X
+he : w ∅ = 0
+hu : w Finset.univ = 0
+hn : 2 ≤ Fintype.card X
+v : X → ℕ
+hv : ∀ (x : X), 0 < v x
+x0 : X
+k : ℕ
+hk : Fintype.card X ≤ k + 1
+sample : AllocationCopy v (k + 1) → X := allocationSample
+b : AllocationCopy v (k + 1) := allocationRep v hv (k + 1) ⋯ x0
+as : List (AllocationCopy v (k + 1)) := allocationCombTail v hv (k + 1) ⋯ x0
+hlen : Fintype.card X - 1 ≤ as.length
+hK : ∀ A ∈ cladeOrder X, w A ≠ 0 → Fintype.card X ≤ (cladeCopySet sample A).card
+h :
+  combCoefficient as.length *
+        Real.exp
+          (-(((↑(k + 1) ^ 2 * quadraticExposure w fun x => ↑(v x)) - ↑(k + 1) * linearExposure w fun x => ↑(v x)) /
+              2)) ≤
+      ordinaryCombProbability w sample b as ∧
+    ordinaryCombProbability w sample b as ≤
+      combCoefficient as.length * ((↑k + 1) * ∑ x, ↑(v x)) ^ (2 * (Fintype.card X - 2)) *
+        Real.exp
+          (((-↑(k + 1) ^ 2 / 2 * quadraticExposure w fun x => ↑(v x)) +
+              (↑(Fintype.card X) - 2 + 1 / 2) * ↑(k + 1) * linearExposure w fun x => ↑(v x)) +
+            (1 - (↑(Fintype.card X) - 2) * (↑(Fintype.card X) - 1) / 2) * totalCladeWeight w)
+hsize : ↑(as.length + 1) = (↑k + 1) * ∑ x, ↑(v x)
+⊢ ordinaryCombProbability w allocationSample (allocationRep v hv (k + 1) ⋯ x0) (allocationCombTail v hv (k + 1) ⋯ x0) ≤
+      combCoefficient (allocationCombTail v hv (k + 1) ⋯ x0).length *
+          Real.exp
+            (((-(↑k * quadraticExposure w fun x => ↑(v x)) +
+                            ↑k * ↑(Fintype.card X) * linearExposure w fun x => ↑(v x)) +
+                          (↑k * linearExposure w fun x => ↑(v x)) * (-3 / 2) +
+                        (↑k ^ 2 * quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+                      (quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+                    ↑(Fintype.card X) * linearExposure w fun x => ↑(v x)) +
+                  ↑(Fintype.card X) * totalCladeWeight w * (3 / 2) +
+                ↑(Fintype.card X) ^ 2 * totalCladeWeight w * (-1 / 2) +
+              (linearExposure w fun x => ↑(v x)) * (-3 / 2)) *
+        (↑k * ∑ x, ↑(v x) + ∑ x, ↑(v x)) ^ ((Fintype.card X - 2) * 2) ↔
+    ordinaryCombProbability w sample b as ≤
+      Real.exp
+            (((-(↑k * quadraticExposure w fun x => ↑(v x)) +
+                            ↑k * ↑(Fintype.card X) * linearExposure w fun x => ↑(v x)) +
+                          (↑k * linearExposure w fun x => ↑(v x)) * (-3 / 2) +
+                        (↑k ^ 2 * quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+                      (quadraticExposure w fun x => ↑(v x)) * (-1 / 2) +
+                    ↑(Fintype.card X) * linearExposure w fun x => ↑(v x)) +
+                  ↑(Fintype.card X) * totalCladeWeight w * (3 / 2) +
+                ↑(Fintype.card X) ^ 2 * totalCladeWeight w * (-1 / 2) +
+              (linearExposure w fun x => ↑(v x)) * (-3 / 2)) *
+          combCoefficient as.length *
+        (↑k * ∑ x, ↑(v x) + ∑ x, ↑(v x)) ^ ((Fintype.card X - 2) * 2)
+G4WholeProfileDetermination.lean:2604:2: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+G4WholeProfileDetermination.lean:2670:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:2705:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a * ∑ i ∈ ?s, ?f i
+in the target expression
+  ∑ w ∈ H, extendCatalogueCoefficients H (a • c) w * allocationProfile w v hv x0 k =
+    (RingHom.id ℝ) a • ∑ w ∈ H, extendCatalogueCoefficients H c w * allocationProfile w v hv x0 k
+
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+H : Finset (CladeWeights X)
+v : X → ℕ
+hv : ∀ (x : X), 0 < v x
+x0 : X
+k : ℕ
+a : ℝ
+c : ↥H → ℝ
+⊢ ∑ w ∈ H, extendCatalogueCoefficients H (a • c) w * allocationProfile w v hv x0 k =
+    (RingHom.id ℝ) a • ∑ w ∈ H, extendCatalogueCoefficients H c w * allocationProfile w v hv x0 k
+G4WholeProfileDetermination.lean:2805:49: warning: Variable name `hp'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:2847:57: error: unsolved goals
+case neg
+X : Type u_3
+inst✝² : Fintype X
+inst✝¹ : DecidableEq X
+ι : Type u_4
+inst✝ : Fintype ι
+p : PMF ι
+tree : ι → CladeWeights X
+w : CladeWeights X
+a : ι
+a✝ : a ∈ Finset.univ
+h : ¬tree a = w
+⊢ 0 = (p a).toReal ∨ 0 = (if w = tree a then 1 else 0).toReal
+G4WholeProfileDetermination.lean:2913:51: warning: Variable name `hp'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:2972:13: error: typeclass instance problem is stuck
+  SummationFilter.LeAtTop ?m.99
+
+Note: Lean will not try to resolve this typeclass instance problem because the second type argument to `SummationFilter.LeAtTop` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+G4WholeProfileDetermination.lean:3023:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ a, ((positiveSupportPMF ?p) a).toReal * ?f ↑a
+in the target expression
+  ∑ a, ((positiveSupportPMF p') a).toReal * directedSurvival (tree' ↑a) i j ^ k.choose 2 =
+    finiteBankMoment p (fun a => directedSurvival (tree a) i j) k
+
+ι : Type u_1
+inst✝⁸ : Fintype ι
+V : Type u_2
+E : Type u_3
+X : Type u_4
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : DecidableEq X
+N : RootedBinary V E X
+r : PositivePairRates E
+hn : 2 ≤ Fintype.card X
+inst✝¹ : Nontrivial X
+x0 : X
+p : PMF ι
+tree : ι → CladeWeights X
+hlam : ∀ (a : ι), LaminarWeights (tree a)
+L : X × X → ℕ
+hL : ∀ (ij : X × X), 0 < L ij
+v : X → ℕ
+hv : ∀ (x : X), 0 < v x
+T : Finset ℕ
+hdet :
+  ∀ (ι' : Type u_5) [inst : Fintype ι'] (p' : PMF ι'),
+    (∀ (a : ι'), 0 < (p' a).toReal) →
+      ∀ (tree' : ι' → CladeWeights X),
+        (∀ (a : ι'), LaminarWeights (tree' a)) →
+          (∀ (i j : X),
+              ∀ k ∈ momentLevels (L (i, j)),
+                finiteBankMoment p' (fun a => directedSurvival (tree' a) i j) k =
+                  finiteBankMoment p (fun a => directedSurvival (tree a) i j) k) →
+            (∀ k ∈ T, treeBankProfile p' tree' v hv x0 k = treeBankProfile p tree v hv x0 k) →
+              PMF.map tree' p' = PMF.map tree p
+ι' : Type u_5
+inst✝ : Fintype ι'
+p' : PMF ι'
+tree' : ι' → CladeWeights X
+hlam' : ∀ (a : ι'), LaminarWeights (tree' a)
+hm :
+  ∀ (i j : X),
+    ∀ k ∈ momentLevels (L (i, j)),
+      finiteBankMoment p' (fun a => directedSurvival (tree' a) i j) k =
+        finiteBankMoment p (fun a => directedSurvival (tree a) i j) k
+hp : ∀ k ∈ T, treeBankProfile p' tree' v hv x0 k = treeBankProfile p tree v hv x0 k
+i j : X
+k : ℕ
+hk : k ∈ momentLevels (L (i, j))
+⊢ ∑ a, ((positiveSupportPMF p') a).toReal * directedSurvival (tree' ↑a) i j ^ k.choose 2 =
+    finiteBankMoment p (fun a => directedSurvival (tree a) i j) k
+G4WholeProfileDetermination.lean:3029:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ a, ((positiveSupportPMF ?p) a).toReal * ?f ↑a
+in the target expression
+  ∑ a, ((positiveSupportPMF p') a).toReal * allocationProfile (tree' ↑a) v hv x0 k = treeBankProfile p tree v hv x0 k
+
+ι : Type u_1
+inst✝⁸ : Fintype ι
+V : Type u_2
+E : Type u_3
+X : Type u_4
+inst✝⁷ : Fintype V
+inst✝⁶ : Fintype E
+inst✝⁵ : Fintype X
+inst✝⁴ : DecidableEq V
+inst✝³ : DecidableEq E
+inst✝² : DecidableEq X
+N : RootedBinary V E X
+r : PositivePairRates E
+hn : 2 ≤ Fintype.card X
+inst✝¹ : Nontrivial X
+x0 : X
+p : PMF ι
+tree : ι → CladeWeights X
+hlam : ∀ (a : ι), LaminarWeights (tree a)
+L : X × X → ℕ
+hL : ∀ (ij : X × X), 0 < L ij
+v : X → ℕ
+hv : ∀ (x : X), 0 < v x
+T : Finset ℕ
+hdet :
+  ∀ (ι' : Type u_5) [inst : Fintype ι'] (p' : PMF ι'),
+    (∀ (a : ι'), 0 < (p' a).toReal) →
+      ∀ (tree' : ι' → CladeWeights X),
+        (∀ (a : ι'), LaminarWeights (tree' a)) →
+          (∀ (i j : X),
+              ∀ k ∈ momentLevels (L (i, j)),
+                finiteBankMoment p' (fun a => directedSurvival (tree' a) i j) k =
+                  finiteBankMoment p (fun a => directedSurvival (tree a) i j) k) →
+            (∀ k ∈ T, treeBankProfile p' tree' v hv x0 k = treeBankProfile p tree v hv x0 k) →
+              PMF.map tree' p' = PMF.map tree p
+ι' : Type u_5
+inst✝ : Fintype ι'
+p' : PMF ι'
+tree' : ι' → CladeWeights X
+hlam' : ∀ (a : ι'), LaminarWeights (tree' a)
+hm :
+  ∀ (i j : X),
+    ∀ k ∈ momentLevels (L (i, j)),
+      finiteBankMoment p' (fun a => directedSurvival (tree' a) i j) k =
+        finiteBankMoment p (fun a => directedSurvival (tree a) i j) k
+hp : ∀ k ∈ T, treeBankProfile p' tree' v hv x0 k = treeBankProfile p tree v hv x0 k
+k : ℕ
+hk : k ∈ T
+⊢ ∑ a, ((positiveSupportPMF p') a).toReal * allocationProfile (tree' ↑a) v hv x0 k = treeBankProfile p tree v hv x0 k
+G4WholeProfileDetermination.lean:3045:50: error: unsolved goals
+A : Type u_1
+B : Type u_2
+inst✝¹ : Fintype A
+inst✝ : Fintype B
+p : PMF A
+q : PMF B
+a : A
+b : B
+⊢ (∑ a_1, p a_1 * ∑ a_2, if a = a_1 ∧ b = a_2 then q a_2 else 0) = p a * q b
+G4WholeProfileDetermination.lean:3054:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.configurationBankPMF_bind`:
+  [Fintype A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:3072:22: error: Function expected at
+  commonSwitching
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  N
+
+Hint: The identifier `commonSwitching` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+G4WholeProfileDetermination.lean:3085:5: error(lean.unknownIdentifier): Unknown identifier `commonSwitching`
+G4WholeProfileDetermination.lean:3086:67: error: Application type mismatch: The argument
+  hw
+has type
+  @Genealogy.WellLabelled X (fun a b => Classical.propDecidable (a = b)) T
+but is expected to have type
+  @Genealogy.WellLabelled X inst✝¹ T
+in the application
+  weightedNormalize_positiveTree_of_pruned N C H r coin T hT hw
+G4WholeProfileDetermination.lean:3083:84: error: unsolved goals
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁶ : Fintype V
+inst✝⁵ : Fintype E
+inst✝⁴ : Fintype X
+inst✝³ : DecidableEq V
+inst✝² : DecidableEq E
+inst✝¹ : DecidableEq X
+inst✝ : Nonempty X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+coin : CommonSeed N
+T : Genealogy X
+hT : PrunedAt N sorry Finset.univ N.root (some T)
+hw : T.WellLabelled
+hl : T.leaves = Finset.univ
+⊢ PositiveTreeWeights (weightedNormalize N C H r coin)
+G4WholeProfileDetermination.lean:3102:4: error: unsolved goals
+case pos
+V : Type u_1
+E : Type u_2
+X : Type u_3
+inst✝⁵ : Fintype V
+inst✝⁴ : Fintype E
+inst✝³ : Fintype X
+inst✝² : DecidableEq V
+inst✝¹ : DecidableEq E
+inst✝ : DecidableEq X
+N : RootedBinary V E X
+C : Calendar N.graph
+H : OriginalParentRegistry N
+r : PositivePairRates E
+coin : CommonSeed N
+i j : X
+A : Finset X
+hij : i ∈ A ∧ j ∉ A
+ha : A ≠ ∅
+hu : A ≠ Finset.univ
+⊢ ∑ i, ↑(if edgeTaxa N C H coin i = A then edgeExposure N C r i else 0) =
+    ∑ x, if edgeTaxa N C H coin x = A then ↑(edgeExposure N C r x) else 0
+G4WholeProfileDetermination.lean:3137:7: error(lean.unknownIdentifier): Unknown identifier `initialCode`
+G4WholeProfileDetermination.lean:3157:2: error: Type mismatch
+  actual_original_bank_weighted_tree_average N C H p r mask sample
+has type
+  ((originalRegisterMeasure N p).toPMF.bind fun coin =>
+      PMF.map (fun d => sourceUnrankedForest (state d) Finset.univ)
+        ((sourceProgram N r (controlledCalendarProgram N C H p (fun x => true) mask)
+              (UnifiedLean.Source.SourceInitializedCalendar.initialCode N sample (originalRegister N coin))).bind
+          (ancestralCompletion N r (Fintype.card Copy)))) =
+    (originalRegisterMeasure N p).toPMF.bind fun coin =>
+      ordinaryCompletedTreeLaw (weightedNormalize N C H r (overrideBank N mask coin)) sample
+but is expected to have type
+  controlledFullForestLaw N C H p r mask sample =
+    (originalRegisterMeasure N p).toPMF.bind fun coin =>
+      ordinaryCompletedTreeLaw (maskedNormalizedTree N C H r mask coin) sample
+G4WholeProfileDetermination.lean:3166:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.original_bank_real_weight_positive`:
+  [DecidableEq X]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+G4WholeProfileDetermination.lean:3217:6: warning: declaration uses `sorry`
+G4WholeProfileDetermination.lean:3225:2: warning: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3236:6: warning: declaration uses `sorry`
+G4WholeProfileDetermination.lean:3227:6: warning: declaration uses `sorry`
+G4WholeProfileDetermination.lean:3230:16: warning: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3230:36: warning: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3231:22: warning: Variable name `hcover` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcover
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3231:53: warning: Variable name `hnodup` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hnodup
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3232:5: warning: Variable name `hnot` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hnot
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3232:21: warning: Variable name `hne` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hne
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3237:2: warning: Unused tactic linter: `unfold finiteBankMoment` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3238:2: warning: Unused tactic linter: `rw [Finset.mul_sum]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3239:2: warning: Unused tactic linter: `apply Finset.sum_congr rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3240:2: warning: Unused tactic linter: `intro coin _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3241:2: warning: Unused tactic linter: `rw [controlled_completed_eq_override_common N C H p r mask sample coin]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3242:2: warning: Unused tactic linter: `have hm :=
+  enumerated_fixed_bank_comb_power N C H p r (overrideBank N mask coin) i j sample b hb ha as hcover hnodup hnot
+    hne` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3244:2: warning: Unused tactic linter: `change
+  (((sourceProgram N r
+                (UnifiedLean.Source.SourceCalendarCompiler.compiledCalendarProgram N C H (originalGamma p)
+                  (fun _ => true))
+                (initialCode N sample (originalRegister N (overrideBank N mask coin)))).bind
+            (ancestralCompletion N r (Fintype.card Copy))).map
+        (fun d => sourceUnrankedForest (state d) Finset.univ))
+      {toUnranked (comb b as)} =
+    ENNReal.ofReal (combCoefficient as.length) *
+      (bankSurvival N C H p r (overrideBank N mask coin) i j) ^ (as.length.choose 2) at hm` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3251:2: warning: Unused tactic linter: `rw [hm, ENNReal.toReal_mul, ENNReal.toReal_ofReal (le_of_lt (combCoefficient_pos _)),
+  ENNReal.toReal_pow, maskedNormalizedTree_survival N C H p r mask coin i j]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3253:2: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+G4WholeProfileDetermination.lean:3237:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3238:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3239:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3240:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3241:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3242:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3244:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3251:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3253:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+G4WholeProfileDetermination.lean:3258:5: warning: Variable name `hsurj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hsurj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+G4WholeProfileDetermination.lean:3350:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:3513:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+G4WholeProfileDetermination.lean:3583:0: warning: automatically included section variable(s) unused in theorem `DotG4.WholeProfileDetermination.actual_finite_randomized_common_menu_tree_laws`:
+  [Fintype Row]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Row] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
