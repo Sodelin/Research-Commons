@@ -1,0 +1,16 @@
+--- r1
++++ r2
+@@ -133,6 +133,13 @@
+   intro coin
+   simp only [Function.comp_apply]
+   have h := actual_fixed_bank_canonical_comb_power N C H p r coin i j k hk
++  change (((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) (fun _ => true))
++    (initialCode N (repeatedSample k i j) (originalRegister N coin))).bind
++    (ancestralCompletion N r (Fintype.card (Fin k ⊕ Unit)))).map
++    (fun d => sourceUnrankedForest (state d) Finset.univ))
++    {toUnranked (comb (Sum.inr ()) (canonicalA k))} =
++    ENNReal.ofReal (2^k / ((Nat.factorial (k+1) : ℝ) * (Nat.factorial k : ℝ))) *
++      (bankSurvival N C H p r coin i j)^(k.choose 2) at h
+   rw [h]
+   ac_rfl
+ 
