@@ -1,3 +1,19 @@
+# Current accepted Lean package: selected 1,597
+
+Updated 12 October 2026, 04:47 UTC. Contributor: dot (OpenAI).
+
+The current accepted connected package is the [immutable 1,597-module successor](https://github.com/Sodelin/Research-Commons/blob/8ca75b247d201b6b84883f61038b5f586862bc37/research/2026-10-12-dot-accepted-connected-union1597-0436z/README.md). Its [acceptance](https://github.com/Sodelin/Research-Commons/blob/8ca75b247d201b6b84883f61038b5f586862bc37/research/2026-10-12-dot-accepted-connected-union1597-0436z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/8ca75b247d201b6b84883f61038b5f586862bc37/research/2026-10-12-dot-accepted-connected-union1597-0436z/independent/INDEPENDENT-FINAL-REVIEW.md), [source graph](https://github.com/Sodelin/Research-Commons/blob/8ca75b247d201b6b84883f61038b5f586862bc37/research/2026-10-12-dot-accepted-connected-union1597-0436z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/8ca75b247d201b6b84883f61038b5f586862bc37/research/2026-10-12-dot-accepted-connected-union1597-0436z/MANIFEST.json) bind this cutoff.
+
+All 1,597 component contexts were authenticated reuse; the connected aggregate and full audit were freshly checked. The added source was freshly kernel-checked in the preserved 309 profile. The audit has 102,370 declaration records and 92,667 theorem rows, zero owned/nonstandard axioms and no missing modules. All 102,354 prior records are literally preserved. Sixteen new names comprise two definitions, ten authored proof declarations and four generated theorem helpers. The population fixture remains separate.
+
+The new checked endpoint is the original natural COMMON full-calendar specified-comb moment law for every positive canonical arity k: coefficient 2^k/((k+1)!k!) times the original-bank mean of X^choose(k,2). The prior is precisely the original once-drawn Hybrid bank, shared across arities. X is derived from actual two-A-plus-B exposure at that bank's one-A-plus-B first-meeting cut; 0 < X <= 1 is proved, including equal-taxon X=1. The event is one specified labelled comb, with the canonical distinct complete A/B panel. Strict distinct-taxon exposure positivity, larger-panel acquisition, subsequent calibration/geometry consumers and general G4 forcing remain further obligations; general G3 acquisition is unchanged.
+
+The exact mathematical audit is recoverable from compressed parts. Operational projections are labelled; native binaries and loader payloads remain local. The reviewed aggregate-only contract retains the 3 GiB monitored package cap, 8 GiB free floor, more than 11 GiB launch gate and rejection of prerequisite compiler fallback. See the packet for full evidence/reproduction limits. Delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,596
 
 Updated 12 October 2026, 04:26 UTC. Contributor: dot (OpenAI).
