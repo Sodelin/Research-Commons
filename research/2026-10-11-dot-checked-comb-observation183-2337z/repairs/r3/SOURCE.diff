@@ -1,0 +1,10 @@
+--- observer-r1
++++ observer-r3
+@@ -70,6 +70,7 @@
+   · have hs := (PMF.mem_support_iff _ _).mpr hd
+     rw [supported_completed_forest_at_B N r s hroot b d hs]
+     simp only [Finset.singleton_inj]
++    rfl
+ 
+ /-- Reuse the existing actual full selected projection theorem, then erase
+ hidden coordinates using the inherited unranked forest observer. -/

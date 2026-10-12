@@ -1,0 +1,23 @@
+--- r1
++++ r2
+@@ -614,8 +614,9 @@
+   let u := merge (state s) p.2.val.1 p.2.val.2
+   have hu := merge_source_valid N sample (state s) s.property hm
+   have hanc : u.ancestor p.2.val.1 = p.2.val.1 := by
+-    simp only [u,merge,s.property.forest.representative p.2.val.1 hm.first_live,
+-      if_neg hm.different]
++    have hrep : (state s).ancestor p.2.val.1 = p.2.val.1 :=
++      s.property.forest.representative p.2.val.1 hm.first_live
++    simp only [u,merge,hrep,if_neg hm.different]
+   change A ∈ internalClades ((decodeSnapshot N.root (encodeSnapshot u hu.forest)).genealogy
+     (u.ancestor p.2.val.1))
+   rw [decode_encode_live_genealogy N.root u hu.forest
+@@ -798,7 +799,7 @@
+     (h : CombFrontier (state s) t pref []) (hb : b ∈ t.leaves) :
+     completionTreeLaw N r b s (toUnranked t) = 1 := by
+   have hc : liveCard s = 1 := by
+-    simpa only [List.length_nil,Nat.zero_add] using
++    simpa only [liveCard,state,decodeSnapshot,List.length_nil,Nat.zero_add] using
+       frontier_live_card (state s) s.property.forest t pref [] h
+   have hbleaf : b ∈ ((state s).genealogy pref).leaves := by
+     rw [unordered_leaves h.prefix_tree]

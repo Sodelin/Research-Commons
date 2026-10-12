@@ -1,0 +1,13 @@
+--- elaboration-r3
++++ elaboration-r4
+@@ -70,7 +70,9 @@
+   · have hs := (PMF.mem_support_iff _ _).mpr hd
+     rw [supported_completed_forest_at_B N r s hroot b d hs]
+     simp only [Finset.singleton_inj]
+-    rfl
++    by_cases ht : target = toUnranked ((state d).genealogy ((state d).ancestor b))
++    · simp only [if_pos ht]
++    · simp only [if_neg ht]
+ 
+ /-- Reuse the existing actual full selected projection theorem, then erase
+ hidden coordinates using the inherited unranked forest observer. -/

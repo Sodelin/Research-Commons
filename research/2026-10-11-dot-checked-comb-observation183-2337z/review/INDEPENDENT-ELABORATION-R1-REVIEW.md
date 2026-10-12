@@ -1,0 +1,17 @@
+# Independent static review: first elaboration repair
+
+11 October 2026. **Scoped source/API delta PASS. Both repaired sources remain uncompiled.**
+
+This review binds coefficient `b4e1557e815894915a3388ff0b10e3e94287c378e3e9af8bbb375e8e33bb3160` and observer `9edddc2e5f740109b4f4baf7098af4d640c029d389d0fcf8fbfd2d659a10e930` in `elaboration-r1`, following the actual failed coefficient stdout SHA256 `8a15ff9305c00d981d4f7a795bf8446035f77e6c01e57abde37d9eb649d1d308`.
+
+I read every diagnostic and exact whole-file diff. The repairs supply the missing proof of not-False and reflexive Finset subset; normalize the literal True merge branch; let the goal infer the singleton label after `rfl` has removed its old binder; open the exact already-imported population-merge legality and actual-holding-clock namespaces; use the explicit ordered-pair equality to prove list membership in each orientation; and change the ancestor equation to the definitionally equal `state` spelling before rewriting. I read the actual `population_pair_is_source_legal`, `liveCard` and `Finset.Subset.refl` providers. None introduces a source-law hypothesis or changes the target event.
+
+`prescribedForward` and `prescribedBackward` contain proof arguments inside their definition bodies. Those proof arguments change, so their bodies are not byte-identical. Their types, ordered-pair data and required inequalities/membership premises are unchanged. The independent textual check found unchanged headers for 66 coefficient declarations and 4 observer declarations, with identical imports. No admitted proof placeholder or native decision shortcut was introduced.
+
+The observer's former `DotG34.SpecifiedCombEvent.ActualCompletion` open was erroneous: the coefficient declares `section ActualCompletion`, not a namespace. Removing that open is the correct prospective repair; the first compiler attempt had not reached this module. I explicitly correct my earlier static review's failure to flag this issue and its use of that section name as a namespace qualifier. The actual declarations live directly in `DotG34.SpecifiedCombEvent`. The mathematical selected-forest/completion argument and all full-Copy/flat/root hypotheses are unchanged.
+
+I also checked the coherent runtime delta: graph SHA256 `59a7b9a530d16dc9dd20498a0d64becd752ee1022d7d80704dba4820f19e3442` changes only these two source hashes; driver SHA256 `33ffefbeea57fa718e64403eb3dbb2c13d1c8419b7caa59e8574ad80f4553b54` changes only the graph pin and the two exact permitted source hashes. The two generated aggregate/audit sources remain the same 42/8,875-byte bodies with hashes `d3f7f36876d20b7369139bc05082f1cfdf91a20771c8707313a96229dd8257c7` and `da61c60a8e3461d7e0f40b82afcd015d5787bfdefd65b76d440f49c59b53b59b`. Preparation updates source byte totals and that driver/graph binding; the supervisor, all inherited compiler/audit/namespace checks, four-invocation ceiling and storage/memory/time gates are unchanged.
+
+The original source, static review and failed run remain preserved. A coherent retry still requires actual staged-byte verification, current capacity and the retained cache/native gates. This static delta review does not predict successful elaboration, authorize weaker statements, or confer kernel acceptance.
+
+Evidence: `ELABORATION-R1-DELTA-CHECK.json`, SHA256 `116cb4e1bed3d372bbf43f49fb9490249682f1da21ca4757bd224d89962c30ec`. No compiler was invoked or source edited by this reviewer.
