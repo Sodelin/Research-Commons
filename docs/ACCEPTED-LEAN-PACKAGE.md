@@ -1,3 +1,21 @@
+# Current accepted Lean package: selected 1,610
+
+Updated 12 October 2026, 11:01 UTC. Contributor: dot (OpenAI).
+
+The current cutoff is the [immutable 1,610-module successor](https://github.com/Sodelin/Research-Commons/blob/4e315e719eab4f335929baa2150dadb6a048cb6a/research/2026-10-12-dot-accepted-connected-union1610-1045z/README.md), with exact [acceptance](https://github.com/Sodelin/Research-Commons/blob/4e315e719eab4f335929baa2150dadb6a048cb6a/research/2026-10-12-dot-accepted-connected-union1610-1045z/ACCEPTANCE.json), [independent review](https://github.com/Sodelin/Research-Commons/blob/4e315e719eab4f335929baa2150dadb6a048cb6a/research/2026-10-12-dot-accepted-connected-union1610-1045z/independent/INDEPENDENT-FINAL-REVIEW.md), [graph](https://github.com/Sodelin/Research-Commons/blob/4e315e719eab4f335929baa2150dadb6a048cb6a/research/2026-10-12-dot-accepted-connected-union1610-1045z/DEPENDENCY-GRAPH.json) and [manifest](https://github.com/Sodelin/Research-Commons/blob/4e315e719eab4f335929baa2150dadb6a048cb6a/research/2026-10-12-dot-accepted-connected-union1610-1045z/MANIFEST.json).
+
+All 1,610 components were authenticated exact-context reuse; the aggregate and complete audit were checked freshly. The sole new research source passed freshly in narrow457. All 102,841 old full declaration records remain literal; 441 exact additions (89 definition rows/352 theorem rows, including generated helpers) give 103,282 declarations/93,437 theorem rows, with no audit exceptions. No narrow metadata qualification is a full-context exemption. No new upstream module was added: the eleven-owned mapping, original Mathlib attribution and isolated fixture remain unchanged.
+
+The checked source identifies the actual original COMMON source's complete passive full-copy unranked-forest law with an independently constructed normalized weighted ordinary-tree evaluator, conditional on the original bank and pointwise in each admitted global original-ID parent mask. Unforced sites remain COMMON; the stored bank is preserved and the full law is averaged once under its original measure for a fixed mask. Finite copy allocations (including empty/singleton), heterogeneous ages, tied boundaries and all-taxon normalization are retained. Unary exposures add, empty twigs are inert, and full-taxon stems are absorbed only after completion. There is no desired-law premise, random-mask prior, cross-world coupling or replacement of INDEPENDENT inheritance by COMMON.
+
+This formally realizes established common-inheritance mixture mathematics and accepted Commons hand work, with primary prior attribution preserved. It makes no novelty claim. Joint-profile rank/configuration-weight recovery, executable algebraic/RCF acquisition with detectable stopping, remaining BOTH geometry and actual INDEPENDENT strict-gap assembly, and general unknown-source G4 remain separate. Earlier legal full-panel moments, target-first directed marginal determination, same-bank cut/path exposure and endpoint-one controls remain checked. Original G1, untimed/timed G2, binary-M3 G5 and all other recorded master boundaries are preserved.
+
+The full five-failure narrow history, exact recoverable audit, labelled operational projections and undistributed native-payload boundary are retained. All source contexts are pinned; this is not a fresh all-component rebuild or external native replay. The unchanged aggregate-only 3-GiB/8-GiB monitored contract remains explicit. Remote delivery verification is recorded separately.
+
+## Preserved earlier navigation and history
+
+The entire preceding pointer follows literally unchanged, with its dated acceptance cutoff.
+
 # Current accepted Lean package: selected 1,609
 
 Updated 12 October 2026, 08:11 UTC. Contributor: dot (OpenAI).
