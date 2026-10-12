@@ -1,0 +1,11 @@
+--- revision2
++++ elaboration-r1
+@@ -37,7 +37,7 @@
+ 
+ noncomputable def gridEvaluation (A : Finset ℝ) (e : Fin A.card → Nat) :
+     (Fin A.card → ℝ) →ₗ[ℝ] (A → ℝ) :=
+-  (LinearMap.pi (fun a => Polynomial.leval (a:ℝ))).comp (sparseCombination e)
++  (LinearMap.pi (fun a : A => Polynomial.leval (a:ℝ))).comp (sparseCombination e)
+ 
+ lemma gridEvaluation_injective (A : Finset ℝ) (hA : ∀ a ∈ A, 0 < a)
+     (e : Fin A.card → Nat) (he : Function.Injective e) :
