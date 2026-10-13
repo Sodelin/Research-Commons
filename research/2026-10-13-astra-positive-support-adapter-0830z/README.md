@@ -13,15 +13,18 @@ existence, a physical representative/hybrid budget, or arbitrary-input G3 closur
 Zero-weight values are excluded from the support set and unconstrained in the
 general theorem; repeated values count once. The survival domain remains `(0,1]`.
 
-The closed execution checkpoint after batch 055 authenticates the selected
-external prefix through index 2861. Batch 054 remains failed; separate diagnosticv2 and explicit adoption recovered
-its module2860 result. The other closed guards retain their literal outcomes;
-their literal receipts and remote publication readbacks distinguish execution
-from reuse. The [055 handoff](evidence/LEAN-LANE-055-HANDOFF.json) records
-the independent terminal readback and no-active process observation at its cutoff.
-The accepted provider, new adapter and separate interface audit remain uncompiled.
-Original 042's missing outer guard remains UNKNOWN despite successful later
-authentication of its retained module results.
+The current recovered execution checkpoint authenticates the selected external
+prefix through index2958. Batch058 has its actual successful guard; original059
+retained32 successful module receipts but has no retained outer guard/capture. Separate
+zero-compiler recovery059 passed in8.008 seconds,32.69MB peak child RSS. Original
+042,057 and059 outer outcomes remain UNKNOWN. No historical timing, exit status
+or resource maxima are reconstructed. Batch054 remains failed; its module2860
+was recovered by the separately preserved diagnosticv2 and explicit adoption.
+Four additional literal base proofs freshly passed the actual Lake target, with
+the existing kernel/aggregate fresh and916 external modules authenticated reuse;
+all24 expected axiom heads were audited. The accepted provider, new positive-support
+adapter, seven support wrappers and explicit interface audit remain uncompiled.
+Next is one fresh batch060/index2959 after verified recovery publication.
 
 Incoming hand-reviewed work is routed by the
 [exact-source integration catalogue](../../communications/astra-incoming-integration-registry-2003.md)
