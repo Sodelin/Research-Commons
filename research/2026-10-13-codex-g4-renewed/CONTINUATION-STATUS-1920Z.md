@@ -4,6 +4,19 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## All-real phase checkpoint, 22:26 UTC
+
+The [all-order unequal phase constraint](chronology/continuation-2110z/ALL-ORDER-UNEQUAL-PHASE-CONSTRAINT.md)
+has [independent hand acceptance](critical-review/ZERO-TYPE-PHASE-REVIEW.md).
+It requires every asymptotic phase coefficient to be constant on the full
+orbit closure, without rationality or nonresonance assumptions. The
+[fixed-phase continuation](chronology/continuation-2110z/FIXED-PHASE-GAMMA-HANDOFF.md)
+has a separate Sol audit. The remaining step is exact phase removal; formal
+asymptotic equality alone is insufficient. A uniform integrated inverse
+Laplace proof is now under construction and adversarial review, informed by
+the [primary-source applicability check](chronology/continuation-2110z/PRIMARY-APPLICABILITY-CHECK.md).
+No general finite-persistence or original G4 promotion is made at this point.
+
 ## Adversarial audit and general local successor, 21:16 UTC
 
 Nolan challenged the correctness of the main advance and requested stronger
