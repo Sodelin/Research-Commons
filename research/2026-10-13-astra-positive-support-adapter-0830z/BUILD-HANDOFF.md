@@ -1,12 +1,21 @@
 # Guarded build continuation
 
-Checkpoint: 2026-10-13, 18:57 UTC. The new mathematical adapter has **not yet
-compiled**. Original 040 and041 outer guards passed. The 32 recovered compiler
-invocations in 042 were freshly authenticated, together with the complete
-prefix through index 2530; the missing original 042 outer guard remains UNKNOWN.
-No new Lean compiler was launched during recovery. Next proposed work is
-index 2531 / batch 043, held until source/evidence publication and coordinator
-release. See the append-only recovery explanation and proposal below.
+Checkpoint after batch 049: 2026-10-13, 19:56 UTC. The new mathematical adapter
+has **not yet compiled**. Fresh resumed guards 043–049 passed; the selected
+external prefix through index 2723 is authenticated. The existing Rust lane
+released the sole compiler slot after checking all three 047–049 guards,
+captures, fresh source/log/artifact bindings, the terminal orchestrator and a
+fresh no-active process inventory. See `evidence/RUST-LANE-049-HANDOFF.json`.
+Next proposed work is index 2724, `Mathlib.MeasureTheory.Covering.Besicovitch`,
+using batch 050 and the unchanged 32-module serial policy. Continuing execution
+and non-force closed-checkpoint publication remain authorized under the
+published continuation-ownership handoff. Recheck current process/resource
+state before launching; do not duplicate any existing batch number.
+
+The 32 retained compiler invocations in original 042 were separately
+authenticated after reconnection. Its missing original outer guard remains
+UNKNOWN; none of the later successful guards repairs that missing observation.
+The original recovery proposal and its source/evidence remain unchanged below.
 
 The exact source package is materialized at
 `/workspace/scratch/astra-support-sources-0936`. Its readback passed in

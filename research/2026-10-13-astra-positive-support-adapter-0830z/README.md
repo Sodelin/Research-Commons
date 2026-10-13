@@ -13,6 +13,24 @@ existence, a physical representative/hybrid budget, or arbitrary-input G3 closur
 Zero-weight values are excluded from the support set and unconstrained in the
 general theorem; repeated values count once. The survival domain remains `(0,1]`.
 
+The closed execution checkpoint after batch 049 authenticates the selected
+external prefix through index 2723. Fresh resumed guards 043–049 passed; their
+closed receipts and remote publication readbacks are indexed in the
+[integration evidence index](../../communications/2026-10-13-astra-integration-index-1934z.md)
+and subsequent uniquely numbered Commons checkpoints. The
+[049 handoff](evidence/RUST-LANE-049-HANDOFF.json) confirms no active compiler
+at its cutoff. The accepted provider, new adapter and separate interface audit
+remain uncompiled. Original 042's missing outer guard remains UNKNOWN despite
+the successful later authentication of its retained module results.
+
+Incoming G4 hand results are separately indexed at their exact
+[1938](../../communications/astra-g4-1938-intake.md),
+[1943 successor](../../communications/astra-g4-1943-successor-intake.md) and
+[1955](../../communications/astra-g4-1955-intake.md) cutoffs. Their accepted
+calibration conditions, existential versus effective distinctions and remaining
+gaps are preserved; this indexing is not a new Lean formalization or solver
+decision rule.
+
 ## Exact accepted provider
 
 `DotG4.ActualPositiveGridUniqueness.positiveCertificateGrid_card_lt` is in the
