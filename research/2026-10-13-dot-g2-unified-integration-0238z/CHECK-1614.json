@@ -1,0 +1,1382 @@
+{
+  "version": 1614,
+  "g2_count": 68,
+  "all_g2_explicit_roots": true,
+  "aggregate_hash_match": true,
+  "aggregate_receipt": {
+    "status": "PASS_FRESH_KERNEL_CHECK",
+    "source_sha256": "b9564d7b4f9f21ad0ff5067f24a1987c3692377800520cc593e6a0737c2c1271",
+    "exit_code": 0,
+    "elapsed_seconds": 5.065762349986471
+  },
+  "audit_receipt": {
+    "status": "PASS_FRESH_KERNEL_CHECK",
+    "source_sha256": "dcf5903df3b7200edba746a9ebd41eb7581b66524f70e50f7a41cc48d69a5f1c",
+    "exit_code": 0,
+    "elapsed_seconds": 29.17582664100337
+  },
+  "lake_terminal": {
+    "command": [
+      "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lake",
+      "test",
+      "--",
+      "current/connected"
+    ],
+    "started_utc": "2026-10-12T19:32:03.293397+00:00",
+    "review_sha256": "ae092d9d2f96e01e52eb19fbb683eb729b80850bc85c398155de1c567b09d1f4",
+    "free_bytes": 17903517696,
+    "available_memory_bytes": 8953356288,
+    "profile": "3GiB monitored package/8GiB floor",
+    "graph_sha256": "f9ca5a37dfb2ef9ec7975bf47617b31c2b981bdce30f39fe7fff8f480a063f10",
+    "exit_code": 0,
+    "finished_utc": "2026-10-12T19:33:15.476799+00:00"
+  },
+  "g2": [
+    {
+      "module": "G2LiveLineageRouting",
+      "sha256": "bf33f6be93e61960aa637df34d1197316669d6f2ddde6d743ac405a010cb05af",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Rat.Lemmas",
+        "Mathlib.Tactic.Ring"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T232424.786931Z/attempts/00002-G2LiveLineageRouting/G2LiveLineageRouting.olean",
+        "G2LiveLineageRouting.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2FaithfulPairAgeDecoration",
+      "sha256": "c82708abcdae2e3e174f245dccca811881b5149f1acb69b12700850b307b5735",
+      "imports": [
+        "UnifiedLean.Source.SourceForestSilentPruning",
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Metrizable"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00035-G2FaithfulPairAgeDecoration/G2FaithfulPairAgeDecoration.olean",
+        "G2FaithfulPairAgeDecoration.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2SourceGraftDecoration",
+      "sha256": "c8da578dde3fdf049e4075a39292979bbb5936bd9c754d743072420a91c07ddd",
+      "imports": [
+        "G2FaithfulPairAgeDecoration",
+        "UnifiedLean.Source.UniformizedSourceStep"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00036-G2SourceGraftDecoration/G2SourceGraftDecoration.olean",
+        "G2SourceGraftDecoration.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2LiteralMarkedClockTrace",
+      "sha256": "c7360a7aad72b8f8a2fb4864ff4e9b6e7d576e01e68c8a7c1a594ef2d9e57b9a",
+      "imports": [
+        "UnifiedLean.Source.SourceLiteralClockEndpoint"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00038-G2LiteralMarkedClockTrace/G2LiteralMarkedClockTrace.olean",
+        "G2LiteralMarkedClockTrace.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualDecorationFold",
+      "sha256": "8ca5f51130da2c7b513e70cd0b0d93a22fe9c4e706a63b590cab5407258f55be",
+      "imports": [
+        "G2SourceGraftDecoration",
+        "G2LiteralMarkedClockTrace"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00039-G2ActualDecorationFold/G2ActualDecorationFold.olean",
+        "G2ActualDecorationFold.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2DecorationMeasurability",
+      "sha256": "a016097f843583052f5c2b8a4c19899cb97d78052779c4771e22aa9603104338",
+      "imports": [
+        "G2ActualDecorationFold"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00040-G2DecorationMeasurability/G2DecorationMeasurability.olean",
+        "G2DecorationMeasurability.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2MarkedTraceRenewal",
+      "sha256": "edbabf47f1429b8747c5d49a7d00d2762ad47ece635dfe00f1c59280a0b29603",
+      "imports": [
+        "G2LiteralMarkedClockTrace"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00041-G2MarkedTraceRenewal/G2MarkedTraceRenewal.olean",
+        "G2MarkedTraceRenewal.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2LiteralEpochLaw",
+      "sha256": "9020ef5baaf8955097e69efac86b552cf80540211125d8f215bf1ca0bcecba7a",
+      "imports": [
+        "G2MarkedTraceRenewal"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00042-G2LiteralEpochLaw/G2LiteralEpochLaw.olean",
+        "G2LiteralEpochLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualCalendarTrace",
+      "sha256": "cf709bcf2b686619c6f378dbe1a7690b6a19012a82a541ed34f3b0ff4af07ddd",
+      "imports": [
+        "G2LiteralEpochLaw",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00043-G2ActualCalendarTrace/G2ActualCalendarTrace.olean",
+        "G2ActualCalendarTrace.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2FiniteAncestralTrace",
+      "sha256": "00733330a10c2c2f8718e0a7e9c954ae4ac6c10631eee57231e22e3620bafb5a",
+      "imports": [
+        "G2LiteralMarkedClockTrace",
+        "UnifiedLean.Source.SourceAncestralCompletion"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00044-G2FiniteAncestralTrace/G2FiniteAncestralTrace.olean",
+        "G2FiniteAncestralTrace.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2AncestralTraceSourceLaw",
+      "sha256": "641cf1285ad10ec18dab7a42d207147afb964485924912b9d53aee428927436a",
+      "imports": [
+        "G2FiniteAncestralTrace",
+        "G2LiteralEpochLaw",
+        "UnifiedLean.Source.SourceEventualCompletionLimit",
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Metrizable",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.DominatedConvergence"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00045-G2AncestralTraceSourceLaw/G2AncestralTraceSourceLaw.olean",
+        "G2AncestralTraceSourceLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CompleteCalendarAttachment",
+      "sha256": "aa34dd0dfc6f4d5b33b764f801eade71b3380e024f5bbfcf8549b508e0d5d40f",
+      "imports": [
+        "G2ActualCalendarTrace",
+        "G2AncestralTraceSourceLaw",
+        "UnifiedLean.Source.SourceInitializedCalendar",
+        "UnifiedLean.Source.UnrankedGenealogyObservation"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00046-G2CompleteCalendarAttachment/G2CompleteCalendarAttachment.olean",
+        "G2CompleteCalendarAttachment.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2LiteralCutResidual",
+      "sha256": "e09e93c3ef68ea8b25ff72008a37306bfb8d0c2a8ef2b7082eb5c841fb8f1011",
+      "imports": [
+        "G2LiteralEpochLaw"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00047-G2LiteralCutResidual/G2LiteralCutResidual.olean",
+        "G2LiteralCutResidual.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2MarkedTraceCuts",
+      "sha256": "aaa3688bee5774a700912c49d7ca134d17d4e6fee95c8542a3a0b65003f6a699",
+      "imports": [
+        "G2LiteralMarkedClockTrace"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00048-G2MarkedTraceCuts/G2MarkedTraceCuts.olean",
+        "G2MarkedTraceCuts.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2MarkedTraceBudgetStability",
+      "sha256": "6c8f1abb65ac251e0e5ad610d63a51d39b238c9d0ae7b33d5d709e3e8a2c4fea",
+      "imports": [
+        "G2LiteralMarkedClockTrace",
+        "G2MarkedTraceCuts"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00049-G2MarkedTraceBudgetStability/G2MarkedTraceBudgetStability.olean",
+        "G2MarkedTraceBudgetStability.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2SameClockContinuation",
+      "sha256": "9dfef60676c1333670f00a7a3fb180487ea622ee3d67ced1492baebe32b777e6",
+      "imports": [
+        "G2LiteralCutResidual",
+        "G2MarkedTraceBudgetStability"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00050-G2SameClockContinuation/G2SameClockContinuation.olean",
+        "G2SameClockContinuation.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2HistoryResidualAttachment",
+      "sha256": "3c84f22ebdcc417af5bae995cb3706c0b2098f07947ab5e5918fb07307f7e298",
+      "imports": [
+        "G2LiteralCutResidual"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00051-G2HistoryResidualAttachment/G2HistoryResidualAttachment.olean",
+        "G2HistoryResidualAttachment.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CutFutureSourceBinding",
+      "sha256": "b95300a4096e50d524bad664e51a4c04bc20384d070dfbbecf0e3b7e8ab42190",
+      "imports": [
+        "G2HistoryResidualAttachment"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00052-G2CutFutureSourceBinding/G2CutFutureSourceBinding.olean",
+        "G2CutFutureSourceBinding.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2SameClockPastFutureLaw",
+      "sha256": "bf28fae9d12fd6c381cbae64e5bff0b944fe9fe9dceb051b9b470f19b5432930",
+      "imports": [
+        "G2CutFutureSourceBinding",
+        "G2SameClockContinuation"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00053-G2SameClockPastFutureLaw/G2SameClockPastFutureLaw.olean",
+        "G2SameClockPastFutureLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2EpochHistoryReadout",
+      "sha256": "f3d6598cff77c87219efb74e9a361b3ac7c92c35862d2d259932e6f4f5b904d7",
+      "imports": [
+        "G2SameClockContinuation",
+        "G2SameClockPastFutureLaw"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00054-G2EpochHistoryReadout/G2EpochHistoryReadout.olean",
+        "G2EpochHistoryReadout.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CompleteAncestralPath",
+      "sha256": "42ef05e829cb750a88c4ae5abe57db6c927fb5b7467921998ba1e02c2dc013f0",
+      "imports": [
+        "G2EpochHistoryReadout",
+        "G2FiniteAncestralTrace"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00055-G2CompleteAncestralPath/G2CompleteAncestralPath.olean",
+        "G2CompleteAncestralPath.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ChronologicalPathReadout",
+      "sha256": "99ad51df4fb50155d714d0ff69972d194fa1c70132bee75f580fbb789be00473",
+      "imports": [
+        "G2CompleteCalendarAttachment",
+        "G2CompleteAncestralPath"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00056-G2ChronologicalPathReadout/G2ChronologicalPathReadout.olean",
+        "G2ChronologicalPathReadout.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CalendarDecoration",
+      "sha256": "9b2458b78813186151e5d5eb2cf7bd9a3a134e39e0de8de6e59cac6d2a6936b6",
+      "imports": [
+        "G2DecorationMeasurability",
+        "G2ChronologicalPathReadout"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00057-G2CalendarDecoration/G2CalendarDecoration.olean",
+        "G2CalendarDecoration.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CompleteDecoration",
+      "sha256": "ffc80b41844871b945b78a4d7b5887121ca2b3691ad985d6b8ff29c14d8fe963",
+      "imports": [
+        "G2CalendarDecoration"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00058-G2CompleteDecoration/G2CompleteDecoration.olean",
+        "G2CompleteDecoration.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CutResidualSourceMixture",
+      "sha256": "6b13e51479edf4409fa09167f1c83065ed7a4952650c28da5d78192105b6cc0a",
+      "imports": [
+        "G2HistoryResidualAttachment"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00059-G2CutResidualSourceMixture/G2CutResidualSourceMixture.olean",
+        "G2CutResidualSourceMixture.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2SourceFiniteHistory",
+      "sha256": "1992444990057008ee1449cda6c3a01a9b7c25b9070c749c0bc9c2504db45ee5",
+      "imports": [
+        "UnifiedLean.Source.SourceCrossCarrierProgram"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00060-G2SourceFiniteHistory/G2SourceFiniteHistory.olean",
+        "G2SourceFiniteHistory.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualEpochHistoryLaw",
+      "sha256": "e106b912721336831c3392d3cf5414cf20b43765b73c5c6cc31b83dec7d69be2",
+      "imports": [
+        "G2CutResidualSourceMixture",
+        "G2CompleteAncestralPath",
+        "G2SourceFiniteHistory"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00061-G2ActualEpochHistoryLaw/G2ActualEpochHistoryLaw.olean",
+        "G2ActualEpochHistoryLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2EpochPathProjection",
+      "sha256": "04abbc6e6efdde07f651a706092014b14c542b7386037d3715cecbf61b1d21e8",
+      "imports": [
+        "G2ActualEpochHistoryLaw",
+        "G2SourceFiniteHistory",
+        "G2CompleteAncestralPath",
+        "Mathlib.MeasureTheory.Constructions.Projective",
+        "Mathlib.Data.Finset.Max"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00062-G2EpochPathProjection/G2EpochPathProjection.olean",
+        "G2EpochPathProjection.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualSegmentPathLaw",
+      "sha256": "9581cf8c75982bbfd3a47f300a97a865c1fe140efd946ffce464fe25344e60ca",
+      "imports": [
+        "G2ChronologicalPathReadout",
+        "G2EpochPathProjection"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00063-G2ActualSegmentPathLaw/G2ActualSegmentPathLaw.olean",
+        "G2ActualSegmentPathLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2FiniteFibreTransport",
+      "sha256": "fc8b772af83a6140bff8dbc6253b50820e5c6bbf7ce0262d2211919f039b16ea",
+      "imports": [
+        "Mathlib.MeasureTheory.Measure.Prod",
+        "Mathlib.MeasureTheory.Measure.Restrict"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00064-G2FiniteFibreTransport/G2FiniteFibreTransport.olean",
+        "G2FiniteFibreTransport.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CalendarHistoryBinding",
+      "sha256": "8827842d77dc5749d6db4114ef24d34cf85779a545628879a6ba6eaf3681b796",
+      "imports": [
+        "G2ActualCalendarTrace",
+        "G2SourceFiniteHistory"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00065-G2CalendarHistoryBinding/G2CalendarHistoryBinding.olean",
+        "G2CalendarHistoryBinding.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CalendarPathProjection",
+      "sha256": "af8a56136b53dafdb99b77de1f3e5ecdd5a5a6e7a70b39657650f9a364bd52c6",
+      "imports": [
+        "G2ActualSegmentPathLaw",
+        "G2FiniteFibreTransport",
+        "G2CalendarHistoryBinding"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00066-G2CalendarPathProjection/G2CalendarPathProjection.olean",
+        "G2CalendarPathProjection.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CompletedCalendarPathLaw",
+      "sha256": "684487a6e3816a13a3b03b40550873fbfa7e3c920b1854e41f9951b17aba2a30",
+      "imports": [
+        "G2CalendarPathProjection"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00067-G2CompletedCalendarPathLaw/G2CompletedCalendarPathLaw.olean",
+        "G2CompletedCalendarPathLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ChronologicalGluing",
+      "sha256": "ca1b9f05a5f87556eb9a9dca93d160409a735d934d17d7c04e3ad0324520bfff",
+      "imports": [
+        "G2CalendarPathProjection"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00068-G2ChronologicalGluing/G2ChronologicalGluing.olean",
+        "G2ChronologicalGluing.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualChronologicalPathLaw",
+      "sha256": "a4a018b7eb33f2cb0bd12e70b0c16d0664c8de26a4d87c0eab046d2bf47d6a18",
+      "imports": [
+        "G2CompletedCalendarPathLaw",
+        "G2ChronologicalGluing"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00069-G2ActualChronologicalPathLaw/G2ActualChronologicalPathLaw.olean",
+        "G2ActualChronologicalPathLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2EventualPathReadout",
+      "sha256": "14e0ef3bb6ff1c45875092e6a474063178fe78977f24c0dfdb055887693690eb",
+      "imports": [
+        "G2CompleteDecoration",
+        "G2ActualChronologicalPathLaw"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00070-G2EventualPathReadout/G2EventualPathReadout.olean",
+        "G2EventualPathReadout.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualPairCoalescence",
+      "sha256": "991ce81e7de2a9012bdb9aa311cb3fbc8cfcbda39843af725c0fdd09617d261d",
+      "imports": [
+        "G2EventualPathReadout"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00071-G2ActualPairCoalescence/G2ActualPairCoalescence.olean",
+        "G2ActualPairCoalescence.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2PairBirthFold",
+      "sha256": "cb0697ca4832343c933b31593553c658e839648968441900a01cc556635512f3",
+      "imports": [
+        "G2ActualDecorationFold",
+        "G2SameClockContinuation"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00075-G2PairBirthFold/G2PairBirthFold.olean",
+        "G2PairBirthFold.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ClockBoundaryNull",
+      "sha256": "f0ed787fd7f9135024b4f5300120699b358cbea0b6adb9b6124a386448ee1982",
+      "imports": [
+        "G2LiteralMarkedClockTrace"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00076-G2ClockBoundaryNull/G2ClockBoundaryNull.olean",
+        "G2ClockBoundaryNull.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2WholeMatrixAges",
+      "sha256": "2c4a38c22a4fb6efa569796749eec7b00c3affd8ee1a57e33144a1bc893026b8",
+      "imports": [
+        "G2CompleteDecoration",
+        "G2PairBirthFold",
+        "G2ClockBoundaryNull"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00077-G2WholeMatrixAges/G2WholeMatrixAges.olean",
+        "G2WholeMatrixAges.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2UniversalTransitionCriterion",
+      "sha256": "ae8d8a1698be9810533bb4b6db5e8184882d635e2acc0ffe160ffc8e50dfd5a5",
+      "imports": [
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "Mathlib.Analysis.SpecialFunctions.Exponential",
+        "Mathlib.Analysis.Calculus.Deriv.Mul"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00945-G2UniversalTransitionCriterion/G2UniversalTransitionCriterion.olean",
+        "G2UniversalTransitionCriterion.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualSourceTransitionCriterion",
+      "sha256": "f56b744f22efa8436d1c6abac9c956792141d3953b179c21f2e9fb6f309aa4a9",
+      "imports": [
+        "G2UniversalTransitionCriterion",
+        "UnifiedLean.Source.SourceCrossCarrierProgram"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00946-G2ActualSourceTransitionCriterion/G2ActualSourceTransitionCriterion.olean",
+        "G2ActualSourceTransitionCriterion.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ChronologicalDecoration",
+      "sha256": "5fca3f67c6f7021084b20214c032afb90777fe61134df0105a2a0600c89ae113",
+      "imports": [
+        "G2WholeMatrixAges"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00947-G2ChronologicalDecoration/G2ChronologicalDecoration.olean",
+        "G2ChronologicalDecoration.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2StrictClockDecoration",
+      "sha256": "cac04040f92e143008996ee4761a7e51e1dc0b27b1735f0768eeef97200f2fa8",
+      "imports": [
+        "G2ChronologicalDecoration"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00948-G2StrictClockDecoration/G2StrictClockDecoration.olean",
+        "G2StrictClockDecoration.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2OriginalProgramSafety",
+      "sha256": "90299b14c00de553311c139ea68e8154b127fbf75f91e4728efad131b1f8d471",
+      "imports": [
+        "G2StrictClockDecoration"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00949-G2OriginalProgramSafety/G2OriginalProgramSafety.olean",
+        "G2OriginalProgramSafety.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2TimedBoundMeasurability",
+      "sha256": "b269de25ed1af29edec928382d0452e62d2cd84c5f70c36cde808ea61ec8543f",
+      "imports": [
+        "G2OriginalProgramSafety"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00950-G2TimedBoundMeasurability/G2TimedBoundMeasurability.olean",
+        "G2TimedBoundMeasurability.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CalendarPairSupport",
+      "sha256": "2cc04aae4479af39fa315e50d959963db84959ae11b21f40cf7608dcfd516b1c",
+      "imports": [
+        "G2WholeMatrixAges",
+        "G2ActualPairCoalescence"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00951-G2CalendarPairSupport/G2CalendarPairSupport.olean",
+        "G2CalendarPairSupport.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2RationalAgeReadout",
+      "sha256": "64c47ce766266fabb405fa51a223f16ed45b80d13c2f6dd31604fd8387a5e274",
+      "imports": [
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+        "Mathlib.MeasureTheory.MeasurableSpace.Pi"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00952-G2RationalAgeReadout/G2RationalAgeReadout.olean",
+        "G2RationalAgeReadout.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2PairBirthThreshold",
+      "sha256": "303f43bb7b14c324d27c9cff82c7173cf08b9e97d98517d58e4dab2713bc7ca0",
+      "imports": [
+        "G2PairBirthFold",
+        "G2EpochHistoryReadout",
+        "G2RationalAgeReadout",
+        "Mathlib.Data.List.OfFn"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00953-G2PairBirthThreshold/G2PairBirthThreshold.olean",
+        "G2PairBirthThreshold.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2AncestralPairSupport",
+      "sha256": "964b830ccc15e18b02cc3c3d7c5e4d1f98d9c4d532cd59fb2a486289dabd0ef8",
+      "imports": [
+        "G2CompleteCalendarAttachment",
+        "G2PairBirthFold"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00954-G2AncestralPairSupport/G2AncestralPairSupport.olean",
+        "G2AncestralPairSupport.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2AncestralAgeCertificate",
+      "sha256": "af6fcaa8a27194d676b676a4c1fc4135dd783353d8aa8e9dc42f3d2a545ecade",
+      "imports": [
+        "G2CalendarPairSupport",
+        "G2PairBirthThreshold",
+        "G2AncestralPairSupport"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00955-G2AncestralAgeCertificate/G2AncestralAgeCertificate.olean",
+        "G2AncestralAgeCertificate.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ChronologicalTraceCompatibility",
+      "sha256": "47ac354705e6df0bbbb081852abcd48e584514a473a91a129fa6d8a9dcd3a93b",
+      "imports": [
+        "G2ChronologicalPathReadout"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00956-G2ChronologicalTraceCompatibility/G2ChronologicalTraceCompatibility.olean",
+        "G2ChronologicalTraceCompatibility.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CalendarFirstAge",
+      "sha256": "8d81c7505e95e60d10663da000754a4757b57f2eba6fde23df94c05bd4b06e6f",
+      "imports": [
+        "G2AncestralAgeCertificate",
+        "G2ChronologicalTraceCompatibility"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00957-G2CalendarFirstAge/G2CalendarFirstAge.olean",
+        "G2CalendarFirstAge.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ControlledTraceAssembly",
+      "sha256": "f02391f465c303efda7b11c035ed43a3f0724e8ad48a76d027cdfbe19a57519d",
+      "imports": [
+        "G2CompleteCalendarAttachment",
+        "UnifiedLean.Source.ControlledUnrankedSourceProjectivity"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00961-G2ControlledTraceAssembly/G2ControlledTraceAssembly.olean",
+        "G2ControlledTraceAssembly.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2RegisteredPathProjection",
+      "sha256": "5ea9209452a8f97971e27c431e9dba9a1edfc68f0b517909c67b0b7609add092",
+      "imports": [
+        "G2ControlledTraceAssembly",
+        "G2ActualChronologicalPathLaw"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00962-G2RegisteredPathProjection/G2RegisteredPathProjection.olean",
+        "G2RegisteredPathProjection.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2OriginalAbsoluteAges",
+      "sha256": "59576fad762d0b49d55d476fedf48d4d900a6de69d6ef5bf4d009d00b936eb35",
+      "imports": [
+        "G2CalendarFirstAge",
+        "G2RegisteredPathProjection"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00963-G2OriginalAbsoluteAges/G2OriginalAbsoluteAges.olean",
+        "G2OriginalAbsoluteAges.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2JointTimedObservation",
+      "sha256": "c79e7949d340af9c5a5878ba6420f163133dd7f399a2f75cbdb698e13878ca04",
+      "imports": [
+        "G2OriginalAbsoluteAges"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00964-G2JointTimedObservation/G2JointTimedObservation.olean",
+        "G2JointTimedObservation.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CompleteTimedSupport",
+      "sha256": "169d7ce5aca559aec2016f8fe50a26629b2a24d94b135885d148f78e4cecb808",
+      "imports": [
+        "G2TimedBoundMeasurability",
+        "G2JointTimedObservation"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00965-G2CompleteTimedSupport/G2CompleteTimedSupport.olean",
+        "G2CompleteTimedSupport.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2TimedDecorationPruning",
+      "sha256": "1cdef90418524400b3fed31ff6426afca569e1677331553972c8a8e66401e56d",
+      "imports": [
+        "G2FaithfulPairAgeDecoration"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00966-G2TimedDecorationPruning/G2TimedDecorationPruning.olean",
+        "G2TimedDecorationPruning.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ChronologicalPruning",
+      "sha256": "7fb5a717568ac5c709663585ea55e994a8b98ac6e424848356024a68149c98d8",
+      "imports": [
+        "G2CompleteTimedSupport",
+        "G2TimedDecorationPruning"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00967-G2ChronologicalPruning/G2ChronologicalPruning.olean",
+        "G2ChronologicalPruning.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2SourcePairMatrixReadout",
+      "sha256": "d2323c4797ac682927ab2e4008b803d701fc5ce8963a4ae0a89f9649fa7cddce",
+      "imports": [
+        "G2ChronologicalPruning"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00968-G2SourcePairMatrixReadout/G2SourcePairMatrixReadout.olean",
+        "G2SourcePairMatrixReadout.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2CompleteTerminalReadout",
+      "sha256": "f7235d98732b30f3041e15d076ceb07771bd5c33879b8755550e724e0f0dfab8",
+      "imports": [
+        "G2SourcePairMatrixReadout"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00969-G2CompleteTerminalReadout/G2CompleteTerminalReadout.olean",
+        "G2CompleteTerminalReadout.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2FaithfulTimedOutput",
+      "sha256": "476e2ef1e3bc0d3d14871fdde32852a310f27a4b9b36673f3e864b5d87f282ac",
+      "imports": [
+        "G2CompleteTerminalReadout"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00970-G2FaithfulTimedOutput/G2FaithfulTimedOutput.olean",
+        "G2FaithfulTimedOutput.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2LiteralTimedObservationPruning",
+      "sha256": "223224ab6002d510076d99da42a11f8ca1724d8266b0fc7a5cdd2d25628c31b7",
+      "imports": [
+        "G2FaithfulTimedOutput"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00971-G2LiteralTimedObservationPruning/G2LiteralTimedObservationPruning.olean",
+        "G2LiteralTimedObservationPruning.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2ActualTimedAllPanelLaw",
+      "sha256": "05ca8311eb01110a0d01d1f12ef6fe744fef51b21f1c3592e90bad3b08f6c376",
+      "imports": [
+        "G2LiteralTimedObservationPruning"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00972-G2ActualTimedAllPanelLaw/G2ActualTimedAllPanelLaw.olean",
+        "G2ActualTimedAllPanelLaw.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2TimedOutputForgetting",
+      "sha256": "194eca3f8167a12e9a216a4f66aa205fb75ca8b36e9920e03972740add0305e4",
+      "imports": [
+        "G2ActualTimedAllPanelLaw"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00973-G2TimedOutputForgetting/G2TimedOutputForgetting.olean",
+        "G2TimedOutputForgetting.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2RootedTimedOutputSupport",
+      "sha256": "59f9bf9c04d7aa43a1e5b72f3cd22433845d7896275db830dd3a47355f764e44",
+      "imports": [
+        "G2TimedOutputForgetting"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00974-G2RootedTimedOutputSupport/G2RootedTimedOutputSupport.olean",
+        "G2RootedTimedOutputSupport.lean"
+      ],
+      "source_present_hash_verified": true
+    },
+    {
+      "module": "G2AssembledBoundaryNull",
+      "sha256": "6981ed662dd3fd68e327c838dc4df9d507a2816aa687f285477e420ef8fa69fb",
+      "imports": [
+        "G2RootedTimedOutputSupport"
+      ],
+      "receipt_status": "PASS_FRESH_KERNEL_CHECK",
+      "receipt_command": [
+        "LOCAL_EVIDENCE/lean-restoration-20261010-2311z/lean-4.33.1-linux/bin/lean",
+        "-j1",
+        "-t0",
+        "-M4096",
+        "-Ddebug.skipKernelTC=false",
+        "-o",
+        "LOCAL_EVIDENCE/connected-union1568-20261010-2318z/.build/runs/20261010T233820.417934Z/attempts/00975-G2AssembledBoundaryNull/G2AssembledBoundaryNull.olean",
+        "G2AssembledBoundaryNull.lean"
+      ],
+      "source_present_hash_verified": true
+    }
+  ]
+}
