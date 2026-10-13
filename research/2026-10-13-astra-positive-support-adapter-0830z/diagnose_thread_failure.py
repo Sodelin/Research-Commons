@@ -31,6 +31,19 @@ def save(path, value):
         stream.write('\n')
 
 
+def matching_children(parent, executable):
+    """Read-only discovery without optional /proc/<pid>/task/<tid>/children."""
+    for directory in Path('/proc').glob('[0-9]*'):
+        try:
+            status = dict(line.split(':', 1) for line in (directory / 'status').read_text().splitlines()
+                          if ':' in line)
+            command_line = (directory / 'cmdline').read_bytes().split(b'\0')
+            if status['PPid'].strip() == str(parent) and command_line[0] == str(executable).encode():
+                yield directory
+        except (FileNotFoundError, ProcessLookupError):
+            pass
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ['state', 'mathlib-root', 'lean-bin', 'out']:
@@ -124,9 +137,8 @@ def main():
             saved = 0
             with (args.out / 'process-samples.jsonl').open('x') as stream:
                 while not done.is_set():
-                    children = (Path('/proc') / str(parent) / 'task' / str(parent) / 'children').read_text().split()
-                    for number in children:
-                        directory = Path('/proc') / number
+                    for directory in matching_children(parent, args.lean_bin / 'lean'):
+                        number = directory.name
                         try:
                             status_text = (directory / 'status').read_text()
                             status = dict(line.split(':', 1) for line in status_text.splitlines() if ':' in line)
