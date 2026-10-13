@@ -1,0 +1,936 @@
+{
+  "schema": "astra.physical-fixture-lean-route.v1",
+  "status": "BOUNDED STATIC PROVIDER HANDOFF; concrete Lean instance and all row proofs remain unimplemented",
+  "selection": {
+    "path": "research/2026-10-13-astra-unified-solver-0645z/intake/SELECTED-LEAN.json",
+    "bytes": 753400,
+    "sha256": "77e4fb8bc6812eb6a183b33b3911a19bcc3cfc321e9cf5ea1fe9f30566cdfb14",
+    "git_blob": "ff3ce66b5c2658617a776af2564ce7718388c8f4"
+  },
+  "fixture": {
+    "path": "research/2026-10-13-dot-g3-physical-singleton-fixture-2200z/PHYSICAL-FIXTURE.json",
+    "bytes": 10102,
+    "sha256": "7552a9e8ae32ee759ed3665bd9a9176deeb6dcbf4be6605b55f8afbb0c7633ba",
+    "git_blob": "d12e1949ad9a221bbaf769fe840d4959073ed04f"
+  },
+  "providers": [
+    {
+      "aggregate_root": true,
+      "bytes": 8458,
+      "git_blob": "abb91b7ed9ad2ad960cb1ab6f8fbbdfc212f9cc0",
+      "imports": [
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Logic.Relation"
+      ],
+      "module": "SourceNetwork",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7.lean",
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "declarations": [
+        {
+          "declaration": "RootedBinary",
+          "line": 211,
+          "exact_signature": "structure RootedBinary (V : Type u) (E : Type v) (X : Type w)\n    [Fintype V] [Fintype E] [Fintype X] [DecidableEq V]"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8679,
+      "git_blob": "4bf1686baff454f7de05f9465537af3998167100",
+      "imports": [
+        "G5BridgeBarrier",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "module": "G5CalendarRoutes",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd.lean",
+      "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "declarations": [
+        {
+          "declaration": "Calendar",
+          "line": 27,
+          "exact_signature": "structure Calendar (G : EdgeGraph V E)"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4694,
+      "git_blob": "d6bbe5119768eade69f15feeb53abecb5a9176fd",
+      "imports": [
+        "G7OriginalRelabelling"
+      ],
+      "module": "G7OriginalFiniteEncoding",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078.lean",
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "declarations": [
+        {
+          "declaration": "Code",
+          "line": 42,
+          "exact_signature": "abbrev Code (X ID : Type*) [Fintype X] [Fintype ID]"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 10308,
+      "git_blob": "fd5a34125dfcfaea621ac1682b54ed67abf3e11f",
+      "imports": [
+        "G7OriginalFiniteEncoding",
+        "G7FiniteReachability",
+        "Mathlib.Data.Fintype.Inv"
+      ],
+      "module": "G7OriginalAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c.lean",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "declarations": [
+        {
+          "declaration": "BinaryValid",
+          "line": 55,
+          "exact_signature": "def BinaryValid (c : Code X ID) : Prop"
+        },
+        {
+          "declaration": "sourceOfValid",
+          "line": 77,
+          "exact_signature": "def sourceOfValid (c : Code X ID) (h : BinaryValid c) :\n    RootedBinary (NV (X"
+        },
+        {
+          "declaration": "RegistryValid",
+          "line": 113,
+          "exact_signature": "def RegistryValid (c : Code X ID) : Prop"
+        },
+        {
+          "declaration": "decodedIDs",
+          "line": 173,
+          "exact_signature": "def decodedIDs (c : Code X ID) (hb : BinaryValid c) (hr : RegistryValid c) :\n    ID \u2243 Hybrid (sourceOfValid c hb)"
+        },
+        {
+          "declaration": "decodedRegistry",
+          "line": 180,
+          "exact_signature": "def decodedRegistry (c : Code X ID) (hb : BinaryValid c) (hr : RegistryValid c) :\n    OriginalParentRegistry (sourceOfValid c hb)"
+        },
+        {
+          "declaration": "decoded_parent_exact",
+          "line": 198,
+          "exact_signature": "theorem decoded_parent_exact (c : Code X ID) (hb : BinaryValid c) (hr : RegistryValid c)\n    (i : ID) (b : Bool) :\n    ((decodedRegistry c hb hr).parents ((decodedIDs c hb hr) i)).parent b = codeParent c i b"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8794,
+      "git_blob": "36628bd74bfb60f1b81ee02897f7c809075cc0c7",
+      "imports": [
+        "G5OriginalRouteHazard",
+        "G4PathResolvedMeasurement",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Finset.Card"
+      ],
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6.lean",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "declarations": [
+        {
+          "declaration": "compiledRoute_source_spec",
+          "line": 152,
+          "exact_signature": "theorem compiledRoute_source_spec (N : RootedBinary V E X) (C : Calendar N.graph)\n    (P : IncomingSelector N) (v : V) :\n    EdgePath N.graph N.root v (compiledRoute N C P v) \u2227\n      RespectsSelector N P (compiledRoute N C P v)"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7816,
+      "git_blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8",
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Countable"
+      ],
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31.lean",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "declarations": [
+        {
+          "declaration": "HybridProbabilities",
+          "line": 26,
+          "exact_signature": "structure HybridProbabilities (N : RootedBinary V E X)"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 7614,
+      "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+      "imports": [
+        "G7WholeEdgeExposureInvariant",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+      ],
+      "module": "G7OriginalSurvivalCoverage",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "declarations": [
+        {
+          "declaration": "OpenCube",
+          "line": 58,
+          "exact_signature": "def OpenCube (x : E \u2192 \u211d) : Prop"
+        },
+        {
+          "declaration": "ratesFromSurvival",
+          "line": 65,
+          "exact_signature": "noncomputable def ratesFromSurvival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E \u2192 \u211d) (hx : OpenCube x) : PositivePairRates E"
+        },
+        {
+          "declaration": "ratesFromSurvival_exposure",
+          "line": 70,
+          "exact_signature": "lemma ratesFromSurvival_exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E \u2192 \u211d) (hx : OpenCube x) (e : E) :\n    exposure N C (ratesFromSurvival N C x hx) e = -Real.log (x e)"
+        },
+        {
+          "declaration": "ratesFromSurvival_survival",
+          "line": 75,
+          "exact_signature": "lemma ratesFromSurvival_survival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (x : E \u2192 \u211d) (hx : OpenCube x) : survival N C (ratesFromSurvival N C x hx) = x"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6419,
+      "git_blob": "f6fe71f12c1c7cb91c90bf1f08e1a251be338989",
+      "imports": [
+        "G5CommonSwitchingPersistence"
+      ],
+      "module": "G5NativeOriginalRouteCoverage",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f93c4d5ed9642c9b623a7ad2a45e1b2677bc9d77707e4e257d0b47ddc5852391.lean",
+      "sha256": "f93c4d5ed9642c9b623a7ad2a45e1b2677bc9d77707e4e257d0b47ddc5852391",
+      "declarations": [
+        {
+          "declaration": "UpPath.eq_of_same_selector",
+          "line": 48,
+          "exact_signature": "lemma UpPath.eq_of_same_selector (N : RootedBinary V E X) (P : IncomingSelector N)\n    {a b : V} {es fs : List E} (p : UpPath N.graph (fun _ => True) a b es)\n    (q : UpPath N.graph (fun _ => True) a b fs)\n    (hp : RespectsSelector N P es) (hq : RespectsSelector N P fs) : es = fs"
+        },
+        {
+          "declaration": "compiledRoute_covers_original_path",
+          "line": 102,
+          "exact_signature": "theorem compiledRoute_covers_original_path (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) {v : V} {es : List E}\n    (p : EdgePath N.graph N.root v es) :\n    \u2203 coin : Hybrid N \u2192 Bool, compiledRoute N C (coinSelector N H coin) v = es"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 30125,
+      "git_blob": "19e8c324cb1249252d566ad235f05323d6425034",
+      "imports": [
+        "G4ActualLegalPanelComb",
+        "G5CommonSwitchingQuartetWitness",
+        "G1InitializedFrontierPrefix",
+        "G7EdgeExposureAccounting"
+      ],
+      "module": "G4ActualSelectedPathExposure",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992.lean",
+      "sha256": "44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992",
+      "declarations": [
+        {
+          "declaration": "selectedDirectedExposure",
+          "line": 35,
+          "exact_signature": "noncomputable def selectedDirectedExposure (N : RootedBinary V E X)\n    (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (r : PositivePairRates E) (coin : Hybrid N \u2192 Bool) (i j : X) : \u211d"
+        },
+        {
+          "declaration": "actual_bank_cut_eq_selected_path",
+          "line": 535,
+          "exact_signature": "theorem actual_bank_cut_eq_selected_path (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)\n    (coin : Hybrid N \u2192 Bool) (i j : X) :\n    bankExclusiveExposure N C H (originalGamma p) r coin i j =\n      selectedDirectedExposure N C H r coin i j"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 153015,
+      "git_blob": "389a66f88daf3f6d3a9155e88a0fd489b9565374",
+      "imports": [
+        "UnifiedLean.Source.FiniteGenealogyEncoding",
+        "SourceForestKingmanProjection",
+        "UnifiedLean.Source.SourcePoissonExponential",
+        "UnifiedLean.Source.SourceCompletedUnrankedTree",
+        "G5CommonSwitchingQuartetWitness",
+        "G5OriginalProgramSurvival",
+        "G6GuardedBinErasure",
+        "ActualStoredRegister",
+        "G4ActualCommonSelectorSupport",
+        "G4ActualSelectedPathExposure",
+        "G7OrderedFrontierProduct",
+        "G1ActualDisplayedTreeFamily",
+        "G7OriginalEdgeOperators",
+        "G7AncestralPolynomialKernel",
+        "UnifiedLean.Source.SourceCompletionHarmonic",
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "UnifiedLean.Source.OriginalFixedIDControls",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "module": "G4WeightedOrdinaryTreeLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9.lean",
+      "sha256": "edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9",
+      "declarations": [
+        {
+          "declaration": "overrideBank",
+          "line": 2333,
+          "exact_signature": "noncomputable def overrideBank (N : RootedBinary V E X)\n    (mask : OriginalMask N) (coin : CommonSeed N) : CommonSeed N"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 187616,
+      "git_blob": "5a866bc90937ae00981a0f1305a58a07704036e4",
+      "imports": [
+        "G4WeightedOrdinaryTreeLaw",
+        "G4ActualPositiveGridUniqueness",
+        "G7SinglePopulationPolynomialKernel",
+        "Mathlib.Algebra.MvPolynomial.Funext"
+      ],
+      "module": "G4WholeProfileDetermination",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "declarations": [
+        {
+          "declaration": "maskedNormalizedTree_survival",
+          "line": 3229,
+          "exact_signature": "lemma maskedNormalizedTree_survival (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)\n    (mask : OriginalMask N) (coin : CommonSeed N) (i j : X) :\n    directedSurvival (maskedNormalizedTree N C H r mask coin) i j =\n      DotG4.ActualObservableBankCertificate.realSurvival N C H p r i j (overrideBank N mask coin)"
+        },
+        {
+          "declaration": "actual_randomized_legal_moment",
+          "line": 3529,
+          "exact_signature": "lemma actual_randomized_legal_moment\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (\u03bd : PMF Config) (masks : Config \u2192 OriginalMask N) (i j : X) (k : Nat) (hk : 0 < k) :\n    randomizedLegalCombMoment N C H p r \u03bd masks i j k =\n      finiteBankMoment (configurationBankPMF \u03bd (originalRegisterMeasure N p).toPMF)\n        (fun z => directedSurvival (maskedNormalizedTree N C H r (masks z.1) z.2) i j) k"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 203687,
+      "git_blob": "4b455333adc6dbf5abeeab3f41818b2115ea6e8f",
+      "imports": [
+        "G4WholeProfileDetermination",
+        "G4ActualBelowMeetingSupport",
+        "G5NativeOriginalRouteCoverage",
+        "G1ActualWholeUnrootedCutTreeFamily",
+        "G7CalendarFrontierOrder"
+      ],
+      "module": "G4PairedNaturalTreeCore",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7687fb276ac1788167dd805c1258ea82edf86291e57db1af4a43137fb470f129.lean",
+      "sha256": "7687fb276ac1788167dd805c1258ea82edf86291e57db1af4a43137fb470f129",
+      "declarations": [
+        {
+          "declaration": "realSurvival_eq_selected_path",
+          "line": 38,
+          "exact_signature": "lemma realSurvival_eq_selected_path (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (p : HybridProbabilities N) (r : PositivePairRates E)\n    (i j : X) (coin : Hybrid N \u2192 Bool) :\n    realSurvival N C H p r i j coin = Real.exp (-selectedDirectedExposure N C H r coin i j)"
+        },
+        {
+          "declaration": "selected_path_unique",
+          "line": 59,
+          "exact_signature": "lemma selected_path_unique (N : RootedBinary V E X) (P : IncomingSelector N)\n    {a b : V} {es fs : List E} (he : EdgePath N.graph a b es)\n    (hf : EdgePath N.graph a b fs) (hs : RespectsSelector N P es)\n    (ht : RespectsSelector N P fs) : es = fs"
+        }
+      ],
+      "selected_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+    }
+  ],
+  "proposed_instance": {
+    "taxa": {
+      "carrier": "Fin4",
+      "bijection": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "original_hybrid_ids": "Fin1",
+    "vertices": "Fin9",
+    "edges": "Fin9",
+    "source": [
+      0,
+      0,
+      1,
+      3,
+      3,
+      4,
+      1,
+      2,
+      2
+    ],
+    "target": [
+      1,
+      2,
+      3,
+      4,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "root": 0,
+    "leaves": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "hybrid_vertex": 4,
+    "parent_false": 3,
+    "parent_true": 4,
+    "calendar_ages": [
+      4,
+      3,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "edge_survivals": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "8/9",
+      "8/9",
+      "3/4",
+      "1/2",
+      "1/2",
+      "1/2"
+    ],
+    "rates": "ratesFromSurvival N C X hx; exact -log(X[e])/duration[e]",
+    "ancestral_rate": "1",
+    "original_gamma": "1/3",
+    "native_parent0_G": "2/3; native implementation not used to justify Lean rows",
+    "configuration_type": "Unit",
+    "configuration_law": "PMF.pure ()",
+    "masks": "fun _ _ => none"
+  },
+  "proof_obligations": [
+    "Prove BinaryValid, RegistryValid and CutChild for this one explicit code; do not enumerate allCodes or assume desired observations.",
+    "Prove strict Calendar inequalities and OpenCube values; use exact accepted rate constructor.",
+    "Prove every explicit root-to-leaf list has EdgePath and RespectsSelector for the same fixed COMMON bank, then identify compiledRoute using existing uniqueness.",
+    "Evaluate selectedDirectedExposure for all16 ordered pairs and every bank; cancel common stems by exact original occurrence membership.",
+    "Use log/exponential identities to prove realSurvival values, then maskedNormalizedTree_survival and actual_randomized_legal_moment.",
+    "Prove constant-coordinate finite-bank moment by PMF normalization; derive levels1,2,3 without assumed numeric rows.",
+    "Instantiate source/copy label bijections and all-null masks in the exact receiver schema.",
+    "Supply outer-labelled planarity/admission separately before claiming the full original physical class; selected G7 code admission does not include it."
+  ],
+  "explicit_paths": {
+    "A_bit0": [
+      0,
+      2,
+      3,
+      5
+    ],
+    "A_bit1": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "B": [
+      0,
+      6
+    ],
+    "C": [
+      1,
+      7
+    ],
+    "D": [
+      1,
+      8
+    ]
+  },
+  "row_consequence_to_prove": {
+    "same_source_across_all_rows": true,
+    "all16ordered_pairs": true,
+    "diagonal_survival": "1",
+    "within_cherry_survival": "1/2",
+    "cross_cherry_survival": "1/4",
+    "formula": "randomizedLegalCombMoment ... i j k = s(i,j)^(k.choose 2), used at k=1,2,3",
+    "diagonal_moments": [
+      "1",
+      "1",
+      "1"
+    ],
+    "within_cherry_moments": [
+      "1",
+      "1/2",
+      "1/8"
+    ],
+    "cross_cherry_moments": [
+      "1",
+      "1/4",
+      "1/64"
+    ],
+    "A_to_B_raw_event_probabilities": [
+      "1",
+      "1/6",
+      "1/144"
+    ],
+    "full_padded_copy_counts": [
+      6,
+      7,
+      8
+    ]
+  },
+  "route_caveats": [
+    "compiledRoute uses Classical.choose: its exact paths require source proofs, not attempted evaluation of a noncomputable choice.",
+    "compiledRoute_covers_original_path is existential in the coin and cannot stand in for path identity for each fixed bank.",
+    "Equal-arm source output cannot detect native Gamma reversal; independent unequal-arm control remains necessary.",
+    "One natural configuration cannot certify arbitrary joint mask correlation or typed forcing/native refinement.",
+    "No bounded protected representative, source acquisition algorithm or arbitrary-input G3 conclusion follows from one fixture."
+  ],
+  "costs": [
+    {
+      "route": "lower-level-existing-path-uniqueness",
+      "roots": [
+        "G7OriginalAdmission",
+        "G7OriginalSurvivalCoverage",
+        "G4WholeProfileDetermination",
+        "G5NativeOriginalRouteCoverage"
+      ],
+      "selected_owned_count": 475,
+      "union_with469": 475,
+      "additional": [
+        {
+          "aggregate_root": false,
+          "bytes": 6878,
+          "git_blob": "b3c3c057ab878dbfe00d17f596d005f6904c501c",
+          "imports": [
+            "G7OrderedFrontierProduct"
+          ],
+          "module": "G7CalendarFrontierOrder",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/622aa6f1fae029b29a79e6e6ea70b973f641eb6ef258066acc9b456481f77dbe.lean",
+          "sha256": "622aa6f1fae029b29a79e6e6ea70b973f641eb6ef258066acc9b456481f77dbe"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 3915,
+          "git_blob": "7694fed34228d0e4df3d68f0010eb5ceca212d8b",
+          "imports": [
+            "SourceNetwork",
+            "Mathlib.Data.Finset.Card",
+            "Mathlib.Data.Fintype.Card"
+          ],
+          "module": "G7FiniteReachability",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35.lean",
+          "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 10308,
+          "git_blob": "fd5a34125dfcfaea621ac1682b54ed67abf3e11f",
+          "imports": [
+            "G7OriginalFiniteEncoding",
+            "G7FiniteReachability",
+            "Mathlib.Data.Fintype.Inv"
+          ],
+          "module": "G7OriginalAdmission",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c.lean",
+          "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 4694,
+          "git_blob": "d6bbe5119768eade69f15feeb53abecb5a9176fd",
+          "imports": [
+            "G7OriginalRelabelling"
+          ],
+          "module": "G7OriginalFiniteEncoding",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078.lean",
+          "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078"
+        },
+        {
+          "aggregate_root": false,
+          "bytes": 7614,
+          "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+          "imports": [
+            "G7WholeEdgeExposureInvariant",
+            "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+          ],
+          "module": "G7OriginalSurvivalCoverage",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+          "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9"
+        },
+        {
+          "aggregate_root": false,
+          "bytes": 9754,
+          "git_blob": "420e87944806e9bbdb843c6eaf1d44ec430de20b",
+          "imports": [
+            "G7CalendarFrontierOrder",
+            "G7AncestralRationalCompletion",
+            "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+            "UnifiedLean.Source.SourceCompletedUnrankedTree"
+          ],
+          "module": "G7WholeEdgeExposureInvariant",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642.lean",
+          "sha256": "f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642"
+        }
+      ],
+      "new_source_bytes": 43163,
+      "official_import_query": false
+    },
+    {
+      "route": "paired-core-convenience-provider",
+      "roots": [
+        "G7OriginalAdmission",
+        "G7OriginalSurvivalCoverage",
+        "G4WholeProfileDetermination",
+        "G5NativeOriginalRouteCoverage",
+        "G4PairedNaturalTreeCore"
+      ],
+      "selected_owned_count": 497,
+      "union_with469": 497,
+      "additional": [
+        {
+          "aggregate_root": true,
+          "bytes": 3390,
+          "git_blob": "cc85d2e9d620f1f5d3b973e2edce4c08aee13b14",
+          "imports": [
+            "G1FinitePendingActorPromotion"
+          ],
+          "module": "G1ActiveCoreBridgeCohorts",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f151af318c45641723a5920bb3b58c1cc5b9df413ab91c7f7b9755e28e9d3f44.lean",
+          "sha256": "f151af318c45641723a5920bb3b58c1cc5b9df413ab91c7f7b9755e28e9d3f44"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 7348,
+          "git_blob": "61f06c31dd3aa22b3e953fd59f0146459e104c47",
+          "imports": [
+            "G1ActualPurePanelJoin"
+          ],
+          "module": "G1ActualCrossingSourcePendingFusion",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4f71f6203b626ccdb85fa6a8175ca6262cc5aa38b9016678bf167ae0327bd0c6.lean",
+          "sha256": "4f71f6203b626ccdb85fa6a8175ca6262cc5aa38b9016678bf167ae0327bd0c6"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 2999,
+          "git_blob": "dd3707cb9cd44bbbdc1200f78b2a420b12f1def9",
+          "imports": [
+            "G1ActualThreePanelSourceTensor"
+          ],
+          "module": "G1ActualPurePanelJoin",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/eb970f3001b75dd8acca1fce9a007ae5a87489468d735424f7f16e97ef25668a.lean",
+          "sha256": "eb970f3001b75dd8acca1fce9a007ae5a87489468d735424f7f16e97ef25668a"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 3916,
+          "git_blob": "b51cc2f57715c36b69751a973246563b9b7610d9",
+          "imports": [
+            "G1NestedOriginalSourceProjection"
+          ],
+          "module": "G1ActualThreePanelSourceTensor",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/bd51e4462522bee9dfb9ce36f9368d803c302b4ca7749f1e5785e70e011c5376.lean",
+          "sha256": "bd51e4462522bee9dfb9ce36f9368d803c302b4ca7749f1e5785e70e011c5376"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 5197,
+          "git_blob": "1157b8eb35ad7960bfcfa4037e8174b65e01bc38",
+          "imports": [
+            "G1ActualDisplayedTreeFamily"
+          ],
+          "module": "G1ActualWholeUnrootedCutTreeFamily",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b131407fc405abb13674a332f8e0efbbe4726d9d57387226700b50643605fc65.lean",
+          "sha256": "b131407fc405abb13674a332f8e0efbbe4726d9d57387226700b50643605fc65"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 9133,
+          "git_blob": "8b7d30d8ae8686a152b7f23a1062f238113cb3d7",
+          "imports": [
+            "G1OriginalCrossingCalendar"
+          ],
+          "module": "G1CanonicalCrossingRootAndKAdmission",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9add2f0ee08ce731a73da2ea260f732f03786aac0edccac28222e42a981a8f43.lean",
+          "sha256": "9add2f0ee08ce731a73da2ea260f732f03786aac0edccac28222e42a981a8f43"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 4458,
+          "git_blob": "ea46aa18ba79e8cafb5298083b6aaf92d1dbcbf3",
+          "imports": [
+            "G1CanonicalOriginatedHistoryPlanner"
+          ],
+          "module": "G1CanonicalOriginatedCompletedHistory",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/49ff4c23199e76adcd5ce0e7c905f0273b1e1b55d5080c0e2a0cdb32e98a1e4c.lean",
+          "sha256": "49ff4c23199e76adcd5ce0e7c905f0273b1e1b55d5080c0e2a0cdb32e98a1e4c"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 5262,
+          "git_blob": "d134e7638d9ef9b460104065f6ab4373f527c6ca",
+          "imports": [
+            "G1ConcurrentSpanPhysicalSeparation"
+          ],
+          "module": "G1ConcurrentOriginalSourceWindow",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d92712dd1eed700d24a234b0ae57ba0742eb49ec9090ef9a30dcdcf7e5b528f0.lean",
+          "sha256": "d92712dd1eed700d24a234b0ae57ba0742eb49ec9090ef9a30dcdcf7e5b528f0"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 4140,
+          "git_blob": "580e1060d3c3e1cb8483c0364c86128c40419c81",
+          "imports": [
+            "G1ConstructedPopulationPartition"
+          ],
+          "module": "G1ConcurrentSpanPhysicalSeparation",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/60d1059a787dd3fc7cdb830aebe17769ecfc2f69228364ae99c0173f43337685.lean",
+          "sha256": "60d1059a787dd3fc7cdb830aebe17769ecfc2f69228364ae99c0173f43337685"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 4443,
+          "git_blob": "5e4533961d41183f2ab61e5a3b0f8e57c21ed11b",
+          "imports": [
+            "G1OriginalRecipePopulationOwnership"
+          ],
+          "module": "G1ConstructedPopulationPartition",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e0f3de3e217994d69999282bfc6b757f3d2a59b6020e02420c2dcc177358eb56.lean",
+          "sha256": "e0f3de3e217994d69999282bfc6b757f3d2a59b6020e02420c2dcc177358eb56"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 2831,
+          "git_blob": "366c0f8a7137efec9740b72de7e7ad68b36e6641",
+          "imports": [
+            "G1ConcurrentOriginalSourceWindow"
+          ],
+          "module": "G1CrossingActorKernelFusion",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6957a6cbb4929b149b624c86dde41c4406eb59cbdefc75f0adf32dc3660b4699.lean",
+          "sha256": "6957a6cbb4929b149b624c86dde41c4406eb59cbdefc75f0adf32dc3660b4699"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 3339,
+          "git_blob": "5ec58f209dff3d7948c7bde5f1668a0cf17da213",
+          "imports": [
+            "G1ActualCrossingSourcePendingFusion"
+          ],
+          "module": "G1FiniteActorScheduleCommutation",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/11ece79e57897c8abea29eee3c312e1ac7f53b309fcd2feb3ad36c094d213f87.lean",
+          "sha256": "11ece79e57897c8abea29eee3c312e1ac7f53b309fcd2feb3ad36c094d213f87"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 5609,
+          "git_blob": "2eac7245d5d04387c70bd5f9c727f5ec2d41b516",
+          "imports": [
+            "G1PendingActorInterfaceCommutation"
+          ],
+          "module": "G1FinitePendingActorPromotion",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d65377588f811aa5e15e74e5f1ec3d47cc7ae83bd3efd148bca85e4e57c636cd.lean",
+          "sha256": "d65377588f811aa5e15e74e5f1ec3d47cc7ae83bd3efd148bca85e4e57c636cd"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 3546,
+          "git_blob": "5a6b51d9e11a313d4e44f3464d022e61c9ad0c2a",
+          "imports": [
+            "G1CrossingActorKernelFusion"
+          ],
+          "module": "G1NestedOriginalSourceProjection",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a8d7b4bdc85e61c8649ceafbe79f2139efb50a9996d97860f1d058c55e5e505d.lean",
+          "sha256": "a8d7b4bdc85e61c8649ceafbe79f2139efb50a9996d97860f1d058c55e5e505d"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 8681,
+          "git_blob": "55bc0a18c132c039a761f33c2135ab02b84c1528",
+          "imports": [
+            "G1ActiveCoreBridgeCohorts"
+          ],
+          "module": "G1OriginalCrossingCalendar",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/40195a18c377b48f9d61436f19dc6d97d2f55ead90369ede40f25ed47e33fb3a.lean",
+          "sha256": "40195a18c377b48f9d61436f19dc6d97d2f55ead90369ede40f25ed47e33fb3a"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 7377,
+          "git_blob": "f3fa8b2f88c42f74c7acec3b08ec36f3c01b047c",
+          "imports": [
+            "G1CanonicalOriginatedCompletedHistory"
+          ],
+          "module": "G1OriginalRecipePopulationOwnership",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/1782327316fbf8fcf8e1d85581fca9ba55f665be771d80392414dec9b3e805e8.lean",
+          "sha256": "1782327316fbf8fcf8e1d85581fca9ba55f665be771d80392414dec9b3e805e8"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 4681,
+          "git_blob": "21834a790fdae7d3a9f898557ee3c42fecb78b00",
+          "imports": [
+            "G1FiniteActorScheduleCommutation"
+          ],
+          "module": "G1PendingActorInterfaceCommutation",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7614138b181c6931cbad68936f40cc65611362c112c919c19b1920f05002765e.lean",
+          "sha256": "7614138b181c6931cbad68936f40cc65611362c112c919c19b1920f05002765e"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 2556,
+          "git_blob": "0704376b8d3d6e2aa902938ccb2488eedadba045",
+          "imports": [
+            "G1CanonicalCrossingRootAndKAdmission"
+          ],
+          "module": "G1SeparatedAgendaSupportCuts",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/19ee680f2b2ee5ffbdbd956b180825abe4687ada80f641e307015961f4d6a8be.lean",
+          "sha256": "19ee680f2b2ee5ffbdbd956b180825abe4687ada80f641e307015961f4d6a8be"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 17181,
+          "git_blob": "6a198bc8a29c4b6d240d46bdb7d73a84f2633451",
+          "imports": [
+            "G4PartialExitSeparation"
+          ],
+          "module": "G4ActualBelowMeetingSupport",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf.lean",
+          "sha256": "cdaafb6524e4b35ca5a7de926ae2a9a6abb6d6528587d3743260debf283fd4bf"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 10406,
+          "git_blob": "b0d72e719f3f15db6329a168e4fe8417c71b925f",
+          "imports": [
+            "G1OriginalCalendarDecomposition",
+            "G1SeparatedAgendaSupportCuts",
+            "G1OriginalExitBatchBinding"
+          ],
+          "module": "G4LiteralLastChildExitCut",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349.lean",
+          "sha256": "d0d321038e353845030154b67d5ef021868f8a936f4bf23584999a53a5412349"
+        },
+        {
+          "aggregate_root": false,
+          "bytes": 203687,
+          "git_blob": "4b455333adc6dbf5abeeab3f41818b2115ea6e8f",
+          "imports": [
+            "G4WholeProfileDetermination",
+            "G4ActualBelowMeetingSupport",
+            "G5NativeOriginalRouteCoverage",
+            "G1ActualWholeUnrootedCutTreeFamily",
+            "G7CalendarFrontierOrder"
+          ],
+          "module": "G4PairedNaturalTreeCore",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7687fb276ac1788167dd805c1258ea82edf86291e57db1af4a43137fb470f129.lean",
+          "sha256": "7687fb276ac1788167dd805c1258ea82edf86291e57db1af4a43137fb470f129"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 6073,
+          "git_blob": "53e630eded8c36291d8f1314f8cbf4d458a4037e",
+          "imports": [
+            "G4LiteralLastChildExitCut"
+          ],
+          "module": "G4PartialExitSeparation",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae.lean",
+          "sha256": "04850cdb4cd2526d7788253b51feed59fe24a96e492b05e903b7647d9aff93ae"
+        },
+        {
+          "aggregate_root": false,
+          "bytes": 6878,
+          "git_blob": "b3c3c057ab878dbfe00d17f596d005f6904c501c",
+          "imports": [
+            "G7OrderedFrontierProduct"
+          ],
+          "module": "G7CalendarFrontierOrder",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/622aa6f1fae029b29a79e6e6ea70b973f641eb6ef258066acc9b456481f77dbe.lean",
+          "sha256": "622aa6f1fae029b29a79e6e6ea70b973f641eb6ef258066acc9b456481f77dbe"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 3915,
+          "git_blob": "7694fed34228d0e4df3d68f0010eb5ceca212d8b",
+          "imports": [
+            "SourceNetwork",
+            "Mathlib.Data.Finset.Card",
+            "Mathlib.Data.Fintype.Card"
+          ],
+          "module": "G7FiniteReachability",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35.lean",
+          "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 10308,
+          "git_blob": "fd5a34125dfcfaea621ac1682b54ed67abf3e11f",
+          "imports": [
+            "G7OriginalFiniteEncoding",
+            "G7FiniteReachability",
+            "Mathlib.Data.Fintype.Inv"
+          ],
+          "module": "G7OriginalAdmission",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c.lean",
+          "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c"
+        },
+        {
+          "aggregate_root": true,
+          "bytes": 4694,
+          "git_blob": "d6bbe5119768eade69f15feeb53abecb5a9176fd",
+          "imports": [
+            "G7OriginalRelabelling"
+          ],
+          "module": "G7OriginalFiniteEncoding",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078.lean",
+          "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078"
+        },
+        {
+          "aggregate_root": false,
+          "bytes": 7614,
+          "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+          "imports": [
+            "G7WholeEdgeExposureInvariant",
+            "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+          ],
+          "module": "G7OriginalSurvivalCoverage",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+          "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9"
+        },
+        {
+          "aggregate_root": false,
+          "bytes": 9754,
+          "git_blob": "420e87944806e9bbdb843c6eaf1d44ec430de20b",
+          "imports": [
+            "G7CalendarFrontierOrder",
+            "G7AncestralRationalCompletion",
+            "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+            "UnifiedLean.Source.SourceCompletedUnrankedTree"
+          ],
+          "module": "G7WholeEdgeExposureInvariant",
+          "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642.lean",
+          "sha256": "f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642"
+        }
+      ],
+      "new_source_bytes": 369416,
+      "official_import_query": false
+    }
+  ],
+  "active319_3591_plan_unchanged": true,
+  "follow_on469_plan_unchanged": true,
+  "execution": {
+    "compiler": false,
+    "tests": false,
+    "control_replay": false,
+    "new_lean_source": false,
+    "native_refinement_axiom": false,
+    "remote_refresh": false
+  },
+  "next_action": "If owner authorizes fixture formalization, begin one-code typed admission/calendar/registry proof and fixed-bank path identity; do not start a speculative general source bridge.",
+  "publication_owner": "Lean integration lane"
+}

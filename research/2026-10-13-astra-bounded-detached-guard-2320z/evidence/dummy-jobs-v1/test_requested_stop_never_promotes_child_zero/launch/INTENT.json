@@ -1,0 +1,52 @@
+{
+  "schema": "astra_one_guard_intent_v1",
+  "created_utc": "2026-10-13T23:39:40.493806+00:00",
+  "profile": {
+    "name": "DUMMY_TEST_ONLY",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "--out",
+      "/workspace/Research-Commons/research/2026-10-13-astra-bounded-detached-guard-2320z/evidence/dummy-jobs-v1/test_requested_stop_never_promotes_child_zero/guard-output",
+      "--cwd",
+      "/workspace/Research-Commons/research/2026-10-13-astra-bounded-detached-guard-2320z/evidence/dummy-jobs-v1/test_requested_stop_never_promotes_child_zero",
+      "--wall",
+      "10",
+      "--cpu",
+      "5",
+      "--memory-mib",
+      "128",
+      "--file-mib",
+      "4",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/Research-Commons/research/2026-10-13-astra-bounded-detached-guard-2320z/evidence/dummy-jobs-v1/test_requested_stop_never_promotes_child_zero/dummy.py"
+    ],
+    "child_command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/Research-Commons/research/2026-10-13-astra-bounded-detached-guard-2320z/evidence/dummy-jobs-v1/test_requested_stop_never_promotes_child_zero/dummy.py"
+    ],
+    "batch_output": "/workspace/Research-Commons/research/2026-10-13-astra-bounded-detached-guard-2320z/evidence/dummy-jobs-v1/test_requested_stop_never_promotes_child_zero/guard-output",
+    "cwd": "/workspace/Research-Commons/research/2026-10-13-astra-bounded-detached-guard-2320z/evidence/dummy-jobs-v1/test_requested_stop_never_promotes_child_zero",
+    "python_exe": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+    "guard_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+    "environment": {
+      "PATH": "/usr/bin:/bin",
+      "LANG": "C.UTF-8"
+    },
+    "limits": {
+      "cpu_seconds": 5,
+      "wall_seconds": 10,
+      "address_space_bytes": 134217728,
+      "file_bytes": 4194304,
+      "disk_floor": 8589934592,
+      "ram_floor": 1073741824,
+      "cgroup_stop": 4294967296
+    }
+  },
+  "transport_sha256": "4c396546825b108f48fe9633a0df576f78fb8af77830233c77751db1e9e56db1",
+  "prebatch_sha256": "c42a03a216b921a3230bbd2eb2f25c8701d39e3635316d8ffa579605ef453c70",
+  "launch_is_completion": false
+}

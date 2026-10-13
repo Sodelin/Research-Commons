@@ -1,0 +1,26 @@
+{
+  "schema": "astra_detached_review_repairs_v1",
+  "status": "REVIEWED_THEN_ONE_BOUNDED_TEST_RUN",
+  "original_draft": "evidence/REVIEWED-UNEXECUTED-DRAFT-v1",
+  "readiness_draft": "evidence/REVIEWED-UNEXECUTED-READINESS-v2",
+  "findings": [
+    {
+      "finding": "Output-file readiness did not establish child assignment; SIGINT during Popen could strand the child.",
+      "repair": "Require exact post-Popen monitor hrtimer_nanosleep and recheck process identity before pidfd signalling.",
+      "verified_by": "actual readiness observations and three actual interrupted dummy guards; controlled negative readiness refusal"
+    },
+    {
+      "finding": "Positive-stop tests could observe a transient non-monitor wait channel.",
+      "repair": "Wait for actual monitor readiness before every intended positive test stop.",
+      "verified_by": "single seven-test passing run"
+    }
+  ],
+  "unchanged_frozen_guard_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "production_status": "NOT_EXECUTED",
+  "trusted_boundaries": [
+    "Linux procfs/pidfd semantics",
+    "Python interpreter/stdlib and exact guard control flow",
+    "filesystem and same-environment process retention",
+    "compiler-owner coordination and subsequent source/log/object audit"
+  ]
+}
