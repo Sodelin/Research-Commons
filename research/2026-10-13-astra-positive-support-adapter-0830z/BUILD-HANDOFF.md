@@ -1,14 +1,15 @@
 # Guarded build continuation
 
-Checkpoint after batch 052: 2026-10-13T20:27:25.722109+00:00. The new mathematical adapter
-has **not yet compiled**. Fresh resumed guards 043–052 passed; the selected
-external prefix through index 2819 is authenticated. The independent Rust
+Checkpoint after batch 055: 2026-10-13T21:17:35.930850+00:00. The new mathematical adapter
+has **not yet compiled**. Batch054 remains failed, with module2860 recovered
+by separately verified diagnosticv2 and explicit adoption. The selected
+external prefix through index 2861 is authenticated. The independent Rust
 lane checked the closed guards, captures, fresh source/log/artifact bindings,
 terminal orchestration and no-active inventory in
-`evidence/RUST-LANE-052-MONITOR-HANDOFF.json`.
+`evidence/LEAN-LANE-055-HANDOFF.json`.
 
-Next selected work is index 2820, `Mathlib.Analysis.SpecialFunctions.Bernstein`, using batch 053
-and the unchanged 32-module serial policy. Continuing execution and non-force
+Next selected work is index 2862, `Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Restrict`, using batch 056
+and the reviewed external-only 6 GiB virtual /4 GiB physical, 32-module serial policy. Continuing execution and non-force
 closed-checkpoint publication remain authorized under the published ownership
 handoff. Recheck current process/resource state and receive explicit compiler
 ownership before launching; do not duplicate an existing batch number.
@@ -38,7 +39,7 @@ Continue at the next unused batch number only after the preceding invocation
 finishes and its receipt/capture is inspected:
 
 ```sh
-python3 -B run_external_batches.py \
+python3 -B run_external_batches_6g.py \
   --first-batch NEXT_UNUSED_NUMBER --batches 3 --batch-size 32 \
   --state /workspace/scratch/astra-support-external-0840 \
   --mathlib-root /workspace/scratch/astra-mathlib-0645 \
@@ -47,7 +48,7 @@ python3 -B run_external_batches.py \
 
 Run from this packet. Each invocation allows at most three batches of at most
 64 fresh modules and stops on a failed guard, failed compiler or `PAUSE-BUILDS`
-file. The physical stop remains 4 GiB, virtual ceiling is now 5 GiB, disk floor 8 GiB,
+file. The physical stop remains 4 GiB, external virtual ceiling is now 6 GiB, disk floor 8 GiB,
 wall budget 900 seconds per batch and inherited per-process CPU ceiling
 600 seconds. Failed or
 interrupted state must be preserved and diagnosed before any explicit repair;
@@ -88,8 +89,9 @@ successful peak was 4.356 GB virtual and 3.190 GB cgroup memory. An active
 background-thread stack and mapped input objects contribute to virtual use;
 libuv identity is a source-supported inference, not a native backtrace result.
 The compiler and source identities remain unchanged. The failed stack-cache
-tunable was not promoted. Future external/provider guards use `--memory-mib
-5120`; the final Lake guard must use the same allowance and physical stop.
+tunable was not promoted. At that historical cutoff, external/provider guards used `--memory-mib
+5120`. The later explicit policy changes only external continuation to 6144;
+provider and final Lake profiles remain 5120 until separately reviewed.
 
 The published execution plan contains the actual absolute compiler and source
 paths above. The current strict replay scripts require this canonical layout.
@@ -235,3 +237,25 @@ The append-only evidence is `evidence/recovery042-auth-v1/`;
 Next proposed work is index 2531, using batch 043 with the existing 32-module
 serial policy, only after public checkpointing and coordinator release.
 The new adapter and explicit interface audit remain uncompiled.
+
+## Later thread-headroom diagnostic and adoption
+
+Batch054 failed at selected module2860 with `failed to create thread` under
+5 GiB virtual /4 GiB physical controls. The original failed receipt and logs
+remain archived. Diagnosticv1 compiled the unchanged source but returned2
+because an optional procfs children interface was unavailable. A narrowly
+repaired read-only monitor then passed diagnosticv2, including375 samples and
+25 child-limit snapshots, at6 GiB virtual /unchanged4 GiB physical.
+The sampled virtual peak was6,039,928,832 bytes; the failure's exact cause
+remains unknown. These outcomes are separate in
+`evidence/thread-headroom-2860-v1/` and `evidence/thread-headroom-2860-v2/`.
+
+The reviewed zero-compiler adoption archived the original2860 receipt/logs and
+installed the authenticatedv2 result, recorded in
+`evidence/THREAD-HEADROOM-2860-ADOPTION.json`. One-fresh-module batch055 passed.
+`evidence/EXTERNAL-6GIB-VIRTUAL-POLICY.json` and the separate
+`run_external_batches_6g.py` govern further external continuation; the old
+5 GiB launcher stays byte-exact. Time, disk, RAM, physical-memory, source and
+shared compiler-helper controls remain unchanged. Provider/final Lake profiles
+are not changed by this external-only policy. No adapter completion follows
+from the dependency repair.
