@@ -23,9 +23,11 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--backend-python',required=True)
     parser.add_argument('--rust-binary')
+    parser.add_argument('--parity-binary')
+    parser.add_argument('--parity-sources')
     a=parser.parse_args()
     a.output.mkdir(parents=True,exist_ok=False)
-    owned=['solve.py','certificates.py','external_encoding.py','emit_lean.py','test_solver.py']
+    owned=['solve.py','certificates.py','external_encoding.py','emit_lean.py','test_solver.py','native_bridge.py']
     def sources():
         return {name:hashlib.sha256((HERE/name).read_bytes()).hexdigest() for name in owned}
     before=sources()
@@ -40,6 +42,8 @@ def main():
              '--output',str(out),'--backend-python',a.backend_python]
         if a.rust_binary:
             cmd+=['--rust-binary',a.rust_binary]
+        if a.parity_binary:
+            cmd+=['--parity-binary',a.parity_binary,'--parity-sources',a.parity_sources]
         completed=subprocess.run(cmd,capture_output=True,text=True,timeout=100)
         result=json.loads((out/'RESULT.json').read_text())
         passed=completed.returncode==code and result['status']==expected
@@ -49,6 +53,10 @@ def main():
             passed=passed and inner['semantic_check'].get('status') is not None
         if task in ['check_certificate','generate_singleton','common_menu']:
             passed=passed and result.get('source_feasibility_certified') is False
+        if task=='native_rc1':
+            passed=passed and result.get('source_feasibility_certified') is False
+            if expected.startswith(('CERTIFIED','CHECKED')):
+                passed=passed and result['native_result'].get('certificate_checked') is True
         cases.append(dict(name=name,passed=bool(passed),status=result['status'],
                           exit_code=completed.returncode,output=str(out)))
         (a.output/(name+'.stdout')).write_text(completed.stdout)
@@ -97,6 +105,16 @@ def main():
     invalid=copy.deepcopy(menu)
     invalid['parameter_constraints']=[{'unmarked_tie':['unprotected-edge','H:1']}]
     run('unencoded-tie','common_menu',invalid,'REFUSED_REQUEST',1)
+    if a.parity_binary:
+        native_cases=[('native-affine-witness','CERTIFIED_AFFINE_WITNESS',0),
+                      ('native-affine-exclusion','CERTIFIED_AFFINE_EXCLUSION',0),
+                      ('native-affine-unknown','UNKNOWN',2),
+                      ('native-forward-fork','CHECKED_SYMBOLIC_FORWARD_TABLE',0),
+                      ('native-forward-common-parallel','CHECKED_SYMBOLIC_FORWARD_TABLE',0),
+                      ('native-forward-independent-parallel','CHECKED_SYMBOLIC_FORWARD_TABLE',0)]
+        for name,status,code in native_cases:
+            sample=json.loads((HERE/'examples'/(name+'.json')).read_text())
+            run(name,'native_rc1',sample['input'],status,code)
     assert sources()==before, 'owned source changed during execution'
     result=dict(status='PASS',cases=cases,actual_backend_used=True,source_sha256=before,
                 no_Lean_or_universal_native_correctness_claim=True)

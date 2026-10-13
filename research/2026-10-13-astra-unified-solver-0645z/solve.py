@@ -23,12 +23,17 @@ ADAPTER=ROOT/'applications/practical-solver/certified_bounds.py'
 ADAPTER_SHA='4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa'
 
 
-def dispatch(request, out, backend_python=None, rust_binary=None):
+def dispatch(request, out, backend_python=None, rust_binary=None, parity_binary=None, parity_sources=None):
     fields(request, ['schema','task','input'])
     if request['schema'] != 'unified_research_solver_v1':
         raise Refused('unsupported solver schema')
     base=dict(schema='unified_research_solver_result_v1',request_sha256=digest(request),
               universal_native_correctness_claimed=False, general_G3_resolved=False)
+    if request['task']=='native_rc1':
+        from native_bridge import consume
+        result=consume(request['input'],out/'native',parity_binary,parity_sources)
+        return {**base,'status':result['status'],'native_result':result,
+                'source_feasibility_certified':False}
     if request['task']=='source_search':
         if hashlib.sha256(ADAPTER.read_bytes()).hexdigest()!=ADAPTER_SHA:
             raise Refused('existing source adapter identity changed; review before reuse')
@@ -95,6 +100,8 @@ def main():
     p.add_argument('--output',type=Path,required=True)
     p.add_argument('--backend-python')
     p.add_argument('--rust-binary')
+    p.add_argument('--parity-binary')
+    p.add_argument('--parity-sources',type=Path)
     a=p.parse_args()
     a.output.mkdir(parents=True,exist_ok=False)
     try:
@@ -102,7 +109,7 @@ def main():
             raw=incoming.read(MAX_BYTES+1)
         (a.output/'REQUEST.json').write_bytes(raw)
         request=loads(raw)
-        result=dispatch(request,a.output,a.backend_python,a.rust_binary)
+        result=dispatch(request,a.output,a.backend_python,a.rust_binary,a.parity_binary,a.parity_sources)
     except subprocess.TimeoutExpired:
         result=dict(schema='unified_research_solver_result_v1',status='UNKNOWN',
                     reason='native certificate checker time limit',source_feasibility_certified=False)

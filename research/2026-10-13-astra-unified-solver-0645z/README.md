@@ -16,7 +16,7 @@ physical1614 provider was accepted and exactly recovered historically, but its
 complete body remains unavailable here.1615 has historical acceptance without
 its complete recovered packet. These statuses are not interchangeable.
 
-`solve.py` provides four explicit tasks:
+`solve.py` provides five explicit tasks:
 
 * `source_search` calls the pinned existing `certified_bounds.py`, its original
   architecture census, shared-parameter solver and semantic certificate checker.
@@ -31,6 +31,10 @@ its complete recovered packet. These statuses are not interchangeable.
 * `common_menu` fixes external taxon/protected IDs and the complete joint
   configuration PMF, checks every ordered pair's certificate, and computes the
   conditional support/hybrid budget. Its source-existence answer remains UNKNOWN.
+* `native_rc1` delegates literal RC1 requests to the recovered exact Rust
+  affine solver or complete formal joint forward-law compiler. Successful
+  outputs are checked against the same request. Matrix decisions and formal
+  tables do not establish physical source admission. See [the native bridge](NATIVE-BRIDGE.md).
 
 The new rational certificate language supports sums of nonnegative rational
 weighted squares multiplied by 1, x, 1-x, or x(1-x). It is a supported exact
@@ -44,7 +48,7 @@ exclusions, bounded exhaustion, unsupported conditional count, exact generation,
 correlated joint configurations and malformed/unencoded input controls.
 These tests do not prove universal native-code correctness.
 
-The final version of that run also checks native agreement and emits exact
+The later 19-case unified run also checks native agreement and emits exact
 Lean certificate proofs and fixed padded-comb observation descriptions. The
 native differential corpus passed556 cases. The recovered public Rust core
 matches all25 historical decoder parent-file pins; fresh decoder3/3,
@@ -65,6 +69,15 @@ NetworkX3.5 and Z3-solver4.15.3.0. The output directory must be absent.
 `--rust-binary /path/to/common-certificate-checker` additionally checks exact
 native agreement on certificate tasks. Generated Lean files carry
 `compiled=false` until an actual compiler receipt proves otherwise.
+
+For the recovered native engine, select an `examples/native-*.json` request and
+provide `--parity-binary /path/to/parity-solver` and
+`--parity-sources /path/to/authenticated-restored-tree`. The bridge verifies the
+selected source inventory, actual build receipts and observed executable hash.
+The native affine examples cover a joint witness, a scoped contradiction and
+budget UNKNOWN; the law examples retain parallel edge occurrences and COMMON
+versus INDEPENDENT mechanism distinctions. `operation: "check"` independently
+submits a supplied result to the existing request-bound native checker.
 
 ## Reproducible components
 
