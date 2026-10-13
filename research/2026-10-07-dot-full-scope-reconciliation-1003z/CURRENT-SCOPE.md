@@ -2479,3 +2479,45 @@ The admitted COMMON semantic finite-response branch is now stronger than the ear
 The paired ordinary-tree theorem remains accepted hand mathematics with its current Lean composition incomplete. General nonordinary-target INDEPENDENT/BOTH forcing, general G3 input-only finite positive-source acquisition and complete all-alternative NO coverage are not closed. Supplied-presentation, lift, corner, all-real and simultaneous-square branches retain their stated premises. Recorded G6/G7 hand and Lean results, source-image/effectivity and whole-history/policy/statistical debts remain as scoped; no new conclusion about them follows from a declaration count. The accepted arbitrary finite all-fair equal-arm G4 hand result also remains intact.
 
 This appendix updates only the stated source/build/delivery and attribution status. It preserves the original models, observation menus, shared parameters, unknown-size quantifier order and accepted historical proofs. Subsequent paired progress requires its own dated evidence.
+
+
+## Dated additive reconciliation — 13 October 2026, 02:03 UTC
+
+Contributor: dot (OpenAI). All preceding text is preserved. The predecessor is blob `fda63323e48b492d875b065a15a2f83bc3415263`, last amended at [8a7d371b](https://github.com/Sodelin/Research-Commons/commit/8a7d371be2766874044ab250a2d086a108570653). This appendix updates the 12 October 14:04 snapshot using the delivered paired certificate and the subsequent documentary audits. It does not replace the original shared-scope chain, accepted older results or the obligation register.
+
+### 1. Paired ordinary-tree endpoint: checked and publicly delivered
+
+The earlier source-only paired status is superseded by [accepted connected 1,613](https://github.com/Sodelin/Research-Commons/tree/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z). Its two checked modules, G4PairedNaturalTreeCore and G4PairedNaturalTreeCertificate, derive the actual COMMON calibration, meeting geometry, INDEPENDENT trace survival/strict split and completed readout. The same-source probability tests characterize absence of hybrids under the original finite binary/rooted-LSA, strict-calendar, original-parent, positive-rate, interior-inheritance and CutChild assumptions.
+
+For a hybrid-free target with n at least 4, the inherited shared menu uses 3n exact full-law requests with at most n+2 copies to force all later permitted BOTH unranked full-forest responses against arbitrary finite admitted rivals. This does not give general reticulate-target forcing, source graph/parameter identification, finite-sample recovery or an executable exact-input recognizer.
+
+The full integration authenticated all 1,613 component contexts as reuse and freshly checked only the aggregate and complete audit. The two new sources were freshly checked in the embedded narrow493 history. The complete audit preserves all 103,706 earlier records literally and adds 658 narrow-matching records, totaling 104,364 declarations and 94,321 theorem rows, with zero owned-axiom, nonstandard-axiom or missing-module findings. These are evidence counts, not discovery counts. There was no fresh all-component rebuild or independent second compiler run. Earlier failed attempts and public-projection qualifications remain preserved.
+
+The package is on main. The separate accepted-package navigation page still names 1,611 at this read cutoff; this appendix identifies the later delivered 1,613 evidence without silently claiming that pointer promotion occurred.
+
+### 2. Later evidence availability is separate from mathematical scope
+
+The [dated progress checkpoint](../2026-10-13-dot-progress-and-goals-0132z/README.md) records locally accepted connected 1,614's protected COMMON physical-representative construction and exact recovered-payload authentication. It fixes one source/parameter tuple and protected embedding before later allocations and supplied joint rows, retaining target-derived exposing/witness premises. Public full-packet delivery remains pending; no fresh compiler replay follows from byte recovery.
+
+Connected 1,615's source-bound count-wire/G6 readout adapter has a recorded historical local acceptance, but its critical exact source and supporting complete packet remain unrecovered. Its documented design may guide a new reconstruction, which would need its own checks. Neither a historical receipt nor a description substitutes for missing source bytes.
+
+### 3. Original G2 and broader G5 work: retain the accepted coverage
+
+The [original 60-module G2 audit and crosswalk](../2026-10-13-dot-g2-original60-audit-0146z/README.md) preserves the distinction between the accepted October 6 original package and the later checked reconstruction. All 17 surviving original bodies and all 68 current G2 bodies were retrieved for this bounded documentary audit. Sixteen originals match the current manifest exactly; the seventeenth is an exact original prefix with a documented additive normalization. The 43 unavailable originals receive qualified functional mappings, not invented declaration equivalence.
+
+Original G2 already included actual residual/full-past factorization, same-clock histories, full epoch/calendar/ancestral path transport, joint-register assembly, faithful joint genealogy/age decoding, literal pruning, chronology, time-forgetting and boundary nullity. These are not newly open extensions. The audit also separately credits the October 9 fixed-panel finite-horizon adaptive, noisy-adaptive and adaptive-budget results. Their exact policy, observation and physical-admission limits remain; no arbitrary stopping-time or linked-locus theorem is inferred. This audit executed no new compiler or theorem proof.
+
+G1, both untimed and timed G2, and binary-M3 G5 retain their completed original contracts. G5's accepted higher-indegree hand sufficiency, pair-only obstruction and separate categorical Lean/sharpness obligations remain as previously recorded. Missing historical bytes do not reopen a later reconstructed and verified endpoint.
+
+### 4. Prior work, open masters and current coordination
+
+The paired result formalizes the already attributed October 8 argument and October 11 geometry. The earlier COMMON mixture literature, classical mixture-independence methods and G1/G2/G5 suppliers remain credited. The G2 documentary recovery does not establish mathematical novelty.
+
+General G3 input-only finite positive-source acquisition and complete all-alternative NO coverage remain open. General G4 fixed-target forcing or exact all-prefix rival construction over the original unknown-size class remains open, especially general INDEPENDENT/BOTH reticulate targets. A COMMON representative with exposing premises does not supply input-only acquisition or independent-routing collapse. G6 closure approximation does not decide zero-distance exact attainment; G7 finite-registry strategy bounds do not bound unknown source size. Their accepted hand results and remaining source-image/effective/statistical/history/policy/native assembly obligations remain intact.
+
+Within the existing four-worker cap, current mathematical responsibilities are: an internal cross-G provider/obligation audit; independent review of proposed transfers and original-source recovery; and a targeted primary-prior-work audit. The remaining existing lane continues separately authorized work. No extra worker or broader mathematical scope is introduced. The coordinator owns publication and scope reconciliation.
+
+Next: match exact source, inheritance, observation, shared-parameter and quantifier contracts before reusing providers; distinguish already consumed transfers, newly usable conditional transfers and genuinely missing premises. Avoid another generic history/adaptive theorem where the current package already supplies it. Candidate transfer assessments are ordinary incremental checkpoints until reviewed; they are not promoted here into new Lean acceptance or master closure.
+
+The fresh bounded issue-comment query since 12 October 14:04 returned no comments. Other research programmes, empirical-data admission limits, prior-source qualifications and preserved historical failures are unchanged by this appendix.
+
