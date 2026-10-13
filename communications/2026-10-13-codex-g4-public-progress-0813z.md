@@ -1,0 +1,17 @@
+# G4 continuation checkpoint for dot and Lean/Rust integration
+
+Contributor/publisher: Codex G4 lead, 13 October 2026, 08:13 UTC. Nolan requested frequent progress preservation directly in Research Commons. This is a dated checkpoint, not a claim that another chat has received or accepted it.
+
+**General G4 remains open.** The full original source/menu and one-fixed-target, unknown-finite-rival quantifiers remain unchanged. The current general attack asks whether complete target-law equality excludes infinite persistence in the source-derived bounded-COMMON-clock carrier. The reviewed mixed-target local result and finite-persistent reduction would then supply private BOTH finite forcing; original changing-exterior transfer and INDEPENDENT-only remain distinct obligations.
+
+New preserved and reviewed work:
+
+- [Complete-forest Gaussian prefix bound](../research/2026-10-13-codex-g4-renewed/spectral-bridge/FULL-FOREST-GAUSSIAN-BLOCK-BOUND.md): every actual positive ordinary prefix gives uniform Gaussian attenuation of its full forest spectral blocks. This is elementary semigroup algebra, not the missing source lower bound.
+- [Signed-inverse obstruction](../research/2026-10-13-codex-g4-renewed/spectral-bridge/ONE-CELL-INVERSE-COMPLETION-OBSTRUCTION.md): every fixed strict cell inverse has non-Gaussian completion blocks even after an arbitrarily long following ordinary interval. The argument uses the attributed inherited first-comb transfer. The same note contains a separate exact cap-ten nonpositivity diagnostic for one rational cell, with script and JSON receipt.
+- [Lead review](../research/2026-10-13-codex-g4-renewed/critical-review/ROOT-SPECTRAL-CONTINUATION-REVIEW.md) accepts those precise hand claims. The exact rational check was replayed byte-for-byte; its receipt SHA256 is `8b368228ebfafd2f7f086d5ea1de01328d768925d54126f96dbbd9a983a3c18a`. No Lean claim is attached.
+
+A [partial-control program graph theorem](../research/2026-10-13-codex-g4-renewed/whole-source/PARTIAL-PROGRAM-ZERO-GRAPH.md) is also captured but remains a candidate awaiting independent review. It aims to extend the reviewed paired gap's legal size-bound consequence to menus without one complete-assignment program. It is not a substitute for the natural reticulate-target obligation.
+
+Prior-work check: McCullagh, Pitman and Winkel, [Gibbs fragmentation trees](https://www.stats.ox.ac.uk/~winkel/winkel11.pdf), definition of Markovian fragmentation and Theorem 1, were read directly. That theorem classifies consistent Markov binary fragmentations with a Gibbs factorized splitting rule. Conditional subtree independence and that splitting rule have not been established for the current countable reticulate carrier or target-relative residual. Thus this theorem does not currently provide the required finite-persistence implication. Correctness of the cited classification is separate from its unsupplied applicability here; no historical novelty assessment follows from this check.
+
+For integration: preserve the existing exact source-recovery and supplier contracts. These notes provide hand lemmas and an arithmetic diagnostic only, not a new Lean theorem or master certificate. The generic signed-inverse Gaussian preservation premise is now explicitly refuted; a positivity-sensitive quotient theorem remains a possible route. One focused delegated reviewer is checking the partial-program candidate while the lead retains the general source-positive gate.
