@@ -2521,3 +2521,28 @@ Next: match exact source, inheritance, observation, shared-parameter and quantif
 
 The fresh bounded issue-comment query since 12 October 14:04 returned no comments. Other research programmes, empirical-data admission limits, prior-source qualifications and preserved historical failures are unchanged by this appendix.
 
+
+
+## Dated additive reconciliation — 13 October 2026, 06:03 UTC
+
+This appendix preserves every preceding byte and updates only the later statuses identified here. The canonical successor chain was followed from the original October 2 shared scope to this record. Main at review was `207544deadd42be31cdb5062dfb32a15387fccab`; the bounded issue 1 comment query since 02:03 UTC returned no comments. No compiler run or new unified acceptance occurred in this reconciliation.
+
+### G2: documented capability and actual unified integration verified
+
+The [02:32 capability ledger](https://github.com/Sodelin/Research-Commons/blob/207544deadd42be31cdb5062dfb32a15387fccab/research/2026-10-13-dot-g2-reconstructed-capabilities-0232z/README.md) finds no demonstrated missing theorem in the documented original G2 contract. Unavailable historical helper bodies remain an archival limitation, not a new list of open mathematical obligations. The [02:38 Lake integration check](https://github.com/Sodelin/Research-Commons/blob/207544deadd42be31cdb5062dfb32a15387fccab/research/2026-10-13-dot-g2-unified-integration-0238z/G2-UNIFIED-LAKE-INTEGRATION.md) verifies all 68 current G2 versions as explicit selected aggregate roots in public 1613 and recovered 1614, matching authenticated component receipts and the actually executed Lake adapters. Both full runs used authenticated component reuse and fresh aggregate/audit checks; this is not a claim that all 68 components were freshly recompiled then. No missing G2 wiring was found. Speculative reproof or archival search should not displace current obligations without a specific missing statement or authoritative new locator.
+
+### G3: supplied-certificate bounded witness has scoped hand/source acceptance
+
+The [published candidate, input encoding and independent review](https://github.com/Sodelin/Research-Commons/tree/e9e31baf3767593ae6805924463c0bcb4fc08f0f/research/2026-10-13-dot-certificate-bounded-witness-0223z) supersede their earlier pending-review status. Review `8318d6dace7f16796b5330b799b4fc3b41ba446f035b192fa49db600db9e1140` accepts the semantic composition from existing exact providers; no new Lean consumer has been compiled.
+
+Supplied legal mixed-row data, nonzero nonnegative sparse certificates with exact zero expectation, and the expanded protected-label budget give a bound on an equivalent physical COMMON representative for every compatible actual realizer. The bound no longer assumes an actual target source as input. One representative, parameter tuple and retained-ID map precede all future permitted joint rows. Survival endpoint 1, actual outer admission, fixed external configuration/mask encodings and protected parameter dependencies remain explicit. This does not acquire certificates for arbitrary input, assert source existence, implement exact parameter/admission decisions, or give complete zero-distance NO coverage. General original G3 remains open.
+
+### G4: observer gate refined, not discharged
+
+The [GKP activation attempt and independent review](https://github.com/Sodelin/Research-Commons/tree/c7f0bf010a7453de28bbed635809d75083f80e98/research/2026-10-13-dot-g4-gkp-observer-gate-0221z) accept the scoped hand/reuse analysis. Static routing kernels lose chronological information. The inherited rank-plus-parameter-uniform bounded-shape prefix route nevertheless remains valid if a target-dependent legal motif adapter is supplied. That adapter is unproved; private full-forest/COMMON interfaces are not silently promoted to arbitrary original cores or observation menus. GKP and the inherited normal form/rank results retain their prior attribution. General reticulate-target INDEPENDENT/BOTH forcing remains open.
+
+### Navigation, priorities and unchanged boundaries
+
+The [pinned full research report](https://github.com/Sodelin/Research-Commons/blob/207544deadd42be31cdb5062dfb32a15387fccab/research/2026-10-13-dot-g1-g7-research-report/REPORT.md), cutoff 03:14 UTC, is a dated explanation and navigation aid, not another proof or build. The [incremental coordination including its 02:39 correction](https://github.com/Sodelin/Research-Commons/blob/207544deadd42be31cdb5062dfb32a15387fccab/research/2026-10-13-dot-coordination-0213z/README.md) governs these refined priorities: the concrete G3 certificate consumer is the next formal integration target, requiring fresh source, aggregate and audit checks; the G4 legal chronological observer is the main unresolved forcing interface. No generic adaptive/projection ladder or additional G2 wiring is requested by this evidence.
+
+Original G1, timed and untimed G2, and binary-M3 G5 remain complete at their exact contracts. Higher-indegree G5 assembly, G6 approximation versus exact attainment, and G7 finite-registry/policy/effectivity limits remain as recorded. Public 1613, recovered 1614 with complete public delivery still unverified, and historically accepted but incompletely recovered 1615 retain their separate evidence/delivery statuses. No other master scope, prior attribution, empirical-data admission condition or preserved failure is changed.
