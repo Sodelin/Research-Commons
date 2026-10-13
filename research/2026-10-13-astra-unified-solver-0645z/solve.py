@@ -46,11 +46,21 @@ def dispatch(request, out, backend_python=None, rust_binary=None):
         result=common_packet(request['input'])
     else:
         raise Refused('unknown solver task')
-    if rust_binary:
-        certs=([result['certificate']] if result.get('status')=='GENERATED_AND_CHECKED' else
+    certs=([result['certificate']] if result.get('status')=='GENERATED_AND_CHECKED' else
                [request['input']] if request['task']=='check_certificate' else
                [row['certificate'] for row in request['input']['pairs']]
                if request['task']=='common_menu' else [])
+    if certs:
+        from emit_lean import render
+        emitted=[]
+        for i, cert in enumerate(certs):
+            source=render(cert)
+            name=f'Certificate{i}.lean'
+            (out/name).write_text(source)
+            emitted.append(dict(path=name,sha256=hashlib.sha256(source.encode()).hexdigest(),
+                                certificate_sha256=digest(cert), compiled=False))
+        base['Lean_certificate_sources']=emitted
+    if rust_binary:
         native=[]
         binary=Path(rust_binary).resolve()
         for i, cert in enumerate(certs):
