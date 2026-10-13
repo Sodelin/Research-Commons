@@ -87,3 +87,25 @@ For every interior coin, with $B=1+2\sqrt{gq}$, the normalized function $B^{-z}\
 The fair-coin continuation near negative poles requires a proved endpoint density. The laplace_recovery researcher is separately deriving the Jacobi transition density near $x=1$ and its semicircle Abel integral. This note does not yet claim global meromorphic continuation in that case; the separate packet will be linked after review.
 
 The exact all-arity identity, moment representation, all-coin right-half-plane bounds, and unequal-coin entire continuation are complete hand arguments. Applying them to an original source still requires the admitted core decomposition and legal extraction. General G4 remains open here.
+
+## Subsequent fair-endpoint completion and audit
+
+The initial pending continuation above is now supplied by
+[BOTH-ZERO-MIXED-MELLIN-CONTINUATION.md](BOTH-ZERO-MIXED-MELLIN-CONTINUATION.md),
+reviewed SHA256 d5c0e2d777b4257b86881e848fbbc1dd34d0f03b4802128018b190c515ad3fa1.
+I independently checked its Jacobi spectral coefficients, Doob transform,
+semicircle Abel integral, analytic square-root germ and Mellin continuation.
+The fair case has possible simple poles only at $-3/2-m$, with the first
+pole genuine and no pole at $-1/2$.
+
+For every coin, write $B_g=1+2\sqrt{g(1-g)}$. The normalized function
+$E_g(z)=B_g^{-z}\mathbb E Z^z$ is bounded by one on the closed right
+half-plane. This follows directly from $0<Z/B_g\le1$ almost surely; the
+fair density supplies holomorphy across the boundary and its continuation.
+For unequal coins it is entire. Its integer values have a positive
+polynomial lower bound and $\log E_g(n)=o(n)$, as proved in that companion.
+The detailed pinned endpoint and synthesis review is recorded in
+[ENDPOINT-AND-BOUNDED-ANCHOR-SOL-REVIEW.md](ENDPOINT-AND-BOUNDED-ANCHOR-SOL-REVIEW.md).
+
+This completes the auxiliary all-coin analytic component. It does not
+admit boundary physical rivals or establish general G4 finite legal forcing.

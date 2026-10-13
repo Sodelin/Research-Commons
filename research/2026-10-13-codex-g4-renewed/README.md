@@ -2,7 +2,21 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
-**Latest checkpoint, 22:47 UTC:** the
+**Latest checkpoint, 23:29 UTC:** the
+[lead acceptance](critical-review/ROOT-ORIGINAL-FINITE-PERSISTENCE-ACCEPTANCE.md)
+now composes the separately reviewed actual mixed-core analytic theorem
+with an independently reviewed original-source compactification argument.
+For increasing legal natural BOTH prefixes of one fixed strict original
+target, even changing unknown-size rival cores cannot leave infinitely many
+persistent positive-exposure cells in the shared limit. The new bridge
+uses actual reference-comb probabilities and both directed COMMON exposure
+marginals. Weak ordinary-clock residue and the final original-source local
+exclusion remain unresolved; this is **not general finite forcing**.
+The [current obligation register](CONTINUATION-STATUS-1920Z.md) records the
+exact remaining two-clock implication. All new acceptance is hand proof;
+no new Lean/Rust verification or historical novelty is claimed.
+
+**Earlier checkpoint, 22:47 UTC:** the
 [uniform inverse-Laplace proof](chronology/continuation-2110z/UNIFORM-LAPLACE-PHASE-REMOVAL.md)
 has a [separate Sol audit](chronology/continuation-2110z/UNIFORM-LAPLACE-SOL-AUDIT.md).
 It removes the rationality restriction from finite persistence under the

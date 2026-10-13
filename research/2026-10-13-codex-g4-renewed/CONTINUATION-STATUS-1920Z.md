@@ -4,6 +4,45 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## Original-source finite-persistence successor, 23:29 UTC
+
+The [lead acceptance](critical-review/ROOT-ORIGINAL-FINITE-PERSISTENCE-ACCEPTANCE.md)
+pins the [bounded-anchor scalar theorem](whole-source/continuation-2110z/BOUNDED-ANCHOR-REFERENCE-FINITE-PERSISTENCE.md),
+its independent endpoint/mixture audit, and the
+[original-source composition](whole-source/continuation-2110z/ORIGINAL-ANCHOR-COMPACTIFICATION-COROLLARY.md)
+with its separate source review. This supersedes the mixed-core analytic
+and infinite-persistent-cell transfer gaps stated in earlier checkpoints.
+
+| Original master obligation | Current evidence/status | Exact remaining duty |
+|---|---|---|
+| Exact original source/menu/quantifiers | Original strict source and natural BOTH scope preserved; one target, shared tuple, all finite unknown-size rivals | Controlled/protected menus require their actual adapters; no silent extension |
+| General private BOTH forcing | Accepted 22:47 hand theorem at private/faithful-completion interface | Formal realization separate |
+| Infinite persistence across changing original cores | Accepted 23:29: every increasing fitting-prefix sequence has one shared compactification with finitely many persistent cells | Does not bound actual weak-cell count |
+| Weak COMMON/INDEPENDENT clock loss | A^C>=A^I from inherited compactification | Prove full target laws force each loss to vanish for changing cores, including relevant boundary cases |
+| Original-source local exclusion | Private theorem inherited only at its proved interface | Exclude arbitrarily many small extras by finitely many legal observations near the resulting body |
+| INDEPENDENT-only | Separate unresolved weak-clock obligation | Exact finite forcing or one fixed strict target with exact inequivalent finite rivals after every prefix |
+| Prior work and novelty | Targeted primary checks preserved | No ready clock-rigidity supplier found in that search; no novelty certification |
+| Publication and formal integration | Attributed proofs and separate scoped hand audits | No new Lean/Rust theorem or build claimed; existing integration owner retained |
+
+The new source proof bounds only the relevant selected anchor core lengths:
+each lies on some positive-weight directed A-to-B or B-to-A COMMON path.
+It does not assign the private-block clock bound to arbitrary unexposed
+original edges. All anchors and caps use the same selected original-source
+subsequence. A compactified limit remains an auxiliary object, never an
+admitted rival for the negative master quantifier.
+
+The [new primary-work check](whole-source/continuation-2110z/TWO-CLOCK-PRIMARY-APPLICABILITY-CHECK.md)
+compares three recent primary papers directly with the missing clock
+implication. Generic level-1 NMSC concordance factors and all-parameter
+sequence-substitution results do not establish this all-copy coalescent
+statement. The search is bounded and does not certify historical novelty.
+
+The active next proof attack is a finite-body source-invariant COMMON clock
+functional derived from the full INDEPENDENT hierarchy, followed by a
+source-valid local exclusion. No tool or permission blocker exists.
+General G4 remains open; no full-master or fixed-target impossibility
+conclusion follows from this checkpoint.
+
 ## All-real analytic and private-forcing successor, 22:47 UTC
 
 The [uniform inverse-Laplace theorem](chronology/continuation-2110z/UNIFORM-LAPLACE-PHASE-REMOVAL.md)
