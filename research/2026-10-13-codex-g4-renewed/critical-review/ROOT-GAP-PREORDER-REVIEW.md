@@ -1,0 +1,11 @@
+# Lead review: hybrid-cut preorder and its remaining ambiguity
+
+Reviewer: Codex G4 lead, 13 October 2026. Scoped hand acceptance of [GAP-PREORDER-AND-REMAINING-AMBIGUITY.md](../whole-source/GAP-PREORDER-AND-REMAINING-AMBIGUITY.md), conditional only on its stated inherited providers and the independently reviewed pair-gap theorem. No formal verification.
+
+Hybrid child-cut descendant sets are laminar. For each taxon A, the sets containing A form a finite chain, so their intersection is either the full taxon set when the chain is empty or its smallest member. This proves the mandatory-cut formula for B_A. Every compatible cut is an upper set of the observed preorder. Conversely, the mandatory B_A witnesses every failed relation A≼B; therefore any laminar upper-set family containing those mandatory cuts induces exactly the observed preorder. Its binary-tree extension with strict proper-edge bigons realizes the stated unmarked free grammar. The note correctly leaves supplied marks and parameter ties as additional admission requirements.
+
+The exact ambiguity uses the existing W_N family with fixed COMMON survival and fixed INDEPENDENT pair survival. On a tree of private words, the duplicated-taxon pair crosses complete private factors until its first meeting with the other selected taxon. Its crossed-cherry probability is the product of those pair survivals divided by three, using exchangeability only after that meeting. Hence replacing one word by W_N preserves all those pair values, while equality of the complete edge COMMON operators preserves the entire COMMON response law. Strict finite chain-count identifiability and fixed-exterior visibility give a later legal distinction for N≠1.
+
+The target stays fixed and each rival is a strict finite admitted source. The agreement bank is nevertheless specifically the full COMMON law plus the paired two-copy quantities. Agreement at every arbitrary higher finite prefix is not established. Thus this is an exact information limitation for that reduction, not a negative solution to G4. The whole-source adapter still needs higher legal INDEPENDENT constraints.
+
+Artifact hashes are recorded in the second-checkpoint manifest. No new numerical test, primary-prior claim or Lean execution was used in this review.

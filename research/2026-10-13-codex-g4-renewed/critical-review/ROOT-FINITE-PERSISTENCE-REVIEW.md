@@ -1,0 +1,9 @@
+# Lead review of the finite-persistence corollary
+
+Reviewer: Codex G4 lead, 13 October 2026. Scoped hand acceptance of [FINITE-PERSISTENCE-AND-GLOBAL-GATE.md](../general-algebra/FINITE-PERSISTENCE-AND-GLOBAL-GATE.md). This review is separate from the independently accepted mixed-target local theorem and from formal verification.
+
+I checked Sections2–5 of the inherited finite-persistent array proof and Sections3–5 of its boundary cohort provider against the proposed composition. The weak-interval estimate and extraction of the two gap clocks do not depend on the original one-biased-cell target. The finite boundary comparison identifies an arbitrary finite strict target by successive leading-gap/cohort cancellation; it does not require a normal form for countably ordered words. After that identification, equality of the total COMMON clock makes every nonnegative gap-clock discrepancy vanish. The collapsed same-duration selected body consequently approaches the target and its total extra strength tends to zero. The reviewed mixed-target local theorem applies at exactly this point, uniformly in the number of extras.
+
+The conclusion is eventual full-law equality along the stated finite-persistent subsequence. It does not establish the existence of such a subsequence. The subsequent compactness argument is valid as a sufficient criterion: if every target-equal source-derived countable carrier has finite persistence, hypothetical exact later-inequivalent rivals at growing caps contradict the corollary. No explicit rank bound, finite motif observation or effective stopping procedure is assumed or obtained. Original whole-source transfer and the distinct INDEPENDENT-only problem remain open.
+
+This accepts an attributed composition, not a reconstruction of the earlier normal-form or compactification theorems. No computation or Lean execution was used in this review. Exact artifact hashes are supplied in the accompanying second-checkpoint manifest.
