@@ -13,18 +13,19 @@ existence, a physical representative/hybrid budget, or arbitrary-input G3 closur
 Zero-weight values are excluded from the support set and unconstrained in the
 general theorem; repeated values count once. The survival domain remains `(0,1]`.
 
-The closed execution checkpoint after batch 052 authenticates the selected
-external prefix through index 2819. Fresh resumed guards 043–052 passed;
+The closed execution checkpoint after batch 055 authenticates the selected
+external prefix through index 2861. Batch 054 remains failed; separate diagnosticv2 and explicit adoption recovered
+its module2860 result. The other closed guards retain their literal outcomes;
 their literal receipts and remote publication readbacks distinguish execution
-from reuse. The [052 handoff](evidence/RUST-LANE-052-MONITOR-HANDOFF.json) records
+from reuse. The [055 handoff](evidence/LEAN-LANE-055-HANDOFF.json) records
 the independent terminal readback and no-active process observation at its cutoff.
 The accepted provider, new adapter and separate interface audit remain uncompiled.
 Original 042's missing outer guard remains UNKNOWN despite successful later
 authentication of its retained module results.
 
-Incoming hand-reviewed work through dot's 20:03 reconciliation is routed by the
+Incoming hand-reviewed work is routed by the
 [exact-source integration catalogue](../../communications/astra-incoming-integration-registry-2003.md)
-and its JSON registry. It preserves calibrated-target BOTH forcing, distinct
+and its JSON registry, with additive later intake receipts. It preserves calibrated-target BOTH forcing, distinct
 INDEPENDENT diagnostics, precise inherited hypotheses and remaining formalization,
 physical and effective-decision obligations. This catalogue does not enlarge
 compiled Lean or native solver results.
@@ -67,7 +68,7 @@ match the exact selected upstream bytes and can reuse their authenticated builds
 
 This is hours of serial compilation at observed prior rates. Source and receipt
 checkpoints precede expensive work. Current compilation uses 32-module batches,
-one compiler at a time, a 4 GiB physical cgroup stop, 5 GiB per-process virtual
+one compiler at a time, a 4 GiB physical cgroup stop, 6 GiB per-process virtual
 ceiling, 8 GiB disk floor and 1 GiB available-RAM floor. The measured virtual-only
 adjustment and earlier failures are preserved below. Actual failures and resource
 stops must be preserved and diagnosed before resuming. No desktop build, firmware
@@ -250,3 +251,25 @@ The append-only evidence is `evidence/recovery042-auth-v1/`;
 Next proposed work is index 2531, using batch 043 with the existing 32-module
 serial policy, only after public checkpointing and coordinator release.
 The new adapter and explicit interface audit remain uncompiled.
+
+## Later thread-headroom diagnostic and adoption
+
+Batch054 failed at selected module2860 with `failed to create thread` under
+5 GiB virtual /4 GiB physical controls. The original failed receipt and logs
+remain archived. Diagnosticv1 compiled the unchanged source but returned2
+because an optional procfs children interface was unavailable. A narrowly
+repaired read-only monitor then passed diagnosticv2, including375 samples and
+25 child-limit snapshots, at6 GiB virtual /unchanged4 GiB physical.
+The sampled virtual peak was6,039,928,832 bytes; the failure's exact cause
+remains unknown. These outcomes are separate in
+`evidence/thread-headroom-2860-v1/` and `evidence/thread-headroom-2860-v2/`.
+
+The reviewed zero-compiler adoption archived the original2860 receipt/logs and
+installed the authenticatedv2 result, recorded in
+`evidence/THREAD-HEADROOM-2860-ADOPTION.json`. One-fresh-module batch055 passed.
+`evidence/EXTERNAL-6GIB-VIRTUAL-POLICY.json` and the separate
+`run_external_batches_6g.py` govern further external continuation; the old
+5 GiB launcher stays byte-exact. Time, disk, RAM, physical-memory, source and
+shared compiler-helper controls remain unchanged. Provider/final Lake profiles
+are not changed by this external-only policy. No adapter completion follows
+from the dependency repair.

@@ -1,0 +1,120 @@
+{
+  "schema": "astra_emission_source_execution_correspondence_v1",
+  "source_pins": {
+    "emit_support.py": "6e7dc1faea63642464b802b59aceed7c809ea2f5148abb62bca36dab9b11bfdd",
+    "prepare_cases.py": "694126d2f6aa86c17365228112595cb99d19a4cd9c977f283531a645852aacf4",
+    "test_emit_support.py": "78c22a581a91003a3ff5d4e9deca2f44bc38168b686f2102b5706968de86bdf7",
+    "check_cases_native.py": "8c141c05ff6ded2077871892e4824873800f7eeadbabed0c89dc519d98d4f626"
+  },
+  "runs": [
+    {
+      "name": "python-controls-v1",
+      "receipt_sha256": "006294baf4df9d6eb7e7b1f5244ed0e0afff72756291f339b7c64e01b8ecd0d7",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "test_emit_support"
+      ],
+      "started_utc": "2026-10-13T21:12:23.641434+00:00",
+      "exit_code": 0,
+      "guard_stop": null,
+      "seconds": 0.5018489720023354,
+      "peak_rss_bytes": 20418560,
+      "outputs": {
+        "stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 103,
+          "sha256": "d1aaab86fa02d87997171aeb3220b40f5e28046ec4d1674848f9ec5f589f297c"
+        }
+      }
+    },
+    {
+      "name": "prepare-corpus-v1",
+      "receipt_sha256": "c4bb99fea79a98ab95c32c946ad2e9122563a24f04d1b44c3bd1679d4fdbd498",
+      "command": [
+        "python3",
+        "-B",
+        "prepare_cases.py"
+      ],
+      "started_utc": "2026-10-13T21:13:35.345565+00:00",
+      "exit_code": 0,
+      "guard_stop": null,
+      "seconds": 0.5036095239993301,
+      "peak_rss_bytes": 12058624,
+      "outputs": {
+        "stdout": {
+          "bytes": 69,
+          "sha256": "59844e4c44171ca2998b0674fb59f83e35483f8545ffab5dab6086bc2661a03a"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "native-corpus-v1",
+      "receipt_sha256": "6bcc94c5211abe84683b941f24ceac7f328c2f99d3865aca829ff721c6c27374",
+      "command": [
+        "python3",
+        "-B",
+        "check_cases_native.py",
+        "--binary",
+        "/workspace/scratch/astra-certificate-target/debug/common-certificate-checker"
+      ],
+      "started_utc": "2026-10-13T21:14:27.889655+00:00",
+      "exit_code": 0,
+      "guard_stop": null,
+      "seconds": 0.5019564350004657,
+      "peak_rss_bytes": 18481152,
+      "outputs": {
+        "stdout": {
+          "bytes": 6793,
+          "sha256": "a0493299609aee868819f2593a596e71f195fb300d60615269c49db784026693"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "name": "real-cli-v1",
+      "receipt_sha256": "06b1d050d695d3e96a8050f227c9af8f558df53b6dba36a34e2ab6f459307e28",
+      "command": [
+        "python3",
+        "-B",
+        "emit_support.py",
+        "cases/zero-constant.json",
+        "evidence/real-cli-emission-v1"
+      ],
+      "started_utc": "2026-10-13T21:14:28.527618+00:00",
+      "exit_code": 0,
+      "guard_stop": null,
+      "seconds": 0.5017547090028529,
+      "peak_rss_bytes": 12320768,
+      "outputs": {
+        "stdout": {
+          "bytes": 1405,
+          "sha256": "8acb2a74e4a5d04653dc6d5087f762b97097b8656b3207d02b0d5b81b281a41a"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ],
+  "lean_execution": "pending; no Lean compiler invoked in this packet",
+  "base_three_literal_evidence": "source hashes match prior successful execution; authenticated reuse only",
+  "native_checker": "existing hash-pinned executable reused; seven fresh process checks",
+  "trusted_boundary": "Python/Rust implementations and runtimes are not universally refined by these finite checks",
+  "new_support_wrappers_compiled": false,
+  "source_existence_certified": false,
+  "physical_representative_certified": false
+}
