@@ -1,0 +1,6 @@
+import Astra.EmittedSupportExamples
+
+#print axioms Astra.PositiveSupportAdapter.supplied_certificate_support_bound
+#print axioms Astra.PositiveSupportAdapter.endpoint_emitted_support_bound
+
+#print axioms DotG4.ActualPositiveGridUniqueness.positiveCertificateGrid_card_lt

@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-13T11:29:00.335662+00:00",
+  "compiler_reported_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "files": [
+    {
+      "path": "official-lean-v4.33.1-src-runtime-libuv.cpp",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/819816b2e0a3bf405af45ae5c7af2491d8f5bee6/src/runtime/libuv.cpp",
+      "sha256": "ec9e10a37af399edb33361b205e16cb9d3a6839607ed5de5f1f2368ddae1a5ea",
+      "exact_immutable_commit_readback": true
+    },
+    {
+      "path": "official-lean-v4.33.1-src-util-shell.cpp",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/819816b2e0a3bf405af45ae5c7af2491d8f5bee6/src/util/shell.cpp",
+      "sha256": "502eaa752396cdff5bb448833a63be54cbbcbb3d36881eb10e235c04c64c0832",
+      "exact_immutable_commit_readback": true
+    },
+    {
+      "path": "official-lean-v4.33.1-src-runtime-thread.cpp",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/819816b2e0a3bf405af45ae5c7af2491d8f5bee6/src/runtime/thread.cpp",
+      "sha256": "64c2d8cf7488e0054848a2599e61eaa6deb97007859feea3b43f55f3561d8173",
+      "exact_immutable_commit_readback": true
+    }
+  ],
+  "observation": "Saved thread syscall stack pointer lies within saved1GiB anonymous mapping and waits in epoll_pwait.",
+  "inference": "Libuv event-loop identity is supported by official initialization order and syscall, not established by a native backtrace.",
+  "relevance": "Measured virtual reservation pressure and successful virtual-only allowance test do not depend on the stronger thread-identity inference."
+}

@@ -1,0 +1,2650 @@
+{
+  "schema": "astra_exact_external_batch_v2",
+  "capture_runner_sha256": "c748a27508cec46ee243ebc77ab256f515f87fbbb0e5c8c2b28d654d22febad4",
+  "guard_receipt_sha256": "c2391e1c54d92085c81205d40d4d67b591f0651f7d27612bcc056f2b6598afd6",
+  "guard_exit_code": 0,
+  "guard_stop": null,
+  "prebatch_inventory_sha256": "549da58e683af88dfd78cc9a17f06ac81f6bc04fd8f355d42a3121d4bfbc60a4",
+  "completed_compiler_invocations": [
+    {
+      "index": 2467,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/MeanValue.lean",
+        "source_sha256": "5aff545ba7e780be43b7c856f683bfe41f037f372fdd6e879c5ed76880c9f02b",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.MeanValue",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/AffineMap.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Comp.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Mul.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Slope.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Normed/Group/AddTorsor.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Normed/Module/Convex.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/RCLike/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Instances/RealVectorSpace.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/LocallyConstant/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/MeanValue.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 19.003482172996883,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean": "0c7ffccc90486eb7574a143dc277f0b62b7ce54341c9aba7b20d85a1dfb165de",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean.private": "c80b651769a9d1b131696db58b14effa172ee6f6aa299b3d3e2095cdd9de07d0",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.olean.server": "69eaef5d3ba9dc138edb48154b9d4c1548b556a9dcab933039e43cadb276e55d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.ir": "f592bf05e13bd7a65b964fe78062f136f3186e634bce52c24efb8f87a5da3aca",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/MeanValue.ir.sig": "cbc896970417f790e6b8e64728f545c828a8db5cf3fad25ab315b8abacb166b1"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "0e01138db3c46cd182c30b9c95b40fae77c129107fb4f050c889f63f010852e1",
+          "input_files": 27300,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3337875456,
+            "VmPeak_bytes": 4345622528,
+            "VmRSS_bytes": 1444827136,
+            "VmHWM_bytes": 1444827136
+          },
+          "seconds": 18.977430945997185
+        }
+      },
+      "receipt_sha256": "5445627be44471c4d73f282bd0bfeb7383f2bce25b2608d488bef47ab51146bc",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2468,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/DSlope.lean",
+        "source_sha256": "f0a8f117b95d786c84c618e6d6ba2766bf833242cc120930217d500a7687a205",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.DSlope",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Slope.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Comp.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Add.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Mul.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/DSlope.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.581366632999561,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.olean": "d283e3cdc07c5d7b499e041cf44ab44347de11a4742fff1e60e0f655f5607252",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.olean.private": "64eb796ba535d894084e5edd7a2672ae4027aa0a9e7c38369688bf64e7a5e6e5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.olean.server": "9de178d47fa1eb32b6e2a66ff32ad1a4f6263b2c9aeb4f8ec6733ce1655e65d9",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.ir": "1cf06edd31846432f026ee047e234d86ef5986447f5e01be4d7765f6fafbe80e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/DSlope.ir.sig": "b36c7dac2030504fb5f23eb3b99bca012a7291c143ebf65744f3ee7ba3fff6e9"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "d2123cb5ac16f8df6c1dc3f82924876629b6522fb2e17477f7198adc8e031721",
+          "input_files": 27305,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3287826432,
+            "VmPeak_bytes": 4217073664,
+            "VmRSS_bytes": 1349193728,
+            "VmHWM_bytes": 1349193728
+          },
+          "seconds": 13.55467116699947
+        }
+      },
+      "receipt_sha256": "e9f81528700d0cbce0d3344a43c4cd422c8b20d05636905ddac6a4a13bd93b27",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2469,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Uniqueness.lean",
+        "source_sha256": "3c095cfff0c66f30905355dfe8918c74148cf462427b0b59f5322a495e002424",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Analytic.Uniqueness",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Linear.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Composition.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Constructions.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Normed/Module/Completion.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/ChangeOrigin.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Uniqueness.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 14.882353137996688,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.olean": "b0ce4fb3f8ca125006708b6dd29343f746fa2d0c162eb7894e0e279fd2120a3e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.olean.private": "0d32ef3110368b2650b16ff3f16b36d27cf6ac0bdb42f50b19f60aa21c0e63ac",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.olean.server": "af0c88d210151285a000e24c7e58ceec72fc9d213cb5c9f8884c9e417d050530",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.ir": "744d207cc7785b5e6f8ac3f6a32ff0483033e629ad387ec5150d163ed64dae92",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/Uniqueness.ir.sig": "455318657e9a8e15325f7b083fa466832478c034687fb047afe51b45301616a8"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "332416551b38a20be6c4a4fa3e05a1926a7dfe16b3e8dfdc3a37dc44ad8d5edc",
+          "input_files": 27310,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3270897664,
+            "VmPeak_bytes": 4170715136,
+            "VmRSS_bytes": 1337610240,
+            "VmHWM_bytes": 1339998208
+          },
+          "seconds": 14.855982307999511
+        }
+      },
+      "receipt_sha256": "d235fb149f15e9450c41be8489ff41eead13db7fc541c3ef8be75f4750a7ed5c",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2470,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/Subsingleton.lean",
+        "source_sha256": "3f9e6bfdcde64097fc81487a00908c053ac04078794ac954b89c29061b0bf862",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Order.Filter.Subsingleton",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/CountablyGenerated.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/Prod.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/Ultrafilter/Defs.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/Subsingleton.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 7.02116684000066,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.olean": "920c295d2616e5047fa7a4c2881336a3a40dfbc5b6eb457f3966ca63bcb2df38",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.olean.private": "758c329f934d36ba6200418386abffc540cd8a759117d55bcf413b396e43b725",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.olean.server": "79e1d1cf2074e6b54e7aaf0de8a8bf18d5a50107c65244d803aea2b5fd77f692",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.ir": "789fcb1ecf0c5dd4663fe9293cc670d2171c00a191053aab75caba3afc89a584",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/Subsingleton.ir.sig": "7ac3de2d074babafd0c767e32cf0dffa0656838cf99322968bb58826dc3bb54a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "a3578bb8894531559da5e8d66198e3eea84919462031e5416683b16d212d9b31",
+          "input_files": 27315,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3380060160,
+            "VmPeak_bytes": 3216924672,
+            "VmRSS_bytes": 837017600,
+            "VmHWM_bytes": 837017600
+          },
+          "seconds": 6.992537894002453
+        }
+      },
+      "receipt_sha256": "8e8dc3b294d69faa2829e138f77fe19a047a8fb970abdc46995137789dd7601a",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2471,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/EventuallyConst.lean",
+        "source_sha256": "f0cd1a6a1da6fa50c1e25f1e866298f1499adee32171c3f325629210531bc140",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Order.Filter.EventuallyConst",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Notation/Indicator.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/AtTopBot/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/Subsingleton.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/EventuallyConst.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 7.719970260000991,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.olean": "3c9582e397fea25c16ad99ec54715fb54cc75fd5b518d4cd39e03bca5d4dd3e2",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.olean.private": "2f12285be004442c1b81ea2c601e2bfa6268273fcfba927ae46bd890d45b416f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.olean.server": "bd91284dc63f02d74b233bfdc78046b043fadadb710ed4c66ad5b3a500a70ba9",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.ir": "69529d23819054f4f4091a32a31eef45f079e7d30e7ca528d171bcdb8b801db5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Order/Filter/EventuallyConst.ir.sig": "21a6b80fd5492f02be16240b8de567ebd4c785f71e4c603476db45ee2a99db32"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "bde7a73ed981c9e4ca10d561a58ef49bd207ab4f22eb37208ddce3cc2417e708",
+          "input_files": 27320,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3365019648,
+            "VmPeak_bytes": 3219877888,
+            "VmRSS_bytes": 842162176,
+            "VmHWM_bytes": 842162176
+          },
+          "seconds": 7.695161469000595
+        }
+      },
+      "receipt_sha256": "57f4b8f47e144f699f8209bfe53f179301cb629261677917241c29656b98193e",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2472,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/IsolatedZeros.lean",
+        "source_sha256": "23bb70a1bad8b88c338b504532e784a33bec653fe550442925672ff7e891b2f1",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Analytic.IsolatedZeros",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Constructions.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/DSlope.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Analytic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Uniqueness.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/EventuallyConst.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Perfect.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/IsolatedZeros.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 16.435410689999117,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.olean": "8c97628b42001d2765cd0c2b2565c44328e36008bc91f6897a6a4e35184d0e11",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.olean.private": "625225babd20efe2a41eb25c4b8e02470fad1a32eb3668e8f884d39cc1aeacde",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.olean.server": "7821407ec655e86faef51221b24adf3a2e574702d52fc568cb95cc96665d6d39",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.ir": "d3eb861a5c761c84d4f3c3803a214f573c9a117286a47ec8137d74964e52238a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Analytic/IsolatedZeros.ir.sig": "3bb91329846ba7322bac769140e5df82db4ed9b34220a47ed44a35f62fe0059a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "517b0af2463c65924917d6190c0b9cff5f6fc5a3246f787bc919653f70c40fcd",
+          "input_files": 27325,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3339608064,
+            "VmPeak_bytes": 4218351616,
+            "VmRSS_bytes": 1381998592,
+            "VmHWM_bytes": 1381998592
+          },
+          "seconds": 16.410798078999505
+        }
+      },
+      "receipt_sha256": "677813ae8d6bfb1012dcb0d7046dba494975e28381868b508440598af4a65979",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2473,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LogDeriv.lean",
+        "source_sha256": "e68d3d008b57b52b5e6ea14b482cacf99f7914c18d14bd5dff24d43ab96de996",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.LogDeriv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/ZPow.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/MeanValue.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/IsolatedZeros.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Slope.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LogDeriv.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 14.255358506001357,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean": "09f246014ec49e2de8f67b4051412439bf3fa2300615b6bbcd3e1353169416f6",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean.private": "4948bf036441be140ad3126a7476f08f0d4abadd85f280f86666be18eeb02115",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.olean.server": "8afbd2263cf4dd0476e085bbd36e0049f7e75ac014840ac8482eac566862e77e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.ir": "70e191683d1a23febc9d5e457bbf3c366acadcb1e96c71c48448232054b4f3db",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LogDeriv.ir.sig": "bd2dec7a3b3c19ff416d40d62952d6867fb724804ac6b3573d788d7150098cf4"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "0b9642df543b0962fd517f4ea2fccead1448cadec4b50049936d4d7fe9cfc1d4",
+          "input_files": 27330,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3322888192,
+            "VmPeak_bytes": 4275712000,
+            "VmRSS_bytes": 1399214080,
+            "VmHWM_bytes": 1399214080
+          },
+          "seconds": 14.233895408000535
+        }
+      },
+      "receipt_sha256": "1f68606e25263a8c1d5e52427a2d7b4597728c26c1cc63e7d8a3e2ed18f05227",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2474,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Defs.lean",
+        "source_sha256": "5d2f01069c6265873a372d4aed746c5d3411073b8acb108a180d02a84c832dca",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.Defs",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Within.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Analytic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/FTaylorSeries.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Defs.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 28.752055615001154,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.olean": "5a730c4cc8b920e616a4d26fe684eefa4e64ae020290ce9a1143dd707cdb5ad5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.olean.private": "f0547bbdd0c212e362b63687fbf4fb4588191c03a2a7099c0171d39c8988a883",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.olean.server": "fa30fe5bffe807e91860418cf42a80b1a91d192f8d16e8dca552778cd1fe2d03",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.ir": "a495ec455a7bab7f4d88f876e9cdb94d866b39ac8d4d0bd1456afce1db5395cf",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Defs.ir.sig": "ef87866c3edef444e1492cbade6709884a16a879d59682480f26fd37024e9f05"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "3f0a4af9469542ae305538abaa3f4f1caf8503c861de9ab855ffd5aab3077c91",
+          "input_files": 27335,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3295625216,
+            "VmPeak_bytes": 4354301952,
+            "VmRSS_bytes": 1500581888,
+            "VmHWM_bytes": 1500581888
+          },
+          "seconds": 28.72709479200057
+        }
+      },
+      "receipt_sha256": "200a14c1651995d3645cfba5662e26fb59d8be1f4d9908ff96e95ddb90157006",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2475,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/RCLike.lean",
+        "source_sha256": "2bcf0b6526c5ffb1353a141e73fa3a884439b4eb0cb7bd52e0b3dd93a87fd3e6",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.RCLike",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/MeanValue.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/RCLike.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.033964408001339,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean": "788c75bdeae24fd48490fdb5f8e70e5be5d1560aacecdff383642b9e3cb200ed",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean.private": "0c06dce95c165e3ba189cb21151eefbac0a5af81f36de1d808d78a31028c6bae",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.olean.server": "8463c2815a4086c22109cb9ade3b4a2b8f9f9e94cbcfd0d58d6e45e2f422f6fc",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.ir": "57a9bc8949c511358044e863d192de5c379aee033de03ccc9d5822e57b4aff38",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/RCLike.ir.sig": "1debb5dae0bc47b51ef982b61b769544ceda74ed801140c2f6532fce571fa676"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "2a5d80cc98d742d353d14fcc5d83e99bb1a00d8eaffee1a5d35ac1e9502e9529",
+          "input_files": 27340,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3360555008,
+            "VmPeak_bytes": 4273807360,
+            "VmRSS_bytes": 1377816576,
+            "VmHWM_bytes": 1379520512
+          },
+          "seconds": 13.011126605000754
+        }
+      },
+      "receipt_sha256": "ca28e62327d418b5f253cd92b6b1ad11bc5927444d23e748af7d207aa394ae08",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2476,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Affine.lean",
+        "source_sha256": "0795852164758f75b22c6a5930238edb84fcdce197a1c70543f18299f3ad209e",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.FDeriv.Affine",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Add.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Normed/Group/AddTorsor.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Algebra/ContinuousAffineMap.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Affine.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 10.267414409001503,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.olean": "cb74f81353c198f216138849097ce7086cf279ca3290cbb7ae23399c32fb6a95",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.olean.private": "2fd49192acbefdc8903a14054d65759d5d33da8056932febdb8bd275109c2d62",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.olean.server": "891727cdf5c4d6f7899a97ec0304fc4e250cd6a92ca52acbc3d8adf89d1a5886",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.ir": "107097feecf49b2d7fc0941d4e1766fee1ca11198cb14ec399f88c2763661ed5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/Affine.ir.sig": "4ac4c8c2416217fb33458c2e8083b309c218badda098a7fbdc0b46dcbc4e52f8"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "34bf90dabd6bdb37a703874e539e9c90982eabf9c2652125988f0e5a7f7f3cbf",
+          "input_files": 27345,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 2,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3372630016,
+            "VmPeak_bytes": 4170903552,
+            "VmRSS_bytes": 1311571968,
+            "VmHWM_bytes": 1311571968
+          },
+          "seconds": 10.245512826997583
+        }
+      },
+      "receipt_sha256": "2ae6e755b57745b5f60024d546dea8bf61b914651054dcee51318ee0f5fd8c84",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2477,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Basic.lean",
+        "source_sha256": "4eb7b1ed75a57a692eb135aa44194a83bf68476245fa2add60deea976133e712",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Affine.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Basic.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 21.600747046002652,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.olean": "34d08d2d75d1a3f335e4a4d4cddd5ef43b64ebf241428f13592f439e8d16c489",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.olean.private": "786d33e4f70e0c1ceb048f62539e14e225b5092ae66d484739d00346f45f476d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.olean.server": "117725a0a41d832c94db73e92fe82892cc8d85be008f8d43174da1ebe4fea925",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.ir": "d79f08eddd275dda1c0d36708c0cf767af49ced416e771deb5d2f510b19f1a71",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Basic.ir.sig": "86a8a0418cf5a34d4d03bf28328f50d8987ea536914fa7d4c8e9c0bb11e7ed99"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "d2ef0c8f0971335186de149c81d6960cc62eea73e5fcfbd6c82443fc7e36f93d",
+          "input_files": 27350,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3305668608,
+            "VmPeak_bytes": 4360765440,
+            "VmRSS_bytes": 1443475456,
+            "VmHWM_bytes": 1443475456
+          },
+          "seconds": 21.575434492999193
+        }
+      },
+      "receipt_sha256": "3e2fadec7ca63e66331e99abf339a9cbedecc95ef130f6b13c767aa01a155fe2",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2478,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.lean",
+        "source_sha256": "f198716ae4977d8ef8c06d32a3e09fa890c343c716ba5148ac1704edc51a4c73",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.FaaDiBruno",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Analytic/Within.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Analytic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/FTaylorSeries.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/SetTheory/Cardinal/NatCard.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 27.337234555998293,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.olean": "aed7bc9387ec9300a779004f032eb525e216bbc364dd59691f5fd0b2be416e5a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.olean.private": "0207b6fd7422d87ae7468566ac18710a50c09a2cccbf16ce613770a762f70c48",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.olean.server": "4da3e11aa0e857806fcdaee9ac01ef357db6733a99e250b4be9850ad4fd8187e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.ir": "6f27f3a2d7efd498790718dcfc7acfeecad22c1e030a049a769f084ebb5d023b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.ir.sig": "06b79a2207cf58b5526634569e9625f4db13174c3babb01f10d75e84fb94d1a9"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "30de205da8029de7a1a5f59ff38becfe7fdc5b13a759ad1d16e1eff4dd01106a",
+          "input_files": 27355,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3341930496,
+            "VmPeak_bytes": 4368588800,
+            "VmRSS_bytes": 1486229504,
+            "VmHWM_bytes": 1486229504
+          },
+          "seconds": 27.309313114998076
+        }
+      },
+      "receipt_sha256": "888a710e3569550de6a00f369425fd7f1b3d70c5ce6fe13ca5ca44f1c7637051",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2479,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Comp.lean",
+        "source_sha256": "26495369d99d4815f99e8319623231a5fe25f0fdd1756c31162216323e27ed0f",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.Comp",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/CompCLM.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Comp.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 19.84866171900285,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.olean": "231f3508bf61ca4cf661f3b73dc46e0a4dc9dc087b197195b2f595f099d69742",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.olean.private": "66ae59c191c77e85c5c1849bb6f243c076d7db380eed00ecb0833d54869ceefd",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.olean.server": "f830fbf0ef66bbe48870353a97f3484c73f60e44be67dd52ffa65888aba84e9d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.ir": "532b970ea9de069186cbe27d50dc92e01ecf4990c7046dea338b97f4f2810e16",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Comp.ir.sig": "7c20355a58748f7e19fb4e4e1df1e8a98b36c402ef4f3a1699154f9581bd728c"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "943b94b1160098ee390c4eed246544e1acca1a659f83f0381e7f24b1f06a7864",
+          "input_files": 27360,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3344883712,
+            "VmPeak_bytes": 4365717504,
+            "VmRSS_bytes": 1426427904,
+            "VmHWM_bytes": 1426427904
+          },
+          "seconds": 19.819350215999293
+        }
+      },
+      "receipt_sha256": "cc151b1e31e133734ac1d969757420656f22d49a626c8ee2190d21a75b0c6c28",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2480,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Deriv.lean",
+        "source_sha256": "3033d2b35bcfdad1ab06168dee62c8587215de8fa049caa85e5445c54d4fb98c",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.Deriv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Comp.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Deriv.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 14.03268830900197,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.olean": "b711e7afb84f2e37f65e5eae33861a1df7d5fb07c7cd1a8504c3582114eb8625",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.olean.private": "19593602526ce73cb25aefda171639b9647a9c4f41a24c3b6a5b3565e54793b7",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.olean.server": "4b57e801df6d900f6ac62c86ebd72bad719e7196b74ae87529cce63490da2ee1",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.ir": "55b296118bef128d1c7cf4a0fd16a2b3b032e34a9f8517a13fff978f6e61712a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Deriv.ir.sig": "07bd4038337fffe32b395de284602797de7e93b20285edee3f0e560952f07b26"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "ae7b186dfcc97e88275d7598e0df0576f8b8e8e7dc3652bcfdcfefab8d3812fc",
+          "input_files": 27365,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3347886080,
+            "VmPeak_bytes": 4384436224,
+            "VmRSS_bytes": 1357713408,
+            "VmHWM_bytes": 1357713408
+          },
+          "seconds": 14.009399960999872
+        }
+      },
+      "receipt_sha256": "0ea96428781b8e976685f67226329ce36bf24ed1dad87dc7bd73bd5bb8cd2e23",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2481,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.lean",
+        "source_sha256": "44a11b2616ec132fcf119190ef16f6154b30750aa3f9254ee5b415517ca3d627",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.FDeriv.OfCompLeft",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/OpenPartialHomeomorph/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/OpenPartialHomeomorph/Continuity.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Normed/Operator/NNNorm.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 12.133273274997919,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.olean": "1480b201ed54c0efd8dc3953dd9018b150cd8a2b6fae7f0889e1e0e4194ab026",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.olean.private": "593eb0d9eaf533e450905f34c79c4d23b4b8e509f667e87fbc003e1eff21f70b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.olean.server": "2a3fe4be5bd5baf197dcd2ba038c1f4b1a1abd2050b9f2e89041a21e80bdd85f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.ir": "9866a5382b8b820939aaf9e67645f9e717c85ca496a8df92a9c46e97f33a609d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.ir.sig": "c8d9c176a67474da4331660dc1c63564058812db4b57ff8d62dccdc1fb085d75"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "1b4377ff402993c689bc6fac0b7a48bd97dff551376accab61cd73f74a364ffd",
+          "input_files": 27370,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 2,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3311976448,
+            "VmPeak_bytes": 4083019776,
+            "VmRSS_bytes": 1286901760,
+            "VmHWM_bytes": 1286901760
+          },
+          "seconds": 12.110954237999977
+        }
+      },
+      "receipt_sha256": "318adff74e8a0df2e4659a5a3b4e5429b435cd4a921452ae3d5238b49f651ff2",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2482,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Inverse.lean",
+        "source_sha256": "d09dedd0090af21a326031aaaac409bb9065bb028915b64232df18733f482573",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.Deriv.Inverse",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Comp.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/Equiv.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Inverse.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.451607820999925,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean": "55f3420e95016c9407cbc4b45ee6e5ad1a6364e58cac868e8ae39afa5232f257",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean.private": "24ce3075c55518c924c5aea3d023484c60e421db4eee68728b500b72a68b1e0e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.olean.server": "b91d6626d89775dc34bb0ec64e8a0972e7b9ef6a968e9fa0d3c1d8116cf8bd9a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.ir": "e4f2d580ff7b1aee39d97990cad5a1e990640ec200cbfcc718227d67832b6f6c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/Inverse.ir.sig": "a8cfc543fdad0cb6eeb8c818290b03d17fd4fde7a71bab176c05670cce986b9c"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "d8fe273ce0d51828e40d6e2127c924ca16cc35a688c974abb1d4e1cfb595470a",
+          "input_files": 27375,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3351265280,
+            "VmPeak_bytes": 4164550656,
+            "VmRSS_bytes": 1338941440,
+            "VmHWM_bytes": 1338941440
+          },
+          "seconds": 13.430164298999443
+        }
+      },
+      "receipt_sha256": "7ed355cd9e81a1329223476b5a9312b85c883441ae30148b0e9e30c23c55e587",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2483,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/OpenPartialHomeomorph/IsImage.lean",
+        "source_sha256": "17b1f281c49814b04d6f60959cb1cf46b99885c73a15d71d44ce7e56352c09e1",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Topology.OpenPartialHomeomorph.IsImage",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/OpenPartialHomeomorph/Continuity.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/OpenPartialHomeomorph/IsImage.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 7.416175016001944,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.olean": "58527d1bd8e26b688a2bcbfcf8ace7def4e62e668fafac7c8e402618a829fcef",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.olean.private": "a155d444a1d024791fd0fc6d9831a6b7291fcd9294794e5b9211e0e9ed83fa1a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.olean.server": "dd575edebe19f167b174967703cb50cc9e3c4a09ac7bf1b0b1eea03c64547e54",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.ir": "dc7f34487bb19efb0d34b8a480297dcaa23a172482e202b75af8b06aa5839714",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/OpenPartialHomeomorph/IsImage.ir.sig": "e8535527742294168e72bc762048b5a1e1274f80bb91da9ee6cc997f82424b12"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "09fbc259a92b090992bde6e650da18d840462ff84bc9259742f95b9c4e3d79dd",
+          "input_files": 27380,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3399565312,
+            "VmPeak_bytes": 3290664960,
+            "VmRSS_bytes": 901840896,
+            "VmHWM_bytes": 901840896
+          },
+          "seconds": 7.394251911002357
+        }
+      },
+      "receipt_sha256": "5e10d45acade5c3ef5f4f786fd9b4ad6dadf738128f5b68f455f57c8854c7010",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2484,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Operations.lean",
+        "source_sha256": "3ba61e517d6162ed2fd043f1deb48d80567c2470991d9b3ae99e7be1176eb1c2",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.ContDiff.Operations",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Comp.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Inverse.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/OpenPartialHomeomorph/IsImage.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/FDeriv/OfCompLeft.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Operations.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 30.45353443899876,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.olean": "40108c35125748ff94619daf39182039ffad28c0c5a687a1e1acbff36f07cbaa",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.olean.private": "3d4ac04c38774e8937f349a153b85f67c0dfa580ac002658121c286d979b7be6",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.olean.server": "56f70b349422379802d6a4746bdcbcc3beccbdf1da3cf5ffa9f2c225bea7e399",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.ir": "a25187c951417a53fdc2f906e3731ac87a86a0cffe90a25cb13bf63b7e286758",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/ContDiff/Operations.ir.sig": "14ac2874adb33363abdc40b595b5c8268f60f6c6bfcef33cece6d5c3687f78e0"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "063011d1bfbad755d549ffc9e28bdd4861d620d341aa10196d461f6fa7d2e97a",
+          "input_files": 27385,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3329007616,
+            "VmPeak_bytes": 4378398720,
+            "VmRSS_bytes": 1498497024,
+            "VmHWM_bytes": 1498497024
+          },
+          "seconds": 30.427691337001306
+        }
+      },
+      "receipt_sha256": "78db31ec0271bb84302825a6eb8a9cbc86b47fa2e6b5485a60ecd75447644c8e",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2485,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.lean",
+        "source_sha256": "9a920a1f8c42f6f3eafb628b18f6a5a59f72f5de73e77b8b23294782e8c17536",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.IteratedDeriv.Defs",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Deriv.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 14.681250011002703,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean": "b8d9a0c46bb46b398d549bba2008a10acdf17972f0efb8eee64e9bd2fdc33022",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean.private": "7f5c790f695deddf9017e5946051f596cb46c8b349209cd46c4fda8bbb4bb020",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.olean.server": "8e868435e9cbbd4dde97a9dcdffcbe10ec78ea53ebd64890e3fa9da2a2eacc3c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.ir": "19fd4abdcf2dac065a949cc64efe0ded7feba1ff905c5490198ed9483b393c1b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.ir.sig": "7a53e411d6eaaadded43a09b15faa12a51034c050e4491fab6cfc611fba9e752"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "3c3a32a46a865d5d6d837ccc1470003d362af2cbb6a410f0617c42f1e62ee85c",
+          "input_files": 27390,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3284262912,
+            "VmPeak_bytes": 4300537856,
+            "VmRSS_bytes": 1391734784,
+            "VmHWM_bytes": 1391734784
+          },
+          "seconds": 14.655854645003274
+        }
+      },
+      "receipt_sha256": "e4e08ebb354d4e7a590045e171bf063f9a43311ab7ca2946705ac76cc74a538f",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2486,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.lean",
+        "source_sha256": "2938694d3f8f120a8c47d905efe4f8ab06579a3235d1a5a7d5a026c76e3bb797",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Deriv.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Operations.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Mul.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Shift.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/IteratedDeriv/Defs.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 26.80441975099893,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean": "ba3d970e25520bd24ee96c23156bc2be876070c87a73a25e01c9c4902e47cf8d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean.private": "69f063e1e21920d2fb6600117e00cc6d8679ee15d337602e0f57fba19566b84e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.olean.server": "72b8c8f1aec77d4fc13c4244aebdd4ecad72ce6b11f2e6bd33d227afb5293969",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.ir": "3944f50163b1268867e0b148fe5cb0d3579c25bd806b54a3b7b9540d723ee413",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.ir.sig": "ac24db7e46ee2d34b66d4b4d2fa234e9fdd6d23b8f59b59e6d81f0ed1e7b6f04"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "6ac353389ec3079efc77d5a3f4488f8bf44d5163eac24dee196d20b881e57bef",
+          "input_files": 27395,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3358351360,
+            "VmPeak_bytes": 4394442752,
+            "VmRSS_bytes": 1435774976,
+            "VmHWM_bytes": 1435774976
+          },
+          "seconds": 26.781432186999155
+        }
+      },
+      "receipt_sha256": "5d4256f2a93697b5b7bcf5ed502d2144f7b4d6da0b28ca45334054ba30f9d0b6",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2487,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Complex/RealDeriv.lean",
+        "source_sha256": "a9ca5646135c0b940b16184412c0d5cb16e6cfc7b455a534e3794ac30be27097",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Complex.RealDeriv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/Operations.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Linear.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Complex/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Complex/RealDeriv.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.307614557998022,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean": "34eb9b9a61f8fb30391c34b24365b26e09c188a01c6aa0467e445eaa508889aa",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean.private": "ed693470ac8f232db49a8649903e0b5b271afe6ae5ec06092d7019b5b5cfe65e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.olean.server": "7a4ad77bfe398afd8823e699b8b3fcb88e0bb40fb2125364aab7a938ebdeea46",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.ir": "7b24531b0fffe2a62e17f6927dacdd737ab29bf1785e5e470efc2a9b468a1f6c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Complex/RealDeriv.ir.sig": "30cc0200e06e741a7ecf327dbb523422b6dd2c5f2c50e2235fcad53d6437eb82"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "bb7f23749ad06184e066d7bf556300c360cda7a817d81e86b5314a3f7fab3ab6",
+          "input_files": 27400,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3313864704,
+            "VmPeak_bytes": 4377534464,
+            "VmRSS_bytes": 1398575104,
+            "VmHWM_bytes": 1398575104
+          },
+          "seconds": 13.28203243399912
+        }
+      },
+      "receipt_sha256": "94e6a924d17f12fe684747af6b898d4bfc12e76eb21d70ccf875496e8eac1e5a",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2488,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/ExpDeriv.lean",
+        "source_sha256": "7678c4712458f4129eb9b29ea7eb332467501cc8a6688547d1ed1b25f8849722",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.SpecialFunctions.ExpDeriv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/ContDiff/RCLike.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/IteratedDeriv/Lemmas.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Complex/RealDeriv.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Exp.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Exponential.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/ExpDeriv.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.546274876996904,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean": "73aade2deffe6c9f6f5ca9240beb8420ecd7edc202558074d293243261e06a02",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean.private": "7b5145b4731346ed257934cb00b6157cb3a452cb94eadd2862636911c002e55a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.olean.server": "566f87f46eef1042b5dc9107ecadb8f9969f4ead2c82d09cb96d67f378ddc674",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.ir": "0b1fdb868a3b6d04b62512d499c536fe7f2d4cb6319e84290d19bdd3206f7f10",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/ExpDeriv.ir.sig": "f4276a74caa1a125f30343c166a59d8c625a85e69a5147cd00395514b4f8414b"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "03d80387926bb389e6886c437908a3c2011355e19dd05881fac2a6b8acd96ed3",
+          "input_files": 27405,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3298238464,
+            "VmPeak_bytes": 4401291264,
+            "VmRSS_bytes": 1418158080,
+            "VmHWM_bytes": 1418158080
+          },
+          "seconds": 13.52142196499699
+        }
+      },
+      "receipt_sha256": "51743c2681ad1240e2aaefad87de7e9eef7f5221cd63acc14c3461a44e50801c",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2489,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LocalExtr/Basic.lean",
+        "source_sha256": "18cfe7b4a78dff35287dde7d22024b5c0e86cd3a56fdc9911b3529e8ae3fcb78",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.LocalExtr.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Add.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LocalExtr/Basic.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 12.263379623000219,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean": "45d356ca9f56f3d41a347a7c2fe452ad34b76dec386b113da6b60297401b0459",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean.private": "6382c75f4308d7cafdbe421155e6f74285766c86b07d03e31c603987a3b2195c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.olean.server": "a3024a7408e08f1fe914e5a90f20db307197802a60dbab0c1df5982e5d16be15",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.ir": "12330f6f3440e5ee9c6527b48ef5df17560ac0539c65bca0fabc7f60d1b1fd66",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Basic.ir.sig": "137e7df6cd55b96b2fb1260dddc4f75f717a79a4950f4abafcff466f531c6ac6"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "3de3a325aa42dfa8d332faf3689c634c5a8673f4e12cfdf82e336bb16957eace",
+          "input_files": 27410,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3314860032,
+            "VmPeak_bytes": 4161970176,
+            "VmRSS_bytes": 1324240896,
+            "VmHWM_bytes": 1324240896
+          },
+          "seconds": 12.237224028001947
+        }
+      },
+      "receipt_sha256": "75a94c008de9b618a2bcd778a040e9527805d90be5020fec0367083b97de1c33",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2490,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/ExtendFrom.lean",
+        "source_sha256": "71350c65520049bd039172aa5caeb1a205579038aab502d94b4f54952693a0dc",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Topology.ExtendFrom",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Separation/Regular.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/ExtendFrom.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 6.324445268997806,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean": "4e41703e3890b9b4782b00cce7bb214fc12c0e9268d44a1d7e4308cf9bc08584",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean.private": "34cfc5b84d5fc92b8d1bd924fd2497dc7febe98a8abae5f1aa2d7538b4fa2eeb",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.olean.server": "666cfe30fabc93fdad12385a74271320fb411c4791c2ab4f425e74f9fbd9dd6a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.ir": "33c78a4d3e08f261a0fcd786a9a62044bc0ea8589a4d45435e0a3f7f3835e240",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/ExtendFrom.ir.sig": "2d6146e57c35895ec48fc59029a8e86f646adbef3e3e66fcbc21ab3b727798bc"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "51880f84d6c4bf59c8d0a7b18e21fe851714200dccaffc631703a879241a3d26",
+          "input_files": 27415,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3290533888,
+            "VmPeak_bytes": 3231154176,
+            "VmRSS_bytes": 857870336,
+            "VmHWM_bytes": 857870336
+          },
+          "seconds": 6.303441569001734
+        }
+      },
+      "receipt_sha256": "4fcf1455d6d3b2c9255f0e37a2f461aee96077b6f044e4223f85a1879216af8e",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2491,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/ExtendFrom.lean",
+        "source_sha256": "2efdbb5e3f5445623093dd3973af179c182912cec76605c7ac75fda3bd73feb1",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Topology.Order.ExtendFrom",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/ExtendFrom.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/DenselyOrdered.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/ExtendFrom.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 6.633577858996432,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean": "eb08124785699ca6d2b20d6408749e9138071652c47026373d34e33375c2e016",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean.private": "5ae93a441106c1b0765959ef88d09be3681fbb7130a2b83ab289e3439c93143c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.olean.server": "937bc9ed579d00d298618970abe8a80d7f90efd2669c1595f1cc7cb4bad0a65f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.ir": "6a42d566f32f6fba88def810a5bf901a4adef74ae2cc7b7702a2bd3d3a94a661",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/ExtendFrom.ir.sig": "bfd66be92709785df20c13f025d42afc92f9a879b7ee87f85be7646522986a34"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "741734fb7b8063516c9114bdd14fffb02fde53626df35642e3b3a3c600065cac",
+          "input_files": 27420,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3377405952,
+            "VmPeak_bytes": 3323564032,
+            "VmRSS_bytes": 917147648,
+            "VmHWM_bytes": 917147648
+          },
+          "seconds": 6.610835231000237
+        }
+      },
+      "receipt_sha256": "63619a460b6ca95d55ca6a7cb66d48a8f3e984832cd63be707e06c34b1d71495",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2492,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/Rolle.lean",
+        "source_sha256": "2941737707d617f99e9ce3049f1e838beeaa883e59504383edd6f3ebafa3b40c",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Topology.Order.Rolle",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/ExtendFrom.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/Compact.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/LocalExtr.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/T5.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/Rolle.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 7.678941682999721,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean": "c962ebd5c40f877974b87725d77373c00bfea7f50ae4dd1467f003a2f281f2c3",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean.private": "db21e9ce323a92ab37e4b20d9b72de9ec9f87c73dab7c8fd190b524b3c73384e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.olean.server": "8dd875c863b8147a324bd5a0e55eae37895f8c668fe1b7d322c8807be4d4bdf3",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.ir": "0c77ba672b87da9db6799292f6c9f160a8854ac185ae9ab6bfdd00eda9b6f618",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Topology/Order/Rolle.ir.sig": "d3698b3152e608c920349fafb861347c0cb3fe405f8fbee373e34255a8137c49"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "4fef889ff0d876558c99719e0974584504c9cb97c4bca7f7f751b8152849f791",
+          "input_files": 27425,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3321708544,
+            "VmPeak_bytes": 3365466112,
+            "VmRSS_bytes": 939466752,
+            "VmHWM_bytes": 939466752
+          },
+          "seconds": 7.654900560999522
+        }
+      },
+      "receipt_sha256": "094ac0d2321908882da5a76334e10e303c5a6d8a55721ce586fb2298b1d7b3a8",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2493,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LocalExtr/Rolle.lean",
+        "source_sha256": "b94a93d7a4b83345c12fbd299f11e4bb33f3ca56ac7b477a1f22c0d6c887d765",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.LocalExtr.Rolle",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LocalExtr/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Topology/Order/Rolle.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LocalExtr/Rolle.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 12.951180983000086,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean": "759cf1f1bb3a4dfd8a90fd287f97af4f28b7a5e83da83886d49e0a4c8d5b1424",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean.private": "c7f64a426623195f77d8634deaa5f1c570d323533f81bf349048921ee831a73b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.olean.server": "42b900c8c0f275ca577a501e23b584e4163106787bc8cd423e3f32d5b50f3c6a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.ir": "8088647ca9d1071cd8a28035b0ef14609a3bf1c85b0f59b0789aa99a0375d445",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/LocalExtr/Rolle.ir.sig": "a46de69bb96c6e174e31c1fb47ff9b883aa3d88232537ecebac7f5fe247d09c5"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "df7b2eddef03b160ace5d7ced26881a4917e62873cbe3a6754fbbfa5470f62e0",
+          "input_files": 27430,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3281793024,
+            "VmPeak_bytes": 4171227136,
+            "VmRSS_bytes": 1311973376,
+            "VmHWM_bytes": 1311973376
+          },
+          "seconds": 12.927249635002227
+        }
+      },
+      "receipt_sha256": "524c59db8cf2ad079db5ba5bf43326332c755d7b1f42a652e0275470f236859b",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2494,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/MeanValue.lean",
+        "source_sha256": "5fd9daf39319b42d9d6f76ab6092e70e5e230cc2d3bed2a3db7deb1967450f81",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Calculus.Deriv.MeanValue",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/AffineMap.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Comp.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Mul.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Slope.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LocalExtr/Rolle.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Normed/Group/AddTorsor.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/RCLike/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/MeanValue.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 14.917823003001104,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean": "cfe1f874f37038018b28982d0ef67fc3ca2324127790c7740c04a32aa588006a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean.private": "e43eaef1dff1cf0c5d1258fc67c08a05b8e08393b77f3d5a314cff68b20ba04e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.olean.server": "5ff2ff35fc995eaa30c797185543a96d5e2c09d0a01bdf756e360ec165fb200c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.ir": "e19be161a97223a285efa09b8742efce15141fca09346005d361c656dc70cb8c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Calculus/Deriv/MeanValue.ir.sig": "018363b800503e5a4997268de326cb52e55743e010ed4690f6221e4b5d590b6a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "c7dbd3e0db066d4ab197e15d5c96d763f8b23c51523cadc4ad8edb88072ebea7",
+          "input_files": 27435,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3339059200,
+            "VmPeak_bytes": 4344471552,
+            "VmRSS_bytes": 1409122304,
+            "VmHWM_bytes": 1411198976
+          },
+          "seconds": 14.893214566000097
+        }
+      },
+      "receipt_sha256": "6e3177d4463bdd7ad8ee2d794ab3068fdaadbf79c0e7d1b83c668b2a97588091",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2495,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean",
+        "source_sha256": "8d89d4b427d64327c296cf27bc14d4e3af4cfefbae6832b261b5da2bb8d5d834",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/Pow.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/LogDeriv.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/ExpDeriv.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/MeanValue.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Tactic/AdaptationNote.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 18.571756526998797,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean": "9c6f6206791785a48a62f0d98c144571fb947eadf9b6d472218bf27180e7be4c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean.private": "1172493a339221cffd9389da04522f79d04f67542826b3f14d89d253bb3b48e6",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean.server": "27fc0693126d10ded69b49d89967d197b6191f88033492b966cf6ebaf97ab293",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.ir": "64899c4d452b005caf8b3710a1c018847d7e57893998416f047924c46482092d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.ir.sig": "db32a64224e10f15a3148857bd0ea395ceb94ba2d4a5caaaca66a6f10627d1db"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "8322950642ab49d36b96cfb660b64b0ea02d066e18f271a75c5df22ab4304fd4",
+          "input_files": 27440,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3290046464,
+            "VmPeak_bytes": 4410552320,
+            "VmRSS_bytes": 1457864704,
+            "VmHWM_bytes": 1457864704
+          },
+          "seconds": 18.549318953999318
+        }
+      },
+      "receipt_sha256": "4ebb8046872b8593a8b07d26a2fccd924b21a2cb2dfcc116d268b1cba68b5fe6",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2496,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Convex/Deriv.lean",
+        "source_sha256": "9b566dcdd13bd35854e5ff953f75ee02785517bb5c5fb2ec9f8d8056c7dc255e",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.Convex.Deriv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Convex/Slope.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Calculus/Deriv/MeanValue.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Convex/Deriv.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 16.352632942998753,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.olean": "974331b1b383446823ccfcf612e2cbf5ca1b4b51234857c802a6849e6f9788a6",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.olean.private": "85e1679957face81b1cbb4dc6a044301cd23b6193ac80b9e506f4b5fb8c1de11",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.olean.server": "d6bbd97e431a1c5453bc1cb32dfd4f6434f22446bf849d62551d74b30c2c3efb",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.ir": "52c13f015d92a5899df2614dc9ac9a13420ae87824b5c8f2770ef6f7c916dd1e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/Convex/Deriv.ir.sig": "e0c388226ae28202520895fe1d5c3bd97092a5711c515539461704ecfa28673a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "2779abb94cedc6d3dcf32635a5eda38cfaf2ddf2f346941fb76af08bd1e317e5",
+          "input_files": 27445,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3277615104,
+            "VmPeak_bytes": 4337688576,
+            "VmRSS_bytes": 1431687168,
+            "VmHWM_bytes": 1431687168
+          },
+          "seconds": 16.32911651500035
+        }
+      },
+      "receipt_sha256": "64ba9cfe7bb84927397ad8514cb129c8feeceddce289c4f6cbb6a36205b3c1d1",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2497,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.lean",
+        "source_sha256": "e249365f3eff509bfd9774e8e5f380c7e0290d76847871daee3616fb15b6b643",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Analysis.SpecialFunctions.Log.NegMulLog",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Pow/Asymptotics.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Convex/Deriv.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.061107503999665,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.olean": "ef52938f2d4dbfab250e724442eb3b2bb29c6989a0658e7eed247a56043741f8",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.olean.private": "8cc52725b1daa3b1db55c10a686339d31c6df50585f5e1c0bdf8e32772769a9f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.olean.server": "14e1155314d068cd4557e0a0b73d5ee580a041727a14db565346159c395e0d21",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.ir": "7727ca8b154715b57eb06d9b2b17c4f9ab184efdbbf26130e711aca8134e4541",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/NegMulLog.ir.sig": "b3232e989358a7549286409e7205d45b8454de4d29f68924e863a5e3e83d9b6e"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "766a3f0657543a902b6567a47c12cdcc1fe7bf5f80789fc3ac52ba74e204abbd",
+          "input_files": 27450,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3307024384,
+            "VmPeak_bytes": 4445331456,
+            "VmRSS_bytes": 1444139008,
+            "VmHWM_bytes": 1444139008
+          },
+          "seconds": 13.034984564001206
+        }
+      },
+      "receipt_sha256": "d78a50028447395f4e471b529fab1949fba6e6d00ba93ea952a248dd721d11b5",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 2498,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/Finset/Update.lean",
+        "source_sha256": "46822fdae447714baeb89309dacb0075a8d0983e55d537e0d7a9cea5a07082e3",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Data.Finset.Update",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/Finset/Pi.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/Fintype/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Logic/Function/DependsOn.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/Finset/Update.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 6.789804301002732,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.olean": "8b008c3fb41962f6420af03e30764cc7edf1aab07818e739f2e5332595f75f08",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.olean.private": "4258420d7d511f4176a97d60fd8f66b1e97cd373a79dee04a40ac9c689e613c9",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.olean.server": "8839d110e3868314564676b454f811bb5baa845aa3f85652babe3215d4820473",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.ir": "12d604346a6540fc8ee2c475de55534d8101ceadeedaf7f52b3a0894aa98651c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/Finset/Update.ir.sig": "5a7cdaf71e76283dedd945c053fc78604e21850502a134bd8a176ce9f025845a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "57540bd0a2397a54368cca24aab9d900991902d75f8a9e05a2d9b49c647ff511",
+          "input_files": 27455,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 1,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3254448128,
+            "VmPeak_bytes": 3096465408,
+            "VmRSS_bytes": 804589568,
+            "VmHWM_bytes": 804589568
+          },
+          "seconds": 6.767406450002454
+        }
+      },
+      "receipt_sha256": "33e68b6f3df358a78c50e34e68e6fa8cee5c8fb0fb8bff97691e95a6d0f0b43d",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    }
+  ],
+  "interrupted_unverified_invocations": [],
+  "binaries_included": false,
+  "previous916_receipts": "../2026-10-13-astra-unified-solver-0645z/evidence/MATHLIB-SOURCE-EXECUTION.json"
+}

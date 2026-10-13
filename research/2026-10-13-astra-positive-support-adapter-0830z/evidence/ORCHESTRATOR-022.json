@@ -1,0 +1,43 @@
+{
+  "runner_sha256": "2a04e1ccbb929989cf4604db03c893178ab39b6e89b8c3ad2c4c63aaf32c7ecb",
+  "capture_runner_sha256": "c748a27508cec46ee243ebc77ab256f515f87fbbb0e5c8c2b28d654d22febad4",
+  "first_batch": 22,
+  "requested_batches": 3,
+  "batch_size": 64,
+  "plan_sha256": "ef775a7223500314359a9ed02a87d207b18eacda9cddfa5a8990c5e1a8e43f10",
+  "batches": [
+    {
+      "number": 22,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/guard.py",
+        "--out",
+        "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/evidence/external-batch-022",
+        "--cwd",
+        "/workspace/Research-Commons",
+        "--wall",
+        "900",
+        "--cpu",
+        "600",
+        "--memory-mib",
+        "4096",
+        "--file-mib",
+        "1024",
+        "--",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/build_external_serial.py",
+        "--mathlib-root",
+        "/workspace/scratch/astra-mathlib-0645",
+        "--lean-bin",
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin",
+        "--state",
+        "/workspace/scratch/astra-support-external-0840",
+        "--batch",
+        "64"
+      ],
+      "exit_code": 1,
+      "receipt_sha256": "20126db09302598bce8821eef85d07105939ab9bfb9af46ea26a527fd9a3f69e"
+    }
+  ]
+}
