@@ -1,0 +1,7 @@
+# Closed external batch 054 failure
+
+The guard exited 1 after eight successful compiler invocations (2852–2859) and one failure at unchanged `Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Unital` (2860). Lean exited -6 after 12.212 seconds with `failed to create thread`. The guard reported no resource stop; its actual elapsed time was 121.609 seconds. Limits remained 5 GiB virtual and 4 GiB physical, with the prior time/disk controls. The module sampled 5.027 GB virtual peak and 3.345 GB cgroup use; these samples do not identify the exact thread-creation cause. OS OOM counters remained zero.
+
+The [closed evidence snapshot](2026-10-13-astra-external-054-evidence/SNAPSHOT-MANIFEST.json) retains the exact guard, capture, original failed module source/receipt/logs, terminal orchestrator and independent monitoring/handoff. Failed module 2860 produced no successful artifacts. Batch 055 was not launched. All earlier source and receipt bytes remain preserved; original 042 outer guard remains UNKNOWN.
+
+The compiler slot returned to the Lean integration lane after a fresh no-active inventory. No source, compiler, physical-memory limit or global setting was changed. A single separately guarded diagnostic is being prepared to test virtual headroom, with exact unchanged source and elaboration and the existing shared compiler controls. It has not run and no repair or successful adapter compilation is claimed by this failure checkpoint.
