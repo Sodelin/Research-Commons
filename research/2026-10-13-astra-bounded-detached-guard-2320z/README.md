@@ -1,3 +1,7 @@
+# Actual one-module pilot062 completed
+
+The source/test-only checkpoint at commit `8196221b661d143d71a18885794617e0c46719e5` preceded this run. The fixed production pilot now has an actual successful guard receipt, capture, and independent source/log/object readback; see [PRODUCTION-062-HANDOFF.json](PRODUCTION-062-HANDOFF.json). The detached guard process exit code is not inferred by a nonparent observer. No automatic next job exists. The original source/test README and manifest remain byte-preserved under `evidence/PUBLICATION-8196221b`. The historical source/test account below remains literal.
+
 # One bounded detached guard — tested transport, unexecuted production profile
 
 Status: **seven bounded stdlib dummy tests passed; production NOT EXECUTED**.
