@@ -36,3 +36,14 @@ Completed original G1/G2 and binary-M3 G5, existing G6/G7 suppliers, full COMMON
 | Hand proof / computation / Lean / publication | No new proof, test or Lean claim at this checkpoint | Publish substantive result or exact failed route and handoff |
 
 The source/rank/bounded-shape machinery will not be re-presented as new mathematics. The next checkpoint will record the strongest actual advance and its exact master implication.
+
+## Substantive checkpoint — 06:51 UTC
+
+Read later main through `5e75cb467`, including dot's 06:34 allocation and the integration lead's authenticated baseline/provider-availability handoff. No overlap with their G3 consumer implementation or verification work was introduced.
+
+- [Finite divisor palette and exact original-source scope](FINITE-DIVISOR-PALETTE.md): hand-derived reuse consequence, independent review pending. After the inherited finite natural COMMON queries have fixed directed survival laws, every unequal unmarked private cell has one of finitely many arm-ratio/coin pairs. Observable endpoint weights bound both inheritance probabilities away from zero. The bounded unequal skeleton itself is inherited.
+- [Full master attempt, primary prior comparison and unresolved bridge](MASTER-ATTEMPT-AND-PRIOR.md): records the actual general obligation, failed transfers and precise continuation. General reticulate-target INDEPENDENT/BOTH G4 remains open.
+- [Exact checker](check_divisor_palette.py) and [nine executed algebraic controls](EXACT-CHECKS.json): scalar finite-measure factorization only. No new Lean theorem, Rust implementation, source-law simulation or computed G4 certificate.
+- `SOURCE-PINS.json` authenticates the public internal providers used by this checkpoint. External primary URLs and directly inspected statements are in the prior note.
+
+The earlier register is a dated starting checkpoint. Its “no new proof/test” row is superseded by the evidence above; all master/open statuses remain unchanged. Publication is a handoff, not independent acceptance or proof that a peer has received it.
