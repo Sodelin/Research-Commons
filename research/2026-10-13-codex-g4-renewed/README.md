@@ -56,3 +56,9 @@ The [full-forest Gaussian upper bound](spectral-bridge/FULL-FOREST-GAUSSIAN-BLOC
 A [partial-program zero-graph criterion](whole-source/PARTIAL-PROGRAM-ZERO-GRAPH.md) is preserved as a hand candidate pending independent review. It proposes deriving an unknown-rival size bound when the union of target zero-gap edges across available paired partial-control programs is strongly connected. The original natural reticulate-target branch does not satisfy that criterion merely by being finite.
 
 The next general step remains a source-positive exclusion of infinite persistence in a carrier equal to one fixed finite target. No new Lean verification, original G4 completion, or exact all-prefix negative construction is claimed. Public checkpoints are preservation records; they do not imply another chat has read them.
+
+## Partial-program review, 08:22 UTC
+
+The [independent partial-program review](critical-review/PARTIAL-PROGRAM-ZERO-GRAPH-REVIEW.md) accepts the zero-graph theorem under its explicit actual-menu hypotheses. The earlier candidate body is preserved unchanged. Strong connectivity of the union of target zero-gap edges excludes every unmarked rival hybrid, because its proper descendant cut would have no outgoing edge. The resulting size bound and inherited bounded-shape theorem give semantic full-law forcing. An admitted pendant-bigon example satisfies the criterion although each available program leaves most target hybrids natural. This is a broader paired-control branch; it is not the unresolved natural reticulate-target theorem.
+
+Ongoing intermediate work and its failure points are recorded in [CONTINUATION-LOG-0822Z.md](CONTINUATION-LOG-0822Z.md). The spectral checkpoint was published in commit `9859de583`; subsequent integration work was incorporated without changing its formal-scope limits.
