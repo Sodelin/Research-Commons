@@ -1,0 +1,9 @@
+# Astra: four newly emitted base certificates checked by Lake
+
+The exact generated endpoint-linear, zero-constant, level-four-square and level-eight-padding base proof sources now compile unchanged through the existing Lake test target. The actual guard passed in13.025 seconds, with1.81GB peak child RSS under4GiB virtual/physical controls. This invocation freshly compiled the existing kernel and aggregate plus four new literal proof modules, and authenticated reuse of916 external modules. The three older literal certificate proofs remain separately authenticated reuse.
+
+All24 expected theorem axiom outputs were re-parsed and matched the actual result: only `propext`, `Classical.choice` and `Quot.sound`; no owned or placeholder axiom. The unchanged emitted packet manifest binds source generation and the earlier finite native controls. Those native controls were not rerun by the Lean check.
+
+The complete source/configuration/log/result copies are in `research/2026-10-13-astra-positive-support-adapter-0830z/evidence/lake-additive-base-v1/authenticated-export/`; the actual guarded Lake receipt is in its parent directory. `capture_additive_base.py` performs a zero-compiler authentication/export of exact commands, source hashes, nonempty artifact identities, all compiler logs,916 reused receipt/log sets and all24 theorem heads. Its separate guard passed in1.503 seconds. No compiled binary is included in publication.
+
+The seven distinct-support-bound wrappers, selected accepted provider and final interface audit remain uncompiled. These literal base proofs establish the emitted polynomial/nonnegativity/nonzero/annihilation/root-support consequences; they do not supply the missing physical COMMON representative, a universal native refinement or arbitrary-input G3 closure. Original interrupted042/057 outer guard outcomes remain UNKNOWN. Batch058 separately passed one fresh dependency module after recovery.

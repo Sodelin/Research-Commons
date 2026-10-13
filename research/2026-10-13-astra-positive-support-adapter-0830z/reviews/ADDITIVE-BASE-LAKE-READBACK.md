@@ -1,0 +1,9 @@
+# Additive base-proof Lake execution readback
+
+Rust integration reviewed `capture_additive_base.py` SHA256 `ce06fd8aa812d6fd4207e7f8e9130ef5516222a6f3ed9bbd9ce2eba7bd04b52a` and authenticated the actual closed export on 2026-10-13 at approximately 22:56 UTC. No compiler or test rerun was performed by this review.
+
+The actual Lake guard is `306c55358867a72a5e3b531a3c378554fa892b302d295ce6e8f34a899b1af0b7`, PASS in 13.025158979 seconds with no guard stop. The export SUMMARY `6022dcb2ce1d73e94b5fc1bc76ccc4fd683ee7ef190152441ab22861e4f4997f` and FILES `8247fc5358aae48ce662218c64325461533fd3fc8f6def3c5f6f413b756a7e76` bind 28 payload files, all rehashed in this review. Guard command, cwd, exact limits and output bytes matched the selected PLAN; the captured compilation ledger matched RESULT. All six selected source/object/log sets were checked against current actual bytes. The 24 reported axiom heads contain only `propext`, `Classical.choice`, and `Quot.sound`.
+
+Scope: two freshly compiled kernel/aggregate sources and four freshly compiled literal certificate proofs; 916 authenticated external dependencies reused. The exporter checks every reused receipt/source/object/log against its bound ledger. This reviewer inspected that code and its successful export but did not duplicate all 916 object reads. The previous three literal proofs and earlier finite native controls remain separate authenticated reuse.
+
+Seven support wrappers remain **UNCOMPILED**, and this execution does not compile the selected support provider, physical representative consequence, or the new selected-copy composition. It establishes no universal native-code correctness. Historical batch 042 and 057 outer guard outcomes remain **UNKNOWN**. No concrete authentication or scope defect was found in this narrow review.
