@@ -4,6 +4,28 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## All-real analytic and private-forcing successor, 22:47 UTC
+
+The [uniform inverse-Laplace theorem](chronology/continuation-2110z/UNIFORM-LAPLACE-PHASE-REMOVAL.md)
+now proves exact phase removal, with a
+[separate Sol audit](chronology/continuation-2110z/UNIFORM-LAPLACE-SOL-AUDIT.md).
+Together with the inherited resource and off-pole-zero suppliers, it
+excludes infinite equal persistence beside any finite list of arbitrary
+real-balance positive factors or finite zero-arm auxiliary factors.
+The [lead's source-composition acceptance](critical-review/ROOT-ALL-REAL-PRIVATE-FORCING-ACCEPTANCE.md)
+checks every interface of the saved conditional composition and discharges
+its premises: every finite strict private BOTH target has an existential
+finite legal forcing certificate against unknown-size finite private rivals.
+
+This supersedes the rational-factor and private-global-entry gaps in the
+older dated register below. It does not remove the observation premise
+needed to expose a private forest law through changing original cores.
+The [strict retained-core gauge example](whole-source/continuation-2110z/RETAINED-CORE-COMMON-GAUGE.md)
+and [actual mixed-comb formula](whole-source/continuation-2110z/MIXED-REFERENCE-COMB-GAMMA-DERIVATION.md)
+record that next general-source duty; the latter remains under analytic
+review. INDEPENDENT-only and original general G4 remain open. All new
+acceptance here is hand proof/review; no Lean verification is claimed.
+
 ## All-real phase checkpoint, 22:26 UTC
 
 The [all-order unequal phase constraint](chronology/continuation-2110z/ALL-ORDER-UNEQUAL-PHASE-CONSTRAINT.md)

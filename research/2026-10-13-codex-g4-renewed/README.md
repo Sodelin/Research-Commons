@@ -2,7 +2,20 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
-**Latest checkpoint, 21:16 UTC:** renewed adversarial audits found no concrete
+**Latest checkpoint, 22:47 UTC:** the
+[uniform inverse-Laplace proof](chronology/continuation-2110z/UNIFORM-LAPLACE-PHASE-REMOVAL.md)
+has a [separate Sol audit](chronology/continuation-2110z/UNIFORM-LAPLACE-SOL-AUDIT.md).
+It removes the rationality restriction from finite persistence under the
+exact scalar factorization premise, including finite zero-arm auxiliary
+limits. The [lead composition acceptance](critical-review/ROOT-ALL-REAL-PRIVATE-FORCING-ACCEPTANCE.md)
+therefore proves finite natural BOTH forcing for **every finite strict
+private target**, against all strict finite private rivals of unknown size.
+The required private/faithful-completion interface remains explicit.
+Arbitrary changing original cores and INDEPENDENT-only forcing remain open;
+the actual mixed-meeting response is the next analytic bridge under study.
+No new Lean/Rust verification or historical novelty claim is made.
+
+**Earlier checkpoint, 21:16 UTC:** renewed adversarial audits found no concrete
 defect in the calibrated-target claim, with dependencies and reviewer reuse
 explicitly disclosed. The reviewed
 [general private local theorem](general-algebra/continuation-2110z/GENERAL-PRIVATE-BOTH-LOCAL-EXCLUSION.md)

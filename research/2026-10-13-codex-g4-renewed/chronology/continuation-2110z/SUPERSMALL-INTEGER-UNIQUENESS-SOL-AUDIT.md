@@ -111,3 +111,87 @@ The root's proposed interpolation-and-Carleman proof is sound. A generic fixed v
 Gaussian smallness at the integers is materially stronger than being flat to every inverse power on the positive real axis: $e^{-z}$ has the latter property and is a nonzero zero-type function. This lemma neither proves that a proposed diagonal remainder has Gaussian-small integer samples nor supplies an inverse-Laplace/Fox H-function theorem.
 
 Next action: establish the exact uniform zero-type bound and Gaussian-small sample estimate for any proposed application before invoking this lemma. General source mixtures, legal extraction, finite forcing, and general G4 remain separate obligations.
+
+## Extension: finite global type and a fixed subexponential vertical line
+
+Added by the same reviewer at the lead's explicit request, 2026-10-13.
+The preceding text is preserved. This extension uses individual bounds in
+both vertical directions, rather than an unproved indicator-sum generalization.
+
+The lemma remains valid if uniform zero type on the whole right half-plane
+is replaced by the following two assumptions:
+$$
+|f(z)|\le C_0e^{T|z|}\quad(\Re z>0),\qquad T<\infty,
+$$
+and, on one fixed line $\Re z=c>0$,
+$$
+\text{for every }\epsilon>0,\quad
+|f(c+iy)|\le C_\epsilon e^{\epsilon|y|}
+\quad(y\in\mathbb R).
+$$
+The Gaussian-small integer-sample assumption is unchanged. Then $f\equiv0$.
+
+Use exactly the preceding cardinal interpolants; their global norms still
+tend to zero. Consequently $g_N=f-I_N$ satisfies, uniformly in large $N$,
+$$
+|g_N(z)|\le(C_0+1)e^{T|z|},
+\qquad
+|g_N(c+iy)|\le(C_\epsilon+1)e^{\epsilon|y|},
+$$
+taking $T\ge0$ and constants at least one if necessary.
+
+The specified line must stay fixed: its vertical bound is not assumed to
+hold after a generic horizontal shift. If $f\ne0$, choose $y_0\in\mathbb R$
+with $f(c+iy_0)\ne0$; otherwise the whole line would consist of zeros and
+the identity theorem would already give $f=0$. Center the half-annulus at
+$a=c+iy_0$ and write $h_N(w)=g_N(a+w)$. The fixed zero-free inner disk and
+uniform logarithmic/derivative bounds follow from $I_N\to0$ exactly as
+before. The shifted vertical estimate is
+$$
+|h_N(iy)|\le
+(C_\epsilon e^{\epsilon|y_0|}+1)e^{\epsilon|y|},
+$$
+with constant independent of $N$.
+
+Zeros on this fixed vertical boundary are permitted in the Green calculation.
+For each fixed $N,R$, only finitely many occur on its compact boundary
+segments. Indent a small semicircle around each such zero and shrink its
+radius $\rho$ to zero. The Green weight vanishes on the straight boundary
+and is $O(\rho)$ near the zero, while $\log|h_N|=O(1)+m\log\rho$ and its
+normal derivative is $O(1/\rho)$. The added boundary terms are
+$O(\rho|\log\rho|)$ and vanish. The vertical logarithmic singularities are
+integrable. Thus the same Green identity and upper bound hold without
+changing the vertical line. Inner and outer boundary zeros are avoided
+by the fixed zero-free disk and generic $R_N\in(2M,2M+1)$.
+
+The finite global type changes only the outer-semicircle contribution:
+it is at most $2T/\pi+O(1/R)$ after division by $2\pi$, hence uniformly
+$O(1)$ in $N$. The vertical contribution remains
+$(\epsilon/\pi)\log R_N+O_\epsilon(1)$. All inner constants remain uniform.
+The interpolation zeros are now $w_j=j-c-iy_0$, and their weights are
+$$
+\Re\left(\frac1{w_j}-\frac{w_j}{R_N^2}\right)
+=\frac{j-c}{(j-c)^2+y_0^2}-\frac{j-c}{R_N^2}.
+$$
+Their sum is still $(p-1)\log N+O(1)$. The same choice
+$\epsilon<\pi(p-1)/p$ gives the contradiction.
+
+This fixed-line Green estimate also excludes positive lower linear density
+of real zeros of a nonzero function in this enlarged class. Restrict to
+sufficiently large real zeros below $R/2$: their shifted Green weights
+are at least $1/(2x)$. A positive lower linear counting bound then gives
+a positive multiple of $\log R$, contradicting the arbitrarily small
+vertical coefficient. Accordingly the earlier real sign/phase argument
+can use these growth assumptions once its other hypotheses are supplied.
+
+For every **real** $\delta$, multiplication by $e^{\delta z}$ preserves
+the enlarged class: global type increases by at most $|\delta|$, and the
+fixed-line modulus is multiplied by the constant $e^{\delta c}$.
+Gaussian-small samples remain Gaussian-small after decreasing their decay
+constant, since $|\delta|n=o(n^2)$. This provides the asserted closure
+under finitely many real linear-exponential normalizations. It does not
+supply a Gaussian sample estimate or an exact source-core factorization.
+
+Status: **independent hand acceptance of this explicitly bounded extension**.
+No general assertion about arbitrary vertical indicator sums, physical
+source mixtures, legal extraction, or general G4 is inferred.
