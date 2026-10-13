@@ -1,0 +1,11 @@
+libc++abi: terminating due to uncaught exception of type lean::exception: failed to create thread
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/bootstrap_mathlib.py", line 59, in <module>
+    main()
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/bootstrap_mathlib.py", line 30, in main
+    call([lean_bin/'lake','env','lean','--version'])
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/bootstrap_mathlib.py", line 20, in call
+    subprocess.run(list(map(str,cmd)), cwd=mathlib, check=True)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lake', 'env', 'lean', '--version']' died with <Signals.SIGABRT: 6>.

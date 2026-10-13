@@ -44,6 +44,11 @@ def dispatch(request, out, backend_python=None, rust_binary=None):
         result=checked(request['input'])
     elif request['task']=='common_menu':
         result=common_packet(request['input'])
+        from external_encoding import fixed_queries
+        queries=fixed_queries(request['input'])
+        (out/'EXTERNAL-QUERIES.json').write_text(json.dumps(queries,indent=2,sort_keys=True)+'\n')
+        base['fixed_external_queries']=dict(path='EXTERNAL-QUERIES.json',sha256=digest(queries),
+                                            actual_source_binding_checked=False)
     else:
         raise Refused('unknown solver task')
     certs=([result['certificate']] if result.get('status')=='GENERATED_AND_CHECKED' else
@@ -53,12 +58,17 @@ def dispatch(request, out, backend_python=None, rust_binary=None):
     if certs:
         from emit_lean import render
         emitted=[]
-        for i, cert in enumerate(certs):
+        seen=set()
+        for cert in certs:
+            ident=digest(cert)
+            if ident in seen:
+                continue
+            seen.add(ident)
             source=render(cert)
-            name=f'Certificate{i}.lean'
+            name=f'Certificate_{ident}.lean'
             (out/name).write_text(source)
             emitted.append(dict(path=name,sha256=hashlib.sha256(source.encode()).hexdigest(),
-                                certificate_sha256=digest(cert), compiled=False))
+                                certificate_sha256=ident, compiled=False))
         base['Lean_certificate_sources']=emitted
     if rust_binary:
         native=[]

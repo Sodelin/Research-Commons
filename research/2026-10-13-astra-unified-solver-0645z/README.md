@@ -4,10 +4,11 @@ This integration increment extends the existing exact original-source solver
 and adds an exact rational supplied-certificate path. It does not replace G1,
 G2, binary-M3 G5 or any selected older proof. General G3 remains open.
 
-**Working checkpoint.** Source/backend tests have run successfully. Fresh Rust
-and Lean verification, the full integration manifest and final publication
-readback are still being assembled. Consult actual execution receipts rather
-than treating this checkpoint as final acceptance.
+**Working checkpoint.** The source/backend tests, new Rust checker, recovered
+native decoder/history checks and complete selected-source materialization
+have passed. Fresh Lean verification, the final integration manifest and final
+publication readback are still being assembled. Consult actual execution
+receipts rather than treating this checkpoint as final acceptance.
 
 The starting evidence is [the verified integration preflight](../2026-10-13-astra-integration-preflight-0630z/README.md).
 Full1613 is publicly delivered with all68 current G2 sources. The subsequent
@@ -43,6 +44,28 @@ exclusions, bounded exhaustion, unsupported conditional count, exact generation,
 correlated joint configurations and malformed/unencoded input controls.
 These tests do not prove universal native-code correctness.
 
+The final version of that run also checks native agreement and emits exact
+Lean certificate proofs and fixed padded-comb observation descriptions. The
+native differential corpus passed556 cases. The recovered public Rust core
+matches all25 historical decoder parent-file pins; fresh decoder3/3,
+serial-history1/1 and population6/6 controls passed. See
+[the native recovery](RECOVERED-PARITY.md) and [correspondence](RUST-CORRESPONDENCE.md).
+
+For a checked certificate generated from supplied moments, run:
+
+```sh
+python3 -B research/2026-10-13-astra-unified-solver-0645z/solve.py \
+  --request research/2026-10-13-astra-unified-solver-0645z/examples/singleton-generator.json \
+  --output /tmp/common-certificate-new-run
+```
+
+For the existing exact source engine, use `examples/finite-witness.json` and
+`--backend-python /path/to/python` with the inherited pinned SymPy1.14.0,
+NetworkX3.5 and Z3-solver4.15.3.0. The output directory must be absent.
+`--rust-binary /path/to/common-certificate-checker` additionally checks exact
+native agreement on certificate tasks. Generated Lean files carry
+`compiled=false` until an actual compiler receipt proves otherwise.
+
 ## Reproducible components
 
 Source lives in `solve.py`, `certificates.py`, `rust/`, and `lean/`.
@@ -62,8 +85,12 @@ The first Lean extraction stopped at the cgroup guard because dirty file cache
 accumulated. The preserved archive matched the official checksum. Extraction
 was repaired by flushing and releasing only completed files in owned scratch;
 the same guard then passed. The official compiler binary matches the historical
-accepted Lean4.33.1 identity. The initial Mathlib utility attempts failed on
-thread creation; those failures are retained and remain under investigation.
+accepted Lean4.33.1 identity. The Mathlib utility's initial thread-creation
+failure was repaired by reducing allocator virtual-address reservation under
+the same physical limits. Its utility modules compiled, but the official
+cache endpoint is unavailable through this executor's proxy. The exact pinned
+dependency closure is now being compiled serially from source, with resumable
+per-module receipts; no broad parallel build was launched.
 
 ## Outstanding master obligations
 

@@ -1,0 +1,44 @@
+warning: variant `SuppliedCohortOrder` is never constructed
+  --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:23:5
+   |
+19 | pub enum Order {
+   |          ----- variant in this enum
+...
+23 |     SuppliedCohortOrder(Vec<word::Symbol>),
+   |     ^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `Order` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: variant `BeforeCommon` is never constructed
+  --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:26:30
+   |
+26 | pub enum End { After(usize), BeforeCommon(usize) }
+   |          ---                 ^^^^^^^^^^^^
+   |          |
+   |          variant in this enum
+   |
+   = note: `End` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: methods `bank`, `spec`, `origins`, `private_site`, `order_relation`, and `states` are never used
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:101:12
+    |
+100 | impl<'a> Table<'a> {
+    | ------------------ methods in this implementation
+101 |     pub fn bank(&self)->&'a Bank {self.bank}
+    |            ^^^^
+102 |     pub fn spec(&self)->&Spec {&self.spec}
+    |            ^^^^
+...
+105 |     pub fn origins(&self)->&[Origin] {&self.origins}
+    |            ^^^^^^^
+106 |     pub fn prefix_len(&self)->usize {self.prefix_len}
+107 |     pub fn private_site(&self)->Option<PrivateSite> {self.private_site}
+    |            ^^^^^^^^^^^^
+108 |     pub fn order_relation(&self)->OrderRelation {self.relation}
+    |            ^^^^^^^^^^^^^^
+109 |     pub fn states(&self)->&[SelectedState] {&self.states}
+    |            ^^^^^^
+
+warning: 3 warnings emitted
+

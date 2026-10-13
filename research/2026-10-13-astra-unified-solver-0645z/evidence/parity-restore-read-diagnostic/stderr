@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/restore_parity.py", line 131, in <module>
+    main()
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/restore_parity.py", line 65, in main
+    for path in git('ls-tree', '-r', '--name-only', COMMIT, *trees).decode().splitlines():
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/restore_parity.py", line 37, in git
+    raise ValueError('Git object read failed: '+result.stderr.decode(errors='replace'))
+ValueError: Git object read failed: fatal: packfile .git/objects/pack/pack-86b5eed4c0d006c05d5807d13636f31de6c52e09.pack cannot be mapped, check sys.vm.max_map_count and/or RLIMIT_DATA: Cannot allocate memory
+

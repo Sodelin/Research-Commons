@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/restore_parity.py", line 128, in <module>
+    main()
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/restore_parity.py", line 62, in main
+    for path in git('ls-tree', '-r', '--name-only', COMMIT, *trees).decode().splitlines():
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/restore_parity.py", line 34, in git
+    return subprocess.run(['git', *args], cwd=ROOT, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'ls-tree', '-r', '--name-only', '4e556c4ae6225d18fabf30bc7d3347a468749ebc', 'research/2026-10-10-codex-lean-rust-parity/rust/src', 'research/2026-10-07-rust-count-pilot/src', 'research/2026-10-08-cloud-rust-interval-root-0000z/src', 'research/2026-10-08-cloud-rust-signed-nine-0008z/src']' returned non-zero exit status 128.

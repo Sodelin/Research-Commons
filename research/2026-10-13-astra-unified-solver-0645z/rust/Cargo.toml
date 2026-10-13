@@ -1,0 +1,13 @@
+[package]
+name = "common-certificate-checker"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.90"
+publish = false
+
+[dependencies]
+exact-count-certificate = { path = "../../2026-10-07-rust-count-pilot" }
+num-traits = "=0.2.19"
+
+[profile.release]
+overflow-checks = true

@@ -21,3 +21,24 @@ nor a numerical budget will activate unknown-size exclusion without the actual
 physical provider, fixed-input encoding and catalogue bridge.
 
 This durable coordination record does not establish that peers have read it.
+
+## Executed continuation checkpoint
+
+Nolan subsequently explicitly requested multiple agents split across Lean,
+Rust and incoming research. Those lanes are active; compiler execution remains
+serialized. All68 G2 sources remain selected without reproof. Complete1613
+source materialization passed with exact original aggregate identity.
+
+The new exact rational certificate checker/generator, fixed external padded
+mixed-comb descriptions and existing source-solver dispatcher are implemented.
+The real source producer/checker integration suite passes13 cases; the native
+certificate differential suite passes556 cases. A public parity branch has
+recovered the formerly unavailable core with all25 historical decoder pins
+matching. Fresh decoder3/3, serial-history1/1 and population6/6 controls pass.
+See the integration packet's `RECOVERED-PARITY.md` and actual receipts.
+
+The new semantic Lean kernel and per-certificate proof emitter are awaiting
+their fresh compiler receipts. The exact physical1614 body is still missing;
+no conclusion-shaped stub has been inserted. The newer G4 divisor hand lemma
+is catalogued as pending independent/source review, not promoted to an accepted
+source theorem. Source/failed-run checkpoints are being published additively.

@@ -1,0 +1,66 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "env",
+    "PATH=/workspace/scratch/astra-native-0645/runtime/toolchain/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "CARGO_HOME=/workspace/scratch/astra-native-0645/runtime/cargo-home",
+    "CARGO_TARGET_DIR=/workspace/scratch/astra-recovered-parity-target",
+    "CARGO_PROFILE_DEV_DEBUG=0",
+    "cargo",
+    "test",
+    "--test",
+    "source_population",
+    "--locked",
+    "--offline",
+    "-j",
+    "1",
+    "--",
+    "--test-threads=1"
+  ],
+  "cwd": "/workspace/scratch/astra-recovered-parity-0702/research/2026-10-10-codex-lean-rust-parity/rust",
+  "started_utc": "2026-10-13T07:04:12.714997+00:00",
+  "limits": {
+    "cpu_seconds": 90,
+    "wall_seconds": 120,
+    "address_space_bytes": 2147483648,
+    "file_bytes": 268435456,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 0,
+  "stop": null,
+  "elapsed_seconds": 1.0021919910000179,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 25822744576,
+      "ram_available": 17972535296,
+      "cgroup_memory": 3852206080
+    },
+    {
+      "seconds": 0.0014797860003454844,
+      "disk_free": 25822744576,
+      "ram_available": 17972936704,
+      "cgroup_memory": 3852591104
+    },
+    {
+      "seconds": 0.5019267259999651,
+      "disk_free": 25812934656,
+      "ram_available": 17951748096,
+      "cgroup_memory": 3868139520
+    }
+  ],
+  "child_peak_rss_bytes": 142422016,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 561,
+      "sha256": "3d6f4aa19b7616a5a265d6f1204f2b906b4c946512b3fa8a5b0137df89878805"
+    },
+    "stderr": {
+      "bytes": 737,
+      "sha256": "8f61f179fd5ddf33c9f22fc3af99e3bbacc778ea574e27b458395a47474cd162"
+    }
+  }
+}

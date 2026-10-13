@@ -1,0 +1,52 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "env",
+    "PATH=/workspace/scratch/astra-native-0645/runtime/toolchain/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "CARGO_HOME=/workspace/scratch/astra-native-0645/runtime/cargo-home",
+    "CARGO_TARGET_DIR=/workspace/scratch/astra-certificate-target",
+    "cargo",
+    "generate-lockfile",
+    "--offline"
+  ],
+  "cwd": "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/rust",
+  "started_utc": "2026-10-13T07:00:09.173299+00:00",
+  "limits": {
+    "cpu_seconds": 30,
+    "wall_seconds": 45,
+    "address_space_bytes": 1073741824,
+    "file_bytes": 67108864,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 0,
+  "stop": null,
+  "elapsed_seconds": 0.5017387990001225,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 25987510272,
+      "ram_available": 17917349888,
+      "cgroup_memory": 3212165120
+    },
+    {
+      "seconds": 0.0014416660001188575,
+      "disk_free": 25987510272,
+      "ram_available": 17917952000,
+      "cgroup_memory": 3212271616
+    }
+  ],
+  "child_peak_rss_bytes": 30461952,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "bytes": 54,
+      "sha256": "ab5c1f2170ad546be6b2e45f31a02e4c54c99305c7978e1d7b2f8111d4bc55f6"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "name": "native_snapshot_decode_tests-compile",
+    "command": [
+      "/workspace/scratch/astra-native-0645/runtime/toolchain/bin/rustc",
+      "--edition=2024",
+      "--test",
+      "/workspace/scratch/astra-recovered-parity-0702/controls/native_snapshot_decode_tests.rs",
+      "--crate-name",
+      "native_snapshot_decode_tests",
+      "-C",
+      "debuginfo=0",
+      "-C",
+      "opt-level=0",
+      "-C",
+      "linker=/usr/bin/cc",
+      "-L",
+      "dependency=/workspace/scratch/astra-recovered-parity-target/debug/deps",
+      "--extern",
+      "parity_solver=/workspace/scratch/astra-recovered-parity-target/debug/deps/libparity_solver-9049483a74acac71.rlib",
+      "--extern",
+      "num_bigint=/workspace/scratch/astra-recovered-parity-target/debug/deps/libnum_bigint-c41be70bacb2b880.rlib",
+      "--extern",
+      "num_integer=/workspace/scratch/astra-recovered-parity-target/debug/deps/libnum_integer-f9b95a9f5a01bbda.rlib",
+      "--extern",
+      "num_traits=/workspace/scratch/astra-recovered-parity-target/debug/deps/libnum_traits-eba54a4113231118.rlib",
+      "-o",
+      "/workspace/scratch/astra-controls-extern-repair/native_snapshot_decode_tests"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22451767599977757,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "native_snapshot_decode_tests-tests",
+    "command": [
+      "/workspace/scratch/astra-controls-extern-repair/native_snapshot_decode_tests",
+      "--test-threads=1",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0018903219997810083,
+    "stdout_sha256": "206266c151094e98bf262f6eeacd9815be155b7bc59a253970473e0d70581214",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests_passed": 3,
+    "binary_sha256": "d660bbb5c66569b73024a72880d2725262a34cab02201e4de3360026fb881952"
+  },
+  {
+    "name": "serial_early_late_history_tests-compile",
+    "command": [
+      "/workspace/scratch/astra-native-0645/runtime/toolchain/bin/rustc",
+      "--edition=2024",
+      "--test",
+      "/workspace/scratch/astra-recovered-parity-0702/controls/serial_early_late_history_tests.rs",
+      "--crate-name",
+      "serial_early_late_history_tests",
+      "-C",
+      "debuginfo=0",
+      "-C",
+      "opt-level=0",
+      "-C",
+      "linker=/usr/bin/cc",
+      "-L",
+      "dependency=/workspace/scratch/astra-recovered-parity-target/debug/deps",
+      "--extern",
+      "parity_solver=/workspace/scratch/astra-recovered-parity-target/debug/deps/libparity_solver-9049483a74acac71.rlib",
+      "--extern",
+      "num_bigint=/workspace/scratch/astra-recovered-parity-target/debug/deps/libnum_bigint-c41be70bacb2b880.rlib",
+      "--extern",
+      "num_integer=/workspace/scratch/astra-recovered-parity-target/debug/deps/libnum_integer-f9b95a9f5a01bbda.rlib",
+      "--extern",
+      "num_traits=/workspace/scratch/astra-recovered-parity-target/debug/deps/libnum_traits-eba54a4113231118.rlib",
+      "-o",
+      "/workspace/scratch/astra-controls-extern-repair/serial_early_late_history_tests"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4247949470000094,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "3934862a0bf934cfcf82d6868d07095fd7e58c539c969b490deb3359e6b85f9a"
+  },
+  {
+    "name": "serial_early_late_history_tests-tests",
+    "command": [
+      "/workspace/scratch/astra-controls-extern-repair/serial_early_late_history_tests",
+      "--test-threads=1",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0639566710001418,
+    "stdout_sha256": "7ac6170311b25bfd293940483f335ea3db219a2feeec8f0ff0a9fa2abe40d326",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

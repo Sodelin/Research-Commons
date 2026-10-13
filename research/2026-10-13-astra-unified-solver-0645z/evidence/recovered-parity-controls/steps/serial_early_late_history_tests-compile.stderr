@@ -1,0 +1,98 @@
+error[E0432]: unresolved import `num_integer`
+  --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:10:5
+   |
+10 | use num_integer::Integer;
+   |     ^^^^^^^^^^^ use of unresolved module or unlinked crate `num_integer`
+   |
+   = help: you might be missing a crate named `num_integer`
+
+error[E0432]: unresolved import `num_traits`
+  --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:11:5
+   |
+11 | use num_traits::{One,Signed,Zero};
+   |     ^^^^^^^^^^ use of unresolved module or unlinked crate `num_traits`
+   |
+   = help: you might be missing a crate named `num_traits`
+
+error[E0433]: failed to resolve: use of unresolved module or unlinked crate `num_bigint`
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:262:76
+    |
+262 |         if !value.denom().is_positive()||value.numer().gcd(value.denom())!=num_bigint::BigInt::one() {
+    |                                                                            ^^^^^^^^^^ use of unresolved module or unlinked crate `num_bigint`
+    |
+    = help: you might be missing a crate named `num_bigint`
+
+error[E0599]: no method named `is_positive` found for reference `&BigInt` in the current scope
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:262:27
+    |
+262 |         if !value.denom().is_positive()||value.numer().gcd(value.denom())!=num_bigint::BigInt::one() {
+    |                           ^^^^^^^^^^^ method not found in `&BigInt`
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: trait `Signed` which provides `is_positive` is implemented but not in scope; perhaps you want to import it
+    |
+  7 + use num_traits::sign::Signed;
+    |
+
+error[E0599]: no method named `gcd` found for reference `&BigInt` in the current scope
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:262:56
+    |
+262 |         if !value.denom().is_positive()||value.numer().gcd(value.denom())!=num_bigint::BigInt::one() {
+    |                                                        ^^^ method not found in `&BigInt`
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: trait `Integer` which provides `gcd` is implemented but not in scope; perhaps you want to import it
+    |
+  7 + use num_integer::Integer;
+    |
+
+error[E0599]: no method named `is_zero` found for reference `&num_rational::Ratio<BigInt>` in the current scope
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:282:53
+    |
+282 |             if powers.len()!=dimension||coefficient.is_zero() {
+    |                                                     ^^^^^^^ method not found in `&num_rational::Ratio<BigInt>`
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: trait `Zero` which provides `is_zero` is implemented but not in scope; perhaps you want to import it
+    |
+  7 + use num_traits::identities::Zero;
+    |
+
+error[E0599]: no method named `is_zero` found for struct `num_rational::Ratio` in the current scope
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:291:24
+    |
+291 |         if coefficient.is_zero() {return Ok(());}
+    |                        ^^^^^^^ method not found in `num_rational::Ratio<BigInt>`
+    |
+   ::: /workspace/scratch/astra-native-0645/runtime/vendor/num-traits-0.2.19/src/identities.rs:28:8
+    |
+ 28 |     fn is_zero(&self) -> bool;
+    |        ------- the method is available for `num_rational::Ratio<BigInt>` here
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: trait `Zero` which provides `is_zero` is implemented but not in scope; perhaps you want to import it
+    |
+  7 + use num_traits::identities::Zero;
+    |
+
+error[E0599]: no method named `is_zero` found for struct `num_rational::Ratio` in the current scope
+   --> /workspace/scratch/astra-recovered-parity-0702/controls/source_selected_prefix.rs:294:18
+    |
+294 |         if value.is_zero() {p.terms.remove(&powers);} else {p.terms.insert(powers,value);}Ok(())
+    |                  ^^^^^^^ method not found in `num_rational::Ratio<BigInt>`
+    |
+   ::: /workspace/scratch/astra-native-0645/runtime/vendor/num-traits-0.2.19/src/identities.rs:28:8
+    |
+ 28 |     fn is_zero(&self) -> bool;
+    |        ------- the method is available for `num_rational::Ratio<BigInt>` here
+    |
+    = help: items from traits can only be used if the trait is in scope
+help: trait `Zero` which provides `is_zero` is implemented but not in scope; perhaps you want to import it
+    |
+  7 + use num_traits::identities::Zero;
+    |
+
+error: aborting due to 8 previous errors
+
+Some errors have detailed explanations: E0432, E0433, E0599.
+For more information about an error, try `rustc --explain E0432`.

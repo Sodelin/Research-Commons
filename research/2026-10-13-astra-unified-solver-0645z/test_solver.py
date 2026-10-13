@@ -6,6 +6,7 @@ semantic checker with all rows sharing one assignment. Use new output each run.
 """
 import argparse
 import copy
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -24,6 +25,11 @@ def main():
     parser.add_argument('--rust-binary')
     a=parser.parse_args()
     a.output.mkdir(parents=True,exist_ok=False)
+    owned=['solve.py','certificates.py','external_encoding.py','emit_lean.py','test_solver.py']
+    def sources():
+        return {name:hashlib.sha256((HERE/name).read_bytes()).hexdigest() for name in owned}
+    before=sources()
+    (a.output/'SOURCE-PINS-BEFORE.json').write_text(json.dumps(before,indent=2)+'\n')
     cases=[]
     def run(name, task, request, expected, code):
         incoming=dict(schema='unified_research_solver_v1',task=task,input=request)
@@ -72,18 +78,27 @@ def main():
               configurations=[dict(id='both-left',weight='1/2',mask={'H:1':0,'H:2':0}),
                               dict(id='both-right',weight='1/2',mask={'H:1':1,'H:2':1}),
                               dict(id='zero-mass',weight='0',mask={'H:1':None,'H:2':None})],
-              pairs=[dict(i=i,j=j,certificate=cert) for i in ['A','B','C','D'] for j in ['A','B','C','D']])
+              pairs=[dict(i=i,j=j,certificate=generate_singleton(
+                  ['1','1','1'] if i==j else ['1','1/2','1/8']
+                  if {i,j} in [{'A','B'},{'C','D'}] else ['1','1/4','1/64'])['certificate'])
+                  for i in ['A','B','C','D'] for j in ['A','B','C','D']])
     result=run('correlated-menu','common_menu',menu,'UNKNOWN',2)
     r=result['certificate_result']
     assert r['supported_configurations']==['both-left','both-right']
     assert r['conditional_hybrid_budget']==46 and r['budget_applied_to_search'] is False
+    queries=json.loads((a.output/'correlated-menu/EXTERNAL-QUERIES.json').read_text())['queries']
+    assert len(queries)==48 and all(q['configuration_table']==menu['configurations'] for q in queries)
+    assert all(len(q['allocation'])==4+q['level']+1 for q in queries)
+    assert queries[2]['comb_coefficient']=='1/18' and queries[2]['required_event_probability']=='1/18'
+    assert len(result['Lean_certificate_sources'])==3
     invalid=copy.deepcopy(menu)
     invalid['configurations'][0]['weight']='0'
     run('non-normalized-menu','common_menu',invalid,'REFUSED_REQUEST',1)
     invalid=copy.deepcopy(menu)
     invalid['parameter_constraints']=[{'unmarked_tie':['unprotected-edge','H:1']}]
     run('unencoded-tie','common_menu',invalid,'REFUSED_REQUEST',1)
-    result=dict(status='PASS',cases=cases,actual_backend_used=True,
+    assert sources()==before, 'owned source changed during execution'
+    result=dict(status='PASS',cases=cases,actual_backend_used=True,source_sha256=before,
                 no_Lean_or_universal_native_correctness_claim=True)
     (a.output/'TEST-RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(status='PASS',cases=len(cases))))

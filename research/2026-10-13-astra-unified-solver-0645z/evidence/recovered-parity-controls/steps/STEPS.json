@@ -1,0 +1,70 @@
+[
+  {
+    "name": "native_snapshot_decode_tests-compile",
+    "command": [
+      "/workspace/scratch/astra-native-0645/runtime/toolchain/bin/rustc",
+      "--edition=2024",
+      "--test",
+      "/workspace/scratch/astra-recovered-parity-0702/controls/native_snapshot_decode_tests.rs",
+      "--crate-name",
+      "native_snapshot_decode_tests",
+      "-C",
+      "debuginfo=0",
+      "-C",
+      "opt-level=0",
+      "-C",
+      "linker=/usr/bin/cc",
+      "-L",
+      "dependency=/workspace/scratch/astra-recovered-parity-target/debug/deps",
+      "--extern",
+      "parity_solver=/workspace/scratch/astra-recovered-parity-target/debug/deps/libparity_solver-9049483a74acac71.rlib",
+      "-o",
+      "/workspace/scratch/astra-recovered-parity-0702/control-binaries/native_snapshot_decode_tests"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18004493700027524,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "native_snapshot_decode_tests-tests",
+    "command": [
+      "/workspace/scratch/astra-recovered-parity-0702/control-binaries/native_snapshot_decode_tests",
+      "--test-threads=1",
+      "--nocapture"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.002045035000264761,
+    "stdout_sha256": "206266c151094e98bf262f6eeacd9815be155b7bc59a253970473e0d70581214",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests_passed": 3,
+    "binary_sha256": "d660bbb5c66569b73024a72880d2725262a34cab02201e4de3360026fb881952"
+  },
+  {
+    "name": "serial_early_late_history_tests-compile",
+    "command": [
+      "/workspace/scratch/astra-native-0645/runtime/toolchain/bin/rustc",
+      "--edition=2024",
+      "--test",
+      "/workspace/scratch/astra-recovered-parity-0702/controls/serial_early_late_history_tests.rs",
+      "--crate-name",
+      "serial_early_late_history_tests",
+      "-C",
+      "debuginfo=0",
+      "-C",
+      "opt-level=0",
+      "-C",
+      "linker=/usr/bin/cc",
+      "-L",
+      "dependency=/workspace/scratch/astra-recovered-parity-target/debug/deps",
+      "--extern",
+      "parity_solver=/workspace/scratch/astra-recovered-parity-target/debug/deps/libparity_solver-9049483a74acac71.rlib",
+      "-o",
+      "/workspace/scratch/astra-recovered-parity-0702/control-binaries/serial_early_late_history_tests"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.17032961199993224,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "748d2c39fcfc68f75af7210eee232f8c4569b2a0fe9499139609063745ba4f15"
+  }
+]

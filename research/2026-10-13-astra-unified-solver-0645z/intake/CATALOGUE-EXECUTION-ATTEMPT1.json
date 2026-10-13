@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-I",
+    "-B",
+    "research/2026-10-13-astra-unified-solver-0645z/intake/catalogue.py",
+    "build",
+    "--ref",
+    "89b9211c431d1c2da7888d063bf52cf4f503683d"
+  ],
+  "exit_code": 2,
+  "wall_seconds": 0.036773028999959934,
+  "max_rss_bytes": 11927552,
+  "limits": {
+    "address_space_bytes": 805306368,
+    "cpu_seconds": 45,
+    "wall_seconds": 60,
+    "file_bytes": 33554432,
+    "disk_floor_bytes": 8589934592
+  },
+  "stdout": "{\"status\": \"REFUSED\", \"reason\": \"Command '['git', '-C', '/workspace/Research-Commons', 'ls-tree', '-r', '-l', '-z', '89b9211c431d1c2da7888d063bf52cf4f503683d']' returned non-zero exit status 128.\"}\n",
+  "stderr": "fatal: packfile .git/objects/pack/pack-0394911818b022b31fadd6cc89784bd6ad192378.pack cannot be mapped, check sys.vm.max_map_count and/or RLIMIT_DATA: Cannot allocate memory\n",
+  "verification_kind": "fresh source and Git archive authentication; no Lean or Rust compilation"
+}
