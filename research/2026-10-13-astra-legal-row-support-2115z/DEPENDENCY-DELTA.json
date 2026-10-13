@@ -1,0 +1,2501 @@
+{
+  "schema": "astra.legal-row-support.dependency-delta.v1",
+  "created_utc": "2026-10-13T21:20:29.928514+00:00",
+  "status": "separate static follow-on plan; not materialized or compiler queried; current 319/3591 plans unchanged",
+  "baseline_public_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+  "input_selections": [
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/intake/SELECTED-LEAN.json",
+      "sha256": "77e4fb8bc6812eb6a183b33b3911a19bcc3cfc321e9cf5ea1fe9f30566cdfb14",
+      "git_blob": "ff3ce66b5c2658617a776af2564ce7718388c8f4",
+      "bytes": 753400
+    },
+    {
+      "path": "research/2026-10-13-astra-positive-support-adapter-0830z/PROVIDER-SELECTION.json",
+      "sha256": "0be6bc5d9d9e8e329d8b899bb4d158e1e42188510631d115c60d0a89717ea95b",
+      "git_blob": "88746c13b828d763e1782f763cdf6babbfce2afd",
+      "bytes": 86750
+    },
+    {
+      "path": "research/2026-10-13-astra-positive-support-adapter-0830z/EXTERNAL-PLAN.json",
+      "sha256": "ef775a7223500314359a9ed02a87d207b18eacda9cddfa5a8990c5e1a8e43f10",
+      "git_blob": "3fad9738386fcc493393ad7b2cfe5e28184688c2",
+      "bytes": 3038893
+    },
+    {
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/DEPENDENCY-GRAPH.json",
+      "sha256": "768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13",
+      "git_blob": "f6c7afd5ee3ef57966077c243ca5b3d55199966d",
+      "bytes": 15386319
+    }
+  ],
+  "target_module": "Astra.ActualLegalRowSupport",
+  "aggregate_entry": "lean/AstraLegalRowSupport.lean",
+  "direct_imports": [
+    "G4WholeProfileDetermination",
+    "Astra.PositiveSupportAdapter"
+  ],
+  "selected_owned_closure": [
+    "ActualBigonBinomial",
+    "ActualBigonRate",
+    "ActualBigonSurvival",
+    "ActualCalendarCutContext",
+    "ActualCalendarEndpointHistory",
+    "ActualCommonBigonSurvival",
+    "ActualCutJointLaw",
+    "ActualCutTagRefinement",
+    "ActualFiniteCutJointLaw",
+    "ActualObservationCutRefinement",
+    "ActualPopulationPanelSplit",
+    "ActualPopulationRate",
+    "ActualPulseOccupancy",
+    "ActualPulseSurvival",
+    "ActualSerialSurvival",
+    "ActualStoredRegister",
+    "ActualTailBinRow",
+    "ActualUnusedSeedConditioning",
+    "CompleteCalendarBinReadout",
+    "CompleteCalendarJointLaw",
+    "FiniteTagDecoder",
+    "G1ActualCompletedKInsertion",
+    "G1ActualComponentAgenda",
+    "G1ActualCurrentPanelInitialization",
+    "G1ActualCutDescendants",
+    "G1ActualDisplayedClusterSplitTransport",
+    "G1ActualDisplayedQuartetTransport",
+    "G1ActualDisplayedTreeFamily",
+    "G1ActualEnteringFrontier",
+    "G1ActualGraphNormalization",
+    "G1ActualHistoryEnrichedKMacro",
+    "G1ActualJointBoundary",
+    "G1ActualJointEpoch",
+    "G1ActualJointGenerator",
+    "G1ActualJointOpaqueContext",
+    "G1ActualJointProgram",
+    "G1ActualJointStageHistory",
+    "G1ActualKProductInsertion",
+    "G1ActualSelectedClusterTransport",
+    "G1ActualSourceKMacroTransition",
+    "G1ActualTwoPortBlob",
+    "G1ActualUnrankedAncestralCompletion",
+    "G1ActualUnrankedCompletedFuture",
+    "G1ActualUnrankedKMacro",
+    "G1BigonFootprint",
+    "G1BigonSpliceGraph",
+    "G1BinaryCoreBudgets",
+    "G1BlobDegreeBalance",
+    "G1CanonicalCompactCompletedReplacement",
+    "G1CanonicalCompactComponentRow",
+    "G1CanonicalCompletedFutureRootAdmission",
+    "G1CanonicalComponentSegment",
+    "G1CanonicalEpochBlockBinding",
+    "G1CanonicalEpochSpecialization",
+    "G1CanonicalOriginalCompletedKLaw",
+    "G1CanonicalOriginatedHistoryPlanner",
+    "G1CanonicalOriginatedMacroPlans",
+    "G1CanonicalSingleExitSupport",
+    "G1CanonicalThreeEpochList",
+    "G1ClosingSpanSafeSyntax",
+    "G1CompactComponentBlockRows",
+    "G1CompactSourceComposition",
+    "G1CompletedExteriorHistoryKInsertion",
+    "G1ComponentDescendantClosure",
+    "G1ContextualForestReplacement",
+    "G1CutChildPorts",
+    "G1DecoratedOriginalProvenance",
+    "G1DecoratedRootBlobRetention",
+    "G1DecoratedSpliceConstruction",
+    "G1DerivedSpanSeparatedAgenda",
+    "G1ExteriorBoundarySilence",
+    "G1ExtractedComponentProgram",
+    "G1FiniteOriginalDecoratedCore",
+    "G1FiniteTwoPortChain",
+    "G1InitializedFrontierPrefix",
+    "G1InitializedJointComponentReplacement",
+    "G1InitializedOriginatedSpanSeparator",
+    "G1InterleavedEpochCompression",
+    "G1JointForestPreservation",
+    "G1JointSeparatedSourceGeometry",
+    "G1JointUnrankedForestAssembly",
+    "G1KOnlyCurrentRootExitView",
+    "G1LiftedOriginalBigon",
+    "G1NaturalCalendarNodes",
+    "G1NonrootBigonKernel",
+    "G1OpaqueSourceGrafting",
+    "G1OriginalCalendarDecomposition",
+    "G1OriginalClosingCalendarBinding",
+    "G1OriginalCompletedForestReconstruction",
+    "G1OriginalComponentNodeIdentity",
+    "G1OriginalCurrentRootReconstruction",
+    "G1OriginalDecoratedSpan",
+    "G1OriginalEpochPanelCompression",
+    "G1OriginalEpochPanelSilence",
+    "G1OriginalEpochRecomposition",
+    "G1OriginalExitBatchBinding",
+    "G1OriginalExteriorCohort",
+    "G1OriginalExteriorHistoryProduct",
+    "G1OriginalForestKOnlyInsertion",
+    "G1OriginalHistoryQuotient",
+    "G1OriginalMultiSpanCalendarRow",
+    "G1OriginalNodeBatchBinding",
+    "G1OriginalOpaqueExteriorView",
+    "G1OriginalRegistryBigon",
+    "G1OriginalSpanAtomAdmission",
+    "G1OriginalSpanBridgeBookends",
+    "G1OriginalSpanCalendarDecomposition",
+    "G1OriginalSpanClosingPhase",
+    "G1OriginalSpanClosingSourceRow",
+    "G1OriginalSpanRegion",
+    "G1OriginalWholeCausalView",
+    "G1OriginatedBridgeBookends",
+    "G1OriginatedBridgeCalendarAdmission",
+    "G1OriginatedClosingSourceAdmission",
+    "G1OriginatedNeutralSpanRegion",
+    "G1OriginatedSpanRegistryAdmission",
+    "G1OriginatedTaxonReachTransport",
+    "G1ReducedCoreCounts",
+    "G1ReducedQuotientGeometry",
+    "G1RepeatedExteriorHistoryActualCompletion",
+    "G1RepeatedOriginalExteriorHistoryMacros",
+    "G1SameOriginalExteriorContinuation",
+    "G1SharedRegisterStress",
+    "G1SourceMacroActualCompletion",
+    "G1SourceMacroComposition",
+    "G1SourceMacroInterfaceHistory",
+    "G1SpanRegionExitClosure",
+    "G1SpanRegionOriginalOperations",
+    "G1SpliceCutTransport",
+    "G1SpliceDegrees",
+    "G1SpliceLSA",
+    "G1SpliceRootBlob",
+    "G1SplicedOriginalSwitching",
+    "G1SplicedSourceAdmission",
+    "G1SwitchingDescendantTransport",
+    "G1TensorExponential",
+    "G1UnrankedActualBoundary",
+    "G1UnrankedActualEpoch",
+    "G1UnrankedActualFuture",
+    "G1UnrankedActualGenerator",
+    "G1UnrankedExteriorHistoryKInsertion",
+    "G1UnrankedNaturalPulse",
+    "G1UnrankedSingleExitLabel",
+    "G1UnrankedSourceView",
+    "G1UnrankedTreeClusterUniqueness",
+    "G2ActualCalendarTrace",
+    "G2ActualChronologicalPathLaw",
+    "G2ActualDecorationFold",
+    "G2ActualEpochHistoryLaw",
+    "G2ActualPairCoalescence",
+    "G2ActualSegmentPathLaw",
+    "G2AncestralAgeCertificate",
+    "G2AncestralPairSupport",
+    "G2AncestralTraceSourceLaw",
+    "G2CalendarDecoration",
+    "G2CalendarFirstAge",
+    "G2CalendarHistoryBinding",
+    "G2CalendarPairSupport",
+    "G2CalendarPathProjection",
+    "G2ChronologicalDecoration",
+    "G2ChronologicalGluing",
+    "G2ChronologicalPathReadout",
+    "G2ChronologicalPruning",
+    "G2ChronologicalTraceCompatibility",
+    "G2ClockBoundaryNull",
+    "G2CompleteAncestralPath",
+    "G2CompleteCalendarAttachment",
+    "G2CompleteDecoration",
+    "G2CompleteTerminalReadout",
+    "G2CompleteTimedSupport",
+    "G2CompletedCalendarPathLaw",
+    "G2ControlledTraceAssembly",
+    "G2CutFutureSourceBinding",
+    "G2CutResidualSourceMixture",
+    "G2DecorationMeasurability",
+    "G2EpochHistoryReadout",
+    "G2EpochPathProjection",
+    "G2EventualPathReadout",
+    "G2FaithfulPairAgeDecoration",
+    "G2FaithfulTimedOutput",
+    "G2FiniteAncestralTrace",
+    "G2FiniteFibreTransport",
+    "G2HistoryResidualAttachment",
+    "G2JointTimedObservation",
+    "G2LiteralCutResidual",
+    "G2LiteralEpochLaw",
+    "G2LiteralMarkedClockTrace",
+    "G2LiteralTimedObservationPruning",
+    "G2LiveLineageRouting",
+    "G2MarkedTraceBudgetStability",
+    "G2MarkedTraceCuts",
+    "G2MarkedTraceRenewal",
+    "G2OriginalAbsoluteAges",
+    "G2OriginalProgramSafety",
+    "G2PairBirthFold",
+    "G2PairBirthThreshold",
+    "G2RationalAgeReadout",
+    "G2RegisteredPathProjection",
+    "G2SameClockContinuation",
+    "G2SameClockPastFutureLaw",
+    "G2SourceFiniteHistory",
+    "G2SourceGraftDecoration",
+    "G2SourcePairMatrixReadout",
+    "G2StrictClockDecoration",
+    "G2TimedBoundMeasurability",
+    "G2TimedDecorationPruning",
+    "G2WholeMatrixAges",
+    "G4ActualBankFirstMeeting",
+    "G4ActualColocatedCompletion",
+    "G4ActualCommonNoLossRoute",
+    "G4ActualCommonPrefixSelector",
+    "G4ActualCommonSelectorSupport",
+    "G4ActualFirstMeetingCombMass",
+    "G4ActualFirstMeetingEntrance",
+    "G4ActualFirstMeetingExposureScaling",
+    "G4ActualLegalPanelComb",
+    "G4ActualNaturalCombMoments",
+    "G4ActualObservableBankCertificate",
+    "G4ActualPositiveGridUniqueness",
+    "G4ActualSelectedPathExposure",
+    "G4ActualSparseCertificateExistence",
+    "G4AllRootBinomialCompression",
+    "G4AllRootPairClocks",
+    "G4FourRootPositivity",
+    "G4IndependentRoutingBridge",
+    "G4PathResolvedMeasurement",
+    "G4SpecifiedCombEvent",
+    "G4SpecifiedCombSelectedObservation",
+    "G4TwoRootSourceStopping",
+    "G4WeightedOrdinaryTreeLaw",
+    "G4WholeProfileDetermination",
+    "G5ActivatedPosteriorPlacement",
+    "G5ActualActivatedPrefix",
+    "G5ActualComponentSupport",
+    "G5ActualConditionalPartition",
+    "G5ActualDiscreteCutEvent",
+    "G5ActualFrozenTripleRow",
+    "G5ActualNoMergerReadout",
+    "G5ActualProtectiveOccupancy",
+    "G5ActualRoutingSupport",
+    "G5ActualTripleMoments",
+    "G5AllAgeSafeQuartetTransfer",
+    "G5AncestralObservedPairGerm",
+    "G5ArbitraryCoupledGroupCountTransfer",
+    "G5AttainedOriginalTipChronology",
+    "G5BinaryRootSuppressedCutEncoding",
+    "G5BridgeBarrier",
+    "G5BridgeComponentEntries",
+    "G5CalendarRoutes",
+    "G5ChronologicalQuartetWitnessTransfer",
+    "G5CommonSwitchingPersistence",
+    "G5CommonSwitchingQuartetWitness",
+    "G5CompletionPairPersistence",
+    "G5ComponentCalendarCoverage",
+    "G5CoupledGroupSemantics",
+    "G5CoupledQuartetKernel",
+    "G5CurrentPortTwoPositions",
+    "G5EnumeratedPosteriorGerm",
+    "G5EnumeratedTripleRow",
+    "G5ExponentialGermIdentification",
+    "G5FairMomentQuartetTransport",
+    "G5FairNormalizedCutQuartetIdentification",
+    "G5FairOriginalCoinLaw",
+    "G5FairRawDisplayedQuartetIdentification",
+    "G5FairRawQuartetIdentificationFiniteLabels",
+    "G5FairSelectorMoments",
+    "G5FiniteAttainedDeletionTrace",
+    "G5FourGroupCriterion",
+    "G5FourGroupSupportCases",
+    "G5FrozenTripleAnalyticSupport",
+    "G5FrozenTriplePolynomialKernel",
+    "G5GroupRelabeling",
+    "G5MinimalGraphInterface",
+    "G5NativeOriginalRouteCoverage",
+    "G5NonbridgeRouteBound",
+    "G5NormalizedSwitchingQuartetCompatibility",
+    "G5ObservableSafePairSupport",
+    "G5ObservedCutPosterior",
+    "G5OlderSideCutChart",
+    "G5OneIntersectionCase",
+    "G5OriginalCoinPMF",
+    "G5OriginalEpochChart",
+    "G5OriginalGroupPathChronology",
+    "G5OriginalProgramSurvival",
+    "G5OriginalPruningClusterPreservation",
+    "G5OriginalRouteHazard",
+    "G5OriginalSelectedPosterior",
+    "G5OriginalSwitchingPruning",
+    "G5OriginalTipCurrentSupport",
+    "G5OriginalTipRepresentativeDeletion",
+    "G5PairMomentCases",
+    "G5PairOnlySureBlockChronology",
+    "G5ParentChoiceCalendar",
+    "G5ParentPositionPushforward",
+    "G5PhysicalCutChart",
+    "G5PosteriorJointCell",
+    "G5ProtectiveBlock",
+    "G5RootRouteCurrentSupport",
+    "G5SafeCommonGroupQuartetTransfer",
+    "G5SafeCommonGroupSelector",
+    "G5SafePastHybridDisjointness",
+    "G5SafePastMeetingPermanence",
+    "G5SafePrefixRouteBridge",
+    "G5SelectedDiscreteSurvival",
+    "G5SelectedSingletonCarrier",
+    "G5SelectedSingletonRates",
+    "G5SharedObservableDeletionTrace",
+    "G5SourcePairPersistence",
+    "G5StrictBoundaryRoutes",
+    "G5SynchronizedObservableChronology",
+    "G5ThreeGroupKernel",
+    "G5TripleMomentReconstruction",
+    "G5TriplePartitionReadout",
+    "G5TwoIntersectionCase",
+    "G5UnknownRateSupport",
+    "G6BridgeCannotEnterHybrid",
+    "G6GuardedBinErasure",
+    "G6ProtectedBinEndpoint",
+    "G6SelectedBinHistory",
+    "G7ActualCalendarGathering",
+    "G7AncestralPolynomialKernel",
+    "G7AncestralRationalCompletion",
+    "G7BoundaryExitCommutation",
+    "G7BoundaryPhasePermutation",
+    "G7BoundaryRelabelling",
+    "G7CalendarExposureClosedForm",
+    "G7CoinReindexing",
+    "G7EdgeExposureAccounting",
+    "G7FiniteForestReassembly",
+    "G7FullEpochPolynomial",
+    "G7GlobalOwnerCoins",
+    "G7NodeActions",
+    "G7OrderedFrontierProduct",
+    "G7OriginalBoundaryPolynomial",
+    "G7OriginalCensus",
+    "G7OriginalEdgeBoundary",
+    "G7OriginalEdgeGathering",
+    "G7OriginalEdgeOperators",
+    "G7OriginalRelabelling",
+    "G7PopulationForestReassembly",
+    "G7PopulationPanelPolynomial",
+    "G7SelectedCompletionPolynomial",
+    "G7SelectedKernelPolynomial",
+    "G7SinglePopulationPolynomialKernel",
+    "G7SnapshotRelabelling",
+    "G7SourceStateRelabelling",
+    "G7WholeAncestorPanelCode",
+    "GraphBlobLeaves",
+    "GraphBlobOrientation",
+    "GraphBlobPorts",
+    "GraphBlobs",
+    "GraphBridgeSplits",
+    "GraphCuts",
+    "GraphGalls",
+    "GraphLeaves",
+    "GraphPortConsequences",
+    "GraphPorts",
+    "GraphQuartetExistence",
+    "GraphSwitching",
+    "GraphSwitchingChoices",
+    "GraphSwitchingCuts",
+    "GraphSwitchingDegree",
+    "GraphSwitchingExistence",
+    "GraphSwitchingFinite",
+    "GraphTreePorts",
+    "LiteralSameBinTrace",
+    "Mathlib.Algebra.MvPolynomial.Funext",
+    "Mathlib.Algebra.MvPolynomial.Polynomial",
+    "Mathlib.Algebra.Polynomial.Basis",
+    "Mathlib.Algebra.Polynomial.CoeffList",
+    "Mathlib.Algebra.Polynomial.RuleOfSigns",
+    "Mathlib.Analysis.Asymptotics.SpecificAsymptotics",
+    "Mathlib.Analysis.Polynomial.Basic",
+    "Mathlib.Analysis.Polynomial.Order",
+    "Mathlib.Data.List.Destutter",
+    "NaturalCalendarPastAdmission",
+    "PrivateSeedFactorization",
+    "PrivateSeedHistoryFactorization",
+    "QuartetSemantics",
+    "SourceForestKingmanPopulationProjection",
+    "SourceForestKingmanProjection",
+    "SourceLabelledForest",
+    "SourceNetwork",
+    "SourceQuartetRelation",
+    "SourceResolve",
+    "UnifiedLean.G6.AncestralRateFree",
+    "UnifiedLean.G6.BinClock",
+    "UnifiedLean.G6.BinFold",
+    "UnifiedLean.G6.BinHistory",
+    "UnifiedLean.G6.Conditioning",
+    "UnifiedLean.G6.FiniteProbability",
+    "UnifiedLean.G6.HistoryPrefix",
+    "UnifiedLean.G6.PrivateRegisterBoundary",
+    "UnifiedLean.G6.PrivateRegisterCalendar",
+    "UnifiedLean.G6.PrivateRegisterCalendarPrefix",
+    "UnifiedLean.G6.PrivateRegisterErasure",
+    "UnifiedLean.G6.PrivateRegisterHistory",
+    "UnifiedLean.G6.PrivateRegisterProgram",
+    "UnifiedLean.G6.PrivateRegisterSourceStep",
+    "UnifiedLean.G6.ProgramPrefix",
+    "UnifiedLean.G6.SourcePrefix",
+    "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+    "UnifiedLean.Source.FiniteGenealogyEncoding",
+    "UnifiedLean.Source.FiniteSourceSnapshot",
+    "UnifiedLean.Source.MatrixProjectionExponential",
+    "UnifiedLean.Source.NativeCommonPairGerm",
+    "UnifiedLean.Source.NativeCurrentPortCompiler",
+    "UnifiedLean.Source.NativeFairCurrentPosition",
+    "UnifiedLean.Source.NativeFairSelectorAssembly",
+    "UnifiedLean.Source.NativeIndependentPairMixture",
+    "UnifiedLean.Source.NativePairCalendarObservation",
+    "UnifiedLean.Source.NativePairClockLaw",
+    "UnifiedLean.Source.NativeParentRouting",
+    "UnifiedLean.Source.NativeSafePastGerm",
+    "UnifiedLean.Source.OriginalFixedIDControls",
+    "UnifiedLean.Source.SourceActualHoldingClocks",
+    "UnifiedLean.Source.SourceAncestralAbsorption",
+    "UnifiedLean.Source.SourceAncestralCompletion",
+    "UnifiedLean.Source.SourceAncestralDrift",
+    "UnifiedLean.Source.SourceBoundaryKernels",
+    "UnifiedLean.Source.SourceBoundaryLocations",
+    "UnifiedLean.Source.SourceBoundaryProjection",
+    "UnifiedLean.Source.SourceCalendarCompatibility",
+    "UnifiedLean.Source.SourceCalendarCompiler",
+    "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+    "UnifiedLean.Source.SourceCalendarTiming",
+    "UnifiedLean.Source.SourceCompletedUnrankedTree",
+    "UnifiedLean.Source.SourceCompletionHarmonic",
+    "UnifiedLean.Source.SourceCopyCarrierTransport",
+    "UnifiedLean.Source.SourceCrossCarrierBoundary",
+    "UnifiedLean.Source.SourceCrossCarrierEpoch",
+    "UnifiedLean.Source.SourceCrossCarrierNatural",
+    "UnifiedLean.Source.SourceCrossCarrierProgram",
+    "UnifiedLean.Source.SourceDestinationClockReset",
+    "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+    "UnifiedLean.Source.SourceEpochRenewal",
+    "UnifiedLean.Source.SourceEpochSemigroup",
+    "UnifiedLean.Source.SourceEventualCompletionLimit",
+    "UnifiedLean.Source.SourceExponentialRace",
+    "UnifiedLean.Source.SourceExponentialRaceDensity",
+    "UnifiedLean.Source.SourceExponentialResiduals",
+    "UnifiedLean.Source.SourceFiniteJumpExpansion",
+    "UnifiedLean.Source.SourceFiniteProjection",
+    "UnifiedLean.Source.SourceFirstMarkDistribution",
+    "UnifiedLean.Source.SourceFirstMergerMark",
+    "UnifiedLean.Source.SourceForestCommonPulse",
+    "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+    "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+    "UnifiedLean.Source.SourceForestPulseMeasure",
+    "UnifiedLean.Source.SourceForestPulseTransport",
+    "UnifiedLean.Source.SourceForestSilentPruning",
+    "UnifiedLean.Source.SourceGeneratorExponential",
+    "UnifiedLean.Source.SourceInitializedCalendar",
+    "UnifiedLean.Source.SourceLiteralClockEndpoint",
+    "UnifiedLean.Source.SourceMergerClockCatalogue",
+    "UnifiedLean.Source.SourceNaturalCompletedLimit",
+    "UnifiedLean.Source.SourceNaturalInitialization",
+    "UnifiedLean.Source.SourcePoissonExponential",
+    "UnifiedLean.Source.SourcePoissonKernel",
+    "UnifiedLean.Source.SourceProgramTransport",
+    "UnifiedLean.Source.SourceRaceWinnerSelection",
+    "UnifiedLean.Source.SourceSmallCarrierGenerator",
+    "UnifiedLean.Source.SourceSmallCarrierPulse",
+    "UnifiedLean.Source.SourceStepGeneratorBinding",
+    "UnifiedLean.Source.SourceUnrankedAllPanels",
+    "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+    "UnifiedLean.Source.SourceWinningClockReset",
+    "UnifiedLean.Source.UniformizedSourceStep",
+    "UnifiedLean.Source.UnrankedGenealogyObservation"
+  ],
+  "selected_owned_count": 469,
+  "previous_owned_count": 319,
+  "new_selected_owned": [
+    {
+      "aggregate_root": true,
+      "bytes": 28619,
+      "git_blob": "c8cd6841eccfe614395ede530ffaa71d2e59597d",
+      "imports": [
+        "ActualCutJointLaw",
+        "CompleteCalendarJointLaw"
+      ],
+      "module": "ActualCalendarCutContext",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3694d292bc754e48c07a8dc32a62783eb2534b9bc80016c71b427bf835d742d7.lean",
+      "sha256": "3694d292bc754e48c07a8dc32a62783eb2534b9bc80016c71b427bf835d742d7"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 12571,
+      "git_blob": "4e4c12c009e790bdd0e176b87eb815f8e1e34e39",
+      "imports": [
+        "ActualFiniteCutJointLaw",
+        "UnifiedLean.G6.HistoryPrefix"
+      ],
+      "module": "ActualCalendarEndpointHistory",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a.lean",
+      "sha256": "e420a827bad976a4fc026bcc704e4e760cd41a5664169da7750d32c09d6c382a"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 10072,
+      "git_blob": "1519b7b7b289e102ae196a69e7a13b986c8d7177",
+      "imports": [
+        "ActualCutTagRefinement",
+        "ActualTailBinRow",
+        "G2SameClockPastFutureLaw"
+      ],
+      "module": "ActualCutJointLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3b0ccda0c4b96fe9e077817d4971fa38a1c7e3be1e3472fa037a88bfbecda93e.lean",
+      "sha256": "3b0ccda0c4b96fe9e077817d4971fa38a1c7e3be1e3472fa037a88bfbecda93e"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 10767,
+      "git_blob": "868630c9ebc8240e0c7e6c16d8173d6e73f4bce2",
+      "imports": [
+        "UnifiedLean.G6.BinFold",
+        "G2SameClockContinuation",
+        "G2FiniteAncestralTrace"
+      ],
+      "module": "ActualCutTagRefinement",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/c39df8d6fc98edfa1acd9dd1042bedb4bacde08c85e26b69acf019b451b9dea8.lean",
+      "sha256": "c39df8d6fc98edfa1acd9dd1042bedb4bacde08c85e26b69acf019b451b9dea8"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 14607,
+      "git_blob": "a9826cf7ca917e46ea9047b281a69d0e227b4ae8",
+      "imports": [
+        "ActualCutJointLaw",
+        "ActualCalendarCutContext"
+      ],
+      "module": "ActualFiniteCutJointLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d9d412d48be07ab34672d2bee996aa5120c1544ff67b876b21b7bdfe0435e604.lean",
+      "sha256": "d9d412d48be07ab34672d2bee996aa5120c1544ff67b876b21b7bdfe0435e604"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5425,
+      "git_blob": "2b918b76fc38ed0887373c13447a36b7f843b95d",
+      "imports": [
+        "ActualCalendarEndpointHistory"
+      ],
+      "module": "ActualObservationCutRefinement",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7815bf4e807553cd103bf7a3f0df558f461ab30e2a9f7e20de088580d1680bb6.lean",
+      "sha256": "7815bf4e807553cd103bf7a3f0df558f461ab30e2a9f7e20de088580d1680bb6"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8485,
+      "git_blob": "da62438ecc5507fd8373adeb3972243e25ea2c88",
+      "imports": [
+        "LiteralSameBinTrace",
+        "G2AncestralTraceSourceLaw"
+      ],
+      "module": "ActualTailBinRow",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/790d22843c9906023b115690e3bf6818dc45cac8dcd270b788b9f1cf54be8fd0.lean",
+      "sha256": "790d22843c9906023b115690e3bf6818dc45cac8dcd270b788b9f1cf54be8fd0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 11896,
+      "git_blob": "4cc8c16a7c71d092675cb3ae66d17bf62abca222",
+      "imports": [
+        "FiniteTagDecoder",
+        "UnifiedLean.G6.BinFold",
+        "G2CompleteDecoration"
+      ],
+      "module": "CompleteCalendarBinReadout",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/329abd02a660a5be7beee4d44892548de31e075501f898c42f9de6df0aaaf45a.lean",
+      "sha256": "329abd02a660a5be7beee4d44892548de31e075501f898c42f9de6df0aaaf45a"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 13172,
+      "git_blob": "d81bed98a6ff1550891faf44e262b64a76589421",
+      "imports": [
+        "CompleteCalendarBinReadout",
+        "ActualTailBinRow",
+        "G2FiniteFibreTransport"
+      ],
+      "module": "CompleteCalendarJointLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/06440343d946783c9662945fa33f1dbc24c827deb6d382440c37ed2ad8c7b60f.lean",
+      "sha256": "06440343d946783c9662945fa33f1dbc24c827deb6d382440c37ed2ad8c7b60f"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9830,
+      "git_blob": "745ed922b480e62812d9f1ef582f6f61c18bbc98",
+      "imports": [
+        "G2FaithfulPairAgeDecoration",
+        "UnifiedLean.Source.UnrankedGenealogyObservation"
+      ],
+      "module": "FiniteTagDecoder",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/721c2f669b8f7d174639584ccdd696852ebd5a5cbec24859d5f690603b70f0a5.lean",
+      "sha256": "721c2f669b8f7d174639584ccdd696852ebd5a5cbec24859d5f690603b70f0a5"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5424,
+      "git_blob": "a36473ac2eb38a32abe6287c51f0d55813d930b3",
+      "imports": [
+        "G1ActualUnrankedCompletedFuture",
+        "G1ActualKProductInsertion"
+      ],
+      "module": "G1ActualCompletedKInsertion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/93cd417e3aef969863feb394f52f3a21cc5bc122b914f4e8dd27805664672423.lean",
+      "sha256": "93cd417e3aef969863feb394f52f3a21cc5bc122b914f4e8dd27805664672423"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6813,
+      "git_blob": "91093365f635293c812d3fd07d2b846282b274c5",
+      "imports": [
+        "G1OriginalRegistryBigon",
+        "G1ActualJointProgram"
+      ],
+      "module": "G1ActualComponentAgenda",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6ca75b86d8d53adcc2f608214c9ba92135cdf92cdad701ca0f499dc79e67a1e3.lean",
+      "sha256": "6ca75b86d8d53adcc2f608214c9ba92135cdf92cdad701ca0f499dc79e67a1e3"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6393,
+      "git_blob": "fddb93a2dffa9d1639354ed26deeac2afb7bb453",
+      "imports": [
+        "G1ActualSelectedClusterTransport",
+        "G5FairNormalizedCutQuartetIdentification"
+      ],
+      "module": "G1ActualDisplayedClusterSplitTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e2b9357f6bfc3d0a6e42c816c031ec51aefedc361344cf419fa0e5e665629040.lean",
+      "sha256": "e2b9357f6bfc3d0a6e42c816c031ec51aefedc361344cf419fa0e5e665629040"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3663,
+      "git_blob": "40e31cf815ea54c484970c4f22bc001d1652d7cf",
+      "imports": [
+        "G1ActualDisplayedClusterSplitTransport"
+      ],
+      "module": "G1ActualDisplayedQuartetTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/1484402fcbc2011664f7f27e9b3140bb7d6ee56d48d793c650be9b89917ecf77.lean",
+      "sha256": "1484402fcbc2011664f7f27e9b3140bb7d6ee56d48d793c650be9b89917ecf77"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7029,
+      "git_blob": "8d83e08f49cd63fe2bd640b791941f8ba42a3204",
+      "imports": [
+        "G1UnrankedTreeClusterUniqueness",
+        "G1ActualDisplayedQuartetTransport"
+      ],
+      "module": "G1ActualDisplayedTreeFamily",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/64901bf12642ebded0fefd18b53fb8d12af8c8594b4165025daa5b8b6551166c.lean",
+      "sha256": "64901bf12642ebded0fefd18b53fb8d12af8c8594b4165025daa5b8b6551166c"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4636,
+      "git_blob": "290f0199ee4a1d3a0bbf10026d23e77eec3ec60d",
+      "imports": [
+        "G1SplicedSourceAdmission"
+      ],
+      "module": "G1ActualGraphNormalization",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6.lean",
+      "sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8242,
+      "git_blob": "6bc5fdd26053015e50e30c558b22cc8fca9caf9a",
+      "imports": [
+        "G1OriginalExteriorHistoryProduct"
+      ],
+      "module": "G1ActualHistoryEnrichedKMacro",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9b23c369b6086f5314649abe9a42888a5d16c38e0e405f7cb89d7728b0aea266.lean",
+      "sha256": "9b23c369b6086f5314649abe9a42888a5d16c38e0e405f7cb89d7728b0aea266"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5880,
+      "git_blob": "467bab88a773f12185de700c61c5fa9d76cd1856",
+      "imports": [
+        "G1ActualUnrankedKMacro"
+      ],
+      "module": "G1ActualKProductInsertion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/c188ec733e67f93f1c160f6d867e9c36fe552600ad0632f81aea849a74983179.lean",
+      "sha256": "c188ec733e67f93f1c160f6d867e9c36fe552600ad0632f81aea849a74983179"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5876,
+      "git_blob": "6835ba514fc5aaeb94d1fce0d3f72a35d7e682d3",
+      "imports": [
+        "G1SwitchingDescendantTransport",
+        "G5OriginalPruningClusterPreservation"
+      ],
+      "module": "G1ActualSelectedClusterTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ed0c37f91f85b8db92a8e25a27e9c895549f6775b69836e7b92ec68e41a87174.lean",
+      "sha256": "ed0c37f91f85b8db92a8e25a27e9c895549f6775b69836e7b92ec68e41a87174"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6400,
+      "git_blob": "af046ab9ff1b63e3403319317dd54aa324e5af9a",
+      "imports": [
+        "G1OriginalWholeCausalView"
+      ],
+      "module": "G1ActualSourceKMacroTransition",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/974fe16a6223c4a5d52e97a69c01c0d883f6485424e7ce2475e0330633e3dc20.lean",
+      "sha256": "974fe16a6223c4a5d52e97a69c01c0d883f6485424e7ce2475e0330633e3dc20"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4546,
+      "git_blob": "bfb06616ec42c5694d1fecf6e077a8842ab7ad34",
+      "imports": [
+        "G1ActualUnrankedAncestralCompletion"
+      ],
+      "module": "G1ActualUnrankedCompletedFuture",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/be2ea3ef33b3e4903c83b559619780c0983d3b105c7bdf2e57a7bc2d86aac905.lean",
+      "sha256": "be2ea3ef33b3e4903c83b559619780c0983d3b105c7bdf2e57a7bc2d86aac905"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6832,
+      "git_blob": "db1a287ab317a61df700447d78c608e4680d01cf",
+      "imports": [
+        "G1UnrankedSingleExitLabel"
+      ],
+      "module": "G1ActualUnrankedKMacro",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/524e498b97e5e48b3cc8a2b9814ef9034c017b07538e803d66df8a123e9fb11d.lean",
+      "sha256": "524e498b97e5e48b3cc8a2b9814ef9034c017b07538e803d66df8a123e9fb11d"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5889,
+      "git_blob": "69ddf826d9b7ac7d29343b731e56ad4e4518d24f",
+      "imports": [
+        "G1ReducedCoreCounts"
+      ],
+      "module": "G1BinaryCoreBudgets",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a793dab560b94617eb80b1e397bd2a252e2ec3ac2909b82e0c2689f853d7ff48.lean",
+      "sha256": "a793dab560b94617eb80b1e397bd2a252e2ec3ac2909b82e0c2689f853d7ff48"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6074,
+      "git_blob": "01392e547ed73b35648b2c7e5ab603b37b7b6186",
+      "imports": [
+        "G1CanonicalSingleExitSupport",
+        "G1CanonicalOriginalCompletedKLaw"
+      ],
+      "module": "G1CanonicalCompactCompletedReplacement",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7828c2ea49f1bc8526ae6b9c97a548f8caf91ef825b87979e605074daa3aaca0.lean",
+      "sha256": "7828c2ea49f1bc8526ae6b9c97a548f8caf91ef825b87979e605074daa3aaca0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8035,
+      "git_blob": "6ad1215389f673d998a5701e637846b476d2b8c4",
+      "imports": [
+        "G1CompactComponentBlockRows"
+      ],
+      "module": "G1CanonicalCompactComponentRow",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3c96ef89056ef99f2d1b79197611bb8133578783674e81709f2e4d76a2e34035.lean",
+      "sha256": "3c96ef89056ef99f2d1b79197611bb8133578783674e81709f2e4d76a2e34035"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2695,
+      "git_blob": "ebaf5d6a71870faab8e36ae7d8623f5e610082b0",
+      "imports": [
+        "G1OriginalCompletedForestReconstruction",
+        "G1OriginalCalendarDecomposition"
+      ],
+      "module": "G1CanonicalCompletedFutureRootAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/304a114a76ca11e60c6e8d50df9755ac0f9ea12502e3c5694745d4890f734865.lean",
+      "sha256": "304a114a76ca11e60c6e8d50df9755ac0f9ea12502e3c5694745d4890f734865"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9109,
+      "git_blob": "4bafd6e12ade698f0c0d412b1b40580eb76d6d10",
+      "imports": [
+        "G1ActualComponentAgenda"
+      ],
+      "module": "G1CanonicalComponentSegment",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6a0e47f5eefeb869ec421eda83eeae7ae4ab1b41fd0b03ba96dd45867a5cd527.lean",
+      "sha256": "6a0e47f5eefeb869ec421eda83eeae7ae4ab1b41fd0b03ba96dd45867a5cd527"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8012,
+      "git_blob": "6ceb8445080d93af3251534fdf8d11ddb5eb0cec",
+      "imports": [
+        "G1OriginalComponentNodeIdentity"
+      ],
+      "module": "G1CanonicalEpochBlockBinding",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/44de312608b5548019231cd2fe11c77cbd0e9dd2887e2b20275f1babcb25b808.lean",
+      "sha256": "44de312608b5548019231cd2fe11c77cbd0e9dd2887e2b20275f1babcb25b808"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4497,
+      "git_blob": "89eb54f0472cbde99da45089b1def156b992b714",
+      "imports": [
+        "G1CanonicalEpochBlockBinding"
+      ],
+      "module": "G1CanonicalEpochSpecialization",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5273a662cea4a59df43dfea19b6e97723263ca4bf2eaad5e6be531abce37d590.lean",
+      "sha256": "5273a662cea4a59df43dfea19b6e97723263ca4bf2eaad5e6be531abce37d590"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3913,
+      "git_blob": "5c0fdb5702938334ac6b595007fcf79725c5078d",
+      "imports": [
+        "G1CompletedExteriorHistoryKInsertion"
+      ],
+      "module": "G1CanonicalOriginalCompletedKLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/03f708ff4a52877e999e7f3ebf96750f151827ba86dd9f5ab3ca1145e9af850c.lean",
+      "sha256": "03f708ff4a52877e999e7f3ebf96750f151827ba86dd9f5ab3ca1145e9af850c"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7368,
+      "git_blob": "96cc58fc6cad44cb44f043fd5f768b7613b20f19",
+      "imports": [
+        "G1CanonicalOriginatedMacroPlans"
+      ],
+      "module": "G1CanonicalOriginatedHistoryPlanner",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3a2ec0b602946579165ccbfe96ff9bc45a99210a134319d39fc7b8b590ad2321.lean",
+      "sha256": "3a2ec0b602946579165ccbfe96ff9bc45a99210a134319d39fc7b8b590ad2321"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6106,
+      "git_blob": "151280ce327f11ed6be1d134e1f60b2917460f33",
+      "imports": [
+        "G1InitializedOriginatedSpanSeparator",
+        "G1RepeatedExteriorHistoryActualCompletion"
+      ],
+      "module": "G1CanonicalOriginatedMacroPlans",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b43ddfbd74e1ce8b9ddbeec443baf233ac974348d13f66e9593d3128c071cb9d.lean",
+      "sha256": "b43ddfbd74e1ce8b9ddbeec443baf233ac974348d13f66e9593d3128c071cb9d"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5349,
+      "git_blob": "497900b0b21999ba1e1d020af17856bbd8fd3eeb",
+      "imports": [
+        "G1CanonicalCompactComponentRow"
+      ],
+      "module": "G1CanonicalSingleExitSupport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9011a66ff750603c44b9294abf791628063048a735f7054ca520ebe55482cad4.lean",
+      "sha256": "9011a66ff750603c44b9294abf791628063048a735f7054ca520ebe55482cad4"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6417,
+      "git_blob": "2d408241e8241106a06ac20f4e3205ea33e44746",
+      "imports": [
+        "G1OriginalCalendarDecomposition"
+      ],
+      "module": "G1CanonicalThreeEpochList",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d827ccbaacbed42adad5e651542637aa411b7384d09049b2dc3eef8f4da331e0.lean",
+      "sha256": "d827ccbaacbed42adad5e651542637aa411b7384d09049b2dc3eef8f4da331e0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3198,
+      "git_blob": "db18e4aca2d778d67d25e822fd91c591809e2ab8",
+      "imports": [
+        "G1DerivedSpanSeparatedAgenda"
+      ],
+      "module": "G1ClosingSpanSafeSyntax",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/be3d23403e587f90ed1b25852108c813d49515f8dbd0912cdd424c0f5d905053.lean",
+      "sha256": "be3d23403e587f90ed1b25852108c813d49515f8dbd0912cdd424c0f5d905053"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6067,
+      "git_blob": "89aac03568ed1c0e8210cf021ace5f70e88e8f81",
+      "imports": [
+        "G1CanonicalEpochSpecialization"
+      ],
+      "module": "G1CompactComponentBlockRows",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f8d3fcb149c4a0d008e961bbf2737a7a057b927417b45c51f1092fee97c5ccd6.lean",
+      "sha256": "f8d3fcb149c4a0d008e961bbf2737a7a057b927417b45c51f1092fee97c5ccd6"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4017,
+      "git_blob": "0a7814044d2c2b92af55ed4f482c8db9f1163182",
+      "imports": [
+        "G1OriginalExitBatchBinding",
+        "G1CanonicalThreeEpochList"
+      ],
+      "module": "G1CompactSourceComposition",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8178a0e006f8e17b566dc3228849fdf6b71af708886635252d16bff261750f15.lean",
+      "sha256": "8178a0e006f8e17b566dc3228849fdf6b71af708886635252d16bff261750f15"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3499,
+      "git_blob": "bfbcc0876f16eac108bf8df8031082a0d9abd8f5",
+      "imports": [
+        "G1CanonicalCompletedFutureRootAdmission",
+        "G1UnrankedExteriorHistoryKInsertion"
+      ],
+      "module": "G1CompletedExteriorHistoryKInsertion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5bf5c266941dca8ad419ae6c7baf1f82f8d0d04d56c77aa25933d397a740d95f.lean",
+      "sha256": "5bf5c266941dca8ad419ae6c7baf1f82f8d0d04d56c77aa25933d397a740d95f"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4072,
+      "git_blob": "175fbacc608640e7eb047730af84d783f550668b",
+      "imports": [
+        "G1OriginalDecoratedSpan"
+      ],
+      "module": "G1DecoratedOriginalProvenance",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f0127346b3be6c5383e45d2a8d36cf9b6bdbf9602cfe12560f95462856533511.lean",
+      "sha256": "f0127346b3be6c5383e45d2a8d36cf9b6bdbf9602cfe12560f95462856533511"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3309,
+      "git_blob": "ec8c003fcb34dca1eb868f9bc07b1fe511d9a9cb",
+      "imports": [
+        "G1FiniteOriginalDecoratedCore"
+      ],
+      "module": "G1DecoratedRootBlobRetention",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/711ea1c693a242d0aa95c669cabd4a845d9eefb59cec543c039d53b927e9a1d5.lean",
+      "sha256": "711ea1c693a242d0aa95c669cabd4a845d9eefb59cec543c039d53b927e9a1d5"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4355,
+      "git_blob": "9bfce4b505f96fb06b5df6d06e4e93942e30abd1",
+      "imports": [
+        "G1LiftedOriginalBigon"
+      ],
+      "module": "G1DecoratedSpliceConstruction",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e8b758279cd762124433cfe8309974022fc95cdca0192ff182241a92120c1d43.lean",
+      "sha256": "e8b758279cd762124433cfe8309974022fc95cdca0192ff182241a92120c1d43"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3289,
+      "git_blob": "81d911bd3bd179b13b1b31e5713df20598c78a2e",
+      "imports": [
+        "G1SpanRegionOriginalOperations"
+      ],
+      "module": "G1DerivedSpanSeparatedAgenda",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5591415330d7c3dfffd4f65f9e596df73e329d00b61d315d6d8822345736d67e.lean",
+      "sha256": "5591415330d7c3dfffd4f65f9e596df73e329d00b61d315d6d8822345736d67e"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4752,
+      "git_blob": "9f217db132502a3f92afda886791a6f5e3155b33",
+      "imports": [
+        "G1OriginalEpochRecomposition"
+      ],
+      "module": "G1ExteriorBoundarySilence",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/51285da1533661ecb669585bf12ef31f809847dce89a00566a0421306b8724d9.lean",
+      "sha256": "51285da1533661ecb669585bf12ef31f809847dce89a00566a0421306b8724d9"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5496,
+      "git_blob": "a5c26ad0ed2442334f3c3e78a0547a507aeb010f",
+      "imports": [
+        "G1DecoratedSpliceConstruction"
+      ],
+      "module": "G1FiniteOriginalDecoratedCore",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6c4187e86e2ca11e2272453a3880445256bdc7d61eb870164e7afcecfadcc009.lean",
+      "sha256": "6c4187e86e2ca11e2272453a3880445256bdc7d61eb870164e7afcecfadcc009"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4786,
+      "git_blob": "767a2573f99e31f8a5737d104c6a1787d580b853",
+      "imports": [
+        "G1CanonicalComponentSegment",
+        "G1SameOriginalExteriorContinuation"
+      ],
+      "module": "G1InitializedJointComponentReplacement",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/be7a5868cda912f77f0e16869a0186be0e23bae23c15c2c202884bd8a99c3e3c.lean",
+      "sha256": "be7a5868cda912f77f0e16869a0186be0e23bae23c15c2c202884bd8a99c3e3c"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3499,
+      "git_blob": "1d3254848376144785f0d49cd7f7af930d0921ec",
+      "imports": [
+        "G1ClosingSpanSafeSyntax"
+      ],
+      "module": "G1InitializedOriginatedSpanSeparator",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/086cf5d20672e6d9c0d4c9f0f9cf3dd05013a5c6d3eca198508945c90225f1b9.lean",
+      "sha256": "086cf5d20672e6d9c0d4c9f0f9cf3dd05013a5c6d3eca198508945c90225f1b9"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4776,
+      "git_blob": "d0c94b41e0c6f7ec4a044e48733314949e610f36",
+      "imports": [
+        "G1ExteriorBoundarySilence"
+      ],
+      "module": "G1InterleavedEpochCompression",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5befab01974ddfe334c7c840727c3302fa319e06490d599ff5a0b7686623b486.lean",
+      "sha256": "5befab01974ddfe334c7c840727c3302fa319e06490d599ff5a0b7686623b486"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2755,
+      "git_blob": "bf8bc118330f11cdecc7e074ebcc916077ea26e5",
+      "imports": [
+        "G1CanonicalOriginatedHistoryPlanner"
+      ],
+      "module": "G1KOnlyCurrentRootExitView",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/dfb422f3e21b825d2c9605702160409f3eaa82a290d38607dd863ab2b5f34647.lean",
+      "sha256": "dfb422f3e21b825d2c9605702160409f3eaa82a290d38607dd863ab2b5f34647"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6658,
+      "git_blob": "0f66d38b5259cbf7a0edba16814e91f33b69c403",
+      "imports": [
+        "G1DecoratedOriginalProvenance"
+      ],
+      "module": "G1LiftedOriginalBigon",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7b6266a6ee51edd572bc5851c0f72c79bd41afc2a3f9079df491c085fed4f576.lean",
+      "sha256": "7b6266a6ee51edd572bc5851c0f72c79bd41afc2a3f9079df491c085fed4f576"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8062,
+      "git_blob": "e6927325253f5747e262d46327fbaf09fb784eb1",
+      "imports": [
+        "G1InitializedJointComponentReplacement"
+      ],
+      "module": "G1OriginalCalendarDecomposition",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5fafa3802a1cb9ba286b64c2e69b1d0e42cfeddb6b83fc5be4c9304c1736daae.lean",
+      "sha256": "5fafa3802a1cb9ba286b64c2e69b1d0e42cfeddb6b83fc5be4c9304c1736daae"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4089,
+      "git_blob": "759a746dfb89d990dc6d270629da8c28a39b95e8",
+      "imports": [
+        "G1OriginalSpanClosingSourceRow"
+      ],
+      "module": "G1OriginalClosingCalendarBinding",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d23345ad5db3793bfb674a9f3323dcba63d40afd06b53893beb29327f89ab111.lean",
+      "sha256": "d23345ad5db3793bfb674a9f3323dcba63d40afd06b53893beb29327f89ab111"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4658,
+      "git_blob": "c6798720be98658dd73133e73aaa9a367130c9c0",
+      "imports": [
+        "G1ActualCompletedKInsertion"
+      ],
+      "module": "G1OriginalCompletedForestReconstruction",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/92ad1413bde62b1a192ca6e85f4230b35e2278839f01ee33bb98fe6ef502a3b2.lean",
+      "sha256": "92ad1413bde62b1a192ca6e85f4230b35e2278839f01ee33bb98fe6ef502a3b2"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3208,
+      "git_blob": "511e2c7bbf5357445b5f7a1497157204e3ab4993",
+      "imports": [
+        "G1CompactSourceComposition",
+        "G1ExtractedComponentProgram",
+        "G1OriginalRegistryBigon"
+      ],
+      "module": "G1OriginalComponentNodeIdentity",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3ba80978c1c201d18b6c37fe3a94257c3c05deb4b20fd932e23ba95f93ad25b0.lean",
+      "sha256": "3ba80978c1c201d18b6c37fe3a94257c3c05deb4b20fd932e23ba95f93ad25b0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4915,
+      "git_blob": "997982c7ed06b8631c819c85e0c5cf87c0d306e0",
+      "imports": [
+        "G1CanonicalCompactCompletedReplacement",
+        "G1BinaryCoreBudgets"
+      ],
+      "module": "G1OriginalDecoratedSpan",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/0010a7c9b54b24c0efbf1f152d4a4e57be707b7c91e6eeb160f55fc0637be0be.lean",
+      "sha256": "0010a7c9b54b24c0efbf1f152d4a4e57be707b7c91e6eeb160f55fc0637be0be"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9405,
+      "git_blob": "3db4d48b00d8a9df446638e9c66e812fa1ef3e77",
+      "imports": [
+        "G1OriginalEpochPanelSilence"
+      ],
+      "module": "G1OriginalEpochPanelCompression",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/083b44c3c8f293901ed66084267317c60559ce197dc44b804ab589914865854f.lean",
+      "sha256": "083b44c3c8f293901ed66084267317c60559ce197dc44b804ab589914865854f"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4319,
+      "git_blob": "911278870f477420f15ac5d980a309efbf54d64f",
+      "imports": [
+        "G1OriginalCalendarDecomposition",
+        "G1InterleavedEpochCompression"
+      ],
+      "module": "G1OriginalEpochPanelSilence",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3c13c73d06d9ff921ec79c746261945d6b557609124ab545b123626e131b25b5.lean",
+      "sha256": "3c13c73d06d9ff921ec79c746261945d6b557609124ab545b123626e131b25b5"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3304,
+      "git_blob": "9a22395b96eeae5c8d32a1a0d1f4bb1a866f6cd9",
+      "imports": [
+        "G1ActualJointStageHistory",
+        "UnifiedLean.Source.SourceEpochSemigroup"
+      ],
+      "module": "G1OriginalEpochRecomposition",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/663b1ea6aa00c00854911aaa904d6109c9a139dd05163d623f734b67d2851104.lean",
+      "sha256": "663b1ea6aa00c00854911aaa904d6109c9a139dd05163d623f734b67d2851104"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5926,
+      "git_blob": "8b65b36421eefad8283b4776c0a54ed8a9b405e4",
+      "imports": [
+        "G1OriginalNodeBatchBinding"
+      ],
+      "module": "G1OriginalExitBatchBinding",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d1e84e70b0f2ce7cf16e89fd640debf580fd504b3670ff5e53f3bef95481bbb7.lean",
+      "sha256": "d1e84e70b0f2ce7cf16e89fd640debf580fd504b3670ff5e53f3bef95481bbb7"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2682,
+      "git_blob": "d6fd4bef95e9a5bc5960cbfc318e3c8e71272546",
+      "imports": [
+        "G1OriginalClosingCalendarBinding"
+      ],
+      "module": "G1OriginalExteriorCohort",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cb75d6e6fb256d3b1f4a9bde4f1861550221cbace83fd1f01aed29ae5cd3ce6f.lean",
+      "sha256": "cb75d6e6fb256d3b1f4a9bde4f1861550221cbace83fd1f01aed29ae5cd3ce6f"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7237,
+      "git_blob": "453a1c15ca812a0056de6aef6e19ddbac8def766",
+      "imports": [
+        "G1OriginalOpaqueExteriorView",
+        "G1UnrankedExteriorHistoryKInsertion"
+      ],
+      "module": "G1OriginalExteriorHistoryProduct",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f97d1c577643221d45ae80c31f0bb5c24b26c40667afa6316004de7abc888a74.lean",
+      "sha256": "f97d1c577643221d45ae80c31f0bb5c24b26c40667afa6316004de7abc888a74"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2749,
+      "git_blob": "8049f139018c5992f271d83796a6d8780a104749",
+      "imports": [
+        "G1ActualKProductInsertion"
+      ],
+      "module": "G1OriginalForestKOnlyInsertion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f70a9fe1beaaba3e11e248260f3b8d689cc654e31afbfbe1307251cb664e3efc.lean",
+      "sha256": "f70a9fe1beaaba3e11e248260f3b8d689cc654e31afbfbe1307251cb664e3efc"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7255,
+      "git_blob": "0b0ae9e074726da84568a3ea81e4b5931878a31d",
+      "imports": [
+        "G1ActualHistoryEnrichedKMacro"
+      ],
+      "module": "G1OriginalHistoryQuotient",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59d1670db88c82e2d7c08c75658d4a267a1577e6e3005e162ec5ca830872134b.lean",
+      "sha256": "59d1670db88c82e2d7c08c75658d4a267a1577e6e3005e162ec5ca830872134b"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4461,
+      "git_blob": "9e4c6b18f9c9a2142c6a842862d478b7cc5b4dbe",
+      "imports": [
+        "G1OriginalSpanAtomAdmission"
+      ],
+      "module": "G1OriginalMultiSpanCalendarRow",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4d6ddb73e3323b60da9f0ca71c3adaa0de7d1559e74d8c6f70efafa3f1967506.lean",
+      "sha256": "4d6ddb73e3323b60da9f0ca71c3adaa0de7d1559e74d8c6f70efafa3f1967506"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7708,
+      "git_blob": "72f247ea6ff3e5dfb40b7b51c6c237320c2380ca",
+      "imports": [
+        "G1OriginalEpochPanelCompression"
+      ],
+      "module": "G1OriginalNodeBatchBinding",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3097533b902df0d2f8c631bad86d4f6bced4b49b283c697942a7f01c6eb57a20.lean",
+      "sha256": "3097533b902df0d2f8c631bad86d4f6bced4b49b283c697942a7f01c6eb57a20"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7611,
+      "git_blob": "5a02bc6c3f01212af68105cc47884b1eed62b767",
+      "imports": [
+        "G1SourceMacroActualCompletion"
+      ],
+      "module": "G1OriginalOpaqueExteriorView",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/537919a2f3d0e51e9a7e6b935d2a7f3b182015059728c9528a93f97c5397aad5.lean",
+      "sha256": "537919a2f3d0e51e9a7e6b935d2a7f3b182015059728c9528a93f97c5397aad5"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4993,
+      "git_blob": "11c958053b77bf8301d1f7cecda387b24f3bacf5",
+      "imports": [
+        "G1InitializedFrontierPrefix",
+        "G1BigonFootprint"
+      ],
+      "module": "G1OriginalRegistryBigon",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/abf277a59627533d473dd7d7d9ba1e704ddfa96d76e2ef5bd18b0de2eff38d58.lean",
+      "sha256": "abf277a59627533d473dd7d7d9ba1e704ddfa96d76e2ef5bd18b0de2eff38d58"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7153,
+      "git_blob": "3a6b2347d9f8874fcb4d464f5ff36397b325461f",
+      "imports": [
+        "G1OriginalSpanCalendarDecomposition"
+      ],
+      "module": "G1OriginalSpanAtomAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d364b36b8def69f27fb4d49b700079b4a933032837222a50ffe48d0a78ad60d5.lean",
+      "sha256": "d364b36b8def69f27fb4d49b700079b4a933032837222a50ffe48d0a78ad60d5"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3158,
+      "git_blob": "f6d76ae4202df79a0438482a9e71eedb4966eea8",
+      "imports": [
+        "G1OriginatedBridgeCalendarAdmission"
+      ],
+      "module": "G1OriginalSpanBridgeBookends",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4cbc3c36b8c9e419e37f1373ab8b291708f5c80ea1f6c895cb303ac64ff31215.lean",
+      "sha256": "4cbc3c36b8c9e419e37f1373ab8b291708f5c80ea1f6c895cb303ac64ff31215"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3232,
+      "git_blob": "cc73fb4672da717b06341da5348c4817c90949cc",
+      "imports": [
+        "G1DecoratedRootBlobRetention"
+      ],
+      "module": "G1OriginalSpanCalendarDecomposition",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/aa148a0f98aa199dc9f9f5348785b5ac3675445dbf631f7d88cf6260a5928daa.lean",
+      "sha256": "aa148a0f98aa199dc9f9f5348785b5ac3675445dbf631f7d88cf6260a5928daa"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3506,
+      "git_blob": "eca1ddeede6ed1cbf3d9e0f52958f5fdfa9bd1c4",
+      "imports": [
+        "G1OriginatedBridgeBookends"
+      ],
+      "module": "G1OriginalSpanClosingPhase",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7ef634d1ef05b465d19bc8b8efac9a0dd638445cf28af9ba2d4b4327eebe99d1.lean",
+      "sha256": "7ef634d1ef05b465d19bc8b8efac9a0dd638445cf28af9ba2d4b4327eebe99d1"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4911,
+      "git_blob": "593c4aadfec0b973bd14c1426eafafd9b71142b3",
+      "imports": [
+        "G1OriginalSpanClosingPhase"
+      ],
+      "module": "G1OriginalSpanClosingSourceRow",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/0a3c0a89b9d5133150d701eb73596d8c614df2598f66b2ec887441e104ea7af8.lean",
+      "sha256": "0a3c0a89b9d5133150d701eb73596d8c614df2598f66b2ec887441e104ea7af8"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4562,
+      "git_blob": "d25bc4196173362e90a10ad9d4525ce7428444fc",
+      "imports": [
+        "G1OriginatedTaxonReachTransport"
+      ],
+      "module": "G1OriginalSpanRegion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/2586ad0e6df1d736a12210fedf5073668c2c7db40e7d78db851a82aa5c89097e.lean",
+      "sha256": "2586ad0e6df1d736a12210fedf5073668c2c7db40e7d78db851a82aa5c89097e"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5765,
+      "git_blob": "2989161a38f1d588dd3fb02e96106e5a9583871a",
+      "imports": [
+        "G1OriginalCompletedForestReconstruction"
+      ],
+      "module": "G1OriginalWholeCausalView",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/de38b75371ccb461d286aa6071fc4c8de483f2484e091013db2e9e12cf0fe989.lean",
+      "sha256": "de38b75371ccb461d286aa6071fc4c8de483f2484e091013db2e9e12cf0fe989"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3358,
+      "git_blob": "658095511417d52b5e0e957114d71b92fab84bc7",
+      "imports": [
+        "G1OriginalSpanBridgeBookends"
+      ],
+      "module": "G1OriginatedBridgeBookends",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/677c2374f8cf6d9a3ead865c0864b343cd5f84dd3ad19ca8e4f132d229c9b1dc.lean",
+      "sha256": "677c2374f8cf6d9a3ead865c0864b343cd5f84dd3ad19ca8e4f132d229c9b1dc"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4861,
+      "git_blob": "2a61741f756381f1c8ee851468fe2c7eb67c766b",
+      "imports": [
+        "G1OriginatedSpanRegistryAdmission"
+      ],
+      "module": "G1OriginatedBridgeCalendarAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7caf3ff8e69d52b8edb0fecfb458e7192beea45ec3e5268472f355201b7c3741.lean",
+      "sha256": "7caf3ff8e69d52b8edb0fecfb458e7192beea45ec3e5268472f355201b7c3741"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6197,
+      "git_blob": "9a0cd1f5c21a7698567a92c218d66c82d517e57e",
+      "imports": [
+        "G1OriginalExteriorCohort"
+      ],
+      "module": "G1OriginatedClosingSourceAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6123fa0fd4f8d2fd0d1e336f3c2b6d9df034073a4f19d4a8cd5066e0a49d1052.lean",
+      "sha256": "6123fa0fd4f8d2fd0d1e336f3c2b6d9df034073a4f19d4a8cd5066e0a49d1052"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6284,
+      "git_blob": "d11344756b6328c435dc224301508d4ebc87f1c2",
+      "imports": [
+        "G1OriginalSpanRegion"
+      ],
+      "module": "G1OriginatedNeutralSpanRegion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6630efd901272a71c12676a180259d1735ad3960b9f58dec5c87c20b44625780.lean",
+      "sha256": "6630efd901272a71c12676a180259d1735ad3960b9f58dec5c87c20b44625780"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6376,
+      "git_blob": "767df1180ac77ef3cf17d588375c639b5cb22028",
+      "imports": [
+        "G1OriginalMultiSpanCalendarRow"
+      ],
+      "module": "G1OriginatedSpanRegistryAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ba0b56a224f6326cbb4d8ff5f53dadeca33d4436abf70841972e235cec914db6.lean",
+      "sha256": "ba0b56a224f6326cbb4d8ff5f53dadeca33d4436abf70841972e235cec914db6"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2045,
+      "git_blob": "aeacb730cb3d3e3ea19ea0da7cd2e2e813fd8b50",
+      "imports": [
+        "G1OriginatedClosingSourceAdmission"
+      ],
+      "module": "G1OriginatedTaxonReachTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9dfeacea67099dedb4bf6db52dd323a7ff46e8d9c6584ff852c5b714a1e7d6c0.lean",
+      "sha256": "9dfeacea67099dedb4bf6db52dd323a7ff46e8d9c6584ff852c5b714a1e7d6c0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6487,
+      "git_blob": "f42a9c4f66331bc8942d676d3c078d4fe78d70ad",
+      "imports": [
+        "G1ReducedQuotientGeometry"
+      ],
+      "module": "G1ReducedCoreCounts",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4b27351e7177dc46557210aa1dd2f75e1507863ff2885456d0c65eb40e787334.lean",
+      "sha256": "4b27351e7177dc46557210aa1dd2f75e1507863ff2885456d0c65eb40e787334"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5158,
+      "git_blob": "97d4bf9764cdefe96b2fa47b2244e8fe2fbd9021",
+      "imports": [
+        "G1ActualGraphNormalization",
+        "GraphPortConsequences"
+      ],
+      "module": "G1ReducedQuotientGeometry",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/2e967cbf8b6a05ad4f35f064fb379aebddca352991e69f0cd3b4dbf44ce1adf3.lean",
+      "sha256": "2e967cbf8b6a05ad4f35f064fb379aebddca352991e69f0cd3b4dbf44ce1adf3"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5673,
+      "git_blob": "09bffcf4230c4c7be1eb780b612a022616c1d56e",
+      "imports": [
+        "G1RepeatedOriginalExteriorHistoryMacros"
+      ],
+      "module": "G1RepeatedExteriorHistoryActualCompletion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/54c42da632471ddfc799f73d2d9dab88feba67724e6a535821c65c52335f90f5.lean",
+      "sha256": "54c42da632471ddfc799f73d2d9dab88feba67724e6a535821c65c52335f90f5"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9063,
+      "git_blob": "f75815d4a7686355faf47823b70cf5d967b10270",
+      "imports": [
+        "G1OriginalHistoryQuotient"
+      ],
+      "module": "G1RepeatedOriginalExteriorHistoryMacros",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8191f0f84d8ac0a988245b2cf2f4245554517f430b11413786572259ab7eeb35.lean",
+      "sha256": "8191f0f84d8ac0a988245b2cf2f4245554517f430b11413786572259ab7eeb35"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8346,
+      "git_blob": "ac35f1ab6ae81048623c46eb023a1fed3ea5a96d",
+      "imports": [
+        "G1SourceMacroInterfaceHistory"
+      ],
+      "module": "G1SourceMacroActualCompletion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/1598b63301ecdd51c819da50fe3a907fc2bd3421d0a4e7b1c741af6958d7e185.lean",
+      "sha256": "1598b63301ecdd51c819da50fe3a907fc2bd3421d0a4e7b1c741af6958d7e185"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8476,
+      "git_blob": "ef4073b2850082114bc2f4928364c3f5ad543b35",
+      "imports": [
+        "G1ActualSourceKMacroTransition"
+      ],
+      "module": "G1SourceMacroComposition",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8b10d348d6b4b3d4955a0d899522b242caad0bfe94ca3ff2a9f506df90261337.lean",
+      "sha256": "8b10d348d6b4b3d4955a0d899522b242caad0bfe94ca3ff2a9f506df90261337"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4920,
+      "git_blob": "ce5c7b1d847c9037ea6f236a50b19dc056c48d2b",
+      "imports": [
+        "G1SourceMacroComposition"
+      ],
+      "module": "G1SourceMacroInterfaceHistory",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/47bf7f6c3a3d7cd74c43260ecbcac49db4cb6523ba2038f163f837875f10d36c.lean",
+      "sha256": "47bf7f6c3a3d7cd74c43260ecbcac49db4cb6523ba2038f163f837875f10d36c"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3860,
+      "git_blob": "783c873c54dfa295f7b7cfd0c380afd057ad5204",
+      "imports": [
+        "G1OriginatedNeutralSpanRegion"
+      ],
+      "module": "G1SpanRegionExitClosure",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/c1949b545e1c71e2d70e3e1560968b8e180c5899593240f534a3b0b8e0ab6da4.lean",
+      "sha256": "c1949b545e1c71e2d70e3e1560968b8e180c5899593240f534a3b0b8e0ab6da4"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4301,
+      "git_blob": "b9bf2b87a35f0388487091f7730dc3d646cc2948",
+      "imports": [
+        "G1SpanRegionExitClosure"
+      ],
+      "module": "G1SpanRegionOriginalOperations",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/1bca6b7433d93f11fe3b34105097243c96b68b475303d55af4d33bf6f2eb0fc9.lean",
+      "sha256": "1bca6b7433d93f11fe3b34105097243c96b68b475303d55af4d33bf6f2eb0fc9"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8638,
+      "git_blob": "b06165ba9570be863ed0158c68df50035241779e",
+      "imports": [
+        "G1BigonSpliceGraph"
+      ],
+      "module": "G1SpliceCutTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5044ecfc4ddfde0b6d3b3a17bf80bf564aae68f23d9b47fdfb6f87059f6002ec.lean",
+      "sha256": "5044ecfc4ddfde0b6d3b3a17bf80bf564aae68f23d9b47fdfb6f87059f6002ec"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9444,
+      "git_blob": "0305d1f003ffc3662ae0c538910cda0df0df5cf3",
+      "imports": [
+        "G1SpliceRootBlob"
+      ],
+      "module": "G1SpliceDegrees",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cc7e4eaba214a2a53be7499f49e5b36432b362500ae5886e90e7194b67eb008c.lean",
+      "sha256": "cc7e4eaba214a2a53be7499f49e5b36432b362500ae5886e90e7194b67eb008c"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9943,
+      "git_blob": "0e8d90f390f165e01f13e69a7307e5f44fd7e412",
+      "imports": [
+        "G1SpliceDegrees"
+      ],
+      "module": "G1SpliceLSA",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/112275cf0315d578fe4022be4e2f47bfe99493df84e08234f2ca7a3687ff83f1.lean",
+      "sha256": "112275cf0315d578fe4022be4e2f47bfe99493df84e08234f2ca7a3687ff83f1"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7736,
+      "git_blob": "83f510b0064625ced924b1faae6a7ea70ac9dcb1",
+      "imports": [
+        "G1SpliceCutTransport"
+      ],
+      "module": "G1SpliceRootBlob",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6e6380769ec684373a13adcdd56f14368a0bf3ba542dd65f181c650b80f2d8f3.lean",
+      "sha256": "6e6380769ec684373a13adcdd56f14368a0bf3ba542dd65f181c650b80f2d8f3"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6713,
+      "git_blob": "ae083382d6b57007cd49b23ad6b863b3daca3591",
+      "imports": [
+        "G1SplicedSourceAdmission",
+        "SourceResolve"
+      ],
+      "module": "G1SplicedOriginalSwitching",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e350c5d7f8103c9a50f14fd315b53a21d232b646e4a2b65d3ea7c1bf905a4127.lean",
+      "sha256": "e350c5d7f8103c9a50f14fd315b53a21d232b646e4a2b65d3ea7c1bf905a4127"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5499,
+      "git_blob": "78e0892af560799df373efc63e1ffaf23022a12c",
+      "imports": [
+        "G1SpliceLSA",
+        "Mathlib.Data.Fintype.Sum"
+      ],
+      "module": "G1SplicedSourceAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9.lean",
+      "sha256": "d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6544,
+      "git_blob": "706b1545c8d92e857616aa1d6abcfc3add062e81",
+      "imports": [
+        "G1SplicedOriginalSwitching"
+      ],
+      "module": "G1SwitchingDescendantTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d49fb30742f2ea031c2db854daf5882516cc18ae550e13d4ed5460e0c0d0f2b7.lean",
+      "sha256": "d49fb30742f2ea031c2db854daf5882516cc18ae550e13d4ed5460e0c0d0f2b7"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7501,
+      "git_blob": "a164a91596b32002dce88d94be5927262a150467",
+      "imports": [
+        "G1OriginalForestKOnlyInsertion"
+      ],
+      "module": "G1UnrankedExteriorHistoryKInsertion",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8071e3d71347a8fe0b215e77867ec71a95e9df9b0820e5d1d22c640e4310ecef.lean",
+      "sha256": "8071e3d71347a8fe0b215e77867ec71a95e9df9b0820e5d1d22c640e4310ecef"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6898,
+      "git_blob": "ca9317c59c4c19d127dd3360bd782000cab64387",
+      "imports": [
+        "G1UnrankedActualFuture"
+      ],
+      "module": "G1UnrankedSingleExitLabel",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b077103e6b424cc02536c4df5eb91099ab66dd51bffd4f2e7f41e5db1e01f29f.lean",
+      "sha256": "b077103e6b424cc02536c4df5eb91099ab66dd51bffd4f2e7f41e5db1e01f29f"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8703,
+      "git_blob": "e8e1db10ca521fff34cec38230d013990efdb970",
+      "imports": [
+        "G5BinaryRootSuppressedCutEncoding",
+        "UnifiedLean.Source.UnrankedGenealogyObservation"
+      ],
+      "module": "G1UnrankedTreeClusterUniqueness",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ee2a44ab61cc8f240e39618a268a7e6dd84f32814734f7c6e717f9a57bd39008.lean",
+      "sha256": "ee2a44ab61cc8f240e39618a268a7e6dd84f32814734f7c6e717f9a57bd39008"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2660,
+      "git_blob": "4c0dc5fb14617316fa1b2457b51e1b48e24d77ac",
+      "imports": [
+        "G2CompleteTimedSupport",
+        "G2TimedDecorationPruning"
+      ],
+      "module": "G2ChronologicalPruning",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/7fb5a717568ac5c709663585ea55e994a8b98ac6e424848356024a68149c98d8.lean",
+      "sha256": "7fb5a717568ac5c709663585ea55e994a8b98ac6e424848356024a68149c98d8"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5110,
+      "git_blob": "7f30abf8131c6a97805591c6820eca604b9f2538",
+      "imports": [
+        "G2SourcePairMatrixReadout"
+      ],
+      "module": "G2CompleteTerminalReadout",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f7235d98732b30f3041e15d076ceb07771bd5c33879b8755550e724e0f0dfab8.lean",
+      "sha256": "f7235d98732b30f3041e15d076ceb07771bd5c33879b8755550e724e0f0dfab8"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7559,
+      "git_blob": "614fcd83dad88180c204c9d420de96374fbebe77",
+      "imports": [
+        "G2CompleteTerminalReadout"
+      ],
+      "module": "G2FaithfulTimedOutput",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/476e2ef1e3bc0d3d14871fdde32852a310f27a4b9b36673f3e864b5d87f282ac.lean",
+      "sha256": "476e2ef1e3bc0d3d14871fdde32852a310f27a4b9b36673f3e864b5d87f282ac"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3998,
+      "git_blob": "f25bfc8eee99ee5205c8dae5a06a4d47f7105030",
+      "imports": [
+        "G2FaithfulTimedOutput"
+      ],
+      "module": "G2LiteralTimedObservationPruning",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/223224ab6002d510076d99da42a11f8ca1724d8266b0fc7a5cdd2d25628c31b7.lean",
+      "sha256": "223224ab6002d510076d99da42a11f8ca1724d8266b0fc7a5cdd2d25628c31b7"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4371,
+      "git_blob": "f146450574c4b562c58e8421d5ab3e5bbd916bcf",
+      "imports": [
+        "G2ChronologicalPruning"
+      ],
+      "module": "G2SourcePairMatrixReadout",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d2323c4797ac682927ab2e4008b803d701fc5ce8963a4ae0a89f9649fa7cddce.lean",
+      "sha256": "d2323c4797ac682927ab2e4008b803d701fc5ce8963a4ae0a89f9649fa7cddce"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7023,
+      "git_blob": "bdf127e454f1a4493e43a5bdb180e348fe1ff0a6",
+      "imports": [
+        "G2FaithfulPairAgeDecoration"
+      ],
+      "module": "G2TimedDecorationPruning",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/1cdef90418524400b3fed31ff6426afca569e1677331553972c8a8e66401e56d.lean",
+      "sha256": "1cdef90418524400b3fed31ff6426afca569e1677331553972c8a8e66401e56d"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 29824,
+      "git_blob": "230d6073bd20c74c8d07f473b4c7c0d7a592448c",
+      "imports": [
+        "G4ActualObservableBankCertificate",
+        "UnifiedLean.Source.SourceUnrankedAllPanels",
+        "G2LiteralTimedObservationPruning"
+      ],
+      "module": "G4ActualLegalPanelComb",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4fd78fc530e103512f4dc98a7e60ac2d592ad666e7feac17b5ab1456f1a961c9.lean",
+      "sha256": "4fd78fc530e103512f4dc98a7e60ac2d592ad666e7feac17b5ab1456f1a961c9"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 30125,
+      "git_blob": "19e8c324cb1249252d566ad235f05323d6425034",
+      "imports": [
+        "G4ActualLegalPanelComb",
+        "G5CommonSwitchingQuartetWitness",
+        "G1InitializedFrontierPrefix",
+        "G7EdgeExposureAccounting"
+      ],
+      "module": "G4ActualSelectedPathExposure",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992.lean",
+      "sha256": "44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 153015,
+      "git_blob": "389a66f88daf3f6d3a9155e88a0fd489b9565374",
+      "imports": [
+        "UnifiedLean.Source.FiniteGenealogyEncoding",
+        "SourceForestKingmanProjection",
+        "UnifiedLean.Source.SourcePoissonExponential",
+        "UnifiedLean.Source.SourceCompletedUnrankedTree",
+        "G5CommonSwitchingQuartetWitness",
+        "G5OriginalProgramSurvival",
+        "G6GuardedBinErasure",
+        "ActualStoredRegister",
+        "G4ActualCommonSelectorSupport",
+        "G4ActualSelectedPathExposure",
+        "G7OrderedFrontierProduct",
+        "G1ActualDisplayedTreeFamily",
+        "G7OriginalEdgeOperators",
+        "G7AncestralPolynomialKernel",
+        "UnifiedLean.Source.SourceCompletionHarmonic",
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "UnifiedLean.Source.OriginalFixedIDControls",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "module": "G4WeightedOrdinaryTreeLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9.lean",
+      "sha256": "edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 187616,
+      "git_blob": "5a866bc90937ae00981a0f1305a58a07704036e4",
+      "imports": [
+        "G4WeightedOrdinaryTreeLaw",
+        "G4ActualPositiveGridUniqueness",
+        "G7SinglePopulationPolynomialKernel",
+        "Mathlib.Algebra.MvPolynomial.Funext"
+      ],
+      "module": "G4WholeProfileDetermination",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7487,
+      "git_blob": "aa9273b72164718b6dab18c878b61be27eb1872c",
+      "imports": [
+        "G5SafeCommonGroupQuartetTransfer",
+        "G5SynchronizedObservableChronology"
+      ],
+      "module": "G5AllAgeSafeQuartetTransfer",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f30848afde5d901cd3d67b607f17650304fab5dcedbfaf357d9ab27949bdfdad.lean",
+      "sha256": "f30848afde5d901cd3d67b607f17650304fab5dcedbfaf357d9ab27949bdfdad"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8151,
+      "git_blob": "c640ac4931dceda61902f6f710491ab41081ff56",
+      "imports": [
+        "G5ObservableSafePairSupport"
+      ],
+      "module": "G5AncestralObservedPairGerm",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/6ee99d4070d146479718d6016c7abcb09c3f7ea845a83909c3fa450f1df3dfbd.lean",
+      "sha256": "6ee99d4070d146479718d6016c7abcb09c3f7ea845a83909c3fa450f1df3dfbd"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6036,
+      "git_blob": "8594b8f5cf5e4eb75001796994754496a5a27b4b",
+      "imports": [
+        "G5NormalizedSwitchingQuartetCompatibility"
+      ],
+      "module": "G5BinaryRootSuppressedCutEncoding",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/afdbc8769b0eb410ae0a497e7074eca87efd82bbd8c57cbfa4a2b2e5207bb9e4.lean",
+      "sha256": "afdbc8769b0eb410ae0a497e7074eca87efd82bbd8c57cbfa4a2b2e5207bb9e4"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9888,
+      "git_blob": "4e3d135440d39dbc1a81fd4abadf2c8399b674e5",
+      "imports": [
+        "G5AllAgeSafeQuartetTransfer",
+        "G5SharedObservableDeletionTrace"
+      ],
+      "module": "G5ChronologicalQuartetWitnessTransfer",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/df6c2f5c2d649229caea74b886c15e478bd98d8760771b8dd46d21b93f511a76.lean",
+      "sha256": "df6c2f5c2d649229caea74b886c15e478bd98d8760771b8dd46d21b93f511a76"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7666,
+      "git_blob": "cf3752d2c3fb852e2c0b803cb872f4a7acc74b24",
+      "imports": [
+        "G5BinaryRootSuppressedCutEncoding",
+        "G5FairRawQuartetIdentificationFiniteLabels"
+      ],
+      "module": "G5FairNormalizedCutQuartetIdentification",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4cb9e6f925eb065b398bf4ba12c24fd40c4cf6b56892a461f454c19ca29a82f4.lean",
+      "sha256": "4cb9e6f925eb065b398bf4ba12c24fd40c4cf6b56892a461f454c19ca29a82f4"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6649,
+      "git_blob": "25d9f1ba92ffb9a4a1cf42753fabdc9e0fe6ed4d",
+      "imports": [
+        "G5ChronologicalQuartetWitnessTransfer"
+      ],
+      "module": "G5FairRawDisplayedQuartetIdentification",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3e1aa2e1258a5ef2e82f877b3dd653a478c9319a4a54a4c6906743960b2a5eaa.lean",
+      "sha256": "3e1aa2e1258a5ef2e82f877b3dd653a478c9319a4a54a4c6906743960b2a5eaa"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2705,
+      "git_blob": "e533ea49f44fd9d4905e9112e6d3b5de87b6061c",
+      "imports": [
+        "G5FairRawDisplayedQuartetIdentification"
+      ],
+      "module": "G5FairRawQuartetIdentificationFiniteLabels",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/13c929ac5bddb88eac6f1d450d2e63bf79bb22c032fd569aa8723761f951e6d3.lean",
+      "sha256": "13c929ac5bddb88eac6f1d450d2e63bf79bb22c032fd569aa8723761f951e6d3"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7473,
+      "git_blob": "e869a877835358a0d30ec91f4c68fe0a48a519b6",
+      "imports": [
+        "G5OriginalPruningClusterPreservation",
+        "G5ComponentCalendarCoverage"
+      ],
+      "module": "G5NormalizedSwitchingQuartetCompatibility",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/11830f30edf2ad2d9337de3a6074b0d67816fd31a1ee1443cb48f7296bcf89b0.lean",
+      "sha256": "11830f30edf2ad2d9337de3a6074b0d67816fd31a1ee1443cb48f7296bcf89b0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7650,
+      "git_blob": "a7dda820e3d4529c99056adc0ff66bc693e9f9f0",
+      "imports": [
+        "G5OriginalSwitchingPruning"
+      ],
+      "module": "G5OriginalPruningClusterPreservation",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/57a04161dd1fb0cdc9f095c039dbb7ece4b802c621e631fd352c1bb3c74bba75.lean",
+      "sha256": "57a04161dd1fb0cdc9f095c039dbb7ece4b802c621e631fd352c1bb3c74bba75"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7006,
+      "git_blob": "71d147dff26ab5b4bbd12bf2c01e3dbb43174367",
+      "imports": [
+        "SourceResolve",
+        "SourceLabelledForest",
+        "G5CalendarRoutes"
+      ],
+      "module": "G5OriginalSwitchingPruning",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/23af55d7e9328e5ce75bfe904a96f76ad302861e2c9d52d6c748067f2240edbe.lean",
+      "sha256": "23af55d7e9328e5ce75bfe904a96f76ad302861e2c9d52d6c748067f2240edbe"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8619,
+      "git_blob": "c635dc1690d314ea49c76b8ad13170ad24b3b154",
+      "imports": [
+        "G5SafeCommonGroupSelector",
+        "UnifiedLean.Source.NativePairCalendarObservation"
+      ],
+      "module": "G5SafeCommonGroupQuartetTransfer",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/0452de9cd3f35ee18b8cacc403163c6452bdd84f828d98775e8f50a73a4e8301.lean",
+      "sha256": "0452de9cd3f35ee18b8cacc403163c6452bdd84f828d98775e8f50a73a4e8301"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5059,
+      "git_blob": "26190941d54f78a2def33f7c2f99e3ca49fc8e57",
+      "imports": [
+        "G5SynchronizedObservableChronology",
+        "G5OriginalGroupPathChronology"
+      ],
+      "module": "G5SharedObservableDeletionTrace",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cdfeec7980f1bf1fa80a33d2971cec3ad8e8359c1cf21c132740b0e7ef9af745.lean",
+      "sha256": "cdfeec7980f1bf1fa80a33d2971cec3ad8e8359c1cf21c132740b0e7ef9af745"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 16175,
+      "git_blob": "37f3ab260f56ae196fdf590c45d253b59528504f",
+      "imports": [
+        "G5AncestralObservedPairGerm"
+      ],
+      "module": "G5SynchronizedObservableChronology",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ca0163207ee14a91e199494632cd36297de914df50b4061c5f9ea77bc87f5568.lean",
+      "sha256": "ca0163207ee14a91e199494632cd36297de914df50b4061c5f9ea77bc87f5568"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 12098,
+      "git_blob": "97cf2512c086e5937d378c44da448290158254e6",
+      "imports": [
+        "G6ProtectedBinEndpoint",
+        "NaturalCalendarPastAdmission"
+      ],
+      "module": "G6GuardedBinErasure",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/65b78157176670b3ddd775217fa1d9f9a79ee038b720d4ed13eb4d7472e8488d.lean",
+      "sha256": "65b78157176670b3ddd775217fa1d9f9a79ee038b720d4ed13eb4d7472e8488d"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 11161,
+      "git_blob": "554cd39cce522b7a7a6601648bd887af4e5c2135",
+      "imports": [
+        "G6SelectedBinHistory",
+        "G1KOnlyCurrentRootExitView",
+        "G1FiniteTwoPortChain"
+      ],
+      "module": "G6ProtectedBinEndpoint",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/2e7c9ef60485011dc1fd73b645c7bb8e3d3a8ee46f1e630c56b54925b28fa827.lean",
+      "sha256": "2e7c9ef60485011dc1fd73b645c7bb8e3d3a8ee46f1e630c56b54925b28fa827"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8714,
+      "git_blob": "e26ff7a202e6bf062a32ce6e9c5a5282c1bca1c1",
+      "imports": [
+        "ActualCalendarEndpointHistory",
+        "G7SelectedCompletionPolynomial",
+        "UnifiedLean.Source.UnrankedGenealogyObservation"
+      ],
+      "module": "G6SelectedBinHistory",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/37972ba160a5f81daae2d6419fa5923273b72d0a79251bf7a9f8e2654e824f90.lean",
+      "sha256": "37972ba160a5f81daae2d6419fa5923273b72d0a79251bf7a9f8e2654e824f90"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7282,
+      "git_blob": "05a099357f136f7864007e63b0f7f483bda3d999",
+      "imports": [
+        "G7OriginalEdgeGathering"
+      ],
+      "module": "G7ActualCalendarGathering",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ec271199665087f27cbfe0e014ab2607c48348ebb4e0679f52402963e09d9ec7.lean",
+      "sha256": "ec271199665087f27cbfe0e014ab2607c48348ebb4e0679f52402963e09d9ec7"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2029,
+      "git_blob": "62dd14ab844162c4688e063e581d9aa16aec66ca",
+      "imports": [
+        "G7GlobalOwnerCoins"
+      ],
+      "module": "G7BoundaryExitCommutation",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/735b155e36f9654676953f8a0f3e6bf85ac81b469e2bf9efd24c2aebf9d0eeda.lean",
+      "sha256": "735b155e36f9654676953f8a0f3e6bf85ac81b469e2bf9efd24c2aebf9d0eeda"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3555,
+      "git_blob": "8f8d4dafb6017fcc2d440484e65ad9145a003b65",
+      "imports": [
+        "G7NodeActions",
+        "G7BoundaryExitCommutation"
+      ],
+      "module": "G7BoundaryPhasePermutation",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fea51a87be89f084752b22df8c52ae345515f1a0986cd0475d1a4be09453b4cf.lean",
+      "sha256": "fea51a87be89f084752b22df8c52ae345515f1a0986cd0475d1a4be09453b4cf"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6331,
+      "git_blob": "a8d42f4fd378889f8a1b03835488a68beabadc8c",
+      "imports": [
+        "G7SnapshotRelabelling",
+        "G7CoinReindexing"
+      ],
+      "module": "G7BoundaryRelabelling",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d10eb8af3f73675bd8567801bfc3133bced8fa180b913f6ffa24c2726042e00f.lean",
+      "sha256": "d10eb8af3f73675bd8567801bfc3133bced8fa180b913f6ffa24c2726042e00f"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 11445,
+      "git_blob": "d557e3ff9fd55d9a345325d3eb777e0594a46b42",
+      "imports": [
+        "G7EdgeExposureAccounting",
+        "UnifiedLean.Source.SourceCalendarTiming"
+      ],
+      "module": "G7CalendarExposureClosedForm",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/2219717f88d723114683e9a440dd06c71dfb0646b8ccd2e0f1756df5cb52d585.lean",
+      "sha256": "2219717f88d723114683e9a440dd06c71dfb0646b8ccd2e0f1756df5cb52d585"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3180,
+      "git_blob": "8acd9e0105b416398ebd5b3dd0629bf7189fa905",
+      "imports": [
+        "G7OriginalRelabelling",
+        "UnifiedLean.Source.SourceBoundaryKernels",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ],
+      "module": "G7CoinReindexing",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a11ce95779a8b7beec03539a63fb2a2c940d4e5dfcdaa4d14351e67f2dfab049.lean",
+      "sha256": "a11ce95779a8b7beec03539a63fb2a2c940d4e5dfcdaa4d14351e67f2dfab049"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 11565,
+      "git_blob": "a95402102dd7bd4818e00dfa06028d361dd7c88e",
+      "imports": [
+        "G7ActualCalendarGathering"
+      ],
+      "module": "G7EdgeExposureAccounting",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/786e16b4bcd19de06b338820f905803209fc4e0a36f08a8c00e347a9a8caed1a.lean",
+      "sha256": "786e16b4bcd19de06b338820f905803209fc4e0a36f08a8c00e347a9a8caed1a"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 2224,
+      "git_blob": "446a234ddd8e90e36c8d0caf08fd7e6ab90e1ffa",
+      "imports": [
+        "G7BoundaryRelabelling"
+      ],
+      "module": "G7GlobalOwnerCoins",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a8ce7af87d48354493a9a5b6ce283fcfb0116f3a51ef8ecc10fc872784edca1a.lean",
+      "sha256": "a8ce7af87d48354493a9a5b6ce283fcfb0116f3a51ef8ecc10fc872784edca1a"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 11344,
+      "git_blob": "b5566b264f6f17afb008f9a059c3cd6db8e3f177",
+      "imports": [
+        "G7GlobalOwnerCoins",
+        "UnifiedLean.Source.SourceCalendarCompiler"
+      ],
+      "module": "G7NodeActions",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/478d9505249525e3710c5ed1bf4e1c3d8b107c217b88d8f86d9863fd959c0967.lean",
+      "sha256": "478d9505249525e3710c5ed1bf4e1c3d8b107c217b88d8f86d9863fd959c0967"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 12837,
+      "git_blob": "cd1f9a31013ff19e8c223e405670cc22284182ed",
+      "imports": [
+        "G7CalendarExposureClosedForm",
+        "G7BoundaryPhasePermutation",
+        "Mathlib.Data.List.Perm.Basic"
+      ],
+      "module": "G7OrderedFrontierProduct",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f41429ea4f33e5bee5218097f2ecf8b553ecf5439fc7acb58ed24bea0d665617.lean",
+      "sha256": "f41429ea4f33e5bee5218097f2ecf8b553ecf5439fc7acb58ed24bea0d665617"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4894,
+      "git_blob": "3d1d121b4f88a0ee5ef6115ab84ec211139516f0",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Data.Fintype.EquivFin"
+      ],
+      "module": "G7OriginalCensus",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517.lean",
+      "sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 15297,
+      "git_blob": "f5651952a9c97ab8e20a121edcb4ad20c932a24f",
+      "imports": [
+        "G7OriginalEdgeOperators",
+        "UnifiedLean.Source.SourceBoundaryLocations"
+      ],
+      "module": "G7OriginalEdgeBoundary",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a0d841a86484004739f54468e0534c08bb87015083b32dafa89ddf122bb99cb9.lean",
+      "sha256": "a0d841a86484004739f54468e0534c08bb87015083b32dafa89ddf122bb99cb9"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 15325,
+      "git_blob": "4bb4b37c7adad2811c323b34de0bc3d82db47cdc",
+      "imports": [
+        "G7OriginalEdgeBoundary",
+        "UnifiedLean.Source.SourceNaturalInitialization"
+      ],
+      "module": "G7OriginalEdgeGathering",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9c264e9bde19de8401dbf998ba39b23785f7a91378251d26b0a3001a462a5d8a.lean",
+      "sha256": "9c264e9bde19de8401dbf998ba39b23785f7a91378251d26b0a3001a462a5d8a"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 17295,
+      "git_blob": "1d72670ad7f3b36f5040e49422ecbe0d19f9703d",
+      "imports": [
+        "G7NodeActions",
+        "G7BoundaryExitCommutation",
+        "G7SinglePopulationPolynomialKernel",
+        "UnifiedLean.Source.SourceEpochSemigroup",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "module": "G7OriginalEdgeOperators",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b095b41a14fe06228cd07a257a5f6d6af02ac8ccf92f7b7f99d1d8e6fd4ac4a8.lean",
+      "sha256": "b095b41a14fe06228cd07a257a5f6d6af02ac8ccf92f7b7f99d1d8e6fd4ac4a8"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 11573,
+      "git_blob": "05a7dd76a3b932bfc4825b8f10b7262c8f975ed1",
+      "imports": [
+        "G7OriginalCensus",
+        "UnifiedLean.Source.NativePairClockLaw",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "module": "G7OriginalRelabelling",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0.lean",
+      "sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 3639,
+      "git_blob": "074eed10b9a304f56f27e3eddeaaaffebacf90f9",
+      "imports": [
+        "G7SourceStateRelabelling",
+        "UnifiedLean.Source.FiniteSourceSnapshot",
+        "UnifiedLean.Source.UniformizedSourceStep"
+      ],
+      "module": "G7SnapshotRelabelling",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cabdfe7caf9e2161b0e3c84d33a6ed388f6b4c00e529023eac0077803250cb7f.lean",
+      "sha256": "cabdfe7caf9e2161b0e3c84d33a6ed388f6b4c00e529023eac0077803250cb7f"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8635,
+      "git_blob": "04310eb8ecf1137aa2cacf7adb59616e5aab6e42",
+      "imports": [
+        "G7OriginalRelabelling",
+        "SourceLabelledForest"
+      ],
+      "module": "G7SourceStateRelabelling",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3181b57b5a5511a837df2b05d9d6e332e485959ca571f6d85862cfc9a11e5d14.lean",
+      "sha256": "3181b57b5a5511a837df2b05d9d6e332e485959ca571f6d85862cfc9a11e5d14"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 950,
+      "git_blob": "5bf363f6717289f1ceead31941df587487aceb9c",
+      "imports": [
+        "GraphTreePorts"
+      ],
+      "module": "GraphPortConsequences",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9533c42170e0e3d65b460b1dfe0b233e6b684f4e5f36ff469112f236a6ac0e8d.lean",
+      "sha256": "9533c42170e0e3d65b460b1dfe0b233e6b684f4e5f36ff469112f236a6ac0e8d"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 3356,
+      "git_blob": "edac9370c37edfce33e7b71efe70e2b541ef8ad8",
+      "imports": [
+        "Mathlib.Algebra.Polynomial.RingDivision",
+        "Mathlib.Algebra.Polynomial.Roots",
+        "Mathlib.Algebra.MvPolynomial.CommRing",
+        "Mathlib.Algebra.MvPolynomial.Polynomial",
+        "Mathlib.Algebra.MvPolynomial.Rename"
+      ],
+      "module": "Mathlib.Algebra.MvPolynomial.Funext",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cb1821884a139917b692103a0b267115179cd4e7084da5487857ec49abb0cc7e.lean",
+      "sha256": "cb1821884a139917b692103a0b267115179cd4e7084da5487857ec49abb0cc7e"
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 1286,
+      "git_blob": "cdb9754b529c499e7b53514526df99addf91e186",
+      "imports": [
+        "Mathlib.Algebra.MvPolynomial.Equiv"
+      ],
+      "module": "Mathlib.Algebra.MvPolynomial.Polynomial",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/43330a5e928a56af89b209101f98be347937384d2d435f875e2eaff698ccd650.lean",
+      "sha256": "43330a5e928a56af89b209101f98be347937384d2d435f875e2eaff698ccd650"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 19672,
+      "git_blob": "e56984e38482ed0777f7fc7ad405d61f88a8c67a",
+      "imports": [
+        "ActualObservationCutRefinement",
+        "PrivateSeedHistoryFactorization",
+        "UnifiedLean.G6.PrivateRegisterCalendarPrefix"
+      ],
+      "module": "NaturalCalendarPastAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/c2066c3e9ce58fccd4f78e2db982dcb92d5a905c34c8d6c01c6b6802755b66b1.lean",
+      "sha256": "c2066c3e9ce58fccd4f78e2db982dcb92d5a905c34c8d6c01c6b6802755b66b1"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4730,
+      "git_blob": "b7a6c11a3719bd52b42c57e8622155735f189169",
+      "imports": [
+        "UnifiedLean.G6.FiniteProbability"
+      ],
+      "module": "UnifiedLean.G6.Conditioning",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91.lean",
+      "sha256": "b12f8aaf83ff17b14f9d616dcbb906ae130a00d15685851c9b84eaf15ae95d91"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4517,
+      "git_blob": "bba1e21e9cf282ed88852a8a0c294eb9bb554852",
+      "imports": [
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ],
+      "module": "UnifiedLean.G6.FiniteProbability",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3.lean",
+      "sha256": "9a2bd3035539406b5ee5fafa08c7dca3d5bddbcbbbe1156d328ada81a37ba1c3"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8069,
+      "git_blob": "c22db27e8dd9c4d15d5fd7d225c2d252a7f775e8",
+      "imports": [
+        "UnifiedLean.G6.ProgramPrefix",
+        "G2SourceFiniteHistory"
+      ],
+      "module": "UnifiedLean.G6.HistoryPrefix",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e8fdd3d4973b79730ef5931734f007e1bfc73d04fdcbd656e30342638a2930d7.lean",
+      "sha256": "e8fdd3d4973b79730ef5931734f007e1bfc73d04fdcbd656e30342638a2930d7"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 10408,
+      "git_blob": "4d5f5de4e255b0295f76ccfa481d14ceaaf8fe3f",
+      "imports": [
+        "UnifiedLean.G6.SourcePrefix",
+        "UnifiedLean.Source.SourceProgramTransport"
+      ],
+      "module": "UnifiedLean.G6.ProgramPrefix",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb.lean",
+      "sha256": "a3abfb604730e227eb543faf2f280a656bab74d27787d87c3f2327082306a5bb"
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6727,
+      "git_blob": "f5598d508d9495eac5130b15663a3f027142e0a7",
+      "imports": [
+        "UnifiedLean.G6.Conditioning",
+        "UnifiedLean.Source.SourcePoissonExponential"
+      ],
+      "module": "UnifiedLean.G6.SourcePrefix",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314.lean",
+      "sha256": "3541c469c821f9f61c3aeebe0baa99456bbfc6db95e4f47fc0cd7913da208314"
+    }
+  ],
+  "delta_count": 150,
+  "delta_research_count": 148,
+  "delta_owned_mathlib_count": 2,
+  "delta_source_bytes": 1395066,
+  "body_authentication": {
+    "all_selected_source_bodies_sha256_git_blob_and_length_match": true,
+    "authenticated_count": 469,
+    "all_selected_literal_imports_match_graph": true,
+    "import_check_method": "Static text after nested Lean comment removal; this is not Lean --deps.",
+    "official_compiler_query_executed": false
+  },
+  "direct_external_roots": [
+    "Lean.Elab.Tactic.Omega",
+    "Mathlib.Algebra.BigOperators.Field",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Powerset",
+    "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+    "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.MvPolynomial.CommRing",
+    "Mathlib.Algebra.MvPolynomial.Equiv",
+    "Mathlib.Algebra.MvPolynomial.Eval",
+    "Mathlib.Algebra.MvPolynomial.Rename",
+    "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+    "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+    "Mathlib.Algebra.Polynomial.Basic",
+    "Mathlib.Algebra.Polynomial.Degree.Defs",
+    "Mathlib.Algebra.Polynomial.Degree.Operations",
+    "Mathlib.Algebra.Polynomial.EraseLead",
+    "Mathlib.Algebra.Polynomial.Eval.Defs",
+    "Mathlib.Algebra.Polynomial.FieldDivision",
+    "Mathlib.Algebra.Polynomial.Monic",
+    "Mathlib.Algebra.Polynomial.RingDivision",
+    "Mathlib.Algebra.Polynomial.Roots",
+    "Mathlib.Analysis.Asymptotics.AsymptoticEquivalent",
+    "Mathlib.Analysis.Normed.Algebra.MatrixExponential",
+    "Mathlib.Analysis.Normed.Module.FiniteDimension",
+    "Mathlib.Analysis.SpecialFunctions.Exp",
+    "Mathlib.Analysis.SpecialFunctions.Exponential",
+    "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Pow.Continuity",
+    "Mathlib.Analysis.SpecificLimits.Basic",
+    "Mathlib.Data.ENNReal.BigOperators",
+    "Mathlib.Data.Fin.Tuple.Basic",
+    "Mathlib.Data.Finset.Card",
+    "Mathlib.Data.Finset.Max",
+    "Mathlib.Data.Finset.Prod",
+    "Mathlib.Data.Finset.Sort",
+    "Mathlib.Data.Finset.Union",
+    "Mathlib.Data.Fintype.Basic",
+    "Mathlib.Data.Fintype.BigOperators",
+    "Mathlib.Data.Fintype.Card",
+    "Mathlib.Data.Fintype.EquivFin",
+    "Mathlib.Data.Fintype.Pi",
+    "Mathlib.Data.Fintype.Powerset",
+    "Mathlib.Data.Fintype.Prod",
+    "Mathlib.Data.Fintype.Sum",
+    "Mathlib.Data.List.Chain",
+    "Mathlib.Data.List.Dedup",
+    "Mathlib.Data.List.Nodup",
+    "Mathlib.Data.List.OfFn",
+    "Mathlib.Data.List.Perm.Basic",
+    "Mathlib.Data.List.Range",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.Nat.Choose.Cast",
+    "Mathlib.Data.Nat.Find",
+    "Mathlib.Data.Rat.BigOperators",
+    "Mathlib.Data.Rat.Lemmas",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Data.Sign.Basic",
+    "Mathlib.LinearAlgebra.Basis.Defs",
+    "Mathlib.LinearAlgebra.Dimension.Constructions",
+    "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+    "Mathlib.LinearAlgebra.Matrix.Kronecker",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.Logic.Relation",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Metrizable",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+    "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+    "Mathlib.MeasureTheory.Constructions.Pi",
+    "Mathlib.MeasureTheory.Constructions.Projective",
+    "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Countable",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.DominatedConvergence",
+    "Mathlib.MeasureTheory.Integral.Lebesgue.Map",
+    "Mathlib.MeasureTheory.Integral.Prod",
+    "Mathlib.MeasureTheory.MeasurableSpace.Pi",
+    "Mathlib.MeasureTheory.Measure.Dirac",
+    "Mathlib.MeasureTheory.Measure.Prod",
+    "Mathlib.MeasureTheory.Measure.Restrict",
+    "Mathlib.Probability.Distributions.Bernoulli",
+    "Mathlib.Probability.Distributions.Exponential",
+    "Mathlib.Probability.Distributions.Poisson.Basic",
+    "Mathlib.Probability.Distributions.Uniform",
+    "Mathlib.Probability.Independence.Basic",
+    "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+    "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+    "Mathlib.Tactic",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.FinCases",
+    "Mathlib.Tactic.FunProp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Topology.Algebra.Polynomial"
+  ],
+  "new_direct_external_roots": [
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.CommRing",
+      "already_in_external_plan": true,
+      "pinned_external_record": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/CommRing.lean",
+        "source_sha256": "1deaa4df7d5eee4bd08c95afff42f020d00b51e0222a85d70bb9849b150af7ab",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.MvPolynomial.CommRing",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/MvPolynomial/CommRing.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Variables.lean"
+        ]
+      }
+    },
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.Equiv",
+      "already_in_external_plan": true,
+      "pinned_external_record": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Equiv.lean",
+        "source_sha256": "6cda6fafaa75bc07bf4142355a563a458799e09b102db9ed005c5e3e1afa95a2",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.MvPolynomial.Equiv",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/MvPolynomial/Equiv.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/BigOperators/Finsupp/Fin.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MonoidAlgebra/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Degrees.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Rename.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/AlgebraMap.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/Degree/Lemmas.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/Finsupp/Option.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Logic/Equiv/Fin/Basic.lean"
+        ]
+      }
+    },
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.Rename",
+      "already_in_external_plan": true,
+      "pinned_external_record": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Rename.lean",
+        "source_sha256": "ff3bb7459426f61e70a0c017b68af91b3132ad8d2aa7a9ea1dcf47b89c2e9fcd",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.MvPolynomial.Rename",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/MvPolynomial/Rename.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Eval.lean"
+        ]
+      }
+    },
+    {
+      "module": "Mathlib.Algebra.Polynomial.RingDivision",
+      "already_in_external_plan": true,
+      "pinned_external_record": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/RingDivision.lean",
+        "source_sha256": "f4baf56001bb5b4adab4c362fad2c231bf63d4b402763c82e07d7e25f57996e1",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.Polynomial.RingDivision",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/RingDivision.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/AlgebraMap.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/Div.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Coprime/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Tactic/ComputeDegree.lean"
+        ]
+      }
+    },
+    {
+      "module": "Mathlib.Data.List.Perm.Basic",
+      "already_in_external_plan": true,
+      "pinned_external_record": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/List/Perm/Basic.lean",
+        "source_sha256": "e26fc3d06fa448fcb3d51f5b3469b42094615a45ae85eae332aa29257c5bcbc1",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Data.List.Perm.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/List/Perm/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/Batteries/Data/List/Perm.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Logic/Relation.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/List/Forall2.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/List/InsertIdx.lean"
+        ]
+      }
+    }
+  ],
+  "toolchain_root_outside_mathlib_plan": "Lean.Elab.Tactic.Omega",
+  "new_owned_mathlib_upstream_auth": {
+    "path": "research/2026-10-13-astra-legal-row-support-2115z/UPSTREAM-MATHLIB-AUTH.json",
+    "sha256": "55bfcd3627e52b9f219713eede9c0300593174dc57ce610d33d978f5cb390a75",
+    "git_blob": "a01e9d2c8fb113c871278b74b654ff14c5949b3b",
+    "bytes": 1520
+  },
+  "staged_astra_dependencies": [
+    {
+      "path": "research/2026-10-13-astra-positive-support-adapter-0830z/lean/Astra/PositiveSupportAdapter.lean",
+      "sha256": "29782b7ff42fefd5b1634e20ea1f0c695714e5cd625c2730a255bbda656ab479",
+      "git_blob": "1cac4f7390099746c65913b31741fb5102c94f83",
+      "bytes": 4810
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean",
+      "sha256": "1f35f9e11cef727b27ed30230a390ada2a32dfc50733ea0d4cb172fb7c053266",
+      "git_blob": "bdb5472d06592cad4ad6511d7bb893cbac7cac99",
+      "bytes": 5027
+    }
+  ],
+  "cost_limitation": "Counts are source-selection deltas, not compile time, memory estimates, cache completion, or mathematical completion. Two added selected Mathlib bodies are absent as modules from current 3591 plan; all additional direct non-toolchain import roots occur in it. Re-query full imports before any expanded build.",
+  "execution": {
+    "compiler_run": false,
+    "lake_target_configured": false,
+    "axiom_audit_run": false,
+    "fresh_compilation": false,
+    "object_reuse_authenticated": false
+  }
+}
