@@ -1,0 +1,141 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "env",
+    "MIMALLOC_ARENA_RESERVE=16384",
+    "LEAN_NUM_THREADS=1",
+    "LEAN_STACK_SIZE_KB=8192",
+    "LEAN_IMPORT_WORKERS=1",
+    "ASTRA_LEAN_BIN=/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin",
+    "ASTRA_MATHLIB_ROOT=/workspace/scratch/astra-mathlib-0645",
+    "ASTRA_MATHLIB_STATE=/workspace/scratch/astra-mathlib-serial-0705",
+    "ASTRA_LEAN_OUTPUT=/workspace/scratch/astra-certificates-0800",
+    "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lake",
+    "test",
+    "--",
+    "--extra-source",
+    "evidence/unified-reviewed-cases/correlated-menu/Certificate_6a8a01d9ac2d8bbd890548efe86d75f823dc556163ba0159cc41a7790b3be8f7.lean",
+    "--extra-source",
+    "evidence/unified-reviewed-cases/correlated-menu/Certificate_b20429b232b1124d54e85a7edeb6704cedae26a893a066a33e4556f774821d1b.lean",
+    "--extra-source",
+    "evidence/unified-reviewed-cases/correlated-menu/Certificate_c083f0e7578cab70491391dbedd5ede62321198d6b43c100ce315896cabd75e0.lean"
+  ],
+  "cwd": "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z",
+  "started_utc": "2026-10-13T08:00:21.057475+00:00",
+  "limits": {
+    "cpu_seconds": 180,
+    "wall_seconds": 300,
+    "address_space_bytes": 4294967296,
+    "file_bytes": 1073741824,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 1,
+  "stop": null,
+  "elapsed_seconds": 7.006309715000498,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 24770248704,
+      "ram_available": 18014248960,
+      "cgroup_memory": 3215777792
+    },
+    {
+      "seconds": 0.001408889999765961,
+      "disk_free": 24770248704,
+      "ram_available": 18013847552,
+      "cgroup_memory": 3215650816
+    },
+    {
+      "seconds": 0.5017644159997872,
+      "disk_free": 24770248704,
+      "ram_available": 17920499712,
+      "cgroup_memory": 3323662336
+    },
+    {
+      "seconds": 1.0020517700004348,
+      "disk_free": 24770248704,
+      "ram_available": 17901527040,
+      "cgroup_memory": 3124469760
+    },
+    {
+      "seconds": 1.5023283210002774,
+      "disk_free": 24770248704,
+      "ram_available": 17898467328,
+      "cgroup_memory": 2916184064
+    },
+    {
+      "seconds": 2.002911282000241,
+      "disk_free": 24770248704,
+      "ram_available": 17898541056,
+      "cgroup_memory": 2681597952
+    },
+    {
+      "seconds": 2.503260823000346,
+      "disk_free": 24770215936,
+      "ram_available": 17858129920,
+      "cgroup_memory": 2782425088
+    },
+    {
+      "seconds": 3.0035987010005556,
+      "disk_free": 24770215936,
+      "ram_available": 17846222848,
+      "cgroup_memory": 3087384576
+    },
+    {
+      "seconds": 3.503937495000173,
+      "disk_free": 24770215936,
+      "ram_available": 17817821184,
+      "cgroup_memory": 3399421952
+    },
+    {
+      "seconds": 4.004295278000427,
+      "disk_free": 24770215936,
+      "ram_available": 17734475776,
+      "cgroup_memory": 3467878400
+    },
+    {
+      "seconds": 4.504624758000318,
+      "disk_free": 24769990656,
+      "ram_available": 17822613504,
+      "cgroup_memory": 3376488448
+    },
+    {
+      "seconds": 5.004992019999918,
+      "disk_free": 24769978368,
+      "ram_available": 17763774464,
+      "cgroup_memory": 3439976448
+    },
+    {
+      "seconds": 5.505300669000462,
+      "disk_free": 24769966080,
+      "ram_available": 17815252992,
+      "cgroup_memory": 3371114496
+    },
+    {
+      "seconds": 6.005633695000142,
+      "disk_free": 24769966080,
+      "ram_available": 17768833024,
+      "cgroup_memory": 3441164288
+    },
+    {
+      "seconds": 6.50599228900046,
+      "disk_free": 24769966080,
+      "ram_available": 17696501760,
+      "cgroup_memory": 3499089920
+    }
+  ],
+  "child_peak_rss_bytes": 1798791168,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 3657,
+      "sha256": "bdab35b9c9b14aef8b77bde542f384a18395344b75865e988b363a985c578e02"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

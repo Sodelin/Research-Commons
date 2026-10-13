@@ -1,0 +1,68 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "python3",
+    "-B",
+    "research/2026-10-13-astra-unified-solver-0645z/build_mathlib_serial.py",
+    "--mathlib-root",
+    "/workspace/scratch/astra-mathlib-0645",
+    "--lean-bin",
+    "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin",
+    "--state",
+    "/workspace/scratch/astra-mathlib-serial-0705",
+    "--batch",
+    "128"
+  ],
+  "cwd": "/workspace/Research-Commons",
+  "started_utc": "2026-10-13T07:13:16.629781+00:00",
+  "limits": {
+    "cpu_seconds": 600,
+    "wall_seconds": 900,
+    "address_space_bytes": 3221225472,
+    "file_bytes": 1073741824,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 1,
+  "stop": null,
+  "elapsed_seconds": 1.503206231999684,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 25425178624,
+      "ram_available": 17994063872,
+      "cgroup_memory": 754126848
+    },
+    {
+      "seconds": 0.001994815999751154,
+      "disk_free": 25425178624,
+      "ram_available": 17994063872,
+      "cgroup_memory": 754323456
+    },
+    {
+      "seconds": 0.5024521370000912,
+      "disk_free": 25425178624,
+      "ram_available": 18008317952,
+      "cgroup_memory": 835842048
+    },
+    {
+      "seconds": 1.0028976739999962,
+      "disk_free": 25425178624,
+      "ram_available": 18004418560,
+      "cgroup_memory": 877957120
+    }
+  ],
+  "child_peak_rss_bytes": 15327232,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "bytes": 747,
+      "sha256": "4e09a60342dcb5d4ec3370a5dfb250d319fdc01e46dbedec4c268ea5e60c407f"
+    }
+  }
+}

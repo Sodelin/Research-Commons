@@ -2,6 +2,8 @@
 
 No research module compilation or cache trust beyond the pinned official
 Mathlib source is implied. Use guard.py and new scratch for receipts.
+Append --sources-only to prepare pinned dependencies without compiling the
+cache utility or contacting its download service.
 """
 from pathlib import Path
 import json
@@ -16,6 +18,8 @@ PIN = '0df444a360eaa60ab8c11dca51a86af692955474'
 
 def main():
     mathlib, lean_bin, output = map(Path, sys.argv[1:4])
+    if sys.argv[4:] not in ([], ['--sources-only']):
+        raise ValueError('only optional flag is --sources-only')
     output.mkdir(parents=True, exist_ok=False)
     def call(cmd):
         subprocess.run(list(map(str,cmd)), cwd=mathlib, check=True)
@@ -43,6 +47,12 @@ def main():
             call(['git', '-C', path, 'checkout', '--detach', 'FETCH_HEAD'])
         assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=path,text=True).strip()==row['rev']
         deps.append(path)
+    if sys.argv[4:] == ['--sources-only']:
+        (output/'PINNED-SOURCES.json').write_text(json.dumps(dict(mathlib_revision=PIN,
+            dependencies=json.loads((mathlib/'lake-manifest.json').read_text())['packages'],
+            compilation_performed=False, cache_download_attempted=False),indent=2)+'\n')
+        print('Pinned source dependencies prepared; no compilation/cache download.')
+        return
     os.environ['LEAN_PATH'] = os.pathsep.join(str(p/'.lake/build/lib/lean') for p in [mathlib,*deps])
     os.environ['LEAN_SRC_PATH'] = os.pathsep.join(map(str,[mathlib,*deps,lean_bin.parent/'src/lean']))
     os.environ['RAYON_NUM_THREADS'] = '1'

@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from materialize import HERE, AGGREGATE_SHA, source_path, selected_graph, sha
+from materialize import HERE, GRAPH_SHA, AGGREGATE_SHA, source_path, selected_graph, sha, package_lakefile
 
 
 def verify(directory):
@@ -13,16 +13,21 @@ def verify(directory):
     expected.update({p.relative_to(HERE/'lean'):sha(p.read_bytes()) for p in (HERE/'lean').rglob('*.lean')})
     expected[Path('Accepted1613.lean')]=AGGREGATE_SHA
     expected[Path('AstraUnified.lean')]=sha(b'import Accepted1613\nimport AstraKernel\n')
+    expected[Path('lakefile.lean')]=sha(package_lakefile(graph).encode())
     for path,digest in expected.items():
         if sha((directory/path).read_bytes())!=digest:
             raise ValueError('source mismatch: '+str(path))
     actual={p.relative_to(directory) for p in directory.rglob('*.lean')
             if '.lake' not in p.relative_to(directory).parts}
-    if actual != set(expected)|{Path('lakefile.lean')}:
+    if actual != set(expected):
         raise ValueError('unexpected or missing selected Lean source')
+    if (directory/'lean-toolchain').read_bytes()!=(HERE/'lean-toolchain').read_bytes():
+        raise ValueError('toolchain selection differs')
     manifest=json.loads((directory/'SOURCE-SELECTION.json').read_text())
-    if manifest['baseline']['modules']!=graph['modules'] or manifest['baseline']['roots']!=graph['roots']:
+    if any(manifest['baseline'][k]!=graph[k] for k in ['modules','roots','order','external_imports']):
         raise ValueError('selected dependency graph differs')
+    if manifest['baseline']['graph_sha256']!=GRAPH_SHA or manifest['lakefile_sha256']!=expected[Path('lakefile.lean')]:
+        raise ValueError('graph/build configuration manifest differs')
     g2=json.loads((HERE.parent/'2026-10-13-dot-g2-unified-integration-0238z/CHECK-1613.json').read_text())['g2']
     for row in g2:
         if row['module'] not in graph['roots'] or any(graph['modules'][row['module']][key]!=row[key]

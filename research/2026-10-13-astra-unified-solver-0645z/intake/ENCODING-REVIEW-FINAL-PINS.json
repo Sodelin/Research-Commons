@@ -1,0 +1,105 @@
+{
+  "schema": "astra.encoding-review-final-successor.v1",
+  "recorded_at_utc": "2026-10-13T08:07:01.178333+00:00",
+  "base_head_context": "e517fc3a372bb37f5ae69e3d5d2b97128b5a4789",
+  "review_kind": "agent static source comparison, not independent human review or fresh compilation",
+  "preserves_previous_review": true,
+  "sources": [
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/external_encoding.py",
+      "prior": {
+        "path": "research/2026-10-13-astra-unified-solver-0645z/external_encoding.py",
+        "bytes": 3223,
+        "sha256": "78dfd11a8157a5102c520be85a5fc42f4b4137250846ce510df9df98a90f4d69",
+        "git_blob": "242ec258d1613081889410e861a7ca149b5bd5cb"
+      },
+      "current": {
+        "sha256": "78dfd11a8157a5102c520be85a5fc42f4b4137250846ce510df9df98a90f4d69",
+        "bytes": 3223,
+        "git_blob": "242ec258d1613081889410e861a7ca149b5bd5cb",
+        "identity_scope": "exact working-tree bytes; base HEAD is context, not a claim that these bytes are already committed"
+      },
+      "byte_identical": true
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/emit_lean.py",
+      "prior": {
+        "path": "research/2026-10-13-astra-unified-solver-0645z/emit_lean.py",
+        "bytes": 5097,
+        "sha256": "dad65b9f726c9a84ebe24fa76dbd8ef93ce40dc7a0bb316b369922a6144aa9a7",
+        "git_blob": "3cc7e6d2f7b02772d3b1a25e703773dd3840ca21"
+      },
+      "current": {
+        "sha256": "27264a92409966415094b902df8226e7a86f305c0cef148325c7f6f60795ae37",
+        "bytes": 5111,
+        "git_blob": "6e5a3f0d9949669f77f5780f2e66dcc18758e570",
+        "identity_scope": "exact working-tree bytes; base HEAD is context, not a claim that these bytes are already committed"
+      },
+      "byte_identical": false
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean",
+      "prior": {
+        "path": "research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean",
+        "bytes": 4755,
+        "sha256": "8948481db1e2742700bc0ff6b615ee9fda97b8869cfd01b08ca6c52ec64e0d00",
+        "git_blob": "7ed2a70ed545f3364722a0b57c81febc0d28231e"
+      },
+      "current": {
+        "sha256": "1f35f9e11cef727b27ed30230a390ada2a32dfc50733ea0d4cb172fb7c053266",
+        "bytes": 5027,
+        "git_blob": "bdb5472d06592cad4ad6511d7bb893cbac7cac99",
+        "identity_scope": "exact working-tree bytes; base HEAD is context, not a claim that these bytes are already committed"
+      },
+      "byte_identical": false
+    }
+  ],
+  "checks": {
+    "external_encoding_byte_identical": true,
+    "emitter_only_change": "noncomputable qualifier on generated polynomial definition",
+    "kernel_definition_block_byte_identical": true,
+    "kernel_theorem_statements_byte_identical": true,
+    "kernel_theorem_names": [
+      "squareTerm_nonnegative",
+      "square_identity_nonnegative",
+      "supported_atom_is_root",
+      "joint_supported_bank_is_root",
+      "singleton_generator_identity",
+      "singleton_generator_nonnegative",
+      "singleton_generator_annihilates",
+      "singleton_generator_nonzero"
+    ],
+    "supported_root_and_joint_bank_proof_region_byte_identical": true,
+    "axiom_print_directives_unchanged": [
+      "squareTerm_nonnegative",
+      "square_identity_nonnegative",
+      "supported_atom_is_root",
+      "joint_supported_bank_is_root",
+      "singleton_generator_identity",
+      "singleton_generator_nonnegative",
+      "singleton_generator_annihilates",
+      "singleton_generator_nonzero"
+    ],
+    "no_added_source_axiom_sorry_or_admit": true
+  },
+  "kernel_imports": {
+    "prior": [
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity"
+    ],
+    "current": [
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "Mathlib.Tactic.Ring.RingNF",
+      "Mathlib.Data.Fintype.Prod",
+      "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "Mathlib.Tactic.NormNum.Ineq"
+    ]
+  },
+  "result": "PASS_WITH_PREVIOUS_SOURCE_BINDING_OBLIGATIONS_RETAINED",
+  "compiled_by_this_review": false,
+  "execution_and_axiom_receipts": "Owned and recorded separately by the Lean integration lane; this record does not infer them from source checks."
+}

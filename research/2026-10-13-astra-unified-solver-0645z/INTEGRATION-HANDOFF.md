@@ -21,8 +21,12 @@ original scope. Source counts are an inventory property, not theorem completion.
 The original public packet records successful aggregate/audit execution with
 authenticated component reuse. Our source readback is fresh; it is not a fresh
 compilation of every selected original component. `lake build accepted_baseline`
-reexecutes that packet's integrity verifier. `full_replay` retains the original
-object/native-closure requirement and refuses an absent compatible closure.
+reexecutes that packet's integrity verifier. `full_replay` safely refuses to
+launch the unchanged historical adapter under this packet's resource policy:
+that adapter writes into its original packet and assumes a larger compiler
+allowance. A separately prepared replay needs both a compatible authenticated
+object/native closure and a guarded output-preserving runner. The combined
+`AstraUnified` source aggregate has not been freshly compiled here.
 
 ## Exact missing dependency
 
@@ -78,7 +82,7 @@ missing physical construction.
 
 `RUST-CORRESPONDENCE.md`, `NATIVE-BRIDGE.md` and `LEAN-INTEGRATION.md`
 give the complete language, limits and source/execution links. The final unified
-suite is preserved in `evidence/unified-reviewed-cases`; its source pins bind
+suite is preserved in `evidence/unified-emitter-real-repair-cases`; its source pins bind
 the actual 19-case run. The earlier attempts remain separate evidence.
 
 ## Reproduction and trusted boundaries

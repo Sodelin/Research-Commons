@@ -1,8 +1,9 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+import Mathlib.Tactic.Ring.RingNF
+import Mathlib.Data.Fintype.Prod
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Tactic.NormNum.Ineq
 
 /-!
 Exact semantic kernel for the executable rational certificate slice.
@@ -37,10 +38,10 @@ theorem squareTerm_nonnegative (t : SquareTerm) (hw : 0 ≤ t.weight)
   unfold SquareTerm.eval
   apply mul_nonneg
   · apply mul_nonneg
-    · exact mul_nonneg hw (by split <;> positivity)
+    · exact mul_nonneg hw (by split; exact hx; exact zero_le_one)
     · split
-      · linarith
-      · positivity
+      · exact sub_nonneg.mpr hx1
+      · exact zero_le_one
   · exact sq_nonneg _
 
 theorem square_identity_nonnegative {T : Type*} [Fintype T]
@@ -92,7 +93,9 @@ theorem singleton_generator_identity (a x : ℝ) :
 theorem singleton_generator_nonnegative (a x : ℝ) (ha : 0 ≤ a) (hx : 0 ≤ x) :
     0 ≤ 2*a^3 - 3*a^2*x + x^3 := by
   rw [singleton_generator_identity]
-  positivity
+  exact add_nonneg
+    (mul_nonneg (mul_nonneg (by norm_num : (0 : ℝ) ≤ 2) ha) (sq_nonneg _))
+    (mul_nonneg hx (sq_nonneg _))
 
 theorem singleton_generator_annihilates (a : ℝ) :
     (2*a^3)*1 + (-3*a^2)*a + 1*a^3 = 0 := by
@@ -102,9 +105,9 @@ theorem singleton_generator_nonzero (a : ℝ) (ha : 0 < a) :
     (fun x : ℝ => 2*a^3 - 3*a^2*x + x^3) ≠ (fun _ => 0) := by
   intro h
   have hzero := congrFun h 0
-  have : 0 < 2*a^3 := by positivity
+  have hpositive : 0 < 2*a^3 := mul_pos (by norm_num) (pow_pos ha 3)
   simp only [mul_zero, sub_zero, zero_pow (by decide : 3 ≠ 0), add_zero] at hzero
-  linarith
+  exact (ne_of_gt hpositive) hzero
 
 #print axioms squareTerm_nonnegative
 #print axioms square_identity_nonnegative

@@ -15,8 +15,11 @@ import time
 
 PIN = '0df444a360eaa60ab8c11dca51a86af692955474'
 LEAN_SHA = 'e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550'
+LOADED_RUNNER_SHA = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 ROOTS = ['Mathlib.Data.Real.Basic', 'Mathlib.Algebra.BigOperators.Group.Finset.Basic',
-         'Mathlib.Tactic.Ring', 'Mathlib.Tactic.Linarith', 'Mathlib.Tactic.Positivity']
+         'Mathlib.Tactic.Ring.Basic', 'Mathlib.Algebra.Order.BigOperators.Group.Finset',
+         'Mathlib.Tactic.Ring.RingNF', 'Mathlib.Data.Fintype.Prod',
+         'Mathlib.Algebra.BigOperators.Ring.Finset', 'Mathlib.Tactic.NormNum.Ineq']
 
 
 def sha(path):
@@ -24,6 +27,9 @@ def sha(path):
     with path.open('rb') as f:
         for part in iter(lambda:f.read(1024**2),b''):
             h.update(part)
+        # Reauthentication must not accumulate gigabytes of clean file cache.
+        os.fsync(f.fileno())
+        os.posix_fadvise(f.fileno(),0,0,os.POSIX_FADV_DONTNEED)
     return h.hexdigest()
 
 
@@ -60,8 +66,8 @@ def source_for(name, repos):
     return found[0]
 
 
-def plan(mathlib, lean_bin, repos, env):
-    done={}
+def plan(mathlib, lean_bin, repos, env, existing=()):
+    done={Path(row['source']).resolve():row for row in existing}
     active=set()
     def visit(source):
         source=source.resolve()
@@ -96,7 +102,7 @@ def artifacts(target):
 
 def release_own_file_cache(repos, lean_bin):
     # Advisory release only: no source, evidence or build artifact is deleted.
-    if int(Path('/sys/fs/cgroup/memory.current').read_text()) < 3*1024**3:
+    if int(Path('/sys/fs/cgroup/memory.current').read_text()) < 5*1024**3//2:
         return
     for base in [lean_bin.parent/'lib/lean',*[p/'.lake/build' for p in repos]]:
         if not base.exists():
@@ -104,6 +110,7 @@ def release_own_file_cache(repos, lean_bin):
         for path in base.rglob('*'):
             if path.is_file():
                 with path.open('rb') as f:
+                    os.fsync(f.fileno())
                     os.posix_fadvise(f.fileno(),0,0,os.POSIX_FADV_DONTNEED)
 
 
@@ -113,6 +120,8 @@ def main():
     p.add_argument('--lean-bin',type=Path,required=True)
     p.add_argument('--state',type=Path,required=True)
     p.add_argument('--batch',type=int,default=128)
+    p.add_argument('--extend-plan',action='store_true',
+                   help='Append new import roots after archiving the existing exact plan.')
     a=p.parse_args()
     a.mathlib_root=a.mathlib_root.resolve(); a.lean_bin=a.lean_bin.resolve()
     a.state.mkdir(parents=True,exist_ok=True)
@@ -123,6 +132,14 @@ def main():
         if stored['mathlib_pin']!=PIN or stored['compiler_sha256']!=LEAN_SHA or stored['dependencies']!=pins:
             raise ValueError('state pin mismatch')
         rows=stored['modules']
+        if a.extend_plan:
+            expanded=plan(a.mathlib_root,a.lean_bin,repos,env,rows)
+            archive=a.state/('PRIOR-'+str(len(rows))+'-PLAN.json')
+            with archive.open('xb') as stream:
+                stream.write(planfile.read_bytes())
+            rows=expanded
+            planfile.write_text(json.dumps(dict(mathlib_pin=PIN,compiler_sha256=LEAN_SHA,
+                                              dependencies=pins,roots=ROOTS,modules=rows),indent=2)+'\n')
     else:
         rows=plan(a.mathlib_root,a.lean_bin,repos,env)
         planfile.write_text(json.dumps(dict(mathlib_pin=PIN,compiler_sha256=LEAN_SHA,
@@ -148,7 +165,7 @@ def main():
         stderr=a.state/(str(index).zfill(4)+'.stderr')
         with stdout.open('xb') as out, stderr.open('xb') as err:
             result=subprocess.run(command,cwd=row['repo'],env=env,stdout=out,stderr=err)
-        rec=dict(**row,command=command,exit_code=result.returncode,
+        rec=dict(**row,command=command,exit_code=result.returncode,runner_sha256=LOADED_RUNNER_SHA,
                  seconds=time.monotonic()-started,artifacts=artifacts(target),
                  stdout_sha256=sha(stdout),stderr_sha256=sha(stderr))
         receipt.write_text(json.dumps(rec,indent=2)+'\n')

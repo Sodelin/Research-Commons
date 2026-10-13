@@ -1,0 +1,70 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "env",
+    "MIMALLOC_ARENA_RESERVE=16384",
+    "LEAN_NUM_THREADS=1",
+    "LEAN_STACK_SIZE_KB=8192",
+    "LEAN_IMPORT_WORKERS=1",
+    "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lake",
+    "check-build"
+  ],
+  "cwd": "/workspace/scratch/astra-unified-sources-final-0807",
+  "started_utc": "2026-10-13T08:09:31.203086+00:00",
+  "limits": {
+    "cpu_seconds": 60,
+    "wall_seconds": 90,
+    "address_space_bytes": 4294967296,
+    "file_bytes": 134217728,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 0,
+  "stop": null,
+  "elapsed_seconds": 2.0064339150003434,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 24721317888,
+      "ram_available": 18031194112,
+      "cgroup_memory": 3268096000
+    },
+    {
+      "seconds": 0.001506214000073669,
+      "disk_free": 24721317888,
+      "ram_available": 18031194112,
+      "cgroup_memory": 3268345856
+    },
+    {
+      "seconds": 0.5054452659996969,
+      "disk_free": 24721301504,
+      "ram_available": 17910534144,
+      "cgroup_memory": 3373834240
+    },
+    {
+      "seconds": 1.00578801499978,
+      "disk_free": 24721301504,
+      "ram_available": 17873076224,
+      "cgroup_memory": 3410796544
+    },
+    {
+      "seconds": 1.5061558730003526,
+      "disk_free": 24721301504,
+      "ram_available": 17835298816,
+      "cgroup_memory": 3450531840
+    }
+  ],
+  "child_peak_rss_bytes": 972496896,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

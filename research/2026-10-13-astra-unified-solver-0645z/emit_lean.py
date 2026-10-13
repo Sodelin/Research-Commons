@@ -49,7 +49,7 @@ def render(certificate):
            '',f'/- Exact certificate SHA256: {ident}. Generation is not compilation. -/',
            f'namespace Astra.Generated.{namespace}',
            'open Astra.CommonCertificateKernel', 'open scoped BigOperators','',
-           'def polynomial (x : ℝ) : ℝ := '+p('x'),'',
+           'noncomputable def polynomial (x : ℝ) : ℝ := '+p('x'),'',
            'theorem nonnegative (x : ℝ) (hx : 0 ≤ x) (hx1 : x ≤ 1) :',
            '    0 ≤ polynomial x := by']
     for i,t in enumerate(terms):

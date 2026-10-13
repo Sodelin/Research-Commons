@@ -9,7 +9,6 @@ import hashlib
 import json
 from pathlib import Path
 import re
-import shutil
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -57,6 +56,25 @@ def selected_graph():
     return graph, aggregate
 
 
+def package_lakefile(graph):
+    names=['Accepted1613',*graph['order']]
+    globs=',\n    '.join('.one `'+name for name in names)
+    return '''import Lake
+open Lake DSL
+package astraUnifiedSources
+require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "0df444a360eaa60ab8c11dca51a86af692955474"
+@[default_target]
+lean_lib AstraKernel where
+  roots := #[`AstraKernel]
+  globs := #[.one `AstraKernel, .submodules `Astra]
+lean_lib Accepted1613 where
+  roots := #[`Accepted1613]
+  globs := #[%s]
+lean_lib AstraUnified where
+  roots := #[`AstraUnified]
+''' % globs
+
+
 def materialize(destination):
     graph, aggregate = selected_graph()
     # Authenticate all bodies before creating any output.
@@ -78,18 +96,7 @@ def materialize(destination):
     (destination/'lean-toolchain').write_bytes((HERE/'lean-toolchain').read_bytes())
     # A normal source package for downstream consumers. The guarded receipt
     # path is provided by this packet's custom Lake targets, not a naked build.
-    (destination/'lakefile.lean').write_text('''import Lake
-open Lake DSL
-package astraUnifiedSources
-require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "0df444a360eaa60ab8c11dca51a86af692955474"
-@[default_target]
-lean_lib AstraKernel where
-  roots := #[`AstraKernel]
-lean_lib Accepted1613 where
-  roots := #[`Accepted1613]
-lean_lib AstraUnified where
-  roots := #[`AstraUnified]
-''')
+    (destination/'lakefile.lean').write_text(package_lakefile(graph))
     receipt = dict(schema='astra_unified_source_selection_v1',
                    baseline=dict(commit=BASE_COMMIT, packet=str(BASE.relative_to(ROOT)),
                                  graph_sha256=GRAPH_SHA, aggregate_sha256=AGGREGATE_SHA,
@@ -99,6 +106,8 @@ lean_lib AstraUnified where
                                  acceptance='ACCEPTANCE.json', verifier='verify_public_packet.py'),
                    new_sources={str(p): dict(bytes=len(data), sha256=sha(data)) for p,data in kernel.items()},
                    unified_aggregate_sha256=sha((destination/'AstraUnified.lean').read_bytes()),
+                   lakefile_sha256=sha((destination/'lakefile.lean').read_bytes()),
+                   toolchain_sha256=sha((destination/'lean-toolchain').read_bytes()),
                    unavailable_physical_provider=MISSING,
                    physical_consumer='../2026-10-13-dot-g3-certified-consumer-0631z/G3CertifiedCommonBoundedWitness.lean',
                    physical_consumer_status='not imported: exact required provider unavailable',

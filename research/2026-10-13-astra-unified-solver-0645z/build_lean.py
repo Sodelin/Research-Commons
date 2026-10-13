@@ -13,7 +13,7 @@ import re
 import subprocess
 import time
 
-from build_mathlib_serial import setup, sha, artifacts, LEAN_SHA, PIN
+from build_mathlib_serial import setup, sha, artifacts, LEAN_SHA, PIN, ROOTS
 
 HERE=Path(__file__).resolve().parent
 EXPECTED_THEOREMS={
@@ -37,12 +37,26 @@ def audit(text):
     return rows
 
 
-def verify_dependency_state(state,repos):
+def verify_dependency_state(state,repos,lean_bin,pins):
     plan=json.loads((state/'PLAN.json').read_text())
-    if plan['mathlib_pin']!=PIN or plan['compiler_sha256']!=LEAN_SHA:
+    if (plan['mathlib_pin']!=PIN or plan['compiler_sha256']!=LEAN_SHA
+            or plan['dependencies']!=pins):
         raise ValueError('dependency execution pin differs')
+    modules=plan['modules']
+    if not set(ROOTS).issubset({row['module'] for row in modules}):
+        raise ValueError('external plan omits a required kernel import root')
+    prior=set()
+    core=(lean_bin.parent/'src/lean').resolve()
     rows=[]
-    for index,row in enumerate(plan['modules']):
+    for index,row in enumerate(modules):
+        source=Path(row['source']).resolve()
+        if source in prior:
+            raise ValueError('duplicate external source selection')
+        for imported in row['imports']:
+            imported=Path(imported).resolve()
+            if not imported.is_relative_to(core) and imported not in prior:
+                raise ValueError('incomplete or unordered import graph: '+str(imported))
+        prior.add(source)
         receipt=state/(str(index).zfill(4)+'.json')
         observed=json.loads(receipt.read_text())
         target=Path(row['target'])
@@ -73,11 +87,15 @@ def main():
         p.error('--lean-bin, --mathlib-root, --mathlib-state and fresh --out are required (or ASTRA_* environment)')
     a.lean_bin=a.lean_bin.resolve(); a.mathlib_root=a.mathlib_root.resolve(); a.out=a.out.resolve()
     repos,pins,env=setup(a.mathlib_root,a.lean_bin)
-    dependency_state=verify_dependency_state(a.mathlib_state,repos)
+    dependency_state=verify_dependency_state(a.mathlib_state,repos,a.lean_bin,pins)
     a.out.mkdir(parents=True,exist_ok=False)
     build=a.out/'lib/lean'
     env['LEAN_PATH']=str(build)+os.pathsep+env['LEAN_PATH']
     sources=[HERE/'lean/Astra/CommonCertificateKernel.lean',HERE/'lean/AstraKernel.lean',*a.extra_source]
+    relative_sources=[source.resolve().relative_to(HERE/'lean') if source.resolve().is_relative_to(HERE/'lean')
+                      else Path(source.name) for source in sources]
+    if len(set(relative_sources))!=len(relative_sources):
+        raise ValueError('generated source module collides with another selected module')
     rows=[]; axioms={}
     for index,source in enumerate(sources):
         source=source.resolve()
