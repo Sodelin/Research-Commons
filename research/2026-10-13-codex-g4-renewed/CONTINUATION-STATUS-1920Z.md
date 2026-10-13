@@ -4,6 +4,61 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## Substantive successor, 19:42 UTC
+
+This addendum supersedes the earlier changing-exterior gap for the
+calibrated target class only. The original master scope below is retained.
+The [all-pair calibrated theorem](whole-source/continuation-1900z/ALL-PAIR-CALIBRATED-ORIGINAL-FORCING.md)
+and its [full proof](whole-source/continuation-1900z/ORIGINAL-DETERMINISTIC-COMMON-FORCING.md)
+have [independent whole-source review](whole-source/continuation-1900z/DETERMINISTIC-COMMON-WHOLE-SOURCE-REVIEW.md)
+and [root composition acceptance](critical-review/ORIGINAL-CALIBRATED-ROOT-REVIEW.md).
+Finite legal COMMON calibration and the inherited unknown-upper-law
+decoder expose every actual exclusive private capped kernel. The new
+private BOTH theorem fixes its full law and cell count. Covering original
+hybrids by ordered pairs derives a total size bound; inherited finite-shape
+Hilbert generation then gives the full original natural BOTH certificate.
+No exterior, private-slot list or rival bound is supplied beforehand.
+
+The [three-tip interaction theorem](whole-source/continuation-1900z/THREE-TIP-INTERACTION-GAUGE.md)
+has independent hand review and exact rational replay: normalized legal
+allocations (2,2) and (2,3) identify every genuine within-shape parameter
+except an ordinary pendant gauge. Four-tip and cross-shape equivalences
+remain unresolved. The [four-tip handoff](whole-source/continuation-1900z/FOUR-TIP-GAUGE-HANDOFF.md)
+preserves exact formulas and the failure of a latent full-column-rank
+inversion; it is not a generic identifiability theorem.
+
+| Original obligation | Present evidence and status | Precise remaining work |
+|---|---|---|
+| Fixed target, all finite unknown-size rivals, one source/tuple | Contract retained throughout; no negative construction meets all prefixes | Keep exact quantifiers and strict admission |
+| Natural BOTH, all-pair calibrated target | Reviewed original-source finite forcing; published `b9d091d4c2987c99ccf8b29e1cad8a8d281937e0` | Formalization is separate; no effective cap asserted |
+| Natural BOTH, general multi-profile target | Inherited finite COMMON support bounds unequal defects and retained core; finite legal normalized meeting invariant is forced | Recover or adequately constrain the remaining scalar gauges and equal-arm blocks through varying bounded cores |
+| Equal-arm private BOTH | Reviewed analytic persistence plus inherited compactification/local forcing closes all finite targets/rival sizes | General unequal factors and source transfer outside calibration are not automatic |
+| INDEPENDENT-only | Reviewed finite persistent skeleton, possible weak ordinary-clock reservoir | Exact local exclusion without COMMON, or fixed-target admitted all-prefix rivals; neither is proved |
+| Four-tip interaction and unequal diagonal | Exact failed inversions and theta collision preserved | All-parameter classification or stronger observer; generic cases are insufficient |
+| Lean/Rust integration | Existing chat retains ownership; actual 19:20 intake observed | New hand proofs are not new formal modules |
+| Publication | Frequent non-force checkpoints and immutable readback receipt | Publication proves preservation only |
+
+The [finite-defect reuse note](whole-source/continuation-1900z/FINITE-COMMON-DEFECT-REDUCTION-REUSE.md)
+records what was already known: with n original taxa and S the largest
+directed COMMON support size, unprotected retained skeleton size is at most
+`(2n-2)+(8n-8)(S-1)`, leaving at most `(8n-8)S` variable equal-arm blocks.
+The finite divisor palette also controls unequal private ratios and coins.
+These results are inherited, not new work of this continuation. The
+remaining variables cannot be queried as hidden kernels.
+
+The [COMMON disintegration diagnostic](critical-review/COMMON-SUPPORT-DISINTEGRATION-GATE.md)
+preserves an exact strict four-taxon control rejecting the attempted
+replacement of INDEPENDENT by a mixture over COMMON displayed profiles.
+It rejects that encoding, not G4. The distinct natural modes retain their
+actual current-root routing semantics.
+
+Current focused work: audit the INDEPENDENT weak-reservoir local step and
+its smallest exact obstructions, without reopening the accepted BOTH
+proof. The general natural BOTH route still needs simultaneous legal
+control across the finite skeleton list. No tool or permission blocker is
+present. Remaining barriers are mathematical, and this record does not
+claim background execution after an active turn ends.
+
 ## Original obligation retained
 
 The original source remains finite, binary, rooted at the LSA of its

@@ -2,6 +2,17 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest substantive checkpoint, 19:42 UTC:** the reviewed
+[all-pair calibrated original-source theorem](whole-source/continuation-1900z/ALL-PAIR-CALIBRATED-ORIGINAL-FORCING.md)
+gives finite natural BOTH forcing against every finite original rival,
+including changing exteriors and multiple unknown slots, for fixed targets
+satisfying the COMMON Jensen calibrations. Its new input is the reviewed
+[private BOTH finite-forcing theorem](chronology/continuation-1837z/PRIVATE-BOTH-FINITE-FORCING.md).
+The [continuation status and obligation register](CONTINUATION-STATUS-1920Z.md)
+has a dated addendum separating these advances from the still-open general
+noncalibrated and INDEPENDENT-only master obligations. Earlier live-lane
+and open-gap descriptions below are historical checkpoints.
+
 Nolan explicitly renewed the instruction to continue the full G4 problem and encouraged multiple agents, superseding the earlier no-extra-agents restriction for this lead. Six delegated research/review tasks are active inside this chat; no additional user-owned chats were created. Dot's existing G3 and integration ownership remains untouched.
 
 The original scope and all completed providers remain as frozen in [the preceding packet](../2026-10-13-codex-g4-lead-finite-forcing-0622z/README.md). One fixed admitted target, all finite unknown-size rivals, legal endpoint observations, and one physical source/shared parameter tuple remain mandatory. COMMON, INDEPENDENT and BOTH remain separate. General G4 is open at this checkpoint.
