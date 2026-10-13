@@ -22,6 +22,7 @@ INDEX = 2860
 FAILED_SHA = '05d682973501c3af2a74bd4d6b8b3015741d7ca32d58cbcb258b273992dd456d'
 HELPER_SHA = 'd47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28'
 EXTERNAL_SHA = '00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f'
+PLAN_SHA = 'ef775a7223500314359a9ed02a87d207b18eacda9cddfa5a8990c5e1a8e43f10'
 
 
 def save(path, value):
@@ -37,6 +38,10 @@ def main():
     args = parser.parse_args()
     for name in ['state', 'mathlib_root', 'lean_bin', 'out']:
         setattr(args, name, getattr(args, name).resolve())
+    if (HERE / 'PAUSE-BUILDS').exists():
+        raise ValueError('coordinator pause is active')
+    if external.sha(HERE / 'EXTERNAL-PLAN.json') != PLAN_SHA:
+        raise ValueError('pinned external selection changed')
     if (args.state / 'PLAN.json').read_bytes() != (HERE / 'EXTERNAL-PLAN.json').read_bytes():
         raise ValueError('exact external selection changed')
     if (external.sha(HERE / 'serial_compile.py') != HELPER_SHA
@@ -166,6 +171,8 @@ def main():
     thread = threading.Thread(target=monitor, daemon=True)
     thread.start()
     try:
+        if (HERE / 'PAUSE-BUILDS').exists():
+            raise ValueError('coordinator pause became active before compilation')
         code, controls = serial_compile.compile_one(command, cwd=row['repo'], env=env,
             stdout=args.out / 'stdout', stderr=args.out / 'stderr', input_files=inputs,
             target=target, index=INDEX, module=row['module'])
