@@ -4,6 +4,32 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## Local-gate successor, 19:55 UTC
+
+The [INDEPENDENT local obstruction](general-algebra/continuation-1945z/INDEPENDENT-LOCAL-CURVATURE-GATE.md)
+has [independent hand acceptance](critical-review/INDEPENDENT-CURVATURE-REVIEW.md).
+The [third-jet addendum](general-algebra/continuation-1945z/THIRD-JET-CANCELLATION-ADDENDUM.md)
+has an independent full-forest coefficient audit and
+[lead acceptance](critical-review/THIRD-JET-ROOT-ACCEPTANCE.md).
+An admitted bias curve makes a weak equal-arm cell agree with its matched
+ordinary passage through third order at every fixed full-forest cap.
+It exactly matches complete cap three and has a strict fourth-root deficit.
+Arrays of these cells preserve a nonzero weak physical-clock reservoir,
+match cap three exactly, and approximate all fixed caps at `O_m(N^-3)`;
+every finite array still fails cap four. These results rule out the stated
+low-order coercivity shortcuts and do not construct exact all-prefix rivals.
+
+The original-source calibrated-target theorem below remains the main
+positive advance. General noncalibrated natural BOTH still needs lawful
+simultaneous control of equal-arm words through varying bounded cores.
+INDEPENDENT-only still needs higher-order arbitrary-count local exclusion
+or an exact source-valid return construction. The next mathematical attack
+must address those obligations, not repeat the cap-three example or
+promote an approximation rate into exact agreement. All delegated lanes
+have preserved their proofs, audits or precise failure points; no new
+Lean/Rust integration build was started. The available tools and publication
+permissions are functioning.
+
 ## Substantive successor, 19:42 UTC
 
 This addendum supersedes the earlier changing-exterior gap for the

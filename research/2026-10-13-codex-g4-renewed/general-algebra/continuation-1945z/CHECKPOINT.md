@@ -21,6 +21,21 @@ The [retained exact symbolic checker](check_cap3_collision.py) passed all
 four polynomial transcription assertions; its [receipt](CAP3-COLLISION-CHECK.json)
 is computational evidence only. No Lean or Rust verification was performed.
 
+The initial frozen note subsequently received [independent scoped hand
+acceptance](../../critical-review/INDEPENDENT-CURVATURE-REVIEW.md), review
+SHA256 `d119bc77b0985e19e2a2bfab4ca49d8984fdb5260e8860b5e71308f1c01c0f20`.
+
+A separate root-derived [third-jet addendum](THIRD-JET-CANCELLATION-ADDENDUM.md)
+is now frozen at SHA256
+`afb87242a4bc37b8d569e7a0fd4e5657dd1c6fe4e8e27cea9b3af6664b6f1c2f`.
+This lane independently audited its full second-derivative coefficients.
+It proves that the exact cap-three-neutral branch matches the complete
+kernel through third order at every fixed cap, with first cap-four
+diagonal discrepancy `-t^4/16+O(t^5)`. Its positive `N`-cell arrays are
+exact through cap three and converge at fixed-cap rate `O(N^-3)`, retaining
+nonzero physical-clock surplus, but every finite array fails cap four.
+Root and the independent review lane have been sent the pinned addendum.
+
 Still open: excluding or realizing exact full-forest INDEPENDENT weak
 reservoirs after finite persistent-body reduction, with arbitrary extra
 cell count and target-body retuning. The inherited BOTH result does not
