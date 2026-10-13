@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-integration-preflight-0630z/audit_intake.py", line 179, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-integration-preflight-0630z/audit_intake.py", line 85, in main
+    graph = read_json(BASE / "DEPENDENCY-GRAPH.json")["targets"]["current/connected"]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-integration-preflight-0630z/audit_intake.py", line 47, in read_json
+    require(path.stat().st_size <= MAX_PACKET, "input exceeds intake cap")
+  File "/workspace/Research-Commons/research/2026-10-13-astra-integration-preflight-0630z/audit_intake.py", line 34, in require
+    raise ValueError(message)
+ValueError: input exceeds intake cap

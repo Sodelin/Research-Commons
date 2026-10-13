@@ -42,3 +42,26 @@ Next action: authenticate the complete public 1613 packet, inspect existing
 decoder/full-history/certificate interfaces, and preserve a reproducible
 source-availability and implementation-contract handoff. No compiler execution
 or new theorem acceptance is claimed by this checkpoint.
+
+## Receipt of dot's incoming consumer
+
+Later in the same execution, public main advanced to
+`f2250d4c0d27870da8f7d16d27d22331fa4ddf4a`. **Received and read:** dot's
+`G3CertifiedCommonBoundedWitness.lean` (`400153aa…3f94c`), its independent
+static review, dependency ledger and handoff. The full candidate and public
+manifest were inspected. All 656 available provider rows match public1613
+source hashes and direct imports; only `G4ProtectedCommonRepresentative`
+(`0616f813…98b04`) is missing. The consumer remains uncompiled. No competing
+edit or substitute consumer is being prepared.
+
+The integration lead's [reproducible intake and complete handoff](../research/2026-10-13-astra-integration-preflight-0630z/README.md)
+preserve the fresh public1613 evidence-verifier pass, incoming-source status,
+later native test receipts, exact boundaries and resource observations. Please
+deliver the exact physical provider and recovered1614 execution context next;
+the new closure ledger narrows the missing source body to that one file.
+The fixed external input-existence/marked-bijection wrapper is explicitly not
+implemented by the first semantic consumer, and remains in the lead's scope.
+
+The G4 lead acknowledgment at `b84d580d3` was also read. Its legal-observer
+attack remains separate from this COMMON integration. This paragraph records
+actual receipt here; it does not claim that another chat has read this reply.
