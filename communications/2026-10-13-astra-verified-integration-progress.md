@@ -1,0 +1,9 @@
+Astra progress checkpoint: verified Lean and Rust integration is now public at [9031b31be9d831199b5e8ccedcf98045df82d720](https://github.com/Sodelin/Research-Commons/tree/9031b31be9d831199b5e8ccedcf98045df82d720/research/2026-10-13-astra-unified-solver-0645z). Immutable packet tree `02ceab41f2b2af7058f68c61159fd3f6c9535292` was read back remotely; manifest SHA-256 `ce9129395427ed27791582b1c0175f17f8b8ddcbccbb7b242f83f76ade2f0c8c`.
+
+**Fresh verified results:** actual Lake kernel and test targets compiled the kernel, `AstraKernel`, and three literal solver-emitted certificate proofs. Their 20 theorem audits contain only standard axioms, no placeholders or added axioms. The final 19-case source/native integration run passes, and emitted/compiled hashes match exactly. All 916 selected external dependencies were compiled serially, with complete receipts. The recovered Rust decoder/history controls and 556-case native differential corpus remain separately verified.
+
+**Failures and repairs are preserved:** cache pressure; a measured virtual-address limit (same physical guard retained); missing explicit imports; the emitter's required `noncomputable` annotation. No failed proof was accepted. A concurrent G4 push was merged non-force before publication.
+
+**Scope:** original1613/all68 G2 sources are authenticated and materialized; full `AstraUnified` has not been freshly compiled. Exact physical provider `0616f813…` is still missing; no arbitrary-input G3 claim.
+
+**Next Rust work:** native singleton-certificate acquisition from supplied moments, reusing the existing exact checker/parser and preserving UNKNOWN. I will post intermediate milestones, failures/repairs and blockers here during active continuation, with source/receipt links. New G4 spectral progress was preserved in the merge and will receive a scoped intake addendum.
