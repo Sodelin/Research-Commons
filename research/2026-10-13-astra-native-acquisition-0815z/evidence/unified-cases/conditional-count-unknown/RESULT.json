@@ -1,0 +1,204 @@
+{
+  "general_G3_resolved": false,
+  "request_sha256": "89f0eacf288b986ea339771b297d66ffd39ce7fd7af521a230eac28d93947241",
+  "schema": "unified_research_solver_result_v1",
+  "source_feasibility_certified": false,
+  "source_result": {
+    "Lean_kernel_verification_claimed": false,
+    "bound_applied_to_catalogue": false,
+    "checker_called": false,
+    "conditional_counts": [
+      {
+        "ceiling_check": true,
+        "cell_count_bound": 24,
+        "delta": "1/2",
+        "parameters": {
+          "M": "0",
+          "b": "1/4",
+          "epsilon": "1/2",
+          "sigma": "1"
+        },
+        "provider_verified": false,
+        "rational_upper_bound": "24",
+        "slot_id": "UNVERIFIED_SLOT_0",
+        "source_count_bound_verified": false,
+        "status": "CONDITIONAL_ARITHMETIC_ONLY",
+        "zero_length_case": "0 <= cell_count_bound"
+      }
+    ],
+    "execution_mode": "FRESH_RUN",
+    "general_G3_resolved": false,
+    "integration_blockers": [
+      "UNKNOWN_PROVIDER_VERIFIER_UNAVAILABLE",
+      "UNKNOWN_CORE_CATALOGUE_COMPILER_UNAVAILABLE"
+    ],
+    "missing_provider_obligations": [
+      "source_faithful_all_core_and_piece_coverage",
+      "actual_equal_arm_admission_and_chronology",
+      "same_source_nonnegative_additive_score",
+      "positive_weighted_exact_endpoint_annihilation",
+      "uniform_weak_cell_modulus",
+      "given_fibre_uniform_independent_survival_floor"
+    ],
+    "provider_verified": false,
+    "reason": "UNKNOWN_PROVIDER_VERIFIER_UNAVAILABLE",
+    "request": {
+      "count_certificate": {
+        "mode": "INDEPENDENT",
+        "schema": "conditional_independent_zero_score_v1",
+        "slots": [
+          {
+            "M": "0",
+            "b": "1/4",
+            "endpoint_score": "0",
+            "epsilon": "1/2",
+            "sigma": "1",
+            "slot_id": "UNVERIFIED_SLOT_0",
+            "survival_floor_evidence": {
+              "artifact_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "provider_id": "UNVERIFIED_EXAMPLE_PLACEHOLDER",
+              "row_indices": [
+                0
+              ],
+              "source_request_sha256": "c817077e532b8c5975969edb79984c411d251262f993cadafb2607d98c3fe90d"
+            }
+          }
+        ],
+        "source_request_sha256": "c817077e532b8c5975969edb79984c411d251262f993cadafb2607d98c3fe90d"
+      },
+      "operation": "conditional_count",
+      "schema": "same_source_certified_bounds_v1",
+      "source_request": {
+        "limits": {
+          "max_sources": 100,
+          "seconds": 30,
+          "smt_milliseconds": 10000
+        },
+        "mechanisms": [
+          "independent"
+        ],
+        "n": 3,
+        "observation_kind": "exact_unranked_law",
+        "registry": {
+          "complete": false,
+          "hybrid_ids": []
+        },
+        "rows": [
+          {
+            "law": [
+              {
+                "outcome": [
+                  "L0",
+                  [
+                    "L1",
+                    "L2"
+                  ]
+                ],
+                "p": "2/3"
+              },
+              {
+                "outcome": [
+                  "L1",
+                  [
+                    "L0",
+                    "L2"
+                  ]
+                ],
+                "p": "1/6"
+              },
+              {
+                "outcome": [
+                  "L2",
+                  [
+                    "L0",
+                    "L1"
+                  ]
+                ],
+                "p": "1/6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "request_sha256": "eb976c2f09be50a2cbaf137719f698ec7b101684230cc4d039cc4140da7482a6",
+    "schema": "same_source_certified_bounds_result_v1",
+    "scope": "Exact conditional arithmetic only; neither source coverage nor a bounded source catalogue has been verified.",
+    "solver_called": false,
+    "source_feasibility_certified": false,
+    "source_manifest": {
+      "files": [
+        {
+          "bytes": 28449,
+          "runtime_relative": "solver.py",
+          "sha256": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py"
+        },
+        {
+          "bytes": 5120,
+          "runtime_relative": "bounded_search.py",
+          "sha256": "7906ad84dc31ae2add6349a8166c4626826b4e09eaf8dad1e86426710076f7e7",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/bounded_search.py"
+        },
+        {
+          "bytes": 10389,
+          "runtime_relative": "verify_certificate.py",
+          "sha256": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py"
+        },
+        {
+          "bytes": 3556,
+          "runtime_relative": "verify_search.py",
+          "sha256": "0698a99f0eef559e582b6e0b36d2c9bfb0c2c8ad94856c9ef62d58f631a3bf51",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_search.py"
+        },
+        {
+          "bytes": 1023,
+          "runtime_relative": "UPSTREAM-IDENTITY.json",
+          "sha256": "bf569af6ea20629ceb75e19d2d077659a19039af78ca20b8b3ae31cad91cba2d",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/UPSTREAM-IDENTITY.json"
+        },
+        {
+          "bytes": 48,
+          "runtime_relative": "requirements.txt",
+          "sha256": "05851fd3a70a531a52520f17346fcefe447028337446393daf5e0e7a956d2071",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/requirements.txt"
+        },
+        {
+          "bytes": 6474,
+          "runtime_relative": "upstream/source_census.py",
+          "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/source_census.py"
+        },
+        {
+          "bytes": 9360,
+          "runtime_relative": "upstream/law_compiler.py",
+          "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/law_compiler.py"
+        },
+        {
+          "bytes": 2401,
+          "runtime_relative": "upstream/continuous_optimizer.wl",
+          "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/continuous_optimizer.wl"
+        },
+        {
+          "bytes": 7949,
+          "runtime_relative": "upstream/README.md",
+          "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/README.md"
+        }
+      ],
+      "role": "Existing original-source census, shared-row exact feasibility and semantic certificate checker; not the nine-parameter interval outer-cover engine or Rust diagnostic.",
+      "schema": "same_source_certified_bounds_sources_v1",
+      "source_commit": "cf6c1b32c6127af9568c18a65c25d738d288a3e7"
+    },
+    "source_request_sha256": "c817077e532b8c5975969edb79984c411d251262f993cadafb2607d98c3fe90d",
+    "statistical_coverage_verified": false,
+    "status": "UNKNOWN",
+    "submitted_provider_evidence": null,
+    "unrestricted_NO_claimed": false
+  },
+  "status": "UNKNOWN",
+  "universal_native_correctness_claimed": false
+}

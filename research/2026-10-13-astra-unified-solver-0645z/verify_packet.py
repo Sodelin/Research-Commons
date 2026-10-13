@@ -16,11 +16,11 @@ MANIFEST = HERE/'PACKET-MANIFEST.json'
 EXCLUDED = {'.lake', '__pycache__', 'target'}
 
 
-def inventory():
+def inventory(root=HERE):
     rows = []
-    for path in sorted(HERE.rglob('*')):
-        relative = path.relative_to(HERE)
-        if path == MANIFEST or any(part in EXCLUDED for part in relative.parts):
+    for path in sorted(root.rglob('*')):
+        relative = path.relative_to(root)
+        if relative.as_posix() == 'PACKET-MANIFEST.json' or any(part in EXCLUDED for part in relative.parts):
             continue
         if path.is_symlink():
             raise ValueError('symlink is outside this publication contract: '+str(relative))
@@ -39,8 +39,10 @@ def inventory():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--root', type=Path, default=HERE)
     args = parser.parse_args()
-    observed = inventory()
+    manifest = args.root.resolve()/'PACKET-MANIFEST.json'
+    observed = inventory(args.root.resolve())
     if args.write:
         report = dict(schema='astra_public_packet_manifest_v1', files=observed,
                       excluded=['PACKET-MANIFEST.json', *sorted(EXCLUDED)],
@@ -49,10 +51,10 @@ def main():
                       original1614='Recorded acceptance/recovery; complete public physical body still missing.',
                       original1615='Recorded historical acceptance; complete recovered packet still missing.',
                       general_G3_resolved=False)
-        with MANIFEST.open('x') as output:
+        with manifest.open('x') as output:
             output.write(json.dumps(report, indent=2, sort_keys=True)+'\n')
     else:
-        report = json.loads(MANIFEST.read_text())
+        report = json.loads(manifest.read_text())
         if report.get('schema') != 'astra_public_packet_manifest_v1':
             raise ValueError('unsupported manifest')
         if observed != report['files']:
@@ -62,7 +64,7 @@ def main():
             raise ValueError('packet differs: '+', '.join(changed[:25]))
     print(json.dumps(dict(status='INTEGRITY_VERIFIED', files=len(observed),
                           bytes=sum(row['bytes'] for row in observed),
-                          manifest_sha256=hashlib.sha256(MANIFEST.read_bytes()).hexdigest(),
+                          manifest_sha256=hashlib.sha256(manifest.read_bytes()).hexdigest(),
                           compiler_executed=False, physical_representative_certified=False)))
 
 

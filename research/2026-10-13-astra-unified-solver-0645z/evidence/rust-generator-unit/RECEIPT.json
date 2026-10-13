@@ -1,0 +1,93 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "env",
+    "PATH=/workspace/scratch/astra-native-0645/runtime/toolchain/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/opt/codex/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/agent/.local/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "CARGO_HOME=/workspace/scratch/astra-native-0645/runtime/cargo-home",
+    "CARGO_TARGET_DIR=/workspace/scratch/astra-certificate-generator-target",
+    "cargo",
+    "test",
+    "--locked",
+    "--offline",
+    "-j",
+    "1",
+    "--",
+    "--test-threads=1"
+  ],
+  "cwd": "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/rust",
+  "started_utc": "2026-10-13T08:18:03.258689+00:00",
+  "limits": {
+    "cpu_seconds": 120,
+    "wall_seconds": 180,
+    "address_space_bytes": 2147483648,
+    "file_bytes": 268435456,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 0,
+  "stop": null,
+  "elapsed_seconds": 3.5042342259994257,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 24706424832,
+      "ram_available": 18002911232,
+      "cgroup_memory": 3615158272
+    },
+    {
+      "seconds": 0.0013892110000597313,
+      "disk_free": 24706424832,
+      "ram_available": 18002309120,
+      "cgroup_memory": 3615535104
+    },
+    {
+      "seconds": 0.5017635539998082,
+      "disk_free": 24701313024,
+      "ram_available": 17981722624,
+      "cgroup_memory": 4096692224
+    },
+    {
+      "seconds": 1.002140122000128,
+      "disk_free": 24697339904,
+      "ram_available": 17923678208,
+      "cgroup_memory": 4106584064
+    },
+    {
+      "seconds": 1.5025736540001162,
+      "disk_free": 24696635392,
+      "ram_available": 17865093120,
+      "cgroup_memory": 4146847744
+    },
+    {
+      "seconds": 2.0029370599995673,
+      "disk_free": 24690237440,
+      "ram_available": 17840168960,
+      "cgroup_memory": 4105740288
+    },
+    {
+      "seconds": 2.503563743999621,
+      "disk_free": 24685006848,
+      "ram_available": 17802944512,
+      "cgroup_memory": 4125388800
+    },
+    {
+      "seconds": 3.003908689000127,
+      "disk_free": 24674942976,
+      "ram_available": 17794445312,
+      "cgroup_memory": 4149743616
+    }
+  ],
+  "child_peak_rss_bytes": 211775488,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 631,
+      "sha256": "876964f0dc1da335e4d1ae2d4855206a9ed60e569209baf0af6f4a948856d9e9"
+    },
+    "stderr": {
+      "bytes": 616,
+      "sha256": "ef925f76b46a7ed6cb0ce6739346157b0433cf418b9587f732be2bbcb43ec325"
+    }
+  }
+}

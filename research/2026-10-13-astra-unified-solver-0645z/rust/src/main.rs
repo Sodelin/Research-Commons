@@ -90,14 +90,69 @@ fn check(raw: &str) -> Result<usize> {
     Ok(level-1)
 }
 
+#[derive(Debug, PartialEq, Eq)]
+enum Generation {
+    Checked(String),
+    Unknown(&'static str),
+}
+
+/// Bounded acquisition from exactly three supplied moments, never an unknown
+/// target or an additional observation. Reuse the existing parser and checker.
+fn generate_singleton(raw: &str) -> Result<Generation> {
+    if raw.len()>262144 || !raw.is_ascii() { return Err("wire size or encoding"); }
+    let mut input=Input(raw.split_ascii_whitespace());
+    if input.token()? != "COMMON_GENERATE_SINGLETON_V1" { return Err("generator wire version"); }
+    // Preserve the exact supplied moment token spellings in the certificate.
+    let supplied: Vec<_>=input.0.clone().take(3).collect();
+    let one=input.rational()?;
+    let a=input.rational()?;
+    let cube=input.rational()?;
+    if input.0.next().is_some() { return Err("trailing token"); }
+    let a_squared=&a*&a;
+    let a_cubed=&a_squared*&a;
+    if one!=Rational::one() || a<=Rational::zero() || a>Rational::one() || cube!=a_cubed {
+        return Ok(Generation::Unknown("supplied_moments_do_not_fit_singleton_generator"));
+    }
+    let two=Rational::from_integer(2.into());
+    let three=Rational::from_integer(3.into());
+    let constant=&two*&a_cubed;
+    let linear=-(&three*&a_squared);
+    let weight=&two*&a;
+    let negative_a=-a;
+    // 2*a^3 - 3*a^2*x + x^3 = 2*a*(x-a)^2 + x*(x-a)^2.
+    let certificate=format!(
+        "COMMON_CERT_V1 3 {constant} {linear} 1 {} {} {} 2 {weight} 0 0 2 {negative_a} 1 1 1 0 2 {negative_a} 1\n",
+        supplied[0], supplied[1], supplied[2]);
+    match check(&certificate) {
+        Ok(2)=>Ok(Generation::Checked(certificate)),
+        // Derived coefficients may exceed the transport cap even though all
+        // supplied moments fit. This is acquisition exhaustion, never NO.
+        _=>Ok(Generation::Unknown("generated_certificate_exceeds_supported_exact_language")),
+    }
+}
+
 fn main() {
     let mut raw=String::new();
     if io::stdin().take(262145).read_to_string(&mut raw).is_err() {
         eprintln!("REFUSED invalid UTF-8/input"); std::process::exit(1);
     }
-    match check(&raw) {
-        Ok(cap)=>println!("CHECKED_RATIONAL_CERTIFICATE support_cap={cap} source_existence=false"),
-        Err(reason)=>{ eprintln!("REFUSED {reason}"); std::process::exit(1); }
+    if raw.split_ascii_whitespace().next()==Some("COMMON_GENERATE_SINGLETON_V1") {
+        match generate_singleton(&raw) {
+            Ok(Generation::Checked(certificate))=>{
+                println!("GENERATED_AND_CHECKED support_cap=2 source_existence=false");
+                print!("{certificate}");
+            }
+            Ok(Generation::Unknown(reason))=>{
+                println!("UNKNOWN {reason} source_existence=false");
+                std::process::exit(2);
+            }
+            Err(reason)=>{ eprintln!("REFUSED {reason}"); std::process::exit(1); }
+        }
+    } else {
+        match check(&raw) {
+            Ok(cap)=>println!("CHECKED_RATIONAL_CERTIFICATE support_cap={cap} source_existence=false"),
+            Err(reason)=>{ eprintln!("REFUSED {reason}"); std::process::exit(1); }
+        }
     }
 }
 
@@ -145,5 +200,40 @@ mod tests {
         // p(x)=x has a root only at zero. The arithmetic certificate is valid
         // for y=(1,0), but no (0,1] source-existence claim follows from acceptance.
         assert_eq!(check("COMMON_CERT_V1 2 0 1 1 0 1 1 1 0 1 1"), Ok(1));
+    }
+    #[test] fn singleton_generation_uses_only_supplied_exact_moments() {
+        assert_eq!(generate_singleton("COMMON_GENERATE_SINGLETON_V1 1 1/2 1/8"),
+                   Ok(Generation::Checked(GOOD.to_owned()+"\n")));
+        for raw in ["COMMON_GENERATE_SINGLETON_V1 1 1 1",
+                    "COMMON_GENERATE_SINGLETON_V1 2/2 2/4 2/16"] {
+            let Ok(Generation::Checked(certificate))=generate_singleton(raw) else { panic!("{raw}"); };
+            assert_eq!(check(&certificate), Ok(2));
+        }
+        let Ok(Generation::Checked(preserved))=generate_singleton("COMMON_GENERATE_SINGLETON_V1 2/2 2/4 2/16")
+            else { panic!("exact equivalent spellings refused"); };
+        assert!(preserved.contains(" 2/2 2/4 2/16 "));
+    }
+    #[test] fn singleton_generation_unknown_and_malformed_are_distinct() {
+        for raw in ["COMMON_GENERATE_SINGLETON_V1 1 1/2 1/7",
+                    "COMMON_GENERATE_SINGLETON_V1 1 0 0",
+                    "COMMON_GENERATE_SINGLETON_V1 1 -1 -1",
+                    "COMMON_GENERATE_SINGLETON_V1 1 2 8",
+                    "COMMON_GENERATE_SINGLETON_V1 0 1/2 1/8"] {
+            assert!(matches!(generate_singleton(raw), Ok(Generation::Unknown(_))), "{raw}");
+        }
+        for raw in ["COMMON_GENERATE_SINGLETON_V1", "COMMON_GENERATE_SINGLETON_V1 1 1/2",
+                    "COMMON_GENERATE_SINGLETON_V1 1 1/2 1/8 extra",
+                    "COMMON_GENERATE_SINGLETON_V1 1 0.5 1/8",
+                    "COMMON_GENERATE_SINGLETON_V1 1 1/0 1/8",
+                    "COMMON_GENERATE_SINGLETON_V1 1 01/2 1/8"] {
+            assert!(generate_singleton(raw).is_err(), "{raw}");
+        }
+    }
+    #[test] fn singleton_derived_cap_exhaustion_is_unknown() {
+        let a=Rational::new(6000000000000_i64.into(), 6000000000001_i64.into());
+        let cube=&a*&a*&a;
+        let raw=format!("COMMON_GENERATE_SINGLETON_V1 1 {a} {cube}");
+        assert_eq!(generate_singleton(&raw),
+                   Ok(Generation::Unknown("generated_certificate_exceeds_supported_exact_language")));
     }
 }

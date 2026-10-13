@@ -1,0 +1,60 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "python3",
+    "-B",
+    "test_native_generator.py",
+    "--binary",
+    "/workspace/scratch/astra-certificate-generator-target/debug/common-certificate-checker",
+    "--previous-binary",
+    "/workspace/scratch/astra-certificate-target/debug/common-certificate-checker",
+    "--report",
+    "evidence/rust-generator-differential/CASES.json"
+  ],
+  "cwd": "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z",
+  "started_utc": "2026-10-13T08:20:29.698014+00:00",
+  "limits": {
+    "cpu_seconds": 90,
+    "wall_seconds": 120,
+    "address_space_bytes": 536870912,
+    "file_bytes": 16777216,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 0,
+  "stop": null,
+  "elapsed_seconds": 1.0021292439996614,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 24654413824,
+      "ram_available": 17988419584,
+      "cgroup_memory": 4130455552
+    },
+    {
+      "seconds": 0.0015379149999716901,
+      "disk_free": 24654413824,
+      "ram_available": 17988419584,
+      "cgroup_memory": 4130816000
+    },
+    {
+      "seconds": 0.5018260779997945,
+      "disk_free": 24654340096,
+      "ram_available": 17973161984,
+      "cgroup_memory": 4140748800
+    }
+  ],
+  "child_peak_rss_bytes": 20664320,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 539,
+      "sha256": "41257b54d594d0b649ee500716ed3f309b47725bb8b352600114e2fafeb643ae"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

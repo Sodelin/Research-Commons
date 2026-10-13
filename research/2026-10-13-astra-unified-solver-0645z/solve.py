@@ -23,7 +23,8 @@ ADAPTER=ROOT/'applications/practical-solver/certified_bounds.py'
 ADAPTER_SHA='4d7caca77386cba972e7af3266e583ae0970833811014c9b17eda01732b798fa'
 
 
-def dispatch(request, out, backend_python=None, rust_binary=None, parity_binary=None, parity_sources=None):
+def dispatch(request, out, backend_python=None, rust_binary=None, parity_binary=None, parity_sources=None,
+             native_generation=False):
     fields(request, ['schema','task','input'])
     if request['schema'] != 'unified_research_solver_v1':
         raise Refused('unsupported solver schema')
@@ -45,6 +46,27 @@ def dispatch(request, out, backend_python=None, rust_binary=None, parity_binary=
                 'source_feasibility_certified':result['source_feasibility_certified']}
     if request['task']=='generate_singleton':
         result=generate_singleton(request['input'])
+        if native_generation:
+            if not rust_binary:
+                raise Refused('native generation requires --rust-binary')
+            submitted='COMMON_GENERATE_SINGLETON_V1 '+' '.join(request['input'])+'\n'
+            binary=Path(rust_binary).resolve()
+            (out/'generation.wire').write_text(submitted)
+            completed=subprocess.run([str(binary)],input=submitted,text=True,capture_output=True,timeout=5)
+            (out/'generation.stdout').write_text(completed.stdout)
+            (out/'generation.stderr').write_text(completed.stderr)
+            generated=result['status']=='GENERATED_AND_CHECKED'
+            agree=(completed.returncode==0 and completed.stdout==
+                   'GENERATED_AND_CHECKED support_cap=2 source_existence=false\n'+wire(result['certificate'])) if generated else (
+                   completed.returncode==2 and completed.stdout.startswith('UNKNOWN ') and
+                   completed.stdout.endswith('source_existence=false\n'))
+            base['native_generation']=dict(binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
+                input_sha256=hashlib.sha256(submitted.encode()).hexdigest(),
+                output_sha256=hashlib.sha256(completed.stdout.encode()).hexdigest(),
+                exit_code=completed.returncode,agree=agree,source_feasibility_certified=False)
+            if not agree:
+                return {**base,'status':'UNKNOWN','reason':'Python/Rust acquisition disagreement',
+                        'certificate_result':result,'source_feasibility_certified':False}
     elif request['task']=='check_certificate':
         result=checked(request['input'])
     elif request['task']=='common_menu':
@@ -102,6 +124,8 @@ def main():
     p.add_argument('--rust-binary')
     p.add_argument('--parity-binary')
     p.add_argument('--parity-sources',type=Path)
+    p.add_argument('--native-generation',action='store_true',
+                   help='Require native acquisition agreement on generate_singleton tasks')
     a=p.parse_args()
     a.output.mkdir(parents=True,exist_ok=False)
     try:
@@ -109,7 +133,8 @@ def main():
             raw=incoming.read(MAX_BYTES+1)
         (a.output/'REQUEST.json').write_bytes(raw)
         request=loads(raw)
-        result=dispatch(request,a.output,a.backend_python,a.rust_binary,a.parity_binary,a.parity_sources)
+        result=dispatch(request,a.output,a.backend_python,a.rust_binary,a.parity_binary,a.parity_sources,
+                        a.native_generation)
     except subprocess.TimeoutExpired:
         result=dict(schema='unified_research_solver_result_v1',status='UNKNOWN',
                     reason='native certificate checker time limit',source_feasibility_certified=False)

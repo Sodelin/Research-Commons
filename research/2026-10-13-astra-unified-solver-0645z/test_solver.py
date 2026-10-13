@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--rust-binary')
     parser.add_argument('--parity-binary')
     parser.add_argument('--parity-sources')
+    parser.add_argument('--native-generation',action='store_true')
     a=parser.parse_args()
     a.output.mkdir(parents=True,exist_ok=False)
     owned=['solve.py','certificates.py','external_encoding.py','emit_lean.py','test_solver.py','native_bridge.py']
@@ -42,6 +43,8 @@ def main():
              '--output',str(out),'--backend-python',a.backend_python]
         if a.rust_binary:
             cmd+=['--rust-binary',a.rust_binary]
+        if a.native_generation and task=='generate_singleton':
+            cmd+=['--native-generation']
         if a.parity_binary:
             cmd+=['--parity-binary',a.parity_binary,'--parity-sources',a.parity_sources]
         completed=subprocess.run(cmd,capture_output=True,text=True,timeout=100)
@@ -53,6 +56,8 @@ def main():
             passed=passed and inner['semantic_check'].get('status') is not None
         if task in ['check_certificate','generate_singleton','common_menu']:
             passed=passed and result.get('source_feasibility_certified') is False
+        if a.native_generation and task=='generate_singleton':
+            passed=passed and result.get('native_generation',{}).get('agree') is True
         if task=='native_rc1':
             passed=passed and result.get('source_feasibility_certified') is False
             if expected.startswith(('CERTIFIED','CHECKED')):

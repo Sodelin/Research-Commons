@@ -1,5 +1,10 @@
 # Unified source solver and supplied COMMON certificates
 
+The [native acquisition successor](../2026-10-13-astra-native-acquisition-0815z/README.md)
+adds Rust certificate generation with explicit `--native-generation` agreement,
+158 acquisition controls and a fresh 19-case unified run. Earlier receipts below
+retain their original source versions; the successor supplies current pins.
+
 This integration increment extends the existing exact original-source solver
 and adds an exact rational supplied-certificate path. It does not replace G1,
 G2, binary-M3 G5 or any selected older proof. General G3 remains open.
