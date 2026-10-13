@@ -4,6 +4,29 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## Original-source clock-rigidity successor, 23:52 UTC
+
+The [lead acceptance](critical-review/ROOT-ANCHOR-COMMONIZATION-ACCEPTANCE.md)
+records the independently reviewed completed anchor commonization theorem.
+It applies to finite strict original bodies and equality comparisons with
+finite boundary bodies of finite relevant exposure. On the already shared
+finite-persistent compactification, it forces every weak clock loss to zero.
+This supersedes the two-clock gap in the older 23:29 register below.
+
+The remaining natural BOTH obligation is **local exclusion of arbitrarily
+many weak cells near the finite body, allowing changing original cores**.
+The [exact generator/cone checkpoint](whole-source/continuation-2110z/ORIGINAL-LOCAL-CONE-GENERATOR-CHECKPOINT.md)
+preserves the difficult fair and boundary parameter orders. An all-law
+commonization functional is not automatically differentiable or finitely
+observable. Hilbert finite generation can reduce normalized body changes
+to a finite-dimensional observable secant cone; it does not prove the
+required separation from positive weak-cell insertions.
+
+No original general finite certificate or fixed-target exact impossibility
+family is claimed. INDEPENDENT-only and actual controlled-menu adapters
+retain their distinct obligations. These are hand proofs and reviews only;
+there is no tool/permission blocker or new Lean/Rust execution.
+
 ## Original-source finite-persistence successor, 23:29 UTC
 
 The [lead acceptance](critical-review/ROOT-ORIGINAL-FINITE-PERSISTENCE-ACCEPTANCE.md)

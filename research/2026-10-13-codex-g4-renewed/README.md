@@ -2,7 +2,21 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
-**Latest checkpoint, 23:29 UTC:** the
+**Latest checkpoint, 23:52 UTC:** the
+[commonization acceptance](critical-review/ROOT-ANCHOR-COMMONIZATION-ACCEPTANCE.md)
+and separate Sol audit recover directed COMMON anchor laws from completed
+INDEPENDENT anchor laws for finite strict bodies and the stated finite
+boundary comparisons. Together with original-source finite persistence,
+this proves that the shared limit of rivals fitting growing natural BOTH
+prefixes has **zero weak clock loss**, even across changing original cores.
+The remaining general BOTH duty is arbitrary-count local exclusion near
+that finite body, including boundary core parameters and fair-coin folds.
+The [local cone checkpoint](whole-source/continuation-2110z/ORIGINAL-LOCAL-CONE-GENERATOR-CHECKPOINT.md)
+records an exact port-generator identity and the unresolved sign obligation.
+General G4 and INDEPENDENT-only remain open. Evidence is hand proof and
+scoped team review; no new formal verification or novelty certification.
+
+**Earlier checkpoint, 23:29 UTC:** the
 [lead acceptance](critical-review/ROOT-ORIGINAL-FINITE-PERSISTENCE-ACCEPTANCE.md)
 now composes the separately reviewed actual mixed-core analytic theorem
 with an independently reviewed original-source compactification argument.
