@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-13T21:06:02.115904+00:00",
+  "original_guard_sha256": "2deff44122fa3f91a0d353967f1cb2016e5e9787397d2094895d29e86b73cc8a",
+  "original_result_sha256": "c991bf2e6ba2e814deb2d56a2373bffc2523426003c211c1c483e45d81edca7a",
+  "original_runner_sha256": "6a2a1c1ac4464fd58045a2ab16f4ad05b2717bc09749a125bd245fc5873303eb",
+  "repaired_runner_sha256": "2648d7e48979c1c241fe2563b7ea40c98034a38d2a0cbe15b535718ac5c5baf9",
+  "test_sha256": "7ef6b5ff1f8ab717f2c0fa62e969c5d3a3d447ca44248d07474dd46519cd75aa",
+  "regression_guard_sha256": "f7895b28b385b0c7bd56412041d455678b5b9ca4023de197ea5daec861c6cfa3",
+  "observed_procfs": {
+    "self_numeric_pid_agree": true,
+    "self_numeric_task_directories_exist": true,
+    "optional_task_children_interface_present": false
+  },
+  "repair": "Enumerate numeric /proc entries read-only and filter exact parent PID and executable; retain immediate identity recheck before observations.",
+  "compiler_changes": false,
+  "limits_changed_from_v1": false,
+  "original_compiler_exit_code": 0,
+  "original_diagnostic_exit_code": 2,
+  "repeat_status": "NOT_RUN",
+  "global_policy_promoted": false,
+  "objects_adopted": false,
+  "cause_of_original_5GiB_thread_failure": "UNKNOWN"
+}
