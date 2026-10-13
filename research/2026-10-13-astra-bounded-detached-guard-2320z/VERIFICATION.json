@@ -1,0 +1,108 @@
+{
+  "schema": "astra_detached_dummy_verification_v1",
+  "observed_utc": "2026-10-13T23:40:16.917292+00:00",
+  "status": "SEVEN_BOUNDED_DUMMY_TESTS_PASS",
+  "production_status": "NOT_EXECUTED",
+  "fresh_compiler_invocations": 0,
+  "source_pins": {
+    "detached_transport.py": "4c396546825b108f48fe9633a0df576f78fb8af77830233c77751db1e9e56db1",
+    "one_guard.py": "71e353bd20c877248580e0bed8a9b4b0bb312cae08d7b7854260c4293cbc50eb",
+    "test_transport.py": "1559af103eea6a4d000e05bc1e76dbe08ed7657e71da6172905fc47aef10c6de"
+  },
+  "guard_receipt_sha256": "a993e69f8a4650970493b02b1c131d171260098a0513791365cd4aca791a8d2f",
+  "guard_elapsed_seconds": 2.503546154000105,
+  "guard_peak_rss_bytes": 20185088,
+  "cases": [
+    {
+      "test": "test_bootstrap_exit_persists_without_success_promotion",
+      "guard_receipt_sha256": "c5c317059fea63a40e88a6f0a9d07c9eddcbe75fde2c68c7b79c027f839c793a",
+      "builder_exit_code": 0,
+      "stop": null,
+      "error": null,
+      "observed_guard_state": "Z",
+      "launch_sha256": "47192abd2092c5fb390dc667966c9a6a8bc515d071a1c917ef7965a819fe4e6e"
+    },
+    {
+      "test": "test_builder_failure_is_not_success",
+      "guard_receipt_sha256": "cd731cb62d17e53b158544b26a1ced8391a6d680c06a8ff768220b947e8b872d",
+      "builder_exit_code": 3,
+      "stop": null,
+      "error": null,
+      "observed_guard_state": "Z",
+      "launch_sha256": "47ed1b15e20fc22409e0a3a67976962e1dd879eb811a49e4a602446a313bbca2"
+    },
+    {
+      "test": "test_missing_pidfd_is_refused_before_launch",
+      "launches": 0
+    },
+    {
+      "test": "test_pidfd_stop_cleans_owned_stopped_descendant",
+      "guard_receipt_sha256": "502c3f1ca13d0ce4d9d0a945bc1a679de551bc96999e708304f7e3839698545d",
+      "builder_exit_code": -9,
+      "stop": null,
+      "error": {
+        "type": "KeyboardInterrupt",
+        "message": ""
+      },
+      "observed_guard_state": "Z",
+      "launch_sha256": "856b2fa7637d42e9cadba4e2b47e22d9b8b5c6fe3acd081358ec89944616aec6",
+      "actual_pidfd_sigint_sent": true,
+      "readiness": {
+        "wchan": "hrtimer_nanosleep",
+        "observed_utc": "2026-10-13T23:39:40.350537+00:00",
+        "meaning": "pinned guard reached monitor after assigning its only child"
+      },
+      "owned_stopped_descendant_after": {
+        "pid": 14864,
+        "state": "Z"
+      }
+    },
+    {
+      "test": "test_pre_monitor_readiness_refuses_signal",
+      "guard_receipt_sha256": "aeb3589b3f50e4f516fbb380dc038a74c2b4241ee2be2369962b33cbc7811cc9",
+      "builder_exit_code": -9,
+      "stop": null,
+      "error": {
+        "type": "KeyboardInterrupt",
+        "message": ""
+      },
+      "observed_guard_state": "Z",
+      "launch_sha256": "2ef50eaf71d1e7a75d74431c48b6dc1e165db5efddfe0381affd8697845b07bc",
+      "actual_pidfd_sigint_sent": true,
+      "readiness": {
+        "wchan": "hrtimer_nanosleep",
+        "observed_utc": "2026-10-13T23:39:40.440721+00:00",
+        "meaning": "pinned guard reached monitor after assigning its only child"
+      }
+    },
+    {
+      "test": "test_requested_stop_never_promotes_child_zero",
+      "guard_receipt_sha256": "519721e2e6fe43063f96a2d558d93c39812cf60581cee69f39c3dd0cdcbf96f3",
+      "builder_exit_code": 0,
+      "stop": null,
+      "error": null,
+      "observed_guard_state": "Z",
+      "launch_sha256": "8b2db93588c7f04b87031cd65e9667ce1e292728e922fccbc6af4451af34ffbe"
+    },
+    {
+      "test": "test_stale_starttime_refuses_signal",
+      "guard_receipt_sha256": "05e8d9ae608b1b92c77fffd4fddcd1dfd786b21356ab518a21a4871a4cd6d81d",
+      "builder_exit_code": -9,
+      "stop": null,
+      "error": {
+        "type": "KeyboardInterrupt",
+        "message": ""
+      },
+      "observed_guard_state": "Z",
+      "launch_sha256": "80359fa68a0ce6949677cb0ac2c82b778157f34a88367302ba464f1b714f1b4b",
+      "actual_pidfd_sigint_sent": true,
+      "readiness": {
+        "wchan": "hrtimer_nanosleep",
+        "observed_utc": "2026-10-13T23:39:41.142624+00:00",
+        "meaning": "pinned guard reached monitor after assigning its only child"
+      }
+    }
+  ],
+  "active_compiler_guard_or_dummy_processes": [],
+  "limits": "Finite dummy tests only; no environment-replacement or universal cleanup proof."
+}
