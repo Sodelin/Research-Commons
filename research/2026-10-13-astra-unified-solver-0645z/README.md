@@ -11,6 +11,8 @@ publication readback are still being assembled. Consult actual execution
 receipts rather than treating this checkpoint as final acceptance.
 
 The starting evidence is [the verified integration preflight](../2026-10-13-astra-integration-preflight-0630z/README.md).
+The [integration handoff](INTEGRATION-HANDOFF.md) identifies the exact selected
+baseline, missing physical provider and remaining composition obligations.
 Full1613 is publicly delivered with all68 current G2 sources. The subsequent
 physical1614 provider was accepted and exactly recovered historically, but its
 complete body remains unavailable here.1615 has historical acceptance without
