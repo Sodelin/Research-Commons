@@ -1,0 +1,148 @@
+{
+  "schema": "astra.selected1613-physical-provider-gap.v1",
+  "selection": {
+    "path": "research/2026-10-13-astra-unified-solver-0645z/intake/SELECTED-LEAN.json",
+    "sha256": "77e4fb8bc6812eb6a183b33b3911a19bcc3cfc321e9cf5ea1fe9f30566cdfb14",
+    "bytes": 753400,
+    "git_blob": "ff3ce66b5c2658617a776af2564ce7718388c8f4"
+  },
+  "scope": "Local selected1613 source bodies and exact existing consumer only; no repeated remote search and no impossibility claim.",
+  "consumer": {
+    "path": "research/2026-10-13-dot-g3-certified-consumer-0631z/G3CertifiedCommonBoundedWitness.lean",
+    "sha256": "400153aac6adeb8905447f38c616a7d4008605668ffb2d2846dc9a9d5673f94c",
+    "bytes": 12520,
+    "git_blob": "47e07f198af5d3c5311d23431fde37f161f41de9",
+    "imports": [
+      "G4ProtectedCommonRepresentative"
+    ],
+    "declaration": {
+      "declaration": "actual_certificate_bounded_original_coverage",
+      "line": 139,
+      "exact_signature": "theorem actual_certificate_bounded_original_coverage\n    (cert : SuppliedCombCertificates Y)\n    (PE : Type a) (PH : Type b) [Fintype PE] [Fintype PH]\n    (h : Nat) (hlabels : Fintype.card PE + Fintype.card PH \u2264 h)\n    (_hn : 4 \u2264 Fintype.card Y)\n    (P : PhysicalMarkedSource.{u,v,w} Y)\n    (Config : Type q) [Fintype Config] (\u03bd : PMF Config)\n    (masks : Config \u2192 OriginalMask P.marked.source.network)\n    (edgeLabels : PE \u2243 P.marked.marks.edges) (hybridLabels : PH \u2243 P.marked.marks.hybrids)\n    (houter : HasOuterSemidirectedPartner P.marked.source)\n    (hprotected : \u2200 cfg, ProtectedMask P.marked (masks cfg))\n    (hmatch : \u2200 i j k, k \u2208 momentLevels (cert.level (i,j)) \u2192\n      randomizedLegalCombMoment P.marked.source.network P.marked.source.calendar P.registry\n        P.probabilities P.rates \u03bd masks i j k = cert.value (i,j) k) :\n    \u2203 R : PhysicalMarkedSource.{u,v,w} Y,\n      \u2203 J : Hybrid R.marked.source.network \u21aa Hybrid P.marked.source.network,\n      \u2203 D : Decoration P.marked.source R.marked.source,\n      PhysicalPrimitiveProvenance P R J D \u2227 PhysicalSteps P R \u2227 EqualArmReduced R \u2227\n      (\u2200 k, J k \u2208 P.marked.marks.hybrids \u2194 k \u2208 R.marked.marks.hybrids) \u2227\n      HasOuterSemidirectedPartner R.marked.source \u2227\n      Fintype.card (Hybrid R.marked.source.network) \u2264 hybridBudget cert h \u2227\n      (\u2203 rr : Fin (hybridBudget cert h + 1), \u2203 ids : Fin rr.val \u2243 Hybrid R.marked.source.network,\n        \u2203 em : PE \u2192 Fin (edgeCount (Fintype.card Y) rr.val), \u2203 hm : PH \u2192 Fin rr.val,\n          (\u27e8rr,encode R.marked.source.network ids R.registry,em,hm\u27e9 :\n            ProtectedCode Y PE PH (hybridBudget cert h)) \u2208 protectedCodes PE PH (hybridBudget cert h) \u2227\n          encode R.marked.source.network ids R.registry \u2208\n            (registeredBinaryCutChildCodes : Finset (Code Y (Fin rr.val))) \u2227\n          Function.Injective em \u2227 Function.Injective hm \u2227\n          (\u2200 a, D.recipe ((finiteEdgeNumbering R.marked.source.network ids).symm (em a)) =\n            Recipe.raw (edgeLabels a).val) \u2227\n          (\u2200 a, J (ids (hm a)) = (hybridLabels a).val)) \u2227\n      (\u2200 (Cfg : Type q) [Fintype Cfg] (\u03bc : PMF Cfg)\n        (controls : Cfg \u2192 OriginalMask P.marked.source.network),\n        randomizedTreeLaw R.marked.source.network R.marked.source.calendar R.registry\n          R.probabilities R.rates \u03bc (fun cfg k => controls cfg (J k)) =\n        randomizedTreeLaw P.marked.source.network P.marked.source.calendar P.registry\n          P.probabilities P.rates \u03bc controls) \u2227\n      \u2200 (Copy : Type z) [Fintype Copy] [DecidableEq Copy]\n        (Cfg : Type q) [Fintype Cfg] (\u03bc : PMF Cfg)\n        (controls : Cfg \u2192 OriginalMask P.marked.source.network) (sample : Copy \u2192 Y),\n        randomizedFullForestLaw R.marked.source.network R.marked.source.calendar R.registry\n          R.probabilities R.rates \u03bc (fun cfg k => controls cfg (J k)) sample =\n        randomizedFullForestLaw P.marked.source.network P.marked.source.calendar P.registry\n          P.probabilities P.rates \u03bc controls sample"
+    }
+  },
+  "missing_provider": {
+    "module": "G4ProtectedCommonRepresentative",
+    "sha256": "0616f81343ea0ef724bd874cfb8c94f2f67fdaff7ca462451f31aae47db98b04",
+    "recorded_bytes": 137239
+  },
+  "selected1613_contains_missing_module": false,
+  "required_provider_declaration_name_scan": {
+    "actual_finite_equal_arm_reduction": [],
+    "physicalSteps_trace": [],
+    "traceHybrid": [],
+    "traceDecoration": [],
+    "tracePrimitive": [],
+    "traceHybrid_marks": [],
+    "trace_joint_row_law": [],
+    "equalArmReduced_physical_hybrid_bound": [],
+    "projected_protected_mask": [],
+    "markedSteps_count": [],
+    "physicalSteps_marked": [],
+    "protected_original_code_coverage": [],
+    "markedSteps_outer": [],
+    "trace_tree_bucket_law": []
+  },
+  "inspected_alternatives": [
+    {
+      "aggregate_root": true,
+      "bytes": 187616,
+      "git_blob": "5a866bc90937ae00981a0f1305a58a07704036e4",
+      "imports": [
+        "G4WeightedOrdinaryTreeLaw",
+        "G4ActualPositiveGridUniqueness",
+        "G7SinglePopulationPolynomialKernel",
+        "Mathlib.Algebra.MvPolynomial.Funext"
+      ],
+      "module": "G4WholeProfileDetermination",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "declarations": [
+        {
+          "declaration": "actual_randomized_common_row_finite_tree_law_determination",
+          "line": 3557,
+          "exact_signature": "theorem actual_randomized_common_row_finite_tree_law_determination\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (\u03bd : PMF Config) (masks : Config \u2192 OriginalMask N) (hn : 4 \u2264 Fintype.card X) :\n    \u2203 L : X \u00d7 X \u2192 Nat, (\u2200 ij, 0 < L ij) \u2227\n      \u2203 v : X \u2192 Nat, \u2203 hv : \u2200 x, 0 < v x, \u2203 x0 : X, \u2203 T : Finset Nat,\n        \u2200 (V' E' Config' : Type*) [Fintype V'] [Fintype E'] [Fintype Config']\n          [DecidableEq V'] [DecidableEq E']\n          (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')\n          (p' : HybridProbabilities N') (r' : PositivePairRates E')\n          (\u03bd' : PMF Config') (masks' : Config' \u2192 OriginalMask N'),\n          (\u2200 i j k, k \u2208 momentLevels (L (i,j)) \u2192\n            randomizedLegalCombMoment N' C' H' p' r' \u03bd' masks' i j k =\n              randomizedLegalCombMoment N C H p r \u03bd masks i j k) \u2192\n          (\u2200 k \u2208 T, randomizedAllocationProbability N' C' H' p' r' \u03bd' masks' v hv x0 k =\n            randomizedAllocationProbability N C H p r \u03bd masks v hv x0 k) \u2192\n          randomizedTreeLaw N' C' H' p' r' \u03bd' masks' = randomizedTreeLaw N C H p r \u03bd masks"
+        },
+        {
+          "declaration": "actual_finite_randomized_common_menu_responses",
+          "line": 3679,
+          "exact_signature": "theorem actual_finite_randomized_common_menu_responses\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (Config : Row \u2192 Type*) [\u2200 row, Fintype (Config row)]\n    (\u03bd : \u2200 row, PMF (Config row)) (masks : \u2200 row, Config row \u2192 OriginalMask N)\n    (hn : 4 \u2264 Fintype.card X) :\n    \u2203 L : Row \u2192 X \u00d7 X \u2192 Nat, (\u2200 row ij, 0 < L row ij) \u2227\n      \u2203 v : Row \u2192 X \u2192 Nat, \u2203 hv : \u2200 row x, 0 < v row x,\n      \u2203 x0 : Row \u2192 X, \u2203 T : Row \u2192 Finset Nat,\n        \u2200 (V' E' : Type*) [Fintype V'] [Fintype E'] [DecidableEq V'] [DecidableEq E']\n          (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')\n          (p' : HybridProbabilities N') (r' : PositivePairRates E')\n          (Config' : Row \u2192 Type*) [\u2200 row, Fintype (Config' row)]\n          (\u03bd' : \u2200 row, PMF (Config' row)) (masks' : \u2200 row, Config' row \u2192 OriginalMask N'),\n          (\u2200 row i j k, k \u2208 momentLevels (L row (i,j)) \u2192\n            randomizedLegalCombMoment N' C' H' p' r' (\u03bd' row) (masks' row) i j k =\n              randomizedLegalCombMoment N C H p r (\u03bd row) (masks row) i j k) \u2192\n          (\u2200 row k, k \u2208 T row \u2192\n            randomizedAllocationProbability N' C' H' p' r' (\u03bd' row) (masks' row)\n              (v row) (hv row) (x0 row) k =\n            randomizedAllocationProbability N C H p r (\u03bd row) (masks row)\n              (v row) (hv row) (x0 row) k) \u2192\n          \u2200 row, (randomizedTreeLaw N' C' H' p' r' (\u03bd' row) (masks' row) =\n            randomizedTreeLaw N C H p r (\u03bd row) (masks row)) \u2227\n            \u2200 (Copy : Type*) [Fintype Copy] [DecidableEq Copy] (sample : Copy \u2192 X),\n              randomizedFullForestLaw N' C' H' p' r' (\u03bd' row) (masks' row) sample =\n                randomizedFullForestLaw N C H p r (\u03bd row) (masks row) sample"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 14000,
+      "git_blob": "b6d92620f3feabb8e0e3fa18186141ad1aa9c815",
+      "imports": [
+        "G4ActualObservableBankCertificate",
+        "Mathlib.Algebra.Polynomial.RuleOfSigns",
+        "Mathlib.Algebra.Polynomial.Basis",
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.Analysis.Polynomial.Order",
+        "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+        "Mathlib.LinearAlgebra.Dimension.Constructions"
+      ],
+      "module": "G4ActualSparseCertificateExistence",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9ea04cbe390030381624d25b20be10751dff62f75d5d6e7752b88b9599a46418.lean",
+      "sha256": "9ea04cbe390030381624d25b20be10751dff62f75d5d6e7752b88b9599a46418",
+      "declarations": [
+        {
+          "declaration": "actual_exists_sparse_observable_certificate",
+          "line": 215,
+          "exact_signature": "theorem actual_exists_sparse_observable_certificate (N : RootedBinary V E X)\n    (C : Calendar N.graph) (H : OriginalParentRegistry N) (p : HybridProbabilities N)\n    (r : PositivePairRates E) (i j : X) :\n    \u2203 (L : Nat) (c : Nat \u2192 \u211d), 0 < L \u2227\n      sparsePolynomial (momentLevels L) c \u2260 0 \u2227\n      (\u2200 x \u2208 Set.Icc (0:\u211d) 1, 0 \u2264 (sparsePolynomial (momentLevels L) c).eval x) \u2227\n      (\u2211 k \u2208 momentLevels L, c k * observedMoment N C H p r i j k = 0)"
+        },
+        {
+          "declaration": "actual_matching_moments_restrict_bank",
+          "line": 266,
+          "exact_signature": "theorem actual_matching_moments_restrict_bank\n    {V' E' : Type*} [DecidableEq V'] [DecidableEq E'] [Fintype V'] [Fintype E']\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')\n    (p' : HybridProbabilities N') (r' : PositivePairRates E') (i j : X)\n    (L : Nat) (c : Nat \u2192 \u211d)\n    (hne : sparsePolynomial (momentLevels L) c \u2260 0)\n    (hpos : \u2200 x \u2208 Set.Icc (0:\u211d) 1, 0 \u2264 (sparsePolynomial (momentLevels L) c).eval x)\n    (hzero : \u2211 k \u2208 momentLevels L, c k * observedMoment N C H p r i j k = 0)\n    (hmatch : \u2200 k \u2208 momentLevels L,\n      observedMoment N' C' H' p' r' i j k = observedMoment N C H p r i j k)\n    (coin : Hybrid N' \u2192 Bool) :\n    realSurvival N' C' H' p' r' i j coin \u2208 (sparsePolynomial (momentLevels L) c).roots.toFinset"
+        }
+      ]
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 7614,
+      "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+      "imports": [
+        "G7WholeEdgeExposureInvariant",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+      ],
+      "module": "G7OriginalSurvivalCoverage",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "declarations": [
+        {
+          "declaration": "every_actual_source_has_fixed_calendar_representative",
+          "line": 103,
+          "exact_signature": "theorem every_actual_source_has_fixed_calendar_representative (N : RootedBinary V E X)\n    (C C\u2080 : Calendar N.graph) (sample : Copy \u2192 X) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (common : Hybrid N \u2192 Bool) (r : PositivePairRates E) :\n    \u2203 r\u2080 : PositivePairRates E,\n      survival N C\u2080 r\u2080 = survival N C r \u2227\n      naturalCompletedLaw N C sample H p common r = naturalCompletedLaw N C\u2080 sample H p common r\u2080 \u2227\n      \u2200 mask : OriginalMask N,\n        controlledCompletedLaw N C sample H p common r mask =\n          controlledCompletedLaw N C\u2080 sample H p common r\u2080 mask"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 43736,
+      "git_blob": "d11e3ca172743f9a58ec56c73329f4909ec118c3",
+      "imports": [
+        "G4PairedNaturalTreeCore"
+      ],
+      "module": "G4PairedNaturalTreeCertificate",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ac1616ae15d49a13c6fcec70e05a7055cd2f670fd31a166000f527b0b2c01483.lean",
+      "sha256": "ac1616ae15d49a13c6fcec70e05a7055cd2f670fd31a166000f527b0b2c01483",
+      "declarations": [
+        {
+          "declaration": "actual_legal_paired_certificate_iff_noHybrids",
+          "line": 770,
+          "exact_signature": "theorem actual_legal_paired_certificate_iff_noHybrids\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E) (hcut : CutChild N) :\n    LegalPairedCertificate N C H p r \u2194 NoHybrids N"
+        },
+        {
+          "declaration": "actual_ordinary_target_shared_queries_all_future",
+          "line": 815,
+          "exact_signature": "theorem actual_ordinary_target_shared_queries_all_future\n    (hn4 : 4 \u2264 Fintype.card X)\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E) (hn : NoHybrids N)\n    (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')\n    (p' : HybridProbabilities N') (r' : PositivePairRates E') (hcut' : CutChild N')\n    (hq : \u2200 i q, pairedQueryLaw N' C' H' p' r' i q = pairedQueryLaw N C H p r i q) :\n    \u2200 (Copy : Type*) [Fintype Copy] [DecidableEq Copy] (sample : Copy \u2192 X)\n      (common : Hybrid N \u2192 Bool) (common' : Hybrid N' \u2192 Bool),\n      naturalCompletedUnrankedLaw N' C' sample H' p' common' r' =\n        naturalCompletedUnrankedLaw N C sample H p common r"
+        }
+      ]
+    }
+  ],
+  "result": "No authenticated selected1613 alternative located that constructs the required bounded admitted protected physical representative. Finite tree support/determination, fixed-calendar reparameterization and NoHybrids recognition do not discharge that obligation.",
+  "missing_mathematical_contract": "One physical trace supplies R, retained hybrid injection J and raw-edge decoration D, protected provenance and admission, exact certificate-derived hybrid bound and fixed external ProtectedCode membership, before every future permitted joint control law and copy allocation; no unknown target field in certificate.",
+  "execution": "No proof substitution, axiom, compiler, control or source-existence assumption introduced."
+}

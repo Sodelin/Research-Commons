@@ -1,0 +1,74 @@
+{
+  "schema": "astra_serial_execution_v1",
+  "command": [
+    "/workspace/scratch/astra-backend-0645/bin/python",
+    "-B",
+    "research/2026-10-13-astra-selected-copy-readout-2250z/selected_readout.py",
+    "--request",
+    "research/2026-10-13-astra-selected-copy-readout-2250z/examples/dot2200-selected.json",
+    "--output",
+    "research/2026-10-13-astra-selected-copy-readout-2250z/evidence/dot2200-complete-cli-v2/readout",
+    "--parity-binary",
+    "/workspace/scratch/astra-recovered-parity-target/debug/parity-solver",
+    "--parity-sources",
+    "/workspace/scratch/astra-recovered-parity-0702"
+  ],
+  "cwd": "/workspace/Research-Commons",
+  "started_utc": "2026-10-13T23:18:31.420293+00:00",
+  "limits": {
+    "cpu_seconds": 15,
+    "wall_seconds": 20,
+    "address_space_bytes": 268435456,
+    "file_bytes": 16777216,
+    "disk_floor": 8589934592,
+    "ram_floor": 1073741824,
+    "cgroup_stop": 4294967296
+  },
+  "exit_code": 2,
+  "stop": null,
+  "elapsed_seconds": 2.0024126909993356,
+  "samples": [
+    {
+      "seconds": 0,
+      "disk_free": 22835335168,
+      "ram_available": 17997115392,
+      "cgroup_memory": 1370308608
+    },
+    {
+      "seconds": 0.0012165660000391654,
+      "disk_free": 22835335168,
+      "ram_available": 17997115392,
+      "cgroup_memory": 1370681344
+    },
+    {
+      "seconds": 0.5015394880001622,
+      "disk_free": 22835015680,
+      "ram_available": 17982607360,
+      "cgroup_memory": 1389178880
+    },
+    {
+      "seconds": 1.0018414629994368,
+      "disk_free": 22834442240,
+      "ram_available": 17977851904,
+      "cgroup_memory": 1390809088
+    },
+    {
+      "seconds": 1.5021241690001261,
+      "disk_free": 22833664000,
+      "ram_available": 17972654080,
+      "cgroup_memory": 1391857664
+    }
+  ],
+  "child_peak_rss_bytes": 19447808,
+  "runner_sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+  "outputs": {
+    "stdout": {
+      "bytes": 87,
+      "sha256": "eff451c7034c5f74bf771e091cab6d9cdad988e60e29305915d662b2325d77d0"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

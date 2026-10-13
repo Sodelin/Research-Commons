@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-accepted-extension-2340z/evidence/check_materialization.py", line 16, in <module>
+    runpy.run_path(str(packet / 'materialize_extension.py'), run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-accepted-extension-2340z/materialize_extension.py", line 140, in <module>
+    report = materialize(args.out.resolve())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-accepted-extension-2340z/materialize_extension.py", line 101, in materialize
+    module, graph, aggregate, bodies, catalog, imports = selected()
+                                                         ^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-accepted-extension-2340z/materialize_extension.py", line 61, in selected
+    raise ValueError('new module imports unselected body: ' + name)
+ValueError: new module imports unselected body: Astra.CommonCertificateKernel
