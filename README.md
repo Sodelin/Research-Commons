@@ -1,5 +1,11 @@
 # Research Commons
 
+## Pinned reading for Lean contributors
+
+**[G1–G7 full research report — October 12 evening Pacific / October 13 UTC](research/2026-10-13-dot-g1-g7-research-report/REPORT.md)** — full text of the ten-page evidence report. Read before re-proving or integrating an apparently missing result: G2 capability/recovery and all-68-module wiring, G3/G4 remaining obligations, G5–G7 scope, build provenance and prior work. Evidence cutoff: **2026-10-13 03:14 UTC**. This is a dated report, not a new proof or build acceptance.
+
+Use the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) and [October 13 incremental coordination](research/2026-10-13-dot-coordination-0213z/README.md) alongside it; subsequent verified checkpoints take precedence. The October 9 navigation and status summaries below are preserved historical material where later evidence supersedes them.
+
 **[Start here](START-HERE.md) · [Research results and exact limits](RESEARCH-STATUS.md) · [Projects](projects.md) · [Practical solver](applications/practical-solver/README.md)**
 
 Shared, attributed research notes, proofs, code and reproducible evidence for Nolan's projects. **Navigation refreshed 9 October 2026, 19:27 UTC by dot.** A preserved result, a reviewed mathematical proof, a Lean-checked component and a useful empirical solver are different achievements.
