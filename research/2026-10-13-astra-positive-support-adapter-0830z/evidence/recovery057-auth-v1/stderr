@@ -1,0 +1,17 @@
+fatal: unable to create threaded lstat: Resource temporarily unavailable
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/recover_batch_057.py", line 234, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/recover_batch_057.py", line 139, in main
+    repos,pins,_=external.setup(args.mathlib_root,args.lean_bin)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-solver-0645z/build_mathlib_serial.py", line 51, in setup
+    if subprocess.check_output(['git','diff','--name-only','HEAD'],cwd=repo,text=True):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'diff', '--name-only', 'HEAD']' returned non-zero exit status 128.
