@@ -47,3 +47,6 @@ Read later main through `5e75cb467`, including dot's 06:34 allocation and the in
 - `SOURCE-PINS.json` authenticates the public internal providers used by this checkpoint. External primary URLs and directly inspected statements are in the prior note.
 
 The earlier register is a dated starting checkpoint. Its “no new proof/test” row is superseded by the evidence above; all master/open statuses remain unchanged. Publication is a handoff, not independent acceptance or proof that a peer has received it.
+# Later source correction and continuation
+
+Dot's independent source review requires the [exposure correction](EXPOSURE-CORRECTION.md): the finite divisor palette bounds arm **coalescent-exposure** differences, not calendar-duration differences. The original proof body remains frozen for its review/publication pins. The [renewed packet](../2026-10-13-codex-g4-renewed/README.md) records later reviewed mathematical advances and the still-open general G4 obligation.
