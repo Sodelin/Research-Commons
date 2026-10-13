@@ -4,6 +4,50 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## Adversarial audit and general local successor, 21:16 UTC
+
+Nolan challenged the correctness of the main advance and requested stronger
+general progress. The [analytic](critical-review/FRESH-ANALYTIC-ADVERSARIAL-AUDIT-2059Z.md),
+[local](critical-review/ROOT-ADVERSARIAL-LOCAL-AUDIT-2110Z.md) and
+[source-transfer](whole-source/adversarial-reaudit/SOURCE-TRANSFER-AUDIT.md)
+re-audits found no concrete defect. Each discloses prior involvement. This
+is no reason to promote the calibrated-target theorem to the general master.
+
+The [unequal private local theorem](general-algebra/continuation-2110z/GENERAL-PRIVATE-BOTH-LOCAL-EXCLUSION.md)
+has [scoped independent hand acceptance](critical-review/GENERAL-UNEQUAL-LOCAL-REVIEW.md)
+and lead acceptance. The finite COMMON palette freezes nearby unequal
+types, and COMMON transform cancellation excludes extra unequal cells.
+Differential peeling and the minimum-clock sign then exclude arbitrarily
+many equal extras locally, for every finite strict private BOTH target.
+There is no arithmetic restriction in this theorem.
+
+The [Gamma interpolation](chronology/continuation-2110z/UNEQUAL-GAMMA-INTERPOLATION.md)
+and [normalization](chronology/continuation-2110z/UNEQUAL-RESOURCE-NORMALIZATION.md)
+have [separate Sol hand audits](chronology/continuation-2110z/NORMALIZATION-SOL-AUDIT.md).
+The normalization lemma supplies the bias budget for arbitrary positive
+finite factors. The continuation excludes infinite equal-arm persistence
+when all positive finite unequal factors on both sides have rational arm
+balance. [Finite zero-arm endpoint multipliers](chronology/continuation-2110z/ZERO-ARM-ENDPOINT-SOL-AUDIT.md)
+are entire of zero exponential type and can be included; these are auxiliary
+limit factors, not newly admitted physical rivals. Two finite numerical
+fixtures only checked the interpolation formula.
+
+| Master obligation | Updated status | Still required |
+|---|---|---|
+| Calibrated original BOTH targets | Re-audited, no defect found; earlier exact scope retained | Formal realization remains separate |
+| Local arbitrary-count exclusion | Hand-proved for every finite strict private BOTH body, including arbitrary unequal arms | Derive entry into this neighborhood for all fitting rivals |
+| Infinite equal persistence with finite unequal factors | Resource budget is unrestricted; continuation handles rational positive balances and finite zero-arm limits | General irrational positive-factor bridge or lawful elimination of those factors |
+| General original natural BOTH | Inherited bounded core/palette and normalized legal invariant retained | Control residual scalar gauges across varying cores and the private words simultaneously |
+| INDEPENDENT-only | Prior finite skeleton/weak-reservoir distinction unchanged | Exact local exclusion without COMMON or an admitted fixed-target all-prefix counterexample |
+| Publication/formalization | Hand proofs and audits preserved separately from numerical checks | No new Lean/Rust result is asserted; integration owner retained |
+
+The next active attack is an all-real-balance phase constraint on the exact
+diagonal, using zero-type analyticity rather than rational centering. It is
+under investigation, not an accepted conclusion at this checkpoint. The
+whole-source lane is also checking whether the normalized meeting invariant
+controls the scalar gauges sufficiently without full core reconstruction.
+No tool or permission blocker prevents the work.
+
 ## Local-gate successor, 19:55 UTC
 
 The [INDEPENDENT local obstruction](general-algebra/continuation-1945z/INDEPENDENT-LOCAL-CURVATURE-GATE.md)

@@ -2,6 +2,20 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 21:16 UTC:** renewed adversarial audits found no concrete
+defect in the calibrated-target claim, with dependencies and reviewer reuse
+explicitly disclosed. The reviewed
+[general private local theorem](general-algebra/continuation-2110z/GENERAL-PRIVATE-BOTH-LOCAL-EXCLUSION.md)
+now covers arbitrary positive unequal arms. The reviewed
+[Gamma continuation](chronology/continuation-2110z/UNEQUAL-GAMMA-INTERPOLATION.md)
+and [resource normalization](chronology/continuation-2110z/UNEQUAL-RESOURCE-NORMALIZATION.md)
+exclude infinite equal-cell persistence in the stated rational finite-factor
+setting; [zero-arm endpoint factors](chronology/continuation-2110z/ZERO-ARM-ENDPOINT-SOL-AUDIT.md)
+are also handled analytically. General irrational positive factors, global
+entry and original-core observability remain unresolved. The
+[obligation register](CONTINUATION-STATUS-1920Z.md) distinguishes these steps
+from master closure. No new formal verification is claimed.
+
 **Latest substantive checkpoint, 19:42 UTC:** the reviewed
 [all-pair calibrated original-source theorem](whole-source/continuation-1900z/ALL-PAIR-CALIBRATED-ORIGINAL-FORCING.md)
 gives finite natural BOTH forcing against every finite original rival,
