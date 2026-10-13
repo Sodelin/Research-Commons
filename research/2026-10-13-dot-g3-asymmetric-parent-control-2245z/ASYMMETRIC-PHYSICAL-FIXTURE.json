@@ -1,0 +1,589 @@
+{
+  "schema": "dot_inspectable_physical_common_fixture_v1",
+  "status": "hand-derived unequal-arm regression; native forward execution and Lean instance compilation unperformed",
+  "taxa": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "vertices": [
+    {
+      "index": 0,
+      "id": "R",
+      "age": "4",
+      "kind": "root"
+    },
+    {
+      "index": 1,
+      "id": "U_AB",
+      "age": "3",
+      "kind": "tree"
+    },
+    {
+      "index": 2,
+      "id": "U_CD",
+      "age": "1",
+      "kind": "tree"
+    },
+    {
+      "index": 3,
+      "id": "S_A",
+      "age": "2",
+      "kind": "tree"
+    },
+    {
+      "index": 4,
+      "id": "H_A",
+      "age": "1",
+      "kind": "hybrid"
+    },
+    {
+      "index": 5,
+      "id": "A",
+      "age": "0",
+      "kind": "leaf"
+    },
+    {
+      "index": 6,
+      "id": "B",
+      "age": "0",
+      "kind": "leaf"
+    },
+    {
+      "index": 7,
+      "id": "C",
+      "age": "0",
+      "kind": "leaf"
+    },
+    {
+      "index": 8,
+      "id": "D",
+      "age": "0",
+      "kind": "leaf"
+    }
+  ],
+  "root": 0,
+  "leaves": {
+    "A": 5,
+    "B": 6,
+    "C": 7,
+    "D": 8
+  },
+  "edges": [
+    {
+      "index": 0,
+      "id": "e0",
+      "source": 0,
+      "target": 1,
+      "calendar_duration": "1",
+      "survival": "1/2",
+      "pair_rate_expression": "-log(1/2)/1"
+    },
+    {
+      "index": 1,
+      "id": "e1",
+      "source": 0,
+      "target": 2,
+      "calendar_duration": "3",
+      "survival": "1/2",
+      "pair_rate_expression": "-log(1/2)/3"
+    },
+    {
+      "index": 2,
+      "id": "e2",
+      "source": 1,
+      "target": 3,
+      "calendar_duration": "1",
+      "survival": "3/4",
+      "pair_rate_expression": "-log(3/4)/1"
+    },
+    {
+      "index": 3,
+      "id": "e3",
+      "source": 3,
+      "target": 4,
+      "calendar_duration": "1",
+      "survival": "8/9",
+      "pair_rate_expression": "-log(8/9)/1"
+    },
+    {
+      "index": 4,
+      "id": "e4",
+      "source": 3,
+      "target": 4,
+      "calendar_duration": "1",
+      "survival": "4/9",
+      "pair_rate_expression": "-log(4/9)/1"
+    },
+    {
+      "index": 5,
+      "id": "e5",
+      "source": 4,
+      "target": 5,
+      "calendar_duration": "1",
+      "survival": "3/4",
+      "pair_rate_expression": "-log(3/4)/1"
+    },
+    {
+      "index": 6,
+      "id": "e6",
+      "source": 1,
+      "target": 6,
+      "calendar_duration": "3",
+      "survival": "1/2",
+      "pair_rate_expression": "-log(1/2)/3"
+    },
+    {
+      "index": 7,
+      "id": "e7",
+      "source": 2,
+      "target": 7,
+      "calendar_duration": "1",
+      "survival": "1/2",
+      "pair_rate_expression": "-log(1/2)/1"
+    },
+    {
+      "index": 8,
+      "id": "e8",
+      "source": 2,
+      "target": 8,
+      "calendar_duration": "1",
+      "survival": "1/2",
+      "pair_rate_expression": "-log(1/2)/1"
+    }
+  ],
+  "hybrids": [
+    {
+      "index": 0,
+      "original_id": "H:pendant-A",
+      "vertex": 4,
+      "incoming_occurrences": [
+        3,
+        4
+      ],
+      "parent_0_edge": 3,
+      "parent_1_edge": 4,
+      "common": true,
+      "original_parent_1_probability": "1/3",
+      "native_parent_0_probability": "2/3"
+    }
+  ],
+  "ancestral_pair_rate": "1",
+  "configurations": [
+    {
+      "id": "natural",
+      "weight": "1",
+      "mask": {
+        "H:pendant-A": null
+      }
+    }
+  ],
+  "native_survival_bank": {
+    "variables": [
+      "x0",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8",
+      "g_H_A"
+    ],
+    "values": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "8/9",
+      "4/9",
+      "3/4",
+      "1/2",
+      "1/2",
+      "1/2",
+      "2/3"
+    ],
+    "note": "source_fit_bank variable convention; not a complete native request"
+  },
+  "bank_support": [
+    {
+      "coin_bit": 0,
+      "weight": "2/3",
+      "A_to_B_survival": "1/2"
+    },
+    {
+      "coin_bit": 1,
+      "weight": "1/3",
+      "A_to_B_survival": "1/4"
+    }
+  ],
+  "rows_A_to_B": [
+    {
+      "level": 1,
+      "copy_count": 6,
+      "copies": [
+        {
+          "index": 0,
+          "id": "selected:A:0",
+          "type_tag": [
+            "inl",
+            "inl",
+            0
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 1,
+          "id": "selected:B",
+          "type_tag": [
+            "inl",
+            "inr",
+            "unit"
+          ],
+          "taxon": "B"
+        },
+        {
+          "index": 2,
+          "id": "baseline:A",
+          "type_tag": [
+            "inr",
+            "A"
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 3,
+          "id": "baseline:B",
+          "type_tag": [
+            "inr",
+            "B"
+          ],
+          "taxon": "B"
+        },
+        {
+          "index": 4,
+          "id": "baseline:C",
+          "type_tag": [
+            "inr",
+            "C"
+          ],
+          "taxon": "C"
+        },
+        {
+          "index": 5,
+          "id": "baseline:D",
+          "type_tag": [
+            "inr",
+            "D"
+          ],
+          "taxon": "D"
+        }
+      ],
+      "keep_copy_indices": [
+        0,
+        1
+      ],
+      "event": {
+        "forest": [
+          {
+            "graft": [
+              {
+                "leaf": "selected:B"
+              },
+              {
+                "leaf": "selected:A:0"
+              }
+            ]
+          }
+        ],
+        "quotient": "rooted labelled unranked; child swaps identified"
+      },
+      "comb_coefficient": "1",
+      "moment": "1",
+      "event_probability": "1"
+    },
+    {
+      "level": 2,
+      "copy_count": 7,
+      "copies": [
+        {
+          "index": 0,
+          "id": "selected:A:0",
+          "type_tag": [
+            "inl",
+            "inl",
+            0
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 1,
+          "id": "selected:A:1",
+          "type_tag": [
+            "inl",
+            "inl",
+            1
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 2,
+          "id": "selected:B",
+          "type_tag": [
+            "inl",
+            "inr",
+            "unit"
+          ],
+          "taxon": "B"
+        },
+        {
+          "index": 3,
+          "id": "baseline:A",
+          "type_tag": [
+            "inr",
+            "A"
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 4,
+          "id": "baseline:B",
+          "type_tag": [
+            "inr",
+            "B"
+          ],
+          "taxon": "B"
+        },
+        {
+          "index": 5,
+          "id": "baseline:C",
+          "type_tag": [
+            "inr",
+            "C"
+          ],
+          "taxon": "C"
+        },
+        {
+          "index": 6,
+          "id": "baseline:D",
+          "type_tag": [
+            "inr",
+            "D"
+          ],
+          "taxon": "D"
+        }
+      ],
+      "keep_copy_indices": [
+        0,
+        1,
+        2
+      ],
+      "event": {
+        "forest": [
+          {
+            "graft": [
+              {
+                "graft": [
+                  {
+                    "leaf": "selected:B"
+                  },
+                  {
+                    "leaf": "selected:A:0"
+                  }
+                ]
+              },
+              {
+                "leaf": "selected:A:1"
+              }
+            ]
+          }
+        ],
+        "quotient": "rooted labelled unranked; child swaps identified"
+      },
+      "comb_coefficient": "1/3",
+      "moment": "5/12",
+      "event_probability": "5/36"
+    },
+    {
+      "level": 3,
+      "copy_count": 8,
+      "copies": [
+        {
+          "index": 0,
+          "id": "selected:A:0",
+          "type_tag": [
+            "inl",
+            "inl",
+            0
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 1,
+          "id": "selected:A:1",
+          "type_tag": [
+            "inl",
+            "inl",
+            1
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 2,
+          "id": "selected:A:2",
+          "type_tag": [
+            "inl",
+            "inl",
+            2
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 3,
+          "id": "selected:B",
+          "type_tag": [
+            "inl",
+            "inr",
+            "unit"
+          ],
+          "taxon": "B"
+        },
+        {
+          "index": 4,
+          "id": "baseline:A",
+          "type_tag": [
+            "inr",
+            "A"
+          ],
+          "taxon": "A"
+        },
+        {
+          "index": 5,
+          "id": "baseline:B",
+          "type_tag": [
+            "inr",
+            "B"
+          ],
+          "taxon": "B"
+        },
+        {
+          "index": 6,
+          "id": "baseline:C",
+          "type_tag": [
+            "inr",
+            "C"
+          ],
+          "taxon": "C"
+        },
+        {
+          "index": 7,
+          "id": "baseline:D",
+          "type_tag": [
+            "inr",
+            "D"
+          ],
+          "taxon": "D"
+        }
+      ],
+      "keep_copy_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "event": {
+        "forest": [
+          {
+            "graft": [
+              {
+                "graft": [
+                  {
+                    "graft": [
+                      {
+                        "leaf": "selected:B"
+                      },
+                      {
+                        "leaf": "selected:A:0"
+                      }
+                    ]
+                  },
+                  {
+                    "leaf": "selected:A:1"
+                  }
+                ]
+              },
+              {
+                "leaf": "selected:A:2"
+              }
+            ]
+          }
+        ],
+        "quotient": "rooted labelled unranked; child swaps identified"
+      },
+      "comb_coefficient": "1/18",
+      "moment": "17/192",
+      "event_probability": "17/3456"
+    }
+  ],
+  "same_tuple_all_rows": true,
+  "parameter_constraints": [],
+  "private_slot_assumption": false,
+  "source_count": {
+    "vertices": 9,
+    "edge_occurrences": 9,
+    "taxa": 4,
+    "hybrids": 1
+  },
+  "base_fixture": {
+    "sha256": "7552a9e8ae32ee759ed3665bd9a9176deeb6dcbf4be6605b55f8afbb0c7633ba",
+    "url": "https://github.com/Sodelin/Research-Commons/blob/336ba90d280d6dd8a076d96b313383b47014bc7d/research/2026-10-13-dot-g3-physical-singleton-fixture-2200z/PHYSICAL-FIXTURE.json"
+  },
+  "physical_mutation": {
+    "original_edge_id": "e4",
+    "old_survival": "8/9",
+    "new_survival": "4/9",
+    "everything_else": "same original graph, occurrence order, calendar, other edge survivals, Gamma, ancestral rate, masks, copy allocations and event"
+  },
+  "wrong_binding_control": {
+    "meaning": "Use Gamma1/3 as native parent-zero probability, or swap only the arm association while preserving the numeric weights",
+    "bank_atoms": [
+      "1/2",
+      "1/4"
+    ],
+    "weights": [
+      "1/3",
+      "2/3"
+    ],
+    "normalized_moments": [
+      "1",
+      "1/3",
+      "5/96"
+    ],
+    "event_probabilities": [
+      "1",
+      "1/9",
+      "5/1728"
+    ],
+    "correct_minus_wrong_normalized": [
+      "0",
+      "1/12",
+      "7/192"
+    ],
+    "correct_minus_wrong_event": [
+      "0",
+      "1/36",
+      "7/3456"
+    ]
+  },
+  "old_singleton_certificate_control": {
+    "coefficients": [
+      "1/4",
+      "-3/4",
+      "1"
+    ],
+    "correct_expectation": "5/192",
+    "wrong_binding_expectation": "5/96",
+    "expected_result": "not annihilated; do not accept this old certificate and do not infer source NO"
+  }
+}
