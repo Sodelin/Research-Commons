@@ -1,0 +1,1333 @@
+{
+  "schema": "astra_exact_external_batch_v2",
+  "capture_runner_sha256": "c748a27508cec46ee243ebc77ab256f515f87fbbb0e5c8c2b28d654d22febad4",
+  "guard_receipt_sha256": "c2096cf0e81e8eac49520a62e3c4d55580acccd582e66c49c729a641bc18bf06",
+  "guard_exit_code": 0,
+  "guard_stop": null,
+  "prebatch_inventory_sha256": "887dba599c0ebe031b13ee2fbf3b672a587c328414a4a38ac60d405754063649",
+  "completed_compiler_invocations": [
+    {
+      "index": 3245,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/AdicCompletion/Basic.lean",
+        "source_sha256": "8d78c71fe403b05eb542231c9dbe0a2609fea1b7e81e14839e5e2c76f3b1fcf5",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.AdicCompletion.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Ring/GeomSum.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/LinearAlgebra/SModEq/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Ideal/Quotient/PowTransition.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Jacobson/Ideal.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Tactic/SuppressCompilation.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/AdicCompletion/Basic.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 125.85383489700143,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.olean": "41f42d99640f7e6cd4ec2561e5fe07c831330bdabfefe68438b072d6685111e2",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.olean.private": "ab158386628d4fe51a78485943f4fc708d4d5bb5b788d9463ec4c939a91e6c6a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.olean.server": "af6748a7d531272dca70b86ca41403fcfbdd2ea21011fd7b5be40824db9907c5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.ir": "df50c810fcf1f4d64ad67bab157fdcdd43a6b76da457d91baf704d7c7ebae268",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/AdicCompletion/Basic.ir.sig": "1d83f01b1558beb3e3b3bca16ef1fc2a5151381a4ace1e0c413e0fd24c3504e3"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "69c309e485da81b4b1269e1f624b4f1ef598d9f91ab9cc8ba99d02a337d9c284",
+          "input_files": 31190,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 62,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3607023616,
+            "VmPeak_bytes": 3859410944,
+            "VmRSS_bytes": 1231581184,
+            "VmHWM_bytes": 1231581184
+          },
+          "seconds": 125.8242229869993
+        }
+      },
+      "receipt_sha256": "31f0ebcda85225e36067cca61ba35fcb65da90c9e3b9d227f4203f115face5fa",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3246,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/SetLike/Fintype.lean",
+        "source_sha256": "f8b3ccb82d1b7e4f1a9694cd4ae31852622faeb37566daff94ecab4759cf5377",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Data.SetLike.Fintype",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/SetLike/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/Fintype/Powerset.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/SetLike/Fintype.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 14.12888851400021,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.olean": "148c9f51d60ee4b61ff1b221af71fa55886fe1ed7481107a9d3bdbf491098100",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.olean.private": "94c3793290b8076d86a87c77581b9dbc0e9f2e80382dbf78211fde49e8851e2f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.olean.server": "082f1ea7214793d9aaeeeb880d2deddea5b6189d78bff7263c940b41bf07945e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.ir": "84ef7c401fabbf6084fce4d0e5ff0b7f72baa43df79ea6b2de8b727e311e2c9f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Data/SetLike/Fintype.ir.sig": "39c2ffb00dbc8c03c94d3b696e99e0e662fc920de16c9053d423d09ba9b62e54"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "a6a0ab56cb007451c91f64a2f16e35075e272fd534b7377f7e072860e6ad6b07",
+          "input_files": 31195,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 5,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3296079872,
+            "VmPeak_bytes": 3136217088,
+            "VmRSS_bytes": 809046016,
+            "VmHWM_bytes": 809046016
+          },
+          "seconds": 14.100325085000804
+        }
+      },
+      "receipt_sha256": "d9be80017a46cbcdbda3f074824edb29d0df1e918dd981d068c019f58fe6300d",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3247,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Artinian/Defs.lean",
+        "source_sha256": "2066f1a56deee581fe58784e03ac52f1141035907f2feaab7a3c9a66d06ae3a2",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Artinian.Defs",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Module/Submodule/Defs.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Artinian/Defs.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 11.944019350001327,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.olean": "279106464ed0a27797f4eb4b4720b15559886f5a27daad13eb417d17000eb41e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.olean.private": "da43268d8e13b5be5a8ce4759d45edd815778a58111d34fc17b9ff8c9a09abfe",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.olean.server": "1d17c77369fa5589c6619e1d2f74d50d8e04a0be313a0fdfddf3b10b579e6871",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.ir": "576094bb8b2551a33616e3482a9b67c33e6c57a415e76b5d354bebd6782231f0",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Defs.ir.sig": "a0fcf565f59b384199e0ef64e6e63d534d3fde75e03cba562962a7ca4ca1c4f7"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "1b4c771f14e2f8fa3b9f8d20c29d1a747e5385028e4f5276a900ec0458e8e887",
+          "input_files": 31200,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 4,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3368144896,
+            "VmPeak_bytes": 3115487232,
+            "VmRSS_bytes": 803971072,
+            "VmHWM_bytes": 803971072
+          },
+          "seconds": 11.917631796999558
+        }
+      },
+      "receipt_sha256": "42a46f93fe3027db995f8ae0ba6c5a05d1af9068a48a9c20a89fb28612df6a98",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3248,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Jacobson/Semiprimary.lean",
+        "source_sha256": "3350f9c63ddb5022d3ab2a5480d3ce04742670063e5e136b9c7926516eec0108",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Jacobson.Semiprimary",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Jacobson/Radical.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/SimpleModule/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Jacobson/Semiprimary.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 32.597461446001034,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.olean": "94f1555e3be687232779d6be3ce7b55ed28fba068bcbaaaca9c13a7070000d9f",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.olean.private": "2eaa656b9a5aeb65c125a2ea2511739a2f3bcd83826b863e245324a127ef4fdb",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.olean.server": "4bc471cac021f9dfb92f0c5c3611009c4814e3d7cdc8bdd4a0f8ae3b40bf4d4c",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.ir": "ff5f28eb1e1cb3b1d45556a334b3b32049793abc09b7be7b8b04d92740e00140",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Jacobson/Semiprimary.ir.sig": "c142ca6709149b9aafc2c993683c3e7547bd74e9ca32c89ef8ebe3ecda906b8a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "d16f006e30e6e683541d792ccb6459ddc8e6cbba04001f1768231e993238bfab",
+          "input_files": 31205,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 13,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3573784576,
+            "VmPeak_bytes": 3713073152,
+            "VmRSS_bytes": 1105707008,
+            "VmHWM_bytes": 1105707008
+          },
+          "seconds": 32.57147253000039
+        }
+      },
+      "receipt_sha256": "7d528823e561daf27fd62c898a6c07aed358067aefc66583b91945a4229ec1dc",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3249,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Spectrum/Maximal/Basic.lean",
+        "source_sha256": "3c5eee5287b9e5a74a107fb9d9b4d6d2762f15db48cc2a5d517ca231cc5309ce",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Spectrum.Maximal.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Ideal/Operations.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Spectrum/Maximal/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Spectrum/Prime/Defs.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Spectrum/Maximal/Basic.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 31.55379312799778,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.olean": "410ab61964e0b526c1920d231b267c3f6682720079d81ed4588e2cbf00b9eef9",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.olean.private": "78cdc327b017156f678dfb4947c1806d0524c11e14e1669b331a76ab2eabd6d5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.olean.server": "f1ac44e478876d810879a495ad8447d1b0143dea155486042bdb315c444c4cf4",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.ir": "a2e3c1ed4bc79ba6d813b970a0932f89f5ae173b49fb8abc4786089113705e2e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Spectrum/Maximal/Basic.ir.sig": "84c2e450110d240011f2d143cdfa2e68309de36538f07832f37bb65ef623af7a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "9c5e4fe0d0ecfa33e0919992b72b8e6b5acb635195b4c47a246268a7186d44c4",
+          "input_files": 31210,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 12,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3504914432,
+            "VmPeak_bytes": 3580428288,
+            "VmRSS_bytes": 1048711168,
+            "VmHWM_bytes": 1048711168
+          },
+          "seconds": 31.526598189997458
+        }
+      },
+      "receipt_sha256": "7142b065e4bca3c502543151bf855b6f48e808a572c90b79012d406be1555e66",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3250,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Artinian/Module.lean",
+        "source_sha256": "def9d0b66c1811aa66cf8751c0398c13769989f72d025efc93471c6253a81926",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Artinian.Module",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Group/Units/Opposite.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Regular/Opposite.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/SetLike/Fintype.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/LinearAlgebra/FreeModule/Finite/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/Filter/EventuallyConst.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Artinian/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Ideal/Prod.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Ideal/Quotient/Operations.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Jacobson/Semiprimary.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Nilpotent/Lemmas.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Noetherian/Defs.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Spectrum/Maximal/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Spectrum/Prime/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Artinian/Module.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 69.11739805800244,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.olean": "132dab95731e1527a8346c1fc3a855dc5faebdaf034ef3b2f937ea18523cab08",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.olean.private": "2e67712362abfd83769e6d769ea75c1a1accd30b550d9dfc05c809cd8e625bd6",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.olean.server": "7a1716009068789073e38d2c0db4d0073f5863a96e46a5505a66f8f9a27a7571",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.ir": "a08b6a7274ee00ef2cd7d60847f0d6e4a6425170e75c8bac91b9ea8437aca55a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Artinian/Module.ir.sig": "78c8f1c774e71248d27e066df598737db9bc8b5e2136a38d8c3ac80ff4d2f4e2"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "843be1ddb44cbfb229b274f1235b621eb50c9286cc06aa5a54fe3be6136289c1",
+          "input_files": 31215,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 31,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3648790528,
+            "VmPeak_bytes": 3888975872,
+            "VmRSS_bytes": 1209638912,
+            "VmHWM_bytes": 1209638912
+          },
+          "seconds": 69.08738271299808
+        }
+      },
+      "receipt_sha256": "08dbd9ce523e5b56272842fe1c256fa290b4392887c7c08547b0772b9fa4c9c1",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3251,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/FiniteLength.lean",
+        "source_sha256": "c63e094d7274bbbaf7d80f86f1d54f3cb865578d6d7f2762c123d488fcb09e48",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.FiniteLength",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Artinian/Module.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/FiniteLength.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 39.60293674700006,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.olean": "40f5fec0477fc2d2b57d9d7de51ee10b8dbfc594a2abacbf8770980b2d68953b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.olean.private": "7d781e2768ea74eea39e103336950566f379b99f79e03beb8f22e006890829ac",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.olean.server": "2e3d81d8cbc89fe879a22503261ce7b34a65d6a87d275680a75c1a13a116bf9a",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.ir": "9023e41628745b3aa5021d484ba44fcafc00f3f2c113d66423a60c8b3e4da25b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/FiniteLength.ir.sig": "68bd49046a5bab9a42d018e905493f233c758750d5565dd90ed318321ed59b87"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "8627d33611b9a4c93e9bb3e87f0adbfc661421348591e3ef8ded9e74b6c4412f",
+          "input_files": 31220,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 16,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3653414912,
+            "VmPeak_bytes": 3814682624,
+            "VmRSS_bytes": 1165230080,
+            "VmHWM_bytes": 1165774848
+          },
+          "seconds": 39.577106354001444
+        }
+      },
+      "receipt_sha256": "8ab2b4b7b19179a2f9592fec5cec3ea3663bafc46a4e4a3cb154915ed2868510",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3252,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Length.lean",
+        "source_sha256": "7b06dcf567e71b8fd20bdb2b8296041dd52baea25460d5444dbfbff98b108c3a",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Length",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Exact/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/LinearAlgebra/Basis/VectorSpace.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Order/KrullDimension.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/FiniteLength.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/LinearAlgebra/Dimension/Free.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Length.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 57.83537408600023,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.olean": "dd45421b0765316af97b72b5f19c2acf31102883c6f83b0bb2f311ad89ff8fa3",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.olean.private": "6919337d73626b058d8f2d072c7bf32715091f936cd8d7562892cca8209666bb",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.olean.server": "ab884cb2f89d295df75df5abfea169a631dffada5e96f003ad54bed605f015c2",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.ir": "e786a7fb8487896fbcf7be3c739d9ebfb657b0708fa01d1ee36e0057851e8d27",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Length.ir.sig": "30da25c172f0a896a593d66635548e27df94ce431ebfc9486b1b0d393d695eef"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "895bed72a03af19ac0820d5172ca0525901a5054b038be895768370db23f7c47",
+          "input_files": 31225,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 25,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3647283200,
+            "VmPeak_bytes": 3833835520,
+            "VmRSS_bytes": 1200320512,
+            "VmHWM_bytes": 1200320512
+          },
+          "seconds": 57.80947546200332
+        }
+      },
+      "receipt_sha256": "06047715257ad281b9dcc58447dc8647d149e91abe8f9ddb92f7a14bf0844ef4",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3253,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/LocalRing/RingHom/Basic.lean",
+        "source_sha256": "41669893ca4d21e6dafe2cba91b70bfe044ba6cd07184c267708eebc8d9a8858",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.LocalRing.RingHom.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Group/Units/Hom.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/ZMod/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/LocalRing/MaximalIdeal/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Ideal/Maps.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/LocalRing/RingHom/Basic.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 33.66325191600117,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.olean": "533ab658b0b50a98c8124b3abcba0ef0a558c4e44a12c102b049ccfb585f7439",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.olean.private": "fc072aca174f6727d99134a3dc00a4d44edbb5f8c6f17a5c5e0f0baa556d77e1",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.olean.server": "bcffed374e06dee3ddcf94d16b8cec12bd574c7336a4c456dcc47eeaeff6bc99",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.ir": "55dac41c3119e028b1ce5d17a1d672ec8b413c824c3b548110f447e83501f9ba",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/LocalRing/RingHom/Basic.ir.sig": "34d842acdab4428c36b1c9af80a5b95a24fdfd46af35fc4f141516d2f4367add"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "a6b980368b8aab6b0037e9621b57b9dadb2bbae76f68543b7b7caa82aacde39c",
+          "input_files": 31230,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 14,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3622420480,
+            "VmPeak_bytes": 3789127680,
+            "VmRSS_bytes": 1109659648,
+            "VmHWM_bytes": 1109659648
+          },
+          "seconds": 33.63615998499881
+        }
+      },
+      "receipt_sha256": "8f58e711174fa503a00d88e0dfc4ba298ea77dac818297676cdf2f5330f54965",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3254,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.lean",
+        "source_sha256": "afcef78289def5f1fedec288c40cea48b8fdf399af35aeb41f298106708fa1fb",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.GroupWithZero.Submonoid.Instances",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Group/Submonoid/Operations.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Units/Lemmas.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 9.978275236000627,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.olean": "9e58217b9d00e15190a9c590c470f98495ea6aa22b4e8d44c9402d7a762f40c0",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.olean.private": "24e299e5e8e2584872c110fc0aca8a7dd03b3a95f6d04cca3e2a0c2cc78a63cb",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.olean.server": "995b8d2e2c7d9999d4d3ae1a4fa0a036534774934cae274cf5fcd54792ed20d4",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.ir": "d740e25c5817fea0ffcc9ea87acc7382d68618742639b24aaa0a1ab1ff542b78",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.ir.sig": "546d4bf7547c6a91db006ec384288c481188f9cd5bb4c94579fde3cf2de3ddb5"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "a2d02c1d7c398b6795d1c7c09e95985d36cfb32fb8927aff2a4348f6e2d6aac4",
+          "input_files": 31235,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 3,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3286753280,
+            "VmPeak_bytes": 2788401152,
+            "VmRSS_bytes": 688214016,
+            "VmHWM_bytes": 688214016
+          },
+          "seconds": 9.951424776998465
+        }
+      },
+      "receipt_sha256": "f9602af84d746fab9d42cb37e6e42db6b0a493d101239c579edea54ea0434fc3",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3255,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Range.lean",
+        "source_sha256": "b7e8a55a85f72079034c0e291683c3e596213a7c799c4485b2a9a7de65f688d8",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.GroupWithZero.Range",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Group/Subgroup/Pointwise.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Submonoid/Instances.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/WithZero.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Range.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 35.93359975099884,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.olean": "61270d77915cb14ae0bdf2d7f4230762512392b9598f411c14e1649197868743",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.olean.private": "9355cdbf07b3a7bc402e32b9209eadcfccab7e4678fc4a8f907014b18c5fd5de",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.olean.server": "e8a47c1f103c7722fa7d8b4d33018e31435c3df1dd4de6a67261c5ac1d33150b",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.ir": "28422b793182238bd4af3d5cb25e30eeebfd7025748e1b7a35dcaa39475e13d7",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/GroupWithZero/Range.ir.sig": "e7cc4aecce61cb24b7542bfc4eef8c9acd06ba5ff0854fb8219427b737fdb9e5"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "8daa0b32c07c8ef6f24518192e2132855b785de5083b24d764192e8a41650bc8",
+          "input_files": 31240,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 16,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3386347520,
+            "VmPeak_bytes": 3228008448,
+            "VmRSS_bytes": 901152768,
+            "VmHWM_bytes": 901152768
+          },
+          "seconds": 35.90594867099935
+        }
+      },
+      "receipt_sha256": "71943ae4dadb31821cb82982f50cd3d7bafa26c84f077c3807057ac405028322",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3256,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/WithZero.lean",
+        "source_sha256": "3cb01ff7131579dcd6d0e930ee89b2d69569a51dc7da5a5bcf8e1ecf28691687",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.Order.GroupWithZero.WithZero",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/Canonical.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/WithZero.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 13.541922641001293,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.olean": "6f2cc3069cf6abe4a4aa52205316e16e81e0846e8e87a1a5d6b11cdfd7749811",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.olean.private": "c9bbba9e7e2f91254886b520cfd257430bb21d3bc7612dca8525813ac483966d",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.olean.server": "ace290cad37dcf0269df14695fdc3eb2f303d044b4323aa23001aa7bbcf544a0",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.ir": "ca1b9d1db1445d0f7a8e7d6de5235504d77dcdcb120eca9b8b3999b868de8c78",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/WithZero.ir.sig": "cd8cd7de4f4747df10b1a5ab7b01576971bc8c83dd5911db30d6eddec7810349"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "7754cb3e429e1b4f35033752afcbfc23f0f2b66f1ad6f11462ad7d0d53ed882c",
+          "input_files": 31245,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 4,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3292336128,
+            "VmPeak_bytes": 3069267968,
+            "VmRSS_bytes": 791977984,
+            "VmHWM_bytes": 791977984
+          },
+          "seconds": 13.515409027000715
+        }
+      },
+      "receipt_sha256": "c77e47cf139a22982d033ff14b47e2ec31096b284bbc69a5ec4b4b99b846e123",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3257,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/Range.lean",
+        "source_sha256": "624dc2fc2b33c1ebb209bad066243851c52b2e81c40ece5328b8e8934f2758f0",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.Algebra.Order.GroupWithZero.Range",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/GroupWithZero/Range.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/WithZero.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/Hom/MonoidWithZero.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/Monoid/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/Range.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 18.826729095999326,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.olean": "be4f9abdd819c8f1d8d781b9e8e4d91618d56283d47afa0ca4f8f0b0e066af3e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.olean.private": "b68031a1acba3a5b28189091401820d2db6371792bf724c57a3bd1fbc64c60a1",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.olean.server": "2d040d1502f76fb543ba10aad2b1affd0548f7bf1d474bdedb685696620e5dc5",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.ir": "eb44655a2b216d352273c32dc7c590ec8f5d9e347625e6b9cdc8551fb86eece0",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Range.ir.sig": "6ae8c7f6886f75e4056216253f740b650d3a5ec8d98efe3a3143cc0990fdcdf5"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "d038efb8ba4ea1a0d5c8501c90c57e94f91ef870d2de72cf4cf1dc734e84fb04",
+          "input_files": 31250,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 8,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3389067264,
+            "VmPeak_bytes": 3284037632,
+            "VmRSS_bytes": 877002752,
+            "VmHWM_bytes": 877002752
+          },
+          "seconds": 18.800648681000894
+        }
+      },
+      "receipt_sha256": "1147cabc8c2ddd81bb6d476ffbcd0b751fa77ea7589f7c6d0020a7bdc5891050",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3258,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Valuation/Basic.lean",
+        "source_sha256": "86212a0d3c8061195b0b53f5461293e4a62e649c33b5c6294a2c52ecae314eac",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Valuation.Basic",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/GroupWithZero/Range.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/Hom/Monoid.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Order/Ring/Basic.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Ring/Torsion.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Ideal/Maps.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/Tactic/TFAE.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Valuation/Basic.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 132.38855460099876,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.olean": "4d8bcd93b01e3d558df5e9940960b70f46d37c5162bf8866a90f3a6d88e4b351",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.olean.private": "4382faf72e99fc49484a37f3c01c8fa9e6cb44a457ce0048c913840213de1596",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.olean.server": "750f8fe705c502a63993997b6db429facd8bdc7e58954d15f44befc85aa55ca3",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.ir": "b3d6c53f4960195dab3d0d9fb0285f56b7da50a9a58a1d6846966a750dce7d2e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/Basic.ir.sig": "63f4a7f28149f1cfe910c004ce997820f11f2bde75bad91d140e03a4c152894b"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "534dfab298567ebcfdc4edbd8441380b106771f2beb2cf00edab9092e7bad0f6",
+          "input_files": 31255,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 62,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3588214784,
+            "VmPeak_bytes": 3707260928,
+            "VmRSS_bytes": 1184317440,
+            "VmHWM_bytes": 1184317440
+          },
+          "seconds": 132.36004699600016
+        }
+      },
+      "receipt_sha256": "30f393b1721e457b1c1637360632f30e7c76e74b99d6712ad407a1b074926f42",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3259,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Valuation/PrimeMultiplicity.lean",
+        "source_sha256": "fb1af1fdfdd5cc9c1102922b54c706ed56cdf232f2dd64c09584fe84c5b335d7",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Valuation.PrimeMultiplicity",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Multiplicity.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Valuation/Basic.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Valuation/PrimeMultiplicity.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 27.887420178001776,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.olean": "b4103ed7d8c1301589c2d3db4eb64e901d4bbe1a57fc4861c0c6a162e3810361",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.olean.private": "b552b8d9c8891f0d23b1318068a86a2700cdb41f5d1585e4289ce1d1970e96e0",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.olean.server": "397716e31eb6f4d7b1e85f2aeaee7b156fb99849209cfdfa123ccd69e2566dbd",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.ir": "d4c727548711ae3e2b83381cd26655a710b06a340de26436ab934d937f4baf5e",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Valuation/PrimeMultiplicity.ir.sig": "1326113f2637a35fd2a40abd9550b8ec5ea22ca3cd248e23047108a98cee21d2"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "376279050618ce3f34d5d1fe65c13506cf828d34d66cc00885bff2d6991f9b0a",
+          "input_files": 31260,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 11,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3552636928,
+            "VmPeak_bytes": 3559976960,
+            "VmRSS_bytes": 1054162944,
+            "VmHWM_bytes": 1054162944
+          },
+          "seconds": 27.86133522700038
+        }
+      },
+      "receipt_sha256": "40cd7bbe7ebb5b14d759e795555ecc171d136f23e279b02551a3040fb3d17476",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    },
+    {
+      "index": 3260,
+      "receipt": {
+        "source": "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Bezout.lean",
+        "source_sha256": "a0481bb8dc41fb3245afde920cbaf2d622f1f1a89f7d55de2863ab461f1c3dde",
+        "repo": "/workspace/scratch/astra-mathlib-0645",
+        "module": "Mathlib.RingTheory.Bezout",
+        "target": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.olean",
+        "imports": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/PrincipalIdealDomain.lean"
+        ],
+        "command": [
+          "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+          "-Dpp.unicode.fun=true",
+          "-DautoImplicit=false",
+          "-DmaxSynthPendingDepth=3",
+          "-j",
+          "1",
+          "-s",
+          "8192",
+          "-R",
+          "/workspace/scratch/astra-mathlib-0645",
+          "-o",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.olean",
+          "/workspace/scratch/astra-mathlib-0645/Mathlib/RingTheory/Bezout.lean"
+        ],
+        "exit_code": 0,
+        "compiler_exit_code": 0,
+        "runner_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+        "frozen_helpers_sha256": "8838b18400dcb2129de366b4e95fa1c8bccdfb5295d119e6d04206b13468cf87",
+        "execution": "FRESH_SOURCE_COMPILE_ORIGINAL_ELABORATION",
+        "seconds": 26.147125540999696,
+        "artifacts": {
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.olean": "4fae06542d8be7693b215d5716718ffde59ecf37e60320c64ad8216f00a188b3",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.olean.private": "d6b3ddec26bbfa0536608d7c78ee9a0133dd5488dedc09ae82258823a0c055d4",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.olean.server": "d74f4b21c6ba20812882a3d82c059e58f2f6a51551df814f8f55b8e8871a2216",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.ir": "46d07877ce4a2af1435195681d9df6c8f866337ce4991ae59dba8e06c08502b3",
+          "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean/Mathlib/RingTheory/Bezout.ir.sig": "69448d3594db0fd199e71687452d75fa695ce8516589cbfd910a4c653358a70a"
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_control": {
+          "helper_sha256": "d47f2d50afd4648374d7ca1630dce71f3aa09422fe740d356b2d0d9c8ce8ca28",
+          "malloc_arena_max": "1",
+          "input_inventory_sha256": "b0dfd1020f7da61ac0b16db87fbbc45ae043e44e12d1db8b412d59f5853e974c",
+          "input_files": 31265,
+          "threshold_bytes": 3221225472,
+          "after_exit_threshold_bytes": 2147483648,
+          "minimum_advice_interval_seconds": 0.2,
+          "sample_interval_seconds": 0.1,
+          "compiler_suspension": "own unreaped PID; observe T/t/Z state before advice",
+          "suspension_ack_timeout_seconds": 1,
+          "sampler_pauses_during_advice": true,
+          "files_changed": false,
+          "system_settings_changed": false,
+          "outer_limits_changed": false,
+          "completed_advice_sweeps": 12,
+          "after_exit_advice": true,
+          "sampled_peaks": {
+            "cgroup_bytes": 3562336256,
+            "VmPeak_bytes": 3619196928,
+            "VmRSS_bytes": 1072934912,
+            "VmHWM_bytes": 1072934912
+          },
+          "seconds": 26.12198937500216
+        }
+      },
+      "receipt_sha256": "14c49b2edfc5549000d6d1bda11fc9308ae133ff5d355f1455d866161eb98841",
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "content_utf8": ""
+      }
+    }
+  ],
+  "interrupted_unverified_invocations": [],
+  "binaries_included": false,
+  "previous916_receipts": "../2026-10-13-astra-unified-solver-0645z/evidence/MATHLIB-SOURCE-EXECUTION.json"
+}
