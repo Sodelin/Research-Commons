@@ -1,0 +1,222 @@
+import AstraPhysicalCommonSplice
+
+set_option pp.universes true
+set_option pp.explicit true
+set_option pp.fullNames true
+set_option pp.proofs false
+
+-- Future execution requests only; no actual type/axiom output exists.
+#print Astra.PhysicalSpliceRates.collapsedDuration
+#print axioms Astra.PhysicalSpliceRates.collapsedDuration
+#print Astra.PhysicalSpliceRates.collapsedDuration_pos
+#print axioms Astra.PhysicalSpliceRates.collapsedDuration_pos
+#print Astra.PhysicalSpliceRates.collapsedExposure
+#print axioms Astra.PhysicalSpliceRates.collapsedExposure
+#print Astra.PhysicalSpliceRates.collapsedExposure_pos
+#print axioms Astra.PhysicalSpliceRates.collapsedExposure_pos
+#print Astra.PhysicalSpliceRates.splicedRates
+#print axioms Astra.PhysicalSpliceRates.splicedRates
+#print Astra.PhysicalSpliceRates.retained_rate
+#print axioms Astra.PhysicalSpliceRates.retained_rate
+#print Astra.PhysicalSpliceRates.ancestral_rate
+#print axioms Astra.PhysicalSpliceRates.ancestral_rate
+#print Astra.PhysicalSpliceRates.new_edge_duration
+#print axioms Astra.PhysicalSpliceRates.new_edge_duration
+#print Astra.PhysicalSpliceRates.retained_exposure
+#print axioms Astra.PhysicalSpliceRates.retained_exposure
+#print Astra.PhysicalSpliceRates.new_edge_exposure
+#print axioms Astra.PhysicalSpliceRates.new_edge_exposure
+#print Astra.PhysicalSpliceRates.retained_survival
+#print axioms Astra.PhysicalSpliceRates.retained_survival
+#print Astra.PhysicalSpliceRates.new_edge_survival
+#print axioms Astra.PhysicalSpliceRates.new_edge_survival
+#print Astra.PhysicalSpliceRates.new_edge_exposure_either_arm
+#print axioms Astra.PhysicalSpliceRates.new_edge_exposure_either_arm
+#print Astra.PhysicalSpliceRegistry.removedHybrid
+#print axioms Astra.PhysicalSpliceRegistry.removedHybrid
+#print Astra.PhysicalSpliceRegistry.retainedHybrid
+#print axioms Astra.PhysicalSpliceRegistry.retainedHybrid
+#print Astra.PhysicalSpliceRegistry.retainedHybrid_val
+#print axioms Astra.PhysicalSpliceRegistry.retainedHybrid_val
+#print Astra.PhysicalSpliceRegistry.retainedHybrid_ne_removed
+#print axioms Astra.PhysicalSpliceRegistry.retainedHybrid_ne_removed
+#print Astra.PhysicalSpliceRegistry.survivingHybrid
+#print axioms Astra.PhysicalSpliceRegistry.survivingHybrid
+#print Astra.PhysicalSpliceRegistry.retained_surviving_hybrid
+#print axioms Astra.PhysicalSpliceRegistry.retained_surviving_hybrid
+#print Astra.PhysicalSpliceRegistry.retainedHybrid_image
+#print axioms Astra.PhysicalSpliceRegistry.retainedHybrid_image
+#print Astra.PhysicalSpliceRegistry.retainedParent
+#print axioms Astra.PhysicalSpliceRegistry.retainedParent
+#print Astra.PhysicalSpliceRegistry.retainedParent_val
+#print axioms Astra.PhysicalSpliceRegistry.retainedParent_val
+#print Astra.PhysicalSpliceRegistry.splicedParents
+#print axioms Astra.PhysicalSpliceRegistry.splicedParents
+#print Astra.PhysicalSpliceRegistry.splicedRegistry
+#print axioms Astra.PhysicalSpliceRegistry.splicedRegistry
+#print Astra.PhysicalSpliceRegistry.splicedRegistry_parent
+#print axioms Astra.PhysicalSpliceRegistry.splicedRegistry_parent
+#print Astra.PhysicalSpliceRegistry.splicedProbabilities
+#print axioms Astra.PhysicalSpliceRegistry.splicedProbabilities
+#print Astra.PhysicalSpliceRegistry.splicedProbabilities_gamma
+#print axioms Astra.PhysicalSpliceRegistry.splicedProbabilities_gamma
+#print Astra.PhysicalSpliceRegistry.restrictBank
+#print axioms Astra.PhysicalSpliceRegistry.restrictBank
+#print Astra.PhysicalSpliceRegistry.commonSwitching_restrict
+#print axioms Astra.PhysicalSpliceRegistry.commonSwitching_restrict
+#print Astra.OriginalBankRestriction.indexed_coin_subtype_measurePreserving
+#print axioms Astra.OriginalBankRestriction.indexed_coin_subtype_measurePreserving
+#print Astra.OriginalBankRestriction.indexed_coin_restriction_measurePreserving
+#print axioms Astra.OriginalBankRestriction.indexed_coin_restriction_measurePreserving
+#print Astra.OriginalBankRestriction.indexed_coin_restriction_pmf
+#print axioms Astra.OriginalBankRestriction.indexed_coin_restriction_pmf
+#print Astra.OriginalBankRestriction.spliced_originalGamma
+#print axioms Astra.OriginalBankRestriction.spliced_originalGamma
+#print Astra.OriginalBankRestriction.original_bank_restriction_measurePreserving
+#print axioms Astra.OriginalBankRestriction.original_bank_restriction_measurePreserving
+#print Astra.OriginalBankRestriction.original_bank_restriction_pmf
+#print axioms Astra.OriginalBankRestriction.original_bank_restriction_pmf
+#print Astra.PhysicalSpliceClades.edgeTaxa_empty_of_not_kept
+#print axioms Astra.PhysicalSpliceClades.edgeTaxa_empty_of_not_kept
+#print Astra.PhysicalSpliceClades.retained_edgeTaxa
+#print axioms Astra.PhysicalSpliceClades.retained_edgeTaxa
+#print Astra.PhysicalSpliceClades.new_edgeTaxa
+#print axioms Astra.PhysicalSpliceClades.new_edgeTaxa
+#print Astra.PhysicalSpliceClades.entry_edgeTaxa_eq_child
+#print axioms Astra.PhysicalSpliceClades.entry_edgeTaxa_eq_child
+#print Astra.PhysicalSpliceClades.kept_parent_edgeTaxa_eq_child
+#print axioms Astra.PhysicalSpliceClades.kept_parent_edgeTaxa_eq_child
+#print Astra.PhysicalSpliceWeights.retained_edgeExposure
+#print axioms Astra.PhysicalSpliceWeights.retained_edgeExposure
+#print Astra.PhysicalSpliceWeights.new_edgeExposure
+#print axioms Astra.PhysicalSpliceWeights.new_edgeExposure
+#print Astra.PhysicalSpliceWeights.equal_arm_edgeExposure
+#print axioms Astra.PhysicalSpliceWeights.equal_arm_edgeExposure
+#print Astra.PhysicalSpliceWeights.sum_retained_and_four_removed
+#print axioms Astra.PhysicalSpliceWeights.sum_retained_and_four_removed
+#print Astra.PhysicalSpliceWeights.exactly_one_arm_kept
+#print axioms Astra.PhysicalSpliceWeights.exactly_one_arm_kept
+#print Astra.PhysicalSpliceWeights.weightedNormalize_splice
+#print axioms Astra.PhysicalSpliceWeights.weightedNormalize_splice
+#print Astra.PhysicalSpliceConfiguration.configurationBankPMF_map_bank
+#print axioms Astra.PhysicalSpliceConfiguration.configurationBankPMF_map_bank
+#print Astra.PhysicalSpliceConfiguration.configuration_bank_restriction_pmf
+#print axioms Astra.PhysicalSpliceConfiguration.configuration_bank_restriction_pmf
+#print Astra.PhysicalSpliceConfiguration.restrictMask
+#print axioms Astra.PhysicalSpliceConfiguration.restrictMask
+#print Astra.PhysicalSpliceConfiguration.restrictMask_apply
+#print axioms Astra.PhysicalSpliceConfiguration.restrictMask_apply
+#print Astra.PhysicalSpliceConfiguration.overrideBank_restrict
+#print axioms Astra.PhysicalSpliceConfiguration.overrideBank_restrict
+#print Astra.PhysicalSpliceConfiguration.restrictMasks
+#print axioms Astra.PhysicalSpliceConfiguration.restrictMasks
+#print Astra.PhysicalSpliceConfiguration.restrictMasks_apply
+#print axioms Astra.PhysicalSpliceConfiguration.restrictMasks_apply
+#print Astra.PhysicalSpliceConfiguration.overrideBank_restrict_config
+#print axioms Astra.PhysicalSpliceConfiguration.overrideBank_restrict_config
+#print Astra.PhysicalSpliceCommonLaw.fixedBankCommonForestLaw
+#print axioms Astra.PhysicalSpliceCommonLaw.fixedBankCommonForestLaw
+#print Astra.PhysicalSpliceCommonLaw.fixedBankCommonForestLaw_eq_weighted
+#print axioms Astra.PhysicalSpliceCommonLaw.fixedBankCommonForestLaw_eq_weighted
+#print Astra.PhysicalSpliceCommonLaw.fixed_bank_common_forest_splice
+#print axioms Astra.PhysicalSpliceCommonLaw.fixed_bank_common_forest_splice
+#print Astra.PhysicalSpliceCommonLaw.natural_common_forest_splice
+#print axioms Astra.PhysicalSpliceCommonLaw.natural_common_forest_splice
+#print Astra.PhysicalSpliceProtectedCoordinates.vertexMap
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.vertexMap
+#print Astra.PhysicalSpliceProtectedCoordinates.vertexMap_injective
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.vertexMap_injective
+#print Astra.PhysicalSpliceProtectedCoordinates.vertex_age
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.vertex_age
+#print Astra.PhysicalSpliceProtectedCoordinates.edgeMap
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.edgeMap
+#print Astra.PhysicalSpliceProtectedCoordinates.originalEdge
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.originalEdge
+#print Astra.PhysicalSpliceProtectedCoordinates.edgeMap_original
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.edgeMap_original
+#print Astra.PhysicalSpliceProtectedCoordinates.edgeMap_injective
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.edgeMap_injective
+#print Astra.PhysicalSpliceProtectedCoordinates.edge_rate
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.edge_rate
+#print Astra.PhysicalSpliceProtectedCoordinates.edge_source_age
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.edge_source_age
+#print Astra.PhysicalSpliceProtectedCoordinates.edge_target_age
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.edge_target_age
+#print Astra.PhysicalSpliceProtectedCoordinates.hybridMap
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.hybridMap
+#print Astra.PhysicalSpliceProtectedCoordinates.hybridMap_original
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.hybridMap_original
+#print Astra.PhysicalSpliceProtectedCoordinates.hybridMap_injective
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.hybridMap_injective
+#print Astra.PhysicalSpliceProtectedCoordinates.hybrid_gamma
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.hybrid_gamma
+#print Astra.PhysicalSpliceProtectedCoordinates.hybrid_parent_occurrence
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.hybrid_parent_occurrence
+#print Astra.PhysicalSpliceProtectedCoordinates.hybrid_bank_bit
+#print axioms Astra.PhysicalSpliceProtectedCoordinates.hybrid_bank_bit
+#print Astra.PhysicalSpliceExternalMasks.labelMask
+#print axioms Astra.PhysicalSpliceExternalMasks.labelMask
+#print Astra.PhysicalSpliceExternalMasks.labelMask_at_label
+#print axioms Astra.PhysicalSpliceExternalMasks.labelMask_at_label
+#print Astra.PhysicalSpliceExternalMasks.labelMask_off_labels
+#print axioms Astra.PhysicalSpliceExternalMasks.labelMask_off_labels
+#print Astra.PhysicalSpliceExternalMasks.labelMask_restrict
+#print axioms Astra.PhysicalSpliceExternalMasks.labelMask_restrict
+#print Astra.PhysicalSpliceExternalMasks.splice_external_mask
+#print axioms Astra.PhysicalSpliceExternalMasks.splice_external_mask
+#print Astra.PhysicalSpliceExternalMasks.splice_external_masks
+#print axioms Astra.PhysicalSpliceExternalMasks.splice_external_masks
+#print Astra.PhysicalSpliceControlledLaw.weightedNormalize_override_splice
+#print axioms Astra.PhysicalSpliceControlledLaw.weightedNormalize_override_splice
+#print Astra.PhysicalSpliceControlledLaw.maskedNormalizedTree_splice
+#print axioms Astra.PhysicalSpliceControlledLaw.maskedNormalizedTree_splice
+#print Astra.PhysicalSpliceControlledLaw.controlledFullForestLaw_splice
+#print axioms Astra.PhysicalSpliceControlledLaw.controlledFullForestLaw_splice
+#print Astra.PhysicalSpliceControlledLaw.randomizedTreeLaw_splice
+#print axioms Astra.PhysicalSpliceControlledLaw.randomizedTreeLaw_splice
+#print Astra.PhysicalSpliceControlledLaw.randomizedFullForestLaw_splice
+#print axioms Astra.PhysicalSpliceControlledLaw.randomizedFullForestLaw_splice
+#print Astra.PhysicalCommonStep.PhysicalSource
+#print axioms Astra.PhysicalCommonStep.PhysicalSource
+#print Astra.PhysicalCommonStep.stepBigon
+#print axioms Astra.PhysicalCommonStep.stepBigon
+#print Astra.PhysicalCommonStep.EqualArmExposure
+#print axioms Astra.PhysicalCommonStep.EqualArmExposure
+#print Astra.PhysicalCommonStep.physicalStep
+#print axioms Astra.PhysicalCommonStep.physicalStep
+#print Astra.PhysicalCommonStep.physicalStep_source
+#print axioms Astra.PhysicalCommonStep.physicalStep_source
+#print Astra.PhysicalCommonStep.physicalStep_is_step
+#print axioms Astra.PhysicalCommonStep.physicalStep_is_step
+#print Astra.PhysicalCommonStep.physicalStep_vertex_decrement
+#print axioms Astra.PhysicalCommonStep.physicalStep_vertex_decrement
+#print Astra.PhysicalCommonStep.physicalStep_edge_decrement
+#print axioms Astra.PhysicalCommonStep.physicalStep_edge_decrement
+#print Astra.PhysicalCommonStep.physicalStep_outer
+#print axioms Astra.PhysicalCommonStep.physicalStep_outer
+#print Astra.PhysicalCommonStep.physicalStep_outer_galled
+#print axioms Astra.PhysicalCommonStep.physicalStep_outer_galled
+#print Astra.PhysicalCommonStep.fixedForestLaw
+#print axioms Astra.PhysicalCommonStep.fixedForestLaw
+#print Astra.PhysicalCommonStep.naturalForestLaw
+#print axioms Astra.PhysicalCommonStep.naturalForestLaw
+#print Astra.PhysicalCommonStep.physicalStep_fixed_forest
+#print axioms Astra.PhysicalCommonStep.physicalStep_fixed_forest
+#print Astra.PhysicalCommonStep.physicalStep_natural_forest
+#print axioms Astra.PhysicalCommonStep.physicalStep_natural_forest
+#print Astra.PhysicalCommonStep.physicalStep_controlled_forest
+#print axioms Astra.PhysicalCommonStep.physicalStep_controlled_forest
+#print Astra.PhysicalCommonStep.physicalStep_randomized_forest
+#print axioms Astra.PhysicalCommonStep.physicalStep_randomized_forest
+#print Astra.TwoPortExceptionCount.twoPortBlobs
+#print axioms Astra.TwoPortExceptionCount.twoPortBlobs
+#print Astra.TwoPortExceptionCount.nonroot_branching_of_not_two
+#print axioms Astra.TwoPortExceptionCount.nonroot_branching_of_not_two
+#print Astra.TwoPortExceptionCount.internal_outport_with_exception
+#print axioms Astra.TwoPortExceptionCount.internal_outport_with_exception
+#print Astra.TwoPortExceptionCount.actual_internal_blob_exception_budget
+#print axioms Astra.TwoPortExceptionCount.actual_internal_blob_exception_budget
+#print Astra.TwoPortExceptionCount.actual_hybrid_exception_budget
+#print axioms Astra.TwoPortExceptionCount.actual_hybrid_exception_budget
+#print Astra.TwoPortExceptionCount.actual_vertex_edge_exception_budget
+#print axioms Astra.TwoPortExceptionCount.actual_vertex_edge_exception_budget

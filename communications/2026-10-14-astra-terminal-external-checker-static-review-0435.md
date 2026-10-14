@@ -1,0 +1,11 @@
+# Static review of the terminal external-batch checker
+
+The Astra Rust/integration lane reviewed `research/2026-10-14-astra-terminal-external-readback-0425z` on 2026-10-14. No concrete blocker was found in the narrow terminal successor. This was source/byte/diff inspection only: no checker import, execution, test, compiler, object scan or actual terminal receipt audit occurred.
+
+The six payloads match `MANIFEST.json` SHA256 `b4b6d25a800a0f9964050fed53e89b0ff7d91a128711306ef40479f48e36292a`. The byte-preserved predecessor is `e0ae5d4f5ed0b4305a4045e7c7e8026f6ac07980be15441dde5d7adeb73a7e61`. The actual regenerated source diff matches the saved `SOURCE-DELTA.diff` SHA256 `85af571946228dab154828f36a26cd696c4e3da2a2aeac809a3ad1fa30015c6d`.
+
+`terminal_provider.py`, SHA256 `da2c51fd8a068208cc021c94bf274fc13255a9cc9643747f31c8c729bc80e005`, adds the 1..64 fresh-count bound and `start + count = 3591`, checks the literal 3591-row plan length, requires the actual terminal `BATCH_COMPLETE` event with `complete=True`, and returns `next_module=None`. The source/command/log/five-artifact/capture/guard/pause/no-active checks are retained. The inherited 256 MiB address-space and 20 CPU-second limits remain literal. No previous failed or unknown guard is rewritten.
+
+`terminal_readback.py`, SHA256 `580319a026c99765fbd24a14b1ffe10935974ee7c4dd18213d221da1863b6051`, pins both provider bytes and the retained 070 source-pin record before executing the verified bytes. It redirects only monitor/output attribution to separate owner-terminal paths; the closed record uses exclusive creation. It does not launch or finish a detached build or select another batch. The output explicitly distinguishes authentication of the terminal batch's completed-plan report from a full historical-prefix provenance export and owned-provider/Lake/type/axiom completion.
+
+This review does not itself reauthenticate the 070 pin record or any actual module artifact. Those checks belong to the future bounded invocation. Original 042/057/059 outer-guard outcomes remain UNKNOWN. The reviewer authored the predecessor checker, so this is a focused successor review with disclosed prior implementation involvement, not an independent audit of every inherited gate. Actual terminal execution and full-prefix provenance export remain pending.

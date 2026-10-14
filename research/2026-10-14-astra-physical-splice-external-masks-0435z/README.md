@@ -1,0 +1,9 @@
+# Fixed external mask tables through one physical splice
+
+**Uncompiled, unselected source proposal.** `labelMask` interprets a fixed external `PH → Option Bool` table by the existing `Function.extend` operation, using `none` at every unmarked hybrid. Injectivity gives the exact table value at each external label. The same `PH` and table occur before and after the splice.
+
+`labelMask_restrict` proves the generic encoding identity from an injective retained-site map and a compatible constructed label frame. `splice_external_mask` instantiates that result with the actual retained-hybrid injection and surviving-hybrid frame. `splice_external_masks` does this simultaneously for every whole configuration. Natural, forced-false and forced-true entries keep their original meaning. No new configuration parameter, relabelled arm, source-dependent table or desired output-law identity is supplied.
+
+The label frame and source tuple are constructed before the universally quantified external table. The local avoidance premise excludes deleting a marked hybrid; this packet does not derive the fully expanded protected dependency footprint. Joint-PMF transport, actual forest laws, physical admission, finite iteration and the certificate-derived hybrid bound are separate obligations. This encoding identity alone does not admit any source or certify native code.
+
+`SOURCE-PINS.json` binds the exact proposed protected-coordinate and configuration modules, their immediate proposed prerequisites, and the inspected Mathlib extension contracts. The aggregate and Lake supplement are unapplied proposals. Existing accepted declarations and all source/build selections remain unchanged. Actual import queries, elaboration, definition/type/axiom output, aggregate/Lake execution and verified receipts are pending. Only source reading and byte authentication occurred; no production imports, compiler, tests, materializer or object scans ran.
