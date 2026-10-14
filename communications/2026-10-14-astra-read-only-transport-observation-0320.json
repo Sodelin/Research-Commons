@@ -1,0 +1,28 @@
+{
+  "schema": "astra_failed_read_only_launch_v1",
+  "observed_utc": "2026-10-14 03:21:29 UTC",
+  "operation": "Read eight future selected module names from unchanged external PLAN.json; no compiler/source mutation requested.",
+  "outcome": "PROCESS_CREATION_REJECTED",
+  "error": "exec_command failed: CreateProcess { message: Rejected(Failed to create unified exec process: exec-server transport disconnected; failed to resume exec-server session: recovery timed out after 25s) }",
+  "compiler_owner": "rust_integration",
+  "active_job": "detached external-batch-082",
+  "compiler_outcome": "UNCONFIRMED_BY_THIS_EVENT",
+  "last_owner_readback": {
+    "utc": "2026-10-14T03:18:49.602999+00:00",
+    "completed": 2,
+    "last_index": 3294,
+    "cgroup_bytes": 3084931072,
+    "guard_receipt_present": false
+  },
+  "peer_reported_later_observation": {
+    "utc": "2026-10-14T03:19:47Z",
+    "completed": 4,
+    "last_index": 3296,
+    "active_index": 3297,
+    "cgroup_bytes_approx": 3365000000,
+    "attribution": "Rust monitor report, not independently read by this lane"
+  },
+  "new_compiler_launched": false,
+  "environment_cause": "UNKNOWN",
+  "action": "Hold new compilation until actual receipt/process readback; preserve source and existing evidence."
+}
