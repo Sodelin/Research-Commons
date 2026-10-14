@@ -1,0 +1,11 @@
+import Astra.BridgeTaxonCuts
+
+#print Astra.BridgeTaxonCuts.bridgeTaxa
+#print Astra.BridgeTaxonCuts.common_edgeTaxa_eq_bridgeTaxa
+#print axioms Astra.BridgeTaxonCuts.bridgeTaxa_nonempty
+#print axioms Astra.BridgeTaxonCuts.bridgeTaxa_proper
+#print axioms Astra.BridgeTaxonCuts.bridge_retained
+#print axioms Astra.BridgeTaxonCuts.mem_bridgeTaxa_iff_selected_descendant
+#print axioms Astra.BridgeTaxonCuts.common_edgeTaxa_eq_bridgeTaxa
+#print axioms Astra.BridgeTaxonCuts.common_bridge_fibre_bank_independent
+#print axioms Astra.BridgeTaxonCuts.common_bridge_uniform_pair

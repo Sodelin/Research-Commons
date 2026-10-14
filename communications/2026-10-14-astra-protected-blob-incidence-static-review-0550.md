@@ -1,0 +1,9 @@
+# Static review: protected blob incidence
+
+Reviewed `ProtectedBlobIncidence.lean` SHA256 `8febb37ccf32d094f049b2a4faf022955e27db27427bec3bc44bd055d79a0ece` against the actual `MarkedSource` and three avoidance fields in `ProtectedPhysicalIteration.lean` SHA256 `091f6c9431fa30a0ed8b85467555bddce22453c3423c37e2720085cf7bdd35c2`, plus selected `ActualBlobBigon` and `removedEdges` definitions. No concrete static blocker found; uncompiled.
+
+The finite image is exactly `PV ⊕ (PE ⊕ (PE ⊕ PH))`; its four constructors enumerate marked vertices, edge sources, edge targets, and hybrid vertices without imposing global disjointness of external label namespaces. Image cardinality gives the literal expression `|PV| + 2|PE| + |PH|`, allowing repeated incidences to merge. The nonmembership proofs use correct equality directions. For removed edges, the entry target is the upper vertex, the child source is the hybrid, and both ordered parent targets are the hybrid, so each case is excluded by the corresponding original endpoint incidence. Hybrid avoidance follows from the original subtype value and `hybrid_in_blob`.
+
+The final conjunction matches exactly the three existing local avoidance fields for the same extracted `stepBigon`; it does not construct `EligibleCell` or infer its equal-exposure field. This is a bound in actual supplied primitive label cardinalities, not the accepted expanded dependency parameter h, search completeness, a law theorem, or the final physical representative bound.
+
+Full new source and the narrow defining interfaces were read. No compiler, tests, research imports, queries, objects, materializer, Git, or existing-file mutation occurred. Reviewer overlap: I authored portions of the registry/physical-step dependencies; this is an independent read of the new incidence argument, not independent authorship of the entire dependency chain.
