@@ -2,6 +2,29 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 05:01 UTC:** the
+[complete reviewed handoff](../../communications/2026-10-14-g4-reviewed-continuation-and-master-handoff-0501z.md)
+preserves the three new 04:53 scoped hand results and all exact master
+limits. The [post-retuning sign review](critical-review/ROOT-POST-RETUNING-DIAGNOSTIC-REVIEW-0501Z.md)
+accepts an explicit reuse corollary, crediting the stronger inherited
+all-ratio and exact cap-five controls. No justified higher-order sign
+or actual arbitrary-cap zero emerged. General finite INDEPENDENT remains
+OPEN; the complete two-region/body equation is retained for continuation.
+
+**Latest checkpoint, 14 October 04:53 UTC:** the
+[log/boundary/signed acceptance](critical-review/ROOT-LOG-BOUNDARY-SIGNED-ACCEPTANCE-0453Z.md)
+accepts three scoped hand results with separate research-agent reviews:
+resource-only logarithmic persistence fails even at zero relative entropy
+and exact fixed-target budgets; boundary tails erase quantitatively and
+a conditional finite-positive skeleton reduces to a finite private word;
+correct peeling retains universal finite witness support, whose entire
+finite-degree moment cone tolerates incorrect peeling on actual sources.
+The [Commons progress handoff](../../communications/2026-10-14-g4-log-boundary-signed-acceptance-and-progress-0453z.md)
+preserves exact target-value and observer limitations. The
+[primary applicability audit](general-algebra/continuation-0430z/PRIMARY-HIERARCHY-RIGIDITY-APPLICABILITY.md)
+finds no legal finite chronological bridge in the inspected rooted-tree
+rigidity/representation theorems. General finite INDEPENDENT is OPEN.
+
 **Latest checkpoint, 14 October 04:17 UTC:** the
 [general unequal-resource acceptance](critical-review/ROOT-GENERAL-UNEQUAL-RESOURCE-ACCEPTANCE-0415Z.md)
 establishes exact quadratic and linear normalization for arbitrary

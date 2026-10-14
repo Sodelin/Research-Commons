@@ -1,5 +1,51 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## Reviewed continuation handoff, 14 October 05:01 UTC
+
+The [complete handoff](../../communications/2026-10-14-g4-reviewed-continuation-and-master-handoff-0501z.md)
+pins the three new scoped hand results, primary applicability limits and
+an explicit [post-retuning sign diagnostic](critical-review/ROOT-POST-RETUNING-DIAGNOSTIC-REVIEW-0501Z.md).
+The diagnostic is a reuse corollary; stronger all-ratio and exact cap-five
+results were already established. The higher-order attempted lift did
+not yield a new sign or exact source common zero. The full projected
+`X6+Z6+Y6-[X3,Y3]/2` expression and forced body terms remain unresolved.
+
+The exact remaining original positive duty is finite legal I equalities
+forcing T's finite COMMON certificate against every admitted finite
+unknown-size rival. The negative alternative still needs one fixed
+admitted target and exact inequivalent admitted rivals after every
+finite full-legal-I prefix. Both remain OPEN. No new Lean/Rust execution,
+historical novelty or master completion is claimed. Ten proof/update
+files from the 04:53 packet were read back with 49 local links checked;
+publication integrity is separately recorded.
+
+## Logarithmic and signed-observer successor, 14 October 04:53 UTC
+
+The [lead acceptance](critical-review/ROOT-LOG-BOUNDARY-SIGNED-ACCEPTANCE-0453Z.md)
+checks three new scoped hand results and separate agent reviews. Resource
+totals alone cannot justify logarithmic Fatou, even with zero entropy and
+one fixed target's exact two totals. This does not match its observations.
+Boundary tails have capped full-forest TV erasure and positive domination;
+finitely many strict and positive-finite/infinite cells imply a finite
+nonordinary skeleton, with full private equality excluding its boundaries.
+Infinite reservoirs and the original anchor's finite-exposure gate remain.
+
+Correctly peeled B-first witness masses have universal support. Their
+whole finite-degree moment cone is interior relative to its universal
+identities, so slightly excessive peeling on actual smaller-gap sources
+passes every positive truncated-moment test at that degree. Their entire
+inverse eventually becomes negative, with an explicit private comb value
+`-665/1152`. These are not exact target-prefix matching rivals.
+
+The [primary audit](general-algebra/continuation-0430z/PRIMARY-HIERARCHY-RIGIDITY-APPLICABILITY.md)
+separates character algebra rigidity, general positive states, all-level
+growth boundaries and exchangeable hierarchies from the actual legal
+finite chronological adapter. The [progress handoff](../../communications/2026-10-14-g4-log-boundary-signed-acceptance-and-progress-0453z.md)
+retains both master finite-I alternatives as OPEN. All-regime leading-cone
+nonseparability was already established by the inherited October 8 attempt;
+any explicit post-retuning sign calculation is a reuse corollary. The
+remaining source duty is a higher-order exact target-fibre argument.
+
 ## General unequal-resource successor, 14 October 04:17 UTC
 
 The [lead acceptance](critical-review/ROOT-GENERAL-UNEQUAL-RESOURCE-ACCEPTANCE-0415Z.md)
