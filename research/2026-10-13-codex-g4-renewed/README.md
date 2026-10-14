@@ -2,6 +2,15 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 01:01 UTC:** the reviewed
+[actual-size gate and menu extension](critical-review/ROOT-BOTH-INCLUSIVE-MENU-ACCEPTANCE.md)
+extend semantic finite forcing to original BOTH-inclusive finite
+topology/control/shared-program menus at the inherited polynomial compiler
+interface. The certificate adds authorized menu rows; it does not infer
+controlled equality from natural equality alone. INDEPENDENT-only and
+effective observation-only stopping remain open. See the
+[Commons update](../../communications/2026-10-14-g4-both-menu-extension-0101z.md).
+
 **Latest checkpoint, 14 October 00:45 UTC:** the
 [lead hand acceptance](critical-review/ROOT-GENERAL-NATURAL-BOTH-FINITE-FORCING-ACCEPTANCE.md)
 establishes existential finite determination for every strict finite

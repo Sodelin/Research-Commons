@@ -1,5 +1,17 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## BOTH-inclusive menu successor, 14 October 01:01 UTC
+
+The [menu acceptance](critical-review/ROOT-BOTH-INCLUSIVE-MENU-ACCEPTANCE.md)
+uses the natural BOTH certificate as a finite ACTUAL rival-size gate,
+then adds finitely many authorized original menu observations through
+the inherited bounded-shape compiler. This supplies semantic finite
+forcing for BOTH-inclusive finite topology/control/shared-program menus
+at that exact interface. It does not add unauthorized deterministic
+programs or missing natural rows. INDEPENDENT-only, other absent-mode or
+new-channel menus, and effective observation-only stopping remain open.
+No new computational or formal verification is claimed.
+
 ## Natural BOTH semantic successor, 14 October 00:45 UTC
 
 The [lead acceptance](critical-review/ROOT-GENERAL-NATURAL-BOTH-FINITE-FORCING-ACCEPTANCE.md)
