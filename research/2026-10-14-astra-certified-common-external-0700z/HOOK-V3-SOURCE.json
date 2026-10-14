@@ -1,0 +1,59 @@
+{
+  "schema": "astra.disjoint-narrow-full-hook-source-successor.v1",
+  "status": "SOURCE_ONLY_NOT_MATERIALIZED_NOT_QUERIED",
+  "preserved_v2_manifest": {
+    "path": "research/2026-10-14-astra-certified-common-external-0700z/HOOK-SUCCESSOR-MANIFEST.json",
+    "bytes": 2785,
+    "sha256": "879dc8ddd87922dc92c5da70e4c14bf99d45729983263664155fbd2118b6237d"
+  },
+  "final_selected_future_hook": {
+    "path": "research/2026-10-14-astra-certified-common-external-0700z/lakefile.addendum-v3.txt",
+    "bytes": 564,
+    "sha256": "7cf2f7c16855b6aed084614a252b06d5a164db752350660780fb336e40ec6898"
+  },
+  "preserved_prior_hooks": [
+    {
+      "path": "research/2026-10-14-astra-certified-common-external-0700z/lakefile.addendum.txt",
+      "bytes": 320,
+      "sha256": "a2d9c56026c8234cc7003d050ed9a319e641b330b85d5f203ea5be1d496c13f9"
+    },
+    {
+      "path": "research/2026-10-14-astra-certified-common-external-0700z/lakefile.addendum-v2.txt",
+      "bytes": 499,
+      "sha256": "4cedf237e843a28655009c7a65c506f53c2e9885a822448ec5c313783929b7e1"
+    }
+  ],
+  "source_staging_map": "STAGING-SUCCESSOR.md; packet lean/ contents copied into a future canonical sibling source root.",
+  "libraries": [
+    {
+      "library": "AstraCertifiedCommonExternal",
+      "srcDir": ".",
+      "roots": [
+        "Astra.CertifiedCommonExternal"
+      ],
+      "one_globs": [
+        "Astra.CertifiedCommonExternal"
+      ],
+      "scope": "NARROW_WRAPPER_ANCESTRY"
+    },
+    {
+      "library": "AstraCertifiedCommonExternalIntegration",
+      "srcDir": ".",
+      "roots": [
+        "AstraCertifiedCommonExternalIntegration"
+      ],
+      "one_globs": [
+        "AstraCertifiedCommonExternalIntegration"
+      ],
+      "scope": "FULL_PRIOR_CERTIFIED_AGGREGATE_PLUS_WRAPPER"
+    }
+  ],
+  "source_sha256": "48b26222d61f7874ea1842cf5f6d8081563db28f230a26ce9e40238420dfba32",
+  "execution": null,
+  "invariants": [
+    "Prior v1/v2 fragments/manifests and all mathematical source payloads unchanged.",
+    "Use v3 once instead of v1/v2; keep old default and every old module owner.",
+    "Explicit disjoint new ownership.",
+    "No actual selection, materialization, import query, object scan, compiler, test or Git action."
+  ]
+}

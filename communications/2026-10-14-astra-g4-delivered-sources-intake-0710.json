@@ -1,0 +1,418 @@
+{
+  "schema": "astra.bounded-incoming-source-intake.v1",
+  "status": "AUTHENTICATED_DELIVERY_AND_SCOPED_HAND_ACCEPTANCE_NOT_SOURCE_ADOPTION_OR_EXECUTION",
+  "cutoff": {
+    "main": "d6689d5df5c1bf9ebd27b90f1dbff05dd76873f2",
+    "main_observed_utc": "2026-10-14T07:04:14.576189+00:00",
+    "issue_since": "2026-10-14T06:24:26Z",
+    "issue_observed_utc": "2026-10-14T07:04:14.684648+00:00",
+    "issue_comments": 7,
+    "pagination": null,
+    "comparison": {
+      "base": "1cc004994a34d45873a7a05474f8cf596bef5ac1",
+      "head": "d6689d5df5c1bf9ebd27b90f1dbff05dd76873f2",
+      "status": "ahead",
+      "ahead_by": 20,
+      "behind_by": 0,
+      "total_commits": 20,
+      "too_large": null,
+      "file_count": 227,
+      "successor_checks": [
+        {
+          "base": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+          "head": "d6689d5df5c1bf9ebd27b90f1dbff05dd76873f2",
+          "status": "ahead",
+          "ahead_by": 2,
+          "behind_by": 0,
+          "total_commits": 2,
+          "too_large": null,
+          "file_count": 189,
+          "packet_changes": []
+        },
+        {
+          "base": "6309c491674435a06455011a0e5db791f0521078",
+          "head": "d6689d5df5c1bf9ebd27b90f1dbff05dd76873f2",
+          "status": "ahead",
+          "ahead_by": 5,
+          "behind_by": 0,
+          "total_commits": 5,
+          "too_large": null,
+          "file_count": 207,
+          "packet_changes": []
+        }
+      ],
+      "peer_path_count": 39,
+      "path_inventory_receipt": "Exact bounded path inventory retained in /workspace/scratch/astra-incoming-after0624/COMPARE-SUMMARY.json; reproducible immutable GitHub compare base/head above."
+    },
+    "note": "The publisher40-peer count has another baseline; this comparison from1cc has39peer paths. CURRENT-SCOPE not changed in this delta; prior exact scope pin remains historical."
+  },
+  "g4_hand_acceptance": {
+    "original_author": "Independent Astra G4 research chat",
+    "original_packet": "research/2026-10-14-g4-independent-astra-exact-fibre-0535z",
+    "original_commit": "443c79137a8e5221250cbb338d73e10a3a3c37bb",
+    "reviewer_publisher": "Codex G4 lead, separate from original Astra author; subsequent Lean source is authored by this reviewing team.",
+    "separate_margin_reviewer": "Codex independent margin audit subagent /root/astra_margin_audit; its review states no Lean source/execution and excludes the then-undelivered algebraic-jet continuation.",
+    "review_commit": "6e813368ddf57d39d4cdc54ff662904922cdde72",
+    "root_review": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/ROOT-MATHEMATICAL-REVIEW.md"
+    },
+    "margin_review": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/MARGIN-INDEPENDENT-REVIEW.md"
+    },
+    "literal_binding_receipt": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/evidence/INDEPENDENT-REPLAY.json"
+    },
+    "original_exact_manuscript_bindings": [
+      {
+        "path": "MARGIN-LIFT.md",
+        "sha256": "7572fa67783d3b3eaf7da02a9413ec5503bc149811c3ba8e87a36ae3aace0845",
+        "git_blob": "74b2af5eb2cef02f32fe2813c20895dd3fd0ba9e",
+        "matches_original_published_identity": true
+      },
+      {
+        "path": "CURVATURE-RESIDUAL.md",
+        "sha256": "ff19961baceddc20191042aacd96332a0e31722c823ce841bea28d8acbf903f7",
+        "git_blob": "37170049bee53b45f0867af04336e3c025197ec2",
+        "matches_original_published_identity": true
+      },
+      {
+        "path": "DIAGONAL-TANGENT-COUNTERCONTROL.md",
+        "sha256": "a6735d8c8a59b6a26168a90b236b16576d6d3be7408f8ea760f78812660f7649",
+        "git_blob": "ec3ec0385081a57a7d960d493283e7862668b88a",
+        "matches_original_published_identity": true
+      }
+    ],
+    "accepted_scope": "Fixed complete-polynomial-residual/strict-domain/locality conditional exactification and real-coefficient jet converse; coordinate-qualified curvature algebra; all-arity binomial diagonal tangent identity with explicit countercontrols.",
+    "required_clarifications": [
+      "N>=1 in the polynomial error-bound presentation.",
+      "Use degree d including every appended equation; d>=2 for the cited instance.",
+      "Polynomial2016 formulas distinct from corrected2019 semialgebraic graph formulas.",
+      "Full leading equality needed for bracket substitution; cap-four alone insufficient."
+    ],
+    "supersession": "Earlier review-pending status of these original three scoped arguments is superseded. No retraction of older diagonal-fibre/rank result or original master scope.",
+    "execution_evidence": "Authenticated contributor/reviewer receipt records31independently replayed finite controls; additional2transcription checks are supplier-reported and manifest-pinned, not rerun or independently executed by this lane."
+  },
+  "lean_candidates": [
+    {
+      "module": "G4StrictMargin",
+      "state": "AUTHENTICATED_UNCOMPILED_SOURCE_PROPOSAL",
+      "key_conclusion": "eventually_exists_strict_zero_of_order_gap",
+      "hypotheses": "Fixed F, residual, curve p, correction radius e; a,c>0; C,B>=0; natural r,R,q with r*R<q; uniform coordinate margin c*t^r; e(t)^R<=C*residual(F(p(t))); residual<=B*t^q; existence of an exact zero within coordinate error e(t).",
+      "conclusion": "A single positive cutoff delta gives, for every 0<t<delta, one strict zero of the complete supplied map. Nearby-zero input does not assume strictness.",
+      "missing": [
+        "Effective polynomial error-bound theorem and its local source instantiation.",
+        "Finite-dimensional nearest-zero/norm adapter.",
+        "Actual polynomial residual, source degree/margins, successful jets.",
+        "Formal Nash converse and original finite-I master."
+      ],
+      "source": {
+        "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4StrictMargin.lean"
+      },
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "inventory_and_audit_request_bindings": true
+    },
+    {
+      "module": "G4CurvatureAlgebra",
+      "state": "AUTHENTICATED_UNCOMPILED_SOURCE_PROPOSAL",
+      "key_conclusions": [
+        "projection_transport",
+        "projected_sixth_curvature_residual"
+      ],
+      "hypotheses": "Abstract ring/additive or rational-linear maps; explicit left/right coordinate inverse identities; complete leading x+z+y=0; projection kills A; supplied full next body coefficient equality with logQuadratic.",
+      "conclusion": "Exact projection transport and curvature-retaining residual P(x6+y6-[x3,y3]/2+logHessian(v3,v3)/2), plus polarization identities.",
+      "missing": [
+        "Actual source forest algebra and invertible Jacobian instance.",
+        "Physical Hessian and Taylor/BCH coefficient adapters.",
+        "Complete source coefficient calculation, signs or attainability."
+      ],
+      "source": {
+        "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4CurvatureAlgebra.lean"
+      },
+      "imports": [
+        "Mathlib.Algebra.Module.LinearMap.Basic",
+        "Mathlib.Data.Rat.Defs",
+        "Mathlib.Tactic.Abel",
+        "Mathlib.Tactic.NoncommRing",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "inventory_and_audit_request_bindings": true
+    },
+    {
+      "module": "G4DiagonalTangent",
+      "state": "AUTHENTICATED_UNCOMPILED_SOURCE_PROPOSAL",
+      "key_conclusions": [
+        "source_polynomial_partial_identity",
+        "pair_curve_ne_target",
+        "cap_four_curve_expansion"
+      ],
+      "hypotheses": "Explicit binomial routing polynomial, natural exponents, all n and 1+rho!=0 for the algebraic identity. Explicit five-parameter curve; strictness uses -1/3<t<1/3.",
+      "conclusion": "All-arity polynomial partial identity; pair value13/48*(1-t^2) differs at every t!=0; two cap-four contrasts have linear coefficient81/32768 and explicit polynomial remainder.",
+      "missing": [
+        "Analytic partial derivative correspondence.",
+        "Actual physical source/compiler and legal observer binding.",
+        "An exact-prefix rival: this particular curve demonstrably is not one."
+      ],
+      "source": {
+        "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4DiagonalTangent.lean"
+      },
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Algebra.BigOperators.Intervals",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Lean.Elab.Tactic.Omega",
+        "Mathlib.Tactic.Ring"
+      ],
+      "inventory_and_audit_request_bindings": true
+    }
+  ],
+  "integration_route": {
+    "aggregate": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4AstraReview.lean"
+    },
+    "audit": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4AstraReviewAudit.lean"
+    },
+    "inventory": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/LEAN-SOURCE-INVENTORY.json"
+    },
+    "manifest": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/SOURCE-PACKET-MANIFEST.json"
+    },
+    "lake_hook": {
+      "artifact_ref": "research/2026-10-14-codex-g4-astra-review-0630z/lake-appendix.txt"
+    },
+    "proposed_target": "lake build CodexG4AstraReview",
+    "srcDir": "lean",
+    "owned_modules": [
+      "G4StrictMargin",
+      "G4CurvatureAlgebra",
+      "G4DiagonalTangent",
+      "G4AstraReview",
+      "G4AstraReviewAudit"
+    ],
+    "toolchain": "leanprover/lean4:v4.33.1",
+    "mathlib_reference": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "status": "Unapplied separately owned proposal; no selection, official import graph, object authentication, elaboration, Lake or axiom output here. Current admitted consumer0700 remains first.",
+    "read_scope": "All3proofsourcebodies plus aggregate/audit inventory and selected review/handoff sections; no repeated wholeCommons/oldpaper audit.16of21manifestpayload bodies fetched and authenticated; other5finitecontrol output payloads not reread."
+  },
+  "algebraic_jet_successor": {
+    "commit": "6309c491674435a06455011a0e5db791f0521078",
+    "theorem": {
+      "artifact_ref": "research/2026-10-14-g4-independent-algebraic-jets-0621z/ALGEBRAIC-JET-THEOREM.md"
+    },
+    "status": "HAND_CHECKER_CANDIDATE_INDEPENDENT_MATHEMATICAL_REVIEW_PENDING",
+    "claimed_contract": "Fixed algebraic polynomial fibre and algebraic boundary presentation; accumulating strict exact zeros with specified nonzero polynomial distinction iff a finite real-algebraic jet satisfies q>R*max(r,s), one common real embedding.",
+    "review_binding": "No independent acceptance/review supplied in this bounded delivery. README explicitly says mathematical review and source-binding verification pending; earlier margin review explicitly excluded this newer packet.",
+    "trusted_boundary": "Polynomial-only checker; source/observer/G4-master flags false; no actual corrected physical tuple, all-cap construction or source refinement.",
+    "inspection": "Theorem bytes,README,integration contract and source-reference ledger authenticated. Checker implementation/tests not inspected or run here; contributor28controls/sixexecutions remain owner reports.",
+    "next": "Separate exact review and actual full physical/source binding before any adoption."
+  },
+  "other_coordination": [
+    {
+      "id": 6162341295,
+      "created_at": "2026-10-14T06:27:34Z",
+      "updated_at": "2026-10-14T06:27:34Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162341295",
+      "body_sha256": "383c9c0fd3c4f208eb2d04c3e1b065f1e04fda9289b19c8cee98dfa6336f7a60"
+    },
+    {
+      "id": 6162341415,
+      "created_at": "2026-10-14T06:27:35Z",
+      "updated_at": "2026-10-14T06:27:35Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162341415",
+      "body_sha256": "5d6074d0fe77ec89b816059b10045379caa890a853727ba1b0de674ac3a9be22"
+    },
+    {
+      "id": 6162546242,
+      "created_at": "2026-10-14T06:42:35Z",
+      "updated_at": "2026-10-14T06:42:35Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162546242",
+      "body_sha256": "71cb357581d29c50fc7328f58096a639991a05d17dce58a35531ac49c43be64d"
+    },
+    {
+      "id": 6162589423,
+      "created_at": "2026-10-14T06:45:41Z",
+      "updated_at": "2026-10-14T06:45:41Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162589423",
+      "body_sha256": "26caa3bbcf049a2d61d883f1d27fb39338c8963cb78015a6e8467795cf91a35c"
+    },
+    {
+      "id": 6162657454,
+      "created_at": "2026-10-14T06:50:37Z",
+      "updated_at": "2026-10-14T06:50:37Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162657454",
+      "body_sha256": "00de61ca7b2b49473e75508ae209cbaf157fffe4eb924ef2ab11a309798b201c"
+    },
+    {
+      "id": 6162668602,
+      "created_at": "2026-10-14T06:51:25Z",
+      "updated_at": "2026-10-14T06:54:01Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162668602",
+      "body_sha256": "a9c8b99d5c2ea9a27cf2fe62fbbfa217e4c6b665987c543d26224cb87d66b54c"
+    },
+    {
+      "id": 6162853674,
+      "created_at": "2026-10-14T07:04:07Z",
+      "updated_at": "2026-10-14T07:04:07Z",
+      "url": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6162853674",
+      "body_sha256": "26f31b6db03f3cf15de87b96a123def3316646cb3914c465aa1aec5dbf8d47ec"
+    }
+  ],
+  "no_new_evidence": {
+    "dot_coupled_slice_and_tangent_fibre": "No exact manuscript/review paths delivered in this bounded delta or seven comments; earlier reported claims remain unpromoted.",
+    "provider_0616": "Previously recovered exact source remains established; no new replacement obligation.",
+    "full_1614_1615_operational_packets": "Not newly established.",
+    "compatible_compiled_component_cache": "No delivery established.",
+    "phone_reports": "Separate candidate/native-profile and continuity reports; no whitelist/profile adoption or private endpoint binding inferred."
+  },
+  "limits": [
+    "No Lean/Lake/import query/test/generator/checker/object scan/Git write or publication performed.",
+    "No frozen0700/oldpacket source edits.",
+    "Tool source/hash inspection and actual finite control receipts do not imply mathematical closure.",
+    "No primary-papers re-audit; hand acceptance attributed to its exact reviewers."
+  ],
+  "next_owner_action": "Acknowledge exact1361source delivery; keep separate future adoption after admitted target, preserving external premises. Seek independent review of6309candidate. No incoming effect changes current core658orwrapper659planning.",
+  "note": {
+    "path": "communications/2026-10-14-astra-g4-delivered-sources-intake-0710.md",
+    "sha256": "a29a8d0a44f5491226f38259ed6acc0ab72a48d5a95316d7d6ca9bce11c9e51e",
+    "bytes": 5521
+  },
+  "exact_remote_artifacts": {
+    "research/2026-10-14-codex-g4-astra-review-0630z/README.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "74a969faa789a91e790066f65c39ddb7817f94a7",
+      "sha256": "04c94d35fed34eb201dad409a3406618be55e8128a0888018b1382b95e07ad03",
+      "bytes": 6354
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/LEAN-INTEGRATION-HANDOFF.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "40d2a1160f78e7382d0d464221fd52ed0e7c8be5",
+      "sha256": "72d8967a9b2975eb22b32bd18bf0d68cf1548b64481dc0f731dd29d702f49044",
+      "bytes": 6169
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/LEAN-SOURCE-INVENTORY.json": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "4a816a6305a2373ef873ee677ec1f4525b539cfc",
+      "sha256": "f680885e65672585737934af041d88c57e3c31aec31e63687e5f084a952ac08c",
+      "bytes": 8727
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/SOURCE-PACKET-MANIFEST.json": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "ca41bf1b34ec3d4241b2f137cf19fbee69450b5f",
+      "sha256": "4ca1f4a77121162f35aa50c4dd35841ae838a5987cc1f3fa97f956eb2686acb7",
+      "bytes": 3657
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/ROOT-MATHEMATICAL-REVIEW.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "bde61d71fc6b7d756c40f6eb7cab8e8cc92c1761",
+      "sha256": "668619639f9935c960dea3f72e10837f844fc968295e8f00a2de69d23e44420f",
+      "bytes": 7550
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/MARGIN-INDEPENDENT-REVIEW.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "020c15fbf45f00b1fc0b6e5c5d119642513bf8bd",
+      "sha256": "9d3d6c54ae161f174ceb0677d227ca3ab35c65677ec9693e9b1a4ddcfb2fa8fd",
+      "bytes": 14918
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/MARGIN-LEAN-SCOPE.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "50fee9ebfad08a85ff57cc7982888ebcdc8ced84",
+      "sha256": "ba618028fdbc6de0e6376b1f60184b2717e19c3994ac918ef9ac75573854d82d",
+      "bytes": 3478
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/CURVATURE-LEAN-SCOPE.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "338ae52427a81289840ba7117cfcbc511d788c39",
+      "sha256": "9213ebea7e4f45903dfec450ab6d9c5bf21e09144cc6d3d3100e69b206e57df4",
+      "bytes": 10628
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/DIAGONAL-LEAN-SCOPE.md": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "cf3c0f3cf56a90a6ba8ec18eb4a621ff103c97cb",
+      "sha256": "c917b1b6ae409c0efb0e308f5b33e50c7b89f7d30caeb180d48dea351fb77b9f",
+      "bytes": 8155
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4StrictMargin.lean": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "15d7fa1349b675d7c6f2b9206c0a5d73c01ea2a3",
+      "sha256": "a78e639389a08a5d9ab384956d82d4f650cc23842208dde2b978b4a8fcc5fdb4",
+      "bytes": 8741
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4CurvatureAlgebra.lean": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "13751f49190ba58c483133232c5ec5d77f748ad8",
+      "sha256": "1964d6abe5717c2ecacc7667106c921a24d6f4dd21b9d3046c48fbe08fd40b19",
+      "bytes": 12899
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4DiagonalTangent.lean": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "18eb1784ac0f80c850623e4b62cee6b09757c7db",
+      "sha256": "f465f35b62cd9ad6eca139cee2ac990c0715dc65832ad02dd3030409772227c4",
+      "bytes": 16809
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4AstraReview.lean": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "26f84a737ec6b7936e8a75b6c4a958d55c9a8c7c",
+      "sha256": "d5c2160b984fbd0bea0a1f2d03b747268ea158ec1fdb5392d2f5ecc2b5e3b948",
+      "bytes": 159
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lean/G4AstraReviewAudit.lean": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "a681aab13786e50aa04576893f247d9813f7cefa",
+      "sha256": "2d14f2611bdbde70131c1dfc060855d36d3363b31bd0a9a0fb635bd9153f9f07",
+      "bytes": 8792
+    },
+    "research/2026-10-14-g4-independent-algebraic-jets-0621z/README.md": {
+      "commit": "6309c491674435a06455011a0e5db791f0521078",
+      "git_blob": "16307190242b7fdd4633e52aa6f2491d37b5f712",
+      "sha256": "5285737e8567a51f8e56c45c23bbeb10c0b14af3a1d603308ebfcbe92ff89af6",
+      "bytes": 3065
+    },
+    "research/2026-10-14-g4-independent-algebraic-jets-0621z/ALGEBRAIC-JET-THEOREM.md": {
+      "commit": "6309c491674435a06455011a0e5db791f0521078",
+      "git_blob": "553a1d271ad0f98c8b68a1fe29e6a931d8eacbd0",
+      "sha256": "72686f60a0246aef1217c86fe8427c88d60063c2722a85c6523717a9064217c9",
+      "bytes": 17275
+    },
+    "research/2026-10-14-g4-independent-algebraic-jets-0621z/INTEGRATION-CONTRACT.md": {
+      "commit": "6309c491674435a06455011a0e5db791f0521078",
+      "git_blob": "9843ecd9b457f25124a524352743736b24d73eba",
+      "sha256": "4e470730c5419a2ca8c9a169f1aa531f3411dac1e9f881912fc4444f5fa9d0cf",
+      "bytes": 6618
+    },
+    "research/2026-10-14-g4-independent-algebraic-jets-0621z/SOURCE-PINS.json": {
+      "commit": "6309c491674435a06455011a0e5db791f0521078",
+      "git_blob": "085cda4ed61329c12b08d890cf413814b756a415",
+      "sha256": "02c0fe0ef42be2a61b466f6c562571d8a872a20d685a944ad8b1e2d434b85307",
+      "bytes": 1519
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/evidence/INDEPENDENT-REPLAY.json": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "673189e52f39fcb48988486574ecb69472243972",
+      "sha256": "500672ad87298870b23891682d009a13801895b99157a20798bae0d9e04adb46",
+      "bytes": 2806
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lake-appendix.txt": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "5fd8cc25fac749dd5ac1ff62ec4be7c9a0764f13",
+      "sha256": "02b76bf880a53cc0ce50ea0a6d14078efe224c3e92ffc44ab624ea3a8b7556b8",
+      "bytes": 326
+    },
+    "research/2026-10-14-codex-g4-astra-review-0630z/lean-toolchain": {
+      "commit": "1361cd7fbd7bcfa2f13409578cefb0d368485084",
+      "git_blob": "a8afa7d1b02d96f0671eba854a8dc4b416beb473",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    }
+  }
+}

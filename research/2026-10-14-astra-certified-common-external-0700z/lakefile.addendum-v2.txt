@@ -1,0 +1,9 @@
+-- SOURCE-ONLY SUCCESSOR: use this fragment INSTEAD OF lakefile.addendum.txt.
+-- Proposed stage copies packet lean/ contents into the canonical source root.
+-- Preserve the entire canonical configuration and its existing default target.
+-- Not installed, imported, queried or built.
+lean_lib AstraCertifiedCommonExternal where
+  srcDir := "."
+  roots := #[`AstraCertifiedCommonExternalIntegration]
+  globs := #[.one `Astra.CertifiedCommonExternal,
+    .one `AstraCertifiedCommonExternalIntegration]
