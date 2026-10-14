@@ -1,0 +1,15 @@
+import G7SymbolicProgramPolynomial
+
+#print axioms GProgram.G7.SymbolicProgramPolynomial.WordVariable
+#print axioms GProgram.G7.SymbolicProgramPolynomial.instantiateGamma
+#print axioms GProgram.G7.SymbolicProgramPolynomial.wordVariables
+#print axioms GProgram.G7.SymbolicProgramPolynomial.wordEval
+#print axioms GProgram.G7.SymbolicProgramPolynomial.stepPolynomial
+#print axioms GProgram.G7.SymbolicProgramPolynomial.actual_step_polynomial
+#print axioms GProgram.G7.SymbolicProgramPolynomial.wordPolynomial
+#print axioms GProgram.G7.SymbolicProgramPolynomial.actual_word_polynomial
+#print axioms GProgram.G7.SymbolicProgramPolynomial.actual_source_word_polynomial
+#print axioms GProgram.G7.SymbolicProgramPolynomial.initializedWordLaw
+#print axioms GProgram.G7.SymbolicProgramPolynomial.naturalWordPolynomial
+#print axioms GProgram.G7.SymbolicProgramPolynomial.initializedWordLaw_projected
+#print axioms GProgram.G7.SymbolicProgramPolynomial.actual_natural_word_polynomial

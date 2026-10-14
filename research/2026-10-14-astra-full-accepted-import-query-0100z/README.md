@@ -1,3 +1,17 @@
+# Executed full accepted-source import query
+
+The official source-import query and independent capture ran successfully on 2026-10-14. All1,642 selected source/configuration files retain their exact bodies, including the complete1,613 accepted baseline and eleven selected Mathlib bodies. The run issued1,710 serial `lean --src-deps` queries and preserved the literal3,593-record prior query plan. The nine new root walks add68 external source records, giving3,661; this is70 beyond the unchanged active3,591-record compiler plan. No theorem elaboration or object authentication is claimed by this query.
+
+The first run failed on its first official query with `failed to create thread` under a proposed512MiB virtual allowance. Its outer guard recorded exit1/no resource stop; the capture preserved its exact evidence as UNVERIFIED. The separately named unchanged-source successor used the already established6GiB virtual allowance with the same4GiB physical stop and180-second wall/120-second CPU/64MiB file bounds. It passed in99.100seconds with93.69MB child peakRSS. This successful changed-limit operation does not establish the cause of the first thread-creation failure.
+
+The actual capture passed in24.025seconds with71.57MB child peakRSS under its own512MiB/90-second wall/60-second CPU guard. It checks the complete source selection, compiler requests and environments, outputs and imported-source hashes, all eleven namespace routes, and the recorded DFS query/plan order. All10,277 captured payloads were separately rehashed. See `evidence/import-query-v2-authenticated/FILES.json`, `evidence/FINAL-CAPTURE-READBACK.json`, and `VERIFICATION.json`. The original source-only packet and manifest remain under `evidence/initial-source-packet/`; first-run configuration and failed evidence remain separate.
+
+The active compiler plan, accepted theorem bodies, Rust implementation and physical-provider status are unchanged. Actual provider/aggregate builds and declaration-type/axiom audits are still separate obligations. Original042/057/059 outer guard outcomes remain UNKNOWN.
+
+---
+
+The following is the original source-reviewed design, preserved for provenance. Its unexecuted statements describe that earlier cutoff.
+
 # Full accepted-package source-query preparation
 
 This is an isolated source-only successor to the verified2355 import-query

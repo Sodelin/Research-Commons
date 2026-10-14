@@ -1,0 +1,357 @@
+{
+  "imports": [
+    "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_0_5.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_1_4.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_2_3.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_3_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_4_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_5_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_0_4.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_1_3.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_2_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_3_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_4_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_0_3.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_1_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_2_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_3_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_3_0_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_3_1_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_3_2_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_4_0_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_4_1_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_5_0_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_0_4.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_1_3.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_2_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_3_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_4_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_0_3.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_1_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_2_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_3_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_2_0_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_2_1_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_2_2_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_3_0_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_3_1_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_4_0_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_0_3.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_1_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_2_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_3_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_1_0_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_1_1_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_1_2_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_2_0_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_2_1_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_3_0_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_0_0_2.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_0_1_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_0_2_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_1_0_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_1_1_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_2_0_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_4_0_0_1.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_4_0_1_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_4_1_0_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_5_0_0_0.lean",
+    "/workspace/scratch/astra-unified-extension-sources-2340/ThetaSupport.lean"
+  ],
+  "literal_header": [
+    "ThetaKernelSupport_0_0_0_5",
+    "ThetaKernelSupport_0_0_1_4",
+    "ThetaKernelSupport_0_0_2_3",
+    "ThetaKernelSupport_0_0_3_2",
+    "ThetaKernelSupport_0_0_4_1",
+    "ThetaKernelSupport_0_0_5_0",
+    "ThetaKernelSupport_0_1_0_4",
+    "ThetaKernelSupport_0_1_1_3",
+    "ThetaKernelSupport_0_1_2_2",
+    "ThetaKernelSupport_0_1_3_1",
+    "ThetaKernelSupport_0_1_4_0",
+    "ThetaKernelSupport_0_2_0_3",
+    "ThetaKernelSupport_0_2_1_2",
+    "ThetaKernelSupport_0_2_2_1",
+    "ThetaKernelSupport_0_2_3_0",
+    "ThetaKernelSupport_0_3_0_2",
+    "ThetaKernelSupport_0_3_1_1",
+    "ThetaKernelSupport_0_3_2_0",
+    "ThetaKernelSupport_0_4_0_1",
+    "ThetaKernelSupport_0_4_1_0",
+    "ThetaKernelSupport_0_5_0_0",
+    "ThetaKernelSupport_1_0_0_4",
+    "ThetaKernelSupport_1_0_1_3",
+    "ThetaKernelSupport_1_0_2_2",
+    "ThetaKernelSupport_1_0_3_1",
+    "ThetaKernelSupport_1_0_4_0",
+    "ThetaKernelSupport_1_1_0_3",
+    "ThetaKernelSupport_1_1_1_2",
+    "ThetaKernelSupport_1_1_2_1",
+    "ThetaKernelSupport_1_1_3_0",
+    "ThetaKernelSupport_1_2_0_2",
+    "ThetaKernelSupport_1_2_1_1",
+    "ThetaKernelSupport_1_2_2_0",
+    "ThetaKernelSupport_1_3_0_1",
+    "ThetaKernelSupport_1_3_1_0",
+    "ThetaKernelSupport_1_4_0_0",
+    "ThetaKernelSupport_2_0_0_3",
+    "ThetaKernelSupport_2_0_1_2",
+    "ThetaKernelSupport_2_0_2_1",
+    "ThetaKernelSupport_2_0_3_0",
+    "ThetaKernelSupport_2_1_0_2",
+    "ThetaKernelSupport_2_1_1_1",
+    "ThetaKernelSupport_2_1_2_0",
+    "ThetaKernelSupport_2_2_0_1",
+    "ThetaKernelSupport_2_2_1_0",
+    "ThetaKernelSupport_2_3_0_0",
+    "ThetaKernelSupport_3_0_0_2",
+    "ThetaKernelSupport_3_0_1_1",
+    "ThetaKernelSupport_3_0_2_0",
+    "ThetaKernelSupport_3_1_0_1",
+    "ThetaKernelSupport_3_1_1_0",
+    "ThetaKernelSupport_3_2_0_0",
+    "ThetaKernelSupport_4_0_0_1",
+    "ThetaKernelSupport_4_0_1_0",
+    "ThetaKernelSupport_4_1_0_0",
+    "ThetaKernelSupport_5_0_0_0",
+    "ThetaSupport"
+  ],
+  "dependencies": [
+    {
+      "path": "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Init.lean",
+      "sha256": "68c57bbafcacc3372655ac168082c481765639aba61f2d969da496d58e2727e6"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_0_5.lean",
+      "sha256": "28c40b3a29cf8693a5c04a859e7a6f9d5073b3dbc0481d3bb06182ffdcb8219f"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_1_4.lean",
+      "sha256": "e761051e91b3b1dea43ab419b9e526a80cc4d2c363ce44c16a0d208f6a00d074"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_2_3.lean",
+      "sha256": "d96c531f4d083e4fd2b1370d4730d930584e1a4b00f3ba4a7cf08d3763eeaf63"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_3_2.lean",
+      "sha256": "1239f93573bc843bb71f057eaf3db9aa6bfbe722b80bb727aa99694bc66cfa90"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_4_1.lean",
+      "sha256": "f7528f3052a548bb2e14de062b071d05e14e84680d1e90288839f8ec83d84d19"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_0_5_0.lean",
+      "sha256": "ad5cc4575b36e5ac92ad30eaffea70f0e9d86fd8a45bb48f0994283065115373"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_0_4.lean",
+      "sha256": "faea3d93cefae3ed4291946f3b3a2a8d5ff604877515d66529354cbee8dac6e3"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_1_3.lean",
+      "sha256": "be7a2f9b3d219a69839b419942bc53c8a41ded3e2eca6eb40abc49b80e26f655"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_2_2.lean",
+      "sha256": "e067d74b0538b4483949b0eb53ea1ce36254a42d89c6908a1783a11f4dc6f17e"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_3_1.lean",
+      "sha256": "17ce7228688d11f662c7542bdc0e18ce2150b9f32c72196a64c029b714b5bb28"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_1_4_0.lean",
+      "sha256": "0dab76757333e783d7d4f0d781678207beebce18a1d499272790813a4181114e"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_0_3.lean",
+      "sha256": "dc0aaf03172fd3bdd57f7ebcbc4b777e95dddedca2262b19dbbce6e45ae9f72b"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_1_2.lean",
+      "sha256": "9ed0ac6efa223941f8f9ba74ff99dc60f2f15dc16c7d618013a4d4da73cbfd20"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_2_1.lean",
+      "sha256": "101426a31e6c29d0981e3e555195f0b72a771f9999b9010415bc7a5b47feb47f"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_2_3_0.lean",
+      "sha256": "a63479e555e9df75bf919c22af09da718861e9d5a0eab25b125a459917f26907"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_3_0_2.lean",
+      "sha256": "535e0810defd4fe1b6e8aa0f7308f05a3257eca518c0e4b332d96900ee221399"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_3_1_1.lean",
+      "sha256": "2b893b91cfc1fa4742eab9396cbd82f97976e13ed63a20bfa2c3921983dea75a"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_3_2_0.lean",
+      "sha256": "dc003ae3bb5cc2a6832c2be1576b8a07432d4794a7eedf53f1e4e19435eeabf3"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_4_0_1.lean",
+      "sha256": "88d003700457d8d1482b6ea9ecde3df91189b821a79f023a2bc34a7f08d51fcb"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_4_1_0.lean",
+      "sha256": "e06c166ac3dd6a2455412e11c557fa652cff1a7dc3e2edcccad583d5625a1509"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_0_5_0_0.lean",
+      "sha256": "6114647a2a176ba222934ebf0bcf5fb24b920aec957cbcaddb08b28f10dfd7c3"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_0_4.lean",
+      "sha256": "46e28b9a2a8583a8379f130bcf58beed7e6a61d66b6ae1fd91c9b312718d23ab"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_1_3.lean",
+      "sha256": "48da4a980baa6abfd68a90be8a8f443dfe76cfd573fd34d33e1fe18683126d53"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_2_2.lean",
+      "sha256": "622eed7191e9bb3297c6665ad58c714fe3ae29ef519fc93713f224086b0b01d4"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_3_1.lean",
+      "sha256": "8eb28a706cbd19ce8b7b01bba09f8e4de6967756eb1e5c44abe9fa0c0a8ae29f"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_0_4_0.lean",
+      "sha256": "450af4d2398eecf0f930a62654e90eadb6c509021e8e51a232f6eff3ab34d6a7"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_0_3.lean",
+      "sha256": "f08a25486ed1cd6b8300dd23c8491758f8a55fdbb95ddd9a3fbcb401626d61c7"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_1_2.lean",
+      "sha256": "1b152682cbc67b2143ed183f018ed5b93cd97d2d50fce4358b403f7f9711c71e"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_2_1.lean",
+      "sha256": "74e5f6686188e6c84e7bd9eaf70fbfd4e41360d2abce1b302ddfc5139ece59b3"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_1_3_0.lean",
+      "sha256": "46b0dbc7b8c6a1f4571e29b51b5050e57d0be2ac6515a0df572d2d5165ab0fdc"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_2_0_2.lean",
+      "sha256": "cd8964b74722ec6e7e5725e987397d9f6e7fd8ff099670cf55d0387fd72ee9d6"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_2_1_1.lean",
+      "sha256": "c983170531d61fdded296480668595ec6e6164238e36a8ffea76899581e6a32d"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_2_2_0.lean",
+      "sha256": "4274f442cba587cab7f2546c5e38102d7de7ebfaf2ac05f9eab5bac61ebf0018"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_3_0_1.lean",
+      "sha256": "bb0a6d27bdadb392ffb6fda594b457fde79377e2c1e2d90da359c20e5bce81ba"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_3_1_0.lean",
+      "sha256": "51068e986aa09076d50a2d84e4a36c739e4906c87af22c2aed8b378e6f28c122"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_1_4_0_0.lean",
+      "sha256": "d80fdf0b2202ebbbb36e68e38ea099162e4335c47289f8249976979a58660294"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_0_3.lean",
+      "sha256": "1a2b7e1ccba5c60aa5c9a4018822c18bb9ce00191b1fe72be8c635b094284343"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_1_2.lean",
+      "sha256": "f62d8f6c1cc7cf2aa0e82064bc507201c0bef530817c1dae66dfede1d6e3510f"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_2_1.lean",
+      "sha256": "9e544c2327e0a9e3d6f786899b972e62def5739cf9cf66df6efc06da2c7f2a34"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_0_3_0.lean",
+      "sha256": "c256ae45e7c942e31edebc7c3726c4eaddc64460fe6ad64dbf5349ae781f79e2"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_1_0_2.lean",
+      "sha256": "b839831fff91bab5a62de207f3f6ac44d9c58f792668d9e161d7549587faf298"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_1_1_1.lean",
+      "sha256": "73d7b1e8fc497fe2b4f99c990c91fef57822537c159c02c09e3823d130b72e29"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_1_2_0.lean",
+      "sha256": "b38378c70ce6155dd8633232d51e6c0276147b72ad19e4307bb353b5b0ae135f"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_2_0_1.lean",
+      "sha256": "3858f5aafd5a4cebde4c4284a683254014d382886871cc055311c9bee90aa241"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_2_1_0.lean",
+      "sha256": "bbaa20b46a7da843d8fa0d8fa3633759d0530ddb064248e46dc5f2905529ec8c"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_2_3_0_0.lean",
+      "sha256": "f11e610eb3db9b75ff5d157c2b8b182f89ac2f7a462f812e7c021eabf3e8fb08"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_0_0_2.lean",
+      "sha256": "6084e4c52dc68ba4f79de663cc15d2e527ad6621f2badffeced265ac457adad8"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_0_1_1.lean",
+      "sha256": "386471bd5397c63f1ea8f6de67087fd534726837d2dcf10207c2436815006e76"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_0_2_0.lean",
+      "sha256": "20a80fbc9158f2d14515acab2cf49ef193666dbe3236ce9cf56e11f76eff318a"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_1_0_1.lean",
+      "sha256": "06ec51cfbef34b813f8a2ccfa0b467eb1cc251564b314ff932343dbef3f7d543"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_1_1_0.lean",
+      "sha256": "11301e6790110d5c5a819082d0ca60fb3d523ca290c946f3a9d92dd81914d4ac"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_3_2_0_0.lean",
+      "sha256": "6e33b097c0b0c12789c736616b3190be1989522816c6f7842092812e6c372759"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_4_0_0_1.lean",
+      "sha256": "afc7b7e1f1ef095c8139e394a14a68dd7bd0247da5822f78af21f3089ea1f925"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_4_0_1_0.lean",
+      "sha256": "f5cbe63345b9428e18d8e1264f2a60c81daec750ee43492505a90392849ca7cb"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_4_1_0_0.lean",
+      "sha256": "0846c55af0a1abbc90cbff14b8c0eb44e0d702b4b89a3770353a9fed6a90bd31"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaKernelSupport_5_0_0_0.lean",
+      "sha256": "1f11d1ef16d7757b416f47dbfcbd425f662c24a3895d2710c3815f693ba194ca"
+    },
+    {
+      "path": "/workspace/scratch/astra-unified-extension-sources-2340/ThetaSupport.lean",
+      "sha256": "f4f3bc90940b3cce3dd14e28e8cccd9ac070f29ee5144e08c45995ffb7f57a0a"
+    }
+  ],
+  "only_source_resolution_verified": true,
+  "object_authentication_performed": false
+}
