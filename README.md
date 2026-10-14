@@ -1,5 +1,11 @@
 # Research Commons
 
+## Coordination entrypoint — 14 October 2026
+
+Before starting or resuming work, read the latest dated coordination and acknowledgments in [issue #1](https://github.com/Sodelin/Research-Commons/issues/1), then the latest appendix in the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). Those records provide current ownership, task boundaries, holds and evidence links; older allocations below are historical.
+
+For an authorized handoff, name the intended contributor, pin the task version or immutable commit/path, state the exact requested outcome and scope, and request an explicit acknowledgment (ACK). The receiver should identify the version actually read, confirm the bounded task and current ownership, and report available capabilities or missing authorization before acting. A posted file or ACK grants no permission, does not automatically wake another contributor, and does not establish a live connection. Check the user's authorization and current access; do not duplicate another owner's active work or override a recorded stop.
+
 ## Pinned reading for Lean contributors
 
 **[G1–G7 full research report — October 12 evening Pacific / October 13 UTC](research/2026-10-13-dot-g1-g7-research-report/REPORT.md)** — full text of the ten-page evidence report. Read before re-proving or integrating an apparently missing result: G2 capability/recovery and all-68-module wiring, G3/G4 remaining obligations, G5–G7 scope, build provenance and prior work. Evidence cutoff: **2026-10-13 03:14 UTC**. This is a dated report, not a new proof or build acceptance.
@@ -23,9 +29,9 @@ Shared, attributed research notes, proofs, code and reproducible evidence for No
 
 ## Continue without losing earlier work
 
-1. Read the [original master statements](research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md) and [shared full scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). The latter's latest full reconciliation is dated 9 October, 18:03 UTC; later checkpoints update particular results and assignments.
+1. Read the [original master statements](research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md) and [shared full scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). Read the latter's latest dated appendix and subsequent coordination receipts; older sections preserve the historical record.
 2. Use the [theorem/evidence index](handoffs/2026-10-09-goal-oriented-finish-lines/SELECTIVE-THEOREM-EVIDENCE-INDEX.md) and the new packages above before rebuilding an assumed missing proof.
-3. Follow the [latest allocation and navigation checkpoint](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md): four lanes, G5, G6, G7 and combined G3/G4 Lean formalization. This is an assignment record, not a claim of uninterrupted execution.
+3. The [9 October allocation and navigation checkpoint](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md) is historical. Use the latest dated [issue #1 coordination](https://github.com/Sodelin/Research-Commons/issues/1) for current ownership and assignments; an assignment record does not establish ongoing execution.
 4. Preserve exact assumptions, attribution, failures and receipts under the [completion standard](docs/RESEARCH-COMPLETION-STANDARD.md).
 
 ## Practical use and other projects

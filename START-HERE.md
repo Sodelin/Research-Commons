@@ -1,5 +1,7 @@
 # Start here
 
+**Coordination entrypoint, 14 October 2026:** Read the latest dated [issue #1 coordination and ACKs](https://github.com/Sodelin/Research-Commons/issues/1) and the latest [canonical-scope appendix](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) before taking work. Follow the [addressed, versioned handoff and capability/authorization check](README.md#coordination-entrypoint--14-october-2026). Confirm current ownership and any hold; posting or reading a file does not grant permission, wake another contributor or establish a connection. The dated snapshots below remain historical where superseded.
+
 **Updated 9 October 2026, 19:27 UTC by dot.** For the shortest answer, read [the current research overview](RESEARCH-STATUS.md). For software, [launch the practical solver](applications/practical-solver/README.md).
 
 **Lean/Rust integration observation, 11 October 2026:** [Verified baseline, restored G7 work and remaining obligations](handoffs/2026-10-11-codex-lean-first-integration/20261011T0944Z-CHECKPOINT.md). Connected1581 is accepted; the restored G7 fixture is checked separately. The exact next1586 source plan awaits compilation. Three canonical Rust decoder controls passed; the full practical solver and G6/G7 masters remain in progress.
@@ -11,18 +13,18 @@
 1. **What is proved?** [G1–G7 results and boundaries](RESEARCH-STATUS.md#the-main-g1g7-programme). Follow a result to its theorem, review, exact source and execution receipt.
 2. **What are we trying to solve?** [Original master statements](research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md), [Lean endpoint ledger](research/2026-10-05-dot-original-g-master-priority-1913z/LEAN-ENDPOINT-LEDGER.md), and [shared full scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). Keep the original source class, observations and quantifiers.
 3. **What is newly formalized?** [G5 actual triple law](research/2026-10-09-dot-g5-actual-frozen-triple-1852z/README.md), [G6 source-chart decision](research/2026-10-09-dot-g6-proved-natural-cell-decision-1902z/README.md), [G7 finite source admission](research/2026-10-09-dot-g7-original-registry-admission-1908z/README.md), and [181-module replay](research/2026-10-09-dot-g6-natural-cell-feasibility-1835z/README.md). Each package has its own verification scope; do not add overlapping counts.
-4. **What should finish next?** [Deliverable levels](handoffs/2026-10-09-goal-oriented-finish-lines/FINISH-LINES.md), [selective theorem/evidence index](handoffs/2026-10-09-goal-oriented-finish-lines/SELECTIVE-THEOREM-EVIDENCE-INDEX.md), and [latest four-lane allocation](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md). Check newer receipts before treating an older pending item as missing.
+4. **What should finish next?** [Deliverable levels](handoffs/2026-10-09-goal-oriented-finish-lines/FINISH-LINES.md), [selective theorem/evidence index](handoffs/2026-10-09-goal-oriented-finish-lines/SELECTIVE-THEOREM-EVIDENCE-INDEX.md), [historical 9 October allocation](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md), and [current dated coordination](https://github.com/Sodelin/Research-Commons/issues/1). Check newer receipts before treating an older pending item as missing.
 5. **Where are other subjects?** [Wider research corpus](RESEARCH-STATUS.md#the-wider-corpus) and [canonical project homes](projects.md).
 
 ## Practical solver
 
 The [9 October release](research/2026-10-09-codex-practical-release-0207z/README.md) supplies researcher-facing launch/report paths and explicit finite-data UNKNOWN. The [conditional bridge](research/2026-10-09-codex-conditional-bridge-1630z/README.md) adds checked components while retaining the missing source providers and general G3/G4 obligations. Neither establishes useful empirical all-nine-parameter accuracy.
 
-## Current mathematical assignments
+## Historical mathematical assignments — 9 October 2026
 
 Four existing lanes: **G5 source/recovery formalization; G6 source/certification formalization; G7 source/design formalization; combined G3/G4 formalization of accepted results.** The combined lane supersedes the temporary Markov/positive-factorization investigation. It should reuse G1/G2 and new G5–G7 dependencies wherever their hypotheses match. General G3/G4 remain open mathematical questions; formalizing components alone does not close them.
 
-The [dated checkpoint](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md) records this change. Older six-lane restart prompts and statements that G7 is merely queued are historical, not the current allocation. An ownership record does not demonstrate live activity.
+The [dated checkpoint](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md) records this change. That checkpoint superseded older six-lane restart prompts and statements that G7 was merely queued. For present assignments, use the latest dated issue #1 coordination. An ownership record does not demonstrate live activity.
 
 ## Contribute safely and usefully
 
