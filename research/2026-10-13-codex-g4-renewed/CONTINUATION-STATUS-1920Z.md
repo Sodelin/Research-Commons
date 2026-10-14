@@ -1,5 +1,35 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## Full-shot audit successor, 14 October 02:36 UTC
+
+The [extraction/reset review](critical-review/ROOT-FULL-SHOT-EXTRACTION-AND-RESET-REVIEW.md)
+and [energy-boundary review](critical-review/ROOT-CONTRACTION-BOUNDARY-REVIEW.md)
+preserve exact method obstructions and a faithful nonsmooth contraction
+countercontrol. The generic finite-extraction inference fails in a separate
+stochastic grammar, even with one fixed interior target and exact finite
+prefix equality. The actual coalescent finite I question is still open.
+This dated register supersedes older unresolved BOTH/all-law entries below.
+
+| Original obligation | Current evidence/status | Remaining duty |
+|---|---|---|
+| Source/menu/quantifiers | Original strict finite class; one physical tuple; fixed target; every finite unknown-size rival | No hidden motifs, external parameter mixtures, boundary or infinite rivals |
+| COMMON | Inherited finite determination | Reuse supplier |
+| Natural BOTH | Accepted general semantic hand theorem | Formal realization and effective stopping remain separate |
+| Eligible BOTH-inclusive original menu | Accepted at exact polynomial compiler interface | Other missing-mode/new-channel adapters are not supplied |
+| Entire natural I-to-C | Accepted general hand theorem, including fair mixed arms and repeated cuts | Does not imply finite extraction |
+| Finite natural INDEPENDENT | OPEN | Finite legal I rows must force the target's finite COMMON certificate, or supply its exact fixed-target negation |
+| Fixed-target negative construction | OPEN | Actual positive higher residual must vanish at every cap for one target; signed-time/external-mixture solutions do not suffice |
+| Abstract inference and proposed observers | Generic extraction refuted; fixed faithful Hilbert reset metric excluded; signature failures are inherited | Need an additional source-specific equality/observer theorem |
+| Proof/publication/formal integration | Attributed hand arguments with separate reviews; first seven files read back from immutable main commit | No new Lean/Rust execution or historical novelty claim; sole compiler ownership retained |
+
+No tool or permission prevents execution. The blocker is mathematical:
+there is still no source-valid arbitrary-count equality argument for the
+INDEPENDENT weak reservoir or exact all-cap positive construction. The
+most concrete negative continuation is the ONE nonordinary body-eliminated
+equation in the [route audit](whole-source/continuation-2110z/FULL-SHOT-NONORDINARY-NEGATIVE-ROUTE-AUDIT.md),
+Section 3. The separate positive continuation is the exact finite bridge,
+with the generic extraction and faithful fixed-metric shortcuts removed.
+
 ## General natural all-law successor, 14 October 01:39 UTC
 
 The [lead acceptance](critical-review/ROOT-GENERAL-ALL-LAW-COMMONIZATION-ACCEPTANCE.md)

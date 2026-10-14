@@ -48,6 +48,11 @@ The primary theorem statements are audited by Sol; the lead accepts the
 applicability boundary without claiming independent primary rereading.
 Gaussian quadrature and moment determinacy are classical reused inputs.
 
+An independent [Laplace audit](../whole-source/continuation-2110z/FINITE-EXTRACTION-QUADRATURE-LAPLACE-REVIEW.md),
+SHA256 `230f33e76b535c324d31ac84d52cd75d6c6f18c0a4cdc96a9a8d61f347548e80`,
+also passes the complete countermodel and distinguishes that correctness
+check from primary-paper retrieval and original-source applicability.
+
 ## Fixed Hilbert reset dissipation: accepted at its stated scope
 
 Provider: [Laplace lane's reset obstruction](../general-algebra/continuation-1945z/INDEPENDENT-ORTHOGONAL-RESET-DISSIPATION-OBSTRUCTION.md),

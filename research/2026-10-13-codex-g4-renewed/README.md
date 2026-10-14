@@ -2,6 +2,15 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 02:36 UTC:** the
+[energy-boundary review](critical-review/ROOT-CONTRACTION-BOUNDARY-REVIEW.md)
+shows exactly why the fixed-metric obstruction does not exclude all
+faithful nonlinear energies. A finite maximum of positive-definite forms
+does contract, but lacks a target-specific equality criterion. The
+[obligation register](CONTINUATION-STATUS-1920Z.md) preserves the open
+finite INDEPENDENT duty and the exact fixed-target negative alternative.
+The signature recheck is prior-result reuse, not new G4 mathematics.
+
 **Latest checkpoint, 14 October 02:27 UTC:** the
 [full-shot root review](critical-review/ROOT-FULL-SHOT-EXTRACTION-AND-RESET-REVIEW.md)
 accepts an exact abstract countermodel to automatic finite I extraction,
