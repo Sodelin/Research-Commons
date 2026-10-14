@@ -1,0 +1,15 @@
+# One physical COMMON step on the actual G1 splice
+
+Status: source-only proposal, unselected and uncompiled. There is no actual import query, Lake build, type/axiom output, executable or publication receipt in this packet.
+
+`PhysicalSource` bundles the existing `G1ActualGraphNormalization.Source` with its actual ordered parent registry, strict hybrid probabilities and positive edge/ancestral rates. `stepBigon` repeats the selected G1 splice's exact `extractedBigon` expression, including the quotient-port-cardinality conversion. `physicalStep.source` is literally `G1ActualGraphNormalization.splice`, not a separately supplied or chosen target. The remaining tuple fields use the 0350 rate construction and 0400 registry/probability construction on that same extracted cell.
+
+The proposed proofs obtain an actual G1 `Step`, vertex decrement by two and edge decrement by three, then transport the exact outer-labelled semidirected partner to the same output. The optional marked-galled conclusion is precisely the selected original marked-hybrid articulation criterion derived from cut-child admission; it imposes no stronger embedding convention.
+
+Equality of the two actual extracted arm exposures is a separate scalar condition. Under it, the fixed-bank and naturally averaged complete unranked-forest PMFs follow from 0425. Controlled and randomized forest PMFs follow from 0435 with the derived original-mask pullback and exactly the same whole configuration PMF. The graph/calendar/registry/probabilities/rates are chosen before every bank, configuration table and finite labelled copy allocation. No desired output law, reduced source or count bound is assumed.
+
+This proves no iteration theorem: the existence of a G1 graph-normalization step does not establish the equal-exposure condition or expanded protected dependency eligibility for that step. Mask transport does not authorize deleting a protected site. There is no bound on the final hybrid count, no source-inverse decision, no timed or INDEPENDENT/BOTH law equality, and no Lean/native refinement claim. The previously missing general physical representative provider is not replaced by this local adapter.
+
+`SOURCE-PINS.json` binds the exact selected provider source records and proposed dependencies. The selected records are authenticated from source bytes and their recorded Git-blob hashes, not from compiled objects. `lean/AstraPhysicalCommonStep.lean` and `lake-supplement.txt` identify the proposed entry only; they do not alter any existing selection, package, source graph or build configuration. Every proposed dependency must be compiled and audited before this packet can be called a verified Lean result.
+
+The integration lane authored this adapter. The intake lane read its complete source against the exact selected G1 interfaces and found no concrete static mismatch, with authorship of the 0425/0435 law dependencies disclosed. Its separate review note supplies the immutable review pin. This is source review, not elaboration evidence.

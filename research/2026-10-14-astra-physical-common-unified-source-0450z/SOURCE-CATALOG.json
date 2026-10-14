@@ -1,0 +1,316 @@
+{
+  "schema": "astra.physical-common-unified-proposed-source.v1",
+  "status": "UNEXECUTED_PROPOSED_SOURCE_SELECTION_NOT_ADMITTED",
+  "base_selection": {
+    "path": "research/2026-10-14-astra-full-accepted-import-query-0100z/FULL-SOURCE-SELECTION.json",
+    "bytes": 1873551,
+    "sha256": "fb8f2ac3ba0a55f563f3ea0fcce3c8b1af6e127097df0668bf4d8e051ab16925"
+  },
+  "base_owned_plan": {
+    "path": "research/2026-10-14-astra-full-owned-plan-0145z/FULL-OWNED-SOURCE-PLAN.json",
+    "bytes": 1696285,
+    "sha256": "b4c7448756ac891e83ebd357c24e75e0c0d2d41ac369ce33744dfdf38170a501"
+  },
+  "fixture_catalog": {
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/SOURCE-CATALOG.json",
+    "bytes": 5822,
+    "sha256": "0315d3a39aab40e879ee1114025a99a5d3e7eab2a47c0c237e6e59c9cbb71703"
+  },
+  "base_configuration": {
+    "bytes": 59237,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/evidence/upstream-generated/lakefile.lean",
+    "sha256": "6317704a95e3d30284f1b2dca1d601aa28ee2ef5c05e7b87c0044f7fb8d5da89"
+  },
+  "preserved_generated_sources": [
+    {
+      "bytes": 51801,
+      "module": "Accepted1613",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/evidence/upstream-generated/Accepted1613.lean",
+      "sha256": "bb2e98be6151f3ee9379f247cc8e8f2e47bfcbaaff991c331ef6d3298a49bf19"
+    },
+    {
+      "bytes": 39,
+      "module": "AstraUnified",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/evidence/upstream-generated/AstraUnified.lean",
+      "sha256": "1ba69d2671e351c1aedf25b244344e657f72644cb022fd81c3475ac83b3ba34e"
+    }
+  ],
+  "toolchain": {
+    "bytes": 25,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean-toolchain",
+    "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "added_sources": [
+    {
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/G3PhysicalFixtureAdmission.lean",
+      "bytes": 8537,
+      "sha256": "3e8725ea49ee7b841340bf8e31ffcb0ab0719cb46706b1fc86c9d9524880762d",
+      "module": "G3PhysicalFixtureAdmission",
+      "destination": "G3PhysicalFixtureAdmission.lean",
+      "imports": [
+        "G7OriginalAdmission",
+        "G7OriginalSurvivalCoverage",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/G3PhysicalFixtureActualRows.lean",
+      "bytes": 10491,
+      "sha256": "c732776ff9e1cb394a1d06ceb653421f93ccebaf521bb412aad13e9c1452cc28",
+      "module": "G3PhysicalFixtureActualRows",
+      "destination": "G3PhysicalFixtureActualRows.lean",
+      "imports": [
+        "G3PhysicalFixtureAdmission",
+        "G4WholeProfileDetermination"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/AstraPhysicalFixture.lean",
+      "bytes": 220,
+      "sha256": "c20c0011d76e5e7ab85ea51315131f6522cefe7a2438a14ff6af62d4aa12dc4a",
+      "module": "AstraPhysicalFixture",
+      "destination": "AstraPhysicalFixture.lean",
+      "imports": [
+        "G3PhysicalFixtureAdmission",
+        "G3PhysicalFixtureActualRows"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/AstraFullWithPhysicalFixture.lean",
+      "bytes": 283,
+      "sha256": "0750f35d61ec9d7479ffd3eaad68693ca1a0556526222d7acfe4dbca44b83b5f",
+      "module": "AstraFullWithPhysicalFixture",
+      "destination": "AstraFullWithPhysicalFixture.lean",
+      "imports": [
+        "AstraAcceptedIntegration",
+        "AstraPhysicalFixture"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-equal-exposure-splice-0350z/lean/Astra/PhysicalSpliceRates.lean",
+      "bytes": 7142,
+      "sha256": "2bdd1ea9a4acae8f6e674446a47ad6c5c30ceefedb8c20ed9cf69887c9e59842",
+      "module": "Astra.PhysicalSpliceRates",
+      "destination": "Astra/PhysicalSpliceRates.lean",
+      "imports": [
+        "G1SplicedSourceAdmission",
+        "G7OriginalSurvivalCoverage"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-registry-0400z/lean/Astra/PhysicalSpliceRegistry.lean",
+      "bytes": 11496,
+      "sha256": "3bcb80b268b31eae7b4eccd3cd50da6f42494a27d9c6017d91ff52b90bd1d034",
+      "module": "Astra.PhysicalSpliceRegistry",
+      "destination": "Astra/PhysicalSpliceRegistry.lean",
+      "imports": [
+        "G1SplicedOriginalSwitching",
+        "G5CommonSwitchingQuartetWitness",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-original-bank-restriction-0410z/lean/Astra/OriginalBankRestriction.lean",
+      "bytes": 6681,
+      "sha256": "607bb9d08ab1f5182b145fd24ffc47f531a30017549bbb8e7293c7da503800b9",
+      "module": "Astra.OriginalBankRestriction",
+      "destination": "Astra/OriginalBankRestriction.lean",
+      "imports": [
+        "Astra.PhysicalSpliceRegistry",
+        "UnifiedLean.Source.SourceNaturalInitialization",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Logic.Equiv.Set"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-clades-0410z/lean/Astra/PhysicalSpliceClades.lean",
+      "bytes": 7707,
+      "sha256": "5445acb413af44d95efb09427e66d553b522b4b2c409f135649f765497664760",
+      "module": "Astra.PhysicalSpliceClades",
+      "destination": "Astra/PhysicalSpliceClades.lean",
+      "imports": [
+        "Astra.PhysicalSpliceRegistry",
+        "G1ActualSelectedClusterTransport",
+        "G4WeightedOrdinaryTreeLaw"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-weights-0415z/lean/Astra/PhysicalSpliceWeights.lean",
+      "bytes": 8513,
+      "sha256": "2af3e96c9d29794a41a6e55a86d6c982dbe0976e9c96d987e2d1d1519af2b0c9",
+      "module": "Astra.PhysicalSpliceWeights",
+      "destination": "Astra/PhysicalSpliceWeights.lean",
+      "imports": [
+        "Astra.PhysicalSpliceRates",
+        "Astra.PhysicalSpliceClades",
+        "G4WeightedOrdinaryTreeLaw"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-configuration-0425z/lean/Astra/PhysicalSpliceConfiguration.lean",
+      "bytes": 6112,
+      "sha256": "86861400d48cd2c476c3bd02b1619fd7c37fa68cf7de2da9f14f713fbeeeff18",
+      "module": "Astra.PhysicalSpliceConfiguration",
+      "destination": "Astra/PhysicalSpliceConfiguration.lean",
+      "imports": [
+        "Astra.OriginalBankRestriction",
+        "G4WholeProfileDetermination"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-common-law-0425z/lean/Astra/PhysicalSpliceCommonLaw.lean",
+      "bytes": 5563,
+      "sha256": "7393e361f6b469ba8969e4da501928cb2c35f73bb4a0546c0c7bedb051133348",
+      "module": "Astra.PhysicalSpliceCommonLaw",
+      "destination": "Astra/PhysicalSpliceCommonLaw.lean",
+      "imports": [
+        "Astra.PhysicalSpliceWeights",
+        "Astra.OriginalBankRestriction",
+        "G4WeightedOrdinaryTreeLaw"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-protected-0430z/lean/Astra/PhysicalSpliceProtectedCoordinates.lean",
+      "bytes": 7536,
+      "sha256": "6cf989617f40aaa0dd9e4c2825d825a5e214bb1f4dbb3d1f949a7ec1689b04ba",
+      "module": "Astra.PhysicalSpliceProtectedCoordinates",
+      "destination": "Astra/PhysicalSpliceProtectedCoordinates.lean",
+      "imports": [
+        "Astra.PhysicalSpliceRates",
+        "Astra.PhysicalSpliceRegistry"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-external-masks-0435z/lean/Astra/PhysicalSpliceExternalMasks.lean",
+      "bytes": 4508,
+      "sha256": "560065927b583594f6394d0a7014902f7e52d49ec4a3e9ddd80b5a4a63d70101",
+      "module": "Astra.PhysicalSpliceExternalMasks",
+      "destination": "Astra/PhysicalSpliceExternalMasks.lean",
+      "imports": [
+        "Astra.PhysicalSpliceProtectedCoordinates",
+        "Astra.PhysicalSpliceConfiguration",
+        "Mathlib.Logic.Function.Basic"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-controlled-law-0435z/lean/Astra/PhysicalSpliceControlledLaw.lean",
+      "bytes": 7425,
+      "sha256": "ca51fa099d5f04369ea8663c363b411f4e512b65b7f5878f3ac89996a9a2727d",
+      "module": "Astra.PhysicalSpliceControlledLaw",
+      "destination": "Astra/PhysicalSpliceControlledLaw.lean",
+      "imports": [
+        "Astra.PhysicalSpliceWeights",
+        "Astra.PhysicalSpliceConfiguration",
+        "G4WholeProfileDetermination"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-common-step-0440z/lean/Astra/PhysicalCommonStep.lean",
+      "bytes": 11503,
+      "sha256": "34be2971f6ac42bc11bb20b21aa79d30cdb52b8ff1f713e86de5b202ad9968b6",
+      "module": "Astra.PhysicalCommonStep",
+      "destination": "Astra/PhysicalCommonStep.lean",
+      "imports": [
+        "G1ActualGraphNormalization",
+        "G1ExactSemidirectedPartnerAdmission",
+        "G1ActualMarkedSemidirectedGalledAdmission",
+        "Astra.PhysicalSpliceCommonLaw",
+        "Astra.PhysicalSpliceControlledLaw"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-two-port-exception-count-0445z/lean/Astra/TwoPortExceptionCount.lean",
+      "bytes": 4911,
+      "sha256": "925c25f1b91e343e6ca266d368682f496af500fd89178cc380c754f69a7f700d",
+      "module": "Astra.TwoPortExceptionCount",
+      "destination": "Astra/TwoPortExceptionCount.lean",
+      "imports": [
+        "G1ReducedCoreCounts",
+        "G1BinaryCoreBudgets"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-common-unified-source-0450z/lean/AstraPhysicalCommonSplice.lean",
+      "bytes": 450,
+      "sha256": "b5919f14c0d7dede1ea33e01ac56476a34c3439746fd1d2783442b3e6de8f7ec",
+      "module": "AstraPhysicalCommonSplice",
+      "destination": "AstraPhysicalCommonSplice.lean",
+      "imports": [
+        "Astra.PhysicalSpliceRates",
+        "Astra.PhysicalSpliceRegistry",
+        "Astra.OriginalBankRestriction",
+        "Astra.PhysicalSpliceClades",
+        "Astra.PhysicalSpliceWeights",
+        "Astra.PhysicalSpliceConfiguration",
+        "Astra.PhysicalSpliceCommonLaw",
+        "Astra.PhysicalSpliceProtectedCoordinates",
+        "Astra.PhysicalSpliceExternalMasks",
+        "Astra.PhysicalSpliceControlledLaw",
+        "Astra.PhysicalCommonStep",
+        "Astra.TwoPortExceptionCount"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-common-unified-source-0450z/lean/AstraPhysicalCommonIntegration.lean",
+      "bytes": 69,
+      "sha256": "757d08e8e8ad2f2ae3f06d8e1b3e93af65ecc34bbf2460e13c8d3d0ffa31dceb",
+      "module": "AstraPhysicalCommonIntegration",
+      "destination": "AstraPhysicalCommonIntegration.lean",
+      "imports": [
+        "AstraFullWithPhysicalFixture",
+        "AstraPhysicalCommonSplice"
+      ],
+      "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED"
+    }
+  ],
+  "configuration": {
+    "path": "research/2026-10-14-astra-physical-common-unified-source-0450z/lakefile.lean",
+    "bytes": 60281,
+    "sha256": "fc6e347ef25a43d66b470dfcf2c13882baf6944657070bb4e3e75987431f243b"
+  },
+  "configuration_appendix": {
+    "path": "research/2026-10-14-astra-physical-common-unified-source-0450z/lake-appendix.txt",
+    "bytes": 1044,
+    "sha256": "edf5838928d411f76c8ac8ca37dcbdacf71393733c85b6436860a412ecc4bc13"
+  },
+  "parent_library_sources": 1641,
+  "proposed_library_sources": 1659,
+  "proposed_source_configuration_files": 1660,
+  "baseline1613_order_unchanged": true,
+  "all68_G2_original_selection_preserved": true,
+  "default_target_unchanged": true,
+  "new_explicit_targets": [
+    "AstraPhysicalFixture",
+    "AstraFullWithPhysicalFixture",
+    "AstraPhysicalCommonSplice",
+    "AstraPhysicalCommonIntegration"
+  ],
+  "source_import_graph": "Parent recorded imports plus exact anchored imports of18 additions, topologically closed against parent and external namespaces by source inspection only; no official new --src-deps queries.",
+  "active_state_changed": false,
+  "materializer_executed": false,
+  "compiler_or_Lake_executed": false,
+  "actual_type_axiom_audit": false,
+  "full_protected_bounded_representative": false,
+  "missing0616_recovered": false,
+  "old_full_runner_compatible": false,
+  "old_fixture_runner_compatible": false,
+  "reuse_status": "Parent source records/provenance reused, not parent compiled objects. New18 source bodies and preserved config/appendix bytes freshly hashed."
+}

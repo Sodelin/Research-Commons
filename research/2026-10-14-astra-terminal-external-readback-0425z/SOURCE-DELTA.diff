@@ -1,0 +1,25 @@
+--- PREDECESSOR.py
++++ terminal_provider.py
+@@ -44,8 +44,10 @@
+  return PINS
+ LIMITS=dict(cpu_seconds=600,wall_seconds=900,address_space_bytes=6*1024**3,file_bytes=1024**3,disk_floor=8*1024**3,ram_floor=1024**3,cgroup_stop=4*1024**3)
+ def closed(batch,start,count):
++ assert 1 <= count <= 64 and start + count == 3591
+  pins();out=E/f'external-batch-{batch:03d}';dd=D/'evidence'/f'production-{batch:03d}'
+  g=js(out/'RECEIPT.json');c=js(out/'MODULE-RECEIPTS.json');f=js(dd/'FINISH.json');it=js(dd/'INTENT.json');la=js(dd/'LAUNCH.json');pl=it['profile'];plan=js(S/'EXTERNAL-PLAN.json')['modules']
++ assert len(plan) == 3591
+  assert g['exit_code']==0 and g['stop'] is None and not g.get('error')
+  assert g['limits']==LIMITS and g['runner_sha256']==PINS[str(R/'research/2026-10-13-astra-unified-solver-0645z/guard.py')]
+  assert pl['child_command']==g['command'] and pl['cwd']==g['cwd']==str(R)
+@@ -71,9 +73,9 @@
+   for p,h in q['artifacts'].items():assert sha(p)==h,p
+   for n in ['stdout','stderr']:
+    p=ST/f'{i:04d}.{n}';assert sha(p)==q[n+'_sha256']==row[n]['sha256'] and p.stat().st_size==row[n]['bytes'] and p.read_bytes()==row[n]['content_utf8'].encode()
+- terminal=json.loads((out/'stdout').read_text().splitlines()[-1]);assert terminal==dict(status='BATCH_COMPLETE',freshly_compiled=count,authenticated_reuse=start,planned=3591,complete=False)
++ terminal=json.loads((out/'stdout').read_text().splitlines()[-1]);assert terminal==dict(status='BATCH_COMPLETE',freshly_compiled=count,authenticated_reuse=start,planned=3591,complete=True)
+  m=sample(batch);assert not m['active_processes'] and not m['pause']
+- result=dict(schema='astra_rust_lane_explicit_closed_batch_v2',observed_utc=m['observed_utc'],batch=batch,guard_sha256=sha(out/'RECEIPT.json'),capture_sha256=sha(out/'MODULE-RECEIPTS.json'),finish_sha256=sha(dd/'FINISH.json'),prebatch_sha256=sha(out/'PRE-BATCH-STATE.json'),guard_elapsed_seconds=g['elapsed_seconds'],guard_child_peak_rss=g['child_peak_rss_bytes'],fresh_indices=list(range(start,start+count)),fresh_artifacts_reauthenticated=count*5,source_log_receipt_command_reauthenticated=True,recorded_authenticated_reuse=start,guard_process_os_exit=f['guard_process_exit_code'],source_pins=PINS,final_monitor=m,next_index=start+count,next_module=plan[start+count]['module'],original042_057_059_outer_guard='UNKNOWN',no_repair_or_retry=True)
++ result=dict(schema='astra_rust_lane_explicit_closed_batch_v2',observed_utc=m['observed_utc'],batch=batch,guard_sha256=sha(out/'RECEIPT.json'),capture_sha256=sha(out/'MODULE-RECEIPTS.json'),finish_sha256=sha(dd/'FINISH.json'),prebatch_sha256=sha(out/'PRE-BATCH-STATE.json'),guard_elapsed_seconds=g['elapsed_seconds'],guard_child_peak_rss=g['child_peak_rss_bytes'],fresh_indices=list(range(start,start+count)),fresh_artifacts_reauthenticated=count*5,source_log_receipt_command_reauthenticated=True,recorded_authenticated_reuse=start,guard_process_os_exit=f['guard_process_exit_code'],source_pins=PINS,final_monitor=m,next_index=start+count,next_module=None,original042_057_059_outer_guard='UNKNOWN',no_repair_or_retry=True)
+  save(E/f'RUST-LANE-{batch:03d}-CLOSED.json',result);return result
+ if __name__=='__main__':
+  action=sys.argv[1];batch=int(sys.argv[2])
