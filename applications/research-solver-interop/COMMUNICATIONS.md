@@ -2,9 +2,12 @@
 
 Maintainer: Codex research-interop lane, 14 October 2026.
 This is the public application routing guide. Actual device bindings,
-private issue locators, SSH settings, host endpoints, keys and UI records
+private issue locators, workspace/chat identifiers, SSH settings, host
+endpoints, keys and UI records
 belong in the authorized private coordination record. No phone operation,
 new APK, persistent service or chat archival is implied by this guide.
+Public history also excludes pairing data, endpoint hints, raw UI/SDP and
+personal catalogs. Publish only generic protocol and sanitized evidence.
 
 ## Distinguish the endpoints and owners
 
@@ -61,6 +64,9 @@ main without force updates. A handoff names an immutable commit, exact
 paths and relevant hashes. The recipient reads those bytes and acknowledges
 its selected version before doing dependent work. Git is a shared record,
 not an automatic message-delivery or job-launch service.
+A file copy does not wake a Codex conversation. Obtain an explicit
+recipient reply before treating the handoff as received; do not launch
+another interactive executor to inject a message into an active chat.
 
 **Application MCP route.** This connector's stdio MCP tools invoke the
 research runtime. They are not a chat messenger or phone-control API.
@@ -74,8 +80,10 @@ acknowledgement from an Astra chat, a phone operation or Lean verification.
 |---|---|
 | Prepared | A complete request and selected recipient role exist |
 | Published | The exact contribution exists at an immutable repository commit |
-| Delivered | A transport actually accepted the message/file; record its receipt |
+| Dispatched | A transport accepted the send request; record its actual receipt |
+| Delivered | The exact message/file bytes reached the intended destination; record the applicable readback |
 | Acknowledged | The intended recipient explicitly identifies the request and version it received |
+| Device ownership accepted | One operator explicitly accepts the bounded device scope and window |
 | Executed | That owner records the authorized command/action and actual output/exit/resource evidence |
 | Verified | A separate applicable check records what it verified and its limits |
 
@@ -88,6 +96,8 @@ private endpoint bindings:
   "sender_role": "research-interop",
   "recipient_role": "independent-proof-search",
   "request_id": "unique-dated-request",
+  "current_authorization": "Human-authorized research coordination",
+  "intended_action": "Read the immutable handoff and acknowledge its selected version",
   "source_commit": "<immutable-full-commit>",
   "source_paths": ["communications/<handoff>.md"],
   "scope": "Read and review the proof handoff; no compiler or device operation",
@@ -95,7 +105,9 @@ private endpoint bindings:
   "state": "published_unacknowledged",
   "delivery_receipt": null,
   "acknowledgement_reference": null,
-  "execution_reference": null
+  "execution_reference": null,
+  "reply_route": "commons_issue",
+  "remaining_gate": "Explicit acknowledgement from the intended recipient"
 }
 ```
 
@@ -105,6 +117,20 @@ fail, record the exact failure and preserve a complete handoff. Continue
 independent authorized work; do not infer receipt or launch overlapping
 work from silence. Human authorization persists across turns, but a note
 suggesting a command is not itself authorization to execute it.
+
+## Keep device ownership bounded
+
+Device actions require one acknowledged operator and a finite window.
+Other chats may coordinate research and source changes independently.
+Respect a human's stop or need to use the device, preserve foreground
+interaction, and require explicit resumption before another device window.
+Existing scope authorization persists; avoid repeated generic permission
+requests. A released window does not automatically appoint a successor.
+
+Record the recipient's exact documentation path and immutable Git commit,
+and read back copied file hashes. Preserve ordinary application state,
+source recoverability and visible chat history. Completion, stopping and
+handing off do not archive a chat.
 
 ## Recover context before choosing new work
 
