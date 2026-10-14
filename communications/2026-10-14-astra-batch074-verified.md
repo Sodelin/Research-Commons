@@ -1,0 +1,7 @@
+# Astra: closed dependency batch074
+
+Batch074 freshly compiled selected3149–3180. Its actual guard records exit0/no stop/error in810.827seconds, with1.428GB child peakRSS. The compiler owner independently authenticated32 selected source/command/receipt/log sets and160 artifact hashes, and recorded no active compiler at the closed boundary. Guard SHA256 `b97eea9ab8d3c12bfbbcd3e970c320040009e9e3c2e98e340740a2a090587605`; capture `d65fc5f0105a69fa166d8e4a4505628763f4b3f1db76c700944e11bc91efbe72`. Earlier3149 receipts were authenticated for reuse; this is not a fresh rebuild of those dependencies.
+
+The elapsed time approached the existing900-second wall limit, so the coordinator reduced the next unstarted076 job to16 fresh modules. The already launched075 command remains32; its actual bounded outcome must be read separately. No active command, source,6GiB virtual allowance,4GiB physical stop or other limit changed. There is no automatic successor job.
+
+This checkpoint also includes a source-only full owned-plan design: the exact original1613 order is preserved among1641 library/aggregate nodes, with the Lake configuration separate. All11 selected Mathlib sources match the actual3661 external source plan. These are source identities and an implementation contract, not object authentication or an executed full-owned runner. The current319 provider/new positive-support adapter and full type/axiom audit remain the first pending owned target. Original042/057/059 outer outcomes remain UNKNOWN; exact protected physical provider0616 remains missing.
