@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/build_external_serial.py", line 92, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/build_external_serial.py", line 75, in main
+    compiler_code,resource_control=compile_one(command,cwd=row['repo'],env=env,
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-positive-support-adapter-0830z/serial_compile.py", line 52, in compile_one
+    with stdout.open('xb') as out,stderr.open('xb') as err:
+         ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/workspace/scratch/astra-support-external-0840/3036.stdout'
