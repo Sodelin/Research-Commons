@@ -1,0 +1,69 @@
+{
+  "status": "STATIC_SOURCE_REVIEW_CLEAR_NO_EXECUTION",
+  "reviewer": "Astra Rust integration lane",
+  "independence": "Reviewer authored ActualCellSupportBudget and BridgeTaxonCuts, reviewed several other dependencies; this is not independent review of those authored dependencies.",
+  "sources": [
+    {
+      "path": "research/2026-10-14-astra-terminal-physical-budget-0605z/lean/Astra/TerminalPhysicalBudget.lean",
+      "sha256": "b687de9732ddd2757e28d4fd25ab111703cdad7cc32fcbc90359b91ab77794e8",
+      "bytes": 9513
+    },
+    {
+      "path": "research/2026-10-14-astra-actual-cell-support-budget-0555z/lean/Astra/ActualCellSupportBudget.lean",
+      "sha256": "6a6ba3b19f6eb2c29bc27d1ad714435d25d62fc493e8eb154530192273b4a5b4",
+      "bytes": 15399
+    },
+    {
+      "path": "research/2026-10-14-astra-protected-blob-incidence-0545z/lean/Astra/ProtectedBlobIncidence.lean",
+      "sha256": "8febb37ccf32d094f049b2a4faf022955e27db27427bec3bc44bd055d79a0ece",
+      "bytes": 9268
+    },
+    {
+      "path": "research/2026-10-14-astra-bridge-cut-class-budget-0525z/lean/Astra/BridgeCutClassBudget.lean",
+      "sha256": "f1a04c11edf41123436962bb40828e0782490e43ab306b4d322d5def31ac6407",
+      "bytes": 4946
+    },
+    {
+      "path": "research/2026-10-14-astra-two-port-exception-count-0445z/lean/Astra/TwoPortExceptionCount.lean",
+      "sha256": "925c25f1b91e343e6ca266d368682f496af500fd89178cc380c754f69a7f700d",
+      "bytes": 4911
+    },
+    {
+      "path": "research/2026-10-14-astra-protected-physical-iteration-0455z/lean/Astra/ProtectedPhysicalIteration.lean",
+      "sha256": "091f6c9431fa30a0ed8b85467555bddce22453c3423c37e2720085cf7bdd35c2",
+      "bytes": 11810
+    },
+    {
+      "path": "research/2026-10-14-astra-physical-splice-external-masks-0435z/lean/Astra/PhysicalSpliceExternalMasks.lean",
+      "sha256": "560065927b583594f6394d0a7014902f7e52d49ec4a3e9ddd80b5a4a63d70101",
+      "bytes": 4508
+    }
+  ],
+  "checks": [
+    "Actual Reduced is negated Nonempty EligibleCell; unblocked equal-exposure cell constructs exactly that actual eligibility record from incidence avoidance.",
+    "Original PH table is interpreted by labelMask; off-image naturalness follows from actual removedHybrid avoidance, without global namespace-disjointness or PMF factorization.",
+    "Finset.equivFin enumerates each literal cut fibre; ActualCellSupportBudget.same_cut_masked_cover_bound yields fibre.card+1<=grid.card on an actual separating taxon pair.",
+    "Finset.card_eq_sum_card_image matches the fibre decomposition. Every child cut is an actual original bridge cut; the selected cut class bound gives at most 2*n-2 classes.",
+    "twoPortBlobs is the internalBlobs filter. Its membership supplies nonroot and two-port fields; the union with blocked blobs and unblocked cell image is an inclusion, and no equality of the larger Cell domain is needed.",
+    "Original hybrid exception census is used directly; PV IsEmpty and PE+PH<=h give blockers<=2*h. Nat subtraction and coefficient comparison use the original at_least_two_taxa field."
+  ],
+  "mathlib_interfaces": [
+    {
+      "path": "Mathlib/Data/Fintype/EquivFin.lean",
+      "declaration": "Finset.equivFin",
+      "line": 320
+    },
+    {
+      "path": "Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean",
+      "declaration": "Finset.card_eq_sum_card_image",
+      "line": 989
+    }
+  ],
+  "limits": [
+    "No Lean invocation, import query, test, compiler artifact scan, or axiom output was performed. The source and proposed dependencies remain uncompiled in this review.",
+    "The exact fixed-mask cover and cap are intermediate inputs; deriving them from supplied certificates is separate.",
+    "The numerical PE/PH count does not authenticate expanded protected dependencies; PV must be empty for the h specialization.",
+    "No final representative existence, effectivity, native refinement, or replacement of missing accepted 0616 provider is asserted."
+  ],
+  "finding": "No concrete source/API/arithmetic mismatch found in this bounded static review."
+}

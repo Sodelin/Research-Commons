@@ -1,0 +1,11 @@
+theorem equalArmReduced_physical_hybrid_bound
+    (O : PhysicalMarkedSource.{u,v,w} Y) (hred : EqualArmReduced O)
+    (mask : OriginalMask O.marked.source.network) (hm : ProtectedMask O.marked mask)
+    (grid : Y × Y → Finset ℝ) (Smax : Nat)
+    (hcard : ∀ ij, (grid ij).card ≤ Smax)
+    (hgrid : ∀ coin i j,
+      realSurvival O.marked.source.network O.marked.source.calendar O.registry O.probabilities O.rates i j
+        (overrideBank O.marked.source.network mask coin) ∈ grid (i,j)) :
+    Fintype.card (Hybrid O.marked.source.network) ≤
+      (2 * Fintype.card Y - 2 + 2 * protectedCount O.marked.source.network O.marked.marks) +
+      (8 * Fintype.card Y - 8 + 6 * protectedCount O.marked.source.network O.marked.marks) * (Smax - 1) := by

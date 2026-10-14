@@ -1,0 +1,47 @@
+theorem actual_protected_common_finite_original_code_coverage
+    (O : PhysicalMarkedSource.{u,v,w} Y)
+    {Config : Type q} [Fintype Config] (ν : PMF Config)
+    (masks : Config → OriginalMask O.marked.source.network)
+    (PE : Type a) (PH : Type b) [Fintype PE] [Fintype PH]
+    (h : Nat) (hlabels : Fintype.card PE + Fintype.card PH ≤ h) (_hn : 4 ≤ Fintype.card Y) :
+    ∃ L : Y × Y → Nat, ∃ Smax B : Nat,
+      (∀ ij, 0 < L ij) ∧
+      B = (2 * Fintype.card Y - 2 + 2*h) + (8 * Fintype.card Y - 8 + 6*h) * (Smax-1) ∧
+      ∀ (P : PhysicalMarkedSource.{u,v,w} Y) (Config' : Type q) [Fintype Config']
+        (ν' : PMF Config') (masks' : Config' → OriginalMask P.marked.source.network)
+        (edgeLabels : PE ≃ P.marked.marks.edges) (hybridLabels : PH ≃ P.marked.marks.hybrids),
+        HasOuterSemidirectedPartner P.marked.source →
+        (∀ cfg, ProtectedMask P.marked (masks' cfg)) →
+        (∀ i j k, k ∈ momentLevels (L (i,j)) →
+          randomizedLegalCombMoment P.marked.source.network P.marked.source.calendar P.registry
+            P.probabilities P.rates ν' masks' i j k =
+          randomizedLegalCombMoment O.marked.source.network O.marked.source.calendar O.registry
+            O.probabilities O.rates ν masks i j k) →
+        ∃ R : PhysicalMarkedSource.{u,v,w} Y,
+          ∃ J : Hybrid R.marked.source.network ↪ Hybrid P.marked.source.network,
+          ∃ D : Decoration P.marked.source R.marked.source,
+          PhysicalPrimitiveProvenance P R J D ∧ PhysicalSteps P R ∧
+          HasOuterSemidirectedPartner R.marked.source ∧
+          Fintype.card (Hybrid R.marked.source.network) ≤ B ∧
+          (∃ rr : Fin (B+1), ∃ ids : Fin rr.val ≃ Hybrid R.marked.source.network,
+            ∃ em : PE → Fin (edgeCount (Fintype.card Y) rr.val), ∃ hm : PH → Fin rr.val,
+              (⟨rr,encode R.marked.source.network ids R.registry,em,hm⟩ : ProtectedCode Y PE PH B)
+                ∈ protectedCodes PE PH B ∧
+              encode R.marked.source.network ids R.registry ∈
+                (registeredBinaryCutChildCodes : Finset (Code Y (Fin rr.val))) ∧
+              Function.Injective em ∧ Function.Injective hm ∧
+              (∀ a, D.recipe ((finiteEdgeNumbering R.marked.source.network ids).symm (em a)) =
+                Recipe.raw (edgeLabels a).val) ∧
+              (∀ a, J (ids (hm a)) = (hybridLabels a).val)) ∧
+          (∀ (Cfg : Type q) [Fintype Cfg] (μ : PMF Cfg)
+            (controls : Cfg → OriginalMask P.marked.source.network),
+            randomizedTreeLaw R.marked.source.network R.marked.source.calendar R.registry R.probabilities R.rates
+              μ (fun cfg h => controls cfg (J h)) =
+            randomizedTreeLaw P.marked.source.network P.marked.source.calendar P.registry P.probabilities P.rates μ controls) ∧
+          ∀ (Copy : Type z) [Fintype Copy] [DecidableEq Copy]
+            (Cfg : Type q) [Fintype Cfg] (μ : PMF Cfg)
+            (controls : Cfg → OriginalMask P.marked.source.network) (sample : Copy → Y),
+            randomizedFullForestLaw R.marked.source.network R.marked.source.calendar R.registry
+              R.probabilities R.rates μ (fun cfg h => controls cfg (J h)) sample =
+            randomizedFullForestLaw P.marked.source.network P.marked.source.calendar P.registry
+              P.probabilities P.rates μ controls sample := by

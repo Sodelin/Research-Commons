@@ -1,0 +1,17 @@
+theorem protected_original_code_coverage
+    (O T : PhysicalMarkedSource.{u,v,w} Y)
+    (J : Hybrid T.marked.source.network ↪ Hybrid O.marked.source.network)
+    (D : Decoration O.marked.source T.marked.source) (hp : PhysicalPrimitiveProvenance O T J D)
+    (B : Nat) (hb : Fintype.card (Hybrid T.marked.source.network) ≤ B)
+    (PE PH : Type*) [Fintype PE] [Fintype PH]
+    (edgeLabels : PE ≃ O.marked.marks.edges) (hybridLabels : PH ≃ O.marked.marks.hybrids) :
+    ∃ rr : Fin (B+1), ∃ ids : Fin rr.val ≃ Hybrid T.marked.source.network,
+      ∃ em : PE → Fin (edgeCount (Fintype.card Y) rr.val), ∃ hm : PH → Fin rr.val,
+        (⟨rr,encode T.marked.source.network ids T.registry,em,hm⟩ : ProtectedCode Y PE PH B)
+          ∈ protectedCodes PE PH B ∧
+        encode T.marked.source.network ids T.registry ∈
+          (registeredBinaryCutChildCodes : Finset (Code Y (Fin rr.val))) ∧
+        Function.Injective em ∧ Function.Injective hm ∧
+        (∀ a, D.recipe ((finiteEdgeNumbering T.marked.source.network ids).symm (em a)) =
+          Recipe.raw (edgeLabels a).val) ∧
+        (∀ a, J (ids (hm a)) = (hybridLabels a).val) := by
