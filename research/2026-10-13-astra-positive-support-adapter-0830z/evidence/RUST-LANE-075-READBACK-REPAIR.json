@@ -1,0 +1,12 @@
+{
+  "schema": "astra_monitor_mathlib_option_repair_v1",
+  "before_sha256": "4be019aa720a0e5aa3013a58114b1a257ce05967dc8a5d3dbe50181fe994f0b3",
+  "after_sha256": "e0ae5d4f5ed0b4305a4045e7c7e8026f6ac07980be15441dde5d7adeb73a7e61",
+  "frozen_builder_sha256": "00c9c98b2490f8bd35c9ea644aba78171d3bddbfc8735a30b2a855c55285df8f",
+  "policy": "build_external_serial.py lines69-72 adds MATHLIB_OPTIONS only for module.startswith(Mathlib.)",
+  "diff": "--- preserved_initial_monitor\n+++ repaired_readback_monitor\n@@ -65,6 +65,7 @@\n   assert sha(q['source'])==q['source_sha256'] and q['exit_code']==q['compiler_exit_code']==0\n   assert q['runner_sha256']==PINS[str(S/'build_external_serial.py')] and q['resource_control']['helper_sha256']==PINS[str(S/'serial_compile.py')]\n   expected=[str(Path('/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean')),'-Dpp.unicode.fun=true','-DautoImplicit=false','-DmaxSynthPendingDepth=3','-j','1','-s','8192','-R',q['repo'],'-o',q['target'],q['source']]\n+  if not q['module'].startswith('Mathlib.'):expected=expected[:1]+expected[4:]\n   assert q['command']==expected\n   target=Path(q['target']);family={str(target),str(target)+'.private',str(target)+'.server',str(target.with_suffix('.ir')),str(target.with_suffix('.ir.sig'))};assert set(q['artifacts'])==family\n   for p,h in q['artifacts'].items():assert sha(p)==h,p\n",
+  "compiler_reruns": 0,
+  "build_source_changes": false,
+  "resource_limit_changes": false,
+  "authorization": "Lean lane explicit monitor-only repair; reauthenticate075 before already authorized076"
+}
