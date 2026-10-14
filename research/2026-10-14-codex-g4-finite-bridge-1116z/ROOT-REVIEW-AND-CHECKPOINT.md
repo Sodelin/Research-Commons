@@ -111,7 +111,10 @@ diagnostic/object scan or device operation occurred during this pass.
 | ONE admitted target with exact inequivalent finite strict rivals after every full legal I prefix | OPEN | Actual complete physical zeros and later legal inequivalence on one tuple |
 | Lean verification and source adoption | PAUSED / absent | Existing owner clears resource stop and separately adopts exact sources |
 
-Next proof attack: work DIRECTLY on the complete target equality fibre,
+Next proof attack: derive the [strict-source weighted residual guard](NEXT-STRICT-FIBRE-ATTACK.md)
+for ONE finite legal I panel uniformly over all architectures. This is an
+UNPROVED sufficient target, not a new certificate. Work directly on the
+complete target equality fibre,
 retaining the source's noncommutative transported coordinates and forced body
 curvature. A global numerical polynomial occupation or closed compact
 endpoint relaxation cannot supply that step under the reviewed hypotheses.

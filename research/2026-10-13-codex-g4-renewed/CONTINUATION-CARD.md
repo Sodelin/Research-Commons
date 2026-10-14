@@ -116,3 +116,31 @@ selection and type/axiom output are UNVERIFIED. Respect the existing
 [resource stop](../../communications/2026-10-14-astra-resource-stop-handoff-0810.md);
 this source publication does not authorize build/query/materialization.
 The full finite-I/Common-certificate bridge remains the decisive obligation.
+
+## Reviewed general occupation successor (14 October 2026, 11:16 UTC session)
+
+The [polynomial-occupation theorem](../2026-10-14-codex-g4-finite-bridge-1116z/POLYNOMIAL-OCCUPATION-CLASSIFICATION.md)
+and [saved-version independent review](../2026-10-14-codex-g4-finite-bridge-1116z/INDEPENDENT-OCCUPATION-REVIEW.md)
+classify ALL polynomial occupations against pair clock on ANY finite
+log-diagonal chronology: a global numerical finite FULL-endpoint decoder
+exists iff the integrand ignores every transverse log coordinate. This
+covers target-frozen finite polynomial occupation-SOS, reusing accepted A3
+and actual source-open patches. It is scoped HAND mathematics, not a new
+signature reconstruction or a Lean theorem. Target-fibre-only Boolean zero
+implications and actual semidirect transported coordinates remain open.
+
+The [lead checkpoint](../2026-10-14-codex-g4-finite-bridge-1116z/ROOT-REVIEW-AND-CHECKPOINT.md)
+credits two additional applicability consequences: a named negative two-cherry
+forest coordinate of T E(s) T^(-1) for 4999/5000<s<1, and unbounded auxiliary
+witness escape in any closed finite lifting covering the accepted I/COMMON
+discontinuity sequence. They supply no admitted exact full-prefix rivals and
+no contradiction of accepted BOTH. Nine exact transcription controls passed;
+no source compiler or Lean job ran.
+
+The [next strict-source residual inequality](../2026-10-14-codex-g4-finite-bridge-1116z/NEXT-STRICT-FIBRE-ATTACK.md)
+is an UNPROVED sufficient attack on one finite legal-I panel uniformly over
+all architectures. Its strictly positive source-dependent margin can
+accommodate the known discontinuity, but the uniform row set/inequality are
+not supplied. The general master remains open. [Lean formalization handoff](../2026-10-14-codex-g4-finite-bridge-1116z/LEAN-FORMALIZATION-HANDOFF.md)
+is preserved; the classification is not yet formalized or compiled, and the
+existing compiler/query/materialization/resource stop is unchanged.
