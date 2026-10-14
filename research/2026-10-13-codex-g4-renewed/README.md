@@ -2,6 +2,17 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 01:39 UTC:** the
+[general all-law acceptance](critical-review/ROOT-GENERAL-ALL-LAW-COMMONIZATION-ACCEPTANCE.md)
+establishes natural ENTIRE-INDEPENDENT to ENTIRE-COMMON determination for
+the original strict finite source class, including fair sites and repeated
+cuts. Two source-composition audits check the newly supplied joint-port
+and common-stem interfaces. The
+[exact finite-bridge equivalence](whole-source/continuation-2110z/FINITE-INDEPENDENT-BRIDGE-EXACT-EQUIVALENCE.md)
+leaves finite INDEPENDENT forcing open: finite I rows must still force a
+finite COMMON certificate against unknown-size rivals. See the
+[Commons handoff](../../communications/2026-10-14-g4-general-all-law-acceptance-0139z.md).
+
 **Latest checkpoint, 14 October 01:25 UTC:** the reviewed
 [first-cut and opaque-tail packet](critical-review/ROOT-INDEPENDENT-FIRST-CUT-AND-OPAQUE-TAIL-ACCEPTANCE.md)
 recovers first-hybrid descendant cuts from entire INDEPENDENT laws and

@@ -1,5 +1,22 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## General natural all-law successor, 14 October 01:39 UTC
+
+The [lead acceptance](critical-review/ROOT-GENERAL-ALL-LAW-COMMONIZATION-ACCEPTANCE.md)
+closes the natural strict finite ALL-LAW I-to-C implication, including
+fair mixed arms. Recursive cut recovery supplies actual source grouping;
+joint cohort extraction and positive-stem recovery supply the previously
+missing ordinary-region observer interface. Both composition audits are
+pinned. Earlier fair all-law gates below are historical.
+
+The [finite-bridge equivalence](whole-source/continuation-2110z/FINITE-INDEPENDENT-BRIDGE-EXACT-EQUIVALENCE.md)
+does not prove finite forcing. Finitely many legal I rows must still force
+a finite COMMON certificate against arbitrary finite rivals, or a valid
+fixed-target exact all-prefix negative construction must be supplied.
+Approximate reservoirs, bounded screens and signed-time words do neither.
+General G4, other missing-mode/new-channel adapters and effective stopping
+remain open. No new computational or formal verification is claimed.
+
 ## INDEPENDENT first-cut successor, 14 October 01:25 UTC
 
 The [scoped acceptance](critical-review/ROOT-INDEPENDENT-FIRST-CUT-AND-OPAQUE-TAIL-ACCEPTANCE.md)
