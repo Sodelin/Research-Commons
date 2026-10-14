@@ -1,5 +1,24 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## Clock-aware energy successor, 14 October 03:31 UTC
+
+The [new acceptance](critical-review/ROOT-CLOCK-AWARE-ENERGY-REVIEW-0330Z.md)
+checks the exact quadratic test, the fixed-positive-clock C1 obstruction
+under its unrestricted-state premise, and the genuine actual-prefix
+counterexample for the zero-potential locally bounded quadratic template.
+Clock dependence alone no longer repairs that unrestricted template;
+restriction to actual prefixes alone does not repair its zero-potential
+quadratic special case. General energies with suitable extra corrections
+and actual source constraints remain possible.
+
+The [complete master handoff](../../communications/2026-10-14-g4-clock-aware-energy-and-master-handoff-0331z.md)
+states the open full-I positive and negative alternatives. The remaining
+positive source duty is a chronological constraint controlling weak extra
+cells and the source-coupled lower term, with an exact target equality
+case. This packet supplies no full-kernel return or cap-nine exclusion.
+New evidence is hand proof and separate review; one exact rational
+countercheck is labelled separately. No new Lean/Rust execution occurred.
+
 ## Fixed-target diagonal successor, 14 October 03:20 UTC
 
 The [accepted hand deduction](critical-review/ROOT-DIAGONAL-FIBRE-AND-RANK-REVIEW-0320Z.md)

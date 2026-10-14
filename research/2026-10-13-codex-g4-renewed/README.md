@@ -2,6 +2,15 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 03:31 UTC:** the
+[clock-aware energy acceptance](critical-review/ROOT-CLOCK-AWARE-ENERGY-REVIEW-0330Z.md)
+extends the precise unrestricted-state obstruction to a fixed positive
+pair-clock and C1 corrections. A separate strict two-cell family shows
+that the zero-potential quadratic template increases on actual prefixes.
+These exclude stated proof methods, not full source forcing. The
+[complete handoff](../../communications/2026-10-14-g4-clock-aware-energy-and-master-handoff-0331z.md)
+preserves the exact open finite-INDEPENDENT duty and next source constraint.
+
 **Latest checkpoint, 14 October 03:20 UTC:** the
 [fixed-target diagonal review](critical-review/ROOT-DIAGONAL-FIBRE-AND-RANK-REVIEW-0320Z.md)
 proves that each finite private diagonal fibre contains an interval of
