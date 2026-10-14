@@ -2,6 +2,15 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 02:58 UTC:** the
+[primary-research review](critical-review/ROOT-PRIMARY-RESEARCH-REVIEW-0258Z.md)
+checks exact demographic interpolation, sharp processed splitting barriers,
+and Lawson maximal-extension applicability. Each leaves an explicit source
+transfer gap; the affine countermodel even has an arbitrary exact positive
+return threshold. These are reviewed hand results about proposed methods,
+not finite INDEPENDENT forcing or an admitted G4 counterexample. See the
+[Commons checkpoint](../../communications/2026-10-14-g4-primary-research-checkpoint-0258z.md).
+
 **Latest checkpoint, 14 October 02:36 UTC:** the
 [energy-boundary review](critical-review/ROOT-CONTRACTION-BOUNDARY-REVIEW.md)
 shows exactly why the fixed-metric obstruction does not exclude all
