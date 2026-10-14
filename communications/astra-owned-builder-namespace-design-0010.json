@@ -1,0 +1,46 @@
+{
+  "schema": "astra_owned_builder_namespace_design_v1",
+  "observed_utc": "2026-10-14T00:13:30.813434+00:00",
+  "status": "SOURCE_DERIVED_PROPOSAL_NO_EXECUTION",
+  "predecessor_builder": "research/2026-10-13-astra-positive-support-adapter-0830z/build_support.py",
+  "predecessor_sha256": "9d9797da3f01c5af31e16e8a622d1e595c2460d590f6306f1ee41118371a0f48",
+  "official_resolution_source": {
+    "path": "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Lean/Util/Path.lean",
+    "sha256": "52cf9aa41a82db18d0d3c93bf6257d064f773af9e62b8b43be89ce1b0e00055f",
+    "lines": [
+      61,
+      64,
+      117,
+      119
+    ],
+    "rule": "findWithExt selects the first root containing the top namespace directory or root module file; it does not check existence of the requested module before selecting that root."
+  },
+  "concrete_unexecuted_failure": "build_support prepends its partial owned library then copies only seven Mathlib modules into it, so other Mathlib imports would resolve to missing paths instead of falling through.",
+  "proposed_successor_contract": [
+    "Preserve the predecessor source and current external3591 builder/plan. Use a new reviewed successor and a fresh owned state; never change an existing plan in place.",
+    "Authenticate the exact complete external source/log/receipt/artifact graph with the existing producer context before constructing the owned lookup path.",
+    "Canonicalize and record every external LEAN_PATH root in its original setup order, then append the owned research/Astra library. Reject empty, relative or unexpected roots.",
+    "For every selected owned Mathlib module, bind exact selected source bytes to the pinned upstream module, identify the actual first external Mathlib namespace root according to the official rule, and require its resolved .olean and all selected artifact hashes to equal the authenticated external receipt.",
+    "If the existing clone mechanism is retained, require every cloned Mathlib artifact hash to equal its external origin; record that the compiler selects the external identical object. Cloning is reuse, not compilation.",
+    "For every non-Mathlib owned module, reject any earlier external root containing its top namespace directory OR its root .olean, even if the exact module file is absent. Checking only an exact file misses the observed namespace shadowing rule.",
+    "Authenticate all already-owned files against successful source/reuse receipts, preserving and rejecting unreceipted leftovers. Require every research dependency to resolve inside that authenticated owned library.",
+    "Bind namespace route/equivalences, exact LEAN_PATH and existing controlled compiler/environment options into the owned PLAN and each resumed/new component receipt. Reject changed routes or source/object identities on resume.",
+    "Retain existing serial compiler/resource/helper policy, complete source/log/artifact receipts, literal-source auditing, axiom allowlist and explicit fresh-versus-reuse labels.",
+    "After preparation, execute actual Lake target and separate provider/new-theorem type and axiom audit. Source-byte equality or build counts do not establish historical statement equivalence."
+  ],
+  "scope": {
+    "current_provider_owned_mathlib": 7,
+    "follow_on_owned_mathlib": 9,
+    "full_accepted_owned_mathlib": 11,
+    "full11_equivalence_not_assumed": true,
+    "objects_authenticated_here": false,
+    "compilers_run_here": 0,
+    "mathematical_statement_changes": 0
+  },
+  "first_actual_check": "After external closure is authenticated, one fresh accepted research module through the reviewed successor and actual conservative guard; then compare its source/log/artifact/lookup receipt before continuing.",
+  "negative_controls_if_needed": [
+    "Unexpected earlier Astra or UnifiedLean namespace directory must refuse before compiler launch.",
+    "Missing or altered selected external Mathlib artifact, wrong selected source, changed route or unreceipted owned file must refuse before compiler launch."
+  ],
+  "source_semantics": "Type/assumption and axiom audits remain necessary; literal body equality does not justify changing source options or claiming from-scratch/historical metadata equivalence."
+}
