@@ -2,6 +2,10 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+Start a new proof attack with the [compact continuation card](CONTINUATION-CARD.md),
+then follow its exact proof/review successors. It records accepted results
+to reuse and the missing master implication before another derivation.
+
 **Latest checkpoint, 14 October 05:01 UTC:** the
 [complete reviewed handoff](../../communications/2026-10-14-g4-reviewed-continuation-and-master-handoff-0501z.md)
 preserves the three new 04:53 scoped hand results and all exact master

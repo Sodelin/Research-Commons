@@ -1,0 +1,50 @@
+{
+  "schema": "research_mcp_official_client_smoke_v1",
+  "status": "PASS",
+  "official_mcp_sdk": "1.26.0",
+  "protocol": "2025-06-18",
+  "cases": [
+    {
+      "name": "existing-generation",
+      "status": "GENERATED_AND_CHECKED",
+      "isError": false,
+      "request_sha256": "12ad6313940ed6597658a07fed65686a4a75352ad77153edb30285610043f3d6",
+      "runtime_result_sha256": "2cbdb06f8c5ac09256644c24f76570963b215ce25df7a1012f7b5e8f59bca745",
+      "call_directory": "calls/call-2blw9z_d"
+    },
+    {
+      "name": "unsupported-schema",
+      "status": "UNKNOWN",
+      "isError": false,
+      "request_sha256": "806ee80324428c6e3664e84b035600a89f095a0a64a65a8373c9d9496943631d",
+      "runtime_result_sha256": "4d2bcc06d7951d291fe454b0093c6bb934dde6bdef0291759b131082bf1dfc6c",
+      "call_directory": "calls/call-ens4bdoj"
+    },
+    {
+      "name": "missing-native",
+      "status": "UNKNOWN",
+      "isError": false,
+      "request_sha256": "a7c82c3d83443c846648fc7b86fcd3da97f6cfb0c8898e9e66bd9a305f170795",
+      "runtime_result_sha256": "724770225c4dd9770ba454bb5016e9d3ea69ab8f2b1abb27be52a43241986c4c",
+      "call_directory": "calls/call-6d4gmz99"
+    },
+    {
+      "name": "duplicate-request-fields",
+      "status": "REFUSED_REQUEST",
+      "isError": true,
+      "request_sha256": "5281ebe052a5f83613ecd687364009c70c452a6b08621dcd79f97e31edec409b",
+      "runtime_result_sha256": "fbaa29a9d4ef4a0cf2551dcc9c1cde6460d5a9b5dbb5b2bfa85a8c087926b04f",
+      "call_directory": "calls/call-tsoaqex2"
+    },
+    {
+      "name": "oversized-request",
+      "status": "REFUSED_BRIDGE_REQUEST",
+      "isError": true,
+      "guard_started": false
+    }
+  ],
+  "fresh_existing_runtime_calls": 4,
+  "native_success_executed": false,
+  "lean_compilation_executed": false,
+  "limits": "Finite transport/delegation execution, not universal client compatibility or native refinement."
+}

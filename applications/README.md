@@ -1,5 +1,12 @@
 # Research Commons applications
 
+The [research solver MCP connector](research-solver-interop/README.md)
+lets local MCP clients call the existing pinned scientific runtime with
+its original requests, scoped results and fresh evidence. Its
+[communication guide](research-solver-interop/COMMUNICATIONS.md) separates
+chat delivery/acknowledgement from runtime execution and device ownership.
+No new solver model, Lean compilation or native refinement is implied.
+
 The [practical genealogy solver release candidate](practical-solver/README.md)
 provides a fresh producer → separate whole-journal checker workflow with HTML,
 Markdown and exact JSON exports:
