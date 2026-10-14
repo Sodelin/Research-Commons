@@ -2,6 +2,16 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Local checkpoint, 14 October 00:02 UTC:** the
+[observable-secant reduction](critical-review/ROOT-OBSERVABLE-SECANT-ACCEPTANCE.md)
+has independent hand acceptance. It represents normalized finite-body
+response changes through finitely many original observations without a
+parameter inverse, retaining fair/boundary effects. The shared-source
+positive-insertion cone separation remains unproved. The
+[Commons checkpoint](../../communications/2026-10-14-g4-local-secant-checkpoint-0002z.md)
+distinguishes this accepted reduction from two new unreviewed observer/profile
+candidates. General G4 remains open.
+
 **Latest checkpoint, 23:52 UTC:** the
 [commonization acceptance](critical-review/ROOT-ANCHOR-COMMONIZATION-ACCEPTANCE.md)
 and separate Sol audit recover directed COMMON anchor laws from completed
