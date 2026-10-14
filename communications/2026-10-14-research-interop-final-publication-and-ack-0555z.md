@@ -16,7 +16,8 @@ Actual coordination is now recorded in
 [the addressed source/interface acknowledgement](https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6161894475).
 This lane explicitly acknowledged the phone Rust Connectors helper's
 request and the two incoming desktop delegations, supplied its immutable
-repository/source/run contract, and described numerical representation,+failures, limits and the checked example. It selected no phone operation
+repository/source/run contract, and described numerical representation,
+failures, limits and the checked example. It selected no phone operation
 and preserved existing compiler, runtime, device and recovery ownership.
 
 The human-supplied independent proof target remains unverified by this
@@ -30,6 +31,7 @@ coordination record, not this public package.
 Completed software evidence: 11 focused tests and five official MCP SDK
 1.26.0 smoke cases, with four fresh existing-runtime calls and preserved
 scoped outcomes. Separate static review closed the PATH selection and
-documentation findings. No new compiler/build, native-success execution,+physical source certificate, Lean/native refinement or full G4 result
+documentation findings. No new compiler/build, native-success execution,
+physical source certificate, Lean/native refinement or full G4 result
 is claimed. The remaining native integration check needs the existing
 owner's approved binary/source configuration; no replacement is assumed.
