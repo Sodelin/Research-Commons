@@ -1,0 +1,438 @@
+{
+  "general_G3_resolved": false,
+  "request_sha256": "1022ebd30edb477cb0b04fa5e02acb50bb9b373fabf6c75fc3bc3de68a6e5360",
+  "schema": "unified_research_solver_result_v1",
+  "source_feasibility_certified": true,
+  "source_result": {
+    "Lean_kernel_verification_claimed": false,
+    "backend_result": {
+      "Lean_verification_claimed": false,
+      "catalogue_exhausted": false,
+      "elapsed_seconds": 0.03307228599987866,
+      "empirical_admission_claimed": false,
+      "entries": [
+        {
+          "equation_sha256": "31da92c7ee2efba4633721746fcb7beb0976a002d2534fa8f01a12c6368078cd",
+          "equations": [
+            "1/3 - 2*x0/3",
+            "x0/3 - 1/6",
+            "x0/3 - 1/6"
+          ],
+          "graph": {
+            "edges": [
+              [
+                "R",
+                "T0"
+              ],
+              [
+                "R",
+                "L0"
+              ],
+              [
+                "T0",
+                "L1"
+              ],
+              [
+                "T0",
+                "L2"
+              ]
+            ],
+            "leaves": [
+              "L0",
+              "L1",
+              "L2"
+            ],
+            "root": "R"
+          },
+          "mechanism": "independent",
+          "physical_realization": {
+            "ancestral_root_rate": "1",
+            "clock_scope": "free positive edge-specific rates; exact real logarithmic definitions, not decimal approximations",
+            "contemporaneous_tip_age": 0,
+            "natural_inheritance_values": {},
+            "original_edges": [
+              {
+                "child": "T0",
+                "duration": 1,
+                "original_edge_id": 0,
+                "parent": "R",
+                "positive_rate_definition": "-log(survival_value)/duration",
+                "survival_parameter": "x0",
+                "survival_value": {
+                  "kind": "rational",
+                  "value": "1/2"
+                }
+              },
+              {
+                "child": "L0",
+                "duration": 2,
+                "original_edge_id": 1,
+                "parent": "R",
+                "positive_rate_definition": "-log(survival_value)/duration",
+                "survival_parameter": "x1",
+                "survival_value": {
+                  "kind": "rational",
+                  "value": "1/2"
+                }
+              },
+              {
+                "child": "L1",
+                "duration": 1,
+                "original_edge_id": 2,
+                "parent": "T0",
+                "positive_rate_definition": "-log(survival_value)/duration",
+                "survival_parameter": "x2",
+                "survival_value": {
+                  "kind": "rational",
+                  "value": "1/2"
+                }
+              },
+              {
+                "child": "L2",
+                "duration": 1,
+                "original_edge_id": 3,
+                "parent": "T0",
+                "positive_rate_definition": "-log(survival_value)/duration",
+                "survival_parameter": "x3",
+                "survival_value": {
+                  "kind": "rational",
+                  "value": "1/2"
+                }
+              }
+            ],
+            "original_vertex_ages": {
+              "L0": 0,
+              "L1": 0,
+              "L2": 0,
+              "R": 2,
+              "T0": 1
+            }
+          },
+          "query": "query-0.smt2",
+          "query_sha256": "c414a47f7be29c9292a350d5c4e931788f024ce2a1537f9e6eb965c78e0c2ac0",
+          "status": "SAT_INDEPENDENT_EXACT_WITNESS",
+          "target": {
+            "nontrivial_displayed_split_union": [],
+            "whole_switching_split_systems": [
+              []
+            ]
+          },
+          "values": {
+            "x0": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "x1": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "x2": {
+              "kind": "rational",
+              "value": "1/2"
+            },
+            "x3": {
+              "kind": "rational",
+              "value": "1/2"
+            }
+          }
+        }
+      ],
+      "request": {
+        "limits": {
+          "max_sources": 100,
+          "seconds": 30,
+          "smt_milliseconds": 10000
+        },
+        "mechanisms": [
+          "independent",
+          "common"
+        ],
+        "n": 3,
+        "observation_kind": "exact_unranked_law",
+        "registry": {
+          "complete": true,
+          "hybrid_ids": []
+        },
+        "rows": [
+          {
+            "law": [
+              {
+                "outcome": [
+                  "L0",
+                  [
+                    "L1",
+                    "L2"
+                  ]
+                ],
+                "p": "2/3"
+              },
+              {
+                "outcome": [
+                  "L1",
+                  [
+                    "L0",
+                    "L2"
+                  ]
+                ],
+                "p": "1/6"
+              },
+              {
+                "outcome": [
+                  "L2",
+                  [
+                    "L0",
+                    "L1"
+                  ]
+                ],
+                "p": "1/6"
+              }
+            ]
+          }
+        ]
+      },
+      "request_sha256": "499edeb9d5a5b96dac3527014364834d644eb3261ec1f19014e75dbcdd2fcd8d",
+      "schema": "actual-finite-original-registry-coupled-source-solver-v1",
+      "scope": "declared complete finite registry; one graph/assignment shared across every row",
+      "software": {
+        "python": "3.12.14",
+        "sympy": "1.14.0",
+        "z3": "4.15.3"
+      },
+      "source_count_examined": 1,
+      "status": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+      "unknown_size_termination_or_global_NO_claimed": false,
+      "upstream": {
+        "commit": "07c9a510b594655a62c609a7e354ecfe5752e35f",
+        "files": [
+          {
+            "bytes": 6474,
+            "git_blob_sha": "3873aeb667576bea857a3ebfcdf803824c7fcc79",
+            "path": "upstream/source_census.py",
+            "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396"
+          },
+          {
+            "bytes": 9360,
+            "git_blob_sha": "0fed445a5b7f72ebe056f8b8778d8e67dcc898e2",
+            "path": "upstream/law_compiler.py",
+            "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7"
+          },
+          {
+            "bytes": 2401,
+            "git_blob_sha": "ad686a246780f65f73ee6bd9a10ed4b05227016f",
+            "path": "upstream/continuous_optimizer.wl",
+            "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd"
+          },
+          {
+            "bytes": 7949,
+            "git_blob_sha": "4b3a7d92690f76a6de22417a857c8b9240d73c7f",
+            "path": "upstream/README.md",
+            "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11"
+          }
+        ],
+        "repository": "Sodelin/Research-Commons"
+      },
+      "verification": "INDEPENDENT_EXACT_SYMPY_WITNESS_AND_SOURCE_ADMISSION_CHECK",
+      "witness_entry": 0
+    },
+    "checker_called": true,
+    "checker_execution": {
+      "command": [
+        "/workspace/scratch/astra-backend-0645/bin/python",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/evidence/remaining-v2/cases/genuine-source-parent-persistence-fault/delegate/source/runtime/verify_certificate.py",
+        "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/evidence/remaining-v2/cases/genuine-source-parent-persistence-fault/delegate/source/backend/RESULT.json",
+        "--replay-backend"
+      ],
+      "elapsed_seconds": 0.46655878299952747,
+      "invoked": true,
+      "returncode": 0,
+      "timeout": false
+    },
+    "dependencies": {
+      "available": true,
+      "execution": {
+        "command": [
+          "/workspace/scratch/astra-backend-0645/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import importlib.metadata as m,json; d={};\nfor p in ['sympy','networkx','z3-solver']:\n try: d[p]=m.version(p)\n except m.PackageNotFoundError: d[p]=None\nprint(json.dumps(d))"
+        ],
+        "elapsed_seconds": 0.06546548299957067,
+        "invoked": true,
+        "returncode": 0,
+        "timeout": false
+      },
+      "required": {
+        "networkx": "3.5",
+        "sympy": "1.14.0",
+        "z3-solver": "4.15.3.0"
+      },
+      "versions": {
+        "networkx": "3.5",
+        "sympy": "1.14.0",
+        "z3-solver": "4.15.3.0"
+      }
+    },
+    "execution_mode": "FRESH_RUN",
+    "general_G3_resolved": false,
+    "reason": "SAT_ONE_COHERENT_ADMITTED_SOURCE",
+    "request": {
+      "operation": "finite_registry",
+      "schema": "same_source_certified_bounds_v1",
+      "source_request": {
+        "limits": {
+          "max_sources": 100,
+          "seconds": 30,
+          "smt_milliseconds": 10000
+        },
+        "mechanisms": [
+          "independent",
+          "common"
+        ],
+        "n": 3,
+        "observation_kind": "exact_unranked_law",
+        "registry": {
+          "complete": true,
+          "hybrid_ids": []
+        },
+        "rows": [
+          {
+            "law": [
+              {
+                "outcome": [
+                  "L0",
+                  [
+                    "L1",
+                    "L2"
+                  ]
+                ],
+                "p": "2/3"
+              },
+              {
+                "outcome": [
+                  "L1",
+                  [
+                    "L0",
+                    "L2"
+                  ]
+                ],
+                "p": "1/6"
+              },
+              {
+                "outcome": [
+                  "L2",
+                  [
+                    "L0",
+                    "L1"
+                  ]
+                ],
+                "p": "1/6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "request_sha256": "081d2eb27d51aada3ce9b448798155d11a540560dfcb2bb8fa561d6036729693",
+    "schema": "same_source_certified_bounds_result_v1",
+    "scope": "One actual strict original source and one physical assignment fit every supplied row; exact software recomputation, no Lean claim.",
+    "semantic_check": {
+      "Lean_verification_inferred": false,
+      "entries": 1,
+      "global_unknown_size_NO_inferred": false,
+      "independent_exact_entries": 1,
+      "same_backend_unsat_replays": 0,
+      "status": "PASS_SOURCE_AND_CERTIFICATE_RECOMPUTATION"
+    },
+    "solver_called": true,
+    "solver_execution": {
+      "command": [
+        "/workspace/scratch/astra-backend-0645/bin/python",
+        "-B",
+        "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/evidence/remaining-v2/cases/genuine-source-parent-persistence-fault/delegate/source/runtime/solver.py",
+        "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/evidence/remaining-v2/cases/genuine-source-parent-persistence-fault/delegate/source/SOURCE-REQUEST.json",
+        "--output",
+        "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/evidence/remaining-v2/cases/genuine-source-parent-persistence-fault/delegate/source/backend"
+      ],
+      "elapsed_seconds": 0.5665439389995299,
+      "invoked": true,
+      "returncode": 0,
+      "timeout": false
+    },
+    "source_feasibility_certified": true,
+    "source_manifest": {
+      "files": [
+        {
+          "bytes": 28449,
+          "runtime_relative": "solver.py",
+          "sha256": "42e4353d3033e807e26bc409c724fcdee2a01552a630c9364f428f92f9ffe0db",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/solver.py"
+        },
+        {
+          "bytes": 5120,
+          "runtime_relative": "bounded_search.py",
+          "sha256": "7906ad84dc31ae2add6349a8166c4626826b4e09eaf8dad1e86426710076f7e7",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/bounded_search.py"
+        },
+        {
+          "bytes": 10389,
+          "runtime_relative": "verify_certificate.py",
+          "sha256": "525b888190d03c2bf6a510a4aab271ab18fe22fa507821faed9409db142f8840",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_certificate.py"
+        },
+        {
+          "bytes": 3556,
+          "runtime_relative": "verify_search.py",
+          "sha256": "0698a99f0eef559e582b6e0b36d2c9bfb0c2c8ad94856c9ef62d58f631a3bf51",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/verify_search.py"
+        },
+        {
+          "bytes": 1023,
+          "runtime_relative": "UPSTREAM-IDENTITY.json",
+          "sha256": "bf569af6ea20629ceb75e19d2d077659a19039af78ca20b8b3ae31cad91cba2d",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/UPSTREAM-IDENTITY.json"
+        },
+        {
+          "bytes": 48,
+          "runtime_relative": "requirements.txt",
+          "sha256": "05851fd3a70a531a52520f17346fcefe447028337446393daf5e0e7a956d2071",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/requirements.txt"
+        },
+        {
+          "bytes": 6474,
+          "runtime_relative": "upstream/source_census.py",
+          "sha256": "d004c3730d26ebffa9ec19d842adc0b86bcaac46e216228c15b295b0c5f94396",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/source_census.py"
+        },
+        {
+          "bytes": 9360,
+          "runtime_relative": "upstream/law_compiler.py",
+          "sha256": "eb829017262d571d32d2ac4e08e4afffcd00c02210e2b1ec6337dee59862cdb7",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/law_compiler.py"
+        },
+        {
+          "bytes": 2401,
+          "runtime_relative": "upstream/continuous_optimizer.wl",
+          "sha256": "6fe06db6f8701d319cec4ff5d7551e6b4c91bd54821586be7600b0e2fd93a6fd",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/continuous_optimizer.wl"
+        },
+        {
+          "bytes": 7949,
+          "runtime_relative": "upstream/README.md",
+          "sha256": "14ac343bd5c5b36b557468bc014d6d215245a5a057fb3e4f33d1c59e48cbaf11",
+          "source": "research/2026-10-04-dot-practical-solver-recovery-1803z/01-exact-source-solver/package/upstream/README.md"
+        }
+      ],
+      "role": "Existing original-source census, shared-row exact feasibility and semantic certificate checker; not the nine-parameter interval outer-cover engine or Rust diagnostic.",
+      "schema": "same_source_certified_bounds_sources_v1",
+      "source_commit": "cf6c1b32c6127af9568c18a65c25d738d288a3e7"
+    },
+    "source_request_sha256": "499edeb9d5a5b96dac3527014364834d644eb3261ec1f19014e75dbcdd2fcd8d",
+    "statistical_coverage_verified": false,
+    "status": "CERTIFIED_SOURCE_WITNESS",
+    "unrestricted_NO_claimed": false
+  },
+  "status": "CERTIFIED_SOURCE_WITNESS",
+  "universal_native_correctness_claimed": false
+}

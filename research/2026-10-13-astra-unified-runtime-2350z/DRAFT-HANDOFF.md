@@ -1,0 +1,15 @@
+# Stable source-only handoff
+
+**Historical handoff.** This note describes the original source-only cutoff. The exact original note and all eight draft files are preserved in `baseline/pre-persistence-repair/`. `README.md`, `PERSISTENCE-REPAIR.json`, `EXECUTION-REPAIR.md` and `VERIFICATION.json` record the later reviewed repair and actual bounded execution; the paragraphs below are not the packet's final execution status.
+
+The new entry point connects existing request dispatch, exact selected readouts and optional conditional support-source emission. It does not replace any provider or introduce an observation, target network, physical source premise or certificate conclusion. Original request schemas and IDs are retained. Support wrappers remain uncompiled outputs.
+
+`SOURCE-PINS.json` authenticates all 13 selected source/evidence bodies. Its two approved certificate-checker profiles distinguish the historical checker from the checker with singleton generation. Each profile names a closed build receipt and a separate observation binding its executable hash. RC1 authentication remains entirely delegated to the original bridge. Historical successful native execution is reuse evidence, not execution of this new entry point.
+
+Static review covered raw/canonical request identity, absent output directories, bounded transport, original delegate results and scoped source-search certification, checker capabilities, support deduplication, and failure preservation. A child result is attached immediately after return, before output persistence or the final executable check can fail. Unexpected runtime failures yield UNKNOWN; malformed supported input retains the original refusal contract. Optional support-emission failure cannot upgrade or erase a returned delegate outcome.
+
+`STATIC-INSPECTION.json` records AST parsing and exact source hashes only. The first ad hoc manifest helper rejected the literal multiplication used for the file-size cap, before writing output records. `static_inspect.py` repairs that helper with a narrowly defined AST multiplication evaluator; it does not import or execute `runtime.py`. The repaired static helper passed. No runtime control, native executable, compiler, source-search backend, import query or Lake operation ran for this packet.
+
+The pending validation plan is in `VALIDATION-PLAN.md`. Lean owns the compiler and publication slots; execution must await its quiet-window release. This draft has no verified remote-publication receipt. Any future repairs and control receipts should be recorded explicitly before describing the entry point as execution-verified.
+
+Remaining mathematical boundaries are unchanged: selected formal native readouts do not prove a typed physical source/row equation; source-search conclusions retain exactly the backend's witness or covered-class scope; support emission uses supplied certificate moments; no full protected physical representative or arbitrary-input G3 closure is supplied. The new facade makes these existing paths reachable through one entry point, without converting one path's evidence into another path's conclusion.

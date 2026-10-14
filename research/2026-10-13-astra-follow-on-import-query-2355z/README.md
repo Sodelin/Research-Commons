@@ -1,10 +1,33 @@
-# Isolated follow-on import query — unexecuted source draft
+# Isolated follow-on import query — actual execution
 
-This runner is **NOT EXECUTED**. Preparation read existing source/manifests and
-parsed the Python AST only. No Lean, Lake, import query, test, materialization or
-object-authentication job has run in this packet. The compiler owner chooses a
-later quiet execution boundary and the actual resource guard; this file grants
-no compiler ownership.
+The repaired official source query **passed**: 477 serial compiler import queries
+verified the 469 accepted owned bodies and six Astra source bodies, then the two
+additional Mathlib roots. The extended source plan retains all 3591 historical
+records literally and adds only `Mathlib.Algebra.MvPolynomial.Funext` and
+`Mathlib.Algebra.MvPolynomial.Polynomial`. This establishes source resolution;
+**no theorem was compiled and no compiled object was authenticated**.
+
+The actual v2 guard exited 0 with no resource stop after 28.034 seconds, under
+6 GiB address-space and 4 GiB physical limits. Its complete query source, requests,
+commands, resolved paths, logs and receipts are preserved in
+`evidence/import-query-v2-authenticated`; `FILES.json` binds every captured file.
+The initial bounded capture check passed after 1.002 seconds. Independent review
+then strengthened selection, environment, route and dependency bindings; the
+separately executed stronger capture passed after 4.005 seconds. Its final gate
+is `evidence/import-query-v3-authenticated/FILES.json`, which binds the preserved
+literal payload without rewriting the earlier successful, narrower receipt.
+`CAPTURE-AUTHENTICATION-REPAIR.json` records that distinction. The immutable
+active319 selection and3591 build plan were not changed.
+
+The original attempt returned compiler0 for its first source query but failed
+authentication because partial materialized Mathlib namespace routing masked
+complete upstream paths. Its guard exited1 with no resource stop. Executed
+source, first request, source copy, logs and receipt remain under
+`evidence/import-query-v1*`; original draft files remain under
+`evidence/BEFORE-UPSTREAM-FIRST-v1`. `SOURCE-ROUTE-REPAIR.json` records the repair,
+and the pre-execution v2 README is preserved separately. The historical
+`SOURCE-DRAFT-MANIFEST.json` describes the original published draft, not the
+current executed packet. `PACKET-MANIFEST.json` inventories this successor.
 
 `query_imports.py` takes the exact frozen2305 selection:469 accepted owned bodies
 and six Astra source bodies from root2340's isolated materialization at
@@ -17,11 +40,19 @@ The counts identify a selection; they do not establish mathematical completion.
 It reuses the exact nested-comment-aware header parser from frozen2305 and the
 official compiler query method of `support0830/plan_external.py` and the frozen
 `unified-solver0645/build_mathlib_serial.py`: `lean -j1 -s8192 --src-deps SOURCE`.
-The direct source queries use the **actual materialized paths**, with their root
-first in `LEAN_SRC_PATH`/`LEAN_PATH`. The observed dependency paths must match the
-selected literal header and implicit Init exactly. This makes owned Mathlib
-precedence visible and fails on an unexpected provider instead of silently
-selecting another version. The source query does not elaborate theorem bodies.
+The direct source queries use the **actual materialized paths**. Lean selects a
+namespace root before resolving its complete subpath, so a partial Mathlib tree
+cannot precede the complete upstream Mathlib tree. Before putting upstream first
+in `LEAN_SRC_PATH`/`LEAN_PATH`, the runner authenticates full original/materialized/
+upstream byte equality and headers for **all nine selected owned Mathlib bodies**.
+`ROUTE-EQUIVALENCE.json` records those exact routes and is bound into each query
+request. Only then may expected Mathlib imports resolve to upstream paths;
+research namespaces remain the materialized selected providers. No version is
+reselected, and the queried475 input paths stay materialized. Observed dependency
+paths must equal the selected literal header plus implicit Init (duplicate Init
+lines are retained in raw stdout and deduplicated for the edge list). The source
+query does not elaborate theorem bodies. The repair changes source resolution,
+not theorem statements, the selected graph or the frozen external plan.
 
 Each query preserves a pre-execution request, exact source copy, command, selected
 environment, compiler hash, stdout/stderr, exit/error, elapsed time, before/after
@@ -55,19 +86,17 @@ compatibility or an executed aggregate.
 
 The runner refuses unbounded address-space/CPU/file limits and limits exceeding
 6GiB AS/600s CPU/1GiB file. It does not replace the frozen guard's4GiB physical
-stop,8GiB disk and1GiB RAM floors. A proposed owner invocation is:
+stop,8GiB disk and1GiB RAM floors. The executed query profile is represented below (exact absolute command and environment are in the receipt):
 
 ```sh
 python3 -B research/2026-10-13-astra-unified-solver-0645z/guard.py \
   --out NEW_EXCLUSIVE_EVIDENCE_DIRECTORY --cwd /workspace/Research-Commons \
   --wall 300 --cpu 180 --memory-mib 6144 --file-mib 256 -- \
   python3 -B research/2026-10-13-astra-follow-on-import-query-2355z/query_imports.py \
-  --out /workspace/scratch/astra-follow-on-import-query-2355-v1
+  --out /workspace/scratch/astra-follow-on-import-query-2355-v2
 ```
 
-This command is a proposal, not an execution receipt. The owner may choose a
-shorter bounded profile; changing selection, query semantics or helper pins
-requires a reviewed successor. Existing PAUSE-BUILDS is checked before the run
+The literal receipt, rather than this illustrative command, is execution evidence. Changing selection, query semantics or helper pins requires a reviewed successor. Existing PAUSE-BUILDS is checked before the run
 and every query. No source/body modification, Lake configuration replacement,
 native rebuild, theorem/axiom claim or physical-representative conclusion follows
 from this packet. The missing exact `G4ProtectedCommonRepresentative` provider

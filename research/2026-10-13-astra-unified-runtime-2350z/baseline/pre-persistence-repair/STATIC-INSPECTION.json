@@ -1,0 +1,30 @@
+{
+  "all_exact_hashes_matched": true,
+  "compiler_invocations": 0,
+  "explicitly_unverified": [
+    "Runtime behavior and error paths",
+    "Composition control fixtures",
+    "Resource-guard execution",
+    "Emitted Lean compilation",
+    "Remote publication"
+  ],
+  "helper_sha256": "fac2889773fc4d37e34afc96aed481acccbb9e295cf028bdd933c497d5b08b91",
+  "initial_helper_failure": {
+    "error": "ValueError: malformed node or string on line 15: ast.BinOp",
+    "repair": "This helper evaluates only literal multiplication in MAX_BINARY_BYTES; no eval, runtime import or source change.",
+    "stage": "ad hoc AST constant extraction, before output writes"
+  },
+  "method": "ast.parse plus literal AST constants and byte hashing only; runtime module not imported or executed",
+  "native_invocations": 0,
+  "observed_utc": "2026-10-13T23:50:57.647643+00:00",
+  "provider_files": 13,
+  "review_kind": "Agent static source inspection, not independent human mathematical review",
+  "runtime": {
+    "bytes": 18524,
+    "path": "runtime.py",
+    "sha256": "0231474ef24bb7ee842e772fc52ee2860d3c3c1e4d6655d3ef24965b93799825"
+  },
+  "runtime_controls_run": 0,
+  "schema": "astra_runtime_static_inspection_v1",
+  "status": "STATIC_SOURCE_PASS_ONLY"
+}

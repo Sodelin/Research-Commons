@@ -1,0 +1,4 @@
+import Astra.SelectedCopyReadout
+
+#print axioms Astra.SelectedCopyReadout.controlled_pruned_full_eq_selected
+#print axioms Astra.SelectedCopyReadout.randomized_pruned_full_eq_selected

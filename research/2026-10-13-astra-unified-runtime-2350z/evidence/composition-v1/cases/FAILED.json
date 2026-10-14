@@ -1,0 +1,77 @@
+{
+  "cases": [
+    {
+      "detail": {
+        "old_checker_observed": true,
+        "raw_bytes_preserved": true,
+        "status": "CHECKED_RATIONAL_CERTIFICATE",
+        "support_sources": 1
+      },
+      "name": "literal-certificate-cli",
+      "passed": true
+    },
+    {
+      "detail": {
+        "new_generation_agrees": true,
+        "old_capability_unknown_before_delegate": true
+      },
+      "name": "checker-capabilities",
+      "passed": true
+    },
+    {
+      "detail": {
+        "executable_invoked": false
+      },
+      "name": "unknown-checker-identity",
+      "passed": true
+    },
+    {
+      "detail": {
+        "byte_and_utf8_gate_before_directory": true,
+        "duplicate_refused": true,
+        "existing_directory_unchanged": true
+      },
+      "name": "bounded-transport-and-output",
+      "passed": true
+    },
+    {
+      "detail": {
+        "unsupported_is_unknown": true
+      },
+      "name": "unsupported-routing",
+      "passed": true
+    },
+    {
+      "detail": {
+        "original_pair_references": 16,
+        "physical_source_decision": "UNKNOWN",
+        "readouts": 48,
+        "sources_compiled": false,
+        "unique_support_wrappers": 3
+      },
+      "name": "selected-readout-and-deduplicated-emission",
+      "passed": true
+    },
+    {
+      "detail": {
+        "runtime_unavailable_is_unknown": true
+      },
+      "name": "selected-unavailable",
+      "passed": true
+    },
+    {
+      "detail": {
+        "original_rc1_contract_preserved": true,
+        "physical_source_certified": false
+      },
+      "name": "original-native-rc1-route",
+      "passed": true
+    },
+    {
+      "error": "KeyError('result')",
+      "name": "parent-persistence-regression-with-real-source-child",
+      "passed": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/test_composition.py\", line 75, in case\n    detail = action()\n             ^^^^^^^^\n  File \"/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/test_composition.py\", line 204, in persistence_fault\n    child = result['delegate']['result']; original = json.loads((out / 'delegate/RESULT.json').read_bytes())\n            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^\nKeyError: 'result'\n"
+    }
+  ]
+}
