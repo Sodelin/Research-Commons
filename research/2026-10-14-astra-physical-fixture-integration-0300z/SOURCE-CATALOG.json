@@ -1,0 +1,136 @@
+{
+  "actual_axiom_audit": "PENDING",
+  "actual_lake_execution": "PENDING",
+  "actual_row_intake": {
+    "bytes": 21967,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/INCOMING-ACTUAL-ROWS.json",
+    "sha256": "5bbae540c1f5722fc44f45b3a7af2aab4f725f546b8a05ae5d578c08bdd98097"
+  },
+  "added_sources": [
+    {
+      "bytes": 8537,
+      "destination": "G3PhysicalFixtureAdmission.lean",
+      "imports": [
+        "G7OriginalAdmission",
+        "G7OriginalSurvivalCoverage",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "module": "G3PhysicalFixtureAdmission",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/G3PhysicalFixtureAdmission.lean",
+      "sha256": "3e8725ea49ee7b841340bf8e31ffcb0ab0719cb46706b1fc86c9d9524880762d"
+    },
+    {
+      "bytes": 10491,
+      "destination": "G3PhysicalFixtureActualRows.lean",
+      "imports": [
+        "G3PhysicalFixtureAdmission",
+        "G4WholeProfileDetermination"
+      ],
+      "module": "G3PhysicalFixtureActualRows",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/G3PhysicalFixtureActualRows.lean",
+      "sha256": "c732776ff9e1cb394a1d06ceb653421f93ccebaf521bb412aad13e9c1452cc28"
+    },
+    {
+      "bytes": 220,
+      "destination": "AstraPhysicalFixture.lean",
+      "imports": [
+        "G3PhysicalFixtureAdmission",
+        "G3PhysicalFixtureActualRows"
+      ],
+      "module": "AstraPhysicalFixture",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/AstraPhysicalFixture.lean",
+      "sha256": "c20c0011d76e5e7ab85ea51315131f6522cefe7a2438a14ff6af62d4aa12dc4a"
+    },
+    {
+      "bytes": 283,
+      "destination": "AstraFullWithPhysicalFixture.lean",
+      "imports": [
+        "AstraAcceptedIntegration",
+        "AstraPhysicalFixture"
+      ],
+      "module": "AstraFullWithPhysicalFixture",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/AstraFullWithPhysicalFixture.lean",
+      "sha256": "0750f35d61ec9d7479ffd3eaad68693ca1a0556526222d7acfe4dbca44b83b5f"
+    }
+  ],
+  "all16pairs_or_full48_rows_formalized": false,
+  "base_configuration": {
+    "bytes": 59237,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/evidence/upstream-generated/lakefile.lean",
+    "sha256": "6317704a95e3d30284f1b2dca1d601aa28ee2ef5c05e7b87c0044f7fb8d5da89"
+  },
+  "base_configuration_sources": 1,
+  "base_default_target_unchanged": "AstraAcceptedIntegration",
+  "base_library_sources": 1641,
+  "base_owned_plan": {
+    "bytes": 1696285,
+    "path": "research/2026-10-14-astra-full-owned-plan-0145z/FULL-OWNED-SOURCE-PLAN.json",
+    "sha256": "b4c7448756ac891e83ebd357c24e75e0c0d2d41ac369ce33744dfdf38170a501"
+  },
+  "base_selection": {
+    "bytes": 1873551,
+    "path": "research/2026-10-14-astra-full-accepted-import-query-0100z/FULL-SOURCE-SELECTION.json",
+    "sha256": "fb8f2ac3ba0a55f563f3ea0fcce3c8b1af6e127097df0668bf4d8e051ab16925"
+  },
+  "configuration": {
+    "bytes": 59558,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean/lakefile.lean",
+    "sha256": "fad74a9c1cd871e165fe2c82b2689ce6b8aaba537b0b1814e0a1e849aa31a3db"
+  },
+  "configuration_appendix": {
+    "bytes": 321,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lake-supplement.txt",
+    "sha256": "a50bba6138f4523de2329464bd3c345a7d28ea153b8c2a79019a209e5605d245"
+  },
+  "intake": {
+    "bytes": 56178,
+    "path": "communications/2026-10-14-astra-g3-physical-fixture-intake-0255z.json",
+    "sha256": "541f92dc80c7185772e7ab5a5a7e1cedd8354b61822df4f38598ccc0dda92c45"
+  },
+  "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "missing0616_provider_supplied": false,
+  "new_explicit_targets": [
+    "AstraPhysicalFixture",
+    "AstraFullWithPhysicalFixture"
+  ],
+  "new_kernel_compilation": "PENDING",
+  "new_library_count": 1645,
+  "new_source_configuration_count": 1646,
+  "official_query_for_added_sources_and_configuration": "PENDING",
+  "old_fullowned0215_namespace0158_compatibility": "INCOMPATIBLE_WITH_NEW_SCOPE_UNTIL_EXPLICIT_PINNED_SOURCE_SUCCESSOR",
+  "original_all1613_G2_and_older_body_versions_unchanged": true,
+  "outer_admission_proved": false,
+  "physical_rows_proved": false,
+  "preserved_generated_sources": [
+    {
+      "bytes": 51801,
+      "module": "Accepted1613",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/evidence/upstream-generated/Accepted1613.lean",
+      "sha256": "bb2e98be6151f3ee9379f247cc8e8f2e47bfcbaaff991c331ef6d3298a49bf19"
+    },
+    {
+      "bytes": 39,
+      "module": "AstraUnified",
+      "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/evidence/upstream-generated/AstraUnified.lean",
+      "sha256": "1ba69d2671e351c1aedf25b244344e657f72644cb022fd81c3475ac83b3ba34e"
+    }
+  ],
+  "proposed_A_to_B_rows_available_as_uncompiled_source": true,
+  "r0_excluded": true,
+  "remote_original_candidate": {
+    "commit": "da0476791da58fbf62a488237906def7578079c3",
+    "git_blob_sha1": "7cddc0551c14e9f0fe79fcc64b2b0310589ef177",
+    "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/G3PhysicalFixtureAdmission.lean",
+    "sha256": "3e8725ea49ee7b841340bf8e31ffcb0ab0719cb46706b1fc86c9d9524880762d"
+  },
+  "row_source_cutoff": "99ccaa7442a55627d6cc264f49737ca59ca8c154",
+  "row_source_static_review_sha256": "cc696edd3c52435d5559ae807f84206c087dbfacdbf2b0918d0a64ba51dac71c",
+  "schema": "astra_physical_fixture_additive_source_catalog_v1",
+  "status": "SOURCE_ONLY_NOT_MATERIALIZED_OR_COMPILED",
+  "toolchain": {
+    "bytes": 25,
+    "path": "research/2026-10-14-astra-physical-fixture-integration-0300z/lean-toolchain",
+    "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  }
+}

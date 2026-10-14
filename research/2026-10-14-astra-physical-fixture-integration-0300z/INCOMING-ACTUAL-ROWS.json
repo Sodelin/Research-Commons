@@ -1,0 +1,435 @@
+{
+  "admission_historical_intake": {
+    "bytes": 56178,
+    "path": "communications/2026-10-14-astra-g3-physical-fixture-intake-0255z.json",
+    "sha256": "541f92dc80c7185772e7ab5a5a7e1cedd8354b61822df4f38598ccc0dda92c45"
+  },
+  "attribution": "dot/OpenAI independent review lane; reviewed exact admission source and original providers; this is not called human review or kernel acceptance.",
+  "author_publication_manifest_sha256": "a0bc7c05960e15cb08662df69911bb0e8e578267b05dcbae797cc8deeb2c8653",
+  "axiom_status": {
+    "actual_output": null,
+    "lexical_no_new_placeholder_or_axiom": true,
+    "requested_unexecuted_prints": [
+      "fixture_A_route",
+      "fixture_selected_exposure_half",
+      "fixture_actual_legal_moment",
+      "fixture_actual_raw_mass"
+    ]
+  },
+  "declarations": [
+    {
+      "elaborated": false,
+      "kind": "def",
+      "line": 35,
+      "name": "fixtureChosenArm",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "def fixtureChosenArm (coin : CommonSeed fixtureN) : Fin 9"
+    },
+    {
+      "elaborated": false,
+      "kind": "def",
+      "line": 38,
+      "name": "fixtureAPath",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "def fixtureAPath (coin : CommonSeed fixtureN) : List (Fin 9)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 41,
+      "name": "fixture_nonarm_kept",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "source_signature": "private lemma fixture_nonarm_kept (coin : CommonSeed fixtureN) (e : Fin 9)\n    (h3 : e \u2260 3) (h4 : e \u2260 4) : (commonSwitching fixtureN fixtureH coin).keep e"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 47,
+      "name": "fixture_chosen_arm_kept",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_chosen_arm_kept (coin : CommonSeed fixtureN) :\n    (commonSwitching fixtureN fixtureH coin).keep (fixtureChosenArm coin)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 51,
+      "name": "fixture_A_bank_path",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_A_bank_path (coin : CommonSeed fixtureN) :\n    EdgePath fixtureN.graph fixtureN.root (fixtureN.leaf 0) (fixtureAPath coin)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 57,
+      "name": "fixture_A_respects",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_A_respects (coin : CommonSeed fixtureN) :\n    RespectsSelector fixtureN (coinSelector fixtureN fixtureH coin) (fixtureAPath coin)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 68,
+      "name": "fixture_B_respects",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_B_respects (coin : CommonSeed fixtureN) :\n    RespectsSelector fixtureN (coinSelector fixtureN fixtureH coin) [0, 6]"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 77,
+      "name": "fixture_A_route",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_A_route (coin : CommonSeed fixtureN) :\n    (commonRoutes fixtureN fixtureC fixtureH coin).edges 0 = fixtureAPath coin"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 85,
+      "name": "fixture_B_route",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_B_route (coin : CommonSeed fixtureN) :\n    (commonRoutes fixtureN fixtureC fixtureH coin).edges 1 = [0, 6]"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 93,
+      "name": "fixture_pair_edge_exposure",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "source_signature": "private lemma fixture_pair_edge_exposure (e : Fin 9) :\n    pairRate fixtureR (some e) *\n      (fixtureC.age (fixtureN.graph.source e) - fixtureC.age (fixtureN.graph.target e)) =\n      -Real.log (fixtureEdgeSurvival e)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 100,
+      "name": "fixture_selected_exposure",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_selected_exposure (coin : CommonSeed fixtureN) :\n    selectedDirectedExposure fixtureN fixtureC fixtureH fixtureR coin 0 1 =\n      -Real.log (3/4 : \u211d) + -Real.log (8/9 : \u211d) + -Real.log (3/4 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 109,
+      "name": "fixture_selected_survival",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_selected_survival (coin : CommonSeed fixtureN) :\n    Real.exp (-selectedDirectedExposure fixtureN fixtureC fixtureH fixtureR coin 0 1) =\n      (1/2 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 125,
+      "name": "fixture_selected_exposure_half",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_selected_exposure_half (coin : CommonSeed fixtureN) :\n    selectedDirectedExposure fixtureN fixtureC fixtureH fixtureR coin 0 1 =\n      -Real.log (1/2 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 135,
+      "name": "fixture_normalized_survival",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_normalized_survival (coin : CommonSeed fixtureN) :\n    directedSurvival (weightedNormalize fixtureN fixtureC fixtureH fixtureR coin) 0 1 =\n      (1/2 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "def",
+      "line": 142,
+      "name": "fixtureNaturalMasks",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "def fixtureNaturalMasks : Unit \u2192 OriginalMask fixtureN"
+    },
+    {
+      "elaborated": false,
+      "kind": "def",
+      "line": 144,
+      "name": "fixtureNu",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "def fixtureNu : PMF Unit"
+    },
+    {
+      "elaborated": false,
+      "kind": "lemma",
+      "line": 146,
+      "name": "fixture_masked_survival",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "lemma fixture_masked_survival (cfg : Unit) (coin : CommonSeed fixtureN) :\n    directedSurvival\n      (maskedNormalizedTree fixtureN fixtureC fixtureH fixtureR\n        (fixtureNaturalMasks cfg) coin) 0 1 = (1/2 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 157,
+      "name": "fixture_actual_legal_moment",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_legal_moment (k : Nat) (hk : 0 < k) :\n    randomizedLegalCombMoment fixtureN fixtureC fixtureH fixtureP fixtureR\n      fixtureNu fixtureNaturalMasks 0 1 k = (1/2 : \u211d)^(k.choose 2)"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 176,
+      "name": "fixture_actual_row_one",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_row_one :\n    randomizedLegalCombMoment fixtureN fixtureC fixtureH fixtureP fixtureR\n      fixtureNu fixtureNaturalMasks 0 1 1 = 1"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 183,
+      "name": "fixture_actual_row_two",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_row_two :\n    randomizedLegalCombMoment fixtureN fixtureC fixtureH fixtureP fixtureR\n      fixtureNu fixtureNaturalMasks 0 1 2 = (1/2 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 190,
+      "name": "fixture_actual_row_three",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_row_three :\n    randomizedLegalCombMoment fixtureN fixtureC fixtureH fixtureP fixtureR\n      fixtureNu fixtureNaturalMasks 0 1 3 = (1/8 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "def",
+      "line": 198,
+      "name": "fixtureRawCombProbability",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "def fixtureRawCombProbability (k : Nat) : \u211d"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 205,
+      "name": "fixture_actual_raw_mass",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_raw_mass (k : Nat) (hk : 0 < k) :\n    fixtureRawCombProbability k =\n      DotG4.WholeProfileDetermination.combCoefficient k * (1/2 : \u211d)^(k.choose 2)"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 215,
+      "name": "fixture_actual_raw_one",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_raw_one : fixtureRawCombProbability 1 = 1"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 220,
+      "name": "fixture_actual_raw_two",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_raw_two : fixtureRawCombProbability 2 = (1/6 : \u211d)"
+    },
+    {
+      "elaborated": false,
+      "kind": "theorem",
+      "line": 225,
+      "name": "fixture_actual_raw_three",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "source_signature": "theorem fixture_actual_raw_three : fixtureRawCombProbability 3 = (1/144 : \u211d)"
+    }
+  ],
+  "execution": {
+    "active_sources_changed": false,
+    "candidate_compiled": false,
+    "candidate_queried": false,
+    "materializer_run": false,
+    "native_run": false
+  },
+  "proof_chain": [
+    "Same fixed coin selects original arm3/4 and keeps every displayed A/B path edge; exact existing same-selector compiled-route uniqueness.",
+    "Directed exclusive edge sum retains2,selected arm,5 and cancels shared0; logarithmic whole-edge survival product1/2 with original calendar/rates.",
+    "One Unit configuration, PMF.pure(), all-none OriginalMask, same source tuple/Gamma at every k; actual configuration-bank normalization.",
+    "Existing actual_randomized_legal_moment gives A-to-B normalized (1/2)^(k.choose2) for each k>0; literal full padded completed forest then prune, B-first comb and positive coefficient give raw theorem."
+  ],
+  "remaining": [
+    "Compile and audit both exact sources; audit all relevant claimed declaration types/axioms, not only the four printed row names.",
+    "Formal original outer embedding/admission still absent.",
+    "Native parser/copy-label/refinement and all sixteen pairs/48 rows remain outside this source.",
+    "Equal-arm model cannot detect parent orientation; unequal-arm control remains distinct.",
+    "No arbitrary-input G3 or missing0616 protected COMMON provider."
+  ],
+  "remote": {
+    "commit": "99ccaa7442a55627d6cc264f49737ca59ca8c154",
+    "files": [
+      {
+        "bytes": 406,
+        "git_blob_sha1": "a05565ea4ba1bc74b1aa2b62c418503da4128751",
+        "name": "CHECK.log",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/CHECK.log",
+        "sha256": "9a9f47757f0ca3258e525ab43695807aeaae705a3d74981e6e7843895fbafa5a",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/CHECK.log"
+      },
+      {
+        "bytes": 10491,
+        "git_blob_sha1": "4169f657ba5386a3547b36674cd175fb3aaff665",
+        "name": "G3PhysicalFixtureActualRows.lean",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/G3PhysicalFixtureActualRows.lean",
+        "sha256": "c732776ff9e1cb394a1d06ceb653421f93ccebaf521bb412aad13e9c1452cc28",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/G3PhysicalFixtureActualRows.lean"
+      },
+      {
+        "bytes": 4567,
+        "git_blob_sha1": "28dd6308286fd1b506809e5d6f47a64d65a57488",
+        "name": "INDEPENDENT-STATIC-REVIEW-PINS.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/INDEPENDENT-STATIC-REVIEW-PINS.json",
+        "sha256": "56c48ebc8f4e34c1f99108b2533767749b59c99ee61637c879912c892aff1121",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/INDEPENDENT-STATIC-REVIEW-PINS.json"
+      },
+      {
+        "bytes": 6389,
+        "git_blob_sha1": "9ac53ba5918a3c38334bb80270bf6744352d4737",
+        "name": "INDEPENDENT-STATIC-REVIEW.md",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/INDEPENDENT-STATIC-REVIEW.md",
+        "sha256": "cc696edd3c52435d5559ae807f84206c087dbfacdbf2b0918d0a64ba51dac71c",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/INDEPENDENT-STATIC-REVIEW.md"
+      },
+      {
+        "bytes": 1351,
+        "git_blob_sha1": "74fb49415a60bf5f244a44eadc09bdad1a3fbe8d",
+        "name": "MANIFEST.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/MANIFEST.json",
+        "sha256": "f873b89b55bd69b3a9517777d030fef710964f1c0545adf45e6cf388973d441b",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/MANIFEST.json"
+      },
+      {
+        "bytes": 2613,
+        "git_blob_sha1": "4ebb369ee53bc37c21e6fabaab32d9ea3688b944",
+        "name": "PUBLICATION-MANIFEST.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/PUBLICATION-MANIFEST.json",
+        "sha256": "a0bc7c05960e15cb08662df69911bb0e8e578267b05dcbae797cc8deeb2c8653",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/PUBLICATION-MANIFEST.json"
+      },
+      {
+        "bytes": 6646,
+        "git_blob_sha1": "0c411d4a00c407aa1f8d72430fca2a8d4bde5cc4",
+        "name": "README.md",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/README.md",
+        "sha256": "f97d674312909fc4764fad4b3d792a4d21a08ccf5bdbf2cf3e153313267fbdb6",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/README.md"
+      },
+      {
+        "bytes": 5959,
+        "git_blob_sha1": "44c834416482c8fcf13ba77a1eeeab6f5c89f921",
+        "name": "SOURCE-PINS.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/SOURCE-PINS.json",
+        "sha256": "9548c92fa0a93e36afb26b470321c2db204d489e706dddfcf77abcd94248fcad",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/SOURCE-PINS.json"
+      },
+      {
+        "bytes": 2307,
+        "git_blob_sha1": "21a7b533cd4ae163a97cbc73647aa71a9d378f5a",
+        "name": "check_route_rows.py",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/check_route_rows.py",
+        "sha256": "b2a4cd45f8beb71195bb1f4a9538b5a0a2c435cf64de0afc854236395d9f1df1",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/99ccaa7442a55627d6cc264f49737ca59ca8c154/research/2026-10-14-dot-g3-physical-fixture-actual-rows-0237z/check_route_rows.py"
+      }
+    ]
+  },
+  "review_pins_sha256": "56c48ebc8f4e34c1f99108b2533767749b59c99ee61637c879912c892aff1121",
+  "review_sha256": "cc696edd3c52435d5559ae807f84206c087dbfacdbf2b0918d0a64ba51dac71c",
+  "review_status": "SCOPED_STATIC_SOURCE_API_PASS_UNCOMPILED",
+  "schema": "astra_fixture_actual_rows_scoped_incoming_v1",
+  "scope": {
+    "arbitrary_input_g3": false,
+    "configuration": "Unit / pure() / all original masks none",
+    "copies": "(Fin k \u2295 Unit) \u2295 Fin4",
+    "direction": "A\u2192B only; taxa0\u21921",
+    "levels": "all positive k, named corollaries1,2,3",
+    "native_refinement": false,
+    "original_bank_drawn_once": true,
+    "outer_lean_admission": false,
+    "raw_event": "one B-first left comb after passive pruning of the full completed original forest",
+    "source_tuple_fixed": true
+  },
+  "source_ledger_sha256": "9548c92fa0a93e36afb26b470321c2db204d489e706dddfcf77abcd94248fcad",
+  "source_providers": [
+    {
+      "bytes": 8794,
+      "git_blob": "36628bd74bfb60f1b81ee02897f7c809075cc0c7",
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "status": "accepted selected provider, no fresh replay in this lane",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6.lean"
+    },
+    {
+      "bytes": 7816,
+      "git_blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8",
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "status": "accepted selected provider, no fresh replay in this lane",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31.lean"
+    },
+    {
+      "bytes": 7614,
+      "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+      "module": "G7OriginalSurvivalCoverage",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "status": "accepted selected provider, no fresh replay in this lane",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean"
+    },
+    {
+      "bytes": 30125,
+      "git_blob": "19e8c324cb1249252d566ad235f05323d6425034",
+      "module": "G4ActualSelectedPathExposure",
+      "sha256": "44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992",
+      "status": "accepted selected provider, no fresh replay in this lane",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992.lean"
+    },
+    {
+      "bytes": 153015,
+      "git_blob": "389a66f88daf3f6d3a9155e88a0fd489b9565374",
+      "module": "G4WeightedOrdinaryTreeLaw",
+      "sha256": "edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9",
+      "status": "accepted selected provider, no fresh replay in this lane",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9.lean"
+    },
+    {
+      "bytes": 187616,
+      "git_blob": "5a866bc90937ae00981a0f1305a58a07704036e4",
+      "module": "G4WholeProfileDetermination",
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "status": "accepted selected provider, no fresh replay in this lane",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean"
+    },
+    {
+      "git_blob": "fbe4496baf571f53181e0649196c91178035d1f2",
+      "module": "G5CommonSwitchingQuartetWitness",
+      "sha256": "4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611",
+      "status": "accepted selected provider, same-selector path receiver lines49\u201361 and88\u201396",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611.lean"
+    },
+    {
+      "module": "G4ActualObservableBankCertificate",
+      "sha256": "9f177f98be496b02d981199f1b837f8eddadc77cc171307a0b1747a103806f8b",
+      "status": "accepted selected provider; exact original bank normalization coinWeight_sum",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9f177f98be496b02d981199f1b837f8eddadc77cc171307a0b1747a103806f8b.lean"
+    }
+  ],
+  "source_sha256": "c732776ff9e1cb394a1d06ceb653421f93ccebaf521bb412aad13e9c1452cc28",
+  "supersession": "0255 accurately recorded fixed-bank and row source missing at its cutoff. This successor supplies proposed proof source, not successful elaboration.0255 bytes unchanged.",
+  "supplier_finite_diagnostic_status": "CHECK.log records finite exact-data checks only; script bytes authenticated, not imported or run by this intake. No guard/kernel/native receipt is inferred."
+}
