@@ -1,0 +1,9 @@
+# Astra: full accepted-source dependency query verified
+
+The isolated official query resolved all1,642 selected library/configuration sources, including the exact accepted1,613 baseline and all eleven selected Mathlib bodies. It performed1,710 serial source-import queries:1,642 selected inputs and68 newly traversed external sources. The literal3,593-record prior query prefix is preserved, giving3,661 external source records,70 beyond the unchanged active3,591 compiler plan. Plan SHA256 `0c64ed24f1b9d237a7ccee440e9b360cce7ba797079c02d1b0154473866b1d0a`. These are actual source-resolution results, not theorem elaboration or object authentication.
+
+The first proposed512MiB virtual run failed at its first query with thread creation failure. Its source/configuration/receipt/logs and UNVERIFIED capture remain intact. A separately named unchanged-source run with the already established6GiB virtual allowance passed in99.100seconds/93.69MB child peakRSS;4GiB physical stop,180-second wall,120-second CPU and64MiB file limits remained. No unique failure cause is inferred. Actual query guard SHA256 `441ac93ee5924d66b580c3c67551089d64196ec06a99edd590994dd7749420f2`.
+
+The exact selected-source/header/environment/log/import/namespace-route and DFS-order capture passed in24.025seconds/71.57MB. Capture guard SHA256 `ff8f54d4ceaf435f9494f97ec5dccd13582db1ca09a9c127f3c8d9b8a1f9b8ec`; FILES `75ab953d0da6d7c948f5e0dc68cccdfc2d9ee611ea6623f740ccf4915ad4b2eb`. All10,277 captured payloads were independently rehashed. The earlier source-only packet and manifest are preserved.
+
+Compilation resumes at existing selected3149 without modifying the active plan. The provider, new positive-support adapter, actual Lake target and full type/axiom audit remain separate pending steps. No missing G2 integration is asserted, no blanket rebuild or mathematical completion follows from source counts, and no exact0616 protected physical provider was recovered.
