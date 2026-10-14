@@ -1,0 +1,189 @@
+{
+  "Lean_compiler_invocations": 0,
+  "arbitrary_input_G3_resolved": false,
+  "emitted_sources_compiled": false,
+  "exact_execution_pins": [
+    {
+      "bytes": 3486,
+      "path": "evidence/composition-v1/cases/EXECUTED-SOURCES.json",
+      "sha256": "a19c2ca5eb690652309428e766e3c7e8c4c814d040dccaada63161252e3261e1"
+    },
+    {
+      "bytes": 2452,
+      "path": "evidence/remaining-v2/cases/EXECUTED-SOURCES.json",
+      "sha256": "436f81436747341b21c18fb98b8136d4cd587b2b73cb740457a3c429219c23c8"
+    }
+  ],
+  "first_run": {
+    "cases": [
+      {
+        "detail": {
+          "old_checker_observed": true,
+          "raw_bytes_preserved": true,
+          "status": "CHECKED_RATIONAL_CERTIFICATE",
+          "support_sources": 1
+        },
+        "name": "literal-certificate-cli",
+        "passed": true
+      },
+      {
+        "detail": {
+          "new_generation_agrees": true,
+          "old_capability_unknown_before_delegate": true
+        },
+        "name": "checker-capabilities",
+        "passed": true
+      },
+      {
+        "detail": {
+          "executable_invoked": false
+        },
+        "name": "unknown-checker-identity",
+        "passed": true
+      },
+      {
+        "detail": {
+          "byte_and_utf8_gate_before_directory": true,
+          "duplicate_refused": true,
+          "existing_directory_unchanged": true
+        },
+        "name": "bounded-transport-and-output",
+        "passed": true
+      },
+      {
+        "detail": {
+          "unsupported_is_unknown": true
+        },
+        "name": "unsupported-routing",
+        "passed": true
+      },
+      {
+        "detail": {
+          "original_pair_references": 16,
+          "physical_source_decision": "UNKNOWN",
+          "readouts": 48,
+          "sources_compiled": false,
+          "unique_support_wrappers": 3
+        },
+        "name": "selected-readout-and-deduplicated-emission",
+        "passed": true
+      },
+      {
+        "detail": {
+          "runtime_unavailable_is_unknown": true
+        },
+        "name": "selected-unavailable",
+        "passed": true
+      },
+      {
+        "detail": {
+          "original_rc1_contract_preserved": true,
+          "physical_source_certified": false
+        },
+        "name": "original-native-rc1-route",
+        "passed": true
+      }
+    ],
+    "elapsed_seconds": 2.5031054189994393,
+    "outcome": "Eight groups passed; ninth failed before source child return because inherited hardCPU20 prevented immutable child hardCPU30.",
+    "peak_rss_bytes": 28114944,
+    "receipt": {
+      "bytes": 2479,
+      "path": "evidence/composition-v1/RECEIPT.json",
+      "sha256": "6085a90110d1abd3f2a8a0aeb29b05b9aa63d8d22bc9d44a0bfabbb42e897d46"
+    }
+  },
+  "first_test_source": {
+    "bytes": 14373,
+    "path": "test_composition.py",
+    "sha256": "7c136496bd35e79fb23b9bb73eaa401c398be31101c8eb5673929a6b2251a1d2"
+  },
+  "groups_verified": 10,
+  "historical_child_replay_used": false,
+  "initial_draft_manifest": {
+    "bytes": 1263,
+    "path": "baseline/pre-persistence-repair/MANIFEST.json",
+    "sha256": "9c921aabfd039de0f6b198039e1a8755252bca9b36e112dd54bc68760faff857"
+  },
+  "native_builds": 0,
+  "original_backend_scope_preserved": true,
+  "physical_selected_row_refinement_proved": false,
+  "remaining_test_source": {
+    "bytes": 5687,
+    "path": "test_remaining.py",
+    "sha256": "3aa98b2155c038fc76f520af4dfec4a236f7f0570428b9bc055a8b50163ac159"
+  },
+  "remote_publication_verified": false,
+  "runtime": {
+    "bytes": 18582,
+    "path": "runtime.py",
+    "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+  },
+  "schema": "astra_unified_runtime_composition_verification_v1",
+  "selected_demo": {
+    "compiled": false,
+    "original_pair_references": 16,
+    "physical_decision": "UNKNOWN",
+    "readouts": 48,
+    "result": {
+      "bytes": 375381,
+      "path": "evidence/composition-v1/cases/selected-complete/RESULT.json",
+      "sha256": "c0b01d9d13d519d65a7c71c40af65530301472d6a0dd3b470c8214c67acebe69"
+    },
+    "unique_support_wrappers": 3
+  },
+  "source_child": {
+    "child_certified": true,
+    "child_status": "CERTIFIED_SOURCE_WITNESS",
+    "fresh_backend": true,
+    "fresh_semantic_checker": true,
+    "parent_certified": false,
+    "parent_fault_result": {
+      "bytes": 18860,
+      "path": "evidence/remaining-v2/cases/genuine-source-parent-persistence-fault.returned.json",
+      "sha256": "29730c56730ad2374c82dfed6ad3fe462859504e7a4a0cbd7e1e3af5eb1550dc"
+    },
+    "parent_status": "UNKNOWN",
+    "result": {
+      "bytes": 15362,
+      "path": "evidence/remaining-v2/cases/genuine-source-parent-persistence-fault/delegate/RESULT.json",
+      "sha256": "531ab3b263ed966e0930cd84b78fb2bc873132dc3d83729ccc5b871b742eebe1"
+    }
+  },
+  "status": "PASS_WITH_PRESERVED_FAILED_ATTEMPT",
+  "successor_run": {
+    "cases": [
+      {
+        "actual_source_backend": true,
+        "child_certified": true,
+        "injection": "Only final parent RESULT.json write failed, exactly once.",
+        "name": "genuine-source-and-parent-persistence-regression",
+        "original_child_scope": "One actual strict original source and one physical assignment fit every supplied row; exact software recomputation, no Lean claim.",
+        "parent_certified": false,
+        "parent_status": "UNKNOWN",
+        "passed": true,
+        "semantic_checker_pass": true
+      },
+      {
+        "actual_subprocess_created_for_timeout_case": false,
+        "name": "labelled-runtime-timeout",
+        "passed": true,
+        "request_preserved": true
+      }
+    ],
+    "elapsed_seconds": 1.5044251199997234,
+    "outcome": "Only two remaining groups run; both pass. Genuine source backend and semantic checker executed; final parent write fault injected exactly once.",
+    "peak_rss_bytes": 98701312,
+    "receipt": {
+      "bytes": 1774,
+      "path": "evidence/remaining-v2/RECEIPT.json",
+      "sha256": "9c24b7db3014b45581532efe1d0119edb228a36d0fff8c920768493c87a49aed"
+    }
+  },
+  "unexecuted_fallback_source": {
+    "bytes": 7693,
+    "path": "test_fault_replay.py",
+    "sha256": "b15f159433f916ee190cc3b0220a3c141e0bf2251c3263a63345bf8f646f9c47"
+  },
+  "universal_native_correctness_proved": false
+}

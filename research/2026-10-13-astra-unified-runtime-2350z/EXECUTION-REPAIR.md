@@ -1,0 +1,11 @@
+# Preserved first-run failure and narrow successor
+
+The first run used the approved 30-second wall, 20-second hard CPU, 512 MiB address-space and 16 MiB per-file limits, with the existing 4 GiB cgroup ceiling and disk/RAM floors. `evidence/composition-v1/RECEIPT.json` records exit 1 after 2.503 seconds, 28,114,944 bytes peak child RSS and no resource stop. Its first eight composition groups passed, including the genuine 48-row selected readout and three deduplicated support wrappers. These results remain valid evidence for the executed source identities recorded there.
+
+The ninth control reached the unchanged source dispatcher but did not obtain a child result. The immutable `applications/practical-solver/certified_bounds.py` `_limits` sets a hard CPU limit of 30 seconds. A child cannot raise the inherited hard limit of 20 seconds, so `subprocess.Popen` failed in `preexec_fn`. The new entry point preserved the request and returned UNKNOWN with the exception. The harness then failed because it expected a completed source child. This is an execution-profile incompatibility; no source witness was freshly verified in that attempt.
+
+Static inspection also found that the first harness compared its relative fault-output path with the runtime's absolute output path. The narrow successor `test_remaining.py` resolves the test output absolutely before matching the final parent write. Its only controls are the previously unfinished genuine source/parent-persistence case and labelled synthetic timeout. It does not rerun the eight passing groups or alter the runtime, source backend, native implementation or mathematical contracts.
+
+Root explicitly authorized a separate 30-second wall / 30-second hard CPU / 512 MiB address-space / 16 MiB per-file guard, retaining the original cgroup and free-resource floors. This matches the existing source backend's own limits. Lean controls its scheduling. The actual successor execution result must be read from its separate receipt; preparation of this repair does not assert success.
+
+`test_fault_replay.py` was prepared as a labelled historical-receipt fallback and has not been executed. It supplies no fresh source-backend evidence and is unnecessary if the genuine successor passes. The original `test_composition.py` and every first-run output remain unchanged.

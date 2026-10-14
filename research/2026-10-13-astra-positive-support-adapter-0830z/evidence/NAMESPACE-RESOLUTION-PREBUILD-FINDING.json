@@ -1,0 +1,115 @@
+{
+  "schema": "astra_namespace_resolution_prebuild_finding_v1",
+  "recorded_utc": "2026-10-13T23:58:14.168651+00:00",
+  "official_toolchain_source": {
+    "path": "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/Lean/Util/Path.lean",
+    "sha256": "52cf9aa41a82db18d0d3c93bf6257d064f773af9e62b8b43be89ce1b0e00055f",
+    "excerpt_lines_55_75": [
+      "",
+      "namespace SearchPath",
+      "",
+      "/-- If the package of `mod` can be found in `sp`, return the path with extension",
+      "`ext` (`lean` or `olean`) corresponding to `mod`. Otherwise, return `none`. Does",
+      "not check whether the returned path exists. -/",
+      "def findWithExt (sp : SearchPath) (ext : String) (mod : Name) : IO (Option FilePath) := do",
+      "  let pkg := mod.getRoot.toString (escape := false)",
+      "  let root? \u2190 sp.findM? fun p =>",
+      "    (p / pkg).isDir <||> ((p / pkg).addExtension ext).pathExists",
+      "  return root?.map (modToFilePath \u00b7 mod ext)",
+      "",
+      "/-- Like `findWithExt`, but ensures the returned path exists. -/",
+      "def findModuleWithExt (sp : SearchPath) (ext : String) (mod : Name) : IO (Option FilePath) := do",
+      "  if let some path \u2190 findWithExt sp ext mod then",
+      "    if \u2190 path.pathExists then",
+      "      return some path",
+      "  return none",
+      "",
+      "def findAllWithExt (sp : SearchPath) (ext : String) : IO (Array FilePath) := do",
+      "  let mut paths := #[]"
+    ],
+    "excerpt_lines_115_132": [
+      "",
+      "/-- Find the compiled `.olean` of a module in the `LEAN_PATH` search path. -/",
+      "partial def findOLean (mod : Name) : IO FilePath := do",
+      "  let sp \u2190 searchPathRef.get",
+      "  if let some fname \u2190 sp.findWithExt \"olean\" mod then",
+      "    return fname",
+      "  else",
+      "    let pkg := FilePath.mk <| mod.getRoot.toString (escape := false)",
+      "    throw <| IO.userError s!\"unknown module prefix '{pkg}'\\n\\n\\",
+      "      No directory '{pkg}' or file '{pkg}.olean' in the search path entries:\\n\\",
+      "      {\"\\n\".intercalate <| sp.map (\u00b7.toString)}\"",
+      "",
+      "/-- Find the `.lean` source of a module in a `LEAN_SRC_PATH` search path. -/",
+      "partial def findLean (sp : SearchPath) (mod : Name) : IO FilePath := do",
+      "  if let some fname \u2190 sp.findWithExt \"lean\" mod then",
+      "    return fname",
+      "  else",
+      "    let pkg := FilePath.mk <| mod.getRoot.toString (escape := false)"
+    ]
+  },
+  "observed_import_query_failure": "research/2026-10-13-astra-follow-on-import-query-2355z/evidence/import-query-v1",
+  "owned_builder_sha256": "9d9797da3f01c5af31e16e8a622d1e595c2460d590f6306f1ee41118371a0f48",
+  "owned_builder_executed": false,
+  "finding": "Lean source and object lookup choose first namespace root, not first existing full module file. Prepending partial owned Mathlib objects would hide complete external Mathlib imports.",
+  "selected_upstream_equivalence": [
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.Polynomial",
+      "selected_sha256": "43330a5e928a56af89b209101f98be347937384d2d435f875e2eaff698ccd650",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Polynomial.lean",
+      "upstream_sha256": "43330a5e928a56af89b209101f98be347937384d2d435f875e2eaff698ccd650"
+    },
+    {
+      "module": "Mathlib.Algebra.MvPolynomial.Funext",
+      "selected_sha256": "cb1821884a139917b692103a0b267115179cd4e7084da5487857ec49abb0cc7e",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/MvPolynomial/Funext.lean",
+      "upstream_sha256": "cb1821884a139917b692103a0b267115179cd4e7084da5487857ec49abb0cc7e"
+    },
+    {
+      "module": "Mathlib.Algebra.Polynomial.CoeffList",
+      "selected_sha256": "98bacb29fe3175fbb3f17544b09c1bf1324871d12bee6551638c5e42e713b269",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/CoeffList.lean",
+      "upstream_sha256": "98bacb29fe3175fbb3f17544b09c1bf1324871d12bee6551638c5e42e713b269"
+    },
+    {
+      "module": "Mathlib.Data.List.Destutter",
+      "selected_sha256": "adaa2255e20191805154bda8e146bc419cbd4550f36fb5f63dfee289f9342134",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Data/List/Destutter.lean",
+      "upstream_sha256": "adaa2255e20191805154bda8e146bc419cbd4550f36fb5f63dfee289f9342134"
+    },
+    {
+      "module": "Mathlib.Algebra.Polynomial.RuleOfSigns",
+      "selected_sha256": "7e8c440db1d4d9ecdeb248f2caac59cbd71351f10f1ffdd82d66daebcfe84b3e",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/RuleOfSigns.lean",
+      "upstream_sha256": "7e8c440db1d4d9ecdeb248f2caac59cbd71351f10f1ffdd82d66daebcfe84b3e"
+    },
+    {
+      "module": "Mathlib.Algebra.Polynomial.Basis",
+      "selected_sha256": "75b326d7f4d3216da9e58dce0bd38d97bd55c41ab016e6deafd74eb82e7bca8d",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Algebra/Polynomial/Basis.lean",
+      "upstream_sha256": "75b326d7f4d3216da9e58dce0bd38d97bd55c41ab016e6deafd74eb82e7bca8d"
+    },
+    {
+      "module": "Mathlib.Analysis.Asymptotics.SpecificAsymptotics",
+      "selected_sha256": "1e238d248bacb49378e0961d34e99f4ba9a876498ceaed7ce27e654a4334b738",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Asymptotics/SpecificAsymptotics.lean",
+      "upstream_sha256": "1e238d248bacb49378e0961d34e99f4ba9a876498ceaed7ce27e654a4334b738"
+    },
+    {
+      "module": "Mathlib.Analysis.Polynomial.Basic",
+      "selected_sha256": "6cd16c6cc5450af245e00c691f20dd2a63f072f54ad0361e0c3fea3a08b76d00",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Polynomial/Basic.lean",
+      "upstream_sha256": "6cd16c6cc5450af245e00c691f20dd2a63f072f54ad0361e0c3fea3a08b76d00"
+    },
+    {
+      "module": "Mathlib.Analysis.Polynomial.Order",
+      "selected_sha256": "bf05560594215319b7288b07403bd818d378f6f8e2ea59da58d31cde31ae6d27",
+      "upstream_path": "/workspace/scratch/astra-mathlib-0645/Mathlib/Analysis/Polynomial/Order.lean",
+      "upstream_sha256": "bf05560594215319b7288b07403bd818d378f6f8e2ea59da58d31cde31ae6d27"
+    }
+  ],
+  "proposed_repair": "Before the owned-provider stage, preserve existing builder source and review complete authenticated Mathlib namespace precedence with explicit source/object equivalence and research/Astra namespace collision refusal.",
+  "active_external_plan_changed": false,
+  "active_external_build_changed": false,
+  "no_theorem_source_changes": true
+}

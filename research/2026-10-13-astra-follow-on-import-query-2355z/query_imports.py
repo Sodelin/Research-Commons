@@ -124,6 +124,7 @@ class Queries:
         self.headers = headers
         self.allowed_roots = [root.resolve() for root in allowed_roots]
         self.rows = []
+        self.route_equivalence_sha256 = None
 
     def execute(self, source, cwd, env, phase, expected_imports=None, expected_source_sha256=None):
         pause_check()
@@ -149,6 +150,7 @@ class Queries:
                            'LEAN_NUM_THREADS', 'LEAN_STACK_SIZE_KB', 'LEAN_IMPORT_WORKERS',
                            'MIMALLOC_ARENA_RESERVE', 'RAYON_NUM_THREADS']},
                        expected_imports=expected_imports, query_wall_seconds=QUERY_WALL_SECONDS,
+                       route_equivalence_sha256=self.route_equivalence_sha256,
                        source_compilation_performed=False, object_authentication_performed=False)
         save(directory / 'REQUEST.json', request)
         start = time.monotonic()
@@ -239,12 +241,46 @@ def run(output):
             if sha(row['source']) != row['source_sha256']:
                 raise ValueError('preserved official source body changed: ' + row['module'])
         copy_new(SUPPORT / 'EXTERNAL-PLAN.json', output / 'PRESERVED-ACTIVE-PLAN.json')
+        # Lean chooses a namespace root before resolving its full subpath. A
+        # partial materialized Mathlib directory first would mask upstream's
+        # remaining Mathlib source files. Route that namespace upstream ONLY
+        # after proving equality of every selected owned Mathlib body.
+        owned_mathlib = [row for row in selected if row['module'].startswith('Mathlib.')]
+        if len(owned_mathlib) != 9:
+            raise ValueError('selected owned Mathlib equivalence scope changed')
+        routes = []
+        for row in owned_mathlib:
+            upstream = serial.source_for(row['module'], repos)
+            original = Path(owned[row['module']]['original_path'])
+            materialized = Path(owned[row['module']]['source'])
+            if not (upstream.read_bytes() == materialized.read_bytes() == original.read_bytes()):
+                raise ValueError('upstream routing would change a selected owned Mathlib body: ' + row['module'])
+            if sha(upstream) != row['sha256'] or headers.imports(upstream) != row['imports']:
+                raise ValueError('selected/upstream Mathlib header or source identity differs')
+            routes.append(dict(module=row['module'], selected_sha256=row['sha256'],
+                original=str(original), queried_materialized_source=str(materialized),
+                import_provider=str(upstream.resolve()), upstream_sha256=sha(upstream),
+                full_bytes_equal=True, same_selected_version=True,
+                object_authentication_performed=False))
+        save(output / 'ROUTE-EQUIVALENCE.json', dict(
+            schema='astra_owned_mathlib_source_route_equivalence_v1',
+            reason='complete upstream Mathlib namespace before the partial materialized namespace',
+            routes=routes, original_owned_source_query_paths_preserved=True,
+            research_namespaces='materialized selected provider; no upstream replacement',
+            object_authentication_performed=False))
         queries = Queries(output, headers, [MATERIALIZED, CORE_SOURCE, *repos])
+        queries.route_equivalence_sha256 = sha(output / 'ROUTE-EQUIVALENCE.json')
         owned_env = env.copy()
-        owned_env['LEAN_SRC_PATH'] = str(MATERIALIZED) + os.pathsep + env['LEAN_SRC_PATH']
-        owned_env['LEAN_PATH'] = str(MATERIALIZED / '.lake/build/lib/lean') + os.pathsep + env['LEAN_PATH']
+        owned_env['LEAN_SRC_PATH'] = os.pathsep.join([str(MATHLIB), str(MATERIALIZED),
+            *[path for path in env['LEAN_SRC_PATH'].split(os.pathsep) if path != str(MATHLIB)]])
+        upstream_objects = str(MATHLIB / '.lake/build/lib/lean')
+        owned_env['LEAN_PATH'] = os.pathsep.join([upstream_objects,
+            str(MATERIALIZED / '.lake/build/lib/lean'),
+            *[path for path in env['LEAN_PATH'].split(os.pathsep) if path != upstream_objects]])
 
         def resolved(name):
+            if name.startswith('Mathlib.'):
+                return str(serial.source_for(name, repos).resolve())
             if name in owned:
                 return owned[name]['source']
             if name == 'Init' or name.startswith(('Lean.', 'Init.', 'Std.', 'Lake.')):
@@ -315,6 +351,7 @@ def run(output):
              previous_plan_sha256=PINNED[SUPPORT / 'EXTERNAL-PLAN.json'],
              previous_import_edges='AUTHENTICATED_REUSE_OF_PINNED_COMPILER_QUERY_PLAN',
              previous_source_records_authenticated=len(old['modules']),
+             owned_mathlib_route_equivalence_sha256=queries.route_equivalence_sha256,
              object_paths='EXISTING_CANDIDATES_ONLY; NOT INSPECTED, AUTHENTICATED OR WRITTEN',
              source_compilation_performed=False, object_authentication_performed=False,
              active_plan_mutation=False, compiler_queries=queries.rows)

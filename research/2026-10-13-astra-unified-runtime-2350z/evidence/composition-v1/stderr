@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/test_composition.py", line 241, in <module>
+    main()
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/test_composition.py", line 214, in main
+    case('parent-persistence-regression-with-real-source-child', persistence_fault)
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/test_composition.py", line 75, in case
+    detail = action()
+             ^^^^^^^^
+  File "/workspace/Research-Commons/research/2026-10-13-astra-unified-runtime-2350z/test_composition.py", line 204, in persistence_fault
+    child = result['delegate']['result']; original = json.loads((out / 'delegate/RESULT.json').read_bytes())
+            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'result'
