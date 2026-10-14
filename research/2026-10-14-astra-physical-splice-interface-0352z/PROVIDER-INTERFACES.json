@@ -1,0 +1,505 @@
+{
+  "schema": "astra.minimal-physical-splice-interface-design.v1",
+  "status": "SOURCE_ONLY_DESIGN_NO_LEAN_STUB_NO_EXECUTION",
+  "scope": "One eligible unprotected equal-exposure nonroot actual two-port splice; no iteration/hybrid bound/code catalogue/certificate consumer is claimed.",
+  "source_selection": {
+    "path": "research/2026-10-13-astra-unified-solver-0645z/intake/SELECTED-LEAN.json",
+    "sha256": "77e4fb8bc6812eb6a183b33b3911a19bcc3cfc321e9cf5ea1fe9f30566cdfb14",
+    "accepted_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389"
+  },
+  "predecessor": {
+    "path": "communications/2026-10-14-astra-bounded-witness-feasibility-0347z.json",
+    "sha256": "a7a6ca8021468197250af60795fc3c16b55f3231cc8c4f8b1393a77ddc127ed7"
+  },
+  "root_owned_rate_implementation": "research/2026-10-14-astra-equal-exposure-splice-0350z; still separately owned/reviewed, no version selected or altered by this design.",
+  "proposed_inputs": [
+    "S : G1ActualGraphNormalization.Source X, including literal RootedBinary/CutChild/Calendar",
+    "H : OriginalParentRegistry S.network; p : HybridProbabilities S.network; r : PositivePairRates S.Edge",
+    "b : S.network.graph.Blob; hb : b is not the root blob; hp : card (S.network.BlobPort b) = 2",
+    "A is exactly the extractedBigon used by G1ActualGraphNormalization.splice S b hb hp",
+    "Equal coalescent exposures of A.fragment.parents.parent0 and parent1",
+    "Fixed expanded injective PE edge labels avoid removedEdges; PH hybrid labels avoid the removed hybrid",
+    "Actual outer-semidirected partner of S for the admission corollary"
+  ],
+  "new_proof_obligations": [
+    {
+      "id": "registry",
+      "conclusion": "Construct J : Hybrid T.network ↪ Hybrid S.network and Hprime preserving each original ordered parent edge occurrence via Sum.inl; pprime.gamma = p.gamma composed with J. Prove range(J) is all old hybrids except the removed one.",
+      "method": "actual_splice_hybrid_iff, actual_in_edge_kept_of_ne_child and actual_child_target_not_hybrid; subtype/parent target/distinctness proofs. Never canonicalParentRegistry."
+    },
+    {
+      "id": "switching",
+      "conclusion": "For every original bank coin, commonSwitching T.network Hprime (coin composed with J) equals restrictSwitching of commonSwitching S.network H coin.",
+      "method": "Literal commonSwitching definition and switching_ext. Retained original parent bits remain oriented; synthetic ordinary edge is kept. liftSwitching supplies one deleted-arm lift, not the bank marginal."
+    },
+    {
+      "id": "clade_exposure",
+      "conclusion": "For every original bank, weightedNormalize of the constructed new tuple at coin composed with J equals original weightedNormalize at coin.",
+      "method": "edgeTaxa_selected_descendants plus actual_retained_selected_descendants_iff; upper/hybrid descendants equal child interface; common_route_kept gives empty clade on the unchosen arm. Group entry+chosenarm+child by their identical clade, replace with new-edge exposure; proper-clade finite sums, empty/full normalized to zero."
+    },
+    {
+      "id": "bank_marginal",
+      "conclusion": "Map originalRegisterMeasure.toPMF through coin -> coin composed with J equals the actual new originalRegisterMeasure.toPMF.",
+      "method": "Use its literal independent original-site Bernoulli product, pprime gamma pullback, J range excluding exactly the deleted hybrid; sum that coordinate to (1-gamma)+gamma=1. Preserve the entire retained joint bank. This does not factor the supplied correlated configuration PMF."
+    },
+    {
+      "id": "masks_and_future_rows",
+      "conclusion": "Pullback commutes pointwise with overrideBank; the same future joint PMF and original external mask table give equal randomizedTreeLaw and hence randomizedFullForestLaw for all finite Copy/sample.",
+      "method": "Apply proved fixed-bank identity to overridden bank, bank pushforward and actual configurationBankPMF; finally existing randomized_tree_law_eq_all_forest_responses. No output equality is a source record field or premise."
+    },
+    {
+      "id": "protected_admission",
+      "conclusion": "Transport fixed PE/PH labels with exact rate/date/gamma and raw-edge identity; derive outer witness for exact T=splice S b hb hp.",
+      "method": "Literal retained-edge/hybrid embeddings and rates; existing actual_step_preserves_outer_semidirected_partner applied to Step.splice. Any adapter using arbitrary A instead must prove equality to that exact extracted splice, not assume outer admission."
+    }
+  ],
+  "public_quantifiers": "Construct T,J,Hprime,pprime,rprime and external label images from fixed source/cell/marks once. Then quantify universally over original bank, future Config/PMF/masks and Copy/sample. No unknown target or desired law/cardinality/source-existence premise. COMMON only; no independent-pulse, timed-law, changed-parameter-menu or arbitrary-unmarked-tie extension.",
+  "specific_cautions": [
+    "ratesFromLengths resets ancestral=1; use root constructor preserving old ancestral rate literally.",
+    "Parallel arms have the same actual endpoints, but exposure equality must stay explicit; do not conclude arbitrary arms have equal calendar durations.",
+    "The bigon fragment parent0 can differ from supplied H parent0. Preserve H order on retained hybrids; prove deletion is branch-independent by equal exposure, not by relabelling bits.",
+    "Finite source/direct-import hashes are authenticated locally; no official query/compilation or placeholder/axiom execution is claimed."
+  ],
+  "selected_providers": [
+    {
+      "aggregate_root": true,
+      "bytes": 5499,
+      "git_blob": "78e0892af560799df373efc63e1ffaf23022a12c",
+      "imports": [
+        "G1SpliceLSA",
+        "Mathlib.Data.Fintype.Sum"
+      ],
+      "module": "G1SplicedSourceAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9.lean",
+      "sha256": "d55602e4b4fb06c2006a8b0df94d1ea798500c5c75ab09127b5c27d23bff7ac9",
+      "reviewed_interfaces": [
+        {
+          "declaration": "splicedNetwork",
+          "line": 24,
+          "header": "noncomputable def splicedNetwork (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b) :\n    RootedBinary (SplicedVertex N b A) (SplicedEdge N b A) X where"
+        },
+        {
+          "declaration": "splicedCalendar",
+          "line": 64,
+          "header": "noncomputable def splicedCalendar (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (C : Calendar N.graph) : Calendar (splicedNetwork N hc b hb A).graph where"
+        },
+        {
+          "declaration": "actual_spliced_cut_child",
+          "line": 50,
+          "header": "theorem actual_spliced_cut_child (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b) :\n    CutChild (splicedNetwork N hc b hb A) := by"
+        },
+        {
+          "declaration": "actual_splice_strictly_smaller",
+          "line": 91,
+          "header": "theorem actual_splice_strictly_smaller (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) : Fintype.card (SplicedVertex N b A) < Fintype.card V := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 9444,
+      "git_blob": "0305d1f003ffc3662ae0c538910cda0df0df5cf3",
+      "imports": [
+        "G1SpliceRootBlob"
+      ],
+      "module": "G1SpliceDegrees",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/cc7e4eaba214a2a53be7499f49e5b36432b362500ae5886e90e7194b67eb008c.lean",
+      "sha256": "cc7e4eaba214a2a53be7499f49e5b36432b362500ae5886e90e7194b67eb008c",
+      "reviewed_interfaces": [
+        {
+          "declaration": "actual_in_edge_kept_of_ne_child",
+          "line": 30,
+          "header": "lemma actual_in_edge_kept_of_ne_child (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) (v : SplicedVertex N b A)\n    (e : E) (ht : N.graph.target e = v.val) (hne : e ≠ A.child) : e ∉ removedEdges N b A := by"
+        },
+        {
+          "declaration": "actual_splice_hybrid_iff",
+          "line": 184,
+          "header": "theorem actual_splice_hybrid_iff (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) (v : SplicedVertex N b A) :\n    (spliceGraph N hc b A).IsHybrid v ↔ N.graph.IsHybrid v.val := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6713,
+      "git_blob": "ae083382d6b57007cd49b23ad6b863b3daca3591",
+      "imports": [
+        "G1SplicedSourceAdmission",
+        "SourceResolve"
+      ],
+      "module": "G1SplicedOriginalSwitching",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e350c5d7f8103c9a50f14fd315b53a21d232b646e4a2b65d3ea7c1bf905a4127.lean",
+      "sha256": "e350c5d7f8103c9a50f14fd315b53a21d232b646e4a2b65d3ea7c1bf905a4127",
+      "reviewed_interfaces": [
+        {
+          "declaration": "actual_child_target_not_hybrid",
+          "line": 15,
+          "header": "lemma actual_child_target_not_hybrid (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) : ¬N.graph.IsHybrid (N.graph.target A.child) := by"
+        },
+        {
+          "declaration": "restrictSwitching",
+          "line": 27,
+          "header": "noncomputable def restrictSwitching (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (S : N.Switching) : (splicedNetwork N hc b hb A).Switching where"
+        },
+        {
+          "declaration": "liftSwitching",
+          "line": 70,
+          "header": "noncomputable def liftSwitching (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (T : (splicedNetwork N hc b hb A).Switching) : N.Switching where"
+        },
+        {
+          "declaration": "actual_restrict_lift_switching",
+          "line": 137,
+          "header": "theorem actual_restrict_lift_switching (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (T : (splicedNetwork N hc b hb A).Switching) :\n    restrictSwitching N hc b hb A (liftSwitching N hc b hb A T) = T := by"
+        },
+        {
+          "declaration": "switching_ext",
+          "line": 127,
+          "header": "lemma switching_ext (N : RootedBinary V E X) (S T : N.Switching)\n    (h : ∀ e, S.keep e ↔ T.keep e) : S = T := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6544,
+      "git_blob": "706b1545c8d92e857616aa1d6abcfc3add062e81",
+      "imports": [
+        "G1SplicedOriginalSwitching"
+      ],
+      "module": "G1SwitchingDescendantTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/d49fb30742f2ea031c2db854daf5882516cc18ae550e13d4ed5460e0c0d0f2b7.lean",
+      "sha256": "d49fb30742f2ea031c2db854daf5882516cc18ae550e13d4ed5460e0c0d0f2b7",
+      "reviewed_interfaces": [
+        {
+          "declaration": "entry_kept",
+          "line": 63,
+          "header": "lemma entry_kept (N : RootedBinary V E X) (hc : CutChild N) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) (S : N.Switching) : S.keep A.entry := by"
+        },
+        {
+          "declaration": "child_kept",
+          "line": 72,
+          "header": "lemma child_kept (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) (S : N.Switching) : S.keep A.child :="
+        },
+        {
+          "declaration": "actual_retained_selected_descendants_iff",
+          "line": 110,
+          "header": "theorem actual_retained_selected_descendants_iff (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (S : N.Switching) (v w : SplicedVertex N b A) :\n    (restrictSwitching N hc b hb A S).graph.DReach v w ↔ S.graph.DReach v.val w.val := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 5876,
+      "git_blob": "6835ba514fc5aaeb94d1fce0d3f72a35d7e682d3",
+      "imports": [
+        "G1SwitchingDescendantTransport",
+        "G5OriginalPruningClusterPreservation"
+      ],
+      "module": "G1ActualSelectedClusterTransport",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ed0c37f91f85b8db92a8e25a27e9c895549f6775b69836e7b92ec68e41a87174.lean",
+      "sha256": "ed0c37f91f85b8db92a8e25a27e9c895549f6775b69836e7b92ec68e41a87174",
+      "reviewed_interfaces": [
+        {
+          "declaration": "actual_selected_hybrid_descendants",
+          "line": 17,
+          "header": "theorem actual_selected_hybrid_descendants (N : RootedBinary V E X) (b : N.graph.Blob)\n    (A : ActualBlobBigon N b) (S : N.Switching) (x : X) :\n    S.graph.DReach A.fragment.parents.hybrid (N.leaf x) ↔\n      S.graph.DReach (N.graph.target A.child) (N.leaf x) := by"
+        },
+        {
+          "declaration": "actual_selected_upper_descendants",
+          "line": 32,
+          "header": "theorem actual_selected_upper_descendants (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (A : ActualBlobBigon N b) (S : N.Switching) (x : X) :\n    S.graph.DReach A.fragment.upper (N.leaf x) ↔\n      S.graph.DReach (N.graph.target A.child) (N.leaf x) := by"
+        },
+        {
+          "declaration": "actual_retained_selected_cluster",
+          "line": 60,
+          "header": "theorem actual_retained_selected_cluster (N : RootedBinary V E X) (hc : CutChild N)\n    (b : N.graph.Blob) (hb : b ≠ N.graph.blobOf N.root) (A : ActualBlobBigon N b)\n    (S : N.Switching) (panel : Finset X) (v : SplicedVertex N b A) :\n    sampledDescendants (splicedNetwork N hc b hb A) (restrictSwitching N hc b hb A S) panel v =\n      sampledDescendants N S panel v.val := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4636,
+      "git_blob": "290f0199ee4a1d3a0bbf10026d23e77eec3ec60d",
+      "imports": [
+        "G1SplicedSourceAdmission"
+      ],
+      "module": "G1ActualGraphNormalization",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6.lean",
+      "sha256": "b8f7d5f37784833e1dd9386c1882e7b90168c1c546580adaa9191e459426e7d6",
+      "reviewed_interfaces": [
+        {
+          "declaration": "Source",
+          "line": 19,
+          "header": "structure Source (X : Type w) [Fintype X] where"
+        },
+        {
+          "declaration": "splice",
+          "line": 51,
+          "header": "noncomputable def splice (S : Source X) (b : S.network.graph.Blob)\n    (hb : b ≠ S.network.graph.blobOf S.network.root)\n    (hp : Fintype.card (S.network.BlobPort b) = 2) : Source X :="
+        },
+        {
+          "declaration": "Step",
+          "line": 61,
+          "header": "inductive Step : Source.{u,v,w} X → Source.{u,v,w} X → Prop"
+        },
+        {
+          "declaration": "actual_step_strictly_smaller",
+          "line": 80,
+          "header": "theorem actual_step_strictly_smaller {S T : Source X} (h : Step S T) :\n    Fintype.card T.Vertex < Fintype.card S.Vertex := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 4117,
+      "git_blob": "8deb42036c9be32d30c5b1dafb65baec8ef1cf2b",
+      "imports": [
+        "G1RootSubdivisionPlanarAdmission"
+      ],
+      "module": "G1ExactSemidirectedPartnerAdmission",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8c6b3453ca15a6510081f1a057cac319ac95aa144372b3e5e2a25e39d2c544e4.lean",
+      "sha256": "8c6b3453ca15a6510081f1a057cac319ac95aa144372b3e5e2a25e39d2c544e4",
+      "reviewed_interfaces": [
+        {
+          "declaration": "HasOuterSemidirectedPartner",
+          "line": 34,
+          "header": "def HasOuterSemidirectedPartner {Y : Type w} [Fintype Y] (S : Source.{u,v,w} Y) : Prop :="
+        },
+        {
+          "declaration": "actual_step_preserves_outer_semidirected_partner",
+          "line": 56,
+          "header": "theorem actual_step_preserves_outer_semidirected_partner {Y : Type w} [Fintype Y]\n    {S T : Source.{u,v,w} Y} (step : Step S T) (hS : HasOuterSemidirectedPartner S) :\n    HasOuterSemidirectedPartner T := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 8794,
+      "git_blob": "36628bd74bfb60f1b81ee02897f7c809075cc0c7",
+      "imports": [
+        "G5OriginalRouteHazard",
+        "G4PathResolvedMeasurement",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.Data.Finset.Card"
+      ],
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6.lean",
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "reviewed_interfaces": [
+        {
+          "declaration": "OriginalParentRegistry",
+          "line": 57,
+          "header": "structure OriginalParentRegistry (N : RootedBinary V E X) where"
+        },
+        {
+          "declaration": "registry_parent_target",
+          "line": 65,
+          "header": "lemma registry_parent_target (N : RootedBinary V E X) (H : OriginalParentRegistry N)\n    (v : Hybrid N) (b : Bool) : N.graph.target ((H.parents v).parent b) = v.1 := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 7816,
+      "git_blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8",
+      "imports": [
+        "UnifiedLean.Source.NativePairClockLaw",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Countable"
+      ],
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31.lean",
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "reviewed_interfaces": [
+        {
+          "declaration": "HybridProbabilities",
+          "line": 26,
+          "header": "structure HybridProbabilities (N : RootedBinary V E X) where"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 6232,
+      "git_blob": "e81593e2435b36f151cbf1b890a9ba49c8bf43cf",
+      "imports": [
+        "UnifiedLean.Source.SourceInitializedCalendar",
+        "UnifiedLean.Source.NativeIndependentPairMixture"
+      ],
+      "module": "UnifiedLean.Source.SourceNaturalInitialization",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1.lean",
+      "sha256": "18050e86ebeb2d11ced94d0e3a2199f0c58b7ae4d7029288c28b0c893ec159e1",
+      "reviewed_interfaces": [
+        {
+          "declaration": "originalGamma",
+          "line": 34,
+          "header": "noncomputable def originalGamma {N : RootedBinary V E X} (p : HybridProbabilities N)\n    (h : Hybrid N) : unitInterval := ⟨p.gamma h,⟨(p.positive h).le,(p.below_one h).le⟩⟩"
+        },
+        {
+          "declaration": "originalRegisterMeasure",
+          "line": 37,
+          "header": "noncomputable def originalRegisterMeasure (N : RootedBinary V E X) (p : HybridProbabilities N) :\n    Measure (Hybrid N → Bool) := Measure.pi (fun h => bitMeasure (originalGamma p h))"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 13246,
+      "git_blob": "fbe4496baf571f53181e0649196c91178035d1f2",
+      "imports": [
+        "G5OriginalGroupPathChronology",
+        "G5NativeOriginalRouteCoverage",
+        "SourceResolve",
+        "GraphSwitchingChoices"
+      ],
+      "module": "G5CommonSwitchingQuartetWitness",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611.lean",
+      "sha256": "4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611",
+      "reviewed_interfaces": [
+        {
+          "declaration": "commonSwitching",
+          "line": 22,
+          "header": "noncomputable def commonSwitching (N : RootedBinary V E X) (H : OriginalParentRegistry N)\n    (a : CommonSeed N) : N.Switching :="
+        },
+        {
+          "declaration": "common_route_kept",
+          "line": 41,
+          "header": "lemma common_route_kept (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (a : CommonSeed N) (x : X) {e : E}\n    (he : e ∈ (commonRoutes N C H a).edges x) : (commonSwitching N H a).keep e := by"
+        },
+        {
+          "declaration": "common_route_edge_iff_selected_descendant",
+          "line": 99,
+          "header": "theorem common_route_edge_iff_selected_descendant (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (a : CommonSeed N) (x : X) (e : (commonSwitching N H a).Edge) :\n    e.val ∈ (commonRoutes N C H a).edges x ↔\n      (commonSwitching N H a).graph.DReach (N.graph.target e.val) (N.leaf x) := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": false,
+      "bytes": 7614,
+      "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+      "imports": [
+        "G7WholeEdgeExposureInvariant",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+      ],
+      "module": "G7OriginalSurvivalCoverage",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean",
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "reviewed_interfaces": [
+        {
+          "declaration": "exposure",
+          "line": 34,
+          "header": "noncomputable def exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (r : PositivePairRates E) (e : E) : ℝ :="
+        },
+        {
+          "declaration": "ratesFromLengths",
+          "line": 43,
+          "header": "noncomputable def ratesFromLengths (N : RootedBinary V E X) (C : Calendar N.graph)\n    (ell : E → ℝ) (h : ∀ e, 0 < ell e) : PositivePairRates E where"
+        },
+        {
+          "declaration": "ratesFromLengths_exposure",
+          "line": 50,
+          "header": "lemma ratesFromLengths_exposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (ell : E → ℝ) (h : ∀ e, 0 < ell e) (e : E) :\n    exposure N C (ratesFromLengths N C ell h) e = ell e := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 153015,
+      "git_blob": "389a66f88daf3f6d3a9155e88a0fd489b9565374",
+      "imports": [
+        "UnifiedLean.Source.FiniteGenealogyEncoding",
+        "SourceForestKingmanProjection",
+        "UnifiedLean.Source.SourcePoissonExponential",
+        "UnifiedLean.Source.SourceCompletedUnrankedTree",
+        "G5CommonSwitchingQuartetWitness",
+        "G5OriginalProgramSurvival",
+        "G6GuardedBinErasure",
+        "ActualStoredRegister",
+        "G4ActualCommonSelectorSupport",
+        "G4ActualSelectedPathExposure",
+        "G7OrderedFrontierProduct",
+        "G1ActualDisplayedTreeFamily",
+        "G7OriginalEdgeOperators",
+        "G7AncestralPolynomialKernel",
+        "UnifiedLean.Source.SourceCompletionHarmonic",
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "UnifiedLean.Source.OriginalFixedIDControls",
+        "Mathlib.Probability.Distributions.Uniform"
+      ],
+      "module": "G4WeightedOrdinaryTreeLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9.lean",
+      "sha256": "edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9",
+      "reviewed_interfaces": [
+        {
+          "declaration": "edgeTaxa",
+          "line": 2223,
+          "header": "noncomputable def edgeTaxa (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (coin : CommonSeed N) (e : E) : Finset X :="
+        },
+        {
+          "declaration": "edgeTaxa_selected_descendants",
+          "line": 2232,
+          "header": "lemma edgeTaxa_selected_descendants (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (coin : CommonSeed N)\n    (e : (commonSwitching N H coin).Edge) (x : X) :\n    x ∈ edgeTaxa N C H coin e.val ↔\n      (commonSwitching N H coin).graph.DReach (N.graph.target e.val) (N.leaf x) := by"
+        },
+        {
+          "declaration": "edgeExposure",
+          "line": 2240,
+          "header": "noncomputable def edgeExposure (N : RootedBinary V E X) (C : Calendar N.graph)\n    (r : PositivePairRates E) (e : E) : ℝ≥0 :="
+        },
+        {
+          "declaration": "edgeExposure_positive",
+          "line": 2245,
+          "header": "lemma edgeExposure_positive (N : RootedBinary V E X) (C : Calendar N.graph)\n    (r : PositivePairRates E) (e : E) : 0 < edgeExposure N C r e := by"
+        },
+        {
+          "declaration": "weightedNormalize",
+          "line": 2253,
+          "header": "noncomputable def weightedNormalize (N : RootedBinary V E X) (C : Calendar N.graph)\n    (H : OriginalParentRegistry N) (r : PositivePairRates E)\n    (coin : CommonSeed N) : CladeWeights X := fun A =>"
+        },
+        {
+          "declaration": "actual_common_completed_weighted_tree_law",
+          "line": 2972,
+          "header": "theorem actual_common_completed_weighted_tree_law (N : RootedBinary V E X)\n    (C : Calendar N.graph) (H : OriginalParentRegistry N) (p : HybridProbabilities N)\n    (r : PositivePairRates E) (sample : Copy → X) (coin : CommonSeed N) :\n    ((sourceProgram N r (compiledCalendarProgram N C H (originalGamma p) (fun _ => true))\n      (initialCode N sample (originalRegister N coin))).bind\n        (ancestralCompletion N r (Fintype.card Copy))).map\n          (fun d => sourceUnrankedForest (state d) Finset.univ) =\n      ordinaryCompletedTreeLaw (weightedNormalize N C H r coin) sample := by"
+        },
+        {
+          "declaration": "actual_controlled_completed_weighted_tree_law",
+          "line": 2999,
+          "header": "theorem actual_controlled_completed_weighted_tree_law (N : RootedBinary V E X)\n    (C : Calendar N.graph) (H : OriginalParentRegistry N) (p : HybridProbabilities N)\n    (r : PositivePairRates E) (mask : OriginalMask N) (sample : Copy → X)\n    (coin : CommonSeed N) :\n    ((sourceProgram N r (controlledCalendarProgram N C H p (fun _ => true) mask)\n      (initialCode N sample (originalRegister N coin))).bind\n        (ancestralCompletion N r (Fintype.card Copy))).map\n          (fun d => sourceUnrankedForest (state d) Finset.univ) =\n      ordinaryCompletedTreeLaw (weightedNormalize N C H r (overrideBank N mask coin)) sample := by"
+        }
+      ]
+    },
+    {
+      "aggregate_root": true,
+      "bytes": 187616,
+      "git_blob": "5a866bc90937ae00981a0f1305a58a07704036e4",
+      "imports": [
+        "G4WeightedOrdinaryTreeLaw",
+        "G4ActualPositiveGridUniqueness",
+        "G7SinglePopulationPolynomialKernel",
+        "Mathlib.Algebra.MvPolynomial.Funext"
+      ],
+      "module": "G4WholeProfileDetermination",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "reviewed_interfaces": [
+        {
+          "declaration": "randomizedFullForestLaw",
+          "line": 3473,
+          "header": "noncomputable def randomizedFullForestLaw {Copy : Type*} [Fintype Copy] [DecidableEq Copy]\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (ν : PMF Config) (masks : Config → OriginalMask N) (sample : Copy → X) :\n    PMF (Finset (UnrankedTree Copy)) :="
+        },
+        {
+          "declaration": "randomizedTreeLaw",
+          "line": 3480,
+          "header": "noncomputable def randomizedTreeLaw\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (ν : PMF Config) (masks : Config → OriginalMask N) : PMF (CladeWeights X) :="
+        },
+        {
+          "declaration": "randomizedFullForestLaw_tree_average",
+          "line": 3489,
+          "header": "lemma randomizedFullForestLaw_tree_average {Copy : Type*} [Fintype Copy] [DecidableEq Copy]\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (ν : PMF Config) (masks : Config → OriginalMask N) (sample : Copy → X) :\n    randomizedFullForestLaw N C H p r ν masks sample =\n      (configurationBankPMF ν (originalRegisterMeasure N p).toPMF).bind\n        (fun z => ordinaryCompletedTreeLaw (maskedNormalizedTree N C H r (masks z.1) z.2) sample) := by"
+        },
+        {
+          "declaration": "randomized_tree_law_eq_all_forest_responses",
+          "line": 3616,
+          "header": "lemma randomized_tree_law_eq_all_forest_responses\n    {V' E' Config' : Type*} [Fintype V'] [Fintype E'] [Fintype Config']\n    [DecidableEq V'] [DecidableEq E']\n    (N : RootedBinary V E X) (C : Calendar N.graph) (H : OriginalParentRegistry N)\n    (p : HybridProbabilities N) (r : PositivePairRates E)\n    (ν : PMF Config) (masks : Config → OriginalMask N)\n    (N' : RootedBinary V' E' X) (C' : Calendar N'.graph) (H' : OriginalParentRegistry N')\n    (p' : HybridProbabilities N') (r' : PositivePairRates E')\n    (ν' : PMF Config') (masks' : Config' → OriginalMask N')\n    (he : randomizedTreeLaw N' C' H' p' r' ν' masks' = randomizedTreeLaw N C H p r ν masks)\n    (Copy : Type*) [Fintype Copy] [DecidableEq Copy] (sample : Copy → X) :\n    randomizedFullForestLaw N' C' H' p' r' ν' masks' sample =\n      randomizedFullForestLaw N C H p r ν masks sample := by"
+        }
+      ]
+    }
+  ]
+}
