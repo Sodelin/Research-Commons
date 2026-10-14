@@ -1,0 +1,48 @@
+--- query_four.py (preserved executed v1)
++++ query_four_v2.py (unexecuted successor)
+@@ -11,7 +11,7 @@
+ 
+ ROOT = Path('/workspace/Research-Commons')
+ HERE = Path(__file__).resolve().parent
+-OUT = Path('/workspace/scratch/astra-certified-header-query-0615-v1')
++OUT = Path('/workspace/scratch/astra-certified-header-query-0615-v2')
+ INPUTS_SHA = '0188968f24d51edf55cb3f9335e7c2a16bdd4148d63a007bf78a0d966ce2f7e0'
+ GUARD_SHA = 'f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3'
+ 
+@@ -34,9 +34,10 @@
+ 
+ def main():
+     pause()
+-    config = json.loads((HERE/'RUN-CONFIG.json').read_text())
++    config = json.loads((HERE/'RUN-CONFIG-v2.json').read_text())
+     assert config['runner_sha256'] == sha(__file__)
+     assert sha(HERE/'INPUTS.json') == INPUTS_SHA == config['inputs_sha256']
++    assert sha(HERE/'evidence/INIT-MULTIPLICITY-OBSERVATION.json') == 'ce09367d4ca53f945cde7a887f355f232d7d640da032a8c4d733ed4607f683a9'
+     assert config['guard_sha256'] == GUARD_SHA == sha(config['guard_command'][2])
+     parent = (Path('/proc')/str(os.getppid())/'cmdline').read_bytes().rstrip(b'\0').decode().split('\0')
+     assert parent == config['guard_command'], 'requires the exact configured frozen outer guard'
+@@ -75,7 +76,7 @@
+     pause()
+     OUT.mkdir()
+     save(OUT/'INVOCATION.json',dict(started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+-         runner_sha256=sha(__file__),inputs_sha256=INPUTS_SHA,run_config_sha256=sha(HERE/'RUN-CONFIG.json'),
++         runner_sha256=sha(__file__),inputs_sha256=INPUTS_SHA,run_config_sha256=sha(HERE/'RUN-CONFIG-v2.json'),
+          parent_guard_command=parent,compiler_invocations_for_elaboration=0,planned_header_queries=4))
+     save(OUT/'REUSED-SOURCE-QUERY-BINDINGS.json',dict(status='PRIOR_QUERY_SOURCE_BYTES_REBOUND_NOT_REQUERIED',sources=reuse,objects_authenticated=False))
+     save(OUT/'NAMESPACE-SOURCE-ROUTES.json',dict(routes=routes,objects_authenticated=False))
+@@ -110,8 +111,14 @@
+             assert all(r['bytes'] <= 4*1024**2 for r in record['outputs'].values())
+             actual=(directory/'stdout.log').read_text().splitlines()
+             assert all(line and Path(line).is_absolute() for line in actual)
+-            assert len(actual) == len(set(actual))
+             expected={d['path'] for d in row['expected_dependencies']}
++            init=row['expected_dependencies'][0]
++            assert init['module'] == 'Init'
++            # The pinned same-version 1710-query corpus emits Init exactly
++            # twice and every other dependency once. Preserve every line.
++            assert actual.count(init['path']) == 2
++            assert len(actual) == len(expected) + 1
++            assert all(actual.count(path) == (2 if path == init['path'] else 1) for path in expected)
+             assert set(actual) == expected, dict(actual=actual,expected=sorted(expected))
+             deps={d['path']:d for d in row['expected_dependencies']}
+             for path in actual:assert sha(path)==deps[path]['sha256']
