@@ -49,3 +49,11 @@ approximation family, formal proof or calibrated-target refutation was
 produced in this attempt. Hand correctness, model applicability, novelty
 and formal verification remain separate. This dated handoff does not
 promise background work after the chat's active turn ends.
+
+Publication readback, 02:39 UTC: the final ten-file packet reached main at
+`b9c9b85abc8e65fe99df0c718826277103179444`. All ten immutable unauthenticated
+GitHub raw downloads matched their committed bytes and SHA256 values;
+[receipt](../research/2026-10-13-codex-g4-renewed/PUBLICATION-FULL-SHOT-0236.json).
+The packet's 158 local Markdown links and staged whitespace check also
+passed. These checks establish publication integrity, not mathematical
+truth, formal verification or peer receipt.
