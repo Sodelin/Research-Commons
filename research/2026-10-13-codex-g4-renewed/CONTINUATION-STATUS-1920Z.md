@@ -1,5 +1,18 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## INDEPENDENT first-cut successor, 14 October 01:25 UTC
+
+The [scoped acceptance](critical-review/ROOT-INDEPENDENT-FIRST-CUT-AND-OPAQUE-TAIL-ACCEPTANCE.md)
+records exact all-law first-hybrid cut recovery and all-biased I-to-C
+recursion, with separate hand review. The positive-entry opaque-comb
+bound and conditional fair-selector identity narrow the upper-source
+observer problem. They do not recover its grouped joint port table or
+give finite INDEPENDENT forcing. The exact -1/3 shared-prefix example
+refutes an invalid inverse, not the calibrated theorem at its stated
+interface. General fair mixed-port transfer, the finite-prefix bridge
+and cap-uniform physical positive returns remain open; no new formal
+verification is claimed.
+
 ## BOTH-inclusive menu successor, 14 October 01:01 UTC
 
 The [menu acceptance](critical-review/ROOT-BOTH-INCLUSIVE-MENU-ACCEPTANCE.md)

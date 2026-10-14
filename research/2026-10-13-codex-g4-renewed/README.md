@@ -2,6 +2,15 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 01:25 UTC:** the reviewed
+[first-cut and opaque-tail packet](critical-review/ROOT-INDEPENDENT-FIRST-CUT-AND-OPAQUE-TAIL-ACCEPTANCE.md)
+recovers first-hybrid descendant cuts from entire INDEPENDENT laws and
+proves all-law I-to-C transfer for all-biased sources. It preserves an
+exact failed shared-prefix inverse and a checked positive-entry comb
+bound. General fair mixed-port transfer and the distinct finite-prefix
+bridge remain open. See the
+[Commons checkpoint](../../communications/2026-10-14-g4-independent-first-cut-0125z.md).
+
 **Latest checkpoint, 14 October 01:01 UTC:** the reviewed
 [actual-size gate and menu extension](critical-review/ROOT-BOTH-INCLUSIVE-MENU-ACCEPTANCE.md)
 extend semantic finite forcing to original BOTH-inclusive finite
