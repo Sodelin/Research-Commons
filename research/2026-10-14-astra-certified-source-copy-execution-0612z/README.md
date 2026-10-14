@@ -1,0 +1,7 @@
+# Authorized source-copy execution
+
+The coordinator authorized exactly one source-copy command at an idle, no-pause boundary. `COMMAND.json` records its literal argv and working directory, executable/source/catalog pins, inherited selected environment and resource observations. The command was `timeout 60s python3 -B research/2026-10-14-astra-certified-common-integration-0600z/materialize_certified.py` in the public repository. The frozen copier itself enforces 256 MiB address space, 30 CPU seconds and an 8 GiB disk floor, and refuses active compilers, queries and guards. No outer guard was invoked because the copier intentionally rejects one.
+
+The actual process exited 0 in 0.298 seconds. Its original stdout, stderr, process identity, waited OS status and copied materialization receipt are retained here. Readback checked all 1,644 library source files, the literal appended Lake configuration and the toolchain text at the fixed fresh destination `/workspace/scratch/astra-certified-common-sources-0600`. No compiled object was created or authenticated. The original source-only package and its historical manifest remain unchanged.
+
+This success establishes source copying and byte identity only. No Lean elaboration, import query, Lake build, printed type, axiom audit, native execution or historical 1614/1615 package equivalence is claimed. Compilation remains held after closed batch 100 pending the exact recovered consumer execution selection.

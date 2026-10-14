@@ -1,0 +1,9 @@
+
+-- Additive supplied-certificate target. The previous default remains unchanged.
+lean_lib AstraCertifiedCommonConsumer where
+  roots := #[`G3CertifiedCommonBoundedWitness]
+  globs := #[.one `G4ProtectedCommonRepresentative, .one `G3CertifiedCommonBoundedWitness]
+
+lean_lib AstraCertifiedCommonIntegration where
+  roots := #[`AstraCertifiedCommonIntegration]
+  globs := #[.one `AstraCertifiedCommonIntegration]
