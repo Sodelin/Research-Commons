@@ -1,0 +1,16 @@
+{
+  "action": "Evidence byte copy and authentication only; no control rerun.",
+  "actual_test_outcome_unchanged": "PASS_SYNTHETIC_ONLY, 12 groups",
+  "cause_observed": "The changed prior-delta case intentionally appends mutation bytes, so not every retained synthetic delta is valid JSON.",
+  "initial_export_readback": "JSONDecodeError: Extra data: line 47 column 1 (char 4273)",
+  "intentionally_unparsable_deltas": [
+    {
+      "interpretation": "Intentional changed-checkpoint malformed fixture; literal bytes retained without repair.",
+      "observed_json_error": "Extra data: line 47 column 1 (char 4273)",
+      "sha256": "d174a6100d3a3475e7e4eac3096dae68c8b5421bccdc030b97121735aa1f228f",
+      "source_path": "test_changed_prior_checkpoint_refuses/delta/evidence/production-001/OWNED-STATE-DELTA.json"
+    }
+  ],
+  "repair": "Preserve that original fixture literally, record its invalid-JSON status, and authenticate its complete byte hash. Parse only the other valid delta records. No fixture, test or production source changed.",
+  "schema": "astra_control_export_readback_note_v1"
+}

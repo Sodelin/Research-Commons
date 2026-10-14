@@ -1,0 +1,78 @@
+{
+  "schema": "astra_detached_owned_finish_v1",
+  "status": "GUARD_RECEIPT_NOT_SUCCESS",
+  "observed_utc": "2026-10-14T01:15:36.941632+00:00",
+  "guard_process_exit_code": null,
+  "owned_state": "/workspace/scratch/astra-owned-driver-controls-0105-v1/test_failed_and_resource_stopped_batches_preserve_eventless_bytes/wall-stop/owned-state",
+  "launcher_sha256": "157991882a6773c580fb8dcc226296b34d552bca39f09605a947fc55d3c727d7",
+  "launch_sha256": "7ad398bab2dbbc274d102f44ab8bd3330a6b232f43bf8228b731b03687f9a6d7",
+  "prebatch_sha256": "a715f76688bbe00d939e3f3781a493b273de1ada28606f38464bb7e08d26ee56",
+  "owned_delta_sha256": "81ac8388abf501f16f9fb757749a8eb9c810a91d0754a919537490637bf76607",
+  "owned_delta_path": "/workspace/scratch/astra-owned-driver-controls-0105-v1/test_failed_and_resource_stopped_batches_preserve_eventless_bytes/wall-stop/production/OWNED-STATE-DELTA.json",
+  "provider_batch_verified": false,
+  "provider_preparation_complete": false,
+  "next_owned_receipt_index": null,
+  "fresh_invocations": [
+    {
+      "index": 1,
+      "module": "Synthetic.Provider1",
+      "exit_code": 0,
+      "compiler_exit_code": 0,
+      "receipt_sha256": "d1248240516bff3c67dc5e527060aa74d25197bae89cd72291ef4ef50d5a2844"
+    }
+  ],
+  "newly_authenticated_clones": [],
+  "fresh_invocation_count": 1,
+  "newly_authenticated_clone_count": null,
+  "resumed_receipts": null,
+  "no_automatic_next_batch": true,
+  "new_adapter_compilation_requested": false,
+  "actual_final_lake_target_run": false,
+  "final_axiom_audit_completed": false,
+  "full1613_aggregate_compiled": false,
+  "physical_representative_claimed": false,
+  "compiler_objects_independently_reaudited": false,
+  "builder_exit_code": 0,
+  "guard_error": null,
+  "guard_stop": "wall_limit",
+  "requested_stop": false,
+  "guard_receipt_sha256": "8de9b6ee250f282ce69dbd702cbcd2c63dcc6135b39e1eff29e73ec4ecbfa4cb",
+  "guard_log_pins": {
+    "guard.stdout": {
+      "bytes": 32,
+      "sha256": "4e5d3eeae6987fdb2aac49a1268ed82c4804fa64ecdc43bc2a84f9962277ea1e"
+    },
+    "guard.stderr": {
+      "bytes": 32,
+      "sha256": "4e5d3eeae6987fdb2aac49a1268ed82c4804fa64ecdc43bc2a84f9962277ea1e"
+    }
+  },
+  "invocation_capture": {
+    "batch": "guard-output",
+    "records": 1,
+    "bytes": 2488,
+    "sha256": "57c5de6bfe9a511c218c21710b07489510bb68a371beec54ef04f9ecefca30e9"
+  },
+  "generic_capture_note": "External schema is invocation evidence only; guard_exit_code is the builder code, not OS guard exit.",
+  "interrupted_unverified_invocations": [
+    {
+      "index": 2,
+      "selected_module": {
+        "kind": "accepted1613",
+        "module": "Synthetic.Provider2",
+        "sha256": "8f11b3287138cf5068bbe55711bd3344ddbe463563bdbaee17d9e316495c19ec",
+        "synthetic_only": true
+      },
+      "status": "EVENTLESS_UNVERIFIED_EVIDENCE",
+      "attribution": "changed_since_prebatch",
+      "outputs": {
+        "stderr": {
+          "bytes": 46,
+          "sha256": "d3e80a6530c215630652ba3402759b19ce31e47e5a9b31b78087687de41121a2",
+          "exact_bytes_base64": "RVZFTlRMRVNTIFNZTlRIRVRJQyBTVERFUlI7IE5PIENPTVBJTEVSIENMQUlNCg==",
+          "content_utf8": "EVENTLESS SYNTHETIC STDERR; NO COMPILER CLAIM\n"
+        }
+      }
+    }
+  ]
+}

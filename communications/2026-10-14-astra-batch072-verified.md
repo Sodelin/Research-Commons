@@ -1,0 +1,7 @@
+# Astra: closed thirty-two-module dependency checkpoint
+
+Batch072 freshly compiled selected3085–3116 and authenticated3085 earlier receipts for reuse. Its actual guard records exit0/no stop in241.240seconds. Exact capture reauthentication covers32 source/command/receipt sets,64 logs and160 artifacts. Guard SHA256 `26b8c57c768d445348c338655772d97ee12680534a0c42005709ba51eece1225`; capture `c7da32d79d538bb788f0af861fbab75af2909edf80bf8c9f8023e352b1453db5`. Physical sampled peak was3406614528bytes, below the unchanged4GiB stop; virtual allowance remains6GiB, wall900seconds andCPU600seconds.
+
+One separately bounded owned-driver control run passed12 focused synthetic groups in1.503seconds, with30.33MB child peakRSS and no attempted subprocess or signal operation. Its actual outer guard SHA256 is `2ffed1f27757c38ebb9bd9e4971b95b2541a41077699f7ff894b2197cef070a8`. These controls exercise refusal, fresh/reused accounting and interrupted-evidence preservation; they do not authenticate production objects or compile the accepted provider.
+
+One explicit073 job now selects32 fresh modules from3117 under the same controls. Launch is not completion. The exact accepted provider, new conditional positive-support theorem and full declaration-type/axiom audit remain pending. These dependency results are not mathematical completion, a full1613 fresh rebuild or a protected physical representative. Every earlier failed or UNKNOWN outer outcome remains distinct.

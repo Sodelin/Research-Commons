@@ -1,0 +1,75 @@
+{
+  "schema": "astra_full_query_source_successor_v1",
+  "status": "SOURCE_ONLY_NOT_EXECUTED",
+  "predecessor_sha256": "1bbcc570d913793490d8bf3688a975ff7e9bfd2dfcab78ee383d922fe6087965",
+  "source_sha256": "0ac11bd889eef51ce47f1850e11d98ba7e3120d0be36650051048589e5783a91",
+  "selected_source_sha256": "fb8f2ac3ba0a55f563f3ea0fcce3c8b1af6e127097df0668bf4d8e051ab16925",
+  "prior_query_plan_sha256": "32bb59e44de8b3252c37deae1f12a7a14fc79a0407da97dd15f7d5b576991d2c",
+  "lexical_replacements": [
+    {
+      "before": "MAX_QUERIES = 550",
+      "after": "MAX_QUERIES = 2500"
+    },
+    {
+      "before": "startswith('astra-follow-on-import-query-')",
+      "after": "startswith('astra-full-accepted-import-query-')"
+    },
+    {
+      "before": "astra-follow-on-import-query-* directory",
+      "after": "astra-full-accepted-import-query-* directory"
+    },
+    {
+      "before": "schema='astra_follow_on_import_query_invocation_v1'",
+      "after": "schema='astra_full_accepted_import_query_invocation_v1'"
+    },
+    {
+      "before": "old = read(SUPPORT / 'EXTERNAL-PLAN.json')",
+      "after": "old = read(PREFIX_PLAN)"
+    },
+    {
+      "before": "if len(old['modules']) != 3591:",
+      "after": "if len(old['modules']) != 3593:"
+    },
+    {
+      "before": "copy_new(SUPPORT / 'EXTERNAL-PLAN.json', output / 'PRESERVED-ACTIVE-PLAN.json')",
+      "after": "copy_new(PREFIX_PLAN, output / 'PRESERVED-QUERY-PREFIX-PLAN.json')\n        copy_new(SUPPORT / 'EXTERNAL-PLAN.json', output / 'UNCHANGED-ACTIVE-PLAN.json')"
+    },
+    {
+      "before": "if len(owned_mathlib) != 9:",
+      "after": "if len(owned_mathlib) != 11:"
+    },
+    {
+      "before": "queries = Queries(output, headers, [MATERIALIZED, CORE_SOURCE, *repos])",
+      "after": "env['LEAN_SRC_PATH'] += os.pathsep + str(CORE_SOURCE / 'lake')\n        queries = Queries(output, headers, [MATERIALIZED, CORE_SOURCE, *repos])"
+    },
+    {
+      "before": "if name == 'Init' or name.startswith(('Lean.', 'Init.', 'Std.', 'Lake.')):\n                path = CORE_SOURCE / (name.replace('.', '/') + '.lean')",
+      "after": "if name in {'Init', 'Lean', 'Std', 'Lake'} or name.startswith(('Lean.', 'Init.', 'Std.', 'Lake.')):\n                base = CORE_SOURCE / 'lake' if name == 'Lake' or name.startswith('Lake.') else CORE_SOURCE\n                path = base / (name.replace('.', '/') + '.lean')"
+    },
+    {
+      "before": "if dep not in names and dep not in old_names and dep != 'Lean.Elab.Tactic.Omega':",
+      "after": "if (dep not in names and dep not in old_names and dep not in follow['direct_external_roots']):"
+    },
+    {
+      "before": "schema='astra_follow_on_official_import_plan_v1'",
+      "after": "schema='astra_full_accepted_official_import_plan_v1'"
+    },
+    {
+      "before": "selected_sources=475, selected_owned_sources=469, selected_astra_sources=6,",
+      "after": "selected_sources=1642, selected_library_sources=1641, selected_configuration_sources=1,\n             selected_baseline_sources=1613,"
+    },
+    {
+      "before": "previous_plan_sha256=PINNED[SUPPORT / 'EXTERNAL-PLAN.json'],",
+      "after": "previous_plan_sha256=PINNED[PREFIX_PLAN],\n             unchanged_active_plan_sha256=PINNED[SUPPORT / 'EXTERNAL-PLAN.json'],"
+    }
+  ],
+  "larger_replacements": [
+    "exact pinned inputs",
+    "full source authentication",
+    "new external roots"
+  ],
+  "source_ast_parse": "PASS",
+  "import_queries": 0,
+  "compilers": 0,
+  "object_authentication": false
+}
