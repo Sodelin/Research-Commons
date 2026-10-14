@@ -2,6 +2,16 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 00:39 UTC:** a
+[complete original natural BOTH local candidate](whole-source/continuation-2110z/COMPLETE-ORIGINAL-NATURAL-BOTH-LOCAL-EXCLUSION.md)
+is undergoing full independent composition review. Its
+[conditional global consequence](whole-source/continuation-2110z/GENERAL-ORIGINAL-NATURAL-BOTH-COMPOSITION-CANDIDATE.md)
+has a separate logical audit: if the local candidate excludes actual
+vanishing-strength extras, an actual rival-size bound and the inherited
+bounded-shape supplier yield natural BOTH finite forcing. The local gate
+is still pending; INDEPENDENT-only and the broader G4 register remain open.
+See the [Commons checkpoint](../../communications/2026-10-14-g4-complete-local-candidate-0039z.md).
+
 **Latest checkpoint, 14 October 00:13 UTC:** the reviewed
 [all-ancestral palette](critical-review/ROOT-ALL-ANCESTRAL-PALETTE-ACCEPTANCE.md)
 now reaches unequal cells in retained meeting cores. The reviewed
