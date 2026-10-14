@@ -1,0 +1,276 @@
+{
+  "schema": "astra_fixed_thirteen_header_query_proposal_v1",
+  "status": "UNEXECUTED_RUNNER_SUCCESSOR_AND_ACTUAL_COPY_PIN_PENDING",
+  "source_catalog": {
+    "path": "research/2026-10-14-astra-certified-combined-source-stage-0730z/SOURCE-CATALOG.json",
+    "bytes": 17545,
+    "sha256": "506515845d13bc4a58c0ac0d27556163188f4623387b47ae1d4d01d282f17635"
+  },
+  "actual_materialization_sha256": null,
+  "reviewed_predecessor_runner": {
+    "path": "research/2026-10-14-astra-certified-header-query-0615z/query_four_v2.py",
+    "bytes": 7981,
+    "sha256": "3768f2baf511f1827a461edbc7a45271776d17b16aab45f71273c17567e0d904"
+  },
+  "same_version_init_multiplicity_census": {
+    "path": "research/2026-10-14-astra-certified-header-query-0615z/evidence/INIT-MULTIPLICITY-OBSERVATION.json",
+    "bytes": 939422,
+    "sha256": "ce09367d4ca53f945cde7a887f355f232d7d640da032a8c4d733ed4607f683a9"
+  },
+  "compiler": {
+    "path": "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+    "sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
+  },
+  "cwd": "/workspace/Research-Commons",
+  "environment": {
+    "LEAN_PATH": "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean:/workspace/scratch/astra-certified-combined-sources-0730/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/plausible/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/aesop/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/Qq/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/.lake/build/lib/lean:/workspace/scratch/astra-mathlib-0645/.lake/packages/Cli/.lake/build/lib/lean",
+    "LEAN_SRC_PATH": "/workspace/scratch/astra-mathlib-0645:/workspace/scratch/astra-certified-combined-sources-0730:/workspace/scratch/astra-mathlib-0645/.lake/packages/plausible:/workspace/scratch/astra-mathlib-0645/.lake/packages/LeanSearchClient:/workspace/scratch/astra-mathlib-0645/.lake/packages/importGraph:/workspace/scratch/astra-mathlib-0645/.lake/packages/proofwidgets:/workspace/scratch/astra-mathlib-0645/.lake/packages/aesop:/workspace/scratch/astra-mathlib-0645/.lake/packages/Qq:/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries:/workspace/scratch/astra-mathlib-0645/.lake/packages/Cli:/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean:/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/src/lean/lake",
+    "LEAN_NUM_THREADS": "1",
+    "LEAN_STACK_SIZE_KB": "8192",
+    "LEAN_IMPORT_WORKERS": "1",
+    "MIMALLOC_ARENA_RESERVE": "16384",
+    "RAYON_NUM_THREADS": "1",
+    "PATH": "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin:/usr/bin:/bin",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "MALLOC_ARENA_MAX": "1"
+  },
+  "queries": [
+    {
+      "module": "Astra.CertifiedCommonExternal",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/Astra/CertifiedCommonExternal.lean",
+      "source_sha256": "48b26222d61f7874ea1842cf5f6d8081563db28f230a26ce9e40238420dfba32",
+      "imports": [
+        "G3CertifiedCommonBoundedWitness"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/Astra/CertifiedCommonExternal.lean"
+      ]
+    },
+    {
+      "module": "AstraCertifiedCommonExternalIntegration",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/AstraCertifiedCommonExternalIntegration.lean",
+      "source_sha256": "8dd13125f9673d9732856753e204c77b5cf08932cf5f7672cffbb0456a73bae5",
+      "imports": [
+        "AstraCertifiedCommonIntegration",
+        "Astra.CertifiedCommonExternal"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/AstraCertifiedCommonExternalIntegration.lean"
+      ]
+    },
+    {
+      "module": "Astra.SuppliedCombCertificateAssembly",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/Astra/SuppliedCombCertificateAssembly.lean",
+      "source_sha256": "b728c6a9b05804082be97127535894b42c65b3b6aa13f75fb01a6808e69f31e1",
+      "imports": [
+        "G3CertifiedCommonBoundedWitness"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/Astra/SuppliedCombCertificateAssembly.lean"
+      ]
+    },
+    {
+      "module": "Certificate_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/Certificate_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60.lean",
+      "source_sha256": "c0999454d0178e803e9dbe1e2d1184d96baacbaea2dbe14a9279e436cf05fe5f",
+      "imports": [
+        "Astra.CommonCertificateKernel"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/Certificate_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60.lean"
+      ]
+    },
+    {
+      "module": "Certificate_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/Certificate_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54.lean",
+      "source_sha256": "b9f1db6a62803e811da2530dce736a46e12eab9e50081157b6998a73053b8cfa",
+      "imports": [
+        "Astra.CommonCertificateKernel"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/Certificate_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54.lean"
+      ]
+    },
+    {
+      "module": "SuppliedRow_b20429b232b1124d54e85a7edeb6704cedae26a893a066a33e4556f774821d1b",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_b20429b232b1124d54e85a7edeb6704cedae26a893a066a33e4556f774821d1b.lean",
+      "source_sha256": "c5f828b5e3899e2b3a909ed7bcd38dfb6756c5c7bd9f4c4790b747db96d6f7df",
+      "imports": [
+        "Support_b20429b232b1124d54e85a7edeb6704cedae26a893a066a33e4556f774821d1b",
+        "Astra.SuppliedCombCertificateAssembly"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_b20429b232b1124d54e85a7edeb6704cedae26a893a066a33e4556f774821d1b.lean"
+      ]
+    },
+    {
+      "module": "SuppliedRow_c083f0e7578cab70491391dbedd5ede62321198d6b43c100ce315896cabd75e0",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_c083f0e7578cab70491391dbedd5ede62321198d6b43c100ce315896cabd75e0.lean",
+      "source_sha256": "aefff272dda85d9d6d04784eb3db86ce4d4f3700a9eb57eee8a9d3e08cbcf2a4",
+      "imports": [
+        "Support_c083f0e7578cab70491391dbedd5ede62321198d6b43c100ce315896cabd75e0",
+        "Astra.SuppliedCombCertificateAssembly"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_c083f0e7578cab70491391dbedd5ede62321198d6b43c100ce315896cabd75e0.lean"
+      ]
+    },
+    {
+      "module": "Support_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/Support_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60.lean",
+      "source_sha256": "bb2db4693be62f948ccd5f841201fc8d1e85c1a65edfeb55dd758af813c04e8e",
+      "imports": [
+        "Certificate_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60",
+        "Astra.PositiveSupportAdapter"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/Support_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60.lean"
+      ]
+    },
+    {
+      "module": "Support_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/Support_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54.lean",
+      "source_sha256": "ab01c7f1cb5ce47f58ff0bababe371b1ed475b68ffb64828ad8e16a3979e6a80",
+      "imports": [
+        "Certificate_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54",
+        "Astra.PositiveSupportAdapter"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/Support_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54.lean"
+      ]
+    },
+    {
+      "module": "SuppliedRow_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60.lean",
+      "source_sha256": "90bad65ffd11fa327b3a5e075fa27be366ccfd3bdeb769d170deb83913ff1004",
+      "imports": [
+        "Support_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60",
+        "Astra.SuppliedCombCertificateAssembly"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60.lean"
+      ]
+    },
+    {
+      "module": "SuppliedRow_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54.lean",
+      "source_sha256": "8eea4767305b4c79bf255e3f897a1f2515407e45ccd2c1dc1fe054d0ef300b48",
+      "imports": [
+        "Support_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54",
+        "Astra.SuppliedCombCertificateAssembly"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedRow_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54.lean"
+      ]
+    },
+    {
+      "module": "SuppliedMenu_23a9192b817704da2e0c8428ee37304ebca1ec349e8da1985212edeafc31c8f3",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedMenu_23a9192b817704da2e0c8428ee37304ebca1ec349e8da1985212edeafc31c8f3.lean",
+      "source_sha256": "581200cc4a01266cae51eccb26002d521a4e873e7985f27926fa6f657e32d9f3",
+      "imports": [
+        "SuppliedRow_7319029dcb55d6e9cbd4b960ac39371a113ab84187ef57a3bfcc55bbc0314b60",
+        "SuppliedRow_b20429b232b1124d54e85a7edeb6704cedae26a893a066a33e4556f774821d1b",
+        "SuppliedRow_c083f0e7578cab70491391dbedd5ede62321198d6b43c100ce315896cabd75e0",
+        "SuppliedRow_cf840cba65d22cc8d57368b7569b7170b070c7a56be67b08658094db5e02bf54"
+      ],
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/SuppliedMenu_23a9192b817704da2e0c8428ee37304ebca1ec349e8da1985212edeafc31c8f3.lean"
+      ]
+    },
+    {
+      "module": "lakefile",
+      "source": "/workspace/scratch/astra-certified-combined-sources-0730/lakefile.lean",
+      "source_sha256": "b1dd4bd685b86d23a7e574fe64bdd97cb67438b020a641f40eb102223eeff0b9",
+      "command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s8192",
+        "--src-deps",
+        "/workspace/scratch/astra-certified-combined-sources-0730/lakefile.lean"
+      ],
+      "expected_direct_dependencies": "Same literal imports as original0600 configuration; ownership-only append contains no new import lines."
+    }
+  ],
+  "header_count": 13,
+  "prior_library_headers_to_reuse": 1644,
+  "reused_source_evidence": "Prior1641 source bindings plus exact provider/consumer/fullaggregate queries from0615v2; six emitted-map matches are already within that source set. Reauthenticate literal source/request/receipt/log identities and current complete namespace route, without requerying oldheaders or asserting object reuse.",
+  "required_successor_contract": [
+    "Exact guard parent argv/cwd/source/config pins, fresh output, PAUSE checks and unchanged complete-upstream Mathlib first routing.",
+    "Authenticate all selected1656 source origins and eleven selected Mathlib source equivalents before querying.",
+    "Only the13 listed serial --src-deps commands, each10second timeout; save copied source, exact command/environment/request, raw stdout/stderr and actual exit.",
+    "Preserve literal output order; require exact expected dependency set, exactly two Init occurrences and one occurrence of every other expected path; hash every occurrence.",
+    "Stop first failure, preserve partials; actual query0 does not override failed wrapper/guard. No elaboration/object reuse or Lake claim."
+  ],
+  "limits": {
+    "wall_seconds": 180,
+    "cpu_seconds": 120,
+    "virtual_bytes": 6442450944,
+    "physical_stop_bytes": 4294967296,
+    "file_bytes": 67108864,
+    "disk_floor_bytes": 8589934592,
+    "available_ram_floor_bytes": 1073741824
+  },
+  "execution_gate": "No launch. Actual copied source receipt, concrete successor runner and outerguard config require independent review and Root release after exclusive quiet handoff."
+}

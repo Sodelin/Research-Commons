@@ -1,0 +1,56 @@
+{
+  "schema": "astra.source-static-review.v1",
+  "status": "SCOPED_STATIC_CLEAR_UNEXECUTED",
+  "reviewer": "Astra research_intake agent; authored the earlier ownership/dedup table and 0700 wrapper, not this copier. This is not a human review or execution receipt.",
+  "packet_manifest": {
+    "path": "research/2026-10-14-astra-certified-combined-source-stage-0730z/MANIFEST.json",
+    "bytes": 1228,
+    "sha256": "7fc7718ffec5dfa8ebbfb6b905020c38bfc518a8996598cdb48cac6b1568e579"
+  },
+  "reviewed_source": {
+    "path": "research/2026-10-14-astra-certified-combined-source-stage-0730z/materialize_combined.py",
+    "bytes": 8738,
+    "sha256": "e1a0c2c01e682b4233696ac29c525dbaa0b6ca982ae033398457f134e1d643f1"
+  },
+  "reviewed_catalog": {
+    "path": "research/2026-10-14-astra-certified-combined-source-stage-0730z/SOURCE-CATALOG.json",
+    "bytes": 17545,
+    "sha256": "506515845d13bc4a58c0ac0d27556163188f4623387b47ae1d4d01d282f17635"
+  },
+  "reused_helper": {
+    "path": "research/2026-10-14-astra-certified-common-integration-0600z/materialize_certified.py",
+    "bytes": 7517,
+    "sha256": "70005d43fd16b958dd729d83419b309a64b836d1adaa3ccd350b60396b4e80b1"
+  },
+  "actual_parent_source_ledger": {
+    "path": "research/2026-10-14-astra-certified-source-copy-execution-0612z/MATERIALIZATION.json",
+    "bytes": 1279853,
+    "sha256": "8806bed82c2c75cb8904371ee66d3b546184fb3463dcd668a5fe2a5dab783e7b"
+  },
+  "readback": {
+    "manifest_payloads": 7,
+    "manifest_payload_bytes": 63007,
+    "matching_payload_pins": true,
+    "scope": "Source/metadata inspection only; the old 1644 source bodies were not rehashed. Twelve added bodies and four duplicate pairs were read and pinned; no objects or executable bytes were read."
+  },
+  "findings": [
+    "The exact helper is loaded from source bytes only after its digest check; its __file__ points to the pinned parent packet, so ROOT resolves correctly. Its top-level AS/CPU bounds agree with the proposed copier bounds and its main is not called. No production helper was imported during this review.",
+    "The actual parent source-copy ledger binds the old catalog and original copier. All twelve added module names are absent from that ledger; their literal imports match the catalog and reference the parent or earlier additions. All four generated duplicate bodies match the retained original bodies and selected origins.",
+    "Canonical module-relative destinations and uniqueness are checked before mutation. The fixed destination must be absent and not a symlink. Inputs are repository relative, non-symlink files with exact byte lengths/hashes through selected_body. Copy writes are exclusive; every source and config/toolchain is read back.",
+    "The composed configuration is exactly old0600 bytes + LF + reviewed0700-v3 bytes + LF + the ten-only generated fragment: SHA256 b1dd4bd685b86d23a7e574fe64bdd97cb67438b020a641f40eb102223eeff0b9, 61338 bytes. Every new module has one explicit .one owner; no broad submodule glob intervenes. Four duplicates retain AstraCertificates or AstraGeneratedSupport. Existing defaults and old config bytes remain literal.",
+    "Pause and resource checks precede authentication and mutation and recur during the copy. The frozen helper plus local occupancy check covers the identified build/guard/query/copy commands; the external exclusive-owner quiet handoff remains required. Proposed limits are 256 MiB AS, 30 CPU seconds, 16 MiB per file, external 60-second timeout, 4 GiB physical stop, 8 GiB free disk and 1 GiB available RAM.",
+    "Normal exceptions preserve a failed partial stage. Signals or external timeout may prevent FAILED.json; the owner must retain actual command/stdout/stderr/OS status and remaining bytes rather than infer success from a partial receipt or directory. No automatic retry, overwrite or cleanup exists.",
+    "The 13-query proposal names the twelve new headers plus literal composed config and preserves prior source-query reuse as evidence reuse only. Its actual materialization hash is null and the concrete successor runner is not supplied: it is not launch-ready and provides no import, elaboration, object-authentication or Lake result."
+  ],
+  "concrete_blocking_issues": [],
+  "next_gate": "Root source clearance and explicit idle handoff for the separately specified copy-only invocation; then actual copy/readback and an independently reviewed concrete header-query successor. This review authorizes no execution.",
+  "execution": {
+    "materializer_or_helper_import": false,
+    "copy_or_generation": false,
+    "tests": false,
+    "official_import_queries": false,
+    "compiler_or_lake": false,
+    "object_scan": false,
+    "git_or_peer_file_changes": false
+  }
+}

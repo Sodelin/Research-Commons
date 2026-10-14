@@ -1,0 +1,11 @@
+{
+  "schema": "astra_readonly_command_error_observation_v1",
+  "status": "POST_105_READONLY_COMMAND_ERROR_106_HELD",
+  "tool_chunk_id": "7d8e65",
+  "cwd": "/workspace/Research-Commons",
+  "command": "sha256sum research/2026-10-13-astra-positive-support-adapter-0830z/evidence/RUST-LANE-105-CLOSED.json\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B - <<'PY'\nfrom pathlib import Path\nm={k:int(v.split()[0])*1024 for k,v in (line.split(':',1) for line in Path('/proc/meminfo').read_text().splitlines())}\nassert m['MemAvailable']>1024**3\nprint('MemAvailable',m['MemAvailable'])\nPY\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -B research/2026-10-13/astra-not-existing.py",
+  "tool_output": "23be14586523f23e13cc6067cb8992363b065df937ed7a25f4b9a1a410314421  research/2026-10-13-astra-positive-support-adapter-0830z/evidence/RUST-LANE-105-CLOSED.json\nMemAvailable 17958559744\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/Research-Commons/research/2026-10-13/astra-not-existing.py': [Errno 2] No such file or directory\n",
+  "exit_code": 2,
+  "scope": "The final extraneous nonexistent script path was an assistant command construction error. The earlier SHA and RAM readback completed. No builder or compiler was invoked by this command; no source, receipt, artifact or resource limit was changed. Batch105 closed success is unchanged. Batch106 was not launched; the lane is held pending Root clearance. No retry occurred.",
+  "batch105_closed_readback_sha256": "23be14586523f23e13cc6067cb8992363b065df937ed7a25f4b9a1a410314421"
+}

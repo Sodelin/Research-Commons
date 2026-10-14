@@ -1,0 +1,78 @@
+--- OWNER-CLOSED-READBACK.py
++++ RUST-LANE-105-108-READBACK.py
+@@ -1,9 +1,9 @@
+ #!/usr/bin/env python3
+-"""Reuse a pinned read-only checker, with separate owner-labelled outputs.
++"""Pinned read-only monitor/preflight/closed readback for batches 105--108.
+ 
+-No compiler, launcher, signal or repair is invoked. The final external-plan
+-boundary needs a separate checker because the inherited function requires a
+-next module and complete=False. Historical Rust monitor bytes stay unchanged.
++No compiler, launcher, signal, repair, retry or next-job loop is invoked.
++The unchanged checker owns all receipt/command/source/log/artifact checks.
++Source readiness does not grant compiler ownership or authorize a launch.
+ """
+ import hashlib
+ import importlib.util
+@@ -14,26 +14,47 @@
+ HERE = Path(__file__).resolve().parent
+ PROVIDER = HERE / 'RUST-MONITOR-074-076-REPAIRED.py'
+ PROVIDER_SHA = 'e0ae5d4f5ed0b4305a4045e7c7e8026f6ac07980be15441dde5d7adeb73a7e61'
++PIN_RECORD = HERE / 'RUST-LANE-070-CLOSED.json'
++PIN_RECORD_SHA = '754f413e6765b139e17ffd1aef4d15903e37605162912aa3d59dfe239d27db68'
+ assert hashlib.sha256(PROVIDER.read_bytes()).hexdigest() == PROVIDER_SHA
+-batch, start, count = map(int, sys.argv[1:])
+-assert 77 <= batch <= 999 and 1 <= count <= 64 and start + count < 3591
++assert hashlib.sha256(PIN_RECORD.read_bytes()).hexdigest() == PIN_RECORD_SHA
++assert len(sys.argv) == 3
++action, batch = sys.argv[1], int(sys.argv[2])
++assert action in {'preflight', 'sample', 'closed'}
++STARTS = {105: 3477, 106: 3485, 107: 3493, 108: 3501}
++assert batch in STARTS
++start, count = STARTS[batch], 8
+ spec = importlib.util.spec_from_file_location('pinned_closed_readback', PROVIDER)
+ provider = importlib.util.module_from_spec(spec)
+ spec.loader.exec_module(provider)
+-provider.MON = HERE / f'OWNER-MONITOR-{batch:03d}.jsonl'
+-assert not provider.MON.exists()
++provider.MON = HERE / 'RUST-LANE-MONITOR-105-108.jsonl'
+ original_save = provider.save
+ 
+-def owner_save(path, result):
++def rust_save(path, result):
+     assert path == HERE / f'RUST-LANE-{batch:03d}-CLOSED.json'
+-    result['schema'] = 'astra_owner_closed_batch_readback_v1'
+     result['executed_checker_provider_sha256'] = PROVIDER_SHA
+-    result['owner_wrapper_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+-    result['readback_attribution'] = 'Lean integration owner; reused unchanged Rust-lane checker function.'
+-    original_save(HERE / f'OWNER-{batch:03d}-CLOSED.json', result)
++    result['source_pin_record_sha256'] = PIN_RECORD_SHA
++    result['rust_wrapper_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
++    result['readback_attribution'] = 'Rust integration lane; reused unchanged Rust-lane checker function.'
++    original_save(path, result)
+ 
+-provider.save = owner_save
+-result = provider.closed(batch, start, count)
+-print(json.dumps({key: result[key] for key in ['batch', 'guard_sha256',
+-    'capture_sha256', 'guard_elapsed_seconds', 'fresh_artifacts_reauthenticated',
+-    'next_index', 'next_module', 'guard_process_os_exit']}))
++if action == 'closed':
++    provider.save = rust_save
++    result = provider.closed(batch, start, count)
++elif action == 'sample':
++    result = provider.sample(batch)
++else:
++    # Literal predecessor preflight checks, using fixed batch/start above.
++    provider.pins()
++    result = provider.sample(batch)
++    assert not result['active_processes'] and not result['pause']
++    assert result['cgroup_bytes'] < 4 * 1024**3 and result['disk_free'] > 8 * 1024**3
++    assert sorted(int(p.stem) for p in provider.ST.glob('[0-9][0-9][0-9][0-9].json')) == list(range(start))
++    assert not (provider.E / f'external-batch-{batch:03d}').exists()
++    assert not (provider.D / 'evidence' / f'production-{batch:03d}').exists()
++    result.update(expected_start=start, source_pins=provider.PINS,
++                  monitor_script_sha256=provider.sha(__file__),
++                  executed_checker_provider_sha256=PROVIDER_SHA,
++                  source_pin_record_sha256=PIN_RECORD_SHA)
++    original_save(HERE / f'RUST-LANE-{batch:03d}-PREFLIGHT.json', result)
++print(json.dumps(result))

@@ -1,0 +1,36 @@
+{
+  "schema": "astra_combined_copy_only_run_proposal_v1",
+  "status": "UNEXECUTED_REQUIRES_ROOT_QUIET_GATE",
+  "command": [
+    "timeout",
+    "60s",
+    "python3",
+    "-B",
+    "research/2026-10-14-astra-certified-combined-source-stage-0730z/materialize_combined.py"
+  ],
+  "cwd": "/workspace/Research-Commons",
+  "runner": {
+    "path": "research/2026-10-14-astra-certified-combined-source-stage-0730z/materialize_combined.py",
+    "bytes": 8738,
+    "sha256": "e1a0c2c01e682b4233696ac29c525dbaa0b6ca982ae033398457f134e1d643f1"
+  },
+  "catalog": {
+    "path": "research/2026-10-14-astra-certified-combined-source-stage-0730z/SOURCE-CATALOG.json",
+    "bytes": 17545,
+    "sha256": "506515845d13bc4a58c0ac0d27556163188f4623387b47ae1d4d01d282f17635"
+  },
+  "destination": "/workspace/scratch/astra-certified-combined-sources-0730",
+  "outer_guard": null,
+  "outer_guard_reason": "Pinned parent helper intentionally refuses any activeguard; this copy-only command uses external60second timeout and self-enforced bounds. It invokes no child process.",
+  "self_limits": {
+    "address_space_bytes": 268435456,
+    "cpu_seconds": 30,
+    "file_bytes": 16777216,
+    "physical_stop_bytes": 4294967296,
+    "disk_floor_bytes": 8589934592,
+    "available_ram_floor_bytes": 1073741824
+  },
+  "output_contract": "Record exact invocation/stdout/stderr/OSstatus and actual source-copy receipt separately after an explicit idle/noPAUSE handoff. Preserve any partial fresh directory. No retry, cleanup or overwrite.",
+  "compiler_query_lake_invocations": 0,
+  "actual_output": null
+}
