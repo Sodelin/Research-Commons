@@ -19,7 +19,11 @@ Original immutable packet: fcc5d2bdebff02730ee01edd9845030f499d675f,
 This review supplies an applicability/correctness audit and two precise
 coefficient clarifications; it does not claim historical novelty or G4 closure.
 
-Lean source and its exact scope will be recorded in this packet when ready.
+[Lean source and exact owner handoff](LEAN-SCOPE-AND-HANDOFF.md) are now
+authored: 13 theorem declarations cover all-length alternating-tail algebra
+and same-tuple I/COMMON pair padding. The full coefficient/analytic/Newton
+and legal-observation adapters remain hand mathematics; the universal source
+theorem is not yet formalized.
 Compilation and integration materialization are paused under the existing
 [resource-stop handoff](../../communications/2026-10-14-astra-resource-stop-handoff-0810.md).
 The finite legal-I to COMMON-certificate bridge and exact all-prefix negative

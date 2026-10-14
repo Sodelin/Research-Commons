@@ -1,0 +1,55 @@
+import G4LogGuardAlgebra
+
+/-!
+# Source-only declaration and axiom audit requests
+
+Codex, 2026-10-14. UNEXECUTED AUDIT SOURCE.
+These commands have not been run. They provide neither an elaboration receipt
+nor an axiom-audit result. The integration owner retains execution and selection.
+-/
+
+set_option pp.universes true
+set_option pp.explicit true
+
+#check G4LogGuardAlgebra.alternatingSum
+#print axioms G4LogGuardAlgebra.alternatingSum
+#check G4LogGuardAlgebra.firstTerm
+#print axioms G4LogGuardAlgebra.firstTerm
+#check G4LogGuardAlgebra.alternatingSum_bounds
+#print axioms G4LogGuardAlgebra.alternatingSum_bounds
+#check G4LogGuardAlgebra.alternatingSum_bounds_of_positive
+#print axioms G4LogGuardAlgebra.alternatingSum_bounds_of_positive
+#check G4LogGuardAlgebra.negative_pair_plus_tail
+#print axioms G4LogGuardAlgebra.negative_pair_plus_tail
+#check G4LogGuardAlgebra.negative_pair_with_decreasing_tail
+#print axioms G4LogGuardAlgebra.negative_pair_with_decreasing_tail
+#check G4LogGuardAlgebra.independentPairCoefficient
+#print axioms G4LogGuardAlgebra.independentPairCoefficient
+#check G4LogGuardAlgebra.commonPairCoefficient
+#print axioms G4LogGuardAlgebra.commonPairCoefficient
+#check G4LogGuardAlgebra.independent_common_gap
+#print axioms G4LogGuardAlgebra.independent_common_gap
+#check G4LogGuardAlgebra.independent_exceeds_common
+#print axioms G4LogGuardAlgebra.independent_exceeds_common
+#check G4LogGuardAlgebra.commonPairCoefficient_positive
+#print axioms G4LogGuardAlgebra.commonPairCoefficient_positive
+#check G4LogGuardAlgebra.independentPairCoefficient_positive
+#print axioms G4LogGuardAlgebra.independentPairCoefficient_positive
+#check G4LogGuardAlgebra.paddedIndependentPair
+#print axioms G4LogGuardAlgebra.paddedIndependentPair
+#check G4LogGuardAlgebra.paddedCommonPair
+#print axioms G4LogGuardAlgebra.paddedCommonPair
+#check G4LogGuardAlgebra.endpointIndependentPair
+#print axioms G4LogGuardAlgebra.endpointIndependentPair
+#check G4LogGuardAlgebra.endpointCommonPair
+#print axioms G4LogGuardAlgebra.endpointCommonPair
+#check G4LogGuardAlgebra.endpoint_padding_is_product
+#print axioms G4LogGuardAlgebra.endpoint_padding_is_product
+#check G4LogGuardAlgebra.padded_pair_gap
+#print axioms G4LogGuardAlgebra.padded_pair_gap
+#check G4LogGuardAlgebra.padded_independent_exceeds_common
+#print axioms G4LogGuardAlgebra.padded_independent_exceeds_common
+#check G4LogGuardAlgebra.padding_strictly_decreases_common
+#print axioms G4LogGuardAlgebra.padding_strictly_decreases_common
+#check G4LogGuardAlgebra.ratio_padding_same_tuple
+#print axioms G4LogGuardAlgebra.ratio_padding_same_tuple

@@ -89,3 +89,30 @@ and actual source-construction duty. The next master advance must construct
 successful complete physical jets meeting an architecture-valid margin bound
 at every cap for the same target, or establish another full-strength route.
 Reviewed components and authored Lean declarations are not master closure.
+
+## Reviewed all-orders log-diagonal successor (14 October 2026, 10:41 UTC session)
+
+The independent Astra [log-guard packet](../2026-10-14-g4-global-log-guard-attempt/PROOF.md)
+at fcc5d2bdebff02730ee01edd9845030f499d675f has scoped hand acceptance in the
+[lead review](../2026-10-14-codex-g4-log-guard-review-1041z/INDEPENDENT-MATHEMATICAL-REVIEW.md).
+For EVERY finite cap and nonzero real log-diagonal covector, arbitrarily weak
+strict cells give each sign. An eligible freely replaceable unmarked bridge
+admits exact two-root I padding, while its COMMON pair decreases; the stated
+legal crossed-cherry marginal uses a pendant bridge. The review explicitly
+cancels first order and limits the highest-coefficient formula to r>=3.
+All 448 original exact controls independently replayed with identical saved
+output. This excludes universal additive log-diagonal signs, not constrained
+chronological full-topology guards or the accepted BOTH theorem.
+
+Credit the stronger earlier exact finite diagonal-fibre result: diagonal
+panels cannot determine even COMMON pair or bound routing rank, including
+nonlinear postprocessing. The new one-cell/two-sign statement is not the
+first failure of that route, and it gives no exact full-legal-I-prefix rivals.
+
+[Lean source and handoff](../2026-10-14-codex-g4-log-guard-review-1041z/LEAN-SCOPE-AND-HANDOFF.md)
+author 13 algebraic theorem declarations, with universal coefficient,
+analytic/Newton and legal-source adapters still unformalized. Compilation,
+selection and type/axiom output are UNVERIFIED. Respect the existing
+[resource stop](../../communications/2026-10-14-astra-resource-stop-handoff-0810.md);
+this source publication does not authorize build/query/materialization.
+The full finite-I/Common-certificate bridge remains the decisive obligation.
