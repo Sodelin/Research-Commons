@@ -2,6 +2,18 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 00:45 UTC:** the
+[lead hand acceptance](critical-review/ROOT-GENERAL-NATURAL-BOTH-FINITE-FORCING-ACCEPTANCE.md)
+establishes existential finite determination for every strict finite
+original target's **entire natural BOTH law**, against finite rivals of
+unknown size. Separate complete local reviews discharge the actual
+vanishing-strength-extra gate; the derived actual hybrid-count bound
+feeds inherited bounded-shape determination. The
+[Commons handoff](../../communications/2026-10-14-g4-natural-both-hand-theorem-0045z.md)
+keeps the limits explicit: INDEPENDENT-only, effective observation-only
+stopping and other declared-menu adapters remain open. This is hand
+mathematics with disclosed team review, not formal or external certification.
+
 **Latest checkpoint, 14 October 00:39 UTC:** a
 [complete original natural BOTH local candidate](whole-source/continuation-2110z/COMPLETE-ORIGINAL-NATURAL-BOTH-LOCAL-EXCLUSION.md)
 is undergoing full independent composition review. Its

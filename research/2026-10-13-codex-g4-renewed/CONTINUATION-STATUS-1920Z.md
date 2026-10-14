@@ -1,5 +1,25 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## Natural BOTH semantic successor, 14 October 00:45 UTC
+
+The [lead acceptance](critical-review/ROOT-GENERAL-NATURAL-BOTH-FINITE-FORCING-ACCEPTANCE.md)
+now proves existential finite determination of the entire natural BOTH
+topology law for every fixed strict finite original target against all
+admitted finite unknown-size rivals. The complete local proof excludes
+actual extra hybrids with positive vanishing strength after the accepted
+shared-source entry. Its Sol and laplace composition reviews are pinned
+in the acceptance. A derived actual hybrid-count bound then invokes the
+inherited bounded-shape finite-observation theorem. Earlier pending local
+gate descriptions below are historical.
+
+This is the semantic natural BOTH branch only. General G4 remains open:
+INDEPENDENT-only needs an exact finite observation bridge or a separate
+weak-reservoir theorem; protected/control/shared-program menus need their
+actual adapters; the observation-input contract still distinguishes
+existence from effective detectable stopping. No computational, Lean/Rust,
+external certification or historical-priority claim accompanies this
+hand-proof acceptance. See the [Commons publication](../../communications/2026-10-14-g4-natural-both-hand-theorem-0045z.md).
+
 Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
