@@ -2,6 +2,15 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 02:27 UTC:** the
+[full-shot root review](critical-review/ROOT-FULL-SHOT-EXTRACTION-AND-RESET-REVIEW.md)
+accepts an exact abstract countermodel to automatic finite I extraction,
+an actual-source obstruction to a faithful fixed Hilbert reset metric,
+and a scoped nonordinary negative-route audit. These eliminate specific
+proof shortcuts; none is a coalescent G4 impossibility result. The finite
+INDEPENDENT bridge remains open. See the
+[Commons checkpoint](../../communications/2026-10-14-g4-full-shot-obstructions-0227z.md).
+
 **Latest checkpoint, 14 October 01:39 UTC:** the
 [general all-law acceptance](critical-review/ROOT-GENERAL-ALL-LAW-COMMONIZATION-ACCEPTANCE.md)
 establishes natural ENTIRE-INDEPENDENT to ENTIRE-COMMON determination for
