@@ -1,0 +1,221 @@
+import G4AstraReview
+
+/-! These are requested audit commands, not retained audit output. -/
+set_option pp.universes true
+set_option pp.explicit true
+
+#check @G4StrictMargin.strictCube_of_coordinateMargin
+#print G4StrictMargin.strictCube_of_coordinateMargin
+#print axioms G4StrictMargin.strictCube_of_coordinateMargin
+
+#check @G4StrictMargin.exists_strict_zero_of_coordinate_error
+#print G4StrictMargin.exists_strict_zero_of_coordinate_error
+#print axioms G4StrictMargin.exists_strict_zero_of_coordinate_error
+
+#check @G4StrictMargin.pow_le_one_of_unit_interval
+#print G4StrictMargin.pow_le_one_of_unit_interval
+#print axioms G4StrictMargin.pow_le_one_of_unit_interval
+
+#check @G4StrictMargin.pow_le_lower_power_mul
+#print G4StrictMargin.pow_le_lower_power_mul
+#print axioms G4StrictMargin.pow_le_lower_power_mul
+
+#check @G4StrictMargin.error_lt_power_margin
+#print G4StrictMargin.error_lt_power_margin
+#print axioms G4StrictMargin.error_lt_power_margin
+
+#check @G4StrictMargin.exists_strict_zero_of_power_error_bound
+#print G4StrictMargin.exists_strict_zero_of_power_error_bound
+#print axioms G4StrictMargin.exists_strict_zero_of_power_error_bound
+
+#check @G4StrictMargin.positive_cutoff
+#print G4StrictMargin.positive_cutoff
+#print axioms G4StrictMargin.positive_cutoff
+
+#check @G4StrictMargin.eventually_exists_strict_zero_of_order_gap
+#print G4StrictMargin.eventually_exists_strict_zero_of_order_gap
+#print axioms G4StrictMargin.eventually_exists_strict_zero_of_order_gap
+
+#check @G4CurvatureAlgebra.projection_transport
+#print G4CurvatureAlgebra.projection_transport
+#print axioms G4CurvatureAlgebra.projection_transport
+
+#check @G4CurvatureAlgebra.endpointProjection_tangent
+#print G4CurvatureAlgebra.endpointProjection_tangent
+#print axioms G4CurvatureAlgebra.endpointProjection_tangent
+
+#check @G4CurvatureAlgebra.endpointProjection_coordinates
+#print G4CurvatureAlgebra.endpointProjection_coordinates
+#print axioms G4CurvatureAlgebra.endpointProjection_coordinates
+
+#check @G4CurvatureAlgebra.endpointProjection_idempotent
+#print G4CurvatureAlgebra.endpointProjection_idempotent
+#print axioms G4CurvatureAlgebra.endpointProjection_idempotent
+
+#check @G4CurvatureAlgebra.normalizedCoordinates_tangent
+#print G4CurvatureAlgebra.normalizedCoordinates_tangent
+#print axioms G4CurvatureAlgebra.normalizedCoordinates_tangent
+
+#check @G4CurvatureAlgebra.logProjection_tangent
+#print G4CurvatureAlgebra.logProjection_tangent
+#print axioms G4CurvatureAlgebra.logProjection_tangent
+
+#check @G4CurvatureAlgebra.logProjection_coordinates
+#print G4CurvatureAlgebra.logProjection_coordinates
+#print axioms G4CurvatureAlgebra.logProjection_coordinates
+
+#check @G4CurvatureAlgebra.logProjection_idempotent
+#print G4CurvatureAlgebra.logProjection_idempotent
+#print axioms G4CurvatureAlgebra.logProjection_idempotent
+
+#check @G4CurvatureAlgebra.logProjection_add
+#print G4CurvatureAlgebra.logProjection_add
+#print axioms G4CurvatureAlgebra.logProjection_add
+
+#check @G4CurvatureAlgebra.logProjection_zero
+#print G4CurvatureAlgebra.logProjection_zero
+#print axioms G4CurvatureAlgebra.logProjection_zero
+
+#check @G4CurvatureAlgebra.leading_body_coefficient
+#print G4CurvatureAlgebra.leading_body_coefficient
+#print axioms G4CurvatureAlgebra.leading_body_coefficient
+
+#check @G4CurvatureAlgebra.complete_leading_projected_zero
+#print G4CurvatureAlgebra.complete_leading_projected_zero
+#print axioms G4CurvatureAlgebra.complete_leading_projected_zero
+
+#check @G4CurvatureAlgebra.bracket_sum_substitution
+#print G4CurvatureAlgebra.bracket_sum_substitution
+#print axioms G4CurvatureAlgebra.bracket_sum_substitution
+
+#check @G4CurvatureAlgebra.bracket_sum_of_complete_leading
+#print G4CurvatureAlgebra.bracket_sum_of_complete_leading
+#print axioms G4CurvatureAlgebra.bracket_sum_of_complete_leading
+
+#check @G4CurvatureAlgebra.half_smul_pair
+#print G4CurvatureAlgebra.half_smul_pair
+#print axioms G4CurvatureAlgebra.half_smul_pair
+
+#check @G4CurvatureAlgebra.logHessian_diagonal
+#print G4CurvatureAlgebra.logHessian_diagonal
+#print axioms G4CurvatureAlgebra.logHessian_diagonal
+
+#check @G4CurvatureAlgebra.logQuadratic_eq_half_hessian
+#print G4CurvatureAlgebra.logQuadratic_eq_half_hessian
+#print axioms G4CurvatureAlgebra.logQuadratic_eq_half_hessian
+
+#check @G4CurvatureAlgebra.logHessian_symmetric
+#print G4CurvatureAlgebra.logHessian_symmetric
+#print axioms G4CurvatureAlgebra.logHessian_symmetric
+
+#check @G4CurvatureAlgebra.logQuadratic_polarization
+#print G4CurvatureAlgebra.logQuadratic_polarization
+#print axioms G4CurvatureAlgebra.logQuadratic_polarization
+
+#check @G4CurvatureAlgebra.half_bracket_of_complete_leading
+#print G4CurvatureAlgebra.half_bracket_of_complete_leading
+#print axioms G4CurvatureAlgebra.half_bracket_of_complete_leading
+
+#check @G4CurvatureAlgebra.projected_second_residual
+#print G4CurvatureAlgebra.projected_second_residual
+#print axioms G4CurvatureAlgebra.projected_second_residual
+
+#check @G4CurvatureAlgebra.projected_sixth_curvature_residual
+#print G4CurvatureAlgebra.projected_sixth_curvature_residual
+#print axioms G4CurvatureAlgebra.projected_sixth_curvature_residual
+
+#check @G4DiagonalTangent.lam_succ
+#print G4DiagonalTangent.lam_succ
+#print axioms G4DiagonalTangent.lam_succ
+
+#check @G4DiagonalTangent.cast_lam
+#print G4DiagonalTangent.cast_lam
+#print axioms G4DiagonalTangent.cast_lam
+
+#check @G4DiagonalTangent.diagonalWeight_normal_form
+#print G4DiagonalTangent.diagonalWeight_normal_form
+#print axioms G4DiagonalTangent.diagonalWeight_normal_form
+
+#check @G4DiagonalTangent.diagonalExponent_reflect
+#print G4DiagonalTangent.diagonalExponent_reflect
+#print axioms G4DiagonalTangent.diagonalExponent_reflect
+
+#check @G4DiagonalTangent.binomial_weight_reflect
+#print G4DiagonalTangent.binomial_weight_reflect
+#print axioms G4DiagonalTangent.binomial_weight_reflect
+
+#check @G4DiagonalTangent.diagonalWeight_reflect
+#print G4DiagonalTangent.diagonalWeight_reflect
+#print axioms G4DiagonalTangent.diagonalWeight_reflect
+
+#check @G4DiagonalTangent.sum_range_eq_zero_of_reflect_neg
+#print G4DiagonalTangent.sum_range_eq_zero_of_reflect_neg
+#print axioms G4DiagonalTangent.sum_range_eq_zero_of_reflect_neg
+
+#check @G4DiagonalTangent.positive_root_cancellation
+#print G4DiagonalTangent.positive_root_cancellation
+#print axioms G4DiagonalTangent.positive_root_cancellation
+
+#check @G4DiagonalTangent.quadratic_coefficient_identity
+#print G4DiagonalTangent.quadratic_coefficient_identity
+#print axioms G4DiagonalTangent.quadratic_coefficient_identity
+
+#check @G4DiagonalTangent.wardResidual_zero
+#print G4DiagonalTangent.wardResidual_zero
+#print axioms G4DiagonalTangent.wardResidual_zero
+
+#check @G4DiagonalTangent.fixed_target_all_arity_residual
+#print G4DiagonalTangent.fixed_target_all_arity_residual
+#print axioms G4DiagonalTangent.fixed_target_all_arity_residual
+
+#check @G4DiagonalTangent.source_weighted_ward_identity
+#print G4DiagonalTangent.source_weighted_ward_identity
+#print axioms G4DiagonalTangent.source_weighted_ward_identity
+
+#check @G4DiagonalTangent.power_differential_mul
+#print G4DiagonalTangent.power_differential_mul
+#print axioms G4DiagonalTangent.power_differential_mul
+
+#check @G4DiagonalTangent.bigonDxWeight_mul
+#print G4DiagonalTangent.bigonDxWeight_mul
+#print axioms G4DiagonalTangent.bigonDxWeight_mul
+
+#check @G4DiagonalTangent.bigonDyWeight_mul
+#print G4DiagonalTangent.bigonDyWeight_mul
+#print axioms G4DiagonalTangent.bigonDyWeight_mul
+
+#check @G4DiagonalTangent.source_polynomial_partial_identity
+#print G4DiagonalTangent.source_polynomial_partial_identity
+#print axioms G4DiagonalTangent.source_polynomial_partial_identity
+
+#check @G4DiagonalTangent.pair_curve_identity
+#print G4DiagonalTangent.pair_curve_identity
+#print axioms G4DiagonalTangent.pair_curve_identity
+
+#check @G4DiagonalTangent.pair_target_value
+#print G4DiagonalTangent.pair_target_value
+#print axioms G4DiagonalTangent.pair_target_value
+
+#check @G4DiagonalTangent.pair_curve_ne_target
+#print G4DiagonalTangent.pair_curve_ne_target
+#print axioms G4DiagonalTangent.pair_curve_ne_target
+
+#check @G4DiagonalTangent.strict_curve_parameters
+#print G4DiagonalTangent.strict_curve_parameters
+#print axioms G4DiagonalTangent.strict_curve_parameters
+
+#check @G4DiagonalTangent.contrastB_increment
+#print G4DiagonalTangent.contrastB_increment
+#print axioms G4DiagonalTangent.contrastB_increment
+
+#check @G4DiagonalTangent.cap_four_target_values
+#print G4DiagonalTangent.cap_four_target_values
+#print axioms G4DiagonalTangent.cap_four_target_values
+
+#check @G4DiagonalTangent.cap_four_directional_values
+#print G4DiagonalTangent.cap_four_directional_values
+#print axioms G4DiagonalTangent.cap_four_directional_values
+
+#check @G4DiagonalTangent.cap_four_curve_expansion
+#print G4DiagonalTangent.cap_four_curve_expansion
+#print axioms G4DiagonalTangent.cap_four_curve_expansion

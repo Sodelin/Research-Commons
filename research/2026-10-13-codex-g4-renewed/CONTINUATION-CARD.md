@@ -65,3 +65,27 @@ Latest complete [proof/review handoff](../../communications/2026-10-14-g4-review
 and [dated obligation register](CONTINUATION-STATUS-1920Z.md) supply exact
 pins and full attribution. Lean/Rust execution belongs to its existing
 integration owner; this research card assigns no competing compiler job.
+
+## Reviewed independent Astra successor (14 October 2026 UTC)
+
+The independent Astra [exact-fibre packet](../2026-10-14-g4-independent-astra-exact-fibre-0535z/README.md)
+has scoped hand acceptance in the Codex
+[lead review](../2026-10-14-codex-g4-astra-review-0630z/ROOT-MATHEMATICAL-REVIEW.md)
+and [separate margin review](../2026-10-14-codex-g4-astra-review-0630z/MARGIN-INDEPENDENT-REVIEW.md).
+It supplies fixed-presentation positivity-controlled exactification when
+`q>rR`, the explicitly forced body-curvature/projection correction, and an
+all-arity diagonal tangent countercontrol. All 31 original finite controls
+replayed independently with exact saved-output matches. These results supply
+no successful all-cap physical jets or full legal-I determining certificate.
+
+Nolan requested Lean. Three [additive proof-source modules](../2026-10-14-codex-g4-astra-review-0630z/README.md)
+and an [owner compilation handoff](../2026-10-14-codex-g4-astra-review-0630z/LEAN-INTEGRATION-HANDOFF.md)
+are authored, with compilation/type/axiom output unverified. The classical
+error-bound premise and analytic/physical adapters stay visible. The existing
+integration owner retains source selection and compiler execution.
+
+Astra retains its [algebraic-jet continuation](../../communications/2026-10-14-g4-independent-routing-and-algebraic-jet-checkpoint-0621z.md)
+and actual source-construction duty. The next master advance must construct
+successful complete physical jets meeting an architecture-valid margin bound
+at every cap for the same target, or establish another full-strength route.
+Reviewed components and authored Lean declarations are not master closure.

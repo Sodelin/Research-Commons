@@ -1,0 +1,196 @@
+{
+  "schema": "g4_astra_additive_lean_source_inventory_v1",
+  "observed_utc": "2026-10-14T06:44:51.941852+00:00",
+  "original_hand_packet_commit": "443c79137a8e5221250cbb338d73e10a3a3c37bb",
+  "independent_review_commit": "6e813368ddf57d39d4cdc54ff662904922cdde72",
+  "prior_review_publication_readback": {
+    "commit": "6e813368ddf57d39d4cdc54ff662904922cdde72",
+    "files": [
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/ROOT-MATHEMATICAL-REVIEW.md",
+        "sha256": "668619639f9935c960dea3f72e10837f844fc968295e8f00a2de69d23e44420f",
+        "git_blob": "bde61d71fc6b7d756c40f6eb7cab8e8cc92c1761",
+        "remote_bytes_equal_local": true
+      },
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/MARGIN-INDEPENDENT-REVIEW.md",
+        "sha256": "9d3d6c54ae161f174ceb0677d227ca3ab35c65677ec9693e9b1a4ddcfb2fa8fd",
+        "git_blob": "020c15fbf45f00b1fc0b6e5c5d119642513bf8bd",
+        "remote_bytes_equal_local": true
+      },
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/evidence/INDEPENDENT-REPLAY.json",
+        "sha256": "500672ad87298870b23891682d009a13801895b99157a20798bae0d9e04adb46",
+        "git_blob": "673189e52f39fcb48988486574ecb69472243972",
+        "remote_bytes_equal_local": true
+      },
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/evidence/verify_formal_identities.py.stdout.json",
+        "sha256": "bfa4f601297a3e3471aa646aad64d73370e32014e37ad74c6c2b13e3bd9ec28e",
+        "git_blob": "105a3ae0f102c2f369cfea873e46a1a8c348c403",
+        "remote_bytes_equal_local": true
+      },
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/evidence/source_diagonal_controls.py.stdout.json",
+        "sha256": "e3beac28ec8c81b1270a799da1a7df8bc49e460222134b95e893f4e00d53b246",
+        "git_blob": "88a72bb27926e54a16094f0fd1fa42da5e61da69",
+        "remote_bytes_equal_local": true
+      },
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/evidence/verify_formal_identities.py.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "remote_bytes_equal_local": true
+      },
+      {
+        "path": "research/2026-10-14-codex-g4-astra-review-0630z/evidence/source_diagonal_controls.py.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "remote_bytes_equal_local": true
+      }
+    ]
+  },
+  "modules": [
+    {
+      "module": "G4StrictMargin",
+      "path": "lean/G4StrictMargin.lean",
+      "sha256": "a78e639389a08a5d9ab384956d82d4f650cc23842208dde2b978b4a8fcc5fdb4",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring",
+        "Lean.Elab.Tactic.Omega"
+      ],
+      "theorem_declarations": [
+        "G4StrictMargin.strictCube_of_coordinateMargin",
+        "G4StrictMargin.exists_strict_zero_of_coordinate_error",
+        "G4StrictMargin.pow_le_one_of_unit_interval",
+        "G4StrictMargin.pow_le_lower_power_mul",
+        "G4StrictMargin.error_lt_power_margin",
+        "G4StrictMargin.exists_strict_zero_of_power_error_bound",
+        "G4StrictMargin.positive_cutoff",
+        "G4StrictMargin.eventually_exists_strict_zero_of_order_gap"
+      ],
+      "compilation_status": "UNCOMPILED"
+    },
+    {
+      "module": "G4CurvatureAlgebra",
+      "path": "lean/G4CurvatureAlgebra.lean",
+      "sha256": "1964d6abe5717c2ecacc7667106c921a24d6f4dd21b9d3046c48fbe08fd40b19",
+      "imports": [
+        "Mathlib.Algebra.Module.LinearMap.Basic",
+        "Mathlib.Data.Rat.Defs",
+        "Mathlib.Tactic.Abel",
+        "Mathlib.Tactic.NoncommRing",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "theorem_declarations": [
+        "G4CurvatureAlgebra.projection_transport",
+        "G4CurvatureAlgebra.endpointProjection_tangent",
+        "G4CurvatureAlgebra.endpointProjection_coordinates",
+        "G4CurvatureAlgebra.endpointProjection_idempotent",
+        "G4CurvatureAlgebra.normalizedCoordinates_tangent",
+        "G4CurvatureAlgebra.logProjection_tangent",
+        "G4CurvatureAlgebra.logProjection_coordinates",
+        "G4CurvatureAlgebra.logProjection_idempotent",
+        "G4CurvatureAlgebra.logProjection_add",
+        "G4CurvatureAlgebra.logProjection_zero",
+        "G4CurvatureAlgebra.leading_body_coefficient",
+        "G4CurvatureAlgebra.complete_leading_projected_zero",
+        "G4CurvatureAlgebra.bracket_sum_substitution",
+        "G4CurvatureAlgebra.bracket_sum_of_complete_leading",
+        "G4CurvatureAlgebra.half_smul_pair",
+        "G4CurvatureAlgebra.logHessian_diagonal",
+        "G4CurvatureAlgebra.logQuadratic_eq_half_hessian",
+        "G4CurvatureAlgebra.logHessian_symmetric",
+        "G4CurvatureAlgebra.logQuadratic_polarization",
+        "G4CurvatureAlgebra.half_bracket_of_complete_leading",
+        "G4CurvatureAlgebra.projected_second_residual",
+        "G4CurvatureAlgebra.projected_sixth_curvature_residual"
+      ],
+      "compilation_status": "UNCOMPILED"
+    },
+    {
+      "module": "G4DiagonalTangent",
+      "path": "lean/G4DiagonalTangent.lean",
+      "sha256": "f465f35b62cd9ad6eca139cee2ac990c0715dc65832ad02dd3030409772227c4",
+      "imports": [
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Algebra.BigOperators.Intervals",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Lean.Elab.Tactic.Omega",
+        "Mathlib.Tactic.Ring"
+      ],
+      "theorem_declarations": [
+        "G4DiagonalTangent.lam_succ",
+        "G4DiagonalTangent.cast_lam",
+        "G4DiagonalTangent.diagonalWeight_normal_form",
+        "G4DiagonalTangent.diagonalExponent_reflect",
+        "G4DiagonalTangent.binomial_weight_reflect",
+        "G4DiagonalTangent.diagonalWeight_reflect",
+        "G4DiagonalTangent.sum_range_eq_zero_of_reflect_neg",
+        "G4DiagonalTangent.positive_root_cancellation",
+        "G4DiagonalTangent.quadratic_coefficient_identity",
+        "G4DiagonalTangent.wardResidual_zero",
+        "G4DiagonalTangent.fixed_target_all_arity_residual",
+        "G4DiagonalTangent.source_weighted_ward_identity",
+        "G4DiagonalTangent.power_differential_mul",
+        "G4DiagonalTangent.bigonDxWeight_mul",
+        "G4DiagonalTangent.bigonDyWeight_mul",
+        "G4DiagonalTangent.source_polynomial_partial_identity",
+        "G4DiagonalTangent.pair_curve_identity",
+        "G4DiagonalTangent.pair_target_value",
+        "G4DiagonalTangent.pair_curve_ne_target",
+        "G4DiagonalTangent.strict_curve_parameters",
+        "G4DiagonalTangent.contrastB_increment",
+        "G4DiagonalTangent.cap_four_target_values",
+        "G4DiagonalTangent.cap_four_directional_values",
+        "G4DiagonalTangent.cap_four_curve_expansion"
+      ],
+      "compilation_status": "UNCOMPILED"
+    }
+  ],
+  "theorem_declarations_authored": 54,
+  "toolchain_reference": "leanprover/lean4:v4.33.1",
+  "mathlib_signature_reference_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "all_imports": [
+    "Lean.Elab.Tactic.Omega",
+    "Mathlib.Algebra.BigOperators.Intervals",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Module.LinearMap.Basic",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.Rat.Defs",
+    "Mathlib.Data.Real.Basic",
+    "Mathlib.Tactic.Abel",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.NoncommRing",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Ring"
+  ],
+  "proof_placeholder_scan": "No sorry/admit/sorryAx/custom axiom/opaque declaration found in the three own modules after removing comments. Static scan only.",
+  "compiler_availability": {
+    "lean_on_PATH": null,
+    "lake_on_PATH": null,
+    "owned_scratch_lean_or_lake_discovered": false
+  },
+  "execution": {
+    "original_exact_controls_independently_replayed": 31,
+    "new_cap_four_symbolic_transcription_checks": 2,
+    "lean_executed": false,
+    "lake_executed": false,
+    "rust_executed": false,
+    "device_action_executed": false
+  },
+  "integration_state": "Additive proposal; no source graph or compiler adoption acknowledgement recorded. Existing owner status route reported active serial dependency compilation.",
+  "limits": [
+    "Source inventory is not proof acceptance.",
+    "Full analytic/physical adapters and external theorem formalization remain explicit gates.",
+    "No exact all-cap source family or original G4 master closure."
+  ]
+}
