@@ -1,0 +1,103 @@
+{
+  "schema": "g4_algebraic_jet_independent_replay_v1",
+  "observed_utc": "2026-10-14T07:11:43.611729+00:00",
+  "original_packet_commit": "6309c491674435a06455011a0e5db791f0521078",
+  "source_sha256_matches": [
+    {
+      "path": "ALGEBRAIC-CLI-RESULT.json",
+      "sha256": "c45c9676d4bc47a1910c8b460a681ccebf65b3fbaec8632e9ab629523be9dbf7"
+    },
+    {
+      "path": "ALGEBRAIC-JET-THEOREM.md",
+      "sha256": "72686f60a0246aef1217c86fe8427c88d60063c2722a85c6523717a9064217c9"
+    },
+    {
+      "path": "INTEGRATION-CONTRACT.md",
+      "sha256": "4e470730c5419a2ca8c9a169f1aa531f3411dac1e9f881912fc4444f5fa9d0cf"
+    },
+    {
+      "path": "RATIONAL-CLI-RESULT.json",
+      "sha256": "2bb8e511bbb54e35906409329a3b33d331027698d2303c983538b9efc3318827"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5285737e8567a51f8e56c45c23bbeb10c0b14af3a1d603308ebfcbe92ff89af6"
+    },
+    {
+      "path": "SOURCE-PINS.json",
+      "sha256": "02c0fe0ef42be2a61b466f6c562571d8a872a20d685a944ad8b1e2d434b85307"
+    },
+    {
+      "path": "TEST-RESULTS.json",
+      "sha256": "b66c13ab8fad8f58bafc66f0b3178301b923e23df941be9a1e0610e096db7e98"
+    },
+    {
+      "path": "algebraic_jet_checker.py",
+      "sha256": "446c3582a775b4c3048ad43028a14f137bc89cc9ec562e2b2499876de70fa242"
+    },
+    {
+      "path": "example-algebraic-certificate.json",
+      "sha256": "f0ba478171c2c9410e8f527a1eae92c20926c8e922aae72de23c675bb8cdd2ee"
+    },
+    {
+      "path": "example-rational-certificate.json",
+      "sha256": "b2b868427383887010a5adab1c7252ccd7790c8520c563cbd7a1d6ca67753491"
+    },
+    {
+      "path": "references.bib",
+      "sha256": "74bd6d09f066962785553766b428ad36a9528e50f4c9e6433935c322636beffc"
+    },
+    {
+      "path": "test_algebraic_jet_checker.py",
+      "sha256": "66a967103a611808f57c0d5b66b6553bb11e434d2365a3f5a852d2f2cabf8e4c"
+    }
+  ],
+  "executions": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "test_algebraic_jet_checker.py"
+      ],
+      "elapsed_seconds": 0.0586,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "original_saved_output_byte_match": true,
+      "original_receipt": "TEST-RESULTS.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "algebraic_jet_checker.py",
+        "example-algebraic-certificate.json"
+      ],
+      "elapsed_seconds": 0.037,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "original_saved_output_byte_match": true,
+      "original_receipt": "ALGEBRAIC-CLI-RESULT.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "algebraic_jet_checker.py",
+        "example-rational-certificate.json"
+      ],
+      "elapsed_seconds": 0.0385,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "original_saved_output_byte_match": true,
+      "original_receipt": "RATIONAL-CLI-RESULT.json"
+    }
+  ],
+  "checks_passed": 28,
+  "test_fixture_writes_confined_to_scratch": true,
+  "fixture_bytes_unchanged": true,
+  "lean_executed": false,
+  "rust_executed": false,
+  "master_closed": false,
+  "limits": "Separate reviewer replay of contributor-written finite controls and abstract polynomial examples; no full source binding, universal checker proof or Lean verification.",
+  "all_thirteen_core_files_match_pinned_git_commit": true
+}

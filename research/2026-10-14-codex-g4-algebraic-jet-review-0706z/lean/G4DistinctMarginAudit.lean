@@ -1,0 +1,24 @@
+import G4DistinctMargin
+
+set_option pp.universes true
+set_option pp.explicit true
+
+#check @G4DistinctMargin.nonzero_of_value_error
+#print G4DistinctMargin.nonzero_of_value_error
+#print axioms G4DistinctMargin.nonzero_of_value_error
+
+#check @G4DistinctMargin.scaled_external_error_bound
+#print G4DistinctMargin.scaled_external_error_bound
+#print axioms G4DistinctMargin.scaled_external_error_bound
+
+#check @G4DistinctMargin.component_order_gaps
+#print G4DistinctMargin.component_order_gaps
+#print axioms G4DistinctMargin.component_order_gaps
+
+#check @G4DistinctMargin.exists_strict_distinct_zero_of_power_error_bound
+#print G4DistinctMargin.exists_strict_distinct_zero_of_power_error_bound
+#print axioms G4DistinctMargin.exists_strict_distinct_zero_of_power_error_bound
+
+#check @G4DistinctMargin.eventually_exists_strict_distinct_zero_of_order_gap
+#print G4DistinctMargin.eventually_exists_strict_distinct_zero_of_order_gap
+#print axioms G4DistinctMargin.eventually_exists_strict_distinct_zero_of_order_gap
