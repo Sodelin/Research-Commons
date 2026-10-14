@@ -100,10 +100,21 @@ labels gives a false-equality probability (1-s)^M. On a compact coin
 interval, |s'|<=C s. Its first and second derivatives are bounded by
 constants times M s(1-s)^(M-1) and M^2 s^2(1-s)^(M-2), uniformly bounded
 in M. They tend to zero for s>0; when s=0 the derivatives are zero.
-Dominated convergence handles the finitely many comparisons. The same
-argument works with the bounded finite decorating events. Thus the
-expectations and the required coin derivatives of (1) are limits of
-finite completed-row calculations.
+For the combined approximation, use disjoint batches of extra labels:
+one for the empirical frequency test and a separate batch for EACH
+candidate-set comparison, all disjoint from the fixed decorating labels.
+Conditional on the relative hierarchy and fixed labels, these batches are
+independent paintbox samples. The term retaining candidate j is therefore
+exactly its Bernstein test times the product, over i<j, of
+1-(1-s_ij)^M, times its bounded decorating indicator. The product rule has
+finitely many terms. The Bernstein first/second derivative bounds and
+the uniform bounds just proved for the comparison factors dominate every
+term, including their mixed derivatives. For s_ij>0 each comparison
+factor's derivatives tend to zero; for s_ij=0 they are identically zero.
+Thus dominated convergence proves the JOINT empirical-test/deduplication
+derivative limit, rather than merely its two separate probability limits.
+The expectations and required coin derivatives of (1) are consequently
+limits of finite completed-row calculations.
 
 Changes of the two positive arm durations or of the finite upper
 continuation give finite signed measures in total variation. For an arm
@@ -200,10 +211,12 @@ localization with epsilon f((x-1/2)/epsilon) consequently gives
     v_g 2^(-(n+m)) [H_0^(n,m)(tau)-H_1^(n,m)(tau)] = 0    (6)
 
 for every n,m,tau, including zero allocations to either arm. Thus either
-v_g=0, or the ENTIRE conditional two-port joint response is invariant
-under exchanging the two A ports.
+v_g=0, or the ENTIRE conditional two-port response on these selected
+A roots and ONE B leaf is invariant under exchanging the two A ports.
+No assertion about additional B copies or other retained taxa is being
+inferred from this one-B decoration.
 
-In the latter case the full joint source response, with all remaining
+In the latter case every selected n-A/one-B response, with all remaining
 parameters held fixed, is exactly even under g to 1-g: expand its finite
 row over every assignment of its A labels to the ports, and pair each
 assignment with its complement using the established conditional-law
