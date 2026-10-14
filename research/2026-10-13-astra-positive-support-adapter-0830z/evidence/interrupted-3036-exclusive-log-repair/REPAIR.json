@@ -1,0 +1,34 @@
+{
+  "schema": "astra_exclusive_interrupted_log_repair_v1",
+  "observed_utc": "2026-10-14T00:34:01.415234+00:00",
+  "cause": "Pinned compile_one opens stdout/stderr exclusively before Popen; preserved old emptylogs still occupied those paths.",
+  "actual_guard_sha256": "401fa941b79362f254e03f51bfd5e2c14dceae32e74c16833157bbeca75e8c8a",
+  "guard_exit_code": 1,
+  "guard_stop": null,
+  "actual_compiler_launch_reached": false,
+  "attribution": "Traceback at serial_compile.py line52 exclusive stdout open; Popen is on subsequent line53. No module receipt or artifact exists.",
+  "moves": [
+    {
+      "from_path": "/workspace/scratch/astra-support-external-0840/3036.stdout",
+      "preserved_archive": "/workspace/scratch/astra-support-external-0840/preserved-interrupted-3036-before-066/3036.stdout",
+      "public_copy": "3036.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "from_path": "/workspace/scratch/astra-support-external-0840/3036.stderr",
+      "preserved_archive": "/workspace/scratch/astra-support-external-0840/preserved-interrupted-3036-before-066/3036.stderr",
+      "public_copy": "3036.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "unrelated_files_changed": false,
+  "source_changes": false,
+  "compiler_changes": false,
+  "limit_changes": false,
+  "no_module_success_claimed": true,
+  "next": "One fresh unchanged3036 invocation in separately named batch066 under original6GiB virtual4GiBphysical900wall600CPU.",
+  "preceding_source_and_log_preservation": "interrupted-3036-preservation-v1",
+  "prior_064_wall_stop_unchanged": true
+}
