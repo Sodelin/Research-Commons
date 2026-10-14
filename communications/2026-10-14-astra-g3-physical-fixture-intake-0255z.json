@@ -1,0 +1,1233 @@
+{
+  "candidate": {
+    "module": "G3PhysicalFixtureAdmission",
+    "namespace": "DotG3.PhysicalFixture",
+    "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/G3PhysicalFixtureAdmission.lean",
+    "r0_change": "Final source adds only end plus blank line before end DotG3.PhysicalFixture, closing the noncomputable section; no proof-body change.",
+    "r0_must_not_enter_aggregate": true,
+    "r0_sha256": "2a5fbfde7c65caa8aaa0e402d5d6c09a8101ed58447bea183775370a4311384c",
+    "sha256": "3e8725ea49ee7b841340bf8e31ffcb0ab0719cb46706b1fc86c9d9524880762d",
+    "status": "INDEPENDENT_STATIC_SOURCE_PASS_UNCOMPILED_UNSELECTED"
+  },
+  "dependency_fit": {
+    "all_existing_owned_ancestors_in_full1641": true,
+    "current319_expansion": "23 existing selected G7 provider bodies plus the new candidate; current319/3591 remains unchanged. Earlier six-body delta was from469, not319.",
+    "current319_selection_path": "research/2026-10-13-astra-positive-support-adapter-0830z/PROVIDER-SELECTION.json",
+    "current319_selection_sha256": "0be6bc5d9d9e8e329d8b899bb4d158e1e42188510631d115c60d0a89717ea95b",
+    "current3591_external_path": "research/2026-10-13-astra-positive-support-adapter-0830z/EXTERNAL-PLAN.json",
+    "current3591_external_sha256": "ef775a7223500314359a9ed02a87d207b18eacda9cddfa5a8990c5e1a8e43f10",
+    "direct_imports": [
+      "G7OriginalAdmission",
+      "G7OriginalSurvivalCoverage",
+      "Mathlib.Tactic.FinCases",
+      "Mathlib.Tactic.NormNum"
+    ],
+    "existing_current3591_external_roots": [
+      "Mathlib.Algebra.BigOperators.Field",
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+      "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Algebra.Polynomial.Degree.Operations",
+      "Mathlib.Algebra.Polynomial.Eval.Defs",
+      "Mathlib.Analysis.Normed.Algebra.MatrixExponential",
+      "Mathlib.Analysis.Normed.Module.FiniteDimension",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecificLimits.Basic",
+      "Mathlib.Data.ENNReal.BigOperators",
+      "Mathlib.Data.Fin.Tuple.Basic",
+      "Mathlib.Data.Finset.Card",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Finset.Prod",
+      "Mathlib.Data.Finset.Sort",
+      "Mathlib.Data.Finset.Union",
+      "Mathlib.Data.Fintype.Basic",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Fintype.Card",
+      "Mathlib.Data.Fintype.EquivFin",
+      "Mathlib.Data.Fintype.Inv",
+      "Mathlib.Data.Fintype.Powerset",
+      "Mathlib.Data.Fintype.Sum",
+      "Mathlib.Data.List.Perm.Basic",
+      "Mathlib.Data.Nat.Choose.Basic",
+      "Mathlib.Data.Rat.BigOperators",
+      "Mathlib.Data.Rat.Lemmas",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.LinearAlgebra.Vandermonde",
+      "Mathlib.Logic.Relation",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Countable",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Map",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.Probability.Distributions.Bernoulli",
+      "Mathlib.Probability.Distributions.Exponential",
+      "Mathlib.Probability.Distributions.Poisson.Basic",
+      "Mathlib.Probability.Distributions.Uniform",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+      "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+      "Mathlib.Tactic",
+      "Mathlib.Tactic.FinCases",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.NormNum",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Topology.Algebra.Polynomial"
+    ],
+    "external_expansion_indicated_by_static_headers": false,
+    "full1641_expansion": "One new candidate module only; existing provider versions already selected. Official import query and owner selection remain pending.",
+    "full1641_plan_path": "research/2026-10-14-astra-full-owned-plan-0145z/FULL-OWNED-SOURCE-PLAN.json",
+    "full1641_plan_sha256": "b4c7448756ac891e83ebd357c24e75e0c0d2d41ac369ce33744dfdf38170a501",
+    "method": "Static new source imports plus authenticated existing official source-query receipts for all125 existing owned ancestors and transitive traversal of the existing3661 external plan. No new import query.",
+    "missing_current319_owned_providers": [
+      {
+        "imports": [
+          "G7OriginalEdgeGathering"
+        ],
+        "module": "G7ActualCalendarGathering",
+        "selected_full1641": true,
+        "sha256": "ec271199665087f27cbfe0e014ab2607c48348ebb4e0679f52402963e09d9ec7"
+      },
+      {
+        "imports": [
+          "G7GlobalOwnerCoins"
+        ],
+        "module": "G7BoundaryExitCommutation",
+        "selected_full1641": true,
+        "sha256": "735b155e36f9654676953f8a0f3e6bf85ac81b469e2bf9efd24c2aebf9d0eeda"
+      },
+      {
+        "imports": [
+          "G7NodeActions",
+          "G7BoundaryExitCommutation"
+        ],
+        "module": "G7BoundaryPhasePermutation",
+        "selected_full1641": true,
+        "sha256": "fea51a87be89f084752b22df8c52ae345515f1a0986cd0475d1a4be09453b4cf"
+      },
+      {
+        "imports": [
+          "G7SnapshotRelabelling",
+          "G7CoinReindexing"
+        ],
+        "module": "G7BoundaryRelabelling",
+        "selected_full1641": true,
+        "sha256": "d10eb8af3f73675bd8567801bfc3133bced8fa180b913f6ffa24c2726042e00f"
+      },
+      {
+        "imports": [
+          "G7EdgeExposureAccounting",
+          "UnifiedLean.Source.SourceCalendarTiming"
+        ],
+        "module": "G7CalendarExposureClosedForm",
+        "selected_full1641": true,
+        "sha256": "2219717f88d723114683e9a440dd06c71dfb0646b8ccd2e0f1756df5cb52d585"
+      },
+      {
+        "imports": [
+          "G7OrderedFrontierProduct"
+        ],
+        "module": "G7CalendarFrontierOrder",
+        "selected_full1641": true,
+        "sha256": "622aa6f1fae029b29a79e6e6ea70b973f641eb6ef258066acc9b456481f77dbe"
+      },
+      {
+        "imports": [
+          "G7OriginalRelabelling",
+          "UnifiedLean.Source.SourceBoundaryKernels",
+          "UnifiedLean.Source.SourceNaturalInitialization"
+        ],
+        "module": "G7CoinReindexing",
+        "selected_full1641": true,
+        "sha256": "a11ce95779a8b7beec03539a63fb2a2c940d4e5dfcdaa4d14351e67f2dfab049"
+      },
+      {
+        "imports": [
+          "G7ActualCalendarGathering"
+        ],
+        "module": "G7EdgeExposureAccounting",
+        "selected_full1641": true,
+        "sha256": "786e16b4bcd19de06b338820f905803209fc4e0a36f08a8c00e347a9a8caed1a"
+      },
+      {
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Data.Finset.Card",
+          "Mathlib.Data.Fintype.Card"
+        ],
+        "module": "G7FiniteReachability",
+        "selected_full1641": true,
+        "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35"
+      },
+      {
+        "imports": [
+          "G7BoundaryRelabelling"
+        ],
+        "module": "G7GlobalOwnerCoins",
+        "selected_full1641": true,
+        "sha256": "a8ce7af87d48354493a9a5b6ce283fcfb0116f3a51ef8ecc10fc872784edca1a"
+      },
+      {
+        "imports": [
+          "G7GlobalOwnerCoins",
+          "UnifiedLean.Source.SourceCalendarCompiler"
+        ],
+        "module": "G7NodeActions",
+        "selected_full1641": true,
+        "sha256": "478d9505249525e3710c5ed1bf4e1c3d8b107c217b88d8f86d9863fd959c0967"
+      },
+      {
+        "imports": [
+          "G7CalendarExposureClosedForm",
+          "G7BoundaryPhasePermutation",
+          "Mathlib.Data.List.Perm.Basic"
+        ],
+        "module": "G7OrderedFrontierProduct",
+        "selected_full1641": true,
+        "sha256": "f41429ea4f33e5bee5218097f2ecf8b553ecf5439fc7acb58ed24bea0d665617"
+      },
+      {
+        "imports": [
+          "G7OriginalFiniteEncoding",
+          "G7FiniteReachability",
+          "Mathlib.Data.Fintype.Inv"
+        ],
+        "module": "G7OriginalAdmission",
+        "selected_full1641": true,
+        "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c"
+      },
+      {
+        "imports": [
+          "SourceNetwork",
+          "Mathlib.Algebra.BigOperators.Ring.Finset",
+          "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+          "Mathlib.Data.Fintype.EquivFin"
+        ],
+        "module": "G7OriginalCensus",
+        "selected_full1641": true,
+        "sha256": "cb05c3483553a3feb79909d343dcabd22e65ae7059ad639a285bce5f2044b517"
+      },
+      {
+        "imports": [
+          "G7OriginalEdgeOperators",
+          "UnifiedLean.Source.SourceBoundaryLocations"
+        ],
+        "module": "G7OriginalEdgeBoundary",
+        "selected_full1641": true,
+        "sha256": "a0d841a86484004739f54468e0534c08bb87015083b32dafa89ddf122bb99cb9"
+      },
+      {
+        "imports": [
+          "G7OriginalEdgeBoundary",
+          "UnifiedLean.Source.SourceNaturalInitialization"
+        ],
+        "module": "G7OriginalEdgeGathering",
+        "selected_full1641": true,
+        "sha256": "9c264e9bde19de8401dbf998ba39b23785f7a91378251d26b0a3001a462a5d8a"
+      },
+      {
+        "imports": [
+          "G7NodeActions",
+          "G7BoundaryExitCommutation",
+          "G7SinglePopulationPolynomialKernel",
+          "UnifiedLean.Source.SourceEpochSemigroup",
+          "Mathlib.Probability.Distributions.Uniform"
+        ],
+        "module": "G7OriginalEdgeOperators",
+        "selected_full1641": true,
+        "sha256": "b095b41a14fe06228cd07a257a5f6d6af02ac8ccf92f7b7f99d1d8e6fd4ac4a8"
+      },
+      {
+        "imports": [
+          "G7OriginalRelabelling"
+        ],
+        "module": "G7OriginalFiniteEncoding",
+        "selected_full1641": true,
+        "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078"
+      },
+      {
+        "imports": [
+          "G7OriginalCensus",
+          "UnifiedLean.Source.NativePairClockLaw",
+          "UnifiedLean.Source.NativeIndependentPairMixture"
+        ],
+        "module": "G7OriginalRelabelling",
+        "selected_full1641": true,
+        "sha256": "beddfec93b088e9820358bd25377061486b83f0bd3a0f054c5d760da70c527e0"
+      },
+      {
+        "imports": [
+          "G7WholeEdgeExposureInvariant",
+          "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+        ],
+        "module": "G7OriginalSurvivalCoverage",
+        "selected_full1641": true,
+        "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9"
+      },
+      {
+        "imports": [
+          "G7SourceStateRelabelling",
+          "UnifiedLean.Source.FiniteSourceSnapshot",
+          "UnifiedLean.Source.UniformizedSourceStep"
+        ],
+        "module": "G7SnapshotRelabelling",
+        "selected_full1641": true,
+        "sha256": "cabdfe7caf9e2161b0e3c84d33a6ed388f6b4c00e529023eac0077803250cb7f"
+      },
+      {
+        "imports": [
+          "G7OriginalRelabelling",
+          "SourceLabelledForest"
+        ],
+        "module": "G7SourceStateRelabelling",
+        "selected_full1641": true,
+        "sha256": "3181b57b5a5511a837df2b05d9d6e332e485959ca571f6d85862cfc9a11e5d14"
+      },
+      {
+        "imports": [
+          "G7CalendarFrontierOrder",
+          "G7AncestralRationalCompletion",
+          "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+          "UnifiedLean.Source.SourceCompletedUnrankedTree"
+        ],
+        "module": "G7WholeEdgeExposureInvariant",
+        "selected_full1641": true,
+        "sha256": "f0c115252f9b62ad499959a2a0d28f884a981490a1cec23ae12f7e81ba4e4642"
+      }
+    ],
+    "narrow_future_routing": "Separate owner-selected successor after current319; existing3591 source graph already contains the needed3582 external modules. Keep full0145 freeze and active319 plans unchanged; authenticate actual complete objects under the owner guard before reuse.",
+    "new_source_selected": false,
+    "official_existing_queries": {
+      "all125_saved_receipts_request_source_IMPORTS_stdout_stderr_authenticated": true,
+      "canonical_bindings_sha256": "35f2d2a7680e2e0c50bec3dc9ca7e6dd7b222a6e7c3de57c0d293c323c085dc6",
+      "capture_manifest_path": "research/2026-10-14-astra-full-accepted-import-query-0100z/evidence/import-query-v2-authenticated/FILES.json",
+      "capture_manifest_sha256": "75ab953d0da6d7c948f5e0dc68cccdfc2d9ee611ea6623f740ccf4915ad4b2eb",
+      "normalization_note": "Raw repeated Init source lines retained; IMPORTS uses first-occurrence deduplication. Initial metadata equality check rejected duplicates and was corrected without changing saved outputs or running any query.",
+      "published_fullquery_commit": "54ec1fa02336cb9651bd717de449c012ff14fcd6",
+      "record_locator": "Use EXTERNAL-PLAN.compiler_queries matching each selected source path; captured/queries/{index:04d}/RECEIPT.json and IMPORTS.json; checks include matching literal header and deduplicated complete stdout import paths."
+    },
+    "official_external_closure": {
+      "Mathlib_Data_FinEnum": {
+        "present_in_active3591": false,
+        "present_in_full3661": true,
+        "reason": "Actual selected G7OriginalFiniteEncoding header imports only G7OriginalRelabelling; all125 official owned query outputs and full external DFS exclude FinEnum.",
+        "required_for_this_fixture_closure": false
+      },
+      "canonical_plan_order_module_list_sha256": "876aba0a16c605c9bdbc51b34a8e4d12bad1748e95f0b0a152aaefd7a2ed2801",
+      "derivation": "For each of125 selected owned modules, authenticate its saved official query receipt and IMPORTS; traverse source paths through owned selections and external3661 module rows. Add the two literal new-source Mathlib imports. Traverse all60 external roots by the existing external plan import source paths; classify toolchain src/lean paths separately. All3582 reached external source rows equal active3591.",
+      "full_vs_current3591_source_row_mismatches": [],
+      "new_source_query_status": "Pending for the new fixture body itself; no current object/reuse readiness claim.",
+      "new_vs_active3591": [],
+      "roots": [
+        "Mathlib.Algebra.BigOperators.Field",
+        "Mathlib.Algebra.BigOperators.Fin",
+        "Mathlib.Algebra.BigOperators.Finsupp.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Algebra.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+        "Mathlib.Algebra.Polynomial.Degree.Operations",
+        "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "Mathlib.Analysis.Normed.Algebra.MatrixExponential",
+        "Mathlib.Analysis.Normed.Module.FiniteDimension",
+        "Mathlib.Analysis.SpecialFunctions.Exp",
+        "Mathlib.Analysis.SpecialFunctions.Exponential",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Analysis.SpecificLimits.Basic",
+        "Mathlib.Data.ENNReal.BigOperators",
+        "Mathlib.Data.Fin.Tuple.Basic",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Finset.Prod",
+        "Mathlib.Data.Finset.Sort",
+        "Mathlib.Data.Finset.Union",
+        "Mathlib.Data.Fintype.Basic",
+        "Mathlib.Data.Fintype.BigOperators",
+        "Mathlib.Data.Fintype.Card",
+        "Mathlib.Data.Fintype.EquivFin",
+        "Mathlib.Data.Fintype.Inv",
+        "Mathlib.Data.Fintype.Powerset",
+        "Mathlib.Data.Fintype.Sum",
+        "Mathlib.Data.List.Perm.Basic",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Data.Rat.BigOperators",
+        "Mathlib.Data.Rat.Lemmas",
+        "Mathlib.Data.Real.Basic",
+        "Mathlib.LinearAlgebra.Vandermonde",
+        "Mathlib.Logic.Relation",
+        "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+        "Mathlib.MeasureTheory.Constructions.Pi",
+        "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Countable",
+        "Mathlib.MeasureTheory.Integral.Lebesgue.Map",
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.Probability.Distributions.Bernoulli",
+        "Mathlib.Probability.Distributions.Exponential",
+        "Mathlib.Probability.Distributions.Poisson.Basic",
+        "Mathlib.Probability.Distributions.Uniform",
+        "Mathlib.Probability.Independence.Basic",
+        "Mathlib.Probability.ProbabilityMassFunction.Constructions",
+        "Mathlib.Probability.ProbabilityMassFunction.Integrals",
+        "Mathlib.Tactic",
+        "Mathlib.Tactic.FinCases",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Topology.Algebra.Polynomial"
+      ],
+      "selected_owned_Mathlib_ancestors": [],
+      "source_plan_path": "research/2026-10-14-astra-full-accepted-import-query-0100z/evidence/import-query-v2-authenticated/captured/EXTERNAL-PLAN.json",
+      "source_plan_sha256": "0c64ed24f1b9d237a7ccee440e9b360cce7ba797079c02d1b0154473866b1d0a",
+      "transitive_module_count": 3582,
+      "unresolved_paths": []
+    },
+    "owned_provider_closure_source_headers": [
+      "G1SharedRegisterStress",
+      "G2LiveLineageRouting",
+      "G4AllRootPairClocks",
+      "G4FourRootPositivity",
+      "G4IndependentRoutingBridge",
+      "G4PathResolvedMeasurement",
+      "G4TwoRootSourceStopping",
+      "G5ActualComponentSupport",
+      "G5BridgeBarrier",
+      "G5BridgeComponentEntries",
+      "G5CalendarRoutes",
+      "G5ComponentCalendarCoverage",
+      "G5CoupledQuartetKernel",
+      "G5CurrentPortTwoPositions",
+      "G5ExponentialGermIdentification",
+      "G5FairOriginalCoinLaw",
+      "G5FairSelectorMoments",
+      "G5MinimalGraphInterface",
+      "G5NonbridgeRouteBound",
+      "G5OriginalCoinPMF",
+      "G5OriginalRouteHazard",
+      "G5OriginalTipCurrentSupport",
+      "G5PairOnlySureBlockChronology",
+      "G5ParentChoiceCalendar",
+      "G5ParentPositionPushforward",
+      "G5ProtectiveBlock",
+      "G5RootRouteCurrentSupport",
+      "G5SafePastHybridDisjointness",
+      "G5SafePastMeetingPermanence",
+      "G5UnknownRateSupport",
+      "G6BridgeCannotEnterHybrid",
+      "G7ActualCalendarGathering",
+      "G7AncestralPolynomialKernel",
+      "G7AncestralRationalCompletion",
+      "G7BoundaryExitCommutation",
+      "G7BoundaryPhasePermutation",
+      "G7BoundaryRelabelling",
+      "G7CalendarExposureClosedForm",
+      "G7CalendarFrontierOrder",
+      "G7CoinReindexing",
+      "G7EdgeExposureAccounting",
+      "G7FiniteReachability",
+      "G7GlobalOwnerCoins",
+      "G7NodeActions",
+      "G7OrderedFrontierProduct",
+      "G7OriginalAdmission",
+      "G7OriginalCensus",
+      "G7OriginalEdgeBoundary",
+      "G7OriginalEdgeGathering",
+      "G7OriginalEdgeOperators",
+      "G7OriginalFiniteEncoding",
+      "G7OriginalRelabelling",
+      "G7OriginalSurvivalCoverage",
+      "G7SinglePopulationPolynomialKernel",
+      "G7SnapshotRelabelling",
+      "G7SourceStateRelabelling",
+      "G7WholeEdgeExposureInvariant",
+      "GraphCuts",
+      "GraphLeaves",
+      "SourceForestKingmanPopulationProjection",
+      "SourceForestKingmanProjection",
+      "SourceLabelledForest",
+      "SourceNetwork",
+      "UnifiedLean.G6.AncestralRateFree",
+      "UnifiedLean.Source.ControlledUnrankedSourceProjectivity",
+      "UnifiedLean.Source.FiniteGenealogyEncoding",
+      "UnifiedLean.Source.FiniteSourceSnapshot",
+      "UnifiedLean.Source.MatrixProjectionExponential",
+      "UnifiedLean.Source.NativeIndependentPairMixture",
+      "UnifiedLean.Source.NativePairClockLaw",
+      "UnifiedLean.Source.NativeParentRouting",
+      "UnifiedLean.Source.OriginalFixedIDControls",
+      "UnifiedLean.Source.SourceActualHoldingClocks",
+      "UnifiedLean.Source.SourceAncestralAbsorption",
+      "UnifiedLean.Source.SourceAncestralCompletion",
+      "UnifiedLean.Source.SourceAncestralDrift",
+      "UnifiedLean.Source.SourceBoundaryKernels",
+      "UnifiedLean.Source.SourceBoundaryLocations",
+      "UnifiedLean.Source.SourceBoundaryProjection",
+      "UnifiedLean.Source.SourceCalendarCompatibility",
+      "UnifiedLean.Source.SourceCalendarCompiler",
+      "UnifiedLean.Source.SourceCalendarPhysicalSupport",
+      "UnifiedLean.Source.SourceCalendarTiming",
+      "UnifiedLean.Source.SourceCompletedUnrankedTree",
+      "UnifiedLean.Source.SourceCompletionHarmonic",
+      "UnifiedLean.Source.SourceCopyCarrierTransport",
+      "UnifiedLean.Source.SourceCrossCarrierBoundary",
+      "UnifiedLean.Source.SourceCrossCarrierEpoch",
+      "UnifiedLean.Source.SourceCrossCarrierNatural",
+      "UnifiedLean.Source.SourceCrossCarrierProgram",
+      "UnifiedLean.Source.SourceDestinationClockReset",
+      "UnifiedLean.Source.SourceEmbeddedJumpLaw",
+      "UnifiedLean.Source.SourceEpochRenewal",
+      "UnifiedLean.Source.SourceEpochSemigroup",
+      "UnifiedLean.Source.SourceEventualCompletionLimit",
+      "UnifiedLean.Source.SourceExponentialRace",
+      "UnifiedLean.Source.SourceExponentialRaceDensity",
+      "UnifiedLean.Source.SourceExponentialResiduals",
+      "UnifiedLean.Source.SourceFiniteJumpExpansion",
+      "UnifiedLean.Source.SourceFiniteProjection",
+      "UnifiedLean.Source.SourceFirstMarkDistribution",
+      "UnifiedLean.Source.SourceFirstMergerMark",
+      "UnifiedLean.Source.SourceForestCommonPulse",
+      "UnifiedLean.Source.SourceForestGeneratorIntertwining",
+      "UnifiedLean.Source.SourceForestIntrinsicGenerator",
+      "UnifiedLean.Source.SourceForestPulseMeasure",
+      "UnifiedLean.Source.SourceForestPulseTransport",
+      "UnifiedLean.Source.SourceForestSilentPruning",
+      "UnifiedLean.Source.SourceGeneratorExponential",
+      "UnifiedLean.Source.SourceInitializedCalendar",
+      "UnifiedLean.Source.SourceMergerClockCatalogue",
+      "UnifiedLean.Source.SourceNaturalCompletedLimit",
+      "UnifiedLean.Source.SourceNaturalInitialization",
+      "UnifiedLean.Source.SourcePoissonExponential",
+      "UnifiedLean.Source.SourcePoissonKernel",
+      "UnifiedLean.Source.SourceProgramTransport",
+      "UnifiedLean.Source.SourceRaceWinnerSelection",
+      "UnifiedLean.Source.SourceSmallCarrierGenerator",
+      "UnifiedLean.Source.SourceSmallCarrierPulse",
+      "UnifiedLean.Source.SourceStepGeneratorBinding",
+      "UnifiedLean.Source.SourceUnrankedAllPanels",
+      "UnifiedLean.Source.SourceUnrankedCopyProjectivity",
+      "UnifiedLean.Source.SourceWinningClockReset",
+      "UnifiedLean.Source.UniformizedSourceStep",
+      "UnifiedLean.Source.UnrankedGenealogyObservation"
+    ],
+    "planning_counts_only": {
+      "existing_ancestors_outside_current319": 23,
+      "existing_owned_ancestors": 125,
+      "new_candidate": 1,
+      "not_mathematical_completion_metrics": true,
+      "standalone_owned_source_closure": 126,
+      "union_with_current319_and_new_candidate": 343,
+      "union_with_current326_including_seven_Astra_modules_and_candidate": 350
+    },
+    "source_counts_are_not_completion": true,
+    "source_selection_path": "research/2026-10-14-astra-full-accepted-import-query-0100z/FULL-SOURCE-SELECTION.json",
+    "source_selection_sha256": "fb8f2ac3ba0a55f563f3ea0fcce3c8b1af6e127097df0668bf4d8e051ab16925",
+    "toolchain_import": "Lean.Elab.Tactic.Omega; no toolchain object inspection"
+  },
+  "execution_and_delivery": {
+    "active_source_selection_changed": false,
+    "actual_new_lean_compiler_execution": false,
+    "actual_new_native_execution": false,
+    "current319_compiler_ownership_unchanged": true,
+    "lake_target_for_new_source": null,
+    "mathematical_provider_body_reuse": "Source identities of12 cited existing providers plus targeted rate type authenticated; no fresh/reused object execution claimed by intake.",
+    "new_source_accepted_by_kernel": false,
+    "object_authentication_performed_in_intake": false,
+    "official_import_query_for_new_source": false,
+    "remote_packet_body_authentication": "PASS_NINE_EXACT_IMMUTABLE_GITHUB_BLOBS",
+    "selected_aggregate_entry": null
+  },
+  "not_supplied": [
+    "Formal outer embedding/full original admission",
+    "Fixed-bank selector/path identification theorem",
+    "Actual exposure-to-legal-row composition",
+    "Native refinement/certificate acquisition",
+    "Missing exact137239-byte protected COMMON provider0616f81343ea0ef724bd874cfb8c94f2f67fdaff7ca462451f31aae47db98b04",
+    "Recovered complete1614/1615 packet or compiled-object archive",
+    "Arbitrary-input G3 closure or desired target as premise"
+  ],
+  "observed_utc": "2026-10-14T02:46:56.751749+00:00",
+  "original_fixture": {
+    "ages": [
+      "4",
+      "3",
+      "1",
+      "2",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "ancestral_pair_rate": "1",
+    "gamma_parent_true": "1/3",
+    "hybrid_id_bijection": {
+      "Fin1:0": "H:pendant-A at vertex4"
+    },
+    "leaves": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "literal_tuple_identity": "Source inspection matches frozen tuple; external string-label/native bijections are not new Lean theorems.",
+    "native_parent0_convention": "2/3 remains a separate executable transport obligation",
+    "original_parent_false_edge": 3,
+    "original_parent_true_edge": 4,
+    "path": "research/2026-10-13-dot-g3-physical-singleton-fixture-2200z/PHYSICAL-FIXTURE.json",
+    "physical_rate_contract": "ratesFromSurvival uses -log(x_e)/(age(source)-age(target)); duration3 edges1 and6 have log(2)/3, not log(2).",
+    "prior_route_path": "communications/astra-physical-fixture-lean-route-2345.md",
+    "prior_route_sha256": "2758b9ad17bf85d5471ea0eab388e2acdeb4c7e9349df46948707821e03cfd5c",
+    "root": 0,
+    "sha256": "7552a9e8ae32ee759ed3665bd9a9176deeb6dcbf4be6605b55f8afbb0c7633ba",
+    "source_vertices": [
+      0,
+      0,
+      1,
+      3,
+      3,
+      4,
+      1,
+      2,
+      2
+    ],
+    "target_vertices": [
+      1,
+      2,
+      3,
+      4,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "taxon_bijection": {
+      "0": "A",
+      "1": "B",
+      "2": "C",
+      "3": "D"
+    },
+    "whole_edge_survivals": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "8/9",
+      "8/9",
+      "3/4",
+      "1/2",
+      "1/2",
+      "1/2"
+    ]
+  },
+  "placeholder_and_axiom_status": {
+    "actual_axiom_output": null,
+    "complete_declaration_audit": false,
+    "lexical_comment_stripped_new_source": "No sorry/admit/new axiom/native_decide token found. Static text only.",
+    "requested_print_axioms": [
+      "DotG3.PhysicalFixture.fixture_binary_valid",
+      "DotG3.PhysicalFixture.fixture_registry_valid",
+      "DotG3.PhysicalFixture.fixture_cut_child",
+      "DotG3.PhysicalFixture.fixture_whole_edge_survival"
+    ]
+  },
+  "proposed_source_claims": [
+    "All actual BinaryValid conjuncts for the literal code, with explicit rank/reachability/least-stability proofs; local finite decide only.",
+    "RegistryValid and separate CutChild; deleted child edge5 isolates leaf5. Parallel parent occurrences3 and4 remain distinct.",
+    "Concrete RootedBinary, Calendar, OriginalParentRegistry, unique named hybrid, interior HybridProbabilities, PositivePairRates and exact whole-edge exposure/survival from authenticated existing constructors.",
+    "Five forward original EdgePath facts; these alone do not identify a path for a specified once-drawn bank."
+  ],
+  "provider_identities": [
+    {
+      "bytes": 8458,
+      "git_blob": "abb91b7ed9ad2ad960cb1ab6f8fbbdfc212f9cc0",
+      "module": "SourceNetwork",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": true,
+      "selected_full1641": true,
+      "sha256": "0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/0e0a2a3ed6bdbbd7242980a6428ebf8ec0ec85d077d2ccf9cd8dfef4e1bd2eb7.lean"
+    },
+    {
+      "bytes": 8679,
+      "git_blob": "4bf1686baff454f7de05f9465537af3998167100",
+      "module": "G5CalendarRoutes",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": true,
+      "selected_full1641": true,
+      "sha256": "db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/db0e9421d59009e4119ac42e7e86517ada50f5007a314fd430f4b0937f6c80fd.lean"
+    },
+    {
+      "bytes": 4694,
+      "git_blob": "d6bbe5119768eade69f15feeb53abecb5a9176fd",
+      "module": "G7OriginalFiniteEncoding",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": false,
+      "selected_full1641": true,
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078.lean"
+    },
+    {
+      "bytes": 10308,
+      "git_blob": "fd5a34125dfcfaea621ac1682b54ed67abf3e11f",
+      "module": "G7OriginalAdmission",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": false,
+      "selected_full1641": true,
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c.lean"
+    },
+    {
+      "bytes": 8794,
+      "git_blob": "36628bd74bfb60f1b81ee02897f7c809075cc0c7",
+      "module": "UnifiedLean.Source.NativeParentRouting",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": true,
+      "selected_full1641": true,
+      "sha256": "300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/300d7216193e945ca26161535c1bc2ba75a128fe5c075b6a3567bbda66bfe0b6.lean"
+    },
+    {
+      "bytes": 7816,
+      "git_blob": "7d78743ea9639b8c98388abbc7c86414e101cbd8",
+      "module": "UnifiedLean.Source.NativeIndependentPairMixture",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": true,
+      "selected_full1641": true,
+      "sha256": "4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4e1107890e0e36967898c06251a1a7ed3305721860534b902a87b04d434e4c31.lean"
+    },
+    {
+      "bytes": 7614,
+      "git_blob": "3bf432840c933071fd963920150060e85a9d9e6c",
+      "module": "G7OriginalSurvivalCoverage",
+      "role": "existing physical logarithmic rate realization",
+      "selected_current319": false,
+      "selected_full1641": true,
+      "sha256": "59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/59314f77f7c450321a8683bc938b6372e2c1450b6eb8b2d179a99ed696f362e9.lean"
+    },
+    {
+      "bytes": 6419,
+      "git_blob": "f6fe71f12c1c7cb91c90bf1f08e1a251be338989",
+      "module": "G5NativeOriginalRouteCoverage",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": true,
+      "selected_full1641": true,
+      "sha256": "f93c4d5ed9642c9b623a7ad2a45e1b2677bc9d77707e4e257d0b47ddc5852391",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/f93c4d5ed9642c9b623a7ad2a45e1b2677bc9d77707e4e257d0b47ddc5852391.lean"
+    },
+    {
+      "bytes": 30125,
+      "git_blob": "19e8c324cb1249252d566ad235f05323d6425034",
+      "module": "G4ActualSelectedPathExposure",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": false,
+      "selected_full1641": true,
+      "sha256": "44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/44f026a13b8c9cda3d07cc6d29dee017d3b995a2ddb43340be7fd0540347d992.lean"
+    },
+    {
+      "bytes": 187616,
+      "git_blob": "5a866bc90937ae00981a0f1305a58a07704036e4",
+      "module": "G4WholeProfileDetermination",
+      "role": "existing selected provider; see handoff",
+      "selected_current319": false,
+      "selected_full1641": true,
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean"
+    },
+    {
+      "git_blob": "7694fed34228d0e4df3d68f0010eb5ceca212d8b",
+      "module": "G7FiniteReachability",
+      "role": "read to verify that draft avoids saturation, while reusing admission module",
+      "selected_current319": false,
+      "selected_full1641": true,
+      "sha256": "25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35.lean"
+    },
+    {
+      "git_blob": "fbe4496baf571f53181e0649196c91178035d1f2",
+      "module": "G5CommonSwitchingQuartetWitness",
+      "role": "existing same-selector path uniqueness wrapper; no need duplicate UpPath proof",
+      "selected_current319": true,
+      "selected_full1641": true,
+      "sha256": "4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611",
+      "source_body_rehash": "PASS",
+      "url": "https://github.com/Sodelin/Research-Commons/blob/7239e89dea5caad68a54227cee3b44a7d9b96389/research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611.lean"
+    },
+    {
+      "module": "UnifiedLean.Source.NativePairClockLaw",
+      "role": "Additional targeted PositivePairRates type inspection; selected source body hash matches.",
+      "selected_source_path": "/workspace/scratch/astra-unified-extension-sources-2340/UnifiedLean/Source/NativePairClockLaw.lean",
+      "sha256": "470738f7397f640a76374f791c485d757d1e2ac38769a11f05d0abc03c8aa9ae"
+    }
+  ],
+  "public_cutoff": "da0476791da58fbf62a488237906def7578079c3",
+  "remaining_bridge": [
+    {
+      "obligation": "Compile only the chosen final source under owner control; preserve failures/repairs and actual type/axiom outputs. Static review and printed commands are not execution receipts.",
+      "stage": "Compilation and interface acceptance"
+    },
+    {
+      "obligation": "For every same original bank coin, prove displayed selected arm and each edge RespectsSelector (coinSelector fixtureN fixtureH coin), then use GProgram.G5.AttainedChronology.original_path_eq_compiled_of_respects. common_kept_edge_respects supplies pointwise membership. Existential compiledRoute_covers_original_path is insufficient.",
+      "stage": "Fixed bank paths"
+    },
+    {
+      "obligation": "Use DotG4.ActualSelectedPathExposure.actual_bank_cut_eq_selected_path or WholeProfile weightedNormalize_directedExposure on that same bank; evaluate original exclusive-edge exposure sums from fixture_whole_edge_exposure. Then maskedNormalizedTree_survival and actual_randomized_legal_moment with one Unit configuration, PMF.pure(), all-none original mask and unchanged tuple at every level.",
+      "stage": "Actual physical row binding"
+    },
+    {
+      "obligation": "For every k>0, randomizedLegalCombMoment of the same concrete source equals (1/2)^(k.choose2); levels1,2,3 normalized(1,1/2,1/8), raw(1,1/6,1/144). The packet has no such proved declaration. Full16pairs48rows remain subsequent computation/proof.",
+      "stage": "Future A-to-B receiver target, not delivered theorem"
+    },
+    {
+      "obligation": "G7 finite admission omits outer-labelled planarity; hand drawing has no Lean embedding receiver here. Typed network/rates do not prove every original-class admission condition.",
+      "stage": "Full original admission"
+    },
+    {
+      "obligation": "Full padded6/7/8-copy allocation and label transport remain fixed; native parser/exact row table refinement is separate. Equal arms cannot detect Gamma reversal; keep unequal-arm control distinct.",
+      "stage": "Native/encoding correspondence"
+    }
+  ],
+  "remote_authentication": {
+    "commit": "da0476791da58fbf62a488237906def7578079c3",
+    "files": [
+      {
+        "bytes": 8736,
+        "git_blob_sha1": "65204f0e8084d1660e8a2f7bd2fc6d154a4eafc3",
+        "name": "AUDIT-AND-HANDOFF.md",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/AUDIT-AND-HANDOFF.md",
+        "sha256": "86bfc6afbadaed635ee505bd696b5846967897a67fbc4cf3c2ad27084cc5607b",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/AUDIT-AND-HANDOFF.md"
+      },
+      {
+        "bytes": 8537,
+        "git_blob_sha1": "7cddc0551c14e9f0fe79fcc64b2b0310589ef177",
+        "name": "G3PhysicalFixtureAdmission.lean",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/G3PhysicalFixtureAdmission.lean",
+        "sha256": "3e8725ea49ee7b841340bf8e31ffcb0ab0719cb46706b1fc86c9d9524880762d",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/G3PhysicalFixtureAdmission.lean"
+      },
+      {
+        "bytes": 8532,
+        "git_blob_sha1": "6f8d3db22f0d58a3fe98ab0e973aabfa06e3b36f",
+        "name": "G3PhysicalFixtureAdmission.r0.lean",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/G3PhysicalFixtureAdmission.r0.lean",
+        "sha256": "2a5fbfde7c65caa8aaa0e402d5d6c09a8101ed58447bea183775370a4311384c",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/G3PhysicalFixtureAdmission.r0.lean"
+      },
+      {
+        "bytes": 5015,
+        "git_blob_sha1": "76068bf935633076963edc0c2de4aa3fdf2a1730",
+        "name": "INDEPENDENT-STATIC-REVIEW-PINS.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/INDEPENDENT-STATIC-REVIEW-PINS.json",
+        "sha256": "34ae76e8b6b98c23ac5b4e0abe2ad34c1d21e2bf6fb16b10d60c6ca2873bd76c",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/INDEPENDENT-STATIC-REVIEW-PINS.json"
+      },
+      {
+        "bytes": 6612,
+        "git_blob_sha1": "5e334e4725eb39ff715a22311528469f00268615",
+        "name": "INDEPENDENT-STATIC-REVIEW.md",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/INDEPENDENT-STATIC-REVIEW.md",
+        "sha256": "db84ba01e9b95bdb00e5a565957e753894c4c2855c06468c5d83fe5f8c5099af",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/INDEPENDENT-STATIC-REVIEW.md"
+      },
+      {
+        "bytes": 1416,
+        "git_blob_sha1": "c58e4a67222e78a414583812307f54819ce209fd",
+        "name": "MANIFEST.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/MANIFEST.json",
+        "sha256": "dab8fd2bef6a128d5233600ecd5f6568f1465c29d59c7d3a1fd1f4404b5ccb82",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/MANIFEST.json"
+      },
+      {
+        "bytes": 2656,
+        "git_blob_sha1": "ec3d352f854008a7094952fdc639ee17459409b2",
+        "name": "PUBLICATION-MANIFEST.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/PUBLICATION-MANIFEST.json",
+        "sha256": "17b4c9aa1b6cd04c61dfa900eaf6a563e1c073d574b2578dd565837d55a5a40a",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/PUBLICATION-MANIFEST.json"
+      },
+      {
+        "bytes": 7925,
+        "git_blob_sha1": "c25470a65465bdfcf6241505810f0d25e42989cb",
+        "name": "SOURCE-PINS.json",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/SOURCE-PINS.json",
+        "sha256": "ac638377d82b10e513a412df33f414d7b247d8b3c41500acb6ecbff481cde94f",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/SOURCE-PINS.json"
+      },
+      {
+        "bytes": 326,
+        "git_blob_sha1": "9a2fc810f05221974ce94e4fcffee54db8cbfa19",
+        "name": "STATIC-CHECK.log",
+        "path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/STATIC-CHECK.log",
+        "sha256": "4c2add7541b9a03c1904f682cfdeef84912c3f54d0624e1733d2f02e6c70087c",
+        "url": "https://github.com/Sodelin/Research-Commons/blob/da0476791da58fbf62a488237906def7578079c3/research/2026-10-14-dot-g3-physical-fixture-source-0218z/STATIC-CHECK.log"
+      }
+    ],
+    "method": "Authenticated GitHub connector GET immutable contents directory and all nine file bodies; no Git commands."
+  },
+  "review_binding": {
+    "attribution": "dot, existing adversarial/source-interface review lane; independent of transcription author; previously reviewed underlying hand fixture. Not a new independent review of all inherited providers and not described here as human review.",
+    "historical_manifest_status": "MANIFEST preserves independent review pending; later bound review/PUBLICATION-MANIFEST supersedes only that status. Both source versions remain uncompiled.",
+    "receiver_review": "Agent source/interface inspection found no concrete statement/identity mismatch. No Lean elaboration or data/control checker was run.",
+    "reported_verdict": "SCOPED STATIC SOURCE PASS; UNCOMPILED",
+    "review_path": "research/2026-10-14-dot-g3-physical-fixture-source-0218z/INDEPENDENT-STATIC-REVIEW.md",
+    "review_pins_sha256": "34ae76e8b6b98c23ac5b4e0abe2ad34c1d21e2bf6fb16b10d60c6ca2873bd76c",
+    "review_sha256": "db84ba01e9b95bdb00e5a565957e753894c4c2855c06468c5d83fe5f8c5099af"
+  },
+  "schema": "astra_incoming_g3_fixture_source_intake_v1",
+  "scope": "Only the nine-file fixture packet at the supplied immutable cutoff and targeted selected providers; no broad successor scan.",
+  "source_declarations": [
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "def fixtureCode : Code (Fin 4) (Fin 1)",
+      "source_line": 34,
+      "source_name": "fixtureCode"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "abbrev",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "abbrev fixtureGraph : EdgeGraph (Fin 9) (Fin 9)",
+      "source_line": 39,
+      "source_name": "fixtureGraph"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "def fixtureRank : Fin 9 \u2192 \u2115",
+      "source_line": 41,
+      "source_name": "fixtureRank"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_edge_rank (e : Fin 9) :\n    fixtureRank (fixtureGraph.target e) < fixtureRank (fixtureGraph.source e)",
+      "source_line": 43,
+      "source_name": "fixture_edge_rank"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma step_rank {a b : Fin 9} (h : fixtureGraph.DStep a b) :\n    fixtureRank b < fixtureRank a",
+      "source_line": 48,
+      "source_name": "step_rank"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma path_rank {a b : Fin 9}\n    (h : Relation.TransGen fixtureGraph.DStep a b) :\n    fixtureRank b < fixtureRank a",
+      "source_line": 53,
+      "source_name": "path_rank"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_acyclic : fixtureGraph.Acyclic",
+      "source_line": 60,
+      "source_name": "fixture_acyclic"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma edge_reach (e : Fin 9) :\n    fixtureGraph.DReach (fixtureGraph.source e) (fixtureGraph.target e)",
+      "source_line": 64,
+      "source_name": "edge_reach"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_rooted (v : Fin 9) : fixtureGraph.DReach 0 v",
+      "source_line": 68,
+      "source_name": "fixture_rooted"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma avoid_B (z : Fin 9) (h0 : (0 : Fin 9) \u2260 z)\n    (h1 : (1 : Fin 9) \u2260 z) (h6 : (6 : Fin 9) \u2260 z) :\n    fixtureGraph.AvoidReach z 0 6",
+      "source_line": 81,
+      "source_name": "avoid_B"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma avoid_C (z : Fin 9) (h0 : (0 : Fin 9) \u2260 z)\n    (h2 : (2 : Fin 9) \u2260 z) (h7 : (7 : Fin 9) \u2260 z) :\n    fixtureGraph.AvoidReach z 0 7",
+      "source_line": 88,
+      "source_name": "avoid_C"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_least_stable (v : Fin 9)\n    (h : \u2200 x : Fin 4, fixtureGraph.Dominates 0 v (codeLeaf fixtureCode x)) : v = 0",
+      "source_line": 95,
+      "source_name": "fixture_least_stable"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_binary_valid : BinaryValid fixtureCode",
+      "source_line": 108,
+      "source_name": "fixture_binary_valid"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_registry_valid : RegistryValid fixtureCode",
+      "source_line": 116,
+      "source_name": "fixture_registry_valid"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma retained_edge_isolates_five (e : Fin 9) (he : e \u2260 5) :\n    fixtureGraph.source e = 5 \u2194 fixtureGraph.target e = 5",
+      "source_line": 118,
+      "source_name": "retained_edge_isolates_five"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma retained_step_isolates_five {a b : Fin 9}\n    (h : fixtureGraph.UStep (fun e => e \u2260 5) a b) : a = 5 \u2194 b = 5",
+      "source_line": 123,
+      "source_name": "retained_step_isolates_five"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": true,
+      "proposed_signature": "private lemma retained_path_isolates_five {a b : Fin 9}\n    (h : fixtureGraph.UReach (fun e => e \u2260 5) a b) : a = 5 \u2194 b = 5",
+      "source_line": 132,
+      "source_name": "retained_path_isolates_five"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_child_bridge : fixtureGraph.IsBridge 5",
+      "source_line": 138,
+      "source_name": "fixture_child_bridge"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_cut_child : CutChild fixtureCode",
+      "source_line": 143,
+      "source_name": "fixture_cut_child"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "def fixtureN : RootedBinary (Fin 9) (Fin 9) (Fin 4)",
+      "source_line": 150,
+      "source_name": "fixtureN"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "noncomputable def fixtureIDs : Fin 1 \u2243 Hybrid fixtureN",
+      "source_line": 153,
+      "source_name": "fixtureIDs"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "noncomputable def fixtureH : OriginalParentRegistry fixtureN",
+      "source_line": 156,
+      "source_name": "fixtureH"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_hybrid_unique (h : Hybrid fixtureN) : h = fixtureIDs 0",
+      "source_line": 159,
+      "source_name": "fixture_hybrid_unique"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_parent_exact (b : Bool) :\n    (fixtureH.parents (fixtureIDs 0)).parent b = (if b then 4 else 3)",
+      "source_line": 164,
+      "source_name": "fixture_parent_exact"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "def fixtureC : Calendar fixtureN.graph",
+      "source_line": 168,
+      "source_name": "fixtureC"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "def fixtureEdgeSurvival : Fin 9 \u2192 \u211d",
+      "source_line": 172,
+      "source_name": "fixtureEdgeSurvival"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_edge_survival_open : OpenCube fixtureEdgeSurvival",
+      "source_line": 175,
+      "source_name": "fixture_edge_survival_open"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "noncomputable def fixtureR : PositivePairRates (Fin 9)",
+      "source_line": 179,
+      "source_name": "fixtureR"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_whole_edge_exposure (e : Fin 9) :\n    exposure fixtureN fixtureC fixtureR e = -Real.log (fixtureEdgeSurvival e)",
+      "source_line": 182,
+      "source_name": "fixture_whole_edge_exposure"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_whole_edge_survival :\n    survival fixtureN fixtureC fixtureR = fixtureEdgeSurvival",
+      "source_line": 187,
+      "source_name": "fixture_whole_edge_survival"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "def",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "def fixtureP : HybridProbabilities fixtureN",
+      "source_line": 192,
+      "source_name": "fixtureP"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_A_path_false : EdgePath fixtureN.graph fixtureN.root (fixtureN.leaf 0)\n    [0, 2, 3, 5]",
+      "source_line": 198,
+      "source_name": "fixture_A_path_false"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_A_path_true : EdgePath fixtureN.graph fixtureN.root (fixtureN.leaf 0)\n    [0, 2, 4, 5]",
+      "source_line": 202,
+      "source_name": "fixture_A_path_true"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_B_path : EdgePath fixtureN.graph fixtureN.root (fixtureN.leaf 1)\n    [0, 6]",
+      "source_line": 206,
+      "source_name": "fixture_B_path"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_C_path : EdgePath fixtureN.graph fixtureN.root (fixtureN.leaf 2)\n    [1, 7]",
+      "source_line": 209,
+      "source_name": "fixture_C_path"
+    },
+    {
+      "elaborated_type_checked": false,
+      "kind": "lemma",
+      "namespace": "DotG3.PhysicalFixture",
+      "private": false,
+      "proposed_signature": "lemma fixture_D_path : EdgePath fixtureN.graph fixtureN.root (fixtureN.leaf 3)\n    [1, 8]",
+      "source_line": 212,
+      "source_name": "fixture_D_path"
+    }
+  ]
+}
