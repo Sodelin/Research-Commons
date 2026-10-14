@@ -1,0 +1,137 @@
+{
+  "schema": "astra_additive_source_selection_supplement_v1",
+  "status": "PROPOSED_UNSELECTED_NO_STAGE_QUERY_OR_EXECUTION",
+  "inputs": {
+    "core658_plan": {
+      "path": "research/2026-10-14-astra-certified-common-execution-plan-0645z/OWNED-SOURCE-PLAN.json",
+      "sha256": "25ff84360d61cdd6ae24e21a4515e293f87e3cd4aa9d3390c2cd4be4be973572",
+      "bytes": 642632
+    },
+    "full1644_catalog": {
+      "path": "research/2026-10-14-astra-certified-common-integration-0600z/SOURCE-CATALOG.json",
+      "sha256": "b0dee2beb1e76573a00237feeaca73e8df511b5327666619a826ec10c05e50fa",
+      "bytes": 5524
+    },
+    "literal1641_parent_plan": {
+      "path": "research/2026-10-14-astra-full-owned-plan-0145z/FULL-OWNED-SOURCE-PLAN.json",
+      "sha256": "b4c7448756ac891e83ebd357c24e75e0c0d2d41ac369ce33744dfdf38170a501",
+      "bytes": 1696285
+    },
+    "hook_v3_manifest": {
+      "path": "research/2026-10-14-astra-certified-common-external-0700z/HOOK-V3-MANIFEST.json",
+      "sha256": "f27da40e38af0565d0d31fdf53ab9c3508493a7bb3899d3b1aa8bd83bd1e6d76",
+      "bytes": 3768
+    },
+    "wrapper_textual_audit": {
+      "path": "research/2026-10-14-astra-certified-common-external-0700z/TEXTUAL-AUDIT.json",
+      "sha256": "68df07389e4b4a4ab81ed7783b2a524ff8f0f1102929fd2f5b47dd51a477d890",
+      "bytes": 1197
+    }
+  },
+  "new_source_records": [
+    {
+      "module": "Astra.CertifiedCommonExternal",
+      "source_origin": {
+        "path": "research/2026-10-14-astra-certified-common-external-0700z/lean/Astra/CertifiedCommonExternal.lean",
+        "sha256": "48b26222d61f7874ea1842cf5f6d8081563db28f230a26ce9e40238420dfba32",
+        "bytes": 19713
+      },
+      "destination": "Astra/CertifiedCommonExternal.lean",
+      "imports": [
+        "G3CertifiedCommonBoundedWitness"
+      ],
+      "actual_compiled": false
+    },
+    {
+      "module": "AstraCertifiedCommonExternalIntegration",
+      "source_origin": {
+        "path": "research/2026-10-14-astra-certified-common-external-0700z/lean/AstraCertifiedCommonExternalIntegration.lean",
+        "sha256": "8dd13125f9673d9732856753e204c77b5cf08932cf5f7672cffbb0456a73bae5",
+        "bytes": 302
+      },
+      "destination": "AstraCertifiedCommonExternalIntegration.lean",
+      "imports": [
+        "AstraCertifiedCommonIntegration",
+        "Astra.CertifiedCommonExternal"
+      ],
+      "actual_compiled": false
+    }
+  ],
+  "narrow": {
+    "module_order": "Exact core658 sources array followed by new_source_records[0]; retain every old source/import/origin entry unchanged.",
+    "owned_source_count": 659,
+    "research_source_count": 650,
+    "owned_mathlib_route_count": 9,
+    "new_leaf_imports": [
+      "G3CertifiedCommonBoundedWitness"
+    ],
+    "proposed_lake_target": "AstraCertifiedCommonExternal",
+    "root": "Astra.CertifiedCommonExternal"
+  },
+  "full": {
+    "module_order": "Exact parent1641 modules array + exact old0600 catalog added_sources[0..2] + new_source_records[0..1], in that order.",
+    "owned_source_count": 1646,
+    "old1644_versions_preserved": true,
+    "proposed_lake_target": "AstraCertifiedCommonExternalIntegration",
+    "root": "AstraCertifiedCommonExternalIntegration"
+  },
+  "external_dependency_graph": {
+    "narrow_existing_sparse3594_plan": {
+      "path": "research/2026-10-14-astra-certified-common-execution-plan-0645z/SPARSE-EXTERNAL-PLAN.json",
+      "sha256": "2673b2d8933e8c4c9cf2ef046903857d875f90a2f34736bc88c6ac3e050eac7c",
+      "bytes": 6154
+    },
+    "static_new_external_import_names": [],
+    "reason": "Both added sources import only exact existing selected modules or the new wrapper. This is literal source ancestry only; official source resolution for two headers and composed Lake config is pending.",
+    "actual_query": false,
+    "actual_object_reuse": false
+  },
+  "configuration": {
+    "immutable_parent": {
+      "path": "research/2026-10-14-astra-certified-common-integration-0600z/lakefile.lean",
+      "bytes": 59648,
+      "sha256": "b88dd192aa12c55360cd12d15ec11ec1d44b980ef56af0f3b6629d34c686e86b"
+    },
+    "only_append": {
+      "path": "research/2026-10-14-astra-certified-common-external-0700z/lakefile.addendum-v3.txt",
+      "sha256": "7cf2f7c16855b6aed084614a252b06d5a164db752350660780fb336e40ec6898",
+      "bytes": 564
+    },
+    "composition": "literal parent bytes + one LF byte + literal v3 hook bytes, once; v1/v2 excluded",
+    "proposed_sha256": "3d9822df774d15610a4d16d7a4b97c1a4fedc02a280229b004f7983acc2fe84a",
+    "proposed_bytes": 60213,
+    "old_default_targets_and_versions_preserved": true,
+    "disjoint_new_owned_roots": [
+      "Astra.CertifiedCommonExternal",
+      "AstraCertifiedCommonExternalIntegration"
+    ],
+    "actual_selected_config_created": false
+  },
+  "future_stage_contract": {
+    "proposed_fresh_root": "/workspace/scratch/astra-certified-common-external-sources-0710",
+    "created": false,
+    "lookup": "Construct a fresh complete canonical1646 source namespace from pinned old1644 origin records and the two literal new origins, stripping packet lean/ from the two destinations. Recheck all bytes and no duplicate destinations before any official query. Do not place a partial Astra namespace ahead of complete existing Astra modules.",
+    "old_materialized_root_untouched": true,
+    "objects_copied_or_claimed": false
+  },
+  "future_audit_extension": {
+    "core_plan": {
+      "path": "communications/2026-10-14-astra-certified-consumer-final-audit-plan-0655.json",
+      "sha256": "877604b28a5cd066d268b9a01e95c692aac55b6ebb27a77c0f58d208950865e2",
+      "bytes": 4901
+    },
+    "all_narrow_ancestry_modules": 659,
+    "full_type_requests": "Existing13 core requests plus four exact wrapper requests from pinned TEXTUAL-AUDIT; inspect definitions needed to identify all fixed-input/Realizes/Transfer fields and quantifier order.",
+    "wrapper_axiom_endpoints": 11,
+    "actual_output": null,
+    "real_lake": "Actual separate narrow659 Lake target invocation required; full1646 target is later and separate."
+  },
+  "execution_status": {
+    "source_materializations": 0,
+    "official_queries": 0,
+    "compiler_invocations": 0,
+    "compiled_object_reads": 0,
+    "active_plans_modified": 0
+  },
+  "preparation_note": "Two read-only filename/list-display probes failed on an absent guessed hook filename and an empty metadata list; corrected by actual file inventory and direct keyed reads. No source or active state was changed."
+}

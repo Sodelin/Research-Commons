@@ -1,0 +1,12 @@
+-- FINAL SOURCE-ONLY HOOK: use instead of both prior fragments.
+-- Stage packet lean/ contents at the canonical source root; keep old defaults.
+-- No configuration/materialization/import query/build has run for this hook.
+lean_lib AstraCertifiedCommonExternal where
+  srcDir := "."
+  roots := #[`Astra.CertifiedCommonExternal]
+  globs := #[.one `Astra.CertifiedCommonExternal]
+
+lean_lib AstraCertifiedCommonExternalIntegration where
+  srcDir := "."
+  roots := #[`AstraCertifiedCommonExternalIntegration]
+  globs := #[.one `AstraCertifiedCommonExternalIntegration]

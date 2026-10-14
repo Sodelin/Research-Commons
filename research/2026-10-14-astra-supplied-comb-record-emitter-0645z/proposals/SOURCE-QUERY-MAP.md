@@ -1,0 +1,9 @@
+# Generated source/query identity mapping
+
+`SOURCE-QUERY-MAP.json` (`30bfe6b4d685facefc16aa6e84a36016d818a205592cb601d8ec8efe7c3540b6`) compares all 14 actual emitted Lean modules plus their exact kernel/adapter dependencies against the frozen 0600 preserved-source catalog and the 1710 saved official source-query identities.
+
+Six sources have exact historical query matches: base certificates and support wrappers `b20429b…` and `c083f0e…`, `Astra.CommonCertificateKernel`, and `Astra.PositiveSupportAdapter`. Their 36 request/receipt/source/import/stdout/stderr payloads were independently rehashed against the authenticated query FILES ledger, with zero exit, exact source before/after hashes, literal header and original route bindings checked. This is historical source-query reuse evidence; relocation and future dependency routes still require authentication. It is not compiled-object reuse.
+
+Ten new source identities require later official header queries: the assembler, two new base certificates, their two support wrappers, all four supplied-row wrappers, and the menu aggregate. Some import lists equal older lists, but this does not manufacture an official receipt for a new body/module path. The assembler's consumer is the unchanged 400153aa addition to 0600; its later 0615 query remains separate owner evidence, not a newly replayed result in this mapping.
+
+Every row records literal module/body hash, source origin, imports, certificate or menu identity and original pair references. No parent source body collection, compiled object or native executable was scanned. No query, compiler, test, emitter or materializer ran. The external graph has not been asserted unchanged, and no active source/plan was modified. All emitted proofs remain uncompiled; physical decisions remain UNKNOWN.
