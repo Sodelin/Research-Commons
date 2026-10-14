@@ -1,0 +1,20 @@
+{
+  "schema": "astra_capture_absent_scratch_source_repair_v1",
+  "status": "SOURCE_ONLY_NOT_EXECUTED",
+  "review_finding": "Original snapshot refused absent query scratch before main audit try; early query resource/preflight failure therefore could not preserve actual closed guard bytes.",
+  "original_source": {
+    "path": "research/2026-10-14-astra-full-accepted-import-query-0100z/evidence/DRAFT-a6d049-capture_query.py",
+    "sha256": "a6d04903ec1862f29df3ae1c321a1657b316467bdcd33324f91af2a3d3d11b20"
+  },
+  "successor_source": {
+    "path": "research/2026-10-14-astra-full-accepted-import-query-0100z/capture_query.py",
+    "sha256": "b74b147b2db3f59a3db604fb4d913be55c2ac9853880e18a66abca54797e3c73"
+  },
+  "repair": "Allow absent scratch only as recorded absence; require actual closed guard files; preserve guard/config bytes with UNVERIFIED status and exit2; recheck presence before copy. No successful query is inferred or scratch created.",
+  "exact_unified_diff": "--- research/2026-10-14-astra-full-accepted-import-query-0100z/evidence/DRAFT-a6d049-capture_query.py\n+++ research/2026-10-14-astra-full-accepted-import-query-0100z/capture_query.py\n@@ -94,7 +94,8 @@\n def snapshot(scratch, guarded):\n     \"\"\"Pin raw complete/partial inputs before semantic checking; no symlink traversal.\"\"\"\n     files = []\n-    check(scratch.is_dir() and guarded.is_dir(), 'closed run evidence directories missing')\n+    check(guarded.is_dir(), 'closed guard evidence directory missing')\n+    check(not scratch.exists() or scratch.is_dir(), 'scratch evidence is not a directory')\n     for path in sorted(scratch.rglob('*')):\n         check(not path.is_symlink(), 'scratch evidence symlink is refused')\n         rel = path.relative_to(scratch)\n@@ -340,8 +341,10 @@\n     parser.add_argument('--config-sha256', required=True)\n     args = parser.parse_args()\n     config, scratch, guarded, output = config_for(args.config_sha256)\n+    scratch_present = scratch.is_dir()\n     rows = snapshot(scratch, guarded)\n     try:\n+        check(scratch_present, 'query scratch directory absent; preserve only closed guard/configuration bytes')\n         conclusion = audit_success(config, scratch, guarded)\n         code = 0\n     except Exception as error:\n@@ -351,6 +354,7 @@\n                           error=dict(type=type(error).__name__, message=str(error)),\n                           actual_query_completion_authenticated=False)\n         code = 2\n+    check(scratch.is_dir() == scratch_present, 'scratch presence changed during capture audit')\n     output.mkdir()\n     for row in rows:\n         source, target = Path(row['source']), output / row['path']\n@@ -366,6 +370,8 @@\n         observed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(), **conclusion,\n         capture_runner_sha256=sha(__file__), predecessor_capture_sha256=PREDECESSOR_CAPTURE_SHA,\n         run_config_sha256=args.config_sha256, configured_guard_profile=config,\n+        query_scratch_observation=dict(path=str(scratch), present=scratch_present,\n+                                       absence_does_not_imply_a_query_or_success=True),\n         source_compilation_performed=False, object_authentication_performed=False,\n         active_plan_mutation=False, subprocesses_invoked_by_capture=0,\n         source_query_is_not_theorem_elaboration=True, old042_057_059_outer_guards='UNKNOWN; unchanged',\n",
+  "static_ast_parse": "PASS",
+  "tests": 0,
+  "queries": 0,
+  "compilers": 0,
+  "capture_executions": 0
+}
