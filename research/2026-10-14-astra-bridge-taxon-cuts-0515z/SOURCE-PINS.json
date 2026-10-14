@@ -1,0 +1,175 @@
+{
+  "schema": "astra.bridge-taxon-cuts.source-proposal.v1",
+  "status": "SOURCE_ONLY_UNCOMPILED_UNSELECTED",
+  "primary_source": {
+    "path": "lean/Astra/BridgeTaxonCuts.lean",
+    "bytes": 5881,
+    "sha256": "4ef5c9deebaa7f0e3a1298ba413e693f389d1f294942990d2da5d6347fe96855"
+  },
+  "direct_imports": [
+    "GraphSwitchingCuts",
+    "GraphQuartetExistence",
+    "G1CutChildPorts",
+    "G4WeightedOrdinaryTreeLaw"
+  ],
+  "declarations": [
+    "bridgeTaxa",
+    "mem_bridgeTaxa",
+    "bridgeTaxa_nonempty",
+    "bridgeTaxa_has_outside",
+    "bridgeTaxa_proper",
+    "bridgeTaxa_separating_pair",
+    "bridge_retained",
+    "selectedBridge",
+    "selectedBridge_val",
+    "mem_bridgeTaxa_iff_selected_descendant",
+    "common_edgeTaxa_eq_bridgeTaxa",
+    "common_route_bridge_iff",
+    "common_bridge_fibre_bank_independent",
+    "common_bridge_uniform_pair"
+  ],
+  "selected_catalog": {
+    "path": "research/2026-10-13-astra-unified-solver-0645z/intake/SELECTED-LEAN.json",
+    "sha256": "77e4fb8bc6812eb6a183b33b3911a19bcc3cfc321e9cf5ea1fe9f30566cdfb14"
+  },
+  "accepted_package_commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+  "selected_dependency_graph": {
+    "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/DEPENDENCY-GRAPH.json",
+    "sha256": "768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13",
+    "status": "Referenced authenticated selection metadata; no new graph query or component execution."
+  },
+  "selected_provider_bodies": [
+    {
+      "module": "GraphCuts",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5.lean",
+      "bytes": 4515,
+      "sha256": "a877489ce00643ef1bf96b14d484453797891c718445ce157aa7a54beefce2e5",
+      "git_blob": "3f8f89c220c72a4966ca2caf22f20ba623458626",
+      "imports": [
+        "GraphLeaves"
+      ]
+    },
+    {
+      "module": "GraphLeaves",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b.lean",
+      "bytes": 3088,
+      "sha256": "9d7e0f1756768fe32d4b38514c36bd961a306fb21dcf6b7fb27f5e6285a5f49b",
+      "git_blob": "8c0727f1b798b6fb17d09399da40ccddc508def9",
+      "imports": [
+        "SourceNetwork",
+        "Mathlib.Data.Fintype.EquivFin"
+      ]
+    },
+    {
+      "module": "GraphBlobs",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/aba6c7b87e9e4a0cd46c3637efc19cab4f2e564e7acd4c3eac265989239d4acb.lean",
+      "bytes": 4045,
+      "sha256": "aba6c7b87e9e4a0cd46c3637efc19cab4f2e564e7acd4c3eac265989239d4acb",
+      "git_blob": "1407a560aa53757d6aa86994d34b6275889b496e",
+      "imports": [
+        "GraphCuts"
+      ]
+    },
+    {
+      "module": "GraphSwitching",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4e0cb71eb30fe5bdbfa531d8a26293ff468ab920abc5c270b536cf117107f502.lean",
+      "bytes": 6324,
+      "sha256": "4e0cb71eb30fe5bdbfa531d8a26293ff468ab920abc5c270b536cf117107f502",
+      "git_blob": "013cf1c18abaff53f094702e0929ab3267ba0549",
+      "imports": [
+        "GraphBlobs"
+      ]
+    },
+    {
+      "module": "GraphSwitchingCuts",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e04d2394fd833218202353eef91e04e65a69f00ce240de25a945326c0fb5ffe9.lean",
+      "bytes": 2639,
+      "sha256": "e04d2394fd833218202353eef91e04e65a69f00ce240de25a945326c0fb5ffe9",
+      "git_blob": "a6d6cb4e6a172c3016eaf664b3754b8bae0eabdf",
+      "imports": [
+        "GraphSwitchingDegree",
+        "GraphGalls"
+      ]
+    },
+    {
+      "module": "GraphQuartetExistence",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/5a93a3465db35235c11c65dfd72c38042fd91056ee68bef165028fed5a110f91.lean",
+      "bytes": 8900,
+      "sha256": "5a93a3465db35235c11c65dfd72c38042fd91056ee68bef165028fed5a110f91",
+      "git_blob": "810855bfbf9bec1fe5de9ff2f102309d993a4134",
+      "imports": [
+        "GraphSwitchingDegree",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset"
+      ]
+    },
+    {
+      "module": "G1CutChildPorts",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/8370b24db4d35aec0e015150d027fa1832fc0105cab7f1dcc3f83ce195f53089.lean",
+      "bytes": 7630,
+      "sha256": "8370b24db4d35aec0e015150d027fa1832fc0105cab7f1dcc3f83ce195f53089",
+      "git_blob": "2bd3a1ae505dc97fcdf7e52a6adbd65211eb4320",
+      "imports": [
+        "GraphBlobPorts",
+        "GraphGalls",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Lean.Elab.Tactic.Omega"
+      ]
+    },
+    {
+      "module": "G4WeightedOrdinaryTreeLaw",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9.lean",
+      "bytes": 153015,
+      "sha256": "edbf4d30803d714899eafefec6f39ae49bb995659bb80cb8dbc60b43a6612ed9",
+      "git_blob": "389a66f88daf3f6d3a9155e88a0fd489b9565374",
+      "imports": [
+        "UnifiedLean.Source.FiniteGenealogyEncoding",
+        "SourceForestKingmanProjection",
+        "UnifiedLean.Source.SourcePoissonExponential",
+        "UnifiedLean.Source.SourceCompletedUnrankedTree",
+        "G5CommonSwitchingQuartetWitness",
+        "G5OriginalProgramSurvival",
+        "G6GuardedBinErasure",
+        "ActualStoredRegister",
+        "G4ActualCommonSelectorSupport",
+        "G4ActualSelectedPathExposure",
+        "G7OrderedFrontierProduct",
+        "G1ActualDisplayedTreeFamily",
+        "G7OriginalEdgeOperators",
+        "G7AncestralPolynomialKernel",
+        "UnifiedLean.Source.SourceCompletionHarmonic",
+        "UnifiedLean.Source.MatrixProjectionExponential",
+        "UnifiedLean.Source.OriginalFixedIDControls",
+        "Mathlib.Probability.Distributions.Uniform"
+      ]
+    },
+    {
+      "module": "G5CommonSwitchingQuartetWitness",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611.lean",
+      "bytes": 13246,
+      "sha256": "4b5010dcccbbe24a250feca4a6de92d3939cf03c85379df2487840386c716611",
+      "git_blob": "fbe4496baf571f53181e0649196c91178035d1f2",
+      "imports": [
+        "G5OriginalGroupPathChronology",
+        "G5NativeOriginalRouteCoverage",
+        "SourceResolve",
+        "GraphSwitchingChoices"
+      ]
+    }
+  ],
+  "critical_audit": {
+    "path": "communications/2026-10-14-astra-bridge-cut-count-critical-review-0515.json",
+    "sha256": "093c75062daa959e906493b9a2bc71df69c0ac3e6f5d1748f7849fba8d18d03c"
+  },
+  "validation": {
+    "fresh_source_bytes_and_git_blob_authentication": true,
+    "primary_lexical_placeholders_found": [],
+    "fresh_compilation": false,
+    "compiled_artifact_reuse_authenticated": false,
+    "dependency_axiom_audit": false,
+    "aggregate_execution": false,
+    "lake_execution": false,
+    "remote_publication_verified": false
+  },
+  "review_status": "AUTHOR_STATIC_READ_COMPLETE; independent source review requested separately; no compilation."
+}

@@ -1,0 +1,11 @@
+# Actual bridge taxon cuts
+
+Complete **source-only, uncompiled and unselected** proof scripts derive a nonempty proper original bridge cut, its equality with every actual switching's descendant fibre, and its exact equality with the existing COMMON `edgeTaxa`/route fibre for every original bank. One pair of original taxa witnesses the bridge uniformly across all those banks.
+
+The cut is defined by deleting the actual original edge occurrence, not supplied as a desired descendant set. `GraphCuts` supplies taxa on both sides. `G1CutChildPorts.actual_hybrid_parent_nonbridge` uses only the original `RootedBinary` assumptions, despite the module name; it proves that every original bridge is retained by every switching. `GraphSwitchingCuts` transports its target side, and the selected route/descendant theorem connects it to the existing `edgeTaxa` definition. No Galled, CutChild, support grid, output law, or cut-equality premise is added. Finiteness, rootedness, acyclicity, labelled leaves, and LSA are inherited through the original `RootedBinary` structure.
+
+The existing `Calendar` and ordered parent registry are passed unchanged to the COMMON route compiler. The result is a finite graph/route statement. It proves no timed law, bank probability, INDEPENDENT claim, protected count, chain count, physical reduction, or bounded representative. The stronger count proposal remains unformalized in the accompanying critical audit.
+
+`SOURCE-PINS.json` records exact selected source provenance and the direct imports. The source bodies were authenticated against the frozen selected catalog and materialized source copies; prior compiled objects were not inspected or reused in an execution. The aggregate and Lake supplement are proposed integration entry points only. The audit file contains future requests, not audit results.
+
+No compiler, import query, test, materializer, Git operation, or compiled-object read ran. The lexical source check found no `axiom`, `sorry`, or `admit` declaration/token in the primary Lean source; this is not a kernel or dependency axiom audit. Compilation, actual declaration/axiom output, aggregate/Lake execution, and remote publication remain separate integration steps. No existing package, target, source, or receipt was changed.
