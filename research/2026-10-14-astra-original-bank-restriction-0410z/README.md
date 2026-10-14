@@ -1,0 +1,13 @@
+# Proposed restriction of the original COMMON bank
+
+This packet contains an **uncompiled, unselected source proposal**, not an accepted or executed proof. It supplies a small finite-product wrapper and instantiates it with the actual retained-hybrid injection from the separate 0400 registry proposal. No existing provider, active source selection, build configuration or object state is modified.
+
+`Astra.OriginalBankRestriction` first restricts a site-indexed Bernoulli product to a subtype by the existing Mathlib split/projection theorem. It then reindexes the retained sites along an injection, preserving the original parameter at each site. The result covers an empty retained type and arbitrary unit-interval site parameters. The source-specific instance uses the existing strict original probabilities, `retainedHybrid`, `splicedProbabilities` and `restrictBank`; true still names original parent1.
+
+The proposed conclusion is exactly that mapping one original `originalRegisterMeasure.toPMF` bank through `restrictBank` yields the reduced source's original-bank PMF. The measure equality is derived from product-measure transport and converted with the existing PMF measure bridge. No desired marginal, physical output law, unknown target, certificate conclusion, fitted parameter or probability-independence premise is supplied. The independence here is the already defined product of original natural site coins, not fresh current-lineage routing.
+
+The user's whole configuration PMF is untouched. No configuration theorem, output-kernel theorem, rate identity, selected-tree law, protected-ID transport, outer admission, reduction or bounded representative is asserted by this packet. Those require their own actual derivations. The separate 0350 rate proposal is related work and is **not** a dependency of the bank argument.
+
+`SOURCE-PINS.json` binds the exact 0400 source, repaired metadata, selected original-bank providers, inspected Mathlib source files and the 0405 proof-design notes. The included registry review is static, with no compiler claim. Both `#check` and `#print axioms` in the source are future audit requests, not actual output. The proposed import-only aggregate and Lake supplement remain unapplied; this packet does not provide a reproducible build receipt or formal admission.
+
+Pending work is owner selection/materialization with the exact registry dependency, official import/namespace authentication, actual elaboration, theorem-type and axiom audit, aggregate Lake execution, evidence capture and verified publication. Any failed run or concrete repair must preserve its exact predecessor bytes. No axiom or placeholder is authorized to fill a gap.
