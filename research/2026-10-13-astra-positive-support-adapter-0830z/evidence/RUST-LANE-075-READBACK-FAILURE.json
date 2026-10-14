@@ -1,0 +1,89 @@
+{
+  "schema": "astra_independent_readback_assertion_failure_v1",
+  "observed_utc": "2026-10-14T01:57:33.262381+00:00",
+  "monitor_sha256": "4be019aa720a0e5aa3013a58114b1a257ce05967dc8a5d3dbe50181fe994f0b3",
+  "actual_command": [
+    "python3",
+    "-B",
+    "/workspace/scratch/astra-rust-monitor-074-076.py",
+    "closed",
+    "75",
+    "3181",
+    "32"
+  ],
+  "exit_code": 1,
+  "error": "AssertionError at closed: assert q[command] == expected; expected incorrectly applied Mathlib-specific options to every module",
+  "actual_guard_outcome": "PASS retained separately; independent artifact audit not yet complete",
+  "source_build_or_limit_changes": false,
+  "next_compiler_launched": false,
+  "mismatches": [
+    {
+      "index": 3189,
+      "module": "Batteries.Lean.HashMap",
+      "actual_command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s",
+        "8192",
+        "-R",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries",
+        "-o",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/.lake/build/lib/lean/Batteries/Lean/HashMap.olean",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/Batteries/Lean/HashMap.lean"
+      ],
+      "receipt_sha256": "a3465da90a2761f61c986686c437ec073e3d77852cf9a8fc5479363e3da37294"
+    },
+    {
+      "index": 3196,
+      "module": "Batteries.Data.Array.Match",
+      "actual_command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s",
+        "8192",
+        "-R",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries",
+        "-o",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/.lake/build/lib/lean/Batteries/Data/Array/Match.olean",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/Batteries/Data/Array/Match.lean"
+      ],
+      "receipt_sha256": "b1de1a14696ea4825d1846eef50e6882ffb6b14d42b4e81b85ab8eec9b2944db"
+    },
+    {
+      "index": 3197,
+      "module": "Batteries.Data.String.Basic",
+      "actual_command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s",
+        "8192",
+        "-R",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries",
+        "-o",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/.lake/build/lib/lean/Batteries/Data/String/Basic.olean",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/Batteries/Data/String/Basic.lean"
+      ],
+      "receipt_sha256": "7a5f387b3314bd7a4ab69b5ddac5e7a1358d7725697550f049a44aec41d20e7b"
+    },
+    {
+      "index": 3198,
+      "module": "Batteries.Data.String.Matcher",
+      "actual_command": [
+        "/workspace/scratch/astra-lean-0645/lean-4.33.1-linux/bin/lean",
+        "-j",
+        "1",
+        "-s",
+        "8192",
+        "-R",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries",
+        "-o",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/.lake/build/lib/lean/Batteries/Data/String/Matcher.olean",
+        "/workspace/scratch/astra-mathlib-0645/.lake/packages/batteries/Batteries/Data/String/Matcher.lean"
+      ],
+      "receipt_sha256": "3d7e29510185147595ba4cfb179610620705df5d3beb8f60e310988fc88d8c35"
+    }
+  ]
+}

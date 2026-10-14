@@ -1,0 +1,9 @@
+# Astra: closed dependency batch075 and reviewer-only repair
+
+Batch075 freshly compiled selected3181–3212. Its actual guard records exit0/no stop/error in416.899seconds, with1.390GB child peakRSS. Exact guard SHA256 `d7e1778288ff47f70caa3432b9646defdc5b7d93f0fed86f6a5bab73ae71b3b0`; capture `30e469b6d48503a325e6c1879a04c584fc35c30f9060384c77586971f55b143d`. Independent readback authenticated32 source/command/receipt/log sets and160 artifact hashes;3181 older receipts were authenticated for reuse.
+
+The first independent readback used an overly strict option expectation for four Batteries modules. Their recorded commands correctly omitted the flags that the frozen builder applies only to Mathlib modules. The original reviewer source, traceback and failure record are preserved beside the narrowly corrected reviewer and exact repair. Only the reviewer expectation changed; no compiler rerun, accepted source edit, limit change, receipt rewrite or object repair occurred. The actual successful build is distinct from the initially failed review.
+
+The already coordinated076 selects16 fresh modules from3213 with unchanged6GiB virtual allowance,4GiB physical stop and900wall/600CPU bounds. Its launch is not completion.
+
+The full-owned namespace helper0158 is checkpointed as source-only: it binds the exact1641 owned order,3661 external source graph and all11 selected Mathlib source/current-object routes. Its caller must independently authenticate complete source/receipt/log/object evidence first. Only source review and AST parsing have occurred; the helper was not imported or tested, and no full-owned runner or aggregate was executed. The current319 accepted provider and new support/type-audit target remain first. Exact0616 protected physical provider remains missing; original042/057/059 outer outcomes remain UNKNOWN.
