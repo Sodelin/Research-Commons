@@ -2,6 +2,16 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 03:20 UTC:** the
+[fixed-target diagonal review](critical-review/ROOT-DIAGONAL-FIBRE-AND-RANK-REVIEW-0320Z.md)
+proves that each finite private diagonal fibre contains an interval of
+COMMON pair responses and unbounded routing rank. These exact actual-source
+corollaries rule out the diagonal-only bridge; richer legal INDEPENDENT
+topology observations remain essential. The
+[recent control-theory audit](general-algebra/continuation-0308z/CONTROL-SETS-AND-PHYSICAL-ADAPTER-APPLICABILITY.md)
+also records the precise missing physical adapter. General finite
+INDEPENDENT forcing remains open; no inherited supplier is claimed as new.
+
 **Latest checkpoint, 14 October 02:58 UTC:** the
 [primary-research review](critical-review/ROOT-PRIMARY-RESEARCH-REVIEW-0258Z.md)
 checks exact demographic interpolation, sharp processed splitting barriers,

@@ -1,5 +1,29 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## Fixed-target diagonal successor, 14 October 03:20 UTC
+
+The [accepted hand deduction](critical-review/ROOT-DIAGONAL-FIBRE-AND-RANK-REVIEW-0320Z.md)
+now excludes a target-relative diagonal-only bridge: every finite private
+diagonal fibre of one fixed strict target with a positive ordinary segment
+has an interval of COMMON pair responses and unbounded latent routing rank.
+The inherited exact diagonal suppliers and rank facts are explicitly reused.
+These rivals do not match richer forest observations, and may have unequal
+arms and different COMMON laws. They do not refute full INDEPENDENT forcing,
+GKP's full-motif theorem or the equal-arm BOTH adapter.
+
+The [primary control audit](general-algebra/continuation-0308z/CONTROL-SETS-AND-PHYSICAL-ADAPTER-APPLICABILITY.md)
+distinguishes the recent theorems' exact interior controllability from their
+specified-point closure guarantee. The source's ordinary first-order ray
+is an inherited obstruction to the direct faithful signed-control adapter,
+not an exclusion of every moving-frame or nonlinear construction.
+
+The table below remains the master register. Its finite-INDEPENDENT and
+fixed-target full-menu negative rows remain OPEN. Additional diagonal
+moments cannot supply the missing finite COMMON or rank certificate; the
+next positive argument must use chronology-sensitive topology information.
+All new acceptance is scoped hand review, with publication integrity
+separately checked. No new Lean/Rust verification is claimed.
+
 ## Full-shot audit successor, 14 October 02:36 UTC
 
 The [extraction/reset review](critical-review/ROOT-FULL-SHOT-EXTRACTION-AND-RESET-REVIEW.md)
