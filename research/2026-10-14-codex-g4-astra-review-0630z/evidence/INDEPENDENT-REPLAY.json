@@ -1,0 +1,72 @@
+{
+  "schema": "g4_astra_independent_replay_v1",
+  "observed_utc": "2026-10-14T06:30:07.785009+00:00",
+  "contributor": "Codex G4 lead; independent replay of Astra-authored controls",
+  "original_handoff_commit": "443c79137a8e5221250cbb338d73e10a3a3c37bb",
+  "original_core_file_identity_matches": [
+    {
+      "path": "MARGIN-LIFT.md",
+      "sha256": "7572fa67783d3b3eaf7da02a9413ec5503bc149811c3ba8e87a36ae3aace0845",
+      "git_blob": "74b2af5eb2cef02f32fe2813c20895dd3fd0ba9e",
+      "matches_original_published_identity": true
+    },
+    {
+      "path": "CURVATURE-RESIDUAL.md",
+      "sha256": "ff19961baceddc20191042aacd96332a0e31722c823ce841bea28d8acbf903f7",
+      "git_blob": "37170049bee53b45f0867af04336e3c025197ec2",
+      "matches_original_published_identity": true
+    },
+    {
+      "path": "DIAGONAL-TANGENT-COUNTERCONTROL.md",
+      "sha256": "a6735d8c8a59b6a26168a90b236b16576d6d3be7408f8ea760f78812660f7649",
+      "git_blob": "ec3ec0385081a57a7d960d493283e7862668b88a",
+      "matches_original_published_identity": true
+    },
+    {
+      "path": "verify_formal_identities.py",
+      "sha256": "4f789551627b5ded811681728640c4366172d0a6015ff1c319c1f807b2971f44",
+      "git_blob": "b1b785474945ed8c323aac00ff078c921108d5bf",
+      "matches_original_published_identity": true
+    },
+    {
+      "path": "FORMAL-CONTROLS.json",
+      "sha256": "bfa4f601297a3e3471aa646aad64d73370e32014e37ad74c6c2b13e3bd9ec28e",
+      "git_blob": "105a3ae0f102c2f369cfea873e46a1a8c348c403",
+      "matches_original_published_identity": true
+    },
+    {
+      "path": "source_diagonal_controls.py",
+      "sha256": "b50a61221ac3df9af5f0013e94ed5f820a7a33823526d1313f182f3228a1efe6",
+      "git_blob": "c55af2228e62410a426bb66523e8c5bded9d6523",
+      "matches_original_published_identity": true
+    },
+    {
+      "path": "SOURCE-DIAGONAL-CONTROLS.json",
+      "sha256": "e3beac28ec8c81b1270a799da1a7df8bc49e460222134b95e893f4e00d53b246",
+      "git_blob": "88a72bb27926e54a16094f0fd1fa42da5e61da69",
+      "matches_original_published_identity": true
+    }
+  ],
+  "executions": [
+    {
+      "script": "verify_formal_identities.py",
+      "elapsed_seconds": 0.0301,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "exact_saved_output_match": true,
+      "passed_checks": 11
+    },
+    {
+      "script": "source_diagonal_controls.py",
+      "elapsed_seconds": 0.9342,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "exact_saved_output_match": true,
+      "passed_checks": 20
+    }
+  ],
+  "lean_executed": false,
+  "rust_executed": false,
+  "master_closed": false,
+  "limits": "Independent exact finite script replay and source identity checks; scripts authored by Astra. All-arity result uses a separate hand proof. No complete source zero, physical Hessian evaluation or Lean verification."
+}
