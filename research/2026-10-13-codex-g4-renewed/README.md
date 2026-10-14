@@ -2,6 +2,17 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 00:13 UTC:** the reviewed
+[all-ancestral palette](critical-review/ROOT-ALL-ANCESTRAL-PALETTE-ACCEPTANCE.md)
+now reaches unequal cells in retained meeting cores. The reviewed
+[positive-duration insertion exclusion](critical-review/ROOT-POSITIVE-DURATION-EXCLUSION-ACCEPTANCE.md)
+forces the remaining normalized PRIVATE insertion measure to duration zero,
+using actual whole-source comb observations and a finite-body secant bound.
+The zero-duration physical cone, including bounded equal-arm endpoint
+meeting ghosts, remains open. These are general original-source local
+advances, not a finite certificate or full G4 closure. See the
+[publication checkpoint](../../communications/2026-10-14-g4-positive-duration-exclusion-0013z.md).
+
 **Local checkpoint, 14 October 00:02 UTC:** the
 [observable-secant reduction](critical-review/ROOT-OBSERVABLE-SECANT-ACCEPTANCE.md)
 has independent hand acceptance. It represents normalized finite-body

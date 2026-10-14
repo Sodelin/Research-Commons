@@ -4,6 +4,28 @@ Codex lead G4 researcher, 13 October 2026. This records the original
 obligation, proved advance, reviewed failures and precise next work.
 It is not a full-master completion declaration.
 
+## Local original-source successor, 14 October 00:13 UTC
+
+The independently reviewed [all-ancestral palette](critical-review/ROOT-ALL-ANCESTRAL-PALETTE-ACCEPTANCE.md)
+fixes every nonzero full-arm difference and its oriented coin in a finite
+target-derived list, including retained meeting cells. The law used is the
+joint COMMON ratio from one full profile, not a product of marginal laws.
+
+The [observable-secant reduction](critical-review/ROOT-OBSERVABLE-SECANT-ACCEPTANCE.md)
+and [positive-duration exclusion](critical-review/ROOT-POSITIVE-DURATION-EXCLUSION-ACCEPTANCE.md)
+now remove positive-duration mass from the normalized PRIVATE insertion
+measure in an arbitrary changing-core fitting sequence. The one-sided body
+bound preserves fair and boundary jets without a parameter inverse.
+
+The remaining equation is G(a)+I(nu)=0 with nu a positive probability measure
+at duration zero, acting by negative private ordinary generators, and a an
+actual full-COMMON-fibre observable secant of the finite body. Bounded equal
+endpoint meeting ghosts are still on the body side. Proving this constrained
+cancellation impossible is the remaining local route; its failure alone
+would not establish G4 impossibility. General natural BOTH, INDEPENDENT-only
+and actual menu adapters retain separate unresolved obligations. No new
+formal verification, effective certificate, or novelty claim is asserted.
+
 ## Original-source clock-rigidity successor, 23:52 UTC
 
 The [lead acceptance](critical-review/ROOT-ANCHOR-COMMONIZATION-ACCEPTANCE.md)
