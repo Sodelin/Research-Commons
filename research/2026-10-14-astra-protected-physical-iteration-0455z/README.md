@@ -1,0 +1,13 @@
+# Proposed finite protected physical iteration
+
+**Uncompiled, unselected source draft; independent source review is pending.** The earlier unified0450 proposal does not include this later module. Existing source/build plans and accepted declarations are unchanged.
+
+`MarkedSource` carries the actual physical tuple and injective maps from the same external vertex, edge and hybrid label domains. `EligibleCell` stores only a literal nonroot two-port cell, equality of its arm exposures and local avoidance of the marked coordinates. It stores no target, desired output law or hybrid bound. `next` constructs the exact G1 splice, its positive tuple and the retained external maps from the earlier proposed modules.
+
+The proposed strong-induction proof decreases the actual physical vertex cardinality. It produces a source with no further eligible equal-exposure splice. Its trace projects to the existing actual G1 graph Steps; the accepted provenance constructor then constructs original-source edge recipes on that same final graph. Outer admission is transported along the same steps. This does not yet bind every external PE mark to the final decoration's raw recipe.
+
+`externalForestLaw` is the existing actual randomized source-program forest PMF with the same whole configuration law and fixed external PH table, interpreted by `labelMask` and none off its image. The one-step identity uses the actual physical tuple and derived external-mask equality. Trace induction composes complete forest-law equality. `one_eligible_representative` chooses one final tuple and original provenance before every future finite configuration, joint PMF, permitted external mask table and original-copy allocation.
+
+This is a classical, noncomputable mathematical construction, not a native solver or an executable test for real exposure equality. It does not prove dependency completeness of the primitive label maps, their protected-count bound, raw-mark recipe/code coverage, the proper-cut/erased-word embedding, unequal-cell bank-flip support counting, or the certificate-derived bounded representative. An arbitrarily declared small mark list is not the fully expanded protection required by the target.
+
+The initial108a11ac source is preserved byte-for-byte under `evidence/initial-draft-108a11ac/`. The later091f6c94 version adds an explicit selected provenance import and graph/provenance/uniform-witness consequences; the earlier proofs were not weakened. No compiler failure or repair is claimed: neither version has been compiled. Future exact type/axiom requests in the source are not audit output. Actual import/namespace authentication, independent source review, elaboration, aggregate/Lake execution and remote receipt verification remain pending.
