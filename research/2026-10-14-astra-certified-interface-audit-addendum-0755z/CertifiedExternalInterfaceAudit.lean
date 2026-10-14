@@ -1,0 +1,54 @@
+import Astra.CertifiedCommonExternal
+
+/-! Future full interface printing. No execution or acceptance implied. -/
+set_option pp.fullNames true
+set_option pp.universes true
+set_option pp.explicit true
+set_option pp.proofs false
+
+#print DotG4.ProtectedCommonRepresentative.ProtectedIDs
+#print DotG4.ProtectedCommonRepresentative.PhysicalMarkedSource
+#print DotG4.ProtectedCommonRepresentative.ProtectedMask
+#print DotG4.ProtectedCommonRepresentative.PhysicalPrimitiveProvenance
+#print DotG4.ProtectedCommonRepresentative.actual_finite_equal_arm_reduction
+#print DotG4.ProtectedCommonRepresentative.equalArmReduced_physical_hybrid_bound
+#print DotG4.ProtectedCommonRepresentative.protected_original_code_coverage
+#print DotG4.ProtectedCommonRepresentative.protected_parameter_constraints_preserved
+#print DotG3.CertifiedCommonBoundedWitness.SuppliedCombCertificates
+#print DotG3.CertifiedCommonBoundedWitness.supportCap
+#print DotG3.CertifiedCommonBoundedWitness.hybridBudget
+#print DotG3.CertifiedCommonBoundedWitness.actual_mixed_certificate_support
+#print DotG3.CertifiedCommonBoundedWitness.actual_certificate_bounded_original_coverage
+#print Astra.CertifiedCommonExternal.LabelledSource
+#print Astra.CertifiedCommonExternal.FixedInput
+#print Astra.CertifiedCommonExternal.Realizes
+#print Astra.CertifiedCommonExternal.Transfer
+#print Astra.CertifiedCommonExternal.CoherentCodeCoverage
+#print Astra.CertifiedCommonExternal.labelMask
+#print Astra.CertifiedCommonExternal.mask
+#print Astra.CertifiedCommonExternal.parameterCondition
+#print Astra.CertifiedCommonExternal.externalTreeLaw
+#print Astra.CertifiedCommonExternal.externalForestLaw
+#print Astra.CertifiedCommonExternal.marked_label_equivalences
+#print Astra.CertifiedCommonExternal.bounded_external_representative
+#print Astra.CertifiedCommonExternal.realizes_bounded_representative
+#print Astra.CertifiedCommonExternal.fixed_input_bounded_realizer_iff
+
+#print axioms DotG4.ProtectedCommonRepresentative.actual_finite_equal_arm_reduction
+#print axioms DotG4.ProtectedCommonRepresentative.equalArmReduced_physical_hybrid_bound
+#print axioms DotG4.ProtectedCommonRepresentative.protected_original_code_coverage
+#print axioms DotG4.ProtectedCommonRepresentative.protected_parameter_constraints_preserved
+#print axioms DotG3.CertifiedCommonBoundedWitness.certificateGrid_card_le
+#print axioms DotG3.CertifiedCommonBoundedWitness.actual_mixed_certificate_support
+#print axioms DotG3.CertifiedCommonBoundedWitness.actual_certificate_bounded_original_coverage
+#print axioms Astra.CertifiedCommonExternal.marked_label_equivalences
+#print axioms Astra.CertifiedCommonExternal.labelMask_pullback
+#print axioms Astra.CertifiedCommonExternal.Transfer.forest
+#print axioms Astra.CertifiedCommonExternal.Transfer.channel
+#print axioms Astra.CertifiedCommonExternal.Transfer.readout
+#print axioms Astra.CertifiedCommonExternal.Transfer.parameters
+#print axioms Astra.CertifiedCommonExternal.coherent_code_coverage
+#print axioms Astra.CertifiedCommonExternal.bounded_external_representative
+#print axioms Astra.CertifiedCommonExternal.Transfer.exposing_moments
+#print axioms Astra.CertifiedCommonExternal.realizes_bounded_representative
+#print axioms Astra.CertifiedCommonExternal.fixed_input_bounded_realizer_iff

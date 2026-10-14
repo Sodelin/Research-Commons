@@ -1,0 +1,217 @@
+#!/usr/bin/env python3
+"""Source-only successor: thirteen fixed header queries, never elaboration."""
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import resource
+import subprocess
+import sys
+import time
+
+ROOT = Path('/workspace/Research-Commons')
+HERE = Path(__file__).resolve().parent
+OUT = Path('/workspace/scratch/astra-certified-combined-header-query-0740-v1')
+STAGE = Path('/workspace/scratch/astra-certified-combined-sources-0730')
+PYTHON = '/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3'
+GUARD = ROOT/'research/2026-10-13-astra-unified-solver-0645z/guard.py'
+GUARD_OUTPUT = HERE/'evidence/header-query-v1'
+INPUTS_SHA = '8a42525563ab410d91a883aba96c22b8b1157d0556762ba5e0c404b78a58a091'
+GUARD_SHA = 'f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3'
+CENSUS = ROOT/'research/2026-10-14-astra-certified-header-query-0615z/evidence/INIT-MULTIPLICITY-OBSERVATION.json'
+CENSUS_SHA = 'ce09367d4ca53f945cde7a887f355f232d7d640da032a8c4d733ed4607f683a9'
+LIMITS = dict(wall_seconds=180, cpu_seconds=120, address_space_bytes=6*1024**3,
+              file_bytes=64*1024**2, cgroup_stop_bytes=4*1024**3,
+              disk_floor_bytes=8*1024**3, ram_floor_bytes=1024**3)
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def save(path, value):
+    with path.open('x') as stream:
+        json.dump(value, stream, indent=2)
+        stream.write('\n')
+
+
+def pause():
+    for directory in [HERE, ROOT/'research/2026-10-14-astra-certified-combined-source-stage-0730z',
+                      ROOT/'research/2026-10-13-astra-positive-support-adapter-0830z']:
+        if (directory/'PAUSE-BUILDS').exists():
+            raise RuntimeError('PAUSE-BUILDS refuses the next source query')
+
+
+def expected_guard_command():
+    return [PYTHON, '-B', str(GUARD), '--out', str(GUARD_OUTPUT), '--cwd', str(ROOT),
+            '--wall', '180', '--cpu', '120', '--memory-mib', '6144', '--file-mib', '64',
+            '--', PYTHON, '-B', str(HERE/'query_thirteen.py')]
+
+
+def authenticate_configuration():
+    # This file intentionally does not exist in the source proposal. A later
+    # reviewed execution config must bind an actual successful source copy.
+    path = HERE/'RUN-CONFIG-AUTHORIZED.json'
+    config = json.loads(path.read_text())
+    assert config['status'] == 'AUTHORIZED_ONE_FIXED_HEADER_QUERY_JOB'
+    assert config['runner_sha256'] == sha(__file__)
+    assert sha(HERE/'INPUTS.json') == INPUTS_SHA == config['inputs_sha256']
+    assert config['guard_sha256'] == GUARD_SHA == sha(GUARD)
+    assert config['python_path'] == PYTHON and config['python_sha256'] == sha(PYTHON)
+    assert config['limits'] == LIMITS and config['per_query_timeout_seconds'] == 10
+    assert config['guard_command'] == expected_guard_command()
+    assert config['cwd'] == str(ROOT) and config['guard_output'] == str(GUARD_OUTPUT)
+    assert config['query_output'] == str(OUT) and config['planned_queries'] == 13
+    assert config['compiler_elaboration_invocations'] == 0 and config['active_plan_mutation'] is False
+    assert config['source_root'] == str(STAGE)
+    actual_sha = config['materialization_sha256']
+    assert isinstance(actual_sha, str) and len(actual_sha) == 64
+    assert all(c in '0123456789abcdef' for c in actual_sha)
+    assert actual_sha == sha(STAGE/'MATERIALIZATION.json')
+    parent = (Path('/proc')/str(os.getppid())/'cmdline').read_bytes().rstrip(b'\0').decode().split('\0')
+    assert parent == expected_guard_command(), 'requires the exact frozen outer guard'
+    assert Path.cwd() == ROOT and len(sys.argv) == 1
+    for name, limit in [('RLIMIT_AS',6*1024**3), ('RLIMIT_CPU',120), ('RLIMIT_FSIZE',64*1024**2)]:
+        assert resource.getrlimit(getattr(resource,name)) == (limit,limit), name
+    return config, parent
+
+
+def authenticate_sources(inputs, config):
+    for path, expected in inputs['pinned_inputs'].items():
+        assert sha(ROOT/path) == expected, path
+    assert sha(CENSUS) == CENSUS_SHA
+    assert sha(inputs['compiler']['path']) == inputs['compiler']['sha256']
+    assert inputs['new_source_root'] == str(STAGE)
+    assert inputs['query_count'] == len(inputs['new_queries']) == 13
+    assert len(inputs['reused_query_source_bindings']) == 1644
+    receipt = json.loads((STAGE/'MATERIALIZATION.json').read_text())
+    assert receipt['status'] == 'SOURCE_BYTES_COPIED_NOT_ELABORATED'
+    assert receipt['catalog_sha256'] == inputs['catalog_sha256'] == config['catalog_sha256']
+    assert receipt['materializer_sha256'] == inputs['materializer_sha256'] == config['materializer_sha256']
+    assert sha(ROOT/inputs['catalog_path']) == inputs['catalog_sha256']
+    assert sha(ROOT/inputs['materializer_path']) == inputs['materializer_sha256']
+    assert receipt['library_source_count'] == len(receipt['sources']) == 1656
+    assert receipt['sources'] == inputs['planned_sources']
+    assert receipt['configuration_sha256'] == inputs['configuration']['sha256'] == sha(STAGE/'lakefile.lean')
+    assert receipt['toolchain_sha256'] == inputs['toolchain']['sha256'] == sha(STAGE/'lean-toolchain')
+    assert receipt['compiler_invocations'] == receipt['compiled_objects_authenticated'] == 0
+    assert receipt['active_build_state_modified'] is False and receipt['lake_execution'] is False
+    assert not (STAGE/'FAILED.json').exists()
+    selected = {r['module']:r for r in receipt['sources']}
+    assert len(selected) == 1656
+    for row in receipt['sources']:
+        source = STAGE/row['destination']
+        origin = ROOT/row['selected_input']['path']
+        assert row['destination'] == str(Path(*row['module'].split('.')).with_suffix('.lean'))
+        assert not source.is_symlink() and not origin.is_symlink()
+        assert source.stat().st_size == origin.stat().st_size == row['bytes']
+        assert sha(source) == sha(origin) == row['sha256'] == row['selected_input']['sha256']
+    routes = []
+    for name, row in selected.items():
+        if name.startswith('Mathlib.'):
+            upstream = Path('/workspace/scratch/astra-mathlib-0645')/row['destination']
+            assert sha(upstream) == row['sha256']
+            routes.append(dict(module=name, upstream=str(upstream), source_sha256=row['sha256']))
+    assert len(routes) == 11
+    return selected, routes
+
+
+def authenticate_reuse(inputs, selected):
+    reuse = inputs['reused_query_source_bindings']
+    assert [r['module'] for r in reuse] == [r['module'] for r in inputs['planned_sources'][:1644]]
+    for row in reuse:
+        assert selected[row['module']]['sha256'] == row['source_sha256'] == sha(row['new_source'])
+        assert row['new_source'] == str(STAGE/selected[row['module']]['destination'])
+        assert sha(ROOT/row['historical_request']) == row['request_sha256']
+        assert sha(ROOT/row['historical_receipt']) == row['receipt_sha256']
+        request = json.loads((ROOT/row['historical_request']).read_text())
+        prior = json.loads((ROOT/row['historical_receipt']).read_text())
+        assert prior['request_sha256'] == row['request_sha256'] and prior['exit_code'] == 0 and prior['error'] is None
+        assert request['source_sha256'] == prior['source_sha256_before'] == prior['source_sha256_after'] == row['source_sha256']
+        assert sha(ROOT/row['historical_source_copy']) == row['source_sha256']
+        if 'module' in request:
+            assert request['module'] == row['module']
+        assert request['command'] == [inputs['compiler']['path'], '-j','1','-s','8192','--src-deps', request['source']]
+        assert set(prior['outputs']) == set(row['historical_outputs'])
+        assert set(prior['outputs']) in ({'stdout','stderr'}, {'stdout.log','stderr.log'})
+        for name, output in row['historical_outputs'].items():
+            path = ROOT/output['path']
+            assert path == (ROOT/row['historical_receipt']).parent/name
+            assert prior['outputs'][name] == {k:output[k] for k in ['bytes','sha256']}
+            assert path.stat().st_size == output['bytes'] and sha(path) == output['sha256']
+    return reuse
+
+
+def main():
+    pause()
+    config, parent = authenticate_configuration()
+    assert not OUT.exists() and not OUT.is_symlink()
+    inputs = json.loads((HERE/'INPUTS.json').read_text())
+    selected, routes = authenticate_sources(inputs, config)
+    reuse = authenticate_reuse(inputs, selected)
+    pause()
+    OUT.mkdir()
+    save(OUT/'INVOCATION.json',dict(started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+         runner_sha256=sha(__file__),inputs_sha256=INPUTS_SHA,run_config_sha256=sha(HERE/'RUN-CONFIG-AUTHORIZED.json'),
+         materialization_sha256=config['materialization_sha256'],parent_guard_command=parent,
+         compiler_invocations_for_elaboration=0,planned_header_queries=13))
+    save(OUT/'REUSED-SOURCE-QUERY-BINDINGS.json',dict(status='PRIOR_QUERY_SOURCE_BYTES_REBOUND_NOT_REQUERIED',sources=reuse,objects_authenticated=False))
+    save(OUT/'NAMESPACE-SOURCE-ROUTES.json',dict(routes=routes,objects_authenticated=False))
+    results=[]
+    try:
+        for index, row in enumerate(inputs['new_queries']):
+            pause()
+            assert row['index'] == index and sha(row['source']) == row['source_sha256']
+            assert row['command'] == [inputs['compiler']['path'],'-j','1','-s8192','--src-deps',row['source']]
+            assert row['cwd'] == str(ROOT)
+            for dep in row['expected_dependencies']:
+                assert sha(dep['path']) == dep['sha256'], dep['path']
+            directory=OUT/f'{index:04d}'
+            directory.mkdir()
+            with (directory/'source.lean').open('xb') as stream:stream.write(Path(row['source']).read_bytes())
+            save(directory/'REQUEST.json',row)
+            started=time.monotonic();code=None;error=None
+            try:
+                with (directory/'stdout.log').open('xb') as stdout, (directory/'stderr.log').open('xb') as stderr:
+                    child=subprocess.run(row['command'],cwd=row['cwd'],env=row['environment'],stdout=stdout,stderr=stderr,timeout=10,check=False)
+                    code=child.returncode
+            except BaseException as caught:
+                error=dict(type=type(caught).__name__,message=str(caught))
+                raise
+            finally:
+                record=dict(index=index,module=row['module'],request_sha256=sha(directory/'REQUEST.json'),
+                    source_sha256_before=row['source_sha256'],source_sha256_after=sha(row['source']),
+                    exit_code=code,error=error,elapsed_seconds=time.monotonic()-started,
+                    outputs={name:dict(bytes=(directory/name).stat().st_size,sha256=sha(directory/name)) for name in ['stdout.log','stderr.log'] if (directory/name).exists()})
+                save(directory/'RECEIPT.json',record)
+                results.append(dict(index=index,module=row['module'],receipt_sha256=sha(directory/'RECEIPT.json')))
+            assert code == 0 and record['source_sha256_after'] == row['source_sha256']
+            assert set(record['outputs']) == {'stdout.log','stderr.log'}
+            assert all(r['bytes'] <= 4*1024**2 for r in record['outputs'].values())
+            actual=(directory/'stdout.log').read_text().splitlines()
+            assert all(line and Path(line).is_absolute() for line in actual)
+            expected={d['path'] for d in row['expected_dependencies']}
+            assert len(expected) == len(row['expected_dependencies'])
+            init=row['expected_dependencies'][0]
+            assert init['module'] == 'Init'
+            assert actual.count(init['path']) == 2
+            assert len(actual) == len(expected) + 1
+            assert all(actual.count(path) == (2 if path == init['path'] else 1) for path in expected)
+            assert set(actual) == expected, dict(actual=actual,expected=sorted(expected))
+            deps={d['path']:d for d in row['expected_dependencies']}
+            for path in actual:assert sha(path)==deps[path]['sha256']
+            save(directory/'IMPORTS.json',dict(actual_order=actual,literal_imports=row['literal_imports'],dependencies=[deps[path] for path in actual],source_resolution_only=True))
+        assert sha(STAGE/'MATERIALIZATION.json') == config['materialization_sha256']
+        assert sha(HERE/'INPUTS.json') == INPUTS_SHA
+        save(OUT/'RESULT.json',dict(status='THIRTEEN_SOURCE_HEADER_QUERIES_PASS_NOT_ELABORATION',queries=results,
+             prior_library_sources_rebound=1644,prior_queries_repeated=0,source_compilations=0,objects_authenticated=0,
+             current_plan_mutated=False,lake_executed=False,types_or_axioms_audited=False))
+        print(json.dumps(dict(status='THIRTEEN_SOURCE_HEADER_QUERIES_PASS_NOT_ELABORATION',queries=13,prior_library_sources_rebound=1644)))
+    except BaseException as caught:
+        save(OUT/'FAILED.json',dict(status='FAILED_PARTIAL_PRESERVED_NO_RETRY',error_type=type(caught).__name__,error=str(caught),query_receipts=results))
+        raise
+
+
+if __name__ == '__main__':
+    main()

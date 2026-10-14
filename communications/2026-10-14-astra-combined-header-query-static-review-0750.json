@@ -1,0 +1,77 @@
+{
+  "schema": "astra.source-static-review.v1",
+  "status": "SCOPED_STATIC_CLEAR_NOT_EXECUTED",
+  "observed_utc": "2026-10-14T07:49:09.106660+00:00",
+  "reviewer": "Astra research_intake agent; authored prior ownership table and reviewed source copier, not this query runner. Not an independent human review.",
+  "pins": [
+    {
+      "path": "research/2026-10-14-astra-certified-combined-header-query-0740z/MANIFEST.json",
+      "sha256": "d1b667603370a8c7ff45257e38baa38864b58aa536b6131145f7d712f1918ef3",
+      "bytes": 1210
+    },
+    {
+      "path": "research/2026-10-14-astra-certified-combined-header-query-0740z/query_thirteen.py",
+      "sha256": "a2d257be49eb5bd3180521d5b74416f486fcd1a16752d05e12e4844f02363d3f",
+      "bytes": 12994
+    },
+    {
+      "path": "research/2026-10-14-astra-certified-combined-header-query-0740z/INPUTS.json",
+      "sha256": "8a42525563ab410d91a883aba96c22b8b1157d0556762ba5e0c404b78a58a091",
+      "bytes": 3937920
+    },
+    {
+      "path": "research/2026-10-14-astra-certified-combined-header-query-0740z/EXECUTION-CONFIG-PROPOSAL.json",
+      "sha256": "df380a54b8ff57d8fe157f4ae9e1f4047dd90a34c30456550184b96cc0aa0f2c",
+      "bytes": 2482
+    },
+    {
+      "path": "research/2026-10-14-astra-certified-header-query-0615z/query_four_v2.py",
+      "sha256": "3768f2baf511f1827a461edbc7a45271776d17b16aab45f71273c17567e0d904",
+      "bytes": 7981
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+      "bytes": 5004
+    }
+  ],
+  "findings": [
+    "No concrete blocking issue found after reading the complete runner, predecessor v2, fixed guard, README and configuration proposal.",
+    "The absent RUN-CONFIG-AUTHORIZED.json is required before scratch creation. The proposal is never consumed as authorization; actual copy/Python pins are null there. Both the authorized config and new stage were absent at review cutoff.",
+    "Exact parent argv includes fixed Python/-B/guard, fresh guard output, cwd, 180 wall/120 CPU/6144 MiB AS/64 MiB file settings and exact child argv. Guard/Python/runner/input/materialization hashes and inherited limits are checked. The pinned guard supplies 4 GiB physical stop, 8 GiB free disk and 1 GiB available RAM floors. The external exclusive-owner quiet handoff remains required.",
+    "Before any query the runner authenticates the complete source-copy receipt against the fixed catalog and planned rows, original/copied source bytes, literal config/toolchain and eleven upstream Mathlib source equivalents. This is future guarded work, not work performed in this review.",
+    "Historical reuse authenticates exact requests/receipts, saved source and raw logs; successful child status and before/after source hashes are checked. Prior literal -s 8192 commands are retained, while new commands use -s8192. These are source-query bindings, not object or theorem reuse.",
+    "Exactly thirteen fixed serial --src-deps commands are permitted, each with explicit environment, cwd and ten-second timeout. Source/dependency hashes are checked; requests, source bytes, stdout/stderr, exit and dependency occurrence order are preserved. Exactly two Init occurrences and one of each other expected dependency are required, with no deduplication or acceptance of arbitrary repetition.",
+    "Exclusive output writes, pause checks and stop-on-first-failure preserve partial evidence. Failures before scratch creation are captured by outer guard logs; OS termination may prevent FAILED.json. A child query exit zero does not prove outer guard completion. Actual guard/runner/readback authentication must follow any future run."
+  ],
+  "metadata_readback": {
+    "manifest_payloads": 5,
+    "manifest_payload_bytes": 3970622,
+    "all_manifest_payload_pins_match": true,
+    "planned_sources_equal_parent1644_plus_catalog12": true,
+    "planned_identities": 1656,
+    "reuse_identities": 1644,
+    "first1641_reuse_identities_equal_frozen_predecessor": true,
+    "actual_request_receipt_samples_inspected": 4,
+    "sample_scope": "One original query and all three added 0615 library queries; no repeat full historical corpus authentication.",
+    "fixed_query_commands_and_expected_direct_imports_match_catalog": 13,
+    "authorized_config_exists": false,
+    "source_stage_exists": false
+  },
+  "remaining_gates": [
+    "Actual source copy and independently reviewed additive execution config with concrete pins.",
+    "Explicit compiler-owner quiet handoff and Root execution release.",
+    "Actual terminal guard result and preserved query outputs, followed by readback.",
+    "Elaboration, type/axiom audit and Lake execution remain separate later obligations."
+  ],
+  "execution": {
+    "helper_or_runner_import": false,
+    "query_or_compiler": false,
+    "materialization_or_generation": false,
+    "tests": false,
+    "objects_or_executables_read": false,
+    "old_source_corpus_rehash": false,
+    "git_or_frozen_file_changes": false
+  },
+  "concrete_blocking_issues": []
+}

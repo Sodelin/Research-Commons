@@ -1,0 +1,13 @@
+# Combined source header query proposal
+
+This frozen source proposal checks thirteen new headers in the complete 1656-module source stage: the external wrapper and its aggregate, ten newly emitted fixture modules, and the composed Lake configuration. It does not elaborate proofs, execute Lake, authenticate objects, change the active3591 plan, or run a source/native decision procedure.
+
+The runner first authenticates the future actual0730 copy receipt, every selected original/copied source, the eleven owned Mathlib source equivalents, and the literal configuration/toolchain. Its INPUTS binds all1656 ordered source records and1644 unchanged-source queries: the1641 original bindings plus the three actual0615v2 library requests. Saved requests, source copies, receipts and both raw logs are authenticated; no old queries are repeated. This does not establish object or declaration equivalence.
+
+Only thirteen fixed serial `lean -j 1 -s8192 --src-deps` commands can follow. Each uses the complete-upstream Mathlib-first source route and an explicit minimal environment; the child deadline is10seconds. Every source/request/raw log/exit/dependency occurrence is retained. The exact same-version rule remains two Init paths and one occurrence of each other expected dependency, with raw order preserved. Historical commands retain their literal `-s 8192` spelling; a static metadata check found that spelling in all1644 prior requests before freeze.
+
+The runner requires RUN-CONFIG-AUTHORIZED.json, deliberately absent at this cutoff. The separate EXECUTION-CONFIG-PROPOSAL.json contains null actual-copy and Python pins and is never read as an execution config. After an authorized quiet-boundary source copy, an additive reviewed config must bind its actual MATERIALIZATION.json SHA, the copied source/catalog identity, resolved Python bytes and the exact frozen guard command. No frozen source needs alteration. Failure before scratch creation remains visible in the outer guard logs; failure afterward preserves partial requests and a FAILED record. No automatic retry exists.
+
+The fixed profile is180wall/120CPU/6GiB virtual/4GiB physical stop/64MiB file/8GiB disk floor/1GiB available RAM, inherited from the pinned guard. Exact parent argv, inherited hard limits, working directory, source/config pins and PAUSE-BUILDS are checked. No output override or other query selection is accepted. The current Root gate permits source preparation only; Rust owns105–108 compiler jobs.
+
+Only JSON/source serialization and AST parsing were performed for this packet. The runner was not imported, copied sources were not materialized, and no query, test, compiler, Lake or object audit ran. Source and actual-execution statuses must remain distinct in later publication.

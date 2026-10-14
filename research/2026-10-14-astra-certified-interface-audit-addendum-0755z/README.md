@@ -1,0 +1,9 @@
+# Future full-interface and selected-module audits
+
+This additive source packet gives two unexecuted audit inputs. CertifiedExternalInterfaceAudit imports only the reviewed0700 wrapper and retains all13 core full-print requests, adds ten wrapper structure/definition bodies and four consequence types, and retains seven core plus eleven wrapper axiom requests. The structure prints expose the fixed-input fields and parameter/mask/transfer assumptions; #check alone would not do that.
+
+SuppliedMenuInterfaceAudit separately imports the exact generated menu, prints the supplied record constructor, its field projections, assembly, taxon and certificate-ID functions, all four taxon equalities, and all sixteen pair IDs/levels. These are literal synthetic input identities, not physical-realizer assertions. It is held until the record and its selected dependencies actually compile.
+
+OWNED-AUDIT-SELECTIONS extends the pinned658 core list by exactly the wrapper to659, preserving order. A separate source-only menu ancestry has674 owned modules, derived from the exact1656 source catalogue. Its new headers and objects remain unauthenticated. The old actual-environment collector is reused with these explicit lists, so all selected-module declarations must be checked rather than just named endpoints. Standard-axiom whitelist, placeholder rejection and actual origin/object/route authentication remain required. The historical audit is not a current run.
+
+No Lean parser, compiler, query, source copier, object reader, native tool or Lake command ran for this packet. The two audit files are not appended to any frozen selection/configuration. Future execution needs exact generated collector bytes, authenticated objects/search path, guarded command/log receipts and a separate actual Lake target. Full rendered types still require human comparison of binders, assumptions and definitions; neither source counts nor axiom counts establish completion.
