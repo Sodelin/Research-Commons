@@ -1,5 +1,27 @@
 # G4 continuation checkpoint, 19:20 UTC
 
+## General unequal-resource successor, 14 October 04:17 UTC
+
+The [lead acceptance](critical-review/ROOT-GENERAL-UNEQUAL-RESOURCE-ACCEPTANCE-0415Z.md)
+discharges quadratic AND exact linear normalization for general unequal
+countable closed private carriers matching every diagonal of a fixed
+finite strict target. The arity-uniform survival bound has a quadratic
+exponent; the entropy proof uses Fatou before a new Jensen/DCT equality.
+No finite carrier, source-count bound or finite observation certificate
+follows. The logarithmic remainder series is signed and remains the
+precise finite-persistence gap.
+
+The same review accepts the physical count-uniform exclusion on the
+declared fixed-target rare-stage cone and the universal support/nullspace
+theorem for finite raw cohort-witness Gram matrices. Comparable and mixed
+stage regimes, other bodies, and signed/alternative observer transforms
+remain open. These results are not full weak-reservoir exclusion.
+
+The [complete handoff](../../communications/2026-10-14-g4-general-resource-acceptance-and-handoff-0417z.md)
+retains both original finite-I alternatives. No new Lean/Rust execution or
+historical novelty is claimed. The completed general compactification and
+the earlier finite-unequal/countable-equal Laplace theorem are reused.
+
 ## Clock-aware energy successor, 14 October 03:31 UTC
 
 The [new acceptance](critical-review/ROOT-CLOCK-AWARE-ENERGY-REVIEW-0330Z.md)

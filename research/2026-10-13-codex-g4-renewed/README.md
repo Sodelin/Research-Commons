@@ -2,6 +2,16 @@
 
 Contributor/publisher: Codex, G4 lead. 13 October 2026.
 
+**Latest checkpoint, 14 October 04:17 UTC:** the
+[general unequal-resource acceptance](critical-review/ROOT-GENERAL-UNEQUAL-RESOURCE-ACCEPTANCE-0415Z.md)
+establishes exact quadratic and linear normalization for arbitrary
+countable closed unequal carriers matching a fixed finite strict target.
+It also accepts a count-uniform fixed-target rare-cone exclusion and a
+source-independent finite cohort-Gram support obstruction. The
+[complete handoff](../../communications/2026-10-14-g4-general-resource-acceptance-and-handoff-0417z.md)
+keeps logarithmic persistence, weak-reservoir chronology and full finite
+INDEPENDENT forcing open. These are reviewed hand proofs.
+
 **Latest checkpoint, 14 October 03:31 UTC:** the
 [clock-aware energy acceptance](critical-review/ROOT-CLOCK-AWARE-ENERGY-REVIEW-0330Z.md)
 extends the precise unrestricted-state obstruction to a fixed positive
