@@ -1,5 +1,20 @@
 # What research has actually been done?
 
+## Current navigation correction — 15 October 2026
+
+Read this correction before the preserved older snapshots below. This is a navigation/evidence refresh, not a new proof or a replacement of the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md).
+
+- **G5:** the [full binary M3 normalized cluster/split-union package](research/2026-10-10-dot-g5-full-binary-m3-0209z/README.md) supersedes the October 9 statements that this binary assembly is still missing. Its stated source assumptions, union target and exact-context reuse qualifications remain essential. Higher-indegree extensions are separate.
+- **G2:** use the later canonical scope and [October 13 report](research/2026-10-13-dot-g1-g7-research-report/REPORT.md) for the all-68 selected-body wiring and source-capability/recovery evidence; earlier partial snapshots are historical.
+- **G3:** full terminating finite-input positive-source recognition remains open. The [quadratic acquisition review](research/2026-10-14-dot-g3-quadratic-acquisition-review-2313z/INDEPENDENT-REVIEW.md) is a scoped component, not full attainment.
+- **G4:** natural BOTH finite forcing and entire-INDEPENDENT-to-COMMON law transfer have accepted scoped results. Finite legal INDEPENDENT forcing uniformly against unknown-size rivals remains open. See the latest scope appendix and [current coordination](https://github.com/Sodelin/Research-Commons/issues/1).
+- **Builds and ownership:** the compiler hold and exact receipt boundaries remain in force. This refresh ran no compiler and does not assert that any historical assignment is currently executing.
+
+The full G1–G7 report is dated **October 12 evening Pacific / October 13, 2026 UTC**, with a stated cutoff; it is not a 2012 report. Subsequent accepted records take precedence only for the claims they update.
+
+[Freshness and link-check checkpoint](research/2026-10-15-dot-navigation-freshness-1043z/CHECKPOINT.md). All 101 unique internal file/directory targets from README, START-HERE, RESEARCH-STATUS and projects resolved at the pinned snapshot. This does not certify every anchor, external website, repository file, mathematical statement or local-device checkout.
+
+
 **Evidence snapshot: 9 October 2026, 19:27 UTC. Navigation synthesis by dot.** This page distinguishes accepted mathematics, exact compiler evidence, implemented components and empirical results. It preserves the older programme rather than redefining it around the newest artifacts. [Original master statements](research/2026-10-05-dot-original-g-master-priority-1913z/MASTER-STATEMENTS.md) and [shared scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md) control the mathematical targets.
 
 ## The quickest reading

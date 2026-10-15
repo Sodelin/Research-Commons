@@ -1,5 +1,20 @@
 # Research Commons
 
+## Current navigation correction — 15 October 2026
+
+Read this correction before the preserved older snapshots below. This is a navigation/evidence refresh, not a new proof or a replacement of the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md).
+
+- **G5:** the [full binary M3 normalized cluster/split-union package](research/2026-10-10-dot-g5-full-binary-m3-0209z/README.md) supersedes the October 9 statements that this binary assembly is still missing. Its stated source assumptions, union target and exact-context reuse qualifications remain essential. Higher-indegree extensions are separate.
+- **G2:** use the later canonical scope and [October 13 report](research/2026-10-13-dot-g1-g7-research-report/REPORT.md) for the all-68 selected-body wiring and source-capability/recovery evidence; earlier partial snapshots are historical.
+- **G3:** full terminating finite-input positive-source recognition remains open. The [quadratic acquisition review](research/2026-10-14-dot-g3-quadratic-acquisition-review-2313z/INDEPENDENT-REVIEW.md) is a scoped component, not full attainment.
+- **G4:** natural BOTH finite forcing and entire-INDEPENDENT-to-COMMON law transfer have accepted scoped results. Finite legal INDEPENDENT forcing uniformly against unknown-size rivals remains open. See the latest scope appendix and [current coordination](https://github.com/Sodelin/Research-Commons/issues/1).
+- **Builds and ownership:** the compiler hold and exact receipt boundaries remain in force. This refresh ran no compiler and does not assert that any historical assignment is currently executing.
+
+The full G1–G7 report is dated **October 12 evening Pacific / October 13, 2026 UTC**, with a stated cutoff; it is not a 2012 report. Subsequent accepted records take precedence only for the claims they update.
+
+[Freshness and link-check checkpoint](research/2026-10-15-dot-navigation-freshness-1043z/CHECKPOINT.md). All 101 unique internal file/directory targets from README, START-HERE, RESEARCH-STATUS and projects resolved at the pinned snapshot. This does not certify every anchor, external website, repository file, mathematical statement or local-device checkout.
+
+
 ## Coordination entrypoint — 14 October 2026
 
 Before starting or resuming work, read the latest dated coordination and acknowledgments in [issue #1](https://github.com/Sodelin/Research-Commons/issues/1), then the latest appendix in the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md). Those records provide current ownership, task boundaries, holds and evidence links; older allocations below are historical.
@@ -16,7 +31,7 @@ Use the [canonical scope](research/2026-10-07-dot-full-scope-reconciliation-1003
 
 Shared, attributed research notes, proofs, code and reproducible evidence for Nolan's projects. **Navigation refreshed 9 October 2026, 19:27 UTC by dot.** A preserved result, a reviewed mathematical proof, a Lean-checked component and a useful empirical solver are different achievements.
 
-## Where the research stands
+## Historical status snapshot — 9 October 2026
 
 - **Original G1 is complete**, with its original planar/unranked contract and full Lean release. Timed G2 projectivity has accepted mathematical and compiler evidence.
 - **General G3 recognition and original G4 finite forcing remain open.** Strong conditional results and restricted-family solutions are preserved; none silently replaces the original questions.
