@@ -1,8 +1,8 @@
 {
   "record": "CM-T02-EXECUTION-PLAN-20261015-01/revision1 / DESKTOP-LEAN-CM-T02-JOB-001",
   "route_revision": "DESKTOP-ONLY-COMPILER-ROUTE-20261015-01/revision1",
-  "status": "ONE_PROPOSED_DESKTOP_PLAN_NOT_A_LEASE_OR_RUN_CONFIG",
-  "observed_utc": "2026-10-15 17:06:58 UTC",
+  "status": "ACTUAL_SINGLE_OPERATOR_PLAN_RECONCILED_OWNER_RESERVED_ADMISSION_PENDING",
+  "observed_utc": "2026-10-15 17:14:19 UTC",
   "route": [
     "root Dot exact Lean-only source/review package",
     "DotBridge",
@@ -18,15 +18,22 @@
     "acceptance_quote": "I’ll take custody of the finite desktop Lean build record within the existing lane, with Rust kept in a separate package. ... compilation will wait for the existing owner’s lease acceptance and lane3’s source admission.",
     "finite_execution_lease_issued": false,
     "parent_reports_explicit_acceptance_utc": "2026-10-15T17:02:00Z",
-    "actual_operator_plan_due_utc": "2026-10-15T17:10:00Z",
-    "root_and_caps_in_this_draft_not_a_competing_selection": true
+    "source_staging_actual_app_return": "Leaf populated; staged source hashes match; no compiler run. Bounded named WSL home check found no visible Mathlib/research checkout; cache directory metadata check underway."
   },
   "single_proposed_workspace": {
-    "windows": "C:\\Users\\Owner\\Documents\\Codex\\2026-10-15\\please-communicate-with-all-other-chats\\work\\cm-t02-lean-only-20261015-01",
-    "wsl": "/mnt/c/Users/Owner/Documents/Codex/2026-10-15/please-communicate-with-all-other-chats/work/cm-t02-lean-only-20261015-01",
-    "status": "CANDIDATE_ONLY_NOT_SELECTED_OR_CREATED; align to the ONE existing operator plan due17:10; no second root/build is authorized",
-    "preflight": "Operator confirms exact parent realpath/mount, writability, new leaf absent and exclusive owner; then owner binds this exact root. Do not silently substitute DotBridge worktree, /home/astra, another chat root or old3504 outputs.",
-    "source_transfer_now": false
+    "wsl": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01",
+    "runtime": "existing Ubuntu-24.04 WSL2 desktop ext4",
+    "status": "OWNER_RESERVED; actual operator reports authorized leaf populated and staged source hashes matched",
+    "layouts": [
+      "source",
+      "dependencies",
+      "build",
+      "receipts"
+    ],
+    "earlier_lane3_windows_candidate": "SUPERSEDED; no alternate namespace",
+    "staging_authorized": true,
+    "owner_record": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6197891342",
+    "no_overwrite_or_unrelated_output_reuse": true
   },
   "parent_measured_desktop_evidence": {
     "observed_utc": "2026-10-15T16:57:55.738385Z",
@@ -111,9 +118,16 @@
       "review_pin_provenance": "bridge computed from actual supplied full review; author expected hash not supplied",
       "full_transitive_Mathlib_or_research_cache_supplied": false,
       "self_contained_runnable_environment": false,
-      "operator_must_independently_verify_before_use": true
+      "operator_must_independently_verify_before_use": false,
+      "operator_independently_verified": true,
+      "safe_entries": 8,
+      "all_seven_content_pins_match": true,
+      "operator_receipts": [
+        "outputs/lean-desktop-cm-t02/SEALED-PACKAGE-READBACK-01.json",
+        "outputs/lean-desktop-cm-t02/PACKAGE-AND-PLAN-STATE-02.json"
+      ]
     },
-    "lane3_disposition": "ACCEPT_EXACT_THREE_SOURCE_AND_REVIEW_IDENTITIES_FOR_METADATA_PLANNING; WITHHOLD_COMPILER_ADMISSION"
+    "lane3_disposition": "ACCEPT_SOURCE_REVIEW_PACKAGE_IDENTITY_GATE_CLOSED; runtime admission pending exact closure/runner/config"
   },
   "dependency_provenance": {
     "existing_sparse_supplier_sha256": "9ea04cbe390030381624d25b20be10751dff62f75d5d6e7752b88b9599a46418",
@@ -122,36 +136,76 @@
     "full_ordered_closure_manifest_pin": null,
     "compatible_Desktop_objects_authenticated": false,
     "no_cloud_or_old3504_object_reuse_assumed": true,
-    "new_profile_if_missing_dependency": "BLOCK before compiler; any fresh prerequisite build needs its own reviewed explicit admission. Never silently continue old3504 or trigger Lake/network fallback."
+    "new_profile_if_missing_dependency": "BLOCK before compiler; any fresh prerequisite build needs its own reviewed explicit admission. Never silently continue old3504 or trigger Lake/network fallback.",
+    "static_closure": {
+      "artifact": "CM-T02-STATIC-CLOSURE-r2.json",
+      "bytes": 1863385,
+      "sha256": "08635d33f2b048fb632314d368c8e5376464e0edce4b2c74a9283c56cf43f331",
+      "noncore_modules": 3905,
+      "prior_research": 311,
+      "new_CM": 3,
+      "Mathlib": 3327,
+      "external": 264,
+      "core_leaves": 193,
+      "unresolved_metadata_imports": 0,
+      "provenance": "actual source-owner record6197891342; not independently fetched/rehashed here; not compiled desktop closure"
+    }
   },
   "proposed_finite_bounds_NOT_ADMITTED": {
-    "scope": "only3 serial CM source/audit elaborations after all compatible prerequisites authenticate; no prerequisite compilation",
-    "per_process_address_space_bytes": 2147483648,
-    "per_process_CPU_seconds": 120,
-    "per_process_wall_seconds": 180,
-    "whole_slot_wall_seconds": 600,
-    "fresh_output_total_bytes": 134217728,
-    "each_stdout_stderr_bytes": 8388608,
-    "each_nonlog_file_max_bytes": 67108864,
-    "min_free_disk_beyond_staging_and_output_reserve_bytes": 2147483648,
-    "min_initial_available_memory_bytes": 6442450944,
-    "min_runtime_available_memory_bytes": 2147483648,
-    "compatibility": "Conservative fresh proposal, not old3504/aggregate limits and not claimed sufficient to pass. Owner must accept or replace with a specifically justified finite revision before lease.",
-    "stop": "First bound/cancel/timeout/identity/guard uncertainty stops process group, preserves all partial logs/receipts and blocks next command; no automatic retry, cleanup/deletion or mathematical NO.",
-    "guard_path_sha256_supporting_this_WSL_profile": null
+    "status": "OWNER_ACCEPTED_REQUIREMENTS_NOT_ENFORCED_EVIDENCE",
+    "whole_slot_wall_seconds": 900,
+    "per_child_CPU_seconds": 600,
+    "per_child_address_space_bytes": 8589934592,
+    "each_stdout_stderr_bytes": 16777216,
+    "compiler_child_concurrency": 1,
+    "min_prelaunch_disk_available_bytes": 53687091200,
+    "min_prelaunch_MemAvailable_bytes": 12884901888,
+    "sequence": "at most3 exact direct elaborations plus separately admitted one serial Lake target, or frozen nonredundant Lake sequence subsuming them; no prerequisite fallback",
+    "guard_path_sha256_supporting_this_WSL_profile": null,
+    "quota": "UNESTABLISHED",
+    "nonlog_output_bound_and_descendant_scope": "actual runner/config must explicitly resolve; not inferred from log cap or per-child AS",
+    "stop": "first cancellation/time/resource/hash/child-scope/log-capture failure stops sequence, retains evidence, no retry or mathematical NO"
   },
   "required_exact_commands": {
-    "state": "UNAVAILABLE_UNTIL_ACTUAL_OWNER_FREEZES_PATHS_CLOSURE_GUARD_AND_TARGET_MAP; no guessed executable recipe published",
+    "state": "OPERATOR_ARGV_TARGET_SCOPE_ACCEPTED; actual runtime env/module-root/companion/guard/Lake config pending",
     "ordered_operations": [
       "existing approved owner guard: exact CMFoundations source -> fresh Lean companions using fixed compatible external search roots",
       "same guard: exact CMSeparation source -> fresh companions, using only just-authenticated CMFoundations and external context",
       "same guard: exact CMInterfaceAudit source -> retained full printed types/axiom output",
       "separately admitted full owned-declaration audit and coherent Lake target"
     ],
-    "actual_component_argv": null,
-    "actual_audit_argv": null,
+    "actual_component_argv": [
+      [
+        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "../build/CMFoundations.olean",
+        "CMFoundations.lean"
+      ],
+      [
+        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "../build/CMSeparation.olean",
+        "CMSeparation.lean"
+      ],
+      [
+        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "../build/CMInterfaceAudit.olean",
+        "CMInterfaceAudit.lean"
+      ]
+    ],
+    "actual_audit_argv": [
+      "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+      "-o",
+      "../build/CMInterfaceAudit.olean",
+      "CMInterfaceAudit.lean"
+    ],
     "actual_narrow_Lake_target_and_argv": null,
-    "historical_lakefile_binding": "7239e89d lakefile routes test arguments to scripts/run_current.py; its current/connected target is historical1613, not an automatically valid CM profile. The aggregate-only driver's prohibition on prerequisite fallback remains."
+    "historical_lakefile_binding": "7239e89d lakefile routes test arguments to scripts/run_current.py; its current/connected target is historical1613, not an automatically valid CM profile. The aggregate-only driver's prohibition on prerequisite fallback remains.",
+    "cwd": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source",
+    "env_template": "explicit nonlogin fixed Linux bin; LEAN_PATH root/build plus owner-admitted compatible dependency object roots only; exact ordered paths remain unavailable",
+    "narrow_Lake_status": "PENDING_EXACT_TARGET_CONFIG",
+    "historical_guard_status": "8f47c66c historical guard unconditionally reads missing WSL /sys/fs/cgroup/memory.current; NOT accepted unchanged"
   },
   "lease_requirements": {
     "issuer": "existing01a133ec",
@@ -163,8 +217,10 @@
       "single active writer/executor, cancellation authority and complete custody/receipt locations",
       "actual lease window and single-use sequence"
     ],
-    "status": "NOT_ISSUED; observed idle is insufficient",
-    "old3504": "PAUSED; required module may be reused only from independently authenticated desktop context or separately admitted fresh dependency plan, never old unreceipted output"
+    "status": "CM-T02-DESKTOP-OWNER-01 RESERVED_NOT_STARTED; one-use900s activated only by recorded lane3 closure/runtime/runner/serial manifest admission; no repeat owner ACK needed for conforming fields",
+    "old3504": "PAUSED; required module may be reused only from independently authenticated desktop context or separately admitted fresh dependency plan, never old unreceipted output",
+    "owner_record": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6197891342",
+    "old_nonoverlap": "Owner explicitly attests new desktop namespace separate from cloud /workspace/scratch/astra-support-external-0840 and astra-mathlib-0645; old3504 remains paused"
   },
   "required_retained_receipts": [
     "preflight actual host/runtime/root/mount/disk/memory/process and owner lease",
@@ -181,7 +237,7 @@
     "strict_interior_floor_bound_not_imported_into_endpoint1_adapter": true,
     "cloud_compilation_prohibited": true,
     "Omni_Subspace_stopped": true,
-    "no_new_worker_or_connection_or_install_or_cache_download_or_source_relocation_now": true,
+    "no_new_worker_or_connection_or_install_or_cache_download_or_source_relocation_now": "No extra worker/connection/install/cache download; authorized isolated local staging is now permitted and reported performed",
     "prior_work_correction": {
       "old_prior": "COMMON interior nonclosure / G6 receiver already accepted October6",
       "ref": "aac614fbeca409bc240f16b6419fb60ae4aa93f0",
@@ -191,12 +247,18 @@
     }
   },
   "precise_remaining_fields": [
-    "ONE existing desktop operator's actual exact-root/preflight/resource/command/receipt plan (promised17:10; currently not held)",
-    "Existing01a133ec acceptance of that exact finite delegated lease; no alternative operator or cloud run",
-    "Actual desktop Mathlib0df root plus authenticated source/native/object companions for the311-research-module closure including AdicValuation, or an explicitly reviewed separate fresh-dependency plan",
-    "Actual WSL-capable guard pin/config, absolute compiler paths, frozen Lean/Lake/full-owned-audit target and argv bindings",
-    "Independent desktop ZIP/8-entry/3-source/review validation and accepted source staging into the ONE chosen isolated root"
+    "Actual desktop LOCAL Mathlib0df444 and finite research/external object/source/runtime closure provenance. Owner holds no authenticated desktop compiled closure. Operator's bounded named-path inventory underway; no broad scan or acquisition.",
+    "Actual WSL-compatible bounded runner source/hash/config enforcing accepted900/600/8GiB/16MiB/one-child bounds, cancellation/complete-log capture/child cleanup and explicit module-root/companions.",
+    "Frozen exact lean-toolchain/Lake file/manifest/local search roots and serial narrow target/argv; no default aggregate or automatic prerequisite/fetch fallback."
   ],
-  "extra_human_approval": "No additional generic approval requested. Research checking and this existing route are explicitly authorized. No source relocation occurs now. If the actual plan would require installing/downloading unavailable toolchain/cache or using a path outside the accepted operator scope, name that exact artifact/action for a specific decision; it is not included in this plan.",
-  "ETA": "This17:08 metadata task returns the concrete draft and exact unavailable fields. Operator's actual plan is due17:10. If that plan and required owner/closure/config bindings are complete then, lane3 admission disposition by17:20; compiler completion remains unestimated until admission."
+  "extra_human_approval": "NONE requested for isolated leaf staging or conforming finite desktop check: root explicitly authorizes both within current work. Missing dependency acquisition, if required, must be specified by exact artifact/action and boundary; no generic permission cycle.",
+  "ETA": "17:15 disposition: package+source review and owner/root reservation resolved; exact local closure/runner/Lake bindings unavailable. Existing operator continues bounded local cache metadata inventory; lane3 will give admission or exact diagnostic within10minutes of receiving the concrete manifest/runner/config, with no compiler completion ETA before those fields exist.",
+  "operator_plan": {
+    "returned_utc": "2026-10-15T17:05:03Z",
+    "bytes": 10510,
+    "sha256": "cd921a2823b568cd7626587308e5ffa32bcd330b2e1d045693347504f7b68f3f",
+    "complete_body_read_via_parent": true,
+    "parent_rawfile_hash_verified": true,
+    "lane3_independent_rawfile_hash": false
+  }
 }
