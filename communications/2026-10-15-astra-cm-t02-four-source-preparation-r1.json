@@ -1,0 +1,156 @@
+{
+  "schema": "cm_t02_four_source_equivalence_and_preparation_v1",
+  "job": "DESKTOP-LEAN-CM-T02-JOB-001",
+  "status": "PREPARATION_ONLY_NOT_SOURCE_FREEZE_STAGING_OR_BUILD_ADMISSION",
+  "fresh_review": {
+    "actual_parent_lane1_disposition": "SCOPED_SOURCE_PASS",
+    "scope": "two exact changed source bodies f5477531 and f082c4b3",
+    "full_review_receipt_received": false,
+    "full_review_receipt_sha256": null,
+    "do_not_reuse_old_review_hash": true
+  },
+  "source_files_in_serial_order": [
+    {
+      "module": "CMSparseSupplier",
+      "bytes": 8880,
+      "sha256": "f5477531d3b79ed65c7eb0e549bd653e40a90ce5a710bdf745363287a339c9fd",
+      "declared_source_names": [
+        "DotG4.ActualSparseCertificateExistence.signVariations_lt_support_card",
+        "DotG4.ActualSparseCertificateExistence.sparseCombination",
+        "DotG4.ActualSparseCertificateExistence.sparseCombination_injective",
+        "DotG4.ActualSparseCertificateExistence.sparseCombination_support",
+        "DotG4.ActualSparseCertificateExistence.exists_sparse_double_zero",
+        "DotG4.ActualSparseCertificateExistence.orient_sparse_double_zero",
+        "DotG4.ActualSparseCertificateExistence.exists_nonnegative_sparse_polynomial",
+        "DotG4.ActualSparseCertificateExistence.momentExponent_strictMono"
+      ],
+      "source_inventory_is_not_elaborated_declaration_audit": true
+    },
+    {
+      "module": "CMFoundations",
+      "bytes": 2806,
+      "sha256": "f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945",
+      "declared_source_names": [
+        "Astra.CommonMoment.FinitePositiveLaw",
+        "Astra.CommonMoment.moment",
+        "Astra.CommonMoment.StrictlyInterior",
+        "Astra.CommonMoment.moment_zero",
+        "Astra.CommonMoment.positive_root_count_lt_support_card",
+        "Astra.CommonMoment.cm_l01_positive_root_bound",
+        "Astra.CommonMoment.singletonPolynomial",
+        "Astra.CommonMoment.singletonPolynomial_expansion",
+        "Astra.CommonMoment.singletonPolynomial_at_node",
+        "Astra.CommonMoment.singletonPolynomial_nonneg",
+        "Astra.CommonMoment.singletonPolynomial_pos",
+        "Astra.CommonMoment.three_products_strict"
+      ],
+      "source_inventory_is_not_elaborated_declaration_audit": true
+    },
+    {
+      "module": "CMSeparation",
+      "bytes": 7728,
+      "sha256": "6504523aee4ba61a2184f327b17d6299cec85ba72935dbba235b65d99a927135",
+      "declared_source_names": [
+        "Astra.CommonMoment.eval_ne_zero_off_double_roots",
+        "Astra.CommonMoment.exists_strict_sparse_separator",
+        "Astra.CommonMoment.expectation",
+        "Astra.CommonMoment.expectation_sparseCombination",
+        "Astra.CommonMoment.support_card_le_of_equal_sparse_moments",
+        "Astra.CommonMoment.capFiveLevels",
+        "Astra.CommonMoment.cm_t02_cap_five_separation"
+      ],
+      "source_inventory_is_not_elaborated_declaration_audit": true
+    },
+    {
+      "module": "CMInterfaceAudit",
+      "bytes": 1010,
+      "sha256": "2ba5d889bfdbf641e438c6a47d98bfa36b37392073661ffbc0f9a617e0613211",
+      "declared_source_names": [],
+      "source_inventory_is_not_elaborated_declaration_audit": true
+    }
+  ],
+  "equivalence": {
+    "original_supplier_sha256": "9ea04cbe390030381624d25b20be10751dff62f75d5d6e7752b88b9599a46418",
+    "abstract_prefix_bytes_equal_after_only_physical_open_removal": true,
+    "abstract_prefix_sha256": "69567e7f2655f98f3f20459fd455304fbcb2e79f2b5c6a78920a77b3a694dbf0",
+    "supplier_source_declarations": [
+      "DotG4.ActualSparseCertificateExistence.signVariations_lt_support_card",
+      "DotG4.ActualSparseCertificateExistence.sparseCombination",
+      "DotG4.ActualSparseCertificateExistence.sparseCombination_injective",
+      "DotG4.ActualSparseCertificateExistence.sparseCombination_support",
+      "DotG4.ActualSparseCertificateExistence.exists_sparse_double_zero",
+      "DotG4.ActualSparseCertificateExistence.orient_sparse_double_zero",
+      "DotG4.ActualSparseCertificateExistence.exists_nonnegative_sparse_polynomial",
+      "DotG4.ActualSparseCertificateExistence.momentExponent_strictMono"
+    ],
+    "supplier_declaration_count": 8,
+    "foundation_only_first_import_changed": true,
+    "separation_bytes_unchanged": true,
+    "audit_bytes_unchanged": true
+  },
+  "source_import_graph": {
+    "CMSparseSupplier": [
+      "Mathlib.Algebra.Polynomial.RuleOfSigns",
+      "Mathlib.Algebra.Polynomial.Basis",
+      "Mathlib.Algebra.Polynomial.FieldDivision",
+      "Mathlib.Analysis.Polynomial.Order",
+      "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+      "Mathlib.LinearAlgebra.Dimension.Constructions"
+    ],
+    "CMFoundations": [
+      "CMSparseSupplier",
+      "Mathlib.Tactic.Ring",
+      "Mathlib.Tactic.Linarith"
+    ],
+    "CMSeparation": [
+      "CMFoundations",
+      "Mathlib.Tactic.NormNum"
+    ],
+    "CMInterfaceAudit": [
+      "CMSeparation"
+    ]
+  },
+  "endpoint": "Astra.CommonMoment.cm_t02_cap_five_separation",
+  "exact_moments": [
+    0,
+    1,
+    3,
+    6,
+    10
+  ],
+  "support_domain": "positive real finite laws; no upper endpoint premise",
+  "namespace_exclusion": "Select only CMSparseSupplier OR original G4ActualSparseCertificateExistence; never co-import",
+  "dependency_export_manifest": {
+    "commit": "0b3c8afb6ec031b6e5e5820504ebe66db65afa90",
+    "path": "communications/2026-10-15-astra-cm-t02-complete-export-manifest-r3.json",
+    "bytes": 1021795,
+    "sha256": "d1adfa8698c9f5d926eddce9a6c53f56e45937dafda74784bf67240429920bbc",
+    "external_modules": 2149,
+    "physical_research_dependencies": 0,
+    "core_leaves": 184,
+    "object_authentication_complete": false
+  },
+  "independent_source_preparation_artifact": {
+    "file": "OFFICIAL-SOURCE-CACHE-ADMISSION-PREP-r2.json",
+    "bytes": 1599317,
+    "sha256": "b4a1f924de0c53ea3916017ba6d0bd3518edd0910b1cf8e474bc60a04e0a0581",
+    "selected_sources_match_exact_official_git_trees": 2149
+  },
+  "sole_root": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01",
+  "source_owner": "01a133ec",
+  "integration_coordinator": "01a1252c",
+  "only_operator": "01a13f29",
+  "owner_record": "CM-T02-DESKTOP-OWNER-01",
+  "whole_job_wall_seconds": 900,
+  "new_source_staging_authorized_by_this_record": false,
+  "original_staged_three_source_package_unchanged": true,
+  "final_package_sealed": false,
+  "final_package_review_receipt_gate": "Await full fresh review receipt then explicit four-source package/source freeze; no automatic overwrite of staged originals",
+  "acquisition_approval": "PENDING_NOLAN; do not download/fetch/bootstrap/install or substitute transport",
+  "runner": "R2.1 source721d6145 is with the same lane3 reviewer; no duplicate source or review here",
+  "Lake_config": "lane3 owns the four-module revision; no duplicate config authored",
+  "audit_scope": "Existing unchanged CMInterfaceAudit requests selected types/axioms. Actual elaborated type/axiom/full-owned declaration audit remain unexecuted; static inventory is not a complete generated-declaration audit.",
+  "Rust": "separate package/build record; no Rust files",
+  "old3504": "PAUSED; no compiler/cache query/build/restart",
+  "Omni_Subspace": "STOP retained"
+}
