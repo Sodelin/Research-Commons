@@ -1,0 +1,142 @@
+{
+  "record": "LANE3-CM-T02-RUNNER-SOURCE-REVIEW-01/revision1",
+  "observed_utc": "2026-10-15 17:29:45 UTC",
+  "reviewer": "existing lane3 integration coordinator01a1252c",
+  "source": {
+    "name": "desktop_job_runner_proposal.py",
+    "bytes": 15032,
+    "sha256": "b77498eedfe5ebc9d434f3220300753a14eb829b3bbd88f637095dc00aed2860",
+    "all_bytes_independently_rehashed": true,
+    "source_provenance": "actual desktop operator app send payload; complete body identical to parent later relay",
+    "producer_syntax_only": true,
+    "review_runtime_cases_executed": 0
+  },
+  "disposition": "SOURCE_REVIEW_COMPLETE_CORRECTION_REQUIRED; NO_RUNTIME_ADMISSION",
+  "accepted_scope": {
+    "memory": "Explicit per-process RLIMIT_AS8GiB + required host MemAvailable12GiB/disk50GiB floors is ACCEPTABLE within conditional owner record. It is not aggregate RAM/cgroup/adversarial-escape containment; inherited lower hard limits remain recorded.",
+    "file_limit": "Stricter RLIMIT_FSIZE1GiB and zero core dump are accepted scope for this finite attempt; cap failure is operational UNKNOWN, not mathematical NO. No source/theorem weakening.",
+    "time": "Single900s monotonic deadline starts before input authentication, reused across child sequence. Source checks are cooperative polling/hashed-chunk checks; actual runtime enforcement/cleanup cases remain unexecuted, no hard-wall behavior PASS.",
+    "positive_controls": "No shell; explicit Linux executables; pinned reviewed inputs; repeated immutable input/output checks; exclusive output namespace; per-stream16MiB failure latch; missing host metric raises; complete EOF/zero exit needed; failure blocks subsequent command; no automatic fetch/retry/old3504 resume.",
+    "authority": "Trusted-route owner/lane3 authority remains external. Hashes are byte selectors; execution_status/serial_policy strings alone are not authority or concurrency proofs."
+  },
+  "blocking_finding": {
+    "id": "R1_IDENTITY_AFTER_WAITID_FAILURE",
+    "severity": "required before any runtime admission",
+    "lines": [
+      73,
+      75,
+      132,
+      144,
+      149
+    ],
+    "source_derived_counterexample": "With SIGCHLD inherited as SIG_IGN (or any competing reaper), kernel can auto-reap the exited leader. waitid(...WNOWAIT) can raise ChildProcessError/ECHILD. The except block labels cleanup unconfirmed, but execution still reaches unconditional os.killpg(child.pid,SIGKILL). WNOWAIT did not succeed and the leader PID reservation is unestablished, so that numeric PGID may no longer identify the owned group. This is a source-derived scenario, NOT an observed runtime failure.",
+    "one_owned_correction": "SAME desktop operator only: revise this runner source to establish and record the standalone no-other-reaper/SIGCHLD-default identity precondition before spawn, and gate numeric group signals on a currently valid retained-child/group identity. Observation failure must not be taken as proof of retained ownership. On identity loss, record cleanup UNKNOWN and use only a demonstrated safe fallback; do not blindly kill a possibly reused numeric group. Preserve the existing stop/failure/partial evidence. Return complete revised source+hash+controls; do not create a second runner or new worker.",
+    "expected_focused_review_case": "Inherited ignored SIGCHLD or simulated ECHILD observation failure must cause prelaunch refusal or explicit identity-loss UNKNOWN without an unverified numeric group signal. This case is specified, not run."
+  },
+  "configuration_obligations": [
+    {
+      "id": "C1_FOUR_SOURCE_PROFILE",
+      "fact": "Source-owner6198092043 conditionally authorizes CMSparseSupplier plus changed import-only CMFoundations and unchanged CMSeparation/CMInterfaceAudit under same900s record after FRESH lane1 review. Current runner SOURCES hardcodes the OLD foundation hash and has no new supplier pin.",
+      "action": "In the SAME owned correction prepare an explicitly distinct four-source profile with exact f5477531... supplier8880B and f082c4b3... foundation2806B plus unchanged650452/2ba5d8. Do not overwrite original candidate or reuse original PASS; no activation until fresh source-review record is bound."
+    },
+    {
+      "id": "C2_EXPLICIT_LAKE_DIRECTORY",
+      "fact": "Runner always uses cwd leaf/source, whereas lane3 leaf Lake file is at leaf root.",
+      "resolution": "Frozen Lake argv is now [absolute lake, '--dir', '/home/astra/codex-workspaces/cm-t02-desktop-20261015-01', 'test']; verified against pinned Lean Lake CLI Main.lean lines335-337/Gitblob7351b888130b276772224890d37d069298d4fddd. No parent-directory search assumption or runner cwd change is needed."
+    },
+    {
+      "id": "C3_ADMISSION_BINDING",
+      "action": "The actual trusted-route admission must explicitly bind the complete manifest hash, corrected runner hash, four source/review pins, root, owner record, closure/import order and selected command/output family. Runner currently hashes but does not parse the admission body; do not claim it validates issuer authority or those semantic links. External byte-specific operator/lane3 binding is mandatory."
+    },
+    {
+      "id": "C4_OBJECT_AND_LAKE_METADATA_FAMILIES",
+      "action": "Freeze ALL expected fresh Lean companion paths, verify actual companions after execution, and retain separate finite leaf-local Lake config/cache metadata identities. Current runner checks only declared build-family outputs; that is not an automatic complete generated-file inventory. Unknown/omitted companion or unexpected compiler output must prevent full adoption."
+    },
+    {
+      "id": "C5_AUTHENTICATION_BUDGET",
+      "action": "Actual selected source/object/runtime/config manifest must fit8MiB/16384-file caps without dropping required entries. Repeated full-hash work is charged inside900s. Source-owner reports2149*5=10745 companion files plus2149 source files; actual complete count/core/runtime context still must be measured. No fit or full-closure claim from file-count arithmetic alone."
+    },
+    {
+      "id": "C6_PRELAUNCH_DIAGNOSTICS",
+      "action": "Signal handlers and JOB-RECEIPT setup occur after initial authentication. Operator must retain full outer invocation stdout/stderr and explicit prelaunch-failure facts; a prelaunch exception/cancel is not a compiler result or permission to retry. File-CANCEL is not checked inside initial sha loop; this must be documented or handled by the same correction if prompt file cancellation during authentication is required."
+    }
+  ],
+  "narrow_Lake_source_revision": {
+    "status": "SOURCE_ONLY_UNPARSED_UNCOMPILED_FRESH_REFACTOR_REVIEW_REQUIRED",
+    "sequence": [
+      "CMSparseSupplier",
+      "CMFoundations",
+      "CMSeparation",
+      "CMInterfaceAudit"
+    ],
+    "config_files": [
+      {
+        "name": "lakefile.lean",
+        "body": "import Lake\nopen Lake DSL\n\n/-! CM-T02 leaf verification configuration, SOURCE ONLY.\nNo dependency packages are resolved by this leaf. The admitted external\nobject roots are supplied by the existing desktop runner's frozen LEAN_PATH.\nThis script subsumes the four serial elaborations; do not run them twice.\nThe outer owner-admitted runner must enforce limits and supervise descendants.\n-/\npackage cmT02Desktop\n\n@[test_driver]\nscript verify (args) do\n  unless args.isEmpty do\n    IO.eprintln \"CM-T02 accepts no additional targets or arguments.\"\n    return 64\n  let workspace ← getWorkspace\n  unless workspace.dir.toString == \"/home/astra/codex-workspaces/cm-t02-desktop-20261015-01\" do\n    IO.eprintln \"CM-T02 workspace differs from the reserved root.\"\n    return 64\n  let searchPathOption ← IO.getEnv \"LEAN_PATH\"\n  let searchPath := searchPathOption.getD \"\"\n  if searchPath.isEmpty then\n    IO.eprintln \"CM-T02 refuses an empty LEAN_PATH.\"\n    return 64\n  for name in #[\"CMSparseSupplier\", \"CMFoundations\", \"CMSeparation\", \"CMInterfaceAudit\"] do\n    let child ← IO.Process.spawn {\n      cmd := \"/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean\"\n      args := #[s!\"--root={workspace.dir / \"source\"}\", \"--threads=1\",\n        \"-o\", (workspace.dir / \"build\" / s!\"{name}.olean\").toString,\n        \"-i\", (workspace.dir / \"build\" / s!\"{name}.ilean\").toString,\n        (workspace.dir / \"source\" / s!\"{name}.lean\").toString]\n      cwd := some (workspace.dir / \"source\")\n      stdout := .inherit\n      stderr := .inherit\n    }\n    let code ← child.wait\n    unless code == 0 do\n      return code\n  return 0\n",
+        "bytes": 1621,
+        "sha256": "8b7eb2d080918a7b6cf8e865dcffed9f70ef3c7a7581ccdcfd89f23466f70ce3"
+      },
+      {
+        "name": "lake-manifest.json",
+        "body": "{\n  \"version\": \"1.2.0\",\n  \"packagesDir\": \".lake/packages\",\n  \"packages\": [],\n  \"name\": \"cmT02Desktop\",\n  \"lakeDir\": \".lake\",\n  \"fixedToolchain\": true\n}\n",
+        "bytes": 152,
+        "sha256": "6191e59600bbf0b6f6f93ce75615079666cfb11e3b7073a5635656219bbfa527"
+      },
+      {
+        "name": "lean-toolchain",
+        "body": "leanprover/lean4:v4.33.1\n",
+        "bytes": 25,
+        "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      }
+    ],
+    "argv": [
+      "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake",
+      "--dir",
+      "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01",
+      "test"
+    ],
+    "controlled_parent_cwd": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source",
+    "compiler_child_cwd": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source",
+    "duplicate_direct_sequence": false,
+    "no_package_requires_update_or_fetch_hooks": true,
+    "native_lean_lib_integration_claim": false
+  },
+  "dependency_reconciliation": {
+    "actual_owner_source": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6198092043",
+    "recommendation": "SELECTED: fresh-reviewed abstract supplier extraction + EXACT receipted existing2149-module Linux export candidate; no official cache acquisition or311-research rebuild while these held files authenticate.",
+    "external_modules": 2149,
+    "Mathlib": 1892,
+    "external_packages": 257,
+    "core_leaves": 184,
+    "physical_research_modules": 0,
+    "AdicValuation_in_static_closure": false,
+    "companion_files_present_owner_stat": 10745,
+    "companion_bytes_owner_stat": 1561484568,
+    "external_source_bytes_owner": 26080227,
+    "four_source_bytes": 20424,
+    "raw_payload_before_manifest_receipt_archive_overhead": 1587585219,
+    "source_owner_proposed_transfer_max_bytes": 2147483648,
+    "manifest": {
+      "name": "ACQUISITION-MANIFEST-r2.json",
+      "bytes": 7289882,
+      "sha256": "a9dd9faf24ca778bcddc2ab95b2e5fd9f0ac3def71bd9c9900f09c329f984bf7",
+      "source_owner_root": "/workspace/Research-Commons/research/2026-10-15-astra-reviewed-formalization-lane2-1630z/abstract-supplier-refactor-r1/",
+      "actual_body_available_to_lane3": false
+    },
+    "raw_object_roots": [
+      "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean",
+      "exact plan-selected .lake/packages/NAME/.lake/build/lib/lean roots in actual acquisition manifest"
+    ],
+    "receipt_index": "/workspace/scratch/astra-support-external-0840/INDEX.json selected2149 module indices",
+    "evidence_level": "Owner read exit0/module/source-hash receipts and statted every listed file. Current source/object bytes NOT freshly hashed; no archive/export/desktop transfer claimed.",
+    "remaining_artifact_boundary": "Root must bind the ALREADY approved private exchange executable/address to this exact finite candidate and move actual manifest-listed files under its authorized transfer scope. No such handle or actual manifest body is held by lane3. Source-owner cloud heavy hash/pack restriction remains; no new transport/public binary publication is authorized."
+  },
+  "not_authorized_by_review": [
+    "compiler/Lake/run/preflight child launch",
+    "network fetch/install/acquisition",
+    "old3504 reuse/resume",
+    "new worker/runner implementation",
+    "Rust edits in Lean package"
+  ],
+  "ETA": "Review/finite correction returned before17:32UTC. Existing desktop operator owns one source correction. Lane3 can reconcile complete corrected source/config/actual acquisition manifest within10minutes of receipt; current original runner is NOT admitted."
+}
