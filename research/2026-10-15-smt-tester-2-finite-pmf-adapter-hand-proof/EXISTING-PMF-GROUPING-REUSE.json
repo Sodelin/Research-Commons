@@ -1,0 +1,270 @@
+{
+  "schema": "smt-tester-2-existing-pmf-grouping-reuse-v1",
+  "recorded_utc": "2026-10-15T20:48:13Z",
+  "disposition": "SOURCE_REUSE_MAP_ONLY_TYPED_ADAPTER_NOT_IMPLEMENTED_OR_COMPILE_CHECKED",
+  "scope": {
+    "performed": [
+      "Read exact pinned public physical-source Git objects and relevant direct-import declarations.",
+      "Read the accepted CM certificate and its four embedded source bodies.",
+      "Recompute raw physical-source and certificate bytes, lengths and SHA256 digests; recompute embedded source UTF-8 lengths and hashes.",
+      "Map supplied declarations to remaining typed packaging obligations."
+    ],
+    "not_performed": [
+      "Lean execution, compiler or API probes, tests, implementation or source imports into the CM component.",
+      "New compiler target selection, job creation, message dispatch or deadline allocation.",
+      "An exhaustive audit of Mathlib or unpublished/global adapter sources."
+    ],
+    "source_availability_is_not_compile_acceptance": true,
+    "accepted_abstract_theorem_is_not_reopened_by_missing_physical_packaging": true
+  },
+  "physical_source_epoch": {
+    "repository": "https://github.com/Sodelin/Research-Commons",
+    "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+    "source_store": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/",
+    "modules": [
+      {
+        "module": "G4WholeProfileDetermination",
+        "namespace": "DotG4.WholeProfileDetermination",
+        "namespace_line": 18,
+        "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+        "bytes": 187616,
+        "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+        "digest_verified_from_exact_git_object": true,
+        "imports": [
+          "G4WeightedOrdinaryTreeLaw",
+          "G4ActualPositiveGridUniqueness",
+          "G7SinglePopulationPolynomialKernel",
+          "Mathlib.Algebra.MvPolynomial.Funext"
+        ],
+        "compile_status_established_by_this_map": false
+      },
+      {
+        "module": "G4ActualPositiveGridUniqueness",
+        "namespace": "DotG4.ActualPositiveGridUniqueness",
+        "namespace_line": 13,
+        "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787.lean",
+        "bytes": 14129,
+        "sha256": "ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787",
+        "digest_verified_from_exact_git_object": true,
+        "import": "G4ActualSparseCertificateExistence",
+        "literal_header_line": 6,
+        "literal_header": "Contributor: dot (OpenAI), 12 October 2026. UNCOMPILED draft.",
+        "header_disposition": "Literal source annotation only. Neither this annotation nor the containing directory supplies a current compile receipt; this map establishes source availability only.",
+        "compile_status_established_by_this_map": false
+      }
+    ]
+  },
+  "supplied_support_deletion_lemmas": [
+    {
+      "symbol": "DotG4.WholeProfileDetermination.positiveSupportPMF",
+      "module": "G4WholeProfileDetermination",
+      "lines": [3008, 3018],
+      "role": "Restrict a finite-index PMF p to the subtype of indices a with p a nonzero, retaining the original probabilities. This deletes zero-mass indices without renormalizing positive probabilities."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.positiveSupportPMF_positive",
+      "module": "G4WholeProfileDetermination",
+      "lines": [3020, 3022],
+      "role": "Each retained atom has strictly positive real mass; uses nonzero mass and PMF.apply_ne_top."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.positiveSupportPMF_sum",
+      "module": "G4WholeProfileDetermination",
+      "lines": [3024, 3032],
+      "role": "Preserve the finite weighted sum for arbitrary real-valued f. Substitution f(a)=x(a)^n preserves each moment of the same fixed law."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.positiveSupportPMF_map",
+      "module": "G4WholeProfileDetermination",
+      "lines": [3034, 3040],
+      "role": "Preserve the PMF pushforward to an arbitrary codomain after support deletion."
+    }
+  ],
+  "supplied_scalar_grouping_lemmas": [
+    {
+      "symbol": "DotG4.ActualPositiveGridUniqueness.gridWeight",
+      "module": "G4ActualPositiveGridUniqueness",
+      "lines": [93, 94],
+      "definition": "gridWeight w x a = sum over i of (if x i = a then w i else 0)",
+      "role": "Existing scalar equal-value aggregation; a new grouping definition is unnecessary."
+    },
+    {
+      "symbol": "DotG4.ActualPositiveGridUniqueness.gridWeight_moment",
+      "module": "G4ActualPositiveGridUniqueness",
+      "lines": [96, 113],
+      "role": "For a finite real set A containing every x i, the subtype-indexed grouped sum of gridWeight w x a times a^n equals the original index sum of w i times (x i)^n, for arbitrary natural n."
+    },
+    {
+      "symbol": "DotG4.ActualPositiveGridUniqueness.gridWeight_zero_outside",
+      "module": "G4ActualPositiveGridUniqueness",
+      "lines": [115, 121],
+      "role": "If every x i belongs to A, grouped weight vanishes at every a outside A."
+    },
+    {
+      "symbol": "DotG4.ActualPositiveGridUniqueness.gridWeight_eq_mapped_mass",
+      "module": "G4ActualPositiveGridUniqueness",
+      "lines": [123, 135],
+      "role": "With w i = (p i).toReal, gridWeight w x a equals ((p.map x) a).toReal. This is the closest existing scalar PMF bridge."
+    }
+  ],
+  "supplied_physical_moment_and_correlation_interfaces": [
+    {
+      "symbol": "DotG4.WholeProfileDetermination.finiteBankMoment",
+      "lines": [2775, 2777],
+      "definition": "sum over a of (p a).toReal * x a ^ (k.choose 2)",
+      "role": "The exponent changes with k while p and x remain constructor arguments."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.directedSurvival_bounds",
+      "lines": [2873, 2876],
+      "role": "Provides 0 < directedSurvival and directedSurvival <= 1. Equality with 1 is permitted and is compatible with the CM-T02 positive-axis constructor."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.configurationBankPMF",
+      "lines": [3084, 3087],
+      "role": "One whole configuration draw followed by one bank draw: p.bind (fun a => q.map (fun b => (a,b))). Correlations between forcing sites remain inside the configuration PMF."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.configurationBankPMF_apply",
+      "lines": [3089, 3099],
+      "role": "Identifies the joint atom mass as the configuration mass times the bank mass."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.configurationBankPMF_sum",
+      "lines": [3101, 3105],
+      "role": "Rewrites the finite joint weighted sum as the nested configuration/bank weighted sum."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.configurationBankPMF_bind",
+      "lines": [3107, 3110],
+      "role": "Supplies the corresponding PMF bind association."
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.actual_randomized_legal_moment",
+      "lines": [3529, 3539],
+      "role": "For 0 < k, equates the physical randomized legal comb moment with finiteBankMoment of configurationBankPMF nu (originalRegisterMeasure N p).toPMF and the directed-survival map of maskedNormalizedTree at the chosen pair i,j."
+    }
+  ],
+  "analogous_tree_grouping_not_required_to_reimplement_scalar_grouping": [
+    {
+      "symbol": "DotG4.WholeProfileDetermination.treeBankWeight",
+      "lines": [2878, 2880]
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.treeBankWeight_map",
+      "lines": [2887, 2897]
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.treeBankWeight_outside",
+      "lines": [2899, 2906]
+    },
+    {
+      "symbol": "DotG4.WholeProfileDetermination.treeBankWeight_readout",
+      "lines": [2908, 2923]
+    }
+  ],
+  "accepted_cm_source_epoch": {
+    "certificate_url": "https://github.com/Sodelin/Research-Commons/blob/514648b697aeed8f46582109cfeefcd7707cd738/research/2026-10-15-common-moment-checked-component/CM-T02-CERTIFICATE-001.json",
+    "certificate_commit": "514648b697aeed8f46582109cfeefcd7707cd738",
+    "certificate_bytes": 33921,
+    "certificate_sha256": "41aa9b7b3fb639d22db47fffac7f5f92bfea021bc3f3e548f6f2c3dfbb5d7d5a",
+    "certificate_status": "ACCEPTED_COMPONENT",
+    "lean_version": "4.33.1",
+    "lean_source_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "acceptance_is_attributed_to_certificate_not_local_rerun": true,
+    "embedded_sources": [
+      {
+        "module": "CMSparseSupplier",
+        "bytes": 8880,
+        "sha256": "f5477531d3b79ed65c7eb0e549bd653e40a90ce5a710bdf745363287a339c9fd",
+        "imports": [
+          "Mathlib.Algebra.Polynomial.RuleOfSigns",
+          "Mathlib.Algebra.Polynomial.Basis",
+          "Mathlib.Algebra.Polynomial.FieldDivision",
+          "Mathlib.Analysis.Polynomial.Order",
+          "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+          "Mathlib.LinearAlgebra.Dimension.Constructions"
+        ]
+      },
+      {
+        "module": "CMFoundations",
+        "bytes": 2806,
+        "sha256": "f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945",
+        "imports": ["CMSparseSupplier", "Mathlib.Tactic.Ring", "Mathlib.Tactic.Linarith"]
+      },
+      {
+        "module": "CMSeparation",
+        "bytes": 7843,
+        "sha256": "58bd9f673f3f143c58a463aea5c86caeeb8ed19d1e3b9025b904af2d8483cf90",
+        "imports": ["CMFoundations", "Mathlib.Tactic.NormNum"]
+      },
+      {
+        "module": "CMInterfaceAudit",
+        "bytes": 1010,
+        "sha256": "2ba5d889bfdbf641e438c6a47d98bfa36b37392073661ffbc0f9a617e0613211",
+        "imports": ["CMSeparation"]
+      }
+    ],
+    "constructor_boundary": {
+      "symbol": "Astra.CommonMoment.FinitePositiveLaw",
+      "module": "CMFoundations",
+      "lines": [18, 23],
+      "fields": ["nodes : Finset real", "weight : real -> real", "node_pos", "weight_pos", "mass_one"],
+      "requires_nodes_strictly_positive": true,
+      "requires_retained_weights_strictly_positive": true,
+      "requires_total_weight_one": true,
+      "requires_nodes_less_than_one": false,
+      "moment_symbol": "Astra.CommonMoment.moment",
+      "moment_lines": [25, 26],
+      "moment_definition": "sum over x in mu.nodes of mu.weight x * x^n"
+    },
+    "uniform_theorem": {
+      "symbol": "Astra.CommonMoment.support_card_le_of_equal_sparse_moments",
+      "module": "CMSeparation",
+      "lines": [119, 123],
+      "statement_boundary": "For arbitrary finite positive laws sigma,tau and an injective natural-exponent family of size 2*tau.nodes.card+1, equality of those moments implies sigma.nodes.card <= tau.nodes.card. This is a uniform theorem, not only an enumerated small example."
+    },
+    "cap_five_endpoint": {
+      "symbol": "Astra.CommonMoment.cm_t02_cap_five_separation",
+      "module": "CMSeparation",
+      "lines": [159, 161],
+      "statement_boundary": "If sigma has at least three nodes and tau has at most two, some exponent in capFiveLevels distinguishes their moments."
+    },
+    "selected_closure_adapter_check": {
+      "bodies_inspected": ["CMSparseSupplier", "CMFoundations", "CMSeparation", "CMInterfaceAudit"],
+      "physical_modules_imported": false,
+      "physical_identifiers_found": [],
+      "searched_identifiers": ["PMF", "configurationBankPMF", "finiteBankMoment", "gridWeight", "treeBankWeight"],
+      "conclusion": "These four selected embedded module bodies do not supply a typed physical-PMF-to-FinitePositiveLaw adapter. This is not a global absence claim about other sources or work in progress."
+    }
+  },
+  "remaining_typed_packaging": {
+    "status": "SOURCE_PROPOSAL_ONLY_NOT_IMPLEMENTED_NOT_SELECTED_FOR_COMPILATION",
+    "construction": [
+      "Fix one finite-index PMF p and one positive scalar map x before quantifying over queried levels.",
+      "Use positiveSupportPMF p to delete only zero-mass indices.",
+      "Choose A as the distinct image of x on the retained positive-mass subtype. Do not use the full image including values reached only by zero-mass indices.",
+      "Define the candidate law's nodes as A and weights with existing gridWeight over the retained subtype, equivalently the real mass of its scalar PMF pushforward.",
+      "Prove node_pos from positivity of x, weight_pos from nonnegative summands and a positive image witness, and mass_one from PMF normalization plus the grouped n=0 identity.",
+      "Reconcile the subtype-indexed sum in gridWeight_moment with the Finset-membership sum in CM.moment.",
+      "Prove finiteBankMoment p x k = CM.moment mu (k.choose 2) using positiveSupportPMF_sum and gridWeight_moment. Compose with actual_randomized_legal_moment only under its supplied physical hypotheses."
+    ],
+    "proof_obligations_not_dispatched": [
+      "A typed FinitePositiveLaw constructor in the combined source context.",
+      "Strict positivity of grouped weights at every selected distinct image value.",
+      "Normalization and subtype/Finset sum conversion at the actual Lean APIs.",
+      "One quantified moment-compatibility theorem connecting the physical readout to that same constructed law.",
+      "Source-owner selection and any separately authorized compiler admission."
+    ]
+  },
+  "fixed_law_and_scope_constraints": [
+    "There is one fixed pushed-forward law mu for all queried k, not a family mu_k fitted separately to each queried level.",
+    "For the direct fixed-input construction, the configuration PMF, bank PMF, masks, scalar directed-survival map and grouping are fixed as k varies, so k.choose 2 changes only the exponent. Alternatively, these inputs may vary if their resulting scalar pushforward laws are proved equal to one common law for all selected k; fixed inputs are sufficient, not necessary.",
+    "Whole-configuration correlations stay inside the configuration PMF. Replacing it by a product of site marginals changes the law and is not justified by this reuse map.",
+    "Distinct positive-mass scalar survival values determine nodes.card. It is not automatically the number of banks, configurations, reticulations or a physical copy cap.",
+    "Survival value 1 is permitted. The accepted CM-T02 constructor requires positive nodes, while StrictlyInterior is a separate predicate.",
+    "Equal scalar survival values are aggregated; this does not identify a physical graph or individual bank assignments.",
+    "All source reuse must preserve the original hypotheses. Available declarations and matching bytes do not establish new combined-source compilation or physical endpoint acceptance."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "acceptance_boundaries": {
+    "existing_abstract_CM_T02_acceptance_unchanged": true,
+    "global_absence_of_unpublished_adapter_claimed": false,
+    "historical_failure_or_success_relabelled": false,
+    "holds_released": false,
+    "mathematical_or_compiler_ownership_transferred": false,
+    "new_kernel_checked_result": false,
+    "new_selected_adapter_or_target_by_this_review": false,
+    "standard_axiom_contract_changed": false
+  },
+  "assumptions_checked": [
+    "Finite carrier [Fintype I], normalized p : PMF I, total x : I -> Real.",
+    "For the canonical positive-axis image presentation: p(a) !=0 implies x(a)>0. There is no positivity requirement at zero-mass indices, injectivity assumption, positive lower mass threshold or strict upper node bound.",
+    "PMF gives each point mass <=1 and hence finite; toReal positivity/finite-sum mass1 follow, rather than being assumed across a possible infinity."
+  ],
+  "comparison_closed": true,
+  "computability_review": [
+    "Existing positive-support construction and exact real-image fibers are classical/noncomputable. This is a semantic presentation and existence argument, not an effective runtime grouping algorithm.",
+    "Exact zero omission and exact equal-node grouping cannot be replaced by near-zero dropping or rounded buckets while inheriting these equalities. Numerical error contracts/effective representations remain separate owner obligations."
+  ],
+  "disposition": "ACCEPT_SCOPED_FINITE_PUSHFORWARD_HAND_ARGUMENT",
+  "edge_cases_and_scope": {
+    "duplicate_survival_values": "Their full masses must be summed; taking a representative mass fails normalization/readout preservation.",
+    "empty_carrier_or_support": "A PMF with total mass1 on a finite carrier rules these out; no extra assumption is needed.",
+    "endpoint_one": "Allowed by FinitePositiveLaw and physical bounds; strict interior requires a separate stronger premise.",
+    "physical_indices": "k.choose2 is not injective on all naturals because0 and1 coincide; it is strictly increasing for positive k. Positive physical levels1..5 yield0,1,3,6,10. The hand argument does not declare all arbitrary CM exponents physically available.",
+    "shared_context": "Each single CM moment vector requires one fixed pushforward law across all selected exponents. Fixed p,x and the supplied physical tuple are sufficient; varying inputs require a proof of the same pushforward law. Rowwise applications with varying nu, masks, p or x otherwise produce separate mu_k laws and cannot be pooled into one sigma/tau merely because source/bank parameters are shared. Fixed p alone with varying x is also insufficient. Scalar pair pushforwards do not supply a full joint genealogy law or independently fitted parameters.",
+    "support_cardinality": "Counts distinct positive-mass survival values, not configurations/hybrids/copies. Static hand trace: three equally weighted configurations all mapped to1 have one support node, despite three positive configurations. This trace was not executed as a test.",
+    "zero_mass_at_arbitrary_real_node": "Harmless zero terms; do not include zero-weight image points in S.",
+    "zero_node_positive_mass": "Excluded by the explicit range hypothesis; deleting or renormalizing that positive mass is not this construction."
+  },
+  "existing_helpers_to_reuse": [
+    {
+      "declarations": [
+        "directedSurvival_positive",
+        "directedSurvival_le_one",
+        "directedSurvival_bounds"
+      ],
+      "scope": "Exact physical survival is positive and at most1; endpoint1 is possible.",
+      "source_lines": [
+        "77-83",
+        "2873-2876"
+      ]
+    },
+    {
+      "declarations": [
+        "positiveSupportPMF",
+        "positiveSupportPMF_positive",
+        "positiveSupportPMF_sum",
+        "positiveSupportPMF_map"
+      ],
+      "scope": "Existing noncomputable support restriction omits only zero mass, uses p.apply_ne_top for real positivity, and preserves every weighted readout/pushforward without renormalizing.",
+      "source_lines": [
+        "3008-3040"
+      ]
+    },
+    {
+      "declarations": [
+        "gridWeight",
+        "gridWeight_moment",
+        "gridWeight_zero_outside",
+        "gridWeight_eq_mapped_mass"
+      ],
+      "namespace": "DotG4.ActualPositiveGridUniqueness",
+      "reuse_boundary": "gridWeight_moment and gridWeight_zero_outside require hx for EVERY index of their carrier. Restrict first to J={a // p(a)!=0}, use q=positiveSupportPMF p, x'=x on J and S=image x' univ. This satisfies hx without imposing positivity/image membership at zero-mass original indices. Grouped positivity follows from one strictly positive fiber summand; the n=0 moment identity plus PMF-to-real normalization gives mass1. Formal invocation and finite-sum presentation conversions remain untested.",
+      "scope": "Existing retained SOURCE for exact finite scalar grouping, ordinary moments for every Nat n, zero off the full image, and real masses of the PMF pushforward. The literal header says UNCOMPILED draft; this review does not infer compilation or kernel acceptance from its containing folder.",
+      "source_lines": [
+        "93-135"
+      ]
+    }
+  ],
+  "hand_document": {
+    "bytes": 17347,
+    "full_document_read": true,
+    "path": "lean/adapter/FINITE-PMF-PUSHFORWARD-HAND-DERIVATION.md",
+    "sha256": "d58ae8ed59ba5b1396ec4b0e73d2030c5b943173d09742ceba67e8b3929b3b49"
+  },
+  "new_peer_request_or_dispatch": false,
+  "proof_obligations_reviewed": [
+    "Positive support A is nonempty because nonnegative real weights sum1; a separate Nonempty I premise is unnecessary.",
+    "S=x(A) is a finite set of exact distinct values. Every node has a positive-mass preimage and is strictly positive.",
+    "Each W(y) sums every mass in its exact fiber. One positive summand plus nonnegative others gives strict on-support weight positivity; duplicate-valued indices are aggregated, not discarded.",
+    "The fibers partition A, so total W mass equals original mass1 exactly. Zero weights are omitted without rescaling.",
+    "For every total real-valued f, finite regrouping preserves its weighted sum. Taking every natural n gives one fixed mu with ordinary moment(n)=sum p.toReal*x^n. No infinite-sum/integrability assumption is introduced.",
+    "The n=0 case includes zero-mass x=0 indices: zeroth power1 still has zero coefficient, so zero omission remains valid.",
+    "Substituting n=k.choose2 proves the exact finiteBankMoment identity for every natural k; the legal-observation supplier retains its separate k>0 premise.",
+    "For the held physical instantiation, the existing survival-positive helper supplies the range hypothesis for the same maskedNormalizedTree and exact configurationBankPMF. No new support/range helper is needed.",
+    "The new hand note correctly reuses retained gridWeight_moment rather than proposing a new grouping/moment theorem. Applying it to the positive-support subtype meets its full-carrier hx premise; applying it blindly to the original carrier with only a positive-image S would not meet that premise.",
+    "For each single CM vector, the same law supplies every selected k. Shared physical bank parameters do not establish equality of independently varying row laws; fixed p,x or an explicit equality-of-pushforwards proof is required."
+  ],
+  "remaining": [
+    "Existing formal/source owner must select any typed receiver implementation and its exact original inputs; this review selects no adapter, target or compilation.",
+    "The grouping definition and all-natural moment identity already occur in retained source. Missing typed receiver work in this contributor packet is FinitePositiveLaw packaging, positive-fiber/mass1 fields and finite-sum presentation conversions, followed by composition with the existing triangular-index and legal-observation equalities. No new grouping mathematics is needed; no invocation/import has been compiled here.",
+    "Scalar moment correspondence does not establish the separate CM-L02 generator/shared-bit/semigroup instantiation, whole-graph source realization, effective policy extraction, Rust refinement or general G3/G4 closure."
+  ],
+  "reviewed_utc": "2026-10-15T20:47:35Z",
+  "schema": "smt-finite-pmf-pushforward-hand-proof-review-v1",
+  "scope": "Independent hand-argument and exact source-signature review only. Existing parallel contributors were reused. No Lean implementation, compiler/parser, test, numerical/calculation runtime, solver, provider/probe, job, new worker or external peer dispatch was performed by this review. Read-only Git and metadata hashing do not execute the supplied sources.",
+  "source_counterexample_to_stated_hand_contract": null,
+  "source_signatures": {
+    "CMFoundations.lean": {
+      "bytes": 2806,
+      "fields": [
+        "nodes : Finset Real",
+        "weight : Real -> Real",
+        "node_pos",
+        "weight_pos",
+        "mass_one"
+      ],
+      "moment": "sum on nodes of weight(y)*y^n; StrictlyInterior is a separate predicate",
+      "origin": "exact source_utf8 body embedded in accepted certificate",
+      "sha256": "f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945"
+    },
+    "accepted_certificate": {
+      "bytes": 33921,
+      "commit": "514648b697aeed8f46582109cfeefcd7707cd738",
+      "path": "research/2026-10-15-common-moment-checked-component/CM-T02-CERTIFICATE-001.json",
+      "repository": "Research-Commons",
+      "sha256": "41aa9b7b3fb639d22db47fffac7f5f92bfea021bc3f3e548f6f2c3dfbb5d7d5a"
+    },
+    "physical_supplier": {
+      "bytes": 187616,
+      "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "repository": "Research-Commons",
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09"
+    },
+    "scalar_grouping_supplier": {
+      "bytes": 14129,
+      "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+      "literal_header_status": "Contributor: dot (OpenAI), 12 October 2026. UNCOMPILED draft.",
+      "new_compilation_or_kernel_acceptance": false,
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787.lean",
+      "repository": "Research-Commons",
+      "sha256": "ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787",
+      "source_rehashed_at_this_review": true
+    }
+  }
+}
