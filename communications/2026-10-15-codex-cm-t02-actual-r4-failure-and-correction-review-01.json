@@ -1,0 +1,103 @@
+{
+  "record": "CM-T02-ACTUAL-R4-FAILURE-AND-SOURCE-CORRECTION-REVIEW-01",
+  "observed_utc": "2026-10-15 18:42:56 UTC",
+  "role": "Existing lane3 integration/admission coordinator only",
+  "job": "DESKTOP-LEAN-CM-T02-JOB-001",
+  "owner_record": "CM-T02-DESKTOP-OWNER-01",
+  "owner_record_status": "USED_FAILED_NO_REPLAY",
+  "only_operator": "01a13f29-6f17-7980-bb5a-4e900a1fcb49",
+  "source_owner": "01a133ec-3a86-70f9-a0bc-81d6dd18701e",
+  "actual_admission": {
+    "commit": "5ca030d7273fc4ac4093fc721252f4f4c8b29d45",
+    "bytes": 15047,
+    "sha256": "aaf067f5811f9a83f141cfeca8a2f279b5fb30eb7d8b238cc78444f81f67a436"
+  },
+  "actual_staging": {
+    "start_utc": "2026-10-15T18:36:11.738205Z",
+    "end_utc": "2026-10-15T18:36:11.963727Z",
+    "source_profile": "cm-t02-abstract-supplier-four-v1",
+    "manifest_sha256": "143be48329c3d57f79a7bb8f11bc2fc69ba28c7e85a98f0edcbc7859080414b4",
+    "inputs": 41372,
+    "build_fresh_empty": true,
+    "root_lake_absent": true,
+    "original_source_preserved": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source-original-staging-01",
+    "original_ZIP_preserved": true,
+    "stage_was_not_compiler_run": true,
+    "evidence": "Actual full completed desktop staging stdout independently read via supported app by lane3."
+  },
+  "actual_execution": {
+    "elapsed_seconds_inclusive_authentication": 35.0093182210112,
+    "success": false,
+    "sequence_stop": "compiler_nonzero_exit",
+    "sequence_error": null,
+    "command_exit": 1,
+    "command_stop": null,
+    "command_error": null,
+    "complete_logs": true,
+    "direct_identity_confirmed": true,
+    "group_absence_confirmed": true,
+    "no_timeout_cancel_resource_failure_reported": true,
+    "start_timing_note": "Operator launch about18:36:55UTC; JOB started_utc11:37:14.831812-07 records after initial authentication; ended11:37:29.995927-07. Total elapsed35.009318 includes authentication. Do not mistake post-auth receipt timestamp for whole-sequence clock start.",
+    "automatic_retry": false
+  },
+  "actual_receipts": {
+    "job": {
+      "bytes": 3157,
+      "sha256": "35aaf0054861b80726dfc8fb411ddac7b3b9a671d2403e029e88d3cd6d5fc9f3"
+    },
+    "command": {
+      "bytes": 1985,
+      "sha256": "066497dfce90a881535a8339fb323ae7bd3e3efdaf33fe95835da0697279de99"
+    },
+    "stdout": {
+      "bytes": 3136,
+      "sha256": "396d4dbeb4bae71119eeda50968cc10bd1dffee1019e888c1f3d1686d2941100",
+      "lane3_independent_full_body_hash_matched": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "outer": {
+      "stdout_bytes": 2378,
+      "stderr_bytes": 0
+    },
+    "custody": "Admitted separate read-only audit was reported running; actual final partial-inventory/input-postauth/release facts not yet received.",
+    "provenance": "Actual operator preservation-copy command and complete3136B stdout read via supported app. Lane3 independently extracted/hash-matched stdout; JOB/command rawfile hashes are actual operator preservation evidence, not a claimed lane3 local rawfile read."
+  },
+  "diagnostic_sites": [
+    {
+      "source": "CMSeparation.lean",
+      "line": 103,
+      "goals": 1,
+      "kind": "Polynomial evaluation of finite monomial sum remains unsimplified."
+    },
+    {
+      "source": "CMSeparation.lean",
+      "line": 143,
+      "goals": 1,
+      "kind": "Rewrite target retains explicit lambda application; hzero pattern not syntactically exposed."
+    },
+    {
+      "source": "CMSeparation.lean",
+      "line": 178,
+      "goals": 2,
+      "kind": "Closed numerical Nat.choose4,2 and5,2 membership cases did not normalize under current norm_num invocation."
+    }
+  ],
+  "full_actual_stdout": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source/CMSparseSupplier.lean:64:60: warning: `Polynomial.finset_sum_coeff` has been deprecated: Use `Polynomial.finsetSum_coeff` instead\n/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source/CMSparseSupplier.lean:64:60: warning: This simp argument is unused:\n  Polynomial.finset_sum_coeff\n\nHint: Omit it from the simp argument list.\n  [apply] simp [sparseCombination, Fintype.linearCombination_apply, Polynomial.coeff_smul, Polynomial.coeff_monomial,\n    hne]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source/CMSeparation.lean:103:63: error: unsolved goals\nι : Type u_1\ninst✝ : Fintype ι\nμ : FinitePositiveLaw\ne : ι → ℕ\nc : ι → ℝ\nx : ℝ\n⊢ eval x (∑ x, (monomial (e x)) (c x)) = ∑ i, c i * x ^ e i\n/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source/CMSeparation.lean:143:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern\n  eval y ((sparseCombination e) c)\nin the target expression\n  τ.weight y * (fun x => eval x ((sparseCombination e) c)) y = 0\n\nσ τ : FinitePositiveLaw\ne : Fin (2 * τ.nodes.card + 1) → ℕ\nhe : Function.Injective e\nhm : ∀ (i : Fin (2 * τ.nodes.card + 1)), moment σ (e i) = moment τ (e i)\nhcard : ¬σ.nodes.card ≤ τ.nodes.card\nhc : τ.nodes.card < σ.nodes.card\nc : Fin (2 * τ.nodes.card + 1) → ℝ\n_hp : (sparseCombination e) c ≠ 0\nhnonneg : ∀ (x : ℝ), 0 ≤ x → 0 ≤ eval x ((sparseCombination e) c)\nhzero : ∀ a ∈ τ.nodes, eval a ((sparseCombination e) c) = 0\nhstrict : ∀ (x : ℝ), 0 < x → x ∉ τ.nodes → 0 < eval x ((sparseCombination e) c)\nx : ℝ\nhx : x ∈ σ.nodes\nhxτ : x ∉ τ.nodes\nhσ : 0 < expectation σ fun x => eval x ((sparseCombination e) c)\ny : ℝ\nhy : y ∈ τ.nodes\n⊢ τ.weight y * (fun x => eval x ((sparseCombination e) c)) y = 0\n/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source/CMSeparation.lean:178:28: error: unsolved goals\nσ τ : FinitePositiveLaw\nhσ : 3 ≤ σ.nodes.card\nhτ : τ.nodes.card ≤ 2\nhnot : ¬∃ k ∈ capFiveLevels, moment σ k ≠ moment τ k\nhm : ∀ k ∈ capFiveLevels, moment σ k = moment τ k\ne : Fin (2 * τ.nodes.card + 1) → ℕ := fun i => (↑i + 1).choose 2\nhe : Function.Injective e\ni : Fin (2 * τ.nodes.card + 1)\nhi : ↑i < 2 * τ.nodes.card + 1\nh : ↑i = 3\n⊢ Nat.choose 4 2 = 0 ∨ Nat.choose 4 2 = 1 ∨ Nat.choose 4 2 = 3 ∨ Nat.choose 4 2 = 6 ∨ Nat.choose 4 2 = 10\n/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source/CMSeparation.lean:178:28: error: unsolved goals\nσ τ : FinitePositiveLaw\nhσ : 3 ≤ σ.nodes.card\nhτ : τ.nodes.card ≤ 2\nhnot : ¬∃ k ∈ capFiveLevels, moment σ k ≠ moment τ k\nhm : ∀ k ∈ capFiveLevels, moment σ k = moment τ k\ne : Fin (2 * τ.nodes.card + 1) → ℕ := fun i => (↑i + 1).choose 2\nhe : Function.Injective e\ni : Fin (2 * τ.nodes.card + 1)\nhi : ↑i < 2 * τ.nodes.card + 1\nh : ↑i = 4\n⊢ Nat.choose 5 2 = 0 ∨ Nat.choose 5 2 = 1 ∨ Nat.choose 5 2 = 3 ∨ Nat.choose 5 2 = 6 ∨ Nat.choose 5 2 = 10\n",
+  "source_support": {
+    "read_only_primary_pin": "https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Algebra/Polynomial/Eval/Defs.lean",
+    "git_blob": "c42ff574f952192ec1f14d4e4c4091432ab0aec7",
+    "verified_existing_API": [
+      "Polynomial.eval_finsetSum lines348-350: evaluation commutes with finite sum; unlike eval_monomial it is not tagged simp there.",
+      "Polynomial.eval_monomial lines298-300 is tagged simp.",
+      "Deprecated eval_finset_sum alias exists line352; current canonical spelling eval_finsetSum."
+    ],
+    "scope": "Supporting existing source owner's focused repair/review, not a duplicate Lean implementation. No new axioms, endpoint changes, dependency acquisition or compiler run are proposed by lane3."
+  },
+  "source_correction_gate": "Existing sole source owner prepares isolated source-only exact CMSeparation correction/patch/hash against6504523a... and actual four goal reports, preserving statement/assumptions and all old bytes. Lane3 reviews actual changed source when returned. Do not edit consumed active leaf or rerun old record.",
+  "next_execution_gate": "A later compiler check needs an explicitly selected NEW finite owner/execution record and actual byte-specific source/config/manifest/root/receipt binding under same desktop operator. Old record/admission/output namespaces are not replayed or cleaned. Existing user proof-checking authorization is not a reason for a generic new permission cycle.",
+  "semantic_status": "No CMSeparation endpoint, CMInterfaceAudit, printed endpoint type or axiom result reached. No theorem/masterG3G4/physical/refinement/Rust parity adoption. Earlier serial progress is not a complete package/custody pass.",
+  "next_action": "Retain actual failure in Commons; review existing lane2 correction when received by its18:50UTC checkpoint or actual ETA; reconcile actual separate custody completion. No second source author/compiler/worker."
+}
