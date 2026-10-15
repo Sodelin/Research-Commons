@@ -80,3 +80,8 @@ The remaining work is justified individually. G3 and G4 biological masters remai
 Read the nanowire dossier first for the most concrete new superconductivity lead. Read the G6 Gibbs-certification dossier for the strongest inspected conditional statistical interface. Read the CWU dossiers for concrete study-support needs. The White dossier explicitly does not certify a specific current open question. The Fourier–Poisson dossier includes a classical polynomial-budget baseline, so mere existence of a uniform polynomial budget is not presented as open. The descriptor obstruction excludes one-attempt memoryless closure, not every coarse-time representation.
 
 Google documents retain their existing private access; the GitHub Markdown is the public reading version. No researcher outreach or laboratory collaboration is implied. Source versions, assumptions, prior work and gaps must travel with any shared claim.
+
+
+## Addition: memory-augmented descriptions
+The initial 19 dossiers are preserved. A twentieth dossier now records the scoped initialization-uniform finite-history obstruction and exact belief-state alternative, with fixed-initializer and sampled-cadence limits.
+[Google document](https://docs.google.com/document/d/15WHhkNcMfuypBWL56dOfPI-gFVPcuHQnmHu-Smh0BmQ/edit) • [GitHub page](./memory-augmented-descriptors.md)
