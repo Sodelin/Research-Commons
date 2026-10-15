@@ -1,6 +1,6 @@
 {
   "record": "CM-T02-FINITE-ACQUISITION-AND-NARROW-LAKE-01/revision2",
-  "observed_utc": "2026-10-15 18:00:43 UTC",
+  "observed_utc": "2026-10-15 18:04:17 UTC",
   "status": "SOURCE_ONLY_DECISION_PACKET_NOT_FETCH_BUILD_OR_RUN_ADMISSION",
   "job": "DESKTOP-LEAN-CM-T02-JOB-001",
   "authority_owner": "01a133ec-3a86-70f9-a0bc-81d6dd18701e",
@@ -182,7 +182,7 @@
       "CMInterfaceAudit"
     ],
     "fallback_no_311_physical_rebuild": true,
-    "fallback_boundary": "Prepared official pinned fallback only. Current instruction requests no new acquisition route or publication; no fetch/install/bootstrap/network execution or alternative transfer was selected. A specific future choice could authorize this desktop official acquisition; source/cache bytes and keys are not manufactured."
+    "fallback_boundary": "Selected and expressly AUTHORIZED by Nolan/root11 for existing desktop only; separate bounded bootstrap record, not proof900s. Source download actually started/completed per retained receipt. No broader unpinned/default-all-library/dependency-rebuild/paid/security scope."
   },
   "estimated_artifact_bytes": {
     "status": "SOURCE_OWNER_ACTUAL_STAT_AND_SOURCE_SUM; NOT_CURRENT_HASH_AUTHENTICATED_ARCHIVE",
@@ -287,7 +287,7 @@
     }
   },
   "true_capability_boundary": "Lane3 can inspect source/metadata and publish exact small config bodies via Commons. Lane3 has no local desktop executor or authenticated compatible binary export/private-transport handle. Existing operator alone stages/runs on desktop; root relays actual authenticated artifacts through its already-approved route. No new route or public binary publication.",
-  "ETA": "Source package independent operator readback and job-manifest crosscheck observed17:58Z; first bootstrap wrapper failed before network and is being corrected by same operator. Actual checkpoint due18:05UTC; no proof completion ETA inferred.",
+  "ETA": "Actual source archive downloaded17:59:39Z (23,413,113B); tree authentication/cache bootstrap in preparation. Source/helper/command progress checkpoint returned before18:05UTC; no proof finish ETA or cache success inferred.",
   "no_fetch_install_compile_performed": true,
   "original_three_source_choice": {
     "files": [
@@ -438,7 +438,11 @@
   "bootstrap_first_checkpoint": {
     "due_utc": "2026-10-15T18:05:00Z",
     "actual_operator_bootstrap_command_record_received": true,
-    "actual_source_cache_or_bootstrap_payload_bytes_downloaded_known_to_lane3": null,
+    "actual_source_cache_or_bootstrap_payload_bytes_downloaded_known_to_lane3": {
+      "Mathlib_source_archive": 23413113,
+      "cache_objects_in_latest_receipt": 0,
+      "receipt_scope": "Source-archive stage only; not whole future acquisition count"
+    },
     "required": "Existing desktop operator's bounded separate bootstrap plan/argv/host/tool versions/source/dependency roots/helper provenance plus real start/bytes/log/cancel/exit/failure facts or exact stop. Response due is not a run budget.",
     "no_second_bootstrap_controller_or_competing_operator": true,
     "first_actual_attempt": {
@@ -467,9 +471,75 @@
       "evidence": "Actual completed local operator WSL command/traceback and source-change prefix read via app; operator acknowledged retaining failure and correcting SAME wrapper. No new author/controller."
     },
     "retained_upstream_source_bytes": 121854,
-    "first_successful_archive_bytes": null,
-    "cache_payload_bytes": null,
+    "first_successful_archive_bytes": 23413113,
+    "cache_payload_bytes": 0,
     "proof_owner_record": "CM-T02-DESKTOP-OWNER-01 RESERVED_NOT_STARTED",
-    "no_fresh_source_identity_gate_wait": true
+    "no_fresh_source_identity_gate_wait": true,
+    "actual_first_successful_source_receipt": {
+      "job_id": "CM-T02-OFFICIAL-BOOTSTRAP-01",
+      "stage": "PINNED_MATHLIB_SOURCE_ARCHIVE_ONLY",
+      "authorization": "Nolan explicit official bootstrap approval relayed as authorization11",
+      "proof_owner_record": "CM-T02-DESKTOP-OWNER-01 RESERVED_NOT_STARTED",
+      "source_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "url": "https://github.com/leanprover-community/mathlib4/archive/0df444a360eaa60ab8c11dca51a86af692955474.tar.gz",
+      "started_utc": "2026-10-15T17:59:33.439799+00:00",
+      "limits": {
+        "wall_seconds": 120,
+        "cpu_seconds": 30,
+        "address_space_bytes": 536870912,
+        "archive_cap_bytes": 134217728
+      },
+      "compiler_invocations": 0,
+      "cache_bootstrap_executed": false,
+      "rust_or_old3504_touched": false,
+      "status": "DOWNLOADED_NOT_YET_TREE_AUTHENTICATED",
+      "tools": {
+        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean": {
+          "exists": true,
+          "bytes": 9024,
+          "sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550"
+        },
+        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake": {
+          "exists": true,
+          "bytes": 13840,
+          "sha256": "60330ab6f07dce20f3fa9ebb08e8b984ea9549eac172afeb15d9d2227060e2b3"
+        },
+        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/leantar": {
+          "exists": true,
+          "bytes": 2692960,
+          "sha256": "06d613dffd2a6fd996b095bfd835c2bb720886f9eb7e13ed2adddd7df4507bf3"
+        },
+        "git": {
+          "path": "/usr/bin/git",
+          "sha256": "2a8c18fbf43da9f692d75474c72bea9dfd796c260b0f3dfe456376abc3bbd668"
+        },
+        "curl": {
+          "path": "/usr/bin/curl",
+          "sha256": "1ccbd3dae948374ba8eef1ebda26c64b783ede50b463196e53666e0880bdac60"
+        },
+        "tar": {
+          "path": "/usr/bin/tar",
+          "sha256": "3ee2c3c0b4dd9aacebfd2f0fbae44bad36348203acff78a44888dd58c05f811c"
+        }
+      },
+      "initial_state": {
+        "disk_available": 1011957178368,
+        "mem_available": 24361406464
+      },
+      "final_url": "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/0df444a360eaa60ab8c11dca51a86af692955474",
+      "http_status": 200,
+      "archive_bytes": 23413113,
+      "archive_sha256": "4906567b829fea7e354022c603aeebead7dd2f4ad1a39a91cc42ffae5de46326",
+      "archive_path": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/bootstrap/attempt-02/downloads/mathlib-0df444a360eaa60ab8c11dca51a86af692955474.tar.gz.part",
+      "elapsed_seconds": 6.374093884995091,
+      "ended_utc": "2026-10-15T17:59:39.813928+00:00",
+      "evidence_provenance": "Actual completed existing desktop operator WSL command full stdout read through supported app; receipt path payload retained, not an independent lane3 archive read"
+    },
+    "archive_tree_status": "DOWNLOADED_NOT_YET_TREE_AUTHENTICATED",
+    "first_checkpoint_return": {
+      "comment": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6198855201",
+      "published_utc": "2026-10-15T18:03:39Z",
+      "full_readback_matched": true
+    }
   }
 }
