@@ -1,0 +1,97 @@
+{
+  "record": "CM-T02-R23-SOURCE-DISPOSITION-AND-ACTUAL-C5-RECONCILIATION-01",
+  "observed_utc": "2026-10-15 18:19:30 UTC",
+  "job": "DESKTOP-LEAN-CM-T02-JOB-001",
+  "role": "Existing lane3 integration/admission coordinator; no compiler or desktop action",
+  "status": "R23_SCOPED_SOURCE_AND_FINITE_METADATA_CEILINGS_ACCEPTED; FINAL_RUNTIME_BINDINGS_PENDING",
+  "owner_record": "CM-T02-DESKTOP-OWNER-01 RESERVED_NOT_STARTED",
+  "only_operator": "01a13f29-6f17-7980-bb5a-4e900a1fcb49",
+  "runner": {
+    "base": {
+      "bytes": 19117,
+      "sha256": "721d6145c4e7a58360e62985866e5512ba695ee938970b5330f200aa7f7eca28"
+    },
+    "patch": {
+      "bytes": 3254,
+      "sha256": "5a0e12b1d15d2b421c9a514a9484119f4f7dff812ea64b79f4a580659df89f34"
+    },
+    "independent_review_method": "Read complete accepted R2.1 source via supported desktop read_thread output; independently matched19117B/721d6145. Reconstructed the four exact startup replacements plus two exact metadata-cap replacements; independently matched complete19362B/cf0c2f19 and generated full3254B unified patch/5a0e12b1. Source/text hashing only; no runner/parser/control/compiler execution.",
+    "disposition": "Scoped source acceptance for exactly six replacements relative to accepted R2.1. Fixed startup dictionary requirement/receipt/child environment and finite16MiB/49152 metadata ceilings are accepted. All other bytes unchanged, including supervisor identity, per-process8GiB/600s,900s whole proof,16MiB logs, floors, cancellation and one-use semantics. R1 source finding remains closed.",
+    "startup_environment": {
+      "LEAN_NUM_THREADS": "1",
+      "LEAN_STACK_SIZE_KB": "16384",
+      "LEAN_IMPORT_WORKERS": "1"
+    },
+    "findings": [
+      "Exact dictionary equality rejects missing, extra or changed startup settings before authentication/child launch. Values come from the fixed source constant, not arbitrary manifest-to-environment expansion.",
+      "The same fixed constant is recorded in JOB-RECEIPT and passed to the child. Lean/Lake descendants inherit it; native worker/import settings are not hard process or thread count guarantees.",
+      "Source-backed settings match the actually successful separate cache attempt; bootstrap success does not establish proof-runner or theorem success.",
+      "Actual R2.3 now accepts at most49152 authenticated inputs and16777216 manifest bytes. These bounds contain the measured40410-input/9340338B compact map plus a bounded final job/config/source layer; actual final fit must still be measured."
+    ],
+    "r23": {
+      "bytes": 19362,
+      "sha256": "cf0c2f19c594872bfc0e112d5f243f079c9abc45a84a14526b9b2ce63ab94cbd"
+    }
+  },
+  "actual_bootstrap": {
+    "source_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "attempt": "SELECTED-CACHE-02",
+    "receipt": {
+      "bytes": 5604,
+      "sha256": "53477a5fb3805f77d127a4915794f8e345214b92cdf26de2c4cde03c4a438d76"
+    },
+    "facts_attributed_to_existing_operator": "47.3599s, direct exit0, complete logs, no stop/error, group absence observed; 2149 official mathlib4-master archives/138006482 compressed bytes; no fallback/missing archive reported. Explicit official --repo used despite origin-detection warning. First failed attempt preserved separately.",
+    "independent_app_evidence": "Read actual desktop command output showing download/decompression2149 and separate preservation copies of BOTH attempt receipts/logs with their hashes. This cloud host has not opened foreign local files.",
+    "proof_run": false
+  },
+  "actual_inventory": {
+    "started_utc": "2026-10-15T18:15:22.562692+00:00",
+    "stage": "READ_ONLY_ACTUAL_CLOSURE_AUTHENTICATION",
+    "proof_lease": "RESERVED_NOT_STARTED",
+    "status": "INVENTORIED_REQUIRES_LANE3_ADMISSION",
+    "closure_comparison": {
+      "static_scan_external_modules": 2149,
+      "actual_external_cache_oleans": 2149,
+      "extra_actual_first20": [],
+      "missing_actual_first20": [],
+      "exact_set_match": true
+    },
+    "modules": 3622,
+    "external_modules": 2149,
+    "core_modules": 1473,
+    "missing_object_files": [],
+    "authentication_input_count": 40410,
+    "compact_path_hash_map_bytes": 9340338,
+    "candidate_record_bytes": 18288894,
+    "candidate_record_sha256": "6b238bf9252796fb3968934e43951d61b1a26a412dc9b549880ec790fb498ce5",
+    "full_cache_build_files": 34502,
+    "full_cache_build_bytes": 2127144283,
+    "artifact_inventory_bytes": 9354374,
+    "artifact_inventory_sha256": "811dc98bd17cf1495a00b0e791ff1e7bbf2fe21b665925b1578299aed761eaae",
+    "current_manifest_caps": {
+      "max_inputs": 16384,
+      "max_manifest_bytes": 8388608
+    },
+    "proof_input_count_fits_current_cap": false,
+    "ended_utc": "2026-10-15T18:16:00.307149+00:00",
+    "elapsed_seconds": 37.74449400199228
+  },
+  "C5_disposition": {
+    "finding": "The old16384/8MiB metadata ceiling did not contain the complete40410-input/9340338B map. R2.3 concretely corrects that cap without discarding inputs or changing proof resource limits.",
+    "selected_correction": "ACCEPT_ACTUAL_R23_METADATA_CAPS: max49152 inputs and16777216B compact execution manifest; admission text cap1048576B unchanged.",
+    "rationale": "Measured map retains all selected source/object companions,1473 expanded core modules and resolved Lean/Lake ELF runtime inputs. Finite headroom is8742 entries and7436878 bytes before final bindings. Descriptive18MB graph remains a separately pinned provenance artifact, not a substitute or bloated runner manifest.",
+    "remaining": "Return exact FINAL compact manifest pin/count/bytes, total authenticated payload bytes, all additional source/config/runtime/runner bindings and selected ordered LEAN_PATH. No required input may be omitted to fit; if final measured count/bytes exceed49152/16MiB, stop with exact diagnostic.",
+    "authority": "Existing owner record delegates concrete bounded runner/config admission to lane3. No CPU/AS/wall/log/floor/serial envelope is raised; no unchanged owner ACK or generic human permission is required. This source acceptance is not final launch admission."
+  },
+  "remaining_final_bindings": [
+    "Actual exact compact manifest and complete C4 output/Lake-metadata/postcheck binding. R2.3 source acceptance and metadata-ceiling review are now complete; no further unchanged R1/R2.2 repair is requested.",
+    "Actual compact final manifest pin/count/bytes and authenticated payload byte total, ordered LEAN_PATH, actual compatible acquired source/object/core/runtime provenance, no missing/ambiguous imports. Attribute foreign artifact readback honestly; do not require an invented private transfer merely to repeat known hashes.",
+    "Four-source staged readback selected from disjoint reviewed package69d6d4e7; original three-source package preserved; never co-import original and extracted supplier.",
+    "Complete fresh generated olean/ilean/additional companions and separate finite Lake configuration-cache inventory/postcheck. No source/default aggregate or implicit dependency rebuild.",
+    "Exact one Lake --dir reserved-root test command, serial four-module configuration and existing operator exclusive window; complete outer diagnostics/no-child or uncertain-launch facts on preflight failure.",
+    "Byte-specific external lane3 admission binding source/reviews/runner/config/dependencies/manifest and existing one-use owner record. Actual endpoint type and axioms require subsequent captured execution/review."
+  ],
+  "separation": "No cloud/compiler/bootstrap/helper/control run, new worker, runner implementation, Lean proof edit, unplanned acquisition, old3504/Omni/Subspace release or Rust content.",
+  "supersedes": "R2.3 supersedes R2.2 for review. Earlier e4201b65 R2.2 disposition and provisional65536 suggestion are history; select the actual smaller49152 candidate. No further runner correction is requested by this record.",
+  "next_action": "Same existing desktop operator finishes already-owned manifest/output binding and returns actual artifacts by current18:25UTC checkpoint or precise ETA. Lane3 then returns byte-specific final admission or one concrete remaining finding. No new implementation/worker/retry is assigned."
+}
