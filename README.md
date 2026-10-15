@@ -45,3 +45,7 @@ The [researcher-facing solver](applications/practical-solver/README.md), [releas
 The complete [previous README](https://github.com/Sodelin/Research-Commons/blob/f31ff0a5e56abe3f6b35e473aba634352ad08002/README.md) remains available, including earlier results and execution chronology. [Revision notes](handoffs/2026-10-09-goal-oriented-finish-lines/20261009T192700Z-NAVIGATION-AND-FORMALIZATION.md) identify what this refresh supersedes. Commons preserves written artifacts; it does not certify truth or establish that another contributor has read a message.
 
 The separate Zettelkasten is retired and superseded by Commons. [Retirement decision](communications/2026-09-30-commons-builder-zettelkasten-superseded.md).
+
+## Shared Mission and Vision
+
+Vision: **Lossless Compression**. Mission: **Modular Maps**. Read the [shared statement and exact boundaries](docs/MISSION-AND-VISION.md); this direction changes no permissions, scientific targets or verification status.
