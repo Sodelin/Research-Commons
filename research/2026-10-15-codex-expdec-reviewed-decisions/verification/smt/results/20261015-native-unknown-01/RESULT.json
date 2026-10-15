@@ -1,0 +1,85 @@
+{
+  "all_expectations_met": true,
+  "authored_source_files": {
+    "run_checks.py": "2095bdebc51de5d0cf63c796a07a375ef95d416cf7a64c4babc77b223c37ecd3",
+    "unknown-control.json": "588a9c7d6b89b8b88f6009fc58b4f906d7bcf6be1319ed7d6ea84b01cad37e42",
+    "z3_c_api_worker.py": "e5b6ec118cfe827595292499b691de47f6af2703f1a584bfe2fb83bc4edb07a2"
+  },
+  "engine": {
+    "engine": "Z3 native C API",
+    "library_path_in_container": "/usr/lib/aarch64-linux-gnu/libz3.so.4",
+    "library_sha256": "cb5320742a56e44ed0d86e14acc4b44a8862ca2a9a1af894dc0ad1862ff7fb6e",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "rlimit_as": [
+      536870912,
+      536870912
+    ],
+    "rlimit_cpu": [
+      3,
+      3
+    ],
+    "rlimit_fsize": [
+      65536,
+      65536
+    ],
+    "version": "4.13.3.0"
+  },
+  "engine_probe": {
+    "elapsed_seconds": 0.568758,
+    "exit_code": 0,
+    "stderr": "engine-probe.stderr",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "engine-probe.stdout",
+    "stdout_sha256": "57f28aa6dba4062da98cc53d016a3a6d00b85743baeb8985907e8b343b94ee5c",
+    "wall_timeout": false
+  },
+  "limit_enforcement": "Outer proot-distro route: wall/CPU/file/core; glibc worker before loading Z3: CPU/address-space/file/core; SMT input: timeout/memory_max_size.",
+  "limits_per_native_child": {
+    "address_space_bytes": 536870912,
+    "cpu_seconds": 3,
+    "per_output_file_bytes": 65536,
+    "smt_milliseconds": 2000,
+    "wall_seconds": 6,
+    "z3_memory_megabytes": 192
+  },
+  "proof_tier": "Native Z3 results with retained proof terms when requested; no independent proof-kernel replay.",
+  "publication_export": {
+    "meaning": "Host-local command locations omitted; statuses, limits, source/output hashes retained.",
+    "omitted_fields": [
+      "command_argv"
+    ],
+    "original_local_sha256": "197c08cc86b4f1b351d98d83019613ffe91388b4516d9981a5249e1613ecc012"
+  },
+  "recorded_at_utc": "2026-10-15T12:10:08.257316+00:00",
+  "results": [
+    {
+      "actual": "unknown",
+      "artifact_diagnostics": [],
+      "artifact_error": false,
+      "claim": "A deliberately tiny native Z3 resource budget preserves genuine UNKNOWN and its reason; it supplies no SAT/UNSAT decision evidence.",
+      "elapsed_seconds": 0.621992,
+      "exit_code": 0,
+      "expectation_met": true,
+      "expected": "unknown",
+      "id": "17-native-resource-unknown",
+      "other_error_diagnostics": [],
+      "proof_term_present": false,
+      "query_path": "obligations/17-native-resource-unknown.smt2",
+      "query_sha256": "2e3e00f6b0052544d995688ae2d3e5365d0f264339e8f84e1b22b8636bed6b3c",
+      "solver_status": "unknown",
+      "solver_statuses": [
+        "unknown"
+      ],
+      "stderr": "17-native-resource-unknown.stderr",
+      "stderr_nonempty": false,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "17-native-resource-unknown.stdout",
+      "stdout_sha256": "ca08938fa20117bd08ac679d32c002f97d2f95f93b34e3358272b78b7608cb38",
+      "usable_decision_evidence": false,
+      "wall_timeout": false
+    }
+  ],
+  "schema": "expdec-bounded-native-z3-controls-v2",
+  "scope": "Finite algebraic SMT controls only; no transcendence, arbitrary exponential theory, source compiler, G3 or G4 proof.",
+  "source_head_at_execution": "59909063745e842142e661d01c6a5d1c3b251352"
+}

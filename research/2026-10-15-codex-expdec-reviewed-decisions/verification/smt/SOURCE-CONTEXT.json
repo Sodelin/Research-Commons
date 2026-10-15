@@ -1,0 +1,50 @@
+{
+  "api_source": {
+    "functions": [
+      "Z3_mk_config",
+      "Z3_del_config",
+      "Z3_mk_context",
+      "Z3_del_context",
+      "Z3_eval_smtlib2_string",
+      "Z3_get_full_version"
+    ],
+    "title": "Z3 C API reference",
+    "url": "https://z3prover.github.io/api/html/group__capi.html"
+  },
+  "commons_local_source_head": "2d5c7742413aa14a8cc46cdc70a8b0a009b85e7e",
+  "existing_owners_preserved": [
+    "phone Rust solver owner",
+    "phone SMT/G3 owner",
+    "Linux Levels container owner",
+    "Screening Room application owner",
+    "shared hub integration owner"
+  ],
+  "observed_package": {
+    "container": "linux-levels-debian",
+    "dpkg_version": "4.13.3-1",
+    "package": "libz3-4:arm64",
+    "z3_cli_available": false,
+    "z3py_available": false
+  },
+  "reuse": "Exact shared-physical-parameter row semantics, strict positivity, bounded execution and UNKNOWN/source-coverage distinctions; this task does not run or change the original source solver.",
+  "sources_read": [
+    {
+      "bytes": 8214,
+      "git_blob": "131002edcb8122acb96beafeb792832b409edb3d",
+      "path": "applications/practical-solver/CERTIFIED-BOUNDS.md",
+      "working_file_sha256": "c9506b68731b15d0446e0433c1aff2cee2efad81cc90e0ad7fc70361355d5253"
+    },
+    {
+      "bytes": 1609,
+      "git_blob": "e5ff62847df8e62a0de935695ee6b1a044d8ae38",
+      "path": "applications/practical-solver/examples/certified-bounds/shared-row-exclusion.json",
+      "working_file_sha256": "0b768f28014ed2661be6f65a84ed7aa4c7f47fea8762969b7bbbc387ac0f8b2a"
+    },
+    {
+      "bytes": 1017,
+      "git_blob": "0e881f6909a712e58d803d5edb73a8539b23a26a",
+      "path": "applications/practical-solver/examples/certified-bounds/strict-positivity-exclusion.json",
+      "working_file_sha256": "3ddb3633a792c1667cb88f3a0da872c1fa37f9727749f2e4b86ed537e856ca8d"
+    }
+  ]
+}

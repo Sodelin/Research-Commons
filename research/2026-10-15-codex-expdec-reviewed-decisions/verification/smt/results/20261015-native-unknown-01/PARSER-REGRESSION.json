@@ -1,0 +1,591 @@
+{
+  "all_valid": true,
+  "checker_sha256": "1f4b7f170768783bd055df2d6d7924dfb890958c0fe4331887c3ee69a6de6c30",
+  "fixtures": [
+    {
+      "classification": {
+        "actual": "unknown",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unknown",
+        "solver_statuses": [
+          "unknown"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "unknown",
+      "fixture_kind": "synthetic parser regression",
+      "name": "unknown-clean",
+      "stderr": "",
+      "stdout": "unknown\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "unknown",
+        "artifact_diagnostics": [
+          "(error \"proof is not available\")"
+        ],
+        "artifact_error": true,
+        "other_error_diagnostics": [],
+        "solver_status": "unknown",
+        "solver_statuses": [
+          "unknown"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "unknown",
+      "fixture_kind": "synthetic parser regression",
+      "name": "unknown-proof-unavailable",
+      "stderr": "",
+      "stdout": "unknown\n(error \"proof is not available\")\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "unknown",
+        "artifact_diagnostics": [
+          "Error: model is not available"
+        ],
+        "artifact_error": true,
+        "other_error_diagnostics": [],
+        "solver_status": "unknown",
+        "solver_statuses": [
+          "unknown"
+        ],
+        "stderr_nonempty": true,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "unknown",
+      "fixture_kind": "synthetic parser regression",
+      "name": "unknown-model-unavailable-stderr",
+      "stderr": "Error: model is not available\n",
+      "stdout": "unknown\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "ARTIFACT_FAILURE",
+        "artifact_diagnostics": [
+          "(error \"model is not available\")"
+        ],
+        "artifact_error": true,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "ARTIFACT_FAILURE",
+      "fixture_kind": "synthetic parser regression",
+      "name": "sat-model-unavailable",
+      "stderr": "",
+      "stdout": "sat\n(error \"model is not available\")\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "ARTIFACT_FAILURE",
+        "artifact_diagnostics": [
+          "(error \"proof is not available\")"
+        ],
+        "artifact_error": true,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "ARTIFACT_FAILURE",
+      "fixture_kind": "synthetic parser regression",
+      "name": "unsat-proof-unavailable",
+      "stderr": "",
+      "stdout": "unsat\n(error \"proof is not available\")\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "INVALID_SOLVER_OUTPUT",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": null,
+        "solver_statuses": [
+          "unsat",
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "INVALID_SOLVER_OUTPUT",
+      "fixture_kind": "synthetic parser regression",
+      "name": "duplicate-status",
+      "stderr": "",
+      "stdout": "unsat\nunsat\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "INVALID_SOLVER_OUTPUT",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": null,
+        "solver_statuses": [
+          "sat",
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "INVALID_SOLVER_OUTPUT",
+      "fixture_kind": "synthetic parser regression",
+      "name": "conflicting-status",
+      "stderr": "",
+      "stdout": "sat\nunsat\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "INVALID_SOLVER_OUTPUT",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [
+          "(error \"invalid command\")"
+        ],
+        "solver_status": null,
+        "solver_statuses": [],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "INVALID_SOLVER_OUTPUT",
+      "fixture_kind": "synthetic parser regression",
+      "name": "missing-status",
+      "stderr": "",
+      "stdout": "(error \"invalid command\")\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "EXECUTION_FAILURE",
+        "artifact_diagnostics": [
+          "(error \"proof is not available\")"
+        ],
+        "artifact_error": true,
+        "other_error_diagnostics": [],
+        "solver_status": "unknown",
+        "solver_statuses": [
+          "unknown"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 1,
+      "expected_actual": "EXECUTION_FAILURE",
+      "fixture_kind": "synthetic parser regression",
+      "name": "nonzero-exit-preserves-unknown",
+      "stderr": "",
+      "stdout": "unknown\n(error \"proof is not available\")\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "WALL_TIMEOUT",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unknown",
+        "solver_statuses": [
+          "unknown"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": -9,
+      "expected_actual": "WALL_TIMEOUT",
+      "fixture_kind": "synthetic parser regression",
+      "name": "timeout-preserves-unknown",
+      "stderr": "",
+      "stdout": "unknown\n",
+      "valid": true,
+      "wall_timeout": true
+    },
+    {
+      "classification": {
+        "actual": "INVALID_SOLVER_OUTPUT",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [
+          "(error \"invalid command\")"
+        ],
+        "solver_status": "unknown",
+        "solver_statuses": [
+          "unknown"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": false
+      },
+      "exit_code": 0,
+      "expected_actual": "INVALID_SOLVER_OUTPUT",
+      "fixture_kind": "synthetic parser regression",
+      "name": "syntax-error-not-artifact",
+      "stderr": "",
+      "stdout": "unknown\n(error \"invalid command\")\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "exit_code": 0,
+      "expected_actual": "unsat",
+      "fixture_kind": "synthetic parser regression",
+      "name": "clean-unsat",
+      "stderr": "",
+      "stdout": "unsat\n(proof (asserted false))\n",
+      "valid": true,
+      "wall_timeout": false
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "exit_code": 0,
+      "expected_actual": "sat",
+      "fixture_kind": "synthetic parser regression",
+      "name": "clean-sat",
+      "stderr": "",
+      "stdout": "sat\n((x 0.0))\n",
+      "valid": true,
+      "wall_timeout": false
+    }
+  ],
+  "native_solver_executed": false,
+  "parser_source_sha256": "2095bdebc51de5d0cf63c796a07a375ef95d416cf7a64c4babc77b223c37ecd3",
+  "publication_export": {
+    "meaning": "Host-local command locations omitted; statuses, limits, source/output hashes retained.",
+    "omitted_fields": [
+      "command_argv"
+    ],
+    "original_local_sha256": "dceae80ed499c0cf1196bdbe154723413b8e4454422ca3dbcc66eac93dacfa6b"
+  },
+  "retained_output_replays": [
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "01-product-convolution",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "02-coefficient-grouping",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "03-exponent-sum-cancellation",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "04-constant-shift-key",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "05-shared-parameter",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "06-refitted-parameters",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "07-strict-domain",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "08-relaxed-domain",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "09-single-point-equality",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "10-open-interval-witness",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "11-division-guard",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "12-omitted-division-guard",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "13-surface-versus-open",
+      "old_actual": "sat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "14-delta-true-certificate",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "unsat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "unsat",
+        "solver_statuses": [
+          "unsat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "15-delta-false-certificate",
+      "old_actual": "unsat",
+      "unchanged": true
+    },
+    {
+      "classification": {
+        "actual": "sat",
+        "artifact_diagnostics": [],
+        "artifact_error": false,
+        "other_error_diagnostics": [],
+        "solver_status": "sat",
+        "solver_statuses": [
+          "sat"
+        ],
+        "stderr_nonempty": false,
+        "usable_decision_evidence": true
+      },
+      "id": "16-delta-slack-counterexample",
+      "old_actual": "sat",
+      "unchanged": true
+    }
+  ],
+  "retained_receipt_sha256": "e6332806ad67c033da8eb0cdf9cba3ab6940eb5ce99f9efbe161490eca57ca74",
+  "schema": "expdec-status-parser-regression-v1"
+}

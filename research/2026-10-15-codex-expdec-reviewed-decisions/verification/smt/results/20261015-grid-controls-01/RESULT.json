@@ -1,0 +1,111 @@
+{
+  "all_expectations_met": true,
+  "authored_source_files": {
+    "grid-controls.json": "9bf1f05214120d0230a12b4e0abe40e263f83aa16e556bdcef9b1f9e97af13c4",
+    "run_checks.py": "2095bdebc51de5d0cf63c796a07a375ef95d416cf7a64c4babc77b223c37ecd3",
+    "z3_c_api_worker.py": "e5b6ec118cfe827595292499b691de47f6af2703f1a584bfe2fb83bc4edb07a2"
+  },
+  "engine": {
+    "engine": "Z3 native C API",
+    "library_path_in_container": "/usr/lib/aarch64-linux-gnu/libz3.so.4",
+    "library_sha256": "cb5320742a56e44ed0d86e14acc4b44a8862ca2a9a1af894dc0ad1862ff7fb6e",
+    "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+    "rlimit_as": [
+      536870912,
+      536870912
+    ],
+    "rlimit_cpu": [
+      3,
+      3
+    ],
+    "rlimit_fsize": [
+      65536,
+      65536
+    ],
+    "version": "4.13.3.0"
+  },
+  "engine_probe": {
+    "elapsed_seconds": 0.368053,
+    "exit_code": 0,
+    "stderr": "engine-probe.stderr",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "engine-probe.stdout",
+    "stdout_sha256": "57f28aa6dba4062da98cc53d016a3a6d00b85743baeb8985907e8b343b94ee5c",
+    "wall_timeout": false
+  },
+  "limit_enforcement": "Outer proot-distro route: wall/CPU/file/core; glibc worker before loading Z3: CPU/address-space/file/core; SMT input: timeout/memory_max_size.",
+  "limits_per_native_child": {
+    "address_space_bytes": 536870912,
+    "cpu_seconds": 3,
+    "per_output_file_bytes": 65536,
+    "smt_milliseconds": 2000,
+    "wall_seconds": 6,
+    "z3_memory_megabytes": 192
+  },
+  "proof_tier": "Native Z3 results with retained proof terms when requested; no independent proof-kernel replay.",
+  "publication_export": {
+    "meaning": "Host-local command locations omitted; statuses, limits, source/output hashes retained.",
+    "omitted_fields": [
+      "command_argv"
+    ],
+    "original_local_sha256": "a2ed8c2f1a785161e27dd378328aea6073764740a8c53556c6beb329ff9f86e1"
+  },
+  "recorded_at_utc": "2026-10-15T12:17:10.471557+00:00",
+  "results": [
+    {
+      "actual": "unsat",
+      "artifact_diagnostics": [],
+      "artifact_error": false,
+      "claim": "A real quadratic that vanishes at -1,0,1 cannot have a nonzero coefficient. This is one fixed-degree univariate grid example only.",
+      "elapsed_seconds": 0.316938,
+      "exit_code": 0,
+      "expectation_met": true,
+      "expected": "unsat",
+      "id": "18-quadratic-finite-grid",
+      "other_error_diagnostics": [],
+      "proof_term_present": true,
+      "query_path": "obligations/18-quadratic-finite-grid.smt2",
+      "query_sha256": "dfb331236a7b43a7ceb3962068cac7ccbef54864c6610ea7e65a4c49448859f4",
+      "solver_status": "unsat",
+      "solver_statuses": [
+        "unsat"
+      ],
+      "stderr": "18-quadratic-finite-grid.stderr",
+      "stderr_nonempty": false,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "18-quadratic-finite-grid.stdout",
+      "stdout_sha256": "5b48fc5b946a4d1f21d85137de9ec8b5d932b71c2640e331b027de8040ce2d60",
+      "usable_decision_evidence": true,
+      "wall_timeout": false
+    },
+    {
+      "actual": "unsat",
+      "artifact_diagnostics": [],
+      "artifact_error": false,
+      "claim": "A real bilinear polynomial that vanishes at all four points of {0,1}^2 cannot have a nonzero coefficient. This is one fixed-degree bivariate grid example only.",
+      "elapsed_seconds": 0.469841,
+      "exit_code": 0,
+      "expectation_met": true,
+      "expected": "unsat",
+      "id": "19-bilinear-finite-grid",
+      "other_error_diagnostics": [],
+      "proof_term_present": true,
+      "query_path": "obligations/19-bilinear-finite-grid.smt2",
+      "query_sha256": "b13d749b89533f2cd5fdae163c3c15b95461ec08765e6e4f43f3665626a4f0ba",
+      "solver_status": "unsat",
+      "solver_statuses": [
+        "unsat"
+      ],
+      "stderr": "19-bilinear-finite-grid.stderr",
+      "stderr_nonempty": false,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "19-bilinear-finite-grid.stdout",
+      "stdout_sha256": "3d39447a1a09f03890a9311957c7a4af787c5c13abf5d3c8618e26c3777d559e",
+      "usable_decision_evidence": true,
+      "wall_timeout": false
+    }
+  ],
+  "schema": "expdec-bounded-native-z3-controls-v2",
+  "scope": "Finite algebraic SMT controls only; no transcendence, arbitrary exponential theory, source compiler, G3 or G4 proof.",
+  "source_head_at_execution": "b72886fed188a8adb7db5a50ba3ad44b44fcb47d"
+}

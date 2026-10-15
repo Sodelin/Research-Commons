@@ -1,0 +1,15 @@
+unsat
+((set-logic QF_LRA)
+(proof
+(let (($x83 (>= theta (/ 2.0 3.0))))
+(let (($x90 (not (or (not (<= theta (/ 2.0 3.0))) (not $x83)))))
+(let ((@x94 (trans (rewrite (= (= theta (/ 2.0 3.0)) (and (<= theta (/ 2.0 3.0)) $x83))) (rewrite (= (and (<= theta (/ 2.0 3.0)) $x83) $x90)) (= (= theta (/ 2.0 3.0)) $x90))))
+(let (($x62 (= theta (/ 2.0 3.0))))
+(let ((@x60 (mp (asserted (= theta (/ 2.0 3.0))) (rewrite (= (= theta (/ 2.0 3.0)) $x62)) $x62)))
+(let (($x66 (<= theta (/ 1.0 3.0))))
+(let (($x74 (not (or (not $x66) (not (>= theta (/ 1.0 3.0)))))))
+(let ((@x78 (trans (rewrite (= (= theta (/ 1.0 3.0)) (and $x66 (>= theta (/ 1.0 3.0))))) (rewrite (= (and $x66 (>= theta (/ 1.0 3.0))) $x74)) (= (= theta (/ 1.0 3.0)) $x74))))
+(let (($x53 (= theta (/ 1.0 3.0))))
+(let ((@x51 (mp (asserted (= theta (/ 1.0 3.0))) (rewrite (= (= theta (/ 1.0 3.0)) $x53)) $x53)))
+(unit-resolution ((_ th-lemma arith farkas 1 1) (or (not $x66) (not $x83))) (not-or-elim (mp @x51 @x78 $x74) $x66) (not-or-elim (mp @x60 @x94 $x90) $x83) false)))))))))))))
+

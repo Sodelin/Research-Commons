@@ -1,0 +1,18 @@
+[
+  {"id":"01-product-convolution","expected":"unsat","claim":"No real assignment violates the explicit linear-polynomial product coefficient convolution."},
+  {"id":"02-coefficient-grouping","expected":"unsat","claim":"Grouping equal formal exponential bases commutes with exact coefficient addition."},
+  {"id":"03-exponent-sum-cancellation","expected":"unsat","claim":"The polynomial exponent sum (x^2+2x)+(-2x) equals x^2 for every real x."},
+  {"id":"04-constant-shift-key","expected":"sat","claim":"Dropping the constant shift merges distinct polynomial exponent keys: x^2 and x^2+1."},
+  {"id":"05-shared-parameter","expected":"unsat","claim":"One shared theta cannot simultaneously equal 1/3 and 2/3."},
+  {"id":"06-refitted-parameters","expected":"sat","claim":"Independent theta_1 and theta_2 can fit the incompatible rows separately."},
+  {"id":"07-strict-domain","expected":"unsat","claim":"A strict positive domain excludes the algebraic boundary theta=0."},
+  {"id":"08-relaxed-domain","expected":"sat","claim":"Replacing strict positivity with nonnegativity admits the excluded boundary."},
+  {"id":"09-single-point-equality","expected":"sat","claim":"The nonzero polynomial x vanishes at one point; that point is no polynomial identity certificate."},
+  {"id":"10-open-interval-witness","expected":"sat","claim":"The same polynomial has an exact nonzero rational witness inside the open interval (0,1)."},
+  {"id":"11-division-guard","expected":"unsat","claim":"With d nonzero, the multiplication graph z*d=n agrees with the division graph z=n/d."},
+  {"id":"12-omitted-division-guard","expected":"sat","claim":"Omitting d nonzero admits arbitrary z at n=d=0, although the intended partial division is undefined."},
+  {"id":"13-surface-versus-open","expected":"sat","claim":"The nonzero polynomial x-y vanishes on the constrained surface x=y; this is no ambient open-domain identity."},
+  {"id":"14-delta-true-certificate","expected":"unsat","claim":"If |rhat-r|<=delta/4 and rhat>=-delta/2 with delta>0, then r>=-delta."},
+  {"id":"15-delta-false-certificate","expected":"unsat","claim":"If |rhat-r|<=delta/4 and rhat<-delta/2 with delta>0, then r<0."},
+  {"id":"16-delta-slack-counterexample","expected":"sat","claim":"The approximate positive branch does not imply unweakened r>=0; a slack countermodel is rhat=-1/2,r=-3/4,delta=1."}
+]

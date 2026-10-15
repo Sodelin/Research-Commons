@@ -1,0 +1,12 @@
+unsat
+((set-logic QF_LRA)
+(proof
+(let (($x27 (<= theta 0.0)))
+(let (($x43 (not (or (not $x27) (not (>= theta 0.0))))))
+(let ((@x47 (trans (rewrite (= (= theta 0.0) (and $x27 (>= theta 0.0)))) (rewrite (= (and $x27 (>= theta 0.0)) $x43)) (= (= theta 0.0) $x43))))
+(let (($x32 (= theta 0.0)))
+(let ((@x33 (asserted $x32)))
+(let (($x28 (not $x27)))
+(let ((@x31 (mp (asserted (> theta 0.0)) (rewrite (= (> theta 0.0) $x28)) $x28)))
+(unit-resolution @x31 (not-or-elim (mp @x33 @x47 $x43) $x27) false))))))))))
+
