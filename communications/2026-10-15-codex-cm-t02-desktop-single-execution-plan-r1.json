@@ -2,7 +2,7 @@
   "record": "CM-T02-EXECUTION-PLAN-20261015-01/revision1 / DESKTOP-LEAN-CM-T02-JOB-001",
   "route_revision": "DESKTOP-ONLY-COMPILER-ROUTE-20261015-01/revision1",
   "status": "ACTUAL_SINGLE_OPERATOR_PLAN_RECONCILED_OWNER_RESERVED_ADMISSION_PENDING",
-  "observed_utc": "2026-10-15 17:14:19 UTC",
+  "observed_utc": "2026-10-15 17:15:33 UTC",
   "route": [
     "root Dot exact Lean-only source/review package",
     "DotBridge",
@@ -18,12 +18,12 @@
     "acceptance_quote": "I’ll take custody of the finite desktop Lean build record within the existing lane, with Rust kept in a separate package. ... compilation will wait for the existing owner’s lease acceptance and lane3’s source admission.",
     "finite_execution_lease_issued": false,
     "parent_reports_explicit_acceptance_utc": "2026-10-15T17:02:00Z",
-    "source_staging_actual_app_return": "Leaf populated; staged source hashes match; no compiler run. Bounded named WSL home check found no visible Mathlib/research checkout; cache directory metadata check underway."
+    "source_staging_actual_app_return": "Actual staged delta17:12:16.371173Z: exclusive leaf created, all input/source pins readback matched, originals retained, zero Rust. No compiler/dependency/config staged or run."
   },
   "single_proposed_workspace": {
     "wsl": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01",
     "runtime": "existing Ubuntu-24.04 WSL2 desktop ext4",
-    "status": "OWNER_RESERVED; actual operator reports authorized leaf populated and staged source hashes matched",
+    "status": "OWNER_RESERVED_AND_ACTUALLY_EXCLUSIVELY_CREATED_BY_ACCEPTED_OPERATOR; reviewed input/source hashes readback matched, no dependency/config/compiler stage",
     "layouts": [
       "source",
       "dependencies",
@@ -33,7 +33,25 @@
     "earlier_lane3_windows_candidate": "SUPERSEDED; no alternate namespace",
     "staging_authorized": true,
     "owner_record": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6197891342",
-    "no_overwrite_or_unrelated_output_reuse": true
+    "no_overwrite_or_unrelated_output_reuse": true,
+    "actual_staging": {
+      "performed_utc": "2026-10-15T17:12:16.371173Z",
+      "evidence_provenance": "parent ACTUAL-SINGLE-LEAF-STAGED-DELTA-03 attributed actual operator return; not directly rehashed by lane3",
+      "receipt_wsl": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/receipts/STAGING-01.json",
+      "receipt_windows": "C:\\Users\\Owner\\Documents\\Codex\\2026-10-15\\please-communicate-with-all-other-chats\\outputs\\lean-desktop-cm-t02\\STAGING-01.json",
+      "layouts_created": [
+        "inputs",
+        "source",
+        "build",
+        "receipts"
+      ],
+      "ZIP_and_all_seven_content_pins_before_and_after_write": true,
+      "Rust_files": 0,
+      "originals_retained": true,
+      "compiler_run": false,
+      "dependency_or_config_staged": false,
+      "old3504_output_access": false
+    }
   },
   "parent_measured_desktop_evidence": {
     "observed_utc": "2026-10-15T16:57:55.738385Z",
@@ -149,6 +167,16 @@
       "core_leaves": 193,
       "unresolved_metadata_imports": 0,
       "provenance": "actual source-owner record6197891342; not independently fetched/rehashed here; not compiled desktop closure"
+    },
+    "desktop_bounded_named_path_return": {
+      "home_astra_first_level_entries": 21,
+      "home_visible_Mathlib_or_research_checkout": false,
+      "cache_first_level_entries": 8,
+      "cache_visible_Mathlib_or_Lean_directory": false,
+      "no_recursive_or_protected_scan": true,
+      "whole_machine_absence": "UNESTABLISHED",
+      "artifact_path_and_manifest": "UNAVAILABLE",
+      "source": "actual operator return via parent at17:14:22Z"
     }
   },
   "proposed_finite_bounds_NOT_ADMITTED": {
@@ -237,14 +265,14 @@
     "strict_interior_floor_bound_not_imported_into_endpoint1_adapter": true,
     "cloud_compilation_prohibited": true,
     "Omni_Subspace_stopped": true,
-    "no_new_worker_or_connection_or_install_or_cache_download_or_source_relocation_now": "No extra worker/connection/install/cache download; authorized isolated local staging is now permitted and reported performed",
     "prior_work_correction": {
       "old_prior": "COMMON interior nonclosure / G6 receiver already accepted October6",
       "ref": "aac614fbeca409bc240f16b6419fb60ae4aa93f0",
       "path": "research/2026-10-06-dot-g3-common-interior-nonrealizability-0209z/README.md",
       "newer_attempt002": "prior-work reconstruction/scope clarification, not new advance; no independent full prior audit by lane3",
       "CM_T02_source_pass_unchanged": true
-    }
+    },
+    "no_new_worker_or_connection_or_install_or_cache_download": true
   },
   "precise_remaining_fields": [
     "Actual desktop LOCAL Mathlib0df444 and finite research/external object/source/runtime closure provenance. Owner holds no authenticated desktop compiled closure. Operator's bounded named-path inventory underway; no broad scan or acquisition.",
