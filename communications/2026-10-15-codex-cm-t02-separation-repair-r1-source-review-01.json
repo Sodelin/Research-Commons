@@ -1,0 +1,83 @@
+{
+  "record": "CM-T02-SEPARATION-REPAIR-r1-INDEPENDENT-LANE3-SOURCE-REVIEW-01",
+  "reviewed_utc": "2026-10-15 18:48:06 UTC",
+  "disposition": "SCOPED_SOURCE_PASS; UNCOMPILED_CORRECTION; NO_EXECUTION_ADMISSION",
+  "reviewer_role": "Existing integration/admission lane",
+  "author_role": "Existing sole Lean source/compiler owner",
+  "source_packet": {
+    "url": "https://github.com/Sodelin/Research-Commons/blob/06d6c40316a6d858eacfee82890240da0f576556/communications/2026-10-15-astra-cm-t02-separation-elaboration-repair-r1.json",
+    "bytes": 13991,
+    "sha256": "73841fa783af696213414c61a4f3584d243d1cb0c434ebb897edbfb94d950852"
+  },
+  "base": {
+    "file": "CMSeparation.lean",
+    "bytes": 7728,
+    "sha256": "6504523aee4ba61a2184f327b17d6299cec85ba72935dbba235b65d99a927135"
+  },
+  "candidate": {
+    "file": "CMSeparation.lean",
+    "bytes": 7843,
+    "sha256": "58bd9f673f3f143c58a463aea5c86caeeb8ed19d1e3b9025b904af2d8483cf90"
+  },
+  "patch": {
+    "bytes": 1265,
+    "sha256": "d6cf64a28a959566476f26228a4ecad93ea0d8d5a095ccd86256683cfce011d0"
+  },
+  "independent_method": "Read complete immutable author packet, recovered exact old source from earlier published full code block and independently hashed packet/base/candidate/patch. Reconstructed candidate by exactly THREE unique text replacements; all other source bytes equal. No parser, compiler, control, solver or candidate code execution.",
+  "findings": [
+    {
+      "site": "Old103-104",
+      "edit": "Add canonical Polynomial.eval_finsetSum to existing simp list.",
+      "reason": "Actual compiler goal is evaluation of finite monomial sum. Pinned lemma distributes evaluation across the finite sum; existing simp eval_monomial then applies. No changed equality or assumption."
+    },
+    {
+      "site": "Old143",
+      "edit": "change to beta-reduced weighted evaluation target before existing rw.",
+      "reason": "Actual target explicitly contains the lambda application. change exposes definitionally equal evaluation; existing hzero/mul_zero proof remains intact."
+    },
+    {
+      "site": "Old178",
+      "edit": "Add Nat.choose_two_right to existing norm_num list.",
+      "reason": "Pinned theorem rewrites choose n2 to n*(n-1)/2. At the displayed4/5 numeral cases, exact natural arithmetic gives6/10 already present in capFiveLevels. No numerical approximation or oracle."
+    }
+  ],
+  "verified_primary_sources": [
+    {
+      "path": "Mathlib/Algebra/Polynomial/Eval/Defs.lean",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "c42ff574f952192ec1f14d4e4c4091432ab0aec7",
+      "lines": "298-300 and348-352",
+      "statements": "eval_monomial marked simp; eval_finsetSum available and not marked simp."
+    },
+    {
+      "path": "Mathlib/Data/Nat/Choose/Basic.lean",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "1cd090d71c8175e5f2071d939d30394b4c56d9de",
+      "line": 110,
+      "statement": "theorem choose_two_right (n : Nat) : choose n 2 = n * (n - 1) / 2"
+    }
+  ],
+  "invariants": "Imports, all declarations/statements/hypotheses and other proof bytes unchanged. Exact endpoint still at least3 versus at most2 DISTINCT positive normalized finite-law atoms, mismatch among0/1/3/6/10. No upper1, new premise/axiom/sorry/admit/unsafe, physical compiler, new dependency or unrelated supplier edit.",
+  "unchanged_source_pins": {
+    "CMSparseSupplier.lean": "f5477531d3b79ed65c7eb0e549bd653e40a90ce5a710bdf745363287a339c9fd",
+    "CMFoundations.lean": "f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945",
+    "CMInterfaceAudit.lean": "2ba5d889bfdbf641e438c6a47d98bfa36b37392073661ffbc0f9a617e0613211"
+  },
+  "actual_previous_run": "Record01 USED_FAILED_NO_REPLAY; actual complete compiler log retained; separate custody incomplete/no-adoption after all input posthash. Existing desktop compiler custody released at18:41:32; no new lease inferred.",
+  "remaining_gate": "Actual corrected-source elaboration and endpoint/type/axiom evidence are still absent. Source PASS does not predict a successful check; further tactic/API diagnostics may emerge.",
+  "concrete_follow_on_PROPOSED_NOT_ADMITTED": {
+    "job": "DESKTOP-LEAN-CM-T02-JOB-002",
+    "owner_record": "CM-T02-DESKTOP-OWNER-02 REQUESTED_NOT_ISSUED",
+    "root": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/recheck-02",
+    "reason": "Fresh child namespace entirely inside existing owned leaf. Preserve consumed source/build/.lake/receipts byte-identically; do not clean/move/replay record01. Reuse unchanged actual authenticated dependency/core/runtime roots read-only from original leaf/toolchain.",
+    "source_profile": "cm-t02-abstract-supplier-four-repair-v1",
+    "target": "Same four serial modules, corrected CMSeparation58bd9f67, same endpoint and audit declarations.",
+    "bounds": "New one-use900s inclusive authentication+sequence,600CPU/8GiBAS per process,16MiBstreams/1GiBfile/core0,50GiBdisk/12GiBhost floors, fixed startup1/16384/1 and reviewed49152/16MiB metadata ceilings. Separate read-only custody180s/120CPU/1GiB. No raised guard or network/bootstrap.",
+    "config_and_runner_PREPARATION_ONLY": "Existing desktop operator prepares source-only exact rebase of existing runner/config/audit to new root/job/owner/source profile+hash and fresh manifest/admission pins. Existing runner supervisor/identity/resource logic retained. No second author/controller. New exact source/config/runner/audit/manifest pins require actual review/admission before staging/compile.",
+    "dependency_manifest": "Reuse complete actual41362-file dependency/core/runtime authentication selection; append new controlled source/config/review/runner layer. Do not re-download or run a new40k inventory just to restate baseline. Final runner reauthentication is charged to new900s.",
+    "commands": "One explicit existing Linux4.33.1 lake --dir <new nested root> test; four fresh Lean children serialized; no old partial object reuse or duplicate direct sequence.",
+    "record_selection": "Existing compiler/source owner explicitly selects/reserves this NEW finite record/root/source scope, or returns one concrete compatible alternative. This is a substantive new record after consumption, not an unchanged owner ACK or new human permission request. Root coordinates serial order against separate prepared Rust record; only one actual compiler slot.",
+    "status": "SOURCE_AND_PLAN_PREPARATION_ONLY. No directory/source/config/manifest change, compiler launch, new lease or retry is authorized by this review."
+  },
+  "next_action_ETA": "Source delta review COMPLETE before18:49UTC response. Existing owner/new-record selection and same operator's exact source/config/manifest rebase are the next bounded metadata action; request actual field packet or precise ETA by18:55UTC. Final runtime admission follows actual complete bindings, not time passing."
+}
