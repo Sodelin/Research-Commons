@@ -1,0 +1,91 @@
+{
+  "record": "LANE3-CM-T02-RUNNER-SOURCE-REVIEW-R2.1-01",
+  "observed_utc": "2026-10-15 17:46:37 UTC",
+  "scope": "Existing lane3 independent source/control-flow review of SAME desktop operator correction; no new author/worker/runner implementation.",
+  "disposition": "SCOPED_SOURCE_ACCEPTANCE_R1_CLOSED_AND_C1_C6_SOURCE_CHANGES_ACCEPTED; NOT_RUNTIME_OR_JOB_ADMISSION",
+  "current_source": {
+    "name": "desktop_job_runner_proposal_r2_1.py",
+    "bytes": 19117,
+    "sha256": "721d6145c4e7a58360e62985866e5512ba695ee938970b5330f200aa7f7eca28",
+    "complete_actual_app_send_body_read": true,
+    "all_bytes_independently_rehashed": true,
+    "reconciliation_bytes": 4589,
+    "reconciliation_sha256": "61ae8f1cc36f73d102b23a72ea4a5c53d2f1bbd9aa9bede091d719f73d63a7fb",
+    "reconciliation_complete_read_and_rehashed": true,
+    "syntax_parsing": "Producer-reported only; no parser/compiler/control run by lane3",
+    "supersedes": "Preliminary R2 19089B/a74519f856c6b3385af836765cb0ded93731d0386078a4c8194e8485c143d797",
+    "exact_delta_from_independently_hashed_R2": "Verified full string equality after ONLY moving SIGINT/SIGTERM handler registration before initial authentication and adding CANCEL-file checks to budgeted hash chunks."
+  },
+  "R1_disposition": {
+    "status": "CLOSED_IN_SOURCE_UNDER_STATED_STANDALONE_NO_REAPER_PRECONDITIONS",
+    "evidence": [
+      "Before Popen: requires default SIGCHLD, exactly one Python thread and one /proc/self/task entry; does not silently reset an inherited disposition.",
+      "Birth tuple uses /proc/<pid>/stat fields for parent, pgid, session and start_ticks, plus directory UID. Field offsets were checked: split begins at state(field3), start_ticks index19 is field22.",
+      "All mutating os.killpg calls are centralized in signal_owned_group. It first rechecks prerequisites, successful WNOWAIT child observation and exact birth tuple. There is no remaining unconditional numeric TERM/KILL fallback.",
+      "Any failed direct observation permanently sets identity.lost and stop. Further helper entry raises before numeric signal; the only lost=False assignment is initial birth binding, before the first retained observation. Sequence stops on unusable command.",
+      "Child pidfd is marked bound only after original birth/WNOWAIT checks. Later identity loss may request SIGKILL through that retained descriptor ONLY; no numeric direct-PID or PGID substitute.",
+      "After identity loss, Popen returncode is recorded separately; effective exit_code stays null and exit_identity_confirmed=false. A returncode0 cannot clear stop/error or yield usable_exit_zero."
+    ],
+    "model_limit": "Default SIGCHLD + thread counts are explicit supported-process prerequisites, not proof against hidden native reapers, outside mutation or hostile session escape. Actual standalone interpreter/kernel facts remain required before runtime admission."
+  },
+  "reviewed_paths": [
+    {
+      "case": "Nondefault SIGCHLD or extra Python/kernel task before spawn",
+      "source_result": "Raises before Popen. No child inferred; capture outer preflight diagnostic. No runtime case executed."
+    },
+    {
+      "case": "pidfd-open/birth/WNOWAIT failure before successful binding",
+      "source_result": "Identity remains/latches lost; numeric group signals are withheld. An unbound descriptor is not used. Child wait may time out; cleanup can remain UNKNOWN and a live child can remain. This is NOT clean cancellation/containment. Error/stop/incomplete logs prevent usable success; retain full operator diagnostic and any remaining-child facts."
+    },
+    {
+      "case": "Observation failure after successful binding",
+      "source_result": "Mutating numeric group signal is unreachable; only previously bound direct pidfd fallback is attempted. Group cleanup remains UNKNOWN, regardless of direct fallback result."
+    },
+    {
+      "case": "Fallback raises an error other than ProcessLookupError",
+      "source_result": "Outer cleanup exception records cleanup_error/unconfirmed and keeps the command unusable; it does not establish successful fallback or full cleanup. group_cleanup string may not be assigned on this exception path, so do not require that exact string to recognize UNKNOWN."
+    },
+    {
+      "case": "Normal retained zombie and complete logs",
+      "source_result": "Birth/WNOWAIT checks may permit owned-group cleanup before reap. Usable result still requires confirmed exit0, no stop/error, full EOF and later fresh declared artifacts. Source trace only, not executed PASS."
+    },
+    {
+      "case": "signal0 group probe after reap",
+      "source_result": "The final os.killpg(pid,0) is a nonmutating existence/permission probe, not a destructive signal. It may refer only to the numeric identifier after reaping; do not use group_absence_observed alone to re-establish ownership or erase prior identity-loss/cleanup UNKNOWN. Code never clears the failure latch."
+    }
+  ],
+  "C1_C6": {
+    "C1": "Explicit cm-t02-abstract-supplier-four-v1 and exact f547/f082/650452/2ba5 pins accepted as SOURCE profile. Fresh_source_review_identity nonempty is a required marker, not proof of actual fresh lane1 acceptance; actual supplied review must be bound externally. Original staged3-source package remains separate.",
+    "C2": "Selected exact Lake argv remains absolute Linux lake --dir /home/astra/codex-workspaces/cm-t02-desktop-20261015-01 test, with runner cwd leaf/source. Existing1621B/8b7eb2d0 Lake source serially waits for CMSparseSupplier, CMFoundations, CMSeparation, CMInterfaceAudit. It is SOURCE ONLY, not parsed/compiled or a native lean_lib integration receipt.",
+    "C3": "Trusted-route actual owner/lane3 record must bind corrected runner hash, complete final manifest, source/review/root/closure/environment/command/output family. Runner hashes supplied admission text; it does not parse issuer authority or turn execution_status into permission.",
+    "C4": "Actual complete source/object runtime provenance and fresh olean/ilean/other companion plus finite Lake metadata inventory/postcheck remain required. Runner covers declared build outputs only. Unknown/omitted companions or unexpected generated files prevent full adoption.",
+    "C5": "Actual final manifest must fit8MiB/16384 authenticated-file caps without missing source/object/core/runtime entries. Repeated hashing is charged inside900s. Hash reauthentication is per declared manifest command; under one Lake command it is NOT per internal Lean grandchild. Final admission must explicitly accept that granularity with exclusive immutable inputs and the frozen serial Lake source, or choose another finite reviewed sequence.",
+    "C6": "R2.1 installs SIGINT/SIGTERM handlers before initial authentication and checks leaf/CANCEL within each budgeted hash chunk. These source changes address the previously noted early-auth cancellation gap. Preflight exceptions before JOB-RECEIPT creation still need full outer stdout/stderr/no-child-or-uncertain-launch capture. Cooperative chunk/poll checks are not an exercised hard real-time wall guarantee."
+  },
+  "resource_scope_disposition": {
+    "accepted_source_scope": "Same900s whole-job deadline;600s CPU and8GiB AS per process;16MiB retained stdout/stderr each;50GiB disk and12GiB host MemAvailable floors; stricter1GiB file cap/zero core dumps. Lower inherited hard limits remain observable requirements.",
+    "not_established": "No actual child limits, EOF/log-cap behavior, deadline/cancel, pidfd support, cleanup, resident/aggregate memory or descendant containment was exercised here.",
+    "pidfd_preflight_limit": "Source checks API presence and pidfd_open(self); that self-open probe does NOT itself exercise pidfd_send_signal or prove later child binding/cleanup. Actual kernel/API support and outcome facts remain runtime prerequisites, not inferred from source/documentation."
+  },
+  "current_job_admission": {
+    "status": "WITHHELD; CM-T02-DESKTOP-OWNER-01 RESERVED_NOT_STARTED",
+    "no_repeat_owner_ACK_required": true,
+    "no_new_code_correction_assigned": true,
+    "remaining": [
+      "Fresh lane1 acceptance bound to exact extracted supplier/foundation and unchanged endpoint source bodies.",
+      "Actual required acquisition manifest/source/object/runtime files and compatible local hashes, including complete selected closure and ordered LEAN_PATH.",
+      "Final source-only Lake config/companion/postcheck/environment/admission byte bindings and actual finite WSL runner/control prerequisites; no execution from this source review alone."
+    ]
+  },
+  "acquisition_decision": {
+    "source_owner_candidate": "2149 external module families with10745 companion files present and matching historical receipt metadata;1,587,585,219B raw payload before manifest/receipt/archive overhead. Not current-byte-authenticated/exported.",
+    "required_manifest": "7,289,882B/SHA256a9dd9faf24ca778bcddc2ab95b2e5fd9f0ac3def71bd9c9900f09c329f984bf7 remains on source host.",
+    "actual_limit": "Source host exposes neither create_library_file nor tool discovery; CAPABILITY_UNAVAILABLE, no upload/opaque ID. Desktop NativeLibrary cannot read the foreign /workspace path. No accepted transfer handle or cross-host transfer is proven.",
+    "exact_missing_field": "PRIVATE_SOURCEHOST_TO_DESKTOP_TRANSFER_HANDLE binding existing approved sender file-access and recipient retrieval. No new route/public binary publication or repeated capability lookup.",
+    "official_fallback_packet": "https://github.com/Sodelin/Research-Commons/blob/82ae0a85df468eaa08af8e8f338d98b92d159aa2/communications/2026-10-15-codex-cm-t02-finite-acquisition-and-narrow-lake-r1.json",
+    "official_fallback": "All official commit/package pins retained and exact nine selective Mathlib roots frozen. Prepared fallback only; no cache query/fetch/installer/new acquisition route selected."
+  },
+  "validation": "Complete source+rationale byte hashes and full source-control-flow/line/delta inspection only. ZERO runner/pidfd probe/synthetic child/compiler/Lake/OS-control tests. No behavior PASS counts.",
+  "boundary": "No new author/worker/runner, source edits, staging overwrite, cloud compiler, network fetch/install, credentials/device/security/permission change, large pack/export, Rust edits in Lean package or old3504/Omni/Subspace action.",
+  "ETA": "Source disposition complete before17:50UTC. No further unchanged R1 correction is requested. Actual job/transfer completion ETA remains unestablished until the concrete accepted private-transfer or explicitly chosen pinned fallback and remaining runtime/review/config artifacts exist."
+}
