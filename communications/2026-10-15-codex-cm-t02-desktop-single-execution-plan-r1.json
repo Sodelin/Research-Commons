@@ -1,8 +1,8 @@
 {
   "record": "CM-T02-EXECUTION-PLAN-20261015-01/revision1 / DESKTOP-LEAN-CM-T02-JOB-001",
   "route_revision": "DESKTOP-ONLY-COMPILER-ROUTE-20261015-01/revision1",
-  "status": "ACTUAL_SINGLE_OPERATOR_PLAN_RECONCILED_OWNER_RESERVED_ADMISSION_PENDING",
-  "observed_utc": "2026-10-15 17:15:33 UTC",
+  "status": "SELECTED_FOUR_SOURCE_CANDIDATE_PENDING_FRESH_REVIEW_ACTUAL_EXPORT_AND_RUNNER_CORRECTION",
+  "observed_utc": "2026-10-15 17:31:58 UTC",
   "route": [
     "root Dot exact Lean-only source/review package",
     "DotBridge",
@@ -92,10 +92,18 @@
   "source_input": {
     "files": [
       {
+        "name": "CMSparseSupplier.lean",
+        "bytes": 8880,
+        "sha256": "f5477531d3b79ed65c7eb0e549bd653e40a90ce5a710bdf745363287a339c9fd",
+        "module": "CMSparseSupplier",
+        "file": "CMSparseSupplier.lean"
+      },
+      {
+        "name": "CMFoundations.lean",
+        "bytes": 2806,
+        "sha256": "f082c4b32e4ca0a6450d0bb009a2327c3386c38c31e0d7981fab7e2b26115945",
         "module": "CMFoundations",
-        "file": "CMFoundations.lean",
-        "bytes": 2824,
-        "sha256": "173f00d1871656a016bc4593bae06030914dc161985d3b6df0aa89d667164073"
+        "file": "CMFoundations.lean"
       },
       {
         "module": "CMSeparation",
@@ -110,10 +118,11 @@
         "sha256": "2ba5d889bfdbf641e438c6a47d98bfa36b37392073661ffbc0f9a617e0613211"
       }
     ],
-    "status": "AUTHORED_UNCOMPILED_UNAUDITED",
+    "status": "FOUR_SOURCE_REFACTOR_CANDIDATE_UNCOMPILED; original staged3-source package preserved",
     "immutable_source_commit": null,
-    "source_review": "Completed source-level PASS, now full report supplied/pinned by parent; mathematical fidelity/strategy only. No tactic/API/type/axiom/transitive-object acceptance.",
+    "source_review": "Original3-source PASS remains historical for original package only. Fresh lane1 review of extracted supplier and changed foundation is REQUIRED; no automatic PASS carryover.",
     "stage_order": [
+      "CMSparseSupplier",
       "CMFoundations",
       "CMSeparation",
       "CMInterfaceAudit"
@@ -145,12 +154,34 @@
         "outputs/lean-desktop-cm-t02/PACKAGE-AND-PLAN-STATE-02.json"
       ]
     },
-    "lane3_disposition": "ACCEPT_SOURCE_REVIEW_PACKAGE_IDENTITY_GATE_CLOSED; runtime admission pending exact closure/runner/config"
+    "lane3_disposition": "Exact new2 source hashes independently matched; foundation change is import-only. Selected four-source config source frozen; runtime admission withheld for actual dependencies, fresh review, corrected runner.",
+    "original_reviewed_three_files": [
+      {
+        "module": "CMFoundations",
+        "file": "CMFoundations.lean",
+        "bytes": 2824,
+        "sha256": "173f00d1871656a016bc4593bae06030914dc161985d3b6df0aa89d667164073"
+      },
+      {
+        "module": "CMSeparation",
+        "file": "CMSeparation.lean",
+        "bytes": 7728,
+        "sha256": "6504523aee4ba61a2184f327b17d6299cec85ba72935dbba235b65d99a927135"
+      },
+      {
+        "module": "CMInterfaceAudit",
+        "file": "CMInterfaceAudit.lean",
+        "bytes": 1010,
+        "sha256": "2ba5d889bfdbf641e438c6a47d98bfa36b37392073661ffbc0f9a617e0613211"
+      }
+    ],
+    "selected_source_owner_revision": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6198092043",
+    "acquisition_and_config_packet": "https://github.com/Sodelin/Research-Commons/blob/4acf399e26b0037c9144892415866094d02d5b21/communications/2026-10-15-codex-cm-t02-finite-acquisition-and-narrow-lake-r1.json"
   },
   "dependency_provenance": {
     "existing_sparse_supplier_sha256": "9ea04cbe390030381624d25b20be10751dff62f75d5d6e7752b88b9599a46418",
     "supplier_source_authenticated_by_lane3_in_1613_store": true,
-    "owner_actual_static_closure_report": "311 prior research modules and AdicValuation are in the required closure; not a three-file-only build.",
+    "owner_actual_static_closure_report": "SUPERSEDED for selected candidate by2149 external/184core/0physical-research closure of exact abstract extraction. Original311/AdicValuation remains true only for unchanged original3-source import closure.",
     "full_ordered_closure_manifest_pin": null,
     "compatible_Desktop_objects_authenticated": false,
     "no_cloud_or_old3504_object_reuse_assumed": true,
@@ -177,6 +208,36 @@
       "whole_machine_absence": "UNESTABLISHED",
       "artifact_path_and_manifest": "UNAVAILABLE",
       "source": "actual operator return via parent at17:14:22Z"
+    },
+    "selected_export": {
+      "actual_owner_source": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6198092043",
+      "recommendation": "SELECTED: fresh-reviewed abstract supplier extraction + EXACT receipted existing2149-module Linux export candidate; no official cache acquisition or311-research rebuild while these held files authenticate.",
+      "external_modules": 2149,
+      "Mathlib": 1892,
+      "external_packages": 257,
+      "core_leaves": 184,
+      "physical_research_modules": 0,
+      "AdicValuation_in_static_closure": false,
+      "companion_files_present_owner_stat": 10745,
+      "companion_bytes_owner_stat": 1561484568,
+      "external_source_bytes_owner": 26080227,
+      "four_source_bytes": 20424,
+      "raw_payload_before_manifest_receipt_archive_overhead": 1587585219,
+      "source_owner_proposed_transfer_max_bytes": 2147483648,
+      "manifest": {
+        "name": "ACQUISITION-MANIFEST-r2.json",
+        "bytes": 7289882,
+        "sha256": "a9dd9faf24ca778bcddc2ab95b2e5fd9f0ac3def71bd9c9900f09c329f984bf7",
+        "source_owner_root": "/workspace/Research-Commons/research/2026-10-15-astra-reviewed-formalization-lane2-1630z/abstract-supplier-refactor-r1/",
+        "actual_body_available_to_lane3": false
+      },
+      "raw_object_roots": [
+        "/workspace/scratch/astra-mathlib-0645/.lake/build/lib/lean",
+        "exact plan-selected .lake/packages/NAME/.lake/build/lib/lean roots in actual acquisition manifest"
+      ],
+      "receipt_index": "/workspace/scratch/astra-support-external-0840/INDEX.json selected2149 module indices",
+      "evidence_level": "Owner read exit0/module/source-hash receipts and statted every listed file. Current source/object bytes NOT freshly hashed; no archive/export/desktop transfer claimed.",
+      "remaining_artifact_boundary": "Root must bind the ALREADY approved private exchange executable/address to this exact finite candidate and move actual manifest-listed files under its authorized transfer scope. No such handle or actual manifest body is held by lane3. Source-owner cloud heavy hash/pack restriction remains; no new transport/public binary publication is authorized."
     }
   },
   "proposed_finite_bounds_NOT_ADMITTED": {
@@ -195,45 +256,27 @@
     "stop": "first cancellation/time/resource/hash/child-scope/log-capture failure stops sequence, retains evidence, no retry or mathematical NO"
   },
   "required_exact_commands": {
-    "state": "OPERATOR_ARGV_TARGET_SCOPE_ACCEPTED; actual runtime env/module-root/companion/guard/Lake config pending",
+    "state": "FOUR_MODULE_LAKE_SCRIPT_CONFIG_SOURCE_FROZEN_UNPARSED_UNCOMPILED; exact dependency paths and corrected runner admission pending",
     "ordered_operations": [
-      "existing approved owner guard: exact CMFoundations source -> fresh Lean companions using fixed compatible external search roots",
-      "same guard: exact CMSeparation source -> fresh companions, using only just-authenticated CMFoundations and external context",
-      "same guard: exact CMInterfaceAudit source -> retained full printed types/axiom output",
-      "separately admitted full owned-declaration audit and coherent Lake target"
+      "Source-owner explicit four-module conditional scope + FRESH lane1 source PASS",
+      "Actual finite private transfer of manifest-selected candidate then desktop full-byte/runtime/import authentication",
+      "SAME existing desktop operator corrected runner identity/four-source profile admitted by lane3",
+      "ONE guarded Lake --dir <reservedroot> test; four modules serial; complete outputs/type/axiom results"
     ],
-    "actual_component_argv": [
-      [
-        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
-        "-o",
-        "../build/CMFoundations.olean",
-        "CMFoundations.lean"
-      ],
-      [
-        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
-        "-o",
-        "../build/CMSeparation.olean",
-        "CMSeparation.lean"
-      ],
-      [
-        "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
-        "-o",
-        "../build/CMInterfaceAudit.olean",
-        "CMInterfaceAudit.lean"
-      ]
+    "actual_component_argv": null,
+    "actual_audit_argv": null,
+    "actual_narrow_Lake_target_and_argv": [
+      "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lake",
+      "--dir",
+      "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01",
+      "test"
     ],
-    "actual_audit_argv": [
-      "/home/astra/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
-      "-o",
-      "../build/CMInterfaceAudit.olean",
-      "CMInterfaceAudit.lean"
-    ],
-    "actual_narrow_Lake_target_and_argv": null,
     "historical_lakefile_binding": "7239e89d lakefile routes test arguments to scripts/run_current.py; its current/connected target is historical1613, not an automatically valid CM profile. The aggregate-only driver's prohibition on prerequisite fallback remains.",
     "cwd": "/home/astra/codex-workspaces/cm-t02-desktop-20261015-01/source",
     "env_template": "explicit nonlogin fixed Linux bin; LEAN_PATH root/build plus owner-admitted compatible dependency object roots only; exact ordered paths remain unavailable",
-    "narrow_Lake_status": "PENDING_EXACT_TARGET_CONFIG",
-    "historical_guard_status": "8f47c66c historical guard unconditionally reads missing WSL /sys/fs/cgroup/memory.current; NOT accepted unchanged"
+    "narrow_Lake_status": "SOURCE CONFIG1600B-class pinned in selected packet; one no-fetch Lake script subsumes all4 direct elaborations; not native lean_lib build",
+    "historical_guard_status": "8f47c66c historical guard unconditionally reads missing WSL /sys/fs/cgroup/memory.current; NOT accepted unchanged",
+    "runner_review": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6198229464"
   },
   "lease_requirements": {
     "issuer": "existing01a133ec",
@@ -248,7 +291,8 @@
     "status": "CM-T02-DESKTOP-OWNER-01 RESERVED_NOT_STARTED; one-use900s activated only by recorded lane3 closure/runtime/runner/serial manifest admission; no repeat owner ACK needed for conforming fields",
     "old3504": "PAUSED; required module may be reused only from independently authenticated desktop context or separately admitted fresh dependency plan, never old unreceipted output",
     "owner_record": "https://github.com/Sodelin/Research-Commons/issues/1#issuecomment-6197891342",
-    "old_nonoverlap": "Owner explicitly attests new desktop namespace separate from cloud /workspace/scratch/astra-support-external-0840 and astra-mathlib-0645; old3504 remains paused"
+    "old_nonoverlap": "Owner explicitly attests new desktop namespace separate from cloud /workspace/scratch/astra-support-external-0840 and astra-mathlib-0645; old3504 remains paused",
+    "four_source_revision": "Owner6198092043 explicitly conditionally replaces original3 sequence with4 modules withinSAME900s after FRESH lane1 review and conforming lane3 admission; no unchanged repeat owner ACK"
   },
   "required_retained_receipts": [
     "preflight actual host/runtime/root/mount/disk/memory/process and owner lease",
@@ -275,12 +319,12 @@
     "no_new_worker_or_connection_or_install_or_cache_download": true
   },
   "precise_remaining_fields": [
-    "Actual desktop LOCAL Mathlib0df444 and finite research/external object/source/runtime closure provenance. Owner holds no authenticated desktop compiled closure. Operator's bounded named-path inventory underway; no broad scan or acquisition.",
-    "Actual WSL-compatible bounded runner source/hash/config enforcing accepted900/600/8GiB/16MiB/one-child bounds, cancellation/complete-log capture/child cleanup and explicit module-root/companions.",
-    "Frozen exact lean-toolchain/Lake file/manifest/local search roots and serial narrow target/argv; no default aggregate or automatic prerequisite/fetch fallback."
+    "Fresh lane1 source-review disposition bound to exact f5477531 supplier and f082c4b3 foundation plus unchanged endpoint files.",
+    "Actual ACQUISITION-MANIFEST-r2.json7,289,882B/a9dd9faf body+manifest-listed2149 source/object families and core/runtime context via ALREADY approved private exchange; current hashes verified on desktop. Actual mechanism/address not held by lane3.",
+    "SAME operator's runner correction for waitid identity loss, explicit four-source profile, complete output/runtime/env bindings; frozen narrow Lake config is source only until actual admitted execution."
   ],
   "extra_human_approval": "NONE requested for isolated leaf staging or conforming finite desktop check: root explicitly authorizes both within current work. Missing dependency acquisition, if required, must be specified by exact artifact/action and boundary; no generic permission cycle.",
-  "ETA": "17:15 disposition: package+source review and owner/root reservation resolved; exact local closure/runner/Lake bindings unavailable. Existing operator continues bounded local cache metadata inventory; lane3 will give admission or exact diagnostic within10minutes of receiving the concrete manifest/runner/config, with no compiler completion ETA before those fields exist.",
+  "ETA": "Concrete selected acquisition packet and completed runner review returned17:30:33Z before17:32. Lane3 can review complete actual corrected-source/review/manifest/runtime packet within10minutes of receipt; no compiler completion ETA before actual artifact authentication.",
   "operator_plan": {
     "returned_utc": "2026-10-15T17:05:03Z",
     "bytes": 10510,
