@@ -91,3 +91,17 @@ https://github.com/Sodelin/Research-Commons/blob/8d657330a4f9f0aee087780095c5e2c
 ## Scope
 
 The new work here is a transparent source-faithful proof attempt toward the original dense-family gate. No lower bound of order √D/ε² is claimed. If its remaining moment bound is eventually proved, diagonal sampling would transfer it to collective quantum measurements and to the two-unknown total-copy experiment by the existing simulation argument. That final implication is conditional on the missing statistical bound.
+
+## Addendum: scoped independent manual review (2026-10-16)
+
+An independent dot mathematical review read the complete candidate at fa610a15f5e8d4c579d192f550758617fb4735b8 and returned scoped manual PASS for: coefficient admission; the exact cosh variance identity; the logarithmic remainder; the hypercontractive third-moment estimate and safe C_k; the good-event probability and Tη rates; the all-instance L1 separation and explicit ε/β constraints; the indicator-retaining chi-square identity; and the exceptional-sign demonstration against dropping those indicators. The review does not accept the unproved truncated moment, a √D/ε² testing lower bound, novelty, or Lean verification. Earlier candidate bytes are retained above.
+
+## Addendum: spin-glass prior boundary
+
+Dey and Wu's primary arXiv:2212.14571v2, equations (1), (3)–(5), Theorem 1.9 and Proposition 4.4, study the corresponding cosh/cluster decomposition for symmetric disorder and identify leading zero-field clusters of size 3 for even interaction order and 4 for odd order. Their large-cluster reduction is an L2 statement; their fluctuation theorem is distributional.
+https://arxiv.org/pdf/2212.14571v2
+
+The related published article is *Hypergraph Counting and Fluctuations of Mixed p-Spin Glass Models at High Temperature*, Communications in Mathematical Physics 407, 230 (27 September 2026), DOI 10.1007/s00220-026-05748-5. The exact source inspected for theorem details here is the arXiv version, not an assumed identical journal theorem numbering.
+https://doi.org/10.1007/s00220-026-05748-5
+
+Our normalization matches their zero-field symmetric-sign model at effective spin-glass inverse temperature a n^{(k−1)/2}=b n^{(k−1)/2}/√D, which tends to zero for fixed k. This effective parameter is distinct from the fixed physical β used in coefficient admission. Their quoted results do not directly bound our good-event-truncated, coupled, growing T-th moment. Uniform finite-n exponential integrability at that T-scale is still required; an L2 error or a limiting Gaussian law cannot be raised to a growing power without that additional proof.
