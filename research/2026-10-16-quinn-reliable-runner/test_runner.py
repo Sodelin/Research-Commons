@@ -45,7 +45,7 @@ class RepairTests(unittest.TestCase):
             self.assertTrue((attempt/'failure.json').exists())
             if index:self.assertTrue((attempt/'raw.tif').exists())
             if index==3:self.assertTrue((attempt/'weighted.tif').exists())
-            self.assertFalse((self.root/name/'p1/success.json').exists())
+            self.assertFalse((self.root/name/'job-00000000/success.json').exists())
             with self.assertRaises(ValueError):self.run_job(name,resume=True)
             self.assertEqual(self.run_job(name,resume=True,retry=True)['succeeded'],1)
             self.assertEqual(len(list((self.root/name/'job-00000000').glob('attempt-*'))),2)

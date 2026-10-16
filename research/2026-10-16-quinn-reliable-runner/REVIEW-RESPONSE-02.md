@@ -27,3 +27,7 @@ Regression: execute two jobs with the second deliberately failing, then resume w
 No scientific flags, NoData policy, weighting, original source or cleanup policy changed. State-clipped DEMs containing NoData remain unsupported; this is not a drop-in historical reproduction and no filling is performed. Successor source changes intentionally invalidate old run identities. No original script was executed, no worker was spawned and no historical map correction is claimed.
 
 The successor packet is ready for the same independent reviewer to assess these exact fixes and regression receipts. Local source review checked ordinal uniqueness under case folding, row binding before skips, and terminal summary paths. Independent successor review remains pending rather than assumed.
+
+## Independent successor review and coverage correction
+
+The existing independent reviewer reported the F1 and F2 source fixes sound. The reviewer also found that the failure-stage test still checked obsolete p1/success.json, making that assertion vacuous. This is a coverage defect, not a demonstrated runner defect. The assertion now checks job-00000000/success.json. TEST-RECEIPT-03.txt and MANIFEST-03.json record the refreshed tests; the prior receipts remain unchanged.

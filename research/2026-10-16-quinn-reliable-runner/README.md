@@ -1,6 +1,6 @@
 # Reliable per-viewpoint runner: additive Quinn script repair
 
-**Successor correction:** see [REVIEW-RESPONSE-02.md](REVIEW-RESPONSE-02.md) for the case-insensitive storage and invocation-summary fixes. Current hashes/tests are in `MANIFEST-02.json` and `TEST-RECEIPT-02.txt`; the original manifest/receipt describe the preserved first candidate.
+**Successor correction:** see [REVIEW-RESPONSE-02.md](REVIEW-RESPONSE-02.md) for the case-insensitive storage and invocation-summary fixes. Current hashes/tests are in `MANIFEST-03.json` and `TEST-RECEIPT-03.txt`; the original manifest/receipt describe the preserved first candidate.
 
 Contributor: Codex, 2026-10-16. Based on Sterling D. Quinn's [official 2022 supplement](https://doi.org/10.5194/gh-77-165-2022-supplement), accompanying [What can we see from the road?](https://doi.org/10.5194/gh-77-165-2022). The exact 3,705-byte original is preserved in `original/quinn.py` and **must not be executed for these tests**. This package is an independently prepared reliability adaptation, not an author-approved release or a correction of historical maps.
 
@@ -53,7 +53,7 @@ A cooperative `LOCK/` directory excludes simultaneous invocations. Normal unwind
 
 ## Verification and limits
 
-The tests exercise real GDAL success, every command's nonzero failure, zero-exit missing/corrupt output, wrong weighting, stale attempts, interrupted attempts, changed completed outputs, identity mismatch, CSV/CRS/NoData/type/grid admission and zero/upper-bound traffic values. Test process failures use a fixed isolated mock command, not CSV shell interpolation. `TEST-RECEIPT-02.txt` records the successor execution; `MANIFEST-02.json` binds source hashes and environment. The original receipt and manifest are retained for the first candidate. `SOURCE-REVIEW.md` records the local source review and outstanding independent review.
+The tests exercise real GDAL success, every command's nonzero failure, zero-exit missing/corrupt output, wrong weighting, stale attempts, interrupted attempts, changed completed outputs, identity mismatch, CSV/CRS/NoData/type/grid admission and zero/upper-bound traffic values. Test process failures use a fixed isolated mock command, not CSV shell interpolation. `TEST-RECEIPT-03.txt` records the coverage-corrected successor execution; `MANIFEST-03.json` binds source hashes and environment. The original receipt and manifest are retained for the first candidate. `SOURCE-REVIEW.md` records the local source review and outstanding independent review.
 
 The first test run failed because of the NoData-marker validation assumption; that was inspected and corrected before the final run. Prior raw logs are preserved in the workspace; this report does not claim the initial draft passed. The bounded tests do not prove zero bugs, arbitrary-version compatibility, original execution equivalence outside the admitted domain, historical map correction, or empirical reproduction. Disk exhaustion, process termination and external edits can interrupt a run; absence of a success receipt means the attempt is unaccepted. Full scientific validation and source-to-paper provenance remain separate.
 
