@@ -127,3 +127,18 @@ Primary theorem: https://arxiv.org/html/2204.07155v2#S6
 Readable consolidated bounds: https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.omtn33643d3s
 
 This is an attributed theorem import and hand-checked reduction, with no Lean, experiment, exhaustive novelty audit or General P1 closure claim. All earlier text remains as dated history.
+
+
+## 16 October 2026, 09:15 UTC — reviewed fixed-beta two-local obstruction
+
+The fixed-beta classical shell construction has independent hand-proof acceptance. For every fixed beta>0 and fixed 0<epsilon<=1/4, it gives an explicit admitted sequence of physical sizes N with collective-access lower bound Omega_beta(N^(4/3)/(log N)^(4/3)), under a worst-case TOTAL copy budget. All physical clone and reservoir spins are counted: with D=binom(s,2), m=O_beta(log s), R=O_beta(s sqrt(log s)), N=sm+R. The exact parameter inequalities and epsilon-dependent statement are in the proof. The extension to every sufficiently large N is not claimed without the separate monotone-size/spectator argument.
+
+Important original-class boundary: individual Pauli coefficients are bounded by one, but interaction degree and per-site interaction sums may grow. Fixed beta is therefore not a bounded-strength thermodynamic-limit promise. This construction supplies no bounded-degree, practical preparation, efficient solver or uniform-high-temperature conclusion.
+
+The result imports Chan–Diakonikolas–Valiant–Valiant's established two-unknown closeness hardness through a finite-temperature locking/reservoir construction. It rules out a square-root-parameter collective upper up to fixed polylogarithmic factors even at fixed beta for the full two-local class, along this sequence. At fixed accuracy and beta the accepted collective upper is O(N^2 log N); the optimal rate remains open. The dense k>=3 theorem and large-beta quantum single-copy import remain separately qualified. All lower bounds combine by maximum in their applicable regimes.
+
+Exact unchanged proof: https://github.com/Sodelin/Research-Commons/blob/f31e79760ddd0b1219773b24dcd3a4010ab51aa0/research/2026-10-16-g6-gibbs-certification/FIXED-BETA-CLASSICAL-SHELL-CANDIDATE-18.md
+Independent review: https://github.com/Sodelin/Research-Commons/blob/d459d65df3eeebb6edf5036ff930b1c607a9acf5/research/2026-10-16-g6-gibbs-certification/FIXED-BETA-SHELL-18-INDEPENDENT-REVIEW.md
+Readable consolidation: https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.omtn33643d3s
+
+No Lean, experiment, historical novelty or General P1 closure claim. A focused search inspected the known Ising-testing and latent-tree references; it did not establish priority for this composition. The fixed-beta implication is accepted only at the explicit hand-proof scope of the linked review.
