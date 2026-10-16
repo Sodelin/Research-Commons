@@ -15,3 +15,14 @@ Retain P1/G6 certification and P5 coarse-graining as the active mathematical tar
 These are scoped mathematical hand reviews and attributed prior-method imports, not new Lean builds or established historical novelty. P1, P5, General G3 and General G4 remain open at their original master scope. No author outreach or claim of experimental usefulness is made.
 
 Repository-wide issue-comment review found no additions/updates since 08:06 UTC; commit coverage extends through 09:15 UTC. The current full-scope record retains its 06:12 dated reconciliation. This incremental checkpoint supplies later priorities without rewriting it. Accepted older results and precise source boundaries remain preserved.
+
+
+## 16 October 2026, 09:18 UTC — separately reviewed all-size clarification
+
+The preceding sequence-only statement records the earlier cutoff. A subsequent independently hand-reviewed corollary extends the fixed-beta, fixed-accuracy two-local lower to **every sufficiently large physical N**: Omega_beta(N^(4/3)/(log N)^(4/3)) worst-case TOTAL copies, including collective access. The proof uses the uniform size envelope N_s<=C_beta s log s, chooses s=floor[N/(2 C_beta log N)], and pads with identical zero-Hamiltonian spectator qubits. This needs no monotonicity of N_s. Admission, full trace norm and sample-only simulation are preserved exactly.
+
+The growing interaction-degree/per-site-energy caveat remains essential; this is not a bounded-strength thermodynamic limit. No efficient solver, experiment, Lean, novelty or P1 closure claim is added. P1/P5 remain active with the recorded G3/G4 frontiers preserved.
+
+- [Exact all-size corollary](https://github.com/Sodelin/Research-Commons/blob/368c65ec681b81397fee39fd6de98a149d3ea8f0/research/2026-10-16-g6-gibbs-certification/FIXED-BETA-ALL-SIZES-COROLLARY-19.md)
+- [Independent review](https://github.com/Sodelin/Research-Commons/blob/773ac17b56350f2154bddd191cb74117a52e15c5/research/2026-10-16-g6-gibbs-certification/FIXED-BETA-ALL-SIZES-19-INDEPENDENT-REVIEW.md)
+- [Readable consolidated bounds](https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.omtn33643d3s)
