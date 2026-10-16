@@ -1,0 +1,77 @@
+{
+  "schema": "semi_cyclic_grid_api_repair_v1",
+  "status": "SOURCE_CANDIDATE_UNCOMPILED_FRESH_REVIEW_PENDING",
+  "baseline_commit": "55eecf2a337a43c0a9b958592dde1e50a6bf405d",
+  "baseline_path": "source/Semi/Diffraction/CyclicGrid.lean",
+  "baseline_bytes": 3418,
+  "baseline_sha256": "88b304c67f3d63676195f14d1fbdd0d35f41b0dc24e2a932d795b41f95647941",
+  "retained_finite_orbit_repair": {
+    "commit": "8f8eaa60faae0a7398e6d561d0fc23dad08529a5",
+    "bytes": 6286,
+    "sha256": "538a0c3fdbb82e93c51f70f7d26e590ca309797da72ffc05938b7e0b84676cf9"
+  },
+  "successor": {
+    "file": "CyclicGrid.lean",
+    "bytes": 3447,
+    "sha256": "55daccdefae9bee719462c83fb56b4d53f072da56bd9257a6f70cadf4e0ab4b1"
+  },
+  "patch": {
+    "file": "CyclicGrid.patch",
+    "bytes": 538,
+    "sha256": "9e306a29be11ba4844e639c9992906bf743fd023e7e8069ae7311e027289c70a"
+  },
+  "exact_edit": {
+    "original_line": 82,
+    "old": "    apply Subgroup.closure_le.mpr",
+    "new": "    apply (Subgroup.closure_le (K := hammingIsometries N)).mpr",
+    "scope": "API application inside symmetry_preserves_hamming proof only"
+  },
+  "invariants": {
+    "statements_assumptions_definitions_imports_options_unchanged": true,
+    "all_other_bytes_equal_by_inverse_replacement": true,
+    "independent_unified_patch_replay_matches": true,
+    "patch_hunks": 1,
+    "frozen_original_untouched": true,
+    "accepted_finite_orbit_repair_untouched": true,
+    "active_and_used_build_leaves_untouched": true
+  },
+  "api_source": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "path": "Mathlib/Algebra/Group/Subgroup/Lattice.lean",
+    "bytes": 28505,
+    "git_blob": "39795007baa68c35eac387377724294f9d37ec05",
+    "sha256": "feb594cb9ff4164130e0e05f21495cea51fcc74776e833f75116429549a4beab",
+    "closure_le_line": 355,
+    "same_pinned_file_named_K_application_line": 384
+  },
+  "supplied_diagnostics": {
+    "stage": "ACTUAL_COMPILER_DIAGNOSTIC_RELAY_NOT_PERSONAL_RAW_LOG_READ",
+    "failed_module": "Semi.Diffraction.CyclicGrid",
+    "original_lines": [
+      82,
+      83
+    ],
+    "primary_error": "Unknown constant Subgroup.closure_le.mpr",
+    "secondary_error": "No goals to be solved",
+    "stdout_bytes": 373,
+    "stdout_sha256": "561ad533aa0fa94975f01f4e7e2bca70e98b9f2aacb2233deeacfc22bec4f5f9",
+    "command_receipt_bytes": 2586,
+    "command_receipt_sha256": "395b06d3cee5d261c7621002a13bc76c5f9d2333e33ececc37b736ce3e270a27",
+    "later_five_modules": "NOT_ATTEMPTED",
+    "overall_custody": "reported pending; no adoption inferred"
+  },
+  "compiler_runs_by_this_repair": 0,
+  "checker_runs_by_this_repair": 0,
+  "acquisitions": 0,
+  "runtime_admission": false,
+  "canonical_adoption": false,
+  "next_action": "Focused independent source review; existing sole desktop workflow selects any authorized fresh bounded check after its current custody work. No consumed selector reuse.",
+  "untouched_same_api_spelling": {
+    "source_path": "source/Semi/Diffraction/FourierIntensity.lean",
+    "baseline_sha256": "6bc1f4c653a37336c03c38b4db0fd02b86276c25131a273817496255fb12503c",
+    "line": 134,
+    "text": "apply Subgroup.closure_le.mpr",
+    "scope": "Narrow source-text occurrence only; untouched and not compiled in the supplied attempt."
+  }
+}

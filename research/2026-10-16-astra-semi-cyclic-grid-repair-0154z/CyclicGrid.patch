@@ -1,0 +1,11 @@
+--- frozen/source/Semi/Diffraction/CyclicGrid.lean
++++ repair-r1/source/Semi/Diffraction/CyclicGrid.lean
+@@ -79,7 +79,7 @@
+ theorem symmetry_preserves_hamming (g : symmetries N) (x y : Configuration N) :
+     hammingDist (g.1 x) (g.1 y) = hammingDist x y := by
+   have hsub : symmetries N ≤ hammingIsometries N := by
+-    apply Subgroup.closure_le.mpr
++    apply (Subgroup.closure_le (K := hammingIsometries N)).mpr
+     intro g hg
+     rcases hg with ⟨t, rfl⟩ | rfl | rfl
+     · intro x y; exact hamming_reindex (shiftSite t) x y
