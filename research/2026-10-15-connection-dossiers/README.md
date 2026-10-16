@@ -85,3 +85,8 @@ Google documents retain their existing private access; the GitHub Markdown is th
 ## Addition: memory-augmented descriptions
 The initial 19 dossiers are preserved. A twentieth dossier now records the scoped initialization-uniform finite-history obstruction and exact belief-state alternative, with fixed-initializer and sampled-cadence limits.
 [Google document](https://docs.google.com/document/d/15WHhkNcMfuypBWL56dOfPI-gFVPcuHQnmHu-Smh0BmQ/edit) • [GitHub page](./memory-augmented-descriptors.md)
+
+
+## 16 October addition: LLM training data and Thue–Morse
+
+[LLM training-data and Thue–Morse connection audit](./llm-training-data-and-thue-morse.md) records three bounded uses: a proposed G6 semantic-calibration certificate, an elementary exact-duplicate training-law preservation contract, and exact-label sequence benchmark infrastructure. None is presented as a solved LLM generalization problem or a new field discovery. G3/G4 remain open; G5/G7 transfers are not forced. This incremental public note has no companion Google document in this addition. Earlier dossiers and their historical counts are preserved.
