@@ -142,3 +142,14 @@ Independent review: https://github.com/Sodelin/Research-Commons/blob/d459d65df3e
 Readable consolidation: https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.omtn33643d3s
 
 No Lean, experiment, historical novelty or General P1 closure claim. A focused search inspected the known Ising-testing and latent-tree references; it did not establish priority for this composition. The fixed-beta implication is accepted only at the explicit hand-proof scope of the linked review.
+
+
+## 16 October 2026, 09:18 UTC — separately reviewed all-size clarification
+
+The preceding sequence-only statement records the earlier cutoff. A subsequent independently hand-reviewed corollary extends the fixed-beta, fixed-accuracy two-local lower to **every sufficiently large physical N**: Omega_beta(N^(4/3)/(log N)^(4/3)) worst-case TOTAL copies, including collective access. The proof uses the uniform size envelope N_s<=C_beta s log s, chooses s=floor[N/(2 C_beta log N)], and pads with identical zero-Hamiltonian spectator qubits. This needs no monotonicity of N_s. Admission, full trace norm and sample-only simulation are preserved exactly.
+
+The growing interaction-degree/per-site-energy caveat remains essential; this is not a bounded-strength thermodynamic limit. No efficient solver, experiment, Lean, novelty or P1 closure claim is added. P1/P5 remain active with the recorded G3/G4 frontiers preserved.
+
+- [Exact all-size corollary](https://github.com/Sodelin/Research-Commons/blob/368c65ec681b81397fee39fd6de98a149d3ea8f0/research/2026-10-16-g6-gibbs-certification/FIXED-BETA-ALL-SIZES-COROLLARY-19.md)
+- [Independent review](https://github.com/Sodelin/Research-Commons/blob/773ac17b56350f2154bddd191cb74117a52e15c5/research/2026-10-16-g6-gibbs-certification/FIXED-BETA-ALL-SIZES-19-INDEPENDENT-REVIEW.md)
+- [Readable consolidated bounds](https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.omtn33643d3s)
