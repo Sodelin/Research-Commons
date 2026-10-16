@@ -1,42 +1,48 @@
 {
-  "schema": "derived_scientific_validation_summary_v1",
-  "evidence_kind": "Sanitized summary derived from a preserved private complete execution receipt; this is not a raw runtime receipt",
+  "schema": "derived_scientific_validation_summary_v2",
+  "evidence_kind": "Sanitized contributor summary derived from preserved complete private execution evidence; not a raw runtime receipt or independent test run",
+  "predecessor_commit": "9233b5effbd20cabac34a691c5e1a309b3bd855b",
+  "independent_predecessor_review": "https://github.com/Sodelin/Research-Commons/blob/3b75d65378f91591b3046b27b3e19f57811d7e32/research/2026-10-16-quinn-accounting-review/INDEPENDENT-REVIEW-03.md",
+  "correction": "Q1 complete typed Event/nested Artifact schema admission before replay, plus type-sensitive exact replay equality",
   "tested_sources": {
     "accounting.py": {
-      "bytes": 10780,
-      "sha256": "1253ec51285eae92387471c820b4a740395526b05c9c12bcce88b50819126c8e"
+      "bytes": 15149,
+      "sha256": "ac08e44fc8ce7bb6919b365a9cbd56691f1a1fd3d98ae709df1576e6dc95a03d"
     },
     "source_contract.py": {
       "bytes": 4029,
       "sha256": "87b723115cad96c693df273d5baa258d526a86b63a811a2068818d4c48410218"
     },
     "test_accounting.py": {
-      "bytes": 13871,
-      "sha256": "98a85a3f5ffddc6e1ee097452d32a1125e7aa756b00799b60b36619310c33754"
+      "bytes": 19380,
+      "sha256": "5b4cc69c0aed22729ec9624e44912a2b13fb87de8c3d37503bcae98e193eee77"
     }
   },
-  "actual_test_count": 28,
+  "actual_test_count": 35,
   "actual_test_process_exit_code": 0,
   "complete_test_process_exit_observed": true,
-  "test_framework_reported_seconds": 0.051,
-  "test_process_wall_seconds": 0.216780827002367,
+  "test_framework_reported_seconds": 0.075,
+  "test_process_wall_seconds": 0.23387171000649687,
   "test_capture_complete": true,
-  "scope": "Standard-library own-code finite synthetic controls and read/hash/AST-only inspection of pinned official source",
+  "original_source_SHA256_after": "7aee3ae34ee0f4fd9e6c686dde0813f0a9e29291ff0b33d2c6022d893c42ecff",
+  "regression_scope": [
+    "valid integer zero then float-zero/False replay rejected",
+    "malformed stage first then integer replay cannot clear failure",
+    "each of five Boolean assertions then integer-one replay rejected",
+    "integer-one assertion first then Boolean replay cannot clear failure",
+    "exact typed stage and nested artifact replay remains idempotent",
+    "complete Event/nested receipt schema and unbound-malformed blocking",
+    "valid Boolean-cell representation changes remain exact identity conflicts"
+  ],
+  "prior_28_control_epoch_preserved_not_transferred": true,
   "original_script_executed": false,
-  "original_GDAL_commands_executed": false,
-  "GDAL_installed_or_geographic_simulation_performed": false,
-  "actual_original_CSV_DEM_or_GeoTIFF_validation": false,
+  "GDAL_or_geographic_simulation_performed": false,
+  "dynamic_finally_failure_trace_tested": false,
+  "arbitrary_Registry_context_mutation_safety_claim": false,
   "artifact_validation_flags_are_storage_owner_assertions": true,
+  "production_stage_order_established": false,
   "statewide_or_published_study_certificate": false,
   "canonical_solver_or_study_adoption": false,
-  "coverage": [
-    "fixed expected-ID universe and disjoint status partition",
-    "missing, stale, wrong-configuration and conflicting receipts",
-    "four required stage exits plus artifact assertion; exact event replay idempotence",
-    "all five-event arrival permutations and exhaustive 64 missing-cell completions",
-    "exact integer partition/reorder sums beyond 2^32; invalid weights/cells/grid/mask/bounds rejected",
-    "exact non-strict/strict threshold ties and rational thresholds",
-    "pinned original archive/member and side-effect sentinel absent after AST-only parsing"
-  ],
-  "independent_review": "Scoped source/evidence review reported no substantive finding in this selected finite contract; no additional test run or geographic validation"
+  "remaining_inputs": "Actual expected-ID universe, exact weights, common grid/mask/config and trusted real stage/artifact producer",
+  "postfix_independent_review": "Requested from existing owner; no post-fix independent acceptance claimed by this summary"
 }

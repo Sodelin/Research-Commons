@@ -134,7 +134,11 @@ class RegistryControls(unittest.TestCase):
         for change in changes:
             with self.subTest(change=change):
                 reg = Registry(('a',), 'run-1', 'config-1', grid())
-                reg.record(event('bad', kind='artifact', artifact=artifact(grid(), **change)))
+                if change.get('sha256') == 'bad':
+                    with self.assertRaises(ValueError):
+                        reg.record(event('bad', kind='artifact', artifact=artifact(grid(), **change)))
+                else:
+                    reg.record(event('bad', kind='artifact', artifact=artifact(grid(), **change)))
                 self.assertEqual(reg.status('a'), 'failed')
 
     def test_partition_is_complete_disjoint_and_attempted_orthogonal(self):
@@ -158,8 +162,100 @@ class RegistryControls(unittest.TestCase):
         for stage, code in (('viewshed', True), ('viewshed', 0.0), ('unknown', 0)):
             with self.subTest(stage=stage, code=code):
                 reg = Registry(('a',), 'run-1', 'config-1', grid())
-                reg.record(event('bad', kind='stage', stage=stage, exit_code=code))
+                with self.assertRaises(ValueError):
+                    reg.record(event('bad', kind='stage', stage=stage, exit_code=code))
                 self.assertEqual(reg.status('a'), 'failed')
+
+    def test_integer_zero_then_float_or_false_replay_is_rejected(self):
+        for bad_code in (0.0, False):
+            with self.subTest(bad_code=bad_code):
+                reg = Registry(('a',), 'run-1', 'config-1', grid())
+                good = event('same', kind='stage', stage='viewshed', exit_code=0)
+                bad = replace(good, exit_code=bad_code)
+                self.assertEqual(good, bad)  # The legacy dataclass-equality mechanism is real.
+                self.assertTrue(reg.record(good))
+                with self.assertRaises(ValueError):
+                    reg.record(bad)
+                self.assertEqual(reg.status('a'), 'failed')
+                self.assertFalse(reg.snapshot()['all_expected_validated'])
+                with self.assertRaises(ValueError):
+                    reg.validated_rasters()
+
+    def test_malformed_zero_then_integer_zero_does_not_clear_failure(self):
+        for bad_code in (0.0, False):
+            with self.subTest(bad_code=bad_code):
+                reg = Registry(('a',), 'run-1', 'config-1', grid())
+                good = event('same', kind='stage', stage='viewshed', exit_code=0)
+                with self.assertRaises(ValueError):
+                    reg.record(replace(good, exit_code=bad_code))
+                self.assertEqual(reg.status('a'), 'failed')
+                with self.assertRaises(ValueError):
+                    reg.record(good)
+                self.assertTrue(reg.snapshot()['issues'])
+
+    def test_boolean_artifact_assertion_then_integer_one_replay_rejected(self):
+        for field in ('checksum_checked', 'grid_checked', 'crs_checked', 'nodata_checked', 'binary_checked'):
+            with self.subTest(field=field):
+                reg = Registry(('a',), 'run-1', 'config-1', grid())
+                good = event('same', kind='artifact', artifact=artifact(grid()))
+                bad = replace(good, artifact=replace(good.artifact, **{field: 1}))
+                self.assertEqual(good, bad)
+                self.assertTrue(reg.record(good))
+                with self.assertRaises(ValueError):
+                    reg.record(bad)
+                self.assertEqual(reg.status('a'), 'failed')
+
+    def test_integer_one_artifact_assertion_then_boolean_replay_rejected(self):
+        for field in ('checksum_checked', 'grid_checked', 'crs_checked', 'nodata_checked', 'binary_checked'):
+            with self.subTest(field=field):
+                reg = Registry(('a',), 'run-1', 'config-1', grid())
+                good = event('same', kind='artifact', artifact=artifact(grid()))
+                with self.assertRaises(ValueError):
+                    reg.record(replace(good, artifact=replace(good.artifact, **{field: 1})))
+                with self.assertRaises(ValueError):
+                    reg.record(good)
+                self.assertEqual(reg.status('a'), 'failed')
+
+    def test_exact_typed_stage_and_nested_artifact_replay_is_idempotent(self):
+        reg = Registry(('a',), 'run-1', 'config-1', grid())
+        validate(reg)
+        before = reg.snapshot()
+        self.assertFalse(reg.record(event('a-viewshed', kind='stage', stage='viewshed', exit_code=0)))
+        self.assertFalse(reg.record(event('a-artifact', kind='artifact', artifact=artifact(grid()))))
+        self.assertEqual(reg.snapshot(), before)
+        self.assertTrue(reg.snapshot()['all_expected_validated'])
+
+    def test_complete_event_and_nested_receipt_schema_before_replay(self):
+        good = event('same', kind='artifact', artifact=artifact(grid()))
+        malformed = [replace(good, event_id=False), replace(good, row_id=[]),
+                     replace(good, run_id=1), replace(good, config_id=None), replace(good, kind=[]),
+                     replace(good, stage='viewshed'), replace(good, exit_code=False),
+                     replace(good, artifact='not an Artifact'),
+                     replace(good, artifact=replace(good.artifact, raster='not a raster')),
+                     replace(good, artifact=replace(good.artifact, checksum_checked=None))]
+        for bad in malformed:
+            with self.subTest(field_values=repr(bad)):
+                reg = Registry(('a',), 'run-1', 'config-1', grid())
+                reg.record(good)
+                with self.assertRaises(ValueError):
+                    reg.record(bad)
+                self.assertFalse(reg.snapshot()['all_expected_validated'])
+        # Unbound malformed records never allow later valid data to imply acceptance.
+        reg = Registry(('a',), 'run-1', 'config-1', grid())
+        with self.assertRaises(ValueError):
+            reg.record(replace(good, row_id=[]))
+        validate(reg)
+        self.assertFalse(reg.snapshot()['all_expected_validated'])
+
+    def test_typed_boolean_cell_representation_change_is_a_conflict(self):
+        reg = Registry(('a',), 'run-1', 'config-1', grid())
+        good = event('same', kind='artifact', artifact=artifact(grid(), (1, 0, 0)))
+        alternative = replace(good, artifact=artifact(grid(), (True, False, False)))
+        self.assertEqual(good, alternative)
+        reg.record(good)
+        with self.assertRaises(ValueError):
+            reg.record(alternative)
+        self.assertEqual(reg.status('a'), 'failed')
 
 class ExactArithmeticControls(unittest.TestCase):
     def test_partitions_and_reorder_above_uint32(self):

@@ -3,7 +3,7 @@
 No raster I/O, GDAL, command execution, retry, or published-run inference.
 Artifact validation flags are assertions supplied by a separate storage owner.
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 from fractions import Fraction
 import re
 
@@ -71,6 +71,59 @@ class Event:
     exit_code: int | None = None
     artifact: Artifact | None = None
 
+def _event_schema_error(event):
+    """Check the complete typed receipt before ANY duplicate acceptance.
+
+    False validation assertions are well-typed failed evidence. Integer 1 is
+    not a Boolean assertion; float/bool exits are not exact integer exits.
+    This is schema validation, not file checking or production authentication.
+    """
+    if type(event) is not Event:
+        return 'a typed immutable Event is required'
+    for name in ('event_id', 'row_id', 'run_id', 'config_id', 'kind'):
+        value = getattr(event, name)
+        if type(value) is not str or not value.strip():
+            return 'nonempty exact string identities and kind are required'
+    if event.kind == 'attempt':
+        if any(value is not None for value in (event.stage, event.exit_code, event.artifact)):
+            return 'attempt events cannot carry stage or artifact fields'
+    elif event.kind == 'stage':
+        if (type(event.stage) is not str or event.stage not in STAGES or event.artifact is not None
+                or (event.exit_code is not None and type(event.exit_code) is not int)):
+            return 'stage receipt requires a named stage and an exact integer or unconfirmed exit'
+    elif event.kind == 'artifact':
+        if event.stage is not None or event.exit_code is not None or type(event.artifact) is not Artifact:
+            return 'artifact event requires only a typed Artifact receipt'
+        value = event.artifact
+        if type(value.sha256) is not str or re.fullmatch(r'[0-9a-f]{64}', value.sha256) is None:
+            return 'artifact checksum requires a lowercase SHA256 string'
+        if any(type(getattr(value, name)) is not bool for name in
+                ('checksum_checked', 'grid_checked', 'crs_checked', 'nodata_checked', 'binary_checked')):
+            return 'artifact assertions require exact Boolean fields'
+        if type(value.raster) is not BooleanRaster or type(value.raster.grid) is not Grid:
+            return 'artifact raster and grid require their exact declared types'
+        raster, grid = value.raster, value.raster.grid
+        if (type(grid.identity) is not str or not grid.identity.strip()
+                or type(grid.width) is not int or type(grid.height) is not int
+                or min(grid.width, grid.height) <= 0 or type(grid.mask) is not tuple
+                or len(grid.mask) != grid.width * grid.height or any(type(x) is not bool for x in grid.mask)
+                or type(raster.cells) is not tuple or len(raster.cells) != len(grid.mask)
+                or any(type(x) not in (int, bool) or x not in (0, 1) for x in raster.cells)):
+            return 'artifact raster/grid/mask fields violate the declared Boolean schema'
+    else:
+        return 'unknown event kind'
+    return None
+
+def _typed_equal(left, right):
+    """Exact replay includes Python representation types, including nested data."""
+    if type(left) is not type(right):
+        return False
+    if type(left) in (Event, Artifact, BooleanRaster, Grid):
+        return all(_typed_equal(getattr(left, field.name), getattr(right, field.name)) for field in fields(left))
+    if type(left) is tuple:
+        return len(left) == len(right) and all(_typed_equal(a, b) for a, b in zip(left, right))
+    return left == right
+
 class Registry:
     """A fixed expected universe; a new attempt/configuration needs a new registry.
 
@@ -99,12 +152,29 @@ class Registry:
         self._rows[row]['errors'].append(reason)
 
     def record(self, event):
-        if not isinstance(event, Event):
-            raise ValueError('A typed immutable event is required')
-        _label(event.event_id)
+        error = _event_schema_error(event)
+        if error is not None:
+            # Retain a safe identity anchor and latch bound-row failure even
+            # for a malformed first arrival. A later valid event cannot erase
+            # it or turn the malformed observation into an idempotent replay.
+            bound_rows = set()
+            if type(event) is Event:
+                if type(event.row_id) is str and event.row_id in self._rows:
+                    bound_rows.add(event.row_id)
+                if type(event.event_id) is str and event.event_id.strip() and type(event.row_id) is str:
+                    if event.event_id in self._seen:
+                        bound_rows.add(self._seen[event.event_id].row_id)
+                        self.issues.append('conflicting malformed event identity: ' + event.event_id)
+                    else:
+                        self._seen[event.event_id] = event
+            for row in bound_rows & self._rows.keys():
+                self._fail(row, 'malformed event schema: ' + error)
+            if not (bound_rows & self._rows.keys()):
+                self.issues.append('unbound malformed event schema')
+            raise ValueError('Malformed event schema: ' + error)
         if event.event_id in self._seen:
             old = self._seen[event.event_id]
-            if old == event:
+            if _typed_equal(old, event):
                 return False
             for row in {old.row_id, event.row_id} & self._rows.keys():
                 self._fail(row, 'conflicting event identity')
