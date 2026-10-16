@@ -21,8 +21,8 @@ class RepairTests(unittest.TestCase):
         return r.run(self.csv,self.dem,self.root/name,'EPSG:26910','0.85714',**kwargs)
     def test_real_smoke_and_resume(self):
         result=self.run_job();self.assertEqual(result,dict(attempted=1,succeeded=1,failed=0,skipped=0))
-        receipt=json.loads((self.root/'run/p1/success.json').read_text())
-        attempt=self.root/'run/p1'/receipt['attempt']
+        receipt=json.loads((self.root/'run/job-00000000/success.json').read_text())
+        attempt=self.root/'run/job-00000000'/receipt['attempt']
         a=gdal.Open(str(attempt/'visibility.tif')).ReadAsArray()
         b=gdal.Open(str(attempt/'traffic.tif')).ReadAsArray()
         self.assertEqual(set(np.unique(a)),{0,1});self.assertTrue(np.array_equal(b,a.astype(np.uint64)*123))
@@ -41,14 +41,14 @@ class RepairTests(unittest.TestCase):
             name='fail'+str(index);result=self.run_job(name,executor=fail)
             self.assertEqual(result['failed'],1);self.assertEqual(result['succeeded'],0)
             self.assertEqual(len(calls),index+1)
-            attempt=next((self.root/name/'p1').glob('attempt-*'))
+            attempt=next((self.root/name/'job-00000000').glob('attempt-*'))
             self.assertTrue((attempt/'failure.json').exists())
             if index:self.assertTrue((attempt/'raw.tif').exists())
             if index==3:self.assertTrue((attempt/'weighted.tif').exists())
             self.assertFalse((self.root/name/'p1/success.json').exists())
             with self.assertRaises(ValueError):self.run_job(name,resume=True)
             self.assertEqual(self.run_job(name,resume=True,retry=True)['succeeded'],1)
-            self.assertEqual(len(list((self.root/name/'p1').glob('attempt-*'))),2)
+            self.assertEqual(len(list((self.root/name/'job-00000000').glob('attempt-*'))),2)
     def test_success_exit_missing_or_corrupt_output_rejected(self):
         for mode in ['missing','corrupt']:
             def fake(argv,directory,label):
@@ -58,12 +58,12 @@ class RepairTests(unittest.TestCase):
     def test_stale_attempt_never_accepted(self):
         def fail(argv,directory,label):raise RuntimeError('interrupted')
         self.run_job(executor=fail)
-        old=next((self.root/'run/p1').glob('attempt-*'));(old/'traffic.tif').write_bytes(b'stale')
+        old=next((self.root/'run/job-00000000').glob('attempt-*'));(old/'traffic.tif').write_bytes(b'stale')
         self.assertEqual(self.run_job(resume=True,retry=True)['succeeded'],1)
         self.assertEqual((old/'traffic.tif').read_bytes(),b'stale')
     def test_modified_completed_output_refuses_overwrite(self):
-        self.run_job();receipt=json.loads((self.root/'run/p1/success.json').read_text())
-        f=self.root/'run/p1'/receipt['attempt']/'traffic.tif';f.write_bytes(b'changed')
+        self.run_job();receipt=json.loads((self.root/'run/job-00000000/success.json').read_text())
+        f=self.root/'run/job-00000000'/receipt['attempt']/'traffic.tif';f.write_bytes(b'changed')
         with self.assertRaises(ValueError):self.run_job(resume=True)
         self.assertEqual(f.read_bytes(),b'changed')
     def test_csv_admission(self):
@@ -98,7 +98,7 @@ class RepairTests(unittest.TestCase):
     def test_interrupted_attempt_requires_explicit_retry(self):
         def interrupt(argv,directory,label):raise KeyboardInterrupt()
         with self.assertRaises(KeyboardInterrupt):self.run_job(executor=interrupt)
-        self.assertFalse((self.root/'run/p1/success.json').exists())
+        self.assertFalse((self.root/'run/job-00000000/success.json').exists())
         with self.assertRaises(ValueError):self.run_job(resume=True)
         self.assertEqual(self.run_job(resume=True,retry=True)['succeeded'],1)
     def test_wrong_weight_rejected_before_final_compression(self):
@@ -112,9 +112,68 @@ class RepairTests(unittest.TestCase):
         self.assertNotIn('compress_weighted',calls)
     def test_reserved_id_and_nonfinite_dem(self):
         self.csv.write_text(self.csv.read_text().replace('p1','LOCK'))
-        with self.assertRaises(ValueError):self.run_job()
+        self.assertEqual(r.admit_csv(self.csv,r.admit_dem(self.dem,'EPSG:26910'))[0]['storage_id'], 'job-00000000')
         ds=gdal.Open(str(self.dem),gdal.GA_Update);ds.GetRasterBand(1).Fill(float('nan'));ds=None
         with self.assertRaises(ValueError):r.admit_dem(self.dem,'EPSG:26910')
+    def test_casefold_aliases_and_reserved_names_use_distinct_storage(self):
+        ids=['p1','P1','lock','LOCK','CON','con','NUL']
+        self.csv.write_text('X,Y,TARGET_FID,AADT\n'+''.join(
+            f'{500015+30*i},5199925,{ident},123\n' for i,ident in enumerate(ids)))
+        jobs=r.admit_csv(self.csv,r.admit_dem(self.dem,'EPSG:26910'))
+        # Portable model of a case-insensitive filename lookup, not a Windows run.
+        simulated={}
+        for job in jobs:
+            key=job['storage_id'].casefold()
+            self.assertNotIn(key,simulated);self.assertNotEqual(key,'lock')
+            simulated[key]=job
+        self.assertEqual(len(simulated),len(ids))
+        result=self.run_job()
+        self.assertEqual(result,dict(attempted=7,succeeded=7,failed=0,skipped=0))
+        for job in jobs:
+            receipt=json.loads((self.root/'run'/job['storage_id']/'success.json').read_text())
+            self.assertEqual(receipt['job'],job)
+        self.assertEqual(self.run_job(resume=True)['skipped'],7)
+    def test_wrong_coordinates_same_aadt_receipt_rejected(self):
+        self.run_job()
+        receipt_path=self.root/'run/job-00000000/success.json'
+        receipt=json.loads(receipt_path.read_text())
+        receipt['job']['x']+=30
+        receipt_path.write_text(json.dumps(receipt))
+        with self.assertRaisesRegex(ValueError,'receipt job identity'):
+            self.run_job(resume=True)
+    def test_saved_job_mismatch_and_missing_binding_rejected(self):
+        self.run_job()
+        receipt_path=self.root/'run/job-00000000/success.json'
+        receipt=json.loads(receipt_path.read_text())
+        job_path=receipt_path.parent/receipt['attempt']/'job.json'
+        original=job_path.read_text();wrong=json.loads(original)
+        wrong['row']['X']='500105'
+        job_path.write_text(json.dumps(wrong))
+        with self.assertRaisesRegex(ValueError,'attempt job identity'):
+            self.run_job(resume=True)
+        job_path.write_text(original);del receipt['job']
+        receipt_path.write_text(json.dumps(receipt))
+        with self.assertRaisesRegex(ValueError,'receipt job identity'):
+            self.run_job(resume=True)
+    def test_mixed_resume_refusal_has_current_summary_and_preserves_previous(self):
+        self.csv.write_text(self.csv.read_text()+'500105,5199925,p2,123\n')
+        def fail_second(argv,directory,label):
+            if directory.parent.name=='job-00000001':
+                raise RuntimeError('controlled second-job failure')
+            r.execute(argv,directory,label)
+        self.assertEqual(self.run_job(executor=fail_second),
+                         dict(attempted=2,succeeded=1,failed=1,skipped=0))
+        summary_path=self.root/'run/summary.json'
+        previous_bytes=summary_path.read_bytes();previous=json.loads(previous_bytes)
+        with self.assertRaisesRegex(ValueError,'explicit --retry-failed'):
+            self.run_job(resume=True)
+        current=json.loads(summary_path.read_text())
+        self.assertEqual(current['status'],'refused')
+        self.assertEqual([current[k] for k in ['attempted','succeeded','failed','skipped']],[0,0,0,1])
+        self.assertNotEqual(current['invocation'],previous['invocation'])
+        self.assertEqual((summary_path.parent/(previous['invocation']+'.json')).read_bytes(),previous_bytes)
+        self.assertEqual((summary_path.parent/(current['invocation']+'.previous-summary.json')).read_bytes(),previous_bytes)
+        self.assertEqual((summary_path.parent/(current['invocation']+'.json')).read_bytes(),summary_path.read_bytes())
     def test_zero_and_max_aadt(self):
         for aadt in [0,r.MAX_AADT]:
             self.csv.write_text(f'X,Y,TARGET_FID,AADT\n500075,5199925,p1,{aadt}\n')

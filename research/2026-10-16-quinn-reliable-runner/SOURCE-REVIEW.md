@@ -11,3 +11,7 @@ Checked intentional narrowing: projected metre/north-up single-band standalone f
 Execution caught and repaired an incorrect assumption about the installed calculator's NoData marker; final tests use the actual marker and exercise maximum admitted AADT. No original script execution took place.
 
 Independent contract review by the existing source reviewers is requested through the coordinator. No additional reviewer/worker was spawned. Pending independent review is a remaining acceptance boundary, not a claim that this package has already passed it.
+
+## Successor review response
+
+The external review identified a defect in this first review: safe-looking CSV basenames were not safe against case-insensitive aliasing, and matching AADT did not bind observer coordinates. It also identified stale counters after controlled resume refusal. Those findings supersede the corresponding first-candidate acceptance. See REVIEW-RESPONSE-02.md for fixes, evidence and the remaining independent re-review boundary. Original review text is preserved above.

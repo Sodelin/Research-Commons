@@ -92,7 +92,7 @@ def admit_csv(path, dem):
             if None in row or any(v is None for v in row.values()):
                 raise ValueError('Malformed CSV row')
             ident = row['TARGET_FID']
-            if not re.fullmatch(r'[A-Za-z0-9_-]{1,80}', ident) or ident in seen or ident == 'LOCK':
+            if not re.fullmatch(r'[A-Za-z0-9_-]{1,80}', ident) or ident in seen:
                 raise ValueError('Unsafe or duplicate TARGET_FID')
             seen.add(ident)
             if not re.fullmatch(r'0|[1-9][0-9]{0,9}', row['AADT']):
@@ -106,7 +106,9 @@ def admit_csv(path, dem):
             col, line = (x-gt[0])/gt[1], (y-gt[3])/gt[5]
             if not (0 <= col < dem.RasterXSize and 0 <= line < dem.RasterYSize):
                 raise ValueError('Observer outside DEM')
-            result.append(dict(id=ident, x=x, y=y, aadt=aadt))
+            # Ordinals are injective within the byte-bound CSV, independent of raw IDs.
+            result.append(dict(id=ident, x=x, y=y, aadt=aadt,
+                               storage_id=f'job-{len(result):08d}', row=dict(row)))
     if not result:
         raise ValueError('Empty CSV')
     return result
@@ -192,15 +194,37 @@ def run(csv_path, dem_path, run_path, point_crs, curvature, resume=False, retry=
     lock = run_path/'LOCK'
     lock.mkdir()  # cooperative exclusion; never auto-remove an existing lock
     summary = dict(attempted=0, succeeded=0, failed=0, skipped=0)
+    invocation = 'invocation-'+uuid.uuid4().hex
+
+    def checkpoint(status, error=None):
+        snapshot = dict(summary, invocation=invocation, status=status)
+        if error is not None:
+            snapshot['error'] = {'type':type(error).__name__, 'message':str(error)}
+        # Each invocation retains its own final record; summary is a latest pointer/copy.
+        write_json(run_path/(invocation+'.json'), snapshot)
+        write_json(run_path/'summary.json', snapshot)
+
     try:
+        previous = run_path/'summary.json'
+        if previous.exists():
+            # Preserve even legacy/unversioned summary bytes before replacing the latest copy.
+            with open(run_path/(invocation+'.previous-summary.json'), 'xb') as archive:
+                archive.write(previous.read_bytes())
+                archive.flush()
+                os.fsync(archive.fileno())
+        checkpoint('running')
         for job in jobs:
-            jobdir = run_path/job['id']
+            jobdir = run_path/job['storage_id']
             success = jobdir/'success.json'
             if success.exists():
                 record = json.loads(success.read_text())
+                if record.get('job') != job:
+                    raise ValueError('Success receipt job identity mismatch')
                 attempt = jobdir/record['attempt']
                 if not re.fullmatch(r'attempt-[0-9a-f]{32}',record['attempt']):
                     raise ValueError('Invalid receipt path')
+                if json.loads((attempt/'job.json').read_text()) != job:
+                    raise ValueError('Saved attempt job identity mismatch')
                 for name, sha in record['hashes'].items():
                     if name not in ('raw.tif','visibility.tif','weighted.tif','traffic.tif') or digest(attempt/name) != sha:
                         raise ValueError('Completed output changed; refusing overwrite')
@@ -223,14 +247,17 @@ def run(csv_path, dem_path, run_path, point_crs, curvature, resume=False, retry=
                 hashes = pipeline(job, attempt, dem_path, dem, tools, curvature, executor)
                 if digest(dem_path) != identity['dem_sha256'] or digest(csv_path) != identity['csv_sha256']:
                     raise ValueError('Input changed during run')
-                write_json(success, {'attempt':attempt.name,'hashes':hashes})
+                write_json(success, {'attempt':attempt.name,'hashes':hashes,'job':job})
                 summary['succeeded'] += 1
             except Exception as e:
                 write_json(attempt/'failure.json', {'error':str(e),'type':type(e).__name__})
                 summary['failed'] += 1
-            write_json(run_path/'summary.json', summary)
-        write_json(run_path/'summary.json', summary)
+            checkpoint('running')
+        checkpoint('completed_with_failures' if summary['failed'] else 'completed')
         return summary
+    except BaseException as e:
+        checkpoint('interrupted' if isinstance(e, (KeyboardInterrupt, SystemExit)) else 'refused', e)
+        raise
     finally:
         lock.rmdir()
 
