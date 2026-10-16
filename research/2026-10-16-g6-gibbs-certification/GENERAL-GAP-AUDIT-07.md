@@ -1,0 +1,55 @@
+# General P1 gap audit 07: priors, admission conventions, and a failed upper-bound shortcut
+
+Date: 2026-10-16. Prepared by dot for Nolan. Status: primary-source audit plus a complete elementary hand calculation. No Lean verification, experimental evidence, novelty claim, or closure of P1.
+
+## Exact dimension convention for prior import 06
+
+The displayed theorem in PRIOR-IMPORT-06.md uses an active dimension n with n−d+1 even. If a uniform spectator is appended, call the ambient dimension n_total and retain n_active in the exact temperature threshold β≥atanh(4ε/√n_active). Only the asymptotic rate may replace n_active by n_total. The padding sentence in note 06 must not be read as retaining the exact threshold with the larger ambient dimension.
+
+Source and full import:
+https://github.com/Sodelin/Research-Commons/blob/315dd70ed55367a0963511847326e4d936ad8f25/research/2026-10-16-g6-gibbs-certification/PRIOR-IMPORT-06.md
+
+## What the further primary-source audit establishes
+
+1. Canonne and Yang, NeurIPS 2024, Theorem 1.2 / 3.1, give a classical bounded-indegree Bayesian-network identity tester with a fully described reference. Its stated sample bound is Õ(2^{d/2} n^{3/2}/ε²+n²/ε⁴). This does not supply the original two-unknown noncommuting Gibbs tester. A k-local Hamiltonian does not furnish their DAG admission.
+https://proceedings.neurips.cc/paper_files/paper/2024/file/eff4231d13b71a2859ce90242ed6ad8d-Paper-Conference.pdf
+
+2. Bluhm et al., Theorem 17, explicitly include the two-unknown-copy experiment and give O(β² n^{2k}3^k k log(n/δ)/ε⁴) single-copy Pauli measurements. The equality-versus-full-trace-norm problem follows by rescaling the far threshold. Its proof uses an ℓ∞ discrepancy among low-weight Pauli expectations at scale ε²/(β n^k).
+https://arxiv.org/html/2603.29809v1
+
+3. The exact iid hidden-hypermatching n log n prior remains unresolved after bounded searches of Bayesian-network independence/uniformity testing, higher-order Ising/Markov models, and hidden-hypermatching literature. Boolean Hidden Hypermatching communication and streaming results use different experiments. No assertion of absence or novelty follows from this search.
+
+For fixed k≥3, fixed positive β, constant failure probability, and the feasible small-ε/asymptotic regime of the reviewed family, the recorded original-problem gap remains at least
+Ω_k(n log n/ε²) versus O_k(β² n^{2k} log n/ε⁴).
+When k grows, the BCY prior import and the separately scoped noncommuting block lower bound have additional locality/temperature/measurement conditions; combine only by a maximum on their common admitted domain. Never multiply their rates. The displayed supplier upper is stated with k constant, so this audit does not claim uniform-in-k hidden constants.
+
+## An explicit obstruction to dimension-free covariance
+
+A tempting route would replace coordinatewise estimation by a quadratic test of the entire sufficient-statistic vector and assume that its covariance is bounded independently of n. The original coefficient bound does not imply that assumption.
+
+Take β=1 and the admitted 2-local diagonal Hamiltonian
+H(x)=−Σ_{i<j}x_i x_j, x_i∈{−1,+1}.
+Every pair coefficient is −1. There is no degree restriction in P1. If r spins differ from the all-plus string, its energy exceeds the ground energy by 2r(n−r). The only ground strings are all-plus and all-minus. Consequently the Gibbs probability η_n of all other strings obeys
+η_n ≤ 2^{n−1} exp(−2(n−1)) → 0.
+Indeed every nonground string has energy gap at least 2(n−1), there are at most 2^n of them, and the partition function includes the two ground contributions.
+
+Let F be any collection of L distinct odd-cardinality nonempty subsets, each of size at most k, and set φ_S(x)=∏_{i∈S}x_i. Spin-flip symmetry gives Eφ_S=0 exactly. For u=(1,…,1)/√L,
+uᵀ Cov(φ) u = E[(Σ_S φ_S)²/L] ≥ (1−η_n)L,
+because on either ground string all odd parities agree. Hence the covariance operator norm is at least (1−η_n)L. With all singleton parities L=n already diverges. With all odd Z-parities of weight≤k, L=Σ_{j≤k, j odd} binom(n,j). The same Hamiltonian is admitted for every k≥2.
+
+This disproves only the automatic covariance premise. It does not prove that this family is hard to certify, and does not rule out covariance-adaptive, localized, or other nonlinear tests.
+
+## Precise next lower-bound obligation
+
+A stronger possible route is a dense random signed degree-k diagonal Hamiltonian, rather than another disjoint-block family. Let p=binom(n,k) and
+F_s(x)=a Σ_{|S|=k} s_S φ_S(x),   P_s(x)=exp(F_s(x))/(2^n Z_s),
+Z_s=E_U exp(F_s),   H_s=−F_s/β,
+with a of order ε/√p and one sign vector s fixed before all samples. Coefficient admission is a≤β.
+
+To turn the heuristic √p/ε² testing scale into a theorem, one needs both:
+- a prior concentrated on states with ||P_s−U||_1≥ε, with quantitative constants;
+- a bound below the testing threshold for
+E_{s,s'}[(E_U exp(F_s+F_s')/(Z_s Z_s'))^T]−1
+when T is of that order.
+
+This identity is exact. The missing estimate is not supplied by orthogonality alone: partition functions fluctuate and parity products have cycle relations. Replacing exp(F_s)/Z_s by 1+F_s loses exact Gibbs admission because its logarithm generally has higher-weight terms. A Gaussian local-asymptotic analogy is not a finite-n proof. No dense-family lower bound is claimed here.
