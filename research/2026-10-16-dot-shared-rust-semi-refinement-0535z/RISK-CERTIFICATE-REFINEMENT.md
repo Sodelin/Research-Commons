@@ -15,6 +15,7 @@ This is a finite decision-theory connection to the shared engine, not a solution
 
 - [Source-backed gap map](https://github.com/Sodelin/Research-Commons/blob/4994d6a718000d567a7dc220a5471e3bf035c74b/research/2026-10-16-dot-shared-rust-semi-refinement-0535z/GAP-MAP.md).
 - [Compiled selected FiniteDecision source](https://github.com/Sodelin/Research-Commons/blob/edd37b2bb838baf71b1e8d908da1a47c409834f1/research/2026-10-16-astra-semi-finite-decision-sup-repair-0415z/FiniteDecision.lean). Relevant existing names are Semi.Statistics.risk, pair_risk_lower_bound, indistinguishable_pair_lower_bound, fibreWorstRisk, fibreMinimaxRadius, and fibreMinimaxRadius_le.
+- [COMMON fresh-locus adapter hand proof](https://github.com/Sodelin/Research-Commons/blob/5830780de535cffa2b7cbb658dfed338e278c741/research/2026-10-16-original-common-fresh-locus-adapter/ADAPTER-PROOF.md): the accompanying Lean source is uncompiled and remains a separate integration obligation.
 - [Nine-module build receipt and exact source selection](https://github.com/Sodelin/Research-Commons/blob/3d16602f107bc9b46ea4132a7809aa8885047dd4/research/2026-10-16-semi-foundations-build-certificate-0525z/README.md). Its compilation does not verify the new statements below.
 - [Existing affine.rs](https://github.com/Sodelin/Research-Commons/blob/4e556c4ae6225d18fabf30bc7d3347a468749ebc/research/2026-10-10-codex-lean-rust-parity/rust/src/affine.rs), especially Row::holds, check_witness and check_exclusion; [RC1 protocol.rs](https://github.com/Sodelin/Research-Commons/blob/4e556c4ae6225d18fabf30bc7d3347a468749ebc/research/2026-10-10-codex-lean-rust-parity/rust/src/protocol.rs).
 - Original contributor's [R0–R4 plan](https://github.com/Sodelin/Research-Commons/blob/53b9eb6d8df6f0d798c47e1bcf42f228539b7c52/research/2026-10-10-codex-lean-rust-parity/rust/notes/NATIVE-SELECTED-HISTORY-REFINEMENT-PLAN-20261011T0635Z.md). This note does not originate or close that representation gap.
@@ -39,6 +40,8 @@ For the full finite-table interpretation, provide:
 The semantic source type must remain the originally declared class. Replacing it with a finite registry changes the theorem unless registry completeness for that original class/fibre is supplied. Likewise, replacing the allowed action type with just actions represented in the observation fibre can change the minimax value.
 
 For this note's identification with the existing named fibreMinimaxRadius, X is finite as required by the compiled source, and o is a member of Set.range observe. Section 3 separately gives a lower-bound statement with arbitrary X.
+
+A risk adapter must explicitly reject empty A, empty source support I, and an observation not certified as attained. The generic AFFINE parser can accept zero-dimensional or empty-row systems; that behavior must not invent an empty-fibre or infinite-radius convention absent from the Lean definitions. Generic finite real losses, including negative values, are allowed here. Do not add a [0,1] range guard unless the particular declared loss contract requires it.
 
 ## 2. Finite upper bound
 
@@ -157,7 +160,7 @@ This reduction is a mathematical derivation of the certificate schema. The Rust 
 
 ### Existing resource policy
 
-RC1 bounds AFFINE dimension by eight, input rows by sixty-four and the projection cap by 4096. A direct call to the library and a call through RC1 are different interfaces; do not silently enlarge protocol limits.
+RC1 bounds AFFINE dimension by eight, input rows by sixty-four and the projection cap by 4096. It also requires canonical rational input with numerator/denominator magnitudes at most 256 bits, preceded by a 78-decimal-digit allocation guard; requests are at most 65,536 bytes and certificates at most 4 MiB. Certificate rationals and intermediate arithmetic do not inherit the input-only 256-bit restriction, but the whole certificate frame remains bounded. These details are explicit in protocol.rs lines 11–12 and 35–52. A direct call to the library and a call through RC1 are different interfaces; do not silently enlarge protocol limits.
 
 A proposed bounded RC1 packet must satisfy these existing bounds for each direction. Outside them, it must keep the explicit unsupported/resource-UNKNOWN status or use a separately reviewed interface. Resource exhaustion never certifies a lower bound, infeasibility of the mathematical model, or source nonexistence.
 
