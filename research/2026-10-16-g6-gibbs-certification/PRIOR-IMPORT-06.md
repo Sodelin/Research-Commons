@@ -44,3 +44,10 @@ These are separate lower-bound families, so their bounds can be maximized where 
 The general noncommuting two-unknown P1 upper bound remains supplied by Bluhm et al., Theorem 17:
 https://arxiv.org/html/2603.29809v1
 No bounded-degree Bayesian-network upper bound is asserted for general k-local Gibbs states: neither a bounded-indegree DAG nor a classical joint sample of all noncommuting observables is supplied by k-locality. Closing that statistical/measurement gap is still the main task.
+
+## Addendum: independent review and exact locator (2026-10-16)
+
+The embedding and transfers above now have a scoped independent hand-proof PASS. The supplier's full statistical lower-bound proof remains an attributed import, not independently reproved here. Exact review:
+https://github.com/Sodelin/Research-Commons/blob/7ced6c47731396aad689718cfd25c66c1797149f/research/2026-10-16-g6-gibbs-certification/BCY-GIBBS-IMPORT-INDEPENDENT-REVIEW-09.md
+
+Correction to the earlier locator: the displayed source density is on PDF page 7 (zero-based page index 6). For spectator padding, choose n_active in {n_total,n_total−1} with n_active−d+1 even and evaluate the exact temperature threshold and degree regime at n_active. Only the asymptotic rate replaces n_active by n_total. The earlier body is retained as the historical source-check record; this addendum governs those two clarifications. No Lean verification or general P1 closure is claimed.
