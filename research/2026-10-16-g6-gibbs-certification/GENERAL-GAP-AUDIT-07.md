@@ -71,3 +71,32 @@ Independent hand review of the clarified source:
 https://github.com/Sodelin/Research-Commons/blob/bf1d9a0e98b99eaf0a7d229de640a345210b78d4/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-UPPER-13-INDEPENDENT-REVIEW.md
 
 The prior body is preserved above as dated history. This addendum corrects its upper-bound scope; its covariance obstruction and exact normalized lower-bound obligation are unaffected.
+
+## Accepted dense lower bound and updated gap, 16 October 2026
+
+The dense lower-bound obligation above is now supplied at scoped independent hand-proof level by note 14. Its proof conditions the original sign prior on individual normalization events at amplitudes b and 4b. A finite convex tangent extension agrees with the paired log partition function on every retained pair. Its gradient bound and one-sided entropy concentration control the retained mixture without reintroducing the divergent unconditioned moment.
+
+Exact scope: fix integer k>=3, D=binom(n,k) sufficiently large depending only on k, 0<epsilon<=1/(128*9^k), and beta>=8*3^k*epsilon/sqrt(D). Then equality versus full trace-norm separation epsilon in the original two-unknown bounded-Pauli-coefficient class requires Omega_k(sqrt(D)/epsilon^2) worst-case TOTAL copies at error<=1/3, even with collective measurements and adaptive source allocation. Expected stopping-time budgets are not covered. Fixed positive beta eventually satisfies admission. This is not a uniform growing-k claim.
+
+Preserved proof:
+https://github.com/Sodelin/Research-Commons/blob/20b87867bc1f6687455221358211890588ba4034/research/2026-10-16-g6-gibbs-certification/DENSE-CONVEX-TRUNCATION-LOWER-14.md
+Independent complete hand review:
+https://github.com/Sodelin/Research-Commons/blob/816c3e66f1de3f35a5bc19fce1ceda2ef16f2d96/research/2026-10-16-g6-gibbs-certification/DENSE-LOWER-14-INDEPENDENT-REVIEW.md
+Readable result:
+https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.t14a2fheg3v7
+
+At fixed k>=3 and fixed positive beta in this small-epsilon regime, the updated recorded collective gap is Omega_k(n^(k/2)/epsilon^2) versus O_k(n^k log(2+beta n^k/epsilon)/epsilon^2), with the usable upper minimized against other applicable bounds. All independently admitted lower families combine by maximum, never multiplication. The k=3 dense consequence is n^(3/2)/epsilon^2. General P1 remains OPEN. No Lean verification or numerical experiment is claimed.
+
+### Focused prior audit accompanying acceptance
+
+The combined result's historical novelty remains unresolved. A focused search on 16 October covered dense Ising uniformity/identity testing, higher-order Ising/Markov models and high-dimensional exponential-family testing. It did not identify an exact previous statement with all of note 14's hypotheses. This is bounded negative evidence, not a novelty certificate.
+
+Daskalakis, Dikkala and Kamath, Testing Ising Models, ECCC revision 2 (2017), Section 8 Theorem 19, proves a linear-in-n lower bound with symmetric-KL separation using random matchings; Section 1's dense-construction discussion is contextual prior. That pair-interaction theorem does not itself give the degree-k n^(k/2) trace-distance statement. A large symmetric-KL distance cannot simply be converted into the required trace-distance lower bound.
+https://eccc.weizmann.ac.il/report/2017/006/revision/2/download/
+
+Jin, Wang and Lu (ICML 2020) study simple zero-field ferromagnetic pairwise models and graph-structure detection, including oracle-model computational bounds. Their primary abstract's scope does not establish the signed higher-order iid Gibbs claim:
+https://proceedings.mlr.press/v119/jin20g.html
+
+The BCY2022 Bayesian-network prior import is already retained separately with its exact Gibbs embedding and admission limits. Standard Rademacher-mixture, Fourier, hypercontractive, convex-extension and entropy methods are credited as such. Further citation-chain and general testing-method comparison remains necessary before any claim of originality.
+
+The next substantive target is the optimal general copy gap: an applicable sharper collective upper or a stronger admitted quantum lower, with single-copy access and runtime kept distinct. Earlier dated bodies remain preserved for provenance.
