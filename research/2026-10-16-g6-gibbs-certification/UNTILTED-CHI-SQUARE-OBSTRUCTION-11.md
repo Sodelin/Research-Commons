@@ -94,3 +94,9 @@ Exact conditioning construction:
 https://github.com/Sodelin/Research-Commons/blob/fa610a15f5e8d4c579d192f550758617fb4735b8/research/2026-10-16-g6-gibbs-certification/DENSE-UNTILTED-GATES-10.md
 
 General P1 remains open. No √D/ε² lower bound, new upper bound, empirical claim, or novelty claim follows from this failed-route result.
+
+## Independent manual review record, 16 October 2026
+
+A separate dot mathematical reviewer read the complete immutable candidate at commit 3da3992cdca0901ddaed1b6fa5d5599aef13fc0d and returned scoped hand-proof PASS. The reviewer checked the Hoeffding and union bounds, prior likelihood-ratio comparison, sampling-without-replacement estimate, shell partition-function bound, all-plus probability, singleton-transcript chi-square lower bound, and final dominance using sqrt(D)/n tending to infinity.
+
+This acceptance retains fixed integer k>2, fixed b>0, fixed c0>0 and n tending to infinity. It makes no jointly uniform b-to-zero claim, no TV distinguishability conclusion, and no claim against the normalization-good conditioned prior. The original dated candidate body above is preserved as history; its initial unreviewed status is superseded only within this stated hand-review scope. No Lean verification, execution, novelty conclusion, or general P1 closure is asserted.
