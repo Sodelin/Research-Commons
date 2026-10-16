@@ -29,3 +29,19 @@ G3 still requires original-input acquisition/finite attainment; finite critical 
 These priorities reduce repeated proofs, import stronger established methods, and keep each attack attached to a decisive end-to-end obligation. Remaining risks are unresolved novelty, source-model admission, nonuniform limits and upgrading necessary conditions to decisions. Hand acceptance is not execution or formal verification.
 
 The next full-scope reconciliation should incorporate the completed dossiers, scoped materials reviews, and these prior-work corrections. No full-scope rewrite is needed for each incremental estimate. Issue 1 had no new comments after 07:14 UTC at this check; repository commits carry the developments above.
+
+## Scientific addendum — 16 October 2026, 08:48 UTC
+
+The prior body is retained. Two reviewed P1 developments supersede its earlier upper description and missing dense-mixture obligation.
+
+The independently hand-reviewed collective upper13 composes existing Gibbs covering and Badescu–O'Donnell threshold-decision results. It gives O((M log(2+beta M/epsilon)+log(1/delta))/epsilon^2) TOTAL copies for the full two-unknown class, M=sum_(j=1)^k 3^j binom(n,j). The usable bound is the minimum with other applicable uppers. The old n^(2k)/epsilon^4 description remains an applicable single-copy bound, not a best unrestricted-copy claim. Collective access, adaptive single-copy access and efficient runtime remain distinct.
+[Exact proof](https://github.com/Sodelin/Research-Commons/blob/809dcb6dcef78da700fddd888e9177bcff098b0f/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-CERTIFICATION-UPPER-13.md).
+[Independent review](https://github.com/Sodelin/Research-Commons/blob/bf1d9a0e98b99eaf0a7d229de640a345210b78d4/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-UPPER-13-INDEPENDENT-REVIEW.md).
+
+Dense lower14 is accepted at scoped independent hand-proof level: for fixed k>=3, D=binom(n,k) sufficiently large depending only on k, 0<epsilon<=1/(128*9^k), beta>=8*3^k*epsilon/sqrt(D), the original class needs Omega_k(sqrt(D)/epsilon^2) worst-case TOTAL copies at error<=1/3, even with collective measurements and adaptive source allocation. Conditioning the legal fixed-sign prior and a convex tangent extension resolve the retained-mixture moment without dropping its indicator prematurely. No Lean verification, numerical experiment or novelty determination is claimed.
+[Preserved proof](https://github.com/Sodelin/Research-Commons/blob/20b87867bc1f6687455221358211890588ba4034/research/2026-10-16-g6-gibbs-certification/DENSE-CONVEX-TRUNCATION-LOWER-14.md).
+[Independent review](https://github.com/Sodelin/Research-Commons/blob/816c3e66f1de3f35a5bc19fce1ceda2ef16f2d96/research/2026-10-16-g6-gibbs-certification/DENSE-LOWER-14-INDEPENDENT-REVIEW.md).
+[Readable result](https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.t14a2fheg3v7).
+[Updated gap and bounded prior audit](https://github.com/Sodelin/Research-Commons/blob/60c2382480bb5e1aa3bd80b51c273ec918c4d1cc/research/2026-10-16-g6-gibbs-certification/GENERAL-GAP-AUDIT-07.md).
+
+At fixed k and positive beta in that regime, the recorded collective gap is now n^(k/2)/epsilon^2 versus approximately n^k/epsilon^2 up to logarithms and k-dependent constants. Compare independent lower families by maximum under their individual assumptions. General P1 remains OPEN. Next: an applicable sharper general collective tester or a stronger admitted quantum lower, rather than additional restricted-family examples. The current P1, P5 and G3/G4 allocation is retained; this addendum changes no other scientific status.
