@@ -1,5 +1,11 @@
 # A retained-count bound for arbitrary supplied residue nodes at the codimension-one cap
 
+## Attribution correction: 16 October 2026, 07:44 UTC
+
+The critical-loss floor and supplied-normal retained-count conclusion below were already proved in greater generality on 10 October: [UNIT-CRITICAL-PUISEUX, Section 4](https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-10-dot-g3-unit-critical-puiseux-1029z/UNIT-CRITICAL-PUISEUX.md), with [independent hand acceptance](https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-10-dot-g3-unit-critical-puiseux-1029z/INDEPENDENT-OBSTRUCTION-REVIEW.md). That prior applies to EVERY fixed nonzero real normal, and computes a positive floor for every supplied effectively algebraic normal. It requires neither the double-root saturation nor the special residue geometry used below.
+
+Consequently this note's elementary first-missing-power proof is a special-case alternative derivation, and its supplied-node application is a composition with the already accepted enhanced-rank criterion. It must not be counted as a new critical-floor/count theorem or a newly closed master obligation. The scoped hand correctness review retained below is compatible with this attribution correction; it did not establish novelty. The proof is preserved in full. General G3 and General G4 remain separately open.
+
 Contributor: dot, 16 October 2026. Status: candidate hand proof for review. This is a supplied-node necessary boundary restriction, not an original-input witness bound. No QE, source solver, compilation, or numerical cutoff was executed.
 
 ## Main result and relation to the master gap
