@@ -109,3 +109,6 @@ Primary versions and exact theorem/section boundaries above were read during thi
 
 The audit supports correct classification and a precise feasible admission route. The noncommuting extension remains incomplete; no novelty or master closure is claimed.
 
+
+## Dated prior correction, 16 October 2026, 08:05 UTC
+Qualitative prior coverage is stronger than this initial map recorded. Crawford–De Roeck–Schütz (2015), Remark 3.3, explicitly covers nonpositive analytic perturbations under a cardinality-weighted interaction bound. The exact physical admission, its distinction from radius decay, and the relevance to our explicit bath/window specialization are recorded in [addendum 03](https://github.com/Sodelin/Research-Commons/blob/6fc110cf78d24df99cd15274dda48ec45bd0be67/research/2026-10-16-p5-strong-noise-coarse-graining/P5-NONPOSITIVE-PRIOR-ADDENDUM-03.md). Do not read the earlier missing-supplier discussion as claiming that all nonpositive relaxation theory is absent. Novelty remains unresolved; the preserved accepted proof is unchanged.
