@@ -1,0 +1,90 @@
+{
+  "schema": "semi_finite_decision_sup_application_repair_v2",
+  "status": "SOURCE_CANDIDATE_UNCOMPILED_FRESH_REVIEW_PENDING",
+  "created_utc": "2026-10-16T04:15:11.353800+00:00",
+  "diagnostic_stage": "ACTUAL_COMPILER_DIAGNOSTIC_RELAY_NOT_PERSONAL_RAW_LOG_READ",
+  "baseline": {
+    "commit": "8e7d824b0b2adeb95ad52ba0399568bc275b0dfa",
+    "file": "FiniteDecision.lean",
+    "bytes": 7556,
+    "sha256": "32b93d25a3c580960eb21dd98329f28aafe6f29bfe8e8082eb6859a8df07e701"
+  },
+  "successor": {
+    "file": "FiniteDecision.lean",
+    "bytes": 7829,
+    "sha256": "96f65cf107debc17698930824ef6c7e0d4b9a42f073b491a153b016dfa4658ef"
+  },
+  "patch": {
+    "file": "FiniteDecision.patch",
+    "bytes": 632,
+    "sha256": "dab878e64078ab96fc18b0ab904b27204ccc2cc993d194a6e57e50fce91a8344",
+    "hunks": 1
+  },
+  "report": {
+    "file": "REPAIR-REPORT-02.md",
+    "bytes": 4140,
+    "sha256": "54989e28c3198e35dd73e4a1866fc974fbd17217966442d2f41392460c1d65f3"
+  },
+  "exact_change": {
+    "original_line": 161,
+    "scope": "explicit definitional target and complete function in final le_sup application only",
+    "proof": "exactDataMinimaxFloor_le_rule"
+  },
+  "retained_selection": {
+    "FiniteOrbit": {
+      "commit": "8f8eaa60faae0a7398e6d561d0fc23dad08529a5",
+      "bytes": 6286,
+      "sha256": "538a0c3fdbb82e93c51f70f7d26e590ca309797da72ffc05938b7e0b84676cf9"
+    },
+    "CyclicGrid": {
+      "commit": "2d8f5b6444e57f60eae6317d47cbfc30a7fd6057",
+      "bytes": 3447,
+      "sha256": "55daccdefae9bee719462c83fb56b4d53f072da56bd9257a6f70cadf4e0ab4b1"
+    },
+    "FourierIntensity": {
+      "commit": "c2debcaf7b67d8f9862a3490d2787d5b24046770",
+      "bytes": 6316,
+      "sha256": "ac9b07a5b354fc1c9dbc71f6b418cbc2949650e67da0a8ca6a5c9e275c076c01"
+    },
+    "OrbitHamming": {
+      "commit": "b82da5c0422a686d6df12c4818bb1ab40b0af5d5",
+      "bytes": 3815,
+      "sha256": "bb23412a66ec9e5abb3e07666242954054c40c1cb5aa7fdd6bd59cc0bf318b08",
+      "stage": "SOURCE_CANDIDATE_UNCOMPILED_REVIEW_PENDING"
+    }
+  },
+  "invariants": {
+    "one_hunk": true,
+    "inverse_replacement_recovers_baseline": true,
+    "independent_unified_patch_replay_matches": true,
+    "every_other_body_and_byte_unchanged": true,
+    "statements_assumptions_imports_options_definitions_unchanged": true,
+    "earlier_proof_repairs_and_warning_only_code_preserved": true,
+    "retained_files_active_and_used_leaves_untouched": true
+  },
+  "api_source": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "path": "Mathlib/Data/Finset/Lattice/Fold.lean",
+    "bytes": 32514,
+    "sha256": "79b80dd5aa12886d31c582ab00585627dc4e7f1d7607c7b707484f38d95ce2f4",
+    "git_blob": "399d42aaf91c1b9f37a1d27743e9ef104e4689db",
+    "le_sup_line": 551
+  },
+  "supplied_diagnostics": {
+    "stdout_bytes": 2857,
+    "stdout_sha256": "c657522984d1127a480c5f41c59af16b81708944f9f5aad0237b3acec16c3b25",
+    "command_receipt_bytes": 2599,
+    "command_receipt_sha256": "fce080a2a5c6c56737401666af7962a376cc65f1df4a363b49894eb93bbfb50a",
+    "compiler_exit": 1,
+    "runner_stop": null,
+    "runner_error": null,
+    "final_mandatory_custody": "PENDING_AT_SUPPLIED_CHECKPOINT"
+  },
+  "compiler_runs_by_this_repair": 0,
+  "checker_runs_by_this_repair": 0,
+  "acquisitions": 0,
+  "runtime_admission": false,
+  "canonical_adoption": false,
+  "next_action": "Focused independent source review; any actual desktop recheck is separately selected after mandatory current custody, never a consumed-record replay."
+}

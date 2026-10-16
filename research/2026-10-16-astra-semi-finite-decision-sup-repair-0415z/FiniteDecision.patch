@@ -1,0 +1,16 @@
+--- a/source/Semi/Statistics/FiniteDecision.lean
++++ b/source/Semi/Statistics/FiniteDecision.lean
+@@ -158,7 +158,12 @@
+   apply (Finset.sup'_le_iff Finset.univ_nonempty _).2
+   intro o _
+   exact (fibreMinimaxRadius_le observe loss o (rule o)).trans
+-    (Finset.le_sup' _ (Finset.mem_univ o))
++    (by
++      change fibreWorstRisk observe loss o (rule o) ≤
++        Finset.univ.sup' Finset.univ_nonempty
++          (fun p : Set.range observe => fibreWorstRisk observe loss p (rule p))
++      exact Finset.le_sup' (fun p : Set.range observe =>
++        fibreWorstRisk observe loss p (rule p)) (Finset.mem_univ o))
+ 
+ end Global
+ 
