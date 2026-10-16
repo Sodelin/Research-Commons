@@ -1,0 +1,92 @@
+{
+  "schema": "semi_finite_orbit_source_repair_v1",
+  "status": "SOURCE_CANDIDATE_UNCOMPILED_FRESH_REVIEW_PENDING",
+  "baseline_commit": "55eecf2a337a43c0a9b958592dde1e50a6bf405d",
+  "baseline_path": "source/Semi/Core/FiniteOrbit.lean",
+  "baseline_bytes": 6097,
+  "baseline_sha256": "4f02600853fdf56aa349194b359a5813d1d4672ecb3474f8b286a913426fe2f4",
+  "successor": {
+    "file": "FiniteOrbit.lean",
+    "bytes": 6286,
+    "sha256": "538a0c3fdbb82e93c51f70f7d26e590ca309797da72ffc05938b7e0b84676cf9"
+  },
+  "patch": {
+    "file": "FiniteOrbit.patch",
+    "bytes": 1064,
+    "sha256": "98efd9fddcf50097c5d85c2b1bdec328826ec75103bb80d49b6e2256fe706a38"
+  },
+  "exact_edits": [
+    {
+      "original_line": 75,
+      "scope": "orbitDistance_comm proof only",
+      "change": "Replace reverse-rule simp with explicit map_inv, Equiv.apply_symm_apply cancellation and simp only on that proven equality."
+    },
+    {
+      "original_line": 148,
+      "scope": "quotientDistance_eq_zero proof only",
+      "change": "Lambda-bind each implication and explicitly select s := M.orbitSetoid for Quotient.sound and Quotient.exact."
+    }
+  ],
+  "invariants": {
+    "imports_unchanged": true,
+    "statements_assumptions_definitions_unchanged": true,
+    "all_other_bytes_equal_under_exact_inverse_replacements": true,
+    "resource_options_unchanged": true,
+    "frozen_file_untouched": true,
+    "used_build_leaf_untouched": true,
+    "nonfatal_warning_sites_not_changed": true
+  },
+  "supplied_failure_evidence": {
+    "stage": "ACTUAL_DESKTOP_COMPILER_FAILURE_RELAYED_BY_EXISTING_ROUTE_NOT_A_PERSONAL_RAW_LOG_READ",
+    "stdout_bytes": 1931,
+    "stdout_sha256": "071180133ed95cd035f47ec434fa40d0ac2609200f33e3b1745546cc77b287be",
+    "command_receipt_bytes": 2571,
+    "command_receipt_sha256": "cdac77a8011672269b065c714dda66ac6d27fc02ac67ab9cac3b29574d256a45",
+    "failed_module": "Semi.Core.FiniteOrbit",
+    "errors": [
+      "original line75 nested simp maximum recursion depth",
+      "original line148 unbound quotient setoid in Quotient.sound application"
+    ],
+    "later_modules_and_final_audit": "NOT_REACHED"
+  },
+  "inspected_api_sources": [
+    {
+      "repository": "leanprover-community/mathlib4",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Algebra/Group/End.lean",
+      "bytes": 28870,
+      "sha256": "75392db07b32e332a1a6b96c01782001696116eaf44ce11dc834d3a3aeaecb2a",
+      "git_blob": "f2ad7a65fbacbf4a62ed3cef00c637a585a695ae"
+    },
+    {
+      "repository": "leanprover-community/mathlib4",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Algebra/Group/Hom/Defs.lean",
+      "bytes": 44191,
+      "sha256": "5702d3d62c840521603b2ce46c270d3c0931581c4b5cd2f2c946702622623caa",
+      "git_blob": "5aa3b8cc69dd7572c03f0c1a48469221a8434ccb"
+    },
+    {
+      "repository": "leanprover-community/mathlib4",
+      "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "path": "Mathlib/Logic/Equiv/Defs.lean",
+      "bytes": 42363,
+      "sha256": "6c741bd9c0b2f3dc1e5648eede1cce41f94598769844e7d5d32b0f2102afb0e0",
+      "git_blob": "63063f27c56b6500a74bd4f0a61af94837c4dceb"
+    },
+    {
+      "repository": "leanprover/lean4",
+      "ref": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+      "path": "src/Init/Core.lean",
+      "bytes": 102417,
+      "sha256": "8537e234659a281a8f49cc91e2f48c17b6faeacb852d1c4ba3a09b6b5e45ab20",
+      "git_blob": "c00f44d589c186526ee811958ab745a2b1078de6",
+      "binding": "Held source Git blob independently matched the official pinned GitHub src/Init/Core.lean response during this repair."
+    }
+  ],
+  "compiler_runs_by_this_repair": 0,
+  "checker_runs_by_this_repair": 0,
+  "runtime_admission": false,
+  "canonical_adoption": false,
+  "next_action": "Independent review of these exact two proof edits; any later desktop check requires a fresh explicitly selected finite record, never replay of the consumed job."
+}

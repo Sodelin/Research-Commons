@@ -1,0 +1,24 @@
+--- frozen/source/Semi/Core/FiniteOrbit.lean
++++ repair-r1/source/Semi/Core/FiniteOrbit.lean
+@@ -72,7 +72,10 @@
+     calc
+       M.orbitDistance a b ≤ M.distance a (M.action g⁻¹ b) := M.orbitDistance_le _ _ _
+       _ = M.distance (M.action g a) b := by
+-        simpa [← Equiv.Perm.mul_apply, ← map_mul] using
++        have hcancel : M.action g (M.action g⁻¹ b) = b := by
++          rw [map_inv M.action g]
++          exact (M.action g).apply_symm_apply b
++        simpa only [hcancel] using
+           (M.invariant g a (M.action g⁻¹ b)).symm
+       _ = M.distance b (M.action g a) := M.symmetric _ _
+       _ = M.orbitDistance b a := hg.symm
+@@ -145,7 +148,8 @@
+   refine Quotient.inductionOn₂ a b (fun x y => ?_)
+   change M.orbitDistance x y = 0 ↔ Quotient.mk M.orbitSetoid x = Quotient.mk M.orbitSetoid y
+   rw [M.orbitDistance_eq_zero]
+-  exact ⟨Quotient.sound, Quotient.exact⟩
++  exact ⟨fun h => Quotient.sound (s := M.orbitSetoid) h,
++    fun h => Quotient.exact (s := M.orbitSetoid) h⟩
+ 
+ end FiniteOrbitGeometry
+ end Semi.Core
