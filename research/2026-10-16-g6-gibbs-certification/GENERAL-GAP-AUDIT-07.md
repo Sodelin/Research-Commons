@@ -115,3 +115,15 @@ Classical primary supplier:
 https://www.cs.purdue.edu/homes/pvaliant/closeness.pdf
 
 At fixed k>=3 and constant epsilon, beta=O_k(n^k log n) suffices for the n^(2k/3) lower. This excludes an O_k(sqrt(D)/epsilon^2) upper uniform in beta, even allowing polylogarithmic factors. It does not strengthen the fixed-beta theorem. Fixed-beta optimal copies, varying-beta optimal copies, adaptive single-copy measurements and efficient implementation remain distinct unresolved targets. The existing collective upper13 remains valid. No novelty, Lean verification, experiment or P1 closure is claimed.
+
+
+## 16 October 2026, 09:11 UTC — reviewed quantum single-copy prior import
+
+The independently hand-reviewed quantum shell composition imports Chen–Huang–Li–Liu, arXiv:2204.07155v2, Theorem 6.1. For r=floor(k/2), d=binom(n,r) sufficiently large, 0<epsilon<=1/24, L=d^(3/2)/epsilon^2, lambda=n log2+log(100L), and beta>=n lambda+d log(4d), adaptive single-copy Gibbs certification needs Omega(L) worst-case TOTAL copies. Only classical information persists between successive single-copy measurements. In particular k=2 gives n^(3/2)/epsilon^2 in this high inverse-temperature regime. It is not a collective lower bound or fixed-beta improvement. Compare applicable lower bounds by maximum with their measurement and temperature conditions retained.
+
+Exact proof: https://github.com/Sodelin/Research-Commons/blob/fdf20f9f9315aa063d2a258db20f7d4886726dbf/research/2026-10-16-g6-gibbs-certification/QUANTUM-SHELL-SINGLE-COPY-IMPORT-17.md
+Independent review: https://github.com/Sodelin/Research-Commons/blob/5e4790a425051383f11dfd70d31ea888949e6661/research/2026-10-16-g6-gibbs-certification/QUANTUM-SHELL-17-INDEPENDENT-REVIEW.md
+Primary theorem: https://arxiv.org/html/2204.07155v2#S6
+Readable consolidated bounds: https://docs.google.com/document/d/1xAB16V_01daJzAWHVOYEPEOv0_UyuLMKVFjHVeAaHew/edit?tab=t.omtn33643d3s
+
+This is an attributed theorem import and hand-checked reduction, with no Lean, experiment, exhaustive novelty audit or General P1 closure claim. All earlier text remains as dated history.
