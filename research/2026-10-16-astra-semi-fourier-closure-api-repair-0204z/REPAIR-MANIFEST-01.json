@@ -1,0 +1,71 @@
+{
+  "schema": "semi_fourier_closure_api_repair_v1",
+  "status": "STATIC_API_FINDING_NOT_AN_ACTUAL_FOURIER_COMPILER_DIAGNOSTIC",
+  "evidence_stage": "SOURCE_CANDIDATE_UNCOMPILED_FRESH_REVIEW_PENDING",
+  "baseline_commit": "55eecf2a337a43c0a9b958592dde1e50a6bf405d",
+  "baseline_path": "source/Semi/Diffraction/FourierIntensity.lean",
+  "baseline_bytes": 5932,
+  "baseline_sha256": "6bc1f4c653a37336c03c38b4db0fd02b86276c25131a273817496255fb12503c",
+  "retained_repairs": {
+    "finite_orbit": {
+      "commit": "8f8eaa60faae0a7398e6d561d0fc23dad08529a5",
+      "bytes": 6286,
+      "sha256": "538a0c3fdbb82e93c51f70f7d26e590ca309797da72ffc05938b7e0b84676cf9"
+    },
+    "cyclic_grid": {
+      "commit": "2d8f5b6444e57f60eae6317d47cbfc30a7fd6057",
+      "bytes": 3447,
+      "sha256": "55daccdefae9bee719462c83fb56b4d53f072da56bd9257a6f70cadf4e0ab4b1"
+    }
+  },
+  "successor": {
+    "file": "FourierIntensity.lean",
+    "bytes": 5963,
+    "sha256": "ca54ff7c457432db4bf5512908a90feb21b2c4a479553814fb7a9cb2e7b93c4e"
+  },
+  "patch": {
+    "file": "FourierIntensity.patch",
+    "bytes": 496,
+    "sha256": "7133b17aaca72b5c2b5b2afe67a73181f5f8c5394864ccfc135cbf8038c86eec"
+  },
+  "report": {
+    "file": "REPAIR-REPORT-01.md",
+    "bytes": 3481,
+    "sha256": "a1850e85e11ce525357652cb7d3b62b856e3af129896480dc594120bd5a3bf77"
+  },
+  "exact_edit": {
+    "original_line": 134,
+    "old": "    apply Subgroup.closure_le.mpr",
+    "new": "    apply (Subgroup.closure_le (K := intensityStabilizer N)).mpr",
+    "existing_target": "symmetries N ≤ intensityStabilizer N"
+  },
+  "invariants": {
+    "patch_hunks": 1,
+    "changed_lines": [
+      134
+    ],
+    "inverse_replacement_recovers_original": true,
+    "independent_unified_patch_replay_matches": true,
+    "all_other_bytes_statements_assumptions_definitions_imports_options_unchanged": true,
+    "prior_repairs_unchanged": true,
+    "frozen_source_and_active_used_leaves_untouched": true
+  },
+  "api_source": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "path": "Mathlib/Algebra/Group/Subgroup/Lattice.lean",
+    "bytes": 28505,
+    "sha256": "feb594cb9ff4164130e0e05f21495cea51fcc74776e833f75116429549a4beab",
+    "git_blob": "39795007baa68c35eac387377724294f9d37ec05",
+    "closure_le_line": 355,
+    "existing_named_K_application_line": 384
+  },
+  "fourier_compiler_diagnostic": null,
+  "fourier_compilation_in_supplied_failed_sequence": "NOT_ATTEMPTED",
+  "compiler_runs": 0,
+  "checker_runs": 0,
+  "acquisitions": 0,
+  "runtime_admission": false,
+  "canonical_adoption": false,
+  "next_action": "Focused independent source review, then any fresh selected bounded desktop continuation through the existing sole operator; no consumed record replay."
+}

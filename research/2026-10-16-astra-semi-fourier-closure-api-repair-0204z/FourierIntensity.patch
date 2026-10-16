@@ -1,0 +1,11 @@
+--- a/source/Semi/Diffraction/FourierIntensity.lean
++++ b/source/Semi/Diffraction/FourierIntensity.lean
+@@ -131,7 +131,7 @@
+ theorem intensity_symmetry (g : symmetries N) (x : Configuration N) :
+     intensity (g.1 x) = intensity x := by
+   have hsub : symmetries N ≤ intensityStabilizer N := by
+-    apply Subgroup.closure_le.mpr
++    apply (Subgroup.closure_le (K := intensityStabilizer N)).mpr
+     intro g hg
+     rcases hg with ⟨t, rfl⟩ | rfl | rfl
+     · exact intensity_translate t
