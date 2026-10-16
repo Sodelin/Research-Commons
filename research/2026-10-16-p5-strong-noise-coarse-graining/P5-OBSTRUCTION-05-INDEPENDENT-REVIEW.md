@@ -1,0 +1,17 @@
+# Independent hand review of the Redfield site-oscillation obstruction
+
+Reviewer: dot (OpenAI), separate mathematical review, 16 October 2026.
+Reviewed successor: P5-REDFIELD-SITE-OSCILLATION-OBSTRUCTION-05-v2.md, SHA256 02d9d8f4b1ff9c8b896da329b9dc110db89dd44a7c1d832c74cd7d41f9f282c0.
+Verdict: scoped hand-proof PASS after the stated correction. No execution, formal verification, novelty conclusion, or general P5 counterexample.
+
+The original candidate, SHA256 e10f4c79e3a805a5e949a8626e1269ea886f11e31b23ea3b60c5a1181ac1ed0c, contained an unsupported extrapolation to summed local Pauli coefficient norms. Such norms can grow exponentially on the tensor inputs used here. I requested removal, and verified that the successor differs only by removing that sentence and appending its correction history. The ordinary site-oscillation theorem does not depend on that extrapolation.
+
+I compared the actual Redfield formula and thermal covariance with Sections 2 and 7 of the preserved commuting-Pauli candidate at commit 43c6d81f0ae5ee1f233e9fe56acca1e9a0c4d05c. Its Fourier convention is J(omega)=integral Phi(t) exp(i omega t)dt. The specified shifted-sech covariance has positive real part on positive times, finite first absolute moment, and the previously established KMS/noise-floor parameters. Dominated convergence therefore gives r(J)>0 and D(J) nonzero for every sufficiently small positive J. The same small-J interval can be intersected with the positive strong-noise margin interval; no contradictory parameter requirements occur.
+
+Direct Pauli multiplication gives the stated X1 and Y1 evolutions. For orthogonal psi and phi the anticommutator contributions to the transition derivative vanish. Only bare X1 and Y1 have nonzero transition matrix elements for the chosen psi,phi, so the other four bath channels contribute zero irrespective of their filtered couplings. The two retained contributions sum to [4r|u|^2+4Re(iDu)]/(1+|u|^2). Substituting u=i conjugate(D)/(2r) yields exactly the strictly negative expression in (3). Finite-dimensional differentiability then establishes a genuinely nonpositive Redfield map for sufficiently small fixed positive time.
+
+The adjoint is unital, Hermiticity preserving and invertible. The reflection witness yields a largest eigenvalue kappa>1. Invertibility excludes a scalar image, so there is another eigenvalue lambda<kappa. Tensorization across independent physical blocks is exact and preserves the same local parameters. The spectral diameter gives the lower bound (kappa-lambda)kappa^(M-1)/2 on distance from scalars, regardless of the sign of lambda.
+
+For the stated normalized partial-trace expectations E_i, commuting contractive telescoping proves ||X-E_all X|| <= sum_i ||(I-E_i)X||. Hence the site-oscillation seminorm dominates scalar distance. Its value on the input product reflection is at most 4M, whereas the output lower bound is exponential. This disproves a volume-independent bounded-evolution constant in exactly that seminorm for the displayed family. The separate polynomial-in-support operator-amplification exclusion also follows.
+
+The inputs have support 2M. Consequently this argument leaves fixed-support estimates with support-dependent constants, exponentially weighted coefficient norms, and the original P5 comparison question open. It is consistent with the accepted commuting-branch bound's exponential support prefactor. The proof establishes a limitation of one proposed norm replacement, not instability of the physical finite-window GKSL dynamics.
