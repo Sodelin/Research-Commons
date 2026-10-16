@@ -1,0 +1,34 @@
+{
+  "status": "LITERAL_SOURCE_DATA_HAND_CHECKED_NOT_EXECUTED",
+  "source": {
+    "vertices": 11,
+    "root": 0,
+    "edges": [
+      {"source": 0, "target": 1},
+      {"source": 0, "target": 2},
+      {"source": 1, "target": 3},
+      {"source": 1, "target": 6},
+      {"source": 2, "target": 3},
+      {"source": 2, "target": 4},
+      {"source": 3, "target": 5},
+      {"source": 4, "target": 5},
+      {"source": 4, "target": 9},
+      {"source": 5, "target": 10},
+      {"source": 6, "target": 7},
+      {"source": 6, "target": 8}
+    ],
+    "leaves": [7, 8, 9, 10],
+    "hybrids": [
+      {"vertex": 3, "incoming": [2, 4]},
+      {"vertex": 5, "incoming": [6, 7]}
+    ]
+  },
+  "sample": [0, 1, 2, 3],
+  "global_labels": [0, 1, 2, 3],
+  "counterexample": {
+    "failed_predicate": "G1CutChildPorts.CutChild",
+    "deleted_original_edge": 6,
+    "detour_vertices": [3, 2, 4, 5],
+    "detour_original_edges": [4, 5, 7]
+  }
+}
