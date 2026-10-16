@@ -1,0 +1,42 @@
+--- a/source/Semi/Diffraction/FourierIntensity.lean
++++ b/source/Semi/Diffraction/FourierIntensity.lean
+@@ -65,7 +65,9 @@
+ 
+ theorem amplitude_total_power_complex (x : Configuration N) :
+     (∑ k, amplitude x k * starRingEnd ℂ (amplitude x k)) = (N : ℂ) ^ 2 := by
+-  simpa [amplitude, pow_two, ZMod.card] using dft_parseval_complex (fun i => complexSpin (x i))
++  simpa only [amplitude, complexSpin_mul_conj, Finset.sum_const, Finset.card_univ,
++    ZMod.card, nsmul_eq_mul, mul_one, pow_two] using
++      dft_parseval_complex (fun i => complexSpin (x i))
+ 
+ theorem amplitude_total_power (x : Configuration N) :
+     (∑ k, Complex.normSq (amplitude x k)) = (N : ℝ) ^ 2 := by
+@@ -88,11 +90,15 @@
+       change (∑ j, ZMod.stdAddChar (-(j * k)) * complexSpin (x (j + t))) = _
+       apply Finset.sum_congr rfl
+       intro j _
+-      change ZMod.stdAddChar (-(j * k)) * complexSpin (x (j + t)) = _
++      change ZMod.stdAddChar (-(j * k)) * complexSpin (x (j + t)) =
++        ZMod.stdAddChar (t * k) *
++          (ZMod.stdAddChar (-((j + t) * k)) * complexSpin (x (j + t)))
+       have he : t * k + -((j + t) * k) = -(j * k) := by ring
+-      simp only [f, shiftSite, ← mul_assoc, ← AddChar.map_add_eq_mul, he]
++      rw [← mul_assoc, ← AddChar.map_add_eq_mul, he]
+     _ = ZMod.stdAddChar (t * k) * ∑ j, f (shiftSite t j) := by rw [Finset.mul_sum]
+-    _ = ZMod.stdAddChar (t * k) * ∑ j, f j := by rw [(shiftSite t).sum_comp]
++    _ = ZMod.stdAddChar (t * k) * ∑ j, f j := by
++      exact congrArg (fun z : ℂ => ZMod.stdAddChar (t * k) * z)
++        (Fintype.sum_equiv (shiftSite t) (fun j => f (shiftSite t j)) f (fun _ => rfl))
+     _ = ZMod.stdAddChar (t * k) * amplitude x k := by
+       simp only [f, amplitude, ZMod.dft_apply, smul_eq_mul]
+ 
+@@ -102,7 +108,8 @@
+       (fun i => complexSpin (x i)) := by funext i; simp
+   change ZMod.dft (fun i => complexSpin (x (-i))) k =
+     starRingEnd ℂ (ZMod.dft (fun i => complexSpin (x i)) k)
+-  rw [ZMod.dft_comp_neg, conjugate_dft, hc]
++  rw [conjugate_dft, hc]
++  exact congrFun (ZMod.dft_comp_neg (fun i => complexSpin (x i))) k
+ 
+ lemma amplitude_globalSign (x : Configuration N) (k : Grid N) :
+     amplitude (globalSign x) k = -amplitude x k := by
