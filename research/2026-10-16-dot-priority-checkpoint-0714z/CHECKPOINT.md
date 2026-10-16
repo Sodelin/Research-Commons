@@ -32,3 +32,11 @@ The current two-residue small-loss extension and input-acquisition draft are can
 ## Scope reconciliation handoff
 
 Carry these allocation changes, final Quinn review, diffraction input boundary and prior-attribution correction into the next full reconciliation. No rewrite of the master scope is needed for this incremental checkpoint. Existing mathematical assumptions, accepted older results and original G3/G4 quantifiers are preserved.
+
+## 07:26 UTC completion and transition addendum
+
+Both author-facing paper dossiers have now received reciprocal substantive/source-consistency review and navigation/readback checks. Quinn's document distinguishes implementer-executed controls from the independent source/evidence review. The diffraction document explicitly attributes the Table 1 transcription to the inspected PMC manuscript; publisher-version comparison and the actual fitted-column identity remain unresolved. Neither document establishes historical numerical impact or author fault. Draft correspondence remains unsent.
+
+The two existing assignments now transition to P1 Gibbs certification and P5 many-body coarse graining under the gates above. Original G3/G4 work continues. No extra research worker or scientific scope substitution is introduced.
+
+A new scoped manual result is retained: [supplied-node saturated-normal retained-count bound](https://github.com/Sodelin/Research-Commons/blob/30906289fe03363cd61d234ccff58b23d0628501/research/2026-10-16-dot-g3-g4-direct-continuation-0532z/SATURATED-NORMAL-RETAINED-COUNT.md). At the specified codimension-one cap with positive drift and no killing, algebraic supplied residue nodes permit a computable bound on retained factors in nonattained normal forms. This is not an original-input node acquisition algorithm or a bound on YES witnesses. No QE execution, compiler verification, or master closure follows.
