@@ -1,0 +1,508 @@
+{
+  "kind": "executed own-code synthetic impact controls; no historical run or paper reproduction",
+  "row_cases": {
+    "None": {
+      "processed": 1,
+      "errors": [],
+      "files": {
+        "binary": "fresh-binary",
+        "weighted": "fresh-binary-weighted"
+      },
+      "trace": [
+        {
+          "stage": "viewshed",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "stage": "compress",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary",
+            "binary": "fresh-binary"
+          }
+        },
+        {
+          "remove_in_memory_only": "raw"
+        },
+        {
+          "stage": "weight",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "binary": "fresh-binary",
+            "weighted-raw": "fresh-binary-weighted"
+          }
+        },
+        {
+          "stage": "compress-weighted",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "binary": "fresh-binary",
+            "weighted-raw": "fresh-binary-weighted",
+            "weighted": "fresh-binary-weighted"
+          }
+        },
+        {
+          "remove_in_memory_only": "weighted-raw"
+        }
+      ]
+    },
+    "viewshed": {
+      "processed": 1,
+      "errors": [
+        "raw"
+      ],
+      "files": {},
+      "trace": [
+        {
+          "stage": "viewshed",
+          "exit": 1,
+          "checked": false,
+          "files_after": {}
+        },
+        {
+          "stage": "compress",
+          "exit": 1,
+          "checked": false,
+          "files_after": {}
+        },
+        {
+          "remove_in_memory_only": "raw"
+        }
+      ]
+    },
+    "compress": {
+      "processed": 1,
+      "errors": [
+        "weighted-raw"
+      ],
+      "files": {},
+      "trace": [
+        {
+          "stage": "viewshed",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "stage": "compress",
+          "exit": 1,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "remove_in_memory_only": "raw"
+        },
+        {
+          "stage": "weight",
+          "exit": 1,
+          "checked": false,
+          "files_after": {}
+        },
+        {
+          "stage": "compress-weighted",
+          "exit": 1,
+          "checked": false,
+          "files_after": {}
+        },
+        {
+          "remove_in_memory_only": "weighted-raw"
+        }
+      ]
+    },
+    "weight": {
+      "processed": 1,
+      "errors": [
+        "weighted-raw"
+      ],
+      "files": {
+        "binary": "fresh-binary"
+      },
+      "trace": [
+        {
+          "stage": "viewshed",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "stage": "compress",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary",
+            "binary": "fresh-binary"
+          }
+        },
+        {
+          "remove_in_memory_only": "raw"
+        },
+        {
+          "stage": "weight",
+          "exit": 1,
+          "checked": false,
+          "files_after": {
+            "binary": "fresh-binary"
+          }
+        },
+        {
+          "stage": "compress-weighted",
+          "exit": 1,
+          "checked": false,
+          "files_after": {
+            "binary": "fresh-binary"
+          }
+        },
+        {
+          "remove_in_memory_only": "weighted-raw"
+        }
+      ]
+    },
+    "compress-weighted": {
+      "processed": 1,
+      "errors": [],
+      "files": {
+        "binary": "fresh-binary"
+      },
+      "trace": [
+        {
+          "stage": "viewshed",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "stage": "compress",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "raw": "fresh-binary",
+            "binary": "fresh-binary"
+          }
+        },
+        {
+          "remove_in_memory_only": "raw"
+        },
+        {
+          "stage": "weight",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "binary": "fresh-binary",
+            "weighted-raw": "fresh-binary-weighted"
+          }
+        },
+        {
+          "stage": "compress-weighted",
+          "exit": 1,
+          "checked": false,
+          "files_after": {
+            "binary": "fresh-binary",
+            "weighted-raw": "fresh-binary-weighted"
+          }
+        },
+        {
+          "remove_in_memory_only": "weighted-raw"
+        }
+      ]
+    },
+    "stale-binary-after-failed-compress": {
+      "processed": 1,
+      "errors": [],
+      "files": {
+        "binary": "old-binary",
+        "weighted": "old-binary-weighted"
+      },
+      "trace": [
+        {
+          "stage": "viewshed",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "binary": "old-binary",
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "stage": "compress",
+          "exit": 1,
+          "checked": false,
+          "files_after": {
+            "binary": "old-binary",
+            "raw": "fresh-binary"
+          }
+        },
+        {
+          "remove_in_memory_only": "raw"
+        },
+        {
+          "stage": "weight",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "binary": "old-binary",
+            "weighted-raw": "old-binary-weighted"
+          }
+        },
+        {
+          "stage": "compress-weighted",
+          "exit": 0,
+          "checked": false,
+          "files_after": {
+            "binary": "old-binary",
+            "weighted-raw": "old-binary-weighted",
+            "weighted": "old-binary-weighted"
+          }
+        },
+        {
+          "remove_in_memory_only": "weighted-raw"
+        }
+      ]
+    }
+  },
+  "finite_sum": {
+    "partial": [
+      0,
+      1,
+      2
+    ],
+    "missing": [
+      1,
+      0,
+      1
+    ],
+    "full": [
+      1,
+      1,
+      3
+    ]
+  },
+  "max_examples": [
+    [
+      [
+        5,
+        2,
+        1
+      ],
+      [
+        5,
+        3,
+        1
+      ],
+      false
+    ],
+    [
+      [
+        5,
+        4,
+        1
+      ],
+      [
+        5,
+        6,
+        1
+      ],
+      true
+    ]
+  ],
+  "median_examples": [
+    [
+      [
+        10,
+        10,
+        11
+      ],
+      [
+        10,
+        10,
+        12
+      ],
+      false
+    ],
+    [
+      [
+        10,
+        10,
+        11
+      ],
+      [
+        10,
+        11,
+        11
+      ],
+      true
+    ]
+  ],
+  "rank_flip": {
+    "partial": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      152,
+      153
+    ],
+    "full": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      154,
+      153
+    ],
+    "selected_partial": [
+      19
+    ],
+    "selected_full": [
+      18
+    ]
+  },
+  "nonzero_support_change": {
+    "partial": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      0
+    ],
+    "full": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      1
+    ],
+    "selected_partial": [
+      19
+    ],
+    "selected_full": [
+      18,
+      19
+    ]
+  },
+  "polygon_threshold_example": {
+    "before": {
+      "patch_areas": [
+        24,
+        24
+      ],
+      "gap_km": 5,
+      "retained": []
+    },
+    "after": {
+      "patch_areas": [
+        25,
+        24
+      ],
+      "gap_km": 4,
+      "minimum_merged_area": 49,
+      "retained": [
+        "combined"
+      ]
+    }
+  },
+  "fit_label_vs_geometry": {
+    "rename_sse": 0,
+    "replace_fixed_coefficient_sse": 8,
+    "replace_refitted_coefficient_sse": 4
+  },
+  "curvature_difference_m_using_6371000m_radius": {
+    "10000": 0.023308742740543304,
+    "50000": 0.5827185685135827,
+    "100000": 2.330874274054331,
+    "200000": 9.323497096217324
+  },
+  "all_assertions_passed": true,
+  "original_source_static_check": {
+    "sha256": "7aee3ae34ee0f4fd9e6c686dde0813f0a9e29291ff0b33d2c6022d893c42ecff",
+    "ignored_system_return_lines": [
+      52,
+      56,
+      63,
+      67
+    ],
+    "remove_lines": [
+      59,
+      70
+    ],
+    "finally_counter_lines": [
+      76
+    ],
+    "original_executed": false,
+    "original_read_as_AST_only": true
+  }
+}
