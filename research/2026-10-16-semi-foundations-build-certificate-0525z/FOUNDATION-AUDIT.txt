@@ -1,0 +1,63 @@
+@Semi.Core.option_factorization_iff : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} (observe : X → O) (target : X → A),
+  Semi.Core.OptionRecoverable observe target ↔ Semi.Core.ConstantOnFibres observe target
+@Semi.Core.range_factorization_iff : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} (observe : X → O) (target : X → A),
+  (∃ decode, ∀ (x : X), decode ⟨observe x, ⋯⟩ = target x) ↔ Semi.Core.ConstantOnFibres observe target
+@Semi.Core.total_factorization_iff : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} [Nonempty A] (observe : X → O)
+  (target : X → A), (∃ decode, ∀ (x : X), decode (observe x) = target x) ↔ Semi.Core.ConstantOnFibres observe target
+@Semi.Core.total_factorization_iff_extension : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} (observe : X → O)
+  (target : X → A),
+  (∃ decode, ∀ (x : X), decode (observe x) = target x) ↔
+    Semi.Core.ConstantOnFibres observe target ∧ (Nonempty O → Nonempty A)
+@Semi.Core.FiniteOrbitGeometry.orbitDistance_eq_zero : ∀ {G : Type u_1} {X : Type u_2} [inst : Group G]
+  [inst_1 : Fintype G] (M : Semi.Core.FiniteOrbitGeometry G X) (x y : X), M.orbitDistance x y = 0 ↔ M.Related x y
+@Semi.Core.FiniteOrbitGeometry.quotientDistance_eq_zero : ∀ {G : Type u_1} {X : Type u_2} [inst : Group G]
+  [inst_1 : Fintype G] (M : Semi.Core.FiniteOrbitGeometry G X) (a b : Quotient M.orbitSetoid),
+  M.quotientDistance a b = 0 ↔ a = b
+@Semi.Diffraction.orbitMetric_triangle : ∀ {N : ℕ} [inst : NeZero N] (a b c : Semi.Diffraction.SourceOrbit N),
+  Semi.Diffraction.orbitMetric a c ≤ Semi.Diffraction.orbitMetric a b + Semi.Diffraction.orbitMetric b c
+@Semi.Diffraction.orbitMetric_eq_zero : ∀ {N : ℕ} [inst : NeZero N] (a b : Semi.Diffraction.SourceOrbit N),
+  Semi.Diffraction.orbitMetric a b = 0 ↔ a = b
+@Semi.Diffraction.intensity_sum_one : ∀ {N : ℕ} [inst : NeZero N] (x : Semi.Diffraction.Configuration N),
+  ∑ k, Semi.Diffraction.intensity x k = 1
+@Semi.Diffraction.intensity_symmetry : ∀ {N : ℕ} [inst : NeZero N] (g : ↥(Semi.Diffraction.symmetries N))
+  (x : Semi.Diffraction.Configuration N), Semi.Diffraction.intensity (↑g x) = Semi.Diffraction.intensity x
+@Semi.Statistics.indistinguishable_pair_lower_bound : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} [inst : Fintype A]
+  (observe : X → O) (loss : A → X → ℝ) (rule : Semi.Statistics.DecisionRule O A) (x y : X),
+  observe x = observe y →
+    ∀ (δ : ℝ),
+      (∀ (a : A), δ ≤ loss a x + loss a y) →
+        δ / 2 ≤ max (Semi.Statistics.risk loss (rule (observe x)) x) (Semi.Statistics.risk loss (rule (observe y)) y)
+@Semi.Statistics.exists_fibre_minimizer : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} [inst : Fintype A]
+  [inst_1 : Fintype X] [Nonempty A] (observe : X → O) (loss : A → X → ℝ) (o : ↑(Set.range observe)),
+  ∃ q,
+    ∀ (r : ↑(Semi.Statistics.RandomizedAction A)),
+      Semi.Statistics.fibreWorstRisk observe loss o q ≤ Semi.Statistics.fibreWorstRisk observe loss o r
+@Semi.Statistics.fibreMinimaxRadius_pair_lower_bound : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} [inst : Fintype A]
+  [inst_1 : Fintype X] [inst_2 : Nonempty A] (observe : X → O) (loss : A → X → ℝ) (o : ↑(Set.range observe)) (x y : X),
+  observe x = ↑o →
+    observe y = ↑o →
+      ∀ (δ : ℝ), (∀ (a : A), δ ≤ loss a x + loss a y) → δ / 2 ≤ Semi.Statistics.fibreMinimaxRadius observe loss o
+@Semi.Statistics.exactDataMinimaxFloor_le_rule : ∀ {X : Type u_1} {O : Type u_2} {A : Type u_3} [inst : Fintype A]
+  [inst_1 : Fintype X] [inst_2 : Nonempty A] [inst_3 : Nonempty X] (observe : X → O) (loss : A → X → ℝ)
+  (rule : ↑(Set.range observe) → ↑(Semi.Statistics.RandomizedAction A)),
+  Semi.Statistics.exactDataMinimaxFloor observe loss ≤ Semi.Statistics.exactDataWorstRisk observe loss rule
+@Semi.Statistics.CyclicRecovery.equal_intensity_lower_bound : ∀ {N : ℕ} [inst : NeZero N]
+  (rule : Semi.Statistics.CyclicRecovery.CyclicRule N) (x y : Semi.Diffraction.Configuration N),
+  Semi.Diffraction.intensity x = Semi.Diffraction.intensity y →
+    Semi.Diffraction.orbitMetric (Semi.Diffraction.sourceOrbit x) (Semi.Diffraction.sourceOrbit y) / 2 ≤
+      max (Semi.Statistics.risk Semi.Diffraction.orbitLoss (rule (Semi.Diffraction.intensity x)) x)
+        (Semi.Statistics.risk Semi.Diffraction.orbitLoss (rule (Semi.Diffraction.intensity y)) y)
+'Semi.Core.option_factorization_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Core.range_factorization_iff' depends on axioms: [Classical.choice]
+'Semi.Core.total_factorization_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Core.total_factorization_iff_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Core.FiniteOrbitGeometry.quotientDistance_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Diffraction.orbitMetric_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Diffraction.orbitMetric_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Diffraction.intensity_sum_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Diffraction.intensity_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Statistics.indistinguishable_pair_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Statistics.exists_fibre_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Statistics.fibreMinimaxRadius_pair_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Statistics.exactDataMinimaxFloor_le_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Semi.Statistics.CyclicRecovery.equal_intensity_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
