@@ -53,3 +53,21 @@ E_{s,s'}[(E_U exp(F_s+F_s')/(Z_s Z_s'))^T]−1
 when T is of that order.
 
 This identity is exact. The missing estimate is not supplied by orthogonality alone: partition functions fluctuate and parity products have cycle relations. Replacing exp(F_s)/Z_s by 1+F_s loses exact Gibbs admission because its logarithm generally has higher-weight terms. A Gaussian local-asymptotic analogy is not a finite-n proof. No dense-family lower bound is claimed here.
+
+
+## Correction: measurement-specific upper bounds, 16 October 2026
+
+The earlier displayed “original-problem gap” is superseded for unrestricted collective measurements. It remains a record of the applicable efficient single-copy Pauli supplier, not a best-general-copy upper. Theorem 16's exponential-time learner has the same n^(2k)/epsilon^4 copy scaling; removing computation constraints alone does not improve that theorem's rate.
+
+A separate, independently hand-reviewed composition of the Gibbs covering net with Badescu–O'Donnell Corollary A.4 gives the full two-unknown collective upper
+O((M log(2+beta M/epsilon)+log(1/delta))/epsilon^2),
+where M=sum_(j=1)^k 3^j binom(n,j), with TOTAL copies across both sources. It uses a collective threshold-decision projector for fixed paired Helstrom effects and potentially enormous computation. The usable upper is the minimum with prior applicable bounds; superiority is not uniform in beta.
+
+Thus unrestricted collective copy complexity, adaptive single-copy copy complexity, and efficient-time certification are three separate questions. For fixed k>=3 and fixed positive beta in the reviewed lower-family regime, the currently recorded collective gap is Omega_k(n log n/epsilon^2) versus O_k(n^k log(2+beta n^k/epsilon)/epsilon^2), at constant failure probability. The two-unknown adaptive single-copy experiment retains Theorem 17 as an applicable upper. No exhaustive best-known claim, optimality, novelty, or P1 closure is made.
+
+Exact attributed composition, finite-precision construction and total-copy accounting:
+https://github.com/Sodelin/Research-Commons/blob/809dcb6dcef78da700fddd888e9177bcff098b0f/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-CERTIFICATION-UPPER-13.md
+Independent hand review of the clarified source:
+https://github.com/Sodelin/Research-Commons/blob/bf1d9a0e98b99eaf0a7d229de640a345210b78d4/research/2026-10-16-g6-gibbs-certification/COLLECTIVE-UPPER-13-INDEPENDENT-REVIEW.md
+
+The prior body is preserved above as dated history. This addendum corrects its upper-bound scope; its covariance obstruction and exact normalized lower-bound obligation are unaffected.
