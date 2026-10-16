@@ -100,3 +100,18 @@ https://proceedings.mlr.press/v119/jin20g.html
 The BCY2022 Bayesian-network prior import is already retained separately with its exact Gibbs embedding and admission limits. Standard Rademacher-mixture, Fourier, hypercontractive, convex-extension and entropy methods are credited as such. Further citation-chain and general testing-method comparison remains necessary before any claim of originality.
 
 The next substantive target is the optimal general copy gap: an applicable sharper collective upper or a stronger admitted quantum lower, with single-copy access and runtime kept distinct. Earlier dated bodies remain preserved for provenance.
+
+## Varying-beta correction from established closeness hardness, 16 October 2026
+
+The fixed-beta gap just recorded must not be read as predicting a beta-uniform square-root-D upper. The independently hand-reviewed Hamming-shell import supplies an obstruction at high inverse temperature.
+
+For n>=k>=2, D=binom(n,k)>=2 and 0<epsilon<=1/4, put L=max{D^(2/3)/epsilon^(4/3),sqrt(D)/epsilon^2}, lambda=n log 2+log(100L). If beta>=n lambda+D log(4D), the original two-unknown problem needs Omega(L) worst-case total copies, including collective measurements and adaptive source allocation. The reduction imports Chan, Diakonikolas, Gregory Valiant and Paul Valiant's SODA2014 Theorem1.1. It smooths arbitrary alphabet distributions, uses nonnegative degree-k monomials on the Hamming-weight-k shell, and a quadratic penalty with explicit leakage. It preserves null equality exactly and uses only sample access in the contradiction.
+
+Exact proof:
+https://github.com/Sodelin/Research-Commons/blob/b2df79fbfd8a294c001f91a8228b309cd1630fe0/research/2026-10-16-g6-gibbs-certification/HAMMING-SHELL-CLOSENESS-IMPORT-15.md
+Independent review:
+https://github.com/Sodelin/Research-Commons/blob/efba9ef35ee1eb52a77d7587d2747c23bc9bbff1/research/2026-10-16-g6-gibbs-certification/HAMMING-SHELL-15-INDEPENDENT-REVIEW.md
+Classical primary supplier:
+https://www.cs.purdue.edu/homes/pvaliant/closeness.pdf
+
+At fixed k>=3 and constant epsilon, beta=O_k(n^k log n) suffices for the n^(2k/3) lower. This excludes an O_k(sqrt(D)/epsilon^2) upper uniform in beta, even allowing polylogarithmic factors. It does not strengthen the fixed-beta theorem. Fixed-beta optimal copies, varying-beta optimal copies, adaptive single-copy measurements and efficient implementation remain distinct unresolved targets. The existing collective upper13 remains valid. No novelty, Lean verification, experiment or P1 closure is claimed.
