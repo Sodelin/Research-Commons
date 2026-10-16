@@ -1,0 +1,50 @@
+--- a/source/Semi/Statistics/FiniteDecision.lean
++++ b/source/Semi/Statistics/FiniteDecision.lean
+@@ -24,13 +24,13 @@
+ 
+ theorem risk_nonneg (loss : A → X → ℝ) (q : RandomizedAction A) (x : X)
+     (h : ∀ a, 0 ≤ loss a x) : 0 ≤ risk loss q x :=
+-  Finset.sum_nonneg (fun a _ => mul_nonneg (q.zero_le a) (h a))
++  Finset.sum_nonneg (fun a _ => mul_nonneg (stdSimplex.zero_le q a) (h a))
+ 
+ theorem risk_le_one (loss : A → X → ℝ) (q : RandomizedAction A) (x : X)
+     (h : ∀ a, loss a x ≤ 1) : risk loss q x ≤ 1 := by
+   calc
+     risk loss q x ≤ ∑ a, q a * 1 := Finset.sum_le_sum fun a _ =>
+-      mul_le_mul_of_nonneg_left (h a) (q.zero_le a)
++      mul_le_mul_of_nonneg_left (h a) (stdSimplex.zero_le q a)
+     _ = 1 := by simp
+ 
+ /-- A two-state separation lower bound, for the SAME randomized action. -/
+@@ -38,9 +38,9 @@
+     (x y : X) (δ : ℝ) (h : ∀ a, δ ≤ loss a x + loss a y) :
+     δ ≤ risk loss q x + risk loss q y := by
+   calc
+-    δ = ∑ a, q a * δ := by rw [← Finset.sum_mul, q.sum_eq_one, one_mul]
++    δ = ∑ a, q a * δ := by rw [← Finset.sum_mul, stdSimplex.sum_eq_one q, one_mul]
+     _ ≤ ∑ a, q a * (loss a x + loss a y) := Finset.sum_le_sum fun a _ =>
+-      mul_le_mul_of_nonneg_left (h a) (q.zero_le a)
++      mul_le_mul_of_nonneg_left (h a) (stdSimplex.zero_le q a)
+     _ = risk loss q x + risk loss q y := by simp [risk, mul_add, Finset.sum_add_distrib]
+ 
+ theorem indistinguishable_pair_lower_bound (observe : X → O) (loss : A → X → ℝ)
+@@ -57,7 +57,9 @@
+     Continuous (fun q : RandomizedAction A => risk loss q x) := by
+   apply continuous_finsetSum
+   intro a _
+-  exact ((continuous_apply a).comp continuous_subtype_val).mul_const (loss a x)
++  have hcoord : Continuous (fun q : RandomizedAction A => (q a : ℝ)) :=
++    (continuous_apply a).comp continuous_subtype_val
++  exact hcoord.mul_const (loss a x)
+ 
+ section Minimax
+ variable [Fintype X] [Nonempty A]
+@@ -153,7 +155,7 @@
+   classical
+   letI := observationRangeFintype observe
+   letI := observationRange_nonempty observe
+-  apply Finset.sup'_le
++  apply (Finset.sup'_le_iff Finset.univ_nonempty _).2
+   intro o _
+   exact (fibreMinimaxRadius_le observe loss o (rule o)).trans
+     (Finset.le_sup' _ (Finset.mem_univ o))

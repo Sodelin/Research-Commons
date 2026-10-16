@@ -1,0 +1,105 @@
+{
+  "schema": "semi_finite_decision_actual_diagnostic_repair_v1",
+  "status": "SOURCE_CANDIDATE_UNCOMPILED_FRESH_REVIEW_PENDING",
+  "diagnostic_stage": "ACTUAL_COMPILER_DIAGNOSTIC_RELAY_NOT_PERSONAL_RAW_LOG_READ",
+  "baseline": {
+    "commit": "55eecf2a337a43c0a9b958592dde1e50a6bf405d",
+    "path": "source/Semi/Statistics/FiniteDecision.lean",
+    "bytes": 7398,
+    "sha256": "8b3ca4849a8aa94041eb570d73f289102af7c8ce0e47e1af95df041bc7b5e447"
+  },
+  "successor": {
+    "file": "FiniteDecision.lean",
+    "bytes": 7556,
+    "sha256": "32b93d25a3c580960eb21dd98329f28aafe6f29bfe8e8082eb6859a8df07e701"
+  },
+  "patch": {
+    "file": "FiniteDecision.patch",
+    "bytes": 2272,
+    "sha256": "6cdcc27acba6b7f639437f22624023b0b22a986c5f3cc6b9290b291db461ffbd",
+    "hunks": 4
+  },
+  "report": {
+    "file": "REPAIR-REPORT-01.md",
+    "bytes": 5057,
+    "sha256": "6d96f98985025efe37627de7fdd218a0de2b4e67dacdbb2c94e7d8041041da65"
+  },
+  "retained_selection": {
+    "FiniteOrbit": {
+      "commit": "8f8eaa60faae0a7398e6d561d0fc23dad08529a5",
+      "bytes": 6286,
+      "sha256": "538a0c3fdbb82e93c51f70f7d26e590ca309797da72ffc05938b7e0b84676cf9"
+    },
+    "CyclicGrid": {
+      "commit": "2d8f5b6444e57f60eae6317d47cbfc30a7fd6057",
+      "bytes": 3447,
+      "sha256": "55daccdefae9bee719462c83fb56b4d53f072da56bd9257a6f70cadf4e0ab4b1"
+    },
+    "FourierIntensity": {
+      "commit": "c2debcaf7b67d8f9862a3490d2787d5b24046770",
+      "bytes": 6316,
+      "sha256": "ac9b07a5b354fc1c9dbc71f6b418cbc2949650e67da0a8ca6a5c9e275c076c01",
+      "stage": "SOURCE_CANDIDATE_UNCOMPILED_REVIEW_PENDING"
+    }
+  },
+  "actual_diagnostic_sites": [
+    27,
+    33,
+    41,
+    43,
+    60,
+    157
+  ],
+  "proofs_changed": [
+    "risk_nonneg",
+    "risk_le_one",
+    "pair_risk_lower_bound",
+    "continuous_risk",
+    "exactDataMinimaxFloor_le_rule"
+  ],
+  "invariants": {
+    "all_other_bytes_equal_by_inverse_replacement": true,
+    "independent_unified_patch_replay_matches": true,
+    "nonproof_text_identical": true,
+    "statements_assumptions_definitions_imports_options_unchanged": true,
+    "retained_source_files_unchanged": true,
+    "active_and_used_execution_leaves_untouched": true
+  },
+  "api_sources": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "files": {
+      "Mathlib/Analysis/Convex/StdSimplex.lean": {
+        "bytes": 15883,
+        "sha256": "aec844bc79d4bd36cea30d1bf2d0999ad6e82ee1d8715dc8f1fa751c2522785c",
+        "git_blob": "23e19ff83b604511a372caea8b08f8e73bb01870"
+      },
+      "Mathlib/Topology/Algebra/Monoid/Defs.lean": {
+        "bytes": 7325,
+        "sha256": "6ce4a7243b83a455e5e598e43d858c2fc95c796563df1effaec6caaeeea6d584",
+        "git_blob": "ce0d24800f89a7897927104b17efa7c5540e84cf"
+      },
+      "Mathlib/Data/Finset/Lattice/Fold.lean": {
+        "bytes": 32514,
+        "sha256": "79b80dd5aa12886d31c582ab00585627dc4e7f1d7607c7b707484f38d95ce2f4",
+        "git_blob": "399d42aaf91c1b9f37a1d27743e9ef104e4689db"
+      }
+    }
+  },
+  "supplied_diagnostics": {
+    "stdout_bytes": 5132,
+    "stdout_sha256": "9135feae4674c8cbca0c1af590d0afa8d8df1c6b79bd13aeb7ea079257c074fb",
+    "command_receipt_bytes": 2599,
+    "command_receipt_sha256": "22764980d2489f7c8395e18cba98e2382842e39cedd98e439beb2e8df50734d8",
+    "compiler_exit": 1,
+    "runner_stop": null,
+    "runner_error": null,
+    "final_batch_custody": "PENDING_AT_SOURCE_CHECKPOINT"
+  },
+  "compiler_runs_by_this_repair": 0,
+  "checker_runs_by_this_repair": 0,
+  "acquisitions": 0,
+  "runtime_admission": false,
+  "canonical_adoption": false,
+  "next_action": "Focused independent source review of this separate FiniteDecision candidate alongside the unchanged current Fourier candidate; any new desktop check uses a fresh selected finite record, never a consumed record."
+}
