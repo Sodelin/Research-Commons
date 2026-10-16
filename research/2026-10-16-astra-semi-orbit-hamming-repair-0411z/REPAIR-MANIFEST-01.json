@@ -1,0 +1,98 @@
+{
+  "schema": "semi_orbit_hamming_actual_diagnostic_repair_v1",
+  "status": "SOURCE_CANDIDATE_UNCOMPILED_FRESH_REVIEW_PENDING",
+  "created_utc": "2026-10-16T04:11:55.424919+00:00",
+  "diagnostic_stage": "ACTUAL_COMPILER_DIAGNOSTIC_RELAY_NOT_PERSONAL_RAW_LOG_READ",
+  "baseline": {
+    "commit": "55eecf2a337a43c0a9b958592dde1e50a6bf405d",
+    "path": "source/Semi/Diffraction/OrbitHamming.lean",
+    "bytes": 3786,
+    "sha256": "bfd62076d57228b45bb0182bb6bb0de7f14f2d2c5407f8ad4d5e613472ad5ca4"
+  },
+  "successor": {
+    "file": "OrbitHamming.lean",
+    "bytes": 3815,
+    "sha256": "bb23412a66ec9e5abb3e07666242954054c40c1cb5aa7fdd6bd59cc0bf318b08"
+  },
+  "patch": {
+    "file": "OrbitHamming.patch",
+    "bytes": 852,
+    "sha256": "cb2db055b1f63c59b0291f6e6a33f613df10ce0578b8748fe09ed8e9615583aa",
+    "hunks": 1
+  },
+  "report": {
+    "file": "REPAIR-REPORT-01.md",
+    "bytes": 4149,
+    "sha256": "bbac7729b63b862ea67e4bb400c11c19533d2407e73683cd159d8bfe728da0be"
+  },
+  "exact_changes": [
+    {
+      "original_line": 28,
+      "scope": "noncomputable annotation only; sourceOrbit type and defining expression unchanged"
+    },
+    {
+      "original_line": 33,
+      "scope": "unfold orbitGeometry distance projection in existing bound proof"
+    }
+  ],
+  "retained_selection": {
+    "FiniteOrbit": {
+      "commit": "8f8eaa60faae0a7398e6d561d0fc23dad08529a5",
+      "bytes": 6286,
+      "sha256": "538a0c3fdbb82e93c51f70f7d26e590ca309797da72ffc05938b7e0b84676cf9"
+    },
+    "CyclicGrid": {
+      "commit": "2d8f5b6444e57f60eae6317d47cbfc30a7fd6057",
+      "bytes": 3447,
+      "sha256": "55daccdefae9bee719462c83fb56b4d53f072da56bd9257a6f70cadf4e0ab4b1"
+    },
+    "FourierIntensity": {
+      "commit": "c2debcaf7b67d8f9862a3490d2787d5b24046770",
+      "bytes": 6316,
+      "sha256": "ac9b07a5b354fc1c9dbc71f6b418cbc2949650e67da0a8ca6a5c9e275c076c01"
+    },
+    "FiniteDecision": {
+      "commit": "8e7d824b0b2adeb95ad52ba0399568bc275b0dfa",
+      "bytes": 7556,
+      "sha256": "32b93d25a3c580960eb21dd98329f28aafe6f29bfe8e8082eb6859a8df07e701"
+    }
+  },
+  "invariants": {
+    "changed_lines": [
+      28,
+      33
+    ],
+    "inverse_replacement_recovers_baseline": true,
+    "independent_unified_patch_replay_matches": true,
+    "statements_assumptions_imports_options_definition_types_and_values_unchanged": true,
+    "sourceOrbit_noncomputable_annotation_added": true,
+    "all_other_bytes_unchanged": true,
+    "retained_repair_files_unchanged": true,
+    "active_and_used_leaves_untouched": true
+  },
+  "api_source": {
+    "repository": "leanprover-community/mathlib4",
+    "ref": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "path": "Mathlib/InformationTheory/Hamming.lean",
+    "bytes": 14458,
+    "sha256": "7d247632b790bfc237d79d3c040fb7f21d9cff00d190a67e120ccb73056460a6",
+    "git_blob": "800095468b359fb295427c716ac68c5465f06073",
+    "hamming_bound_line": 113
+  },
+  "supplied_diagnostics": {
+    "stdout_bytes": 674,
+    "stdout_sha256": "ddebf0b54dbc22c5bc5451a55c14fa4c8f302ec8688ca406e813a6643a2fa372",
+    "command_receipt_bytes": 2593,
+    "command_receipt_sha256": "743c2d80f4899317c92e987d8b0e20cd72e1997723570e5e3646d0f3e5a86a99",
+    "compiler_exit": 1,
+    "runner_stop": null,
+    "runner_error": null,
+    "full_package_and_final_custody": "PENDING_AT_SUPPLIED_CHECKPOINT"
+  },
+  "compiler_runs_by_this_repair": 0,
+  "checker_runs_by_this_repair": 0,
+  "acquisitions": 0,
+  "runtime_admission": false,
+  "canonical_adoption": false,
+  "next_action": "Focused source review; any later actual check is separately selected through the existing sole desktop route after current mandatory custody. No consumed record replay."
+}

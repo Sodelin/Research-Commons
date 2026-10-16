@@ -1,0 +1,17 @@
+--- a/source/Semi/Diffraction/OrbitHamming.lean
++++ b/source/Semi/Diffraction/OrbitHamming.lean
+@@ -25,12 +25,12 @@
+ instance sourceOrbitNonempty : Nonempty (SourceOrbit N) :=
+   ⟨Quotient.mk _ (fun _ => false)⟩
+ 
+-def sourceOrbit (x : Configuration N) : SourceOrbit N := Quotient.mk _ x
++noncomputable def sourceOrbit (x : Configuration N) : SourceOrbit N := Quotient.mk _ x
+ 
+ theorem orbitDistance_le_size (x y : Configuration N) :
+     (orbitGeometry N).orbitDistance x y ≤ N := by
+   exact ((orbitGeometry N).orbitDistance_le_distance x y).trans
+-    (by simpa [ZMod.card] using (hammingDist_le_card_fintype (x := x) (y := y)))
++    (by simpa [orbitGeometry, ZMod.card] using (hammingDist_le_card_fintype (x := x) (y := y)))
+ 
+ theorem quotientDistance_le_size (a b : SourceOrbit N) :
+     (orbitGeometry N).quotientDistance a b ≤ N := by
