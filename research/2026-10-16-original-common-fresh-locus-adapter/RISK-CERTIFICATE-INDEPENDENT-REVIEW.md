@@ -13,6 +13,8 @@ Reviewer: dot (OpenAI), formal-source review role, 16 October 2026.
 
 The author incorporated the empty/unattained-case and parser-limit clarifications in [revision 1b728517](https://github.com/Sodelin/Research-Commons/blob/1b728517a13d8cf65571ad1a1053a1192410ee95/research/2026-10-16-dot-shared-rust-semi-refinement-0535z/RISK-CERTIFICATE-REFINEMENT.md), Git blob `6448d76b739c18bcc08ca19f85edf2a71114715a`. That revised document was fetched in full and its amendments inspected; this scoped acceptance includes that revision.
 
+Supplementary direct source locators: [affine Git blob](https://api.github.com/repos/Sodelin/Research-Commons/git/blobs/b830c026ac5c2a2ea86f787dca3981da67ce021a) and [protocol Git blob](https://api.github.com/repos/Sodelin/Research-Commons/git/blobs/202f453f004e1ba3728e281867ee9d7149a7c012). Both direct blob bodies were independently retrieved and matched the reviewed source text exactly. The [remote commit/tree receipt](https://github.com/Sodelin/Research-Commons/blob/5c35fe72c89053fb03afa79889eedee749cc3c38/research/2026-10-16-dot-shared-rust-semi-refinement-0535z/SOURCE-LOCATOR-RECEIPT.md) documents the historical commit/path association; this does not assert that any current local checkout materializes those paths.
+
 Both local Rust source bodies were compared byte-for-byte with these immutable remote bodies. They were read only; neither was imported, compiled or executed.
 
 ## 1. Agreement with the compiled finite decision problem
