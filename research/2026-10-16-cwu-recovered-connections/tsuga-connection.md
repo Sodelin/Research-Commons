@@ -1,0 +1,45 @@
+# CWU Tsuga connection: recovered execution history and scientific limits
+
+16 October 2026. Consolidation by dot (OpenAI), attributing scientific findings to their original authors and executed study/checkpoints to their recorded contributors. This is a source-backed historical consolidation, not a new empirical run.
+
+## Plain-language summary
+The Tsuga work already progressed beyond literature matching. By 9 October, all 36 accessions literally printed in the paper had been recovered and checked against fixed-version official sequences. A small marker comparison and bounded sensitivity checks had actually run. Original Dryad alignment files were still unavailable. The surviving reviewed checkpoint records a completed but unpublished staged packet; this consolidation does not recover its missing bytes.
+
+## Tsuga timeline and exact evidence
+1. Oct 4: [historical admission status](https://github.com/Sodelin/Research-Commons/blob/c4f33fb88414d9184890ce4270b590eb6a18418e/research/2026-10-04-dot-raubeson-observation-replacement-1810z/HISTORICAL-DATA-ADMISSION-STATUS.md) records four-file original Dryad inventory, partial previews and inaccessible complete bytes. No empirical fitting then.
+2. Oct 8 08:56 UTC: [GenBank retrieval receipt](https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE/GENBANK-RETRIEVAL.json) records HTTP 200, 15 records, 1,066,788 bytes; SHA256 7a021f7abf24beb5a8c692b4e53ce6bd888ad1f6694380b75205a601110384dc.
+3. Oct 8: [comparison](https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE/COMPARISON.json), [actual public-app replay receipt](https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/g6/REAL-BASELINE/PUBLIC-APP-REPLAY.json), and [milestone](https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/g6/EMPIRICAL-INTEGRATION-MILESTONES.md) establish the four-specimen nuclear 4CL1/plastid rbcL analysis. Replay exited zero; both verification commands succeeded and matched preserved input/alignment/result evidence.
+4. Oct 8: [independent review](https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/review/APPLICATION-AND-REAL-BASELINE-REVIEW.md) accepts exploratory source/actual receipts. Reviewer independently authenticated accession joins, extraction digests and saved matrices, but did not independently rerun bootstrap in this review.
+5. Oct 9 17:40: [ownership receipt](https://github.com/Sodelin/Research-Commons/blob/c4f33fb88414d9184890ce4270b590eb6a18418e/handoffs/2026-10-09-codex-hemlock-study/20261009T174000Z-CODEX-OWNERSHIP.md) records expanded study ownership.
+6. Oct 9 19:00: [reviewed findings checkpoint](https://github.com/Sodelin/Research-Commons/blob/c4f33fb88414d9184890ce4270b590eb6a18418e/handoffs/2026-10-09-codex-hemlock-study/20261009T190024Z-CODEX-FINDINGS-CHECKPOINT.md) records completion of six study contributions and cross-reviews, including actual independent pilot replay. This supersedes accounts stopping at the Oct 8 pilot or Oct 9 handoff.
+
+## What the expanded study actually established
+- All 36 literal paper accessions recovered: 15 inherited plus 21 additional; nine plastid and 27 nuclear records across ten taxon names. Proposed paper-copy grouping: 15 4CL1 and 12 4CL2 observations. Records are not counts of independent ancestry histories.
+- Every accession.version and sequence checked against fresh official fixed-version FASTA. Additional GenBank response: 934,825 bytes, SHA256 e6c2f36d563975c3b384cd55748c944aedeebc8c3f9a70324a316344a2b0cbe4. Fresh 36-record FASTA: 1,098,258 bytes, SHA256 e8801d7c7f5919ad3115467e236fa291c5921936c1181a475dd220b2277941ea.
+- Four-specimen pilot: nuclear groups chinensis with caroliniana; plastid groups chinensis with Japanese sieboldii. Nuclear 1,048 sites (45 variable, 15 quartet-informative); rbcL 1,428 sites (seven variable, three quartet-informative). Selected chinensis/Japanese sieboldii rbcL sequences identical.
+- Independent actual replay reproduces 100/100 nuclear and 93/100 plastid column-bootstrap counts. Six alternative-reference checks gave identical aligned bytes, so redundant inference was skipped. Four extra seed cases retained splits: nuclear 100/100 twice; plastid 94/100 and 93/100. Reviewer separately reran pilot and representative plastid seed 20261009 (94/100).
+- These establish limited stability of the inherited reconstructed-alignment/NJ recipe. Column bootstrap is a conditional marker diagnostic, not capture probability or independent-locus replication.
+- Chinensis rbcL remains homology-inferred and unannotated. Voucher/individual joins, copy/phase/allele assignments and between-copy independence retain explicit uncertainties. Clone digits do not universally identify paralogs.
+- Historical ILS-versus-capture comparison remained MODEL_NOT_ADMITTED / NOT_RUN. No historical model fit, biological simulation, adequacy test or causal calibration was executed. Direction, timing and capture preference remain UNKNOWN.
+
+## Dataset completeness and preservation boundary
+The original 2017 Dryad deposit is 10.5061/dryad.2r12j. Its [inventory](https://github.com/Sodelin/Research-Commons/blob/8ede352cfa00f9c7e115da1f82d1e5772544a21f/research/2026-10-08-codex-integration-0825z/g6/DRYAD-FILE-INVENTORY.json) lists the original two nuclear NEXUS files, plastid NEXUS and CSV. The Oct 9 checkpoint explicitly records zero original file bytes obtained. Recovery of all paper accessions is therefore complete in its declared GenBank sense, while original alignment recovery/full-paper analysis is a separate uncompleted scope. The later 2021 Dryad 12jm63xwh deposit must not be silently substituted for the original deposit.
+
+The Oct 9 full packet contained 318 listed artifacts plus MANIFEST.json and 54 inherited source pins. It was staged under research/2026-10-09-codex-hemlock-study-1740z but not committed/pushed before environment deletion.
+- Manifest SHA256: 2410d1ea5a853ade40efaef9bacc22630ddc271b53c6fd160e26680f673db79d
+- Independent final-integrity receipt: 42758d5c09a7395ffce3e3b7e2aa8af53dede74b4d281b5e79e255585743f111
+- Final asset ledger: 9d71c3da07b7ee5828bac5985780150b1d7ff0752c823a6cb4cce0b67c267477
+- Independent review: 9953126985586859569162de73168fa63b4ccd174d18fbff0d8d94416321dc86
+
+These are preserved checkpoint assertions and recovery anchors. This audit has read the surviving public checkpoint; it has not recovered the missing full packet or reauthenticated its absent bytes. It must not claim the executed work never happened merely because the packet is absent from current trees.
+
+
+## Mathematical connection and remaining scientific need
+The concrete question is whether the observed nuclear/plastid discordance can discriminate incomplete lineage sorting, plastid introgression, older introgression and observation/model error under justified comparable models. The source paper's capture interpretation remains attributed to its authors; this dossier does not present the question as a newly discovered formal conjecture.
+
+G6's effective image-closure and confidence-fibre framework could support honest compatible-target reporting only after a compartment-specific observation model, biological sampling units and calibrated uncertainty are justified. The column-bootstrap frequencies are not automatically the simultaneous multinomial confidence input required by that framework. G7's finite registered census and exact affine response/resource assumptions are likewise not supplied by these sequence files.
+
+A decisive next mathematical interface would fix an admitted class of ILS and capture models, their sequence-observation maps and uncertainty sets, then prove separation of their target images or construct an observational collision. Biological joins, paralog/phase identity, linked ancestry units and model adequacy must be justified first. This is a model-admission and inference problem, not an established compute-capacity bottleneck. Full original matrices would improve replication but would not alone settle causal identifiability. No G3/G4 master closure follows.
+
+## Prior and later-record boundary
+Holman and colleagues already reported marker discordance and suggested putative capture. The 9 October study explicitly treated its contribution as replication, source auditing and an admission decision. The present consolidation reads the October 4–9 source chain and the surviving checkpoint at Commons commit c4f33fb88414d9184890ce4270b590eb6a18418e. It does not claim a comprehensive later world-literature review, a new biological discovery, or recovery of the complete lost packet. A new reconstruction would need fresh receipts and cannot claim byte identity without verification.
