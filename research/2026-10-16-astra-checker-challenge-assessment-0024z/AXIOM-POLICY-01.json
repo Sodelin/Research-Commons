@@ -1,0 +1,69 @@
+{
+  "schema": "declaration_axiom_ceiling_v1",
+  "status": "PROPOSED_REVIEW_POLICY_NOT_AUDIT_OUTPUT",
+  "lean_version": "4.33.1",
+  "lean_source_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "permitted_axioms": [
+    {
+      "name": "propext",
+      "type_source": "∀ {a b : Prop}, (a ↔ b) → a = b",
+      "exact_source_declaration": "axiom propext {a b : Prop} : (a ↔ b) → a = b",
+      "universe_parameters": [],
+      "source_url": "https://github.com/leanprover/lean4/blob/819816b2e0a3bf405af45ae5c7af2491d8f5bee6/src/Init/Core.lean#L1591",
+      "source_blob": "c00f44d589c186526ee811958ab745a2b1078de6"
+    },
+    {
+      "name": "Classical.choice",
+      "type_source": "∀ {α : Sort u}, Nonempty α → α",
+      "exact_source_declaration": "axiom Classical.choice {α : Sort u} : Nonempty α → α",
+      "universe_parameters": [
+        "u"
+      ],
+      "source_url": "https://github.com/leanprover/lean4/blob/819816b2e0a3bf405af45ae5c7af2491d8f5bee6/src/Init/Prelude.lean#L818",
+      "source_blob": "11abbc2c3c4fe6ade835ad3ab6c241385f25f918"
+    },
+    {
+      "name": "Quot.sound",
+      "type_source": "∀ {α : Sort u} {r : α → α → Prop} {a b : α}, r a b → Quot.mk r a = Quot.mk r b",
+      "exact_source_declaration": "axiom sound : ∀ {α : Sort u} {r : α → α → Prop} {a b : α}, r a b → Quot.mk r a = Quot.mk r b",
+      "source_namespace": "Quot",
+      "universe_parameters": [
+        "u"
+      ],
+      "source_url": "https://github.com/leanprover/lean4/blob/819816b2e0a3bf405af45ae5c7af2491d8f5bee6/src/Init/Core.lean#L1787",
+      "source_blob": "c00f44d589c186526ee811958ab745a2b1078de6"
+    }
+  ],
+  "permitted_is_a_ceiling_not_required_exact_set": true,
+  "comparison": "Compare normalized kernel types/universe binders and primitive interpretation against the trusted pinned standard environment; a matching axiom name alone is insufficient.",
+  "scope": "Transitive dependency cone of each selected final declaration, including definitions used in its statement and proof.",
+  "reject_reachable": [
+    "sorryAx",
+    "Lean.trustCompiler",
+    "Lean.ofReduceBool",
+    "Lean.ofReduceNat",
+    "any other nonstandard axiom not explicitly reviewed and accepted"
+  ],
+  "reject_other_proof_conditions": [
+    "unsafe theorem/proof dependency",
+    "unresolved/free metavariables",
+    "missing selected declaration",
+    "silent skipped declaration/dependency",
+    "changed statement or definition cone",
+    "incomplete or mismatched export metadata",
+    "missing complete checker result"
+  ],
+  "whole_environment_note": "Lean 4.33.1 declares extra metaprogramming/compiler axioms in the imported environment. Mere ambient presence and reachable dependency are separate facts. Prefer a selected declaration-closure export; do not widen the axiom ceiling or silently ignore a failing full export.",
+  "external_checker_candidate_settings": {
+    "unsafe_permit_all_axioms": false,
+    "unpermitted_axiom_hard_error": true,
+    "kernel_nat_string_extension_policy": "PENDING exact semantic/version review; no runnable checker config selected"
+  },
+  "actual_axiom_lists": null,
+  "actual_kernel_types": null,
+  "export_identity": null,
+  "checker_binary_identity": null,
+  "current_build_gate": false,
+  "compiler_runs": 0,
+  "checker_runs": 0
+}

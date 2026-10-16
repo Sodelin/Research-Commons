@@ -1,0 +1,454 @@
+{
+  "schema": "independent_challenge_statement_manifest_v1",
+  "status": "PROPOSED_SEPARATE_REVIEWABLE_CHALLENGE_NO_ACCEPTANCE_MARKER",
+  "frozen_source_commit": "55eecf2a337a43c0a9b958592dde1e50a6bf405d",
+  "frozen_source_manifest_sha256": "0029f318d0e3a7d32395232228195a03dade526728585a80d6566e34afde2bd0",
+  "lean_version": "4.33.1",
+  "lean_source_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "source_selection": {
+    "SamuelAlexanderResearch.ObservationPrediction": {
+      "path": "source/SamuelAlexanderResearch/ObservationPrediction.lean",
+      "bytes": 6407,
+      "sha256": "2b62f0d1da7c22b43dcc741e24916b5218d3ae5fd7bf09c62e97928321e0fd0f",
+      "imports": [
+        "Std"
+      ]
+    },
+    "Semi.Certificates.FoundationAudit": {
+      "path": "source/Semi/Certificates/FoundationAudit.lean",
+      "bytes": 1668,
+      "sha256": "46cb84a0b427325d49e67769b75e73027172b2f5e425bca7c72a09eb8e35eb31",
+      "imports": [
+        "Semi.Statistics.CyclicRecovery"
+      ]
+    },
+    "Semi.Core.FiniteOrbit": {
+      "path": "source/Semi/Core/FiniteOrbit.lean",
+      "bytes": 6097,
+      "sha256": "4f02600853fdf56aa349194b359a5813d1d4672ecb3474f8b286a913426fe2f4",
+      "imports": [
+        "Lean.Elab.Tactic.Omega",
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Fintype.Quotient",
+        "Mathlib.GroupTheory.Perm.Basic"
+      ]
+    },
+    "Semi.Core.Observation": {
+      "path": "source/Semi/Core/Observation.lean",
+      "bytes": 3150,
+      "sha256": "b5b8da7a084ae48bc00ddcdf4646045b4d971ee9ac06efa25f2225fe598222f1",
+      "imports": [
+        "Mathlib.Data.Set.Function",
+        "SamuelAlexanderResearch.ObservationPrediction"
+      ]
+    },
+    "Semi.Diffraction.CyclicGrid": {
+      "path": "source/Semi/Diffraction/CyclicGrid.lean",
+      "bytes": 3418,
+      "sha256": "88b304c67f3d63676195f14d1fbdd0d35f41b0dc24e2a932d795b41f95647941",
+      "imports": [
+        "Mathlib.Algebra.Group.Subgroup.Lattice",
+        "Mathlib.Analysis.Fourier.ZMod",
+        "Mathlib.GroupTheory.Perm.Finite",
+        "Mathlib.InformationTheory.Hamming",
+        "Mathlib.Tactic.NormNum"
+      ]
+    },
+    "Semi.Diffraction.FourierIntensity": {
+      "path": "source/Semi/Diffraction/FourierIntensity.lean",
+      "bytes": 5932,
+      "sha256": "6bc1f4c653a37336c03c38b4db0fd02b86276c25131a273817496255fb12503c",
+      "imports": [
+        "Mathlib.Data.Complex.BigOperators",
+        "Mathlib.Tactic.Ring",
+        "Semi.Diffraction.CyclicGrid"
+      ]
+    },
+    "Semi.Diffraction.OrbitHamming": {
+      "path": "source/Semi/Diffraction/OrbitHamming.lean",
+      "bytes": 3786,
+      "sha256": "bfd62076d57228b45bb0182bb6bb0de7f14f2d2c5407f8ad4d5e613472ad5ca4",
+      "imports": [
+        "Semi.Core.FiniteOrbit",
+        "Semi.Diffraction.FourierIntensity"
+      ]
+    },
+    "Semi.Statistics.CyclicRecovery": {
+      "path": "source/Semi/Statistics/CyclicRecovery.lean",
+      "bytes": 1323,
+      "sha256": "5003e804c80bbbe8400fadb4902f7623ae33549d54513052c213ea39d1dc1c13",
+      "imports": [
+        "Semi.Diffraction.OrbitHamming",
+        "Semi.Statistics.FiniteDecision"
+      ]
+    },
+    "Semi.Statistics.FiniteDecision": {
+      "path": "source/Semi/Statistics/FiniteDecision.lean",
+      "bytes": 7398,
+      "sha256": "8b3ca4849a8aa94041eb570d73f289102af7c8ce0e47e1af95df041bc7b5e447",
+      "imports": [
+        "Mathlib.Analysis.Convex.StdSimplex",
+        "Mathlib.Data.Fintype.OfMap",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Topology.Order.Compact",
+        "Mathlib.Topology.Order.Lattice",
+        "Semi.Core.Observation"
+      ]
+    }
+  },
+  "declarations": [
+    {
+      "declaration": "Semi.Core.option_factorization_iff",
+      "kind": "theorem",
+      "source_path": "source/Semi/Core/Observation.lean",
+      "source_line": 22,
+      "source_sha256": "b5b8da7a084ae48bc00ddcdf4646045b4d971ee9ac06efa25f2225fe598222f1",
+      "source_header_without_proof": "theorem option_factorization_iff (observe : X → O) (target : X → A) :\n    OptionRecoverable observe target ↔ ConstantOnFibres observe target",
+      "ambient_context_for_human_review": [
+        "universe u v w",
+        "{X : Type u} {O : Type v} {A : Type w}"
+      ],
+      "intended_mathematical_contract": "Correct Option-valued recovery on realizable observations iff target fibre constancy; no nonempty answer premise.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Core.range_factorization_iff",
+      "kind": "theorem",
+      "source_path": "source/Semi/Core/Observation.lean",
+      "source_line": 27,
+      "source_sha256": "b5b8da7a084ae48bc00ddcdf4646045b4d971ee9ac06efa25f2225fe598222f1",
+      "source_header_without_proof": "theorem range_factorization_iff (observe : X → O) (target : X → A) :\n    (∃ decode : Set.range observe → A,\n      ∀ x, decode ⟨observe x, ⟨x, rfl⟩⟩ = target x) ↔\n      ConstantOnFibres observe target",
+      "ambient_context_for_human_review": [
+        "universe u v w",
+        "{X : Type u} {O : Type v} {A : Type w}"
+      ],
+      "intended_mathematical_contract": "Correct recovery on the actual observation range iff target fibre constancy; no unused-observation default.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Core.total_factorization_iff",
+      "kind": "theorem",
+      "source_path": "source/Semi/Core/Observation.lean",
+      "source_line": 44,
+      "source_sha256": "b5b8da7a084ae48bc00ddcdf4646045b4d971ee9ac06efa25f2225fe598222f1",
+      "source_header_without_proof": "theorem total_factorization_iff [Nonempty A] (observe : X → O) (target : X → A) :\n    (∃ decode : O → A, ∀ x, decode (observe x) = target x) ↔\n      ConstantOnFibres observe target",
+      "ambient_context_for_human_review": [
+        "universe u v w",
+        "{X : Type u} {O : Type v} {A : Type w}"
+      ],
+      "intended_mathematical_contract": "With Nonempty A, a total A-valued decoder exists iff target fibre constancy.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Core.total_factorization_iff_extension",
+      "kind": "theorem",
+      "source_path": "source/Semi/Core/Observation.lean",
+      "source_line": 58,
+      "source_sha256": "b5b8da7a084ae48bc00ddcdf4646045b4d971ee9ac06efa25f2225fe598222f1",
+      "source_header_without_proof": "theorem total_factorization_iff_extension (observe : X → O) (target : X → A) :\n    (∃ decode : O → A, ∀ x, decode (observe x) = target x) ↔\n      ConstantOnFibres observe target ∧ (Nonempty O → Nonempty A)",
+      "ambient_context_for_human_review": [
+        "universe u v w",
+        "{X : Type u} {O : Type v} {A : Type w}"
+      ],
+      "intended_mathematical_contract": "Including empty types: total recovery iff fibre constancy AND (Nonempty O implies Nonempty A).",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Core.FiniteOrbitGeometry.orbitDistance_eq_zero",
+      "kind": "theorem",
+      "source_path": "source/Semi/Core/FiniteOrbit.lean",
+      "source_line": 93,
+      "source_sha256": "4f02600853fdf56aa349194b359a5813d1d4672ecb3474f8b286a913426fe2f4",
+      "source_header_without_proof": "theorem orbitDistance_eq_zero (x y : X) :\n    M.orbitDistance x y = 0 ↔ M.Related x y",
+      "ambient_context_for_human_review": [
+        "{G X : Type*} [Group G] [Fintype G]",
+        "M : Semi.Core.FiniteOrbitGeometry G X",
+        "M supplies the action, separated natural distance, symmetry, triangle and invariance hypotheses."
+      ],
+      "intended_mathematical_contract": "For the supplied finite isometric permutation action and separated natural distance, the orbit minimum is zero iff the sources share a declared orbit.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": false
+    },
+    {
+      "declaration": "Semi.Core.FiniteOrbitGeometry.quotientDistance_eq_zero",
+      "kind": "theorem",
+      "source_path": "source/Semi/Core/FiniteOrbit.lean",
+      "source_line": 143,
+      "source_sha256": "4f02600853fdf56aa349194b359a5813d1d4672ecb3474f8b286a913426fe2f4",
+      "source_header_without_proof": "theorem quotientDistance_eq_zero (a b : Quotient M.orbitSetoid) :\n    M.quotientDistance a b = 0 ↔ a = b",
+      "ambient_context_for_human_review": [
+        "{G X : Type*} [Group G] [Fintype G]",
+        "M : Semi.Core.FiniteOrbitGeometry G X",
+        "M supplies the action, separated natural distance, symmetry, triangle and invariance hypotheses."
+      ],
+      "intended_mathematical_contract": "The descended distance is zero iff declared source orbits are equal.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Diffraction.orbitMetric_triangle",
+      "kind": "theorem",
+      "source_path": "source/Semi/Diffraction/OrbitHamming.lean",
+      "source_line": 58,
+      "source_sha256": "bfd62076d57228b45bb0182bb6bb0de7f14f2d2c5407f8ad4d5e613472ad5ca4",
+      "source_header_without_proof": "theorem orbitMetric_triangle (a b c : SourceOrbit N) :\n    orbitMetric a c ≤ orbitMetric a b + orbitMetric b c",
+      "ambient_context_for_human_review": [
+        "{N : Nat} [NeZero N]",
+        "Grid N = ZMod N; Configuration N = Grid N -> Bool"
+      ],
+      "intended_mathematical_contract": "For N nonzero, quotient Hamming distance divided by N satisfies the triangle inequality.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Diffraction.orbitMetric_eq_zero",
+      "kind": "theorem",
+      "source_path": "source/Semi/Diffraction/OrbitHamming.lean",
+      "source_line": 66,
+      "source_sha256": "bfd62076d57228b45bb0182bb6bb0de7f14f2d2c5407f8ad4d5e613472ad5ca4",
+      "source_header_without_proof": "theorem orbitMetric_eq_zero (a b : SourceOrbit N) : orbitMetric a b = 0 ↔ a = b",
+      "ambient_context_for_human_review": [
+        "{N : Nat} [NeZero N]",
+        "Grid N = ZMod N; Configuration N = Grid N -> Bool"
+      ],
+      "intended_mathematical_contract": "For N nonzero, normalized orbit-Hamming distance is zero iff source orbits are equal.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Diffraction.intensity_sum_one",
+      "kind": "theorem",
+      "source_path": "source/Semi/Diffraction/FourierIntensity.lean",
+      "source_line": 77,
+      "source_sha256": "6bc1f4c653a37336c03c38b4db0fd02b86276c25131a273817496255fb12503c",
+      "source_header_without_proof": "theorem intensity_sum_one (x : Configuration N) : ∑ k, intensity x k = 1",
+      "ambient_context_for_human_review": [
+        "{N : Nat} [NeZero N]",
+        "Grid N = ZMod N; Configuration N = Grid N -> Bool"
+      ],
+      "intended_mathematical_contract": "For every Boolean configuration on ZMod N, N nonzero, counting-measure DFT normSq divided by N squared sums to one over labelled frequencies.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Diffraction.intensity_symmetry",
+      "kind": "theorem",
+      "source_path": "source/Semi/Diffraction/FourierIntensity.lean",
+      "source_line": 131,
+      "source_sha256": "6bc1f4c653a37336c03c38b4db0fd02b86276c25131a273817496255fb12503c",
+      "source_header_without_proof": "theorem intensity_symmetry (g : symmetries N) (x : Configuration N) :\n    intensity (g.1 x) = intensity x",
+      "ambient_context_for_human_review": [
+        "{N : Nat} [NeZero N]",
+        "Grid N = ZMod N; Configuration N = Grid N -> Bool"
+      ],
+      "intended_mathematical_contract": "Labelled intensity is invariant under the generated translations/full-inversion/global-sign group; no partial-axis reflection or sorting is assumed.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Statistics.indistinguishable_pair_lower_bound",
+      "kind": "theorem",
+      "source_path": "source/Semi/Statistics/FiniteDecision.lean",
+      "source_line": 46,
+      "source_sha256": "8b3ca4849a8aa94041eb570d73f289102af7c8ce0e47e1af95df041bc7b5e447",
+      "source_header_without_proof": "theorem indistinguishable_pair_lower_bound (observe : X → O) (loss : A → X → ℝ)\n    (rule : DecisionRule O A) (x y : X) (same : observe x = observe y)\n    (δ : ℝ) (h : ∀ a, δ ≤ loss a x + loss a y) :\n    δ / 2 ≤ max (risk loss (rule (observe x)) x) (risk loss (rule (observe y)) y)",
+      "ambient_context_for_human_review": [
+        "{X O A : Type*} [Fintype A]"
+      ],
+      "intended_mathematical_contract": "A common rule at equal observations incurs maximum pair risk at least delta/2 if every action has pair-loss sum at least delta.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Statistics.exists_fibre_minimizer",
+      "kind": "theorem",
+      "source_path": "source/Semi/Statistics/FiniteDecision.lean",
+      "source_line": 87,
+      "source_sha256": "8b3ca4849a8aa94041eb570d73f289102af7c8ce0e47e1af95df041bc7b5e447",
+      "source_header_without_proof": "theorem exists_fibre_minimizer (observe : X → O) (loss : A → X → ℝ)\n    (o : Set.range observe) :\n    ∃ q : RandomizedAction A, ∀ r : RandomizedAction A,\n      fibreWorstRisk observe loss o q ≤ fibreWorstRisk observe loss o r",
+      "ambient_context_for_human_review": [
+        "{X O A : Type*} [Fintype A]",
+        "[Fintype X] [Nonempty A]"
+      ],
+      "intended_mathematical_contract": "For finite source and finite nonempty action types, worst expected loss on a realized fibre attains its minimum over the ENTIRE action simplex.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Statistics.fibreMinimaxRadius_pair_lower_bound",
+      "kind": "theorem",
+      "source_path": "source/Semi/Statistics/FiniteDecision.lean",
+      "source_line": 109,
+      "source_sha256": "8b3ca4849a8aa94041eb570d73f289102af7c8ce0e47e1af95df041bc7b5e447",
+      "source_header_without_proof": "theorem fibreMinimaxRadius_pair_lower_bound (observe : X → O) (loss : A → X → ℝ)\n    (o : Set.range observe) (x y : X) (hx : observe x = o.1) (hy : observe y = o.1)\n    (δ : ℝ) (h : ∀ a, δ ≤ loss a x + loss a y) :\n    δ / 2 ≤ fibreMinimaxRadius observe loss o",
+      "ambient_context_for_human_review": [
+        "{X O A : Type*} [Fintype A]",
+        "[Fintype X] [Nonempty A]"
+      ],
+      "intended_mathematical_contract": "Two states in one realized fibre, whose pair-loss sums are at least delta for EVERY action, force minimax radius at least delta/2.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Statistics.exactDataMinimaxFloor_le_rule",
+      "kind": "theorem",
+      "source_path": "source/Semi/Statistics/FiniteDecision.lean",
+      "source_line": 150,
+      "source_sha256": "8b3ca4849a8aa94041eb570d73f289102af7c8ce0e47e1af95df041bc7b5e447",
+      "source_header_without_proof": "theorem exactDataMinimaxFloor_le_rule (observe : X → O) (loss : A → X → ℝ)\n    (rule : Set.range observe → RandomizedAction A) :\n    exactDataMinimaxFloor observe loss ≤ exactDataWorstRisk observe loss rule",
+      "ambient_context_for_human_review": [
+        "{X O A : Type*} [Fintype A]",
+        "[Fintype X] [Nonempty A]",
+        "[Nonempty X]"
+      ],
+      "intended_mathematical_contract": "For finite nonempty source and action types, the pointwise-minimizing rule has exact-data worst risk no larger than ANY rule on realized observations.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    },
+    {
+      "declaration": "Semi.Statistics.CyclicRecovery.equal_intensity_lower_bound",
+      "kind": "theorem",
+      "source_path": "source/Semi/Statistics/CyclicRecovery.lean",
+      "source_line": 26,
+      "source_sha256": "5003e804c80bbbe8400fadb4902f7623ae33549d54513052c213ea39d1dc1c13",
+      "source_header_without_proof": "theorem equal_intensity_lower_bound (rule : CyclicRule N) (x y : Configuration N)\n    (same : intensity x = intensity y) :\n    orbitMetric (sourceOrbit x) (sourceOrbit y) / 2 ≤\n      max (risk orbitLoss (rule (intensity x)) x) (risk orbitLoss (rule (intensity y)) y)",
+      "ambient_context_for_human_review": [
+        "{N : Nat} [NeZero N]",
+        "Grid N = ZMod N; Configuration N = Grid N -> Bool"
+      ],
+      "intended_mathematical_contract": "In the classical cyclic example, equal labelled intensities force maximum randomized orbit-Hamming risk at least half the true-orbit separation; actions range over ALL source orbits.",
+      "type_record_status": "PROPOSED_SOURCE_HEADER_NOT_ELABORATED_KERNEL_TYPE",
+      "kernel_type_digest": null,
+      "approved_axiom_ceiling": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "actual_axiom_dependencies": null,
+      "in_original_print_axioms_request": true
+    }
+  ],
+  "target_count": 15,
+  "frozen_audit_axiom_requests": 14,
+  "follow_on_axiom_request_note": "All 15 selected declarations are included; frozen audit prints 14 axiom rows. No frozen audit modification or extra runtime request is made. Any extra orbit-distance axiom row needs its own admitted follow-on.",
+  "independence": "Statement contracts and headers were chosen from human-reviewable frozen source, without proof exports, compiler acceptance markers or build receipts. This document remains pending independent review.",
+  "required_statement_binding": "Compare actual universe parameters, binder types, proposition AST and recursively referenced definitions against a separately approved trusted challenge environment. Names, strings and successful checker exit alone do not establish this binding.",
+  "definition_policy": "No definition holes or solution-chosen source/observation/loss maps. Preserve exact ranges, all-action simplex, normalization, symmetry group, finite/nonempty premises and primitive definitions.",
+  "challenge_module_status": "No Lean challenge module, placeholder proof, axiom declaration or proof body authored or executed. Trusted source separation/import binding remains a follow-on obligation.",
+  "not_implied": [
+    "source-model adequacy",
+    "causal/intervention equivalence",
+    "Poisson or Gibbs measurement semantics",
+    "optimal copy complexity",
+    "G3 attained membership/unknown-size bound",
+    "G4 all-rivals stopping",
+    "Rust/native refinement",
+    "canonical adoption"
+  ],
+  "runtime_admission": false,
+  "checker_runs": 0,
+  "compiler_runs": 0
+}
