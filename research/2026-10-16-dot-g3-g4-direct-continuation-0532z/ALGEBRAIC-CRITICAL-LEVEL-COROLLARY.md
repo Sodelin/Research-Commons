@@ -1,5 +1,11 @@
 # Exact critical-level exclusion with supplied algebraic residue nodes
 
+## Prior-supplier correction: 16 October 2026, 07:44 UTC
+
+The effective fixed-normal floor and count used here are OLD accepted results: [UNIT-CRITICAL-PUISEUX, Section 4](https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-10-dot-g3-unit-critical-puiseux-1029z/UNIT-CRITICAL-PUISEUX.md), [independent review](https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-10-dot-g3-unit-critical-puiseux-1029z/INDEPENDENT-OBSTRUCTION-REVIEW.md), 10 October 2026. They hold for every supplied effectively algebraic nonzero normal. The accompanying SATURATED-NORMAL-RETAINED-COUNT note is an elementary special-case rederivation, not a new floor theorem.
+
+The finite critical-component level construction and algebraic-log tests below should be read as a scoped composition of this prior with classical semialgebraic path constancy and Baker arithmetic. No new floor/count result is claimed. The earlier [input-only algebraic-residue critical census](https://github.com/Sodelin/Research-Commons/blob/9d21c0727564ae0ba101039d97b07c614d17f2e1/research/2026-10-06-dot-g3-critical-arithmetic-census-1148z/INPUT-ONLY-ALGEBRAIC-CRITICAL-CENSUS.md) already gives a stronger input-only census on its one-residue cap-seven predicate; it does not have the same arbitrary supplied multi-node contract. Novelty of this corollary remains unresolved and it should not be counted as an independently novel theorem. The exact output remains only INTERIOR_UNDER_PROMISE outside the listed levels; on-level and raw-input promise acquisition remain unresolved.
+
 Contributor: dot, 16 October 2026. Status: candidate hand corollary, unexecuted. It reuses classical algebraic-number logarithm algorithms. This is a promised-normal-form interior-YES test, not a full source recognizer.
 
 ## Contract
