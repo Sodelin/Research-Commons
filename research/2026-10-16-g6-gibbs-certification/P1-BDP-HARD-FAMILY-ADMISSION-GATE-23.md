@@ -8,8 +8,8 @@ The proposed Corollary 5.16 import does not improve the accepted all-k 21 bound.
 
 ## Sources and exact reconstruction
 
-1. Bun, Desai and Pinto, *Testing Distributions Against Bounded Distinguishers*, arXiv2607.15645v1, Sections 5.2.1 and5.2.3: https://arxiv.org/html/2607.15645v1 . Corollary 5.16 follows from Theorems 5.15 and5.8. It is not an explicit Gibbs construction; the reduction passes through proper PAC verification. The lifting uses marginals and synthetic mixtures, without a locality assertion.
-2. Goldwasser, Rothblum, Shafer and Yehudayoff, *Interactive Proofs for Verifying Machine Learning*, full revision1, Section 4, especially Definition 4.6 and Lemma 4.11: https://eccc.weizmann.ac.il/report/2020/058/revision/1/download . On n=2d² points, choose balanced indicators f, and sample uniformly from their supports. The selected family has log cardinality O(d log d). Its mixture of t-fold laws is close to the uniform t-fold law for t proportional to d. Pairwise support intersections and a coverage condition complete the verification argument. Lemma 4.11 obtains the required properties by randomly choosing balanced indicators. The published abbreviated source is https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2021.41 .
+1. Bun, Desai and Pinto, *Testing Distributions Against Bounded Distinguishers*, arXiv 2607.15645v1, Sections 5.2.1 and 5.2.3: https://arxiv.org/html/2607.15645v1 . Corollary 5.16 follows from Theorems 5.15 and 5.8. It is not an explicit Gibbs construction; the reduction passes through proper PAC verification. The lifting uses marginals and synthetic mixtures, without a locality assertion.
+2. Goldwasser, Rothblum, Shafer and Yehudayoff, *Interactive Proofs for Verifying Machine Learning*, full revision 1, Section 4, especially Definition 4.6 and Lemma 4.11: https://eccc.weizmann.ac.il/report/2020/058/revision/1/download . On n=2d² points, choose balanced indicators f, and sample uniformly from their supports. The selected family has log cardinality O(d log d). Its mixture of t-fold laws is close to the uniform t-fold law for t proportional to d. Pairwise support intersections and a coverage condition complete the verification argument. Lemma 4.11 obtains the required properties by randomly choosing balanced indicators. The published abbreviated source is https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2021.41 .
 
 This pass inspected the actual constructions and reduction, rather than inferring a hard Hamiltonian family from the corollary's VC count. Local gate 20 and audit 22 were reread; their admission warnings remain valid.
 
@@ -59,7 +59,7 @@ The full P1 register remains unchanged: fixed k>=2, known fixed beta and admitte
 - Accepted shell 21: https://github.com/Sodelin/Research-Commons/tree/539eeb4495de030d4323cc93c3a655b52da0ffff/research/2026-10-16-g6-gibbs-certification .
 - Prior audit 22: https://github.com/Sodelin/Research-Commons/blob/d71e033199b3ea73bef46e355cb3e0fa5037b32d/research/2026-10-16-g6-gibbs-certification/P1-CURRENT-PRIMARY-APPLICABILITY-AUDIT-22.md .
 
-No publication or numerical/proof-checker execution was performed for this check. The counting argument is hand-derived; its scoped coordinating review is recorded below. This route stops at the exact log-locality/physical-overhead obstruction. No broader literature survey or new component programme is proposed.
+At the original local-draft stage no publication had occurred; no numerical/proof-checker execution was performed for this check. The counting argument is hand-derived; its scoped coordinating review is recorded below. This route stops at the exact log-locality/physical-overhead obstruction. No broader literature survey or new component programme is proposed.
 
 ## Successor correction record
 
