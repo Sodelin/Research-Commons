@@ -22,3 +22,10 @@ Retain the four existing G3, G4, P1 and P5 responsibilities, with the coordinato
 A further proposal should identify and attempt the missing full-goal implication under the original quantifiers: source-faithful exact realization and all-input stopping for G3; one finite panel versus all rivals or a coherent exact rival construction for G4; complete observation-law and total-copy guarantees for the unrestricted P1 class; actual integrated feedback control for the original P5 dynamics. Enlarging a list of features or component certificates does not itself discharge these obligations.
 
 These scoped failures preserve other routes and earlier accepted results. They establish neither master impossibility nor historical novelty. No full-scope or shared explainer rewrite is made by this checkpoint.
+
+
+## P5 review update — 18 October 2026, 04:15 UTC
+
+The [reviewed KMS-contour calculation](p5-contour/README.md) now gives a concrete same-H reached-state failure of the proposed automatic cancellation. In the already admitted connected two-site model24, the grouped modular remainder vanishes at the Gibbs input but becomes nonzero immediately under the actual full-filter evolution, after summing all six bath channels. The exact strip identity and this scope received separate assistant-context hand/source review; the 40-identity symbolic checker and unchanged-checker replay both passed.
+
+This rejects the proposed repeated exact cancellation, not the original P5 comparison. Combined signed forcing control, uniform in volume and time with the original fixed-support/all-initial-state quantifiers, remains unresolved. The earlier 04:09 status above is preserved as a dated record. No master claim, explainer, prior accepted result or other assignment is changed.
