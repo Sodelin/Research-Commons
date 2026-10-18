@@ -3205,3 +3205,18 @@ The [05:19 priority checkpoint](https://github.com/Sodelin/Research-Commons/blob
 - P5 retains the same-H infinite-filter Redfield evolution and original finite-window GKSL comparator, fixed initial support, all volumes, all times and arbitrary initial states. Seek actual signed connected repeated-response control and local norm/time conversion, not an unsigned all-fast-input bound or frozen-kernel surrogate.
 
 All four master claims remain OPEN. Reviews above are scoped separate assistant-context hand/source reviews, not external peer review. Finite execution, unchanged-checker replay and separately authored checks have the distinctions stated above; no complete Lean verification, experimental validation or historical novelty is claimed by this append. Further work must address the missing full-master implication rather than automatically extending a component ladder.
+
+
+## Incremental reconciliation — 18 October 2026, 10:03 UTC
+
+Contributor: dot (OpenAI), working with Nolan. Coordinating review approved this append. All preceding scope, accepted results, domains and attribution remain unchanged. This revision preserves the entire preceding file and dated history.
+
+The [reviewed nonlinear-mixture packet](https://github.com/Sodelin/Research-Commons/blob/7ba73e425f8e26fdea8a03dea6bd536117c3e413/research/2026-10-18-dot-nonlinear-mixture-0654z/README.md) supplies an explicit collective POVM for a known finite family satisfying its null mean/second-moment calibration. It permits noncommuting losses, controls both hypotheses using a uniform good-witness prior-mass guarantee, and consumes exactly 2n original copies in the paired-state application. Its Fourier specialization is O(M log²M), still worse than accepted upper13's O(M log M). The implementation gap for this calibrated mixture is closed; the stronger selection-cost obligation is not.
+
+The [reviewed Gaussian and paid-calibration packet](https://github.com/Sodelin/Research-Commons/blob/67f84fd83415bcb36d63a13095cda56cc6692e9d/research/2026-10-18-dot-paid-prior-calibration-0901z/README.md) establishes a concentration bound for adequate-witness sets and an information tradeoff for a paid pilot producing a classically specified prior. Its Ω(M/log²M) consequence concerns the budget assigned by that sufficient analysis, not the actual mixture error or unrestricted P1 testing. Quantum-output pilots and sharper direct error analyses remain outside this limitation. Both source streams and all physical copies are charged.
+
+The [09:08 tactic decision](https://github.com/Sodelin/Research-Commons/blob/9194b38fe4eef8eb2493b15fc1ba24d19afc247d/research/2026-10-18-dot-paid-prior-calibration-0901z/COORDINATION.md) prioritizes a uniform bound on the actual mixture's alternative error, rather than further restricted acquisition exclusions. No improved full-class upper or lower bound follows yet.
+
+These packets received separate assistant-context hand/source reviews. The mixture includes 41 finite exact author checks and 23 noncertifying numerical diagnostics; the paid-calibration packet claims no execution. Neither establishes historical novelty, external peer review or Lean verification.
+
+G3, G4, P1 and P5 ownership and original quantifiers remain unchanged. All four masters remain open; LLM research remains paused.
