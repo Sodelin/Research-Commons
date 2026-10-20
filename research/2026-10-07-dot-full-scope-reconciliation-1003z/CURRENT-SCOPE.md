@@ -3272,3 +3272,39 @@ All general claims above have the scoped assistant-context hand/source reviews s
 
 Retain the four existing G3/G4/P1/P5 responsibilities and coordinating review; cross-review does not alter ownership. LLM research remains paused, and no nanowire scope expansion is adopted. The [20:12 priority checkpoint](https://github.com/Sodelin/Research-Commons/blob/cac3fd176a13f2d9e3ab83c4595e4cf3b9979604/research/2026-10-19-dot-priority-review-2012z/CHECKPOINT.md) directs work toward the missing master implications: total physical recognition; fixed-target finite legal forcing or exact all-panel rivals; uniform actual testing/risk control with paid copies; and uniform actual signed forcing. All four masters remain open. This append consolidates already reported results; it supplies no new proof, reassignment or tactical change beyond the cited priority checkpoint. No routine failed reformulation is promoted to a new theorem.
 
+
+
+## Incremental reconciliation — 20 October 2026, 10:09 UTC
+
+Contributor: dot (OpenAI), coordinating Nolan's research. This append preserves the entire preceding record and its dated acceptance boundaries. It reconciles the four scientific commits after scope revision [69b14f90](https://github.com/Sodelin/Research-Commons/commit/69b14f90b74847a691fdda39347a5ff5c90626cf), through main `86822d68602397896a88f148ee9d67db16408c4d`. Their commit-comment counts were zero; the issue-comment query since 19 October 22:06 UTC returned empty. This is a bounded repository audit, not an external discussion census.
+
+### P1: operational measurement bridge, but no improved uniform rate
+
+The [coding-to-prediction assessment](https://github.com/Sodelin/Research-Commons/blob/e51192e1828c98ed09085fcba9c80b4b6557dcb4/research/2026-10-20-p1-coding-prediction-gap/P1-UNIVERSAL-CODING-PREDICTION-GAP-20261020-v2.md) preserves the distinction between a Holevo increment and Umegaki prediction risk after measurement: the latter includes a nonnegative measurement-information loss.
+
+The later [direct PGM theorem](https://github.com/Sodelin/Research-Commons/blob/43cebb410eed5fbf6764b000f0b2e40d77090e25/research/2026-10-20-p1-pgm-information-increment/README.md) establishes a weaker, operationally useful loss bound for every finite ensemble, including noncommuting interacting Gibbs candidates: actual n-copy PGM expected squared Bures loss is at most Q_n <= 2(1-exp(-delta_n)) <= 2 delta_n, and expected squared full trace norm is at most 4Q_n <= 8 delta_n, where delta_n=chi_(n+1)-chi_n. The formal extra register consumes no extra unknown copy. This does not identify the stronger Umegaki risk with the increment or assert a generic unrotated recovery theorem.
+
+The [fixed-beta isotropic counterexample](https://github.com/Sodelin/Research-Commons/blob/86822d68602397896a88f148ee9d67db16408c4d/research/2026-10-20-p1-isotropic-residual-counterexample/README.md) excludes only a proposed coefficient-information shortcut: an admitted beta=2, k=2 complete-graph Ising finite prior has Gaussian auxiliary residual Omega(MN), while its actual Holevo increment tends to zero. It does not refute the desired physical-state rate. Retire that uniform isotropic-residual estimate, not P1.
+
+The full coefficientwise-bounded, unrestricted-degree Gibbs class, known fixed beta, arbitrary collective measurements and total two-source copy accounting remain unchanged. Uniform delta_n=O_(beta,k)(M/n), a suitable O_(beta,k)(M) dyadic increment, or a direct equally strong testing supplier remains missing. A cumulative O(M log n) upper bound cannot establish a dyadic bound by subtracting upper bounds. Prior-independent testing/minimax transfer remains explicit. Accepted upper13 and lower32 do not change.
+
+### P5: general operator incidence improves a supplier, not actual evolution
+
+The [operator-incidence packet](https://github.com/Sodelin/Research-Commons/blob/04c9808f1fc4ec3c1c57cdbca200e91e82d32d5d/research/2026-10-20-p5-operator-incidence/README.md) gives unitary and complete-filter influence velocity 3kh using the original operator incidence, avoiding the earlier exponential Pauli-coefficient factor. The integrated auxiliary interacting-noise estimate requires g>3kh; it includes general two-body interactions in the original box, not arbitrary k. Actual Redfield evolution still has the uncontrolled homogeneous second-gradient term 2q I2. Uniform actual response and comparison with the original square-window GKSL dynamics remain unproved. Preserve same H, infinite filters, triangular Lamb shift, all volumes and times, fixed initial support and every initial density matrix.
+
+### G4 correction: the older full cap-four return was not missing e4
+
+The [priority checkpoint](https://github.com/Sodelin/Research-Commons/blob/43cebb410eed5fbf6764b000f0b2e40d77090e25/research/2026-10-20-dot-priority-review-0718z/CHECKPOINT.md) identifies that the accepted October 4 three-cell return already retained both chronological coordinates: C=-10c4/3 and H=e4. The October 19 missing-coordinate correction must not be applied to invalidate that older complete proof. Accepted cap-five whole-group interiority also remains preserved. Reconstructing either is not a new advance. Formal cap-six jet rank or a failed restricted numerical common-zero search establishes neither positive realization nor nonexistence.
+
+### Continuing obligations and repository handoff
+
+Retain the existing four G3, G4, P1 and P5 responsibilities, without adding or reassigning workers. This section is the shared handoff for continuations not presently available for acknowledgment; recorded ownership is not evidence of active execution.
+
+- G3: total exact finite rational/effectively algebraic recognition across every admitted finite positive source size, including terminating NO and unattained zero-distance cases, with original IDs, chronology and one shared tuple. A complete NO supplier or effective bound on one witness is still missing.
+- G4: the original fixed-target finite legal forcing alternative or exact inequivalent finite rivals for every finite legal panel. Seek a positive full-forest common zero with the required exposure control or an all-cap construction; finite ranks, approximation and cap-dependent targets do not close it.
+- P1: use the reviewed measurement bridge, but attack the uniform state-sensitive information/risk or direct testing gate. Do not demand recovery of physically irrelevant coefficient information.
+- P5: control actual signed response including its homogeneous term, with valid general-k assumptions; do not substitute the contractive auxiliary reference.
+
+These are consolidation and corrections of already reported findings, not new proofs. The packets distinguish scoped assistant-context hand reviews, exact finite algebra checks, numerical controls and execution limits. In particular P5's filter fixture is not asserted KMS-admitted; P1's 80 finite Gibbs controls and the isotropic packet's five numerical bound evaluations are not general proof certificates. No external peer review, full Lean verification, historical novelty or laboratory validation is claimed.
+
+All four masters remain OPEN. Older accepted biological, formal and materials results remain intact. Nanowire model indicators, actual same-device measured evidence with uncertainty, and operational claims remain distinct; no new measured evidence or expanded hardware scope is adopted. LLM research remains paused. The shared explainer is unchanged. Future incremental findings belong in focused checkpoints rather than another full historical rewrite.
