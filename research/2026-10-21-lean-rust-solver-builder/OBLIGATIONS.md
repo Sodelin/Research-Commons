@@ -15,7 +15,7 @@ disjoint component and workflow. The full solver goal remains active.
 | Exact new Lean source/type/axiom boundary | Peer commit e8fe774e; all15 bodies read; both source projections/submission hashes reconstructed; selected statements/controls reviewed | New hosted Lean4.35 context PASSED as attributed peer execution |
 | Pinned standalone Lean module/object/full package assembly | Lean4.33.1/mathlib0df444a3 boundary differs from hosted virtual document | OPEN; existing Lean owner prepares new isolated component job |
 | Canonical proposer/profile adoption | New executable identity and original whitelist refusal tested | UNADOPTED; retain old approved identities and explicit UNKNOWN |
-| Finite rational bank-to-one-common-moment interface | BANK-INTERFACE.md; retained source hashes; separate native binary and original-row verifier | NEW source candidate; fresh bounded online bank/CLI/runtime verification pending |
+| Finite rational bank-to-one-common-moment interface | BANK-INTERFACE.md; retained source hashes; separate native binary and original-row verifier | Bounded rational component PASSED run39675913869; formal rational-to-real receiver/cast packaging remains OPEN with Lean owner |
 | Physical law/source/provider recognition | No physical construction or admission supplied | OPEN; obtain exact typed source-to-common-moment obligation; reuse retained finite-PMF grouping work |
 | Native implementation refinement | Exact independent checks and behavior controls only | OPEN formal refinement or retain explicit trusted implementation boundary |
 | Publication/readback | Source manifest, retained failures, native39671718288 and composition39673487466 evidence | Remote immutable history; readback verification recorded with handoff |

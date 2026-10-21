@@ -50,9 +50,10 @@ writes, phone project checkout/build, new chat or sub-agent was used.
 BANK-INTERFACE.md specifies a separate common-bank-moments executable plus
 request-bound Python verification. It removes only zero masses, combines equal
 rational values and derives all triangular moments from ONE law. When its
-shape fits r<=3, it emits the existing acquisition request. This NEW source
-candidate is pending its own bounded online compilation/composition; the older
-successful job does not certify it. Existing proposer/main and interfaces stay
+shape fits r<=3, it emits the existing acquisition request. [Run39675913869](https://github.com/Sodelin/Research-Commons/actions/runs/39675913869)
+compiled it and passed194 banks/reversals,17refusals,onegrowth UNKNOWN,eight
+codec negatives,eight actual CLI calls and both old-runtime fixture chains.
+Its actual new binary identity and authenticated evidence are in evidence/bank-39675913869/. The existing proposer/main and interfaces stay
 unchanged. No physical source admission or arbitrary-real computability follows.
 
 ## Input/output and reproducible execution

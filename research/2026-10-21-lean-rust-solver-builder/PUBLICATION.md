@@ -88,3 +88,36 @@ Physical source/provider correspondence, formal Rust refinement and the
 original mathematical master gaps remain open. Original held/used cloud jobs
 are not replayed. Research Commons holds source/history; no local Git changes,
 phone project artifacts, new chats, sub-agents or model tests were used.
+
+## Exact rational bank composition, separately executed
+
+[Run39675913869](https://github.com/Sodelin/Research-Commons/actions/runs/39675913869)
+tested a45e8380858dbd8502d605b01bd35113957383dc. It passed six NEW bank unit
+groups plus the existing13 proposer/checker groups,194 exact rational banks,
+194 atom-order reversal controls,17 native refusals,one growth UNKNOWN,
+eight codec negatives and eight actual codec CLI calls. Two complete
+bank -> acquisition -> proposer -> original checker/emitter/runtime chains
+reproduced the exact original certificate objects and standalone proof bytes.
+The original 556/158/205 suites and unchanged MCP controls also passed again
+because this source changed the executable build and composition workflow.
+
+The NEW separate bank executable SHA256 is
+0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec.
+The old proposer remained byte-identical at40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9.
+The bank driver made411 native invocations, separately from673 in the support
+driver and the inherited556 cases. Counts overlap and are not theorem counts.
+Every one of10 emitted proof instances has the same two published source hashes.
+
+Artifact12382426160 (80390 bytes), SHA256
+05a00e25d7bf94487ccddbf6d414988dc537249f7634f599d241ed3a9ce1bb6a,
+and all10 guard stdout/stderr receipt pairs were authenticated in memory.
+evidence/bank-39675913869/ retains the projected results and stream audit.
+
+BANK-INTERFACE.md and evidence/BANK-SOURCE-REUSE.json pin the actual retained
+positive-support/grouping sources, receiving FinitePositiveLaw definition and
+their original attribution. Exactly zero mass is omitted, equal rational
+values are grouped without normalization, and every selected triangular
+moment uses ONE fixed law. An independent Fraction verifier computes moments
+from the original positive rows. Unknown/refusal and physical provenance
+remain explicit. Formal real casts/typed physical source, pinned Lean package
+assembly and original master gaps stay open.

@@ -111,7 +111,4 @@ with different x does not justify pooling laws. No whole-tree law, joint
 genealogy coupling, CM-L02 physical instantiation, source YES, global NO,
 all-input G3 or INDEPENDENT G4 closure follows.
 
-Status at authorship: SOURCE PROPOSAL. A NEW bounded online run must record
-actual compilation, original-row checks, refusals/UNKNOWN and full fixture
-composition. Previous successful native/MCP jobs do not cover this new binary.
-The existing Lean owner retains full package assembly and its isolated job.
+Actual ONLINE result: run39675913869 at a45e8380858dbd8502d605b01bd35113957383dc PASSED. Six bank unit groups,194 banks and194 reversal controls,17 native refusals,one output-cap UNKNOWN,eight codec negatives,eight actual CLI calls and two full bank->proposer->original-runtime fixture chains passed. Ten guard receipt/stream pairs and the artifact archive were authenticated. Both emitted proof hashes equal the already published original inputs. Common-bank-moments binary SHA256 0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec; unchanged proposer SHA25640ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9. This is exact effective-rational component evidence, not formal cast/refinement or physical-source closure. The existing Lean owner retains full package assembly and its isolated job.
