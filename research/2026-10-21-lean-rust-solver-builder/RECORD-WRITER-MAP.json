@@ -139,6 +139,28 @@
         }
       ],
       "source_revision": "dbba87288352584bb5723f0a2018958c8d4dd649"
+    },
+    {
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/e02b5d8d07c28eababe72312de80f3bf8cddf020ffe1d7420a436b52a8c7f3ad.lean",
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "e02b5d8d07c28eababe72312de80f3bf8cddf020ffe1d7420a436b52a8c7f3ad",
+      "logical_module": "G6GeneratedChartAudit",
+      "writer_candidates": [
+        {
+          "line": 5,
+          "source": "run_cmd do"
+        },
+        {
+          "line": 47,
+          "source": "  liftIO <| IO.FS.writeFile \"AUDIT-OWNED.json\" result.pretty"
+        },
+        {
+          "line": 48,
+          "source": "  logInfo m!\"Fresh closure: {declarations.size} declarations, {theorems} theorems, {ownedAxioms.size} owned axioms, {invalid.size} nonstandard rows, {missing.size} missing modules\""
+        }
+      ],
+      "executed": false,
+      "review": "Complete original source independently read; run_cmd writes AUDIT-OWNED.json during elaboration. A later outer stream wrapper does not mediate this file."
     }
   ],
   "coverage": "Selected direct writer sites only. Transitive solver/provider/native-loader/failure paths remain OPEN.",

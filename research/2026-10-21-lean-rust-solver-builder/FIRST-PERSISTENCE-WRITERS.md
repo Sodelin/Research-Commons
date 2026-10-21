@@ -13,6 +13,7 @@ for the active execution hold.
 | Support composition driver | acquisition JSON, RESULT.json and printed full report | Both nested files and outer stream need the actual sink |
 | Bank composition driver | acquisition JSON, NATIVE-OBJECTS/RESULT projections and full report | Output identity metadata is still a runtime record |
 | MCP composition driver | RESULT.json and printed report | A projected result is also covered before its first write |
+| G6GeneratedChartAudit Lean elaboration | run_cmd directly calls IO.FS.writeFile for AUDIT-OWNED.json | Compiler stdout sealing does not mediate an elaborator's internal file writer |
 
 RECORD-WRITER-MAP.json pins these actual source bytes and line candidates.
 This is a SELECTED inventory, not complete transitive/native-loader coverage.

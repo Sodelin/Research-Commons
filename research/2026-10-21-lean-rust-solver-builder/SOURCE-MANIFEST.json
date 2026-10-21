@@ -76,8 +76,13 @@
     },
     {
       "path": "FIRST-PERSISTENCE-WRITERS.md",
-      "utf8_bytes": 3668,
-      "sha256": "10c32038c0eed86eca7351f9804d0d881d613c9681dee49c50ee2a48bc3fda26"
+      "utf8_bytes": 3853,
+      "sha256": "15a4c2fc1fa0211121c3abd93e0ea0f18f30b867ca7f761497f7de5cd835ae34"
+    },
+    {
+      "path": "LITERAL-BANK-LEAN.md",
+      "utf8_bytes": 3279,
+      "sha256": "cbdd0797daa100258245c3f92e94335aedf5b9b6b42ca3f5f8fbe4a9668ffddf"
     },
     {
       "path": "MOMENT-PROVENANCE.md",
@@ -111,8 +116,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 8612,
-      "sha256": "b7d2ec8f34f3a7aecffdb8753d0f219ba32d60077e49ddab34de1eb1c403aaab"
+      "utf8_bytes": 8957,
+      "sha256": "3251508530e5d4e13b83ee1b22c22271b486b48472360510485589e8b6e413d1"
     },
     {
       "path": "RECORD-WRITER-GAP.md",
@@ -121,8 +126,8 @@
     },
     {
       "path": "RECORD-WRITER-MAP.json",
-      "utf8_bytes": 4932,
-      "sha256": "8b015d970f8dbda1ca44c17bffbc6af6fd7bdf9887defb5657645d58a7d39d2c"
+      "utf8_bytes": 5991,
+      "sha256": "cb0516c5d6a1b930973b992b47cb46b634634315872385f213f112221a8cde4d"
     },
     {
       "path": "REFERENCE-RESULT.json",
@@ -133,6 +138,11 @@
       "path": "bank_codec.py",
       "utf8_bytes": 10778,
       "sha256": "b6f6ee5b00aa93b26ed2691b0fc2494fba419b1ef6bd5d330e9358caaa238db7"
+    },
+    {
+      "path": "bank_lean.template",
+      "utf8_bytes": 2446,
+      "sha256": "dc5c4f7bfdb23d53889ae896b67ffe3630586655036fec8cfea57b7c80ea4361"
     },
     {
       "path": "ci_bank.py",
@@ -155,6 +165,11 @@
       "sha256": "4bbc30413cb928e86677460b13be5efd578119f988d479003de1dbc5fcd49a33"
     },
     {
+      "path": "emit_bank_lean.py",
+      "utf8_bytes": 5493,
+      "sha256": "973e97183a277a0e5a1cc05b1ec4e6c926f1cde761bc7e36a2a3e2391066fb59"
+    },
+    {
       "path": "evidence/BANK-SOURCE-REUSE.json",
       "utf8_bytes": 2809,
       "sha256": "ee042d73cf43114efedd1860acd1596ddf40292bbcfce40fef07499555d4560e"
@@ -168,6 +183,11 @@
       "path": "evidence/LEAN-SOURCE-REVIEW.json",
       "utf8_bytes": 20854,
       "sha256": "b783fb6963e518763ffe68357625c85301523385c66d544a43e0a3e9646c04e9"
+    },
+    {
+      "path": "evidence/LITERAL-BANK-SOURCE-PREPARATION.json",
+      "utf8_bytes": 7135,
+      "sha256": "6b6702c069d5fdf0214fd3d77171fa86dff5fb997d851f4fb9deaeaba0c38167"
     },
     {
       "path": "evidence/bank-39675913869/MCP.json",
@@ -278,6 +298,16 @@
       "path": "fixtures/two-check-request.json",
       "utf8_bytes": 1677,
       "sha256": "a3eb503b15ab79c1aa2d994bcd125edfaad2bacad3047de5a97775edc44844a1"
+    },
+    {
+      "path": "generated/BankWitness_4efaf02ca21e032cc08c26d2901d8fe3d11a5d2909894a3c0caea77bffe0c8e8.lean",
+      "utf8_bytes": 3918,
+      "sha256": "c886167ec2a6ee3d94af103d74dfcb7172e4856db6bfc614c798c95373958968"
+    },
+    {
+      "path": "generated/BankWitness_d71c2bf0e0153f8103feb7a65084e462c4b20ea5bc823ace0312057491697979.lean",
+      "utf8_bytes": 4353,
+      "sha256": "919f5f8190adc9fcda1d8e00e84d7bbf000b3798c16aa976d279005e87a31e9d"
     },
     {
       "path": "generated/Certificate_776e5a30f4a0190153c23bcad5c5d4bddbf2998a6fdcc690f7810eac99134939.lean",
@@ -556,5 +586,17 @@
     "peer_cast_source_reviewed": "029a729402d349fb771f7c00435d4f8465ab0b6e",
     "complete_original_result_binder": "SOURCE_ONLY_UNEXECUTED; real runtime origin remains caller obligation",
     "future_runtime_identity_negative_controls": 4
+  },
+  "literal_bank_lean_followon": {
+    "status": "SOURCE_ONLY_UNEXECUTED",
+    "receiver_commit": "c524f39cad56c0e3fde9062085a6d848bc8960e2",
+    "receiver_sha256": "879518802d5bbe0ce1e2cf6392a0a6cbe8b70fc9fedb421035ad129684f0530e",
+    "template_sha256": "dc5c4f7bfdb23d53889ae896b67ffe3630586655036fec8cfea57b7c80ea4361",
+    "emitter_sha256": "973e97183a277a0e5a1cc05b1ec4e6c926f1cde761bc7e36a2a3e2391066fb59",
+    "source_preparation": "Authored literal template substitutions in memory, not execution of the new Python emitter or Lean.",
+    "formal_scope": "Per-input all-natural-exponent regrouping identity for exact literal raw rows, one existing CM law, selected sparse moments and roots of unchanged certificate polynomial.",
+    "compiled": false,
+    "native_refinement_proved": false,
+    "physical_source_existence_certified": false
   }
 }

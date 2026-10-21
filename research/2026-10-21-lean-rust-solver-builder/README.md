@@ -128,6 +128,13 @@ metadata extension is source-only and unexecuted under the writer hold; earlier
 jobs cover the recorded baseline, not the extension. The old certificate input
 and native binaries remain unchanged.
 
+## Literal bank Lean receiver source
+
+LITERAL-BANK-LEAN.md and emit_bank_lean.py prepare a per-input all-exponent
+raw-row/grouped-law witness against the peer's existing CM constructor. Both
+literal fixtures and the Python emitter are UNEXECUTED source preparation.
+Their exact source hashes are retained; the existing workflow stays disabled.
+
 ## Mathematical boundary
 
 PROOF.md gives output soundness. The checked Lean finite_supported_bank theorem
