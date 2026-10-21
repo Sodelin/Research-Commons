@@ -112,3 +112,5 @@ The future composition driver exercises both fixture chains through the binder
 and rejects altered literal-request and delegated certificate identities.
 These controls and all new provenance/binding code are SOURCE-ONLY, UNEXECUTED
 under the existing writer hold.
+
+Hash identities are engineering indexes/audit bindings, not mathematical equality axioms. A formal receiver consumes the actual exact nodes, weights and moment equalities. Matching SHA256 values alone cannot discharge equality-of-laws, native refinement or physical-source premises. The verified bank result retains the full canonical numeric data alongside its digest.
