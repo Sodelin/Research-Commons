@@ -1,0 +1,26 @@
+parsed 2020 66506 reconcile 0
+parsed 2021 181818 reconcile 0
+parsed 2022 182052 reconcile 0
+parsed 2023 184104 reconcile 0
+parsed 2024 182449 reconcile 0
+parsed 2025 182926 reconcile 0
+Traceback (most recent call last):
+  File "/workspace/scratch/281dd7169401/sports-metric-pilots/baseball/real-test/run_reduced.py", line 59, in <module>
+    (p/'cohort-summary.json').write_text(json.dumps({'prior_hand_mix':pi.tolist(),'cohort_counts':dict(collections.Counter(str((r['year'],r['anchor'])) for r in rows)),'zero_future_pa':sum(r['future_pa']==0 for r in rows),'n':len(rows)},indent=2))
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable
