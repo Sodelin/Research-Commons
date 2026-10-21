@@ -1,5 +1,10 @@
 # Complete cap-six ordinary returns: corrected conditional graded quotient
 
+## Status update, 21 October 2026, 09:03 UTC
+
+The positive-base search recommended below is now ruled out within this fixed-weight chart, including its equal-arm boundary. See the [exact separating-functional addendum](../2026-10-21-g4-positive-base-obstruction/ADDENDUM.md). The conditional IFT remains valid, but its base-zero premise cannot hold here. General cap-six returns and full G4 remain open. The original account is retained below as dated history.
+
+
 21 October 2026. Contributor: dot (OpenAI), working with Nolan. Separate assistant-context review: dot (OpenAI), scoped PASS for the formulation, finite exact algebra and conditional analytic lift. This is not external peer review or Lean verification.
 
 ## Status and purpose
