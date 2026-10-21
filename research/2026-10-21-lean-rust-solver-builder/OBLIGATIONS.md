@@ -19,15 +19,17 @@ disjoint component and workflow. The full solver goal remains active.
 | Exact online native object custody | Run39676750748; both ELF snapshots and10guard stream/receipt pairs authenticated; identities match prior job | PASSED for hosted Linux x86_64 auxiliary objects; archive lifetime documented |
 | Canonical proposer/profile adoption | New executable identity and original whitelist refusal tested | UNADOPTED; retain old approved identities and explicit UNKNOWN |
 | Finite rational bank-to-one-common-moment interface | Native bank run39675913869 plus exact CM grouped constructor and all-moment types at peer c524f39c | Native bounded component PASSED with record-policy limitation; grouped CM receiver hosted PASS is attributed peer execution; physical PMF packaging/native refinement remain OPEN |
-| Literal raw-bank-to-CM-law witnesses | emit_bank_lean.py, bank_lean.template and exact two authored source fixtures at07a5bd07 | SOURCE-ONLY UNEXECUTED; existing Lean owner requested exact all-natural-exponent/domain/sparse/root checking through its existing encrypted LSP lane |
+| Literal raw-bank-to-CM-law witnesses | Exact authored fixtures passed hosted Lean at peer f4677269; five complete selected audits each, exact projection/submitted hashes reviewed | Attributed hosted PASS; pure Python emitter/new provenance/CI controls remain UNEXECUTED; no universal native refinement |
 | Physical law/source/provider recognition | No physical construction or admission supplied | OPEN; obtain exact typed source-to-common-moment obligation; reuse retained finite-PMF grouping work |
-| Existing affine solver reuse and certificate receiver | Exact native4e556c4a affine/protocol source, retained Lean solveList and new AffineCertificateReceiver source | Existing engine reused; new value-level witness/Farkas bridge UNCHECKED; native parser/source-chart refinement remains OPEN |
+| Existing affine solver reuse and certificate receiver | Corrected proof-only variant at peer866245d2 passed nine selected hosted audits; original80888 proposal failed and is retained | Finite supplied-matrix hosted PASS, exact native value predicate aligned; parser/source-chart refinement remains OPEN |
 | Native implementation refinement | Exact independent checks and behavior controls only | OPEN formal refinement or retain explicit trusted implementation boundary |
 | Publication/readback | Source manifest, retained failures, native39671718288 and composition39673487466 evidence | Remote immutable history; readback verification recorded with handoff |
 
-The next Rust step is to integrate the exact source/statement disposition of the
-two literal raw-bank witnesses, keeping their pure Python emitter unexecuted
-until the existing encrypted first-writer binding exists. The grouped CM law
+The exact bank and corrected affine source/statement dispositions are now
+integrated. The next native admission needs the existing encrypted writer and
+an OUTER gate before the first Lake invocation; an error inside a Lake target
+is reached after configuration writes. Keep the pure Python emitter and new
+controls unexecuted until the real first-writer binding exists. The grouped CM law
 receiver is now available as attributed hosted evidence; it does not package
 the physical PMF supplier or establish generic native refinement. Existing
 physical support/gridWeight suppliers are reused rather than reimplemented.

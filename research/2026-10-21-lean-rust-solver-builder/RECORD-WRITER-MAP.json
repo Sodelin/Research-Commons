@@ -205,6 +205,36 @@
       ],
       "executed": false,
       "review": "Source review of existing native RC1 loader/streams/request/result writers; no held runtime replay. Captured executable staging requires source/build classification separately from raw scientific records."
+    },
+    {
+      "repository": "leanprover/lean4",
+      "source_revision": "v4.33.1",
+      "path": "src/lake/Lake/Load/Lean/Elab.lean",
+      "sha256": "5b3d30d5a9001514e7ff3d8c95a71bd0b29a79777e12c441e79563af0acb1674",
+      "writer_candidates": [
+        {
+          "line": 184,
+          "source": "IO.FS.createDirAll configDir"
+        },
+        {
+          "line": 246,
+          "source": "h.putStrLn <| Json.pretty <| toJson ... ConfigTrace"
+        },
+        {
+          "line": 252,
+          "source": "h.flush"
+        },
+        {
+          "line": 253,
+          "source": "h.truncate"
+        },
+        {
+          "line": 256,
+          "source": "Lean.writeModule env olean"
+        }
+      ],
+      "executed": false,
+      "review": "Fresh/reconfigured Lake loading writes configuration trace and elaborates before selected target refusal; require outer admission before first Lake invocation. .olean source/build classification separate."
     }
   ],
   "coverage": "Selected direct writer sites only. Transitive solver/provider/native-loader/failure paths remain OPEN.",

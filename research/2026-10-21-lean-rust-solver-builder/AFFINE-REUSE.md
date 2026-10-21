@@ -1,34 +1,39 @@
-# Existing affine engine and proposed Lean certificate receiver
+# Existing affine engine and checked finite-matrix receiver
 
-The existing Rust engine at4e556c4ae6225d18fabf30bc7d3347a468749ebc
-already implements strict Fourier--Motzkin projection, deterministic rational
-back-substitution and independent original-row witness/Farkas checking.
-It is reused, not replaced. Exact inspected pins and interface limits are in
-evidence/EXISTING-AFFINE-REUSE.json. No compiler, replay or benchmark ran here.
+The existing Rust strict Fourier--Motzkin engine at
+4e556c4ae6225d18fabf30bc7d3347a468749ebc is reused. No new optimizer,
+native execution or old-runtime replay was introduced. Its original-row
+check_exclusion algebra matches checkFarkas: nonnegative multipliers, zero
+combined coefficients, and a negative bound OR a zero bound with a POSITIVE
+multiplier on a strict original row. Fin m/Fin n encode validated dimensions;
+ordered duplicate rows retain distinct multipliers.
 
-Its ordered projection and coordinate choices match the retained executable
-Lean solveList design. That source comparison is not a universal Rust/compiler
-refinement theorem. The existing original native_rc1 facade admits AFFINE/LAW;
-CHART remains outside this entrypoint even though the old core contains a chart
-module. AFFINE witness/exclusion concerns its supplied finite matrix, and LAW
-checking is same-compiler replay. Neither acquires source admission.
+The original receiver/examples at80888f68 did not pass hosted Lean checking:
+an unqualified Rel resolved incorrectly and four literal decide proofs failed
+to reduce. That immutable proposal and the peer's exact failed virtual source
+remain recorded in evidence/HOSTED-RECEIVER-REVIEW.json.
 
-lean/AffineCertificateReceiver.lean is NEW UNCHECKED SOURCE. It reuses the
-original Row, checkRationalWitness and rationalWitness_real. Its positive
-receiver retains every original row through finite-image membership. The new
-finite rational checkFarkas predicate matches the existing Rust check_exclusion
-algebra: nonnegative weights, zero combined coefficients, negative bound OR
-zero bound and a strict original row with POSITIVE multiplier. Ordered original
-row indices remain distinct for multipliers, including duplicate rows.
+The current two Lean bodies are the peer's byte-exact checked proof variant.
+lean/AffineCertificateProofBindings.patch fully qualifies Rel and replaces
+only those four proofs by explicit finite expansion/arithmetic. Definitions
+and theorem statements are unchanged. Historical candidate headers are retained;
+this later disposition applies to the exact current hashes, not the failed ones.
 
-The proposed theorem concludes infeasibility of that exact finite real matrix.
-It does not certify a native parser, binary execution, original source/chart
-translation, complete source registry or unrestricted physical NO.
-lean/AffineCertificateExamples.lean prepares an interval witness, a strict
-contradiction and the essential zero-multiplier strictness control. They are
-authored proof candidates, not new native runtime reports or checked theorems.
+The peer's actual hosted Lean4.35.0/mathlib56a005 check passed all nine selected
+complete-type/standard-axiom audits at866245d242051f9d5a76262a4f08860c71435cf2.
+We independently verified the unchanged original two Lean bodies, exact
+four-body projection, submitted audit-source hash, nine complete printed types,
+standard axiom dispositions and the value predicate against native source.
+This is attributed peer execution, not an independent compiler rerun.
 
-The existing Lean owner retains compilation/assembly scheduling. Any future
-check must bind these exact source bytes, imports, complete selected types and
-axioms to its actual context. Native execution remains held for the existing
-encrypted first-writer/controller binding; no old job/profile is replayed.
+The positive endpoint reuses checkRationalWitness and rationalWitness_real.
+The negative endpoint excludes exactly the supplied finite real matrix.
+The interval, strict contradiction and zero-multiplier feasible control passed.
+No native parser/binary refinement, chart/source admission, nonlinear observation
+translation, physical YES or all-size NO follows. The existing native_rc1 facade
+still admits AFFINE/LAW and does not admit CHART.
+
+Exact native/Lean reuse pins remain in evidence/EXISTING-AFFINE-REUSE.json.
+Pinned4.33.1 standalone imports/objects remain unchecked. NEW native/CI
+execution remains held for the existing encrypted first-writer/controller
+binding, including admission before Lake configuration loading.

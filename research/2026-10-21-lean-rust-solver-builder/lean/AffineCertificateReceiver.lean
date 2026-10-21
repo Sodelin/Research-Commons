@@ -72,7 +72,7 @@ theorem farkas_infeasible (R : Fin m → Row n) (w : Fin m → ℚ)
       exact_mod_cast hneg
     linarith
   · have ha : (R a).eval x < ((R a).bound : ℝ) := by
-      simpa [Row.Holds, Rel, hsa] using hx a
+      simpa [Row.Holds, UnifiedLean.G6.StrictAffineElimination.Rel, hsa] using hx a
     have hwaR : 0 < (w a : ℝ) := by exact_mod_cast hwa
     have hlt := mul_lt_mul_of_pos_left ha hwaR
     have hsum : (∑ a, (w a : ℝ) * (R a).eval x) <

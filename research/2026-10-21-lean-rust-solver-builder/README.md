@@ -43,8 +43,10 @@ The base is Research-Commons commit
   514648b697aeed8f46582109cfeefcd7707cd738 retains its original scope.
 
 This proposal owns this directory and its uniquely named Rust CI workflow.
-The existing Lean builder owns compiler/package assembly. Other research owners
-and original G3/G4/P1/P5 completion standards remain in place. No local Git
+The existing Lean builder owns compiler/package assembly. Historical scientific ownership and original G3/G4/P1/P5 completion standards
+remain recorded. The later allocation of four existing research contexts to
+two basketball/two baseball tasks is preserved; no mathematical chat is
+reactivated or reassigned by this component. No local Git
 writes, phone project checkout/build, new chat or sub-agent was used.
 
 ## Exact finite rational bank candidate
@@ -131,9 +133,16 @@ and native binaries remain unchanged.
 ## Literal bank Lean receiver source
 
 LITERAL-BANK-LEAN.md and emit_bank_lean.py prepare a per-input all-exponent
-raw-row/grouped-law witness against the peer's existing CM constructor. Both
-literal fixtures and the Python emitter are UNEXECUTED source preparation.
-Their exact source hashes are retained; the existing workflow stays disabled.
+raw-row/grouped-law witness against the peer's existing CM constructor. Both exact authored fixtures passed the peer's actual hosted Lean check with
+five selected complete-type/standard-axiom audits each. The Python emitter and
+new provenance/CI controls remain UNEXECUTED. Their separate dispositions and
+source hashes are retained in evidence/HOSTED-RECEIVER-REVIEW.json; the workflow
+stays disabled.
+
+The existing affine engine is also reused. The proof-corrected receiver and
+literal controls passed nine selected hosted audits; the original failed
+proposal remains in history. AFFINE-REUSE.md binds the exact proof-only patch
+and finite-matrix limits. This does not admit CHART or a new native executable.
 
 ## Mathematical boundary
 

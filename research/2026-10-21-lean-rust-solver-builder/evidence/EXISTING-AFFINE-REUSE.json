@@ -1,6 +1,6 @@
 {
   "schema": "existing_affine_native_lean_receiver_source_review_v1",
-  "status": "SOURCE_REVIEW_AND_NEW_UNCHECKED_RECEIVER;NO_NEW_EXECUTION",
+  "status": "EXISTING_NATIVE_REUSED;CORRECTED_RECEIVER_PEER_HOSTED_PASS;NO_NEW_NATIVE_EXECUTION",
   "native_reuse_pins": [
     {
       "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
@@ -90,7 +90,7 @@
   },
   "new_receiver": {
     "path": "lean/AffineCertificateReceiver.lean",
-    "sha256": "d512fc00936b76cd9ef4f9291387e459606a6c3c23da2b0d5a7900723b3bed6c",
+    "sha256": "62d4569e436aadb3202118a818c0ed7635c27a54b8e39b27a1e23188d80b5fc6",
     "selected": [
       "Astra.NativeAffineCertificates.checked_witness_real",
       "Astra.NativeAffineCertificates.weighted_eval_zero",
@@ -99,24 +99,30 @@
     ],
     "uses_existing_positive_checker": true,
     "new_solver_implemented": false,
-    "Lean_checked": false,
+    "Lean_checked": "ATTRIBUTED_PEER_HOSTED_PASS;866245d242051f9d5a76262a4f08860c71435cf2",
     "native_refinement_proved": false
   },
   "new_literal_controls": {
     "path": "lean/AffineCertificateExamples.lean",
-    "sha256": "21e58ee54f93e890026d01d39178aa97fd0cf9e31e683303ec58fd828dd0cabd",
+    "sha256": "76d739d0afdbe26d45340681852aa32ff5d3d87dbc91010cd5e0fbce9196cc9d",
     "description": [
       "One shared x in (0,1), witness1/2.",
       "One shared x>0 and x<=0, checked strict Farkas contradiction.",
       "Strict 0<1 row has ZERO multiplier; weak pair permits x=0, so exclusion must be false."
     ],
-    "Lean_checked": false,
+    "Lean_checked": "ATTRIBUTED_PEER_HOSTED_PASS;866245d242051f9d5a76262a4f08860c71435cf2",
     "native_execution": false
   },
   "remaining": [
-    "Check the exact new Lean source/types/standard-axiom disposition in a labelled context.",
+    "Pinned standalone module/object acceptance remains separate from attributed hosted4.35 check.",
     "Actual native parser/value and source-chart refinement are not supplied by a value-level arithmetic predicate.",
     "Physical graph/chart/whole-family correspondence and source admission remain separate.",
     "Existing native record writers and controller/recipient binding remain OPEN; no new job may run."
-  ]
+  ],
+  "original_proposal": {
+    "commit": "80888f68c81468ad6e91df1e8e59b392d27900d4",
+    "receiver_sha256": "d512fc00936b76cd9ef4f9291387e459606a6c3c23da2b0d5a7900723b3bed6c",
+    "examples_sha256": "21e58ee54f93e890026d01d39178aa97fd0cf9e31e683303ec58fd828dd0cabd",
+    "disposition": "REJECTED_REMOTE_LEAN_CHECK;SEE_HOSTED_RECEIVER_REVIEW"
+  }
 }

@@ -14,6 +14,7 @@ for the active execution hold.
 | Support composition driver | acquisition JSON, RESULT.json and printed full report | Both nested files and outer stream need the actual sink |
 | Bank composition driver | acquisition JSON, NATIVE-OBJECTS/RESULT projections and full report | Output identity metadata is still a runtime record |
 | MCP composition driver | RESULT.json and printed report | A projected result is also covered before its first write |
+| Lake v4.33.1 configuration loading | ConfigTrace JSON/locks and configuration elaboration before target evaluation | A target-level UNBOUND error is reached too late to gate these writers; admission must precede the first Lake invocation |
 | G6GeneratedChartAudit Lean elaboration | run_cmd directly calls IO.FS.writeFile for AUDIT-OWNED.json | Compiler stdout sealing does not mediate an elaborator's internal file writer |
 
 RECORD-WRITER-MAP.json pins these actual source bytes and line candidates.
@@ -54,3 +55,6 @@ from this source map.
 Only after every selected first writer is actually mediated may raw traces be
 persisted encrypted and genuinely redacted mathematical dispositions published.
 The full goal and independent source/provenance/cast work remain active.
+
+LAKE-FIRST-WRITER-REVIEW.md supplies the exact official source hashes and order.
+This is a source finding; no new Lake process was run.

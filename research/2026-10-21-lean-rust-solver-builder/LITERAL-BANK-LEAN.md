@@ -1,7 +1,8 @@
 # Literal bank receiver source
 
-SOURCE PREPARATION ONLY. The new emitter has not run; neither prepared witness
-has been checked by Lean. New native/CI execution remains disabled by the
+BOTH EXACT authored witnesses PASSED actual hosted Lean checking at peer commit
+f4677269617fbe16055a8066a6e4fee457beaed5, with no source/proof correction.
+The Python emitter has not run. New native/CI execution remains disabled by the
 existing encrypted-record writer hold. These files do not replace the original
 certificate emitter or claim a native parser/grouping refinement.
 
@@ -22,7 +23,7 @@ is a build-input requirement, not verification of an installed import.
 
 Each prepared standalone witness defines the original rational weighted sum,
 including zero rows and unreduced rational spellings, and the supplied
-distinct positive grouped bank. Its proposed grouped_moment_raw theorem proves
+distinct positive grouped bank. Its grouped_moment_raw theorem proves
 equality for EVERY natural exponent by literal expansion and ring arithmetic.
 The checked peer constructor then supplies ONE existing CM.FinitePositiveLaw;
 law_moment_raw retains the all-exponent identity, law_nodes_Ioc supplies the
@@ -39,8 +40,8 @@ CI jobs do not cover them.
 The two prepared source fixtures were authored by literal template substitution
 in memory, not by executing the new Python emitter. Their exact raw request,
 certificate, source, namespace and selected declaration hashes are in
-evidence/LITERAL-BANK-SOURCE-PREPARATION.json. They await actual checking by the
-existing Lean owner. Module paths match its existing source layout:
+evidence/LITERAL-BANK-SOURCE-PREPARATION.json. The existing Lean owner checked the exact authored bodies; this does not
+claim they were outputs of the still-unexecuted Python emitter. Module paths match its existing source layout:
 CMRationalBank at root; original certificate and bank witness under
 Astra/Generated. The original certificate files are byte-identical.
 
@@ -55,3 +56,12 @@ broader G6/G7 assembly and original G3/G4 standards remain separate open work.
 
 A SHA256 binds authored bytes for review; no hash is used as a Lean equality
 premise or as authentication of an arbitrary runtime dictionary.
+
+The later source/statement review is in evidence/HOSTED-RECEIVER-REVIEW.json.
+All declarations, including intermediate sparse levels, elaborated. Per fixture,
+FIVE complete selected types and standard-axiom audits cover grouped_moment_raw,
+law_moment_raw, law_nodes_Ioc, the final sparse_moment_5/7 and bank_nodes_root.
+We reconstructed the exact seven-body source projections and submitted audit
+hashes. No independent Lean rerun, generic native grouping refinement or physical
+source admission is claimed. The separate nine-module pinned context's source
+hashes and dependency order match; its Lake/import/object build has not run.
