@@ -98,8 +98,18 @@ def request(raw, checker):
         rows.append({"strict": f[0] == "LT",
                      "bound": _rational(f[1], True, checker),
                      "coefficients": [_rational(t, True, checker) for t in f[2:]]})
+    ordered_matrix = {"schema": "ordered_rational_affine_matrix_v1", "dimension": n,
+                      "rows": [{"relation": "LT" if r["strict"] else "LE",
+                                "bound": canonical(r["bound"]),
+                                "coefficients": [canonical(q) for q in r["coefficients"]]}
+                               for r in rows]}
     return {"dimension": n, "rows": rows, "projection_cap": cap,
-            "literal_request_sha256": sha(raw)}
+            "literal_request_sha256": sha(raw),
+            "ordered_matrix_sha256": checker.digest(ordered_matrix),
+            "row_provenance": {"kind": "supplied_mathematical_matrix",
+                               "physical_source_binding": None,
+                               "observation_binding": None,
+                               "error_confidence_contract": None}}
 
 
 def _vector(line, label, size, checker):
@@ -230,6 +240,8 @@ def bind_checked_return(receiver_literal, certificate_literal, runtime_return, c
             "literal_receiver_sha256": sha(receiver_literal),
             "literal_request_sha256": sha(raw), "literal_certificate_sha256": sha(certificate_literal),
             "dimension": values["dimension"], "ordered_rows": len(values["rows"]),
+            "ordered_matrix_sha256": values["ordered_matrix_sha256"],
+            "row_provenance": values["row_provenance"],
             "scope": "one supplied finite rational matrix over the reals",
             "native_runtime_origin_authenticated_by_this_pure_function": False,
             "native_parser_refinement_proved": False, "physical_source_admission": False,

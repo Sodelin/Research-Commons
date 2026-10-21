@@ -112,3 +112,25 @@ genealogy coupling, CM-L02 physical instantiation, source YES, global NO,
 all-input G3 or INDEPENDENT G4 closure follows.
 
 Actual ONLINE result: run39675913869 at a45e8380858dbd8502d605b01bd35113957383dc PASSED. Six bank unit groups,194 banks and194 reversal controls,17 native refusals,one output-cap UNKNOWN,eight codec negatives,eight actual CLI calls and two full bank->proposer->original-runtime fixture chains passed. Ten guard receipt/stream pairs and the artifact archive were authenticated. Both emitted proof hashes equal the already published original inputs. Common-bank-moments binary SHA256 0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec; unchanged proposer SHA25640ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9. This is exact effective-rational component evidence, not formal cast/refinement or physical-source closure. The existing Lean owner retains full package assembly and its isolated job.
+
+## General finite-PMF semantic receiver
+
+The existing Lean owner checked CMFinitePMF.lean SHA256
+f23c4428e1f5bad8f2d3675caa1684b66377acf4cfe34451b6be767d4e97d4c7
+at peer311290fc03de071d634fe5c2ade857acf50d9259. Its seven complete selected
+types/standard-axiom dispositions and exact source projection were independently
+reviewed. This is attributed hosted Lean4.35/mathlib56a005 execution.
+
+fromFinitePMF packages ONE supplied finite PMF and value function into the
+existing CM law using original positiveSupportPMF/gridWeight, not another
+grouping engine. Every natural moment equals the original weighted rows.
+Only nonzero-mass rows need positive values, and the separate Ioc theorem asks
+<=1 only there; zero-mass out-of-domain rows remain harmless. Its weights equal
+the PMF pushforward mass at EVERY real value. This matches the native positive
+image semantics without asserting a parser or BTreeMap refinement theorem.
+
+This noncomputable receiver does not acquire arbitrary-real moments, construct
+a physical provider or authenticate measured data. The534-module physical/CM
+context is a prepared graph with an import-only namespace reconciliation, not
+a compiled physical endpoint. Exact review scope is in
+evidence/LEAN-PMF-PRELAKE-REVIEW.json.

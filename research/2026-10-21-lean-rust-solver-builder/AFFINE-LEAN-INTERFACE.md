@@ -1,7 +1,9 @@
 # Request-bound AFFINE value projection and literal proof source
 
-SOURCE ONLY. Neither new Python module nor the six authored expected sources
-has run/been checked. The existing Rust engine, parser and native_rc1 runtime
+SOURCE ONLY. Both new Python modules remain UNEXECUTED. The six exact authored expected
+sources have since PASSED the peer's hosted Lean check unchanged; two complete
+selected types/standard-axiom audits per fixture. The separate review is in
+evidence/AFFINE-LITERAL-HOSTED-REVIEW.json. The existing Rust engine, parser and native_rc1 runtime
 entrypoint are reused and unchanged. No workflow is enabled.
 
 affine_codec.request/decode accepts complete ORIGINAL RC1 AFFINE request and
@@ -52,7 +54,20 @@ UNEXECUTED. Exact hashes/names are in
 evidence/AFFINE-LITERAL-SOURCE-PREPARATION.json.
 
 Remaining: actual Python/codec byte equality and falsification under the real
-writer binding, exact authored-source hosted checking, pinned module/object
+writer binding, pinned module/object
 acceptance, native refinement, physical row/chart/provider correspondence and
 full master assembly. No new task/CHART admission, physical YES, all-size NO,
 profile adoption, old-job replay or privacy-owner retry is supplied.
+
+The source-only metadata now also binds ordered_matrix_sha256 independently
+of projection_cap, preserving every original row/coordinate/relation. The raw
+request hash separately includes cap/framing. row_provenance is explicitly
+supplied_mathematical_matrix, with no physical/observation/error-confidence
+binding. Reordering rows changes this ordered identity; changing only the budget
+does not. These are audit indexes, not mathematical equality axioms or origin
+authentication. The original runtime's256KiB outer JSON envelope limit remains;
+a direct RC1 certificate cap does not override it.
+
+G6-ORDERED-CELL-CONTRACT.md identifies the ORIGINAL typed cell/wire receiver
+and the extra complete-registry, bijective layout and exact emission premises.
+This finite AFFINE proof adapter does not supply them or admit larger CHARTs.

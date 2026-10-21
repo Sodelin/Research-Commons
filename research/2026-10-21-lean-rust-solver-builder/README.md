@@ -159,4 +159,14 @@ G6/G7 assembly and original G3/G4 termination/forcing are separate master work.
 AFFINE-LEAN-INTERFACE.md adds SOURCE-ONLY pure RC1 value projection, original
 runtime-return binding and literal proof preparation. The native engine/parser
 and checked receiver are reused. Six exact authored fixtures, including duplicate
-rows and Fin0, await checking; the new Python modules/controls have not run.
+rows and Fin0, passed12 selected hosted audits unchanged at peer2b0ae57e;
+the new Python modules/controls have not run.
+
+The general supplied finite-PMF-to-CM semantic receiver now has attributed
+hosted checking at peer311290fc. Its seven complete selected types and exact
+original-helper projection were reviewed; BANK-INTERFACE.md records the precise
+zero-row/domain/all-moment boundary. Physical/native/pinned acceptance stays open.
+
+G6-ORDERED-CELL-CONTRACT.md reuses the original typed ordered-cell/wire
+receiver. It retains complete registry/layout/emission premises and distinguishes
+the AFFINE8/64 interface from the unadmitted CHART32/128 core.

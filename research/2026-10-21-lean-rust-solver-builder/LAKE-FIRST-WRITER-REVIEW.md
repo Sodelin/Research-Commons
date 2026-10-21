@@ -32,3 +32,13 @@ secondary guard, with its narrower scope stated accurately. Inventory/mediate
 configuration trace/loader/log writers and required failure recovery too.
 A disabled workflow currently prevents a run; no job, key/recipient export,
 new identity, compiler action or privacy-owner retry is requested by this review.
+
+The Lean owner accepted the ordering correction at311290fc and installed
+native/start_new_context.sh SHA256
+0fb0007d8f8fe280a6c3add2ed5e982db50f9c70ccd8cf8868ae3dfa0896165d
+through all four preparers. Source has an unconditional exit before Lake and
+no argument/environment override. It was not executed. Its constant stderr
+printf remains an outer-stream site to keep in RAM or replace with a quiet
+exit before any future unbound invocation; actual encrypted controller refusal/
+recovery custody remains open. This is a supported source entrypoint, not global
+OS interception or an installed writer.

@@ -93,6 +93,10 @@ def render(request_literal, certificate_literal, *, checker):
             return {"schema": "literal_affine_lean_preparation_v1", "status": "UNKNOWN",
                     "literal_request_sha256": values["literal_request_sha256"],
                     "literal_certificate_sha256": values["literal_certificate_sha256"],
+                    "ordered_matrix_sha256": values["ordered_matrix_sha256"],
+                    "row_provenance": values["row_provenance"],
+                    "native_runtime_origin_authenticated": False,
+                    "native_parser_refinement_proved": False,
                     "lean_source": None, "compiled": False, "physical_source_admission": False}
         source, namespace, selected = _source_for_values(values)
         return {"schema": "literal_affine_lean_preparation_v1",
@@ -100,6 +104,8 @@ def render(request_literal, certificate_literal, *, checker):
                 "literal_request_sha256": values["literal_request_sha256"],
                 "literal_certificate_sha256": values["literal_certificate_sha256"],
                 "value_status": values["status"], "dimension": values["dimension"],
+                "ordered_matrix_sha256": values["ordered_matrix_sha256"],
+                "row_provenance": values["row_provenance"],
                 "ordered_original_row_count": len(values["rows"]),
                 "projection_cap": values["projection_cap"],
                 "lean_namespace": namespace, "selected_declarations": selected,
@@ -111,4 +117,11 @@ def render(request_literal, certificate_literal, *, checker):
         return {"schema": "literal_affine_lean_preparation_v1", "status": "UNKNOWN",
                 "reason": str(error), "literal_request_sha256": sha(request_literal),
                 "literal_certificate_sha256": sha(certificate_literal),
+                "ordered_matrix_sha256": None,
+                "row_provenance": {"kind": "supplied_mathematical_matrix",
+                                   "physical_source_binding": None,
+                                   "observation_binding": None,
+                                   "error_confidence_contract": None},
+                "native_runtime_origin_authenticated": False,
+                "native_parser_refinement_proved": False,
                 "lean_source": None, "compiled": False, "physical_source_admission": False}
