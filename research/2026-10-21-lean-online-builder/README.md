@@ -88,3 +88,17 @@ baseline. G6/G7 assembly, the original G3/G4 masters, physical source/row
 admission, calibrated finite-data inference and universal native refinement
 retain their distinct obligations. A successful certificate-root proof closes
 none of those broader gates by itself.
+
+## Checked supporting interfaces and new native proposal
+
+CHECKED-FOLLOWONS.json records the actual hosted checks of the exact P1 finite
+binomial mean/variance, P5 ordered algebra and L1 square-to-triangle geometry,
+G4 finite determinant and rational-bank real-cast moments. Their source files
+retain each theorem's premises. They do not close the original P1/P5/G3/G4
+masters or establish the physical source adapters.
+
+The native/ directory contains a concrete three-module source-layout preparer,
+the byte-identical existing builder/audit/guard sources and a resource-qualified
+proposal for the older4.33.1 pins. It has NOT run a compiler. Its generated Lake
+target refuses until an actual encrypt-before-persistence record writer is bound
+on that new worker. No private key is transferred and no old held job is replayed.
