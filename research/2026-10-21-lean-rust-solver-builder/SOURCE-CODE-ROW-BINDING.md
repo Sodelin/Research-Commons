@@ -30,17 +30,19 @@ ne=edgeCount n_taxa h_hybrids and D=nv+ne+1+h_hybrids, the required ONE layout i
 | Sum.inr (Sum.inr hybrid) | nv+ne+1+((decodedIDs c hb hr).symm hybrid).val | COIN:original hybrid ID |
 
 In particular the native edge slots precede Option.none. An arbitrary Option/
-Fintype enumeration does not prove this order. The layout equivalence proof is
-still required, as are all reflected chronology/exposure/coin fields and exact
-ordered emission. Existing compileCellList_toFinset then supplies the finite-set
+Fintype enumeration does not prove this order. The generic layout equivalence and all position/unique-ancestral facts now
+have attributed hosted checking in NativeOrderedBankLayout. The Code wrapper
+remains source-only; its full import and captured-occurrence instance, reflected
+chronology/exposure/coin fields and exact ordered emission remain required. Existing compileCellList_toFinset then supplies the finite-set
 link; it does not prove a native compiler emitted that list. Preserve duplicates
 and original multiplier positions until their ordered checks have completed.
 
-The peer's new541-module graph/selection hashes and dependency order were
-independently recomputed: only G7OriginalAdmission was added to the prior540
-metadata; other module entries are unchanged. All4.49MB of module bodies were
-not independently retrieved here. This is source preparation, not import/object/
-master acceptance. Existing quiet outer refusal and writer hold remain in force.
+The peer's543-module graph/selection hashes and dependency order were
+independently recomputed: only NativeOrderedBankLayout and OriginalCodeBankLayout
+were added to the prior541 metadata; all previous module entries are unchanged.
+All4.50MB of module bodies were not independently retrieved here. This is source
+preparation, not import/object/master acceptance. Existing quiet outer refusal
+and writer hold remain in force.
 
 The subsequent source-only branch comparison is recorded in
 evidence/NATIVE-VALIDATOR-TO-CODE.json. Root/leaf/internal degrees, complete
@@ -50,3 +52,12 @@ vertex, some original leaf remains reachable while excluding it. Kahn/DFS
 algorithm correctness, per-occurrence degree counts, exact captured Code and
 layout/emission correspondence are still unproved native-refinement obligations.
 No class/readout/parameter admission follows from native validation.
+
+The exact generic source and source-only Code use-site are now integrated
+byte-identically as lean/NativeOrderedBankLayout.lean and
+lean/OriginalCodeBankLayout.lean. Their scope/selected complete-type hashes/
+standard axioms and reconstructed submitted-source hash are retained in
+evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json. This closes the generic
+construction obligation in the hosted4.35 context, not the concrete
+captured-Code import/refinement or pinned4.33.1 acceptance. The new543-module
+metadata adds only these two modules to541; all older entries are unchanged.

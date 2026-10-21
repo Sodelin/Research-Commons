@@ -180,3 +180,11 @@ The existing51-file recovered native source inputs are now prepared remotely
 and hash-checked without a phone checkout/Git/restore run. The adapter remains
 uncompiled. NATIVE-PARENT-CONVENTION.md distinguishes native LAW G=incoming[0]
 from typed natural gamma=P(parent1), conditional on an explicit original-port map.
+
+The existing Lean owner's generic native bank layout now has attributed hosted
+PASS for bankEquiv and ordered_bank_positions. The exact source is integrated,
+with the original-Code wrapper explicitly SOURCE ONLY. Every edge precedes the
+unique ancestral slot; original hybrid order still comes from supplied
+occurrence equivalences. See evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json
+and SOURCE-CODE-ROW-BINDING.md. Native compilation/dispatch/record admission
+and full physical/master closure remain separate and unaccepted.

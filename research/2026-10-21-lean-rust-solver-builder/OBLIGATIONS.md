@@ -38,3 +38,9 @@ evidence, reusing original support/gridWeight helpers. The full physical import
 context, actual source/readout provider and generic native refinement remain open.
 One law remains fixed across all copy levels. Broader G6/G7 assembly, original
 G3/G4/P1/P5 standards, canonical admission and the writer hold remain distinct.
+
+The generic ordered-bank construction is now supplied by the exact checked
+NativeOrderedBankLayout source, with two selected complete-type/standard-axiom
+audits at hosted4.35 scope. OriginalCodeBankLayout remains source-only.
+The concrete captured-Code/occurrence/import/reflected-field/emission relation
+is still open; no new arbitrary layout construction or duplicate suite is needed.
