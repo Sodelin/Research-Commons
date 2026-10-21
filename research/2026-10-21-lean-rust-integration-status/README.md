@@ -1,3 +1,5 @@
+**New execution is held for encrypted runtime-record binding.** Prior hosted Rust jobs persisted synthetic raw runtime streams/receipts in plaintext. The standing rule supplies no public-fixture exception. Automatic triggers are removed and the manual job is literal-false at0692c620c11f8b1202e97fcf30f9478e7043891c; no new runs were created. [Corrective record](https://github.com/Sodelin/Research-Commons/blob/0692c620c11f8b1202e97fcf30f9478e7043891c/research/2026-10-21-lean-rust-solver-builder/RECORD-WRITER-GAP.md). Existing mathematical/behavioral results below remain observed with this explicit record-policy limitation. Independent source/interface review continues; privacy completion is not claimed.
+
 # Lean-to-Rust solver integration status, 21 October 2026
 
 The bounded rational-support acquisition component passed actual online Rust,
