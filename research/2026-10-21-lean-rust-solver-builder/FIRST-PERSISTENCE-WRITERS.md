@@ -10,6 +10,7 @@ for the active execution hold.
 | Original guard | Exclusive stdout/stderr file handles passed directly to Popen; later RECEIPT.json | Child streams hit files before a later wrapper can seal them |
 | Original MCP bridge | incoming request bytes; launcher.stdout/stderr files | Input is persisted before the guard subprocess starts |
 | Original runtime | REQUEST.json; save() uses exclusive open plus json.dump | Internal request/result files bypass the guard stdout channel |
+| Existing native RC1 bridge | REQUEST.rc1; child stdout/stderr; execution/result JSON and RESPONSE.rc1 | These writes precede an outer wrapper; temporary executable staging has a separate source/build classification |
 | Support composition driver | acquisition JSON, RESULT.json and printed full report | Both nested files and outer stream need the actual sink |
 | Bank composition driver | acquisition JSON, NATIVE-OBJECTS/RESULT projections and full report | Output identity metadata is still a runtime record |
 | MCP composition driver | RESULT.json and printed report | A projected result is also covered before its first write |

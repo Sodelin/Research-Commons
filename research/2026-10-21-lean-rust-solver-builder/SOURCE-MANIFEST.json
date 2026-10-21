@@ -70,19 +70,24 @@
   ],
   "files": [
     {
+      "path": "AFFINE-REUSE.md",
+      "utf8_bytes": 2199,
+      "sha256": "0647dc47e2ac93a32a669ae60d4d8dacf348d1b7390be051d9ce870ce5d7dcce"
+    },
+    {
       "path": "BANK-INTERFACE.md",
       "utf8_bytes": 6911,
       "sha256": "0a2b518a3a0506f4e6078ff51cfa8c845dbc755be7eab0fabb4114dee7bae5ac"
     },
     {
       "path": "FIRST-PERSISTENCE-WRITERS.md",
-      "utf8_bytes": 3853,
-      "sha256": "15a4c2fc1fa0211121c3abd93e0ea0f18f30b867ca7f761497f7de5cd835ae34"
+      "utf8_bytes": 4072,
+      "sha256": "aedf0114a99c4e0804f85dc0bb27ac5696bf32707c5d53cb411295058aada3b9"
     },
     {
       "path": "LITERAL-BANK-LEAN.md",
-      "utf8_bytes": 3279,
-      "sha256": "cbdd0797daa100258245c3f92e94335aedf5b9b6b42ca3f5f8fbe4a9668ffddf"
+      "utf8_bytes": 3537,
+      "sha256": "9661fc28f2527d16c5d26d6c2f7a49b6049baa08bf2146c024b63eb4b74a834a"
     },
     {
       "path": "MOMENT-PROVENANCE.md",
@@ -96,8 +101,8 @@
     },
     {
       "path": "OBLIGATIONS.md",
-      "utf8_bytes": 4741,
-      "sha256": "b86333d2b3b84c8fbf8261f4fb9b6c5bf0953008113022082f5754b0771f2d64"
+      "utf8_bytes": 5037,
+      "sha256": "ee4c34ed8b9f48354a7dbcff786a59a8d0d7be8cb6efb496453e5238d3eaa922"
     },
     {
       "path": "PROOF.md",
@@ -126,8 +131,8 @@
     },
     {
       "path": "RECORD-WRITER-MAP.json",
-      "utf8_bytes": 5991,
-      "sha256": "cb0516c5d6a1b930973b992b47cb46b634634315872385f213f112221a8cde4d"
+      "utf8_bytes": 7790,
+      "sha256": "90d074b9851c736f3ca1c147877e0fdff6fc432f91ab7adf5ce97f5af63835e1"
     },
     {
       "path": "REFERENCE-RESULT.json",
@@ -146,8 +151,8 @@
     },
     {
       "path": "ci_bank.py",
-      "utf8_bytes": 13774,
-      "sha256": "3f4fbf6e1dfe627a25d1a6bd085bc2663474820e0aaab4caaa2f79d241c678f1"
+      "utf8_bytes": 15995,
+      "sha256": "1295a4263eac308eb656779dad5974def3e626b5caeda2299861e12b3b14ba97"
     },
     {
       "path": "ci_connector.py",
@@ -173,6 +178,11 @@
       "path": "evidence/BANK-SOURCE-REUSE.json",
       "utf8_bytes": 2809,
       "sha256": "ee042d73cf43114efedd1860acd1596ddf40292bbcfce40fef07499555d4560e"
+    },
+    {
+      "path": "evidence/EXISTING-AFFINE-REUSE.json",
+      "utf8_bytes": 5121,
+      "sha256": "601f678493eb5ac02e8c1536a7e24ad58614f6bafb93958f77aa29f5d1adcbb7"
     },
     {
       "path": "evidence/LEAN-CAST-SOURCE-REVIEW.json",
@@ -323,6 +333,16 @@
       "path": "hosted_guard.py",
       "utf8_bytes": 5587,
       "sha256": "9975d91624c8783a31b7e31a20cf2cf2f45ef625c51d9b2e4e0e6a49cced60c4"
+    },
+    {
+      "path": "lean/AffineCertificateExamples.lean",
+      "utf8_bytes": 1876,
+      "sha256": "21e58ee54f93e890026d01d39178aa97fd0cf9e31e683303ec58fd828dd0cabd"
+    },
+    {
+      "path": "lean/AffineCertificateReceiver.lean",
+      "utf8_bytes": 4095,
+      "sha256": "d512fc00936b76cd9ef4f9291387e459606a6c3c23da2b0d5a7900723b3bed6c"
     },
     {
       "path": "reference.mjs",
@@ -598,6 +618,22 @@
     "compiled": false,
     "native_refinement_proved": false,
     "physical_source_existence_certified": false,
-    "identity_binding": "Complete raw bank and receiver SHA256; scalar-law and ordered moment IDs; explicit levels/exponents/provenance. No native origin authentication from a pure function."
+    "identity_binding": "Complete raw bank and receiver SHA256; scalar-law and ordered moment IDs; explicit levels/exponents/provenance. No native origin authentication from a pure function.",
+    "staged_ci_controls": {
+      "status": "UNEXECUTED",
+      "fixture_byte_matches": 2,
+      "altered_stdout_and_different_certificate_controls": 4,
+      "new_file_writer_added": false,
+      "Lean_compilation_claimed": false
+    }
+  },
+  "existing_affine_receiver": {
+    "status": "NEW_SOURCE_UNCHECKED",
+    "native_solver_replaced": false,
+    "source_review": "evidence/EXISTING-AFFINE-REUSE.json",
+    "receiver_sha256": "d512fc00936b76cd9ef4f9291387e459606a6c3c23da2b0d5a7900723b3bed6c",
+    "literal_controls_sha256": "21e58ee54f93e890026d01d39178aa97fd0cf9e31e683303ec58fd828dd0cabd",
+    "native_or_Lean_executed": false,
+    "physical_source_admission": false
   }
 }

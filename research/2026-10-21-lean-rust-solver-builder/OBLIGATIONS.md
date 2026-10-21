@@ -21,6 +21,7 @@ disjoint component and workflow. The full solver goal remains active.
 | Finite rational bank-to-one-common-moment interface | Native bank run39675913869 plus exact CM grouped constructor and all-moment types at peer c524f39c | Native bounded component PASSED with record-policy limitation; grouped CM receiver hosted PASS is attributed peer execution; physical PMF packaging/native refinement remain OPEN |
 | Literal raw-bank-to-CM-law witnesses | emit_bank_lean.py, bank_lean.template and exact two authored source fixtures at07a5bd07 | SOURCE-ONLY UNEXECUTED; existing Lean owner requested exact all-natural-exponent/domain/sparse/root checking through its existing encrypted LSP lane |
 | Physical law/source/provider recognition | No physical construction or admission supplied | OPEN; obtain exact typed source-to-common-moment obligation; reuse retained finite-PMF grouping work |
+| Existing affine solver reuse and certificate receiver | Exact native4e556c4a affine/protocol source, retained Lean solveList and new AffineCertificateReceiver source | Existing engine reused; new value-level witness/Farkas bridge UNCHECKED; native parser/source-chart refinement remains OPEN |
 | Native implementation refinement | Exact independent checks and behavior controls only | OPEN formal refinement or retain explicit trusted implementation boundary |
 | Publication/readback | Source manifest, retained failures, native39671718288 and composition39673487466 evidence | Remote immutable history; readback verification recorded with handoff |
 

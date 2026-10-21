@@ -11,6 +11,7 @@ import sys
 from ci_verify import HERE, ROOT, OLD, source, sha
 import bank_codec
 import codec
+import emit_bank_lean
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -136,6 +137,9 @@ def main():
     assert identity_reports[2]["candidate_request_sha256"] is None
     chain = []
     binding_negative_controls = 0
+    literal_lean_negative_controls = 0
+    prepared_bank_sources = {item["fixture"]: item for item in
+        json.loads((HERE/"evidence/LITERAL-BANK-SOURCE-PREPARATION.json").read_bytes())["cases"]}
     for name in ("two","three"):
         literal = (HERE/f"fixtures/{name}-bank.json").read_bytes()
         obj = bank_codec.request(literal,checker)
@@ -163,6 +167,27 @@ def main():
         target = args.output/f"{name}-bank-support.lean"
         target.write_bytes(proof)
         assert proof == (HERE/"generated"/("Certificate_"+checker.digest(receiver["input"])+".lean")).read_bytes()
+        # SOURCE-staged: actual Python output must match the independently authored
+        # literal witness bytes. This does not invoke or claim Lean compilation.
+        bank_lean = emit_bank_lean.render(literal,native.stdout,decoded.stdout,checker=checker)
+        expected_bank_lean = prepared_bank_sources[name]
+        assert bank_lean["status"] == "EMITTED_LEAN_SOURCE" and bank_lean["compiled"] is False
+        assert bank_lean["source"].encode() == (HERE/expected_bank_lean["path"]).read_bytes()
+        assert bank_lean["source_sha256"] == expected_bank_lean["source_sha256"]
+        assert bank_lean["literal_bank_request_sha256"] == sha(literal)
+        assert bank_lean["literal_receiver_sha256"] == sha(decoded.stdout)
+        assert bank_lean["exponents"] == [k*(k-1)//2 for k in range(1,obj["copy_level_count"]+1)]
+        assert bank_lean["native_origin_authenticated_by_this_pure_function"] is False
+        wrong_name = "three" if name == "two" else "two"
+        wrong_receiver = (HERE/f"fixtures/{wrong_name}-check-request.json").read_bytes()
+        for wrong_stdout, wrong_certificate in (
+            (native.stdout+b" ",decoded.stdout),(native.stdout,wrong_receiver)):
+            try:
+                emit_bank_lean.render(literal,wrong_stdout,wrong_certificate,checker=checker)
+            except checker.Refused:
+                literal_lean_negative_controls += 1
+            else:
+                raise AssertionError("altered bank stdout or different-law certificate emitted Lean source")
         outcome = runtime.run(decoded.stdout,args.output/f"runtime-{name}")
         assert outcome["status"] == "CHECKED_RATIONAL_CERTIFICATE" and outcome["request_preserved"] is True
         assert outcome["primary_request_sha256"] == sha(decoded.stdout)
@@ -190,6 +215,10 @@ def main():
                       "copy_levels":bound_result["copy_levels"],"exponents":bound_result["exponents"],
                       "certificate_sha256":checker.digest(receiver["input"]),
                       "emitted_source_sha256":sha(proof),"emitted_source_bytes":len(proof),
+                      "literal_bank_Lean_source_sha256":bank_lean["source_sha256"],
+                      "literal_bank_Lean_source_bytes":bank_lean["source_bytes"],
+                      "literal_bank_Lean_module":bank_lean["module"],
+                      "literal_bank_Lean_selected_audits":bank_lean["selected_audits"],
                       "runtime_status":outcome["status"],"runtime_literal_request_sha256":sha(decoded.stdout),
                       "Lean_compiled":False})
     native_dir = args.output/"native"
@@ -218,6 +247,8 @@ def main():
               "actual_native_processes":calls,"actual_codec_cli_calls":cli_calls,
               "provenance_identity_controls":len(identity_reports),
               "runtime_binding_negative_controls":binding_negative_controls,
+              "literal_bank_Lean_source_matches":len(chain),
+              "literal_bank_Lean_binding_negative_controls":literal_lean_negative_controls,
               "case_records_sha256":sha(json.dumps(records,sort_keys=True).encode()),
               "bank_to_native_to_original_runtime":chain,"canonical_source_changed":False,
               "source_existence_certified":False,"native_refinement_proved":False,"Lean_compiled":False}

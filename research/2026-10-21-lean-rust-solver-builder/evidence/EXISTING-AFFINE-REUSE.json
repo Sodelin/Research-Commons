@@ -1,0 +1,122 @@
+{
+  "schema": "existing_affine_native_lean_receiver_source_review_v1",
+  "status": "SOURCE_REVIEW_AND_NEW_UNCHECKED_RECEIVER;NO_NEW_EXECUTION",
+  "native_reuse_pins": [
+    {
+      "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/src/affine.rs",
+      "git_blob": "b830c026ac5c2a2ea86f787dca3981da67ce021a",
+      "sha256": "f5c5fbb1c8cda67934e0902708deacf75d417f689d079096bb16fed75b64f001",
+      "bytes": 6540
+    },
+    {
+      "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/src/protocol.rs",
+      "git_blob": "202f453f004e1ba3728e281867ee9d7149a7c012",
+      "sha256": "0bcf6e0e099d5983604c8d3e6fe189fbb0431de390b7d0f8c7306bbbced2e72a",
+      "bytes": 23633
+    },
+    {
+      "commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+      "path": "research/2026-10-10-codex-lean-rust-parity/rust/Cargo.toml",
+      "git_blob": "fc7ccfa77c8121eb34194f54ad051e23857ef1a9",
+      "sha256": "8eb9e35ed020e0efd4feb7c50d52d91dfd68bc0c8928a029e9afd292c321aa8d",
+      "bytes": 707
+    }
+  ],
+  "lean_reuse_pins": [
+    {
+      "imports": [
+        "Mathlib.Data.Finset.Max",
+        "Mathlib.Data.Rat.Cast.Order",
+        "Mathlib.Tactic"
+      ],
+      "module": "StrictAffineElimination",
+      "sha256": "a0f597c021b761bfe79561eac03c19d754f93b4fa024ffb229ecaccdaeadf1f2"
+    },
+    {
+      "imports": [
+        "StrictAffineElimination",
+        "G6NaturalCellInverseRates"
+      ],
+      "module": "NaturalCellAffineCompiler",
+      "sha256": "b381a99725e1817b93a48a8356c282c08b6198d36794a2b5cd358f5368161ea0"
+    },
+    {
+      "imports": [
+        "StrictAffineElimination"
+      ],
+      "module": "G6RationalAffineWitness",
+      "sha256": "82da8185b8ac86eb1bcadcf75ec8c5962fd082eae65a3614bf7e7c188a70f1d3"
+    },
+    {
+      "imports": [
+        "G6RationalAffineWitness",
+        "NaturalCellAffineCompiler"
+      ],
+      "module": "G6RationalNaturalCellWitness",
+      "sha256": "4d719dabb10d5d6175d95a6c8bfd43d6829a57067db85139d8b59ea27c450254"
+    }
+  ],
+  "dependency_graph": {
+    "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+    "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/DEPENDENCY-GRAPH.json",
+    "bytes": 15386319,
+    "sha256": "768e587ffb189b3700aa4acc82853dcced49477b80c028d70e055d40cf65ff13",
+    "meaning": "Source-selection map, not a new acceptance certificate."
+  },
+  "facade": {
+    "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+    "path": "research/2026-10-13-astra-unified-solver-0645z/native_bridge.py",
+    "sha256": "b298ae551bc488aab45560434a5f9dc2bead15a4c0b0328199577e63ac808f39",
+    "task": "native_rc1",
+    "admitted_commands": [
+      "AFFINE",
+      "LAW"
+    ],
+    "chart_admitted": false,
+    "expected_old_binary_sha256": "235520d47eaa95873729f2aa60b6f596f41859f1b1807ee58aeb1bd2ab0f876a",
+    "old_binary_retrieved_or_invoked_here": false
+  },
+  "native_affine_contract": {
+    "rows": "Ordered original rational rows; sum_j a_ij*x_j <= b_i or < b_i.",
+    "maximum_coordinates": 8,
+    "maximum_input_rows": 64,
+    "maximum_projected_rows": 4096,
+    "elimination": "zero rows, then positive rows outer/negative inner; last coordinate first",
+    "witness": "Original-row independent exact checking; deterministic rational midpoint/shared endpoint/lone bound +/-1/zero reconstruction.",
+    "exclusion": "Nonnegative original-row multipliers, every combined coefficient zero, bound<0 OR bound=0 and some strict original row has POSITIVE multiplier.",
+    "budget_exhaustion": "UNKNOWN, never infeasibility or source NO."
+  },
+  "new_receiver": {
+    "path": "lean/AffineCertificateReceiver.lean",
+    "sha256": "d512fc00936b76cd9ef4f9291387e459606a6c3c23da2b0d5a7900723b3bed6c",
+    "selected": [
+      "Astra.NativeAffineCertificates.checked_witness_real",
+      "Astra.NativeAffineCertificates.weighted_eval_zero",
+      "Astra.NativeAffineCertificates.farkas_infeasible",
+      "Astra.NativeAffineCertificates.checked_farkas_infeasible"
+    ],
+    "uses_existing_positive_checker": true,
+    "new_solver_implemented": false,
+    "Lean_checked": false,
+    "native_refinement_proved": false
+  },
+  "new_literal_controls": {
+    "path": "lean/AffineCertificateExamples.lean",
+    "sha256": "21e58ee54f93e890026d01d39178aa97fd0cf9e31e683303ec58fd828dd0cabd",
+    "description": [
+      "One shared x in (0,1), witness1/2.",
+      "One shared x>0 and x<=0, checked strict Farkas contradiction.",
+      "Strict 0<1 row has ZERO multiplier; weak pair permits x=0, so exclusion must be false."
+    ],
+    "Lean_checked": false,
+    "native_execution": false
+  },
+  "remaining": [
+    "Check the exact new Lean source/types/standard-axiom disposition in a labelled context.",
+    "Actual native parser/value and source-chart refinement are not supplied by a value-level arithmetic predicate.",
+    "Physical graph/chart/whole-family correspondence and source admission remain separate.",
+    "Existing native record writers and controller/recipient binding remain OPEN; no new job may run."
+  ]
+}

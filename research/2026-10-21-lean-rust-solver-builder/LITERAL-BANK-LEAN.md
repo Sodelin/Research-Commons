@@ -31,6 +31,11 @@ bank_nodes_root concerns this exact supplied bank and the unchanged certificate
 polynomial. The original certificate's conditional finite_supported_bank
 theorem remains unchanged.
 
+The existing ci_bank.py source now stages exact emitted-byte comparisons for
+both prepared fixtures and rejection of altered native output/different-law
+certificates. Those new controls have NOT RUN under the writer hold; earlier
+CI jobs do not cover them.
+
 The two prepared source fixtures were authored by literal template substitution
 in memory, not by executing the new Python emitter. Their exact raw request,
 certificate, source, namespace and selected declaration hashes are in

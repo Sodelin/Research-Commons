@@ -96,34 +96,37 @@
     },
     {
       "path": "research/2026-10-21-lean-rust-solver-builder/ci_bank.py",
-      "sha256": "3f4fbf6e1dfe627a25d1a6bd085bc2663474820e0aaab4caaa2f79d241c678f1",
+      "sha256": "1295a4263eac308eb656779dad5974def3e626b5caeda2299861e12b3b14ba97",
       "writer_candidates": [
         {
-          "line": 151,
-          "source": "bound.write_bytes(acquired.stdout)"
+          "line": 155,
+          "source": "        bound.write_bytes(acquired.stdout)"
         },
         {
-          "line": 164,
-          "source": "target.write_bytes(proof)"
+          "line": 168,
+          "source": "        target.write_bytes(proof)"
         },
         {
-          "line": 204,
-          "source": "snapshot.write_bytes(raw_object)"
+          "line": 233,
+          "source": "        snapshot.write_bytes(raw_object)"
         },
         {
-          "line": 212,
-          "source": "(args.output/\"NATIVE-OBJECTS.json\").write_text(json.dumps(native_objects,indent=2,sort_keys=True)+\"\\n\")"
+          "line": 241,
+          "source": "    (args.output/\"NATIVE-OBJECTS.json\").write_text(json.dumps(native_objects,indent=2,sort_keys=True)+\"\\n\")"
         },
         {
-          "line": 224,
-          "source": "(args.output/\"RESULT.json\").write_text(json.dumps(report,indent=2,sort_keys=True)+\"\\n\")"
+          "line": 255,
+          "source": "    (args.output/\"RESULT.json\").write_text(json.dumps(report,indent=2,sort_keys=True)+\"\\n\")"
         },
         {
-          "line": 225,
-          "source": "print(json.dumps(report,sort_keys=True))"
+          "line": 256,
+          "source": "    print(json.dumps(report,sort_keys=True))"
         }
       ],
-      "source_revision": "dbba87288352584bb5723f0a2018958c8d4dd649"
+      "source_context": {
+        "kind": "same_packet_source_by_hash",
+        "note": "Use this authored file in the same immutable packet commit as this inventory; its exact hash is below."
+      }
     },
     {
       "path": "research/2026-10-21-lean-rust-solver-builder/ci_connector.py",
@@ -161,6 +164,47 @@
       ],
       "executed": false,
       "review": "Complete original source independently read; run_cmd writes AUDIT-OWNED.json during elaboration. A later outer stream wrapper does not mediate this file."
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/native_bridge.py",
+      "source_revision": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "b298ae551bc488aab45560434a5f9dc2bead15a4c0b0328199577e63ac808f39",
+      "writer_candidates": [
+        {
+          "line": 93,
+          "source": "    with (out/(name+'.stdout')).open('xb') as stdout, (out/(name+'.stderr')).open('xb') as stderr:"
+        },
+        {
+          "line": 107,
+          "source": "    (out/(name+'.execution.json')).write_text(json.dumps(receipt, indent=2)+'\\n')"
+        },
+        {
+          "line": 154,
+          "source": "        (out/'REQUEST.rc1').write_bytes(raw)"
+        },
+        {
+          "line": 163,
+          "source": "            with tempfile.TemporaryDirectory(prefix='astra-pinned-native-') as temporary:"
+        },
+        {
+          "line": 165,
+          "source": "                captured.write_bytes(binary_raw)"
+        },
+        {
+          "line": 173,
+          "source": "                    certificate_path.write_bytes(response)"
+        },
+        {
+          "line": 187,
+          "source": "                    certificate_path.write_bytes(response)"
+        },
+        {
+          "line": 219,
+          "source": "    (out/'RESULT.json').write_text(json.dumps(result, indent=2, sort_keys=True)+'\\n')"
+        }
+      ],
+      "executed": false,
+      "review": "Source review of existing native RC1 loader/streams/request/result writers; no held runtime replay. Captured executable staging requires source/build classification separately from raw scientific records."
     }
   ],
   "coverage": "Selected direct writer sites only. Transitive solver/provider/native-loader/failure paths remain OPEN.",
