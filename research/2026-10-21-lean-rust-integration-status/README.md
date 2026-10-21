@@ -3,7 +3,7 @@
 The exact bank/affine fixtures and finite-PMF semantic receiver have actual
 hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates their exact source/statement dispositions at
-[233f6ca6](https://github.com/Sodelin/Research-Commons/tree/233f6ca6c53570c08fc9f67c7fc1635c1faf6c3d/research/2026-10-21-lean-rust-solver-builder).
+[af2a0a92](https://github.com/Sodelin/Research-Commons/tree/af2a0a923247b3ecf32b77c3acb4f384fb0c679b/research/2026-10-21-lean-rust-solver-builder).
 The full goal remains active.
 
 The executed Rust finite-bank evaluator and r<=3 support proposer retain ONE
@@ -38,7 +38,7 @@ inverse pair rates. Routing/parent meaning and parser/source correspondence
 remain additional obligations. Canonical native_rc1 still admits AFFINE/LAW:
 AFFINE8coordinates/64rows differs from the unadmitted CHART32/128 core.
 
-The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/233f6ca6c53570c08fc9f67c7fc1635c1faf6c3d/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
+The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/af2a0a923247b3ecf32b77c3acb4f384fb0c679b/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
 now exposes the ORIGINAL CHART parser/compiler through an owned, read-only
 snapshot. A command-tag guard prevents rejected COUNT/LAW requests from
 entering unrelated validation arithmetic. The adapter and five staged checks
@@ -55,11 +55,13 @@ preserves ports and performs no probability substitution; its occurrence,
 shared-bank and nonlinear readout proofs remain open.
 
 The existing G7 Code/sourceOfValid/decodedIDs/decodedRegistry constructor path
-is now reused in [SOURCE-CODE-ROW-BINDING.md](https://github.com/Sodelin/Research-Commons/blob/233f6ca6c53570c08fc9f67c7fc1635c1faf6c3d/research/2026-10-21-lean-rust-solver-builder/SOURCE-CODE-ROW-BINDING.md).
+is now reused in [SOURCE-CODE-ROW-BINDING.md](https://github.com/Sodelin/Research-Commons/blob/af2a0a923247b3ecf32b77c3acb4f384fb0c679b/research/2026-10-21-lean-rust-solver-builder/SOURCE-CODE-ROW-BINDING.md).
 It requires the literal captured incidence/root/label/parent arrays, exact
 census/bounds and BinaryValid/RegistryValid evidence, then the native-order
 layout. Generic encode/Option numbering cannot silently replace that relation.
-No extra Rust API/factory, checked proof or suite was added. The peer's latest
+No extra Rust API/factory, checked proof or suite was added. The validator
+branch comparison found no further source-level predicate mismatch; queue/DFS,
+degree-count, literal-Code and emission refinement proofs remain open. The peer's latest
 541-module metadata adds only G7OriginalAdmission; exact graph/selection/order
 checks pass, while all4.49MB of source bodies were not independently read here.
 
