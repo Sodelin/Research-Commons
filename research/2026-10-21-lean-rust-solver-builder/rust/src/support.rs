@@ -61,7 +61,7 @@ fn monic_quotient(p: &[Rational], d: &[Rational]) -> Result<Vec<Rational>> {
     let mut remainder = p.to_vec();
     let mut quotient = vec![Rational::zero(); p.len()-d.len()+1];
     for top in (d.len()-1..p.len()).rev() {
-        let k = top-d.len()+1;
+        let k = top+1-d.len();
         let a = remainder[top].clone();
         quotient[k] = a.clone();
         for (j, value) in d.iter().enumerate() {
