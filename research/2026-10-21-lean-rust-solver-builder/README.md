@@ -170,3 +170,13 @@ zero-row/domain/all-moment boundary. Physical/native/pinned acceptance stays ope
 G6-ORDERED-CELL-CONTRACT.md reuses the original typed ordered-cell/wire
 receiver. It retains complete registry/layout/emission premises and distinguishes
 the AFFINE8/64 interface from the unadmitted CHART32/128 core.
+
+native/CELL-ROW-EXPORT-CONTRACT.md prepares a narrow Rust library adapter over
+the ORIGINAL CHART row compiler. It preserves32/128, request ownership, original
+row/registry order and the one ancestral inverse slot. Source-only with five
+staged controls; no solver, CLI, new grammar, execution or canonical admission.
+
+The existing51-file recovered native source inputs are now prepared remotely
+and hash-checked without a phone checkout/Git/restore run. The adapter remains
+uncompiled. NATIVE-PARENT-CONVENTION.md distinguishes native LAW G=incoming[0]
+from typed natural gamma=P(parent1), conditional on an explicit original-port map.

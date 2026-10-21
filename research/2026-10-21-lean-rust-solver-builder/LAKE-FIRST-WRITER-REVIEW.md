@@ -42,3 +42,10 @@ printf remains an outer-stream site to keep in RAM or replace with a quiet
 exit before any future unbound invocation; actual encrypted controller refusal/
 recovery custody remains open. This is a supported source entrypoint, not global
 OS interception or an installed writer.
+
+At peer66ee58e4 the exact outer source became QUIET (exit78), SHA256
+66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3.
+We read/hashed it: no stdout/stderr printf or argument/environment override.
+Neither version was invoked. This resolves that selected static stream site;
+required encrypted controller refusal/recovery and every actual admission
+binding remain open. Quiet exit does not make a default CI shell admissible.

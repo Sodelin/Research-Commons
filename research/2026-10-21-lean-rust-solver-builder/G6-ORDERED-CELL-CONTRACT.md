@@ -43,3 +43,8 @@ The source-only physical context is now540 modules. Its graph/selection/order
 metadata was checked, not all4.48MB of bodies independently retrieved or
 compiled here. Writer/controller/recipient/sequence binding remains UNBOUND.
 No further small proof suite is requested without a material binding need.
+
+NATIVE-PARENT-CONVENTION.md resolves the additional forward-table convention:
+native LAW G weights incoming[0], while typed natural gamma weights parent1.
+A complete original-port map determines the required complement/substitution;
+the row-export adapter preserves raw ports and performs neither automatically.
