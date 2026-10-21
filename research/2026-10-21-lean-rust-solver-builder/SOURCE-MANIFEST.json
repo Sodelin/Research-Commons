@@ -191,8 +191,13 @@
     },
     {
       "path": "ci_connector.py",
-      "sha256": "0b43fdce5092beb73d34c56696c8f0dc70b3eace65d2067116f39cd2e910535f",
-      "utf8_bytes": 7160
+      "utf8_bytes": 7166,
+      "sha256": "64e414b15f3fff87e0178ed29e2d8837efcb2f7a5bf126cd1371aca593e81907"
+    },
+    {
+      "path": "failures/39672776803.json",
+      "utf8_bytes": 1300,
+      "sha256": "006305660d1247ceee78296965730ed0e8714e21e74634210bf565810191fa32"
     }
   ],
   "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
@@ -239,7 +244,8 @@
     "Actual CI run39670837599 failed workflow validation before any job: runner.temp is not permitted in job-level env. Use the owned relative Cargo target directory instead. No compiler/test execution occurred in this failed run.",
     "Actual run39670971206 installed official Rust1.90 and fetched the locked dependencies, then refused before compiler launch because the original guard's fixed cgroup-v2 memory.current path was absent. Artifact12380255676 SHA256fc79a68b71e585eafb11739d35caab4dac389e78613a8f06c6bd8a5330295100 retains the error receipt. The NEW owned adapter reuses the exact original supervisor/limits and permits only a validated mounted cgroup-v1 memory root counter; no unbounded fallback or old held-job replay.",
     "Actual run39671217634 also refused before compiler launch: neither fixed root counter was available. Linux cgroup-v2 documentation confirms memory.current is a NON-ROOT cgroup file. Successor adapter resolves the actual /proc/self/cgroup membership against the actual cgroup mount root, rather than guessing the global root location; rejects path escapes/missing counters. It retains the original supervisor and thresholds and names the actual counter scope.",
-    "Run39671453994 actually compiled Rust with the retained lock and validated cgroup-v2 current membership; original8 groups passed,4 new groups panicked on a usize intermediate subtraction in polynomial division. One arithmetic-index expression is corrected from top-d.len()+1 to top+1-d.len(); fresh tests required. Full failure/correction record is retained."
+    "Run39671453994 actually compiled Rust with the retained lock and validated cgroup-v2 current membership; original8 groups passed,4 new groups panicked on a usize intermediate subtraction in polynomial division. One arithmetic-index expression is corrected from top-d.len()+1 to top+1-d.len(); fresh tests required. Full failure/correction record is retained.",
+    "Run39672776803 passed the original/native and NEW actual codec CLI + original facade controls. MCP-only harness failed before protocol because -I suppresses server.py's required sibling bridge import. Correct only the harness argv to -E -s -B; original server/bridge/runtime remain unchanged. Fresh MCP execution required."
   ],
   "actual_native_execution": {
     "run_id": 39671718288,

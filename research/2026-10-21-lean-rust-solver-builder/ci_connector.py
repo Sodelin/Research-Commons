@@ -22,7 +22,7 @@ def sha(raw):
 
 
 def session(output, messages, binary=None):
-    command = [sys.executable, "-I", "-B", str(SERVER),
+    command = [sys.executable, "-E", "-s", "-B", str(SERVER),
                "--repository", str(ROOT), "--output-root", str(output),
                "--wall-seconds", "10"]
     if binary is not None:
