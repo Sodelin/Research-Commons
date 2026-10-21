@@ -30,7 +30,7 @@
     },
     {
       "path": ".github/workflows/rust-support-proposal.yml",
-      "sha256": "e4764c2642bc97dfd3e604fb1647299b2073307f2c10a2ae0d525dbfe1639bf7"
+      "sha256": "3316d0a95bf734469a7a71d9f836898003bc38baed4e4245edf4d8f24035d4c3"
     },
     {
       "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
@@ -131,8 +131,8 @@
     },
     {
       "path": "hosted_guard.py",
-      "utf8_bytes": 3055,
-      "sha256": "59ad8f01901ccd98d69e9080709a49f5559b9933be65d5b3f66b22f84ca4a854"
+      "utf8_bytes": 5587,
+      "sha256": "9975d91624c8783a31b7e31a20cf2cf2f45ef625c51d9b2e4e0e6a49cced60c4"
     }
   ],
   "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
@@ -156,11 +156,13 @@
       "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
     ],
     "runtime_data_scope": "Intentionally public synthetic mathematical fixtures and source/compiler evidence; no private phone harness records.",
-    "counter_adapter": "hosted_guard.py: cgroup-v2 original, or verified cgroup-v1 memory controller/root usage; same pressure threshold and process limits"
+    "counter_adapter": "hosted_guard.py: actual membership/mount-root resolution for v2/v1; inherited thresholds, no migration/controller setting or fallback",
+    "counter_primary_source": "https://docs.kernel.org/admin-guide/cgroup-v2.html"
   },
   "publication_notes": [
     "The first workflow-publication orchestration failed JavaScript parsing because a YAML expression collided with a JavaScript template expression. No mutation executed in that failed call. The workflow string encoding was corrected before publication.",
     "Actual CI run39670837599 failed workflow validation before any job: runner.temp is not permitted in job-level env. Use the owned relative Cargo target directory instead. No compiler/test execution occurred in this failed run.",
-    "Actual run39670971206 installed official Rust1.90 and fetched the locked dependencies, then refused before compiler launch because the original guard's fixed cgroup-v2 memory.current path was absent. Artifact12380255676 SHA256fc79a68b71e585eafb11739d35caab4dac389e78613a8f06c6bd8a5330295100 retains the error receipt. The NEW owned adapter reuses the exact original supervisor/limits and permits only a validated mounted cgroup-v1 memory root counter; no unbounded fallback or old held-job replay."
+    "Actual run39670971206 installed official Rust1.90 and fetched the locked dependencies, then refused before compiler launch because the original guard's fixed cgroup-v2 memory.current path was absent. Artifact12380255676 SHA256fc79a68b71e585eafb11739d35caab4dac389e78613a8f06c6bd8a5330295100 retains the error receipt. The NEW owned adapter reuses the exact original supervisor/limits and permits only a validated mounted cgroup-v1 memory root counter; no unbounded fallback or old held-job replay.",
+    "Actual run39671217634 also refused before compiler launch: neither fixed root counter was available. Linux cgroup-v2 documentation confirms memory.current is a NON-ROOT cgroup file. Successor adapter resolves the actual /proc/self/cgroup membership against the actual cgroup mount root, rather than guessing the global root location; rejects path escapes/missing counters. It retains the original supervisor and thresholds and names the actual counter scope."
   ]
 }
