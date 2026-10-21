@@ -3,7 +3,7 @@
 The exact bank/affine fixtures and finite-PMF semantic receiver have actual
 hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates their exact source/statement dispositions at
-[87993704](https://github.com/Sodelin/Research-Commons/tree/87993704d179e37368f62270e35df62467952e55/research/2026-10-21-lean-rust-solver-builder).
+[2f96fbc8](https://github.com/Sodelin/Research-Commons/tree/2f96fbc855ff570dfc048c86a03e77cb5064cb63/research/2026-10-21-lean-rust-solver-builder).
 The full goal remains active.
 
 The executed Rust finite-bank evaluator and r<=3 support proposer retain ONE
@@ -38,12 +38,28 @@ inverse pair rates. Routing/parent meaning and parser/source correspondence
 remain additional obligations. Canonical native_rc1 still admits AFFINE/LAW:
 AFFINE8coordinates/64rows differs from the unadmitted CHART32/128 core.
 
+The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/2f96fbc855ff570dfc048c86a03e77cb5064cb63/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
+now exposes the ORIGINAL CHART parser/compiler through an owned, read-only
+snapshot. A command-tag guard prevents rejected COUNT/LAW requests from
+entering unrelated validation arithmetic. The adapter and five staged checks
+are UNCOMPILED/UNEXECUTED. All51 frozen public native build inputs/488056B
+were independently read/hash-checked and prepared online with original Cargo
+paths/locks. No restore program, compiler or test ran.
+
+A complete binary bank needs4n+6h-2 coordinates: n4 tree needs14, beyond
+AFFINE8. CHART32 allows h<=3 at n4, independently of rows. Transport exhaustion
+is source-level UNKNOWN/unavailable, never global NO or coordinate truncation.
+The selected PROSPECTIVE port map is incoming[0]/[1] to Lean
+parent(false)/parent(true), requiring LAW G=1-gamma. The current exporter
+preserves ports and performs no probability substitution; its occurrence,
+shared-bank and nonlinear readout proofs remain open.
+
 NEW native/CI execution is HELD for the existing encrypted writer/controller
 binding. Prior hosted traces persisted in plaintext; no retroactive privacy
 acceptance is claimed. Automatic triggers are disabled/manual job literal-false.
-The Lean owner's corrected outer launcher unconditionally refuses BEFORE Lake
-configuration loading. It was not executed; actual stream/recovery/recipient/
-sequence binding remains UNBOUND.
+The Lean owner's quiet outer launcher unconditionally exits78 BEFORE Lake
+configuration loading. It was not executed; quiet exit does not admit a default
+CI shell. Actual stream/recovery/recipient/sequence binding remains UNBOUND.
 
 | Remaining boundary | Scope |
 | --- | --- |
@@ -53,7 +69,7 @@ sequence binding remains UNBOUND.
 | Native and physical correspondence | Parsing/compiler refinement, complete source/layout/emission proofs and one actual readout/provider remain open |
 | Original G3/G4/P1/P5 criteria | Historical scientific owners and original standards retained |
 
-Complete G1, timed/untimed G2 and full binary-M3 G5 are the recovery baseline.
+Complete G1, timed/untimed G2 and full-timed binary-M3 G5 are the recovery baseline.
 The reviewed Dot368a752b allocation append assigns four existing contexts to
 two basketball/two baseball tasks; none is reactivated/reassigned here.
 
