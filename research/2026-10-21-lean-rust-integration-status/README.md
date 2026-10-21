@@ -1,113 +1,68 @@
 # Lean-to-Rust solver status, 21 October 2026
 
-The exact bank/affine fixtures and finite-PMF semantic receiver have actual
-hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
-integrates their exact source/statement dispositions at
+The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
+integrates the current source and exact evidence at
 [3fb3cea9](https://github.com/Sodelin/Research-Commons/tree/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder).
-The full goal remains active.
+[EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
+complete-scope dispositions, prior failures and remaining requirements.
 
-The executed Rust finite-bank evaluator and r<=3 support proposer retain ONE
-supplied law, exact zero deletion/grouping and the original certificate checker,
-emitter, runtime and MCP route. Both hosted Linux objects and their original
-scope are recorded in NATIVE-CUSTODY.md. EVIDENCE.json retains exact prior
-runs, source/object hashes, receipts and their record-policy limitation.
+The bounded native rational-bank evaluator and r<=3 support proposer were
+actually exercised through the original checker/emitter/runtime/MCP route.
+Their exact Linux objects and custody evidence are retained. Those earlier
+jobs persisted synthetic runtime traces in plaintext; their observed behavior
+does not receive retroactive privacy acceptance or canonical profile adoption.
 
-The existing Lean [draft PR3](https://github.com/Sodelin/Research-Commons/pull/3)
-at2b0ae57e5f4193d886c4066eeda238ad990603fb includes actual hosted checks:
-five selected full type/standard-axiom audits for EACH unchanged bank witness;
-nine for the corrected generic affine receiver/controls; twelve for SIX exact
-authored affine fixtures, including duplicate rows and Fin0; seven for the
-general finite-PMF receiver using original support/gridWeight helpers.
-Original failed proof bytes remain separately attributed. We independently
-reviewed the exact public source bodies/projections, complete selected types,
-standard axioms and submitted audit hashes. This is attributed Lean4.35.0/
-mathlib56a005 execution, not an independent compiler rerun or pinned4.33.1
-module/import/object acceptance.
+The existing [Lean draft PR3](https://github.com/Sodelin/Research-Commons/pull/3)
+supplies attributed hosted Lean4.35.0/mathlib56a005 checking: exact original
+certificates, both authored raw-bank witnesses, the corrected affine receiver,
+six unchanged affine literals and the finite-PMF wrapper using original helpers.
+The generic ordered bank layout now also has two selected complete-type/standard-
+axiom audits: bankEquiv and ordered_bank_positions. Its exact submitted-source
+hash was independently reconstructed; it proves all coordinate positions and
+the unique ancestral preimage. This is peer execution, not an independent rerun
+or pinned4.33.1 module/import/object acceptance.
 
-The new pure Python provenance/binder/emitter extensions and staged refusal,
-UNKNOWN, budget and runtime controls remain UNEXECUTED. Checked authored
-fixtures are not claimed Python outputs. Ordered matrix identities retain row order and exclude the separate budget
-cap; raw request identities retain it. Supplied mathematical input does not
-acquire physical/joint/measured provenance.
+The exact generic layout source is integrated unchanged.
+OriginalCodeBankLayout remains SOURCE ONLY and unelaborated in the full import
+context. It reuses sourceOfValid/decodedIDs/decodedRegistry with explicit
+BinaryValid/RegistryValid and original occurrence order. Captured native arrays,
+the concrete Code instance, reflected chronology/exposure/coin fields and exact
+ordered row emission remain open. Source validator branch alignment is not
+formal parser/DFS/Kahn/degree refinement.
 
-The ORIGINAL ordered G6 cell/wire receiver was recovered and reviewed. It
-requires complete original registries, ONE bijective layout and exact
-emitted.toFinset=compileCell. Checked values then reconstruct the supplied
-original cell bank or exclude that cell only. Native CHART RATE slots contain
-inverse pair rates. Routing/parent meaning and parser/source correspondence
-remain additional obligations. Canonical native_rc1 still admits AFFINE/LAW:
-AFFINE8coordinates/64rows differs from the unadmitted CHART32/128 core.
+The Rust row-export adapter is UNCOMPILED/UNEXECUTED, including five staged
+controls. It preserves the original32/128 CHART core, raw ownership, duplicate
+rows and ONE ancestral inverse-rate coordinate, and guards unsupported tags
+before generic COUNT/LAW validation. All51 frozen native source inputs/488056B
+were read/hash-checked and prepared online; no restore/build program ran.
+New Python provenance/binder/emitter extensions and staged controls are also
+UNEXECUTED. Checked authored fixtures are not claimed emitter outputs.
 
-The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
-now exposes the ORIGINAL CHART parser/compiler through an owned, read-only
-snapshot. A command-tag guard prevents rejected COUNT/LAW requests from
-entering unrelated validation arithmetic. The adapter and five staged checks
-are UNCOMPILED/UNEXECUTED. All51 frozen public native build inputs/488056B
-were independently read/hash-checked and prepared online with original Cargo
-paths/locks. No restore program, compiler or test ran.
-
-A complete binary bank needs4n+6h-2 coordinates: n4 tree needs14, beyond
-AFFINE8. CHART32 allows h<=3 at n4, independently of rows. Transport exhaustion
-is source-level UNKNOWN/unavailable, never global NO or coordinate truncation.
-The selected PROSPECTIVE port map is incoming[0]/[1] to Lean
-parent(false)/parent(true), requiring LAW G=1-gamma. The current exporter
-preserves ports and performs no probability substitution; its occurrence,
-shared-bank and nonlinear readout proofs remain open.
-
-The existing G7 Code/sourceOfValid/decodedIDs/decodedRegistry constructor path
-is now reused in [SOURCE-CODE-ROW-BINDING.md](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/SOURCE-CODE-ROW-BINDING.md).
-It requires the literal captured incidence/root/label/parent arrays, exact
-census/bounds and BinaryValid/RegistryValid evidence, then the native-order
-layout. Generic encode/Option numbering cannot silently replace that relation.
-No extra Rust API/factory, checked proof or suite was added. The validator
-branch comparison found no further source-level predicate mismatch; queue/DFS,
-degree-count, literal-Code and emission refinement proofs remain open. The peer's latest
-541-module metadata adds only G7OriginalAdmission; exact graph/selection/order
-checks pass, while all4.49MB of source bodies were not independently read here.
-
-The recovered privacy primitives remain source pieces: public-only frame
-codec, local-Vault50second helper capture and exact sink/artifact v2 policy.
-None supplies the Linux controller/recipient/sequence or compiler-tree hooks.
-Official Rust1.90 Cargo source additionally writes per-unit compiler diagnostic
-caches and conditional build-script streams. The new source proposal selects
-CARGO_CACHE_RUSTC_INFO=0 for one query cache only; the other writers remain open.
-No workflow, environment or native/compiler job was changed/run for that claim.
-
-The generic ordered bank construction now has actual attributed hosted
-checking for bankEquiv and ordered_bank_positions, including the unique
-ancestral preimage. Its exact3655B source is integrated unchanged, both complete
-printed types/standard axioms were reviewed, and the audit-submitted SHA256
-was independently reconstructed. The2733B OriginalCodeBankLayout wrapper is
-SOURCE ONLY, not full-context elaborated. The generic construction obligation
-is closed at hosted4.35 scope; captured native occurrence/Code/import/reflected
-field/ordered-emission obligations remain open. See
-[the exact review](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json).
-
-The [native row-field contract](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/NATIVE-ROW-FIELD-CONTRACT.md)
-retains original LEAF row order and shared HYBRID order across columns and all
-three hybrid row blocks, exact inequality direction/strictness and valid NONE
-endpoints. No new parser/compiler, Rust API, literal suite or native run.
-The latest543-module metadata adds only the generic and Code layout modules
-to541; all previous module entries remain unchanged.
-
-NEW native/CI execution is HELD for the existing encrypted writer/controller
-binding. Prior hosted traces persisted in plaintext; no retroactive privacy
-acceptance is claimed. Automatic triggers are disabled/manual job literal-false.
-The Lean owner's quiet outer launcher unconditionally exits78 BEFORE Lake
-configuration loading. It was not executed; quiet exit does not admit a default
-CI shell. Actual stream/recovery/recipient/sequence binding remains UNBOUND.
-
-| Remaining boundary | Scope |
+| Remaining boundary | Current evidence and gap |
 | --- | --- |
-| Real first-writer enforcement | Existing controller/recipient binding; selected guard/bridge/runtime/loader/Lake/audit/launcher streams need mediation |
-| Pinned4.33.1 imports, objects and aggregate | Latest543-module physical/PMF/ordered graph is source-prepared; no native acceptance |
-| G6/G7 complete assembly | General suppliers and typed receivers are available; complete-context/master acceptance stays separate |
-| Native and physical correspondence | Parsing/compiler refinement, complete source/layout/emission proofs and one actual readout/provider remain open |
-| Original G3/G4/P1/P5 criteria | Historical scientific owners and original standards retained |
+| First runtime-record persistence | Existing Linux writer/controller/recipient/frame/sequence/transport and inner hooks remain UNBOUND; outer streams alone miss Cargo/Lake/internal writers |
+| Pinned4.33.1 imports/objects/aggregate |543-module source metadata/4504069B; only the two layout modules added to541, all earlier entries unchanged; full bodies not independently retrieved here and native acceptance unrun |
+| Exact source-cell integration | Original registries, captured Code, field reflection and ordered matrix relation; original taxon and hybrid row orders stay explicit |
+| Native and physical correspondence | Parser/executable origin/refinement, actual source/readout/provider, chart/menu coverage and whole-history requirements remain open |
+| Broader mathematical completion | G6/G7 assembly and original G3/G4/P1/P5 standards remain distinct from finite-bank/matrix results |
 
-Complete G1, timed/untimed G2 and full-timed binary-M3 G5 are the recovery baseline.
-The reviewed Dot368a752b allocation append assigns four existing contexts to
-two basketball/two baseball tasks; none is reactivated/reassigned here.
+Canonical native_rc1 still admits AFFINE/LAW, with AFFINE8/64 versus the
+unadmitted CHART32/128 core. A complete binary bank needs4n+6h-2 coordinates:
+a four-taxon tree needs14. Transport exhaustion is UNKNOWN/unavailable, never
+global NO or truncation. The prospective M0 port map requires LAW G=1-gamma;
+the exporter performs no substitution or physical admission. Supplied
+mathematical laws, physical readouts and estimates retain distinct provenance.
 
-No local Git, phone checkout/build, new chat/subagent, model test, old held-job
-replay or canonical code/profile/whitelist change occurred in this lane.
+NEW native/Cargo/Lake/CI execution remains HELD before the first writer.
+Automatic triggers are removed and the manual job is literal-false. The quiet
+outer launcher refuses before Lake but supplies no writer/controller permit.
+The documented CARGO_CACHE_RUSTC_INFO=0 is proposed for one query cache only;
+diagnostic/build-script and other inner writers still require enforcement.
+
+Complete G1, timed/untimed G2 and full-timed binary-M3 G5 are the recovery
+baseline. Original scientific standards and historical owners remain preserved.
+The reviewed Dot allocation assigns four existing contexts to two basketball/
+two baseball tasks; none was reactivated or reassigned here.
+
+No local Git, phone project artifact/build, new chat/subagent, model test,
+old held-job replay or canonical code/profile/whitelist change occurred.
