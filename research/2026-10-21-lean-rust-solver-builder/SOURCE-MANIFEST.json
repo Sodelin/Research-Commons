@@ -1,6 +1,6 @@
 {
   "schema": "online_solver_proposal_source_manifest_v1",
-  "status": "ACTUAL_ONLINE_NATIVE_RUNTIME_MCP_PASS;_PEER_LEAN_SOURCE_REVIEWED;PINNED_PACKAGE_ASSEMBLY_OPEN",
+  "status": "PRIOR_NATIVE_RUNTIME_MCP_PASS;NEW_RATIONAL_BANK_SOURCE_CANDIDATE_PENDING",
   "base_commit": "1138a5b1a281caa00b38e0976db95b586938754b",
   "branch": "codex/lean-rust-builder-20261021",
   "owner_scope": "research/2026-10-21-lean-rust-solver-builder",
@@ -30,7 +30,7 @@
     },
     {
       "path": ".github/workflows/rust-support-proposal.yml",
-      "sha256": "6c1c9f921ce30ef097cc990c9dcc00aff7951daee8c83d7b974475378f57921d"
+      "sha256": "fcfe5f381e3a6d30ea44cf03ed0dc29041a7242d2e679b35fe8d80ac9944d427"
     },
     {
       "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
@@ -70,9 +70,14 @@
   ],
   "files": [
     {
+      "path": "BANK-INTERFACE.md",
+      "utf8_bytes": 6394,
+      "sha256": "137b6bf014251dea6878f9fca4fae56bbc215ed648716eb1e3285173f90ed620"
+    },
+    {
       "path": "OBLIGATIONS.md",
-      "utf8_bytes": 3191,
-      "sha256": "439f77e80fbe48b6224e9c726916c199bae509bfa80cee8e35ec69968bf2cf74"
+      "utf8_bytes": 3424,
+      "sha256": "05d42df7c2c050d71de4b3527f67ac02cc22d56f2fd0f22d986b3ed5c8520fb4"
     },
     {
       "path": "PROOF.md",
@@ -86,13 +91,23 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 6832,
-      "sha256": "af4c3d7c72712c23d3b11cba1f492bb86f03d389cbd358ff41cde45f64952417"
+      "utf8_bytes": 7417,
+      "sha256": "766f4b98b0b6c66401072523dc4af8b371cbd7cdfa64af3327d23ff38f04b4d1"
     },
     {
       "path": "REFERENCE-RESULT.json",
       "utf8_bytes": 1835,
       "sha256": "014e6ca874682871182f2061d920cd2122cffaef4e867e65836f1b8936020231"
+    },
+    {
+      "path": "bank_codec.py",
+      "utf8_bytes": 6016,
+      "sha256": "bc44c623251d20d3bab8d9925d156ec2e1de1314051584834abfd7d419c5f4ec"
+    },
+    {
+      "path": "ci_bank.py",
+      "utf8_bytes": 9508,
+      "sha256": "8962c7a3e2b3c173eb912969846b422b9a13faece17a38038b465007af3e4b55"
     },
     {
       "path": "ci_connector.py",
@@ -108,6 +123,11 @@
       "path": "codec.py",
       "utf8_bytes": 5618,
       "sha256": "4bbc30413cb928e86677460b13be5efd578119f988d479003de1dbc5fcd49a33"
+    },
+    {
+      "path": "evidence/BANK-SOURCE-REUSE.json",
+      "utf8_bytes": 2809,
+      "sha256": "ee042d73cf43114efedd1860acd1596ddf40292bbcfce40fef07499555d4560e"
     },
     {
       "path": "evidence/LEAN-SOURCE-REVIEW.json",
@@ -160,6 +180,11 @@
       "sha256": "194934c52bec4b5e3f3af972ce42eed9de3c209e5ea7648eb652b64de1681a35"
     },
     {
+      "path": "fixtures/three-bank.json",
+      "utf8_bytes": 272,
+      "sha256": "6c929b870b032338c9e07e834bce85fdf0775a26b4fbdfe202d9e6e704ce5115"
+    },
+    {
       "path": "fixtures/three-check-request.json",
       "utf8_bytes": 4790,
       "sha256": "177a47d8d7437e3392055634d44aa128349e62fd49744bedac9c2a931459c6c0"
@@ -168,6 +193,11 @@
       "path": "fixtures/two-acquisition.json",
       "utf8_bytes": 187,
       "sha256": "dcaac72a83af8f834fdfba349573378d04b2692abffe827be0a6634ca393425a"
+    },
+    {
+      "path": "fixtures/two-bank.json",
+      "utf8_bytes": 329,
+      "sha256": "1487590ff7e296970df47133a33bfe35b16235aa4b5bf6889081d4c6f2e91650"
     },
     {
       "path": "fixtures/two-certificate.wire",
@@ -210,6 +240,11 @@
       "sha256": "e4060b2f0186742ecc47e8a6b8abe37953b20f126f72b14d9d08f7d667177b97"
     },
     {
+      "path": "rust/src/bin/common-bank-moments.rs",
+      "utf8_bytes": 8576,
+      "sha256": "1a18fe4e88fc0a27542eb246d80a76d1aaa2a0534bc9d92f1ce3640c0b6a4d88"
+    },
+    {
       "path": "rust/src/main.rs",
       "utf8_bytes": 12550,
       "sha256": "0a5cede6b95982cf669b064664cc0c2aaf5ded0fd4c1140d52fd32a298680d6a"
@@ -222,6 +257,7 @@
   ],
   "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
   "remaining": [
+    "NEW finite rational bank binary/codec/old-runtime chain execution",
     "pinned Lean4.33.1/mathlib0df444a3 standalone module/Lake object custody and full aggregate",
     "canonical proposer/profile adoption is not supplied",
     "typed physical source/provider-to-one-common-law correspondence",
@@ -268,7 +304,8 @@
     "Run39671453994 actually compiled Rust with the retained lock and validated cgroup-v2 current membership; original8 groups passed,4 new groups panicked on a usize intermediate subtraction in polynomial division. One arithmetic-index expression is corrected from top-d.len()+1 to top+1-d.len(); fresh tests required. Full failure/correction record is retained.",
     "Run39672776803 passed the original/native and NEW actual codec CLI + original facade controls. MCP-only harness failed before protocol because -I suppresses server.py's required sibling bridge import. Correct only the harness argv to -E -s -B; original server/bridge/runtime remain unchanged. Fresh MCP execution required.",
     "Run39673031769 passed actual native/CLI/original facade and two real stdio MCP processes with six connector calls, including unapproved-binary UNKNOWN. Its archive was authenticated and9guard receipt/stream pairs checked. One remaining platform evidence gap was requested-vs-observed Docker enforcement. Add direct kernel/mount/interface assertions before the same connector controls; no canonical/scientific source change.",
-    "Run39673487466 passed native/codec CLI/original runtime and unchanged MCP with actual container enforcement assertions. Authenticated artifact8ce2eb18...4442 and9guard receipt/stream pairs. Published Lean peer source e8fe774e was read/hashed and its exact source projections and selected statement scope independently reviewed; no pinned-Lake/full-master inference."
+    "Run39673487466 passed native/codec CLI/original runtime and unchanged MCP with actual container enforcement assertions. Authenticated artifact8ce2eb18...4442 and9guard receipt/stream pairs. Published Lean peer source e8fe774e was read/hashed and its exact source projections and selected statement scope independently reviewed; no pinned-Lake/full-master inference.",
+    "Add NEW separate rational finite-bank executable and strict original-row verifier against exact retained PMF/grouping contract. Old proposer/main unchanged; new source is not covered by previous executed binary evidence. Existing bounded workflow gains one90wall/60CPU/512MiB guarded bank step; no new worker, old-lane replay or canonical profile edit."
   ],
   "actual_native_execution": {
     "run_id": 39671718288,
@@ -324,5 +361,42 @@
     "both_projections_and_submitted_hashes_verified": true,
     "independent_Lean_execution": false,
     "pinned_Lake_object_custody": false
+  },
+  "bank_source_contract_pins": [
+    {
+      "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09.lean",
+      "bytes": 187616,
+      "sha256": "fb4b6ba74553b4ec4d93204dd38a3632227a51577aee087de4ae17758c63fe09",
+      "selected_bodies_read": true
+    },
+    {
+      "commit": "7239e89dea5caad68a54227cee3b44a7d9b96389",
+      "path": "research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787.lean",
+      "bytes": 14129,
+      "sha256": "ee5d196dc25a53b8d15957fcbaf9fdf13435b78eb03f8e66819d3f258f35b787",
+      "selected_bodies_read": true
+    },
+    {
+      "commit": "514648b697aeed8f46582109cfeefcd7707cd738",
+      "path": "research/2026-10-15-common-moment-checked-component/CM-T02-CERTIFICATE-001.json",
+      "bytes": 33921,
+      "sha256": "41aa9b7b3fb639d22db47fffac7f5f92bfea021bc3f3e548f6f2c3dfbb5d7d5a",
+      "selected_bodies_read": true
+    }
+  ],
+  "new_rational_bank_scope": {
+    "status": "SOURCE_CANDIDATE",
+    "binary": "common-bank-moments",
+    "original_proposer_source_unchanged": true,
+    "domain": "1..256 exact rational atoms; one law; 1..8 positive consecutive copy levels",
+    "positive_support_values": "(0,1]",
+    "zero_mass_values": "arbitrary well-formed rational; omitted exactly",
+    "internal_bits": 8192,
+    "output_bits": 128,
+    "independent_checker": "Original-row Fraction moments versus native grouped moments; request-bound canonical output",
+    "verification": "194 banks/reversals, refusals/growth UNKNOWN, two actual CLI-to-old-runtime fixture chains in NEW bounded job",
+    "no_model_or_physical_test": true,
+    "old_jobs_replayed": false
   }
 }

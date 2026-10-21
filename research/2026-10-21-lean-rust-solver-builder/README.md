@@ -45,6 +45,16 @@ The existing Lean builder owns compiler/package assembly. Other research owners
 and original G3/G4/P1/P5 completion standards remain in place. No local Git
 writes, phone project checkout/build, new chat or sub-agent was used.
 
+## Exact finite rational bank candidate
+
+BANK-INTERFACE.md specifies a separate common-bank-moments executable plus
+request-bound Python verification. It removes only zero masses, combines equal
+rational values and derives all triangular moments from ONE law. When its
+shape fits r<=3, it emits the existing acquisition request. This NEW source
+candidate is pending its own bounded online compilation/composition; the older
+successful job does not certify it. Existing proposer/main and interfaces stay
+unchanged. No physical source admission or arbitrary-real computability follows.
+
 ## Input/output and reproducible execution
 
 rust/src/support.rs implements acquisition. codec.py is strict transport:
