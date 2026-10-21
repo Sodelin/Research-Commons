@@ -8,6 +8,7 @@ import argparse
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -63,6 +64,24 @@ def main():
     counter = Path("/sys/fs/cgroup/memory.current")
     initial = counter.read_text().strip()
     assert initial.isdigit()
+    memory_max = Path("/sys/fs/cgroup/memory.max").read_text().strip()
+    swap_max = Path("/sys/fs/cgroup/memory.swap.max").read_text().strip()
+    cpu_quota, cpu_period = Path("/sys/fs/cgroup/cpu.max").read_text().split()
+    pids_max = Path("/sys/fs/cgroup/pids.max").read_text().strip()
+    assert memory_max == str(2*1024**3) and swap_max == "0"
+    assert cpu_quota.isdigit() and int(cpu_quota) == int(cpu_period) and int(cpu_period) > 0
+    assert pids_max == "128"
+    assert os.statvfs(ROOT).f_flag & os.ST_RDONLY
+    interfaces = sorted(path.name for path in Path("/sys/class/net").iterdir())
+    assert interfaces == ["lo"]
+    status_fields = dict(line.split(":",1) for line in Path("/proc/self/status").read_text().splitlines())
+    assert status_fields["NoNewPrivs"].strip() == "1"
+    assert int(status_fields["CapEff"].strip(),16) == 0
+    effective = dict(memory_max_bytes=int(memory_max),memory_swap_max_bytes=int(swap_max),
+                     cpu_quota=int(cpu_quota),cpu_period=int(cpu_period),pids_max=int(pids_max),
+                     source_mount_readonly=True,network_interfaces=interfaces,
+                     no_new_privileges=True,effective_capabilities=0)
+
 
     raw_two = (HERE/"fixtures/two-check-request.json").read_text()
     raw_three = (HERE/"fixtures/three-check-request.json").read_text()
@@ -129,7 +148,8 @@ def main():
                   actual_connector_run_calls=6,capability_and_tool_list_checked=True,
                   runtime_and_bridge_sources_unchanged=True,
                   container_image=args.image_ref,python_version=sys.version,
-                  container_network="none",container_memory_bytes=2*1024**3,
+                  requested_container_network="none",requested_container_memory_bytes=2*1024**3,
+                  observed_enforcement=effective,
                   actual_original_counter="cgroup-v2 namespaced memory.current",
                   native_profile_adopted=False,Lean_compiled=False,
                   source_existence_certified=False,records=records)
