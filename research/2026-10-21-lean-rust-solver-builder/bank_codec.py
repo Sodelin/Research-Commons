@@ -79,17 +79,35 @@ def decode(raw, obj, checker, literal_request_sha256):
         acquisition = {"schema":"rational_support_acquisition_v1",
                        "candidate_survivals":list(map(str,nodes)),
                        "moments":list(map(str,moments))}
+    # SOURCE follow-on: fixed scalar-law identity differs from literal request
+    # and from its selected finite moment order. Execution awaits record binding.
+    grouped_nodes = [{"survival":str(x),"weight":str(weights[x])} for x in nodes]
+    scalar_law = {"schema":"rational_scalar_pushforward_law_v1","nodes":grouped_nodes}
+    scalar_law_sha256 = checker.digest(scalar_law)
+    moment_order = {"schema":"fixed_bank_sparse_moment_vector_v1",
+                    "scalar_law_sha256":scalar_law_sha256,
+                    "copy_levels":list(range(1,obj["copy_level_count"]+1)),
+                    "exponents":[k*(k-1)//2 for k in range(1,obj["copy_level_count"]+1)],
+                    "moments":list(map(str,moments))}
     return {"schema":"checked_rational_bank_moments_v1",
             "status":"CHECKED_RATIONAL_BANK_MOMENTS",
             "literal_request_sha256":literal_request_sha256,
             "input_atoms":len(obj["atoms"]), "positive_atoms":positives,
             "distinct_nodes":len(nodes),
-            "nodes":[{"survival":str(x),"weight":str(weights[x])} for x in nodes],
+            "nodes":grouped_nodes,
+            "scalar_law_sha256":scalar_law_sha256,
+            "scalar_law_identity_scope":"exact_rational_scalar_pushforward",
+            "moment_vector_sha256":checker.digest(moment_order),
+            "candidate_request_sha256":checker.digest(acquisition) if acquisition is not None else None,
             "copy_levels":list(range(1,obj["copy_level_count"]+1)),
             "exponents":[k*(k-1)//2 for k in range(1,obj["copy_level_count"]+1)],
             "moments":list(map(str,moments)),
             "candidate_request":acquisition,
             "moments_origin":"derived from this supplied exact rational law",
+            "provenance":{"schema":"solver_moment_provenance_v1",
+                          "kind":"supplied_mathematical_law",
+                          "observation_binding":None,
+                          "error_confidence_contract":None},
             "source_existence_certified":False, "native_refinement_proved":False}
 
 def main():

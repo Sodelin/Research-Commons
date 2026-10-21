@@ -122,6 +122,12 @@ online bundle described by NATIVE-CUSTODY.md. PROPOSED-NATIVE-PROFILE.json pins
 their auxiliary role and complete input/output route; canonical adoption and
 new public API tasks are not supplied by that descriptor.
 
+MOMENT-PROVENANCE.md proposes explicit mathematical-law provenance and separate
+literal-request, scalar-law and L/order-sensitive moment identities. This NEW
+metadata extension is source-only and unexecuted under the writer hold; earlier
+jobs cover the recorded baseline, not the extension. The old certificate input
+and native binaries remain unchanged.
+
 ## Mathematical boundary
 
 PROOF.md gives output soundness. The checked Lean finite_supported_bank theorem

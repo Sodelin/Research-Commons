@@ -110,6 +110,30 @@ def main():
             negatives += 1
         else:
             raise AssertionError("invalid JSON bank request accepted")
+    # SOURCE follow-on controls; no execution until the real encrypted writer binds.
+    original_bank = json.loads((HERE/"fixtures/two-bank.json").read_bytes())
+    compact_bank = {"schema":"rational_finite_bank_moments_v1","copy_level_count":5,
+                    "atoms":[{"weight":"1/2","survival":"1/3"},
+                             {"weight":"1/2","survival":"2/3"}]}
+    shorter_bank = copy.deepcopy(compact_bank)
+    shorter_bank["copy_level_count"] = 1
+    identity_reports = []
+    for bank in (original_bank,compact_bank,shorter_bank):
+        literal_bank = json.dumps(bank,sort_keys=True).encode()
+        bank_codec.request(literal_bank,checker)
+        answer = execute(binary,bank_codec.encode(bank).encode())
+        assert answer.returncode == 0 and not answer.stderr
+        verified = bank_codec.decode(answer.stdout,bank,checker,sha(literal_bank))
+        assert verified["provenance"]["kind"] == "supplied_mathematical_law"
+        assert verified["provenance"]["observation_binding"] is None
+        assert verified["provenance"]["error_confidence_contract"] is None
+        identity_reports.append(verified)
+    assert len({row["scalar_law_sha256"] for row in identity_reports}) == 1
+    assert len({row["literal_request_sha256"] for row in identity_reports}) == 3
+    assert identity_reports[0]["moment_vector_sha256"] == identity_reports[1]["moment_vector_sha256"]
+    assert identity_reports[1]["moment_vector_sha256"] != identity_reports[2]["moment_vector_sha256"]
+    assert identity_reports[0]["candidate_request_sha256"] == identity_reports[1]["candidate_request_sha256"]
+    assert identity_reports[2]["candidate_request_sha256"] is None
     chain = []
     for name in ("two","three"):
         literal = (HERE/f"fixtures/{name}-bank.json").read_bytes()
@@ -172,6 +196,7 @@ def main():
               "reversal_controls":len(cases),"native_refusals":len(refused),
               "native_output_cap_unknowns":1,"codec_negative_controls":negatives,
               "actual_native_processes":calls,"actual_codec_cli_calls":cli_calls,
+              "provenance_identity_controls":len(identity_reports),
               "case_records_sha256":sha(json.dumps(records,sort_keys=True).encode()),
               "bank_to_native_to_original_runtime":chain,"canonical_source_changed":False,
               "source_existence_certified":False,"native_refinement_proved":False,"Lean_compiled":False}
