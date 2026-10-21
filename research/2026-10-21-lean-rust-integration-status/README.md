@@ -36,8 +36,47 @@ canonical proposer adoption are separate. Original all-input G3, finite legal
 INDEPENDENT G4 and G6/G7 assembly retain their completion criteria; the complete
 G1/G2/binary-M3 G5 baseline is not replaced by this component.
 
-The active Rust builder next inspects the retained finite-PMF grouping adapters
-for a reusable exact bank-to-common-moment interface while the Lean owner
-prepares its separate new pinned-context job. No old held job is replayed.
-Source/build/evidence stay online; no local Git writes, phone project checkout,
-phone compilation, new chat, sub-agent or model test was used.
+The rational finite-bank follow-on is now executed and retained. The existing
+Lean owner keeps the exact rational-to-real receiving proof and pinned package
+assembly; the Rust builder supplies the exact source/binary/input/output
+contract. No old held job is replayed. Source/build/evidence stay online; no
+local Git writes, phone project checkout/compilation, new chat, sub-agent or
+model test was used.
+
+## Subsequent exact-bank and native-object result
+
+The current immutable Rust packet is
+[c06da7f35a1cec9340ff7ca22668d85156f5648f](https://github.com/Sodelin/Research-Commons/tree/c06da7f35a1cec9340ff7ca22668d85156f5648f/research/2026-10-21-lean-rust-solver-builder).
+[Run39675913869](https://github.com/Sodelin/Research-Commons/actions/runs/39675913869)
+passed six new bank plus13existing unit groups,194exact banks and194reversals,
+17bank refusals,onegrowth UNKNOWN,eight codec negatives/eight actual CLI calls
+and two full bank-to-original-runtime chains. Both exact original certificate
+objects and standalone proof hashes were reproduced. Exactly zero mass is
+omitted; equal rational values are grouped without rescaling; all moments use
+one supplied law. Deriving a mathematical vector is not measurement provenance.
+
+[Run39676750748](https://github.com/Sodelin/Research-Commons/actions/runs/39676750748)
+then closed the additional object-availability gap by retaining BOTH actual
+executed ELF objects. Their hashes match the previous independent job exactly.
+Artifact12382691850,669932B,SHA256
+68963ed6ddcb092c8409296f876e286fecd4bc29e7a4831c6413ff200f9de1f0,
+both ELF bodies and all10guard stream/receipt pairs were authenticated in memory.
+The object-retention run repeated checks because the CI result-capture code
+changed; no checkpoint alone was used to justify another run.
+
+The bank object is638656B/SHA256
+0b4efaaf6914bb7aca79bc045ccce379fd06a4d228028a6a131d941dd1bffbec;
+the unchanged proposer is720808B/SHA256
+40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9.
+NATIVE-CUSTODY.md documents the Linux x86_64 target,30day artifact lifetime,
+exact source/lock reproduction and restored executable permissions.
+PROPOSED-NATIVE-PROFILE.json is an auxiliary acquisition proposal; current
+runtime schemas/tasks and CHECKERS remain unchanged.
+
+The Rust builder read dot's
+[checkpoint3cc15940](https://github.com/Sodelin/Research-Commons/blob/3cc15940eb02e82b781d2327444a99e5e6b1e0f4/research/2026-10-21-dot-priority-review-2110z/CHECKPOINT.md).
+Its owner/priority decision is retained: reuse the prior grouping mathematics,
+prioritize the receiving cast/positive-support aggregation proof and pinned
+standalone assembly, and keep physical legality, original G3/G4, canonical
+adoption and native refinement separate. This acknowledgement does not claim
+dot read or adopted the later native-object packet.
