@@ -120,3 +120,23 @@ OBLIGATIONS.md carries the integration gates. G1/G2/full binary-M3 G5 recovery,
 remaining G6/G7 assembly, original all-input G3 termination and finite legal
 INDEPENDENT G4 forcing retain their own evidence and completion standards.
 This bounded acquisition component does not replace those goals.
+
+## Fresh online native verification candidate
+
+A new disjoint Rust-only workflow, .github/workflows/rust-support-proposal.yml,
+uses official Rust1.90, the existing guarded runner and fresh GitHub-hosted
+Ubuntu24.04 scratch. It neither resumes the interrupted Lean prefix nor consumes
+an old CM record. The job is serial,10minutes maximum, readonly-token checkout,
+no persisted checkout credentials, locked fetch then offline builds. It exports
+only intentionally public synthetic scientific evidence and emitted Lean source;
+no phone-private harness records, keys, raw conversations or personal data enter
+this job. The phone never builds or stores a project checkout. Initial16file
+remote readback passed at65a8a592f1997e4b42a73bff86db1475ed203c71. Source/fixtures
+remain independently reviewable before and after actual CI execution.
+
+ci_verify.py reuses the original Python checker/emitter and original singleton
+case generator. Its new158-case singleton comparison does not invoke the old
+historically accepted executable: it is separately labelled current-new-binary
+versus original-Python evidence. The inherited556-case script is run unchanged.
+The two new Lean source outputs remain uncompiled until the separate Lean owner
+checks their exact type/axiom/object custody.

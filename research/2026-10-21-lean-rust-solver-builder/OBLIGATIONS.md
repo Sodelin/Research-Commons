@@ -16,7 +16,7 @@ Goal remains active; a source proposal is not end-to-end solver completion.
 | Runtime/MCP composition | Original check_certificate request, no canonical edit | Interface prepared | New checked requests must traverse unchanged runtime and existing connector under an admitted execution |
 | Physical law/source recognition | Existing UNKNOWN contracts; no physical construction | OPEN | Typed physical source/row/provider bridges and independent G3/G4 obligations |
 | Native implementation refinement | Existing finite-reference evidence only | OPEN | A formal code-refinement statement or retain explicit trusted implementation boundary |
-| Publication/readback | Remote-only branch and content manifest | Pending remote readback at authoring | Record immutable commit and exact readback; peer receipt/adoption remain separate |
+| Publication/readback | Remote-only branch and content manifest | Initial16 bodies read back at65a8a592; successor CI source pending readback | Record actual CI result; peer receipt/adoption remain separate |
 
 One concrete next task is to run the new Rust unit groups and205 reference-bound
 vectors in the already established ONLINE owned runner after its new finite

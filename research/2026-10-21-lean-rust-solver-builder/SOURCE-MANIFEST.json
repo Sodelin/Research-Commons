@@ -27,13 +27,32 @@
       "path": "research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean",
       "git_blob": "bdb5472d06592cad4ad6511d7bb893cbac7cac99",
       "sha256": "1f35f9e11cef727b27ed30230a390ada2a32dfc50733ea0d4cb172fb7c053266"
+    },
+    {
+      "path": ".github/workflows/rust-support-proposal.yml",
+      "sha256": "47a2dc4b47cbc8a7c2be4edfa8ccc60d917adacb67305994ef34b0d9d52541f1"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "git_blob": "a62eae2b78eb1c7ba207de13cd5b6fa2a257542a",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/test_native.py",
+      "git_blob": "656d6075f45c5ebc21e82fc266d504e8a58cbf4f",
+      "sha256": "436648856f099719420a3d3dc63e26282243830fdee29f604207af0e07892aec"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/test_certificates.py",
+      "git_blob": "c2923be56d035a12377d46f0a74f04bb974886b6",
+      "sha256": "94df62e9a801de7a0776c05bd3d226c64a3e97677bdd3f9c3333408759298be4"
     }
   ],
   "files": [
     {
       "path": "OBLIGATIONS.md",
-      "utf8_bytes": 3032,
-      "sha256": "013727b9c5b827c8b11c73fca82e92dc11d344d50bf73deb4776e148aaf47fc4"
+      "utf8_bytes": 3052,
+      "sha256": "711dce6e4300be1a5f0794ef5d90f58a2289a5e6b07f6563b8ccfad492a86e67"
     },
     {
       "path": "PROOF.md",
@@ -42,8 +61,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 7177,
-      "sha256": "90737677fbd3fe78f8077d5a8728bb3acd82bb5c4118ff37a30ecb5e6ad9cdfb"
+      "utf8_bytes": 8456,
+      "sha256": "06e690168b92e9c32cccdf5ca2f98679833c865153e1576949348bc7e4825727"
     },
     {
       "path": "REFERENCE-RESULT.json",
@@ -104,6 +123,11 @@
       "path": "rust/src/support.rs",
       "utf8_bytes": 10216,
       "sha256": "98ad0783f010ff53effef8201b7cc3a2fb58eae7cf4697911bbc332aa64f6713"
+    },
+    {
+      "path": "ci_verify.py",
+      "utf8_bytes": 10240,
+      "sha256": "417c19303e7fb3cad2e6b5b242d476c2f8498d033caf8a4cf899357c39be783e"
     }
   ],
   "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
@@ -113,5 +137,22 @@
     "new exact emitted Lean proof/type/axiom/custody",
     "runtime/MCP composition",
     "physical source/provider correspondence and original G3/G4 master gaps"
+  ],
+  "regression_source_pins": {
+    "test_native_generator.py": "f23b7010d7f121a6da90e198935c46dbe2bd7fa8ded8e13a8a651f1ff0db98f0"
+  },
+  "new_online_execution_scope": {
+    "executor": "GitHub-hosted Ubuntu24.04; new Rust-only job",
+    "workflow_path": ".github/workflows/rust-support-proposal.yml",
+    "old_Lean_or_CM_job_replayed": false,
+    "source_commit_before_workflow": "65a8a592f1997e4b42a73bff86db1475ed203c71",
+    "workflow_docs": [
+      "https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow",
+      "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+    ],
+    "runtime_data_scope": "Intentionally public synthetic mathematical fixtures and source/compiler evidence; no private phone harness records."
+  },
+  "publication_notes": [
+    "The first workflow-publication orchestration failed JavaScript parsing because a YAML expression collided with a JavaScript template expression. No mutation executed in that failed call. The workflow string encoding was corrected before publication."
   ]
 }
