@@ -115,6 +115,11 @@ Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679. Pinned Lean4.33.1 standalone
 imports/Lake objects, the full package aggregate and canonical adoption remain
 OPEN. Earlier failures and their corrective source commits are retained.
 
+The exact executed Linux x86_64 objects are available in the authenticated
+online bundle described by NATIVE-CUSTODY.md. PROPOSED-NATIVE-PROFILE.json pins
+their auxiliary role and complete input/output route; canonical adoption and
+new public API tasks are not supplied by that descriptor.
+
 ## Mathematical boundary
 
 PROOF.md gives output soundness. The checked Lean finite_supported_bank theorem

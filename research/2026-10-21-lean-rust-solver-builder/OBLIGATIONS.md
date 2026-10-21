@@ -14,6 +14,7 @@ disjoint component and workflow. The full solver goal remains active.
 | Actual resource enforcement | Guard receipt/stream authentication; direct kernel/mount/network/capability assertions | New isolated component scope PASSED; no old-lane reuse |
 | Exact new Lean source/type/axiom boundary | Peer commit e8fe774e; all15 bodies read; both source projections/submission hashes reconstructed; selected statements/controls reviewed | New hosted Lean4.35 context PASSED as attributed peer execution |
 | Pinned standalone Lean module/object/full package assembly | Lean4.33.1/mathlib0df444a3 boundary differs from hosted virtual document | OPEN; existing Lean owner prepares new isolated component job |
+| Exact online native object custody | Run39676750748; both ELF snapshots and10guard stream/receipt pairs authenticated; identities match prior job | PASSED for hosted Linux x86_64 auxiliary objects; archive lifetime documented |
 | Canonical proposer/profile adoption | New executable identity and original whitelist refusal tested | UNADOPTED; retain old approved identities and explicit UNKNOWN |
 | Finite rational bank-to-one-common-moment interface | BANK-INTERFACE.md; retained source hashes; separate native binary and original-row verifier | Bounded rational component PASSED run39675913869; formal rational-to-real receiver/cast packaging remains OPEN with Lean owner |
 | Physical law/source/provider recognition | No physical construction or admission supplied | OPEN; obtain exact typed source-to-common-moment obligation; reuse retained finite-PMF grouping work |

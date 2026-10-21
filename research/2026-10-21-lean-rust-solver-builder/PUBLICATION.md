@@ -121,3 +121,21 @@ moment uses ONE fixed law. An independent Fraction verifier computes moments
 from the original positive rows. Unknown/refusal and physical provenance
 remain explicit. Formal real casts/typed physical source, pinned Lean package
 assembly and original master gaps stay open.
+
+## Native objects retained online
+
+[Run39676750748](https://github.com/Sodelin/Research-Commons/actions/runs/39676750748)
+at41217af3de6af9d4a609aa9680ac9025e210a4c6 passed the same exact bank/support/
+runtime/MCP checks and retained both executed ELF objects. The bank and proposer
+hashes reproduce the prior independent job byte-for-byte. Artifact12382691850
+(669932 bytes), SHA25668963ed6ddcb092c8409296f876e286fecd4bc29e7a4831c6413ff200f9de1f0,
+the two object bodies, and all10guard stream/receipt pairs were authenticated.
+The online artifact contains bank638656B and proposer720808B executables;
+no native binary was persisted or executed on the phone.
+
+PROPOSED-NATIVE-PROFILE.json is an explicit AUXILIARY acquisition candidate,
+not an edit/adoption of canonical CHECKERS. The raw bank/support-acquisition
+schemas are not tasks of the current strict runtime dispatch. Practical API
+integration must preserve the old literal request, exact-checking and complete
+UNKNOWN/refusal/authentication boundary. Existing Lean/physical/master gaps
+remain; the goal is active.
