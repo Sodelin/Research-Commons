@@ -170,8 +170,8 @@ def main():
         bound_result = bank_codec.bind_checked_certificate(literal,native.stdout,decoded.stdout,outcome,checker)
         assert bound_result["certificate_sha256"] == checker.digest(receiver["input"])
         assert bound_result["complete_original_runtime_return"] is outcome
-        for altered_outcome in (copy.deepcopy(outcome),copy.deepcopy(outcome)):
-            if altered_outcome["primary_request_sha256"] == outcome["primary_request_sha256"] and not binding_negative_controls%2:
+        for alteration, altered_outcome in enumerate((copy.deepcopy(outcome),copy.deepcopy(outcome))):
+            if alteration == 0:
                 altered_outcome["primary_request_sha256"] = "0"*64
             else:
                 altered_outcome["delegate"]["result"]["certificate_result"]["certificate_sha256"] = "0"*64

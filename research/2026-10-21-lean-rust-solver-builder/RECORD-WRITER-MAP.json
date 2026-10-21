@@ -1,0 +1,143 @@
+{
+  "schema": "selected_first_persistence_source_inventory_v1",
+  "status": "SOURCE_REVIEW_ONLY;NO_RUNTIME_PERMIT",
+  "source_entries": [
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3",
+      "writer_candidates": [
+        {
+          "line": 62,
+          "source": "with (a.out/'stdout').open('xb') as out, (a.out/'stderr').open('xb') as err:"
+        },
+        {
+          "line": 106,
+          "source": "(a.out/'RECEIPT.json').write_text(json.dumps(receipt, indent=2)+'\\n')"
+        },
+        {
+          "line": 107,
+          "source": "print(json.dumps({k:v for k,v in receipt.items() if k != 'samples'}))"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b",
+      "writer_candidates": [
+        {
+          "line": 143,
+          "source": "with path.open('x') as stream:"
+        },
+        {
+          "line": 144,
+          "source": "json.dump(value, stream, indent=2, sort_keys=True)"
+        },
+        {
+          "line": 218,
+          "source": "(out / 'REQUEST.json').write_bytes(encoded)"
+        },
+        {
+          "line": 331,
+          "source": "print(json.dumps({key:result[key] for key in"
+        }
+      ]
+    },
+    {
+      "path": "applications/research-solver-interop/bridge.py",
+      "sha256": "0d6202c61991693d24637f2eda1ae2ef757a5b7740d94702a186e809c0656628",
+      "writer_candidates": [
+        {
+          "line": 129,
+          "source": "incoming.write_bytes(raw)"
+        },
+        {
+          "line": 144,
+          "source": "with (folder / 'launcher.stdout').open('xb') as stdout, \\"
+        },
+        {
+          "line": 145,
+          "source": "(folder / 'launcher.stderr').open('xb') as stderr:"
+        },
+        {
+          "line": 188,
+          "source": "with path.open('x') as stream:"
+        },
+        {
+          "line": 189,
+          "source": "json.dump(result, stream, indent=2, sort_keys=True, allow_nan=False)"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-21-lean-rust-solver-builder/ci_verify.py",
+      "sha256": "d3d2435b2c034ea8adbe1717bfa23f7fb492f69fdeac27907f5ec827c73af6b7",
+      "writer_candidates": [
+        {
+          "line": 192,
+          "source": "target.write_bytes(proof)"
+        },
+        {
+          "line": 207,
+          "source": "bound_path.write_bytes(incoming)"
+        },
+        {
+          "line": 248,
+          "source": "(args.output/\"RESULT.json\").write_text(json.dumps(report, indent=2, sort_keys=True)+\"\\n\")"
+        },
+        {
+          "line": 249,
+          "source": "print(json.dumps(report, sort_keys=True))"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-21-lean-rust-solver-builder/ci_bank.py",
+      "sha256": "3c0dd58798b232d8876faf57610bd8c14f003de6e727f3a4b6be37552591658b",
+      "writer_candidates": [
+        {
+          "line": 151,
+          "source": "bound.write_bytes(acquired.stdout)"
+        },
+        {
+          "line": 164,
+          "source": "target.write_bytes(proof)"
+        },
+        {
+          "line": 204,
+          "source": "snapshot.write_bytes(raw_object)"
+        },
+        {
+          "line": 212,
+          "source": "(args.output/\"NATIVE-OBJECTS.json\").write_text(json.dumps(native_objects,indent=2,sort_keys=True)+\"\\n\")"
+        },
+        {
+          "line": 224,
+          "source": "(args.output/\"RESULT.json\").write_text(json.dumps(report,indent=2,sort_keys=True)+\"\\n\")"
+        },
+        {
+          "line": 225,
+          "source": "print(json.dumps(report,sort_keys=True))"
+        }
+      ]
+    },
+    {
+      "path": "research/2026-10-21-lean-rust-solver-builder/ci_connector.py",
+      "sha256": "f7a4c6790770cfb7cd6b2096f2602ebfe5924d2bf35688d83ef14e51d87958de",
+      "writer_candidates": [
+        {
+          "line": 156,
+          "source": "(args.output/\"RESULT.json\").write_text(json.dumps(report,sort_keys=True,indent=2)+\"\\n\")"
+        },
+        {
+          "line": 157,
+          "source": "print(json.dumps(report,sort_keys=True))"
+        }
+      ]
+    }
+  ],
+  "coverage": "Selected direct writer sites only. Transitive solver/provider/native-loader/failure paths remain OPEN.",
+  "new_execution": false,
+  "owner_callback_bound": false,
+  "public_recipient_exported": false,
+  "original_private_identity_changed": false
+}
