@@ -1,7 +1,7 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL534 module bodies,4456010B. The original
-525-module transitive closure is selected from the exact current/connected
+Actual source preparation verified ALL540 module bodies,4487373B. The original
+531-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
 gridWeight and shared-configuration readout helpers are in the SAME proposed
@@ -10,7 +10,7 @@ context as CMFinitePMF and the checked bank/certificate receivers.
 The nine explicit additional modules are CMFoundations, RationalBankMoments,
 CMRationalBank, CMFinitePMF, the original certificate kernel, both original
 generated certificates and both unchanged authored bank witnesses. Source
-counts are build inputs, not endpoint acceptance or an accepted534 release.
+counts are build inputs, not endpoint acceptance or an accepted540 release.
 
 The two import-only variants are:
 
@@ -50,3 +50,10 @@ at the original commit, SHA256
 Git blob f6c7afd5ee3ef57966077c243ca5b3d55199966d. --packet-root selects these
 published owned sources. The preparer reuses already available authenticated
 source bodies or reads each missing body at its immutable source-store hash.
+
+The later addition selects the EXISTING G6NaturalCellOrderedCompiler plus its
+six original dependencies, retaining the same CM wrapper and certificate bodies.
+G6-ORDERED-CELL-RECEIVER.md at the packet root records the exact list-emission,
+dimension, witness and contradiction-to-supplied-cell boundaries. The previous
+534-module selection remains in the immutable parent source history; it is not
+mislabelled as having included this later root.

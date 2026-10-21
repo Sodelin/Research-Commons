@@ -60,7 +60,7 @@ strict grouped positivity, exact mass one, all-natural-exponent equality and
 the entire scalar pushforward-mass identity for ONE supplied real PMF. Its
 exact selected-helper projection passed hosted checking. This is not arbitrary
 real computation, physical readout admission or the full physical imports.
-The proposed534-module combined context resolves the source duplication with
+The proposed540-module combined context resolves the source duplication with
 an import-only CMFoundations variant selecting the original physical supplier.
 All534 source bodies were hash-verified; full import/native acceptance remains
 OPEN. native/physical-pmf/ records that exact graph and both import variants.

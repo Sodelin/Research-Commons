@@ -6,7 +6,7 @@ start_new_context.sh,523B/SHA256
 It unconditionally refuses before any Lake/config loader, compiler or native
 child invocation. There is no environment/argument override: a flag is not an
 authenticated recipient, controller sequence or first-writer binding.
-The source was installed into all five prepared layouts; it was NOT executed.
+The source was installed into all proposed native layouts; it was NOT executed.
 
 The earlier in-Lake target error is only a secondary guard. Earlier prose
 calling that target a first-writer gate was incorrect. No Lake invocation

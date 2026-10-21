@@ -21,7 +21,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PHYSICAL_ROOTS = ['G7RawCalendarRoot', 'G7OriginalCarrierCoverage',
     'G7OriginalFamilyCalendarNormalization', 'G6RationalNaturalCellWitness',
-    'G6OriginalWholeEdgeChartConsumer', 'G4WholeProfileDetermination']
+    'G6OriginalWholeEdgeChartConsumer', 'G4WholeProfileDetermination',
+    'G6NaturalCellOrderedCompiler']
 
 
 def checked(path, digest):
@@ -123,6 +124,7 @@ def main():
     def acquire(name):
         digest = modules[name]['sha256']
         candidates = [ROOT/'intake/modules'/(name+'.lean'),
+            ROOT/'native/prepared-physical-pmf-project534/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-project230/source-store'/(digest+'.lean')]
         local = next((p for p in candidates if p.exists()), None)
         if local:

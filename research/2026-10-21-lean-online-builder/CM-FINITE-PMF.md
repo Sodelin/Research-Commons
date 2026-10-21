@@ -48,7 +48,7 @@ the new semantic constructor retains its original graph/calendar/mask/readout
 and support-domain obligations. Scalar pushforward equality alone does not
 identify a joint source or physical realization.
 
-A separately prepared534-module native source context makes the full imports
+A separately prepared540-module native source context makes the full imports
 concrete; see native/physical-pmf/README.md. Its original physical sparse
 supplier is imported ONCE through a separately hashed CMFoundations import
 variant. The extracted duplicate is absent. Full import elaboration, native

@@ -131,7 +131,7 @@ and all-size exclusion remain independent.
 CM-FINITE-PMF.md describes the later checked semantic PMF constructor and
 all-natural-moment/pushforward relation using the exact original support and
 gridWeight helpers. Its bounded declaration projection is separate from the
-prepared534-module full physical import context in native/physical-pmf/.
+prepared540-module full physical import context in native/physical-pmf/.
 That context excludes the duplicate extracted sparse supplier and remains
 uncompiled under the native writer hold.
 
@@ -140,3 +140,9 @@ additional active workers. The later [scope reconciliation](https://github.com/S
 records reuse of those contexts for separately authorized sports research.
 This packet neither starts nor reassigns them, and does not transfer sports
 results to the mathematical master obligations.
+
+AFFINE-LITERALS.md records a further actual twelve selected audits over six
+EXACT authored fixtures, including duplicate rows/shared coordinates and empty
+Fin0. The Python/native emitters and altered-input controls remain unexecuted.
+G6-ORDERED-CELL-RECEIVER.md recovers the existing full source-typed list compiler
+and witness/contradiction consumers; no replacement affine engine is introduced.
