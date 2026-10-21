@@ -64,3 +64,9 @@ local-Vault helper and pure v2 exact sink/ArtifactKind policy. Its bounded
 helper is not a compiler-tree writer and the policy is not a writer API.
 The authenticated original controller/recipient/sequence/transport remains
 UNBOUND; no duplicate codec, private-key transfer or invented grant follows.
+
+CARGO-FIRST-WRITER-REVIEW.md pins the official Rust1.90 Cargo submodule's
+internal diagnostic cache, conditional build-script streams and compiler-query
+cache. These bypass outer stream sealing. CARGO_CACHE_RUSTC_INFO=0 disables
+only the selected query cache in the new source proposal, not the other writers.
+No new Cargo/compiler job ran and no workflow/profile changed.

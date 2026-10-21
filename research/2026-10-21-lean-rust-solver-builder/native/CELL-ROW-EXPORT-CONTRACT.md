@@ -121,3 +121,9 @@ the complete binary census. Add one row per LT/LE chronology occurrence, two
 per EQ occurrence, and one per present lower/upper exposure or extra coin
 endpoint. Duplicates count separately. This source deduction explains row-cap
 exhaustion independently of bank width; it does not prove class admission.
+
+The new core-build proposal also requires the pinned supported
+CARGO_CACHE_RUSTC_INFO=0 setting before Cargo; see CARGO-FIRST-WRITER-REVIEW.md.
+This removes only the compiler-query cache writer. Internal compiler diagnostic
+and build-script output paths still need actual first-writer enforcement.
+No environment/job/runner was changed or executed to claim this closure.
