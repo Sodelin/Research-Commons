@@ -58,3 +58,9 @@ The full goal and independent source/provenance/cast work remain active.
 
 LAKE-FIRST-WRITER-REVIEW.md supplies the exact official source hashes and order.
 This is a source finding; no new Lake process was run.
+
+NATIVE-WRITER-REUSE-REVIEW.md now pins the actual existing public codec,
+local-Vault helper and pure v2 exact sink/ArtifactKind policy. Its bounded
+helper is not a compiler-tree writer and the policy is not a writer API.
+The authenticated original controller/recipient/sequence/transport remains
+UNBOUND; no duplicate codec, private-key transfer or invented grant follows.

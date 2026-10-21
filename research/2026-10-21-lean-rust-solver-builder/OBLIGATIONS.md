@@ -24,7 +24,7 @@ disjoint component and workflow. The full solver goal remains active.
 | Existing affine solver reuse and certificate receiver | Corrected proof-only variant at peer866245d2 passed nine selected hosted audits; original80888 proposal failed and is retained | Finite supplied-matrix hosted PASS, exact native value predicate aligned; parser/source-chart refinement remains OPEN |
 | Request-bound AFFINE literal proof interface | Six exact authored sources passed peer2b0ae57e with12 selected complete type/axiom audits; projection/submission reconstructed | Authored proof fixtures hosted PASS; Python codec/emitter and eight refusals/UNKNOWN/budget/runtime controls UNEXECUTED |
 | Original ordered G6 cell/wire receiver | Exact six original sources recovered; native original-row checker/eight compilation blocks compared | Reuse existing typed receiver; exact source IDs/complete registry lists/layout/emission proof and CHART admission remain OPEN; no fresh full import run |
-| Typed native CHART row-export adapter | Source-only native/cell_row_export.rs reuses public original parser/compiler; five meaningful inherited-fixture controls staged | UNCOMPILED/UNEXECUTED; real restored source/rlib/writer binding and exact original Lean emission/admission remain OPEN |
+| Typed native CHART row-export adapter | Source-only native/cell_row_export.rs reuses public original parser/compiler; five meaningful inherited-fixture controls staged | UNCOMPILED/UNEXECUTED; all51 original source inputs prepared online; fresh rlib/writer binding and exact original Lean emission/admission remain OPEN |
 | Native implementation refinement | Exact independent checks and behavior controls only | OPEN formal refinement or retain explicit trusted implementation boundary |
 | Publication/readback | Source manifest, retained failures, native39671718288 and composition39673487466 evidence | Remote immutable history; readback verification recorded with handoff |
 
@@ -33,8 +33,8 @@ integrated. The next native admission needs the existing encrypted writer and
 an OUTER gate before the first Lake invocation; an error inside a Lake target
 is reached after configuration writes. Keep the pure Python emitter and new
 controls unexecuted until the real first-writer binding exists. The grouped CM law
-receiver is now available as attributed hosted evidence; it does not package
-the physical PMF supplier or establish generic native refinement. Existing
-physical support/gridWeight suppliers are reused rather than reimplemented.
+receiver and finite-PMF semantic wrapper are now available as attributed hosted
+evidence, reusing original support/gridWeight helpers. The full physical import
+context, actual source/readout provider and generic native refinement remain open.
 One law remains fixed across all copy levels. Broader G6/G7 assembly, original
 G3/G4/P1/P5 standards, canonical admission and the writer hold remain distinct.
