@@ -25,6 +25,11 @@ Certified preprocessing can reduce width when it also supplies the relation
 lifting its result back to the full original bank. Truncation does not supply
 the receiver's exact emitted-matrix equality. Capacity exhaustion stays UNKNOWN.
 
+[ORDERED-BANK-LAYOUT.md](ORDERED-BANK-LAYOUT.md) now records the hosted-checked
+generic bijection for these exact four coordinate ranges, including uniqueness
+of the ancestral slot. The original-Code instantiation is source-only; exact
+captured arrays, source admission, port meaning and row emission remain required.
+
 ## One shared bank needs an explicit incoming-port map
 
 The retained [native LAW compiler](https://github.com/Sodelin/Research-Commons/blob/4e556c4ae6225d18fabf30bc7d3347a468749ebc/research/2026-10-10-codex-lean-rust-parity/rust/src/law.rs)

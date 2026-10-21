@@ -1,16 +1,18 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL541 module bodies,4497681B. The original
+Actual source preparation verified ALL543 module bodies,4504069B. The original
 532-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
 gridWeight and shared-configuration readout helpers are in the SAME proposed
 context as CMFinitePMF and the checked bank/certificate receivers.
 
-The nine explicit additional modules are CMFoundations, RationalBankMoments,
+The eleven explicit additional modules are CMFoundations, RationalBankMoments,
 CMRationalBank, CMFinitePMF, the original certificate kernel, both original
-generated certificates and both unchanged authored bank witnesses. Source
-counts are build inputs, not endpoint acceptance or an accepted541 release.
+generated certificates, both unchanged authored bank witnesses, and
+NativeOrderedBankLayout/OriginalCodeBankLayout. Source counts are build inputs,
+not endpoint acceptance or an accepted543 release. The generic layout was
+hosted checked; the original-Code use-site remains source-only.
 
 The two import-only variants are:
 
@@ -64,3 +66,9 @@ decoded original registry reuse the already selected census/encoding/reachabilit
 dependencies. G7-RAW-SOURCE-DECODER.md at the packet root identifies the precise
 request/Code/layout/emission binding and the separate planar-G7 admission gap.
 The earlier540-module snapshot remains immutable at7094ed81.
+
+The later two owned layout modules retain the exact native AGE/edge/ancestral/
+hybrid order and use the original decoder's registry. Both bank witness roots
+remain selected explicitly. The prior541-module source snapshot remains
+immutable atba7ee06c; ORDERED-BANK-LAYOUT.md records the distinct hosted check
+and source-only use-site scopes.

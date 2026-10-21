@@ -15,8 +15,9 @@ Exact source paths are
 `research/2026-10-12-dot-accepted-connected-union1613-1737z/source-store/<SHA>.lean`.
 G7OriginalAdmission imports the already selected G7FiniteReachability
 (`25673c4d0a0ec0891ff204ff79c018d8e9ad1971962183e0a7332b6d709d2a35`).
-Adding the admission module requires only ONE extra module beyond the previous
-540-source context: the new source layout has541 modules/4497681B.
+Adding the admission module required only ONE extra module beyond the prior
+540-source context, producing the immutable541-module/4497681B snapshot.
+The later two layout modules make the current context543 modules/4504069B.
 
 `GProgram.G7.OriginalFiniteEncoding.Code X ID` stores original source/target
 arrays, root, named taxa, named hybrid sites and ordered parent occurrences.
@@ -40,9 +41,11 @@ captured-request-to-Code relation, not an assumed source-admission flag:
    CutChild where required. An independently checked finite-code proof can be
    used; native Boolean success is not itself a Lean proof.
 3. Reuse sourceOfValid, decodedIDs, decodedRegistry and decoded_parent_exact.
-4. Construct ONE bank-layout equivalence matching native AGE, edge inverse
-   rates, the one ancestral coordinate and hybrid-coordinate order. A generic
-   arbitrary Fintype numbering does not authenticate that particular order.
+4. Instantiate the checked generic bank-layout equivalence with those exact
+   occurrences: native AGE, edge inverse rates, one ancestral coordinate and
+   hybrid-coordinate order. ORDERED-BANK-LAYOUT.md pins the hosted theorem and
+   the source-only OriginalCodeBankLayout use-site. Arbitrary Fintype numbering
+   does not authenticate that particular order.
 5. Relate every original chronology/exposure/coin field to the typed functions.
    The existing compileCellList_toFinset then supplies exact emitted-set equality
    from complete registry lists; the list/wire relation still preserves duplicate

@@ -19,7 +19,7 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **541 modules / 4,497,681 source
+The latest prepared native context contains **543 modules / 4,504,069 source
 bytes**, with the physical sparse supplier present once and explicit import-only
 variants. All selected source hashes and dependency order are recorded. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
@@ -51,8 +51,10 @@ without substituting a smaller matrix for the original source bank.
 [The existing generic source decoder](G7-RAW-SOURCE-DECODER.md) now joins that
 context through one additional original module. It provides sourceOfValid,
 complete decoded hybrid IDs and the original parent registry; the exact native
-Code relation, matching coordinate layout and additional class premises remain
-the concrete use-site obligations.
+Code relation and additional class premises remain concrete use-site
+obligations. [The generic coordinate layout](ORDERED-BANK-LAYOUT.md) is now
+hosted checked; its original-Code instantiation is separately identified as
+source-only and still requires full-context elaboration and row-emission binding.
 
 Supplied mathematical-law and matrix hashes identify values. They do not
 authenticate physical measurements, establish error/confidence contracts or

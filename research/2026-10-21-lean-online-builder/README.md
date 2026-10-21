@@ -2,12 +2,13 @@
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
 the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
-actual hosted checks,541-module source preparation and remaining physical,
+actual hosted checks,543-module source preparation and remaining physical,
 effectivity, refinement and native-custody gates. The native outer refusal is
 silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
 and unadmitted CHART32/128 limits, inverse-rate meaning and shared-registry
-premises. No additional proof or native run was selected for this consolidation.
+premises. The later ordered-layout proof is hosted checked; its original-Code
+use-site and the full prepared native context remain uncompiled.
 
 The checked P5 ordered Lamb-shift identity now moves the fixed commutator
 through both genuine operator integrals. Its bounded-section/outer-measurability
@@ -140,7 +141,7 @@ and all-size exclusion remain independent.
 CM-FINITE-PMF.md describes the later checked semantic PMF constructor and
 all-natural-moment/pushforward relation using the exact original support and
 gridWeight helpers. Its bounded declaration projection is separate from the
-prepared541-module full physical import context in native/physical-pmf/.
+prepared543-module full physical import context in native/physical-pmf/.
 That context excludes the duplicate extracted sparse supplier and remains
 uncompiled under the native writer hold.
 
@@ -163,3 +164,7 @@ with their precise endpoint-order, calendar and registry premises.
 G7-RAW-SOURCE-DECODER.md adds the already existing generic finite-code admission
 and original-registry constructor, leaving the native Code/layout/refinement
 and separate planar-class obligations explicit.
+
+ORDERED-BANK-LAYOUT.md adds the checked generic age/edge/ancestral/hybrid index
+bijection and the separately identified source-only original-Code use-site.
+The remaining request/admission/parent and row-emission relations are preserved.
