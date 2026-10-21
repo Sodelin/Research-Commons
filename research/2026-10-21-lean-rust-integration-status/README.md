@@ -47,7 +47,7 @@ model test was used.
 
 ## Subsequent exact-bank and native-object result
 
-The current immutable Rust packet is
+The immutable executed native packet is
 [c06da7f35a1cec9340ff7ca22668d85156f5648f](https://github.com/Sodelin/Research-Commons/tree/c06da7f35a1cec9340ff7ca22668d85156f5648f/research/2026-10-21-lean-rust-solver-builder).
 [Run39675913869](https://github.com/Sodelin/Research-Commons/actions/runs/39675913869)
 passed six new bank plus13existing unit groups,194exact banks and194reversals,
@@ -82,3 +82,31 @@ prioritize the receiving cast/positive-support aggregation proof and pinned
 standalone assembly, and keep physical legality, original G3/G4, canonical
 adoption and native refinement separate. This acknowledgement does not claim
 dot read or adopted the later native-object packet.
+
+## Source-only provenance and writer follow-on
+
+[Latest source proposal67315abd](https://github.com/Sodelin/Research-Commons/tree/67315abd4d97d8cb08019f4f50358434f0a7ee5a/research/2026-10-21-lean-rust-solver-builder)
+adds explicit supplied-mathematical-law provenance, separate literal/scalar-law/
+ordered-moment identities, and a pure binder retaining the complete original
+runtime return. The proposed metadata/binder controls are UNEXECUTED under the
+existing writer hold. Hashes are audit indexes, not mathematical equality or
+physical-source axioms.
+
+The selected first-writer map pins guard, bridge, runtime and CI sites: incoming
+request and nested JSON files are written before an outer stdout wrapper can
+seal them. Transitive/native-loader/failure coverage and the actual Linux
+encrypted-writer binding remain OPEN. Automatic and manual execution remain
+disabled; no new compiler/model/CI action follows from this source packet.
+
+The Rust builder read all31 bodies of Lean peer029a7294, including the exact
+fixed-bank cast source and selected complete types/axiom dispositions. Its
+hosted Lean4.35 scope aligns; pinned0df444a3 lacks Mathlib.Basic.Real.Basic
+and has Mathlib.Data.Real.Basic. Checked originals remain unchanged.
+The existing Lean owner keeps the grouped FinitePositiveLaw constructor and
+pinned standalone/full package targets; the exact accepted CMFoundations
+fields/source hash were supplied without another recovery/build.
+
+No authenticated Linux writer/public-recipient authority is available here.
+The existing peer's owner query was reported nondelivered, not read/approved;
+this builder created no replacement query or identity. Existing privacy owners,
+original held jobs and mathematical master criteria remain unchanged.
