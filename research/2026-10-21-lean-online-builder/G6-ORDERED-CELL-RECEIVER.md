@@ -62,3 +62,6 @@ Native RATE:i/RATE:A labels denote inverse pair rates u. Reconstruction uses
 physical rho=1/u under the checked positivity condition; exactly one ancestral
 Option.none coordinate is retained. Native interval rows alone do not
 authenticate original incoming-port identity or routing probability meaning.
+G6-PRACTICAL-BANK-ADAPTER.md derives the full-bank width and records the exact
+native LAW G=P(first incoming occurrence) versus physical gamma=P(parent1)
+registry/substitution relation, including the existing original forcing supplier.

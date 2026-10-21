@@ -42,6 +42,12 @@ probability of parent1. Registry completeness, one bijective shared layout,
 exact emitted-matrix equality and positive strict-row multipliers remain real
 proof premises. [The receiver note](G6-ORDERED-CELL-RECEIVER.md) retains them.
 
+The [concrete bank adapter boundary](G6-PRACTICAL-BANK-ADAPTER.md) derives
+4n+6h-2 full-bank coordinates and pins the native LAW first-incoming probability
+to its required physical parent-order substitution. A four-taxon tree already
+needs14 coordinates. This makes the missing transport/semantic binding concrete
+without substituting a smaller matrix for the original source bank.
+
 Supplied mathematical-law and matrix hashes identify values. They do not
 authenticate physical measurements, establish error/confidence contracts or
 prove a returned runtime dictionary came from the original process. Those

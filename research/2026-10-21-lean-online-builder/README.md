@@ -155,3 +155,8 @@ EXACT authored fixtures, including duplicate rows/shared coordinates and empty
 Fin0. The Python/native emitters and altered-input controls remain unexecuted.
 G6-ORDERED-CELL-RECEIVER.md recovers the existing full source-typed list compiler
 and witness/contradiction consumers; no replacement affine engine is introduced.
+
+G6-PRACTICAL-BANK-ADAPTER.md makes the full-bank width and native LAW incoming-port
+substitution explicit. G7-ORIGINAL-EDGE-GATHERING.md identifies already retained
+full-carrier commutation/gathering suppliers for interleaved exterior operations,
+with their precise endpoint-order, calendar and registry premises.
