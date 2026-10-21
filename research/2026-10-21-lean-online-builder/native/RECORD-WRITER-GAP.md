@@ -1,7 +1,10 @@
 # Native execution and first persistence
 
-The proposed three-module pinned native target has not run. Its Lake entry
-refuses before compiler launch while the new worker's record sink is unbound.
+None of the proposed pinned native contexts has run. Their mandatory OUTER
+start_new_context.sh unconditionally refuses before any initial Lake invocation
+while the new worker's record sink is unbound. The in-Lake error is secondary:
+Lake can write its configuration trace before reaching that target. See
+PRELAKE-ADMISSION.md for the exact official source and correction.
 Hosted Lean checks use the existing RAM-to-encrypted-record capture path and
 remain distinct from native Lake/object acceptance.
 

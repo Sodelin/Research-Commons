@@ -21,8 +21,10 @@ Those source reads resolve concrete interface locations; they are not a build.
 
 Actual preparation verified/copied all nine source bodies and the exact pinned
 builder/audit. No compiler, native toolchain, Git command or old job was invoked.
-The generated Lake target refuses before launch while native first-persistence
-writers are UNBOUND. The original hosted witnesses and old accepted CM build
+The mandatory OUTER start_new_context.sh refuses before any initial Lake call
+while native first-persistence writers are UNBOUND. The in-target error is only
+secondary; see ../PRELAKE-ADMISSION.md. Neither was executed.
+The original hosted witnesses and old accepted CM build
 remain different execution evidence; neither is transferred to this context.
 
 The preparation source is a snapshot using the existing phone record module

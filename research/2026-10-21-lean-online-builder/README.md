@@ -114,9 +114,12 @@ masters or establish the physical source adapters.
 
 The native/ directory contains a concrete three-module source-layout preparer,
 the byte-identical existing builder/audit/guard sources and a resource-qualified
-proposal for the older4.33.1 pins. It has NOT run a compiler. Its generated Lake
-target refuses until an actual encrypt-before-persistence record writer is bound
-on that new worker. No private key is transferred and no old held job is replayed.
+proposal for the older4.33.1 pins. It has NOT run a compiler. The mandatory OUTER
+start_new_context.sh refuses before any initial Lake call while the actual
+record writer/controller is UNBOUND. The target error is secondary only, since
+Lake itself can write an earlier config trace; native/PRELAKE-ADMISSION.md
+corrects that boundary. Neither was executed. No private key is transferred
+and no old held job is replayed.
 
 The later affine update reuses the existing engine and two original mathematical
 bodies. Its separate corrected finite-matrix receiver and literal controls pass
@@ -124,3 +127,16 @@ nine selected hosted audits. The initial proposal failed and is retained;
 AFFINE-CERTIFICATES.md and AFFINE-SOURCE-MAP.json distinguish both source
 identities and the exact proof-only correction. Native/chart/source admission
 and all-size exclusion remain independent.
+
+CM-FINITE-PMF.md describes the later checked semantic PMF constructor and
+all-natural-moment/pushforward relation using the exact original support and
+gridWeight helpers. Its bounded declaration projection is separate from the
+prepared534-module full physical import context in native/physical-pmf/.
+That context excludes the duplicate extracted sparse supplier and remains
+uncompiled under the native writer hold.
+
+Scientific G3/G4/P1/P5 responsibilities describe original standards, not four
+additional active workers. The later [scope reconciliation](https://github.com/Sodelin/Research-Commons/commit/368a752b75f5b1bc70002495c099085b1dfbb02c)
+records reuse of those contexts for separately authorized sports research.
+This packet neither starts nor reassigns them, and does not transfer sports
+results to the mathematical master obligations.

@@ -22,7 +22,9 @@ contains1614 and was deliberately not used as this target.
 
 The new source layout has all selected bodies, the byte-identical pinned
 builder/audit, Lean4.33.1 pin and an explicit Lake verification target that
-REFUSES before launch while native first-persistence writers are UNBOUND.
+retains only a SECONDARY refusal while native writers are UNBOUND. The mandatory
+OUTER start_new_context.sh refuses before initial Lake invocation, including
+its config loader/trace. See ../PRELAKE-ADMISSION.md. Neither was executed.
 The source-only preparation script is included as a snapshot of the existing
 phone workspace; its encrypted completion receipt uses that workspace's
 existing record module. It is not an installed Linux writer or cloud runner.

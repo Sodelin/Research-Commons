@@ -44,8 +44,10 @@ guard write raw stdout/stderr/JSON/native-loader records. The phone's existing
 featurectl pipe codec cannot be assumed to exist on a new hosted worker. The
 standing privacy rule requires a real encrypt-before-first-persistence writer,
 or RAM-only retention. No shared private identity may be transferred and no new
-identity may be generated. Therefore the prepared Lake target explicitly refuses
-before launching a compiler until that writer is actually bound and verified.
+identity may be generated. The mandatory OUTER start_new_context.sh now refuses
+before the initial Lake invocation. The in-target error is secondary only:
+Lake's config trace can precede it. PRELAKE-ADMISSION.md documents this correction
+and the exact official source. No native entrypoint or Lake was invoked.
 This is a missing implementation binding, not a request for blanket permission.
 
 Next implementation action: bind the existing authenticated public-recipient

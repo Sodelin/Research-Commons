@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import shutil
 import sys
-from prepare_project import PINS, CERTS
+from prepare_project import PINS, CERTS, install_outer_refusal
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -79,11 +79,13 @@ def main():
         shutil.copyfile(HERE/'pinned'/name,destination/'scripts'/name)
     (destination/'DEPENDENCY-GRAPH.json').write_text(json.dumps(graph,indent=2)+'\n')
     (destination/'lean-toolchain').write_text('leanprover/lean4:v4.33.1\n')
+    admission = install_outer_refusal(destination)
     (destination/'lakefile.lean').write_text(
         'import Lake\nopen Lake DSL\npackage literalBankNewContext\n\n'
         'target verify _pkg : Unit := do\n  Job.async do\n'
         '    error "SOURCE_ONLY: native encrypt-before-persistence writers remain UNBOUND"\n')
     manifest = {'source_only':True,'native_record_writer_required':True,
+        'admission':admission,
         'mathlib_commit':'0df444a360eaa60ab8c11dca51a86af692955474','modules':modules,
         'separate_import_variant':{'module':'RationalBankMoments',
           'hosted_sha256':hashlib.sha256(hosted).hexdigest(),

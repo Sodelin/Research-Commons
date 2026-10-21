@@ -763,6 +763,101 @@
       ],
       "warning_dispositions": "Benign style/deprecation warnings retained in the encrypted original; no sorry/unsafe/nonstandard-axiom acceptance.",
       "scope": "Hosted single-document selected types/axioms; not pinned native Lake or object custody."
+    },
+    {
+      "case": "cm_finite_pmf",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineCMFinitePMF.lean",
+      "source_sha256": "1b6c31c0f0d78e525563c0a009d0e3281947d66143c88731cbc612a9de99072b",
+      "submitted_source_sha256": "093bfb3a459c411eb5665426564579d369c4ade972f6f44964ccbb71fc421ba3",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.CommonMoment.FinitePMF.grouped_moment",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.grouped_moment' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.grouped_weight_positive",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.grouped_weight_positive' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.grouped_mass_one",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.grouped_mass_one' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_moment",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.fromFinitePMF_moment' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_sparse_moment",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.fromFinitePMF_sparse_moment' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_nodes_Ioc",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.fromFinitePMF_nodes_Ioc' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_weight_mapped_mass",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CommonMoment.FinitePMF.fromFinitePMF_weight_mapped_mass' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.CommonMoment.FinitePMF.grouped_moment",
+          "printed_type": "Astra.CommonMoment.FinitePMF.grouped_moment.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι) (x : ι → Real)\n  (n : Nat) :\n  @Eq.{1} Real\n    (∑ a ∈ @Astra.CommonMoment.FinitePMF.positiveImage.{u_1} ι inst✝ p x,\n      @HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n        (@Astra.CommonMoment.FinitePMF.groupedWeight.{u_1} ι inst✝ p x a)\n        (@HPow.hPow.{0, 0, 0} Real Nat Real\n          (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) a n))\n    (∑ i,\n      @HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n        (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i).toReal\n        (@HPow.hPow.{0, 0, 0} Real Nat Real\n          (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) (x i) n))"
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.grouped_weight_positive",
+          "printed_type": "Astra.CommonMoment.FinitePMF.grouped_weight_positive.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι)\n  (x : ι → Real) (a : Real)\n  (ha :\n    @Membership.mem.{0, 0} Real (Finset.{0} Real)\n      (@SetLike.instMembership.{0, 0} (Finset.{0} Real) Real (@Finset.instSetLike.{0} Real))\n      (@Astra.CommonMoment.FinitePMF.positiveImage.{u_1} ι inst✝ p x) a) :\n  @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n    (@Astra.CommonMoment.FinitePMF.groupedWeight.{u_1} ι inst✝ p x a)"
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.grouped_mass_one",
+          "printed_type": "Astra.CommonMoment.FinitePMF.grouped_mass_one.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι) (x : ι → Real) :\n  @Eq.{1} Real\n    (∑ a ∈ @Astra.CommonMoment.FinitePMF.positiveImage.{u_1} ι inst✝ p x,\n      @Astra.CommonMoment.FinitePMF.groupedWeight.{u_1} ι inst✝ p x a)\n    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))"
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_moment",
+          "printed_type": "Astra.CommonMoment.FinitePMF.fromFinitePMF_moment.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι)\n  (x : ι → Real)\n  (hx :\n    ∀ (i : ι),\n      @Ne.{1} ENNReal\n          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i)\n          (@OfNat.ofNat.{0} ENNReal (nat_lit 0) (@Zero.toOfNat0.{0} ENNReal ENNReal.instZero)) →\n        @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) (x i))\n  (n : Nat) :\n  @Eq.{1} Real (Astra.CommonMoment.moment (@Astra.CommonMoment.FinitePMF.fromFinitePMF.{u_1} ι inst✝ p x hx) n)\n    (∑ i,\n      @HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n        (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i).toReal\n        (@HPow.hPow.{0, 0, 0} Real Nat Real\n          (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) (x i) n))"
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_sparse_moment",
+          "printed_type": "Astra.CommonMoment.FinitePMF.fromFinitePMF_sparse_moment.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι)\n  (x : ι → Real)\n  (hx :\n    ∀ (i : ι),\n      @Ne.{1} ENNReal\n          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i)\n          (@OfNat.ofNat.{0} ENNReal (nat_lit 0) (@Zero.toOfNat0.{0} ENNReal ENNReal.instZero)) →\n        @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) (x i))\n  (k : Nat) :\n  @Eq.{1} Real\n    (Astra.CommonMoment.moment (@Astra.CommonMoment.FinitePMF.fromFinitePMF.{u_1} ι inst✝ p x hx)\n      (k.choose (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))\n    (@DotG4.WholeProfileDetermination.finiteBankMoment.{u_1} ι inst✝ p x k)"
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_nodes_Ioc",
+          "printed_type": "Astra.CommonMoment.FinitePMF.fromFinitePMF_nodes_Ioc.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι)\n  (x : ι → Real)\n  (hx :\n    ∀ (i : ι),\n      @Ne.{1} ENNReal\n          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i)\n          (@OfNat.ofNat.{0} ENNReal (nat_lit 0) (@Zero.toOfNat0.{0} ENNReal ENNReal.instZero)) →\n        @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) (x i))\n  (hx1 :\n    ∀ (i : ι),\n      @Ne.{1} ENNReal\n          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i)\n          (@OfNat.ofNat.{0} ENNReal (nat_lit 0) (@Zero.toOfNat0.{0} ENNReal ENNReal.instZero)) →\n        @LE.le.{0} Real Real.instLE (x i) (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))\n  (a : Real) :\n  @Membership.mem.{0, 0} Real (Finset.{0} Real)\n      (@SetLike.instMembership.{0, 0} (Finset.{0} Real) Real (@Finset.instSetLike.{0} Real))\n      (@Astra.CommonMoment.FinitePMF.fromFinitePMF.{u_1} ι inst✝ p x hx).nodes a →\n    @Membership.mem.{0, 0} Real (Set.{0} Real) (@Set.instMembership.{0} Real)\n      (@Set.Ioc.{0} Real Real.instPreorder (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n        (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))\n      a"
+        },
+        {
+          "name": "Astra.CommonMoment.FinitePMF.fromFinitePMF_weight_mapped_mass",
+          "printed_type": "Astra.CommonMoment.FinitePMF.fromFinitePMF_weight_mapped_mass.{u_1} {ι : Type u_1} [Fintype.{u_1} ι] (p : PMF.{u_1} ι)\n  (x : ι → Real)\n  (hx :\n    ∀ (i : ι),\n      @Ne.{1} ENNReal\n          (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1} (PMF.{u_1} ι) ι (fun x => ENNReal) (@PMF.instFunLike.{u_1} ι) p i)\n          (@OfNat.ofNat.{0} ENNReal (nat_lit 0) (@Zero.toOfNat0.{0} ENNReal ENNReal.instZero)) →\n        @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) (x i))\n  (a : Real) :\n  @Eq.{1} Real ((@Astra.CommonMoment.FinitePMF.fromFinitePMF.{u_1} ι inst✝ p x hx).weight a)\n    (@DFunLike.coe.{1, 1, 1} (PMF.{0} Real) Real (fun x => ENNReal) (@PMF.instFunLike.{0} Real)\n        (@PMF.map.{u_1, 0} ι Real x p) a).toReal"
+        }
+      ],
+      "warning_dispositions": "Benign style/deprecation warnings retained in the encrypted original; no sorry/unsafe/nonstandard-axiom acceptance.",
+      "scope": "Hosted single-document selected types/axioms; not pinned native Lake or object custody."
     }
   ]
 }

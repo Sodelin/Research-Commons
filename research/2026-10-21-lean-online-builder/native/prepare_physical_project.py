@@ -3,8 +3,9 @@
 
 Use the exact current/connected graph, not the union of historical targets.
 Public source acquisition is bounded and each body is SHA256 checked before
-its source-store write. The generated Lake target refuses while the native
-first-persistence writers remain unbound. No Git command is executed.
+its source-store write. The mandatory OUTER launcher refuses before Lake while
+native writers remain unbound; the in-target error is secondary only.
+No Git command is executed.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor
@@ -14,6 +15,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+from prepare_project import install_outer_refusal
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -79,6 +81,7 @@ def main():
         shutil.copyfile(HERE/'pinned'/name,destination/'scripts'/name)
     (destination/'DEPENDENCY-GRAPH.json').write_text(json.dumps(graph,indent=2)+'\n')
     (destination/'lean-toolchain').write_text('leanprover/lean4:v4.33.1\n')
+    admission = install_outer_refusal(destination)
     (destination/'lakefile.lean').write_text(
         'import Lake\nopen Lake DSL\npackage physicalG6G7NewContext\n\n'
         'target verify _pkg : Unit := do\n  Job.async do\n'
@@ -107,6 +110,7 @@ def main():
     # evidence goes only through the existing encrypted phone record writer.
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps({
         'commit':COMMIT,'original_graph_sha256':GRAPH_SHA,'roots':ROOTS,
+        'admission':admission,
         'sources':rows,'native_record_writer_required':True},indent=2)+'\n')
     sys.path.insert(0,str(ROOT))
     from peer_message import seal

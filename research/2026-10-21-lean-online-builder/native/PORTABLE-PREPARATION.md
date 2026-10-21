@@ -8,6 +8,8 @@ are unchanged.
 
 The corrected published script was actually used to prepare a NEW source-only
 three-module layout from this packet. No compiler ran. The verification target
-still refuses before launch because the native runtime writer is UNBOUND.
+remains source-only because the native runtime writer is UNBOUND. The mandatory
+OUTER start_new_context.sh refuses before initial Lake invocation; the in-target
+error is secondary only. See PRELAKE-ADMISSION.md. Neither was executed.
 This corrects a portable-input path mismatch; it does not reinterpret earlier
 source preparation against the real intake tree as a compiler result.

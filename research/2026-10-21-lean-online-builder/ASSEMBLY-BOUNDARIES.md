@@ -50,11 +50,26 @@ observer and all-cap obligations. Neither master goal is declared closed.
 New CMRationalBank accepts an ALREADY grouped distinct rational image, builds
 the exact existing Astra.CommonMoment.FinitePositiveLaw, and identifies every
 natural moment of that ONE law. The survival <=1 fact remains separate because
-CM uses the positive axis. Native grouping refinement and physical PMF
-packaging remain open. The accepted CM certificate warns against co-importing
+CM uses the positive axis. Native grouping refinement remains open.
+The accepted CM certificate warns against co-importing
 its extracted CMSparseSupplier with the original physical sparse supplier:
 their namespaces overlap and require explicit context reconciliation.
+
+The later CMFinitePMF adapter reuses positiveSupportPMF/gridWeight and proves
+strict grouped positivity, exact mass one, all-natural-exponent equality and
+the entire scalar pushforward-mass identity for ONE supplied real PMF. Its
+exact selected-helper projection passed hosted checking. This is not arbitrary
+real computation, physical readout admission or the full physical imports.
+The proposed534-module combined context resolves the source duplication with
+an import-only CMFoundations variant selecting the original physical supplier.
+All534 source bodies were hash-verified; full import/native acceptance remains
+OPEN. native/physical-pmf/ records that exact graph and both import variants.
 
 CHECKED-FOLLOWONS.json contains actual selected complete types/standard-axiom
 audits for the new P1 product, P5 Omega and CM grouped-bank checks. These are
 Lean4.35/mathlib56a005 virtual documents, not pinned4.33.1 native object custody.
+
+Native admission is outside Lake: start_new_context.sh unconditionally refuses
+before the initial config loader while writer/controller binding is UNBOUND.
+The old in-target error is only secondary. No Lake run occurred; the correction
+is source-level and leaves all historical held/consumed jobs untouched.

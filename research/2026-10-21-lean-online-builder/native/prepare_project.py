@@ -26,6 +26,21 @@ CERTS = [
 ]
 
 
+def install_outer_refusal(destination):
+    """Copy the mandatory pre-Lake refusal; do not execute it or Lake."""
+    source = HERE / 'start_new_context.sh'
+    raw = source.read_bytes()
+    expected = '0fb0007d8f8fe280a6c3add2ed5e982db50f9c70ccd8cf8868ae3dfa0896165d'
+    if hashlib.sha256(raw).hexdigest() != expected:
+        raise ValueError('OUTER_REFUSAL_SOURCE_CHANGED')
+    (destination / 'start_new_context.sh').write_bytes(raw)
+    (destination / 'start_new_context.sh').chmod(0o755)
+    return {'mandatory_entrypoint':'start_new_context.sh',
+            'entrypoint_sha256':expected,'entrypoint_executed':False,
+            'native_admission':'UNBOUND_UNCONDITIONAL_OUTER_REFUSAL',
+            'in_target_error_is_secondary_only':True}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('destination', type=Path)
@@ -67,13 +82,15 @@ def main():
     (destination / 'lake-manifest.json').write_text(json.dumps({
         'version': '1.2.0', 'packagesDir': '.lake/packages', 'packages': [],
         'name': 'leanCertificateComponent', 'lakeDir': '.lake', 'fixedToolchain': True}, indent=2) + '\n')
-    # Deliberately no runnable target before the inherited writers are bound.
+    admission = install_outer_refusal(destination)
+    # Secondary only: Lake itself can persist a config trace before this target.
     (destination / 'lakefile.lean').write_text(
         'import Lake\nopen Lake DSL\npackage leanCertificateComponent\n\n'
         'target verify _pkg : Unit := do\n'
         '  Job.async do\n'
         '    error "SOURCE_PROPOSAL_ONLY: encrypt-before-persistence runtime writer is not bound"\n')
     manifest = {'status': 'SOURCE_LAYOUT_PREPARED_NOT_EXECUTED',
+                'admission': admission,
                 'selected_sources': graph['targets']['lean-certificate-component']['modules'],
                 'reused_builder_and_audit_byte_identical': True,
                 'new_runtime_record_writer': 'UNBOUND', 'compiler_invoked': False,
