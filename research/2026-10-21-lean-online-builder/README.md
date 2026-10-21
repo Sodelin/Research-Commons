@@ -117,3 +117,10 @@ the byte-identical existing builder/audit/guard sources and a resource-qualified
 proposal for the older4.33.1 pins. It has NOT run a compiler. Its generated Lake
 target refuses until an actual encrypt-before-persistence record writer is bound
 on that new worker. No private key is transferred and no old held job is replayed.
+
+The later affine update reuses the existing engine and two original mathematical
+bodies. Its separate corrected finite-matrix receiver and literal controls pass
+nine selected hosted audits. The initial proposal failed and is retained;
+AFFINE-CERTIFICATES.md and AFFINE-SOURCE-MAP.json distinguish both source
+identities and the exact proof-only correction. Native/chart/source admission
+and all-size exclusion remain independent.

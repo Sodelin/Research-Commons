@@ -646,6 +646,123 @@
       ],
       "warning_dispositions": "Benign style/deprecation warnings retained in the encrypted original; no sorry/unsafe/nonstandard-axiom acceptance.",
       "scope": "Hosted single-document selected types/axioms; not pinned native Lake or object custody."
+    },
+    {
+      "case": "affine_certificate_receiver",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineAffineCertificateExamples.lean",
+      "source_sha256": "d2d970b069a1423f77b1f8cd6b82d0811fb430b1364a6e7ca56144aebc65a8c6",
+      "submitted_source_sha256": "b7f6b7bd9651a5996a41a856f1c930573c7c1ee40e7ac345d8a705d4cc98e006",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.NativeAffineCertificates.checked_witness_real",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.checked_witness_real' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.weighted_eval_zero",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.weighted_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.farkas_infeasible",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.farkas_infeasible' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.checked_farkas_infeasible",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.checked_farkas_infeasible' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.interval_checked",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.Examples.interval_checked' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.contradiction_checked",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.Examples.contradiction_checked' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.zero_strict_not_exclusion",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.Examples.zero_strict_not_exclusion' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.zero_strict_witness",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeAffineCertificates.Examples.zero_strict_witness' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "UnifiedLean.G6.RationalAffineWitness.solveList_eq_solveRational",
+          "standard_axioms_only": true,
+          "messages": [
+            "'UnifiedLean.G6.RationalAffineWitness.solveList_eq_solveRational' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.NativeAffineCertificates.checked_witness_real",
+          "printed_type": "Astra.NativeAffineCertificates.checked_witness_real {n m : Nat}\n  (R : Fin m → UnifiedLean.G6.StrictAffineElimination.Row n) (q : Fin n → Rat)\n  (h :\n    @Eq.{1} Bool\n      (@UnifiedLean.G6.RationalAffineWitness.checkRationalWitness n (@Astra.NativeAffineCertificates.rowsSet n m R) q)\n      true)\n  (a : Fin m) :\n  @UnifiedLean.G6.StrictAffineElimination.Row.Holds.{0} Real Real.instField Real.linearOrder n (R a) fun j =>\n    @Rat.cast.{0} Real Real.instRatCast (q j)"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.weighted_eval_zero",
+          "printed_type": "Astra.NativeAffineCertificates.weighted_eval_zero {n m : Nat} (R : Fin m → UnifiedLean.G6.StrictAffineElimination.Row n)\n  (w : Fin m → Rat)\n  (hc :\n    ∀ (j : Fin n),\n      @Eq.{1} Rat\n        (∑ a,\n          @HMul.hMul.{0, 0, 0} Rat Rat Rat (@instHMul.{0} Rat Rat.instMul) (w a)\n            (@UnifiedLean.G6.StrictAffineElimination.Row.coeff n (R a) j))\n        (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))))\n  (x : Fin n → Real) :\n  @Eq.{1} Real\n    (∑ a,\n      @HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) (@Rat.cast.{0} Real Real.instRatCast (w a))\n        (@UnifiedLean.G6.StrictAffineElimination.Row.eval.{0} Real Real.instField n (R a) x))\n    (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.farkas_infeasible",
+          "printed_type": "Astra.NativeAffineCertificates.farkas_infeasible {n m : Nat} (R : Fin m → UnifiedLean.G6.StrictAffineElimination.Row n)\n  (w : Fin m → Rat)\n  (hw : ∀ (a : Fin m), @LE.le.{0} Rat Rat.instLE (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))) (w a))\n  (hc :\n    ∀ (j : Fin n),\n      @Eq.{1} Rat\n        (∑ a,\n          @HMul.hMul.{0, 0, 0} Rat Rat Rat (@instHMul.{0} Rat Rat.instMul) (w a)\n            (@UnifiedLean.G6.StrictAffineElimination.Row.coeff n (R a) j))\n        (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))))\n  (hb :\n    Or\n      (@LT.lt.{0} Rat Rat.instLT\n        (∑ a,\n          @HMul.hMul.{0, 0, 0} Rat Rat Rat (@instHMul.{0} Rat Rat.instMul) (w a)\n            (@UnifiedLean.G6.StrictAffineElimination.Row.bound n (R a)))\n        (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))))\n      (And\n        (@Eq.{1} Rat\n          (∑ a,\n            @HMul.hMul.{0, 0, 0} Rat Rat Rat (@instHMul.{0} Rat Rat.instMul) (w a)\n              (@UnifiedLean.G6.StrictAffineElimination.Row.bound n (R a)))\n          (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))))\n        (∃ a,\n          And (@LT.lt.{0} Rat Rat.instLT (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0))) (w a))\n            (@Eq.{1} Bool (@UnifiedLean.G6.StrictAffineElimination.Row.strict n (R a)) true)))) :\n  Not\n    (∃ x,\n      ∀ (a : Fin m),\n        @UnifiedLean.G6.StrictAffineElimination.Row.Holds.{0} Real Real.instField Real.linearOrder n (R a) x)"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.checked_farkas_infeasible",
+          "printed_type": "Astra.NativeAffineCertificates.checked_farkas_infeasible {n m : Nat}\n  (R : Fin m → UnifiedLean.G6.StrictAffineElimination.Row n) (w : Fin m → Rat)\n  (h : @Eq.{1} Bool (@Astra.NativeAffineCertificates.checkFarkas n m R w) true) :\n  Not\n    (∃ x,\n      ∀ (a : Fin m),\n        @UnifiedLean.G6.StrictAffineElimination.Row.Holds.{0} Real Real.instField Real.linearOrder n (R a) x)"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.interval_checked",
+          "printed_type": "Astra.NativeAffineCertificates.Examples.interval_checked :\n  @Eq.{1} Bool\n    (@UnifiedLean.G6.RationalAffineWitness.checkRationalWitness\n      (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))\n      (@Astra.NativeAffineCertificates.rowsSet (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))\n        Astra.NativeAffineCertificates.Examples.intervalRows)\n      Astra.NativeAffineCertificates.Examples.intervalPoint)\n    true"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.contradiction_checked",
+          "printed_type": "Astra.NativeAffineCertificates.Examples.contradiction_checked :\n  @Eq.{1} Bool\n    (@Astra.NativeAffineCertificates.checkFarkas (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))\n      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))\n      Astra.NativeAffineCertificates.Examples.contradictoryRows Astra.NativeAffineCertificates.Examples.unitWeights)\n    true"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.zero_strict_not_exclusion",
+          "printed_type": "Astra.NativeAffineCertificates.Examples.zero_strict_not_exclusion :\n  @Eq.{1} Bool\n    (@Astra.NativeAffineCertificates.checkFarkas (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))\n      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n      Astra.NativeAffineCertificates.Examples.zeroStrictRows Astra.NativeAffineCertificates.Examples.zeroStrictWeights)\n    false"
+        },
+        {
+          "name": "Astra.NativeAffineCertificates.Examples.zero_strict_witness",
+          "printed_type": "Astra.NativeAffineCertificates.Examples.zero_strict_witness :\n  @Eq.{1} Bool\n    (@UnifiedLean.G6.RationalAffineWitness.checkRationalWitness\n      (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))\n      (@Astra.NativeAffineCertificates.rowsSet (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))\n        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))\n        Astra.NativeAffineCertificates.Examples.zeroStrictRows)\n      fun x => @OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0)))\n    true"
+        },
+        {
+          "name": "UnifiedLean.G6.RationalAffineWitness.solveList_eq_solveRational",
+          "printed_type": "UnifiedLean.G6.RationalAffineWitness.solveList_eq_solveRational (n : Nat)\n  (R : List.{0} (UnifiedLean.G6.StrictAffineElimination.Row n)) :\n  @Eq.{1} (Option.{0} (Fin n → Rat)) (UnifiedLean.G6.RationalAffineWitness.solveList n R)\n    (UnifiedLean.G6.RationalAffineWitness.solveRational n\n      (@List.toFinset.{0} (UnifiedLean.G6.StrictAffineElimination.Row n)\n        (@UnifiedLean.G6.StrictAffineElimination.instDecidableEqRow n) R))"
+        }
+      ],
+      "warning_dispositions": "Benign style/deprecation warnings retained in the encrypted original; no sorry/unsafe/nonstandard-axiom acceptance.",
+      "scope": "Hosted single-document selected types/axioms; not pinned native Lake or object custody."
     }
   ]
 }
