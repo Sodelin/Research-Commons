@@ -1,17 +1,18 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL543 module bodies,4504069B. The original
-532-module transitive closure is selected from the exact current/connected
+Actual source preparation verified ALL545 module bodies,4518048B. The original
+533-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
 gridWeight and shared-configuration readout helpers are in the SAME proposed
 context as CMFinitePMF and the checked bank/certificate receivers.
 
-The eleven explicit additional modules are CMFoundations, RationalBankMoments,
+The twelve explicit additional modules are CMFoundations, RationalBankMoments,
 CMRationalBank, CMFinitePMF, the original certificate kernel, both original
 generated certificates, both unchanged authored bank witnesses, and
-NativeOrderedBankLayout/OriginalCodeBankLayout. Source counts are build inputs,
-not endpoint acceptance or an accepted543 release. The generic layout was
+NativeOrderedBankLayout/OriginalCodeBankLayout and NativeCellFormReflection.
+Source counts are build inputs, not endpoint acceptance or an accepted545
+release. The generic layout and bounded form correspondence were
 hosted checked; the original-Code use-site remains source-only.
 
 The two import-only variants are:
@@ -72,3 +73,10 @@ hybrid order and use the original decoder's registry. Both bank witness roots
 remain selected explicitly. The prior541-module source snapshot remains
 immutable atba7ee06c; ORDERED-BANK-LAYOUT.md records the distinct hosted check
 and source-only use-site scopes.
+
+The later original GParity.Chart root and owned NativeCellFormReflection add
+one existing value-level CHART emitter and its checked primitive correspondence.
+No replacement compiler or parser is introduced. G6TwoTipChartFixture was read
+as an existing bounded row-reflection supplier, but its five #eval commands
+remain excluded and unexecuted. G6-NATIVE-FIELD-REFLECTION.md records the exact
+remaining general ordered-emission premise and the bounded projection scope.

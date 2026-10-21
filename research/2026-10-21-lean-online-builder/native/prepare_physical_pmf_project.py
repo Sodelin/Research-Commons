@@ -22,7 +22,7 @@ ROOT = HERE.parent
 PHYSICAL_ROOTS = ['G7RawCalendarRoot', 'G7OriginalCarrierCoverage',
     'G7OriginalFamilyCalendarNormalization', 'G6RationalNaturalCellWitness',
     'G6OriginalWholeEdgeChartConsumer', 'G4WholeProfileDetermination',
-    'G6NaturalCellOrderedCompiler', 'G7OriginalAdmission']
+    'G6NaturalCellOrderedCompiler', 'G7OriginalAdmission', 'GParity.Chart']
 
 
 def checked(path, digest):
@@ -112,7 +112,9 @@ def main():
         ('NativeOrderedBankLayout',
          '00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a'),
         ('OriginalCodeBankLayout',
-         'ef18d6a1e282ba479f83db56339ecd4529f3ed2469995f9a674f5fc8ea5f0bb8')]:
+         'ef18d6a1e282ba479f83db56339ecd4529f3ed2469995f9a674f5fc8ea5f0bb8'),
+        ('NativeCellFormReflection',
+         '29ed474cd1a291bc2855775b22b0726c8aae34113d62efcead283d487aa9a0de')]:
         additions.append((name, checked(packet/'lean'/(name+'.lean'), digest)))
     for name, body in additions:
         if name in modules or any(dep not in modules and not dep.startswith(('Mathlib.', 'Init', 'Std'))
@@ -130,6 +132,7 @@ def main():
     def acquire(name):
         digest = modules[name]['sha256']
         candidates = [ROOT/'intake/modules'/(name+'.lean'),
+            ROOT/'native/prepared-physical-pmf-layout-project543/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-pmf-admission-project541/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-pmf-ordered-project540/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-pmf-project534/source-store'/(digest+'.lean'),
@@ -162,7 +165,7 @@ def main():
     graph = {'targets':{'physical-pmf-certificate-new-context':{
         'roots':PHYSICAL_ROOTS+['CMFinitePMF']+
             ['Astra.Generated.BankWitness_'+identity for identity,_ in BANKS]+
-            ['OriginalCodeBankLayout'],
+            ['OriginalCodeBankLayout','NativeCellFormReflection'],
         'order':order,'modules':modules,'required_for_accepted_release':False}},
         'original_source_commit':COMMIT,'original_graph_sha256':GRAPH_SHA,
         'scope':'Source-only proposed combined context; no historical acceptance transfer.'}
@@ -182,7 +185,7 @@ def main():
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps(manifest,indent=2)+'\n')
     sys.path.insert(0,str(ROOT))
     from peer_message import seal
-    receipt,_ = seal({'action':'LEAN-PHYSICAL-PMF-LAYOUT-CONTEXT-PREPARE-20261021-r3',
+    receipt,_ = seal({'action':'LEAN-PHYSICAL-PMF-FORM-REFLECTION-CONTEXT-PREPARE-20261021-r4',
         'source_graph_sha256':hashlib.sha256((destination/'DEPENDENCY-GRAPH.json').read_bytes()).hexdigest(),
         'source_selection_sha256':hashlib.sha256((destination/'SOURCE-SELECTION.json').read_bytes()).hexdigest(),
         'modules_source_verified':len(rows),'source_bytes':sum(row['bytes'] for row in rows),

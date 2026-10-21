@@ -2,7 +2,7 @@
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
 the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
-actual hosted checks,543-module source preparation and remaining physical,
+actual hosted checks,545-module source preparation and remaining physical,
 effectivity, refinement and native-custody gates. The native outer refusal is
 silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
@@ -141,7 +141,7 @@ and all-size exclusion remain independent.
 CM-FINITE-PMF.md describes the later checked semantic PMF constructor and
 all-natural-moment/pushforward relation using the exact original support and
 gridWeight helpers. Its bounded declaration projection is separate from the
-prepared543-module full physical import context in native/physical-pmf/.
+prepared545-module full physical import context in native/physical-pmf/.
 That context excludes the duplicate extracted sparse supplier and remains
 uncompiled under the native writer hold.
 
@@ -168,3 +168,8 @@ and separate planar-class obligations explicit.
 ORDERED-BANK-LAYOUT.md adds the checked generic age/edge/ancestral/hybrid index
 bijection and the separately identified source-only original-Code use-site.
 The remaining request/admission/parent and row-emission relations are preserved.
+
+G6-NATIVE-FIELD-REFLECTION.md records a later actual four-audit hosted proof of
+form/row/ordered comparison/interval correspondence for the EXISTING CHART
+emitter. It pins the bounded definition projection and three rejected revisions.
+Complete captured-Code-to-row emission and Rust execution refinement stay open.

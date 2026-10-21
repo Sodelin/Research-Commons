@@ -1048,6 +1048,68 @@
       ],
       "warning_dispositions": "No warnings or errors were reported for this document; no sorry or additional axiom was accepted.",
       "scope": "Hosted single-document selected types/axioms; not pinned native Lake or object custody."
+    },
+    {
+      "case": "native_cell_form_reflection",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineNativeCellFormReflection.lean",
+      "source_sha256": "7ce2eed4770e527b335a9cbee408ff5bcdb6dc8734ad40e2895182d9faa6bad7",
+      "submitted_source_sha256": "11947b1f16f56fa1b75a0257a1f21325cfe2d6b11155349ca9c4a726ee590f98",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.NativeCellFormReflection.encodeForm_variable",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellFormReflection.encodeForm_variable' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeCellFormReflection.affineRow_correspondence",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellFormReflection.affineRow_correspondence' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeCellFormReflection.comparison_correspondence",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellFormReflection.comparison_correspondence' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeCellFormReflection.scaled_correspondence",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellFormReflection.scaled_correspondence' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.NativeCellFormReflection.encodeForm_variable",
+          "printed_type": "Astra.NativeCellFormReflection.encodeForm_variable {n : Nat} (i : Fin n) :\n  @Eq.{1} GParity.Chart.Form\n    (@Astra.NativeCellFormReflection.encodeForm n (@UnifiedLean.G6.NaturalCellAffineCompiler.Affine.variable n i))\n    (GParity.Chart.Form.variable n (@Fin.val n i))"
+        },
+        {
+          "name": "Astra.NativeCellFormReflection.affineRow_correspondence",
+          "printed_type": "Astra.NativeCellFormReflection.affineRow_correspondence {n : Nat} (s : Bool)\n  (f g : UnifiedLean.G6.NaturalCellAffineCompiler.Affine n) :\n  @Eq.{1} GParity.Affine.Row\n    (GParity.Chart.affineRow s (@Astra.NativeCellFormReflection.encodeForm n f)\n      (@Astra.NativeCellFormReflection.encodeForm n g))\n    (@UnifiedLean.G6.NaturalCellOrderedCompiler.encodeRow n\n      (@UnifiedLean.G6.NaturalCellAffineCompiler.affineRow n s f g))"
+        },
+        {
+          "name": "Astra.NativeCellFormReflection.comparison_correspondence",
+          "printed_type": "Astra.NativeCellFormReflection.comparison_correspondence {n : Nat}\n  (cmp : UnifiedLean.G6.NaturalCellInverseRates.AgeComparison)\n  (f g : UnifiedLean.G6.NaturalCellAffineCompiler.Affine n) :\n  @Eq.{1} (List.{0} GParity.Affine.Row)\n    (GParity.Chart.comparisonRows (Astra.NativeCellFormReflection.encodeComparison cmp)\n      (@Astra.NativeCellFormReflection.encodeForm n f) (@Astra.NativeCellFormReflection.encodeForm n g))\n    (@UnifiedLean.G6.NaturalCellOrderedCompiler.encodeRows n\n      (@UnifiedLean.G6.NaturalCellOrderedCompiler.comparisonList n cmp f g))"
+        },
+        {
+          "name": "Astra.NativeCellFormReflection.scaled_correspondence",
+          "printed_type": "Astra.NativeCellFormReflection.scaled_correspondence {n : Nat}\n  (c : UnifiedLean.G6.NaturalCellInverseRates.RationalInterval)\n  (d u : UnifiedLean.G6.NaturalCellAffineCompiler.Affine n) :\n  @Eq.{1} (List.{0} GParity.Affine.Row)\n    (GParity.Chart.scaledRows (Astra.NativeCellFormReflection.encodeInterval c)\n      (@Astra.NativeCellFormReflection.encodeForm n d) (@Astra.NativeCellFormReflection.encodeForm n u))\n    (@UnifiedLean.G6.NaturalCellOrderedCompiler.encodeRows n\n      (@UnifiedLean.G6.NaturalCellOrderedCompiler.scaledList n c d u))"
+        }
+      ],
+      "warning_dispositions": "Benign style/deprecation warnings retained in the encrypted original; no sorry/unsafe/nonstandard-axiom acceptance.",
+      "scope": "Hosted single-document selected types/axioms; not pinned native Lake or object custody."
     }
   ]
 }

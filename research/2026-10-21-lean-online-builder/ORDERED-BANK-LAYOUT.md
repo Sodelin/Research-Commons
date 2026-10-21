@@ -41,11 +41,12 @@ premises. Exact source:2733 bytes, SHA256
 ef18d6a1e282ba479f83db56339ecd4529f3ed2469995f9a674f5fc8ea5f0bb8.
 This wrapper has NOT been elaborated in its full native import context.
 
-Both files now join the source-only physical/PMF/CM context:543 modules,
-4,504,069 source bytes. All original532 modules and prior owned bytes remain
-unchanged. The graph keeps both literal bank witnesses as roots as well as
-the new Code-layout use-site. Full-import elaboration, native Lake, compiler
-and object custody remain unrun under the actual first-writer hold.
+Both files join the source-only physical/PMF/CM context. The layout snapshot
+had543 modules/4,504,069 bytes; the later CHART form-reflection addition gives
+545 modules/4,518,048 bytes, retaining all prior module bytes. The graph keeps
+both literal bank witnesses and the Code-layout use-site as roots. Full-import
+elaboration, native Lake, compiler and object custody remain unrun under the
+actual first-writer hold.
 
 The next binding is exact captured native arrays to this literal Code,
 admission proofs and complete original registries, then exact ordered row

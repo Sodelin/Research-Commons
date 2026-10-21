@@ -18,6 +18,7 @@ G7OriginalAdmission imports the already selected G7FiniteReachability
 Adding the admission module required only ONE extra module beyond the prior
 540-source context, producing the immutable541-module/4497681B snapshot.
 The later two layout modules make the current context543 modules/4504069B.
+The subsequent existing CHART/form-reflection addition extends it to545/4518048B.
 
 `GProgram.G7.OriginalFiniteEncoding.Code X ID` stores original source/target
 arrays, root, named taxa, named hybrid sites and ordered parent occurrences.
