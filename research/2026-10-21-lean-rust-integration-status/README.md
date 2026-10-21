@@ -3,7 +3,7 @@
 The exact bank/affine fixtures and finite-PMF semantic receiver have actual
 hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates their exact source/statement dispositions at
-[2f96fbc8](https://github.com/Sodelin/Research-Commons/tree/2f96fbc855ff570dfc048c86a03e77cb5064cb63/research/2026-10-21-lean-rust-solver-builder).
+[233f6ca6](https://github.com/Sodelin/Research-Commons/tree/233f6ca6c53570c08fc9f67c7fc1635c1faf6c3d/research/2026-10-21-lean-rust-solver-builder).
 The full goal remains active.
 
 The executed Rust finite-bank evaluator and r<=3 support proposer retain ONE
@@ -38,7 +38,7 @@ inverse pair rates. Routing/parent meaning and parser/source correspondence
 remain additional obligations. Canonical native_rc1 still admits AFFINE/LAW:
 AFFINE8coordinates/64rows differs from the unadmitted CHART32/128 core.
 
-The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/2f96fbc855ff570dfc048c86a03e77cb5064cb63/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
+The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/233f6ca6c53570c08fc9f67c7fc1635c1faf6c3d/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
 now exposes the ORIGINAL CHART parser/compiler through an owned, read-only
 snapshot. A command-tag guard prevents rejected COUNT/LAW requests from
 entering unrelated validation arithmetic. The adapter and five staged checks
@@ -54,6 +54,23 @@ parent(false)/parent(true), requiring LAW G=1-gamma. The current exporter
 preserves ports and performs no probability substitution; its occurrence,
 shared-bank and nonlinear readout proofs remain open.
 
+The existing G7 Code/sourceOfValid/decodedIDs/decodedRegistry constructor path
+is now reused in [SOURCE-CODE-ROW-BINDING.md](https://github.com/Sodelin/Research-Commons/blob/233f6ca6c53570c08fc9f67c7fc1635c1faf6c3d/research/2026-10-21-lean-rust-solver-builder/SOURCE-CODE-ROW-BINDING.md).
+It requires the literal captured incidence/root/label/parent arrays, exact
+census/bounds and BinaryValid/RegistryValid evidence, then the native-order
+layout. Generic encode/Option numbering cannot silently replace that relation.
+No extra Rust API/factory, checked proof or suite was added. The peer's latest
+541-module metadata adds only G7OriginalAdmission; exact graph/selection/order
+checks pass, while all4.49MB of source bodies were not independently read here.
+
+The recovered privacy primitives remain source pieces: public-only frame
+codec, local-Vault50second helper capture and exact sink/artifact v2 policy.
+None supplies the Linux controller/recipient/sequence or compiler-tree hooks.
+Official Rust1.90 Cargo source additionally writes per-unit compiler diagnostic
+caches and conditional build-script streams. The new source proposal selects
+CARGO_CACHE_RUSTC_INFO=0 for one query cache only; the other writers remain open.
+No workflow, environment or native/compiler job was changed/run for that claim.
+
 NEW native/CI execution is HELD for the existing encrypted writer/controller
 binding. Prior hosted traces persisted in plaintext; no retroactive privacy
 acceptance is claimed. Automatic triggers are disabled/manual job literal-false.
@@ -64,7 +81,7 @@ CI shell. Actual stream/recovery/recipient/sequence binding remains UNBOUND.
 | Remaining boundary | Scope |
 | --- | --- |
 | Real first-writer enforcement | Existing controller/recipient binding; selected guard/bridge/runtime/loader/Lake/audit/launcher streams need mediation |
-| Pinned4.33.1 imports, objects and aggregate | Latest540-module physical/PMF/ordered graph is source-prepared; no native acceptance |
+| Pinned4.33.1 imports, objects and aggregate | Latest541-module physical/PMF/ordered graph is source-prepared; no native acceptance |
 | G6/G7 complete assembly | General suppliers and typed receivers are available; complete-context/master acceptance stays separate |
 | Native and physical correspondence | Parsing/compiler refinement, complete source/layout/emission proofs and one actual readout/provider remain open |
 | Original G3/G4/P1/P5 criteria | Historical scientific owners and original standards retained |
