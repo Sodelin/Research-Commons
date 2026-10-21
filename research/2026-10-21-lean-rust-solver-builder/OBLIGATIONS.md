@@ -1,26 +1,28 @@
 # Obligation register
 
-Action LEAN-RUST-SUPPORT-20261021/revision1.
-Owner: this existing Rust implementation chat, for this disjoint proposal only.
-Goal remains active; a source proposal is not end-to-end solver completion.
+Action LEAN-RUST-SUPPORT-20261021/revision1. The existing Rust builder owns this
+disjoint component and workflow. The full solver goal remains active.
 
-| Obligation | Evidence | Status | Remaining action/owner |
-| --- | --- | --- | --- |
-| Retain current G1/G2/full binary-M3 G5 baseline and original master scope | START-HERE, current full scope, accepted1613 and CM-T02 records | Reuse identified; no new compiler claim | Existing Lean builder selects exact current endpoints; G6/G7 assembly remains separate |
-| Useful native acquisition beyond singleton | support.rs;205 exact V8 inputs | Native build +205case differential passed in39671718288 | Preserve scoped acceptance; continue runtime composition |
-| Old parser/checker/singleton preserved | Derivative main inserts only module registration/new dispatch | Inverse edit +13unit groups +556/158current controls passed | Historical old binary not replayed; full refinement remains separate |
-| Dependency/version stability | Original path dependency and registry checksums | Locked fetch and offline native test/build passed | Toolchain/platform-specific observed build; no all-platform profile claim |
-| Native output corresponds to original cert language | Exact reconstruction and native checker call; reference expansion |205actual native inputs and stable binary identity passed | Full native refinement remains OPEN |
-| Literal request binding and independent original Python check | codec.py;original checker source pin | Function-level original-checker binding +12negative controls passed | Exercise actual CLI and facade/MCP composition |
-| New emitted Lean arithmetic/finite-bank theorem | Two/three original-schema fixture requests; existing compiled kernel/emitter | Not executed | Existing Lean builder runs exact source emitter, compiles new output, full type/axiom/source/object custody |
-| Runtime/MCP composition | Original check_certificate request, no canonical edit | Interface prepared | New checked requests must traverse unchanged runtime and existing connector under an admitted execution |
-| Physical law/source recognition | Existing UNKNOWN contracts; no physical construction | OPEN | Typed physical source/row/provider bridges and independent G3/G4 obligations |
-| Native implementation refinement | Existing finite-reference evidence only | OPEN | A formal code-refinement statement or retain explicit trusted implementation boundary |
-| Publication/readback | Remote-only branch and content manifest | Initial16 bodies read back at65a8a592; successor CI source pending readback | Record actual CI result; peer receipt/adoption remain separate |
+| Obligation | Actual evidence | Status and next owner/action |
+| --- | --- | --- |
+| G1/G2/full binary-M3 G5 recovery and original master scope | Existing retained baseline and CM-T02 records | Existing Lean owner recovers exact full endpoints; G6/G7 assembly and original G3/G4 remain separate |
+| Native acquisition beyond singleton | 13 unit groups, 205 exact native/reference vectors in run39673487466 | Bounded r<=3 component PASSED |
+| Old parser/checker/singleton preserved | Inverse derivative; 556 unchanged checker cases; 158 new-binary/original-Python cases | Component regression PASSED; historical executable not replayed |
+| Dependency/version stability | Rust1.90.0 locked fetch and offline build/test | Observed hosted platform PASSED; no all-platform profile claim |
+| Original certificate language and literal request binding | Original checker/emitter; 12 negatives; four actual codec CLI calls | Component PASSED; formal native refinement remains OPEN |
+| Runtime/MCP composition | Original runtime, two real stdio processes, six run calls, exact source/whitelist equality | PASSED; unapproved proposer remained UNKNOWN without execution |
+| Actual resource enforcement | Guard receipt/stream authentication; direct kernel/mount/network/capability assertions | New isolated component scope PASSED; no old-lane reuse |
+| Exact new Lean source/type/axiom boundary | Peer commit e8fe774e; all15 bodies read; both source projections/submission hashes reconstructed; selected statements/controls reviewed | New hosted Lean4.35 context PASSED as attributed peer execution |
+| Pinned standalone Lean module/object/full package assembly | Lean4.33.1/mathlib0df444a3 boundary differs from hosted virtual document | OPEN; existing Lean owner prepares new isolated component job |
+| Canonical proposer/profile adoption | New executable identity and original whitelist refusal tested | UNADOPTED; retain old approved identities and explicit UNKNOWN |
+| Physical law/source/provider recognition | No physical construction or admission supplied | OPEN; obtain exact typed source-to-common-moment obligation; reuse retained finite-PMF grouping work |
+| Native implementation refinement | Exact independent checks and behavior controls only | OPEN formal refinement or retain explicit trusted implementation boundary |
+| Publication/readback | Source manifest, retained failures, native39671718288 and composition39673487466 evidence | Remote immutable history; readback verification recorded with handoff |
 
-One concrete next task is to run the new Rust unit groups and205 reference-bound
-vectors in the already established ONLINE owned runner after its new finite
-admission. No new runner/controller, compiler lease, profile update or worker
-is supplied by this packet. The Lean builder independently recovers its full
-baseline/assembly path; this component must not consume or replace those
-separate acceptance criteria.
+The next Rust builder task is the reusable finite rational bank-to-common-moment
+interface, after inspecting retained finite-PMF adapters and the Lean owner's
+exact source contract. It must preserve one law across copy levels, exact
+grouped mass, zero-mass handling and the original certificate schema. Such an
+effective arithmetic interface does not admit a physical source or settle
+all-input G3 or INDEPENDENT G4. Useful source/review work continues while the
+separate pinned Lean build is pending.

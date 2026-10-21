@@ -1,144 +1,117 @@
-**Current verified native result (21 October2026):** [fresh online run39671718288](https://github.com/Sodelin/Research-Commons/actions/runs/39671718288) passed all13unit groups,556original checker cases,158current-new-binary singleton cases,205new acquisition cases and12codec negative controls. Both emitted proof-source hashes match the existing Lean peer's attributed newer-context checking result. See evidence/native-39671718288 and PUBLICATION.md. Full pinned-Lake/object custody, runtime/MCP composition, native refinement and original scientific/master obligations remain separate.
+# Rational candidate-support acquisition for the Lean/Rust solver
 
-# Rational candidate-support acquisition for the existing Lean/Rust solver
+The native proposer, original Python certificate checker/emitter, unchanged
+runtime and unchanged stdio MCP connector passed actual ONLINE verification in
+[run 39673487466](https://github.com/Sodelin/Research-Commons/actions/runs/39673487466).
+The source tested was 73ff92d4b768e929309a24da773d20a2c63199bc. The corresponding
+[Lean source packet](https://github.com/Sodelin/Research-Commons/pull/3) was
+independently read and matched byte-for-byte; its hosted Lean checking is
+attributed peer evidence. See PUBLICATION.md and evidence/.
 
-Status: ONLINE SOURCE PROPOSAL; JavaScript exact-reference experiments passed;
-Rust, Python transport, original Python replay and emitted Lean verification
-remain pending. No solver profile, whitelist or canonical implementation changed.
+For r=1,2,3 proposed distinct rational values in (0,1], the native component
+accepts exactly 2r+1 moments at exponents 0,1,3,...,r(2r+1). It constructs an
+exact sparse polynomial with double zeros at the candidates, checks a
+nonnegative rational quotient, emits the ORIGINAL weighted-square certificate
+wire, and invokes the inherited exact checker before returning
+GENERATED_AND_CHECKED.
 
-This extends the useful native acquisition boundary beyond the existing
-singleton rule. For r=1,2,3 proposed distinct rational survival values in (0,1],
-the proposer accepts exactly 2r+1 supplied moments at exponents
-0,1,3,...,r(2r+1). It constructs an exact sparse polynomial with a double
-zero at each proposed node, checks a nonnegative rational quotient, emits
-the ORIGINAL weighted-square certificate wire, and calls the inherited exact
-checker before returning GENERATED_AND_CHECKED.
+Candidate nodes are auxiliary proposals. The old check_certificate task
+independently validates the output. Candidate failure or rational/output bound
+exhaustion returns UNKNOWN; malformed or domain-invalid input returns REFUSED.
+The conservative old support cap remains L-1=2r. Physical source existence,
+general all-input search and a formal native refinement are separate obligations.
 
-The supplied nodes are auxiliary proposals. They are not additional measured
-observations, inferred physical parameters or certified source realizers.
-The unchanged check_certificate task independently checks the result and
-the unchanged Lean emitter can generate its conditional finite-bank proof.
-An unsuccessful candidate, rational-growth bound or output-language bound is
-UNKNOWN. Malformed/domain-invalid input is REFUSED. Neither result is global NO.
+## Reused components and ownership
 
-## Existing components reused
-
-Base: Sodelin/Research-Commons commit
+The base is Research-Commons commit
 1138a5b1a281caa00b38e0976db95b586938754b.
 
-- research/2026-10-13-astra-unified-solver-0645z/rust/src/main.rs:
-  the exact parser, rational arithmetic, weighted-square checker and singleton
-  generator are preserved in the derivative. Only support-module registration
-  and one new dispatch arm are inserted. The original eight unit groups remain.
-- The established exact-count-certificate path dependency and the exact existing
-  num-* dependency versions/checksums are reused. The source-only Cargo lock
-  derivative renames only the root package; Cargo validation has not run.
-- certificates.py, emit_lean.py, solve.py and the newer
-  research/2026-10-13-astra-unified-runtime-2350z/runtime.py are unchanged.
-  applications/research-solver-interop remains the connected MCP entrypoint.
-  applications/practical-solver is a separate nine-parameter contract.
-- Astra.CommonCertificateKernel supplies squareTerm_nonnegative,
-  square_identity_nonnegative and supported_atom_is_root. Its historical
-  compilation is not a fresh proof for these new generated inputs.
-- The accepted CM-T02 component at
-  514648b697aeed8f46582109cfeefcd7707cd738 retains its general sparse-moment
-  theorem and distinct cap-five application. It is not a native-refinement or
-  physical-source-admission certificate.
+- rust/src/main.rs preserves the old exact parser, arithmetic, checker and
+  singleton generator from research/2026-10-13-astra-unified-solver-0645z.
+  Only module registration and one dispatch arm are inserted.
+- The established exact-count-certificate path dependency and existing num-*
+  versions/checksums are reused. The root package alone is renamed in the lock.
+  Locked fetch, then offline test/build, passed with official Rust1.90.0.
+- certificates.py, emit_lean.py, solve.py, the newer
+  research/2026-10-13-astra-unified-runtime-2350z/runtime.py and
+  applications/research-solver-interop are unchanged.
+  applications/practical-solver is a distinct nine-parameter contract.
+- The existing weighted-square Lean library and literal emitter are unchanged.
+  The accepted general CM-T02 sparse-moment component at
+  514648b697aeed8f46582109cfeefcd7707cd738 retains its original scope.
 
-The proposal owns only this new directory. Existing source/compiler/runtime
-owners, old failed and consumed jobs, and mathematical research lanes remain
-separate. No extra chat or sub-agent was created. No project source, Git
-checkout, build or test artifacts were written on the phone.
+This proposal owns this directory and its uniquely named Rust CI workflow.
+The existing Lean builder owns compiler/package assembly. Other research owners
+and original G3/G4/P1/P5 completion standards remain in place. No local Git
+writes, phone project checkout/build, new chat or sub-agent was used.
 
-## Files and reproducible input/output
+## Input/output and reproducible execution
 
-rust/src/support.rs is the native implementation. rust/src/main.rs is the
-explicit derivative of the pinned existing checker. codec.py only transports
-strict JSON to native wire and request-bound native output back to the original
-check_certificate request. It starts no child and changes no solver semantics.
-It executes only the captured, SHA256-authenticated original checker source.
-The original literal moment spellings must match when decoding.
+rust/src/support.rs implements acquisition. codec.py is strict transport:
+JSON to native wire, then request-bound native stdout to the original
+unified_research_solver_v1/check_certificate request. It authenticates and
+executes the original Python checker source. It does not spawn the native
+process or change certificate semantics. Literal moment spellings are retained.
 
-fixtures/two-acquisition.json supplies candidates1/3,2/3 and the synthetic exact
-moment vector (1,1/2,1/6,65/1458,1025/118098), obtained from equal weights.
-fixtures/two-check-request.json is a concrete original-schema receiver input.
-fixtures/two-certificate.wire is the exact corresponding original checker wire.
-fixtures/three-check-request.json is a separate seven-moment example.
+fixtures/two-acquisition.json has candidates 1/3,2/3 and moments
+(1,1/2,1/6,65/1458,1025/118098). fixtures/two-check-request.json and
+fixtures/three-check-request.json are exact old-schema certificate inputs.
+Both corresponding standalone Lean outputs are retained in generated/.
 
-Under a NEW separately admitted ONLINE execution scope, from the repository
-root, the exact component commands are:
+The bounded ONLINE workflow .github/workflows/rust-support-proposal.yml is the
+reproducible execution recipe. Its essential native commands, from repo root:
 
     cargo test --locked --offline --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml
     cargo build --release --locked --offline --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml
     python3 -B research/2026-10-21-lean-rust-solver-builder/codec.py encode --repository . < research/2026-10-21-lean-rust-solver-builder/fixtures/two-acquisition.json
 
-Feed the encoded wire to the freshly admitted common-support-proposer binary.
-Decode its captured complete stdout with codec.py decode --repository .
---request fixtures/two-acquisition.json (using the full fixture path).
-Submit the decoded JSON to the unchanged runtime.py or solve.py --request
-path/to/decoded.json --output path/to/absent-output. Use the EXISTING owned
-bounded runner and encrypted/private runtime-record route. These are proposed
-commands, not executed or scheduled commands. Do not send the new proposer
-binary as --rust-binary to a canonical whitelisted runtime.
+Feed the encoded wire to the fresh common-support-proposer binary. Decode its
+complete stdout with codec.py decode --repository . --request followed by the
+full acquisition fixture path. Submit that JSON through the original runtime
+or MCP research_solver_run request_json interface. ci_verify.py and
+ci_connector.py retain the actual commands and checks.
 
-## Actual verification
+The new executable is an unadopted proposer. Passing it as a canonical
+--rust-binary correctly returned authenticated UNKNOWN without executing it;
+no whitelist was changed.
 
-reference.mjs executed directly from its captured source string in the
-functions.exec V8 environment, using BigInt exact rationals. There was no
-phone execution or materialization of the reference. Results:
+## Verification and resource scope
 
-- 205 acquisition cases:183 generated certificates,3 UNKNOWN,19 refusals.
-- 252 mutations of coefficients, moments and weights rejected by separate
-  weighted-square expansion and exact annihilation checks.
-- 84 node-order reversal pairs produced byte-identical certificate wires.
-- Endpoint1, equivalent rational spelling, rational-cap UNKNOWN and invalid
-  normalized/domain inputs are included.
-- All valid literal requests in the proposed Rust unit source were additionally
-  evaluated by the reference. This does not execute those Rust tests.
+The final job passed 13 native unit groups, 556 unchanged original checker
+cases, 158 new-binary/original-Python singleton cases, 205 acquisition cases,
+12 codec negative controls, four actual codec CLI calls, direct original
+runtime calls and six run calls through two real stdio MCP servers.
+Results, refusals, UNKNOWN and authentication were checked separately.
 
-REFERENCE-RESULT.json records the execution tier and source identity.
-fixtures/native-cases.json retains all205 deterministic replay inputs and
-expected outputs; the oversized-input case uses an exact repeat description,
-not a256KiB file of spaces. No unchanged historical test was rerun here.
-The original checker/native differential corpus remains separate.
+The independent V8 BigInt reference covered the same 205 acquisition inputs,
+252 false-certificate mutations and 84 node-order reversal pairs. Those counts
+overlap the native checks and are not independently proved theorem counts.
+Historical accepted executables were not replayed.
 
-The initially transcribed three-node Rust test contained guessed high moments.
-Before publication, exact reference values replaced them; no passing native
-test is claimed for either version. Future compiler/API errors may remain.
+The serial hosted job has a 10-minute wall bound, read-only checkout token,
+locked dependencies and scoped cleanup. hosted_guard.py resolves the actual
+mounted cgroup membership and reuses the original guard's loop, thresholds,
+floors and process cleanup. It does not claim a whole-machine 4GiB limit.
+The unchanged MCP bridge runs in a fresh network-none, read-only-source,
+2GiB/one-CPU/128-process Docker container. The final run asserted the actual
+kernel limits, read-only mount, loopback-only networking, no-new-privileges and
+zero effective capabilities. Its original guard counter existed inside that
+namespace. Public synthetic fixtures contain no private phone records.
 
-## Proof and scope
+Two exact emitted-source hashes match all six direct/runtime/MCP instances and
+the peer's published hosted Lean documents. That hosted context is Lean4.35.0,
+Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679. Pinned Lean4.33.1 standalone
+imports/Lake objects, the full package aggregate and canonical adoption remain
+OPEN. Earlier failures and their corrective source commits are retained.
 
-See PROOF.md for a hand derivation of output soundness. The existing checker
-reports only its original conservative support_cap=L-1 (2r). The proposer does
-not upgrade this to r, does not apply a hybrid budget to search and does not
-prove any candidate source exists. Every emitted proof remains uncompiled
-until its own exact source/type/axiom/custody evidence is accepted.
+## Mathematical boundary
 
-Common-law moments must belong to ONE law across the selected copy levels.
-Independent routing, different masks or row-by-row fitted physical tuples
-cannot be pooled merely because a shared bank name is reused.
+PROOF.md gives output soundness. The checked Lean finite_supported_bank theorem
+requires one shared finite law and every literal moment equality. It concludes
+that each positive-weight atom is a polynomial root in (0,1]. It supplies no
+physical source admission or sharper r support cap. Independent routing, masks
+or row-by-row fitted physical tuples cannot be pooled into one law by naming
+the same bank.
 
-OBLIGATIONS.md carries the integration gates. G1/G2/full binary-M3 G5 recovery,
-remaining G6/G7 assembly, original all-input G3 termination and finite legal
-INDEPENDENT G4 forcing retain their own evidence and completion standards.
-This bounded acquisition component does not replace those goals.
-
-## Fresh online native verification candidate
-
-A new disjoint Rust-only workflow, .github/workflows/rust-support-proposal.yml,
-uses official Rust1.90, the existing guarded runner and fresh GitHub-hosted
-Ubuntu24.04 scratch. It neither resumes the interrupted Lean prefix nor consumes
-an old CM record. The job is serial,10minutes maximum, readonly-token checkout,
-no persisted checkout credentials, locked fetch then offline builds. It exports
-only intentionally public synthetic scientific evidence and emitted Lean source;
-no phone-private harness records, keys, raw conversations or personal data enter
-this job. The phone never builds or stores a project checkout. Initial16file
-remote readback passed at65a8a592f1997e4b42a73bff86db1475ed203c71. Source/fixtures
-remain independently reviewable before and after actual CI execution.
-
-ci_verify.py reuses the original Python checker/emitter and original singleton
-case generator. Its new158-case singleton comparison does not invoke the old
-historically accepted executable: it is separately labelled current-new-binary
-versus original-Python evidence. The inherited556-case script is run unchanged.
-The two new Lean source outputs remain uncompiled until the separate Lean owner
-checks their exact type/axiom/object custody.
+OBLIGATIONS.md retains the remaining gates. Full G1/G2/binary-M3 G5 recovery,
+G6/G7 assembly and original G3/G4 termination/forcing are separate master work.

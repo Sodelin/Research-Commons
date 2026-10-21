@@ -1,58 +1,90 @@
-# Online Rust component verification and retained limits
+# Verified online component and remaining assembly
 
-New source tested at9931b92cad19b72d2c9c81ff1aaa42676182d1a2, after preserved
-workflow/counter failures and the native division-index correction.
-[Actual successful job](https://github.com/Sodelin/Research-Commons/actions/runs/39671718288).
+The native-to-original-runtime-to-MCP component passed
+[run 39673487466](https://github.com/Sodelin/Research-Commons/actions/runs/39673487466)
+at source 73ff92d4b768e929309a24da773d20a2c63199bc. This final run adds observed
+container enforcement to the earlier successful native/composition jobs
+39671718288 and 39673031769. It changes no canonical solver source or whitelist.
 
-Observed Linuxx86_64 native executable SHA256:
+Observed Linux x86_64 executable SHA256:
 40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9.
-This is a NEW executed proposer identity. It is not an approved canonical
-checker profile and is never substituted into an older receipt/whitelist.
+This identity repeated across the independent hosted jobs. It remains an
+unadopted proposer rather than an approved canonical checker.
 
-Actual evidence, with artifact ZIP and all four guard stdout/stderr sizes/hashes
-independently authenticated in memory:13native unit groups;556unchanged original
-checker cases(180accept/376refuse);205new acquisition cases(183generate/3UNKNOWN/
-19refuse);158singleton cases(125generate/8UNKNOWN/25refuse);12codec negatives.
-The158case comparison uses the NEW binary and the original Python generator,
-not the old historical executable.671native child calls belong to the new
-composition driver; the original556case script is separate. These are overlapping
-behavioral checks, not counts of independently proved theorems.
+Actual final coverage: 13 unit groups; 556 unchanged checker cases
+(180 accept/376 refuse); 205 acquisition cases
+(183 generated/3 UNKNOWN/19 refused); 158 current-new-binary singleton cases
+(125 generated/8 UNKNOWN/25 refused including framing); 12 codec negatives;
+four actual codec CLI calls; original runtime certificate calls; and six run
+calls through two actual stdio MCP processes using protocol2025-06-18.
+The native composition driver invoked 673 native processes; the inherited
+556-case script is separate. These are overlapping behavioral controls.
 
-The original emitter produced standalone sources7153B/SHA256
-510c29496c8270f0dd2c36bbcad81fe73e72b2f73cd1638316d403d1cd651c79
-and17536B/SHA256
-0136df5150a1eb3bdb32efabf785a9f6ad53a57770c9939acc6b471834a75542.
-They are preserved byte-exact under generated/. Both exactly match the existing
-Lean builder's attributed new-context outputs.
+MCP authenticated both valid results and both runtime refusals. Oversized input
+was refused by the bridge before its guard started. Supplying the new binary
+as an unapproved canonical checker returned authenticated UNKNOWN and did not
+execute it. Capability/tool-list queries and source/whitelist byte equality
+also passed. evidence/composition-39673487466/ retains the actual projected results.
 
-The Lean peer reports actual virtual-document checking of the BYTE-EXACT
-ordinary kernel plus each emitted body, removing only the redundant import line
-for that service's single-document interface. Reported context: Lean4.35.0,
-Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679. Its four generated declarations
-and reused library audits have only standard axioms, with false/sorry controls
-rejected. This is attributed peer execution pending its public evidence packet;
-this Rust chat did not perform that Lean run. Standalone pinned4.33.1 Lake module
-imports, full type/axiom/object custody, native refinement and canonical adoption
-are still unverified here. No physical-source YES, sharper r cap or general
-G3/G4 closure is inferred.
+The artifact archive (ID 12380224011, 63342 bytes) has SHA256
+8ce2eb184f99a5db74aefa578048a5ce9495fe5754d1d6e828882220d4ee4442.
+It was downloaded into memory, authenticated against GitHub's digest, and each
+of nine guard receipts was checked against its retained stdout/stderr sizes and
+hashes. Four outer guarded actions passed; the five connector guards include
+intentional exit1 refusals. No error/stop was hidden. The versioned sanitized
+record remains useful after GitHub's artifact retention expires.
 
-The hosted-job improvement was specific: memory.current is a NON-ROOT cgroup
-file([Linux primary documentation](https://docs.kernel.org/admin-guide/cgroup-v2.html)).
-The new counter adapter resolves actual membership and mount root, then reuses
-the unchanged original guard's process loop, limits, floors and cleanup.
-13path/parser controls passed; an actual v2_current_group counter was observed.
-It does not migrate a process, configure a controller or fabricate a missing
-counter. This new profile observes the hosted service group and descendants,
-not a claimed whole-machine4GiB bound. The ordinary available-RAM floor remains.
+The fresh MCP container used official Python3.12 by its observed digest,
+network none, a read-only source mount and one fresh output mount.
+Actual kernel assertions passed: memory.max=2147483648, memory.swap.max=0,
+cpu.max=100000/100000, pids.max=128, source mount read-only, interfaces=[lo],
+NoNewPrivs=1, CapEff=0. This is an observed isolated component scope.
 
-Research Commons is the online source/evidence home. This chat made no local
-Git changes, phone project checkout, phone compilation or sub-agent/new-chat.
-Only the established peer transport used encrypted local reservation/results.
-Scientific CI used intentionally public synthetic fixtures, with no personal
-datasets, private phone harness records, inference service, credentials or
-device controls. GitHub artifact lifetime is separate from this versioned
-sanitized record and exact emitted source preservation.
+The counter adapter resolves actual /proc/self/cgroup membership and mount root,
+then reuses the original guard's loop, limits, floors and cleanup. Linux
+[documents memory.current](https://docs.kernel.org/admin-guide/cgroup-v2.html)
+as a non-root cgroup file. Thirteen parser controls and actual hosted v2
+membership passed. The observed service-group counter is not a whole-machine
+4GiB hard limit. No process/controller migration or missing-counter fallback
+is supplied.
 
-Next: exercise the unchanged facade and MCP result authentication on these same
-certificate inputs, keeping the new proposer outside its checker whitelist.
-Continue the separate full Lean/G6/G7 assembly and original G3/G4 master work.
+## Lean source and statement review
+
+The existing Lean builder published commit
+[e8fe774e5ff0cc14729bc20328217525f6c5c068](https://github.com/Sodelin/Research-Commons/tree/e8fe774e5ff0cc14729bc20328217525f6c5c068/research/2026-10-21-lean-online-builder)
+on its disjoint [draft PR3](https://github.com/Sodelin/Research-Commons/pull/3).
+All 14 manifest-listed bodies and the manifest itself were fetched. Every
+listed byte count and SHA256 matched. The old library matched the canonical
+original exactly. Both standalone sources matched our actual native/original
+emitter outputs and all six direct/runtime/MCP instances:
+
+- r2: 7153 bytes, SHA256
+  510c29496c8270f0dd2c36bbcad81fe73e72b2f73cd1638316d403d1cd651c79.
+- r3: 17536 bytes, SHA256
+  0136df5150a1eb3bdb32efabf785a9f6ad53a57770c9939acc6b471834a75542.
+
+Each combined document reconstructed exactly as the old library, one newline,
+and the standalone source with exactly one redundant import removed.
+The exact client audit-command suffix reconstructed both submitted hashes.
+The printed finite-bank theorem types use a single weight/value family with
+all five/seven literal moment equalities and a positive-weight atom premise.
+The conclusion is ROOT plus membership in (0,1], not a physical source or
+support<=r theorem. Both sets of selected eight library/four generated audits
+contain only propext, Classical.choice and Quot.sound. The false-proof and
+sorry controls are explicitly rejected. Repeated library audits are not new
+theorem counts. evidence/LEAN-SOURCE-REVIEW.json preserves this review.
+
+Actual hosted Lean execution remains attributed to the existing Lean builder;
+this Rust chat performed source/statement correlation, not another Lean run.
+Reported runtime: Lean4.35.0, Mathlib
+56a005855ea17e0b0958f73ec801ae140b0a1679, manifestSHA256
+3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270.
+That virtual-document evidence does not establish pinned Lean4.33.1/mathlib
+0df444a360eaa60ab8c11dca51a86af692955474 standalone module imports, Lake objects,
+compiler/object custody or the full package aggregate.
+
+The existing Lean owner is preparing the separate new pinned-context job.
+Physical source/provider correspondence, formal Rust refinement and the
+original mathematical master gaps remain open. Original held/used cloud jobs
+are not replayed. Research Commons holds source/history; no local Git changes,
+phone project artifacts, new chats, sub-agents or model tests were used.
