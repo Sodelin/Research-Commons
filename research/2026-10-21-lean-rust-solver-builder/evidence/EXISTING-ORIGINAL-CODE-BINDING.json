@@ -1,0 +1,139 @@
+{
+  "schema": "existing_original_code_to_ordered_native_bank_source_contract_v1",
+  "status": "SOURCE_INTERFACE_REVIEW;NO_NEW_PROOF_OR_NATIVE_EXECUTION",
+  "peer_commit": "ba7ee06c6fa0a537951b1dfeb8abb966d3dd02dc",
+  "original_sources": [
+    {
+      "module": "G7OriginalAdmission",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "16c824d8c16d69cea022a43b8029c2624e5b4af31d2a1fdb06a7ae2d6802789c",
+      "git_blob": "fd5a34125dfcfaea621ac1682b54ed67abf3e11f",
+      "complete_body_read_and_hash_verified": true
+    },
+    {
+      "module": "G7OriginalFiniteEncoding",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "30f27653e12e4637acfa4c7195f34c232d862b38d2b8b813ab4150cde6949078",
+      "git_blob": "d6bbe5119768eade69f15feeb53abecb5a9176fd",
+      "complete_body_read_and_hash_verified": true
+    },
+    {
+      "module": "G7NamedCalendarSourceAdmission",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "7c365d3d7d7c75a7b592443fb82d68a89a8df7000347dcbb8352b988b47f780e",
+      "git_blob": "90334575d192432fc3a329b4936e98c6c0f37d0c",
+      "complete_body_read_and_hash_verified": true
+    }
+  ],
+  "accepted_as_source_reuse_only": {
+    "generic_decoder": "GProgram.G7.OriginalAdmission.sourceOfValid",
+    "all_hybrid_ID_bijection": "decodedIDs",
+    "original_parent_registry": "decodedRegistry",
+    "exact_M0_endpoint": "decoded_parent_exact",
+    "additional_Rust_API_or_RootedBinary_factory_needed": false
+  },
+  "captured_Code_contract": {
+    "X": "Fin n_taxa, preserving original LEAF record IDs",
+    "ID": "Fin h_hybrids, preserving original HYBRID record IDs",
+    "required_count_equalities": [
+      "source.vertices = vertexCount n_taxa h_hybrids",
+      "source.edges.len() = edgeCount n_taxa h_hybrids"
+    ],
+    "fields_in_order": [
+      "Original edge source function in EDGE occurrence order",
+      "Original edge target function in the SAME occurrence order",
+      "Original root vertex",
+      "Original LEAF index -> vertex",
+      "Original HYBRID index -> site vertex",
+      "Original incoming[0] for Bool false, incoming[1] for Bool true"
+    ],
+    "must_supply_for_exact_captured_Code": [
+      "BinaryValid c",
+      "RegistryValid c"
+    ],
+    "separate": [
+      "CutChild c where required",
+      "Outer-labelled planarity/cofacial admission where required",
+      "Actual exposure/chart/source-menu/readout/history premises"
+    ]
+  },
+  "important_numbering_boundary": {
+    "existing_encode": "G7OriginalFiniteEncoding.encode uses vertexNumbering/edgeNumbering, defined through noncomputable Fintype.equivFinOfCardEq.",
+    "consequence": "Calling encode does not by itself preserve the captured native integer order. Construct the literal Code on the exact census carriers, or carry the explicit relabelling/layout proof.",
+    "proof_status": "Source observation; no new checked theorem"
+  },
+  "explicit_layout": {
+    "V": "Fin nv, nv=vertexCount n_taxa h_hybrids",
+    "E": "Fin ne, ne=edgeCount n_taxa h_hybrids",
+    "N": "sourceOfValid c hb",
+    "D": "nv+ne+1+h_hybrids",
+    "bank_type": "V ⊕ (Option E ⊕ Hybrid N)",
+    "entries": [
+      {
+        "typed": "Sum.inl v",
+        "native_index": "v.val",
+        "native_label": "AGE:v"
+      },
+      {
+        "typed": "Sum.inr (Sum.inl (some e))",
+        "native_index": "nv+e.val",
+        "native_label": "RATE:e (inverse u)"
+      },
+      {
+        "typed": "Sum.inr (Sum.inl none)",
+        "native_index": "nv+ne",
+        "native_label": "RATE:A (ONE ancestral inverse u)"
+      },
+      {
+        "typed": "Sum.inr (Sum.inr hybrid)",
+        "native_index": "nv+ne+1+((decodedIDs c hb hr).symm hybrid).val",
+        "native_label": "COIN:original hybrid ID (prospective gamma_Lean)"
+      }
+    ],
+    "Option_order_boundary": "Original edges precede the ancestral none slot. An arbitrary Option enumeration/equivFin must not be assumed to use this order.",
+    "bijective_layout_proved": false,
+    "chronology_exposure_coin_reflection_proved": false,
+    "exact_emitted_set_hemit_proved": false,
+    "positive_next_use": "Use decoded_parent_exact for original M0 occurrence equality; use the existing compileCellList_toFinset once complete reflected lists/layout/ordered-row equality are supplied.",
+    "duplicate_rows": "Preserve original list positions and full multiplier length before finite-set erasure."
+  },
+  "peer_source_review_of_Rust_adapter": {
+    "guarded_sha256": "9e458889c66b3070ebe29cd93387030f6ecd6ffa20a169830af3d428eef81da3",
+    "attributed_peer_complete_source_review": true,
+    "guard_M0_width_or_ownership_correction_reported": false,
+    "compiled": false,
+    "executed": false,
+    "staged_test_groups": 5
+  },
+  "physical_context_metadata_review": {
+    "addedModules": [
+      "G7OriginalAdmission"
+    ],
+    "allModuleBodiesIndependentlyRead": false,
+    "bad": [],
+    "bytes": 4497681,
+    "changedPreviousModules": [],
+    "extractedSupplierAbsent": true,
+    "graph_sha256": "cd04c05c7f171843f9769e5926092a5770f13b9a55a2622b99ee4808d15aaafe",
+    "modules": 541,
+    "orderCount": 541,
+    "peer": "ba7ee06c6fa0a537951b1dfeb8abb966d3dd02dc",
+    "quietAdmission": {
+      "entrypoint_executed": false,
+      "entrypoint_sha256": "66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3",
+      "in_target_error_is_secondary_only": true,
+      "mandatory_entrypoint": "start_new_context.sh",
+      "native_admission": "UNBOUND_UNCONDITIONAL_OUTER_REFUSAL",
+      "refusal_streams": "quiet; required refusal/recovery remains with existing encrypted controller"
+    },
+    "selected": 541,
+    "selection_sha256": "e5c507d1418f10fb1b480c53ec8a67545ca32c6016e8a54f7e55e40f06784dc0",
+    "uniqueHashes": 541
+  },
+  "named_parallel_scope": "Existing parallel_parent_exact maps false->edge2,true->edge3. Fixed fixture source with original pending proof-status header retained; no generic parser or new acceptance inferred.",
+  "first_missing_real_typed_join": "Exact captured original_chart -> literal Code with counts/bounds/arrays and BinaryValid/RegistryValid, then the explicit native-order bijective layout, reflected original lists and emission equality.",
+  "native_parser_validator_refinement": false,
+  "physical_admission_or_master_closed": false,
+  "writer_controller_binding": "UNBOUND;new native/compiler/CI execution held",
+  "no_new_small_suite_or_worker": true
+}

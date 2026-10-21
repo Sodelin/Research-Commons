@@ -60,3 +60,8 @@ parent(false)/parent(true). Under its still-required occurrence proof, physical
 CHART coin=gamma_Lean and LAW G_native=1-gamma_Lean. The current Rust adapter
 performs no probability substitution or typed admission. Additional cut-child
 and required outer-labelled planarity hypotheses also remain explicit.
+
+SOURCE-CODE-ROW-BINDING.md now pins the EXISTING G7 sourceOfValid/decodedIDs/
+decodedRegistry constructor path and the exact captured-index layout table.
+Neither encode's arbitrary numbering nor an arbitrary Option enumeration may
+replace that table's proof. No additional Rust API/factory or small suite is needed.
