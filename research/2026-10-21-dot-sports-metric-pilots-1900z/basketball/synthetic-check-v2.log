@@ -1,0 +1,40 @@
+{
+  "status": "SYNTHETIC ONLY; no NBA observations or superiority claim",
+  "baseline": "player main effects plus common context slope; interactions shrink towards common slope",
+  "design": {
+    "players": 20,
+    "observations_per_player": 200,
+    "train_context1_probability": 0.15,
+    "test_context1_probability": 0.85,
+    "noise_sd": 5.0,
+    "slope_shrinkage": 20.0
+  },
+  "heterogeneous_effect": {
+    "replicates": 200,
+    "additive_mean_MSE": 8.386006351085598,
+    "interaction_mean_MSE": 1.9931067603979016,
+    "paired_mean_MSE_difference_interaction_minus_additive": -6.392899590687697,
+    "paired_difference_MC_standard_error": 0.025023960432073025,
+    "fraction_interaction_better": 1.0
+  },
+  "zero_interaction_negative_control": {
+    "replicates": 200,
+    "additive_mean_MSE": 0.15370162405392926,
+    "interaction_mean_MSE": 0.3404398224415712,
+    "paired_mean_MSE_difference_interaction_minus_additive": 0.18673819838764197,
+    "paired_difference_MC_standard_error": 0.00627219559499161,
+    "fraction_interaction_better": 0.005
+  },
+  "zero_overlap": {
+    "training_arrays_identical": true,
+    "target_mean_world_plus": 8,
+    "target_mean_world_minus": -4,
+    "minimum_possible_worst_absolute_error": 6,
+    "sensitivity_interval_if_assume_abs_slope_at_most_6": [
+      -4,
+      8
+    ],
+    "interval_kind": "assumption-based; alpha taken known, not sampling confidence interval",
+    "support_action": "ABSTAIN from identified replacement claim"
+  }
+}

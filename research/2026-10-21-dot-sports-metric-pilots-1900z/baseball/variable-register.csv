@@ -1,0 +1,11 @@
+variable,role,definition,availability_rule,guard
+Y,Outcome,(W-mu*D)/s over next60calendar days,Future label only,0 when no eligible events; not a rate
+D,Outcome/exposure,Sum frozen wOBA denominator indicators,Future label only,Not completedPA; undefined W/D at D=0
+K_change_std,Candidate,Fixed training L/R mixture of shrunk recent-minus-older strikeout rates,Before cutoff only,60days vs days61–365
+uBB_change_std,Candidate,Same standardization for unintentional walk rate,Before cutoff only,Denominator completedPA
+HH_change_std,Candidate,Same standardization for >=95mph measured-contact rate,Before cutoff only,MissingEV not zero; retain coverage
+Dhat,Baseline,Out-of-fold predicted future denominator,Computed from pre-cutoff information,Do not substitute actual futureD
+xwOBA,Conditional baseline,As-of archived estimate only,Snapshot must predate cutoff,Current retrospective values sensitivity only
+days_until_next_game,Forbidden,Future appearance interval,Unavailable at cutoff,Explicitly excluded
+plate_x/plate_z/sz_top/sz_bot,Not used,Coordinate/zone measures,2026definition change,Not necessary to candidate
+bat_tracking,Not used,Bat-speed/swing geometry,Historical coverage varies,Not necessary to candidate
