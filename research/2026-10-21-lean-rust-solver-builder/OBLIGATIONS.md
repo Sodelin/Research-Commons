@@ -22,6 +22,7 @@ disjoint component and workflow. The full solver goal remains active.
 | Literal raw-bank-to-CM-law witnesses | Exact authored fixtures passed hosted Lean at peer f4677269; five complete selected audits each, exact projection/submitted hashes reviewed | Attributed hosted PASS; pure Python emitter/new provenance/CI controls remain UNEXECUTED; no universal native refinement |
 | Physical law/source/provider recognition | No physical construction or admission supplied | OPEN; obtain exact typed source-to-common-moment obligation; reuse retained finite-PMF grouping work |
 | Existing affine solver reuse and certificate receiver | Corrected proof-only variant at peer866245d2 passed nine selected hosted audits; original80888 proposal failed and is retained | Finite supplied-matrix hosted PASS, exact native value predicate aligned; parser/source-chart refinement remains OPEN |
+| Request-bound AFFINE literal proof interface | New pure affine_codec.py/emit_affine_lean.py; six authored expected sources, eight refusals and one UNKNOWN staged | SOURCE ONLY UNEXECUTED; old engine/runtime unchanged; actual codec checking and native/physical refinement separate |
 | Native implementation refinement | Exact independent checks and behavior controls only | OPEN formal refinement or retain explicit trusted implementation boundary |
 | Publication/readback | Source manifest, retained failures, native39671718288 and composition39673487466 evidence | Remote immutable history; readback verification recorded with handoff |
 

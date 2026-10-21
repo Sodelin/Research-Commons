@@ -155,3 +155,8 @@ the same bank.
 
 OBLIGATIONS.md retains the remaining gates. Full G1/G2/binary-M3 G5 recovery,
 G6/G7 assembly and original G3/G4 termination/forcing are separate master work.
+
+AFFINE-LEAN-INTERFACE.md adds SOURCE-ONLY pure RC1 value projection, original
+runtime-return binding and literal proof preparation. The native engine/parser
+and checked receiver are reused. Six exact authored fixtures, including duplicate
+rows and Fin0, await checking; the new Python modules/controls have not run.
