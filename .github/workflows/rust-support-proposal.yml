@@ -17,7 +17,7 @@ jobs:
     env:
       CARGO_BUILD_JOBS: "1"
       CARGO_INCREMENTAL: "0"
-      CARGO_TARGET_DIR: ${{ runner.temp }}/rust-support-${{ github.run_id }}/target
+      CARGO_TARGET_DIR: target/rust-support-proposal
       RUSTFLAGS: "-C debuginfo=0"
     steps:
       - name: Capture this exact public proposal and its pinned dependencies
