@@ -1,7 +1,7 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL540 module bodies,4487373B. The original
-531-module transitive closure is selected from the exact current/connected
+Actual source preparation verified ALL541 module bodies,4497681B. The original
+532-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
 gridWeight and shared-configuration readout helpers are in the SAME proposed
@@ -10,7 +10,7 @@ context as CMFinitePMF and the checked bank/certificate receivers.
 The nine explicit additional modules are CMFoundations, RationalBankMoments,
 CMRationalBank, CMFinitePMF, the original certificate kernel, both original
 generated certificates and both unchanged authored bank witnesses. Source
-counts are build inputs, not endpoint acceptance or an accepted540 release.
+counts are build inputs, not endpoint acceptance or an accepted541 release.
 
 The two import-only variants are:
 
@@ -57,3 +57,10 @@ G6-ORDERED-CELL-RECEIVER.md at the packet root records the exact list-emission,
 dimension, witness and contradiction-to-supplied-cell boundaries. The previous
 534-module selection remains in the immutable parent source history; it is not
 mislabelled as having included this later root.
+
+The next ONE-module addition is the EXISTING G7OriginalAdmission. Its generic
+finite-code BinaryValid/RegistryValid/CutChild deciders, sourceOfValid and
+decoded original registry reuse the already selected census/encoding/reachability
+dependencies. G7-RAW-SOURCE-DECODER.md at the packet root identifies the precise
+request/Code/layout/emission binding and the separate planar-G7 admission gap.
+The earlier540-module snapshot remains immutable at7094ed81.

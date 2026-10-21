@@ -2,7 +2,7 @@
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
 the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
-actual hosted checks,540-module source preparation and remaining physical,
+actual hosted checks,541-module source preparation and remaining physical,
 effectivity, refinement and native-custody gates. The native outer refusal is
 silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
@@ -140,7 +140,7 @@ and all-size exclusion remain independent.
 CM-FINITE-PMF.md describes the later checked semantic PMF constructor and
 all-natural-moment/pushforward relation using the exact original support and
 gridWeight helpers. Its bounded declaration projection is separate from the
-prepared540-module full physical import context in native/physical-pmf/.
+prepared541-module full physical import context in native/physical-pmf/.
 That context excludes the duplicate extracted sparse supplier and remains
 uncompiled under the native writer hold.
 
@@ -160,3 +160,6 @@ G6-PRACTICAL-BANK-ADAPTER.md makes the full-bank width and native LAW incoming-p
 substitution explicit. G7-ORIGINAL-EDGE-GATHERING.md identifies already retained
 full-carrier commutation/gathering suppliers for interleaved exterior operations,
 with their precise endpoint-order, calendar and registry premises.
+G7-RAW-SOURCE-DECODER.md adds the already existing generic finite-code admission
+and original-registry constructor, leaving the native Code/layout/refinement
+and separate planar-class obligations explicit.

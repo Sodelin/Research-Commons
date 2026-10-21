@@ -19,7 +19,7 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **540 modules / 4,487,373 source
+The latest prepared native context contains **541 modules / 4,497,681 source
 bytes**, with the physical sparse supplier present once and explicit import-only
 variants. All selected source hashes and dependency order are recorded. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
@@ -47,6 +47,12 @@ The [concrete bank adapter boundary](G6-PRACTICAL-BANK-ADAPTER.md) derives
 to its required physical parent-order substitution. A four-taxon tree already
 needs14 coordinates. This makes the missing transport/semantic binding concrete
 without substituting a smaller matrix for the original source bank.
+
+[The existing generic source decoder](G7-RAW-SOURCE-DECODER.md) now joins that
+context through one additional original module. It provides sourceOfValid,
+complete decoded hybrid IDs and the original parent registry; the exact native
+Code relation, matching coordinate layout and additional class premises remain
+the concrete use-site obligations.
 
 Supplied mathematical-law and matrix hashes identify values. They do not
 authenticate physical measurements, establish error/confidence contracts or

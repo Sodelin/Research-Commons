@@ -48,7 +48,8 @@ nonlinear exact observation-law admission. Projection-cap UNKNOWN supplies no
 exclusion. A cell NO is not an unrestricted source NO.
 
 The proposed combined physical/PMF context now includes this existing endpoint
-and its six additional original dependencies:540 modules total. No source
+and its six additional original dependencies. The next one-module generic
+source-admission addition brings the context to541 modules. No source
 definition was rewritten for this recovery, and the native first-writer hold
 still blocks full Lake/import/object acceptance.
 
