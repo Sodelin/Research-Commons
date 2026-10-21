@@ -3,7 +3,7 @@
 The exact bank/affine fixtures and finite-PMF semantic receiver have actual
 hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates their exact source/statement dispositions at
-[af2a0a92](https://github.com/Sodelin/Research-Commons/tree/af2a0a923247b3ecf32b77c3acb4f384fb0c679b/research/2026-10-21-lean-rust-solver-builder).
+[3fb3cea9](https://github.com/Sodelin/Research-Commons/tree/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder).
 The full goal remains active.
 
 The executed Rust finite-bank evaluator and r<=3 support proposer retain ONE
@@ -38,7 +38,7 @@ inverse pair rates. Routing/parent meaning and parser/source correspondence
 remain additional obligations. Canonical native_rc1 still admits AFFINE/LAW:
 AFFINE8coordinates/64rows differs from the unadmitted CHART32/128 core.
 
-The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/af2a0a923247b3ecf32b77c3acb4f384fb0c679b/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
+The [Rust row-export source](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/native/cell_row_export.rs)
 now exposes the ORIGINAL CHART parser/compiler through an owned, read-only
 snapshot. A command-tag guard prevents rejected COUNT/LAW requests from
 entering unrelated validation arithmetic. The adapter and five staged checks
@@ -55,7 +55,7 @@ preserves ports and performs no probability substitution; its occurrence,
 shared-bank and nonlinear readout proofs remain open.
 
 The existing G7 Code/sourceOfValid/decodedIDs/decodedRegistry constructor path
-is now reused in [SOURCE-CODE-ROW-BINDING.md](https://github.com/Sodelin/Research-Commons/blob/af2a0a923247b3ecf32b77c3acb4f384fb0c679b/research/2026-10-21-lean-rust-solver-builder/SOURCE-CODE-ROW-BINDING.md).
+is now reused in [SOURCE-CODE-ROW-BINDING.md](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/SOURCE-CODE-ROW-BINDING.md).
 It requires the literal captured incidence/root/label/parent arrays, exact
 census/bounds and BinaryValid/RegistryValid evidence, then the native-order
 layout. Generic encode/Option numbering cannot silently replace that relation.
@@ -73,6 +73,23 @@ caches and conditional build-script streams. The new source proposal selects
 CARGO_CACHE_RUSTC_INFO=0 for one query cache only; the other writers remain open.
 No workflow, environment or native/compiler job was changed/run for that claim.
 
+The generic ordered bank construction now has actual attributed hosted
+checking for bankEquiv and ordered_bank_positions, including the unique
+ancestral preimage. Its exact3655B source is integrated unchanged, both complete
+printed types/standard axioms were reviewed, and the audit-submitted SHA256
+was independently reconstructed. The2733B OriginalCodeBankLayout wrapper is
+SOURCE ONLY, not full-context elaborated. The generic construction obligation
+is closed at hosted4.35 scope; captured native occurrence/Code/import/reflected
+field/ordered-emission obligations remain open. See
+[the exact review](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json).
+
+The [native row-field contract](https://github.com/Sodelin/Research-Commons/blob/3fb3cea99eb557e9dee5c3822c38e29723ae00ba/research/2026-10-21-lean-rust-solver-builder/NATIVE-ROW-FIELD-CONTRACT.md)
+retains original LEAF row order and shared HYBRID order across columns and all
+three hybrid row blocks, exact inequality direction/strictness and valid NONE
+endpoints. No new parser/compiler, Rust API, literal suite or native run.
+The latest543-module metadata adds only the generic and Code layout modules
+to541; all previous module entries remain unchanged.
+
 NEW native/CI execution is HELD for the existing encrypted writer/controller
 binding. Prior hosted traces persisted in plaintext; no retroactive privacy
 acceptance is claimed. Automatic triggers are disabled/manual job literal-false.
@@ -83,7 +100,7 @@ CI shell. Actual stream/recovery/recipient/sequence binding remains UNBOUND.
 | Remaining boundary | Scope |
 | --- | --- |
 | Real first-writer enforcement | Existing controller/recipient binding; selected guard/bridge/runtime/loader/Lake/audit/launcher streams need mediation |
-| Pinned4.33.1 imports, objects and aggregate | Latest541-module physical/PMF/ordered graph is source-prepared; no native acceptance |
+| Pinned4.33.1 imports, objects and aggregate | Latest543-module physical/PMF/ordered graph is source-prepared; no native acceptance |
 | G6/G7 complete assembly | General suppliers and typed receivers are available; complete-context/master acceptance stays separate |
 | Native and physical correspondence | Parsing/compiler refinement, complete source/layout/emission proofs and one actual readout/provider remain open |
 | Original G3/G4/P1/P5 criteria | Historical scientific owners and original standards retained |
