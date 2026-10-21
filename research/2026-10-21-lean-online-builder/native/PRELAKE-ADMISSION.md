@@ -1,8 +1,8 @@
 # Admission must precede Lake itself
 
 The mandatory entrypoint for each proposed native context is
-start_new_context.sh,523B/SHA256
-0fb0007d8f8fe280a6c3add2ed5e982db50f9c70ccd8cf8868ae3dfa0896165d.
+start_new_context.sh,558B/SHA256
+66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3.
 It unconditionally refuses before any Lake/config loader, compiler or native
 child invocation. There is no environment/argument override: a flag is not an
 authenticated recipient, controller sequence or first-writer binding.
@@ -36,3 +36,9 @@ classification is a separate issue from those records. No new key, exported
 recipient, invented callback or blanket assertion supplies the binding.
 Replacing this unconditional refusal requires separately reviewed source and
 actual original-owner binding. Old held/consumed jobs remain untouched.
+
+The current refusal is SILENT: no stdout/stderr printf remains. Required
+refusal/recovery belongs to the existing encrypted owner/controller. A default
+CI shell may itself persist an exit-status record, so even this quiet script
+has not been invoked under an unbound controller. The earlier static-printf
+source was never executed and remains in immutable source history.

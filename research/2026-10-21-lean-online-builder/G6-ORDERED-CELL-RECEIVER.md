@@ -51,3 +51,14 @@ The proposed combined physical/PMF context now includes this existing endpoint
 and its six additional original dependencies:540 modules total. No source
 definition was rewritten for this recovery, and the native first-writer hold
 still blocks full Lake/import/object acceptance.
+
+The practical native limits are separate from the generic mathematical types.
+Canonical AFFINE accepts at most8 coordinates/64 rows; the existing unadmitted
+CHART core accepts32/128. Canonical native_rc1 still admits AFFINE/LAW only.
+No matrix truncation or CHART dispatch admission follows from this recovery.
+An over-budget cell remains UNKNOWN, not an unrestricted source NO.
+
+Native RATE:i/RATE:A labels denote inverse pair rates u. Reconstruction uses
+physical rho=1/u under the checked positivity condition; exactly one ancestral
+Option.none coordinate is retained. Native interval rows alone do not
+authenticate original incoming-port identity or routing probability meaning.

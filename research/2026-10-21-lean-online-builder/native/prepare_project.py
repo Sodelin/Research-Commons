@@ -30,7 +30,7 @@ def install_outer_refusal(destination):
     """Copy the mandatory pre-Lake refusal; do not execute it or Lake."""
     source = HERE / 'start_new_context.sh'
     raw = source.read_bytes()
-    expected = '0fb0007d8f8fe280a6c3add2ed5e982db50f9c70ccd8cf8868ae3dfa0896165d'
+    expected = '66a8c0b34d3eb0e7b0373007062160554745a8c3354a4a79019e293823b0d4d3'
     if hashlib.sha256(raw).hexdigest() != expected:
         raise ValueError('OUTER_REFUSAL_SOURCE_CHANGED')
     (destination / 'start_new_context.sh').write_bytes(raw)
@@ -38,6 +38,7 @@ def install_outer_refusal(destination):
     return {'mandatory_entrypoint':'start_new_context.sh',
             'entrypoint_sha256':expected,'entrypoint_executed':False,
             'native_admission':'UNBOUND_UNCONDITIONAL_OUTER_REFUSAL',
+            'refusal_streams':'quiet; required refusal/recovery remains with existing encrypted controller',
             'in_target_error_is_secondary_only':True}
 
 

@@ -1,4 +1,13 @@
-# Online Lean checks for the existing sparse-certificate interface
+# Online Lean components and G6/G7 source assembly
+
+[ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
+the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
+actual hosted checks,540-module source preparation and remaining physical,
+effectivity, refinement and native-custody gates. The native outer refusal is
+silent and unexecuted; actual encrypted first-writer/controller binding remains
+UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
+and unadmitted CHART32/128 limits, inverse-rate meaning and shared-registry
+premises. No additional proof or native run was selected for this consolidation.
 
 The checked P5 ordered Lamb-shift identity now moves the fixed commutator
 through both genuine operator integrals. Its bounded-section/outer-measurability
@@ -87,7 +96,7 @@ is an existing server-side language-server route. It checks one virtual
 document. `OnlineCertificate-*.lean` therefore inlines the byte-identical
 original theorem library and removes only the generated file's one redundant
 local import. `lean/generated/Certificate_*.lean` remains the exact unmodified
-standalone emitter output. `SOURCE-MAP.json` records both source identities.
+standalone emitter output. `lean/generated/SOURCE-MAP.json` records both source identities.
 
 ## Remaining native assembly
 
