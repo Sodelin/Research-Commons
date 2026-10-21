@@ -148,9 +148,27 @@ def main():
                       "emitted_source_sha256":sha(proof),"emitted_source_bytes":len(proof),
                       "runtime_status":outcome["status"],"runtime_literal_request_sha256":sha(decoded.stdout),
                       "Lean_compiled":False})
+    native_dir = args.output/"native"
+    native_dir.mkdir()
+    native_objects = []
+    for executable in (binary,proposer):
+        raw_object = executable.read_bytes()
+        assert sha(raw_object) == identities[str(executable)]
+        assert raw_object[:6] == b"\x7fELF\x02\x01"
+        assert int.from_bytes(raw_object[18:20],"little") == 62
+        snapshot = native_dir/executable.name
+        snapshot.write_bytes(raw_object)
+        assert sha(snapshot.read_bytes()) == identities[str(executable)]
+        native_objects.append({"path":"native/"+executable.name,
+                               "bytes":len(raw_object),"sha256":sha(raw_object),
+                               "format":"ELF64 little-endian x86_64",
+                               "tested_host":"GitHub Ubuntu24.04 x86_64",
+                               "compiler":"official Rust1.90.0",
+                               "canonical_profile_adopted":False})
+    (args.output/"NATIVE-OBJECTS.json").write_text(json.dumps(native_objects,indent=2,sort_keys=True)+"\n")
     report = {"schema":"actual_rational_bank_native_composition_v1","all_passed":True,
               "binary_sha256":identities[str(binary)],"proposer_sha256":identities[str(proposer)],
-              "strict_parser_byte_copy_checked":True,"positive_bank_cases":len(cases),
+              "native_objects":native_objects,"strict_parser_byte_copy_checked":True,"positive_bank_cases":len(cases),
               "reversal_controls":len(cases),"native_refusals":len(refused),
               "native_output_cap_unknowns":1,"codec_negative_controls":negatives,
               "actual_native_processes":calls,"actual_codec_cli_calls":cli_calls,
