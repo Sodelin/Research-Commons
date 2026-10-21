@@ -30,7 +30,7 @@
     },
     {
       "path": ".github/workflows/rust-support-proposal.yml",
-      "sha256": "3316d0a95bf734469a7a71d9f836898003bc38baed4e4245edf4d8f24035d4c3"
+      "sha256": "6c1c9f921ce30ef097cc990c9dcc00aff7951daee8c83d7b974475378f57921d"
     },
     {
       "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
@@ -46,6 +46,26 @@
       "path": "research/2026-10-13-astra-unified-solver-0645z/test_certificates.py",
       "git_blob": "c2923be56d035a12377d46f0a74f04bb974886b6",
       "sha256": "94df62e9a801de7a0776c05bd3d226c64a3e97677bdd3f9c3333408759298be4"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+    },
+    {
+      "path": "applications/research-solver-interop/server.py",
+      "sha256": "8779dd29002166956e890f822997ad98c5b9081533446200484ec92b5ac510df"
+    },
+    {
+      "path": "applications/research-solver-interop/bridge.py",
+      "sha256": "0d6202c61991693d24637f2eda1ae2ef757a5b7740d94702a186e809c0656628"
+    },
+    {
+      "path": "applications/research-solver-interop/SOURCE-PINS.json",
+      "sha256": "5fbef49e81257a244baba67fd8b6e84d82905b993077bddcc885e1332f9b1c02"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
     }
   ],
   "files": [
@@ -126,8 +146,8 @@
     },
     {
       "path": "ci_verify.py",
-      "utf8_bytes": 10240,
-      "sha256": "417c19303e7fb3cad2e6b5b242d476c2f8498d033caf8a4cf899357c39be783e"
+      "sha256": "d3d2435b2c034ea8adbe1717bfa23f7fb492f69fdeac27907f5ec827c73af6b7",
+      "utf8_bytes": 13176
     },
     {
       "path": "hosted_guard.py",
@@ -168,6 +188,11 @@
       "path": "PUBLICATION.md",
       "utf8_bytes": 3642,
       "sha256": "bb6c98b609941397b9114f2d22ff1bf88493752310bcfaebe236247a4842351c"
+    },
+    {
+      "path": "ci_connector.py",
+      "sha256": "0b43fdce5092beb73d34c56696c8f0dc70b3eace65d2067116f39cd2e910535f",
+      "utf8_bytes": 7160
     }
   ],
   "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
@@ -192,7 +217,22 @@
     ],
     "runtime_data_scope": "Intentionally public synthetic mathematical fixtures and source/compiler evidence; no private phone harness records.",
     "counter_adapter": "hosted_guard.py: actual membership/mount-root resolution for v2/v1; inherited thresholds, no migration/controller setting or fallback",
-    "counter_primary_source": "https://docs.kernel.org/admin-guide/cgroup-v2.html"
+    "counter_primary_source": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+    "connector_extension": {
+      "reason": "Remaining unchanged facade and stdio MCP composition obligation after successful native slice",
+      "canonical_source_modified": false,
+      "container": "Official Python3.12 slim-bookworm, actual digest captured and run by digest",
+      "network": "none",
+      "memory_bytes": 2147483648,
+      "cpu_limit": 1,
+      "pids": 128,
+      "wall_seconds": 120,
+      "filesystem": "Readonly public source; one fresh owned output; no credentials/model/private records; scoped container cleanup",
+      "docs": [
+        "https://docs.docker.com/engine/containers/resource_constraints/",
+        "https://docs.docker.com/engine/containers/run/"
+      ]
+    }
   },
   "publication_notes": [
     "The first workflow-publication orchestration failed JavaScript parsing because a YAML expression collided with a JavaScript template expression. No mutation executed in that failed call. The workflow string encoding was corrected before publication.",
@@ -207,5 +247,31 @@
     "binary_sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
     "artifact_sha256": "5e805fd3bdc4afab85bfcd0a782899931a1fa4c7055a562c5d2d2807b96513c7",
     "artifact_readback_verified": true
-  }
+  },
+  "runtime_source_pin": {
+    "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+    "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+  },
+  "connector_source_pins": [
+    {
+      "path": "applications/research-solver-interop/server.py",
+      "sha256": "8779dd29002166956e890f822997ad98c5b9081533446200484ec92b5ac510df"
+    },
+    {
+      "path": "applications/research-solver-interop/bridge.py",
+      "sha256": "0d6202c61991693d24637f2eda1ae2ef757a5b7740d94702a186e809c0656628"
+    },
+    {
+      "path": "applications/research-solver-interop/SOURCE-PINS.json",
+      "sha256": "5fbef49e81257a244baba67fd8b6e84d82905b993077bddcc885e1332f9b1c02"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+      "sha256": "07c9e49cd05eea2ac9fe590a0f3b01c922da08deefc55f1c5ca01da4711e7f4b"
+    },
+    {
+      "path": "research/2026-10-13-astra-unified-solver-0645z/guard.py",
+      "sha256": "f6c606646239ff1bc5dccac80c154a2095a6b2f7f60e8b557a5b195544fadcb3"
+    }
+  ]
 }

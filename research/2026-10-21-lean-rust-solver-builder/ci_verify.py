@@ -193,6 +193,47 @@ def main():
         proof_outputs.append(dict(path=target.name, sha256=sha(proof), bytes=len(proof),
                                   certificate_sha256=checker.digest(receiver["input"]),
                                   checker_status=checked["status"], compiled=False))
+    runtime = source("pinned_unified_runtime",
+                     ROOT/"research/2026-10-13-astra-unified-runtime-2350z/runtime.py",
+                     manifest["runtime_source_pin"]["sha256"])
+    runtime_records = []
+    cli_calls = 0
+    for name, nodes in [("two",["1/3","2/3"]),("three",["1/4","1/2","3/4"])]:
+        original_request = checker.loads((HERE/f"fixtures/{name}-check-request.json").read_bytes())
+        acquisition = dict(schema="rational_support_acquisition_v1",
+                           candidate_survivals=nodes, moments=original_request["input"]["moments"])
+        incoming = json.dumps(acquisition).encode()
+        bound_path = args.output/f"{name}-acquisition.json"
+        bound_path.write_bytes(incoming)
+        encoded = subprocess.run([sys.executable,"-I","-B",str(HERE/"codec.py"),"encode",
+                                  "--repository",str(ROOT)],input=incoming,capture_output=True,timeout=5)
+        cli_calls += 1
+        assert encoded.returncode == 0 and not encoded.stderr
+        proposed = execute(encoded.stdout)
+        assert proposed.returncode == 0 and not proposed.stderr
+        decoded = subprocess.run([sys.executable,"-I","-B",str(HERE/"codec.py"),"decode",
+                                  "--repository",str(ROOT),"--request",str(bound_path)],
+                                 input=proposed.stdout,capture_output=True,timeout=5)
+        cli_calls += 1
+        assert decoded.returncode == 0 and not decoded.stderr
+        assert checker.loads(decoded.stdout) == original_request
+        outcome = runtime.run(decoded.stdout,args.output/f"runtime-{name}")
+        assert outcome["status"] == "CHECKED_RATIONAL_CERTIFICATE", outcome
+        assert outcome["request_preserved"] is True
+        assert outcome["primary_request_sha256"] == sha(decoded.stdout)
+        assert outcome["source_feasibility_certified"] is False
+        assert outcome["general_G3_resolved"] is False
+        assert outcome["delegate"]["invoked"] and outcome["delegate"]["returned"]
+        assert outcome["delegate"]["result"]["certificate_result"]["source_existence_certified"] is False
+        runtime_records.append(dict(name=name,status=outcome["status"],literal_request_sha256=sha(decoded.stdout),
+                                    certificate_sha256=checker.digest(original_request["input"]),
+                                    provider_sources=outcome["authenticated_provider_sources"]))
+    denied = runtime.run((HERE/"fixtures/two-check-request.json").read_bytes(),
+                         args.output/"runtime-unapproved",rust_binary=binary)
+    assert denied["status"] == "UNKNOWN" and denied["delegate"] is None
+    assert "not an approved executed profile" in denied["reason"]
+    runtime_records.append(dict(name="new-unapproved-binary",status="UNKNOWN",native_binary_executed=False))
+
     report = dict(schema="online_rust_support_validation_v1", binary_sha256=binary_sha,
                   native_support_cases=len(vectors), native_support_counts=counts,
                   singleton_cases=sum(singleton_counts.values()), singleton_counts=singleton_counts,
@@ -202,6 +243,7 @@ def main():
                   native_fixture_records_sha256=sha(json.dumps(records, sort_keys=True).encode()),
                   emitted_lean=proof_outputs, Lean_compiled=False,
                   source_existence_certified=False, native_refinement_proved=False,
+                  actual_codec_cli_calls=cli_calls, canonical_runtime_cases=runtime_records,
                   all_passed=True)
     (args.output/"RESULT.json").write_text(json.dumps(report, indent=2, sort_keys=True)+"\n")
     print(json.dumps(report, sort_keys=True))
