@@ -28,3 +28,12 @@ Native CHART COIN indices are interval coordinates; the matrix compiler alone
 does not bind them to native LAW G or authenticate either physical meaning.
 Source parents, shared bank/layout, nonlinear readout and runtime-origin
 obligations remain separate from the exact value checks.
+
+The row-export proposal chooses M0_original_port_order as its REQUIRED future
+typed bridge: native incoming[0]=H.parent(false) and incoming[1]=H.parent(true)
+through explicit occurrence-preserving registries. Consequently its LAW
+substitution is G_native=1-gamma_Lean; the future physical CHART coin is
+gamma_Lean=P(parent1). This is a selected interface obligation, not an existing
+proved map or an implemented conversion. The current adapter preserves raw
+ports and does not interpret COIN probabilities. Opposite-order consumers need
+their own witnessed coherent correspondence; they are not silently reordered.

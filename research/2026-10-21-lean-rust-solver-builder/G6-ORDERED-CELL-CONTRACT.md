@@ -48,3 +48,15 @@ NATIVE-PARENT-CONVENTION.md resolves the additional forward-table convention:
 native LAW G weights incoming[0], while typed natural gamma weights parent1.
 A complete original-port map determines the required complement/substitution;
 the row-export adapter preserves raw ports and performs neither automatically.
+
+For a complete binary census, this layout has4n+6h-2 coordinates. At n=4 a
+tree needs14, so canonical AFFINE8 transports no unreduced full bank for n>=4;
+CHART32 permits h<=3 for n=4, independently of rows. This is a conditional
+representation limit. UNKNOWN is required at scope exhaustion; a smaller
+representation needs a certified lifting relation, not dropped coordinates.
+
+The selected prospective M0 map preserves native incoming[0]/[1] as Lean
+parent(false)/parent(true). Under its still-required occurrence proof, physical
+CHART coin=gamma_Lean and LAW G_native=1-gamma_Lean. The current Rust adapter
+performs no probability substitution or typed admission. Additional cut-child
+and required outer-labelled planarity hypotheses also remain explicit.

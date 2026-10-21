@@ -74,3 +74,32 @@ layout, port/routing meaning and exact emitted.toFinset=compileCell remain
 mandatory separate Lean premises. Rust/compiler/parser refinement, authentic
 runtime origin, canonical CHART adoption, nonlinear source/readouts and full
 G6/G7/original master closure remain open.
+
+## Full-bank width and the prospective physical bridge
+
+For the accepted complete rooted binary census with n taxa and h hybrids,
+V=2n+2h-1 and E=2n+3h-2. The original shared bank has
+V+E+1+h=4n+6h-2 coordinates, including the ancestral coordinate.
+A four-taxon tree therefore already needs14 coordinates. Canonical AFFINE8
+cannot transport any unreduced complete bank for n>=4. At n=4 the existing
+CHART32 limit permits only h<=3, independently of its128-row limit.
+These are conditional size deductions, not a global source bound or a new
+Lean theorem. Source-level transport exhaustion remains UNKNOWN/unavailable;
+an export refusal never implies mathematical NO. No coordinate may be silently
+dropped/fixed. A future reduction needs certified elimination and a lifting
+relation preserving the original bank and exact emission premise.
+
+The selected PROSPECTIVE physical bridge is M0_original_port_order:
+native incoming[0] corresponds to H.parent(false), and incoming[1] to
+H.parent(true), preserving edge occurrences. Under that REQUIRED witnessed
+map, set the physical CHART coin coordinate to gamma_Lean=P(parent1), and
+substitute LAW G_native=1-gamma_Lean in every associated forward readout.
+The adapter itself neither proves M0 nor performs this substitution; it exposes
+unchanged native registries/ports only. A consumer with the opposite order
+must supply its explicit occurrence bijection and coherent G_native=gamma_Lean
+relation. No existing consumer is asserted to have either map.
+
+Original RootedBinary's binary/rooted/DAG/LSA fields do not establish additional
+G6/G7 cut-child or required outer-labelled planarity premises. Those source
+classes, the registry map, nonlinear readouts, exact emission equality and
+runtime-origin evidence remain independent admission obligations.
