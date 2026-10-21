@@ -91,6 +91,11 @@ impl CompiledCellRows {
 /// compiler. There is no affine projection/search or source-feasibility result.
 /// Every error is refusal/unavailability of this export, never mathematical NO.
 pub fn compile_request(original_request: &[u8]) -> Result<CompiledCellRows, ExportError> {
+    // Dispatch guard only; the ORIGINAL parser still validates every CHART
+    // byte. Rejected commands must not enter COUNT/LAW validation arithmetic.
+    if !original_request.starts_with(b"RC1 CHART ") {
+        return Err(ExportError::ChartRequestRequired);
+    }
     let chart = match protocol::parse(original_request).map_err(ExportError::InvalidRequest)? {
         Request::Chart(chart) => chart,
         _ => return Err(ExportError::ChartRequestRequired),
@@ -178,6 +183,11 @@ mod tests {
     fn unsupported_request_and_noncanonical_original_input_refuse() {
         assert!(matches!(
             compile_request(b"RC1 AFFINE 1 1 1\nLT 0/1 1/1\n"),
+            Err(ExportError::ChartRequestRequired)));
+        // A non-CHART command is rejected before the generic parser can run
+        // COUNT arithmetic or LAW validation; no new parser is introduced.
+        assert!(matches!(
+            compile_request(b"RC1 COUNT 1/1 1/2 1/1 1/1\n"),
             Err(ExportError::ChartRequestRequired)));
         let malformed = ORDINARY.replace("LE:1/1", "LE:2/2");
         assert!(matches!(compile_request(malformed.as_bytes()),

@@ -7,6 +7,11 @@ captured request, original registry/port order and every emitted matrix row.
 It invokes no solver and exposes no CLI, serializer, file/log/network writer,
 canonical task, source-admission flag or new word grammar.
 
+A fixed original command-tag guard rejects non-CHART input BEFORE the generic
+parser, which otherwise validates COUNT arithmetic/LAW requests. This is
+dispatch only; the original parser still validates every CHART byte. A
+ChartRequestRequired error does not authenticate any rejected command.
+
 compile_request returns a CompiledCellRows whose fields are private.
 Read-only accessors expose the captured original request, chart, rows,
 dimension, bank names and projection cap. Coordinate helpers delegate to the
@@ -103,3 +108,16 @@ Original RootedBinary's binary/rooted/DAG/LSA fields do not establish additional
 G6/G7 cut-child or required outer-labelled planarity premises. Those source
 classes, the registry map, nonlinear readouts, exact emission equality and
 runtime-origin evidence remain independent admission obligations.
+
+## Source review disposition
+
+evidence/CELL-ROW-EXPORT-REVIEW.json pins the material command-tag guard and
+the reviewed ownership/shape/coordinate/call-path invariants. It records source
+compatibility only. The original five staged tests now also include a COUNT
+tag refusal inside the existing unsupported-command control; none ran.
+
+Counting the original row loops gives a base of2E+2n+1+2h, or6n+8h-3 under
+the complete binary census. Add one row per LT/LE chronology occurrence, two
+per EQ occurrence, and one per present lower/upper exposure or extra coin
+endpoint. Duplicates count separately. This source deduction explains row-cap
+exhaustion independently of bank width; it does not prove class admission.
