@@ -41,3 +41,12 @@ independently recomputed: only G7OriginalAdmission was added to the prior540
 metadata; other module entries are unchanged. All4.49MB of module bodies were
 not independently retrieved here. This is source preparation, not import/object/
 master acceptance. Existing quiet outer refusal and writer hold remain in force.
+
+The subsequent source-only branch comparison is recorded in
+evidence/NATIVE-VALIDATOR-TO-CODE.json. Root/leaf/internal degrees, complete
+hybrid registration and original parent order match the intended Code fields.
+The least-stable test uses the finite contrapositive: for each nonroot blocked
+vertex, some original leaf remains reachable while excluding it. Kahn/DFS
+algorithm correctness, per-occurrence degree counts, exact captured Code and
+layout/emission correspondence are still unproved native-refinement obligations.
+No class/readout/parameter admission follows from native validation.
