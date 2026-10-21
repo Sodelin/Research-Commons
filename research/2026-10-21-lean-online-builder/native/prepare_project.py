@@ -36,7 +36,9 @@ def main():
     for name, expected in PINS.items():
         if hashlib.sha256((HERE / 'pinned' / name).read_bytes()).hexdigest() != expected:
             raise ValueError('REUSED_SOURCE_CHANGED: ' + name)
-    library = ROOT / 'intake/commons/research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean'
+    library = ROOT / 'lean/Astra/CommonCertificateKernel.lean'
+    if not library.is_file():
+        library = ROOT / 'intake/commons/research/2026-10-13-astra-unified-solver-0645z/lean/Astra/CommonCertificateKernel.lean'
     raw = library.read_bytes()
     if hashlib.sha1(f'blob {len(raw)}\0'.encode() + raw).hexdigest() != 'bdb5472d06592cad4ad6511d7bb893cbac7cac99':
         raise ValueError('ORIGINAL_LIBRARY_CHANGED')

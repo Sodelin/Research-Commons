@@ -1,5 +1,12 @@
 # Online Lean checks for the existing sparse-certificate interface
 
+The checked P5 ordered Lamb-shift identity now moves the fixed commutator
+through both genuine operator integrals. Its bounded-section/outer-measurability
+helper is proved, rather than assumed. New source/type evidence is included;
+physical response estimates and native package custody remain separate.
+The certificate preparer also uses the published library path directly;
+native/PORTABLE-PREPARATION.md records its actual source-only preparation check.
+
 The source packet now also includes checked finite P1 product statistics,
 the actual P5 Omega integrability/triangle composition, and a grouped rational
 bank constructor into the exact existing CM positive-law structure. Their
