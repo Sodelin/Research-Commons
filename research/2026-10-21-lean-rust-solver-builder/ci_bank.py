@@ -135,6 +135,7 @@ def main():
     assert identity_reports[0]["candidate_request_sha256"] == identity_reports[1]["candidate_request_sha256"]
     assert identity_reports[2]["candidate_request_sha256"] is None
     chain = []
+    binding_negative_controls = 0
     for name in ("two","three"):
         literal = (HERE/f"fixtures/{name}-bank.json").read_bytes()
         obj = bank_codec.request(literal,checker)
@@ -166,8 +167,27 @@ def main():
         assert outcome["status"] == "CHECKED_RATIONAL_CERTIFICATE" and outcome["request_preserved"] is True
         assert outcome["primary_request_sha256"] == sha(decoded.stdout)
         assert outcome["source_feasibility_certified"] is False and outcome["general_G3_resolved"] is False
+        bound_result = bank_codec.bind_checked_certificate(literal,native.stdout,decoded.stdout,outcome,checker)
+        assert bound_result["certificate_sha256"] == checker.digest(receiver["input"])
+        assert bound_result["complete_original_runtime_return"] is outcome
+        for altered_outcome in (copy.deepcopy(outcome),copy.deepcopy(outcome)):
+            if altered_outcome["primary_request_sha256"] == outcome["primary_request_sha256"] and not binding_negative_controls%2:
+                altered_outcome["primary_request_sha256"] = "0"*64
+            else:
+                altered_outcome["delegate"]["result"]["certificate_result"]["certificate_sha256"] = "0"*64
+            try:
+                bank_codec.bind_checked_certificate(literal,native.stdout,decoded.stdout,altered_outcome,checker)
+            except checker.Refused:
+                binding_negative_controls += 1
+            else:
+                raise AssertionError("unbound/altered runtime certificate outcome accepted")
         chain.append({"name":name,"bank_literal_sha256":sha(literal),
                       "acquisition":acquisition,"original_request_matches_published_fixture":True,
+                      "scalar_law_sha256":bound_result["scalar_law_sha256"],
+                      "moment_vector_sha256":bound_result["moment_vector_sha256"],
+                      "candidate_request_sha256":bound_result["candidate_request_sha256"],
+                      "provenance":bound_result["provenance"],
+                      "copy_levels":bound_result["copy_levels"],"exponents":bound_result["exponents"],
                       "certificate_sha256":checker.digest(receiver["input"]),
                       "emitted_source_sha256":sha(proof),"emitted_source_bytes":len(proof),
                       "runtime_status":outcome["status"],"runtime_literal_request_sha256":sha(decoded.stdout),
@@ -197,6 +217,7 @@ def main():
               "native_output_cap_unknowns":1,"codec_negative_controls":negatives,
               "actual_native_processes":calls,"actual_codec_cli_calls":cli_calls,
               "provenance_identity_controls":len(identity_reports),
+              "runtime_binding_negative_controls":binding_negative_controls,
               "case_records_sha256":sha(json.dumps(records,sort_keys=True).encode()),
               "bank_to_native_to_original_runtime":chain,"canonical_source_changed":False,
               "source_existence_certified":False,"native_refinement_proved":False,"Lean_compiled":False}

@@ -91,3 +91,24 @@ Mathlib/Data/Real/Basic.lean (blobe632e98c8667f52aee0727090ad56fba8dcc41ba);
 Mathlib/Basic/Real/Basic.lean is absent. The current hosted source uses the
 latter path. Keep its checked bytes unchanged; the existing Lean owner may
 prepare a separately hashed pinned-context variant after the writer binds.
+
+## Pure original-result binder, also unexecuted
+
+bind_checked_certificate takes the ORIGINAL bank bytes, complete bank-native
+stdout, original certificate-request bytes and complete actual runtime return.
+It independently rechecks the bank, old certificate, literal moments/L/order,
+runtime primary/canonical request identities, complete delegated checker result
+and mathematical-source scope. It returns both the complete original runtime
+return and independent checker/bank results with their request/law/vector/
+certificate identities. It does not persist anything or strip the original
+returned fields. The original strict certificate schema stays unchanged.
+
+A caller must still invoke/authenticate the actual pinned runtime or MCP
+surface. This PURE binder cannot authenticate an arbitrary supplied dictionary
+or manufacture an executable binding from self-reported hashes. No source-search
+budget or physical-source result is reclassified by it.
+
+The future composition driver exercises both fixture chains through the binder
+and rejects altered literal-request and delegated certificate identities.
+These controls and all new provenance/binding code are SOURCE-ONLY, UNEXECUTED
+under the existing writer hold.

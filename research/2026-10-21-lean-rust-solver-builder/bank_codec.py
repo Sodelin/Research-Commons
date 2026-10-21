@@ -110,6 +110,58 @@ def decode(raw, obj, checker, literal_request_sha256):
                           "error_confidence_contract":None},
             "source_existence_certified":False, "native_refinement_proved":False}
 
+
+def bind_checked_certificate(bank_literal, bank_native_stdout, receiver_literal, runtime_return, checker):
+    """SOURCE-only pure binding of one verified bank to the original full outcome.
+
+    The caller must authenticate/invoke the real pinned runtime/MCP surface.
+    A dictionary or its self-reported hashes cannot establish external origin.
+    This function persists nothing and preserves the complete returned outcome.
+    """
+    bank_obj = request(bank_literal,checker)
+    bank = decode(bank_native_stdout,bank_obj,checker,hashlib.sha256(bank_literal).hexdigest())
+    checker.require(bank["candidate_request"] is not None, "bank has no supported acquisition shape")
+    receiver = checker.loads(receiver_literal)
+    checker.fields(receiver,["schema","task","input"])
+    checker.require(receiver["schema"] == "unified_research_solver_v1" and
+                    receiver["task"] == "check_certificate", "original certificate receiver required")
+    checked = checker.checked(receiver["input"])
+    checker.require(receiver["input"]["moments"] == bank["moments"] and
+                    receiver["input"]["level"] == bank_obj["copy_level_count"],
+                    "certificate is not bound to this bank and sparse moment order")
+    checker.require(type(runtime_return) is dict and
+                    runtime_return.get("status") == "CHECKED_RATIONAL_CERTIFICATE" and
+                    runtime_return.get("request_preserved") is True and
+                    runtime_return.get("primary_request_sha256") == hashlib.sha256(receiver_literal).hexdigest() and
+                    runtime_return.get("canonical_request_sha256") == checker.digest(receiver),
+                    "runtime does not bind the complete literal certificate request")
+    checker.require(runtime_return.get("source_feasibility_certified") is False,
+                    "mathematical bank cannot inherit physical-source admission")
+    delegate = runtime_return.get("delegate")
+    checker.require(type(delegate) is dict and delegate.get("invoked") is True and
+                    delegate.get("returned") is True, "complete original delegate return required")
+    delegated = delegate.get("result")
+    checker.require(type(delegated) is dict and delegated.get("status") == checked["status"] and
+                    delegated.get("certificate_result") == checked,
+                    "runtime checker result differs from the independent original certificate check")
+    return {"schema":"bank_bound_original_solver_result_v1",
+            "status":runtime_return["status"],
+            "literal_bank_request_sha256":bank["literal_request_sha256"],
+            "scalar_law_sha256":bank["scalar_law_sha256"],
+            "moment_vector_sha256":bank["moment_vector_sha256"],
+            "candidate_request_sha256":bank["candidate_request_sha256"],
+            "literal_receiver_sha256":hashlib.sha256(receiver_literal).hexdigest(),
+            "certificate_sha256":checked["certificate_sha256"],
+            "copy_level_count":bank_obj["copy_level_count"],
+            "copy_levels":bank["copy_levels"],"exponents":bank["exponents"],
+            "provenance":bank["provenance"],
+            "mathematical_scope":"conditional finite supported-bank roots; original cap L-1",
+            "source_existence_certified":False,
+            "verified_bank_result":bank,
+            "independent_original_checker_result":checked,
+            "complete_original_runtime_return":runtime_return,
+            "runtime_origin_authenticated_by_this_pure_function":False}
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode",choices=["encode","decode"])
