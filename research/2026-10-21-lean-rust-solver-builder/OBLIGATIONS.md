@@ -7,11 +7,11 @@ Goal remains active; a source proposal is not end-to-end solver completion.
 | Obligation | Evidence | Status | Remaining action/owner |
 | --- | --- | --- | --- |
 | Retain current G1/G2/full binary-M3 G5 baseline and original master scope | START-HERE, current full scope, accepted1613 and CM-T02 records | Reuse identified; no new compiler claim | Existing Lean builder selects exact current endpoints; G6/G7 assembly remains separate |
-| Useful native acquisition beyond singleton | support.rs;205 exact V8 inputs | Source authored; reference tested | Admit new online native build without replaying held jobs |
-| Old parser/checker/singleton preserved | Derivative main inserts only module registration/new dispatch | Static inverse-edit comparison | Run original8 native unit groups plus new5 groups and inherited556/158 controls under existing owner |
-| Dependency/version stability | Original path dependency and registry checksums | Source retained | Cargo --locked --offline must actually pass; lock root rename unexecuted |
-| Native output corresponds to original cert language | Exact reconstruction and native checker call; reference expansion | Source/reference only |205 source-pinned native differential inputs; observed binary/source/lock/toolchain receipt |
-| Literal request binding and independent original Python check | codec.py;original checker source pin | Authored; unexecuted | Run strict input/output/refusal/UNKNOWN controls online |
+| Useful native acquisition beyond singleton | support.rs;205 exact V8 inputs | Native build +205case differential passed in39671718288 | Preserve scoped acceptance; continue runtime composition |
+| Old parser/checker/singleton preserved | Derivative main inserts only module registration/new dispatch | Inverse edit +13unit groups +556/158current controls passed | Historical old binary not replayed; full refinement remains separate |
+| Dependency/version stability | Original path dependency and registry checksums | Locked fetch and offline native test/build passed | Toolchain/platform-specific observed build; no all-platform profile claim |
+| Native output corresponds to original cert language | Exact reconstruction and native checker call; reference expansion |205actual native inputs and stable binary identity passed | Full native refinement remains OPEN |
+| Literal request binding and independent original Python check | codec.py;original checker source pin | Function-level original-checker binding +12negative controls passed | Exercise actual CLI and facade/MCP composition |
 | New emitted Lean arithmetic/finite-bank theorem | Two/three original-schema fixture requests; existing compiled kernel/emitter | Not executed | Existing Lean builder runs exact source emitter, compiles new output, full type/axiom/source/object custody |
 | Runtime/MCP composition | Original check_certificate request, no canonical edit | Interface prepared | New checked requests must traverse unchanged runtime and existing connector under an admitted execution |
 | Physical law/source recognition | Existing UNKNOWN contracts; no physical construction | OPEN | Typed physical source/row/provider bridges and independent G3/G4 obligations |

@@ -1,6 +1,6 @@
 {
   "schema": "online_solver_proposal_source_manifest_v1",
-  "status": "SOURCE_PROPOSAL_REFERENCE_TESTED_NATIVE_AND_LEAN_UNEXECUTED",
+  "status": "NATIVE_COMPONENT_VERIFIED_CANONICAL_RUNTIME_AND_PINNED_LAKE_STILL_OPEN",
   "base_commit": "1138a5b1a281caa00b38e0976db95b586938754b",
   "branch": "codex/lean-rust-builder-20261021",
   "owner_scope": "research/2026-10-21-lean-rust-solver-builder",
@@ -51,8 +51,8 @@
   "files": [
     {
       "path": "OBLIGATIONS.md",
-      "utf8_bytes": 3052,
-      "sha256": "711dce6e4300be1a5f0794ef5d90f58a2289a5e6b07f6563b8ccfad492a86e67"
+      "utf8_bytes": 3123,
+      "sha256": "efbc1a4dbd9cc320135d5f069702067292dec06591cf89053af33d34f98a6799"
     },
     {
       "path": "PROOF.md",
@@ -61,8 +61,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 8456,
-      "sha256": "06e690168b92e9c32cccdf5ca2f98679833c865153e1576949348bc7e4825727"
+      "utf8_bytes": 9047,
+      "sha256": "35983d6f07b8ba4e66bec52cc3c9e081b8db3096c67480c861da7ad81b4f583f"
     },
     {
       "path": "REFERENCE-RESULT.json",
@@ -138,6 +138,36 @@
       "path": "failures/39671453994.json",
       "utf8_bytes": 1609,
       "sha256": "2f3a01545ae1e092b7c536af7eefb3d5f4ee6f5c7a382beed4eb6ccc470101f0"
+    },
+    {
+      "path": "evidence/native-39671718288/RESULT.json",
+      "utf8_bytes": 1537,
+      "sha256": "74e3fe8c12810bb6e2c0c4bcf78f3f01557e7c2ca20ccc6365e00d8e39d8fbf0"
+    },
+    {
+      "path": "evidence/native-39671718288/CHECKER-DIFFERENTIAL.json",
+      "utf8_bytes": 461,
+      "sha256": "8fbe085c88d64fd9ff56bf29dfdc37cb8d8bfaba2792ce6f9e85071c27b3279f"
+    },
+    {
+      "path": "evidence/native-39671718288/RECEIPT-SUMMARY.json",
+      "utf8_bytes": 4860,
+      "sha256": "a4dc88a1dd858430831cc6427ac7b4da1db037b3c90c2b4931f48b4e115ed087"
+    },
+    {
+      "path": "generated/Certificate_776e5a30f4a0190153c23bcad5c5d4bddbf2998a6fdcc690f7810eac99134939.lean",
+      "utf8_bytes": 7153,
+      "sha256": "510c29496c8270f0dd2c36bbcad81fe73e72b2f73cd1638316d403d1cd651c79"
+    },
+    {
+      "path": "generated/Certificate_e49c1e3d6bffee594b99574d3364e700e8f25342933fe31add2aa6129729bc6b.lean",
+      "utf8_bytes": 17536,
+      "sha256": "0136df5150a1eb3bdb32efabf785a9f6ad53a57770c9939acc6b471834a75542"
+    },
+    {
+      "path": "PUBLICATION.md",
+      "utf8_bytes": 3642,
+      "sha256": "bb6c98b609941397b9114f2d22ff1bf88493752310bcfaebe236247a4842351c"
     }
   ],
   "integrity_scope": "SHA256 and UTF-8 byte counts of every listed file. Manifest is excluded from its own list. Publication is preservation, not truth or compiler execution.",
@@ -170,5 +200,12 @@
     "Actual run39670971206 installed official Rust1.90 and fetched the locked dependencies, then refused before compiler launch because the original guard's fixed cgroup-v2 memory.current path was absent. Artifact12380255676 SHA256fc79a68b71e585eafb11739d35caab4dac389e78613a8f06c6bd8a5330295100 retains the error receipt. The NEW owned adapter reuses the exact original supervisor/limits and permits only a validated mounted cgroup-v1 memory root counter; no unbounded fallback or old held-job replay.",
     "Actual run39671217634 also refused before compiler launch: neither fixed root counter was available. Linux cgroup-v2 documentation confirms memory.current is a NON-ROOT cgroup file. Successor adapter resolves the actual /proc/self/cgroup membership against the actual cgroup mount root, rather than guessing the global root location; rejects path escapes/missing counters. It retains the original supervisor and thresholds and names the actual counter scope.",
     "Run39671453994 actually compiled Rust with the retained lock and validated cgroup-v2 current membership; original8 groups passed,4 new groups panicked on a usize intermediate subtraction in polynomial division. One arithmetic-index expression is corrected from top-d.len()+1 to top+1-d.len(); fresh tests required. Full failure/correction record is retained."
-  ]
+  ],
+  "actual_native_execution": {
+    "run_id": 39671718288,
+    "tested_commit": "9931b92cad19b72d2c9c81ff1aaa42676182d1a2",
+    "binary_sha256": "40ea56c88376c27ab01141887098743188d27fceaec002052ee9404f3fca71d9",
+    "artifact_sha256": "5e805fd3bdc4afab85bfcd0a782899931a1fa4c7055a562c5d2d2807b96513c7",
+    "artifact_readback_verified": true
+  }
 }

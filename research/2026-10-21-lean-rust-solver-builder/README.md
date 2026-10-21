@@ -1,3 +1,5 @@
+**Current verified native result (21 October2026):** [fresh online run39671718288](https://github.com/Sodelin/Research-Commons/actions/runs/39671718288) passed all13unit groups,556original checker cases,158current-new-binary singleton cases,205new acquisition cases and12codec negative controls. Both emitted proof-source hashes match the existing Lean peer's attributed newer-context checking result. See evidence/native-39671718288 and PUBLICATION.md. Full pinned-Lake/object custody, runtime/MCP composition, native refinement and original scientific/master obligations remain separate.
+
 # Rational candidate-support acquisition for the existing Lean/Rust solver
 
 Status: ONLINE SOURCE PROPOSAL; JavaScript exact-reference experiments passed;
