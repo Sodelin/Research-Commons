@@ -1,53 +1,61 @@
 # Lean-to-Rust solver status, 21 October 2026
 
-The exact literal-bank witnesses and proof-corrected affine receiver now have
-actual hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
-integrates the checked bytes and [source/statement review](https://github.com/Sodelin/Research-Commons/blob/710f1898c111c813e612246c5202fdfcc730d594/research/2026-10-21-lean-rust-solver-builder/evidence/HOSTED-RECEIVER-REVIEW.json).
-The full solver goal remains active.
+The exact bank/affine fixtures and finite-PMF semantic receiver have actual
+hosted Lean checks. The existing Rust [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
+integrates their exact source/statement dispositions at
+[87993704](https://github.com/Sodelin/Research-Commons/tree/87993704d179e37368f62270e35df62467952e55/research/2026-10-21-lean-rust-solver-builder).
+The full goal remains active.
 
-The executed Rust finite-bank evaluator and r<=3 proposer retain one supplied
-mathematical law, exact zero-mass deletion/grouping, and the original certificate
-checker/emitter/runtime/MCP route. Both Linux x86_64 objects are retained in the
-authenticated artifact documented by NATIVE-CUSTODY.md. EVIDENCE.json preserves
-the exact prior runs, objects, receipts and source identities.
+The executed Rust finite-bank evaluator and r<=3 support proposer retain ONE
+supplied law, exact zero deletion/grouping and the original certificate checker,
+emitter, runtime and MCP route. Both hosted Linux objects and their original
+scope are recorded in NATIVE-CUSTODY.md. EVIDENCE.json retains exact prior
+runs, source/object hashes, receipts and their record-policy limitation.
 
 The existing Lean [draft PR3](https://github.com/Sodelin/Research-Commons/pull/3)
-at866245d242051f9d5a76262a4f08860c71435cf2 includes both exact authored
-raw-bank witnesses, their fixed grouped CM law/all-natural-exponent relation,
-and the corrected finite-matrix witness/Farkas receiver. Five complete selected
-type/standard-axiom audits per bank and nine affine audits passed. The original
-affine proposal failed; its hashes and exact proof-only correction are retained.
-We independently reviewed source bytes, complete selected types, standard axioms,
-unchanged-body projections and submitted audit hashes. Execution is attributed
-to the existing Lean owner under Lean4.35.0/mathlib56a005; no duplicate compiler
-run or pinned4.33.1 import/object acceptance is inferred.
+at2b0ae57e5f4193d886c4066eeda238ad990603fb includes actual hosted checks:
+five selected full type/standard-axiom audits for EACH unchanged bank witness;
+nine for the corrected generic affine receiver/controls; twelve for SIX exact
+authored affine fixtures, including duplicate rows and Fin0; seven for the
+general finite-PMF receiver using original support/gridWeight helpers.
+Original failed proof bytes remain separately attributed. We independently
+reviewed the exact public source bodies/projections, complete selected types,
+standard axioms and submitted audit hashes. This is attributed Lean4.35.0/
+mathlib56a005 execution, not an independent compiler rerun or pinned4.33.1
+module/import/object acceptance.
 
-The pure Python provenance/binder/emitter extensions and new CI controls remain
-UNEXECUTED. Exact authored witnesses are not claimed emitter outputs. The affine
-predicate matches the existing native value-level checker, including a POSITIVE
-multiplier on a strict original row. It excludes only the supplied finite
-matrix, not a physical source or all-size family. native_rc1 remains AFFINE/LAW;
-CHART and the older nine-parameter practical app have separate contracts.
+The new pure Python provenance/binder/emitter extensions and staged refusal,
+UNKNOWN, budget and runtime controls remain UNEXECUTED. Checked authored
+fixtures are not claimed Python outputs. Ordered matrix identities retain row order and exclude the separate budget
+cap; raw request identities retain it. Supplied mathematical input does not
+acquire physical/joint/measured provenance.
 
-NEW native/CI execution remains HELD for the existing encrypted writer/controller
-binding. Earlier hosted runtime traces persisted in plaintext, and their
-observed results retain that explicit record-policy limitation. Automatic
-triggers are disabled and the manual Rust job is literal-false. Official
-Lake4.33.1 source shows configuration trace/elaboration precedes a target-level
-UNBOUND error; admission must precede the first Lake invocation.
+The ORIGINAL ordered G6 cell/wire receiver was recovered and reviewed. It
+requires complete original registries, ONE bijective layout and exact
+emitted.toFinset=compileCell. Checked values then reconstruct the supplied
+original cell bank or exclude that cell only. Native CHART RATE slots contain
+inverse pair rates. Routing/parent meaning and parser/source correspondence
+remain additional obligations. Canonical native_rc1 still admits AFFINE/LAW:
+AFFINE8coordinates/64rows differs from the unadmitted CHART32/128 core.
+
+NEW native/CI execution is HELD for the existing encrypted writer/controller
+binding. Prior hosted traces persisted in plaintext; no retroactive privacy
+acceptance is claimed. Automatic triggers are disabled/manual job literal-false.
+The Lean owner's corrected outer launcher unconditionally refuses BEFORE Lake
+configuration loading. It was not executed; actual stream/recovery/recipient/
+sequence binding remains UNBOUND.
 
 | Remaining boundary | Scope |
 | --- | --- |
-| Encrypted first-writer enforcement | Existing owner/controller binding; guard, runtime, bridges, native loader, Lake configuration and G6 elaboration audit sinks need actual mediation |
-| Pinned4.33.1 imports, objects and full package | Nine-module literal and230-module physical layouts are source-only; existing Lean owner retains assembly |
-| Full G6/G7 assembly | General raw-calendar supplier exists; fresh complete-context acceptance remains separate |
-| Native parsing/refinement and physical law/provider | Exact finite arithmetic does not authenticate physical/joint/measured provenance |
-| Original G3/G4/P1/P5 criteria | Historical scientific ownership and original completion standards preserved |
+| Real first-writer enforcement | Existing controller/recipient binding; selected guard/bridge/runtime/loader/Lake/audit/launcher streams need mediation |
+| Pinned4.33.1 imports, objects and aggregate | Latest540-module physical/PMF/ordered graph is source-prepared; no native acceptance |
+| G6/G7 complete assembly | General suppliers and typed receivers are available; complete-context/master acceptance stays separate |
+| Native and physical correspondence | Parsing/compiler refinement, complete source/layout/emission proofs and one actual readout/provider remain open |
+| Original G3/G4/P1/P5 criteria | Historical scientific owners and original standards retained |
 
-Complete G1, timed/untimed G2 and full binary-M3 G5 remain the recovery baseline.
-The latest Dot allocation append at368a752b was read: four existing research
-contexts now serve two basketball/two baseball tasks. No mathematical chat is
-reactivated, reassigned or created by this status.
+Complete G1, timed/untimed G2 and full binary-M3 G5 are the recovery baseline.
+The reviewed Dot368a752b allocation append assigns four existing contexts to
+two basketball/two baseball tasks; none is reactivated/reassigned here.
 
 No local Git, phone checkout/build, new chat/subagent, model test, old held-job
 replay or canonical code/profile/whitelist change occurred in this lane.
