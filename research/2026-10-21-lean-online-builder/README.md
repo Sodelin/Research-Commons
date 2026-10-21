@@ -1,5 +1,13 @@
 # Online Lean checks for the existing sparse-certificate interface
 
+The source packet now also includes checked finite P1 product statistics,
+the actual P5 Omega integrability/triangle composition, and a grouped rational
+bank constructor into the exact existing CM positive-law structure. Their
+complete selected types and standard-axiom audits are in CHECKED-FOLLOWONS.json.
+ASSEMBLY-BOUNDARIES.md records the inspected general G7 raw-calendar supplier
+and its remaining build/refinement boundaries. Native execution stays refused
+while first-persistence writer binding is missing; see native/RECORD-WRITER-GAP.md.
+
 Both two-node and three-node certificates from the separate Rust proposal
 passed an actual hosted Lean check, using the unchanged original rational
 checker and Lean emitter. This package preserves the exact generated sources,
