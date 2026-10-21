@@ -139,3 +139,7 @@ schemas are not tasks of the current strict runtime dispatch. Practical API
 integration must preserve the old literal request, exact-checking and complete
 UNKNOWN/refusal/authentication boundary. Existing Lean/physical/master gaps
 remain; the goal is active.
+
+## Record-policy correction
+
+Prior hosted guard/CI/runtime/MCP writers persisted raw synthetic runtime streams and receipts in plaintext. Treating deliberately public fixtures as an exception did not meet the standing encrypt-before-first-persistence rule. New source-push and manual execution are disabled pending the existing owner's real Linux encrypted-writer/public-recipient binding. See RECORD-WRITER-GAP.md. Existing source/history and actual test scope are retained; privacy completion is not claimed. No key or identity was created/transferred, and source review continues.

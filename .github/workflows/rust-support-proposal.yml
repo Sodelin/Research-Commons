@@ -1,18 +1,7 @@
 name: Isolated rational-support Rust proposal
+# Source-only until a real existing encrypted record writer is bound BEFORE persistence.
 on:
-  push:
-    branches: [codex/lean-rust-builder-20261021]
-    paths:
-      - .github/workflows/rust-support-proposal.yml
-      - research/2026-10-21-lean-rust-solver-builder/rust/**
-      - research/2026-10-21-lean-rust-solver-builder/codec.py
-      - research/2026-10-21-lean-rust-solver-builder/bank_codec.py
-      - research/2026-10-21-lean-rust-solver-builder/ci_bank.py
-      - research/2026-10-21-lean-rust-solver-builder/ci_verify.py
-      - research/2026-10-21-lean-rust-solver-builder/ci_connector.py
-      - research/2026-10-21-lean-rust-solver-builder/hosted_guard.py
-      - research/2026-10-21-lean-rust-solver-builder/reference.mjs
-      - research/2026-10-21-lean-rust-solver-builder/fixtures/**
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
@@ -20,6 +9,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   verify-rust:
+    if: ${{ false }} # RECORD_WRITER_BINDING_UNAVAILABLE; source-only, no manual bypass
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:

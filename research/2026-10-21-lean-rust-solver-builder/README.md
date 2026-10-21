@@ -1,3 +1,5 @@
+**Execution hold:** prior hosted jobs persisted synthetic runtime traces in plaintext. New CI launches are disabled pending the existing encrypted-writer binding required before first persistence. See RECORD-WRITER-GAP.md. Mathematical/behavioral results below remain observed with that record-policy limitation; the full goal stays active.
+
 # Rational candidate-support acquisition for the Lean/Rust solver
 
 The native proposer, original Python certificate checker/emitter, unchanged
