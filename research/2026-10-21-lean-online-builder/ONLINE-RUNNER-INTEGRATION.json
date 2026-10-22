@@ -169,6 +169,116 @@
       "encrypted_capture_sha256": "4fa3e1bae7f02cd0b76c53f554e36bcec9014396aa9c75d30b474a5e423a9c58",
       "record_encoding": "json",
       "finished_utc": "2026-10-22T05:35:55.066Z"
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "7a690f93ab5fea7fa8308db03dadd09f074dfac931e93f4e9200374a27e41bfa",
+      "case": "g7-finite-target",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "24638bdedc32caaf2357afaa5de27ec551569c4209c79b65b8a6b07b03ae6f50",
+      "source": "lean/OnlineG7FiniteTargetReceiver.lean",
+      "source_bytes": 33027,
+      "source_sha256": "7db25d405e6bc344977bad2968ca18f245fbe76c0bf06396f002e9de35612844",
+      "submitted_source_sha256": "98912b2f3a047ef6bffe97ef3c6438ac82da8c7edeac140fa561d89945edac4e",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.G7FiniteTargetReceiver.consistent_piece",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.consistent_piece' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_target_unique",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_target_unique' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.unreachable_all_targets",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.unreachable_all_targets' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.empty_cases_unreachable",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.empty_cases_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_stop_identifies",
+          "clean": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.physical_stop_identifies' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 4,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 102909,
+      "encrypted_capture_sha256": "9dc97846fbb3fceac71c8bc356c1190f46b328017f0af825acdd019a99bc53b6",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T06:27:01.957Z",
+      "scope": "Actual new dispatch integration after adding the finite-target case. Same eleven endpoint checks; not an additional mathematical case. Prior launcher checks retain their exact historical driver hashes."
     }
   ],
   "new_theorem_case_count": 0,

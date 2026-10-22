@@ -7,6 +7,18 @@ from online_capture import run_case
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-finite-target': ('lean/OnlineG7FiniteTargetReceiver.lean', [
+        'Astra.G7FiniteTargetReceiver.consistent_piece',
+        'Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source',
+        'Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop',
+        'Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions',
+        'Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard',
+        'Astra.G7FiniteTargetReceiver.reachable_target_unique',
+        'Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target',
+        'Astra.G7FiniteTargetReceiver.unreachable_all_targets',
+        'Astra.G7FiniteTargetReceiver.empty_cases_unreachable',
+        'Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause',
+        'Astra.G7FiniteTargetReceiver.physical_stop_identifies']),
     'g7-power-domain': ('lean/G7FixedCalendarPowerDomain.lean', [
         'Astra.FixedCalendarPowerDomain.rate_pos',
         'Astra.FixedCalendarPowerDomain.rate_survival',

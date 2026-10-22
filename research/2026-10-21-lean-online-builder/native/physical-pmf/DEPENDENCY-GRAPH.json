@@ -28,7 +28,8 @@
         "G7ExactLawSourceTransfer",
         "G7PaddedResponseCarrier",
         "TwoTipOriginalCodeReceiver",
-        "G7FixedCalendarPowerDomain"
+        "G7FixedCalendarPowerDomain",
+        "G7FiniteTargetReceiver"
       ],
       "order": [
         "SourceNetwork",
@@ -806,7 +807,8 @@
         "G7PaddedResponseCarrier",
         "TwoTipSourceDeclarations",
         "TwoTipOriginalCodeReceiver",
-        "G7FixedCalendarPowerDomain"
+        "G7FixedCalendarPowerDomain",
+        "G7FiniteTargetReceiver"
       ],
       "modules": {
         "SourceNetwork": {
@@ -6084,6 +6086,13 @@
             "Mathlib.Tactic.FieldSimp",
             "Mathlib.Tactic.Linarith",
             "Mathlib.Tactic.Ring"
+          ]
+        },
+        "G7FiniteTargetReceiver": {
+          "sha256": "8b62a562599b6cb7f4ecc64e9dc802ff150010f80463ec36356665d76e251357",
+          "imports": [
+            "G7ExactLawSourceTransfer",
+            "Mathlib.Data.Real.Basic"
           ]
         }
       },

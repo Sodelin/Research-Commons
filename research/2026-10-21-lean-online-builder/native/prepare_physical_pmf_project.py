@@ -140,7 +140,9 @@ def main():
         ('TwoTipOriginalCodeReceiver',
          'b20f2ca4357c3edf626be2714901cb417425d7d904395f0757c3c149da2fd41d'),
         ('G7FixedCalendarPowerDomain',
-         'b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892')]:
+         'b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892'),
+        ('G7FiniteTargetReceiver',
+         '8b62a562599b6cb7f4ecc64e9dc802ff150010f80463ec36356665d76e251357')]:
         additions.append((name, checked(packet/'lean'/(name+'.lean'), digest)))
     for name, body in additions:
         if name in modules or any(dep not in modules and not dep.startswith(('Mathlib.', 'Init', 'Std'))
@@ -200,7 +202,7 @@ def main():
             ['OriginalCodeBankLayout','NativeCellFormReflection','NativeCellAggregateReflection',
              'OriginalCodeChartReflection','OriginalCodeChartReceiver','G7FinitePathBudgetBridge',
              'G7FinitePathGame','G7ExactLawSourceTransfer','G7PaddedResponseCarrier',
-             'TwoTipOriginalCodeReceiver','G7FixedCalendarPowerDomain'],
+             'TwoTipOriginalCodeReceiver','G7FixedCalendarPowerDomain','G7FiniteTargetReceiver'],
         'order':order,'modules':modules,'required_for_accepted_release':False}},
         'original_source_commit':COMMIT,'original_graph_sha256':GRAPH_SHA,
         'scope':'Source-only proposed combined context; no historical acceptance transfer.'}
@@ -220,7 +222,7 @@ def main():
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps(manifest,indent=2)+'\n')
     sys.path.insert(0,str(ROOT))
     from peer_message import seal
-    receipt,_ = seal({'action':'LEAN-NEW-MASTER-AND-PHYSICAL-SOURCE-CONTEXT-PREPARE-20261022-r15',
+    receipt,_ = seal({'action':'LEAN-NEW-MASTER-AND-TARGET-SOURCE-CONTEXT-PREPARE-20261022-r30',
         'source_graph_sha256':hashlib.sha256((destination/'DEPENDENCY-GRAPH.json').read_bytes()).hexdigest(),
         'source_selection_sha256':hashlib.sha256((destination/'SOURCE-SELECTION.json').read_bytes()).hexdigest(),
         'modules_source_verified':len(rows),'source_bytes':sum(row['bytes'] for row in rows),

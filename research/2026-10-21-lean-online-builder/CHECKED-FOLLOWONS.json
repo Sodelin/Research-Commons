@@ -2185,6 +2185,168 @@
       "client_identity_unchanged": true,
       "client_exit": 0,
       "scope": "Positive real rate construction, whole-survival identity, exact rational-time power/exponential equivalence and unique correlated slot bank over arbitrary possibly empty carriers. No native parser/exponent/substitution refinement, target/admission/action transport, source-law coefficient correspondence, selector, full imports or objects."
+    },
+    {
+      "case": "finite_source_family_guarded_terminal_target_receiver",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineG7FiniteTargetReceiver.lean",
+      "source_bytes": 33027,
+      "source_sha256": "7db25d405e6bc344977bad2968ca18f245fbe76c0bf06396f002e9de35612844",
+      "submitted_source_sha256": "98912b2f3a047ef6bffe97ef3c6438ac82da8c7edeac140fa561d89945edac4e",
+      "printed_types": [
+        {
+          "name": "Astra.G7FiniteTargetReceiver.consistent_piece",
+          "printed_type": "Astra.G7FiniteTargetReceiver.consistent_piece.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2} {Y : Type u_3}\n  {T : Type u_4} {R : Type u_5} (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (i : Case)\n  (x : Fin (@Astra.G7FiniteTargetReceiver.Family.parameterCount.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F i) → Real) :\n  Iff\n    (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_5}\n      (@Astra.G7FiniteTargetReceiver.Source.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) A Y T R\n      (@Astra.G7FiniteTargetReceiver.experiment.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) h\n      (@Sigma.mk.{u_1, 0} Case\n        (fun i =>\n          Fin (@Astra.G7FiniteTargetReceiver.Family.parameterCount.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F i) → Real)\n        i x))\n    (@Astra.G7FiniteTargetReceiver.Fits.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h i x)",
+          "printed_type_sha256": "5a0ff14f0f25907a9e3c7807267086ec1f023ac8eb34ce660ac2c93e7b70200c"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source",
+          "printed_type": "Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) :\n  Iff (@Astra.G7FiniteTargetReceiver.Reachable.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h)\n    (∃ s,\n      @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, u_3, u_4, u_5}\n        (@Astra.G7FiniteTargetReceiver.Source.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) A Y T R\n        (@Astra.G7FiniteTargetReceiver.experiment.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) h s)",
+          "printed_type_sha256": "ab0b44caecbf61c1122369d05d6ff32c4d8aa35170c066f4a6a3f838fa0ee24e"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop",
+          "printed_type": "Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (q : T) (n : Nat) (u : R) :\n  Iff (@Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h q)\n    (@GProgram.G7.ExactLawResourceGame.Valid.{u_1, u_2, u_3, u_4, u_5}\n      (@Astra.G7FiniteTargetReceiver.Source.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) A Y T R\n      (@Astra.G7FiniteTargetReceiver.experiment.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) n\n      (@GProgram.G7.ExactLawResourceGame.Plan.stop.{u_2, u_3, u_4} A Y T n q) h u)",
+          "printed_type_sha256": "2a4f2e620ecef50424b99846d97e47a2fe27947b8b3b366b3d4bdacb01c3ddc6"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions",
+          "printed_type": "Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (q : T) :\n  Iff (@Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h q)\n    (@Astra.G7FiniteTargetReceiver.OtherTargetsExcluded.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h q)",
+          "printed_type_sha256": "dd07366d3a93b38b543fc42b2a1fb1a7ce830984fe4fa5a2b37bc6fe9f99ea00"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard",
+          "printed_type": "Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard.{u_1, u_2, u_3, u_4, u_5, u_7} {Case : Type u_1}\n  {A : Type u_2} {Y : Type u_3} {T : Type u_4} {R : Type u_5} {C : Type u_7}\n  (families : C → Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R) (roots : C → Prop) (c : C)\n  (hc : roots c) (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (q : T)\n  (he :\n    ∀ (c' : C),\n      roots c' →\n        @Astra.G7FiniteTargetReceiver.OtherTargetsExcluded.{u_1, u_2, u_3, u_4, u_5} Case A Y T R (families c') h q) :\n  @Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R (families c) h q",
+          "printed_type_sha256": "35a7fb5c31246e72404f4b968c055390762e93f84f11691fd8a4bc21017e6f5a"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_target_unique",
+          "printed_type": "Astra.G7FiniteTargetReceiver.reachable_target_unique.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y)\n  (hr : @Astra.G7FiniteTargetReceiver.Reachable.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h) (q r : T)\n  (hq : @Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h q)\n  (hr' : @Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h r) : @Eq.{u_4 + 1} T q r",
+          "printed_type_sha256": "72e81df5ac470723afc5a6067143c721431d0e062bf6a444fec754033c0cd7d1"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target",
+          "printed_type": "Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1}\n  {A : Type u_2} {Y : Type u_3} {T : Type u_4} {R : Type u_5}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y)\n  (hr : @Astra.G7FiniteTargetReceiver.Reachable.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h)\n  (hh :\n    @GProgram.G7.ExactLawResourceGame.Homogeneous.{u_1, u_2, u_3, u_4, u_5}\n      (@Astra.G7FiniteTargetReceiver.Source.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) A Y T R\n      (@Astra.G7FiniteTargetReceiver.experiment.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) h) :\n  @ExistsUnique.{u_4 + 1} T fun q =>\n    @Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h q",
+          "printed_type_sha256": "64b35214157fd5827fbdaf030eacf846804470bd75c74e5d3490247625eba0c0"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.unreachable_all_targets",
+          "printed_type": "Astra.G7FiniteTargetReceiver.unreachable_all_targets.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y)\n  (hn : Not (@Astra.G7FiniteTargetReceiver.Reachable.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h)) (q : T) :\n  @Astra.G7FiniteTargetReceiver.TargetClause.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h q",
+          "printed_type_sha256": "1bff9131c795b2f791bb40134013e3d68336663bd7baae61e30be5abf31f4105"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.empty_cases_unreachable",
+          "printed_type": "Astra.G7FiniteTargetReceiver.empty_cases_unreachable.{u_1, u_2, u_3, u_4, u_5} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5} [IsEmpty.{u_1 + 1} Case]\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) :\n  Not (@Astra.G7FiniteTargetReceiver.Reachable.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F h)",
+          "printed_type_sha256": "c571ea58b11b588b42c34b06c23a0d932d39c9e2b0c04e1e8e97f2111a1f7e97"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause",
+          "printed_type": "Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause.{u_1, u_2, u_3, u_4, u_5, u_6} {Case : Type u_1}\n  {A : Type u_2} {Y : Type u_3} {T : Type u_4} {R : Type u_5} {S : Type u_6}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_6, u_2, u_3, u_4, u_5} S A Y T R)\n  (rep :\n    @Astra.G7ExactLawSourceTransfer.Representation.{u_6, u_1, u_2, u_3, u_4, u_5} S\n      (@Astra.G7FiniteTargetReceiver.Source.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) A Y T R physical\n      (@Astra.G7FiniteTargetReceiver.experiment.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F))\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (q : T) {constantsValid prefixLegal : Prop}\n  (hq :\n    @Astra.G7FiniteTargetReceiver.GuardedTarget.{u_1, u_2, u_3, u_4, u_5} Case A Y T R constantsValid prefixLegal F h q)\n  (s : S) (hs : @GProgram.G7.ExactLawResourceGame.Consistent.{u_6, u_2, u_3, u_4, u_5} S A Y T R physical h s) :\n  @Eq.{u_4 + 1} T (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_6, u_2, u_3, u_4, u_5} S A Y T R physical s) q",
+          "printed_type_sha256": "2b9fa563579d0d79d9e6f381a1b6653e04a0eaecafbbcd4e7cd7e090db5ce32f"
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_stop_identifies",
+          "printed_type": "Astra.G7FiniteTargetReceiver.physical_stop_identifies.{u_1, u_2, u_3, u_4, u_5, u_6} {Case : Type u_1} {A : Type u_2}\n  {Y : Type u_3} {T : Type u_4} {R : Type u_5} {S : Type u_6}\n  (F : Astra.G7FiniteTargetReceiver.Family.{u_1, u_2, u_3, u_4, u_5} Case A Y T R)\n  (physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_6, u_2, u_3, u_4, u_5} S A Y T R)\n  (rep :\n    @Astra.G7ExactLawSourceTransfer.Representation.{u_6, u_1, u_2, u_3, u_4, u_5} S\n      (@Astra.G7FiniteTargetReceiver.Source.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F) A Y T R physical\n      (@Astra.G7FiniteTargetReceiver.experiment.{u_1, u_2, u_3, u_4, u_5} Case A Y T R F))\n  (n : Nat) (h : GProgram.G7.ExactLawResourceGame.History.{u_2, u_3} A Y) (u : R) (q : T)\n  {constantsValid prefixLegal : Prop}\n  (hq :\n    @Astra.G7FiniteTargetReceiver.GuardedTarget.{u_1, u_2, u_3, u_4, u_5} Case A Y T R constantsValid prefixLegal F h q)\n  (s : S) (hs : @GProgram.G7.ExactLawResourceGame.Consistent.{u_6, u_2, u_3, u_4, u_5} S A Y T R physical h s) :\n  @Eq.{u_4 + 1} T\n    (@GProgram.G7.ExactLawResourceGame.run.{u_6, u_2, u_3, u_4, u_5} S A Y T R physical n\n      (@GProgram.G7.ExactLawResourceGame.Plan.stop.{u_2, u_3, u_4} A Y T n q) s)\n    (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_6, u_2, u_3, u_4, u_5} S A Y T R physical s)",
+          "printed_type_sha256": "285b89c6738776a90c482e5f1df40897f7fd7e4ed7014339fe289abccb7bb603"
+        }
+      ],
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.G7FiniteTargetReceiver.consistent_piece",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.consistent_piece' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_clause_iff_valid_stop' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_clause_iff_exclusions' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.target_of_shared_constant_guard' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_target_unique",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_target_unique' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.reachable_homogeneous_unique_target' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.unreachable_all_targets",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.unreachable_all_targets' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.empty_cases_unreachable",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.empty_cases_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.physical_target_of_guarded_clause' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7FiniteTargetReceiver.physical_stop_identifies",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7FiniteTargetReceiver.physical_stop_identifies' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "warning_count": 4,
+      "unique_warning_messages": [
+        "\n'Mathlib.Data.Real.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.Basic.Real.Basic\n",
+        "`push_neg` has been deprecated. Prefer using `push Not` instead.\nIf you'd rather continue using `push_neg` in your project, you can implement it as follows:\n```\nopen Lean.Parser.Tactic in\nmacro \"push_neg\" cfg:optConfig loc:(location)? : tactic =>\n  `(tactic| push $cfg:optConfig Not $[$loc]?)\n```\n",
+        "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n\nHint: Replace the deprecated name:\n  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲"
+      ],
+      "client": "online_lean_drain.mjs",
+      "client_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "client_exit": 0,
+      "retained_checked_prefix_sha256": "2804232d7daea06e5c41e596ebb497c05c94d3b1ec9dbd7e8286f5fad24a90c4",
+      "scope": "Supplied case plus one real bank across entire history; exact different-target exclusion/stop equivalence; shared-root specialization; reachable target uniqueness and explicit empty/unreachable vacuity; conditional physical target and same-stop transfer under the existing two-sided Representation and actual consistent source. No native polynomial/AST/query-result refinement, original source/action/target coverage, effective QE/selector, physical transcript origin or pinned imports/objects."
     }
   ]
 }
