@@ -1,30 +1,31 @@
 # Combined retained-root and physical source context
 
-The current SOURCE ONLY preparation contains775 modules /5,908,266 bytes:
+The current SOURCE ONLY preparation contains776 modules /5,911,868 bytes:
 754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
-plus21 explicitly owned modules or import-only variants. Every selected source
+plus22 explicitly owned modules or import-only variants. Every selected source
 body, byte count and internal topological order was verified. Module names and
 hashes have no aliases. All preceding548 entries are unchanged;221 original
 dependencies add the exact retained G1/G2/G5 closures. Six further components
 are the checked path-budget bridge, game-horizon composition, conditional
 source transfer, response padding, safe retained two-tip declaration projection
-and concrete Code receiver. Every immediate773-module predecessor entry and
+and concrete Code receiver, followed by the correlated positive-power domain. Every immediate775-module predecessor entry and
 its relative dependency order are unchanged.
 
-Graph233314B/SHA256
-eba9d6284d27c8e7e3ff825ce5ace6e25b307f2566be3226503f9ca79d887b35.
-Selection166101B/SHA256
-b38dc772c451de8eec50942f573c2029233890925e30661b7e3115ccdf6c3b9c.
+Graph233736B/SHA256
+bdd1a96cfeaafa3c3264a5e87c95aedb3bbf165932f6348577aab9a3cba426ab.
+Selection166328B/SHA256
+a8b305193e299bf2f801a5332dcb15de96dedd9a313bdd81087b1c4d17ab2948.
 
 EXTERNAL-IMPORT-SOURCE-PRESENCE.json separately catalogs all125 direct imports
 outside this exact graph. All122 Mathlib paths occur in the NONTRUNCATED actual
 root tree f18edc0401eb2459e5241329743eb8626fdff148 of the pinned0df444a3 commit.
 Its lean-toolchain is4.33.1; the3 direct Lean core files were retrieved and
 Git-blob rehashed at release commit819816b2e0a3bf405af45ae5c7af2491d8f5bee6.
-No direct path is missing. This source-presence check changes no selected
-module and establishes no declaration API, transitive dependency, installed
-package, import elaboration or object custody. The775 graph/selection hashes
-above remain unchanged.
+No direct path is missing. The new power-domain module imports only names
+already in that catalog; all125 external names and upstream path identities
+remain unchanged. Catalog metadata identifies the new776-module graph. This
+establishes no declaration API, transitive dependency, installed package,
+import elaboration or object custody.
 
 ## Selected roots and additions
 
@@ -37,13 +38,13 @@ G5M3NormalizedClusterSplitIdentification. Exact declarations and inherited
 scope are pinned in ../../MASTER-SOURCE-ASSEMBLY.md. Source acquisition does
 not rerun an accepted build.
 
-The21 additions are four CM/rational wrappers; the original certificate kernel;
+The22 additions are four CM/rational wrappers; the original certificate kernel;
 two unchanged original generated certificates; two unchanged authored bank
 witnesses; and NativeOrderedBankLayout, OriginalCodeBankLayout,
 NativeCellFormReflection, NativeCellAggregateReflection,
 OriginalCodeChartReflection, OriginalCodeChartReceiver,
 G7FinitePathBudgetBridge, G7FinitePathGame, G7ExactLawSourceTransfer and
-G7PaddedResponseCarrier, TwoTipSourceDeclarations and TwoTipOriginalCodeReceiver.
+G7PaddedResponseCarrier, TwoTipSourceDeclarations and TwoTipOriginalCodeReceiver, plus G7FixedCalendarPowerDomain.
 The retained original G6TwoTipChartFixture itself is not selected: its five
 evaluation commands remain excluded. The declaration projection is explicit
 and source-pinned; see ../../G6-TWO-TIP-CODE-RECEIVER.md.

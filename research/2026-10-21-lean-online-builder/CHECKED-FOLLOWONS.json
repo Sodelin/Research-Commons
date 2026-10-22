@@ -2088,6 +2088,103 @@
         "This simp argument is unused:\n  List.getElem?_ofFn\n\nHint: Omit it from the simp argument list.\n  [apply] simp [hi, List.getElem?_eq_none hix]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`"
       ],
       "scope": "One literal retained two-tip Code with constructive BinaryValid/RegistryValid/CutChild, decoded-source equality, exact wire input and original compiled rows. Supplied checked rational witness constructs the SAME original physical bank. No witness search/execution, byte parser/native validation refinement, captured-input origin, additional planarity/readout supplier, full imports/objects or general all-source decision."
+    },
+    {
+      "case": "fixed_calendar_correlated_positive_power_domain",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/G7FixedCalendarPowerDomain.lean",
+      "source_bytes": 3602,
+      "source_sha256": "b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892",
+      "submitted_source_sha256": "f317fdd8f247d23504cdc8dd3670b7bc758aed6d0265f569852ede815faa3491",
+      "printed_types": [
+        {
+          "name": "Astra.FixedCalendarPowerDomain.rate_pos",
+          "printed_type": "Astra.FixedCalendarPowerDomain.rate_pos {x duration : Real}\n  (hx : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) x)\n  (hx1 : @LT.lt.{0} Real Real.instLT x (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))\n  (hD :\n    @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) duration) :\n  @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n    (Astra.FixedCalendarPowerDomain.rate x duration)",
+          "printed_type_sha256": "ee46e7554e8cacd9122ea04a2082e797a387ce7a17e932a41ad8050503998e6e"
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.rate_survival",
+          "printed_type": "Astra.FixedCalendarPowerDomain.rate_survival {x duration : Real}\n  (hx : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) x)\n  (hD :\n    @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) duration) :\n  @Eq.{1} Real\n    (Real.exp\n      (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n        (@Neg.neg.{0} Real Real.instNeg (Astra.FixedCalendarPowerDomain.rate x duration)) duration))\n    x",
+          "printed_type_sha256": "0fe406492118759a23c4d8d241ef105c0506951cdb8555be99c2f5c9f7168b17"
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.power_eq_iff_log_eq",
+          "printed_type": "Astra.FixedCalendarPowerDomain.power_eq_iff_log_eq {x z : Real}\n  (hx : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) x)\n  (hz : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) z)\n  (p q : Nat) :\n  Iff\n    (@Eq.{1} Real\n      (@HPow.hPow.{0, 0, 0} Real Nat Real\n        (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) z q)\n      (@HPow.hPow.{0, 0, 0} Real Nat Real\n        (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) x p))\n    (@Eq.{1} Real\n      (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) (@Nat.cast.{0} Real Real.instNatCast q)\n        (Real.log z))\n      (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) (@Nat.cast.{0} Real Real.instNatCast p)\n        (Real.log x)))",
+          "printed_type_sha256": "fabfdaf633f03dea7bb3bdbad325a6101cd1855a2c7739dc7f45f882cae74529"
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.positive_power_iff_exp",
+          "printed_type": "Astra.FixedCalendarPowerDomain.positive_power_iff_exp {x z d D : Real}\n  (hx : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) x)\n  (hz : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) z)\n  (hD : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) D)\n  (p q : Nat) (hq : @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) q)\n  (htime :\n    @Eq.{1} Real\n      (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) (@Nat.cast.{0} Real Real.instNatCast q) d)\n      (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) (@Nat.cast.{0} Real Real.instNatCast p)\n        D)) :\n  Iff\n    (@Eq.{1} Real\n      (@HPow.hPow.{0, 0, 0} Real Nat Real\n        (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) z q)\n      (@HPow.hPow.{0, 0, 0} Real Nat Real\n        (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) x p))\n    (@Eq.{1} Real z\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (Astra.FixedCalendarPowerDomain.rate x D)) d)))",
+          "printed_type_sha256": "80ad2cd7ddf039723e616f4dfe699aaf49ca1af6ced861d70d8c479b7000e803"
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.slot_survival_mem",
+          "printed_type": "Astra.FixedCalendarPowerDomain.slot_survival_mem {x d D : Real}\n  (hx : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) x)\n  (hx1 : @LT.lt.{0} Real Real.instLT x (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))\n  (hD : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) D)\n  (hd : @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) d) :\n  And\n    (@LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (Astra.FixedCalendarPowerDomain.rate x D)) d)))\n    (@LT.lt.{0} Real Real.instLT\n      (Real.exp\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Neg.neg.{0} Real Real.instNeg (Astra.FixedCalendarPowerDomain.rate x D)) d))\n      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)))",
+          "printed_type_sha256": "9baeca11bcc4c14289806253653bf516c8fc5683bf59f11b0467c3212b0015c0"
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique",
+          "printed_type": "Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique.{u_1, u_2} {Pop : Type u_1} {Slot : Type u_2}\n  (X duration : Pop → Real) (elapsed : Slot → Real) (p q : Slot → Pop → Nat)\n  (hX :\n    ∀ (i : Pop),\n      And\n        (@LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) (X i))\n        (@LT.lt.{0} Real Real.instLT (X i) (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))\n  (hD :\n    ∀ (i : Pop),\n      @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n        (duration i))\n  (hd :\n    ∀ (j : Slot),\n      @LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n        (elapsed j))\n  (hq :\n    ∀ (j : Slot) (i : Pop),\n      @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) (q j i))\n  (htime :\n    ∀ (j : Slot) (i : Pop),\n      @Eq.{1} Real\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Nat.cast.{0} Real Real.instNatCast (q j i)) (elapsed j))\n        (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)\n          (@Nat.cast.{0} Real Real.instNatCast (p j i)) (duration i))) :\n  @ExistsUnique.{max (u_1 + 1) (u_2 + 1)} (Slot → Pop → Real) fun Z =>\n    And\n      (∀ (j : Slot) (i : Pop),\n        And\n          (@LT.lt.{0} Real Real.instLT (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))\n            (Z j i))\n          (@LT.lt.{0} Real Real.instLT (Z j i)\n            (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))))\n      (∀ (j : Slot) (i : Pop),\n        @Eq.{1} Real\n          (@HPow.hPow.{0, 0, 0} Real Nat Real\n            (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) (Z j i)\n            (q j i))\n          (@HPow.hPow.{0, 0, 0} Real Nat Real\n            (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid))) (X i) (p j i)))",
+          "printed_type_sha256": "5629761046b66620f3a7aebbbe0e94a7c49766d48d35f27118bc5e133575599d"
+        }
+      ],
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.FixedCalendarPowerDomain.rate_pos",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.rate_pos' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.rate_survival",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.rate_survival' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.power_eq_iff_log_eq",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.power_eq_iff_log_eq' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.positive_power_iff_exp",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.positive_power_iff_exp' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.slot_survival_mem",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.slot_survival_mem' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "warning_count": 0,
+      "unique_warning_messages": [],
+      "client": "online_lean_drain.mjs",
+      "client_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "client_exit": 0,
+      "scope": "Positive real rate construction, whole-survival identity, exact rational-time power/exponential equivalence and unique correlated slot bank over arbitrary possibly empty carriers. No native parser/exponent/substitution refinement, target/admission/action transport, source-law coefficient correspondence, selector, full imports or objects."
     }
   ]
 }
