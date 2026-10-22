@@ -821,16 +821,17 @@ theorem exists_exact_optimum_pair {N m : ℕ} (D : MSSCInstance N m) (hm : 2 ≤
   exact ⟨order, anchorTree order, ho, hv, hmin, htree, heq⟩
 
 /- Remaining proof obligations, not supplied as assumptions:
-1. Elaborate/check the concrete block-cell and score proofs; prove distinct
-   cell identities and mixed observed sets at every fixed-block internal node.
+1. Elaborate/check the concrete block-cell and score proofs, together with the
+   distinct-cell and mixed-descendant terms in PolytomyStarSemantics.lean.
 2. ValidJoiningTree grafts are exactly binary refinements of the one-polytomy
-   input with these fixed blocks; all star-map internal labels are forced.
+   input with these fixed blocks. The companion proposes forced-label proofs;
+   the external edge-contraction/clade-preservation adapter is still missing.
 3. Elaborate/check the proposed full q-1-node caterpillar exchange proof above.
 4. Elaborate/check the anchored first-cover identity, private-type first-pair
    penalty and anchor-order extraction. No arbitrary first-position sum is needed.
 5. Elaborate/check both decision directions and exact_anchor_optimum.
-6. Define finite encoded instances and prove the displayed semantic target
-   equals the external original D_lambda/refinement decision problem.
+6. Check the companion's explicit D_lambda adapter. Define encoded instances
+   and connect the external original refinement representation.
 7. Give polynomial encoding/size bounds and an NP certificate checker.
 8. Formalize the separate general-DAG full-score subset recurrence and its
    correctness/complexity, rather than treating it as this star special case.

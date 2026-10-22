@@ -1,6 +1,6 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 07:56 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 08:11 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
 
 The complete mathematical theorem and its independently scoped hand review are in `POLYTOMY-REFINEMENT-COMPLEXITY.md` and `POLYTOMY-REVIEW-20261022-0712Z.md`. The new `PolytomyReductionModel.lean` does not replace them with a weaker target and does not claim to have verified them.
 
@@ -32,10 +32,25 @@ The declarations `fullReductionClaim`, `exact_anchor_optimum`, and `exists_exact
 
 Every item above is SOURCE ONLY and UNELABORATED.
 
+## Semantic and encoding continuation
+
+The companion `PolytomyStarSemantics.lean` now proposes the further source chain:
+
+- `fixedBlockTree_type_nodup`, `fixedBlockTree_mixed`, `every_graft_internal_mixed`: each fixed-block internal descendant set is mixed, and the shared markers make every joining internal descendant set mixed.
+- `mixed_feasible_labeling_unique`: a feasible star-map decoration of such a tree has all internal labels forced to the full potency.
+- `starResolution_zero`, `feasible_mixed_score_exact`, `gadget_carta_score_exact`: the actual sampling-plus-resolution formula equals the reduction score for every real lambda. Nonnegative lambda is the original optimization domain; the equality does not need its sign because every resolution term is zero. Unit resolution weights are written explicitly, and any other weights multiplied by the same vanishing indicator would have the same consequence.
+- `cartaStarDecision_iff_refinementDecision`, `full_carta_star_reduction`: the bidirectional finite reduction includes a quantified compatible labeling and real-valued D_lambda, not just a fixed-label surrogate.
+- `valid_graft_cells_nodup`: repeated terminal type labels across blocks do not duplicate cell identities.
+- `terminal_card`, `valid_graft_leaf_bound`, `valid_graft_vertex_bound`, `starScore_bound`: explicit size and score bounds.
+
+These declarations are also wholly unelaborated. The module imports the unelaborated reduction model, so it cannot provide independent verification of that dependency.
+
+`POLYTOMY-ENCODING-INTERFACE.md` specifies the full explicit bit-encoding, total trivial-case mapping, polynomial construction bounds and target certificate/checker at the hand-proof level. It distinguishes explicit lists from a compressed exponentially-many-empty-sets representation. Its reverse implication still ranges over every binary refinement.
+
 ## What still blocks a formal NP-completeness certificate
 
 1. All proposed terms need authorized elaboration and kernel checking. Hand inspection of source APIs is not execution evidence. There may be syntax, implicit-argument, simplifier or tactic issues.
-2. Formal distinct-cell identities, mixed observed sets at every fixed-block internal node, and the semantic adapter from this concrete score to forced compatible labels with zero resolution costs in the general D_lambda definition remain to be supplied.
+2. The newly proposed distinct-cell, mixed-descendant and D_lambda adapter terms require elaboration and checking. Their semantic conventions are explicit in `PolytomyStarSemantics.lean`; there is no accepted kernel verification.
 3. An explicit external tree/refinement representation must be shown equivalent to grafting all permutation-valid block joining trees. The mathematical proof already gives this correspondence, but that representation theorem is not formalized here.
 4. Finite encoded inputs, polynomial construction/time/bit-size bounds, and a polynomial NP certificate checker remain to be formalized. Classical MSSC NP-hardness must enter through a precise, attributed complexity interface. The finite decision equivalence alone is not a formal NP-hardness theorem.
 5. The separate full-DAG subset dynamic program still needs its own formal semantics, correctness induction, and operation/bit-cost bounds.
@@ -56,6 +71,9 @@ Source inspected against Lean v4.33.1 and mathlib revision 0df444a360eaa60ab8c11
 - Mathlib `Algebra/BigOperators/Group/Finset/Defs.lean`: generated additive `Finset.sum_map_toList`.
 - Mathlib `Algebra/BigOperators/Group/Finset/Basic.lean`: `card_eq_sum_ones` and generated additive `sum_filter`.
 - Mathlib `Data/Nat/Find.lean`: `Nat.find_spec` and `Nat.find_min'`.
+- Mathlib `Data/List/Nodup.lean`: the exact `List.nodup_flatMap` characterization and the `Nodup.product` proof pattern for disjoint indexed cell blocks.
+- Mathlib `Data/Finset/Card.lean`: `List.toFinset_card_of_nodup`.
+- Mathlib `Data/Sum/Basic.lean`: `Sum.inl_injective`, `Sum.inr_injective`.
 
 This records a read-only dependency audit, not comprehensive API validation or a successful build.
 
