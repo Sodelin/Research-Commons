@@ -27,6 +27,10 @@ UNVERIFIED; exact limits, API/library variants and retained errors are explicit.
 The changed public transport route passed its existing probe with normal exit
 and encrypted readback. [The verification record](FULL-CONTEXT-VERIFICATION.json)
 keeps that infrastructure result separate from mathematical acceptance.
+The [retained compiler dependency review](POPULATION-DECLARATION-DEPENDENCY-REVIEW.json)
+recovers341 required declarations across20 modules for the same physical row
+endpoints. Source-command extraction remains open; this is reused old metadata,
+not a new proof or permission to replace full module bodies.
 
 ## Actual hosted checks
 

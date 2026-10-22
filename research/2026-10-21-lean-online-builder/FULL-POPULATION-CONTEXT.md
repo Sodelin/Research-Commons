@@ -82,3 +82,18 @@ failed with "transform: short source buffer". It returned no authenticated
 audit payload and does not establish absence. The exact lookup and evidence
 scope are in POPULATION-DEPENDENCY-AUDIT-RECOVERY.json. Further source work
 must preserve the same actual population theorem and its full quantifiers.
+
+
+The subsequent JSON/base64 read recovered the original834701-byte gzip,
+Git blob10b6aabf81b025e648e40ce871ba5d40485bb13e. Its decompressed7607785-byte
+JSON exactly matches the original certificate's audit_raw_sha25698561437.
+The compressed and decompressed hash fields are distinct; the initial guard
+comparison was corrected only after reading that complete certificate field.
+
+The old compiler records give341 transitive owned declarations across20 modules
+for the SAME two endpoints. The pending first-mark declaration is outside that
+closure; the actual SourceEpochRenewal first-jump theorem is inside it.
+Keeping whole bodies instead expands to65 modules and reintroduces first-mark.
+A declaration-preserving source extraction must therefore retain exact command,
+instance and deriving scopes; no such new document or check is claimed yet.
+POPULATION-DECLARATION-DEPENDENCY-REVIEW.json records the full selected references.
