@@ -2,8 +2,8 @@
 
 The full G1–G7 goal remains active. Current authored source is in existing
 [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[493f190d](https://github.com/Sodelin/Research-Commons/tree/493f190de1ae3bdff86a98d4f5659defec391fc5/research/2026-10-21-lean-rust-solver-builder).
-The221-file packet and changed bodies were read back against immutable commits.
+[4ac6aa85](https://github.com/Sodelin/Research-Commons/tree/4ac6aa8565ec8aa2bac1d5dc4b3d31af64e86859/research/2026-10-21-lean-rust-solver-builder).
+The223-file packet and changed bodies were read back against immutable commits.
 [EVIDENCE.json](EVIDENCE.json) retains exact sources, scope, failures, actual
 verification, privacy limitations and remaining work. No source was merged here.
 
@@ -14,6 +14,7 @@ verification, privacy limitations and remaining work. No source was merged here.
 | Retained provider to supplied Problem | One bank per target-labelled piece across all ordered rows/menus/history; original domain conjoined with restrictions; overlaps and equal-mask Row IDs preserved | Rust uncompiled/unexecuted; mathematical supplied data do not establish physical source/target/action coverage |
 | Guarded terminal-target query |64242B frontend406009f9 reuses whole-history consistency and binds shared constants; exact target/free-history association retained | Source only; verified QE/selector/result origin and native-to-Valid(.stop target) proof remain open |
 | Population certificate and sparse-row bridge |6083B finite-support checker proposal,15076B exporter and exact2946B peer row composition retained | Complete Lean contexts unelaborated; no literal rendered/checked or native exporter run; panel/key/word/raw completion/readout refinement remains open |
+| Exact pure coefficient projection |3023B literal declarations/proofs with UTF-8 source map; source below hosted ceiling | UNELABORATED/UNSUBMITTED; no table, source validity or actual physical probability selected |
 | Main source inventory | Peer776modules/5911868B retains G1/BOTH G2/full-timed binary-M3 G5; prior775 entries/order preserved | Source inventory only; pinned4.33.1 full imports/aggregate types/axioms/object custody UNRUN |
 
 Lean evidence is attributed to the existing owner's [PR3](https://github.com/Sodelin/Research-Commons/pull/3)
@@ -56,3 +57,9 @@ phone project/build artifact or new chat/worker occurred.
 G1, BOTH G2 and full-timed binary-M3 G5 remain the recovery baseline. Original
 G3/G4/P1/P5 standards and owners remain preserved. Full source/native/game/QE/
 selector/CorrectRun/frontier acceptance remains open.
+
+The packet README is consolidated around current components and contracts;
+historical sources/rejected attempts retain their immutable evidence links.
+Read-only coordination recovery found historical source/profile/bootstrap
+boundaries, with no matching actual Linux writer grant in the inspected packets.
+No owner route was contacted and no turn was started/resumed/interrupted.
