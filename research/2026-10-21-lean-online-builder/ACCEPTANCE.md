@@ -88,7 +88,7 @@ ordered rows, coefficient lengths and hemit. This forward map retains actual
 BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
 validity-origin and physical-class/readout/native gates are explicit.
 
-There are33 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
+There are34 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
 complete retained G7 game/rank component, finite path-budget union bridge and
 exact free-history game-horizon composition are checked at their hosted scope.
 Conditional two-sided source transfer also preserves Winning and the SAME valid
@@ -113,3 +113,9 @@ definitions and original quantifiers are retained, with no extra Encoded-image
 premise. The generic library pass supplies no particular native table/check,
 authenticated input/result or pinned import/object acceptance. A larger client
 input limit is not a theorem or native permit.
+
+The population exporter source-boundary document additionally passed all eight
+complete audits. Its exact taxon-function coercion correction and rejected
+first revision are retained in POPULATION-EXPORTER-SOURCE-BOUNDARY.md. Original
+validity/reachability suppliers are reused; the exporter remains uncompiled and
+no particular native table or emitted-document origin is accepted.

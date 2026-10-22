@@ -1,6 +1,6 @@
 {
   "kind": "authored_redacted_acceptance_and_remaining_work",
-  "revision": 35,
+  "revision": 36,
   "baseline_commit": "1138a5b1a281caa00b38e0976db95b586938754b",
   "scope_reconciliation": "https://github.com/Sodelin/Research-Commons/blob/1138a5b1a281caa00b38e0976db95b586938754b/research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md",
   "attributed_peer_scientific_outcomes": "PEER-SCIENTIFIC-OUTCOMES.json; source-owner hand verdicts retain their explicit evidence level and do not extend this builder's bounded reviews.",
@@ -338,10 +338,19 @@
         "selected_audit_occurrences": 4,
         "types_and_axioms": "CHECKED-FOLLOWONS.json",
         "verification": "SCOPED-POPULATION-CONTEXT-VERIFICATION.json"
+      },
+      {
+        "case": "population-exporter-source-boundary",
+        "source": "lean/scoped-context/PopulationExporterSourceBoundary.lean",
+        "source_sha256": "8d0b7e50dccb9f627e7158753498a519c65d83a1ec9652b75e682a87a288ea0a",
+        "selected_audit_occurrences": 8,
+        "types_and_axioms": "CHECKED-FOLLOWONS.json",
+        "verification": "POPULATION-EXPORTER-SOURCE-BOUNDARY-VERIFICATION.json"
       }
     ],
     "count_scope": "Audit occurrences are not unique discoveries or independent theorem counts. Original certificate checks/false/sorry controls are separately recorded in CHECKED-STATEMENTS.json.",
-    "native_package_accepted": false
+    "native_package_accepted": false,
+    "checked_follow_on_cases": 34
   },
   "main_prepared_context": {
     "module_count": 778,
@@ -691,7 +700,8 @@
       "g7-finite-target",
       "population-coefficients",
       "g7-trace-rows",
-      "scoped-population-certificate"
+      "scoped-population-certificate",
+      "population-exporter-source-boundary"
     ],
     "new_mathematical_cases": 0,
     "normal_exit_and_verified_encrypted_readback_required": true,
@@ -700,7 +710,7 @@
     "controller_binding": "UNBOUND",
     "current_component_driver_sha256": "ba26db6df001e011963e569cc02676c3025a30a83f9e54cf4d758d1723477b16",
     "full_context_source_driver": "check_online_context.py",
-    "full_context_source_driver_sha256": "7f4e4968da91ca392080f5480eab03533de8e29c7baa0026f4c0ac08b05153ed",
+    "full_context_source_driver_sha256": "46eaced8f14399e5e274b500fa5d408d477c55b4607d9786d5a0b8e7f576b6af",
     "full_context_actual_scoped_check": "SCOPED-POPULATION-CONTEXT-VERIFICATION.json",
     "original_node_clients_unchanged": true,
     "separate_full_context_client_sha256": "076f72e75f1fa1e24736d14c06a18b757f6e073b43536dd9d5ba3d63d88d186c"
@@ -769,6 +779,28 @@
       "further generic bind helper derivations"
     ],
     "remaining": "actual captured native-to-literal/fibre/certificate and authenticated request-result binding",
-    "scoped_population_context": "Compiler metadata/source extraction reused the original population theorem; this is caller verification/integration, not a new mathematical discovery."
+    "scoped_population_context": "Compiler metadata/source extraction reused the original population theorem; this is caller verification/integration, not a new mathematical discovery.",
+    "captured_input_gate": "CAPTURED-INPUT-PREFLIGHT.json",
+    "exporter_source_compatibility": "Existing original source/input/deciders reused; real leaf-embedding target mismatch corrected in hosted use-site only."
+  },
+  "population_exporter_source_boundary": {
+    "source": "lean/scoped-context/PopulationExporterSourceBoundary.lean",
+    "source_sha256": "8d0b7e50dccb9f627e7158753498a519c65d83a1ec9652b75e682a87a288ea0a",
+    "selected_audits": 8,
+    "verification": "POPULATION-EXPORTER-SOURCE-BOUNDARY-VERIFICATION.json",
+    "retained_deciders_reused": true,
+    "old_literal_source_reused": true,
+    "native_exporter_target_mismatch_found": true,
+    "taxon_function_coercion_source_proposal": {
+      "target": "Explicit coercion of N.leaf embedding to its original taxon function.",
+      "proposal": "proposals/PopulationExporterTaxaCoercion.patch",
+      "patch_sha256": "fbc61fc15cbb20b24cc352f074a3aadb25eaaadc765a957d8a70ec05216189c5",
+      "proposed_result_sha256": "2ceaff7ac28d712d173e10aaa5632b8f8a6956d3b96d503686631415e94490cf",
+      "native_source_applied": false,
+      "rust_compatibility_checked": false
+    },
+    "actual_native_table_or_renderer_checked": false,
+    "original_rust_edited_or_executed": false,
+    "native_selection_unchanged": true
   }
 }

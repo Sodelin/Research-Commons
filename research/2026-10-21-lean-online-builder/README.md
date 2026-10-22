@@ -37,7 +37,7 @@ caller; the old metadata and original population mathematics are reused.
 
 ## Actual hosted checks
 
-[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains33 bounded follow-on
+[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains34 bounded follow-on
 cases with complete selected types, axiom lists and revision dispositions.
 The original two certificate checks and rejection controls are additionally
 recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
@@ -58,6 +58,7 @@ recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
 | Successful queried rows | Conditional identities on actual entering support, complete output fibres and exact compression; three selected audits | [Trace rows](G7-SUCCESSFUL-TRACE-ROWS.md) |
 | Pure coefficient comparison | Exact finite rational sums, absent exponents and polynomial equality; three selected audits with rejected original retained | [Coefficient projection](G7-PURE-COEFFICIENT-PROJECTION.md) |
 | Actual population-table certificate | Complete admitted-Code fibres, duplicate aggregation, zero on absence and the same positive-rate/nonnegative-time source kernel; four complete types/axiom audits | [Physical certificate](SCOPED-POPULATION-CONTEXT.md) |
+| Population exporter source boundary | Existing arbitrary-finite reachability/validity deciders and original input; confirmed taxon-function coercion fix, eight complete audits | [Source boundary](POPULATION-EXPORTER-SOURCE-BOUNDARY.md) |
 | Finite laws and certificates | Shared-law moments, PMF/pushforward, grouped rational banks, original certificate roots, affine receiver and exact literals | [PMF](CM-FINITE-PMF.md), [Affine](AFFINE-CERTIFICATES.md), [Literals](AFFINE-LITERALS.md) |
 | P1/P5/G4 support | Explicit finite product/threshold laws, ordered operator algebra/integrals and finite interpolation/determinant statements | [Selected statements](CHECKED-FOLLOWONS.json) |
 
@@ -89,6 +90,11 @@ hosted checked; the sparse-row composition proposal and full native imports
 remain unverified and outside778. The old module closure exceeds the normal
 client's256KiB source guard. Dependency-preserving command extraction checks
 the same physical certificate in99,274bytes. No native check occurred.
+
+The [exporter source-boundary check](POPULATION-EXPORTER-SOURCE-BOUNDARY.md)
+confirms the existing source-validity decider interface and corrects a real
+embedding/function proof-target mismatch. The original Rust remains unedited
+and unexecuted; this check supplies no particular native table or runtime origin.
 
 ## Original source context
 
