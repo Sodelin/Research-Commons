@@ -18,4 +18,4 @@ lean_lib RestrictedCausalSource where
     `ReadyRetainedNormalization, `OriginalProjectionContraction,
     `OriginalIndicatorProjection, `OriginalCanonicalSourceAdapter,
     `EndpointColliderActivation, `InducingPathSeparation, `LiteralSelectedMAG,
-    `SelectedMAGValidity]
+    `SelectedMAGValidity, `FiniteOriginalTargetImage]
