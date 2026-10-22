@@ -77,3 +77,11 @@ may be reused for those equal masks without identifying the Row IDs.
 Complete target-labelled source/action coverage, exact native AST/game
 semantics, history-relative QE/selector/CorrectRun and authenticated runtime
 origin remain open. Native first-writer admission is still UNBOUND.
+
+A concrete finite certificate SOURCE PROPOSAL is now in
+lean/proposals/NativePopulationTableCertificate.lean. It compares native
+rational coefficients against the existing literal merger recurrence on the
+union of reference support and supplied destinations, including zero outside.
+Its complete context is UNELABORATED; no selected proof or native run occurred.
+See G7-POPULATION-TABLE-CERTIFICATE.md for the exact remaining encoding and
+full-epoch panel relation. The original mathematical engine is unchanged.
