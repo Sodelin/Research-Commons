@@ -183,7 +183,8 @@ from typed natural gamma=P(parent1), conditional on an explicit original-port ma
 
 The existing Lean owner's generic native bank layout now has attributed hosted
 PASS for bankEquiv and ordered_bank_positions. The exact source is integrated,
-with the original-Code wrapper explicitly SOURCE ONLY. Every edge precedes the
+with the original-Code wrapper now checked in its complete43-original-module
+hosted admission component, including two explicit API variants. Every edge precedes the
 unique ancestral slot; original hybrid order still comes from supplied
 occurrence equivalences. See evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json
 and SOURCE-CODE-ROW-BINDING.md. Native compilation/dispatch/record admission
@@ -193,10 +194,29 @@ The existing GParity.Chart value layer is now integrated unchanged with the
 exact NativeCellFormReflection proof. Its four selected hosted audits preserve
 forms, coefficients/bounds/strictness and comparison/interval order. The exact
 original-definition projection and submitted-source hash were reconstructed;
-three prior failed proof revisions remain failures. The aggregate decodeRows/
-compileCellList equality and native/Code/source admission stay open. Internal
+three prior failed proof revisions remain failures. The aggregate decodeRows/compileCellList equality now has attributed hosted
+checking from primitive FieldReflection premises; the exact captured-field
+instance and native/Code/source admission stay open. Internal
 unit bookkeeping weights differ from external Farkas multipliers. Derived
 CHART rationals may exceed256bits and retain the original exact output route,
 not the raw AFFINE input limit. NATIVE-ROW-FIELD-CONTRACT.md records these
-interfaces. The current545-module source metadata adds only Chart and this
-proof to543; full bodies/imports/objects are not independently accepted here.
+interfaces. The historical545-module source metadata added Chart and the form proof to543;
+full bodies/imports/objects were not independently accepted here.
+
+The actual Code/admission/layout component review is in
+evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json; the exact updated
+wrapper is integrated. Concrete captured Code/field instantiation and pinned imports remain open. G7-POLICY-REUSE.md additionally recovers existing source
+census/QE/CAD/strategy components against the ORIGINAL full policy contract.
+Its general-channel D horizon and original support PATH costs must not be
+replaced by the restricted pooled prototype's k horizon. No general policy
+extraction/backend/model execution is claimed by that source intake.
+
+The complete eight-block aggregate reflection is integrated unchanged as
+lean/NativeCellAggregateReflection.lean. Four complete selected hosted types
+and standard-axiom lists were reviewed; the69573B exact source projection and
+audit submission were independently reconstructed. It derives ordered decoded
+row equality and original coefficient lengths, then hemit with complete
+registry membership. It does not assume the row equality. The current prepared
+native context has546modules/4530839B; all prior545 entries are unchanged.
+No native/full-import/object acceptance or new execution follows. See
+evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json.

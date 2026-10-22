@@ -130,3 +130,14 @@ the outer task. The exact source pins/call sites and remaining boundaries are
 recorded in evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json under
 native_request_matrix_certificate_binding. No runtime/API/whitelist or writer
 admission was changed.
+
+The generic aggregate equality is now supplied by the exact12798B
+NativeCellAggregateReflection source, SHA256
+6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2.
+Four complete selected hosted types were reviewed and its source assembly
+reconstructed. FieldReflection contains primitive fields/positions/orders,
+not hemit or an emitted-row equality. It proves the full eight-block equality,
+original coefficient lengths and complete-registry finite-set link. Construct
+its concrete captured-Code instance, then reuse the original wire witness/
+contradiction receivers. Keep runtime origin and parser/native refinement,
+source/port/admission/readout premises and encrypted first-writer binding open.

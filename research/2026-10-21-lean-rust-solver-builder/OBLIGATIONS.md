@@ -41,16 +41,26 @@ G3/G4/P1/P5 standards, canonical admission and the writer hold remain distinct.
 
 The generic ordered-bank construction is now supplied by the exact checked
 NativeOrderedBankLayout source, with two selected complete-type/standard-axiom
-audits at hosted4.35 scope. OriginalCodeBankLayout remains source-only.
+audits at hosted4.35 scope. OriginalCodeBankLayout now has complete admission-
+component hosted checking with two explicit API variants and six selected
+audits; exact captured Code and pinned full imports remain open.
 The concrete captured-Code/occurrence/import/reflected-field/emission relation
 is still open; no new arbitrary layout construction or duplicate suite is needed.
 
 Four generic native-form endpoint types now have attributed hosted checking
 with exact source/projection/submission review; their proof and original
-GParity.Chart body are integrated unchanged. The aggregate ordered-list
-binding still requires every original field/list/layout premise, coefficient
-well-formedness and decodeRows equality. Preserve internal unit bookkeeping
+GParity.Chart body are integrated unchanged. The aggregate ordered-list binding now derives coefficient well-formedness
+and decodeRows equality from primitive FieldReflection premises, with four
+selected hosted audits. A concrete captured request/Code field/list/layout
+instance and actual native-result refinement are still required. Preserve internal unit bookkeeping
 versus external Farkas weights and unbounded derived exact rationals within
 the original certificate frame. No new native/compiler/CI execution or global
 physical/master conclusion follows. See CELL-FORM-REFLECTION-HOSTED-REVIEW.json
 under evidence and NATIVE-ROW-FIELD-CONTRACT.md.
+
+The complete43-original admission/layout component and four-endpoint aggregate
+reflection are attributed hosted evidence, not pinned native acceptance.
+The actual captured FieldReflection instance and existing wire receiver
+composition are the next scientific join. Source maps, rejected attempts and
+exact selected types remain retained. General G7 policy/QE/extraction work
+continues independently under G7-POLICY-REUSE.md; no runtime hold is bypassed.

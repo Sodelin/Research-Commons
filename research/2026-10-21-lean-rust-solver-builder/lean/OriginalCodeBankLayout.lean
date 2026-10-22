@@ -1,5 +1,4 @@
 import G7OriginalAdmission
-import NaturalCellAffineCompiler
 import NativeOrderedBankLayout
 
 /-!
@@ -14,7 +13,6 @@ namespace Astra.OriginalCodeBankLayout
 open Nanuq.Source
 open GProgram.G7.OriginalFiniteEncoding GProgram.G7.OriginalAdmission
 open UnifiedLean.Source.NativeParentRouting
-open UnifiedLean.G6.NaturalCellAffineCompiler
 
 variable {X ID : Type*} [Fintype X] [Fintype ID]
 variable [DecidableEq X] [DecidableEq ID] {nh : ℕ}
@@ -22,7 +20,8 @@ variable [DecidableEq X] [DecidableEq ID] {nh : ℕ}
 /-- The supplied ID order must be the native ORIGINAL hybrid occurrence order. -/
 noncomputable def layout (c : Code X ID) (hb : BinaryValid c)
     (hr : RegistryValid c) (idOrder : ID ≃ Fin nh) :
-    BankVar (sourceOfValid c hb) ≃
+    (NV (X := X) (ID := ID) ⊕
+      (Option (NE (X := X) (ID := ID)) ⊕ Hybrid (sourceOfValid c hb))) ≃
       Fin (vertexCount (Fintype.card X) (Fintype.card ID) +
         edgeCount (Fintype.card X) (Fintype.card ID) + 1 + nh) :=
   Astra.NativeOrderedBankLayout.bankEquiv

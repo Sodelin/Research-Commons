@@ -32,12 +32,13 @@ ne=edgeCount n_taxa h_hybrids and D=nv+ne+1+h_hybrids, the required ONE layout i
 In particular the native edge slots precede Option.none. An arbitrary Option/
 Fintype enumeration does not prove this order. The generic layout equivalence and all position/unique-ancestral facts now
 have attributed hosted checking in NativeOrderedBankLayout. The Code wrapper
-remains source-only; its full import and captured-occurrence instance, reflected
+now has a complete admission-component hosted check; its pinned full import,
+captured-occurrence instance, reflected
 chronology/exposure/coin fields and exact ordered emission remain required. Existing compileCellList_toFinset then supplies the finite-set
 link; it does not prove a native compiler emitted that list. Preserve duplicates
 and original multiplier positions until their ordered checks have completed.
 
-The peer's543-module graph/selection hashes and dependency order were
+The historical peer543-module graph/selection hashes and dependency order were
 independently recomputed: only NativeOrderedBankLayout and OriginalCodeBankLayout
 were added to the prior541 metadata; all previous module entries are unchanged.
 All4.50MB of module bodies were not independently retrieved here. This is source
@@ -53,11 +54,36 @@ algorithm correctness, per-occurrence degree counts, exact captured Code and
 layout/emission correspondence are still unproved native-refinement obligations.
 No class/readout/parameter admission follows from native validation.
 
-The exact generic source and source-only Code use-site are now integrated
+The exact generic source and original-Code use-site are integrated
 byte-identically as lean/NativeOrderedBankLayout.lean and
 lean/OriginalCodeBankLayout.lean. Their scope/selected complete-type hashes/
 standard axioms and reconstructed submitted-source hash are retained in
 evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json. This closes the generic
 construction obligation in the hosted4.35 context, not the concrete
-captured-Code import/refinement or pinned4.33.1 acceptance. The new543-module
-metadata adds only these two modules to541; all older entries are unchanged.
+captured-Code import/refinement or pinned4.33.1 acceptance. The historical543-module
+metadata added only these two modules to541. The subsequent545-module context
+retained all533 original native entries; only the owned Code wrapper changed
+from its previous545 snapshot, for4518041B total.
+
+The current Code wrapper9a8cb563 has attributed hosted checking together with
+the COMPLETE43-original-module admission closure (41 unchanged bodies, two
+explicit hosted API variants) and the generic layout. Six complete selected
+types/standard-axiom lists and the exact250412B virtual/submitted hashes were
+reviewed/reconstructed. See evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json.
+This closes the generic source-decoder/layout component use-site in that4.35
+context. It does not supply a particular captured Code, all original constraints,
+full pinned native imports/objects or the actual Rust emission equality. The
+pinned PMF/product originals remain unchanged; rejected/capture-limited attempts
+retain their REJECTED/UNVERIFIED dispositions.
+
+The aggregate theorem at peer111036f9 now derives exact ordered CHART decoding
+against compileCellList without assuming hemit or an emitted-matrix equality.
+Its primitive FieldReflection fields are explicit in the unchanged source and
+evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json. All original emitted
+coefficient lengths are proved before using decodeRows. The final toFinset
+result still requires complete membership of every original registry list.
+Only internal unit bookkeeping weights are erased. The first concrete gap is
+constructing those fields for the exact captured Code and reflected records;
+the native parser/validator/result origin and physical admission do not follow.
+The current546-module metadata adds ONLY the aggregate source to545, with all
+prior entries unchanged and4530839B total; the quiet outer refusal remains.
