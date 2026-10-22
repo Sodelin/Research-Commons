@@ -30,3 +30,14 @@ The immediate priority is end-to-end correctness and prior-work reconciliation, 
 ## Scope guard
 
 Two additional positive targets with stronger experimental or nondegeneracy assumptions have been proposed, not adopted: controlled preparation of hidden initial concentrations, and exact timed lineage observations with distinct division rates. They must not silently replace the original broader obligations. No full G3/G4 closure, new empirical biological validation, historical novelty, or new Lean verification is asserted by this checkpoint.
+
+## Revision — 07:22 UTC
+
+Two additional complete scoped hand outcomes sharpen the current priorities:
+
+- [Polytomy refinement](../2026-10-22-dot-developmental-lineage-score-interface/POLYTOMY-REFINEMENT-COMPLEXITY.md): NP-completeness already for a star differentiation tree with arbitrary composite child clades, via an exact min-sum-set-cover reduction; an exact subset dynamic program handles the full supplied-map objective with exponential degree dependence. This is not a proof of hardness for all-single-leaf polytomies or fixed-size alphabets. Classical subset/amalgamation algorithms must retain attribution. The next obligation is exact-objective prior-work comparison and full reduction formalization, not preserving an unsupported laminar-easy dichotomy.
+- [Neutral three-species observation fibre](../2026-10-22-dot-reaction-partial-observation/NEUTRAL-THREE-SPECIES-OBSERVATION-FIBRE.md): one fixed initial state and one exact continuous observed coordinate identify the declared neutral-family rates precisely outside the equal-coupling fibre, with the stated equal-initial-mass label-swap exception. Iterated brackets supply the observation adapter. Unknown extra species, nonneutral rates and sampled/noisy observations remain outside this theorem. No additional hidden-state preparation was adopted.
+
+The [causal prior-work reconciliation](../2026-10-22-dot-restricted-causal-interventions/PRIOR-WORK-EXACT-CLAIM-RECONCILIATION.md) now credits the actual Zhou–Kocaoglu common-source realization and listing theorem in its no-selection domain. Explicit counterexamples show why raw observational representations and that no-selection algorithm cannot simply replace the selected named-root adapter. This does not establish historical novelty. The [phylogeny comparison](../2026-10-22-dot-phylogeny-root-blob/PRIOR-WORK.md) similarly keeps unresolved priority coverage explicit.
+
+All four assignments continue toward genuine source-only proof terms, whole-claim dependency preservation and exact prior-work reconciliation. Unelaborated source is not kernel evidence. The proposed stronger-assumption targets in the scope guard remain unadopted.
