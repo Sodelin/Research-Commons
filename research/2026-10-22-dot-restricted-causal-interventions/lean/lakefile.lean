@@ -16,4 +16,5 @@ lean_lib RestrictedCausalSource where
     `OriginalLatentProjection, `OriginalProjectionAncestry,
     `GeneralActiveWalkReduction, `OriginalProjectionLifting, `LatentColliderDetours,
     `ReadyRetainedNormalization, `OriginalProjectionContraction,
-    `OriginalIndicatorProjection, `OriginalCanonicalSourceAdapter]
+    `OriginalIndicatorProjection, `OriginalCanonicalSourceAdapter,
+    `EndpointColliderActivation, `InducingPathSeparation, `LiteralSelectedMAG]
