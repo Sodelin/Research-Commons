@@ -106,3 +106,9 @@ No author contact or external correction submission has occurred. This is an att
 - [Source article](https://doi.org/10.1017/S0956792526100382).
 - [Versioned arXiv PDF](https://arxiv.org/pdf/2505.07638v3).
 - [Research Commons project](https://github.com/Sodelin/Research-Commons).
+
+## 7. Added prior-work attribution: conservation ambiguity
+
+[Enciso, Erban and Kim, Identifiability of Stochastically Modelled Reaction Networks (2020)](https://arxiv.org/pdf/2006.02272), Theorem 3.5 and Example 3.2, already study nonidentifiability caused by restriction to a conserved-total state space. Their example compares a first-order two-species interconversion system with a second-order system having the same continuous-time Markov-chain transition rates at total population two. Their model uses discrete-state falling-factorial intensities, not the monomial diffusion coefficients used here.
+
+Accordingly, conservation-induced ambiguity is prior work. The contribution claimed for this checkpoint is only the displayed exact counterexample to the literal pointwise quantifier in the 2026 diffusion statement and the preservation of its valid all-start generator interpretation. Neither a new conservation mechanism nor historical priority for partial-observation ambiguity is asserted.
