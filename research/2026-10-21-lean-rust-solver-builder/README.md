@@ -199,3 +199,10 @@ base positions and row costs. The six attributed hosted positive-power checks
 now supply the mathematical correlated-bank realization/uniqueness boundary.
 Native conversion, evaluated law, source/action/target transport and execution
 custody remain open; no new native or backend check ran.
+
+A finite population-table certificate proposal now reuses the existing merger
+support instead of all-state enumeration. Its bounded native exporter retains
+exact original inputs and renders typed graph/snapshot/coefficient proof targets
+in RAM. Both the new Rust source and complete Lean receiver context remain
+UNCOMPILED/UNELABORATED; no candidate was rendered or checked. This is a primitive
+certificate route, with full epoch/word, origin and source/action joins still open.

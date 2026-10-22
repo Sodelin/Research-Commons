@@ -83,3 +83,54 @@ selection, authenticated request/result and native object custody remain open.
 All new native/Cargo/Lake/CI/backend/model/control execution remains held by
 the actual UNBOUND first-writer/controller admission. No new source factory,
 worker, key/export, owner retry, local Git or held-job replay occurred.
+
+## Bounded native source exporter, still uncompiled
+
+native/g7_population_certificate.rs now renders the particular table candidate
+in RAM through prepare(context,entering,table,bindings,limits). Prepared borrows
+the exact Context, entering Snapshot and Table and retains the supplied named
+source/module/namespace binding. It is a SOURCE CANDIDATE, never a checked
+certificate or external-origin receipt. No invocation occurred.
+
+The exporter uses existing public fields and validators; it does not call or
+replace population_row. It preserves all native destination positions and
+rational monomials, including duplicate destinations. It checks univariate
+shape and canonical bounded rational data before formatting. It emits exact
+Fin values with bound proof targets, ordered grafts, canonical snapshot fields,
+the original register, taxon sample and all graph edge occurrences.
+
+The resulting source imports BOTH the proposed certificate module and the
+supplied original-source module. It requires actual root/edge-source/edge-target/
+taxon-array equality proofs, source-valid entering/destination Code proofs,
+co-location, the finite coefficient check and the resulting original
+population probability theorem. Decimal integers become exact rational
+literals. Empty Copy/edge function carriers use Fin.elim0 rather than modulo
+or an invented default element. The importer/name strings accept only bounded
+ASCII identifier segments and reject holes/Lean proof keywords.
+
+An ancestral population is the SAME original root and becomes Option.none;
+edge populations retain their exact edge index. Global observer labels remain
+in the captured Context; this internal population statement does not itself
+perform or certify a final observer relabelling. Hybrid registry/forcing,
+raw calendar/readout and target/action coverage remain separate joins.
+
+Inherited profile limits return UNKNOWN before invoking the old validator:
+32 vertices/edges/taxa/hybrids/full-bank coordinates and four local copies.
+Defaults also bound4096 destinations,65536 monomials,65536 rational bits and
+4MiB rendered UTF-8 source, with512-byte names. Arithmetic/output/allocation
+failures return UNKNOWN without a partial Prepared value. Intrinsically malformed
+dimensions, names, snapshots, coefficients or populations remain Invalid.
+No public RC1 operation, canonical profile or dispatch route is added.
+
+These are named construction counters and memory-only output, not process-wide
+resource enforcement or encrypted persistence. Actual compilation/imports,
+complete type/axiom checks and exact generated-source behavior have NOT been
+tested. The proof/exporter sources are not in the peer's776 selection. The
+actual original-owner native controller/recipient/sequence and transitive
+first writers must bind before any Cargo/Lean/native/CI execution. Imported
+context writers are part of that obligation; this module is not a bypass.
+
+After admission, extend the EXISTING population/provider verification group
+with empty Copy, four-copy ordered grafts, exact graph/sample mismatch,
+duplicate destinations, altered/omitted/foreign coefficients and render/bit/
+profile exhaustion. None of these staged checks was executed.

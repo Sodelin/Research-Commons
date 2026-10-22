@@ -1319,3 +1319,6 @@ pub mod word_readout;
 /// Correlated fixed-calendar survival coordinates; no physical coverage assumed.
 #[path = "g7_correlated_survival.rs"]
 pub mod correlated_survival;
+
+#[path = "g7_population_certificate.rs"]
+pub mod population_certificate;

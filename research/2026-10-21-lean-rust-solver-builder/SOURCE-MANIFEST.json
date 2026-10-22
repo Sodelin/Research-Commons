@@ -305,6 +305,11 @@
       "sha256": "adb5fc33c67ebba8e12b2dcb82c45834d238390fc7efab8ff07e4a683e97207b"
     },
     {
+      "path": "evidence/G7-POPULATION-EXPORTER-SOURCE-REVIEW.json",
+      "utf8_bytes": 4072,
+      "sha256": "46ce8c1c997570cc00d6a649577922f299bcf1c588cb28c22b30b776cfd03b92"
+    },
+    {
       "path": "evidence/G7-POSITIONAL-ROW-COVERAGE.json",
       "utf8_bytes": 3255,
       "sha256": "72475f0e95114fe3eee6ce5c5e0457483bd8b72001380e8832538a30f5f32038"
@@ -696,13 +701,18 @@
     },
     {
       "path": "native/g7_exact_law_formula.rs",
-      "utf8_bytes": 60585,
-      "sha256": "88e71aad8a7a0d204ac02c74230f78782f268fa9e53411f4330a62333b65ee47"
+      "utf8_bytes": 60659,
+      "sha256": "b04da15a05597d59643bb8760a229fd1f868a97510f20d58c4a493347da58da6"
     },
     {
       "path": "native/g7_law_table_inlet.rs",
       "utf8_bytes": 22160,
       "sha256": "3ec702da77dc3927ff71d3f4ffbb151835df50667f499cc4736f871f37f1c447"
+    },
+    {
+      "path": "native/g7_population_certificate.rs",
+      "utf8_bytes": 15076,
+      "sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c"
     },
     {
       "path": "native/g7_word_readout.rs",
@@ -761,8 +771,8 @@
     },
     {
       "path": "native/G7-POPULATION-TABLE-CERTIFICATE.md",
-      "utf8_bytes": 4749,
-      "sha256": "16505b523925a6148ba04365810111738415387622ee808ab948ab4e2a9e6088"
+      "utf8_bytes": 7950,
+      "sha256": "0c7544e3133bd6952992d0443a0b5d4d8f832bae11a06eb46b58b94a2f778138"
     },
     {
       "path": "native/G7-TARGET-LABELLED-FAMILY-JOIN.md",
@@ -1061,8 +1071,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 14679,
-      "sha256": "e6c9b6a8d8d909aa6093a9a67a82b55f3f247f5069ff0bd6f176675b68532ad3"
+      "utf8_bytes": 15159,
+      "sha256": "350cad8caef442ea6d3757fff073e648e78d9f7a36c34fb9d68d08937075b816"
     },
     {
       "path": "RECORD-WRITER-GAP.md",
@@ -1513,9 +1523,9 @@
     "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
     "source": {
       "path": "native/g7_exact_law_formula.rs",
-      "sha256": "88e71aad8a7a0d204ac02c74230f78782f268fa9e53411f4330a62333b65ee47",
-      "utf8_bytes": 60585,
-      "lines": 1322
+      "utf8_bytes": 60659,
+      "sha256": "b04da15a05597d59643bb8760a229fd1f868a97510f20d58c4a493347da58da6",
+      "lines": 1325
     },
     "review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
     "contract": "native/G7-FORMULA-CONTRACT.md",
@@ -1527,7 +1537,8 @@
       "cell": "evidence/G7-CELL-CALENDAR-SOURCE-REVIEW.json; prior55667bytes exact"
     },
     "historical_review": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
-    "earlier_peer_core_review_does_not_certify_new_arms": true
+    "earlier_peer_core_review_does_not_certify_new_arms": true,
+    "current_module_declaration_review": "evidence/G7-POPULATION-EXPORTER-SOURCE-REVIEW.json"
   },
   "Code_CHART_physical_receiver": {
     "review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
@@ -1745,5 +1756,19 @@
     "review": "evidence/G7-POPULATION-CERTIFICATE-SOURCE-REVIEW.json",
     "new_audit_or_execution": false,
     "original_engine_changed": false
+  },
+  "G7_population_certificate_exporter": {
+    "source": {
+      "path": "native/g7_population_certificate.rs",
+      "utf8_bytes": 15076,
+      "sha256": "19967b34c4ba2a4b55cb4c93745ed7efd573d2e10edebb67274603d01f78404c"
+    },
+    "review": "evidence/G7-POPULATION-EXPORTER-SOURCE-REVIEW.json",
+    "contract": "native/G7-POPULATION-TABLE-CERTIFICATE.md",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "native_population_engine_unchanged": true,
+    "generated_source_rendered_or_checked": false,
+    "source_or_result_origin_authenticated": false,
+    "new_profile_or_dispatch": false
   }
 }
