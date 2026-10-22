@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 22:57 UTC: original arbitrary-tree parser and caller realization
+
+Four OPTIONAL UNELABORATED modules give the exact two-unary-field raw grammar on arbitrary binary trees, a five-label/two-Boolean-stack syntax machine, caller-preserving operational embedding and a byte-exact reuse of the existing forward frame parser for the ORIGINAL pair convention. The forest proof charges a physical pending count q in 2L+q+2; the singleton entry actually creates its slot and takes at most 2L+4. Neither fuel nor decoded naturals occur in finite control. All caller-external stacks and caller frame survive the embedding; pending and private scratch are clean on both paths.
+
+A fresh pinned read of Mathlib/Computability/StateTransition.lean verified EvalsToInTime.trans's second-plus-first time ordering; the new helper explicitly commutes it. Existing proof-side Embedding/Runs source was reused. A connector parameter-schema error on an initial read was corrected using its declared repository_full_name parameter; this was not an access/approval denial or a write. No research code, toolchain, tests, CI, installation or compilation ran.
+
+The grammar machine is deliberately not the typed checker. Legal node positions cannot be replaced by all parseable bit suffixes: an original unary leaf field can contain a spurious valid tree encoding. Physical node/interval navigation, typed-cell and independent target guards, all fixed clades, uniqueness/set equality, original score, complete all-input verifier cleanup/time, compatible source-hardness and transitive kernel/axiom checks remain required. The existing saturated target/budget adapter is reused as prior work, not newly claimed. The constructor remains a proposed source term, and no earlier review or external build evidence is extended to this packet.
+
 ## Continuation, 22:31 UTC: complete original all-input constructor source chain
 
 Thirteen OPTIONAL UNELABORATED modules transform the complete original validator's actual instructions through Embedding.stmt/runs into the constructor's fixed five-Boolean control, preserving private boundaries, extra tapes and two caller bits with the SAME transition count. Concrete header/product/copy/subtract/peek/pop/load/clear routines physically produce every original case decision. The controller follows original rawRowMSSCBits, and the all-word validator rejects malformed/count/range/coverage failures before N=0. Fixed literal outputs are actual pushes, not a parameterized serialization oracle.

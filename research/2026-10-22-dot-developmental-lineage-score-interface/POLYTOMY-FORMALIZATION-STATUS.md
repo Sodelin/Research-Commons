@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 22:31 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 22:57 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued ORIGINAL independent verifier parsing SOURCE, 22:57 UTC
+
+Four OPTIONAL UNELABORATED modules supply an exact raw grammar for arbitrary binary fixed trees, a fixed two-stack/five-label syntax machine, its actual caller embedding and reuse of the existing forward frame routine for the ORIGINAL verifier pair split. The raw grammar retains both unary cell fields. The physical pending counter is clean on either exit; singleton-prefix time is bounded by 2L+4 and a supplied physical q-tree forest by 2L+q+2. Pair splitting retains the original bytes and costs at most 3L+5 using previously supplied code.
+
+POLYTOMY-ARBITRARY-TREE-PARSER.md gives the complete hand argument and exact limit. The syntax component does NOT check typed-cell ranges, target validity, clade preservation or score. A concrete counterexample rules out treating every parseable suffix as a node start: leaf (1,0) has a suffix inside its block field encoding leaf (0,0). Legal token/node tracking is therefore still necessary before interval/clade scans. The checker must keep arbitrary supplied binary blocks, not only canonical combs, and may not request an MSSC source or source-solution witness.
+
+The prior complete original constructor term remains only a source proposal. This new parser is not the missing full VerifierMachineWitness. Complete independent verifier composition, encoded-source hardness, all dependency/kernel checking, arbitrary-DAG and biological obligations remain open. No execution, new independent review, novelty or full-closure claim.
 
 ## Continued COMPLETE ORIGINAL all-input constructor SOURCE, 22:31 UTC
 
