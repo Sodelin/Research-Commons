@@ -1226,3 +1226,7 @@ impl Arena {
 /// Existing bounded joint-LAW supplier, with source and menu bindings retained.
 #[path = "g7_law_table_inlet.rs"]
 pub mod law_table_inlet;
+
+/// Controlled full-word composition; natural register and forced pulses stay distinct.
+#[path = "g7_controlled_word.rs"]
+pub mod controlled_word;

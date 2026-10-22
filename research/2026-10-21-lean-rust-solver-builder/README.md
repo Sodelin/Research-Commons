@@ -18,6 +18,7 @@ or phone project/build artifact is used. No new chat or sub-agent is created.
 | Rust CHART row-export adapter | Reuses original parser/compiler; all51 original native source inputs prepared remotely | Source only, uncompiled/unexecuted; five staged controls and writer binding open |
 | Complete abstract G7 game and rank semantics | Both retained bodies, one explicit proof-only hosted repair; twelve selected audits and exact document/submission reconstructed | Actual physical source/response coverage, native AST refinement, effective QE and relative-history selection |
 | Pure Rust general G7 formula frontend | Authored exact Polynomial/Rational-based library and isolated Cargo proposal; source review only | Uncompiled/unexecuted; actual law supply, AST refinement, QE/relative-history selection, lower witnesses and frontier |
+| Controlled original-ID word composition | Existing conditional-word kernel reused; natural register weights kept outside forced transition substitutions; source review only | Uncompiled/unexecuted; exact native/Lean row relation, physical calendar/readout and full coverage remain open |
 
 The Lean evidence is attributed to the existing [Lean draft PR3](https://github.com/Sodelin/Research-Commons/pull/3),
 in hosted Lean4.35.0/mathlib56a005/manifest3bafb347. It is not an independent
@@ -155,3 +156,10 @@ in evidence/G7-TRANSFER-PADDING-HOSTED-REVIEW.json. The actual native provider,
 case/menu coverage and AST instantiation remain open. Same-carrier legality
 does not prove that a restricted case menu covers a larger original action
 universe; original losing-budget claims retain that coverage requirement.
+
+The private controlled_word module now composes unchanged conditional-word rows
+with the original natural register mixture, retaining full ordered views and
+literal witnesses. It specializes only forced transition coordinates. It keeps
+the inherited four-copy/full-bank profile and explicit all-result refusal.
+See native/G7-CONTROLLED-WORD-CONTRACT.md and its source review; no new compiler,
+control suite, physical source claim or runtime admission is supplied.

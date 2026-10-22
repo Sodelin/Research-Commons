@@ -285,6 +285,11 @@
       "sha256": "93df1c25d0623e63b6b2f40271b64e19cc0b05f5eb71e35b82e6fb0e612a8fce"
     },
     {
+      "path": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json",
+      "utf8_bytes": 12038,
+      "sha256": "d94b9920fe36bd10946d9442e15a5cc22560c6c17f7dfe414d2574738180cfab"
+    },
+    {
       "path": "evidence/HOSTED-RECEIVER-REVIEW.json",
       "utf8_bytes": 10755,
       "sha256": "2822b1ff4928382997caedc12fcf39bff7d5455022b89be1deda6531b8719f0f"
@@ -605,9 +610,14 @@
       "sha256": "bcdebcdd81daf286490d8c19498e201691a54df911e309314ae30ba9d16710e3"
     },
     {
+      "path": "native/g7_controlled_word.rs",
+      "utf8_bytes": 20591,
+      "sha256": "c4f6d679802e06ca2d401f17f08879dd6d63dae878f5a578426cd6b6bd212680"
+    },
+    {
       "path": "native/g7_exact_law_formula.rs",
-      "utf8_bytes": 55519,
-      "sha256": "3de0a20849ef2854ea71d8526848ade9f9817a280f7bd5ddcd029b543665439e"
+      "utf8_bytes": 55667,
+      "sha256": "1a997d5e1cab671734419b092067994cdec202289a5d1aa22e37c4c944ee197f"
     },
     {
       "path": "native/g7_law_table_inlet.rs",
@@ -618,6 +628,11 @@
       "path": "native/G7-ASSERTION-QUERY-CONTRACT.md",
       "utf8_bytes": 3686,
       "sha256": "8fbb0761d2714d1d761e19fd2104254cbf3ec2c6f056ad6f2aeed8a83ef4e510"
+    },
+    {
+      "path": "native/G7-CONTROLLED-WORD-CONTRACT.md",
+      "utf8_bytes": 6093,
+      "sha256": "d9f753cd29a990dfa5ac19340790c59c55a5647077ca7a3c246224d18f79fb3c"
     },
     {
       "path": "native/G7-FORMULA-CONTRACT.md",
@@ -906,8 +921,8 @@
     },
     {
       "path": "OBLIGATIONS.md",
-      "utf8_bytes": 11150,
-      "sha256": "db4a1ac42c44b184b670c2279bbcbd3d66dcb7cf0dc19a08987b0fb9909fe742"
+      "utf8_bytes": 11598,
+      "sha256": "764301ba0e497e9db27ed35f7ca802faa1cb90a5e29456883ff6879f268db544"
     },
     {
       "path": "PROOF.md",
@@ -926,8 +941,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 11633,
-      "sha256": "694af2a22af281f1e9c6e9ede70d5fe9ade6a0c0e45493ac13e1cf37bfd945bc"
+      "utf8_bytes": 12388,
+      "sha256": "88bee1b5ca408e5d23f3e9d5995b200e84349d2379de885890a9dcf44dae8bae"
     },
     {
       "path": "RECORD-WRITER-GAP.md",
@@ -1378,15 +1393,16 @@
     "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
     "source": {
       "path": "native/g7_exact_law_formula.rs",
-      "sha256": "3de0a20849ef2854ea71d8526848ade9f9817a280f7bd5ddcd029b543665439e",
-      "utf8_bytes": 55519,
-      "lines": 1229
+      "sha256": "1a997d5e1cab671734419b092067994cdec202289a5d1aa22e37c4c944ee197f",
+      "utf8_bytes": 55667,
+      "lines": 1233
     },
     "review": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
     "contract": "native/G7-FORMULA-CONTRACT.md",
     "verification_plan": "native/G7-FORMULA-VERIFICATION-PLAN.md",
     "execution": false,
-    "new_canonical_task": false
+    "new_canonical_task": false,
+    "disjoint_controlled_word_declaration": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json; prior55519 bytes remain exact"
   },
   "Code_CHART_physical_receiver": {
     "review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
@@ -1499,5 +1515,15 @@
     "selection_sha256": "1ba50637562461a2bb16f8e9423c934d973076ae059e4b6b5b9272b5362b3730",
     "all773_bodies_independently_read_here": false,
     "native_import_or_object_acceptance": false
+  },
+  "G7_controlled_word_source": {
+    "source": "native/g7_controlled_word.rs",
+    "sha256": "c4f6d679802e06ca2d401f17f08879dd6d63dae878f5a578426cd6b6bd212680",
+    "review": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json",
+    "contract": "native/G7-CONTROLLED-WORD-CONTRACT.md",
+    "compile_status": "UNCOMPILED;UNEXECUTED",
+    "register_mixture_not_specialized": true,
+    "original_conditional_provider_reused": true,
+    "physical_full_source_admission": false
   }
 }

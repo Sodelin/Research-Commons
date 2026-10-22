@@ -110,3 +110,10 @@ work and actual free-symbol metadata. It refuses leaked or captured variables.
 The source/action/base/padded-response/history target mapping is explicit;
 polynomial/AST-to-game equivalence and actual result/physical transport remain
 unproved. No scope checker or new native control has been executed.
+
+The exact controlled-word composition is now source-implemented by reusing the
+existing conditional provider. Natural register initialization stays outside
+forced transition substitution, and complete selected views remain retained.
+All native/Lean refinement, physical calendar/readout/whole-bank and complete
+coverage obligations remain open. Inherited caps are preserved; no new native
+compile or control run is accepted under the writer hold.
