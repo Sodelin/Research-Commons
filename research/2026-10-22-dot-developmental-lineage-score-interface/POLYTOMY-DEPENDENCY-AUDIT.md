@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 14:30 UTC: direct original fixed-child emission
+
+`PolytomyDirectCanonicalOutput.lean` uses the inspected pinned `Finset.map_sort`, `List.toFinset_sort`, range/filter, append/replicate and Nodup APIs to propose direct range enumeration equal to the original canonical code order. An attach induction gives exact fixed-left-comb bit emission; a distinct-type induction gives the original descendant-subtraction cost through bounded arithmetic. The full total constructor remains byte-identical, including fixed yes/no branches and the preceding saturated parser. Arbitrary joining refinements and actual D_lambda remain unchanged.
+
+This removes generic sorting/tree-building/clade-cost work only from fixed-child output specification. Concrete finite emitted membership/row parsing, binary-number output, all execution/step/cleanup proofs, the independent verifier, exact closed source hardness and every kernel check remain missing. No dependency was installed or run, and the new terms have no coordinating-review acceptance. See `POLYTOMY-DIRECT-CANONICAL-OUTPUT.md` for the complete hand argument and primary API links.
+
 ## Addendum, 14:10 UTC: independent verifier saturation, without a witness promise
 
 `PolytomySaturatedVerifier.lean` imports only the preceding local source chain. It proposes the exact bounded-header/budget parser identity and all-pairs/all-tape Boolean equality to the original independent checker. Early dimension rejection is justified by original target validity and parser consumption, not by an assumed constructor origin. The cap (L+C+1)^2 bounds every parsed certificate score because S<=L and vertices<=C, without assuming certificate validity or the NP certificate bound. Original pair framing then bounds the cap by (M+1)^2 in total machine input length. The full unchanged actual-D_lambda/all-refinement endpoint and witness-type transfer are explicit.

@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 14:10 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 14:30 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest direct canonical-constructor output, 14:30 UTC
+
+`PolytomyDirectCanonicalOutput.lean` proposes exact replacement of canonical type sorting by bounded range filtering, exact fixed-left-comb bit emission without constructing the child trees, and actual fixed-block sampling-cost arithmetic from distinct terminal labels. These preserve the original sequence, child-tree orientation, C0, budget and complete serialized bytes. The resulting total `directBoundedConstructor` is pointwise byte-equal to the original constructor on every input. The target's JOINING refinements are still arbitrary; only its already fixed child combs are emitted directly. `POLYTOMY-DIRECT-CANONICAL-OUTPUT.md` supplies the complete hand argument and pinned API references.
+
+The full actual-D_lambda/output-size/independent-certificate endpoint and transfer to the original constructor machine-witness type remain explicit. Range membership still comes from supplied guarded source rows, not an oracle for arbitrary D. Complete emitted row parsing/membership, bounded arithmetic, canonical binary-number output, whole steps/cleanup, independent verifier, closed upstream hardness and all kernel checks remain open. This is source-only algorithmic simplification, not a whole machine certificate or new coordinating-review acceptance.
 
 ## Latest independent bounded-verifier adapter, 14:10 UTC
 
