@@ -29,4 +29,5 @@ lean_lib RestrictedCausalSource where
     `OriginalMAGConnection, `CommonDiscriminatingParents,
     `VertexActivePaths, `MinimalActivePaths, `AncestralShortcutGeometry,
     `MinimalPathChord, `DiscriminatingSectionExtraction,
-    `ActivePathReversal, `VertexDiscriminatingSections, `IntervalDependency]
+    `ActivePathReversal, `VertexDiscriminatingSections, `IntervalDependency,
+    `LiteralMAGInducingChains]
