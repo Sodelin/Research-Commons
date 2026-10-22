@@ -2,7 +2,7 @@
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[a4afd826](https://github.com/Sodelin/Research-Commons/tree/a4afd82611e683701f3c9431a75762876a1e0434/research/2026-10-21-lean-rust-solver-builder).
+[8a96bb01](https://github.com/Sodelin/Research-Commons/tree/8a96bb015b6cb88df196d6897b5437344a09238b/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -111,6 +111,16 @@ and LegalHistory are true at the exact free values. Reachability is additionally
 required for an actual physical transcript. A false/disabled action fibre is
 never itself budget loss; homogeneity may permit stopping. The backend/result
 consumer enforcing those interpretation gates is still required.
+
+The complete abstract G7 game/rank component now has attributed hosted
+checking at peer53ee5a23. Both complete bodies, twelve selected complete types,
+the one proof-only hosted repair and exact source/audit projection were reviewed.
+Two selected axiom lists omit Classical.choice; all use standard axioms.
+The hosted variant remains separate from the unchanged548-module pinned context.
+native/G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md in the component packet pins
+the evaluated actual controlled-readout endpoint and both source coverage
+directions, using one SourcePoint across all rows/menus/history. No independent
+calendar-interval coordinates or literal unlike-polynomial identity is assumed.
 
 NEW native/Cargo/Lake/CI execution remains HELD before the first writer.
 Automatic triggers are removed and the manual job is literal-false. The quiet
