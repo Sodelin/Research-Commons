@@ -114,6 +114,10 @@ No new provider/compiler acceptance follows from that source review.
 [The effective-word/range recovery](G7-EFFECTIVE-WORD-AND-RANGE-SUPPLIERS.md)
 locates the existing state constructor and full sparse coefficient identities,
 including the completion premise on every raw row, even a zero row.
+[The owning calendar review](G7-CELL-CALENDAR-ENCODING-AND-RAW-ROOT.md) matches
+the new source composition to the existing generated-calendar raw-root theorem.
+Exact native word/phase/state encoding is still required; endpoint PMF equality
+alone does not transport the raw zero rows. No new proof case or execution.
 
 [The guarded-query review](G7-GUARDED-ASSERTION-SOURCE-REVIEW.json) checks only
 the new positive-guard source addition and its unchanged-core correspondence.
