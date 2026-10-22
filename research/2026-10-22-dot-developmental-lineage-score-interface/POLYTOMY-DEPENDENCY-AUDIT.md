@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 15:32 UTC: uniform finite-machine saturation
+
+`PolytomySaturatingDecoderMachine.lean` uses only the existing pinned/local TM2 chain. It proposes concrete read/double/clip/discard/restore/setup/clear programs, exact operational inductions, total malformed-prefix handling, an all-input quadratic bound and a clean-output TM2ComputableInPolyTime source witness for cappedUnaryWord. No unbounded numeric control field or nonuniform cap-indexed machine is introduced. The cap is encoded physically, and transient count storage is explicitly bounded.
+
+The frame adapter proves exact all-input Option/suffix agreement with the ORIGINAL saturated numeric reader; failure is not silently reinterpreted as numeric zero. This is a semantic connection plus two actual source-level primitives, not yet a composed caller routine or a complete constructor/verifier machine. All terms remain UNELABORATED. No package installation, compiler/runtime/CI, new coordinating review or kernel certificate occurred. Whole emitted parsing/row/checker programs, operational composition/resource proofs, closed compatible upstream hardness and all kernel checking remain open.
+
 ## Addendum, 15:14 UTC: explicit supplied-row dynamic construction
 
 `PolytomyRawRowConstructor.lean` removes dynamic dependent source-instance/set-image construction from the algorithm and replaces it with supplied-list scans and code-interval tests. Bounded code surjectivity plus the existing injection proves exact predicate/filter equality; exact code sequence then preserves fixed-child bytes, actual cost, every original branch and all complete output bytes. The complete source/all-refinement actual-D_lambda/certificate endpoint is retained. All-successful-saturated-parse bounds cover alphabet, fixed cost and emitted budget without a promise about raw binary values.

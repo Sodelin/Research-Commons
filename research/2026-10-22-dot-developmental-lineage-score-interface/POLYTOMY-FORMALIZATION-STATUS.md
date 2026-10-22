@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 15:14 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 15:32 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest uniform bounded binary decoder, 15:32 UTC
+
+`PolytomySaturatingDecoderMachine.lean` supplies proposed operational terms and a concrete finite TM2 for total cappedUnaryWord: a physical unary cap prefix followed by an MSB-first payload becomes a unary saturated numeric value. A missing cap delimiter returns the empty word. Five Boolean stacks, seven labels and six control values suffice; every input/auxiliary stack is cleared and control restored. The complete hand bound is 10L^2+20L+20 transitions on every L-bit word. Per payload bit, a<=C becomes min(2a+b,C) in at most 6C+6 steps, with transient tallies <=2C+1. The cap is data, not a nonuniform/unbounded control parameter. `POLYTOMY-SATURATING-DECODER-MACHINE.md` gives the full program and invariants.
+
+The original frame transducer's reversed payload is exactly the required MSB-first order. A separate exact readSaturatedViaPrimitive equality retains the original Option failure flag and suffix, invokes the zero/failure-conflating numeric primitive only after a successful raw split, and equals the ORIGINAL saturated numeric reader on all input strings. This is not yet actual caller composition or a whole parser. The full original constructor/actual-D_lambda/all-refinement/independent-certificate endpoint remains explicit. Numeric-frame caller integration, nested source parsing, row/arithmetic/constructor and independent checker programs, whole copy/time/preservation/cleanup proofs, closed encoded hardness and all kernel checks remain open. No execution or new review acceptance.
 
 ## Latest direct supplied-row constructor, 15:14 UTC
 
