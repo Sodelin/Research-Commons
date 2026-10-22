@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 18:03 UTC: actual full original provided-cap prefix
+
+Three OPTIONAL UNELABORATED source modules compose the actual three binary-valued headers and complete two-level rows parser under physical original caps. Failure-absorbing guards prevent later new-attempt routines from reviving failure; actual cap swapping/restoration preserves both caps on all paths. Exact suffix/reversed-log observation equals the ORIGINAL full prefix parser on arbitrary inputs, with explicit four-stage execution and all-path record bounds. Original caps yield time 6L^4+28L^3+67L^2+105L+93 and partial-record growth L^3+4L^2+6L+7.
+
+Only the previously inspected optional proof-side Atom/Routine sequence/branch/loop/transfer APIs and preceding own source proposals are used. No new dependency, concept theorem axiom, installation, runtime, review acceptance, certificate or novelty claim. This remains a provided-cap PREFIX realization: original cap creation, complete-input finish/reversal/tag/cleanup, whole downstream constructor/checker, compatible closed encoded hardness and every kernel check are open. Original encodings/actual-D_lambda endpoint and biological/general-DAG targets remain unchanged.
+
 ## Continuation, 17:46 UTC: actual physical cap-switched header
 
 Three new OPTIONAL UNELABORATED modules give actual three-transfer cap exchange, failure-absorbing numeric-header branching and exact exchange/large-cap-read/restore composition. General words have an asymmetric reverse-and-exchange effect; only unary caps give the required swap. Physical operands C,D and empty scratch are explicit, with no Nat values hidden in finite code/control. The complete third-header pattern costs M(L,D)+3C+3D+7 and restores both caps/scratch on failure as well as success, preserving unrelated extra data and exact original suffix/log observation.

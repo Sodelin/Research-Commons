@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 17:46 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 18:03 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest actual full original provided-cap PREFIX, 18:03 UTC
+
+Three new OPTIONAL UNELABORATED sources compose the failure-absorbing entire rows section with all three original binary-valued headers and actual large-cap switching/restoration. `PolytomyGuardedRowsSection.lean`, `PolytomyProvidedCapPrefix.lean` and `PolytomyOriginalPrefixObservation.lean` retain physical cap/counter/scratch invariants and exact observation as the ORIGINAL parseSaturatedSourcePrefix on every input word. Successful final counter emptiness is conditional; failed partial counter suffixes are not assumed clean. Unrelated caller data/control is preserved.
+
+For supplied original caps L+1 and (L+1)^2 the proposed actual transition bound is 6L^4+28L^3+67L^2+105L+93 and all-path boundary record growth is at most L^3+4L^2+6L+7. All Nat cap/size values remain physical data/specification parameters, not unbounded finite code/control. `POLYTOMY-ORIGINAL-PROVIDED-CAP-PREFIX.md` gives the full hand argument and joined operational/semantic/storage interface.
+
+This is a PREFIX routine under supplied caps, not the full source normalizer. Physical input-length-derived cap creation, trailing-suffix rejection, reversal/tagging and every success/failure cleanup path remain, followed by whole downstream constructor/checker, closed compatible encoded hardness and every kernel check. Original byte-exact encodings, actual-D_lambda/all-refinement/output-size/independent-certificate endpoint and biological/general-DAG scope are unchanged. No runtime, new coordinating review, novelty or full-closure claim.
 
 ## Latest actual physical cap-switched header, 17:46 UTC
 
