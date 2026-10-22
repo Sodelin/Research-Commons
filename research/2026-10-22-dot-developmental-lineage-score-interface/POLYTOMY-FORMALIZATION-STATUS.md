@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 22:07 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 22:31 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued COMPLETE ORIGINAL all-input constructor SOURCE, 22:31 UTC
+
+Thirteen OPTIONAL UNELABORATED modules now supply an actual instruction-level finite-control validator adapter, original fixed-target literal writers, complete entry/cleanup inventories, physical N/m/K/Nm setup, all four original scalar tests, the original finite decision tree, all-word validity/false-path composition, exact standalone FinTM2 input/halt boundaries and source terms for originalNormalRecordPoly. The original normalizer and downstream machine are composed through the inspected proof-side theorem and ALL-input byte equality to supply originalConstructorMachine_proposed. No free scalar/serializer/branch oracle, unbounded natural control, new source encoding or weaker target is introduced.
+
+POLYTOMY-COMPLETE-ORIGINAL-CONSTRUCTOR.md gives the complete derivation. With Pcan the prior clean canonical polynomial and C the sum of the fixed yes/no output lengths, Pvalid(L)=Pcan(L)+8L^2+54L+C+132 and Pnormal(L)=Pvalid(L)+17L^4+44L^3+63L^2+90L+56. L is the actual normalized-word length; the original external input is handled by the concrete normalizer plus proof-side machine composition. Original validation precedes N=0. Every path ends with only the exact original output, work empty and finite control reset.
+
+This supersedes the historical missing-constructor-component statements below ONLY at the UNELABORATED source-term level. No runtime, successful compilation, certificate, new independent review or novelty claim. The independent ORIGINAL target-verifier machine, compatible encoded-source hardness, all transitive compatibility/axiom/kernel checks, arbitrary-DAG formalization and original biological identification scopes remain open. full_carta_NPComplete_after_original_constructor_conditional explicitly retains verifier and source-hardness premises.
 
 ## Continued COMPLETE ORIGINAL canonical branch, uniform time and cleanup SOURCE, 22:07 UTC
 

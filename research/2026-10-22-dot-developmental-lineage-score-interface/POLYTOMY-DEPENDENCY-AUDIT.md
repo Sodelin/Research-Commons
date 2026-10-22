@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 22:31 UTC: complete original all-input constructor source chain
+
+Thirteen OPTIONAL UNELABORATED modules transform the complete original validator's actual instructions through Embedding.stmt/runs into the constructor's fixed five-Boolean control, preserving private boundaries, extra tapes and two caller bits with the SAME transition count. Concrete header/product/copy/subtract/peek/pop/load/clear routines physically produce every original case decision. The controller follows original rawRowMSSCBits, and the all-word validator rejects malformed/count/range/coverage failures before N=0. Fixed literal outputs are actual pushes, not a parameterized serialization oracle.
+
+Exact standalone initList/haltList boundaries and originalNormalRecordPoly are now proposed. The already supplied originalNormalizerPoly composes through the inspected PROOF-SIDE Combinators.comp and the all-input original byte factorization, yielding originalConstructorMachine_proposed. No generic concept-side theorem axiom or arbitrary unimplemented polytime premise is substituted. The original full reduction endpoint survives; the full NP-completeness interface still requires the independent ORIGINAL VerifierMachineWitness and compatible EncodedSourceHardness.
+
+Source inspection covered the pinned Embedding/Runs identity-stack and preserved-frame interfaces, RoutineControl.branch_true/false, concrete sequence/cleanup contracts, original rawRowMSSCBits/normalRecordConstructor, concrete normalizer packaging and proof-side composition. No toolchain, test, CI, installation or runtime was invoked. Own Lean/mathlib and optional dependency pins remain unchanged and differ; full compatibility and transitive axiom/kernel checks remain required. This is not verified compilation, an axiom audit, new independent review or a novelty claim. Historical missing-constructor text below is superseded only at source-proposal level; independent verifier, encoded hardness, arbitrary-DAG and biological obligations remain open.
+
 ## Continuation, 22:07 UTC: complete actual canonical branch and uniform polynomial
 
 Ten OPTIONAL UNELABORATED modules embed the existing concrete four-tape binary encoder with three private work tapes and fully private encoder control. The actual pinned proof-side Embedding.runs and clean boundaries preserve arbitrary caller data/control at the same transition count. This is a legitimate one-port length-to-original-binary-frame routine, not a substitute for a multi-parameter call. Existing restoring-copy/subtraction/clear/load routines supply physical original budget, exact header order and exhaustive 32-public-work-port cleanup/reset.
