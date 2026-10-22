@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 09:27 UTC.
 Status: read-only inspection of pinned public source and existing external CI evidence. No package was installed, imported into this project, executed or built. This does not change the UNELABORATED status of any developmental-lineage source.
 
+## Addendum, 13:35 UTC: licensed matching classical classes and closure caveat
+
+`POLYTOMY-LICENSED-HARDNESS-BOUNDARY.md` audits Edouard Bonnet and Codex 5.6 and 6's Apache-2.0 classical-complexity and cook-levin repositories at exact pins. Their P/NP/ManyOne definitions use the same actual TM2 interface, and direct finite-alphabet/single-tape class-equivalence helpers exist. Raw Cook-Levin proof files still reference concept-side theorem axioms, so standalone use needs explicit proof-network closure/replacement and kernel axiom checking. This is not a claim that the archive validation is invalid. No raw build log was retrieved for these new pins and no independent build was performed.
+
+The new optional polytomy interface uses the class/reduction definitions and actual Lax218471 proof-side composition, with an explicitly implemented pair-encoding adapter. Its NP-completeness conclusion remains conditional on the full constructor, full verifier and exact encoded source-hardness witnesses. It does not import Cook-Levin as a closed theorem or replace arbitrary-refinement D_lambda with a weaker target. Exact sources, pin mismatch, unelaborated status and remaining obligations are recorded in the linked audit and `POLYTOMY-CLASSICAL-NP-INTERFACE.md`.
+
 ## Addendum, 12:48 UTC: descriptive 3DM is not an imported TM2 certificate
 
 `POLYTOMY-DESCRIPTIVE-COMPLEXITY-BOUNDARY.md` records a further pinned Apache-2.0 catalog audit. Its unrestricted Exact Cover endpoint is not X3C; its separate 3DM endpoint is a possible semantic source. The repository explicitly leaves the relevant polynomial-class/string-machine equivalence unformalized, and its encoder-size interface expressly does not bound encoder time. Consequently no formal upstream hardness gap has been silently closed. Current source, toolchain, license and pre-existing CI/job metadata were read; no raw log, local build or lineage verification is claimed.

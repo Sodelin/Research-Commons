@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 13:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 13:35 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest exact classical-class interface, 13:35 UTC
+
+`PolytomyVerifierPairMachine.lean` supplies a source proposal for an actual all-input, three-Boolean-stack converter from the inspected Lax434930 certificate convention to our existing verifier-pair convention, with exact bytes, clean halting, malformed rejection and a 2L+4 step bound. It implements only the pair conversion, NOT the independent target checker. `PolytomyClassicalNPInterface.lean` pins an OPTIONAL conditional connection to the licensed classical P/NP/ManyOne/NPComplete definitions and actual proof-side composition. The full actual-D_lambda, arbitrary-refinement, all-source-strings target is retained. Its final theorem explicitly requires the still-open complete constructor, complete verifier and exact encoded source-hardness witnesses. No hypothesis is discharged merely by the converter. `POLYTOMY-CLASSICAL-NP-INTERFACE.md` supplies the complete hand argument.
+
+`POLYTOMY-LICENSED-HARDNESS-BOUNDARY.md` identifies a same-model licensed Cook-Levin route while documenting raw concept-axiom dependencies, available closed helpers and the difference between archive proof-network validation and ordinary standalone import closure. No dependency was installed, copied wholesale, compiled or independently verified. Full operational algorithms, closed compatible upstream hardness, all kernel checks and the separately scoped general-DAG DP remain open. This checkpoint has no new coordinating hand-review acceptance.
 
 ## Latest caller integration continuation, 13:05 UTC
 

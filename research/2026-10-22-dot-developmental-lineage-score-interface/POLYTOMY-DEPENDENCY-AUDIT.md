@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 13:35 UTC: exact NP pairing and dependency closure
+
+The new concrete pair-converter source uses only our existing pinned machine dependencies and an inspected `List.twoStepInduction` signature. It proposes a complete all-input clean-halt 2L+4 operational witness for conversion, not for the checker. The optional classical NP interface uses actual `Lax218471Proofs.Combinators.comp` plus definition-only P/NP/ManyOne/NPComplete interfaces. Its final theorem remains explicitly conditional on the complete constructor/verifier and exact encoded MSSC hardness. It retains the full actual-D_lambda and arbitrary-refinement semantics.
+
+The matching licensed class/Cook-Levin source audit finds a concrete operational route but also explicit concept-side axiom references inside raw proof-side theorems. Closed class/certificate helpers exist; complete standalone hardness closure and SAT-to-X3C/MSSC encoding/machine adapters are not supplied here. No external proof-name, archive validation report or parser component is treated as a whole-chain certificate. See `POLYTOMY-LICENSED-HARDNESS-BOUNDARY.md` and `POLYTOMY-CLASSICAL-NP-INTERFACE.md`. Pins are unchanged, dependencies uninstalled, source unelaborated, and no new review acceptance is claimed.
+
 ## Addendum, 13:05 UTC: supplied caller-safe framing routine
 
 The optional `PolytomyFrameCallerAdapter.lean` instantiates the inspected proof-side Embedding, Runs, RoutineComposition and Transfer APIs with concrete ports, identity symbols and a caller-frame-preserving control equivalence. It supplies both the parser routine and the reversal continuation, their exact clean-boundary equalities, all-input 3L+5 transition accounting and the complete unchanged semantic endpoint. Port injectivity and initially empty scratch/output are required explicitly; arbitrary occupied output buffers are not promised preserved. No concept-side theorem axiom is called. The dependency is not installed or in the project manifest, so this remains an unelaborated integration proposal requiring compatibility and kernel dependency checks. Complete nested parser/arithmetic/checker/serializer programs, whole machine witnesses and compatible upstream hardness remain open.
