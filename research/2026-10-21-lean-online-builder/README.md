@@ -15,6 +15,13 @@ builds are reused at their original evidence level. The recently checked generic
 trace rows are supporting verification of retained fibre algebra. They are not
 a new original mathematical frontier.
 
+The [later-source correction](PRIOR-TYPED-EXECUTION-REUSE.md) now explicitly
+reuses the original eight typed population, nine epoch and nine fixed-word
+comparisons. All34 saved population/word stdout bodies match their old exact
+receipts. The original shared-bank/once-initialized word theorem is already
+checked. These recovered results remove duplicate checks from the queue;
+they add no hosted case, native execution or full implementation acceptance.
+
 [ACCEPTANCE.md](ACCEPTANCE.md) and [the ledger](ACCEPTANCE-LEDGER.json) preserve
 the original finish lines. G1, timed and unranked G2, and full-timed binary-M3
 G5 retain inherited acceptance. G6/G7 retain accepted hand characterizations
@@ -88,8 +95,8 @@ The new particular-table certificate and
 retain exact finite support, duplicates and zero-on-absence semantics at SOURCE
 ONLY level for actual native instances. The generic certificate context is now
 hosted checked, and the unchanged sparse-row caller now also passes all three
-audits in its exact physical context. Particular native instances and full native
-imports remain unverified; both later callers stay outside778. The old module closure exceeds the normal
+audits in its exact physical context. Particular instances of the CURRENT new certificate/exporter route and full
+current native imports remain unverified; older typed fixture evidence is reused; both later callers stay outside778. The old module closure exceeds the normal
 client's256KiB source guard. Dependency-preserving command extraction checks
 the same physical certificate in99,274bytes. No native check occurred.
 

@@ -1,5 +1,13 @@
 # Native primitive rows and the retained coefficient receivers
 
+Current successor correction: [retained typed execution](PRIOR-TYPED-EXECUTION-REUSE.md)
+supersedes any interpretation that the original fixed-fixture or generic word
+suppliers below were still unverified. Eight population, nine epoch and nine
+word comparisons already exist. Current hosted certificate/sparse-row caller
+checks are separate from the remaining CURRENT exporter/origin and general
+native implementation relations. Original historical status headers remain.
+
+
 This is a complete-source interface review, not a new compiler, kernel,
 native run or executable refinement. Exact source identities and reading
 scopes are in G7-PRIMITIVE-COEFFICIENT-SOURCE-REVIEW.json. The historical
