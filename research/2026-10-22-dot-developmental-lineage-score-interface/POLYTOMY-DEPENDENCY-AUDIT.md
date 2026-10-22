@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 16:40 UTC: internal record and actual physical loops
+
+The new exact unary-record normal form is INTERNAL. Its all-input size bound and byte-exact original-constructor factorization retain all malformed/boundary cases, actual D_lambda, every joining refinement and the independent target certificate interface. It is not a replacement external language or a machine certificate. The source includes successful-parse soundness, not merely an encoder inverse.
+
+The new actual multiport countdown routine composes inspected proof-side Atom, seq and loop APIs at the already licensed Lax218471 pin. A physical counter replaces any possible unbounded natural-number control; cached nonemptiness and success are finite bits. Its n(M+3)+3 transition theorem explicitly assumes a supplied body implementation, invariant and reserved-counter preservation. Body contracts must cover partial/failing stores. Complete source-parser bodies, copies/storage/caps, trailing-input checks, cleanup and every whole-machine witness remain missing. No concept-side theorem axiom, runtime, new review acceptance, original biological closure or novelty claim is inferred. The exact end-to-end source hardness and all kernel/dependency checks remain open.
+
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 

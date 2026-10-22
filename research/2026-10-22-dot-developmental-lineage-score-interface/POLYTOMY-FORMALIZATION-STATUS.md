@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 16:17 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 16:40 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest exact internal record and actual counted-loop composition, 16:40 UTC
+
+`PolytomyUnaryRecordNormalForm.lean` specifies an INTERNAL unary raw-record codec, with encoder inverse and every-successful-parse exact soundness. Tagged normalization has all-input size at most 3(L+1)^2+L+3 and factors the original constructor byte-for-byte on every original input. The external source/target languages, every original finite branch, actual D_lambda/all-refinement endpoint and independent certificate interface are unchanged. `POLYTOMY-UNARY-NORMAL-FORM-AND-LOOPS.md` gives the hand derivation.
+
+`PolytomyPhysicalCountdown.lean` gives actual multiport Routine-level loop code with a physical stack counter, finite cached guard/success bits and early failure. Under an explicit supplied-body operational/invariant/counter-preservation contract of M transitions, the complete loop takes at most n(M+3)+3 transitions, including all dispatch, pop, peek and reset. Successful return exhausts the counter; failure can leave a suffix requiring later cleanup. The existing licensed proof-side Atom/seq/loop APIs are used, not the incompatible single-port Program.call interface or concept theorem axioms.
+
+Concrete inner/outer reader/output/copy bodies and their partial-state contracts are NOT supplied by this generic loop theorem. Exact normalizer code, cap creation, partial-storage bounds, trailing-input checks, whole failure cleanup, downstream constructor and independent checker, closed encoded hardness and every kernel check remain open. All source is UNELABORATED. No runtime, new coordinating review, novelty or changed biological assumptions.
 
 ## Latest actual unary list-count caller, 16:17 UTC
 
