@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 15:52 UTC: actual numeric-frame caller composition
+
+`PolytomyNumericFrameCaller.lean` imports the existing OPTIONAL frame-caller integration and uses inspected actual Embedding.runs/RoutineComposition.seq_executes at the licensed Lax218471 pin. It supplies a two-label restoring cap copier, a concrete decoder-core caller embedding, exact clean boundaries and the full sequential routine. Dependent sum alphabets are explicitly matched to the source API. Flags, suffix, original unary cap, outside stacks/control and scratch/private cleanup are all included, with the bivariate bound 6LC+8L+3C+8 and an outer-input-length nested-call corollary.
+
+This is a complete hand/source-proposal subroutine, not an assumed abstract continuation or an end-to-end machine certificate. The dependency remains uninstalled, pins unchanged and all terms UNELABORATED. No concept-side theorem axiom or new runtime is invoked. Nested source/target parsers, raw row and independent clade-checker programs, whole operational bounds, compatible closed encoded source hardness and every kernel check remain open. See POLYTOMY-NUMERIC-FRAME-CALLER.md for exact preconditions, output observations and the original whole-claim endpoint.
+
 ## Addendum, 15:32 UTC: uniform finite-machine saturation
 
 `PolytomySaturatingDecoderMachine.lean` uses only the existing pinned/local TM2 chain. It proposes concrete read/double/clip/discard/restore/setup/clear programs, exact operational inductions, total malformed-prefix handling, an all-input quadratic bound and a clean-output TM2ComputableInPolyTime source witness for cappedUnaryWord. No unbounded numeric control field or nonuniform cap-indexed machine is introduced. The cap is encoded physically, and transient count storage is explicitly bounded.

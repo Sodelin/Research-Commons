@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 15:32 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 15:52 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest actual capped numeric-frame caller composition, 15:52 UTC
+
+`PolytomyNumericFrameCaller.lean` supplies an OPTIONAL source proposal for the actual raw-frame -> restoring cap-copy -> decoder-core routine. Five distinct ports carry source, raw reversed payload, original physical unary cap, cap-copy work and unary output. Actual finite copier code, caller embedding, entry/return equalities and proof-side operational sequential composition retain the ORIGINAL Option failure/value/suffix, preserve cap and outside caller data/control, and clean scratch/private work. The complete hand bound is 6LC+8L+3C+8, including malformed framing. A separate nested-call bound uses the ORIGINAL outer tape length rather than assuming the cap shrinks with each suffix. `POLYTOMY-NUMERIC-FRAME-CALLER.md` gives the complete argument.
+
+The external dependency is the already inspected licensed proof-side Lax218471 pin, uninstalled; no concept-side theorem axiom is invoked. All terms remain UNELABORATED and the dependent-alphabet interfaces were statically aligned with the actual sum-alphabet routine API. This supplies source-level actual composition for one full numeric-frame subroutine, not just summed standalone bounds, but it does not supply the nested parsers, whole constructor or independent checker. Their programs, total resource/cleanup proofs, closed compatible encoded hardness and all kernel checks remain open. The complete original actual-D_lambda/all-refinement/output-size/independent-certificate endpoint remains explicit. No execution, new review acceptance, novelty or changed biological assumptions.
 
 ## Latest uniform bounded binary decoder, 15:32 UTC
 
