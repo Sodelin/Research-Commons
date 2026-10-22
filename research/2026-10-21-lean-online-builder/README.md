@@ -8,7 +8,8 @@ silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
 and unadmitted CHART32/128 limits, inverse-rate meaning and shared-registry
 premises. The later ordered-layout proof is hosted checked; its original-Code
-use-site and the full prepared native context remain uncompiled.
+use-site now passes a complete hosted component check, while the prepared
+native context remains uncompiled; see ADMISSION-COMPONENT.md.
 
 The checked P5 ordered Lamb-shift identity now moves the fixed commutator
 through both genuine operator integrals. Its bounded-section/outer-measurability
@@ -173,3 +174,15 @@ G6-NATIVE-FIELD-REFLECTION.md records a later actual four-audit hosted proof of
 form/row/ordered comparison/interval correspondence for the EXISTING CHART
 emitter. It pins the bounded definition projection and three rejected revisions.
 Complete captured-Code-to-row emission and Rust execution refinement stay open.
+
+PEER-SCIENTIFIC-OUTCOMES.json records the P5 source owner's later completed
+HAND-proof counterexample verdict and mandatory search-admission correction.
+It is attributed owner evidence, not this builder's whole-proof adoption,
+an independently reviewed result, Lean theorem or computed large-system witness.
+Earlier scoped P5 reviews retain their exact conditional boundaries.
+
+ADMISSION-COMPONENT.md records the actual complete45-module hosted admission/
+layout check and the six selected type/axiom audits. Its explicit hosted API
+variants, bounded diagnostic-union client and negative controls are published.
+The native545-module snapshot changes only the owned wrapper dependency; it
+remains uncompiled under the existing first-writer hold.

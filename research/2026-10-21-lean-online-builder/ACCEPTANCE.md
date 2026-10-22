@@ -19,7 +19,7 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **545 modules / 4,518,048 source
+The latest prepared native context contains **545 modules / 4,518,041 source
 bytes**, with the physical sparse supplier present once and explicit import-only
 variants. All selected source hashes and dependency order are recorded. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
@@ -53,8 +53,10 @@ context through one additional original module. It provides sourceOfValid,
 complete decoded hybrid IDs and the original parent registry; the exact native
 Code relation and additional class premises remain concrete use-site
 obligations. [The generic coordinate layout](ORDERED-BANK-LAYOUT.md) is now
-hosted checked; its original-Code instantiation is separately identified as
-source-only and still requires full-context elaboration and row-emission binding.
+hosted checked. The original-Code wrapper now passes a complete43-original-plus-
+two-owned component check with two explicit hosted API variants, as recorded in
+[ADMISSION-COMPONENT.md](ADMISSION-COMPONENT.md). Captured Code validity, native
+imports and exact ordered-row emission remain separate requirements.
 
 [The form reflection](G6-NATIVE-FIELD-REFLECTION.md) now has four actual hosted
 audits against exact projections of the existing CHART and typed row definitions.
@@ -66,3 +68,7 @@ authenticate physical measurements, establish error/confidence contracts or
 prove a returned runtime dictionary came from the original process. Those
 bindings and the actual first-writer implementation remain open engineering
 work. Existing held or consumed jobs are not replayed by this packet.
+
+PEER-SCIENTIFIC-OUTCOMES.json separately records the P5 owner's completed
+hand-proof counterexample verdict. That attributed verdict does not extend
+this builder's bounded reviews to whole-proof or formal acceptance.

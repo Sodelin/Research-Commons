@@ -1,6 +1,6 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL545 module bodies,4518048B. The original
+Actual source preparation verified ALL545 module bodies,4518041B. The original
 533-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
@@ -13,7 +13,7 @@ generated certificates, both unchanged authored bank witnesses, and
 NativeOrderedBankLayout/OriginalCodeBankLayout and NativeCellFormReflection.
 Source counts are build inputs, not endpoint acceptance or an accepted545
 release. The generic layout and bounded form correspondence were
-hosted checked; the original-Code use-site remains source-only.
+hosted checked; the original-Code use-site now has a complete hosted admission-component check, while pinned native imports remain uncompiled.
 
 The two import-only variants are:
 
@@ -80,3 +80,9 @@ No replacement compiler or parser is introduced. G6TwoTipChartFixture was read
 as an existing bounded row-reflection supplier, but its five #eval commands
 remain excluded and unexecuted. G6-NATIVE-FIELD-REFLECTION.md records the exact
 remaining general ordered-emission premise and the bounded projection scope.
+
+The latest revision changes only the owned OriginalCodeBankLayout import/type
+spelling (2726B/SHA9a8cb563); all other544 module entries remain unchanged.
+ADMISSION-COMPONENT.md at the packet root records its complete43-original-plus-
+two-owned hosted check, including both explicit hosted API variants. Those
+variants are NOT selected into this pinned native source context.

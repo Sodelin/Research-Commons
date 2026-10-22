@@ -83,3 +83,37 @@ commit4e556c4ae6225d18fabf30bc7d3347a468749ebc:
 The complete first two bodies and the LAW request/routing/incoming assembly
 were inspected. No native/parser/solver execution, new compiler run or
 canonical profile/dispatch change accompanied this source audit.
+
+## Raw input bounds do not bound derived exact rows
+
+The original protocol bounds RAW rational numerators/denominators to256bits.
+Its CHART compiler can produce larger exact coefficients or bounds. For
+example, a=2^129 and b=a-1 are permitted denominators, while
+1/b-1/a=1/(a*b) has a258bit denominator. This is a source/arithmetic deduction,
+not a newly executed test or a proposed larger input limit.
+
+The original CHART checker recomputes and compares the complete canonical
+MATRIX prefix. It does not parse those derived entries as a fresh raw AFFINE
+request. Certificate vectors use rational(token,false), while the complete
+certificate retains its original4MiB framing. Preserve that route and exact
+values; imposing the raw256bit bound on derived rows would add a restriction
+the original interface does not have. This is an independent reason that a
+raw AFFINE codec cannot silently substitute for the CHART matrix receiver.
+No rounding, truncation, new grammar or canonical CHART admission follows.
+
+The original4MiB certificate limit is checked at protocol::check; it is not
+a final CHART producer-output guarantee. The CHART execute branch has no
+matching final length gate, while LAW has its own separate gate. No overflow
+was executed or established. Projection row caps do not bound rational sizes,
+full output or wall time. Preserve actual resource/refusal/UNKNOWN outcomes
+and complete recovery through the existing encrypted writer.
+
+The direct RC1 request limit is65536B. The unchanged unified runtime and MCP
+bridge each limit literal request_json to262144 UTF8 bytes INCLUDING escaping
+and envelope fields; the bridge's runtime-result-file cap is8MiB. These are
+separate layers, not larger usable canonical certificate limits. Native_bridge
+still admits AFFINE/LAW only. An exact direct CHART result cannot acquire
+canonical dispatch by naming an outer task. The Rust source review at
+77920422868495bd9abba49e4ca941b45fd595bc records these call-site boundaries;
+its loose prefix-only arithmetic bound remains peer-authored/unformalized and
+is not adopted here as a complete result/resource theorem.

@@ -112,7 +112,7 @@ def main():
         ('NativeOrderedBankLayout',
          '00d0b83e92f5d182b25f590b005f6ef95879f79f5adba18b6997e20b33b4e51a'),
         ('OriginalCodeBankLayout',
-         'ef18d6a1e282ba479f83db56339ecd4529f3ed2469995f9a674f5fc8ea5f0bb8'),
+         '9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208'),
         ('NativeCellFormReflection',
          '29ed474cd1a291bc2855775b22b0726c8aae34113d62efcead283d487aa9a0de')]:
         additions.append((name, checked(packet/'lean'/(name+'.lean'), digest)))
@@ -132,6 +132,7 @@ def main():
     def acquire(name):
         digest = modules[name]['sha256']
         candidates = [ROOT/'intake/modules'/(name+'.lean'),
+            ROOT/'native/prepared-physical-pmf-form-project545/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-pmf-layout-project543/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-pmf-admission-project541/source-store'/(digest+'.lean'),
             ROOT/'native/prepared-physical-pmf-ordered-project540/source-store'/(digest+'.lean'),

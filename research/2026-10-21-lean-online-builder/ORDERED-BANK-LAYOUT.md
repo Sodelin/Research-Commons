@@ -32,18 +32,24 @@ The used Fin equivalence definitions and simplification lemmas were also
 located in the separate pinned mathlib0df444 source. That source reading
 does not establish native import or object acceptance.
 
-`OriginalCodeBankLayout.lean` is a source-only use-site of this construction.
+`OriginalCodeBankLayout.lean` is the original-Code use-site of this construction.
 It reuses the existing `sourceOfValid`, `decodedIDs`, `decodedRegistry` and
 `decoded_parent_exact`. For the literal finite Code, vertex and edge numbers
 are identities; hybrid coordinates use the supplied original-ID order through
 `decodedIDs.symm`. It retains explicit `BinaryValid` and `RegistryValid`
-premises. Exact source:2733 bytes, SHA256
-ef18d6a1e282ba479f83db56339ecd4529f3ed2469995f9a674f5fc8ea5f0bb8.
-This wrapper has NOT been elaborated in its full native import context.
+premises. The revised source removes one unnecessary affine import and spells
+the same bank sum type directly:2726 bytes, SHA256
+9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208.
+It now passes a complete hosted admission-component check, including the entire
+43-original-module dependency closure and two explicit hosted API variants.
+ADMISSION-COMPONENT.md gives the six selected full types/axioms and exact scope.
+The older2733B/ef18d6a1 source remains immutable in parent history. The wrapper
+has NOT been elaborated in its pinned full native import context.
 
 Both files join the source-only physical/PMF/CM context. The layout snapshot
 had543 modules/4,504,069 bytes; the later CHART form-reflection addition gives
-545 modules/4,518,048 bytes, retaining all prior module bytes. The graph keeps
+545 modules/4,518,048 bytes. This latest wrapper-only revision gives
+545 modules/4,518,041 bytes; all other544 entries are unchanged. The graph keeps
 both literal bank witnesses and the Code-layout use-site as roots. Full-import
 elaboration, native Lake, compiler and object custody remain unrun under the
 actual first-writer hold.
