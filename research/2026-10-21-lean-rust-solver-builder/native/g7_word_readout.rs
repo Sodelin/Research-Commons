@@ -11,6 +11,8 @@ use std::collections::{BTreeSet, btree_map::Entry};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Labels { LocalCopyPositions, OriginalGlobalCopyLabels }
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Observer { CompletedTree, EmptyCopyEndpoint }
 #[derive(Clone, Debug)]
 pub struct Menu {
     pub labels: Labels,
@@ -51,12 +53,14 @@ pub struct Work { pub coefficient_work: usize, pub retained_terms: usize }
 #[derive(Debug)]
 pub struct Batch<'a> {
     word: WordTable<'a>,
+    observer: Observer,
     menus: &'a [Menu],
     blocks: Vec<Vec<Polynomial>>,
     work: Work,
 }
 impl<'a> Batch<'a> {
     pub fn word(&self) -> &WordTable<'a> { &self.word }
+    pub fn observer(&self) -> Observer { self.observer }
     pub fn menus(&self) -> &[Menu] { self.menus }
     pub fn blocks(&self) -> &[Vec<Polynomial>] { &self.blocks }
     pub fn work(&self) -> &Work { &self.work }
@@ -158,10 +162,27 @@ fn complete_tree(context: &Context, witness: &population::Snapshot) -> Result<Tr
 /// Batch. This function neither changes the programme nor runs a generator.
 pub fn project_completed<'a>(word: WordTable<'a>, menus: &'a [Menu],
     limits: Limits) -> Result<Batch<'a>> {
+    project(word, menus, limits, Observer::CompletedTree)
+}
+
+/// Empty Copy has a constant empty-forest observer on its finite FullView
+/// endpoint. It is a separate receiver, never a nonempty completed-tree proof.
+pub fn project_empty_copy<'a>(word: WordTable<'a>, menus: &'a [Menu],
+    limits: Limits) -> Result<Batch<'a>> {
+    project(word, menus, limits, Observer::EmptyCopyEndpoint)
+}
+
+fn project<'a>(word: WordTable<'a>, menus: &'a [Menu],
+    limits: Limits, observer: Observer) -> Result<Batch<'a>> {
     let context = &word.table().original().context;
-    if word.table().original().terminal != source_word::Terminal::AncestralComplete
-        || context.sample.is_empty() {
-        return Err(Error::Invalid("WORD_READOUT_REQUIRES_NONEMPTY_COMPLETED_WORD"));
+    match observer {
+        Observer::CompletedTree if context.sample.is_empty()
+            || word.table().original().terminal != source_word::Terminal::AncestralComplete =>
+                return Err(Error::Invalid("WORD_READOUT_REQUIRES_NONEMPTY_COMPLETED_WORD")),
+        Observer::EmptyCopyEndpoint if !context.sample.is_empty()
+            || word.table().original().terminal != source_word::Terminal::FullView =>
+                return Err(Error::Invalid("WORD_READOUT_REQUIRES_EMPTY_FULL_VIEW")),
+        _ => {}
     }
     if menus.is_empty() { return Err(Error::Invalid("WORD_READOUT_EMPTY_MENUS")); }
     if menus.len() > limits.menus { return Err(unknown("menus", Some(menus.len()), limits.menus)); }
@@ -196,16 +217,32 @@ pub fn project_completed<'a>(word: WordTable<'a>, menus: &'a [Menu],
         }
         // Context relabelling occurs only in this explicit final observer.
         // Every original word row, witness and bank remains stored unchanged.
-        let local = complete_tree(&local_context, &row.witness)?;
-        let global = complete_tree(context, &row.witness)?;
+        let trees = match observer {
+            Observer::CompletedTree => Some((complete_tree(&local_context, &row.witness)?,
+                complete_tree(context, &row.witness)?)),
+            Observer::EmptyCopyEndpoint => {
+                context.validate_snapshot(&row.witness).map_err(Error::Internal)?;
+                if !row.witness.live.is_empty() || !row.view.genealogy.is_empty()
+                    || !row.view.population.is_empty() {
+                    return Err(Error::Internal("WORD_READOUT_NONEMPTY_COPY_FIELDS"));
+                }
+                None
+            }
+        };
         for (menu_index, menu) in menus.iter().enumerate() {
-            let key = match (menu.labels, menu.readout.basis) {
-                (Labels::LocalCopyPositions, ReadoutBasis::Rooted) => law::tree_string(&local),
-                (Labels::LocalCopyPositions, ReadoutBasis::Unrooted) =>
-                    law::split_string(&local, context.sample.len()),
-                (Labels::OriginalGlobalCopyLabels, ReadoutBasis::Rooted) => law::tree_string(&global),
-                (Labels::OriginalGlobalCopyLabels, ReadoutBasis::Unrooted) =>
-                    global_split_string(&global, &global_universe)?,
+            let key = if let Some((local, global)) = &trees {
+                match (menu.labels, menu.readout.basis) {
+                    (Labels::LocalCopyPositions, ReadoutBasis::Rooted) => law::tree_string(local),
+                    (Labels::LocalCopyPositions, ReadoutBasis::Unrooted) =>
+                        law::split_string(local, context.sample.len()),
+                    (Labels::OriginalGlobalCopyLabels, ReadoutBasis::Rooted) => law::tree_string(global),
+                    (Labels::OriginalGlobalCopyLabels, ReadoutBasis::Unrooted) =>
+                        global_split_string(global, &global_universe)?,
+                }
+            } else {
+                // Both explicit label universes are empty. No hidden register
+                // bit is exposed by the declared empty-forest/split observer.
+                "[]".to_owned()
             };
             let outcome = *menu.readout.terminal_to_outcome.get(&key)
                 .ok_or(Error::MissingTerminal { menu_index, key })?;
@@ -223,5 +260,5 @@ pub fn project_completed<'a>(word: WordTable<'a>, menus: &'a [Menu],
             return Err(Error::Internal("WORD_READOUT_FORMAL_MENU_MASS"));
         }
     }
-    Ok(Batch { word, menus, blocks, work })
+    Ok(Batch { word, observer, menus, blocks, work })
 }

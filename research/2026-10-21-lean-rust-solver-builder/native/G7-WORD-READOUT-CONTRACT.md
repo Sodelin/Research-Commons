@@ -1,4 +1,4 @@
-# Explicit completed-word readout menus
+# Explicit completed and empty-copy readout menus
 
 SOURCE ONLY, UNCOMPILED/UNEXECUTED. This component projects a complete stored
 cell/controlled-word table through explicit finite readouts. It invokes no
@@ -38,6 +38,15 @@ nonempty Copy, validates each native range witness and original ancestral-root
 singleton, and then uses the existing complete unordered_forest. It projects
 the SAME full row polynomial into each menu's declared outcome. Every formal
 terminal must have an outcome; any missing map entry refuses the whole Batch.
+
+project_empty_copy is a SEPARATE receiver for empty Copy with a FullView
+finite-word endpoint. It validates empty live/genealogy/population fields and
+projects every retained register row to the declared empty-forest/split key[]
+(with string encoding "[]"). Batch.observer distinguishes EmptyCopyEndpoint
+from CompletedTree. Each menu still has mass1. This uses the actual empty
+unranked-forest observation; it does not assert a Nonempty Copy completed-tree
+signature or identify zero output dimension with zero sampled copies.
+The original natural register mixture remains retained behind that observer.
 
 All original register/population/witness information remains accessible through
 the stored complete WordTable. Register erasure is final-observer behavior;
