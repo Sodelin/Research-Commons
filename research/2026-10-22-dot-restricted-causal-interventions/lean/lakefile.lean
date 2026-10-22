@@ -23,4 +23,5 @@ lean_lib RestrictedCausalSource where
     `FiniteTranscriptDecoder, `MarginalIndicatorAncestry, `RefinedObservedSeparator,
     `PartialObservedQueryFamily, `RefinedIndicatorSeparator, `PartialIndicatorQueryFamily,
     `CommonObservedMAG, `DiscriminatingSeparatorStatus, `InducingEndpointMarks,
-    `MarkedActiveWalks, `ConditionedEdgeWalks, `MAGPathLifting]
+    `MarkedActiveWalks, `ConditionedEdgeWalks, `MAGPathLifting,
+    `MAGMaximality, `ObservedMAGAncestry]
