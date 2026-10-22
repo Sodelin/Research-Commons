@@ -1,6 +1,10 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 12:48 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 13:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest caller integration continuation, 13:05 UTC
+
+`PolytomyFrameCallerAdapter.lean` now proposes an actual caller-preserving routine for the framing component and an actual one-pass reversal, using the inspected pinned Lax218471 proof-side embedding/composition. On every Boolean input it returns the exact forward-order payload, suffix and success flag, preserving all outside caller data and cleaning private/scratch state, within 3L+5 actual transitions. Distinct ports and initially empty scratch/output are explicit. `POLYTOMY-FRAME-CALLER-INTEGRATION.md` supplies the hand proof. This is an OPTIONAL dependency integration, uninstalled and UNELABORATED, not a whole constructor/verifier witness. Nested parsing, arithmetic/validation/tree scans, serialization, compatible upstream formal hardness and all kernel checks remain open. The full all-refinement actual-D_lambda and independent bounded-certificate endpoint remains explicit in `full_reduction_with_caller_frame`.
 
 ## Latest all-input operational continuation, 12:48 UTC
 

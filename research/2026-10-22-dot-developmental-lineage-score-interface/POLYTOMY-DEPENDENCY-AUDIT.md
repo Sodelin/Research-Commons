@@ -3,6 +3,10 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 13:05 UTC: supplied caller-safe framing routine
+
+The optional `PolytomyFrameCallerAdapter.lean` instantiates the inspected proof-side Embedding, Runs, RoutineComposition and Transfer APIs with concrete ports, identity symbols and a caller-frame-preserving control equivalence. It supplies both the parser routine and the reversal continuation, their exact clean-boundary equalities, all-input 3L+5 transition accounting and the complete unchanged semantic endpoint. Port injectivity and initially empty scratch/output are required explicitly; arbitrary occupied output buffers are not promised preserved. No concept-side theorem axiom is called. The dependency is not installed or in the project manifest, so this remains an unelaborated integration proposal requiring compatibility and kernel dependency checks. Complete nested parser/arithmetic/checker/serializer programs, whole machine witnesses and compatible upstream hardness remain open.
+
 ## Addendum, 12:48 UTC: actual framing transducer and upstream boundary
 
 `PolytomyBinaryFrameMachine.lean` supplies new UNELABORATED operational terms for every Boolean input under the same pinned TM2 step semantics. Three finite labels, three Boolean stacks and six control values implement the exact existing binary-frame and independent pair-input grammar in at most 2L+4 transitions, with an empty width stack at both exits and complete malformed cleanup. No external compiler dependency is needed for this component. The raw payload is intentionally reversed on a separate output stack; caller preservation, continuation discipline, payload-order handling and full constructor/checker composition are still obligations. The full reduction endpoint remains explicit in the same module.
