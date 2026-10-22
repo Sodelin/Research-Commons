@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 14:30 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 14:58 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest concrete numeric serializer, 14:58 UTC
+
+`PolytomyBinaryCounterEncoder.lean` supplies an own source proposal for an actual four-Boolean-stack, six-label finite TM2 that returns the ORIGINAL canonical binaryNatFrame of its input length on every Boolean word. In particular, a physical unary counter of value n is serialized as binaryNatFrame(n), with clean auxiliary stacks and restored finite control, within 2n^2+10n+10 statement transitions. Concrete increment, carry, restore, reversal, width-prefix and final-cleanup operational terms are included. `POLYTOMY-BINARY-COUNTER-ENCODER.md` gives the complete hand argument and exact invariants.
+
+This is a serializer primitive, not the complete constructor or independent verifier. It counts input length, NOT the numeric interpretation of an arbitrary binary word, and its cost is polynomial in the physical counter length. The preceding exact saturation adapters supply the proposed polynomial-value route without changing original bytes/truth. The final interface retains the full original actual-D_lambda/all-refinement reduction, output bound and independent bounded certificate. Concrete row parsing/membership, bounded arithmetic, caller assembly and whole cost/cleanup proofs, the independent clade checker, closed compatible encoded hardness and all kernel checks remain open. No execution, new coordinating-review acceptance, novelty or stochastic-identification claim is made.
 
 ## Latest direct canonical-constructor output, 14:30 UTC
 

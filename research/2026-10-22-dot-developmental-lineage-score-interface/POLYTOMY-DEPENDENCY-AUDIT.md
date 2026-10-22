@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 14:58 UTC: original numeric-frame operational primitive
+
+`PolytomyBinaryCounterEncoder.lean` uses only existing local/pinned dependencies and the inspected Nat.binaryRec', Nat.bits_append_bit, TM2 and EvalsToInTime APIs. The actual proposed finite program counts input symbols with a stack-resident binary counter, emits the original canonical length-framed little-endian payload and cleans every auxiliary/control field. Its supplied source witness is polynomial for the exact function w -> binaryNatFrame(|w|), not a whole constructor witness or an arbitrary binary-to-unary conversion. The proof explicitly includes carries, both reversals, width emission and halt. All terms remain UNELABORATED.
+
+The accompanying hand proof records the exact operational bounds, original all-refinement endpoint and remaining full-program dependencies. Read-only comparison verified Apache-2.0 licensing and inspected actual fixed-width binary/output macros in szymtor/RAM-TM at 134e398cef46599371df99f10c9007bc34ba3868. Their RAM-wrapper/sparse-symbol interface is not this Boolean-counter contract; no external source was installed, copied wholesale or executed. Whole caller parsing/membership/arithmetic/serialization, independent verification, closed upstream hardness and kernel checking remain open. No new coordinating review or runtime evidence is claimed.
+
 ## Addendum, 14:30 UTC: direct original fixed-child emission
 
 `PolytomyDirectCanonicalOutput.lean` uses the inspected pinned `Finset.map_sort`, `List.toFinset_sort`, range/filter, append/replicate and Nodup APIs to propose direct range enumeration equal to the original canonical code order. An attach induction gives exact fixed-left-comb bit emission; a distinct-type induction gives the original descendant-subtraction cost through bounded arithmetic. The full total constructor remains byte-identical, including fixed yes/no branches and the preceding saturated parser. Arbitrary joining refinements and actual D_lambda remain unchanged.
