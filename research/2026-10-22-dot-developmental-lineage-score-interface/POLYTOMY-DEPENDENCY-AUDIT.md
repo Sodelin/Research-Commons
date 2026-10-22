@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 17:32 UTC: complete original two-level rows component
+
+Three new OPTIONAL UNELABORATED sources give the actual guarded row body, the success-conditional inner-counter invariant and distinct outer-counter/outside-data preservation, exact original repeated-row observation, and actual original outer count-read/copy composition. The resulting two-level rows routine has exact nested original readFramedList observation, time L(Row(L,C)+4)+7L+11 and all-path boundary record growth at most L^2(C+2)+2L+1. Successful rows-section return clears both initially empty counters; failures may retain suffixes. Shared cached-guard reuse is justified by actual outer re-peeking, not preservation.
+
+This is the complete rows COMPONENT, not a whole source parser. Exact three-header/two-cap assembly, physical cap creation/switching, failure-absorbing entry after headers, complete-suffix checks, reversal/tagging and all cleanup remain open, as do downstream constructor/checker machines, compatible closed encoded hardness and every kernel/dependency check. Original external languages and actual-D_lambda/all-refinement/independent-certificate endpoint remain unchanged. No new dependency, concept theorem axiom, execution, review acceptance, novelty or original biological closure is claimed.
+
 ## Continuation, 17:15 UTC: exact original framed-row semantics
 
 Three new OPTIONAL UNELABORATED modules join original readMany observation to the actual numeric-list execution, compose original unary count reading with fresh physical count copy, and realize one complete original readFramedList row. Successful suffix/reversed-log order, zero counts/values and malformed/failed input are explicit. Row time is L(M(L,C)+3)+7L+11 and partial-record growth is at most L(C+2)+1, with cap/scratch/source invariants preserved on failure. No final-success promise or new target language is substituted.

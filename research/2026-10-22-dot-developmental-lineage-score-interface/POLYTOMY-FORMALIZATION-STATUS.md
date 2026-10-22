@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 17:15 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 17:32 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest complete original two-level rows component, 17:32 UTC
+
+`PolytomyGuardedRowOuterLoop.lean` supplies an actual failure-absorbing row wrapper, success-conditional inner-counter emptiness invariant, distinct outer-counter/outside-data preservation and an instantiated outer countdown. Shared cached-guard use is justified by the actual outer re-peek, not an assumed preservation property. `PolytomyOuterRowsObservation.lean` identifies its exact suffix/reversed-log observation with original repeated framed-row reading, including failure and zero-count cases.
+
+`PolytomyFramedRowsParser.lean` then composes the actual original outer unary-count read/copy with that loop, yielding the COMPLETE TWO-LEVEL ROWS component and exact nested original readFramedList observation. Both counters initially are empty; success clears both, while failure can retain suffixes. Time is Rows(L,C)=L(Row(L,C)+4)+7L+11; all-path boundary record growth is at most L^2(C+2)+2L+1. Cap, clean numeric scratch, finite caller frame and unrelated extra ports are preserved. `POLYTOMY-ORIGINAL-TWO-LEVEL-ROWS.md` gives the hand proof.
+
+This is not the complete source normalizer: three headers with their two different original caps, physical cap creation/switching, skipping rows after header failure, trailing-suffix rejection, final reversal/tagging and every cleanup path remain. Complete downstream constructor/checker, closed encoded hardness and every kernel check remain open. Full original external encodings and actual-D_lambda/all-refinement/output-size/independent-certificate endpoint remain unchanged. All terms are UNELABORATED; no runtime, new review acceptance, novelty or biological closure.
 
 ## Latest exact original framed-row component, 17:15 UTC
 
