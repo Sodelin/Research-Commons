@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 21:42 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 22:07 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued COMPLETE ORIGINAL canonical branch, uniform time and cleanup SOURCE, 22:07 UTC
+
+Ten OPTIONAL UNELABORATED modules join a genuine private-work/private-control embedding of the existing concrete binary encoder; actual physical C0+K-N arithmetic; exact original unary block count and binary budget/m/N prefixes; the complete original block generator; a fixed explicit polynomial in normalized-record length; exhaustive actual cleanup of all 32 non-output public tapes; and an actual fixed public-state reset. cleanOriginalCanonical_executes proposes actual execution to canonicalCleanStore(rawRowCanonicalBits R), with all public/private work clean and exactly the ORIGINAL bytes. Global scalar/C0 words are physically constructed; encoding, copying and cleanup costs are included.
+
+POLYTOMY-COMPLETE-ORIGINAL-CANONICAL-BRANCH.md records the full derivation. L is the preserved tagged-unary normalized-record bound, not automatically the external binary-input length. Validity, parsed record and fresh entry remain explicit branch premises. Original total yes/no/invalid dispatch, operational validator-control integration, standalone all-input packaging and normalization composition remain open, as do independent verifier, closed encoded hardness, arbitrary-DAG formalization and every compatibility/axiom/kernel check. No execution, new independent review, certificate, novelty or biological closure is claimed.
 
 ## Continued COMPLETE ORIGINAL block generation and C0 SOURCE, 21:42 UTC
 

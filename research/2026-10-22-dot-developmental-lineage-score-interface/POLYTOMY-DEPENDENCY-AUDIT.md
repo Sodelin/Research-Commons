@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 22:07 UTC: complete actual canonical branch and uniform polynomial
+
+Ten OPTIONAL UNELABORATED modules embed the existing concrete four-tape binary encoder with three private work tapes and fully private encoder control. The actual pinned proof-side Embedding.runs and clean boundaries preserve arbitrary caller data/control at the same transition count. This is a legitimate one-port length-to-original-binary-frame routine, not a substitute for a multi-parameter call. Existing restoring-copy/subtraction/clear/load routines supply physical original budget, exact header order and exhaustive 32-public-work-port cleanup/reset.
+
+Read-only inspection covered the exact existing encoder run/boundary, Embedding/Runs interfaces, wordDuplicate_executes, unarySubtract_executes, frameCallerStore_self, original rawRowCanonicalBits/rawRowFixedCost_bound and actual header extraction bounds. Uniform polynomial envelopes derive N,m,K<=L from the normalized record and original declared-count equality. No unrecognized numerical-control register, free serializer, new source/model or concepts-only theorem axiom is adopted.
+
+All source remains optional/unelaborated. The unchanged own Lean/mathlib pin and differing optional dependency pin still need compatibility and complete transitive-axiom/kernel checks. No runtime, installation, test, CI, certificate, new independent review or novelty claim. Original total cases/invalid path, operational validator-control integration, standalone machine/normalization composition, independent verifier and closed encoded hardness remain; biological/general-DAG scopes remain open.
+
 ## Continuation, 21:42 UTC: actual complete original block section and exact C0
 
 Ten OPTIONAL UNELABORATED modules instantiate physical per-block preparation and every actual outer CountdownContract premise, then join exact original ordered bytes/C0 observations, actual anchor preparation/execution and the existing physical initializer. The generic operational invariant includes out-of-bounds row m; the actual outer pop separately proves i<m before applying original real-block semantics. Same inner block routine and original predicates, no fabricated row or supplied execution oracle.
