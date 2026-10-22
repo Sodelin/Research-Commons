@@ -325,6 +325,11 @@
       "sha256": "f25b3a29f20b71e03ee273bfd7fcb20e22461433485c3bc02b343d9fc9e4d838"
     },
     {
+      "path": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
+      "utf8_bytes": 5298,
+      "sha256": "dc38d77dd2cc9be2c9c51cb0231f2bcb4159daee6a1c61aaab5a27c25a13da78"
+    },
+    {
       "path": "evidence/G7-TRANSFER-PADDING-HOSTED-REVIEW.json",
       "utf8_bytes": 23982,
       "sha256": "93df1c25d0623e63b6b2f40271b64e19cc0b05f5eb71e35b82e6fb0e612a8fce"
@@ -716,8 +721,8 @@
     },
     {
       "path": "native/g7_exact_law_formula.rs",
-      "utf8_bytes": 60719,
-      "sha256": "8841858b6b67d8888afa63ebea115d18203122b89851817adb2401735ad2462c"
+      "utf8_bytes": 64242,
+      "sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40"
     },
     {
       "path": "native/g7_law_table_inlet.rs",
@@ -741,8 +746,8 @@
     },
     {
       "path": "native/G7-ASSERTION-QUERY-CONTRACT.md",
-      "utf8_bytes": 3686,
-      "sha256": "8fbb0761d2714d1d761e19fd2104254cbf3ec2c6f056ad6f2aeed8a83ef4e510"
+      "utf8_bytes": 6036,
+      "sha256": "ce49013ac4f304f11da5ae81173b1842c0a51b13a81e8e812bfec5ea13572791"
     },
     {
       "path": "native/G7-CELL-CALENDAR-CONTRACT.md",
@@ -766,13 +771,13 @@
     },
     {
       "path": "native/G7-FORMULA-CONTRACT.md",
-      "utf8_bytes": 17045,
-      "sha256": "4b522685e1bae73b49a81fd441bee94e45dd1ffb8be96f65e3b643a80aec357d"
+      "utf8_bytes": 17673,
+      "sha256": "a9c75603de1474ba67aa95afd5a7286ea5e3773df2f7ed041aeea533734a5e1d"
     },
     {
       "path": "native/G7-FORMULA-VERIFICATION-PLAN.md",
-      "utf8_bytes": 6187,
-      "sha256": "7bf5d3453adebaa0362e0a86fba268aabbb1a1389de378f4494bb120c93d640a"
+      "utf8_bytes": 6789,
+      "sha256": "5eb5d7680b3c0c41f7591d158fde7b9b31e8cb91059caf916e75352867c577d0"
     },
     {
       "path": "native/g7-formula/Cargo.toml",
@@ -1096,8 +1101,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 16122,
-      "sha256": "e6dfd7444c28f510db4014488e55132f6091ff9d422f1a976c78c71833d88fa3"
+      "utf8_bytes": 16653,
+      "sha256": "f543eed4bb591bc3174cee46b4b546b80926c6ee8151f419dbdfa467ee933f4a"
     },
     {
       "path": "RECORD-WRITER-GAP.md",
@@ -1548,11 +1553,11 @@
     "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
     "source": {
       "path": "native/g7_exact_law_formula.rs",
-      "utf8_bytes": 60719,
-      "sha256": "8841858b6b67d8888afa63ebea115d18203122b89851817adb2401735ad2462c",
-      "lines": 1328
+      "sha256": "406009f98a6f86c4c42dad1822fd802da037e2f4613385826eef1af1d7a28b40",
+      "utf8_bytes": 64242,
+      "lines": 1386
     },
-    "review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
+    "review": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
     "contract": "native/G7-FORMULA-CONTRACT.md",
     "verification_plan": "native/G7-FORMULA-VERIFICATION-PLAN.md",
     "execution": false,
@@ -1563,7 +1568,9 @@
     },
     "historical_review": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
     "earlier_peer_core_review_does_not_certify_new_arms": true,
-    "current_module_declaration_review": "evidence/G7-SUPPLIED-FAMILY-SOURCE-REVIEW.json"
+    "current_module_declaration_review": "evidence/G7-SUPPLIED-FAMILY-SOURCE-REVIEW.json",
+    "menu_channel_review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
+    "historical_checks_do_not_accept_current_revision": true
   },
   "Code_CHART_physical_receiver": {
     "review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
@@ -1640,7 +1647,8 @@
     "review": "evidence/G7-ASSERTION-QUERY-SOURCE-REVIEW.json",
     "contract": "native/G7-ASSERTION-QUERY-CONTRACT.md",
     "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
-    "not_a_backend_result_or_proof": true
+    "not_a_backend_result_or_proof": true,
+    "current_terminal_target_review": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json"
   },
   "G7_finite_path_horizon_hosted_review": {
     "review": "evidence/G7-PATH-HORIZON-HOSTED-REVIEW.json",
@@ -1825,5 +1833,14 @@
     "new_mathematical_cases": 0,
     "independent_execution": false,
     "native_writer_binding": "UNBOUND"
+  },
+  "G7_terminal_target_assertion": {
+    "review": "evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json",
+    "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+    "original_consistent_model_predicates_reused": true,
+    "algebraic_constant_tuple_closed": true,
+    "original_stop_validity_obligation_only": true,
+    "target_selector_or_result_proof_returned": false,
+    "new_backend_or_profile_or_execution": false
   }
 }

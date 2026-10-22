@@ -280,3 +280,12 @@ Earlier guard/scope reviews concern their exact pinned source. This revision
 adds one enum variant and new validation/action arms; it is uncompiled and
 unexecuted. See G7-TARGET-LABELLED-FAMILY-JOIN.md and the exact current source
 review for the target-labelled normalization and semantic acceptance boundary.
+
+The guarded assertion kind IdentifiedTarget(t) now expresses the retained
+Valid(.stop t) obligation for the supplied source family. It reuses the existing
+whole-history model predicates, closes their shared constant tuple, and excludes
+every differently labelled piece. It returns only an IssuedAssertion bound to
+the exact problem/history/label. No unique parameter point or arbitrary target
+function of normalized survival is assumed. Empty consistency is vacuous;
+physical transcript interpretation additionally requires reachability and origin.
+See G7-ASSERTION-QUERY-CONTRACT.md and the exact source-only terminal review.

@@ -100,3 +100,12 @@ The existing resource/provider verification group must additionally preserve
 DISTINCT original row IDs carrying equal masks, with separate weights/channels
 and positive-support row costs. Equal masks do not merge row IDs or actions;
 repeated support indices are still invalid. This check is deferred, NOT run.
+
+Extend the SAME existing terminal/prerequisite/scope group for
+IdentifiedTarget(t): correct, wrong and absent labels; several parameter points
+with one target; equal-response different-target pieces; no consistent source;
+a nontrivial isolated constant tuple and free transcendental history. Verify
+the Valid(.stop t) interpretation through an independent semantic consumer.
+Guard invalid constants/illegal prefixes and keep unreachable/vacuous labels
+separate from real transcript claims. Target-alphabet size must not drive an
+unbounded allocation; scope/AST/render failures stay UNKNOWN. NONE RUN.

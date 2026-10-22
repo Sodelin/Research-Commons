@@ -1,12 +1,14 @@
 # Guarded G7 assertion queries
 
 Source-implemented in Compiled::wolfram_assertion; UNCOMPILED/UNEXECUTED.
-The existing AST constructors, Winning recursion and wolfram_query renderer
-are unchanged. Removing the exact addition restores the previous23cebde3 source.
+The existing AST node definitions, Winning recursion, original input validator,
+low-level query renderer and scope auditor remain unchanged. Earlier source
+restoration claims apply only to their pinned historical additions. The current
+source adds a guarded terminal-target assertion; it is not covered by old runs.
 
 Each assertion is ONE Resolve[And[...],Reals] query. It conjoins
 ConstantsWellDefined and LegalHistory with the requested HomogeneousHistory,
-WinningContinuation, NOT WinningContinuation, or WinningAction(i).
+WinningContinuation, NOT WinningContinuation, WinningAction(i), or IdentifiedTarget(t).
 AssertionHistory::Reachable additionally conjoins ReachableHistory.
 The losing assertion negates W ONLY under the constant/legal guards.
 
@@ -57,3 +59,38 @@ binders, invalid IDs and undeclared free variables; bounded work failure remains
 Limit/UNKNOWN. actual_free_symbols() reports actual syntactic occurrences,
 distinct from the conservative declared context. This is uncompiled source,
 not proof of polynomial/AST/game semantics or external result identity.
+
+IdentifiedTarget(t) checks t against the nonempty declared target alphabet.
+For each source piece m, the original reachability builder retains
+possible_m(C,h) = exists theta_m, domain_m(C,theta_m) AND every history equation
+at that ONE theta_m. Its stored exclusion is
+forall C, constant_roots(C) -> NOT possible_m(C,h).
+The target claim conjoins every exclusion with target(m) != t under the SAME
+constant/legal/optional-reachability guards. It does not require a unique source
+point and does not merge equal-response pieces carrying different targets.
+
+This is the supplied-model counterpart of the EXISTING Valid(.stop t):
+every consistent source has target t. homogeneous_iff_terminal and
+valid_run_identifies remain the original semantic consumers. A native
+polynomial/AST proof and source/target representation are still required.
+
+An impossible history vacuously satisfies every in-range target claim, as the
+abstract stop-plan semantics permits. Reachable refuses that branch when
+interpreting a real transcript. Legal-only target claims remain universal
+statements about any fitting pieces, rather than evidence a source exists.
+An absent label can only succeed vacuously. A wrong label's FALSE result is
+inconclusive; it does not prove a different label or a losing budget.
+
+IssuedAssertion retains the exact requested t as part of its kind. It never
+selects, proves or returns an authenticated target result. A future verified
+consumer must bind the query, same exact free-history values or proved cell,
+actual source/target transport and original result. No history is rationalized.
+
+Work and allocation scale with supplied models, not target_count. Complete
+per-model exclusions can consume the existing AST ceiling; exhaustion is
+UNKNOWN and returns no partial claim. The original fixed-depth game is unchanged.
+After real execution admission, extend the SAME terminal/prerequisite/scope
+checks for correct/wrong/absent labels, multiple same-target parameter points,
+different-target observational twins, unreachable histories, nonrational free
+responses, nontrivial common constants and construction/render exhaustion.
+No such check or source query ran.

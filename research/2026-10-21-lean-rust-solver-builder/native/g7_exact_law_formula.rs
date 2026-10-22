@@ -596,6 +596,10 @@ pub struct Compiled<'a> {
     legal_history: FormulaId,
     reachable_history: FormulaId,
     homogeneous_history: FormulaId,
+    /// For each original model: valid root tuple implies NO local bank fits
+    /// the ENTIRE history. Each predicate closes its constant variables.
+    /// Entries retain the exact Problem.models order.
+    excluded_models: Vec<FormulaId>,
     winning: FormulaId,
     fibres: Vec<ActionFibre>,
     history_symbols: Vec<HistorySymbols>,
@@ -638,6 +642,10 @@ impl<'a> Compiled<'a> {
 #[derive(Clone, Copy, Debug)]
 pub enum AssertionKind {
     HomogeneousHistory,
+    /// Every consistent supplied source piece has this target code.
+    /// At an unreachable history this is vacuous; Reachable is required for an
+    /// actual identifying leaf. This descriptor neither selects nor proves it.
+    IdentifiedTarget(usize),
     WinningContinuation,
     LosingContinuation,
     WinningAction(usize),
@@ -696,6 +704,13 @@ impl<'a> Compiled<'a> {
     /// FALSE is inconclusive for this interface, never the opposite assertion,
     /// a budget-NO or an execution failure. A disabled action fibre stays FALSE.
     ///
+    /// IdentifiedTarget(t) excludes EVERY consistent model with a different
+    /// target. It does not identify one parameter point. Use Reachable to
+    /// exclude a vacuous label on an impossible history; a Legal-only assertion
+    /// remains merely universal over any consistent supplied pieces. Even with
+    /// Reachable, actual transcript/result origin and source/target transport
+    /// remain separate. No algebraic selector is supplied by rendering a claim.
+    ///
     /// This adds no backend, result parser, QE/AST proof, history specialization,
     /// executable selector, source admission or runtime record writer.
     pub fn wolfram_assertion<'q>(
@@ -715,13 +730,31 @@ impl<'a> Compiled<'a> {
                 .and_then(|s| s.strip_suffix(",Reals]"))
                 .ok_or(Error::Invalid("INTERNAL_QUERY_DOCUMENT"))
         }
-        let (root, negate) = match kind {
-            AssertionKind::HomogeneousHistory => (self.homogeneous_history, false),
-            AssertionKind::WinningContinuation => (self.winning, false),
-            AssertionKind::LosingContinuation => (self.winning, true),
+        let (claims, negate) = match kind {
+            AssertionKind::HomogeneousHistory => (vec![self.homogeneous_history], false),
+            AssertionKind::WinningContinuation => (vec![self.winning], false),
+            AssertionKind::LosingContinuation => (vec![self.winning], true),
             AssertionKind::WinningAction(index) => (
-                self.fibres.get(index)
-                    .ok_or(Error::Invalid("ACTION_FIBRE_INDEX"))?.formula, false),
+                vec![self.fibres.get(index)
+                    .ok_or(Error::Invalid("ACTION_FIBRE_INDEX"))?.formula], false),
+            AssertionKind::IdentifiedTarget(target) => {
+                if target >= self.problem.target_count {
+                    return Err(Error::Invalid("ASSERTION_TARGET_ID"));
+                }
+                if self.excluded_models.len() != self.problem.models.len() {
+                    return Err(Error::Invalid("INTERNAL_MODEL_POSSIBILITY_ORDER"));
+                }
+                let mut exclusions = Vec::new();
+                exclusions.try_reserve(self.problem.models.len())
+                    .map_err(|_| Error::Limit("TARGET_ASSERTION_ALLOCATION"))?;
+                for (model,excluded) in self.problem.models.iter().zip(&self.excluded_models) {
+                    if model.target != target { exclusions.push(*excluded); }
+                }
+                // Every DIFFERENT-target model must be excluded at the
+                // declared root tuple. Equal-response/different-target pieces
+                // remain separate. No target_count-sized loop or allocation.
+                (exclusions, false)
+            }
         };
         let mut declared = Vec::new();
         let mut context_count = 0usize;
@@ -743,11 +776,14 @@ impl<'a> Compiled<'a> {
         if let AssertionKind::WinningAction(index) = kind {
             declared.extend_from_slice(&self.fibres[index].symbols.action_parameters);
         }
-        let roots = if history == AssertionHistory::Reachable {
-            vec![self.constants_valid,self.legal_history,self.reachable_history,root]
+        let mut roots = if history == AssertionHistory::Reachable {
+            vec![self.constants_valid,self.legal_history,self.reachable_history]
         } else {
-            vec![self.constants_valid,self.legal_history,root]
+            vec![self.constants_valid,self.legal_history]
         };
+        roots.try_reserve(claims.len())
+            .map_err(|_| Error::Limit("ASSERTION_SCOPE_ROOT_ALLOCATION"))?;
+        roots.extend_from_slice(&claims);
         let actual_free = self.arena.query_free_symbols(&roots,&declared)?;
         let limit = self.arena.limits.rendered_bytes;
         let mut document = String::new();
@@ -764,10 +800,14 @@ impl<'a> Compiled<'a> {
             append(&mut document, body(&child)?, limit)?;
             append(&mut document, ",", limit)?;
         }
-        if negate { append(&mut document, "Not[", limit)?; }
-        let child = self.arena.render(root)?;
-        append(&mut document, body(&child)?, limit)?;
-        if negate { append(&mut document, "]", limit)?; }
+        if claims.is_empty() { append(&mut document, "True", limit)?; }
+        for (index,claim) in claims.iter().enumerate() {
+            if index != 0 { append(&mut document, ",", limit)?; }
+            if negate { append(&mut document, "Not[", limit)?; }
+            let child = self.arena.render(*claim)?;
+            append(&mut document, body(&child)?, limit)?;
+            if negate { append(&mut document, "]", limit)?; }
+        }
         append(&mut document, "],Reals]", limit)?;
         Ok(IssuedAssertion {compiled:self,kind,history,document,actual_free})
     }
@@ -1068,13 +1108,22 @@ impl<'a> Compiler<'a> {
         }
         self.arena.and(exclusions)
     }
-    fn reachable(&mut self, history: &[Step]) -> Result<FormulaId> {
+    fn reachable(&mut self, history: &[Step]) -> Result<(Vec<FormulaId>,FormulaId)> {
         let mut alternatives = Vec::new();
+        alternatives.try_reserve_exact(self.problem.models.len())
+            .map_err(|_| Error::Limit("MODEL_POSSIBILITY_ALLOCATION"))?;
         for model in 0..self.problem.models.len() {
             let (variables,consistent) = self.consistent(model,history)?;
             alternatives.push(self.arena.exists(variables,consistent)?);
         }
-        self.arena.or(alternatives)
+        // Reuse the very SAME quantified whole-history predicates in the
+        // terminal-target assertions. No new source bank or model evaluator.
+        let mut retained = Vec::new();
+        retained.try_reserve_exact(alternatives.len())
+            .map_err(|_| Error::Limit("MODEL_POSSIBILITY_ALLOCATION"))?;
+        retained.extend_from_slice(&alternatives);
+        let reachable = self.arena.or(alternatives)?;
+        Ok((retained,reachable))
     }
     fn win(&mut self, history: &mut Vec<Step>, state: &Resources, depth: usize)
         -> Result<FormulaId> {
@@ -1154,7 +1203,16 @@ pub fn compile<'a>(
     let winning = c.conditional_on_constants(legal_win)?;
     let legal_history = c.conditional_on_constants(prefix_legal)?;
     let homogeneous_history = c.conditional_on_constants(homogeneous)?;
-    let reachable = c.reachable(&history)?;
+    let (possible_models,reachable) = c.reachable(&history)?;
+    let mut excluded_models = Vec::new();
+    excluded_models.try_reserve_exact(possible_models.len())
+        .map_err(|_| Error::Limit("MODEL_EXCLUSION_ALLOCATION"))?;
+    for possible in possible_models {
+        let excluded = c.arena.not(possible)?;
+        // Do NOT expose constant symbols as unbound history coordinates.
+        // This is forall C, constant_roots(C) -> not exists source bank ...
+        excluded_models.push(c.conditional_on_constants(excluded)?);
+    }
     let root_symbols = c.constants.clone();
     let roots = c.constant_roots(&root_symbols)?;
     let legal_reachable = c.arena.and(vec![roots,prefix_legal,reachable])?;
@@ -1198,7 +1256,7 @@ pub fn compile<'a>(
         .collect();
     Ok(Compiled {
         problem,budget,arena:c.arena,constants_valid,legal_history,reachable_history,
-        homogeneous_history,winning,fibres,history_symbols,
+        homogeneous_history,excluded_models,winning,fibres,history_symbols,
         constant_symbols:c.constants,retained_horizon,supplied_affine_cases,
     })
 }

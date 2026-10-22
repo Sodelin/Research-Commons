@@ -220,3 +220,11 @@ mock regressions and three actual launcher checks retain their exact scope:
 normal exits, original byte streams and encrypted readback are required before
 acceptance. These reuse existing cases, add no mathematical case and do not
 bind the native Linux controller or transitive first writers. No check ran here.
+
+The guarded IdentifiedTarget(t) assertion now reuses the original whole-history
+source predicates to express the existing Valid(.stop t) obligation. Shared
+constants are bound; distinct parameter points with one label remain possible.
+Its exact free history and requested label stay in IssuedAssertion. This is
+uncompiled source, with no selected/proved target or backend result. Physical
+source/target transport, reachability/origin and AST/QE/selector acceptance remain
+open. See evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json.
