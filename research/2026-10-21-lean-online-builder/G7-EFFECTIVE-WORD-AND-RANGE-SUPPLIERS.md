@@ -101,3 +101,80 @@ Native validator/parser/tree-encoding/row normalization refinement is still
 unproved. All physical source/menu/action coverage, AST/QE/selector/result and
 original-owner encrypted-controller gates remain explicit. No extra proof suite,
 native engine, API/factory, model or held-job action was run for this review.
+
+## Canonical representatives and the exact validator fields
+
+The native canonical-dead-field restriction does not itself require a new
+state enumeration or a bijection onto all admitted Codes. There is a direct
+HAND composition of the existing declarations, with no new Lean declaration
+or compiler result claimed here. For an original state code s, take
+
+    t = FiniteSourceSnapshot.admittedCode N sample (state s) s.property.
+
+UniformizedSourceStep.Code is definitionally AdmittedSnapshot and state is
+decodeSnapshot N.root. Thus t has the same live set, ancestry, original register
+and live trees/locations, with every dead genealogy/population field set to none.
+The existing decode_encode_sourceValid gives its actual subtype evidence;
+decode_encode_selectedView gives projection t = projection s for every keep.
+Given b:SelectedIndex, take the state witness in b.property and apply this
+composition. Every original range element therefore has a canonical-dead-field
+representative. This statement concerns the existing mathematical state types;
+it is not a proof that native validation or parsing has encoded that state.
+
+The projection is also allowed to be many-to-one. In particular, representative
+IDs are internal to the state; the selected view keeps each original copy's
+ordered genealogy and population plus the full register. Different valid state
+codes can have the same view. Coefficient fibres must be summed under that
+projection. A requested bijection from native snapshots to SelectedIndex would
+be a stronger and generally inappropriate obligation.
+
+The bounded native source_population.rs validator sections were compared with
+the original State/Valid/DescendsTo/SourceValid definitions. The full native
+source is19011B/SHA256
+6afebffe8bb727a1c92bd113d479f01f0b2877bbf527c79866247805bc21da7c,
+Git blob01a184fd7b71cd819c1efd78f830b766d4c7472f. This comparison covers its
+context, tree scan and validate_snapshot declarations/branches, not a universal
+proof of the mutable loops or a full inherited-engine audit. The original
+source definitions are in32780B/SHA256
+d6e5b2b57cf03091f8b5b5a2c80cf49de39bab938c50a467b46b30e08f12871d,
+Git blob4ee5f7c2cb5262aedd5abac98894e98ad9bc1e5c; only the relevant genealogy,
+state/invariant and descendant definitions were inspected in this comparison.
+
+| Native validation branch | Original field or required decoding fact |
+| --- | --- |
+| Bounded, strictly increasing live IDs; exact vector lengths | Fin Copy arrays and live Finset on the same supplied copy order |
+| Every ancestor is live; live representatives are fixed | Valid.ancestor_live and Valid.representative |
+| Live tree labels match ancestor fibres; the complete seen vector covers all copies | BOTH directions of Valid.leaf_fiber, not just one subset inclusion |
+| Tree leaves are in range and never repeat | Ordered Leaf/Node decoding and Genealogy.WellLabelled |
+| Node/edge bounds and ancestral vertex equal original root | The distinct original Location tags, with no population-ID collapse |
+| For every copy, DFS from its ancestor's population reaches its sampled original leaf | SourceValid.original_descendant via copyLocation; edge descent starts at target e |
+| Full vertex-register length; dead fields none | Exact shared register plus the native canonical image restriction |
+
+The reverse leaf-fibre implication uses the complete seen check: if ancestor x=i,
+the scan places x in some live tree j and validates ancestor x=j, hence j=i.
+Duplicate-label rejection supplies disjoint children for the ordered tree
+decoding. The original WellLabelledTree constructor and the proved
+FiniteGenealogyEncoding.wellLabelled_height_below_copy_cap already provide the
+finite tree carrier. No new hidden-tree bound or unranked-tree quotient is an
+input premise. The numerical native profile cap remains separate.
+
+SourceValid itself does not require nonhybrid register bits to be false, nor
+does it certify that a state is reached by the actual natural initialization.
+Those are different gates. The actual initialRows/initialCodeEffective supplier
+enforces the original nonhybrid false convention and once-drawn natural bank;
+an arbitrary conditional state is not silently an admitted physical transcript.
+
+For a supplied literal snapshot, the existing forestValidDecidable and
+sourceValidDecidable can test the exact predicate without enumerating every
+snapshot. Given genuine subtype evidence, EffectiveSourceEnumeration.project
+constructs its SelectedIndex directly; findRepresentative's exhaustive search
+is unnecessary for an already supplied state witness. Reusing that path does
+not prove that arbitrary supplied Rust values, native validator success or
+untrusted output strings have become kernel evidence.
+
+No material predicate-field mismatch was found under the REQUIRED original
+graph/incidence, finite-array, tree and copy-label maps. Still unproved are the
+native tree/DFS/loop/field decoding semantics, exact selected-view/key and
+coefficient-fibre relation, actual initial/phase/slot word, all-raw completion
+transport and authorized readout. This narrows the representation obligation
+without adding a source factory, API, finite-state engine or hosted proof case.
