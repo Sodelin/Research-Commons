@@ -1,0 +1,216 @@
+{
+  "author": "dot (OpenAI)",
+  "status": "SOURCE_ONLY_UNELABORATED_NO_EXECUTION_ADMISSION",
+  "peer_commit": "559dba6bc996390fe0f7cfcf14e21f2e71007194",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "existing_physical_target_modules": 776,
+  "existing_physical_target_contains_these_modules": false,
+  "roots": [
+    "P1FiniteThreshold",
+    "P5OrderedLambShift"
+  ],
+  "order": [
+    "P1BinomialMoments",
+    "P1ScalarStatistic",
+    "FiniteProductMoments",
+    "P1ProductStatistic",
+    "P1FiniteThreshold",
+    "P5OrderedTriangle",
+    "P5SquareTriangle",
+    "P5OmegaIntegrability",
+    "BoundedTriangleIntegral",
+    "P5OrderedLambShift"
+  ],
+  "source_variants": [
+    {
+      "module": "P1BinomialMoments",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1BinomialMoments.lean",
+      "original_imports": [
+        "Mathlib.Basic.Real.Basic",
+        "Mathlib.Data.Nat.Choose.Sum"
+      ],
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Real.Basic",
+          "to": "Mathlib.Data.Real.Basic"
+        }
+      ],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P1ScalarStatistic",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1ScalarStatistic.lean",
+      "original_imports": [
+        "P1BinomialMoments",
+        "Mathlib.Tactic.FieldSimp"
+      ],
+      "changes": [],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "FiniteProductMoments",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/FiniteProductMoments.lean",
+      "original_imports": [
+        "Mathlib.Basic.Real.Basic",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+        "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+        "Mathlib.Tactic.Ring"
+      ],
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Real.Basic",
+          "to": "Mathlib.Data.Real.Basic"
+        }
+      ],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P1ProductStatistic",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1ProductStatistic.lean",
+      "original_imports": [
+        "P1ScalarStatistic",
+        "FiniteProductMoments",
+        "Mathlib.Algebra.BigOperators.Fin"
+      ],
+      "changes": [],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P1FiniteThreshold",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P1FiniteThreshold.lean",
+      "original_imports": [
+        "Mathlib.Basic.Real.Basic",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Positivity",
+        "Mathlib.Tactic.Ring",
+        "P1ProductStatistic"
+      ],
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Real.Basic",
+          "to": "Mathlib.Data.Real.Basic"
+        }
+      ],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P5OrderedTriangle",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5OrderedTriangle.lean",
+      "original_imports": [
+        "Mathlib.Algebra.Algebra.Basic",
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.Tactic.Module"
+      ],
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Complex.Basic",
+          "to": "Mathlib.Data.Complex.Basic"
+        }
+      ],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P5SquareTriangle",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5SquareTriangle.lean",
+      "original_imports": [
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "changes": [],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P5OmegaIntegrability",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5OmegaIntegrability.lean",
+      "original_imports": [
+        "P5SquareTriangle",
+        "Mathlib.Analysis.Normed.Algebra.Basic",
+        "Mathlib.Basic.Complex.Basic",
+        "Mathlib.MeasureTheory.Function.StronglyMeasurable.Basic",
+        "Mathlib.MeasureTheory.Function.L1Space.Integrable",
+        "Mathlib.Tactic.FunProp",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "changes": [
+        {
+          "from": "Mathlib.Basic.Complex.Basic",
+          "to": "Mathlib.Data.Complex.Basic"
+        }
+      ],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "BoundedTriangleIntegral",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/BoundedTriangleIntegral.lean",
+      "original_imports": [
+        "Mathlib.MeasureTheory.Integral.Prod",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "changes": [],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    },
+    {
+      "module": "P5OrderedLambShift",
+      "source": "https://github.com/Sodelin/Research-Commons/blob/559dba6bc996390fe0f7cfcf14e21f2e71007194/research/2026-10-21-lean-online-builder/lean/P5OrderedLambShift.lean",
+      "original_imports": [
+        "P5OmegaIntegrability",
+        "P5OrderedTriangle",
+        "BoundedTriangleIntegral",
+        "Mathlib.Analysis.Normed.Operator.Mul",
+        "Mathlib.Tactic.Positivity"
+      ],
+      "changes": [],
+      "nonimport_body_preserved": true,
+      "nonimport_body_found_verbatim_in_hosted_union": true
+    }
+  ],
+  "selected_hosted_endpoint_names": [
+    "P1ScalarMoments.binomialMean_moments",
+    "P1ScalarMoments.quadratic_mean_variance",
+    "P1ScalarMoments.finite_binomial_quadratic_moments",
+    "P5OriginalGenerator.upper_triangle_section",
+    "P5OriginalGenerator.lower_triangle_swap",
+    "P5OriginalGenerator.square_to_triangles",
+    "P5OriginalGenerator.bath_square_to_triangles",
+    "P5OriginalGenerator.ordered_triangle_identity",
+    "P1ScalarMoments.coordinate_statistics",
+    "P1ScalarMoments.bounded_scalar_variance",
+    "P1ScalarMoments.finite_product_quadratic_moments",
+    "P5OriginalGenerator.omega_unit_bound",
+    "P5OriginalGenerator.omega_square_integrable",
+    "P5OriginalGenerator.omega_square_to_triangles",
+    "P1FiniteThreshold.weighted_bad_mass",
+    "P1FiniteThreshold.sample_budget_bounds",
+    "P1FiniteThreshold.finite_threshold_errors",
+    "P1FiniteThreshold.finite_product_threshold_errors",
+    "BoundedTriangleIntegral.bounded_triangle_integrable",
+    "P5OriginalGenerator.ordered_lamb_shift_identity"
+  ],
+  "evidence_limit": "Hosted concatenated documents do not prove these separately compiled modules or the proposed import variants. Declaration/tactic API and full import acceptance remain untested.",
+  "known_absent_paths": [
+    "Mathlib/Basic/Real/Basic.lean",
+    "Mathlib/Basic/Complex/Basic.lean"
+  ],
+  "replacement_paths": [
+    "Mathlib/Data/Real/Basic.lean",
+    "Mathlib/Data/Complex/Basic.lean"
+  ],
+  "pinned_tree_complete": true
+}
