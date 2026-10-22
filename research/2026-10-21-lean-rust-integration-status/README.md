@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[7d33d921](https://github.com/Sodelin/Research-Commons/tree/7d33d9211238dd9ea5d97445719931913055c154/research/2026-10-21-lean-rust-solver-builder).
+[29237b71](https://github.com/Sodelin/Research-Commons/tree/29237b716cf4da99b4f212cb67e800f8f71b6ce1/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -59,3 +59,12 @@ The existing concrete step/word theorems are recovered; native canonical field/
 coefficient encoding, zero for absent rows, closed transition endpoints and
 all-raw root/completion relation remain required. No native source/readout/
 coverage/AST/QE/result or runtime admission is inferred.
+
+The SOURCE-ONLY completed/empty readout path now retains the same word table,
+original Copy embedding and separate menu masses. A fixed-calendar coordinate
+plan ties all slot survivals to one whole-edge/ancestral/gamma bank with exact
+positive-power predicates. This is a candidate representation, not preservation
+of the calibrated G6 cell or a target-labelled SourceModel. Its positive-root,
+actual native/physical source/action and target coverage receivers remain open.
+The peer's original all-raw root supplier is recovered; endpoint PMF phase
+permutation alone does not identify raw zero-coefficient rows.
