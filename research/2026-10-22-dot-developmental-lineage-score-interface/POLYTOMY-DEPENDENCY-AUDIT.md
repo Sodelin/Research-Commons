@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 20:29 UTC: complete original row-specific query source
+
+Nine OPTIONAL UNELABORATED modules use the same inspected actual Routine/Atom/composition/countdown/copy/cleanup APIs and own original unary parser sources. The generalized data-observation theorem is an own induction over actual countdown execution semantics; its potentially infinite observation type is NOT placed in finite control. All concrete body/observation premises are discharged for a physical selector and three Boolean frame fields. Exact original List.get row membership, malformed/trailing rejection, all-path partial storage and consumed cap/selector boundaries are explicit.
+
+Complete supplied-physical-parameter query bound: 7CL²+10L³+27L²+30L+C+I+41. No assumption C<=L is inserted. No new external dependency, installation, execution, test, build certificate, independent review or novelty claim. Physical constructor initialization/control integration, original range/marker branches/enumeration/arithmetic/serialization/packaging, independent checker, closed encoded hardness and all toolchain/axiom/kernel checks remain. Original actual-D_lambda/all-refinement and biological/general-DAG scopes are unchanged.
+
 ## Continuation, 20:13 UTC: genuine multiport adapters and original leaf/cost routines
 
 Six OPTIONAL UNELABORATED modules use actual inspected Embedding.stmt/runs/liftStacks_eq and Transfer.stmt/runs rather than the unsupported use of single-port Program.call for a multiport caller. The same pinned proof-side sources were reread; Lean's pinned List.reverse_replicate and List.length_tail statements were checked read-only. Private stack/control boundaries and arbitrary outside caller data are explicit. Actual original token/prefix bytes and incremental original combTailCost invariant are retained, not a replacement scoring objective.

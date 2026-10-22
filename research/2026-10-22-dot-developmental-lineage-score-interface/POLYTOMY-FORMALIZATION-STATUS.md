@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 20:13 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 20:29 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued COMPLETE original selected-row query SOURCE, 20:29 UTC
+
+Nine OPTIONAL UNELABORATED modules join a physical disposable row selector and finite chosen/active/found frame, actual original identifier comparisons/row countdowns, data-observation fold with concretely discharged contracts, exact ORIGINAL List.get row membership, real record replay/header/suffix rejection, all-path partial-counter bounds, unconditional cap/selector cleanup and actual final verdict. POLYTOMY-COMPLETE-SELECTED-ROW-QUERY.md contains the full derivation. Empty selected rows are selected once; later rows cannot replace them. Out-of-range selectors give no hit; malformed/trailing input rejects even after an earlier match.
+
+Proposed complete caller-level query bound is 7CL²+10L³+27L²+30L+C+I+41. C and I are actual entry tape parameters, not Nat-valued finite control, and C<=L is NOT assumed. Original bytes survive and all query/scan work clears. Physical parameter copies/control integration, original rawRowMember range/marker branches, descending type/block enumeration and accepted-leaf gating, arithmetic/binary headers/order/whole cleanup/standalone machine remain open. So do the independent checker, closed encoded hardness and every compatibility/axiom/kernel check. No runtime, certificate, new review, novelty or full mathematical/biological/general-DAG closure is claimed.
 
 ## Continued actual original leaf/cost and multiport components, 20:13 UTC
 
