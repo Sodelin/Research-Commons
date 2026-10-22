@@ -38,8 +38,10 @@ the full original budget-NO. The existing SourceTransfer statement retains
 both directions for that reason. Nothing here synthesizes those domains.
 
 The fixed-calendar positive-power plan is one coordinate candidate for a
-fixed graph/mode template. Its exact supplied-row binding is not a SourceModel
-factory and does not retain arbitrary calibrated G6-cell constraints. The
+fixed graph/mode template. The plan's supplied-row binding does not itself establish a physical SourceModel
+factory or retain arbitrary calibrated G6-cell constraints. supplied_family now
+assembles the supplied mathematical pieces into Problem; it proves no original
+source/admission/target coverage. The
 original scientific source/class/target/action standards remain inputs.
 
 ## One law per menu and one original cost per row
@@ -108,8 +110,9 @@ The04a6aa24 source event inserted one enum variant, one validation arm and
 one action coefficient arm; removing those three additions from THAT historical
 body restores its prior formula byte-for-byte. The later row-coverage correction
 also removes mask-value rejection in the frontend, LAW inlet and survival binder.
-Original guarded query/scope code remains unchanged. Earlier reviews are NOT
-promoted to review or execution of the new source.
+The guarded query/scope implementation was unchanged through that historical
+row/menu event. The later IdentifiedTarget extension has its own source review;
+old reviews are not promoted to current implementation or execution acceptance.
 
 Only bounded source inspection and a limited delimiter/string scan occurred;
 neither is Rust parsing/typechecking or a model test. After actual writer
@@ -128,3 +131,18 @@ no mask-injectivity premise. Preserve their individual channels, weights and
 positive-support row costs. Only repeated IDs in a support set remain invalid.
 An intended mask-value resource quotient requires an explicit original
 legality/update transport; identical physical forcing laws alone do not prove it.
+
+The existing OriginalCarrierCoverage1df75a65 already preserves EVERY original
+row/programme response on exact census Fin carriers while retaining the SAME
+OriginalPoint index. It reuses original control relabelling and one shared bank.
+G7OriginalCensuscb05c348 counts original parallel edge IDs. These complete sources
+were read/hash verified, with their draft/audit qualifications retained, in
+evidence/G7-CARRIER-TARGET-SOURCE-REUSE.json. No new source factory is needed
+for this carrier theorem. Numbering is not the captured native occurrence map,
+source-class admission or a target/domain factorization proof.
+
+IdentifiedTarget(t) supplies a guarded QUERY for the same original stop-validity
+predicate after the remaining native model/game and source/target transports.
+Different-target overlapping pieces stay in its exclusions. The existing
+homogeneous_iff_terminal and valid_run_identifies are reused; no new biological
+compiler, game engine or selected/proved target is introduced.
