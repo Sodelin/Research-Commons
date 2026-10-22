@@ -55,8 +55,8 @@ a different combined objective do not replace these original PATH costs.
 
 ## Next native input/output obligation
 
-Prepare a pure Rust formula adapter using the existing exact sparse Polynomial
-and rational types. Its typed input must bind a complete finite source-model
+The first pure Rust formula frontend is now authored using the existing exact
+sparse Polynomial and rational types. It remains UNCOMPILED/UNEXECUTED. Its typed input must bind a complete finite source-model
 family, original base-coordinate order, each model's semialgebraic domain,
 finite action/support/resource descriptions and affine response map. Compile
 H and W with one model bank across ALL history equations, source-independent
@@ -78,3 +78,11 @@ process, model/backend/Lean/native run, local Git or worker follows from this
 intake. NEW execution remains held for the real encrypted writer/controller
 and transitive first-writer binding. A missing required backend/receipt or a
 resource limit stays UNKNOWN/unavailable, never physical YES or all-size NO.
+
+The exact first source and API are native/g7_exact_law_formula.rs and
+native/G7-FORMULA-CONTRACT.md. Initial/open-history winning relations and
+next-action fibres, shared algebraic-constant prerequisites and downward PATH
+regions are implemented as source. Ten meaningful future semantic groups are
+recorded in native/G7-FORMULA-VERIFICATION-PLAN.md; none was run. Construction
+errors remain Invalid or Limit/UNKNOWN. This is no longer only a proposal to
+write a frontend, and is not yet evidence of working executable/QE selection.

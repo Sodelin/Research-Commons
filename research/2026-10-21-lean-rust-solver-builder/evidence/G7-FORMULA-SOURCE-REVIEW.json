@@ -1,0 +1,146 @@
+{
+  "schema": "G7_exact_real_formula_frontend_source_review_v1",
+  "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
+  "source": {
+    "path": "native/g7_exact_law_formula.rs",
+    "sha256": "5585c4258a8957c873c592c57a43d0558b2095832ecbd285ba8c2ff9a49f7fbf",
+    "utf8_bytes": 43112,
+    "lines": 966
+  },
+  "cargo": {
+    "path": "native/g7-formula/Cargo.toml",
+    "sha256": "aa7c193ff33cf99dbe33ce81420316a864fa2f9bd6134f76ff5e2532ab22c26b",
+    "type": "standalone library proposal; no CLI/build-script/new runtime task"
+  },
+  "reused_types": {
+    "source_commit": "4e556c4ae6225d18fabf30bc7d3347a468749ebc",
+    "Polynomial_sha256": "fbde66e1f6f7a612c935b82a53f08ecef0713ccc5fb3d7bcba0ec6fabf2701cb",
+    "Rational_and_q_lib_sha256": "905866b45229667cc06385461c7eb0e96784cb2309e0ba17b45d4c8409a37d4d",
+    "frozen_inputs_changed": false
+  },
+  "original_contracts": [
+    {
+      "module": "G7ExactLawResourceGame",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "86b878a239fc22e7ff6712593c4e849089a3d1c9986f04e64e3485ad12cff2be",
+      "full_body_read": true,
+      "new_compiler_check": false
+    },
+    {
+      "module": "G7ExactLawRankCompression",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "c2aa5ffb8617013c0a4fb11bc7aa20481a6e4c90a8c177856c442d80cf762bd2",
+      "full_body_read": true,
+      "new_compiler_check": false
+    },
+    {
+      "module": "G7OriginalFamilyStrategy",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "1a95edf6b4a0e361ccc053531fd24de4de45b6253a139b266e68d282c3fbecd5",
+      "full_body_read": true,
+      "new_compiler_check": false
+    },
+    {
+      "module": "G7OriginalFamilyCalendarNormalization",
+      "commit": "1138a5b1a281caa00b38e0976db95b586938754b",
+      "sha256": "81dcd9983e73eecd5f59caac14ee6231825fdd9ae25dd9cf64bafbc06b6f2f08",
+      "full_body_read": true,
+      "new_compiler_check": false
+    }
+  ],
+  "semantic_source_review": {
+    "full_history_one_parameter_bank_per_source": true,
+    "competing_source_banks_fresh": true,
+    "action_quantifiers_source_independent_and_before_replies": true,
+    "original_row_weight_support_and_sites_derived": true,
+    "stochastic_coefficients_derived_as_weight_times_channel": true,
+    "supplied_affine_cases_explicitly_retain_semantic_join": true,
+    "resource_state": "executed calls; unions of positive original rows and touched original-ID sites",
+    "resource_region": "nonempty finite union of downward rectangles in these discrete coordinates",
+    "horizon": "min(D=rows*base_observations, affordable remaining calls); deletion closure by this resource syntax",
+    "open_exact_history_and_action_fibres": true,
+    "algebraic_root_tuple_existence_and_uniqueness_separate_mandatory_query": true,
+    "no_rational_only_action_restriction": true,
+    "no_compile_or_QE_result_or_executable_policy_claim": true
+  },
+  "source_only_controls": {
+    "path": "native/G7-FORMULA-VERIFICATION-PLAN.md",
+    "groups": 10,
+    "executed": false,
+    "controls_are_not_PASS_receipts": true
+  },
+  "lexical_review": {
+    "balanced_delimiters_and_quoted_strings": true,
+    "child_launch_or_file_sink_syntax_hits": [],
+    "functions": [
+      {
+        "line": 381,
+        "text": "fn validate(problem: &Problem, budget: &PathBudget, prefix: &[usize], limits: Limits)"
+      },
+      {
+        "line": 466,
+        "text": "    fn extended(&self, problem: &Problem, action: &ActionCase) -> Result<Self> {"
+      },
+      {
+        "line": 574,
+        "text": "    pub fn wolfram_query(&self, kind: QueryKind) -> Result<String> {"
+      },
+      {
+        "line": 614,
+        "text": "    fn constants_validity(&mut self) -> Result<FormulaId> {"
+      },
+      {
+        "line": 643,
+        "text": "    fn action(&mut self, case_index: usize) -> Result<ActionValue> {"
+      },
+      {
+        "line": 697,
+        "text": "    fn consistent(&mut self, model_index: usize, history: &[Step])"
+      },
+      {
+        "line": 721,
+        "text": "    fn homogeneous(&mut self, history: &[Step]) -> Result<FormulaId> {"
+      },
+      {
+        "line": 745,
+        "text": "    fn win(&mut self, history: &mut Vec<Step>, state: &Resources, depth: usize)"
+      },
+      {
+        "line": 784,
+        "text": "pub fn compile<'a>("
+      },
+      {
+        "line": 876,
+        "text": "    fn render(&self, root: FormulaId) -> Result<String> {"
+      }
+    ],
+    "rust_parse_or_compile": false,
+    "scope": "RAM-only lexical/source review, not transitive writer enforcement or a native test",
+    "reviewed_preceding_candidate_sha256": "dbbeef0e47cb01fe066bd67eddf335a66df308bff8cc3da65688cc675b6be1aa",
+    "current_extra_change": "nonempty base-observation alphabet validation"
+  },
+  "authored_RAM_candidate_changes": [
+    {
+      "sha256": "b61b761583b6a58f53d9c5a0ebd09be26b02777afa932c32e2a438fcb7da56a4",
+      "disposition": "uncompiled intermediate RAM draft, not a failed or passed run"
+    },
+    {
+      "sha256": "dbbeef0e47cb01fe066bd67eddf335a66df308bff8cc3da65688cc675b6be1aa",
+      "disposition": "disabled-fibre scope flag and explicit constants clone added by source review; no execution"
+    }
+  ],
+  "remaining": [
+    "actual Rust parse/typecheck/link and meaningful semantic controls after first-writer binding",
+    "native LAW/controller/source specialization supplier and complete census coverage",
+    "AST-to-Winning correctness/refinement",
+    "verified real QE preserving free histories",
+    "relative-history algebraic selection, terminal labels and losing source/history witnesses",
+    "policy CorrectRun and full Pareto frontier/minimum",
+    "actual authenticated writer/controller/recipient/frame/sequence and transitive first writers"
+  ],
+  "source_and_controller_dated_holds_preserved": true,
+  "no_local_Git_or_phone_project_artifact": true,
+  "subagents_created": false,
+  "new_native_Cargo_Lake_CI_backend_model_or_Lean_execution": false,
+  "canonical_task_or_profile_or_whitelist_changed": false
+}

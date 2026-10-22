@@ -64,3 +64,9 @@ The actual captured FieldReflection instance and existing wire receiver
 composition are the next scientific join. Source maps, rejected attempts and
 exact selected types remain retained. General G7 policy/QE/extraction work
 continues independently under G7-POLICY-REUSE.md; no runtime hold is bypassed.
+
+A pure Rust G7 quantified formula frontend is now authored, including open
+exact histories and next-action fibres, using existing exact polynomial types.
+It is uncompiled/unexecuted. The source-only semantic verification plan has no
+PASS results. Actual census/law supply, AST/Winning correctness, verified QE,
+relative-history action/lower-witness selection and frontier remain required.

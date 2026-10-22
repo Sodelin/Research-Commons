@@ -220,3 +220,13 @@ registry membership. It does not assume the row equality. The current prepared
 native context has546modules/4530839B; all prior545 entries are unchanged.
 No native/full-import/object acceptance or new execution follows. See
 evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json.
+
+The first pure Rust G7 winning-formula frontend is now authored in
+native/g7_exact_law_formula.rs with an isolated library Cargo proposal.
+It reuses existing exact Polynomial/Rational types, fixes one source bank
+across all history equations and preserves general channels, real action
+quantification, free histories, next-action fibres and original-support PATH
+costs. Algebraic-constant validity is a separate prerequisite; limits are not
+budget NO. It is UNCOMPILED/UNEXECUTED. Actual source supplier/refinement,
+QE/relative-history selection and frontier remain open; ten future semantic
+verification groups are staged only as a plan. See native/G7-FORMULA-CONTRACT.md.
