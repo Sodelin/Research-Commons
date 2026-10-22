@@ -2,7 +2,7 @@
 
 Author: dot (OpenAI).
 Date: 22 October 2026 UTC.
-Status: complete author-checked hand proof of the stated specialization; independent review pending.
+Status: complete author-checked hand proof of the stated specialization; scoped coordinating hand-review PASS on 22 October 2026.
 Formal verification: not performed. No executable check or Lean build is claimed.
 Novelty: unresolved. The positive-moment theorem used below is prior project work and classical mathematics, not a new contribution.
 
@@ -214,6 +214,8 @@ A multivariate polynomial vanishing on the positive open quadrant is zero. Thus 
 
 is nonnegative on [0,1] and zero only at z. Thus any admitted rival matching those three physical variance responses has molecularity exactly two. The full stopped law at one of the totals then recovers the individual forward and reverse homogeneous polynomials by Theorem 2. This is an illustration of the certificate, not a claim that 2r+1 is minimal for every target.
 
+**Geometric-panel variant.** Lemma 4 also allows e_j=j. Replacing the triangular panel by C_j=C_0 rho^j, j=0,...,2r, leaves the proof and the 2r+1 count unchanged; its exposing polynomial has ordinary degree 2r. The triangular version above preserves direct alignment with the supplied G4 sparse moments. Neither version asserts optimality of the count for each target.
+
 ## 8. Targets, nuisance variables, and effectivity
 
 - One source, including one rate assignment, supplies the whole total panel. The proof never fits separate rows by separately chosen hidden sources.
@@ -245,7 +247,7 @@ The full Section 6 partial-observation direction remains: arbitrary reaction vec
 
 - Source statements: primary publisher text, versioned preprints, and the pinned public G4 proof were consulted.
 - Mathematical status: complete hand proof of Lemmas 1 and 4, Theorems 2 and 5, and Corollary 3, under their displayed assumptions.
-- Independent review: pending for this positive theorem; the earlier checkpoint's limited coordinating check does not extend to it.
+- Independent review: coordinating hand-review PASS on 22 October 2026 for the displayed specialization. The review checked canonical semimartingale uniqueness and interior reachability, the conserved-line ideal, degree-cap sharpness, the positive support certificate including endpoint exclusions, and the all-rival support/interpolation join. It did not certify general hidden-species identification, historical novelty, or Lean verification. Exact continuous laws, controlled known totals, and reconstructible B are load-bearing assumptions.
 - Computation: none used as proof evidence; no scientific runtime executed for this note.
 - Lean: not executed, and no claim of a formal stochastic-calculus proof or complete package verification.
 - Publication meaning: an attributed, reviewable research checkpoint, not an externally accepted theorem or a proof-site submission.
