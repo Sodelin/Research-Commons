@@ -45,6 +45,11 @@ standard propext/Classical.choice/Quot.sound lists. False and sorry controls
 were rejected. Failed or capture-limited revisions remain REJECTED/UNVERIFIED,
 even when some partial audits were clean.
 
+The separate [physical word-bank proposal](G7-PHYSICAL-POWER-WORD-SPECIALIZATION.md)
+composes the power-domain component with original WordVariable/wordEval and
+the existing controlled-word supplier at SOURCE ONLY level. Its complete
+imports are unelaborated; it adds no hosted case and is not selected in776.
+
 ## Original source context
 
 [MASTER-SOURCE-ASSEMBLY.md](MASTER-SOURCE-ASSEMBLY.md) pins the exact retained
