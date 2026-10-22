@@ -1,19 +1,19 @@
 # Combined retained-root and physical source context
 
-The current SOURCE ONLY preparation contains771 modules /5,891,078 bytes:
+The current SOURCE ONLY preparation contains772 modules /5,897,394 bytes:
 754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
-plus17 explicitly owned modules or import-only variants. Every selected source
+plus18 explicitly owned modules or import-only variants. Every selected source
 body, byte count and internal topological order was verified. Module names and
 hashes have no aliases. All preceding548 entries are unchanged;221 original
-dependencies add the exact retained G1/G2/G5 closures. The other two additions
-are the checked finite path-budget bridge and its game-horizon composition.
-The immediate770-module predecessor is unchanged; this last revision adds only
-G7FinitePathGame.
+dependencies add the exact retained G1/G2/G5 closures. The other three additions
+are the checked path-budget bridge, game-horizon composition and conditional
+source transfer. The immediate771-module predecessor is unchanged; this last
+revision adds only G7ExactLawSourceTransfer.
 
-Graph232067B/SHA256
-b0f27685852c7e2ec19d9e8e82ccb67bc9b38e602986b90cf805e77a4e610e1c.
-Selection165200B/SHA256
-995f75168f36d60dcac2b1024acbaf4eca20c48ed245a465628de3490fb823b4.
+Graph232348B/SHA256
+a9211087e634aaca39c07b7cdb6e4336e513ebfca50873b17e858481a4a28f73.
+Selection165425B/SHA256
+53f193ad7d5bd8303ca69c470767320cb3f298325478200c817fd3f648c4abef.
 
 ## Selected roots and additions
 
@@ -26,11 +26,13 @@ G5M3NormalizedClusterSplitIdentification. Exact declarations and inherited
 scope are pinned in ../../MASTER-SOURCE-ASSEMBLY.md. Source acquisition does
 not rerun an accepted build.
 
-The17 additions are four CM/rational wrappers; the original certificate kernel;
+The18 additions are four CM/rational wrappers; the original certificate kernel;
 two unchanged original generated certificates; two unchanged authored bank
 witnesses; and NativeOrderedBankLayout, OriginalCodeBankLayout,
 NativeCellFormReflection, NativeCellAggregateReflection,
-OriginalCodeChartReflection, OriginalCodeChartReceiver G7FinitePathBudgetBridge and G7FinitePathGame. No replacement source or affine engine is introduced.
+OriginalCodeChartReflection, OriginalCodeChartReceiver,
+G7FinitePathBudgetBridge, G7FinitePathGame and G7ExactLawSourceTransfer.
+No replacement source or affine engine is introduced.
 
 Only two import variants are selected:
 
@@ -78,3 +80,9 @@ Its graph00d22f30 and selection1898edab are unchanged ancestors of this source
 proposal. Hosted selected-declaration checks remain distinct from pinned full
 imports, native/source-object custody, captured request origin and actual
 physical source/readout/provider admission.
+
+../verify_source_context.py is a read-only source verifier with no subprocess,
+network, key or output writer. The existing record owner captures its returned
+metadata in RAM and encrypts before record persistence. It checks source body
+hashes, dependency order and unchanged parent entries; this supplies no runtime
+encryption mediation or native admission.

@@ -19,11 +19,11 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **771 modules / 5,891,078 source
-bytes**:754 originals and17 owned/import variants, with the physical sparse
+The latest prepared native context contains **772 modules / 5,897,394 source
+bytes**:754 originals and18 owned/import variants, with the physical sparse
 supplier present once. All preceding548 entries are unchanged. The additions
-are221 original dependencies of the retained G1/G2/G5 endpoints and the two
-checked finite path-budget/game components. All selected source hashes and
+are221 original dependencies of the retained G1/G2/G5 endpoints, the two
+checked path-budget/game components and conditional source transfer. Source hashes and
 dependency order were
 verified; [the exact roots](MASTER-SOURCE-ASSEMBLY.md) are pinned separately. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
@@ -85,9 +85,11 @@ ordered rows, coefficient lengths and hemit. This forward map retains actual
 BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
 validity-origin and physical-class/readout/native gates are explicit.
 
-There are25 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
+There are26 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
 complete retained G7 game/rank component, finite path-budget union bridge and
 exact free-history game-horizon composition are checked at their hosted scope.
+Conditional two-sided source transfer also preserves Winning and the SAME valid
+plan; the actual provider representation still needs to be constructed.
 They do not supply a QE backend,
 selected policy, original-source instantiation or AST/executable refinement.
 For a free history, a false continuation becomes semantic loss only after

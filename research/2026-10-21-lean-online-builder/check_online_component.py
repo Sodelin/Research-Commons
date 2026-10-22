@@ -14,6 +14,15 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-source-transfer': ('lean/OnlineG7ExactLawSourceTransfer.lean', [
+        'Astra.G7ExactLawSourceTransfer.related_consistent_iff',
+        'Astra.G7ExactLawSourceTransfer.consistent_has_source',
+        'Astra.G7ExactLawSourceTransfer.homogeneous_iff',
+        'Astra.G7ExactLawSourceTransfer.winning_iff',
+        'Astra.G7ExactLawSourceTransfer.valid_plan_iff',
+        'Astra.G7ExactLawSourceTransfer.physical_run_of_symbolic_valid',
+        'Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_pair',
+        'Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss']),
     'g7-path-game': ('lean/OnlineG7FinitePathGame.lean', [
         'Astra.G7FinitePathGame.remaining_after_legal',
         'Astra.G7FinitePathGame.winning_mono',

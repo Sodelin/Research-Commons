@@ -1,11 +1,12 @@
 # Lean components and original-source assembly
 
 This packet contains actual hosted Lean checks and a separately prepared,
-uncompiled native source context. The current source context contains **771
-modules / 5,891,078 bytes**:754 original modules and17 explicitly owned modules
+uncompiled native source context. The current source context contains **772
+modules / 5,897,394 bytes**:754 original modules and18 explicitly owned modules
 or import variants. Every selected body and internal dependency order was
 verified. All preceding548 entries are unchanged. Additions comprise221
-original dependencies of the retained G1/G2/G5 endpoints and the two checked finite path-budget/game components.
+original dependencies of the retained G1/G2/G5 endpoints, the two checked
+path-budget/game components and conditional two-sided source transfer.
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and [the ledger](ACCEPTANCE-LEDGER.json) preserve
 the original finish lines. G1, timed and unranked G2, and full-timed binary-M3
@@ -14,7 +15,7 @@ with incomplete formal/native assembly. General G3/G4 remain open.
 
 ## Actual hosted checks
 
-[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains25 bounded follow-on
+[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains26 bounded follow-on
 cases with complete selected types, axiom lists and revision dispositions.
 The original two certificate checks and rejection controls are additionally
 recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
@@ -27,6 +28,7 @@ recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
 | Exact-law game and rank | Complete retained bodies, twelve selected audits and one disclosed hosted proof-only repair | [Game](G7-CHECKED-GAME-SEMANTICS.md) |
 | Finite path budgets | Deletion legality and remaining-call bound for a finite union of original path-budget regions; four selected audits | [Budget bridge](G7-FINITE-PATH-BUDGET-BRIDGE.md) |
 | Exact free-history call cap | Whole-game cap equivalence and pointwise-totality/loss consequences at min(dimension,remaining calls); six selected audits | [Path game](G7-FINITE-PATH-GAME.md) |
+| Two-sided source transfer | Whole-history consistency, the SAME valid plan, target correctness and physical ambiguity under actual representation proofs; eight selected audits | [Source transfer](G7-SOURCE-TRANSFER.md) |
 | Finite laws and certificates | Shared-law moments, PMF/pushforward, grouped rational banks, original certificate roots, affine receiver and exact literals | [PMF](CM-FINITE-PMF.md), [Affine](AFFINE-CERTIFICATES.md), [Literals](AFFINE-LITERALS.md) |
 | P1/P5/G4 support | Explicit finite product/threshold laws, ordered operator algebra/integrals and finite interpolation/determinant statements | [Selected statements](CHECKED-FOLLOWONS.json) |
 
@@ -48,8 +50,8 @@ and Code receiver roots. CMSparseSupplier is absent; the original physical
 supplier occurs once. Only the two declared CM/Real import variants are selected.
 Hosted proof API variants remain separate.
 
-Graph SHA256:b0f27685852c7e2ec19d9e8e82ccb67bc9b38e602986b90cf805e77a4e610e1c.
-Selection SHA256:995f75168f36d60dcac2b1024acbaf4eca20c48ed245a465628de3490fb823b4.
+Graph SHA256:a9211087e634aaca39c07b7cdb6e4336e513ebfca50873b17e858481a4a28f73.
+Selection SHA256:53f193ad7d5bd8303ca69c470767320cb3f298325478200c817fd3f648c4abef.
 This is a source-only proposal for Lean4.33.1/mathlib0df444a3. No full-import
 elaboration, compiler, Lake/Cargo/CI run or object-custody acceptance occurred.
 

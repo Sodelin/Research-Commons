@@ -1728,6 +1728,117 @@
       "warning_count": 9,
       "warning_dispositions": "Nine retained benign deprecation/unused-section warnings; no errors/sorry/unsafe or nonstandard selected axioms.",
       "scope": "Retained abstract exact-law game/rank plus finite-union path budgets: strict remaining-call decrease, full game cap equivalence and pointwise-totality/loss consequences at the exact free history. Legal/reachable physical prefix, original source/affine programme provider, AST/QE/result/native refinement are not supplied."
+    },
+    {
+      "case": "g7_exact_law_two_sided_source_transfer",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineG7ExactLawSourceTransfer.lean",
+      "source_sha256": "2804232d7daea06e5c41e596ebb497c05c94d3b1ec9dbd7e8286f5fad24a90c4",
+      "submitted_source_sha256": "8bd74f602629e65fc5c4082b8ac3ed6c6fa045e80016845f1800de9801ceff3d",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.related_consistent_iff",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.related_consistent_iff' does not depend on any axioms"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.consistent_has_source",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.consistent_has_source' does not depend on any axioms"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.homogeneous_iff",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.homogeneous_iff' does not depend on any axioms"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.winning_iff",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.winning_iff' does not depend on any axioms"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.valid_plan_iff",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.valid_plan_iff' does not depend on any axioms"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.physical_run_of_symbolic_valid",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.physical_run_of_symbolic_valid' depends on axioms: [propext, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_pair",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_pair' does not depend on any axioms"
+          ]
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.related_consistent_iff",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.related_consistent_iff.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1} {M : Type u_2}\n  {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  (s : S) (m : M)\n  (hr :\n    @Astra.G7ExactLawSourceTransfer.Representation.related.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic\n      rep s m)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h s)\n    (@GProgram.G7.ExactLawResourceGame.Consistent.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic h m)"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.consistent_has_source",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.consistent_has_source.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1} {M : Type u_2}\n  {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) (m : M)\n  (hm : @GProgram.G7.ExactLawResourceGame.Consistent.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic h m) :\n  ∃ s,\n    And\n      (@Astra.G7ExactLawSourceTransfer.Representation.related.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical\n        symbolic rep s m)\n      (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h s)"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.homogeneous_iff",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.homogeneous_iff.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1} {M : Type u_2}\n  {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Homogeneous.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h)\n    (@GProgram.G7.ExactLawResourceGame.Homogeneous.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic h)"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.winning_iff",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.winning_iff.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1} {M : Type u_2} {A : Type u_3}\n  {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  (n : Nat) (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) (u : R) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical n h u)\n    (@GProgram.G7.ExactLawResourceGame.Winning.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic n h u)"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.valid_plan_iff",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.valid_plan_iff.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1} {M : Type u_2}\n  {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  {n : Nat} (plan : GProgram.G7.ExactLawResourceGame.Plan.{u_3, u_4, u_5} A Y T n)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) (u : R) :\n  Iff (@GProgram.G7.ExactLawResourceGame.Valid.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical n plan h u)\n    (@GProgram.G7.ExactLawResourceGame.Valid.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic n plan h u)"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.physical_run_of_symbolic_valid",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.physical_run_of_symbolic_valid.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1}\n  {M : Type u_2} {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  {n : Nat} (plan : GProgram.G7.ExactLawResourceGame.Plan.{u_3, u_4, u_5} A Y T n)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) (u : R)\n  (hp : @GProgram.G7.ExactLawResourceGame.Valid.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic n plan h u) (s : S)\n  (hs : @GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h s) :\n  @Eq.{u_5 + 1} T (@GProgram.G7.ExactLawResourceGame.run.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical n plan s)\n    (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical s)"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_pair",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_pair.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1}\n  {M : Type u_2} {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) (m n : M)\n  (hm : @GProgram.G7.ExactLawResourceGame.Consistent.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic h m)\n  (hn : @GProgram.G7.ExactLawResourceGame.Consistent.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic h n)\n  (different :\n    @Ne.{u_5 + 1} T (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic m)\n      (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic n)) :\n  ∃ s t,\n    And (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h s)\n      (And (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h t)\n        (@Ne.{u_5 + 1} T\n          (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical s)\n          (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical t)))"
+        },
+        {
+          "name": "Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss",
+          "printed_type": "Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss.{u_1, u_2, u_3, u_4, u_5, u_6} {S : Type u_1}\n  {M : Type u_2} {A : Type u_3} {Y : Type u_4} {T : Type u_5} {R : Type u_6}\n  {physical : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_3, u_4, u_5, u_6} S A Y T R}\n  {symbolic : GProgram.G7.ExactLawResourceGame.Experiment.{u_2, u_3, u_4, u_5, u_6} M A Y T R}\n  (rep : @Astra.G7ExactLawSourceTransfer.Representation.{u_1, u_2, u_3, u_4, u_5, u_6} S M A Y T R physical symbolic)\n  (n : Nat) (h : GProgram.G7.ExactLawResourceGame.History.{u_3, u_4} A Y) (u : R)\n  (loss : Not (@GProgram.G7.ExactLawResourceGame.Winning.{u_2, u_3, u_4, u_5, u_6} M A Y T R symbolic n h u)) :\n  ∃ s t,\n    And (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h s)\n      (And (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical h t)\n        (@Ne.{u_5 + 1} T\n          (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical s)\n          (@GProgram.G7.ExactLawResourceGame.Experiment.target.{u_1, u_3, u_4, u_5, u_6} S A Y T R physical t)))"
+        }
+      ],
+      "client": "online_lean_quiet.mjs",
+      "client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "warning_count": 3,
+      "warning_dispositions": "Three retained benign inherited deprecation observations; no errors/sorry/unsafe or extra axioms. Six selected declarations need no axioms, one uses propext/Quot.sound and one uses the standard three.",
+      "capture_disposition": "Original terminal sealed result recovered by exact source/client identity after the tool handle was missing; no compiler rerun.",
+      "scope": "Conditional two-sided admitted source/target/all-response/resource representation transfers full-history consistency, Winning, the SAME Valid plan and physical target correctness/ambiguity. It constructs no actual source/provider relation and supplies no native AST, QE selector or origin/refinement acceptance."
     }
   ]
 }
