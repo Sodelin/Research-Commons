@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 12:25 UTC: a licensed structured compiler candidate
+
+`POLYTOMY-STRUCTURED-COMPILER-AUDIT.md` records the newly verified Apache-2.0 external Lax218471 repository and the exact proof-side compiler/composition interfaces. Its `Computable.lean` dependency is text-identical to ours, but its Lean/mathlib pins differ and no compatibility build was performed. Concept-side theorem declarations are axioms; the optional adapter references only corresponding `Lax218471Proofs` theorem names. Archive/status verification reports were retrieved, but referenced raw build/replay logs were not in the pinned tree and no Actions runs were exposed. Do not turn that external report into a verification claim for this packet.
+
+The optional adapter still demands actual finite structured programs, real subroutine machines, all-input correctness and polynomial source-step/call-size bounds for our exact constructor and independent verifier. Our separate constant-branch module provides source terms for fixed literal outputs only. The complete machine obligation remains open, as do formal source hardness and every kernel check. No package was installed or vendored, no pin was changed, and no runtime was launched.
+
 ## Addendum, 12:05 UTC: binary widths before validation
 
 `PolytomyBinaryWidthBounds.lean` proposes a complete all-string width-consumption chain. A successful binary reader consumes at least twice the canonical value bit width plus one framing bit; nested list-reader induction and header telescoping bound the sum of all source numeric widths by the actual input length. The target's three binary header widths receive the same all-successful-parse bound. This includes noncanonical high-zero payloads and does not replace numerical values by unary input lengths before validation.

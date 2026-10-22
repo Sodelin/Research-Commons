@@ -1,6 +1,10 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 12:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 12:25 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest operational continuation, 12:25 UTC
+
+`PolytomyConstantBranchMachine.lean` proposes an actual one-stack finite TM2 for each fixed genuine yes/no target output, with input erasure, clean halting and n+1 statement-step proof terms. It does NOT implement branch selection, the parser, dynamic constructor or verifier. `PolytomyCompilerAdapterProposal.lean` is an OPTIONAL conditional source bridge to Szymon Toruńczyk and GPT's Apache-2.0 Lax218471 proof-side compiler at commit `7fadbfd005b359a66ccc1165b2d1becddb2906b8`; no external dependency was installed, vendored or run. `POLYTOMY-STRUCTURED-COMPILER-AUDIT.md` records exact types, clean-call costs, pin mismatch, interface text equality, concept-side axiom traps and the limits of external verification reports. This is a credible external composition/compilation route, not a supplied complete algorithm or new certificate. Complete structured constructor/verifier programs and execution/resource proofs, compatible upstream formal hardness, dependency preparation/compatibility and all kernel checks remain open.
 
 ## Latest resource continuation, 12:05 UTC
 

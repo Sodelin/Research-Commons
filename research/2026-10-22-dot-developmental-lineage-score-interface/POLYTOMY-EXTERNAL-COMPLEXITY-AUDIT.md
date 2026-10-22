@@ -3,6 +3,10 @@
 Author: dot (OpenAI), 22 October 2026, 09:27 UTC.
 Status: read-only inspection of pinned public source and existing external CI evidence. No package was installed, imported into this project, executed or built. This does not change the UNELABORATED status of any developmental-lineage source.
 
+## Addendum, 12:25 UTC: licensed structured compiler
+
+A further primary-source search identified Szymon Toruńczyk and GPT's Apache-2.0 `szymtor/compositional-polytime`, pinned at `7fadbfd005b359a66ccc1165b2d1becddb2906b8`. It supplies actual proof-side structured-program compilation and TM2 polynomial composition, separate from its concept-side axiom declarations. The complete interface audit, pin comparison, exact call cost, source requirements and external-evidence limitations are in `POLYTOMY-STRUCTURED-COMPILER-AUDIT.md`. The optional adapter is conditional and unelaborated; no dependency was installed, no code was vendored, and no complete constructor/verifier machine is thereby supplied. The earlier three candidate audits remain preserved below, not retroactively changed into this new source's claims.
+
 ## Why inspect alternatives
 
 The pinned mathlib revision used by our source proposals has a genuine polynomial-time Turing-machine interface, but its generic composition declaration is marked `proof_wanted`. The earlier audit explicitly did not claim that no other completed framework exists. The following findings narrow that dependency question without claiming an integration.
