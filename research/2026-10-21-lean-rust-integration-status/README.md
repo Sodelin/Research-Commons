@@ -1,8 +1,8 @@
-# Lean-to-Rust solver status, 21 October 2026
+# Lean-to-Rust solver status, 22 October 2026
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[77920422](https://github.com/Sodelin/Research-Commons/tree/77920422868495bd9abba49e4ca941b45fd595bc/research/2026-10-21-lean-rust-solver-builder).
+[9ac0df5a](https://github.com/Sodelin/Research-Commons/tree/9ac0df5ad585c7736a27803178cd9b8157f58eed/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -27,12 +27,26 @@ GParity.Chart value layer and new NativeCellFormReflection proof add four
 selected hosted type/axiom audits for forms, rows and comparison/interval order.
 Their exact original-definition projection and submitted hash were reconstructed;
 three earlier failed proof revisions retain their rejected dispositions.
-OriginalCodeBankLayout remains SOURCE ONLY and unelaborated in the full import
-context. It reuses sourceOfValid/decodedIDs/decodedRegistry with explicit
-BinaryValid/RegistryValid and original occurrence order. Captured native arrays,
-the concrete Code instance, captured chronology/exposure/coin fields and exact
-aggregate ordered row emission remain open. Source validator branch alignment is not
-formal parser/DFS/Kahn/degree refinement.
+OriginalCodeBankLayout now has attributed hosted checking with the complete
+43-original-module admission closure and two explicit hosted API variants.
+All43 original bodies and the45-part exact projection were independently
+authenticated/reconstructed, with six complete selected types/standard-axiom
+lists reviewed. The four-point PMF construction and zero-aware product-lemma
+variants are separately identified; pinned originals stay unchanged.
+
+NativeCellAggregateReflection supplies four more selected hosted endpoints.
+It derives complete eight-block ordered decoded rows and every original
+coefficient length from primitive field/position/order premises, then hemit
+using explicit complete registries. It does not assume emitted-row equality.
+The exact69573B source and audit submission were reconstructed. Three rejected
+proof revisions remain rejected. These are attributed hosted checks in the
+new4.35 context, not native/full-physical-import/object acceptance.
+
+The first concrete scientific join is FieldReflection for the exact captured
+request and literal Code, with BinaryValid/RegistryValid, original occurrence
+orders and reflected chronology/exposure/coin records. Reuse the existing
+wire witness/contradiction receivers afterwards. Parser/DFS/Kahn/degree and
+native-result authentication remain separate from mathematical value checking.
 
 The Rust row-export adapter is UNCOMPILED/UNEXECUTED, including five staged
 controls. It preserves the original32/128 CHART core, raw ownership, duplicate
@@ -45,8 +59,8 @@ UNEXECUTED. Checked authored fixtures are not claimed emitter outputs.
 | Remaining boundary | Current evidence and gap |
 | --- | --- |
 | First runtime-record persistence | Existing Linux writer/controller/recipient/frame/sequence/transport and inner hooks remain UNBOUND; outer streams alone miss Cargo/Lake/internal writers |
-| Pinned4.33.1 imports/objects/aggregate |545-module source metadata/4518048B; only Chart and its form proof added to543, all earlier entries unchanged; full bodies not independently retrieved here and native acceptance unrun |
-| Exact source-cell integration | Original registries, captured Code, field reflection and ordered matrix relation; original taxon and hybrid row orders stay explicit |
+| Pinned4.33.1 imports/objects/aggregate |546-module source metadata/4530839B; only aggregate proof added to545, all prior entries unchanged; full bodies not independently retrieved here and native acceptance unrun |
+| Exact source-cell integration | Generic ordered matrix relation checked conditionally; captured Code/FieldReflection instance, original registries and source premises remain open |
 | Native and physical correspondence | Parser/executable origin/refinement, actual source/readout/provider, chart/menu coverage and whole-history requirements remain open |
 | Broader mathematical completion | G6/G7 assembly and original G3/G4/P1/P5 standards remain distinct from finite-bank/matrix results |
 
@@ -54,7 +68,7 @@ Canonical native_rc1 still admits AFFINE/LAW, with AFFINE8/64 versus the
 unadmitted CHART32/128 core. A complete binary bank needs4n+6h-2 coordinates:
 a four-taxon tree needs14. Transport exhaustion is UNKNOWN/unavailable, never
 global NO or truncation. The prospective M0 port map requires LAW G=1-gamma;
-the exporter performs no substitution or physical admission. The aggregate
+the exporter performs no substitution or physical admission. The checked conditional aggregate
 bridge compares decodeRows(Chart.emitRows) to the original ordered compiler;
 internal unit bookkeeping weights differ from external Farkas multipliers.
 Derived exact matrix rationals can exceed256bits and retain the original CHART
@@ -63,6 +77,14 @@ output route, instead of being reparsed as raw AFFINE input. The core checker's
 JSON request bound is256KiB. Source review confirms exact request/matrix and
 complete witness/evaluation/Farkas vector binding, without executing it. Supplied
 mathematical laws, physical readouts and estimates retain distinct provenance.
+
+The existing source census, whole-forest polynomial compiler, exact-history
+QE/CAD providers and typed G7 rank/resource strategy were recovered before
+new implementation. G7-POLICY-REUSE.md retains their exact source/scope. The
+next pure Rust frontend will compile the same H/W quantified game for the
+existing real-QE provider, with general-channel horizon D=card(Row*Obs) and
+original positive-support PATH costs. A formula is not an executable selected
+policy; effective selection, lower certificates and full frontier remain open.
 
 NEW native/Cargo/Lake/CI execution remains HELD before the first writer.
 Automatic triggers are removed and the manual job is literal-false. The quiet
