@@ -14,6 +14,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'code-receiver': ('lean/OnlineOriginalCodeChartReceiver.lean', [
+        'Astra.OriginalCodeChartReceiver.checked_original_witness',
+        'Astra.OriginalCodeChartReceiver.checked_original_bank',
+        'Astra.OriginalCodeChartReceiver.checked_original_bank_rates',
+        'Astra.OriginalCodeChartReceiver.checked_original_bank_feasible',
+        'Astra.OriginalCodeChartReceiver.checked_original_exclusion']),
     'code-chart': ('lean/OnlineOriginalCodeChartReflection.lean', [
         'Astra.OriginalCodeChartReflection.fieldReflection',
         'Astra.OriginalCodeChartReflection.decoded_emitRows_of_code',

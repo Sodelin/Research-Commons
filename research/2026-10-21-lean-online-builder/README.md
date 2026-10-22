@@ -2,7 +2,7 @@
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
 the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
-actual hosted checks,547-module source preparation and remaining physical,
+actual hosted checks,548-module source preparation and remaining physical,
 effectivity, refinement and native-custody gates. The native outer refusal is
 silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
@@ -200,3 +200,8 @@ decoder, explicit taxon/hybrid order and actual validity proofs. The latest
 547-module/4539033B snapshot adds only that module; all prior546 entries unchanged.
 Captured byte/value/Code binding, existing receiver composition and native/
 physical acceptance retain their stated gaps.
+
+G6-CODE-CHART-RECEIVER.md records the ACTUAL five-audit physical-bank/exclusion
+composition PASS. The current548-module/4543496B source snapshot adds only that
+receiver to the prior547; all preceding entries remain unchanged. Captured-byte
+origin/Code equality and native custody remain open.
