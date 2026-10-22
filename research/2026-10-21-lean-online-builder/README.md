@@ -56,6 +56,13 @@ word-composition routes. Rust4534ca9b corrects the earlier duplicate-mask
 coverage restriction at SOURCE ONLY level, retaining positional row costs.
 The actual native state/key/panel and total coefficient relations remain open.
 
+The new particular-table certificate and
+[sparse-row composition proposal](G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md)
+retain exact finite support, duplicates and zero-on-absence semantics at SOURCE
+ONLY level. Their full contexts remain unelaborated and outside776. The
+certificate's unmodified original closure already exceeds the current hosted
+single-document limit; no oversized or native check was attempted.
+
 ## Original source context
 
 [MASTER-SOURCE-ASSEMBLY.md](MASTER-SOURCE-ASSEMBLY.md) pins the exact retained

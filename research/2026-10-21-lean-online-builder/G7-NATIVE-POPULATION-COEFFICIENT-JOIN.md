@@ -4,7 +4,8 @@ This is a complete-source interface review, not a new compiler, kernel,
 native run or executable refinement. Exact source identities and reading
 scopes are in G7-PRIMITIVE-COEFFICIENT-SOURCE-REVIEW.json. The historical
 draft/fresh-audit status of the original formal bodies remains unchanged.
-All named formal sources are already selected in the776-module SOURCE context.
+All original formal suppliers in this review are selected in the776-module
+SOURCE context; the later certificate/row proposals below are not selected.
 
 ## Lower population supplier already exists
 
@@ -154,3 +155,60 @@ Full actual calendar/raw-root/completion and authorized observer, original
 source/target/action coverage, executable arithmetic/AST/QE/result origin and
 native controller/first-writer binding remain open. No native run, existing
 control suite or held/consumed job was replayed for this review.
+## Particular-table certificate and sparse-row source composition
+
+The later Rust source return at0874c13e supplies a concrete particular-table
+route. The COMPLETE6083B
+[NativePopulationTableCertificate.lean](lean/proposals/NativePopulationTableCertificate.lean),
+15076B native exporter and9281B contract were independently read, SHA256 and
+Git-blob checked. The Lean body is retained byte-identically. All remain
+UNELABORATED/UNCOMPILED/UNEXECUTED; no generated document or Boolean check was run.
+
+The finite comparison has the right source-level scope: rational coefficient
+sums are compared at the union of both exponent supports, and destinations
+range over the union of original merger support and every supplied row.
+Duplicate destinations/monomials sum. Outside that union, empty supplied
+coefficients and the existing original zero-support theorem cover every
+admitted Code. The proposed actual-population endpoint uses the original
+positive rates, duration and co-location, with copy-cardinality fuel. It
+does not obtain correctness from normalization or a supplied final law.
+
+The exporter borrows its exact Context/Snapshot/Table, validates before
+rendering and emits literal root, edge-occurrence and taxon equality targets,
+source-valid entering/destination Codes, co-location, coefficient comparison
+and the population theorem. Canonical dead fields are a valid image, not a
+bijection onto all admitted Codes. Local Copy positions and ordered grafts
+remain distinct from eventual global observation labels. Named imports and
+proof targets do not authenticate parser values or runtime origin.
+
+A new2946B owned SOURCE PROPOSAL,
+[G7CertifiedPopulationRows.lean](lean/proposals/G7CertifiedPopulationRows.lean),
+composes that endpoint with the existing `embedExpr`, `readRows` and
+`value_embedExpr`. Its proposed `read_sparseRows` preserves every literal row
+position and proves that Code-fibre aggregation commutes with embedding in
+the SAME population coordinate. `checked_sparseRows_actual` gives the intended
+total evaluated row fibre at the SAME rates/time, including zero on absence.
+It requires the actual finite check to equal true; no probability-law equality
+is inserted as a premise. Its COMPLETE imported context is also UNELABORATED.
+Neither source is selected in776 or counted as a checked case.
+
+There is a concrete current-lane limit. The authenticated original dependency
+closure for the certificate alone has92 modules/643093 source bytes. Hoisting
+external imports and removing only original import/empty lines still gives
+635423 bytes. Adding the sparse-row dependency gives121 modules/893989 source
+bytes and an884200B projection. These numbers already exceed the unchanged
+Node client's262144B source limit before the two new proposals or audits.
+[The closure inventory](G7-POPULATION-CERTIFICATE-CLOSURE.json) retains every
+module identity and exact projection hash. No oversized check was attempted.
+A smaller justified proof projection, verified installed imports or separately
+admitted compilation would be needed; this is not a global impossibility claim.
+The exporter's4MiB rendered-source default is a separate bound and cannot
+serve as admission to the existing hosted lane.
+
+First unresolved use-site: an actual immutable generated literal and checked
+import/source-validity/co-location/coefficient targets, bound to the original
+native inputs. Then retain the actual outer/local panel map, literal selected
+key/representative and complete fibres through epoch/word composition. Raw
+calendar/completion, authorized observer, source/target/action coverage and
+native/AST/QE/result origin remain separate. Original-owner first-writer
+controller admission is still UNBOUND; no held job is replayed.
