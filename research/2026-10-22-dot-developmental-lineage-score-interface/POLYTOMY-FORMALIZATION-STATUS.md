@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 20:43 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 20:57 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued COMPLETE original real-block emitter SOURCE, 20:57 UTC
+
+Six OPTIONAL UNELABORATED modules join a fixed nine-port canonical layout, all actual repeated-call invariants, a fully instantiated physical descending type countdown, original-valid semantic invariants, exact ORIGINAL ascending filtered leaf output, accepted-count/combTailCost fold, actual q-1 false prefix and remaining cleanup. POLYTOMY-COMPLETE-ORIGINAL-REAL-BLOCK.md gives the full hand derivation. The proposed endpoint emits exactly rawRowBlockBits R (some i) ++ prior output, increments global cost by the original fixed-comb score, empties type/count/remaining tapes and returns fresh scan/query work with unchanged original bytes.
+
+Entry record/validity/row/block/threshold/alphabet-counter words remain explicit prepared-data premises. The component bound is A(M(L,A,I,T,B)+3)+A+6, with M=G(S,L,I)+13S+3I+4T+3B+34 and G the complete selected-query bound. Actual setup/control integration, anchor/global block order, original branches/budget/binary headers/global cleanup/standalone machine, independent checker, closed encoded hardness and all toolchain/axiom/kernel checks remain open. No runtime, certificate, new review, novelty or biological/general-DAG closure.
 
 ## Continued actual copied parameters/original membership/gate SOURCE, 20:43 UTC
 

@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 20:57 UTC: complete original real-block emitter source
+
+Six OPTIONAL UNELABORATED modules instantiate the actual fixed finite caller layout/countdown body and prove exact original ordered-filter/accepted-count/comb-cost observations, then compose real comb-prefix emission and cleanup. Every operational loop premise is concretely discharged. Logical stack-invariant transport is explicitly not an operational control-conversion compiler. The exact pinned Lean 4.33.1 Init/Data/List/Range.lean range_succ source was retrieved read-only; filter_append, flatMap_append and length_filter_le were rechecked in already pinned sources. No new package or concept-side theorem axiom is introduced.
+
+The complete real-block statement retains original rawRowBlockBits, original combTailCost and prepared physical-entry premises. Actual caller setup, anchor/global block controller, original branches/arithmetic/serializer/packaging, independent verifier, closed encoded hardness and every compatibility/axiom/kernel check remain. No installation, execution, test, certificate, new independent review or novelty claim. Full actual-D_lambda/all-refinement and biological/general-DAG scopes remain unchanged.
+
 ## Continuation, 20:43 UTC: copied parameters, original predicate and actual gate
 
 Four OPTIONAL UNELABORATED modules compose prior actual faithful copies, genuine multiport transport, the complete original selected query, actual subtraction/clear and finite branch/load primitives. No new package/API assumption is introduced. Pinned List.get_mem/mem_flatten source was rechecked read-only for the exact original range-invariant simplification; this is not permission to replace a selected row with its flattened source. Caller parameter preservation includes real copy costs and consumed callee-copy cleanup. Final nonmember continuation is an actual load, not a logical reset omitted from runtime.
