@@ -206,3 +206,9 @@ exact original inputs and renders typed graph/snapshot/coefficient proof targets
 in RAM. Both the new Rust source and complete Lean receiver context remain
 UNCOMPILED/UNELABORATED; no candidate was rendered or checked. This is a primitive
 certificate route, with full epoch/word, origin and source/action joins still open.
+
+The SOURCE-ONLY supplied-family assembler now retains each one-domain provider
+and its positional row/menu blocks in the existing Problem/frontend. Restrictions
+are conjoined with the plan, target-labelled overlaps remain distinct, and the
+same original validator/compiler is reused. No physical source/target/action
+coverage, compiler acceptance or backend/selector execution is inferred.

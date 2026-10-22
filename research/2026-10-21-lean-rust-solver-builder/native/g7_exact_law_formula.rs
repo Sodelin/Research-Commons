@@ -1322,3 +1322,6 @@ pub mod correlated_survival;
 
 #[path = "g7_population_certificate.rs"]
 pub mod population_certificate;
+
+#[path = "g7_supplied_family.rs"]
+pub mod supplied_family;
