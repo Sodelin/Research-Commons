@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 19:47 UTC: complete original internal validator routine source
+
+Six OPTIONAL UNELABORATED modules join actual physical original-N cap/count creation, guarded destructive declared-count equality, original complete-input strict-range parsing, failure-safe mass/cleanup and the actual descending coverage loop. The proposed all-input validator bound is 17L^4+44L^3+63L^2+90L+55, with original bytes preserved and all scan/query tapes clean. It returns exactly the original normalized-record guard, including N=0 and malformed cases, not a new source language.
+
+Only prior inspected actual proof-side primitives/composition and own source are used. No new installation, execution, test, certificate, independent review or novelty claim. This component does not supply NormalRecordMachineWitness: original canonical construction/branches/arithmetic/target serialization and standalone packaging remain, as do independent verifier, closed encoded hardness and all dependency/toolchain/axiom/kernel checks. The original full reduction and biological/general-DAG scope remain unchanged.
+
 ## Continuation, 19:34 UTC: full replay/suffix/cleanup and actual bounded coverage
 
 Six OPTIONAL UNELABORATED sources join fixed finite ports, actual copy/header/rows, exact original complete-input syntax observation, unconditional all-path scan cleanup, actual physical query-copy membership body, a concretely instantiated descending physical countdown, exact range-conjunction semantics and final early-failure counter cleanup. The body bound is 17L^3+27L^2+36L+46 for physical C<=L, and full supplied-count coverage is quartic. No free query/input oracle or Nat control is used.

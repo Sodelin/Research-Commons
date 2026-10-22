@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 19:34 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 19:47 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued COMPLETE original internal validator routine SOURCE, 19:47 UTC
+
+Six OPTIONAL UNELABORATED modules now join actual guarded destructive declared-count equality, physical N-header copying into the range cap and coverage counter, the original complete-input strict-range pass, exact saved-count/header-m comparison, all-path first-pass cleanup and the actual descending coverage loop. `POLYTOMY-COMPLETE-ORIGINAL-UNARY-VALIDATOR.md` gives the full hand derivation. No supplied numerical N, free record/query oracle or Nat-valued finite control remains in this validator component.
+
+Proposed actual caller-level endpoint originalUnaryValidation_executes returns the SAME original normalized-record guard on every input word, preserves the original bytes, and clears all scan/query work. Bound is 17L^4+44L^3+63L^2+90L+55. Malformed inputs, failed partial rows, count mismatch, duplicate IDs, out-of-range IDs, trailing suffixes and N=0 are included; zero coverage cannot bypass the first syntax/count/range pass.
+
+This is not the whole downstream constructor or formal NP-completeness. Original canonical constructor branches/block enumeration/C0 arithmetic/target serializer, standalone downstream-machine packaging, independent verifier, closed encoded hardness and all compatibility/axiom/kernel checks remain open. No runtime, certificate, new independent review, novelty or biological/general-DAG closure. The original normalizer and full actual-D_lambda/all-refinement/output-size/independent-certificate endpoint are retained.
 
 ## Continued actual complete-input replay and coverage, 19:34 UTC
 
