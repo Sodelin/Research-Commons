@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 16:05 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 16:17 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest actual unary list-count caller, 16:17 UTC
+
+`PolytomyUnaryCountCaller.lean` supplies an OPTIONAL concrete caller-level reader for the ORIGINAL unary list-count grammar, distinct from binary payload framing. Two labels, no private work stack and optional popped-bit scratch implement exact readUnaryFrame flag/count/suffix behavior on every word. Source/output ports are distinct, output starts empty, outside data/control F are preserved, scratch resets, and missing-delimiter failure clears the partial tally. The complete hand bound is 2L+2 transitions. `POLYTOMY-UNARY-COUNT-CALLER.md` gives the operational argument and grammar distinction.
+
+Both primitive reader types needed by the full source grammar now have actual caller source proposals, but their nested tally loops, header/row storage, trailing-suffix rejection, partial-output cleanup and complete copy/dispatch/time accounting remain missing. The L+1 call theorem is not substituted for those steps. The full original constructor output-size/actual-D_lambda/all-refinement/independent-certificate endpoint plus exact source-parser erasure/call bound are retained. All terms/dependencies remain UNELABORATED/uninstalled; complete constructor/checker, closed encoded hardness and kernel closure remain open. No runtime, new review acceptance, novelty or biological-model change.
 
 ## Latest all-input full-source reader-call bound, 16:05 UTC
 

@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 16:17 UTC: actual unary-count primitive in the original grammar
+
+`PolytomyUnaryCountCaller.lean` supplies concrete two-label routine code, exact prefix/cleanup run inductions, caller boundary equations, all-input 2L+2 execution and exact readUnaryFrame observation. It explicitly stops at the unary count delimiter rather than consuming item data as a binary payload. Distinct ports, initially empty output, preserved outside stacks/control and private scratch reset are included. The dependent sum alphabet is matched to the already inspected optional routine API; no new package or runtime is introduced.
+
+Both unary-count and capped-binary primitive reader contracts now have actual source proposals, not only charge annotations. The full nested parser's physical counter loops, data representation/storage, failure/trailing-input handling, whole resource/cleanup proofs, complete constructor/checker, closed compatible encoded hardness and all kernel checks remain open. Existing L+1 charges still count CALLS, not transitions. All terms are UNELABORATED, with no new coordinating review or verification claim.
+
 ## Addendum, 16:05 UTC: complete-source call accounting, not a cost-model substitution
 
 `PolytomySourceReaderCallBound.lean` supplies ordinary counted-parser definitions with exact erasure to the ORIGINAL complete saturated source parser. Generic successful-span/failure-potential composition proves <=L+1 primitive unary/numeric reader invocations on ALL L-bit words, and <=L on successful complete parses. The arbitrary-count list induction covers malformed attempts rather than using only bounds on validated records.
