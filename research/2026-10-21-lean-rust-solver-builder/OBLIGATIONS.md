@@ -44,3 +44,13 @@ NativeOrderedBankLayout source, with two selected complete-type/standard-axiom
 audits at hosted4.35 scope. OriginalCodeBankLayout remains source-only.
 The concrete captured-Code/occurrence/import/reflected-field/emission relation
 is still open; no new arbitrary layout construction or duplicate suite is needed.
+
+Four generic native-form endpoint types now have attributed hosted checking
+with exact source/projection/submission review; their proof and original
+GParity.Chart body are integrated unchanged. The aggregate ordered-list
+binding still requires every original field/list/layout premise, coefficient
+well-formedness and decodeRows equality. Preserve internal unit bookkeeping
+versus external Farkas weights and unbounded derived exact rationals within
+the original certificate frame. No new native/compiler/CI execution or global
+physical/master conclusion follows. See CELL-FORM-REFLECTION-HOSTED-REVIEW.json
+under evidence and NATIVE-ROW-FIELD-CONTRACT.md.

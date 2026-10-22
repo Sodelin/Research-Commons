@@ -5,7 +5,12 @@ Reuse the exact native protocol/natural_cell bodies at4e556c4ae6225d18fabf30bc7d
 and the existing G6NaturalCellInverseRates/NaturalCellAffineCompiler/
 G6NaturalCellOrderedCompiler pins in evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json.
 The checked generic bank layout is already integrated; the captured Code,
-field reflection and actual ordered-emission relation are still required.
+captured-field and aggregate ordered-emission relations are still required.
+The unchanged NativeCellFormReflection source now has four selected hosted
+complete-type/standard-axiom audits; its exact original-definition projection
+and submitted-source hash were independently reconstructed. See
+evidence/CELL-FORM-REFLECTION-HOSTED-REVIEW.json. This closes the generic
+form-constructor correspondence at that hosted scope, not Rust refinement.
 
 | Native field | Existing typed field | Required exact relation |
 | --- | --- | --- |
@@ -49,13 +54,39 @@ vertex number can reorder them. For literal Code (Fin ntaxa) (Fin nh), both
 original label orders can be identities when the captured-array relation proves
 that choice. No additional Rust API is needed.
 
-The target is equality between the reflected native coefficient/bound/strictness
-LIST and encodeRows(compileCellList ... exact lists ... exact typed fields).
-The cross-language reflection is an explicit remaining relation, not asserted
-by this notation. Only then use compileCellList_toFinset for hemit. The original
+The aggregate target is
+`decodeRows D (GParity.Chart.emitRows reflectedInput) =
+compileCellList N layout ... chronology exposures coins`, using the EXACT
+complete occurrence lists above, the reflected fields and row dimension D.
+The original Chart.emitRows assigns unit bookkeeping vectors after all eight
+blocks. encodeRow instead starts with empty weights. Compare decoded affine
+semantics (and prove coefficient lengths), not complete wire Row equality
+including those bookkeeping vectors. decodeRows preserves every ordered row
+and ignores internal weights. The externally supplied Farkas multiplier vector
+is separate and must preserve its full length and duplicate-row positions.
+The Rust/native-to-Chart relation and this aggregate equality remain unproved;
+the four checked primitive correspondences do not assert them. Only then use
+compileCellList_toFinset for hemit. The original
 positive wire check retains exact witness/row dimensions. Farkas also requires
 the complete multiplier length and original duplicate-row positions. Their conclusions concern that supplied
 cell; source menu coverage, nonlinear readouts, physical origin and all-size
 NO remain separate. Missing proof of captured fields/meaning/refinement stays UNKNOWN/unavailable;
 declared absent endpoints remain valid NONE.
 No new suite, native/CI execution, dispatch, key or writer admission follows.
+
+## Preserve derived rational size
+
+Original protocol.rs at4e556c4 bounds RAW request rational numerator/denominator
+to256bits (rational, lines37-52). Exact row subtraction/scaling can exceed that
+bound. For example, let a=2^129 and b=a-1: both denominators are valid inputs,
+while 1/b-1/a=1/(a*b) has a258bit denominator. This is an arithmetic/source
+deduction, not a newly executed fixture or test.
+
+The original CHART checker recompiles and compares its whole canonical MATRIX
+prefix (chart_prefix279-290; check426-428). It does NOT reparse derived matrix
+entries as raw AFFINE input. Certificate WITNESS/WEIGHTS/EVAL vectors use
+rational(token,false), not the256bit input restriction (parsed_vector379-382).
+The entire certificate retains the4MiB frame bound (constant12; check392).
+Preserve exact rationals and the original framing; do not round, truncate or
+route this derived matrix through the raw AFFINE codec. A transport/resource
+refusal supplies no source-level mathematical NO or native admission.

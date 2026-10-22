@@ -188,3 +188,15 @@ unique ancestral slot; original hybrid order still comes from supplied
 occurrence equivalences. See evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json
 and SOURCE-CODE-ROW-BINDING.md. Native compilation/dispatch/record admission
 and full physical/master closure remain separate and unaccepted.
+
+The existing GParity.Chart value layer is now integrated unchanged with the
+exact NativeCellFormReflection proof. Its four selected hosted audits preserve
+forms, coefficients/bounds/strictness and comparison/interval order. The exact
+original-definition projection and submitted-source hash were reconstructed;
+three prior failed proof revisions remain failures. The aggregate decodeRows/
+compileCellList equality and native/Code/source admission stay open. Internal
+unit bookkeeping weights differ from external Farkas multipliers. Derived
+CHART rationals may exceed256bits and retain the original exact output route,
+not the raw AFFINE input limit. NATIVE-ROW-FIELD-CONTRACT.md records these
+interfaces. The current545-module source metadata adds only Chart and this
+proof to543; full bodies/imports/objects are not independently accepted here.
