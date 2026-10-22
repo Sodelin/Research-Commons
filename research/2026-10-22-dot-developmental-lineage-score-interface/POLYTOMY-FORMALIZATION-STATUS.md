@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 18:28 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 18:46 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued original downstream arithmetic/validation, 18:46 UTC
+
+Five OPTIONAL UNELABORATED modules continue beyond the complete normalizer: `PolytomyUnaryProductCaller.lean`, `PolytomyUnarySubtractCaller.lean`, `PolytomyPreservingUnaryProduct.lean`, `PolytomyPreservingUnaryCompare.lean` and `PolytomyUnaryDownstreamValidation.lean`. Actual destructive product/subtraction explicitly track consumed operands, underflow and cleanup. Actual swap/copy/restore callers preserve both originals: product bound 3CD+3C+12D+12; comparison bound 7C+7D+14 with all data restored and only the comparison bit changed. No operand survival is assumed without copying.
+
+Any successful INTERNAL tagged-unary parse bounds every number and row/entry count by its input length M before semantic validity. Original mN/alphabet/C0/budget then have explicit polynomial bounds. A range-coverage validator is proved exactly equivalent to the original distinct-count test, including duplicates and N=0; its downstream output is byte-equal on all words. Actual repeated record scans/range-loop realization remains open, so this semantic rewrite is not a whole machine witness. `POLYTOMY-DOWNSTREAM-ARITHMETIC-AND-VALIDATION.md` records the hand proofs and next faithful copy/rescan route.
+
+The complete normalizer proposal remains, while whole downstream constructor, independent checker, closed encoded hardness and all compatibility/axiom/kernel checks remain unresolved. No runtime, certificate, new coordinating review, novelty or biological/general-DAG closure; original external encodings and actual-D_lambda/all-refinement/output-size/certificate endpoint remain unchanged.
 
 ## Latest COMPLETE original normalizer machine SOURCE, 18:28 UTC
 

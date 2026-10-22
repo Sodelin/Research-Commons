@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 18:46 UTC: original downstream arithmetic and validator rewrite
+
+Five OPTIONAL UNELABORATED sources give actual unary product/subtraction with consumed-operand semantics, underflow cleanup and actual copy/swap/restore preserving callers. Both originals survive only because the physical copy steps are included. Product bound is 3CD+3C+12D+12; comparison with all-data restoration is bounded by 7C+7D+14. These are actual component Routine claims, not an unbounded arithmetic oracle or a whole downstream constructor witness.
+
+Successful tagged-unary syntax alone bounds numbers/counts by the intermediate input length, yielding original alphabet/C0/budget magnitude bounds. An exact range-coverage rewrite removes the need for a deduplication oracle but does not supply the actual repeated scanning/range-loop machine. Every original downstream output byte is retained; full constructor/checker/encoded hardness and kernel/axiom/toolchain compatibility obligations remain open. No new external dependency, runtime, certificate, coordinating review, novelty or changed biological scope. A lexical no-placeholder scan is not elaboration or transitive axiom evidence.
+
 ## Continuation, 18:28 UTC: complete original normalizer source and finite wrapper
 
 Six new OPTIONAL UNELABORATED sources supply actual unconditional cleanup, suffix-check/reversal/tagging, failed-counter bounds, complete original normalizer routine, fixed finite standalone FinTM2 with actual public reset, and the original full-claim conditional interface. The exact pinned FinTM2/initList/haltList/TM2OutputsInTime/polynomial evidence definitions were re-read; halt control and all non-output stacks are explicitly matched, not ignored. The proposed all-input polynomial is 6L^4+30L^3+79L^2+140L+147. A lexical source scan found no new sorry/axiom/opaque declarations; it is not elaboration or a transitive axiom audit.
