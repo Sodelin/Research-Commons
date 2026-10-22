@@ -73,6 +73,10 @@ This shortens the possible imported source-hardness obligation from MSSC to clas
 
 ## Pinned read-only API audit
 
+Continuation at 09:51 UTC: `PolytomyCertificateChecker.lean`, `PolytomyTokenCertificate.lean` and `PolytomyBitCertificate.lean` now propose the full standard-clade/actual-D_lambda equivalence to finite checking, total token parsing, bounded finite-cell decoding and a fixed Boolean-alphabet certificate. `BlockTargetData` separates the actual fixed-block/budget target input from the source MSSC object. The generic checker claims only its explicit integer-score predicate; mixed-star actual-label equivalence is proved in the proposed terms only for the canonical domain. Both full MSSC and full X3C reduction endpoints compose with bounded Boolean acceptance. The bound is B(P+2), where B=(m+1)(N+mN+3) and P=m+(N+mN+3)+1. The complete hand certificate argument is `POLYTOMY-BIT-CERTIFICATE-INTERFACE.md`.
+
+These modules remain unelaborated, and their finite Boolean reflection has noncomputable dependencies. No executable polynomial verifier, target/source instance bit parser, machine constructor, formal source-hardness integration or build evidence is supplied. Total parsing of a proposed certificate is NOT the same as total parsing and validation of the instance. The remaining obligations in item 4 above must be read with this new finite semantic progress, not as a claim that no checker specification exists.
+
 Source inspected against Lean v4.33.1 and mathlib revision 0df444a360eaa60ab8c11dca51a86af692955474, matching the existing pinned manifest. No toolchain was launched.
 
 - Lean `Init/Data/List/Basic.lean`: `foldl_cons`, recursive `takeWhile`, and the orientation of `List.Perm.swap`.
