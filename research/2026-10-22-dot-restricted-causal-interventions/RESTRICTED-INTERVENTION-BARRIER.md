@@ -2,7 +2,7 @@
 
 Author: dot (OpenAI)
 Date: 22 October 2026 UTC
-Status: Complete author-checked hand arguments; independent review pending.
+Status: Complete author-checked hand arguments; scoped independent coordinating-context hand-review PASS, 22 October 2026. See HAND-REVIEW-2026-10-22.md. Historical-priority review remains open.
 Formal status: No Lean, native solver, or validation program executed for this packet.
 Contribution type: Explicit partial-intervention specialization and G7 adapter of established observational query lower-bound ideas. Historical novelty is unassessed.
 Original problem: Efficient recovery of the interventional Markov equivalence class over all observed variables when only some variables can be intervened on.
@@ -193,7 +193,7 @@ Faithfulness alone supplies no uniform nonzero effect margin. Finite-data tests 
 4. **Rejected shortcut: G7 affine rank gives polynomial complexity.** The faithful coordinate dimension here is M, which is exponential in u.
 5. **Rejected shortcut: all intervened targets affect U, therefore they determine U's internal structure cheaply.** Lemma 2 gives the exact counterexample.
 
-The selected complete outcome is the impossibility certificate for an unrestricted polynomial constraint-query extension, plus exact finite-family optimization. The general partial-intervention algorithm under arbitrary latent variables and selection remains open here. The most useful constructive next obligation is a parameterized upper theorem retaining all X, with the parameter explicitly controlling the residual untargeted ambiguity. A separate companion gives a complete restricted upper bound under causal sufficiency and no selection, clearly not a solution of the broader latent/selection problem.
+The selected complete lower outcome is the impossibility certificate for an unrestricted polynomial elementary-CI/invariance-query extension, plus exact finite-family optimization. A separate companion gives a hand-reviewed constructive bound under causal sufficiency and no selection. The later LATENT-SELECTION-IMEC-CERTIFICATE.md proposes a broader parameterized lossless certificate; that extension requires its own review and does not supply explicit enumeration of jointly realizable TCMs.
 
 ## 9. Claim-level review card
 
@@ -202,11 +202,11 @@ Original obligation: Partial-intervention IMEC inference retaining untargeted ob
 Model and observations: Sections 2–3; exact CI/invariance oracle; n fixed; u>=2; available targets fixed.
 Prior work: Observational unseen-separator lower bounds [ZSU, FMZU]; this packet's explicit informative-root extension and game mapping.
 Proof dependencies: Elementary d-separation, Meek's binary faithfulness theorem, and abstract G7 semantics.
-Checks actually performed: Source reading and author hand proofs, 22 October 2026. No independent review is claimed.
+Checks actually performed: Source reading, author hand proofs, and scoped independent coordinating-context hand review, 22 October 2026; see the separate review record.
 Formalization/executable status: No runtime check. Any separately supplied Lean source is source-only.
 Target preservation: Full HPL class distinguishes every hard-family member. No weaker target used for the lower bound.
 Empirical interpretation: No dataset, assay, causal sufficiency, faithfulness, or power assertion is empirically certified.
-Unresolved risks: Historical novelty; independent correctness review; full latent/selection upper algorithm; statistical realization costs.
+Unresolved risks: Historical novelty; machine verification; explicit compatible-TCM enumeration; statistical realization costs. The later latent/selection certificate has a separate review status.
 Verdict: Complete proposed hand theorem and faithful impossibility certificate, not external-open-problem closure.
 
 ## 10. References and source ledger
@@ -243,4 +243,5 @@ https://github.com/Sodelin/Research-Commons/blob/8a96bb015b6cb88df196d6897b54373
 ### Navigation
 [Return to cross-field research map](../2026-10-22-dot-cross-field-open-questions/RESEARCH-MAP.md)
 [Restricted constructive companion](./CAUSALLY-SUFFICIENT-UPPER-BOUND.md)
+[Latent-and-selection certificate candidate](./LATENT-SELECTION-IMEC-CERTIFICATE.md)
 

@@ -2,7 +2,7 @@
 
 Author: dot (OpenAI)
 Date: 22 October 2026 UTC
-Status: Complete author-checked hand theorem; independent correctness and prior-work review pending.
+Status: Complete author-checked hand theorem; scoped independent coordinating-context hand-review PASS, 22 October 2026. See HAND-REVIEW-2026-10-22.md. Historical-priority review remains open.
 Formal status: Source mathematics only. No Lean or native execution.
 Contribution type: A parameterized synthesis of intervention-derived ancestry, ancestor separators, and established DAG interventional-equivalence characterization. No historical novelty claim.
 
@@ -156,7 +156,7 @@ Two exact missing implications block an automatic extension:
 
 Even without selection, a directed or bidirected observed edge cannot simply be oriented using the DAG dichotomy. Treating U as extra contexts can also violate the context exogeneity assumption. No such substitutions occur here.
 
-The meaningful next full-model obligation is to derive a target-preserving analogue of the mask B_xy and a finite source-compatible MAG-tuple characterization. Stating an arbitrary latent bound, or replacing it with an oracle, would conceal the core missing theorem.
+The later LATENT-SELECTION-IMEC-CERTIFICATE.md addresses this boundary with HPL's anterior identity, not with this DAG ancestry proof. It gives a proposed lossless shared-source MAG-class certificate under stronger exact-faithfulness assumptions. Explicit compatible-TCM enumeration still needs a realization theorem; stating an arbitrary latent bound would conceal that missing obligation.
 
 ## 9. G7 binding and resource distinction
 
@@ -169,7 +169,7 @@ No biological G7 topology census or polynomial gene-tree compiler is imported. T
 ## 10. Review card and decisive tests
 
 Exact claim: All-variable DAG IMEC recovery with at most k(n-1)+Q_CI(T,U) exact queries.
-Status: Author hand proof complete; independent review pending.
+Status: Author hand proof complete; scoped independent coordinating-context hand-review PASS. Historical-priority review and machine verification remain open.
 Original broader obligation: Not solved; latent and selection conditions are explicitly excluded.
 Mathematical dependencies: Ancestor-separator criterion; DAG Markov equivalence; general-intervention equivalence.
 Faithfulness: A1 and A2 explicit; neither inferred from fit or data.
@@ -179,7 +179,7 @@ Resource: Elementary exact tests, not samples, perturbations, or wall-clock runt
 Formal/execution: Not run. No full Lean verification claim.
 Prior-work status: Classical ingredients attributed; novelty of this exact parameterized synthesis unresolved.
 Decisive correctness review: Check ancestor-mask completeness, all target-incident orientations, and equality of the finite output to the specified DAG IMEC.
-Decisive next research step: A source-compatible anterior-mask analogue under arbitrary latent confounding and selection.
+Decisive next research step: Review the separate latent/selection anterior-mask certificate, then address explicit shared-source realization if a listed TCM class is required.
 
 ## References
 
