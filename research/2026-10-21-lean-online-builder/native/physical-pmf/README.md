@@ -126,3 +126,14 @@ See ../../RETAINED-ASSEMBLY-REUSE.md and its complete per-module JSON. Current
 compatible object/companion/runtime custody and23-module integration remain;
 native first-writer binding is UNBOUND. Do not cold-start the inherited builder
 to silently repeat original component compilation.
+
+## Complete retained loader successor
+
+The primary accepted-master preparer now stages the byte-identical13ee core,
+authenticated namespace/desktop/streamed-audit wrappers and the current exact
+delta guard. All10 selected Mathlib namespaces use the retained override
+pattern. BUILD-LOADER.json pins this source configuration. Actual full source
+preparation and16 RAM policy/source-condition tests passed; no loader was
+constructed, compiler run, cache created or writer admission supplied.
+The earlier F74 core and prepared contexts remain preserved. See
+../../RETAINED-LOADER.md and RETAINED-LOADER-VERIFICATION.json.

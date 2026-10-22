@@ -11,6 +11,13 @@ repeat verification of all755 originals: each source and direct import list
 matches the accepted1613 package. The mixed23-module delta and actual phone
 object custody remain separate. No new compiler or mathematical case is added.
 
+The [retained loader correction](RETAINED-LOADER.md) restores the complete
+original audit-status/compiler rehash checks and authenticated first-package
+namespace handling. The primary source preparer installs those original bodies
+with an exact current23-module guard;755 original cache misses cannot silently
+compile. All16 RAM regressions and complete source preparation pass. The actual
+native loader remains uninvoked under the unchanged writer hold.
+
 The [prior-solution audit](PRIOR-SOLUTION-AUDIT.md) removes duplicate literal-state,
 encoded-support, transition/admission-factory and generic bind-helper work from
 the active queue. The [ongoing preflight](PRIOR-SOLUTION-PREFLIGHT.json) requires

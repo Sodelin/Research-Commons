@@ -196,6 +196,10 @@ def main():
         (destination/'source-store'/(digest+'.lean')).write_bytes(body)
         rows.append({'module':name,'sha256':digest,'bytes':len(body),'source':'explicit owned source or import-only variant'})
     for name in PINS:
+        if args.include_accepted_masters and name == 'build_connected.py':
+            # The completed loader successor is installed after exact graph
+            # and selection creation below. Preserve the older pin separately.
+            continue
         shutil.copyfile(HERE/'pinned'/name,destination/'scripts'/name)
     graph = {'targets':{'physical-pmf-certificate-new-context':{
         'roots':selected_roots+['CMFinitePMF']+
@@ -221,6 +225,9 @@ def main():
         'native_record_writer_required':True,
         'full_import_elaboration_run':False,'native_compiler_invoked':False}
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    if args.include_accepted_masters:
+        from install_retained_loader import install_loader
+        install_loader(destination)
     sys.path.insert(0,str(ROOT))
     from peer_message import seal
     receipt,_ = seal({'action':'LEAN-PRIOR-SOLUTION-ENCODED-SUPPORT-REUSE-20261022-r34',
