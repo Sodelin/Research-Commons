@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 17:15 UTC: exact original framed-row semantics
+
+Three new OPTIONAL UNELABORATED modules join original readMany observation to the actual numeric-list execution, compose original unary count reading with fresh physical count copy, and realize one complete original readFramedList row. Successful suffix/reversed-log order, zero counts/values and malformed/failed input are explicit. Row time is L(M(L,C)+3)+7L+11 and partial-record growth is at most L(C+2)+1, with cap/scratch/source invariants preserved on failure. No final-success promise or new target language is substituted.
+
+The row's count stack must start empty. Successful return clears it; failure may leave a suffix. The outer loop must therefore use success-conditional inner emptiness, preserve a distinct outer counter and skip new row attempts after failure. Shared cached guard reuse requires the actual outer re-peek, not a claim that inner rows preserve that bit. These next integration obligations, complete headers/caps/suffix checks/reversal/tagging/cleanup, whole constructor/checker, closed compatible upstream hardness and all kernel checks remain open. No runtime, new dependency, concept theorem axiom, review acceptance, novelty or original biological closure is claimed.
+
 ## Continuation, 17:00 UTC: instantiated numeric-list body and loop
 
 Three new OPTIONAL UNELABORATED source modules instantiate the prior physical-countdown premises with actual tally-emission push atoms, actual capped numeric-reader/emitter composition, and a concrete partial-state invariant. The resulting inner-loop transition bound is k(6LC+8L+8C+17)+3; record growth at boundaries is at most k(C+1), even on failure. Cap, reserved counter, empty work ports and remaining-source bounds are tracked. A new numeric attempt deliberately resets its incoming flag, so only the higher-level guard makes overall failure absorbing; the actual loop stops before invoking another body after failure.

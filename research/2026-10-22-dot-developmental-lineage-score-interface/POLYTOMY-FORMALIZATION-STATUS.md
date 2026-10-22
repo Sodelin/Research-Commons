@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 17:00 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 17:15 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest exact original framed-row component, 17:15 UTC
+
+`PolytomyNumericListObservation.lean` identifies the actual numeric-list store observation with ORIGINAL readMany on every source word, retaining the exact suffix/reversed unary-value log and distinguishing malformed frames, successful zero, zero count and already-failed input. This equality is joined to the actual loop execution and partial-storage bound. `PolytomyListCountPrefix.lean` then composes actual unary count reading, reversed-frame emission and fresh physical count copying, with all-input 7L+8 bound and an explicit initially empty count-stack requirement.
+
+`PolytomyFramedNumericRow.lean` supplies actual sequential composition for one complete ORIGINAL framed row, exact readFramedList observation, partial/failing-state invariant, Row(L,C)=L(M(L,C)+3)+7L+11 time bound and record growth at most L(C+2)+1. Successful return clears the inner counter; failure may leave a suffix. `POLYTOMY-ORIGINAL-FRAMED-ROW.md` gives the complete hand proof. This is a new-attempt component, so outer parsing must skip it after failure.
+
+The next outer invariant must require inner-counter emptiness only while success is true and prove preservation of the distinct outer counter. Cached-guard reuse needs the actual outer re-peek, not a false preservation assumption. Outer rows, three headers and caps, suffix rejection, reversal/tagging and every cleanup path, full constructor/checker, closed encoded hardness and kernel checks remain open. Original external encodings and the actual-D_lambda/all-refinement/output-size/independent-certificate endpoint are unchanged. All source is UNELABORATED; no runtime, new review acceptance, novelty or biological closure.
 
 ## Latest concrete numeric-list loop and failing-state storage, 17:00 UTC
 
