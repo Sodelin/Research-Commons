@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[1b0f210d](https://github.com/Sodelin/Research-Commons/tree/1b0f210d042f7879c786f0a0f6eb5e15734fbbf0/research/2026-10-21-lean-rust-solver-builder).
+[04a6aa24](https://github.com/Sodelin/Research-Commons/tree/04a6aa242ce07e9430c34ff2b6b83fb775f8120c/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -75,3 +75,10 @@ supplied row registries remain representable. This checks the supplied registry;
 physical legal-action coverage and target-labelled SourceModel construction
 remain separate. Existing canonical-state/empty/singleton observer suppliers
 are reused without a new proof case or state enumerator.
+
+The source-only menu-aware measurement now derives row*menu*channel
+coefficients with normalized menu choices and the inlet's exact menu shape.
+It preserves original forcing-row costs and existing single-PMF refusals.
+Target-labelled source pieces may overlap: normalization retains the original
+source index/target, rather than proving target is a function of survival.
+No new Rust branch, programme/coverage proof or backend check is accepted.
