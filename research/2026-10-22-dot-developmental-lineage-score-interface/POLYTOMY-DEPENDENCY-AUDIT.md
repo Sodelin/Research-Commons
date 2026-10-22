@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 18:28 UTC: complete original normalizer source and finite wrapper
+
+Six new OPTIONAL UNELABORATED sources supply actual unconditional cleanup, suffix-check/reversal/tagging, failed-counter bounds, complete original normalizer routine, fixed finite standalone FinTM2 with actual public reset, and the original full-claim conditional interface. The exact pinned FinTM2/initList/haltList/TM2OutputsInTime/polynomial evidence definitions were re-read; halt control and all non-output stacks are explicitly matched, not ignored. The proposed all-input polynomial is 6L^4+30L^3+79L^2+140L+147. A lexical source scan found no new sorry/axiom/opaque declarations; it is not elaboration or a transitive axiom audit.
+
+No new external dependency or concept theorem axiom is intentionally invoked. Existing optional actual proof-side Routine/Atom/composition and previously audited classical definition dependencies remain uninstalled and toolchain compatibility remains open. The proposed normalizer term is NOT a verified certificate and NOT either whole constructor/checker witness. The total downstream normalRecordConstructor machine, independent checker and compatible closed encoded hardness remain explicit uninhabited full-claim dependencies, alongside all kernel/axiom checks. Original external languages, byte-exact actual-D_lambda/all-refinement/output-size/certificate endpoint and biological/general-DAG scopes remain unchanged. No new review acceptance, runtime or novelty claim.
+
 ## Continuation, 18:15 UTC: physical original cap creation and prefix entry
 
 Three OPTIONAL UNELABORATED source modules now give actual finite faithful arbitrary-bit tally/restore, exact cap-to-extra copying, a fully instantiated physical cap-squaring countdown with semantic induction, explicit success initialization, and composition with the original full prefix. Original C=L+1 and D=(L+1)^2 are created from the physical input; they are not Nat parameters in code/control or assumed entry data. Joined time is 6L^4+28L^3+70L^2+122L+115 with exact original prefix observation and partial-record bound.

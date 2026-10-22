@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 18:15 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 18:28 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest COMPLETE original normalizer machine SOURCE, 18:28 UTC
+
+Six OPTIONAL UNELABORATED modules now join actual unconditional stack cleanup, complete-input suffix rejection, exact reversal/tagging, both all-path partial-counter bounds, full normalizer routine, finite standalone TM2 packaging and the retained whole-reduction interface. `PolytomyOwnedStackCleanup.lean`, `PolytomyCompleteInputFinish.lean`, `PolytomyPartialCounterBounds.lean`, `PolytomyOriginalNormalizerRoutine.lean`, `PolytomyNormalizerMachine.lean` and `PolytomyNormalizerReductionInterface.lean` supply the proposed chain. `POLYTOMY-COMPLETE-ORIGINAL-NORMALIZER.md` gives the full hand proof and limitations.
+
+The complete routine creates original caps and handles arbitrary malformed/valid/trailing-suffix inputs, with output exactly normalizedSource and all ten owned ports empty on either outcome. Failure-counter bounds are proved separately rather than inferred from success-only exhaustion. An actual last atom resets public control to satisfy exact pinned haltList, while Routine contracts reset private control/work. Fixed finite port/label/control types yield a proposed originalNormalizerPoly term with all-input polynomial 6L^4+30L^3+79L^2+140L+147. No unbounded Nat control or provided-cap premise remains.
+
+This advances the NORMALIZER component, not the entire original constructor or formal NP-completeness. The whole total downstream NormalRecordMachineWitness, independent VerifierMachineWitness and compatible closed EncodedSourceHardness remain unresolved explicit hypotheses. All source remains UNELABORATED, the optional dependency is uninstalled, compatibility/transitive axiom audits and every kernel check remain open. No runtime, certificate, new parent review, novelty or original biological/general-DAG closure. Next is the original downstream unary-record validation/canonical constructor/serializer machine, preserving the same actual-D_lambda/all-refinement/output-size/independent-certificate endpoint.
 
 ## Latest actual original cap creation plus full PREFIX, 18:15 UTC
 
