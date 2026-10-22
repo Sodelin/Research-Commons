@@ -14,6 +14,13 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-path-game': ('lean/OnlineG7FinitePathGame.lean', [
+        'Astra.G7FinitePathGame.remaining_after_legal',
+        'Astra.G7FinitePathGame.winning_mono',
+        'Astra.G7FinitePathGame.winning_iff_call_cap',
+        'Astra.G7FinitePathGame.regional_winning_iff_capped',
+        'Astra.G7FinitePathGame.total_policy_capped_at_history',
+        'Astra.G7FinitePathGame.capped_loss_excludes_total_policy']),
     'g7-path-budget': ('lean/OnlineG7FinitePathBudgetBridge.lean', [
         'Astra.G7FinitePathBudgetBridge.finite_union_deletion_closed',
         'Astra.G7FinitePathBudgetBridge.next_action_legal_deletion',

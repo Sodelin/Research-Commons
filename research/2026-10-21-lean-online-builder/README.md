@@ -1,12 +1,11 @@
 # Lean components and original-source assembly
 
 This packet contains actual hosted Lean checks and a separately prepared,
-uncompiled native source context. The current source context contains **770
-modules / 5,882,555 bytes**:754 original modules and16 explicitly owned modules
+uncompiled native source context. The current source context contains **771
+modules / 5,891,078 bytes**:754 original modules and17 explicitly owned modules
 or import variants. Every selected body and internal dependency order was
 verified. All preceding548 entries are unchanged. Additions comprise221
-original dependencies of the retained G1/G2/G5 endpoints and the checked finite
-path-budget bridge.
+original dependencies of the retained G1/G2/G5 endpoints and the two checked finite path-budget/game components.
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and [the ledger](ACCEPTANCE-LEDGER.json) preserve
 the original finish lines. G1, timed and unranked G2, and full-timed binary-M3
@@ -15,7 +14,7 @@ with incomplete formal/native assembly. General G3/G4 remain open.
 
 ## Actual hosted checks
 
-[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains24 bounded follow-on
+[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains25 bounded follow-on
 cases with complete selected types, axiom lists and revision dispositions.
 The original two certificate checks and rejection controls are additionally
 recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
@@ -27,6 +26,7 @@ recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
 | CHART physical receiver | Same returned calendar, reciprocal positive rates and strict natural coin bank; exclusion only for the supplied cell | [Receiver](G6-CODE-CHART-RECEIVER.md) |
 | Exact-law game and rank | Complete retained bodies, twelve selected audits and one disclosed hosted proof-only repair | [Game](G7-CHECKED-GAME-SEMANTICS.md) |
 | Finite path budgets | Deletion legality and remaining-call bound for a finite union of original path-budget regions; four selected audits | [Budget bridge](G7-FINITE-PATH-BUDGET-BRIDGE.md) |
+| Exact free-history call cap | Whole-game cap equivalence and pointwise-totality/loss consequences at min(dimension,remaining calls); six selected audits | [Path game](G7-FINITE-PATH-GAME.md) |
 | Finite laws and certificates | Shared-law moments, PMF/pushforward, grouped rational banks, original certificate roots, affine receiver and exact literals | [PMF](CM-FINITE-PMF.md), [Affine](AFFINE-CERTIFICATES.md), [Literals](AFFINE-LITERALS.md) |
 | P1/P5/G4 support | Explicit finite product/threshold laws, ordered operator algebra/integrals and finite interpolation/determinant statements | [Selected statements](CHECKED-FOLLOWONS.json) |
 
@@ -48,8 +48,8 @@ and Code receiver roots. CMSparseSupplier is absent; the original physical
 supplier occurs once. Only the two declared CM/Real import variants are selected.
 Hosted proof API variants remain separate.
 
-Graph SHA256:65d8b39f1de2694d127c8badf3e8a8591a41fb4ca06cf21aefc3073a5a45c12d.
-Selection SHA256:13dc7a6c0d289dac87a0018c75f9f1851d57bc8b7aeb54e3ebdec439b31a28ab.
+Graph SHA256:b0f27685852c7e2ec19d9e8e82ccb67bc9b38e602986b90cf805e77a4e610e1c.
+Selection SHA256:995f75168f36d60dcac2b1024acbaf4eca20c48ed245a465628de3490fb823b4.
 This is a source-only proposal for Lean4.33.1/mathlib0df444a3. No full-import
 elaboration, compiler, Lake/Cargo/CI run or object-custody acceptance occurred.
 
@@ -92,6 +92,12 @@ No truncation, cap exhaustion, invalid prefix or disabled action becomes an
 unrestricted source NO. G7 additionally needs actual controlled polynomial/
 source/programme correspondence, AST-to-game semantics, effective QE and
 history-relative policy/CorrectRun/frontier extraction.
+
+[The controlled inlet review](G7-NATIVE-CONTROLLED-INLET-REVIEW.json) records
+complete source-level inspection of the new Rust inlet and its evaluated-law
+contract. One bank, original forcing, per-menu mass, concatenation and error
+scope align in that inspected scope. The actual native evaluated-polynomial
+equality and both original source-coverage directions remain unproved.
 
 [PEER-SCIENTIFIC-OUTCOMES.json](PEER-SCIENTIFIC-OUTCOMES.json) records the P5
 owner's completed HAND-proof counterexample verdict and mandatory future search

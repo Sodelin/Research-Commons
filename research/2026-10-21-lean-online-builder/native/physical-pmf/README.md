@@ -1,17 +1,19 @@
 # Combined retained-root and physical source context
 
-The current SOURCE ONLY preparation contains770 modules /5,882,555 bytes:
+The current SOURCE ONLY preparation contains771 modules /5,891,078 bytes:
 754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
-plus16 explicitly owned modules or import-only variants. Every selected source
+plus17 explicitly owned modules or import-only variants. Every selected source
 body, byte count and internal topological order was verified. Module names and
 hashes have no aliases. All preceding548 entries are unchanged;221 original
-dependencies add the exact retained G1/G2/G5 closures, and one owned module adds
-the finite path-budget bridge.
+dependencies add the exact retained G1/G2/G5 closures. The other two additions
+are the checked finite path-budget bridge and its game-horizon composition.
+The immediate770-module predecessor is unchanged; this last revision adds only
+G7FinitePathGame.
 
-Graph231767B/SHA256
-65d8b39f1de2694d127c8badf3e8a8591a41fb4ca06cf21aefc3073a5a45c12d.
-Selection164983B/SHA256
-13dc7a6c0d289dac87a0018c75f9f1851d57bc8b7aeb54e3ebdec439b31a28ab.
+Graph232067B/SHA256
+b0f27685852c7e2ec19d9e8e82ccb67bc9b38e602986b90cf805e77a4e610e1c.
+Selection165200B/SHA256
+995f75168f36d60dcac2b1024acbaf4eca20c48ed245a465628de3490fb823b4.
 
 ## Selected roots and additions
 
@@ -24,12 +26,11 @@ G5M3NormalizedClusterSplitIdentification. Exact declarations and inherited
 scope are pinned in ../../MASTER-SOURCE-ASSEMBLY.md. Source acquisition does
 not rerun an accepted build.
 
-The16 additions are four CM/rational wrappers; the original certificate kernel;
+The17 additions are four CM/rational wrappers; the original certificate kernel;
 two unchanged original generated certificates; two unchanged authored bank
 witnesses; and NativeOrderedBankLayout, OriginalCodeBankLayout,
 NativeCellFormReflection, NativeCellAggregateReflection,
-OriginalCodeChartReflection, OriginalCodeChartReceiver and
-G7FinitePathBudgetBridge. No replacement source or affine engine is introduced.
+OriginalCodeChartReflection, OriginalCodeChartReceiver G7FinitePathBudgetBridge and G7FinitePathGame. No replacement source or affine engine is introduced.
 
 Only two import variants are selected:
 
