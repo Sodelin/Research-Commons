@@ -15,4 +15,5 @@ lean_lib RestrictedCausalSource where
     `MarkedGraphEquivalence, `CommonIndicatorRoots, `CommonSelectedIndicatorSource,
     `OriginalLatentProjection, `OriginalProjectionAncestry,
     `GeneralActiveWalkReduction, `OriginalProjectionLifting, `LatentColliderDetours,
-    `ReadyRetainedNormalization, `OriginalProjectionContraction]
+    `ReadyRetainedNormalization, `OriginalProjectionContraction,
+    `OriginalIndicatorProjection, `OriginalCanonicalSourceAdapter]
