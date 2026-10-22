@@ -16,6 +16,7 @@ or phone project/build artifact is used. No new chat or sub-agent is created.
 | Complete original Code/admission/layout component |43 original bodies authenticated,41 unchanged plus two explicit hosted API variants; six complete selected audits | Pinned4.33.1 full imports/objects and actual captured valid Code |
 | Literal Code-to-CHART and old physical receiver | Four plus five selected hosted audits; exact89542B/139854B source and audit assemblies reconstructed | Captured source/chart equals inputOfCode with actual hb/hr/named orders; authenticated original result/check association |
 | Rust CHART row-export adapter | Reuses original parser/compiler; all51 original native source inputs prepared remotely | Source only, uncompiled/unexecuted; five staged controls and writer binding open |
+| Complete abstract G7 game and rank semantics | Both retained bodies, one explicit proof-only hosted repair; twelve selected audits and exact document/submission reconstructed | Actual physical source/response coverage, native AST refinement, effective QE and relative-history selection |
 | Pure Rust general G7 formula frontend | Authored exact Polynomial/Rational-based library and isolated Cargo proposal; source review only | Uncompiled/unexecuted; actual law supply, AST refinement, QE/relative-history selection, lower witnesses and frontier |
 
 The Lean evidence is attributed to the existing [Lean draft PR3](https://github.com/Sodelin/Research-Commons/pull/3),
@@ -99,6 +100,20 @@ law blocks require explicit affine programme maps; they are not one PMF.
 Both modules remain uncompiled/unexecuted. The old4-sample/32-bank provider
 caps, full census/source proof and original forcing/M0 refinement stay open.
 See native/G7-LAW-TABLE-INLET-CONTRACT.md.
+
+The complete abstract G7 game/rank component now has attributed hosted
+checking. Its exact source, twelve complete types and rejected first revision
+are reviewed in evidence/G7-GAME-RANK-HOSTED-REVIEW.json. Two selected axiom
+lists omit Classical.choice; all twelve use only standard axioms. The explicit
+hosted proof variant lives under lean/hosted435 and is NOT installed into the
+unchanged548-module pinned native context.
+
+native/G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md pins the remaining evaluated
+native-law/actual-controlled-readout relation. It reuses the existing
+SourcePoint, original controls and one-calendar normalization across ALL
+rows/menus/history. It assumes neither independent calendar interval variables
+nor a literal identity between the two polynomial representations. Both source
+coverage directions and actual legal affine menu maps remain obligations.
 
 ## Execution and retained boundaries
 

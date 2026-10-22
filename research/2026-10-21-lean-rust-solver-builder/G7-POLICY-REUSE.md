@@ -95,3 +95,22 @@ concatenations require explicit affine programme maps rather than being called
 one stochastic law. Original forcing/current-owner source definitions were
 read and pinned; their native-polynomial refinement is still required. See
 native/G7-LAW-TABLE-INLET-CONTRACT.md. No module or control was executed.
+
+## Complete abstract game review and actual polynomial boundary
+
+The existing Lean owner's53ee5a23159d98869da8c0c997f560acc1ac0139 component
+checks both complete retained abstract game/rank bodies. This builder reviewed
+all twelve complete selected types, exact original/variant bodies, import
+projection and audit submission. The one game proof-only repair and rejected
+first revision are retained; no pinned548 native module changed. See
+evidence/G7-GAME-RANK-HOSTED-REVIEW.json. This is attributed hosted evidence,
+not another local or native compiler run.
+
+The exact supplier join is now pinned in
+native/G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md and
+evidence/G7-PHYSICAL-POLYNOMIAL-SOURCE-REVIEW.json. Use the existing actual
+SourcePoint/controlled-readout/normalization declarations, with one bank across
+every original row, sampling menu and history. Evaluated correspondence
+retains interval dependencies; literal equality of unlike polynomial
+representations is not assumed. Actual sources with identical observations
+and different targets remain distinct candidates.

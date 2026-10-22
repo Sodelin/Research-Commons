@@ -60,8 +60,9 @@ under evidence and NATIVE-ROW-FIELD-CONTRACT.md.
 
 The complete43-original admission/layout component and four-endpoint aggregate
 reflection are attributed hosted evidence, not pinned native acceptance.
-The actual captured FieldReflection instance and existing wire receiver
-composition are the next scientific join. Source maps, rejected attempts and
+The generic Code FieldReflection construction and existing wire receiver
+composition now have attributed hosted checking; their actual captured input
+and authenticated original request/result relation remain the next data join. Source maps, rejected attempts and
 exact selected types remain retained. General G7 policy/QE/extraction work
 continues independently under G7-POLICY-REUSE.md; no runtime hold is bypassed.
 
@@ -84,3 +85,11 @@ specialization and all-or-nothing family construction. It does not run or
 replace the old compiler. Native/controlled-law refinement, full all-finite
 source supply and the existing writer/controller remain open. Concatenated
 menus are not one PMF and need explicit actual affine-programme correspondence.
+
+The complete abstract G7 game/rank bodies now have attributed hosted checking
+with twelve selected complete-type audits and one separately pinned proof-only
+hosted repair. This does not establish the native AST semantics or actual source
+supply. G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md under native pins the exact
+evaluated physical response endpoint, both source coverage directions and
+one-source/multi-menu/whole-history relation. Pinned548 imports/objects, actual
+QE/relative-history selection and writer/controller admission remain open.
