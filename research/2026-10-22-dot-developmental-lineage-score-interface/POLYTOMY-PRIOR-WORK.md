@@ -36,6 +36,14 @@ Their DTL hardness relies on a different event model, so it does not replace the
 
 ## Search limits and next questions
 
+### Further verified overlap: supermodular minimum linear ordering
+
+Abboud and Schwartz, *Tight Algorithm and Hardness for Submodular Linear Ordering*, ICALP 2026, DOI [10.4230/LIPIcs.ICALP.2026.4](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2026.4), [primary full text, Section 1](https://drops.dagstuhl.de/storage/00lipics/lipics-vol374-icalp2026/html/LIPIcs.ICALP.2026.4/LIPIcs.ICALP.2026.4.html). They explicitly describe MSSC as a supermodular minimum-linear-ordering special case and credit the earlier ordering literature. Thus the ordering connection itself is established prior work. Their new submodular approximation theorem is not a new theorem about this Carta objective.
+
+Our direct comparison: for block sets B_i, f(I)=|S minus union_{i in I} B_i| is antitone and supermodular. For each terminal type, its uncovered indicator obeys u(A)+u(B)<=u(A union B)+u(A intersection B); summing proves the claim. After the independently proved caterpillar exchange, the joining objective sums f over prefixes of lengths 2 through n. The source's displayed MLOP convention uses lengths 1 through n-1. Their difference is f(full)-f(first), and the first term depends on the ordering; it must not be discarded as a constant. Our anchor construction controls precisely this issue and yields joiningScore=MSSC-N after normalization.
+
+This comparison further limits novelty claims: no new discovery of supermodular ordering or MSSC is claimed. The exact all-refinement exchange, anchor normalization and actual-Carta objective embedding are the application proved in this packet, with historical originality still uncertified. Additive constants, including C0-N, also prevent an automatic multiplicative approximation-ratio transfer.
+
 Searches combining Carta, cell differentiation, potency, polytomy resolution/refinement, complexity, and min-sum set cover located the sources above but did not retrieve a prior exact reduction for this objective. This is a limited search result, not evidence of global originality. Generic increasing/decreasing merge-cost trees and hierarchical ordering objectives are further possible overlap areas. The simple caterpillar lemma is not claimed historically new.
 
 No biological identifiability conclusion, implementation performance claim, runtime check, or Lean verification is added by this comparison. Source-only formalization must preserve the original all-refinement domain and actual score; a related gene-reconciliation theorem or a smaller packing problem cannot stand in for it.

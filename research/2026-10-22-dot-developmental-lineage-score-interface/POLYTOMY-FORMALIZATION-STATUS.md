@@ -1,6 +1,6 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 08:11 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 08:25 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
 
 The complete mathematical theorem and its independently scoped hand review are in `POLYTOMY-REFINEMENT-COMPLEXITY.md` and `POLYTOMY-REVIEW-20261022-0712Z.md`. The new `PolytomyReductionModel.lean` does not replace them with a weaker target and does not claim to have verified them.
 
@@ -49,10 +49,12 @@ These declarations are also wholly unelaborated. The module imports the unelabor
 
 ## What still blocks a formal NP-completeness certificate
 
+The further companion `PolytomyFrontierInterface.lean` proposes an explicit cut/frontier relation, rooted unordered-tree orientation equivalence, score/mixedness invariance, an all-topology frontier-to-graft equivalence, and the full finite D_lambda reduction through that interface. `POLYTOMY-DEPENDENCY-AUDIT.md` states the exact distinction between this representation and an independent graph-contraction/clade-family encoding. These terms are likewise unelaborated.
+
 1. All proposed terms need authorized elaboration and kernel checking. Hand inspection of source APIs is not execution evidence. There may be syntax, implicit-argument, simplifier or tactic issues.
 2. The newly proposed distinct-cell, mixed-descendant and D_lambda adapter terms require elaboration and checking. Their semantic conventions are explicit in `PolytomyStarSemantics.lean`; there is no accepted kernel verification.
-3. An explicit external tree/refinement representation must be shown equivalent to grafting all permutation-valid block joining trees. The mathematical proof already gives this correspondence, but that representation theorem is not formalized here.
-4. Finite encoded inputs, polynomial construction/time/bit-size bounds, and a polynomial NP certificate checker remain to be formalized. Classical MSSC NP-hardness must enter through a precise, attributed complexity interface. The finite decision equivalence alone is not a formal NP-hardness theorem.
+3. The new cut/frontier equivalence must be elaborated. An independent graph-edge-contraction or clade-preservation representation is still not defined and connected in the source; the hand argument is recorded in the dependency audit.
+4. Finite encoded inputs, polynomial construction/time/bit-size bounds, and a polynomial NP certificate checker remain to be formalized. Classical MSSC NP-hardness must enter through a precise, attributed complexity interface. The finite decision equivalence alone is not a formal NP-hardness theorem. In particular, the current model's choice-based `Finset.toList` is not an executable constructor; canonical block enumerations require their own cost-consistent realization adapter. Pinned polynomial-Turing-machine composition is marked `proof_wanted`, and ordinary `ManyOneReducible` is not a substitute for polynomial-time reducibility.
 5. The separate full-DAG subset dynamic program still needs its own formal semantics, correctness induction, and operation/bit-cost bounds.
 
 These gaps are not hidden assumptions of the proposed finite reduction theorem; they are additional obligations before claiming the full external complexity result formally verified. The complete mathematical proof remains the independently hand-reviewed artifact, not a Lean certificate.
