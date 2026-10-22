@@ -106,7 +106,8 @@ theorem index_forward_witness {X : Type u} {S : Type v} {L : Type w}
     (trace : Trace vertex offset w.vertices) :
     ∃ indexed : IndexedWitness D vertex (offset + w.parents.length + 1),
       indexed.start = offset ∧ indexed.before = offset + w.parents.length ∧
-      indexed.finish = offset + w.parents.length + 2 := by
+      indexed.finish = offset + w.parents.length + 2 ∧
+      vertex (offset + w.parents.length + 1) = b := by
   have divided : Trace vertex offset
       ((⟨w.start, none⟩ :: (w.parents ++ [w.terminal])).map Arrival.vertex) ∧
       Trace vertex (offset + (((⟨w.start, none⟩ :: (w.parents ++ [w.terminal])).map Arrival.vertex).length)) [c] :=
@@ -143,7 +144,8 @@ theorem index_forward_witness {X : Type u} {S : Type v} {L : Type w}
     nonadjacent := by simpa only [finishTrace] using w.nonadjacent }
   refine ⟨{ start := offset, before := offset + w.parents.length,
     finish := offset + w.parents.length + 2, orientation := ?_,
-    witness := actual, start_vertex := startTrace.symm, parents := ?_, colliders := ?_ }, rfl, rfl, rfl⟩
+    witness := actual, start_vertex := startTrace.symm, parents := ?_, colliders := ?_ },
+    rfl, rfl, rfl, terminalTrace⟩
   · exact Or.inl ⟨by omega, rfl, by omega⟩
   · intro i interior
     have lower : offset < i := by rcases interior with h | h <;> omega
@@ -165,15 +167,16 @@ theorem index_forward_occurrence {X : Type u} {S : Type v} {L : Type w}
     (trace : Trace vertex 0 whole) (occurs : w.OccursOn whole) :
     ∃ offset, ∃ indexed : IndexedWitness D vertex (offset + w.parents.length + 1),
       indexed.start = offset ∧ indexed.before = offset + w.parents.length ∧
-      indexed.finish = offset + w.parents.length + 2 ∧ indexed.finish < whole.length := by
+      indexed.finish = offset + w.parents.length + 2 ∧ indexed.finish < whole.length ∧
+      vertex (offset + w.parents.length + 1) = b := by
   obtain ⟨front, back, equation⟩ := occurs
   rw [equation] at trace
   have outer := (trace_append vertex front (w.vertices ++ back) 0).mp
     (by simpa only [List.append_assoc] using trace)
   have inner := (trace_append vertex w.vertices back front.length).mp
     (by simpa only [Nat.zero_add] using outer.2)
-  obtain ⟨indexed, start, before, finish⟩ := index_forward_witness D vertex w front.length inner.1
-  refine ⟨front.length, indexed, start, before, finish, ?_⟩
+  obtain ⟨indexed, start, before, finish, label⟩ := index_forward_witness D vertex w front.length inner.1
+  refine ⟨front.length, indexed, start, before, finish, ?_, label⟩
   rw [equation, finish]
   simp only [DiscriminatingWitness.vertices, List.length_append, List.length_map,
     List.length_cons, List.length_nil]
