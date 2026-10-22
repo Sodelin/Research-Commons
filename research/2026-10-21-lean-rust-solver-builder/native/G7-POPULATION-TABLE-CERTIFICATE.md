@@ -183,3 +183,26 @@ sublemma check could only accept its exact mathematical scope, not source
 validity, physical population law or whole import/object acceptance. The actual
 native writer/controller remains UNBOUND; source proposal presence is no permit.
 See evidence/G7-CERTIFIED-POPULATION-ROW-SOURCE-REVIEW.json.
+
+## Exact pure coefficient projection, prepared only
+
+PopulationCoefficientProjection.lean is a3023B virtual-document SOURCE
+projection. Its source map retains UTF-8 start/end ranges and hashes for the
+unchanged original Expr, exprPolynomial and exprPolynomial_cons declarations
+plus the proposal's coefficient/checkExpr and three proof declarations.
+Its four Mathlib imports occur in the original dependency inventory. Source
+scope was reviewed; the COMPLETE projected context is UNELABORATED.
+
+This reduces the context ONLY for checkExpr_sound: equality of two rational
+univariate polynomials after comparing summed coefficients at the union of
+their exponent supports. It does not select Table, collect, carrier, check,
+check_sound, source validity, original merger support, actual_population or
+the sparse physical row endpoint. No original physical theorem was replaced
+by an assumption. The same original namespace declarations mean this document
+must not be co-imported with their full modules.
+
+3023B fits the existing source ceiling before any appended audit; no actual
+submission, selected type/axiom check, new mathematical case or native object
+is claimed. The large full-context limits above remain unchanged. A future
+check could accept only this pure sublemma's exact scope; full table/law/native
+acceptance and the actual first-writer/controller stay separate.
