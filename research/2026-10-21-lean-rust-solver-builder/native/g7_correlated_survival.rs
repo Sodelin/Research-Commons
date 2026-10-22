@@ -4,7 +4,6 @@
 #![forbid(unsafe_code)]
 
 use crate::{cell_calendar::CellCalendar, word_readout::{Batch, Menu}, Predicate, Relation};
-use std::collections::BTreeSet;
 use parity_solver::{polynomial::Polynomial, q, Rational,
     source_population::Location, source_word::Variable};
 
@@ -133,11 +132,10 @@ impl<'a> FixedCalendarFamilyPlan<'a> {
         }
         let hybrids = self.calendar.calendar_request().context.source.hybrids.len();
         let mut units = bounded_add(0, rows.len(), "units", self.limits.units)?;
-        let mut unique = BTreeSet::new();
         for row in rows {
             units = bounded_add(units, row.len(), "units", self.limits.units)?;
-            if row.len() != hybrids || !unique.insert(row.clone()) {
-                return Err(Error::Invalid("SURVIVAL_ORIGINAL_ROW_ARITY_OR_ALIAS"));
+            if row.len() != hybrids {
+                return Err(Error::Invalid("SURVIVAL_ORIGINAL_ROW_ARITY"));
             }
         }
         let observer = batches.first().map(|batch| batch.observer());

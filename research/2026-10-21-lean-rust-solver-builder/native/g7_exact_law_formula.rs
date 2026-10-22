@@ -94,7 +94,8 @@ pub struct Problem {
     pub original_hybrid_count: usize,
     /// Literal deterministic forcing records in ORIGINAL row order. Every
     /// record has original_hybrid_count slots. No extra IDs for channel modes.
-    /// Duplicate records are rejected: aliases must not change configuration cost.
+    /// Row IDs are positions. Equal masks at distinct positions retain their
+    /// own channels and row costs; no mask-value quotient is performed.
     pub rows: Vec<Vec<Option<bool>>>,
     pub base_observations: usize,
     pub target_count: usize,
@@ -399,11 +400,9 @@ fn validate(problem: &Problem, budget: &PathBudget, prefix: &[usize], limits: Li
     v.charge(dimension)?;
     v.charge(problem.original_hybrid_count)?;
     v.charge(problem.rows.len())?;
-    let mut row_keys = BTreeSet::new();
     for row in &problem.rows {
         v.charge(row.len())?;
         if row.len() != problem.original_hybrid_count { return Err(Error::Invalid("ORIGINAL_ROW_ID_ARITY")); }
-        if !row_keys.insert(row.clone()) { return Err(Error::Invalid("DUPLICATE_ORIGINAL_ROW_ALIAS")); }
     }
     v.charge(problem.constants.len())?;
     for constant in &problem.constants {

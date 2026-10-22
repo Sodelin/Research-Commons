@@ -1,8 +1,9 @@
 # One correlated survival domain for a fixed rational calendar
 
 SOURCE ONLY. The new Rust module is UNCOMPILED/UNEXECUTED. The mathematical
-derivation below is a proposed receiver contract, not a new Lean theorem or
-a checked native-to-physical refinement.
+positive-power receiver is now backed by the six attributed hosted Lean checks
+at peer commit0aa9cb28. Native rational/exponent conversion, coefficient lifting
+and the native-to-physical refinement remain unproved.
 
 ## Reuse and scope
 
@@ -50,11 +51,12 @@ The existing sparse polynomial and quantifier-free Predicate types represent
 these constraints directly. Exponents are literal bounded integers; the code
 does not repeatedly multiply a polynomial to construct a power.
 
-The proposed physical receiver uses rates r_e=-log(X_e)/D_e and
-r_A=-log(X_A)>0. Positive-root uniqueness then identifies each Z with
-exp(-r_p*d_j), using the SAME rate in EVERY slot. Conversely a positive rate
-bank supplies these coordinates and equations. This positive-root/logarithm
-receiver remains to be formally bound. No root, logarithm, exponential,
+The checked mathematical receiver uses rates r_e=-log(X_e)/D_e and
+r_A=-log(X_A)>0. Positive-root uniqueness identifies each Z with
+exp(-r_p*d_j), using the SAME rate in EVERY slot. It requires the EXACT real-cast
+time identity q*d=p*D and q>0. The native rational reduction and exponent-to-Real
+premises must still be proved. This is attributed hosted4.35/mathlib56a005
+execution, not an independent rerun or pinned4.33.1 package acceptance. No root, logarithm, exponential,
 floating-point value or fitted approximation is evaluated by the new module.
 The ancestral coordinate is not dropped or independently chosen per slot.
 Forcing specializes only transition gamma; the strict natural bank and initial
@@ -75,8 +77,9 @@ table and plan. Distinct rows use the same plan. It does not construct a
 SourceModel, choose a target piece, add legal actions or authenticate input.
 
 bind_rows now retains the complete SUPPLIED original row registry in literal
-order, including Some(false), and checks each exact stored mask. It rejects row
-aliases and menu/observer/dimension mismatch. All batches use the same plan and
+order, including Some(false), and checks each exact stored mask. Distinct row
+positions with equal masks are retained, together with distinct channels and
+positive-support row costs. It rejects menu/observer/dimension mismatch. All batches use the same plan and
 immutable menu slice; the lift budget is cumulative across the whole binding.
 Zero supplied rows remain representable with the explicit common menu carrier.
 This is registry coverage, not proof that the registry covers every requested
@@ -130,3 +133,18 @@ pruning with the original ordered tree. These are existing source declarations,
 not new checked proof cases. A global relabelling used only in the final observer
 needs exact quotient-compatible observer/Copy/menu correspondence; it does not
 by itself require a new whole-process copy-permutation theorem.
+
+## Exact hosted mathematical evidence
+
+The unchanged3602B source is copied at lean/hosted435/G7FixedCalendarPowerDomain.lean,
+SHA256 b9fabd9e48c66f5e8a53ac43284f51c286c925147a66411dd6693dedd07e0892.
+The six complete selected types and standard-three-axiom dispositions are in
+evidence/G7-CORRELATED-POWER-HOSTED-REVIEW.json. All printed-type hashes and the
+complete source were independently checked here; actual compilation is attributed
+to the existing Lean builder. No Rust execution or new proof suite occurred.
+
+If an intended physical resource counts distinct mask VALUES instead of the
+supplied original Row IDs, that requires its actual action/update transport.
+This implementation preserves the original positional carrier and performs no
+silent cost quotient. Earlier mask-alias rejection was a safe coverage restriction,
+not a demonstrated wrong successful law.

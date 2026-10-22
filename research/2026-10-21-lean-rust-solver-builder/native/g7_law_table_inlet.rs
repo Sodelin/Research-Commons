@@ -9,7 +9,7 @@
 
 use crate::{ActionCase, AlgebraicConstant, Predicate, Problem, Relation, SourceModel};
 use parity_solver::{law, polynomial::Polynomial, q, Rational};
-use std::collections::{BTreeMap, BTreeSet, btree_map::Entry};
+use std::collections::{BTreeMap, btree_map::Entry};
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ReadoutBasis { Rooted, Unrooted }
@@ -325,13 +325,11 @@ fn validate_family(input:&FamilyInput, constant_count:usize, work:&mut Work) -> 
         .and_then(|n| n.checked_mul(observations))
         .ok_or_else(|| work.unknown("INLET_CELL_OVERFLOW"))?;
     if cells > work.limits.cells { return Err(work.unknown("INLET_CELLS")); }
-    let mut seen = BTreeSet::new();
     for row in &input.original_rows {
         work.charge(row.len())?;
         if row.len() != input.original_hybrid_count {
             return Err(InletError::Invalid("ORIGINAL_ROW_REGISTRY_LENGTH"));
         }
-        if !seen.insert(row.clone()) { return Err(InletError::Invalid("ORIGINAL_ROW_ALIAS")); }
     }
     for (index,model) in input.models.iter().enumerate() {
         preflight(&model.request,index)?;

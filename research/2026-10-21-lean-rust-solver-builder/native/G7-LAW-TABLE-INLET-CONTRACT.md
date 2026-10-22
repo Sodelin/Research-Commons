@@ -122,3 +122,7 @@ invocation until the actual original-owner encrypted writer/controller and
 transitive first writers are bound. No new key/recipient export, owner retry,
 worker, local Git/phone artifact, canonical task/profile/whitelist or old-job
 replay is introduced. Publication is source custody, not native custody.
+
+Original row IDs are literal positions, not distinct mask values. Equal masks
+at different positions retain ordered base blocks, action weights, channels and
+row-union costs. No mask-value quotient or resource identification occurs.

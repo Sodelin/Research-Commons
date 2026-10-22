@@ -53,7 +53,7 @@ first-writer/controller binding; planned outcomes are not PASS receipts.
    retains a mandatory actual-programme semantic obligation.
 
 9. Resource and malformed-input outcomes: mismatched arities, duplicate
-   support IDs/original-row aliases, invalid root intervals and illegal
+   support IDs, invalid root intervals and illegal
    prefixes must be Invalid. AST/symbol/bit/exponent/depth/render exhaustion
    must be Limit/UNKNOWN and return no partial decision. Rendered text must
    retain bounded safe generated symbols/heads and no unbound source bank.
@@ -95,3 +95,8 @@ single-menu equivalence, complete original positive-row costs and an
 independent semantic mass/response comparison. Check exhaustion and guarded
 UNKNOWN rather than a partial verdict. No such native/model/control check
 was executed; these are pending under the original first-writer hold.
+
+The existing resource/provider verification group must additionally preserve
+DISTINCT original row IDs carrying equal masks, with separate weights/channels
+and positive-support row costs. Equal masks do not merge row IDs or actions;
+repeated support indices are still invalid. This check is deferred, NOT run.

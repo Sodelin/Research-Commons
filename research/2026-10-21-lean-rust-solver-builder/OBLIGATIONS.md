@@ -125,3 +125,10 @@ rows/vector through one generated calendar and controlled-word bank. The first
 native join is canonical Snapshot/selected-view/coefficient encoding into the
 EXISTING concrete stepRows theorem; root/completion, physical readout, coverage,
 AST/QE/selector/result authentication and actual writer admission remain open.
+
+The mathematical correlated positive-power receiver has six attributed hosted
+PASS audits at0aa9cb28; it is no longer merely a proposed log/uniqueness lemma.
+Bind native rational-time/exponent values and the ordered actual word evaluation
+to it. Original Row IDs are positional, including equal masks: channels and
+positive-support costs remain distinct. Any mask-value resource quotient needs
+its own actual legality/update transport. See G7-POSITIONAL-ROW-COVERAGE.json.

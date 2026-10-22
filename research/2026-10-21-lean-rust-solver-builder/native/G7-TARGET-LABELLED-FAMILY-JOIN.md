@@ -104,11 +104,12 @@ result obligations remain unchanged.
 
 ## Validation and custody scope
 
-This revision inserts one enum variant, one validation arm and one action
-coefficient arm. Removing precisely those three additions restores the prior
-formula body byte-for-byte. Prior guarded query/scope code is unchanged, but
-earlier reviews are NOT promoted to review or execution of the new arms.
-The second changed Rust body adjusts only the inlet's menu-measurement gate.
+The04a6aa24 source event inserted one enum variant, one validation arm and
+one action coefficient arm; removing those three additions from THAT historical
+body restores its prior formula byte-for-byte. The later row-coverage correction
+also removes mask-value rejection in the frontend, LAW inlet and survival binder.
+Original guarded query/scope code remains unchanged. Earlier reviews are NOT
+promoted to review or execution of the new source.
 
 Only bounded source inspection and a limited delimiter/string scan occurred;
 neither is Rust parsing/typechecking or a model test. After actual writer
@@ -121,3 +122,9 @@ transport and ALL transitive first writers remain UNBOUND. Native/Cargo/
 Lake/CI/QE/model/emitter/control execution stays held. No local Git, phone
 source/build artifact, new worker, owner retry, key export, canonical profile/
 whitelist change or old held/consumed replay occurred.
+
+Distinct original Row IDs may have identical masks: the original consumer has
+no mask-injectivity premise. Preserve their individual channels, weights and
+positive-support row costs. Only repeated IDs in a support set remain invalid.
+An intended mask-value resource quotient requires an explicit original
+legality/update transport; identical physical forcing laws alone do not prove it.

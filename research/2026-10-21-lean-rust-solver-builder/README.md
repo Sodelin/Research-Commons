@@ -192,3 +192,10 @@ the inlet's exact menu offsets. This represents multiple menu laws without
 treating their concatenation as one PMF. Target-labelled source coverage,
 actual programme legality and the new Rust arms remain unverified. See
 [native/G7-TARGET-LABELLED-FAMILY-JOIN.md](native/G7-TARGET-LABELLED-FAMILY-JOIN.md).
+
+Distinct original row IDs may now share a forcing mask without being merged;
+the frontend, LAW inlet and survival binder retain their individual channels,
+base positions and row costs. The six attributed hosted positive-power checks
+now supply the mathematical correlated-bank realization/uniqueness boundary.
+Native conversion, evaluated law, source/action/target transport and execution
+custody remain open; no new native or backend check ran.

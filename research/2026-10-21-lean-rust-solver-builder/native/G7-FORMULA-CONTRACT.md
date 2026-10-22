@@ -21,9 +21,10 @@ constant on that piece; split a parameter-dependent finite target into pieces.
 All polynomials use constants first, then source-local OR action-local symbols.
 
 Rows have exactly r original-ID Option<Bool> slots. Sites are DERIVED from
-their Some entries, including forcing to false. Duplicate forcing records
-are refused as resource aliases. This does not deduplicate G6 constraint rows:
-those ordered constraint/multiplier positions remain unchanged. Multiple
+their Some entries, including forcing to false. Original row IDs are literal
+positions; distinct IDs may have equal masks and retain distinct channels and
+row-union costs. No mask quotient is performed. Duplicate support IDs are still
+invalid. Ordered G6 constraint/multiplier positions also remain unchanged. Multiple
 observation/channel modes are base coordinates or action modes, never new
 physical configuration IDs. The complete menu/census/readout interpretation
 is a supplier obligation, not authenticated by the typed container.
@@ -73,7 +74,7 @@ AST/input/bit/exponent/symbol/output and construction-depth limits are explicit.
 The current recursive builder additionally refuses depth>128. These engineering
 limits return Error::Limit, an UNKNOWN/unavailable result; they never return a
 false winning formula or a losing-budget certificate. Invalid dimensions,
-IDs, duplicate aliases or malformed prefixes return Error::Invalid separately.
+IDs, duplicate support IDs or malformed prefixes return Error::Invalid separately.
 No source-census completeness follows from either validation path.
 
 ## Backend queries and policy interface
