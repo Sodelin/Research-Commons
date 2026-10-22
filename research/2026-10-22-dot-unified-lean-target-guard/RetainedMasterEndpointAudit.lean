@@ -1,0 +1,30 @@
+import G1FullOriginalClassMasterAndSharpness
+import UnifiedLean.Source.SourceUnrankedAllPanels
+import G2TimedOutputForgetting
+import G5M3NormalizedClusterSplitIdentification
+
+/- Source-only audit of inherited endpoints. Names and statements reviewed directly
+at original1138a5b1. This file is unelaborated, not a new acceptance receipt. -/
+set_option pp.all true
+
+#check G1FullOriginalClassMasterAndSharpness.actual_G1_original_class_master_with_all_n_sharpness
+#print axioms G1FullOriginalClassMasterAndSharpness.actual_G1_original_class_master_with_all_n_sharpness
+
+#check UnifiedLean.Source.SourceUnrankedAllPanels.actual_complete_unranked_all_panel_projectivity
+#print axioms UnifiedLean.Source.SourceUnrankedAllPanels.actual_complete_unranked_all_panel_projectivity
+
+#check GProgram.G2.ActualTimedAllPanelLaw.actual_natural_complete_timed_all_panel_projectivity
+#print axioms GProgram.G2.ActualTimedAllPanelLaw.actual_natural_complete_timed_all_panel_projectivity
+
+#check GProgram.G2.ActualTimedAllPanelLaw.actual_controlled_complete_timed_all_panel_projectivity
+#print axioms GProgram.G2.ActualTimedAllPanelLaw.actual_controlled_complete_timed_all_panel_projectivity
+
+#check GProgram.G2.TimedOutputForgetting.actual_natural_timed_output_forgets
+#print axioms GProgram.G2.TimedOutputForgetting.actual_natural_timed_output_forgets
+
+#check GProgram.G2.TimedOutputForgetting.actual_controlled_timed_output_forgets
+#print axioms GProgram.G2.TimedOutputForgetting.actual_controlled_timed_output_forgets
+
+#check GProgram.G5.M3NormalizedClusterSplitIdentification.m3_identifies_documented_full_cluster_split_unions
+#print axioms GProgram.G5.M3NormalizedClusterSplitIdentification.m3_identifies_documented_full_cluster_split_unions
+

@@ -1,0 +1,41 @@
+--- build_connected.original.py
++++ build_connected.selection-guard.py
+@@ -14,6 +14,22 @@
+ def companion(base,suffix):return base.with_suffix(suffix) if suffix in ['.olean','.ilean','.ir'] else Path(str(base)+suffix[len('.olean'):])
+ def artifact_bundle(base):return {suffix:sha(companion(base,suffix)) for suffix in SUFFIXES if companion(base,suffix).is_file()}
+ 
++def select_targets(graph, requested):
++ targets = graph['targets']
++ if requested == 'all':
++  labels = list(targets)
++ elif requested == 'accepted':
++  labels = [k for k,v in targets.items() if v.get('required_for_accepted_release',True)]
++ elif requested == 'provisional':
++  labels = [k for k,v in targets.items() if not v.get('required_for_accepted_release',True)]
++ else:
++  labels = [requested]
++ if not labels:
++  raise ValueError('EMPTY_TARGET_SELECTION: '+requested)
++ if len(labels) != len(set(labels)) or any(k not in targets for k in labels):
++  raise ValueError('INVALID_TARGET_SELECTION: '+requested)
++ return labels
++
+ class Builder:
+  def __init__(self):
+   self.graph=read(ROOT/'DEPENDENCY-GRAPH.json');self.graph_sha=sha(ROOT/'DEPENDENCY-GRAPH.json');self.cache=ROOT/'.build/cache';self.cache.mkdir(parents=True,exist_ok=True)
+@@ -107,7 +123,14 @@
+   except Exception as ex:result={'target':label,'status':'FAILED_OR_BLOCKED','error':str(ex),'component_receipts':records,'seconds':time.monotonic()-start}
+   save(r/'RESULT.json',result);self.results.append(result);save(self.run/'TARGET-SUMMARY.json',[{k:v for k,v in x.items() if k not in ['component_receipts','aggregate_receipt','audit_receipt']} for x in self.results]);self.event(target=label,status=result['status'],seconds=round(result['seconds'],3));return result
+  def run_targets(self,labels):
++  if not labels or len(labels)!=len(set(labels)) or any(k not in self.graph['targets'] for k in labels):
++   raise ValueError('NONEMPTY_KNOWN_UNIQUE_TARGETS_REQUIRED')
+   for label in labels:self.target(label)
+   native_final={str(p):sha(p) for p in self.native_paths};native_final_stable=all(native_final[p]==v['sha256'] for p,v in self.native_runtime.items());save(self.run/'NATIVE-RUNTIME-FINAL-REHASH.json',{'stable':native_final_stable,'hashes':native_final});ok=all(r['status']=='PASS' for r in self.results) and native_final_stable;rec={'status':'PASS_ALL_REQUESTED_TARGETS' if ok else 'INCOMPLETE_TARGET_FAILURES_PRESERVED','graph_sha256':self.graph_sha,'native_runtime_digest':self.native_digest,'native_runtime_final_rehash_stable':native_final_stable,'compiler_sha256':BINARY,'mathlib_commit':MATHLIB,'targets_requested':labels,'targets_passed':[r['target'] for r in self.results if r['status']=='PASS'],'counts':dict(self.counts),'run':str(self.run),'new_mathematical_theorem_claimed':False,'fresh_all_sources_claimed':False,'fresh_every_selected_component_context_in_this_run':all(str(c.get('receipt_directory','')).startswith(str(self.run)+'/attempts/') for r in self.results for c in r['component_receipts']) and ok,'freshness_note':'Explicit counts and each component receipt directory establish current-run compilation versus authenticated exact-context reuse. Never infer freshness from successful aggregates or absence of prior candidate reuse.','trust_level':0,'kernel_checking':True,'ordinary_memory_cap_mib':4096,'single_exact_source_memory_exception':{'module':'ThetaCertificate5','sha256':'e541af41b215cf473e63d4e968fdc42b31fe74f6384387f66de61f1ebbd7fbab','memory_mib':6144,'seconds':600},'component_count_semantics':'Successful exact artifact-context cache admissions and reuse events; unique source and context identities remain in the component receipts'};save(self.run/'FINAL-RECEIPT.json',rec);save(ROOT/'.build/LATEST-RUN.json',rec);return 0 if ok else 1
+ if __name__=='__main__':
+- ap=argparse.ArgumentParser();ap.add_argument('target',nargs='?',default='accepted');args=ap.parse_args();b=Builder();labels=list(b.graph['targets']) if args.target=='all' else [k for k,v in b.graph['targets'].items() if v.get('required_for_accepted_release',True)] if args.target=='accepted' else [k for k,v in b.graph['targets'].items() if not v.get('required_for_accepted_release',True)] if args.target=='provisional' else [args.target];raise SystemExit(b.run_targets(labels))
++ ap=argparse.ArgumentParser();ap.add_argument('target',nargs='?',default='accepted');args=ap.parse_args()
++ # Validate selection before Builder creates caches, records or invokes subprocesses.
++ graph=read(ROOT/'DEPENDENCY-GRAPH.json');labels=select_targets(graph,args.target)
++ b=Builder()
++ if b.graph != graph:raise RuntimeError('GRAPH_CHANGED_AFTER_TARGET_SELECTION')
++ raise SystemExit(b.run_targets(labels))

@@ -1,0 +1,75 @@
+import G7RawCalendarRoot
+import G7OriginalCarrierCoverage
+import G7OriginalFamilyCalendarNormalization
+import G6RationalNaturalCellWitness
+import G6OriginalWholeEdgeChartConsumer
+import G4WholeProfileDetermination
+import G6NaturalCellOrderedCompiler
+import G7OriginalAdmission
+import GParity.Chart
+import G1FullOriginalClassMasterAndSharpness
+import UnifiedLean.Source.SourceUnrankedAllPanels
+import G2TimedOutputForgetting
+import G5M3NormalizedClusterSplitIdentification
+import CMFinitePMF
+import Astra.Generated.BankWitness_4efaf02ca21e032cc08c26d2901d8fe3d11a5d2909894a3c0caea77bffe0c8e8
+import Astra.Generated.BankWitness_d71c2bf0e0153f8103feb7a65084e462c4b20ea5bc823ace0312057491697979
+import OriginalCodeBankLayout
+import NativeCellFormReflection
+import NativeCellAggregateReflection
+import OriginalCodeChartReflection
+import OriginalCodeChartReceiver
+import G7FinitePathBudgetBridge
+import G7FinitePathGame
+import G7ExactLawSourceTransfer
+import G7PaddedResponseCarrier
+import TwoTipOriginalCodeReceiver
+import G7FixedCalendarPowerDomain
+
+/- Source-only selected endpoint audit. Not elaborated here. Complements, never replaces,
+   the existing complete-owned audit. Exact printed types must be reviewed against
+   attributed hosted statements; pinned-context compatibility is not assumed. -/
+set_option pp.all true
+
+#check Astra.NativeOrderedBankLayout.bankEquiv
+#print axioms Astra.NativeOrderedBankLayout.bankEquiv
+
+#check Astra.NativeOrderedBankLayout.ordered_bank_positions
+#print axioms Astra.NativeOrderedBankLayout.ordered_bank_positions
+
+#check Astra.G7ExactLawSourceTransfer.related_consistent_iff
+#print axioms Astra.G7ExactLawSourceTransfer.related_consistent_iff
+
+#check Astra.G7ExactLawSourceTransfer.winning_iff
+#print axioms Astra.G7ExactLawSourceTransfer.winning_iff
+
+#check Astra.G7ExactLawSourceTransfer.valid_plan_iff
+#print axioms Astra.G7ExactLawSourceTransfer.valid_plan_iff
+
+#check Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss
+#print axioms Astra.G7ExactLawSourceTransfer.physical_pair_of_symbolic_loss
+
+#check Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff
+#print axioms Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff
+
+#check Astra.TwoTipOriginalCodeReceiver.binary_valid
+#print axioms Astra.TwoTipOriginalCodeReceiver.binary_valid
+
+#check Astra.TwoTipOriginalCodeReceiver.input_fields_exact
+#print axioms Astra.TwoTipOriginalCodeReceiver.input_fields_exact
+
+#check Astra.TwoTipOriginalCodeReceiver.original_rows_exact
+#print axioms Astra.TwoTipOriginalCodeReceiver.original_rows_exact
+
+#check Astra.TwoTipOriginalCodeReceiver.bank
+#print axioms Astra.TwoTipOriginalCodeReceiver.bank
+
+#check Astra.TwoTipOriginalCodeReceiver.original_cell_feasible
+#print axioms Astra.TwoTipOriginalCodeReceiver.original_cell_feasible
+
+#check Astra.FixedCalendarPowerDomain.positive_power_iff_exp
+#print axioms Astra.FixedCalendarPowerDomain.positive_power_iff_exp
+
+#check Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique
+#print axioms Astra.FixedCalendarPowerDomain.correlated_slots_exists_unique
+
