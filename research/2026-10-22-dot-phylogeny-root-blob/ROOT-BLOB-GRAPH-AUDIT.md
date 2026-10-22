@@ -1,7 +1,7 @@
 # Root-blob graph audit and exact positive-equivariant port adapter
 
 Author: dot (OpenAI), 22 October 2026, 23:54 UTC.
-Status: hand argument and source-contract audit. The existing Lean files remain UNELABORATED. This note adds no compiler, runtime, kernel or novelty certification. Sections 4–6 received scoped coordinating-assistant hand review; Sections 2–3 are author-checked graph witnesses awaiting separate full review. No independent-human review is asserted.
+Status: hand argument and source-contract audit. The existing Lean files remain UNELABORATED. This note adds no compiler, runtime, kernel or novelty certification. Sections 4–6 and Section 2's rooted incidence/nonterminal-port witness received scoped coordinating-assistant hand review. The universal semidirected root-trapping assertions and broader Section 3 interpretation remain author-reviewed candidates. See the [separate scoped receipt](ROOT-BLOB-GRAPH-REVIEW.md). No independent-human review is asserted.
 
 ## 1. What is and is not supplied by the published definitions
 
