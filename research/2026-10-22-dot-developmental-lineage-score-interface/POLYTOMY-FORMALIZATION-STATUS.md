@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 14:58 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 15:14 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest direct supplied-row constructor, 15:14 UTC
+
+`PolytomyRawRowConstructor.lean` proposes the SAME total constructor directly from the parsed supplied rows, with exact all-input byte equality. Dynamic MSSCInstance/Finset/image/coverage-proof construction is replaced by explicit row membership and the original terminal-code intervals. Filtering [0,S) retains exact original ascending code order, duplicate suppression, marker/private types, fixed-child bytes, actual C0 and threshold. The unchanged guard, malformed behavior and every original trivial-case branch are retained. No oracle or source-solution witness is used. `POLYTOMY-RAW-ROW-CONSTRUCTOR.md` gives the complete hand correspondence and resource argument.
+
+On every successfully saturated L-bit input, S<=(L+1)^2+3, C0<=(L+1)((L+1)^2+3)^2 and the emitted budget is at most that cost bound plus (L+1)^2. These are numerical resource bounds, not a machine-time certificate. The whole original actual-D_lambda/all-refinement and independent-certificate endpoint and transfer to the ORIGINAL constructor machine type remain explicit. Actual nested parsing/row/arithmetic programs, composition with supplied finite primitives, whole copy/time/preservation/cleanup proofs, the independent clade checker, closed compatible encoded hardness and all kernel checks remain open. No runtime, new review acceptance or changed biological assumptions.
 
 ## Latest concrete numeric serializer, 14:58 UTC
 

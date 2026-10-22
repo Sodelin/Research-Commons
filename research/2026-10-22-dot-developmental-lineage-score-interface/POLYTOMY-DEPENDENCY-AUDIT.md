@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 15:14 UTC: explicit supplied-row dynamic construction
+
+`PolytomyRawRowConstructor.lean` removes dynamic dependent source-instance/set-image construction from the algorithm and replaces it with supplied-list scans and code-interval tests. Bounded code surjectivity plus the existing injection proves exact predicate/filter equality; exact code sequence then preserves fixed-child bytes, actual cost, every original branch and all complete output bytes. The complete source/all-refinement actual-D_lambda/certificate endpoint is retained. All-successful-saturated-parse bounds cover alphabet, fixed cost and emitted budget without a promise about raw binary values.
+
+The pinned core List.filter_congr/length_filter_le APIs and finite-range source were inspected. No dependency was installed or executed. New terms are UNELABORATED, and the complete emitted constructor/verifier, caller composition, operational resource proofs, closed compatible source hardness and kernel checking remain open. The new constructor is an explicit ordinary list algorithm, not yet an operational complexity certificate. See POLYTOMY-RAW-ROW-CONSTRUCTOR.md for the complete hand argument and exact limitations.
+
 ## Addendum, 14:58 UTC: original numeric-frame operational primitive
 
 `PolytomyBinaryCounterEncoder.lean` uses only existing local/pinned dependencies and the inspected Nat.binaryRec', Nat.bits_append_bit, TM2 and EvalsToInTime APIs. The actual proposed finite program counts input symbols with a stack-resident binary counter, emits the original canonical length-framed little-endian payload and cleans every auxiliary/control field. Its supplied source witness is polynomial for the exact function w -> binaryNatFrame(|w|), not a whole constructor witness or an arbitrary binary-to-unary conversion. The proof explicitly includes carries, both reversals, width emission and halt. All terms remain UNELABORATED.
