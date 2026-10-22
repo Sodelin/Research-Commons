@@ -57,6 +57,16 @@ pub enum Measurement {
     /// [original row][base observation][output]. Coefficients are DERIVED as
     /// weight(row) * channel(row,observation,output), with stochasticity guarded.
     StochasticChannels(Vec<Vec<Vec<Polynomial>>>),
+    /// Separate normalized menu choice BEFORE biological observation.
+    /// Base coordinates are [row][menu][menu outcome], not one pooled PMF.
+    /// Original row support/cost remains determined by ActionCase.weights.
+    StochasticMenuChannels {
+        menu_outcomes: Vec<usize>,
+        /// [original row][menu], nonnegative with each row's sum equal1.
+        menu_weights: Vec<Vec<Polynomial>>,
+        /// [original row][menu][menu outcome][output], stochastic in output.
+        channels: Vec<Vec<Vec<Vec<Polynomial>>>>,
+    },
     /// A declared affine response specification [output][base coordinate].
     /// This variant is NOT automatically an actual randomized source programme.
     /// The returned query records its case index as a mandatory semantic join.
@@ -429,6 +439,42 @@ fn validate(problem: &Problem, budget: &PathBudget, prefix: &[usize], limits: Li
                     for observation in row {
                         if observation.len() != action.output_count { return Err(Error::Invalid("CHANNEL_OUTPUT_LENGTH")); }
                         for poly in observation { v.polynomial(poly,scope)?; }
+                    }
+                }
+            }
+            Measurement::StochasticMenuChannels {menu_outcomes,menu_weights,channels} => {
+                v.charge(menu_outcomes.len())?;
+                let mut observations = 0usize;
+                for count in menu_outcomes {
+                    if *count == 0 { return Err(Error::Invalid("MENU_EMPTY_OUTCOME_ALPHABET")); }
+                    observations = observations.checked_add(*count)
+                        .ok_or(Error::Limit("MENU_BASE_DIMENSION_OVERFLOW"))?;
+                }
+                if menu_outcomes.is_empty() || observations != problem.base_observations {
+                    return Err(Error::Invalid("MENU_BASE_OBSERVATION_LENGTH"));
+                }
+                if menu_weights.len() != problem.rows.len() || channels.len() != problem.rows.len() {
+                    return Err(Error::Invalid("MENU_CHANNEL_ROW_LENGTH"));
+                }
+                for (weights,menus) in menu_weights.iter().zip(channels) {
+                    v.charge(weights.len())?;
+                    v.charge(menus.len())?;
+                    if weights.len() != menu_outcomes.len() || menus.len() != menu_outcomes.len() {
+                        return Err(Error::Invalid("MENU_CHANNEL_MENU_LENGTH"));
+                    }
+                    for (menu,observations) in menus.iter().enumerate() {
+                        v.polynomial(&weights[menu],scope)?;
+                        v.charge(observations.len())?;
+                        if observations.len() != menu_outcomes[menu] {
+                            return Err(Error::Invalid("MENU_CHANNEL_OBSERVATION_LENGTH"));
+                        }
+                        for outputs in observations {
+                            v.charge(outputs.len())?;
+                            if outputs.len() != action.output_count {
+                                return Err(Error::Invalid("MENU_CHANNEL_OUTPUT_LENGTH"));
+                            }
+                            for polynomial in outputs { v.polynomial(polynomial,scope)?; }
+                        }
                     }
                 }
             }
@@ -931,6 +977,35 @@ impl<'a> Compiler<'a> {
                         }
                         let total = self.arena.sum(probability_sum)?;
                         constraints.push(self.arena.compare(Relation::Equal,total,1)?);
+                    }
+                }
+            }
+            Measurement::StochasticMenuChannels {menu_outcomes,menu_weights,channels} => {
+                for (row,menus) in channels.iter().enumerate() {
+                    let mut menu_terms = Vec::new();
+                    for polynomial in &menu_weights[row] {
+                        let probability = self.arena.polynomial(polynomial,&env)?;
+                        constraints.push(self.arena.compare(Relation::Nonnegative,probability,0)?);
+                        menu_terms.push(probability);
+                    }
+                    let total = self.arena.sum(menu_terms.clone())?;
+                    constraints.push(self.arena.compare(Relation::Equal,total,1)?);
+                    let mut start = 0usize;
+                    for (menu,observations) in menus.iter().enumerate() {
+                        for (observation,outputs) in observations.iter().enumerate() {
+                            let mut probability_sum = Vec::new();
+                            for (output,polynomial) in outputs.iter().enumerate() {
+                                let probability = self.arena.polynomial(polynomial,&env)?;
+                                constraints.push(self.arena.compare(Relation::Nonnegative,probability,0)?);
+                                probability_sum.push(probability);
+                                let index = row * problem.base_observations + start + observation;
+                                coefficients[output][index] = self.arena.product(
+                                    vec![weights[row],menu_terms[menu],probability])?;
+                            }
+                            let total = self.arena.sum(probability_sum)?;
+                            constraints.push(self.arena.compare(Relation::Equal,total,1)?);
+                        }
+                        start += menu_outcomes[menu];
                     }
                 }
             }

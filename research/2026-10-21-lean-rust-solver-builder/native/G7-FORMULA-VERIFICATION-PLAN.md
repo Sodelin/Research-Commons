@@ -87,3 +87,11 @@ a captured original history/candidate variable, reused active versus valid
 sibling binders, inactive declared coordinates and scope-audit exhaustion.
 Verify the exact free symbol list against an independent AST interpretation.
 These controls remain UNEXECUTED under the existing native writer hold.
+
+
+Before accepting StochasticMenuChannels, extend that SAME programme/provider
+group with normalized/altered menu weights, literal menu offsets/dimensions,
+single-menu equivalence, complete original positive-row costs and an
+independent semantic mass/response comparison. Check exhaustion and guarded
+UNKNOWN rather than a partial verdict. No such native/model/control check
+was executed; these are pending under the original first-writer hold.

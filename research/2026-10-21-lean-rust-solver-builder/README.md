@@ -184,3 +184,11 @@ ancestral/gamma bank using exact positive-power predicates and reindexes the sam
 bound readout Batch. It does not preserve a calibrated G6 cell, choose target
 pieces, construct a SourceModel or prove native/physical source coverage. See
 [native/G7-CORRELATED-SURVIVAL-CONTRACT.md](native/G7-CORRELATED-SURVIVAL-CONTRACT.md).
+
+
+The source frontend now has explicit StochasticMenuChannels. It derives
+row/menu/channel coefficients with separately normalized menu choice and binds
+the inlet's exact menu offsets. This represents multiple menu laws without
+treating their concatenation as one PMF. Target-labelled source coverage,
+actual programme legality and the new Rust arms remain unverified. See
+[native/G7-TARGET-LABELLED-FAMILY-JOIN.md](native/G7-TARGET-LABELLED-FAMILY-JOIN.md).

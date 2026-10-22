@@ -62,10 +62,13 @@ are checked to be1 for EACH menu using exact polynomial arithmetic.
 Base order is [original row][menu0 outcomes,menu1 outcomes,...]; menu_offsets
 bind the literal boundaries. Several menu law blocks are a concatenated real
 base vector, NOT one normalized PMF. Consequently into_problem rejects
-StochasticChannels when there is more than one menu. Use explicit SuppliedAffine
-programme maps for that concatenated base, retaining their actual-programme
-semantic proof obligation. A single-menu probability base can use the derived
-w*channel shorthand. No implicit menu mixture or actuator is invented.
+StochasticChannels when there is more than one menu. The explicit
+StochasticMenuChannels representation now derives w(row)*q(row,menu)*channel
+with separate normalized menu choices, binding each ordered outcome count to
+this inlet's actual menus. General SuppliedAffine remains available with its
+actual-programme semantic proof obligation. A single-menu probability base
+can still use the original w*channel shorthand. No undeclared menu mixture or
+new original actuator is invented. This extension is SOURCE ONLY.
 
 The game compiler already supports a general affine base vector. This inlet's
 finite multi-menu representation therefore keeps D=rows*sum(menu outcomes),

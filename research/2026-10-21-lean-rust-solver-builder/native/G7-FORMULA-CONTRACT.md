@@ -256,3 +256,26 @@ cover every legal action in the requested original problem before a losing
 result excludes its full strategy class; a restricted menu cannot establish
 loss for a larger action universe. A transferred current-history ambiguity
 pair is not one fixed obstruction against every possible future policy.
+
+
+## Explicit stochastic menu channels (source candidate)
+
+StochasticMenuChannels declares the exact ordered outcome count of each
+separate menu, a normalized nonnegative menu choice for EACH original row,
+and stochastic output channels for each row/menu/outcome. The existing arena
+derives w(row)*q(row,menu)*channel(row,menu,outcome,output). All probability
+guards and polynomial scopes are explicit; no polynomial expansion or numeric
+evaluation is introduced. Original positive row support, Some(false) sites,
+source-independent action quantifiers and resource transitions are unchanged.
+
+The ordered menu counts must sum exactly to base_observations. The LAW inlet
+also binds them to its captured menu order. Old StochasticChannels remains
+the single-PMF representation and is still refused for concatenated menus.
+General SuppliedAffine retains its actual programme correspondence obligation.
+Every menu must have its actual normalized law on the SAME source; this new
+measurement representation does not prove native provider or source coverage.
+
+Earlier guard/scope reviews concern their exact pinned source. This revision
+adds one enum variant and new validation/action arms; it is uncompiled and
+unexecuted. See G7-TARGET-LABELLED-FAMILY-JOIN.md and the exact current source
+review for the target-labelled normalization and semantic acceptance boundary.

@@ -270,6 +270,11 @@
       "sha256": "95050f1322c2cb7f66ee102ac12cbad4cc8876446a58ea564ad3cbd215b1255c"
     },
     {
+      "path": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
+      "utf8_bytes": 4355,
+      "sha256": "cbd64c0e24f2f47ea343da17bc219bbd19ba39bbf3b8a2798e0a00c3b10babd7"
+    },
+    {
       "path": "evidence/G7-PATH-HORIZON-HOSTED-REVIEW.json",
       "utf8_bytes": 25527,
       "sha256": "4f20d102d9b8ab4ee856384506e2d839f444656729790893a710625290d72ab4"
@@ -661,13 +666,13 @@
     },
     {
       "path": "native/g7_exact_law_formula.rs",
-      "utf8_bytes": 56132,
-      "sha256": "3d3b7000440057b9c4cc5df5bdeea2f8ef8fa53560738506235ab51a37c93e33"
+      "utf8_bytes": 60663,
+      "sha256": "5534268e3a580eb84a1981936b90bf6b2c313b35a639668b19c1deeb8ea26bc6"
     },
     {
       "path": "native/g7_law_table_inlet.rs",
-      "utf8_bytes": 21785,
-      "sha256": "292743ede48e14619f9ab36099f1a0e3b4e5db8df9be171b1ecf813fad1e9e30"
+      "utf8_bytes": 22302,
+      "sha256": "560c8731f8ae7336a02829b3b19c758fcd67a6088fb96c194532fc5f0576ffee"
     },
     {
       "path": "native/g7_word_readout.rs",
@@ -696,13 +701,13 @@
     },
     {
       "path": "native/G7-FORMULA-CONTRACT.md",
-      "utf8_bytes": 15584,
-      "sha256": "b43d66217d730392cce8de827dad958bb8b6721100774d49bd6f66eebeb31c9d"
+      "utf8_bytes": 16948,
+      "sha256": "a6d9d17bb9ec96694cec23a5a271c9e0a27cbc6619523a73097b738d1221dca8"
     },
     {
       "path": "native/G7-FORMULA-VERIFICATION-PLAN.md",
-      "utf8_bytes": 5452,
-      "sha256": "29cb73cf164e117744ceaff37cd88baab9e9bbdd32ddb20f3b27b1b78b263eb8"
+      "utf8_bytes": 5897,
+      "sha256": "39ac3c75b19f858376a8e052bcff8daf34b5212f75774cea0f6ea585895f53bc"
     },
     {
       "path": "native/g7-formula/Cargo.toml",
@@ -711,13 +716,18 @@
     },
     {
       "path": "native/G7-LAW-TABLE-INLET-CONTRACT.md",
-      "utf8_bytes": 7326,
-      "sha256": "8c7f237bd0d77d66744d6063a98615b7650085d10d0e4663abf24e8deaddd4ab"
+      "utf8_bytes": 7536,
+      "sha256": "a5bc47be89e17148fbcb5e0cf8e4baefc4c9ef49c1af6e3f51e3da652c72b36f"
     },
     {
       "path": "native/G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md",
       "utf8_bytes": 10925,
       "sha256": "b0dccf432622dd156e62eb124671d9af1545347ef9333e1323f3081c5388fec3"
+    },
+    {
+      "path": "native/G7-TARGET-LABELLED-FAMILY-JOIN.md",
+      "utf8_bytes": 7067,
+      "sha256": "dca86662b0c937b49f6476978f03f12dee5605e9111f6c4071e4d584afd0e6ca"
     },
     {
       "path": "native/G7-WORD-READOUT-CONTRACT.md",
@@ -1011,8 +1021,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 13773,
-      "sha256": "614d13d33a2fb8e3b92f4cb8fdce5c94104f63ade77598f1673bd5732f4d1bfa"
+      "utf8_bytes": 14232,
+      "sha256": "a95a08b57229282fe7d4f5023aa404e505fa975def02d1483df57535eb3ff6cf"
     },
     {
       "path": "RECORD-WRITER-GAP.md",
@@ -1463,17 +1473,21 @@
     "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
     "source": {
       "path": "native/g7_exact_law_formula.rs",
-      "sha256": "b61f3a68514428c340968e4077bce9c62be6eb0fb9166484180389c2a0366e38",
-      "utf8_bytes": 55981,
-      "lines": 1243
+      "sha256": "5534268e3a580eb84a1981936b90bf6b2c313b35a639668b19c1deeb8ea26bc6",
+      "utf8_bytes": 60663,
+      "lines": 1323
     },
-    "review": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
+    "review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
     "contract": "native/G7-FORMULA-CONTRACT.md",
     "verification_plan": "native/G7-FORMULA-VERIFICATION-PLAN.md",
     "execution": false,
     "new_canonical_task": false,
-    "disjoint_controlled_word_declaration": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json; prior55519 bytes remain exact",
-    "disjoint_cell_calendar_declarations": "evidence/G7-CELL-CALENDAR-SOURCE-REVIEW.json; prior55667bytes exact"
+    "previous_declaration_only_events": {
+      "controlled": "evidence/G7-WORD-PROVIDER-SOURCE-REVIEW.json; prior55519 bytes remain exact",
+      "cell": "evidence/G7-CELL-CALENDAR-SOURCE-REVIEW.json; prior55667bytes exact"
+    },
+    "historical_review": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
+    "earlier_peer_core_review_does_not_certify_new_arms": true
   },
   "Code_CHART_physical_receiver": {
     "review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
@@ -1522,16 +1536,17 @@
   "G7_joint_LAW_inlet": {
     "status": "SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
     "source": {
-      "lines": 470,
       "path": "native/g7_law_table_inlet.rs",
-      "sha256": "292743ede48e14619f9ab36099f1a0e3b4e5db8df9be171b1ecf813fad1e9e30",
-      "utf8_bytes": 21785
+      "sha256": "560c8731f8ae7336a02829b3b19c758fcd67a6088fb96c194532fc5f0576ffee",
+      "utf8_bytes": 22302,
+      "lines": 481
     },
-    "review": "evidence/G7-LAW-TABLE-INLET-SOURCE-REVIEW.json",
+    "review": "evidence/G7-MENU-CHANNEL-SOURCE-REVIEW.json",
     "contract": "native/G7-LAW-TABLE-INLET-CONTRACT.md",
     "native_engine_unchanged": true,
     "new_execution": false,
-    "all_finite_provider_or_policy_closed": false
+    "all_finite_provider_or_policy_closed": false,
+    "historical_review": "evidence/G7-LAW-TABLE-INLET-SOURCE-REVIEW.json"
   },
   "complete_G7_game_rank_hosted_review": {
     "review": "evidence/G7-GAME-RANK-HOSTED-REVIEW.json",
@@ -1647,5 +1662,11 @@
     "review": "evidence/LEAN-CANONICAL-READOUT-SOURCE-REUSE.json",
     "new_proof_case": false,
     "actual_native_refinement": false
+  },
+  "G7_target_labelled_family_consumer": {
+    "contract": "native/G7-TARGET-LABELLED-FAMILY-JOIN.md",
+    "source_checkpoint_only": true,
+    "original_source_index_and_targets_retained": true,
+    "source_and_legal_action_coverage_constructed": false
   }
 }

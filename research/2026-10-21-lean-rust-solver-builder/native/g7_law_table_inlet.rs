@@ -145,9 +145,20 @@ impl<'a> PreparedFamily<'a> {
             return Err(InletError::Invalid("MODEL_TARGET_ALPHABET"));
         }
         let input = self.binding.original_input;
-        if input.menus.len() > 1 && actions.iter().any(|a|
-            matches!(&a.measurement,crate::Measurement::StochasticChannels(_))) {
-            return Err(InletError::Invalid("CONCATENATED_MENUS_REQUIRE_EXPLICIT_AFFINE_PROGRAMME"));
+        for action in &actions {
+            match &action.measurement {
+                crate::Measurement::StochasticChannels(_) if input.menus.len() > 1 =>
+                    return Err(InletError::Invalid(
+                        "CONCATENATED_MENUS_REQUIRE_EXPLICIT_AFFINE_PROGRAMME")),
+                crate::Measurement::StochasticMenuChannels {menu_outcomes,..} => {
+                    if menu_outcomes.len() != input.menus.len()
+                        || menu_outcomes.iter().zip(&input.menus).any(|(count,menu)|
+                            *count != menu.readout.outcome_count) {
+                        return Err(InletError::Invalid("MENU_CHANNEL_SOURCE_BINDING"));
+                    }
+                }
+                _ => {}
+            }
         }
         let observations = self.binding.menu_offsets.last().copied()
             .ok_or(InletError::Invalid("MENU_COORDINATE_OFFSETS"))?;
