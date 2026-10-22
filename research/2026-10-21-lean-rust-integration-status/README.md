@@ -2,7 +2,7 @@
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[c5df046d](https://github.com/Sodelin/Research-Commons/tree/c5df046deb5555f3d2d8fb64d7ba7dc19803eeca/research/2026-10-21-lean-rust-solver-builder).
+[77920422](https://github.com/Sodelin/Research-Commons/tree/77920422868495bd9abba49e4ca941b45fd595bc/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -58,7 +58,10 @@ the exporter performs no substitution or physical admission. The aggregate
 bridge compares decodeRows(Chart.emitRows) to the original ordered compiler;
 internal unit bookkeeping weights differ from external Farkas multipliers.
 Derived exact matrix rationals can exceed256bits and retain the original CHART
-output route, instead of being reparsed as raw AFFINE input. Supplied
+output route, instead of being reparsed as raw AFFINE input. The core checker's
+4MiB frame is not a CHART producer-size guarantee; the unchanged runtime/MCP
+JSON request bound is256KiB. Source review confirms exact request/matrix and
+complete witness/evaluation/Farkas vector binding, without executing it. Supplied
 mathematical laws, physical readouts and estimates retain distinct provenance.
 
 NEW native/Cargo/Lake/CI execution remains HELD before the first writer.
