@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 12:05 UTC: binary widths before validation
+
+`PolytomyBinaryWidthBounds.lean` proposes a complete all-string width-consumption chain. A successful binary reader consumes at least twice the canonical value bit width plus one framing bit; nested list-reader induction and header telescoping bound the sum of all source numeric widths by the actual input length. The target's three binary header widths receive the same all-successful-parse bound. This includes noncanonical high-zero payloads and does not replace numerical values by unary input lengths before validation.
+
+The exact `Nat.size_le` and `Nat.size_eq_bits_len` statements were read in pinned `Mathlib/Data/Nat/Size.lean` at revision `0df444a360eaa60ab8c11dca51a86af692955474`. No version upgrade or compiler run occurred. The resulting whole-interface theorem retains the actual-label/all-topology reduction, output-size bound and independent bounded pair verifier. This is representation-size progress only. It does not instantiate either exact `TM2ComputableInPolyTime` obligation or discharge source hardness, operational composition or kernel validation.
+
 ## 1. An actual polynomial-time interface exists, but is not instantiated here
 
 At mathlib revision `0df444a360eaa60ab8c11dca51a86af692955474`, `Turing.TM2ComputableInPolyTime` requires a concrete multitape-machine realization and a polynomial bound on its output time, measured against the encoded input length. This is an appropriate kind of endpoint for the encoded constructor/checker obligations. It is stronger than ordinary computability. [Pinned primary source](https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/Computability/TuringMachine/Computable.lean).
