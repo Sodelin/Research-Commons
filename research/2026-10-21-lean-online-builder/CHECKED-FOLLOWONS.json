@@ -1839,6 +1839,94 @@
       "warning_dispositions": "Three retained benign inherited deprecation observations; no errors/sorry/unsafe or extra axioms. Six selected declarations need no axioms, one uses propext/Quot.sound and one uses the standard three.",
       "capture_disposition": "Original terminal sealed result recovered by exact source/client identity after the tool handle was missing; no compiler rerun.",
       "scope": "Conditional two-sided admitted source/target/all-response/resource representation transfers full-history consistency, Winning, the SAME Valid plan and physical target correctness/ambiguity. It constructs no actual source/provider relation and supplies no native AST, QE selector or origin/refinement acceptance."
+    },
+    {
+      "case": "g7_zero_padded_response_carrier",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineG7PaddedResponseCarrier.lean",
+      "source_sha256": "0fffe4097ec2f11d594d7a5f627b05aa3e06ea3fe5bcd4ff6219a9f636abb447",
+      "submitted_source_sha256": "cd3216ab1a725c2909325ffc43f1d84cc31c040e2067004faff4b2e9ced2b8f9",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.G7PaddedResponseCarrier.restrict_pad",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7PaddedResponseCarrier.restrict_pad' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.pad_restrict",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7PaddedResponseCarrier.pad_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.pad_add",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7PaddedResponseCarrier.pad_add' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.pad_zero_outputs",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7PaddedResponseCarrier.pad_zero_outputs' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.inconsistent_nonzero_padding",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7PaddedResponseCarrier.inconsistent_nonzero_padding' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.G7PaddedResponseCarrier.restrict_pad",
+          "printed_type": "Astra.G7PaddedResponseCarrier.restrict_pad {n K : Nat} (hn : @LE.le.{0} Nat instLENat n K) (y : Fin n → Real) :\n  @Eq.{1} (Fin n → Real) (@Astra.G7PaddedResponseCarrier.restrict n K hn (@Astra.G7PaddedResponseCarrier.pad n K y)) y"
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.pad_restrict",
+          "printed_type": "Astra.G7PaddedResponseCarrier.pad_restrict {n K : Nat} (hn : @LE.le.{0} Nat instLENat n K) (z : Fin K → Real)\n  (hz :\n    ∀ (i : Fin K),\n      @LE.le.{0} Nat instLENat n (@Fin.val K i) →\n        @Eq.{1} Real (z i) (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))) :\n  @Eq.{1} (Fin K → Real) (@Astra.G7PaddedResponseCarrier.pad n K (@Astra.G7PaddedResponseCarrier.restrict n K hn z)) z"
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.pad_add",
+          "printed_type": "Astra.G7PaddedResponseCarrier.pad_add {n K : Nat} (x y : Fin n → Real) :\n  @Eq.{1} (Fin K → Real)\n    (@Astra.G7PaddedResponseCarrier.pad n K fun i =>\n      @HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd) (x i) (y i))\n    fun i =>\n    @HAdd.hAdd.{0, 0, 0} Real Real Real (@instHAdd.{0} Real Real.instAdd) (@Astra.G7PaddedResponseCarrier.pad n K x i)\n      (@Astra.G7PaddedResponseCarrier.pad n K y i)"
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.pad_zero_outputs",
+          "printed_type": "Astra.G7PaddedResponseCarrier.pad_zero_outputs (K : Nat)\n  (y : Fin (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) → Real) :\n  @Eq.{1} (Fin K → Real)\n    (@Astra.G7PaddedResponseCarrier.pad (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) K y)\n    (@OfNat.ofNat.{0} (Fin K → Real) (nat_lit 0)\n      (@Zero.toOfNat0.{0} (Fin K → Real) (@Pi.instZero.{0, 0} (Fin K) (fun a => Real) fun i => Real.instZero)))"
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.inconsistent_nonzero_padding",
+          "printed_type": "Astra.G7PaddedResponseCarrier.inconsistent_nonzero_padding.{u_1, u_2, u_3, u_4} {S : Type u_1} {A : Type u_2}\n  {T : Type u_3} {R : Type u_4} {n K : Nat}\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R) (a : A)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, 0} A (Fin K → Real))\n  (zero_response :\n    ∀ (s : S) (i : Fin K),\n      @LE.le.{0} Nat instLENat n (@Fin.val K i) →\n        @Eq.{1} Real\n          (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R E s a i)\n          (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)))\n  (z : Fin K → Real)\n  (bad :\n    ∃ i,\n      And (@LE.le.{0} Nat instLENat n (@Fin.val K i))\n        (@Ne.{1} Real (z i) (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))))\n  (s : S) :\n  Not\n    (@GProgram.G7.ExactLawResourceGame.Consistent.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R E\n      (@List.cons.{u_2} (Prod.{u_2, 0} A (Fin K → Real)) (@Prod.mk.{u_2, 0} A (Fin K → Real) a z) h) s)"
+        },
+        {
+          "name": "Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff",
+          "printed_type": "Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff.{u_1, u_2, u_3, u_4} {S : Type u_1} {A : Type u_2}\n  {T : Type u_3} {R : Type u_4} {n K : Nat} (hn : @LE.le.{0} Nat instLENat n K)\n  (E : GProgram.G7.ExactLawResourceGame.Experiment.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R) (a : A)\n  (h : GProgram.G7.ExactLawResourceGame.History.{u_2, 0} A (Fin K → Real))\n  (zero_response :\n    ∀ (s : S) (i : Fin K),\n      @LE.le.{0} Nat instLENat n (@Fin.val K i) →\n        @Eq.{1} Real\n          (@GProgram.G7.ExactLawResourceGame.Experiment.response.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R E s a i)\n          (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)))\n  (k : Nat) (u : R) :\n  Iff\n    (∀ (z : Fin K → Real),\n      @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R E k\n        (@List.cons.{u_2} (Prod.{u_2, 0} A (Fin K → Real)) (@Prod.mk.{u_2, 0} A (Fin K → Real) a z) h) u)\n    (∀ (y : Fin n → Real),\n      @GProgram.G7.ExactLawResourceGame.Winning.{u_1, u_2, 0, u_3, u_4} S A (Fin K → Real) T R E k\n        (@List.cons.{u_2} (Prod.{u_2, 0} A (Fin K → Real))\n          (@Prod.mk.{u_2, 0} A (Fin K → Real) a (@Astra.G7PaddedResponseCarrier.pad n K y)) h)\n        u)"
+        }
+      ],
+      "client": "online_lean_quiet.mjs",
+      "client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "warning_count": 3,
+      "warning_dispositions": "Three benign inherited deprecation observations, no errors/sorry/unsafe. All six selected lists are the standard three.",
+      "scope": "Order-preserving zero padding/restriction, Fin0 and response quantifier equivalence in the EXISTING Winning game, given the real response has zero padding. Exact native case/coefficient/history map, AST and source/provider admission remain open."
     }
   ]
 }

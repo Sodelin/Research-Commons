@@ -14,6 +14,13 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-padded-response': ('lean/OnlineG7PaddedResponseCarrier.lean', [
+        'Astra.G7PaddedResponseCarrier.restrict_pad',
+        'Astra.G7PaddedResponseCarrier.pad_restrict',
+        'Astra.G7PaddedResponseCarrier.pad_add',
+        'Astra.G7PaddedResponseCarrier.pad_zero_outputs',
+        'Astra.G7PaddedResponseCarrier.inconsistent_nonzero_padding',
+        'Astra.G7PaddedResponseCarrier.winning_reply_quantifier_iff']),
     'g7-source-transfer': ('lean/OnlineG7ExactLawSourceTransfer.lean', [
         'Astra.G7ExactLawSourceTransfer.related_consistent_iff',
         'Astra.G7ExactLawSourceTransfer.consistent_has_source',

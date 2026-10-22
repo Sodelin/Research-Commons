@@ -1,19 +1,19 @@
 # Combined retained-root and physical source context
 
-The current SOURCE ONLY preparation contains772 modules /5,897,394 bytes:
+The current SOURCE ONLY preparation contains773 modules /5,901,586 bytes:
 754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
-plus18 explicitly owned modules or import-only variants. Every selected source
+plus19 explicitly owned modules or import-only variants. Every selected source
 body, byte count and internal topological order was verified. Module names and
 hashes have no aliases. All preceding548 entries are unchanged;221 original
-dependencies add the exact retained G1/G2/G5 closures. The other three additions
-are the checked path-budget bridge, game-horizon composition and conditional
-source transfer. The immediate771-module predecessor is unchanged; this last
-revision adds only G7ExactLawSourceTransfer.
+dependencies add the exact retained G1/G2/G5 closures. The other four additions
+are the checked path-budget bridge, game-horizon composition, conditional
+source transfer and response padding. The immediate772-module predecessor is
+unchanged; this last revision adds only G7PaddedResponseCarrier.
 
-Graph232348B/SHA256
-a9211087e634aaca39c07b7cdb6e4336e513ebfca50873b17e858481a4a28f73.
-Selection165425B/SHA256
-53f193ad7d5bd8303ca69c470767320cb3f298325478200c817fd3f648c4abef.
+Graph232626B/SHA256
+92a46556841fb4cccfb11ecc977677e1fb259d778a72b1371cf33b21e5aec3dd.
+Selection165649B/SHA256
+1ba50637562461a2bb16f8e9423c934d973076ae059e4b6b5b9272b5362b3730.
 
 ## Selected roots and additions
 
@@ -26,12 +26,13 @@ G5M3NormalizedClusterSplitIdentification. Exact declarations and inherited
 scope are pinned in ../../MASTER-SOURCE-ASSEMBLY.md. Source acquisition does
 not rerun an accepted build.
 
-The18 additions are four CM/rational wrappers; the original certificate kernel;
+The19 additions are four CM/rational wrappers; the original certificate kernel;
 two unchanged original generated certificates; two unchanged authored bank
 witnesses; and NativeOrderedBankLayout, OriginalCodeBankLayout,
 NativeCellFormReflection, NativeCellAggregateReflection,
 OriginalCodeChartReflection, OriginalCodeChartReceiver,
-G7FinitePathBudgetBridge, G7FinitePathGame and G7ExactLawSourceTransfer.
+G7FinitePathBudgetBridge, G7FinitePathGame, G7ExactLawSourceTransfer and
+G7PaddedResponseCarrier.
 No replacement source or affine engine is introduced.
 
 Only two import variants are selected:
