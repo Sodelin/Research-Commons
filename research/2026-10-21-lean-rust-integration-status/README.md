@@ -2,7 +2,7 @@
 
 The full G1–G7 solver goal remains active. The existing [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2)
 integrates the current source and exact evidence at
-[432d4dc5](https://github.com/Sodelin/Research-Commons/tree/432d4dc5788f8cb8859f627a7aa56787b630e5d7/research/2026-10-21-lean-rust-solver-builder).
+[8d169932](https://github.com/Sodelin/Research-Commons/tree/8d1699327966896d989f829307016cbafbb29699/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains immutable source pins, actual runs,
 complete-scope dispositions, prior failures and remaining requirements.
 
@@ -42,11 +42,19 @@ The exact69573B source and audit submission were reconstructed. Three rejected
 proof revisions remain rejected. These are attributed hosted checks in the
 new4.35 context, not native/full-physical-import/object acceptance.
 
-The first concrete scientific join is FieldReflection for the exact captured
-request and literal Code, with BinaryValid/RegistryValid, original occurrence
-orders and reflected chronology/exposure/coin records. Reuse the existing
-wire witness/contradiction receivers afterwards. Parser/DFS/Kahn/degree and
-native-result authentication remain separate from mathematical value checking.
+OriginalCodeChartReflection now constructs FieldReflection from literal Code,
+BinaryValid/RegistryValid proofs, named orders and typed records. Its four
+selected hosted audits and the five OriginalCodeChartReceiver audits were
+reviewed; the exact89542B/139854B projections/submissions were reconstructed.
+The existing wire receiver constructs ONE original calendar/inheritance/rate
+bank from the same witness vector; rates are reciprocals of its positive
+inverse coordinates. Complete external multipliers exclude only that cell.
+Initial rejected revisions remain rejected.
+
+The first remaining data join is the actual captured source/chart value
+equals inputOfCode for that valid Code/order, with the authenticated original
+request/result/checker association. Parser/DFS/Kahn/degree/executable refinement,
+CutChild/required planarity, physical readout and origin remain separate.
 
 The Rust row-export adapter is UNCOMPILED/UNEXECUTED, including five staged
 controls. It preserves the original32/128 CHART core, raw ownership, duplicate
@@ -59,8 +67,8 @@ UNEXECUTED. Checked authored fixtures are not claimed emitter outputs.
 | Remaining boundary | Current evidence and gap |
 | --- | --- |
 | First runtime-record persistence | Existing Linux writer/controller/recipient/frame/sequence/transport and inner hooks remain UNBOUND; outer streams alone miss Cargo/Lake/internal writers |
-| Pinned4.33.1 imports/objects/aggregate |546-module source metadata/4530839B; only aggregate proof added to545, all prior entries unchanged; full bodies not independently retrieved here and native acceptance unrun |
-| Exact source-cell integration | Generic ordered matrix relation checked conditionally; captured Code/FieldReflection instance, original registries and source premises remain open |
+| Pinned4.33.1 imports/objects/aggregate |548-module source metadata/4543496B; only two Code/CHART proof modules added to546, all prior entries unchanged; full bodies not independently retrieved here and native acceptance unrun |
+| Exact source-cell integration | Code-to-fields and original physical receiver checked conditionally; captured value equality, valid Code/named orders and request/result origin remain open |
 | Native and physical correspondence | Parser/executable origin/refinement, actual source/readout/provider, chart/menu coverage and whole-history requirements remain open |
 | Broader mathematical completion | G6/G7 assembly and original G3/G4/P1/P5 standards remain distinct from finite-bank/matrix results |
 
