@@ -111,6 +111,9 @@ existing conditional-word provider and original evaluated-polynomial receiver.
 Natural initialization stays outside forcing substitution; closed-unit transition
 parameters, full state encoding and completed-calendar readout remain real joins.
 No new provider/compiler acceptance follows from that source review.
+[The effective-word/range recovery](G7-EFFECTIVE-WORD-AND-RANGE-SUPPLIERS.md)
+locates the existing state constructor and full sparse coefficient identities,
+including the completion premise on every raw row, even a zero row.
 
 [The guarded-query review](G7-GUARDED-ASSERTION-SOURCE-REVIEW.json) checks only
 the new positive-guard source addition and its unchanged-core correspondence.
