@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[09d41833](https://github.com/Sodelin/Research-Commons/tree/09d41833ae6056414a8086dbee56d9caea12d134/research/2026-10-21-lean-rust-solver-builder).
+[dc9945d0](https://github.com/Sodelin/Research-Commons/tree/dc9945d084fc721ea6f85c680808de0a9a09ec7b/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -51,3 +51,10 @@ actual open provider proofs. Padding accounts for impossible full-carrier
 replies through homogeneity. Neither supplies a native law factory or complete
 legal-action coverage for a restricted case menu. Latest peer source inventory
 is reported773/5901586B; full imports/objects remain unrun.
+
+The new SOURCE-ONLY controlled-word composition reuses the original conditional
+engine and keeps natural register weights outside forced transitions. It retains
+complete ordered views/range witnesses and inherited profile limits; no Rust
+compile, native run or extra suite occurred. Exact source/contract/reuse review
+is on the current PR2 head. Native/Lean, physical-provider and full-coverage
+joins remain open under the unchanged writer hold.
