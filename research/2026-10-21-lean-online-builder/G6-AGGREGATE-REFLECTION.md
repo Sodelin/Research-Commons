@@ -69,3 +69,8 @@ remain separate. The theorem concerns the supplied finite cell and does not
 give complete source acquisition, all-size NO, G3/G4 closure or native parser/
 executable refinement. The original exact CHART prefix/checker and independent
 request/certificate/runtime/MCP limits remain mandatory.
+
+The later G7-CODE-CHART-REFLECTION.md supplies this field relation as a proved
+construction for literal Code and its actual validity proofs/orders. The
+remaining actual-capture data equality and byte/native/physical refinement are
+not assumed supplied by that forward map.

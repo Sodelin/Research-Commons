@@ -116,7 +116,9 @@ def main():
         ('NativeCellFormReflection',
          '29ed474cd1a291bc2855775b22b0726c8aae34113d62efcead283d487aa9a0de'),
         ('NativeCellAggregateReflection',
-         '6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2')]:
+         '6df93dd4ae74f3b12adcda4c59bece901e7a6bacb47e8f27dedd52650d3657f2'),
+        ('OriginalCodeChartReflection',
+         '521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a')]:
         additions.append((name, checked(packet/'lean'/(name+'.lean'), digest)))
     for name, body in additions:
         if name in modules or any(dep not in modules and not dep.startswith(('Mathlib.', 'Init', 'Std'))
@@ -168,7 +170,8 @@ def main():
     graph = {'targets':{'physical-pmf-certificate-new-context':{
         'roots':PHYSICAL_ROOTS+['CMFinitePMF']+
             ['Astra.Generated.BankWitness_'+identity for identity,_ in BANKS]+
-            ['OriginalCodeBankLayout','NativeCellFormReflection','NativeCellAggregateReflection'],
+            ['OriginalCodeBankLayout','NativeCellFormReflection','NativeCellAggregateReflection',
+             'OriginalCodeChartReflection'],
         'order':order,'modules':modules,'required_for_accepted_release':False}},
         'original_source_commit':COMMIT,'original_graph_sha256':GRAPH_SHA,
         'scope':'Source-only proposed combined context; no historical acceptance transfer.'}
@@ -188,7 +191,7 @@ def main():
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps(manifest,indent=2)+'\n')
     sys.path.insert(0,str(ROOT))
     from peer_message import seal
-    receipt,_ = seal({'action':'LEAN-PHYSICAL-PMF-AGGREGATE-REFLECTION-CONTEXT-PREPARE-20261022-r6',
+    receipt,_ = seal({'action':'LEAN-PHYSICAL-PMF-CODE-CHART-CONTEXT-PREPARE-20261022-r7',
         'source_graph_sha256':hashlib.sha256((destination/'DEPENDENCY-GRAPH.json').read_bytes()).hexdigest(),
         'source_selection_sha256':hashlib.sha256((destination/'SOURCE-SELECTION.json').read_bytes()).hexdigest(),
         'modules_source_verified':len(rows),'source_bytes':sum(row['bytes'] for row in rows),

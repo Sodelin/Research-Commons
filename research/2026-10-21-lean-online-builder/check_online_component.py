@@ -14,6 +14,11 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'code-chart': ('lean/OnlineOriginalCodeChartReflection.lean', [
+        'Astra.OriginalCodeChartReflection.fieldReflection',
+        'Astra.OriginalCodeChartReflection.decoded_emitRows_of_code',
+        'Astra.OriginalCodeChartReflection.coefficient_lengths_of_code',
+        'Astra.OriginalCodeChartReflection.decoded_emitRows_toFinset_of_code']),
     'aggregate': ('lean/OnlineNativeCellAggregateReflection.lean', [
         'Astra.NativeCellAggregateReflection.erase_emitRows_eq_encoded',
         'Astra.NativeCellAggregateReflection.decoded_emitRows_eq_compileCellList',

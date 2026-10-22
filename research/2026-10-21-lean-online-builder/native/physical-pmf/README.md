@@ -1,13 +1,13 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL546 module bodies,4530839B. The original
+Actual source preparation verified ALL547 module bodies,4539033B. The original
 533-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
 gridWeight and shared-configuration readout helpers are in the SAME proposed
 context as CMFinitePMF and the checked bank/certificate receivers.
 
-The thirteen explicit additional modules are CMFoundations, RationalBankMoments,
+The fourteen explicit additional modules are CMFoundations, RationalBankMoments,
 CMRationalBank, CMFinitePMF, the original certificate kernel, both original
 generated certificates, both unchanged authored bank witnesses, and
 NativeOrderedBankLayout/OriginalCodeBankLayout and NativeCellFormReflection/NativeCellAggregateReflection.
@@ -92,3 +92,8 @@ The latest addition is NativeCellAggregateReflection, giving546 modules/
 audits prove ordered emission, coefficient lengths and hemit under explicit
 individual field/order relations. Captured-request instantiation and the
 complete pinned native import/object check remain open.
+
+The latest Code-to-CHART forward-map addition gives547 modules/4539033B.
+Every prior546 entry is unchanged. G7-CODE-CHART-REFLECTION.md records its
+actual bounded hosted check and the exact captured-byte/value relation that
+still needs a receiver. Native execution and full imports remain unrun.

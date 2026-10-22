@@ -78,3 +78,8 @@ declared nonplanar G6 source class; the original planar G7 class still needs its
 additional premise/test. Active exposure/chart coverage, source-law/readout
 correspondence, all-history policy execution, native origin and the unbound
 encrypted first-writer/controller remain independent obligations.
+
+G7-CODE-CHART-REFLECTION.md records a later checked forward map from this exact
+Code/decoder into existing CHART records and ordered cell emission. It uses
+actual BinaryValid/RegistryValid and explicit original named orders; it does
+not infer those proofs from native validator flags or raw request bytes.

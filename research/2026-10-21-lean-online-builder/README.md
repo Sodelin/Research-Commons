@@ -2,7 +2,7 @@
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
 the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
-actual hosted checks,546-module source preparation and remaining physical,
+actual hosted checks,547-module source preparation and remaining physical,
 effectivity, refinement and native-custody gates. The native outer refusal is
 silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
@@ -184,11 +184,19 @@ Earlier scoped P5 reviews retain their exact conditional boundaries.
 ADMISSION-COMPONENT.md records the actual complete45-module hosted admission/
 layout check and the six selected type/axiom audits. Its explicit hosted API
 variants, bounded diagnostic-union client and negative controls are published.
-The native546-module snapshot changes only the owned wrapper dependency; it
-remains uncompiled under the existing first-writer hold.
+The earlier545-module revision changed only the owned wrapper dependency.
+The later546-module revision adds the aggregate proof; both remain uncompiled
+under the existing first-writer hold.
 
 G6-AGGREGATE-REFLECTION.md records the actual four-audit universal proof of
 ALL eight ordered emission blocks, exact coefficient lengths and the existing
 hemit equality from individual fields/orders and complete registries. Captured
 request/Code-to-FieldReflection and native/physical provenance stay open. The
-latest546-source snapshot adds only this proof; all prior545 entries unchanged.
+aggregate milestone546-source snapshot adds only that proof; all prior545 entries unchanged.
+
+G7-CODE-CHART-REFLECTION.md adds the actual four-audit finite-Code forward map.
+It constructs the field relation and complete occurrence lists from the original
+decoder, explicit taxon/hybrid order and actual validity proofs. The latest
+547-module/4539033B snapshot adds only that module; all prior546 entries unchanged.
+Captured byte/value/Code binding, existing receiver composition and native/
+physical acceptance retain their stated gaps.

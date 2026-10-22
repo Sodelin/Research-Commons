@@ -19,7 +19,7 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **546 modules / 4,530,839 source
+The latest prepared native context contains **547 modules / 4,539,033 source
 bytes**, with the physical sparse supplier present once and explicit import-only
 variants. All selected source hashes and dependency order are recorded. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
@@ -72,3 +72,9 @@ work. Existing held or consumed jobs are not replayed by this packet.
 PEER-SCIENTIFIC-OUTCOMES.json separately records the P5 owner's completed
 hand-proof counterexample verdict. That attributed verdict does not extend
 this builder's bounded reviews to whole-proof or formal acceptance.
+
+[G7-CODE-CHART-REFLECTION.md](G7-CODE-CHART-REFLECTION.md) now records the checked
+finite-Code construction of the field relation, complete original lists,
+ordered rows, coefficient lengths and hemit. This forward map retains actual
+BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
+validity-origin and physical-class/readout/native gates are explicit.
