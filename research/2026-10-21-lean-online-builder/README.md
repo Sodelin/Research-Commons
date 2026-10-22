@@ -205,3 +205,10 @@ G6-CODE-CHART-RECEIVER.md records the ACTUAL five-audit physical-bank/exclusion
 composition PASS. The current548-module/4543496B source snapshot adds only that
 receiver to the prior547; all preceding entries remain unchanged. Captured-byte
 origin/Code equality and native custody remain open.
+
+G7-CHECKED-GAME-SEMANTICS.md records the checked complete retained game/rank
+bodies with one explicit hosted proof-only repair, twelve selected audits and
+all original premises. The native548-source context is unchanged. The original
+request/result gate and scoped native formula review are recorded separately;
+no QE backend, selected policy, original-source supplier or native admission
+is inferred from these checks.

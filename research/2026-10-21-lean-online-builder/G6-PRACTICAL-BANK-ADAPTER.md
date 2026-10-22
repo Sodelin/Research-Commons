@@ -27,8 +27,9 @@ the receiver's exact emitted-matrix equality. Capacity exhaustion stays UNKNOWN.
 
 [ORDERED-BANK-LAYOUT.md](ORDERED-BANK-LAYOUT.md) now records the hosted-checked
 generic bijection for these exact four coordinate ranges, including uniqueness
-of the ancestral slot. The original-Code instantiation is source-only; exact
-captured arrays, source admission, port meaning and row emission remain required.
+of the ancestral slot. The generic original-Code instantiation and physical-cell receiver now pass
+bounded hosted checks. Exact captured arrays/value equality, actual validity
+evidence, source admission, port meaning and native custody remain required.
 
 ## One shared bank needs an explicit incoming-port map
 

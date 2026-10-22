@@ -14,6 +14,19 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'g7-game': ('lean/OnlineG7ExactLawGame.lean', [
+        'GProgram.G7.ExactLawResourceGame.consistent_extend',
+        'GProgram.G7.ExactLawResourceGame.homogeneous_iff_terminal',
+        'GProgram.G7.ExactLawResourceGame.winning_iff_valid_plan',
+        'GProgram.G7.ExactLawResourceGame.valid_run_identifies',
+        'GProgram.G7.ExactLawResourceGame.losing_step',
+        'GProgram.G7.ExactLawResourceGame.losing_has_full_history_pair',
+        'GProgram.G7.ExactLawResourceGame.trajectory_budget_deletion_closed',
+        'GProgram.G7.ExactLawRankCompression.redundant_response_unique',
+        'GProgram.G7.ExactLawRankCompression.determined_extend',
+        'GProgram.G7.ExactLawRankCompression.first_informative',
+        'GProgram.G7.ExactLawRankCompression.total_strategy_wins_with_rank_budget',
+        'GProgram.G7.ExactLawRankCompression.pointwise_total_strategy_has_finite_informative_horizon']),
     'code-receiver': ('lean/OnlineOriginalCodeChartReceiver.lean', [
         'Astra.OriginalCodeChartReceiver.checked_original_witness',
         'Astra.OriginalCodeChartReceiver.checked_original_bank',
