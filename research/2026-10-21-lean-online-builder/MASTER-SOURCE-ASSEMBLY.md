@@ -44,3 +44,13 @@ G7EncodedMergerSupport (3773B/e84085fd), unchanged at1138a5. Its canonical
 image/zero-on-nonimage results are retained source, not a new proof. All777
 preceding entries and their order are unchanged. The old fixture producers
 are not selected or executed. See PRIOR-SOLUTION-AUDIT.md.
+
+## Original import/audit acceptance recovered
+
+RETAINED-ASSEMBLY-REUSE.md and its per-module JSON compare the complete current755
+original source/import identities with the accepted1613 target. Every identity
+matches, including these retained master closures. Original import/kernel/audit
+acceptance is inherited; repeat component verification is removed. This does
+not accept the mixed778 aggregate,23 additions or current phone objects.
+The historical graph/order is not asserted byte-identical to the new context.
+All original scientific quantifiers and native writer holds remain.

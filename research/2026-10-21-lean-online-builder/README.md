@@ -6,6 +6,11 @@ The latest source correction adds only the retained G7EncodedMergerSupport. All
 preceding777 entries, their relative dependency order and125 external names are
 unchanged. Every selected body and internal order was verified.
 
+The [retained assembly comparison](RETAINED-ASSEMBLY-REUSE.md) now removes
+repeat verification of all755 originals: each source and direct import list
+matches the accepted1613 package. The mixed23-module delta and actual phone
+object custody remain separate. No new compiler or mathematical case is added.
+
 The [prior-solution audit](PRIOR-SOLUTION-AUDIT.md) removes duplicate literal-state,
 encoded-support, transition/admission-factory and generic bind-helper work from
 the active queue. The [ongoing preflight](PRIOR-SOLUTION-PREFLIGHT.json) requires

@@ -1,3 +1,16 @@
+# Latest correction: reuse all755 original import/audit results
+
+The complete original acceptance/terminal/allowlist/review sources and graph
+were compared with the current selection. Every755 original source and direct
+import list matches the accepted1613 target, and no original imports a new
+owned module. This removes repeat original component verification from the
+queue. The original aggregate-only adapter already rejects component fallback.
+The23-module pinned delta and actual compatible phone objects remain a real
+integration gap. No build was selected. Exact predecessor/successor identities
+and the changed frontier are in RETAINED-ASSEMBLY-REUSE.md/JSON.
+
+---
+
 # Lean prior-solution audit — 22 October 2026
 
 This is the Lean owner's substantive return for HUMAN-REQUESTED-PRIOR-SOLUTION-AUDIT-20261022/revision1 and G3-PEER-PRIOR-SOLUTION-AUDIT-20261022/revision1. It corrects the active queue before another derivation, implementation or execution. This audit recovered and compared source and historical evidence; it ran no compiler, native engine, model, test suite or held job.

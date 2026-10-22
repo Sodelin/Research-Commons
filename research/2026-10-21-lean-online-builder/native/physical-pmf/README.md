@@ -114,3 +114,15 @@ source-object acceptance. The original population/word fixture producers
 remain unselected and unexecuted. Full comparison and removed duplicate work
 are in ../../PRIOR-SOLUTION-AUDIT.md; redacted integrity evidence is in
 ENCODED-SUPPORT-REUSE-VERIFICATION.json.
+
+## Reused original import acceptance
+
+All755 original names/source hashes/direct import lists match the accepted1613
+target exactly. None imports the23 additions. Their original pinned component
+import/kernel/audit acceptance is reused. The SOURCE ONLY labels above describe
+this mixed778 preparation and its current objects; they do not erase prior
+acceptance of those original components. No graph/selection/body was changed.
+See ../../RETAINED-ASSEMBLY-REUSE.md and its complete per-module JSON. Current
+compatible object/companion/runtime custody and23-module integration remain;
+native first-writer binding is UNBOUND. Do not cold-start the inherited builder
+to silently repeat original component compilation.
