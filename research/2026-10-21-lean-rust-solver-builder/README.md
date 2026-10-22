@@ -228,3 +228,11 @@ Its exact free history and requested label stay in IssuedAssertion. This is
 uncompiled source, with no selected/proved target or backend result. Physical
 source/target transport, reachability/origin and AST/QE/selector acceptance remain
 open. See evidence/G7-TERMINAL-TARGET-SOURCE-REVIEW.json.
+
+The peer's exact G7CertifiedPopulationRows source proposal now composes a
+particular finite population check with the original sparse-row reader and
+population-coordinate embedding. It remains unelaborated and outside776.
+Its complete original dependency projections already exceed the hosted262144B
+source cap (certificate635423B; sparse-row union884200B), before proposals/audits.
+No oversized request was made, and the exporter's4MiB source-render bound is
+not service admission. Exact scope is in the certified-row source review.

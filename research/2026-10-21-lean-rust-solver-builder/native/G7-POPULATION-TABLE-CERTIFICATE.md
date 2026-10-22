@@ -157,3 +157,29 @@ including closed transition gamma. It need not impose independent slot
 variables. The full epoch state/panel/key/representative correspondence must
 still be supplied before that route applies. No new pass or native execution
 is inferred from this source reuse.
+
+## Reused literal sparse-row composition and measured hosted bound
+
+The existing Lean owner's G7CertifiedPopulationRows.lean is now retained
+BYTE-EXACT as a SOURCE PROPOSAL. read_sparseRows commutes the actual Code-fibre
+sum with original embedExpr; checked_sparseRows_actual composes the supplied
+finite check with value_embedExpr at the SAME physical rates, duration and
+population coordinate. No desired final-law equality is assumed. Complete
+imports remain UNELABORATED, and no literal/emitter/control run or new theorem
+case is claimed. This does not establish native outer-panel/key/variable mapping.
+
+The peer measured the ORIGINAL certificate closure at92modules/643093B and
+its import-hoisted projection at635423B. Adding sparse rows needs121modules/
+893989B and an884200B projection, BEFORE proposals/audits. Both exceed the
+UNCHANGED hosted client's262144B source bound. The closure inventory's counts,
+byte sums, exact module hashes and import order were checked here against the
+retained graph; complete projection hashes/bodies retain attributed scope.
+No oversized request or silent omission was attempted. The exporter's4MiB
+standalone source bound is separate from that admitted service limit.
+
+A justified smaller projection, verified installed original imports or an
+actually admitted complete compiler context is still needed. A partial pure
+sublemma check could only accept its exact mathematical scope, not source
+validity, physical population law or whole import/object acceptance. The actual
+native writer/controller remains UNBOUND; source proposal presence is no permit.
+See evidence/G7-CERTIFIED-POPULATION-ROW-SOURCE-REVIEW.json.
