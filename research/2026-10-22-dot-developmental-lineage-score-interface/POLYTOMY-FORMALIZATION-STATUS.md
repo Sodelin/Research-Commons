@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 17:32 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 17:46 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest actual physical cap-switched header, 17:46 UTC
+
+`PolytomyPhysicalCapExchange.lean` composes three actual reversing transfers through a distinct empty scratch port. On arbitrary words the cached word reverses once, so only the stated unary-cap specialization is an exact swap. For physical caps C,D the cost is 2C+D+3, public control/false flags and outside stacks are preserved, and scratch returns empty. `PolytomyGuardedNumericHeader.lean` adds an actual failure-absorbing branch around the original numeric reader/emitter.
+
+`PolytomyCapSwitchedHeader.lean` composes exchange, guarded large-cap header and exchange back. It restores active C, cached D and empty scratch even after failure, has exact original large-cap reader suffix/log observation, bound M(L,D)+3C+3D+7 and record growth at most D+1. Routine code contains no C,D,L natural-number control parameter; those are physical operands/specification bounds. `POLYTOMY-PHYSICAL-CAP-SWITCHED-HEADER.md` gives the full hand argument.
+
+Creation of the original L+1/(L+1)^2 caps, three-header/guarded-rows assembly, exact full-prefix observation, trailing-suffix rejection, final reversal/tagging and all cleanup remain open. Complete downstream constructor/checker, closed encoded hardness and every kernel check remain open. Original external encodings and actual-D_lambda/all-refinement/output-size/independent-certificate endpoint are unchanged. All terms are UNELABORATED; no runtime, new coordinating review, novelty or biological closure.
 
 ## Latest complete original two-level rows component, 17:32 UTC
 

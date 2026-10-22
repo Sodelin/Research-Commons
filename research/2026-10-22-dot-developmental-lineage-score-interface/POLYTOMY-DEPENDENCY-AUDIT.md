@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 17:46 UTC: actual physical cap-switched header
+
+Three new OPTIONAL UNELABORATED modules give actual three-transfer cap exchange, failure-absorbing numeric-header branching and exact exchange/large-cap-read/restore composition. General words have an asymmetric reverse-and-exchange effect; only unary caps give the required swap. Physical operands C,D and empty scratch are explicit, with no Nat values hidden in finite code/control. The complete third-header pattern costs M(L,D)+3C+3D+7 and restores both caps/scratch on failure as well as success, preserving unrelated extra data and exact original suffix/log observation.
+
+This does not construct the original size-derived caps or assemble all source headers/rows. Exact full-prefix composition, complete-suffix check, reversal/tagging and every cleanup path, whole downstream constructor/checker, closed compatible source hardness and all kernel checks remain open. Original encodings and actual-D_lambda/all-refinement/independent-certificate endpoint remain unchanged. No new dependency, concept theorem axiom, runtime, review acceptance, novelty or original biological closure is claimed.
+
 ## Continuation, 17:32 UTC: complete original two-level rows component
 
 Three new OPTIONAL UNELABORATED sources give the actual guarded row body, the success-conditional inner-counter invariant and distinct outer-counter/outside-data preservation, exact original repeated-row observation, and actual original outer count-read/copy composition. The resulting two-level rows routine has exact nested original readFramedList observation, time L(Row(L,C)+4)+7L+11 and all-path boundary record growth at most L^2(C+2)+2L+1. Successful rows-section return clears both initially empty counters; failures may retain suffixes. Shared cached-guard reuse is justified by actual outer re-peeking, not preservation.
