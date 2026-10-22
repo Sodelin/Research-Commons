@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 21:16 UTC: original anchor and complete actual physical initialization
+
+Nine OPTIONAL UNELABORATED modules use the SAME actual block routine for real/anchor blocks; the anchor executes the original out-of-bounds row-m query, then threshold N. Physical global N,m,K/alphabet/marker/outer-countdown words are now created from the original preserved unary header through actual header/copy/product/assembly/cleanup routines. Fixed six-port extension and proof-side two-stage multiport lifting preserve arbitrary foreign data at the same transition counts. No natural control register, free scalar allocation, fabricated row or membership oracle is introduced.
+
+Read-only API checks covered internalHeader_complete_record_values, preservingUnaryProduct_executes, clearMany_executes/outside/member and cleanupMass. A duplicate rawRowCodes_length_le declaration introduced in the preceding real-block proposal is removed and the existing raw-row theorem reused. This is a source-level correction, not prior compiled evidence. All new source remains unelaborated, optional dependencies uninstalled, no execution/certificate/new independent review/novelty claim.
+
+The operational finite-control integration between the original validator's frame and selected-row constructor frame remains a specific caller obligation; logical invariant transport is NOT that integration. Per-block preparation/global order, original dispatch/budget/header serializer/standalone constructor, independent verifier, closed encoded hardness and complete compatibility/axiom/kernel checks remain open. Original actual-D_lambda/all-refinement, biological and arbitrary-DAG scopes are retained.
+
 ## Continuation, 20:57 UTC: complete original real-block emitter source
 
 Six OPTIONAL UNELABORATED modules instantiate the actual fixed finite caller layout/countdown body and prove exact original ordered-filter/accepted-count/comb-cost observations, then compose real comb-prefix emission and cleanup. Every operational loop premise is concretely discharged. Logical stack-invariant transport is explicitly not an operational control-conversion compiler. The exact pinned Lean 4.33.1 Init/Data/List/Range.lean range_succ source was retrieved read-only; filter_append, flatMap_append and length_filter_le were rechecked in already pinned sources. No new package or concept-side theorem axiom is introduced.

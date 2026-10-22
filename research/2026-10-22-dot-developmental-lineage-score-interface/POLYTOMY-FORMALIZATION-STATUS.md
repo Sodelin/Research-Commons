@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 20:57 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 21:16 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued original anchor and actual physical global initialization SOURCE, 21:16 UTC
+
+Nine OPTIONAL UNELABORATED modules join every original block, including the anchor via a really executed out-of-bounds row-m query and threshold N, with full original ordered bytes/comb cost/prefix/cleanup. The same actual routine code handles all blocks. A complete actual valid-branch initializer now extracts N,m,K into six finite-index global tapes, physically copies operands into the existing preserving multiplier, constructs ORIGINAL alphabet/marker and outer countdown through restoring copies/fixed pushes, and clears old source/arithmetic work. Endpoint canonicalGlobals_executes has proposed bound 10L²+42L+58, fresh old scan/query work, exact globals, unchanged original record and preservation of all canonical tapes. Global scalar words are constructed, not free premises.
+
+POLYTOMY-ANCHOR-AND-PHYSICAL-INITIALIZATION.md gives the derivation and actual stage bounds. A duplicate rawRowCodes_length_le declaration in the previous real-block source is removed in favor of the earlier imported theorem; no mathematical or compiled-result change. Actual per-block preparation/full ordering, original branch/budget/header serialization, operational validator-frame integration/global cleanup/standalone machine, independent checker, closed encoded hardness and every dependency/axiom/kernel check remain open. No execution, new review, certificate, novelty or biological/general-DAG closure.
 
 ## Continued COMPLETE original real-block emitter SOURCE, 20:57 UTC
 

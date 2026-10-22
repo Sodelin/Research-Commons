@@ -26,10 +26,6 @@ def realCanonicalBlockBound (R : RawMSSCRecord) (L I B : ℕ) :=
   rawRowAlphabet R * (realTypeBodyBound L (rawRowAlphabet R) I (originalMarkerThreshold R) B + 3) +
     rawRowAlphabet R + 6
 
-theorem rawRowCodes_length_le (R : RawMSSCRecord) (b : Block R.rows.length) :
-    (rawRowCodes R b).length ≤ rawRowAlphabet R := by
-  simpa [rawRowCodes] using List.length_filter_le (rawRowMember R b) (List.range (rawRowAlphabet R))
-
 theorem realTypeLoop_original_preserved (L S I T B : ℕ) (s : CanonicalFilterStore)
     (hs : RealTypeLoopInv L S I T B s) :
     (realTypeLoopEval T s).stk (.inl (.inr .original)) = s.stk (.inl (.inr .original)) := by
