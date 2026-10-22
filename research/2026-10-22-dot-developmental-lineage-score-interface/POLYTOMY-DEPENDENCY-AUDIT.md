@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 21:42 UTC: actual complete original block section and exact C0
+
+Ten OPTIONAL UNELABORATED modules instantiate physical per-block preparation and every actual outer CountdownContract premise, then join exact original ordered bytes/C0 observations, actual anchor preparation/execution and the existing physical initializer. The generic operational invariant includes out-of-bounds row m; the actual outer pop separately proves i<m before applying original real-block semantics. Same inner block routine and original predicates, no fabricated row or supplied execution oracle.
+
+Read-only source inspection at Lean 4.33.1 Init/Data/List/FinRange.lean verified finRange_succ_last; own map-Fin.val induction ties natural-prefix observations exactly to the original Fin-indexed list. List.range_succ, flatMap_map/map_map/map_append/flatMap_append and existing actual countdown/preparation interfaces were inspected in pinned sources. One predecessor query-bound proof adds explicit Nat.mul_le_mul_left/right monotonicity before omega. No toolchain was launched, package installed, test run or compilation/axiom certificate produced.
+
+The actual block section now includes physically constructed global words and original C0, but original budget/headers/cases, operational finite-control integration/global cleanup/standalone constructor, independent verifier, closed encoded hardness, arbitrary-DAG formalization and all compatibility/axiom/kernel checks remain open. Logical store-invariant transport remains distinct from an operational control adapter. No new independent review, novelty or biological closure is claimed.
+
 ## Continuation, 21:16 UTC: original anchor and complete actual physical initialization
 
 Nine OPTIONAL UNELABORATED modules use the SAME actual block routine for real/anchor blocks; the anchor executes the original out-of-bounds row-m query, then threshold N. Physical global N,m,K/alphabet/marker/outer-countdown words are now created from the original preserved unary header through actual header/copy/product/assembly/cleanup routines. Fixed six-port extension and proof-side two-stage multiport lifting preserve arbitrary foreign data at the same transition counts. No natural control register, free scalar allocation, fabricated row or membership oracle is introduced.

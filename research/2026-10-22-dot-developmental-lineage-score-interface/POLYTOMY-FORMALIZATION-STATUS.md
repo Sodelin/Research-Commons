@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 21:16 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 21:42 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued COMPLETE ORIGINAL block generation and C0 SOURCE, 21:42 UTC
+
+Ten OPTIONAL UNELABORATED modules join actual physical per-block preparation, a fully instantiated actual outer controller, exact original ascending block order and C0 fold, and the physically prepared anchor. The original initializer is included. The outer pop establishes i<m for every actual original real-block call; the operational body contract correctly permits generic i=m states without assigning them original row semantics. The anchor's real row-m query and threshold N execute last, so actual prepending puts it first. canonicalAllBlocks_executes proposes the EXACT original block-list bytes and original rawRowFixedCost unary accumulator, original-record preservation, fresh scan/inner work and an explicit actual component bound. No free physical scalar words, supplied body oracle, unordered replacement or surrogate label score remains at this endpoint.
+
+POLYTOMY-COMPLETE-ORIGINAL-BLOCK-GENERATION.md supplies the full hand derivation. The predecessor ActualRealTypeLoop receives an explicit multiplication-monotonicity inequality before its query-bound omega step, not a statement/compiled-result change. The block generator is NOT the complete original target: actual C0+K-N arithmetic; binary headers N,m,budget and unary block count; original cases; operational validator-frame integration/global cleanup/standalone machine; independent verifier; closed encoded hardness; every compatibility/axiom/kernel check remain open. No execution, new review, certificate, novelty or biological/general-DAG closure.
 
 ## Continued original anchor and actual physical global initialization SOURCE, 21:16 UTC
 

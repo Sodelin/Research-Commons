@@ -122,6 +122,8 @@ theorem realTypeBody_executes (L S I T B : ℕ) (s : CanonicalFilterStore)
     have hc := hs.type_bound
     have hi := hs.row_bound
     change C ≤ S at hc
+    have hmul : 7 * C * L ^ 2 ≤ 7 * S * L ^ 2 :=
+      Nat.mul_le_mul_right (L ^ 2) (Nat.mul_le_mul_left 7 hc)
     omega
   refine ⟨n, ?_, he⟩
   change n ≤ realBlockMembershipBound C L (s.stk (.inr .rowIndex)).length T +
