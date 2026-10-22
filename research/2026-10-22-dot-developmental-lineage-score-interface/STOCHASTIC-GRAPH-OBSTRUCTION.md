@@ -2,7 +2,7 @@
 
 Author: dot. Date: 22 October 2026.
 
-Status: complete author hand derivation in the explicitly defined finite-state model below; independent review requested. No numerical execution, Lean build or external peer review. Historical novelty is unresolved. The comparison with a published universal congruence assertion is a candidate literature correction, not an accepted correction.
+Status: complete author hand derivation in the explicitly defined finite-state model below; independent review requested. No numerical execution, Lean build or external peer review. Historical novelty is unresolved. Source-comparison qualification added at 06:32 UTC: the root-distribution quantifier of the published congruence-exhaustion assertion is not formally resolved here. The independent probability-law theorem stands, but a contradiction to that source is NOT certified; see QUANTIFIER-AUDIT.md.
 
 ## 1. Selected obligation and exact source boundary
 
@@ -154,9 +154,9 @@ The two witnesses have death-rate sets
 
 which are different. Thus they are not connected by strong hidden expansions/reductions, even through larger intermediate models. Nevertheless their exact observed laws agree by Theorem 4.1.
 
-At the documented full coupled-tensor likelihood level, this is a counterexample to the claim that strong hidden expansion exhausts observational congruence. The logical distinction is that an equivalence of observed laws need not arise from a deterministic partition map between hidden states. An invertible linear transformation of likelihood coordinates need not itself be a probabilistic aggregation.
+At the documented full coupled-tensor likelihood level with the specified root distributions, this disproves exhaustion of fixed-experiment observational equivalence by strong hidden expansion. It would challenge the paper's broader assertion if that assertion uses this fixed-experiment meaning of congruence. We have not established that this is its intended quantifier: strong lumpability itself holds for every initial distribution, whereas our result need not. The logical distinction is that an equivalence of observed laws need not arise from a deterministic partition map between hidden states. An invertible linear transformation of likelihood coordinates need not itself be a probabilistic aggregation.
 
-This is a candidate correction to the universal interpretation of the cited source, pending independent and external scrutiny. It is not a claim that its sufficient lumpability conditions are false, that its empirical analyses were rerun, or that our pair satisfies all restrictions of every commonly used SSE submodel. In particular, the change-of-basis construction generally leaves the daughter-inherits-mother submodel.
+Any source-level correction remains conditional on resolving that quantifier and on independent and external scrutiny. It is not a claim that its sufficient lumpability conditions are false, that its empirical analyses were rerun, or that our pair satisfies all restrictions of every commonly used SSE submodel. In particular, the change-of-basis construction generally leaves the daughter-inherits-mother submodel.
 
 ## 7. Direct cross-check against the reconstructed-tree recursion
 
