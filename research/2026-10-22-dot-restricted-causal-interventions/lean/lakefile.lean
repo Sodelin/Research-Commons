@@ -12,4 +12,5 @@ lean_lib RestrictedCausalSource where
   roots := #[`SelectedWalkReduction, `CanonicalSelectionProfile, `SelectedSourceProfile,
     `SelectedAncestry, `SelectedProfileSeparation, `CanonicalLatentRoots,
     `CanonicalFiniteBounds, `FiniteProfileRegistry, `CanonicalRootSeparation,
-    `MarkedGraphEquivalence, `CommonIndicatorRoots, `CommonSelectedIndicatorSource]
+    `MarkedGraphEquivalence, `CommonIndicatorRoots, `CommonSelectedIndicatorSource,
+    `OriginalLatentProjection]
