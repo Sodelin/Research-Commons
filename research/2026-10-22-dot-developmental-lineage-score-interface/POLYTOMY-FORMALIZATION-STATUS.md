@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 13:55 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 14:10 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest independent bounded-verifier adapter, 14:10 UTC
+
+`PolytomySaturatedVerifier.lean` proposes exact Boolean agreement with the ORIGINAL independent verifier on every target/certificate pair and every pair tape, not merely reduction images or NP-bounded witnesses. The concrete parser saturates dimension headers at L+1 and rejects oversize values before dimension-dependent cell parsing; target validity implies N,m and S=N+mN+3 are bounded by target length L. Every parsed certificate tree has vertices bounded by its own input length C, so its actual score is <=LC. Budget saturation at (L+C+1)^2 therefore preserves the comparison even before cell/refinement checks. Successful pair reading bounds this cap by (M+1)^2 in total machine tape length M. `POLYTOMY-SATURATED-VERIFIER-ADAPTER.md` gives the full hand proof.
+
+The full actual-D_lambda/all-refinement and independent-certificate chain is retained alongside the previous byte-identical constructor adapter. A future actual bounded-verifier machine transfers to the original VerifierMachineWitness. Complete emitted finite programs, operational correctness/step/copy/cleanup bounds, constructor serialization, closed compatible upstream hardness and all kernel checking remain open. No execution or new coordinating-review acceptance is claimed.
 
 ## Latest all-input polynomial-value constructor adapter, 13:55 UTC
 

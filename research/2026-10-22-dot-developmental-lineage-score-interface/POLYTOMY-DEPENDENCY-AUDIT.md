@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 14:10 UTC: independent verifier saturation, without a witness promise
+
+`PolytomySaturatedVerifier.lean` imports only the preceding local source chain. It proposes the exact bounded-header/budget parser identity and all-pairs/all-tape Boolean equality to the original independent checker. Early dimension rejection is justified by original target validity and parser consumption, not by an assumed constructor origin. The cap (L+C+1)^2 bounds every parsed certificate score because S<=L and vertices<=C, without assuming certificate validity or the NP certificate bound. Original pair framing then bounds the cap by (M+1)^2 in total machine input length. The full unchanged actual-D_lambda/all-refinement endpoint and witness-type transfer are explicit.
+
+This supplies a separate bounded-value semantic route for verification, not a whole emitted program or operational certificate. Nested parsing, clade scans, constructor serialization, whole-program steps/cleanup, exact encoded hardness and every kernel check remain open. See `POLYTOMY-SATURATED-VERIFIER-ADAPTER.md`. Source remains UNELABORATED, with no execution or new coordinating-review acceptance.
+
 ## Addendum, 13:55 UTC: bounded-value parsing preserves exact original output
 
 `PolytomySaturatedSource.lean` imports only existing local/pinned dependencies. It proposes a saturating bit decoder with transient values <=2*cap+1, exact nested reader-map laws, all-input validity equivalence under L+1 dimension/identifier sentinels, exact original-branch threshold saturation at (L+1)^2 and constructor BYTE equality. The no-new-valid-input reverse proof and K>=mN early branch are indispensable; neither small raw integers nor a changed target is assumed. Successfully parsed saturated records have unary numeric mass plus record size <=3(L+1)^2. A future complete machine for this precise algorithm transfers to the original constructor obligation.
