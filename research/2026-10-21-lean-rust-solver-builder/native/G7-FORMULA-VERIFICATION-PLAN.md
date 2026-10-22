@@ -74,3 +74,10 @@ to illegal prefix from genuine loss AFTER valid constants AND LegalHistory.
 Require ReachableHistory for a physical transcript. Disabled/zero-horizon or
 pointwise false action fibres are never a losing-budget result; terminal
 homogeneity may allow stopping. This is an unexecuted semantic requirement.
+
+Extend the EXISTING prerequisite/guard/provider checks for wolfram_assertion:
+invalid/nonunique roots, illegal/unreachable histories, reachable loss,
+terminal stopping with disabled fibres, different free-history points and
+child/combined render exhaustion. Verify TRUE includes guards and FALSE
+never authorizes the opposite claim. Recompute original query/context before
+accepting a backend reply. These are meaningful deferred checks, NONE RUN.

@@ -166,3 +166,20 @@ a relation false at one free action assignment does not prove its fibre empty.
 Use the complete scoped winning query and authenticated provider result with
 all prerequisites. No backend/result consumer or executed acceptance is
 implemented by this pure query emitter.
+
+## Guarded assertion interface and response carrier
+
+wolfram_assertion now source-implements positive assertions with constants
+and legal-history guards, optional mathematical reachability and an immutable
+IssuedAssertion input association. See G7-ASSERTION-QUERY-CONTRACT.md. FALSE
+remains inconclusive. This addition is uncompiled/unexecuted and has no inherited
+Rust AST/kernel/backend acceptance.
+
+For the future game/rank refinement, ActionCase.output_count can vary while
+the abstract response carrier is fixed. One suitable proof embedding pads
+each chosen case's coefficients, offsets and responses with zeros into
+Fin(maximum output_count)->Real. Preserve native active-coordinate order.
+Nonzero padding makes the extended history inconsistent with every source,
+hence homogeneous; on zero padding the active native quantifier is retained.
+This is a missing proof relation, not a native output-format change or extra
+legal observation/charged forcing row. Empty carriers use Fin0.

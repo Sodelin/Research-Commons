@@ -3,9 +3,9 @@
   "status": "AUTHORED_SOURCE_ONLY_UNCOMPILED_UNEXECUTED",
   "source": {
     "path": "native/g7_exact_law_formula.rs",
-    "sha256": "23cebde37fc8ca457522cfcaaba646c947b064b2081c8238da4dae9160064c9e",
-    "utf8_bytes": 43253,
-    "lines": 970
+    "sha256": "246ff2eadb32d685455d3c284889d04cacefc92a38f3369c17f1d0dd93e0059e",
+    "utf8_bytes": 48430,
+    "lines": 1083
   },
   "cargo": {
     "path": "native/g7-formula/Cargo.toml",
@@ -70,54 +70,9 @@
     "controls_are_not_PASS_receipts": true
   },
   "lexical_review": {
-    "balanced_delimiters_and_quoted_strings": true,
-    "child_launch_or_file_sink_syntax_hits": [],
-    "functions": [
-      {
-        "line": 381,
-        "text": "fn validate(problem: &Problem, budget: &PathBudget, prefix: &[usize], limits: Limits)"
-      },
-      {
-        "line": 466,
-        "text": "    fn extended(&self, problem: &Problem, action: &ActionCase) -> Result<Self> {"
-      },
-      {
-        "line": 574,
-        "text": "    pub fn wolfram_query(&self, kind: QueryKind) -> Result<String> {"
-      },
-      {
-        "line": 614,
-        "text": "    fn constants_validity(&mut self) -> Result<FormulaId> {"
-      },
-      {
-        "line": 643,
-        "text": "    fn action(&mut self, case_index: usize) -> Result<ActionValue> {"
-      },
-      {
-        "line": 697,
-        "text": "    fn consistent(&mut self, model_index: usize, history: &[Step])"
-      },
-      {
-        "line": 721,
-        "text": "    fn homogeneous(&mut self, history: &[Step]) -> Result<FormulaId> {"
-      },
-      {
-        "line": 745,
-        "text": "    fn win(&mut self, history: &mut Vec<Step>, state: &Resources, depth: usize)"
-      },
-      {
-        "line": 784,
-        "text": "pub fn compile<'a>("
-      },
-      {
-        "line": 876,
-        "text": "    fn render(&self, root: FormulaId) -> Result<String> {"
-      }
-    ],
-    "rust_parse_or_compile": false,
-    "scope": "RAM-only lexical/source review, not transitive writer enforcement or a native test",
-    "reviewed_preceding_candidate_sha256": "dbbeef0e47cb01fe066bd67eddf335a66df308bff8cc3da65688cc675b6be1aa",
-    "current_extra_change": "nonempty base-observation alphabet validation"
+    "scope": "exact addition/source review; balanced source was inspected in predecessor continuation; not compiler/parser or transitive writer evidence",
+    "new_source_sha256": "246ff2eadb32d685455d3c284889d04cacefc92a38f3369c17f1d0dd93e0059e",
+    "actual_compiler_invoked": false
   },
   "authored_RAM_candidate_changes": [
     {
@@ -158,5 +113,9 @@
     "action_fibre_false_not_budget_loss": true,
     "actual_backend_result_consumer_implemented": false,
     "peer_scope": "SOURCE comparison of quantifiers/banks/resources/guards, not Rust compilation/API/memory/AST refinement"
-  }
+  },
+  "previous_source_review_commit": "8a96bb015b6cb88df196d6897b5437344a09238b",
+  "guarded_assertion_source_review": "evidence/G7-ASSERTION-QUERY-SOURCE-REVIEW.json",
+  "existing_game_constructor_and_low_level_renderer_unchanged": true,
+  "new_assertion_API_compiled_or_checked_by_peer": false
 }

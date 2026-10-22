@@ -5,7 +5,7 @@ disjoint component and workflow. The full solver goal remains active.
 
 | Obligation | Actual evidence | Status and next owner/action |
 | --- | --- | --- |
-| G1/G2/full binary-M3 G5 recovery and original master scope | Existing retained baseline and CM-T02 records | Existing Lean owner recovers exact full endpoints; G6/G7 assembly and original G3/G4 remain separate |
+| G1/BOTH G2/full binary-M3 G5 recovery | Retained exact accepted roots now included in peer771-module source inventory | Source preparation is not new imports/object acceptance; original G3/G4 standards and owners remain separate |
 | Native acquisition beyond singleton | 13 unit groups, 205 exact native/reference vectors in run39673487466 | Bounded r<=3 component PASSED |
 | Old parser/checker/singleton preserved | Inverse derivative; 556 unchanged checker cases; 158 new-binary/original-Python cases | Component regression PASSED; historical executable not replayed |
 | Dependency/version stability | Rust1.90.0 locked fetch and offline build/test | Observed hosted platform PASSED; no all-platform profile claim |
@@ -93,3 +93,14 @@ supply. G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md under native pins the exact
 evaluated physical response endpoint, both source coverage directions and
 one-source/multi-menu/whole-history relation. Pinned548 imports/objects, actual
 QE/relative-history selection and writer/controller admission remain open.
+
+The complete game/rank now has twelve selected hosted audits. Its finite budget
+bridge adds four, and the supplied-history remaining-call/rank cap adds six.
+Exact complete source and submitted audits were reconstructed; these do not
+prove the native BTreeSet/AST/history relation or actual source/affine admission.
+
+The new source-only guarded assertion query API includes constant/legal guards
+and optional mathematical reachability. FALSE is inconclusive. Its immutable
+IssuedAssertion declaration association does not authenticate an external
+result, physical history or proof. Both native modules remain uncompiled/
+unexecuted; AST/result/QE/relative-history selection and writer gates stay open.

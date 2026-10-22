@@ -63,10 +63,10 @@ prefix/check source review binds the raw request, recomputed matrix, complete
 witness/EVAL or complete Farkas vector. The4MiB checker frame is not a CHART
 producer guarantee; the unchanged runtime/MCP literal JSON limit is256KiB.
 
-The current physical source metadata has548 modules/4543496B. Only the two
-Code/CHART proof modules were added to546, with every prior entry unchanged.
-All bodies/imports/objects were not independently accepted here. Pinned source
-variants and quiet outer refusal remain distinct from the hosted projection.
+The latest peer source inventory has771 modules/5891078B: all prior548 entries
+are unchanged, plus221 retained G1/G2/G5 dependencies and the two budget/game
+components. Graph/selection and prior metadata were reviewed; all771 bodies
+were not independently re-read here. This remains uncompiled source inventory.
 
 ## General G7 implementation
 
@@ -135,3 +135,14 @@ Complete G1, timed/untimed G2 and full-timed binary-M3 G5 are the recovery
 baseline. G6/G7 assembly and original G3/G4/P1/P5 standards remain distinct.
 Existing owners and Dot's later sports allocation remain preserved; no
 historical mathematical owner was reactivated or reassigned.
+
+The source-only wolfram_assertion API now conjoins valid constants and legal
+history with each positive winning/losing/terminal/action assertion, optionally
+adding mathematical reachability. IssuedAssertion retains the exact immutable
+input and generated document; FALSE is inconclusive. No backend result/proof
+or executable selector is returned. See native/G7-ASSERTION-QUERY-CONTRACT.md.
+
+Four budget and six free-history horizon selected hosted audits are integrated
+under lean/hosted435, with complete types and exact source/audit reconstruction
+in evidence/G7-PATH-HORIZON-HOSTED-REVIEW.json. The actual native resource/AST
+mapping, valid prefix, source/affine providers and pinned imports remain open.

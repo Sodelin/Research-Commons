@@ -586,6 +586,119 @@ impl<'a> Compiled<'a> {
     }
 }
 
+
+/// The requested mathematical assertion, rather than an interpretation of
+/// FALSE from an unguarded/vacuous conditional query. A positive losing
+/// assertion negates WinningContinuation only INSIDE the prerequisite guards.
+#[derive(Clone, Copy, Debug)]
+pub enum AssertionKind {
+    HomogeneousHistory,
+    WinningContinuation,
+    LosingContinuation,
+    WinningAction(usize),
+}
+
+/// Reachable adds mathematical source consistency at this exact free history.
+/// Neither variant authenticates a physical transcript or native result.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum AssertionHistory {
+    Legal,
+    Reachable,
+}
+
+/// Generated query bound in-process to its exact immutable problem, PATH budget,
+/// finite case path and free history/action symbol order. This is NOT a proof,
+/// backend result, physical-origin receipt or selected policy/action.
+#[derive(Debug)]
+pub struct IssuedAssertion<'q, 'a> {
+    compiled: &'q Compiled<'a>,
+    kind: AssertionKind,
+    history: AssertionHistory,
+    document: String,
+}
+
+impl<'q, 'a> IssuedAssertion<'q, 'a> {
+    pub fn compiled(&self) -> &'q Compiled<'a> { self.compiled }
+    pub fn kind(&self) -> AssertionKind { self.kind }
+    pub fn history_scope(&self) -> AssertionHistory { self.history }
+    pub fn document(&self) -> &str { &self.document }
+    /// Declared context can include symbols absent after Boolean simplification.
+    /// TRUE/FALSE must not be mistaken for a result at an unrelated free point.
+    pub fn has_free_context(&self) -> bool {
+        self.compiled.history_symbols.iter().any(|h|
+            !h.action_parameters.is_empty() || !h.response.is_empty())
+            || self.candidate_action().is_some_and(|a| !a.action_parameters.is_empty())
+    }
+    pub fn candidate_action(&self) -> Option<&ActionFibreSymbols> {
+        match self.kind {
+            AssertionKind::WinningAction(index) =>
+                self.compiled.fibres.get(index).map(|f| &f.symbols),
+            _ => None,
+        }
+    }
+}
+
+impl<'a> Compiled<'a> {
+    /// Render ConstantsWellDefined AND LegalHistory AND requested assertion;
+    /// Reachable additionally conjoins ReachableHistory. All FREE history and
+    /// candidate-action coordinates remain FREE, including transcendental ones.
+    ///
+    /// A TRUE losing assertion therefore includes valid constants and legal
+    /// history; it cannot arise solely from an illegal prefix or missing roots.
+    /// FALSE is inconclusive for this interface, never the opposite assertion,
+    /// a budget-NO or an execution failure. A disabled action fibre stays FALSE.
+    ///
+    /// This adds no backend, result parser, QE/AST proof, history specialization,
+    /// executable selector, source admission or runtime record writer.
+    pub fn wolfram_assertion<'q>(
+        &'q self, kind: AssertionKind, history: AssertionHistory,
+    ) -> Result<IssuedAssertion<'q, 'a>> {
+        fn append(out: &mut String, text: &str, limit: usize) -> Result<()> {
+            let next = out.len().checked_add(text.len())
+                .ok_or(Error::Limit("ASSERTION_RENDER_SIZE_OVERFLOW"))?;
+            if next > limit { return Err(Error::Limit("ASSERTION_RENDER_BYTES")); }
+            out.try_reserve(text.len())
+                .map_err(|_| Error::Limit("ASSERTION_RENDER_ALLOCATION"))?;
+            out.push_str(text);
+            Ok(())
+        }
+        fn body(document: &str) -> Result<&str> {
+            document.strip_prefix("Resolve[")
+                .and_then(|s| s.strip_suffix(",Reals]"))
+                .ok_or(Error::Invalid("INTERNAL_QUERY_DOCUMENT"))
+        }
+        let (root, negate) = match kind {
+            AssertionKind::HomogeneousHistory => (self.homogeneous_history, false),
+            AssertionKind::WinningContinuation => (self.winning, false),
+            AssertionKind::LosingContinuation => (self.winning, true),
+            AssertionKind::WinningAction(index) => (
+                self.fibres.get(index)
+                    .ok_or(Error::Invalid("ACTION_FIBRE_INDEX"))?.formula, false),
+        };
+        let limit = self.arena.limits.rendered_bytes;
+        let mut document = String::new();
+        append(&mut document, "Resolve[And[", limit)?;
+        // Render one child at a time; temporary documents never reach a writer.
+        // Each child and the complete combined document obey rendered_bytes.
+        for guard in [self.constants_valid, self.legal_history] {
+            let child = self.arena.render(guard)?;
+            append(&mut document, body(&child)?, limit)?;
+            append(&mut document, ",", limit)?;
+        }
+        if history == AssertionHistory::Reachable {
+            let child = self.arena.render(self.reachable_history)?;
+            append(&mut document, body(&child)?, limit)?;
+            append(&mut document, ",", limit)?;
+        }
+        if negate { append(&mut document, "Not[", limit)?; }
+        let child = self.arena.render(root)?;
+        append(&mut document, body(&child)?, limit)?;
+        if negate { append(&mut document, "]", limit)?; }
+        append(&mut document, "],Reals]", limit)?;
+        Ok(IssuedAssertion {compiled:self,kind,history,document})
+    }
+}
+
 struct Compiler<'a> {
     problem: &'a Problem,
     budget: &'a PathBudget,
