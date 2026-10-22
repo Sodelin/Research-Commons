@@ -81,3 +81,9 @@ terminal stopping with disabled fibres, different free-history points and
 child/combined render exhaustion. Verify TRUE includes guards and FALSE
 never authorizes the opposite claim. Recompute original query/context before
 accepting a backend reply. These are meaningful deferred checks, NONE RUN.
+
+Extend the SAME scope/provider group with leaked source/constant variables,
+a captured original history/candidate variable, reused active versus valid
+sibling binders, inactive declared coordinates and scope-audit exhaustion.
+Verify the exact free symbol list against an independent AST interpretation.
+These controls remain UNEXECUTED under the existing native writer hold.

@@ -140,7 +140,9 @@ The source-only wolfram_assertion API now conjoins valid constants and legal
 history with each positive winning/losing/terminal/action assertion, optionally
 adding mathematical reachability. IssuedAssertion retains the exact immutable
 input and generated document; FALSE is inconclusive. No backend result/proof
-or executable selector is returned. See native/G7-ASSERTION-QUERY-CONTRACT.md.
+or executable selector is returned. An iterative AST scope audit now refuses
+leaked/captured variables and exposes actual free history/candidate symbols;
+its native-game value map and uncompiled scope are pinned in the source review. See native/G7-ASSERTION-QUERY-CONTRACT.md.
 
 Four budget and six free-history horizon selected hosted audits are integrated
 under lean/hosted435, with complete types and exact source/audit reconstruction

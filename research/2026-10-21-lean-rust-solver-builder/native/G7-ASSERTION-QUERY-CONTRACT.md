@@ -49,3 +49,11 @@ lower witnesses remain open; see G7-NATIVE-PHYSICAL-POLYNOMIAL-CONTRACT.md.
 NEW native/Cargo/Lake/CI/QE/model execution remains held before the first writer.
 No key/recipient export, owner retry, new worker, canonical profile/whitelist,
 local Git, phone source artifact or old-job replay is introduced.
+
+Before issuance, the iterative query scope audit now verifies that constants/
+source/future variables are bound and only original history/selected-candidate
+symbols can be free. It refuses capture of declared free symbols, reused active
+binders, invalid IDs and undeclared free variables; bounded work failure remains
+Limit/UNKNOWN. actual_free_symbols() reports actual syntactic occurrences,
+distinct from the conservative declared context. This is uncompiled source,
+not proof of polynomial/AST/game semantics or external result identity.

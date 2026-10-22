@@ -183,3 +183,63 @@ Nonzero padding makes the extended history inconsistent with every source,
 hence homogeneous; on zero padding the active native quantifier is retained.
 This is a missing proof relation, not a native output-format change or extra
 legal observation/charged forcing row. Empty carriers use Fin0.
+
+## Native values to the retained mathematical game
+
+Fix the unique constant tuple C. A source point is a model index m plus one
+real parameter vector satisfying THAT model's declared domain at C. Its target
+is the model's constant target label. Its base is the complete D-vector of
+model polynomials evaluated at that SAME point. D=rows*base_observations.
+Do not merge different-target points with identical responses.
+
+An action is a finite case index plus that case's real parameter vector.
+Its allowed predicate is exactly the generated allowed/weight/channel/affine
+guard at C, independent of the unknown source vector. Support is the case's
+declared strictly positive original-row support; the generated guard proves
+positivity on support and zero weights off support. Original sites include
+Some(false). No channel/menu alternative creates a fresh forcing row.
+
+Choose O=Fin(maximum output_count) for the WHOLE Problem. Embed each case's
+coefficients, offsets and responses by zero padding, preserving active order.
+With V=Real^D, the coefficient row is a linear functional on V and the offset
+depends only on the chosen action. Thus the response is linear(base)+offset.
+This includes polynomial action dependence; it is affine in the SOURCE BASE,
+not necessarily in source parameters or action parameters.
+
+The experiment uses this source point, target, padded response and exact
+finite-region executed-action resource contract. Its past list is the reversed
+native chronological action prefix; resource update prepends only the action
+actually called. The source fits EVERY history equation with ONE parameter
+vector. Native consistency must be proved equal to the retained Consistent,
+then native homogeneity to Homogeneous (within one model targets are constant).
+
+For every case the native response quantifier ranges over active coordinates.
+In the fixed abstract carrier, nonzero padding cannot equal any source response,
+so the extended history has no consistent source and is homogeneous. On zero
+padding, the active vector gives the native quantifier. This is the required
+induction link; padding supplies no new legal observation. Fin0 stays empty.
+
+The remaining AST proof must relate exact sparse polynomial/predicate evaluation
+and arena scoping to this value semantics, then induct on the retained horizon.
+The existing rank/budget theorems supply the abstract cap AFTER the actual
+affine/resource/history hypotheses. They do not prove this Rust implementation.
+Actual physical source/response/target transport and legal-programme coverage
+remain the separate supplier relation already pinned in the physical contract.
+
+## Audited free query scope
+
+IssuedAssertion now runs an iterative scope audit before rendering. Constants
+and source/future-action variables must be bound in the generated AST. The only
+permitted free variables are the ORIGINAL prefix action/response symbols plus
+the selected candidate action symbols. The audit refuses a binder that captures
+one of those declared free symbols, reused active binders, invalid IDs or an
+undeclared free variable. Boolean simplification may legitimately remove a
+declared coordinate; actual_free_symbols() returns only actual syntactic free
+occurrences, in generated-symbol order.
+
+Traversal is iterative and uses bounded work/stack allocation from existing
+AST/symbol/render ceilings. A scope/work failure refuses issuance; it never
+returns a partial certificate or budget loss. The original low-level query
+method remains unchanged. This audit is source-implemented and uncompiled/
+unexecuted. It is not proof of quantifier semantics, polynomial evaluation,
+external result identity, actual source admission or an authenticated writer.

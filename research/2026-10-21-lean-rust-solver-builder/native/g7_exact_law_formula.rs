@@ -615,6 +615,7 @@ pub struct IssuedAssertion<'q, 'a> {
     kind: AssertionKind,
     history: AssertionHistory,
     document: String,
+    actual_free: Vec<Symbol>,
 }
 
 impl<'q, 'a> IssuedAssertion<'q, 'a> {
@@ -622,6 +623,8 @@ impl<'q, 'a> IssuedAssertion<'q, 'a> {
     pub fn kind(&self) -> AssertionKind { self.kind }
     pub fn history_scope(&self) -> AssertionHistory { self.history }
     pub fn document(&self) -> &str { &self.document }
+    /// Exact syntactic free variables found in the generated guarded AST.
+    pub fn actual_free_symbols(&self) -> &[Symbol] { &self.actual_free }
     /// Declared context can include symbols absent after Boolean simplification.
     /// TRUE/FALSE must not be mistaken for a result at an unrelated free point.
     pub fn has_free_context(&self) -> bool {
@@ -675,6 +678,32 @@ impl<'a> Compiled<'a> {
                 self.fibres.get(index)
                     .ok_or(Error::Invalid("ACTION_FIBRE_INDEX"))?.formula, false),
         };
+        let mut declared = Vec::new();
+        let mut context_count = 0usize;
+        for h in &self.history_symbols {
+            context_count = context_count.checked_add(h.action_parameters.len())
+                .and_then(|n| n.checked_add(h.response.len()))
+                .ok_or(Error::Limit("QUERY_CONTEXT_SIZE"))?;
+        }
+        if let AssertionKind::WinningAction(index) = kind {
+            context_count = context_count.checked_add(self.fibres[index].symbols.action_parameters.len())
+                .ok_or(Error::Limit("QUERY_CONTEXT_SIZE"))?;
+        }
+        declared.try_reserve(context_count)
+            .map_err(|_| Error::Limit("QUERY_CONTEXT_ALLOCATION"))?;
+        for h in &self.history_symbols {
+            declared.extend_from_slice(&h.action_parameters);
+            declared.extend_from_slice(&h.response);
+        }
+        if let AssertionKind::WinningAction(index) = kind {
+            declared.extend_from_slice(&self.fibres[index].symbols.action_parameters);
+        }
+        let roots = if history == AssertionHistory::Reachable {
+            vec![self.constants_valid,self.legal_history,self.reachable_history,root]
+        } else {
+            vec![self.constants_valid,self.legal_history,root]
+        };
+        let actual_free = self.arena.query_free_symbols(&roots,&declared)?;
         let limit = self.arena.limits.rendered_bytes;
         let mut document = String::new();
         append(&mut document, "Resolve[And[", limit)?;
@@ -695,7 +724,124 @@ impl<'a> Compiled<'a> {
         append(&mut document, body(&child)?, limit)?;
         if negate { append(&mut document, "]", limit)?; }
         append(&mut document, "],Reals]", limit)?;
-        Ok(IssuedAssertion {compiled:self,kind,history,document})
+        Ok(IssuedAssertion {compiled:self,kind,history,document,actual_free})
+    }
+}
+
+
+/// Free-variable audit of the generated AST. This is an implementation check,
+/// not a Lean/AST proof or backend decision. It uses the existing construction
+/// and rendering ceilings; shared DAGs are traversed with explicit bounded work.
+impl Arena {
+    fn query_free_symbols(
+        &self, roots: &[FormulaId], declared: &[Symbol],
+    ) -> Result<Vec<Symbol>> {
+        enum Task<'s> {
+            Formula(FormulaId),
+            Term(TermId),
+            Enter(&'s [Symbol]),
+            Exit(&'s [Symbol]),
+        }
+        fn charge(fuel: &mut usize) -> Result<()> {
+            *fuel = fuel.checked_sub(1).ok_or(Error::Limit("QUERY_SCOPE_AUDIT_WORK"))?;
+            Ok(())
+        }
+        fn room<'s>(work: &mut Vec<Task<'s>>, count: usize, fuel: usize) -> Result<()> {
+            let next = work.len().checked_add(count)
+                .ok_or(Error::Limit("QUERY_SCOPE_STACK_OVERFLOW"))?;
+            if next > fuel { return Err(Error::Limit("QUERY_SCOPE_AUDIT_WORK")); }
+            work.try_reserve(count).map_err(|_| Error::Limit("QUERY_SCOPE_STACK_ALLOCATION"))
+        }
+        let mut fuel = self.limits.ast_nodes.checked_add(self.limits.symbols)
+            .and_then(|n| n.checked_add(self.limits.rendered_bytes))
+            .ok_or(Error::Limit("QUERY_SCOPE_LIMIT_OVERFLOW"))?;
+        let count = self.variable_terms.len();
+        let mut bound = Vec::new();
+        bound.try_reserve_exact(count)
+            .map_err(|_| Error::Limit("QUERY_SCOPE_BINDER_ALLOCATION"))?;
+        bound.resize(count, false);
+        let mut allowed = BTreeSet::new();
+        for symbol in declared {
+            charge(&mut fuel)?;
+            if symbol.0 >= count { return Err(Error::Invalid("QUERY_CONTEXT_SYMBOL")); }
+            if !allowed.insert(symbol.0) {
+                return Err(Error::Invalid("REUSED_QUERY_CONTEXT_SYMBOL"));
+            }
+        }
+        let mut free = BTreeSet::new();
+        let mut work = Vec::new();
+        room(&mut work, roots.len(), fuel)?;
+        for id in roots.iter().rev() { work.push(Task::Formula(*id)); }
+        while let Some(task) = work.pop() {
+            charge(&mut fuel)?;
+            match task {
+                Task::Formula(id) => match self.formulas.get(id)
+                    .ok_or(Error::Invalid("QUERY_FORMULA_ID"))? {
+                    Formula::Truth(_) => (),
+                    Formula::Compare(_,lhs,rhs) => {
+                        room(&mut work, 2, fuel)?;
+                        work.push(Task::Term(*rhs)); work.push(Task::Term(*lhs));
+                    }
+                    Formula::Not(body) => {
+                        room(&mut work, 1, fuel)?; work.push(Task::Formula(*body));
+                    }
+                    Formula::And(ids) | Formula::Or(ids) => {
+                        room(&mut work, ids.len(), fuel)?;
+                        for id in ids.iter().rev() { work.push(Task::Formula(*id)); }
+                    }
+                    Formula::Exists(symbols,body) | Formula::ForAll(symbols,body) => {
+                        room(&mut work, 3, fuel)?;
+                        work.push(Task::Exit(symbols));
+                        work.push(Task::Formula(*body));
+                        work.push(Task::Enter(symbols));
+                    }
+                },
+                Task::Term(id) => match self.terms.get(id)
+                    .ok_or(Error::Invalid("QUERY_TERM_ID"))? {
+                    Term::Number(_) => (),
+                    Term::Variable(symbol) => {
+                        let is_bound = *bound.get(symbol.0)
+                            .ok_or(Error::Invalid("QUERY_VARIABLE_ID"))?;
+                        if !is_bound {
+                            if !allowed.contains(&symbol.0) {
+                                return Err(Error::Invalid("UNBOUND_QUERY_SYMBOL"));
+                            }
+                            free.insert(symbol.0);
+                        }
+                    }
+                    Term::Sum(ids) | Term::Product(ids) => {
+                        room(&mut work, ids.len(), fuel)?;
+                        for id in ids.iter().rev() { work.push(Task::Term(*id)); }
+                    }
+                    Term::Power(value,_) => {
+                        room(&mut work, 1, fuel)?; work.push(Task::Term(*value));
+                    }
+                },
+                Task::Enter(symbols) => for symbol in symbols {
+                    charge(&mut fuel)?;
+                    if allowed.contains(&symbol.0) {
+                        return Err(Error::Invalid("BOUND_QUERY_CONTEXT_SYMBOL"));
+                    }
+                    let slot = bound.get_mut(symbol.0)
+                        .ok_or(Error::Invalid("QUERY_BINDER_ID"))?;
+                    if *slot { return Err(Error::Invalid("REUSED_QUERY_BINDER_SYMBOL")); }
+                    *slot = true;
+                },
+                Task::Exit(symbols) => for symbol in symbols {
+                    charge(&mut fuel)?;
+                    let slot = bound.get_mut(symbol.0)
+                        .ok_or(Error::Invalid("QUERY_BINDER_ID"))?;
+                    if !*slot { return Err(Error::Invalid("QUERY_BINDER_SCOPE")); }
+                    *slot = false;
+                },
+            }
+        }
+        if bound.iter().any(|b| *b) { return Err(Error::Invalid("QUERY_BINDER_SCOPE")); }
+        let mut result = Vec::new();
+        result.try_reserve(free.len())
+            .map_err(|_| Error::Limit("QUERY_SCOPE_RESULT_ALLOCATION"))?;
+        result.extend(free.into_iter().map(Symbol));
+        Ok(result)
     }
 }
 

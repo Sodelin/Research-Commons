@@ -104,3 +104,9 @@ and optional mathematical reachability. FALSE is inconclusive. Its immutable
 IssuedAssertion declaration association does not authenticate an external
 result, physical history or proof. Both native modules remain uncompiled/
 unexecuted; AST/result/QE/relative-history selection and writer gates stay open.
+
+The issued-query scope audit is now source-implemented with bounded iterative
+work and actual free-symbol metadata. It refuses leaked or captured variables.
+The source/action/base/padded-response/history target mapping is explicit;
+polynomial/AST-to-game equivalence and actual result/physical transport remain
+unproved. No scope checker or new native control has been executed.
