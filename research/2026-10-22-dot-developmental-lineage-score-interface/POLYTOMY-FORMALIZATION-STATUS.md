@@ -1,6 +1,10 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 12:25 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 12:48 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest all-input operational continuation, 12:48 UTC
+
+`PolytomyBinaryFrameMachine.lean` proposes the actual finite TM2 framing transducer used by both numeric headers and the independent verifier-pair input: three Boolean stacks, three labels, six finite-control values, exact raw payload/suffix output, malformed cleanup and an all-string 2L+4 transition bound. `POLYTOMY-BINARY-FRAME-TRANSDUCER.md` gives the complete hand induction. This is a multi-output parser component, not either complete clean-output machine witness. Caller embedding, payload reversal/consumption, full algorithm composition, binary arithmetic and all kernel checks remain open. `full_reduction_with_operational_frame` retains the full actual-D_lambda/all-refinement semantic endpoint alongside the new operational component. `POLYTOMY-DESCRIPTIVE-COMPLEXITY-BOUNDARY.md` audits an upstream Exact Cover/3DM catalog and its expressly unformalized polynomial/string-machine boundary; no incompatible formal hardness is imported. No new scoped parent review or Lean acceptance is claimed.
 
 ## Latest operational continuation, 12:25 UTC
 

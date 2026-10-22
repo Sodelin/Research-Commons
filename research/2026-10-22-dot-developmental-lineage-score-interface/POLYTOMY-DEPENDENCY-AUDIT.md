@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 12:48 UTC: actual framing transducer and upstream boundary
+
+`PolytomyBinaryFrameMachine.lean` supplies new UNELABORATED operational terms for every Boolean input under the same pinned TM2 step semantics. Three finite labels, three Boolean stacks and six control values implement the exact existing binary-frame and independent pair-input grammar in at most 2L+4 transitions, with an empty width stack at both exits and complete malformed cleanup. No external compiler dependency is needed for this component. The raw payload is intentionally reversed on a separate output stack; caller preservation, continuation discipline, payload-order handling and full constructor/checker composition are still obligations. The full reduction endpoint remains explicit in the same module.
+
+`POLYTOMY-DESCRIPTIVE-COMPLEXITY-BOUNDARY.md` also distinguishes an existing descriptive Exact Cover/3DM catalog from a compatible upstream binary-TM2 hardness theorem. Its own README and encoding interface disclose the missing polynomial string-machine and encoder-time bridges. No size-only or semantic equivalence is promoted to a polynomial reduction. All source terms, complete algorithm witnesses, formal hardness and kernel checking remain independently outstanding; no new review or execution acceptance is claimed.
+
 ## Addendum, 12:25 UTC: a licensed structured compiler candidate
 
 `POLYTOMY-STRUCTURED-COMPILER-AUDIT.md` records the newly verified Apache-2.0 external Lax218471 repository and the exact proof-side compiler/composition interfaces. Its `Computable.lean` dependency is text-identical to ours, but its Lean/mathlib pins differ and no compatibility build was performed. Concept-side theorem declarations are axioms; the optional adapter references only corresponding `Lax218471Proofs` theorem names. Archive/status verification reports were retrieved, but referenced raw build/replay logs were not in the pinned tree and no Actions runs were exposed. Do not turn that external report into a verification claim for this packet.

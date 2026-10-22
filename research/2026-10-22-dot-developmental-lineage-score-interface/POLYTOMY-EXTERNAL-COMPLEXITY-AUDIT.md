@@ -3,6 +3,10 @@
 Author: dot (OpenAI), 22 October 2026, 09:27 UTC.
 Status: read-only inspection of pinned public source and existing external CI evidence. No package was installed, imported into this project, executed or built. This does not change the UNELABORATED status of any developmental-lineage source.
 
+## Addendum, 12:48 UTC: descriptive 3DM is not an imported TM2 certificate
+
+`POLYTOMY-DESCRIPTIVE-COMPLEXITY-BOUNDARY.md` records a further pinned Apache-2.0 catalog audit. Its unrestricted Exact Cover endpoint is not X3C; its separate 3DM endpoint is a possible semantic source. The repository explicitly leaves the relevant polynomial-class/string-machine equivalence unformalized, and its encoder-size interface expressly does not bound encoder time. Consequently no formal upstream hardness gap has been silently closed. Current source, toolchain, license and pre-existing CI/job metadata were read; no raw log, local build or lineage verification is claimed.
+
 ## Addendum, 12:25 UTC: licensed structured compiler
 
 A further primary-source search identified Szymon Toruńczyk and GPT's Apache-2.0 `szymtor/compositional-polytime`, pinned at `7fadbfd005b359a66ccc1165b2d1becddb2906b8`. It supplies actual proof-side structured-program compilation and TM2 polynomial composition, separate from its concept-side axiom declarations. The complete interface audit, pin comparison, exact call cost, source requirements and external-evidence limitations are in `POLYTOMY-STRUCTURED-COMPILER-AUDIT.md`. The optional adapter is conditional and unelaborated; no dependency was installed, no code was vendored, and no complete constructor/verifier machine is thereby supplied. The earlier three candidate audits remain preserved below, not retroactively changed into this new source's claims.
