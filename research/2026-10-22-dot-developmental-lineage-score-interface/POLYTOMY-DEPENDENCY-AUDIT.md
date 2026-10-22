@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 18:15 UTC: physical original cap creation and prefix entry
+
+Three OPTIONAL UNELABORATED source modules now give actual finite faithful arbitrary-bit tally/restore, exact cap-to-extra copying, a fully instantiated physical cap-squaring countdown with semantic induction, explicit success initialization, and composition with the original full prefix. Original C=L+1 and D=(L+1)^2 are created from the physical input; they are not Nat parameters in code/control or assumed entry data. Joined time is 6L^4+28L^3+70L^2+122L+115 with exact original prefix observation and partial-record bound.
+
+Only previously inspected actual proof-side APIs and own sources are used; a needed replicate-append identity is supplied locally rather than relying on a guessed library name. No dependency was installed or executed, no concept theorem axiom added, and no compatible build/kernel closure inferred. Final suffix rejection, reversal/tagging and complete cleanup remain before whole normalizer; original downstream constructor/checker, closed encoded hardness and all kernel/dependency checks remain open. Original external encodings, actual-D_lambda endpoint and biological/general-DAG scope are unchanged.
+
 ## Continuation, 18:03 UTC: actual full original provided-cap prefix
 
 Three OPTIONAL UNELABORATED source modules compose the actual three binary-valued headers and complete two-level rows parser under physical original caps. Failure-absorbing guards prevent later new-attempt routines from reviving failure; actual cap swapping/restoration preserves both caps on all paths. Exact suffix/reversed-log observation equals the ORIGINAL full prefix parser on arbitrary inputs, with explicit four-stage execution and all-path record bounds. Original caps yield time 6L^4+28L^3+67L^2+105L+93 and partial-record growth L^3+4L^2+6L+7.

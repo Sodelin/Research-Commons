@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 18:03 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 18:15 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest actual original cap creation plus full PREFIX, 18:15 UTC
+
+`PolytomyInputLengthCap.lean` gives a real finite one-label faithful bit-copy/tally and reverse-back/push sequence, preserving arbitrary source bits while constructing L+1 in 2L+3 transitions. `PolytomyPhysicalCapSquare.lean` supplies actual restoring cap-to-extra copy, an instantiated physical countdown body and exact repeated-copy semantics, creating C^2 while preserving C/source in at most 3C^2+9C+6 transitions. A distinct initially empty accumulator/counter is explicit; success=true is required by the countdown, not hidden.
+
+`PolytomyOriginalCapPreparation.lean` explicitly initializes success, creates both original caps, restores the original input and joins the entire original header/rows prefix routine. No provided-cap premise remains at this entry. Preparation costs 3L^2+17L+22; joined actual-prefix bound is 6L^4+28L^3+70L^2+122L+115. Exact original arbitrary-word prefix observation and all-path record-growth bound are retained, with unrelated data/F preservation. `POLYTOMY-ORIGINAL-CAP-CREATION.md` gives the full hand derivation.
+
+Still missing from the whole normalizer: actual trailing-suffix rejection, output reversal/tagging and all owned-stack cleanup on both paths. Then the whole original downstream constructor/checker, closed encoded hardness and every kernel/dependency check remain. All source is UNELABORATED; no runtime, new review, certificate, novelty or biological/general-DAG closure. Earlier cap-creation blockers below are superseded only at this proposed source level.
 
 ## Latest actual full original provided-cap PREFIX, 18:03 UTC
 
