@@ -50,6 +50,15 @@ The reviewer read the full manuscript and checked that Q=(H_X,F,V) preserves sel
 
 The pass is limited to the exact faithful elementary oracle, selection sinks, and specified single-target soft interventions. Classical projection and stable mixed-graph attribution are retained. It certifies neither historical novelty nor Lean checking, statistical sample complexity, HPL minimal-faithfulness closure, hard-intervention recovery, or polynomial total runtime.
 
+## Exact-claim reconciliation with stable mixed graphs and intervention completion
+
+Manuscript: PRIOR-WORK-EXACT-CLAIM-RECONCILIATION.md.
+Verdict received at 07:16 UTC: **Scoped hand-review PASS for the three graphical counterexamples and narrow transfer conclusion.**
+
+The reviewer read the reconciliation and checked the summary-graph collision x->t->s versus t->x->s; the missing selection-ancestry flag in an unannotated ribbonless graph; and the indicator sole-child violation under generic canonical realization. These establish that raw observational representations or unrestricted graph realization cannot automatically replace the selected common-source adapter. They imply no historical novelty and do not rule out stronger annotated stable-graph formulations.
+
+The full Zhou–Kocaoglu PDF, including its realization and LIST proofs and algorithms, was directly inspected by the manuscript author. The reviewer's own web parser did not retrieve that PDF, so independent full-PDF review is not claimed. The precise prior-work attribution and selected/no-selection boundary remain documented with primary source locations.
+
 ## Verification boundary
 
 No Lean elaboration, kernel checking, native solver, numerical source search, benchmark, or statistical experiment was performed for these manuscripts. A hand-review pass is not a machine-verification certificate. No proof-site acceptance or historical-priority adjudication is claimed.

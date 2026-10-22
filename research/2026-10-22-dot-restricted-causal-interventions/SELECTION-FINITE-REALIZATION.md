@@ -204,7 +204,7 @@ The finite registry is now complete by proof rather than an assumed latent-size 
 
 The decisive primitive is classical bow-preserving latent projection. Stable mixed/summary graphs already represent DAG independences after marginalization and conditioning; Sadeghi (2013) proves broad closure and representation results. Thus the finite selected graph-representation theme is not new. The present construction is written explicitly to preserve directed ancestry, ancestry to selection, and **every named separate soft-indicator augmentation through one common source**, which are the precise obligations needed by this packet. Historical priority of this particular normal form and parameterized query application has not been established.
 
-Earlier latent soft-intervention equivalence is due to Kocaoglu and colleagues (2019). Zhou–Kocaoglu (ICML 2026) already provide enumeration-based completion work; only their official abstract, not the inaccessible algorithm details, has been verified here. HPL supplies the selected target and anterior/adjacency query identities. This note must be read as an attributed synthesis/candidate rather than a claim to originate these components.
+Earlier latent soft-intervention equivalence is due to Kocaoglu and colleagues (2019). Zhou–Kocaoglu (ICML 2026) already provide exact common-source I-MAG realization and enumeration-based completion in a no-selection joint-augmentation domain. The full primary PDF and relevant proofs/algorithms have now been read; earlier abstract-only statements are superseded. HPL supplies the selected target and anterior/adjacency query identities. This note must be read as an attributed synthesis/candidate rather than a claim to originate these components. [The exact-claim reconciliation](PRIOR-WORK-EXACT-CLAIM-RECONCILIATION.md) proves why raw stable-graph representations and the unmodified no-selection realizability test do not automatically supply the selected named-root adapter, without asserting historical novelty.
 
 No inference is made from this soft-intervention registry to arbitrary hard interventions: deleting incoming edges is a different source operation and must be checked separately against projection and selection compression. No equality of arbitrary full-law binary predicates is claimed, and the lower bound's oracle restriction remains essential. No finite-sample or minimal-faithfulness extension is proved. Runtime formal checking remains unperformed.
 
@@ -228,8 +228,9 @@ https://arxiv.org/pdf/1302.4973
 Kocaoglu, Murat; Jaber, Amin; Shanmugam, Karthikeyan; Bareinboim, Elias. Characterization and Learning of Causal Graphs with Latent Variables from Soft Interventions. NeurIPS 2019.
 https://proceedings.neurips.cc/paper/2019/file/c3d96fbd5b1b45096ff04c04038fff5d-Paper.pdf
 
-Zhou, Zihan; Kocaoglu, Murat. Towards Completeness in Causal Discovery from Soft Interventions with Known Targets. ICML 2026. Official abstract verified; exact algorithm not assumed as a lemma.
+Zhou, Zihan; Kocaoglu, Murat. Towards Completeness in Causal Discovery from Soft Interventions with Known Targets. ICML 2026. Primary pp. 4–7, Appendix B.1–B.5, algorithms and complexity appendix inspected directly. Prior no-selection common-source realizability and completion; not assumed as a selected-case lemma.
 https://proceedings.mlr.press/v306/zhou26s.html
+https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhou26s/zhou26s.pdf
 
 [Query certificate](LATENT-SELECTION-IMEC-CERTIFICATE.md)
 [No-selection special case](NO-SELECTION-FINITE-REALIZATION.md)

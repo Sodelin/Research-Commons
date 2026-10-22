@@ -142,8 +142,9 @@ https://arxiv.org/html/2609.28856v1
 Kocaoglu, Murat; Jaber, Amin; Shanmugam, Karthikeyan; Bareinboim, Elias. Characterization and Learning of Causal Graphs with Latent Variables from Soft Interventions. NeurIPS 2019. Prior provider of soft/latent augmented equivalence theory.
 https://proceedings.neurips.cc/paper/2019/file/c3d96fbd5b1b45096ff04c04038fff5d-Paper.pdf
 
-Zhou, Zihan; Kocaoglu, Murat. Towards Completeness in Causal Discovery from Soft Interventions with Known Targets. ICML 2026. Its official abstract establishes existing enumeration-based completion work. Its exact algorithm is not assumed in the proof above; prior relationship and novelty require further review.
+Zhou, Zihan; Kocaoglu, Murat. Towards Completeness in Causal Discovery from Soft Interventions with Known Targets. ICML 2026. The full primary PDF and relevant appendices have now been read. Lemmas 5.3/5.5 and Theorem 5.7 give common-source no-selection ADMG realizability, and Theorem 5.8 gives exhaustive I-MAG completion. Thus this companion is not the first latent soft-intervention realization/listing theorem. Its elementary classical-projection proof remains independent, and its separate HPL target must not be silently equated with their joint-augmentation target. See [the exact-claim reconciliation](PRIOR-WORK-EXACT-CLAIM-RECONCILIATION.md); no novelty is asserted.
 https://proceedings.mlr.press/v306/zhou26s.html
+https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhou26s/zhou26s.pdf
 
 [General selected certificate](LATENT-SELECTION-IMEC-CERTIFICATE.md)
 [Lower barrier and finite-family game](RESTRICTED-INTERVENTION-BARRIER.md)
