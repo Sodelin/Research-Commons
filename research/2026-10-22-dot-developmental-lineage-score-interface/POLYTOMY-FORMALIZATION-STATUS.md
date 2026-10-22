@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 16:40 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 17:00 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest concrete numeric-list loop and failing-state storage, 17:00 UTC
+
+`PolytomyUnaryFrameEmitter.lean` instantiates the physical countdown contract with actual one/two-push atoms, emitting a reversed unary frame and optionally copying its physical count. Success costs at most 5a+5, including branch/delimiter/reset; failure emits nothing and preserves data. `PolytomyNumericRecordBody.lean` composes actual flag-reset, original capped numeric reader and non-copy emission with exact original reader value/suffix/failure semantics, preserved cap/reserved counter and clean scratch. Its bound is M(L,C)=6LC+8L+8C+14. The entry reset starts a NEW attempt; higher-level failure must skip it, as the actual loop guard does.
+
+`PolytomyNumericListLoop.lean` now constructs, rather than assumes, that body contract for a partial/failing-state invariant. Its actual loop realizes the specified store iteration in at most k(M(L,C)+3)+3 transitions. Successful return exhausts the physical counter; early failure can leave a suffix for later cleanup. A separate boundary-storage induction bounds record growth by k(C+1) without assuming successful final parsing. `POLYTOMY-CONCRETE-NUMERIC-LIST-LOOP.md` gives the complete hand argument.
+
+Exact observation agreement with original readMany remains the immediate next proof, followed by unary count-reader/copy, outer rows, headers/caps, trailing-input checks, reversal/tagging and whole cleanup. Complete constructor/checker, closed compatible encoded hardness and every kernel check remain open. The original external encodings, actual D_lambda/all-refinement/output-size/independent-certificate endpoint are unchanged. All terms are UNELABORATED; no runtime, new coordinating review, novelty or biological closure.
 
 ## Latest exact internal record and actual counted-loop composition, 16:40 UTC
 

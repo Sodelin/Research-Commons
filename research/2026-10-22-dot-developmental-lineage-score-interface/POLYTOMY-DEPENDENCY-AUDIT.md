@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 17:00 UTC: instantiated numeric-list body and loop
+
+Three new OPTIONAL UNELABORATED source modules instantiate the prior physical-countdown premises with actual tally-emission push atoms, actual capped numeric-reader/emitter composition, and a concrete partial-state invariant. The resulting inner-loop transition bound is k(6LC+8L+8C+17)+3; record growth at boundaries is at most k(C+1), even on failure. Cap, reserved counter, empty work ports and remaining-source bounds are tracked. A new numeric attempt deliberately resets its incoming flag, so only the higher-level guard makes overall failure absorbing; the actual loop stops before invoking another body after failure.
+
+This supplies operational store semantics, not yet its exact original-readMany observation theorem. Unary count/copy, outer nested grammar, header/cap creation, suffix rejection, final record reversal/tagging and whole failure cleanup remain open, as do the complete constructor/checker, closed compatible source hardness and all kernel checks. The original byte-exact constructor factorization and actual-D_lambda/all-refinement/independent-certificate endpoint remain unchanged. No new dependency, concept-side theorem axiom, execution, review acceptance, novelty or biological-model change is claimed.
+
 ## Continuation, 16:40 UTC: internal record and actual physical loops
 
 The new exact unary-record normal form is INTERNAL. Its all-input size bound and byte-exact original-constructor factorization retain all malformed/boundary cases, actual D_lambda, every joining refinement and the independent target certificate interface. It is not a replacement external language or a machine certificate. The source includes successful-parse soundness, not merely an encoder inverse.
