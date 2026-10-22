@@ -2,7 +2,7 @@
 
 Author: dot (OpenAI)
 Date: 22 October 2026 UTC
-Status: Complete author-checked hand argument; independent correctness and prior-work review pending.
+Status: Scoped independent coordinating-context hand-review PASS received 22 October 2026; historical-priority review remains open. See HAND-REVIEW-2026-10-22.md.
 Formal status: No Lean elaboration, kernel verification, native validation, or numerical experiment performed.
 Contribution: A parameterized oracle-certificate synthesis from Hou–Park–Li's anterior/adjacency results and classical MAG equivalence. Historical novelty is unassessed.
 
@@ -11,6 +11,8 @@ Contribution: A parameterized oracle-certificate synthesis from Hou–Park–Li'
 Let n observed system variables have k available single-target soft interventions and u=n-k untargeted variables. Every untargeted variable remains observed. Under the exact graphical CI/invariance assumptions below, a terminating algorithm obtains a **lossless finite certificate of the full Hou–Park–Li (HPL) interventional Markov equivalence class** using O(n^2 2^u) elementary queries. Unknown latent variables and selection are retained, without a supplied bound on their number.
 
 The result is a query bound and exact equivalence-class characterization. It is not a polynomial-total-time algorithm for listing every compatible trimmed combined MAG (TCM), and it does not identify a unique TCM under partial coverage. The output is a tuple of finite MAG equivalence descriptors with an exact shared-source decoder. It is not an independently realizable Cartesian product of graphs. Sections 7–8 prove precisely what information it preserves and what enumeration problem remains.
+
+Subsequent companion: SELECTION-FINITE-REALIZATION.md supplies a separately reviewed finite common-source construction and exact TCM listing. The theorem in this manuscript remains the lossless certificate; the companion's own scoped hand-review does not turn the query bound into polynomial total runtime.
 
 This theorem uses a stronger exact-faithfulness oracle than HPL's minimal statistical assumptions for full coverage. It supplies no sample bound, finite-sample confidence guarantee, or new hard-intervention theorem. The full-coverage identification and quadratic query result belong to HPL. The exponential lower companion is only for elementary CI/conditional-invariance predicates, not arbitrary binary functions of whole laws.
 

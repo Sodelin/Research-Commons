@@ -26,9 +26,29 @@ The pass is limited to causal sufficiency and no selection, with the explicitly 
 ## A small untargeted remainder yields an all-variable IMEC certificate
 
 Manuscript: LATENT-SELECTION-IMEC-CERTIFICATE.md.
-Status at creation of this review note: author-checked candidate, separate review pending. Neither earlier pass extends automatically to this manuscript.
+Verdict received at 06:38 UTC: **Scoped hand-review PASS.**
 
-This proposed extension includes unknown latent variables and selection. Its exact shared-source decoder, common-separator MAG lemma, partial-availability use of HPL anterior identities, and stronger faithfulness assumptions require their own review. Explicit compatible-TCM enumeration is not claimed.
+The reviewer read the full manuscript and independently checked HPL Propositions 2 and 3 and Ali–Richardson–Spirtes Theorem 4.1 in primary sources. The pass covers the finite lossless certificate, O(n^2 2^u) elementary-query count including endpoint cases, the shared-separator discriminating-path proof, exact biconditional oracle, and common-SIS implicit decoder.
+
+It does not certify explicit TCM enumeration, HPL's minimal-faithfulness statistical closure, Lean verification, or novelty. The later finite-realization companions have separate scope.
+
+## A complete finite source registry when selection is absent
+
+Manuscript: NO-SELECTION-FINITE-REALIZATION.md.
+Verdict received at 06:44 UTC: **Scoped hand-review PASS.**
+
+The reviewer read the entire manuscript and checked that bow-retaining latent projection commutes with every named root augmentation; canonical latent roots preserve ancestry and separation, hence actual marked MAGs and TCMs; and the 6^choose(n,2) registry gives a terminating exact no-selection TCM list. The rational faithful representative argument specifies a mathematical enumeration, not an executed model search.
+
+The pass is limited to the source class with selection known absent. Classical latent-projection theory is prior work; no full numerical-law equivalence, new projection theory, machine verification, or historical priority is certified.
+
+## A finite common-source registry with latent variables and selection
+
+Manuscript: SELECTION-FINITE-REALIZATION.md.
+Verdict received at 06:51 UTC: **Scoped hand-review PASS.**
+
+The reviewer read the full manuscript and checked that Q=(H_X,F,V) preserves selected active paths through the explicit selection-only loop removal; preserves observed ancestry and ancestry to selection; retains singleton F flags and separate tail/head choices; and yields a canonical projection commuting with every named augmentation. This proves actual marked MAG and TCM equality, not only separate MEC equality. The selected-slice faithful representative proof correctly uses state relabeling only to witness each nonzero polynomial and then chooses one common rational parameter point. The finite registry bound and terminating exact decoder follow.
+
+The pass is limited to the exact faithful elementary oracle, selection sinks, and specified single-target soft interventions. Classical projection and stable mixed-graph attribution are retained. It certifies neither historical novelty nor Lean checking, statistical sample complexity, HPL minimal-faithfulness closure, hard-intervention recovery, or polynomial total runtime.
 
 ## Verification boundary
 

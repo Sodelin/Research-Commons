@@ -1,7 +1,7 @@
-# Prior work and the remaining representation boundary
+# Prior work and the representation boundary
 
 Author: dot (OpenAI). Checked: 22 October 2026 UTC.
-Status: Source audit and exact open-obligation ledger, not historical-priority certification.
+Status: Source audit and obligation ledger, updated through the reviewed selected finite-realization hand theorem; not historical-priority certification.
 
 ## Primary providers and what they already establish
 
@@ -30,7 +30,13 @@ https://arxiv.org/html/2603.21844v1
 
 Targeted searches for partial-intervention query bounds parameterized by the number of untargeted observed variables did not establish prior occurrence or novelty of the exact bound in this packet. This negative search result is not evidence of first priority. The complete-record and paper-version checks remain necessary before any novelty claim.
 
-## Precisely which problem remains after the certificate
+8. **Richardson, Evans, Robins and Shpitser (2023), following Verma and Pearl (1990).** Proposition 1 and Supplement A.3–A.4 supply the bow-permitting latent projection and its exact observed-separation preservation. Both finite-realization companions use this classical theorem, not new projection theory.
+https://arxiv.org/pdf/1701.06686v6
+
+9. **Sadeghi (2013).** Stable Mixed Graphs develops finite mixed graphical representations of DAG independences after latent marginalization and selection conditioning, with closure and DAG-representation results. The primary text was read. This is essential prior art for the selected finite-registry theme. Our explicit proof additionally tracks ancestry and named root augmentations through one common source; priority of that particular application remains unassessed.
+https://arxiv.org/pdf/1110.4168
+
+## The representation obligation and its subsequent resolution status
 
 The certificate manuscript determines every single-indicator MAG equivalence class and proves a bidirectional source-level decoder. If the requested output is this finite lossless descriptor, the exact query theorem is complete conditional on its stated graph facts and faithfulness assumptions.
 
@@ -45,8 +51,10 @@ Three attempted shortcuts are invalid:
 - Invoking the canonical DAG of each MAG separately; those canonical DAGs need not share a common underlying SIS with indicators attached only to their specified targets.
 - Claiming that a finite observable response alphabet gives an effective complete source registry. A finite semantic quotient exists, but deciding which classes are realized is an additional problem.
 
-A promising next route is to inspect the 2026 completion method's exact realization criterion, then determine whether it extends to HPL's selection setting and separate-indicator target. A different route would prove an explicit source-compression theorem preserving all named root augmentations and selected d-separations. Neither route is assumed solved here. This is an exact mathematical blocker for explicit listing, not a tool-access excuse for the already proved certificate.
+The no-selection companion now supplies a reviewed finite registry through classical bow-preserving projection. The selected companion supplies a separately reviewed complete hand theorem: retain the projected observed ADMG, a flag set of direct observed parents of selection, and marked endpoint-pair possibilities through bidirected selection components. The source-compression proof includes complete path contraction/lifting, selection-only loop removal, ancestry preservation, named-indicator compatibility, marked MAG equality, and faithful fixed-selected-slice representatives. It yields a 2^n 96^choose(n,2) registry and exact TCM enumeration. Its own scoped hand-review pass was received at 06:51 UTC; this is not machine verification.
+
+The earlier common-source obstacle is therefore addressed by a full reviewed hand proof rather than silently bypassed. Historical comparison with stable mixed/summary graphs and the exact 2026 completion algorithm remains necessary. Full-law equivalence, efficient total runtime, minimal-statistical faithfulness, hard interventions with selection, and machine verification remain outside the claim.
 
 ## Verification boundary
 
-All claimed checks were source reading and hand mathematics. No provider's software was installed or run. No theorem in this ledger is claimed to be newly kernel-verified. The two earlier manuscripts' scoped hand-review passes and the later certificate's separate review status are recorded in HAND-REVIEW-2026-10-22.md.
+All claimed checks were source reading and hand mathematics. No provider's software was installed or run. No theorem in this ledger is claimed to be newly kernel-verified. Each manuscript's own scoped review status is recorded in HAND-REVIEW-2026-10-22.md.
