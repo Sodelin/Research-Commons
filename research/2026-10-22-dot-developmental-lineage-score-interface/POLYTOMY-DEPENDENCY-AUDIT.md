@@ -3,6 +3,12 @@
 Author: dot (OpenAI), 22 October 2026, 08:25 UTC.
 Status: read-only source audit and source-only proposal. No Lean/Lake/compiler/runtime execution or certificate.
 
+## Addendum, 13:55 UTC: bounded-value parsing preserves exact original output
+
+`PolytomySaturatedSource.lean` imports only existing local/pinned dependencies. It proposes a saturating bit decoder with transient values <=2*cap+1, exact nested reader-map laws, all-input validity equivalence under L+1 dimension/identifier sentinels, exact original-branch threshold saturation at (L+1)^2 and constructor BYTE equality. The no-new-valid-input reverse proof and K>=mN early branch are indispensable; neither small raw integers nor a changed target is assumed. Successfully parsed saturated records have unary numeric mass plus record size <=3(L+1)^2. A future complete machine for this precise algorithm transfers to the original constructor obligation.
+
+This addresses a specific blocker to a bounded-counter compiler implementation; it is not a whole operational proof. The independent target verifier needs its own budget/header handling, and nested programs, all-input execution/time bounds, closed upstream hardness and all kernel checks remain open. See `POLYTOMY-SATURATED-SOURCE-ADAPTER.md`. All terms are UNELABORATED; no new scoped review acceptance or execution evidence is claimed.
+
 ## Addendum, 13:35 UTC: exact NP pairing and dependency closure
 
 The new concrete pair-converter source uses only our existing pinned machine dependencies and an inspected `List.twoStepInduction` signature. It proposes a complete all-input clean-halt 2L+4 operational witness for conversion, not for the checker. The optional classical NP interface uses actual `Lax218471Proofs.Combinators.comp` plus definition-only P/NP/ManyOne/NPComplete interfaces. Its final theorem remains explicitly conditional on the complete constructor/verifier and exact encoded MSSC hardness. It retains the full actual-D_lambda and arbitrary-refinement semantics.

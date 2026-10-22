@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 13:35 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 13:55 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Latest all-input polynomial-value constructor adapter, 13:55 UTC
+
+`PolytomySaturatedSource.lean` proposes a genuinely bounded binary decoder and exact all-input saturation adapter for the SAME constructor bytes. Dimensions/identifiers use the L+1 overflow sentinel; the threshold uses (L+1)^2. The reverse validity proof prevents any invalid record becoming valid. The actual original mN<=K fixed-yes branch ensures that threshold clipping never changes the canonical target output. The complete parser/constructor equality includes malformed and noncanonical input. Parsed saturated unary numeric mass plus record size is at most 3(L+1)^2, while original raw values remain unbounded. `POLYTOMY-SATURATED-SOURCE-ADAPTER.md` gives the complete hand proof.
+
+The final theorem retains the whole actual-D_lambda, arbitrary-refinement and independent bounded-certificate endpoint, and a future complete machine for this byte-identical algorithm would discharge the original constructor witness. This is not yet such a machine: nested emitted parsing, validation/canonical construction/serialization, whole execution/step bounds, the independent target verifier, upstream encoded hardness and all kernel checking remain open. No execution, new review acceptance or new biological assumption is claimed.
 
 ## Latest exact classical-class interface, 13:35 UTC
 
