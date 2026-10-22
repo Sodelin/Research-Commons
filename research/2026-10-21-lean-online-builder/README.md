@@ -94,13 +94,16 @@ python3 -B check_online.py --case two \
   --record-codec /absolute/existing/featurectl --codec-sha256 VERIFIED_SHA256
 ```
 
-The original driver has an actual encrypted transport-probe result. The newer
-check_online_component.py companion is SOURCE ONLY/unexecuted. Actual component
-checks used the published Node core client through the existing installed
-RAM-to-encrypted-record binding. The latest literal-Code check adds a small
-report-drain/exit wrapper; protocol and acceptance logic remain in the identical
-core. Exact entry/core identities and timeout limitations are recorded. No new identity, key export, local compiler or
-model API is involved. A refused record binding has no plaintext fallback.
+Both public drivers now use the shared [capture/recovery helper](ONLINE-CAPTURE-RECOVERY.md).
+Twelve offline regressions pass. Actual launcher integration checks cover the
+existing six-audit power domain, a rejected false proof and the original
+transport probe, each with normal child exit and verified encrypted readback.
+Exact tested source hashes and encrypted-capture digests are retained in
+[the integration evidence](ONLINE-RUNNER-INTEGRATION.json). These add no
+mathematical case. Component checks use the existing report-drain wrapper;
+both Node protocol/acceptance clients remain unchanged. Timeouts and abnormal
+exits cannot pass. No new identity, key export, local compiler or model API
+is involved, and a refused record binding has no plaintext fallback.
 
 The first scientific use-site join is exact captured request value to literal
 Code/validity, actual taxon/hybrid order and typed fields, then authenticated
