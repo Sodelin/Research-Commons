@@ -27,4 +27,5 @@ lean_lib RestrictedCausalSource where
     `MAGMaximality, `ObservedMAGAncestry, `ClosedColliderWalks,
     `WeakInducingEdges, `OriginalWeakConnection, `WeakRouteNormalization,
     `OriginalMAGConnection, `CommonDiscriminatingParents,
-    `VertexActivePaths, `MinimalActivePaths, `AncestralShortcutGeometry]
+    `VertexActivePaths, `MinimalActivePaths, `AncestralShortcutGeometry,
+    `MinimalPathChord]

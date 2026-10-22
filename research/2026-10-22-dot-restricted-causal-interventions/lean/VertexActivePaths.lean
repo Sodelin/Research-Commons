@@ -54,10 +54,12 @@ theorem active_route_triples_after_first {V : Type u} (G : MarkedGraph V) (singl
         left incoming outgoing nextIncoming first edge).mpr atP,
         ih p.vertex outgoing nextIncoming edge nextMark⟩
 
-theorem active_connection_vertex_path {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
-    (Z : V → Prop) (x y : V) (h : ActiveConnection G Z x y) : ∃ xs, Path G Z x y xs := by
-  obtain ⟨last, xs, route, nodup⟩ := h
-  refine ⟨xs.map Arrival.vertex, ?_, ?_, ?_⟩
+theorem active_route_vertex_path {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
+    (Z : V → Prop) (x y : V) {last : Option Mark} {xs : List (Arrival V)}
+    (route : Route (RealStep G Z) ⟨x, none⟩ xs ⟨y, last⟩)
+    (nodup : ((⟨x, none⟩ :: xs).map Arrival.vertex).Nodup) :
+    Path G Z x y (xs.map Arrival.vertex) := by
+  refine ⟨?_, ?_, ?_⟩
   · exact route.map Arrival.vertex (by
       intro p q step
       obtain ⟨outgoing, incoming, edge, _, _⟩ := step
@@ -68,6 +70,11 @@ theorem active_connection_vertex_path {V : Type u} (G : MarkedGraph V) (single :
     | @cons p next q rest step tail =>
         obtain ⟨left, incoming, edge, mark, _⟩ := step
         exact active_route_triples_after_first G single Z tail x left incoming edge mark
+
+theorem active_connection_vertex_path {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
+    (Z : V → Prop) (x y : V) (h : ActiveConnection G Z x y) : ∃ xs, Path G Z x y xs := by
+  obtain ⟨last, xs, route, nodup⟩ := h
+  exact ⟨xs.map Arrival.vertex, active_route_vertex_path G single Z x y route nodup⟩
 
 theorem build_after_first {V : Type u} (G : MarkedGraph V) (single : SingleEdges G)
     (Z : V → Prop) {b y : V} {xs : List V} (route : Route (Adjacent G) b xs y) :
