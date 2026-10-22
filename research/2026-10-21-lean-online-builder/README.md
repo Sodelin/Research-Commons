@@ -106,6 +106,12 @@ contract. One bank, original forcing, per-menu mass, concatenation and error
 scope align in that inspected scope. The actual native evaluated-polynomial
 equality and both original source-coverage directions remain unproved.
 
+[The controlled-word join](G7-CONTROLLED-WORD-RECEIVER-JOIN.md) pins the closer
+existing conditional-word provider and original evaluated-polynomial receiver.
+Natural initialization stays outside forcing substitution; closed-unit transition
+parameters, full state encoding and completed-calendar readout remain real joins.
+No new provider/compiler acceptance follows from that source review.
+
 [The guarded-query review](G7-GUARDED-ASSERTION-SOURCE-REVIEW.json) checks only
 the new positive-guard source addition and its unchanged-core correspondence.
 [The subsequent scope review](G7-QUERY-SCOPE-SOURCE-REVIEW.json) covers the
