@@ -67,7 +67,7 @@ its bounds, uses explicit index rewriting and reduces each enum case directly.
 `FORM-REFLECTION-REVISIONS.json` pins those source identities. No original
 compiler definition or theorem statement was changed to make the proof pass.
 
-## Eight-block complete emission still needs its use-site theorem
+## Complete emission now follows from individual field relations
 
 The original `G6NaturalCellOrderedCompiler.compileCellList` orders the rows as:
 edge duration positivity; two weak rows for each tip-age equality; edge inverse
@@ -81,7 +81,10 @@ still assemble the exact complete registry lists and prove
     decodeRows D (GParity.Chart.emitRows reflectedInput)
       = compileCellList N layout ... chronology exposures coins.
 
-That ordered equality is the first remaining aggregate emission relation.
+That ordered equality and coefficient lengths now have a checked generic proof
+under individual FieldReflection relations; G6-AGGREGATE-REFLECTION.md records
+it. Constructing those relations from the actual captured request/Code remains
+the first use-site obligation.
 `compileCellList_toFinset` then supplies the existing `hemit` premise. Do not
 deduplicate before checking original row multipliers. CHART's internal unit
 bookkeeping weights are distinct from the externally supplied contradiction

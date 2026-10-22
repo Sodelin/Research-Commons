@@ -14,6 +14,11 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'aggregate': ('lean/OnlineNativeCellAggregateReflection.lean', [
+        'Astra.NativeCellAggregateReflection.erase_emitRows_eq_encoded',
+        'Astra.NativeCellAggregateReflection.decoded_emitRows_eq_compileCellList',
+        'Astra.NativeCellAggregateReflection.emitted_coefficient_lengths',
+        'Astra.NativeCellAggregateReflection.decoded_emitRows_toFinset']),
     'admission': ('lean/OnlineOriginalCodeBankLayout.lean', [
         'GProgram.G7.OriginalAdmission.sourceOfValid',
         'GProgram.G7.OriginalAdmission.decodedIDs',

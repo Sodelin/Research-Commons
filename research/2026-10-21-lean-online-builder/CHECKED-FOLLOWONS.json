@@ -1213,6 +1213,71 @@
       ],
       "warning_dispositions": "Inherited/style/deprecation warnings retained. No errors, sorry/unsafe warnings or additional selected axioms accepted.",
       "scope": "Complete43-original-module admission dependency closure plus two owned layout modules in one hosted4.35 document; two explicitly pinned hosted API variants; comments/import/section projection disclosed. Not pinned4.33.1 Lake, object custody, a captured-Code instance or a full-package axiom audit."
+    },
+    {
+      "case": "native_cell_aggregate_field_reflection",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/OnlineNativeCellAggregateReflection.lean",
+      "source_sha256": "21c2e9a0bc27610b0494d6e40a5ba295a8a62997e7f7e6f117466e39deda53e7",
+      "submitted_source_sha256": "025b94d09e2fdb9e4679fc80c9305aa07e22d5b0fd483b94dd928eac564b2827",
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.NativeCellAggregateReflection.erase_emitRows_eq_encoded",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellAggregateReflection.erase_emitRows_eq_encoded' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeCellAggregateReflection.decoded_emitRows_eq_compileCellList",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellAggregateReflection.decoded_emitRows_eq_compileCellList' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeCellAggregateReflection.emitted_coefficient_lengths",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellAggregateReflection.emitted_coefficient_lengths' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativeCellAggregateReflection.decoded_emitRows_toFinset",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativeCellAggregateReflection.decoded_emitRows_toFinset' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "Astra.NativeCellAggregateReflection.erase_emitRows_eq_encoded",
+          "printed_type": "Astra.NativeCellAggregateReflection.erase_emitRows_eq_encoded.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1} {E : Type u_2}\n  {X : Type u_3} {I : Type u_4} {C : Type u_5} [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} X] [Fintype.{u_4} I]\n  [Fintype.{u_5} C] [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_4 + 1} I]\n  [DecidableEq.{u_5 + 1} C] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³} {n : Nat}\n  {layout :\n    Equiv.{max (u_2 + 1) (u_1 + 1), 1}\n      (@UnifiedLean.G6.NaturalCellAffineCompiler.BankVar.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N) (Fin n)}\n  {input : GParity.Chart.Input} {edges : List.{u_2} E} {leaves : List.{u_3} X}\n  {populations : List.{u_2} (Option.{u_2} E)}\n  {hybrids :\n    List.{u_1} (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N)}\n  {chronologyIds : List.{u_5} C} {exposureIds : List.{u_4} I}\n  {chronology : C → UnifiedLean.G6.NaturalCellInverseRates.AgeConstraint.{u_1} V}\n  {exposures : I → UnifiedLean.G6.NaturalCellInverseRates.Exposure.{u_1, u_2} V E}\n  {coins :\n    @UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N →\n      UnifiedLean.G6.NaturalCellInverseRates.RationalInterval}\n  (h :\n    @Astra.NativeCellAggregateReflection.FieldReflection.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹ inst✝² inst✝³\n      N n layout input edges leaves populations hybrids chronologyIds exposureIds chronology exposures coins) :\n  @Eq.{1} (List.{0} GParity.Affine.Row)\n    (Astra.NativeCellAggregateReflection.eraseWeights (GParity.Chart.emitRows input))\n    (@UnifiedLean.G6.NaturalCellOrderedCompiler.encodeRows n\n      (@UnifiedLean.G6.NaturalCellOrderedCompiler.compileCellList.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹\n        inst✝² inst✝³ N n layout edges leaves populations hybrids chronologyIds exposureIds chronology exposures coins))"
+        },
+        {
+          "name": "Astra.NativeCellAggregateReflection.decoded_emitRows_eq_compileCellList",
+          "printed_type": "Astra.NativeCellAggregateReflection.decoded_emitRows_eq_compileCellList.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1}\n  {E : Type u_2} {X : Type u_3} {I : Type u_4} {C : Type u_5} [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} X]\n  [Fintype.{u_4} I] [Fintype.{u_5} C] [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_4 + 1} I]\n  [DecidableEq.{u_5 + 1} C] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³} {n : Nat}\n  {layout :\n    Equiv.{max (u_2 + 1) (u_1 + 1), 1}\n      (@UnifiedLean.G6.NaturalCellAffineCompiler.BankVar.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N) (Fin n)}\n  {input : GParity.Chart.Input} {edges : List.{u_2} E} {leaves : List.{u_3} X}\n  {populations : List.{u_2} (Option.{u_2} E)}\n  {hybrids :\n    List.{u_1} (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N)}\n  {chronologyIds : List.{u_5} C} {exposureIds : List.{u_4} I}\n  {chronology : C → UnifiedLean.G6.NaturalCellInverseRates.AgeConstraint.{u_1} V}\n  {exposures : I → UnifiedLean.G6.NaturalCellInverseRates.Exposure.{u_1, u_2} V E}\n  {coins :\n    @UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N →\n      UnifiedLean.G6.NaturalCellInverseRates.RationalInterval}\n  (h :\n    @Astra.NativeCellAggregateReflection.FieldReflection.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹ inst✝² inst✝³\n      N n layout input edges leaves populations hybrids chronologyIds exposureIds chronology exposures coins) :\n  @Eq.{1} (List.{0} (UnifiedLean.G6.StrictAffineElimination.Row n))\n    (UnifiedLean.G6.WireAffineRefinement.decodeRows n (GParity.Chart.emitRows input))\n    (@UnifiedLean.G6.NaturalCellOrderedCompiler.compileCellList.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹ inst✝²\n      inst✝³ N n layout edges leaves populations hybrids chronologyIds exposureIds chronology exposures coins)"
+        },
+        {
+          "name": "Astra.NativeCellAggregateReflection.emitted_coefficient_lengths",
+          "printed_type": "Astra.NativeCellAggregateReflection.emitted_coefficient_lengths.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1} {E : Type u_2}\n  {X : Type u_3} {I : Type u_4} {C : Type u_5} [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} X] [Fintype.{u_4} I]\n  [Fintype.{u_5} C] [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_4 + 1} I]\n  [DecidableEq.{u_5 + 1} C] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³} {n : Nat}\n  {layout :\n    Equiv.{max (u_2 + 1) (u_1 + 1), 1}\n      (@UnifiedLean.G6.NaturalCellAffineCompiler.BankVar.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N) (Fin n)}\n  {input : GParity.Chart.Input} {edges : List.{u_2} E} {leaves : List.{u_3} X}\n  {populations : List.{u_2} (Option.{u_2} E)}\n  {hybrids :\n    List.{u_1} (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N)}\n  {chronologyIds : List.{u_5} C} {exposureIds : List.{u_4} I}\n  {chronology : C → UnifiedLean.G6.NaturalCellInverseRates.AgeConstraint.{u_1} V}\n  {exposures : I → UnifiedLean.G6.NaturalCellInverseRates.Exposure.{u_1, u_2} V E}\n  {coins :\n    @UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N →\n      UnifiedLean.G6.NaturalCellInverseRates.RationalInterval}\n  (h :\n    @Astra.NativeCellAggregateReflection.FieldReflection.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹ inst✝² inst✝³\n      N n layout input edges leaves populations hybrids chronologyIds exposureIds chronology exposures coins) :\n  UnifiedLean.G6.WireAffineRefinement.RowsWellFormed n (GParity.Chart.emitRows input)"
+        },
+        {
+          "name": "Astra.NativeCellAggregateReflection.decoded_emitRows_toFinset",
+          "printed_type": "Astra.NativeCellAggregateReflection.decoded_emitRows_toFinset.{u_1, u_2, u_3, u_4, u_5} {V : Type u_1} {E : Type u_2}\n  {X : Type u_3} {I : Type u_4} {C : Type u_5} [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} X] [Fintype.{u_4} I]\n  [Fintype.{u_5} C] [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_4 + 1} I]\n  [DecidableEq.{u_5 + 1} C] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³} {n : Nat}\n  {layout :\n    Equiv.{max (u_2 + 1) (u_1 + 1), 1}\n      (@UnifiedLean.G6.NaturalCellAffineCompiler.BankVar.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N) (Fin n)}\n  {input : GParity.Chart.Input} {edges : List.{u_2} E} {leaves : List.{u_3} X}\n  {populations : List.{u_2} (Option.{u_2} E)}\n  {hybrids :\n    List.{u_1} (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N)}\n  {chronologyIds : List.{u_5} C} {exposureIds : List.{u_4} I}\n  {chronology : C → UnifiedLean.G6.NaturalCellInverseRates.AgeConstraint.{u_1} V}\n  {exposures : I → UnifiedLean.G6.NaturalCellInverseRates.Exposure.{u_1, u_2} V E}\n  {coins :\n    @UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N →\n      UnifiedLean.G6.NaturalCellInverseRates.RationalInterval}\n  (h :\n    @Astra.NativeCellAggregateReflection.FieldReflection.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹ inst✝² inst✝³\n      N n layout input edges leaves populations hybrids chronologyIds exposureIds chronology exposures coins)\n  (hedges : ∀ (e : E), @Membership.mem.{u_2, u_2} E (List.{u_2} E) (@List.instMembership.{u_2} E) edges e)\n  (hleaves : ∀ (x : X), @Membership.mem.{u_3, u_3} X (List.{u_3} X) (@List.instMembership.{u_3} X) leaves x)\n  (hpopulations :\n    ∀ (e : Option.{u_2} E),\n      @Membership.mem.{u_2, u_2} (Option.{u_2} E) (List.{u_2} (Option.{u_2} E))\n        (@List.instMembership.{u_2} (Option.{u_2} E)) populations e)\n  (hhybrids :\n    ∀ (a : @UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N),\n      @Membership.mem.{u_1, u_1}\n        (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N)\n        (List.{u_1} (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N))\n        (@List.instMembership.{u_1}\n          (@UnifiedLean.Source.NativeParentRouting.Hybrid.{u_1, u_2, u_3} V E X inst✝ inst✝¹ inst✝² inst✝³ N))\n        hybrids a)\n  (hchronology : ∀ (j : C), @Membership.mem.{u_5, u_5} C (List.{u_5} C) (@List.instMembership.{u_5} C) chronologyIds j)\n  (hexposures : ∀ (i : I), @Membership.mem.{u_4, u_4} I (List.{u_4} I) (@List.instMembership.{u_4} I) exposureIds i) :\n  @Eq.{1} (Finset.{0} (UnifiedLean.G6.StrictAffineElimination.Row n))\n    (@List.toFinset.{0} (UnifiedLean.G6.StrictAffineElimination.Row n)\n      (@UnifiedLean.G6.StrictAffineElimination.instDecidableEqRow n)\n      (UnifiedLean.G6.WireAffineRefinement.decodeRows n (GParity.Chart.emitRows input)))\n    (@UnifiedLean.G6.NaturalCellAffineCompiler.compileCell.{u_1, u_2, u_3, u_4, u_5} V E X I C inst✝ inst✝¹ inst✝²\n      inst✝⁴ inst✝⁵ inst✝³ N n layout chronology exposures coins)"
+        }
+      ],
+      "client": "online_lean_quiet.mjs",
+      "client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "warning_dispositions": "Benign inherited and unused-section/style/deprecation warnings retained; no errors, sorry/unsafe warning or nonstandard selected axiom accepted.",
+      "scope": "Bounded exact source/data/compiler projection, including complete SourceNetwork and exact original ordered compileCellList/toFinset and wire encode/decode definitions/theorems. The declared FieldReflection individual-field/order/position relation is a real premise. Not full physical imports, raw-parser/native executable refinement, native Lake or captured-Code validity."
     }
   ]
 }

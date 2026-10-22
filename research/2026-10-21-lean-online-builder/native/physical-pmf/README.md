@@ -1,16 +1,16 @@
 # Combined physical, PMF, CM and certificate source context
 
-Actual source preparation verified ALL545 module bodies,4518041B. The original
+Actual source preparation verified ALL546 module bodies,4530839B. The original
 533-module transitive closure is selected from the exact current/connected
 graph at Commons1138a5b1a281caa00b38e0976db95b586938754b. It joins the original
 G6/G7 physical roots with G4WholeProfileDetermination, so its real PMF support,
 gridWeight and shared-configuration readout helpers are in the SAME proposed
 context as CMFinitePMF and the checked bank/certificate receivers.
 
-The twelve explicit additional modules are CMFoundations, RationalBankMoments,
+The thirteen explicit additional modules are CMFoundations, RationalBankMoments,
 CMRationalBank, CMFinitePMF, the original certificate kernel, both original
 generated certificates, both unchanged authored bank witnesses, and
-NativeOrderedBankLayout/OriginalCodeBankLayout and NativeCellFormReflection.
+NativeOrderedBankLayout/OriginalCodeBankLayout and NativeCellFormReflection/NativeCellAggregateReflection.
 Source counts are build inputs, not endpoint acceptance or an accepted545
 release. The generic layout and bounded form correspondence were
 hosted checked; the original-Code use-site now has a complete hosted admission-component check, while pinned native imports remain uncompiled.
@@ -86,3 +86,9 @@ spelling (2726B/SHA9a8cb563); all other544 module entries remain unchanged.
 ADMISSION-COMPONENT.md at the packet root records its complete43-original-plus-
 two-owned hosted check, including both explicit hosted API variants. Those
 variants are NOT selected into this pinned native source context.
+
+The latest addition is NativeCellAggregateReflection, giving546 modules/
+4530839B. Every prior545 module entry is unchanged. Its four selected hosted
+audits prove ordered emission, coefficient lengths and hemit under explicit
+individual field/order relations. Captured-request instantiation and the
+complete pinned native import/object check remain open.

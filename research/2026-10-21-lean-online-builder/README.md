@@ -2,7 +2,7 @@
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and its machine-readable ledger now centralize
 the inherited G1/G2/G5 endpoints, accepted G6/G7 hand characterizations,
-actual hosted checks,545-module source preparation and remaining physical,
+actual hosted checks,546-module source preparation and remaining physical,
 effectivity, refinement and native-custody gates. The native outer refusal is
 silent and unexecuted; actual encrypted first-writer/controller binding remains
 UNBOUND. The existing ordered G6 receiver retains the canonical AFFINE8/64
@@ -142,7 +142,7 @@ and all-size exclusion remain independent.
 CM-FINITE-PMF.md describes the later checked semantic PMF constructor and
 all-natural-moment/pushforward relation using the exact original support and
 gridWeight helpers. Its bounded declaration projection is separate from the
-prepared545-module full physical import context in native/physical-pmf/.
+prepared546-module full physical import context in native/physical-pmf/.
 That context excludes the duplicate extracted sparse supplier and remains
 uncompiled under the native writer hold.
 
@@ -184,5 +184,11 @@ Earlier scoped P5 reviews retain their exact conditional boundaries.
 ADMISSION-COMPONENT.md records the actual complete45-module hosted admission/
 layout check and the six selected type/axiom audits. Its explicit hosted API
 variants, bounded diagnostic-union client and negative controls are published.
-The native545-module snapshot changes only the owned wrapper dependency; it
+The native546-module snapshot changes only the owned wrapper dependency; it
 remains uncompiled under the existing first-writer hold.
+
+G6-AGGREGATE-REFLECTION.md records the actual four-audit universal proof of
+ALL eight ordered emission blocks, exact coefficient lengths and the existing
+hemit equality from individual fields/orders and complete registries. Captured
+request/Code-to-FieldReflection and native/physical provenance stay open. The
+latest546-source snapshot adds only this proof; all prior545 entries unchanged.

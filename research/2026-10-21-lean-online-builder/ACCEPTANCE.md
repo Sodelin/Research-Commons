@@ -19,7 +19,7 @@ The inherited scope is pinned to [Commons1138a5](https://github.com/Sodelin/Rese
 | Certificate/CM/affine | Exact hosted selected types and standard-axiom audits, literal bank/affine fixtures, original failed affine proposal and separate correction | Parser/native refinement, authenticated runtime result and physical/provider provenance |
 | P1/P5 | Scoped finite-statistical and operator-integral hosted checks | Their independent physical and full scientific gates |
 
-The latest prepared native context contains **545 modules / 4,518,041 source
+The latest prepared native context contains **546 modules / 4,530,839 source
 bytes**, with the physical sparse supplier present once and explicit import-only
 variants. All selected source hashes and dependency order are recorded. No
 full-import elaboration, Lake/compiler invocation or object-custody acceptance
