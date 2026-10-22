@@ -16,7 +16,7 @@
   "physical_source_existence_certified": false,
   "full_G3_G4_closed": false,
   "local_git_writes": false,
-  "latest_component_commit": "535f7b9c0db9a54abb196b3aadf1da7cc4b1e44a",
+  "latest_component_commit": "5d3ce44a29a50e8c2ec6cfe5640da07121873bcb",
   "exact_bank_execution": {
     "run_id": 39675913869,
     "tested_commit": "a45e8380858dbd8502d605b01bd35113957383dc",
@@ -77,8 +77,8 @@
     "existing_raw_history_preserved": true
   },
   "executed_native_component_commit": "c06da7f35a1cec9340ff7ca22668d85156f5648f",
-  "latest_source_only_commit": "535f7b9c0db9a54abb196b3aadf1da7cc4b1e44a",
-  "latest_source_only_status": "GUARDED_ASSERTION_QUERIES_SOURCE_IMPLEMENTED;FINITE_HISTORY_BUDGET_CAP_HOSTED_EVIDENCE_REVIEWED;NATIVE_UNCOMPILED_UNEXECUTED",
+  "latest_source_only_commit": "5d3ce44a29a50e8c2ec6cfe5640da07121873bcb",
+  "latest_source_only_status": "GUARDED_QUERY_SCOPE_AUDIT_AND_NATIVE_VALUE_GAME_MAP_SOURCE_IMPLEMENTED;NEW_NATIVE_EXECUTION_HELD",
   "typed_receiver_source_review": {
     "commit": "029a729402d349fb771f7c00435d4f8465ab0b6e",
     "files_read": 31,
@@ -553,10 +553,10 @@
     "control_plan_groups": 10,
     "control_execution": false,
     "actual_source_supplier_AST_QE_selection_and_frontier_complete": false,
-    "current_source_sha256": "246ff2eadb32d685455d3c284889d04cacefc92a38f3369c17f1d0dd93e0059e",
-    "current_source_utf8_bytes": 48430,
+    "current_source_sha256": "3de0a20849ef2854ea71d8526848ade9f9817a280f7bd5ddcd029b543665439e",
+    "current_source_utf8_bytes": 55519,
     "initial_core_unchanged": false,
-    "current_module_commit": "535f7b9c0db9a54abb196b3aadf1da7cc4b1e44a",
+    "current_module_commit": "5d3ce44a29a50e8c2ec6cfe5640da07121873bcb",
     "result_interpretation_guard": "false open continuation requires ConstantsWellDefined AND LegalHistory at exact free values; physical transcript also requires ReachableHistory; false or disabled action fibre never implies budget loss",
     "existing_game_constructors_and_low_level_renderer_unchanged": true
   },
@@ -687,5 +687,20 @@
     "peer_reports_all_module_hashes_verified": true,
     "native_import_or_object_or_master_acceptance": false,
     "quiet_outer_unchanged": true
+  },
+  "current_G7_query_scope_audit": {
+    "component_commit": "5d3ce44a29a50e8c2ec6cfe5640da07121873bcb",
+    "source": "research/2026-10-21-lean-rust-solver-builder/native/g7_exact_law_formula.rs",
+    "sha256": "3de0a20849ef2854ea71d8526848ade9f9817a280f7bd5ddcd029b543665439e",
+    "review": "research/2026-10-21-lean-rust-solver-builder/evidence/G7-QUERY-SCOPE-SOURCE-REVIEW.json",
+    "invariants": [
+      "only original prefix/candidate symbols may be free",
+      "declared free context cannot be captured",
+      "invalid IDs/reused active binders/incomplete scope refuse",
+      "bounded iterative work; actual free list distinct from declared context"
+    ],
+    "native_game_constructor_and_old_renderer_unchanged": true,
+    "actual_native_or_backend_execution": false,
+    "AST_or_source_game_refinement_proved": false
   }
 }
