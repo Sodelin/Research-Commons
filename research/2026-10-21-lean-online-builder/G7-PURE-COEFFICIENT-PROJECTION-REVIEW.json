@@ -1,0 +1,81 @@
+{
+  "schema": "pure_coefficient_projection_checked_revision_v1",
+  "original_source_commit": "4ac6aa8565ec8aa2bac1d5dc4b3d31af64e86859",
+  "original_projection_sha256": "4febe046c4c7ed900adc84e391dcb7a4530dc5bedebe9395e275e3cae4d5a899",
+  "original_source_map_sha256": "38c1801739e56f85aff6d576a93b96ea3c3580b2c4c9c91d40ae2d0af7e3cb0f",
+  "rejected": {
+    "source": "lean/proposals/rejected/PopulationCoefficientProjection-r0.lean",
+    "source_sha256": "4febe046c4c7ed900adc84e391dcb7a4530dc5bedebe9395e275e3cae4d5a899",
+    "submitted_source_sha256": "471148c109550a44fc7342ce83b568d3a6db9d205a0c97fe376046bd951fc2b6",
+    "disposition": "REJECTED_REMOTE_LEAN_CHECK",
+    "client_exit": 2,
+    "errors": [
+      {
+        "fullRange": {
+          "end": {
+            "character": 49,
+            "line": 45
+          },
+          "start": {
+            "character": 16,
+            "line": 41
+          }
+        },
+        "leanTags": [
+          1
+        ],
+        "message": "unsolved goals\ncase neg\nk : \u2115\nz : \u2115 \u00d7 \u211a\np : List (\u2115 \u00d7 \u211a)\nih : (exprPolynomial p).coeff k = coefficient p k\nhz : \u00acz.1 = k\n\u22a2 k = z.1 \u2192 z.2 = 0",
+        "range": {
+          "end": {
+            "character": 0,
+            "line": 42
+          },
+          "start": {
+            "character": 16,
+            "line": 41
+          }
+        },
+        "severity": 1,
+        "source": "Lean 4"
+      }
+    ],
+    "audit_rows": [
+      {
+        "name": "Astra.NativePopulationTableCertificate.polynomial_coefficient",
+        "clean": false,
+        "messages": [
+          "'Astra.NativePopulationTableCertificate.polynomial_coefficient' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]"
+        ]
+      },
+      {
+        "name": "Astra.NativePopulationTableCertificate.coefficient_zero_of_absent",
+        "clean": true,
+        "messages": [
+          "'Astra.NativePopulationTableCertificate.coefficient_zero_of_absent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+        ]
+      },
+      {
+        "name": "Astra.NativePopulationTableCertificate.checkExpr_sound",
+        "clean": false,
+        "messages": [
+          "'Astra.NativePopulationTableCertificate.checkExpr_sound' depends on axioms: [propext,\n sorryAx,\n Classical.choice,\n Quot.sound]"
+        ]
+      }
+    ],
+    "clean_partial_not_adopted": true
+  },
+  "current": {
+    "source": "lean/proposals/PopulationCoefficientProjection.lean",
+    "bytes": 3137,
+    "sha256": "ea3b6538a10be5ba470d372a30a70bc6e7f53b8b98880501c4d90f5b7bc3b15c",
+    "submitted_source_sha256": "edf359872c8adcb2c1990dbc8ed6759ebca503afa35fb7c2003b0a577addbef8",
+    "disposition": "PASS_REMOTE_LEAN_CHECK",
+    "selected_audits": 3
+  },
+  "proof_only_diff": "--- original-r0\n+++ hosted-r1\n@@ -41,9 +41,11 @@\n   | nil => rfl\n   | cons z p ih =>\n       rw [exprPolynomial_cons, Polynomial.coeff_add, ih]\n-      by_cases hz : z.1 = k <;>\n-        simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial,\n+      by_cases hz : z.1 = k\n+      \u00b7 simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial,\n           Polynomial.coeff_monomial, hz, eq_comm]\n+      \u00b7 simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial,\n+          Polynomial.coeff_monomial, hz, Ne.symm hz]\n \n lemma coefficient_zero_of_absent (p : Expr) (k : Nat)\n     (hk : k \u2209 p.map Prod.fst) : coefficient p k = 0 := by\n",
+  "patch_scope": "Split equality and inequality simp branches; retain eq_comm only in equality branch and explicitly supply Ne.symm hz in the other. The latter is reported unused by this hosted simplifier. Definitions and theorem statements are unchanged.",
+  "historical_header": "The preserved SOURCE-ONLY/UNELABORATED introduction describes original preparation. This selected pure virtual document is now checked; full NativePopulationTableCertificate imports remain UNELABORATED.",
+  "native_context_777_changed": false,
+  "full_population_context_checked": false,
+  "new_axiom_or_transition_engine": false
+}

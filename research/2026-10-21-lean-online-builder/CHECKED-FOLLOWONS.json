@@ -2347,6 +2347,71 @@
       "client_exit": 0,
       "retained_checked_prefix_sha256": "2804232d7daea06e5c41e596ebb497c05c94d3b1ec9dbd7e8286f5fad24a90c4",
       "scope": "Supplied case plus one real bank across entire history; exact different-target exclusion/stop equivalence; shared-root specialization; reachable target uniqueness and explicit empty/unreachable vacuity; conditional physical target and same-stop transfer under the existing two-sided Representation and actual consistent source. No native polynomial/AST/query-result refinement, original source/action/target coverage, effective QE/selector, physical transcript origin or pinned imports/objects."
+    },
+    {
+      "case": "pure_rational_coefficient_checker_projection",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/proposals/PopulationCoefficientProjection.lean",
+      "source_bytes": 3137,
+      "source_sha256": "ea3b6538a10be5ba470d372a30a70bc6e7f53b8b98880501c4d90f5b7bc3b15c",
+      "submitted_source_sha256": "edf359872c8adcb2c1990dbc8ed6759ebca503afa35fb7c2003b0a577addbef8",
+      "printed_types": [
+        {
+          "name": "Astra.NativePopulationTableCertificate.polynomial_coefficient",
+          "printed_type": "Astra.NativePopulationTableCertificate.polynomial_coefficient (p : GProgram.G7.SinglePopulationPolynomialKernel.Expr)\n  (k : Nat) :\n  @Eq.{1} Rat\n    (@DFunLike.coe.{1, 1, 1}\n      (@Finsupp.{0, 0} Nat Rat (@MulZeroClass.toZero.{0} Rat (@instMulZeroClassOfSemiring.{0} Rat Rat.semiring))) Nat\n      (fun x => Rat)\n      (@Finsupp.instFunLike.{0, 0} Nat Rat\n        (@MulZeroClass.toZero.{0} Rat (@instMulZeroClassOfSemiring.{0} Rat Rat.semiring)))\n      (@Polynomial.coeff.{0} Rat Rat.semiring (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial p)) k)\n    (Astra.NativePopulationTableCertificate.coefficient p k)",
+          "printed_type_sha256": "1baa5e40e71605759cd08e0aca7993ec3c283523fbab030e9784e733b7774321"
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.coefficient_zero_of_absent",
+          "printed_type": "Astra.NativePopulationTableCertificate.coefficient_zero_of_absent\n  (p : GProgram.G7.SinglePopulationPolynomialKernel.Expr) (k : Nat)\n  (hk : k ∉ @List.map.{0, 0} (Prod.{0, 0} Nat Rat) Nat (@Prod.fst.{0, 0} Nat Rat) p) :\n  @Eq.{1} Rat (Astra.NativePopulationTableCertificate.coefficient p k)\n    (@OfNat.ofNat.{0} Rat (nat_lit 0) (@Rat.instOfNat (nat_lit 0)))",
+          "printed_type_sha256": "8f779f27760b6e6c3a51faecbd5487985a41067c6e10f6c5ae467be537022178"
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checkExpr_sound",
+          "printed_type": "Astra.NativePopulationTableCertificate.checkExpr_sound (p q : GProgram.G7.SinglePopulationPolynomialKernel.Expr)\n  (h : @Eq.{1} Bool (Astra.NativePopulationTableCertificate.checkExpr p q) true) :\n  @Eq.{1} (@Polynomial.{0} Rat Rat.semiring) (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial p)\n    (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial q)",
+          "printed_type_sha256": "24a39b73c02270c5764f884985137f29939499de3d6f951df597728193f5d934"
+        }
+      ],
+      "selected_theorem_audits": [
+        {
+          "name": "Astra.NativePopulationTableCertificate.polynomial_coefficient",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.polynomial_coefficient' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.coefficient_zero_of_absent",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.coefficient_zero_of_absent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checkExpr_sound",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.checkExpr_sound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "warning_count": 3,
+      "unique_warning_messages": [
+        "This simp argument is unused:\n  Polynomial.coeff_monomial\n\nHint: Omit it from the simp argument list.\n  [apply] simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial, hz, eq_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+        "This simp argument is unused:\n  Ne.symm hz\n\nHint: Omit it from the simp argument list.\n  [apply] simp [coefficient, Polynomial.C_mul_X_pow_eq_monomial, Polynomial.coeff_monomial, hz]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+        "`if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲"
+      ],
+      "client": "online_lean_drain.mjs",
+      "client_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_client_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "client_identity_unchanged": true,
+      "client_exit": 0,
+      "scope": "Pure rational-polynomial coefficient sums over the finite union of both exponent supports, including duplicates and absent coefficients. A proof-only hosted repair; no Code/source validity, destination support/Table soundness, actual population law, native emitter/parser/result origin or full imported certificate context."
     }
   ]
 }

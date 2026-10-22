@@ -7,6 +7,10 @@ from online_capture import run_case
 
 ROOT = Path(__file__).resolve().parent
 CASES = {
+    'population-coefficients': ('lean/proposals/PopulationCoefficientProjection.lean', [
+        'Astra.NativePopulationTableCertificate.polynomial_coefficient',
+        'Astra.NativePopulationTableCertificate.coefficient_zero_of_absent',
+        'Astra.NativePopulationTableCertificate.checkExpr_sound']),
     'g7-finite-target': ('lean/OnlineG7FiniteTargetReceiver.lean', [
         'Astra.G7FiniteTargetReceiver.consistent_piece',
         'Astra.G7FiniteTargetReceiver.reachable_iff_consistent_source',

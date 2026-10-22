@@ -279,6 +279,60 @@
       "record_encoding": "json",
       "finished_utc": "2026-10-22T06:27:01.957Z",
       "scope": "Actual new dispatch integration after adding the finite-target case. Same eleven endpoint checks; not an additional mathematical case. Prior launcher checks retain their exact historical driver hashes."
+    },
+    {
+      "runner": "check_online_component.py",
+      "runner_sha256": "d00a669409a50d627c905bad175e798e0b75e4811f03783dc37bc01a6c5442ce",
+      "case": "population-coefficients",
+      "status": "PASS_REMOTE_LEAN_CHECK",
+      "normal_child_exit": 0,
+      "entry": "online_lean_drain.mjs",
+      "core": "online_lean_quiet.mjs",
+      "entry_sha256": "034029ffdf53af6e0d595c2ee92c73abd572275531d9698ba968070b8dd8ff6e",
+      "core_sha256": "ba32b4ee63052bbdfd8a90d385cd5c764096c07ed2ab536fe00796f7bce1aca3",
+      "capture_failure": null,
+      "source_identity_unchanged": true,
+      "source_inventory_manifest_sha256": "1943be736244bab52a65234706b4a32a7170a5f8d65387cf0a22e6f06c1d4c03",
+      "source": "lean/proposals/PopulationCoefficientProjection.lean",
+      "source_bytes": 3137,
+      "source_sha256": "ea3b6538a10be5ba470d372a30a70bc6e7f53b8b98880501c4d90f5b7bc3b15c",
+      "submitted_source_sha256": "edf359872c8adcb2c1990dbc8ed6759ebca503afa35fb7c2003b0a577addbef8",
+      "versions_before_and_after": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "selected_axiom_audits": [
+        {
+          "name": "Astra.NativePopulationTableCertificate.polynomial_coefficient",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.polynomial_coefficient' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.coefficient_zero_of_absent",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.coefficient_zero_of_absent' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.NativePopulationTableCertificate.checkExpr_sound",
+          "clean": true,
+          "messages": [
+            "'Astra.NativePopulationTableCertificate.checkExpr_sound' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "error_count": 0,
+      "warning_count": 3,
+      "encrypted_readback_verified": true,
+      "encrypted_capture_bytes": 80955,
+      "encrypted_capture_sha256": "d36e884f2e873e96e125d6f7df5b1c3982b0dc699d7239456514e84a04aeab93",
+      "record_encoding": "json",
+      "finished_utc": "2026-10-22T06:39:06.161Z",
+      "scope": "Actual newly added dispatch integration of the same three pure coefficient endpoints. No additional mathematical case or full population law."
     }
   ],
   "new_theorem_case_count": 0,

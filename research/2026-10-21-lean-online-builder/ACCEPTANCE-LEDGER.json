@@ -1,6 +1,6 @@
 {
   "kind": "authored_redacted_acceptance_and_remaining_work",
-  "revision": 32,
+  "revision": 33,
   "baseline_commit": "1138a5b1a281caa00b38e0976db95b586938754b",
   "scope_reconciliation": "https://github.com/Sodelin/Research-Commons/blob/1138a5b1a281caa00b38e0976db95b586938754b/research/2026-10-07-dot-full-scope-reconciliation-1003z/CURRENT-SCOPE.md",
   "attributed_peer_scientific_outcomes": "PEER-SCIENTIFIC-OUTCOMES.json; source-owner hand verdicts retain their explicit evidence level and do not extend this builder's bounded reviews.",
@@ -309,6 +309,12 @@
         "source": "lean/OnlineG7FiniteTargetReceiver.lean",
         "source_sha256": "7db25d405e6bc344977bad2968ca18f245fbe76c0bf06396f002e9de35612844",
         "selected_audit_occurrences": 11,
+        "types_and_axioms": "CHECKED-FOLLOWONS.json"
+      },
+      {
+        "case": "pure_rational_coefficient_checker_projection",
+        "source_sha256": "ea3b6538a10be5ba470d372a30a70bc6e7f53b8b98880501c4d90f5b7bc3b15c",
+        "selected_audit_occurrences": 3,
         "types_and_axioms": "CHECKED-FOLLOWONS.json"
       }
     ],
@@ -659,14 +665,15 @@
       "g7-power-domain",
       "reject-false",
       "probe",
-      "g7-finite-target"
+      "g7-finite-target",
+      "population-coefficients"
     ],
     "new_mathematical_cases": 0,
     "normal_exit_and_verified_encrypted_readback_required": true,
     "node_clients_unchanged": true,
     "native_execution_admission": false,
     "controller_binding": "UNBOUND",
-    "current_component_driver_sha256": "7a690f93ab5fea7fa8308db03dadd09f074dfac931e93f4e9200374a27e41bfa"
+    "current_component_driver_sha256": "d00a669409a50d627c905bad175e798e0b75e4811f03783dc37bc01a6c5442ce"
   },
   "population_table_source_proposals": {
     "review": "G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md",
@@ -679,7 +686,16 @@
     "checked_case_count_change": 0,
     "native_selection_module_count_change": 0,
     "complete_closure_exceeds_existing_hosted_single_document_limit": true,
-    "native_controller": "UNBOUND"
+    "native_controller": "UNBOUND",
+    "pure_coefficient_projection": {
+      "source": "lean/proposals/PopulationCoefficientProjection.lean",
+      "selected_audits": 3,
+      "scope": "Only rational polynomial equality from finite coefficient comparison.",
+      "full_population_or_Table_endpoint_checked": false,
+      "outside_native_777": true,
+      "original_projection_disposition": "REJECTED; retained exact bytes and proof-only correction",
+      "bounded_hosted_case_count_change": 1
+    }
   },
   "g7_terminal_target_component": {
     "source": "lean/G7FiniteTargetReceiver.lean",
