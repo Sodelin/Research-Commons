@@ -69,6 +69,10 @@ those existing rows:
   slot-major edges first, ancestral last in each slot, then ORIGINAL hybrids.
   This differs from the physical age/inverse/coin bank. Generated metadata
   ties the two; an arbitrary enumeration or free interval cube cannot replace it.
+* EVERY selected destination must be covered, with zero for absent sparse
+  rows. Endpoint forcing needs an exact polynomial relation or an evaluated
+  relation on the CLOSED transition-gamma unit interval, including0 and1.
+  Natural inheritance remains strict in the untouched initial mixture.
 * Complete native conditional provider fibres must map to readRows project
   (stepRows ... s), including their full coefficient sums and exact field keys.
   Then the existing step/word theorems remove representative dependence.
