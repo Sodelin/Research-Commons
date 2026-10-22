@@ -64,9 +64,9 @@ prefix/check source review binds the raw request, recomputed matrix, complete
 witness/EVAL or complete Farkas vector. The4MiB checker frame is not a CHART
 producer guarantee; the unchanged runtime/MCP literal JSON limit is256KiB.
 
-The latest peer source inventory has771 modules/5891078B: all prior548 entries
-are unchanged, plus221 retained G1/G2/G5 dependencies and the two budget/game
-components. Graph/selection and prior metadata were reviewed; all771 bodies
+The current peer source inventory has776 modules/5911868B and preserves the
+G1, BOTH G2 and full-timed binary-M3 G5 roots. The prior775 entries and relative
+order are unchanged. Exact graph/selection metadata were reviewed; all776 bodies
 were not independently re-read here. This remains uncompiled source inventory.
 
 ## General G7 implementation
@@ -181,8 +181,9 @@ independent slot cube or complete quantified source family.
 
 The SOURCE-ONLY fixed-calendar survival plan now ties every slot to one whole-edge/
 ancestral/gamma bank using exact positive-power predicates and reindexes the same
-bound readout Batch. It does not preserve a calibrated G6 cell, choose target
-pieces, construct a SourceModel or prove native/physical source coverage. See
+bound readout Batch. The plan alone does not preserve a calibrated G6 cell, choose target-labelled
+pieces or prove native/physical source coverage. The supplied-family assembler
+below constructs the mathematical SourceModel from retained supplied data. See
 [native/G7-CORRELATED-SURVIVAL-CONTRACT.md](native/G7-CORRELATED-SURVIVAL-CONTRACT.md).
 
 
@@ -212,3 +213,10 @@ and its positional row/menu blocks in the existing Problem/frontend. Restriction
 are conjoined with the plan, target-labelled overlaps remain distinct, and the
 same original validator/compiler is reused. No physical source/target/action
 coverage, compiler acceptance or backend/selector execution is inferred.
+
+The public Lean capture helper and both companions now have a source-linked
+review in evidence/LEAN-PUBLIC-CAPTURE-SOURCE-REVIEW.json. The peer's twelve
+mock regressions and three actual launcher checks retain their exact scope:
+normal exits, original byte streams and encrypted readback are required before
+acceptance. These reuse existing cases, add no mathematical case and do not
+bind the native Linux controller or transitive first writers. No check ran here.
