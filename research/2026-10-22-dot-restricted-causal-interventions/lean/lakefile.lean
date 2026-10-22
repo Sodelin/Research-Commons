@@ -28,4 +28,5 @@ lean_lib RestrictedCausalSource where
     `WeakInducingEdges, `OriginalWeakConnection, `WeakRouteNormalization,
     `OriginalMAGConnection, `CommonDiscriminatingParents,
     `VertexActivePaths, `MinimalActivePaths, `AncestralShortcutGeometry,
-    `MinimalPathChord, `DiscriminatingSectionExtraction]
+    `MinimalPathChord, `DiscriminatingSectionExtraction,
+    `ActivePathReversal, `VertexDiscriminatingSections]

@@ -14,6 +14,14 @@ namespace RestrictedCausal.SelectedWalk.Route
 
 universe u
 
+theorem full_list_ends {V : Type u} {R : V → V → Prop} {p q : V} {xs : List V}
+    (h : Route R p xs q) : ∃ prefix, p :: xs = prefix ++ [q] := by
+  induction h with
+  | nil p => exact ⟨[], rfl⟩
+  | @cons p next q xs step tail ih =>
+      obtain ⟨prefix, eq⟩ := ih
+      exact ⟨p :: prefix, by simpa only [List.cons_append, eq]⟩
+
 theorem last_failure_suffix {V : Type u} {R : V → V → Prop} (P : V → Prop)
     {p q : V} {xs : List V} (h : Route R p xs q) :
     (∀ r ∈ p :: xs, P r) ∨ ∃ b prefix suffix,
@@ -141,7 +149,11 @@ theorem extract_left_discriminating_section {V : Type u} (G : MarkedGraph V)
     (notConditionedStart : ¬ Z x) (qGood : ParentConditioned G Z y.vertex q) :
     ∃ start nodes, Route (ColliderParentStep G y.vertex) ⟨start, none⟩ nodes b ∧
       (((⟨start, none⟩ :: nodes).map Arrival.vertex) ++ [y.vertex]).Nodup ∧
-      ¬ Adjacent G start y.vertex ∧ 2 ≤ nodes.length := by
+      ¬ Adjacent G start y.vertex ∧ 2 ≤ nodes.length ∧
+      ∃ parents, nodes = parents ++ [b] ∧
+        Route (ColliderParentStep G y.vertex) ⟨start, none⟩ parents q ∧ ColliderParentStep G y.vertex q b ∧
+        ∃ dropped : List V, x :: ((prefix ++ [b, y] ++ suffix).map Arrival.vertex) =
+          dropped ++ (((⟨start, none⟩ :: nodes).map Arrival.vertex) ++ [y.vertex]) ++ suffix.map Arrival.vertex := by
   classical
   rcases hp.last_failure_suffix (ParentConditioned G Z y.vertex) with all |
       ⟨stop, front, tail, first, lastRoute, decomposition, stopBad, allGood, sub⟩
@@ -187,10 +199,21 @@ theorem extract_left_discriminating_section {V : Type u} (G : MarkedGraph V)
           simpa only [List.append_nil] using
             (List.Sublist.refl (((⟨x, none⟩ :: prefix).map Arrival.vertex) ++ [b.vertex, y.vertex])).append
               (List.nil_sublist (suffix.map Arrival.vertex))
-        refine ⟨stop.vertex, (next :: rest) ++ [b], parentPath, ?_, nonadjacent, ?_⟩
+        refine ⟨stop.vertex, (next :: rest) ++ [b], parentPath, ?_, nonadjacent, ?_, ?_⟩
         · simpa only [List.map_append, List.map_cons, List.map_nil, List.cons_append,
             List.append_assoc, List.singleton_append] using fullNodup.sublist (shortSub.trans addSuffix)
         · simp only [List.length_append, List.length_cons, List.length_nil]
           omega
+        · refine ⟨next :: rest, rfl,
+            .cons ⟨outgoing, incoming, edge, mark, trivial⟩ parentBack, parentLast, ?_⟩
+          obtain ⟨dropped, endEq⟩ := first.full_list_ends
+          have fullStateEq : (⟨x, none⟩ :: (prefix ++ [b, y] ++ suffix)) =
+              dropped ++ (stop :: ((next :: rest) ++ [b, y])) ++ suffix := by
+            rw [decomposition]
+            simpa only [List.cons_append, List.append_assoc, List.singleton_append] using
+              congrArg (fun states => states ++ ((next :: rest) ++ [b, y] ++ suffix)) endEq
+          refine ⟨dropped.map Arrival.vertex, ?_⟩
+          simpa only [List.map_append, List.map_cons, List.map_nil, List.cons_append,
+            List.append_assoc, List.singleton_append] using congrArg (List.map Arrival.vertex) fullStateEq
 
 end RestrictedCausal.AncestralShortcutGeometry
