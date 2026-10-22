@@ -1,5 +1,13 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 23:46 UTC: actual indexed original cell/subtree queries
+
+Seven OPTIONAL UNELABORATED modules compose paid restoring copies, physical index framing, the existing actual raw frame parser and cleanup; the exact original two-unary-field leaf reader; generic restoring <=/=/< comparisons; exact finite-cell range checks; full indexed typed-cell and subtree-mask routines; and complete semantic legal-index/view identities. All decoded numbers are physical unary data/proof parameters, not unbounded finite control. The indexed bounds are 17L+6I+4m+4A+44 for typed leaf data and 9L+6I+21 for a forward subtree mask. Failure, end and overshoot cases and fresh-work preconditions are explicit; outputs are not silently erased.
+
+Fresh read-only Lean v4.33.1 inspection verifies drop_eq_nil_of_le in Init/Data/List/Basic.lean, eq_nil_of_length_eq_zero in Init/Data/List/Lemmas.lean and length_drop in Init/Data/List/TakeDrop.lean. Existing inspected actual copy/parser/subtraction/branch/sequence/cleanup and embedding APIs are reused. The own and optional dependency pins remain unchanged and differ; complete compatibility and transitive axiom/kernel checks remain open. Lexical screening is not parsing/elaboration/verification. No execution, test, CI, install, compiler or certificate.
+
+The original cell-domain bridge preserves block<=m and terminal<N+mN+3, rather than imposing row-tag equality. Exact mask-index identities retain every original subtree/clade, but the actual finite outer/nested cursor and complete independent target guards, cell-set/uniqueness tests, all fixed clades, actual score/budget and clean full verifier time are still missing. Existing constructor source and saturated semantic adapters do not discharge that obligation. Encoded-source hardness, end-to-end kernel checking, arbitrary-DAG formalization and biological identification remain separate. No previous review is extended to these new sources.
+
 ## Continuation, 23:16 UTC: exact legal-node mask and actual logging/restoration
 
 Four OPTIONAL UNELABORATED modules give an all-word original-grammar mask, exact actual-node suffix/clade enumeration, a fixed three-stack/five-label physical logger, caller-preserving operational embedding and actual paid forward-order restoration. The proposed 3L+q+length(accumulator)+3 bound includes malformed-field and prior-accumulator cleanup; the singleton entry is 3L+5 and the restored forward mask is 4L+6. Prefix fuel and tree structures occur only in the specification/proof, not finite control. Each private boundary and outside caller frame is retained.

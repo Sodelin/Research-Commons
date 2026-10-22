@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 23:16 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 23:46 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued ORIGINAL physical indexed queries SOURCE, 23:46 UTC
+
+Seven OPTIONAL UNELABORATED modules now compose actual physical unary-index replay with the original TWO-field leaf reader and actual preserving range comparisons. The typed-cell observation is exactly the original finite decoder mapped to injective numerical cell codes. The domains are block <= m and type < A=N+mN+3; no enclosing-row/block-tag equality is added. End, overshoot and malformed word cases are explicit, under the stated owned-work/unary-operand caller invariant. The complete indexed leaf bound is 17L+6I+4m+4A+44; original/index/operands and caller frame survive, while source/two results remain owned outputs.
+
+Exact bounded-index/list identities additionally retain EVERY genuine subtree view and original scanClades from the legal node mask. A physical replay-plus-forward-mask routine returns the selected subtree's suffix/mask in at most 9L+6I+21, with pending/reverse/discard work clean. The mask, not mere parseability, proves that a queried suffix begins at a genuine node. POLYTOMY-INDEXED-ORIGINAL-QUERIES.md contains the full hand argument and dependency status.
+
+Still missing is the ORIGINAL full VerifierMachineWitness: actual finite mask-driven nested cursors, all-input bounded headers, independent target guards, uniqueness/cell-set equality, every supplied fixed clade, original distinct-type score/budget, a single clean Boolean halt and one full polynomial bound. Existing saturated semantics are not that machine. Source hardness, dependency/toolchain/kernel checks, arbitrary-DAG and biological scopes remain open. No compiler/runtime, new independent review, certificate or novelty claim.
 
 ## Continued ORIGINAL legal-node mask SOURCE, 23:16 UTC
 
