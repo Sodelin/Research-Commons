@@ -34,5 +34,6 @@ No Lake/Cargo/native invocation or change to its first-writer hold occurred.
 
 The source review in
 [G7-CONTROLLED-WORD-RECEIVER-JOIN.md](G7-CONTROLLED-WORD-RECEIVER-JOIN.md)
-also records the duplicate-mask restriction of the Rust row binder. Distinct
-original row IDs/resources require explicit coverage or a proved transport.
+also records the historical duplicate-mask restriction and its source-only
+correction at Rust4534ca9b. Distinct original row IDs/resources are now retained
+in the inspected sources; native resource and action refinement remains open.

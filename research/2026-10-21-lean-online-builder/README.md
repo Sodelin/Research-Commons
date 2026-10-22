@@ -50,6 +50,12 @@ composes the power-domain component with original WordVariable/wordEval and
 the existing controlled-word supplier at SOURCE ONLY level. Its complete
 imports are unelaborated; it adds no hosted case and is not selected in776.
 
+The [native primitive-row review](G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md)
+pins the existing population recurrence/support and both coefficient/physical
+word-composition routes. Rust4534ca9b corrects the earlier duplicate-mask
+coverage restriction at SOURCE ONLY level, retaining positional row costs.
+The actual native state/key/panel and total coefficient relations remain open.
+
 ## Original source context
 
 [MASTER-SOURCE-ASSEMBLY.md](MASTER-SOURCE-ASSEMBLY.md) pins the exact retained

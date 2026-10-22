@@ -214,7 +214,7 @@ arbitrary possibly empty population/slot carriers. The ancestral use is D=1.
 This proves the mathematical domain relation; it does not verify Rust rational
 reduction, exponent conversion, variable renaming or coefficient evaluation.
 
-One additional original-coverage premise was found in bind_rows: its BTreeSet
+At that1b0f210d revision, an additional original-coverage premise was found in bind_rows: its BTreeSet
 rejects duplicate MASK VALUES. The retained typed rows:Row->ID->Option Bool
 permits arbitrary distinct Row IDs with equal masks; it has no injectivity
 premise. This refusal is safe for successful supplied inputs, but that
@@ -225,8 +225,26 @@ legal actions, row-specific positive-support PATH resources and updates.
 Equal masks alone do not discharge that transport. No new API or test suite is
 requested by this source finding.
 
+That restriction is SUPERSEDED at Rust4534ca9b. The current survival source
+16339B/6a7f5f78 removes only the mask-uniqueness guard/import and narrows its
+arity error. The frontend60585B/88e71aad and LAW inlet22160B/3ec702da also
+retain equal masks at distinct original row positions. Their row validation,
+menu/channel construction and resource-update regions were inspected; source
+bytes were independently SHA/Git-blob checked. This is not whole-frontend
+or executable refinement. Repeated support IDs still fail. Resource row
+unions use original positions, and Some(false) touches its original site.
+Normalized menu choice is separate from each menu's outcome channel; the
+derived coefficient is w(row)*q(row,menu)*channel(row,menu,outcome,output).
+Exact source scopes are in G7-PRIMITIVE-COEFFICIENT-SOURCE-REVIEW.json.
+No quotient of original row IDs is performed, and no new control was run.
+
 The varying real family remains separate from its rational CHART template.
 Neither this mathematical receiver nor successful bind_rows constructs the
 original admitted predicate/target, complete physical action coverage or an
 actual SourceModel. Both source directions and all history equations still
 use one represented physical bank before the checked SourceTransfer receiver.
+
+The current lower primitive-row use-site and the EXISTING weaker physical
+word-composition receiver are pinned in G7-NATIVE-POPULATION-COEFFICIENT-JOIN.md.
+No new transition oracle or independent multi-slot cube is needed. Native
+key/state/panel/coefficient equality remains a real refinement obligation.
