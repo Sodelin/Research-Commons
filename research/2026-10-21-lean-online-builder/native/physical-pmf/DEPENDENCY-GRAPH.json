@@ -26,7 +26,8 @@
         "G7FinitePathBudgetBridge",
         "G7FinitePathGame",
         "G7ExactLawSourceTransfer",
-        "G7PaddedResponseCarrier"
+        "G7PaddedResponseCarrier",
+        "TwoTipOriginalCodeReceiver"
       ],
       "order": [
         "SourceNetwork",
@@ -801,7 +802,9 @@
         "G7FinitePathBudgetBridge",
         "G7FinitePathGame",
         "G7ExactLawSourceTransfer",
-        "G7PaddedResponseCarrier"
+        "G7PaddedResponseCarrier",
+        "TwoTipSourceDeclarations",
+        "TwoTipOriginalCodeReceiver"
       ],
       "modules": {
         "SourceNetwork": {
@@ -6054,6 +6057,22 @@
           "sha256": "b12c8626f6d9b2d6f1d35646f091cc04a682d25f482493ad2065242a70b1060d",
           "imports": [
             "G7ExactLawResourceGame"
+          ]
+        },
+        "TwoTipSourceDeclarations": {
+          "sha256": "1afa303d7ee2f28fba18fa719139acbf701ac24e10b4f00365cb2c6e69193a19",
+          "imports": [
+            "G6NaturalCellOrderedCompiler",
+            "GParity.Chart",
+            "Mathlib.Tactic.FinCases"
+          ]
+        },
+        "TwoTipOriginalCodeReceiver": {
+          "sha256": "b20f2ca4357c3edf626be2714901cb417425d7d904395f0757c3c149da2fd41d",
+          "imports": [
+            "OriginalCodeChartReceiver",
+            "TwoTipSourceDeclarations",
+            "Mathlib.Tactic.FinCases"
           ]
         }
       },

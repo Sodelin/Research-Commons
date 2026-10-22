@@ -1,19 +1,20 @@
 # Combined retained-root and physical source context
 
-The current SOURCE ONLY preparation contains773 modules /5,901,586 bytes:
+The current SOURCE ONLY preparation contains775 modules /5,908,266 bytes:
 754 originals selected from current/connected at Commons1138a5b1a281caa00b38e0976db95b586938754b,
-plus19 explicitly owned modules or import-only variants. Every selected source
+plus21 explicitly owned modules or import-only variants. Every selected source
 body, byte count and internal topological order was verified. Module names and
 hashes have no aliases. All preceding548 entries are unchanged;221 original
-dependencies add the exact retained G1/G2/G5 closures. The other four additions
+dependencies add the exact retained G1/G2/G5 closures. Six further components
 are the checked path-budget bridge, game-horizon composition, conditional
-source transfer and response padding. The immediate772-module predecessor is
-unchanged; this last revision adds only G7PaddedResponseCarrier.
+source transfer, response padding, safe retained two-tip declaration projection
+and concrete Code receiver. Every immediate773-module predecessor entry and
+its relative dependency order are unchanged.
 
-Graph232626B/SHA256
-92a46556841fb4cccfb11ecc977677e1fb259d778a72b1371cf33b21e5aec3dd.
-Selection165649B/SHA256
-1ba50637562461a2bb16f8e9423c934d973076ae059e4b6b5b9272b5362b3730.
+Graph233314B/SHA256
+eba9d6284d27c8e7e3ff825ce5ace6e25b307f2566be3226503f9ca79d887b35.
+Selection166101B/SHA256
+b38dc772c451de8eec50942f573c2029233890925e30661b7e3115ccdf6c3b9c.
 
 ## Selected roots and additions
 
@@ -26,13 +27,16 @@ G5M3NormalizedClusterSplitIdentification. Exact declarations and inherited
 scope are pinned in ../../MASTER-SOURCE-ASSEMBLY.md. Source acquisition does
 not rerun an accepted build.
 
-The19 additions are four CM/rational wrappers; the original certificate kernel;
+The21 additions are four CM/rational wrappers; the original certificate kernel;
 two unchanged original generated certificates; two unchanged authored bank
 witnesses; and NativeOrderedBankLayout, OriginalCodeBankLayout,
 NativeCellFormReflection, NativeCellAggregateReflection,
 OriginalCodeChartReflection, OriginalCodeChartReceiver,
 G7FinitePathBudgetBridge, G7FinitePathGame, G7ExactLawSourceTransfer and
-G7PaddedResponseCarrier.
+G7PaddedResponseCarrier, TwoTipSourceDeclarations and TwoTipOriginalCodeReceiver.
+The retained original G6TwoTipChartFixture itself is not selected: its five
+evaluation commands remain excluded. The declaration projection is explicit
+and source-pinned; see ../../G6-TWO-TIP-CODE-RECEIVER.md.
 No replacement source or affine engine is introduced.
 
 Only two import variants are selected:

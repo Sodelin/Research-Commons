@@ -134,7 +134,11 @@ def main():
         ('G7ExactLawSourceTransfer',
          'e8f713f2f123ec55f97168c92b724b01af5b0835bbe90cc6308e8749ea31423a'),
         ('G7PaddedResponseCarrier',
-         'b12c8626f6d9b2d6f1d35646f091cc04a682d25f482493ad2065242a70b1060d')]:
+         'b12c8626f6d9b2d6f1d35646f091cc04a682d25f482493ad2065242a70b1060d'),
+        ('TwoTipSourceDeclarations',
+         '1afa303d7ee2f28fba18fa719139acbf701ac24e10b4f00365cb2c6e69193a19'),
+        ('TwoTipOriginalCodeReceiver',
+         'b20f2ca4357c3edf626be2714901cb417425d7d904395f0757c3c149da2fd41d')]:
         additions.append((name, checked(packet/'lean'/(name+'.lean'), digest)))
     for name, body in additions:
         if name in modules or any(dep not in modules and not dep.startswith(('Mathlib.', 'Init', 'Std'))
@@ -193,7 +197,8 @@ def main():
             ['Astra.Generated.BankWitness_'+identity for identity,_ in BANKS]+
             ['OriginalCodeBankLayout','NativeCellFormReflection','NativeCellAggregateReflection',
              'OriginalCodeChartReflection','OriginalCodeChartReceiver','G7FinitePathBudgetBridge',
-             'G7FinitePathGame','G7ExactLawSourceTransfer','G7PaddedResponseCarrier'],
+             'G7FinitePathGame','G7ExactLawSourceTransfer','G7PaddedResponseCarrier',
+             'TwoTipOriginalCodeReceiver'],
         'order':order,'modules':modules,'required_for_accepted_release':False}},
         'original_source_commit':COMMIT,'original_graph_sha256':GRAPH_SHA,
         'scope':'Source-only proposed combined context; no historical acceptance transfer.'}
@@ -213,7 +218,7 @@ def main():
     (destination/'SOURCE-SELECTION.json').write_text(json.dumps(manifest,indent=2)+'\n')
     sys.path.insert(0,str(ROOT))
     from peer_message import seal
-    receipt,_ = seal({'action':'LEAN-NEW-MASTER-AND-PHYSICAL-SOURCE-CONTEXT-PREPARE-20261022-r13',
+    receipt,_ = seal({'action':'LEAN-NEW-MASTER-AND-PHYSICAL-SOURCE-CONTEXT-PREPARE-20261022-r14',
         'source_graph_sha256':hashlib.sha256((destination/'DEPENDENCY-GRAPH.json').read_bytes()).hexdigest(),
         'source_selection_sha256':hashlib.sha256((destination/'SOURCE-SELECTION.json').read_bytes()).hexdigest(),
         'modules_source_verified':len(rows),'source_bytes':sum(row['bytes'] for row in rows),

@@ -1,13 +1,13 @@
 # Lean components and original-source assembly
 
 This packet contains actual hosted Lean checks and a separately prepared,
-uncompiled native source context. The current source context contains **773
-modules / 5,901,586 bytes**:754 original modules and19 explicitly owned modules
+uncompiled native source context. The current source context contains **775
+modules / 5,908,266 bytes**:754 original modules and21 explicitly owned modules
 or import variants. Every selected body and internal dependency order was
 verified. All preceding548 entries are unchanged. Additions comprise221
 original dependencies of the retained G1/G2/G5 endpoints, the two checked
 path-budget/game components, conditional two-sided source transfer and the
-zero-padded response carrier.
+zero-padded response carrier, plus the retained two-tip declaration projection and concrete Code receiver.
 
 [ACCEPTANCE.md](ACCEPTANCE.md) and [the ledger](ACCEPTANCE-LEDGER.json) preserve
 the original finish lines. G1, timed and unranked G2, and full-timed binary-M3
@@ -16,7 +16,7 @@ with incomplete formal/native assembly. General G3/G4 remain open.
 
 ## Actual hosted checks
 
-[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains27 bounded follow-on
+[CHECKED-FOLLOWONS.json](CHECKED-FOLLOWONS.json) contains28 bounded follow-on
 cases with complete selected types, axiom lists and revision dispositions.
 The original two certificate checks and rejection controls are additionally
 recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
@@ -25,6 +25,7 @@ recorded in [CHECKED-STATEMENTS.json](CHECKED-STATEMENTS.json).
 | --- | --- | --- |
 | Original admission and ordered bank | Complete43-original-module closure plus two layout modules; six selected audits and two explicit hosted API variants | [Admission](ADMISSION-COMPONENT.md) |
 | Original Code to CHART | Primitive fields, all eight emission blocks, original coefficient lengths and finite-set compiler relation | [Aggregate](G6-AGGREGATE-REFLECTION.md), [Code map](G7-CODE-CHART-REFLECTION.md) |
+| Literal two-tip Code | Constructive binary/registry/cut-child admission, exact wire fields/rows and supplied-witness physical bank; eight selected audits | [Concrete receiver](G6-TWO-TIP-CODE-RECEIVER.md) |
 | CHART physical receiver | Same returned calendar, reciprocal positive rates and strict natural coin bank; exclusion only for the supplied cell | [Receiver](G6-CODE-CHART-RECEIVER.md) |
 | Exact-law game and rank | Complete retained bodies, twelve selected audits and one disclosed hosted proof-only repair | [Game](G7-CHECKED-GAME-SEMANTICS.md) |
 | Finite path budgets | Deletion legality and remaining-call bound for a finite union of original path-budget regions; four selected audits | [Budget bridge](G7-FINITE-PATH-BUDGET-BRIDGE.md) |
@@ -52,8 +53,8 @@ and Code receiver roots. CMSparseSupplier is absent; the original physical
 supplier occurs once. Only the two declared CM/Real import variants are selected.
 Hosted proof API variants remain separate.
 
-Graph SHA256:92a46556841fb4cccfb11ecc977677e1fb259d778a72b1371cf33b21e5aec3dd.
-Selection SHA256:1ba50637562461a2bb16f8e9423c934d973076ae059e4b6b5b9272b5362b3730.
+Graph SHA256:eba9d6284d27c8e7e3ff825ce5ace6e25b307f2566be3226503f9ca79d887b35.
+Selection SHA256:b38dc772c451de8eec50942f573c2029233890925e30661b7e3115ccdf6c3b9c.
 This is a source-only proposal for Lean4.33.1/mathlib0df444a3. No full-import
 elaboration, compiler, Lake/Cargo/CI run or object-custody acceptance occurred.
 
@@ -78,15 +79,17 @@ python3 -B check_online.py --case two \
 
 The original driver has an actual encrypted transport-probe result. The newer
 check_online_component.py companion is SOURCE ONLY/unexecuted. Actual component
-checks used the identical published Node client through the existing installed
-RAM-to-encrypted-record binding. No new identity, key export, local compiler or
+checks used the published Node core client through the existing installed
+RAM-to-encrypted-record binding. The latest literal-Code check adds a small
+report-drain/exit wrapper; protocol and acceptance logic remain in the identical
+core. Exact entry/core identities and timeout limitations are recorded. No new identity, key export, local compiler or
 model API is involved. A refused record binding has no plaintext fallback.
 
 The first scientific use-site join is exact captured request value to literal
 Code/validity, actual taxon/hybrid order and typed fields, then authenticated
-result binding to those exact rows. The generic Code map and receiver are
-checked; parser/mutable-validator/executable refinement and a captured instance
-remain open. [The I/O contract](G6-CAPTURED-REQUEST-RESULT-BINDING.md) retains
+result binding to those exact rows. The generic Code map and receiver, plus one literal retained
+fixture instance, are checked. Parser/mutable-validator/executable refinement
+and authenticated native capture remain open. [The I/O contract](G6-CAPTURED-REQUEST-RESULT-BINDING.md) retains
 original dimensions, duplicate rows and complete external multipliers.
 
 Canonical AFFINE remains8coordinates/64rows; unadmitted CHART remains32/128.
@@ -105,6 +108,8 @@ equality and both original source-coverage directions remain unproved.
 
 [The guarded-query review](G7-GUARDED-ASSERTION-SOURCE-REVIEW.json) checks only
 the new positive-guard source addition and its unchanged-core correspondence.
+[The subsequent scope review](G7-QUERY-SCOPE-SOURCE-REVIEW.json) covers the
+iterative binder/free-context audit and original action-coverage qualification.
 FALSE is inconclusive in that interface. Immutable declaration borrowing is
 not backend authentication, effective selection or a proof of AST semantics.
 
