@@ -87,3 +87,15 @@ constructing those fields for the exact captured Code and reflected records;
 the native parser/validator/result origin and physical admission do not follow.
 The current546-module metadata adds ONLY the aggregate source to545, with all
 prior entries unchanged and4530839B total; the quiet outer refusal remains.
+
+The current checked OriginalCodeChartReflection constructor now builds
+FieldReflection FROM the supplied literal Code, real hb/hr proofs, named
+orders and typed records. OriginalCodeChartReceiver composes the EXISTING
+wire/physical-bank constructors. Nine complete selected types and exact
+89542B/139854B source/audit assemblies were reviewed at peerd2695058.
+The remaining use-site is captured source/chart equality to inputOfCode and
+the authenticated original result/checker association, rather than a new
+FieldReflection factory. The mathematical input still requires valid Code
+proofs and the named orders. Full physical class/readout/origin, parser/native
+refinement and pinned imports stay open. Current548 metadata/4543496B adds
+only these two proof modules to546; every previous entry is unchanged.

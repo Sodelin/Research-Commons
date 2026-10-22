@@ -141,3 +141,13 @@ original coefficient lengths and complete-registry finite-set link. Construct
 its concrete captured-Code instance, then reuse the original wire witness/
 contradiction receivers. Keep runtime origin and parser/native refinement,
 source/port/admission/readout premises and encrypted first-writer binding open.
+
+The generic Code use-site and old physical-bank receiver composition now
+have attributed hosted checking in OriginalCodeChartReflection/Receiver.
+The former constructs FieldReflection from real Code validity/named order and
+typed fields; the latter reuses the same vector for the original calendar,
+coins and positive reciprocal rates. Complete external multiplier length is
+explicit in the supplied-cell exclusion. Exact captured request equality and
+result/origin authentication remain necessary. See
+evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json. No new engine, native run or
+canonical CHART admission follows from this mathematical composition.

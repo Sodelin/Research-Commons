@@ -70,3 +70,10 @@ exact histories and next-action fibres, using existing exact polynomial types.
 It is uncompiled/unexecuted. The source-only semantic verification plan has no
 PASS results. Actual census/law supply, AST/Winning correctness, verified QE,
 relative-history action/lower-witness selection and frontier remain required.
+
+The supplied literal-Code forward map and existing wire/physical-bank receiver
+composition now have attributed hosted checks (four and five selected complete
+types). Constructing another generic FieldReflection factory is unnecessary.
+The actual captured source/chart must equal inputOfCode for that Code/validity/
+order, and the authenticated original result must bind the exact rows/vector.
+Those data/refinement and physical source/readout premises remain open.

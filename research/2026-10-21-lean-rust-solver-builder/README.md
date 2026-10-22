@@ -1,232 +1,112 @@
-**Execution hold:** prior hosted jobs persisted synthetic runtime traces in plaintext. New CI launches are disabled pending the existing encrypted-writer binding required before first persistence. See RECORD-WRITER-GAP.md. Mathematical/behavioral results below remain observed with that record-policy limitation; the full goal stays active.
+# Lean-to-Rust G1–G7 solver builder
 
-# Rational candidate-support acquisition for the Lean/Rust solver
+The full solver goal remains active in the existing [draft PR2](https://github.com/Sodelin/Research-Commons/pull/2).
+This packet integrates retained native work, the existing Lean owner's exact
+checked mathematical receivers, and new pure source interfaces. No local Git
+or phone project/build artifact is used. No new chat or sub-agent is created.
 
-The native proposer, original Python certificate checker/emitter, unchanged
-runtime and unchanged stdio MCP connector passed actual ONLINE verification in
-[run 39673487466](https://github.com/Sodelin/Research-Commons/actions/runs/39673487466).
-The source tested was 73ff92d4b768e929309a24da773d20a2c63199bc. The corresponding
-[Lean source packet](https://github.com/Sodelin/Research-Commons/pull/3) was
-independently read and matched byte-for-byte; its hosted Lean checking is
-attributed peer evidence. See PUBLICATION.md and evidence/.
+## Current evidence and implementation
 
-For r=1,2,3 proposed distinct rational values in (0,1], the native component
-accepts exactly 2r+1 moments at exponents 0,1,3,...,r(2r+1). It constructs an
-exact sparse polynomial with double zeros at the candidates, checks a
-nonnegative rational quotient, emits the ORIGINAL weighted-square certificate
-wire, and invokes the inherited exact checker before returning
-GENERATED_AND_CHECKED.
+| Component | Actual evidence | Remaining practical boundary |
+| --- | --- | --- |
+| Bounded r<=3 rational support proposer and exact one-bank moments | Original checker/emitter/runtime/MCP chains;194 banks and reversals,17 refusals,one growth UNKNOWN; exact Linux objects retained | Earlier runtime traces first persisted in plaintext, with explicit policy limitation; no canonical adoption or arbitrary-input G3/G4 closure |
+| Original certificate and rational/finite-PMF bank receivers | Attributed hosted Lean checks of exact certificates, both authored raw-bank witnesses and original-helper semantic adapters | Actual supplied-source/readout provenance, native grouping/parser refinement and pinned imports |
+| Existing affine engine and literal certificates | Corrected proof-only receiver/nine selected audits; six unchanged authored literals/twelve audits; rejected proposals retained | Pure Python emitter/binder/provenance extensions and new controls remain unexecuted |
+| Generic layout, CHART forms and eight-block aggregation | Exact sources integrated; two/four/four selected hosted audits, exact original projections and submissions reconstructed | Native request/value/refinement and canonical CHART admission |
+| Complete original Code/admission/layout component |43 original bodies authenticated,41 unchanged plus two explicit hosted API variants; six complete selected audits | Pinned4.33.1 full imports/objects and actual captured valid Code |
+| Literal Code-to-CHART and old physical receiver | Four plus five selected hosted audits; exact89542B/139854B source and audit assemblies reconstructed | Captured source/chart equals inputOfCode with actual hb/hr/named orders; authenticated original result/check association |
+| Rust CHART row-export adapter | Reuses original parser/compiler; all51 original native source inputs prepared remotely | Source only, uncompiled/unexecuted; five staged controls and writer binding open |
+| Pure Rust general G7 formula frontend | Authored exact Polynomial/Rational-based library and isolated Cargo proposal; source review only | Uncompiled/unexecuted; actual law supply, AST refinement, QE/relative-history selection, lower witnesses and frontier |
 
-Candidate nodes are auxiliary proposals. The old check_certificate task
-independently validates the output. Candidate failure or rational/output bound
-exhaustion returns UNKNOWN; malformed or domain-invalid input returns REFUSED.
-The conservative old support cap remains L-1=2r. Physical source existence,
-general all-input search and a formal native refinement are separate obligations.
+The Lean evidence is attributed to the existing [Lean draft PR3](https://github.com/Sodelin/Research-Commons/pull/3),
+in hosted Lean4.35.0/mathlib56a005/manifest3bafb347. It is not an independent
+compiler rerun here or pinned4.33.1/mathlib0df444 acceptance. Complete selected
+types/standard axioms, original source identities, rejected revisions and exact
+scope are retained in evidence. Repeated supporting audits are not independent
+master-breakthrough counts. Authored checked fixtures are not claimed outputs
+of the unexecuted Python emitters.
 
-## Reused components and ownership
+## One source, one ordered bank and original rows
 
-The base is Research-Commons commit
-1138a5b1a281caa00b38e0976db95b586938754b.
+SOURCE-CODE-ROW-BINDING.md and NATIVE-ROW-FIELD-CONTRACT.md retain exact original
+edge/taxon/hybrid occurrence orders. The native layout is ages, original edge
+inverse rates, ONE ancestral inverse rate, then original hybrid coins. The
+generic Code forward map constructs FieldReflection from literal Code,
+BinaryValid/RegistryValid proofs, named orders and typed chronology/exposure/
+coin data. It derives complete ordered decoded rows and original coefficient
+lengths, then the existing compileCell set equality. It assumes no emitted
+matrix equality. Duplicate constraint rows and external multiplier positions
+remain intact; only internal unit bookkeeping weights are erased.
 
-- rust/src/main.rs preserves the old exact parser, arithmetic, checker and
-  singleton generator from research/2026-10-13-astra-unified-solver-0645z.
-  Only module registration and one dispatch arm are inserted.
-- The established exact-count-certificate path dependency and existing num-*
-  versions/checksums are reused. The root package alone is renamed in the lock.
-  Locked fetch, then offline test/build, passed with official Rust1.90.0.
-- certificates.py, emit_lean.py, solve.py, the newer
-  research/2026-10-13-astra-unified-runtime-2350z/runtime.py and
-  applications/research-solver-interop are unchanged.
-  applications/practical-solver is a distinct nine-parameter contract.
-- The existing weighted-square Lean library and literal emitter are unchanged.
-  The accepted general CM-T02 sparse-moment component at
-  514648b697aeed8f46582109cfeefcd7707cd738 retains its original scope.
+OriginalCodeChartReceiver reuses the original wire/physical-bank construction.
+A checked rational vector provides the SAME original Calendar, strict natural
+inheritance and positive edge/ancestral rate bank. Rates are reciprocals of its
+positive inverse coordinates. A complete checked contradiction vector excludes
+only the supplied ORIGINAL SOURCE CELL. It does not supply physical readouts,
+source-class coverage, all-source NO or arbitrary native parser correctness.
 
-This proposal owns this directory and its uniquely named Rust CI workflow.
-The existing Lean builder owns compiler/package assembly. Historical scientific ownership and original G3/G4/P1/P5 completion standards
-remain recorded. The later allocation of four existing research contexts to
-two basketball/two baseball tasks is preserved; no mathematical chat is
-reactivated or reassigned by this component. No local Git
-writes, phone project checkout/build, new chat or sub-agent was used.
+The first data join is exact captured source/chart equality to inputOfCode
+for the literal valid Code and actual named orders, then original request/
+result/checker authentication. RootedBinary validity does not silently add
+CutChild, required outer-labelled planarity, menus, readout or physical origin.
+M0 maps incoming[0]/[1] to original parent0/1; coherent LAW substitution is
+G=1-physical_gamma for the false/true convention. No exporter performs or
+proves that physical substitution automatically.
 
-## Exact finite rational bank candidate
+Canonical native_rc1 still admits AFFINE/LAW: AFFINE8/64 differs from the
+unadmitted CHART32/128 core. A full binary bank needs4n+6h-2 coordinates; a
+four-taxon tree already needs14. Over-cap input stays UNKNOWN/unavailable,
+never truncation or global NO. Derived matrix rationals can exceed the raw
+256bit input cap and retain the exact CHART result/check route. Original
+prefix/check source review binds the raw request, recomputed matrix, complete
+witness/EVAL or complete Farkas vector. The4MiB checker frame is not a CHART
+producer guarantee; the unchanged runtime/MCP literal JSON limit is256KiB.
 
-BANK-INTERFACE.md specifies a separate common-bank-moments executable plus
-request-bound Python verification. It removes only zero masses, combines equal
-rational values and derives all triangular moments from ONE law. When its
-shape fits r<=3, it emits the existing acquisition request. [Run39675913869](https://github.com/Sodelin/Research-Commons/actions/runs/39675913869)
-compiled it and passed194 banks/reversals,17refusals,onegrowth UNKNOWN,eight
-codec negatives,eight actual CLI calls and both old-runtime fixture chains.
-Its actual new binary identity and authenticated evidence are in evidence/bank-39675913869/. The existing proposer/main and interfaces stay
-unchanged. No physical source admission or arbitrary-real computability follows.
+The current physical source metadata has548 modules/4543496B. Only the two
+Code/CHART proof modules were added to546, with every prior entry unchanged.
+All bodies/imports/objects were not independently accepted here. Pinned source
+variants and quiet outer refusal remain distinct from the hosted projection.
 
-## Input/output and reproducible execution
+## General G7 implementation
 
-rust/src/support.rs implements acquisition. codec.py is strict transport:
-JSON to native wire, then request-bound native stdout to the original
-unified_research_solver_v1/check_certificate request. It authenticates and
-executes the original Python checker source. It does not spawn the native
-process or change certificate semantics. Literal moment spellings are retained.
+G7-POLICY-REUSE.md recovers the ORIGINAL accepted539c contract and existing
+source census, whole-forest polynomial compiler, real-QE/CAD providers and typed
+Winning/rank/resource/strategy interfaces before new implementation.
 
-fixtures/two-acquisition.json has candidates 1/3,2/3 and moments
-(1,1/2,1/6,65/1458,1025/118098). fixtures/two-check-request.json and
-fixtures/three-check-request.json are exact old-schema certificate inputs.
-Both corresponding standalone Lean outputs are retained in generated/.
+native/g7_exact_law_formula.rs now constructs initial/open-history winning
+queries and next-action fibres. Source parameters are fixed across the entire
+history; real action choices precede replies and competing-source quantifiers.
+Stochastic maps derive w*channel coefficients. Downward PATH resource regions
+charge executed calls and unions of positive original rows/sites. The general
+varying-channel horizon is D=card(Row*Obs), not the restricted pooled prototype's
+k bound. Algebraic-constant tuple existence/uniqueness is a separate mandatory
+prerequisite. Invalid descriptions and resource limits are not budget NO.
 
-The bounded ONLINE workflow .github/workflows/rust-support-proposal.yml is the
-reproducible execution recipe. Its essential native commands, from repo root:
+The frontend is SOURCE ONLY, UNCOMPILED/UNEXECUTED. Its ten-group semantic plan
+contains no PASS receipt. Free real histories are retained for the existing
+relative-history algebraic selector; a next-action relation is not a selected
+action or executable policy. See native/G7-FORMULA-CONTRACT.md. Complete source
+supply/refinement, verified QE, lower source/history witnesses, CorrectRun and
+frontier/minimum remain required. General hand-proof acceptance is retained;
+this component does not replace it with new mathematical requirements.
 
-    cargo test --locked --offline --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml
-    cargo build --release --locked --offline --manifest-path research/2026-10-21-lean-rust-solver-builder/rust/Cargo.toml
-    python3 -B research/2026-10-21-lean-rust-solver-builder/codec.py encode --repository . < research/2026-10-21-lean-rust-solver-builder/fixtures/two-acquisition.json
+## Execution and retained boundaries
 
-Feed the encoded wire to the fresh common-support-proposer binary. Decode its
-complete stdout with codec.py decode --repository . --request followed by the
-full acquisition fixture path. Submit that JSON through the original runtime
-or MCP research_solver_run request_json interface. ci_verify.py and
-ci_connector.py retain the actual commands and checks.
+NEW native/Cargo/Lake/CI/backend execution is HELD before the first writer.
+Automatic triggers are removed; the manual workflow is literal-false. Existing
+public codec/policy/capture sources and the quiet outer pre-Lake refusal do not
+supply the authenticated original-owner Linux writer/controller/recipient/
+frame/sequence/transport or transitive first-writer hooks. Cargo/Lake inner
+configuration, diagnostics and native loaders remain in the writer inventory.
+No key/recipient export, owner-route retry, held/consumed-job replay, model
+test or canonical runtime/profile/whitelist change occurred.
 
-The new executable is an unadopted proposer. Passing it as a canonical
---rust-binary correctly returned authenticated UNKNOWN without executing it;
-no whitelist was changed.
+Earlier native runs remain observed with their original plaintext-record
+limitation; later encryption does not retroactively repair it. All new source
+and redacted coordination live online. Runtime receipts use the existing
+identity and encrypt-before-first-persistence route.
 
-## Verification and resource scope
-
-The final job passed 13 native unit groups, 556 unchanged original checker
-cases, 158 new-binary/original-Python singleton cases, 205 acquisition cases,
-12 codec negative controls, four actual codec CLI calls, direct original
-runtime calls and six run calls through two real stdio MCP servers.
-Results, refusals, UNKNOWN and authentication were checked separately.
-
-The independent V8 BigInt reference covered the same 205 acquisition inputs,
-252 false-certificate mutations and 84 node-order reversal pairs. Those counts
-overlap the native checks and are not independently proved theorem counts.
-Historical accepted executables were not replayed.
-
-The serial hosted job has a 10-minute wall bound, read-only checkout token,
-locked dependencies and scoped cleanup. hosted_guard.py resolves the actual
-mounted cgroup membership and reuses the original guard's loop, thresholds,
-floors and process cleanup. It does not claim a whole-machine 4GiB limit.
-The unchanged MCP bridge runs in a fresh network-none, read-only-source,
-2GiB/one-CPU/128-process Docker container. The final run asserted the actual
-kernel limits, read-only mount, loopback-only networking, no-new-privileges and
-zero effective capabilities. Its original guard counter existed inside that
-namespace. Public synthetic fixtures contain no private phone records.
-
-Two exact emitted-source hashes match all six direct/runtime/MCP instances and
-the peer's published hosted Lean documents. That hosted context is Lean4.35.0,
-Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679. Pinned Lean4.33.1 standalone
-imports/Lake objects, the full package aggregate and canonical adoption remain
-OPEN. Earlier failures and their corrective source commits are retained.
-
-The exact executed Linux x86_64 objects are available in the authenticated
-online bundle described by NATIVE-CUSTODY.md. PROPOSED-NATIVE-PROFILE.json pins
-their auxiliary role and complete input/output route; canonical adoption and
-new public API tasks are not supplied by that descriptor.
-
-MOMENT-PROVENANCE.md proposes explicit mathematical-law provenance and separate
-literal-request, scalar-law and L/order-sensitive moment identities. This NEW
-metadata extension is source-only and unexecuted under the writer hold; earlier
-jobs cover the recorded baseline, not the extension. The old certificate input
-and native binaries remain unchanged.
-
-## Literal bank Lean receiver source
-
-LITERAL-BANK-LEAN.md and emit_bank_lean.py prepare a per-input all-exponent
-raw-row/grouped-law witness against the peer's existing CM constructor. Both exact authored fixtures passed the peer's actual hosted Lean check with
-five selected complete-type/standard-axiom audits each. The Python emitter and
-new provenance/CI controls remain UNEXECUTED. Their separate dispositions and
-source hashes are retained in evidence/HOSTED-RECEIVER-REVIEW.json; the workflow
-stays disabled.
-
-The existing affine engine is also reused. The proof-corrected receiver and
-literal controls passed nine selected hosted audits; the original failed
-proposal remains in history. AFFINE-REUSE.md binds the exact proof-only patch
-and finite-matrix limits. This does not admit CHART or a new native executable.
-
-## Mathematical boundary
-
-PROOF.md gives output soundness. The checked Lean finite_supported_bank theorem
-requires one shared finite law and every literal moment equality. It concludes
-that each positive-weight atom is a polynomial root in (0,1]. It supplies no
-physical source admission or sharper r support cap. Independent routing, masks
-or row-by-row fitted physical tuples cannot be pooled into one law by naming
-the same bank.
-
-OBLIGATIONS.md retains the remaining gates. Full G1/G2/binary-M3 G5 recovery,
-G6/G7 assembly and original G3/G4 termination/forcing are separate master work.
-
-AFFINE-LEAN-INTERFACE.md adds SOURCE-ONLY pure RC1 value projection, original
-runtime-return binding and literal proof preparation. The native engine/parser
-and checked receiver are reused. Six exact authored fixtures, including duplicate
-rows and Fin0, passed12 selected hosted audits unchanged at peer2b0ae57e;
-the new Python modules/controls have not run.
-
-The general supplied finite-PMF-to-CM semantic receiver now has attributed
-hosted checking at peer311290fc. Its seven complete selected types and exact
-original-helper projection were reviewed; BANK-INTERFACE.md records the precise
-zero-row/domain/all-moment boundary. Physical/native/pinned acceptance stays open.
-
-G6-ORDERED-CELL-CONTRACT.md reuses the original typed ordered-cell/wire
-receiver. It retains complete registry/layout/emission premises and distinguishes
-the AFFINE8/64 interface from the unadmitted CHART32/128 core.
-
-native/CELL-ROW-EXPORT-CONTRACT.md prepares a narrow Rust library adapter over
-the ORIGINAL CHART row compiler. It preserves32/128, request ownership, original
-row/registry order and the one ancestral inverse slot. Source-only with five
-staged controls; no solver, CLI, new grammar, execution or canonical admission.
-
-The existing51-file recovered native source inputs are now prepared remotely
-and hash-checked without a phone checkout/Git/restore run. The adapter remains
-uncompiled. NATIVE-PARENT-CONVENTION.md distinguishes native LAW G=incoming[0]
-from typed natural gamma=P(parent1), conditional on an explicit original-port map.
-
-The existing Lean owner's generic native bank layout now has attributed hosted
-PASS for bankEquiv and ordered_bank_positions. The exact source is integrated,
-with the original-Code wrapper now checked in its complete43-original-module
-hosted admission component, including two explicit API variants. Every edge precedes the
-unique ancestral slot; original hybrid order still comes from supplied
-occurrence equivalences. See evidence/ORDERED-BANK-LAYOUT-HOSTED-REVIEW.json
-and SOURCE-CODE-ROW-BINDING.md. Native compilation/dispatch/record admission
-and full physical/master closure remain separate and unaccepted.
-
-The existing GParity.Chart value layer is now integrated unchanged with the
-exact NativeCellFormReflection proof. Its four selected hosted audits preserve
-forms, coefficients/bounds/strictness and comparison/interval order. The exact
-original-definition projection and submitted-source hash were reconstructed;
-three prior failed proof revisions remain failures. The aggregate decodeRows/compileCellList equality now has attributed hosted
-checking from primitive FieldReflection premises; the exact captured-field
-instance and native/Code/source admission stay open. Internal
-unit bookkeeping weights differ from external Farkas multipliers. Derived
-CHART rationals may exceed256bits and retain the original exact output route,
-not the raw AFFINE input limit. NATIVE-ROW-FIELD-CONTRACT.md records these
-interfaces. The historical545-module source metadata added Chart and the form proof to543;
-full bodies/imports/objects were not independently accepted here.
-
-The actual Code/admission/layout component review is in
-evidence/ORIGINAL-CODE-LAYOUT-COMPONENT-HOSTED-REVIEW.json; the exact updated
-wrapper is integrated. Concrete captured Code/field instantiation and pinned imports remain open. G7-POLICY-REUSE.md additionally recovers existing source
-census/QE/CAD/strategy components against the ORIGINAL full policy contract.
-Its general-channel D horizon and original support PATH costs must not be
-replaced by the restricted pooled prototype's k horizon. No general policy
-extraction/backend/model execution is claimed by that source intake.
-
-The complete eight-block aggregate reflection is integrated unchanged as
-lean/NativeCellAggregateReflection.lean. Four complete selected hosted types
-and standard-axiom lists were reviewed; the69573B exact source projection and
-audit submission were independently reconstructed. It derives ordered decoded
-row equality and original coefficient lengths, then hemit with complete
-registry membership. It does not assume the row equality. The current prepared
-native context has546modules/4530839B; all prior545 entries are unchanged.
-No native/full-import/object acceptance or new execution follows. See
-evidence/CELL-AGGREGATE-REFLECTION-HOSTED-REVIEW.json.
-
-The first pure Rust G7 winning-formula frontend is now authored in
-native/g7_exact_law_formula.rs with an isolated library Cargo proposal.
-It reuses existing exact Polynomial/Rational types, fixes one source bank
-across all history equations and preserves general channels, real action
-quantification, free histories, next-action fibres and original-support PATH
-costs. Algebraic-constant validity is a separate prerequisite; limits are not
-budget NO. It is UNCOMPILED/UNEXECUTED. Actual source supplier/refinement,
-QE/relative-history selection and frontier remain open; ten future semantic
-verification groups are staged only as a plan. See native/G7-FORMULA-CONTRACT.md.
+Complete G1, timed/untimed G2 and full-timed binary-M3 G5 are the recovery
+baseline. G6/G7 assembly and original G3/G4/P1/P5 standards remain distinct.
+Existing owners and Dot's later sports allocation remain preserved; no
+historical mathematical owner was reactivated or reassigned.

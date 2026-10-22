@@ -131,8 +131,8 @@
     },
     {
       "path": "NATIVE-ROW-FIELD-CONTRACT.md",
-      "utf8_bytes": 9487,
-      "sha256": "5e7f6dfcabdf9961e41e7709e14b0e4636f35a9c0a4fd3c05a7c1e3777ee529e"
+      "utf8_bytes": 10139,
+      "sha256": "bb5995b3ee6f8916c8d554fb6ade0327ee8d8635c3250f8af9099b75672f447a"
     },
     {
       "path": "NATIVE-WRITER-REUSE-REVIEW.md",
@@ -141,8 +141,8 @@
     },
     {
       "path": "OBLIGATIONS.md",
-      "utf8_bytes": 8464,
-      "sha256": "dbd438d2225895595c89bb31c89e51dd6a45b4788baf957828c706be72220d61"
+      "utf8_bytes": 8930,
+      "sha256": "79672bfde7aad687b5b366710d608358c88e39b5f6c1c139a278a69efc8057a4"
     },
     {
       "path": "PROOF.md",
@@ -161,8 +161,8 @@
     },
     {
       "path": "README.md",
-      "utf8_bytes": 14649,
-      "sha256": "e35f434d6e2f486704d54cbac61db57265dba00757dc94035bda9c84b1adbfa5"
+      "utf8_bytes": 8435,
+      "sha256": "00abb7be9c454bed432b1b165a073e7d701d41522be6b1d9319d0078d523e3ca"
     },
     {
       "path": "RECORD-WRITER-GAP.md",
@@ -181,8 +181,8 @@
     },
     {
       "path": "SOURCE-CODE-ROW-BINDING.md",
-      "utf8_bytes": 5791,
-      "sha256": "d82c1a54b88187068613a035978a5b568660ee2f519f376fbda4020fe7505178"
+      "utf8_bytes": 6600,
+      "sha256": "befaa8717f950df12176a2a3c86d88c2ac7dfa3ca2776ecd85a3722d80db1e6f"
     },
     {
       "path": "affine_codec.py",
@@ -275,14 +275,19 @@
       "sha256": "c0496b400d3422010be5f4a833e388f8909a7c0638500e17a13d3d78a5cde0dd"
     },
     {
+      "path": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
+      "utf8_bytes": 63166,
+      "sha256": "5a1945a2be31ffbba770b47e91a3edffd13875deeb75b95a658d06b7f39035fa"
+    },
+    {
       "path": "evidence/EXISTING-AFFINE-REUSE.json",
       "utf8_bytes": 5627,
       "sha256": "e97ccccd29c6a07804113533f4a92912cc6c5cde0304eff9495f097b9694be53"
     },
     {
       "path": "evidence/EXISTING-G6-ORDERED-CELL-REVIEW.json",
-      "utf8_bytes": 14376,
-      "sha256": "4e619e25c51bf3f320697acd364f7c22a992e0bae143e3ea01192c02f096b42d"
+      "utf8_bytes": 14692,
+      "sha256": "339bf45b6284719d1abc3d511e192aebd61c824beb82e33eeb483000f77ad1fd"
     },
     {
       "path": "evidence/EXISTING-NATIVE-WRITER-REUSE.json",
@@ -291,8 +296,8 @@
     },
     {
       "path": "evidence/EXISTING-ORIGINAL-CODE-BINDING.json",
-      "utf8_bytes": 9044,
-      "sha256": "8e521d7a098d38b63460daa53b07f09b6e14b898fcd71d114d74225fa0b8769a"
+      "utf8_bytes": 9360,
+      "sha256": "3ac78b5fa94cbf420aa7a2a89c6f30dda27af14c76bc75d35290209e43c82c49"
     },
     {
       "path": "evidence/G7-FORMULA-SOURCE-REVIEW.json",
@@ -558,6 +563,16 @@
       "path": "lean/OriginalCodeBankLayout.lean",
       "utf8_bytes": 2726,
       "sha256": "9a8cb5634c358627aee56339206e97c1f2c0c2c2b393bdd4151a041a88366208"
+    },
+    {
+      "path": "lean/OriginalCodeChartReceiver.lean",
+      "utf8_bytes": 4463,
+      "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1"
+    },
+    {
+      "path": "lean/OriginalCodeChartReflection.lean",
+      "utf8_bytes": 8194,
+      "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a"
     },
     {
       "path": "native/CELL-ROW-EXPORT-CONTRACT.md",
@@ -1287,5 +1302,49 @@
     "verification_plan": "native/G7-FORMULA-VERIFICATION-PLAN.md",
     "execution": false,
     "new_canonical_task": false
+  },
+  "Code_CHART_physical_receiver": {
+    "review": "evidence/CODE-CHART-PHYSICAL-HOSTED-REVIEW.json",
+    "peer_commit": "d26950588232caaf55e72d2bd5eef9ad0e5747ec",
+    "selected_complete_types": 9,
+    "exact_sources": [
+      {
+        "module": "OriginalCodeChartReflection",
+        "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+        "git_blob": "9e91b84b4decb92b2258668cbd1a595227324544",
+        "bytes": 8194
+      },
+      {
+        "module": "OriginalCodeChartReceiver",
+        "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+        "git_blob": "dadd2e68d831a52ae962e5b7949f3e3d67310afb",
+        "bytes": 4463
+      }
+    ],
+    "concrete_captured_request_and_result_origin_proved": false,
+    "new_execution_by_this_chat": false,
+    "current_native_context_metadata": {
+      "added": [
+        {
+          "bytes": 8194,
+          "module": "OriginalCodeChartReflection",
+          "sha256": "521b33b18a71aa45bd0b0064eebc81e5240aa31b6d20b07a057ca91dd4027d1a",
+          "source": "explicit owned source or import-only variant"
+        },
+        {
+          "bytes": 4463,
+          "module": "OriginalCodeChartReceiver",
+          "sha256": "6ef95d3610cecc5b35cb77a4e2a9964651e20bb09d00272772835d91debd07f1",
+          "source": "explicit owned source or import-only variant"
+        }
+      ],
+      "all_bodies_independently_retrieved": false,
+      "bytes": 4543496,
+      "graph_sha256": "00d22f308224bd95fb5feabcaaf70559c07c45e145ad5077022927dd321dece1",
+      "modules": 548,
+      "native_run": false,
+      "prior_546_changed": [],
+      "selection_sha256": "1898edabf01297e64a1f8d2ba4b19d302bdc3abf9c3af03668a25a377dfc1343"
+    }
   }
 }
