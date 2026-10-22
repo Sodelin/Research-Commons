@@ -12,7 +12,7 @@ from online_capture import run_case
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--case', choices=['population-certificate',
-        'scoped-population-certificate', 'population-exporter-source-boundary', 'probe'], required=True)
+        'scoped-population-certificate', 'population-exporter-source-boundary', 'certified-population-rows', 'probe'], required=True)
     parser.add_argument('--record-codec', type=Path, required=True)
     parser.add_argument('--codec-sha256', required=True)
     args = parser.parse_args()
@@ -22,6 +22,10 @@ def main():
         'population-certificate': ('lean/full-context/PopulationTableCertificate.lean',
             ['Astra.NativePopulationTableCertificate.check_sound',
              'Astra.NativePopulationTableCertificate.checked_actual_population']),
+        'certified-population-rows': ('lean/scoped-context/CertifiedPopulationRows.lean',
+            ['GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr',
+             'Astra.CertifiedPopulationRows.read_sparseRows',
+             'Astra.CertifiedPopulationRows.checked_sparseRows_actual']),
         'population-exporter-source-boundary': ('lean/scoped-context/PopulationExporterSourceBoundary.lean',
             ['GProgram.G7.FiniteReachability.decideReach',
              'GProgram.G7.EffectiveSourceEnumeration.sourceValidDecidable',

@@ -6,9 +6,9 @@ scopes are in G7-PRIMITIVE-COEFFICIENT-SOURCE-REVIEW.json. The historical
 draft/fresh-audit status of the original formal bodies remains unchanged.
 All original formal suppliers in this review are selected in the current778-module
 SOURCE context; the later certificate/row proposals below are not selected there.
-The generic physical population certificate is now hosted checked in its exact
-scoped source context. Its particular native instance and sparse-row composition
-remain separate, as detailed below.
+The generic physical population certificate and its unchanged sparse-row caller
+are now hosted checked in their exact scoped source contexts. Actual native
+instances and full imports remain separate, as detailed below.
 
 ## Lower population supplier already exists
 
@@ -187,17 +187,19 @@ bijection onto all admitted Codes. Local Copy positions and ordered grafts
 remain distinct from eventual global observation labels. Named imports and
 proof targets do not authenticate parser values or runtime origin.
 
-A new2946B owned SOURCE PROPOSAL,
+The retained2946B owned caller,
 [G7CertifiedPopulationRows.lean](lean/proposals/G7CertifiedPopulationRows.lean),
 composes that endpoint with the existing `embedExpr`, `readRows` and
-`value_embedExpr`. Its proposed `read_sparseRows` preserves every literal row
+`value_embedExpr`. Its checked `read_sparseRows` preserves every literal row
 position and proves that Code-fibre aggregation commutes with embedding in
 the SAME population coordinate. `checked_sparseRows_actual` gives the intended
 total evaluated row fibre at the SAME rates/time, including zero on absence.
 It requires the actual finite check to equal true; no probability-law equality
-is inserted as a premise. Its COMPLETE imported context is also UNELABORATED.
-Neither proposal is selected in778. The generic certificate now has its separate
-checked context; the sparse-row composition itself remains UNELABORATED.
+is inserted as a premise. Its full original module imports remain UNELABORATED,
+but its unchanged body now passes in the108147B exact physical source context;
+see [the caller evidence](CERTIFIED-POPULATION-ROWS.md). Neither later caller is
+selected in778. This generic pass supplies no particular native Table check,
+selected-key/variable relation or authenticated emitted-proof origin.
 
 There is a concrete current-lane limit. The authenticated original dependency
 closure for the certificate alone has92 modules/643093 source bytes. Hoisting

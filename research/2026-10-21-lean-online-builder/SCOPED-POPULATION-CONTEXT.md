@@ -70,3 +70,9 @@ python3 -B check_online_context.py --case scoped-population-certificate \
 Reproduction is an explicit fresh hosted check, not a native/controller permit
 or permission to replay historical held jobs. It is unnecessary to repeat an
 accepted check without changed source or a specific unresolved verification need.
+
+The later [sparse-row caller](CERTIFIED-POPULATION-ROWS.md) now also passes in
+an exact source context with this entire document as an unchanged prefix.
+Its existing Boolean check supplies raw-Code row probabilities through the
+original sparse embedding. Particular native table/key/variable/word and
+result-origin bindings remain open.

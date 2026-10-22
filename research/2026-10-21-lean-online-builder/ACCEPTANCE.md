@@ -88,7 +88,7 @@ ordered rows, coefficient lengths and hemit. This forward map retains actual
 BinaryValid/RegistryValid and named-order inputs. The remaining capture/parser/
 validity-origin and physical-class/readout/native gates are explicit.
 
-There are34 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
+There are35 bounded hosted follow-on cases in CHECKED-FOLLOWONS.json. The
 complete retained G7 game/rank component, finite path-budget union bridge and
 exact free-history game-horizon composition are checked at their hosted scope.
 Conditional two-sided source transfer also preserves Winning and the SAME valid
@@ -119,3 +119,9 @@ complete audits. Its exact taxon-function coercion correction and rejected
 first revision are retained in POPULATION-EXPORTER-SOURCE-BOUNDARY.md. Original
 validity/reachability suppliers are reused; the exporter remains uncompiled and
 no particular native table or emitted-document origin is accepted.
+
+The unchanged sparse-row caller now also has its complete three-audit source
+check; see CERTIFIED-POPULATION-ROWS.md. Raw-Code probabilities follow from the
+actual finite certificate check, with duplicate/absent fibres and original
+physical rates/time retained. Native table/key/variable/whole-word instances
+and pinned full imports remain open.

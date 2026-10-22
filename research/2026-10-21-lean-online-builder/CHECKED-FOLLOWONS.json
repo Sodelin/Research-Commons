@@ -2658,6 +2658,62 @@
       "verification": "POPULATION-EXPORTER-SOURCE-BOUNDARY-VERIFICATION.json",
       "revisions": "POPULATION-EXPORTER-SOURCE-BOUNDARY-REVISIONS.json",
       "native_lake_or_object_custody": false
+    },
+    {
+      "case": "certified-population-rows",
+      "disposition": "PASS_REMOTE_LEAN_CHECK",
+      "versions": {
+        "toolchain": "leanprover/lean4:v4.35.0",
+        "manifest_sha256": "3bafb347b291b221e474e7c02b2390a921c7be64ec272c300699c46eab37a270",
+        "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679"
+      },
+      "source": "lean/scoped-context/CertifiedPopulationRows.lean",
+      "source_sha256": "5b83d95049900e2faa6127905bde20a4be9840cf975983c59ad5ce701b86f212",
+      "submitted_source_sha256": "4cd4ef8fb5d2574f2ae3e90d6ff02c42613c987b488b082b51065e896367eaee",
+      "selected_theorem_audits": [
+        {
+          "name": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr",
+          "standard_axioms_only": true,
+          "messages": [
+            "'GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CertifiedPopulationRows.read_sparseRows",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CertifiedPopulationRows.read_sparseRows' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        },
+        {
+          "name": "Astra.CertifiedPopulationRows.checked_sparseRows_actual",
+          "standard_axioms_only": true,
+          "messages": [
+            "'Astra.CertifiedPopulationRows.checked_sparseRows_actual' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ],
+      "printed_types": [
+        {
+          "name": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr",
+          "printed_type": "GProgram.G7.EffectiveFullEpochCoefficients.value_embedExpr.{u_2} {E : Type u_2} [DecidableEq.{u_2 + 1} E]\n  [Fintype.{u_2} E] [FinEnum.{u_2 + 1} E] (i : Option.{u_2} E) (p : GProgram.G7.SinglePopulationPolynomialKernel.Expr)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@GProgram.G7.EffectiveFullEpochCoefficients.value.{u_2} (Option.{u_2} E)\n      (@GProgram.G7.EffectiveFullEpochCoefficients.embedExpr.{u_2} (Option.{u_2} E) i p)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t))\n    (@Polynomial.eval₂.{0, 0} Rat Real Rat.semiring Real.semiring (@Rat.castHom.{0} Real Real.instDivisionRing ⋯)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t i)\n      (GProgram.G7.SinglePopulationPolynomialKernel.exprPolynomial p))",
+          "printed_type_sha256": "f4742355fd882443abef0f0167fc6accd018e16f6ec811e04fe7ded74df5a853"
+        },
+        {
+          "name": "Astra.CertifiedPopulationRows.read_sparseRows",
+          "printed_type": "Astra.CertifiedPopulationRows.read_sparseRows.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2} {Copy : Type u_3}\n  {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy] [Fintype.{u_1} V]\n  [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] {N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³}\n  {sample : Copy → X} (i : Option.{u_2} E)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample) :\n  @Eq.{u_2 + 1} (GProgram.G7.EffectiveFullEpochCoefficients.Sparse.{u_2} (Option.{u_2} E))\n    (@GProgram.G7.SparseRowProducts.readRows.{u_2, max (max u_3 u_2) u_1, max (max u_3 u_2) u_1} (Option.{u_2} E)\n      (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴\n        N sample)\n      (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴\n        N sample)\n      (fun a b =>\n        @Subtype.instDecidableEq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}\n          (@UnifiedLean.Source.FiniteSourceSnapshot.Snapshot.{u_1, u_2, u_3} V E Copy inst✝⁴)\n          (fun x =>\n            @GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst✝⁴ inst✝ inst✝¹ inst✝² inst✝³ N\n              sample\n              (@UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot.{u_1, u_2, u_3} V E Copy inst✝⁴\n                (@Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³ N) x))\n          (fun a b =>\n            @GProgram.G7.EffectiveSourceEnumeration.snapshotDecidableEq.{u_1, u_2, u_3} V E Copy inst✝³ inst✝⁵ inst✝⁴\n              inst✝ inst✝⁶ a b)\n          a b)\n      (@id.{(max (max u_3 u_2) u_1) + 1}\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample))\n      (@Astra.CertifiedPopulationRows.sparseRows.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n        sample i rows)\n      d)\n    (@GProgram.G7.EffectiveFullEpochCoefficients.embedExpr.{u_2} (Option.{u_2} E) i\n      (@Astra.NativePopulationTableCertificate.collect.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² N sample rows d))",
+          "printed_type_sha256": "e7276ad41b1fe456a2032315696e01f91bdcfaa1ee1b660f26128d980db84fdc"
+        },
+        {
+          "name": "Astra.CertifiedPopulationRows.checked_sparseRows_actual",
+          "printed_type": "Astra.CertifiedPopulationRows.checked_sparseRows_actual.{u_1, u_2, u_3, u_4} {V : Type u_1} {E : Type u_2}\n  {Copy : Type u_3} {X : Type u_4} [DecidableEq.{u_1 + 1} V] [DecidableEq.{u_2 + 1} E] [DecidableEq.{u_3 + 1} Copy]\n  [Fintype.{u_1} V] [Fintype.{u_2} E] [Fintype.{u_3} Copy] [Fintype.{u_4} X] [FinEnum.{u_1 + 1} V] [FinEnum.{u_2 + 1} E]\n  [FinEnum.{u_3 + 1} Copy] (N : @Nanuq.Source.RootedBinary.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³)\n  {sample : Copy → X}\n  (s :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (rows :\n    @Astra.NativePopulationTableCertificate.Table.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n      sample)\n  (h :\n    @Eq.{1} Bool\n      (@Astra.NativePopulationTableCertificate.check.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝⁴ inst✝ inst✝¹\n        inst✝⁶ inst✝² inst✝⁷ inst✝⁸ N sample (@Fintype.card.{u_3} Copy inst✝⁶) s rows)\n      true)\n  (d :\n    @UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝² inst✝⁴ N\n      sample)\n  (i : Option.{u_2} E)\n  (hs :\n    @GProgram.G7.SinglePopulationPolynomialKernel.CoLocated.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n      inst✝⁴ N sample s i)\n  (r : UnifiedLean.Source.NativePairClockLaw.PositivePairRates.{u_2} E) (t : NNReal) :\n  @Eq.{1} Real\n    (@GProgram.G7.EffectiveFullEpochCoefficients.value.{u_2} (Option.{u_2} E)\n      (@GProgram.G7.SparseRowProducts.readRows.{u_2, max (max u_3 u_2) u_1, max (max u_3 u_2) u_1} (Option.{u_2} E)\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun a b =>\n          @Subtype.instDecidableEq.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1)}\n            (@UnifiedLean.Source.FiniteSourceSnapshot.Snapshot.{u_1, u_2, u_3} V E Copy inst✝⁴)\n            (fun x =>\n              @GProgram.SourceForest.SourceValid.{u_3, u_1, u_2, u_4} Copy V E X inst✝⁴ inst✝ inst✝¹ inst✝² inst✝³ N\n                sample\n                (@UnifiedLean.Source.FiniteSourceSnapshot.decodeSnapshot.{u_1, u_2, u_3} V E Copy inst✝⁴\n                  (@Nanuq.Source.RootedBinary.root.{u_1, u_2, u_4} V E X inst✝ inst✝¹ inst✝² inst✝³ N) x))\n            (fun a b =>\n              @GProgram.G7.EffectiveSourceEnumeration.snapshotDecidableEq.{u_1, u_2, u_3} V E Copy inst✝³ inst✝⁵ inst✝⁴\n                inst✝ inst✝⁶ a b)\n            a b)\n        (@id.{(max (max u_3 u_2) u_1) + 1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@Astra.CertifiedPopulationRows.sparseRows.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁴ inst✝ inst✝¹ inst✝² N\n          sample i rows)\n        d)\n      (@GProgram.G7.FullEpochPolynomial.survival.{u_2} E r t))\n    (@DFunLike.coe.{max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), max (max (u_1 + 1) (u_2 + 1)) (u_3 + 1), 1}\n        (PMF.{max (max u_3 u_2) u_1}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n          inst✝⁴ N sample)\n        (fun x => ENNReal)\n        (@PMF.instFunLike.{max (max u_1 u_2) u_3}\n          (@UnifiedLean.Source.UniformizedSourceStep.Code.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝ inst✝¹ inst✝²\n            inst✝⁴ N sample))\n        (@UnifiedLean.Source.SourcePoissonKernel.sourceTimeKernel.{u_1, u_2, u_3, u_4} V E Copy X inst✝³ inst✝⁵ inst✝\n          inst✝¹ inst✝² inst✝⁴ inst✝⁶ N sample r t s)\n        d).toReal",
+          "printed_type_sha256": "7e77ed2bb973c5845990d22a6ffd6bb2ccbe7bd32f7a51ae106132eec5799513"
+        }
+      ],
+      "classification": "Verification/integration of the unchanged existing sparse-row caller and solved original embedding/fibre/population mathematics.",
+      "scope": "Arbitrary original finite carriers with their original FinEnum instances, admitted Code/sample, actual Boolean Table check, every raw Code fibre, CoLocated, one positive rate bank and nonnegative time. Duplicates and zero on absence retained.",
+      "verification": "CERTIFIED-POPULATION-ROWS-VERIFICATION.json",
+      "native_lake_or_object_custody": false
     }
   ]
 }
