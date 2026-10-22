@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 19:21 UTC: actual nested unary rows and predicate folds
+
+Nine OPTIONAL UNELABORATED modules supply an actual identifier visitor with copied subtraction and failure-safe finite predicate update, generic invariant-sensitive counted-fold observation, concrete inner and outer body contracts, complete original nested unary rows parsing with real saved-count copy, exact membership/range fold meanings and all-path failed-counter bounds. Whole rows-section bound: 7CL^2+10L^3+27L^2+16L+10. Physical query and all clean/alias entry conditions remain explicit; no Nat control or free record/query oracle is introduced.
+
+Only prior inspected actual proof-side Routine/Atom/countdown/composition sources and own proposals are used. Pinned List flatten/fold source was inspected read-only; append-fold and reader-length inductions are local. Lexical no-placeholder scanning is not elaboration or an axiom audit. The complete record validator/coverage replay controller, original canonical constructor/serializer, independent verifier and closed encoded hardness remain, along with all dependency/toolchain/kernel checks. No new dependency installation, execution, certificate, review acceptance, novelty or changed biological/general-DAG scope.
+
 ## Continuation, 19:00 UTC: faithful record replay and physical header values
 
 Four OPTIONAL UNELABORATED modules supply actual arbitrary-Bool copy/restore and forward duplication, guarded fresh unary scalar reads, an actual tag/three-header routine with exact physical values/suffix and all-path bounds, and real copy/header sequential composition. False record bits are preserved, unlike a unary tally copy. Header/copy alias conditions are separated correctly. The joined bound is 9M+16; no input oracle, Nat control, provided scalar or full-validity premise is used.

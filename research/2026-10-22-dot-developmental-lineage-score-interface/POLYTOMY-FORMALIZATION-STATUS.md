@@ -1,6 +1,14 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 19:00 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 19:21 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued actual original unary rows visitor, 19:21 UTC
+
+Nine OPTIONAL UNELABORATED sources now join actual guarded unary identifier parsing, copied subtraction, finite equality/range accumulator update and unconditional scratch cleanup through both physical row countdowns. A generic invariant-sensitive observation theorem is concretely instantiated, giving the exact original nested unary grammar and finite folds. Nonmatching comparisons restore syntax success; malformed parsing alone stops traversal. The outer row count is physically copied before consumption and retained even after later failure.
+
+The whole rows-section bound is 7CL^2+10L^3+27L^2+16L+10, hence cubic when physical query C<=L. Both counters and saved count are bounded by L on all paths, not only successful exhaustion. Equality/OR with false seed gives flattened membership; strict-less/AND with true seed gives universal range, including duplicates and empty lists. `POLYTOMY-ACTUAL-UNARY-ROWS-VISITOR.md` gives the complete hand derivation, exact entry premises and source inventory.
+
+This is the actual rows section, not whole record acceptance or full constructor. Header/replay-port joining, declared-m comparison, suffix rejection, unconditional replay cleanup, physical query enumeration and bounded coverage controller remain, followed by original canonical arithmetic/serializer and independent verifier. Closed encoded hardness and every compatibility/axiom/kernel check remain open. No runtime, certificate, new coordinating review, novelty or biological/general-DAG closure; original actual-D_lambda/full-refinement endpoint retained.
 
 ## Continued faithful record replay and physical headers, 19:00 UTC
 
