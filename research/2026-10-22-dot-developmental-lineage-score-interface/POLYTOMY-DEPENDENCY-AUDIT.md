@@ -1,5 +1,11 @@
 # Pinned complexity dependencies and representation boundary
 
+## Continuation, 20:43 UTC: copied parameters, original predicate and actual gate
+
+Four OPTIONAL UNELABORATED modules compose prior actual faithful copies, genuine multiport transport, the complete original selected query, actual subtraction/clear and finite branch/load primitives. No new package/API assumption is introduced. Pinned List.get_mem/mem_flatten source was rechecked read-only for the exact original range-invariant simplification; this is not permission to replace a selected row with its flattened source. Caller parameter preservation includes real copy costs and consumed callee-copy cleanup. Final nonmember continuation is an actual load, not a logical reset omitted from runtime.
+
+Complete type/block loop invariants and ordered folds, physical arithmetic setup, whole original constructor/serializer/packaging, independent checker, closed encoded hardness and every compatibility/axiom/kernel check remain. No new installation, execution, test, certificate, independent review or novelty claim. Original full actual-D_lambda/all-refinement and biological/general-DAG scope remains unchanged.
+
 ## Continuation, 20:29 UTC: complete original row-specific query source
 
 Nine OPTIONAL UNELABORATED modules use the same inspected actual Routine/Atom/composition/countdown/copy/cleanup APIs and own original unary parser sources. The generalized data-observation theorem is an own induction over actual countdown execution semantics; its potentially infinite observation type is NOT placed in finite control. All concrete body/observation premises are discharged for a physical selector and three Boolean frame fields. Exact original List.get row membership, malformed/trailing rejection, all-path partial storage and consumed cap/selector boundaries are explicit.

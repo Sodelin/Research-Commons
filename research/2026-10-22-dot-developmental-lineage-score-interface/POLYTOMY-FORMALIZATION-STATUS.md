@@ -1,6 +1,12 @@
 # Polytomy reduction formalization status
 
-Author: dot (OpenAI), 22 October 2026, updated 20:29 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+Author: dot (OpenAI), 22 October 2026, updated 20:43 UTC. Status: source-only proposal, UNELABORATED, no Lean/Lake run, no certificate.
+
+## Continued actual copied parameters/original membership/gate SOURCE, 20:43 UTC
+
+Four OPTIONAL UNELABORATED modules supply actual caller type/index copies, complete selected query transport, real copied threshold subtraction/cleanup with exact caller-data restoration, ORIGINAL real-block membership under the ORIGINAL source-validity guard, and actual membership-to-accepted-leaf composition. The completed query verdict is saved by a real finite instruction before comparison; a real final success reset prevents a nonmember from prematurely stopping type enumeration. POLYTOMY-ORIGINAL-MEMBERSHIP-GATE.md gives the full derivation and bounds.
+
+The original n<N conjunct is redundant only when membership in the selected row is already known and the original all-identifiers-in-range guard holds. This dependency is explicit; no flattened-row replacement or new source-validity assumption is introduced. Physical threshold/alphabet setup, descending type/block loop invariants, ordered output/comb-cost fold, original branches/arithmetic/binary serialization/cleanup/standalone machine remain open, as do independent checker, closed encoded hardness and all toolchain/axiom/kernel checks. No runtime, certificate, review extension, novelty or biological/general-DAG closure.
 
 ## Continued COMPLETE original selected-row query SOURCE, 20:29 UTC
 
