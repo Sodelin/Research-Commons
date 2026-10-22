@@ -963,3 +963,7 @@ impl Arena {
         Ok(out)
     }
 }
+
+/// Existing bounded joint-LAW supplier, with source and menu bindings retained.
+#[path = "g7_law_table_inlet.rs"]
+pub mod law_table_inlet;

@@ -86,3 +86,12 @@ regions are implemented as source. Ten meaningful future semantic groups are
 recorded in native/G7-FORMULA-VERIFICATION-PLAN.md; none was run. Construction
 errors remain Invalid or Limit/UNKNOWN. This is no longer only a proposal to
 write a frontend, and is not yet evidence of working executable/QE selection.
+
+The first bounded LAW-table inlet is now source-implemented, reusing the
+unchanged native joint-frontier compiler. It specializes the same G bank for
+original forcing rows, keeps every sampling/readout menu inside one source
+model, and aborts the entire family on ANY failed model/menu/outcome. Menu
+concatenations require explicit affine programme maps rather than being called
+one stochastic law. Original forcing/current-owner source definitions were
+read and pinned; their native-polynomial refinement is still required. See
+native/G7-LAW-TABLE-INLET-CONTRACT.md. No module or control was executed.

@@ -68,3 +68,9 @@ first-writer/controller binding; planned outcomes are not PASS receipts.
 The bounded original LAW table inlet needs a separate source/registry/forcing
 specialization review before feeding these queries. Its32-bank/4-sample and
 state/term/history limits are not the full all-finite G7 provider.
+
+Open-history guard qualification: distinguish false WinningContinuation due
+to illegal prefix from genuine loss AFTER valid constants AND LegalHistory.
+Require ReachableHistory for a physical transcript. Disabled/zero-horizon or
+pointwise false action fibres are never a losing-budget result; terminal
+homogeneity may allow stopping. This is an unexecuted semantic requirement.

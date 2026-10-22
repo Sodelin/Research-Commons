@@ -141,3 +141,28 @@ and transitive hooks are still UNBOUND. No new launcher, key, owner route,
 runtime task/profile/whitelist, local Git or phone artifact is introduced.
 The source manifest binds the exact current library and Cargo proposal;
 source review is not parse/typecheck/link/run evidence.
+
+The first bounded original joint-LAW inlet is now source-implemented in
+law_table_inlet. See G7-LAW-TABLE-INLET-CONTRACT.md. One source/model retains
+ALL original forcing rows and sampling/readout menus, with literal menu
+coordinate offsets. Multiple concatenated menu blocks are not one PMF and
+require explicit SuppliedAffine programme maps; the constructor rejects the
+single-law stochastic shorthand there. The original compiler and frozen
+inputs are unchanged. Both modules remain uncompiled/unexecuted.
+
+## Open-history result interpretation
+
+WinningContinuation is constants-conditional(prefix_legal AND win), not bare
+Winning on arbitrary free coordinates. A FALSE continuation is a losing
+continuation only AFTER ConstantsWellDefined AND LegalHistory are TRUE at
+those EXACT history/action values. Otherwise the false value may only reject
+an illegal prefix. ReachableHistory is additionally required to call the
+history an actual physical transcript. This is a mandatory backend/result
+consumer guard, not supplied by an arbitrary dictionary Boolean.
+
+A false WinningAction fibre, a disabled unaffordable case or a zero retained
+horizon is not budget loss. HomogeneousHistory may already allow stopping;
+a relation false at one free action assignment does not prove its fibre empty.
+Use the complete scoped winning query and authenticated provider result with
+all prerequisites. No backend/result consumer or executed acceptance is
+implemented by this pure query emitter.

@@ -77,3 +77,10 @@ types). Constructing another generic FieldReflection factory is unnecessary.
 The actual captured source/chart must equal inputOfCode for that Code/validity/
 order, and the authenticated original result must bind the exact rows/vector.
 Those data/refinement and physical source/readout premises remain open.
+
+The bounded joint-LAW inlet is now authored. It retains one parameter bank
+across all original rows AND sampling/readout menus, explicit native G parent
+specialization and all-or-nothing family construction. It does not run or
+replace the old compiler. Native/controlled-law refinement, full all-finite
+source supply and the existing writer/controller remain open. Concatenated
+menus are not one PMF and need explicit actual affine-programme correspondence.

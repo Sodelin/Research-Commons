@@ -90,6 +90,16 @@ supply/refinement, verified QE, lower source/history witnesses, CorrectRun and
 frontier/minimum remain required. General hand-proof acceptance is retained;
 this component does not replace it with new mathematical requirements.
 
+The source-implemented law_table_inlet now connects that frontend to the
+UNCHANGED bounded native joint-LAW compiler. Every original forcing row and
+sampling/readout menu stays in one source model with the same parameter bank.
+It keeps parent0/1 specialization explicit, requires complete readout mapping
+and aborts the family on any missing/over-budget model/menu. Multiple menu
+law blocks require explicit affine programme maps; they are not one PMF.
+Both modules remain uncompiled/unexecuted. The old4-sample/32-bank provider
+caps, full census/source proof and original forcing/M0 refinement stay open.
+See native/G7-LAW-TABLE-INLET-CONTRACT.md.
+
 ## Execution and retained boundaries
 
 NEW native/Cargo/Lake/CI/backend execution is HELD before the first writer.
