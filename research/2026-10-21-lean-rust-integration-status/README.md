@@ -2,7 +2,7 @@
 
 The full G1–G7 goal remains active. Current source is in existing
 [Rust draft PR2](https://github.com/Sodelin/Research-Commons/pull/2) at
-[dc9945d0](https://github.com/Sodelin/Research-Commons/tree/dc9945d084fc721ea6f85c680808de0a9a09ec7b/research/2026-10-21-lean-rust-solver-builder).
+[7d33d921](https://github.com/Sodelin/Research-Commons/tree/7d33d9211238dd9ea5d97445719931913055c154/research/2026-10-21-lean-rust-solver-builder).
 [EVIDENCE.json](EVIDENCE.json) retains exact source pins, complete scope,
 observed runs, rejected attempts, native custody and remaining requirements.
 
@@ -45,16 +45,17 @@ runtime/profile/whitelist change occurred. G1, BOTH G2 and full-timed binary-M3
 G5 are the inherited recovery baseline. Original G3/G4/P1/P5 standards and
 current owners remain preserved; supporting engineering continues.
 
-The conditional transfer preserves the SAME related point pair throughout all
-actions/history, targets, legality and updates. Its representation fields are
-actual open provider proofs. Padding accounts for impossible full-carrier
-replies through homogeneity. Neither supplies a native law factory or complete
-legal-action coverage for a restricted case menu. Latest peer source inventory
-is reported773/5901586B; full imports/objects remain unrun.
+The literal two-tip Code receiver now has eight attributed hosted complete-type
+audits, conditional on its actual supplied wire witness check. No particular x,
+nontrivial hybrid M0 or general G6 class is asserted. Exact source/audit assembly
+and changed drain-wrapper/core identities were independently reconstructed.
+Latest peer source inventory775/5908266B preserves all prior771 entries/order;
+full imports/objects and all775-body independent review remain unrun.
 
-The new SOURCE-ONLY controlled-word composition reuses the original conditional
-engine and keeps natural register weights outside forced transitions. It retains
-complete ordered views/range witnesses and inherited profile limits; no Rust
-compile, native run or extra suite occurred. Exact source/contract/reuse review
-is on the current PR2 head. Native/Lean, physical-provider and full-coverage
-joins remain open under the unchanged writer hold.
+The source-only cell_calendar path now owns original CHART bytes/rows/vector,
+rechecks every original row, extracts one bijective age/inverse/coin bank and
+reuses the same calendar/controlled-word providers. It is uncompiled/unexecuted.
+The existing concrete step/word theorems are recovered; native canonical field/
+coefficient encoding, zero for absent rows, closed transition endpoints and
+all-raw root/completion relation remain required. No native source/readout/
+coverage/AST/QE/result or runtime admission is inferred.
