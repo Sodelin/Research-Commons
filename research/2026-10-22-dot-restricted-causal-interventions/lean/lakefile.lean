@@ -21,4 +21,5 @@ lean_lib RestrictedCausalSource where
     `SelectedMAGValidity, `FiniteOriginalTargetImage, `FiniteGraphDecisions,
     `FiniteSelectedMAGDecision, `ExplicitProfileDecoding, `ComputableCanonicalLabels,
     `FiniteTranscriptDecoder, `MarginalIndicatorAncestry, `RefinedObservedSeparator,
-    `PartialObservedQueryFamily, `RefinedIndicatorSeparator, `PartialIndicatorQueryFamily]
+    `PartialObservedQueryFamily, `RefinedIndicatorSeparator, `PartialIndicatorQueryFamily,
+    `CommonObservedMAG]
